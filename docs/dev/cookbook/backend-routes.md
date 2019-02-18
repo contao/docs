@@ -112,6 +112,8 @@ Most of the time you probably want to add a menu entry for your backend module.
 Since the backend menu can be extended with an `EventListener` we can easily
 create one that listens for the menu event to be dispatched.
 
+
+
 ```php
 <?php
 // src/AppBundle/EventListener/BackendMenuListener.php

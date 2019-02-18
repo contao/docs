@@ -1,7 +1,4 @@
 ---
-title: "Contao Dokumentation"
+title: "About"
 chapter: true
-lastmod: "2017-03-03"
 ---
-
-# Contao Documentation
