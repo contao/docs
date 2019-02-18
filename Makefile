@@ -24,7 +24,7 @@ live-dev:
 	cd page; hugo server \
 		--cleanDestinationDir \
 		--contentDir ../docs/dev \
-		--destination ../build/manual \
+		--destination ../build/dev \
 		--config config-dev.yaml \
 		--verbose
 
