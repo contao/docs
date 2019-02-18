@@ -1,0 +1,17 @@
+# Environment
+os: linux
+
+# Stages
+before_install:
+    - sudo apt-get install hugo
+
+script:
+    - make build
+
+after_success:
+    - cat build/dev/index.html
+
+# Plugins
+addons:
+    apt:
+        update: true
