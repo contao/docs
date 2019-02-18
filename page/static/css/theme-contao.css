@@ -72,7 +72,6 @@ a:hover {
     background: var(--MENU-HEADER-BG-color);
     color: var(--MENU-SEARCH-BOX-color);
     border-color: var(--MENU-HEADER-BORDER-color);
-    padding:1rem 6rem 0.5rem 1rem;
 }
 #sidebar .searchbox {
     border-color: var(--MENU-SEARCH-BOX-color);
@@ -102,6 +101,9 @@ a:hover {
     border-color: var(--MENU-SECTION-HR-color);
 }
 
+/**
+ * Custom
+ */
 #sidebar .highlightable {
     padding-top:0;
 }
@@ -124,6 +126,11 @@ a:hover {
 
 #header a#logo {
     display:block;
+}
+
+#logo svg {
+    max-width: 100%;
+    height: auto;
 }
 
 #body img, #body .video-container {
@@ -157,11 +164,10 @@ h1 {
     text-align:left;
 }
 
-/* Hide prev/next navigation */
-#navigation {
-    display:none;
+#body .padding {
+    max-width: 1024px;
 }
 
-#body .padding {
-    max-width:1024px;
+#navigation a {
+    color: var(--MENU-SECTIONS-BG-color);
 }
