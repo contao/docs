@@ -36,13 +36,13 @@ You can use the following short code to automatically add a note for features of
 ### Example:
 
 ```markdown
-# DCA callbacks
+## DCA callbacks
 
-## PHP array configuration 
+### PHP array configuration 
 
 …
 
-## Service tag
+### Service tag
 
 {{< version "4.7" >}}
 ```
