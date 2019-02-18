@@ -1,7 +1,23 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "Page"
 description: 
-date = {{ .Date }}
-weight: 1
 ---
 
+Some page description.
+
+## Section 1
+
+Some section description.
+
+```php
+<?php
+
+class Foo
+{
+
+}
+```
+
+## Section 2
+
+Lorem ipsum dolor sit amet consectetuer.
