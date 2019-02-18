@@ -1,8 +1,7 @@
-# Environment
 os: linux
 
-# Stages
 before_install:
+    - sudo apt-get update -q
     - sudo apt-get install hugo
 
 script:
@@ -10,8 +9,3 @@ script:
 
 after_success:
     - cat build/dev/index.html
-
-# Plugins
-addons:
-    apt:
-        update: true
