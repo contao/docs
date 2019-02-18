@@ -171,3 +171,11 @@ h1 {
 #navigation a {
     color: var(--MENU-SECTIONS-BG-color);
 }
+
+.fa-language:before {
+    content: none;
+}
+
+.fa-fw {
+    width: 0;
+}
