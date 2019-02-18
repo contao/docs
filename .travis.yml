@@ -17,7 +17,7 @@ before_deploy:
     - ssh-add deploy_rsa
 
 after_success:
-    - scp build/* netzarbeiter@serverstandort.ch:/home/netzarbeiter/public_html/docs.ntz.li/
+    - scp -i deploy_rsa build/* netzarbeiter@serverstandort.ch:/home/netzarbeiter/public_html/docs.ntz.li/
 
 addons:
     ssh_known_hosts: serverstandort.ch
