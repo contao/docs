@@ -24,3 +24,23 @@ Cum sociis [natoque][2] penatibus et magnis dis.
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor Contao version, some features will be documented which are only available in newer Contao version. In such a case, document the _old_ way first (if applicable), then show the new way with a notice of the minimum Contao version required.
+
+You can use the following short code to automatically add a note for features of a specific Contao version:
+
+```
+{{< version "4.7" >}}
+```
+
+### Example:
+
+```markdown
+# DCA callbacks
+
+## PHP array configuration 
+
+…
+
+## Service tag
+
+{{< version "4.7" >}}
+```
