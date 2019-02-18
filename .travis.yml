@@ -9,8 +9,8 @@ before_install:
     - hugo version
 
 script:
-    - env HUGO_BASEURL="docs.ntz.li/dev" make build-dev
-    - env HUGO_BASEURL="docs.ntz.li/manual" make build-manual
+    - env HUGO_BASEURL="//docs.ntz.li/dev" make build-dev
+    - env HUGO_BASEURL="//docs.ntz.li/manual" make build-manual
 
 after_success:
     - eval "$(ssh-agent -s)"
