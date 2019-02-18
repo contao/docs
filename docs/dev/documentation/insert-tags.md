@@ -8,12 +8,6 @@ cases they contain a payload after the tag name, ie: `{{TAG_NAME::PAYLOAD}}`.
 
 A list of readily available insert tags can be found in the user manual.
 
-{{% notice info %}}
-Insert tags will not be cached. Its code is therefore executed on each page load.
-Be sure to avoid resource heavy operations in these callbacks.
-{{% /notice %}}
-
-
 ## Create a custom Insert Tag
 
 Custom Insert Tags can be replaced by creating a service tagged with the `contao.hooks`
@@ -71,4 +65,30 @@ services:
         public: true
         tags:
             - { name: contao.hook, hook: replaceInsertTags, method: myMethod }
+```
+
+
+## Cache behaviour
+
+Generally, replaced Insert Tags will be cached and stored in the public cache.
+However, there are some exemptions worth noting.
+
+The following tags will not be stored in the public cache, since they do not contain
+data suitable for caching.
+
+* `date`
+* `ua`
+* `post`
+* `back`
+* `referer`
+* `request_token`
+
+Furthermore, if a tag starts with `cache_` or has the flag `uncached` it will be
+converted to a private ESI response, and is therefore not cached publicly.
+
+If the custom Insert Tag mentioned above should be exempted from the public cache
+add the `uncached` flag whenever used.
+
+```html
+<div>{{rot_13::Payload|uncached}}</div>
 ```
