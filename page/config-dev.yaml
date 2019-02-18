@@ -1,4 +1,4 @@
-baseURL: 'http://docs.contao.local/'
+baseURL: '/dev'
 title: 'Contao Developer Documentation'
 theme: 'hugo-theme-learn'
 params:
