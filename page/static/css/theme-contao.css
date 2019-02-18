@@ -27,6 +27,8 @@
 
 body {
     color: var(--MAIN-TEXT-color) !important;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-weight: 400;
 }
 
 textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
@@ -34,8 +36,9 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     box-shadow: none;
 }
 
-h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
     color: var(--MAIN-TITLES-TEXT-color) !important;
+    font-family: inherit;
 }
 
 a {
@@ -152,10 +155,6 @@ pre {
     margin-bottom:0;
 }
 
-body:not([data-url="/"]) #body-inner > h1 {
-    display:none;
-}
-
 pre code {
     font-size:14px;
 }
@@ -170,4 +169,13 @@ h1 {
 
 #navigation a {
     color: var(--MENU-SECTIONS-BG-color);
+}
+
+#body .nav i {
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+#body .nav:hover i {
+    opacity: 1;
 }
