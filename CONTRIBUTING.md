@@ -44,3 +44,25 @@ You can use the following short code to automatically add a note for features of
 
 {{< version "4.7" >}}
 ```
+
+## Structure
+
+### Development documentation
+
+The development documentation is split into three parts:
+
+* Documentation
+* Reference
+* Cookbook
+
+#### Documentation
+
+This part of the development documentation should explain features of the Contao framework and how to use them. e.g. Templates, Palette Manipulator, image generation, etc. with references to the cookbook.
+
+#### Reference
+
+This part of the development documentation should be a full reference of all available hooks, callbacks, DCA configuration, available config settings, etc.
+
+#### Cookbook
+
+This should contain specific examples and use cases on how to use and implement the previously mentioned topics.
