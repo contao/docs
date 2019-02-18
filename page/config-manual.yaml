@@ -18,3 +18,5 @@ sitemap:
   filename: sitemap.xml
 outputs:
   home: ['HTML', 'JSON']
+
+canonifyURLs: true

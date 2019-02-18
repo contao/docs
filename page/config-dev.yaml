@@ -5,6 +5,7 @@ params:
   disableSearch: false
   editURL: "https://github.com/contao/docs/edit/master/exampleSite/content/"
   disableLanguageSwitch: true
-  baseHref: '/dev'
 outputs:
   home: ['HTML', 'JSON']
+
+canonifyURLs: true
