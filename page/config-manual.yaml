@@ -1,4 +1,3 @@
-baseURL: '/manual'
 languageCode: 'en'
 title: 'Contao Manual'
 theme: 'hugo-theme-learn'
@@ -7,6 +6,7 @@ params:
   themeVariant: 'contao'
   disableSearch: false
   editURL: "https://github.com/contao/docs/edit/master/exampleSite/content/"
+  baseHref: '/manual'
 languages:
   en:
     languageName: English
