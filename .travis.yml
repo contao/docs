@@ -15,7 +15,7 @@ after_success:
     - eval "$(ssh-agent -s)"
     - chmod 600 deploy_rsa
     - ssh-add deploy_rsa
-    - scp -i deploy_rsa -r build/* netzarbeiter@serverstandort.ch:/home/netzarbeiter/public_html/docs.ntz.li/
+    - test $TRAVIS_BRANCH = "master" && ember buildscp -i deploy_rsa -r build/* netzarbeiter@serverstandort.ch:/home/netzarbeiter/public_html/docs.ntz.li/
 
 addons:
     ssh_known_hosts: serverstandort.ch
