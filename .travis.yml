@@ -8,6 +8,10 @@ before_install:
     - sudo dpkg -i hugo*.deb
     - hugo version
 
+install:
+    - git submodule init
+    - git submodule update
+
 script:
     - env HUGO_BASEURL="//docs.ntz.li/dev" make build-dev
     - env HUGO_BASEURL="//docs.ntz.li/manual" make build-manual
