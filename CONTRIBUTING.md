@@ -11,6 +11,8 @@ Only major versions are documented (e.g. Contao 4 and later on Contao 5).
 * Always add two empty lines above each headline.
 * Always add links at the bottom of the document.
 * Add line breaks after 80 characters in paragraphs.
+* Code examples should follow the Symfony Best Practices Book, use PHP 7.1 and
+put Contao related files to `app/Resources/contao` if not avoidable
 
 Example for link references:
 ```
