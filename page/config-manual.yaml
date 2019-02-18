@@ -1,0 +1,20 @@
+baseURL: 'http://docs.contao.local/'
+languageCode: 'en'
+title: 'Contao Manual'
+theme: 'hugo-theme-learn'
+defaultContentLanguageInSubdir: true
+params:
+  themeVariant: 'contao'
+  disableSearch: false
+  editURL: "https://github.com/contao/docs/edit/master/exampleSite/content/"
+languages:
+  en:
+    languageName: English
+    weight: 1
+  de:
+    languageName: Deutsch
+    weight: 2
+sitemap:
+  filename: sitemap.xml
+outputs:
+  home: ['HTML', 'JSON']
