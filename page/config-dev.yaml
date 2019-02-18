@@ -1,6 +1,6 @@
 baseURL: 'http://docs.contao.local/'
 languageCode: 'en'
-title: 'Contao Documentation'
+title: 'Contao Developer Documentation'
 theme: 'hugo-theme-learn'
 DefaultContentLanguage: en
 defaultContentLanguageInSubdir: true
