@@ -1,8 +1,9 @@
 os: linux
 
 before_install:
-    - sudo apt-get update -q
-    - sudo apt-get install hugo
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.deb
+    - sudo dpkg -i hugo*.deb
+    - hugo version
 
 script:
     - make build
