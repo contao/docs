@@ -6,34 +6,30 @@ build: build-dev build-manual
 build-dev:
 	cd page; hugo \
 		--cleanDestinationDir \
-		--contentDir ../docs/dev \
+		--environment dev \
 		--destination ../build/dev \
-		--config config-dev.yaml \
 		--verbose
 
 build-manual:
 	cd page; hugo \
 		--cleanDestinationDir \
-		--contentDir ../docs/manual \
+		--environment manual \
 		--destination ../build/manual \
-		--config config-manual.yaml \
 		--verbose
 
 # Start a live reload server
 live-dev:
 	cd page; hugo server \
 		--cleanDestinationDir \
-		--contentDir ../docs/dev \
+		--environment dev \
 		--destination ../build/dev \
-		--config config-dev.yaml \
 		--verbose
 
 live-manual:
 	cd page; hugo server \
 		--cleanDestinationDir \
-		--contentDir ../docs/manual \
+		--environment manual \
 		--destination ../build/manual \
-		--config config-manual.yaml \
 		--verbose
 
 clean:

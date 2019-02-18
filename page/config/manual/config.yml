@@ -1,0 +1,3 @@
+contentDir: '../docs/manual'
+title: 'Contao Manual'
+defaultContentLanguageInSubdir: true
