@@ -2,5 +2,6 @@ contentDir: '../docs'
 title: 'Contao Documentation'
 theme: 'hugo-theme-learn'
 canonifyURLs: true
+enableGitInfo: true
 outputs:
   home: ['HTML', 'JSON']
