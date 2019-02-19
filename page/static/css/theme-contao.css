@@ -54,7 +54,7 @@ a:hover {
 }
 
 #sidebar ul li.visited > a .read-icon {
-    color: var(--MENU-VISITED-color);
+    color: var(--MENU-HEADER-BG-color);
 }
 
 #body a.highlight:after {
