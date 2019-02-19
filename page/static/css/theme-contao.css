@@ -194,3 +194,10 @@ h1 {
 #body .nav:hover i {
     opacity: 1;
 }
+
+.fa-language:before {
+    content: none;
+}
+.fa-language.fa-fw {
+    width: 0;
+}
