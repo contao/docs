@@ -1,5 +1,5 @@
 ---
 title: "Core-Erweiterungen"
 chapter: true
-weight: 2
+weight: 3
 ---

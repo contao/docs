@@ -2,6 +2,7 @@
 title: "FAQ for Contao"
 description: "This bundle adds FAQ functionality to Contao. With it the management of frequently asked questions becomes a
                       piece of cake!"
+weight: 3
 ---
 
 This bundle adds FAQ functionality to Contao. With it the management of frequently asked questions becomes a

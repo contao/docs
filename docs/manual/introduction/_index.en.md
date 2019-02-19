@@ -4,9 +4,9 @@ description: "This is the official manual for users and developers."
 weight: 1
 ---
 
-## Manual for Contao 4
+## Manual for Contao
 
-This is the official manual for users and developers.
+This is the official manual for users.
 
 
 ### Licence

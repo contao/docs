@@ -1,6 +1,7 @@
 ---
 title: "Comments for Contao"
 description: "This bundle adds calendar functionality to Contao. You can use it to manage upcoming and past events."
+weight: 2
 ---
 
 This bundle adds comments functionality to Contao. You can use it to enhance Contao with general comments

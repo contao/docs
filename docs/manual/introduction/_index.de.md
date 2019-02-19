@@ -4,9 +4,9 @@ description: "Dies ist das offizielle Handbuch für Anwender und Entwickler."
 weight: 1
 ---
 
-## Handbuch für Contao 4
+## Handbuch für Contao
 
-Dies ist das offizielle Handbuch für Anwender und Entwickler.
+Dies ist das offizielle Handbuch für Anwender.
 
 
 ### Lizenz
