@@ -70,7 +70,7 @@ Executed before a record is removed from the database.
 
 ### `config.oncut`
 
-Executed before a record is removed from the database.
+Is executed after a record has been moved to a new position.
 
 {{% expand "Parameters" %}}
 * `\Contao\DataContainer` Data Container object
