@@ -180,6 +180,15 @@ h1 {
 
 #body .padding {
     max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 1800px) {
+    #body .padding {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 #navigation a {
