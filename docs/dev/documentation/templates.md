@@ -12,7 +12,7 @@ located under `vendor/contao/news-bundle/src/Resources/contao/templates/news`.
 
 A template can be a part of the structure of a module, a content element, a form,
 etc. and that is why they are prefixed. They can be easily grouped, ordered and
-recognized. For example: the prefix `j_` means "jQuery" and `nl_` means "newsletter".
+recognized. For example: the prefix `ce_` means "Content Element" and `mod_` means "Module".
 
 
 ## Template inheritance
