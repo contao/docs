@@ -98,6 +98,7 @@ a:hover {
 #sidebar ul li.active > a {
     background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
     color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
+    padding-left: calc(1rem - 3px);
 }
 
 #sidebar hr {
