@@ -132,8 +132,17 @@ a:hover {
 }
 
 #logo svg {
-    max-width: 100%;
+    max-width: 184px;
     height: auto;
+    margin: 0;
+    display: block;
+}
+
+#logo span {
+    display: block;
+    text-align: left;
+    margin-top: 4px;
+    color: white;
 }
 
 #body img, #body .video-container {
@@ -164,7 +173,7 @@ h1 {
 }
 
 #body .padding {
-    max-width: 1024px;
+    max-width: 1200px;
 }
 
 #navigation a {

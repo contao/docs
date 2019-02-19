@@ -2,3 +2,4 @@ themeVariant: 'contao'
 disableSearch: false
 editURL: "https://github.com/contao/docs/edit/master/exampleSite/content/"
 disableLanguageSwitch: true
+documentation_label: Documentation
