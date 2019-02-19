@@ -122,11 +122,11 @@ prepare a pull request) please do so on the respective repository (most likely t
 Other than that there are the following channels:
 
 * **IRC**<br>
-  Server: freenode.net
+  Server: freenode.net<br>
   Channels: #contao (English), contao.de (German), #contao.dev (Developers)
   
 * **Forums**<br>
-  English: https://community.contao.org/en/
+  English: https://community.contao.org/en/<br>
   German: https://community.contao.org/de/
 
 
