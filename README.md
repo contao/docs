@@ -5,13 +5,15 @@ The documentation for the Contao project will be maintained in this repository.
 ## Build
 
 ```
-make build
+make build-dev
+make build-manual
 ```
 
 Builds the entire documentation into the `build` directory using the [Hugo site generator](https://gohugo.io/commands/hugo/).
 
 ```
-make dev
+make live-dev
+make live-manual
 ```
 
 Spins up the development server which automatically tracks changes in the `docs` directory and rebuilds the frontend.
