@@ -100,7 +100,7 @@ A template can be inserted into another template thanks to the `insert()` functi
 The `insert()` function also accepts the assignment of variables as second parameter.
 
 ```php
-<?php $this->insert('template_name', array('key'=>'value')); ?>
+<?php $this->insert('template_name', ['key' => 'value']); ?>
 
 // This passes all variables from the current template
 <?php $this->insert('template_name', $this->getData()); ?>
@@ -115,7 +115,7 @@ Template `image.html5`:
 
 ```html
 <img src="<?= $this->src; ?>" alt="<?= $this->alt; ?>" />
-<?php $this->insert('image-copyright', array('name'=>'Donna Evans', 'license'=>'Creative Commons')); ?>
+<?php $this->insert('image-copyright', ['name' => 'Donna Evans', 'license' => 'Creative Commons']); ?>
 ```
 
 The template `image-copyright.html5` contains a small tag that will be inserted
