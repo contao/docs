@@ -10,6 +10,26 @@ and append the subsequently documented commands.
 $> php bin/console <command-name>
 ```
 
+By appending the `--help` argument to any command, a usage guide is printed to the shell.
+
+```sh
+$> php bin/console contao:user:password --help
+
+Description:
+  Changes the password of a Contao back end user.
+
+Usage:
+  contao:user:password [options] [--] <username>
+
+Arguments:
+  username                 The username of the back end user
+
+Options:
+  -p, --password=PASSWORD  The new password
+  [...]
+
+```
+
 
 ## `contao:automator`
 
