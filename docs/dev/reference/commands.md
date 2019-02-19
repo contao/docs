@@ -3,67 +3,50 @@ title: "Commands"
 ---
 
 Contao uses the Console component of Symfony and provides a few commands.
+To execute these commands locate the `console` executable in your project
+and append the subsequently documented commands.
 
-`contao:automator` - This command is an interface to the `Automator` class
-of Contao, which provides a user with common tasks around the maintenance
-of a Contao installation.
-
+```sh
+$> php bin/console <command-name>
 ```
+
+
+## `contao:automator`
+
+This command is an interface to the `Automator` class of Contao. It mainly consists
+of common tasks around the maintenance of a Contao installation.
+
+```sh
 $> php bin/console contao:automator [<task>]
 ```
 
 The command itself can be executed without providing a task. It will then
-ask for it.
+ask for it. The following tasks are available.
 
-The following tasks are available.
-
-| Task                    | Description                                                                                                                       |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `purgeSearchTables`     | Cleans the search index by deleting the tables `tl_search` and `tl_search_index`.                                                 |
-| `purgeUndoTable`        | Removes the temporarily stored undo entries, which allows for restoring deleted entries.                                          |
-| `purgeVersionTable`     | Purges the version table `tl_version` which holds different versions for rows in tables that have the versioning feature enabled. |
-| `purgeSystemLog`        | Deletes entries in the system log.                                                                                                |
-| `purgeImageCache`       | Purges the image cache by deleting all processed and resized images in the configurable `image.target_dir`.                       |
-| `purgeScriptCache`      | Removes processed and/or minified JavaScript files and Stylesheets.                                                               |
-| `purgePageCache`        | Cleans the page cache by removing cached html responses.                                                                          |
-| `purgeSearchCache`      | Cleans the search result cache.                                                                                                   |
-| `purgeInternalCache`    | |
-| `purgeTempFolder`       | Purges the complete temporary folder.                                                                                             |
-| `purgeRegistrations`    | |
-| `purgeOptInTokens`      | |
-| `purgeXmlFiles`         | |
-| `generateSitemap`       | |
-| `generateXmlFiles`      | |
-| `generateSymlinks`      | |
-| `generateInternalCache` | |
-| `rotateLogs`            | |
+| Task                    | Description                                                                                                                                           |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `purgeSearchTables`     | Clears the search index by deleting the tables `tl_search` and `tl_search_index`.                                                                     |
+| `purgeUndoTable`        | Removes the temporarily stored undo entries, which allows for restoring deleted entries.                                                              |
+| `purgeVersionTable`     | Purges the version table `tl_version` which holds different versions for rows in tables that have the versioning feature enabled.                     |
+| `purgeSystemLog`        | Deletes entries in the system log.                                                                                                                    |
+| `purgeImageCache`       | Purges the image cache by deleting all processed and resized images in the configurable `image.target_dir`.                                           |
+| `purgeScriptCache`      | Removes processed and/or minified JavaScript files and Stylesheets.                                                                                   |
+| `purgePageCache`        | Clears the page cache by removing cached html responses.                                                                                              |
+| `purgeSearchCache`      | Clears the search result cache.                                                                                                                       |
+| `purgeInternalCache`    | Clears the internal cache directory in `kernel.cache_dir`, this includes the Symfony application cache and potentially hits non Contao caches.        |
+| `purgeTempFolder`       | Purges the complete temporary folder.                                                                                                                 |
+| `purgeRegistrations`    | Purged the unactivated member registrations.                                                                                                          |
+| `purgeOptInTokens`      | Purged the expired double opt-in tokens.                                                                                                              |
+| `purgeXmlFiles`         | Removes xml files generated by `generateXmlFiles` task.                                                                                               |
+| `generateSitemap`       | Generates the sitemap.xml files based on the page tree and the settings on the root page.                                                             |
+| `generateXmlFiles`      | Generates the sitemap.xml files and calls the hook `generateXmlFiles` for other bundles to use. The `ContaoNewsBundle` uses it to generate RSS feeds. |
+| `generateSymlinks`      | Creates various symlinks to the web directory, for example publicly reachable file directories, the assets directory or `system/themes`.              |
+| `generateInternalCache` | Warms up the internal cache.                                                                                                                          |
 
 
-## Automator
+## Other commands
 
-## File synchronisation
-
-## Contao Install
-
-## Lock and Unlock an installation
-
-## Generate symlinks
-
-## Change a user password
-
-To manually change a user password in the shell, use the `contao:user:passowrd`
-command. It prompts for the password.
-
-```sh
-> php bin/console contao:user:password admin
-```
-
-
-      contao:automator              
-      contao:filesync               
-      contao:install                
-      contao:install:lock           
-      contao:install:unlock         
-      contao:symlinks               
-      contao:user:password          
-      contao:version
+* `contao:filesync`: Synchronises the file system to the database.
+* `contao:install`: Creates various empty directories which Contao relies on.
+* `contao:symlinks`: Creates various symlinks to the web directory, for example publicly reachable file directories, the assets directory or `system/themes`.
+* `contao:user:password`: Allows for changing a users password on the shell.
