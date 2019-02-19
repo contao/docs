@@ -52,13 +52,16 @@ Use your browser and go to the URL `http://www.example.com/contao-manager.phar.p
 
 ### Basic configuration
 
-You must configure the manager, before you can install Contao. To do so, create a new user by assigning a username and a password. The password is independent of the one used later for the Contao installation.
+You must configure the manager, before you can install Contao. To do
+ so, create a new user by assigning a username and a password. The password
+ is independent of the one used later for the Contao installation.
 
-The Contao Manager does not need its own database. The configuration is stored in several files in the subfolder `contao-manager`.
+The Contao Manager does not need its own database. The configuration is
+stored in several files in the subfolder `contao-manager`.
 
 The subfolder `contao-manager` is in the root directory of your Contao installation.
 
-```
+```bash
 ├── app
 ├── assets
 ├── contao-manager
@@ -79,12 +82,15 @@ The subfolder `contao-manager` is in the root directory of your Contao installat
 
 ### Server Configuration
 
-The Contao Manager automatically tries to detect the PHP path. Unfortunately, this is not always possible, so you should check the setting.
+The Contao Manager automatically tries to detect the PHP path. Unfortunately, 
+this is not always possible, so you should check the setting.
 
-The Composer Cloud Resolver is enabled per default and allows you to install Composer dependencies even if your server does not provide enough local memory. 
+The Composer Cloud Resolver is enabled per default and allows you to install
+Composer dependencies even if your server does not provide enough local memory. 
 
 {{% notice warning %}}
-Please be aware that your package information will be transmitted to a cloud server operated by the <a href="https://association.contao.org/">Contao Association</a>.
+Please be aware that your package information will be transmitted to a cloud
+server operated by the <a href="https://association.contao.org/">Contao Association</a>.
 {{% /notice %}}
     
 
