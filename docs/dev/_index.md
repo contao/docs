@@ -116,7 +116,7 @@ might probably stop here but to get a complete picture of the Contao ecosystem, 
 ### People
 
 Sometimes it's helpful if you know the people involved in Contao development. Of course, as an Open Source project
-it is what people make it, so please, contribute!
+it is what people make it, so please, [contribute][2]!
 
 In any case, the current core team members consist of (in alphabetical order)
 
@@ -148,3 +148,4 @@ Other than that there are the following channels:
 
 
 [1]: https://github.com/contao
+[2]: https://github.com/contao/contao/blob/master/.github/CONTRIBUTING.md
