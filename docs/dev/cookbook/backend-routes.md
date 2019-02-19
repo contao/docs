@@ -15,17 +15,17 @@ XML or YAML interchangeably.
 
 The first step is to create your own Controller. A more detailed explanation
 on how Symfony Controller work can be found in the [Symfony documentation](https://symfony.com/doc/current/controller.html).
-The Controller class is placed inside the `Controller` directory in your `AppBundle`
+The Controller class is placed inside the `Controller` directory
 and is configured through annotations.
 
 ```php
 <?php
 
-// src/AppBundle/Controller/BackendController.php
+// src/App/Controller/BackendController.php
 
 declare(strict_types=1);
 
-namespace AppBundle\Controller;
+namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -43,7 +43,7 @@ class BackendController extends AbstractController
 {
     /**
      * @Route("/my-backend-route", name="app.backend-route")
-     * @Template("AppBundle::my_backend_route.html.twig")
+     * @Template("my_backend_route.html.twig")
      */
     public function backendRouteAction()
     {
@@ -69,12 +69,12 @@ the `ContaoCoreBundle` routes.
 # app/config/routing.yml
 
 app:
-    resource: '@AppBundle/Controller/'
+    resource: '@App/Controller/'
     type:     annotation
 ```
 
-Our route `backendRouteAction` will render the template `AppBundle::my_backend_route.html.twig`
-which must be placed into `src/AppBundle/Resources/views`.
+Our route `backendRouteAction` will render the template `my_backend_route.html.twig`
+which must be placed into `src/App/Resources/views`.
 
 ```twig
 {% extends "@ContaoCore/Backend/be_page.html.twig" %}
@@ -116,11 +116,11 @@ create one that listens for the menu event to be dispatched.
 
 ```php
 <?php
-// src/AppBundle/EventListener/BackendMenuListener.php
+// src/App/EventListener/BackendMenuListener.php
 
 declare(strict_types=1);
 
-namespace AppBundle\EventListener;
+namespace App\EventListener;
 
 use Contao\CoreBundle\Event\MenuEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -174,7 +174,7 @@ For this to work, we add the following lines to our service configuration in `ap
 services:
 
     contao.listener.user_backend_menu_listener:
-        class: AppBundle\EventListener\BackendMenuListener
+        class: App\EventListener\BackendMenuListener
         arguments:
             - "@router"
             - "@request_stack"
