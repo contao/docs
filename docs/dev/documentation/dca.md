@@ -1,5 +1,6 @@
 ---
 title: Data Container Array
+description: "Configuration of tables and record editing."
 ---
 
 Data Container Arrays (DCAs) are used to store table meta data. Each DCA

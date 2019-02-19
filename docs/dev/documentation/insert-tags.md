@@ -1,5 +1,6 @@
 ---
 title: "Insert Tags"
+description: "Integrate specific content into any place in Contao."
 ---
 
 Insert tags are a Contao specific way to replace specific tokens in your templates

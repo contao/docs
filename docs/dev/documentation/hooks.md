@@ -1,5 +1,6 @@
 ---
 title: "Hooks"
+description: Extending front end and back end functionality.
 ---
 
 Hooks are entry points into the Contao core (and some of its extension bundles).
