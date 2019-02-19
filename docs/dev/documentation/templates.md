@@ -44,7 +44,7 @@ Template `fe_page.html5`:
 <html>
 <head>
     <?php $this->block('head'); ?>
-        <title><?php echo $this->title; ?></title>
+        <title><?= $this->title; ?></title>
         <link rel="stylesheet" href="style.css">
     <?php $this->endblock(); ?>
 </head>
@@ -114,7 +114,7 @@ The template `image.html5` contains an img tag and the `insert()` function.
 Template `image.html5`:
 
 ```html
-<img src="<?php echo $this->src; ?>" alt="<?php echo $this->alt; ?>" />
+<img src="<?= $this->src; ?>" alt="<?= $this->alt; ?>" />
 <?php $this->insert('image-copyright', array('name'=>'Donna Evans', 'license'=>'Creative Commons')); ?>
 ```
 
@@ -125,7 +125,7 @@ will be replaced with the values determined in the `insert()` function.
 Template `image-copyright.html5`:
 
 ```html
-<small>Photograph by <?php echo $this->name; ?>, licensed under <?php echo $this->license; ?></small>
+<small>Photograph by <?= $this->name; ?>, licensed under <?= $this->license; ?></small>
 ```
 
 The output of the `image.html5` template will be:
