@@ -116,6 +116,19 @@ Executed after a record has been restored from an old version.
 {{% /expand %}}
 
 
+### `config.oninvalidate_cache_tags`
+
+This callback is executed whenever a record is changed in any way via the Contao
+back end. It allows you to add additional cache tags that should be invalidated.
+
+{{% expand "Parameters" %}}
+* `\Contao\DataContainer` Data Container object
+* `array` Tags
+
+**return:** `array` An array of cache tags to be invalidated
+{{% /expand %}}
+
+
 ## Listing callbacks
 
 {{% notice note %}}
