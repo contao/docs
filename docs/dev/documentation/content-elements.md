@@ -19,8 +19,9 @@ Usually a content element is based on a specific palette in the `tl_content`
 DCA configuration.
 
 ```php
-<?php // src/Resources/contao/dca/tl_content.php
+<?php
 
+// app/Resources/contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
     {type_legend},type;
     {text_legend),title,text;
