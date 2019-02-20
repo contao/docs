@@ -1,5 +1,6 @@
 ---
 title: "Content Elements"
+description: "Contao's fundamental content blocks."
 ---
 
 In Contao, Content Elements are the fundamental content blocks. In its simplest

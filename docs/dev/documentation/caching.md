@@ -1,5 +1,6 @@
 ---
 title: "Caching"
+description: "HTTP caching in Contao"
 ---
 
 Contao heavily relies on HTTP caching and tries it's very best to comply to the HTTP standards to provide the best

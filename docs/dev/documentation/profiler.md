@@ -1,5 +1,6 @@
 ---
 title: "Profiler"
+description: Symfony's profiler in Contao.
 ---
 
 Contao ships with the `symfony/profile-pack` package that includes a Web Developer
