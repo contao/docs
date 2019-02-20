@@ -21,7 +21,7 @@ and is configured through annotations.
 ```php
 <?php
 
-// src/App/Controller/BackendController.php
+// src/Controller/BackendController.php
 
 declare(strict_types=1);
 
@@ -74,7 +74,7 @@ app:
 ```
 
 Our route `backendRouteAction` will render the template `my_backend_route.html.twig`
-which must be placed into `src/App/Resources/views`.
+which must be placed into `/templates`.
 
 ```twig
 {% extends "@ContaoCore/Backend/be_page.html.twig" %}
@@ -116,7 +116,7 @@ create one that listens for the menu event to be dispatched.
 
 ```php
 <?php
-// src/App/EventListener/BackendMenuListener.php
+// src/EventListener/BackendMenuListener.php
 
 declare(strict_types=1);
 
