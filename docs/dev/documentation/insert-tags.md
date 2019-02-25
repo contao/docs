@@ -11,7 +11,7 @@ A list of readily available insert tags can be found in the user manual.
 
 ## Create a custom Insert Tag
 
-Custom Insert Tags can be replaced by creating a service tagged with the `contao.hooks`
+Custom Insert Tags can be replaced by creating a service tagged with the `contao.hook`
 tag. This service will be called whenever the replacement takes place for each
 occurring insert tag. This means, you will need to filter out the specific tag
 you want to process yourself.
