@@ -54,7 +54,6 @@ if possible. The two possibilities are listed below.
 # Use the naming convention
 services:
     App\EventListener\Rot13InsertTagListener:
-        public: true
         tags:
             - { name: contao.hook, hook: replaceInsertTags }
 ```
@@ -63,7 +62,6 @@ services:
 # Specifiy the invoked method
 services:
     App\EventListener\Rot13InsertTagListener:
-        public: true
         tags:
             - { name: contao.hook, hook: replaceInsertTags, method: myMethod }
 ```
