@@ -53,7 +53,7 @@ run `composer create-project contao/managed-edition`:
 }
 ```
 
-So after every `composer update` or `composer install`, the `ScriptHanlder` of the `Managed Edition` is called so it is
+So after every `composer update` or `composer install`, the `ScriptHandler` of the `Managed Edition` is called so it is
 able to initialize the application.
 Here are examples of what the `ScriptHandler` does to give you an idea about its responsibilities:
 
