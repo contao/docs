@@ -40,7 +40,7 @@ Also make sure you check out the [Contao Skeleton Bundle][3] which may help you 
 ## Integration of the Manager Plugin
 
 If you want to provide integration with the `Contao Managed Edition` make sure you checkout the documentation on the
-[Contao Manager Plugin](managed-edition/manager-plugin).
+[Contao Manager Plugin](../managed-edition/manager-plugin).
 
 [1]: https://symfony.com/doc/current/bundles.html
 [2]: https://symfony.com/doc/current/bundles.html#bundle-directory-structure
