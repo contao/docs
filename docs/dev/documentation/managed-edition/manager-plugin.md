@@ -51,7 +51,8 @@ Currently, you can do the following with your `ManagerPlugin`:
 
 * Via the `Contao\ManagerPlugin\Bundle\BundlePluginInterface` you can register bundles to the application kernel.
   Usually this will be your own one but you can write a Composer package that provides multiple bundles.
-* Via the `Contao\ManagerPlugin\Config\ConfigPluginInterface` you can load additional configuration to the kernel.
+* Via the `Contao\ManagerPlugin\Config\ConfigPluginInterface` you can load configuration for your own or
+  other third party bundles to the kernel.
 * Via the `Contao\ManagerPlugin\Config\ExtensionPluginInterface` you can modify configuration of other bundles.
 * Via the `Contao\ManagerPlugin\Dependency\DependentPluginInterface` you can make sure other plugins (plugins, not bundles!) 
   are loaded before.
@@ -113,8 +114,9 @@ class Plugin implements BundlePluginInterface
 
 ## The `ConfigPluginInterface`
 
-Every bundle that is configurable must be provided by the plugin. You almost always want to use this plugin because
-you may want to register your service configuration to the container.
+The `ConfigPluginInterface` allows you to configure your own or other bundles. E.g. you could write a Contao specific
+bundle that integrates a third party Symfony bundle and depending on external configuration it could set the other
+bundles configuration. 
 
 {{% notice info %}}
 Currently, the second argument `$config` is always an empty array. In a future version of the `Contao Manager` would like
