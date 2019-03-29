@@ -63,12 +63,12 @@ Here are examples of what the `ScriptHandler` does to give you an idea about its
 
 ## Do I need the Managed Edition?
 
-It depends. If you have an existing Symfony fullstack application and you want to install Contao to provide additional
+It depends. If you have an existing Symfony full stack application and you want to install Contao to provide additional
 CMS functionality, probably not. You have full control about your application kernel and the configuration but it also
 means you have to adjust the settings for every Contao update (or any other Contao bundle update for that matter).
 If, however, you are planning to make Contao the most important part of your application (meaning most of what you're going
 to do is content management) you're likely better of using the `Managed Edition`. Updates are easier because your application
-autoconfigures itself via the `ManagerPlugin` instances of all the installed bundles. You can still control all of it 
-through a global, application-wide `ManagerPlugin` that is loaded at the very end but it maybe requires a bit more code.
+auto-configures itself via the `Manager Plugin`s of all the installed bundles. You can still control all of it 
+through a global, application-wide `Manager Plugin` that is loaded at the very end but it maybe requires a bit more code.
 
-To learn more about the `ManagerPlugin` visit [its dedicated article](manager-plugin). 
+To learn more about the `Manager Plugin` visit [its dedicated article](manager-plugin). 
