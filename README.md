@@ -2,6 +2,13 @@
 
 The documentation for the Contao project will be maintained in this repository.
 
+## Cloning
+
+The project installs the Hugo Learn theme as a git submodule. Thus when cloning the repository, you need to use the `--recurse-submodules` parameter:
+```
+git clone --recurse-submodules git@github.com:netzarbeiter/contao-docs.git
+```
+
 ## Build
 
 ```
