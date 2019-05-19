@@ -1,4 +1,4 @@
 ---
 title: "Palette Manipulator"
-description: The PaletteManipulator to edit DCA palettes in a more convenient way.
+description: The PaletteManipulator allows you to edit DCA palettes in a more convenient way.
 ---

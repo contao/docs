@@ -13,13 +13,14 @@ callback functions are being executed.
 
 Callbacks are very similar to [Hooks][hooks], but always bound to a specific DCA table.
 
-{{% notice note %}}
-Since Contao 3.2.0, you can also use [anonymous functions]
-(http://php.net/functions.anonymous) for DCA callbacks.
+{{% notice tip %}}
+Since Contao 3.2.0, you can also use [anonymous functions](http://php.net/functions.anonymous) for DCA callbacks.
 {{% /notice %}}
 
+***
 
 ## Global callbacks
+
 
 ### `config.onload`
 
@@ -31,6 +32,7 @@ permissions or to modify the Data Container Array dynamically at runtime.
 
 **return:** _void_
 {{% /expand %}}
+
 
 ### `config.oncreate`
 
@@ -45,6 +47,7 @@ Executed when a new record is created.
 **return:** _void_
 {{% /expand %}}
 
+
 ### `config.onsubmit`
 
 Executed when a back end form is submitted. Allows you to e.g. modify the form
@@ -57,6 +60,7 @@ calendar extension).
 **return:** _void_
 {{% /expand %}}
 
+
 ### `config.ondelete`
 
 Executed before a record is removed from the database.
@@ -68,6 +72,7 @@ Executed before a record is removed from the database.
 **return:** _void_
 {{% /expand %}}
 
+
 ### `config.oncut`
 
 Is executed after a record has been moved to a new position.
@@ -77,6 +82,7 @@ Is executed after a record has been moved to a new position.
 
 **return:** _void_
 {{% /expand %}}
+
 
 ### `config.oncopy`
 
@@ -88,6 +94,7 @@ Executed after a record has been duplicated.
 
 **return:** _void_
 {{% /expand %}}
+
 
 ### `config.oncreate_version`
 
@@ -101,6 +108,7 @@ Executed after the old version of the record has been added to `tl_version`.
 
 **return:** _void_
 {{% /expand %}}
+
 
 ### `config.onrestore_version`
 
@@ -116,7 +124,22 @@ Executed after a record has been restored from an old version.
 {{% /expand %}}
 
 
+### `config.onundo`
+
+Executed after a deleted record has been restored from the "undo" table.
+
+{{% expand "Parameters"%}}
+* `string` Table
+* `array` Record data
+* `\Contao\DataContainer` Data Container object
+
+**return:** _void_
+{{% /expand %}}
+
+
 ### `config.oninvalidate_cache_tags`
+
+{{< version "4.7" >}}
 
 This callback is executed whenever a record is changed in any way via the Contao
 back end. It allows you to add additional cache tags that should be invalidated.
@@ -128,6 +151,24 @@ back end. It allows you to add additional cache tags that should be invalidated.
 **return:** `array` An array of cache tags to be invalidated
 {{% /expand %}}
 
+
+### `config.onshow`
+
+{{< version "4.7" >}}
+
+Allows you to customize the info <i class="fa fa-info-circle"></i> modal window
+of a database record.
+
+{{% expand "Parameters" %}}
+* `array` Existing modal window data
+* `array` Record data
+* `\Contao\DataContainer` Data Container object
+
+**return:** `array` An array containing the table rows and columns for the modal
+window.
+{{% /expand %}}
+
+***
 
 ## Listing callbacks
 
@@ -234,6 +275,7 @@ to add status icons.
 **return:** `array` Columns with labels
 {{% /expand %}}
 
+***
 
 ## Operations callbacks
 
@@ -285,6 +327,7 @@ an additional command check via load_callback).
 **return:** `string` HTML for the button
 {{% /expand %}}
 
+***
 
 ## Field callbacks
 
