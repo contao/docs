@@ -8,7 +8,7 @@ Only major versions are documented (e.g. Contao 4 and later on Contao 5).
 
 ## General rules
 
-* Only use ATX style headlines (e.g. # H1 or ### H3).
+* Only use ATX style headlines (e.g. `# H1` or `### H3`).
 * See [learn.netlify.com/en/cont/markdown/](https://learn.netlify.com/en/cont/markdown/) and [learn.netlify.com/en/shortcodes/notice/](https://learn.netlify.com/en/shortcodes/) for available markdown and shortcode syntax.
 * Always add two empty lines above each headline.
 * ~~Always add links at the bottom of the document.~~ (this causes problems on some pages)
