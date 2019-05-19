@@ -4,27 +4,38 @@ The documentation for the Contao project will be maintained in this repository.
 
 ## Cloning
 
-The project installs the Hugo Learn theme as a git submodule. Thus when cloning the repository, you need to use the `--recurse-submodules` parameter:
+The project installs the Hugo Learn theme as a git submodule. Thus when cloning 
+the repository, you need to use the `--recurse-submodules` parameter:
 ```
 git clone --recurse-submodules git@github.com:netzarbeiter/contao-docs.git
 ```
 
 ## Build
 
+The documentation is built using the [Hugo site generator](https://gohugo.io/), 
+thus you need to [install Hugo](https://gohugo.io/getting-started/installing/) 
+first on your system.
+
+_Note:_ version 0.55.x of Hugo is incompatible with some of the theme's features. 
+Building is still possible, however the rendering of those shortcodes will be wrong.
+
+Building is done using the `make` command. There are different commands available 
+depending on what part of the documentation you want to build.
+
 ```
 make build-dev
 make build-manual
 ```
 
-Builds the entire documentation into the `build` directory using the [Hugo site generator](https://gohugo.io/commands/hugo/).
+Builds the entire documentation into the `build` directory.
 
 ```
 make live-dev
 make live-manual
 ```
 
-Spins up the development server which automatically tracks changes in the `docs` directory and rebuilds the frontend.
-You can access the frontend on [http://localhost:1313](http://localhost:1313).
+Spins up the development server which automatically tracks changes in the `docs` 
+directory and rebuilds the frontend. You can access the frontend on [http://localhost:1313](http://localhost:1313).
 
 ```
 make clean
