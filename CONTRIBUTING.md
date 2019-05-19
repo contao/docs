@@ -59,6 +59,11 @@ specific Contao version:
 ## Structure
 
 
+### Manual
+
+TBD
+
+
 ### Development documentation
 
 The development documentation is split into three parts:
