@@ -159,6 +159,7 @@ a:hover {
 
 #body img.icon {
     margin: 0;
+    vertical-align: middle;
 }
 
 
