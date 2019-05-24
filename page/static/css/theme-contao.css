@@ -157,6 +157,11 @@ a:hover {
     margin: 1rem auto;
 }
 
+#body img.icon {
+    margin: 0;
+}
+
+
 #body a[data-featherlight] {
     display: inline-block;
     max-width: 600px;
