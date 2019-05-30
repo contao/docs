@@ -41,6 +41,7 @@ $paletteManipulator
 ```
 
 ## Removing fields
+{{< version "4.7" >}}
 
 Removing a field is as easy as adding it:
 
