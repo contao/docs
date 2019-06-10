@@ -6,7 +6,7 @@ description: The PaletteManipulator allows you to edit DCA palettes in a more co
 The [PaletteManipulator](https://github.com/contao/contao/blob/master/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA](../dca), e.g. add fields to the back end of an existing DCA.
 
 ## Introduction
-Before we use the `PaletteManipulator`, lets have a look at how palettes are defined.
+Before we use the `PaletteManipulator`, lets have a look at how [palettes](../../reference/dca/palettes) are defined.
 ```php
 // tl_user.php
 
@@ -23,11 +23,11 @@ $GLOBALS['TL_DCA']['tl_user'] = [
 ];
 ```
 
-As you can see, the palette is just a string which means the `PaletteManipulator` is just a class to manipulate the palette string.
+The palette is only a string which means the `PaletteManipulator` is a class to manipulate the palette string.
 
 ## Adding fields
 
-Assuming you have the following DCA configuration:
+Let's assume we have the following DCA configuration:
 ```php
 <?php
 
@@ -44,7 +44,8 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['custom_field'] = [
 At this moment, the field is not visible in the back end. 
 The field now has to be added to the palette. This could happen via concatenation or something like `str_replace()`:
 
-```php 
+```php
+<?php
 // appending custom_field to the palette
 $GLOBALS['TL_DCA']['tl_user']['palettes']['default'] .= ';{custom_legend},custom_field';
 
@@ -52,18 +53,18 @@ $GLOBALS['TL_DCA']['tl_user']['palettes']['default'] .= ';{custom_legend},custom
 str_replace('username', 'username,custom_field', $GLOBALS['TL_DCA']['tl_user']['palettes']['default']);
 ```
 
-As you can see, these two methods are a bit complicated and prone to error.
+These two methods are a bit complicated and prone to error.
 
 Another method is by using the PaletteManipulator:
 
 ```php
 <?php
 
+namespace App\DataContainer;
+
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
-$paletteManipulator = PaletteManipulator::create();
-
-$paletteManipulator
+PaletteManipulator::create()
     // apply the field "custom_field" after the field "username"
     ->addField('custom_field', 'username')
 
@@ -74,15 +75,38 @@ $paletteManipulator
 ```
 
 Note: each time you call an `applyTo*()` method, the fields you applied for this instance will not be cleared.
-If you do not want this behaviour, you can instantiate a new instance.
+If you do not want this behaviour, you can create a new instance:
+
+```php
+<?php
+
+namespace App\DataContainer;
+
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
+    ->addField('custom_field', 'username')
+    ->applyToPalette('admin', 'tl_user') 
+;
+
+PaletteManipulator::create()
+    ->removeField('username', 'name_legend')
+    ->applyToPalette('admin', 'tl_user') 
+;
+
+```
 
 ## Removing fields
 {{< version "4.7" >}}
 
-Removing a field is as easy as adding it:
-
 ```php
-$paletteManipulator
+<?php
+
+namespace App\DataContainer;
+
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
     // remove the field "custom_field" from the "name_legend"
     ->removeField('custom_field', 'name_legend')
 
@@ -97,7 +121,13 @@ $paletteManipulator
 The same logic can be applied to subpalettes. Let's assume `custom_field` is configured in `tl_content`:
 
 ```php
-$paletteManipulator
+<?php
+
+namespace App\DataContainer;
+
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
     // adding the field as usual
     ->addField('custom_field', 'singleSRC')
 
@@ -120,10 +150,19 @@ By default, fields is added **after** the parent. You can alter the behaviour by
 
 ### Example
 
+This example adds two fields `custom_field` and `custom_field_2` and removes the `username` field from the palette.
+
 ```php
-$paletteManipulator
+<?php
+
+namespace App\DataContainer;
+
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
     ->addField('custom_field', 'username', PaletteManipulator::POSITION_AFTER)
     ->addField('custom_field_2', 'name_legend', PaletteManipulator::POSITION_APPEND)
-    ...
+    ->removeField('username', 'name_legend')
+    ->applyToPalette('default')
 ;
 ```
