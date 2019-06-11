@@ -23,7 +23,7 @@ $GLOBALS['TL_DCA']['tl_user'] = [
 ];
 ```
 
-The palette is only a string which means the `PaletteManipulator` is a class to manipulate the palette string.
+The palette is a string. The `PaletteManipulator` is a utility class to help you manipulate that string.
 
 ## Adding fields
 
