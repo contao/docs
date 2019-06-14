@@ -162,12 +162,6 @@ a:hover {
     vertical-align: middle;
 }
 
-
-#body a[data-featherlight] {
-    display: inline-block;
-    max-width: 600px;
-}
-
 pre {
     background-color: #2b2b2b;
 }
