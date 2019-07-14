@@ -101,6 +101,12 @@ that relate to a particular record only (e.g. editing or deleting a record).
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | button_callback | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `array('Class', 'Method')`. |
 
+{{< version "4.7" >}}
+
+| Key             | Value                             | Description                                                                                                        |
+|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
+
 
 #### Regular operations
 
@@ -111,6 +117,12 @@ that relate to a particular record only (e.g. editing or deleting a record).
 | icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | button_callback | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `array('Class', 'Method')`. |
+
+{{< version "4.7" >}}
+
+| Key             | Value                             | Description                                                                                                        |
+|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
 
 
 ### Fields
