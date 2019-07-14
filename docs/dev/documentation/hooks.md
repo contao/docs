@@ -89,8 +89,12 @@ Hook listener can be added to the service configuration.
 
 ```yml
 services:
-    App\EventListener\AccountListener:
-        public: true
-        tags:
-            - { name: contao.hook, hook: activateAccount, method: onAccountActivation }
+  App\EventListener\AccountListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: activateAccount, method: onAccountActivation }
 ```
+
+Note that the service must be defined _public_ so that Contao can retrieve it
+from the container due to lack of dependency injection within the legacy Contao
+framework.
