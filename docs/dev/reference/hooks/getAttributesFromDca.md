@@ -1,7 +1,7 @@
 ---
 title: "getAttributesFromDca"
 description: "getAttributesFromDca hook"
-tags: ["hook-widget", "hook-dca"]
+tags: ["hook-widget", "hook-dca", "hook-config"]
 ---
 
 The `getAttributesFromDca` hook is triggered when attributes of a widget are 
