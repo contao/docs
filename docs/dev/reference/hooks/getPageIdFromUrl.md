@@ -27,19 +27,6 @@ Return the (modified) array of URL fragments.
 ## Example
 
 ```php
-<?php
-
-// config.php
-$GLOBALS['TL_HOOKS']['getPageIdFromUrl'][] = array('MyClass', 'myGetPageIdFromUrl');
-
-// MyClass.php
-public function myGetPageIdFromUrl($arrFragments)
-{
-    return array_unique($arrFragments);
-}
-```
-
-```php
 // src/App/EventListener/GetPageIdFromUrlListener.php
 namespace App\EventListener;
 
