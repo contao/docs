@@ -77,7 +77,7 @@ array configuration in the following way for example:
 ```php
 <?php
 
-// app/Resources/contao/dca/tl_content.php
+// contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['fields']['module']['options_callback'] = [
     \App\EventListener\Dca\ContentListener::class, 'onModuleOptionsCallback'
 ];
@@ -97,7 +97,7 @@ subscribers you'll have to append the callable:
 ```php
 <?php
 
-// app/Resources/contao/dca/tl_content.php
+// contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = [
     \App\EventListener\Dca\ContentListener::class, 'onLoadCallback'
 ];

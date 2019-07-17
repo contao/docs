@@ -55,7 +55,7 @@ You can add your custom logic to hooks by extending the `TL_HOOKS` key in the
 `$GLOBALS` array in your `config.php` file.
 
 ```php
-// app/Resources/contao/config.php
+// contao/config.php
 $GLOBALS['TL_HOOKS']['activateAccount'][] = [AppBundle\Hook\AccountListener::class, 'onAccountActivation'];
 ```
 
