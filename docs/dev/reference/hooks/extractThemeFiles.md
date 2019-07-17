@@ -28,7 +28,7 @@ class ExtractThemeFilesListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\ExtractThemeFilesHook:
+  App\EventListener\ExtractThemeFilesListener:
     public: true
     tags:
       - { name: contao.hook, hook: extractThemeFiles, method: onExtractThemeFiles }

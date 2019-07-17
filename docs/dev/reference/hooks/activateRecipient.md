@@ -26,7 +26,7 @@ class ActivateRecipientListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\ActivateRecipientHook:
+  App\EventListener\ActivateRecipientListener:
     public: true
     tags:
       - { name: contao.hook, hook: activateRecipient, method: onActivateRecipient }

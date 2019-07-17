@@ -27,7 +27,7 @@ class ExportThemeListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\ExportThemeHook:
+  App\EventListener\ExportThemeListener:
     public: true
     tags:
       - { name: contao.hook, hook: exportTheme, method: onExportTheme }

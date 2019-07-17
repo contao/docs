@@ -28,7 +28,7 @@ class ExecutePostActionsListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\ExecutePostActionsHook:
+  App\EventListener\ExecutePostActionsListener:
     public: true
     tags:
       - { name: contao.hook, hook: executePostActions, method: onExecutePostActions }

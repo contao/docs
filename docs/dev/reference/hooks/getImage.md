@@ -84,7 +84,7 @@ class GetImageListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetImageHook:
+  App\EventListener\GetImageListener:
     public: true
     tags:
       - { name: contao.hook, hook: getImage, method: onGetImage }

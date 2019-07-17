@@ -28,7 +28,7 @@ class CloseAccountListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CloseAccountHook:
+  App\EventListener\CloseAccountListener:
     public: true
     tags:
       - { name: contao.hook, hook: closeAccount, method: onCloseAccount }

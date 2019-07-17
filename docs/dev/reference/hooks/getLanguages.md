@@ -49,7 +49,7 @@ class GetLanguagesListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetLanguagesHook:
+  App\EventListener\GetLanguagesListener:
     public: true
     tags:
       - { name: contao.hook, hook: getLanguages, method: onGetLanguages }

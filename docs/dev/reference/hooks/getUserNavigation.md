@@ -1,4 +1,8 @@
-# getUserNavigation
+---
+title: "getUserNavigation"
+description: "getUserNavigation hook"
+tags: ["hook-backend"]
+---
 
 The `getUserNavigation` hook allows to manipulate the back end user navigation.
 It passes the back end modules and a flag wether to show collapsed navigation
@@ -7,11 +11,11 @@ items. Expects the array of modules as return value.
 
 ## Parameters
 
-1. *array* `$arrModules`
+1. *array* `$modules`
 
     The compiled list of back end modules.
 
-2. *boolean* `$blnShowAll`
+2. *boolean* `$showAll`
 
     Wether to show all modules even if the group is collapsed.
 
@@ -24,35 +28,36 @@ Add your custom modules to the list and return the array of back end modules.
 ## Example
 
 ```php
-<?php
-// config.php
-$GLOBALS['TL_HOOKS']['getUserNavigation'][] = array('MyClass', 'myGetUserNavigation');
+// src/App/EventListener/GetUserNavigationListener.php
+namespace App\EventListener;
 
-// MyClass.php
-public function myGetUserNavigation($arrModules, $blnShowAll)
+class GetUserNavigationListener
 {
-    // Add custom navigation item to the Contao website
-    $arrModules['system']['modules']['contao'] = array
-    (
-        'label'		=> 'Contao homepage',
-        'title'		=> 'Visit the Contao CMS website',
-        'class'		=> 'navigation contao',
-        'href'		=> 'https://contao.org/en/',
-    );
+    public function onGetUserNavigation(array $modules, bool $showAll): array
+    {
+        // Add custom navigation item to the Contao website
+        $modules['system']['modules']['contao'] = [
+            'label' => 'Contao homepage',
+            'title' => 'Visit the Contao CMS website',
+            'class' => 'navigation contao',
+            'href' => 'https://contao.org/en/',
+        ];
 
-    return $arrModules;
+        return $modules;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\GetUserNavigationListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: getUserNavigation, method: onGetUserNavigation }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/classes/BackendUser.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/classes/BackendUser.php#L577-L584)
-
-
-### See also
-
-- [getSystemMessages](getSystemMessages.md) – allows to add additional messages to the back end home screen.
+- [\Contao\BackendUser#L538-L546](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/BackendUser.php#L538-L546)

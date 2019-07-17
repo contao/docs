@@ -1,49 +1,55 @@
-# getPageLayout
+---
+title: "getPageLayout"
+description: "getPageLayout hook"
+tags: ["hook-page"]
+---
 
 The `getPageLayout` hook is triggered when a regular page is generated.
-It can be used to modify the page or layout object.
-It passes the page object, the layout object and the page type instance as arguments
+It can be used to modify the page or layout object. It passes the page 
+object, the layout object and the page type instance as arguments
 and does not expect a return value.
-
-> #### primary:: Available   
-> from Contao 3.1.0.
 
 
 ## Parameters
 
-1. *object* `$objPage`
+1. *\Contao\PageModel* `$pageModel`
 
-	The page.
+	The page model instance.
 
-2. *object* `$objLayout`
+2. *\Contao\LayoutModel* `$layout`
 
 	The layout of the page.
 
-3. *object* `$objPty`
+3. *\Contao\PageRegular* `$pageRegular`
 
-	 The page type instance (`PageRegular`).
+	 The page type instance.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/GetPageLayoutListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['getPageLayout'][] = array('MyClass', 'myGetPageLayout');
-
-// MyClass.php
-public function myGetPageLayout($objPage, $objLayout, $objPty)
+class GetPageLayoutListener
 {
-    // modify the page or layout object
-
+    public function onGetPageLayout(\Contao\PageModel $pageModel, \Contao\LayoutModel $layout, \Contao\PageRegular $pageRegular): void
+    {
+        // Modify the page or layout object
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\GetPageLayoutListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: getPageLayout, method: onGetPageLayout }
+```
 
-## More Information
 
+## References
 
-### References
-
-- [system/modules/core/pages/PageRegular.php](https://github.com/contao/core/blob/support/3.2/system/modules/core/pages/PageRegular.php#L46)
+- [\Contao\PageRegular#L244-L252](https://github.com/contao/contao/blob/master/core-bundle/src/Resources/contao/pages/PageRegular.php#L244-L252)

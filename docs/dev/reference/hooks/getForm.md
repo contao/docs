@@ -47,7 +47,7 @@ class GetFormListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetFormHook:
+  App\EventListener\GetFormListener:
     public: true
     tags:
       - { name: contao.hook, hook: getForm, method: onGetForm }

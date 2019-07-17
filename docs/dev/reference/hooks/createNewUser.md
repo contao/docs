@@ -26,7 +26,7 @@ class CreateNewUserListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CreateNewUserHook:
+  App\EventListener\CreateNewUserListener:
     public: true
     tags:
       - { name: contao.hook, hook: createNewUser, method: onCreateNewUser }

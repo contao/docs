@@ -26,7 +26,7 @@ class AddLogEntryListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\AddLogEntryHook:
+  App\EventListener\AddLogEntryListener:
     public: true
     tags:
       - { name: contao.hook, hook: addLogEntry, method: onAddLogEntry }

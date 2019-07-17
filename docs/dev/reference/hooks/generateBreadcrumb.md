@@ -29,7 +29,7 @@ class GenerateBreadcrumbListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GenerateBreadcrumbHook:
+  App\EventListener\GenerateBreadcrumbListener:
     public: true
     tags:
       - { name: contao.hook, hook: generateBreadcrumb, method: onGenerateBreadcrumb }

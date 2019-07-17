@@ -26,7 +26,7 @@ class GenerateXmlFilesListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GenerateXmlFilesHook:
+  App\EventListener\GenerateXmlFilesListener:
     public: true
     tags:
       - { name: contao.hook, hook: generateXmlFiles, method: onGenerateXmlFiles }

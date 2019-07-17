@@ -30,7 +30,7 @@ class CompileDefinitionListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CompileDefinitionHook:
+  App\EventListener\CompileDefinitionListener:
     public: true
     tags:
       - { name: contao.hook, hook: compileDefinition, method: onCompileDefinition }

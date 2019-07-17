@@ -26,7 +26,7 @@ class CompareThemeFilesListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CompareThemeFilesHook:
+  App\EventListener\CompareThemeFilesListener:
     public: true
     tags:
       - { name: contao.hook, hook: compareThemeFiles, method: onCompareThemeFiles }

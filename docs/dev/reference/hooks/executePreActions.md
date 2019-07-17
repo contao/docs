@@ -28,7 +28,7 @@ class ExecutePreActionsListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\ExecutePreActionsHook:
+  App\EventListener\ExecutePreActionsListener:
     public: true
     tags:
       - { name: contao.hook, hook: executePreActions, method: onExecutePreActions }

@@ -51,7 +51,7 @@ class GetFrontendModuleListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetFrontendModuleHook:
+  App\EventListener\GetFrontendModuleListener:
     public: true
     tags:
       - { name: contao.hook, hook: getFrontendModule, method: onGetFrontendModule }

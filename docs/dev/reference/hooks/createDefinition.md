@@ -30,7 +30,7 @@ class CreateDefinitionListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CreateDefinitionHook:
+  App\EventListener\CreateDefinitionListener:
     public: true
     tags:
       - { name: contao.hook, hook: createDefinition, method: onCreateDefinition }

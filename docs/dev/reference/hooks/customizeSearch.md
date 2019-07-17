@@ -28,7 +28,7 @@ class CustomizeSearchListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CustomizeSearchHook:
+  App\EventListener\CustomizeSearchListener:
     public: true
     tags:
       - { name: contao.hook, hook: customizeSearch, method: onCustomizeSearch }

@@ -1,39 +1,45 @@
-# getRootPageFromUrl
+---
+title: "getRootPageFromUrl"
+description: "getRootPageFromUrl hook"
+tags: ["hook-routing"]
+---
 
 The `getRootPageFromUrl` hook is triggered when searching the current root page.
-It does not pass any parameters, and expects a database result on success.
+It does not pass any parameters and expects a `\Contao\PageModel` instance as return
+value or null.
 
 
 ## Return Values
 
-Return a database result from `tl_page` if you want to override the default method
+Return a `\Contao\PageModel` instance if you want to override the default method
 for searching the root page.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/GetRootPageFromUrlListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['getRootPageFromUrl'][] = array('MyClass', 'myGetRootPageFromUrl');
-
-// MyClass.php
-public function myGetRootPageFromUrl()
+class GetRootPageFromUrlListener
 {
-    // Do something
+    public function onGetRootPageFromUrl(): ?\Contao\PageModel
+    {
+        // Do something …
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\GetRootPageFromUrlListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: getRootPageFromUrl, method: onGetRootPageFromUrl }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/classes/Frontend.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/classes/Frontend.php#L297-L307)
-
-
-### See also
-
-- [getPageIdFromUrl](getPageIdFromUrl.md) – triggered when the URL fragments are evaluated.
+- [\Contao\CoreBundle\Routing\RouteProvider#L507-L521](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Routing/RouteProvider.php#L507-L521)

@@ -28,7 +28,7 @@ class GetCombinedFileListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetCombinedFileHook:
+  App\EventListener\GetCombinedFileListener:
     public: true
     tags:
       - { name: contao.hook, hook: getCombinedFile, method: onGetCombinedFile }

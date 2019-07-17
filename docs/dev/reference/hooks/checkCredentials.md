@@ -35,7 +35,7 @@ class CheckCredentialsListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CheckCredentialsHook:
+  App\EventListener\CheckCredentialsListener:
     public: true
     tags:
       - { name: contao.hook, hook: checkCredentials, method: onCheckCredentials }

@@ -50,7 +50,7 @@ class GetPageIdFromUrlListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetPageIdFromUrlHook:
+  App\EventListener\GetPageIdFromUrlListener:
     public: true
     tags:
       - { name: contao.hook, hook: getPageIdFormUrl, method: onGetPageIdFromUrl }

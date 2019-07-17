@@ -29,7 +29,7 @@ class GetAllEventsListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetAllEventsHook:
+  App\EventListener\GetAllEventsListener:
     public: true
     tags:
       - { name: contao.hook, hook: getAllEvents, method: onGetAllEvents }

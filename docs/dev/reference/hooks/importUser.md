@@ -1,24 +1,26 @@
-# importUser
+---
+title: "importUser"
+description: "importUser hook"
+tags: ["hook-member", "hook-user"]
+---
+
 
 The `importUser` hook is triggered when a username cannot be found in the
 database. It passes the username, the password and the table name as arguments
 and expects a boolean return value.
 
-> #### primary:: Available   
-> from Contao 2.7.0-RC1.
-
 
 ## Parameters
 
-1. *string* `$strUsername`
+1. *string* `$username`
 
     The unknown username.
 
-2. *string* `$strPassword`
+2. *string* `$password`
 
     The password submitted in the login form.
 
-3. *string* `$strTable`
+3. *string* `$table`
 
     The user model table, either `tl_member` (for front end) or `tl_user`
     (for back end).
@@ -33,38 +35,35 @@ you added the user to the respective table, or `false` if not.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ImportUserListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['importUser'][] = array('MyClass', 'myImportUser');
-
-// MyClass.php
-public function myImportUser($strUsername, $strPassword, $strTable)
+class ImportUserListener
 {
-    if ($strTable == 'tl_member')
+    public function onImportUser(string $username, string $password, string $table): bool
     {
-        // Import user from an LDAP server
-        if ($this->importUserFromLdap($strUsername, $strPassword))
-        {
-            return true;
+        if ('tl_member' === $table) {
+            // Import user from an LDAP server
+            if ($this->importUserFromLdap($username, $password)) {
+                return true;
+            }
         }
-    }
 
-    return false;
+        return false;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\ImportUserListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: importUser, method: onImportUser }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/User.php](https://github.com/contao/core/blob/master/system/modules/core/library/Contao/User.php#L325-L338)
-
-
-### See also
-
-- [checkCredentials](checkCredentials.md) - triggered when a login attempt fails due to a wrong password.
-- [postLogin](postLogin.md) - triggered after a user has logged out.
-- [postLogin](postLogin.md) - triggered after a user has logged in.
+- [\Contao\User#L655-L688](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/User.php#L655-L688)

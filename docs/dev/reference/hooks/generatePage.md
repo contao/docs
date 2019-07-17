@@ -26,7 +26,7 @@ class GeneratePageListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GeneratePageHook:
+  App\EventListener\GeneratePageListener:
     public: true
     tags:
       - { name: contao.hook, hook: generatePage, method: onGeneratePage }

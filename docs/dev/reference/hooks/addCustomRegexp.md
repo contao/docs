@@ -35,7 +35,7 @@ class AddCustomRegexpListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\AddCustomRegexpHook:
+  App\EventListener\AddCustomRegexpListener:
     public: true
     tags:
       - { name: contao.hook, hook: addCustomRegexp, method: onAddCustomRegexp }
