@@ -28,7 +28,7 @@ class CompileFormFieldsListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CompileFormFieldsHook:
+  App\EventListener\CompileFormFieldsListener:
     public: true
     tags:
       - { name: contao.hook, hook: compileFormFields, method: onCompileFormFields }

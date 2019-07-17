@@ -28,7 +28,7 @@ class GetContentElementListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetContentElementHook:
+  App\EventListener\GetContentElementListener:
     public: true
     tags:
       - { name: contao.hook, hook: getContentElement, method: onGetContentElement }

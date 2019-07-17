@@ -1,4 +1,8 @@
-# getSystemMessages
+---
+title: "getSystemMessages"
+description: "getSystemMessages hook"
+tags: ["hook-backend"]
+---
 
 The `getSystemMessages` hook allows to add additional messages to the back end
 home screen. It does not pass any parameters and expects a string as return value.
@@ -13,35 +17,36 @@ HTML markup) or an empty string.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/GetSystemMessagesListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['getSystemMessages'][] = array('MyClass', 'myGetSystemMessages');
-
-// MyClass.php
-public function myGetSystemMessages()
+class GetSystemMessagesListener
 {
-    $this->import('BackendUser', 'User');
-
-    // Display a warning if the system admin's email is not set
-    if ($GLOBALS['TL_ADMIN_EMAIL'] == '')
+    public function onGetSystemMessages(): string
     {
-        return '<p class="tl_error">Please add your email address to system settings.';
-    }
+        // Display a warning if the system admin's email is not set
+        if (empty($GLOBALS['TL_ADMIN_EMAIL'])) {
+            return '<p class="tl_error">Please add your email address to system settings.</p>';
+        }
 
-    return '';
+        return '';
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\GetSystemMessagesListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: getSystemMessages, method: onGetSystemMessages }
+```
 
-## More information
+* [\Contao\Messages.php#L35-L62](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Messages.php#L35-L62)
+* [\Contao\Messages.php#L64-L108](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Messages.php#L64-L108)
 
 
-### References
+## References
 
-- [system/modules/core/controllers/BackendMain.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/controllers/BackendMain.php#L153-L172)
-
-
-### See also
-
-- [getUserNavigation](getUserNavigation.md) – allows to manipulate the back end user navigation.
+* [\Contao\Backend#L918-L949](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Backend.php#L918-L949)

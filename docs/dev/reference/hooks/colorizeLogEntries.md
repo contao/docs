@@ -33,7 +33,7 @@ class ColorizeLogEntriesListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\ColorizeLogEntriesHook:
+  App\EventListener\ColorizeLogEntriesListener:
     public: true
     tags:
       - { name: contao.hook, hook: colorizeLogEntries, method: onColorizeLogEntries }

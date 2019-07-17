@@ -43,7 +43,7 @@ class GetPageLayoutListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetPageLayoutHook:
+  App\EventListener\GetPageLayoutListener:
     public: true
     tags:
       - { name: contao.hook, hook: getPageLayout, method: onGetPageLayout }

@@ -42,7 +42,7 @@ class GetCountriesListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetCountriesHook:
+  App\EventListener\GetCountriesListener:
     public: true
     tags:
       - { name: contao.hook, hook: getCountries, method: onGetCountries }

@@ -28,7 +28,7 @@ class GenerateFrontendUrlListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GenerateFrontendUrlHook:
+  App\EventListener\GenerateFrontendUrlListener:
     public: true
     tags:
       - { name: contao.hook, hook: generateFrontendUrl, method: onGenerateFrontendUrl }

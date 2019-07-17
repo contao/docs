@@ -33,7 +33,7 @@ class ExecuteResizeListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\ExecuteResizeHook:
+  App\EventListener\ExecuteResizeListener:
     public: true
     tags:
       - { name: contao.hook, hook: executeResize, method: onExecuteResize }

@@ -26,7 +26,7 @@ class ActivateAccountListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\ActivateAccountHook:
+  App\EventListener\ActivateAccountListener:
     public: true
     tags:
       - { name: contao.hook, hook: activateAccount, method: onActivateAccount }

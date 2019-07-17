@@ -29,7 +29,7 @@ class GetAttributesFromDcaListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetAttributesFromDcaHook:
+  App\EventListener\GetAttributesFromDcaListener:
     public: true
     tags:
       - { name: contao.hook, hook: getAttributesFromDca, method: onGetAttributesFromDca }

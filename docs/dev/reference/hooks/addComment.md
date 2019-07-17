@@ -25,7 +25,7 @@ class AddCommentListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\AddCommentHook:
+  App\EventListener\AddCommentListener:
     public: true
     tags:
       - { name: contao.hook, hook: addComment, method: onAddComment }

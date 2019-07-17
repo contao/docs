@@ -33,7 +33,7 @@ class GetArticlesListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\GetArticlesHook:
+  App\EventListener\GetArticlesListener:
     public: true
     tags:
       - { name: contao.hook, hook: getArticles, method: onGetArticles }

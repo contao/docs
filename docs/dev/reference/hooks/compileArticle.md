@@ -27,7 +27,7 @@ class CompileArticleListener
 ```yml
 # config/services.yml
 services:
-  App\EventListener\CompileArticleHook:
+  App\EventListener\CompileArticleListener:
     public: true
     tags:
       - { name: contao.hook, hook: compileArticle, method: onCompileArticle }
