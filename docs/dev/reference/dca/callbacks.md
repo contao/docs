@@ -33,6 +33,16 @@ permissions or to modify the Data Container Array dynamically at runtime.
 **return:** _void_
 {{% /expand %}}
 
+{{% expand "Example" %}}
+```php
+public function onLoadCallback(\Contao\DataContainer $dc): void
+{
+    // …
+}
+```
+{{% /expand %}}
+
+
 
 ### `config.oncreate`
 
