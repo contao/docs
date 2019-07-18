@@ -1,4 +1,9 @@
-# isVisibleElement
+---
+title: "isVisibleElement"
+description: "isVisibleElement hook"
+tags: ["hook-controller"]
+---
+
 
 The `isVisibleElement` hook is triggered when checking if an element should be
 visible in the front end or not. An "element" in this case means either an article,
@@ -7,17 +12,14 @@ a front end module or a content element. In contrast to the other three hooks
 the complete markup. The hook passes the model of the instance and the current
 visibility state as arguments and expects the new visibility state as return value.
 
-> #### primary:: Available   
-> from Contao 3.2.RC1.
-
 
 ## Parameters
 
-1. *Database_Result* `$objElement`
+1. *Database_Result* `$element`
 
     The database result from table `tl_article` or `tl_content` or `tl_module`.
 
-2. *boolean* `$blnIsVisible`
+2. *boolean* `$isVisible`
 
     The current visibility state.
 
@@ -31,38 +33,35 @@ Return `false` if the element should not be visible in the front end.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/IsVisibleElementListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['isVisibleElement'][] = array('MyClass', 'myIsVisibleElement');
-
-// MyClass.php
-public function myIsVisibleElement($objElement, $blnIsVisible)
+class IsVisibleElementListener
 {
-    if ($objElement instanceof ContentElement)
+    public function onIsVisibleElement(object $element, bool $isVisible): bool
     {
-        // Check if this content element can be shown
-        if ($this->myElementCanBeShownInFrontend($objElement))
-        {
-            return true;
+        if ($element instanceof \Contao\ContentElement) {
+            // Check if this content element can be shown
+            if ($this->myElementCanBeShownInFrontend($element)) {
+                return true;
+            }
         }
-    }
 
-    // Otherwise we don't want to change the visibility state
-    return $blnIsVisible;
+        // Otherwise we don't want to change the visibility state
+        return $isVisible;
+    }
 }
 ```
 
-## More information
+```yml
+# config/services.yml
+services:
+  App\EventListener\IsVisibleElementListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: isVisibleElement, method: onIsVisibleElement }
+```
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/Controller.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/Controller.php#L316-L322)
-
-
-### See also
-
-- [getArticle](getArticle.md) - tiggered when an article is generated.
-- [getFrontendModule](getFrontendModule.md) - triggered when a front end module is generated.
-- [getContentElement](getContentElement.md) - triggered when a content element is generated.
+- [\Contao\Controller#L674-L681](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Controller.php#L674-L681)

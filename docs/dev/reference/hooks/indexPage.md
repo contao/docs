@@ -1,25 +1,26 @@
-# indexPage
+---
+title: "indexPage"
+description: "indexPage hook"
+tags: ["hook-page"]
+---
+
 
 The `indexPage` hook is triggered when a page's content is added to the search index.
 It passes the content, the data and the data collected for indexing so far as arguments 
 and does not expect a return value.
 
-> #### primary:: Available   
-> from Contao 3.0.0.
-
 
 ## Parameters
 
-1. *string* `$strContent`
+1. *string* `$content`
 
 	The content of the page.
 
-2. *array* `$arrData`
+2. *array* `$pageData`
 
 	The data array containing information about the page.
-	See the call in [`FrontendTemplate`][FrontendTemplate] for details on the keys.
 
-3. *array* `$arrSet`
+3. *array* `$indexData`
 
 	An array containing the data collected so far.
 
@@ -27,27 +28,28 @@ and does not expect a return value.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/IndexPageListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['indexPage'][] = array('MyClass', 'myIndexPage');
-
-// MyClass.php
-public function myIndexPage($strContent, $arrData, $arrSet)
+class IndexPageListener
 {
-    // modify $arrSet which will eventually be stored in tl_search
-
+    public function onIndexPage(string $content, array $pageData, array &$indexData): void
+    {
+        // Modify $indexData which will eventually be stored in tl_search
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\IndexPageListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: indexPage, method: onIndexPage }
+```
 
-## More Information
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/Search.php](https://github.com/contao/core/blob/support/3.2/system/modules/core/library/Contao/Search.php#L131)
-
-
-
-[FrontendTemplate]: https://github.com/contao/core/blob/support/3.2/system/modules/core/classes/FrontendTemplate.php#L185-L196
+- [\Contao\Search#L128-L135](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Search.php#L128-L135)

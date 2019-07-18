@@ -1,31 +1,39 @@
-# initializeSystem
+---
+title: "initializeSystem"
+description: "initializeSystem hook"
+tags: ["hook-system"]
+---
+
 
 The `initializeSystem` hook is triggered right after the system initialization
 process is finished and before the request processing is started.
-
-> #### primary:: Available   
-> from Contao 3.1.0.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/InitializeSystemListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['initializeSystem'][] = array('MyClass', 'myInitializeSystem');
-
-// MyClass.php
-public function myInitializeSystem()
+class InitializeSystemListener
 {
-    $GLOBALS['TL_CONFIG']['customConfigKey'] = 'customConfigValue';
+    public function onInitializeSystem(): void
+    {
+        // Do something …
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\InitializeSystemListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: initializeSystem, method: onInitializeSystem }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/initialize.php](https://github.com/contao/core/blob/3.5.0/system/initialize.php#L239-L245)
+- [\Contao\CoreBundle\Framework\ContaoFramework#L373-L377](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Framework/ContaoFramework.php#L373-L377)
