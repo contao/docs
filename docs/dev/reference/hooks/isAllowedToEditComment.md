@@ -1,20 +1,22 @@
-# isAllowedToEditComment
+---
+title: "isAllowedToEditComment"
+description: "isAllowedToEditComment hook"
+tags: ["hook-comment", "hook-backend", "hook-dca"]
+---
+
 
 The `isAllowedToEditComment` hook is triggered to determine permission on a
 comment from unknown source in the back end. It passes the comment parent ID and
 source table and expects a boolean as return value.
 
-> #### primary:: Available   
-> from Contao 2.8.1.
-
 
 ## Parameters
 
-1. *int* `$intParent`
+1. *int* `$parentId`
 
     The parent record ID.
 
-2. *string* `$strSource`
+2. *string* `$parentTable`
 
     The parent table name.
 
@@ -27,34 +29,34 @@ is prohibited or your function is not responsible for this comment.
 
 ## Example
 
+
 ```php
-<?php
+// src/App/EventListener/IsAllowedToEditCommentListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['isAllowedToEditComment'][] = array('MyClass', 'myIsAllowedToEditComment');
-
-// MyClass.php
-public function myIsAllowedToEditComment($intParent, $strSource)
+class IsAllowedToEditCommentListener
 {
-    // Check the access to your custom module
-    if (BackendUser::getInstance()->hasAccess('custom', 'modules'))
+    public function onIsAllowedToEditComment(int $parentId, string $parentTable): bool
     {
-        return true;
-    }
+        // Check the access to your custom module
+        if (\Contao\BackendUser::getInstance()->hasAccess('custom', 'modules')) {
+            return true;
+        }
 
-    return false;
+        return false;
+    }
 }
 ```
 
-## More information
+```yml
+# config/services.yml
+services:
+  App\EventListener\IsAllowedToEditCommentListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: isAllowedToEditComment, method: onIsAllowedToEditComment }
+```
 
+## References
 
-### References
-
-- [system/modules/comments/dca/tl_comments.php](https://github.com/contao/core/blob/3.5.0/system/modules/comments/dca/tl_comments.php#L405-L417)
-
-
-### See also
-
-- [addComment](addComment.md) - triggered when a comment is added.
-- [listComments](listComments.md) - triggered when comments are listed in the back end.
+- [\tl_comments#L457-L472](https://github.com/contao/contao/blob/4.7.6/comments-bundle/src/Resources/contao/dca/tl_comments.php#L457-L472)

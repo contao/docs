@@ -34,4 +34,4 @@ services:
 
 ## References
 
-* [\Contao\tl_log#L93-L101](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Theme.php#L278-L285)
+* [\Contao\Theme.php#L278-L285](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Theme.php#L278-L285)

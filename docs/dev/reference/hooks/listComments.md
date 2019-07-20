@@ -1,16 +1,18 @@
-# listComments
+---
+title: "listComments"
+description: "listComments hook"
+tags: ["hook-comment", "hook-backend", "hook-dca"]
+---
+
 
 The `listComments` hook is triggered when listing comment from unknown source in
 the back end. It passes the current record as argument and expects a string as
 return value.
 
-> #### primary:: Available   
-> from Contao 2.8.0-RC2.
 
+## Parameters
 
-### Parameters
-
-1. *array* `$arrRow`
+1. *array* `$comment`
 
     The current comment record data.
 
@@ -24,33 +26,32 @@ responsible for the source table.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ListCommentsListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['listComments'][] = array('MyClass', 'myListComments');
-
-// MyClass.php
-public function myListComments($arrRow)
+class ListCommentsListener
 {
-    if ($arrRow['source'] == 'tl_mytable')
+    public function onListComments(array $comment): string
     {
-        return '<a href="contao/main.php?do=...">' . $arrRow['title'] . '</a>';
-    }
+        if ('tl_mytable' === $comment['source']) {
+            return '<a href="contao/main.php?do=…">' . $comment['title'] . '</a>';
+        }
 
-    return '';
+        return '';
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\ListCommentsListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: listComments, method: onListComments }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/comments/dca/tl_comments.php](https://github.com/contao/core/blob/3.5.0/system/modules/comments/dca/tl_comments.php#L508-L520)
-
-
-### See also
-
-- [addComment](addComment.md) - triggered when a comment is added.
-- [isAllowedToEditComment](isAllowedToEditComment.md) - triggered to determine permission on a comment in the back end.
+- [\tl_comments.php#L558-L573](https://github.com/contao/contao/blob/4.7.6/comments-bundle/src/Resources/contao/dca/tl_comments.php#L558-L573)
