@@ -1,4 +1,9 @@
-# parseTemplate
+---
+title: "parseTemplate"
+description: "parseTemplate hook"
+tags: ["hook-template"]
+---
+
 
 The `parseTemplate` hook is triggered before parsing a template. It passes the
 template object and does not expect a return value.
@@ -6,7 +11,7 @@ template object and does not expect a return value.
 
 ## Parameters
 
-1. *Template* `$objTemplate`
+1. *Template* `$template`
 
     The front end or back end template instance.
 
@@ -14,31 +19,30 @@ template object and does not expect a return value.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ParseTemplateListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['parseTemplate'][] = array('MyClass', 'myParseTemplate');
-
-// MyClass.php
-public function myParseTemplate($objTemplate)
+class ParseTemplateListener
 {
-    if ($objTemplate->getName() == 'fe_page')
+    public function onParseTemplate($template): void
     {
-        // Do something
+        if ('fe_page' === $template->getName() {
+            // Do something …
+        }
     }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\ParseTemplateListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: parseTemplate, method: onParseTemplate }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/Template.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/Template.php#L241-L248)
-
-
-### See also
-
-- [parseBackendTemplate](parseBackendTemplate.md) – triggered when a back end template is parsed.
-- [parseFrontendTemplate](parseFrontendTemplate.md) – triggered when a front end template is parsed.
+- [\Contao\Template#L258-L266](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Template.php#L258-L266)

@@ -1,60 +1,59 @@
-# outputBackendTemplate
+---
+title: "outputBackendTemplate"
+description: "outputBackendTemplate hook"
+tags: ["hook-template"]
+---
+
 
 The `outputBackendTemplate` hook is triggered when a back end template is printed
 to the screen. It passes the template content and the template name as arguments
 and expects the template content as return value.
 
-> #### primary:: Available   
-> from Contao 2.6.0.
-
 
 ## Parameters
 
-1. *string* `$strBuffer`
+1. *string* `$buffer`
 
     Content of the rendered back end template.
 
-2. *string* `$strTemplate`
+2. *string* `$template`
 
     The template name (e.g. `be_main`) without file extension.
 
 
 ## Return Values
 
-Return the original `$strBuffer` or return your custom modification.
+Return the original `$buffer` or return your custom modification.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/OutputBackendTemplateListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['outputBackendTemplate'][] = array('MyClass', 'myOutputBackendTemplate');
-
-// MyClass.php
-public function myOutputBackendTemplate($strBuffer, $strTemplate)
+class OutputBackendTemplateListener
 {
-    if ($strTemplate == 'be_main')
+    public function onOutputBackendTemplate(string $buffer, string $template): string
     {
-        // Modify output
-    }
+        if ($template === 'be_main') {
+            // Modify $buffer
+        }
 
-    return $strBuffer;
-}
+        return $buffer;
+    }
+```
+
+```yml
+# config/services.yml
+services:
+  App\EventListener\OutputBackendTemplateListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: outputBackendTemplate, method: onOutputBackendTemplate }
 ```
 
 
-## More information
+## References
 
-
-### References
-
-- [system/modules/core/classes/BackendTemplate.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/classes/BackendTemplate.php#L110-L117)
-
-
-### See also
-
-- [outputFrontendTemplate](outputFrontendTemplate.md) - triggered when a front end template is printed to the screen.
-- [parseBackendTemplate](parseBackendTemplate.md) - triggered when a back end template is parsed.
-- [parseFrontendTemplate](parseFrontendTemplate.md) - triggered when a front end template is parsed.
+- [\Contao\BackendTemplate#L141-L149](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/BackendTemplate.php#L141-L149)

@@ -1,18 +1,19 @@
-# modifyFrontendPage
+---
+title: "modifyFrontendPage"
+description: "modifyFrontendPage hook"
+tags: ["hook-template"]
+---
+
 
 The `modifyFrontendPage` hook is triggered when a front end template is
 printed to the screen. It passes the template content and the template name as
 arguments and expects the template content as return value.
 
-> #### info:: Note 
-> This hook is applied after insert tags have been
-> replaced. If you want to apply your logic before the replacement of
-> insert tags, use the [`outputFrontendTemplate`][1] hook instead.
-
-<!-- blockquote break -->
-
-> #### primary:: Available   
-> from Contao 3.1.beta1.
+{{% notice note %}}
+This hook is applied after insert tags have been
+replaced. If you want to apply your logic before the replacement of
+insert tags, use the [`outputFrontendTemplate`](../outputFrontendTemplate) hook instead.
+{{% /notice %}}
 
 
 ## Parameters
@@ -33,40 +34,34 @@ Return the original `$buffer` or override with your custom modification.
 
 ## Example
 
+
 ```php
-<?php
+// src/App/EventListener/ModifyFrontendPageListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['modifyFrontendPage'][] = array('MyClass', 'myModifyFrontendPage');
-
-// MyClass.php
-public function myModifyFrontendPage($buffer, $templateName)
+class ModifyFrontendPageListener
 {
-    if ('fe_page' === $templateName) {
-        // Modify output
-    }
+    public function onModifyFrontendPage(string $buffer, string $templateName): string
+    {
+        if ('fe_page' === $templateName) {
+            // Modify $buffer
+        }
 
-    return $strBuffer;
+        return $buffer;
+    }
 }
 ```
 
-
-## More information
-
-
-### References
-
-- [system/modules/core/classes/FrontendTemplate.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/classes/FrontendTemplate.php#L105-L112)
-- [system/modules/core/controllers/FrontendIndex.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/controllers/FrontendIndex.php#457-L464)
-
-
-### See also
-
-- [parseFrontendTemplate](parseFrontendTemplate.md) - triggered when a front end template is parsed.
-- [outputFrontendTemplate][1] - triggered when a front end template is printed to the screen.
-- [outputBackendTemplate](outputBackendTemplate.md) - triggered when a back end template is printed to the screen.
-- [parseBackendTemplate](parseBackendTemplate.md) - triggered when a back end template is parsed.
+```yml
+# config/services.yml
+services:
+  App\EventListener\ModifyFrontendPageListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: modifyFrontendPage, method: onModifyFrontendPage }
+```
 
 
+## References
 
-[1]: outputFrontendTemplate.md
+- [\Contao\FrontendTemplate#L132-L140](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/FrontendTemplate.php#L132-L140)

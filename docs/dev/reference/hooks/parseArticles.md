@@ -1,4 +1,9 @@
-# parseArticles
+---
+title: "parseArticles"
+description: "parseArticles hook"
+tags: ["hook-news", "hook-template"]
+---
+
 
 The `parseArticles` hook is triggered when parsing news articles. It passes the
 front end template, the current article and the news module instance as arguments
@@ -7,44 +12,45 @@ and does not expect a return value.
 
 ## Parameters
 
-1. *FrontendTemplate* `$objTemplate`
+1. *\Contao\FrontendTemplate* `$template`
 
     The front end template instance for the news article (e.g. `news_full`).
 
-2. *array* `$arrRow`
+2. *array* `$newsEntry`
 
     The current news item database result.
 
-3. *ModuleNews* `$objModule`
+3. *\Contao\Module* `$module`
 
-    The news module instance (e.g. `ModuleNewsList`).
+    The module instance (e.g. `\Contao\ModuleNewsList`).
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ParseArticlesListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['parseArticles'][] = array('MyClass', 'myParseArticles');
-
-// MyClass.php
-public function myParseArticles($objTemplate, $arrRow, $objModule)
+class ParseArticlesListener
 {
-    // Remove the default "by XXX" from Contao
-    $objTemplate->author = $arrRow['author'];
+    public function onParseArticles(\Contao\FrontendTemplate $template, array $newsEntry, \Contao\Module $module): void
+    {
+        // Remove the default "by …" from Contao
+        $template->author = $newsEntry['author'];
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\ParseArticlesListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: parseArticles, method: onParseArticles }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/news/modules/ModuleNews.php](https://github.com/contao/core/blob/3.5.0/system/modules/news/modules/ModuleNews.php#L202-L209)
-
-
-### See also
-
-- [getAllEvents](getAllEvents.md) – allows you to modify the result sets of calendar and event modules.
+- [\Contao\ModuleNews#L217-L225](https://github.com/contao/contao/blob/4.7.6/news-bundle/src/Resources/contao/modules/ModuleNews.php#L217-L225)

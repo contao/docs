@@ -1,4 +1,9 @@
-# loadDataContainer
+---
+title: "loadDataContainer"
+description: "loadDataContainer hook"
+tags: ["hook-dca", "hook-system"]
+---
+
 
 The `loadDataContainer` hook is triggered when a DCA file is loaded. It passes
 the file name as argument and does not expect a return value.
@@ -9,7 +14,7 @@ the file name as argument and does not expect a return value.
 
 ## Parameters
 
-1. *string* `$strName`
+1. *string* `$table`
 
     Name of the data container to be loaded (e.g. `tl_content`).
 
@@ -17,27 +22,28 @@ the file name as argument and does not expect a return value.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/LoadDataContainerListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['loadDataContainer'][] = array('MyClass', 'myLoadDataContainer');
-
-// MyClass.php
-public function myLoadDataContainer($strName)
+class LoadDataContainerListener
 {
-    // Do something
+    public function onLoadDataContainer(string $table): void
+    {
+        // Do something …
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\LoadDataContainerListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: loadDataContainer, method: onLoadDataContainer }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/DcaLoader.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/DcaLoader.php#L92-L99)
-
-
-### See also
-
-- [loadLanguageFile](loadLanguageFile.md) - triggered when a language file is loaded.
+- [\Contao\DcaLoader#L98-L106](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/DcaLoader.php#L98-L106)

@@ -1,62 +1,61 @@
-# parseFrontendTemplate
+---
+title: "parseFrontendTemplate"
+description: "parseFrontendTemplate hook"
+tags: ["hook-template"]
+---
+
 
 The `parseFrontendTemplate` hook is triggered when a front end template is
 parsed. It passes the template content and the template name as arguments
 and expects the template content as return value.
 
-> #### primary:: Available   
-> from Contao 2.6.0.
-
 
 ## Parameters
 
-1. *string* `$strBuffer`
+1. *string* `$buffer`
 
     Content of the parsed front end template.
 
-2. *string* `$strTemplate`
+2. *string* `$template`
 
     The template name (e.g. `nav_default`) without file extension.
 
 
 ## Return Values
 
-Return the original `$strBuffer` or override the template with your custom
+Return the original `$buffer` or override the template with your custom
 modification.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ParseFrontendTemplateListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['parseFrontendTemplate'][] = array('MyClass', 'myParseFrontendTemplate');
-
-// MyClass.php
-public function myParseFrontendTemplate($strBuffer, $strTemplate)
+class ParseFrontendTemplateListener
 {
-    if ($strTemplate == 'ce_text')
+    public function onParseFrontendTemplate(string $buffer, string $template): string
     {
-        // Modify output
-    }
+        if ('ce_text' === $template) {
+            // Modify $buffer
+        }
 
-    return $strBuffer;
+        return $buffer;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\ParseFrontendTemplateListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: parseFrontendTemplate, method: onParseFrontendTemplate }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/classes/FrontendTemplate.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/classes/FrontendTemplate.php#L49-L56)
-
-
-### See also
-
-- [outputFrontendTemplate](outputFrontendTemplate.md) - triggered when a front end template is printed to the screen.
-- [modifyFrontendPage](modifyFrontendPage.md) - triggered when a front end page is printed to the screen. 
-- [outputBackendTemplate](outputBackendTemplate.md) - triggered when a back end template is printed to the screen.
-- [parseBackendTemplate](parseBackendTemplate.md) - triggered when a back end template is parsed.
+- [\Contao\FrontendTemplate#L47-L55](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/FrontendTemplate.php#L47-L55)
