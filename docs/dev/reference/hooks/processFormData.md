@@ -1,32 +1,34 @@
-# processFormData
+---
+title: "processFormData"
+description: "processFormData hook"
+tags: ["hook-form"]
+---
+
 
 The `processFormData` hook is triggered after a form has been submitted. It
 passes the form data array, the Data Container Array and the files array as
 arguments and does not expect a return value.
 
-> #### primary:: Available   
-> from Contao 2.4.4.
-
 
 ## Parameters
 
-1. *array* `$arrPost`
+1. *array* `$submittedData`
 
     Form data submitted by the visitor.
 
-2. *array* `$arrForm`
+2. *array* `$formData`
 
     The form configuration from `tl_form` table.
 
-3. *array* `$arrFiles`
+3. *array* `$files`
 
-    Contains information about uploaded files (from "upload" widgets).
+    Contains information about uploaded files (from "upload" widgets). Can be null.
 
-4. *array* `$arrLabels`
+4. *array* `$labels`
     
     The field labels of the form.
 
-5. *form* $objForm
+5. *\Contao\Form* `$form`
 
     The form instance.
  
@@ -34,29 +36,34 @@ arguments and does not expect a return value.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ProcessFormDataListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['processFormData'][] = array('MyClass', 'myProcessFormData');
-
-// MyClass.php
-public function myProcessFormData($arrPost, $arrForm, $arrFiles, $arrLabels, $objForm)
+class ProcessFormDataListener
 {
-    // Do something
+    public function onProcessFormData(
+        array $submittedData, 
+        array $formData, 
+        ?array $files, 
+        array $labels, 
+        \Contao\Form $form
+    ): void
+    {
+        // Do something …
+    }
 }
 ```
 
-## More information
+```yml
+# config/services.yml
+services:
+  App\EventListener\ProcessFormDataListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: processFormData, method: onProcessFormData }
+```
 
 
-### References
+## References
 
-- [system/modules/core/forms/Form.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/forms/Form.php#L514-L521)
-
-
-### See also
-
-- [prepareFormData](prepareFormData.md) - triggered after a form has been submitted, but before it is processed
-- [storeFormData](storeFormData.md) - triggered before a submitted form is stored to the database.
-- [loadFormField](loadFormField.md) - triggered when a form field is loaded.
-- [validateFormField](validateFormField.md) - triggered when a form field is submitted.
+- [\Contao\Form#L533-L541](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L533-L541)

@@ -1,15 +1,22 @@
-# postAuthenticate
+---
+title: "postAuthenticate"
+description: "postAuthenticate hook"
+tags: ["hook-user", "hook-member"]
+---
+
 
 The `postAuthenticate` hook is triggered after a user was authenticated. It 
 passes the user object as argument and does not expect a return value.
 
-> #### primary:: Available   
-> from Contao 3.5.0.
+
+{{% notice info %}}
+Using the `postAuthenticate` hook has been deprecated and will no longer work in Contao 5.0.
+{{% /notice %}}
 
 
 ## Parameters
 
-1. *User* `$objUser`
+1. *\Contao\User* `$user`
 
     The user (object) which just has been authenticated.
 
@@ -17,28 +24,27 @@ passes the user object as argument and does not expect a return value.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/PostAuthenticateListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['postAuthenticate'][] = array('MyClass', 'mypostAuthenticate');
-
-// MyClass.php
-public function mypostAuthenticate(User $objUser)
+class PostAuthenticateListener
 {
-    // Do something
+    public function onPostAuthenticate(\Contao\User $user): void
+    {
+        // Do something …
+    }
 }
 ```
 
-## More information
+```yml
+# config/services.yml
+services:
+  App\EventListener\PostAuthenticateListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: postAuthenticate, method: onPostAuthenticate }
+```
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/User.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/User.php#L291-L298)
-
-
-### See also
-
-- [postLogin](postLogin.md) - triggered after a front end user has logged in.
-- [postLogout](postLogout.md) - triggered after a front end user has logged out.
-- [contao/core#5864](https://github.com/contao/core/issues/5864)
+- [\Contao\CoreBundle\Security\User\ContaoUserProvider#L140-L154](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/User/ContaoUserProvider#L140-L154)

@@ -1,53 +1,54 @@
-# sqlGetFromDB
+---
+title: "sqlGetFromDB"
+description: "sqlGetFromDB hook"
+tags: ["hook-installer"]
+---
+
 
 The `sqlGetFromDB` hook is triggered when parsing the current database
 definition. It passes the generated SQL definitions and expects the same
 as return value.
 
-> #### primary:: Available   
-> from Contao 2.11.0-rc2.
-
 
 ## Parameters
 
-1. *array* `$arrSql`
+1. *array* `$sql`
 
     The compiled SQL definitions.
 
 
 ## Return Values
 
-Return `$arrSql` after adding your custom definitions.
+Return `$sql` after adding your custom definitions.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/SqlGetFromDBListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['sqlGetFromDB'][] = array('MyClass', 'mySqlGetFromDB');
-
-// MyClass.php
-public function mySqlGetFromDB($arrSql)
+class SqlGetFromDBListener
 {
-    // Modify the array of SQL statements
+    public function onSqlGetFromDB(array $sql): array
+    {
+        // Modify the array of SQL statements
 
-    return $arrSql;
+        return $sql;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\SqlGetFromDBListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: sqlGetFromDB, method: onSqlGetFromDB }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/Database/Installer.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/Database/Installer.php#L535-L542)
-
-
-### See also
-
-- [sqlCompileCommands](sqlCompileCommands.md) – triggered when compiling the database update commands.
-- [sqlGetFromFile](sqlGetFromFile.md) – triggered when parsing database.sql files.
-- [sqlGetFromDca](sqlGetFromDca.md) – triggered when database definitions in DCA files are evaluated.
+- [\Contao\Database\Installer#L457-L465](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Database/Installer.php#L457-L465)

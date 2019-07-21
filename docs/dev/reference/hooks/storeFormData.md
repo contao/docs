@@ -1,65 +1,64 @@
-# storeFormData
+---
+title: "storeFormData"
+description: "storeFormData hook"
+tags: ["hook-form"]
+---
+
 
 The `storeFormData` hook is triggered before a submitted form is stored to the
 database. It passes the result set and the form object and expects the result
 set as return value.
 
-> #### primary:: Available   
-> from Contao 2.11.0-rc1.
-
 
 ## Parameters
 
-1. *array* `$arrSet`
+1. *array* `$data`
 
     The result set that will be written to the database table.
 
-2. *Form* `$objForm`
+2. *\Contao\Form* `$form`
 
     The form instance.
 
 
 ## Return Values
 
-Return `$arrSet` or an array of key => values that should be written to the
+Return `$data` or an array of key => values that should be written to the
 database.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/StoreFormDataListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['storeFormData'][] = array('MyClass', 'myStoreFormData');
-
-// MyClass.php
-public function myStoreFormData($arrSet, $objForm)
+class StoreFormDataListener
 {
-    $arrSet['member'] = 0;
-
-    if (FE_USER_LOGGED_IN && $this->Database->fieldExists('member', $objForm->targetTable))
+    public function onStoreFormData(array $data, \Contao\Form $form): array
     {
-        // Also store the member ID who submitted the form
-        $arrSet['member'] = FrontendUser::getInstance()->id;
-    }
+        $data['member'] = 0;
 
-    return $arrSet;
+        if (FE_USER_LOGGED_IN && \Contao\Database::getInstance()->fieldExists('member', $form->targetTable)) {
+            // Also store the member ID who submitted the form
+            $data['member'] = \Contao\FrontendUser::getInstance()->id;
+        }
+
+        return $data;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\StoreFormDataListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: storeFormData, method: onStoreFormData }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/forms/Form.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/forms/Form.php#L483-L490)
-
-
-### See also
-
-- [processFormData](processFormData.md) – triggered after a form has been submitted.
-- [getForm](getForm.md) – manipulate the generation of the forms.
-- [loadFormField](loadFormField.md) – triggered when a form field is loaded.
-- [validateFormField](validateFormField.md) – triggered when a form field is submitted.
+- [\Contao\Form#L499-L507](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L499-L507)

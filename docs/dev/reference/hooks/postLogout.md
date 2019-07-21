@@ -1,15 +1,21 @@
-# postLogout
+---
+title: "postLogout"
+description: "postLogout hook"
+tags: ["hook-user", "hook-member"]
+---
+
 
 The `postLogout` hook is triggered after a user has logged out from the back end 
 or front end. It passes the user object as argument and does not expect a return value.
 
-> #### primary:: Available   
-> from Contao 2.4.3.
+{{% notice info %}}
+Using the `postLogout` hook has been deprecated and will no longer work in Contao 5.0.
+{{% /notice %}}
 
 
 ## Parameters
 
-1. *User* `$user`
+1. *\Contao\User* `$user`
 
     The back end or front end user (object) which has been logged out.
 
@@ -17,28 +23,30 @@ or front end. It passes the user object as argument and does not expect a return
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/PostLogoutListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['postLogout'][] = array('MyClass', 'myPostLogout');
-
-// MyClass.php
-public function myPostLogout(User $user)
+class PostLogoutListener
 {
-    if ($user instanceof FrontendUser) {
-        // Do something with the front end user $user   
+    public function onPostLogout(\Contao\User $user): void
+    {
+        if ($user instanceof \Contao\FrontendUser) {
+            // Do something with the front end user $user  
+        }
     }
 }
 ```
 
-## More information
+```yml
+# config/services.yml
+services:
+  App\EventListener\PostLogoutListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: postLogout, method: onPostLogout }
+```
 
 
-### References
+## References
 
-- [system/modules/core/library/Contao/User.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/User.php#L637-L644)
-
-
-### See also
-
-- [postLogin](postLogin.md) - triggered after a front end user has logged in.
+- [\Contao\CoreBundle\Security\Logout\LogoutHandler#L64-L82](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/Logout/LogoutHandler.php#L64-L82)

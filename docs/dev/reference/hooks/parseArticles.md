@@ -1,7 +1,7 @@
 ---
 title: "parseArticles"
 description: "parseArticles hook"
-tags: ["hook-news", "hook-template"]
+tags: ["hook-news", "hook-template", "hook-module"]
 ---
 
 

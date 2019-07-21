@@ -1,16 +1,18 @@
-# postDownload
+---
+title: "postDownload"
+description: "postDownload hook"
+tags: ["hook-controller"]
+---
+
 
 The `postDownload` hook is triggered after a file has been downloaded with the
 download/downloads content element. It passes the file name as argument and does
 not expect a return value.
 
-> #### primary:: Available   
-> from Contao 2.4.6.
-
 
 ## Parameters
 
-1. *string* $strFile
+1. *string* $file
 
     The file which has been downloaded (relative path from `TL_ROOT`).
 
@@ -18,27 +20,28 @@ not expect a return value.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/PostDownloadListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['postDownload'][] = array('MyClass', 'myPostDownload');
-
-// MyClass.php
-public function myPostDownload($strFile)
+class PostDownloadListener
 {
-    // Do something
+    public function onPostDownload(string $file): void
+    {
+        // Do something …
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\PostDownloadListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: postDownload, method: onPostDownload }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/Controller.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/Controller.php#L1236-L1242)
-
-
-### See also
-
-- [postUpload](postUpload.md) - triggered after a user has uploaded one or more files in the back end.
+- [\Contao\Controller.php#L1257-L1264](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Controller.php#L1257-L1264)

@@ -1,4 +1,9 @@
-# prepareFormData
+---
+title: "prepareFormData"
+description: "prepareFormData hook"
+tags: ["hook-form"]
+---
+
 
 The `prepareFormData` hook is triggered after a form has been submitted, but
 before it is processed. It passes the form data array, the form labels array
@@ -6,21 +11,22 @@ and the form object as arguments and does not expect a return value. This way
 the data can be changed or extended, prior to execution of actions like email
 distribution or data storage.
 
-> #### primary:: Available   
-> from Contao 3.0.0.
-
 
 ## Parameters
 
-1. *array* `$arrSubmitted`
+1. *array* `$submittedData`
 
     The user input from the form.
 
-2. *arrray* `$arrLabels`
+2. *array* `$labels`
 
     The field labels of the form.
 
-3. *Form* `$objForm`
+3. *array* `$fields`
+
+    The fields for this form as an array of `\Contao\Widget` instances.
+
+3. *\Contao\Form* `$form`
 
     The form instance.
 
@@ -28,33 +34,30 @@ distribution or data storage.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/PrepareFormDataListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['prepareFormData'][] = array('MyClass', 'myPrepareFormData');
-
-// MyClass.php
-public function myPrepareFormData(&$arrSubmitted, $arrLabels, $objForm)
+class PrepareFormDataListener
 {
-    // this calculates a deadline from a given timestamp
-    // and stores it as deadline in $arrSubmitted
-    $arrSubmitted['deadline'] = strtotime('+1 hour', $arrSubmitted['tstamp']);
+    public function onPrepareFormData(array &$submittedData, array $labels, array $fields, \Contao\Form $form)
+    {
+        // This calculates a deadline from a given timestamp
+        // and stores it as deadline in $submittedData.
+        $submittedData['deadline'] = strtotime('+1 hour', $submittedData['tstamp']);
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\PrepareFormDataListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: prepareFormData, method: onPrepareFormData }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/forms/Form.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/forms/Form.php#L299-L306)
-
-
-### See also
-
-- [storeFormData](storeFormData.md) – triggered before a submitted form is stored in the database.
-- [processFormData](processFormData.md) – triggered after a form has been processed.
-- [getForm](getForm.md) – manipulate the generation of the forms.
-- [loadFormField](loadFormField.md) – triggered when a form field is loaded.
-- [validateFormField](validateFormField.md) – triggered when a form field is submitted.
+- [\Contao\Form#L306-L314](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L306-L314)

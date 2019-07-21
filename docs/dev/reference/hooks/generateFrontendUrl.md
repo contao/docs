@@ -8,6 +8,11 @@ The `generateFrontendUrl` hook is triggered when a front end URL is recreated.
 It passes the page object, the parameter string and the default URL as arguments 
 and expects a string as return value.
 
+{{% notice info %}}
+'Using the `generateFrontendUrl` hook has been deprecated and will no longer work in Contao 5.0.'
+{{% /notice %}}
+
+
 ## Example
 
 ```php

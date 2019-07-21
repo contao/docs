@@ -1,51 +1,58 @@
-# setNewPassword
+---
+title: "setNewPassword"
+description: "setNewPassword hook"
+tags: ["hook-member", "hook-module", "hook-backend"]
+---
+
 
 The `setNewPassword` hook is triggered after a new password has been set. It
 passes the user object and the encrypted password as arguments and does not
 expect a return value.
 
-> #### primary:: Available   
-> from Contao 2.2.3.
-
 
 ## Parameters
 
-1. *object* `$objUser`
+1. *object* `$member`
 
-    Current FrontendUser that changed her password.
+    Current front end user (either `\Contao\Database\Result` or `\Contao\MemberModel`) 
+    that changed their password.
 
-2. *string* `$strPassword`
+2. *string* `$password`
 
-    The new password (not encrypted!).
+    The new password (*not encrypted*).
+
+3. *\Contao\Module* `$module`
+
+    Calling front end module. Will be `null` in back end context.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/SetNewPasswordListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['setNewPassword'][] = array('MyClass', 'mySetNewPassword');
-
-// MyClass.php
-public function mySetNewPassword($objUser, $strPassword)
+class SetNewPasswordListener
 {
-    // Do something
+    public function onSetNewPassword(object $member, string $password, \Contao\Module $module = null): void
+    {
+        // Do something …
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\SetNewPasswordListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: setNewPassword, method: onSetNewPassword }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/modules/ModulePassword.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/modules/ModulePassword.php#L233-L240)
-- [system/modules/core/modules/ModuleChangePassword.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/modules/ModuleChangePassword.php#L179-L186)
-- [system/modules/core/dca/tl_member.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/dca/tl_member.php#L551-L561)
-
-
-### See also
-
-- [createNewUser](createNewUser.md) - triggered when a new front end user registers on the website.
-- [activateAccount](activateAccount.md) - triggered when a new front end account is activated.
+- [\tl_member#L537-L544](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/dca/tl_member.php#L537-L544)
+- [\Contao\ModuleChangePassword.php#L178-L186](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleChangePassword.php#L178-L1866)
+- [\Contao\ModulePassword#L266-L274](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModulePassword.php#L266-L274)

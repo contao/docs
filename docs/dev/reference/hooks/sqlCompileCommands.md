@@ -1,15 +1,17 @@
-# sqlCompileCommands
+---
+title: "sqlCompileCommands"
+description: "sqlCompileCommands hook"
+tags: ["hook-installer"]
+---
+
 
 The `sqlCompileCommands` hook is triggered when compiling the database update
 commands. It passes the array of changes and expects the same as return value.
 
-> #### primary:: Available   
-> from Contao 2.11.0-rc2.
-
 
 ## Parameters
 
-1. *array* `$arrSql`
+1. *array* `$sql`
 
     Array of changes that should be applied to the database.
 
@@ -22,31 +24,30 @@ Return the array of changes that should be applied to the database.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/SqlCompileCommandsListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['sqlCompileCommands'][] = array('MyClass', 'mySqlCompileCommands');
-
-// MyClass.php
-public function mySqlCompileCommands($arrSql)
+class SqlCompileCommandsListener
 {
-    // Modify the array of SQL statements
+    public function onSqlCompileCommands(array $sql): array
+    {
+        // Modify the array of SQL statements
 
-    return $arrSql;
+        return $sql;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\SqlCompileCommandsListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: sqlCompileCommands, method: onSqlCompileCommands }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/Database/Installer.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/Database/Installer.php#L242-L249)
-
-
-### See also
-
-- [sqlGetFromDB](sqlGetFromDB.md) – triggered when parsing the current database definition.
-- [sqlGetFromDca](sqlGetFromDca.md) – triggered when database definitions in DCA files are evaluated.
-- [sqlGetFromFile](sqlGetFromFile.md) – triggered when parsing database.sql files.
+- [\Contao\InstallationBundle\Database\Installer#L164-L169](https://github.com/contao/contao/blob/4.7.6/installation-bundle/src/Database/Installer.php#L164-L169)

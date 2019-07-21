@@ -1,11 +1,13 @@
-# removeOldFeeds
+---
+title: "removeOldFeeds"
+description: "removeOldFeeds hook"
+tags: ["hook-automator"]
+---
+
 
 The `removeOldFeeds` hook is triggered when old XML files are being removed from
 the Contao root directory. It does not pass an argument and expects an array of
 file names to preserve as return value.
-
-> #### primary:: Available   
-> from Contao 2.5.8.
 
 
 ## Return Values
@@ -18,27 +20,32 @@ nothing to keep.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/RemoveOldFeedsListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['removeOldFeeds'][] = array('MyClass', 'myRemoveOldFeeds');
-
-// MyClass.php
-public function myRemoveOldFeeds()
+class RemoveOldFeedsListener
 {
-    return array('custom.xml');
+    public function onRemoveOldFeeds(): array
+    {
+        // Return the names of your custom feeds which should not be removed
+        return ['custom'];
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\RemoveOldFeedsListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: removeOldFeeds, method: onRemoveOldFeeds }
+```
 
-## More information
+* [\Contao\Calendar#L555-L574](https://github.com/contao/contao/blob/4.7.6/calendar-bundle/src/Resources/contao/classes/Calendar.php#L555-L574)
+* [\Contao\News#L477-L496](https://github.com/contao/contao/blob/4.7.6/news-bundle/src/Resources/contao/classes/News.php#L477-L496)
 
 
-### References
+## References
 
-- [system/modules/core/library/Contao/Automator.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/Automator.php#L297-L304)
-
-
-### See also
-
-- [reviseTable](reviseTable.md) – triggered when Contao removes orphan records from a table.
+- [\Contao\Automator#L257-L265](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Automator.php#L257-L265)

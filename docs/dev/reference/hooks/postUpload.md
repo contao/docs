@@ -1,16 +1,23 @@
-# postUpload
+---
+title: "postUpload"
+description: "postUpload hook"
+tags: ["hook-backend"]
+---
+
 
 The `postUpload` hook is triggered after a user has uploaded one or more file in
 the back end. It passes an array of filenames as argument and does not expect
 a return value.
 
-> #### primary:: Available   
-> from Contao 2.6.4.
+
+{{% notice note %}}
+This hook can also be implemented as an anonymous function.
+{{% /notice %}}
 
 
 ## Parameters
 
-1. *array* `$arrFiles`
+1. *array* `$files`
 
     List of files that have been uploaded. The file paths are relative to the
     Contao root directory.
@@ -19,27 +26,28 @@ a return value.
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/PostUploadListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['postUpload'][] = array('MyClass', 'myPostUpload');
-
-// MyClass.php
-public function myPostUpload($arrFiles)
+class PostUploadListener
 {
-    // Do something
+    public function onPostUpload(array $files): void
+    {
+        // Do something …
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\PostUploadListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: postUpload, method: onPostUpload }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/drivers/DC_Folder.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/drivers/DC_Folder.php#L943-L957)
-
-
-### See also
-
-- [postDownload](postDownload.md) - triggered after a file has been downloaded with the download/downloads content element.
+- [\Contao\DC_Folder#L1140-L1155](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/drivers/DC_Folder.php#L1140-L1155)

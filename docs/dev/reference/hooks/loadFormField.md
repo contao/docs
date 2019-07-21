@@ -26,7 +26,7 @@ object as return value.
 
 4. *\Contao\Form* `$form`
 
-    The `\Contao\Form` instance.
+    The form instance.
 
 
 ## Return Values

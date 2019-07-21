@@ -1,4 +1,9 @@
-# reviseTable
+---
+title: "reviseTable"
+description: "reviseTable hook"
+tags: ["hook-dca", "hook-backend"]
+---
+
 
 The `reviseTable` hook is triggered when Contao removes orphan records from a
 table. It passes the name of the current table, the IDs of all new records, the
@@ -6,34 +11,61 @@ name of the parent table and the names of all child tables as arguments and
 does expect a boolean as return value (returning `true` will cause the current
 page to be reloaded).
 
-> #### primary:: Available   
-> from Contao 2.6.4.
+
+{{% notice note %}}
+This hook can also be implemented as an anonymous function.
+{{% /notice %}}
+
+
+## Parameters
+
+1. *string* $table
+
+    The current table name.
+
+2. *array* $newRecords
+
+    Array containing the ID of the new records.
+
+3. *string* $parentTable
+
+    Optional parent table of the current table.
+
+4. *array* $childTables
+
+    Optional array containing the names of the child tables.
+
+
+## Return values
+
+Return `true` if the current page should be reloaded. Otherwise return `false` or `null`.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ReviseTableListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['reviseTable'][] = array('MyClass', 'myReviseTable');
-
-// MyClass.php
-public function myReviseTable($table, $new_records, $parent_table, $child_tables)
+class ReviseTableListener
 {
-    // Do something
+    public function onReviseTable(string $table, array $newRecords, ?string $parentTable, ?array $childTables): ?bool
+    {
+        // Do something …
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\ReviseTableListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: reviseTable, method: onReviseTable }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/drivers/DC_Table.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/drivers/DC_Table.php#L3138-L3159)
-
-
-### See also
-
-- [removeOldFeeds](removeOldFeeds.md) – triggered when old XML files are being removed from the Contao root directory.
+- [\Contao\DC_Table#L3284-L3306](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/drivers/DC_Table.php#L3284-L3306)

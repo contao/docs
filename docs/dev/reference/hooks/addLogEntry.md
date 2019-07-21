@@ -8,6 +8,11 @@ The `addLogEntry` hook is triggered when a new log entry is added. It passes
 the message, the function and the action as arguments and does not expect 
 a return value.
 
+{{% notice info %}}
+Using the `addLogEntry` hook has been deprecated and will no longer work in Contao 5.0.
+{{% /notice %}}
+
+
 ## Example
 
 ```php

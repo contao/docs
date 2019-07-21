@@ -1,7 +1,7 @@
 ---
 title: "getArticle"
 description: "getArticle hook"
-tags: ["hook-controller"]
+tags: ["hook-controller", "hook-article"]
 ---
 
 The `getArticle` hook allows you to override the configuration of an article 

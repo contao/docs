@@ -1,18 +1,48 @@
-# replaceInsertTags
+---
+title: "replaceInsertTags"
+description: "replaceInsertTags hook"
+tags: ["hook-custom"]
+---
+
 
 The `replaceInsertTags` hook is triggered when an unknown insert tag is found.
 It passes the insert tag as argument and expects the replacement value or
 false as return value.
 
-> #### primary:: Available   
-> from Contao 2.6.0.
-
 
 ## Parameters
 
-1. *string* `$strTag`
+1. *string* `$insertTag`
 
-  The unknown insert tag.
+    The unknown insert tag.
+
+2. *bool* `$useCache`
+
+    Indicates if we are supposed to cache.
+
+3. *string* `$cachedValue`
+
+    The cached replacement for this insert tag (if there is any).
+
+4. *array* `$flags`
+
+    An array of flags used with this insert tag.
+
+5. *array* `$tags`
+
+    Contains the result of spliting the page's content in order to replace the insert tags.
+
+6. *array* `$cache`
+
+    The cached replacements of insert tags found on the page so far.
+
+7. *int* `$_rit`
+
+    Counter used while iterating over the parts in `$tags`.
+
+8. *int* `$_cnt`
+
+    Number of elements in `$tags`.
 
 
 ## Return Values
@@ -27,32 +57,47 @@ If your function is not responsible for this insert tag, you **must** return
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ReplaceInsertTagsListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('MyClass', 'myReplaceInsertTags');
-
-// MyClass.php
-public function myReplaceInsertTags($strTag)
+class ReplaceInsertTagsListener
 {
-    if ($strTag == 'mytag')
+    public function onReplaceInsertTags(
+        string $insertTag,
+        bool $useCache,
+        string $cachedValue,
+        array $flags,
+        array $tags,
+        array $cache,
+        int $_rit,
+        int $_cnt
+    ): mixed
     {
-        return 'mytag replacement';
-    }
+        if ('mytag' === $insertTag) {
+            return 'mytag replacement';
+        }
 
-    return false;
+        return false;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\ReplaceInsertTagsListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: replaceInsertTags, method: onReplaceInsertTags }
+```
 
-## More information
+* [\Contao\CalendarBundle\EventListener\InsertTagsListener#L33-L58](https://github.com/contao/contao/blob/4.7.6/calendar-bundle/src/EventListener/InsertTagsListener.php#L33-L58)
+* [\Contao\CoreBundle\EventListener\InsertTags\AssetListener#L29-L46](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/EventListener/InsertTags/AssetListener.php#L29-L46)
+* [\Contao\CoreBundle\EventListener\InsertTags\TranslationListener#L29-L45](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/EventListener/InsertTags/TranslationListener.php#L29-L45)
+* [\Contao\FaqBundle\EventListener\InsertTagsListener.php#L34-L67](https://github.com/contao/contao/blob/4.7.6/faq-bundle/src/EventListener/InsertTagsListener.php#L34-L67)
+* [\Contao\NewsBundle\EventListener\InsertTagsListener#L33-L58](https://github.com/contao/contao/blob/4.7.6/news-bundle/src/EventListener/InsertTagsListener.php#L33-L58)
 
 
-### References
+## References
 
-- [system/modules/core/library/Contao/InsertTags.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/InsertTags.php#L1128-L1142)
-
-
-### See also
-
-- [addCustomRegexp](addCustomRegexp.md) - triggered when an unknown regular expression is found.
+- [\Controller\InsertTags#L1016-L1035](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/InsertTags.php#L1016-L1035)

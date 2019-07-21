@@ -1,54 +1,62 @@
-# setCookie
+---
+title: "setCookie"
+description: "setCookie hook"
+tags: ["hook-system"]
+---
+
 
 The `setCookie` hook is triggered when sending a cookie to the browser. It passes
 a standard object with all cookie properties and expects the same as return value.
 
-> #### primary:: Available   
-> from Contao 2.11.3.
-
 
 ## Parameters
 
-1. *object* `$objCookie`
+1. *object* `$cookie`
 
     A stdClass instance that contains the properties of the cookie. See PHP's
     [setcookie](http://php.net/setcookie) documentation for detailed information.
-    - $objCookie->strName       *– the cookie name*
-    - $objCookie->varValue      *– the cookie value*
-    - $objCookie->intExpires    *– the expiration time (in seconds, from now)*
-    - $objCookie->strPath       *– the relative path (if Contao is installed in a subfolder)*
-    - $objCookie->strDomain     *– the current domain for the cookie*
-    - $objCookie->blnSecure     *– if the cookie should only be stored for https access*
-    - $objCookie->blnHttpOnly   *– if the httponly flag should be set*
+    - $cookie->strName       *– the cookie name*
+    - $cookie->varValue      *– the cookie value*
+    - $cookie->intExpires    *– the expiration time (in seconds, from now)*
+    - $cookie->strPath       *– the relative path (if Contao is installed in a subfolder)*
+    - $cookie->strDomain     *– the current domain for the cookie*
+    - $cookie->blnSecure     *– if the cookie should only be stored for https access*
+    - $cookie->blnHttpOnly   *– if the httponly flag should be set*
 
 
 ## Return Values
 
-Return `$objCookie` or a custom object with all properties.
+Return `$cookie` or a custom object with all properties.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/SetCookieListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['setCookie'][] = array('MyClass', 'mySetCookie');
-
-// MyClass.php
-public function mySetCookie($objCookie)
+class SetCookieListener
 {
-    // Make sure the cookie is also valid for the whole domain
-    $objCookie->strPath = '/';
+    public function onSetCookie(object $cookie): object
+    {
+        // Make sure the cookie is also valid for the whole domain
+        $cookie->strPath = '/';
 
-    return $objCookie;
+        return $cookie;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\SetCookieListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: setCookie, method: onSetCookie }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/library/Contao/System.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/library/Contao/System.php#L566-L572)
+- [\Contao\System#L664-L671](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L664-L671)

@@ -1,16 +1,18 @@
-# validateFormField
+---
+title: "validateFormField"
+description: "validateFormField hook"
+tags: ["hook-form"]
+---
+
 
 The `validateFormField` hook is triggered when a form field is submitted. It
 passes the widget object and the form ID as arguments and expects a widget
 object as return value.
 
-> #### primary:: Available   
-> from Contao 2.5.0.
-
 
 ## Parameters
 
-1. *Widget* `$objWidget`
+1. *\Contao\Widget* `$widget`
 
     Object of the current front end widget. Use it to access form field properties.
 
@@ -18,45 +20,54 @@ object as return value.
 
     ID of the `tl_form_field` record.
 
-3. *array* $arrForm
+3. *array* `$formData`
 
     Form configuration data from the `tl_form` table.
 
+4. *\Contao\Form* `$form`
+
+    The form instance.
+
+
 ## Return Value
 
-Return the `$objWidget` instance after modification or your custom widget.
+Return the `$widget` instance after modification or your custom widget.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/ValidateFormFieldListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['validateFormField'][] = array('MyClass', 'myValidateFormField');
-
-// MyClass.php
-public function myValidateFormField(Widget $objWidget, $intId, $arrForm)
+class ValidateFormFieldListener
 {
-    if ($objWidget instanceof FormPassword)
+    public function onValidateFormField(
+        \Contao\Widget $widget, string $formId, array $formData, \Contao\Form $form
+    ): \Contao\Widget
     {
-        // Do something
-    }
+        if ('myform' === $formId && $widget instanceof \Contao\FormText) {
+            // Do your custom validation and add an error if widget does not validate
+            if (!$this->validateWidget($widget)) {
+                $widget->addError('My custom widget error');
+            }
+        }
 
-    return $objWidget;
+        return $widget;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\ValidateFormFieldListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: validateFormField, method: onValidateFormField }
+```
 
-## More information
 
+## References
 
-### References
-
-- [system/modules/core/forms/Form.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/forms/Form.php#L201-L208)
-
-
-### See also
-
-- [loadFormField](loadFormField.md) - triggered when a form field is loaded.
-- [processFormData](processFormData.md) - triggered after a form has been submitted.
+- [\Contao\Form#L206-L214](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L206-L214)

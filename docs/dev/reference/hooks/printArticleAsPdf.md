@@ -1,44 +1,55 @@
-# printArticleAsPdf
+---
+title: "printArticleAsPdf"
+description: "printArticleAsPdf hook"
+tags: ["hook-module", "hook-article"]
+---
+
 
 The `printArticleAsPdf` hook is triggered when an article should be exported as
 PDF. It passes the article text and the article object as arguments and does not
 expect a return value. Use it to override the internal PDF functionality.
 
-> #### primary:: Available   
-> from Contao 2.8.0-RC1.
-
 
 ## Parameters
 
-1. *string* `$strArticle`
+1. *string* `$articleContent`
 
     The compiled article content.
 
-2. *Database_Result* `$objArticle`
+2. *\Contao\ModuleArticle* `$module`
 
-    Article database result from table `tl_article`.
+    Instance of the `\Contao\ModuleArticle` module responsible for producing the 
+    front end output of an article.
 
 
 ## Example
 
 ```php
-<?php
+// src/App/EventListener/PrintArticleAsPdfListener.php
+namespace App\EventListener;
 
-// config.php
-$GLOBALS['TL_HOOKS']['printArticleAsPdf'][] = array('MyClass', 'myPrintArticleAsPdf');
-
-// MyClass.php
-public function myPrintArticleAsPdf($strArticle, Database_Result $objArticle)
+class PrintArticleAsPdfListener
 {
-    // Trigger your own PDF engine and exit
-    exit;
+    public function onPrintArticleAsPdf(string $articleContent, \Contao\ModuleArticle $module)
+    {
+        // Trigger your own PDF engine and exit
+        exit;
+    }
 }
 ```
 
+```yml
+# config/services.yml
+services:
+  App\EventListener\PrintArticleAsPdfListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: printArticleAsPdf, method: onPrintArticleAsPdf }
+```
 
-## More information
+* [\Contao\TcpdfBundle\EventListener\PrintArticleAsPdfListener#L31-L125](https://github.com/contao/tcpdf-bundle/blob/1.1/src/EventListener/PrintArticleAsPdfListener.php#L31-L125)
 
 
-### References
+## References
 
-- [system/modules/core/modules/ModuleArticle.php](https://github.com/contao/core/blob/3.5.0/system/modules/core/modules/ModuleArticle.php#L301-L308)
+- [\Contao\ModuleArticle#L296-L304](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleArticle.php#L296-L304)

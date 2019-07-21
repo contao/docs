@@ -1,7 +1,7 @@
 ---
 title: "compileArticle"
 description: "compileArticle hook"
-tags: ["hook-module", "hook-template"]
+tags: ["hook-module", "hook-template", "hook-article"]
 ---
 
 The `compileArticle` hook is triggered after the article module has been compiled. 
