@@ -13,7 +13,7 @@ In Contao, each database table has a corresponding model class:
 | tl_news    | NewsModel    |
 | tl_page    | PageModel    |
 
-## Models
+## Fetching a row
 
 Each class extending `Model` has some *static* methods you can use:
 
@@ -32,6 +32,8 @@ $page = PageModel::findOneBy('adminEmail', 'admin@example.com');
 // count the records where language is "de"
 $total = PageModel::countBy('language', 'de');
 ```
+
+If no row in the table matches your query, the return value is `null`.
 
 Also, `Model` implements the `__callStatic()` method from PHP. This way you can attach the field name of the table to the method name and omit the first parameter.
 
@@ -63,17 +65,17 @@ $page->save();
 ```
 
 ## Configuration options
-You can a third (or if you use the static binded methods with the field name, second) parameter to the Model method.
+You can add a third (or if you use the static binded methods with the field name, second) parameter to the Model method.
 This is an array containing configuration which then will be added to the SQL query in the background.
 
 The following options are available:
 
-| Option | What does it do?                       | SQL Equivalent | Example value         |
-|--------|----------------------------------------|----------------|-----------------------|
-| limit  | Limit the total records                | LIMIT          | 3                     |
-| offset | skip the first n records of the result | OFFSET         | 10                    |
-| order  | Order the models by a certain field    | ORDER BY       | 'id DESC'             |
-| return | Do you want a model or collection?     | -              | 'Model', 'Collection' |
+| Option | What does it do?                                   | SQL Equivalent | Example value         |
+|--------|----------------------------------------------------|----------------|-----------------------|
+| limit  | Limit the total records                            | LIMIT          | 3                     |
+| offset | skip the first n records of the result             | OFFSET         | 10                    |
+| order  | Order the models by a certain field                | ORDER BY       | 'id DESC'             |
+| return | Define the return value as `Model` or `Collection` | -              | 'Model', 'Collection' |
 
 ```php
 $options = [
@@ -88,10 +90,17 @@ $pages = PageModel::findBy('pid', 1, $options);
 $pages = PageModel::findByPid(1, $options);
 ```
 
+## Special cases
+
+By default, `findOneBy()` always returns a `Model` object, `findBy()` always returns a `Collection` object.
+
+A few exceptions are `findByPk()`, `findById()` and `findByIdOrAlias()`. These methods always return a Model.
+
+For more information, please have a look into the respective Model classes on [GitHub](https://github.com/contao/contao/tree/master/core-bundle/src/Resources/contao/models).
+
+
 ## Creating your own Model
 For documentation on creating your own model, [click here](customization).
 
-
 ## Collections
-
 If you want to fetch multiple records from the database, have a look into [Collections](collections).

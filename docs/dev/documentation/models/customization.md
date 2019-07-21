@@ -3,7 +3,7 @@ title: "Custom Models"
 description: "Create your own Models"
 ---
 
-Your own model class is ready after the following three steps:
+Your own model class is ready to use after the following three steps:
 ## 1. Create a DCA
 
 ```php
@@ -24,6 +24,11 @@ namespace App\Model;
 
 use Contao\Model;
 
+/**
+ * add properties for IDE support
+ * 
+ * @property string $hash
+ */
 class ExampleModel extends Model
 {
     protected static $strTable = 'tl_example';
