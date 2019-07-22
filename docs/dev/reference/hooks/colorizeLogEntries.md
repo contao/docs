@@ -10,6 +10,19 @@ a return value.
 
 The operation mode will either be `close_deactivate` or `close_delete`.
 
+
+## Parameters
+
+1. *string* `$row`
+
+    The data of the log entry record.
+
+2. *string* `$label`
+
+    The label as created by Contao. If not modified by this hook, this
+    is what will be displayed.
+
+
 ## Example
 
 ```php

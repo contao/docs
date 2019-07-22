@@ -13,6 +13,32 @@ Using the `addLogEntry` hook has been deprecated and will no longer work in Cont
 {{% /notice %}}
 
 
+## Parameters
+
+1. *string* `$message`
+
+    The log message.
+
+2. *string* `$func`
+
+    The PHP source method. Be aware that this is not necessarily a real function,
+    the function accepts any string!
+
+3. *string* `$action`
+
+    The log action. Usually one of the following constants, but can be any string.
+
+    - `TL_ERROR`
+    - `TL_ACCESS`
+    - `TL_GENERAL`
+    - `TL_FILES`
+    - `TL_CRON`
+    - `TL_FORMS`
+    - `TL_CONFIGURATION`
+    - `TL_NEWSLETTER`
+    - `TL_REPOSITORY`
+
+
 ## Example
 
 ```php

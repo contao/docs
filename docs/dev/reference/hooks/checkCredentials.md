@@ -10,6 +10,22 @@ arguments and expects a boolean as return value which indicates whether the
 credentials are correct or not. If the return value is `false`, other hooks of
 the same type will still be executed.
 
+
+## Parameters
+
+1. *string* `$username`
+
+    The username submitted from the login form.
+
+2. *string* `$credentials`
+
+    The password submitted from the login form.
+
+3. *\Contao\User* `$user`
+
+    User object model from database record with the given username.
+
+
 ## Example
 
 ```php

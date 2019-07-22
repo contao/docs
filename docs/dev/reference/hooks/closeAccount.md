@@ -10,6 +10,23 @@ a return value.
 
 The operation mode will either be `close_deactivate` or `close_delete`.
 
+
+## Parameters
+
+1. *int* `$userId`
+
+    ID of the user which closed his account.
+
+2. *string* `$mode`
+
+    The "close account" mode. Either `close_deactivate` or `close_delete`.
+
+3. *\Contao\Module* `$module`
+
+    The front end module object. This allows you to retrieve all data from the
+    current `tl_module` result set.
+
+
 ## Example
 
 ```php

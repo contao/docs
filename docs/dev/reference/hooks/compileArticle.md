@@ -9,6 +9,22 @@ It passes the template object, the module configuration, and the module object a
 arguments and does not expect a return value. It can be used e.g. to add additional 
 data to the template.
 
+
+## Parameters
+
+1. *\Contao\FrontendTemplate* `$template`
+
+    The current front end template instance for the article module
+
+2. *array* `$data`
+
+    An associative array with the module configuration
+
+3. *\Contao\Module* `$module`
+
+    The current module instance
+
+
 ## Example
 
 ```php

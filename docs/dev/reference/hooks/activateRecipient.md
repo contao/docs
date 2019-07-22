@@ -8,6 +8,22 @@ The `activateRecipient` hook is triggered when a new newsletter recipient is add
 It passes the e-mail address, the recipient IDs and the channel IDs as arguments 
 and does not expect a return value.
 
+
+## Parameters
+
+1. *string* `$email`
+
+    The newsletter recipient's email address.
+
+2. *array* `$recipientIds`
+
+    Array of recipient IDs for which this email address was used.
+
+3. *array* `$channelIds`
+
+    Array of newsletter channel IDs for which this email address is subscribed to.
+
+
 ## Example
 
 ```php

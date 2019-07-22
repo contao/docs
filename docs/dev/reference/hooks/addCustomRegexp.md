@@ -11,6 +11,23 @@ the result of the hook will be final and no other hooks of the same type will
 be executed. If you return `false`, other hooks will continue to process the
 regular expression.
 
+
+## Parameters
+
+1. *string* `$regexp`
+
+    The unknown regular expression string.
+
+2. *mixed* `$input`
+
+    The input value to be validated.
+
+3. *\Contao\Widget* `$widget`
+
+    Form widget which is handling this input value.
+    Use the widget's properties to retrieve information about the field configuration.
+
+
 ## Example
 
 ```php
