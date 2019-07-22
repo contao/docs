@@ -44,7 +44,7 @@ make clean
 Cleans the build directory.
 
 
-## Licence
+## License
 
 The Contao documentation is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 License](https://creativecommons.org/licenses/by-nc-sa/4.0/) license (CC BY-NC-SA 4.0). If you want to redistribute a modified or unmodified version of the documentation, you can do so under the license terms.
