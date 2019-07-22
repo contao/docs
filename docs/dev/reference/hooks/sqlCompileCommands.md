@@ -50,4 +50,4 @@ services:
 
 ## References
 
-- [\Contao\InstallationBundle\Database\Installer#L164-L169](https://github.com/contao/contao/blob/4.7.6/installation-bundle/src/Database/Installer.php#L164-L169)
+* [\Contao\InstallationBundle\Database\Installer#L164-L169](https://github.com/contao/contao/blob/4.7.6/installation-bundle/src/Database/Installer.php#L164-L169)

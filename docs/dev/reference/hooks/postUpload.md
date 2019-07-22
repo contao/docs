@@ -50,4 +50,4 @@ services:
 
 ## References
 
-- [\Contao\DC_Folder#L1140-L1155](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/drivers/DC_Folder.php#L1140-L1155)
+* [\Contao\DC_Folder#L1140-L1155](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/drivers/DC_Folder.php#L1140-L1155)

@@ -9,6 +9,18 @@ The `generateBreadcrumb` hook is used to manipulate the breadcrumb navigation
 and the front end module object as arguments and expects an array (the breadcrumb
 items) as return value.
 
+
+## Parameters
+
+1. *array* `$items`
+
+    The breadcrumb navigation items.
+
+2. *object* `$module`
+
+    The front end module instance executing the hook.
+
+
 ## Example
 
 ```php
@@ -34,6 +46,7 @@ services:
     tags:
       - { name: contao.hook, hook: generateBreadcrumb, method: onGenerateBreadcrumb }
 ```
+
 
 ## References
 

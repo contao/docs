@@ -10,6 +10,30 @@ The hook passes the current page IDs as an array, the search keywords, the query
 type (`and` or `or`), whether the search is "fuzzy" and the module object as
 arguments. The hook does not expect a return value.
 
+
+## Parameters
+
+1. *array* `$pageIds`
+
+    The current page IDs to be searched though.
+
+2. *string* `$keywords`
+
+    The search keywords.
+
+3. *string* `$queryType`
+
+    The query type: either `and` or `or`.
+
+4. *bool* `$fuzzy`
+
+    Whether the search should be "fuzzy".
+
+5. *\Contao\Module* `$module`
+
+    The front end module instance executing this hook.
+
+
 ## Example
 
 ```php
@@ -33,6 +57,7 @@ services:
     tags:
       - { name: contao.hook, hook: customizeSearch, method: onCustomizeSearch }
 ```
+
 
 ## References
 

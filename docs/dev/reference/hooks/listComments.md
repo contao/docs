@@ -54,4 +54,4 @@ services:
 
 ## References
 
-- [\tl_comments.php#L558-L573](https://github.com/contao/contao/blob/4.7.6/comments-bundle/src/Resources/contao/dca/tl_comments.php#L558-L573)
+* [\tl_comments.php#L558-L573](https://github.com/contao/contao/blob/4.7.6/comments-bundle/src/Resources/contao/dca/tl_comments.php#L558-L573)

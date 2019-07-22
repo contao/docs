@@ -36,4 +36,4 @@ services:
 
 ## References
 
-- [\Contao\CoreBundle\Framework\ContaoFramework#L373-L377](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Framework/ContaoFramework.php#L373-L377)
+* [\Contao\CoreBundle\Framework\ContaoFramework#L373-L377](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Framework/ContaoFramework.php#L373-L377)

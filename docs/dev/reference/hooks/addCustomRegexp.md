@@ -58,6 +58,7 @@ services:
       - { name: contao.hook, hook: addCustomRegexp, method: onAddCustomRegexp }
 ```
 
+
 ## References
 
 * [\Contao\Widget#L1078-L1094](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Widget.php#L1078-L1094)

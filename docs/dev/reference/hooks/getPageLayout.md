@@ -52,4 +52,4 @@ services:
 
 ## References
 
-- [\Contao\PageRegular#L244-L252](https://github.com/contao/contao/blob/master/core-bundle/src/Resources/contao/pages/PageRegular.php#L244-L252)
+* [\Contao\PageRegular#L244-L252](https://github.com/contao/contao/blob/master/core-bundle/src/Resources/contao/pages/PageRegular.php#L244-L252)

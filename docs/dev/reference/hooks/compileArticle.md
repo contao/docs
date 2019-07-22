@@ -49,6 +49,7 @@ services:
       - { name: contao.hook, hook: compileArticle, method: onCompileArticle }
 ```
 
+
 ## References
 
 * [\Contao\ModuleArticle#L258-L266](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleArticle.php#L258-L266)

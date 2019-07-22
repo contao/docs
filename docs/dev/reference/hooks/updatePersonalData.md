@@ -55,4 +55,4 @@ services:
 
 ## References
 
-- [\Contao\ModulePersonalData#L333-L341](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModulePersonalData.php#L333-L341)
+* [\Contao\ModulePersonalData#L333-L341](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModulePersonalData.php#L333-L341)

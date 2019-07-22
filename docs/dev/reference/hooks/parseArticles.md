@@ -53,4 +53,4 @@ services:
 
 ## References
 
-- [\Contao\ModuleNews#L217-L225](https://github.com/contao/contao/blob/4.7.6/news-bundle/src/Resources/contao/modules/ModuleNews.php#L217-L225)
+* [\Contao\ModuleNews#L217-L225](https://github.com/contao/contao/blob/4.7.6/news-bundle/src/Resources/contao/modules/ModuleNews.php#L217-L225)

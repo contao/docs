@@ -57,4 +57,4 @@ services:
 
 ## References
 
-- [\Contao\BackendTemplate#L35-L43](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/BackendTemplate.php#L35-L43)
+* [\Contao\BackendTemplate#L35-L43](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/BackendTemplate.php#L35-L43)

@@ -9,6 +9,19 @@ extracted from a Data Container array. It passes the attributes and the DCA obje
 as arguments and expects the (modified) widget attributes as return value.
 Note that the DCA object can be optional (`null`).
 
+
+## Parameters
+
+1. *array* `$attributes`
+
+    An array of attributes.
+
+2. *\Contao\DataContainer* `$dc`
+
+    The DataContainer object. It can be `null` if no object was passed 
+    to the `\Contao\Widget::getAttributesFromDca` method.
+
+
 ## Example
 
 ```php
@@ -34,6 +47,7 @@ services:
     tags:
       - { name: contao.hook, hook: getAttributesFromDca, method: onGetAttributesFromDca }
 ```
+
 
 ## References
 

@@ -8,6 +8,26 @@ The `createDefinition` hook is triggered when a format definition of a style
 sheet is imported. It passes the key and value, the original format definition 
 and the data array as arguments and expects an array or `null` as return value.
 
+
+## Parameters
+
+1. *string* `$key`
+
+    CSS property of the definition.
+
+2. *string* `$value`
+
+    CSS value of the definition.
+
+3. *string* `$definition`
+
+    Complete CSS definition string.
+
+4. *array* `$dataSet`
+
+    The current data set to be added to the database.
+
+
 ## Example
 
 ```php
@@ -16,7 +36,7 @@ namespace App\EventListener;
 
 class CreateDefinitionListener
 {
-    public function onCreateDefinition(string $Key, string $value, $string $definition, array &$dataSet): ?array
+    public function onCreateDefinition(string $key, string $value, string $definition, array &$dataSet): ?array
     {
         if ('border-radius' === $key) {
             return ['border-radius' => $value];
@@ -35,6 +55,7 @@ services:
     tags:
       - { name: contao.hook, hook: createDefinition, method: onCreateDefinition }
 ```
+
 
 ## References
 

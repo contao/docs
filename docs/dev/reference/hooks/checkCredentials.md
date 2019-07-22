@@ -57,6 +57,7 @@ services:
       - { name: contao.hook, hook: checkCredentials, method: onCheckCredentials }
 ```
 
+
 ## References
 
 * [\Contao\CoreBundle\Security\Authentication\Provider\AuthenticationProvider#L111-L133](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/Authentication/Provider/AuthenticationProvider.php#L111-L133)

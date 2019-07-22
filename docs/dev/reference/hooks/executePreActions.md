@@ -8,6 +8,14 @@ The `executePreActions` hook is triggered on Ajax requests that do not require
 a DCA object. It passes the name of the action as argument and does not expect 
 a return value.
 
+
+## Parameters
+
+1. *string* `$action`
+
+    The name of the action.
+
+
 ## Example
 
 ```php
@@ -33,6 +41,7 @@ services:
     tags:
       - { name: contao.hook, hook: executePreActions, method: onExecutePreActions }
 ```
+
 
 ## References
 

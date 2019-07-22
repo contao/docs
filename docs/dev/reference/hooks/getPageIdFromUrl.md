@@ -59,5 +59,5 @@ services:
 
 ## References
 
-- [\Contao\Frontend.php#L243-L250](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Frontend.php#L243-L250)
-- [\Contao\CoreBundle\Routing\Matcher\LegacyMatcher#L150-L165](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Routing/Matcher/LegacyMatcher.php#L150-L165)
+* [\Contao\Frontend.php#L243-L250](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Frontend.php#L243-L250)
+* [\Contao\CoreBundle\Routing\Matcher\LegacyMatcher#L150-L165](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Routing/Matcher/LegacyMatcher.php#L150-L165)

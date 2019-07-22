@@ -68,4 +68,4 @@ services:
 
 ## References
 
-- [\Contao\DC_Table#L3284-L3306](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/drivers/DC_Table.php#L3284-L3306)
+* [\Contao\DC_Table#L3284-L3306](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/drivers/DC_Table.php#L3284-L3306)

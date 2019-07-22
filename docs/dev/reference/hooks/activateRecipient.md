@@ -48,6 +48,7 @@ services:
       - { name: contao.hook, hook: activateRecipient, method: onActivateRecipient }
 ```
 
+
 ## References
 
 * [\Contao\ModuleSubscribe#L229-L237](https://github.com/contao/contao/blob/4.7.6/newsletter-bundle/src/Resources/contao/modules/ModuleSubscribe.php#L229-L237)

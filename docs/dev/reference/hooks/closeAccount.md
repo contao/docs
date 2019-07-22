@@ -53,6 +53,7 @@ services:
 
 * [\Contao\Newsletter#L578-L602](https://github.com/contao/contao/blob/4.7.6/newsletter-bundle/src/Resources/contao/classes/Newsletter.php#L578-L602)
 
+
 ## References
 
 * [\Contao\ModuleCloseAccount#L93-L101](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleCloseAccount.php#L93-L101)

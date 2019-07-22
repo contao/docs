@@ -70,4 +70,4 @@ services:
 
 ## References
 
-- [\Contao\User#L655-L688](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/User.php#L655-L688)
+* [\Contao\User#L655-L688](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/User.php#L655-L688)

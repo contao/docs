@@ -9,6 +9,12 @@ add a custom routine. It passes the path, the width and height, the mode, the
 cache name and the file object as arguments and expects a path as return value.
 
 
+{{% notice info %}}
+Using the `executeResize` and `getImage` hooks has been deprecated and will no 
+longer work in Contao 5.0. Replace the `contao.image.resizer` service instead.
+{{% /notice %}}
+
+
 ## Parameters
 
 1. *string* `$originalPath`

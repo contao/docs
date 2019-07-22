@@ -8,6 +8,23 @@ The `compileFormFields` hook is triggered when the fields of a form are compiled
 It passes the form fields, the ID of the form and the form object as arguments
 and expects the modified form fields as return value.
 
+
+## Parameters
+
+1. *array* `$fields`
+
+	  An array of `\Contao\FormFieldModel` instances.
+
+2. *string* `$formId`
+
+	  Alias of the current form. Used in the `value` attribute of the hidden form
+    field `FORM_SUBMIT`. Don't confuse with `$objForm->id`.
+
+3. *\Contao\Form* `$form`
+
+	  The form (an instance of `\Contao\Form`).
+
+
 ## Example
 
 ```php
@@ -33,6 +50,7 @@ services:
     tags:
       - { name: contao.hook, hook: compileFormFields, method: onCompileFormFields }
 ```
+
 
 ## References
 

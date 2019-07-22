@@ -48,4 +48,4 @@ services:
 
 ## References
 
-- [\Contao\ModuleUnsubscribe#L260-L268](https://github.com/contao/contao/blob/4.7.6/newsletter-bundle/src/Resources/contao/modules/ModuleUnsubscribe#L260-L268)
+* [\Contao\ModuleUnsubscribe#L260-L268](https://github.com/contao/contao/blob/4.7.6/newsletter-bundle/src/Resources/contao/modules/ModuleUnsubscribe#L260-L268)

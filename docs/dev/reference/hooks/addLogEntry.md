@@ -63,6 +63,7 @@ services:
       - { name: contao.hook, hook: addLogEntry, method: onAddLogEntry }
 ```
 
+
 ## References
 
 * [\Contao\CoreBundle\Monolog\ContaoTableHandler#L158-L160](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Monolog/ContaoTableHandler.php#L158-L160)

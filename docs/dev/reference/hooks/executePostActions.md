@@ -8,6 +8,18 @@ The `executePostActions` hook is triggered on Ajax requests that require a DCA
 object. It passes the name of the action and the data container object as arguments 
 and does not expect a return value.
 
+
+## Parameters
+
+1. *string* `$action`
+
+    The name of the action.
+
+2. *\Contao\DataContainer* `$dc`
+
+    Data container object of the current DCA instance.
+
+
 ## Example
 
 ```php
@@ -33,6 +45,7 @@ services:
     tags:
       - { name: contao.hook, hook: executePostActions, method: onExecutePostActions }
 ```
+
 
 ## References
 

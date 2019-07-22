@@ -52,4 +52,4 @@ services:
 
 ## References
 
-- [\Contao\ModuleArticle#L296-L304](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleArticle.php#L296-L304)
+* [\Contao\ModuleArticle#L296-L304](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleArticle.php#L296-L304)

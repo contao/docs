@@ -10,6 +10,18 @@ as arguments. It expects a `string` as return value or `null`. If a string is
 returned, no further hooks of the same type are executed and that content will
 be shown in the front end.
 
+
+## Parameters
+
+1. *int* `$pageId`
+
+    The articles' parent page ID.
+
+2. *string* `$column`
+
+    The column for which the articles are rendered.
+
+
 ## Example
 
 ```php
@@ -38,6 +50,7 @@ services:
     tags:
       - { name: contao.hook, hook: getArticles, method: onGetArticles }
 ```
+
 
 ## References
 

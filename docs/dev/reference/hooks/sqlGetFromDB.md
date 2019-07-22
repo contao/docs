@@ -51,4 +51,4 @@ services:
 
 ## References
 
-- [\Contao\Database\Installer#L457-L465](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Database/Installer.php#L457-L465)
+* [\Contao\Database\Installer#L457-L465](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Database/Installer.php#L457-L465)

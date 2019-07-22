@@ -60,4 +60,4 @@ services:
 
 ## References
 
-- [\Contao\BackendUser#L538-L546](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/BackendUser.php#L538-L546)
+* [\Contao\BackendUser#L538-L546](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/BackendUser.php#L538-L546)

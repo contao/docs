@@ -61,4 +61,4 @@ services:
 
 ## References
 
-- [\Contao\Form#L499-L507](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L499-L507)
+* [\Contao\Form#L499-L507](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L499-L507)

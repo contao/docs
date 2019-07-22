@@ -46,4 +46,4 @@ services:
 
 ## References
 
-- [\Contao\DcaLoader#L98-L106](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/DcaLoader.php#L98-L106)
+* [\Contao\DcaLoader#L98-L106](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/DcaLoader.php#L98-L106)

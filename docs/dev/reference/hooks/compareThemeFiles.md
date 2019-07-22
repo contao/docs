@@ -4,7 +4,20 @@ description: "compareThemeFiles hook"
 tags: ["hook-theme"]
 ---
 
+
 TODO
+
+
+## Parameters
+
+1. *\DOMDocument* `$xml`
+
+    TODO
+
+2. *\Contao\ZipReader* `$zip`
+
+    TODO
+
 
 ## Example
 
@@ -31,6 +44,7 @@ services:
     tags:
       - { name: contao.hook, hook: compareThemeFiles, method: onCompareThemeFiles }
 ```
+
 
 ## References
 

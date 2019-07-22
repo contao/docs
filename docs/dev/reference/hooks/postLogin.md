@@ -50,4 +50,4 @@ services:
 
 ## References
 
-- [\Contao\CoreBundle\Security\Authentication\AuthenticationSuccessHandler#L112-L128p](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/Authentication/AuthenticationSuccessHandler.php#L112-L128)
+* [\Contao\CoreBundle\Security\Authentication\AuthenticationSuccessHandler#L112-L128p](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/Authentication/AuthenticationSuccessHandler.php#L112-L128)

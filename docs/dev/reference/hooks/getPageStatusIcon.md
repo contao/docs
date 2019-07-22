@@ -58,4 +58,4 @@ services:
 
 ## Reference
 
-- [\Contao\Controller#L614-L621](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Controller.php#L614-L621)
+* [\Contao\Controller#L614-L621](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Controller.php#L614-L621)

@@ -100,4 +100,4 @@ services:
 
 ## References
 
-- [\Contao\InsertTags#L1112-L1132](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/InsertTags.php#L1112-L1132)
+* [\Contao\InsertTags#L1112-L1132](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/InsertTags.php#L1112-L1132)

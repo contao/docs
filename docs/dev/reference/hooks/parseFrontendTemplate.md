@@ -58,4 +58,4 @@ services:
 
 ## References
 
-- [\Contao\FrontendTemplate#L47-L55](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/FrontendTemplate.php#L47-L55)
+* [\Contao\FrontendTemplate#L47-L55](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/FrontendTemplate.php#L47-L55)

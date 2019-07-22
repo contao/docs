@@ -53,4 +53,4 @@ services:
 
 ## References
 
-- [\Contao\System#L438-L445](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L438-L445)
+* [\Contao\System#L438-L445](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L438-L445)

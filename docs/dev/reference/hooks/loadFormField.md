@@ -18,7 +18,8 @@ object as return value.
 
 2. *string* `$formId`
 
-    Alias of the current form.
+    Alias of the current form. Used in the `value` attribute of the hidden form
+    field `FORM_SUBMIT`. Don't confuse with `$objForm->id`.
 
 3. *array* `$formData`
 
@@ -66,4 +67,4 @@ services:
 
 ## References
 
-- [\Contao\Form#L191-L199](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L191-L199)
+* [\Contao\Form#L191-L199](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L191-L199)

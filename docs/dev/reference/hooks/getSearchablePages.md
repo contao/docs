@@ -71,5 +71,5 @@ services:
 
 ## References
 
-- [\Contao\RebuildIndex#L95-L103](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/RebuildIndex.php#L95-L103)
-- [\Contao\Automator#L363-L371](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Automator.php#L363-L371)
+* [\Contao\RebuildIndex#L95-L103](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/RebuildIndex.php#L95-L103)
+* [\Contao\Automator#L363-L371](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Automator.php#L363-L371)

@@ -10,6 +10,26 @@ additional files or executing additional database queries). It passes the XML ob
 the ZIP archive object, the theme's and the databse mapping data as arguments and 
 expects no return value.
 
+
+## Parameters
+
+1. *\DOMDocument* `$xml`
+
+    The XML object containing the theme's data.
+
+2. *\Contao\ZipReader* `$zipArchive`
+
+    The ZIP archive object containing the theme's files.
+
+3. *int* `$themeId`
+
+    The ID of the theme.
+
+4. *array* `$mapper`
+
+    Database mapping data.
+
+
 ## Example
 
 ```php
@@ -33,6 +53,7 @@ services:
     tags:
       - { name: contao.hook, hook: extractThemeFiles, method: onExtractThemeFiles }
 ```
+
 
 ## References
 

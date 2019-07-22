@@ -9,6 +9,22 @@ back end. The hook enables you to add additional data to the XML as well as the
 ZIP archive. It passes the XML object, the ZIP archive object and the theme's 
 id as arguments and expects no return value.
 
+
+## Parameters
+
+1. *\DOMDocument* `$xml`
+
+    The XML object containing the theme's data.
+
+2. *\Contao\ZipWriter* `$zipArchive`
+
+    The ZIP archive object containing the theme's files.
+
+3. *int* `$themeId`
+
+    The ID of the theme.
+
+
 ## Example
 
 ```php
@@ -32,6 +48,7 @@ services:
     tags:
       - { name: contao.hook, hook: exportTheme, method: onExportTheme }
 ```
+
 
 ## References
 

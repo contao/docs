@@ -53,6 +53,6 @@ services:
 
 ## References
 
-- [\tl_member#L537-L544](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/dca/tl_member.php#L537-L544)
-- [\Contao\ModuleChangePassword.php#L178-L186](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleChangePassword.php#L178-L1866)
-- [\Contao\ModulePassword#L266-L274](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModulePassword.php#L266-L274)
+* [\tl_member#L537-L544](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/dca/tl_member.php#L537-L544)
+* [\Contao\ModuleChangePassword.php#L178-L186](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleChangePassword.php#L178-L1866)
+* [\Contao\ModulePassword#L266-L274](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModulePassword.php#L266-L274)

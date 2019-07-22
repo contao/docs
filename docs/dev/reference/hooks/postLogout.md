@@ -49,4 +49,4 @@ services:
 
 ## References
 
-- [\Contao\CoreBundle\Security\Logout\LogoutHandler#L64-L82](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/Logout/LogoutHandler.php#L64-L82)
+* [\Contao\CoreBundle\Security\Logout\LogoutHandler#L64-L82](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/Logout/LogoutHandler.php#L64-L82)

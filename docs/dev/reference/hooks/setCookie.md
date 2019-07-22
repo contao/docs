@@ -59,4 +59,4 @@ services:
 
 ## References
 
-- [\Contao\System#L664-L671](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L664-L671)
+* [\Contao\System#L664-L671](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L664-L671)

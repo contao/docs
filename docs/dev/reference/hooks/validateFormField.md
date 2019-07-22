@@ -70,4 +70,4 @@ services:
 
 ## References
 
-- [\Contao\Form#L206-L214](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L206-L214)
+* [\Contao\Form#L206-L214](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L206-L214)

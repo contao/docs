@@ -8,6 +8,27 @@ It passes the file content, a unique key for the temporary file, the mode (e.g.
 `'.js'` or `'.css'`) and an array containing information about the file and expects 
 the content as return value.
 
+
+## Parameters
+
+1. *string* `$content`
+
+    Content of the file which will be added to the combiner.
+
+2. *string* `$key`
+
+    A unique key that represents the current combiner. A file with this name will
+    be stored in `system/scripts/`.
+
+3. *string* `$mode`
+
+    The combiner mode (constant), either `Combiner::CSS` or `Combiner::JS`.
+
+4. *array* `$file`
+
+    Detailed information about the file to be combined.
+
+
 ## Example
 
 ```php
@@ -33,6 +54,7 @@ services:
     tags:
       - { name: contao.hook, hook: getCombinedFile, method: onGetCombinedFile }
 ```
+
 
 ## References
 

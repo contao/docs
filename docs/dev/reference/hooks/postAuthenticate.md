@@ -47,4 +47,4 @@ services:
 
 ## References
 
-- [\Contao\CoreBundle\Security\User\ContaoUserProvider#L140-L154](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/User/ContaoUserProvider#L140-L154)
+* [\Contao\CoreBundle\Security\User\ContaoUserProvider#L140-L154](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Security/User/ContaoUserProvider#L140-L154)

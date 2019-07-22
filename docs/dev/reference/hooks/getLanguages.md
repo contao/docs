@@ -58,5 +58,5 @@ services:
 
 ## References
 
-- [\Contao\System#L574-L581](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L574-L581)
-- [languages.php](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/config/languages.php)
+* [\Contao\System#L574-L581](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L574-L581)
+* [languages.php](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/config/languages.php)

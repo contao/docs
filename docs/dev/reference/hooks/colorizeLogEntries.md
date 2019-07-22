@@ -52,6 +52,7 @@ services:
       - { name: contao.hook, hook: colorizeLogEntries, method: onColorizeLogEntries }
 ```
 
+
 ## References
 
 * [\tl_log#L93-L101](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/dca/tl_log.php#L168-L177)

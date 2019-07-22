@@ -46,6 +46,7 @@ services:
 
 * [\Contao\Newsletter#L643-L671](https://github.com/contao/contao/blob/4.7.6/newsletter-bundle/src/Resources/contao/classes/Newsletter.php#L643-L671)
 
+
 ## References
 
 * [\Contao\ModuleRegistration#L553-L561](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/modules/ModuleRegistration.php#L553-L561)

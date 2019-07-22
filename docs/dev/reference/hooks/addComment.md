@@ -47,6 +47,7 @@ services:
       - { name: contao.hook, hook: addComment, method: onAddComment }
 ```
 
+
 ## References
 
 * [\Contao\Comments#L371-L379](https://github.com/contao/contao/blob/4.7.6/comments-bundle/src/Resources/contao/classes/Comments.php#L371-L379)

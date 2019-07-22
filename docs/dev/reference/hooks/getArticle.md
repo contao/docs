@@ -7,6 +7,14 @@ tags: ["hook-controller", "hook-article"]
 The `getArticle` hook allows you to override the configuration of an article 
 prior to rendering. It does not expect a return value.
 
+
+## Parameters
+
+1. *\Contao\ArticleModel* `$article`
+
+    The database result from table `tl_article`.
+
+
 ## Example
 
 ```php
@@ -30,6 +38,7 @@ services:
     tags:
       - { name: contao.hook, hook: getArticle, method: onGetArticle }
 ```
+
 
 ## References
 

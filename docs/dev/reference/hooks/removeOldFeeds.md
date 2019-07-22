@@ -48,4 +48,4 @@ services:
 
 ## References
 
-- [\Contao\Automator#L257-L265](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Automator.php#L257-L265)
+* [\Contao\Automator#L257-L265](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Automator.php#L257-L265)

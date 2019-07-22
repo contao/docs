@@ -50,5 +50,5 @@ services:
 
 ## References
 
-- [\Contao\System#L521-L528](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L521-L528)
-- [countries.php](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/config/countries.php)
+* [\Contao\System#L521-L528](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/System.php#L521-L528)
+* [countries.php](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/config/countries.php)

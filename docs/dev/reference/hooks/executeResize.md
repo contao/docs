@@ -9,6 +9,19 @@ passes the image object as an argument and expects either `null` or a the path
 to the resized image as the return value. If the return value is `null`, other 
 hooks of the same type will still be executed.
 
+{{% notice info %}}
+Using the `executeResize` and `getImage` hooks has been deprecated and will no 
+longer work in Contao 5.0. Replace the `contao.image.resizer` service instead.
+{{% /notice %}}
+
+
+## Parameters
+
+1. *\Contao\Image* `$image`
+
+    The legacy image object instance.
+
+
 ## Example
 
 ```php
@@ -38,6 +51,7 @@ services:
     tags:
       - { name: contao.hook, hook: executeResize, method: onExecuteResize }
 ```
+
 
 ## References
 

@@ -60,4 +60,4 @@ services:
 
 ## References
 
-- [\Contao\Form#L306-L314](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L306-L314)
+* [\Contao\Form#L306-L314](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/forms/Form.php#L306-L314)
