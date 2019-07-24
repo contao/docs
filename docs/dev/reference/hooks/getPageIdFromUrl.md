@@ -15,7 +15,6 @@ Using the `getPageIdFromUrl` hook has been deprecated and will no longer work in
 {{% /notice %}}
 
 
-
 ## Parameters
 
 1. *array* `$fragments`
