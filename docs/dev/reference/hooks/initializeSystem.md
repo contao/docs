@@ -15,22 +15,18 @@ process is finished and before the request processing is started.
 // src/App/EventListener/InitializeSystemListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class InitializeSystemListener
 {
+    /**
+     * @Hook("initializeSystem")
+     */
     public function onInitializeSystem(): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\InitializeSystemListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: initializeSystem, method: onInitializeSystem }
 ```
 
 

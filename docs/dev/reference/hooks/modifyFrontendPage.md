@@ -39,8 +39,13 @@ Return the original `$buffer` or override with your custom modification.
 // src/App/EventListener/ModifyFrontendPageListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ModifyFrontendPageListener
 {
+    /**
+     * @Hook("modifyFrontendPage")
+     */
     public function onModifyFrontendPage(string $buffer, string $templateName): string
     {
         if ('fe_page' === $templateName) {
@@ -50,15 +55,6 @@ class ModifyFrontendPageListener
         return $buffer;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ModifyFrontendPageListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: modifyFrontendPage, method: onModifyFrontendPage }
 ```
 
 

@@ -32,22 +32,18 @@ return value.
 // src/App/EventListener/LoadLanguageFileListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class LoadLanguageFileListener
 {
+    /**
+     * @Hook("loadLanguageFile")
+     */
     public function onLoadLanguageFile(string $name, string $currentLanguage, string $cacheKey): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\LoadLanguageFileListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: loadLanguageFile, method: onLoadLanguageFile }
 ```
 
 

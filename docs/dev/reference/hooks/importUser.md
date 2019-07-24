@@ -42,8 +42,13 @@ you added the user to the respective table, or `false` if not.
 // src/App/EventListener/ImportUserListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ImportUserListener
 {
+    /**
+     * @Hook("importUser")
+     */
     public function onImportUser(string $username, string $password, string $table): bool
     {
         if ('tl_member' === $table) {
@@ -56,15 +61,6 @@ class ImportUserListener
         return false;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ImportUserListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: importUser, method: onImportUser }
 ```
 
 

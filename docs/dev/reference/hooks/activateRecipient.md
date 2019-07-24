@@ -30,22 +30,18 @@ and does not expect a return value.
 // src/App/EventListener/ActivateRecipientListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ActivateRecipientListener
 {
+    /**
+     * @Hook("activateRecipient")
+     */
     public function onActivateRecipient(string $email, array $recipientIds, array $channelIds): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ActivateRecipientListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: activateRecipient, method: onActivateRecipient }
 ```
 
 

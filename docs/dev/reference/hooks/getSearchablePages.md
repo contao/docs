@@ -43,8 +43,13 @@ sitemap or only for the search index.
 // src/App/EventListener/GetSearchablePagesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetSearchablePagesListener
 {
+    /**
+     * @Hook("getSearchablePages")
+     */
     public function onGetSearchablePages(array $pages, int $root = null, bool $isSitemap = false, string $language = null): array
     {
         // Modify the $pages array …
@@ -52,15 +57,6 @@ class GetSearchablePagesListener
         return $pages;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetSearchablePagesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getSearchablePages, method: onGetSearchablePages }
 ```
 
 * [\Contao\Calendar#L287-L380](https://github.com/contao/contao/blob/4.7.6/calendar-bundle/src/Resources/contao/classes/Calendar.php#L287-L380)

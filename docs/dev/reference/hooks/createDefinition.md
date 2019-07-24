@@ -40,8 +40,13 @@ as value or null to keep the default behaviour.
 // src/App/EventListener/CreateDefinitionListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CreateDefinitionListener
 {
+    /**
+     * @Hook("createDefinition")
+     */
     public function onCreateDefinition(string $key, string $value, string $definition, array &$dataSet): ?array
     {
         if ('border-radius' === $key) {
@@ -51,15 +56,6 @@ class CreateDefinitionListener
         return null;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CreateDefinitionListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: createDefinition, method: onCreateDefinition }
 ```
 
 

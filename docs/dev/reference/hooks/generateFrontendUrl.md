@@ -39,8 +39,13 @@ A string containing the new (or previous) URL.
 // src/App/EventListener/GenerateFrontendUrlListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GenerateFrontendUrlListener
 {
+    /**
+     * @Hook("generateFrontendUrl")
+     */
     public function onGenerateFrontendUrl(array $page, string $params, string $url): string
     {
         // Create or modify $url …
@@ -48,15 +53,6 @@ class GenerateFrontendUrlListener
         return $url;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GenerateFrontendUrlListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: generateFrontendUrl, method: onGenerateFrontendUrl }
 ```
 
 

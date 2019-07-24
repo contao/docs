@@ -31,22 +31,18 @@ does not expect a return value.
 // src/App/EventListener/CreateNewUserListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CreateNewUserListener
 {
+    /**
+     * @Hook("createNewUser")
+     */
     public function onCreateNewUser(int $userId, array $userData, \Contao\Module $module): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CreateNewUserListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: createNewUser, method: onCreateNewUser }
 ```
 
 * [\Contao\Newsletter#L604-L641](https://github.com/contao/contao/blob/4.7.6/newsletter-bundle/src/Resources/contao/classes/Newsletter.php#L604-L641)

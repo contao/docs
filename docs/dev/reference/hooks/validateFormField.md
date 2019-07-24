@@ -40,8 +40,13 @@ Return the `$widget` instance after modification or your custom widget.
 // src/App/EventListener/ValidateFormFieldListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ValidateFormFieldListener
 {
+    /**
+     * @Hook("validateFormField")
+     */
     public function onValidateFormField(
         \Contao\Widget $widget, string $formId, array $formData, \Contao\Form $form
     ): \Contao\Widget
@@ -56,15 +61,6 @@ class ValidateFormFieldListener
         return $widget;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ValidateFormFieldListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: validateFormField, method: onValidateFormField }
 ```
 
 

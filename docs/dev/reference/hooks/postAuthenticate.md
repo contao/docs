@@ -27,22 +27,18 @@ Using the `postAuthenticate` hook has been deprecated and will no longer work in
 // src/App/EventListener/PostAuthenticateListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class PostAuthenticateListener
 {
+    /**
+     * @Hook("postAuthenticate")
+     */
     public function onPostAuthenticate(\Contao\User $user): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\PostAuthenticateListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: postAuthenticate, method: onPostAuthenticate }
 ```
 
 ## References

@@ -37,22 +37,18 @@ The `getLanguages` hook allows to modify the system's list of languages.
 // src/App/EventListener/GetLanguagesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetLanguagesListener
 {
+    /**
+     * @Hook("getLanguages")
+     */
     public function onGetLanguages(array &$compiledLanguages, array $languages, array $langsNative, bool $installedOnly): void
     {
         // Make your changes to $compiledLanguages
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetLanguagesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getLanguages, method: onGetLanguages }
 ```
 
 

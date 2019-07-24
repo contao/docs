@@ -64,8 +64,13 @@ Otherwise return the boolean `false`.
 // src/App/EventListener/GetImageListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetImageListener
 {
+    /**
+     * @Hook("getImage")
+     */
     public function onGetImage(
         string $originalPath, 
         int $width, 
@@ -85,15 +90,6 @@ class GetImageListener
         return null;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetImageListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getImage, method: onGetImage }
 ```
 
 

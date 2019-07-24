@@ -64,8 +64,13 @@ how to handle the `date` insert tag and the `utf8_strtoupper` flag. The unknown
 // src/App/EventListener/InsertTagFlagsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class InsertTagFlagsListener
 {
+    /**
+     * @Hook("insertTagFlags")
+     */
     public function onInsertTagFlags(
         string $flag, 
         string $tag, 
@@ -86,15 +91,6 @@ class InsertTagFlagsListener
         return false;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\InsertTagFlagsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: insertTagFlags, method: onInsertTagFlags }
 ```
 
 

@@ -29,22 +29,18 @@ This hook can also be implemented as an anonymous function.
 // src/App/EventListener/PostUploadListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class PostUploadListener
 {
+    /**
+     * @Hook("postUpload")
+     */
     public function onPostUpload(array $files): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\PostUploadListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: postUpload, method: onPostUpload }
 ```
 
 

@@ -33,8 +33,13 @@ modification.
 // src/App/EventListener/ParseFrontendTemplateListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ParseFrontendTemplateListener
 {
+    /**
+     * @Hook("parseFrontendTemplate")
+     */
     public function onParseFrontendTemplate(string $buffer, string $template): string
     {
         if ('ce_text' === $template) {
@@ -44,15 +49,6 @@ class ParseFrontendTemplateListener
         return $buffer;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ParseFrontendTemplateListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: parseFrontendTemplate, method: onParseFrontendTemplate }
 ```
 
 

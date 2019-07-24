@@ -27,8 +27,13 @@ Return `$sql` after adding your custom definitions.
 // src/App/EventListener/SqlGetFromFileListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class SqlGetFromFileListener
 {
+    /**
+     * @Hook("sqlGetFromFile")
+     */
     public function onSqlGetFromFile(array $sql): array
     {
         // Modify the array of SQL statements
@@ -36,15 +41,6 @@ class SqlGetFromFileListener
         return $sql;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\SqlGetFromFileListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: sqlGetFromFile, method: onSqlGetFromFile }
 ```
 
 

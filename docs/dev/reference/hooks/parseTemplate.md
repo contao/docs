@@ -22,8 +22,13 @@ template object and does not expect a return value.
 // src/App/EventListener/ParseTemplateListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ParseTemplateListener
 {
+    /**
+     * @Hook("parseTemplate")
+     */
     public function onParseTemplate($template): void
     {
         if ('fe_page' === $template->getName() {
@@ -31,15 +36,6 @@ class ParseTemplateListener
         }
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ParseTemplateListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: parseTemplate, method: onParseTemplate }
 ```
 
 

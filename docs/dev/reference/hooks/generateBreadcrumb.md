@@ -41,8 +41,13 @@ for the breadcrumb item:
 // src/App/EventListener/GenerateBreadcrumbListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GenerateBreadcrumbListener
 {
+    /**
+     * @Hook("generateBreadcrumb")
+     */
     public function onGenerateBreadcrumb(array $items, \Contao\Module $module): array
     {
         // Modify $items …
@@ -50,15 +55,6 @@ class GenerateBreadcrumbListener
         return $items;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GenerateBreadcrumbListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: generateBreadcrumb, method: onGenerateBreadcrumb }
 ```
 
 

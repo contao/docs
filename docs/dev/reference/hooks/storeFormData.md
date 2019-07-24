@@ -33,8 +33,13 @@ database.
 // src/App/EventListener/StoreFormDataListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class StoreFormDataListener
 {
+    /**
+     * @Hook("storeFormData")
+     */
     public function onStoreFormData(array $data, \Contao\Form $form): array
     {
         $data['member'] = 0;
@@ -47,15 +52,6 @@ class StoreFormDataListener
         return $data;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\StoreFormDataListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: storeFormData, method: onStoreFormData }
 ```
 
 

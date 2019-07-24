@@ -31,23 +31,19 @@ and does not expect a return value.
 // src/App/EventListener/ParseArticlesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ParseArticlesListener
 {
+    /**
+     * @Hook("parseArticles")
+     */
     public function onParseArticles(\Contao\FrontendTemplate $template, array $newsEntry, \Contao\Module $module): void
     {
         // Remove the default "by …" from Contao
         $template->author = $newsEntry['author'];
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ParseArticlesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: parseArticles, method: onParseArticles }
 ```
 
 

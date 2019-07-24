@@ -21,22 +21,18 @@ for searching the root page.
 // src/App/EventListener/GetRootPageFromUrlListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetRootPageFromUrlListener
 {
+    /**
+     * @Hook("getRootPageFromUrl")
+     */
     public function onGetRootPageFromUrl(): ?\Contao\PageModel
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetRootPageFromUrlListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getRootPageFromUrl, method: onGetRootPageFromUrl }
 ```
 
 

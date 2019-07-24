@@ -27,22 +27,18 @@ a return value.
 // src/App/EventListener/RemoveRecipientListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class RemoveRecipientListener
 {
+    /**
+     * @Hook("removeRecipient")
+     */
     public function onRemoveRecipient(string $email, array $channels): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\RemoveRecipientListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: removeRecipient, method: onRemoveRecipient }
 ```
 
 

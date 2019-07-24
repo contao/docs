@@ -34,8 +34,13 @@ is prohibited or your function is not responsible for this comment.
 // src/App/EventListener/IsAllowedToEditCommentListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class IsAllowedToEditCommentListener
 {
+    /**
+     * @Hook("isAllowedToEditComment")
+     */
     public function onIsAllowedToEditComment(int $parentId, string $parentTable): bool
     {
         // Check the access to your custom module
@@ -46,15 +51,6 @@ class IsAllowedToEditCommentListener
         return false;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\IsAllowedToEditCommentListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: isAllowedToEditComment, method: onIsAllowedToEditComment }
 ```
 
 ## References

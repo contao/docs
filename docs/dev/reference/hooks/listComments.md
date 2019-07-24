@@ -29,8 +29,13 @@ responsible for the source table.
 // src/App/EventListener/ListCommentsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ListCommentsListener
 {
+    /**
+     * @Hook("listComments")
+     */
     public function onListComments(array $comment): string
     {
         if ('tl_mytable' === $comment['source']) {
@@ -40,15 +45,6 @@ class ListCommentsListener
         return '';
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ListCommentsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: listComments, method: onListComments }
 ```
 
 

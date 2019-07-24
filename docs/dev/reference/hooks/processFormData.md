@@ -39,8 +39,13 @@ arguments and does not expect a return value.
 // src/App/EventListener/ProcessFormDataListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ProcessFormDataListener
 {
+    /**
+     * @Hook("processFormData")
+     */
     public function onProcessFormData(
         array $submittedData, 
         array $formData, 
@@ -52,15 +57,6 @@ class ProcessFormDataListener
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ProcessFormDataListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: processFormData, method: onProcessFormData }
 ```
 
 

@@ -31,8 +31,13 @@ Add your custom modules to the list and return the array of back end modules.
 // src/App/EventListener/GetUserNavigationListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetUserNavigationListener
 {
+    /**
+     * @Hook("getUserNavigation")
+     */
     public function onGetUserNavigation(array $modules, bool $showAll): array
     {
         // Add custom navigation item to the Contao website
@@ -46,15 +51,6 @@ class GetUserNavigationListener
         return $modules;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetUserNavigationListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getUserNavigation, method: onGetUserNavigation }
 ```
 
 

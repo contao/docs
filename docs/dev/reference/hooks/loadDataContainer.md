@@ -25,22 +25,18 @@ the file name as argument and does not expect a return value.
 // src/App/EventListener/LoadDataContainerListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class LoadDataContainerListener
 {
+    /**
+     * @Hook("loadDataContainer")
+     */
     public function onLoadDataContainer(string $table): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\LoadDataContainerListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: loadDataContainer, method: onLoadDataContainer }
 ```
 
 

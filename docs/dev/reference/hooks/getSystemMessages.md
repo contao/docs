@@ -20,8 +20,13 @@ HTML markup) or an empty string.
 // src/App/EventListener/GetSystemMessagesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetSystemMessagesListener
 {
+    /**
+     * @Hook("getSystemMessages")
+     */
     public function onGetSystemMessages(): string
     {
         // Display a warning if the system admin's email is not set
@@ -32,15 +37,6 @@ class GetSystemMessagesListener
         return '';
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetSystemMessagesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getSystemMessages, method: onGetSystemMessages }
 ```
 
 * [\Contao\Messages.php#L35-L62](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Messages.php#L35-L62)

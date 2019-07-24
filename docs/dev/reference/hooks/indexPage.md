@@ -31,22 +31,18 @@ and does not expect a return value.
 // src/App/EventListener/IndexPageListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class IndexPageListener
 {
+    /**
+     * @Hook("indexPage")
+     */
     public function onIndexPage(string $content, array $pageData, array &$indexData): void
     {
         // Modify $indexData which will eventually be stored in tl_search
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\IndexPageListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: indexPage, method: onIndexPage }
 ```
 
 

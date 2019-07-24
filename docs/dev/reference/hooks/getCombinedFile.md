@@ -40,8 +40,13 @@ The contents of the combined file as a string.
 // src/App/EventListener/GetCombinedFileListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetCombinedFileListener
 {
+    /**
+     * @Hook("getCombinedFile")
+     */
     public function onGetCombinedFile(string $content, string $key, string $mode, array $file): string
     {
         // Modify $content here …
@@ -49,15 +54,6 @@ class GetCombinedFileListener
         return $content;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetCombinedFileListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getCombinedFile, method: onGetCombinedFile }
 ```
 
 

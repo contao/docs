@@ -29,22 +29,18 @@ the record and the data array as arguments and does not expect a return value.
 // src/App/EventListener/AddCommentListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class AddCommentListener
 {
+    /**
+     * @Hook("addComment")
+     */
     public function onAddComment(int $commentId, array $commentData, \Contao\Comments $comments): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\AddCommentListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: addComment, method: onAddComment }
 ```
 
 

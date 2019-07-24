@@ -26,8 +26,13 @@ The `getCountries` hook allows to modify the system's list of countries.
 // src/App/EventListener/GetCountriesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetCountriesListener
 {
+    /**
+     * @Hook("getCountries")
+     */
     public function onGetCountries(array &$translatedCountries, array $allCountries): void
     {
         // Codes for the european countries
@@ -37,15 +42,6 @@ class GetCountriesListener
         $translatedCountries = array_intersect_key($translatedCountries, array_flip($europeanCountryCodes));
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetCountriesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getCountries, method: onGetCountries }
 ```
 
 ## References

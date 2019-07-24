@@ -26,8 +26,13 @@ Using the `postLogout` hook has been deprecated and will no longer work in Conta
 // src/App/EventListener/PostLogoutListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class PostLogoutListener
 {
+    /**
+     * @Hook("postLogout")
+     */
     public function onPostLogout(\Contao\User $user): void
     {
         if ($user instanceof \Contao\FrontendUser) {
@@ -35,15 +40,6 @@ class PostLogoutListener
         }
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\PostLogoutListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: postLogout, method: onPostLogout }
 ```
 
 

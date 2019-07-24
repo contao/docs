@@ -41,8 +41,13 @@ Return `true` if the credentials are valid, `false` otherwise.
 // src/App/EventListener/CheckCredentialsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CheckCredentialsListener
 {
+    /**
+     * @Hook("checkCredentials")
+     */
     public function onCheckCredentials(string $username, string $credentials, \Contao\User $user): bool
     {
         // Custom method of checking credentials (e.g. external service)
@@ -55,15 +60,6 @@ class CheckCredentialsListener
         return false;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CheckCredentialsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: checkCredentials, method: onCheckCredentials }
 ```
 
 

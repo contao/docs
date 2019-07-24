@@ -31,22 +31,18 @@ data to the template.
 // src/App/EventListener/CompileArticleListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CompileArticleListener
 {
+    /**
+     * @Hook("compileArticle")
+     */
     public function onCompileArticle(\Contao\FrontendTemplate $template, array $data, \Contao\Module $module): void
     {
         $template->customContent = '<p>This will be available in mod_article.html5 via $this->customContent</p>';
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CompileArticleListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: compileArticle, method: onCompileArticle }
 ```
 
 

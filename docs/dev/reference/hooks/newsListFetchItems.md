@@ -45,8 +45,13 @@ otherwise. Return `null` if no news entries are found.
 // src/App/EventListener/NewsListFetchItemsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class NewsListFetchItemsListener
 {
+    /**
+     * @Hook("newsListFetchItems")
+     */
     public function onNewsListFetchItems(array $newsArchives, bool $featuredOnly, int $limit, int $offset, \Contao\Module $module): mixed
     {
         if (…) {
@@ -57,15 +62,6 @@ class NewsListFetchItemsListener
         return false;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\NewsListFetchItemsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: newsListFetchItems, method: onNewsListFetchItems }
 ```
 
 

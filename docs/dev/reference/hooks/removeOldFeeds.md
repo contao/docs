@@ -23,23 +23,19 @@ nothing to keep.
 // src/App/EventListener/RemoveOldFeedsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class RemoveOldFeedsListener
 {
+    /**
+     * @Hook("removeOldFeeds")
+     */
     public function onRemoveOldFeeds(): array
     {
         // Return the names of your custom feeds which should not be removed
         return ['custom'];
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\RemoveOldFeedsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: removeOldFeeds, method: onRemoveOldFeeds }
 ```
 
 * [\Contao\Calendar#L555-L574](https://github.com/contao/contao/blob/4.7.6/calendar-bundle/src/Resources/contao/classes/Calendar.php#L555-L574)

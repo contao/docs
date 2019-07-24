@@ -30,22 +30,18 @@ and does not expect a return value.
 // src/App/EventListener/GeneratePageListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GeneratePageListener
 {
+    /**
+     * @Hook("generatePage")
+     */
     public function onGeneratePage(\Contao\PageModel $pageModel, \Contao\LayoutModel $layout, \Contao\PageRegular $pageRegular): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GeneratePageListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: generatePage, method: onGeneratePage }
 ```
 
 * [\Contao\CalendarBundle\EventListener\GeneratePageListener#L36-L69](https://github.com/contao/contao/blob/4.7.6/calendar-bundle/src/EventListener/GeneratePageListener.php#L36-L69)

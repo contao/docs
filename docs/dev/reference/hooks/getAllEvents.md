@@ -46,8 +46,13 @@ An array containing all the events, grouped by a time stamp.
 // src/App/EventListener/GetAllEventsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetAllEventsListener
 {
+    /**
+     * @Hook("getAllEvents")
+     */
     public function onGetAllEvents(array $events, array $calendars, int $timeStart, int $timeEnd, \Contao\Module $module): array
     {
         // Add events to $events or modify the array …
@@ -55,15 +60,6 @@ class GetAllEventsListener
         return $events;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetAllEventsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getAllEvents, method: onGetAllEvents }
 ```
 
 

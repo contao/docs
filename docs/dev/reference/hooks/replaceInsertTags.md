@@ -60,8 +60,13 @@ If your function is not responsible for this insert tag, you **must** return
 // src/App/EventListener/ReplaceInsertTagsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ReplaceInsertTagsListener
 {
+    /**
+     * @Hook("replaceInsertTags")
+     */
     public function onReplaceInsertTags(
         string $insertTag,
         bool $useCache,
@@ -80,15 +85,6 @@ class ReplaceInsertTagsListener
         return false;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ReplaceInsertTagsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: replaceInsertTags, method: onReplaceInsertTags }
 ```
 
 * [\Contao\CalendarBundle\EventListener\InsertTagsListener#L33-L58](https://github.com/contao/contao/blob/4.7.6/calendar-bundle/src/EventListener/InsertTagsListener.php#L33-L58)

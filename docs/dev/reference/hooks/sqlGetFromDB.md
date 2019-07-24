@@ -28,8 +28,13 @@ Return `$sql` after adding your custom definitions.
 // src/App/EventListener/SqlGetFromDBListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class SqlGetFromDBListener
 {
+    /**
+     * @Hook("sqlGetFromDB")
+     */
     public function onSqlGetFromDB(array $sql): array
     {
         // Modify the array of SQL statements
@@ -37,15 +42,6 @@ class SqlGetFromDBListener
         return $sql;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\SqlGetFromDBListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: sqlGetFromDB, method: onSqlGetFromDB }
 ```
 
 

@@ -27,8 +27,13 @@ Return `$sql` after adding your custom definitions.
 // src/App/EventListener/SqlGetFromDcaListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class SqlGetFromDcaListener
 {
+    /**
+     * @Hook("sqlGetFromDca")
+     */
     public function onSqlGetFromDca(array $sql): array
     {
         // Modify the array of SQL statements
@@ -36,15 +41,6 @@ class SqlGetFromDcaListener
         return $sql;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\SqlGetFromDcaListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: sqlGetFromDca, method: onSqlGetFromDca }
 ```
 
 

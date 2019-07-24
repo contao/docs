@@ -35,8 +35,13 @@ The (modified) content of the content element as a string.
 // src/App/EventListener/GetContentElementListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetContentElementListener
 {
+    /**
+     * @Hook("getContentElement")
+     */
     public function onGetContentElement(\Contao\ContentModel $contentModel, string $buffer, \Contao\ContentElement $contentElement): string
     {
         // Modify or create new $buffer here …
@@ -44,15 +49,6 @@ class GetContentElementListener
         return $buffer;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetContentElementListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getContentElement, method: onGetContentElement }
 ```
 
 

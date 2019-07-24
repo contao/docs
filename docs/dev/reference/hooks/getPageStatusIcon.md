@@ -33,8 +33,13 @@ the unchanged second parameter.
 // src/App/EventListener/GetPageStatusIconListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetPageStatusIconListener
 {
+    /**
+     * @Hook("getPageStatusIcon")
+     */
     public function onGetPageStatusIcon(object $page, string $image): string
     {
         if ('my_page' === $page->type) {
@@ -44,15 +49,6 @@ class GetPageStatusIconListener
         return $image;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetPageStatusIconListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getPageStatusIcon, method: onGetPageStatusIcon }
 ```
 
 

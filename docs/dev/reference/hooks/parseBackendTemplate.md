@@ -32,8 +32,13 @@ Return the original `$buffer` or override with your custom modification.
 // src/App/EventListener/ParseBackendTemplateListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ParseBackendTemplateListener
 {
+    /**
+     * @Hook("parseBackendTemplate")
+     */
     public function onParseBackendTemplate(string $buffer, string $template): string
     {
         if ('be_main' === $template) {
@@ -43,15 +48,6 @@ class ParseBackendTemplateListener
         return $buffer;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ParseBackendTemplateListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: parseBackendTemplate, method: onParseBackendTemplate }
 ```
 
 

@@ -40,22 +40,18 @@ arguments. The hook does not expect a return value.
 // src/App/EventListener/CustomizeSearchListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CustomizeSearchListener
 {
+    /**
+     * @Hook("customizeSearch")
+     */
     public function onCustomizeSearch(array &$pageIds, string $keywords, string $queryType, bool $fuzzy, \Contao\Module $module): void
     {
         // Change the $pageIds array here or do some other adjustments …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CustomizeSearchListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: customizeSearch, method: onCustomizeSearch }
 ```
 
 

@@ -39,8 +39,13 @@ A string containing the (modified) bufffer content.
 // src/App/EventListener/ReplaceDynamicScriptTagsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ReplaceDynamicScriptTagsListener
 {
+    /**
+     * @Hook("replaceDynamicScriptTags")
+     */
     public function onReplaceDynamicScriptTags(string $buffer): string
     {
         // Modify $buffer here …
@@ -48,15 +53,6 @@ class ReplaceDynamicScriptTagsListener
         return $buffer;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ReplaceDynamicScriptTagsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: replaceDynamicScriptTags, method: onReplaceDynamicScriptTags }
 ```
 
 

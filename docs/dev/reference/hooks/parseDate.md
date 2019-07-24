@@ -35,8 +35,13 @@ A string containing the formatted date.
 // src/App/EventListener/ParseDateListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ParseDateListener
 {
+    /**
+     * @Hook("parseDate")
+     */
     public function onParseDate(string $formattedDate, string $format, ?int $timestamp): string
     {
         // Modify or create your own formatted date …
@@ -44,15 +49,6 @@ class ParseDateListener
         return $formattedDate;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ParseDateListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: parseDate, method: onParseDate }
 ```
 
 

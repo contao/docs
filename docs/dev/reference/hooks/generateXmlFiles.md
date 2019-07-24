@@ -14,22 +14,18 @@ It has no parameters and does not expect a return value.
 // src/App/EventListener/GenerateXmlFilesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GenerateXmlFilesListener
 {
+    /**
+     * @Hook("generateXmlFiles")
+     */
     public function onGenerateXmlFiles(): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GenerateXmlFilesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: generateXmlFiles, method: onGenerateXmlFiles }
 ```
 
 * [\Contao\Calendar.php#L58-L77](https://github.com/contao/contao/blob/4.7.6/calendar-bundle/src/Resources/contao/classes/Calendar.php#L58-L77)

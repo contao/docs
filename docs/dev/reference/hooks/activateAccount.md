@@ -26,22 +26,18 @@ the calling front end module as arguments and does not expect a return value.
 // src/App/EventListener/ActivateAccountListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ActivateAccountListener
 {
+    /**
+     * @Hook("activateAccount")
+     */
     public function onActivateAccount(\Contao\MemberModel $member, \Contao\Module $module): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ActivateAccountListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: activateAccount, method: onActivateAccount }
 ```
 
 * [\Contao\Newsletter#L643-L671](https://github.com/contao/contao/blob/4.7.6/newsletter-bundle/src/Resources/contao/classes/Newsletter.php#L643-L671)

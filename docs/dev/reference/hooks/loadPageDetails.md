@@ -28,8 +28,13 @@ to the `\Contao\PageModel` instance.
 // src/App/EventListener/LoadPageDetailsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class LoadPageDetailsListener
 {
+    /**
+     * @Hook("loadPageDetails")
+     */
     public function onLoadPageDetails(array $parentModels, \Contao\PageModel $page): void
     {
         // Add some additional date from the root page to the processed page
@@ -39,15 +44,6 @@ class LoadPageDetailsListener
         }
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\LoadPageDetailsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: loadPageDetails, method: onLoadPageDetails }
 ```
 
 

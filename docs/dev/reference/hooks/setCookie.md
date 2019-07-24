@@ -35,8 +35,13 @@ Return `$cookie` or a custom object with all properties.
 // src/App/EventListener/SetCookieListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class SetCookieListener
 {
+    /**
+     * @Hook("setCookie")
+     */
     public function onSetCookie(object $cookie): object
     {
         // Make sure the cookie is also valid for the whole domain
@@ -45,15 +50,6 @@ class SetCookieListener
         return $cookie;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\SetCookieListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: setCookie, method: onSetCookie }
 ```
 
 

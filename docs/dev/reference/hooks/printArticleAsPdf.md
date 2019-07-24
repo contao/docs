@@ -28,23 +28,19 @@ expect a return value. Use it to override the internal PDF functionality.
 // src/App/EventListener/PrintArticleAsPdfListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class PrintArticleAsPdfListener
 {
+    /**
+     * @Hook("printArticleAsPdf")
+     */
     public function onPrintArticleAsPdf(string $articleContent, \Contao\ModuleArticle $module)
     {
         // Trigger your own PDF engine and exit
         exit;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\PrintArticleAsPdfListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: printArticleAsPdf, method: onPrintArticleAsPdf }
 ```
 
 * [\Contao\TcpdfBundle\EventListener\PrintArticleAsPdfListener#L31-L125](https://github.com/contao/tcpdf-bundle/blob/1.1/src/EventListener/PrintArticleAsPdfListener.php#L31-L125)

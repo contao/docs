@@ -31,8 +31,13 @@ The (modified) output buffer for the widget.
 // src/App/EventListener/ParseWidgetListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ParseWidgetListener
 {
+    /**
+     * @Hook("parseWidget")
+     */
     public function onParseWidget(string $buffer, \Contao\Widget $widget): string
     {
         // Do something …
@@ -40,15 +45,6 @@ class ParseWidgetListener
         return $buffer;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ParseWidgetListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: parseWidget, method: onParseWidget }
 ```
 
 

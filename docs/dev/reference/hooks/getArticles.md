@@ -33,8 +33,13 @@ Return a `string` with the article's new content or `null` to keep the default.
 // src/App/EventListener/GetArticlesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetArticlesListener
 {
+    /**
+     * @Hook("getArticles")
+     */
     public function onGetArticles(int $pageId, string $column): ?string
     {
         if (10 === (int) $pageId && 'main' === $column) {
@@ -45,15 +50,6 @@ class GetArticlesListener
         return null;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetArticlesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getArticles, method: onGetArticles }
 ```
 
 

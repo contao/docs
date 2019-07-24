@@ -32,8 +32,13 @@ Return the original `$buffer` or return your custom modification.
 // src/App/EventListener/OutputBackendTemplateListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class OutputBackendTemplateListener
 {
+    /**
+     * @Hook("outputBackendTemplate")
+     */
     public function onOutputBackendTemplate(string $buffer, string $template): string
     {
         if ($template === 'be_main') {
@@ -42,15 +47,6 @@ class OutputBackendTemplateListener
 
         return $buffer;
     }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\OutputBackendTemplateListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: outputBackendTemplate, method: onOutputBackendTemplate }
 ```
 
 

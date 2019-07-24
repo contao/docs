@@ -31,22 +31,18 @@ id as arguments and expects no return value.
 // src/App/EventListener/ExportThemeListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ExportThemeListener
 {
+    /**
+     * @Hook("exportTheme")
+     */
     public function onExportTheme(\DOMDocument $xml, \Contao\ZipWriter $zipArchive, int $themeId): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ExportThemeListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: exportTheme, method: onExportTheme }
 ```
 
 

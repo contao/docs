@@ -32,22 +32,18 @@ expect a return value.
 // src/App/EventListener/SetNewPasswordListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class SetNewPasswordListener
 {
+    /**
+     * @Hook("setNewPassword")
+     */
     public function onSetNewPassword(object $member, string $password, \Contao\Module $module = null): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\SetNewPasswordListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: setNewPassword, method: onSetNewPassword }
 ```
 
 

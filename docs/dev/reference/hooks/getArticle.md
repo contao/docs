@@ -21,22 +21,18 @@ prior to rendering. It does not expect a return value.
 // src/App/EventListener/GetArticleListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetArticleListener
 {
+    /**
+     * @Hook("getArticle")
+     */
     public function onGetArticle(\Contao\ArticleModel $article): void
     {
         // Modify $article here …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetArticleListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getArticle, method: onGetArticle }
 ```
 
 

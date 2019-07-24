@@ -34,8 +34,13 @@ Return `$buffer` or your custom modification.
 // src/App/EventListener/GetFrontendModuleListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetFrontendModuleListener
 {
+    /**
+     * @Hook("getFrontendModule")
+     */
     public function onGetFrontendModule(\Contao\ModuleModel $moduleModel, string $buffer, \Contao\Module $module): string
     {
         // Wrap a specific module in an additional wrapper div
@@ -46,15 +51,6 @@ class GetFrontendModuleListener
         return $buffer;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetFrontendModuleListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getFrontendModule, method: onGetFrontendModule }
 ```
 
 

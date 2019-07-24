@@ -40,8 +40,13 @@ definition should be used.
 // src/App/EventListener/CompileDefinitionListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CompileDefinitionListener
 {
+    /**
+     * @Hook("compileDefinition")
+     */
     public function onCompileDefinition(array $row, bool $writeToFile, array $vars, array $parent): string
     {
         if (isset($row['border-radius'])) {
@@ -51,15 +56,6 @@ class CompileDefinitionListener
         return '';
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CompileDefinitionListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: compileDefinition, method: onCompileDefinition }
 ```
 
 

@@ -40,8 +40,13 @@ you return `false`, other hooks will continue to process the regular expression.
 // src/App/EventListener/AddCustomRegexpListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class AddCustomRegexpListener
 {
+    /**
+     * @Hook("addCustomRegexp")
+     */
     public function onAddCustomRegexp(string $regexp, mixed $input, \Contao\Widget $widget): bool
     {
         if ('myregexp' === $regexp) {
@@ -53,15 +58,6 @@ class AddCustomRegexpListener
         return false;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\AddCustomRegexpListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: addCustomRegexp, method: onAddCustomRegexp }
 ```
 
 

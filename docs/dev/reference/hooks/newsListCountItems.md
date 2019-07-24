@@ -37,8 +37,13 @@ Return `false` if this hook should not be considered. Return an integer otherwis
 // src/App/EventListener/NewsListCountItemsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class NewsListCountItemsListener
 {
+    /**
+     * @Hook("newsListCountItems")
+     */
     public function onNewsListCountItems(array $newsArchives, bool $featuredOnly, \Contao\Module $module): mixed
     {
         if (…) {
@@ -49,15 +54,6 @@ class NewsListCountItemsListener
         return false;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\NewsListCountItemsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: newsListCountItems, method: onNewsListCountItems }
 ```
 
 

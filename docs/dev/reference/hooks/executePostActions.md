@@ -26,8 +26,13 @@ and does not expect a return value.
 // src/App/EventListener/ExecutePostActionsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ExecutePostActionsListener
 {
+    /**
+     * @Hook("executePostActions")
+     */
     public function onExecutePostActions(string $action, \Contao\DataContainer $dc): void
     {
         if ('update' === $action) {
@@ -35,15 +40,6 @@ class ExecutePostActionsListener
         }
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ExecutePostActionsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: executePostActions, method: onExecutePostActions }
 ```
 
 

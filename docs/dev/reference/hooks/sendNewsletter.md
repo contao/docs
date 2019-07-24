@@ -36,22 +36,18 @@ This hook is executed directly after Contao has sent a newsletter ot its recipie
 // src/App/EventListener/SendNewsletterListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class SendNewsletterListener
 {
+    /**
+     * @Hook("sendNewsletter")
+     */
     public function onSendNewsletter(\Contao\Email $email, \Contao\Database\Result $newsletter, array $recipient, string $text, string $html): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\SendNewsletterListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: sendNewsletter, method: onSendNewsletter }
 ```
 
 

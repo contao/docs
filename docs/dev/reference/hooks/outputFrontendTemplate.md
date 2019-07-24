@@ -38,8 +38,13 @@ Return the original `$buffer` or override with your custom modification.
 // src/App/EventListener/OutputFrontendTemplateListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class OutputFrontendTemplateListener
 {
+    /**
+     * @Hook("outputFrontendTemplate")
+     */
     public function onOutputFrontendTemplate(string $buffer, string $template): string
     {
         if ($template === 'fe_page') {
@@ -48,15 +53,6 @@ class OutputFrontendTemplateListener
 
         return $buffer;
     }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\OutputFrontendTemplateListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: outputFrontendTemplate, method: onOutputFrontendTemplate }
 ```
 
 

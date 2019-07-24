@@ -33,8 +33,13 @@ The path to the process image or null to keep the default behaviour.
 // src/App/EventListener/ExecuteResizeListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ExecuteResizeListener
 {
+    /**
+     * @Hook("executeResize")
+     */
     public function onExecuteResize(\Contao\Image $image): ?string
     {
         if (…) {
@@ -46,15 +51,6 @@ class ExecuteResizeListener
         return null;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ExecuteResizeListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: executeResize, method: onExecuteResize }
 ```
 
 

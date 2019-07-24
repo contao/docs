@@ -23,22 +23,18 @@ not expect a return value.
 // src/App/EventListener/PostDownloadListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class PostDownloadListener
 {
+    /**
+     * @Hook("postDownload")
+     */
     public function onPostDownload(string $file): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\PostDownloadListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: postDownload, method: onPostDownload }
 ```
 
 

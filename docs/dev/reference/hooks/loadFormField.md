@@ -42,8 +42,13 @@ your own widget instead.
 // src/App/EventListener/LoadFormFieldListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class LoadFormFieldListener
 {
+    /**
+     * @Hook("loadFormField")
+     */
     public function onLoadFormField(\Contao\Widget $widget, string $formId, array $formData, \Contao\Form $form): \Contao\Widget
     {
         if ('myForm' === $formId) {
@@ -53,15 +58,6 @@ class LoadFormFieldListener
         return $widget;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\LoadFormFieldListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: loadFormField, method: onLoadFormField }
 ```
 
 

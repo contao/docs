@@ -22,8 +22,13 @@ a return value.
 // src/App/EventListener/ExecutePreActionsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ExecutePreActionsListener
 {
+    /**
+     * @Hook("executePreActions")
+     */
     public function onExecutePreActions(string $action): void
     {
         if ('update' === $action) {
@@ -31,15 +36,6 @@ class ExecutePreActionsListener
         }
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ExecutePreActionsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: executePreActions, method: onExecutePreActions }
 ```
 
 

@@ -36,8 +36,13 @@ An `array` of of `\Contao\FormFieldModel` instances.
 // src/App/EventListener/CompileFormFieldsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CompileFormFieldsListener
 {
+    /**
+     * @Hook("compileFormFields")
+     */
     public function onCompileFormFields(array $fields, string $formId, \Contao\Form $form): array
     {
         // Modify $fields as needed
@@ -45,15 +50,6 @@ class CompileFormFieldsListener
         return $fields;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CompileFormFieldsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: compileFormFields, method: onCompileFormFields }
 ```
 
 

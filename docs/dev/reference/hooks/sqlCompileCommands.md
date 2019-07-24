@@ -27,8 +27,13 @@ Return the array of changes that should be applied to the database.
 // src/App/EventListener/SqlCompileCommandsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class SqlCompileCommandsListener
 {
+    /**
+     * @Hook("sqlCompileCommands")
+     */
     public function onSqlCompileCommands(array $sql): array
     {
         // Modify the array of SQL statements
@@ -36,15 +41,6 @@ class SqlCompileCommandsListener
         return $sql;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\SqlCompileCommandsListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: sqlCompileCommands, method: onSqlCompileCommands }
 ```
 
 

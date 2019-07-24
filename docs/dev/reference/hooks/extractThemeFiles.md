@@ -36,22 +36,18 @@ expects no return value.
 // src/App/EventListener/ExtractThemeFilesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ExtractThemeFilesListener
 {
+    /**
+     * @Hook("extractThemeFiles")
+     */
     public function onExtractThemeFiles(\DOMDocument $xml, \Contao\ZipReader $zipArchive, int $themeId, array $mapper): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ExtractThemeFilesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: extractThemeFiles, method: onExtractThemeFiles }
 ```
 
 

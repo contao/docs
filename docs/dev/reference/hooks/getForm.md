@@ -31,8 +31,13 @@ Return `$buffer` or your custom modification.
 // src/App/EventListener/GetFormListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetFormListener
 {
+    /**
+     * @Hook("getForm")
+     */
     public function onGetForm(\Contao\FormModel $form, string $buffer): string
     {
         if (2 === (int) $form->id) {
@@ -42,15 +47,6 @@ class GetFormListener
         return $buffer;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetFormListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getForm, method: onGetForm }
 ```
 
 ## References

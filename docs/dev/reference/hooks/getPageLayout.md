@@ -31,22 +31,18 @@ and does not expect a return value.
 // src/App/EventListener/GetPageLayoutListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class GetPageLayoutListener
 {
+    /**
+     * @Hook("getPageLayout")
+     */
     public function onGetPageLayout(\Contao\PageModel $pageModel, \Contao\LayoutModel $layout, \Contao\PageRegular $pageRegular): void
     {
         // Modify the page or layout object
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\GetPageLayoutListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: getPageLayout, method: onGetPageLayout }
 ```
 
 

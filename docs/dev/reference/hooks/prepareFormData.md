@@ -37,8 +37,13 @@ distribution or data storage.
 // src/App/EventListener/PrepareFormDataListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class PrepareFormDataListener
 {
+    /**
+     * @Hook("prepareFormData")
+     */
     public function onPrepareFormData(array &$submittedData, array $labels, array $fields, \Contao\Form $form)
     {
         // This calculates a deadline from a given timestamp
@@ -46,15 +51,6 @@ class PrepareFormDataListener
         $submittedData['deadline'] = strtotime('+1 hour', $submittedData['tstamp']);
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\PrepareFormDataListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: prepareFormData, method: onPrepareFormData }
 ```
 
 

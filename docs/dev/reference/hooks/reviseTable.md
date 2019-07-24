@@ -47,22 +47,18 @@ Return `true` if the current page should be reloaded. Otherwise return `false` o
 // src/App/EventListener/ReviseTableListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class ReviseTableListener
 {
+    /**
+     * @Hook("reviseTable")
+     */
     public function onReviseTable(string $table, array $newRecords, ?string $parentTable, ?array $childTables): ?bool
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\ReviseTableListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: reviseTable, method: onReviseTable }
 ```
 
 

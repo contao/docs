@@ -34,22 +34,18 @@ updated when this hook is triggered.
 // src/App/EventListener/UpdatePersonalDataListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class UpdatePersonalDataListener
 {
+    /**
+     * @Hook("updatePersonalData")
+     */
     public function onUpdatePersonalData(\Contao\FrontendUser $member, array $data, \Contao\Module $module): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\UpdatePersonalDataListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: updatePersonalData, method: onUpdatePersonalData }
 ```
 
 

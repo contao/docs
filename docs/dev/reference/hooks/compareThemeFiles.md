@@ -34,8 +34,13 @@ of the custom comparison. Or an empty string.
 // src/App/EventListener/CompareThemeFilesListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CompareThemeFilesListener
 {
+    /**
+     * @Hook("compareThemeFiles")
+     */
     public function onCompareThemeFiles(\DOMDocument $xml, \Contao\ZipReader $zip): string
     {
         // Execute your custom theme comparison
@@ -46,15 +51,6 @@ class CompareThemeFilesListener
         return '';
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CompareThemeFilesListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: compareThemeFiles, method: onCompareThemeFiles }
 ```
 
 

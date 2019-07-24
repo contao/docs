@@ -27,8 +27,13 @@ Using the `postLogin` hook has been deprecated and will no longer work in Contao
 // src/App/EventListener/PostLoginListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class PostLoginListener
 {
+    /**
+     * @Hook("postLogin")
+     */
     public function onPostLogin(\Contao\User $user): void
     {
         if ($user instanceof \Contao\FrontendUser) {
@@ -36,15 +41,6 @@ class PostLoginListener
         }
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\PostLoginListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: postLogin, method: onPostLogin }
 ```
 
 

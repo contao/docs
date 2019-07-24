@@ -36,8 +36,13 @@ Return `false` if the element should not be visible in the front end.
 // src/App/EventListener/IsVisibleElementListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class IsVisibleElementListener
 {
+    /**
+     * @Hook("isVisibleElement")
+     */
     public function onIsVisibleElement(object $element, bool $isVisible): bool
     {
         if ($element instanceof \Contao\ContentElement) {
@@ -51,15 +56,6 @@ class IsVisibleElementListener
         return $isVisible;
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\IsVisibleElementListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: isVisibleElement, method: onIsVisibleElement }
 ```
 
 ## References

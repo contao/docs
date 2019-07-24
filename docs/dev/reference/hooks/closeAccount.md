@@ -33,22 +33,18 @@ The operation mode will either be `close_deactivate` or `close_delete`.
 // src/App/EventListener/CloseAccountListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
 class CloseAccountListener
 {
+    /**
+     * @Hook("closeAccount")
+     */
     public function onCloseAccount(int $userId, string $mode, \Contao\Module $module): void
     {
         // Do something …
     }
 }
-```
-
-```yml
-# config/services.yml
-services:
-  App\EventListener\CloseAccountListener:
-    public: true
-    tags:
-      - { name: contao.hook, hook: closeAccount, method: onCloseAccount }
 ```
 
 * [\Contao\Newsletter#L578-L602](https://github.com/contao/contao/blob/4.7.6/newsletter-bundle/src/Resources/contao/classes/Newsletter.php#L578-L602)
