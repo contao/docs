@@ -8,7 +8,7 @@ Simply put, every time a user of the `Managed Edition` runs a `composer update` 
 the `Manager Plugin` instances of all the bundles are called and the application is then configured
 accordingly.
 
-## The bundle-specific Manage Plugin
+## The bundle-specific Manager Plugin
 
 The whole ecosystem of Contao is built in a way that any bundle should be installable and configurable
 for any regular Symfony application.
