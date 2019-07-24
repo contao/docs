@@ -210,3 +210,63 @@ h1 {
 .fa-language.fa-fw {
     width: 0;
 }
+
+/* 
+ * A little ugly hack: I want only the subpages of /reference/hooks/ 
+ * to not have text-transform: uppercase; on the h1, 
+ * not the /reference/hooks/ page as well.
+ */
+body[data-url^="/reference/hooks/a"] h1,
+body[data-url^="/reference/hooks/b"] h1,
+body[data-url^="/reference/hooks/c"] h1,
+body[data-url^="/reference/hooks/d"] h1,
+body[data-url^="/reference/hooks/e"] h1,
+body[data-url^="/reference/hooks/f"] h1,
+body[data-url^="/reference/hooks/g"] h1,
+body[data-url^="/reference/hooks/h"] h1,
+body[data-url^="/reference/hooks/i"] h1,
+body[data-url^="/reference/hooks/j"] h1,
+body[data-url^="/reference/hooks/k"] h1,
+body[data-url^="/reference/hooks/l"] h1,
+body[data-url^="/reference/hooks/m"] h1,
+body[data-url^="/reference/hooks/n"] h1,
+body[data-url^="/reference/hooks/o"] h1,
+body[data-url^="/reference/hooks/p"] h1,
+body[data-url^="/reference/hooks/q"] h1,
+body[data-url^="/reference/hooks/r"] h1,
+body[data-url^="/reference/hooks/s"] h1,
+body[data-url^="/reference/hooks/t"] h1,
+body[data-url^="/reference/hooks/u"] h1,
+body[data-url^="/reference/hooks/v"] h1,
+body[data-url^="/reference/hooks/w"] h1,
+body[data-url^="/reference/hooks/x"] h1,
+body[data-url^="/reference/hooks/y"] h1,
+body[data-url^="/reference/hooks/z"] h1 {
+    text-transform: none;
+}
+
+/* hide level 3 */
+#sidebar ul.topics > li.parent > ul > li > ul {
+    display: none;
+}
+
+/* show level 3 when parent is active */
+#sidebar ul.topics > li.parent > ul > li.active > ul,
+#sidebar ul.topics > li.parent > ul > li.parent > ul {
+    display: block;
+}
+
+/* hide level 3 on hooks page */
+body[data-url^="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.parent > ul {
+    display: none;
+}
+
+body[data-url^="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.parent > a {
+    border-left: 3px solid var(--MENU-HEADER-BG-color);
+    background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
+    color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
+    padding-left: calc(1rem - 3px);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-right: 1rem;
+}

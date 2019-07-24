@@ -89,8 +89,45 @@ Hook listener can be added to the service configuration.
 
 ```yml
 services:
-    App\EventListener\AccountListener:
-        public: true
-        tags:
-            - { name: contao.hook, hook: activateAccount, method: onAccountActivation }
+  App\EventListener\AccountListener:
+    public: true
+    tags:
+      - { name: contao.hook, hook: activateAccount, method: onAccountActivation }
+```
+
+Note that the service must be defined _public_ so that Contao can retrieve it
+from the container due to lack of dependency injection within the legacy Contao
+framework.
+
+### Using Annotations
+
+{{< version "4.8" >}}
+
+Since Contao 4.8 hooks can also be registered using the `@Hook` _Annotation_.
+See the following example:
+
+```php
+// src/App/EventListener/ParseArticlesListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+
+class ParseArticlesListener
+{
+    /**
+     * @Hook("parseArticles")
+     */
+    public function onParseArticles(\Contao\FrontendTemplate $template, array $newsEntry, \Contao\Module $module): void
+    {
+        // Do something …
+    }
+}
+```
+
+The annotation also takes a second parameter for the priority:
+
+```php
+/**
+ * @Hook("parseArticles", "-10")
+ */
 ```
