@@ -50,4 +50,4 @@ use App\Model\ExampleModel;
 $GLOBALS['TL_MODELS']['tl_example'] = ExampleModel::class;
 ```
 
-Now you're done and can use your own Model class! :-)
+Now you're done and can use your own Model class!
