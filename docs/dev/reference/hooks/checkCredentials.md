@@ -10,6 +10,10 @@ arguments and expects a boolean as return value which indicates whether the
 credentials are correct or not. If the return value is `false`, other hooks of
 the same type will still be executed.
 
+{{% notice info %}}
+Using the `checkCredentials` hook has been deprecated and will no longer work in Contao 5.0.
+{{% /notice %}}
+
 
 ## Parameters
 

@@ -59,3 +59,4 @@ services:
 ## References
 
 * [\Contao\Date#L592-L599](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/Date.php#L592-L599)
+* https://github.com/contao/core/issues/4260
