@@ -29,6 +29,11 @@ the content as return value.
     Detailed information about the file to be combined.
 
 
+## Return Values
+
+The contents of the combined file as a string.
+
+
 ## Example
 
 ```php

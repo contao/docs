@@ -28,6 +28,12 @@ regular expression.
     Use the widget's properties to retrieve information about the field configuration.
 
 
+## Return Values
+
+If you return `true`, no other hooks of the same type will be executed further. If
+you return `false`, other hooks will continue to process the regular expression.
+
+
 ## Example
 
 ```php

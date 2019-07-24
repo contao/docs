@@ -5,18 +5,27 @@ tags: ["hook-theme"]
 ---
 
 
-TODO
+When importing a theme Contao will show you a comparison about which database
+fields are currently missing in the Contao installation and which template files
+will be overwritten etc. The `compareThemeFiles` hook allows you to do additional
+comparisons and show the user the appropriate HTML output.
 
 
 ## Parameters
 
 1. *\DOMDocument* `$xml`
 
-    TODO
+    The XML object containing the theme's data.
 
 2. *\Contao\ZipReader* `$zip`
 
-    TODO
+    The ZIP archive object containing the theme's files.
+
+
+## Return Values
+
+A string containing additional HTML for the back end, showing the user the result
+of the custom comparison. Or an empty string.
 
 
 ## Example
@@ -29,9 +38,12 @@ class CompareThemeFilesListener
 {
     public function onCompareThemeFiles(\DOMDocument $xml, \Contao\ZipReader $zip): string
     {
-        // Do something …
+        // Execute your custom theme comparison
+        if ($this->doCustomComparison()) {
+            return $customComparison;
+        }
         
-        return $label;
+        return '';
     }
 }
 ```
@@ -49,3 +61,4 @@ services:
 ## References
 
 * [\Contao\Theme.php#L278-L285](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Theme.php#L278-L285)
+* https://github.com/contao/core/pull/7341

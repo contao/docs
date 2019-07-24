@@ -16,9 +16,23 @@ items) as return value.
 
     The breadcrumb navigation items.
 
-2. *object* `$module`
+2. *\Contao\Modul* `$module`
 
     The front end module instance executing the hook.
+
+
+## Return Values
+
+An array containing associative array items with the following information
+for the breadcrumb item:
+
+* *bool* `isRoot` Whether this is the root item.
+* *bool* `isActive` Whether this is an active item.
+* *string* `href` The URL for this breadcrumb item.
+* *string* `title` The title attribute for this breadcrumb item.
+* *string* `link` The text for this breadcrumb item.
+* *array* `data` Associative array containing the data of `tl_page`.
+* *string* `class` The CSS classes for this breadcrumb item.
 
 
 ## Example

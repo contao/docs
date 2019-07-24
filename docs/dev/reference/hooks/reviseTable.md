@@ -36,7 +36,7 @@ This hook can also be implemented as an anonymous function.
     Optional array containing the names of the child tables.
 
 
-## Return values
+## Return Values
 
 Return `true` if the current page should be reloaded. Otherwise return `false` or `null`.
 

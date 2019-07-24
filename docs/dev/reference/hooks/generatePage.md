@@ -32,7 +32,7 @@ namespace App\EventListener;
 
 class GeneratePageListener
 {
-    public function onGeneratePage(\Contao\PageModel $pageModel, \Contao\LayoutModel $layout, \Contao\PageRegular $pageRegular): string
+    public function onGeneratePage(\Contao\PageModel $pageModel, \Contao\LayoutModel $layout, \Contao\PageRegular $pageRegular): void
     {
         // Do something …
     }

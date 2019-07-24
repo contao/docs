@@ -22,6 +22,11 @@ be shown in the front end.
     The column for which the articles are rendered.
 
 
+## Return Values
+
+Return a `string` with the article's new content or `null` to keep the default.
+
+
 ## Example
 
 ```php

@@ -33,7 +33,7 @@ namespace App\EventListener;
 
 class CompileArticleListener
 {
-    public function onCompileArticle(\Contao\FrontendTemplate $template, array $data, \Contao\Module $module): string
+    public function onCompileArticle(\Contao\FrontendTemplate $template, array $data, \Contao\Module $module): void
     {
         $template->customContent = '<p>This will be available in mod_article.html5 via $this->customContent</p>';
     }

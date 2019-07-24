@@ -28,6 +28,12 @@ an array and expects a string as return value.
     The parent record of the style definition (`tl_style`).
 
 
+## Return Values
+
+A string containing the customized style definition. Or an empty string, if the original
+definition should be used.
+
+
 ## Example
 
 ```php

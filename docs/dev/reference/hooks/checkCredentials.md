@@ -26,6 +26,11 @@ the same type will still be executed.
     User object model from database record with the given username.
 
 
+## Return Values
+
+Return `true` if the credentials are valid, `false` otherwise.
+
+
 ## Example
 
 ```php

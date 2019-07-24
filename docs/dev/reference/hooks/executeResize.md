@@ -22,6 +22,11 @@ longer work in Contao 5.0. Replace the `contao.image.resizer` service instead.
     The legacy image object instance.
 
 
+## Return Values
+
+The path to the process image or null to keep the default behaviour.
+
+
 ## Example
 
 ```php

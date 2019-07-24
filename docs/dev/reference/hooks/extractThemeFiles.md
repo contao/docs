@@ -58,3 +58,4 @@ services:
 ## References
 
 * [\Contao\Theme.php#L683-L692](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/Theme.php#L683-L692)
+* https://github.com/contao/core/pull/7341

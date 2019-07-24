@@ -24,6 +24,11 @@ as arguments and expects a buffer string as return value.
     The content element instance.
 
 
+## Return Values
+
+The (modified) content of the content element as a string.
+
+
 ## Example
 
 ```php

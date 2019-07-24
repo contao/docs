@@ -24,6 +24,11 @@ and expects the modified form fields as return value.
 
 	  The form (an instance of `\Contao\Form`).
 
+  
+## Return Values
+
+An `array` of of `\Contao\FormFieldModel` instances.
+
 
 ## Example
 

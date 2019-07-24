@@ -35,6 +35,11 @@ return value.
     The front end module instance executing this hook.
 
 
+## Return Values
+
+An array containing all the events, grouped by a time stamp.
+
+
 ## Example
 
 ```php

@@ -23,6 +23,11 @@ The operation mode will either be `close_deactivate` or `close_delete`.
     is what will be displayed.
 
 
+## Return Values
+
+Return the processed `$label` string.
+
+
 ## Example
 
 ```php

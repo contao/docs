@@ -28,6 +28,12 @@ and the data array as arguments and expects an array or `null` as return value.
     The current data set to be added to the database.
 
 
+## Return Values
+
+An associative array containing the CSS property as key and its value
+as value or null to keep the default behaviour.
+
+
 ## Example
 
 ```php

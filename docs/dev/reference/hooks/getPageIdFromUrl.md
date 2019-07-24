@@ -19,7 +19,7 @@ The first fragment returned will usually be the ID or alias of a Contao page.
     callbacks could have modified this data.
 
 
-## Return Values
+## Return values
 
 Return the (modified) array of URL fragments.
 

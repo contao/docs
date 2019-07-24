@@ -22,6 +22,11 @@ Note that the DCA object can be optional (`null`).
     to the `\Contao\Widget::getAttributesFromDca` method.
 
 
+## Return Values
+
+Return the attributes for the widget as an associative array.
+
+
 ## Example
 
 ```php
