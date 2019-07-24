@@ -24,7 +24,7 @@ Using the `postAuthenticate` hook has been deprecated and will no longer work in
 ## Example
 
 ```php
-// src/App/EventListener/PostAuthenticateListener.php
+// src/EventListener/PostAuthenticateListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

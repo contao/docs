@@ -24,7 +24,7 @@ a return value.
 ## Example
 
 ```php
-// src/App/EventListener/RemoveRecipientListener.php
+// src/EventListener/RemoveRecipientListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

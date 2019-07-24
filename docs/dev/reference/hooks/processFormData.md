@@ -36,7 +36,7 @@ arguments and does not expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/ProcessFormDataListener.php
+// src/EventListener/ProcessFormDataListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

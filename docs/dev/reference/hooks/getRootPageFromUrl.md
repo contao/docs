@@ -18,7 +18,7 @@ for searching the root page.
 ## Example
 
 ```php
-// src/App/EventListener/GetRootPageFromUrlListener.php
+// src/EventListener/GetRootPageFromUrlListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

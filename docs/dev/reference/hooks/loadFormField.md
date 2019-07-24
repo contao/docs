@@ -39,7 +39,7 @@ your own widget instead.
 ## Example
 
 ```php
-// src/App/EventListener/LoadFormFieldListener.php
+// src/EventListener/LoadFormFieldListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

@@ -20,7 +20,7 @@ not expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/PostDownloadListener.php
+// src/EventListener/PostDownloadListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

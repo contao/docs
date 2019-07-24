@@ -25,7 +25,7 @@ to the `\Contao\PageModel` instance.
 
 
 ```php
-// src/App/EventListener/LoadPageDetailsListener.php
+// src/EventListener/LoadPageDetailsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

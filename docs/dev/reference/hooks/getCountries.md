@@ -23,7 +23,7 @@ The `getCountries` hook allows to modify the system's list of countries.
 ## Example
 
 ```php
-// src/App/EventListener/GetCountriesListener.php
+// src/EventListener/GetCountriesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

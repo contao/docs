@@ -30,7 +30,7 @@ modification.
 ## Example
 
 ```php
-// src/App/EventListener/ParseFrontendTemplateListener.php
+// src/EventListener/ParseFrontendTemplateListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

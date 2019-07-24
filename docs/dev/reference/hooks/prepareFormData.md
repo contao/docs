@@ -34,7 +34,7 @@ distribution or data storage.
 ## Example
 
 ```php
-// src/App/EventListener/PrepareFormDataListener.php
+// src/EventListener/PrepareFormDataListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

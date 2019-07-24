@@ -36,7 +36,7 @@ A string containing the new (or previous) URL.
 ## Example
 
 ```php
-// src/App/EventListener/GenerateFrontendUrlListener.php
+// src/EventListener/GenerateFrontendUrlListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

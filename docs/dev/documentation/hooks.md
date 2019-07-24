@@ -107,7 +107,7 @@ Since Contao 4.8 hooks can also be registered using the `@Hook` _Annotation_.
 See the following example:
 
 ```php
-// src/App/EventListener/ParseArticlesListener.php
+// src/EventListener/ParseArticlesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

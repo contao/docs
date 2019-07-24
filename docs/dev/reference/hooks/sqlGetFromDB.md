@@ -25,7 +25,7 @@ Return `$sql` after adding your custom definitions.
 ## Example
 
 ```php
-// src/App/EventListener/SqlGetFromDBListener.php
+// src/EventListener/SqlGetFromDBListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

@@ -29,7 +29,7 @@ expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/SetNewPasswordListener.php
+// src/EventListener/SetNewPasswordListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

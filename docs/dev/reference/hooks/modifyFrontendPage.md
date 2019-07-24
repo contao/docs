@@ -36,7 +36,7 @@ Return the original `$buffer` or override with your custom modification.
 
 
 ```php
-// src/App/EventListener/ModifyFrontendPageListener.php
+// src/EventListener/ModifyFrontendPageListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

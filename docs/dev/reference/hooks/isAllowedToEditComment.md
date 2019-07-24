@@ -31,7 +31,7 @@ is prohibited or your function is not responsible for this comment.
 
 
 ```php
-// src/App/EventListener/IsAllowedToEditCommentListener.php
+// src/EventListener/IsAllowedToEditCommentListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

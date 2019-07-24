@@ -33,7 +33,7 @@ An `array` of of `\Contao\FormFieldModel` instances.
 ## Example
 
 ```php
-// src/App/EventListener/CompileFormFieldsListener.php
+// src/EventListener/CompileFormFieldsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

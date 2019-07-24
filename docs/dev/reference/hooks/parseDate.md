@@ -32,7 +32,7 @@ A string containing the formatted date.
 ## Example
 
 ```php
-// src/App/EventListener/ParseDateListener.php
+// src/EventListener/ParseDateListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

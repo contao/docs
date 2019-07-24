@@ -25,7 +25,7 @@ expect a return value. Use it to override the internal PDF functionality.
 ## Example
 
 ```php
-// src/App/EventListener/PrintArticleAsPdfListener.php
+// src/EventListener/PrintArticleAsPdfListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

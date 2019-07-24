@@ -32,7 +32,7 @@ The (modified) content of the content element as a string.
 ## Example
 
 ```php
-// src/App/EventListener/GetContentElementListener.php
+// src/EventListener/GetContentElementListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

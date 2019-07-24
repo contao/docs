@@ -26,7 +26,7 @@ responsible for the source table.
 ## Example
 
 ```php
-// src/App/EventListener/ListCommentsListener.php
+// src/EventListener/ListCommentsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

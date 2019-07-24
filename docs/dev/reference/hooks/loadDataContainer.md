@@ -22,7 +22,7 @@ the file name as argument and does not expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/LoadDataContainerListener.php
+// src/EventListener/LoadDataContainerListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

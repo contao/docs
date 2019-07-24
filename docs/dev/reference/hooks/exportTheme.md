@@ -28,7 +28,7 @@ id as arguments and expects no return value.
 ## Example
 
 ```php
-// src/App/EventListener/ExportThemeListener.php
+// src/EventListener/ExportThemeListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

@@ -31,7 +31,7 @@ Return the processed `$label` string.
 ## Example
 
 ```php
-// src/App/EventListener/ColorizeLogEntriesListener.php
+// src/EventListener/ColorizeLogEntriesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

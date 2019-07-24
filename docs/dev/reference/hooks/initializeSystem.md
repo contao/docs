@@ -12,7 +12,7 @@ process is finished and before the request processing is started.
 ## Example
 
 ```php
-// src/App/EventListener/InitializeSystemListener.php
+// src/EventListener/InitializeSystemListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

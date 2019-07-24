@@ -28,7 +28,7 @@ does not expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/CreateNewUserListener.php
+// src/EventListener/CreateNewUserListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

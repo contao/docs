@@ -20,7 +20,7 @@ nothing to keep.
 ## Example
 
 ```php
-// src/App/EventListener/RemoveOldFeedsListener.php
+// src/EventListener/RemoveOldFeedsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

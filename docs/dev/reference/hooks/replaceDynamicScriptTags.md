@@ -36,7 +36,7 @@ A string containing the (modified) bufffer content.
 ## Example
 
 ```php
-// src/App/EventListener/ReplaceDynamicScriptTagsListener.php
+// src/EventListener/ReplaceDynamicScriptTagsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

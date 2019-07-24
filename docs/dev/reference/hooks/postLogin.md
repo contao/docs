@@ -24,7 +24,7 @@ Using the `postLogin` hook has been deprecated and will no longer work in Contao
 ## Example
 
 ```php
-// src/App/EventListener/PostLoginListener.php
+// src/EventListener/PostLoginListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

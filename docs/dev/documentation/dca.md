@@ -22,7 +22,7 @@ this:
 
 ```php
 <?php
-// src/App/EventListener/Dca/ContentListener.php
+// src/EventListener/Dca/ContentListener.php
 
 namespace App\EventListener\Dca;
 

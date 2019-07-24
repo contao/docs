@@ -28,7 +28,7 @@ Add your custom modules to the list and return the array of back end modules.
 ## Example
 
 ```php
-// src/App/EventListener/GetUserNavigationListener.php
+// src/EventListener/GetUserNavigationListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

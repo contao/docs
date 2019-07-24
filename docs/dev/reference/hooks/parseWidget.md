@@ -28,7 +28,7 @@ The (modified) output buffer for the widget.
 ## Example
 
 ```php
-// src/App/EventListener/ParseWidgetListener.php
+// src/EventListener/ParseWidgetListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

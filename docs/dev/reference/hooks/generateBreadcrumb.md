@@ -38,7 +38,7 @@ for the breadcrumb item:
 ## Example
 
 ```php
-// src/App/EventListener/GenerateBreadcrumbListener.php
+// src/EventListener/GenerateBreadcrumbListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

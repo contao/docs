@@ -37,7 +37,7 @@ as value or null to keep the default behaviour.
 ## Example
 
 ```php
-// src/App/EventListener/CreateDefinitionListener.php
+// src/EventListener/CreateDefinitionListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

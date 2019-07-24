@@ -33,7 +33,7 @@ Return `false` if the element should not be visible in the front end.
 ## Example
 
 ```php
-// src/App/EventListener/IsVisibleElementListener.php
+// src/EventListener/IsVisibleElementListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

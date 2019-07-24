@@ -17,7 +17,7 @@ HTML markup) or an empty string.
 ## Example
 
 ```php
-// src/App/EventListener/GetSystemMessagesListener.php
+// src/EventListener/GetSystemMessagesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

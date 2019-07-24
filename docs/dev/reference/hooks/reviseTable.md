@@ -44,7 +44,7 @@ Return `true` if the current page should be reloaded. Otherwise return `false` o
 ## Example
 
 ```php
-// src/App/EventListener/ReviseTableListener.php
+// src/EventListener/ReviseTableListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

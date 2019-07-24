@@ -24,7 +24,7 @@ Return the array of changes that should be applied to the database.
 ## Example
 
 ```php
-// src/App/EventListener/SqlCompileCommandsListener.php
+// src/EventListener/SqlCompileCommandsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

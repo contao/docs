@@ -34,7 +34,7 @@ The `getLanguages` hook allows to modify the system's list of languages.
 ## Example
 
 ```php
-// src/App/EventListener/GetLanguagesListener.php
+// src/EventListener/GetLanguagesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

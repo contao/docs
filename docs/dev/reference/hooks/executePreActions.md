@@ -19,7 +19,7 @@ a return value.
 ## Example
 
 ```php
-// src/App/EventListener/ExecutePreActionsListener.php
+// src/EventListener/ExecutePreActionsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

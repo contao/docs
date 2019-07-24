@@ -37,7 +37,7 @@ Return the `$widget` instance after modification or your custom widget.
 ## Example
 
 ```php
-// src/App/EventListener/ValidateFormFieldListener.php
+// src/EventListener/ValidateFormFieldListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

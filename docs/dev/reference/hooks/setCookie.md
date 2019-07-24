@@ -32,7 +32,7 @@ Return `$cookie` or a custom object with all properties.
 ## Example
 
 ```php
-// src/App/EventListener/SetCookieListener.php
+// src/EventListener/SetCookieListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

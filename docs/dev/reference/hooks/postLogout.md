@@ -23,7 +23,7 @@ Using the `postLogout` hook has been deprecated and will no longer work in Conta
 ## Example
 
 ```php
-// src/App/EventListener/PostLogoutListener.php
+// src/EventListener/PostLogoutListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

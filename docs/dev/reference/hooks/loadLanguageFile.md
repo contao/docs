@@ -29,7 +29,7 @@ return value.
 ## Example
 
 ```php
-// src/App/EventListener/LoadLanguageFileListener.php
+// src/EventListener/LoadLanguageFileListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

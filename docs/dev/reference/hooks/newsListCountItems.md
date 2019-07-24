@@ -34,7 +34,7 @@ Return `false` if this hook should not be considered. Return an integer otherwis
 ## Example
 
 ```php
-// src/App/EventListener/NewsListCountItemsListener.php
+// src/EventListener/NewsListCountItemsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

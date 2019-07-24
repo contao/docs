@@ -39,7 +39,7 @@ you added the user to the respective table, or `false` if not.
 ## Example
 
 ```php
-// src/App/EventListener/ImportUserListener.php
+// src/EventListener/ImportUserListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

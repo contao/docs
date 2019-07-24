@@ -43,7 +43,7 @@ An array containing all the events, grouped by a time stamp.
 ## Example
 
 ```php
-// src/App/EventListener/GetAllEventsListener.php
+// src/EventListener/GetAllEventsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

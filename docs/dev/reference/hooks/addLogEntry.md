@@ -42,7 +42,7 @@ Using the `addLogEntry` hook has been deprecated and will no longer work in Cont
 ## Example
 
 ```php
-// src/App/EventListener/AddLogEntryListener.php
+// src/EventListener/AddLogEntryListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

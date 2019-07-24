@@ -26,7 +26,7 @@ the record and the data array as arguments and does not expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/AddCommentListener.php
+// src/EventListener/AddCommentListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

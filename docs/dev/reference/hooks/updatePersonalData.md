@@ -31,7 +31,7 @@ updated when this hook is triggered.
 ## Example
 
 ```php
-// src/App/EventListener/UpdatePersonalDataListener.php
+// src/EventListener/UpdatePersonalDataListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

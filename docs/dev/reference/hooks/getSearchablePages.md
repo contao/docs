@@ -40,7 +40,7 @@ sitemap or only for the search index.
 ## Example
 
 ```php
-// src/App/EventListener/GetSearchablePagesListener.php
+// src/EventListener/GetSearchablePagesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

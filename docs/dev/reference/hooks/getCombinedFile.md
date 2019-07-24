@@ -37,7 +37,7 @@ The contents of the combined file as a string.
 ## Example
 
 ```php
-// src/App/EventListener/GetCombinedFileListener.php
+// src/EventListener/GetCombinedFileListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

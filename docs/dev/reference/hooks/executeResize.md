@@ -30,7 +30,7 @@ The path to the process image or null to keep the default behaviour.
 ## Example
 
 ```php
-// src/App/EventListener/ExecuteResizeListener.php
+// src/EventListener/ExecuteResizeListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

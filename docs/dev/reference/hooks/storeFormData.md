@@ -30,7 +30,7 @@ database.
 ## Example
 
 ```php
-// src/App/EventListener/StoreFormDataListener.php
+// src/EventListener/StoreFormDataListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

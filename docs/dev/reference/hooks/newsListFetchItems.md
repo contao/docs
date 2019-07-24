@@ -42,7 +42,7 @@ otherwise. Return `null` if no news entries are found.
 ## Example
 
 ```php
-// src/App/EventListener/NewsListFetchItemsListener.php
+// src/EventListener/NewsListFetchItemsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

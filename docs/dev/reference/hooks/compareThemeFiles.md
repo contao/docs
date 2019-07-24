@@ -31,7 +31,7 @@ of the custom comparison. Or an empty string.
 ## Example
 
 ```php
-// src/App/EventListener/CompareThemeFilesListener.php
+// src/EventListener/CompareThemeFilesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

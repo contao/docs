@@ -30,7 +30,7 @@ The operation mode will either be `close_deactivate` or `close_delete`.
 ## Example
 
 ```php
-// src/App/EventListener/CloseAccountListener.php
+// src/EventListener/CloseAccountListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

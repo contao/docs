@@ -30,7 +30,7 @@ the unchanged second parameter.
 ## Example
 
 ```php
-// src/App/EventListener/GetPageStatusIconListener.php
+// src/EventListener/GetPageStatusIconListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

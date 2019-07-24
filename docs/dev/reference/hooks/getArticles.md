@@ -30,7 +30,7 @@ Return a `string` with the article's new content or `null` to keep the default.
 ## Example
 
 ```php
-// src/App/EventListener/GetArticlesListener.php
+// src/EventListener/GetArticlesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

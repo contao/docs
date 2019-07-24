@@ -37,7 +37,7 @@ you return `false`, other hooks will continue to process the regular expression.
 ## Example
 
 ```php
-// src/App/EventListener/AddCustomRegexpListener.php
+// src/EventListener/AddCustomRegexpListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

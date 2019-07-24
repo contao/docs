@@ -31,7 +31,7 @@ Return the (modified) array of URL fragments.
 ## Example
 
 ```php
-// src/App/EventListener/GetPageIdFromUrlListener.php
+// src/EventListener/GetPageIdFromUrlListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

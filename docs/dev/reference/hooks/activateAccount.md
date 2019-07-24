@@ -23,7 +23,7 @@ the calling front end module as arguments and does not expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/ActivateAccountListener.php
+// src/EventListener/ActivateAccountListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

@@ -37,7 +37,7 @@ definition should be used.
 ## Example
 
 ```php
-// src/App/EventListener/CompileDefinitionListener.php
+// src/EventListener/CompileDefinitionListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

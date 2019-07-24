@@ -28,7 +28,7 @@ Return `$buffer` or your custom modification.
 ## Example
 
 ```php
-// src/App/EventListener/GetFormListener.php
+// src/EventListener/GetFormListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

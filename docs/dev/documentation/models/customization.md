@@ -19,7 +19,7 @@ See the [DCA documentation](../../dca) and the [DCA reference](../../../referenc
 The naming convention for the model class is to omit `tl_`, convert the snake_case to PascalCase and add "Model".
 
 ```php
-// src/App/Model/ExampleModel.php
+// src/Model/ExampleModel.php
 namespace App\Model;
 
 use Contao\Model;

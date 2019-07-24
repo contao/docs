@@ -38,7 +38,7 @@ Return `true` if the credentials are valid, `false` otherwise.
 ## Example
 
 ```php
-// src/App/EventListener/CheckCredentialsListener.php
+// src/EventListener/CheckCredentialsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

@@ -57,7 +57,7 @@ If your function is not responsible for this insert tag, you **must** return
 ## Example
 
 ```php
-// src/App/EventListener/ReplaceInsertTagsListener.php
+// src/EventListener/ReplaceInsertTagsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

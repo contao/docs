@@ -33,7 +33,7 @@ expects no return value.
 ## Example
 
 ```php
-// src/App/EventListener/ExtractThemeFilesListener.php
+// src/EventListener/ExtractThemeFilesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

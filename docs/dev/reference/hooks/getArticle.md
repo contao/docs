@@ -18,7 +18,7 @@ prior to rendering. It does not expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/GetArticleListener.php
+// src/EventListener/GetArticleListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

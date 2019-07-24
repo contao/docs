@@ -26,7 +26,7 @@ This hook can also be implemented as an anonymous function.
 ## Example
 
 ```php
-// src/App/EventListener/PostUploadListener.php
+// src/EventListener/PostUploadListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

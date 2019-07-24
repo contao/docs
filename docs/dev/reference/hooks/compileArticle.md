@@ -28,7 +28,7 @@ data to the template.
 ## Example
 
 ```php
-// src/App/EventListener/CompileArticleListener.php
+// src/EventListener/CompileArticleListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

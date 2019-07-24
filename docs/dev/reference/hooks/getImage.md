@@ -61,7 +61,7 @@ Otherwise return the boolean `false`.
 ## Example
 
 ```php
-// src/App/EventListener/GetImageListener.php
+// src/EventListener/GetImageListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

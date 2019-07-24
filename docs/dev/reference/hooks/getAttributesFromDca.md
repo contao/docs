@@ -30,7 +30,7 @@ Return the attributes for the widget as an associative array.
 ## Example
 
 ```php
-// src/App/EventListener/GetAttributesFromDcaListener.php
+// src/EventListener/GetAttributesFromDcaListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

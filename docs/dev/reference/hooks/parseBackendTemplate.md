@@ -29,7 +29,7 @@ Return the original `$buffer` or override with your custom modification.
 ## Example
 
 ```php
-// src/App/EventListener/ParseBackendTemplateListener.php
+// src/EventListener/ParseBackendTemplateListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

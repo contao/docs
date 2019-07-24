@@ -33,7 +33,7 @@ This hook is executed directly after Contao has sent a newsletter ot its recipie
 ## Example
 
 ```php
-// src/App/EventListener/SendNewsletterListener.php
+// src/EventListener/SendNewsletterListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

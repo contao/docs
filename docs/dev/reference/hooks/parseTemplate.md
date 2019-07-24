@@ -19,7 +19,7 @@ template object and does not expect a return value.
 ## Example
 
 ```php
-// src/App/EventListener/ParseTemplateListener.php
+// src/EventListener/ParseTemplateListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;

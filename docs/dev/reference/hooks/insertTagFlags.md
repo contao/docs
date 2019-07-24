@@ -61,7 +61,7 @@ how to handle the `date` insert tag and the `utf8_strtoupper` flag. The unknown
 
 
 ```php
-// src/App/EventListener/InsertTagFlagsListener.php
+// src/EventListener/InsertTagFlagsListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
