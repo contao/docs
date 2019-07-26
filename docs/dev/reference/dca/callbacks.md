@@ -1,11 +1,11 @@
 ---
 title: "Callbacks"
 description: "Callbacks within a Data Container Array."
-weight: 3
+weight: 6
 ---
 
 Callbacks are entry-points for custom code in the DCA. Using callbacks you
-can modify static Data Container Array during runtime.
+can modify the static Data Container Array during runtime.
 
 Callback functions are based on the event dispatcher pattern. You can register
 one or more callbacks for a certain event and when the event is triggered, the
@@ -14,7 +14,7 @@ callback functions are being executed.
 Callbacks are very similar to [Hooks][hooks], but always bound to a specific DCA table.
 
 {{% notice tip %}}
-Since Contao 3.2.0, you can also use [anonymous functions](http://php.net/functions.anonymous) for DCA callbacks.
+You can also use [anonymous functions](http://php.net/functions.anonymous) for DCA callbacks.
 {{% /notice %}}
 
 ***

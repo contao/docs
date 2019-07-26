@@ -1,7 +1,7 @@
 ---
 title: "Palettes"
-description: "Back end  form layout for editing records."
-weight: 2
+description: "Back end form layout for editing records."
+weight: 4
 ---
 
 A palette is a group of form fields which are required to edit a record. A
@@ -18,9 +18,8 @@ will be an associative array which can contain multiple palette definitions. In
 the most basic form you will have at least a `default` palette:
 
 ```php
-<?php
-
-$GLOBALS['TL_DCA']['tl_foo'] => [
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example'] = [
     'palettes' => [
         'default' => '{title_legend},title,alias,addImage',
     ],
@@ -37,9 +36,8 @@ active. Additionally, you have to add a `__selector__` field to the main palette
 definition.
 
 ```php
-<?php
-
-$GLOBALS['TL_DCA']['tl_foo'] => [
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example'] = [
     'palettes' => [
         '__selector__' => ['addImage'],
         'default' => '{title_legend},title,alias,addImage',
@@ -59,9 +57,8 @@ Instead of reacting to a checkbox, you can also define different sub palettes
 depending on different value for a select input field:
 
 ```php
-<?php
-
-$GLOBALS['TL_DCA']['tl_foo'] => [
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example'] = [
     'palettes' => [
         '__selector__' => ['selectField'],
         'default' => '{title_legend},title,alias,selectField',
@@ -84,9 +81,8 @@ A defined `__selector__` can also switch between multiple main palettes. The
 main palette's key simply needs to be the selector's value.
 
 ```php
-<?php
-
-$GLOBALS['TL_DCA']['tl_foo'] => [
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example'] = [
     'palettes' => [
         '__selector__' => ['type'],
         'default' => '{title_legend},type',
@@ -166,4 +162,4 @@ tasks, especially if you want to add or remove fields at specific positions or
 groups. The [Contao Palette Manipulator][1] can help in such a case.
 
 [1]: ../../../documentation/palettemanipulator/
-[2]: ../reference/#fields
+[2]: ../reference/fields/

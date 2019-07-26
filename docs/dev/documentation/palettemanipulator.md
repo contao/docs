@@ -140,12 +140,12 @@ PaletteManipulator::create()
 
 By default, fields is added **after** the parent. You can alter the behaviour by using one of the predefined constants as third parameter:
 
-| parameter                            | behaviour                                           |
-|--------------------------------------|-----------------------------------------------------|
-| PaletteManipulator::POSITION_BEFORE  | Adds the new field before the defined parent field  |
-| PaletteManipulator::POSITION_AFTER   | Adds the new field after the defined parent field   |
-| PaletteManipulator::POSITION_PREPEND | Adds the new field before the defined parent legend |
-| PaletteManipulator::POSITION_APPEND  | Adds the new field after the defined parent legend  |
+| parameter                              | behaviour                                           |
+|----------------------------------------|-----------------------------------------------------|
+| `PaletteManipulator::POSITION_BEFORE`  | Adds the new field before the defined parent field  |
+| `PaletteManipulator::POSITION_AFTER`   | Adds the new field after the defined parent field   |
+| `PaletteManipulator::POSITION_PREPEND` | Adds the new field before the defined parent legend |
+| `PaletteManipulator::POSITION_APPEND`  | Adds the new field after the defined parent legend  |
 
 
 ### Example

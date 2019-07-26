@@ -10,6 +10,34 @@ how to list records, how to render back end forms and how to save data. The DCA
 files of all active module are loaded one after the other (according to the
 dependencies), so that every module can override the existing configuration.
 
+
+## Creating a DCA
+
+To create a DCA you must first decide on a table name. This table name is then used
+throughout the configuration as well as within other places of the Contao framework
+(e.g. [models][3]).
+
+All table names managed by a DCA always start with the prefix `tl_` (which officially
+stands for _tüdelü_). The name of the file containing the DCA configuration needs
+to be the same name as the table and must be put in the `/contao/dca` folder. 
+
+Within that file you configure your Data Container Array within the `$GLOBALS['TL_DCA']`
+array. So if your table name is `tl_example`, then your DCA will be created
+like this:
+
+```php
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example'] = [
+    'config' => […],
+    'list' => […],
+    'fields' => […],
+    'palettes' => […],
+];
+```
+
+See the [DCA reference][4] for all available configuration possibilities.
+
+
 ## Registering callbacks
 
 Registering DCA callbacks is similar to [registering to hooks][1]. See the 
@@ -38,6 +66,7 @@ class ContentListener
     }
 }
 ```
+
 
 ### Using service tagging
 
@@ -109,3 +138,5 @@ which do not.
 
 [1]: ../hooks/
 [2]: ../../reference/dca/callbacks/
+[3]: ../models/
+[4]: ../../reference/dca/

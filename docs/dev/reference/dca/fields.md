@@ -1,136 +1,33 @@
 ---
-title: "Reference"
-description: "The Contao Data Container Array configuration."
-weight: 1
+title: "Fields"
+description: "Definition of table columns."
+weight: 3
 ---
 
-A Data Container Array is divided into six sections. The first section stores
-the general table configuration like relations to other tables. The second and
-third section determine how records are listed and which operations a user is
-allowed to execute. The fourth section defines different groups of form fields
-which are called "palettes" and the last two sections describe the input fields
-in detail.
+
+The `fields` key of the DCA defines the columns of a table. Depending on these 
+settings, the Contao core engine decides which type of form field to load, whether 
+a user is allowed to access a certain field and whether a field can be used as sort 
+or filter criteria.
 
 
-### Table configuration
+## Example
 
-The table configuration describes the table itself, e.g. which type of data
-container is used to store the data or how it relates to other tables. Also you
-can enable versioning or define what happens to child records when data is being
-edited or deleted.
-
-| Key                | Value                             | Description                                                                                                                                     |
-|--------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| label              | `&$GLOBALS['TL_LANG']` (`string`) | The label is used with page or file trees and typically includes reference to the language array.                                               |
-| ptable             | Parent table (`string`)           | Name of the related parent table (table.pid = ptable.id).                                                                                       |
-| ctable             | Child tables (`array`)            | Name of the related child tables (table.id = ctable.pid).                                                                                       |
-| dataContainer      | Data Container (`string`)         | Table (database table), File (local configuration file) or Folder (file manager).                                                               |
-| closed             | true/false (`bool`)            | If true, you cannot add further records to the table.                                                                                           |
-| notEditable        | true/false (`bool`)            | If true, the table cannot be edited.                                                                                                            |
-| notDeletable       | true/false (`bool`)            | If true, records in the table cannot be deleted.                                                                                                |
-| notSortable        | true/false (`bool`)            | If true, records in the table cannot be sorted.                                                                                                 |
-| notCopyable        | true/false (`bool`)            | If true, records in the table cannot be duplicated.                                                                                             |
-| notCreatable       | true/false (`bool`)            | If true, records in the table cannot be created but can be duplicated.                                                                          |
-| switchToEdit       | true/false (`bool`)            | Activates the "save and edit" button when a new record is added (sorting mode 4 only).                                                          |
-| enableVersioning   | true/false (`bool`)            | If true, Contao saves the old version of a record when a new version is created.                                                                |
-| doNotCopyRecords   | true/false (`bool`)            | If true, Contao will not duplicate records of the current table when a record of its parent table is duplicated.                                |
-| doNotDeleteRecords | true/false (`bool`)            | If true, Contao will not delete records of the current table when a record of its parent table is deleted.                                      |
-| onload_callback    | Callback functions (`array`)      | Calls a custom function when a DataContainer is initialized and passes the DataContainer object as argument.                                    |
-| onsubmit_callback  | Callback functions (`array`)      | Calls a custom function after a record has been updated and passes the DataContainer object as argument.                                        |
-| ondelete_callback  | Callback functions (`array`)      | Calls a custom function when a record is deleted and passes the DataContainer object as argument.                                               |
-| oncut_callback     | Callback functions (`array`)      | Calls a custom function when a record is moved and passes the DataContainer object as argument.                                                 |
-| oncopy_callback    | Callback functions (`array`)      | Calls a custom function when a record is duplicated and passes the insert ID and the DataContainer object as argument.                          |
-| onversion_callback | Callback functions (`array`)      | Calls a custom function when a new version of a record is created and passes the table, the insert ID and the DataContainer object as argument. |
-| onrestore_callback | Callback functions (`array`)      | Calls a custom function when a version of a record is restored and passes the insert ID, the table, the data array and the version as argument. |
-| sql                | Table configuration (`array`)     | Describes table configuration, e.g. `'keys' => array ( 'id' => 'primary', 'pid' => 'index' )`                                                   |
+```php
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['fields']['tl_example'] = [
+    'myfield' => [
+        'label' => &$GLOBALS['TL_LANG']['tl_example']['myfield'],
+        'exclude' => true,
+        'inputType' => 'text',
+        'eval' => ['tl_class'=>'w50', 'maxlength'=>255],
+        'sql' => "varchar(255) NOT NULL default ''",
+    ]
+];
+```
 
 
-### Listing records
-
-The listing array defines how records are listed. The Contao core engine
-supports three different [views][1]: "list view", "parent view" and "tree view".
-You can configure various sorting options like filters or the default sorting
-order and you can add custom labels.
-
-
-#### Sorting
-
-| Key                   | Value                            | Description                                                                                                                                                                                                                                                                                                                                                                                            |
-|-----------------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| mode                  | Sorting mode (`integer`)         | **0** Records are not sorted <br>**1** Records are sorted by a fixed field <br>**2** Records are sorted by a switchable field <br>**3** Records are sorted by the parent table <br>**4** Displays the child records of a parent record (see style sheets module) <br>**5** Records are displayed as tree (see site structure) <br>**6** Displays the child records within a tree structure (see articles module)               |
-| flag                  | Sorting flag (`integer`)         | **1** Sort by initial letter ascending <br>**2** Sort by initial letter descending <br>**3** Sort by initial two letters ascending <br>**4** Sort by initial two letters descending <br>**5** Sort by day ascending <br>**6** Sort by day descending <br>**7** Sort by month ascending <br>**8** Sort by month descending <br>**9** Sort by year ascending <br>**10** Sort by year descending <br>**11** Sort ascending <br>**12** Sort descending |
-| panelLayout           | Panel layout (`string`)          | **search** show the search records menu <br>**sort** show the sort records menu <br>**filter** show the filter records menu <br>**limit** show the limit records menu. <br>Separate options with comma (= space) and semicolon (= new line) like `sort,filter;search,limit`.                                                                                                                                           |
-| fields                | Default sorting values (`array`) | One or more fields that are used to sort the table.                                                                                                                                                                                                                                                                                                                                                    |
-| headerFields          | Header fields (`array`)          | One or more fields that will be shown in the header element (sorting mode 4 only).                                                                                                                                                                                                                                                                                                                     |
-| icon                  | Tree icon (`string`)             | Path to an icon that will be shown on top of the tree (sorting mode 5 and 6 only).                                                                                                                                                                                                                                                                                                                     |
-| root                  | Root nodes (`array`)             | IDs of the root records (pagemounts). This value usually takes care of itself.                                                                                                                                                                                                                                                                                                                         |
-| rootPaste             | true/false (`bool`)           | Override disabling paste buttons to root, if root is set. (default: false)                                                                                                                                                                                                                                                                                                                             |
-| filter                | Query filter (`array`)           | Allows you to add custom filters as arrays, e.g. `array('status=?', 'active')`.                                                                                                                                                                                                                                                                                                                        |
-| disableGrouping       | true/false (`bool`)           | Allows you to disable the group headers in list view and parent view.                                                                                                                                                                                                                                                                                                                                  |
-| paste_button_callback | Callback function (`array`)      | This function will be called instead of displaying the default paste buttons. Please specify as `array('Class', 'Method')`.                                                                                                                                                                                                                                                                            |
-| child_record_callback | Callback function (`array`)      | This function will be called to render the child elements (sorting mode 4 only). Please specify as `array('Class', 'Method')`.                                                                                                                                                                                                                                                                         |
-| child_record_class    | CSS class (`string`)             | Allows you to add a CSS class to the parent view elements.                                                                                                                                                                                                                                                                                                                                             |
-
-
-#### Labels
-
-| Key            | Value                            | Description                                                                                        |
-|----------------|----------------------------------|----------------------------------------------------------------------------------------------------|
-| fields         | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `array('title', 'user_id:tl_user.name')`). |
-| showColumns    | true/false (`bool`)           | If true Contao will generate a table header with column names (e.g. back end member list)          |
-| format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. <br>**%s** ).                       |
-| maxCharacters  | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
-| group_callback | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
-| label_callback | Callback functions (`array`)     | Call a custom function instead of using the default label function.                                |
-
-
-### Operations
-
-The operations array is divided into two sections: global operations that relate
-to all records at once (e.g. editing multiple records) and regular operations
-that relate to a particular record only (e.g. editing or deleting a record).
-
-
-#### Global operations
-
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| label           | `&$GLOBALS['TL_LANG']` (`string`) | Button label. Typically a reference to the global language array.                                                  |
-| href            | URL fragment (`string`)           | URL fragment that is added to the URI string when the button is clicked (e.g. `act=editAll`).                      |
-| class           | CSS class (`string`)              | CSS class attribute of the button.                                                                                 |
-| attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
-| button_callback | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `array('Class', 'Method')`. |
-
-{{< version "4.7" >}}
-
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
-
-
-#### Regular operations
-
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| label           | `&$GLOBALS['TL_LANG']` (`string`) | Button label. Typically a reference to the global language array.                                                  |
-| href            | URL fragment (`string`)           | URL fragment that is added to the URI string when the button is clicked (e.g. `act=edit`).                         |
-| icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
-| attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
-| button_callback | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `array('Class', 'Method')`. |
-
-{{< version "4.7" >}}
-
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
-
-
-### Fields
-
-The fields array defines the columns of a table. Depending on these settings,
-the Contao core engine decides which type of form field to load, whether a user
-is allowed to access a certain field and whether a field can be used as sort or
-filter criteria.
+## Reference
 
 | Key                  | Value                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |:---------------------|:------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -159,7 +56,7 @@ filter criteria.
 
 ### Evaluation
 
-The evaluation array configures a particular field in detail. You can e.g.
+The evaluation array (`eval`) configures a particular field in detail. You can e.g.
 create mandatory fields, add a date picker or define the rows and columns of a
 textarea. You can also modify the field appearance or enable data encryption.
 Each field can be validated against a regular expression.
@@ -216,9 +113,9 @@ Each field can be validated against a regular expression.
 | dcaPicker          | true/false (`bool`)           | If true the dca-picker will be shown.  Enables pick up different data sets from the system.                                                                             |
 
 
-### Regular Expressions
+#### Regular Expressions
 
-Regular expressions requires the input of a field to match a pre-defined format.
+Regular expressions (`rgxp`) requires the input of a field to match a pre-defined format.
 A lot of useful formats are shipped with Contao, but additional formats
 can be [registered using a hook][3].
 
@@ -264,9 +161,9 @@ model classes to load referenced data sets efficiently and developer friendly.
 
 ### SQL Column Definition
 
-Since Contao 3.0, the database definition is added as a string to each DCA
-field, e.g. `varchar(255) NOT NULL default ''`. Starting from Contao 4.3,
-one can use [Doctrine Schema Representation][2] to take full advantage of
+Since Contao 3.0, the database definition is added using the `sql` key as a string 
+to each DCA field, e.g. `varchar(255) NOT NULL default ''`. Starting from Contao 
+4.3, one can use [Doctrine Schema Representation][2] to take full advantage of
 the Doctrine Database Abstraction Layer.
 
 **Examples:**
