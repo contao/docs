@@ -270,3 +270,7 @@ body[data-url^="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.par
     margin-right: -1rem;
     padding-right: 1rem;
 }
+
+body[data-url="/cookbook/namespaces/"] #body .padding {
+    max-width: none;
+}
