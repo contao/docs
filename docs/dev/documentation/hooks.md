@@ -49,6 +49,10 @@ if (isset($GLOBALS['TL_HOOKS']['compileFormFields']) && \is_array($GLOBALS['TL_H
 
 ## Registering hooks
 
+Have a look at the [hook reference][1] for a list of all available hooks.
+
+As of Contao 4.8, there are three different ways of subscribing to a hook:
+
 ### Using the PHP Array configuration
 
 You can add your custom logic to hooks by extending the `TL_HOOKS` key in the
@@ -131,3 +135,6 @@ The annotation also takes a second parameter for the priority:
  * @Hook("parseArticles", "-10")
  */
 ```
+
+
+[1]: ../../reference/hooks/
