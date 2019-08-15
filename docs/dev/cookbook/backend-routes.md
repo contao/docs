@@ -1,6 +1,6 @@
 ---
 title: "Backend Routes"
-weight: 1
+description: "Custom routes within the Contao back end."
 ---
 
 ## Adding custom backend routes
