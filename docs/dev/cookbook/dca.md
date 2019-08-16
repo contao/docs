@@ -427,10 +427,9 @@ First we will add the translation for our back end module, which goes into the `
 
 ```php
 // contao/languages/en/modules.php
-$GLOBALS['TL_LANG']['MOD']['parts'] = [
-    'Parts',
-    'Manage vendors and parts.'
-];
+$GLOBALS['TL_LANG']['MOD']['parts'] = ['Parts', 'Manage vendors and parts.'];
+$GLOBALS['TL_LANG']['MOD']['tl_vendor'] = 'Vendors';
+$GLOBALS['TL_LANG']['MOD']['tl_parts'] = 'Parts';
 ```
 
 All other translations will go into files that have the same name as our data container
