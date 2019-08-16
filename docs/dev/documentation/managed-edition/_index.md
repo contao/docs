@@ -35,7 +35,19 @@ the interfaces aka the API for other bundles to configure the `Managed Edition`.
 
 Maybe an illustration helps you to understand how the pieces are put together:
 
-![Example image](../images/diagrams/managed_edition.svg)
+```mermaid
+graph LR;
+  A[Managed Edition]-- requires -->B[contao/manager-bundle]
+  A-- requires -->C[contao/news-bundle]
+  A-- requires -->D[acme/another-bundle]
+  B-- requires -->F("Everything needed to run a completely managed Contao.<br><br>contao/core-bundle<br>doctrine/dbal<br>symfony/framework-bundle<br>etc.")
+  B-- requires -->E[contao/manager-plugin]
+  C-- requires -->E
+  D-- requires -->E
+  E-- manages -->A
+  style B fill:#fcc
+  style E fill:#ffc
+```
 
 The key of a `Managed Edition` are the following lines in your `composer.json` which you'll get automatically when you
 run `composer create-project contao/managed-edition`:
