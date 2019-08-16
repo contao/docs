@@ -45,6 +45,10 @@ a {
     color: var(--MAIN-LINK-color);
 }
 
+a code {
+    color: var(--MAIN-LINK-color);
+}
+
 .anchor {
     color: var(--MAIN-ANCHOR-color);
 }
@@ -58,6 +62,7 @@ a:hover {
 }
 
 #body a.highlight:after {
+    position: relative;
     display: block;
     content: "";
     height: 1px;
