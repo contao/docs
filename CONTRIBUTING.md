@@ -48,7 +48,7 @@ specific Contao version:
 
 ### Service tag
 
-{{< version "4.7" >}}
+{{< version "4.8" >}}
 ```
 
 
