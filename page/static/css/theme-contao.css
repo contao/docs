@@ -245,7 +245,7 @@ body[data-url^="/reference/hooks/z"] h1 {
     text-transform: none;
 }
 
-/* hide level 3 */
+/* hide level 3 in general */
 #sidebar ul.topics > li.parent > ul > li > ul {
     display: none;
 }
@@ -271,6 +271,7 @@ body[data-url^="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.par
     padding-right: 1rem;
 }
 
+/* allow more space for the namespaces table */
 body[data-url="/cookbook/namespaces/"] #body .padding {
     max-width: none;
 }
