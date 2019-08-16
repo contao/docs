@@ -96,7 +96,7 @@ Contao Managed Edition a lot of tedious work is automated for you but to set it 
 feel comfortable with the CLI, Composer and much more. As a developer that should not be much of an issue for you so you
 might probably stop here but to get a complete picture of the Contao ecosystem, please continue reading.
   
-* **contao/manager**<br>
+* **contao/contao-manager**<br>
   The majority of Contao's users want to be able to install Contao on their web server and manage it there.
   The Contao Manager is Contao's answer to this need. It's a GUI that's compiled to a single PHAR file which is distributed
   on contao.org and provides self update functionality. You can install it on your web server and start managing your
