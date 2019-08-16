@@ -66,7 +66,7 @@ Be sure to have imported your bundles Controllers in your `routing.yml` *before*
 the `ContaoCoreBundle` routes. 
 
 ```yaml
-# app/config/routing.yml
+# config/routing.yml
 
 app:
     resource: '@App/Controller/'

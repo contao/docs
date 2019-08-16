@@ -185,7 +185,7 @@ This works in _most_ of the cases. The Symfony ContainerBuilder simply performs
 a recursive array merge operation of all configurations. The result is:
 
 1. Plugin configuration is loaded before the global config
-   (`app/config/config.yml`), therefore the global config can override bundles.
+   (`config/config.yml`), therefore the global config can override bundles.
 
 2. Plugin configuration is loaded (and overridden) in order of the plugins.
    One plugin can override the bundle configuration set by another plugin by setting the same keys. The order of
