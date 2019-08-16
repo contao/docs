@@ -5,10 +5,10 @@ title: The Manager Plugin
 The `Manager Plugin` is one single PHP class that gives third party bundles the opportunity to 
 configure a `Managed Edition`.
 Simply put, every time a user of the `Managed Edition` runs a `composer update` or a `composer install`
-the `Manager Plugin` instances of all the bundles are called and the application is then configured
+the `Manager Plugin` instances of all packages are called and the application is then configured
 accordingly.
 
-## The bundle-specific Manager Plugin
+## The package-specific Manager Plugin
 
 The whole ecosystem of Contao is built in a way that any bundle should be installable and configurable
 for any regular Symfony application.
@@ -37,9 +37,8 @@ Thus, what you do in your `composer.json` is this:
 This will make sure you get the right version in production while at the same time making it a completely optional
 dependency.
 
-Every bundle can provide one or multiple `Manager Plugin`s but we usually recommend to have just
-one per Composer package. Exposing it to the `Managed Edition` is as simple as providing the FQCN in the `extra` section
-of your `composer.json` like so  (if you need multiple, just make it an array of FQCNs):
+Every Composer package can provide a `Manager Plugin`. Exposing it to the `Managed Edition` is as simple as 
+providing the FQCN in the `extra` section of your `composer.json` like so:
 
 ```json
 {
@@ -61,6 +60,25 @@ of your `composer.json` like so  (if you need multiple, just make it an array of
 }
 ```
 
+
+{{% notice note %}}
+If your Composer package is a monorepository, similar to `contao/contao`, it is also possible to register
+multiple `Manager Plugins` for each subsequent package. You must not create multiple plugins for one package/bundle though!
+
+```json
+{
+    "extra": {
+        "contao-manager-plugin": {
+            "your-vendor/feature1-bundle": "YourVendor\\Feature1Bundle\\ContaoManager\\Plugin",
+            "your-vendor/feature2-bundle": "YourVendor\\Feature2Bundle\\ContaoManager\\Plugin"
+        }
+    }
+}
+```
+
+{{% /notice %}}
+
+
 As you can see, there is no technical requirement for you to call it `ManagerPlugin` or
 `Plugin` and it does not have to reside within `ContaoManager`. All you have to do is make sure
 the `autoload` section is correct so Composer can find the file and then provide the FQCN to the
@@ -75,8 +93,8 @@ Here, you don't need to specify any `extra` key in your `composer.json` because 
 local app. After all, there can only be one anyway as you don't need multiple ones.
 The `Manager Plugin` automatically loads the following classes.
 
-* `App/ContaoManager/Plugin` (recommended)
-* `ContaoManagerPlugin` (discouraged)
+* `\App\ContaoManager\Plugin` (recommended)
+* `\ContaoManagerPlugin` (discouraged)
 
 ## The features
 
@@ -347,7 +365,7 @@ class Plugin implements ExtensionPluginInterface
 
 ## The `DependentPluginInterface`
 
-If your Composer package (aka "bundle") depends on one or more other Composer packages to be loaded first, so it can
+If your Composer package depends on one or more other Composer packages to be loaded first, so it can
 override certain parts of them, you can ensure that the `Manager Plugin`s of these packages are loaded first by
 implementing the `DependentPluginInterface`:
 
