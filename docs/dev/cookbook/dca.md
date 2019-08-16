@@ -439,7 +439,6 @@ table names:
 ```php
 // contao/languages/en/tl_vendor.php
 $GLOBALS['TL_LANG']['tl_vendor']['new'] = ['Create new vendor', 'Creates a new vendor.'];
-$GLOBALS['TL_LANG']['tl_vendor']['show'] = 'Show the details of vendor ID %s';
 $GLOBALS['TL_LANG']['tl_vendor']['vendor_legend'] = 'Vendor';
 $GLOBALS['TL_LANG']['tl_vendor']['address_legend'] = 'Address';
 $GLOBALS['TL_LANG']['tl_vendor']['name'] = ['Name', 'Name of the vendor.'];
@@ -452,7 +451,6 @@ $GLOBALS['TL_LANG']['tl_vendor']['country'] = ['Country', "Country of the vendor
 ```php
 // contao/languages/en/tl_parts.php
 $GLOBALS['TL_LANG']['tl_parts']['new'] = ['Create new part', 'Creates a new part.'];
-$GLOBALS['TL_LANG']['tl_parts']['show'] = 'Show the details of part ID %s';
 $GLOBALS['TL_LANG']['tl_parts']['parts_legend'] = 'Part';
 $GLOBALS['TL_LANG']['tl_parts']['name'] = ['Name', 'Name of the part.'];
 $GLOBALS['TL_LANG']['tl_parts']['number'] = ['Number', 'Part number.'];
