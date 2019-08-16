@@ -36,7 +36,7 @@ class GetCountriesListener
     public function onGetCountries(array &$translatedCountries, array $allCountries): void
     {
         // Codes for the european countries
-        $europeanCountryCodes = array('de', 'at', 'ch' /*, ... */);
+        $europeanCountryCodes = array('de', 'at', 'ch' /*, … */);
     
         // Remove all non-european countries
         $translatedCountries = array_intersect_key($translatedCountries, array_flip($europeanCountryCodes));

@@ -11,15 +11,15 @@ Before we use the `PaletteManipulator`, lets have a look at how [palettes](../..
 // tl_user.php
 
 $GLOBALS['TL_DCA']['tl_user'] = [
-    ...
+    …
     // Palettes
 	'palettes' => array
 	(
-        ...
+        …
         'default' => '{name_legend},username,name,email;{backend_legend:hide},language,uploader,showHelp,thumbnails,useRTE,useCE;{theme_legend:hide},backendTheme,fullscreen;{password_legend:hide},pwChange,password;{admin_legend},admin;{groups_legend},groups,inherit;{account_legend},disable,start,stop'
-        ...
+        …
     ),
-    ...
+    …
 ];
 ```
 
@@ -31,12 +31,12 @@ Let's assume we have the following DCA configuration:
 ```php
 <?php
 
-...
+…
 
 $GLOBALS['TL_DCA']['tl_user']['fields']['custom_field'] = [
     'label' => &$GLOBALS['TL_LANG']['tl_user']['custom_field'],
     'inputType' => 'text',
-    'eval' => [...],
+    'eval' => […],
     'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
 ];
 ```

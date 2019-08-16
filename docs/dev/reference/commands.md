@@ -27,7 +27,7 @@ Arguments:
 
 Options:
   -p, --password=PASSWORD  The new password
-  [...]
+  […]
 
 ```
 

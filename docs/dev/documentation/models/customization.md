@@ -9,7 +9,7 @@ Your own model class is ready to use after the following three steps:
 ```php
 // contao/dca/tl_example.php
 $GLOBALS['TL_DCA']['tl_example'] = [
-    ...
+    …
 ];
 ```
 

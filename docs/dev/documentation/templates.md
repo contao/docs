@@ -50,7 +50,7 @@ Template `fe_page.html5`:
     <?php $this->endblock(); ?>
 </head>
 <body>
-    [...]
+    […]
 </body>
 </html>
 ```
@@ -84,7 +84,7 @@ The output of the `fe_custom.html5` template will be:
     <link rel="stylesheet" href="style_2.css">
 </head>
 <body>
-    [...]
+    […]
 </body>
 </html>
 ```
