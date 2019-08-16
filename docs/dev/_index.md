@@ -138,6 +138,8 @@ Contao people are active on multiple channels. Of course, if you find a bug or w
 prepare a pull request) please do so on the respective repository (most likely the `contao/contao` mono repository).
 Other than that there are the following channels:
 
+* **Slack:** [Join the Contao workspace][Slack]
+
 * **IRC**<br>
   Server: freenode.net<br>
   Channels: #contao (English), contao.de (German), #contao.dev (Developers)
@@ -149,3 +151,4 @@ Other than that there are the following channels:
 
 [1]: https://github.com/contao
 [2]: https://github.com/contao/contao/blob/master/.github/CONTRIBUTING.md
+[Slack]: https://join.slack.com/t/contao/shared_invite/enQtNjUzMjY4MDU0ODM3LTc0Nzg5ZWJmZTBlNGFjODhlNjIxNTYxMTYzNWYxYTc0ZDQ4OWVjYmVhNDIwOTBjOWIxZDhkMTE2ZTQyMDMyZjc
