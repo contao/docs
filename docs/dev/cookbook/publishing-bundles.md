@@ -1,0 +1,206 @@
+---
+title: "Publishing Bundles"
+description: "How to publish a bundle to be installed in Contao."
+weight: 9
+---
+
+
+Publishing a Contao bundle is very similar to any other Composer package
+or Symfony bundle. There are [plenty][1] [of][2] [good][3] [resources][4] available 
+on the Internet on how to distribute your code. It all boils down to one thing:
+packages are installed using Composer. Your package must be available to Composer,
+and Composer must be able to resolve your dependencies. 
+
+
+## Optimizing a Composer package for Contao
+
+If you are not familiar with how Composer works or how to create a `composer.json`
+for your project, please [read the Composer manual][Composer] first.
+Once your project is a Composer package, there are additional steps necessary
+to integrate into the Contao ecosystem.
+
+
+### Different `type` of Composer packages
+
+Setting the `type` in your `composer.json` will give tools a hint on what
+your package contains.
+
+ 1. Choose `library` if your package does not integrate with Symfony or 
+    Contao directly, e.g. if it provides an abstraction for a common task.
+    You should also choose this type if your package is Contao-specific, but
+    is not providing user features but helpers/services/classes that are only
+    useful to other developers. Feel free to use `contao-library` if you feel
+    like readers should see what your package is made for.
+    
+ 2. Using `contao-bundle` will allow Contao users to discover your package.
+    Learn more about integration into the Contao ecosystem below.
+
+ 3. You can also use `symfony-bundle` if your package contains a bundle class and couples
+    to the Symfony framework, but not specificly to Contao. Symfony bundles are useful
+    because they can be used by any Symfony application, and another Contao bundle can
+    integrate their functionality into the CMS. 
+
+ 4. The `contao-module` type was necessary to integrate a Contao 3 extension into
+    Composer and Contao 4. Using it is not recommended anymore, as Contao 3 has reached
+    it's end of life. Refer to the [CCA Plugin Documentation][CCA] for integration details.    
+
+
+### Adding a `contao-manager-plugin`
+
+The _Contao Managed Edition_ is a self-maintaining implementation of a Symfony app,
+which is designed to ease installation and configuration of Symfony for
+Contao-specific use cases. Optimizing your package for the Managed Edition
+is totally optional, but highly recommended if you want the package to
+be available for most Contao users. To integrate with the Contao
+Managed Edition, you have to add a [Contao Manager Plugin][Plugin] to your package. 
+
+If you do **not** add a _Contao Manager Plugin_ to your extension, it will still 
+work with Contao, but:
+
+ - it will require a user to manually register the bundle class in Symfony.
+ - therefore the Contao Manager will list the package as **not being compatible**
+   to the Contao Managed Edition, and won't allow it's installation with
+   a push of the button.
+
+
+## Publishing to the Contao ecosystem
+
+If you followed so far, your extension is now technically compatible with Contao, 
+but you also want Contao users to discover it. In most cases, this means having the package
+available in the Contao Manager search. A public version of this search index
+is available on [extensions.contao.org][extensions].
+
+If your package has `"type": "contao-bundle"` and is published to
+[packagist.org](https://packagist.org), our search index will automatically pick it up.
+To extend the description, add multilingual translations, a logo etc., you have to add
+your package to the `contao/package-metadata` repository. Read and follow
+[the metadata documentation][metadata] on how to do that.
+
+If your extension is **not** available on [packagist.org](https://packagist.org)
+or not of `"type": "contao-bundle"`, you can still add it to the
+`contao/package-metadata` repository. It will then show up in the search results 
+with a link to your homepage, where you can provide installation instructions,
+buying options or anything you like.
+
+
+
+## Private and commercial packages
+
+If users need to pay for your package or you created it just for a single
+client, you might not want to publish it on [packagist.org](https://packagist.org).
+There are still various ways to install it with Composer, for example 
+by following what [Private Packagist](https://packagist.com) has to offer.
+Unfortunately, bypassing [packagist.org](https://packagist.org) means
+users will have to manually adjust their `composer.json` to add repositories
+and requirements, which is cumbersome and error-prone for non-developers.
+
+Composer has always allowed to install packages from ZIP archives, which
+are called _Artifacts_. Using this feature, the Contao Manager allows
+users to upload ZIP archives and install packages without a need
+to manually adjust the `composer.json`. We are distinguishing between
+two types of _artifacts_ in the Contao Manager.
+
+ 1. a _regular_ artifact is any Composer package packed into a ZIP archive.
+ 2. a `contao-provider` is a special type of artifact, which adds private 
+    repositories to require additional packages into a Contao installation.
+
+
+### Creating an Artifact Package
+
+Creating an artifact package for the Contao Manager is no difference from
+a regular Composer artifact. Its a ZIP archive of all package 
+files, including a `composer.json` in the root of the ZIP archive.<br>
+There is one significant additional requirement: You **must** 
+add [a `version` property][version] to your `composer.json`. Because Composer 
+does not know a version (e.g. by reading tags from your GIT repository),
+that info has to be provided manually.
+
+That's it. Create a ZIP archive of your package and upload it to the Contao Manager
+by drag & drop or the upload button. Whenever the package needs to be updated,
+a new ZIP archive with a new `version` property has to be uploaded to the
+Contao Manager.
+
+{{% notice info %}}
+On most systems the ZIP archive must be created by selecting all package
+files individually, not by creating an archive of the parent folder of your package!
+{{% /notice %}}
+
+{{% notice tip %}}
+Don't forget that your artifact package can still have a `require` section
+in the `composer.json`, same as any other Composer package. You can require
+any package from [packagist.org](https://packagist.org) or even another
+artifact (that can be uploaded simultaneously).
+{{% /notice %}}
+
+
+### Adding packages from private repositories
+
+If your private package changes regularly, it might be cumbersome for users
+to upload a ZIP file for each and every new version. External repositories 
+like [Private Packagist](https://packagist.com) or a version control system (VCS) 
+are the key feature to this in Composer. Unfortunately, Composer does only
+read [the `repositories` configuration][repositories] in the root `composer.json`, but not
+from the `composer.json` of any installed package. 
+
+To solve this issue for Contao, we came up with a special package of `"type": "contao-provider"`.
+When creating an artifact package of this type, you can add repository information 
+to the `composer.json`, which will be included when loading dependencies. 
+Be aware that you can **only** use repositories, you cannot add an `auth.json` 
+or a `config` section with authentication details. If your repository requires
+authentication, it must be included in the repository URL.
+
+{{% notice info %}}
+Unfortunately, [GitHub](https://github.com) does not support repository-based authentication.
+Known options are [Private Packagist](https://packagist.com) or [GitLab](https://gitlab.com).
+{{% /notice %}}
+
+{{% notice tip %}}
+A `contao-provider` package is still a regular artifact, which can contain any
+number of files. A good example would be an artifact that contains a license key
+for a software, and also installs the software through requirements. 
+The software can then check the provider's vendor folder automatically
+for a valid license file.
+{{% /notice %}}
+
+
+### Behind the scenes
+
+Most of what is described here applies to the Contao Managed Edition
+and the use of the Contao Manager. The whole Contao ecosystem is build in 
+layers to hide technical details from non-developers.
+
+1. The Contao CMS features can be used in any Symfony application, but this means
+   you need to be familiar with configuring Symfony.
+   
+2. If you do not want to take care of configuring Symfony, you can use the
+   Contao Managed Edition. It will automatically configure the application
+   and third-party bundles, but you're always free to adjust what's necessary.
+   
+3. The `contao/manager-plugin`, and essential part of the Contao Managed Edition,
+   is also responsible for the Composer integration. It will automatically load
+   artifacts and `contao-provider` packages into Composer.
+   
+4. The Contao Manager is the topping on the cake. It will use the available tools
+   to manager your installation, but any other tool could use the same tools.
+   
+    - The Contao Manager uses Composer command line binary (build into the
+      Contao Manager) to install new packages.
+    - It will use the Contao Console to control the Symfoy application
+      (for things like `cache:clear`).
+    - It uses the _Contao Command Line API_ at the  
+      
+
+
+
+[1]: https://symfonycasts.com/screencast/symfony-bundle/packagist
+[2]: https://genieblog.ch/how-to-create-a-third-party-symfony-bundle/
+[3]: https://ourcodeworld.com/articles/read/342/how-to-create-with-github-your-first-psr-4-composer-packagist-package-and-publish-it-in-packagist 
+[4]: https://symfonycasts.com/screencast/symfony-bundle
+[Composer]: https://getcomposer.org/doc/02-libraries.md
+[repo]: https://getcomposer.org/doc/05-repositories.md
+[extensions]: https://extensions.contao.org
+[CCA]: https://github.com/contao-community-alliance/composer-plugin/blob/master/README.md
+[Plugin]: /documentation/managed-edition/manager-plugin/
+[metadata]: https://github.com/contao/package-metadata/blob/master/docs/en/README.md
+[version]: https://getcomposer.org/doc/04-schema.md#version
+[repositories]: https://getcomposer.org/doc/04-schema.md#repositories
