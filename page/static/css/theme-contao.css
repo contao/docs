@@ -302,3 +302,47 @@ body[data-url^="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.par
 body[data-url="/cookbook/namespaces/"] #body .padding {
     max-width: none;
 }
+
+@media print {
+    #sidebar {
+        display: none;
+    }
+
+    #top-bar-sticky-wrapper {
+        display: none;
+    }
+
+    #navigation {
+        display: none;
+    }
+
+    #body {
+        margin: 0;
+    }
+
+    #body .padding {
+        max-width: none;
+        padding: 0;
+    }
+
+    div.notices {
+        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+    }
+
+    h2 {
+        page-break-after: avoid;
+    }
+
+    h3 {
+        page-break-after: avoid;
+    }
+
+    h4 {
+        page-break-after: avoid;
+    }
+
+    li {
+        page-break-inside: avoid;
+    }
+}
