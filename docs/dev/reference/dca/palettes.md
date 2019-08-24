@@ -98,7 +98,7 @@ $GLOBALS['TL_DCA']['tl_example'] = [
 A palette is a string of field names which are concatenated with either a
 semicolon (;) or a comma (,). Whereas the comma is just used to separate the
 field names, the semicolon indicates the beginning of a new fieldset, which can
-be expanded and collapsed.
+be expanded and collapsed. Typically, each group will also have a specific _legend_.
 
 ![palette example](../images/palette_example.png?classes=shadow)
 
