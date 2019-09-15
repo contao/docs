@@ -34,6 +34,7 @@ database.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Form;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class StoreFormDataListener implements ServiceAnnotationInterface
@@ -41,7 +42,7 @@ class StoreFormDataListener implements ServiceAnnotationInterface
     /**
      * @Hook("storeFormData")
      */
-    public function onStoreFormData(array $data, \Contao\Form $form): array
+    public function onStoreFormData(array $data, Form $form): array
     {
         $data['member'] = 0;
 

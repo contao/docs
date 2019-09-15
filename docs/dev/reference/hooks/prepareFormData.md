@@ -38,6 +38,7 @@ distribution or data storage.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Form;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class PrepareFormDataListener implements ServiceAnnotationInterface
@@ -45,7 +46,7 @@ class PrepareFormDataListener implements ServiceAnnotationInterface
     /**
      * @Hook("prepareFormData")
      */
-    public function onPrepareFormData(array &$submittedData, array $labels, array $fields, \Contao\Form $form)
+    public function onPrepareFormData(array &$submittedData, array $labels, array $fields, Form $form)
     {
         // This calculates a deadline from a given timestamp
         // and stores it as deadline in $submittedData.

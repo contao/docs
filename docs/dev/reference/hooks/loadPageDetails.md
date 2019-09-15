@@ -27,6 +27,7 @@ to the `\Contao\PageModel` instance.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\PageModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class LoadPageDetailsListener implements ServiceAnnotationInterface
@@ -34,7 +35,7 @@ class LoadPageDetailsListener implements ServiceAnnotationInterface
     /**
      * @Hook("loadPageDetails")
      */
-    public function onLoadPageDetails(array $parentModels, \Contao\PageModel $page): void
+    public function onLoadPageDetails(array $parentModels, PageModel $page): void
     {
         // Add some additional date from the root page to the processed page
         if (count($parentModels) > 0) {

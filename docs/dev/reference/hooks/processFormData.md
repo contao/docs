@@ -40,6 +40,7 @@ arguments and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Form;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ProcessFormDataListener implements ServiceAnnotationInterface
@@ -52,7 +53,7 @@ class ProcessFormDataListener implements ServiceAnnotationInterface
         array $formData, 
         ?array $files, 
         array $labels, 
-        \Contao\Form $form
+        Form $form
     ): void
     {
         // Do something …

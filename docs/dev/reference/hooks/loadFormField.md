@@ -43,6 +43,8 @@ your own widget instead.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Form;
+use Contao\Widget;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class LoadFormFieldListener implements ServiceAnnotationInterface
@@ -50,7 +52,7 @@ class LoadFormFieldListener implements ServiceAnnotationInterface
     /**
      * @Hook("loadFormField")
      */
-    public function onLoadFormField(\Contao\Widget $widget, string $formId, array $formData, \Contao\Form $form): \Contao\Widget
+    public function onLoadFormField(Widget $widget, string $formId, array $formData, Form $form): \Contao\Widget
     {
         if ('myForm' === $formId) {
             $widget->class.= ' myclass';

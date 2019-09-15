@@ -34,6 +34,7 @@ The path to the process image or null to keep the default behaviour.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Image;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ExecuteResizeListener implements ServiceAnnotationInterface
@@ -41,7 +42,7 @@ class ExecuteResizeListener implements ServiceAnnotationInterface
     /**
      * @Hook("executeResize")
      */
-    public function onExecuteResize(\Contao\Image $image): ?string
+    public function onExecuteResize(Image $image): ?string
     {
         if (…) {
             // Do something and return the path to the resized image

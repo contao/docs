@@ -42,6 +42,7 @@ Return `true` if the credentials are valid, `false` otherwise.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\User;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class CheckCredentialsListener implements ServiceAnnotationInterface
@@ -49,7 +50,7 @@ class CheckCredentialsListener implements ServiceAnnotationInterface
     /**
      * @Hook("checkCredentials")
      */
-    public function onCheckCredentials(string $username, string $credentials, \Contao\User $user): bool
+    public function onCheckCredentials(string $username, string $credentials, User $user): bool
     {
         // Custom method of checking credentials (e.g. external service)
         if ($this->customCredentialsCheck($username, $credentials)) {

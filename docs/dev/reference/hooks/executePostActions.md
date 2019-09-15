@@ -27,6 +27,7 @@ and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\DataContainer;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ExecutePostActionsListener implements ServiceAnnotationInterface
@@ -34,7 +35,7 @@ class ExecutePostActionsListener implements ServiceAnnotationInterface
     /**
      * @Hook("executePostActions")
      */
-    public function onExecutePostActions(string $action, \Contao\DataContainer $dc): void
+    public function onExecutePostActions(string $action, DataContainer $dc): void
     {
         if ('update' === $action) {
             // Do something …

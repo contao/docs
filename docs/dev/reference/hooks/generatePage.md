@@ -31,6 +31,9 @@ and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\PageRegular;
+use Contao\LayoutModel;
+use Contao\PageModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GeneratePageListener implements ServiceAnnotationInterface
@@ -38,7 +41,7 @@ class GeneratePageListener implements ServiceAnnotationInterface
     /**
      * @Hook("generatePage")
      */
-    public function onGeneratePage(\Contao\PageModel $pageModel, \Contao\LayoutModel $layout, \Contao\PageRegular $pageRegular): void
+    public function onGeneratePage(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
     {
         // Do something …
     }

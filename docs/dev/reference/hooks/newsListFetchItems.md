@@ -46,6 +46,7 @@ otherwise. Return `null` if no news entries are found.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class NewsListFetchItemsListener implements ServiceAnnotationInterface
@@ -53,7 +54,7 @@ class NewsListFetchItemsListener implements ServiceAnnotationInterface
     /**
      * @Hook("newsListFetchItems")
      */
-    public function onNewsListFetchItems(array $newsArchives, bool $featuredOnly, int $limit, int $offset, \Contao\Module $module): mixed
+    public function onNewsListFetchItems(array $newsArchives, bool $featuredOnly, int $limit, int $offset, Module $module): mixed
     {
         if (…) {
             // Query the database and return the records

@@ -41,6 +41,7 @@ you return `false`, other hooks will continue to process the regular expression.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Widget;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class AddCustomRegexpListener implements ServiceAnnotationInterface
@@ -48,7 +49,7 @@ class AddCustomRegexpListener implements ServiceAnnotationInterface
     /**
      * @Hook("addCustomRegexp")
      */
-    public function onAddCustomRegexp(string $regexp, mixed $input, \Contao\Widget $widget): bool
+    public function onAddCustomRegexp(string $regexp, mixed $input, Widget $widget): bool
     {
         if ('myregexp' === $regexp) {
             // Do something …

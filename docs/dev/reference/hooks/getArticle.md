@@ -22,6 +22,7 @@ prior to rendering. It does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\ArticleModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GetArticleListener implements ServiceAnnotationInterface
@@ -29,7 +30,7 @@ class GetArticleListener implements ServiceAnnotationInterface
     /**
      * @Hook("getArticle")
      */
-    public function onGetArticle(\Contao\ArticleModel $article): void
+    public function onGetArticle(ArticleModel $article): void
     {
         // Modify $article here …
     }

@@ -37,6 +37,7 @@ expects no return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\ZipReader;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ExtractThemeFilesListener implements ServiceAnnotationInterface
@@ -44,7 +45,7 @@ class ExtractThemeFilesListener implements ServiceAnnotationInterface
     /**
      * @Hook("extractThemeFiles")
      */
-    public function onExtractThemeFiles(\DOMDocument $xml, \Contao\ZipReader $zipArchive, int $themeId, array $mapper): void
+    public function onExtractThemeFiles(\DOMDocument $xml, ZipReader $zipArchive, int $themeId, array $mapper): void
     {
         // Do something …
     }

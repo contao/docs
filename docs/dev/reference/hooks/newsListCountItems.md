@@ -38,6 +38,7 @@ Return `false` if this hook should not be considered. Return an integer otherwis
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class NewsListCountItemsListener implements ServiceAnnotationInterface
@@ -45,7 +46,7 @@ class NewsListCountItemsListener implements ServiceAnnotationInterface
     /**
      * @Hook("newsListCountItems")
      */
-    public function onNewsListCountItems(array $newsArchives, bool $featuredOnly, \Contao\Module $module): mixed
+    public function onNewsListCountItems(array $newsArchives, bool $featuredOnly, Module $module): mixed
     {
         if (…) {
             // Query the database and return the number of records

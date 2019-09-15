@@ -47,6 +47,7 @@ An array containing all the events, grouped by a time stamp.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GetAllEventsListener implements ServiceAnnotationInterface
@@ -54,7 +55,7 @@ class GetAllEventsListener implements ServiceAnnotationInterface
     /**
      * @Hook("getAllEvents")
      */
-    public function onGetAllEvents(array $events, array $calendars, int $timeStart, int $timeEnd, \Contao\Module $module): array
+    public function onGetAllEvents(array $events, array $calendars, int $timeStart, int $timeEnd, Module $module): array
     {
         // Add events to $events or modify the array …
 

@@ -35,6 +35,8 @@ Return `$buffer` or your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
+use Contao\ModuleModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GetFrontendModuleListener implements ServiceAnnotationInterface
@@ -42,7 +44,7 @@ class GetFrontendModuleListener implements ServiceAnnotationInterface
     /**
      * @Hook("getFrontendModule")
      */
-    public function onGetFrontendModule(\Contao\ModuleModel $moduleModel, string $buffer, \Contao\Module $module): string
+    public function onGetFrontendModule(ModuleModel $moduleModel, string $buffer, Module $module): string
     {
         // Wrap a specific module in an additional wrapper div
         if (2 === (int) $moduleModel->id) {

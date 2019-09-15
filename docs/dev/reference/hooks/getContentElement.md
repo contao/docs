@@ -36,6 +36,8 @@ The (modified) content of the content element as a string.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\ContentElement;
+use Contao\ContentModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GetContentElementListener implements ServiceAnnotationInterface
@@ -43,7 +45,7 @@ class GetContentElementListener implements ServiceAnnotationInterface
     /**
      * @Hook("getContentElement")
      */
-    public function onGetContentElement(\Contao\ContentModel $contentModel, string $buffer, \Contao\ContentElement $contentElement): string
+    public function onGetContentElement(ContentModel $contentModel, string $buffer, ContentElement $contentElement): string
     {
         // Modify or create new $buffer here …
 

@@ -32,6 +32,7 @@ Return `$buffer` or your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\FormModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GetFormListener implements ServiceAnnotationInterface
@@ -39,7 +40,7 @@ class GetFormListener implements ServiceAnnotationInterface
     /**
      * @Hook("getForm")
      */
-    public function onGetForm(\Contao\FormModel $form, string $buffer): string
+    public function onGetForm(FormModel $form, string $buffer): string
     {
         if (2 === (int) $form->id) {
             // Do something …

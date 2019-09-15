@@ -65,6 +65,8 @@ Otherwise return the boolean `false`.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Image;
+use Contao\File;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GetImageListener implements ServiceAnnotationInterface
@@ -78,9 +80,9 @@ class GetImageListener implements ServiceAnnotationInterface
         int $height, 
         string $mode, 
         string $cacheName, 
-        \Contao\File $file, 
+        File $file, 
         string $targetPath, 
-        \Contao\Image $imageObject
+        Image $imageObject
     ): ?string
     {
         // Return the path to a custom image

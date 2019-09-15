@@ -32,6 +32,7 @@ The (modified) output buffer for the widget.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Widget;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ParseWidgetListener implements ServiceAnnotationInterface
@@ -39,7 +40,7 @@ class ParseWidgetListener implements ServiceAnnotationInterface
     /**
      * @Hook("parseWidget")
      */
-    public function onParseWidget(string $buffer, \Contao\Widget $widget): string
+    public function onParseWidget(string $buffer, Widget $widget): string
     {
         // Do something …
         

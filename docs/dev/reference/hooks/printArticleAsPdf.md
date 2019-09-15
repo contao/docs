@@ -29,6 +29,7 @@ expect a return value. Use it to override the internal PDF functionality.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\ModuleArticle;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class PrintArticleAsPdfListener implements ServiceAnnotationInterface
@@ -36,7 +37,7 @@ class PrintArticleAsPdfListener implements ServiceAnnotationInterface
     /**
      * @Hook("printArticleAsPdf")
      */
-    public function onPrintArticleAsPdf(string $articleContent, \Contao\ModuleArticle $module)
+    public function onPrintArticleAsPdf(string $articleContent, ModuleArticle $module)
     {
         // Trigger your own PDF engine and exit
         exit;

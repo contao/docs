@@ -32,6 +32,7 @@ id as arguments and expects no return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\ZipWriter;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ExportThemeListener implements ServiceAnnotationInterface
@@ -39,7 +40,7 @@ class ExportThemeListener implements ServiceAnnotationInterface
     /**
      * @Hook("exportTheme")
      */
-    public function onExportTheme(\DOMDocument $xml, \Contao\ZipWriter $zipArchive, int $themeId): void
+    public function onExportTheme(\DOMDocument $xml, ZipWriter $zipArchive, int $themeId): void
     {
         // Do something …
     }

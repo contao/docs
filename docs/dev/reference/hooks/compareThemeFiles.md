@@ -35,6 +35,7 @@ of the custom comparison. Or an empty string.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\ZipReader;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class CompareThemeFilesListener implements ServiceAnnotationInterface
@@ -42,7 +43,7 @@ class CompareThemeFilesListener implements ServiceAnnotationInterface
     /**
      * @Hook("compareThemeFiles")
      */
-    public function onCompareThemeFiles(\DOMDocument $xml, \Contao\ZipReader $zip): string
+    public function onCompareThemeFiles(\DOMDocument $xml, ZipReader $zip): string
     {
         // Execute your custom theme comparison
         if ($this->doCustomComparison()) {

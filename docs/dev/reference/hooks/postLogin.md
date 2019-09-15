@@ -28,6 +28,7 @@ Using the `postLogin` hook has been deprecated and will no longer work in Contao
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\User;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class PostLoginListener implements ServiceAnnotationInterface
@@ -35,7 +36,7 @@ class PostLoginListener implements ServiceAnnotationInterface
     /**
      * @Hook("postLogin")
      */
-    public function onPostLogin(\Contao\User $user): void
+    public function onPostLogin(User $user): void
     {
         if ($user instanceof \Contao\FrontendUser) {
             // Do something with the front end user $user  

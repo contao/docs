@@ -27,6 +27,8 @@ the calling front end module as arguments and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
+use Contao\MemberModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ActivateAccountListener implements ServiceAnnotationInterface
@@ -34,7 +36,7 @@ class ActivateAccountListener implements ServiceAnnotationInterface
     /**
      * @Hook("activateAccount")
      */
-    public function onActivateAccount(\Contao\MemberModel $member, \Contao\Module $module): void
+    public function onActivateAccount(MemberModel $member, Module $module): void
     {
         // Do something …
     }

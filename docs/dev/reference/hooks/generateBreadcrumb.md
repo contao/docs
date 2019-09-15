@@ -42,6 +42,7 @@ for the breadcrumb item:
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GenerateBreadcrumbListener implements ServiceAnnotationInterface
@@ -49,7 +50,7 @@ class GenerateBreadcrumbListener implements ServiceAnnotationInterface
     /**
      * @Hook("generateBreadcrumb")
      */
-    public function onGenerateBreadcrumb(array $items, \Contao\Module $module): array
+    public function onGenerateBreadcrumb(array $items, Module $module): array
     {
         // Modify $items …
 

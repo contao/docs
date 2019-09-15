@@ -35,6 +35,8 @@ updated when this hook is triggered.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
+use Contao\FrontendUser;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class UpdatePersonalDataListener implements ServiceAnnotationInterface
@@ -42,7 +44,7 @@ class UpdatePersonalDataListener implements ServiceAnnotationInterface
     /**
      * @Hook("updatePersonalData")
      */
-    public function onUpdatePersonalData(\Contao\FrontendUser $member, array $data, \Contao\Module $module): void
+    public function onUpdatePersonalData(FrontendUser $member, array $data, Module $module): void
     {
         // Do something …
     }

@@ -33,6 +33,7 @@ expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class SetNewPasswordListener implements ServiceAnnotationInterface
@@ -40,7 +41,7 @@ class SetNewPasswordListener implements ServiceAnnotationInterface
     /**
      * @Hook("setNewPassword")
      */
-    public function onSetNewPassword(object $member, string $password, \Contao\Module $module = null): void
+    public function onSetNewPassword(object $member, string $password, Module $module = null): void
     {
         // Do something …
     }

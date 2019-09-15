@@ -32,6 +32,7 @@ does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Module;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class CreateNewUserListener implements ServiceAnnotationInterface
@@ -39,7 +40,7 @@ class CreateNewUserListener implements ServiceAnnotationInterface
     /**
      * @Hook("createNewUser")
      */
-    public function onCreateNewUser(int $userId, array $userData, \Contao\Module $module): void
+    public function onCreateNewUser(int $userId, array $userData, Module $module): void
     {
         // Do something …
     }

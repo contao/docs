@@ -32,6 +32,9 @@ and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\PageRegular;
+use Contao\LayoutModel;
+use Contao\PageModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GetPageLayoutListener implements ServiceAnnotationInterface
@@ -39,7 +42,7 @@ class GetPageLayoutListener implements ServiceAnnotationInterface
     /**
      * @Hook("getPageLayout")
      */
-    public function onGetPageLayout(\Contao\PageModel $pageModel, \Contao\LayoutModel $layout, \Contao\PageRegular $pageRegular): void
+    public function onGetPageLayout(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
     {
         // Modify the page or layout object
     }
