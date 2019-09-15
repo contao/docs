@@ -46,7 +46,7 @@ class NewsListCountItemsListener implements ServiceAnnotationInterface
     /**
      * @Hook("newsListCountItems")
      */
-    public function onNewsListCountItems(array $newsArchives, bool $featuredOnly, Module $module): mixed
+    public function onNewsListCountItems(array $newsArchives, bool $featuredOnly, Module $module)
     {
         if (…) {
             // Query the database and return the number of records

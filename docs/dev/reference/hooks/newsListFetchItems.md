@@ -54,7 +54,7 @@ class NewsListFetchItemsListener implements ServiceAnnotationInterface
     /**
      * @Hook("newsListFetchItems")
      */
-    public function onNewsListFetchItems(array $newsArchives, bool $featuredOnly, int $limit, int $offset, Module $module): mixed
+    public function onNewsListFetchItems(array $newsArchives, bool $featuredOnly, int $limit, int $offset, Module $module)
     {
         if (…) {
             // Query the database and return the records

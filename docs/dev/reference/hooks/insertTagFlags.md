@@ -82,7 +82,7 @@ class InsertTagFlagsListener implements ServiceAnnotationInterface
         array $cache, 
         int $_rit, 
         int $_cnt
-    ): mixed
+    )
     {
         if ('monthNamesAustria' === $flag) {
             return str_replace(['Januar', 'Februar'], ['Jänner', 'Feber'], $cachedValue);

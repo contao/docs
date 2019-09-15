@@ -77,7 +77,7 @@ class ReplaceInsertTagsListener implements ServiceAnnotationInterface
         array $cache,
         int $_rit,
         int $_cnt
-    ): mixed
+    )
     {
         if ('mytag' === $insertTag) {
             return 'mytag replacement';

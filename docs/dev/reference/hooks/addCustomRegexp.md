@@ -18,7 +18,7 @@ regular expression.
 
     The unknown regular expression string.
 
-2. *mixed* `$input`
+2. `$input`
 
     The input value to be validated.
 
@@ -49,7 +49,7 @@ class AddCustomRegexpListener implements ServiceAnnotationInterface
     /**
      * @Hook("addCustomRegexp")
      */
-    public function onAddCustomRegexp(string $regexp, mixed $input, Widget $widget): bool
+    public function onAddCustomRegexp(string $regexp, $input, Widget $widget): bool
     {
         if ('myregexp' === $regexp) {
             // Do something …
