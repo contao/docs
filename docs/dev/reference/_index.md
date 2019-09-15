@@ -1,6 +1,8 @@
 ---
 title: "Reference"
-weight: 2
+weight: 300
+aliases:
+    - /reference/hooks/
 ---
 
 {{% children description="true" %}}

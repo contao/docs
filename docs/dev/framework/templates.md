@@ -1,6 +1,8 @@
 ---
 title: "Templates"
 description: Contao's template engine.
+aliases:
+    - /framework/templates/
 ---
 
 A template is mainly composed of HTML and PHP code. It is used to structure a

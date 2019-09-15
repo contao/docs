@@ -1,7 +1,6 @@
 ---
 title: "Contao Manager API"
 description: "How to control and access the Contao Manager through its REST API."
-weight: 10
 ---
 
 
@@ -75,7 +74,7 @@ The supported & required parameters are:
  
 The user will be presented with the following dialog with two options:
 
-![Contao Manager OAuth Screen](../images/oauth.png?width=449)
+![Contao Manager OAuth Screen](../images/oauth.png?width=449&classes=shadow)
 
 1. When clicking on **Allow Access**, the Contao Manager will generate a token, append a `token=`
    query parameter to the `return_url` argument, and redirect the user to that URL. 

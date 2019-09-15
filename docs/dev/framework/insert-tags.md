@@ -1,11 +1,13 @@
 ---
 title: "Insert Tags"
 description: "Integrate specific content into any place in Contao."
+aliases:
+    - /framework/insert-tags/
 ---
 
 Insert tags are a Contao specific way to replace specific tokens in your templates
 and database fields with content. They follow the format `{{TAG_NAME}}`. In most
-cases they contain a payload after the tag name, ie: `{{TAG_NAME::PAYLOAD}}`.
+cases they contain a payload after the tag name, ie: `TAG_NAME::PAYLOAD}}`.
 
 A list of readily available insert tags can be found in the user manual.
 
@@ -21,10 +23,7 @@ the `str_rot13` function provided by PHP. The first thing is to create a
 listener class in `App\EventListener`.
 
 ```php
-<?php
-
-declare(strict_types=1);
-
+// src/EventListener/Rot13InsertTagListener.php
 namespace App\EventListener;
 
 class Rot13InsertTagListener

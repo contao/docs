@@ -3,7 +3,10 @@ title: "Custom Models"
 description: "Create your own Models"
 ---
 
+
 Your own model class is ready to use after the following three steps:
+
+
 ## 1. Create a DCA
 
 ```php
@@ -15,7 +18,9 @@ $GLOBALS['TL_DCA']['tl_example'] = [
 
 See the [DCA documentation](../../dca) and the [DCA reference](../../../reference/dca) for more information.
 
+
 ## 2. Create the Model class
+
 The naming convention for the model class is to omit `tl_`, convert the snake_case to PascalCase and add "Model".
 
 ```php

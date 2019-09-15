@@ -1,7 +1,6 @@
 ---
 title: "Publishing Bundles"
 description: "How to publish a bundle to be installed in Contao."
-weight: 9
 ---
 
 
@@ -200,7 +199,7 @@ layers to hide technical details from non-developers.
 [repo]: https://getcomposer.org/doc/05-repositories.md
 [extensions]: https://extensions.contao.org
 [CCA]: https://github.com/contao-community-alliance/composer-plugin/blob/master/README.md
-[Plugin]: /documentation/managed-edition/manager-plugin/
+[Plugin]: /framework/managed-edition/manager-plugin/
 [metadata]: https://github.com/contao/package-metadata/blob/master/docs/en/README.md
 [version]: https://getcomposer.org/doc/04-schema.md#version
 [repositories]: https://getcomposer.org/doc/04-schema.md#repositories

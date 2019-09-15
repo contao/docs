@@ -112,6 +112,7 @@ The `title_legend` and `date_legend` placeholders will be replaced with the
 corresponding labels from the "TL_LANG" array.
 
 ```php
+// contao/languages/en/tl_news.php
 $GLOBALS['TL_LANG']['tl_news']['title_legend'] = 'Title and author';
 $GLOBALS['TL_LANG']['tl_news']['date_legend']  = 'Date and time';
 ```
@@ -161,5 +162,5 @@ Container Array via string replacement for example. This can be a cumbersome
 tasks, especially if you want to add or remove fields at specific positions or
 groups. The [Contao Palette Manipulator][1] can help in such a case.
 
-[1]: ../../../documentation/palettemanipulator/
+[1]: ../../../framework/dca/palettemanipulator/
 [2]: ../reference/fields/

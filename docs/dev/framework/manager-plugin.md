@@ -1,5 +1,10 @@
 ---
 title: The Manager Plugin
+menuTitle: Manager Plugin
+description: "A class that gives third party bundles the opportunity to configure a Contao Managed Edition."
+aliases:
+    - /framework/manager-plugin/
+    - /framework/managed-edition/manager-plugin/
 ---
 
 The `Manager Plugin` is one single PHP class that gives third party bundles the opportunity to 
@@ -116,8 +121,6 @@ Because `Managed Edition` does not know what bundles exist and in what order the
 the Manager Plugin needs to tell that to the application.
 
 ```php
-<?php
-
 namespace Vendor\SomeBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
@@ -141,8 +144,6 @@ This is a very common case for Contao bundles because you usually want to be loa
 extend its functionality:
 
 ```php
-<?php
-
 namespace Vendor\SomeBundle\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
@@ -177,9 +178,7 @@ repeat yourself too much if you want to provide integration with the `Contao Man
 be passed here so you can e.g. adjust services according to what the user configured in the GUI.
 {{% /notice %}}
 
-```json
-<?php
-
+```php
 namespace Vendor\SomeBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Config\ConfigPluginInterface;
@@ -244,8 +243,6 @@ Thanks to the `ExtensionPluginInterface` you can, however, modify the all extens
 Here's an example of how you could add your own firewall in front of the Contao `frontend` firewall:
 
 ```php
-<?php
-
 namespace Vendor\MyBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Config\ContainerBuilder;
@@ -313,15 +310,13 @@ from "Bundle X" and another one from "Bundle Y". The container then merges all t
 a certain configuration is coming from.
 {{% /notice %}}
 
-### Allow a clickjacking path for NelmioSecurityBundle
+#### Allow a clickjacking path for NelmioSecurityBundle
 
 Another example where order matters might be the `nelmio_security.clickjacking.paths` configuration. The reason there
 is the same: the rules of the first path that matches are going to be applied. So to make sure that `/external` is
 allowed, your plugin could look like this:
 
 ```php
-<?php
-
 namespace Vendor\MyModule\ContaoManager;
 
 use Contao\ManagerPlugin\Config\ContainerBuilder;
@@ -370,8 +365,6 @@ override certain parts of them, you can ensure that the `Manager Plugin`s of the
 implementing the `DependentPluginInterface`:
 
 ```php
-<?php
-
 namespace Vendor\SomeBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Dependency\DependentPluginInterface;
@@ -390,8 +383,6 @@ class Plugin implements DependentPluginInterface
 If your bundle adds custom routes to the Symfony router, you can implement the `RoutingPluginInterface`:
 
 ```php
-<?php
-
 namespace Vendor\SomeBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Routing\RoutingPluginInterface;

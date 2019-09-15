@@ -1,5 +1,5 @@
 ---
-title: "Managing data records"
+title: "Managing Data Records"
 description: "Creating a DCA to manage custom data records."
 ---
 
@@ -229,10 +229,6 @@ always consists of the first two letters of the vendor. So to make things easier
 for the editor, we fetch the name of the parent (the vendor) and define the first
 two letters of the name as the default for the `number` field.
 
-_Note:_ generally it is recommended to use services for such callbacks. For the
-simplicity of this cookbook article an anonymous function is implemented, using
-the legacy way of retrieving the database connection and parameter inputs.
-
 ```php
 // contao/dca/tl_parts.php
 $GLOBALS['TL_DCA']['tl_parts'] = [
@@ -258,6 +254,12 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
     ],
 ];
 ```
+
+{{% notice note %}}
+Generally it is recommended to use services for such callbacks. For the
+simplicity of this article an anonymous function is implemented, using the legacy 
+way of retrieving the database connection and parameter inputs.
+{{% /notice %}}
 
 
 #### List
@@ -420,8 +422,10 @@ field - which are still empty.
 Translations must be put into the `/contao/languages` folder, while each language
 will have its own subfolder there. Our translations will go into the `/contao/languages/en` folder.
 
-_Note:_ the English translations will also be the fallback when there are no other
+{{% notice note %}}
+The English translations will also be the fallback when there are no other
 translations available.
+{{% /notice %}}
 
 First we will add the translation for our back end module, which goes into the `modules.php`:
 
@@ -458,7 +462,7 @@ $GLOBALS['TL_LANG']['tl_parts']['singleSRC'] = ['Image', 'Image of the part.'];
 ```
 
 
-[1]: ../../documentation/dca
+[1]: ../../framework/dca
 [2]: ../../reference/dca/config
 [3]: ../../reference/dca/list
 [4]: ../../reference/dca/fields

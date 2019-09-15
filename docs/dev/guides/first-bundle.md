@@ -1,6 +1,5 @@
 ---
-title: Your first bundle
-weight: 2
+title: Your First Bundle
 ---
 
 As Contao itself is just a Symfony bundle that's loaded to your Symfony application or Contao Managed Edition, writing
@@ -24,7 +23,7 @@ no sense to show any other packages to the end users.
 ## Structure
 
 We recommend you stick to the structure recommended by [Symfony in their docs][2]. One thing that will differ are the
-Contao specific resources that will go under `Resources/config/contao`.
+Contao specific resources that will go under `Resources/contao`.
 Contao specific resources in general are the following folders:
 
 * `config`
@@ -39,9 +38,10 @@ Also make sure you check out the [Contao Skeleton Bundle][3] which may help you 
 
 ## Integration of the Manager Plugin
 
-If you want to provide integration with the `Contao Managed Edition` make sure you checkout the documentation on the
-[Contao Manager Plugin](../managed-edition/manager-plugin).
+If you want to provide integration with the _Contao Managed Edition_ make sure you checkout the documentation on the
+[Contao Manager Plugin][4].
 
 [1]: https://symfony.com/doc/current/bundles.html
 [2]: https://symfony.com/doc/current/bundles.html#bundle-directory-structure
 [3]: https://github.com/contao/skeleton-bundle
+[4]: /framework/manager-plugin/

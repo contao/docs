@@ -178,4 +178,4 @@ the Doctrine Database Abstraction Layer.
 
 [1]: https://docs.contao.org/books/manual/current/en/02-administration-area/listing-records.html
 [2]: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/schema-representation.html#column
-[3]: ../../../documentation/hooks/
+[3]: ../../../framework/hooks/

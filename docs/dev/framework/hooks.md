@@ -1,6 +1,8 @@
 ---
 title: "Hooks"
 description: Extending front end and back end functionality.
+aliases:
+    - /framework/hooks/
 ---
 
 Hooks are entry points into the Contao core (and some of its extension bundles).
@@ -94,45 +96,59 @@ Hook listener can be added to the service configuration.
 ```yml
 services:
   App\EventListener\AccountListener:
-    public: true
     tags:
-      - { name: contao.hook, hook: activateAccount, method: onAccountActivation }
+      - { name: contao.hook, hook: activateAccount, method: onAccountActivation, priority: 0 }
 ```
 
-Note that the service must be defined _public_ so that Contao can retrieve it
-from the container due to lack of dependency injection within the legacy Contao
-framework.
+The service tag can have the following options:
+
+| Option   | Type      | Description                                                                                              |
+| -------- | --------- | -------------------------------------------------------------------------------------------------------- |
+| name     | `string`  | Must be `contao.hook`.                                                                                   |
+| hook     | `string`  | The name of the hook this service will listen to.                                                        |
+| method   | `string`  | _Optional:_ the method name in the service - otherwise infered from the hook (e.g. `onActivateAccount`). |
+| priority | `integer` | _Optional:_ priority of the hook. (Default: `0`)                                                         |
+
+_Note on the priority:_ When using the default priority, or a priority of `0`, the 
+hook will be executed according to the extension loading order, along side hooks 
+that are using the legacy configuration via `$GLOBALS['TL_HOOK']`. With a priority 
+that is greater than zero the hook will be executed _before_ the legacy registered 
+hooks. With a priority of lower than zero the hook will be executed _after_ the 
+legacy registered hooks.
+
 
 ### Using Annotations
 
 {{< version "4.8" >}}
 
-Since Contao 4.8 hooks can also be registered using the `@Hook` _Annotation_.
-See the following example:
+Hooks can also be registered using the `@Hook` _Annotation_. See the following example:
 
 ```php
 // src/EventListener/ParseArticlesListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\FrontendTemplate;
+use Contao\Module;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseArticlesListener
+class ParseArticlesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("parseArticles")
      */
-    public function onParseArticles(\Contao\FrontendTemplate $template, array $newsEntry, \Contao\Module $module): void
+    public function onParseArticles(FrontendTemplate $template, array $newsEntry, Module $module): void
     {
         // Do something …
     }
 }
 ```
 
-The annotation also takes a second parameter for the priority:
+You can also define the priority through the annotation:
 
 ```php
 /**
- * @Hook("parseArticles", "-10")
+ * @Hook("parseArticles", priority=-10)
  */
 ```
 

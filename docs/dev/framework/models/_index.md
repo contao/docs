@@ -1,6 +1,8 @@
 ---
 title: "Models"
 description: "Read objects from and write them to the database"
+aliases:
+    - /framework/models/
 ---
 
 Models are objects for creating new records and reading or modifying existing records from the database - you can compare them to Doctrine's Entities.
@@ -12,6 +14,7 @@ In Contao, each database table has a corresponding model class:
 | tl_article | ArticleModel |
 | tl_news    | NewsModel    |
 | tl_page    | PageModel    |
+| …          | …            |
 
 ## Fetching a row
 

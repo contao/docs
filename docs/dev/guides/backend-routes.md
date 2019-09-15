@@ -19,12 +19,7 @@ The Controller class is placed inside the `Controller` directory
 and is configured through annotations.
 
 ```php
-<?php
-
 // src/Controller/BackendController.php
-
-declare(strict_types=1);
-
 namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -67,10 +62,9 @@ the `ContaoCoreBundle` routes.
 
 ```yaml
 # config/routing.yml
-
 app:
-    resource: '@App/Controller/'
-    type:     annotation
+    resource: ../src/Controller
+    type: annotation
 ```
 
 Our route `backendRouteAction` will render the template `my_backend_route.html.twig`
@@ -104,7 +98,7 @@ on the top of the page
 
 This exampe renders like this:
 
-![](../images/custom-backend-routes-1.png)
+![](../images/custom-backend-routes-1.png?classes=shadow)
 
 ### Extend the backend menu
 
@@ -115,11 +109,7 @@ create one that listens for the menu event to be dispatched.
 
 
 ```php
-<?php
 // src/EventListener/BackendMenuListener.php
-
-declare(strict_types=1);
-
 namespace App\EventListener;
 
 use Contao\CoreBundle\Event\MenuEvent;
@@ -172,9 +162,7 @@ For this to work, we add the following lines to our service configuration in `ap
 
 ```yaml
 services:
-
-    contao.listener.user_backend_menu_listener:
-        class: App\EventListener\BackendMenuListener
+    App\EventListener\BackendMenuListener:
         arguments:
             - "@router"
             - "@request_stack"

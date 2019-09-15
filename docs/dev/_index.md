@@ -8,9 +8,14 @@ Welcome to the Contao manual for developers and the Contao ecosystem!
 This introduction is meant to give you an overall idea of how things work in Contao and its ecosystem, people with assigned
 roles, whom to talk to and where to get help.
 
-This document is split into three chapters.
+This document is split into these chapters:
 
-* **[Documentation](documentation)**<br>
+* **[Getting Started](getting-started)**<br>
+  This chapter provides an overview over the capabilities of the Contao Open Source
+  CMS and should help new developers with getting their web application project started
+  with Contao more easily.
+
+* **[Framework](framework)**<br>
   This chapter describes the ins and outs of the Contao ecosystem. It
   provides articles about Contao libraries, how to use and extend Contao
   and general articles about concepts unique to this CMS.
@@ -19,10 +24,15 @@ This document is split into three chapters.
   The reference is a goto guide for all available options in certain
   features, like say DCA configuration or Hooks.
 
-* **[Cookbook](cookbook)**<br>
-  The Contao Cookbook is a continuously growing collection of specific
-  recipes that explain how to correctly solve the most recurrent problems
-  that Symfony developers face in their day to day work.
+* **[Guides](guides)**<br>
+  This section contains a continuously growing collection of specific
+  recipes and guides that explain how to correctly solve the most recurrent problems
+  that Contao & Symfony developers face in their day to day work.
+
+* **[Internals](internals)**<br>
+  This section contains documentation about various internal procedures or articles
+  about topics that do not fit into the regular documentation.
+
 
 ### History
 

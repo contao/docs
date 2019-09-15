@@ -3,14 +3,13 @@ title: "Collections"
 description: "Read or edit multiple models"
 ---
 
-## Collection
 
 A `Collection` is a wrapper class for [models](..). 
 It always contains at least one `Model`. 
 
 If no rows were found, the return value is `null` instead of an empty `Collection`.
 
-### Fetching rows
+## Fetching rows
 If you want to fetch more than one row from the database, you can use the static method `findBy()` which returns a `Collection`.
 
 `findBy()` expects two parameters. The first is the column of the table, the second is its value.
@@ -33,9 +32,9 @@ For more complex conditions, optionally pass arrays as parameters:
 $pages = PageModel::findBy(['language = ?', 'pid = ?'], ['de', 1]);
 ```
 
-### Collection specific methods
+## Collection specific methods
 
-#### findAll()
+### findAll()
 
 `findAll()` returns all rows of a table:
 
@@ -44,7 +43,7 @@ $pages = PageModel::findBy(['language = ?', 'pid = ?'], ['de', 1]);
 $pages = PageModel::findAll();
 ```
 
-#### findMultipleByIds()
+### findMultipleByIds()
 You can create a collection by passing the IDs to this method:
 
 ```php
@@ -52,7 +51,7 @@ You can create a collection by passing the IDs to this method:
 $pages = PageModel::findMultipleByIds([1, 2, 3]);
 ```
 
-### Data access
+## Data access
 You can loop through a collection object using `foreach`.
 In this example, `$page` is a `PageModel`.
 
