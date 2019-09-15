@@ -11,6 +11,11 @@ and append the subsequently documented commands.
 $> php bin/console <command-name>
 ```
 
+{{% notice note %}}
+In the Contao Managed Edition, the path to the console script is `vendor/bin/contao-console`
+instead.
+{{% /notice %}}
+
 By appending the `--help` argument to any command, a usage guide is printed to the shell.
 
 ```sh
