@@ -43,8 +43,9 @@ your own widget instead.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class LoadFormFieldListener
+class LoadFormFieldListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("loadFormField")

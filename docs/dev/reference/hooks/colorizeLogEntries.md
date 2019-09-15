@@ -35,8 +35,9 @@ Return the processed `$label` string.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ColorizeLogEntriesListener
+class ColorizeLogEntriesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("colorizeLogEntries")

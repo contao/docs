@@ -27,8 +27,9 @@ to the `\Contao\PageModel` instance.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class LoadPageDetailsListener
+class LoadPageDetailsListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("loadPageDetails")

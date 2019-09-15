@@ -41,8 +41,9 @@ Return the `$widget` instance after modification or your custom widget.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ValidateFormFieldListener
+class ValidateFormFieldListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("validateFormField")

@@ -65,8 +65,9 @@ Otherwise return the boolean `false`.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetImageListener
+class GetImageListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("getImage")

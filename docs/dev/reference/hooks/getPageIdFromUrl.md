@@ -35,8 +35,9 @@ Return the (modified) array of URL fragments.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetPageIdFromUrlListener
+class GetPageIdFromUrlListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("getPageIdFromUrl")

@@ -32,8 +32,9 @@ id as arguments and expects no return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ExportThemeListener
+class ExportThemeListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("exportTheme")

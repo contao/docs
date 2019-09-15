@@ -34,8 +34,9 @@ Return a `string` with the article's new content or `null` to keep the default.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetArticlesListener
+class GetArticlesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("getArticles")

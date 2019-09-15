@@ -28,8 +28,9 @@ Using the `postAuthenticate` hook has been deprecated and will no longer work in
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostAuthenticateListener
+class PostAuthenticateListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("postAuthenticate")

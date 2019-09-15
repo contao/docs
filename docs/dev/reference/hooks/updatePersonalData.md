@@ -35,8 +35,9 @@ updated when this hook is triggered.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class UpdatePersonalDataListener
+class UpdatePersonalDataListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("updatePersonalData")

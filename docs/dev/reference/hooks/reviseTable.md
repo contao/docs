@@ -48,8 +48,9 @@ Return `true` if the current page should be reloaded. Otherwise return `false` o
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ReviseTableListener
+class ReviseTableListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("reviseTable")

@@ -30,8 +30,9 @@ the record and the data array as arguments and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class AddCommentListener
+class AddCommentListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("addComment")

@@ -32,8 +32,9 @@ data to the template.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CompileArticleListener
+class CompileArticleListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("compileArticle")

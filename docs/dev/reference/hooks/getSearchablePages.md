@@ -44,8 +44,9 @@ sitemap or only for the search index.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetSearchablePagesListener
+class GetSearchablePagesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("getSearchablePages")

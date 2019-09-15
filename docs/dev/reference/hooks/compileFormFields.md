@@ -37,8 +37,9 @@ An `array` of of `\Contao\FormFieldModel` instances.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CompileFormFieldsListener
+class CompileFormFieldsListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("compileFormFields")

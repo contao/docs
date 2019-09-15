@@ -61,8 +61,9 @@ If your function is not responsible for this insert tag, you **must** return
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ReplaceInsertTagsListener
+class ReplaceInsertTagsListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("replaceInsertTags")

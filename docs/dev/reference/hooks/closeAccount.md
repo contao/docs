@@ -34,8 +34,9 @@ The operation mode will either be `close_deactivate` or `close_delete`.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CloseAccountListener
+class CloseAccountListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("closeAccount")

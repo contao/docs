@@ -26,8 +26,9 @@ the file name as argument and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class LoadDataContainerListener
+class LoadDataContainerListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("loadDataContainer")

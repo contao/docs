@@ -38,8 +38,9 @@ The `getLanguages` hook allows to modify the system's list of languages.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetLanguagesListener
+class GetLanguagesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("getLanguages")

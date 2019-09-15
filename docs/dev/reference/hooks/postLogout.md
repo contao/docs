@@ -27,8 +27,9 @@ Using the `postLogout` hook has been deprecated and will no longer work in Conta
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostLogoutListener
+class PostLogoutListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("postLogout")

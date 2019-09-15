@@ -35,8 +35,9 @@ is prohibited or your function is not responsible for this comment.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class IsAllowedToEditCommentListener
+class IsAllowedToEditCommentListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("isAllowedToEditComment")

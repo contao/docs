@@ -41,8 +41,9 @@ you return `false`, other hooks will continue to process the regular expression.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class AddCustomRegexpListener
+class AddCustomRegexpListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("addCustomRegexp")

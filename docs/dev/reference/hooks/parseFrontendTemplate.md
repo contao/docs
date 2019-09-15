@@ -34,8 +34,9 @@ modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseFrontendTemplateListener
+class ParseFrontendTemplateListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("parseFrontendTemplate")

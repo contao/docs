@@ -32,8 +32,9 @@ and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class IndexPageListener
+class IndexPageListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("indexPage")

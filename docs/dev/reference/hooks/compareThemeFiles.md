@@ -35,8 +35,9 @@ of the custom comparison. Or an empty string.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CompareThemeFilesListener
+class CompareThemeFilesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("compareThemeFiles")

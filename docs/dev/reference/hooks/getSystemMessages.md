@@ -21,8 +21,9 @@ HTML markup) or an empty string.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetSystemMessagesListener
+class GetSystemMessagesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("getSystemMessages")

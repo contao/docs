@@ -37,8 +37,9 @@ This hook is executed directly after Contao has sent a newsletter ot its recipie
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class SendNewsletterListener
+class SendNewsletterListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("sendNewsletter")

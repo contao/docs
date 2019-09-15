@@ -30,8 +30,9 @@ This hook can also be implemented as an anonymous function.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostUploadListener
+class PostUploadListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("postUpload")

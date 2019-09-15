@@ -37,8 +37,9 @@ expects no return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ExtractThemeFilesListener
+class ExtractThemeFilesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("extractThemeFiles")

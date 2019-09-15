@@ -23,8 +23,9 @@ a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ExecutePreActionsListener
+class ExecutePreActionsListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("executePreActions")

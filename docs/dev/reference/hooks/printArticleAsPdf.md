@@ -29,8 +29,9 @@ expect a return value. Use it to override the internal PDF functionality.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PrintArticleAsPdfListener
+class PrintArticleAsPdfListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("printArticleAsPdf")

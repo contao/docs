@@ -36,8 +36,9 @@ The (modified) content of the content element as a string.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetContentElementListener
+class GetContentElementListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("getContentElement")

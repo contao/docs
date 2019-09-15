@@ -27,8 +27,9 @@ The `getCountries` hook allows to modify the system's list of countries.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetCountriesListener
+class GetCountriesListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("getCountries")

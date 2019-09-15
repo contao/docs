@@ -33,8 +33,9 @@ Return the original `$buffer` or return your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class OutputBackendTemplateListener
+class OutputBackendTemplateListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("outputBackendTemplate")

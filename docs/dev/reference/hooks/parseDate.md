@@ -36,8 +36,9 @@ A string containing the formatted date.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseDateListener
+class ParseDateListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("parseDate")

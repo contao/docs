@@ -38,8 +38,9 @@ Return `false` if this hook should not be considered. Return an integer otherwis
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class NewsListCountItemsListener
+class NewsListCountItemsListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("newsListCountItems")

@@ -46,8 +46,9 @@ otherwise. Return `null` if no news entries are found.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class NewsListFetchItemsListener
+class NewsListFetchItemsListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("newsListFetchItems")

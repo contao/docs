@@ -37,8 +37,9 @@ Return `false` if the element should not be visible in the front end.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class IsVisibleElementListener
+class IsVisibleElementListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("isVisibleElement")

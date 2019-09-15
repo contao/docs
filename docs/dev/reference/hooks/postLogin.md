@@ -28,8 +28,9 @@ Using the `postLogin` hook has been deprecated and will no longer work in Contao
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostLoginListener
+class PostLoginListener implements ServiceAnnotationInterface
 {
     /**
      * @Hook("postLogin")
