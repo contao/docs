@@ -519,7 +519,9 @@ the current date or including lightbox images.
       <strong>rel</strong>: rel-attribute (e.g. "lightbox"),<br>
       <strong>mode</strong>: Mode ("proportional", "crop" or "box"),<br>
       <strong>size</strong>: An image size ID (See Themes -&gt; Image sizes),<br>
-      <strong>template</strong>: The default template (picture_default).</td>
+      <strong>template</strong>: The default template (picture_default).
+      {{< version "4.8" >}}
+      <strong>size</strong> additionally supports predefined image sizes from config.yml.</td>
 </tr>
 <tr>
   <td><code>{{label::*}}</code></td>

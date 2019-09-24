@@ -518,7 +518,9 @@ z.B. das aktuelle Datum oder ein Lightbox-Bild einfügen.
       <strong>rel</strong>: rel-Attribut (z.B. "lightbox"),<br>
       <strong>mode</strong>: Modus ("proportional", "crop" oder "box"),<br>
       <strong>size</strong>: ID einer Bildgrösse (siehe Themes -&gt; Bildgrößen),<br>
-      <strong>template</strong>: Zu verwendendes Template (picture_default).</td>
+      <strong>template</strong>: Zu verwendendes Template (picture_default).
+      {{< version "4.8" >}}
+      <strong>size</strong> additionally supports predefined image sizes from config.yml.</td>
 </tr>
 <tr>
   <td><code>{{label::*}}</code></td>
