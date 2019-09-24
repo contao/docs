@@ -520,7 +520,7 @@ z.B. das aktuelle Datum oder ein Lightbox-Bild einfügen.
       <strong>size</strong>: ID einer Bildgrösse (siehe Themes -&gt; Bildgrößen),<br>
       <strong>template</strong>: Zu verwendendes Template (picture_default).
       {{< version "4.8" >}}
-      <strong>size</strong> additionally supports predefined image sizes from config.yml.</td>
+      <strong>size</strong> unterstützt die vordefinierten Bildgrößen aus config.yml.</td>
 </tr>
 <tr>
   <td><code>{{label::*}}</code></td>
