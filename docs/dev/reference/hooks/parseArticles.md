@@ -32,8 +32,9 @@ and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Contao\Module;
 use Contao\FrontendTemplate;
+use Contao\Module;
+use Contao\UserModel;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ParseArticlesListener implements ServiceAnnotationInterface
@@ -44,7 +45,7 @@ class ParseArticlesListener implements ServiceAnnotationInterface
     public function onParseArticles(FrontendTemplate $template, array $newsEntry, Module $module): void
     {
         // Remove the default "by …" from Contao
-        $template->author = $newsEntry['author'];
+        $template->author = UserModel::findByPk($newsEntry['author'])->name;
     }
 }
 ```
