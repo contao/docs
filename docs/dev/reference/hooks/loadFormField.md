@@ -7,7 +7,8 @@ tags: ["hook-form"]
 
 The `loadFormField` hook is triggered when a form field is loaded. It passes the
 widget object, the form ID and the form data as arguments and expects a widget
-object as return value.
+object as return value. This hook can be used to dynamically alter or extend a form
+field of the form generator.
 
 
 ## Parameters
