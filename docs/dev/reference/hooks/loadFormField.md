@@ -52,7 +52,7 @@ class LoadFormFieldListener implements ServiceAnnotationInterface
     /**
      * @Hook("loadFormField")
      */
-    public function onLoadFormField(Widget $widget, string $formId, array $formData, Form $form): \Contao\Widget
+    public function onLoadFormField(Widget $widget, string $formId, array $formData, Form $form): Widget
     {
         if ('myForm' === $formId) {
             $widget->class.= ' myclass';
