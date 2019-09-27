@@ -161,4 +161,4 @@ Other than that there are the following channels:
 
 [1]: https://github.com/contao
 [2]: https://github.com/contao/contao/blob/master/.github/CONTRIBUTING.md
-[Slack]: https://join.slack.com/t/contao/shared_invite/enQtNjUzMjY4MDU0ODM3LTc0Nzg5ZWJmZTBlNGFjODhlNjIxNTYxMTYzNWYxYTc0ZDQ4OWVjYmVhNDIwOTBjOWIxZDhkMTE2ZTQyMDMyZjc
+[Slack]: https://contao.slack.com/join/shared_invite/enQtNjUzMjY4MDU0ODM3LWVjYWMzODVkZjM5NjdlNDRiZjk2OTI3OWVkMmQ1YjA0MTQ3YTljMjFjODkwYTllN2NkMDcxMThiNzMzZjZlOGU
