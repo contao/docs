@@ -15,7 +15,7 @@ $ vendor/bin/contao-console config:dump-reference contao
 contao:
 
     # Absolute path to the web directory.
-    web_dir:              'C:\Users\Spooky\www\c48dev/web'
+    web_dir:              '…/web'
 
     # Whether or not to use the locale in the URL.
     prepend_locale:       false
@@ -45,7 +45,7 @@ contao:
         # When true, images will always be regenerated when requested. 
         # This also disables deferred image resizing.
         bypass_cache:         false
-        target_dir:           'C:\Users\Spooky\www\c48dev/assets/images'
+        target_dir:           '…/assets/images'
         valid_extensions:
 
             # Defaults:
