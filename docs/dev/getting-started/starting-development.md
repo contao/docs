@@ -11,9 +11,9 @@ There are two main cases when developing within Contao: either you want to custo
 your project-specific web application, or you want to create a re-usable extension -
 either for your own purposes or for others. In either case, the principles are the
 same. However, when creating an extension for Contao, there are some differences
-in structure and procedure. This articles covers the former case, while the [next article][1] 
-explains how to create an actual extension. It also assumes the usage 
-of the Contao Managed Edition.
+in structure and procedure. This articles covers the former case and also assumes 
+the usage of the Contao Managed Edition. [Another article][1] explains how to create 
+a reusable extension.
 
 The purpose of this article is to show the directory structure of Contao and explain
 what goes where - and what to do initially for certain customization tasks.
@@ -102,13 +102,11 @@ already contains the appropriate autoloading directive:
 
 ```json
 {
-    …,
     "autoload": {
         "psr-4": {
             "App\\": "src/"
         }
-    },
-    …
+    }
 }
 ```
 
@@ -118,8 +116,9 @@ hooks, content elements, front end modules, cron jobs and Data Container callbac
 is done via service tags.
 
 For the application development it is recommended to use [autowiring][8] and [auto-configuration][9], 
-which makes it easy to create new services - and thus enables quick development 
-of Contao content elements, hooks, callbacks etc.
+which makes it easy to create new services and tag them automatically (through annotations
+or class interfaces) - and thus enables quick development of Contao content elements, 
+hooks, callbacks etc.
 
 ```yaml
 # config/services.yml
@@ -164,6 +163,8 @@ Of course all this is not needed, if you only need to change or extend the Data
 Container Array definition of a table, or just want to change a translation for
 example.
 
+Next: [create your first DCA adjustment][12].
+
 
 
 [1]: /getting-started/extension/
@@ -177,3 +178,4 @@ example.
 [9]: https://symfony.com/doc/current/service_container.html#the-autoconfigure-option
 [10]: /framework/hooks/#using-annotations
 [11]: https://symfony.com/doc/4.1/configuration.html
+[12]: ../dca/
