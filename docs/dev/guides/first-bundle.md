@@ -20,6 +20,7 @@ The one and only reason as of today is the simple fact that it allows us to dist
 Composer packages on packagist.org. It's especially useful for the package index of the `Contao Manager` where it makes
 no sense to show any other packages to the end users.
 
+
 ## Structure
 
 We recommend you stick to the structure recommended by [Symfony in their docs][2]. One thing that will differ are the
@@ -36,10 +37,12 @@ has moved to the Symfony Container instead and you may also write your language 
 
 Also make sure you check out the [Contao Skeleton Bundle][3] which may help you to get your foundation right.
 
+
 ## Integration of the Manager Plugin
 
 If you want to provide integration with the _Contao Managed Edition_ make sure you checkout the documentation on the
 [Contao Manager Plugin][4].
+
 
 [1]: https://symfony.com/doc/current/bundles.html
 [2]: https://symfony.com/doc/current/bundles.html#bundle-directory-structure
