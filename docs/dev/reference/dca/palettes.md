@@ -2,6 +2,8 @@
 title: "Palettes"
 description: "Back end form layout for editing records."
 weight: 4
+aliases:
+  - /reference/dca/palettes/
 ---
 
 A palette is a group of form fields which are required to edit a record. A
