@@ -1,6 +1,8 @@
 ---
 title: "Palette Manipulator"
 description: The PaletteManipulator allows you to edit DCA palettes in a more convenient way.
+aliases:
+  - /framework/dca/palettemanipulator/
 ---
 
 The [PaletteManipulator](https://github.com/contao/contao/blob/master/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA](../dca), e.g. add fields to the back end of an existing DCA.
@@ -29,10 +31,7 @@ The palette is a string. The `PaletteManipulator` is a utility class to help you
 
 Let's assume we have the following DCA configuration:
 ```php
-<?php
-
-…
-
+// contao/dca/tl_user.php
 $GLOBALS['TL_DCA']['tl_user']['fields']['custom_field'] = [
     'label' => &$GLOBALS['TL_LANG']['tl_user']['custom_field'],
     'inputType' => 'text',
@@ -45,7 +44,8 @@ At this moment, the field is not visible in the back end.
 The field now has to be added to the palette. This could happen via concatenation or something like `str_replace()`:
 
 ```php
-<?php
+// contao/dca/tl_user.php
+
 // appending custom_field to the palette
 $GLOBALS['TL_DCA']['tl_user']['palettes']['default'] .= ';{custom_legend},custom_field';
 
@@ -58,10 +58,7 @@ These two methods are a bit complicated and prone to error.
 Another method is by using the PaletteManipulator:
 
 ```php
-<?php
-
-namespace App\DataContainer;
-
+// contao/dca/tl_user.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
@@ -80,10 +77,7 @@ If you do not want this behaviour, you can create a new instance:
 {{% /notice %}}
 
 ```php
-<?php
-
-namespace App\DataContainer;
-
+// contao/dca/tl_user.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
@@ -102,10 +96,7 @@ PaletteManipulator::create()
 {{< version "4.7" >}}
 
 ```php
-<?php
-
-namespace App\DataContainer;
-
+// contao/dca/tl_user.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
@@ -123,10 +114,7 @@ PaletteManipulator::create()
 The same logic can be applied to subpalettes. Let's assume `custom_field` is configured in `tl_content`:
 
 ```php
-<?php
-
-namespace App\DataContainer;
-
+// contao/dca/tl_content.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
@@ -155,16 +143,13 @@ By default, fields is added **after** the parent. You can alter the behaviour by
 This example adds two fields `custom_field` and `custom_field_2` and removes the `username` field from the palette.
 
 ```php
-<?php
-
-namespace App\DataContainer;
-
+// contao/dca/tl_example.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
     ->addField('custom_field', 'username', PaletteManipulator::POSITION_AFTER)
     ->addField('custom_field_2', 'name_legend', PaletteManipulator::POSITION_APPEND)
     ->removeField('username', 'name_legend')
-    ->applyToPalette('default')
+    ->applyToPalette('default', 'tl_example')
 ;
 ```

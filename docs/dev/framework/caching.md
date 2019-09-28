@@ -18,8 +18,6 @@ Whether your response can only be cached by a single user only or also by a `Sha
 and the client can be controlled very easily using the `Cache-Control` header:
 
 ```php
-<?php
-
 use Symfony\Component\HttpFoundation\Response;
 
 /** @var Response $response */
@@ -47,8 +45,6 @@ user only or if it can be cached by a `Shared Cache`. But `Cache-Control` an com
 why Symfony provides an abstraction to it so you don't have to write the `Cache-Control` header yourself:
 
 ```php
-<?php
-
 use Symfony\Component\HttpFoundation\Response;
 
 /** @var Response $response */
@@ -57,8 +53,6 @@ $response->headers->addCacheControlDirective('max-age', 60); // can be stored fo
 ```
 
 ```php
-<?php
-
 use Symfony\Component\HttpFoundation\Response;
 
 /** @var Response $response */
@@ -133,8 +127,7 @@ event listener (if you've never heard of those, please head over to [the Symfony
 This might look something like this:
 
 ```php
-<?php
-
+// src/Controller/MySuperController.php
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -168,8 +161,7 @@ convenience.
 To invalidate a given set of tags, inject the service `fos_http_cache.cache_manager` which might look like so:
 
 ```php
-<?php
-
+// src/EventListener/UserChangedSomethingListener.php
 namespace App\EventListener;
 
 use FOS\HttpCacheBundle\CacheManager;

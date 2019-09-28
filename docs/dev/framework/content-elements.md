@@ -48,12 +48,12 @@ DCA configuration.
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
     {type_legend},type;
-    {text_legend),title,text;
+    {text_legend),text;
 ';
 ```
 
-This very simple palette enables a back end user to fill the two fields `title`
-and `text` via the create and edit view of this Content Element.
+This very simple palette enables a back end user to fill the (pre-existing) field 
+`text` via the create and edit view of this content element.
 
 The controller for this content element could look like this:
 
@@ -63,19 +63,18 @@ namespace App\Controller\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
 /**
- * @ServiceTag("contao.content_element", category="texts")
+ * @ContentElement(category="texts")
  */
 class MyContentElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
-        $template->title = $model->title;
         $template->text = $model->text;
         
         return $template->getResponse();
@@ -83,17 +82,14 @@ class MyContentElementController extends AbstractContentElementController
 }
 ```
 
-In this example the service tag was implemented via annotations by using the
-[`ServiceAnnotationBundle`][5].
+In this example the service tag was implemented via annotations.
 
 Using the naming convention for templates mentioned above, the final template name
 for this content element will be `ce_my_content_element`:
 
 ```html
 <!-- templates/ce_my_content_element.html5 -->
-<div class="my-content-element">
-    <h2><?= $this->title; ?></h2>
-    
+<div class="my-content-element">    
     <?= $this->text; ?>
 </div>
 ```

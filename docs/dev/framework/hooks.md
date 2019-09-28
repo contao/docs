@@ -69,7 +69,6 @@ In this case, the method `onActivateAccount` in the class `App\EventListener\Act
 `activateAccount` is executed.
 
 ```php
-<?php
 // src/EventListener/AccountListener.php
 
 namespace App\EventListener;

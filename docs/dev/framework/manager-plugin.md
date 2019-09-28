@@ -1,10 +1,10 @@
 ---
-title: The Manager Plugin
-menuTitle: Manager Plugin
+title: Manager Plugin
 description: "A class that gives third party bundles the opportunity to configure a Contao Managed Edition."
 aliases:
     - /framework/manager-plugin/
     - /framework/managed-edition/manager-plugin/
+    - /getting-started/initial-setup/managed-edition/manager-plugin/
 ---
 
 The `Manager Plugin` is one single PHP class that gives third party bundles the opportunity to 
