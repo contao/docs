@@ -1,6 +1,8 @@
 ---
 title: "Publishing Bundles"
 description: "How to publish a bundle to be installed in Contao."
+aliases:
+  - /guides/publishing-bundles/
 ---
 
 

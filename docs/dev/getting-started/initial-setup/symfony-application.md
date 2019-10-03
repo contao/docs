@@ -6,7 +6,9 @@ weight: 2
 ---
 
 
-TODO
+{{% notice warning %}}
+This article is still incomplete.
+{{% /notice %}}
 
 The Contao Open Source CMS can be integrated into a regular Symfony application.
 The basics steps are:

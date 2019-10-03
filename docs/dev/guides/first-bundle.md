@@ -1,5 +1,8 @@
 ---
-title: Your First Bundle
+title: Your First Extension
+description: How to set up a Contao extension.
+aliases:
+  - /guides/first-bundle/
 ---
 
 As Contao itself is just a Symfony bundle that's loaded to your Symfony application or Contao Managed Edition, writing
