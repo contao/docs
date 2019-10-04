@@ -253,7 +253,7 @@ bundle name, with `Bundle` replaced by `Extension`.
 
 ```php
 // src/DependencyInjection/ContaoExampleExtension.php
-namespace InspiredMinds\NewsSyncBundle\DependencyInjection;
+namespace SomeVendor\ContaoExampleBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
