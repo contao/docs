@@ -46,10 +46,9 @@ DCA configuration.
 
 ```php
 // contao/dca/tl_content.php
-$GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
-    {type_legend},type;
-    {text_legend},text;
-';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = 
+    '{type_legend},type;{text_legend},text'
+;
 ```
 
 This very simple palette enables a back end user to fill the (pre-existing) field 
