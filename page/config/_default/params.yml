@@ -5,3 +5,4 @@ disableLanguageSwitch: true
 documentation_label: Documentation
 showVisitedLinks: true
 disableInlineCopyToClipBoard: true
+disableNextPrev: true
