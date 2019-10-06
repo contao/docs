@@ -7,13 +7,11 @@ aliases:
 ---
 
 
-TODO
-
 Front end modules in Contao are used for more complex functionality, which are typically
 used on more than one page or even in page layouts. They are used to generate dynamic 
 content, like news lists, displaying the detailed content of news or navigation items.
 
-Creating a front end module is very similar to creating [front end modules][1].
+Creating a front end module is very similar to creating [content elements][1].
 
 
 ## Definition
