@@ -149,8 +149,8 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
 * [Create and use templates][3]
 * [Customize Caching][4]
 
+
 [1]: ../../reference/dca/reference
 [2]: ../../reference/dca/palettes
 [3]: ../templates
 [4]: ../caching
-[5]: https://github.com/terminal42/service-annotation-bundle
