@@ -1,8 +1,10 @@
 themeVariant: 'contao'
 disableSearch: false
-editURL: 'https://github.com/netzarbeiter/contao-docs/edit/master/docs/'
+# temporarely disabled
+#editURL: 'https://github.com/netzarbeiter/contao-docs/edit/master/docs/'
 disableLanguageSwitch: true
 documentation_label: Documentation
 showVisitedLinks: true
 disableInlineCopyToClipBoard: true
 disableNextPrev: true
+disableAssetsBusting: true

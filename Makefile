@@ -8,7 +8,8 @@ build-dev:
 		--cleanDestinationDir \
 		--environment dev \
 		--destination ../build/dev \
-		--verbose
+		--verbose \
+		--baseURL https://docs.contao.org/dev/
 
 build-manual:
 	cd page; hugo \
@@ -16,6 +17,7 @@ build-manual:
 		--environment manual \
 		--destination ../build/manual \
 		--verbose
+		--baseURL https://docs.contao.org/manual/
 
 # Start a live reload server
 live-dev:
