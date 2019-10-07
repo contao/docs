@@ -17,9 +17,9 @@ developing within the Contao framework. None of these are mandatory though.
 | `App\Controller\ContentElement` | [Content element][2] fragment controllers                                                |
 | `App\Controller\FrontendModule` | [Front end module][3] fragment controllres                                               |
 | `App\Cron`                      | [Cron jobs][4]                                                                           |
-| `App\EventListener`             | Symfony&nbsp;event&nbsp;listeners, Contao&nbsp;[hooks][5]&nbsp;&amp;&nbsp;[callbacks][6] |                                                                                |
+| `App\EventListener`             | Symfony&nbsp;event&nbsp;listeners, Contao&nbsp;[hooks][5]&nbsp;&amp;&nbsp;[callbacks][6] |
 | `App\Model`                     | Database [models][7]                                                                     |
-| `App\Widget`                    | Form [widgets][8]                                                                        |
+| `App\Widget`                    | Form widgets                                                                             |
 
 
 ## Class Names
@@ -44,4 +44,3 @@ should also be named with a namespace specific suffix:
 [5]: /framework/hooks/
 [6]: /framework/dca/#registering-callbacks
 [7]: /framework/models/
-[8]: TODO

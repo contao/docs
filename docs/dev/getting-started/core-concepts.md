@@ -53,7 +53,9 @@ a template can be chosen.
 
 ## Assets & Images
 
-TODO
+Contao has full support for responsive images and supports a wide variety of image
+processing techniques and libraries, including the basic GD lib for PHP as well as
+Imagick and Gmagick.
 
 
 ## Hooks
@@ -66,7 +68,11 @@ base (see the [reference][10]).
 
 ## Extensions
 
-TODO
+Your web application's functionality can easily be extended by installing one or
+more of the many [available extensions][12] for Contao. A Contao extension is basically
+simply a Symfony bundle that you can load into your Symfony application - or will
+be automatically loaded in the Contao Managed Edition. See the
+[getting started article][13] on how to create an extension for Contao.
 
 
 ## Insert Tags
@@ -78,12 +84,14 @@ set of available Insert Tags, however it is possible to register your own Insert
 Tags as well.
 
 
-[3]: TODO
+[3]: https://docs.contao.org/manual
 [4]: /framework/dca/
-[5]: TODO
+[5]: /framework/front-end-modules/
 [6]: /framework/models/
-[7]: TODO
+[7]: /framework/content-elements/
 [8]: /framework/templates/
 [9]: /framework/hooks/
 [10]: /reference/hooks/
 [11]: /framework/insert-tags/
+[12]: https://extensions.contao.org
+[13]: /getting-started/extension/
