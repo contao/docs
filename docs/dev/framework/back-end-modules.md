@@ -45,7 +45,6 @@ at `Resources/contao/languages/<ISO-language-key>/modules.xlf`:
     </body>
   </file>
 </xliff>
-
 ```
 
 The `$GLOBALS['BE_MOD']` array takes a few different keys.
