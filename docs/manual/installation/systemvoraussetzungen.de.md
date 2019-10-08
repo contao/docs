@@ -11,7 +11,7 @@ jedem Webserver, der eine aktuelle Version von PHP und MySQL bereitstellt.
 
 ## Software-Empfehlungen
 
-Die Mindestanforderungen hängen davon ab, ob Sie die neueste oder die _Long Term Support-Version_ installieren. Alle 
+Die Mindestanforderungen hängen davon ab, ob du die neueste oder die _Long Term Support-Version_ installierst. Alle 
 gepflegten Versionen von Contao sind mit den neuesten PHP- und MySQL-Versionen kompatibel. Daher wird grundsätzlich 
 empfohlen, diese immer zu verwenden.
 
@@ -66,7 +66,7 @@ führen.
 | `opcache.enable_cli`            | `0` (deaktiviert)            | `0` (deaktiviert)       |                                                                                                                                                           |
 | `opcache.max_accelerated_files` | `16000` empfohlen            | _nicht anwendbar_       | Ein niedrigerer Wert kann zu einer unnötigen Verlangsamung führen.                                                                                        |
 | `safe_mode`                     | `Off`                        | `Off`                   |                                                                                                                                                           |
-| `open_basedir`                  | `NULL`                       | `NULL`                  | Wenn aktiv, stellen Sie sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                   |
+| `open_basedir`                  | `NULL`                       | `NULL`                  | Wenn aktiv, stelle sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                   |
 
 
 #### MySQL-Konfiguration
@@ -80,7 +80,7 @@ führen.
 
 ### Mindestanforderungen an PHP
 
-#### Contao 4.5 und später
+#### Contao 4.8 und später
 
 - **PHP** Version 7.1.0 oder höher ist erforderlich.
 - Bilder können mit den PHP-Erweiterungen GD (`ext-gd`), Imagick (`ext-imagick`) oder Gmagick (`ext-gmagick`) 

@@ -8,7 +8,7 @@ weight: 1
 
 »Contao Open Source CMS« ist der offizielle, vollständige Name des Projekts, und er sagt alles aus, was man beim 
 Erstkontakt mit dem System wissen muss. Es handelt sich um ein CMS, also ein Content Management System, das unter einer 
-Open Source-Lizenz steht und Contao heißt. Klar so weit? Dann kannst du die nächsten beiden Abschnitte überspringen.
+Open Source-Lizenz steht und Contao heißt. Klar soweit? Dann kannst du die nächsten beiden Abschnitte überspringen.
 Ansonsten …
 
 
@@ -29,7 +29,7 @@ gemeinschaftlich, an einem Projekt arbeiten können. Änderungen lassen sich dab
 nachvollziehen und bei Bedarf auch wieder rückgängig machen. Vorab kann der Administrator in der Rechteverwaltung genau
 festlegen, auf welche Bereiche und Inhalte die Benutzer überhaupt zugreifen dürfen.
 
-Zudem sollte ein CMS Arbeitsabläufe, auch »Workflows« genannt, unterstützen. Du kannst in Contao beispielsweise einem 
+Zudem kann ein CMS Arbeitsabläufe, auch »Workflows« genannt, unterstützen. Du kannst in Contao beispielsweise einem 
 Redakteur das Erstellen von Inhalten erlauben, die Veröffentlichung derselben aber dem Chefredakteur vorbehalten. 
 Dieser einfache Workflow garantiert dir, dass kein Artikel auf der Webseite erscheint, den der Chefredakteur nicht
 vorher geprüft hat.
@@ -38,7 +38,7 @@ Und selbst dann, wenn du deine Webseite ganz allein pflegen und weder die Rechte
 benötigst, macht es trotzdem Sinn, ein CMS zu verwenden. Denn es erleichtert einem das Leben ungemein, indem es z. B.
 Aufgaben wie das Erstellen und Prüfen eines Formulars oder das Einbinden einer Google Map abstrahiert – was bedeutet,
 »Du musst nicht wissen, wie es technisch gemacht wird«. Um Contao zu nutzen, musst du nicht einmal HTML können, obwohl 
-das die Programmiersprache ist, auf der das Internet basiert.
+das die Auszeichnungssprache ist, mit der Webseiten realisiert werden.
 
 Und weil Contao auf einem Webserver installiert wird, hast du rund um die Uhr und von überall auf der Welt Zugriff auf 
 deine Daten. Du kannst also theoretisch auch von einem Strand in Ibiza aus an deiner Webseite arbeiten – wobei das 

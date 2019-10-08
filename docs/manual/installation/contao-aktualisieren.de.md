@@ -5,13 +5,14 @@ weight: 4
 ---
 
 Wie die meisten Open-Source-Projekte wird auch Contao kontinuierlich weiterentwickelt. Mit jedem Update werden 
-Komponenten aktualisiert, Fehler behoben, neue Funktionen hinzugefügt oder die Performance verbessert. Ich empfehle 
-daher unbedingt, immer eine aktuelle Version zu verwenden oder zumindest die Änderungen mitzuverfolgen.
+Komponenten aktualisiert, Fehler behoben, neue Funktionen hinzugefügt oder die Performance verbessert. Es wird daher
+empfohlen, immer eine aktuelle Version zu verwenden.
 
 
 ### Der Contao-Update-Zyklus
 
-Zunächst solltest du dich mit der verwendeten Terminologie vertraut machen:
+Contao folgt für die Versionsbezeichnungen dem Konzept von [Semantic Versioning](https://semver.org).
+Das klingt etwas gar technisch weshalb wir uns schnell gemeinsam mit der verwendeten Terminologie vertraut machen:
 
 
 #### Major-Release

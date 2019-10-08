@@ -52,7 +52,7 @@ Wenn dir Contao also am Herzen liegt, kannst du durch deine
 
 Hat man das System installiert und verstanden, kann man ungefähr abschätzen, welche Funktionen es bietet und welche
 einem zur Umsetzung der eigenen Webseite eventuell noch fehlen. In diesem Fall kann ein Blick bzw. eine Suche in der 
-[Erweiterungsliste](https://extensions.contao.org/#/) nicht schaden.
+[Erweiterungsliste](https://extensions.contao.org) nicht schaden.
 
 
 ## Die Entwicklungsumgebung

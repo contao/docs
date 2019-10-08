@@ -9,8 +9,11 @@ Die Entwicklung des Contao Managers wird durch die [Contao Association](https://
 
 ## Aufgabe des Managers
 
-Der Contao Manager ist ein Tool, welches eine grafische Oberfläche zur einfachen Verwaltung einer Contao-Installation 
-bietet. Im Prinzip werden vom Manager die nötigen Befehle für den Composer im Hintergrund ausgeführt.
+Contao wird - wie mittlerweile die meisten PHP-Projekte - mit [Composer](https://getcomposer.org) installiert und
+aktualisiert. Bei Composer handelt es sich um einen Paketmanager der via Kommandozeile bedient wird und auch sonst kann
+Contao komplett von der Kommandozeile aus verwaltet werden.
+Der Contao Manager ist ein Tool, welches eine grafische Oberfläche zur einfacheren Verwaltung einer Contao-Installation 
+bietet. Er nimmt dir also die Hürde der Kommandozeile und erlaubt es dir, die nötigen Befehle auf Klick auszuführen.
 
 Mit dem Manager können unter anderem folgende Aufgaben durchgeführt werden:
 
