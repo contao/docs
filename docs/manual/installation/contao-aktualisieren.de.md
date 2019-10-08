@@ -47,7 +47,7 @@ Contao-Versionen veröffentlicht wurden. Eine Übersicht aller Contao Versionen 
 ### Aktualisierung mit dem Contao Manager
 
 {{% notice note %}}
-Vor der Aktualisierung von Contao empfehle ich dir ein Backup der `composer.json`,  `composer.lock` sowie der Datenbank 
+Vor der Aktualisierung von Contao wird empfohlen, ein Backup der `composer.json`,  `composer.lock` sowie der Datenbank 
 anzulegen.
 {{% /notice %}}
 

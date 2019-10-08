@@ -219,7 +219,7 @@ Starte den Import anschließend durch einen Klick auf die Schaltfläche `CSV-Imp
 Die Versendung eines Newsletters leitest du über das entsprechende Navigationssymbol 
 ![Newsletter versenden](/icons/send.svg?classes=icon "Newsletter versenden") in der Verteiler-Übersicht ein. 
 Du gelangst zunächst zu einer Vorschauseite, auf der du die Konfiguration und den Inhalt des Newsletters noch einmal 
-prüfen kannst. Ich empfehle dir zudem, regen Gebrauch von der Schaltfläche `Testsendung` zu machen. Die 
+prüfen kannst. Es wird zudem empfohlen, regen Gebrauch von der Schaltfläche `Testsendung` zu machen. Die 
 dazugehörige Empfängeradresse kannst du im Feld `Testsendung an` ändern.
 
 ![Einen Newsletter versenden](/core-extensions/newsletter/images/de/einen-newsletter-versenden.png)

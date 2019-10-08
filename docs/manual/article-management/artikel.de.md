@@ -31,7 +31,7 @@ aufrufen kannst. Der Alias ermöglicht es, folgende URL zu verwenden:
 `unternehmen/articles/unser-team.html`
 
 Eventuell wunderst du dich jetzt, dass es offenbar doch möglich ist, einen Artikel im Frontend direkt aufzurufen. Im 
-Einführungskapitel habe ich ja gesagt, dass Besucher im Frontend immer nur Seiten und niemals bestimmte Inhalte abrufen 
+Einführungskapitel wurde ja erwähnt, dass Besucher im Frontend immer nur Seiten und niemals bestimmte Inhalte abrufen 
 können.
 
 Wenn du jedoch genau hinsiehst, wirst du feststellen, dass die Seite nach wie vor Teil der URL ist. Genau genommen 

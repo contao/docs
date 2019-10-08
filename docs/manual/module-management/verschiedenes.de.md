@@ -1,11 +1,11 @@
 ---
 title: "Verschiedenes"
-description: "In diesem Abschnitt stelle ich dir die übrigen Core-Module im Bereich »Verschiedenes« vor."
+description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Verschiedenes« vorgestellt."
 url: "modulverwaltung/verschiedenes"
 weight: 5
 ---
 
-In diesem Abschnitt stelle ich dir die übrigen Core-Module im Bereich »Verschiedenes« vor. Die Liste der 
+In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Verschiedenes« vorgestellt. Die Liste der 
 Frontend-Module kann darüber hinaus durch (Third-Party-)Erweiterungen beliebig verlängert werden.
 
 
@@ -112,8 +112,8 @@ Das Modul hat kein umschließendes HTML-Markup.
 Mit dem Frontend-Modul »RSS-Reader« kannst du einen beliebigen RSS-Feed abonnieren und in deine Webseite einfügen. 
 Damit kannst du z. B. den Nachrichtenfeed von contao.org einbinden.
 
-Öffne die Modulverwaltung im Backend, und wähle das Modul »RSS-Leser« aus. Ich werde dir die einzelnen Eingabefelder 
-näher erklären.
+Öffne die Modulverwaltung im Backend, und wähle das Modul »RSS-Leser« aus. Nachfolgend werden dir die einzelnen Eingabefelder 
+näher erklärt.
 
 **Feed-URLs:** Hier kannst du eine oder mehrere RSS-Feed-URLs eingeben.
 

@@ -118,7 +118,7 @@ gemeint. Aus den bisherigen Anleitungen weisst du ja bereits, dass die Zusammenf
 [Seitenstruktur](../../seitenstruktur/seiten-konfigurieren/#layout-einstellungen) erfolgt und dass das Seitenlayout den 
 Aufbau einer Seite festlegt.
 
-Zur Veranschaulichung habe ich das Theme »[Contao Official Demo](https://packagist.org/packages/contao/official-demo)« 
+Zur Veranschaulichung wurde hier das Theme »[Contao Official Demo](https://packagist.org/packages/contao/official-demo)« 
 importiert und das Seitenlayout »2 columns - [ default ]« dem Startpunkt der Webseite in der Seitenstruktur zugewiesen.
 
 ![Contao Official Demo](/theme-manager/images/de/contao-official-demo.png)

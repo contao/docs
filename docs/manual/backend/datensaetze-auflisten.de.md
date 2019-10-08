@@ -14,7 +14,7 @@ gelöscht oder bearbeitet werden.
 
 ## Die verschiedenen Ansichten
 
-Die drei häufigsten Formen von Auflistungen, die ich nachfolgend Ansichten nennen werde, sind die einfache Liste
+Die drei häufigsten Formen von Auflistungen, die nachfolgend Ansichten genannt werden, sind die einfache Liste
 (»List View«), die nach der übergeordneten Tabelle gruppierte Liste (»Parent View«) sowie die Baumansicht
 (»Tree View«).
 

@@ -6,7 +6,7 @@ url: "core-erweiterung/kalender/frontend-module"
 weight: 2
 ---
 
-Nachdem du nun weisst, wie Kalender und Events im Backend verwaltet werden, erkläre ich dir jetzt, wie du diese Inhalte 
+Nachdem du nun weisst, wie Kalender und Events im Backend verwaltet werden, wird dir nun erklärt, wie du diese Inhalte 
 im Frontend darstellen kannst. Die »Kalender«-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über 
 die Modulverwaltung konfigurieren kannst.
 

@@ -32,13 +32,6 @@ Dank der hierarchischen Seitenstruktur ist es möglich, Eigenschaften einer üb
 vererben. Für deine Arbeit bedeutet das, dass du ein bestimmtes Seitenlayout oder eine bestimmte Zugriffsberechtigung 
 nur einmal festlegen musst und diese Eigenschaften automatisch weitergegeben werden.
 
-Ich nutze dieses Feature beispielsweise, um in der Wurzelseite (»Startpunkt einer Webseite«) eine globale Cachezeit 
-von 60 Sekunden für alle Seiten vorzugeben. Auf Seiten mit dynamischen Elementen wie dem Suchmodul überschreibe ich den 
-Wert dann mit 0 Sekunden. Auf diese Weise stelle ich nicht nur sicher, dass Seiten mit dynamischen Elementen nicht 
-fälschlicherweise im Zwischenspeicher landen, sondern auch, dass ich nur eine einzige Seite bearbeiten muss, wenn ich 
-die Cachezeit einmal ändern möchte.
-
-
 ## Bestandteile einer Seite
 
 Eine Seite als zentrales Element muss nicht nur wissen, welche Artikel mit ihr verknüpft sind. Sie muss beispielsweise 

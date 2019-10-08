@@ -6,7 +6,7 @@ url: "core-erweiterung/newsletter/frontend-module"
 weight: 2
 ---
 
-Nachdem du nun weisst, wie Verteiler, Newsletter und Empfänger im Backend verwaltet werden, erkläre ich dir jetzt, wie 
+Nachdem du nun weisst, wie Verteiler, Newsletter und Empfänger im Backend verwaltet werden, wird dir jetzt erklärt, wie 
 du Newsletter im Frontend abonnierst bzw. kündigen kannst und wie du ein Archiv mit allen versendeten Newslettern 
 anlegst. Die Newsletter-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung
 konfigurieren kannst.

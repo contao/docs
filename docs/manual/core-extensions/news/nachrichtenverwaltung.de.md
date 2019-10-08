@@ -165,7 +165,7 @@ Contao-Installation betreibst. Damit der Feed auf die richtige Domain verlinkt, 
 
 ## Nachrichtenbeiträge {#nachrichtenbeitraege}
 
-In diesem Abschnitt erkläre ich dir, wie du einen Nachrichtenbeitrag erstellst. Nachrichtenbeiträge werden 
+In diesem Abschnitt wird dir erklärt, wie du einen Nachrichtenbeitrag erstellst. Nachrichtenbeiträge werden 
 grundsätzlich nach ihrem Datum sortiert, daher gibt es hier keine Icons, mit denen du die Reihenfolge ändern kannst.
 
 Die Nachrichtenbeiträge bestehen aus den Einstellungen für die Beiträge (»Nachrichtenliste«) und aus deren Inhalten 

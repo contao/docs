@@ -91,7 +91,7 @@ Wie erwartet ergibt die Suche jetzt genau drei Treffer.
 
 ## Konfiguration des Suchmoduls
 
-Nachdem du nun weisst, wie das Modul im Frontend benutzt wird, möchte ich dir kurz erklären, wie du es im Backend 
+Nachdem du nun weisst, wie das Modul im Frontend benutzt wird, wird dir nun kurz erklärt, wie du es im Backend 
 konfigurierst. Öffne dazu die Modulverwaltung, und wähle das Modul »Anwendung – Suchmaschine« aus.
 
 **Standard-Abfragetyp:** Hier legst du fest, ob standardmäßig die UND-Suche (finde alle Wörter) oder die ODER-Suche 
@@ -237,9 +237,9 @@ sieht folgendermaßen aus:
 <!-- indexer::continue -->
 ```
 
-Die Zielseite, die beim Abschicken des Formulars aufgerufen wird, habe ich über ein Inserttag erfasst, damit das 
+Die Zielseite, die beim Abschicken des Formulars aufgerufen wird, wurde hier über einen Inserttag erfasst, damit das 
 Formular auch dann noch funktioniert, wenn sich der Alias der Zielseite im Laufe der Zeit ändert. Als 
-Übertragungsmethode habe ich GET ausgewählt, und ich habe dem Suchfeld den Feldnamen keywords gegeben.
+Übertragungsmethode wurde »GET« ausgewählt, und dem Suchfeld den Feldnamen »keywords« gegeben.
 
 
 ## Bereiche von der Suche ausnehmen

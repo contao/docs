@@ -11,7 +11,7 @@ Wer aber schon mal vor dem Problem stand, 25 Datensätze auf einmal ändern zu m
 dieser Disziplin nicht so gut abschneiden. Oft bleibt einem nichts anderes übrig, als jeden Datensatz einzeln aufzurufen
 und zu ändern. Das kostet Zeit und Nerven.
 
-Natürlich würde ich dir das nicht erzählen, wenn Contao hier nicht mit einer gut durchdachten Lösung glänzen könnte. In 
+Natürlich würde das an dieser Stelle nicht erklärt, wenn Contao hier nicht mit einer gut durchdachten Lösung glänzen könnte. In 
 den folgenden Abschnitten zeige ich dir, wie Contao dich beim Bearbeiten von Datensätzen unterstützt.
 
 
