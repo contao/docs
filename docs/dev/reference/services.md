@@ -44,6 +44,32 @@ class Example
 ```
 
 
+## Router
+
+This service from symfony handles any routing task and can be ued to generate URLs
+to routes in your services.
+
+```php
+use App\Action\ExampleAction;
+use Symfony\Component\Routing\RouterInterface;
+
+class Example
+{
+    private $router;
+
+    public function __construct(RouterInterface $router)
+    {
+        $this->router = $router;
+    }
+
+    public function execute()
+    {
+        $url = $this->router->generate(ExampleAction::class, ['id' => 1]);
+    }
+}
+```
+
+
 ## ScopeMatcher
 
 This service provides the ability to identify the Contao scope of a request, if
@@ -77,7 +103,7 @@ class Example
 ```
 
 
-## Symfony\Component\Security\Core\Security
+## Security Helper
 
 Not directly related to Contao, but this helper service from Symfony lets you retrieve
 the current Contao front end or back end user from the firewall.
