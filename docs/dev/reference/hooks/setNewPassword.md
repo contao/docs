@@ -41,7 +41,7 @@ class SetNewPasswordListener implements ServiceAnnotationInterface
     /**
      * @Hook("setNewPassword")
      */
-    public function onSetNewPassword(object $member, string $password, Module $module = null): void
+    public function onSetNewPassword($member, string $password, Module $module = null): void
     {
         // Do something …
     }

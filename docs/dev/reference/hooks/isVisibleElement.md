@@ -44,7 +44,7 @@ class IsVisibleElementListener implements ServiceAnnotationInterface
     /**
      * @Hook("isVisibleElement")
      */
-    public function onIsVisibleElement(object $element, bool $isVisible): bool
+    public function onIsVisibleElement($element, bool $isVisible): bool
     {
         if ($element instanceof \Contao\ContentElement) {
             // Check if this content element can be shown

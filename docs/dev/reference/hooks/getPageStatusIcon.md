@@ -41,7 +41,7 @@ class GetPageStatusIconListener implements ServiceAnnotationInterface
     /**
      * @Hook("getPageStatusIcon")
      */
-    public function onGetPageStatusIcon(object $page, string $image): string
+    public function onGetPageStatusIcon($page, string $image): string
     {
         if ('my_page' === $page->type) {
             return 'path/to/custom_icon.svg';
