@@ -46,7 +46,7 @@ class IsVisibleElementListener implements ServiceAnnotationInterface
      */
     public function onIsVisibleElement($element, bool $isVisible): bool
     {
-        if ($element instanceof \Contao\ContentElement) {
+        if ($element instanceof \Contao\ContentModel) {
             // Check if this content element can be shown
             if ($this->myElementCanBeShownInFrontend($element)) {
                 return true;
