@@ -19,6 +19,124 @@ hinzuzufügen:
 Kevin Jones [kevin.jones@example.com]
 ```
 
+### Datum und Zeit
+
+**Datums- und Zeitformat:** Alle Datums- und Zeitformate müssen wie in der 
+[PHP-Funktion date](https://www.php.net/manual/de/function.date.php) eingegeben werden. Contao verarbeitet im Backend 
+ausschließlich numerische Formate, also die Buchstaben j, d, m, n, y, Y, g, G, h, H, i und s.
+
+Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
+
+| Angaben  | Erklärung                                                     |
+|:---------|:--------------------------------------------------------------|
+| Y-m-d    | JJJJ-MM-TT, international ISO-8601, z. B. `2005-01-28`        |
+| m/d/Y    | MM/TT/JJJJ, Englisches Format, z. B. `01/28/2005`             |
+| d.m.Y    | TT.MM.JJJJ, Deutsches Format, z. B. `28.01.2005`              |
+| y-n-j    | JJ-M-T, ohne führende Nullen, z. B. `05-1-28`                 |
+| Ymd      | JJJJMMTT, Zeitstempel, z. B. `20050128`                       |
+| H:i:s    | 24 Stunden, Minuten und Sekunden, z. B. `20:36:59`            |
+| g:i      | 12 Stunden ohne führende Nullen sowie Minuten, z. B. `8:36`   |
+
+**Zeitzone:** Die Zeitzone solltest du unbedingt vor dem Erstellen deiner Webseite einstellen, da Contao alle 
+Zeitangaben als [Unix-Zeitstempel](https://www.php.net/time) speichert und PHP diese Zeitstempel bei einer Änderung der 
+Zeitzone nicht automatisch anpasst.
+
+
+### Backend-Einstellungen
+
+**Elemente nicht verkürzen:** Im »Parent View« stellt Contao die Elemente aus Gründen der Übersichtlichkeit verkürzt 
+dar, wobei einzelne Elemente über ein Navigationsicon bei Bedarf ausgeklappt werden können. Wähle diese Option, um das 
+Feature komplett zu deaktivieren.
+
+**Elemente pro Seite:** In Abschnitt [Datensätze auflisten](../../administrationsbereich/datensaetze-auflisten/#datensaetze-sortieren-und-filtern), 
+hast du gelernt, dass Contao die Anzahl der Datensätze pro Seite standardmäßig auf 30 begrenzt. Diesen Wert kannst du 
+hier beliebig anpassen. Höhere Werte bedeuten jedoch eine längere Ladezeit.
+
+**Maximum Datensätze pro Seite:** Um zu verhindern, dass ein unbedarfter Benutzer sich 5000 Datensätze auf einmal 
+anzeigen lässt und damit das PHP Memory Limit überschreitet, kannst du festlegen, wie viele Datensätze maximal pro Seite 
+angezeigt werden dürfen.
+
+
+### Frontend-Einstellungen
+
+**Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren (z. B. 
+`docs/install/download.html` anstatt `docs-install-download.html`).
+
+**Leere URLs nicht umleiten:** Bei einer leeren URL die Webseite anzeigen anstatt auf den Startpunkt der Sprache 
+weiterzuleiten _(nicht empfohlen)_.
+
+
+### Sicherheitseinstellungen
+
+**Anfrage-Tokens deaktivieren:** Hier kannst du aktivieren, dass die Anfrage-Token beim Absenden eines Formulars nicht 
+geprüft werden _(unsicher!)_.
+
+**Erlaubte HTML-Tags:** Standardmäßig erlaubt Contao keine HTML-Tags in Formularen und entfernt diese beim Speichern 
+automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter 
+HTML-Tags festlegen.
+
+
+### Dateien und Bilder
+
+**Erlaubte Download-Dateitypen:** Hier kannst du festlegen, welche Dateitypen von deinem Server heruntergeladen werden 
+dürfen (Download).
+
+**Maximale GD-Bildbreite**: Hier kannst du festlegen, wie breit Bilder und andere Medien im Frontend maximal sein 
+dürfen. Bei einer Überschreitung dieses Werts wird das entsprechende Objekt automatisch verkleinert.
+
+**Maximale GD-Bildhöhe**: Hier kannst du festlegen, wie hoch Bilder und andere Medien im Frontend maximal sein 
+dürfen. Bei einer Überschreitung dieses Werts wird das entsprechende Objekt automatisch verkleinert.
+
+
+### Datei-Uploads
+
+**Erlaubte Upload-Dateitypen:** Hier kannst du festlegen, welche Dateitypen auf deinen Server übertragen werden dürfen 
+(Upload).
+
+**Maximale Upload-Dateigrösse:** Hier kannst du festlegen, wie groß eine mit dem Dateimanager auf deinen Server 
+übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MB = 1024 KB = 1.024.000 Bytes). Größere Dateien 
+werden abgelehnt.
+
+**Maximale Bildbreite:** Beim Upload von Bildern prüft der Dateimanager automatisch deren Breite und vergleicht diese 
+Werte mit deiner hier festgelegten Vorgaben. Überschreitet ein Bild die maximale Breite, wird es automatisch 
+verkleinert.
+
+**Maximale Bildhöhe:** Beim Upload von Bildern prüft der Dateimanager automatisch deren Höhe und vergleicht diese Werte 
+mit deiner hier festgelegten Vorgaben. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
+
+
+### Cronjob-Einstellungen
+
+**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
+`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen.
+
+
+### Website-Suche
+
+**Suche aktivieren:** Wenn du diese Option auswählst, indiziert Contao die fertigen Seiten deiner Webseite und erstellt 
+daraus einen Suchindex. Mit dem Frontend-Modul 
+»[Suchmaschine](../../modulverwaltung/website-suche/#konfiguration-des-suchmoduls)« kannst du diesen Index dann 
+durchsuchen.
+
+**Geschützte Seiten indizieren:** Wähle diese Option, um auch geschützte Seiten für die Suche zu indizieren. Nutze 
+dieses Feature mit Bedacht, und achte darauf, personalisierte Seiten grundsätzlich von der Suche auszuschließen.
+
+
+### Standard-Zugriffsrechte
+
+**Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine 
+Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du in Abschnitt 
+[Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
+
+**Standardgruppe:** Hier kannst du festlegen, welcher Gruppe standardmäßig die Seiten gehören, für die keine 
+Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du in Abschnitt 
+[Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
+
+**Standardzugriffsrechte:** Hier kannst du festlegen, welche Zugriffsrechte standardmäßig für die Seiten gelten, für 
+die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du in Abschnitt 
+[Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
+
+
 
 ## parameters.yml
 
