@@ -1,11 +1,14 @@
+{{ $.Scratch.Set "version" .Site.Params.currentContaoVersion }}
 {{ if len .Params | eq 1 }}
-  <div class="notices note">
-    <p>
-      {{ if eq .Site.Language.Lang "en" }}
-        This feature is only available in <strong>Contao {{ .Get 0 }}</strong> and later.
-      {{ else }}
-        Diese Funktion ist erst ab <strong>Contao {{ .Get 0 }}</strong> verfügbar.
-      {{ end }}
-    </p>
-  </div>
+  {{ $version := .Get 0 }}
+  {{ $.Scratch.Set "version" $version }}
 {{ end }}
+<div class="notices note">
+  <p>
+    {{ if eq .Site.Language.Lang "en" }}
+      This feature is only available in <strong>Contao {{ $.Scratch.Get "version" }}</strong> and later.
+    {{ else }}
+      Diese Funktion ist erst ab <strong>Contao {{ $.Scratch.Get "version" }}</strong> verfügbar.
+    {{ end }}
+  </p>
+</div>
