@@ -1,6 +1,6 @@
 ---
 title: "Anwendungen"
-description: "In diesem Abschnitt stelle ich dir die übrigen Core-Module im Bereich »Anwendungen« vor."
+description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Anwendungen« vorgestellt."
 url: "modulverwaltung/anwendungen"
 weight: 4
 ---

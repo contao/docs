@@ -144,7 +144,7 @@ löschen dürfen.
 
 ### Ausgenommene Felder
 
-Zu Beginn des Abschnitts habe ich erwähnt, dass normale Benutzer standardmäßig keinerlei Rechte haben (»deny all«) und 
+Zu Beginn des Abschnitts wurde erwähnt, dass normale Benutzer standardmäßig keinerlei Rechte haben (»deny all«) und 
 du als Administrator jeden Zugriff explizit freischalten musst. Das gilt auch für die einzelnen Eingabefelder jedes 
 Moduls bzw. jeder Tabelle, die dir hier aufgelistet werden.
 

@@ -51,7 +51,7 @@ Wenn sich auf deinem Server mehrere Anwendungen eine Datenbank teilen, bietet di
 nicht benötigten Tabellen der anderen Programme »aufzuräumen«.
 
 {{% notice warning %}}
-Auch wenn es technisch möglich ist, empfehle ich euch, für jede Anwendung eine eigene Datenbank zu verwenden.
+Auch wenn es technisch möglich ist, solltest du für jede Anwendung eine eigene Datenbank verwenden.
 {{% /notice %}}
 
 

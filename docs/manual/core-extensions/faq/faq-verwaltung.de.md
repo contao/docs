@@ -78,7 +78,7 @@ angemeldeten Mitgliedern das Kommentieren erlauben möchtest, kannst du die Sich
 
 ## Fragen
 
-In diesem Abschnitt erkläre ich dir, wie du eine Frage anlegst. Die Reihenfolge der Fragen innerhalb einer Kategorie 
+In diesem Abschnitt wird dir erklärt, wie du eine Frage anlegst. Die Reihenfolge der Fragen innerhalb einer Kategorie 
 kannst du per Drag-and-Drop mit den entsprechenden 
 Navigationssymbol ![Frage verschieben](/icons/drag.svg?classes=icon "Frage verschieben") festlegen.
 

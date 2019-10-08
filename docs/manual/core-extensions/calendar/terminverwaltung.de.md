@@ -163,7 +163,7 @@ Contao-Installation betreibst. Damit der Feed auf die richtige Domain verlinkt, 
 
 ## Events
 
-In diesem Abschnitt erkläre ich dir, wie du ein Event anlegst. Events werden grundsätzlich nach ihrem Datum sortiert, 
+In diesem Abschnitt wird dir erklärt, wie du ein Event anlegst. Events werden grundsätzlich nach ihrem Datum sortiert, 
 daher gibt es hier keine Icons, mit denen du die Reihenfolge ändern könntest.
 
 Die Events bestehen aus den Einstellungen des Events (»Eventliste«) und aus deren Inhalten (»Eventleser«).

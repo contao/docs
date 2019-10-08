@@ -1,7 +1,7 @@
 ---
 title: "Contao im Schnelldurchlauf"
-description: "In diesem Abschnitt stelle ich dir die grundsätzlichen Zusammenhänge und Funktionsweisen von Contao in 
-komprimierter Form vor."
+description: "In diesem Abschnitt werden dir die grundsätzlichen Zusammenhänge und Funktionsweisen von Contao in 
+komprimierter Form vorgestellt."
 url: "einleitung/contao-im-schnelldurchlauf"
 weight: 3
 ---
@@ -84,7 +84,7 @@ Das Contao-Team hat Anfang des Jahres genau definiert, was Sie als Webmaster opt
 > Optionale Kenntnisse in Objekt-orientierter PHP-Programmierung sind hilfreich, um den technischen Hintergrund zu 
 > verstehen und das System gegebenenfalls anzupassen bzw. zu erweitern.
 
-Nun wirst du sicherlich anmerken, dass ich vorher gerade noch geschrieben habe, dass du genau genommen nicht einmal 
+Nun wirst du sicherlich anmerken, dass vorher gerade noch geschrieben wurde, dass du genau genommen nicht einmal 
 HTML können musst, um Contao zu nutzen. Diese Aussage steht klar im Widerspruch zu dem Zitat. Oder doch nicht?
 
 Tatsächlich kannst du Contao einsetzen, ohne HTML und CSS zu beherrschen. Wenn du z. B. als Redakteur Artikel für eine 
