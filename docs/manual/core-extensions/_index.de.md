@@ -1,6 +1,14 @@
 ---
 title: "Core-Erweiterungen"
-chapter: true
-weight: 3
-pre: "<b>2. </b>"
+description: "Die folgenden Erweiterungen sind im Lieferumfang von Contao enthalten: Nachrichten, Events, FAQ, 
+Newsletter, Kommentare und Auflistungen."
+url: "core-erweiterungen"
+weight: 10
 ---
+
+Neben den unten stehenden Erweiterungen, komplettieren »[Kommentare](../artikelverwaltung/inhaltselemente/#kommentare)« 
+und »[Auflistung](../modulverwaltung/anwendungen/#auflistung)« diese Gruppe.
+
+{{% children description="true" %}}
+
+

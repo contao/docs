@@ -1,0 +1,109 @@
+---
+title: "Contao installieren"
+description: "Es gibt zwei Wege um Contao auf deinem Server zu installieren, zum einen über die grafische Oberfläche 
+des Contao Managers und zum anderen über die Kommandozeile."
+weight: 3
+---
+
+Nachdem du alle Voraussetzungen geprüft und deinen Webserver eingerichtet hast, kannst du nun mit der Installation 
+beginnen.
+
+Es gibt zwei Wege um Contao auf deinem Server zu installieren, zum einen über die grafische Oberfläche des [Contao 
+Managers](#installation-mit-dem-contao-manager) und zum anderen über die 
+[Kommandozeile](#installation-ueber-die-kommandozeile).
+
+
+## Installation mit dem Contao Manager
+
+
+### Contao Manager installieren
+
+Bevor du Contao auf deinem Server installieren kannst, musst du den
+[Contao Manager installieren und konfigurieren](../../installation/contao-manager/#contao-manager-installieren).
+
+
+### Contao mit dem Contao Manager installieren
+
+Nach der erfolgreichen Grundkonfiguration kann nun Contao installiert werden. Dazu wählst du die gewünschte Version 
+sowie die initiale Konfiguration aus und klickst auf die Schaltfläche »Fertigstellen«. 
+
+![Contao per Contao Manager installieren](/installation/images/de/contao-per-contao-manager-installieren.png)
+
+Die Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf 
+folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/icons/konsolenausgabe.png?classes=icon) angezeigt 
+werden.
+
+![Contao wird installiert](/installation/images/de/contao-wird-installiert.png)
+
+
+### Datenbanktabellen aktualisieren
+
+Sobald der Contao Manager alle Pakete installiert hat, musst du das [Contao-Installtool](../contao-installtool/)
+aufrufen um die Datenbank zu aktualisieren.
+
+
+## Installation über die Kommandozeile {#installation-ueber-die-kommandozeile}
+
+Bei der Installation über die Kommandozeile wird während dem `create-project` ein `composer update` ausgeführt, dass 
+wird bei einigen Hostern dazu führen, dass der Prozess wegen der zu hohen Systemanforderung nicht beendet werden kann 
+und die Installation dadurch fehlschlägt. In diesem Fall solltest du den 
+[Contao Manager](#installation-mit-dem-contao-manager) nutzen.
+
+
+Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angemeldet.
+
+```shell script
+ssh benutzername@example.com
+```
+
+Wechsle in das öffentlichen Verzeichnis deines Webhosting.
+
+```shell script
+cd www
+```
+
+
+### Composer installieren
+
+[Composer](https://de.wikipedia.org/wiki/Composer_(Paketverwaltung)) ist ein anwendungsorientierter Paketmanager für 
+die Programmiersprache PHP und installiert Abhängigkeiten.
+
+Um Composer zu installieren, folge bitte der Anleitung auf der [Composer-Website](https://getcomposer.org/download/) 
+und kopiere die Kommandos auch von dort, denn der SHA-Hash zum Verifizieren des Downloads ändert sich mit jeder 
+Composer-Version. Zum jetzigen Zeitpunkt sehen die Kommandos wie folgt aus.
+
+```shell script
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
+
+
+### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
+
+Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
+Installations-Verzeichnis und die 4.8 für die zu [installierende Contao-Version](https://contao.org/de/download.html). 
+
+```shell script
+php composer.phar create-project contao/managed-edition example 4.8
+```
+
+
+### Hosting-Konfiguration
+
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterorder `/web` der Installation. Setze das 
+Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel des Hosting-Providers auf diesen 
+Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
+
+Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web`
+
+{{% notice note %}}
+Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
+{{% /notice %}}
+
+
+### Datenbanktabellen aktualisieren
+
+Nach der Installation ist vor der Datenbank-Aktualisierung, rufe dazu das [Contao-Installtool](../contao-installtool/)
+auf.
