@@ -115,6 +115,14 @@ a:hover {
     border-color: var(--MENU-SECTION-HR-color);
 }
 
+#body .tags a.tag-link {
+    background-color: var(--MENU-HEADER-BG-color);    
+}
+
+#body .tags a.tag-link:before {
+    border-right-color: var(--MENU-HEADER-BG-color);
+}
+
 /**
  * Custom
  */
@@ -133,9 +141,9 @@ a:hover {
 }
 
 #footer {
-    padding: 15px;
-    border-top: 1px solid #3a454d;
-    background: #172b3b;
+    /*padding: 15px;
+    /*border-top: 1px solid #3a454d;*/
+    /*background: #172b3b;*/
 }
 
 #header a#logo {
@@ -229,13 +237,6 @@ h1 {
 
 #body .nav:hover i {
     opacity: 1;
-}
-
-.fa-language:before {
-    content: none;
-}
-.fa-language.fa-fw {
-    width: 0;
 }
 
 /*
@@ -345,4 +346,20 @@ body[data-url="/cookbook/namespaces/"] #body .padding {
     li {
         page-break-inside: avoid;
     }
+}
+
+#prefooter {
+    padding-top: 1rem;
+}
+
+#footer {
+    padding: 2rem 1rem;
+}
+
+html[lang="de"] div.notices.warning p:first-child:after {
+    content: 'Warnung';
+}
+
+html[lang="de"] div.notices.note p:first-child:after {
+    content: 'Notiz';
 }

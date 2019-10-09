@@ -16,7 +16,7 @@ build-manual:
 		--cleanDestinationDir \
 		--environment manual \
 		--destination ../build/manual \
-		--verbose
+		--verbose \
 		--baseURL https://docs.contao.org/manual/
 
 # Start a live reload server

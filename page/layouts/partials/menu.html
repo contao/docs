@@ -41,7 +41,6 @@
 
     {{ if or .Site.IsMultiLingual $showvisitedlinks }}
     <section id="prefooter">
-      <hr/>
       <ul>
       {{ if and .Site.IsMultiLingual (not .Site.Params.DisableLanguageSwitchingButton)}}
         <li>
