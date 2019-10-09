@@ -9,7 +9,7 @@ Der Dateimanager bildet die Verzeichnisstruktur in einem hierarchischen Baum ab.
 Knoten, den du über das ![Plussymbol](/icons/folplus.svg?classes=icon) Plus- bzw. 
 ![Minussymbol](/icons/folminus.svg?classes=icon) Minussymbol aus- und einklappen kannst. Innerhalb jedes 
 Unterordners werden die darin enthaltenen Dateien aufgelistet. Handelt es sich dabei um Bilder, wird automatisch eine 
-Voransicht angezeigt. Bei einer großen Menge an Bildern können Sie die Voransicht in Ihrem Benutzerprofil deaktivieren,
+Voransicht angezeigt. Bei einer großen Menge an Bildern kannst du die Voransicht in deinem Benutzerprofil deaktivieren,
 damit die Seite schneller lädt.
 
 

@@ -21,7 +21,7 @@ Der Zugriff auf das Backend, also den Administrationsbereich, ist grundsätzlich
 die sich mit Ihrem Benutzernamen und Passwort anmelden müssen, bevor sie Änderungen an der Webseite vornehmen können. 
 Das Frontend, also die eigentliche Webseite, ist hingegen standardmäßig öffentlich erreichbar.
 
-Das Backend rufen Sie auf, indem Sie `/contao` an die URL Ihrer Webseite anfügen.
+Das Backend rufst du auf, indem du `/contao` an die URL deiner Webseite anfügst.
 
 
 ## Benutzer und Mitglieder
@@ -29,8 +29,8 @@ Das Backend rufen Sie auf, indem Sie `/contao` an die URL Ihrer Webseite anfüg
 Die Trennung zwischen Backend und Frontend setzt sich auch in der Benutzerverwaltung fort. In Contao unterscheidet man 
 zwischen »Benutzern«, die Zugriff auf das Backend haben, und »Mitgliedern«, die Zugriff auf das Frontend haben. Da die 
 Webseite wie schon gesagt standardmäßig öffentlich erreichbar ist, ist das Anlegen von Mitgliedern optional und nur 
-dann notwendig, wenn Sie beispielsweise einen geschützten, nichtöffentlichen Bereich einrichten möchten. In der 
-Minimalkonfiguration kommen Sie mit einem einzigen Benutzer, nämlich dem Administrator, und ganz ohne Mitglieder aus.
+dann notwendig, wenn du beispielsweise einen geschützten, nichtöffentlichen Bereich einrichten möchtest. In der 
+Minimalkonfiguration kommst du mit einem einzigen Benutzer, nämlich dem Administrator, und ganz ohne Mitglieder aus.
 
 
 ## Alles dreht sich um die Seitenstruktur
@@ -77,12 +77,6 @@ Aufruf einer Seite der Reihenfolge nach ausgeführt werden und den HTML-Code fu
 Genau wie Seitenlayouts können auch Frontend-Module per Mausklick angelegt und konfiguriert werden. Contao enthält 
 bereits ab Werk etliche Modultypen, z. B. zur Erstellung von Navigationsmenüs, zur Verwaltung von Benutzern oder zum 
 Einfügen von Formularen. Darüber hinaus kannst du über Erweiterungen beliebige weitere Frontend-Module hinzufügen.
-
-Das Contao-Team hat Anfang des Jahres genau definiert, was Sie als Webmaster optimalerweise mitbringen sollten:
-
-> […] gute Kenntnisse in HTML und CSS sowie Basiswissen zum Thema Webseiten (Hosting, Domains, FTP, Dateirechte etc.). 
-> Optionale Kenntnisse in Objekt-orientierter PHP-Programmierung sind hilfreich, um den technischen Hintergrund zu 
-> verstehen und das System gegebenenfalls anzupassen bzw. zu erweitern.
 
 Nun wirst du sicherlich anmerken, dass vorher gerade noch geschrieben wurde, dass du genau genommen nicht einmal 
 HTML können musst, um Contao zu nutzen. Diese Aussage steht klar im Widerspruch zu dem Zitat. Oder doch nicht?

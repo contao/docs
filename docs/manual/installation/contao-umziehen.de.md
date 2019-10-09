@@ -16,7 +16,7 @@ Um Unannehmlichkeiten beim Umzug zu verhindern sollte, auf deinem lokalen Server
 ### Datenbank auf dem lokalen Server exportieren
 
 Ein MySQL-Dump lässt sich am einfachsten mit der Datenbankverwaltung »[phpMyAdmin](https://www.phpmyadmin.net/)« 
-erstellen. Melden dich im »phpMyAdmin« an, wähle die zu exportierende Datenbank und klicke Sie die 
+erstellen. Melde dich in »phpMyAdmin« an, wähle die zu exportierende Datenbank und klicke die 
 »Export«-Schaltfläche im oberen Menü.
 
 ![Datenbank exportieren](/installation/images/de/datenbank-exportieren.png)

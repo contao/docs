@@ -108,7 +108,7 @@ anmelden kann. Dazu sollte es mindestens einer Mitgliedergruppe angehören.
 
 **Benutzername:** Hier legst du einen eindeutigen Benutzernamen fest.
 
-**Passwort:** Hier weisen Sie dem Mitglied ein Passwort zu.
+**Passwort:** Hier weist du dem Mitglied ein Passwort zu.
 
 
 ### Home-Verzeichnis

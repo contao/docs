@@ -187,7 +187,7 @@ für angemeldete Mitglieder verfügbar sind.
 **Versteckte Seiten anzeigen:** Wenn du diese Option auswählst, werden auch versteckte Seiten in der Quicknavigation 
 angezeigt, die normalerweise übersprungen würden.
 
-**Referenzseite:** Hier legen Sie die Ausgangsseite der Quicknavigation fest.
+**Referenzseite:** Hier legst du die Ausgangsseite der Quicknavigation fest.
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_quicknav` überschreiben.
 

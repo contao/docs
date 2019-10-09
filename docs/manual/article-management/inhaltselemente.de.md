@@ -24,7 +24,7 @@ im Frontend angemeldet hat.
 ## Überschrift {#ueberschrift}
 
 Das Inhaltselement »Überschrift« fügt dem Artikel eine Überschrift hinzu. Die meisten Inhaltselemente unterstützen die 
-direkte Eingabe einer Überschrift, sodass Sie das Element nicht jedes Mal separat verwenden müssen.
+direkte Eingabe einer Überschrift, sodass du das Element nicht jedes Mal separat verwenden musst.
 
 **Überschrift:** Hier kannst du die Überschrift eingeben.
 
@@ -593,7 +593,7 @@ kann. HTML-Eingaben sind hier erlaubt.
 **CSS-Format:** Falls du die Bereichsüberschrift mittels CSS-Code formatieren möchtest, kannst du hier eine 
 Formatdefinition erfassen.
 
-**Klassennamen:** Lasse das Feld leer, um die Standard-Klassennamen zu verwenden, oder geben Sie eigene Toggler- und 
+**Klassennamen:** Lasse das Feld leer, um die Standard-Klassennamen zu verwenden, oder gib eigene Toggler- und 
 Accordion-Klassen ein.
 
 **Text:** Hier kannst du den Text des Akkordeon-Abschnitts eingeben. Die Eingabe erfolgt wie beim Textelement über den 
@@ -733,7 +733,7 @@ Alternativ dazu kannst du auch ein Bildelement erstellen und mit einem Link vers
 
 **Quelldatei:** Hier wählst du das zu verwendende Bild aus.
 
-**Bildgröße:** Hier können Sie die Abmessungen des Bildes vorgeben. Weitere Informationen dazu finden Sie im 
+**Bildgröße:** Hier kannst du die Abmessungen des Bildes vorgeben. Weitere Informationen dazu findest du im 
 [Text](#text).
 
 **Metadaten überschreiben:** Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.

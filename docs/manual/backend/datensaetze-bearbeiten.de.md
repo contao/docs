@@ -75,8 +75,8 @@ Wähle dort gezielt die Eingabefelder aus, die du überschreiben bzw. bearbeiten
 ![Die zu bearbeitenden Eingabefelder auswählen](/backend/images/de/die-zu-bearbeitenden-eingabefelder-auswaehlen.png)
 
 Du siehst jetzt die ausgewählten Eingabefelder der selektierten Datensätze und kannst diese bequem in einem einzigen 
-Arbeitsschritt ändern. Auch bei der Bearbeitung mehrerer Datensätze werden Ihnen natürlich nur die Eingabefelder 
-angezeigt, die Sie auch tatsächlich für Ihr Vorhaben benötigen.
+Arbeitsschritt ändern. Auch bei der Bearbeitung mehrerer Datensätze werden dir natürlich nur die Eingabefelder 
+angezeigt, die du auch tatsächlich für dein Vorhaben benötigst.
 
 ![Nur die ausgewählten Eingabefelder werden angezeigt](/backend/images/de/nur-die-ausgewaehlten-eingabefelder-werden-angezeigt.png)
 
@@ -106,7 +106,7 @@ zugewiesen waren.
 Contao legt bei jedem Speichervorgang automatisch eine neue Version des bearbeiteten Datensatzes an, sodass du 
 Änderungen jederzeit rückgängig machen kannst. Sobald mehr als eine Version vorhanden ist, erscheint oberhalb der 
 Eingabemaske ein Drop-Down-Menü, in dem die verschiedenen Versionen sowie deren Datum und Ersteller aufgelistet
-sind. Mit einem Klick auf `Wiederherstellen` können Sie eine frühere Version wiederherstellen.
+sind. Mit einem Klick auf `Wiederherstellen` kannst du eine frühere Version wiederherstellen.
 
 ![Frühere Versionen eines Datensatzes wiederherstellen](/backend/images/de/fruehere-versionen-eines-datensatzes-wiederherstellen.png)
 

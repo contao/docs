@@ -127,7 +127,7 @@ zu »ueber« jedoch ein Finnisches »eläinkö« zu »elainko« konvertiert.
 {{< version "4.8" >}}
 
 **Zwei-Faktor-Authentifizierung:** Hier kannst du die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
-erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn Sie die 
+erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die 
 Zwei-Faktor-Authentifizierung einrichten.
 
 
@@ -219,7 +219,7 @@ man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite
 
 Unter Umständen gibt es innerhalb Ihrer Seitenstruktur Seiten, die zwar im Frontend verfügbar sein, aber nicht im Menü 
 auftauchen sollen. Oder es könnte Seiten geben, die nur so lange angezeigt werden sollen, bis sich ein Benutzer 
-angemeldet hat (z. B. die Registrierungsseite). Solche speziellen Wünsche können Sie in den Experten-Einstellungen 
+angemeldet hat (z. B. die Registrierungsseite). Solche speziellen Wünsche kannst du in den Experten-Einstellungen 
 konfigurieren.
 
 **CSS-Klasse:** Hier weist du der Seite eine CSS-Klasse zu, die sowohl im Body-Tag der HTML-Seite als auch in den 
@@ -335,8 +335,8 @@ Protokoll `mailto:` und für die Verlinkung einer Telefonnummer das Protokoll `t
 **Weitere Einstellung bei Fehlerseiten**
 
 Mit Fehlerseiten kannst du Besucher optional auf eine andere Seite umleiten, anstatt einen Hinweis auszugeben. Kommt z. 
-B. ein nicht angemeldeter Besucher beim Versuch, eine geschützte Seite aufzurufen, auf die Fehler 403-Seite, könnten 
-Sie ihn direkt zur Anmeldung weiterleiten.
+B. ein nicht angemeldeter Besucher beim Versuch, eine geschützte Seite aufzurufen, auf die Fehler 403-Seite, könntest
+du ihn direkt zur Anmeldung weiterleiten.
 
 **Zu einer anderen Seite weiterleiten:** Hier aktivierst du die Auto-Weiterleitung.
 

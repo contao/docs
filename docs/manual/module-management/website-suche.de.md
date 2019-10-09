@@ -40,7 +40,7 @@ Contao sucht standardmäßig nur nach Seiten, die alle Suchbegriffe enthalten (U
 
 Bei der Phrasensuche wird nicht nur nach einzelnen Wörtern gesucht, sondern nach Wortkombinationen, die in einer 
 bestimmten Reihenfolge stehen. Um nach einer Phrase zu suchen, musst du lediglich die entsprechenden Wörter in 
-Anführungszeichen setzen. Die Suche nach "web design" (in diesem Fall müssen Sie die Anführungszeichen mit eingeben!)
+Anführungszeichen setzen. Die Suche nach "web design" (in diesem Fall musst du die Anführungszeichen mit eingeben!)
 ergibt im Vergleich zur UND/ODER-Suche nur drei Treffer, nämlich die Seiten, die tatsächlich
 den Begriff »Web Design« enthalten.
 

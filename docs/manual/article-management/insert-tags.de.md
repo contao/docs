@@ -29,21 +29,21 @@ oder den Alias der Zielseite.
 | `{{link_title::*}}`       | Dieses Tag wird mit dem Titel einer internen Seite ersetzt: `<a title="{{link_title::12}}">Hier klicken</a>`.                |
 | `{{link_name::*}}`        | Dieses Tag wird mit dem Namen einer internen Seite ersetzt: `<a>{{link_name::12}}</a>`.                                      |
 | `{{link_close}}`          | Wird mit dem schließenden Tag eines Links zu einer internen Seite ersetzt: `{{link_open::12}}Hier klicken{{link_close}}`.    |
-| `{{article::*}}`          | Dieses Tag wird mit einem Link zu einem Artikel ersetzt (ersetzen Sie * mit der ID oder dem Alias).                          |
+| `{{article::*}}`          | Dieses Tag wird mit einem Link zu einem Artikel ersetzt (ersetze * mit der ID oder dem Alias).                          |
 | `{{article_open::*}}`     | Wird mit dem öffnenden Tag eines Links zu einem Artikel ersetzt: `{{article_open::12}}Hier klicken{{link_close}}`.           |
 | `{{article_url::*}}`      | Dieses Tag wird mit der URL eines Artikels ersetzt: `<a href="{{article_url::12}}">Hier klicken</a>`.                        |
 | `{{article_title::*}}`    | Dieses Tag wird mit dem Titel eines Artikels ersetzt: `<a title="{{article_title::12}}">Hier klicken</a>`.                   |
-| `{{news::*}}`             | Dieses Tag wird mit einem Link zu einer Nachricht ersetzt (ersetzen Sie * mit der ID oder dem Alias).                        |
+| `{{news::*}}`             | Dieses Tag wird mit einem Link zu einer Nachricht ersetzt (ersetze * mit der ID oder dem Alias).                        |
 | `{{news_open::*}}`        | Wird mit dem öffnenden Tag eines Links zu einer Nachricht ersetzt: `{{news_open::12}}Hier klicken{{link_close}}`.            |
 | `{{news_url::*}}`         | Dieses Tag wird mit der URL einer Nachricht ersetzt: `<a href="{{news_url::12}}">Hier klicken</a>`.                          |
 | `{{news_title::*}}`       | Dieses Tag wird mit dem Titel einer Nachricht ersetzt: `<a title="{{news_title::12}}">Hier klicken</a>`.                     |
-| `{{news_feed::*}}`        | Dieser Tag wird mit der URL zu einem News-Feed ersetzen (ersetzen Sie * mit der ID).                                         |
-| `{{event::*}}`            | Dieses Tag wird mit einem Link zu einem Event ersetzt (ersetzen Sie * mit der ID oder dem Alias).                            |
+| `{{news_feed::*}}`        | Dieser Tag wird mit der URL zu einem News-Feed ersetzen (ersetze * mit der ID).                                         |
+| `{{event::*}}`            | Dieses Tag wird mit einem Link zu einem Event ersetzt (ersetze * mit der ID oder dem Alias).                            |
 | `{{event_open::*}}`       | Wird mit dem öffnenden Tag eines Links zu einem Event ersetzt: `{{event_open::12}}Hier klicken{{link_close}}`.               |
 | `{{event_url::*}}`        | Dieses Tag wird mit der URL eines Events ersetzt: `<a href="{{event_url::12}}">Hier klicken</a>`.                            |
 | `{{event_title::*}}`      | Dieses Tag wird mit dem Titel eines Events ersetzt: `<a title="{{event_title::12}}">Hier klicken</a>`.                       |
-| `{{calendar_feed::*}}`    | Dieser Tag wird mit der URL zu einem Kalender-Feed ersetzen (ersetzen Sie * mit der ID).                                     |
-| `{{faq::*}}`              | Dieses Tag wird mit einem Link zu einer häufig gestellten Frage ersetzt (ersetzen Sie * mit der ID oder dem Alias).          |
+| `{{calendar_feed::*}}`    | Dieser Tag wird mit der URL zu einem Kalender-Feed ersetzen (ersetze * mit der ID).                                     |
+| `{{faq::*}}`              | Dieses Tag wird mit einem Link zu einer häufig gestellten Frage ersetzt (ersetze * mit der ID oder dem Alias).          |
 | `{{faq_open::*}}`         | Wird mit dem öffnenden Tag eines Links zu einer Frage ersetzt: `{{faq_open::12}}Hier klicken{{link_close}}`.                 |
 | `{{faq_url::*}}`          | Dieses Tag wird mit der URL einer Frage ersetzt: `<a href="{{faq_url::12}}">Hier klicken</a>`.                               |
 | `{{faq_title::*}}`        | Dieses Tag wird mit dem Titel einer Frage ersetzt: `<a title="{{faq_title::12}}">Hier klicken</a>`.                          |
@@ -131,7 +131,7 @@ eingebunden werden.
 
 ## Verschiedenes
 
-Mit den folgenden Insert-Tags können Sie verschiedene Aufgaben erledigen und z. B. das aktuelle Datum oder ein 
+Mit den folgenden Insert-Tags kannst du verschiedene Aufgaben erledigen und z. B. das aktuelle Datum oder ein 
 Lightbox-Bild einfügen.
 
 | Insert-Tag               | Beschreibung                                                                                         |

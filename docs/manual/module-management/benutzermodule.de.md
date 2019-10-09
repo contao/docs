@@ -937,7 +937,7 @@ kann. Je nach Konfiguration wird der Account dabei entweder nur deaktiviert oder
 **Modus:** Hier legst du fest, ob das jeweilige Konto beim Absenden des Formulars lediglich deaktiviert oder komplett 
 aus der Datenbank gelöscht werden soll.
 
-**Weiterleitungsseite:**  Hier legen Sie fest, auf welche Seite ein Mitglied nach der Kontoschließung
+**Weiterleitungsseite:**  Hier legst du fest, auf welche Seite ein Mitglied nach der Kontoschließung
 weitergeleitet wird. Die Zielseite darf nicht geschützt sein.
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_closeAccount` überschreiben.

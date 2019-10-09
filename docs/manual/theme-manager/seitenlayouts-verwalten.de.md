@@ -52,9 +52,9 @@ vorgeben, die Hauptspalte passt sich jeweils automatisch an.
 ![Rechte Spalte hinzufügen](/icons/2clr.svg?classes=icon "Rechte Spalte hinzufügen")
 ![Linke und rechte Spalte hinzufügen](/icons/3cl.svg?classes=icon "Linke und rechte Spalte hinzufügen")
 
-**Breite der linken Spalte**: Hier legen Sie die Breite der linken Spalte fest.
+**Breite der linken Spalte**: Hier legst du die Breite der linken Spalte fest.
 
-**Breite der rechten Spalte**: Hier legen Sie die Breite der rechten Spalte fest.
+**Breite der rechten Spalte**: Hier legst du die Breite der rechten Spalte fest.
 
 
 ## Eigene Layoutbereiche
@@ -264,7 +264,7 @@ deines Browsers z. B. zentriert dargestellt. In Contao werden beide Layout-Typen
 ## Experten-Einstellungen
 
 In den Experten-Einstellungen kannst du unter anderem das Seitentemplate ändern, die dem Seitenlayout zugrunde liegen. 
-Das solltest du nur dann erwägen, wenn die Bordmittel von Contao tatsächlich nicht ausreichen oder Sie z. B. ein 
+Das solltest du nur dann erwägen, wenn die Bordmittel von Contao tatsächlich nicht ausreichen oder du z.B. ein 
 externes CSS-Framework verwenden möchtest. In den meisten Fällen solltest du jedoch mit den Standard-Möglichkeiten 
 problemlos ans Ziel kommen.
 

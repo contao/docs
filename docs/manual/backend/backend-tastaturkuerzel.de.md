@@ -39,11 +39,11 @@ Im Bearbeitungsmodus stehen zusätzlich folgende Kürzel zur Verfügung:
 | Tastaturkürzel    | Schaltfläche                          | Erklärung                                                                                                                                                                                |
 |:------------------|:--------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `[Alt]+[s]`       | Speichern                             | Speichert das aktuelle Eingabeformular (**S**ave).                                                                                                                                       |
-| `[Alt]+[c]`       | Speichern und schließen               | Speichert und schließt das aktuelle Eingabeformular (Save and **c**lose). Sie gelangen zurück zur vorherigen Seite.                                                                      |
+| `[Alt]+[c]`       | Speichern und schließen               | Speichert und schließt das aktuelle Eingabeformular (Save and **c**lose). Du gelangst zurück zur vorherigen Seite.                                                                      |
 | `[Alt]+[n]`       | Speichern und neu                     | Speichert das aktuelle Eingabeformular und legt einen neuen Datensatz an (Save and **n**ew).                                                                                             |
 | `[Alt]+[d]`       | Speichern&nbsp;und&nbsp;duplizieren   | Speichert das aktuelle Eingabeformular und dupliziert den Datensatz (Save and **d**uplicate).                                                                                            |
 | `[Alt]+[e]`       | Speichern und bearbeiten              | Speichert das aktuelle Eingabeformular (Save and **e**dit) und wechselt zur Ansicht der Kind-Datensätze, z. B. beim Anlegen von Stylesheets.                                             |
-| `[Alt]+[g]`       | Speichern und zurück                  | Speichert und schließt das aktuelle Eingabeformular (Save and **g**o back). Sie gelangen zurück zur übergeordneten Seite, z. B. von einem Inhaltselement direkt zur Artikelübersicht.    |
+| `[Alt]+[g]`       | Speichern und zurück                  | Speichert und schließt das aktuelle Eingabeformular (Save and **g**o back). Du gelangst zurück zur übergeordneten Seite, z. B. von einem Inhaltselement direkt zur Artikelübersicht.    |
 
 
 ## Tastaturkürzel im Modus »Mehrere bearbeiten« {#tastaturkuerzel-im-modus-mehrere-bearbeiten}
@@ -66,5 +66,5 @@ Im Modus »Mehrere bearbeiten« kommen weitere Kürzel hinzu:
 Die beschriebenen Tastaturkürzel funktionieren in dieser Form nur unter Windows. Mac-Nutzer müssen anstatt der
 `[Alt]`-Taste `[Ctrl]+[⌥ Opt]` in Verbindung mit dem jeweiligen Kürzel verwenden.
 
-Zudem weicht Firefox unter Windows leider vom gewohnten Standard ab, dort müssen Sie `[Alt]+[Umsch]` in Verbindung mit
+Zudem weicht Firefox unter Windows leider vom gewohnten Standard ab, dort musst du `[Alt]+[Umsch]` in Verbindung mit
 dem gewünschten Kürzel drücken.
