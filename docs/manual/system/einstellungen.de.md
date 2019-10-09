@@ -4,8 +4,12 @@ description: ""
 weight: 1
 ---
 
-Die Einstellungen verabschieden sich langsam aber sicher aus dem Backend und werden zukünftig über den Contao Manager 
-konfigurierbar sein. Bis der Manager soweit ist können diese Einstellungen über die `config.yml` vorgenommen werden.
+Die Systemeinstellungen verabschieden sich langsam aber sicher aus dem Backend. Grundlegende Systemeinstellungen
+beeinflussen Contao als Applikation und somit besteht auch die Chance, dass durch eine falsche Einstellung das System
+in einen funktionsuntüchtigen Zustand gebracht wird. Sollte dies geschehen, hast du keine Möglichkeit mehr,
+die Einstellungen rückgängig zu machen und das System wiederherzustellen, da du dich nicht mehr einloggen kannst.
+Aus diesem Grund werden die meisten Einstellungen ausserhalb von Contao über die `config.yml` vorgenommen bzw. können 
+zukünftig über den Contao Manager vorgenommen werden.
 
 ## Einstellungen
 
