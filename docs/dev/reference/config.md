@@ -15,7 +15,7 @@ $ vendor/bin/contao-console config:dump-reference contao
 contao:
 
     # Absolute path to the web directory. Make sure to use the %kernel.project_dir% parameter for the absolute path prefix.
-    web_dir:              'C:\Users\Spooky\www\c48dev/web' # Example: %kernel.project_dir%/web
+    web_dir:              '…/web' # Example: %kernel.project_dir%/web
 
     # Whether or not to prefix URLs with the root page language.
     prepend_locale:       false
@@ -62,7 +62,7 @@ contao:
         target_path:          null # Deprecated (Use the "contao.image.target_dir" parameter instead.)
 
         # The target directory for the cached images processed by Contao.
-        target_dir:           'C:\Users\Spooky\www\c48dev/assets/images'
+        target_dir:           '…/assets/images'
         valid_extensions:
 
             # Defaults:
