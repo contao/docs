@@ -30,13 +30,13 @@ aufrufen um die Datenbank, falls nötig, zu aktualisieren.
 
 Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angemeldet.
 
-```shell script
+```bash
 ssh benutzername@example.com
 ```
 
 Wechsle dazu auf der Konsole in das Verzeichnis deiner Contao-Installation.
 
-```shell script
+```bash
 cd www/example/
 ```
 
@@ -48,12 +48,12 @@ kann und die Aktualisierung dadurch fehlschlägt. In diesem Fall solltest du den
 [Contao Manager](#aktualisierung-mit-dem-contao-manager) nutzen.
 
 **Ein einzelne Erweiterung deinstallieren:**
-```shell script
+```bash
 php composer.phar remove terminal42/contao-easy_themes
 ```
 
 **Mehrere Erweiterungen deinstallieren:**
-```shell script
+```bash
 php composer.phar remove terminal42/notification_center terminal42/contao-leads
 ```
 

@@ -52,13 +52,13 @@ und die Installation dadurch fehlschlägt. In diesem Fall solltest du den
 
 Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angemeldet.
 
-```shell script
+```bash
 ssh benutzername@example.com
 ```
 
 Wechsle in das öffentlichen Verzeichnis deines Webhosting.
 
-```shell script
+```bash
 cd www
 ```
 
@@ -72,7 +72,7 @@ Um Composer zu installieren, folge bitte der Anleitung auf der [Composer-Website
 und kopiere die Kommandos auch von dort, denn der SHA-Hash zum Verifizieren des Downloads ändert sich mit jeder 
 Composer-Version. Zum jetzigen Zeitpunkt sehen die Kommandos wie folgt aus.
 
-```shell script
+```bash
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 php composer-setup.php
@@ -85,7 +85,7 @@ php -r "unlink('composer-setup.php');"
 Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
 Installations-Verzeichnis und die 4.8 für die zu [installierende Contao-Version](https://contao.org/de/download.html). 
 
-```shell script
+```bash
 php composer.phar create-project contao/managed-edition example 4.8
 ```
 

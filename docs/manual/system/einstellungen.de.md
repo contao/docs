@@ -210,7 +210,8 @@ Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.
 {{% /notice %}}
 
 Über die Kommandozeile kommst du an die Standard-Konfiguration für Contao:
-```shell script
+
+```bash
 vendor/bin/contao-console config:dump-reference contao
 ```
 
@@ -316,7 +317,9 @@ contao:
 **Cache leeren**  
 Damit die Änderungen aktiv werden muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
 »Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden.
-```shell script
+
+```bash
 vendor/bin/contao-console cache:clear --env=prod --no-warmup
 ```
+
 {{% /notice %}}

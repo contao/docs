@@ -78,7 +78,7 @@ werden.
 
 Ein MySQL-Dump lässt sich auf der Kommandozeile am einfachsten mit folgendem Befehl gefolgt vom Passwort erstellen.
 
-```shell script
+```bash
 mysqldump -h localhost -u Benutzer -p --opt Datenbankname | gzip -c > mysqldump.sql.gz
 ```
 
@@ -89,7 +89,7 @@ Die Datei wird in dem Verzeichnis abgelegt, in welchem du dich beim Absenden des
 
 Jetzt kannst du die Daten per `secure copy` auf deinen Server übertragen.
 
-```shell script
+```bash
 scp -r /pfad/lokal/files/ /pfad/lokal/templates/ /pfad/lokal/composer.json /pfad/lokal/composer.lock 
 /pfad/lokal/mysqldump.sql.gz benutzername@example.com:server/www/example/
 ```
@@ -112,13 +112,13 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angemeldet.
 
-```shell script
+```bash
 ssh benutzername@example.com
 ```
 
 Wechsle dazu auf der Konsole in das Verzeichnis in welchem du Contao installieren willst.
 
-```shell script
+```bash
 cd www/example/
 ```
 
@@ -127,7 +127,7 @@ wir das nach.
 
 Im nächsten Schritt kannst du das MySQL-Dump mit folgendem Befehl gefolgt vom Passwort importieren.
 
-```shell script
+```bash
 gunzip < mysqldump.sql.gz | mysql -h localhost -u Benutzer -p Datenbankname
 ```
 
@@ -138,7 +138,7 @@ Nachdem wir alle Vorbereitungsarbeiten erfolgreich abgeschlossen haben, installi
 Beim `install` werden im Gegensatz zum `update` keine Abhängigkeiten aufgelöst, diese befinden sich in der 
 mitgelieferten `composer.lock`. Deshalb wird dieser Prozess auch nicht wegen zu hohen Systemanforderung schief laufen.
 
-```shell script
+```bash
 php composer.phar install
 ```
 

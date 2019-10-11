@@ -100,7 +100,8 @@ Du hast drei Möglichkeiten das Installtool zu entsperren:
 - Über den Contao Manager, indem du unter Systemwartung auf »Installtool entsperren« klickst.
 ![Das Installtool zurücksetzen](/installation/images/de/das-installtool-zuruecksetzen.png)
 - Über die Kommandozeile, indem du im Hauptverzeichnis deiner Contao-Installation folgendes Kommando absetzt:
-```shell script
+
+```bash
 php vendor/bin/contao-console contao:install:unlock
 ```
 

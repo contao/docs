@@ -91,19 +91,19 @@ fehlschlägt. In diesem Fall solltest du den [Contao Manager](##aktualisierung-m
 
 Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angemeldet.
 
-```shell script
+```bash
 ssh benutzername@example.com
 ```
 
 Wechsle dazu auf der Konsole in das Verzeichnis deiner zu aktualisierenden Contao-Installation.
 
-```shell script
+```bash
 cd www/example/
 ```
 
 Bei einer Aktualisierung für ein [Bugfix-Release](#bugfix-release) genügt es, folgendes Kommando abzusetzen.
 
-```shell script
+```bash
 php composer.phar update
 ```
 
@@ -123,7 +123,7 @@ in der `composer.json` eingetragen werden.
 
 Jetzt noch die Aktualisierung auf der Kommandozeile anstoßen.
 
-```shell script
+```bash
 php composer.phar update
 ```
 

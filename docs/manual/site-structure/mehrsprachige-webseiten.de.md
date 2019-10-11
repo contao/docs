@@ -38,9 +38,11 @@ contao:
 **Cache leeren**  
 Damit die Änderungen aktiv werden muss der Anwendungs-Cache über den Contao Manager (»Systemwartung« > »Prod.-Cache 
 erneuern«) oder alternativ über die Kommandozeile erneuert werden.
-```shell script
+
+```bash
 vendor/bin/contao-console cache:clear --env=prod --no-warmup
 ```
+
 {{% /notice %}}
 
 

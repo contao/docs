@@ -26,13 +26,13 @@ aufrufen um die Datenbank, falls nötig, zu aktualisieren.
 
 Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angemeldet.
 
-```shell script
+```bash
 ssh benutzername@example.com
 ```
 
 Wechsle dazu auf der Konsole in das Verzeichnis deiner Contao-Installation.
 
-```shell script
+```bash
 cd www/example/
 ```
 
@@ -42,24 +42,27 @@ nicht beendet werden kann und die Aktualisierung dadurch fehlschlägt. In diesem
 [Contao Manager](#aktualisierung-mit-dem-contao-manager) nutzen.
 
 **Ein einzelne Erweiterung aktualisieren:**
-```shell script
+
+```bash
 php composer.phar update terminal42/contao-easy_themes
 ```
 
 **Mehrere Erweiterungen aktualisieren:**
-```shell script
+
+```bash
 php composer.phar update terminal42/notification_center terminal42/contao-leads
 ```
 
 Du kannst auch im Vorfeld der Aktualisierung mit dem Befehl `outdated` eine Liste der installierten Erweiterungen, für 
 die Aktualisierungen verfügbar sind, einschliesslich ihrer aktuellen und neusten Version anzeigen lassen.
 
-```shell script
+```bash
 php composer.phar outdated
 ```
 
 **Resultat der Abfrage:**
-```shell script
+
+```bash
 doctrine/dbal               v2.8.1 v2.9.2  Database Abstraction Layer
 knplabs/knp-menu            2.6.0  v3.0.1  An object oriented menu library
 monolog/monolog             1.25.1 2.0.0   Sends your logs to files, sockets, inboxes, databases …

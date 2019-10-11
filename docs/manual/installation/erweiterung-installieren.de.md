@@ -14,12 +14,16 @@ Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du d
 - Du kannst im Contao Manager deiner Installation eine Erweiterung suchen.  
 ![Erweiterungssuche im Contao Manager](/installation/images/de/erweiterungssuche-im-contao-manager.png)
 - Du kannst über die Kommandozeile eine Erweiterung suchen.  
+
 **Suche z. B. nach Erweiterungen der Firma »codefog«:**
-```shell script
+
+```bash
 php composer.phar search codefog
 ```
+
 **Resultat der Suche:**
-```shell script
+
+```bash
 codefog/contao-haste haste extension for Contao Open Source CMS
 codefog/contao-cookiebar cookiebar extension for Contao Open Source CMS
 codefog/contao-news_categories News Categories bundle for Contao Open Source CMS
@@ -72,13 +76,13 @@ aufrufen um die Datenbank zu aktualisieren.
 
 Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angemeldet.
 
-```shell script
+```bash
 ssh benutzername@example.com
 ```
 
 Wechsle dazu auf der Konsole in das Verzeichnis deiner Contao-Installation.
 
-```shell script
+```bash
 cd www/example/
 ```
 
@@ -86,12 +90,12 @@ Mit dem Befehl `require` fügst du der Datei `composer.json` das neue Paket hinz
 von der dieses Paket anhängig sind, herunter.
 
 **Ein einzelne Erweiterung installieren:**
-```shell script
+```bash
 php composer.phar require terminal42/contao-easy_themes
 ```
 
 **Mehrere Erweiterungen installieren:**
-```shell script
+```bash
 php composer.phar require terminal42/notification_center terminal42/contao-leads
 ```
 
