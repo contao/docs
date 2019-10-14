@@ -79,7 +79,7 @@ Each field can be validated against a regular expression.
 | rte                | Rich text editor file (`string`) | `ace` or `tinyMCE` for example. |
 | submitOnChange     | true/false (`bool`)           | If true the form will be submitted when the field value changes.                                                                                                         |
 | nospace            | true/false (`bool`)           | If true whitespace characters will not be allowed.                                                                                                                       |
-| allowHtml          | true/false (`bool`)           | If true the current field will accept HTML input (see "Allowed HTML tags" in the backend System => Settings).                                                            |
+| allowHtml          | true/false (`bool`)           | If true the current field will accept HTML input (see "Allowed HTML tags" in the back end System => Settings).                                                            |
 | preserveTags       | true/false (`bool`)           | If true no HTML tags will be removed at all.                                                                                                                             |
 | decodeEntities     | true/false (`bool`)           | If true HTML entities will be decoded. Note that HTML entities are always decoded if allowHtml is true.                                                                  |
 | doNotSaveEmpty     | true/false (`bool`)           | If true the field will not be saved if it is empty.                                                                                                                      |
