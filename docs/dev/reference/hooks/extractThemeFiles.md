@@ -4,6 +4,7 @@ description: "extractThemeFiles hook"
 tags: ["hook-theme"]
 ---
 
+
 The `extractThemeFiles` hook is triggered on whenever a theme is extracted during
 the theme import. The hook enables you to add execute additional logic (e.g. placing
 additional files or executing additional database queries). It passes the XML object, 
