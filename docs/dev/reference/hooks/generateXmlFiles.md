@@ -4,9 +4,11 @@ description: "generateXmlFiles hook"
 tags: ["hook-automator"]
 ---
 
+
 The `generateXmlFiles` hook is triggered when the XML files are (re)generated e.g. 
 by clicking "System » Maintenance » Recreate the XML files" in the back end. 
 It has no parameters and does not expect a return value.
+
 
 ## Example
 
