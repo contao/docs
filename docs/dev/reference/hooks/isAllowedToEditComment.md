@@ -54,6 +54,7 @@ class IsAllowedToEditCommentListener implements ServiceAnnotationInterface
 }
 ```
 
+
 ## References
 
 * [\tl_comments#L457-L472](https://github.com/contao/contao/blob/4.7.6/comments-bundle/src/Resources/contao/dca/tl_comments.php#L457-L472)
