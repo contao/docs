@@ -26,7 +26,7 @@ Dieses Handbuch wurde mit Unterstützung der [Contao Association](https://associ
 - [Bjarke (@netzarbeiter)](https://github.com/netzarbeiter)
 - [Fritz Michael (@fritzmg)](https://github.com/fritzmg)
 
-Viel Spass beim Durchforsten des Handbuches.
+Viel Spaß beim Durchforsten des Handbuches.
 
 Dieses Handbuch ist in folgende Kapitel unterteilt:
 
