@@ -6,6 +6,7 @@ aliases:
   - /reference/dca/palettes/
 ---
 
+
 A palette is a group of form fields which are required to edit a record. A
 palette typically does not include all columns of a table but only the ones that
 belong to a particular module or content element. Palettes can change
@@ -27,6 +28,7 @@ $GLOBALS['TL_DCA']['tl_example'] = [
     ],
 ];
 ```
+
 
 ## Sub palettes
 
@@ -52,6 +54,7 @@ $GLOBALS['TL_DCA']['tl_example'] = [
 
 In the above example the fields `singleSRC` and `size` will be shown after the
 `addImage` checkbox field, when `addImage` has been activated.
+
 
 ## Sub palettes with selects
 
