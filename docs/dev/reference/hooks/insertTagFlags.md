@@ -4,6 +4,7 @@ description: "insertTagFlags hook"
 tags: ["hook-custom"]
 ---
 
+
 The `insertTagFlags` hook is triggered when unknown flags (filters) are passed
 to an insert tag. It passes the arguments listed belows and expects the replacement
 text as return value or `false` if the flag was not handled.
