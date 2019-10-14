@@ -37,7 +37,7 @@ Im Bereich `Support`, erhältst du eine Übersicht über Contao, findest du Antw
 Fragen, kannst Fehler melden oder aber das Contao-Netwerk betrachten.
 
 Den Abschluss macht die Kategorie `Association`. Der Verein wurde 2012 in der Schweiz gegründet und bezweckt die 
-Förderung des Contao Contao Open Source CMS. Diese Förderung beinhaltet im Besonderen die folgenden fachlichen 
+Förderung des Contao Open Source CMS. Diese Förderung beinhaltet im Besonderen die folgenden fachlichen 
 Ziele:
                          
 - Organisation von Veranstaltungen zwecks Information und Weiterbildung der Mitglieder und weiterer Interessierter
