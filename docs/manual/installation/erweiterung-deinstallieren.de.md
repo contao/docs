@@ -48,11 +48,13 @@ kann und die Aktualisierung dadurch fehlschlägt. In diesem Fall solltest du den
 [Contao Manager](#aktualisierung-mit-dem-contao-manager) nutzen.
 
 **Ein einzelne Erweiterung deinstallieren:**
+
 ```bash
 php composer.phar remove terminal42/contao-easy_themes
 ```
 
 **Mehrere Erweiterungen deinstallieren:**
+
 ```bash
 php composer.phar remove terminal42/notification_center terminal42/contao-leads
 ```
