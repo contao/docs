@@ -4,6 +4,7 @@ description: "getPageLayout hook"
 tags: ["hook-page"]
 ---
 
+
 The `getPageLayout` hook is triggered when a regular page is generated.
 It can be used to modify the page or layout object. It passes the page 
 object, the layout object and the page type instance as arguments
