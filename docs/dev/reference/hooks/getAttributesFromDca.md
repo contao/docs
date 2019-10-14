@@ -4,6 +4,7 @@ description: "getAttributesFromDca hook"
 tags: ["hook-widget", "hook-dca", "hook-config"]
 ---
 
+
 The `getAttributesFromDca` hook is triggered when attributes of a widget are 
 extracted from a Data Container array. It passes the attributes and the DCA object 
 as arguments and expects the (modified) widget attributes as return value.
