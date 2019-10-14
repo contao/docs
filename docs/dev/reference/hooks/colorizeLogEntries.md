@@ -4,6 +4,7 @@ description: "colorizeLogEntries hook"
 tags: ["hook-backend"]
 ---
 
+
 The `colorizeLogEntries` hook is triggered when a user closes his account. It passes 
 the user ID, the operation mode and the module as arguments and does not expect 
 a return value.
