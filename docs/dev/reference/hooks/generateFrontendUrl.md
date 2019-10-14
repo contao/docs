@@ -4,6 +4,7 @@ description: "generateFrontendUrl hook"
 tags: ["hook-controller", "hook-page"]
 ---
 
+
 The `generateFrontendUrl` hook is triggered when a front end URL is recreated. 
 It passes the page object, the parameter string and the default URL as arguments 
 and expects a string as return value.
