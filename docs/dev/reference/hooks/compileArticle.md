@@ -4,6 +4,7 @@ description: "compileArticle hook"
 tags: ["hook-module", "hook-template", "hook-article"]
 ---
 
+
 The `compileArticle` hook is triggered after the article module has been compiled. 
 It passes the template object, the module configuration, and the module object as 
 arguments and does not expect a return value. It can be used e.g. to add additional 
