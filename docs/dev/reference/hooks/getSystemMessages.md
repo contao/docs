@@ -4,6 +4,7 @@ description: "getSystemMessages hook"
 tags: ["hook-backend"]
 ---
 
+
 The `getSystemMessages` hook allows to add additional messages to the back end
 home screen. It does not pass any parameters and expects a string as return value.
 
