@@ -4,6 +4,7 @@ description: "getArticle hook"
 tags: ["hook-controller", "hook-article"]
 ---
 
+
 The `getArticle` hook allows you to override the configuration of an article 
 prior to rendering. It does not expect a return value.
 
