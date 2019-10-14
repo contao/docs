@@ -3,6 +3,7 @@ title: "Backend Routes"
 description: "Custom routes within the Contao back end."
 ---
 
+
 ## Adding custom backend routes
 
 You can use the Contao backend to display content generated in your own custom Controllers.
@@ -10,6 +11,7 @@ This way you can develop custom extensions without the need to use DCA configura
 The following example can be changed according to your own setup. For example you're
 not obliged to use the annotation configuration for your routes you could use
 XML or YAML interchangeably.
+
 
 ### Create your Controller and Template
 
@@ -100,13 +102,12 @@ This exampe renders like this:
 
 ![](../images/custom-backend-routes-1.png?classes=shadow)
 
+
 ### Extend the backend menu
 
 Most of the time you probably want to add a menu entry for your backend module.
 Since the backend menu can be extended with an `EventListener` we can easily
 create one that listens for the menu event to be dispatched.
-
-
 
 ```php
 // src/EventListener/BackendMenuListener.php
