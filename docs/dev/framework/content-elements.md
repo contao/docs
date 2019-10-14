@@ -6,6 +6,7 @@ aliases:
     - /framework/content-elements/
 ---
 
+
 In Contao, Content Elements are the fundamental content blocks. In its simplest
 form it is a fragment controller which receives data in form of a content model
 and returns a response.
