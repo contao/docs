@@ -39,7 +39,7 @@ This document is split into these chapters:
 
 To understand why things are the way they are in Contao it's very helpful to understand at least some of its history.
 Contao has been on the market since 2006 and has never been rewritten from scratch but the code base has evolved
-step by step as the years passed by instead. In 2015 Contao 4 was released as a Symfony Bundle which can be added
+step by step as the years passed by instead. In 2015, Contao 4 was released as a Symfony bundle which can be added
 to your regular Symfony application just like any Symfony bundle you know.
 
 This is still the case to this day.
@@ -49,7 +49,7 @@ all of a sudden now.
 The Core team decided that the project needs the ability to transition slowly from Contao 3 to Contao 4 as adoption would
 never take place otherwise. That's why Contao 4 essentially still carries around code that's been there for years because
 of backwards compatibility.
-Most of this code resides in `core-bundle/Resources/contao` so it does not interfere with code that's been written later
+Most of this code resides in `core-bundle/src/Resources/contao` so it does not interfere with code that's been written later
 on, put into namespaces properly and being unit tested as you'd expect it from any modern CMS.
 Examples for legacy code that still works might be your typical library classes any CMS that's been on the market for
 a while would provide such as file operations (`File`, `Folder`), request handling (`Environment`) and many more. Most
@@ -88,7 +88,7 @@ Everything related to Contao development happens in one of the repositories assi
 GitHub][1]. Here's a description of the most important repositories you should be familiar with:
 
 * **contao/contao**<br>
-  This is the Contao Monorepository where all of the active development of the `core-bundle` an additional bundles takes
+  This is the Contao Monorepository where all of the active development of the `core-bundle` and additional bundles takes
   place. It's likely the most important repository you want to follow.
 
 * **contao/managed-edition**<br>
@@ -112,8 +112,8 @@ might probably stop here but to get a complete picture of the Contao ecosystem, 
   
 * **contao/contao-manager**<br>
   The majority of Contao's users want to be able to install Contao on their web server and manage it there.
-  The Contao Manager is Contao's answer to this need. It's a GUI that's compiled to a single PHAR file which is distributed
-  on contao.org and provides self update functionality. You can install it on your web server and start managing your
+  The Contao Manager is Contao's answer to this need. It's a GUI that's compiled to a single PHAR file which is [distributed
+  on contao.org][2] and provides self update functionality. You can install it on your web server and start managing your
   setup using a nice GUI.
 
 * **contao/package-metadata**<br>
@@ -130,7 +130,7 @@ might probably stop here but to get a complete picture of the Contao ecosystem, 
 ### People
 
 Sometimes it's helpful if you know the people involved in Contao development. Of course, as an Open Source project
-it is what people make it, so please, [contribute][2]!
+it is what people make it, so please, [contribute][3]!
 
 In any case, the current core team members consist of (in alphabetical order)
 
@@ -165,5 +165,6 @@ Other than that there are the following channels:
 
 
 [1]: https://github.com/contao
-[2]: https://github.com/contao/contao/blob/master/.github/CONTRIBUTING.md
+[2]: https://contao.org/en/download.html
+[3]: https://github.com/contao/.github/blob/master/.github/CONTRIBUTING.md
 [Slack]: https://contao.slack.com/join/shared_invite/enQtNjUzMjY4MDU0ODM3LWVjYWMzODVkZjM5NjdlNDRiZjk2OTI3OWVkMmQ1YjA0MTQ3YTljMjFjODkwYTllN2NkMDcxMThiNzMzZjZlOGU
