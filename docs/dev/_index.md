@@ -52,7 +52,7 @@ Most of this code resides in `core-bundle/Resources/contao` so it does not inter
 on, put into namespaces properly and being unit tested as you'd expect it from any modern CMS.
 Examples for legacy code that still works might be your typical library classes any CMS that's been on the market for
 a while would provide such as file operations (`File`, `Folder`), request handling (`Environment`) and many more. Most
-of which are not used anymore in new code as have are better alternatives at hand using Composer now.
+of which are not used anymore in new code as there are better alternatives at hand using Composer now.
 
 Contao heavily relies on superglobals in older code which basically served as some sort of Dependency Injection Container
 back in the days which is why you'll still come across loads of `$GLOBALS` usages all over the place.
