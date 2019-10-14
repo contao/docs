@@ -23,7 +23,7 @@ Speichern an einen anderen Ort, je nachdem, was du als Nächstes erledigen möch
 **Speichern:** Beim Klick auf diese Schaltfläche werden deine Eingaben gespeichert, und die Eingabemaske neu geladen. 
 Du kannst den Datensatz weiter bearbeiten.
 
-**Speichern und schliessen:** Beim Klick auf diese Schaltfläche werden deine Eingaben gespeichert und das Formular 
+**Speichern und schließen:** Beim Klick auf diese Schaltfläche werden deine Eingaben gespeichert und das Formular 
 geschlossen. Du gelangst zurück zur vorherigen Seite.
 
 **Speichern und neu:** Beim Klick auf diese Schaltfläche werden deine Eingaben gespeichert, und ein neues Element wird 
