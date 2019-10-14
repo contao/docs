@@ -4,6 +4,7 @@ description: "customizeSearch hook"
 tags: ["hook-module", "hook-search"]
 ---
 
+
 The `customizeSearch` hook is triggered when a user is using the search module
 in the front end. With this hook you can customize which pages should get searched.
 The hook passes the current page IDs as an array, the search keywords, the query 
