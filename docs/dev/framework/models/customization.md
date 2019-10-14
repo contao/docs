@@ -46,6 +46,7 @@ class ExampleModel extends Model
 }
 ```
 
+
 ## 3. Register the Model
 ```php
 // contao/config/config.php

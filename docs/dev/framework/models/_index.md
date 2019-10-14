@@ -5,6 +5,7 @@ aliases:
     - /framework/models/
 ---
 
+
 Models are objects for creating new records and reading or modifying existing records from the database - you can compare them to Doctrine's Entities.
 
 In Contao, each database table has a corresponding model class:
@@ -15,6 +16,7 @@ In Contao, each database table has a corresponding model class:
 | tl_news    | NewsModel    |
 | tl_page    | PageModel    |
 | …          | …            |
+
 
 ## Fetching a row
 
@@ -52,6 +54,7 @@ $page = PageModel::findOneByAdminEmail('admin@example.com');
 // count the records where language is "de"
 $page = PageModel::countByLanguage('de');
 ```
+
 
 ## Modifying records
 
@@ -92,6 +95,7 @@ $pages = PageModel::findBy('pid', 1, $options);
 // get subpages of page 1 with late static binding
 $pages = PageModel::findByPid(1, $options);
 ```
+
 
 ## Special cases
 

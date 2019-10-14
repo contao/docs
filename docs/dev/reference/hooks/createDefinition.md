@@ -4,6 +4,7 @@ description: "createDefinition hook"
 tags: ["hook-stylesheet"]
 ---
 
+
 The `createDefinition` hook is triggered when a format definition of a style 
 sheet is imported. It passes the key and value, the original format definition 
 and the data array as arguments and expects an array or `null` as return value.

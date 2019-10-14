@@ -4,6 +4,7 @@ description: "executeResize hook"
 tags: ["hook-image"]
 ---
 
+
 The `executeResize` hook is triggered on whenever Contao resizes an image. It
 passes the image object as an argument and expects either `null` or a the path
 to the resized image as the return value. If the return value is `null`, other 

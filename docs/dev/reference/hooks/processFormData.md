@@ -31,7 +31,7 @@ arguments and does not expect a return value.
 5. *\Contao\Form* `$form`
 
     The form instance.
- 
+
 
 ## Example
 

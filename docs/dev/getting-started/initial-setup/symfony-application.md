@@ -5,9 +5,11 @@ description: "How to integrate Contao into a Symfony application."
 weight: 2
 ---
 
+
 The Contao Open Source CMS can be integrated into a regular Symfony application.
 It needs a few installation steps in order to be properly set up. The following
 documentation leads you through them.
+
 
 ## Install and set up your Symfony application
 
@@ -33,6 +35,7 @@ DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
 
 At this point `contao-example` should contain a working Symfony application and
 you can proceed to the second step, the installation of Contao itself.
+
 
 ## Install the Contao Core Bundle
 
@@ -112,6 +115,7 @@ return [
     Contao\InstallationBundle\ContaoInstallationBundle::class => ['all' => true],
 ];
 ```
+
 
 ## Configure your Contao installation
 
@@ -274,6 +278,7 @@ $ symfony serve
 
 Point your broser to the installation tool (for example https://localhost:8000/contao/install)
 and follow the usual installation procedure.
+
 
 ## Enable Cache and Front End Preview
 

@@ -4,6 +4,7 @@ description: "getForm hook"
 tags: ["hook-controller", "hook-form"]
 ---
 
+
 The `getForm` allows to manipulate the generation of the forms. IT passes the
 form object and the current form output buffer as arguments and epxects a string
 as return value.
@@ -50,6 +51,7 @@ class GetFormListener implements ServiceAnnotationInterface
     }
 }
 ```
+
 
 ## References
 

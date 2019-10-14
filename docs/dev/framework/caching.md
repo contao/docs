@@ -3,11 +3,13 @@ title: "Caching"
 description: "HTTP caching in Contao"
 ---
 
+
 Contao heavily relies on HTTP caching and tries it's very best to comply to the HTTP standards to provide the best
 performance possible.
 
 It's thus essential that you understand the basics of HTTP caching. Before we get into details of Contao too much, let's
 talk HTTP basics first.
+
 
 ## Private and Shared Caches
 
@@ -25,6 +27,7 @@ $response->headers->set('Cache-Control', 'private'); // private
 $response->headers->set('Cache-Control', 'public'); // public
 ```
 
+
 ## Caching methods
 
 The three caching methods involve:
@@ -35,6 +38,7 @@ The three caching methods involve:
 
 All of them cover a different use case and `Cache Invalidation` only works for `Shared Caches`.
 Let's dive a bit more into them.
+
 
 ### Cache Expiration
 
@@ -63,6 +67,7 @@ $response->headers->addCacheControlDirective('max-age', 600); // can be stored f
 
 You can read more on the different headers for example on [MDN web docs][2] which is an excellent resource.
 
+
 ### Cache Validation
 
 Sometimes it's not possible to define how long a cache entry can be cached. A request then has to be made to the server
@@ -81,6 +86,7 @@ with a `304 Not Modified` HTTP response without any content, otherwise the regul
 or `ETag` header is sent.
 
 Read more on `Cache Validation` on [MDN web docs][2] and in the [Symfony documentation](https://symfony.com/doc/current/http_cache/validation.html).
+
 
 ### Cache Invalidation
 
@@ -187,6 +193,7 @@ class UserChangedSomethingListener
 
 Invalidation requests will be collected during the same request too and only be executed during the `kernel.terminate`
 event.
+
 
 #### Cache tag invalidation within the Contao back end
 

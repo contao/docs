@@ -4,6 +4,7 @@ description: "checkCredentials hook"
 tags: ["hook-module", "hook-member"]
 ---
 
+
 The `checkCredentials` hook is triggered when a login attempt fails due to a wrong 
 password. It passes the username and password as well as the user object as 
 arguments and expects a boolean as return value which indicates whether the

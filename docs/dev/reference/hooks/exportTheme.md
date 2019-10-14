@@ -4,6 +4,7 @@ description: "exportTheme hook"
 tags: ["hook-theme"]
 ---
 
+
 The `exportTheme` hook is triggered on whenever a theme gets exported via the 
 back end. The hook enables you to add additional data to the XML as well as the
 ZIP archive. It passes the XML object, the ZIP archive object and the theme's 

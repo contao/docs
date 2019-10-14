@@ -4,6 +4,7 @@ description: "activateAccount hook"
 tags: ["hook-module", "hook-member"]
 ---
 
+
 The `activateAccount` hook is triggered when a new front end account is activated. 
 It passes the `MemberModel` of the activated account and the `Module` object of
 the calling front end module as arguments and does not expect a return value.

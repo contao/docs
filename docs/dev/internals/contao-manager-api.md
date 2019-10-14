@@ -31,7 +31,7 @@ interactions where the user needs to log in to the Contao Manager prior to any A
 
 Consult the [OpenAPI Docs][API] on how to use the `/api/session` endpoint.
 
- 
+
 ### Option 2: Persistent authentication through API tokens
 
 For long term authentication or without involving the browser, the Contao Manager
@@ -81,7 +81,6 @@ The user will be presented with the following dialog with two options:
    You can then read the token from the query parameters and store it on your application.
    
 2. If the user clicks on **Deny Access**, they will be redirected to the `return_url`, but **without** a `token=` parameter. 
-
 
 
 #### Authenticating with an API token

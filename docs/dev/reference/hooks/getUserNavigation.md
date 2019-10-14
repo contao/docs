@@ -4,6 +4,7 @@ description: "getUserNavigation hook"
 tags: ["hook-backend"]
 ---
 
+
 The `getUserNavigation` hook allows to manipulate the back end user navigation.
 It passes the back end modules and a flag wether to show collapsed navigation
 items. Expects the array of modules as return value.

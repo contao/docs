@@ -84,7 +84,6 @@ with a link to your homepage, where you can provide installation instructions,
 buying options or anything you like.
 
 
-
 ## Private and commercial packages
 
 If users need to pay for your package or you created it just for a single

@@ -4,6 +4,7 @@ description: "getSearchablePages hook"
 tags: ["hook-automator"]
 ---
 
+
 The `getSearchablePages` hook is triggered when the the search index is rebuilt.
 It passes the array of pages and the ID of the root page as arguments and
 expects an array of _absolute_ URLs as return value.

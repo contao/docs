@@ -4,6 +4,7 @@ description: "addComment hook"
 tags: ["hook-comment"]
 ---
 
+
 The `addComment` hook is triggered when a comment is added. It passes the ID of 
 the record and the data array as arguments and does not expect a return value.
 

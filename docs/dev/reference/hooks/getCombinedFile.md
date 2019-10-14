@@ -3,6 +3,7 @@ title: "getCombinedFile"
 description: "getCombinedFile hook"
 ---
 
+
 The `getCombinedFile` hook is triggered when combining CSS or JavaScript files. 
 It passes the file content, a unique key for the temporary file, the mode (e.g. 
 `'.js'` or `'.css'`) and an array containing information about the file and expects 

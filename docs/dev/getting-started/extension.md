@@ -33,7 +33,6 @@ When creating an extension, the following objectives are relevant:
 * Development of the extension can be done within `vendor/`
 
 
-
 ## Initial Setup
 
 The first thing you do is usually to decide on a _name_ for the extension and its 

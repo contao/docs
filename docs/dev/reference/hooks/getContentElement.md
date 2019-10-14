@@ -4,6 +4,7 @@ description: "getContentElement hook"
 tags: ["hook-controller"]
 ---
 
+
 The `getContentElement` hook is triggered when a content element is rendered. 
 It passes the database object, the buffer string and the content element object
 as arguments and expects a buffer string as return value.

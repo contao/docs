@@ -4,6 +4,7 @@ description: "generateBreadcrumb hook"
 tags: ["hook-module", "hook-navigation"]
 ---
 
+
 The `generateBreadcrumb` hook is used to manipulate the breadcrumb navigation 
 (from breadcrumb front end module). It passes the breadcrumb items as an array
 and the front end module object as arguments and expects an array (the breadcrumb

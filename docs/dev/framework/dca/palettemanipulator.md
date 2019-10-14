@@ -5,7 +5,9 @@ aliases:
   - /framework/dca/palettemanipulator/
 ---
 
+
 The [PaletteManipulator](https://github.com/contao/contao/blob/master/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA](../dca), e.g. add fields to the back end of an existing DCA.
+
 
 ## Introduction
 Before we use the `PaletteManipulator`, lets have a look at how [palettes](../../reference/dca/palettes) are defined.
@@ -26,6 +28,7 @@ $GLOBALS['TL_DCA']['tl_user'] = [
 ```
 
 The palette is a string. The `PaletteManipulator` is a utility class to help you manipulate that string.
+
 
 ## Adding fields
 
@@ -92,6 +95,7 @@ PaletteManipulator::create()
 
 ```
 
+
 ## Removing fields
 {{< version "4.7" >}}
 
@@ -109,6 +113,7 @@ PaletteManipulator::create()
 ;
 ```
 
+
 ## Working with subpalettes
 
 The same logic can be applied to subpalettes. Let's assume `custom_field` is configured in `tl_content`:
@@ -125,6 +130,7 @@ PaletteManipulator::create()
     ->applyToSubpalette('addImage', 'tl_content')
 ;
 ```
+
 
 ## Advanced configuration
 

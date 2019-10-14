@@ -4,6 +4,7 @@ description: "activateRecipient hook"
 tags: ["hook-newsletter"]
 ---
 
+
 The `activateRecipient` hook is triggered when a new newsletter recipient is added. 
 It passes the e-mail address, the recipient IDs and the channel IDs as arguments 
 and does not expect a return value.

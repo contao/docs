@@ -5,6 +5,7 @@ aliases:
   - /guides/first-bundle/
 ---
 
+
 As Contao itself is just a Symfony bundle that's loaded to your Symfony application or Contao Managed Edition, writing
 your own bundle is very similar to writing a regular Symfony bundle. It's thus very important you read the [respective
 Symfony documentation][1] first.

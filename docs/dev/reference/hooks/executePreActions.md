@@ -4,6 +4,7 @@ description: "executePreActions hook"
 tags: ["hook-dca"]
 ---
 
+
 The `executePreActions` hook is triggered on Ajax requests that do not require 
 a DCA object. It passes the name of the action as argument and does not expect 
 a return value.

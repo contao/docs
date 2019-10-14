@@ -4,6 +4,7 @@ description: "addCustomRegexp hook"
 tags: ["hook-custom", "hook-widget"]
 ---
 
+
 The `addCustomRegexp` hook is triggered when an unknown regular expression is 
 found. It passes the name of the regexp, the current value and the widget 
 object as arguments and expects a boolean return value. If you return `true`,

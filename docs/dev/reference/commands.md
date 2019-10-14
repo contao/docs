@@ -3,6 +3,7 @@ title: "Commands"
 description: Contao's console commands.
 ---
 
+
 Contao uses the Console component of Symfony and provides a few commands.
 To execute these commands locate the `console` executable in your project
 and append the subsequently documented commands.

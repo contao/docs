@@ -7,11 +7,13 @@ aliases:
     - /getting-started/initial-setup/managed-edition/manager-plugin/
 ---
 
+
 The `Manager Plugin` is one single PHP class that gives third party bundles the opportunity to 
 configure a `Managed Edition`.
 Simply put, every time a user of the `Managed Edition` runs a `composer update` or a `composer install`
 the `Manager Plugin` instances of all packages are called and the application is then configured
 accordingly.
+
 
 ## The package-specific Manager Plugin
 
@@ -90,6 +92,7 @@ the `autoload` section is correct so Composer can find the file and then provide
 plugin. However, it's best practice to name the class `Plugin` and place it in the `ContaoManager`
 namespace of your package.
 
+
 ## The application-specific Manager Plugin
 
 Even if you use the `Managed Edition` you might want to e.g. load additional bundles or adjust the config of your
@@ -100,6 +103,7 @@ The `Manager Plugin` automatically loads the following classes.
 
 * `\App\ContaoManager\Plugin` (recommended)
 * `\ContaoManagerPlugin` (discouraged)
+
 
 ## The features
 
@@ -114,6 +118,7 @@ Currently, you can do the following with your `Manager Plugin`:
   are loaded before.
 * Via the `Contao\ManagerPlugin\Routing\RoutingPluginInterface` you can add routes to the application.
   so you have the ability to override certain settings.
+
 
 ## The `BundlePluginInterface`
 
@@ -164,6 +169,7 @@ class Plugin implements BundlePluginInterface
 }
 ```
 
+
 ## The `ConfigPluginInterface`
 
 The `ConfigPluginInterface` allows you to configure your own or other bundles. E.g. you could write a Contao specific
@@ -192,6 +198,7 @@ class Plugin implements ConfigPluginInterface
     }
 }
 ```
+
 
 ## The `ExtensionPluginInterface`
 
@@ -223,6 +230,7 @@ the issues mentioned in point 4.
 
 
 ### Examples
+
 
 #### Adding a custom Symfony Firewall
 
@@ -310,6 +318,7 @@ from "Bundle X" and another one from "Bundle Y". The container then merges all t
 a certain configuration is coming from.
 {{% /notice %}}
 
+
 #### Allow a clickjacking path for NelmioSecurityBundle
 
 Another example where order matters might be the `nelmio_security.clickjacking.paths` configuration. The reason there
@@ -358,6 +367,7 @@ class Plugin implements ExtensionPluginInterface
 }
 ```
 
+
 ## The `DependentPluginInterface`
 
 If your Composer package depends on one or more other Composer packages to be loaded first, so it can
@@ -377,6 +387,7 @@ class Plugin implements DependentPluginInterface
     }
 }
 ```
+
 
 ## The `RoutingPluginInterface`
 

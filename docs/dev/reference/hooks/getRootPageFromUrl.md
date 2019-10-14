@@ -4,6 +4,7 @@ description: "getRootPageFromUrl hook"
 tags: ["hook-routing"]
 ---
 
+
 The `getRootPageFromUrl` hook is triggered when searching the current root page.
 It does not pass any parameters and expects a `\Contao\PageModel` instance as return
 value or null.

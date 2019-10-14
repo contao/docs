@@ -4,6 +4,7 @@ description: "Callbacks within a Data Container Array."
 weight: 6
 ---
 
+
 Callbacks are entry-points for custom code in the DCA. Using callbacks you
 can modify the static Data Container Array during runtime.
 
@@ -18,6 +19,7 @@ You can also use [anonymous functions](http://php.net/functions.anonymous) for D
 {{% /notice %}}
 
 ***
+
 
 ## Global callbacks
 
@@ -170,6 +172,7 @@ window.
 
 ***
 
+
 ## Listing callbacks
 
 {{% notice note %}}
@@ -254,6 +257,8 @@ Allows for individual labels in the listing and is e.g. used in the user module
 to add status icons.
 
 {{% expand "Parameters" %}}
+
+
 #### Tree view
 
 * `array` Record data
@@ -264,6 +269,7 @@ to add status icons.
 * `bool` Whether the record is protected
 
 **return:** `string` The record label
+
 
 #### List view
 
@@ -276,6 +282,7 @@ to add status icons.
 {{% /expand %}}
 
 ***
+
 
 ## Operations callbacks
 
@@ -328,6 +335,7 @@ an additional command check via load_callback).
 {{% /expand %}}
 
 ***
+
 
 ## Field callbacks
 

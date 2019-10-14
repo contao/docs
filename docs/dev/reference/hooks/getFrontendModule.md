@@ -4,6 +4,7 @@ description: "getFrontendModule hook"
 tags: ["hook-controller", "hook-module"]
 ---
 
+
 The `getFrontendModule` hook allows to manipulate the generation of the front end
 modules.
 
