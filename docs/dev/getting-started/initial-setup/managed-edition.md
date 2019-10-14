@@ -5,10 +5,12 @@ description: "A pre-configured Symfony application that allows automatic configu
 weight: 1
 ---
 
+
 Contao is available as a so-called `Managed Edition`. Compared to a regular Symfony 
 application, a Managed Edition allows automatic configuration by third-party bundles.
 If you are familiar with Symfony Flex you might find some similarities but the 
 Managed Edition was actually a thing before Symfony Flex even existed!
+
 
 ## The Manager Plugin and the Manager Bundle
 
@@ -74,6 +76,7 @@ Here are examples of what the `ScriptHandler` does to give you an idea about its
 * Creating the whole application structure. Folders such as the `app` and the `web` folders with the entry points.
 * It purges and rebuilds the cache
 * It creates symlinks
+
 
 ## Do I need the Managed Edition?
 
