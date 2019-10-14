@@ -280,11 +280,11 @@ Point your broser to the installation tool (for example https://localhost:8000/c
 and follow the usual installation procedure.
 
 
-## Enable Cache and Frontend Preview
+## Enable Cache and Front End Preview
 
 At this point you have set up a working Symfony application and added the Contao
 Core Bundle. A few last steps are required to properly set up the caching and
-the frontend preview.
+the front end preview.
 
 First, we need to configure the `FOSHttpCacheBundle`. To do so, create (or edit
 if the file already exists) the file `config/fos_http_cache.yaml` and add the following entries:
@@ -357,7 +357,7 @@ if ($kernel instanceof TerminableInterface) {
 }
 ```
 
-The frontend preview is an entry script on its own and needs to be placed in
+The front end preview is an entry script on its own and needs to be placed in
 `public/preview.php` containing the following lines:
 
 ```php
@@ -402,7 +402,7 @@ if ($kernel instanceof TerminableInterface) {
 }
 ```
 
-Moreover you need to enable the frontend preview by adding the following line
+Moreover you need to enable the front end preview by adding the following line
 to the `config/packages/contao_core.yaml` (be sure not just overwrite all the lines
 but add the needed ones).
 

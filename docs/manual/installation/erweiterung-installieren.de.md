@@ -9,11 +9,24 @@ weight: 6
 
 Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du drei Möglichkeiten.
 
-- Du kannst auf der Website [extensions.contao.org](https://extensions.contao.org/) ein Erweiterung suchen.  
+
+### Website
+
+Du kannst auf der Website [extensions.contao.org](https://extensions.contao.org/) ein Erweiterung suchen.  
+
 ![Erweiterungssuche auf extensions.contao.org](/installation/images/de/erweiterungssuche-extensions-contao-org.png)
-- Du kannst im Contao Manager deiner Installation eine Erweiterung suchen.  
+
+
+### Contao Manager
+
+Du kannst im Contao Manager deiner Installation eine Erweiterung suchen.  
+
 ![Erweiterungssuche im Contao Manager](/installation/images/de/erweiterungssuche-im-contao-manager.png)
-- Du kannst über die Kommandozeile eine Erweiterung suchen.  
+
+
+### Kommandozeile
+
+Du kannst über die Kommandozeile eine Erweiterung suchen.  
 
 **Suche z. B. nach Erweiterungen der Firma »codefog«:**
 
@@ -90,11 +103,13 @@ Mit dem Befehl `require` fügst du der Datei `composer.json` das neue Paket hinz
 von der dieses Paket anhängig sind, herunter.
 
 **Ein einzelne Erweiterung installieren:**
+
 ```bash
 php composer.phar require terminal42/contao-easy_themes
 ```
 
 **Mehrere Erweiterungen installieren:**
+
 ```bash
 php composer.phar require terminal42/notification_center terminal42/contao-leads
 ```

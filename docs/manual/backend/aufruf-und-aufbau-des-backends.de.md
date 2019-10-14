@@ -31,7 +31,7 @@ gefunden hat.
 Das Backend ist in drei Bereiche unterteilt. Oben befindet sich der Infobereich, auf der linken Seite die Navigation und
 auf der rechten der Arbeitsbereich.
 
-![Aufteilung des Contao-Backends](/administrationsbereich//images/contao-backend-aufteilung.png)
+![Aufteilung des Contao-Backends](/backend/images/de/contao-backend-aufteilung.png)
 
 
 ### Der Infobereich

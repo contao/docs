@@ -38,27 +38,28 @@ This document is split into these chapters:
 ### History
 
 To understand why things are the way they are in Contao it's very helpful to understand at least some of its history.
-Contao's been on the market since 2006 and there never was any complete rewrite but the code base has evolved
-step by step as the years passed by instead. In 2015 Contao 4 was released as a Symfony Bundle which can be installed
-into your regular Symfony application just like any Symfony bundle you know.
+Contao has been on the market since 2006 and has never been rewritten from scratch but the code base has evolved
+step by step as the years passed by instead. In 2015 Contao 4 was released as a Symfony Bundle which can be added
+to your regular Symfony application just like any Symfony bundle you know.
+
 This is still the case to this day.
 
 For Contao and its community, the release of Contao 4 meant a huge technical leap, being confronted with Composer and Symfony
 all of a sudden now.
-The Core team decided that the project needs the ability to slowly transition from Contao 3 to Contao 4 as adoption would
+The Core team decided that the project needs the ability to transition slowly from Contao 3 to Contao 4 as adoption would
 never take place otherwise. That's why Contao 4 essentially still carries around code that's been there for years because
 of backwards compatibility.
 Most of this code resides in `core-bundle/Resources/contao` so it does not interfere with code that's been written later
 on, put into namespaces properly and being unit tested as you'd expect it from any modern CMS.
 Examples for legacy code that still works might be your typical library classes any CMS that's been on the market for
 a while would provide such as file operations (`File`, `Folder`), request handling (`Environment`) and many more. Most
-of which are not used anymore in new code as we have are better alternatives at hand using Composer.
+of which are not used anymore in new code as there are better alternatives at hand using Composer now.
 
 Contao heavily relies on superglobals in older code which basically served as some sort of Dependency Injection Container
 back in the days which is why you'll still come across loads of `$GLOBALS` usages all over the place.
 However, there's a steady transition going on and with every new release there are new ways introduced as to how you can
 e.g. register a new content element. The old code is just still floating around to make sure all the already existing
-extensions/bundles still work. It will eventually be dropped once Contao 5 becomes a thing.
+extensions still work. It will eventually be dropped once Contao 5 becomes a thing.
 
 
 ### Input encoding
@@ -72,7 +73,7 @@ is input encoding.
 Unfortunately, back when Contao was created, there was no such thing as `Twig`. `Smarty` was probably already on the market
 but automated output encoding was likely less of an issue back then.
 So when Contao decided to use plain old PHP as templates, one would have to call some special encode method on every
-variable that was output. Instead of doing that it was decided to encode the input and store the data encoded in the
+variable that was echo'ed. Instead of doing that, it was decided to encode the input and store the data encoded in the
 database already. Of course, you do have the option to disable this when you develop your own extensions to Contao but
 it's just something to keep in mind. We all know it's wrong but migrating away from already encoded data is very hard
 and likely will only become a thing when we switch to Contao 5.

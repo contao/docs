@@ -9,7 +9,7 @@ The project installs the Hugo Learn theme as a git submodule. Thus when cloning
 the repository, you need to use the `--recurse-submodules` parameter:
 
 ```bash
-git clone --recurse-submodules git@github.com:netzarbeiter/contao-docs.git
+git clone --recurse-submodules git@github.com:contao/docs.git
 ```
 
 
@@ -47,7 +47,7 @@ make live-manual
 ```
 
 Spins up the development server which automatically tracks changes in the `docs` 
-directory and rebuilds the frontend. You can access the frontend on [http://localhost:1313](http://localhost:1313).
+directory and rebuilds the front end. You can access the front end on [http://localhost:1313](http://localhost:1313).
 
 ```
 make clean
