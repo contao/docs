@@ -4,6 +4,7 @@ description: "getLanguages hook"
 tags: ["hook-system"]
 ---
 
+
 The `getLanguages` hook allows to modify the system's list of languages.
 
 
