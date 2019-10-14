@@ -2,6 +2,7 @@
 title: "Contao Developer Documentation"
 ---
 
+
 # Contao Developer Documentation
 
 Welcome to the Contao manual for developers and the Contao ecosystem!
@@ -59,6 +60,7 @@ However, there's a steady transition going on and with every new release there a
 e.g. register a new content element. The old code is just still floating around to make sure all the already existing
 extensions/bundles still work. It will eventually be dropped once Contao 5 becomes a thing.
 
+
 ### Input encoding
 
 One special thing to be aware of when working with Contao is that unfortunately we carry a very old burden with us which
@@ -77,6 +79,7 @@ and likely will only become a thing when we switch to Contao 5.
 
 So be aware of this. Don't just use e.g. Symfony's `Request` class to fetch user input, store it as is in the DB and
 let Contao display it in the back end.
+
 
 ### Ecosystem
 
@@ -121,8 +124,8 @@ might probably stop here but to get a complete picture of the Contao ecosystem, 
 * **contao/docs**<br>
   This is the repository where the documentation you're reading is being managed. The more contributors the better the
   documentation. Thus, we're counting on your contribution!
-  
-  
+
+
 ### People
 
 Sometimes it's helpful if you know the people involved in Contao development. Of course, as an Open Source project
@@ -141,6 +144,7 @@ In addition, there's a core team for the documentation:
 
 * [Ammann, Bjarke (@netzarbeiter)](https://github.com/netzarbeiter) 
 * [Gschwantner, Fritz Michael (@fritzmg)](https://github.com/fritzmg) 
+
 
 ### Where to get help
 
