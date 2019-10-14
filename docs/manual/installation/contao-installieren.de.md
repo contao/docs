@@ -92,7 +92,7 @@ php composer.phar create-project contao/managed-edition example 4.8
 
 ### Hosting-Konfiguration
 
-In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterorder `/web` der Installation. Setze das 
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/web` der Installation. Setze das 
 Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel des Hosting-Providers auf diesen 
 Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
 
