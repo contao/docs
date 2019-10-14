@@ -1,11 +1,11 @@
 ---
-title: "Backend Routes"
+title: "Back End Routes"
 description: "Custom routes within the Contao back end."
 ---
 
-## Adding custom backend routes
+## Adding custom back end routes
 
-You can use the Contao backend to display content generated in your own custom Controllers.
+You can use the Contao back end to display content generated in your own custom Controllers.
 This way you can develop custom extensions without the need to use DCA configuration.
 The following example can be changed according to your own setup. For example you're
 not obliged to use the annotation configuration for your routes you could use
@@ -50,11 +50,11 @@ class BackendController extends AbstractController
 We need three different route parameters.
 
 * `_scope`: This forces the scope of this route to be `backend`. That way you're
-telling Contao, that this route belongs to the backend and should be handled accordingly.
+telling Contao, that this route belongs to the back end and should be handled accordingly.
 * `_token_check`: If you're using Contao forms with the RequestToken integration
 you need to set this to true, in order to get it to work.
 * `_backend_module`: This attribute is not mandatory but will be used to match
-the current route in order to highlight the currently active node in the backend menu.
+the current route in order to highlight the currently active node in the back end menu.
 More on this later.
 
 Be sure to have imported your bundles Controllers in your `routing.yml` *before* 
@@ -96,14 +96,14 @@ that there are three different blocks you can currently use:
 on the top of the page
 * `main`: This is the content area for output.
 
-This exampe renders like this:
+This example renders like this:
 
 ![](../images/custom-backend-routes-1.png?classes=shadow)
 
-### Extend the backend menu
+### Extend the back end menu
 
-Most of the time you probably want to add a menu entry for your backend module.
-Since the backend menu can be extended with an `EventListener` we can easily
+Most of the time you probably want to add a menu entry for your back end module.
+Since the back end menu can be extended with an `EventListener` we can easily
 create one that listens for the menu event to be dispatched.
 
 
@@ -171,8 +171,8 @@ services:
 ```
 
 We purposely assign it a low priority, so that we can be sure to be loaded after
-the Contao Core EventListeners. Otherwise the `content` node we assign ourself to
+the Contao Core EventListeners. Otherwise, the `content` node we assign ourself to
 will not be available yet.
 
-And that's it. You controller should now be callable from the main backend menu in
+And that's it. You controller should now be callable from the main back end menu in
 the sidebar.
