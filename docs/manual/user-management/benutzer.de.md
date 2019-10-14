@@ -54,9 +54,9 @@ das Dateisystem fest. Auf Ordner außerhalb des Filemount kann der Benutzer nich
 
 ![Filemounts des Benutzers](/user-management/images/de/filemounts-des-benutzers.png)
 
-Der Benutzer sieht also nur die Ordner `content-images`, `documents` sowie `documents` und alle eventuell darin 
-enthaltenen Unterordner. Alle übrigen Verzeichnisse, die sich auf derselben oder einer übergeordneten Ebene befinden, 
-werden nicht angezeigt
+Der Benutzer sieht also nur die Ordner `files/public/media/content-images`, `files/public/media/documents` sowie 
+`files/public/media/slider` und alle eventuell darin enthaltenen Unterordner. Alle übrigen Verzeichnisse, die sich 
+auf derselben oder einer übergeordneten Ebene befinden, werden nicht angezeigt
 
 ![Die Dateiverwaltung aus Sicht des Benutzers](/user-management/images/de/die-dateiverwaltung-aus-sicht-des-benutzers.png)
 
