@@ -9,6 +9,7 @@ It always contains at least one `Model`.
 
 If no rows were found, the return value is `null` instead of an empty `Collection`.
 
+
 ## Fetching rows
 If you want to fetch more than one row from the database, you can use the static method `findBy()` which returns a `Collection`.
 
@@ -32,7 +33,9 @@ For more complex conditions, optionally pass arrays as parameters:
 $pages = PageModel::findBy(['language = ?', 'pid = ?'], ['de', 1]);
 ```
 
+
 ## Collection specific methods
+
 
 ### findAll()
 
@@ -43,6 +46,7 @@ $pages = PageModel::findBy(['language = ?', 'pid = ?'], ['de', 1]);
 $pages = PageModel::findAll();
 ```
 
+
 ### findMultipleByIds()
 You can create a collection by passing the IDs to this method:
 
@@ -50,6 +54,7 @@ You can create a collection by passing the IDs to this method:
 // fetch the rows with id 1, 2 and 3 from tl_page
 $pages = PageModel::findMultipleByIds([1, 2, 3]);
 ```
+
 
 ## Data access
 You can loop through a collection object using `foreach`.
