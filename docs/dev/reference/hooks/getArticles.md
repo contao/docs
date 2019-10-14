@@ -4,6 +4,7 @@ description: "getArticles hook"
 tags: ["hook-controller", "hook-article"]
 ---
 
+
 The `getArticles` hook allows you to override the configuration of an article 
 prior to rendering. It passes the page ID and the requested column (e.g. `'main'`)
 as arguments. It expects a `string` as return value or `null`. If a string is
