@@ -52,8 +52,7 @@ oder den Alias der Zielseite.
 ## Mitgliedereigenschaften
 
 Mit den folgenden Insert-Tags kannst du bestimmte Eigenschaften eines angemeldeten Frontend-Benutzers auslesen und ihn 
-so z. B. mit seinem Namen ansprechen. Prinzipiell kannst du alle Feldnamen der Tabelle `tl_member` als Argument u
-̈bergeben.
+so z. B. mit seinem Namen ansprechen. Prinzipiell kannst du alle Feldnamen der Tabelle `tl_member` als Argument übergeben.
 
 | Insert-Tag                | Beschreibung                                                                                                                             |
 |:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
