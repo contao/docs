@@ -16,6 +16,7 @@ In Contao, each database table has a corresponding model class:
 | tl_page    | PageModel    |
 | …          | …            |
 
+
 ## Fetching a row
 
 Each class extending `Model` has some *static* methods you can use:
@@ -52,6 +53,7 @@ $page = PageModel::findOneByAdminEmail('admin@example.com');
 // count the records where language is "de"
 $page = PageModel::countByLanguage('de');
 ```
+
 
 ## Modifying records
 
@@ -92,6 +94,7 @@ $pages = PageModel::findBy('pid', 1, $options);
 // get subpages of page 1 with late static binding
 $pages = PageModel::findByPid(1, $options);
 ```
+
 
 ## Special cases
 
