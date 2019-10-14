@@ -4,6 +4,7 @@ description: "executePostActions hook"
 tags: ["hook-dca"]
 ---
 
+
 The `executePostActions` hook is triggered on Ajax requests that require a DCA 
 object. It passes the name of the action and the data container object as arguments 
 and does not expect a return value.
