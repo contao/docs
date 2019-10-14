@@ -1,19 +1,19 @@
 ---
 title: "Systemwartung"
-description: "Die meisten Wartungsaufgaben in Contao sind automatisiert, so dass du dich auf deine eigentliche Arbeit 
+description: "Die meisten Wartungsaufgaben in Contao sind automatisiert, sodass du dich auf deine eigentliche Arbeit 
 konzentrieren kannst."
 weight: 2
 ---
 
-Die meisten Wartungsaufgaben in Contao sind automatisiert, so dass du dich auf deine eigentliche Arbeit konzentrieren 
+Die meisten Wartungsaufgaben in Contao sind automatisiert, sodass du dich auf deine eigentliche Arbeit konzentrieren 
 kannst. Manchmal kann es jedoch notwendig sein, die sonst automatisch ausgeführten Aufgaben der Systemwartung manuell 
 zu starten.
 
 ## Daten bereinigen
 
-Neben den Benutzergenerierten Inhalten speichert Contao verschiedene Systemdaten, die für die Suche oder das 
+Neben den benutzergenerierten Inhalten speichert Contao verschiedene Systemdaten, die für die Suche oder das 
 Wiederherstellen gelöschter Datensätze oder früherer Versionen verwendet werden. Du kannst diese Daten manuell 
-bereinigen, um z.B. alte Vorschaubilder zu entfernen oder die XML-Sitemaps nach einer Änderung an der Seitenstruktur 
+bereinigen, um z. B. alte Vorschaubilder zu entfernen oder die XML-Sitemaps nach einer Änderung an der Seitenstruktur 
 zu aktualisieren.
 
 ![Daten manuell bereinigen](/system/images/de/daten-manuell-bereinigen.png)
