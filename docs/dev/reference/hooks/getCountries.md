@@ -4,6 +4,7 @@ description: "getCountries hook"
 tags: ["hook-config", "hook-system"]
 ---
 
+
 The `getCountries` hook allows to modify the system's list of countries.
 
 
@@ -44,6 +45,7 @@ class GetCountriesListener implements ServiceAnnotationInterface
     }
 }
 ```
+
 
 ## References
 
