@@ -16,8 +16,8 @@ vormerken.
 
 ![Erweiterungen im Contao Manager zur Deinstallation vormerken](/installation/images/de/erweiterungen-im-contao-manager-zur-deinstallation-vormerken.png)
 
-Klicke auf »Änderungen anwenden« un die Deinstallation zu starten. Die Deinstallation kann nun mehrere Minuten in 
-Anspruch nehmen. Details zum Installationsprozess können durch Klick auf folgendes Symbol 
+Klicke auf »Änderungen anwenden« um die Deinstallation zu starten. Die Deinstallation kann nun mehrere Minuten in 
+Anspruch nehmen. Details zum Deinstallationsprozess können durch Klick auf folgendes Symbol 
 ![Konsolenausgabe anzeigen/verstecken](/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
 
 ![Erweiterungen im Contao Manager deinstallieren](/installation/images/de/erweiterungen-im-contao-manager-deinstallieren.png)
@@ -34,7 +34,7 @@ Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angeme
 ssh benutzername@example.com
 ```
 
-Wechsle dazu auf der Konsole in das Verzeichnis deiner Contao-Installation.
+Wechsle dann auf der Konsole in das Verzeichnis deiner Contao-Installation.
 
 ```bash
 cd www/example/
@@ -42,12 +42,12 @@ cd www/example/
 
 Der Befehl `remove` entfernt die Erweiterung aus der `composer.json` und löscht den Code aus dem Projekt.
 
-Um die eine Erweiterung zu entfernen und die `composer.lock` zu aktualisieren, wird der Befehl `remove` ausgeführt, 
-dass wird bei einigen Hostern dazu führen, dass der Prozess wegen der zu hohen Systemanforderung nicht beendet werden 
+Um eine Erweiterung zu entfernen und die `composer.lock` zu aktualisieren, wird der Befehl `remove` ausgeführt, 
+das wird bei einigen Hostern dazu führen, dass der Prozess wegen der zu hohen Systemanforderung nicht beendet werden 
 kann und die Aktualisierung dadurch fehlschlägt. In diesem Fall solltest du den 
 [Contao Manager](#aktualisierung-mit-dem-contao-manager) nutzen.
 
-**Ein einzelne Erweiterung deinstallieren:**
+**Eine einzelne Erweiterung deinstallieren:**
 
 ```bash
 php composer.phar remove terminal42/contao-easy_themes
