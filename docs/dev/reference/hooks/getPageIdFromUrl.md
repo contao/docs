@@ -4,6 +4,7 @@ description: "getPageIdFormUrl hook"
 tags: ["hook-routing"]
 ---
 
+
 The `getPageIdFromUrl` hook is triggered when the URL fragments are evaluated.
 It passes the array of URL fragments as argument and expects an array of URL
 fragments as return value.
