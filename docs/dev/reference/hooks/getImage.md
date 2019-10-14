@@ -4,6 +4,7 @@ description: "getImage hook"
 tags: ["hook-image"]
 ---
 
+
 The `getImage` hook is triggered when a thumbnail is generated and allows you to
 add a custom routine. It passes the path, the width and height, the mode, the
 cache name and the file object as arguments and expects a path as return value.
