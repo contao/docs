@@ -69,7 +69,7 @@ Upload-Dateitypen« festgelegt hast.
 ## Dateien per FTP übertragen {#dateien-per-ftp-uebertragen}
 
 Contao kann sowohl Dateien verarbeiten, die mit dem Dateimanager auf den Server übertragen wurden, als auch Dateien 
-bzw. Ordner, die du mit Ihrem FTP-Programm hochgeladen hast. Damit die Ressourcen im datenbankgestützten Dateisystem 
+bzw. Ordner, die du mit einem FTP-Programm hochgeladen hast. Damit die Ressourcen im datenbankgestützten Dateisystem 
 von Contao hinterlegt werden, musst du auf den Link 
 **![Dateisystem und Datenbank synchronisieren](/icons/sync.svg?classes=icon) Synchronisieren** klicken.
 
