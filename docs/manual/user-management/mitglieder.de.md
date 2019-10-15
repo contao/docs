@@ -113,7 +113,7 @@ anmelden kann. Dazu sollte es mindestens einer Mitgliedergruppe angehören.
 
 ### Home-Verzeichnis
 
-Hier kannst du dem Mitglied ein eigenes Home-Verzeichnis zuweisen und dort z. B. mit dem Dateimanager bestimmte Dateien 
+Hier kannst du dem Mitglied ein eigenes Home-Verzeichnis zuweisen und dort z. B. mit der Dateiverwaltung bestimmte Dateien 
 bereitstellen. Sowohl das Modul »Bildergalerie« als auch das Modul »Downloads« bieten die Möglichkeit, das 
 Benutzerverzeichnis eines Mitglieds als Datenquelle zu verwenden.
 

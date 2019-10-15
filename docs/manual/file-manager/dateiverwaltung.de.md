@@ -1,11 +1,11 @@
 ---
 title: "Dateiverwaltung"
-description: "Der Dateimanager bildet die Verzeichnisstruktur in einem hierarchischen Baum ab."
+description: "Die Dateiverwaltung bildet die Verzeichnisstruktur in einem hierarchischen Baum ab."
 url: "dateimanager/dateiverwaltung"
 weight: 1
 ---
 
-Der Dateimanager bildet die Verzeichnisstruktur in einem hierarchischen Baum ab. Jeder Unterordner ist ein eigener 
+Die Dateiverwaltung bildet die Verzeichnisstruktur in einem hierarchischen Baum ab. Jeder Unterordner ist ein eigener 
 Knoten, den du über das ![Plussymbol](/icons/folPlus.svg?classes=icon) Plus- bzw. 
 ![Minussymbol](/icons/folMinus.svg?classes=icon) Minussymbol aus- und einklappen kannst. Innerhalb jedes 
 Unterordners werden die darin enthaltenen Dateien aufgelistet. Handelt es sich dabei um Bilder, wird automatisch eine 
@@ -18,7 +18,7 @@ damit die Seite schneller lädt.
 Die Navigation erfolgt wie überall in Contao mithilfe von Navigationssymbolen. Die Optionen sind dabei für Ordner und 
 Dateien unterschiedlich.
 
-![Der Dateimanager](/file-manager/images/de/der-dateimanager.png)
+![Die Dateiverwaltung](/file-manager/images/de/der-dateimanager.png)
 
 **![Datei oder Verzeichnis bearbeiten](/icons/edit.svg?classes=icon) Bearbeiten:** Öffnet eine Eingabemaske zum 
 Umbenennen einer Datei bzw. eines Ordners. Außerdem können Metadaten von Dateien in der passenden Sprache eingepflegt 
@@ -47,7 +47,7 @@ Backend-Einstellungen unter »Editierbare Dateien« festlegen.
 
 ## Dateien übertragen {#dateien-uebertragen}
 
-Rufe den Dateimanager auf, und klicke auf den Link 
+Rufe die Dateiverwaltung auf, und klicke auf den Link 
 **![Dateien auf den Server hochladen](/icons/new.svg?classes=icon) Datei-Upload**, um Dateien auf den Server zu 
 übertragen. Über das Navigationssymbol **![In den Ordner einfügen](/icons/pasteinto.svg?classes=icon) Einfügen 
 in** kannst du das Zielverzeichnis auswählen. Alternativ kannst du direkt beim gewünschten Ordner auf das 
@@ -57,7 +57,7 @@ In den Benutzereinstellungen kannst du darüber hinaus [DropZone](https://www.d
 
 ![Dateien übertragen](/file-manager/images/de/dateien-uebertragen.png)
 
-In beiden Fällen prüft der Dateimanager beim Upload die Größe der zu übertragenden Datei, und – falls es sich dabei um 
+In beiden Fällen prüft die Dateiverwaltung beim Upload die Größe der zu übertragenden Datei, und – falls es sich dabei um 
 ein Bild handelt – auch dessen Abmessungen. Standardmäßig werden Dateien bis zu 2 MB und Bilder bis zu 3000x3000 Pixel 
 akzeptiert. Ist eine Datei zu groß bzw. ein Bild zu breit oder zu hoch, verweigert Contao den Upload bzw. verkleinert 
 das Bild automatisch auf die maximal zulässigen Abmessungen.
@@ -68,7 +68,7 @@ Upload-Dateitypen« festgelegt hast.
 
 ## Dateien per FTP übertragen {#dateien-per-ftp-uebertragen}
 
-Contao kann sowohl Dateien verarbeiten, die mit dem Dateimanager auf den Server übertragen wurden, als auch Dateien 
+Contao kann sowohl Dateien verarbeiten, die mit der Dateiverwaltung auf den Server übertragen wurden, als auch Dateien 
 bzw. Ordner, die du mit einem FTP-Programm hochgeladen hast. Damit die Ressourcen im datenbankgestützten Dateisystem 
 von Contao hinterlegt werden, musst du auf den Link 
 **![Dateisystem und Datenbank synchronisieren](/icons/sync.svg?classes=icon) Synchronisieren** klicken.
@@ -90,5 +90,5 @@ optimal:
 
 `Hendl-und-Mass-im-Schuetzenfestzelt.jpg`
 
-Beim Upload über den Dateimanager überprüft Contao die Dateinamen und passt sie gegebenenfalls automatisch an, sodass 
+Beim Upload über die Dateiverwaltung überprüft Contao die Dateinamen und passt sie gegebenenfalls automatisch an, sodass 
 Probleme mit falsch kodierten Sonderzeichen in der Bezeichnung von vornherein vermieden werden.
