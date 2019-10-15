@@ -8,7 +8,7 @@ url: "erweiterung/metamodels"
 
 _von [MetaModels Team](https://now.metamodel.me/de/ueber-uns/team)_
 
-MetaModels (MM) ist eine Erweiterung, mit der es es möglich ist, eine Vielzahl von strukturierten
+MetaModels (MM) ist eine Erweiterung, mit der es möglich ist, eine Vielzahl von strukturierten
 Daten einzugeben und diese auf der Webseite nach verschiedenen Kriterien wie Listen- und Detailansicht, Filterungen,
 Sortierungen, Paginierungen, Mehrsprachig u.v.a.m. wieder auszugeben. 
 
