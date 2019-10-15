@@ -19,7 +19,7 @@ Contao unterstützt folgende Metadaten:
 ![Pflegen der Metadaten](/file-manager/images/de/pflegen-der-metadaten.png)
 
 **HTML-Ausgabe**  
-Das Inhaltselemnt vom Elementtyp »Bild« generiert folgenden HTML-Code:
+Das Inhaltselement vom Elementtyp »Bild« generiert folgenden HTML-Code:
 
 ```html
 <div class="ce_image first block">
