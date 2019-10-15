@@ -61,8 +61,7 @@ Cleans the build directory.
 
 ## Note
 
-Your are not dependent on the [Makefile](Makefile).\
-For example: Windows user can also execute the hugo CLI commands manually like:
+Your are not dependent on the [Makefile](Makefile). If `make` is not available in your operating system, you can still invoke the hugo commands. For example: Windows users can execute the hugo CLI commands manually like:
 
 ```
 cd page
