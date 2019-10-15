@@ -2,18 +2,16 @@
 
 The documentation for the Contao project will be maintained in this repository.
 
-The details below are only necessary if you want to install the Docs locally.\
+The details below are only necessary if you want to install the docs locally.\
 If you just want to contribute content, read the [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Cloning
 
-The project installs the Hugo Learn theme as a git submodule.\
-Thus when cloning the repository, you need to use the `--recurse-submodules` parameter:
+The project installs the Hugo Learn theme as a git submodule. Thus when cloning the repository, you need to use the `--recurse-submodules` parameter:
 
 ```bash
 git clone --recurse-submodules git@github.com:contao/docs.git
 ```
-
 or:
 
 ```bash
@@ -63,8 +61,8 @@ Cleans the build directory.
 
 ## Note
 
-Your are not dependent on the [MAKEFILE](Makefile).\
-For Example: Windows User can also execute the hugo CLI commands manually like:
+Your are not dependent on the [Makefile](Makefile).\
+For example: Windows user can also execute the hugo CLI commands manually like:
 
 ```
 cd page
