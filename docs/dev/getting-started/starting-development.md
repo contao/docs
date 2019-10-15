@@ -80,12 +80,12 @@ files in the form of either PHP arrays or in an XLIFF format.
 
 | File/Directory             | Explanation                                                       |
 | -------------------------- | ----------------------------------------------------------------- |
-| `contao/dca`               | [Data Container Array][2] customizations and definitions.         |
 | `contao/config/config.php` | Registering modules, content elements, models, hooks, crons, etc. |
-| `contao/languages`         | Contao translations - contains sub directories for each language. |
-| `contao/languages/de`      | German translations.                                              |
-| `contao/languages/en`      | English translations (also serves as the fallback).               |
-| `contao/languages/…`       | etc.                                                              |
+| `contao/dca/`              | [Data Container Array][2] customizations and definitions.         |
+| `contao/languages/`        | Contao translations - contains sub directories for each language. |
+| `contao/languages/de/`     | German translations.                                              |
+| `contao/languages/en/`     | English translations (also serves as the fallback).               |
+| `contao/languages/…/`      | etc.                                                              |
 
 Have a look at the [DCA documentation][2] on how to handle DCA files and the [translation documentation][3]
 on how to handle translation files. The content of the `config.php` depends on the
@@ -177,5 +177,5 @@ Next: [create your first DCA adjustment][12].
 [8]: https://symfony.com/doc/current/service_container/autowiring.html
 [9]: https://symfony.com/doc/current/service_container.html#the-autoconfigure-option
 [10]: /framework/hooks/#using-annotations
-[11]: https://symfony.com/doc/4.1/configuration.html
+[11]: https://symfony.com/doc/current/configuration.html
 [12]: ../dca/

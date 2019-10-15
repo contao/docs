@@ -276,7 +276,7 @@ For example, if you're using the [Symfony binary](https://symfony.com/doc/curren
 $ symfony serve
 ```
 
-Point your broser to the installation tool (for example https://localhost:8000/contao/install)
+Point your browser to the installation tool (for example https://localhost:8000/contao/install)
 and follow the usual installation procedure.
 
 

@@ -28,8 +28,8 @@ To start a new project, don't just require the `contao/manager-bundle` because y
 `post-update` Composer scripts to be in place. Just run `composer create-project contao/managed-edition [<directory>] [<version>]` instead.
 {{% /notice %}}
 
-The core of the `Manager Bundle` is the special application kernel. Instead of loading e.g. bundles and routes from a
-from the app specific folders it asks all the installed Composer packages (or in other words, the other Contao bundles)
+The core of the `Manager Bundle` is the special application kernel. Instead of loading e.g. bundles and routes from 
+the app specific folders it asks all the installed Composer packages (or in other words, the other Contao bundles)
 for that information. It does so using the interfaces the `Manager Plugin` provides making your application fully
 autoconfigurable. 
 
