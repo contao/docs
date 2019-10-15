@@ -1,5 +1,5 @@
 ---
-title: "Dateiverwaltung"
+title: "Dateien und Ordner verwalten"
 description: "Die Dateiverwaltung bildet die Verzeichnisstruktur in einem hierarchischen Baum ab."
 url: "dateimanager/dateiverwaltung"
 weight: 1
