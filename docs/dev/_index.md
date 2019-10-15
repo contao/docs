@@ -67,8 +67,9 @@ extensions still work. It will eventually be dropped once Contao 5 becomes a thi
 One special thing to be aware of when working with Contao is that unfortunately we carry a very old burden with us which
 is input encoding.
 
-> User input must not be trusted, it must be encoded when output because that's the only place where you can encode
-> correctly depending on the context.
+{{% notice warning %}}
+User input must not be trusted, it must be encoded when output because that's the only place where you can encode correctly depending on the context.
+{{% /notice %}}
 
 Unfortunately, back when Contao was created, there was no such thing as `Twig`. `Smarty` was probably already on the market
 but automated output encoding was likely less of an issue back then.
@@ -78,8 +79,10 @@ database already. Of course, you do have the option to disable this when you dev
 it's just something to keep in mind. We all know it's wrong but migrating away from already encoded data is very hard
 and likely will only become a thing when we switch to Contao 5.
 
+{{% notice warning %}}
 So be aware of this. Don't just use e.g. Symfony's `Request` class to fetch user input, store it as is in the DB and
 let Contao display it in the back end.
+{{% /notice %}}
 
 
 ### Ecosystem
@@ -154,10 +157,6 @@ prepare a pull request) please do so on the respective repository (most likely t
 Other than that there are the following channels:
 
 * **Slack:** [Join the Contao workspace][Slack]
-
-* **IRC**<br>
-  Server: freenode.net<br>
-  Channels: #contao (English), contao.de (German), #contao.dev (Developers)
   
 * **Forums**<br>
   English: https://community.contao.org/en/<br>
