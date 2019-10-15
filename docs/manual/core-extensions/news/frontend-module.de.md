@@ -6,7 +6,7 @@ url: "core-erweiterung/nachrichten/frontend-module"
 weight: 2
 ---
 
-Nachdem du nun weisst, wie Archive und Beiträge im Backend verwaltet werden, wird dir jetzt erklärt, wie du diese 
+Nachdem du nun weißt, wie Archive und Beiträge im Backend verwaltet werden, wird dir jetzt erklärt, wie du diese 
 Inhalte im Frontend darstellen kannst. Die Nachrichtenerweiterung enthält vier neue Frontend-Module, die du wie 
 gewohnt über die Modulverwaltung konfigurieren kannst.
 
