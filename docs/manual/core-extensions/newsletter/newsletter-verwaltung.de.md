@@ -261,7 +261,7 @@ doch einmal versehentlich passiert, kannst du den Versand wie folgt wiederaufneh
 
 Die Log-Daten der Versendung findest du im Backend unter »System« > »System-Log«. Die Filter-Kategorie heißt 
 NEWSLETTER_X, wobei das X für die ID des jeweiligen Newsletters steht. Die Gesamtzahl der versendeten E-Mail entnimmst 
-du dem Feld <code>Anzeigen</code>. Waren es z.B. 120 Mails, gib "120" ein, um mit dem 121. Empfänger 
+du dem Feld <code>Anzeigen</code>. Waren es z. B. 120 Mails, gib "120" ein, um mit dem 121. Empfänger 
 fortzufahren (die Zählung beginnt bei 0).
 
 ![Unterbrochene Versendungen wiederaufnehmen](/core-extensions/newsletter/images/de/unterbrochene-versendungen-wiederaufnehmen.png)
