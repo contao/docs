@@ -27,7 +27,7 @@ This hook is executed directly after Contao has sent a newsletter to its recipie
 
 5. *string* `$html`
 
-   The HTML content of the newsletter.
+    The HTML content of the newsletter.
 
 
 ## Example
