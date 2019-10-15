@@ -114,7 +114,7 @@ überschrieben.
 
 Nachdem ein Theme erfolgreich importiert wurde, musst du es nur noch aktivieren, damit es im Frontend angezeigt wird. 
 Mit »aktivieren« ist die Zuweisung eines der Seitenlayouts des neuen Themes zu einer Seite in der Seitenstruktur 
-gemeint. Aus den bisherigen Anleitungen weisst du ja bereits, dass die Zusammenführung von Design und Inhalten in der 
+gemeint. Aus den bisherigen Anleitungen weißt du ja bereits, dass die Zusammenführung von Design und Inhalten in der 
 [Seitenstruktur](../../seitenstruktur/seiten-konfigurieren/#layout-einstellungen) erfolgt und dass das Seitenlayout den 
 Aufbau einer Seite festlegt.
 

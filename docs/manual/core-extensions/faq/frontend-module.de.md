@@ -6,7 +6,7 @@ url: "core-erweiterung/faq/frontend-module"
 weight: 2
 ---
 
-Nachdem du nun weisst, wie Kategorien und Fragen im Backend verwaltet werden, wird dir jetzt erklärt, wie du diese 
+Nachdem du nun weißt, wie Kategorien und Fragen im Backend verwaltet werden, wird dir jetzt erklärt, wie du diese 
 Inhalte im Frontend darstellen kannst. Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über 
 die Modulverwaltung konfigurieren kannst.
 

@@ -258,7 +258,7 @@ URL kein Alias zu einem Element enthält.
 ## Tastatur-Navigation
 
 Aus Abschnitt, 
-[Backend-Tastaturkürzel](../administrationsbereich/backend-tastaturkuerzel/), weisst 
+[Backend-Tastaturkürzel](../administrationsbereich/backend-tastaturkuerzel/), weißt 
 du bereits, dass Contao die Navigation mittels Tastaturkürzel unterstützt. Das wirkt sich nicht nur positiv auf die 
 Barrierefreiheit aus, sondern beschleunigt auch den Arbeitsablauf. Aus diesem Grund ist das Feature auch im Frontend 
 verfügbar, und jede Seite kann optional mit einem Tastaturkürzel und einem Tab-Index versehen werden.

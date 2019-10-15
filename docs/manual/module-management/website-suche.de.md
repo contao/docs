@@ -91,7 +91,7 @@ Wie erwartet ergibt die Suche jetzt genau drei Treffer.
 
 ## Konfiguration des Suchmoduls
 
-Nachdem du nun weisst, wie das Modul im Frontend benutzt wird, wird dir nun kurz erklärt, wie du es im Backend 
+Nachdem du nun weißt, wie das Modul im Frontend benutzt wird, wird dir nun kurz erklärt, wie du es im Backend 
 konfigurierst. Öffne dazu die Modulverwaltung, und wähle das Modul »Anwendung – Suchmaschine« aus.
 
 **Standard-Abfragetyp:** Hier legst du fest, ob standardmäßig die UND-Suche (finde alle Wörter) oder die ODER-Suche 
