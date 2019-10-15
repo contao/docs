@@ -117,9 +117,9 @@ Hier kannst du dem Mitglied ein eigenes Home-Verzeichnis zuweisen und dort z. B.
 bereitstellen. Sowohl das Modul »Bildergalerie« als auch das Modul »Downloads« bieten die Möglichkeit, das 
 Benutzerverzeichnis eines Mitglieds als Datenquelle zu verwenden.
 
-**Ein Home-Verzeichnis festlegen:** Hier aktivierst du das ein eigenes Verzeichnis.
+**Ein Home-Verzeichnis festlegen:** Hier aktivierst du ein eigenes Home-Verzeichnis.
 
-**Home-Verzeichnis:** Hier legst du das Ordner des Mitglieds fest.
+**Home-Verzeichnis:** Hier legst du den Ordner des Mitglieds fest.
 
 
 ### Abonnements
