@@ -1,14 +1,14 @@
 ---
 title: "Frontend-Module"
-description: "Die Newsletter-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
+description: "Die Newsletter-Erweiterung enthält vier zusätzliche Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
 url: "core-erweiterung/newsletter/frontend-module"
 weight: 2
 ---
 
-Nachdem du nun weisst, wie Verteiler, Newsletter und Empfänger im Backend verwaltet werden, wird dir jetzt erklärt, wie 
-du Newsletter im Frontend abonnierst bzw. kündigen kannst und wie du ein Archiv mit allen versendeten Newslettern 
-anlegst. Die Newsletter-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung
+Nachdem du nun weißt, wie Verteiler, Newsletter und Empfänger im Backend verwaltet werden, wird dir jetzt erklärt, wie 
+deine Besucher Verteiler im Frontend abonnieren bzw. kündigen können und wie du ein Archiv anlegst, das alle versendeten Newslettern 
+anzeigt. Die Newsletter-Erweiterung enthält vier zusätzliche Frontend-Module, die du wie gewohnt über die Modulverwaltung
 konfigurieren kannst.
 
 ![Newsletter-Module](/core-extensions/newsletter/images/de/newsletter-module.png)
@@ -24,7 +24,7 @@ Verteiler registrieren können.
 **Verteiler:** Hier wählst du die Verteiler aus, für die sich deine Besucher über das Frontend-Modul zum Abonnieren von 
 Verteilern registrieren können.
 
-**Verteilermenü ausblenden:** Hier kannst du das Menü zur Verteilerauswahl ausblenden. Der Benutzer abonniert in diesem 
+**Verteilermenü ausblenden:** Hier kannst du das Menü zur Verteilerauswahl ausblenden. Der Besucher abonniert in diesem 
 Fall die von dir festgelegten Verteiler.
 
 **Sicherheitsfrage deaktivieren:** Hier kannst du die Sicherheitsfrage deaktivieren (nicht empfohlen).
@@ -34,7 +34,7 @@ Fall die von dir festgelegten Verteiler.
 
 ### Eigener Text
 
-**Eigener Text:** Hier kannst du z.B. einen Datenschutzhinweis eingeben, um die Anmeldung DSGVO-konform zu gestalten.
+**Eigener Text:** Hier kannst du z. B. einen Datenschutzhinweis eingeben, um die Anmeldung DSGVO-konform zu gestalten.
 
 
 ### Weiterleitung
@@ -115,8 +115,8 @@ Verteilern austragen können.
 
 ### Modul-Konfiguration
 
-**Verteiler:** Hier wählst du die Verteiler aus, aus denen sich deine Besucher über das Frontend-Modul zum Kündigen von 
-Verteilern austragen können.
+**Verteiler:** Hier wählst du die Verteiler aus, aus denen sich deine Besucher über dieses Frontend-Modul 
+austragen können.
 
 **Verteilermenü ausblenden:** Hier kannst du das Menü zur Verteilerauswahl ausblenden. Der Benutzer kündigt in diesem 
 Fall die von dir festgelegten Verteiler.
@@ -222,7 +222,7 @@ Newsletters bezieht das Modul über die URL, sodass Newsletter mit sogenannten
 
 `www.example.com/newsletterleser/newsletteralias.html`
 
-Das Schlüsselwort *newsletterleser* teilt dem »Newsletterleser« mit, dass er einen bestimmten Newsletter suchen und 
+Der *newsletteralias* teilt dem »Newsletterleser« mit, dass er einen bestimmten Newsletter suchen und 
 ausgeben soll. Existiert der gesuchte Eintrag nicht, gibt das Modul eine Fehlermeldung und den HTTP-Status-Code 
 »404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
