@@ -216,7 +216,7 @@ $PiwikPath = '//www.example.com/piwik/';
 | Template     | Erklärung                                                                                           |
 |:-------------|:----------------------------------------------------------------------------------------------------|
 | j_accordion  | Stellt das jQuery-Plugin für das Inhaltselement »Akkordeon« zur Verfügung.                          |
-| j_colorbox   | Stellt das jQuery-Plugin zum Anzeigen von Bildern in Grossansicht (Lightbox-Effekt) zur Verfügung.  |
+| j_colorbox   | Stellt das jQuery-Plugin zum Anzeigen von Bildern in Großansicht (Lightbox-Effekt) zur Verfügung.  |
 | j_tablesort  | Stellt jQuery-Plugin für die Sortieroption des Inhaltselementes »Tabelle« zur Verfügung.            |
 
 **jQuery-Quelle:** Hier kannst du auswählen, von wo das jQuery-Skript geladen werden soll. Es stehen folgende drei 
@@ -237,7 +237,7 @@ Möglichkeiten zur Verfügung:
 |:--------------|:-----------------------------------------------------------------------------------------------------|
 | moo_accordion | Stellt das MooTools-Plugin für das Inhaltselement »Akkordeon« zur Verfügung.                         |
 | moo_chosen    | Mit diesem MooTools-Plugin kannst du lange Select-Menüs übersichtlicher und benutzerfreundlicher gestalten. Dem Select-Menü muss die CSS-Klasse »tl_chosen« mitgegeben werden. |
-| moo_mediabox  | Stellt das MooTools-Plugin zum Anzeigen von Bildern in Grossansicht (Lightbox-Effekt) zur Verfügung. |
+| moo_mediabox  | Stellt das MooTools-Plugin zum Anzeigen von Bildern in Großansicht (Lightbox-Effekt) zur Verfügung. |
 | moo_tablesort | Stellt MooTools-Plugin für die Sortieroption des Inhaltselementes »Tabelle« zur Verfügung.           |
 
 **MooTools-Quelle:** Hier kannst du auswählen, von wo das MooTools-Skript geladen werden soll. Es stehen folgende drei 

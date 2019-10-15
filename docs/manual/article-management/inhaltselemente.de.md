@@ -101,7 +101,7 @@ auswählen:
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.
 
-**Grossansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
+**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
 geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Metadaten überschreiben:**  Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
@@ -810,7 +810,7 @@ Abschnitt [Text](#text).
 *Bildabstand:* Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.
 
-**Grossansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
+**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
 geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Metadaten überschreiben:** Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
@@ -876,7 +876,7 @@ Uhrzeigersinn »oben, rechts, unten, links«.
 
 **Vorschaubilder pro Reihe:** Hier legst du die Anzahl der Vorschaubilder pro Reihe fest.
 
-**Grossansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße in der 
+**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße in der 
 Lightbox geöffnet (dazu ist JavaScript erforderlich).
 
 **Elemente pro Seite:** Contao kann große Bildergalerien automatisch auf mehrere Seiten verteilen, sodass sich die 

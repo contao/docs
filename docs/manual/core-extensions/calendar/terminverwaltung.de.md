@@ -260,7 +260,7 @@ auswählen:
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.
 
-**Grossansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
+**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
 geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Metadaten überschreiben:**  Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
