@@ -97,7 +97,7 @@ dürfen. Bei einer Überschreitung dieses Werts wird das entsprechende Objekt a
 **Erlaubte Upload-Dateitypen:** Hier kannst du festlegen, welche Dateitypen auf deinen Server übertragen werden dürfen 
 (Upload).
 
-**Maximale Upload-Dateigrösse:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server 
+**Maximale Upload-Dateigröße:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server 
 übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MB = 1024 KB = 1.024.000 Bytes). Größere Dateien 
 werden abgelehnt.
 
