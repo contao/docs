@@ -44,7 +44,7 @@ verfeinern.
 
 
 **HTML-Ausgabe**  
-Das Inhaltselemnt vom Elementtyp »Downloads« generiert folgenden HTML-Code:
+Das Inhaltselement vom Elementtyp »Downloads« generiert folgenden HTML-Code:
 
 ```html
 <div class="ce_downloads first block">

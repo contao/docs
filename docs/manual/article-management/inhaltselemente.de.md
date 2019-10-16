@@ -327,7 +327,7 @@ Das Element generiert folgenden HTML-Code:
 
 ## Markdown
 
-Mit dem Inhaltselemnt »Markdown« wird aus einem Markdown-Text HTML-Code erzeugt.
+Mit dem Inhaltselement »Markdown« wird aus einem Markdown-Text HTML-Code erzeugt.
 
 **Code:** Hier kannst du den gewünschten Code eingeben. Beachte, dass der Code nicht ausgeführt wird.
 
@@ -645,7 +645,7 @@ umschlossen werden. Das ist notwendig, damit der Effekt browserübergreifend fu
 
 ## Content-Slider
 
-Mit dem Inhaltselemnt »Content-Slider« wird aus verschiedenen Inhaltselemnt ein Slider erstellt.  
+Mit dem Inhaltselement »Content-Slider« wird aus verschiedenen Inhaltselementen ein Slider erstellt.  
 
 Damit der Slider funktioniert muss das *js_slider*-Template im Seitenlayout eingebunden sein.
 
