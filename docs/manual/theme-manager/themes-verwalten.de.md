@@ -31,7 +31,7 @@ Informationen dazu findest du auf der Seite [Templates](../../eigene-seitelayout
 Achte bei der Auswahl der Dateien darauf, dass du nur diejenigen mit dem Theme verknüpfst, die auch tatsächlich zum 
 Design gehören. Im Contao-Upload-Verzeichnis liegen sämtliche Benutzerdateien, also neben Hintergrundbildern und Icons 
 auch Fotos, Videos, PDF-Dokumente, Word-Dateien etc. Die Abgrenzung zwischen Design und Inhalt obliegt im Dateisystem 
-allein Ihrem bevorzugten Organisationsansatz.
+allein deinem bevorzugten Organisationsansatz.
 
 
 ## Themes konfigurieren
