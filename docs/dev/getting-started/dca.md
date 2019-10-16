@@ -6,7 +6,7 @@ weight: 400
 
 
 [Data Container Arrays][1] are one of the key concepts within Contao. They can easily
-be adjusted to quickly add new fields to content elements, front end modules &news 
+be adjusted to quickly add new fields to content elements, front end modules & news 
 entries etc., change some of their properties for your specific needs and of course
 to set up new database tables for your own custom records.
 

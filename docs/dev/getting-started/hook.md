@@ -77,8 +77,8 @@ entry's author directly.
  </div>
 ```
 
-The following more complex example shows how to customize the login procedure for
-your members. Assume you have an external service, against which the personal data 
+The following more complex example shows how to customize the personal data update procedure
+of your members. Assume you have an external service, against which the personal data 
 of members need to be kept in sync, whenever a member changes his personal data. 
 The _Personal data_ module of Contao provides a [updatePersonalData][3] hook which
 will be triggered when, as the name of the hook suggests, a member updates his personal

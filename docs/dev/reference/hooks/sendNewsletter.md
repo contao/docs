@@ -4,7 +4,7 @@ description: "sendNewsletter hook"
 ---
 
 
-This hook is executed directly after Contao has sent a newsletter ot its recipients.
+This hook is executed directly after Contao has sent a newsletter to its recipients.
 
 
 ## Parameters
@@ -27,7 +27,7 @@ This hook is executed directly after Contao has sent a newsletter ot its recipie
 
 5. *string* `$html`
 
-   The HTML content of the newsletter.
+    The HTML content of the newsletter.
 
 
 ## Example

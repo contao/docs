@@ -1,5 +1,5 @@
 ---
-title: "Back end modules"
+title: "Back End Modules"
 description: Writing a back end module for Contao
 ---
 
