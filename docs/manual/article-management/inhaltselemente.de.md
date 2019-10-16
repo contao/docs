@@ -935,7 +935,7 @@ Video-/Audio-Dateien hinzufügen.
 
 {{< version "4.6" >}}
 
-**Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z.B. 640x480) bestimmen.
+**Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z. B. 640x480) bestimmen.
 
 **Player-Optionen:** Hier kannst du die verschiedenen Player-Optionen auswählen.
 
@@ -982,11 +982,11 @@ Das Element generiert folgenden HTML-Code:
 
 Das Inhaltselement »YouTube« fügt dem Artikel ein YouTube-Video hinzu. 
 
-**YouTube-ID:** Bitte gebe die YouTube-Video-ID für dein Video ein (z.B. rOGhp63Lvbo).
+**YouTube-ID:** Bitte gebe die YouTube-Video-ID für dein Video ein (z. B. rOGhp63Lvbo).
 
 {{< version "4.5" >}}
 
-**Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z.B. 640x480) bestimmen.
+**Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z. B. 640x480) bestimmen.
 
 **Player-Optionen:** Hier kannst du die verschiedenen Player-Optionen auswählen.
 
@@ -1060,11 +1060,11 @@ Das Element generiert folgenden HTML-Code:
 
 Das Inhaltselement »Vimeo« fügt dem Artikel ein Vimeo-Video hinzu. 
 
-**Vimeo-ID:** Bitte gebe die Vimeo-Video-ID ein (z.B. 275028611).
+**Vimeo-ID:** Bitte gebe die Vimeo-Video-ID ein (z. B. 275028611).
 
 {{< version "4.5" >}}
 
-**Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z.B. 640x480) bestimmen.
+**Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z. B. 640x480) bestimmen.
 
 **Player-Optionen:** Hier kannst du die verschiedenen Player-Optionen auswählen.
 
@@ -1077,7 +1077,7 @@ Das Inhaltselement »Vimeo« fügt dem Artikel ein Vimeo-Video hinzu.
 **Start bei:** Die Wiedergabe beginnt bei der festgelegten Anzahl an Sekunden. Gebe 0 ein, um das Feature zu 
 deaktivieren.
 
-**Farben der Steuererlemente:** Hier kannst du einen hexadezimalen Farbcode (z.B. ff0000) für die Steuerelemente 
+**Farben der Steuererlemente:** Hier kannst du einen hexadezimalen Farbcode (z. B. ff0000) für die Steuerelemente 
 eingeben.
 
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.

@@ -264,7 +264,7 @@ deines Browsers z. B. zentriert dargestellt. In Contao werden beide Layout-Typen
 ## Experten-Einstellungen
 
 In den Experten-Einstellungen kannst du unter anderem das Seitentemplate ändern, die dem Seitenlayout zugrunde liegen. 
-Das solltest du nur dann erwägen, wenn die Bordmittel von Contao tatsächlich nicht ausreichen oder du z.B. ein 
+Das solltest du nur dann erwägen, wenn die Bordmittel von Contao tatsächlich nicht ausreichen oder du z. B. ein 
 externes CSS-Framework verwenden möchtest. In den meisten Fällen solltest du jedoch mit den Standard-Möglichkeiten 
 problemlos ans Ziel kommen.
 

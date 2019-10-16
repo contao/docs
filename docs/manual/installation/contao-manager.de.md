@@ -24,7 +24,7 @@ Mit dem Manager können unter anderem folgende Aufgaben durchgeführt werden:
 - Erweiterungen deinstallieren
 - Contao Cache leeren (Systemwartung)
 
-Für die Zukunft sind weitere Funktionen geplant, wie z.B. Systemeinstellungen festlegen oder den Contao Check ausführen.
+Für die Zukunft sind weitere Funktionen geplant, wie z. B. Systemeinstellungen festlegen oder den Contao Check ausführen.
 
 Der Contao Manager ist optional und nicht zwingend für den Betrieb von Contao nötig. Das Tool erleichtert jedoch 
 besonders Einsteigern die Installation und Verwaltung von Erweiterungen, da keine Composer-Kenntnisse nötig sind.
