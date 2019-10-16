@@ -20,6 +20,7 @@ or:
 git clone --recurse-submodules https://github.com/contao/docs.git
 ```
 
+
 ## Updating the Theme
 
 To update the theme after cloning, simply run the following command:
@@ -27,6 +28,7 @@ To update the theme after cloning, simply run the following command:
 ```bash
 git submodule foreach git pull origin master
 ```
+
 
 ## Build
 
@@ -61,6 +63,7 @@ make clean
 
 Cleans the build directory.
 
+
 ## Note
 
 Your are not dependent on the [Makefile](Makefile). If `make` is not available in your operating system, you can still invoke the hugo commands. For example: Windows users can execute the hugo CLI commands manually like:
@@ -69,6 +72,7 @@ Your are not dependent on the [Makefile](Makefile). If `make` is not available i
 cd page
 hugo server --cleanDestinationDir --environment manual --destination ../build/manual 
 ```
+
 
 ## License
 
