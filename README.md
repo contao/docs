@@ -64,7 +64,7 @@ make clean
 Cleans the build directory.
 
 
-## Note
+### Note
 
 Your are not dependent on the [Makefile](Makefile). If `make` is not available 
 in your operating system, you can still invoke the hugo commands. For example:
