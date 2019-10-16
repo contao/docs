@@ -67,7 +67,7 @@ dass ein Benutzer diese auch bearbeiten darf. Du kannst hier festlegen, was mit 
 
 | Operation                                                           | Erklärung                                                                                           |
 |:--------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------|
-| Dateien auf den Server hochladen                                    | Der Benutzer darf bestimmte Dateien über den Dateimanager auf den Server übertragen (Upload). Die erlaubten Dateien kannst du in den Backend-Einstellungen festlegen. |
+| Dateien auf den Server hochladen                                    | Der Benutzer darf bestimmte Dateien über die Dateiverwaltung auf den Server übertragen (Upload). Die erlaubten Dateien kannst du in den Backend-Einstellungen festlegen. |
 | Dateien und Verzeichnisse bearbeiten, kopieren und verschieben      | Der Benutzer darf Dateien und Verzeichnisse umbenennen, duplizieren und verschieben. |
 | Einzelne Dateien und leere Verzeichnisse löschen                    | Der Benutzer darf einzelne Dateien und leere Verzeichnisse löschen (nicht rekursiv). |
 | Verzeichnisse inklusive aller Dateien und Unterordner löschen (!)   | Der Benutzer darf Dateien und Verzeichnisse rekursiv, also inklusive aller enthaltenen Unterorder und Dateien, löschen. |
@@ -197,7 +197,7 @@ Jeder Benutzer kann das Backend an seine persönlichen Vorstellungen anpassen.
 **Erklärungen anzeigen:** Standardmäßig zeigt Contao unter jedem Eingabefeld eine kurze Erklärung an, die du bei Bedarf 
 hier abschalten kannst.
 
-**Vorschaubilder anzeigen:** Hier kannst du die Vorschaubilder in der Dateiübersicht des Dateimanagers deaktivieren, 
+**Vorschaubilder anzeigen:** Hier kannst du die Vorschaubilder in der Dateiübersicht der Dateiverwaltung deaktivieren, 
 damit die Verzeichnisstruktur schneller lädt.
 
 **Rich Text Editor verwenden:** Hier kannst du den Rich Text Editor deaktivieren.

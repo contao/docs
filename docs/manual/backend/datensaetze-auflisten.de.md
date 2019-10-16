@@ -50,7 +50,7 @@ ausgewählten Elternelements an.
 
 Hierbei handelt es sich um Datensätze, die in einer hierarchischen Abhängigkeit zueinander stehen und daher in einer
 Baumstruktur dargestellt werden. Typischerweise ist das bei einem Dateisystem der Fall, in dem es Verzeichnisse und 
-Unterverzeichnisse gibt, deshalb nutzt der Contao-Dateimanager auch diese Ansicht. Hierarchische Strukturen können aber
+Unterverzeichnisse gibt, deshalb nutzt die Contao-Dateiverwaltung auch diese Ansicht. Hierarchische Strukturen können aber
 auch innerhalb einer Tabelle abgebildet werden, wie es z. B. bei der Seitenstruktur deiner Webseite der Fall ist.
 
 ![Der Tree View](/backend/images/de/der-tree-view.png)

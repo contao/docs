@@ -97,15 +97,15 @@ dürfen. Bei einer Überschreitung dieses Werts wird das entsprechende Objekt a
 **Erlaubte Upload-Dateitypen:** Hier kannst du festlegen, welche Dateitypen auf deinen Server übertragen werden dürfen 
 (Upload).
 
-**Maximale Upload-Dateigrösse:** Hier kannst du festlegen, wie groß eine mit dem Dateimanager auf deinen Server 
+**Maximale Upload-Dateigrösse:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server 
 übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MB = 1024 KB = 1.024.000 Bytes). Größere Dateien 
 werden abgelehnt.
 
-**Maximale Bildbreite:** Beim Upload von Bildern prüft der Dateimanager automatisch deren Breite und vergleicht diese 
+**Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese 
 Werte mit deiner hier festgelegten Vorgaben. Überschreitet ein Bild die maximale Breite, wird es automatisch 
 verkleinert.
 
-**Maximale Bildhöhe:** Beim Upload von Bildern prüft der Dateimanager automatisch deren Höhe und vergleicht diese Werte 
+**Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese Werte 
 mit deiner hier festgelegten Vorgaben. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
 
 
