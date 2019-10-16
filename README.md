@@ -36,9 +36,6 @@ The documentation is built using the [Hugo site generator](https://gohugo.io/),
 thus you need to [install Hugo](https://gohugo.io/getting-started/installing/) 
 first on your system.
 
-_Note:_ version 0.55.x of Hugo is incompatible with some of the theme's features. 
-Building is still possible, however the rendering of those shortcodes will be wrong.
-
 Building is done using the `make` command. There are different commands available 
 depending on what part of the documentation you want to build.
 
