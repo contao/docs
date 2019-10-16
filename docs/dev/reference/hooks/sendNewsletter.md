@@ -1,6 +1,7 @@
 ---
 title: "sendNewsletter"
 description: "sendNewsletter hook"
+tags: ["hook-newsletter"]
 ---
 
 
