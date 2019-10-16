@@ -1,7 +1,7 @@
 ---
 title: "Metadaten"
 description: "In Contao kannst du zu jeder Art von Datei sogenannte Metadaten erfassen."
-url: "dateimanager/metadaten"
+url: "dateiverwaltung/metadaten"
 weight: 2
 ---
 
