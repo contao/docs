@@ -69,7 +69,7 @@ automatisch bei der Auswahl berücksichtigt.
 | Mitte / Unten     | Erhält den mittleren Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.    |
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
-**Grossansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
+**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
 geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Bildunterschrift anzeigen:** Wenn du diese Option auswählst, wird entweder die entsprechende Bildunterschrift aus der 
