@@ -114,7 +114,7 @@ body {
 
 {{< version "4.8" >}}
 
-Mit dieser Einstellungen kannst du die Bildgrösse für die Lightbox im Seitenlayout festlegen.
+Mit dieser Einstellungen kannst du die Bildgröße für die Lightbox im Seitenlayout festlegen.
 
 **Bildgröße für die Lightbox:** Hier kannst du die Abmessungen des Bildes und den Skalierungsmodus für die Lightbox 
 festlegen.

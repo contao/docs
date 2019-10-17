@@ -212,7 +212,7 @@ ein [Checkbox-Menü](#checkbox-menue) anstatt des Select-Menüs verwenden.
 
 **Mehrfachauswahl:** Hier kannst du die Auswahl mehrerer Optionen erlauben.
 
-**Listengrösse:** Hier legst du fest, wie viele Zeilen das Auswahlfeld bei aktivierter Mehrfachauswahl hoch sein soll. 
+**Listengröße:** Hier legst du fest, wie viele Zeilen das Auswahlfeld bei aktivierter Mehrfachauswahl hoch sein soll. 
 Innerhalb des Feldes kann gescrollt werden.
 
 **Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen.
