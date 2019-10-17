@@ -71,8 +71,9 @@ base (see the [reference][10]).
 Your web application's functionality can easily be extended by installing one or
 more of the many [available extensions][12] for Contao. A Contao extension is basically
 simply a Symfony bundle that you can load into your Symfony application - or will
-be automatically loaded in the Contao Managed Edition. See the
-[creating an extension article][13] on how to create an extension for Contao.
+be automatically loaded in the Contao Managed Edition. See the article on
+[getting started with creating an extension][13] on how to create an extension 
+for Contao.
 
 
 ## Insert Tags
