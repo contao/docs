@@ -18,7 +18,7 @@ das Schreiben von Artikeln erfolgt. Das »Frontend« ist die eigentliche Webseit
 anschließend von Besuchern gelesen werden können.
 
 Der Zugriff auf das Backend, also den Administrationsbereich, ist grundsätzlich nur registrierten Benutzern möglich, 
-die sich mit Ihrem Benutzernamen und Passwort anmelden müssen, bevor sie Änderungen an der Webseite vornehmen können. 
+die sich mit ihrem Benutzernamen und Passwort anmelden müssen, bevor sie Änderungen an der Webseite vornehmen können. 
 Das Frontend, also die eigentliche Webseite, ist hingegen standardmäßig öffentlich erreichbar.
 
 Das Backend rufst du auf, indem du `/contao` an die URL deiner Webseite anfügst.
