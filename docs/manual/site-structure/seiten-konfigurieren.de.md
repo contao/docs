@@ -217,7 +217,7 @@ man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite
 
 ## Experten-Einstellungen
 
-Unter Umständen gibt es innerhalb Ihrer Seitenstruktur Seiten, die zwar im Frontend verfügbar sein, aber nicht im Menü 
+Unter Umständen gibt es innerhalb deiner Seitenstruktur Seiten, die zwar im Frontend verfügbar sein, aber nicht im Menü 
 auftauchen sollen. Oder es könnte Seiten geben, die nur so lange angezeigt werden sollen, bis sich ein Benutzer 
 angemeldet hat (z. B. die Registrierungsseite). Solche speziellen Wünsche kannst du in den Experten-Einstellungen 
 konfigurieren.

@@ -42,7 +42,7 @@ weitergeleitet wird (Bestätigungsseite).
 ### Formular-Konfiguration
 
 **HTML-Tags erlauben:** Wenn du diese Option auswählst, können deine Besucher HTML-Code in den Formularfeldern 
-verwenden. In den Backend-Einstellungen unter »Erlaubte HTMLTags« legst du fest, welche HTML-Tags zulässig sind.
+verwenden. In den Backend-Einstellungen unter »Erlaubte HTML-Tags« legst du fest, welche HTML-Tags zulässig sind.
 
 
 ## Formulardaten versenden

@@ -6,7 +6,7 @@ url: "formulargenerator/ein-suchformular-erstellen"
 weight: 3
 --- 
 
-Wie schon im Abschnitt [Eigene Suchformulare](../../modulverwaltung/website-suche/#eigene-suchformulare), erwähnt, 
+Wie schon im Abschnitt [Eigene Suchformulare](../../modulverwaltung/website-suche/#eigene-suchformulare) erwähnt, 
 kannst du den Formulargenerator nutzen, um ein eigenes Suchformular zu erstellen und dieses beispielsweise in der 
 Kopfzeile deiner Webseite einzubinden. Dazu sind folgende Schritte notwendig:
 
