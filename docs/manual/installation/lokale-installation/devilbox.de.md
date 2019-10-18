@@ -4,13 +4,11 @@ description: "Mit der Docker Devilbox können eine oder mehrere Contao Installat
 weight: 100
 ---
 
-## Contao Installation mit der Docker Devilbox
-
 Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für Docker. Wenn Du die Docker-Toolbox einsetzt 
 sind [diese Angaben](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox "Docker Toolbox and the Devilbox") der Dokumentation lesenswert.
 
 
-### Devilbox installieren und konfigurieren
+## Devilbox installieren und konfigurieren
 
 Es ist keine Installation im eigentlichen Sinne notwendig. Du mußt Dir nur die Dateien von der 
 Devilbox [GitHub Seite](https://github.com/cytopia/devilbox) in ein leeres Verzeichnis herunterladen. Die Konfiguration 
@@ -43,7 +41,7 @@ könnte nginx genutzt werden. Für Contao sind dann allerdings weitere Konfigura
 {{% /notice %}}
 
 
-### Die Devilbox starten
+## Die Devilbox starten
 
 Wechsle nun in das Verzeichnis und starte die Devilbox mit Docker. Erstmalig kann es etwas dauern, da zunächst die 
 jeweiligen Docker Images geladen und die Container erstellt werden müssen. Erneute Starts sind dann wesentlich schneller.
@@ -54,14 +52,14 @@ docker-compose up -d httpd php mysql
 ```
 
 
-### Die Devilbox beenden
+## Die Devilbox beenden
 
 ```bash
 docker-compose stop
 ```
 
 
-### Das Devilbox Dashboard im Browser
+## Das Devilbox Dashboard im Browser
 
 Ist die Devilbox gestartet kannst Du nun Deinen Browser aufrufen. Mit Eingabe von **`http://127.0.0.1`** erreichst Du 
 das Devilbox Dashboard. Über die Navigation erhälst Du Zugriff auf die verschiedenen Funktionen.
@@ -81,7 +79,7 @@ Deine IP-Adresse möglicherweise anders. Die IP-Adresse kann über den Befehl `d
 | **Tools**           | Zugriff auf Tools wie z.B. `phpMyAdmin`    |
 
 
-### Contao Installation vorbereiten
+## Contao Installation vorbereiten
 
 Eine oder mehrere Contao Installationen werden im Devilbox Verzeichnis **`data\www`** erstellt. Je Contao Installation 
 mußt Du hier ein separates Verzeichnis anlegen. Der Verzeichnisname entspricht dann dem späteren vhost Namen. Aus dem 
@@ -95,7 +93,7 @@ Die Domain Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei 
 {{% /notice %}}
 
 
-### Installation über den Contao Manager
+## Installation über den Contao Manager
 
 Starte `phpMyAdmin` im Devilbox Dashboard im Bereich `Tools\phpMyAdmin` und lege eine neue Datenbank an. Wechsle dann 
 in der Navigation auf die Seite `Virtual Hosts`. Hier solltest Du nun eine Liste Deiner vorhandenen Web-Projekte sehen 
@@ -105,7 +103,7 @@ Beispiel also über: `contao4.loc/contao-manager.phar.php`.
 Die weitere Vorhehensweise ist dann identisch wie in [Contao installieren](../../contao-installieren/) beschrieben.
 
 
-### Installation über die Kommandozeile
+## Installation über die Kommandozeile
 
 Das PHP Memory Limit für die PHP Container der Devilbox ist standardmäßig zu niedrig und muß daher zur Composer Nutzung 
 zuvor konfiguriert werden. Wechsle dazu in das Verzeichnis `cfg`. Hast Du die Devilbox mit PHP 7.3 in der `.env` konfiguriert 
@@ -133,7 +131,7 @@ mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao48;'
 Im Anschluß kannst Du den Container über `exit` verlassen und das Contao-Installtool aufrufen.
 
 
-### Angaben im Contao-Installtool
+## Angaben im Contao-Installtool
 
 Die Angaben im [Contao-Installtool](../../contao-installtool/) sind grundsätzlich identisch. Du mußt lediglich 
 bei `Datenbankverbindung` auf folgende Einträge achten:
