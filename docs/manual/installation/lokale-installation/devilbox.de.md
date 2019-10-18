@@ -1,11 +1,12 @@
 ---
-title: "Mit der Docker Devilbox"
+title: "Die Docker Devilbox"
+menuTitle : "Mit der Docker Devilbox"
 description: "Mit der Docker Devilbox können eine oder mehrere Contao Installation lokal installiert und gepflegt werden."
 weight: 100
 ---
 
-Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für Docker. Wenn Du die Docker-Toolbox einsetzt 
-sind [diese Angaben](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox "Docker Toolbox and the Devilbox") der Dokumentation lesenswert.
+Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für [Docker](https://www.docker.com/). 
+Wenn Du die Docker-Toolbox einsetzt sind [diese Angaben](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox "Docker Toolbox and the Devilbox") der Dokumentation lesenswert.
 
 
 ## Devilbox installieren und konfigurieren
