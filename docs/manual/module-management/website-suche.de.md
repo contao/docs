@@ -2,7 +2,7 @@
 title: "Website-Suche"
 description: "Contao indiziert die Seiten deiner Webpräsenz automatisch, sobald sie aufgerufen werden, und speichert 
 die darauf zu findenden Wörter als Suchbegriffe in einer Tabelle in der Datenbank."
-url: "modulverwaltung/website-suche"
+url: "de/modulverwaltung/website-suche"
 weight: 3
 ---
 

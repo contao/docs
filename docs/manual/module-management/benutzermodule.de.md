@@ -2,7 +2,7 @@
 title: "Benutzermodule"
 description: "Benutzermodule sind Module, die im Zusammenhang mit der Verwaltung von Frontend-Benutzern gebraucht 
 werden."
-url: "modulverwaltung/benutzermodule"
+url: "de/modulverwaltung/benutzermodule"
 weight: 2
 ---
 <style>

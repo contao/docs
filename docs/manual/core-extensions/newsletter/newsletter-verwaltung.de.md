@@ -2,7 +2,7 @@
 title: "Newsletter-Verwaltung"
 description: "Die Newsletter-Verwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« an fünfter 
 Stelle findest. "
-url: "core-erweiterung/newsletter/newsletter-verwaltung"
+url: "de/core-erweiterung/newsletter/newsletter-verwaltung"
 weight: 1
 ---
 

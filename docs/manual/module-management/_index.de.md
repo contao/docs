@@ -2,7 +2,7 @@
 title: "Modulverwaltung"
 description: "Frontend-Module generieren den HTML-Code der Webseite. Sie gehören zu den designrelevanten Elementen und 
 sind deswegen dem Theme-Manager untergeordnet."
-url: "modulverwaltung"
+url: "de/modulverwaltung"
 weight: 8
 ---
 

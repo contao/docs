@@ -1,7 +1,7 @@
 ---
 title: "MetaModels"
 description: "MetaModels ist eine Erweiterung für das CMS Contao für einen flexiblen und leichten Aufbau von eigenen Datenmodellen."
-url: "erweiterung/metamodels"
+url: "de/erweiterung/metamodels"
 ---
 
 **[metamodels](https://packagist.org/packages/metamodels/)**

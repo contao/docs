@@ -2,7 +2,7 @@
 title: "Frontend-Module"
 description: "Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
-url: "core-erweiterung/faq/frontend-module"
+url: "de/core-erweiterung/faq/frontend-module"
 weight: 2
 ---
 

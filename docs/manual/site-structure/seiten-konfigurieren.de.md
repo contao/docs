@@ -2,7 +2,7 @@
 title: "Seiten konfigurieren"
 description: "Nachdem du die richtigen Seitentypen für deine Seiten ausgewählt hast, kannst du diese deinen 
 Anforderungen entsprechend konfigurieren. Die Einstellungsmöglichkeiten variieren dabei je nach Seitentyp."
-url: "seitenstruktur/seiten-konfigurieren"
+url: "de/seitenstruktur/seiten-konfigurieren"
 weight: 2
 ---
 

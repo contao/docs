@@ -1,7 +1,7 @@
 ---
 title: "FAQ-Erweiterung"
 description: "Damit wird das Verwalten von häufig gestellten Fragen ein Kinderspiel."
-url: "core-erweiterung/faq"
+url: "de/core-erweiterung/faq"
 weight: 3
 ---
 
