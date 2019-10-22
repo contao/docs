@@ -93,7 +93,7 @@ This should contain specific examples and use cases on how to use and implement 
 
 * The paths and filenames should be english
 * Consider that all markdown headings are taken over in the page navigation of the documentation
-* Use images by copieng existing or create new ones only
+* Use images by copying existing or create new ones only
 
 
 ## The hugo front matter variables
@@ -102,8 +102,8 @@ Every file needs at least the following [hugo front matter](https://gohugo.io/co
 
 * `title`: A title for the file (language specific). This entry refletcs the main left navigation of the documentation also.
 * `description`: The content description (language specific).
-* `url`: The url path to build (language specific).
-* `weight`: Used for the sorting order in the left main navigation of the documentaion.
+* `url`: The url path to build (language specific). This should only be used, if you want the path to be different from the physical path. e.g. for the german translation.
+* `weight`: Used for the sorting order in the left main navigation of the documentaion. The weight might not be necessary everywhere. It's only necessary, when files need to be sorted by something other than the default sorting (i.e. sorted by name).
 * `menuTitle` (optional): The optional menuTitle entry reflects an alternative entry in the main left navigation of the documentaion. This is especially helpful if the original title is too long for the navigation.
 
 
@@ -163,10 +163,8 @@ This would start the hugo server (with the Contao manual here), watching for you
 If you are satisfied with your changes you could then stage/commit/push these to your forked repository. For example:
 
 ```bash
-git status
 git add .
 git commit -m "Describe your change here"
-git status
 git push
 ```
 
