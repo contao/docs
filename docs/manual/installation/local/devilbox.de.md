@@ -2,7 +2,7 @@
 title: "Die Docker Devilbox"
 menuTitle : "Mit der Docker Devilbox"
 description: "Mit der Docker Devilbox können eine oder mehrere Contao-Installationen lokal installiert und gepflegt werden."
-url: "de/lokale-installation/devilbox"
+url: "lokale-installation/devilbox"
 weight: 100
 ---
 
