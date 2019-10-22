@@ -1,7 +1,7 @@
 ---
 title: "Isotope eCommerce"
 description: "Isotope eCommerce ist eine kostenlose eCommerce-Lösung für das Contao CMS."
-url: "de/erweiterung/isotope-core"
+url: "de/erweiterungen/isotope-core"
 ---
 
 **[isotope/isotope-core](https://packagist.org/packages/isotope/isotope-core)**
