@@ -2,7 +2,7 @@
 title: "Multidomain-Betrieb"
 description: "Multidomain-Betrieb bedeutet, dass eine Contao-Installation unter mehreren Domains erreichbar ist und 
 diese jeweils eine unterschiedliche Ausgabe bewirken."
-url: "de/seitenstruktur/multidomain-betrieb"
+url: "seitenstruktur/multidomain-betrieb"
 weight: 3
 ---
 

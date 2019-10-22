@@ -2,7 +2,7 @@
 title: "Artikelverwaltung"
 description: "Contao kapselt statische Inhalte in Artikel, die in der Artikelverwaltung einer bestimmten Seite und 
 einem bestimmten Layoutbereich zugeordnet werden."
-url: "de/artikelverwaltung"
+url: "artikelverwaltung"
 weight: 9
 ---
 

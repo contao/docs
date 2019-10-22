@@ -2,7 +2,7 @@
 title: "Seiten als zentrale Elemente"
 description: "Contao gehört zur Gruppe der seitenbasierten Content Management Systeme, das heißt, die Seitenstruktur 
 ist das zentrale Element deiner Webseite."
-url: "de/seitenstruktur/seiten-als-zentrale-elemente"
+url: "seitenstruktur/seiten-als-zentrale-elemente"
 weight: 1
 ---
 

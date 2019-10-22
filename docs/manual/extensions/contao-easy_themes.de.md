@@ -1,7 +1,7 @@
 ---
 title: "EasyThemes"
 description: "Einfacheres Verwalten von Themes mit EasyThemes."
-url: "de/erweiterungen/contao-easy_themes"
+url: "erweiterungen/contao-easy_themes"
 ---
 
 **[terminal42/contao-easy_themes](https://packagist.org/packages/terminal42/contao-easy_themes)**

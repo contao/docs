@@ -1,7 +1,7 @@
 ---
 title: "Verschiedenes"
 description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Verschiedenes« vorgestellt."
-url: "de/modulverwaltung/verschiedenes"
+url: "modulverwaltung/verschiedenes"
 weight: 5
 ---
 

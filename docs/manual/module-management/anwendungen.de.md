@@ -1,7 +1,7 @@
 ---
 title: "Anwendungen"
 description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Anwendungen« vorgestellt."
-url: "de/modulverwaltung/anwendungen"
+url: "modulverwaltung/anwendungen"
 weight: 4
 ---
 

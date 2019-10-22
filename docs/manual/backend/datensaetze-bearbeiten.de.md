@@ -2,7 +2,7 @@
 title: "Datensätze bearbeiten"
 description: "Das komfortable Bearbeiten von Daten zu ermöglichen, ist eine der Hauptaufgaben eines CMS – zumindest 
 sollte es so sein."
-url: "de/administrationsbereich/datensaetze-bearbeiten"
+url: "administrationsbereich/datensaetze-bearbeiten"
 weight: 4
 ---
 

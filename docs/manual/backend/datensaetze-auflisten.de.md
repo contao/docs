@@ -2,7 +2,7 @@
 title: "Datensätze auflisten"
 description: "Contao speichert alle Informationen rund um deine Webseite in der Datenbank. Dazu zählen sowohl 
 Backend-Daten wie Benutzer, Module, Seiten oder Artikel als auch Frontend-Daten wie Gästebucheinträge oder Kommentare."
-url: "de/administrationsbereich/datensaetze-auflisten"
+url: "administrationsbereich/datensaetze-auflisten"
 weight: 3
 ---
 

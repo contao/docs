@@ -2,7 +2,7 @@
 title: "Nachrichtenverwaltung"
 description: "Die Nachrichtenverwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« an zweiter 
 Stelle findest. "
-url: "de/core-erweiterung/nachrichten/nachrichtenverwaltung"
+url: "core-erweiterung/nachrichten/nachrichtenverwaltung"
 weight: 1
 ---
 

@@ -2,7 +2,7 @@
 title: "Contao im Schnelldurchlauf"
 description: "In diesem Abschnitt werden dir die grundsätzlichen Zusammenhänge und Funktionsweisen von Contao in 
 komprimierter Form vorgestellt."
-url: "de/einleitung/contao-im-schnelldurchlauf"
+url: "einleitung/contao-im-schnelldurchlauf"
 weight: 3
 ---
 

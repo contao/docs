@@ -2,7 +2,7 @@
 title: "Seitenstruktur"
 description: "Um Contao effektiv einsetzen zu können, ist es wichtig, dass du die Grundprinzipien und den Aufbau des 
 Systems verstehst."
-url: "de/seitenstruktur"
+url: "seitenstruktur"
 weight: 6
 ---
 

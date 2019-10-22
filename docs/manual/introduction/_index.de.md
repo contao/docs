@@ -2,7 +2,7 @@
 title: "Contao im Überblick"
 description: "Contao ist ein Web Content Management System, das unter einer Open Source-Lizenz, nämlich der Lesser 
 General Public License, veröffentlicht wurde."
-url: "de/einleitung"
+url: "einleitung"
 weight: 1
 ---
 

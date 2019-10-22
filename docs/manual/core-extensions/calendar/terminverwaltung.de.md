@@ -2,7 +2,7 @@
 title: "Terminverwaltung"
 description: "Die Terminverwaltung ist ein eigenes Modul im Backend namens »Events«, das du in der Gruppe »Inhalte« an 
 dritter Stelle findest."
-url: "de/core-erweiterung/kalender/terminverwaltung"
+url: "core-erweiterung/kalender/terminverwaltung"
 weight: 1
 ---
 

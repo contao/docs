@@ -2,7 +2,7 @@
 title: "Navigationsmodule"
 description: "Navigationsmodule sind mit die wichtigsten Frontend-Module überhaupt und kommen auf fast jeder Webseite 
 in irgendeiner Form zum Einsatz."
-url: "de/modulverwaltung/navigationsmodule"
+url: "modulverwaltung/navigationsmodule"
 weight: 1
 ---
 

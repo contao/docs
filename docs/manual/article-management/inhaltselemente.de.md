@@ -2,7 +2,7 @@
 title: "Inhaltselemente"
 description: "Um das Anlegen von Inhalten möglichst intuitiv zu gestalten, gibt es in Contao für jeden Inhaltstyp ein 
 Inhaltselement, das genau auf dessen Anforderungen abgestimmt ist."
-url: "de/artikelverwaltung/inhaltselemente"
+url: "artikelverwaltung/inhaltselemente"
 weight: 2
 ---
 

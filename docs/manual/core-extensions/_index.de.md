@@ -2,7 +2,7 @@
 title: "Core-Erweiterungen"
 description: "Die folgenden Erweiterungen sind im Lieferumfang von Contao enthalten: Nachrichten, Events, FAQ, 
 Newsletter, Kommentare und Auflistungen."
-url: "de/core-erweiterungen"
+url: "core-erweiterungen"
 weight: 10
 ---
 

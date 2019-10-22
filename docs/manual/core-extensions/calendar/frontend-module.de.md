@@ -2,7 +2,7 @@
 title: "Frontend-Module"
 description: "Die »Kalender«-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
-url: "de/core-erweiterung/kalender/frontend-module"
+url: "core-erweiterung/kalender/frontend-module"
 weight: 2
 ---
 

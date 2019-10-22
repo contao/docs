@@ -2,7 +2,7 @@
 title: "Formularfelder"
 description: "Ähnlich wie bei Artikeln und Inhaltselementen gibt es auch bei Formularen für jedes Formularfeld ein 
 eigenes Element, das speziell auf die jeweiligen Anforderungen des Eingabefelds ausgerichtet ist."
-url: "de/formulargenerator/formularfelder"
+url: "formulargenerator/formularfelder"
 weight: 2
 ---
 
