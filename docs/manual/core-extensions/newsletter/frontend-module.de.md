@@ -2,7 +2,7 @@
 title: "Frontend-Module"
 description: "Die Newsletter-Erweiterung enthält vier zusätzliche Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
-url: "core-erweiterung/newsletter/frontend-module"
+url: "de/core-erweiterung/newsletter/frontend-module"
 weight: 2
 ---
 

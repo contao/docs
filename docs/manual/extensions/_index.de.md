@@ -1,7 +1,7 @@
 ---
 title: "Erweiterungen"
 description: "Der Leistungsumfang von Contao  kann durch das Installieren von Paketen erweitert werden."
-url: "erweiterungen"
+url: "de/erweiterungen"
 weight: 15
 ---
 

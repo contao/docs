@@ -2,7 +2,7 @@
 title: "Administrationsbereich"
 description: "Im Administrationsbereich, dem sogenannten Backend, kannst du alle Arbeiten im Zusammenhang mit der 
 Verwaltung deiner Webseite erledigen."
-url: "administrationsbereich"
+url: "de/administrationsbereich"
 weight: 3
 ---
 

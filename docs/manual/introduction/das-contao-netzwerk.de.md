@@ -2,7 +2,7 @@
 title: "Das Contao-Netzwerk"
 description: "Über die Jahre sind etliche Webseiten und Artikel zu Contao entstanden, teilweise in Absprache mit dem 
 Contao-Team, teilweise vollkommen autark."
-url: "einleitung/das-contao-netzwerk"
+url: "de/einleitung/das-contao-netzwerk"
 weight: 2
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Maklermodul für Immobilienmakler"
 description: "Das Maklermodul für Immobilienmakler ist eine kostenpflichtige Erweiterung für das Contao CMS."
-url: "erweiterung/maklermodul"
+url: "de/erweiterungen/maklermodul"
 ---
 
 **[pdir/maklermodul-bundle](https://packagist.org/packages/pdir/maklermodul-bundle)**

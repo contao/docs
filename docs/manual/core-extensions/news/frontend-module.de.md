@@ -2,7 +2,7 @@
 title: "Frontend-Module"
 description: "Die Nachrichtenerweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
-url: "core-erweiterung/nachrichten/frontend-module"
+url: "de/core-erweiterung/nachrichten/frontend-module"
 weight: 2
 ---
 
