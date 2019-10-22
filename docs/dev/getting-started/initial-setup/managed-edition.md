@@ -85,8 +85,8 @@ to install Contao to provide additional CMS functionality, probably not. You hav
 full control about your application kernel and the configuration but it also means 
 you have to adjust the settings for every Contao update (or any other Contao bundle 
 update for that matter). If, however, you are planning to make Contao the most important 
-part of your application (meaning most of what you're going to do is content management) 
-you're likely better off using the `Managed Edition`. Updates are easier because 
+part of your application (meaning most of what you are going to do is content management) 
+you are likely better off using the `Managed Edition`. Updates are easier because 
 your application auto-configures itself via the `Manager Plugin`s of all the installed 
 bundles. You can still control all of it  through a global, application-wide `Manager Plugin` 
 that is loaded at the very end but it maybe requires a bit more code.
