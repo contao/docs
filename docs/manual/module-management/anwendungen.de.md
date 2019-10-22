@@ -23,7 +23,7 @@ Das Frontend-Modul »Auflistung« fügt der Webseite eine Liste von Datensätze
 und durchsucht werden können. Als Grundlage für die Auflistung dient eine beliebige Tabelle der Datenbank, wie z. B. 
 die Mitgliedertabelle `tl_member`.
 
-![Das Auflistungsmodul konfigurieren](/module-management/images/de/das-auflistungsmodul-konfigurieren.png)
+![Das Auflistungsmodul konfigurieren](/de/module-management/images/de/das-auflistungsmodul-konfigurieren.png)
 
 **Tabelle:** Hier legst du die Tabelle fest, deren Datensätze aufgelistet werden sollen.
 

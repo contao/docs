@@ -16,7 +16,7 @@ Die Möglichkeiten dieser Dateninhalte erstrecken sich von Produktkatalogen, Ver
 Adress- oder Mitarbeiterlisten, Häuser, Mietobjekte bis zu Bildergalerien oder mehrsprachigen Text/Bild-Inhalten -
 und all das nahtlos in Contao eingebunden. 
 
-![MetaModels im Backend](/extensions/images/de/metamodels-backend.jpg)
+![MetaModels im Backend](/de/extensions/images/de/metamodels-backend.jpg)
 
 Für die Arbeit mit MetaModels muss man keine Programmierkenntnisse mitbringen. Für den Start ist es jedoch empfehlenswert,
 sich das [Handbuch](https://metamodels.readthedocs.io/de/latest/) anzusehen oder mit einem der

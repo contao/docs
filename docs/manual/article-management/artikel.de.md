@@ -10,17 +10,17 @@ findest. Jeder Artikel ist einer bestimmten Seite und einem bestimmten Layoutber
 vielen anderen CMS ist das Einbinden von Artikeln in Contao nicht auf die Hauptspalte beschränkt, sodass du deine 
 Webseite flexibel gestalten kannst.
 
-![Die Artikelverwaltung](/article-management/images/de/die-artikelverwaltung.png)
+![Die Artikelverwaltung](/de/article-management/images/de/die-artikelverwaltung.png)
 
 Jede Seite kann beliebig viele Artikel enthalten, die innerhalb ihres Layoutbereichs untereinander in der von dir 
 festgelegten Reihenfolge dargestellt werden. Contao erkennt selbstständig, ob jeweils der ganze Artikel oder nur der 
 Teasertext, gefolgt von einem `Weiterlesen`-Link, angezeigt werden soll.
 
-![Mehrere Artikel mit Teasertext](/article-management/images/de/mehrere-artikel-mit-teasertext.png)
+![Mehrere Artikel mit Teasertext](/de/article-management/images/de/mehrere-artikel-mit-teasertext.png)
 
 Die Zuweisung eines Artikels zu einem Layoutbereich erfolgt in den Artikeleinstellungen im Feld Anzeigen in. Die 
 Artikeleinstellungen erreichst du am schnellsten, über das Navigationssymbole 
-![Die Artikeleinstellungen bearbeiten](/icons/header.svg?classes=icon) **Die Artikeleinstellungen bearbeiten**.
+![Die Artikeleinstellungen bearbeiten](/de/icons/header.svg?classes=icon) **Die Artikeleinstellungen bearbeiten**.
 
 
 ## Artikelaliase

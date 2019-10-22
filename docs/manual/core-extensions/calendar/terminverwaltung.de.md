@@ -17,7 +17,7 @@ Archive werden zur Gruppierung und/oder Kategorisierung von Kalendern verwendet.
 bestimmte Sprache oder ein bestimmtes Thema beziehen.
 
 Um einen neuen Kalender anzulegen klicke auf 
-![Einen neuen Kalender erstellen](/icons/new.svg?classes=icon "Einen neuen Kalender erstellen") 
+![Einen neuen Kalender erstellen](/de/icons/new.svg?classes=icon "Einen neuen Kalender erstellen") 
 **Neu**.
 
 
@@ -125,8 +125,8 @@ Die URL lautet:
 </rss>
 ```
 
-Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten](/icons/rss.svg?classes=icon "RSS-Feeds verwalten") 
-**RSS-Feeds** und danach auf ![Einen neuen Feed erstellen](/icons/new.svg?classes=icon "Einen neuen Feed erstellen") 
+Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten") 
+**RSS-Feeds** und danach auf ![Einen neuen Feed erstellen](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen") 
 **Neu**.
 
 
@@ -169,8 +169,8 @@ daher gibt es hier keine Icons, mit denen du die Reihenfolge ändern könntest.
 Die Events bestehen aus den Einstellungen des Events (»Eventliste«) und aus deren Inhalten (»Eventleser«).
 
 Um einen neuen Event zu erstellen, klicke im gewünschten Archiv auf 
-![Kalender bearbeiten](/icons/edit.svg?classes=icon "Kalender bearbeiten") und danach auf 
-![Ein neues Event erstellen](/icons/new.svg?classes=icon "Ein neues Event erstellen") **Neu**.
+![Kalender bearbeiten](/de/icons/edit.svg?classes=icon "Kalender bearbeiten") und danach auf 
+![Ein neues Event erstellen](/de/icons/new.svg?classes=icon "Ein neues Event erstellen") **Neu**.
 
 
 ### Titel und Autor
@@ -226,7 +226,7 @@ gefolgt von einem Weiterlesen-Link, angezeigt wird.
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du es direkt im Popup-Fenster nachholen, ohne die Eingabemaske zu verlassen.
 
-![Einem Beitrag ein Bild hinzufügen](/core-extensions/calendar/images/de/einem-beitrag-ein-bild-hinzufuegen.png)
+![Einem Beitrag ein Bild hinzufügen](/de/core-extensions/calendar/images/de/einem-beitrag-ein-bild-hinzufuegen.png)
 
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
@@ -252,10 +252,10 @@ auswählen:
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird er 
-![oberhalb](/icons/above.svg?classes=icon) **oberhalb**, 
-![unterhalb](/icons/below.svg?classes=icon) **unterhalb**, 
-![linksbündig](/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/icons/right.svg?classes=icon) **rechtsbündig** eingefügt der Text umfließt das Bild.
+![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
+![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
+![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
+![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt der Text umfließt das Bild.
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.
@@ -351,8 +351,8 @@ Events automatisch zu einem bestimmten Datum zu aktivieren.
 
 Nachdem wir die Einstellungen für das Event vorgenommen haben, können wir diesem Inhaltselemente für die 
 Ausgabe im »Eventleser« mitgeben, klicke dazu beim gewünschten Event auf 
-![Event bearbeiten](/icons/edit.svg?classes=icon "Event bearbeiten")  und danach auf 
-![Ein neues Inhaltselement erstellen](/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **Neu**.
+![Event bearbeiten](/de/icons/edit.svg?classes=icon "Event bearbeiten")  und danach auf 
+![Ein neues Inhaltselement erstellen](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **Neu**.
 
 In den Events stehen dir alle [Inhaltselemente](../../../artikelverwaltung/inhaltselemente/) von Contao zur 
 Verfügung.

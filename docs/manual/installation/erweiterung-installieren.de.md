@@ -14,14 +14,14 @@ Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du d
 
 Du kannst auf der Website [extensions.contao.org](https://extensions.contao.org/) ein Erweiterung suchen.  
 
-![Erweiterungssuche auf extensions.contao.org](/installation/images/de/erweiterungssuche-extensions-contao-org.png)
+![Erweiterungssuche auf extensions.contao.org](/de/installation/images/de/erweiterungssuche-extensions-contao-org.png)
 
 
 ### Contao Manager
 
 Du kannst im Contao Manager deiner Installation eine Erweiterung suchen.  
 
-![Erweiterungssuche im Contao Manager](/installation/images/de/erweiterungssuche-im-contao-manager.png)
+![Erweiterungssuche im Contao Manager](/de/installation/images/de/erweiterungssuche-im-contao-manager.png)
 
 
 ### Kommandozeile
@@ -69,18 +69,18 @@ Du musst dich zunächst wieder am Contao Manager anmelden. Dazu rufst du erneut 
 Wenn du die Erweiterung »contao-easy_themes« installieren möchtest, gebe »EasyThemes« im Suchschlitz ein und klicke auf 
 »Hinzufügen«. Wiederhole die Suche, wenn du weitere Erweiterungen finden und zur Installation vormerken möchtest.
 
-![Erweiterungen im Contao Manager suchen](/installation/images/de/erweiterungen-im-contao-manager-suchen.png)
+![Erweiterungen im Contao Manager suchen](/de/installation/images/de/erweiterungen-im-contao-manager-suchen.png)
 
 Wechsle danach in den Reiter »Pakete« und klicke auf »Änderungen anwenden« un die Installation zu starten. Die 
 Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf 
-folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
+folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
 
-![Erweiterungen im Contao Manager installieren](/installation/images/de/erweiterungen-im-contao-manager-installieren.png)
+![Erweiterungen im Contao Manager installieren](/de/installation/images/de/erweiterungen-im-contao-manager-installieren.png)
 
 Sobald der Contao Manager die Erweiterungen installiert hat, musst du das [Contao-Installtool](../contao-installtool/) 
 aufrufen um die Datenbank zu aktualisieren.
 
-![Erweiterungen im Contao Manager installiert](/installation/images/de/erweiterungen-im-contao-manager-installiert.png)
+![Erweiterungen im Contao Manager installiert](/de/installation/images/de/erweiterungen-im-contao-manager-installiert.png)
 
 
 

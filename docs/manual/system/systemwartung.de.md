@@ -16,7 +16,7 @@ Wiederherstellen gelöschter Datensätze oder früherer Versionen verwendet werd
 bereinigen, um z. B. alte Vorschaubilder zu entfernen oder die XML-Sitemaps nach einer Änderung an der Seitenstruktur 
 zu aktualisieren.
 
-![Daten manuell bereinigen](/system/images/de/daten-manuell-bereinigen.png)
+![Daten manuell bereinigen](/de/system/images/de/daten-manuell-bereinigen.png)
 
 
 ## Suchindex neu aufbauen
@@ -26,7 +26,7 @@ musst du dich um den Suchindex normalerweise keine Gedanken machen. Wenn du alle
 aktualisiert hast, ist es bequemer, den Suchindex manuell neu aufzubauen, als alle geänderten Seiten einzeln im Browser 
 aufzurufen.
 
-![Den Suchindex automatisch aufbauen](/system/images/de/den-suchindex-automatisch-aufbauen.png)
+![Den Suchindex automatisch aufbauen](/de/system/images/de/den-suchindex-automatisch-aufbauen.png)
 
 
 ## Geschützte Seiten indizieren
