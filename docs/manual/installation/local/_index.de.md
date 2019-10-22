@@ -1,7 +1,7 @@
 ---
 title: "Lokale Installationen"
 description: "Hier lernst du alles, was du für die lokale Installation und Pflege von Contao wissen musst."
-url: "de/lokale-installation"
+url: "lokale-installation"
 weight: 100
 ---
 
