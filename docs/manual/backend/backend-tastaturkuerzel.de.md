@@ -2,7 +2,7 @@
 title: "Backend-Tastaturkürzel"
 description: "Um den Workflow bei der Arbeit mit Contao zu beschleunigen, gibt es im Backend etliche Tastaturkürzel, 
 mit denen sich bestimmte Befehle direkt aufrufen lassen."
-url: "de/administrationsbereich/backend-tastaturkuerzel"
+url: "administrationsbereich/backend-tastaturkuerzel"
 weight: 2
 ---
 

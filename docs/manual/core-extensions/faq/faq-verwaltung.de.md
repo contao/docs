@@ -2,7 +2,7 @@
 title: "FAQ-Verwaltung"
 description: "Die FAQ-Verwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« an vierter Stelle 
 findest."
-url: "de/core-erweiterung/faq/faq-verwaltung"
+url: "core-erweiterung/faq/faq-verwaltung"
 weight: 1
 ---
 
@@ -17,7 +17,7 @@ Kategorien werden zur Gruppierung von FAQs verwendet. Jede Kategorie kann sich a
 bestimmtes Thema beziehen.
 
 Um eine neue Kategorie anzulegen klicke auf 
-![Eine neue Kategorie anlegen](/icons/new.svg?classes=icon "Eine neue Kategorie anlegen") 
+![Eine neue Kategorie anlegen](/de/icons/new.svg?classes=icon "Eine neue Kategorie anlegen") 
 **Neu**.
 
 
@@ -80,10 +80,10 @@ angemeldeten Mitgliedern das Kommentieren erlauben möchtest, kannst du die Sich
 
 In diesem Abschnitt wird dir erklärt, wie du eine Frage anlegst. Die Reihenfolge der Fragen innerhalb einer Kategorie 
 kannst du per Drag-and-Drop mit den entsprechenden 
-Navigationssymbol ![Frage verschieben](/icons/drag.svg?classes=icon "Frage verschieben") festlegen.
+Navigationssymbol ![Frage verschieben](/de/icons/drag.svg?classes=icon "Frage verschieben") festlegen.
 
 Um eine neue Frage anzulegen, klicke auf 
-![Eine neue Frage erstellen](/icons/new.svg?classes=icon "Eine neue Frage erstellen") **Neu**.
+![Eine neue Frage erstellen](/de/icons/new.svg?classes=icon "Eine neue Frage erstellen") **Neu**.
 
 
 ### Titel und Autor
@@ -109,7 +109,7 @@ Text Editor.
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du es direkt im Popup-Fenster nachholen, ohne die Eingabemaske zu verlassen.
 
-![Einer FAQ ein Bild hinzufügen](/core-extensions/faq/images/de/einer-faq-ein-bild-hinzufuegen.png)
+![Einer FAQ ein Bild hinzufügen](/de/core-extensions/faq/images/de/einer-faq-ein-bild-hinzufuegen.png)
 
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
@@ -135,10 +135,10 @@ auswählen:
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird er 
-![oberhalb](/icons/above.svg?classes=icon) **oberhalb**, 
-![unterhalb](/icons/below.svg?classes=icon) **unterhalb**, 
-![linksbündig](/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/icons/right.svg?classes=icon) **rechtsbündig** eingefügt der Text umfließt das Bild.
+![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
+![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
+![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
+![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt der Text umfließt das Bild.
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.

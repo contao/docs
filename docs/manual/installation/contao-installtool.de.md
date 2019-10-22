@@ -20,7 +20,7 @@ sowieso nur über die Verwaltungssoftware (z. B. Confixx, Plesk oder cPanel) m�
 Verwaltungsoberfläche deines Servers auf, und lege dort eine neue Datenbank an. Gebe danach die Anmeldeinformationen
 für die Datenbank im Contao-Installtool ein.
 
-![Datenbankverbindung für Contao eingeben](/installation/images/de/datenbankverbindung-fuer-contao-eingeben.png)
+![Datenbankverbindung für Contao eingeben](/de/installation/images/de/datenbankverbindung-fuer-contao-eingeben.png)
 
 **Host:** Hier gibst du die Domain oder IP-Adresse des Datenbankservers ein.
 
@@ -40,7 +40,7 @@ vergleicht die darin enthaltenen Tabellen mit den Vorgaben der aktuellen Contao-
 notwendig, präsentiert dir das Installtool automatisch eine Liste der durchzuführenden Änderungen, die du bestätigen 
 oder ablehnen kannst.
 
-![Datenbankänderungen bestätigen](/installation/images/de/datenbankaenderungen-bestaetigen.png)
+![Datenbankänderungen bestätigen](/de/installation/images/de/datenbankaenderungen-bestaetigen.png)
 
 In der Regel solltest du die angebotenen Änderungen übernehmen, damit deine Tabellen immer auf dem neuesten Stand sind 
 und Contao später nicht versucht, auf fehlende Felder zuzugreifen. Bei einer neuen Installation ist die Liste der 
@@ -71,7 +71,7 @@ Beim Import eines Templates werden bestehende Daten überschrieben!
 Wenn du auf den Import eines Templates verzichtet hast, weil du beispielsweise eine neue Webseite mit Contao erstellen 
 möchtest, musst du einen Administrator-Benutzer anlegen, mit dem du dich später im Contao-Backend anmelden kannst.
 
-![Ein Administratorkonto anlegen](/installation/images/de/ein-administratorkonto-anlegen.png)
+![Ein Administratorkonto anlegen](/de/installation/images/de/ein-administratorkonto-anlegen.png)
 
 **Benutzername:** Hier legst du den Benutzernamen des Administrators fest.
 
@@ -98,7 +98,7 @@ automatisch gesperrt, wenn mehr als dreimal hintereinander ein falsches Passwort
 Du hast drei Möglichkeiten das Installtool zu entsperren:
 
 - Über den Contao Manager, indem du unter Systemwartung auf »Installtool entsperren« klickst.
-![Das Installtool zurücksetzen](/installation/images/de/das-installtool-zuruecksetzen.png)
+![Das Installtool zurücksetzen](/de/installation/images/de/das-installtool-zuruecksetzen.png)
 - Über die Kommandozeile, indem du im Hauptverzeichnis deiner Contao-Installation folgendes Kommando absetzt:
 
     ```bash

@@ -2,7 +2,7 @@
 title: "Formulargenerator"
 description: "Der Contao-Formulargenerator unterstützt dich bei der Erstellung von Formularen, indem er sowohl den 
 Prozess der Code-Generierung als auch die Validierung der Benutzereingaben abstrahiert."
-url: "de/formulargenerator"
+url: "formulargenerator"
 weight: 11
 ---
 

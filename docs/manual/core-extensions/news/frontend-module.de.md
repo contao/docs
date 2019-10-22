@@ -2,7 +2,7 @@
 title: "Frontend-Module"
 description: "Die Nachrichtenerweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
-url: "de/core-erweiterung/nachrichten/frontend-module"
+url: "core-erweiterung/nachrichten/frontend-module"
 weight: 2
 ---
 
@@ -10,7 +10,7 @@ Nachdem du nun weißt, wie Archive und Beiträge im Backend verwaltet werden, wi
 Inhalte im Frontend darstellen kannst. Die Nachrichtenerweiterung enthält vier neue Frontend-Module, die du wie 
 gewohnt über die Modulverwaltung konfigurieren kannst.
 
-![News/Blog-Module](/core-extensions/news/images/de/news-blog-module.png)
+![News/Blog-Module](/de/core-extensions/news/images/de/news-blog-module.png)
 
 
 ## Nachrichtenliste

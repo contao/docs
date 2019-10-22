@@ -2,7 +2,7 @@
 title: "Ein Suchformular erstellen"
 description: "Du kannst den Formulargenerator dazu nutzen, um ein eigenes Suchformular zu erstellen und dieses 
 beispielsweise in der Kopfzeile deiner Webseite einzubinden."
-url: "de/formulargenerator/ein-suchformular-erstellen"
+url: "formulargenerator/ein-suchformular-erstellen"
 weight: 3
 --- 
 

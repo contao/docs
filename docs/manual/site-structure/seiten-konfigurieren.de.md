@@ -2,7 +2,7 @@
 title: "Seiten konfigurieren"
 description: "Nachdem du die richtigen Seitentypen für deine Seiten ausgewählt hast, kannst du diese deinen 
 Anforderungen entsprechend konfigurieren. Die Einstellungsmöglichkeiten variieren dabei je nach Seitentyp."
-url: "de/seitenstruktur/seiten-konfigurieren"
+url: "seitenstruktur/seiten-konfigurieren"
 weight: 2
 ---
 
@@ -186,7 +186,7 @@ Benutzergruppe Nachrichten. Sowohl der Benutzer als auch alle Mitglieder der Ben
 dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite 
 an sich bearbeiten und z. B. den Seitentitel ändern.
 
-![Zugriffsrechte zuweisen](/site-structure/images/de/zugriffsrechte-zuweisen.png)
+![Zugriffsrechte zuweisen](/de/site-structure/images/de/zugriffsrechte-zuweisen.png)
 
 **Zugriffsrechte zuweisen:** Hier kannst du einer Seite Zugriffsrechte zuweisen. Wenn du die Option nicht auswählst, 
 werden die Zugriffsrechte von einer übergeordneten Seite geerbt.

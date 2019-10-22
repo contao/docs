@@ -2,7 +2,7 @@
 title: "Das Contao-Netzwerk"
 description: "Über die Jahre sind etliche Webseiten und Artikel zu Contao entstanden, teilweise in Absprache mit dem 
 Contao-Team, teilweise vollkommen autark."
-url: "de/einleitung/das-contao-netzwerk"
+url: "einleitung/das-contao-netzwerk"
 weight: 2
 ---
 
@@ -24,7 +24,7 @@ um das System kennenzulernen. Aus diesem Grund sind alle wichtigen Informationen
 von der Funktionsübersicht über die News bis hin zur Online-Demo, den Veranstaltungen, den Fallstudien und dem 
 Contao-Team.
 
-![Die Contao-Projektwebseite](/introduction/images/de/die-contao-projektwebseite.png)
+![Die Contao-Projektwebseite](/de/introduction/images/de/die-contao-projektwebseite.png)
 
 Nachdem der Benutzer vom System überzeugt ist, wird er es in aller Regel herunterladen und selbst installieren wollen. 
 Folglich ist `Download` die nächste Kategorie. Neben den Programm-Downloads findest du im Bereich Media das Contao-Logo 
@@ -65,7 +65,7 @@ die Entwicklung so wichtig ist, wird diese transparent auf der Plattform
 über Tickets, welche mit dem Label »up for discussion« gekennzeichnet wurden, 
 austauschen.
 
-![Die Entwicklungsumgebung](/introduction/images/de/die-entwicklungsumgebung.png)
+![Die Entwicklungsumgebung](/de/introduction/images/de/die-entwicklungsumgebung.png)
 
 Im Bereich `Code` findest du einen Überblick über die Commits (Übergabe), die Branches (Zweige), die Releases 
 (Veröffentlichungen) und die Contributors (Beitragenden).
@@ -103,4 +103,4 @@ Wenn du die Menschen, die du in dieser virtuellen Welt kennenlernst, einmal in d
 du das auf der Konferenz, am Camp oder bei den verschiedenen Stammtischen tun. Eine Liste der Veranstaltungen findest 
 du auf der [Projekt-Webseite](https://contao.org/de/veranstaltungen.html).
 
-![Die deutschsprachige Contao-Community](/introduction/images/de/die-deutschsprachige-contao-community.png)
+![Die deutschsprachige Contao-Community](/de/introduction/images/de/die-deutschsprachige-contao-community.png)

@@ -2,7 +2,7 @@
 title: "Aufruf und Aufbau des Backends"
 description: "Im Administrationsbereich, dem sogenannten Backend, kannst du alle Arbeiten im Zusammenhang mit der 
 Verwaltung deiner Webseite erledigen. "
-url: "de/administrationsbereich/aufruf-und-aufbau-des-backends"
+url: "administrationsbereich/aufruf-und-aufbau-des-backends"
 weight: 1
 ---
 
@@ -17,7 +17,7 @@ vollständige Adresse sieht dann so aus:
 Gebe deinen `Benutzernamen` un dein `Passwort` ein. Die im Internetbrowser voreingestellte Sprache wird auch fürs
 Backend verwendet. Bestätige deine Eingaben mit einem Klick auf die Schaltfläche `Weiter`. 
 
-![Anmeldung im Contao-Backend](/backend/images/de/contao-backend-anmeldung.png)
+![Anmeldung im Contao-Backend](/de/backend/images/de/contao-backend-anmeldung.png)
 
 Die Backend-Anmeldung ist mit einem Zeitverzögerungsmechanismus gegen [Brute-Force-
 Attacken](https://de.wikipedia.org/wiki/Brute-Force-Methode) geschützt. Wenn du mehr als dreimal hintereinander ein
@@ -31,7 +31,7 @@ gefunden hat.
 Das Backend ist in drei Bereiche unterteilt. Oben befindet sich der Infobereich, auf der linken Seite die Navigation und
 auf der rechten der Arbeitsbereich.
 
-![Aufteilung des Contao-Backends](/backend/images/de/contao-backend-aufteilung.png)
+![Aufteilung des Contao-Backends](/de/backend/images/de/contao-backend-aufteilung.png)
 
 
 ### Der Infobereich

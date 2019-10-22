@@ -9,14 +9,14 @@ Bisher haben wir ausschließlich als Administrator gearbeitet, der auf alle Bere
 darf. Ein Benutzer wird in der Regel aber nur Zugriff auf die Ressourcen erhalten, die er für eine bestimmte 
 Aufgabe tatsächlich benötigt.
 
-![Das Backend aus Sicht des Benutzers](/user-management/images/de/das-backend-aus-sicht-des-benutzers.png)
+![Das Backend aus Sicht des Benutzers](/de/user-management/images/de/das-backend-aus-sicht-des-benutzers.png)
 
 Normale Benutzer haben im Gegensatz zu Administratoren standardmäßig überhaupt keine Rechte und dürfen grundsätzlich 
 nur das tun, was du ihnen explizit erlaubst. Die sehr umfassende Rechteverwaltung in Contao ermöglicht es dir als 
 Administrator nicht nur, den Zugriff auf bestimmte Backend-Module einzuschränken, sondern bei Bedarf jedes einzelne
 Eingabefeld abzuschalten.
 
-![Einzelne Eingabefelder freischalten](/user-management/images/de/einzelne-eingabefelder-freischalten.png)
+![Einzelne Eingabefelder freischalten](/de/user-management/images/de/einzelne-eingabefelder-freischalten.png)
 
 ## Benutzergruppen
 
@@ -52,13 +52,13 @@ dürfen vgl. [Seitentypen](../../seitenstruktur/seiten-als-zentrale-elemente/#s
 Analog zum Pagemount, der den Einstiegspunkt in die Seitenstruktur bestimmt, legt der Filemount den Einstiegspunkt in 
 das Dateisystem fest. Auf Ordner außerhalb des Filemount kann der Benutzer nicht zugreifen.
 
-![Filemounts des Benutzers](/user-management/images/de/filemounts-des-benutzers.png)
+![Filemounts des Benutzers](/de/user-management/images/de/filemounts-des-benutzers.png)
 
 Der Benutzer sieht also nur die Ordner `files/public/media/content-images`, `files/public/media/documents` sowie 
 `files/public/media/slider` und alle eventuell darin enthaltenen Unterordner. Alle übrigen Verzeichnisse, die sich 
 auf derselben oder einer übergeordneten Ebene befinden, werden nicht angezeigt
 
-![Die Dateiverwaltung aus Sicht des Benutzers](/user-management/images/de/die-dateiverwaltung-aus-sicht-des-benutzers.png)
+![Die Dateiverwaltung aus Sicht des Benutzers](/de/user-management/images/de/die-dateiverwaltung-aus-sicht-des-benutzers.png)
 
 **Filemounts:** Hier wählst du die Filemounts der Gruppe aus.
 
@@ -283,7 +283,7 @@ In Abschnitt [Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriff
 dass jede Seite einem bestimmten Benutzer und einer bestimmten Gruppe gehört und dass es darauf basierend verschiedene 
 Zugriffsebenen gibt.
 
-![Zugriffsrechte einer Seite](/user-management/images/de/zugriffsrechte-einer-seite.png)
+![Zugriffsrechte einer Seite](/de/user-management/images/de/zugriffsrechte-einer-seite.png)
 
 Diese Seite gehört z. B. dem Benutzer `Helen Lewis`, der sie und die darin enthaltenen Artikel bearbeiten, verschieben 
 oder löschen darf. Andere Benutzer der Gruppe Nachrichten dürfen lediglich die Artikel bearbeiten, nicht aber die Seite 
@@ -293,4 +293,4 @@ Du musst also die Seiten, die ein Benutzer bearbeiten soll oder auf denen er Art
 Zugriffsrechten versehen und sie entweder dem Benutzer oder seiner Gruppe zuweisen. Damit schaffst du die 
 Voraussetzungen dafür, dass ein Benutzer die entsprechenden Navigationssymbole anklicken kann.
 
-![Die Seitenstruktur ohne zugewiesene Zugriffsrechte](/user-management/images/de/die-seitenstruktur-ohne-zugewiesene-zugriffsrechte.png)
+![Die Seitenstruktur ohne zugewiesene Zugriffsrechte](/de/user-management/images/de/die-seitenstruktur-ohne-zugewiesene-zugriffsrechte.png)

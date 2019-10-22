@@ -2,7 +2,7 @@
 title: "Downloads kontrollieren"
 description: "Mit Contao kannst du ganz einfach den Zugriff auf bestimmte Dateien beschränken und genau festlegen, wer 
 diese herunterladen darf und wer nicht."
-url: "de/dateiverwaltung/downloads-kontrollieren"
+url: "dateiverwaltung/downloads-kontrollieren"
 weight: 3
 ---
 
@@ -17,13 +17,13 @@ Wenn du in Contao einen neuen Ordner anlegst, ist dieser standardmäßig inklusi
 Möchtest du ein Verzeichnis schützen, musst du beim Anlegen des Ordners darauf achten, dass »Öffentlich« nicht 
 ausgewählt ist. Ist ein Verzeichnis öffentlich, können die darin befindlichen Ordner und Dateien nicht geschützt werden.
 
-![Verzeichnis schützen](/file-manager/images/de/verzeichnis-schuetzen.png)
+![Verzeichnis schützen](/de/file-manager/images/de/verzeichnis-schuetzen.png)
 
 Ist ein Ordner öffentlich wird unter `web/files/` ein 
 [Symlink](https://de.wikipedia.org/wiki/Symbolische_Verkn%C3%BCpfung) in das Verzeichnis `files` gesetzt. 
 Ohne diese Symlinks wären die Daten für Besucher nicht erreichbar.
 
-![nicht öffentlicher Ordner](/file-manager/images/de/nicht-oeffentlicher-ordner.png)
+![nicht öffentlicher Ordner](/de/file-manager/images/de/nicht-oeffentlicher-ordner.png)
 
 Ist der Ordner nicht öffentlich kann nun niemand mehr mit seinem Internetbrowser auf die Dateien zugreifen und sie 
 direkt herunterladen. Über die Inhaltselemente »Download« bzw. »Downloads« sind die Dateien aber weiterhin erreichbar.
@@ -40,7 +40,7 @@ diese Inhaltselemente eingeschränkt hast, können jetzt nur noch angemeldete Mi
 Schutz lässt sich durch verschiedene Mitgliedergruppen und unterschiedliche Download-Elemente beliebig weiter 
 verfeinern.
 
-![Inhaltselemente Downloads](/file-manager/images/de/inhaltselemente-downloads.png)
+![Inhaltselemente Downloads](/de/file-manager/images/de/inhaltselemente-downloads.png)
 
 
 **HTML-Ausgabe**  

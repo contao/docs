@@ -1,7 +1,7 @@
 ---
 title: "Kalender-Erweiterung"
 description: "Damit können im Backend zukünftige und vergangene Veranstaltungen verwaltet werden."
-url: "de/core-erweiterung/kalender"
+url: "core-erweiterung/kalender"
 weight: 2
 ---
 

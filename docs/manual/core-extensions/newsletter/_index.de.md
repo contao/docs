@@ -1,7 +1,7 @@
 ---
 title: "Newsletter-Erweiterung"
 description: "Damit können im Backend Newsletter und verschiedene Empfängerlisten verwaltet werden."
-url: "de/core-erweiterung/newsletter"
+url: "core-erweiterung/newsletter"
 weight: 4
 ---
 

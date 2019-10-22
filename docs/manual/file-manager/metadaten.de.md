@@ -1,7 +1,7 @@
 ---
 title: "Metadaten"
 description: "In Contao kannst du zu jeder Art von Datei sogenannte Metadaten erfassen."
-url: "de/dateiverwaltung/metadaten"
+url: "dateiverwaltung/metadaten"
 weight: 2
 ---
 
@@ -16,7 +16,7 @@ Contao unterstützt folgende Metadaten:
 - Link
 - Bildunterschrift
 
-![Pflegen der Metadaten](/file-manager/images/de/pflegen-der-metadaten.png)
+![Pflegen der Metadaten](/de/file-manager/images/de/pflegen-der-metadaten.png)
 
 **HTML-Ausgabe**  
 Das Inhaltselement vom Elementtyp »Bild« generiert folgenden HTML-Code:

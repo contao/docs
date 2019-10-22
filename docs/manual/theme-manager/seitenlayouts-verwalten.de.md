@@ -30,10 +30,10 @@ anderem das Firmenlogo und in der Fußzeile Informationen zum Copyright und ein 
 
 **Zeilen**: Hier fügst du dem Layout eine Kopfzeile und Fusszeile hinzu.
 
-![Keine Kopf- und Fusszeile](/icons/1rw.svg?classes=icon "Keine Kopf- und Fusszeile")
-![Kopfzeile hinzufügen](/icons/2rwh.svg?classes=icon "Kopfzeile hinzufügen")
-![Fusszeile hinzufügen](/icons/2rwf.svg?classes=icon "Fusszeile hinzufügen")
-![Kopf- und Fusszeile hinzufügen](/icons/3rw.svg?classes=icon "Kopf- und Fusszeile hinzufügen")
+![Keine Kopf- und Fusszeile](/de/icons/1rw.svg?classes=icon "Keine Kopf- und Fusszeile")
+![Kopfzeile hinzufügen](/de/icons/2rwh.svg?classes=icon "Kopfzeile hinzufügen")
+![Fusszeile hinzufügen](/de/icons/2rwf.svg?classes=icon "Fusszeile hinzufügen")
+![Kopf- und Fusszeile hinzufügen](/de/icons/3rw.svg?classes=icon "Kopf- und Fusszeile hinzufügen")
 
 **Höhe der Kopfzeile**: Hier kannst du die Höhe der Kopfzeile festlegen.
 
@@ -47,10 +47,10 @@ vorgeben, die Hauptspalte passt sich jeweils automatisch an.
 
 **Spalten**: Hier wählst du die Anzahl der Spalten deines Seitenlayouts aus.
 
-![Keine Spalten](/icons/1cl.svg?classes=icon "Keine Spalten")
-![Linke Spalte hinzufügen](/icons/2cll.svg?classes=icon "Linke Spalte hinzufügen")
-![Rechte Spalte hinzufügen](/icons/2clr.svg?classes=icon "Rechte Spalte hinzufügen")
-![Linke und rechte Spalte hinzufügen](/icons/3cl.svg?classes=icon "Linke und rechte Spalte hinzufügen")
+![Keine Spalten](/de/icons/1cl.svg?classes=icon "Keine Spalten")
+![Linke Spalte hinzufügen](/de/icons/2cll.svg?classes=icon "Linke Spalte hinzufügen")
+![Rechte Spalte hinzufügen](/de/icons/2clr.svg?classes=icon "Rechte Spalte hinzufügen")
+![Linke und rechte Spalte hinzufügen](/de/icons/3cl.svg?classes=icon "Linke und rechte Spalte hinzufügen")
 
 **Breite der linken Spalte**: Hier legst du die Breite der linken Spalte fest.
 
@@ -169,7 +169,7 @@ Seitenlayouts gemeint, sondern das `<head>`-Tag des HTML-Quelltextes.
 In dieser Sektion weist du den einzelnen Layoutbereichen die Frontend-Module zu, die auf der Seite dargestellt werden 
 sollen. Die Module jedes Layoutbereichs werden in der von dir festgelegten Reihenfolge untereinander angeordnet.
 
-![Frontend-Module der Contao Official Demo](/theme-manager/images/de/frontend-module-der-contao-official-demo.png)
+![Frontend-Module der Contao Official Demo](/de/theme-manager/images/de/frontend-module-der-contao-official-demo.png)
 
 **Eingebundene Module:** Hier wählst du die Module für das Seitenlayout aus.
 

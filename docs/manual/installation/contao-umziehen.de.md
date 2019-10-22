@@ -19,7 +19,7 @@ Ein MySQL-Dump lässt sich am einfachsten mit der Datenbankverwaltung »[phpMyAd
 erstellen. Melde dich in »phpMyAdmin« an, wähle die zu exportierende Datenbank und klicke die 
 »Export«-Schaltfläche im oberen Menü.
 
-![Datenbank exportieren](/installation/images/de/datenbank-exportieren.png)
+![Datenbank exportieren](/de/installation/images/de/datenbank-exportieren.png)
 
 ### Datenbank auf dem Live-Server importieren
 
@@ -28,7 +28,7 @@ eventuell nur über die Verwaltungsoberfläche (z. B. Confixx, Plesk oder cPanel
 aus und klicke auf die »Import«-Schaltfläche im oberen Menü. Lade dann den SQL-Dump der lokalen Datenbank hoch und 
 starte den Import.
 
-![Datenbank importieren](/installation/images/de/datenbank-importieren.png)
+![Datenbank importieren](/de/installation/images/de/datenbank-importieren.png)
 
 
 ### Contao Manager auf dem Live-Server installieren
@@ -61,13 +61,13 @@ Wenn du auf die Schaltfläche »Installieren« klickst, führt der Manager im Hi
 installiert Contao und die von dir in der lokalen Installation verwendeten Erweiterungen.
 
 
-![Composer-Abhängigkeiten installieren](/installation/images/de/composer-abhaengigkeiten-installieren.png)
+![Composer-Abhängigkeiten installieren](/de/installation/images/de/composer-abhaengigkeiten-installieren.png)
 
 Die Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf 
-folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/icons/konsolenausgabe.png?classes=icon) angezeigt 
+folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
 werden.
 
-![Umbzug abgeschlossen](/installation/images/de/umzug-abgeschlossen.png)
+![Umbzug abgeschlossen](/de/installation/images/de/umzug-abgeschlossen.png)
 
 Öffne danach das [Contao-Installtool](../contao-installtool/), und gebe die Zugangsdaten zur neuen Datenbank an.
 

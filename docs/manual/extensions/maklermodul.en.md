@@ -11,6 +11,6 @@ _Project website under [Broker module for Contao] (https://maklermodul.de)_
 
 The broker module for estate agents is a paid extension for the Contao CMS.
 
-![Broker list view in frontend](/extensions/images/de/maklermodul-bundle-frontend.png)
+![Broker list view in frontend](/de/extensions/images/de/maklermodul-bundle-frontend.png)
 
 Detailed instructions can be found in the [manual](https://docs.pdir.de/#/maklermodul/index).

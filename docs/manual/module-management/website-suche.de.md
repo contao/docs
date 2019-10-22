@@ -2,7 +2,7 @@
 title: "Website-Suche"
 description: "Contao indiziert die Seiten deiner Webpräsenz automatisch, sobald sie aufgerufen werden, und speichert 
 die darauf zu findenden Wörter als Suchbegriffe in einer Tabelle in der Datenbank."
-url: "de/modulverwaltung/website-suche"
+url: "modulverwaltung/website-suche"
 weight: 3
 ---
 
@@ -10,7 +10,7 @@ Contao indiziert die Seiten deiner Webpräsenz automatisch, sobald sie aufgerufe
 findenden Wörter als Suchbegriffe in einer Tabelle in der Datenbank. Das Suchmodul durchsucht diese Tabelle und liefert 
 die Seiten zurück, die den gesuchten Begriff bzw. die gesuchten Begriffe enthalten.
 
-![Die On-Site-Suche im Frontend](/module-management/images/de/die-on-site-suche-im-frontend.png)
+![Die On-Site-Suche im Frontend](/de/module-management/images/de/die-on-site-suche-im-frontend.png)
 
 Beachte jedoch, dass deine Webseite aus Sicherheitsgründen nicht indiziert wird, wenn du im Backend angemeldet bist und 
 die Frontend-Vorschau aufrufst. Es könnte ja sein, dass sich dort noch nicht veröffentlichte Inhalte befinden, die vor 

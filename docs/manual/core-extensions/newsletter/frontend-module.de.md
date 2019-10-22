@@ -2,7 +2,7 @@
 title: "Frontend-Module"
 description: "Die Newsletter-Erweiterung enthält vier zusätzliche Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
-url: "de/core-erweiterung/newsletter/frontend-module"
+url: "core-erweiterung/newsletter/frontend-module"
 weight: 2
 ---
 
@@ -11,7 +11,7 @@ deine Besucher Verteiler im Frontend abonnieren bzw. kündigen können und wie 
 anzeigt. Die Newsletter-Erweiterung enthält vier zusätzliche Frontend-Module, die du wie gewohnt über die Modulverwaltung
 konfigurieren kannst.
 
-![Newsletter-Module](/core-extensions/newsletter/images/de/newsletter-module.png)
+![Newsletter-Module](/de/core-extensions/newsletter/images/de/newsletter-module.png)
 
 
 ## Abonnieren
