@@ -112,9 +112,7 @@ Every file needs at least the following [hugo front matter](https://gohugo.io/co
 
 ### GitHub only workflow 
 
-All you need to contribute to the documentation is a GitHub account. There are no further installations necessary. This approach is handy for changing existing content, for example to change spelling mistakes. If you want to create new content we recommend the "Local Workflow".
-
-First step is to [fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the [Contao docs repo](https://github.com/contao/docs) (recommended). As an alternative, you could also edit the markdown files directly in the [Contao docs repo](https://github.com/contao/docs) and save your changes with a comment. GitHub will then automatically create a fork and a new branch with your changes in your repository (named "patch-1" for example).
+All you need to contribute to the documentation is a GitHub account. There are no further installations necessary. First step is to [fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the [Contao docs repo](https://github.com/contao/docs) (recommended). As an alternative, you could also edit the markdown files directly in the [Contao docs repo](https://github.com/contao/docs) and save your changes with a comment. GitHub will then automatically create a fork and a new branch with your changes in your repository (named "patch-1" for example).
 
 Eiher way, switch to your repository and branch and make a pull request. If your changes are taken over by the Contao team, you will receive corresponding information.
 
