@@ -93,9 +93,10 @@ This should contain specific examples and use cases on how to use and implement 
 
 ## Some notes about your markdown contribution
 
-* The paths and filenames should be in English
-* Consider that all markdown headings are taken over in the page navigation of the documentation
-
+* All paths and filenames should be in English.
+* Consider that all markdown headings are added to the navigation. Write your headings accordingly.
+* Do not try to embed external images or reuse already existing images from other articles. External images might
+  be removed over time and the same applies for images of other articles.
 
 ## The Hugo front matter variables
 
