@@ -2,7 +2,7 @@
 title: "Insert-Tags"
 description: "Insert-Tags sind Platzhalter, die bei der Ausgabe einer Seite durch bestimmte Werte ersetzt werden."
 url: "artikelverwaltung/insert-tags"
-weight: 3
+weight: 30
 ---
 
 Insert-Tags sind Platzhalter, die bei der Ausgabe einer Seite durch bestimmte Werte ersetzt werden. Mit Insert-Tags 
