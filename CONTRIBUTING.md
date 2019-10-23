@@ -107,12 +107,13 @@ Every file needs at least the following [Hugo front matter](https://gohugo.io/co
 * `menuTitle` (optional): The optional menuTitle entry reflects an alternative entry in the main left navigation of the documentation. This is especially helpful if the original title is too long for the navigation.
 
 
-## GitHub only workflow 
+## Making changes
 
-All you need to contribute to the documentation is a GitHub account. There are no further installations necessary. You can edit the markdown files directly in the [Contao docs repo](https://github.com/contao/docs) and save your changes with a comment. GitHub will then automatically create a fork and a new branch with your changes in your repository (named "patch-1" for example).
+If you want to contribte changes to a page, simply use the "Edit this page" link 
+at the top right of the documentation. Given that you have a GitHub account and 
+are logged in, GitHub will automatically create a fork where you can create your 
+changes in the respective markdown file. After comitting your changes, GitHub will 
+offer you to create a Pull Request. 
 
-Switch to your repository and branch and make a pull request. If your changes are taken over by the Contao team, you will receive corresponding information.
-
-If the Contao team does not want to accept your changes without further actions, switch to the appropriate branch of your forked repository and change the content accordingly. 
-
-It is also possible that the Contao team leave some direct suggestions in the PR (see: [Allowing changes to a pull request branch created from a fork](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork)). If you agree with the proposal you can commit one or more of the suggestions within the PR (see: [Incorporating feedback in your pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request)). Your commits are then taken over to your forked repository.
+When changes to your Pull Request are requested, you can directly edit the files 
+within the Pull Request.
