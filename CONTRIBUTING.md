@@ -87,3 +87,33 @@ This part of the development documentation should be a full reference of all ava
 #### Cookbook
 
 This should contain specific examples and use cases on how to use and implement the previously mentioned topics.
+
+
+## Some notes about your markdown contribution
+
+* The paths and filenames should be in English
+* Consider that all markdown headings are taken over in the page navigation of the documentation
+* Use images by copying existing or create new ones only
+
+
+## The Hugo front matter variables
+
+Every file needs at least the following [Hugo front matter](https://gohugo.io/content-management/front-matter/) variables on top of your markdown content:
+
+* `title`: A title for the file (language specific). This entry reflects the main left navigation of the documentation also.
+* `description`: The content description (language specific).
+* `url`: The url path to build (language specific). This should only be used if you want the path to be different from the physical path e.g. for the German translation.
+* `weight`: Used for the sorting order in the left main navigation of the documentation. The weight might not be necessary everywhere. It's only necessary, when files need to be sorted by something other than the default sorting (i.e. sorted by name).
+* `menuTitle` (optional): The optional menuTitle entry reflects an alternative entry in the main left navigation of the documentation. This is especially helpful if the original title is too long for the navigation.
+
+
+## Making changes
+
+If you want to contribte changes to a page, simply use the "Edit this page" link 
+at the top right of the documentation. Given that you have a GitHub account and 
+are logged in, GitHub will automatically create a fork where you can create your 
+changes in the respective markdown file. After comitting your changes, GitHub will 
+offer you to create a Pull Request. 
+
+When changes to your Pull Request are requested, you can directly edit the files 
+within the Pull Request.
