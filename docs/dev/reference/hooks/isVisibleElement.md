@@ -15,9 +15,10 @@ visibility state as arguments and expects the new visibility state as return val
 
 ## Parameters
 
-1. *Database_Result* `$element`
+1. *\Contao\Model* `$element`
 
-    The database result from table `tl_article` or `tl_content` or `tl_module`.
+    The database result from table `tl_article` or `tl_content` or `tl_module` as a
+    Contao Model object.
 
 2. *boolean* `$isVisible`
 
@@ -37,6 +38,7 @@ Return `false` if the element should not be visible in the front end.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Model;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class IsVisibleElementListener implements ServiceAnnotationInterface
@@ -44,7 +46,7 @@ class IsVisibleElementListener implements ServiceAnnotationInterface
     /**
      * @Hook("isVisibleElement")
      */
-    public function onIsVisibleElement($element, bool $isVisible): bool
+    public function onIsVisibleElement(Model $element, bool $isVisible): bool
     {
         if ($element instanceof \Contao\ContentModel) {
             // Check if this content element can be shown
