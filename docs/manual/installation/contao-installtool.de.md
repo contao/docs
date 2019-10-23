@@ -2,7 +2,8 @@
 title: "Contao-Installtool"
 description: "Mit dem Contao-Installtool kannst du eine Datenbankverbindung herstellen, Tabellen aktualisieren, ein 
 Template importieren und ein Administratorkonto anlegen."
-weight: 9
+url: "installation/contao-installtool"
+weight: 90
 ---
 
 Rufe in deinem Internetbrowser die URL deiner Contao-Installation auf, und hängen `/contao/install` hinten 

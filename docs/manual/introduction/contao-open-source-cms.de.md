@@ -3,7 +3,7 @@ title: "Contao Open Source CMS"
 description: "Es handelt sich um ein CMS, also ein Content Management System, das unter einer Open Source-Lizenz steht 
 und Contao heißt."
 url: "einleitung/contao-open-source-cms"
-weight: 1
+weight: 10
 ---
 
 »Contao Open Source CMS« ist der offizielle, vollständige Name des Projekts, und er sagt alles aus, was man beim 

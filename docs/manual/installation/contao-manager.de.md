@@ -2,7 +2,8 @@
 title: "Über den Contao Manager"
 description: "Der Contao Manager ist ein Tool, welches eine grafische Oberfläche zur einfachen Verwaltung einer 
 Contao-Installation bietet."
-weight: 2
+url: "installation/contao-manager"
+weight: 20
 ---
 
 Die Entwicklung des Contao Managers wird durch die [Contao Association](https://association.contao.org/) unterstützt.
