@@ -14,7 +14,7 @@ Verwendung mehrerer Verteiler können die einzelnen Newsletter nach Thema oder S
 ## Verteiler
 
 Um einen neuen Verteiler anzulegen klicke auf 
-![Einen neuen Verteiler erstellen](/icons/new.svg?classes=icon "Einen neuen Verteiler erstellen") **Neu**.
+![Einen neuen Verteiler erstellen](/de/icons/new.svg?classes=icon "Einen neuen Verteiler erstellen") **Neu**.
 
 
 ### Titel und Weiterleitung
@@ -52,8 +52,8 @@ Wir empfehlen den Versand über das [E-Mail-Transportprotkoll (SMTP)](../../syst
 Newsletter werden grundsätzlich nach ihrem Versanddatum sortiert.
 
 Um einen neuen Newsletter anzulegen klicke auf 
-![Verteiler bearbeiten](/icons/edit.svg?classes=icon "Verteiler bearbeiten") und danach auf 
-![Einen neuen Newsletter erstellen](/icons/new.svg?classes=icon "Einen neuen Newsletter erstellen") 
+![Verteiler bearbeiten](/de/icons/edit.svg?classes=icon "Verteiler bearbeiten") und danach auf 
+![Einen neuen Newsletter erstellen](/de/icons/new.svg?classes=icon "Einen neuen Newsletter erstellen") 
 **Neu**.
 
 
@@ -178,17 +178,17 @@ dass du als Administrator in den Prozess eingreifen musst. Trotzdem hast du natu
 Empfänger manuell zu ändern. Aus Gründen des Datenschutzes werden jeweils nur die E-Mail-Adresse und der
 Aktivierungsstatus gespeichert.
 
-![Einen Empfänger bearbeiten](/core-extensions/newsletter/images/de/einen-empfaenger-bearbeiten.png)
+![Einen Empfänger bearbeiten](/de/core-extensions/newsletter/images/de/einen-empfaenger-bearbeiten.png)
 
 Gemäß des [Double Opt-In-Verfahrens](https://de.wikipedia.org/wiki/Opt-In) erhält jeder Abonnent bei der Bestellung 
 eine E-Mail mit einem Bestätigungslink, ohne den er sein Abonnement nicht abschließen kann. Damit wird den Bestimmungen 
 des §7 Absatz 2 Nummer 2 und 3 des Gesetzes gegen den unlauteren Wettbewerb (UWG) hinreichend Genüge getan.
 
 Um einen Abonnenten des Verteilers zu bearbeiten, klicke auf 
-![Abonnenten des Verteilers bearbeiten](/icons/mgroup.svg?classes=icon "Abonnenten des Verteilers bearbeiten") 
+![Abonnenten des Verteilers bearbeiten](/de/icons/mgroup.svg?classes=icon "Abonnenten des Verteilers bearbeiten") 
 und danach auf 
-![Einen neuen Abonnenten erstellen](/icons/new.svg?classes=icon "Einen neuen Abonnenten erstellen") 
-**Neu** oder ![Abonnent bearbeiten](/icons/edit.svg?classes=icon "Abonnent bearbeiten").
+![Einen neuen Abonnenten erstellen](/de/icons/new.svg?classes=icon "Einen neuen Abonnenten erstellen") 
+**Neu** oder ![Abonnent bearbeiten](/de/icons/edit.svg?classes=icon "Abonnent bearbeiten").
 
 **E-Mail-Adresse:** Gebe hier die E-Mail-Adresse des Empfängers ein.
 
@@ -209,7 +209,7 @@ Zeilenumbrüche als Feldtrenner.
 
 Wähle die Datei für den Import auf deinem Rechner aus.
 
-![Newsletter-Empfänger importieren](/core-extensions/newsletter/images/de/newsletter-empfaenger-importieren.png)
+![Newsletter-Empfänger importieren](/de/core-extensions/newsletter/images/de/newsletter-empfaenger-importieren.png)
 
 Starte den Import anschließend durch einen Klick auf die Schaltfläche `CSV-Import`.
 
@@ -217,12 +217,12 @@ Starte den Import anschließend durch einen Klick auf die Schaltfläche `CSV-Imp
 ## Newsletter versenden
 
 Die Versendung eines Newsletters leitest du über das entsprechende Navigationssymbol 
-![Newsletter versenden](/icons/send.svg?classes=icon "Newsletter versenden") in der Verteiler-Übersicht ein. 
+![Newsletter versenden](/de/icons/send.svg?classes=icon "Newsletter versenden") in der Verteiler-Übersicht ein. 
 Du gelangst zunächst zu einer Vorschauseite, auf der du die Konfiguration und den Inhalt des Newsletters noch einmal 
 prüfen kannst. Es wird zudem empfohlen, regen Gebrauch von der Schaltfläche `Testsendung` zu machen. Die 
 dazugehörige Empfängeradresse kannst du im Feld `Testsendung an` ändern.
 
-![Einen Newsletter versenden](/core-extensions/newsletter/images/de/einen-newsletter-versenden.png)
+![Einen Newsletter versenden](/de/core-extensions/newsletter/images/de/einen-newsletter-versenden.png)
 
 
 ### Serverlimits einkalkulieren
@@ -264,4 +264,4 @@ NEWSLETTER_X, wobei das X für die ID des jeweiligen Newsletters steht. Die Gesa
 du dem Feld <code>Anzeigen</code>. Waren es z. B. 120 Mails, gib "120" ein, um mit dem 121. Empfänger 
 fortzufahren (die Zählung beginnt bei 0).
 
-![Unterbrochene Versendungen wiederaufnehmen](/core-extensions/newsletter/images/de/unterbrochene-versendungen-wiederaufnehmen.png)
+![Unterbrochene Versendungen wiederaufnehmen](/de/core-extensions/newsletter/images/de/unterbrochene-versendungen-wiederaufnehmen.png)

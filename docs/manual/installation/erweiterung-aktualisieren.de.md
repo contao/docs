@@ -14,9 +14,9 @@ Wenn du die Erweiterung »contao-easy_themes« aktualisieren möchtest, wechsle 
 Schaltfläche »Aktualisieren« neben der Erweiterung. Du kannst natürlich auch noch weitere Erweiterung zur 
 Aktualisierung vormerken. Klicke auf »Änderungen anwenden« un die Aktualisierung zu starten. Die Aktualisierung kann 
 nun mehrere Minuten in Anspruch nehmen. Details zum Aktualisierungsprozess können durch Klick auf folgendes Symbol 
-![Konsolenausgabe anzeigen/verstecken](/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
+![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
 
-![Erweiterungen im Contao Manager aktualisieren](/installation/images/de/erweiterungen-im-contao-manager-aktualisieren.png)
+![Erweiterungen im Contao Manager aktualisieren](/de/installation/images/de/erweiterungen-im-contao-manager-aktualisieren.png)
 
 Sobald der Contao Manager die Erweiterungen aktualisiert hat, musst du das [Contao-Installtool](../contao-installtool/) 
 aufrufen um die Datenbank, falls nötig, zu aktualisieren.

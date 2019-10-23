@@ -14,13 +14,13 @@ Wenn du die Erweiterung »contao-easy_themes« deinstallieren möchtest, wechsle
 Schaltfläche »Entfernen« neben der Erweiterung. Du kannst natürlich auch noch weitere Erweiterung zur Deinstallation 
 vormerken.
 
-![Erweiterungen im Contao Manager zur Deinstallation vormerken](/installation/images/de/erweiterungen-im-contao-manager-zur-deinstallation-vormerken.png)
+![Erweiterungen im Contao Manager zur Deinstallation vormerken](/de/installation/images/de/erweiterungen-im-contao-manager-zur-deinstallation-vormerken.png)
 
 Klicke auf »Änderungen anwenden« um die Deinstallation zu starten. Die Deinstallation kann nun mehrere Minuten in 
 Anspruch nehmen. Details zum Deinstallationsprozess können durch Klick auf folgendes Symbol 
-![Konsolenausgabe anzeigen/verstecken](/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
+![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
 
-![Erweiterungen im Contao Manager deinstallieren](/installation/images/de/erweiterungen-im-contao-manager-deinstallieren.png)
+![Erweiterungen im Contao Manager deinstallieren](/de/installation/images/de/erweiterungen-im-contao-manager-deinstallieren.png)
 
 Sobald die Erweiterungen deinstalliert worden sind, musst du das [Contao-Installtool](../contao-installtool/) 
 aufrufen um die Datenbank, falls nötig, zu aktualisieren.

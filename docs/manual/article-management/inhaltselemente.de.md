@@ -10,7 +10,7 @@ Um das Anlegen von Inhalten möglichst intuitiv zu gestalten, gibt es in Contao 
 das genau auf dessen Anforderungen abgestimmt ist. Du kannst unbegrenzt viele Inhaltselemente pro Artikel anlegen und 
 den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 
-![Den Zugriff auf ein Inhaltselement einschränken](/article-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png)
+![Den Zugriff auf ein Inhaltselement einschränken](/de/article-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png)
 
 **Element schützen:** Das Inhaltselement ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein 
 Mitglied im Frontend angemeldet hat.
@@ -49,7 +49,7 @@ Rich Text Editor, der es dir ähnlich wie in einem Textverarbeitungsprogramm erl
 Knopfdruck zu setzen. Contao verwendet [TinyMCE](https://www.tiny.cloud/), einen Open Source Editor der schwedischen 
 Firma Moxiecode, der sich gut an die Erfordernisse der Barrierefreiheit anpassen lässt.
 
-![Der Rich Text Editor TinyMCE](/article-management/images/de/der-rich-text-editor-tinymce.png)
+![Der Rich Text Editor TinyMCE](/de/article-management/images/de/der-rich-text-editor-tinymce.png)
 
 **Überschrift:** Hier kannst du eine Überschrift eingeben.
 
@@ -67,7 +67,7 @@ dabei zur Verfügung:
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du den Upload hier nachholen, ohne die Eingabemaske zu verlassen.
 
-![Einem Text ein Bild hinzufügen](/article-management/images/de/einem-text-ein-bild-hinzufuegen.png)
+![Einem Text ein Bild hinzufügen](/de/article-management/images/de/einem-text-ein-bild-hinzufuegen.png)
 
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
@@ -93,10 +93,10 @@ auswählen:
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird er 
-![oberhalb](/icons/above.svg?classes=icon) **oberhalb**, 
-![unterhalb](/icons/below.svg?classes=icon) **unterhalb**, 
-![linksbündig](/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/icons/right.svg?classes=icon) **rechtsbündig** eingefügt der Text umfließt das Bild.
+![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
+![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
+![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
+![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt der Text umfließt das Bild.
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.
@@ -163,9 +163,9 @@ Das Inhaltselement »Aufzählung« fügt dem Artikel eine nicht verschachtelte 
 nummerierten (»ordered list«) und einer umnummerierten (»unordered list«) Aufzählung wählen. Beim Anlegen und 
 Bearbeiten der Listenpunkte unterstützt dich ein JavaScript-Assistent.
 
-![JavaScript-Assistent für Auflistungen](/article-management/images/de/javascript-assistent-fuer-auflistungen.png)
+![JavaScript-Assistent für Auflistungen](/de/article-management/images/de/javascript-assistent-fuer-auflistungen.png)
 
-Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/icons/tablewizard.svg?classes=icon) 
+Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/de/icons/tablewizard.svg?classes=icon) 
 neben der Feldbezeichnung »Listeneinträge« öffnest du den CSV-Import-Wizard, mit dem du Listendaten aus einer CSV-Datei 
 importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
 
@@ -192,20 +192,20 @@ Eine nummerierte Aufzählung verwendet das `<ol>`-Tag statt des `<ul>`-Tags.
 Das Inhaltselement »Tabelle« fügt dem Artikel eine Tabelle hinzu. Beim Anlegen der Reihen und Spalten unterstützt dich 
 ein JavaScript-Assistent. Mit den folgenden Navigationsicons kannst du die Tabelle bearbeiten:
 
-- ![Die Eingabefelder verkleinern](/icons/demagnify.svg?classes=icon) **Die Eingabefelder verkleinern**
-- ![Die Eingabefelder vergrößern](/icons/magnify.svg?classes=icon) **Die Eingabefelder vergrößern**
-- ![Die Spalte/Reihe duplizieren](/icons/copy.svg?classes=icon) **Die Spalte/Reihe duplizieren**
-- ![Die Spalte eine Position nach links verschieben](/icons/movel.svg?classes=icon) 
+- ![Die Eingabefelder verkleinern](/de/icons/demagnify.svg?classes=icon) **Die Eingabefelder verkleinern**
+- ![Die Eingabefelder vergrößern](/de/icons/magnify.svg?classes=icon) **Die Eingabefelder vergrößern**
+- ![Die Spalte/Reihe duplizieren](/de/icons/copy.svg?classes=icon) **Die Spalte/Reihe duplizieren**
+- ![Die Spalte eine Position nach links verschieben](/de/icons/movel.svg?classes=icon) 
 **Die Spalte eine Position nach links verschieben**
-- ![Die Spalte eine Position nach rechts verschieben](/icons/mover.svg?classes=icon) 
+- ![Die Spalte eine Position nach rechts verschieben](/de/icons/mover.svg?classes=icon) 
 **Die Spalte eine Position nach rechts verschieben**
-- ![Die Spalte/Reihe löschen](/icons/delete.svg?classes=icon) **Die Spalte/Reihe löschen**
-- ![Das Element durch Ziehen und Ablegen verschieben](/icons/drag.svg?classes=icon) 
+- ![Die Spalte/Reihe löschen](/de/icons/delete.svg?classes=icon) **Die Spalte/Reihe löschen**
+- ![Das Element durch Ziehen und Ablegen verschieben](/de/icons/drag.svg?classes=icon) 
 **Das Element durch Ziehen und Ablegen verschieben**
 
-![JavaScript-Assistent für Tabellen](/article-management/images/de/javascript-assistent-fuer-tabellen.png)
+![JavaScript-Assistent für Tabellen](/de/article-management/images/de/javascript-assistent-fuer-tabellen.png)
 
-Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/icons/tablewizard.svg?classes=icon) 
+Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/de/icons/tablewizard.svg?classes=icon) 
 neben der Feldbezeichnung »Tabelleneinträge« öffnest du den CSV-Import-Wizard, mit dem du Tabellendaten aus einer 
 CSV-Datei importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
 
@@ -480,7 +480,7 @@ Wie für Links gibt es auch für Bilder zwei Syntax-Möglichkeiten.
 Ein Inline-Bild sieht wie folgt aus:
 
 ```md
-![Alt text](/pfad/zum/bild.jpg "Optionaler Titel")
+![Alt text](/de/pfad/zum/bild.jpg "Optionaler Titel")
 ```
 
 Ein Bild im Referenz-Stil wird durch folgende Syntax erreicht:
@@ -705,7 +705,7 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Hyperlink« fügt dem Artikel einen Link auf eine externe Webseite oder eine E-Mail-Adresse hinzu. Du 
 kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement eingeben.
 
-![Einen Hyperlink anlegen](/article-management/images/de/einen-hyperlink-anlegen.png)
+![Einen Hyperlink anlegen](/de/article-management/images/de/einen-hyperlink-anlegen.png)
 
 **Link-Adresse:** Gebe die Link-Adresse inklusive des Netzwerkprotokolls ein. Für Webseiten lautet das 
 Netzwerkprotokoll normalerweise `http://` oder `https://`, für E-Mail-Adressen `mailto:` und für Telefonnummern `tel:`. 
@@ -729,7 +729,7 @@ der Satz »Besuchen Sie unsere Firmenseite!« steht.
 Wenn du die Option **Einen Bildlink erstellen** auswählst, kannst du statt eines Textlinks einen Bildlink erstellen. 
 Alternativ dazu kannst du auch ein Bildelement erstellen und mit einem Link versehen.
 
-![Einen Bildlink erstellen](/article-management/images/de/einen-bildlink-erstellen.png)
+![Einen Bildlink erstellen](/de/article-management/images/de/einen-bildlink-erstellen.png)
 
 **Quelldatei:** Hier wählst du das zu verwendende Bild aus.
 
@@ -800,7 +800,7 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Bild« fügt dem Artikel ein Bild hinzu. Ein Bild kann eine Großansicht haben oder als Bildlink auf 
 eine bestimmte URL verweisen.
 
-![Ein Bildelement anlegen](/article-management/images/de/ein-bildelement-anlegen.png)
+![Ein Bildelement anlegen](/de/article-management/images/de/ein-bildelement-anlegen.png)
 
 **Quelldatei:** Hier wählst du das zu verwendende Bild aus.
 
@@ -850,7 +850,7 @@ Das Inhaltselement »Bildergalerie« fügt dem Artikel eine Bildergalerie hinzu
 Vorschaubilder (engl. »Thumbnails«), die in einer Liste aufgelistet sind und beim Anklicken vergrößert werden. Bei 
 sehr vielen Bildern kann die Galerie auf mehrere Seiten verteilt werden.
 
-![Die Bildergalerie im Frontend](/article-management/images/de/die-bildergalerie-im-frontend.png)
+![Die Bildergalerie im Frontend](/de/article-management/images/de/die-bildergalerie-im-frontend.png)
 
 **Quelldateien:** Hier wählst du einen oder mehrere Ordner bzw. Dateien aus, die in der Bildergalerie enthalten sein 
 sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen Bilder in die Galerie. Die 
@@ -1170,7 +1170,7 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Downloads« fügt dem Artikel mehrere Download-Links hinzu. Beim Anklicken eines Links öffnet sich 
 der »Datei speichern unter …«-Dialog, und du kannst die Datei auf deinem lokalen Rechner speichern.
 
-![Das Downloads-Element im Frontend](/article-management/images/de/das-downloads-element-im-frontend.png)
+![Das Downloads-Element im Frontend](/de/article-management/images/de/das-downloads-element-im-frontend.png)
 
 Die Besonderheit in Contao ist, dass diese Download-Links auch mit geschützten Dateien funktionieren, auf die du nicht 
 direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
@@ -1331,7 +1331,7 @@ du in der Navigation in der Gruppe Inhalte findest. Dort werden sämtliche Komme
 ein Inhaltselement, einen Artikel oder einen Blog-Beitrag beziehen. Bei Bedarf kannst du die Liste der Kommentare nach 
 ihrem Ursprung oder ihrem Elternelement filtern.
 
-![Kommentare nach ihrem Ursprung filtern](/article-management/images/de/kommentare-nach-ihrem-ursprung-filtern.png)
+![Kommentare nach ihrem Ursprung filtern](/de/article-management/images/de/kommentare-nach-ihrem-ursprung-filtern.png)
 
 Falls du die Option »Kommentare moderieren« aktiviert hast, kannst du neue Kommentare in der Kommentarverwaltung 
 prüfen, bevor sie auf der Webseite erscheinen. So verhinderst du z. B. eventuelle Spamversuche.

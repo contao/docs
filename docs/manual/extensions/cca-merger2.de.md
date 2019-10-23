@@ -1,7 +1,7 @@
 ---
 title: "Merger²"
 description: "Merger² ist ein Frondend-Modul um Module/Inhalte unter bestimmten Bedingungen anzuzeigen."
-url: "erweiterung/merger2"
+url: "erweiterungen/merger2"
 ---
 
 **[contao-community-alliance/merger2](https://packagist.org/packages/contao-community-alliance/merger2)**

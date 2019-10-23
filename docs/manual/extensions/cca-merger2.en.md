@@ -1,12 +1,11 @@
 ---
 title: "Merger²"
 description: "Merger² is a frontend module to display modules/contents under certain conditions."
-url: "extension/merger2"
 ---
 
 **[contao-community-alliance/merger2](https://packagist.org/packages/contao-community-alliance/merger2)**
 
-_von [Contao Community Alliance (CCA)](https://c-c-a.org/)_
+_by [Contao Community Alliance (CCA)](https://c-c-a.org/)_
 
 
 

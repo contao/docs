@@ -138,7 +138,7 @@ Hintergrundaufgaben (wie die Indizierung des Seiteninhalts) ausführen, ohne das
 
 Lade den Contao-Check herunter und finde heraus, ob dein Server die Contao-Systemvoraussetzungen erfüllt.
 
-![Der Contao-Check](/installation/images/de/der-contao-check.png)
+![Der Contao-Check](/de/installation/images/de/der-contao-check.png)
 
 Entpacke die ZIP-Datei, übertrage den Ordner <code>check</code> in den Unterordner `web/` deiner Contao-Installation, setze das Wurzelverzeichnis (Document Root) deiner Domain über das Admin-Panel des Hosting-Providers auf diesen Unterordner und öffne 
 <code>www.example.com/check</code> in deinem Browser.

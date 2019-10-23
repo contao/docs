@@ -32,7 +32,7 @@ class ParseTemplateListener implements ServiceAnnotationInterface
      */
     public function onParseTemplate($template): void
     {
-        if ('fe_page' === $template->getName() {
+        if ('fe_page' === $template->getName()) {
             // Do something …
         }
     }
