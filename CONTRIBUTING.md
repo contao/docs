@@ -107,14 +107,11 @@ Every file needs at least the following [Hugo front matter](https://gohugo.io/co
 * `menuTitle` (optional): The optional menuTitle entry reflects an alternative entry in the main left navigation of the documentation. This is especially helpful if the original title is too long for the navigation.
 
 
-## Workflow examples to contribute to the Contao docs repo.
+## GitHub only workflow 
 
+All you need to contribute to the documentation is a GitHub account. There are no further installations necessary. You can edit the markdown files directly in the [Contao docs repo](https://github.com/contao/docs) and save your changes with a comment. GitHub will then automatically create a fork and a new branch with your changes in your repository (named "patch-1" for example).
 
-### GitHub only workflow 
-
-All you need to contribute to the documentation is a GitHub account. There are no further installations necessary. First step is to [fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the [Contao docs repo](https://github.com/contao/docs) (recommended). As an alternative, you could also edit the markdown files directly in the [Contao docs repo](https://github.com/contao/docs) and save your changes with a comment. GitHub will then automatically create a fork and a new branch with your changes in your repository (named "patch-1" for example).
-
-Either way, switch to your repository and branch and make a pull request. If your changes are taken over by the Contao team, you will receive corresponding information.
+Switch to your repository and branch and make a pull request. If your changes are taken over by the Contao team, you will receive corresponding information.
 
 If the Contao team does not want to accept your changes without further actions, switch to the appropriate branch of your forked repository and change the content accordingly. 
 
