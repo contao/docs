@@ -103,7 +103,7 @@ class MyClass
 ```
 
 This is a very simple, old and thus not very flexible way of specifying your own output. If you would like to use
-Dependency Injection etc. you're likely better off using [Custom back end routes](../cookbook/backend-routes.md).
+Dependency Injection etc. you're likely better off using [Custom back end routes](/guides/backend-routes).
 
 Both, the `disablePermissionChecks` and the `hideInNavigation` just take a boolean value. By default they are both set to
 `false` which means, permission checks are always executed and the module is always shown in the navigation.

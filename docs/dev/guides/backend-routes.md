@@ -1,6 +1,8 @@
 ---
 title: "Back End Routes"
 description: "Custom routes within the Contao back end."
+aliases:
+  - /guides/backend-routes
 ---
 
 
