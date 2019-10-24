@@ -115,10 +115,10 @@ You'll certainly have a detail page of that news but potentially there are also 
 such as a news archive module or maybe a sidebar that lists the latest news entries.
 You'll end up having multiple pages that need to be invalidated:
 
-* https://www.domain.com/news/my-super-news-item.html (detail page)
-* https://www.domain.com/news.html (news list)
-* https://www.domain.com (latest news in the sidebar)
-* https://www.domain.com/archive/news.html (news archive)
+* https://www.example.com/news/my-super-news-item.html (detail page)
+* https://www.example.com/news.html (news list)
+* https://www.example.com (latest news in the sidebar)
+* https://www.example.com/archive/news.html (news archive)
 
 Now what you can do is whenever your news ID 42 is used somewhere, you'll just tag that response with a tag `news-42`
 which will associate all of these four URLs with the tag `news-42`.
