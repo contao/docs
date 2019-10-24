@@ -160,8 +160,8 @@ class MySuperController
 }
 ```
 
-If you are working with Contao fragments such as content elements, front end modules etc. not that you may want to
-extend the `Contao\CoreBundle\Controller\AbstractFragmentController` and use the `tagResponse()` method of it for
+If you are working with Contao fragments such as content elements, front end modules etc. note that you may want to
+extend the `Contao\CoreBundle\Controller\AbstractFragmentController` and use its `tagResponse()` method for
 convenience.
 
 To invalidate a given set of tags, inject the service `fos_http_cache.cache_manager` which might look like so:
