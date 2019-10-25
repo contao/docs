@@ -57,7 +57,7 @@ an associative array with the following keys, representing the available interva
 * `weekly`
 * `monthly`
 
-To register simply add another array item with the class and method
+To register your job, add another array item with the class and method
 of your cron job to one of the intervals in your `contao/config/config.php`:
 
 ```php

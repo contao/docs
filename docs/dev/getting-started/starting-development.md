@@ -95,7 +95,7 @@ use-case and its documentation is covered in the applicable topics of the [frame
 ## Autoloading, Services and Actions
 
 Any custom class that is needed for the web application - like a [Model][5], a [Content Element][6]
-or a class for a [Hook][7] for example - needs to be loaded of course. Typically
+or a class for a [Hook][7] for example - needs to be loaded. Typically
 the code for customizing the web application for Contao will be put in the `\App`
 namespace. The default `composer.json` of the recent Contao Managed Edition versions
 already contains the appropriate autoloading directive:
@@ -159,8 +159,8 @@ Once this is configured, hooks, callbacks, content elements and front end module
 for example can be created without having to configure them in separate files by 
 using annotations for service tagging.
 
-Of course all this is not needed, if you only need to change or extend the Data
-Container Array definition of a table, or just want to change a translation for
+All this is not needed, if you only need to change or extend the Data
+Container Array definition of a table, or want to change a translation for
 example.
 
 Next: [create your first DCA adjustment][12].

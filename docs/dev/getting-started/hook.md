@@ -18,7 +18,7 @@ annotations directly in your hook's class to register the hook.
 
 For our first example we assume that we want to provide more information about the 
 author of a news entry in the news template. Usually `$this->author` in the news
-template is simply filled with _by &lt;Author Name&gt;_. No other information about
+template is filled with _by &lt;Author Name&gt;_. No other information about
 the author is available via the news template's variables. Instead of fetching the
 information we need with custom PHP code in the template, we can instead implement
 a [`parseArticles`][2] hook. This hook allows us to enrich the template object of

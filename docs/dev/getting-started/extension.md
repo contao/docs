@@ -225,7 +225,7 @@ the extension's `composer.json`:
 ```
 
 After running `composer update`, the Contao Manager Plugin will load this bundle
-in the Contao Managed Edition. Of course, this will have no real effect yet, since
+in the Contao Managed Edition. This will have no real effect yet, since
 the extension is still pretty empty.
 
 

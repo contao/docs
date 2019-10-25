@@ -30,7 +30,7 @@ the vendor records) and `tl_parts` (for the parts records).
 
 ## Creating the DCA
 
-Creating the DCA in this case is obviously divided into two main steps: creating
+Creating the DCA in this case is divided into two main steps: creating
 the DCA for our `tl_vendor` records and creating the DCA for our `tl_parts` records.
 For each table, we will go through the individual steps of defining the [configuration][2],
 [record listing][3], [fields][4], [palettes][5] and may be [callbacks][6].
@@ -411,7 +411,7 @@ $GLOBALS['BE_MOD']['content']['parts'] = [
 ```
 
 The definition depends on the type of back end module. Since in our case we are
-managing table records, we simply have to define the tables to be managed.
+managing table records, we have to define the tables to be managed.
 
 
 ## Adding Translations
