@@ -431,4 +431,50 @@ a button for an import "wizard".
 **return:** `string` HTML for the button
 {{% /expand %}}
 
+
+***
+
+## Examples of defining callbacks
+
+You can register any of the abovementioned callbacks by using annotations:
+
+```php
+// src/Controller/EventListener/DataContainer/MyTableListener.php
+
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
+
+class MyTableListener implements ServiceAnnotationInterface
+{
+
+    /**
+     * @Callback(table="tl_my_table", target="fields.xxMyField.options")
+     */
+    public function onOptionsCallback(DataContainer $dc): array
+    {
+        return ['test1', 'test2'];
+    }
+}
+```
+
+When [autowiring][autowiring] is enabled in your app, your callback is registered successfully.
+
+In case you don't use autowiring, you need to tag the corresponding service of your callback
+class:
+
+```yml
+// config/services.yml
+
+App\EventListener\DataContainer\MyTableListener:
+  tags:
+    - { name: contao.callback, table: tl_my_table, target: fields.xxMyField.options [, method: onOptionsCallback] }
+```
+
+Same as with [Hooks][hooks], the method is automatically generated if not given. As for
+example `onLoadCallback` or `onOptionsCallback`.
+
 [hooks]: ../../../framework/hooks/
+[autowiring]: https://github.com/terminal42/service-annotation-bundle#using-autowiring-and-autoconfiguration-for-apps
