@@ -18,7 +18,7 @@ verknüpfen und abschließend die Startseite mit Inhalten erstellen.
 
 Zunächst benötigst du ein Contao Theme. Beim ersten Aufruf des [Theme-Manager](../../theme-manager) nach der Installation
 sollten noch keine Themes existieren. Das Theme erstellt du über den Link `Neu`. Weitere Informationen hierzu findest du
-unter [Themes konfigurieren](../..//theme-manager/themes-verwalten/#themes-konfigurieren). 
+unter [Themes konfigurieren](../../theme-manager/themes-verwalten/#themes-konfigurieren). 
 
 Für unser erstes Theme sind hier lediglich die Angaben `Theme-Titel` und `Autor` notwendig. Als Beispiel 
 erstellen wir ein Theme mit Namen `Demo`. Im Anschluß kannst du hier jederzeit dein vorhandenes Themes 
