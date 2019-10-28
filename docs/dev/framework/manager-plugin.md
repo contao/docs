@@ -221,7 +221,7 @@ a recursive array merge operation of all configurations. The result is:
 
 4. If the order of configuration matters (e.g. `security.firewalls`,
    `monolog.handlers`), it can be hard to get right. Also, some nodes prohibit merging
-   (using [`disallowNewKeysInSubsequentConfigs()`][1]) which results in an exception if two plugins trie to set
+   (using [`disallowNewKeysInSubsequentConfigs()`][1]) which results in an exception if two plugins try to set
    the same configuration.
 
 
