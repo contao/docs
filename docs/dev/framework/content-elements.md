@@ -95,7 +95,7 @@ for this content element will be `ce_my_content_element`:
 ```
 
 A template instance of this template will automatically be generated and passed 
-to the controller's main method. The controller simply returns the parsed template
+to the controller's main method. The controller returns the parsed template
 as a response.
 
 

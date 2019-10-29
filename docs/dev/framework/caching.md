@@ -212,7 +212,7 @@ If you follow this convention and tag your responses accordingly in the front en
 back end at all!
 
 Moreover, you don't have to register to all the different callbacks such as `onsubmit_callback` or `ondelete_callback`.
-You can simply register to the [`oninvalidate_cache_tags` callback][5] and add your own tags.
+You can register to the [`oninvalidate_cache_tags` callback][5] and add your own tags.
 
 
 [1]: https://github.com/Toflar/psr6-symfony-http-cache-store

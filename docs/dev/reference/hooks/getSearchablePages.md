@@ -32,7 +32,7 @@ expects an array of _absolute_ URLs as return value.
 
 ## Return Values
 
-Return the list of pages that should be indexed. Be aware that this simply means
+Return the list of pages that should be indexed. Be aware that this means
 these URLs will be requested, and each page is responsible for its indexing. By
 checking `$isSitemap`, you can decide wether to include your pages in the XML
 sitemap or only for the search index.

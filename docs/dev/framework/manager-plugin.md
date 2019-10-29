@@ -10,7 +10,7 @@ aliases:
 
 The `Manager Plugin` is one single PHP class that gives third party bundles the opportunity to 
 configure a `Managed Edition`.
-Simply put, every time a user of the `Managed Edition` runs a `composer update` or a `composer install`
+Every time a user of the `Managed Edition` runs a `composer update` or a `composer install`
 the `Manager Plugin` instances of all packages are called and the application is then configured
 accordingly.
 
@@ -205,7 +205,7 @@ class Plugin implements ConfigPluginInterface
 The easiest way to define bundle configuration is by using the
 `ConfigPluginInterface`. It allows to register any bundle configuration, for the current bundle or any third party one.
 
-This works in _most_ of the cases. The Symfony ContainerBuilder simply performs
+This works in _most_ of the cases. The Symfony ContainerBuilder performs
 a recursive array merge operation of all configurations. The result is:
 
 1. Plugin configuration is loaded before the global config
@@ -216,7 +216,7 @@ a recursive array merge operation of all configurations. The result is:
    plugins can be adjusted using the `DependendPluginInterface`.
 
 3. When merging configurations with multiple nodes (like `doctrine.dbal.connections`,
-   `framework.cache.pools`), the nodes are simply merged. This is usually not a problem,
+   `framework.cache.pools`), the nodes are merged. This is usually not a problem,
    because database connections etc. are named, so the order in the tree does not matter.
 
 4. If the order of configuration matters (e.g. `security.firewalls`,
@@ -237,7 +237,7 @@ the issues mentioned in point 4.
 A typical example for overriding previous bundle configuration would be the `security.firewalls` configuration. 
 You might want to configure another firewall than the one Contao ships by default. As you know, the order matters
 because the first firewall that matches a specific pattern or request is the one that Symfony is going to use.
-That's why you cannot simply have a `config.yml` with your own `security.firewalls` configuration – the Symfony Config
+That's why you cannot have a `config.yml` with your own `security.firewalls` configuration – the Symfony Config
 component will tell you:
 
 > You are not allowed to define new elements for path "security.firewalls".

@@ -24,7 +24,7 @@ like the template name, content element name, the category under which the conte
 element or front end module should be visible in the back end and other attributes.
 
 Content elements and front end modules are implemented as _fragment controllers_.
-The following class shows a custom content element, which simply passes the fields
+The following class shows a custom content element, which passes the fields
 `text` and `url` to its template.
 
 ```php

@@ -94,7 +94,7 @@ class MyFrontendModuleController extends AbstractFrontendModuleController
 ```
 
 In this example the service tag was implemented via annotations. The controller itself
-processes the request and simply checks, if it was a POST request. In that case, the
+processes the request and checks, if it was a POST request. In that case, the
 redirect page is loaded via Contao's model functionality and a `RedirectResponseException`
 is thrown to redirect to that page.
 
@@ -112,7 +112,7 @@ for this front end module will be `mod_my_frontend_module`:
 ```
 
 A template instance of this template will automatically be generated and passed 
-to the controller's main method. The controller simply returns the parsed template
+to the controller's main method. The controller returns the parsed template
 as a response.
 
 

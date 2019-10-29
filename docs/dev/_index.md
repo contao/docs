@@ -75,7 +75,7 @@ Unfortunately, back when Contao was created, there was no such thing as `Twig`. 
 but automated output encoding was likely less of an issue back then.
 So when Contao decided to use plain old PHP as templates, one would have to call some special encode method on every
 variable that was echo'ed. Instead of doing that, it was decided to encode the input and store the data encoded in the
-database already. Of course, you do have the option to disable this when you develop your own extensions to Contao but
+database already. You do have the option to disable this when you develop your own extensions to Contao but
 it's just something to keep in mind. We all know it's wrong but migrating away from already encoded data is very hard
 and likely will only become a thing when we switch to Contao 5.
 
@@ -132,7 +132,7 @@ might probably stop here but to get a complete picture of the Contao ecosystem, 
 
 ### People
 
-Sometimes it's helpful if you know the people involved in Contao development. Of course, as an Open Source project
+Sometimes it's helpful if you know the people involved in Contao development. As an Open Source project
 it is what people make it, so please, [contribute][3]!
 
 In any case, the current core team members consist of (in alphabetical order)
@@ -152,7 +152,7 @@ In addition, there's a core team for the documentation:
 
 ### Where to get help
 
-Contao people are active on multiple channels. Of course, if you find a bug or want to request a feature (or ideally
+Contao people are active on multiple channels. If you find a bug or want to request a feature (or ideally
 prepare a pull request) please do so on the respective repository (most likely the `contao/contao` mono repository).
 Other than that there are the following channels:
 

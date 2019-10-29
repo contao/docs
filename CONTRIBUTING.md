@@ -97,6 +97,22 @@ This should contain specific examples and use cases on how to use and implement 
 * Consider that all markdown headings are added to the navigation. Write your headings accordingly.
 * Do not try to embed external images or reuse already existing images from other articles. External images might
   be removed over time and the same applies for images of other articles.
+* Avoid belittling words: People read documentation because they know very little about a specific topic or are even
+  completely new to it. Things that seem "obvious" or "simple" for the person documenting it, can be the exact opposite
+  for the reader. To make sure everybody feels comfortable when reading the documentation, try to avoid words like:
+  
+    * basically
+    * clearly
+    * easy/easily
+    * just
+    * logically
+    * merely
+    * obviously
+    * of course
+    * quick/quickly
+    * simply
+    * trivial
+
 
 ## The Hugo front matter variables
 

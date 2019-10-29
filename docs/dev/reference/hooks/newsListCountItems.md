@@ -7,7 +7,7 @@ tags: ["hook-news", "hook-module"]
 
 When you use custom news sorting or filtering using the [`newsListFetchItems`](../newsListFetchItems)
 hook, you might also need to use the `newsListCountItems` hook, so that the pagination
-works correctly. With this hook you simply return the number of news items, that would
+works correctly. With this hook you return the number of news items, that would
 be shown in the current request.
 
 

@@ -83,7 +83,7 @@ palette will be inserted.
 ## Multiple main palettes
 
 A defined `__selector__` can also switch between multiple main palettes. The
-main palette's key simply needs to be the selector's value.
+main palette's key needs to be the selector's value.
 
 ```php
 // contao/dca/tl_example.php

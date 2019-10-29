@@ -97,7 +97,7 @@ For each request, the token must be sent in an HTTP header.
    
 If you are in control of the webserver where Contao Manager is running, and you can make sure you don't run into the mentioned issue, using
 the standardized `Authentication` header is the preferred way. If you need to support any Contao Manager on any unknown host, the best
-approach is to use the `Contao-Manager-Auth` header which will simply be ignored by Apache.
+approach is to use the `Contao-Manager-Auth` header which will be ignored by Apache.
 
 
 [API]: https://docs.contao.org/books/manager/api/
