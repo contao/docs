@@ -75,7 +75,7 @@ just for one user or via an environment variable.
 
 The environment variable used for controlling the debug mode is called `APP_ENV`
 and needs to be set to `dev` in order to enable the debug mode. This environment
-variable could be set globally in your system or. within the configuration of your
+variable could be set globally in your system or within the configuration of your
 web application's web server. It is also possible to set this environment variable
 via `.env` files in your project root. The content of this files should then be:
 
