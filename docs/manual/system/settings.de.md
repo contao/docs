@@ -264,10 +264,10 @@ contao:
             - svgz
             - webp
 
-        # Contao automatically detects the best Imagine service out of Gmagick, Imagick and Gd (in this order). 
+        # As of Contao 4.6, Contao automatically detects the best Imagine service out of Gmagick, Imagick and Gd (in this order). 
         # To use a specific service, set its service ID here:
-        # - Gmagick: "contao.image.imagine.gmagick" (as of Contao 4.6)
-        # - Imagick: "contao.image.imagine.imagick" (as of Contao 4.6)
+        # - Gmagick: "contao.image.imagine.gmagick"
+        # - Imagick: "contao.image.imagine.imagick"
         # - Gd     : "contao.image.imagine.gd"
         imagine_service:      null
         imagine_options:
