@@ -55,7 +55,7 @@ welche den Benutzernamen und das verschlüsselte Passwort enthält.
 
 #### Contao Manager
 
-In Contao **4.5** bis **4.7** kann der Benutzername und das Passwort für auch über den
+In Contao **4.5** bis **4.7** kann der Benutzername und das Passwort auch über den
 Contao Manager gesetzt werden. Die Option dafür befindet sich in der _Wartung_ Sektion
 unter _Debug-Modus_.
 
