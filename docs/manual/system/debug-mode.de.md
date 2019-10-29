@@ -110,7 +110,7 @@ Benutzer aktiviert.
 Der Debug-Modus kann außerdem über den Contao Manager aktiviert werden. Dazu befindet
 sich in der _Wartung_ Sektion unter _Debug-Modus_ eine entsprechende Schaltfäche.
 
-![Debug Mode](/de/system/images/en/contao-manager_c48-debug-mode_en.png?classes=shadow)
+![Debug Mode](/de/system/images/de/contao-manager_c48-debug-mode_de.png?classes=shadow)
 
 Nach dem Klick auf _Aktivieren_ setzt auch hier der Contao Manager ein spezielles
 Cookie welches den Debug-Modus für den aktuellen Benutzer aktiviert.
