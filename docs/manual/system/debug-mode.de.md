@@ -27,7 +27,7 @@ den Contao Versionen.
 
 In Contao **4.4** bis **4.7** wird der Debug-Modus über den `app_dev.php` Einstiegspunkt
 aktiviert. Dieser Einstiegspunkt muss einer URL, auf der man debuggen möchte, vorangestellt
-werden. Möchte man beispielsweise einen Fehler im Contao Install Tool analysieren
+werden. Möchte man beispielsweise einen Fehler im Contao Install Tool analysieren,
 so ruft man folgende URL auf:
 
 ```none
