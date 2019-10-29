@@ -75,7 +75,7 @@ just for one user or via an environment variable.
 
 The environment variable used for controlling the debug mode is called `APP_ENV`
 and needs to be set to `dev` in order to enable the debug mode. This environment
-variable could be set globally in your system or. within the configuration of your
+variable could be set globally in your system or within the configuration of your
 web application's web server. It is also possible to set this environment variable
 via `.env` files in your project root. The content of this files should then be:
 
@@ -84,7 +84,7 @@ APP_ENV=dev
 ```
 
 It is also possible to create an (initially) empty `.env` file and then next to
-that a `.env.local` file with said content. Typically you would then commit the
+that a `.env.local` file with said content. Typically, you would then commit the
 `.env` file to your project's Git repsitory, but the `.env.local` file should be
 in your ignore list.
 
@@ -136,6 +136,6 @@ Some of the information you can gather via the profiler are:
 
 Usually when an error happens it will be logged into the `var/logs` directory.
 However, to track down the cause of the error it is often helpful to get the full
-stack trace. Within the debug mode you will be able to able to reproduce
+stack trace. Within the debug mode you will be able to reproduce
 the error and then get the full stack trace in the browser window - as well as in
 the profiler.
