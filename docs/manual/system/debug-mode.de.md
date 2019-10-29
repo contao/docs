@@ -10,7 +10,7 @@ Während der Entwicklung der Web Applikation kann es hilfreich sein den sogenann
 "Debug-Modus" (auch _Entwickler Modus_ oder _Entwickler Umgebung_ genannt) zu aktivieren.
 Damit kann zum Beispiel folgendes erreicht werden:
 
-* Bild werden immer neu generiert und nicht aus dem Cache geladen.
+* Bilder werden immer neu generiert und nicht aus dem Cache geladen.
 * Der Seitencache wird nicht benutzt.
 * Der Symfony Profiler und die Toolbar sind verfügbar.
 * CSS und JavaScript Assets werden nicht kombiniert.
