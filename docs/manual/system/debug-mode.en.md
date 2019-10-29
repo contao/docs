@@ -16,7 +16,7 @@ the following things are in effect:
 * Template names will be shown in the source as HTML comments.
 
 
-## Accessing the Developer Mode
+## Accessing the Debug Mode
 
 The way you activate the debug mode is different between certain Contao
 versions. 
@@ -25,7 +25,7 @@ versions.
 ### Contao 4.4 through 4.7
 
 In Contao **4.4** through **4.7** you access the debug mode
-by accessing the `app_dev.php` entry point. Simply prepend any URL you want to debug
+by accessing the `app_dev.php` entry point. Prepend any URL you want to debug
 with that entry point. For example, if you need to track down an error within the
 Contao Install Tool, then you would access the debug mode via
 
@@ -55,8 +55,8 @@ and the encrypted password.
 
 #### Contao Manager
 
-The username and password can also be set via the Contao Manager by using the
-_Debug Mode_ option in the _Maintenance_ section.
+In Contao **4.5** through **4.7** the username and password can also be set via 
+the Contao Manager by using the _Debug Mode_ option in the _Maintenance_ section.
 
 ![Debug Mode](/de/system/images/en/contao-manager_c44-debug-mode_en.png?classes=shadow)
 
@@ -74,7 +74,7 @@ just for one user or via an environment variable.
 #### Environment Variable
 
 The environment variable used for controlling the debug mode is called `APP_ENV`
-and needs to be set to `dev` in order to enable the debug mode. This environmen
+and needs to be set to `dev` in order to enable the debug mode. This environment
 variable could be set globally in your system or. within the configuration of your
 web application's web server. It is also possible to set this environment variable
 via `.env` files in your project root. The content of this files should then be:
@@ -85,7 +85,7 @@ APP_ENV=dev
 
 It is also possible to create an (initially) empty `.env` file and then next to
 that a `.env.local` file with said content. Typically you would then commit the
-`.env` file to your project's git repsitory, but the `.env.local` file should be
+`.env` file to your project's Git repsitory, but the `.env.local` file should be
 in your ignore list.
 
 {{% notice warning %}}
@@ -103,8 +103,9 @@ will set a special cookie that enables the debug mode only for the current user.
 
 #### Contao Manager
 
-The debug mode can also be enabled from within the Contao Manager. This is useful
-if the Contao back end cannot be reached due to an error.
+The debug mode can also be enabled from within the Contao Manager by using the 
+_Debug Mode_ option in the _Maintenance_ section.
+
 
 ![Debug Mode](/de/system/images/en/contao-manager_c48-debug-mode_en.png?classes=shadow)
 
@@ -133,7 +134,7 @@ Some of the information you can gather via the profiler are:
 
 ## Stack Trace
 
-Usually when an error happens it will simply be logged into the `var/logs` directory.
+Usually when an error happens it will be logged into the `var/logs` directory.
 However, to track down the cause of the error it is often helpful to get the full
 stack trace. Within the debug mode you will be able to able to reproduce
 the error and then get the full stack trace in the browser window - as well as in
