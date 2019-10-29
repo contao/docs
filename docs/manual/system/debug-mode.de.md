@@ -56,8 +56,8 @@ welche den Benutzernamen und das verschlüsselte Passwort enthält.
 #### Contao Manager
 
 In Contao **4.5** bis **4.7** kann der Benutzername und das Passwort auch über den
-Contao Manager gesetzt werden. Die Option dafür befindet sich in der _Wartung_ Sektion
-unter _Debug-Modus_.
+Contao Manager gesetzt werden. Die Option dafür befindet sich in der _Systemwartung_ 
+Sektion unter _Debug-Modus_.
 
 ![Debug Mode](/de/system/images/de/contao-manager_c44-debug-mode_de.png?classes=shadow)
 
@@ -108,7 +108,7 @@ Benutzer aktiviert.
 #### Contao Manager
 
 Der Debug-Modus kann außerdem über den Contao Manager aktiviert werden. Dazu befindet
-sich in der _Wartung_ Sektion unter _Debug-Modus_ eine entsprechende Schaltfäche.
+sich in der _Systemwartung_ Sektion unter _Debug-Modus_ eine entsprechende Schaltfäche.
 
 ![Debug Mode](/de/system/images/de/contao-manager_c48-debug-mode_de.png?classes=shadow)
 
