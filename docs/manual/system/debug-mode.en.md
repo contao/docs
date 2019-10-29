@@ -136,6 +136,6 @@ Some of the information you can gather via the profiler are:
 
 Usually when an error happens it will be logged into the `var/logs` directory.
 However, to track down the cause of the error it is often helpful to get the full
-stack trace. Within the debug mode you will be able to able to reproduce
+stack trace. Within the debug mode you will be able to reproduce
 the error and then get the full stack trace in the browser window - as well as in
 the profiler.
