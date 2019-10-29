@@ -9,7 +9,7 @@ Die Systemeinstellungen verabschieden sich langsam aber sicher aus dem Backend. 
 beeinflussen Contao als Applikation und somit besteht auch die Chance, dass durch eine falsche Einstellung das System
 in einen funktionsuntüchtigen Zustand gebracht wird. Sollte dies geschehen, hast du keine Möglichkeit mehr,
 die Einstellungen rückgängig zu machen und das System wiederherzustellen, da du dich nicht mehr einloggen kannst.
-Aus diesem Grund werden die meisten Einstellungen ausserhalb von Contao über die `config.yml` vorgenommen bzw. können 
+Aus diesem Grund werden die meisten Einstellungen außerhalb von Contao über die `config.yml` vorgenommen bzw. können 
 zukünftig über den Contao Manager vorgenommen werden.
 
 ## Einstellungen
@@ -53,7 +53,7 @@ Zeitzone nicht automatisch anpasst.
 dar, wobei einzelne Elemente über ein Navigationsicon bei Bedarf ausgeklappt werden können. Wähle diese Option, um das 
 Feature komplett zu deaktivieren.
 
-**Elemente pro Seite:** In Abschnitt [Datensätze auflisten](../../administrationsbereich/datensaetze-auflisten/#datensaetze-sortieren-und-filtern), 
+**Elemente pro Seite:** Im Abschnitt [Datensätze auflisten](../../administrationsbereich/datensaetze-auflisten/#datensaetze-sortieren-und-filtern) 
 hast du gelernt, dass Contao die Anzahl der Datensätze pro Seite standardmäßig auf 30 begrenzt. Diesen Wert kannst du 
 hier beliebig anpassen. Höhere Werte bedeuten jedoch eine längere Ladezeit.
 
@@ -103,11 +103,11 @@ dürfen. Bei einer Überschreitung dieses Werts wird das entsprechende Objekt a
 werden abgelehnt.
 
 **Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese 
-Werte mit deiner hier festgelegten Vorgaben. Überschreitet ein Bild die maximale Breite, wird es automatisch 
+Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird es automatisch 
 verkleinert.
 
 **Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese Werte 
-mit deiner hier festgelegten Vorgaben. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
+mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
 
 
 ### Cronjob-Einstellungen
@@ -130,15 +130,15 @@ dieses Feature mit Bedacht, und achte darauf, personalisierte Seiten grundsätzl
 ### Standard-Zugriffsrechte
 
 **Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine 
-Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du in Abschnitt 
+Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
 [Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
 
 **Standardgruppe:** Hier kannst du festlegen, welcher Gruppe standardmäßig die Seiten gehören, für die keine 
-Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du in Abschnitt 
+Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
 [Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
 
 **Standardzugriffsrechte:** Hier kannst du festlegen, welche Zugriffsrechte standardmäßig für die Seiten gelten, für 
-die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du in Abschnitt 
+die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
 [Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
 
 
@@ -173,7 +173,7 @@ parameters:
 
 ### SMTP-Versand
 
-Um den SMTP-Versand einzurichten brauchst du folgende Angaben von deinem Hoster.
+Um den SMTP-Versand einzurichten, brauchst du folgende Angaben von deinem Hoster:
 
 - Den **Hostnamen** des SMTP-Servers.
 - Den **Benutzernamen** für den SMTP-Server.
@@ -203,7 +203,7 @@ Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lä
 bzw. `config_dev.yml` und falls nicht vorhanden die `config.yml`.
 
 Damit kannst du unterschiedliche Konfigurationen für deine Test- bzw. Produktionsumgebung (dev/prod) realisieren (z. B. 
-mehr Logging im Debug Modus). Ausserdem committest du die `config.yml` im Gegensatz zur `parameters.yml` in dein 
+mehr Logging im Debug Modus). Außerdem committest du die `config.yml` im Gegensatz zur `parameters.yml` in dein 
 [Repository](https://de.wikipedia.org/wiki/Repository).
 
 {{% notice note %}}
@@ -319,7 +319,7 @@ contao:
 
 {{% notice warning %}}
 **Cache leeren**  
-Damit die Änderungen aktiv werden muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
+Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
 »Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden.
 
 ```bash
