@@ -137,8 +137,8 @@ Unter den Informationen, die abgefragt werden können befindet sich zum Beispiel
 
 ## Stack Trace
 
-Wenn ein Fehler auftritt wird dieser im `var/logs` Verzeichnis festgehalten. Um
-die Ursache des Fehlers zu finden kann es jedoch hilfreich sein den kompletten Stack
+Wenn ein Fehler auftritt, wird dieser im `var/logs` Verzeichnis festgehalten. Um
+die Ursache des Fehlers zu finden, kann es jedoch hilfreich sein den kompletten Stack
 Trace der Fehlermeldung zu bekommen. Mit aktivem Debug-Modus kann man den Fehler
 nochmals reproduzieren und bekommt dann direkt im Browser Fenster den Stack Trace.
 Dieser ist dann auch im Symfony Profiler abrufbar.
