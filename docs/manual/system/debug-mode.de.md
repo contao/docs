@@ -125,7 +125,7 @@ werden.
 
 ![Symfony toolbar](/de/system/images/de/symfony-toolbar.png)
 
-Unter den Informationen die abgefragt werden können befindet sich zum Beispiel:
+Unter den Informationen, die abgefragt werden können befindet sich zum Beispiel:
 
 * Symfony, Contao & PHP Version
 * Zusammengefasste Debug Ausgaben des `VarDumper` (`dump()`)
