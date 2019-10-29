@@ -6,7 +6,7 @@ url: "system/debug-modus"
 ---
 
 
-Während der Entwicklung der Web Applikation kann es hilfreich sein den sogenannten
+Während der Entwicklung der Web Applikation kann es hilfreich sein, den sogenannten
 "Debug-Modus" (auch _Entwickler Modus_ oder _Entwickler Umgebung_ genannt) zu aktivieren.
 Damit kann zum Beispiel folgendes erreicht werden:
 
