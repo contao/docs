@@ -85,7 +85,7 @@ APP_ENV=dev
 
 It is also possible to create an (initially) empty `.env` file and then next to
 that a `.env.local` file with said content. Typically, you would then commit the
-`.env` file to your project's Git repsitory, but the `.env.local` file should be
+`.env` file to your project's Git repository, but the `.env.local` file should be
 in your ignore list.
 
 {{% notice warning %}}
