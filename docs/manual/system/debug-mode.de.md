@@ -77,7 +77,7 @@ oder einem speziellen Cookie aktiviert.
 
 Die Umgebungsvariable, die den Debug-Modus steuert, heißt `APP_ENV` und der Inhalt
 dieser Variable muss `dev` lauten, damit der Debug-Modus aktiviert ist. Diese Umgebungsvariable
-könnte z.B. global im System gesetzt sein oder direkt im Web Server der jeweiligen
+könnte z. B. global im System gesetzt sein oder direkt im Web Server der jeweiligen
 Web Applikation. Eine weitere Möglichkeit ist diese Umgebungsvariable über eine
 `.env` Datei im Wurzelverzeichnis des Projektes zu setzen. Der Inhalt dieser Datei
 muss dann so aussehen:
