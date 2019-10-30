@@ -18,16 +18,15 @@ the following things are in effect:
 
 ## Accessing the Debug Mode
 
-The way you activate the debug mode is different between certain Contao
-versions. 
+The way you activate the debug mode is different between Contao versions. 
 
 
-### Contao 4.4 through 4.7
+### Contao 4.4
 
-In Contao **4.4** through **4.7** you access the debug mode
-by accessing the `app_dev.php` entry point. Prepend any URL you want to debug
-with that entry point. For example, if you need to track down an error within the
-Contao Install Tool, then you would access the debug mode via
+In Contao **4.4** you access the debug mode by accessing the `app_dev.php` entry 
+point. Prepend any URL you want to debug with that entry point. For example, if 
+you need to track down an error within the Contao Install Tool, then you would access 
+the debug mode via
 
 ```none
 https://example.org/app_dev.php/contao/install
@@ -35,7 +34,7 @@ https://example.org/app_dev.php/contao/install
 
 The `app_dev.php` entry point can be accessed at any time in your local developer
 environment. However, in any other environment, you will need to set a username
-and password first.
+and password first for security reasons.
 
 
 #### Command Line
@@ -68,7 +67,7 @@ console command in the background and also create the `.env` file accordingly.
 ### Contao 4.8 and up
 
 In Contao **4.8** and up the debug mode is enabled either via a special cookie
-just for one user or via an environment variable.
+just for one user or via an environment variable for everyone.
 
 
 #### Environment Variable
@@ -127,7 +126,7 @@ Some of the information you can gather via the profiler are:
 * Symfony, Contao & PHP version
 * Collected debug output from the `VarDumper` (`dump()`)
 * Memory consumption
-* Database processing times
+* Database query times
 * Logged in user properties
 * Errors, warnings and deprecations
 
