@@ -39,7 +39,7 @@ Ein Theme kann mehrere Seitenlayouts beinhalten. Dein erstes Seitenlayout erstel
 ## Das Seitenlayout konfigurieren
 
 Du befindest dich jetzt in den Einstellungen für Seitenlayouts. Setze hier lediglich den `Titel` (z. B. auf `Standard`) 
-und wähle jeweils im Bereich `Zeilen` und `Spalten` die erste Option aus ("Nur Hauptzeile" bzw. "Nur Hauptspalte"). 
+und wähle jeweils im Bereich `Zeilen` und `Spalten` die erste Option aus (»Nur Hauptzeile« bzw. »Nur Hauptspalte«). 
 
 Die weiteren Einstellungen kannst du einfach übernehmen und bestätigst deine Angaben
 mit `Speichern und schließen`. Die Einstellungen eines Seitenlayouts kannst du nachträglich jederzeit ändern.
@@ -59,7 +59,7 @@ Du befindest dich jetzt in den Seiteneinstellungen. Setze hier lediglich folgend
 | Einstellung                | Wert                                |
 |:---------------------------|:------------------------------------|
 | **Seitenname**             | z. B. Meine Demo Webseite           |
-| **Seitentyp**              | Auswahl "Startpunkt einer Webseite" |
+| **Seitentyp**              | Auswahl »Startpunkt einer Webseite« |
 | **Sprache**                | de                                  |
 | **Sprachen-Fallback**      | Option aktivieren                   |
 | **Ein Layout zuweisen**    | Option aktivieren                   |
