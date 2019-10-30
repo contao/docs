@@ -199,3 +199,16 @@ Verfügbare Flags:
 | `readable_size`     | Wandelt die Ausgabe in ein menschenlesbares Format um.                   | siehe `System::getReadableSize()`                 |
 | `urlencode`         | URL-kodiert einen String.                                                | [PHP-Funktion](https://php.net/urlencode)         |
 | `rawurlencode`      | URL-Kodierung nach RFC 3986.                                             | [PHP-Funktion](https://php.net/rawurlencode)      |
+
+
+## Basic Entities
+
+Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zurück umgewandelt:
+
+| Basic Entities | HTML Entities          |
+|:---------------|:-----------------------|
+| `[&]`          | `&amp;` = ampersand    |
+| `[lt]`         | `&lt;` = less than     |
+| `[gt]`         | `&gt;` = greater than  |
+| `[nbsp]`       | `&nbsp;` = non-breaking space<br>Wenn der Umbruch zwischen zwei Wörtern verhindert werden soll, muss ein geschütztes Leerzeichen eingefügt werden. z. B. `Contao[nbsp]CMS` |
+| `[-]`          | `&shy;` = soft hyphen<br>Das Wort wird umgebrochen, wenn nicht ausreichend Platz zur Verfügung steht. Die Trennung erfolgt mit Trennstrich. z. B. `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft` |
