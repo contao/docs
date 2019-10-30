@@ -205,10 +205,10 @@ Verfügbare Flags:
 
 Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zurück umgewandelt:
 
-| Basic Entities | HTML Entities |
-|:---------------|:--------------|
-| `[&]`          | `&amp;`       |
-| `[lt]`         | `&lt;`        |
-| `[gt]`         | `&gt;`        |
-| `[nbsp]`       | `&nbsp;`      |
-| `[-]`          | `&shy;`       |
+| Basic Entities | HTML Entities          |
+|:---------------|:-----------------------|
+| `[&]`          | `&amp;` = ampersand    |
+| `[lt]`         | `&lt;` = less than     |
+| `[gt]`         | `&gt;` = greater than  |
+| `[nbsp]`       | `&nbsp;` = non-breaking space<br>Wenn der Umbruch zwischen zwei Wörtern verhindert werden soll, muss ein geschütztes Leerzeichen eingefügt werden. z. B. `Contao[nbsp]CMS` |
+| `[-]`          | `&shy;` = soft hyphen<br>Das Wort wird umgebrochen, wenn nicht ausreichend Platz zur Verfügung steht. Die Trennung erfolgt mit Trennstrich. z. B. `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft` |
