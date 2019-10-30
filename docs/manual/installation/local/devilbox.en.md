@@ -1,0 +1,143 @@
+---
+title: "The Docker Devilbox"
+menuTitle : "With Docker Devilbox"
+description: "With the Docker Devilbox one or more Contao installations can be installed and maintained locally."
+weight: 100
+---
+
+The [Devilbox Project](http://devilbox.org/) is a complete LAMP stack for [Docker](https://www.docker.com/).
+If you use the Docker-Toolbox, [these informations](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker- toolbox-and-the-devilbox) of the documentation are worth reading.
+
+
+## Install and configure the Devilbox
+
+There is no installation in the true sense necessary. You just have to download the files from the Devilbox [GitHub Page](https://github.com/cytopia/devilbox) into an empty directory. The configuration takes place via a single file. In your directory you will find the file `env-example`. Copy and rename
+the file to `.env`. In the new file you can now make your configurations. Necessary are changes of the following entries:
+
+* [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid)
+* [NEW_GID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-gid)
+* [HTTPD_DOCROOT](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-docroot-dir)
+* [HTTPD_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-server)
+* [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)
+* [MYSQL_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#mysql-server)
+
+The individual steps (especially for the entries `NEW_UID` and` NEW_GID`) are well described in the [Devilbox Documentation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html # set-uid-and-gid). For Contao itself, the other entries should be set as something like this:
+
+- `HTTPD_DOCROOT_DIR=web`
+- `HTTPD_SERVER=apache-2.4`
+- `PHP_SERVER=7.3`
+- `MYSQL_SERVER=mariadb-10.3`
+
+{{% notice note %}}
+After every change in the configuration `.env` file, the Devilbox must be restarted.
+{{% /notice %}}
+
+{{% notice warning %}}
+**Do not delete entries in the .env file!** For example, by default, the entry `HTTPD_SERVER=nginx-stable`
+is set and `# HTTPD_SERVER=apache-2.4` is commented out (see **` # `** at the beginning of the line). To change such
+entries you only have to comment on or comment out. Be sure to change to `HTTPD_SERVER=apache-2.4`. As a web server nginx
+could be used. For Contao, however, further configurations of the web server are necessary then.
+{{% /notice %}}
+
+
+## Start the Devilbox
+
+Change to the directory and start the Devilbox with Docker. For the first time it can take a while to create and load 
+each Docker images and the containers. Restarts are much faster then.
+
+```bash
+docker-compose up -d httpd php mysql
+```
+
+
+## Stop the Devilbox
+
+```bash
+docker-compose stop
+```
+
+
+## The Devilbox Dashboard
+
+Once the Devilbox has started, you can now open your browser. By entering **`http: //127.0.0.1`** you reach
+the Devilbox dashboard. The navigation gives you access to the various functions.
+
+{{% notice note %}}
+The IP address to use depends on your Docker environment. If you have the Docker-Toolbox installed, your IP address 
+may be different. The IP address can be determined by the command `docker-machine ip`.
+{{% /notice %}}
+
+| Navigation          | Description                                |
+|:--------------------|:-------------------------------------------|
+| **Home**            | Status information                         |
+| **Virtual Hosts**   | List of existing vhosts or websites        |
+| **Emails**          | E-Mail catch service                       |
+| **Databases**       | Database information                       |
+| **Info**            | More information                           |
+| **Tools**           | Access to tools such as `phpMyAdmin`       |
+
+
+## Prepare the Contao installation
+
+One or more Contao installations are created in the Devilbox directory **`data\www`**. Per Contao installation
+you have to create a separate directory here. The directory name then corresponds to the later vhost name. The directory 
+name `contao4` then results in` contao4.loc` for example.
+
+You have created a directory (e. g. `contao4`). Change to this directory and create a new subfolder `web`. Copy the 
+Contao Manager `.phar` file into this folder and rename the file to` contao-manager.phar.php`.
+
+{{% notice note %}}
+The domain suffix `.loc` is the default. However, this can be changed in the `.env` file via the entry `TLD_SUFFIX`.
+{{% /notice %}}
+
+
+## Installation via the Contao Manager
+
+Start `phpMyAdmin` in the Devilbox dashboard via `Tools\phpMyAdmin` and create a new database. Change then
+in the navigation to the page `Virtual Hosts`. Here you should see a list of your existing web projects
+and you can call them right away. You can now initiate the Contao installation via the Contao Manager. For example: `contao4.loc/contao-manager.phar.php`.
+
+The further procedure is then identical to the normal installation.
+
+
+## Installation via the command line
+
+By default, the PHP memory limit for the Devilbox's PHP container is too low and therefore must be previously configured for Composer.
+Change to the directory `cfg`. Did you configure the devilbox with PHP 7.3 in the `.env` file, make the following changes 
+accordingly in the directory `cfg\php-ini-7-3`. Create a file `memory_limit.ini` with the following entry:
+
+```bash
+[PHP]
+memory_limit = -1
+```
+
+Afterwards you have to restart the Devilbox. The Devilbox main directory contains the files `shell.sh` and` shell.bat`.
+So you can plug into the running Devilbox PHP container. Here are already [numerous tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) preinstalled. Also `composer`. After calling you are in the directory `shared\http`. To install e. g. Contao 4.8 in a directory `contao48` you just have to enter:
+
+```bash
+composer create-project contao/managed-edition contao48 4.8
+```
+
+Create a new database:
+
+```bash
+mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao48;'
+```
+
+Afterwards you can leave the container via `exit` and call the Contao-Installtool.
+
+
+## The Contao-Installtool
+
+The information for the Contao-Installtool are basically identical. You only have to pay attention to the following entries:
+
+| Entry               | Value                 |
+|:--------------------|:----------------------|
+| **Host**            | mysql                 |
+| **Benutzername**    | root                  |
+| **Passwort**        | Do not enter a value  |
+
+{{% notice note %}}
+The user `root` with empty password is the Devilbox default setting. This could be changed in the Devilbox [configuration](https://devilbox.readthedocs.io/en/latest/support/faq.html#can-i-change-the-mysql-root-password). In this case, you must enter your values in the Contao Install-Tool.
+{{% /notice %}}
+
