@@ -17,7 +17,10 @@ gepflegten Versionen von Contao sind mit den neuesten PHP- und MySQL-Versionen k
 empfohlen, diese immer zu verwenden.
 
 - **PHP:** Version 7.3+ (neueste Patch-Version)
-- **MySQL:** Version 5.7+ aber vor 8.014 oder gleichwertiger **MariaDB** Server
+- **MySQL:** Version 5.7+ oder gleichwertiger **MariaDB** Server
+{{% notice warning %}}
+Derzeit besteht eine Inkompatibilität mit MySQL Version **8.0.14+**.
+{{% /notice %}}
 
 
 #### PHP-Erweiterungen
