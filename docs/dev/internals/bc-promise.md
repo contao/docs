@@ -32,7 +32,7 @@ That being said, there are a few deviations from the Symfony BC Promise compared
   
 
 The general rule of thumb is that we try to break as little as possible and as much as required. To make sure you're
-affected as little as possible, you may also benefit from best practices in software engineering such as preferring
+affected as little as possible, you may also benefit from best practices in software engineering such as [preferring
 Composition over Inheritance][Composition_over_Inheritance].
 
 If you encounter any problematic break, please feel free to
