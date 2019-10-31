@@ -20,7 +20,7 @@ empfohlen, diese immer zu verwenden.
 - **MySQL:** Version 5.7+ oder gleichwertiger **MariaDB** Server
 
 {{% notice warning %}}
-Derzeit besteht eine Inkompatibilität mit MySQL Version **8.0.14+**.
+Derzeit besteht eine Inkompatibilität mit MySQL Version **8.0.17+**.
 {{% /notice %}}
 
 
