@@ -12,16 +12,16 @@ We also follow the principles of [Semantic Versioning][Semver] which means that 
 when switching to a new major version.
 
 However, in contrast to Symfony itself, Contao is not "just" a framework. We do not only build the tools for other
-developers to build their tools but we also build tools ourselves which are shipped with the core distribution of Contao.
+developers but we also build tools ourselves which are then shipped with the core distribution of Contao.
 That being said, there are a few deviations from the Symfony BC Promise compared to our promise:
 
 * Our BC promise does not cover any template changes. Templates are subject to change very often and you have to compare
-  them with every update of Contao you do. Generally speaking we try to only ever apply changes in major and minor
+  them with every update of Contao. Generally speaking, we try to only ever apply template changes in major and minor
   versions but if a bugfix requires us to change a template then we might do that as well.
   
-* We do not cover translation keys. Translations may be added and or removed in every minor version as they change quite
+* We do not cover translation keys. Translations may be added and removed in every minor version as they change quite
   often. If you want to reuse the ones provided by the core, double check them after every update. You may also provide
-  your own ones.
+  your own ones so you are not affected of any changes in the core.
   
 * Because Contao is a Symfony bundle like every other bundle, everything that is about integrating Contao into a Symfony
   application might be subject to change. So expect breaking changes for the following aspects of Contao:
