@@ -18,6 +18,7 @@ empfohlen, diese immer zu verwenden.
 
 - **PHP:** Version 7.3+ (neueste Patch-Version)
 - **MySQL:** Version 5.7+ oder gleichwertiger **MariaDB** Server
+
 {{% notice warning %}}
 Derzeit besteht eine Inkompatibilität mit MySQL Version **8.0.14+**.
 {{% /notice %}}
