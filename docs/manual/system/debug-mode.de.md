@@ -10,11 +10,24 @@ Während der Entwicklung der Web-Applikation kann es hilfreich sein, den sogenan
 »Debug-Modus« (auch _Entwickler Modus_ oder _Entwickler Umgebung_ genannt) zu aktivieren.
 Damit kann zum Beispiel folgendes erreicht werden:
 
-* Bilder werden immer neu generiert und nicht aus dem Cache geladen.
 * Der Seitencache wird nicht benutzt.
 * Der Symfony Profiler und die Toolbar sind verfügbar.
 * CSS und JavaScript Assets werden nicht kombiniert.
 * Template Namen werden im HTML Quellcode als Kommentare ausgegeben.
+
+{{% notice info %}}
+In Contao **4.4** umgeht der Debug-Modus auch den Bild-Cache von Contao. Das kann
+zwar nützlich sein, verursacht aber auch eine lange Ladezeit für die Erzeugung einer
+Seite mit vielen Bildern. Um den Bild-Cache im Debug-Modus wieder zu aktivieren,
+kann folgendes in die `config_dev.yml` eingefügt werden:
+
+```yml
+# app/config/config_dev.yml
+contao:
+    image:
+        bypass_cache: false
+```
+{{% /notice %}}
 
 
 ## Zugriff auf den Debug-Modus
