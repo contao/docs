@@ -63,7 +63,7 @@ this:
 
 ```php
 // src/EventListener/Dca/ContentListener.php
-namespace App\DataContainer;
+namespace App\EventListener\Dca;
 
 use Contao\DataContainer;
 
