@@ -722,7 +722,7 @@ der Satz »Besuchen Sie unsere Firmenseite!« steht.
 
 **Link-Titel:** Der Link-Titel wird als `title`-Attribut im HTML-Markup eingefügt.
 
-**Lightbox:** Hier kannst du das `rel`-Attribut des Links festlegen, das zur Steuerung der Lightbox verwendet wird.
+**Lightbox:** Hier kannst du das `data-lightbox`-Attribut des Links festlegen, das zur Steuerung der Lightbox verwendet wird.
 
 **Bildlink-Einstellungen**
 
