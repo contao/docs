@@ -6,7 +6,7 @@ description: "Our backwards compatibility promise."
 Everyone involved in the development of Contao knows about the importance of stable software and thus stable APIs.
 We try our very best to make sure Contao updates are as smooth as they can be.
 
-Being a project that sits on top of the Symfony full-stack framework we generally [follow the same rules as
+Being a project that sits on top of the Symfony full-stack framework, we generally [follow the same rules as
 Symfony itself][SF_BC_Promise].
 We also follow the principles of [Semantic Versioning][Semver], which means that breaking changes must only be expected
 when switching to a new major version.
