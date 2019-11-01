@@ -29,7 +29,10 @@ That being said, there are a few deviations from the Symfony BC Promise compared
   * Event Listeners
   * Dependency Injection Compiler Passes
   * Commands
-  
+
+* Everything that integrates Contao into the [Contao Managed Edition][Contao_ME]:
+
+  * The `ContaoManager/Plugin` class
 
 The general rule of thumb is that we try to break as little as possible and as much as required. To make sure you're
 affected as little as possible, you may also benefit from best practices in software engineering such as [preferring
@@ -43,3 +46,4 @@ possible solution and extend or fix the document at hand.
 [Semver]: https://semver.org/
 [Composition_over_Inheritance]: https://en.wikipedia.org/wiki/Composition_over_inheritance
 [Monorepo_Issues]: https://github.com/contao/contao/issues
+[Contao_ME]: ../getting-started/initial-setup/managed-edition
