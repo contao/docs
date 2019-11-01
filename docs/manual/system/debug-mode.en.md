@@ -15,7 +15,7 @@ the following things are in effect:
 * Template names will be shown in the source as HTML comments.
 
 {{% notice info %}}
-In Contao **4.4** the debug mode also bypasses the image cache of Contao. While
+In Contao **4.4**, the debug mode also bypasses the image cache of Contao. While
 this can be useful, it will also slow down the page generation significantly on
 pages with a lot of images. To disable bypassing of the image cache add the following
 to your `config_dev.yml`:
