@@ -12,7 +12,7 @@ We also follow the principles of [Semantic Versioning][Semver] which means that 
 when switching to a new major version.
 
 However, in contrast to Symfony itself, Contao is not "just" a framework. We do not only build the tools for other
-developers but we also build tools ourselves which are then shipped with the core distribution of Contao.
+developers but we also build tools ourselves, which are then shipped with the core distribution of Contao.
 That being said, there are a few deviations from the Symfony BC Promise compared to our promise:
 
 * Our BC promise does not cover any template changes. Templates are subject to change very often and you have to compare
