@@ -9,11 +9,24 @@ During development of your web application the debug mode (also called _develope
 or _developer environment_) can be helpful for a variety of things. When enabled, 
 the following things are in effect:
 
-* Images are always generated and not loaded from cache.
 * The page cache is disabled.
 * The Symfony Profiler and its toolbar is enabled.
 * CSS and JavaScript assets will not be combined.
 * Template names will be shown in the source as HTML comments.
+
+{{% notice info %}}
+In Contao **4.4**, the debug mode also bypasses the image cache of Contao. While
+this can be useful, it will also slow down the page generation significantly on
+pages with a lot of images. To disable bypassing of the image cache add the following
+to your `config_dev.yml`:
+
+```yml
+# app/config/config_dev.yml
+contao:
+    image:
+        bypass_cache: false
+```
+{{% /notice %}}
 
 
 ## Accessing the Debug Mode
