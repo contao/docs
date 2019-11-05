@@ -4,6 +4,7 @@ description: "Implementing your first Hooks in Contao."
 weight: 600
 aliases:
   - /getting-started/hook/
+  - /getting-started/hooks/
 ---
 
 
@@ -80,7 +81,7 @@ entry's author directly.
 The following more complex example shows how to customize the personal data update procedure
 of your members. Assume you have an external service, against which the personal data 
 of members need to be kept in sync, whenever a member changes his personal data. 
-The _Personal data_ module of Contao provides a [updatePersonalData][3] hook which
+The _Personal data_ module of Contao provides a [updatePersonalData][updatePersonaldataHook] hook which
 will be triggered when, as the name of the hook suggests, a member updates his personal
 data via this module.
 
@@ -125,5 +126,6 @@ of the framework documentation and have a look at the complete [reference of hoo
 
 [1]: /getting-started/starting-development/#autoloading-services-and-actions
 [2]: /reference/hooks/parsearticles/
-[3]: /framework/hook/
+[3]: /framework/hooks/
 [4]: /reference/hooks/
+[updatePersonaldataHook]: /reference/hooks/updatepersonaldata/

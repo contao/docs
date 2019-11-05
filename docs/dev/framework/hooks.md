@@ -2,6 +2,7 @@
 title: "Hooks"
 description: Extending front end and back end functionality.
 aliases:
+    - /framework/hook/
     - /framework/hooks/
 ---
 
