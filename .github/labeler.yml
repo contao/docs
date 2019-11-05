@@ -1,2 +1,7 @@
-Developer Documentation: docs/dev/*
-User Manual: docs/manual/*
+Developer Documentation:
+    - docs/dev/*
+    - docs/dev/**/*
+
+User Manual:
+    - docs/manual/*
+    - docs/manual/**/*
