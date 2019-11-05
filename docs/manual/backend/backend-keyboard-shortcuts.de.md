@@ -61,9 +61,9 @@ Im Modus »Mehrere bearbeiten« kommen weitere Kürzel hinzu:
 | `[Shift]`         | Mehrere&nbsp;Checkboxen&nbsp;auswählen   | Wählt mehrere Checkboxen aus wenn die Shift-Taste gedrückt wird.                        |
 
 
-## Tastaturkürzel unter Windows und Mac {#tastaturkuerzel-unter-windows-und-mac}
+## Tastaturkürzel unter Windows, Linux und Mac {#tastaturkuerzel-unter-windows-linux-und-mac}
 
-Die beschriebenen Tastaturkürzel funktionieren in dieser Form nur unter Windows. Mac-Nutzer müssen anstatt der
+Die beschriebenen Tastaturkürzel funktionieren in dieser Form nur unter Windows und Linux. Mac-Nutzer müssen anstatt der
 `[Alt]`-Taste `[Ctrl]+[⌥ Opt]` in Verbindung mit dem jeweiligen Kürzel verwenden.
 
 Zudem weicht Firefox unter Windows leider vom gewohnten Standard ab, dort musst du `[Alt]+[Umsch]` in Verbindung mit
