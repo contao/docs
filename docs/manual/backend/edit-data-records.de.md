@@ -88,6 +88,8 @@ erledigen, indem du den passenden Update-Modus auswählst.
 
 ![Auswahl des Update-Modus beim Überschreiben von Datensätzen](/de/backend/images/de/auswahl-des-update-modus-beim-ueberschreiben-von-datensaetzen.png)
 
+------ Ich möchte hier den Hinweis geben, dass das Bild geändert werden sollte. -------
+
 **Ausgewählte Werte hinzufügen:** Die bestehenden Werte bleiben erhalten und werden durch die neu ausgewählten Werte 
 ergänzt. Eine Seite, der bereits die Gruppe *Piano Students* zugewiesen ist, hätte also nach dem Speichern die Gruppen 
 *Piano Students* und *Violin Students*.
