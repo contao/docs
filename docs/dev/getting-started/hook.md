@@ -125,5 +125,5 @@ of the framework documentation and have a look at the complete [reference of hoo
 
 [1]: /getting-started/starting-development/#autoloading-services-and-actions
 [2]: /reference/hooks/parsearticles/
-[3]: /framework/hook/
+[3]: /reference/hooks/updatepersonaldata/
 [4]: /reference/hooks/
