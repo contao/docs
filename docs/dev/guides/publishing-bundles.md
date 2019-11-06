@@ -66,8 +66,8 @@ work with Contao, but:
 
 ## Publishing to the Contao ecosystem
 
-If you've been following along so far, your extension is now technically compatible with Contao 
-but you also want Contao users to be able to discover it. In most cases, this means making the
+Your extension is now technically compatible with Contao but you also want Contao users
+to be able to discover it. In most cases, this means making the
 package discoverable in the Contao Manager search. A public version of this search index
 is available on [extensions.contao.org][extensions].
 
