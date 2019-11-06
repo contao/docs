@@ -36,13 +36,13 @@ auf der rechten der Arbeitsbereich.
 
 ### Der Infobereich
 
-Der Infobereich zeigt vier wichtige Links an, die beim Arbeiten mit Contao immer wieder benötigen werden.
+Der Infobereich zeigt einige wichtige Links an, die beim Arbeiten mit Contao immer wieder benötigt werden.
 
 **Startseite:** Ein Klick auf das Contao-Logo führt zur Startseite des Backends zurück.
 
 **Hinweise:** Beim Klick auf diesen Link öffnet ein Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
 
-**Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../system/debug-mode) eingeschaltet bzw. ausgeschaltet.
+**Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-mode/) eingeschaltet bzw. ausgeschaltet.
 {{< version "4.8" >}}
 
 **Vorschau:** Dieser Link ruft das Frontend, also die eigentliche Webseite, in einem neuen Fenster auf. Wenn du eine
