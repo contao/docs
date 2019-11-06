@@ -145,13 +145,11 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
 
 ## Read more
 
-* [DCA Configuration reference][1]
-* [Manipulate and create palettes][2]
-* [Create and use templates][3]
-* [Customize Caching][4]
+* [Manipulate and create palettes][palettes]
+* [Create and use templates][templates]
+* [Customize Caching][caching]
 
 
-[1]: ../../reference/dca/config
-[2]: ../../reference/dca/palettes
-[3]: ../templates
-[4]: ../caching
+[palettes]: ../../reference/dca/palettes
+[templates]: ../templates
+[caching]: ../caching
