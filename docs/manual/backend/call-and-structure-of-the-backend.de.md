@@ -42,6 +42,9 @@ Der Infobereich zeigt vier wichtige Links an, die beim Arbeiten mit Contao immer
 
 **Hinweise:** Beim Klick auf diesen Link öffnet ein Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
 
+**Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../system/debug-mode) eingeschaltet bzw. ausgeschaltet.
+{{< version "4.8" >}}
+
 **Vorschau:** Dieser Link ruft das Frontend, also die eigentliche Webseite, in einem neuen Fenster auf. Wenn du eine
 bestimmte Seite oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprechende Seite im Frontend
 weitergeleitet.
