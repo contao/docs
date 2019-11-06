@@ -1,7 +1,8 @@
 name: Label the Pull Requests automatically
 
 on:
-    - pull_request
+    schedule:
+        - cron: '0 * * * *'
 
 jobs:
     label:
