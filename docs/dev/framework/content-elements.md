@@ -151,7 +151,7 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
 * [Customize Caching][4]
 
 
-[1]: ../../reference/dca/reference
+[1]: ../../reference/dca/config
 [2]: ../../reference/dca/palettes
 [3]: ../templates
 [4]: ../caching
