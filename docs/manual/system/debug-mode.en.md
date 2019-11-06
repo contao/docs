@@ -9,6 +9,7 @@ During development of your web application the debug mode (also called _develope
 or _developer environment_) can be helpful for a variety of things. When enabled, 
 the following things are in effect:
 
+* Stack traces of errors will be shown.
 * The page cache is disabled.
 * The Symfony Profiler and its toolbar is enabled.
 * CSS and JavaScript assets will not be combined.

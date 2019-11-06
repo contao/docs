@@ -10,6 +10,7 @@ Während der Entwicklung der Web-Applikation kann es hilfreich sein, den sogenan
 »Debug-Modus« (auch _Entwickler Modus_ oder _Entwickler Umgebung_ genannt) zu aktivieren.
 Damit kann zum Beispiel folgendes erreicht werden:
 
+* Der Stack Trace von Fehlern wird ausgegeben.
 * Der Seitencache wird nicht benutzt.
 * Der Symfony Profiler und die Toolbar sind verfügbar.
 * CSS und JavaScript Assets werden nicht kombiniert.
