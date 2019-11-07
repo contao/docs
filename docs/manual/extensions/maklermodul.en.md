@@ -33,4 +33,4 @@ These contao themes include layout templates for the Maklermodul.
 **Docs:** [docs.contao-themes.net](https://docs.contao-themes.net/#/odd_theme/odd-maklermodul)  
 **Install for free or order a license:** [contao-themes.net/theme-detail/odd.html](https://contao-themes.net/theme-detail/odd.html)  
 
-![Immobilienliste mit Auswahllisten im MATE Theme](/de/extensions/images/de/maklermodul_odd_liste_selects.png ':size=150') ![Immobilienliste mit Buttons im MATE Theme](/de/extensions/images/de/maklermodul_odd_liste_buttons.png ':size=150') ![Immobilien Exposé im MATE Theme](/de/extensions/images/de/maklermodul_odd_details.png ':size=150')
+![property list with mit select lists within the ODD theme](/de/extensions/images/de/maklermodul_odd_liste_selects.png ':size=150') ![property list with buttons within the ODD theme](/de/extensions/images/de/maklermodul_odd_liste_buttons.png ':size=150') ![property description within the ODD theme](/de/extensions/images/de/maklermodul_odd_details.png ':size=150')
