@@ -25,7 +25,7 @@ These contao themes include layout templates for the Maklermodul.
 **Docs:** [docs.contao-themes.net](https://docs.contao-themes.net/#/mate_theme/maklermodul)  
 **Install for free or order a license:** [contao-themes.net/theme-detail/mate.html](https://contao-themes.net/theme-detail/mate.html)  
 
-![Immobilienliste mit Auswahllisten im MATE Theme](/de/extensions/images/de/maklermodul_mate_liste_selects.png ':size=150') ![Immobilienliste mit Buttons im MATE Theme](/de/extensions/images/de/maklermodul_mate_liste_buttons.png ':size=150') ![Immobilien Exposé im MATE Theme](/de/extensions/images/de/maklermodul_mate_details.png ':size=150')
+![property list with mit select lists within the MATE theme](/de/extensions/images/de/maklermodul_mate_liste_selects.png ':size=150') ![property list with buttons within the MATE theme](/de/extensions/images/de/maklermodul_mate_liste_buttons.png ':size=150') ![property description within the MATE theme](/de/extensions/images/de/maklermodul_mate_details.png ':size=150')
 
 #### ODD Theme
 
