@@ -17,7 +17,7 @@ Detailed instructions can be found in the [manual](https://docs.pdir.de/#/makler
 
 ### Contao Themes with layout templates for the Maklermodul
 
-This contao themes includes layout templates for the Maklermodul.
+These contao themes include layout templates for the Maklermodul.
 
 #### MATE Theme
 
