@@ -154,7 +154,7 @@ Die Datei `parameters.yml` findest du im Ordner `app/config/` und wird bei der I
 angelegt.
 
 {{% notice note %}}
-Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.
+Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.vendor/bin/contao-console cache:clear --env=prod --no-warmup
 {{% /notice %}}
 
 Die `parameters.yml` nach der Installation von Contao:
@@ -169,7 +169,7 @@ parameters:
     database_name: …
     secret: …
 ```
-
+vendor/bin/contao-console cache:clear --env=prod --no-warmup
 
 ### SMTP-Versand
 
@@ -325,5 +325,6 @@ Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den 
 ```bash
 vendor/bin/contao-console cache:clear --env=prod --no-warmup
 ```
+Dazu muss man sich im Cantao Installationsverzeichnis befinden (das ist der Ordner, in dem `web`liegt).
 
 {{% /notice %}}
