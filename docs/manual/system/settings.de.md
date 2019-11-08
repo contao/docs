@@ -325,6 +325,6 @@ Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den 
 ```bash
 vendor/bin/contao-console cache:clear --env=prod --no-warmup
 ```
-Dazu muss man sich im Cantao Installationsverzeichnis befinden.
+Dazu muss man sich im Contao Installationsverzeichnis befinden.
 
 {{% /notice %}}
