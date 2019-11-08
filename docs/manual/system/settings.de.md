@@ -198,9 +198,10 @@ parameters:
 
 ## config.yml
 
+Contao lädt automatisch die Standard-Konfiguration. Du kannst die Konfiguration wie folgt ändern:
 Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `app/config/`. 
-Falls die Datei noch nicht vorhanden ist, kann diese angelegt werden. Contao lädt automatisch die `config_prod.yml` 
-bzw. `config_dev.yml` und falls nicht vorhanden die `config.yml` und falls auch die nicht vorhanden die Standard-Konfiguration.
+Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lädt automatisch die `config_prod.yml` 
+bzw. `config_dev.yml` und falls nicht vorhanden die `config.yml`.
 
 Damit kannst du unterschiedliche Konfigurationen für deine Test- bzw. Produktionsumgebung (dev/prod) realisieren (z. B. 
 mehr Logging im Debug Modus). 
