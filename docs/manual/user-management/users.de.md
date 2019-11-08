@@ -86,7 +86,7 @@ In diesem Punkt kannst du den Zugriff auf die verschiedenen Bildgrößen einschr
 
 **Erlaubte Formulare:** Hier legst du fest, auf welche Formulare die Mitglieder der Benutzergruppe zugreifen dürfen.
 
-**Formular-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Formulare angelegen bzw. bestehende 
+**Formular-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Formulare anlegen bzw. bestehende 
 löschen dürfen.
 
 
