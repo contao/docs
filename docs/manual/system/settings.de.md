@@ -170,6 +170,7 @@ parameters:
     secret: …
 ```
 
+
 ### SMTP-Versand
 
 Um den SMTP-Versand einzurichten, brauchst du folgende Angaben von deinem Hoster:
