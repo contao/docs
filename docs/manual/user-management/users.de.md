@@ -86,7 +86,7 @@ In diesem Punkt kannst du den Zugriff auf die verschiedenen Bildgrößen einschr
 
 **Erlaubte Formulare:** Hier legst du fest, auf welche Formulare die Mitglieder der Benutzergruppe zugreifen dürfen.
 
-**Formular-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Formulare angelegen bzw. bestehende 
+**Formular-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Formulare anlegen bzw. bestehende 
 löschen dürfen.
 
 
@@ -96,7 +96,7 @@ löschen dürfen.
 **Erlaubte FAQ-Kategorien:** Hier legst du fest, auf welche FAQ-Kategorien die Mitglieder der Benutzergruppe zugreifen 
 dürfen.
 
-**FAQ-Kategorierechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Kategorien angelegen bzw. 
+**FAQ-Kategorierechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Kategorien anlegen bzw. 
 bestehende löschen dürfen.
 
 
@@ -106,12 +106,12 @@ bestehende löschen dürfen.
 **Erlaubte Archive:** Hier legst du fest, auf welche News/Blog-Archive die Mitglieder der Benutzergruppe zugreifen 
 dürfen.
 
-**Archivrechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue News/Blog-Archive angelegen bzw. 
+**Archivrechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue News/Blog-Archive anlegen bzw. 
 bestehende löschen dürfen.
 
 **Erlaubte RSS-Feeds:** Hier legst du fest, auf welche RSS-Feeds die Mitglieder der Benutzergruppe zugreifen dürfen.
 
-**RSS-Feed-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue RSS-Feeds angelegen bzw. bestehende 
+**RSS-Feed-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue RSS-Feeds anlegen bzw. bestehende 
 löschen dürfen.
 
 
@@ -120,7 +120,7 @@ löschen dürfen.
 
 **Erlaubte Verteiler:** Hier legst du fest, auf welche Verteiler die Mitglieder der Benutzergruppe zugreifen dürfen.
 
-**Verteilerrechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Verteiler angelegen bzw. bestehende 
+**Verteilerrechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Verteiler anlegen bzw. bestehende 
 löschen dürfen.
 
 
@@ -134,7 +134,7 @@ löschen dürfen.
 
 **Erlaubte RSS-Feeds:** Hier legst du fest, auf welche RSS-Feeds die Mitglieder der Benutzergruppe zugreifen dürfen.
 
-**RSS-Feed-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue RSS-Feeds angelegen bzw. bestehende 
+**RSS-Feed-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue RSS-Feeds anlegen bzw. bestehende 
 löschen dürfen.
 
 
