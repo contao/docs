@@ -169,7 +169,6 @@ parameters:
     database_name: …
     secret: …
 ```
-vendor/bin/contao-console cache:clear --env=prod --no-warmup
 
 ### SMTP-Versand
 
