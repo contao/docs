@@ -136,11 +136,11 @@ Hintergrundaufgaben (wie die Indizierung des Seiteninhalts) ausführen, ohne das
 
 ### Hosting-Konfiguration
 
-In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/web` der Installation. Setze das 
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `web` der Installation. Setze das 
 Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel des Hosting-Providers auf diesen 
 Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
 
-Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web`
+Beispiel: `example.com` zeigt auf das Verzeichnis `www/example/web`
 
 {{% notice note %}}
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
