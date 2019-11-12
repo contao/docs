@@ -240,7 +240,7 @@ in `contao/` for the application, will instead have to be in `src/Resources/cont
 
 Loading a service configuration will also be different. While the Contao Managed 
 Edition (and also Symfony Skeleton Applications) will load certain YAML files automatically
-for your for your application, an extension or bundle will have to load the service
+for your application, an extension or bundle will have to load the service
 configuration itself. The details are described in the [Symfony documentation][6].
 However, the basic steps are:
 
