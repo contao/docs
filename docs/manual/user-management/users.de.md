@@ -225,7 +225,7 @@ damit die Verzeichnisstruktur schneller lädt.
 
 Benutzer können die Zwei-Faktor-Authentisierung aktivieren, um den Account zusätzlich abzusichern. Neben dem Benutzernamen 
 und Passwort muss ein Verifizierungscode ("Time-based One-time Password") eingegeben werden. Dieses Einmalpasswort muss von 
-einer Zwei-Faktor-App wie z.B. 1Password, Authy, Google Authenticator, Microsoft Authenticator, LastPass Authenticator oder 
+einer Zwei-Faktor-App wie z. B. 1Password, Authy, Google Authenticator, Microsoft Authenticator, LastPass Authenticator oder 
 jeder anderen TOTP-App generiert werden.
 
 Benutzer können verpflichtet werden, Zwei-Faktor-Authentisierung zu verwenden. Hierfür muss folgende Konfiguration in die `config/config.yml` übernommen werden:
