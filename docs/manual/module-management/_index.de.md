@@ -15,7 +15,7 @@ Theme-Manager untergeordnet sind. Jedes Modul, das du anlegst, ist also automati
 und kann mit diesem exportiert und in einer anderen Installation wiederverwendet werden.
 
 Die Modulverwaltung rufst du demzufolge über den Theme-Manager wie im Abschnitt 
-[Themes konfigurieren](../../theme-manager/themes-verwalten/#themes-konfigurieren) beschrieben auf.
+[Themes konfigurieren](../theme-manager/themes-verwalten/#themes-konfigurieren) beschrieben auf.
 
 {{% children %}}
 
