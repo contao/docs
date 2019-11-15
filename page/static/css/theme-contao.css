@@ -363,3 +363,8 @@ html[lang="de"] div.notices.warning p:first-child:after {
 html[lang="de"] div.notices.note p:first-child:after {
     content: 'Notiz';
 }
+
+/* fix #172 */
+option {
+    color: initial;
+}
