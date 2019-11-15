@@ -8,17 +8,18 @@ weight: 6
 Callbacks are entry-points for custom code in the DCA. Using callbacks you
 can modify the static Data Container Array during runtime.
 
-Callback functions are based on the event dispatcher pattern. You can register
+Callback functions are based on the event dispatcher pattern. They are similar 
+to [Hooks][hooks], but always bound to a specific DCA table. You can register
 one or more callbacks for a certain event and when the event is triggered, the
-callback functions are being executed.
-
-Callbacks are very similar to [Hooks][hooks], but always bound to a specific DCA table.
+callback functions are being executed. See the [framework article][registerCallbacks]
+on how to register callbacks.
 
 {{% notice tip %}}
 You can also use [anonymous functions](http://php.net/functions.anonymous) for DCA callbacks.
 {{% /notice %}}
 
-***
+The following is a reference of all available callbacks, using their service tag
+callback property name.
 
 
 ## Global callbacks
@@ -432,3 +433,4 @@ a button for an import "wizard".
 {{% /expand %}}
 
 [hooks]: ../../../framework/hooks/
+[registerCallbacks]: /framework/dca/#registering-callbacks
