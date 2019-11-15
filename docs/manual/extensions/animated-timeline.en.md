@@ -1,5 +1,5 @@
 ---
-title: "Animated Timeline Bundle"
+title: "Animated Timeline"
 description: "The Animated Timeline Bundle allows you to render content in a horizontal or vertical timeline."
 ---
 

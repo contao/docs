@@ -1,5 +1,5 @@
 ---
-title: "Animated Timeline Bundle"
+title: "Animated Timeline"
 description: "Mit dem Animated Timeline Bundle kannst du Inhalte in einem horizontalen oder vertikalen Zeitstrahl darstellen."
 url: "erweiterungen/animated-timeline"
 ---
