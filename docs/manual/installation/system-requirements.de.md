@@ -108,7 +108,7 @@ Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden kön
 Datenbank-Engine und einen anderen Zeichensatz in deiner `app/config/config.yml`-Datei:
 
 {{% notice note %}}
-Ab **Contao 4.8** findest du die Datei unter `config/config.yml`.
+Ab **Contao 4.8** findest du die Datei unter [`config/config.yml`](../../system/einstellungen/#config-yml).  
 {{% /notice %}}
 
 ```yml
