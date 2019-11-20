@@ -48,6 +48,12 @@ be of interest. Some of those will need to be created manually:
 | `templates/`    | Templates for your own modules and elements, or customized existing templates. |
 | `composer.json` | Add dependencies, customize autoloading if required.                           |
 
+{{% notice note %}}
+Contao **4.4** still uses the Symfony 3 directory structure. The `config/` folder 
+will be in `app/config/` and the `contao/` folder will be in `app/Resources/contao/`
+instead.
+{{% /notice %}}
+
 
 ### Application Configuration
 
