@@ -121,13 +121,13 @@ as a response.
 The `contao.frontend_module` tag can be configured further more. The following
 options are available.
 
-| Option   | Type      | Description                                                                                         |
-| -------- | --------- | ----------------------------------------------------------------------------------------------------|
-| name     | `string`  | Must be `contao.frontend_module`.                                                                   |
-| category | `string`  | Defines in which option group this front end module will be placed in the module type selector.     |
-| type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                  |
-| renderer | `string`  | _Optional:_ The renderer can be changed to `esi`. Defaults to `inline`.                             |
-| method   | `integer` | _Optional:_  Which method should be invoked on the controller.                                      |
+| Option   | Type     | Description                                                                                         |
+| -------- | -------- | ----------------------------------------------------------------------------------------------------|
+| name     | `string` | Must be `contao.frontend_module`.                                                                   |
+| category | `string` | Defines in which option group this front end module will be placed in the module type selector.     |
+| type     | `string` | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                  |
+| renderer | `string` | _Optional:_ The renderer can be changed to `esi`. Defaults to `inline`.                             |
+| method   | `string` | _Optional:_  Which method should be invoked on the controller.                                      |
 
 A more complex example of a front end module could look like this.
 
