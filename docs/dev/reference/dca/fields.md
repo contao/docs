@@ -113,6 +113,12 @@ Each field can be validated against a regular expression.
 | tl_class           | CSS class(es) (`string`)         | Add the given CSS class(es) to the generated HTML. See section [Arranging Fields](palettes.md#arranging-fields) for supported values.                                 |
 | dcaPicker          | true/false (`bool`)           | If true the dca-picker will be shown.  Enables pick up different data sets from the system.                                                                              |
 
+{{% notice warning %}}
+Using the `encrypt` option is deprecated and its internal implementation relies 
+on `mcrypt`, which will no longer be available in PHP 7.2 and higher. Use a [load](/reference/dca/callbacks/#fields-field-load)
+and [save callback](/reference/dca/callbacks/#fields-field-save) with your own implementation instead.
+{{% /notice %}}
+
 
 #### Regular Expressions
 

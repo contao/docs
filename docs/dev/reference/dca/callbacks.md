@@ -2,6 +2,8 @@
 title: "Callbacks"
 description: "Callbacks within a Data Container Array."
 weight: 6
+aliases:
+  - /reference/dca/callbacks/
 ---
 
 
