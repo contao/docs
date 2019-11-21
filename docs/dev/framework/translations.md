@@ -188,6 +188,12 @@ would look like this:
 </xliff>
 ```
 
+When extending translations, only the choice of the translation domain is relevant. 
+Categories and keys for for new translations can be chosen at your own discretion. 
+For example, if you create a translation that might be used across different places 
+in the system, use the `default` domain. You can choose to use the `MSC` category, 
+but you do not have to.
+
 
 ## Accessing Translations
 
