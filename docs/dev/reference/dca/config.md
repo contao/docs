@@ -52,4 +52,4 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | oncopy_callback    | Callback functions (`array`)      | Calls a custom function when a record is duplicated and passes the insert ID and the DataContainer object as argument.                          |
 | onversion_callback | Callback functions (`array`)      | Calls a custom function when a new version of a record is created and passes the table, the insert ID and the DataContainer object as argument. |
 | onrestore_callback | Callback functions (`array`)      | Calls a custom function when a version of a record is restored and passes the insert ID, the table, the data array and the version as argument. |
-| sql                | Table configuration (`array`)     | Describes table configuration, e.g. `'keys' => array ( 'id' => 'primary', 'pid' => 'index' )`                                                   |
+| sql                | Table configuration (`array`)     | Describes table configuration, e.g. `'keys' => [ 'id' => 'primary', 'pid' => 'index' ]`                                                   |
