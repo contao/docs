@@ -17,12 +17,11 @@ Before we use the `PaletteManipulator`, lets have a look at how [palettes](../..
 $GLOBALS['TL_DCA']['tl_user'] = [
     …
     // Palettes
-	'palettes' => array
-	(
+    'palettes' => [
         …
         'default' => '{name_legend},username,name,email;{backend_legend:hide},language,uploader,showHelp,thumbnails,useRTE,useCE;{theme_legend:hide},backendTheme,fullscreen;{password_legend:hide},pwChange,password;{admin_legend},admin;{groups_legend},groups,inherit;{account_legend},disable,start,stop'
         …
-    ),
+    ],
     …
 ];
 ```
