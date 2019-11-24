@@ -135,7 +135,7 @@ Contao uses the following categories in various domains:
 | `XPL`      | `explain`   | Help wizard content.                       |
 | `LNG`      | `languages` | Translation of language names.             |
 | `MOD`      | `modules`   | Back end module labels and descriptions.   |
-| `FMD`      | `moduels`   | Front end module labels and descriptions.  |
+| `FMD`      | `modules`   | Front end module labels and descriptions.  |
 
 There is also a category for each Data Container. The category's name is the same 
 as the Data Container's name. For example, for `tl_content` the translation's category
