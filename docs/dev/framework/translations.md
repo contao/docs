@@ -6,7 +6,7 @@ aliases:
 ---
 
 
-Since the developement of Contao started without the Symfony framework (see also 
+Since the development of Contao started without the Symfony framework (see also 
 the [history][ContaoHistory]), it provides its own translation framework. While
 you are free to utilize Symfony's [translation component][SymfonyTranslations],
 you will still have to provide translations within Contao's framework for certain
