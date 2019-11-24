@@ -19,7 +19,7 @@ etc. and that is why they are prefixed. They can be easily grouped, ordered and
 recognized. For example: the prefix `ce_` means "Content Element" and `mod_` means "Module".
 
 
-## Template inheritance
+## Template Inheritance
 
 The inheritance allow you to create a template based on a second template. This
 means that a template (*child*) inherits the content of a second template (*parent*).
@@ -93,7 +93,7 @@ The output of the `fe_custom.html5` template will be:
 ```
 
 
-## Template insertion
+## Template Insertion
 
 A template can be inserted into another template thanks to the `insert()` function.
 
@@ -161,10 +161,14 @@ or
 <?php dump($this) ?>
 ```
 
-within the template.
+within the template. Both of these statements will use the [Symfony VarDumper component][SymfonyVarDumper]
+to display the template's data.
 
 {{% notice info %}}
 If your template uses template inheritance, the template variable dump will only
 be visible either in debug mode or if the dump is in between the `$this->block(…)`
 and `$this->endblock()` statements.
 {{% /notice %}}
+
+
+[SymfonyVarDumper]: https://symfony.com/doc/current/components/var_dumper.html
