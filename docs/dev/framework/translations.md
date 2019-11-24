@@ -6,6 +6,13 @@ aliases:
 ---
 
 
+Since the developement of Contao started without the Symfony framework (see also 
+the [history][ContaoHistory]), it provides its own translation framework. While
+you are free to utilize Symfony's [translation component][SymfonyTranslations],
+you will still have to provide translations within Contao's framework for certain
+aspects, mostly in the back end (e.g. translations for managing your own data records 
+via the [Data Container Array][dca]).
+
 Translations for Contao are managed within the `contao/languages/` folder of your
 application, or the `Resources/contao/languages/` folder of your extension respectively.
 Each language for which you want to provide translations, or customize existing
@@ -239,4 +246,6 @@ class ExampleAction
 To access a specific Contao translation domain, simply prepend it with `contao_`.
 
 
+[ContaoHistory]: /#history
+[SymfonyTranslations]: https://symfony.com/doc/current/translation.html
 [dca]: /framework/dca/
