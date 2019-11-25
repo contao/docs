@@ -19,7 +19,7 @@ etc. and that is why they are prefixed. They can be easily grouped, ordered and
 recognized. For example: the prefix `ce_` means "Content Element" and `mod_` means "Module".
 
 
-## Template inheritance
+## Template Inheritance
 
 The inheritance allow you to create a template based on a second template. This
 means that a template (*child*) inherits the content of a second template (*parent*).
@@ -93,7 +93,7 @@ The output of the `fe_custom.html5` template will be:
 ```
 
 
-## Template insertion
+## Template Insertion
 
 A template can be inserted into another template thanks to the `insert()` function.
 
@@ -138,3 +138,37 @@ The output of the `image.html5` template will be:
 <img src="files/images/house.jpg" alt="A small house in England" />
 <small>Photograph by Donna Evans, licensed under Creative Commons</small>
 ```
+
+
+## Template Data
+
+The available template data varies depending on the source of the template. Typically,
+content element templates or element templates of modules will have their complete
+data record available in the template. For example, in any content element template,
+the complete data set of the database record of the element will be available in 
+the template via `$this->…`. The content of some fields might have been changed 
+by the content element or module controller though.
+
+You can inspect the available template data by using either
+
+```php
+<?php $this->dumpTemplateVars() ?>
+```
+
+or
+
+```php
+<?php dump($this) ?>
+```
+
+within the template. Both of these statements will use the [Symfony VarDumper component][SymfonyVarDumper]
+to display the template's data.
+
+{{% notice info %}}
+If your template uses template inheritance, the template variable dump will only
+be visible either in debug mode or if the dump is in between the `$this->block(…)`
+and `$this->endblock()` statements.
+{{% /notice %}}
+
+
+[SymfonyVarDumper]: https://symfony.com/doc/current/components/var_dumper.html
