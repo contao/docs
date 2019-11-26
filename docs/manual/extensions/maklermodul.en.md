@@ -25,7 +25,9 @@ These contao themes include layout templates for the Maklermodul.
 **Docs:** [docs.contao-themes.net](https://docs.contao-themes.net/#/mate_theme/maklermodul)  
 **Install for free or order a license:** [contao-themes.net/theme-detail/mate.html](https://contao-themes.net/theme-detail/mate.html)  
 
-![property list with select lists within the MATE theme](/de/extensions/images/en/maklermodul_mate_liste_selects_en.png ':size=150') ![property list with buttons within the MATE theme](/de/extensions/images/en/maklermodul_mate_liste_buttons_en.png ':size=150') ![property description within the MATE theme](/de/extensions/images/en/maklermodul_mate_details_en.png ':size=150')
+![property list with select lists within the MATE theme](/de/extensions/images/en/maklermodul_mate_liste_selects_en.png ':size=150') 
+![property list with buttons within the MATE theme](/de/extensions/images/en/maklermodul_mate_liste_buttons_en.png ':size=150') 
+![property description within the MATE theme](/de/extensions/images/en/maklermodul_mate_details_en.png ':size=150')
 
 #### ODD Theme
 
@@ -33,4 +35,6 @@ These contao themes include layout templates for the Maklermodul.
 **Docs:** [docs.contao-themes.net](https://docs.contao-themes.net/#/odd_theme/odd-maklermodul)  
 **Install for free or order a license:** [contao-themes.net/theme-detail/odd.html](https://contao-themes.net/theme-detail/odd.html)  
 
-![property list with select lists within the ODD theme](/de/extensions/images/en/maklermodul_odd_liste_selects_en.png ':size=150') ![property list with buttons within the ODD theme](/de/extensions/images/en/maklermodul_odd_liste_buttons_en.png ':size=150') ![property description within the ODD theme](/de/extensions/images/en/maklermodul_odd_details_en.png ':size=150')
+![property list with select lists within the ODD theme](/de/extensions/images/en/maklermodul_odd_liste_selects_en.png ':size=150') 
+![property list with buttons within the ODD theme](/de/extensions/images/en/maklermodul_odd_liste_buttons_en.png ':size=150') 
+![property description within the ODD theme](/de/extensions/images/en/maklermodul_odd_details_en.png ':size=150')
