@@ -20,9 +20,11 @@ as arguments and expects a buffer string as return value.
 
     The output buffer of the generated content element.
 
-3. *\Contao\ContentElement* `$contentElement`
+3. *object* `$element`
 
-    The content element instance.
+    An instance of the content element's class that is registered for this element's
+    type.
+
 
 
 ## Return Values
@@ -46,7 +48,7 @@ class GetContentElementListener implements ServiceAnnotationInterface
     /**
      * @Hook("getContentElement")
      */
-    public function onGetContentElement(ContentModel $contentModel, string $buffer, ContentElement $contentElement): string
+    public function onGetContentElement(ContentModel $contentModel, string $buffer, $element): string
     {
         // Modify or create new $buffer here …
 
