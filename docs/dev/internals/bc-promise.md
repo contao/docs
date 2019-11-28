@@ -27,6 +27,7 @@ Therefore, our BC promise deviates from the Symfony BC promise in some regards:
   integrating Contao into the Symfony application. This includes:
   
   * Commands
+  * DataCollectors
   * Dependency Injection Compiler Passes
   * Event Listeners
 
