@@ -22,8 +22,8 @@ container and thus also add compiler passes there.
 ### Contao Manager Plugin to the rescue
 
 Make sure your plugin implements the `ConfigPluginInterface` and implement the
-`registerContainerConfiguration` method. Now the provided loader allows
-accessing the container and adding your compiler pass:
+`registerContainerConfiguration` method (see [Plugin documentation](/framework/manager-plugin#the-configplugininterface)).
+Now the provided loader allows accessing the container and adding your compiler pass:
 
 ```php
 // src/ContaoManager/Plugin.php
