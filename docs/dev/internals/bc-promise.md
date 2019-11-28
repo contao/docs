@@ -8,16 +8,16 @@ We try our very best to ensure that Contao updates are as smooth as they can be.
 
 Being a project that is built on top of the Symfony full-stack framework, we generally make the same
 [Backwards Compatibility Promise][SF_BC_Promise] as Symfony itself.
-We also follow the principles of [Semantic Versioning][Semver], which means that breaking changes must only be expected
-when switching to a new major version.
+We also follow the principles of [Semantic Versioning][Semver], which means that breaking changes must only be
+expected when switching to a new major version.
 
 However, in contrast to Symfony, Contao is not "just" a framework. We do not only build the tools for other
 developers but we also build tools ourselves, which are then shipped with the core distribution of Contao.
 Therefore, our BC promise deviates from the Symfony BC promise in some regards:
 
-* Any method (constructors included) that is marked as `@internal` is not covered. In most cases this concerns constructors
-  of services Contao provides. If you want to change the behaviour of a service, don't replace it by instantiating your
-  own instance of a class but instead decorate the original service. Also see the tip about "Composition over Inheritance".
+* Our BC promise does not cover classes and methods marked as `@internal`. In most cases this concerns constructors
+  of services Contao provides. If you want to change the behaviour of a service, do not replace it with your own
+  instance of the class but instead decorate the original service (see the tip about "Composition over Inheritance").
 
 * Our BC promise does not cover templates. Templates are subject to change very often and you have to compare
   them with every update of Contao. Generally, we try to only ever apply template changes in major and minor
@@ -31,9 +31,9 @@ Therefore, our BC promise deviates from the Symfony BC promise in some regards:
   integrating Contao into the Symfony application. This includes:
   
   * Commands
-  * DataCollectors
-  * Dependency Injection Compiler Passes
-  * Event Listeners
+  * Data collectors
+  * Dependency injection compiler passes
+  * Event listeners
 
 * Our BC promise also does not cover the `ContaoManager/Plugin` class, which is required to integrate a bundle into
   the [Contao Managed Edition][Contao_ME].
