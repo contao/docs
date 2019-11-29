@@ -1,5 +1,5 @@
 ---
-title: "BC Promise"
+title: "Backwards Compatibility Promise"
 description: "Our backwards compatibility promise."
 ---
 
