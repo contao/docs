@@ -78,6 +78,16 @@ application through the `parameters.yml`. However it is best-practice to use the
 `.env` files instead.
 {{% /notice %}}
 
+{{% notice tip %}}
+While Contao does not load a `config/services.yml` automatically, you can still
+import it in your `config/config.yml` via
+
+```yml
+imports:
+  - { resource: services.yml }
+```
+{{% /notice %}}
+
 
 ### Contao Configuration & Translations
 
