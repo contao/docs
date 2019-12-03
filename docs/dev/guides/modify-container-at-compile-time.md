@@ -1,12 +1,12 @@
 ---
-title: "Modifying the Container at Compile Time"
+title: "Modify the Container at Compile Time"
 description: "How to make changes to the container at compile time in the Contao Managed Edition."
 aliases:
   - /guides/modify-container-at-compile-time/
 ---
 
 
-## Modifying the Container at Compile Time
+## Modify the Container at Compile Time
 
 In a regular Symfony application or bundle a compiler pass for instance can be added
 by calling`$container->addCompilerPass()` inside the `build()` function of the application's
