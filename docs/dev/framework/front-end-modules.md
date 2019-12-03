@@ -93,7 +93,7 @@ class MyFrontendModuleController extends AbstractFrontendModuleController
 }
 ```
 
-In this example the service tag was implemented via annotations. The controller itself
+In this example the service tag was implemented via [annotations](#annotation). The controller itself
 processes the request and checks, if it was a POST request. In that case, the
 redirect page is loaded via Contao's model functionality and a `RedirectResponseException`
 is thrown to redirect to that page.
@@ -157,6 +157,47 @@ $GLOBALS['TL_LANG']['FMD']['my_frontend_module'] = [
     'My front end module', 
     'A front end module for testing purposes.',
 ];
+```
+
+
+## Annotation
+
+{{< version "4.8" >}}
+
+Instead of tagging the front end module controller service via the service configuration,
+the service tag can also be configured through annotations, as already used in the 
+code example above. The annotation can be used on the class of the module or on
+the method that will deliver the response.
+
+The following example sets the type of the module to `my_example`, puts it in the
+`miscellaneous` category, sets the template name to `mod_some_example` and defines
+the renderer to be `inline` (which is the default):
+
+```php
+// src/Controller/FrontendModule/ExampleModule.php
+namespace App\Controller\FrontendModule;
+
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\ModuleModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @FrontendModule("my_example",
+ *   category="miscellaneous", 
+ *   template="mod_some_example",
+ *   renderer="inline"
+ * )
+ */
+class ExampleModule extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    {
+        return $template->getResponse();
+    }
+}
 ```
 
 

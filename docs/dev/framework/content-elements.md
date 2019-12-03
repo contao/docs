@@ -143,6 +143,47 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
 ```
 
 
+## Annotation
+
+{{< version "4.8" >}}
+
+Instead of tagging the content element controller service via the service configuration,
+the service tag can also be configured through annotations, as already used in the 
+code example above. The annotation can be used on the class of the content element 
+or on the method that will deliver the response.
+
+The following example sets the type of the content element to `my_example`, puts 
+it in the `media` category, sets the template name to `ce_some_example` and defines
+the renderer to be `inline` (which is the default):
+
+```php
+// src/Controller/ContentElement/ExampleElement.php
+namespace App\Controller\ContentElement;
+
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\ContentModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @ContentElement("my_example",
+ *   category="media", 
+ *   template="ce_some_example",
+ *   renderer="inline"
+ * )
+ */
+class ExampleElement extends AbstractContentElementController
+{
+    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+
+
 ## Read more
 
 * [Manipulate and create palettes][palettes]
