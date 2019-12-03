@@ -1,5 +1,5 @@
 ---
-title: "Modifying the Container at Compile Time (ME)"
+title: "Modifying the Container at Compile Time"
 description: "How to make changes to the container at compile time in the Contao Managed Edition."
 aliases:
   - /guides/modify-container-at-compile-time/
