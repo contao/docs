@@ -6,7 +6,7 @@ aliases:
 ---
 
 
-## Modifying the container at compile time
+## Modifying the Container at Compile Time
 
 In a regular Symfony application or bundle a compiler pass for instance can be added
 by calling`$container->addCompilerPass()` inside the `build()` function of the application's
