@@ -66,7 +66,7 @@ angezeigt werden dürfen.
 
 **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
 Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite "Download" im Seitenpfad 
-"Docs > Install" zu `docs/install/download.html` anstatt nur `download.html`.
+»Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
 
 **Leere URLs nicht umleiten:** Bei einer leeren URL die Webseite anzeigen anstatt auf den Startpunkt der Sprache 
 weiterzuleiten _(nicht empfohlen)_.
