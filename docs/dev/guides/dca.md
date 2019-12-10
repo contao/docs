@@ -93,31 +93,31 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
 
     'list' => [
         'sorting' => [
-			'mode' => 1,
-			'fields' => ['name'],
-			'flag' => 1,
-			'panelLayout' => 'search,limit'
+            'mode' => 1,
+            'fields' => ['name'],
+            'flag' => 1,
+            'panelLayout' => 'search,limit'
         ],
         'label' => [
-			'fields' => ['name'],
-			'format' => '%s',
+            'fields' => ['name'],
+            'format' => '%s',
         ],
-		'operations' => [
-			'edit' => [
-				'href' => 'table=tl_parts',
-				'icon' => 'edit.svg',
+        'operations' => [
+            'edit' => [
+                'href' => 'table=tl_parts',
+                'icon' => 'edit.svg',
             ],
-			'editheader' => [
-				'href' => 'act=edit',
-				'icon' => 'header.svg',
+            'editheader' => [
+                'href' => 'act=edit',
+                'icon' => 'header.svg',
             ],
-			'delete' => [
-				'href' => 'act=delete',
-				'icon' => 'delete.svg',
+            'delete' => [
+                'href' => 'act=delete',
+                'icon' => 'delete.svg',
             ],
-			'show' => [
-				'href' => 'act=show',
-				'icon' => 'show.svg'
+            'show' => [
+                'href' => 'act=show',
+                'icon' => 'show.svg'
             ],
         ],
     ],
@@ -280,7 +280,7 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
 
     'list' => [
         'sorting' => [
-			'mode' => 4,
+            'mode' => 4,
             'fields' => ['name'],
             'headerFields' => ['name'],
             'panelLayout' => 'search,limit',
@@ -288,18 +288,18 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
                 return '<div class="tl_content_left">'.$row['name'].' ['.$row['number'].']</div>';
             },
         ],
-		'operations' => [
-			'edit' => [
-				'href' => 'act=edit',
-				'icon' => 'edit.svg',
+        'operations' => [
+            'edit' => [
+                'href' => 'act=edit',
+                'icon' => 'edit.svg',
             ],
-			'delete' => [
-				'href' => 'act=delete',
-				'icon' => 'delete.svg',
-			],
-			'show' => [
-				'href' => 'act=show',
-				'icon' => 'show.svg'
+            'delete' => [
+                'href' => 'act=delete',
+                'icon' => 'delete.svg',
+            ],
+            'show' => [
+                'href' => 'act=show',
+                'icon' => 'show.svg'
             ],
         ],
     ],
