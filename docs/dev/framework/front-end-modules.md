@@ -166,8 +166,9 @@ $GLOBALS['TL_LANG']['FMD']['my_frontend_module'] = [
 
 Instead of tagging the front end module controller service via the service configuration,
 the service tag can also be configured through annotations, as already used in the 
-code example above. The annotation can be used on the class of the module or on
-the method that will deliver the response.
+code example above. The annotation can be used on the class of the content element,
+if the class is invokable (has an `__invoke` method) or extends from the `AbstractFragmentController`.
+Otherwise the annotation can be used on the method that will deliver the response.
 
 The following example sets the type of the module to `my_example`, puts it in the
 `miscellaneous` category, sets the template name to `mod_some_example` and defines
