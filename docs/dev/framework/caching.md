@@ -228,10 +228,12 @@ is visible cannot be cached. On the other hand, if the fragment can be cached, i
 can provide its own cache tags, as mentioned previously.
 
 Contao brings its own `forward` fragment renderer, which provides the fragment with 
-a full clone of the request (contrary to Symfony's default `inline` renderer). The 
-renderer can also be set to `esi`. In that case, if Symfony detects that it is talking 
-to  a gateway cache that supports ESI (like Symfony's built in reverse proxy, that 
-Contao uses), it generates an ESI include tag. See also [Symfony's documentation][esi] 
+a full clone of the request. This provides the fragment with the full `POST` data
+for example, contrary to Symfony's default `inline` renderer.
+
+The renderer can also be set to `esi`. In that case, if Symfony detects that it 
+is talking to  a gateway cache that supports ESI (like Symfony's built in reverse 
+proxy, that Contao uses), it generates an ESI include tag. See also [Symfony's documentation][esi] 
 on _Edge Side Includes_.
 
 
