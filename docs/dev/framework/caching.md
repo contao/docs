@@ -1,6 +1,8 @@
 ---
 title: "Caching"
 description: "HTTP caching in Contao"
+alias:
+  - /framework/caching/
 ---
 
 
@@ -215,8 +217,27 @@ Moreover, you don't have to register to all the different callbacks such as `ons
 You can register to the [`oninvalidate_cache_tags` callback][5] and add your own tags.
 
 
+## Fragments and Edge Side Includes
+
+In Contao, content elements and front end modules can be implemented as so called
+_fragment controllers_. These fragments are then rendered with their defined renderer 
+and merged into the main content. Each fragment can also provide its own response
+and thus define whether it can be cached or not. If a fragment returns a response
+with a `Cache-Control: private` header for example, then the page on which the fragment
+is visible cannot be cached. On the other hand, if the fragment can be cached, it
+can provide its own cache tags, as mentioned previously.
+
+Contao brings its own `forward` fragment renderer, which provides the fragment with 
+a full clone of the request (contrary to Symfony's default `inline` renderer). The 
+renderer can also be set to `esi`. In that case, if Symfony detects that it is talking 
+to  a gateway cache that supports ESI (like Symfony's built in reverse proxy, that 
+Contao uses), it generates an ESI include tag. See also [Symfony's documentation][esi] 
+on _Edge Side Includes_.
+
+
 [1]: https://github.com/Toflar/psr6-symfony-http-cache-store
 [2]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
 [3]: https://foshttpcachebundle.readthedocs.io/en/latest/
 [4]: https://symfony.com/doc/current/components/http_kernel.html
-[5]: ../../reference/dca/callbacks/#config-oninvalidate-cache-tags
+[5]: /reference/dca/callbacks/#config-oninvalidate-cache-tags
+[esi]: https://symfony.com/doc/current/http_cache/esi.html
