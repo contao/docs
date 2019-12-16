@@ -4,12 +4,22 @@ description: "Complex functionalities within your web pages."
 aliases:
     - /documentation/front-end-modules/
     - /framework/content-modules/
+    - /framework/front-end-modules/
 ---
 
+{{% notice note %}}
+This covers the documentation on how to create front end modules in Contao **4.6**
+and up. In previous Contao version, front end modules must extend from `\Contao\Module`
+and then be registered via the `$GLOBAL['FE_MOD']` array.
+{{% /notice %}}
 
 Front end modules in Contao are used for more complex functionality, which are typically
 used on more than one page or even in page layouts. They are used to generate dynamic 
 content, like news lists, displaying the detailed content of news or navigation items.
+
+These modules are implemented as so called _fragment controllers_ which Contao then
+renders into the main content, using their defined renderer. See the [caching documentation][fragments]
+for more information.
 
 Creating a front end module is very similar to creating [content elements][1].
 
@@ -93,7 +103,7 @@ class MyFrontendModuleController extends AbstractFrontendModuleController
 }
 ```
 
-In this example the service tag was implemented via annotations. The controller itself
+In this example the service tag was implemented via [annotations](#annotation). The controller itself
 processes the request and checks, if it was a POST request. In that case, the
 redirect page is loaded via Contao's model functionality and a `RedirectResponseException`
 is thrown to redirect to that page.
@@ -126,7 +136,7 @@ options are available.
 | name     | `string` | Must be `contao.frontend_module`.                                                                   |
 | category | `string` | Defines in which option group this front end module will be placed in the module type selector.     |
 | type     | `string` | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                  |
-| renderer | `string` | _Optional:_ The renderer can be changed to `esi`. Defaults to `inline`.                             |
+| renderer | `string` | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`.                |
 | method   | `string` | _Optional:_  Which method should be invoked on the controller.                                      |
 
 A more complex example of a front end module could look like this.
@@ -160,6 +170,48 @@ $GLOBALS['TL_LANG']['FMD']['my_frontend_module'] = [
 ```
 
 
+## Annotation
+
+{{< version "4.8" >}}
+
+Instead of tagging the front end module controller service via the service configuration,
+the service tag can also be configured through annotations, as already used in the 
+code example above. The annotation can be used on the class of the content element,
+if the class is invokable (has an `__invoke` method) or extends from the `AbstractFragmentController`.
+Otherwise the annotation can be used on the method that will deliver the response.
+
+The following example sets the type of the module to `my_example`, puts it in the
+`miscellaneous` category, sets the template name to `mod_some_example` and defines
+the renderer to be `forward` (which is the default):
+
+```php
+// src/Controller/FrontendModule/ExampleModule.php
+namespace App\Controller\FrontendModule;
+
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\ModuleModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @FrontendModule("my_example",
+ *   category="miscellaneous", 
+ *   template="mod_some_example",
+ *   renderer="forward"
+ * )
+ */
+class ExampleModule extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+
+
 ## Read more
 
 * [DCA Configuration reference][2]
@@ -169,7 +221,8 @@ $GLOBALS['TL_LANG']['FMD']['my_frontend_module'] = [
 
 
 [1]: /framework/content-elements/
-[2]: ../../reference/dca/reference
-[3]: ../../reference/dca/palettes
-[4]: ../templates
-[5]: ../caching
+[2]: /reference/dca/reference/
+[3]: /reference/dca/palettes/
+[4]: /templates/
+[5]: /caching/
+[fragments]: /framework/caching/#fragments-and-edge-side-includes

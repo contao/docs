@@ -6,10 +6,21 @@ aliases:
     - /framework/content-elements/
 ---
 
+{{% notice note %}}
+This covers the documentation on how to create content elements in Contao **4.6**
+and up. In previous Contao version, Content elements must extend from `\Contao\ContentElement`
+and then be registered via the `$GLOBAL['TL_CTE']` array.
+{{% /notice %}}
 
 In Contao, Content Elements are the fundamental content blocks. In its simplest
 form it is a fragment controller which receives data in form of a content model
 and returns a response.
+
+These elements are implemented as so called _fragment controllers_ which  Contao 
+then renders into the main content, using their defined renderer. See the [caching documentation][fragments] 
+for more information.
+
+Creating a content element is very similar to creating [front end modules][modules].
 
 
 ## Definition
@@ -42,7 +53,7 @@ To create a new content element, the following things must be defined and implem
 
 ## Example
 
-Usually a content element is based on a specific [palette][2] in the `tl_content`
+Usually a content element is based on a specific [palette][palettes] in the `tl_content`
 DCA configuration.
 
 ```php
@@ -109,7 +120,7 @@ options are available.
 | name     | `string`  | Must be `contao.content_element`.                                                                   |
 | category | `string`  | Defines in which option group this content element will be placed in the content element selector.  |
 | type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                  |
-| renderer | `string`  | _Optional:_ The renderer can be changed to `esi`. Defaults to `inline`.                             |
+| renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`.                |
 | method   | `integer` | _Optional:_  Which method should be invoked on the controller.                                      |
 
 A more complex example of a Content Element could look like this.
@@ -143,6 +154,48 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
 ```
 
 
+## Annotation
+
+{{< version "4.8" >}}
+
+Instead of tagging the content element controller service via the service configuration,
+the service tag can also be configured through annotations, as already used in the 
+code example above. The annotation can be used on the class of the content element,
+if the class is invokable (has an `__invoke` method) or extends from the `AbstractFragmentController`.
+Otherwise the annotation can be used on the method that will deliver the response.
+
+The following example sets the type of the content element to `my_example`, puts 
+it in the `media` category, sets the template name to `ce_some_example` and defines
+the renderer to be `forward` (which is the default):
+
+```php
+// src/Controller/ContentElement/ExampleElement.php
+namespace App\Controller\ContentElement;
+
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\ContentModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @ContentElement("my_example",
+ *   category="media", 
+ *   template="ce_some_example",
+ *   renderer="forward"
+ * )
+ */
+class ExampleElement extends AbstractContentElementController
+{
+    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+
+
 ## Read more
 
 * [Manipulate and create palettes][palettes]
@@ -150,6 +203,8 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
 * [Customize Caching][caching]
 
 
-[palettes]: ../../reference/dca/palettes
-[templates]: ../templates
-[caching]: ../caching
+[palettes]: /reference/dca/palettes/
+[templates]: /templates/
+[caching]: /caching/
+[modules]: /framework/front-end-modules/
+[fragments]: /framework/caching/#fragments-and-edge-side-includes
