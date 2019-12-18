@@ -254,6 +254,7 @@ To access a specific Contao translation domain, simply prepend it with `contao_`
 ```
 
 ### Output translations from within twig templates ###
+
 ```twig
 // templates/my_template.html5.twig
 {{ 'MSC.goBack'|trans({}, 'contao_default') }}
