@@ -247,6 +247,7 @@ To access a specific Contao translation domain, simply prepend it with `contao_`
 
 
 ### Output translations from within Contao PHP templates ###
+
 ```php
 // templates/my_template.html5
 <?php echo $this->trans('MSC.goBack'); ?>
