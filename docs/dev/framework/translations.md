@@ -246,6 +246,19 @@ class ExampleAction
 To access a specific Contao translation domain, simply prepend it with `contao_`.
 
 
+### Output translations from within Contao PHP templates ###
+```php
+// templates/my_template.html5
+<?php echo $this->trans('MSC.goBack'); ?>
+```
+
+### Output translations from within twig templates ###
+```twig
+// templates/my_template.html5.twig
+{{ 'MSC.goBack'|trans({}, 'contao_default') }}
+```
+
+
 [ContaoHistory]: /#history
 [SymfonyTranslations]: https://symfony.com/doc/current/translation.html
 [dca]: /framework/dca/
