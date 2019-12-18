@@ -250,7 +250,7 @@ To access a specific Contao translation domain, simply prepend it with `contao_`
 
 ```php
 // templates/my_template.html5
-<?php echo $this->trans('MSC.goBack'); ?>
+<?= $this->trans('MSC.goBack') ?>
 ```
 
 ### Output translations from within twig templates ###
