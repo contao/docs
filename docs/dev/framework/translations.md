@@ -246,21 +246,40 @@ class ExampleAction
 To access a specific Contao translation domain, simply prepend it with `contao_`.
 
 
-### Output translations from within Contao PHP templates ###
+### Translations within Contao PHP Templates
+
+The `trans` method of the translator is available within Contao's PHP templates:
 
 ```php
 // templates/my_template.html5
 <?= $this->trans('MSC.goBack') ?>
 ```
 
-### Output translations from within twig templates ###
+_Note:_ in this example the second and third argument was ommitted and the default 
+values `[]` and `contao_default` are used. The following example shows how to access
+a translation from domain other than `default`:
+
+```php
+// templates/my_template.html5
+<?= $this->trans('XPT.error', [], 'contao_exception') ?>
+```
+
+
+### Translations within Twig Templates
+
+Contao's translations can also be accessed just as any other Symfony translation
+using Twig tags and filters:
 
 ```twig
 {# templates/my_template.html5.twig #}
 {{ 'MSC.goBack'|trans({}, 'contao_default') }}
 ```
 
+See Symfony's documentation on [translations in templates](https://symfony.com/doc/current/translation/templates.html)
+for more details.
+
 
 [ContaoHistory]: /#history
 [SymfonyTranslations]: https://symfony.com/doc/current/translation.html
 [dca]: /framework/dca/
+[TwigTranslations]: https://symfony.com/doc/current/translation/templates.html
