@@ -6,7 +6,7 @@ url: "installation/contao-installtool"
 weight: 90
 ---
 
-Rufe in deinem Internetbrowser die URL deiner Contao-Installation auf, und hängen `/contao/install` hinten 
+Rufe in deinem Internetbrowser die URL deiner Contao-Installation auf, und hänge `/contao/install` hinten 
 dran, um das Installtool zu starten.
 
 z. B. `www.example.com/contao/install`
