@@ -1,6 +1,6 @@
 ---
 title: Manager Plugin
-description: "A class that gives third party bundles the opportunity to configure a Contao Managed Edition."
+description: "A class that allows third party bundles and application developers to configure a Contao Managed Edition."
 aliases:
     - /framework/manager-plugin/
     - /framework/managed-edition/manager-plugin/
@@ -8,11 +8,18 @@ aliases:
 ---
 
 
-The `Manager Plugin` is one single PHP class that gives third party bundles the opportunity to 
-configure a `Managed Edition`.
-Every time a user of the `Managed Edition` runs a `composer update` or a `composer install`
-the `Manager Plugin` instances of all packages are called and the application is then configured
-accordingly.
+The `Contao Managed Edition` is configured by a collection of `Manager Plugin` instances. 
+Every time a user of the `Managed Edition` runs a `composer update` or a `composer install`,
+this collection is worked through and the application gets configured accordingly.
+
+There are two ways of how you can use the `Manager Plugin` as a developer:
+
+* Either you are currently working on a third party bundle and you would like to hook in during
+  the application configuration process (see "The package-specific Manager Plugin")
+
+* Or you want to reconfigure your local `Managed Edition` instance (see "The application-specific Manager Plugin")
+
+The `Manager Plugin` instances of all bundles are loaded in the specified order (continue reading to learn more about dependencies) and the application-specific one is loaded last to give you full power over your `Managed Edition`.
 
 
 ## The package-specific Manager Plugin
