@@ -123,9 +123,12 @@ These are just some basic examples of what could be done with hooks, providing a
 glimpse into the possibilities. To learn more about hooks, visit the [dedicated article][3]
 of the framework documentation and have a look at the complete [reference of hooks][4].
 
+Next: [implementing content elements and front end modules][createContentElementsModules].
+
 
 [1]: /getting-started/starting-development/#autoloading-services-and-actions
 [2]: /reference/hooks/parsearticles/
 [3]: /framework/hooks/
 [4]: /reference/hooks/
 [updatePersonaldataHook]: /reference/hooks/updatepersonaldata/
+[createContentElementsModules]: /getting-started/content-elements-modules/
