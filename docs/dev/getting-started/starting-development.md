@@ -75,8 +75,9 @@ configurations, if present:
 {{% notice note %}}
 <sup>1</sup> Contao still supports the legacy way of defining parameters in a Symfony
 application through the `parameters.yml`. However it is best-practice to use the
-`.env` files instead. See also Symfony's documentation about the [Dotenv Component](DotenvComponent) for
-more information about the `.env*` files.
+`.env` files instead. See also Symfony's documentation about the 
+[Dotenv Component](https://symfony.com/doc/current/components/dotenv.html) for more 
+information about the `.env*` files.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -196,4 +197,3 @@ Next: [create your first DCA adjustment][12].
 [10]: /framework/hooks/#using-annotations
 [11]: https://symfony.com/doc/current/configuration.html
 [12]: ../dca/
-[DotenvComponent]: https://symfony.com/doc/current/components/dotenv.html
