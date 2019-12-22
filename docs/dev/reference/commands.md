@@ -71,6 +71,25 @@ ask for it. The following tasks are available.
 | `generateInternalCache` | Warms up the internal cache.                                                                                                                          |
 
 
+## `contao:migrate`
+
+{{< version "4.9" >}}
+
+With this command you can execute migrations after an update of Contao or of an extension. 
+The migrations that get executed are update scripts of Contao, registered migrations of 
+extensions, legacy `runonce.php` files and the database update.
+
+```sh
+$> php bin/console contao:migrate [options]
+```
+
+| Option             | Description |
+|--------------------|-------------|
+| `--with-deletes`   | Executes all database migrations including `DROP` queries.|
+|`--schema-only`     | Executes database schema migration only. Update scripts, registered migrations and `runonce.php` files get skipped.|
+| `--no-interaction` | With this option enabled all confirmation questions are automatically answered with “yes”. This is useful if you want to execute the migrations in an automated system.|
+
+
 ## Other commands
 
 * `contao:filesync`: Synchronises the file system to the database.
