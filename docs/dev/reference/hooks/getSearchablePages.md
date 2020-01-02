@@ -2,6 +2,9 @@
 title: "getSearchablePages"
 description: "getSearchablePages hook"
 tags: ["hook-automator"]
+aliases:
+    - /reference/hooks/getSearchablePages/
+    - /reference/hooks/getsearchablepages/
 ---
 
 

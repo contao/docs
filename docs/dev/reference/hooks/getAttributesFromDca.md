@@ -2,6 +2,9 @@
 title: "getAttributesFromDca"
 description: "getAttributesFromDca hook"
 tags: ["hook-widget", "hook-dca", "hook-config"]
+aliases:
+    - /reference/hooks/getAttributesFromDca/
+    - /reference/hooks/getattributesfromdca/
 ---
 
 

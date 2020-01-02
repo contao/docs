@@ -2,6 +2,9 @@
 title: "sqlGetFromDca"
 description: "sqlGetFromDca hook"
 tags: ["hook-installer"]
+aliases:
+    - /reference/hooks/sqlGetFromDca/
+    - /reference/hooks/sqlgetfromdca/
 ---
 
 

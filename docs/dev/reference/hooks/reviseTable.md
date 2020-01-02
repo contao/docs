@@ -2,6 +2,9 @@
 title: "reviseTable"
 description: "reviseTable hook"
 tags: ["hook-dca", "hook-backend"]
+aliases:
+    - /reference/hooks/reviseTable/
+    - /reference/hooks/revisetable/
 ---
 
 

@@ -2,6 +2,9 @@
 title: "insertTagFlags"
 description: "insertTagFlags hook"
 tags: ["hook-custom"]
+aliases:
+    - /reference/hooks/insertTagFlags/
+    - /reference/hooks/inserttagflags/
 ---
 
 

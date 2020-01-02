@@ -2,6 +2,9 @@
 title: "getRootPageFromUrl"
 description: "getRootPageFromUrl hook"
 tags: ["hook-routing"]
+aliases:
+    - /reference/hooks/getRootPageFromUrl/
+    - /reference/hooks/getrootpagefromurl/
 ---
 
 

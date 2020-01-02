@@ -2,6 +2,9 @@
 title: "getPageLayout"
 description: "getPageLayout hook"
 tags: ["hook-page"]
+aliases:
+    - /reference/hooks/getPageLayout/
+    - /reference/hooks/getpagelayout/
 ---
 
 

@@ -2,6 +2,9 @@
 title: "getUserNavigation"
 description: "getUserNavigation hook"
 tags: ["hook-backend"]
+aliases:
+    - /reference/hooks/getUserNavigation/
+    - /reference/hooks/getusernavigation/
 ---
 
 

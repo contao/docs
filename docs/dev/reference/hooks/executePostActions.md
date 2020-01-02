@@ -2,6 +2,9 @@
 title: "executePostActions"
 description: "executePostActions hook"
 tags: ["hook-dca"]
+aliases:
+    - /reference/hooks/customizeSearch/
+    - /reference/hooks/customizesearch/
 ---
 
 

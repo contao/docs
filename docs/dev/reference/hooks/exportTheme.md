@@ -2,6 +2,9 @@
 title: "exportTheme"
 description: "exportTheme hook"
 tags: ["hook-theme"]
+aliases:
+    - /reference/hooks/exportTheme/
+    - /reference/hooks/exporttheme/
 ---
 
 

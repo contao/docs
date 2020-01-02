@@ -2,6 +2,9 @@
 title: "sqlGetFromDB"
 description: "sqlGetFromDB hook"
 tags: ["hook-installer"]
+aliases:
+    - /reference/hooks/sqlGetFromDB/
+    - /reference/hooks/sqlgetfromdb/
 ---
 
 

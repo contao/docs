@@ -2,6 +2,9 @@
 title: "compareThemeFiles"
 description: "compareThemeFiles hook"
 tags: ["hook-theme"]
+aliases:
+    - /reference/hooks/compareThemeFiles/
+    - /reference/hooks/comparethemefiles/
 ---
 
 

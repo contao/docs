@@ -2,6 +2,9 @@
 title: "setNewPassword"
 description: "setNewPassword hook"
 tags: ["hook-member", "hook-module", "hook-backend"]
+aliases:
+    - /reference/hooks/setNewPassword/
+    - /reference/hooks/setnewpassword/
 ---
 
 

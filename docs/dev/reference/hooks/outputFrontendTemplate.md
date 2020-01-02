@@ -2,6 +2,9 @@
 title: "outputFrontendTemplate"
 description: "outputFrontendTemplate hook"
 tags: ["hook-template"]
+aliases:
+    - /reference/hooks/outputFrontendTemplate/
+    - /reference/hooks/outputfrontendtemplate/
 ---
 
 

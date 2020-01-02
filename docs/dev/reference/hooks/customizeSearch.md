@@ -2,6 +2,9 @@
 title: "customizeSearch"
 description: "customizeSearch hook"
 tags: ["hook-module", "hook-search"]
+aliases:
+    - /reference/hooks/customizeSearch/
+    - /reference/hooks/customizesearch/
 ---
 
 

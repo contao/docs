@@ -2,6 +2,9 @@
 title: "closeAccount"
 description: "closeAccount hook"
 tags: ["hook-module", "hook-member"]
+aliases:
+    - /reference/hooks/closeAccount/
+    - /reference/hooks/closeaccount/
 ---
 
 

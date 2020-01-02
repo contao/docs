@@ -2,6 +2,9 @@
 title: "postLogin"
 description: "postLogin hook"
 tags: ["hook-user", "hook-member"]
+aliases:
+    - /reference/hooks/postLogin/
+    - /reference/hooks/postlogin/
 ---
 
 

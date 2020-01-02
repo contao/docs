@@ -2,6 +2,9 @@
 title: "activateAccount"
 description: "activateAccount hook"
 tags: ["hook-module", "hook-member"]
+aliases:
+    - /reference/hooks/activateAccount/
+    - /reference/hooks/activateaccount/
 ---
 
 

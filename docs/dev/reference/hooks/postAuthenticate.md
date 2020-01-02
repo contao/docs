@@ -2,6 +2,9 @@
 title: "postAuthenticate"
 description: "postAuthenticate hook"
 tags: ["hook-user", "hook-member"]
+aliases:
+    - /reference/hooks/postAuthenticate/
+    - /reference/hooks/postauthenticate/
 ---
 
 

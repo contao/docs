@@ -2,6 +2,9 @@
 title: "importUser"
 description: "importUser hook"
 tags: ["hook-member", "hook-user"]
+aliases:
+    - /reference/hooks/importUser/
+    - /reference/hooks/importuser/
 ---
 
 

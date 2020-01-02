@@ -2,6 +2,9 @@
 title: "isAllowedToEditComment"
 description: "isAllowedToEditComment hook"
 tags: ["hook-comment", "hook-backend", "hook-dca"]
+aliases:
+    - /reference/hooks/isAllowedToEditComment/
+    - /reference/hooks/isallowedtoeditcomment/
 ---
 
 

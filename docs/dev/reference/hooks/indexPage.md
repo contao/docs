@@ -2,6 +2,9 @@
 title: "indexPage"
 description: "indexPage hook"
 tags: ["hook-page"]
+aliases:
+    - /reference/hooks/indexPage/
+    - /reference/hooks/indexpage/
 ---
 
 

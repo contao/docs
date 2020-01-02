@@ -3,7 +3,8 @@ title: "parseArticles"
 description: "parseArticles hook"
 tags: ["hook-news", "hook-template", "hook-module"]
 aliases:
-  - /reference/hooks/parsearticles/
+    - /reference/hooks/parseArticles/
+    - /reference/hooks/parsearticles/
 ---
 
 

@@ -2,6 +2,9 @@
 title: "generateBreadcrumb"
 description: "generateBreadcrumb hook"
 tags: ["hook-module", "hook-navigation"]
+aliases:
+    - /reference/hooks/generateBreadcrumb/
+    - /reference/hooks/generatebreadcrumb/
 ---
 
 

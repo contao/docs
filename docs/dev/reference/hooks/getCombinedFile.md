@@ -1,6 +1,9 @@
 ---
 title: "getCombinedFile"
 description: "getCombinedFile hook"
+aliases:
+    - /reference/hooks/getCombinedFile/
+    - /reference/hooks/getcombinedfile/
 ---
 
 

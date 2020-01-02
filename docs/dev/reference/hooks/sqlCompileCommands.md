@@ -2,6 +2,9 @@
 title: "sqlCompileCommands"
 description: "sqlCompileCommands hook"
 tags: ["hook-installer"]
+aliases:
+    - /reference/hooks/sqlCompileCommands/
+    - /reference/hooks/sqlcompilecommands/
 ---
 
 

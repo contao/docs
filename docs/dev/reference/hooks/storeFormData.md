@@ -2,6 +2,9 @@
 title: "storeFormData"
 description: "storeFormData hook"
 tags: ["hook-form"]
+aliases:
+    - /reference/hooks/storeFormData/
+    - /reference/hooks/storeformdata/
 ---
 
 

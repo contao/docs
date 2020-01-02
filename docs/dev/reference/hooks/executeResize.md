@@ -2,6 +2,9 @@
 title: "executeResize"
 description: "executeResize hook"
 tags: ["hook-image"]
+aliases:
+    - /reference/hooks/executeResize/
+    - /reference/hooks/executeresize/
 ---
 
 

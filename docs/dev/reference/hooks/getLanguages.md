@@ -2,6 +2,9 @@
 title: "getLanguages"
 description: "getLanguages hook"
 tags: ["hook-system"]
+aliases:
+    - /reference/hooks/getLanguages/
+    - /reference/hooks/getlanguages/
 ---
 
 

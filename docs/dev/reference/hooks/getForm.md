@@ -2,6 +2,9 @@
 title: "getForm"
 description: "getForm hook"
 tags: ["hook-controller", "hook-form"]
+aliases:
+    - /reference/hooks/getForm/
+    - /reference/hooks/getform/
 ---
 
 

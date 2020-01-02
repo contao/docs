@@ -2,6 +2,9 @@
 title: "colorizeLogEntries"
 description: "colorizeLogEntries hook"
 tags: ["hook-backend"]
+aliases:
+    - /reference/hooks/colorizeLogEntries/
+    - /reference/hooks/colorizelogentries/
 ---
 
 

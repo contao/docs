@@ -2,6 +2,9 @@
 title: "loadPageDetails"
 description: "loadPageDetails hook"
 tags: ["hook-page"]
+aliases:
+    - /reference/hooks/loadPageDetails/
+    - /reference/hooks/loadpagedetails/
 ---
 
 

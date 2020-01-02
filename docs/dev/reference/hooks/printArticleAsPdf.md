@@ -2,6 +2,9 @@
 title: "printArticleAsPdf"
 description: "printArticleAsPdf hook"
 tags: ["hook-module", "hook-article"]
+aliases:
+    - /reference/hooks/printArticleAsPdf/
+    - /reference/hooks/printarticleaspdf/
 ---
 
 

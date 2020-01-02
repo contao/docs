@@ -2,6 +2,9 @@
 title: "getContentElement"
 description: "getContentElement hook"
 tags: ["hook-controller"]
+aliases:
+    - /reference/hooks/getContentElement/
+    - /reference/hooks/getcontentelement/
 ---
 
 

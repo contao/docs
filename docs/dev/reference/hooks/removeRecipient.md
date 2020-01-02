@@ -2,6 +2,9 @@
 title: "removeRecipient"
 description: "removeRecipient hook"
 tags: ["hook-newsletter", "hook-module"]
+aliases:
+    - /reference/hooks/removeRecipient/
+    - /reference/hooks/removerecipient/
 ---
 
 

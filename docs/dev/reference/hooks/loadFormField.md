@@ -2,6 +2,9 @@
 title: "loadFormField"
 description: "loadFormField hook"
 tags: ["hook-form"]
+aliases:
+    - /reference/hooks/loadFormField/
+    - /reference/hooks/loadformfield/
 ---
 
 

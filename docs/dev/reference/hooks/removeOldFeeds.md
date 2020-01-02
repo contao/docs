@@ -2,6 +2,9 @@
 title: "removeOldFeeds"
 description: "removeOldFeeds hook"
 tags: ["hook-automator"]
+aliases:
+    - /reference/hooks/removeOldFeeds/
+    - /reference/hooks/removeoldfeeds/
 ---
 
 

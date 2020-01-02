@@ -2,6 +2,9 @@
 title: "sqlGetFromFile"
 description: "sqlGetFromFile hook"
 tags: ["hook-installer"]
+aliases:
+    - /reference/hooks/sqlGetFromFile/
+    - /reference/hooks/sqlgetfromfile/
 ---
 
 

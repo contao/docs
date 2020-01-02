@@ -1,6 +1,9 @@
 ---
 title: "parseDate"
 description: "parseDate hook"
+aliases:
+    - /reference/hooks/parseDate/
+    - /reference/hooks/parsedate/
 ---
 
 

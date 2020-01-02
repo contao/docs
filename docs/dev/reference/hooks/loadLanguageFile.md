@@ -2,6 +2,9 @@
 title: "loadLanguageFile"
 description: "loadLanguageFile hook"
 tags: ["hook-system"]
+aliases:
+    - /reference/hooks/loadLanguageFile/
+    - /reference/hooks/loadlanguagefile/
 ---
 
 

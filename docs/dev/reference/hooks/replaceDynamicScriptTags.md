@@ -2,6 +2,9 @@
 title: "replaceDynamicScriptTags"
 description: "replaceDynamicScriptTags hook"
 tags: ["hook-controller"]
+aliases:
+    - /reference/hooks/replaceDynamicScriptTags/
+    - /reference/hooks/replacedynamicscripttags/
 ---
 
 

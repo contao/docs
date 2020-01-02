@@ -2,6 +2,9 @@
 title: "checkCredentials"
 description: "checkCredentials hook"
 tags: ["hook-module", "hook-member"]
+aliases:
+    - /reference/hooks/checkCredentials/
+    - /reference/hooks/checkcredentials/
 ---
 
 

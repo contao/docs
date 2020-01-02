@@ -2,6 +2,9 @@
 title: "getPageStatusIcon"
 description: "getPageStatusIcon hook"
 tags: ["hook-page", "hook-controller"]
+aliases:
+    - /reference/hooks/getPageStatusIcon/
+    - /reference/hooks/getpagestatusicon/
 ---
 
 

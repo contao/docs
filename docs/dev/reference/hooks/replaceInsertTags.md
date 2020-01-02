@@ -2,6 +2,9 @@
 title: "replaceInsertTags"
 description: "replaceInsertTags hook"
 tags: ["hook-custom"]
+aliases:
+    - /reference/hooks/replaceInsertTags/
+    - /reference/hooks/replaceinserttags/
 ---
 
 

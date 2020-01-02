@@ -2,6 +2,9 @@
 title: "validateFormField"
 description: "validateFormField hook"
 tags: ["hook-form"]
+aliases:
+    - /reference/hooks/validateFormField/
+    - /reference/hooks/validateformfield/
 ---
 
 

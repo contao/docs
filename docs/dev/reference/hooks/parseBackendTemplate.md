@@ -2,6 +2,9 @@
 title: "parseBackendTemplate"
 description: "parseBackendTemplate hook"
 tags: ["hook-template"]
+aliases:
+    - /reference/hooks/parseBackendTemplate/
+    - /reference/hooks/parsebackendtemplate/
 ---
 
 

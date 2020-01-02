@@ -2,6 +2,9 @@
 title: "postDownload"
 description: "postDownload hook"
 tags: ["hook-controller"]
+aliases:
+    - /reference/hooks/postDownload/
+    - /reference/hooks/postdownload/
 ---
 
 

@@ -2,6 +2,9 @@
 title: "getArticles"
 description: "getArticles hook"
 tags: ["hook-controller", "hook-article"]
+aliases:
+    - /reference/hooks/getArticles/
+    - /reference/hooks/getarticles/
 ---
 
 
