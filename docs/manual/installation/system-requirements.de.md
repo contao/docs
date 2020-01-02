@@ -22,19 +22,26 @@ empfohlen, diese immer zu verwenden.
 
 #### PHP-Erweiterungen
 
-| Name der Erweiterung                      | Contao 4.4       | Contao 4.8               |
-|:------------------------------------------|:-----------------|:-------------------------|
-| [DOM][ext-dom] (`ext-dom`)                | **erforderlich** | **erforderlich**         |
-| [PCRE][ext-pcre] (`ext-pcre`)             | **erforderlich** | **erforderlich**         |
-| [Intl][ext-intl] (`ext-intl`)             | empfohlen        | **erforderlich**         |
-| [PDO][ext-pdo] (`ext-pdo`)                | **erforderlich** | **erforderlich**         |
-| [ZLIB][ext-zlib] (`ext-zlib`)             | **erforderlich** | **erforderlich**         |
-| [JSON][ext-json] (`ext-json`)             | **erforderlich** | **erforderlich**         |
-| [Curl][ext-curl] (`ext-curl`)             | **erforderlich** | **erforderlich**         |
-| [Mbstring][ext-mbstring] (`ext-mbstring`) | **erforderlich** | **erforderlich**         |
-| [GD][ext-gd] (`ext-gd`)                   | **erforderlich** | erfordert 7, 8 oder 9    |
-| [Imagick][ext-imagick] (`ext-imagick`)    | _nicht benutzt_  | erfordert 7, 8 oder 9    |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | _nicht benutzt_  | erfordert 7, 8 oder 9    |
+| Name der Erweiterung                      | Contao 4.4                   | Contao 4.8                                     |
+|:------------------------------------------|:-----------------------------|:-----------------------------------------------|
+| [DOM][ext-dom] (`ext-dom`)                | **erforderlich**             | **erforderlich**                               |
+| [PCRE][ext-pcre] (`ext-pcre`)             | **erforderlich**             | **erforderlich**                               |
+| [Intl][ext-intl] (`ext-intl`)             | empfohlen                    | **erforderlich**                               |
+| [PDO][ext-pdo] (`ext-pdo`)                | **erforderlich**             | **erforderlich**                               |
+| [ZLIB][ext-zlib] (`ext-zlib`)             | **erforderlich**             | **erforderlich**                               |
+| [JSON][ext-json] (`ext-json`)             | **erforderlich**             | **erforderlich**                               |
+| [Curl][ext-curl] (`ext-curl`)             | **erforderlich**             | **erforderlich**                               |
+| [Mbstring][ext-mbstring] (`ext-mbstring`) | **erforderlich**             | **erforderlich**                               |
+| [GD][ext-gd] (`ext-gd`)                   | **erforderlich**<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+| [Imagick][ext-imagick] (`ext-imagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+
+{{% notice note %}}
+<sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus. In Contao **4.4**
+muss die PHP GD Biblothek allerdings trotzdem noch zusätzlich zur Verfügung stehen, in Contao **4.8** hingegen nicht mehr.
+Die Verwendung von ImageMagick über die PHP Imagick oder Gmagick Bibliothek ist in allen Fällen empfohlen. ImageMagick
+bietet bessere Performance und Qualität.
+{{% /notice %}}
 
 [ext-zlib]: https://www.php.net/manual/en/book.zlib.php
 [ext-dom]: https://www.php.net/manual/en/book.dom.php
