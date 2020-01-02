@@ -38,7 +38,7 @@ empfohlen, diese immer zu verwenden.
 
 {{% notice note %}}
 <sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus. In Contao **4.4**
-muss die PHP GD Biblothek allerdings trotzdem noch zusätzlich zur Verfügung stehen, in Contao **4.8** hingegen nicht mehr.
+muss die PHP GD Bibliothek allerdings trotzdem noch zusätzlich zur Verfügung stehen, in Contao **4.8** hingegen nicht mehr.
 Die Verwendung von ImageMagick über die PHP Imagick oder Gmagick Bibliothek ist in allen Fällen empfohlen. ImageMagick
 bietet bessere Performance und Qualität.
 {{% /notice %}}
