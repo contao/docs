@@ -32,13 +32,13 @@ empfohlen, diese immer zu verwenden.
 | [JSON][ext-json] (`ext-json`)             | **erforderlich**             | **erforderlich**                               |
 | [Curl][ext-curl] (`ext-curl`)             | **erforderlich**             | **erforderlich**                               |
 | [Mbstring][ext-mbstring] (`ext-mbstring`) | **erforderlich**             | **erforderlich**                               |
-| [GD][ext-gd] (`ext-gd`)                   | **erforderlich**<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+| [GD][ext-gd] (`ext-gd`)                   | **erforderlich**<sup>1</sup> | **erforderlich**<sup>1</sup> |
 | [Imagick][ext-imagick] (`ext-imagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
 | [Gmagick][ext-gmagick] (`ext-gmagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
 
 {{% notice note %}}
-<sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus. In Contao **4.4**
-muss die PHP GD Bibliothek allerdings trotzdem noch zusätzlich zur Verfügung stehen, in Contao **4.8** hingegen nicht mehr.
+<sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus.
+Die PHP GD Bibliothek muss allerdings trotzdem noch zusätzlich zur Verfügung stehen.
 Die Verwendung von ImageMagick über die PHP Imagick oder Gmagick Bibliothek ist in allen Fällen empfohlen. ImageMagick
 bietet bessere Performance und Qualität.
 {{% /notice %}}
