@@ -116,8 +116,8 @@ freigeschalten werden).
 2. Unter _Meine Apps_ auf _App erstellen_ klicken.
 3. Einen _Anzeige Name_ für die App eingeben (z. B. der Titel der Webseite) und eine Kontakt E-Mail Adresse angeben. 
 Dann auf _App-ID erstellen_ klicken.
-4. Auf der nächsten Seite können _Produkte_ zur App hinzugefügt werden. Füge das _Facebook Login_ Produkt hinzu, indem 
-dem du drt auf _Einrichten_ klickst.
+4. Auf der nächsten Seite können _Produkte_ zur App hinzugefügt werden. Füge das _Facebook Login_ Produkt hinzu in 
+dem du dort auf _Einrichten_ klickst.
 5. Auf der nächsten Seite _Web_ auswählen, dann die URL der Webseite eingeben (inklusive `https://`). Danach auf _Save_
 klicken.
 6. Auf der linken Seite auf _Facebook Login_ » _Einstellungen_ clicken. Unter _Gültige OAuth Redirect URIs_ die 
