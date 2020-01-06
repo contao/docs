@@ -127,9 +127,9 @@ der Domain deiner Webseite ersetzt werden. Dann auf _Änderungen speichern_ klic
 eingeben. Danach wieder auf _Änderungen speichern_ klicken.
 
 {{% notice info %}}
-Der Facebook Account unter diesem man die App anlegt muss die Berechtigung haben auf der timeline der jeweiligen
+Der Facebook Account, unter dem man die App anlegt, muss die Berechtigung haben, auf der timeline der jeweiligen
 Facebook Page, mit der synchronisiert werden soll, Posts machen zu dürfen (dies ist optional, wenn nur Posts von
-der Page in das Nachrichtenarchiv geholt werden sollen). Alternativ können aber auch weitere Administrator oder
+der Page in das Nachrichtenarchiv geholt werden sollen). Alternativ können aber auch weitere Administratoren oder
 Developer zur Facebook App unter _Rollen_ hinzugefügt werden.
 {{% /notice %}}
 
