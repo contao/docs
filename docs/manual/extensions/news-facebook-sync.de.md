@@ -148,7 +148,7 @@ _Allgemeines_ gefunden werden.
 Öffne die Einstellungen deines Nachrichtenarchivs. In der Sektion _Facebook sync_ kann der __Facebook sync__
 aktiviert werden. Danach kann die _numerische_ ID der Facebook Page eingegeben werden, mit der das Nachrichtenarchiv
 synchronisiert werden soll. Die ID findet man in den Einstellungen der Facebook Page, oder über Services wie z. B.
-[findmyfbid.com](http://findmyfbid.com/). Wenn automatisch Facebook Page Posts als Nachrichtenbeiträge angelegt werden
+[findmyfbid.com](https://findmyfbid.com/). Wenn automatisch Facebook Page Posts als Nachrichtenbeiträge angelegt werden
 sollen, dann muss die Einstellung __Page Posts holen__ aktiviert werden. Optional kann auch ein 
 __Page Post Datum Limit__ eingestellt werden.
 
@@ -173,14 +173,14 @@ muss in Contao 4 veröffentlicht werden!
 
 ### Zusätzliche Einstellungen
 
-Seit Version `3.0.0` können folgende Einstellungen in den System Einstellungen von Contao unter _Facebook Sync_
+Seit Version `3.0.0` können folgende Einstellungen in den Systemeinstellungen von Contao unter _Facebook Sync_
 getroffen werden:
 
 __Keine OpenGraph Meta Tags__: seit Version `3.0.0` der Extension wird automatisch ein `og:image` `meta` Tag im 
 `<head>` eingefügt, wenn ein Nachrichtenartikel verarbeitet wird, damit das Teaserbild auch auf Facebook automatisch
 ausgegeben wird, wenn der Link zu der Nachricht geteilt wird. Mit dieser Einstellung kann dies deaktiviert werden.
 
-__Als Fotos posten__: seit Version `3.0.0` werden Nachrichtenbeiträge nicht mehr automatisch als Photos geposetet,
+__Als Fotos posten__: seit Version `3.0.0` werden Nachrichtenbeiträge nicht mehr automatisch als Fotos gepostet,
 wenn der Nachrichtenbeitrag ein Teaserbild hat. Mit der Einstellung kann dies wieder aktiviert werden.
 
 ![Backend Einstellungen](/de/extensions/images/de/contao-news-facebook_backend_settings_de.png?classes=shadow)
@@ -197,7 +197,7 @@ in der eigenen `config.php` eingestellt werden.
 ## Benutzung
 
 
-### Facebook Page/Group posts holen
+### Facebook Page/Group Posts holen
 
 Sobald das Nachrichtenarchiv konfiguriert ist und die __Page Posts holen__ bzw. __Group Posts holen__ Option aktiv ist,
 überprüft die Erweiterung stündlich auf neue Facebook Posts über den Cronjob von Contao.
@@ -214,7 +214,7 @@ __Auf Facebook Page posten__ aktiviert.
 In den Einstellungen der Nachricht kann außerdem ein abweichender Text für den Facebook Post angegeben werden.
 Andernfalls wird der Teaser Text benutzt.
 
-Die Erweiterung überprüft minütlich auf neue Nachrichten, die auf neue Nachrichten, die auf Facebook veröffentlicht
+Die Erweiterung überprüft minütlich auf neue Nachrichten, die auf Facebook veröffentlicht
 werden sollen.
 
 ![Nachrichten Einstellungen](/de/extensions/images/de/contao-news-facebook_news_settings_de.png?classes=shadow)
@@ -247,7 +247,7 @@ ein Array erwartet, mit den finalen Daten für den Datenbankeintrag eines Nachri
 
 Wenn ein Contao Nachrichtenbeitrag als Facebook Post vorbereitet wird, wird entweder der Teaser oder der bei der 
 Nachricht angegebene Text verwendet. Falls aber automatisch dieser Text angepasst werden soll, kann dies mit dem
-`changeFacebookMessage` gemacht werden. Als Rückgabewert wird der finale Text erwartet.
+`changeFacebookMessage` Hook gemacht werden. Als Rückgabewert wird der finale Text erwartet.
 
 #### Parameter
 
@@ -262,4 +262,4 @@ In den Nachrichtentemplates stehen zusätzliche Daten zur Verfügung:
 
 - _object_ `fbData` Die originalen Daten des Posts von Facebook.
 - _string_ `fbPostId` Die Facebook ID des verknüpften Facebook Posts.
-- _char_ `fromFb` Gibt an ob der Nachrichtenbeitrag ursprünglich von Facebook importiert wurde.
+- _char_ `fromFb` Gibt an, ob der Nachrichtenbeitrag ursprünglich von Facebook importiert wurde.

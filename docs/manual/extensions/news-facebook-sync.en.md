@@ -102,14 +102,14 @@ Manager. Then open the Contao Install Tool to update the database as usual.
 ## Configuration
 
 To configure this extension, a "Facebook App" needs to created first. The details of this app are then needed for the
-confiugration in the back end.
+configuration in the back end.
 
 
 ### Creating a Facebook App
 
 1. First you need to go to [developers.facebook.com](https://developers.facebook.com). If you do not have a Facebook 
 developer account yet, you need to create one (or unlock your existing Facebook user as a developer account).
-2. Under _My Apps_ klick on _Create App_.
+2. Under _My Apps_ click on _Create App_.
 3. Type in a _Display Name_ for the App (e.g. the title of your website) and enter a contact email address.
 4. On the next page, you can add _Products_ to your App. Add the _Facebook Login_ by clicking on _Set Up_.
 5. On the next page, choose _Web_, then enter the URL of your website (including `https://`). Click on _Save_.
@@ -138,10 +138,10 @@ of your Facebook App. You can find this information in your Facebook App under _
 
 Go to the settings of your news archive. In the _Facebook sync_ section enable __Facebook sync__ and enter the _numeric_ 
 ID of the Facebook Page you want to synchronize with (you can find the ID in the "About" tab of the page or via 
-[findmyfbid.com](http://findmyfbid.com/)). If you wish to automatically fetch the Facebook Page posts and add them to 
-your news archive, enable the __Fetch page posts__ option. Optionally also define a __Page post date limit__.
+[findmyfbid.com](https://findmyfbid.com/)). If you wish to automatically fetch the Facebook Page posts and add them to 
+your news archive, enable the __Fetch page posts__ option. Optionally, also define a __Page post date limit__.
 
-You can also do the same for a Facebook Group, if you want to fetch posts from that group. Note however that publishing
+You can also do the same for a Facebook Group, if you want to fetch posts from that group. Note, however, that publishing
 news entries as Facebook posts is only supported for Facebook Pages, not for Groups.
 
 Lastly you need to fetch an __Access Token__. Click on the Facebook connect button next to the input field - this will 
@@ -206,7 +206,7 @@ The extension will check for new news entries to be published minutely via Conta
 
 ### Manual sync trigger
 
-There is a button to trigger a sync in the backend, within the global operations for news archives.
+There is a button to trigger a sync in the back end, within the global operations for news archives.
 
 ![News global operations](/de/extensions/images/en/contao-news-facebook_news_global_operations_en.png?classes=shadow)
 
