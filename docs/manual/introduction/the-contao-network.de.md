@@ -76,6 +76,7 @@ bitte noch kurz folgende Liste durch:
 - wurde der Fehler schon von jemandem gemeldet (Durchsicht der Issues)
 - bist du auf der letzten stabilen Version von Contao
 - wie kann der Fehler in einer frischen Contao-Installation reproduziert werden (Schritt-für-Schritt-Anleitung)
+- wie kann der Fehler in der [Online-Demo von Contao](https://demo.contao.org/contao/login) reproduziert werden (Schritt-für-Schritt-Anleitung). 
 
 
 ## Contao im Social Web
