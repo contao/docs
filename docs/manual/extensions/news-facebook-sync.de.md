@@ -18,7 +18,7 @@ möglich ein Nachrichtenarchiv mit einer Facebook Seite synchron zu halten.
 
 ## Installation
 
-Um diese Erweiterung zu installieren, muss zuerst die `composer.json` der eigenen Contao Installation modifiziert.
+Um diese Erweiterung zu installieren, muss zuerst die `composer.json` der eigenen Contao Installation modifiziert werden.
 Dabei sind zwei Anpassungen notwendig: das private Repository hinzufügen und die Abhängigkeit hinzufügen.
 
 Um das Repository hinzuzufügen muss folgendes in der `composer.json` eingefügt werden:
