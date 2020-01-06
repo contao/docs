@@ -104,7 +104,7 @@ Datenbank zu aktualisieren.
 
 ## Konfiguration
 
-Um diese Erweiterung zu konfigurieren, muss zuerst eine sogennante »Facebook App« erzeugt werden. Die Details dieser App
+Um diese Erweiterung zu konfigurieren muss zuerst eine sogenannte »Facebook App« erzeugt werden. Die Details dieser App
 werden dann für die Konfiguration im Backend benötigt.
 
 
@@ -120,7 +120,7 @@ Dann auf _App-ID erstellen_ klicken.
 dem du dort auf _Einrichten_ klickst.
 5. Auf der nächsten Seite _Web_ auswählen, dann die URL der Webseite eingeben (inklusive `https://`). Danach auf _Save_
 klicken.
-6. Auf der linken Seite auf _Facebook Login_ » _Einstellungen_ clicken. Unter _Gültige OAuth Redirect URIs_ die 
+6. Auf der linken Seite auf _Facebook Login_ » _Einstellungen_ klicken. Unter _Gültige OAuth Redirect URIs_ die 
 folgende URL eingeben: `https://example.org/system/modules/news_facebook/public/callback.php`. `example.org` muss mit 
 der Domain deiner Webseite ersetzt werden. Dann auf _Änderungen speichern_ klicken.
 7. Auf der linken Seite auf _Einstellungen_ » _Allgemeines_ klicken und die Domain der Webseite unter _App Domains_ 
@@ -136,7 +136,7 @@ Developer zur Facebook App unter _Rollen_ hinzugefügt werden.
 
 ### App ID und App Secret in Contao konfigurieren
 
-Gehe im Contao Backend zu _System_ » _Einstellungen_. Dort unter _Facebook App_ müssen die__App ID__ und das 
+Gehe im Contao Backend zu _System_ » _Einstellungen_. Dort unter _Facebook App_ müssen die __App ID__ und das 
 __App Secret__ eingegeben werden. Diese Informationen können in den Facebook App Einstellungen unter _Einstellungen_ » 
 _Allgemeines_ gefunden werden.
 
@@ -147,7 +147,7 @@ _Allgemeines_ gefunden werden.
 
 Gehe zu dein Einstellungen deines Nachrichtenarchivs. In der Sektion _Facebook sync_ kann der __Facebook sync__
 aktiviert werden. Danach kann die _numerische_ ID der Facebook Page eingegeben werden, mit der das Nachrichtenarchiv
-syncrhonisiert werden soll. Die ID findet man in den Einstellungen der Facebook Page, oder über Services wie z. B.
+synchronisiert werden soll. Die ID findet man in den Einstellungen der Facebook Page, oder über Services wie z. B.
 [findmyfbid.com](http://findmyfbid.com/). Wenn automatisch Facebook Page Posts als Nachrichtenbeiträge angelegt werden
 sollen, dann muss die Einstellung __Page Posts holen__ aktiviert werden. Optional kann auch ein 
 __Page Post Datum Limit__ eingestellt werden.
@@ -160,7 +160,7 @@ Dadurch wird man bei Facebook eingeloggt und es werden Berechtigungen für den e
 angefordert. Nachdem dies bestätigt wurde wird ein sogenannter »Long Term Access Token« von Facebook geholt.
 
 {{% notice info %}}
-Falls Nachrichtenbeiträge automatisch auf der Facebook Page geposetet werden sollen, dann muss in diesem Prozess erlaubt
+Falls Nachrichtenbeiträge automatisch auf der Facebook Page gepostet werden sollen, dann muss in diesem Prozess erlaubt
 werden, dass die Facebook App __öffentliche__ Posts in deinem Namen machen darf. Der Facebook Account, mit dem man sich
 hier anmeldet muss außerdem die Berechtigung haben Posts auf der Timeline der jeweiligen Facebook Page posten zu dürfen.
 {{% /notice %}}
@@ -191,7 +191,7 @@ Falls kein Hook benutzt wird, kann die Standard Überschriftenlänge über
 $GLOBALS['FACEBOOK_TITLE_LENGTH'] = …;
 ```
 
-in der eingenen `config.php` eingestellt werden.
+in der eigenen `config.php` eingestellt werden.
 
 
 ## Benutzung
