@@ -145,19 +145,19 @@ _Allgemeines_ gefunden werden.
 
 ### Contao Nachrichtenarchiv konfigurieren
 
-Gehe zu dein Einstellungen deines Nachrichtenarchivs. In der Sektion _Facebook sync_ kann der __Facebook sync__
+Öffne die Einstellungen deines Nachrichtenarchivs. In der Sektion _Facebook sync_ kann der __Facebook sync__
 aktiviert werden. Danach kann die _numerische_ ID der Facebook Page eingegeben werden, mit der das Nachrichtenarchiv
 synchronisiert werden soll. Die ID findet man in den Einstellungen der Facebook Page, oder über Services wie z. B.
 [findmyfbid.com](http://findmyfbid.com/). Wenn automatisch Facebook Page Posts als Nachrichtenbeiträge angelegt werden
 sollen, dann muss die Einstellung __Page Posts holen__ aktiviert werden. Optional kann auch ein 
 __Page Post Datum Limit__ eingestellt werden.
 
-Das Selbe kann auch für eine Facebook Gruppe gemacht werden, wenn Posts dieser Gruppe zum Nachrichtenarchiv importiert
+Dasselbe kann auch für eine Facebook Gruppe gemacht werden, wenn Posts dieser Gruppe zum Nachrichtenarchiv importiert
 werden sollen. Allerdings können keine Nachrichtenbeiträge automatisch in Gruppen gepostet werden.
 
-Nun muss ein __Access Token__ von Facebook geholt werden. Dazu Kann die _Facebook connect_ Schaltfläche benutzt werden.
+Nun muss ein __Access Token__ von Facebook geholt werden. Dazu kann die _Facebook connect_ Schaltfläche benutzt werden.
 Dadurch wird man bei Facebook eingeloggt und es werden Berechtigungen für den eingeloggten Facebook Benutzer 
-angefordert. Nachdem dies bestätigt wurde wird ein sogenannter »Long Term Access Token« von Facebook geholt.
+angefordert. Nachdem dies bestätigt wurde, wird ein sogenannter »Long Term Access Token« von Facebook geholt.
 
 {{% notice info %}}
 Falls Nachrichtenbeiträge automatisch auf der Facebook Page gepostet werden sollen, dann muss in diesem Prozess erlaubt
