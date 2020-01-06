@@ -13,7 +13,7 @@ _Projekt Webseite unter [Contao News Facebook Sync](https://www.inspiredminds.at
 
 Mit dieser Extension können automatisch Posts von Facebook Pages (oder Gruppen) als Nachrichten in Nachrichtenarchive
 importiert werden. Es können außerdem automatisch Nachrichten auf Facebook Seiten gepostet werden. Dadurch ist es
-möglich ein Nachrichtenarchiv mit einer Facebook Seite synchron zu halten.
+möglich, ein Nachrichtenarchiv mit einer Facebook Seite synchron zu halten.
 
 
 ## Installation
@@ -21,7 +21,7 @@ möglich ein Nachrichtenarchiv mit einer Facebook Seite synchron zu halten.
 Um diese Erweiterung zu installieren, muss zuerst die `composer.json` der eigenen Contao Installation modifiziert werden.
 Dabei sind zwei Anpassungen notwendig: das private Repository hinzufügen und die Abhängigkeit hinzufügen.
 
-Um das Repository hinzuzufügen muss folgendes in der `composer.json` eingefügt werden:
+Um das Repository hinzuzufügen, muss folgendes in der `composer.json` eingefügt werden:
 
 ```json
 {
@@ -98,25 +98,25 @@ Um die Abhängigkeit hinzuzufügen, muss folgendes in der `composer.json` eingef
 {{% /expand %}}
 
 Nachdem diese Änderungen gemacht wurden, kann nun ein `composer update` auf der Kommandozeile oder eine
-Paketaktualisierung im Contao Manager durch geführt werden. Danach wie gewohnt das Contao Install Tool aufrufen, um die
+Paketaktualisierung im Contao Manager durchgeführt werden. Danach wie gewohnt das Contao Install Tool aufrufen, um die
 Datenbank zu aktualisieren.
 
 
 ## Konfiguration
 
-Um diese Erweiterung zu konfigurieren muss zuerst eine sogennante »Facebook App« erzeugt werden. Die Details dieser App
+Um diese Erweiterung zu konfigurieren, muss zuerst eine sogennante »Facebook App« erzeugt werden. Die Details dieser App
 werden dann für die Konfiguration im Backend benötigt.
 
 
 ### Facebook App anlegen
 
 1. Gehe zuerst zu [developers.facebook.com](https://developers.facebook.com). Wenn noch kein Facebook Developer Account
-existiert, muss nun eines angelegt werden (bzw. der Developer Account muss für einen existierenden Facebook Benutzer
+existiert, muss nun einer angelegt werden (bzw. der Developer Account muss für einen existierenden Facebook Benutzer
 freigeschalten werden).
 2. Unter _Meine Apps_ auf _App erstellen_ klicken.
 3. Einen _Anzeige Name_ für die App eingeben (z. B. der Titel der Webseite) und eine Kontakt E-Mail Adresse angeben. 
 Dann auf _App-ID erstellen_ klicken.
-4. Auf der nächsten Seite können _Produkte_ zur App hinzugefügt werden. Füge das _Facebook Login_ Produkt hinzu in 
+4. Auf der nächsten Seite können _Produkte_ zur App hinzugefügt werden. Füge das _Facebook Login_ Produkt hinzu, indem 
 dem du drt auf _Einrichten_ klickst.
 5. Auf der nächsten Seite _Web_ auswählen, dann die URL der Webseite eingeben (inklusive `https://`). Danach auf _Save_
 klicken.
