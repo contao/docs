@@ -162,7 +162,7 @@ angefordert. Nachdem dies bestätigt wurde, wird ein sogenannter »Long Term Acc
 {{% notice info %}}
 Falls Nachrichtenbeiträge automatisch auf der Facebook Page gepostet werden sollen, dann muss in diesem Prozess erlaubt
 werden, dass die Facebook App __öffentliche__ Posts in deinem Namen machen darf. Der Facebook Account, mit dem man sich
-hier anmeldet muss außerdem die Berechtigung haben Posts auf der Timeline der jeweiligen Facebook Page posten zu dürfen.
+hier anmeldet, muss außerdem die Berechtigung haben, Posts auf der Timeline der jeweiligen Facebook Page posten zu dürfen.
 {{% /notice %}}
 
 ![Nachrichtenarchiv Einstellungen](/de/extensions/images/de/contao-news-facebook_archive_settings_de.png?classes=shadow)
