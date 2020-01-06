@@ -2,6 +2,9 @@
 title: "compileDefinition"
 description: "compileDefinition hook"
 tags: ["hook-stylesheet"]
+aliases:
+    - /reference/hooks/compileDefinition/
+    - /reference/hooks/compiledefinition/
 ---
 
 

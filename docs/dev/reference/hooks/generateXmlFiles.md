@@ -2,6 +2,9 @@
 title: "generateXmlFiles"
 description: "generateXmlFiles hook"
 tags: ["hook-automator"]
+aliases:
+    - /reference/hooks/generateXmlFiles/
+    - /reference/hooks/generatexmlfiles/
 ---
 
 

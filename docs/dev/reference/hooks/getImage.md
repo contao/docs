@@ -2,6 +2,9 @@
 title: "getImage"
 description: "getImage hook"
 tags: ["hook-image"]
+aliases:
+    - /reference/hooks/getImage/
+    - /reference/hooks/getimage/
 ---
 
 

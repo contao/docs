@@ -2,6 +2,9 @@
 title: "getAllEvents"
 description: "getAllEvents hook"
 tags: ["hook-module", "hook-calendar"]
+aliases:
+    - /reference/hooks/getAllEvents/
+    - /reference/hooks/getallevents/
 ---
 
 

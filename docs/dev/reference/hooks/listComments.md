@@ -2,6 +2,9 @@
 title: "listComments"
 description: "listComments hook"
 tags: ["hook-comment", "hook-backend", "hook-dca"]
+aliases:
+    - /reference/hooks/listComments/
+    - /reference/hooks/listcomments/
 ---
 
 

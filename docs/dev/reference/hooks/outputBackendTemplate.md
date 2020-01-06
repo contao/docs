@@ -2,6 +2,9 @@
 title: "outputBackendTemplate"
 description: "outputBackendTemplate hook"
 tags: ["hook-template"]
+aliases:
+    - /reference/hooks/outputBackendTemplate/
+    - /reference/hooks/outputbackendtemplate/
 ---
 
 

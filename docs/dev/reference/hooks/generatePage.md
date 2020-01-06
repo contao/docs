@@ -2,6 +2,9 @@
 title: "generatePage"
 description: "generatePage hook"
 tags: ["hook-page"]
+aliases:
+    - /reference/hooks/generatePage/
+    - /reference/hooks/generatepage/
 ---
 
 

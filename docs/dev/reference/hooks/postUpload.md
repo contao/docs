@@ -2,6 +2,9 @@
 title: "postUpload"
 description: "postUpload hook"
 tags: ["hook-backend"]
+aliases:
+    - /reference/hooks/postUpload/
+    - /reference/hooks/postupload/
 ---
 
 

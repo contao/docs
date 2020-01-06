@@ -2,6 +2,9 @@
 title: "updatePersonalData"
 description: "updatePersonalData hook"
 tags: ["hook-member", "hook-module"]
+aliases:
+    - /reference/hooks/updatePersonalData/
+    - /reference/hooks/updatepersonaldata/
 ---
 
 

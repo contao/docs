@@ -2,6 +2,9 @@
 title: "loadDataContainer"
 description: "loadDataContainer hook"
 tags: ["hook-dca", "hook-system"]
+aliases:
+    - /reference/hooks/loadDataContainer/
+    - /reference/hooks/loaddatacontainer/
 ---
 
 

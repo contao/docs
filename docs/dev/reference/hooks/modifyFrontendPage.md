@@ -2,6 +2,9 @@
 title: "modifyFrontendPage"
 description: "modifyFrontendPage hook"
 tags: ["hook-template"]
+aliases:
+    - /reference/hooks/modifyFrontendPage/
+    - /reference/hooks/modifyfrontendpage/
 ---
 
 

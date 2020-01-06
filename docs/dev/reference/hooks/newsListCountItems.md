@@ -2,6 +2,9 @@
 title: "newsListCountItems"
 description: "newsListCountItems hook"
 tags: ["hook-news", "hook-module"]
+aliases:
+    - /reference/hooks/newsListCountItems/
+    - /reference/hooks/newslistcountitems/
 ---
 
 

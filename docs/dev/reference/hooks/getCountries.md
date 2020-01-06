@@ -2,6 +2,9 @@
 title: "getCountries"
 description: "getCountries hook"
 tags: ["hook-config", "hook-system"]
+aliases:
+    - /reference/hooks/getCountries/
+    - /reference/hooks/getcountries/
 ---
 
 

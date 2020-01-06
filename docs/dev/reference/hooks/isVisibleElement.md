@@ -2,6 +2,9 @@
 title: "isVisibleElement"
 description: "isVisibleElement hook"
 tags: ["hook-controller"]
+aliases:
+    - /reference/hooks/isVisibleElement/
+    - /reference/hooks/isvisibleelement/
 ---
 
 

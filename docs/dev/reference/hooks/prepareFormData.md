@@ -2,6 +2,9 @@
 title: "prepareFormData"
 description: "prepareFormData hook"
 tags: ["hook-form"]
+aliases:
+    - /reference/hooks/prepareFormData/
+    - /reference/hooks/prepareformdata/
 ---
 
 

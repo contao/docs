@@ -2,6 +2,9 @@
 title: "compileFormFields"
 description: "compileFormFields hook"
 tags: ["hook-form"]
+aliases:
+    - /reference/hooks/compileFormFields/
+    - /reference/hooks/compileformfields/
 ---
 
 

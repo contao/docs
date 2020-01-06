@@ -2,6 +2,9 @@
 title: "executePreActions"
 description: "executePreActions hook"
 tags: ["hook-dca"]
+aliases:
+    - /reference/hooks/executePreActions/
+    - /reference/hooks/executepreactions/
 ---
 
 

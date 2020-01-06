@@ -2,6 +2,9 @@
 title: "initializeSystem"
 description: "initializeSystem hook"
 tags: ["hook-system"]
+aliases:
+    - /reference/hooks/initializeSystem/
+    - /reference/hooks/initializesystem/
 ---
 
 

@@ -2,6 +2,9 @@
 title: "createDefinition"
 description: "createDefinition hook"
 tags: ["hook-stylesheet"]
+aliases:
+    - /reference/hooks/createDefinition/
+    - /reference/hooks/createdefinition/
 ---
 
 

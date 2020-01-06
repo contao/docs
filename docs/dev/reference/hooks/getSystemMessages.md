@@ -2,6 +2,9 @@
 title: "getSystemMessages"
 description: "getSystemMessages hook"
 tags: ["hook-backend"]
+aliases:
+    - /reference/hooks/getSystemMessages/
+    - /reference/hooks/getsystemmessages/
 ---
 
 

@@ -2,6 +2,9 @@
 title: "addComment"
 description: "addComment hook"
 tags: ["hook-comment"]
+aliases:
+    - /reference/hooks/addComment/
+    - /reference/hooks/addcomment/
 ---
 
 

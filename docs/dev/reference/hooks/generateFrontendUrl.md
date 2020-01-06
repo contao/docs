@@ -2,6 +2,9 @@
 title: "generateFrontendUrl"
 description: "generateFrontendUrl hook"
 tags: ["hook-controller", "hook-page"]
+aliases:
+    - /reference/hooks/generateFrontendUrl/
+    - /reference/hooks/generatefrontendurl/
 ---
 
 

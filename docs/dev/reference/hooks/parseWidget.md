@@ -2,6 +2,9 @@
 title: "parseWidget"
 description: "parseWidget hook"
 tags: ["hook-widget"]
+aliases:
+    - /reference/hooks/parseWidget/
+    - /reference/hooks/parsewidget/
 ---
 
 

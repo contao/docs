@@ -2,6 +2,9 @@
 title: "getPageIdFormUrl"
 description: "getPageIdFormUrl hook"
 tags: ["hook-routing"]
+aliases:
+    - /reference/hooks/getPageIdFormUrl/
+    - /reference/hooks/getpageIdformurl/
 ---
 
 

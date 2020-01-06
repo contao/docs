@@ -2,6 +2,9 @@
 title: "newsListFetchItems"
 description: "newsListFetchItems hook"
 tags: ["hook-news", "hook-module"]
+aliases:
+    - /reference/hooks/newsListFetchItems/
+    - /reference/hooks/newslistfetchitems/
 ---
 
 

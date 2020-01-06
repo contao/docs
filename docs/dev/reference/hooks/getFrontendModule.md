@@ -2,6 +2,9 @@
 title: "getFrontendModule"
 description: "getFrontendModule hook"
 tags: ["hook-controller", "hook-module"]
+aliases:
+    - /reference/hooks/getFrontendModule/
+    - /reference/hooks/getfrontendmodule/
 ---
 
 

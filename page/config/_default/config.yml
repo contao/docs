@@ -3,5 +3,6 @@ title: 'Contao Documentation'
 theme: 'hugo-theme-learn'
 canonifyURLs: true
 enableGitInfo: true
+disablePathToLower: true
 outputs:
   home: ['HTML', 'JSON']

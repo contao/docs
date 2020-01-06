@@ -2,6 +2,9 @@
 title: "addCustomRegexp"
 description: "addCustomRegexp hook"
 tags: ["hook-custom", "hook-widget"]
+aliases:
+    - /reference/hooks/addCustomRegexp/
+    - /reference/hooks/addcustomregexp/
 ---
 
 

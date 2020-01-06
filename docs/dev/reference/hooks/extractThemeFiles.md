@@ -2,6 +2,9 @@
 title: "extractThemeFiles"
 description: "extractThemeFiles hook"
 tags: ["hook-theme"]
+aliases:
+    - /reference/hooks/extractThemeFiles/
+    - /reference/hooks/extractthemefiles/
 ---
 
 

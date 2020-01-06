@@ -2,6 +2,9 @@
 title: "processFormData"
 description: "processFormData hook"
 tags: ["hook-form"]
+aliases:
+    - /reference/hooks/processFormData/
+    - /reference/hooks/processformdata/
 ---
 
 

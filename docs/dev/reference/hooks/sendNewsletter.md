@@ -2,6 +2,9 @@
 title: "sendNewsletter"
 description: "sendNewsletter hook"
 tags: ["hook-newsletter"]
+aliases:
+    - /reference/hooks/sendNewsletter/
+    - /reference/hooks/sendnewsletter/
 ---
 
 

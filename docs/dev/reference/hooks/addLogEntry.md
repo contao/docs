@@ -2,6 +2,9 @@
 title: "addLogEntry"
 description: "addLogEntry hook"
 tags: ["hook-backend"]
+aliases:
+    - /reference/hooks/addLogEntry/
+    - /reference/hooks/addlogentry/
 ---
 
 

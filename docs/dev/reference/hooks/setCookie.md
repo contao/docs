@@ -2,6 +2,9 @@
 title: "setCookie"
 description: "setCookie hook"
 tags: ["hook-system"]
+aliases:
+    - /reference/hooks/setCookie/
+    - /reference/hooks/setcookie/
 ---
 
 

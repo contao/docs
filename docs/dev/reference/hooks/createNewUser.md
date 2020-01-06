@@ -2,6 +2,9 @@
 title: "createNewUser"
 description: "createNewUser hook"
 tags: ["hook-module", "hook-member"]
+aliases:
+    - /reference/hooks/createNewUser/
+    - /reference/hooks/createnewuser/
 ---
 
 

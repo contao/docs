@@ -2,6 +2,9 @@
 title: "postLogout"
 description: "postLogout hook"
 tags: ["hook-user", "hook-member"]
+aliases:
+    - /reference/hooks/postLogout/
+    - /reference/hooks/postlogout/
 ---
 
 

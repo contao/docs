@@ -2,6 +2,9 @@
 title: "compileArticle"
 description: "compileArticle hook"
 tags: ["hook-module", "hook-template", "hook-article"]
+aliases:
+    - /reference/hooks/compileArticle/
+    - /reference/hooks/compilearticle/
 ---
 
 

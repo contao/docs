@@ -2,6 +2,9 @@
 title: "activateRecipient"
 description: "activateRecipient hook"
 tags: ["hook-newsletter"]
+aliases:
+    - /reference/hooks/activateRecipient/
+    - /reference/hooks/activaterecipient/
 ---
 
 
