@@ -60,6 +60,7 @@ des Hosting-Providers auf diesen Unterordner.
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 {{% /notice %}}
 
+Lege eine Datenbank für diese Contao Installation an.
 
 ### Download und Installation
 
