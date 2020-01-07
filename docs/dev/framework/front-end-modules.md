@@ -61,7 +61,7 @@ DCA configuration.
 ```php
 // contao/dca/tl_module.php
 $GLOBALS['TL_DCA']['tl_module']['palettes']['my_frontend_module'] = 
-    '{type_legend},type;{redirect_legend},jumpTo'
+    '{title_legend},name,type;{redirect_legend},jumpTo'
 ;
 ```
 
