@@ -59,7 +59,7 @@ contao:
     search:
         listener:
             index: true # Configure whether you want to update the index entry on every request
-            delete: false # Configure whether you want to delete the obsolete entry on every request
+            delete: false # Configure whether you want to delete an entry if a request is not successful
 ```
 
 As you can see, by setting both values to `false` you can disable the listener completely and rely on e.g. your regular
