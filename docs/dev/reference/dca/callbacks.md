@@ -267,7 +267,7 @@ to add status icons.
 * `array` Record data
 * `string` Current label
 * `\Contao\DataContainer` Data Container object
-* `string` HTML attributes for label
+* `string` Always empty
 * `bool` Always false
 * `bool` Whether the record is protected
 
