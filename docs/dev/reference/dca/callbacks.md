@@ -94,7 +94,7 @@ Is executed after a record has been moved to a new position.
 Executed after a record has been duplicated.
 
 {{% expand "Parameters" %}}
-* `integer` Inset ID
+* `integer` Insert ID
 * `\Contao\DataContainer` Data Container object
 
 **return:** _void_
