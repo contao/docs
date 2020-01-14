@@ -5,6 +5,10 @@ aliases:
   - /guides/backend-routes
 ---
 
+{{% notice note %}}
+This covers the documentation on how to create routes in Contao, the old Contao **3.5** way. The Recomondation for Contao **4.9 LTS** and up is a different.
+Be aware of two different ways: local Extension & Bundles.
+{{% /notice %}}
 
 ## Adding custom back end routes
 
@@ -54,21 +58,21 @@ class BackendController extends AbstractController
 We need three different route parameters.
 
 * `_scope`: This forces the scope of this route to be `backend`. That way you're
-telling Contao, that this route belongs to the back end and should be handled accordingly.
+  telling Contao, that this route belongs to the back end and should be handled accordingly.
 * `_token_check`: If you're using Contao forms with the RequestToken integration
-you need to set this to true, in order to get it to work.
+  you need to set this to true, in order to get it to work.
 * `_backend_module`: This attribute is not mandatory but will be used to match
-the current route in order to highlight the currently active node in the back end menu.
-More on this later.
+  the current route in order to highlight the currently active node in the back end menu.
+  More on this later.
 
 Be sure to have imported your bundles Controllers in your `routing.yml` *before* 
-the `ContaoCoreBundle` routes. 
+the `ContaoCoreBundle` routes.
 
 ```yaml
 # config/routing.yml
 app:
-    resource: ../src/Controller
-    type: annotation
+  resource: ../src/Controller
+  type: annotation
 ```
 
 Our route `backendRouteAction` will render the template `my_backend_route.html.twig`
@@ -92,12 +96,12 @@ which must be placed into `/templates`.
 {% endblock %}
 ```
 
-As we extend from `@ContaoCore/Backend/be_page.html.twig` it is worth noting 
+As we extend from `@ContaoCore/Backend/be_page.html.twig` it is worth noting
 that there are three different blocks you can currently use:
 
 * `headline`: This block renders the headline of the document.
 * `error`: In case of an error, place your message here, it will be placed prominently
-on the top of the page
+  on the top of the page
 * `main`: This is the content area for output.
 
 This example renders like this:
@@ -165,11 +169,11 @@ For this to work, we add the following lines to our service configuration in `ap
 
 ```yaml
 services:
-    App\EventListener\BackendMenuListener:
-        arguments:
-            - "@router"
-            - "@request_stack"
-        tags:
+  App\EventListener\BackendMenuListener:
+    arguments:
+      - "@router"
+      - "@request_stack"
+    tags:
             - { name: kernel.event_listener, event: contao.backend_menu_build, method: onBuild, priority: -255 }
 ```
 
