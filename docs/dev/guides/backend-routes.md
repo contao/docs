@@ -112,7 +112,7 @@ Since the back end menu can be extended with an `EventListener` we can easily
 create one that listens for the menu event to be dispatched.
 
 {{% notice warning %}}
-The following example only works in Contao **<4.9**. For >=4.9 see the example below. 
+The following example only works in Contao **<4.9**. For **>=4.9** see the example below. 
 {{% /notice %}}
 
 ```php
@@ -164,7 +164,7 @@ class BackendMenuListener
 This EventListener creates a new menu node and handles its own `currentState` by
 reading and matching the previously mentioned request attribute `_backend_module`.
 
-#### Extend the back end menu >= 4.9
+#### Extend the back end menu **>=4.9**
 
 ```php
 // src/EventListener/BackendMenuListener.php Version >=4.9
