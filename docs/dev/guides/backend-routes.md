@@ -185,30 +185,30 @@ class BackendMenuListener
     public function onBuild(MenuEvent $event): void
     {
         $factory = $event->getFactory();
-        $tree = $event->getTree();
+        $tree    = $event->getTree();
 
-        if (!isset($tree->getChildren()['navigation_point']) ) {
-        $mainMenu = $factory
-            ->createItem('navigation_point') // Set a choosable name
-            ->setUri('/contao')   // Set any route, doesn't make much
-            ->setLabel('MSC.navigation_point') // Use the .xlf translater to translate the Labels
-            ->setLinkAttribute('class', 'group-system') // Set this Class for the Icon left beside
-            ->setLinkAttribute('onclick', "return AjaxRequest.toggleNavigation(this, 'navigation_point', '/contao')") // Makes the toggle to hide the childs of the navigation_point
-            ->setChildrenAttribute('id', 'navigation_point') // Set an ID, this is needed for the toggleNavigation
-            ->setExtra('translation_domain', 'contao_default'); // This is needed to the translation of the -> setLabel()
-}
+        if (!isset($tree->getChildren()['contentNode']) ) {                                                     //  creates a new contentNode. We don't know how to inject the menu item in an existing one yet. 
+            $node = $factory
+                ->createItem('contentNode')                                                                     // your vendor name? 
+                ->setUri('/')                                                                                   // Set any route, doesn't do much
+                ->setLabel('My Content Node')                                                                   // Use the .xlf translater to translate the Labels
+                ->setLinkAttribute('class', 'group-system')                                                     // Set this Class for the Icon left beside - Currently stealing the "system icon"
+                ->setLinkAttribute('onclick', "return AjaxRequest.toggleNavigation(this, 'contentNode', '/')")  // Makes the toggle to hide the childs of the contentNode
+                ->setChildrenAttribute('id', 'contentNode')                                                     // Set an ID, this is needed for the toggleNavigation
+                ->setExtra('translation_domain', 'contao_default');                                             // This is needed for the translation of the ->setLabel() method
+        }
 
-        $subMenu = $tree->addChild($mainMenu); //Adds the main Navigation Point to th end of the default Menu
+        $contentNode = $tree->addChild($node);                                                                  //Adds the main Navigation Point to th end of the default Menu
 
-        $list = $factory
-            ->createItem('my-modules') // Set a choosable name
-            ->setUri('my-backend-route') // e.g. /contao/your_extension
-            ->setLabel('My Modules') // Use the .xlf translater to translate the Labels
+        $menuPoint = $factory
+            ->createItem('my-modules')                                                                          // Set a choosable name
+            ->setUri('/contao/my-backend-route')
+            ->setLabel('My Modules')                                                                            // Use the .xlf translater to translate the Labels
             ->setLinkAttribute('title', 'My Modules Title Text')
             ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-modules')
-            ->setExtra('translation_domain', 'contao_default'); //This is needed to the translation of the -> setLabel()
+            ->setExtra('translation_domain', 'contao_default');                                                 //This is needed to the translation of the -> setLabel()
 
-        $subMenu->addChild($list); // Adds the Child to the Navigation Point
+        $contentNode->addChild($menuPoint);                                                                     // Adds the MenuItem to the Content Node
 
     }
 }
