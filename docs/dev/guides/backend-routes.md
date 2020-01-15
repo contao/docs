@@ -112,7 +112,7 @@ Since the back end menu can be extended with an `EventListener` we can easily
 create one that listens for the menu event to be dispatched.
 
 {{% notice warning %}}
-The following functions works in Contao **>4.9** for the Version **4.9** use the BackendMenuListener.php from above.
+The following example only works in Contao **<4.9**. For >=4.9 see the example below. 
 {{% /notice %}}
 
 ```php
