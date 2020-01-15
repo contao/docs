@@ -190,7 +190,7 @@ class BackendMenuListener
         $factory = $event->getFactory();
         $tree    = $event->getTree();
 
-        if (!isset($tree->getChildren()['contentNode']) ) {                                                     // creates a new contentNode. We don't know how to inject the menu item into an existing one yet. 
+        if (!$tree->getChild('contentNode')  ) {                                                                // creates a new contentNode. We don't know how to inject the menu item into an existing one yet. 
             $node = $factory
                 ->createItem('contentNode')                                                                     // contentNode = your vendor name? 
                 ->setUri('/')                                                                                   // Set any route, doesn't do much
