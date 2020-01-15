@@ -26,27 +26,39 @@ and is configured through annotations.
 // src/Controller/BackendController.php
 namespace App\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Twig\Environment as TwigEnvironment;
 
 /**
- * @Route("/contao", defaults={
- *     "_scope" = "backend",
- *     "_token_check" = true,
- *     "_backend_module" = "my-modules"
- * })
+ * @Route("/contao//my-backend-route",
+ *     name="app.backend-route" 
+ *     defaults={
+ *         "_scope" = "backend",
+ *         "_token_check" = true,
+ *         "_backend_module" = "my-modules"
+ *     }
+ * )
  */
 class BackendController extends AbstractController
 {
-    /**
-     * @Route("/my-backend-route", name="app.backend-route")
-     * @Template("my_backend_route.html.twig")
-     */
-    public function backendRouteAction()
+    private $twig;
+    
+    public function __construct(TwigEnvironment $twig)
     {
-        return [];
+        $this->twig = $twig;
+    }
+    
+    /**
+     * @Route("", name="app.backend-route")
+     */
+    public function __invoke()
+    {
+        return new Response($this->twig->render(
+            'my_backend_route.html.twig', 
+            []
+        ));
     }
 }
 ```
@@ -61,8 +73,8 @@ you need to set this to true, in order to get it to work.
 the current route in order to highlight the currently active node in the back end menu.
 More on this later.
 
-Be sure to have imported your bundles Controllers in your `routing.yml` *before* 
-the `ContaoCoreBundle` routes. 
+Be sure to have imported your bundles Controllers in your `routing.yml` *before*
+the `ContaoCoreBundle` routes.
 
 ```yaml
 # config/routing.yml
@@ -92,7 +104,7 @@ which must be placed into `/templates`.
 {% endblock %}
 ```
 
-As we extend from `@ContaoCore/Backend/be_page.html.twig` it is worth noting 
+As we extend from `@ContaoCore/Backend/be_page.html.twig` it is worth noting
 that there are three different blocks you can currently use:
 
 * `headline`: This block renders the headline of the document.
