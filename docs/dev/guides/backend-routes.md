@@ -187,6 +187,7 @@ class BackendMenuListener
         $factory = $event->getFactory();
         $tree = $event->getTree();
 
+        if (!isset($tree->getChildren()['navigation_point']) ) {
         $mainMenu = $factory
             ->createItem('navigation_point') // Set a choosable name
             ->setUri('/contao')   // Set any route, doesn't make much
@@ -195,6 +196,7 @@ class BackendMenuListener
             ->setLinkAttribute('onclick', "return AjaxRequest.toggleNavigation(this, 'navigation_point', '/contao')") // Makes the toggle to hide the childs of the navigation_point
             ->setChildrenAttribute('id', 'supsign') // Set an ID, this is needed for the toggleNavigation
             ->setExtra('translation_domain', 'contao_default'); // This is needed to the translation of the -> setLabel()
+}
 
         $subMenu = $tree->addChild($mainMenu); //Adds the main Navigation Point to th end of the default Menu
 
@@ -202,6 +204,9 @@ class BackendMenuListener
             ->createItem('attendance-list') // Set a choosable name
             ->setUri('your_route') // e.g. /contao/your_extension
             ->setLabel('MSC.attendancelist') // Use the .xlf translater to translate the Labels
+            ->setLinkAttribute('title', 'MSC.attendancelistTitle')
+            ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'attendance-list')
+
             ->setExtra('translation_domain', 'contao_default'); //This is needed to the translation of the -> setLabel()
 
         $subMenu->addChild($list); // Adds the Child to the Navigation Point
