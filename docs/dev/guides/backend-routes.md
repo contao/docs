@@ -201,12 +201,11 @@ class BackendMenuListener
         $subMenu = $tree->addChild($mainMenu); //Adds the main Navigation Point to th end of the default Menu
 
         $list = $factory
-            ->createItem('navigation_subpoint') // Set a choosable name
-            ->setUri('your_route') // e.g. /contao/your_extension
-            ->setLabel('MSC.navigation_subpoint') // Use the .xlf translater to translate the Labels
-            ->setLinkAttribute('title', 'MSC.navigation_subpoint')
-            ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'navigation_subpoint')
-
+            ->createItem('my-modules') // Set a choosable name
+            ->setUri('my-backend-route') // e.g. /contao/your_extension
+            ->setLabel('My Modules') // Use the .xlf translater to translate the Labels
+            ->setLinkAttribute('title', 'My Modules Title Text')
+            ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-modules')
             ->setExtra('translation_domain', 'contao_default'); //This is needed to the translation of the -> setLabel()
 
         $subMenu->addChild($list); // Adds the Child to the Navigation Point
