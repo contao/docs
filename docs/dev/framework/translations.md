@@ -217,17 +217,17 @@ You can load translations by using the following legacy function:
 Starting with Contao **4.5** you can also use Symfony's Translator service:
 
 ```php
-// src/Action/ExampleAction.php
-namespace App\Action;
+// src/Controller/ExampleController.php
+namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * @Route("/app/test", name=ExampleAction::class)
+ * @Route("/app/test", name=ExampleController::class)
  */
-class ExampleAction
+class ExampleController
 {
     private $translator;
 

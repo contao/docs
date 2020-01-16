@@ -50,7 +50,7 @@ This service from symfony handles any routing task and can be ued to generate UR
 to routes in your services.
 
 ```php
-use App\Action\ExampleAction;
+use App\Controller\ExampleController;
 use Symfony\Component\Routing\RouterInterface;
 
 class Example
@@ -64,7 +64,7 @@ class Example
 
     public function execute()
     {
-        $url = $this->router->generate(ExampleAction::class, ['id' => 1]);
+        $url = $this->router->generate(ExampleController::class, ['id' => 1]);
     }
 }
 ```

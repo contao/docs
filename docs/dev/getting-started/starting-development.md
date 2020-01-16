@@ -150,15 +150,15 @@ services:
         resource: ../src
         exclude: ../src/{Entity,Migrations,Resources,Tests}
     
-    App\Action\:
-        resource: ../src/Action
+    App\Controller\:
+        resource: ../src/Controller
         public: true
 ```
 
 ```yaml
 # config/routing.yml
-app.action:
-    resource: ../src/Action
+app.routes:
+    resource: ../src/Controller
     type: annotation
 ```
 
@@ -167,11 +167,6 @@ app.action:
 imports:
     - { resource: services.yml }
 ```
-
-{{% notice note %}}
-The above `services.yml` and `routing.yml` also contain directives for the new ADR 
-(Action Domain Responder) pattern for custom routes as recommended within Symfony.
-{{% /notice %}}
 
 Once this is configured, hooks, callbacks, content elements and front end modules
 for example can be created without having to configure them in separate files by 
