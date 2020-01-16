@@ -71,6 +71,7 @@ configurations, if present:
 | `config/config_prod.yml` | Configuration for the `prod` environment.                                                     |
 | `config/parameters.yml`  | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
 | `config/routing.yml`     | Definition of application specific routes.                                                    |
+| `config/services.yml`    | Definition of services (Contao **4.9** and up).<sup>2</sup>                                   |
 
 {{% notice note %}}
 <sup>1</sup> Contao still supports the legacy way of defining parameters in a Symfony
@@ -81,8 +82,8 @@ information about the `.env*` files.
 {{% /notice %}}
 
 {{% notice tip %}}
-While Contao does not load a `config/services.yml` automatically, you can still
-import it in your `config/config.yml` via
+<sup>2</sup> While Contao versions prior to **4.9** do not load a `config/services.yml` automatically, 
+you can still import it in your `config/config.yml` via
 
 ```yml
 imports:
@@ -150,27 +151,24 @@ services:
         resource: ../src
         exclude: ../src/{Entity,Migrations,Resources,Tests}
     
-    App\Action\:
-        resource: ../src/Action
+    App\Controller\:
+        resource: ../src/Controller
         public: true
 ```
 
 ```yaml
 # config/routing.yml
-app.action:
-    resource: ../src/Action
+app.routes:
+    resource: ../src/Controller
     type: annotation
 ```
 
-```yaml
-# config/config.yml
-imports:
-    - { resource: services.yml }
-```
-
 {{% notice note %}}
-The above `services.yml` and `routing.yml` also contain directives for the new ADR 
-(Action Domain Responder) pattern for custom routes as recommended within Symfony.
+The above `services.yml` and `routing.yml` also contain configurations for using
+controllers and routes. You will need to create the `src/Controller/` folder, otherwise
+there will be an error during cache warmup. If you do not plan to use any controllers,
+simply remove the `routing.yml` and the the respective service registration from 
+the `services.yml`.
 {{% /notice %}}
 
 Once this is configured, hooks, callbacks, content elements and front end modules

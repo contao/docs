@@ -29,7 +29,6 @@ should also be named with a namespace specific suffix:
 
 | Namespace           | Suffix       | Example                            |
 |:--------------------|--------------|------------------------------------|
-| `App\Action`        | `Action`     | `App\Action\ExampleAction`         |
 | `App\Controller`    | `Controller` | `App\Controller\ExampleController` |
 | `App\Cron`          | `Cron`       | `App\Cron\ExampleCron`             |
 | `App\EventListener` | `Listener`   | `App\EventListener\ExampleListener`|
