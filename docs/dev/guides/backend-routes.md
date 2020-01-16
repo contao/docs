@@ -32,12 +32,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment as TwigEnvironment;
 
 /**
- * @Route("/contao//my-backend-route",
+ * @Route("/contao/my-backend-route",
  *     name="app.backend-route" 
  *     defaults={
  *         "_scope" = "backend",
  *         "_token_check" = true,
- *         "_backend_module" = "my-modules"
+ *         "_backend_module" = "my-module"
  *     }
  * )
  */
