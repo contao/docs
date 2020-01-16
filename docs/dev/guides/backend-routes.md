@@ -111,10 +111,6 @@ Most of the time you probably want to add a menu entry for your back end module.
 Since the back end menu can be extended with an `EventListener` we can easily
 create one that listens for the menu event to be dispatched.
 
-{{% notice warning %}}
-The following example only works in Contao **<4.9**. For **>=4.9** see the example below. 
-{{% /notice %}}
-
 ```php
 // src/EventListener/BackendMenuListener.php
 namespace App\EventListener;
@@ -139,21 +135,19 @@ class BackendMenuListener
         $factory = $event->getFactory();
         $tree = $event->getTree();
 
+        if ('mainMenu' !== $tree->getName() ) {
+            return;
+        }
+
         $contentNode = $tree->getChild('content');
 
-        $node = $factory->createItem(
-            'my-modules',
-            [
-                'label' => 'My Modules',
-                'attributes' => [
-                    'title' => 'Title',
-                    'href' => $this->router->generate('app.backend-route'),
-                    'class' => 'my-modules'
-                ],
-            ]
-        );
-
-        $node->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-modules');
+        $node = $factory
+            ->createItem('my-modules')
+                ->setUri($this->router->generate('app.backend-route') )
+                ->setLabel('My Modules')
+                ->setLinkAttribute('title', 'Title')
+                ->setLinkAttribute('class', 'my-modules')
+                ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-modules');
 
         $contentNode->addChild($node);
     }
@@ -163,59 +157,6 @@ class BackendMenuListener
 
 This EventListener creates a new menu node and handles its own `currentState` by
 reading and matching the previously mentioned request attribute `_backend_module`.
-
-#### Extend the back end menu **>=4.9**
-
-```php
-// src/EventListener/BackendMenuListener.php Version >=4.9
-namespace App\EventListener;
-
-use Contao\CoreBundle\Event\MenuEvent;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\Routing\RouterInterface;
-
-class BackendMenuListener
-{
-    protected $router;
-    protected $requestStack;
-
-    public function __construct(RouterInterface $router, RequestStack $requestStack)
-    {
-        $this->router = $router;
-        $this->requestStack = $requestStack;
-    }
-
-    public function onBuild(MenuEvent $event): void
-    {
-        $factory = $event->getFactory();
-        $tree    = $event->getTree();
-
-        if (!$tree->getChild('contentNode')  ) {                                                                // creates a new contentNode. We don't know how to inject the menu item into an existing one yet. 
-            $node = $factory
-                ->createItem('contentNode')                                                                     // contentNode = your vendor name? 
-                ->setUri('/')                                                                                   // Set any route, doesn't do much
-                ->setLabel('My Content Node')                                                                   // Use the .xlf translater to translate the Labels
-                ->setLinkAttribute('class', 'group-system')                                                     // Set this Class for the Icon left beside - Currently stealing the "system" icon
-                ->setLinkAttribute('onclick', "return AjaxRequest.toggleNavigation(this, 'contentNode', '/')")  // Makes the toggle to hide the childs of the contentNode <ul> element
-                ->setChildrenAttribute('id', 'contentNode')                                                     // Adds an id to the <ul> element. 
-                ->setExtra('translation_domain', 'contao_default');                                             // This is needed for the translation of the ->setLabel() method
-
-            $contentNode = $tree->addChild($node);                                                              // Adds the main Navigation Point to th end of the default Menu
-        }
-
-        $menuPoint = $factory
-            ->createItem('my-modules')                                                                          // Set a choosable name
-            ->setUri('/contao/my-backend-route')
-            ->setLabel('My Modules')                                                                            // Use the .xlf translater to translate the Labels
-            ->setLinkAttribute('title', 'My Modules Title Text')                                                // Title text for the link ... translation doesn't work
-            ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-modules')     // highlights the currently selected menu item
-            ->setExtra('translation_domain', 'contao_default');                                                 // This is needed to the translation of the -> setLabel()
-
-        $contentNode->addChild($menuPoint);                                                                     // Adds the menu ttem to the Content Node
-
-    }
-}
-```
 
 The only thing left to do is to register the EventListener in the service container.
 For this to work, we add the following lines to our service configuration in `app/config/services.yml`.
