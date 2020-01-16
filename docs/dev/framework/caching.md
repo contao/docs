@@ -244,24 +244,104 @@ Moreover, you don't have to register to all the different callbacks such as `ons
 You can register to the [`oninvalidate_cache_tags` callback][5] and add your own tags.
 
 
-## Fragments and Edge Side Includes
+## Caching Fragments
 
 In Contao, content elements and front end modules can be implemented as so called
-_fragment controllers_. These fragments are then rendered with their defined renderer 
-and merged into the main content. Each fragment can also provide its own response
-and thus define whether it can be cached or not. If a fragment returns a response
-with a `Cache-Control: private` header for example, then the page on which the fragment
-is visible cannot be cached. On the other hand, if the fragment can be cached, it
-can provide its own cache tags, as mentioned previously.
+_fragment controllers_. These fragments are then rendered with their defined renderer
+and merged into the main content. Each fragment returns a response and thus can
+tell whether it can be cached or not.
 
-Contao brings its own `forward` fragment renderer, which provides the fragment with 
-a full clone of the request. This provides the fragment with the full `POST` data
-for example, contrary to Symfony's default `inline` renderer.
 
-The renderer can also be set to `esi`. In that case, if Symfony detects that it 
-is talking to  a gateway cache that supports ESI (like Symfony's built in reverse 
-proxy, that Contao uses), it generates an ESI include tag. See also [Symfony's documentation][esi] 
-on _Edge Side Includes_.
+There are two fundamentally different ways to render fragments:
+ 1. **Inline:** Inside the main page request and merged with the content before caching. In Symfony, this is handled
+    by the `inline` renderer, but Contao provides its own default `forward` renderer, which copies the original
+    request (whereas Symfony does not) to e.g. pass POST data to the subrequest.
+ 2. **Subrequest:** By generating an (internal) URL for the fragment, the fragment content is merged **after** caching
+    the page, which allows a fragment to have a different cache time than the main page. The `esi` renderer tells
+    the reverse proxy (cache) to fetch multiple URLs on a request and merge fragments before delivering to the client.
+    There's also an `hinclude` renderer, which merges fragments in the browser using JavaScript, but there's hardly
+    any use case for this anymore today.
+
+
+### Inline Fragments
+
+{{% notice note %}}
+Before **Contao 4.9**, inline fragments cannot affect the cache time of the page response.
+{{% /notice %}}
+
+By default, fragments like frontend modules and content elements are rendered directly inside the main request.
+This means the content of an inline fragment will be cached for as long as the page is cached, per definition
+in the page setting. If a fragment returns caching information in it's response, the page's cache time and the fragment
+will be merged to the lowest common denominator. For example, if the page is cacheable for a day, but the fragment
+only for one hour, the whole page will only be cached for one hour.
+
+A more common use case would be something like a `{{date::Y}}` insert tag, which renders the current year. This
+fragment is cacheable until the end of 31st of December. If the page is cached on the 10th of December for one day,
+the page cache time will not be affected. However, if the page is cached at 12pm on the 31st of December, the cache
+time will be lowered to 12 instead of 24 hours. The page cache will expire at the end of the year and regenerated
+on the 1st of January.
+
+
+{{%expand "How this works under the hood" %}}
+A `Response` object in Symfony is `Cache-Control: private` by default. This means we cannot *always* merge an
+inline fragment, otherwise all pages would be uncacheable by default. To work around this, we've added a little
+trick: the response must have a specific header to be merged.
+
+```php
+use Symfony\Component\HttpFoundation\Response;
+
+/** @var Response $response */
+$response->headers->set('Contao-Merge-Cache-Control', true);
+```
+
+This *trick* is automatically applied if a response is generated from a Contao template. A fragment controller
+can affect the cache lifetime by setting it on the template response:
+
+```php
+// src/Controller/MySuperController.php
+namespace App\Controller;
+
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\ModuleModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class MySuperController extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    {
+        $response = $template->getResponse();
+        
+        $response->setPublic();
+        $response->setMaxAge(3600);
+        
+        return $response;
+    }
+}
+```
+{{% /expand%}}
+
+
+### Edge Side Includes (ESI)
+
+By setting the fragment renderer to `esi`, the fragment will be cached **separately** from the main content.
+The page can be cached for 24 hours, but the frament can be cached for one week. On every request to the page,
+the reverse proxy will merge the two pieces, rebuilding each if its cache has expired.
+
+A common use case for this is a fragment that can certainly be cached longer than the current page, but is
+expensive to generate. Something like a weather preview, which requires an API request, but only updates once a day.
+Do not use ESI if your fragment is inexpensive to generate (like the `{{date::Y}}` insert tag). For inexpensive
+cases, it is most likely better to cache the whole page and **re-generate more often** than having to merge multiple
+fragments **on each request**.
+
+Symfony automatically detects if it is talking to  a gateway cache that supports ESI
+(like Symfony's built in reverse proxy, that Contao uses). ESI is also supported by
+reverse proxies like Varnish and several major CDNs. If ESI is not supported by the
+reverse proxy, the fragments will be rendered *inline* automatically.
+
+See also [Symfony's documentation][esi] on _Edge Side Includes_.
+
 
 
 [1]: https://github.com/Toflar/psr6-symfony-http-cache-store
