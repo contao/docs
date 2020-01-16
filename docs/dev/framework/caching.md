@@ -271,7 +271,7 @@ Before **Contao 4.9**, inline fragments cannot affect the cache time of the page
 
 By default, fragments like frontend modules and content elements are rendered directly inside the main request.
 This means the content of an inline fragment will be cached for as long as the page is cached, per definition
-in the page setting. If a fragment returns caching information in it's response, the page's cache time and the fragment
+in the page setting. If a fragment returns caching information in its response, the page's cache time and the fragment
 will be merged to the lowest common denominator. For example, if the page is cacheable for a day, but the fragment
 only for one hour, the whole page will only be cached for one hour.
 
