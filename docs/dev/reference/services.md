@@ -24,7 +24,7 @@ class Example
 {
     private $framework;
 
-    public function __consruct(ContaoFramework $framework)
+    public function __construct(ContaoFramework $framework)
     {
         $this->framework = $framework;
     }
