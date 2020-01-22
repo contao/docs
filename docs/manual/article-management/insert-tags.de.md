@@ -83,6 +83,7 @@ Mit den folgenden Insert-Tags können Seiteneigenschaften wie z. B. der Seitenna
 | `{{page::alias}}`             | Dieses Tag wird mit dem Alias der aktuellen Seite ersetzt.                                                                 |
 | `{{page::title}}`             | Dieses Tag wird mit dem Namen der aktuellen Seite ersetzt.                                                                 |
 | `{{page::pageTitle}}`         | Dieses Tag wird mit dem Titel der aktuellen Seite ersetzt.                                                                 |
+| `{{page::description}}`       | Dieses Tag wird mit der Beschreibung der aktuellen Seite ersetzt.                                                                 |
 | `{{page::language}}`          | Dieses Tag wird mit der Sprache der aktuellen Seite ersetzt.                                                               |
 | `{{page::parentAlias}}`       | Dieses Tag wird mit dem Alias der übergeordneten Seite ersetzt.                                                            |
 | `{{page::parentTitle}}`       | Dieses Tag wird mit dem Namen der übergeordneten Seite ersetzt.                                                            |
