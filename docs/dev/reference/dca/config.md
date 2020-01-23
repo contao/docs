@@ -36,7 +36,7 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | dynamicPtable      | true/false (`bool`)               | Dynamically set the parent table like in `tl_content`.                                                                                          |
 | ctable             | Child tables (`array`)            | Name of the related child tables (table.id = ctable.pid).                                                                                       |
 | dataContainer      | Data Container (`string`)         | Table (database table), File (local configuration file) or Folder (file manager).                                                               |
-| markAsCopy         | Field name (`string`)             | Mark the new record with "copy of" in this field name.                                                                                          |
+| markAsCopy         | Field name (`string`)             | Mark the new record with "copy of" in this field name. Since Contao 4.6                                                                         |
 | closed             | true/false (`bool`)               | If true, you cannot add further records to the table.                                                                                           |
 | notEditable        | true/false (`bool`)               | If true, the table cannot be edited.                                                                                                            |
 | notDeletable       | true/false (`bool`)               | If true, records in the table cannot be deleted.                                                                                                |
