@@ -102,7 +102,7 @@ Entwicklungs-Branch, z. B. `4.9.x-dev` für Contao `4.9`. Der Branch für die ne
 sich gerade in Entwicklung befindliche, _zukünftige_ Version von Contao befindet 
 sich immer im `dev-master` Branch.
 
-Eine komplettes Beispieler einer `composer.json`, wo der Entwicklungs-Branch von
+Eine komplettes Beispiel einer `composer.json`, wo der Entwicklungs-Branch von
 Contao `4.9` installiert wird, sieht so aus:
 
 ```json
