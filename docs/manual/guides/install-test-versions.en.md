@@ -7,11 +7,20 @@ weight: 20
 
 The development team of Contao adheres to a specific [release plan][releasePlan]
 when developing new versions of Contao (and maintaining current versions). Before
-each planned major and minor version release there will be a specific timeframe for
-developing this new version. New features will be added until a deadline is reached,
-after which the first release candidates will be published. If no further issues
-are found during testing of the developer version and the release candidates, the
-stable version of the new version will be released.
+each planned "major" and "minor"<sup>1</sup> version release there will be a specific 
+timeframe for developing this new version. New features will be added until a deadline 
+is reached, after which the first release candidates will be published. If no further 
+issues are found during testing of the developer version and the release candidates, 
+the stable version of the new version will be released.
+
+{{% notice note %}}
+<sup>1</sup> Contao uses "[semantic versioning]](https://semver.org/)". A new "major"
+version is signified by the first part of the version string. These are versions
+with new features or structural changes, that can be incompatible with previous 
+versions. A new "minor" version on the other hand is signified by the second part
+of the version string. These are versions with added new features, which are still
+compatible with previous versions.
+{{% /notice %}}
 
 Even though Contao uses thousands of automatic tests, unforeseen issues can always 
 occur after implementing new features or changing existing ones. Thus, testing still 

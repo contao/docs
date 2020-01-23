@@ -8,13 +8,24 @@ weight: 20
 
 Das Entwicklerteam von Contao hält sich an einen festgelegten [Release-Plan][releasePlan]
 bei der Entwicklung neuer Versionen (bzw. dem Support bestehender). Vor jeder geplanten
-neuen Version gibt es einen gewissen Zeitraum, in dem aktiv an dieser Version entwickelt
-wird. Neue Features werden hinzugefügt, bis ein gewisser Zeitpunkt erreicht ist.
-Danach werden die ersten »Release Candidates« veröffentlicht. Wenn während der Tests
-keine weiteren Probleme gefunden werden, wird die erste stabile Version veröffentlicht.
+neuen »Major« oder »Minor«<sup>1</sup> Version gibt es einen gewissen Zeitraum, 
+in dem aktiv an dieser Version entwickelt wird. Neue Funktionen werden hinzugefügt, 
+bis ein gewisser Zeitpunkt erreicht ist. Danach werden die ersten »Release Candidates« 
+veröffentlicht. Wenn während der Tests keine weiteren Probleme gefunden werden, 
+wird die erste stabile Version veröffentlicht.
+
+{{% notice note %}}
+<sup>1</sup> Contao verwendet für die Versionierung der Software »[Semantic Versioning](https://semver.org/)«.
+Eine »Major« Version bezeichnet die erste Stelle der Versionsangabe. Das sind Versionen,
+wo neue Funktionen oder strukturelle Änderungen in der Software hinzugefügt wurden,
+die aber nicht mehr rückwärtskompatible zu vorherigen Versionen sind, bzw. sein
+können. Eine »Minor« Version bezeichnet die zweite Stelle einer Versionsangabe. Das sind 
+Versionen, in denen der Software neue Funktionen in einer rückwärtskompatiblen Art 
+hinzugefügt werden.
+{{% /notice %}}
 
 Auch wenn Contao über tausende an automatisierten Tests verfügt, können immer unvorhergesehene 
-Probleme und Fehler auftauchen, nachdem neue Features hinzugefügt oder bestehende 
+Probleme und Fehler auftauchen, nachdem neue Funktionen hinzugefügt oder bestehende 
 Dinge geändert wurden. Daher müssen neue Versionen von tatsächlichen Benutzern getestet 
 werden. Als Open Source Software kann Contao dabei aber vom Engagement der Community 
 profitieren.
@@ -148,4 +159,5 @@ aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.
 
 
 [releasePlan]: https://contao.org/en/release-plan.html
+[semanticVersioning]: https://semver.org/
 [composerVersions]: https://getcomposer.org/doc/articles/versions.md
