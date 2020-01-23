@@ -20,8 +20,8 @@ werden. Als Open Source Software kann Contao dabei aber vom Engagement der Commu
 profitieren.
 
 Im Folgenden wird erklärt, wie man neue Versionen von Contao selbst installieren
-und testen kann. Entweder durch die Installation eines Release Candidates
-oder sogar einer aktuellen Entwicklerversion.
+und testen kann, entweder durch die Installation eines Release Candidates oder sogar 
+einer aktuellen Entwicklerversion.
 
 Bei der Aktualisierung von Paketen über den Composer (entweder direkt auf der Kommandozeile
 oder über den Contao Manager) werden normalerweise immer nur _stabile_ Pakete installiert,
