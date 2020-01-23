@@ -13,9 +13,9 @@ wird. Neue Features werden hinzugefügt, bis ein gewisser Zeitpunkt erreicht ist
 Danach werden die ersten »Release Candidates« veröffentlicht. Wenn während der Tests
 keine weiteren Probleme gefunden werden, wird die erste stabile Version veröffentlicht.
 
-Auch wenn Contao Unit Testing einsetzt, können immer unvorhergesehene Probleme und
-Fehler auftauchen, nachdem neue Features hinzugefügt oder bestehende Dinge
-geändert wurden. Daher müssen neue Versionen von tatsächlichen Benutzern getestet 
+Auch wenn Contao über tausende an automatisierten Tests verfügt, können immer unvorhergesehene 
+Probleme und Fehler auftauchen, nachdem neue Features hinzugefügt oder bestehende 
+Dinge geändert wurden. Daher müssen neue Versionen von tatsächlichen Benutzern getestet 
 werden. Als Open Source Software kann Contao dabei aber vom Engagement der Community 
 profitieren.
 

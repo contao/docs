@@ -13,10 +13,10 @@ after which the first release candidates will be published. If no further issues
 are found during testing of the developer version and the release candidates, the
 stable version of the new version will be released.
 
-Even though Contao uses unit testing, unforeseen issues can always occur after implementing
-new features or changing existing ones. Thus, testing still needs to be done by actual 
-users. Since Contao is an open source software it can benefit from community engagement
-for such tests.
+Even though Contao uses thousands of automatic tests, unforeseen issues can always 
+occur after implementing new features or changing existing ones. Thus, testing still 
+needs to be done by actual users. Since Contao is an open source software it can 
+benefit from community engagement for such tests.
 
 The following explains how you can participate in testing, by installing either
 a release candidate of Contao during its release candidate phase, or even a development
