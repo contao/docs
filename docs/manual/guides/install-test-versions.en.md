@@ -7,14 +7,14 @@ weight: 20
 
 The development team of Contao adheres to a specific [release plan][releasePlan]
 when developing new versions of Contao (and maintaining current versions). Before
-each planned major and minor version release there will a specific timeframe for
+each planned major and minor version release there will be a specific timeframe for
 developing this new version. New features will be added until a deadline is reached,
 after which the first release candidates will be published. If no further issues
 are found during testing of the developer version and the release candidates, the
 stable version of the new version will be released.
 
 Even though Contao uses unit testing, unforeseen issues can always occur after implementing
-new features or changing existing ones. Thus testing still needs to be done by actual 
+new features or changing existing ones. Thus, testing still needs to be done by actual 
 users. Since Contao is an open source software it can benefit from community engagement
 for such tests.
 
@@ -24,8 +24,8 @@ version of Contao.
 
 When updating packages via Composer (either directly via the command line or via
 the Contao Manager), usually only _stable_ packages will be installed, at least
-with the default setup of the _Contao Managed Edition_ for example. Therefore we
-one needs to make a few adjustments to the `composer.json` of your project, in order
+with the default setup of the _Contao Managed Edition_ for example. Therefore, we
+only need to make a few adjustments to the `composer.json` of your project, in order
 for Composer to install the release candidate or development version. After changing
 the `composer.json`, a full package update needs to be executed of course.
 
@@ -94,7 +94,7 @@ to wait for a new release candidate. Though this might of course also contain so
 unstable code.
 
 In this case, instead of requiring a specific _version_ of Contao, a specific _branch_
-of Contao's public git repository will be required. Each minor version of Contao
+of Contao's public Git repository will be required. Each minor version of Contao
 has its own development branch, e.g. `4.9.x-dev` for Contao `4.9` for instance. 
 The branch of a _future_ Contao version currently in development will always be the
 `dev-master` branch.
@@ -141,7 +141,7 @@ Here is a full `composer.json` example, requiring the development branch of Cont
 ```
 
 Each time the packages are updated, the most recent code for this branch will be 
-pulled from Contao's public git repository.
+pulled from Contao's public Git repository.
 
 
 [releasePlan]: https://contao.org/en/release-plan.html

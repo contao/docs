@@ -8,19 +8,19 @@ weight: 20
 
 Das Entwicklerteam von Contao hält sich an einen festgelegten [Release-Plan][releasePlan]
 bei der Entwicklung neuer Versionen (bzw. dem Support bestehender). Vor jeder geplanten
-neuen Version gibt es einen gewissen Zeitraum in dem aktiv an dieser Version entwickelt
+neuen Version gibt es einen gewissen Zeitraum, in dem aktiv an dieser Version entwickelt
 wird. Neue Features werden hinzugefügt, bis ein gewisser Zeitpunkt erreicht ist.
 Danach werden die ersten »Release Candidates« veröffentlicht. Wenn während der Tests
 keine weiteren Probleme gefunden werden, wird die erste stabile Version veröffentlicht.
 
-Auch wenn Contao Unit Testing einsetzt können immer unvorhergesehen Probleme und
-Fehler auftauchen, nachdem neue Features hinzugefügt, oder bestehende Dinge
+Auch wenn Contao Unit Testing einsetzt, können immer unvorhergesehene Probleme und
+Fehler auftauchen, nachdem neue Features hinzugefügt oder bestehende Dinge
 geändert wurden. Daher müssen neue Versionen von tatsächlichen Benutzern getestet 
 werden. Als Open Source Software kann Contao dabei aber vom Engagement der Community 
 profitieren.
 
-Im Folgenden wird erklärt wie man neue Versionen von Contao selbst installieren
-und daher testen kann. Entweder durch die Installation eines Release Candidates,
+Im Folgenden wird erklärt, wie man neue Versionen von Contao selbst installieren
+und testen kann. Entweder durch die Installation eines Release Candidates
 oder sogar einer aktuellen Entwicklerversion.
 
 Bei der Aktualisierung von Paketen über den Composer (entweder direkt auf der Kommandozeile
@@ -41,9 +41,9 @@ dass solche Versionen ebenfalls installiert werden sollen, und nicht nur die sta
 Versionen. Diese Angabe erfolgt z. B. mit `4.9@RC`, und muss bei _allen_ Bundles
 des Contao Cores angewandt werden, _inklusive_ dem `contao/core-bundle` und dem
 `contao/installation-bundle`, welche normalerweise nicht direkt in der eigenen `composer.json`
-festgelegt werden.
+angefordert werden.
 
-Hier ist ein komplettes Beispiel um die neueste Contao `4.9` Version installieren
+Hier ist ein komplettes Beispiel, um die neueste Contao `4.9` Version installieren
 zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 
 ```json
@@ -84,7 +84,7 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 }
 ```
 
-Beachte dass dabei später auch die stabilen Versionen installiert 
+Beachte, dass dabei später auch die stabilen Versionen installiert 
 werden (wie z. B. `4.9.0`, `4.9.1` etc.), wenn eine Paketaktualisierung durchgeführt wird.
 
 
@@ -93,7 +93,7 @@ werden (wie z. B. `4.9.0`, `4.9.1` etc.), wenn eine Paketaktualisierung durchgef
 Während der Release Candidate und davor auch während der Entwicklungsphase einer
 Contao Version kann auch die Entwicklerversion zum Testen installiert werden. Auf
 diese Weise können die neuesten Änderungen sofort getestet werden, ohne auf einen
-neuen Release Candiate warten zu müssen. Natürlich kann dies auch instabilen Programmcode
+neuen Release Candidate warten zu müssen. Natürlich kann dies auch instabilen Programmcode
 enthalten.
 
 Statt einer spezifischen _Version_ wird nun ein spezifischer _Branch_ aus dem öffentlichen
@@ -143,7 +143,7 @@ Contao `4.9` installiert wird, sieht so aus:
 }
 ```
 
-Jedes mal wenn eine Paketaktualisierung durchgeführt wird, wird der neueste Programmcode
+Jedes mal, wenn eine Paketaktualisierung durchgeführt wird, wird der neueste Programmcode
 aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.
 
 
