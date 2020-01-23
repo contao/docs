@@ -109,12 +109,12 @@ enthalten.
 
 Statt einer spezifischen _Version_ wird nun ein spezifischer _Branch_ aus dem öffentlichen
 Git Repository von Contao verlangt. Jede »Minor« Version von Contao hat ihren eigenen
-Entwicklungs-Branch, z. B. `4.9.x-dev` für Contao `4.9`. Der Branch für die neueste,
-sich gerade in Entwicklung befindliche, _zukünftige_ Version von Contao befindet 
-sich immer im `dev-master` Branch.
+»Entwicklungszweig (Branch)«, z. B. `4.9.x-dev` für Contao `4.9`. Der Branch für 
+die neueste, sich gerade in Entwicklung befindliche, _zukünftige_ Version von Contao 
+befindet sich immer im `dev-master` Branch.
 
-Eine komplettes Beispiel einer `composer.json`, wo der Entwicklungs-Branch von
-Contao `4.9` installiert wird, sieht so aus:
+Eine komplettes Beispiel einer `composer.json`, wo der Entwicklungszweig von Contao 
+`4.9` installiert wird, sieht so aus:
 
 ```json
 {
