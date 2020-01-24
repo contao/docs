@@ -76,7 +76,7 @@ $GLOBALS['TL_DCA']['tl_example'] = [
 ```
 
 In this case the sub palette key needs to be in the form of
-`fieldName_fieldValue`. Depending on the field's value, the appopriate sub
+`fieldName_fieldValue`. Depending on the field's value, the appropriate sub
 palette will be inserted.
 
 
