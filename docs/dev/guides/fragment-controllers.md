@@ -117,12 +117,12 @@ namespace App\Controller\ContentElement;
 
 use Contao\ContentGallery;
 use Contao\ContentModel;
-use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Symfony\Component\HttpFoundation\Response;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
- * @FrontendModule(category="news")
+ * @ContentElement(category="news")
  */
 class AppExampleController extends ContentGallery implements ServiceAnnotationInterface
 {
