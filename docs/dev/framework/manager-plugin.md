@@ -111,6 +111,11 @@ The `Manager Plugin` automatically loads the following classes.
 * `\App\ContaoManager\Plugin` (recommended)
 * `\ContaoManagerPlugin` (discouraged)
 
+{{% notice info %}}
+After creating the application-specific Manager Plugin, you need to execute `composer install`, 
+otherwise the plugin will not be registered yet.
+{{% /notice %}}
+
 
 ## The features
 
