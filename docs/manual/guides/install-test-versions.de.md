@@ -188,5 +188,3 @@ aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.
 
 
 [releasePlan]: https://contao.org/en/release-plan.html
-[semanticVersioning]: https://semver.org/
-[composerVersions]: https://getcomposer.org/doc/articles/versions.md
