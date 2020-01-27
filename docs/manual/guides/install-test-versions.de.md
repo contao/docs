@@ -46,13 +46,27 @@ werden.
 ## Release Candidates installieren
 
 Release Candidates nutzen eine spezifische Form von sogenannten »Release-Tags«.
-Der erste Release Candidate von Contao `4.9` heißt z. B. `4.9.0-RC1`. Mit Hilfe
-der »[Version Requirement Syntax][composerVersions]« von Composer können wir verlangen,
-dass solche Versionen ebenfalls installiert werden sollen, und nicht nur die stabilen
-Versionen. Diese Angabe erfolgt z. B. mit `4.9@RC`, und muss bei _allen_ Bundles
-des Contao Cores angewandt werden, _inklusive_ dem `contao/core-bundle` und dem
-`contao/installation-bundle`, welche normalerweise nicht direkt in der eigenen `composer.json`
-angefordert werden.
+Der erste Release Candidate von Contao `4.9` heißt z. B. `4.9.0-RC1`. Normalerweise
+würde Composer nur _stabile_ Versionen installieren und daher solche Release Candidates
+nicht beachten.
+
+Um die Installation von Release Candidates zu erlauben, muss die `minimum-stability`
+auf `RC` in der `composer.json` runter gesetzt werden. Außerdem sollte man Composer
+anweisen, dass bei jedem Paket _stabile_ Versionen bevorzugt werden, damit die auch
+die offiziell veröffentlichten Versionen von Contao automatisch installiert werden,
+sobald verfügbar. Schließlich muss noch die angeforderte Version von Contao selbst,
+also genau genommen des `contao/manager-bundle` auf `4.9.*` geändert werden, so
+wie bei jedem Update auf eine neuere Contao Version.
+
+```json
+{
+    "require": {
+        "contao/manager-bundle": "4.9.*"
+    },
+    "minimum-stability": "RC",
+    "prefer-stable": true
+}
+```
 
 Hier ist ein komplettes Beispiel, um die neueste Contao `4.9` Version installieren
 zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
@@ -64,24 +78,26 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
     "description": "Contao Open Source CMS",
     "require": {
         "php": "^7.1",
-        "contao/calendar-bundle": "^4.9@RC",
-        "contao/comments-bundle": "^4.9@RC",
+        "contao/calendar-bundle": "^4.9",
+        "contao/comments-bundle": "^4.9",
         "contao/conflicts": "@dev",
-        "contao/core-bundle": "^4.9@RC",
-        "contao/faq-bundle": "^4.9@RC",
-        "contao/installation-bundle": "^4.9@RC",
-        "contao/listing-bundle": "^4.9@RC",
-        "contao/manager-bundle": "4.9.*@RC",
-        "contao/news-bundle": "^4.9@RC",
-        "contao/newsletter-bundle": "^4.9@RC"
+        "contao/core-bundle": "^4.9",
+        "contao/faq-bundle": "^4.9",
+        "contao/installation-bundle": "^4.9",
+        "contao/listing-bundle": "^4.9",
+        "contao/manager-bundle": "4.9.*",
+        "contao/news-bundle": "^4.9",
+        "contao/newsletter-bundle": "^4.9"
     },
+    "minimum-stability": "RC",
+    "prefer-stable": true,
     "conflict": {
         "contao-components/installer": "<1.3"
     },
     "extra": {
         "contao-component-dir": "assets",
         "symfony": {
-            "require": "^4.2"
+            "require": "^4.4"
         }
     },
     "scripts": {
@@ -95,8 +111,14 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 }
 ```
 
-Beachte, dass dabei später auch die stabilen Versionen installiert 
-werden (wie z. B. `4.9.0`, `4.9.1` etc.), wenn eine Paketaktualisierung durchgeführt wird.
+{{% notice tip %}}
+Die angeforderten Versionen der anderen Contao Bundles muss nicht unbedingt von
+deren ursprünglichen Angaben geändert werden. Zum Beispiel erlaubt eine Angabe von
+`^4.4` (wie es der Fall wäre, wenn man von einer Contao 4.4 LTS Version aktualisieren
+würde) auch die Installation aller `4.9` Versionen. Siehe dazu auch die Dokumentation
+von Composer über diese spezielle [Versions Syntax](https://getcomposer.org/doc/articles/versions.md).
+Nur die Version des `contao/manager-bundle` muss angepasst werden.
+{{% /notice %}}
 
 
 ## Entwicklerversionen installieren
@@ -153,6 +175,13 @@ Eine komplettes Beispiel einer `composer.json`, wo der Entwicklungszweig von Con
     }
 }
 ```
+
+Zu beachten ist hier, dass diesmal auch das `contao/core-bundle` und das `contao/installation-bundle`
+angefordert wird, welches normalerweise nicht in der `composer.json` des eigenen
+Contao Projekts eingetragen wird. Das ist notwendig, weil Entwicklerversionen der
+Pakete installiert werden sollen, ohne die `minimum-stability` auf `dev` zu senken
+(das würde andernfalls die Berechnungszeit und Speicherauslastung während einer
+Update-Operation drastisch erhöhen).
 
 Jedes mal, wenn eine Paketaktualisierung durchgeführt wird, wird der neueste Programmcode
 aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.

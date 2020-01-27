@@ -14,7 +14,7 @@ issues are found during testing of the developer version and the release candida
 the stable version of the new version will be released.
 
 {{% notice note %}}
-<sup>1</sup> Contao uses "[semantic versioning]](https://semver.org/)". A new "major"
+<sup>1</sup> Contao uses "[semantic versioning](https://semver.org/)". A new "major"
 version is signified by the first part of the version string. These are versions
 with new features or structural changes, that can be incompatible with previous 
 versions. A new "minor" version on the other hand is signified by the second part
@@ -42,12 +42,24 @@ the `composer.json`, a full package update needs to be executed of course.
 ## Installing Release Candidates
 
 Release candidates use a specific release version tag. For example the first release
-candidate of Contao `4.9` will have a release tag called `4.9.0-RC1`. Using Composer's
-[version requirement syntax][composerVersions], we can instruct Composer to install 
-not only the stable  versions of Contao `4.9`, but also the prior release candidates,
-by using `4.9@RC`. This needs to be applied to _all_ of the Contao core bundles,
-_including_ the `contao/core-bundle` itself, and the `contao/installation-bundle`,
-which you usually do not require directly yourself.
+candidate of Contao `4.9` will have a release tag called `4.9.0-RC1`. Usually Composer
+will only install _stable_ versions by default and thus skip any such release candidates.
+
+To allow the installation of release candidates, the `minimum-stability` needs to
+be lowered to `RC` in the `composer.json`. Additionally, we instruct Composer to
+always prefer _stable_ versions of each package, so that a stable release of Contao
+`4.9` gets installed, once available. Finally the requested Contao, i.e. the `contao/manager-bundle` 
+needs to be changed to `4.9.*`, as with any minor version update.
+
+```json
+{
+    "require": {
+        "contao/manager-bundle": "4.9.*"
+    },
+    "minimum-stability": "RC",
+    "prefer-stable": true
+}
+```
 
 Here is a full example for installing the latest Contao `4.9` version, _including_
 its latest release candidates (if there are any):
@@ -59,24 +71,26 @@ its latest release candidates (if there are any):
     "description": "Contao Open Source CMS",
     "require": {
         "php": "^7.1",
-        "contao/calendar-bundle": "^4.9@RC",
-        "contao/comments-bundle": "^4.9@RC",
+        "contao/calendar-bundle": "^4.9",
+        "contao/comments-bundle": "^4.9",
         "contao/conflicts": "@dev",
-        "contao/core-bundle": "^4.9@RC",
-        "contao/faq-bundle": "^4.9@RC",
-        "contao/installation-bundle": "^4.9@RC",
-        "contao/listing-bundle": "^4.9@RC",
-        "contao/manager-bundle": "4.9.*@RC",
-        "contao/news-bundle": "^4.9@RC",
-        "contao/newsletter-bundle": "^4.9@RC"
+        "contao/core-bundle": "^4.9",
+        "contao/faq-bundle": "^4.9",
+        "contao/installation-bundle": "^4.9",
+        "contao/listing-bundle": "^4.9",
+        "contao/manager-bundle": "4.9.*",
+        "contao/news-bundle": "^4.9",
+        "contao/newsletter-bundle": "^4.9"
     },
+    "minimum-stability": "RC",
+    "prefer-stable": true,
     "conflict": {
         "contao-components/installer": "<1.3"
     },
     "extra": {
         "contao-component-dir": "assets",
         "symfony": {
-            "require": "^4.2"
+            "require": "^4.4"
         }
     },
     "scripts": {
@@ -90,8 +104,13 @@ its latest release candidates (if there are any):
 }
 ```
 
-Note that once Contao `4.9` has stable releases (e.g. `4.9.0`, `4.9.1` etc.), those 
-will be installed when running a package update.
+{{% notice tip %}}
+The version requirement of the other bundles do not need to be changed from their
+default value. For example, a version requirement of `^4.4` (like if you would update 
+from the Contao 4.4 LTS version) also allows any `4.9` version. See Composer's documentation
+on the [version requirement syntax](https://getcomposer.org/doc/articles/versions.md). 
+Only the requested version of the `contao/manager-bundle` needs to be adjusted.
+{{% /notice %}}
 
 
 ## Installing Developer Versions
@@ -125,7 +144,7 @@ Here is a full `composer.json` example, requiring the development branch of Cont
         "contao/faq-bundle": "4.9.x-dev",
         "contao/installation-bundle": "4.9.x-dev",
         "contao/listing-bundle": "4.9.x-dev",
-        "contao/manager-bundle": "4.9.x-dev",
+        "contao/manager-bundle": "4.9.*",
         "contao/news-bundle": "4.9.x-dev",
         "contao/newsletter-bundle": "4.9.x-dev"
     },
@@ -135,7 +154,7 @@ Here is a full `composer.json` example, requiring the development branch of Cont
     "extra": {
         "contao-component-dir": "assets",
         "symfony": {
-            "require": "^4.2"
+            "require": "^4.4"
         }
     },
     "scripts": {
@@ -149,9 +168,15 @@ Here is a full `composer.json` example, requiring the development branch of Cont
 }
 ```
 
+Note that in this case we also need to require the `contao/core-bundle` and the
+`contao/installation-bundle`, which we would usually not include in the project's
+`composer.json`. This is necessary, since we want to tell Composer to specifically
+install a development version, without lowering the `minimum-stability` to `dev`
+(wich would drastically increase computation time and memory consumption during
+a composer update).
+
 Each time the packages are updated, the most recent code for this branch will be 
 pulled from Contao's public Git repository.
 
 
 [releasePlan]: https://contao.org/en/release-plan.html
-[composerVersions]: https://getcomposer.org/doc/articles/versions.md
