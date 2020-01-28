@@ -135,21 +135,19 @@ class BackendMenuListener
         $factory = $event->getFactory();
         $tree = $event->getTree();
 
+        if ('mainMenu' !== $tree->getName() ) {
+            return;
+        }
+
         $contentNode = $tree->getChild('content');
 
-        $node = $factory->createItem(
-            'my-modules',
-            [
-                'label' => 'My Modules',
-                'attributes' => [
-                    'title' => 'Title',
-                    'href' => $this->router->generate('app.backend-route'),
-                    'class' => 'my-modules'
-                ],
-            ]
-        );
-
-        $node->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-modules');
+        $node = $factory
+            ->createItem('my-modules')
+                ->setUri($this->router->generate('app.backend-route') )
+                ->setLabel('My Modules')
+                ->setLinkAttribute('title', 'Title')
+                ->setLinkAttribute('class', 'my-modules')
+                ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-modules');
 
         $contentNode->addChild($node);
     }
