@@ -38,7 +38,6 @@ Return the attributes for the widget as an associative array.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Contao\DataContainer;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class GetAttributesFromDcaListener implements ServiceAnnotationInterface
