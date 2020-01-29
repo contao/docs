@@ -5,18 +5,18 @@ url: "artikelverwaltung/insert-tags"
 weight: 30
 ---
 
-Insert-Tags sind Platzhalter, die bei der Ausgabe einer Seite durch bestimmte Werte ersetzt werden. Mit Insert-Tags 
-kannst du z. B. einen Link auf eine Seite oder einen Artikel erstellen, Umgebungsvariablen einfügen oder 
+Insert-Tags sind Platzhalter, die bei der Ausgabe einer Seite durch bestimmte Werte ersetzt werden. Mit Insert-Tags
+kannst du z. B. einen Link auf eine Seite oder einen Artikel erstellen, Umgebungsvariablen einfügen oder
 Benutzereigenschaften auslesen. Insert-Tags können überall in Contao verwendet werden.
 
-Ein Insert-Tags beginnt immer mit zwei öffnenden geschweiften Klammern, gefolgt von einem Schlüsselwort und zwei 
-schließenden geschweiften Klammern, also z. B. `{{date}}`. Viele Insert-Tags benötigen zusätzlich noch ein Argument, 
+Ein Insert-Tags beginnt immer mit zwei öffnenden geschweiften Klammern, gefolgt von einem Schlüsselwort und zwei
+schließenden geschweiften Klammern, also z. B. `{{date}}`. Viele Insert-Tags benötigen zusätzlich noch ein Argument,
 das mit zwei Doppelpunkten hinter das Schlüsselwort geschrieben wird, also z. B. `{{link::12}}`.
 
 
 ## Link-Elemente
 
-Mit diesen Insert-Tags  kannst du Links auf andere Seiten oder Artikel erstellen. Du benötigst dazu lediglich die ID 
+Mit diesen Insert-Tags  kannst du Links auf andere Seiten oder Artikel erstellen. Du benötigst dazu lediglich die ID
 oder den Alias der Zielseite.
 
 | Insert-Tag                | Beschreibung                                                                                                                 |
@@ -51,7 +51,7 @@ oder den Alias der Zielseite.
 
 ## Mitgliedereigenschaften
 
-Mit den folgenden Insert-Tags kannst du bestimmte Eigenschaften eines angemeldeten Frontend-Benutzers auslesen und ihn 
+Mit den folgenden Insert-Tags kannst du bestimmte Eigenschaften eines angemeldeten Frontend-Benutzers auslesen und ihn
 so z. B. mit seinem Namen ansprechen. Prinzipiell kannst du alle Feldnamen der Tabelle `tl_member` als Argument übergeben.
 
 | Insert-Tag                | Beschreibung                                                                                                                             |
@@ -97,7 +97,7 @@ Mit den folgenden Insert-Tags können Seiteneigenschaften wie z. B. der Seitenna
 
 ## Umgebungsvariablen
 
-Mit den folgenden Insert-Tags können Umgebungsvariablen wie z. B. der Seitenname oder der Request-String ausgegeben 
+Mit den folgenden Insert-Tags können Umgebungsvariablen wie z. B. der Seitenname oder der Request-String ausgegeben
 werden.
 
 | Insert-Tag                    | Beschreibung                                                                                     |
@@ -114,7 +114,7 @@ werden.
 
 ## Include-Elemente
 
-Mit den folgenden Insert-Tags können Ressourcen wie z. B. Artikel, Module oder Dateien aus dem `templates`-Verzeichnis 
+Mit den folgenden Insert-Tags können Ressourcen wie z. B. Artikel, Module oder Dateien aus dem `templates`-Verzeichnis
 eingebunden werden.
 
 | Insert-Tag                    | Beschreibung                                                                                         |
@@ -131,7 +131,7 @@ eingebunden werden.
 
 ## Verschiedenes
 
-Mit den folgenden Insert-Tags kannst du verschiedene Aufgaben erledigen und z. B. das aktuelle Datum oder ein 
+Mit den folgenden Insert-Tags kannst du verschiedene Aufgaben erledigen und z. B. das aktuelle Datum oder ein
 Lightbox-Bild einfügen.
 
 | Insert-Tag               | Beschreibung                                                                                         |
@@ -161,7 +161,7 @@ Lightbox-Bild einfügen.
 
 ## Insert-Tag-Flags
 
-Mittels Flags kannst du Insert-Tags weiter verarbeiten. Der Wert kann damit z. B. einer PHP-Funktion übergeben werden. 
+Mittels Flags kannst du Insert-Tags weiter verarbeiten. Der Wert kann damit z. B. einer PHP-Funktion übergeben werden.
 Beliebig viele Flags können miteinander kombiniert werden:
 
 ```
@@ -177,6 +177,7 @@ Verfügbare Flags:
 | `addslashes`        | Stellt bestimmten Zeichen eines Strings ein "\" voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
 | `stripslashes`      | Entfernt das "\" vor bestimmten Zeichen eines Strings.                   | [PHP-Funktion](https://php.net/stripslashes)      |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
+| `absolute`          | Generiert einen absoluten Link inkl. Hostnamen und Protokoll             | (Ab Contao 4.5 verfügbar)                         |
 | `ampersand`         | Wandelt Und-Zeichen in Entities um.                                      |                                                   |
 | `specialchars`      | Wandelt Sonderzeichen in Entities um.                                    |                                                   |
 | `nl2br`             | Fügt vor allen Zeilenumbrüchen eines Strings HTML-Zeilenumbrüche ein.    | [PHP-Funktion](https://php.net/nl2br)             |
