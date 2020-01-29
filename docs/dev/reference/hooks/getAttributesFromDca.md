@@ -20,9 +20,9 @@ Note that the DCA object can be optional (`null`).
 
     An array of attributes.
 
-2. *\Contao\DataContainer* `$dc`
+2. `$context`
 
-    The DataContainer object. It can be `null` if no object was passed 
+    A `\Contao\DataContainer` or `\Contao\FrontendModule` object. It can be `null` if no object was passed 
     to the `\Contao\Widget::getAttributesFromDca` method.
 
 
@@ -46,7 +46,7 @@ class GetAttributesFromDcaListener implements ServiceAnnotationInterface
     /**
      * @Hook("getAttributesFromDca")
      */
-    public function onGetAttributesFromDca(array $attributes, DataContainer $dc = null): array
+    public function onGetAttributesFromDca(array $attributes, $context = null): array
     {
         // Modify $attributes here …
 
