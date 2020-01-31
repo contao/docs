@@ -179,4 +179,15 @@ Each time the packages are updated, the most recent code for this branch will be
 pulled from Contao's public Git repository.
 
 
+## Contao Manager
+
+These test versions can also be installed via the Contao Manager, without having
+to manually change the `composer.json`. You can edit the required version of "Contao
+Open Source CMS" to `4.9.*@RC` for example, in order to install release candidates.
+Or you can enter `4.9.x-dev` or `dev-master` respectively, in order to install development
+versions.
+
+![Contao Manager Versionsangabe](/de/guides/images/en/contao-manager-enter-custom-version.gif?classes=shadow)
+
+
 [releasePlan]: https://contao.org/en/release-plan.html

@@ -187,4 +187,15 @@ Jedes mal, wenn eine Paketaktualisierung durchgeführt wird, wird der neueste Pr
 aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.
 
 
+## Contao Manager
+
+Die Testversionen können auch ohne manuelle Änderung der `composer.json` direkt
+über den Contao Manager installiert werden. Dazu editiert man bei »Contao Open Source
+CMS« die angeforderte Versionsangabe entweder auf bspw. `4.9.*@RC`, um Release
+Candidates, oder `4.9.x-dev` bzw. `dev-master` um Entwicklerversionen installieren 
+zu lassen.
+
+![Contao Manager Versionsangabe](/de/guides/images/en/contao-manager-enter-custom-version.gif?classes=shadow)
+
+
 [releasePlan]: https://contao.org/en/release-plan.html
