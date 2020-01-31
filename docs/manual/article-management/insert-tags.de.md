@@ -213,4 +213,4 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 | `[gt]`         | `&gt;` = greater than (`>`)  |
 | `[nbsp]`       | `&nbsp;` = non-breaking space<br>Wenn der Umbruch zwischen zwei Wörtern verhindert werden soll, muss ein geschütztes Leerzeichen eingefügt werden. z. B. `Contao[nbsp]CMS` |
 | `[-]`          | `&shy;` = soft hyphen<br>Das Wort wird umgebrochen, wenn nicht ausreichend Platz zur Verfügung steht. Die Trennung erfolgt mit Trennstrich. z. B. `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft` |
-| `[{]`, `[}]`   | Wird im Frontend jeweils zu `{{` bzw. `}}` ersetzt. Damit kann man Insert-Tags im Frontend anzeigen, um sie z. B. zu erklären. |
+| `[{]`, `[}]`   | Wird im Frontend jeweils mit `{{` bzw. `}}` ersetzt. Damit kann man Insert-Tags im Frontend anzeigen, um sie z. B. zu erklären. |
