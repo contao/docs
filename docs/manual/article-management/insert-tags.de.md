@@ -177,6 +177,7 @@ Verfügbare Flags:
 | `addslashes`        | Stellt bestimmten Zeichen eines Strings ein "\" voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
 | `stripslashes`      | Entfernt das "\" vor bestimmten Zeichen eines Strings.                   | [PHP-Funktion](https://php.net/stripslashes)      |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
+| `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                         |
 | `ampersand`         | Wandelt Und-Zeichen in Entities um.                                      |                                                   |
 | `specialchars`      | Wandelt Sonderzeichen in Entities um.                                    |                                                   |
 | `nl2br`             | Fügt vor allen Zeilenumbrüchen eines Strings HTML-Zeilenumbrüche ein.    | [PHP-Funktion](https://php.net/nl2br)             |
