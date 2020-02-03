@@ -11,7 +11,7 @@ call up certain commands directly. For example, the `Save` button is always loca
 it can only be clicked with the mouse when the page is completely scrolled down.
 
 Normally this is not a problem, because while filling out a form you work from above anyway down through the side. But 
-if you later want to change only a single value at the beginning of the form, the Button not accessible without scrolling. 
+if you later want to change only a single value at the beginning of the form, the Button is not accessible without scrolling. 
 In this case, the experienced Contao user will be able to access the Keyboard shortcut `[Alt]+[S]` even without scrolling 
 to the destination.
 
