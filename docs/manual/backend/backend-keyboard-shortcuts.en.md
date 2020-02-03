@@ -8,7 +8,7 @@ weight: 20
 
 To speed up the workflow when working with Contao, there are several keyboard shortcuts in the backend that allow you to
 call up certain commands directly. For example, the `Save` button is always located at the end of an input form, so that 
-it can only be clicked with the mouse when the page is completely was scrolled down.
+it can only be clicked with the mouse when the page is completely scrolled down.
 
 Normally this is not a problem, because while filling out a form you work from above anyway down through the side. But 
 if you later want to change only a single value at the beginning of the form, the Button not accessible without scrolling. 
