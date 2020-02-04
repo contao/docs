@@ -47,7 +47,7 @@ Let's dive a bit more into them.
 Using `Cache Expiration` you can control how long a cache entry will be kept in the cache until it expires.
 Essentially you have two different headers here: `Expires` and `Cache-Control`.
 We've already seen `Cache-Control` before where we wanted to control whether a cache entry is targeted at a single
-user only or if it can be cached by a `Shared Cache`. But `Cache-Control` an combine multiple directives which is
+user only or if it can be cached by a `Shared Cache`. But `Cache-Control` can combine multiple directives which is
 why Symfony provides an abstraction to it so you don't have to write the `Cache-Control` header yourself:
 
 ```php
