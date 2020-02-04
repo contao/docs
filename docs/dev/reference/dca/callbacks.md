@@ -115,6 +115,25 @@ Executed after the old version of the record has been added to `tl_version`.
 {{% /expand %}}
 
 
+### `config.onrestore`
+
+Executed after a record has been restored from an old version.
+
+{{% notice info %}}
+This callback is deprecated and will be removed in Contao 5.0. Use [config.onrestore_version](#configonrestore_version)
+instead.
+{{% /notice %}}
+
+{{% expand "Parameters"%}}
+* `integer` Parent ID of the `tl_version` entry
+* `string` Table
+* `array` Record data
+* `integer` Version number
+
+**return:** _void_
+{{% /expand %}}
+
+
 ### `config.onrestore_version`
 
 Executed after a record has been restored from an old version.
