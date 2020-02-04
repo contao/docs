@@ -32,8 +32,8 @@ $GLOBALS['TL_DCA']['tl_example']['list']['sorting'] = [
 | rootPaste             | true/false (`bool`)           | Override disabling paste buttons to root, if root is set. (default: false)                                                                                                                                                                                                                                                                                                                             |
 | filter                | Query filter (`array`)           | Allows you to add custom filters as arrays, e.g. `[['status=?', 'active'], ['usages>?', 0]]`.                                                                                                                                                                                                                                                                                                                        |
 | disableGrouping       | true/false (`bool`)           | Allows you to disable the group headers in list view and parent view.                                                                                                                                                                                                                                                                                                                                  |
-| [paste_button_callback](../callbacks#listsortingpaste_button) | Callback function (`array`)      | This function will be called instead of displaying the default paste buttons. Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                            |
-| [child_record_callback](../callbacks#listsortingchild_record) | Callback function (`array`)      | This function will be called to render the child elements (sorting mode 4 only). Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                         |
+| [paste_button_callback](../callbacks#list-sorting-paste-button) | Callback function (`array`)      | This function will be called instead of displaying the default paste buttons. Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                            |
+| [child_record_callback](../callbacks#list-sorting-child-record) | Callback function (`array`)      | This function will be called to render the child elements (sorting mode 4 only). Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                         |
 | child_record_class    | CSS class (`string`)             | Allows you to add a CSS class to the parent view elements.                                                                                                                                                                                                                                                                                                                                             |
 
 
@@ -52,8 +52,8 @@ $GLOBALS['TL_DCA']['tl_example']['list']['label'] = [
 | showColumns    | true/false (`bool`)           | If true Contao will generate a table header with column names (e.g. back end member list)          |
 | format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. <br>**%s** ).                       |
 | maxCharacters  | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
-| [group_callback](../callbacks#listlabelgroup) | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
-| [label_callback](../callbacks#listlabellabel) | Callback functions (`array`)     | Call a custom function instead of using the default label function.                                |
+| [group_callback](../callbacks#list-label-group) | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
+| [label_callback](../callbacks#list-label-label) | Callback functions (`array`)     | Call a custom function instead of using the default label function.                                |
 
 
 ## Operations
@@ -78,7 +78,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | href            | URL fragment (`string`)           | URL fragment that is added to the URI string when the button is clicked (e.g. `act=editAll`).                      |
 | class           | CSS class (`string`)              | CSS class attribute of the button.                                                                                 |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
-| [button_callback](../callbacks/#listglobal_operationsoperationbutton) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
+| [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
 
 {{< version "4.7" >}}
 
@@ -102,7 +102,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | href            | URL fragment (`string`)           | URL fragment that is added to the URI string when the button is clicked (e.g. `act=edit`).                         |
 | icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
-| [button_callback](../callbacks/#listoperationsoperationbutton) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
+| [button_callback](../callbacks/#list-operations-operation-button) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
 
 {{< version "4.7" >}}
 
