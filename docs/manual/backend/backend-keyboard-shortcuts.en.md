@@ -2,7 +2,7 @@
 title: "Keyboard shortcuts"
 description: "To speed up the workflow when working with Contao, there are several keyboard shortcuts in the backend, 
 with which certain commands can be called directly."
-url: "administration-area/keyboard-shortcuts"
+url: "administration-area/back-end-keyboard-shortcuts"
 weight: 20
 ---
 
