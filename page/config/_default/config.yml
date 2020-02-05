@@ -6,3 +6,7 @@ enableGitInfo: true
 disablePathToLower: true
 outputs:
   home: ['HTML', 'JSON']
+markup:
+  goldmark:
+    parser:
+      autoHeadingIDType: blackfriday
