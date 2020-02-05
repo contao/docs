@@ -23,6 +23,7 @@ You can also use [anonymous functions](http://php.net/functions.anonymous) for D
 The following is a reference of all available callbacks, using their service tag
 callback property name.
 
+***
 
 ## Global callbacks
 
@@ -33,7 +34,16 @@ Executed when the DataContainer object is initialized. Allows you to e.g. check
 permissions or to modify the Data Container Array dynamically at runtime.
 
 {{% expand "Parameters" %}}
+#### Back end
+
 * `\Contao\DataContainer` Data Container object
+
+**return:** _void_
+
+
+#### Front end modules "Personal data" & "Registration"
+
+_No parameters._
 
 **return:** _void_
 {{% /expand %}}
@@ -60,7 +70,17 @@ data before it is written to the database (used to calculate intervals in the
 calendar extension).
 
 {{% expand "Parameters" %}}
+#### Back end
+
 * `\Contao\DataContainer` Data Container object
+
+**return:** _void_
+
+
+#### Front end module "Personal data"
+
+* `\Contao\FrontendUser` The front end user instance
+* `\Contao\ModulePersonalData` The front end module instance
 
 **return:** _void_
 {{% /expand %}}
@@ -279,8 +299,6 @@ Allows for individual labels in the listing and is e.g. used in the user module
 to add status icons.
 
 {{% expand "Parameters" %}}
-
-
 #### Tree view
 
 * `array` Record data
@@ -408,8 +426,19 @@ Executed when a form field is initialized and can e.g. be used to load a default
 value.
 
 {{% expand "Parameters" %}}
+#### Back end
+
 * `mixed` Currently stored value
 * `\Contao\DataContainer` Data Container object
+
+**return:** `mixed` New value to be loaded
+
+
+#### Front end module "Personal data"
+
+* `mixed` Currently stored value
+* `\Contao\FrontendUser` The front end user instance
+* `\Contao\ModulePersonalData` The front end module instance
 
 **return:** `mixed` New value to be loaded
 {{% /expand %}}
@@ -423,8 +452,26 @@ validation routine. If the new value does not validate, you can throw an
 then and the error message will be shown in the form.
 
 {{% expand "Parameters" %}}
+#### Back end
+
 * `mixed` Value to be saved
 * `\Contoa\DataContainer` Data Container object
+
+**return:** `mixed` New value to be saved
+
+
+#### Front end module "Personal data"
+
+* `mixed` Value to be saved
+* `\Contao\FrontendUser` The front end user instance
+* `\Contao\ModulePersonalData` The front end module instance
+
+**return:** `mixed` New value to be saved
+
+
+#### Front end module "Registration"
+
+* `mixed` Value to be saved
 
 **return:** `mixed` New value to be saved
 {{% /expand %}}
