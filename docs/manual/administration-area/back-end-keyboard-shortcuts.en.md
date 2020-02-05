@@ -1,17 +1,17 @@
 ---
 title: "Keyboard shortcuts"
-description: "To speed up the workflow when working with Contao, there are several keyboard shortcuts in the backend, 
+description: "To speed up the workflow when working with Contao, there are several keyboard shortcuts in the back end, 
 with which certain commands can be called directly."
 weight: 20
 ---
 
-To speed up the workflow when working with Contao, there are several keyboard shortcuts in the backend that allow you to
+To speed up the workflow when working with Contao, there are several keyboard shortcuts in the back end that allow you to
 call up certain commands directly. For example, the `Save` button is always located at the end of an input form, so that 
 it can only be clicked with the mouse when the page is completely scrolled down.
 
-Normally this is not a problem, because when filling out a form you work from top to bottom. But 
-if you later want to change only a single value at the beginning of the form, the Button is not accessible without scrolling. 
-In this case, you are able to access the Keyboard shortcut `[Alt]+[S]` even without scrolling 
+Normally, this is not a problem, because when filling out a form you work from top to bottom. But 
+if you later want to change only a single value at the beginning of the form, the button is not accessible without scrolling. 
+In this case, you are able to access the keyboard shortcut `[Alt]+[S]` even without scrolling 
 to the destination.
 
 
