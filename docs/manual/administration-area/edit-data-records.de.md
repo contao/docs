@@ -50,7 +50,7 @@ In Contao kannst du sehr komfortabel mehrere Datensätze auf einmal bearbeiten, 
 und ändern zu müssen. Klicke dazu auf den Link `Mehrere bearbeiten`. Wie du siehst, werden die Navigationssymbole
 automatisch durch Checkboxen ersetzt, mit denen du die zu bearbeitenden Datensätze auswählen kannst.
 
-![Mehrere Datensätze bearbeiten](/de/backend/images/de/mehrere-datensaetze-bearbeiten.png)
+![Mehrere Datensätze bearbeiten](/de/administration-area/images/de/mehrere-datensaetze-bearbeiten.png)
 
 **Bearbeiten:** Die ausgewählten Datensätze können bearbeitet werden.
 
@@ -72,13 +72,13 @@ ausgewählten Datensätze durch den neuen Wert ersetzt!
 Ein Klick auf `Überschreiben` oder `Bearbeiten` führt dich zur Übersicht der Felder, die in der Tabelle vorhanden sind. 
 Wähle dort gezielt die Eingabefelder aus, die du überschreiben bzw. bearbeiten möchtest, und klicke auf `Weiter`.
 
-![Die zu bearbeitenden Eingabefelder auswählen](/de/backend/images/de/die-zu-bearbeitenden-eingabefelder-auswaehlen.png)
+![Die zu bearbeitenden Eingabefelder auswählen](/de/administration-area/images/de/die-zu-bearbeitenden-eingabefelder-auswaehlen.png)
 
 Du siehst jetzt die ausgewählten Eingabefelder der selektierten Datensätze und kannst diese bequem in einem einzigen 
 Arbeitsschritt ändern. Auch bei der Bearbeitung mehrerer Datensätze werden dir natürlich nur die Eingabefelder 
 angezeigt, die du auch tatsächlich für dein Vorhaben benötigst.
 
-![Nur die ausgewählten Eingabefelder werden angezeigt](/de/backend/images/de/nur-die-ausgewaehlten-eingabefelder-werden-angezeigt.png)
+![Nur die ausgewählten Eingabefelder werden angezeigt](/de/administration-area/images/de/nur-die-ausgewaehlten-eingabefelder-werden-angezeigt.png)
 
 Analog zu diesem Beispiel hättest du mit der Funktion »Überschreiben« die Sprache aller Seiten in einem Rutsch mit
 einem neuen Wert überschreiben können. Und die Funktion kann noch mehr: Eventuell kommst du irgendwann in die
@@ -86,7 +86,7 @@ Verlegenheit, dass du eine neue Mitgliedergruppe angelegt hast und diese nun bei
 ergänzen möchtest, ohne dabei die bestehende Zuordnung zu löschen. Auch das kannst du mit der »Überschreiben«-Funktion 
 erledigen, indem du den passenden Update-Modus auswählst.
 
-![Auswahl des Update-Modus beim Überschreiben von Datensätzen](/de/backend/images/de/auswahl-des-update-modus-beim-ueberschreiben-von-datensaetzen.png)
+![Auswahl des Update-Modus beim Überschreiben von Datensätzen](/de/administration-area/images/de/auswahl-des-update-modus-beim-ueberschreiben-von-datensaetzen.png)
 
 **Ausgewählte Werte hinzufügen:** Die bestehenden Werte bleiben erhalten und werden durch die neu ausgewählten Werte 
 ergänzt. Eine Seite, der bereits die Gruppe *Piano Students* zugewiesen ist, hätte also nach dem Speichern die Gruppen 
@@ -108,9 +108,9 @@ Contao legt bei jedem Speichervorgang automatisch eine neue Version des bearbeit
 Eingabemaske ein Drop-Down-Menü, in dem die verschiedenen Versionen sowie deren Datum und Ersteller aufgelistet
 sind. Mit einem Klick auf `Wiederherstellen` kannst du eine frühere Version wiederherstellen.
 
-![Frühere Versionen eines Datensatzes wiederherstellen](/de/backend/images/de/fruehere-versionen-eines-datensatzes-wiederherstellen.png)
+![Frühere Versionen eines Datensatzes wiederherstellen](/de/administration-area/images/de/fruehere-versionen-eines-datensatzes-wiederherstellen.png)
 
 Durch Klick auf das Icon ![Unterschiede anzeigen](/de/icons/diff.svg?classes=icon) neben dem Drop-Down-Menüs werden 
 die Unterschiede zwischen der aktuellen und der gewählten Version angezeigt.
 
-![Unterschiede zwischen den gewählten Versionen](/de/backend/images/de/unterschiede-zwischen-den-gewaehlten-versionen.png)
+![Unterschiede zwischen den gewählten Versionen](/de/administration-area/images/de/unterschiede-zwischen-den-gewaehlten-versionen.png)
