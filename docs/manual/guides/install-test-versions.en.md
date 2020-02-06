@@ -196,7 +196,7 @@ To do so, go through the basic configuration as usual. At the step "Contao Insta
 enable the "Skip Installation (Expert Only!)" option and confirm with "Finish".
 
 Then change to "Packages" and edit the required version of "Contao Open Source CMS"
-as described above. Confirm again by clicking on "Apply Changes" and wait  for the 
+as described above. Confirm again by clicking on "Apply Changes" and wait for the 
 package update process to finish.
 
 
