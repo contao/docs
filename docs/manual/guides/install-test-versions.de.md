@@ -197,5 +197,11 @@ zu lassen.
 
 ![Contao Manager Versionsangabe](/de/guides/images/en/contao-manager-enter-custom-version.gif?classes=shadow)
 
+Wenn man keine bestehende Contao-Installation nutzen will, sondern mit einer frischen Installation starten möchte, dann geht man wie folgt vor.
+
+Zuerst führt man wie gewohnt die Grundkonfiguration des Contao Managers durch. Wenn man beim Schritt »Contao-Installation« angekommen ist, setzt man den Haken bei »Installation überspringen (Expertenmodus!)« und klickt auf »Fertigstellen«.
+
+Anschließend wechselt man zum Menüpunkt »Pakete« und editiert bei »Contao Open Source
+CMS« die Versionsangabe wie oben beschrieben. Abschließend klickt man auf »Änderungen anwenden« und wartet die Aktualisierung der Pakete ab.
 
 [releasePlan]: https://contao.org/en/release-plan.html
