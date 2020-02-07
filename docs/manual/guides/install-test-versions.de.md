@@ -205,3 +205,6 @@ Anschließend wechselt man zum Menüpunkt »Pakete« und editiert bei »Contao O
 CMS« die Versionsangabe wie oben beschrieben. Abschließend klickt man auf »Änderungen anwenden« und wartet die Aktualisierung der Pakete ab.
 
 [releasePlan]: https://contao.org/en/release-plan.html
+
+## Weblinks ##
+Videoanleitung: [Contao 4 – Testversion | Entwicklerversion | Release Candidate installieren](https://youtu.be/0nUROGy_jLU)
