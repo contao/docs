@@ -40,7 +40,11 @@ empfohlen, diese immer zu verwenden.
 <sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus.
 Die PHP GD Bibliothek muss allerdings trotzdem noch zusätzlich zur Verfügung stehen.
 Die Verwendung von ImageMagick über die PHP Imagick oder Gmagick Bibliothek ist in allen Fällen empfohlen. ImageMagick
-bietet bessere Performance und Qualität.
+bietet bessere Performance und Qualität. Um herauszufinden, welche Bibliothek von Contao nun tatsächlich benutzt wird,
+kann folgendes Kommando ausgeführt werden:
+```bash
+$ vendor/bin/contao-console debug:container contao.image.imagine
+```
 {{% /notice %}}
 
 [ext-zlib]: https://www.php.net/manual/en/book.zlib.php

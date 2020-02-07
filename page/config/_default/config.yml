@@ -10,3 +10,5 @@ markup:
   goldmark:
     parser:
       autoHeadingIDType: blackfriday
+    renderer:
+      unsafe: true
