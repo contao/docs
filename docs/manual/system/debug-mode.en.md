@@ -123,7 +123,9 @@ _Debug Mode_ option in the _Maintenance_ section.
 ![Debug Mode](/de/system/images/en/contao-manager_c48-debug-mode_en.png?classes=shadow)
 
 By clicking _Activate_ the Contao Manager will also set a cookie enabling the debug
-mode for the current user.
+mode for the current user. This cookie will only be valid for the currently active domain.
+In a multi domain setup, you will therefore need to start the Contao Manager under the
+domain, for which you want to enable the debug mode.
 
 
 ## Symfony Profiler
