@@ -127,7 +127,10 @@ sich in der _Systemwartung_ Sektion unter _Debug-Modus_ eine entsprechende Schal
 ![Debug Mode](/de/system/images/de/contao-manager_c48-debug-mode_de.png?classes=shadow)
 
 Nach dem Klick auf _Aktivieren_ setzt auch hier der Contao Manager ein spezielles
-Cookie, welches den Debug-Modus für den aktuellen Benutzer aktiviert.
+Cookie, welches den Debug-Modus für den aktuellen Benutzer aktiviert. Der Cookie gilt
+für die Domain, unter welcher man den Contao Managerer gestertet hat, d.h. bei einer
+Multi-Domaininstalltion muss der Contao Manager mit der Domain gestertet werden, für
+die der Debug-Modus eingeschaltet werden soll.
 
 
 ## Symfony Profiler
