@@ -128,8 +128,8 @@ sich in der _Systemwartung_ Sektion unter _Debug-Modus_ eine entsprechende Schal
 
 Nach dem Klick auf _Aktivieren_ setzt auch hier der Contao Manager ein spezielles
 Cookie, welches den Debug-Modus für den aktuellen Benutzer aktiviert. Der Cookie gilt
-für die Domain, unter welcher man den Contao Managerer gestertet hat, d.h. bei einer
-Multi-Domaininstalltion muss der Contao Manager mit der Domain gestartet werden, für
+für die Domain, unter welcher man den Contao Manager gestartet hat, d.h. im
+Multidomain-Betrieb muss der Contao Manager mit der Domain gestartet werden, für
 die der Debug-Modus eingeschaltet werden soll.
 
 
