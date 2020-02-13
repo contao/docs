@@ -95,6 +95,32 @@ PaletteManipulator::create()
 ```
 
 
+## Adding Legends
+
+It is also possible to create new groups, i.e. "legends" (see the [reference][paletteReference])
+via the `addLegend` method. As with `addField`, it takes the name of the legend, the "parent"
+field or legend and the position it is supposed to be added relative to the parent.
+
+```php
+// contao/dca/tl_news.php
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
+    // add a new "custom_legend" before the "date_legend"
+    ->addLegend('custom_legend', 'date_legend', PaletteManipulator::POSITION_BEFORE)
+
+    // directly add new fields to the new legend
+    ->addField('custom_field', 'custom_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('foo_field', 'custom_legend', PaletteManipulator::POSITION_APPEND)
+    
+    // then apply it to the palette as usual
+    ->applyToPalette('default', 'tl_news')
+;
+```
+
+If you do not provide a parent (and position), the legend will simply be appended at the end.
+
+
 ## Removing fields
 {{< version "4.7" >}}
 
@@ -158,3 +184,6 @@ PaletteManipulator::create()
     ->applyToPalette('default', 'tl_example')
 ;
 ```
+
+
+[paletteReference]: /reference/dca/palettes/#defining-groups
