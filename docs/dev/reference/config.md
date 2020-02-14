@@ -3,6 +3,7 @@ title: "Config"
 description: Contao's configuration options.
 ---
 
+
 ## Contao Bundle Configuration
 
 Contao's configuration options can be reviewed by running the following command:
@@ -143,6 +144,7 @@ contao:
     # Allows to set TL_CONFIG variables. Note that any property set here will override the localconfig.php file, so changing these in the Contao back end will not have any effect.
     localconfig:          ~
 ```
+
 
 ## Environment variables for the Contao Managed Edition
 
