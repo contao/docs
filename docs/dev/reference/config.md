@@ -209,11 +209,11 @@ container is even built. Settings like trusted proxies or caching are considered
     `COOKIE_WHITELIST=PHPSESSID,csrf_https-contao_csrf_token`
         
     {{% notice note %}}
-    The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
-    for you too. Moreover, the CSRF cookie is different for `http` and `https` for security reasons. If you serve your
-    website over `http`, note that the cookie name will be `csrf_http-contao_csrf_token`.
-    However, protecting your users from CSRF attacks but let them submit the form via unsecured `http` connections is
-    not really a valid use case. 
+The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
+for you too. Moreover, the CSRF cookie is different for `http` and `https` for security reasons. If you serve your
+website over `http`, note that the cookie name will be `csrf_http-contao_csrf_token`.
+However, protecting your users from CSRF attacks but let them submit the form via unsecured `http` connections is
+not really a valid use case. 
     {{% /notice %}}
         
 
