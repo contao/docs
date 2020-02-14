@@ -192,7 +192,7 @@ container is even built. Settings like trusted proxies or caching are considered
     request. That's because these headers can potentially authenticate a user and thus cause personalized content to
     be generated in which case, we never want to serve any content from the cache.
     However, unfortunately, the web consists of tons of different cookies. Most of which are completely irrelevant to
-    the application itself an are only used in JavaScript (although there are better alternatives such as LocalStorage,
+    the application itself and are only used in JavaScript (although there are better alternatives such as LocalStorage,
     SessionStorage or IndexedDB). You will find that e.g. Google Analytics, Matomo, Facebook etc. all set cookies your
     application (Contao in this case) is not interested in at all. However, because the HTTP cache has to decide whether to
     serve a response from the cache or not before the application is even started, there's no way it can now which cookies
