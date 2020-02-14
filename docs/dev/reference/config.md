@@ -3,7 +3,7 @@ title: "Config"
 description: Contao's configuration options.
 ---
 
-### Contao Bundle Configuration
+## Contao Bundle Configuration
 
 Contao's configuration options can be reviewed by running the following command:
 
@@ -144,7 +144,7 @@ contao:
     localconfig:          ~
 ```
 
-### Environment variables for the Contao Managed Edition
+## Environment variables for the Contao Managed Edition
 
 If you use Contao together with the [Contao Managed Edition][Contao_ME], you can use environment variables to influence
 the behaviour of the Managed Edition.
