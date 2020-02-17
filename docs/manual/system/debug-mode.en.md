@@ -106,6 +106,10 @@ Do _not_ deploy this file with the enabled debug mode to your live server! It wo
 pose a major security risk.
 {{% /notice %}}
 
+{{% notice info %}}
+Further environment variables can be set this way. A description can be found in the [Developer Documentation](/../dev/reference/config/#environment-variables-for-the-contao-managed-edition).
+{{% /notice %}}
+
 
 #### Back End Setting
 

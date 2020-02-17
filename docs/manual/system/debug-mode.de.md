@@ -110,6 +110,11 @@ Diese Datei auf _keinen Fall_ auf den Live Server kopieren! Das würde ein groß
 Sicherheitsrisiko darstellen.
 {{% /notice %}}
 
+{{% notice info %}}
+Auf gleichem Weg können weitere Umgebungsvariablen gesetzt werden. Eine Beschreibung der 
+Variablen findet sich in der [Entwicklerdokumentation](/../dev/reference/config/#environment-variables-for-the-contao-managed-edition).
+{{% /notice %}}
+
 
 #### Backend Einstellung
 
