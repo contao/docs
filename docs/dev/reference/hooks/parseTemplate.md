@@ -26,6 +26,7 @@ template object and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Template;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 class ParseTemplateListener implements ServiceAnnotationInterface
@@ -33,7 +34,7 @@ class ParseTemplateListener implements ServiceAnnotationInterface
     /**
      * @Hook("parseTemplate")
      */
-    public function onParseTemplate($template): void
+    public function onParseTemplate(Template $template): void
     {
         if ('fe_page' === $template->getName()) {
             // Do something …
