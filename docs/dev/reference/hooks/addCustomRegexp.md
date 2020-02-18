@@ -61,11 +61,35 @@ class AddCustomRegexpListener implements ServiceAnnotationInterface
             return true;
         }
 
+        // Next example: check german PLZ.
+        if ('plz' === $regexp) {
+            $regexp = '\b((?:0[1-46-9]\d{3})|(?:[1-357-9]\d{4})|(?:[4][0-24-9]\d{3})|(?:[6][013-9]\d{3}))\b';
+            if (!preg_match('/' . $regexp . '/', $input)) {
+                $widget->addError('Field ' . $widget->label . ' should be a postal code.');
+            }
+
+            return true;
+        }
+
         return false;
     }
 }
 ```
 
+If the Regexp check is to be available as a selection in a form in the text
+widget, the following DCA files must also be created:
+
+```php
+// src/Resources/contao/dca/tl_form_field.php
+$GLOBALS['TL_DCA']['tl_form_field']['fields']['rgxp']['options'][] = 'plz';
+```
+
+and add a language key:
+
+```php
+// src/Resources/contao/languages/en/tl_form_field.php
+$GLOBALS['TL_LANG']['tl_form_field']['plz'] = ['PLZ', 'Enter a valid postal code.'];
+```
 
 ## References
 
