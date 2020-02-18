@@ -1,7 +1,7 @@
 ---
 title: "indexPage"
 description: "indexPage hook"
-tags: ["hook-page"]
+tags: ["hook-page", "hook-search"]
 aliases:
     - /reference/hooks/indexPage/
     - /reference/hooks/indexpage/
