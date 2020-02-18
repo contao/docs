@@ -66,10 +66,10 @@ You can add your custom logic to hooks by extending the `TL_HOOKS` key in the
 
 ```php
 // contao/config.php
-$GLOBALS['TL_HOOKS']['activateAccount'][] = [App\EventListener\ActivateAccountListener::class, 'onActivateAccount'];
+$GLOBALS['TL_HOOKS']['activateAccount'][] = [App\EventListener\AccountListener::class, 'onActivateAccount'];
 ```
 
-In this case, the method `onActivateAccount` in the class `App\EventListener\ActivateAccountListener` is called as soon as the hook
+In this case, the method `onActivateAccount` in the class `App\EventListener\AccountListener` is called as soon as the hook
 `activateAccount` is executed.
 
 ```php
