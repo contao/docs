@@ -73,14 +73,14 @@ In this case, the method `onActivateAccount` in the class `App\EventListener\Act
 `activateAccount` is executed.
 
 ```php
-// src/EventListener/AccountListener.php
+// src/EventListener/ActivateAccountListener.php
 
 namespace App\EventListener;
 
 use Contao\MemberModel;
 use Contao\ModuleRegistration;
 
-class AccountListener
+class ActivateAccountListener
 {
     public function onAccountActivation(MemberModel $member, ModuleRegistration $module): void
     {
