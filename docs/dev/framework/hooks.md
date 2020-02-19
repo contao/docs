@@ -99,7 +99,7 @@ Hook listener can be added to the service configuration.
 
 ```yml
 services:
-  App\EventListener\AccountListener:
+  App\EventListener\ActivateAccountListener:
     tags:
       - { name: contao.hook, hook: activateAccount, method: onAccountActivation, priority: 0 }
 ```
