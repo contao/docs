@@ -20,7 +20,7 @@ is a list of tasks executed by Contao's own bundles:
 | Purge expired newsletter subscriptions | daily    |
 
 
-## Configuring the Cron job
+## Configuring the Cron Job
 
 By default the cron tasks are executed after a response is sent back to the visitor 
 when a request to the Contao site has been made.
@@ -32,12 +32,36 @@ will block any subsequent request by the same user.
 
 You can disable the front end cron by going to _System_ » _Settings_ » _Cron job 
 settings_ and enabling the setting __Disable the command scheduler__. After disabling
-the front end cron you should periodically make a request to the `_contao/cron`
-route via your own cron job. In a Linux crontab you could use the following for
-example:
+the front end cron you should periodically let Contao executes its cron jobs, by
+either making a request to a web URL, or by executing them via the command line.
+
+
+### Web URL
+
+In order to trigger cron job execution via a web URL, a request to the `_contao/cron`,
+route, e.g. `https://example.org/_contao/cron`, needs to be made. In a Linux crontab 
+you could use the following instructions for example:
 
 ```none
 * * * * * wget -q -O /dev/null https://example.org/_contao/cron
+```
+
+
+### Command Line
+
+{{< version "4.9" >}}
+
+You can also execute the cron jobs directly via the command line:
+
+```bash
+$ vendor/bin/contao-console contao:cron
+```
+
+This is also the recommended way of periodically executing Contao's cron jobs. In
+a Linux crontab you could use the following instructions for example:
+
+```none
+* * * * * php /path/to/contao/vendor/bin/contao-console contao:cron
 ```
 
 
@@ -46,7 +70,7 @@ example:
 Registering custom cron jobs is similar to [registering to hooks][1].
 
 
-### Using the PHP array configuration
+### Using the PHP Array Configuration
 
 You can register your own cron jobs using the `$GLOBALS['TL_CRON']` arrays. It is
 an associative array with the following keys, representing the available intervals:
@@ -79,20 +103,17 @@ class ExampleCron
 ```
 
 
-### Using service tagging
+### Using Service Tagging
 
 {{< version "4.9" >}}
 
 Cron jobs can also be registered using the `contao.cron` service tag  with the following 
 options:
 
-| Option   | Type      | Description                                                                                                                                                             |
-| -------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name     | `string`  | Must be `contao.cron`.                                                                                                                                                  |
-| interval | `string`  | One of the supported intervals: `minutely`, `hourly`, `daily`, `weekly` or `monthly`.                                                                                   |
-| method   | `string`  | _Optional:_ the method name in the service. Otherwise the method name will be `onInterval` automatically.                                                               |
-| priority | `integer` | _Optional:_ priority of the cron job. By default it will be executed before the legacy cron jobs. Anything with lower than `0` will be executed after legacy callbacks. |
-| cli      | `boolean` | _Optional:_ If `true` the cron job will be executed only when the Contao Cron has been invoked via the `contao:cron` command on the command line.                                   |
+| Option | Description |
+| --- | --- |
+| `interval` | Can be `minutely`, `hourly`, `daily`, `weekly`, `monthly`, `yearly` or a full CRON expression, like `*/5 * * * *`. |
+| `method` | Will default to `__invoke` or `onMinutely` etc. when a named interval is used. Otherwise a method name has to be defined. |
 
 ```yml
 # config/services.yaml
@@ -101,14 +122,16 @@ services:
         tags:
             -
                 name: contao.cron
-                interval: daily    # minutely, hourly, daily, weekly, monthly
-                method: onDaily    # optional, auto generated from the interval, e.g.: onDaily
-                priority: 100      # optional, >0: before $GLOBALS['TL_CRON'], <0: after $GLOBALS['TL_CRON']
-                cli: true          # optional, job will only be executed via the contao:cron command
+                interval: 0 */2 * * *
+                method: onEveryTwoHours
 ```
 
+
+### Using Service Annotation
+
 You can also use the `Contao\CoreBundle\ServiceAnnotation\Cron` service annotation
-together with the `Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface`:
+together with the `Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface`
+to tag the service accordingly.
 
 ```php
 // src/Cron/ExampleCron.php
@@ -117,22 +140,50 @@ namespace App\Cron;
 use Contao\CoreBundle\ServiceAnnotation\Cron;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
+/**
+ * @Cron("hourly")
+ */
 class ExampleCron implements ServiceAnnotationInterface
 {
-    /**
-     * @Cron("minutely", priority=-1)
-     */
-    public function onMinutely(): void
+    public function __invoke(): void
     {
         // Do something
     }
+}
+```
 
-    /**
-     * @Cron("hourly", priority=32, cli=true)
-     */
-    public function onHourly(): void
+The annotation can either be used on the class or on individual methods. When it 
+is used on the class, either the `__invoke` method will be used - or an auto generated 
+method name (e.g. `onMinutely`), if present.
+
+{{% notice note %}}
+If you need an interval like `*/5 * * *` you need to escape either the `*` or `/` 
+with `\`, since `*/` would close the PHP comment.
+{{% /notice %}}
+
+
+## Scope
+
+In some cases a cron job might want to know in which "scope" it is executed in - 
+i.e. as part of a front end request or as part of the cron command on the command 
+line interface. The `Cron` service will pass a scope parameter to the cron job's 
+method.
+
+```php
+namespace App\Cron;
+
+use Contao\CoreBundle\Cron\Cron;
+
+class HourlyCron
+{
+    public function __invoke(string $scope): void
     {
-        // Do something on CLI only
+        // Do not execute this cron job in the web scope
+        if (Cron::SCOPE_WEB === $scope) {
+            return;
+        }
+
+        // …
     }
 }
 ```
