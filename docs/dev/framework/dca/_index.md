@@ -79,7 +79,7 @@ class ContentListener
 ```
 
 
-### Using service tagging
+### Using Service Tagging
 
 {{< version "4.7" >}}
 
@@ -108,9 +108,62 @@ services:
 ```
 
 
+### Using Service Annotation
+
+{{< version "4.8" >}}
+
+Since Contao 4.8 DCA callbacks can be registered using the `Contao\CoreBundle\ServiceAnnotation\Callback`
+service annotation on the callback method, together with the `Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface`:
+
+```php
+// src/EventListener/DataContainer/NewsOnsubmitCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
+
+class NewsOnsubmitCallbackListener implements ServiceAnnotationInterface
+{
+    /**
+     * @Callback(table="tl_news", target="config.onsubmit")
+     */
+    public function onSubmitCallback(DataContainer $dc): void
+    {
+        // Do something …
+    }
+}
+```
+
+{{< version "4.9" >}}
+
+If you are using an [invokable class][invoke], you can also define the annotation
+on the class itself:
+
+```php
+// src/EventListener/DataContainer/NewsOnsubmitCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
+
+/**
+ * @Callback(table="tl_news", target="config.onsubmit")
+ */
+class NewsOnsubmitCallbackListener implements ServiceAnnotationInterface
+{
+    public function __invoke(DataContainer $dc): void
+    {
+        // Do something …
+    }
+}
+```
+
+
 ### Using the PHP array configuration
 
-This is the old way of using DCA callbacks prior to Contao 4.7. The table
+This is the old way of using DCA callbacks prior to Contao **4.7**. The table
 `tl_content` and target definition `fields.module.options` translates to a PHP
 array configuration in the following way for example:
 
@@ -168,3 +221,4 @@ drivers in order to get an idea on what is possible and how it needs to be done:
 [2]: ../../reference/dca/callbacks/
 [3]: ../models/
 [4]: ../../reference/dca/
+[invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke

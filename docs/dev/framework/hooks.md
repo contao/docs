@@ -113,12 +113,14 @@ The service tag can have the following options:
 | method   | `string`  | _Optional:_ the method name in the service - otherwise infered from the hook (e.g. `onActivateAccount`). |
 | priority | `integer` | _Optional:_ priority of the hook. (Default: `0`)                                                         |
 
-_Note on the priority:_ When using the default priority, or a priority of `0`, the 
+{{% notice note %}}
+When using the default priority, or a priority of `0`, the 
 hook will be executed according to the extension loading order, along side hooks 
 that are using the legacy configuration via `$GLOBALS['TL_HOOK']`. With a priority 
 that is greater than zero the hook will be executed _before_ the legacy registered 
 hooks. With a priority of lower than zero the hook will be executed _after_ the 
 legacy registered hooks.
+{{% /notice %}}
 
 
 ### Using Annotations
@@ -157,4 +159,34 @@ You can also define the priority through the annotation:
 ```
 
 
+### Invokable Services
+
+{{< version "4.9" >}}
+
+You can also use [invokable classes][invoke] for your services. If a service is
+tagged with `contao.hook` and no method name is given, the `__invoke` method will
+be called automatically. This also means that you can define the service annotation
+on the class, instead of a method:
+
+```php
+// src/EventListener/IndexPageListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
+
+/**
+ * @Hook("indexPage")
+ */
+class IndexPageListener implements ServiceAnnotationInterface
+{
+    public function __invoke(string $content, array $pageData, array &$indexData): void
+    {
+        // Do something …
+    }
+}
+```
+
+
 [1]: ../../reference/hooks/
+[invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
