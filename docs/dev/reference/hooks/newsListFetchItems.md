@@ -21,7 +21,7 @@ sorting for a news list.
 
 2. *bool* `$featuredOnly`
 
-    Whether or not to show only featured news.
+    Whether or not to show only featured news. Can be null.
 
 3. *int* `$limit`
 
@@ -57,7 +57,7 @@ class NewsListFetchItemsListener implements ServiceAnnotationInterface
     /**
      * @Hook("newsListFetchItems")
      */
-    public function onNewsListFetchItems(array $newsArchives, bool $featuredOnly, int $limit, int $offset, Module $module)
+    public function onNewsListFetchItems(array $newsArchives, ?bool $featuredOnly, int $limit, int $offset, Module $module)
     {
         if (…) {
             // Query the database and return the records
