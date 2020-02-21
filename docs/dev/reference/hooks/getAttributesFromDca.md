@@ -22,7 +22,7 @@ Note that the DCA object can be optional (`null`).
 
 2. `$context`
 
-    A `\Contao\DataContainer` or `\Contao\FrontendModule` object. It can be `null` if no object was passed 
+    A `\Contao\DataContainer` or `\Contao\Module` object. It can be `null` if no object was passed 
     to the `\Contao\Widget::getAttributesFromDca` method.
 
 
