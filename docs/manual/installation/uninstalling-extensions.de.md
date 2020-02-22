@@ -11,7 +11,7 @@ weight: 80
 Du musst dich zunächst wieder am Contao Manager anmelden. Dazu rufst du erneut deine Domain mit dem Zusatz 
 `/contao-manager.phar.php` auf und gibst deine Zugangsdaten ein.
 
-Wenn du die Erweiterung »contao-easy_themes« deinstallieren möchtest, wechsle in den Reiter »Pakete« und klicke auf die 
+Wenn du die Erweiterung »terminal42/contao-easy_themes« deinstallieren möchtest, wechsle in den Reiter »Pakete« und klicke auf die 
 Schaltfläche »Entfernen« neben der Erweiterung. Du kannst natürlich auch noch weitere Erweiterung zur Deinstallation 
 vormerken.
 
@@ -23,8 +23,8 @@ Anspruch nehmen. Details zum Deinstallationsprozess können durch Klick auf folg
 
 ![Erweiterungen im Contao Manager deinstallieren](/de/installation/images/de/erweiterungen-im-contao-manager-deinstallieren.png)
 
-Sobald die Erweiterungen deinstalliert worden sind, musst du das [Contao-Installtool](../contao-installtool/) 
-aufrufen um die Datenbank, falls nötig, zu aktualisieren.
+Sobald der Contao Manager die Erweiterung(en) deinstalliert hat, musst du das [Contao-Installtool](../contao-installtool/) 
+aufrufen, um die Datenbank, falls nötig, zu aktualisieren.
 
 
 ## Deinstallation über die Kommandozeile {#deinstallation-ueber-die-kommandozeile}
@@ -60,5 +60,5 @@ php composer.phar remove terminal42/contao-easy_themes
 php composer.phar remove terminal42/notification_center terminal42/contao-leads
 ```
 
-Sobald die Erweiterungen deinstalliert worden sind, musst du das [Contao-Installtool](../contao-installtool/) 
+Sobald die Deinstallation der Erweiterung(en) abgeschlossen ist, musst du das [Contao-Installtool](../contao-installtool/) 
 aufrufen um die Datenbank, falls nötig, zu aktualisieren.
