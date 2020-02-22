@@ -150,19 +150,6 @@ FastCGI-Setup zu konfigurieren. Durch die Verwendung von
 Hintergrundaufgaben (wie die Indizierung des Seiteninhalts) ausführen, ohne dass der Browser auf die Antwort wartet.
 
 
-## Contao-Check
-
-Lade den Contao-Check herunter und finde heraus, ob dein Server die Contao-Systemvoraussetzungen erfüllt.
-
-![Der Contao-Check](/de/installation/images/de/der-contao-check.png)
-
-Entpacke die ZIP-Datei, übertrage den Ordner <code>check</code> in den Unterordner `web/` deiner Contao-Installation, setze das Wurzelverzeichnis (Document Root) deiner Domain über das Admin-Panel des Hosting-Providers auf diesen Unterordner und öffne 
-<code>www.example.com/check</code> in deinem Browser.
-
-[Den Contao-Check herunterladen](https://github.com/contao/check/zipball/master) | 
-[Zum Projekt auf GitHub](https://github.com/contao/check)
-
-
 ## Providerspezifische Einstellungen
 
 Es gibt ein paar wenige große Internet Service Provider, die spezielle Einstellungen für den Betrieb von Contao 
