@@ -22,7 +22,7 @@ empfohlen, diese immer zu verwenden.
 
 #### PHP-Erweiterungen
 
-| Name der Erweiterung                      | Contao 4.4                   | Contao 4.8                                     |
+| Name der Erweiterung                      | Contao 4.4                   | Contao 4.9                                     |
 |:------------------------------------------|:-----------------------------|:-----------------------------------------------|
 | [DOM][ext-dom] (`ext-dom`)                | **erforderlich**             | **erforderlich**                               |
 | [PCRE][ext-pcre] (`ext-pcre`)             | **erforderlich**             | **erforderlich**                               |
@@ -96,9 +96,9 @@ führen.
 
 ### Mindestanforderungen an PHP
 
-#### Contao 4.8 und später
+#### Contao 4.9 und später
 
-- **PHP** Version 7.1.0 oder höher ist erforderlich.
+- **PHP** Version 7.2.0 oder höher ist erforderlich.
 - Bilder können mit den PHP-Erweiterungen GD (`ext-gd`), Imagick (`ext-imagick`) oder Gmagick (`ext-gmagick`) 
 verarbeitet werden.  
 Contao erkennt und verwendet automatisch die beste verfügbare Erweiterung.
