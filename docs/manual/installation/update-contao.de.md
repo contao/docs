@@ -86,7 +86,7 @@ Vor der Aktualisierung von Contao empfehle ich dir ein Backup der `composer.json
 anzulegen.
 {{% /notice %}}
 
-Bei der Aktualisierung über die Kommandozeile wird ein `composer update` ausgeführt, dass wird bei einigen Hostern dazu 
+Bei der Aktualisierung über die Kommandozeile wird ein `composer update` ausgeführt. Das wird bei einigen Hostern dazu 
 führen, dass der Prozess wegen der zu hohen Systemanforderung nicht beendet werden kann und die Installation dadurch 
 fehlschlägt. In diesem Fall solltest du den [Contao Manager](##aktualisierung-mit-dem-contao-manager) nutzen.
 
@@ -96,7 +96,7 @@ Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angeme
 ssh benutzername@example.com
 ```
 
-Wechsle dazu auf der Konsole in das Verzeichnis deiner zu aktualisierenden Contao-Installation.
+Wechsle dann auf der Konsole in das Verzeichnis deiner zu aktualisierenden Contao-Installation.
 
 ```bash
 cd www/example/
