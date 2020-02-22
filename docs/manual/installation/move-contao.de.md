@@ -8,7 +8,7 @@ weight: 50
 Der Umzug einer lokalen Installation auf einen Live-Server läuft fast genauso ab wie eine Neuinstallation.
 
 {{% notice warning %}}
-Um Unannehmlichkeiten beim Umzug zu verhindern sollte, auf deinem lokalen Server die 
+Um Unannehmlichkeiten beim Umzug zu verhindern, sollte auf deinem lokalen Server die 
 **[selbe PHP-Version](../systemvoraussetzungen/#mindestanforderungen-an-php)** wie auf dem Live-Server laufen.
 {{% /notice %}}
 
@@ -34,13 +34,13 @@ starte den Import.
 
 ### Contao Manager auf dem Live-Server installieren
 
-Bevor du Contao auf deinem Server umziehen kannst, musst du den 
+Bevor du Contao auf deinen Server umziehen kannst, musst du den 
 [Contao Manager installieren und konfigurieren](../contao-manager#contao-manager-installieren).
 
 
 ### Dateien auf den Live-Server übertragen {#dateien-auf-den-server-uebertragen}
 
-Öffne dein FTP-Programm, und stelle eine Verbindung zu deinem Server her. Kopiere die folgenden Dateien aus dem lokalen 
+Öffne dein FTP-Programm, und stelle eine Verbindung zu deinem Server her. Kopiere die folgenden Dateien und Ordner aus dem lokalen 
 Contao-Verzeichnis auf den Server.
 
 - `files`
@@ -65,10 +65,10 @@ installiert Contao und die von dir in der lokalen Installation verwendeten Erwei
 ![Composer-Abhängigkeiten installieren](/de/installation/images/de/composer-abhaengigkeiten-installieren.png)
 
 Die Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf 
-folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
+das Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
 werden.
 
-![Umbzug abgeschlossen](/de/installation/images/de/umzug-abgeschlossen.png)
+![Umzug abgeschlossen](/de/installation/images/de/umzug-abgeschlossen.png)
 
 Öffne danach das [Contao-Installtool](../contao-installtool/), und gebe die Zugangsdaten zur neuen Datenbank an.
 
