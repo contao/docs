@@ -11,16 +11,16 @@ weight: 70
 Du musst dich zunächst wieder am Contao Manager anmelden. Dazu rufst du erneut deine Domain mit dem Zusatz 
 `/contao-manager.phar.php` auf und gibst deine Zugangsdaten ein.
 
-Wenn du die Erweiterung »contao-easy_themes« aktualisieren möchtest, wechsle in den Reiter »Pakete« und klicke auf die 
+Wenn du die Erweiterung »terminal42/contao-easy_themes« aktualisieren möchtest, wechsle in den Reiter »Pakete« und klicke auf die 
 Schaltfläche »Aktualisieren« neben der Erweiterung. Du kannst natürlich auch noch weitere Erweiterung zur 
-Aktualisierung vormerken. Klicke auf »Änderungen anwenden« un die Aktualisierung zu starten. Die Aktualisierung kann 
+Aktualisierung vormerken. Klicke auf »Änderungen anwenden« um die Aktualisierung zu starten. Die Aktualisierung kann 
 nun mehrere Minuten in Anspruch nehmen. Details zum Aktualisierungsprozess können durch Klick auf folgendes Symbol 
 ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
 
 ![Erweiterungen im Contao Manager aktualisieren](/de/installation/images/de/erweiterungen-im-contao-manager-aktualisieren.png)
 
-Sobald der Contao Manager die Erweiterungen aktualisiert hat, musst du das [Contao-Installtool](../contao-installtool/) 
-aufrufen um die Datenbank, falls nötig, zu aktualisieren.
+Sobald der Contao Manager die Erweiterung(en) aktualisiert hat, musst du das [Contao-Installtool](../contao-installtool/) 
+aufrufen, um die Datenbank, falls nötig, zu aktualisieren.
 
 
 ## Aktualisierung über die Kommandozeile {#aktualisierung-ueber-die-kommandozeile}
@@ -73,5 +73,5 @@ php-http/httplug            v1.1.0 v2.0.0  HTTPlug, the HTTP client abstraction 
 sensiolabs/security-checker v5.0.3 v6.0.2  A security checker for your composer.lock
 ``` 
 
-Sobald die Erweiterungen aktualisiert worden sind, musst du das [Contao-Installtool](../contao-installtool/) 
+Sobald die Aktualisierung der Erweiterung(en) abgeschlossen ist, musst du das [Contao-Installtool](../contao-installtool/) 
 aufrufen um die Datenbank, falls nötig, zu aktualisieren.
