@@ -113,7 +113,7 @@ Contao erkennt und verwendet automatisch die beste verfügbare Erweiterung.
 ### MySQL-Mindestanforderungen 
 
 Obwohl Contao die [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) Datenbank-Abstraktionsschicht 
-verwendet, werden derzeit keine anderen Datenbankserver als MySQL (oder einen kompatiblen Fork wie MariaDB) unterstützt.
+verwendet, werden derzeit keine anderen Datenbankserver als MySQL (oder ein kompatibler Fork wie MariaDB) unterstützt.
 
 Contao wurde erfolgreich auf MySQL-Servern der Version 5.1 / 5.5 mit `MyISAM`-Tabellenformat getestet. Die Verwendung 
 von `utf8_general_*` anstelle des `utf8mb4`-Zeichensatzes führt zu einer verschlechterten UTF8-Unterstützung (z. B. 
