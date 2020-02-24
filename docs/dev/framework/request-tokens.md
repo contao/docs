@@ -42,7 +42,7 @@ alternative protection in place!
 ## Checking The Token Manually
 
 If, for some reason, you need to check the request token yourself, you can do so by combining the token manager
-service (`@contao.csrf.token_manager`) and the configured token name (`%contao.csrf_token_name`): 
+service (`@contao.csrf.token_manager`) and the configured token name (`%contao.csrf_token_name%`): 
 
 ```php
 namespace App;
