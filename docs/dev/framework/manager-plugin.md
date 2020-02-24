@@ -176,6 +176,11 @@ class Plugin implements BundlePluginInterface
         return [
             BundleConfig::create(KnpMenuBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class]),
+                
+                // In case you also need your bundle to be loaded after a legacy
+                // style module that resides in system/modules, you can just use
+                // its name as string:
+                // ->setLoadAfter([ContaoCoreBundle::class, 'legacy_module_name']),
         ];
     }
 }
