@@ -38,6 +38,7 @@ Setting `_token_check` to `false` will make your custom route vulnerable to CSRF
 alternative protection in place!
 {{% /notice %}}
 
+
 ## Checking The Token Manually
 
 If, for some reason, you need to check the request token yourself, you can do so by combining the token manager
@@ -76,6 +77,7 @@ class MyTokenCheckService
 }
 ```
 
+
 ## Deprecated Constants And Configuration Settings
 
 For historical reasons, you may still come across the following constants or configuration settings.
@@ -86,11 +88,6 @@ handling as outlined above, if you need to disable the CSRF protection for some 
 * The localconfig configuration value `disableRefererCheck`. It disables CSRF protection completely.
 * The localconfig configuration value `requestTokenWhitelist`. It can contain an exact hostname or regular expression.
   It will disable CSRF protection only on hostname match.
-
-
-
-
-
 
 
 [OWASP_CSRF]: https://owasp.org/www-community/attacks/csrf
