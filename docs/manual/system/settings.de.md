@@ -208,7 +208,7 @@ mehr Logging im Debug Modus). Außerdem committest du die `config.yml` im Gegens
 [Repository](https://de.wikipedia.org/wiki/Repository).
 
 {{% notice note %}}
-Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.
+Ab der Version **4.8** von Contao befindet sich die Datei im Ordner `config`.
 {{% /notice %}}
 
 Über die Kommandozeile kommst du an die Standard-Konfiguration für Contao:
@@ -220,57 +220,55 @@ vendor/bin/contao-console config:dump-reference contao
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
-    web_dir:              /contao/web
-    prepend_locale:       false
-    encryption_key:       '%kernel.secret%'
-    url_suffix:           .html
-    upload_path:          files
-    preview_script:       ''
     csrf_cookie_prefix:   csrf_
     csrf_token_name:      contao_csrf_token
-    pretty_error_screens: false
+    encryption_key:       '%kernel.secret%'
+
+    # The error reporting level set when the framework is initialized. Defaults to E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED.      
     error_level:          8183
+
+    # Allows to set TL_CONFIG variables, overriding settings stored in localconfig.php. Changes in the Contao back end will not have any effect.
+    localconfig:          ~
+
+    # Allows to configure which languages can be used within Contao. Defaults to all languages for which a translation exists.
     locales:
 
         # Defaults:
         - en
-        - pl
-        - ja
-        - it
         - cs
-        - ru
-        - pt
-        - zh
-        - sr
-        - nl
         - de
-        - fr
         - es
         - fa
+        - fr
+        - it
+        - ja
+        - lv
+        - nl
+        - pt
+        - ru
+        - sr
+        - zh
+
+    # Whether or not to add the page language to the URL.
+    prepend_locale:       false
+
+    # Show customizable, pretty error screens instead of the default PHP error messages.
+    pretty_error_screens: false
+
+    # An optional entry point script that bypasses the front end cache for previewing changes (e.g. preview.php).
+    preview_script:       ''
+
+    # The folder used by the file manager.
+    upload_path:          files
+    editable_files:       'css,csv,html,ini,js,json,less,md,scss,svg,svgz,txt,xliff,xml,yml,yaml'
+    url_suffix:           .html
+
+    # Absolute path to the web directory. Defaults to %kernel.project_dir%/web.
+    web_dir:              '%kernel.project_dir%/web'
     image:
+
+        # Bypass the image cache and always regenerate images when requested. This also disables deferred image resizing.
         bypass_cache:         false
-        target_path:          null
-        target_dir:           /contao/assets/images
-        valid_extensions:
-
-            # Defaults:
-            - jpg
-            - jpeg
-            - gif
-            - png
-            - tif
-            - tiff
-            - bmp
-            - svg
-            - svgz
-            - webp
-
-        # As of Contao 4.6, Contao automatically detects the best Imagine service out of Gmagick, Imagick and Gd (in this order). 
-        # To use a specific service, set its service ID here:
-        # - Gmagick: "contao.image.imagine.gmagick"
-        # - Imagick: "contao.image.imagine.imagick"
-        # - Gd     : "contao.image.imagine.gd"
-        imagine_service:      null
         imagine_options:
             jpeg_quality:         80
             jpeg_sampling_factors:
@@ -284,20 +282,39 @@ contao:
             webp_quality:         ~
             webp_lossless:        ~
             interlace:            plane
+
+        # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.        
+        imagine_service:      null
+
+        # Reject uploaded images exceeding the localconfig.gdMaxImgWidth and localconfig.gdMaxImgHeight dimensions.
         reject_large_uploads: false
+
+        # Allows to define image sizes in the configuration file in addition to in the Contao back end.
         sizes:
 
             # Prototype
             name:
                 width:                ~
                 height:               ~
-                resizeMode:           ~ # One of "crop"; "box"; "proportional"
+                resize_mode:          ~ # One of "crop"; "box"; "proportional"
                 zoom:                 ~
-                cssClass:             ~
+                css_class:            ~
+                lazy_loading:         ~
                 densities:            ~
                 sizes:                ~
-                skipIfDimensionsMatch: ~
+
+                # If the output dimensions match the source dimensions, the image will not be processed. Instead, the original file will be used.
+                skip_if_dimensions_match: ~
+
+                # Allows to convert one image format to another or to provide additional image formats for an image (e.g. WebP).
                 formats:
+
+                    # Examples:
+                    jpg:
+                        - webp
+                        - jpg
+                    gif:
+                        - png
 
                     # Prototype
                     source:               []
@@ -307,15 +324,54 @@ contao:
                     -
                         width:                ~
                         height:               ~
-                        resizeMode:           ~ # One of "crop"; "box"; "proportional"
+                        resize_mode:          ~ # One of "crop"; "box"; "proportional"
                         zoom:                 ~
                         media:                ~
                         densities:            ~
                         sizes:                ~
+
+        # The target directory for the cached images processed by Contao.
+        target_dir:           '%kernel.project_dir%/assets/images'
+        valid_extensions:
+
+            # Defaults:
+            - jpg
+            - jpeg
+            - gif
+            - png
+            - tif
+            - tiff
+            - bmp
+            - svg
+            - svgz
+            - webp
     security:
         two_factor:
             enforce_backend:      false
-    localconfig:          ~
+    search:
+
+        # The default search indexer, which indexes pages in the database.
+        default_indexer:
+            enable:               true
+
+        # Enables indexing of protected pages.
+        index_protected:      false
+
+        # The search index listener can index valid and delete invalid responses upon every request. You may limit it to one of the features or disable it completely.
+        listener:
+
+            # Enables indexing successful responses.
+            index:                true
+
+            # Enables deleting unsuccessful responses from the index.
+            delete:               true
+    crawl:
+
+        # Additional URIs to crawl. By default, only the ones defined in the root pages are crawled.
+        additional_uris:      []
+
+        # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
+        default_http_client_options: []
 ```
 
 {{% notice warning %}}
