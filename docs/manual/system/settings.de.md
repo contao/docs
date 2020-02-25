@@ -127,6 +127,19 @@ durchsuchen.
 **Geschützte Seiten indizieren:** Wähle diese Option, um auch geschützte Seiten für die Suche zu indizieren. Nutze 
 dieses Feature mit Bedacht, und achte darauf, personalisierte Seiten grundsätzlich von der Suche auszuschließen.
 
+{{% notice note %}}
+Ab Version **4.9** kommt ein neuer Such-Indexer zum Einsatz. Die Einstellungen **Suche aktivieren** und 
+**Geschützte Seiten indizieren** werden nun über die `config/config.yml` konfiguriert:
+
+```yml
+contao:
+    search:
+        default_indexer:
+            enable: true
+        index_protected: false
+```
+{{% /notice %}}
+
 
 ### Standard-Zugriffsrechte
 
