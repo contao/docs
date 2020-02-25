@@ -48,6 +48,10 @@ Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten
 aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung 
 *noindex,follow* von der Indizierung ausgenommen werden.
 
+{{% notice note %}}
+Die Einstellung Robots-Tag hat keine Auswirkungen auf den Suchindex von Contao für die Website-Suche.
+{{% /notice %}}
+
 **Ausgabe im Quellcode:**
 ```html
 <meta name="robots" content="index,follow">
