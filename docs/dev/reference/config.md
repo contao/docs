@@ -186,6 +186,23 @@ container is even built. Settings like trusted proxies or caching are considered
     If you set the environment manually, you will no longer be able to toggle the debug mode from the back end as a
     Contao administrator.
     
+* `APP_SECRET`
+
+    The `APP_SECRET` environment variable is required e.g. to generate CSRF tokens. This is a string that should be 
+    unique to your application and it's commonly used to add more entropy to security related operations. Its value 
+    should be a series of characters, numbers and symbols chosen randomly and the recommended length is around 
+    32 characters. As with any other security-related parameter, it is a good practice to change this value from time
+    to time. However, keep in mind that changing this value will invalidate all signed URIs and Remember Me cookies. 
+    That's why, after changing this value, you should regenerate the application cache and log out all the application
+    users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret). 
+    
+* `DATABASE_URL`
+
+    The database connection information is stored as an environment variable called `DATABASE_URL`. It defines 
+    the database user name, database password, host name, port and database name that will be used by your Contao system. 
+    The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
+    It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+    
 * `TRUSTED_PROXIES`
 
     When you deploy your application, you may be behind a load balancer or a reverse proxy (e.g. Varnish for caching).
