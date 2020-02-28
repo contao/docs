@@ -172,6 +172,8 @@ contao:
 
 ## Environment variables for the Contao Managed Edition
 
+{{< version "4.9" >}}
+
 If you use Contao together with the [Contao Managed Edition][Contao_ME], you can use environment variables to influence
 the behaviour of the Managed Edition.
 The reason why they are environment variables is because these settings affect the setup before the dependency injection
@@ -225,8 +227,6 @@ container is even built. Settings like trusted proxies or caching are considered
     
 * `COOKIE_WHITELIST`
 
-    {{< version "4.8" >}}
-
     This is a special environment variable related to the default caching proxy which is shipped with the Contao Managed
     Edition by default.
     Contao disables any HTTP caching as soon as there is either a `Cookie` or an `Authorization` header present in the
@@ -256,6 +256,11 @@ website over `http`, note that the cookie name will be `csrf_http-contao_csrf_to
 However, protecting your users from CSRF attacks but let them submit the form via unsecured `http` connections is
 not really a valid use case. 
     {{% /notice %}}
+
+{{% notice info %}}
+Some of the environment variables, like `DATABASE_URL` and `APP_SECRET` replace their respective counterparts of the
+`config/parameters.yml` and thus you should not use these parameters, if you are using the environment variable instead.
+{{% /notice %}}
         
 
 [Contao_ME]: ../../getting-started/initial-setup/managed-edition
