@@ -111,7 +111,7 @@ class CustomerNameMigration extends AbstractMigration
 
 ## Read more
 
-* [Contao’s console commands][commands]
+* [Contao's console commands][commands]
 
 
 [commands]: /reference/commands/
