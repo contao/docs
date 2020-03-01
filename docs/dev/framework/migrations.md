@@ -46,14 +46,14 @@ The migration interface specifies three methods that need to be implemented:
 Lets say we have a database table `tl_customers` with a `firstName` and `lastName` column that we combined to a `name` column in the new version:
 
 ```php
-// src/Migration/CombineCustomerName.php
+// src/Migration/CustomerNameMigration.php
 namespace App\Migration;
 
 use Contao\CoreBundle\Migration\AbstractMigration;
 use Contao\CoreBundle\Migration\MigrationResult;
 use Doctrine\DBAL\Connection;
 
-class CombineCustomerName extends AbstractMigration
+class CustomerNameMigration extends AbstractMigration
 {
     /**
      * @var Connection
