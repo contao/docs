@@ -111,7 +111,7 @@ Each field can be validated against a regular expression.
 | disabled           | true/false (`bool`)           | Disables the field (not supported by all field types).                                                                                                                   |
 | readonly           | true/false (`bool`)           | Makes the field read only (not supported by all field types).                                                                                                            |
 | csv                | Delimiter (`string`)             | The choice of this field will not be stored as serialized string but rather as given delimiter-separated list. Example: `'eval' => ['csv'=>',']`                 |
-| tl_class           | CSS class(es) (`string`)         | Add the given CSS class(es) to the generated HTML. See section [Arranging Fields](palettes/#arranging-fields) for supported values.                                 |
+| tl_class           | CSS class(es) (`string`)         | Add the given CSS class(es) to the generated HTML. See section [Arranging Fields](/reference/dca/palettes/#arranging-fields) for supported values.                                 |
 | dcaPicker          | true/false (`bool`)           | If true the dca-picker will be shown.  Enables pick up different data sets from the system.                                                                              |
 
 {{% notice warning %}}
