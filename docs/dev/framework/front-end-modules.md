@@ -55,7 +55,7 @@ To create a new front end module, the following things must be defined and imple
 
 ## Example
 
-Usually a front end module is based on a specific [palette][2] in the `tl_content`
+Usually a front end module is based on a specific [palette][2] in the `tl_module`
 DCA configuration.
 
 ```php
