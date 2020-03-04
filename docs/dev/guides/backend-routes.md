@@ -33,7 +33,7 @@ use Twig\Environment as TwigEnvironment;
 
 /**
  * @Route("/contao/my-backend-route",
- *     name="app.backend-route" 
+ *     name=App\Controller\BackendController::class 
  *     defaults={
  *         "_scope" = "backend",
  *         "_token_check" = true,
@@ -49,10 +49,7 @@ class BackendController extends AbstractController
     {
         $this->twig = $twig;
     }
-    
-    /**
-     * @Route("", name="app.backend-route")
-     */
+
     public function __invoke()
     {
         return new Response($this->twig->render(
@@ -78,7 +75,7 @@ the `ContaoCoreBundle` routes.
 
 ```yaml
 # config/routing.yml
-app:
+app.controller:
     resource: ../src/Controller
     type: annotation
 ```
