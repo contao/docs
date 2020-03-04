@@ -89,10 +89,14 @@ Another version of the size array is `[0, 0, imageSizeConfigKey]` where imageSiz
 If you have a DCA with an image and an image size field, you can use the `Contao\Controller::addImageToTemplate()` method to get all the data that is needed to use the image in the `image.html5` template. This method can be used like this:
 
 ```php
-$template = new FrontendTemplate('mod_mymodule');
-$image = \FilesModel::findByUuid($uuid);
+use Contao\FrontendTemplate;
+use Contao\FilesModel;
+use Contao\Controller;
 
-$this->addImageToTemplate($template, [
+$template = new FrontendTemplate('mod_mymodule');
+$image = FilesModel::findByUuid($uuid);
+
+Controller::addImageToTemplate($template, [
     'singleSRC' => $image->path,
     'size' => $size,
 ], null, null, $image);
