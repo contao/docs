@@ -158,7 +158,7 @@ services:
 
 ```yaml
 # config/routing.yml
-app.routes:
+app.controller:
     resource: ../src/Controller
     type: annotation
 ```
@@ -178,6 +178,15 @@ using annotations for service tagging.
 All this is not needed, if you only need to change or extend the Data
 Container Array definition of a table, or want to change a translation for
 example.
+
+{{% notice tip %}}
+Starting with Contao **4.9** (Managed Edition), any class within the `App\` namespace 
+within `src/` will be automatically registered as a service, with autowiring and
+autoconfiguration enabled. Controllers as services will work as well. You can still 
+provide your own `services.yml` in order to adjust the service registration to your 
+needs. Keep in mind that you still need to provide your own `routing.yml` in order 
+to register your routes.
+{{% /notice %}}
 
 Next: [create your first DCA adjustment][12].
 
