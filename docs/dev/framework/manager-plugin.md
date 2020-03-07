@@ -269,7 +269,7 @@ component will tell you:
 Symfony makes sure that `security.firewalls` is specified only once. This is the only way it can ensure the order of
 firewalls is correct.
 
-Thanks to the `ExtensionPluginInterface` you can, however, modify the all extension configurations of all the other bundles
+Thanks to the `ExtensionPluginInterface` you can, however, modify all extension configurations of all the other bundles
 **before** that check is executed.
 
 Here's an example of how you could add your own firewall in front of the Contao `frontend` firewall:
