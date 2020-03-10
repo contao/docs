@@ -27,11 +27,11 @@ Creating a content element is very similar to creating [front end modules][modul
 
 To create a new content element, the following things must be defined and implemented:
 
-* __Fragment Controller__<br>
+* __Fragment Controller__ <br>
   The actual implementation of the content element is done via a class that extends
   from `AbstractContentElementController` of the Contao core.
 
-* __Service Tag__<br>
+* __Service Tag__ <br>
   To identify the controller as a Contao content element, the service must be tagged
   with service tag `contao.content_element`.
 
@@ -42,11 +42,11 @@ To create a new content element, the following things must be defined and implem
     class name of the controller from pascal case to snake case and removing a possible 
     `Controller` postfix.
   
-  * __Category__<br>
+  * __Category__ <br>
     All content elements are categorised within the type dropdown of the content element's
     palette. A `category` must be defined in the service tag for each content element.
 
-* __Template__<br>
+* __Template__ <br>
   The template name follows the naming convention mentioned beforehand. It prepends
   the *type* of the element with the prefix `ce_`.
 

@@ -29,13 +29,13 @@ services:
 
 The migration interface specifies three methods that need to be implemented:
 
-* __getName()__<br>
+* __getName()__ <br>
   A name that describes what the migration does. This text is shown to users when they are asked if they want to execute the migration.
 
-* __shouldRun()__<br>
+* __shouldRun()__ <br>
   This method checks if all prerequisites that are needed for the migration to run are met and if it actually needs to run. This method should be written very defensively because the application might be in an unexpected state when the method gets called, e.g. the database could be completely empty.
 
-* __run()__<br>
+* __run()__ <br>
   As the name suggests, that is where the real magic happens. If `shouldRun()` returned `true`, this method will be called and should do the actual migration.<br>
   It returns a `MigrationResult` object that can hold more information about what happened during the execution and if the migration was successful or not.<br>
   If something goes unexpectedly wrong here and you want to abort the migration process completeley you should throw an exception here.

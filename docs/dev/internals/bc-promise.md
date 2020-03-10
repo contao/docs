@@ -40,7 +40,7 @@ Therefore, our BC promise deviates from the Symfony BC promise in some regards:
 
 {{% notice tip %}}
 
-**Composition over Inheritance**<br>
+**Composition over Inheritance** <br>
 The general rule of thumb is that we try to break as little as possible and as much as required. To make sure you
 are affected as little as possible, you might also benefit from best practices in software engineering such as
 preferring [Composition over Inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance).

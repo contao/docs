@@ -11,26 +11,26 @@ roles, whom to talk to and where to get help.
 
 This document is split into these chapters:
 
-* **[Getting Started](getting-started)**<br>
+* **[Getting Started](getting-started)** <br>
   This chapter provides an overview over the capabilities of the Contao Open Source
   CMS and should help new developers with getting their web application project started
   with Contao more easily.
 
-* **[Framework](framework)**<br>
+* **[Framework](framework)** <br>
   This chapter describes the ins and outs of the Contao ecosystem. It
   provides articles about Contao libraries, how to use and extend Contao
   and general articles about concepts unique to this CMS.
   
-* **[Reference](reference)**<br>
+* **[Reference](reference)** <br>
   The reference is a goto guide for all available options in certain
   features, like say DCA configuration or Hooks.
 
-* **[Guides](guides)**<br>
+* **[Guides](guides)** <br>
   This section contains a continuously growing collection of specific
   recipes and guides that explain how to correctly solve the most recurrent problems
   that Contao & Symfony developers face in their day to day work.
 
-* **[Internals](internals)**<br>
+* **[Internals](internals)** <br>
   This section contains documentation about various internal procedures or articles
   about topics that do not fit into the regular documentation.
 
@@ -90,11 +90,11 @@ let Contao display it in the back end.
 Everything related to Contao development happens in one of the repositories assigned to the ["Contao" organisation on
 GitHub][1]. Here's a description of the most important repositories you should be familiar with:
 
-* **contao/contao**<br>
+* **contao/contao** <br>
   This is the Contao Monorepository where all of the active development of the `core-bundle` and additional bundles takes
   place. It's likely the most important repository you want to follow.
 
-* **contao/managed-edition**<br>
+* **contao/managed-edition** <br>
   The Contao bundles are designed in such a way that you can add them to your very own Symfony application but most of
   the setups of Contao are using the "Managed Edition". The Managed Edition basically consists of the `contao/manager-bundle`
   which itself provides the skeleton of a full Symfony application. Using a Composer script it will build a complete
@@ -104,7 +104,7 @@ GitHub][1]. Here's a description of the most important repositories you should b
   The idea is that bundles can register themselves to the kernel when it is installed, similar to what Symfony Flex does
   with its recipes. For that matter, we use the "Manager Plugin".
   
-* **contao/manager-plugin**<br>
+* **contao/manager-plugin** <br>
   The Contao Manager Plugin is a Composer plugin that provides access to bundles to register themselves to the kernel,
   configuring the DI container, adding routes and much more.
 
@@ -113,19 +113,19 @@ Contao Managed Edition a lot of tedious work is automated for you but to set it 
 feel comfortable with the CLI, Composer and much more. As a developer that should not be much of an issue for you so you
 might probably stop here but to get a complete picture of the Contao ecosystem, please continue reading.
   
-* **contao/contao-manager**<br>
+* **contao/contao-manager** <br>
   The majority of Contao's users want to be able to install Contao on their web server and manage it there.
   The Contao Manager is Contao's answer to this need. It's a GUI that's compiled to a single PHAR file which is [distributed
   on contao.org][2] and provides self update functionality. You can install it on your web server and start managing your
   setup using a nice GUI.
 
-* **contao/package-metadata**<br>
+* **contao/package-metadata** <br>
   Composer packages usually don't contain extensive descriptions and they are managed in English only which is why
   Contao provides a repository where additional metadata and translations for these packages can be provided. They
   are then used within the Contao Manager so if you want people to not just install your Contao bundle on CLI but also
   from the Contao Manager you might want to contribute additional information here.
   
-* **contao/docs**<br>
+* **contao/docs** <br>
   This is the repository where the documentation you're reading is being managed. The more contributors the better the
   documentation. Thus, we're counting on your contribution!
 
@@ -158,7 +158,7 @@ Other than that there are the following channels:
 
 * **Slack:** [Join the Contao workspace][Slack]
   
-* **Forums**<br>
+* **Forums** <br>
   English: https://community.contao.org/en/<br>
   German: https://community.contao.org/de/
 
