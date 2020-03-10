@@ -186,23 +186,4 @@ Starting with Contao **4.6** you could also fetch the `pageModel` from the reque
 `kernel` event listener.
 
 
-## Ignoring GET Parameters
-
-The search index creates entries for each unique URL, including its GET parameters, since those parameters typically
-change the content of the page. However, you might want to ignore URLs with certain GET parameters to be added to the
-search index. Contao provides a legacy way of doing this via the `$GLOBALS['TL_NOINDEX_KEYS']` global array. It already
-contains the following default GET parameters:
-
-```php
-$GLOBALS['TL_NOINDEX_KEYS'] = array('id', 'file', 'token', 'day', 'month', 'year', 'page', 'keywords', 'PHPSESSID');
-```
-
-You can alter or extend this array according to your needs.
-
-```php
-// contao/config/config.php
-$GLOBALS['TL_NOINDEX_KEYS'][] = 'my_param';
-```
-
-
 [generatePage]: /reference/hooks/generatePage
