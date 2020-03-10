@@ -15,13 +15,13 @@ Wenn du die Erweiterung »terminal42/contao-easy_themes« deinstallieren möchte
 Schaltfläche »Entfernen« neben der Erweiterung. Du kannst natürlich auch noch weitere Erweiterung zur Deinstallation 
 vormerken.
 
-![Erweiterungen im Contao Manager zur Deinstallation vormerken](/de/installation/images/de/erweiterungen-im-contao-manager-zur-deinstallation-vormerken.png)
+![Erweiterungen im Contao Manager zur Deinstallation vormerken](/de/installation/images/de/erweiterungen-im-contao-manager-zur-deinstallation-vormerken.png?classes=shadow)
 
 Klicke auf »Änderungen anwenden« um die Deinstallation zu starten. Die Deinstallation kann nun mehrere Minuten in 
 Anspruch nehmen. Details zum Deinstallationsprozess können durch Klick auf folgendes Symbol 
 ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
 
-![Erweiterungen im Contao Manager deinstallieren](/de/installation/images/de/erweiterungen-im-contao-manager-deinstallieren.png)
+![Erweiterungen im Contao Manager deinstallieren](/de/installation/images/de/erweiterungen-im-contao-manager-deinstallieren.png?classes=shadow)
 
 Sobald der Contao Manager die Erweiterung(en) deinstalliert hat, musst du das [Contao-Installtool](../contao-installtool/) 
 aufrufen, um die Datenbank, falls nötig, zu aktualisieren.

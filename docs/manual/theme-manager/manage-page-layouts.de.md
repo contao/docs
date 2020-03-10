@@ -170,7 +170,7 @@ Seitenlayouts gemeint, sondern das `<head>`-Tag des HTML-Quelltextes.
 In dieser Sektion weist du den einzelnen Layoutbereichen die Frontend-Module zu, die auf der Seite dargestellt werden 
 sollen. Die Module jedes Layoutbereichs werden in der von dir festgelegten Reihenfolge untereinander angeordnet.
 
-![Frontend-Module der Contao Official Demo](/de/theme-manager/images/de/frontend-module-der-contao-official-demo.png)
+![Frontend-Module der Contao Official Demo](/de/theme-manager/images/de/frontend-module-der-contao-official-demo.png?classes=shadow)
 
 **Eingebundene Module:** Hier wählst du die Module für das Seitenlayout aus.
 

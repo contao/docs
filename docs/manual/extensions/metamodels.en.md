@@ -15,7 +15,7 @@ The possibilities which data content can be used range from product catalogues, 
 lists, houses for sale or rent to picture galleries or multilingual text/image content - all that can be integrated
 seamlessly into Contao. 
 
-![MetaModels at Backend](/de/extensions/images/en/metamodels-backend.jpg)
+![MetaModels at Backend](/de/extensions/images/en/metamodels-backend.jpg?classes=shadow)
 
 For working with MetaModels you don't have to have any programming knowledge. For the start, however, it is recommended,
 to look at the [manual](https://metamodels.readthedocs.io/en/latest/) or to use one of the

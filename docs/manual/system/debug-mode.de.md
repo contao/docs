@@ -145,7 +145,7 @@ jeder Server-Anfrage. Die Toolbar erscheint am unteren Rand des Browser-Fensters
 wenn der Debug-Modus aktiv ist. Sie kann über das Symfony Logo geschlossen und geöffnet
 werden.
 
-![Symfony toolbar](/de/system/images/de/symfony-toolbar.png)
+![Symfony toolbar](/de/system/images/de/symfony-toolbar.png?classes=shadow)
 
 Unter den Informationen, die abgefragt werden können befindet sich zum Beispiel:
 

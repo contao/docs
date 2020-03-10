@@ -12,7 +12,7 @@ _Projektwebseite unter [Maklermodul für Contao](https://maklermodul.de)_
 
 Das Maklermodul für Immobilienmakler ist eine kostenpflichtige Erweiterung für das Contao CMS.
 
-![Maklermodul Listenansicht im Frontend](/de/extensions/images/de/maklermodul-bundle-frontend.png)
+![Maklermodul Listenansicht im Frontend](/de/extensions/images/de/maklermodul-bundle-frontend.png?classes=shadow)
 
 Eine detaillierte Anleitung findest du im [Maklermodul Handbuch](https://docs.pdir.de/#/maklermodul/index).
 

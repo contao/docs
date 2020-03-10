@@ -10,7 +10,7 @@ Um das Anlegen von Inhalten möglichst intuitiv zu gestalten, gibt es in Contao 
 das genau auf dessen Anforderungen abgestimmt ist. Du kannst unbegrenzt viele Inhaltselemente pro Artikel anlegen und 
 den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 
-![Den Zugriff auf ein Inhaltselement einschränken](/de/article-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png)
+![Den Zugriff auf ein Inhaltselement einschränken](/de/article-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png?classes=shadow)
 
 **Element schützen:** Das Inhaltselement ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein 
 Mitglied im Frontend angemeldet hat.
@@ -49,7 +49,7 @@ Rich Text Editor, der es dir ähnlich wie in einem Textverarbeitungsprogramm erl
 Knopfdruck zu setzen. Contao verwendet [TinyMCE](https://www.tiny.cloud/), einen Open Source Editor der schwedischen 
 Firma Moxiecode, der sich gut an die Erfordernisse der Barrierefreiheit anpassen lässt.
 
-![Der Rich Text Editor TinyMCE](/de/article-management/images/de/der-rich-text-editor-tinymce.png)
+![Der Rich Text Editor TinyMCE](/de/article-management/images/de/der-rich-text-editor-tinymce.png?classes=shadow)
 
 **Überschrift:** Hier kannst du eine Überschrift eingeben.
 
@@ -67,7 +67,7 @@ dabei zur Verfügung:
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du den Upload hier nachholen, ohne die Eingabemaske zu verlassen.
 
-![Einem Text ein Bild hinzufügen](/de/article-management/images/de/einem-text-ein-bild-hinzufuegen.png)
+![Einem Text ein Bild hinzufügen](/de/article-management/images/de/einem-text-ein-bild-hinzufuegen.png?classes=shadow)
 
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
@@ -163,7 +163,7 @@ Das Inhaltselement »Aufzählung« fügt dem Artikel eine nicht verschachtelte 
 nummerierten (»ordered list«) und einer umnummerierten (»unordered list«) Aufzählung wählen. Beim Anlegen und 
 Bearbeiten der Listenpunkte unterstützt dich ein JavaScript-Assistent.
 
-![JavaScript-Assistent für Auflistungen](/de/article-management/images/de/javascript-assistent-fuer-auflistungen.png)
+![JavaScript-Assistent für Auflistungen](/de/article-management/images/de/javascript-assistent-fuer-auflistungen.png?classes=shadow)
 
 Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/de/icons/tablewizard.svg?classes=icon) 
 neben der Feldbezeichnung »Listeneinträge« öffnest du den CSV-Import-Wizard, mit dem du Listendaten aus einer CSV-Datei 
@@ -203,7 +203,7 @@ ein JavaScript-Assistent. Mit den folgenden Navigationsicons kannst du die Tabel
 - ![Das Element durch Ziehen und Ablegen verschieben](/de/icons/drag.svg?classes=icon) 
 **Das Element durch Ziehen und Ablegen verschieben**
 
-![JavaScript-Assistent für Tabellen](/de/article-management/images/de/javascript-assistent-fuer-tabellen.png)
+![JavaScript-Assistent für Tabellen](/de/article-management/images/de/javascript-assistent-fuer-tabellen.png?classes=shadow)
 
 Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/de/icons/tablewizard.svg?classes=icon) 
 neben der Feldbezeichnung »Tabelleneinträge« öffnest du den CSV-Import-Wizard, mit dem du Tabellendaten aus einer 
@@ -705,7 +705,7 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Hyperlink« fügt dem Artikel einen Link auf eine externe Webseite oder eine E-Mail-Adresse hinzu. Du 
 kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement eingeben.
 
-![Einen Hyperlink anlegen](/de/article-management/images/de/einen-hyperlink-anlegen.png)
+![Einen Hyperlink anlegen](/de/article-management/images/de/einen-hyperlink-anlegen.png?classes=shadow)
 
 **Link-Adresse:** Gebe die Link-Adresse inklusive des Netzwerkprotokolls ein. Für Webseiten lautet das 
 Netzwerkprotokoll normalerweise `http://` oder `https://`, für E-Mail-Adressen `mailto:` und für Telefonnummern `tel:`. 
@@ -729,7 +729,7 @@ der Satz »Besuchen Sie unsere Firmenseite!« steht.
 Wenn du die Option **Einen Bildlink erstellen** auswählst, kannst du statt eines Textlinks einen Bildlink erstellen. 
 Alternativ dazu kannst du auch ein Bildelement erstellen und mit einem Link versehen.
 
-![Einen Bildlink erstellen](/de/article-management/images/de/einen-bildlink-erstellen.png)
+![Einen Bildlink erstellen](/de/article-management/images/de/einen-bildlink-erstellen.png?classes=shadow)
 
 **Quelldatei:** Hier wählst du das zu verwendende Bild aus.
 
@@ -800,7 +800,7 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Bild« fügt dem Artikel ein Bild hinzu. Ein Bild kann eine Großansicht haben oder als Bildlink auf 
 eine bestimmte URL verweisen.
 
-![Ein Bildelement anlegen](/de/article-management/images/de/ein-bildelement-anlegen.png)
+![Ein Bildelement anlegen](/de/article-management/images/de/ein-bildelement-anlegen.png?classes=shadow)
 
 **Quelldatei:** Hier wählst du das zu verwendende Bild aus.
 
@@ -850,7 +850,7 @@ Das Inhaltselement »Bildergalerie« fügt dem Artikel eine Bildergalerie hinzu
 Vorschaubilder (engl. »Thumbnails«), die in einer Liste aufgelistet sind und beim Anklicken vergrößert werden. Bei 
 sehr vielen Bildern kann die Galerie auf mehrere Seiten verteilt werden.
 
-![Die Bildergalerie im Frontend](/de/article-management/images/de/die-bildergalerie-im-frontend.png)
+![Die Bildergalerie im Frontend](/de/article-management/images/de/die-bildergalerie-im-frontend.png?classes=shadow)
 
 **Quelldateien:** Hier wählst du einen oder mehrere Ordner bzw. Dateien aus, die in der Bildergalerie enthalten sein 
 sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen Bilder in die Galerie. Die 
@@ -1170,7 +1170,7 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Downloads« fügt dem Artikel mehrere Download-Links hinzu. Beim Anklicken eines Links öffnet sich 
 der »Datei speichern unter …«-Dialog, und du kannst die Datei auf deinem lokalen Rechner speichern.
 
-![Das Downloads-Element im Frontend](/de/article-management/images/de/das-downloads-element-im-frontend.png)
+![Das Downloads-Element im Frontend](/de/article-management/images/de/das-downloads-element-im-frontend.png?classes=shadow)
 
 Die Besonderheit in Contao ist, dass diese Download-Links auch mit geschützten Dateien funktionieren, auf die du nicht 
 direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
@@ -1331,7 +1331,7 @@ du in der Navigation in der Gruppe Inhalte findest. Dort werden sämtliche Komme
 ein Inhaltselement, einen Artikel oder einen Blog-Beitrag beziehen. Bei Bedarf kannst du die Liste der Kommentare nach 
 ihrem Ursprung oder ihrem Elternelement filtern.
 
-![Kommentare nach ihrem Ursprung filtern](/de/article-management/images/de/kommentare-nach-ihrem-ursprung-filtern.png)
+![Kommentare nach ihrem Ursprung filtern](/de/article-management/images/de/kommentare-nach-ihrem-ursprung-filtern.png?classes=shadow)
 
 Falls du die Option »Kommentare moderieren« aktiviert hast, kannst du neue Kommentare in der Kommentarverwaltung 
 prüfen, bevor sie auf der Webseite erscheinen. So verhinderst du z. B. eventuelle Spamversuche.

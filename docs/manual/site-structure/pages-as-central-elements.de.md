@@ -26,7 +26,7 @@ mit allen Haupt- und Unterseiten erstellt. Benutze die grauen Icons mit dem
 ![Bereich schließen](/de/icons/folMinus.svg?classes=icon) Minuszeichen links neben den Seitennamen, um Unterseiten 
 aus- oder einzuklappen.
 
-![Unterseiten aus- und einklappen](/de/site-structure/images/de/unterseiten-aus-und-einklappen.png)
+![Unterseiten aus- und einklappen](/de/site-structure/images/de/unterseiten-aus-und-einklappen.png?classes=shadow)
 
 Dank der hierarchischen Seitenstruktur ist es möglich, Eigenschaften einer übergeordneten Seite an ihre Unterseiten zu 
 vererben. Für deine Arbeit bedeutet das, dass du ein bestimmtes Seitenlayout oder eine bestimmte Zugriffsberechtigung 

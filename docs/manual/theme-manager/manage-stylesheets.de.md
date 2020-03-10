@@ -101,7 +101,7 @@ In Contao kannst du mit dieser Schreibweise allerdings so gar nicht in Berühru
 Eingabemaske festlegen kannst. Lediglich den Teil vor den geschweiften Klammern, den sogenannten Selektor, musst du von 
 Hand in das dafür vorgesehene Feld eingeben.
 
-![Den Außenabstand im Stylesheet-Editor festlegen](/de/theme-manager/images/de/den-aussenabstand-im-stylesheet-editor-festlegen.png)
+![Den Außenabstand im Stylesheet-Editor festlegen](/de/theme-manager/images/de/den-aussenabstand-im-stylesheet-editor-festlegen.png?classes=shadow)
 
 
 ### Reihenfolge der Formatdefinitionen

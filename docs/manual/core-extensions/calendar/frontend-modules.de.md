@@ -10,7 +10,7 @@ Nachdem du nun weißt, wie Kalender und Events im Backend verwaltet werden, wird
 im Frontend darstellen kannst. Die »Kalender«-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über 
 die Modulverwaltung konfigurieren kannst.
 
-![Kalender-Module](/de/core-extensions/calendar/images/de/kalender-module.png)
+![Kalender-Module](/de/core-extensions/calendar/images/de/kalender-module.png?classes=shadow)
 
 
 ## Kalender
@@ -18,7 +18,7 @@ die Modulverwaltung konfigurieren kannst.
 Das Frontend-Modul »Kalender« fügt der Webseite einen Kalender hinzu, in dem die Events eines oder mehrerer Kalender 
 dargestellt werden.
 
-![Das Kalender-Modul im Frontend](/de/core-extensions/calendar/images/de/das-kalender-modul-im-frontend.png)
+![Das Kalender-Modul im Frontend](/de/core-extensions/calendar/images/de/das-kalender-modul-im-frontend.png?classes=shadow)
 
 
 ### Modul-Konfiguration

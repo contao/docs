@@ -14,4 +14,4 @@ news list.
 Detailed instructions can be found at [docs.pdir.de](https://docs.pdir.de/#/social-feed/index).
 You can find a demo installation at [demo.pdir.de](https://demo.pdir.de/social-feed).
 
-![Social Feed](/de/extensions/images/en/social-feed.png)
+![Social Feed](/de/extensions/images/en/social-feed.png?classes=shadow)

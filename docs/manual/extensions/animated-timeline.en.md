@@ -17,8 +17,8 @@ Detailed instructions can be found at [docs.pdir.de](https://docs.pdir.de/#/anim
 
 **Horizontal Orientation:**
 
-![Horizontal Orientation](/de/extensions/images/en/animated-timeline_horizontal.png)
+![Horizontal Orientation](/de/extensions/images/en/animated-timeline_horizontal.png?classes=shadow)
 
 **Vertical Orientation:**
 
-![Vertical Orientation](/de/extensions/images/en/animated-timeline_vertical.png)
+![Vertical Orientation](/de/extensions/images/en/animated-timeline_vertical.png?classes=shadow)

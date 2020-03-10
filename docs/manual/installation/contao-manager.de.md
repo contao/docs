@@ -83,7 +83,7 @@ Manager-Datei zerstört. Füge deshalb die Dateiendung <code>.php</code> erst na
 Rufe anschließend mit deinem Browser die URL <code>www.example.com/contao-manager.phar.php</code> auf. Du solltest nun 
 die Willkommensseite des Contao Managers sehen.
 
-![Willkommensseite des Contao Managers](/de/installation/images/de/willkommensseite-des-contao-managers.png)
+![Willkommensseite des Contao Managers](/de/installation/images/de/willkommensseite-des-contao-managers.png?classes=shadow)
 
 
 ### Grundkonfiguration
@@ -110,7 +110,7 @@ unserem Wiki ergänzen](https://github.com/contao/contao-manager/wiki).
 Wähle die passende Konfiguration für deinen Server- oder Hosting-Anbieter aus. Für eine manuelle Konfiguration wähle 
 »Andere …«.
 
-![Serverkonfiguration](/de/installation/images/de/serverkonfiguration.png)
+![Serverkonfiguration](/de/installation/images/de/serverkonfiguration.png?classes=shadow)
 
 
 #### Composer Resolver Cloud

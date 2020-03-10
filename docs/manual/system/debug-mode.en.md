@@ -139,7 +139,7 @@ of any request. When the debug mode is enabled, the toolbar will appear at the
 bottom of the browser window in a fixed position. It can be collapsed and opened
 by clicking onto the Symfony logo.
 
-![Symfony toolbar](/de/system/images/en/symfony-toolbar.png)
+![Symfony toolbar](/de/system/images/en/symfony-toolbar.png?classes=shadow)
 
 Some of the information you can gather via the profiler are:
 

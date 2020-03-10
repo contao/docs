@@ -61,13 +61,13 @@ Zahnrad-Symbol und gebe die gewünschte Version ein. Alle anderen Contao-Paketen
 Aktualisierung vorgemerkt werden. Durch einen Klick auf die Schaltfläche »Änderungen 
 anwenden« schiebst du die Aktualisierung an.
 
-![Aktualisierung für Minor-Release starten](/de/installation/images/de/aktualisierung-fuer-minor-release-starten.png)
+![Aktualisierung für Minor-Release starten](/de/installation/images/de/aktualisierung-fuer-minor-release-starten.png?classes=shadow)
 
 Die Aktualisierung kann nun mehrere Minuten in Anspruch nehmen. Details zum Aktualisierungsprozess können durch Klick 
 auf folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
 werden.
 
-![Aktualisierung für Minor-Release abgeschloßen](/de/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png)
+![Aktualisierung für Minor-Release abgeschloßen](/de/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png?classes=shadow)
 
 
 #### Datenbanktabellen aktualisieren

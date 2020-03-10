@@ -18,7 +18,7 @@ damit die Seite schneller lädt.
 Die Navigation erfolgt wie überall in Contao mithilfe von Navigationssymbolen. Die Optionen sind dabei für Ordner und 
 Dateien unterschiedlich.
 
-![Die Dateiverwaltung](/de/file-manager/images/de/der-dateimanager.png)
+![Die Dateiverwaltung](/de/file-manager/images/de/der-dateimanager.png?classes=shadow)
 
 **![Datei oder Verzeichnis bearbeiten](/de/icons/edit.svg?classes=icon) Bearbeiten:** Öffnet eine Eingabemaske zum 
 Umbenennen einer Datei bzw. eines Ordners. Außerdem können Metadaten von Dateien in der passenden Sprache eingepflegt 
@@ -55,7 +55,7 @@ Navigationssymbol ![Dateien auf den Server hochladen](/de/icons/new.svg?classes=
 
 In den Benutzereinstellungen kannst du darüber hinaus [DropZone](https://www.dropzonejs.com/) aktivieren.
 
-![Dateien übertragen](/de/file-manager/images/de/dateien-uebertragen.png)
+![Dateien übertragen](/de/file-manager/images/de/dateien-uebertragen.png?classes=shadow)
 
 In beiden Fällen prüft die Dateiverwaltung beim Upload die Größe der zu übertragenden Datei, und – falls es sich dabei um 
 ein Bild handelt – auch dessen Abmessungen. Standardmäßig werden Dateien bis zu 2 MB und Bilder bis zu 3000x3000 Pixel 

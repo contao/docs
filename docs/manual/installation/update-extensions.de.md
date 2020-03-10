@@ -17,7 +17,7 @@ Aktualisierung vormerken. Klicke auf »Änderungen anwenden« um die Aktualisier
 nun mehrere Minuten in Anspruch nehmen. Details zum Aktualisierungsprozess können durch Klick auf folgendes Symbol 
 ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
 
-![Erweiterungen im Contao Manager aktualisieren](/de/installation/images/de/erweiterungen-im-contao-manager-aktualisieren.png)
+![Erweiterungen im Contao Manager aktualisieren](/de/installation/images/de/erweiterungen-im-contao-manager-aktualisieren.png?classes=shadow)
 
 Sobald der Contao Manager die Erweiterung(en) aktualisiert hat, musst du das [Contao-Installtool](../contao-installtool/) 
 aufrufen, um die Datenbank, falls nötig, zu aktualisieren.

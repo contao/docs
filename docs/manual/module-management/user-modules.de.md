@@ -294,7 +294,7 @@ welche Felder bearbeitet werden dürfen und welche nicht.
 
 **Editierbare Felder:** Hier kannst du die editierbaren Felder festlegen.
 
-![Editierbare Felder festlegen](/de/module-management/images/de/editierbare-felder-festlegen.png)
+![Editierbare Felder festlegen](/de/module-management/images/de/editierbare-felder-festlegen.png?classes=shadow)
 
 **Abonnierbare Newsletter:** Wenn du die Contao Newsletter-Erweiterung verwendest, kannst du hier festlegen, welche 
 Verteiler ein Mitglied abonnieren kann.
