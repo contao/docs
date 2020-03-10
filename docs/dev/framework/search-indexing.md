@@ -182,8 +182,8 @@ class GeneratePageListener implements ServiceAnnotationInterface
 }
 ```
 
-Starting with Contao **4.6** you could also fetch the `pageModel` from the request attributes (if present) in your own `kernel` 
-event listener.
+Starting with Contao **4.6** you could also fetch the `pageModel` from the request attributes (if present) in your own 
+`kernel` event listener.
 
 
 ## Ignoring GET Parameters
