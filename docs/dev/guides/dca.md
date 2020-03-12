@@ -52,7 +52,6 @@ For our DCA configuration of `tl_vendor`, we want to define the following:
 * We want to use the versioning feature to be enabled for these records.
 * We will have a primary key called `id` for our records.
 
-<div></div>
 ```php
 // contao/dca/tl_vendor.php
 $GLOBALS['TL_DCA']['tl_vendor'] = [
