@@ -152,12 +152,12 @@ class BackendMenuListener
         $contentNode = $tree->getChild('content');
 
         $node = $factory
-            ->createItem('my-modules')
+            ->createItem('my-module')
                 ->setUri($this->router->generate(BackendController::class) )
                 ->setLabel('My Modules')
                 ->setLinkAttribute('title', 'Title')
-                ->setLinkAttribute('class', 'my-modules')
-                ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-modules');
+                ->setLinkAttribute('class', 'my-module')
+                ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-module');
 
         $contentNode->addChild($node);
     }
