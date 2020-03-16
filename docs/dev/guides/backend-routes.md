@@ -33,7 +33,7 @@ use Twig\Environment as TwigEnvironment;
 
 /**
  * @Route("/contao/my-backend-route",
- *     name=App\Controller\BackendController::class 
+ *     name=App\Controller\BackendController::class,
  *     defaults={
  *         "_scope" = "backend",
  *         "_token_check" = true,
@@ -169,7 +169,7 @@ This EventListener creates a new menu node and handles its own `currentState` by
 reading and matching the previously mentioned request attribute `_backend_module`.
 
 The only thing left to do is to register the EventListener in the service container.
-For this to work, we add the following lines to our service configuration in `app/config/services.yml`.
+For this to work, we add the following lines to our service configuration in `config/services.yml`.
 
 ```yaml
 services:
