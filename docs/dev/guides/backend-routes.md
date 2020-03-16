@@ -124,6 +124,7 @@ create one that listens for the menu event to be dispatched.
 // src/EventListener/BackendMenuListener.php
 namespace App\EventListener;
 
+use App\Controller\BackendController;
 use Contao\CoreBundle\Event\MenuEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
@@ -152,7 +153,7 @@ class BackendMenuListener
 
         $node = $factory
             ->createItem('my-modules')
-                ->setUri($this->router->generate('app.backend-route') )
+                ->setUri($this->router->generate(BackendController::class) )
                 ->setLabel('My Modules')
                 ->setLinkAttribute('title', 'Title')
                 ->setLinkAttribute('class', 'my-modules')
