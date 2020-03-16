@@ -149,7 +149,7 @@ services:
 
     App\:
         resource: ../src
-        exclude: ../src/{Entity,Migrations,Resources,Tests}
+        exclude: ../src/{Entity,Migrations,Model,Resources,Tests}
     
     App\Controller\:
         resource: ../src/Controller
