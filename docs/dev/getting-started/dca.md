@@ -10,7 +10,11 @@ be adjusted to quickly add new fields to content elements, front end modules & n
 entries etc., change some of their properties for your specific needs and to set up
 new database tables for your own custom records.
 
-Any DCA adjustments go into the `contao/dca/` folder. There, you have to create
+Any DCA adjustments go into the `app/Resources/contao/dca/` folder.
+{{< version "4.8" >}}
+`contao/dca/`
+
+There, you have to create
 individual files for each Data Container. For example, if you want to adjust the
 DCA for news entries, whose Data Container is called `tl_news`, then you need to
 create a file called `tl_news.php` there.
@@ -22,6 +26,8 @@ a palette is through the [Palette Manipulator][3]. The example adds our new fiel
 to the _Title_ section of a news entry.
 
 ```php
+// app/Resources/contao/dca/tl_news.php
+// {{< version "4.8" >}}
 // contao/dca/tl_news.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
