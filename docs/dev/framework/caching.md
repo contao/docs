@@ -336,7 +336,7 @@ cases, it is most likely better to cache the whole page and **re-generate more o
 fragments **on each request**.
 
 Symfony automatically detects if it is talking to  a gateway cache that supports ESI
-(like Symfony's built in reverse proxy, that Contao uses). ESI is also supported by
+(like Symfony's built in reverse proxy, that the Contao Managed Edition uses). ESI is also supported by
 reverse proxies like Varnish and several major CDNs. If ESI is not supported by the
 reverse proxy, the fragments will be rendered *inline* automatically.
 
