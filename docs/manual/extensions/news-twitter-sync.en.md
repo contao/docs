@@ -8,7 +8,7 @@ description: Contao News Twitter Sync is a commercial extension for synchronisat
 
 _by [inspiredminds](https://www.inspiredminds.at/)_
 
-_Project web site: [Contao News Facebook Sync](https://www.inspiredminds.at/contao-news-twitter)_
+_Project web site: [Contao News Twitter Sync](https://www.inspiredminds.at/contao-news-twitter)_
 
 This extension allows to automatically import Twitter tweets as news entries. It 
 also enables you to automatically post news entries on a Twitter profile as a tweet. 

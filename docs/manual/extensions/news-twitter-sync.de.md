@@ -9,7 +9,7 @@ url: erweiterungen/news-twitter-sync
 
 _von [inspiredminds](https://www.inspiredminds.at/)_
 
-_Projekt Webseite unter [Contao News Twitter](https://www.inspiredminds.at/contao-news-twitter)_
+_Projekt Webseite unter [Contao News Twitter Sync](https://www.inspiredminds.at/contao-news-twitter)_
 
 Mit dieser Extension können automatisch Tweets von einem Twitter Profil als Nachrichten 
 in Nachrichtenarchive importiert werden. Es können außerdem automatisch Nachrichten 
