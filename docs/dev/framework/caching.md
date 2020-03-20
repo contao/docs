@@ -259,8 +259,8 @@ There are two fundamentally different ways to render fragments:
  2. **Subrequest:** By generating an (internal) URL for the fragment, the fragment content is merged **after** caching
     the page, which allows a fragment to have a different cache time than the main page. The `esi` renderer tells
     the reverse proxy (cache) to fetch multiple URLs on a request and merge fragments before delivering to the client.
-    There's also an `hinclude` renderer, which merges fragments in the browser using JavaScript, but there's hardly
-    any use case for this anymore today.
+    There's also an `hinclude` renderer which allows browser to merge fragments using JavaScript, but the client-side
+    part is not provided out-of-the-box.
 
 
 ### Inline Fragments
@@ -270,7 +270,7 @@ Before **Contao 4.9**, inline fragments cannot affect the cache time of the page
 {{% /notice %}}
 
 By default, fragments like frontend modules and content elements are rendered directly inside the main request.
-This means the content of an inline fragment will be cached for as long as the page is cached, per definition
+This means the content of an inline fragment will be cached for as long as the page is cached, as configured
 in the page setting. If a fragment returns caching information in its response, the page's cache time and the fragment
 will be merged to the lowest common denominator. For example, if the page is cacheable for a day, but the fragment
 only for one hour, the whole page will only be cached for one hour.
