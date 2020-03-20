@@ -25,7 +25,8 @@ connect it with your favourite search engine such as [Algolia](https://www.algol
 
 {{< version "4.9" >}}
 
-## Triggering the search index
+
+## Triggering the Search Index
 
 Indexing in Contao happens in two different ways which may or may not be combined:
 
@@ -65,7 +66,8 @@ contao:
 As you can see, by setting both values to `false` you can disable the listener completely and rely on e.g. your regular
 crawl cron job to do the work and cleaning up orphan indexed entries yourself.
 
-## The search indexers
+
+## The Search Indexers
 
 So far, we've only looked at what triggers the search indexing process but not the indexers themselves.
 The search indexers are responsible to index a given `Contao\CoreBundle\Search\Document`.
@@ -148,3 +150,40 @@ $jsonLdScriptsData =  $document->extractJsonLdScripts('https://schema.org', 'Pro
 The variable `$jsonLdScriptsData` now contains an already decoded array of all JSON LD scripts with `@context` equal to
 `https://schema.org` and `@type` equal to `Product`. You can conveniently extract the product price and index it along
 with all the other data you need.
+
+
+## Dynamically Disabling Indexing for Pages
+
+Within the back end, you can disable search indexing for specific pages in the settings of each page. In some cases, you
+might want to dynamically disable indexing under certain conditions for arbitrary pages. To disable indexing, you need
+to set the `noSearch` property of the `PageModel` object of the current page to `true`, before the page's content is added 
+to the index.
+
+There are multiple ways to achieve this. One way is to use the [generatePage][generatePage] hook:
+
+```php
+// src/EventListener/GeneratePageListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
+
+/**
+ * @Hook("generatePage")
+ */
+class GeneratePageListener implements ServiceAnnotationInterface
+{
+    public function __invoke(\Contao\PageModel $pageModel): void
+    {
+        if (/* … */) {
+            $pageModel->noSearch = true;
+        }
+    }
+}
+```
+
+Starting with Contao **4.6** you could also fetch the `pageModel` from the request attributes (if present) in your own 
+`kernel` event listener.
+
+
+[generatePage]: /reference/hooks/generatePage
