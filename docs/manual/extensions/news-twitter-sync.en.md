@@ -112,13 +112,13 @@ of this app are then needed for the configuration in the back end.
 1. First you need to go to [apps.twitter.com](https://apps.twitter.com/).
 2. Click on _Create New App_.
 3. Fill out the basic information.
-4. Fill out the _Callback URL_ with the Contao back end URL, e.g. `http://www.example.org/contao`.
+4. Fill out the _Callback URL_ with the Contao back end URL, e.g. `https://www.example.org/contao`.
 5. Click on _Create your Twitter application_.
 
 
 ### Configure the Consumer Key and Consumer Secret in Contao
 
-In Contao, go to _System_ » _Settings_, scroll down to the the _Twitter App_ section, 
+In Contao, go to _System_ » _Settings_, scroll down to the _Twitter App_ section, 
 enter the __Consumer Key__ and __Consumer Secret__. You can find both in the settings
 of your Twitter App under _Keys and tokens_.
 
@@ -137,7 +137,7 @@ __Profile__: the Twitter profile where tweets should either be fetched from or p
 to.
 
 __Hasthtags__: space or comma separated list of hashtags that should be fetched 
-from Twitter. _Note:_ if you also defined a _Profile_ this lists acts as a filter 
+from Twitter. _Note:_ if you have also defined a _Profile_ this lists acts as a filter 
 for that _Profile_ only. Without a _Profile_ _any_ public tweets with that hashtag 
 will be fetched.
 
@@ -155,6 +155,7 @@ be set to _published_.
 Once you have configured the news archive and also enabled the __Fetch tweets__ 
 option the extension will check for new Tweets hourly via Contao's cronjob.
 
+
 ### Publish Tweets
 
 Contao news entries will be published as tweets under two conditions:
@@ -171,6 +172,7 @@ If the news entry has a teaser image, that image will also be attached to the tw
 The extension will check for new news entries to be published minutely via Contao's 
 cronjob.
 
+
 ### Manual Sync Trigger
 
 There is a link in the news archive overview to manually trigger the synchronisation.
@@ -186,6 +188,7 @@ of a tweet, you can use the `processTweet` hook. It expects an array containing
 the final news entry data as the return value. If the return value equals to false, 
 no news entry will be created.
 
+
 #### Parameters
 
 1. _array_ `$arrData` The already processed data which will be used for the new 
@@ -193,11 +196,13 @@ no news entry will be created.
 2. _object_ `$objTweet` The original tweet data.
 3. _object_ `$objArchive` The news archive object.
 
+
 ### `changeTwitterMessage`
 
 When posting a Contao news entry as a tweet, the extension either uses the teaser 
 or the specified message of the news entry. If you want to automatically provide 
 a different message, you can use the `changeTwitterMessage` hook. It expects the final message as the return value.
+
 
 #### Parameters
 

@@ -1,7 +1,7 @@
 ---
 title: Contao News Twitter
 menuTitle: News Twitter
-description: Contao News Twitter ist eine kostenpflichtige Erweiterungen zur Synchronisierung von Tweets mit einem Nachrichtenarchiv.
+description: Contao News Twitter ist eine kostenpflichtige Erweiterung zur Synchronisierung von Tweets mit einem Nachrichtenarchiv.
 url: erweiterungen/news-twitter-sync
 ---
 
@@ -108,7 +108,7 @@ Danach wie gewohnt das Contao Install Tool aufrufen, um die Datenbank zu aktuali
 
 ## Konfiguration
 
-Um diese Erweiterung zu konfigurieren muss zuerst eine sogenannte Twitter App« erzeugt 
+Um diese Erweiterung zu konfigurieren, muss zuerst eine sogenannte »Twitter App« erzeugt 
 werden. Die Details dieser App werden dann für die Konfiguration im Backend benötigt.
 
 
@@ -117,7 +117,7 @@ werden. Die Details dieser App werden dann für die Konfiguration im Backend ben
 1. Gehe zu [apps.twitter.com](https://apps.twitter.com/).
 2. Klicke auf _Create New App_.
 3. Fülle die Basisinformationen aus.
-4. Befüle die _Callback URL_ mit der Contao Backend URL, z. B. `http://www.example.org/contao`.
+4. Befülle die _Callback URL_ mit der Contao Backend URL, z. B. `https://www.example.org/contao`.
 5. Klicke auf _Create your Twitter application_.
 
 
@@ -138,7 +138,7 @@ bei Twitter (re-)authentifizieren. Dies ist notwendig, wenn man Nachrichten auto
 zu Twitter posten lassen möchte. Es ist _nicht_ notwendig sich zu authentifizieren,
 wenn man nur Tweets von einem Profil oder einem Hashtag holen möchte.
 
-__Profil__: Das Twitter Profil, von diesem Tweets geholt oder Tweets gepostet werden 
+__Profil__: Das Twitter Profil, von dem Tweets geholt oder Tweets gepostet werden 
 sollen.
 
 __Hasthtags__: Liste an Hashtags durch Leerzeichen oder Komma getrennt, welche von
@@ -149,7 +149,7 @@ eines Profils werden alle Tweets zu den angegebenen Hashtags geholt.
 __Tweets holen__: Nur wenn diese Option aktiv ist, werden Tweets vom angegebenen
 Profil bzw. von den angegebenen Hashtags geholt.
 
-__Tweets veröffentlichen__: Nur wenn dies Option aktiv ist, werden Nachtichten auch 
+__Tweets veröffentlichen__: Nur wenn dies Option aktiv ist, werden Nachrichten auch 
 automatisch veröffentlicht, wenn sie von Twitter geholt wurden.
 
 
@@ -158,7 +158,8 @@ automatisch veröffentlicht, wenn sie von Twitter geholt wurden.
 ### Tweets holen
 
 Sobald ein Nachrichtenarchiv mit der Option __Tweets holen__ konfiguriert ist, wird
-über den Contao Cronjob stündlich auf neue Tweets überprüf.
+über den Contao Cronjob stündlich auf neue Tweets überprüft.
+
 
 ### Tweets posten
 
@@ -185,11 +186,12 @@ der Nachrichtenarchive manuell anstoßen kann.
 
 ### `processTweet`
 
-Die Erweiterung prozessiert Tweets und versucht den Tweet in eine passendes Format
+Die Erweiterung prozessiert Tweets und versucht den Tweet in ein passendes Format
 für eine Contao Nachricht zu verwandeln. Falls die finalen Daten für die Nachricht
 angepasst werden sollen, kann der `processTweet` Hook benutzt werden. Als Rückgabewert
-wird ein Array erwartet, dass die finalen Daten enthält. Soll ein Tweet nicht als
+wird ein Array erwartet, das die finalen Daten enthält. Soll ein Tweet nicht als
 Nachricht gespeichert werden, kann etwas leeres zurückgegeben werden.
+
 
 #### Parameters
 
@@ -201,7 +203,7 @@ Nachricht gespeichert werden, kann etwas leeres zurückgegeben werden.
 ### `changeTwitterMessage`
 
 Wenn eine Contao Nachricht als Tweet gepostet werden soll, wird entweder die Überschrift
-oder der angegebene Text verwenden. Über den `changeTwitterMessage` Hook kann diese
+oder der angegebene Text verwendet. Über den `changeTwitterMessage` Hook kann diese
 Nachricht aber nochmal automatisiert angepasst werden. Als Rückgabewert wird der
 finale Text als String erwartet.
 
