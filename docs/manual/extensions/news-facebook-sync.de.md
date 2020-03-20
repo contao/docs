@@ -2,7 +2,7 @@
 title: Contao News Facebook Sync
 menuTitle: News Facebook Sync
 description: Contao News Facebook Sync ist eine kostenpflichtige Erweiterungen zur Synchronisierung von Facebook Posts mit einem Nachrichtenarchiv.
-url: erweiterungen/news-facebook
+url: erweiterungen/news-facebook-sync
 ---
 
 **[inspiredminds/contao-news-facebook](https://extensions.contao.org/?q=news%20face&pages=1&p=inspiredminds%2Fcontao-news-facebook)**

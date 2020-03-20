@@ -17,7 +17,7 @@ automatically post news entries on a Facebook page. This allows you to keep a Fa
 ## Installation
 
 To install this extension, the `composer.json` of your Contao installation has to be modified first. Two adjustments have
-to be done: adding the private repository, adding the dependency. 
+to be done: adding the private repository & adding the dependency. 
 
 To add the repository, add the following to your `composer.json`:
 
