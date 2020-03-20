@@ -33,7 +33,7 @@ use Twig\Environment as TwigEnvironment;
 
 /**
  * @Route("/contao/my-backend-route",
- *     name=App\Controller\BackendController::class,
+ *     name=BackendController::class,
  *     defaults={
  *         "_scope" = "backend",
  *         "_token_check" = true,
