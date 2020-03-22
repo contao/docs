@@ -62,7 +62,7 @@ As of Contao 4.8, there are three different ways of subscribing to a hook:
 ### Using the PHP Array configuration
 
 You can add your custom logic to hooks by extending the `TL_HOOKS` key in the
-`$GLOBALS` array in your `config.php` file.
+`$GLOBALS` array in your [`config.php`][contaoConfig] file.
 
 ```php
 // contao/config.php
@@ -190,3 +190,4 @@ class IndexPageListener implements ServiceAnnotationInterface
 
 [1]: ../../reference/hooks/
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
+[contaoConfig]: /getting-started/starting-development/#contao-configuration-translations

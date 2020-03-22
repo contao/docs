@@ -144,7 +144,9 @@ is also `tl_content`.
 
 ## Customizing and Extending Translations
 
-As already mentioned, translations are managed either via PHP or XLIFF files. Let
+As already mentioned, translations are managed either via PHP or XLIFF files. These
+can be extended or customized using your translation files (see 
+[Contao Configuration & Translations][contaoConfig]). Let
 us first look at the PHP implementation of changing or extending Contao's translations.
 We will take the previous example and change the _Go back_ link in the front end 
 to let it say _Back_ instead. Since the original translation is contained within
@@ -283,3 +285,4 @@ for more details.
 [SymfonyTranslations]: https://symfony.com/doc/current/translation.html
 [dca]: /framework/dca/
 [TwigTranslations]: https://symfony.com/doc/current/translation/templates.html
+[contaoConfig]: /getting-started/starting-development/#contao-configuration-translations

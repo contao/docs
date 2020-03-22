@@ -32,7 +32,8 @@ throughout the configuration as well as within other places of the Contao framew
 
 All table names managed by a DCA always start with the prefix `tl_` (which officially
 stands for _tüdelü_). The name of the file containing the DCA configuration needs
-to be the same name as the table and must be put in the `contao/dca` folder. 
+to be the same name as the table and must be put in the `contao/dca/` folder (see
+[Contao Configuration & Translations][contaoConfig]). 
 
 Within that file you configure your Data Container Array within the `$GLOBALS['TL_DCA']`
 array. So if your table name is `tl_example`, then your DCA will be created
@@ -222,3 +223,4 @@ drivers in order to get an idea on what is possible and how it needs to be done:
 [3]: ../models/
 [4]: ../../reference/dca/
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
+[contaoConfig]: /getting-started/starting-development/#contao-configuration-translations

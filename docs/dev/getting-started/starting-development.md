@@ -95,7 +95,9 @@ imports:
 ### Contao Configuration & Translations
 
 Contao has its own configuration files in the form of PHP arrays, as well as translation
-files in the form of either PHP arrays or in an XLIFF format.
+files in the form of either PHP arrays or in an XLIFF format. These files are generally
+defined within the `contao/` folder of your project's root directory (or `app/Resources/contao/`
+in Contao **4.4**).
 
 | File/Directory             | Explanation                                                       |
 | -------------------------- | ----------------------------------------------------------------- |

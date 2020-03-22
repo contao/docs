@@ -82,7 +82,7 @@ an associative array with the following keys, representing the available interva
 * `monthly`
 
 To register your own job, add another array item with the class and method
-of your cron job to one of the intervals in your `contao/config/config.php`:
+of your cron job to one of the intervals in your [`config.php`][contaoConfig]:
 
 ```php
 // contao/config/config.php
@@ -190,3 +190,4 @@ class HourlyCron
 
 
 [1]: /framework/hooks/
+[contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
