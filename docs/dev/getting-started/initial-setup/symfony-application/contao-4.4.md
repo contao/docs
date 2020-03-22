@@ -64,7 +64,7 @@ and `doctrine/migrations` need to be installed in another version than the defau
 one.
 
 As long as the Symfony flex plugin is installed you will be asked to execute
-contrib recipes for several packages. Answering `y` on those question sets you
+contrib recipes for several packages. Answering `a` on those question sets you
 up faster.
 
 After this step, it is time to edit our `composer.json` file and add a few lines
@@ -128,7 +128,6 @@ if the file already exists) the file config/contao_core.yaml and add the followi
 ```yaml
 contao:
     web_dir: "%kernel.project_dir%/public"
-    url_suffix: ''
 ```
 
 Make sure all the Contao routes are loaded by your application. Add the following
