@@ -1,8 +1,10 @@
 ---
-title: "Use in Symfony Application"
-menuTitle: "Symfony Application"
-description: "How to integrate Contao into a Symfony application."
+title: "Use Contao 4.4 in Symfony Application"
+menuTitle: "Contao 4.4 LTS"
+description: "How to integrate Contao 4.4 into a Symfony application."
 weight: 2
+aliases:
+  - /getting-started/initial-setup/symfony-application/contao-4.4/
 ---
 
 
@@ -19,7 +21,7 @@ First of all we need a full stack Symfony application installed. You can
 find further information about this subject in the [Symfony documentation](https://symfony.com/doc/current/setup.html).
 
 ```
-$ composer create-project symfony/website-skeleton contao-example ^4.4
+$ composer create-project symfony/website-skeleton contao-example ^3.4
 ```
 
 This command creates the directory `contao-example`, containing a bare bone
@@ -38,18 +40,22 @@ you can proceed to the second step, the installation of Contao itself.
 
 
 ## Install the Contao Core Bundle
-
 ```
 $ composer require \
-    doctrine/dbal:^2.8 \
-    doctrine/doctrine-bundle ^1.8 \
-    doctrine/migrations:^2.0 \
+    doctrine/dbal:^2.5 \
+    doctrine/doctrine-bundle ^1.6 \
+    doctrine/migrations:^1.1 \
+    doctrine/doctrine-migrations-bundle:^1.3 \
     contao/conflicts:@dev \
-    contao/core-bundle \
-    contao/installation-bundle \
+    contao/core-bundle:4.4.* \
+    contao/installation-bundle:4.4.* \
     php-http/guzzle6-adapter \
+    sensio/framework-extra-bundle:^3.0.2 \
+    symfony/console:^3.3.7 \
+    symfony/swiftmailer-bundle:^2.3 \
+    swiftmailer/swiftmailer:^5.0 \
     toflar/psr6-symfony-http-cache-store \
-    twig/twig ^2.7
+    twig/twig ^1.26
 ```
 
 If the installation request fails, try to check for conflicting packages in
@@ -70,12 +76,6 @@ which Contao uses to set itself up.
     "extra": {
         "contao-component-dir": "assets",
         "...": "..."
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "...": "...",
-            "Contao\\CoreBundle\\Tests\\": "vendor/contao/core-bundle/tests/"
-        }
     },
     "scripts": {
         "...": "...",
@@ -105,14 +105,15 @@ following lines in your `config/bundles.php` file.
 ```php
 return [
     // ...
-
-    Terminal42\ServiceAnnotationBundle\Terminal42ServiceAnnotationBundle::class => ['all' => true],
-    Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle::class => ['all' => true],
-    Scheb\TwoFactorBundle\SchebTwoFactorBundle::class => ['all' => true],
+    Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => true],
+    Doctrine\Bundle\DoctrineBundle\DoctrineBundle::class => ['all' => true],
+    Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
+    Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],ue],
+    FOS\HttpCacheBundle\FOSHttpCacheBundle::class => ['all' => true],
+    Terminal42\HeaderReplay\HeaderReplayBundle::class => ['all' => true],
     Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
     Knp\Bundle\TimeBundle\KnpTimeBundle::class => ['all' => true],
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
-    FOS\HttpCacheBundle\FOSHttpCacheBundle::class => ['all' => true],
     Contao\CoreBundle\ContaoCoreBundle::class => ['all' => true],
     Contao\InstallationBundle\ContaoInstallationBundle::class => ['all' => true],
 ];
@@ -121,12 +122,24 @@ return [
 
 ## Configure your Contao installation
 
+First, we need to configure the `ContaoCoreBundle`. To do so, create (or edit
+if the file already exists) the file config/contao_core.yaml and add the following entries:
+
+```yaml
+contao:
+    web_dir: "%kernel.project_dir%/public"
+    url_suffix: ''
+```
+
 Make sure all the Contao routes are loaded by your application. Add the following
 lines to `config/routes.yaml`. The Contao core bundle will provide a catch-all route.
 Since the order of those lines matter, make sure to load the `ContaoCoreBundle`
-in the end.
+in the end after the `ContaoInstallationBundle`.
 
 ```yaml
+ContaoInstallationBundle:
+    resource: "@ContaoInstallationBundle/Resources/config/routing.yml"
+
 ContaoCoreBundle:
     resource: "@ContaoCoreBundle/Resources/config/routing.yml"
 ```
@@ -161,8 +174,8 @@ framework:
         only_master_requests: true
 ```
 
-And change the default and fallback language to `de`, so the install tool comes
-up translated. In order to do so, change `en` to `de` in `config/translation.yaml`.
+Depending on the language of your choice, change the default and fallback language to e.g. `de`, so the install tool comes
+up translated in German. In order to do so, change `en` to `de` in `config/translation.yaml`.
 
 
 ```yaml
@@ -180,95 +193,29 @@ with the following lines.
 ```yaml
 security:
     providers:
-        contao.security.backend_user_provider:
-            id: contao.security.backend_user_provider
-
-        contao.security.frontend_user_provider:
-            id: contao.security.frontend_user_provider
-
-    encoders:
-        Contao\User:
-            algorithm: auto
+        contao.security.user_provider:
+            id: contao.security.user_provider
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
             security: false
 
-        contao_install:
-            pattern: ^/contao/install$
+        install:
+            pattern: ^/(contao/install|install\.php)
             security: false
 
-        contao_backend:
-            entry_point: contao.security.entry_point
+        backend:
             request_matcher: contao.routing.backend_matcher
-            provider: contao.security.backend_user_provider
-            user_checker: contao.security.user_checker
-            anonymous: ~
-            switch_user: true
+            stateless: true
+            simple_preauth:
+                authenticator: contao.security.authenticator
 
-            contao_login:
-                login_path: contao_backend_login
-                check_path: contao_backend_login
-                default_target_path: contao_backend
-                success_handler: contao.security.authentication_success_handler
-                failure_handler: contao.security.authentication_failure_handler
-                remember_me: false
-
-            two_factor:
-                auth_form_path: contao_backend_login
-                check_path: contao_backend_two_factor
-                default_target_path: contao_backend
-                success_handler: contao.security.authentication_success_handler
-                auth_code_parameter_name: verify
-
-            logout:
-                path: contao_backend_logout
-                handlers:
-                    - contao.security.logout_handler
-                success_handler: contao.security.logout_success_handler
-
-        contao_frontend:
+        frontend:
             request_matcher: contao.routing.frontend_matcher
-            provider: contao.security.frontend_user_provider
-            user_checker: contao.security.user_checker
-            anonymous: ~
-            switch_user: false
-
-            contao_login:
-                login_path: contao_frontend_login
-                check_path: contao_frontend_login
-                default_target_path: contao_root
-                failure_path: contao_root
-                success_handler: contao.security.authentication_success_handler
-                failure_handler: contao.security.authentication_failure_handler
-                remember_me: true
-                use_forward: true
-
-            two_factor:
-                auth_form_path: contao_frontend_two_factor
-                check_path: contao_frontend_two_factor
-                default_target_path: contao_root
-                success_handler: contao.security.authentication_success_handler
-                auth_code_parameter_name: verify
-
-            remember_me:
-                secret: '%kernel.secret%'
-                remember_me_parameter: autologin
-
-            logout:
-                path: contao_frontend_logout
-                target: contao_root
-                handlers:
-                    - contao.security.logout_handler
-                success_handler: contao.security.logout_success_handler
-
-    access_control:
-        - { path: ^/contao/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/contao/logout$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/contao(/|$), roles: ROLE_USER }
-        - { path: ^/_contao/two-factor$, roles: [IS_AUTHENTICATED_2FA_IN_PROGRESS, ROLE_MEMBER] }
-        - { path: ^/, roles: [IS_AUTHENTICATED_2FA_IN_PROGRESS, IS_AUTHENTICATED_ANONYMOUSLY] }
+            stateless: true
+            simple_preauth:
+                authenticator: contao.security.authenticator
 ```
 
 You can now start a local server and open up the installation tool in your browser.
@@ -419,6 +366,8 @@ Remove `src/Kernel.php` and a new file `src/HttpKernel/AppKernel.php`.
 ```php
 // src/HttpKernel/AppKernel.php
 
+<?php
+
 declare(strict_types=1);
 
 namespace App\HttpKernel;
@@ -435,7 +384,7 @@ class AppKernel extends BaseKernel implements HttpCacheProvider
 {
     use MicroKernelTrait;
 
-    public const CONFIG_EXTS = '.{php,xml,yaml,yml}';
+    const CONFIG_EXTS = '.{php,xml,yaml,yml}';
 
     /**
      * @var AppCache
@@ -444,20 +393,19 @@ class AppKernel extends BaseKernel implements HttpCacheProvider
 
     public function getCacheDir()
     {
-        return $this->getProjectDir() . '/var/cache/' . $this->environment;
+        return $this->getProjectDir().'/var/cache/'.$this->environment;
     }
 
     public function getLogDir()
     {
-        return $this->getProjectDir() . '/var/log';
+        return $this->getProjectDir().'/var/log';
     }
 
     public function registerBundles()
     {
-        $contents = require $this->getProjectDir() . '/config/bundles.php';
-
+        $contents = require $this->getProjectDir().'/config/bundles.php';
         foreach ($contents as $class => $envs) {
-            if (isset($envs['all']) || isset($envs[$this->environment])) {
+            if ($envs[$this->environment] ?? $envs['all'] ?? false) {
                 yield new $class();
             }
         }
@@ -472,57 +420,51 @@ class AppKernel extends BaseKernel implements HttpCacheProvider
         return $this->httpCache = new AppCache($this, $this->getProjectDir() . '/var/cache/prod/http_cache');
     }
 
-    public function build(ContainerBuilder $container): void
+    protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader)
     {
-        parent::build($container);
-    }
-
-    protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
-    {
-        $container->addResource(new FileResource($this->getProjectDir() . '/config/bundles.php'));
+        $container->addResource(new FileResource($this->getProjectDir().'/config/bundles.php'));
         // Feel free to remove the "container.autowiring.strict_mode" parameter
         // if you are using symfony/dependency-injection 4.0+ as it's the default behavior
         $container->setParameter('container.autowiring.strict_mode', true);
         $container->setParameter('container.dumper.inline_class_loader', true);
-        $confDir = $this->getProjectDir() . '/config';
+        $confDir = $this->getProjectDir().'/config';
 
-        $loader->load($confDir . '/{packages}/*' . self::CONFIG_EXTS, 'glob');
-        $loader->load($confDir . '/{packages}/' . $this->environment . '/**/*' . self::CONFIG_EXTS, 'glob');
-        $loader->load($confDir . '/{services}' . self::CONFIG_EXTS, 'glob');
-        $loader->load($confDir . '/{services}_' . $this->environment . self::CONFIG_EXTS, 'glob');
+        $loader->load($confDir.'/{packages}/*'.self::CONFIG_EXTS, 'glob');
+        $loader->load($confDir.'/{packages}/'.$this->environment.'/*'.self::CONFIG_EXTS, 'glob');
+        $loader->load($confDir.'/{services}'.self::CONFIG_EXTS, 'glob');
+        $loader->load($confDir.'/{services}_'.$this->environment.self::CONFIG_EXTS, 'glob');
     }
 
-    protected function configureRoutes(RouteCollectionBuilder $routes): void
+    protected function configureRoutes(RouteCollectionBuilder $routes)
     {
-        $confDir = $this->getProjectDir() . '/config';
+        $confDir = $this->getProjectDir().'/config';
 
-        $routes->import($confDir . '/{routes}/*' . self::CONFIG_EXTS, '/', 'glob');
-        $routes->import($confDir . '/{routes}/' . $this->environment . '/**/*' . self::CONFIG_EXTS, '/', 'glob');
-        $routes->import($confDir . '/{routes}' . self::CONFIG_EXTS, '/', 'glob');
+        $routes->import($confDir.'/{routes}/'.$this->environment.'/*'.self::CONFIG_EXTS, '/', 'glob');
+        $routes->import($confDir.'/{routes}/*'.self::CONFIG_EXTS, '/', 'glob');
+        $routes->import($confDir.'/{routes}'.self::CONFIG_EXTS, '/', 'glob');
     }
 }
+
 ```
 
 In the same directory create the file `src/HttpKernel/AppCache.php`.and
 
 ```php
+// src/HttpKernel/AppCache.php
+
+<?php
 
 declare(strict_types=1);
 
 namespace App\HttpKernel;
 
-use Contao\CoreBundle\EventListener\HttpCache\StripCookiesSubscriber;
 use FOS\HttpCache\SymfonyCache\CacheInvalidation;
-use FOS\HttpCache\SymfonyCache\CleanupCacheTagsListener;
 use FOS\HttpCache\SymfonyCache\EventDispatchingHttpCache;
-use FOS\HttpCache\SymfonyCache\PurgeListener;
-use FOS\HttpCache\SymfonyCache\PurgeTagsListener;
 use FOS\HttpCache\TagHeaderFormatter\TagHeaderFormatter;
 use Symfony\Bundle\FrameworkBundle\HttpCache\HttpCache;
-use Symfony\Component\Cache\Adapter\FilesystemAdapter;
-use Symfony\Component\Cache\Adapter\TagAwareAdapter;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\KernelInterface;
+use Terminal42\HeaderReplay\SymfonyCache\HeaderReplaySubscriber;
 use Toflar\Psr6HttpCacheStore\Psr6Store;
 
 class AppCache extends HttpCache implements CacheInvalidation
@@ -530,26 +472,22 @@ class AppCache extends HttpCache implements CacheInvalidation
     use EventDispatchingHttpCache;
 
     /**
-     * @var bool
+     * Constructor.
+     *
+     * @param KernelInterface $kernel
+     * @param null            $cacheDir
      */
-    private $isDebug;
-
-    public function __construct(AppKernel $kernel, string $cacheDir = null)
+    public function __construct(KernelInterface $kernel, $cacheDir = null)
     {
         parent::__construct($kernel, $cacheDir);
 
-        $this->isDebug = $kernel->isDebug();
-
-        $this->addSubscriber(new StripCookiesSubscriber(array_filter(explode(',', $_SERVER['COOKIE_WHITELIST'] ?? ''))));
-        $this->addSubscriber(new PurgeListener());
-        $this->addSubscriber(new PurgeTagsListener());
-        $this->addSubscriber(new CleanupCacheTagsListener());
+        $this->addSubscriber(new HeaderReplaySubscriber());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function fetch(Request $request, $catch = false): Response
+    public function fetch(Request $request, $catch = false)
     {
         return parent::fetch($request, $catch);
     }
@@ -557,32 +495,24 @@ class AppCache extends HttpCache implements CacheInvalidation
     /**
      * {@inheritdoc}
      */
-    protected function getOptions(): array
+    protected function createStore()
     {
-        $options = parent::getOptions();
-
-        // Only works as of Symfony 4.3+
-        $options['trace_level'] = $this->isDebug ? 'full' : 'short';
-        $options['trace_header'] = 'Contao-Cache';
-
-        return $options;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function createStore(): Psr6Store
-    {
-        $cacheDir = $this->cacheDir ?: $this->kernel->getCacheDir() . '/http_cache';
-
         return new Psr6Store([
-            'cache_directory' => $cacheDir,
-            'cache' => new TagAwareAdapter(new FilesystemAdapter('', 0, $cacheDir)),
+            'cache_directory' => $this->cacheDir ?: $this->kernel->getCacheDir().'/http_cache',
             'cache_tags_header' => TagHeaderFormatter::DEFAULT_HEADER_NAME,
-            'prune_threshold' => 5000,
         ]);
     }
 }
+
+```
+
+The last thing now is to adjust the config for the routing via annotations.
+If the file `config/routes/annotations.yaml` and a config for `kernel` exists, change it to this:
+
+```yaml
+kernel:
+    resource: ../../src/HttpKernel/AppKernel.php
+    type: annotation
 ```
 
 And that's it. You have successfully set up a Symfony application and/or installed
