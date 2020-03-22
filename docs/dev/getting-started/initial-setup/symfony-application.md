@@ -19,7 +19,7 @@ First of all we need a full stack Symfony application installed. You can
 find further information about this subject in the [Symfony documentation](https://symfony.com/doc/current/setup.html).
 
 ```
-$ composer create-project symfony/website-skeleton contao-example
+$ composer create-project symfony/website-skeleton contao-example ^4.4
 ```
 
 This command creates the directory `contao-example`, containing a bare bone
