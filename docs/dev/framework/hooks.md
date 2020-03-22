@@ -69,8 +69,8 @@ You can add your custom logic to hooks by extending the `TL_HOOKS` key in the
 $GLOBALS['TL_HOOKS']['activateAccount'][] = [\App\EventListener\ActivateAccountListener::class, 'onActivateAccount'];
 ```
 
-In this case, the method `onActivateAccount` in the class `App\EventListener\ActivateAccountListener` is called as soon as the hook
-`activateAccount` is executed.
+In this case, the method `onActivateAccount` in the class (or service) `App\EventListener\ActivateAccountListener` 
+is called as soon as the hook `activateAccount` is executed.
 
 ```php
 // src/EventListener/ActivateAccountListener.php
