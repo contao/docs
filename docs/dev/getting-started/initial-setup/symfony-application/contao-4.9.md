@@ -1,8 +1,10 @@
 ---
-title: "Use in Symfony Application"
-menuTitle: "Symfony Application"
-description: "How to integrate Contao into a Symfony application."
+title: "Use Contao 4.9 in Symfony Application"
+menuTitle: "Contao 4.9 LTS"
+description: "How to integrate Contao 4.9 into a Symfony application."
 weight: 2
+aliases:
+  - /getting-started/initial-setup/symfony-application/contao-4.9/
 ---
 
 
@@ -41,12 +43,12 @@ you can proceed to the second step, the installation of Contao itself.
 
 ```
 $ composer require \
-    doctrine/dbal:^2.8 \
+    doctrine/dbal:^2.10 \
     doctrine/doctrine-bundle ^1.8 \
-    doctrine/migrations:^2.0 \
+    doctrine/migrations:^2.2 \
     contao/conflicts:@dev \
-    contao/core-bundle \
-    contao/installation-bundle \
+    contao/core-bundle:4.9.* \
+    contao/installation-bundle:4.9.* \
     php-http/guzzle6-adapter \
     toflar/psr6-symfony-http-cache-store \
     twig/twig ^2.7
@@ -58,7 +60,7 @@ and `doctrine/migrations` need to be installed in another version than the defau
 one.
 
 As long as the Symfony flex plugin is installed you will be asked to execute
-contrib recipes for several packages. Answering `y` on those question sets you
+contrib recipes for several packages. Answering `a` on those question sets you
 up faster.
 
 After this step, it is time to edit our `composer.json` file and add a few lines
@@ -66,19 +68,13 @@ which Contao uses to set itself up.
 
 ```json
 {
-    "...": "...",
+    "…": "…",
     "extra": {
         "contao-component-dir": "assets",
-        "...": "..."
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "...": "...",
-            "Contao\\CoreBundle\\Tests\\": "vendor/contao/core-bundle/tests/"
-        }
+        "…": "…"
     },
     "scripts": {
-        "...": "...",
+        "…": "…",
         "auto-scripts": {
             "cache:clear --no-warmup": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
@@ -104,9 +100,11 @@ following lines in your `config/bundles.php` file.
 
 ```php
 return [
-    // ...
+    // …
 
+    Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle::class => ['all' => true],
     Terminal42\ServiceAnnotationBundle\Terminal42ServiceAnnotationBundle::class => ['all' => true],
+    Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
     Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle::class => ['all' => true],
     Scheb\TwoFactorBundle\SchebTwoFactorBundle::class => ['all' => true],
     Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
@@ -121,12 +119,23 @@ return [
 
 ## Configure your Contao installation
 
+First, we need to configure the `ContaoCoreBundle`. To do so, create (or edit
+if the file already exists) the file config/contao_core.yaml and add the following entries:
+
+```yaml
+contao:
+    web_dir: "%kernel.project_dir%/public"
+```
+
 Make sure all the Contao routes are loaded by your application. Add the following
 lines to `config/routes.yaml`. The Contao core bundle will provide a catch-all route.
 Since the order of those lines matter, make sure to load the `ContaoCoreBundle`
-in the end.
+at the end after the `ContaoInstallationBundle`.
 
 ```yaml
+ContaoInstallationBundle:
+    resource: "@ContaoInstallationBundle/Resources/config/routing.yml"
+
 ContaoCoreBundle:
     resource: "@ContaoCoreBundle/Resources/config/routing.yml"
 ```
@@ -161,8 +170,8 @@ framework:
         only_master_requests: true
 ```
 
-And change the default and fallback language to `de`, so the install tool comes
-up translated. In order to do so, change `en` to `de` in `config/translation.yaml`.
+Depending on the language of your choice, change the default and fallback language to e.g. `de`, so the install tool comes
+up translated in German. In order to do so, change `en` to `de` in `config/translation.yaml`.
 
 
 ```yaml
@@ -176,6 +185,10 @@ framework:
 Contao relies heavily on the security component of Symfony, which needs to be
 configured accordingly. Replace the contents of the file `config/security.yaml`
 with the following lines.
+
+{{% notice info %}}
+Contao does not work with `role_hierarchy` yet. For more information see https://github.com/contao/contao/issues/1548.
+{{% /notice %}}
 
 ```yaml
 security:
@@ -200,7 +213,6 @@ security:
             security: false
 
         contao_backend:
-            entry_point: contao.security.entry_point
             request_matcher: contao.routing.backend_matcher
             provider: contao.security.backend_user_provider
             user_checker: contao.security.user_checker
@@ -208,19 +220,7 @@ security:
             switch_user: true
 
             contao_login:
-                login_path: contao_backend_login
-                check_path: contao_backend_login
-                default_target_path: contao_backend
-                success_handler: contao.security.authentication_success_handler
-                failure_handler: contao.security.authentication_failure_handler
                 remember_me: false
-
-            two_factor:
-                auth_form_path: contao_backend_login
-                check_path: contao_backend_two_factor
-                default_target_path: contao_backend
-                success_handler: contao.security.authentication_success_handler
-                auth_code_parameter_name: verify
 
             logout:
                 path: contao_backend_logout
@@ -236,21 +236,7 @@ security:
             switch_user: false
 
             contao_login:
-                login_path: contao_frontend_login
-                check_path: contao_frontend_login
-                default_target_path: contao_root
-                failure_path: contao_root
-                success_handler: contao.security.authentication_success_handler
-                failure_handler: contao.security.authentication_failure_handler
                 remember_me: true
-                use_forward: true
-
-            two_factor:
-                auth_form_path: contao_frontend_two_factor
-                check_path: contao_frontend_two_factor
-                default_target_path: contao_root
-                success_handler: contao.security.authentication_success_handler
-                auth_code_parameter_name: verify
 
             remember_me:
                 secret: '%kernel.secret%'
@@ -267,8 +253,7 @@ security:
         - { path: ^/contao/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/contao/logout$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/contao(/|$), roles: ROLE_USER }
-        - { path: ^/_contao/two-factor$, roles: [IS_AUTHENTICATED_2FA_IN_PROGRESS, ROLE_MEMBER] }
-        - { path: ^/, roles: [IS_AUTHENTICATED_2FA_IN_PROGRESS, IS_AUTHENTICATED_ANONYMOUSLY] }
+        - { path: ^/, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
 ```
 
 You can now start a local server and open up the installation tool in your browser.
@@ -419,6 +404,8 @@ Remove `src/Kernel.php` and a new file `src/HttpKernel/AppKernel.php`.
 ```php
 // src/HttpKernel/AppKernel.php
 
+<?php
+
 declare(strict_types=1);
 
 namespace App\HttpKernel;
@@ -442,16 +429,6 @@ class AppKernel extends BaseKernel implements HttpCacheProvider
      */
     private $httpCache;
 
-    public function getCacheDir()
-    {
-        return $this->getProjectDir() . '/var/cache/' . $this->environment;
-    }
-
-    public function getLogDir()
-    {
-        return $this->getProjectDir() . '/var/log';
-    }
-
     public function registerBundles()
     {
         $contents = require $this->getProjectDir() . '/config/bundles.php';
@@ -470,6 +447,11 @@ class AppKernel extends BaseKernel implements HttpCacheProvider
         }
 
         return $this->httpCache = new AppCache($this, $this->getProjectDir() . '/var/cache/prod/http_cache');
+    }
+
+    public function getProjectDir(): string
+    {
+        return \dirname(__DIR__);
     }
 
     public function build(ContainerBuilder $container): void
@@ -506,6 +488,9 @@ class AppKernel extends BaseKernel implements HttpCacheProvider
 In the same directory create the file `src/HttpKernel/AppCache.php`.and
 
 ```php
+// src/HttpKernel/AppCache.php
+
+<?php
 
 declare(strict_types=1);
 
@@ -583,6 +568,15 @@ class AppCache extends HttpCache implements CacheInvalidation
         ]);
     }
 }
+```
+
+The last thing now is to adjust the config for the routing via annotations.
+If the file `config/routes/annotations.yaml` and a config for `kernel` exists, change it to this:
+
+```yaml
+kernel:
+    resource: ../../src/HttpKernel/AppKernel.php
+    type: annotation
 ```
 
 And that's it. You have successfully set up a Symfony application and/or installed
