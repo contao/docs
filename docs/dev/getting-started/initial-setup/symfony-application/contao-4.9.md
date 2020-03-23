@@ -64,7 +64,7 @@ contrib recipes for several packages. Answering `a` on those question sets you
 up faster.
 
 After this step, it is time to edit our `composer.json` file and add a few lines
-which Contao uses to set itself up (some of them possibly already exist).
+which Contao uses to set itself up.
 
 ```json
 {
@@ -170,8 +170,8 @@ framework:
         only_master_requests: true
 ```
 
-And change the default and fallback language to `de`, so the install tool comes
-up translated. In order to do so, change `en` to `de` in `config/translation.yaml`.
+Depending on the language of your choice, change the default and fallback language to e.g. `de`, so the install tool comes
+up translated in German. In order to do so, change `en` to `de` in `config/translation.yaml`.
 
 
 ```yaml
