@@ -10,7 +10,7 @@ The [PaletteManipulator](https://github.com/contao/contao/blob/master/core-bundl
 
 
 ## Introduction
-Before we use the `PaletteManipulator`, lets have a look at how [palettes](../../reference/dca/palettes) are defined.
+Before we use the `PaletteManipulator`, lets have a look at how [palettes](../../../reference/dca/palettes) are defined.
 ```php
 // tl_user.php
 
