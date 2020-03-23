@@ -18,7 +18,7 @@ wird die erste stabile Version veröffentlicht.
 <sup>1</sup> Contao verwendet für die Versionierung der Software »[Semantic Versioning](https://semver.org/)«.
 Eine »Major« Version bezeichnet die erste Stelle der Versionsangabe. Das sind Versionen,
 wo neue Funktionen oder strukturelle Änderungen in der Software hinzugefügt wurden,
-die aber nicht mehr rückwärtskompatible zu vorherigen Versionen sind, bzw. sein
+die aber nicht mehr rückwärtskompatibel zu vorherigen Versionen sind, bzw. sein
 können. Eine »Minor« Version bezeichnet die zweite Stelle einer Versionsangabe. Das sind 
 Versionen, in denen der Software neue Funktionen in einer rückwärtskompatiblen Art 
 hinzugefügt werden.
@@ -39,7 +39,7 @@ oder über den Contao Manager) werden normalerweise immer nur _stabile_ Pakete i
 zumindest mit den vorgegebenen Einstellungen der _Contao Managed Edition_. Daher
 muss die `composer.json` des Projektes entsprechend angepasst werden, damit auch
 Release Candidates oder Entwicklerversionen installiert werden. Nach der Änderung 
-der `composer.json` muss natürlich eine komplette Paketaktualisierung durchgeführt 
+der `composer.json` muss eine komplette Paketaktualisierung durchgeführt 
 werden. 
 
 
