@@ -423,8 +423,8 @@ Wird zu folgendem HTML-Code konvertiert:
 Um einen ganzen Absatz in Code zu konvertieren, den Text mit vier Leerzeichen einrücken.
 
 ```md
-Schrift mit fester Laufweite ...
-... über mehrere Zeilen
+Schrift mit fester Laufweite …
+… über mehrere Zeilen
 ```
 
 #### Zitat-Block

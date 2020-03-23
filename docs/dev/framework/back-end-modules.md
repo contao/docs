@@ -12,7 +12,7 @@ So by default, Contao ships with a few back end modules pre-installed:
 * Layout
     * Themes
     * Site structure
-* [...]
+* […]
 
 The first level ("Content" and "Layout" in that example) represent what we call "categories".
 The second level are the back end modules.
@@ -123,12 +123,12 @@ gets an export operation which is specified in the respective DCA file `tl_theme
 // contao/dca/tl_theme.php
 $GLOBALS['TL_DCA']['tl_theme']['list']['operations']['exportTheme'] = [
     'href' => 'key=exportTheme',
-    [...]
+    […]
 ];
 ```
 
 As you can see, we're specifying `key=exportTheme` in the `href` section which will generate something
-like `contao?do=themes&key=exportTheme&id=1...` for the theme with database ID 1. When the user now clicks on that link,
+like `contao?do=themes&key=exportTheme&id=1…` for the theme with database ID 1. When the user now clicks on that link,
 Contao searches for the key `exportTheme` in the back end module definition of `themes` and execute this callback.
 The corresponding back end module definition thus looks like this:
 

@@ -211,7 +211,7 @@ container is even built. Settings like trusted proxies or caching are considered
     For the most part, this doesn't cause any problems with the Managed Edition. But, when a request passes through a
     proxy, certain request information is sent using either the standard `Forwarded` header or `X-Forwarded-*` headers.
     For example, instead of reading the `REMOTE_ADDR` header (which will now be the IP address of your reverse proxy),
-    the user's true IP will be stored in a standard `Forwarded: for="..."` header or a `X-Forwarded-For` header.
+    the user's true IP will be stored in a standard `Forwarded: for="…"` header or a `X-Forwarded-For` header.
     If you don't configure the Managed Edition to look for these headers, you'll get incorrect information about the
     client's IP address, whether or not the client is connecting via HTTPS, the client's port and the hostname being
     requested.
