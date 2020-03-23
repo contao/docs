@@ -72,13 +72,13 @@ which Contao uses to set itself up.
 
 ```json
 {
-    "...": "...",
+    "…": "…",
     "extra": {
         "contao-component-dir": "assets",
-        "...": "..."
+        "…": "…"
     },
     "scripts": {
-        "...": "...",
+        "…": "…",
         "auto-scripts": {
             "cache:clear --no-warmup": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
@@ -104,7 +104,7 @@ following lines in your `config/bundles.php` file.
 
 ```php
 return [
-    // ...
+    // …
     Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => true],
     Doctrine\Bundle\DoctrineBundle\DoctrineBundle::class => ['all' => true],
     Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],

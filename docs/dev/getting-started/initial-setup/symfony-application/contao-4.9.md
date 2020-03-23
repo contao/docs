@@ -68,13 +68,13 @@ which Contao uses to set itself up (some of them possibly already exist).
 
 ```json
 {
-    "...": "...",
+    "…": "…",
     "extra": {
         "contao-component-dir": "assets",
-        "...": "..."
+        "…": "…"
     },
     "scripts": {
-        "...": "...",
+        "…": "…",
         "auto-scripts": {
             "cache:clear --no-warmup": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
@@ -100,7 +100,7 @@ following lines in your `config/bundles.php` file.
 
 ```php
 return [
-    // ...
+    // …
 
     Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle::class => ['all' => true],
     Terminal42\ServiceAnnotationBundle\Terminal42ServiceAnnotationBundle::class => ['all' => true],
