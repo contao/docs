@@ -130,7 +130,7 @@ contao:
 Make sure all the Contao routes are loaded by your application. Add the following
 lines to `config/routes.yaml`. The Contao core bundle will provide a catch-all route.
 Since the order of those lines matter, make sure to load the `ContaoCoreBundle`
-in the end.
+in the end after the `ContaoInstallationBundle`.
 
 ```yaml
 ContaoInstallationBundle:
