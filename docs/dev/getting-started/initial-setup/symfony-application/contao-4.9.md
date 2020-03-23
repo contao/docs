@@ -133,6 +133,9 @@ Since the order of those lines matter, make sure to load the `ContaoCoreBundle`
 in the end.
 
 ```yaml
+ContaoInstallationBundle:
+    resource: "@ContaoInstallationBundle/Resources/config/routing.yml"
+
 ContaoCoreBundle:
     resource: "@ContaoCoreBundle/Resources/config/routing.yml"
 ```
