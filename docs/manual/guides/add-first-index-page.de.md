@@ -81,7 +81,7 @@ so aussehen:
 {{% notice info %}}
 Du kannst mit Contao innerhalb einer Installation mehrere Webseiten erstellen und pflegen. Diese werden jeweils 
 unter separaten Startpunkten gelistet. Auch wenn du nur eine einzelne Webseite pflegen möchtest, musst du dazu zunächst 
-ein Seite vom Typ `Startpunkt einer Webseite` erstellen.
+eine Seite vom Typ `Startpunkt einer Webseite` erstellen.
 {{% /notice %}}
 
 
