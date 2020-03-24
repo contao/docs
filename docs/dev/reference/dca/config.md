@@ -35,7 +35,7 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | ptable             | Parent table (`string`)           | Name of the related parent table (table.pid = ptable.id).                                                                                       |
 | dynamicPtable      | true/false (`bool`)               | Dynamically set the parent table like in `tl_content`.                                                                                          |
 | ctable             | Child tables (`array`)            | Name of the related child tables (table.id = ctable.pid).                                                                                       |
-| dataContainer      | Data Container (`string`)         | Table (database table), File (local configuration file) or Folder (file manager).                                                               |
+| dataContainer      | Data Container (`string`)         | `Table` (database table)<sup>1</sup>, `File` (local configuration file) or `Folder` (file manager).                                                               |
 | markAsCopy         | Field name (`string`)             | Appends "(copy)" to this field when copying a record (Contao __4.6__ and up).                                                                         |
 | closed             | true/false (`bool`)               | If true, you cannot add further records to the table.                                                                                           |
 | notEditable        | true/false (`bool`)               | If true, the table cannot be edited.                                                                                                            |
@@ -57,3 +57,8 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | [onrestore_callback](../callbacks/#config-onrestore)                 | Callback functions (`array`)      | Calls a custom function when a version of a record is restored and passes the insert ID, the table, the data array and the version as argument.  This callback is deprecated, use `onrestore_version_callback` instead. |
 | [onrestore_version_callback](../callbacks/#config-onrestore-version) | Callback functions (`array`)      | Calls a custom function when a version of a record is restored and passes the table, insert ID, the table, the version and the data array as argument.                                                                  |
 | sql                | Table configuration (`array`)     | Describes table configuration, e.g. `'keys' => [ 'id' => 'primary', 'pid' => 'index' ]`                                                         |
+
+{{% notice note %}}
+<sup>1</sup> A Data Container of type `Table` also needs at least the primary 
+key configuration for the database table, as shown in the <nobr>[example](#example).</nobr>
+{{% /notice %}}
