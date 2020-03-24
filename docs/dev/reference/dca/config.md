@@ -16,13 +16,13 @@ edited or deleted.
 ```php
 // contao/dca/tl_example.php
 $GLOBALS['TL_DCA']['tl_example']['config'] = [
-    'dataContainer'               => 'Table',
-    'enableVersioning'            => true,
+    'dataContainer' => 'Table',
+    'enableVersioning' => true,
     'sql' => [
         'keys' => [
             'id' => 'primary',
-        ]
-    ]
+        ],
+    ],
 ];
 ```
 
