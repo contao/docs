@@ -135,4 +135,11 @@ php composer.phar update
 Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch, und schließe 
 dann das Installtool.
 
+Anstelle des Contao-Installtools kannst Du (ab Contao 4.9) zur Aktualisierung der Datenbanktabellen auf der 
+Kommandozeile das Command 
+```bash
+$ vendor/bin/contao-console contao:migrate
+``` 
+verwenden.
+
 Deine Contao-Installation ist jetzt auf dem neuesten Stand.

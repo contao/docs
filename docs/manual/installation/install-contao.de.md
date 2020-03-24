@@ -45,7 +45,7 @@ aufrufen um die Datenbank zu aktualisieren.
 
 ## Installation über die Kommandozeile {#installation-ueber-die-kommandozeile}
 
-Bei der Installation über die Kommandozeile wird während dem `create-project` ein `composer update` ausgeführt, dass 
+Bei der Installation über die Kommandozeile wird während dem `create-project` ein `composer update` ausgeführt. Das 
 wird bei einigen Hostern dazu führen, dass der Prozess wegen der zu hohen Systemanforderung nicht beendet werden kann 
 und die Installation dadurch fehlschlägt. In diesem Fall solltest du den 
 [Contao Manager](#installation-mit-dem-contao-manager) nutzen.
@@ -57,7 +57,7 @@ Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angeme
 ssh benutzername@example.com
 ```
 
-Wechsle in das öffentlichen Verzeichnis deines Webhosting.
+Wechsle in das öffentliche Verzeichnis deines Webhosting.
 
 ```bash
 cd www
@@ -107,4 +107,8 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 ### Datenbanktabellen aktualisieren
 
 Nach der Installation ist vor der Datenbank-Aktualisierung, rufe dazu das [Contao-Installtool](../contao-installtool/)
-auf.
+auf oder verwende (ab Contao 4.9) 
+```bash
+$ vendor/bin/contao-console contao:migrate
+``` 
+auf der Kommandozeile.
