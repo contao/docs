@@ -377,6 +377,7 @@ use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
@@ -412,13 +413,19 @@ class AppKernel extends BaseKernel implements HttpCacheProvider
             }
         }
 
-        /** @var array<SplFileInfo> $modules */
-        $modules = Finder::create()
-            ->directories()
-            ->depth(0)
-            ->in($this->getProjectDir() . '/system/modules/')
-        ;
+        // Look for Contao 3 style modules in <project-root>/system/modules
+        try {
+            /** @var array<SplFileInfo> $modules */
+            $modules = Finder::create()
+                ->directories()
+                ->depth(0)
+                ->in($this->getProjectDir() . '/system/modules/')
+            ;
+        } catch (DirectoryNotFoundException $e){
+            $modules  = [];
+        }
 
+        // Load Contao 3 style modules if available
         /** @var SplFileInfo $module */
         foreach ($modules as $module) {
             yield new ContaoModuleBundle($module->getFilename(), $this->getProjectDir() . '/src');
