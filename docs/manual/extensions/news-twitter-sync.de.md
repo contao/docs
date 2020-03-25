@@ -1,6 +1,6 @@
 ---
-title: Contao News Twitter
-menuTitle: News Twitter
+title: Contao News Twitter Sync
+menuTitle: News Twitter Sync
 description: Contao News Twitter ist eine kostenpflichtige Erweiterung zur Synchronisierung von Tweets mit einem Nachrichtenarchiv.
 url: erweiterungen/news-twitter-sync
 ---
