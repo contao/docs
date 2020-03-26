@@ -723,7 +723,7 @@ Das Frontend-Modul generiert mit `member_grouped` folgenden HTML-Code:
 
 ## Passwort ändern
 
-Das Frontend-Modul »Passwort ändern« fügt der Webseite ein Formular hinzu, das einen angemeldeten Frontend-Benutzer 
+Das Frontend-Modul »Passwort ändern« fügt der Webseite ein Formular hinzu, das einem angemeldeten Frontend-Benutzer 
 ermöglicht, sein Passwort zu ändern.
 
 **Frontend-Ausgabe**
