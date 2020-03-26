@@ -191,7 +191,7 @@ Der Benutzernamen und die E-Mail-Adresse müssen eindeutig sein, das heißt, sie
 
 Jeder Benutzer kann das Backend an seine persönlichen Vorstellungen anpassen.
 
-**Backend-Sprache:** Hier legst due die Backend-Sprache fest.
+**Backend-Sprache:** Hier legst du die Backend-Sprache fest.
 
 **Datei-Uploader:** Hier kannst du zwischen »DropZone« und dem »Standard-Uploader« auswählen.
 
@@ -304,7 +304,7 @@ Zugriffsebenen gibt.
 ![Zugriffsrechte einer Seite](/de/user-management/images/de/zugriffsrechte-einer-seite.png?classes=shadow)
 
 Diese Seite gehört z. B. dem Benutzer `Helen Lewis`, der sie und die darin enthaltenen Artikel bearbeiten, verschieben 
-oder löschen darf. Andere Benutzer der Gruppe Nachrichten dürfen lediglich die Artikel bearbeiten, nicht aber die Seite 
+oder löschen darf. Andere Benutzer der Gruppe `Editors` dürfen lediglich die Artikel bearbeiten, nicht aber die Seite 
 an sich.
 
 Du musst also die Seiten, die ein Benutzer bearbeiten soll oder auf denen er Artikel anlegen können soll, mit 
