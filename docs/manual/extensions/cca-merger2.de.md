@@ -17,7 +17,7 @@ Bedingungen für die Anzeige können in beliebig komplexen Regeln aufgestellt we
 Beispiele für den vielfältigen Einsatz sind:
 
 * **Zusammenführen von Inhalten** z. B. um sprachspezifische FE-Module nur anzuzeigen, wenn die entsprechende Sprache
-  im Browser aufgerufen wird - damit können mehrere FE-Module zu einem Modul zusammengefasst und im Layout eingesetzt
+  im Browser aufgerufen wird – damit können mehrere FE-Module zu einem Modul zusammengefasst und im Layout eingesetzt
   werden; das spart mehrere sprachspezifische Layouts anlegen zu müssen
 * Module oder Artikel werden nur **angezeigt, wenn bestimmte Bedingungen vorliegen** wie z. B. eine definierte Tiefe im
   Seitenbaum, in der Mobilanzeige, wenn eine bestimmte Sprache im Browser aufgerufen wird.
