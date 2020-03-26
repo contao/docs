@@ -175,7 +175,7 @@ contao:
 {{< version "4.9" >}}
 
 If you use Contao together with the [Contao Managed Edition][Contao_ME], you can use environment variables to influence
-the behaviour of the Managed Edition.
+the behaviour of the Managed Edition, similar to [Symfony Flex][SymfonyFlex].
 The reason why they are environment variables is because these settings affect the setup before the dependency injection
 container is even built. Settings like trusted proxies or caching are considered very early in the application boot process
 (if it even needs to be booted thanks to the cache) so they cannot be part of the application itself:
@@ -214,9 +214,9 @@ container is even built. Settings like trusted proxies or caching are considered
     the user's true IP will be stored in a standard `Forwarded: for="…"` header or a `X-Forwarded-For` header.
     If you don't configure the Managed Edition to look for these headers, you'll get incorrect information about the
     client's IP address, whether or not the client is connecting via HTTPS, the client's port and the hostname being
-    requested.
-    Let's say your load balancer runs on IP `192.0.2.1`. You can trust that IP by setting `TRUSTED_PROXIES` to `192.0.2.1`.
-    You can also trust a whole IP range if you like to: `TRUSTED_PROXIES=192.0.2.0/24`
+    requested. Let's say your load balancer runs on IP `192.0.2.1`. You can trust that IP by setting `TRUSTED_PROXIES` 
+    to `192.0.2.1`. You can also trust a whole IP range if you like to: `TRUSTED_PROXIES=192.0.2.0/24`. See the
+    [Symfony Documentation on Proxies][SymfonyProxies] for more information.
     
 * `TRUSTED_HOSTS`
 
@@ -264,3 +264,5 @@ Some of the environment variables, like `DATABASE_URL` and `APP_SECRET` replace 
         
 
 [Contao_ME]: ../../getting-started/initial-setup/managed-edition
+[SymfonyFlex]: https://symfony.com/doc/current/setup.html#symfony-flex
+[SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html
