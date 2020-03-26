@@ -100,7 +100,7 @@ dürfen. Bei einer Überschreitung dieses Werts wird das entsprechende Objekt a
 (Upload).
 
 **Maximale Upload-Dateigröße:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server 
-übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MB = 1024 KB = 1.024.000 Bytes). Größere Dateien 
+übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MB = 1024 KB = 1024 × 1024 Bytes = 1.048.567 Bytes). Größere Dateien 
 werden abgelehnt.
 
 **Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese 
