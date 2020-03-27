@@ -78,6 +78,6 @@ Einsatzzweck konzipiert wurden.
 
 {{% notice note %}}
 <sup>1</sup> Vor Contao 4.6 gab es nur den Seitentyp "403 Zugriff verweigert", der beide Situationen "nicht authentifiziert"
-(401) und "nicht autorisiert" (403) behandelt hat. Dort konnte es sinnvoll sein, zum Login weiterzuleiten. Ab Contao 4.6 
-ergibt das nur noch auf der 401-Seite Sinn.
+(401) und "nicht autorisiert" (403) behandelt hat. Dort konnte es sinnvoll sein, ein Login-Modul anzuzeigen oder zum Login 
+weiterzuleiten. Ab Contao 4.6 ergibt das nur noch auf der 401-Seite Sinn.
 {{% /notice %}}
