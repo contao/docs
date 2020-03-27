@@ -77,5 +77,7 @@ Einsatzzweck konzipiert wurden.
 | 404 Seite nicht gefunden    | Diese Seite wird aufgerufen, wenn ein Besucher eine nicht vorhandene Seite anfragt. Du kannst die Seite wahlweise als reguläre Seite nutzen und dort z. B. eine Sitemap einbinden oder den Benutzer automatisch auf eine andere Seite weiterleiten. |
 
 {{% notice note %}}
-<sup>1</sup> Vor Contao 4.6 gab es nur den Seitentyp "403 Zugriff verweigert", der beide Situationen "nicht authentifiziert" (401) und "nicht autorisiert" (403) behandelt hat. Dort konnte es sinnvoll sein, zum Login weiterzuleiten. Ab Contao 4.6 ergibt das nur noch auf der 401-Seite Sinn.
+<sup>1</sup> Vor Contao 4.6 gab es nur den Seitentyp "403 Zugriff verweigert", der beide Situationen "nicht authentifiziert"
+(401) und "nicht autorisiert" (403) behandelt hat. Dort konnte es sinnvoll sein, zum Login weiterzuleiten. Ab Contao 4.6 
+ergibt das nur noch auf der 401-Seite Sinn.
 {{% /notice %}}
