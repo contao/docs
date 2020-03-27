@@ -75,3 +75,9 @@ Einsatzzweck konzipiert wurden.
 | 401 Nicht authentifiziert   | Diese Seite wird aufgerufen, wenn ein Mitglied nicht angemeldet ist und deshalb nicht auf eine geschützte Seite zuzugreifen darf. Du kannst die Seite wahlweise als reguläre Seite nutzen und einen entsprechenden Hinweis ausgeben oder den Besucher automatisch z. B. auf die Anmeldeseite weiterleiten. {{< version "4.6" >}} |
 | 403 Zugriff verweigert      | Diese Seite wird aufgerufen, wenn ein Mitglied angemeldet ist aber nicht über die notwendigen Zugriffsrechte verfügt, um auf eine geschützte Seite zuzugreifen. Du kannst die Seite wahlweise als reguläre Seite nutzen und einen entsprechenden Hinweis ausgeben oder den Besucher automatisch auf eine andere Seite weiterleiten. |
 | 404 Seite nicht gefunden    | Diese Seite wird aufgerufen, wenn ein Besucher eine nicht vorhandene Seite anfragt. Du kannst die Seite wahlweise als reguläre Seite nutzen und dort z. B. eine Sitemap einbinden oder den Benutzer automatisch auf eine andere Seite weiterleiten. |
+
+
+{{% notice note %}}
+Vor Contao 4.6 gab es nur den Seitentyp "403 Zugriff verweigert", der beide Situationen "nicht authentifiziert" (401) und "nicht autorisiert" (403) behandelt hat. Dort konnte es sinnvoll sein, auf der entsprechenden Seite zum Login weiterzuleiten. Ab Contao 4.6 ergibt das nur noch auf der
+401-Seite Sinn.
+{{% /notice %}}
