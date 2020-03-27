@@ -78,6 +78,5 @@ Einsatzzweck konzipiert wurden.
 
 
 {{% notice note %}}
-Vor Contao 4.6 gab es nur den Seitentyp "403 Zugriff verweigert", der beide Situationen "nicht authentifiziert" (401) und "nicht autorisiert" (403) behandelt hat. Dort konnte es sinnvoll sein, auf der entsprechenden Seite zum Login weiterzuleiten. Ab Contao 4.6 ergibt das nur noch auf der
-401-Seite Sinn.
+Vor Contao 4.6 gab es nur den Seitentyp "403 Zugriff verweigert", der beide Situationen "nicht authentifiziert" (401) und "nicht autorisiert" (403) behandelt hat. Dort konnte es sinnvoll sein, zum Login weiterzuleiten. Ab Contao 4.6 ergibt das nur noch auf der 401-Seite Sinn.
 {{% /notice %}}
