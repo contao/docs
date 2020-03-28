@@ -190,7 +190,7 @@ an sich bearbeiten und z. B. den Seitentitel ändern.
 
 ![Zugriffsrechte zuweisen](/de/site-structure/images/de/zugriffsrechte-zuweisen.png?classes=shadow)
 
-**Zugriffsrechte zuweisen:** Hier kannst du festlegen, dass einer Seite Zugriffsrechte zugeweisen werden. Wenn du die 
+**Zugriffsrechte zuweisen:** Hier kannst du festlegen, dass einer Seite Zugriffsrechte zugewiesen werden. Wenn du die 
 Option nicht auswählst, werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
 
 **Besitzer:** Hier legst du den Besitzer der Seite fest.
