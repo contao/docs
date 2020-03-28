@@ -141,7 +141,7 @@ Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt i
 Seitenlayout zugewiesen oder vererbt worden, wird stattdessen das Standardlayout geladen. Ist auch kein Standardlayout 
 verfügbar, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
 
-**Ein Layout zuweisen:** Hier kannst festlegen, dass einer Seite ein Seitenlayout zuweisen wird. Die Zuweisung gilt 
+**Ein Layout zuweisen:** Hier kannst festlegen, dass einer Seite ein Seitenlayout zugewiesen wird. Die Zuweisung gilt 
 automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
 
 **Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines 
