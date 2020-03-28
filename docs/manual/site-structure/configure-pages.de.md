@@ -141,8 +141,6 @@ Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt i
 Seitenlayout zugewiesen oder vererbt worden, wird stattdessen das Standardlayout geladen. Ist auch kein Standardlayout 
 verfügbar, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
 
-**Ein Layout zuweisen:** Hier kannst du einer Seite ein Seitenlayout zuweisen. Die Zuweisung gilt automatisch auch für 
-alle untergeordneten Seiten ohne eigenes Seitenlayout.
 
 **Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines 
 Themes erfolgt durch Zuweisung eines Seitenlayouts.
@@ -154,8 +152,8 @@ In den Cache-Einstellungen legst du fest, ob und wie lange eine Seite im Cache z
 zwischengespeicherte Seite lädt deutlich schneller, da sie zum einen nicht erst von Contao generiert werden muss und 
 zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
 
-**Cache zeit festlegen:** Hier kannst du einer Seite eine Cachezeit zuweisen. Wenn du die Option nicht auswählst, wird 
-die Cachezeit von einer übergeordneten Seite geerbt.
+**Cache zeit festlegen:** Hier kannst du festlegen, dass einer Seite eine Cachezeit zugweisen wird. Wenn du die Option 
+nicht auswählst, wird die Cachezeit von einer übergeordneten Seite geerbt.
 
 **Private Cache (Client-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den 
 Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuft werden soll.
@@ -192,8 +190,8 @@ an sich bearbeiten und z. B. den Seitentitel ändern.
 
 ![Zugriffsrechte zuweisen](/de/site-structure/images/de/zugriffsrechte-zuweisen.png?classes=shadow)
 
-**Zugriffsrechte zuweisen:** Hier kannst du einer Seite Zugriffsrechte zuweisen. Wenn du die Option nicht auswählst, 
-werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
+**Zugriffsrechte zuweisen:** Hier kannst du festlegen, dass einer Seite Zugriffsrechte zugeweisen werden. Wenn du die 
+Option nicht auswählst, werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
 
 **Besitzer:** Hier legst du den Besitzer der Seite fest.
 
@@ -211,8 +209,8 @@ Im Gegensatz zu den Zugriffsrechten, die die Rechte im Backend festlegen, bezieh
 Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort 
 anmelden, bevor sie die Seite aufrufen können. Andernfalls sähen sie nur eine Fehlerseite.
 
-**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der 
-Zugriffsschutz von einer übergeordneten Seite geerbt.
+**Seite schützen:** Hier kannst du festlegen, dass der Zugriff auf eine Seite beschränkt wird. Wenn du die Option nicht 
+auswählst, wird der Zugriffsschutz von einer übergeordneten Seite geerbt.
 
 **Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie 
 man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite 
