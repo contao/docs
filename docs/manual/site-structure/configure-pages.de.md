@@ -138,8 +138,7 @@ Zwei-Faktor-Authentifizierung einrichten.
 ## Layout-Einstellungen
 
 Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein 
-Seitenlayout zugewiesen oder vererbt worden, wird stattdessen das Standardlayout geladen. Ist auch kein Standardlayout 
-verfügbar, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
+Seitenlayout zugewiesen oder vererbt worden, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
 
 **Ein Layout zuweisen:** Hier kannst du festlegen, dass einer Seite ein Seitenlayout zugewiesen wird. Die Zuweisung gilt 
 automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
