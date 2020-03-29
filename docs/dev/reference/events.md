@@ -285,6 +285,8 @@ use Contao\CoreBundle\Event\RobotsTxtEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 use webignition\RobotsTxt\Directive\Directive;
+use webignition\RobotsTxt\Directive\UserAgentDirective;
+use webignition\RobotsTxt\Inspector\Inspector;
 use webignition\RobotsTxt\Record\Record;
 
 /**
@@ -295,23 +297,22 @@ class RobotsTxtListener implements ServiceAnnotationInterface
     public function __invoke(RobotsTxtEvent $event): void
     {
         $file = $event->getFile();
+        $inspector = new Inspector($file);
 
-        // If no directive for user-agent: * exists, we add the record
-        if (0 === count($file->getRecords())) {
+        // Check if a "User-Agent: *" directive is not already present
+        if (0 === $inspector->getDirectives()->getLength()) {
             $record = new Record();
-            $this->addDirectivesToRecord($record);
+
+            $userAgentDirectiveList = $record->getUserAgentDirectiveList();
+            $userAgentDirectiveList->add(new UserAgentDirective('*'));
+
             $file->addRecord($record);
         }
 
         foreach ($file->getRecords() as $record) {
-            $this->addDirectivesToRecord($record);
+            $directiveList = $record->getDirectiveList();
+            $directiveList->add(new Directive('Disallow', '/foo/'));
         }
-    }
-
-    private function addDirectivesToRecord(Record $record): void
-    {
-        $directiveList = $record->getDirectiveList();
-        $directiveList->add(new Directive('Disallow', '/foo/'));
     }
 }
 ```
