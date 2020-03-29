@@ -21,7 +21,7 @@ to alter the back end menu to your needs. An example of this can be found in the
 <table>
 <tr><th>Name</th><td><code>contao.backend_menu_build</code></td></tr>
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::BACKEND_MENU_BUILD</code></td></tr>
-<tr><th>Class</th><td><code>\Contao\CoreBundle\Event\MenuEvent</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\MenuEvent</code></td></tr>
 </table>
 <br>
 
@@ -40,7 +40,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  */
 class BackendMenuBuildListener implements ServiceAnnotationInterface
 {
-    public function __invoke(MenuEvent $event)
+    public function __invoke(MenuEvent $event): void
     {
         $factory = $event->getFactory();
         $tree = $event->getTree();
@@ -79,7 +79,7 @@ custom symlink to the list.
 <table>
 <tr><th>Name</th><td><code>contao.generate_symlinks</code></td></tr>
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::GENERATE_SYMLINKS</code></td></tr>
-<tr><th>Class</th><td><code>\Contao\CoreBundle\Event\GenerateSymlinksEvent</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\GenerateSymlinksEvent</code></td></tr>
 </table>
 <br>
 
@@ -98,7 +98,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  */
 class GenerateSymlinksListener implements ServiceAnnotationInterface
 {
-    public function __invoke(GenerateSymlinksEvent $event)
+    public function __invoke(GenerateSymlinksEvent $event): void
     {
         $event->addSymlink('_foo/file.txt', 'web/_foo/file.txt');
     }
@@ -118,7 +118,7 @@ offered image sizes.
 <table>
 <tr><th>Name</th><td><code>contao.image_sizes_all</code></td></tr>
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::IMAGE_SIZES_ALL</code></td></tr>
-<tr><th>Class</th><td><code>\Contao\CoreBundle\Event\ImageSizesEvent</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\ImageSizesEvent</code></td></tr>
 </table>
 <br>
 
@@ -137,7 +137,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  */
 class ImageSizesAllListener implements ServiceAnnotationInterface
 {
-    public function __invoke(ImageSizesEvent $event)
+    public function __invoke(ImageSizesEvent $event): void
     {
         // …
     }
@@ -155,7 +155,7 @@ user.
 <table>
 <tr><th>Name</th><td><code>contao.image_sizes_user</code></td></tr>
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::IMAGE_SIZES_USER</code></td></tr>
-<tr><th>Class</th><td><code>\Contao\CoreBundle\Event\ImageSizesEvent</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\ImageSizesEvent</code></td></tr>
 </table>
 <br>
 
@@ -174,7 +174,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  */
 class ImageSizesUserListener implements ServiceAnnotationInterface
 {
-    public function __invoke(ImageSizesEvent $event)
+    public function __invoke(ImageSizesEvent $event): void
     {
         // …
     }
@@ -192,7 +192,7 @@ query parameter.
 <table>
 <tr><th>Name</th><td><code>contao.preview_url_create</code></td></tr>
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::PREVIEW_URL_CREATE</code></td></tr>
-<tr><th>Class</th><td><code>\Contao\CoreBundle\Event\PreviewUrlCreateEvent</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\PreviewUrlCreateEvent</code></td></tr>
 </table>
 <br>
 
@@ -211,7 +211,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  */
 class PreviewUrlCreateListener implements ServiceAnnotationInterface
 {
-    public function __invoke(PreviewUrlCreateEvent $event)
+    public function __invoke(PreviewUrlCreateEvent $event): void
     {
         // …
     }
@@ -230,7 +230,7 @@ controller into a front end request URL.
 <table>
 <tr><th>Name</th><td><code>contao.preview_url_convert</code></td></tr>
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::PREVIEW_URL_CONVERT</code></td></tr>
-<tr><th>Class</th><td><code>\Contao\CoreBundle\Event\PreviewUrlConvertEvent</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\PreviewUrlConvertEvent</code></td></tr>
 </table>
 <br>
 
@@ -249,7 +249,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  */
 class PreviewUrlConvertListener implements ServiceAnnotationInterface
 {
-    public function __invoke(PreviewUrlConvertEvent $event)
+    public function __invoke(PreviewUrlConvertEvent $event): void
     {
         // …
     }
@@ -262,14 +262,16 @@ class PreviewUrlConvertListener implements ServiceAnnotationInterface
 
 {{% version "4.9" %}}
 
-This event is triggered when the /robots.txt route is called. The event allows you
+This event is triggered when the `/robots.txt` route is called. The event allows you
 to retrieve the `webignition\RobotsTxt\File\File` object of the dynamically generated
-`robots.txt`, which allows you to add your own custom records programatically.
+`robots.txt`, which allows you to add your own custom records programatically. See
+the [README of webignition/robots-txt-file][webignition/robots-txt-file] for more
+details.
 
 <table>
 <tr><th>Name</th><td><code>contao.robots_txt</code></td></tr>
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::ROBOTS_TXT</code></td></tr>
-<tr><th>Class</th><td><code>\Contao\CoreBundle\Event\RobotsTxtEvent</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\RobotsTxtEvent</code></td></tr>
 </table>
 <br>
 
@@ -282,15 +284,34 @@ use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\RobotsTxtEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
+use webignition\RobotsTxt\Directive\Directive;
+use webignition\RobotsTxt\Record\Record;
 
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::ROBOTS_TXT)
  */
 class RobotsTxtListener implements ServiceAnnotationInterface
 {
-    public function __invoke(RobotsTxtEvent $event)
+    public function __invoke(RobotsTxtEvent $event): void
     {
-        // …
+        $file = $event->getFile();
+
+        // If no directive for user-agent: * exists, we add the record
+        if (0 === count($file->getRecords())) {
+            $record = new Record();
+            $this->addDirectivesToRecord($record);
+            $file->addRecord($record);
+        }
+
+        foreach ($file->getRecords() as $record) {
+            $this->addDirectivesToRecord($record);
+        }
+    }
+
+    private function addDirectivesToRecord(Record $record): void
+    {
+        $directiveList = $record->getDirectiveList();
+        $directiveList->add(new Directive('Disallow', '/foo/'));
     }
 }
 ```
@@ -307,7 +328,7 @@ end are generated. The event allows you to set custom options.
 <table>
 <tr><th>Name</th><td><code>contao.slug_valid_characters</code></td></tr>
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::SLUG_VALID_CHARACTERS</code></td></tr>
-<tr><th>Class</th><td><code>\Contao\CoreBundle\Event\SlugValidCharactersEvent</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\SlugValidCharactersEvent</code></td></tr>
 </table>
 <br>
 
@@ -326,7 +347,7 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  */
 class SlugValidCharactersListener implements ServiceAnnotationInterface
 {
-    public function __invoke(SlugValidCharactersEvent $event)
+    public function __invoke(SlugValidCharactersEvent $event): void
     {
         // …
     }
@@ -338,3 +359,4 @@ class SlugValidCharactersListener implements ServiceAnnotationInterface
 [SymfonyEventDispatcher]: https://symfony.com/doc/current/event_dispatcher.html
 [ContaoHooks]: /framework/hooks
 [BackEndRoutes]: /guides/back-end-routes
+[webignition/robots-txt-file]: https://github.com/webignition/robots-txt-file
