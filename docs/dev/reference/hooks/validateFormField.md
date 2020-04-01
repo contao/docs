@@ -55,7 +55,7 @@ class ValidateFormFieldListener implements ServiceAnnotationInterface
      */
     public function onValidateFormField(Widget $widget, string $formId, array $formData, Form $form): Widget
     {
-        if ('auto_form_42' === $formId && $widget instanceof \Contao\FormTextField && 'mywidget' === $widget->name) {
+        if ('myform' === $formId && $widget instanceof \Contao\FormTextField && 'mywidget' === $widget->name) {
             // Do your custom validation and add an error if widget does not validate
             if (!$this->validateWidget($widget)) {
                 $widget->addError('My custom widget error');
