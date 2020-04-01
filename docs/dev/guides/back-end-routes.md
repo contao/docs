@@ -3,6 +3,7 @@ title: "Back End Routes"
 description: "Custom routes within the Contao back end."
 aliases:
   - /guides/backend-routes
+  - /guides/back-end-routes
 ---
 
 
@@ -145,7 +146,7 @@ class BackendMenuListener
         $factory = $event->getFactory();
         $tree = $event->getTree();
 
-        if ('mainMenu' !== $tree->getName() ) {
+        if ('mainMenu' !== $tree->getName()) {
             return;
         }
 
@@ -153,11 +154,12 @@ class BackendMenuListener
 
         $node = $factory
             ->createItem('my-module')
-                ->setUri($this->router->generate(BackendController::class) )
+                ->setUri($this->router->generate(BackendController::class))
                 ->setLabel('My Modules')
                 ->setLinkAttribute('title', 'Title')
                 ->setLinkAttribute('class', 'my-module')
-                ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-module');
+                ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-module')
+        ;
 
         $contentNode->addChild($node);
     }
