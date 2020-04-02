@@ -154,8 +154,8 @@ In den Cache-Einstellungen legst du fest, ob und wie lange eine Seite im Cache z
 zwischengespeicherte Seite lädt deutlich schneller, da sie zum einen nicht erst von Contao generiert werden muss und 
 zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
 
-**Cache zeit festlegen:** Hier kannst du einer Seite eine Cachezeit zuweisen. Wenn du die Option nicht auswählst, wird 
-die Cachezeit von einer übergeordneten Seite geerbt.
+**Cachezeit festlegen:** Hier kannst du einer Seite eine Cachezeit zuweisen. Wenn du die Option nicht auswählst, werden 
+die Cache-Einstellungen von einer übergeordneten Seite geerbt.
 
 **Private Cache (Client-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den 
 Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuft werden soll.
