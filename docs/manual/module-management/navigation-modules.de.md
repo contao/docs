@@ -176,7 +176,7 @@ bestimmten Seite springen kann.
 **Individuelle Bezeichnung:** Hier kannst du eine individuelle Bezeichnung für die erste Option der Quicknavigation 
 eingeben.
 
-**Stoplevel:** Hier legst de fest, bis zu welcher Verschachtelungstiefe Unterseiten in der Quicknavigation angezeigt 
+**Stoplevel:** Hier legst du fest, bis zu welcher Verschachtelungstiefe Unterseiten in der Quicknavigation angezeigt 
 werden (vgl. [Navigationsmenü](#navigationsmenu)).
 
 **Hard Limit:** Wenn du diese Option auswählst, werden Menüpunkte jenseits des Stoplevels niemals anzeigt.
