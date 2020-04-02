@@ -162,7 +162,7 @@ with `\`, since `*/` would close the PHP comment.
 {{% /notice %}}
 
 
-## Scope
+### Scope
 
 In some cases a cron job might want to know in which "scope" it is executed in - 
 i.e. as part of a front end request or as part of the cron command on the command 
@@ -187,6 +187,19 @@ class HourlyCron
     }
 }
 ```
+
+
+### Testing
+
+Contao keeps track of a cronjob's last execution in the `tl_cron_job` table. Thus,
+if you want to test a cron job even though it has already been executed within
+its defined interval, either truncate the whole table or delete the entry for the
+specific cron job you want to test.
+
+{{% notice note %}}
+In Contao **4.4**, the table is called `tl_cron` and it contains only the last execution
+times of the named intervals, not the last execution time of individual cron jobs.
+{{% /notice %}}
 
 
 [1]: /framework/hooks/
