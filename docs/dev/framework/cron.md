@@ -137,7 +137,7 @@ to tag the service accordingly.
 // src/Cron/ExampleCron.php
 namespace App\Cron;
 
-use Contao\CoreBundle\ServiceAnnotation\Cron;
+use Contao\CoreBundle\ServiceAnnotation\CronJob;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
