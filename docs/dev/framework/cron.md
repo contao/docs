@@ -129,7 +129,7 @@ services:
 
 ### Using Service Annotation
 
-You can also use the `Contao\CoreBundle\ServiceAnnotation\Cron` service annotation
+You can also use the `Contao\CoreBundle\ServiceAnnotation\CronJob` service annotation
 together with the `Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface`
 to tag the service accordingly.
 
@@ -141,7 +141,7 @@ use Contao\CoreBundle\ServiceAnnotation\CronJob;
 use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
- * @Cron("hourly")
+ * @CronJob("hourly")
  */
 class ExampleCron implements ServiceAnnotationInterface
 {
