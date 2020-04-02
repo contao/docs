@@ -242,12 +242,12 @@ container is even built. Settings like trusted proxies or caching are considered
     The Contao Managed Edition ships with a blacklist of cookies that are ignored by default to increase the hit rate
     but if you want to optimize it even more, you can disable the blacklist by providing an explicit whitelist.
     These are the cookies you know are **relevant** to the application and in this case, the cache must be **omitted**.
-    By default, Contao only uses the PHP session ID cookie to authenticate users and members plus the CSRF cookie to
-    protect visitors from CSRF attacks when submitting forms.
+    By default, Contao only uses the PHP session ID cookie to authenticate users and members, the CSRF cookie to
+    protect visitors from CSRF attacks when submitting forms and the trusted devices cookie for two-factor authentication.
     So in most cases, the following configuration will score the maximum cache hits but you may have to allow additional
     cookies of extensions you installed:
     
-    `COOKIE_WHITELIST=PHPSESSID,csrf_https-contao_csrf_token`
+    `COOKIE_WHITELIST=PHPSESSID,csrf_https-contao_csrf_token,trusted_device`
         
     {{% notice note %}}
 The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
