@@ -271,6 +271,16 @@ class ContaoExampleExtension extends Extension
 
 Now, services can be registered as usual in your `src/Resources/config/services.yml`.
 
+{{% notice tip %}}
+In order to take advantage of service annotations, enable [auto-configuration](https://symfony.com/doc/current/service_container.html#the-autoconfigure-option)
+for your services. See also the README of the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
+```yml
+services:
+    _defaults:
+        autoconfigure: true
+```
+{{% /notice %}}
+
 
 ### Routing Configuration
 
