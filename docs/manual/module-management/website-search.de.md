@@ -237,7 +237,8 @@ sieht folgendermaßen aus:
 <!-- indexer::continue -->
 ```
 
-Die Zielseite, die beim Abschicken des Formulars aufgerufen wird, wurde hier über einen Inserttag erfasst, damit das 
+Die Zielseite, die beim Abschicken des Formulars aufgerufen wird, wurde hier über einen
+[Insert-Tag](../../article-management/insert-tags/) erfasst, damit das
 Formular auch dann noch funktioniert, wenn sich der Alias der Zielseite im Laufe der Zeit ändert. Als 
 Übertragungsmethode wurde »GET« ausgewählt, und dem Suchfeld den Feldnamen »keywords« gegeben.
 
