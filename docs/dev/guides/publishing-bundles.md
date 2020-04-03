@@ -72,7 +72,7 @@ package discoverable in the Contao Manager search. A public version of this sear
 is available on [extensions.contao.org][extensions].
 
 If your package is of `"type": "contao-bundle"` and is published to
-[packagist.org](https://packagist.org), our search index will automatically pick it up.
+[packagist.org](https://packagist.org), our search index will [automatically pick it up](https://github.com/contao/package-metadata/actions).
 To extend the description, add multilingual translations, a logo etc., you have to add
 your package to the `contao/package-metadata` repository. Read and follow
 [the metadata documentation][metadata] on how to do that.
