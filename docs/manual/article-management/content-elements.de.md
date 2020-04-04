@@ -97,7 +97,7 @@ auswählen:
 ![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
 ![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
 ![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
-umfließt der Text das Bild (wie in Icon symbolisiert).
+umfließt der Text das Bild (wie im Icon symbolisiert).
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.
