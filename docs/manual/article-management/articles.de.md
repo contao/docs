@@ -19,7 +19,7 @@ Teasertext, gefolgt von einem `Weiterlesen`-Link, angezeigt werden soll.
 ![Mehrere Artikel mit Teasertext](/de/article-management/images/de/mehrere-artikel-mit-teasertext.png?classes=shadow)
 
 Die Zuweisung eines Artikels zu einem Layoutbereich erfolgt in den Artikeleinstellungen im Feld Anzeigen in. Die 
-Artikeleinstellungen erreichst du am schnellsten, über das Navigationssymbole 
+Artikeleinstellungen erreichst du am schnellsten, über das Navigationssymbol
 ![Die Artikeleinstellungen bearbeiten](/de/icons/header.svg?classes=icon) **Die Artikeleinstellungen bearbeiten**.
 
 

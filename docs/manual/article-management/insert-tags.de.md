@@ -174,11 +174,11 @@ Verfügbare Flags:
 |:--------------------|:-------------------------------------------------------------------------|:--------------------------------------------------|
 | `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           |                                                   |
 | `refresh`           | Erstellt die Ausgabe bei jeder Anfrage neu.                              |                                                   |
-| `addslashes`        | Stellt bestimmten Zeichen eines Strings ein "\" voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
-| `stripslashes`      | Entfernt das "\" vor bestimmten Zeichen eines Strings.                   | [PHP-Funktion](https://php.net/stripslashes)      |
+| `addslashes`        | Stellt bestimmten Zeichen eines Strings ein "`\`" voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
+| `stripslashes`      | Entfernt das "`\`" vor bestimmten Zeichen eines Strings.                   | [PHP-Funktion](https://php.net/stripslashes)      |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
 | `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                         |
-| `ampersand`         | Wandelt Und-Zeichen in Entities um.                                      |                                                   |
+| `ampersand`         | Wandelt `&`-Zeichen in Entities um.                                      |                                                   |
 | `specialchars`      | Wandelt Sonderzeichen in Entities um.                                    |                                                   |
 | `nl2br`             | Fügt vor allen Zeilenumbrüchen eines Strings HTML-Zeilenumbrüche ein.    | [PHP-Funktion](https://php.net/nl2br)             |
 | `nl2br_pre`         | Erhält die Zeilenumbrüche innerhalb von `<pre>`-Tags.                    |                                                   |
@@ -194,7 +194,7 @@ Verfügbare Flags:
 | `ltrim`             | Entfernt Leerzeichen vom Ende der Ausgabe.                               | [PHP-Funktion](https://php.net/ltrim)             |
 | `utf8_romanize`     | Romanisiert die Ausgabe.                                                 |                                                   |
 | `strrev`            | Dreht die Ausgabe um.                                                    | [PHP-Funktion](https://php.net/strrev)            |
-| `encodeEmail`       | Kodiert E-Mail-Adressen in der Ausgabe.                                  | siehe `String::encodeEmail`                       |
+| `encodeEmail`       | Kodiert E-Mail-Adressen in der Ausgabe.                                  | siehe `String::encodeEmail()`                       |
 | `decodeEntities`    | Dekodiert Entities in der Ausgabe.                                       | siehe `String::decodeEntities()`                  |
 | `number_format`     | Formatiert eine Zahl (keine Dezimalstellen).                             | siehe `System::getFormattedNumber()`              |
 | `currency_format`   | Formatiert eine Währung (zwei Dezimalstellen).                           | siehe `System::getFormattedNumber()`              |
