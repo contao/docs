@@ -206,6 +206,6 @@ This would result in the following HTML code:
 ```
 
 
-[ContaoContentElement]: /framework/content-elements
-[ContaoFrontEndModule]: /framework/front-end-modules
+[ContaoContentElement]: /framework/content-elements/
+[ContaoFrontEndModule]: /framework/front-end-modules/
 [ContaoTemplates]: /framework/templates/
