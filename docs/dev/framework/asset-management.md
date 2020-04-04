@@ -24,7 +24,8 @@ layout.
 | `$GLOBALS['TL_MOOTOOLS']` | Contains HTML code to be included before `</body>`.<sup>1</sup> |
 
 {{% notice note %}}
-<sup>1</sup> In the back end, only `TL_MOOTOOLS` is used.
+<sup>1</sup> In the back end, only `TL_MOOTOOLS` is used for adding HTML code at
+the end of the `<body>`.
 {{% /notice %}}
 
 
@@ -107,7 +108,7 @@ When using both options and combining is enabled in the page layout, all `static
 and `async` JavaScript assets will be combined in one file.
 
 
-### Generating Style and Script Tags
+## Generating Style and Script Tags
 
 As mentioned in the introduction, it is also possible to add custom HTML to either
 the `<head>` or the end of the `<body>` element. Often this is used to add assets
