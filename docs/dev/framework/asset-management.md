@@ -18,23 +18,14 @@ layout.
 | Array | Description |
 | --- | --- |
 | `$GLOBALS['TL_BODY']` | Contains HTML code to be included before `</body>`.<sup>1</sup> |
-| `$GLOBALS['TL_CSS']` | Contains relative paths to CSS assets to be included in the `<head>` of the document. |
-| `$GLOBALS['TL_FRAMEWORK_CSS']` | Contains relative paths to CSS assets to be included in the `<head>` of the document. |
+| `$GLOBALS['TL_CSS']` | Contains relative or absolute paths to CSS assets to be included in the `<head>` of the document. |
 | `$GLOBALS['TL_HEAD']` | Contains HTML code to be included in the `<head>` of the document. |
-| `$GLOBALS['TL_JAVASCRIPT']` | Contains relative paths to JavaScripts assets to be included in the `<head>` of the document. |
-| `$GLOBALS['TL_JQUERY']` | Contains HTML code to be included before `</body>`.<sup>1</sup> |
+| `$GLOBALS['TL_JAVASCRIPT']` | Contains relative or absolute paths to JavaScripts assets to be included in the `<head>` of the document. |
 | `$GLOBALS['TL_MOOTOOLS']` | Contains HTML code to be included before `</body>`.<sup>1</sup> |
-| `$GLOBALS['TL_USER_CSS']` | Contains relative paths to CSS assets to be included in the `<head>` of the document. |
 
 {{% notice note %}}
-<sup>1</sup> The order of HTML code for the end of the body in the front end is 
-as follows: `TL_JQUERY`, `TL_MOOTOOLS`, `TL_BODY`. In the back end, only `TL_MOOTOOLS`
-is used.
+<sup>1</sup> In the back end, only `TL_MOOTOOLS` is used.
 {{% /notice %}}
-
-Out of this list, only `TL_BODY` (`TL_MOOTOOLS` in the back end), `TL_CSS`, `TL_HEAD`
-and `TL_JAVASCRIPT` is usually relevant for app or extension development. The others
-are used by Contao internally.
 
 
 ### Adding CSS
@@ -99,7 +90,21 @@ others (if enabled in the page layout) if they are defined as "static":
 $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|static';
 ```
 
-There are no further options to be defined for JavaScript assets.
+Additionally, you can load JavaScript assets asynchronously by adding the option
+`|async`:
+
+```php
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|async';
+```
+
+You can use both options in no particular order:
+
+```php
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|async|static';
+```
+
+When using both options and combining is enabled in the page layout, all `static` 
+and `async` JavaScript assets will be combined in one file.
 
 
 ### Generating Style and Script Tags
@@ -185,18 +190,18 @@ can be used:
 <script src="<?= $this->asset('js/tablesort.min.js', 'contao-components/tablesort') ?>"></script>
 ```
 
-The same can be used for assets of a bundle. Suppose you have a package called `example/contao-foo-extension`
-with a bundle called `FooBundle`. In order to access its public assets
-in a Contao template the following can be used:
+The same can be used for assets of a bundle. Suppose you have a package with a bundle
+called `SomeExampleBundle`. In order to access its public assets in a Contao template the 
+following can be used:
 
 ```php
-<script src="<?= $this->asset('js/foo.js', 'example/contao-foo-extension') ?>"></script>
+<script src="<?= $this->asset('js/foo.js', 'some_example') ?>"></script>
 ```
 
 This would result in the following HTML code:
 
 ```html
-<script src="bundles/foobundle/js/foo.js"></script>
+<script src="bundles/someexample/js/foo.js"></script>
 ```
 
 
