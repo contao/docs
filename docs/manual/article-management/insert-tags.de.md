@@ -174,8 +174,8 @@ Verfügbare Flags:
 |:--------------------|:-------------------------------------------------------------------------|:--------------------------------------------------|
 | `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           |                                                   |
 | `refresh`           | Erstellt die Ausgabe bei jeder Anfrage neu.                              |                                                   |
-| `addslashes`        | Stellt bestimmten Zeichen eines Strings ein "`\`" voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
-| `stripslashes`      | Entfernt das "`\`" vor bestimmten Zeichen eines Strings.                   | [PHP-Funktion](https://php.net/stripslashes)      |
+| `addslashes`        | Stellt bestimmten Zeichen eines Strings ein `\` voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
+| `stripslashes`      | Entfernt das `\` vor bestimmten Zeichen eines Strings.                   | [PHP-Funktion](https://php.net/stripslashes)      |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
 | `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                         |
 | `ampersand`         | Wandelt `&`-Zeichen in Entities um.                                      |                                                   |
