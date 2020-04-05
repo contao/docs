@@ -1,12 +1,11 @@
 ---
 title: "Newsletter-Verwaltung"
-description: "Die Newsletter-Verwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« an fünfter 
-Stelle findest. "
+description: "Die Newsletter-Verwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« findest."
 url: "core-erweiterung/newsletter/newsletter-verwaltung"
 weight: 10
 ---
 
-Die Newsletter-Verwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« an fünfter Stelle findest. 
+Die Newsletter-Verwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« findest. 
 Du kannst dort mehrere Verteiler anlegen, die wiederum die einzelnen Newsletter und Empfänger enthalten. Durch die 
 Verwendung mehrerer Verteiler können die einzelnen Newsletter nach Thema oder Sprache sortiert werden.
 

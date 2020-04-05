@@ -1,12 +1,11 @@
 ---
 title: "Nachrichtenverwaltung"
-description: "Die Nachrichtenverwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« an zweiter 
-Stelle findest. "
+description: "Die Nachrichtenverwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« findest."
 url: "core-erweiterung/nachrichten/nachrichtenverwaltung"
 weight: 10
 ---
 
-Die Nachrichtenverwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« an zweiter Stelle findest. 
+Die Nachrichtenverwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« findest. 
 Du kannst dort mehrere Archive anlegen, die wiederum die einzelnen News- bzw. Blog-Beiträge enthalten. Durch die 
 Verwendung mehrerer Archive ist eine Kategorisierung der Beiträge möglich.
 

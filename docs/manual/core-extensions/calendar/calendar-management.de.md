@@ -1,12 +1,11 @@
 ---
 title: "Terminverwaltung"
-description: "Die Terminverwaltung ist ein eigenes Modul im Backend namens »Events«, das du in der Gruppe »Inhalte« an 
-dritter Stelle findest."
+description: "Die Terminverwaltung ist ein eigenes Modul im Backend namens »Events«, das du in der Gruppe »Inhalte« findest."
 url: "core-erweiterung/kalender/terminverwaltung"
 weight: 10
 ---
 
-Die Terminverwaltung ist ein eigenes Modul im Backend namens »Events«, das du in der Gruppe »Inhalte« an dritter Stelle 
+Die Terminverwaltung ist ein eigenes Modul im Backend namens »Events«, das du in der Gruppe »Inhalte«
 findest. Du kannst dort mehrere Kalender anlegen, die wiederum die einzelnen Termine bzw. Events enthalten.
 Durch die Verwendung mehrerer Kalender ist eine Kategorisierung der Einträge möglich.
 
