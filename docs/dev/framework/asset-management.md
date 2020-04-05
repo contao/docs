@@ -1,6 +1,6 @@
 ---
 title: "Asset Management"
-description: Managing assets (JavaSCript, CSS) in the front end.
+description: Managing assets (JavaScript, CSS) in the front end.
 ---
 
 
