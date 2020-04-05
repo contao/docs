@@ -134,11 +134,12 @@ auswählen:
 | Mitte / Unten     | Erhält den mittleren Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.    |
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
-**Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird er 
+**Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird es 
 ![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
 ![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
 ![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt der Text umfließt das Bild.
+![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
+umfließt der Text das Bild (wie im Icon symbolisiert).
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.

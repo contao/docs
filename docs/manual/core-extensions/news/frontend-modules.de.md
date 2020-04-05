@@ -196,7 +196,7 @@ ausgewählt wurde.
 Seiten – eine entsprechende Anzahl vorausgesetzt.
 
 
-####Template-Einstellungen
+### Template-Einstellungen
 
 **Meta-Felder:** Hier legst du fest, welche Meta-Informationen (Datum des Beitrags, Autor des Beitrags und Anzahl der 
 Kommentare) angezeigt werden.
