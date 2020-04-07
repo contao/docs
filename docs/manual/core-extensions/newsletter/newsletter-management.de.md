@@ -42,7 +42,7 @@ Ohne Angaben eines eigenen SMTP-Servers werden die Daten über [Sendmail](https:
 versendet, was zu Problemen führen kann.
 
 {{% notice info %}}
-Wir empfehlen den Versand über das [E-Mail-Transportprotkoll (SMTP)](../../system/einstellungen/#smtp-versand).
+Wir empfehlen den Versand über das [E-Mail-Transportprotkoll (SMTP)](../../../system/einstellungen/#smtp-versand).
 {{% /notice %}}
 
 
