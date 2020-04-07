@@ -184,9 +184,9 @@ Es stehen die **JavaScript-Templates**, **Analytics-Templates**, **Externe JavaS
 
 | Template     | Erklärung                                                                   |
 |:-------------|:----------------------------------------------------------------------------|
-| js_autofocus | Wenn z. B. ein Feld in einem Formular falsch ausgefüllt wurde, erhält dieses Feld nach dem Absenden eine <p>-Tag mit der Klasse »error«. Das JavaScript sorgt dafür, dass automatisch zu dieser Klasse gescrollt wird. |
+| js_autofocus | Wenn z. B. ein Feld in einem Formular falsch ausgefüllt wurde, erhält dieses Feld nach dem Absenden eine `<p>`-Tag mit der Klasse »error«. Das JavaScript sorgt dafür, dass automatisch zu dieser Klasse gescrollt wird. |
 | js_highlight | Dabei handelt es sich um einen Syntax-Highlighter für Scriptsprachen, er wird für das Inhaltselement »Code« benötigt. |
-| js_nocookie  | Damit Contao dich vor CSRF-Attacken schützen kann, musst du zwingend Cookies erlauben. Das Template generiert dynamisch einen entsprechenden Hinweis beim Formular, wenn du es im Browser deaktiviert hast. {{< version "4.8" >}} |
+| js_nocookie  | Damit Contao dich vor CSRF-Attacken schützen kann, müssen Besucher zwingend Cookies erlauben. Das Template generiert dynamisch einen entsprechenden Hinweis beim Formular, wenn ein Besucher Cookies im Browser deaktiviert hast. {{< version "4.7" >}} |
 | js_slider    | Stellt JavaScript für das Inhaltselement »Content Slider« zur Verfügung.    |
 
 **Analytics-Templates:** Hier kannst du das Analytics-Templates von Google Analytics und/oder Matomo (Piwik) auswählen.
