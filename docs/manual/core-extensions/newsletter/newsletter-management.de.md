@@ -92,7 +92,7 @@ personalisieren. Simple Tokens funktionieren ähnlich wie Insert-Tags und könne
 eines Newsletters verwendet werden. Nachfolgend ein kleines Beispiel:
 
 ```text
-Sehr geehrte(r) ##fistname## ##lastname##,
+Sehr geehrte(r) ##firstname## ##lastname##,
 
 bitte prüfen und aktualisieren Sie Ihre Daten:
 
