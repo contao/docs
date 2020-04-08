@@ -6,8 +6,8 @@ weight: 10
 ---
 
 Die Dateiverwaltung bildet die Verzeichnisstruktur in einem hierarchischen Baum ab. Jeder Unterordner ist ein eigener 
-Knoten, den du über das ![Plussymbol](/de/icons/folPlus.svg?classes=icon) Plus- bzw. 
-![Minussymbol](/de/icons/folMinus.svg?classes=icon) Minussymbol aus- und einklappen kannst. Innerhalb jedes 
+Knoten, den du über das ![Plussymbol](/de/icons/folPlus.svg?classes=icon) Plus- und 
+![Minussymbol](/de/icons/folMinus.svg?classes=icon) Minussymbol aus- bzw. einklappen kannst. Innerhalb jedes 
 Unterordners werden die darin enthaltenen Dateien aufgelistet. Handelt es sich dabei um Bilder, wird automatisch eine 
 Voransicht angezeigt. Bei einer großen Menge an Bildern kannst du die Voransicht in deinem Benutzerprofil deaktivieren,
 damit die Seite schneller lädt.
