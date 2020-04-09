@@ -39,8 +39,9 @@ Datei bzw. des Ordners anzeigen.
 **![Dateien in den Ordner hochladen](/de/icons/new.svg?classes=icon) Hochladen:** Dateien in den Ordner hochladen.
 
 **![Datei bearbeiten](/de/icons/editor.svg?classes=icon) Datei bearbeiten:** Öffnet eine Eingabemaske zur 
-Bearbeitung des Inhalts einer Datei mit einem Texteditor. Welche Dateien editiert werden dürfen, kannst du in den 
-Backend-Einstellungen unter »Editierbare Dateien« festlegen.
+Bearbeitung des Inhalts einer Datei mit einem Texteditor. Welche Dateien editiert werden dürfen, kannst du in der
+Konfigurationsdatei [`config/config.yml`](../../system/einstellungen/#config-yml) unter dem Schlüssel `editable_files`
+festlegen.
 
 **![Datei oder Verzeichnis verschieben](/de/icons/drag.svg?classes=icon) Verschieben:** Eine Datei bzw. einen Ordner per Drag & Drop verschieben.
 
