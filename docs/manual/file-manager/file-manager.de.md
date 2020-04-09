@@ -44,8 +44,8 @@ Konfigurationsdatei [`config/config.yml`](../../system/einstellungen/#config-yml
 festlegen<sup>1</sup>.
 
 {{% notice note %}}
-<sup>1</sup>Bis zur Version 4.6 von Contao konnte dies in den in den System-Einstellungen unter »Dateien und Bilder 
--&gt; Editierbare Dateien« festlegt festlegt werden.
+<sup>1</sup>Bis zur Version 4.6 von Contao konnte dies in den System-Einstellungen unter »Dateien und Bilder 
+-&gt; Editierbare Dateien« festlegt werden.
 {{% /notice %}}
 
 **![Datei oder Verzeichnis verschieben](/de/icons/drag.svg?classes=icon) Verschieben:** Eine Datei bzw. einen Ordner per Drag & Drop verschieben.
