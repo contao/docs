@@ -32,7 +32,7 @@ the end of the `<body>`.
 ## Adding CSS & JavaScript Assets
 
 In order to add a new CSS or JavaScript file for the `<head>` to the document, add 
-a new entry to the `$GLOBALS['TL_CSS']` or `$GLOBALS['TL_JAVASCRIPT'] array respectively, 
+a new entry to the `$GLOBALS['TL_CSS']` or `$GLOBALS['TL_JAVASCRIPT']` array respectively, 
 for example in your [content element][ContaoContentElement] or [front end module][ContaoFrontEndModule]. 
 The entry can contain a path relative to the Contao installation directory, or an 
 absolute path for an external asset.
@@ -202,34 +202,45 @@ $GLOBALS['TL_HEAD'][] = \Contao\Template::generateFeedTag('share/myfeed.xml', 'r
 
 {{< version "4.5" >}}
 
-Within [Contao Templates][ContaoTemplates] you can access the helper function `$this->asset(…)`
-in order to automatically link to specific assets of either a "Contao Component"
-or a bundle. It takes two arguments: the path of the asset within the bundle or
-component, and the bundle or component name.
-
-For example, in order to integrate the tablesorter component (which Contao installs
-as a dependency through `contao-components/tablesort`) within a template, the following
-can be used:
+Contao also provides the possibility to access assets via the [Symfony Asset Component][SymfonyAssetComponent].
+It automatically registers assets from packages and these assets are grouped by
+their "package". Each package can have a different version strategy. These assets 
+can then be accessed within [Contao Templates][ContaoTemplates] by using the 
+`$this->asset(…)` helper function, or via the `{{asset::*::*}}` insert tag. These 
+methods are basically shortcuts to the asset component of the Symfony framework, 
+so Contao supports whatever Symfony Assets supports. The methods take two arguments: 
+the path or name of the asset within the package, and the package name.
 
 ```php
+<script src="<?= $this->asset('foobar.js', 'fooexample') ?>"></script>
 <script src="<?= $this->asset('js/tablesort.min.js', 'contao-components/tablesort') ?>"></script>
+<script src="{{asset::jquery.js::contao-components/jquery}}"></script>
 ```
 
-The same can be used for assets of a bundle. Suppose you have a package with a bundle
-called `SomeExampleBundle`. In order to access its public assets in a Contao template the 
-following can be used:
+There are several use cases of using the asset helper within Contao:
 
-```php
-<script src="<?= $this->asset('js/foo.js', 'some_example') ?>"></script>
-```
+1. Packages of type `contao-components` are registered by their package name. Therefore, 
+  one can include the (imaginary) file in `assets/jquery/jquery.js` through `{{asset::jquery.js::contao-components/jquery}}`. 
+  It uses the package version to generate a strategy that adds unique file names, 
+  so the resulting path for `contao-components/jquery: 1.1.0` will be `assets/jquery/jquery.js?v=1.1.0`.
 
-This would result in the following HTML code:
+2. If a bundle has a `public/` folder (or its deprecated sibling `src/Resources/public/`), 
+  that folder is registered as an asset through the lowercase bundle short name. 
+  A file of a `FooExampleBundle` in `vendor/foo/example/src/Resources/public/foobar.min.js` 
+  is symlinked by Symfony to `web/bundles/fooexample/foobar.min.js` (regardless 
+  of the asset component).
 
-```html
-<script src="bundles/someexample/js/foo.js"></script>
-```
+    - By default, a bundle does not have a version, so no version suffix is added. 
+      The asset component resolves `{{asset::foobar.min.js::fooexample}}` to `web/bundles/fooexample/foobar.min.js`.
+    - If the `public` folder has a `manifest.json` in its root, that file is used 
+      to generate a *manifest.json version strategy*. For `{{asset::foobar.js::fooexample}}` 
+      the asset component will look up `foobar.js` in the `manifest.json` and output 
+      that path. This is useful when using e.g. [Webpack Encore][WebpackEncore] 
+      to generate the assets, as hashed file names are resolved to `web/bundles/fooexample/foobar-1ussdg71.js`.
 
 
 [ContaoContentElement]: /framework/content-elements/
 [ContaoFrontEndModule]: /framework/front-end-modules/
 [ContaoTemplates]: /framework/templates/
+[SymfonyAssetComponent]: https://symfony.com/doc/current/components/asset.html
+[WebpackEncore]: https://symfony.com/doc/current/frontend.html#webpack-encore
