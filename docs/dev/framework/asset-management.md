@@ -29,29 +29,56 @@ the end of the `<body>`.
 {{% /notice %}}
 
 
-### Adding CSS
+## Adding CSS & JavaScript Assets
 
-In order to add a new CSS file for the `<head>` to the document, add a new entry
-to the `$GLOBALS['TL_CSS']` array, for example in your [content element][ContaoContentElement]
-or [front end module][ContaoFrontEndModule].
+In order to add a new CSS or JavaScript file for the `<head>` to the document, add 
+a new entry to the `$GLOBALS['TL_CSS']` or `$GLOBALS['TL_JAVASCRIPT'] array respectively, 
+for example in your [content element][ContaoContentElement] or [front end module][ContaoFrontEndModule]. 
+The entry can contain a path relative to the Contao installation directory, or an 
+absolute path for an external asset.
 
 ```php
 $GLOBALS['TL_CSS'][] = 'bundles/myextension/frontend.css';
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js';
 ```
+
+
+### Options
 
 Contao allows a few options to be set for each file. These options are appended
 to the file path and separated by a pipe `|` character.
 
-By appending `|static` you can define the stylesheet as being "static", meaning 
-that it can be combined with other static stylesheets into one file (if enabled
-in Contao's page layout). Without the `static` option, the stylesheet is always 
-included separately. A stylesheet should be defined as `static`, if it will occur 
-on every or most pages of a website, as it is more advantageous then for it to be 
-combined with other static stylesheets.
+| Option | Example | Description |
+| --- | --- | --- |
+| Static | `|static` | Defines the asset as "static". |
+| Media | `|print` | Defines the `media` attribute of the `<link>` tag (CSS only). |
+| Media | `|asnyc` | Defines the `async` attribute of the `<script>` tag (JavaScript only). |
+| Version | `|1` | Appends a `?v=…` parameter. Can be a version number or also a timestamp. |
+
+All options can be combined in no particular order.
+
+```php
+$GLOBALS['TL_CSS'][] = 'files/theme/css/print.css|print|static|1';
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|2|async|static';
+```
+
+
+#### Static
+
+By appending `|static` you can define the asset as being "static", meaning that 
+it can be combined with other static assets into one file (if enabled in Contao's 
+page layout). Without the `static` option, the stylesheet is always included separately. 
+A stylesheet should be defined as `static`, if it will occur on every or most pages 
+of a website, as it is more advantageous then for it to be combined with other static 
+assets.
 
 ```php
 $GLOBALS['TL_CSS'][] = 'bundles/myextension/frontend.css|static';
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|static';
 ```
+
+
+#### Media
 
 In case of stylesheets, you can also define its _media_ property the same ways as
 defining it as "static". For instance, if a stylesheet is only to be included for
@@ -67,45 +94,34 @@ This results in the following HTML code in the front end:
 <link rel="stylesheet" href="files/theme/css/print.css?v=da0d4373" media="print">
 ```
 
-Both options can be combined, in no particular order:
 
-```php
-$GLOBALS['TL_CSS'][] = 'files/theme/css/print.css|print|static';
-```
+#### Async
 
-
-### Adding JavaScript
-
-Adding JavaScript to the `<head>` of a document works the same ways as [adding CSS](#adding-css).
-This time, the paths to the script files are added to the `$GLOBALS['TL_JAVASCRIPT']`
-array.
-
-```php
-$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js';
-```
-
-As with CSS, JavaScript assets in the `<head>` of a document can be combined with
-others (if enabled in the page layout) if they are defined as "static":
-
-```php
-$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|static';
-```
-
-Additionally, you can load JavaScript assets asynchronously by adding the option
-`|async`:
+You can load JavaScript assets asynchronously by adding the option `|async`, which
+enables the `async` attribute of the `<script>` tag:
 
 ```php
 $GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|async';
 ```
 
-You can use both options in no particular order:
+When using both the `async` and `static` option and combining is enabled in the 
+page layout, all JavaScript assets that are `static` _and_ `async` will be combined 
+into one file.
+
+
+#### Version
+
+This option is used for cache busting, to ensure that clients receive the latest
+version of the asset, when it changes. It can either be a simple version number
+or also an automated timestamp.
 
 ```php
-$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|async|static';
-```
+$cssTimestamp = filemtime($this->rootDir.'/bundles/myextension/frontend.css');
+$GLOBALS['TL_CSS'][] = 'bundles/myextension/frontend.css|'.$cssTimestamp;
 
-When using both options and combining is enabled in the page layout, all `static` 
-and `async` JavaScript assets will be combined in one file.
+$jsTimestamp = filemtime($this->rootDir.'/bundles/myextension/scripts.js');
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/myextension/scripts.js|'.$jsTimestamp;
+```
 
 
 ## Generating Style and Script Tags
@@ -117,61 +133,69 @@ manually, by adding the apropriate `<link>`, `<style>` or `<script>` HTML tags.
 Contao offers a few static utility functions for this purpose via the `\Contao\Template`
 class.
 
-* __`\Contao\Template::generateStyleTag($href, $media, $mtime)`__ 
+### `Template::generateStyleTag($href, $media, $mtime)`
   
-  This returns a `<link rel="stylesheet" …>` tag and takes three arguments: the
-  path to the stylesheet (absolute or relative to the _base_), an optional _media_
-  attribute and an optional modification time, which Contao will use to append a
-  query parameter to the file for cache busting. The latter can also be set to
-  `null` in order to automatically use the file's modification time for cache busting
-  (if it is a relative file path).
+This returns a `<link rel="stylesheet" …>` tag and takes three arguments: the
+path to the stylesheet (absolute or relative to the _base_), an optional _media_
+attribute and an optional modification time, which Contao will use to append a
+query parameter to the file for cache busting. The latter can also be set to
+`null` in order to automatically use the file's modification time for cache busting
+(if it is a relative file path).
 
-  ```php
-  $GLOBALS['TL_HEAD'][] = \Contao\Template::generateStyleTag('bundles/myextension/print.css', 'print', null);
-  ```
-* __`\Contao\Template::generateInlineStyle($script)`__
+```php
+$GLOBALS['TL_HEAD'][] = \Contao\Template::generateStyleTag('bundles/myextension/print.css', 'print', null);
+```
 
-  This wraps the given CSS with `<style>…</style>`.
 
-  ```php
-  $GLOBALS['TL_HEAD'][] = \Contao\Template::generateInlineStyle($this->generateCss());
-  ```
-* __`\Contao\Template::generateScriptTag($href, $async, $mtime, $hash, $crossorigin, $referrerpolicy)`__ 
+### `Template::generateInlineStyle($script)`
+
+This wraps the given CSS with `<style>…</style>`.
+
+```php
+$GLOBALS['TL_HEAD'][] = \Contao\Template::generateInlineStyle($this->generateCss());
+```
+
+
+### `Template::generateScriptTag(…)`
   
-  This returns a `<script src="…" …>` tag and takes six arguments: 
+This returns a `<script src="…" …>` tag and takes six arguments: 
 
-  * `$href`: the path to the stylesheet (absolute or relative to the _base_)
-  * `$async`: whether the `async` attribute should be added to the tag (default `false`)
-  * `$mtime`: an optional modification time, which Contao will use to append a query 
-    parameter to the file for cache busting. This can also be set to `null` in order 
-    to automatically use the file's modification time for cache busting.
-  * `$hash`: optional hash for an `integrity` attribute.
-  * `$crossorigin`: optional `crossorigin` attribute.
-  * `$referrerpolicy`: optional `referrerpolicy` attribute.
+* `$href`: the path to the stylesheet (absolute or relative to the _base_)
+* `$async`: whether the `async` attribute should be added to the tag (default `false`)
+* `$mtime`: an optional modification time, which Contao will use to append a query 
+  parameter to the file for cache busting. This can also be set to `null` in order 
+  to automatically use the file's modification time for cache busting.
+* `$hash`: optional hash for an `integrity` attribute.
+* `$crossorigin`: optional `crossorigin` attribute.
+* `$referrerpolicy`: optional `referrerpolicy` attribute.
 
-  {{% notice note %}}
+{{% notice note %}}
 Some of these parameters are only available in newer Contao versions.
-  {{% /notice %}}
+{{% /notice %}}
 
-  ```php
-  $GLOBALS['TL_BODY'][] = \Contao\Template::generateScriptTag('bundles/myextension/scripts.js', false, null);
-  ```
-* __`\Contao\Template::generateInlineScript($script)`__
+```php
+$GLOBALS['TL_BODY'][] = \Contao\Template::generateScriptTag('bundles/myextension/scripts.js', false, null);
+```
 
-  This wraps the given JavaScript with `<script>…</script>`.
 
-  ```php
-  $GLOBALS['TL_BODY'][] = \Contao\Template::generateInlineScript($this->generateJavaScript());
-  ```
-* __`\Contao\Template::generateFeedTag($href, $format, $title)`__
+### `Template::generateInlineScript($script)`
 
-  This generates a `<link type="application/…" rel="alternate" href="…" title="…">` 
-  tag for RSS feeds. It takes three arguments: the URL to the feed, its format and 
-  the title of the feed.
+This wraps the given JavaScript with `<script>…</script>`.
 
-  ```php
-  $GLOBALS['TL_HEAD'][] = \Contao\Template::generateFeedTag('share/myfeed.xml', 'rss', 'My Feed');
-  ```
+```php
+$GLOBALS['TL_BODY'][] = \Contao\Template::generateInlineScript($this->generateJavaScript());
+```
+
+
+### `Template::generateFeedTag($href, $format, $title)`
+
+This generates a `<link type="application/…" rel="alternate" href="…" title="…">` 
+tag for RSS feeds. It takes three arguments: the URL to the feed, its format and 
+the title of the feed.
+
+```php
+$GLOBALS['TL_HEAD'][] = \Contao\Template::generateFeedTag('share/myfeed.xml', 'rss', 'My Feed');
+```
 
 
 ## Accessing Assets in Templates
