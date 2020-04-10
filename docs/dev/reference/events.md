@@ -1,6 +1,8 @@
 ---
 title: "Events"
 description: Events dispatched by Contao.
+aliases:
+    - /reference/events/
 ---
 
 

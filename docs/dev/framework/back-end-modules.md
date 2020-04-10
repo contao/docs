@@ -29,7 +29,7 @@ $GLOBALS['BE_MOD']['content']['my_module'] = [
 
 As you can see, we're extending the `content` category by a new module called `my_module`.
 Adding the translation for your new `my_module` is as simple as having a `modules.xlf` file
-at `Resources/contao/languages/<ISO-language-key>/modules.xlf`:
+at `contao/languages/<ISO-language-key>/modules.xlf`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -87,15 +87,17 @@ that expects to have a `public function generate()` that's then called like so:
 ```php
 // contao/config/config.php
 $GLOBALS['BE_MOD']['content']['my_module'] = [
-    'callback' => 'MyVendor/MyModule/MyClass'
+    'callback' => \App\Contao\BackendModule::class
 ];
+``` 
 
-// src/MyClass.php
-namespace MyVendor/MyModule;
+```php
+// src/Contao/BackendModule.php
+namespace App\Contao;
 
-class MyClass
+class BackendModule
 {
-    public function generate()
+    public function generate(): string
     {
         return 'string content';
     }
@@ -103,16 +105,15 @@ class MyClass
 ```
 
 This is a very simple, old and thus not very flexible way of specifying your own output. If you would like to use
-Dependency Injection etc. you're likely better off using [Custom back end routes](/guides/backend-routes).
+Dependency Injection etc. you're likely better off using [custom back end routes](/guides/backend-routes).
 
-Both, the `disablePermissionChecks` and the `hideInNavigation` just take a boolean value. By default they are both set to
+Both, the `disablePermissionChecks` and the `hideInNavigation` parameters just take a boolean value. By default they are both set to
 `false` which means, permission checks are always executed and the module is always shown in the navigation.
 The permission check is referring to the user permission settings where you can restrict the access to certain modules for
 certain users or user groups. However, if you set `disablePermissionChecks` to `true`, that module cannot be selected
 in the permission settings and the checks are not executed. The Contao core uses this feature for example for the `undo`
-module as every user has access to their own undo view.
-The `hideInNavigation` may be useful if you want to develop a back end module but link to it from anywhere else but the
-main back end navigation.
+module as every user has access to their own undo view. The `hideInNavigation` parameter may be useful if you want to 
+develop a back end module but link to it from anywhere else but the main back end navigation.
 
 The `<custom-key>` may be used for any custom callback you want to have executed when the user requests a certain action.
 Requesting a certain action is done by having `&key=foobar` in the query parameters.

@@ -119,7 +119,7 @@ This example renders like this:
 
 Most of the time you probably want to add a menu entry for your back end module.
 Since the back end menu can be extended with an `EventListener` we can easily
-create one that listens for the menu event to be dispatched.
+create one that listens for the [menu event][BackEndMenuEvent] to be dispatched.
 
 ```php
 // src/EventListener/BackendMenuListener.php
@@ -189,3 +189,6 @@ will not be available yet.
 
 And that's it. You controller should now be callable from the main back end menu in
 the sidebar.
+
+
+[BackEndMenuEvent]: /reference/events/#contao-backend-menu-build
