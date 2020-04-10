@@ -12,3 +12,5 @@ markup:
       autoHeadingIDType: blackfriday
     renderer:
       unsafe: true
+  tableOfContents:
+    endLevel: 3

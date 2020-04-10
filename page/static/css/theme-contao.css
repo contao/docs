@@ -41,6 +41,10 @@ h1, h2, h3, h4, h5 {
     font-family: inherit;
 }
 
+h5 {
+    font-size: 1.125rem;
+}
+
 a {
     color: var(--MAIN-LINK-color);
 }
@@ -367,4 +371,23 @@ html[lang="de"] div.notices.note p:first-child:after {
 /* fix #172 */
 option {
     color: initial;
+}
+
+/* fix https://github.com/matcornic/hugo-theme-learn/issues/378 */
+#TableOfContents li ul {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#TableOfContents li > a {
+    padding: 0 !important;
+}
+#TableOfContents > ul > li > ul > li a {
+    font-weight: normal;
+}
+#top-bar {
+    position: relative;
+}
+.progress {
+    left: 0;
+    max-width: 100%;
 }
