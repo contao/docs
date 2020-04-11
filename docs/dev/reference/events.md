@@ -187,9 +187,9 @@ class ImageSizesUserListener implements ServiceAnnotationInterface
 
 ## `contao.preview_url_create`
 
-This event is triggered when a preview URL for the front end within the back end. 
-The event provides the set ID, key and query and allows you to set or override the 
-query parameter.
+This event is triggered when a preview URL for the front end within the back end
+is created. The event provides the set ID, key and query and allows you to set or 
+override the query parameter.
 
 <table>
 <tr><th>Name</th><td><code>contao.preview_url_create</code></td></tr>
