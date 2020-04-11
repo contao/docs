@@ -69,12 +69,13 @@ TBD
 
 The development documentation is split into three parts:
 
-* Documentation
+* Getting Started
+* Framework
 * Reference
-* Cookbook
+* Guides
 
 
-#### Documentation
+#### Framework
 
 This part of the development documentation should explain features of the Contao framework and how to use them.
 E.g. Templates, Palette Manipulator, image generation, etc. with references to the cookbook.
@@ -86,7 +87,7 @@ This part of the development documentation should be a full reference of all ava
 DCA configuration, available config settings, etc.
 
 
-#### Cookbook
+#### Guides
 
 This should contain specific examples and use cases on how to use and implement the previously mentioned topics.
 
