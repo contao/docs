@@ -83,11 +83,9 @@ use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
  */
 class FilesOnLoadCallbackListener implements ServiceAnnotationInterface
 {
-    public const CSS_FILE = 'files/backend/tl_content.css';
-
     public function __invoke(): void
     {
-        $GLOBALS['TL_CSS'][self::CSS_FILE] = self::CSS_FILE;
+        $GLOBALS['TL_CSS'][] = self::CSS_FILE;
     }
 }
 ```
