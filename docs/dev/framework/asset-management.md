@@ -90,7 +90,7 @@ $GLOBALS['TL_CSS'][] = 'files/theme/css/print.css|print';
 This results in the following HTML code in the front end:
 
 ```html
-<link rel="stylesheet" href="files/theme/css/print.css?v=da0d4373" media="print">
+<link rel="stylesheet" href="files/theme/css/print.css" media="print">
 ```
 
 
