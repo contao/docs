@@ -37,7 +37,7 @@ are login forms, displaying news entries, showing a navigation etc.
 
 While any data record can hold information for content to be displayed in the front
 end, another key concept of Contao is the usage of [Content elements][7] for arbitrary
-and more complex content. The content of regular static pages of Contao' site structure
+and more complex content. The content of regular static pages of Contao's site structure
 is managed via individual content elements, as well as the detailed content of news
 entries for example.
 
@@ -78,7 +78,7 @@ for Contao.
 
 ## Insert Tags
 
-[Insert Tags][11] are special tokens that will be replaced with another content 
+[Insert Tags][11] are special tokens that will be replaced with other content 
 in the front end before it is sent to the client. They can be used anywhere and 
 thus allow for dynamically generated content in any place. Contao brings its own 
 set of available Insert Tags, however it is possible to register your own Insert
