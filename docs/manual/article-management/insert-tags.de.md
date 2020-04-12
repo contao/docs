@@ -157,6 +157,7 @@ Lightbox-Bild einfügen.
 | `{{request_token}}`      | Dieses Tag wird mit dem zur aktuellen Session gehörenden Request-Token ersetzt.                      |
 | `{{toggle_view}}`        | Dieses Tag wird mit einem Link ersetzt, welcher zwischen Mobile- und Desktop-Layout wechselt. Das mobile Seitenlayout ist **ab Contao 4.8** nicht mehr Teil der Core-Distribution. Wenn du die Funktion benötigst, muss du das Paket `contao/mobile-page-layout-bundle` installieren. |
 | `{{br}}`                 | Dieses Tag wird mit einem HTML <code>&lt;br&gt;</code> Element (Zeilenumbruch) ersetzt.              |
+| `{{asset::*::*}}`        | Mit diesem Tag können Pfade zu CSS und JavaScript Dateien aus Paketen eingebunden werden. Siehe die [Entwickler-Dokumentation][DevAssets]. |
 
 
 ## Insert-Tag-Flags
@@ -215,3 +216,6 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 | `[nbsp]`       | `&nbsp;` = non-breaking space<br>Wenn der Umbruch zwischen zwei Wörtern verhindert werden soll, muss ein geschütztes Leerzeichen eingefügt werden. z. B. `Contao[nbsp]CMS` |
 | `[-]`          | `&shy;` = soft hyphen<br>Das Wort wird umgebrochen, wenn nicht ausreichend Platz zur Verfügung steht. Die Trennung erfolgt mit Trennstrich. z. B. `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft` |
 | `[{]`, `[}]`   | Wird im Frontend jeweils mit `{{` bzw. `}}` ersetzt. Damit kann man Insert-Tags im Frontend anzeigen, um sie z. B. zu erklären. |
+
+
+[DevAssets]: https://docs.contao.org/dev/framework/asset-management/#accessing-assets-in-templates
