@@ -51,7 +51,7 @@ to the file path and separated by a pipe `|` character.
 | --- | --- | --- |
 | Static | `|static` | Defines the asset as "static". |
 | Media | `|print` | Defines the `media` attribute of the `<link>` tag (CSS only). |
-| Media | `|asnyc` | Defines the `async` attribute of the `<script>` tag (JavaScript only). |
+| Media | `|async` | Defines the `async` attribute of the `<script>` tag (JavaScript only). |
 | Version | `|1` | Appends a `?v=…` parameter. Can be a version number or also a timestamp. |
 
 All options can be combined in no particular order.
