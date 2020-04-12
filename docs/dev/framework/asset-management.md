@@ -23,7 +23,7 @@ layout.
 | `$GLOBALS['TL_JAVASCRIPT']` | Contains relative or absolute paths to JavaScripts assets to be included in the `<head>` of the document. |
 | `$GLOBALS['TL_MOOTOOLS']` | Contains HTML code to be included before `</body>`. |
 
-{{% notice note %}}
+{{% notice info %}}
 In the back end, only `TL_CSS`, `TL_JAVASCRIPT` and `TL_MOOTOOLS` will work.
 {{% /notice %}}
 
