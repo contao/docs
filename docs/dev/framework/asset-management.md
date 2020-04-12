@@ -17,15 +17,14 @@ layout.
 
 | Array | Description |
 | --- | --- |
-| `$GLOBALS['TL_BODY']` | Contains HTML code to be included before `</body>`.<sup>1</sup> |
+| `$GLOBALS['TL_BODY']` | Contains HTML code to be included before `</body>`. |
 | `$GLOBALS['TL_CSS']` | Contains relative or absolute paths to CSS assets to be included in the `<head>` of the document. |
 | `$GLOBALS['TL_HEAD']` | Contains HTML code to be included in the `<head>` of the document. |
 | `$GLOBALS['TL_JAVASCRIPT']` | Contains relative or absolute paths to JavaScripts assets to be included in the `<head>` of the document. |
-| `$GLOBALS['TL_MOOTOOLS']` | Contains HTML code to be included before `</body>`.<sup>1</sup> |
+| `$GLOBALS['TL_MOOTOOLS']` | Contains HTML code to be included before `</body>`. |
 
 {{% notice note %}}
-<sup>1</sup> In the back end, only `TL_MOOTOOLS` is used for adding HTML code at
-the end of the `<body>`.
+In the back end, only `TL_CSS`, `TL_JAVASCRIPT` and `TL_MOOTOOLS` will work.
 {{% /notice %}}
 
 
