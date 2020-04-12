@@ -58,10 +58,6 @@ class KernelRequestSubscriber implements EventSubscriberInterface
         $request = $e->getRequest();
 
         if ($this->scopeMatcher->isBackendRequest($request)) {
-            if (!isset($GLOBALS['TL_JAVASCRIPT'])) {
-                $GLOBALS['TL_JAVASCRIPT'] = [];
-            }
-
             $GLOBALS['TL_JAVASCRIPT'][] = 'https://kit.fontawesome.com/xhcf1h83c6.js';
         }
     }
@@ -91,10 +87,6 @@ class FilesOnLoadCallbackListener implements ServiceAnnotationInterface
 
     public function __invoke(): void
     {
-        if (!isset($GLOBALS['TL_CSS'])) {
-            $GLOBALS['TL_CSS'] = [];
-        }
-
         $GLOBALS['TL_CSS'][self::CSS_FILE] = self::CSS_FILE;
     }
 }
