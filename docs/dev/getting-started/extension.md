@@ -17,7 +17,7 @@ regular Symfony bundle. To learn more about bundles in general, you can read the
 [respective Symfony documentation][1] first.
 
 {{% notice note %}}
-Within this documentation, the terms _package_, _bundle_ and _extension_ is often
+Within this documentation, the terms _package_, _bundle_ and _extension_ are often
 used interchangably. For Composer, everything is a _package_, while a `symfony-bundle`
 or a `contao-bundle` is a specific type of package. _Contao bundles_ are referred 
 to as _extensions_ within the Contao universe.
@@ -100,7 +100,7 @@ Would you like to install dependencies now [yes]? no
 
 Now it is time to set up your actual development structure. Typically, you will have
 a `src/` folder containing all the sources of your extension, and a `test/` folder
-for tests (if any). This is common setup, though you are free to choose a different
+for tests (if any). This is a common setup, though you are free to choose a different
 one (e.g. no `src/` and `test/` subfolder, starting with the namespace folders directly).
 
 Next you will choose a top-level namespace and extension related subnamespace for

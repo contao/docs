@@ -14,7 +14,7 @@ understand what that means, two examples will be shown in this getting-started t
 
 Assuming you have autoloaded and autoregistered your services as described [here][1],
 implementing a hook is as easy as creating one single PHP file containing your hook's
-logic. Hooks can be registered through service tagging and thus we can also use
+logic. Hooks can be registered through service tagging and thus you can also use
 annotations directly in your hook's class to register the hook.
 
 For our first example we assume that we want to provide more information about the 

@@ -67,7 +67,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
 ```
 
 The template name on the other hand is derived from the element's name, with the 
-prefix `ce_` (`mod_` for front end modules), e.g. `ce_my_content_element` in this 
+prefix `ce_` (`mod_` for front end modules), i.e. `ce_my_content_element` in this 
 case.
 
 ```html
