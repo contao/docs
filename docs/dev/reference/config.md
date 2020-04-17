@@ -236,7 +236,7 @@ container is even built. Settings like trusted proxies or caching are considered
     the application itself and are only used in JavaScript (although there are better alternatives such as LocalStorage,
     SessionStorage or IndexedDB). You will find that e.g. Google Analytics, Matomo, Facebook etc. all set cookies your
     application (Contao in this case) is not interested in at all. However, because the HTTP cache has to decide whether to
-    serve a response from the cache or not before the application is even started, there's no way it can now which cookies
+    serve a response from the cache or not before the application is even started, there's no way it can know which cookies
     are relevant and which ones are not.
     So, we have to tell it.
     The Contao Managed Edition ships with a blacklist of cookies that are ignored by default to increase the hit rate
