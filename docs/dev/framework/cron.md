@@ -107,7 +107,7 @@ class ExampleCron
 
 {{< version "4.9" >}}
 
-Cron jobs can also be registered using the `contao.cron` service tag  with the following 
+Cron jobs can also be registered using the `contao.cronjob` service tag  with the following 
 options:
 
 | Option | Description |
@@ -121,7 +121,7 @@ services:
     App\Cron\ExampleCron:
         tags:
             -
-                name: contao.cron
+                name: contao.cronjob
                 interval: 0 */2 * * *
                 method: onEveryTwoHours
 ```
