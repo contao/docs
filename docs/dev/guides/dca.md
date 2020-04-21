@@ -192,6 +192,12 @@ we are retrieving all countries directly from the system via `\Contao\System::ge
 This gives us an associative array of all translated countries, indexed by their
 country code (e.g. `'at' => 'Austria'`).
 
+{{% notice tip %}}
+If your parent table has a field called either `title` or `name`, Contao will automatically 
+add the title or name of the parent element to the back end's main headline breadcrumb,
+when viewing or editing the child records of that parent.
+{{% /notice %}}
+
 
 #### Palettes
 
