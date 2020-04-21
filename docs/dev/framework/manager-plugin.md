@@ -322,7 +322,7 @@ class Plugin implements ExtensionPluginInterface
                             ],
                         ],
                     ],
-                    array_slice($extensionConfig['firewalls'], $offset+1, null, true)
+                    array_slice($extensionConfig['firewalls'], $offset, null, true)
                 );
                 
                 break;
@@ -341,6 +341,85 @@ from "Bundle X" and another one from "Bundle Y". The container then merges all t
 (which is exactly where that firewall error message comes from). Unfortunately, there is no way you can determine where
 a certain configuration is coming from.
 {{% /notice %}}
+
+#### Adding a custom Monolog handler with a custom channel
+
+Before reading these paragraphs, you should check how to add custom firewalls because essentially it is the very
+same thing. The order of Monolog handlers is important too, just like it is for firewalls.
+
+For this example we're going to add  an `api` channel for which we want to log into a rotating file that is separate
+from the default ones of the Managed Edition.
+This might look like this:
+
+```php
+namespace Vendor\MyBundle\ContaoManager;
+
+use Contao\ManagerPlugin\Config\ContainerBuilder;
+use Contao\ManagerPlugin\Config\ExtensionPluginInterface;
+
+class Plugin implements ExtensionPluginInterface
+{
+    /**
+     * Allows a plugin to override extension configuration.
+     *
+     * @param string           $extensionName
+     * @param array            $extensionConfigs
+     * @param ContainerBuilder $container
+     *
+     * @return array
+     */
+    public function getExtensionConfig($extensionName, array $extensionConfigs, ContainerBuilder $container)
+    {
+        if ('monolog' !== $extensionName) {
+            return $extensionConfigs;
+        }
+
+        foreach ($extensionConfigs as &$extensionConfig) {
+
+            // Add your custom "api" channel
+            if (isset($extensionConfig['channels'])) {
+                $extensionConfig['channels'][] = 'api';
+            } else {
+                $extensionConfig['channels'] = ['api'];
+            }
+
+            if (isset($extensionConfig['handlers'])) {
+
+                // Add your own handler before the "contao" handler
+                $offset = (int) array_search('contao', array_keys($extensionConfig['handlers']));
+
+                $extensionConfig['handlers'] = array_merge(
+                    array_slice($extensionConfig['handlers'], 0, $offset, true),
+                    [
+                        'api' => [
+                            'type' => 'rotating_file',
+                            'max_files' => 10,
+                            'path' => '%kernel.logs_dir%/%kernel.environment%_api.log',
+                            'level' => 'info',
+                            'channels' =>  ['api'],
+                        ],
+                    ],
+                    array_slice($extensionConfig['handlers'], $offset, null, true)
+                );
+            }
+        }
+
+        return $extensionConfigs;
+    }
+}
+```
+
+You can now inject the service `@monolog.logger.api` wherever you need it.
+In case you are using autowiring and the MonologBundle is installed in at least version  3.5, you can also
+autowire by specifing the correct variable name in the constructor as also [documented in Symfony](https://symfony.com/doc/current/logging/channels_handlers.html#how-to-autowire-logger-channels):
+
+```diff
+-     public function __construct(LoggerInterface $logger)
++     public function __construct(LoggerInterface $apiLogger)
+     {
+         $this->logger = $apiLogger;
+     }
+```
 
 
 #### Allow a clickjacking path for NelmioSecurityBundle
