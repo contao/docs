@@ -342,12 +342,13 @@ from "Bundle X" and another one from "Bundle Y". The container then merges all t
 a certain configuration is coming from.
 {{% /notice %}}
 
+
 #### Adding a custom Monolog handler with a custom channel
 
 Before reading these paragraphs, you should check how to add custom firewalls because essentially it is the very
 same thing. The order of Monolog handlers is important too, just like it is for firewalls.
 
-For this example we're going to add  an `api` channel for which we want to log into a rotating file that is separate
+For this example we are going to add an `api` channel for which we want to log into a rotating file that is separate
 from the default ones of the Managed Edition.
 This might look like this:
 
