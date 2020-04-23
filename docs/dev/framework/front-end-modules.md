@@ -10,7 +10,7 @@ aliases:
 {{% notice note %}}
 This covers the documentation on how to create front end modules in Contao **4.6**
 and up. In previous Contao version, front end modules must extend from `\Contao\Module`
-and then be registered via the `$GLOBAL['FE_MOD']` array.
+and then be registered via the `$GLOBALS['FE_MOD']` array.
 {{% /notice %}}
 
 Front end modules in Contao are used for more complex functionality, which are typically
