@@ -146,6 +146,9 @@ Lösche im Verzeichnis <code>contao-manager</code> die Datei <code>users.json</c
 Rufe nun den Contao Manager über deine Domain mit dem Zusatz <code>contao-manager.phar.php</code> auf und lege einen 
 neuen Admin-User an.
 
+Siehst du trotz des Löschens der Datei <code>users.json</code> die Loginmaske für einen vorhandenen User, dann lösche die
+Cookies der Domain oder öffne die Seite zum Contao Manager im »Inkognito-Modus« deines Browsers.
+
 
 ### Kann ich dem Contao Manager ein weiteres Benutzerkonto hinzufügen? {#kann-ich-dem-contao-manager-ein-weiteres-benutzerkonto-hinzufuegen}
 
