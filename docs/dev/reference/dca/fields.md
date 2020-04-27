@@ -15,14 +15,12 @@ or filter criteria.
 
 ```php
 // contao/dca/tl_example.php
-$GLOBALS['TL_DCA']['fields']['tl_example'] = [
-    'myfield' => [
-        'label' => &$GLOBALS['TL_LANG']['tl_example']['myfield'],
-        'exclude' => true,
-        'inputType' => 'text',
-        'eval' => ['tl_class'=>'w50', 'maxlength'=>255],
-        'sql' => "varchar(255) NOT NULL default ''",
-    ]
+$GLOBALS['TL_DCA']['tl_example']['fields']['myfield'] = [
+    'label' => &$GLOBALS['TL_LANG']['tl_example']['myfield'],
+    'exclude' => true,
+    'inputType' => 'text',
+    'eval' => ['tl_class'=>'w50', 'maxlength'=>255],
+    'sql' => "varchar(255) NOT NULL default ''",
 ];
 ```
 
