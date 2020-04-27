@@ -141,7 +141,7 @@ wizard'`).
 </tr>
 <tr>
   <td>clr</td>
-  <td>Clear all floats (<code>clear:both</code>).</td>
+  <td>Clear all floats (<code>clear:both</code>). Use this for any fields coming after a <code>w50</code> field within a fieldset.</td>
 </tr>
 <tr>
   <td>wizard</td>
