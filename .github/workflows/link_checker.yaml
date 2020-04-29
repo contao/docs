@@ -13,7 +13,7 @@ jobs:
             - name: Link checker
               uses: peter-evans/link-checker@v1
               with:
-                  args: -c 10 -d docs -v -r
+                  args: -c 10 -d docs -v -r *
             - name: Create issue
               uses: peter-evans/create-issue-from-file@v2
               with:
