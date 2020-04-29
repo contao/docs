@@ -164,7 +164,34 @@ class MySuperController
 
 If you are working with Contao fragments such as content elements, front end modules etc. note that you may want to
 extend the `Contao\CoreBundle\Controller\AbstractFragmentController` and use its `tagResponse()` method for
-convenience.
+convenience:
+
+```php
+// src/Controller/ContentElement/MyContentElementController.php
+namespace App\Controller\ContentElement;
+
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @ContentElement(category="texts")
+ */
+class MyContentElementController extends AbstractContentElementController
+{
+    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    {
+        // Do your stuff
+        
+        $this->tagResponse(['news-42']);
+        
+        return $template->getResponse();
+    }
+}
+```
 
 To invalidate a given set of tags, inject the service `fos_http_cache.cache_manager` which might look like so:
 
