@@ -1,0 +1,22 @@
+name: Regularly check for broken links and report those as issue
+
+on:
+    schedule:
+        - cron: '*/10 * * * *' # to be replaced by "0 2 * * 1" after testing
+
+jobs:
+    linkChecker:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Link checker
+              uses: peter-evans/link-checker@v1
+              with:
+                  args: -c 10 -d docs -v -r
+            - name: Create issue
+              uses: peter-evans/create-issue-from-file@v2
+              with:
+                  title: Link Checker Report
+                  content-filepath: ./link-checker/out.md
+                  labels: Bug
