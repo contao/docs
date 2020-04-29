@@ -56,7 +56,7 @@ the main response](/framework/caching/#caching-fragments).
 ## Fragment Controllers
 
 Contao provides two different types of fragments out-of-the-box:
-[Front End Modules][moduels] and [Content Elements][elements]. For each of
+[Front End Modules][modules] and [Content Elements][elements]. For each of
 these, there are abstract classes (namely `AbstractFrontendModuleController`
 and `AbstractContentElementController`) that mimick the behavior of a Contao
 module/element. They prepare the Contao template based on the request and current
