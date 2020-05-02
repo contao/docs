@@ -209,6 +209,23 @@ parameters:
     mailer_encryption: ssl
 ```
 
+{{% notice warning %}}
+**Cache leeren**  
+Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
+»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
+Installationsverzeichnis befinden.
+
+```bash
+php vendor/bin/contao-console cache:clear --env=prod --no-warmup
+```
+{{% /notice %}}
+
+Danach kannst du den Mailversand auf der Kommandozeile testen.
+
+```bash
+php vendor/bin/contao-console swiftmailer:email:send --from=absender@example.com --to=empfaenger@example.com --subject=testmail --body=testmail
+```
+
 
 ## config.yml
 
@@ -386,14 +403,3 @@ contao:
         # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
         default_http_client_options: []
 ```
-
-{{% notice warning %}}
-**Cache leeren**  
-Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
-»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
-Installationsverzeichnis befinden.
-
-```bash
-vendor/bin/contao-console cache:clear --env=prod --no-warmup
-```
-{{% /notice %}}
