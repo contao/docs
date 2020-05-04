@@ -1,3 +1,5 @@
 /.vscode/
 /build/
 /resources/
+/link-checker/vendor
+/link-checker/.php_cs.cache

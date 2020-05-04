@@ -1,0 +1,25 @@
+{
+    "name": "contao-docs/link-checker",
+    "description": "A command to check for broken links on docs.contao.org",
+    "type": "project",
+    "require": {
+        "php": "^7.4",
+        "symfony/console": "^5.0",
+        "terminal42/escargot": "^0.5.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yanick Witschi",
+            "email": "yanick.witschi@terminal42.ch"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Contao\\Docs\\LinkChecker\\": "src"
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16"
+    }
+}

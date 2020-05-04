@@ -5,18 +5,43 @@ on:
         - cron: '0 2 * * 1'
 
 jobs:
-    linkChecker:
+    check_dev:
         runs-on: ubuntu-latest
         steps:
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v1
+              with:
+                  php-version: 7.4
+                  extensions: json
+
             - name: Checkout
               uses: actions/checkout@v2
-            - name: Link checker
-              uses: peter-evans/link-checker@v1
+
+            - name: Cache Composer vendor
+              uses: actions/cache@v1
               with:
-                  args: -c 10 -d docs -v -r *
-            - name: Create issue
+                  path: link-checker/vendor/
+                  key: ${{ runner.os }}-link-checker-vendor
+
+            - name: Install Composer dependencies
+              run: cd link-checker && composer install --no-interaction --no-suggest
+
+            - name: Link checker (dev)
+              run: link-checker/check dev
+
+            - name: Link checker (manual)
+              run: link-checker/check manual
+
+            - name: Create issue (dev)
               uses: peter-evans/create-issue-from-file@v2
               with:
                   title: Link Checker Report
-                  content-filepath: ./link-checker/out.md
-                  labels: Bug
+                  content-filepath: ./link-checker/dev-result.md
+                  labels: Bug, Developer Documentation
+
+            - name: Create issue (manual)
+              uses: peter-evans/create-issue-from-file@v2
+              with:
+                  title: Link Checker Report
+                  content-filepath: ./link-checker/manual-result.md
+                  labels: Bug, User Manual
