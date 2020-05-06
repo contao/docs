@@ -1,6 +1,6 @@
 # Contao Documentation
 
-The documentation for the Contao project will be maintained in this repository.
+The [documentation for the Contao project](https://docs.contao.org/) will be maintained in this repository.
 
 The details below are only necessary if you want to install the docs locally.
 If you just want to contribute content, read the [CONTRIBUTING](CONTRIBUTING.md).
