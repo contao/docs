@@ -37,7 +37,7 @@ using the `symfony/skeleton` for example).
 | `web/`          | Public entry points; contains symlinks to other public ressources.          |
 | `composer.json` | `composer.json` of your project defining your dependencies and autoloading. |
 
-When customizing your web application, the follwing files and folders will usually
+When customizing your web application, the following files and folders will usually
 be of interest. Some of those will need to be created manually:
 
 | File/Directory  | Explanation                                                                    |
