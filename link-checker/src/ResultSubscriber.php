@@ -108,7 +108,7 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
     {
         ++$this->numberOfErrors;
 
-        $this->writeLine(sprintf('[ ] URL "%s" seems broken (%s). Found on: %s',
+        $this->writeLine(sprintf('- [ ] URL "%s" seems broken (%s). Found on: %s',
             (string) $crawlUri->getUri(),
             $msg,
             (string) $crawlUri->getFoundOn()
