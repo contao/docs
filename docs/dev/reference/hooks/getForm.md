@@ -8,8 +8,8 @@ aliases:
 ---
 
 
-The `getForm` allows to manipulate the generation of the forms. IT passes the
-form object and the current form output buffer as arguments and epxects a string
+The `getForm` allows to manipulate the generation of the forms. It passes the
+form object and the current form output buffer as arguments and expects a string
 as return value.
 
 
