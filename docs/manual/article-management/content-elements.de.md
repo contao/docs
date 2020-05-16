@@ -1316,7 +1316,7 @@ zur Formatierung ihrer Kommentare verwenden. Folgende Tags werden unterstützt:
 **Login zum Kommentieren benötigt:** Wenn du diese Option auswählst, können nur angemeldete Mitglieder Kommentare 
 hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle Besucher der Webseite sichtbar.
 
-**Sicherheitsfrage deaktivieren:** Hier kannst du die Sicherheitsfrage deaktivieren (nicht empfohlen). Seit Contao 4.4 
+**Spam-Schutz deaktivieren:** Hier kannst du die Spam-Schutz deaktivieren (nicht empfohlen). Seit Contao 4.4 
 wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 

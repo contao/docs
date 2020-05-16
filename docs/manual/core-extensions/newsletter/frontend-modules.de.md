@@ -27,7 +27,7 @@ Verteilern registrieren können.
 **Verteilermenü ausblenden:** Hier kannst du das Menü zur Verteilerauswahl ausblenden. Der Besucher abonniert in diesem 
 Fall die von dir festgelegten Verteiler.
 
-**Sicherheitsfrage deaktivieren:** Hier kannst du die Sicherheitsfrage deaktivieren (nicht empfohlen).
+**Spam-Schutz deaktivieren:** Hier kannst du die Spam-Schutz deaktivieren (nicht empfohlen).
 
 
 {{< version "4.6" >}}
@@ -121,7 +121,7 @@ austragen können.
 **Verteilermenü ausblenden:** Hier kannst du das Menü zur Verteilerauswahl ausblenden. Der Benutzer kündigt in diesem 
 Fall die von dir festgelegten Verteiler.
 
-**Sicherheitsfrage deaktivieren:** Hier kannst du die Sicherheitsfrage deaktivieren (nicht empfohlen).
+**Spam-Schutz deaktivieren:** Hier kannst du die Spam-Schutz deaktivieren (nicht empfohlen).
 
 
 ### Weiterleitung
