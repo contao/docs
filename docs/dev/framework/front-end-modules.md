@@ -135,7 +135,7 @@ options are available.
 | -------- | -------- | ----------------------------------------------------------------------------------------------------|
 | name     | `string` | Must be `contao.frontend_module`.                                                                   |
 | category | `string` | Defines in which option group this front end module will be placed in the module type selector.     |
-| template | `string` | _Optional:_ Override the generated tempate name.                                                    |
+| template | `string` | _Optional:_ Override the generated template name.                                                    |
 | type     | `string` | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                  |
 | renderer | `string` | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`.                |
 | method   | `string` | _Optional:_  Which method should be invoked on the controller.                                      |
