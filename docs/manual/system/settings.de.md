@@ -161,14 +161,13 @@ die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu
 
 In der Contao Managed Edition werden die Parameter (z. B. Datenbankdaten) in der `parameters.yml` abgelegt. 
 Auf diese Daten greift auch das Contao-Installtool zurück. Diese Datei wird normalerweise von der Versionierung 
-ausgenommen und kann auch zusätzliche Einträge wie z. B. das Install-Passwort oder die Angaben für den E-Mail-Versand 
-über SMTP enthalten.
+ausgenommen und kann auch zusätzliche Einträge wie z. B. die Angaben für den E-Mail-Versand über SMTP enthalten.
 
 Die Datei `parameters.yml` findest du im Ordner `app/config/` und wird bei der Installation von Contao automatisch 
 angelegt.
 
 {{% notice note %}}
-Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.
+Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config/`.
 {{% /notice %}}
 
 Die `parameters.yml` nach der Installation von Contao:
