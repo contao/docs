@@ -119,6 +119,7 @@ options are available.
 | -------- | --------- | ----------------------------------------------------------------------------------------------------|
 | name     | `string`  | Must be `contao.content_element`.                                                                   |
 | category | `string`  | Defines in which option group this content element will be placed in the content element selector.  |
+| template | `string`  | _Optional:_ Override the generated template name.                                                    |
 | type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                  |
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`.                |
 | method   | `string`  | _Optional:_  Which method should be invoked on the controller.                                      |
@@ -133,6 +134,7 @@ services:
             -
                 name: contao.content_element
                 category: texts
+                template: ce_my_content_element
                 method: getCustomResponse
                 renderer: esi
                 type: my_custom_type
