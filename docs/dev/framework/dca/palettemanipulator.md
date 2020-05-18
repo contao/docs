@@ -6,11 +6,11 @@ aliases:
 ---
 
 
-The [PaletteManipulator](https://github.com/contao/contao/blob/master/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA](../dca), e.g. add fields to the back end of an existing DCA.
+The [PaletteManipulator](https://github.com/contao/contao/blob/master/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA][DCAdocs], e.g. add fields to the back end of an existing DCA.
 
 
 ## Introduction
-Before we use the `PaletteManipulator`, lets have a look at how [palettes](../../../reference/dca/palettes) are defined.
+Before we use the `PaletteManipulator`, lets have a look at how [palettes][paletteReference] are defined.
 ```php
 // tl_user.php
 
@@ -97,7 +97,7 @@ PaletteManipulator::create()
 
 ## Adding Legends
 
-It is also possible to create new groups, i.e. "legends" (see the [reference][paletteReference])
+It is also possible to create new groups, i.e. "legends" (see the [reference][paletteGroups])
 via the `addLegend` method. As with `addField`, it takes the name of the legend, the "parent"
 field or legend and the position it is supposed to be added relative to the parent.
 
@@ -186,4 +186,6 @@ PaletteManipulator::create()
 ```
 
 
-[paletteReference]: /reference/dca/palettes/#defining-groups
+[DCAdocs]: /framework/dca/
+[paletteReference]: /reference/dca/palettes/
+[paletteGroups]: /reference/dca/palettes/#defining-groups

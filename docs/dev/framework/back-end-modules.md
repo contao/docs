@@ -63,8 +63,8 @@ The first key we're going to learn more about and which is likely also the most 
 The back end of Contao is mainly designed to work on top of database tables although that's not required.
 Basically, in our `my_module` example we've configured only one table called `tl_my_module`. So when the user clicks
 on our newly created back end navigation module `My Module`, Contao loads the DCA file of `tl_my_module`. Depending on the
-DCA you can determine what happens from then on. Checkout the [DCA documentation](./dca.md) and
-the [DCA reference](../reference/dca) for more information.
+DCA you can determine what happens from then on. Checkout the [DCA documentation][DCAdocs] and
+the [DCA reference][DCAref] for more information.
 
 The `tables` key takes an array because if that module manages multiple tables (so if your `tl_my_module` table e.g. had
 child table definitions), they all have to be listed here.
@@ -105,7 +105,7 @@ class BackendModule
 ```
 
 This is a very simple, old and thus not very flexible way of specifying your own output. If you would like to use
-Dependency Injection etc. you're likely better off using [custom back end routes](/guides/backend-routes).
+Dependency Injection etc. you're likely better off using [custom back end routes][BackEndRoutes].
 
 Both, the `disablePermissionChecks` and the `hideInNavigation` parameters just take a boolean value. By default they are both set to
 `false` which means, permission checks are always executed and the module is always shown in the navigation.
@@ -141,3 +141,8 @@ $GLOBALS['BE_MOD']['content']['themes'] = [
 ```
 
 You don't have to specify a class name, you can also specify a service ID as the first array element.
+
+
+[DCAdocs]: /framework/dca/
+[DCAref]: /reference/dca/
+[BackEndRoutes]: /guides/back-end-routes/

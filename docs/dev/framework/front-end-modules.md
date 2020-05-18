@@ -223,8 +223,8 @@ class ExampleModule extends AbstractFrontendModuleController
 
 
 [1]: /framework/content-elements/
-[2]: /reference/dca/reference/
+[2]: /reference/dca/
 [3]: /reference/dca/palettes/
-[4]: /templates/
-[5]: /caching/
+[4]: /framework/templates/
+[5]: /framework/caching/
 [fragments]: /framework/caching/#fragments-and-edge-side-includes

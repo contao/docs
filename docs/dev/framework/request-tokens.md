@@ -91,4 +91,4 @@ handling as outlined above, if you need to disable the CSRF protection for some 
 
 
 [OWASP_CSRF]: https://owasp.org/www-community/attacks/csrf
-[OWASP_Double_Submit_Cookie]: https://owasp.org/www-project-cheat-sheets/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#double-submit-cookie
+[OWASP_Double_Submit_Cookie]: https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie

@@ -96,4 +96,4 @@ class FilesOnLoadCallbackListener implements ServiceAnnotationInterface
 [SymfonyEventSubscriber]: https://symfony.com/doc/current/components/event_dispatcher.html#using-event-subscribers
 [DataContainer]: /framework/dca/
 [ContentElement]: /framework/content-elements/
-[DcaCallbacks]: reference/dca/callbacks/
+[DcaCallbacks]: /reference/dca/callbacks/

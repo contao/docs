@@ -206,7 +206,7 @@ class ExampleElement extends AbstractContentElementController
 
 
 [palettes]: /reference/dca/palettes/
-[templates]: /templates/
-[caching]: /caching/
+[templates]: /framework/templates/
+[caching]: /framework/caching/
 [modules]: /framework/front-end-modules/
 [fragments]: /framework/caching/#fragments-and-edge-side-includes

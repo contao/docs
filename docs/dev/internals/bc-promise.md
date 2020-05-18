@@ -54,4 +54,4 @@ so we can analyze and discuss if there is a possible solution.
 [SF_BC_Promise]: https://symfony.com/doc/current/contributing/code/bc.html
 [Semver]: https://semver.org/
 [Monorepo_Issues]: https://github.com/contao/contao/issues
-[Contao_ME]: ../getting-started/initial-setup/managed-edition
+[Contao_ME]: /getting-started/initial-setup/managed-edition/
