@@ -213,7 +213,7 @@ können. Dafür gibt es in Contao drei Lösungen:
 verweist, und bindest dieses in die Kopfzeile ein.
 
 2. Du erstellst ein Suchformular mit dem Formulargenerator. Diese Variante ist im Abschnitt 
-[Ein Suchformular erstellen](../../formulargenerator/ein-suuchformular-erstellen/), beschrieben.
+[Ein Suchformular erstellen](../../formulargenerator/ein-suchformular-erstellen/), beschrieben.
 
 3. Du erstellst ein Suchformular mit dem Modul »Eigener HTML-Code«.
 
@@ -238,7 +238,7 @@ sieht folgendermaßen aus:
 ```
 
 Die Zielseite, die beim Abschicken des Formulars aufgerufen wird, wurde hier über einen
-[Insert-Tag](../../article-management/insert-tags/) erfasst, damit das
+[Insert-Tag](../../artikelverwaltung/insert-tags/) erfasst, damit das
 Formular auch dann noch funktioniert, wenn sich der Alias der Zielseite im Laufe der Zeit ändert. Als 
 Übertragungsmethode wurde »GET« ausgewählt, und dem Suchfeld den Feldnamen »keywords« gegeben.
 

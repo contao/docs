@@ -201,7 +201,7 @@ werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
 **Zugriffsrechte:** Hier weist du die Rechte den einzelnen Zugriffsebenen zu.
 
 Weitere Informationen zum Rechtesystem und zur Konfiguration von Benutzern und Benutzergruppen erhältst du auf der 
-Seite [Systemverwaltung](../../systemverwaltung).
+Seite [Systemverwaltung][Systemverwaltung].
 
 
 ## Zugriffsschutz
@@ -215,7 +215,7 @@ Zugriffsschutz von einer übergeordneten Seite geerbt.
 
 **Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie 
 man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite 
-[Systemverwaltung](../../systemverwaltung).
+[Systemverwaltung][Systemverwaltung].
 
 
 ## Experten-Einstellungen
@@ -260,8 +260,7 @@ URL kein Alias zu einem Element enthält.
 
 ## Tastatur-Navigation
 
-Aus Abschnitt, 
-[Backend-Tastaturkürzel](../administrationsbereich/backend-tastaturkuerzel/), weißt 
+Aus Abschnitt [Backend-Tastaturkürzel][BackendKeyboardShortcuts] weißt 
 du bereits, dass Contao die Navigation mittels Tastaturkürzel unterstützt. Das wirkt sich nicht nur positiv auf die 
 Barrierefreiheit aus, sondern beschleunigt auch den Arbeitsablauf. Aus diesem Grund ist das Feature auch im Frontend 
 verfügbar, und jede Seite kann optional mit einem Tastaturkürzel und einem Tab-Index versehen werden.
@@ -356,3 +355,7 @@ bewerben.
 **Anzeigen ab:** Hier aktivierst du eine Seite zu einem bestimmten Datum.
 
 **Anzeigen bis:** Hier deaktivierst du eine Seite zu einem bestimmten Datum.
+
+
+[Systemverwaltung]: /de/system/einstellungen/
+[BackendKeyboardShortcuts]: /de/administrationsbereich/backend-tastaturkuerzel/
