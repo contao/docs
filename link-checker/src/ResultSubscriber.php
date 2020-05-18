@@ -51,6 +51,11 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
             return SubscriberInterface::DECISION_NEGATIVE;
         }
 
+        // Never request GitHub edit links
+        if ($this->stringStartsWith((string) $crawlUri->getUri(), 'https://github.com/contao/docs/edit')) {
+            return SubscriberInterface::DECISION_NEGATIVE;
+        }
+
         if (!$this->escargot->getBaseUris()->containsHost($crawlUri->getUri()->getHost())) {
             $crawlUri->addTag('external');
         }
@@ -131,5 +136,10 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         }
 
         fwrite($this->fileHandle, $string."\n");
+    }
+
+    private function stringStartsWith(string $haystack, string $needle): bool
+    {
+        return 0 === \strncmp($haystack, $needle, \strlen($needle));
     }
 }
