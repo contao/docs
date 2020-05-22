@@ -63,7 +63,7 @@ Once the Devilbox has started you can access the Devilbox dashboard in your brow
 
 {{% notice note %}}
 The IP address to use depends on your Docker environment. If you have the Docker-Toolbox installed, your IP address 
-may be different. The IP address can be determined by the command `docker-machine ip`.
+may be different. The IP address can be determined by using the command `docker-machine ip`.
 {{% /notice %}}
 
 | Navigation          | Description                                |
