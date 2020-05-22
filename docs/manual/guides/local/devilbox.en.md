@@ -138,5 +138,5 @@ The settings for the Contao Install Tool are basically identical. You only have 
 | **Password**        | Do not enter a value  |
 
 {{% notice note %}}
-The user `root` with empty password is the Devilbox default setting. This could be changed in the Devilbox [configuration](https://devilbox.readthedocs.io/en/latest/support/faq.html#can-i-change-the-mysql-root-password). In this case, you must enter your values in the Contao Install-Tool.
+The user `root` with empty password is the Devilbox default setting. This could be changed in the Devilbox [configuration](https://devilbox.readthedocs.io/en/latest/support/faq.html#can-i-change-the-mysql-root-password). In this case, you must enter your configured credentials in the Contao Install Tool.
 {{% /notice %}}
