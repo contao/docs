@@ -12,7 +12,7 @@ If you use the Docker-Toolbox, [this part](https://devilbox.readthedocs.io/en/la
 ## Install and configure the Devilbox
 
 There is no installation routine. You just have to download the files from the Devilbox [GitHub Page](https://github.com/cytopia/devilbox) into an empty directory. The configuration takes place via a single file. In your directory you will find the file `env-example`. Copy and rename
-the file to `.env`. In the new file you can now make your configurations. Necessary are changes of the following entries:
+the file to `.env`. In the new file you can now make your configurations. The following settings need to be changed:
 
 * [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid)
 * [NEW_GID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-gid)
