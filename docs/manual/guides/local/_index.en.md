@@ -11,6 +11,6 @@ Another alternative is the implementation via [Docker](https://www.docker.com/).
 
 The following descriptions only reflect possible alternatives of a local installation and therefore should only be treated as such.
 
-When you're done with your local conversions, you can then transfer them to a live server.
+When you are done with your local development, you can then transfer the installation to a live server.
 
 {{% children %}}
