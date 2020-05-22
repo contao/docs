@@ -54,12 +54,10 @@ anzulegen.
 
 Melde dich im Contao Manager an und starte ihn.
 
-Bei einer Aktualisierung für ein [Bugfix-Release](#bugfix-release) genügt es auf »Pakete aktualisieren« zu klicken.
+Besonderheit bei einem [Minor-Release](#minor-release): Klicke bei »Contao Open Source CMS« auf das 
+Zahnrad-Symbol und gebe die gewünschte Version ein.
 
-Bei einer Aktualisierung für ein [Minor-Release](#minor-release) klicke bei »Contao Open Source CMS« auf das 
-Zahnrad-Symbol und gebe die gewünschte Version ein. Alle anderen Contao-Paketen müssen ohne Änderung für die 
-Aktualisierung vorgemerkt werden. Durch einen Klick auf die Schaltfläche »Änderungen 
-anwenden« schiebst du die Aktualisierung an.
+Durch einen Klick auf die Schaltfläche  »Pakete aktualisieren« und danach »Änderungen anwenden« schiebst du die Aktualisierung an. Bei einer Aktualisierung für ein [Bugfix-Release](#bugfix-release) genügt es auf »Pakete aktualisieren« zu klicken.
 
 ![Aktualisierung für Minor-Release starten](/de/installation/images/de/aktualisierung-fuer-minor-release-starten.png?classes=shadow)
 
