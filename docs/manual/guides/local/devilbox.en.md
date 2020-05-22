@@ -6,7 +6,7 @@ weight: 100
 ---
 
 The [Devilbox Project](http://devilbox.org/) is a complete LAMP stack for [Docker](https://www.docker.com/).
-If you use the Docker-Toolbox, [these informations](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker- toolbox-and-the-devilbox) of the documentation are worth reading.
+If you use the Docker-Toolbox, [this part](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker- toolbox-and-the-devilbox) of the documentation are worth reading.
 
 
 ## Install and configure the Devilbox
