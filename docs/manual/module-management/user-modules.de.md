@@ -537,7 +537,7 @@ Um die Anmeldung im Frontend zu ermöglichen, musst du mindestens die Felder Ben
 **Abonnierbare Newsletter:** Wenn du die Contao Newsletter-Erweiterung verwendest, kannst du hier festlegen, welche 
 Verteiler ein Mitglied abonnieren kann.
 
-**Sicherheitsfrage deaktivieren:** Hier kannst du die Sicherheitsfrage deaktivieren (nicht empfohlen). Seit Contao 4.4 
+**Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen). Seit Contao 4.4 
 wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 
@@ -841,7 +841,7 @@ neuen Passworts möglich.
 **Benutzernamen nicht abfragen:** Wenn du diese Option auswählst, wird der Benutzername bei der Anforderung nicht 
 abgefragt.
 
-**Sicherheitsfrage deaktivieren:** Hier kannst du die Sicherheitsfrage deaktivieren (nicht empfohlen). Seit Contao 4.4 
+**Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen). Seit Contao 4.4 
 wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 
