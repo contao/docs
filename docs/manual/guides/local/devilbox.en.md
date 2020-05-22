@@ -127,7 +127,7 @@ mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao48;'
 Afterwards you can leave the container via `exit` and open the Contao Install Tool.
 
 
-## The Contao-Installtool
+## The Contao Install Tool
 
 The information for the Contao-Installtool are basically identical. You only have to pay attention to the following entries:
 
