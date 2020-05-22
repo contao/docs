@@ -205,7 +205,7 @@ bzw. `config_dev.yml` und falls nicht vorhanden die `config.yml`.
 
 Damit kannst du unterschiedliche Konfigurationen für deine Test- bzw. Produktionsumgebung (dev/prod) realisieren (z. B. 
 mehr Logging im Debug Modus). Außerdem committest du die `config.yml` im Gegensatz zur `parameters.yml` in dein 
-[Repository](https://de.wikipedia.org/wiki/Repository). Ein repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z.B. mit Git.
+[Repository](https://de.wikipedia.org/wiki/Repository). Ein Repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z. B. mit Git.
 
 {{% notice note %}}
 Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.
