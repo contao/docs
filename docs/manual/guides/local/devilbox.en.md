@@ -43,7 +43,7 @@ could also be used. For Contao, however, further configuration of the web server
 ## Start the Devilbox
 
 Change to the directory and start the Devilbox with Docker. Initially it can take a while to create and load 
-each Docker images and the containers. Restarts are much faster then.
+each Docker image and the containers. Restarts are much faster afterwards.
 
 ```bash
 docker-compose up -d httpd php mysql
