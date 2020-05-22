@@ -78,9 +78,9 @@ may be different. The IP address can be determined by using the command `docker-
 
 ## Prepare the Contao installation
 
-One or more Contao installations are created in the Devilbox directory **`data\www`**. Per Contao installation
-you have to create a separate directory here. The directory name then corresponds to the later vhost name. The directory 
-name `contao4` then results in` contao4.loc` for example.
+One or more Contao installations are created in the Devilbox directory **`data\www`**. Each Contao installation will
+reside in its own directory there. The directory name you choose will correspond to the vhost name. For example, a
+directory named `contao4` will correspond to a vhost for `contao4.loc`. 
 
 You have created a directory (e. g. `contao4`). Change to this directory and create a new subfolder `web`. Copy the 
 Contao Manager `.phar` file into this folder and rename the file to` contao-manager.phar.php`.
