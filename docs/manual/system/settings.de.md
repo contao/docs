@@ -243,7 +243,13 @@ Ab der Version **4.8** von Contao befindet sich die Datei im Ordner `config`.
 Über die Kommandozeile kommst du an die Standard-Konfiguration für Contao:
 
 ```bash
-vendor/bin/contao-console config:dump-reference contao
+php vendor/bin/contao-console config:dump-reference contao
+```
+
+Informationen zur aktuelle Konfiguration erhältst du so:
+
+```bash
+php vendor/bin/contao-console debug:config contao
 ```
 
 ```yaml
