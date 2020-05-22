@@ -59,8 +59,7 @@ docker-compose stop
 
 ## The Devilbox Dashboard
 
-Once the Devilbox has started, you can now open your browser. By entering **`http: //127.0.0.1`** you reach
-the Devilbox dashboard. The navigation gives you access to the various functions.
+Once the Devilbox has started you can access the Devilbox dashboard in your browser under **`http: //127.0.0.1`**. The navigation gives you access to the various functions.
 
 {{% notice note %}}
 The IP address to use depends on your Docker environment. If you have the Docker-Toolbox installed, your IP address 
