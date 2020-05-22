@@ -93,7 +93,7 @@ Use it as follows:
 $> php bin/console contao:crawl [options] [<job>]
 ```
 
-There's only one argument to this command which is `job`. It is optional and represents a job ID.
+There is only one argument to this command which is `job`. It is optional and represents a job ID.
 Crawling can be a very long-running task so in case you want to stop and pick up where you left later,
 you need to remember the job ID you were assigned when you first ran the command and you can then
 resume with that job ID later on. However, as there's usually no such thing as memory or runtime limits
