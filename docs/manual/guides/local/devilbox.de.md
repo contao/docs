@@ -127,7 +127,7 @@ composer create-project contao/managed-edition contao48 4.8
 Lege dir eine neue Datenbank an:
 
 ```bash
-mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao48;'
+mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao49;'
 ```
 
 Im Anschluss kannst du den Container über `exit` verlassen und das Contao-Installtool aufrufen.
