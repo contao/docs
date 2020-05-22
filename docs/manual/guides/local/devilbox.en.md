@@ -34,7 +34,7 @@ After every change in the configuration `.env` file, the Devilbox must be restar
 
 {{% notice warning %}}
 **Do not delete entries in the .env file!** For example, by default, the entry `HTTPD_SERVER=nginx-stable`
-is set and `# HTTPD_SERVER=apache-2.4` is commented out (see **` # `** at the beginning of the line). To change such
+is set and `# HTTPD_SERVER=apache-2.4` is disabled (see **` # `** at the beginning of the line). To change such
 entries you only have to comment on or comment out. Be sure to change to `HTTPD_SERVER=apache-2.4`. As a web server nginx
 could be used. For Contao, however, further configurations of the web server are necessary then.
 {{% /notice %}}
