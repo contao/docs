@@ -11,7 +11,7 @@ If you use the Docker-Toolbox, [these informations](https://devilbox.readthedocs
 
 ## Install and configure the Devilbox
 
-There is no installation in the true sense necessary. You just have to download the files from the Devilbox [GitHub Page](https://github.com/cytopia/devilbox) into an empty directory. The configuration takes place via a single file. In your directory you will find the file `env-example`. Copy and rename
+There is no installation routine. You just have to download the files from the Devilbox [GitHub Page](https://github.com/cytopia/devilbox) into an empty directory. The configuration takes place via a single file. In your directory you will find the file `env-example`. Copy and rename
 the file to `.env`. In the new file you can now make your configurations. Necessary are changes of the following entries:
 
 * [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid)
@@ -140,4 +140,3 @@ The information for the Contao-Installtool are basically identical. You only hav
 {{% notice note %}}
 The user `root` with empty password is the Devilbox default setting. This could be changed in the Devilbox [configuration](https://devilbox.readthedocs.io/en/latest/support/faq.html#can-i-change-the-mysql-root-password). In this case, you must enter your values in the Contao Install-Tool.
 {{% /notice %}}
-
