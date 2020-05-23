@@ -26,6 +26,7 @@ oder den Alias der Zielseite.
 | `{{link::login}}`         | Dieses Tag wird mit einem Link zur Anmeldeseite des aktuellen Frontend-Benutzers (falls vorhanden) ersetzt.                  |
 | `{{link_open::*}}`        | Wird mit dem öffnenden Tag eines Links zu einer internen Seite ersetzt: `{{link_open::12}}Hier klicken{{link_close}}`.       |
 | `{{link_url::*}}`         | Dieses Tag wird mit der URL einer internen Seite ersetzt: `<a href="{{link_url::12}}">Hier klicken</a>`.                     |
+| `{{link_target::*}}`      | Dieses Tag wird mit ` target="_blank" rel="noreferrer noopener"` ersetzt, wenn es sich bei der angegebenen Seite um eine externe Weiterleitungsseite handelt, und dort eingestellt ist, dass sich der Link in einem neuen Fenster öffnen soll. |
 | `{{link_title::*}}`       | Dieses Tag wird mit dem Titel einer internen Seite ersetzt: `<a title="{{link_title::12}}">Hier klicken</a>`.                |
 | `{{link_name::*}}`        | Dieses Tag wird mit dem Namen einer internen Seite ersetzt: `<a>{{link_name::12}}</a>`.                                      |
 | `{{link_close}}`          | Wird mit dem schließenden Tag eines Links zu einer internen Seite ersetzt: `{{link_open::12}}Hier klicken{{link_close}}`.    |
@@ -142,6 +143,7 @@ Lightbox-Bild einfügen.
 | `{{last_update::*}}`     | Dieses Tag wird mit Datum der letzten Aktualisierung gemäß eines individuellen Datumsformats ersetzt. Contao unterstützt alle Datums- und Zeitformate, die mit der [PHP-Funktion date](https://www.php.net/manual/de/function.date.php) geparst werden können. z. B. `{{last_update::d.m.Y}}` |
 | `{{email::*}}`           | Dieses Tag wird mit einem verschlüsselten Link zu einer E-Mail-Adresse ersetzt.                      |
 | `{{email_open::*}}`      | Dieses Tag wird mit einem verschlüsselten Link zu einer E-Mail-Adresse ersetzt. Allerdings wird das schließende `</a>` nicht angefügt. |
+| `{{email_close}}`        | Dieses Tag wird mit `</a>` ersetzt. Beispiel: `{{email_open::foo@example.org}}E-Mail Kontakt{{email_close}}`. |
 | `{{email_url::*}}`       | Dieses Tag wird nur durch die verschlüsselte E-Mail-Adresse ersetzt.                                 |
 | `{{post::*}}`            | Mit diesem Tag kann eine angegebene Post-Variable ausgelesen und angezeigt werden. Kann z. B. genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen. |
 | `{{lang::*}}`            | Mit diesem Tag können fremdsprachige Wörter in einem Text markiert werden: `{{lang::fr}}Au revoir{{lang}}`. Dies wird ersetzt mit `<span lang="fr">Au revoir</span>`. |
@@ -158,6 +160,7 @@ Lightbox-Bild einfügen.
 | `{{toggle_view}}`        | Dieses Tag wird mit einem Link ersetzt, welcher zwischen Mobile- und Desktop-Layout wechselt. Das mobile Seitenlayout ist **ab Contao 4.8** nicht mehr Teil der Core-Distribution. Wenn du die Funktion benötigst, muss du das Paket `contao/mobile-page-layout-bundle` installieren. |
 | `{{br}}`                 | Dieses Tag wird mit einem HTML <code>&lt;br&gt;</code> Element (Zeilenumbruch) ersetzt.              |
 | `{{asset::*::*}}`        | Mit diesem Tag können Pfade zu CSS und JavaScript Dateien aus Paketen eingebunden werden. Siehe die [Entwickler-Dokumentation][DevAssets]. |
+| `{{trans::*::*::*}}`     | Mit diesem Tag können Übersetzungen ausgegeben werden. Im Gegensatz zum `{{label::*}}` Insert-Tag können damit alle Übersetzungen aus dem Symfony System ausgegeben werden. Beispiel: `{{trans::MSC.updateVersion::contao_default::4.10}}`. Siehe auch die [Entwickler-Dokumentation][Translations]. |
 
 
 ## Insert-Tag-Flags
@@ -167,7 +170,7 @@ Beliebig viele Flags können miteinander kombiniert werden:
 
 ```
 {{ua::browser|uncached}}
-{{page::title|decodeEntities|strtoupper}}
+{{page::title|standardize|strtoupper}}
 ```
 Verfügbare Flags:
 
@@ -176,7 +179,6 @@ Verfügbare Flags:
 | `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           |                                                   |
 | `refresh`           | Erstellt die Ausgabe bei jeder Anfrage neu.                              |                                                   |
 | `addslashes`        | Stellt bestimmten Zeichen eines Strings ein `\` voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
-| `stripslashes`      | Entfernt das `\` vor bestimmten Zeichen eines Strings.                   | [PHP-Funktion](https://php.net/stripslashes)      |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
 | `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                         |
 | `ampersand`         | Wandelt `&`-Zeichen in Entities um.                                      |                                                   |
@@ -194,14 +196,13 @@ Verfügbare Flags:
 | `rtrim`             | Entfernt Leerzeichen vom Anfang der Ausgabe.                             | [PHP-Funktion](https://php.net/rtrim)             |
 | `ltrim`             | Entfernt Leerzeichen vom Ende der Ausgabe.                               | [PHP-Funktion](https://php.net/ltrim)             |
 | `utf8_romanize`     | Romanisiert die Ausgabe.                                                 |                                                   |
-| `strrev`            | Dreht die Ausgabe um.                                                    | [PHP-Funktion](https://php.net/strrev)            |
 | `encodeEmail`       | Kodiert E-Mail-Adressen in der Ausgabe.                                  | siehe `String::encodeEmail()`                       |
-| `decodeEntities`    | Dekodiert Entities in der Ausgabe.                                       | siehe `String::decodeEntities()`                  |
 | `number_format`     | Formatiert eine Zahl (keine Dezimalstellen).                             | siehe `System::getFormattedNumber()`              |
 | `currency_format`   | Formatiert eine Währung (zwei Dezimalstellen).                           | siehe `System::getFormattedNumber()`              |
 | `readable_size`     | Wandelt die Ausgabe in ein menschenlesbares Format um.                   | siehe `System::getReadableSize()`                 |
 | `urlencode`         | URL-kodiert einen String.                                                | [PHP-Funktion](https://php.net/urlencode)         |
 | `rawurlencode`      | URL-Kodierung nach RFC 3986.                                             | [PHP-Funktion](https://php.net/rawurlencode)      |
+| `flatten`           | Wandelt ein Array in eine durch Kommas separierte Liste mit Schlüssel und Werten um. Beispiel: `0: value1, 1: value2, 2: value3` oder `key1: value, key2.subkey: value` |                                       |
 
 
 ## Basic Entities
@@ -219,3 +220,4 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 
 
 [DevAssets]: https://docs.contao.org/dev/framework/asset-management/#accessing-assets-in-templates
+[Translations]: https://docs.contao.org/dev/framework/translations/#accessing-translations
