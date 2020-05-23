@@ -202,7 +202,7 @@ Verfügbare Flags:
 | `readable_size`     | Wandelt die Ausgabe in ein menschenlesbares Format um.                   | siehe `System::getReadableSize()`                 |
 | `urlencode`         | URL-kodiert einen String.                                                | [PHP-Funktion](https://php.net/urlencode)         |
 | `rawurlencode`      | URL-Kodierung nach RFC 3986.                                             | [PHP-Funktion](https://php.net/rawurlencode)      |
-| `flatten`           | Wandelt ein Array in eine durch Kommas separierte Liste um.              |                                                   |
+| `flatten`           | Wandelt ein Array in eine durch Kommas separierte Liste mit Schlüssel und Werten um. Beispiel: `0: value1, 1: value2, 2: value3` oder `key1: value, key2.subkey: value` |                                       |
 
 
 ## Basic Entities
