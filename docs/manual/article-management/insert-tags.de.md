@@ -170,7 +170,7 @@ Beliebig viele Flags können miteinander kombiniert werden:
 
 ```
 {{ua::browser|uncached}}
-{{page::title|decodeEntities|strtoupper}}
+{{page::title|standardize|strtoupper}}
 ```
 Verfügbare Flags:
 
@@ -179,7 +179,6 @@ Verfügbare Flags:
 | `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           |                                                   |
 | `refresh`           | Erstellt die Ausgabe bei jeder Anfrage neu.                              |                                                   |
 | `addslashes`        | Stellt bestimmten Zeichen eines Strings ein `\` voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
-| `stripslashes`      | Entfernt das `\` vor bestimmten Zeichen eines Strings.                   | [PHP-Funktion](https://php.net/stripslashes)      |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
 | `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                         |
 | `ampersand`         | Wandelt `&`-Zeichen in Entities um.                                      |                                                   |
@@ -197,9 +196,7 @@ Verfügbare Flags:
 | `rtrim`             | Entfernt Leerzeichen vom Anfang der Ausgabe.                             | [PHP-Funktion](https://php.net/rtrim)             |
 | `ltrim`             | Entfernt Leerzeichen vom Ende der Ausgabe.                               | [PHP-Funktion](https://php.net/ltrim)             |
 | `utf8_romanize`     | Romanisiert die Ausgabe.                                                 |                                                   |
-| `strrev`            | Dreht die Ausgabe um.                                                    | [PHP-Funktion](https://php.net/strrev)            |
 | `encodeEmail`       | Kodiert E-Mail-Adressen in der Ausgabe.                                  | siehe `String::encodeEmail()`                       |
-| `decodeEntities`    | Dekodiert Entities in der Ausgabe.                                       | siehe `String::decodeEntities()`                  |
 | `number_format`     | Formatiert eine Zahl (keine Dezimalstellen).                             | siehe `System::getFormattedNumber()`              |
 | `currency_format`   | Formatiert eine Währung (zwei Dezimalstellen).                           | siehe `System::getFormattedNumber()`              |
 | `readable_size`     | Wandelt die Ausgabe in ein menschenlesbares Format um.                   | siehe `System::getReadableSize()`                 |
