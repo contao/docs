@@ -8,12 +8,9 @@ aliases:
 ---
 
 
-The `colorizeLogEntries` hook is triggered when a user closes his account. It passes 
-the user ID, the operation mode and the module as arguments and does not expect 
-a return value.
-
-The operation mode will either be `close_deactivate` or `close_delete`.
-
+The `colorizeLogEntries` hook is triggered when a log entry is saved. It passes 
+the data of the log entry and the label created by Contao and does expect 
+a string for the label as return.
 
 ## Parameters
 
