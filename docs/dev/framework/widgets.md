@@ -32,7 +32,7 @@ are adjusted:
 
 The following example creates a simple text input widget for the back end. The input
 is allowed to be submitted and the generated label should contain the `for` attribute.
-The template is set to `be_template`, which most back end widgets commonly use. It
+The template is set to `be_widget`, which most back end widgets commonly use. It
 contains the label as a headline and executes `$this->generateWithError(true)`, 
 which in turn will execute `$this->generate()`.
 
