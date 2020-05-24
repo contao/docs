@@ -19,7 +19,7 @@ how the output is delivered.
 
 The abstract class also contains some member variables that control the output and
 behavior of the widget. The default value of these member variables will need to be
-set in the custom child class accordingly. Typically the following member variables
+set in the custom child class accordingly. Typically, the following member variables
 are adjusted:
 
 * `$blnSubmitInput`: controls whether this widget actually submits any input.
@@ -62,7 +62,7 @@ class CustomWidget extends Widget
 }
 ```
 
-To get a better idea on the implementation details and possibilites for back end
+To get a better idea on the implementation details and possibilities for back end
 widgets, have a look at the source of the [core's widgets][ContaoCoreWidgets].
 
 The widget is registered in the `$GLOBALS['BE_FFL']` array with its own key:
@@ -78,7 +78,7 @@ Now the widget can be used as an `inputType` in your DCA.
 ## Creating Front End Widgets
 
 Similar to the back end example, the following example creates a simple text input
-widget (form field) fro the form generator. The input is allowed to be submitted
+widget (form field) for the form generator. The input is allowed to be submitted
 and the generated label should contain the `for` attribute. The template is set to
 `form_myfield` and the CSS class prefix is set to `widget widget-myfield`.
 
@@ -129,7 +129,7 @@ the `form_row` template (see [template inheritance][TemplateInheritance]).
 <?php $this->endblock(); ?>
 ```
 
-To get a better idea on the implementation details and possibilites for front end
+To get a better idea on the implementation details and possibilities for front end
 widgets, have a look at the source of the [core's form fields][ContaoCoreFormFields]
 and [their templates][ContaoCoreFormFieldTemplates].
 
