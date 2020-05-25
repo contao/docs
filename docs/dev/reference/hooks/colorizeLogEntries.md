@@ -10,7 +10,7 @@ aliases:
 
 The `colorizeLogEntries` hook is triggered when a log entry is displayed. It passes 
 the data of the log entry and the label created by Contao and does expect 
-a string for the label as return.
+a string for the label as return value.
 
 ## Parameters
 
