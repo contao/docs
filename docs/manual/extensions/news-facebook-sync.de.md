@@ -37,7 +37,6 @@ Um das Repository hinzuzufügen, muss folgendes in der `composer.json` eingefüg
 `<YOUR_TOKEN>` muss mit dem Repository Token ersetzt werden, welches von inspiredminds geschickt wurde.
 
 Um die Abhängigkeit hinzuzufügen, muss folgendes in der `composer.json` eingefügt werden:
-
 ```json
 {
     "require": {
@@ -121,7 +120,7 @@ dem du dort auf _Einrichten_ klickst.
 5. Auf der nächsten Seite _Web_ auswählen, dann die URL der Webseite eingeben (inklusive `https://`). Danach auf _Save_
 klicken.
 6. Auf der linken Seite auf _Facebook Login_ » _Einstellungen_ klicken. Unter _Gültige OAuth Redirect URIs_ die 
-folgende URL eingeben: `https://example.org/system/modules/news_facebook/public/callback.php`. `example.org` muss mit 
+folgende URL eingeben: `https://example.com/system/modules/news_facebook/public/callback.php`. `example.com` muss mit 
 der Domain deiner Webseite ersetzt werden. Dann auf _Änderungen speichern_ klicken.
 7. Auf der linken Seite auf _Einstellungen_ » _Allgemeines_ klicken und die Domain der Webseite unter _App Domains_ 
 eingeben. Danach wieder auf _Änderungen speichern_ klicken.
