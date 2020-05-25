@@ -62,7 +62,11 @@ class CheckCommand extends Command
 
         $resultSubscriber = new ResultSubscriber($outputPath);
 
-        $escargot = Escargot::create($baseUriCollection, new InMemoryQueue());
+        $escargot = Escargot::create($baseUriCollection, new InMemoryQueue())
+                    ->withConcurrency(5)
+                    ->withRequestDelay(500000) // 0.5s
+        ;
+
         $escargot->addSubscriber($resultSubscriber);
         $escargot->addSubscriber(new RobotsSubscriber());
         $escargot->addSubscriber(new HtmlCrawlerSubscriber());
