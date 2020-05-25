@@ -14,7 +14,7 @@ template object and does not expect a return value.
 
 ## Parameters
 
-1. *Template* `$template`
+1. *\Contao\Template* `$template`
 
     The front end or back end template instance.
 
