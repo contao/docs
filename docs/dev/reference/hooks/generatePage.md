@@ -15,7 +15,7 @@ and does not expect a return value.
 
 ## Parameters
 
-1. *\Contao\PageModel* `$pageModel`
+1. *\Contao\PageModel* `$page`
 
     The current page object.
 
@@ -45,7 +45,7 @@ class GeneratePageListener implements ServiceAnnotationInterface
     /**
      * @Hook("generatePage")
      */
-    public function onGeneratePage(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
+    public function onGeneratePage(PageModel $page, LayoutModel $layout, PageRegular $pageRegular): void
     {
         // Do something …
     }
