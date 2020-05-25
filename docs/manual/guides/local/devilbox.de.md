@@ -78,7 +78,7 @@ deine IP-Adresse möglicherweise anders. Die IP-Adresse kann über den Befehl `d
 | **Emails**          | E-Mail Catch Service                       |
 | **Databases**       | Infos zu den Datenbanken                   |
 | **Info**            | Weitere Informationen                      |
-| **Tools**           | Zugriff auf Tools wie z. B. `phpMyAdmin`    |
+| **Tools**           | Zugriff auf Tools wie z. B. `phpMyAdmin`   |
 
 
 ## Contao-Installation vorbereiten
@@ -102,7 +102,7 @@ in der Navigation auf die Seite `Virtual Hosts`. Hier solltest du nun eine Liste
 und auch gleich aufrufen können. Du kannst jetzt die Contao-Installation über den Contao Manager einleiten. In unserem 
 Beispiel also über: `contao4.loc/contao-manager.phar.php`. 
 
-Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../../contao-installieren/) beschrieben.
+Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../../installation/contao-installieren/) beschrieben.
 
 
 ## Installation über die Kommandozeile
@@ -135,7 +135,7 @@ Im Anschluss kannst du den Container über `exit` verlassen und das Contao-Insta
 
 ## Angaben im Contao-Installtool
 
-Die Angaben im [Contao-Installtool](../../contao-installtool/) sind grundsätzlich identisch. Du musst lediglich 
+Die Angaben im [Contao-Installtool](../../installation/contao-installtool/) sind grundsätzlich identisch. Du musst lediglich 
 bei `Datenbankverbindung` auf folgende Einträge achten:
 
 | Eintrag             | Wert                  |
