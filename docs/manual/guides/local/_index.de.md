@@ -13,6 +13,6 @@ Eine weitere Alternative ist die Umsetzung über [Docker](https://www.docker.com
 
 Die folgenden Beschreibungen spiegeln lediglich mögliche Alternativen der lokalen Installation wider und sind daher auch nur als solche zu behandeln.
 
-Wenn du mit deinen lokalen Umsetzungen fertig bist, kannst du im Anschluss diese auf einen Live-Server [übertragen](../installation/contao-umziehen/).
+Wenn du mit deinen lokalen Umsetzungen fertig bist, kannst du im Anschluss diese auf einen Live-Server [übertragen](../../installation/contao-umziehen/).
 
 {{% children %}}
