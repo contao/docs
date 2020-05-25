@@ -19,7 +19,7 @@ expects an array of _absolute_ URLs as return value.
 
     List of absolute URLs that should be indexed.
 
-2. *int* `$root`
+2. *int* `$rootId`
 
     ID of the current root page. This parameter is not always available.
 
@@ -55,7 +55,7 @@ class GetSearchablePagesListener implements ServiceAnnotationInterface
     /**
      * @Hook("getSearchablePages")
      */
-    public function onGetSearchablePages(array $pages, int $root = null, bool $isSitemap = false, string $language = null): array
+    public function onGetSearchablePages(array $pages, int $rootId = null, bool $isSitemap = false, string $language = null): array
     {
         // Modify the $pages array …
 
