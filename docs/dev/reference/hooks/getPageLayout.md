@@ -16,7 +16,7 @@ and does not expect a return value.
 
 ## Parameters
 
-1. *\Contao\PageModel* `$pageModel`
+1. *\Contao\PageModel* `$page`
 
 	The page model instance.
 
@@ -46,7 +46,7 @@ class GetPageLayoutListener implements ServiceAnnotationInterface
     /**
      * @Hook("getPageLayout")
      */
-    public function onGetPageLayout(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
+    public function onGetPageLayout(PageModel $page, LayoutModel $layout, PageRegular $pageRegular): void
     {
         // Modify the page or layout object
     }
