@@ -1320,8 +1320,7 @@ hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle 
 wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 
-**Kommentartemplate:** Hier kannst du das Template für die einzelnen Beiträge auswählen. Mehr zu diesem Thema erfährst 
-du im Abschnitt [Templates](../../eigene-seitenlayouts/templates/).
+**Kommentartemplate:** Hier kannst du das Template für die einzelnen Beiträge auswählen.
 
 **Individuelles Template:** Hier kannst du das Standard-Template `ce_comments` überschreiben.
 
