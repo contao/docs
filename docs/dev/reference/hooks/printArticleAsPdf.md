@@ -40,7 +40,7 @@ class PrintArticleAsPdfListener implements ServiceAnnotationInterface
     /**
      * @Hook("printArticleAsPdf")
      */
-    public function onPrintArticleAsPdf(string $articleContent, ModuleArticle $module)
+    public function onPrintArticleAsPdf(string $articleContent, ModuleArticle $module): void
     {
         // Trigger your own PDF engine and exit
         exit;
