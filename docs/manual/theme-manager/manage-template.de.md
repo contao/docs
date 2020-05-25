@@ -5,7 +5,7 @@ url: "theme-manager/templates-verwalten"
 weight: 40
 ---
 
-Ein Template wird zur Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponenten 
+Ein Template wird zur Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponente 
 verwendet und beinhaltet HTML und PHP Code. Unter dem Menüpunkt `Layout\Templates` können die Dateien erstellt, 
 in Ordnern abgelegt und bearbeitet werden. Diese Anpassungen sind updatesicher.
 
