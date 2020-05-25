@@ -49,7 +49,7 @@ class PrepareFormDataListener implements ServiceAnnotationInterface
     /**
      * @Hook("prepareFormData")
      */
-    public function onPrepareFormData(array &$submittedData, array $labels, array $fields, Form $form)
+    public function onPrepareFormData(array &$submittedData, array $labels, array $fields, Form $form): void
     {
         // This calculates a deadline from a given timestamp
         // and stores it as deadline in $submittedData.
