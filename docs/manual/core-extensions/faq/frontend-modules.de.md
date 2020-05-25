@@ -56,7 +56,7 @@ Das Frontend-Modul »FAQ-Leser« dient dazu, die Antwort zu einer bestimmten Fra
 bezieht das Modul über die URL, sodass FAQs mit sogenannten [Permalinks](https://de.wikipedia.org/wiki/Permalink) 
 gezielt verlinkt werden können:
 
-<code>www.domain.de/frage/kann-ich-eigene-php-skripte-verwen-den.html</code>
+<code>example.org/frage/kann-ich-eigene-php-skripte-verwen-den.html</code>
 
 Das Schlüsselwort des FAQ-Lesers lautet *frage* und teilt dem Modul mit, dass es eine bestimmte Frage suchen und 
 ausgeben soll. Existiert die gesuchte Frage nicht, gibt der FAQ-Leser eine Fehlermeldung und den HTTP-Status-Code 
