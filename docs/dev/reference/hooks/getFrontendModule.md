@@ -14,7 +14,7 @@ modules.
 
 ## Parameters
 
-1. *\Contao\ModuleModel* `$moduleModel`
+1. *\Contao\ModuleModel* `$model`
 
     Database result of the front end module as a `\Contao\ModuleModel` instance.
 
@@ -48,10 +48,10 @@ class GetFrontendModuleListener implements ServiceAnnotationInterface
     /**
      * @Hook("getFrontendModule")
      */
-    public function onGetFrontendModule(ModuleModel $moduleModel, string $buffer, Module $module): string
+    public function onGetFrontendModule(ModuleModel $model, string $buffer, Module $module): string
     {
         // Wrap a specific module in an additional wrapper div
-        if (2 === (int) $moduleModel->id) {
+        if (2 === (int) $model->id) {
             return '<div class="module">' . $buffer . '</div>';
         }
 
