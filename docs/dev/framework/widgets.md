@@ -152,8 +152,8 @@ $GLOBALS['TL_LANG']['FFL']['myfield'] = [
 ];
 ```
 
-
-[FormGenerator]: https://docs.contao.org/manual/en/form-generator/
+[//]: # (TODO: change to English URL when done)
+[FormGenerator]: https://docs.contao.org/manual/de/formulargenerator/
 [DcaFields]: /reference/dca/fields/
 [ContaoCoreWidgets]: https://github.com/contao/contao/tree/master/core-bundle/src/Resources/contao/widgets
 [TemplateInheritance]: /framework/templates/#template-inheritance
