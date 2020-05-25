@@ -21,7 +21,7 @@ object as return value.
 
 2. *string* `$formId`
 
-    Alias of the current form. Used in the `value` attribute of the hidden form field `FORM_SUBMIT`. Don’t confuse with `$form->id`.
+    Alias of the current form. Used in the `value` attribute of the hidden form field `FORM_SUBMIT`. Do not confuse with `$form->id`.
 
 3. *array* `$formData`
 
