@@ -22,19 +22,19 @@ This hook can also be implemented as an anonymous function.
 
 ## Parameters
 
-1. *string* $table
+1. *string* `$table`
 
     The current table name.
 
-2. *array* $newRecords
+2. *array* `$newRecords`
 
     Array containing the ID of the new records.
 
-3. *string* $parentTable
+3. *string* `$parentTable`
 
     Optional parent table of the current table.
 
-4. *array* $childTables
+4. *array* `$childTables`
 
     Optional array containing the names of the child tables.
 
