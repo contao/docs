@@ -23,7 +23,7 @@ field of the form generator.
 2. *string* `$formId`
 
     Alias of the current form. Used in the `value` attribute of the hidden form
-    field `FORM_SUBMIT`. Don't confuse with `$objForm->id`.
+    field `FORM_SUBMIT`. Don't confuse with `$form->id`.
 
 3. *array* `$formData`
 
