@@ -17,7 +17,7 @@ to the `\Contao\PageModel` instance.
 
 ## Parameters
 
-1. *array* $parentModels
+1. *array* `$parentModels`
 
     An array containing all the parent pages of the processed page.
 
