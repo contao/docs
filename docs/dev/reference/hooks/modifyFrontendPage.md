@@ -25,7 +25,7 @@ insert tags, use the [`outputFrontendTemplate`](../outputFrontendTemplate) hook 
 
     Content of the rendered front end template.
 
-2. *string* `$templateName`
+2. *string* `$template`
 
     The template name (e.g. `fe_page`) without file extension.
 
@@ -50,9 +50,9 @@ class ModifyFrontendPageListener implements ServiceAnnotationInterface
     /**
      * @Hook("modifyFrontendPage")
      */
-    public function onModifyFrontendPage(string $buffer, string $templateName): string
+    public function onModifyFrontendPage(string $buffer, string $template): string
     {
-        if ('fe_page' === $templateName) {
+        if ('fe_page' === $template) {
             // Modify $buffer
         }
 
