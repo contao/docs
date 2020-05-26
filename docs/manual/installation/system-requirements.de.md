@@ -109,6 +109,11 @@ Contao erkennt und verwendet automatisch die beste verfügbare Erweiterung.
 - **PHP** Version 5.6.0 oder höher ist erforderlich.
 - Die GD-Erweiterung (`ext-gd`) wird für die Bildverarbeitung benötigt.
 
+{{% notice info %}}
+Wird ein MySQL Server in Version **8.0.17** oder höher eingesetzt, ist mindestens 
+PHP **7.2.0** erforderlich.
+{{% /notice %}}
+
 
 ### MySQL-Mindestanforderungen 
 
