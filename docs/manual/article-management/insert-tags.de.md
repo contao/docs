@@ -178,9 +178,9 @@ Verfügbare Flags:
 |:--------------------|:-------------------------------------------------------------------------|:--------------------------------------------------|
 | `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           |                                                   |
 | `refresh`           | Erstellt die Ausgabe bei jeder Anfrage neu.                              |                                                   |
-| `addslashes`        | Stellt bestimmten Zeichen eines Strings ein `\` voran.                   | [PHP-Funktion](https://php.net/addslashes)        |
+| `addslashes`        | Stellt bestimmten Zeichen eines Strings ein (<code>\\</code>) voran.     | [PHP-Funktion](https://php.net/addslashes)        |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
-| `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                         |
+| `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                       |
 | `ampersand`         | Wandelt `&`-Zeichen in Entities um.                                      |                                                   |
 | `specialchars`      | Wandelt Sonderzeichen in Entities um.                                    |                                                   |
 | `nl2br`             | Fügt vor allen Zeilenumbrüchen eines Strings HTML-Zeilenumbrüche ein.    | [PHP-Funktion](https://php.net/nl2br)             |
@@ -196,13 +196,13 @@ Verfügbare Flags:
 | `rtrim`             | Entfernt Leerzeichen vom Anfang der Ausgabe.                             | [PHP-Funktion](https://php.net/rtrim)             |
 | `ltrim`             | Entfernt Leerzeichen vom Ende der Ausgabe.                               | [PHP-Funktion](https://php.net/ltrim)             |
 | `utf8_romanize`     | Romanisiert die Ausgabe.                                                 |                                                   |
-| `encodeEmail`       | Kodiert E-Mail-Adressen in der Ausgabe.                                  | siehe `String::encodeEmail()`                       |
-| `number_format`     | Formatiert eine Zahl (keine Dezimalstellen).                             | siehe `System::getFormattedNumber()`              |
-| `currency_format`   | Formatiert eine Währung (zwei Dezimalstellen).                           | siehe `System::getFormattedNumber()`              |
-| `readable_size`     | Wandelt die Ausgabe in ein menschenlesbares Format um.                   | siehe `System::getReadableSize()`                 |
+| `encodeEmail`       | Kodiert E-Mail-Adressen in der Ausgabe.                                  | siehe&nbsp;`StringUtil::encodeEmail()`            |
+| `number_format`     | Formatiert eine Zahl (keine Dezimalstellen).                             | siehe&nbsp;`System::getFormattedNumber()`         |
+| `currency_format`   | Formatiert eine Währung (zwei Dezimalstellen).                           | siehe&nbsp;`System::getFormattedNumber()`         |
+| `readable_size`     | Wandelt die Ausgabe in ein menschenlesbares Format um.                   | siehe&nbsp;`System::getReadableSize()`            |
 | `urlencode`         | URL-kodiert einen String.                                                | [PHP-Funktion](https://php.net/urlencode)         |
 | `rawurlencode`      | URL-Kodierung nach RFC 3986.                                             | [PHP-Funktion](https://php.net/rawurlencode)      |
-| `flatten`           | Wandelt ein Array in eine durch Kommas separierte Liste mit Schlüssel und Werten um. Beispiel: `0: value1, 1: value2, 2: value3` oder `key1: value, key2.subkey: value` |                                       |
+| `flatten`           | Wandelt ein Array in eine durch Kommas separierte Liste mit Schlüssel und Werten um. Beispiel: `0: value1, 1: value2, 2: value3` oder `key1: value, key2.subkey: value` |
 
 
 ## Basic Entities
