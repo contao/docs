@@ -19,9 +19,9 @@ object as return value.
 
     Object of the current front end widget. Use it to access form field properties.
 
-2. *int* `$intId`
+2. *string* `$formId`
 
-    ID of the `tl_form_field` record.
+    Alias of the current form. Used in the `value` attribute of the hidden form field `FORM_SUBMIT`. Do not confuse with `$form->id`.
 
 3. *array* `$formData`
 

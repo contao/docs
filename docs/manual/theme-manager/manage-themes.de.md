@@ -26,8 +26,7 @@ Ein Theme fasst alle designrelevanten Elemente einer Webseite zusammen:
 
 Im Gegensatz zu Stylesheets, Frontend-Modulen, Seitenlayouts und Bildgrößen, die in der Datenbank gespeichert werden, 
 befinden sich Dateien und Templates in einem Unterverzeichnis deiner Contao-Installation. Ein Template ist übrigens 
-eine PHP-Datei, mit der du die HTML-Ausgabe eines bestimmten Elements oder Moduls vorgeben kannst. Weitere 
-Informationen dazu findest du auf der Seite [Templates](../../eigene-seitelayouts/templates/).
+eine PHP-Datei, mit der du die HTML-Ausgabe eines bestimmten Elements oder Moduls vorgeben kannst.
 
 Achte bei der Auswahl der Dateien darauf, dass du nur diejenigen mit dem Theme verknüpfst, die auch tatsächlich zum 
 Design gehören. Im Contao-Upload-Verzeichnis liegen sämtliche Benutzerdateien, also neben Hintergrundbildern und Icons 

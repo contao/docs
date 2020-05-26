@@ -88,8 +88,6 @@ Layoutbereiche wie folgt positioniert werden:
 - Nach dem umschließenden Element <code>bottom</code>
 - Manuelle Ausgabe <code>manual</code>
 
-Informationen dazu erhältst du in [Eigene Seitenlayouts](../../eigene-seitenlayouts/).
-
 
 ## Webfonts
 

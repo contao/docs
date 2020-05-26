@@ -46,7 +46,7 @@ class SetCookieListener implements ServiceAnnotationInterface
     /**
      * @Hook("setCookie")
      */
-    public function onSetCookie($cookie): object
+    public function onSetCookie($cookie)
     {
         // Make sure the cookie is also valid for the whole domain
         $cookie->strPath = '/';
