@@ -42,6 +42,34 @@ umbenennen nach  `ce_text_individuell.html5`.
 Dieses Template kann dann gezielt zur Ausgabe für ein (o. mehrere) Inhaltselement(e) vom Typ Text genutzt werden.
 
 
+## CSS und JavaScript Assets
+
+Oft werden zu einem individuellen Template zusätzliche Assets wie CSS oder JavaScript Dateien benötigt. Man kann diese 
+Dateien grundsätzlich über das Seitenlayout eines Themes einbinden. Allerdings werden die Assets dann immer geladen 
+auch wenn diese auf verschiedenen Seiten gar nicht benötigt werden. Es ist daher sinnvoll diese Dateien im Template 
+selbst anzugeben. Hierbei stehen verschiedene Möglichkeiten zur Verfügung. 
+
+Am einfachsten ist es die Dateien im Contao `files` Verzeichnis anzulegen und dann im Template zu referenzieren:
+
+```php
+<link href="files/custom.css" rel="stylesheet">
+<script src="files/custom.js"></script>
+```
+
+Alternativ kann man die Assets im Template auch so hinterlegen, das diese z. B. im Html Header der Seite ausgegeben
+werden:
+
+```php
+$GLOBALS['TL_CSS'][] = 'files/custom.css|static';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/custom.js|static';
+```
+
+Diese Umsettzung bietet weitere Optionen. Mit Angabe von `static` werden die Dateien z. B. zu den bestehenden Assets
+eines Seitenlayouts hinzugefügt bzw. diese zusammengefasst. Eine detaillierte Beschreibung aller Optionen findest Du hier:
+
+- [Adding CSS & JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/)
+
+
 ## Vererbung
 
 Der Aufbau eines Templates kann von einfachen bis komplexen Inhalten variieren. Die meisten Templates werden über 
