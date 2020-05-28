@@ -180,15 +180,21 @@ Wir erstellen uns unterhalb des `files`-Ordner in einem öffentlichen Verzeichni
 }
 ```
 
-Die CSS-KLassen Namen entsprechen unserem Beispiel in der `style_formats` Definition. Die Angabe `content_css` existiert
-bereits im Template. Du änderst hier den Pfad auf deine eigene CSS-Datei.
+Die hier angegebenen CSS-KLassen entsprechen den `style_formats` Definitionen. Die Angabe `content_css` existiert
+bereits im Template. Du kannst den bestehenden Eintrag mit deiner eigenen CSS-Datei vollständig ersetzen oder du 
+fügst deine CSS-Datei lediglich hinzu. Wir fügen unsere eigene CSS-Datei wie folgt hinzu:
 
 ```php
 // be_tinyMCE.html5
 ...
 
 //content_css: 'system/themes/<?= Backend::getTheme() ?>/tinymce.min.css',
-content_css: 'files/myfolder/myCustomTiny.css',
+
+// add new custom css file
+content_css: [
+	'system/themes/<?= Backend::getTheme() ?>/tinymce.min.css',
+	'files/myfolder/myCustomTiny.css'
+],
 ```
 
 Wählst du im Editor deine Format-Definition aus wird diese auch so angezeigt. Allerdings werden nun in der Toolbar unsere 
