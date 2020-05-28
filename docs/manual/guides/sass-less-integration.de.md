@@ -7,19 +7,19 @@ weight: 30
 
 
 In den Seitenlayouts deines Themes werden u. a. die fertigen CSS-Stylesheets eingebunden. Zur Erstellung von 
-CSS Dateien werden oftmals CSS-Präprozessoren wie [Sass bzw. Scss](https://sass-lang.com/) 
-oder [Less](http://lesscss.org/) eingesetzt. Für die folgenden Beispiele nutzen wir Sass/Scss. Die Vorgehensweise 
+CSS Dateien werden oftmals CSS-Präprozessoren wie [Sass bzw. SCSS](https://sass-lang.com/) 
+oder [Less](http://lesscss.org/) eingesetzt. Für die folgenden Beispiele nutzen wir Sass/SCSS. Die Vorgehensweise 
 für Less ist ansonsten, abgesehen von der unterschiedlichen Sprach-Syntax, identisch.
 
 
 ## Umsetzung innerhalb von Contao
 
 Die Nutzung der Präprozessoren setzt normalerweise eine lokale Installation voraus. Mit Contao kannst du `.scss` 
-oder `.less` Dateien direkt im Seitenlayout einbinden. Die entsprechenden CSS Dateien werden dann automatisch erstellt.
+oder `.less` Dateien direkt im Seitenlayout einbinden. Die entsprechenden CSS-Dateien werden dann automatisch erstellt.
 
 {{% notice note %}}
-Auch wenn die direkte Nutzung in Contao funktioniert wird dennoch die Einbindung fertiger CSS Dateien bzw. deren 
-lokale Erstellung über CSS-Präprozessoren empfohlen. Die entsprechende Begründung ergibt sich aus den folgenen Angaben.
+Auch wenn die direkte Nutzung in Contao funktioniert wird dennoch die Einbindung fertiger CSS-Dateien bzw. deren 
+lokale Erstellung über CSS-Präprozessoren empfohlen.
 {{% /notice %}}
 
 Für unser einfaches Beispiel erstellen wir uns im `files` Ordner zwei Dateien: `theme.scss` und `_elements.scss`.
@@ -72,7 +72,7 @@ herangezogen wird kann man der jeweiligen Contao [composer.json](https://github.
 
 Hierbei handelt es sich also hinsichtlich des Sass-Funktionsumfangs um eine eigenständige Umsetzung die nicht unbedingt 
 immer der tatsächlichen [Sass-Version](https://sass-lang.com/install) entspricht. Falls du also in deinen .scss Dateien 
-Funktionalitäten entsprechend der aktuellen [Sass-Dokumentation](https://sass-lang.com/documentation) benutzt werden 
+Funktionalitäten entsprechend der aktuellen [Sass-Dokumentation](https://sass-lang.com/documentation) benutzen willst, werden 
 diese evtl. über die Contao Integration gar nicht unterstützt. In diesem Fall hilft nur der Vergleich mit den jeweiligen 
 Angaben des [scssphp/scssphp Entwicklers](https://github.com/scssphp/scssphp/blob/master/tests/specs/sass-spec-exclude.txt).
 
@@ -83,12 +83,12 @@ Wenn du obige Hinweise berücksichtigst kannst du ohne weiteres mit `.scss` oder
 besonders wenn du hauptsächlich Variablen o. Partials verwendest. Der Vorteil liegt hierbei in der Möglichkeit der 
 direkten Bearbeitung über den Contao [Dateimanager](../../dateiverwaltung). 
 
-Andererseits stehen dir möglicherweise nicht alle aktuellen Funktionen der CSS-Präprozessoren Versionen zur Verfügung. 
+Andererseits stehen dir möglicherweise nicht alle aktuellen Funktionen der CSS-Präprozessor-Versionen zur Verfügung. 
 Eine Fehlersuche ist dann aufwendig.
 
 
 ## Empfehlung
 
-Wie bereits eingangs erwähnt wäre daher der lokale Umgang mit CSS-Präprozessoren empfehlenswert. Du bist dabei 
-unabhängig hinsichtlich des Einsatzes der jeweiligen Präprozessor Versionen. In Contao bindest du lediglich deine 
-finalen .css Dateien ein.
+Wie bereits eingangs erwähnt, wäre daher der lokale Umgang mit CSS-Präprozessoren empfehlenswert. Du bist dabei 
+unabhängig hinsichtlich des Einsatzes der jeweiligen Präprozessor-Versionen. In Contao bindest du lediglich deine 
+finalen .css -Dateien ein.
