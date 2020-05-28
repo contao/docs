@@ -247,7 +247,7 @@ You can register to the [`oninvalidate_cache_tags` callback][5] and add your own
 ## Caching Fragments
 
 In Contao, content elements and front end modules can be implemented as so called
-_fragment controllers_. These fragments are then rendered with their defined renderer
+_fragment controllers_. These fragments are rendered with their defined renderer
 and merged into the main content. Each fragment returns a response and thus can
 tell whether it can be cached or not.
 
@@ -256,9 +256,9 @@ There are two fundamentally different ways to render fragments:
  1. **Inline:** Inside the main page request and merged with the content before caching. In Symfony, this is handled
     by the `inline` renderer, but Contao provides its own default `forward` renderer, which copies the original
     request (whereas Symfony does not) to e.g. pass POST data to the subrequest.
- 2. **Subrequest:** By generating an (internal) URL for the fragment, the fragment content is merged **after** caching
-    the page, which allows a fragment to have a different cache time than the main page. The `esi` renderer tells
-    the reverse proxy (cache) to fetch multiple URLs on a request and merge fragments before delivering to the client.
+ 2. **Subrequest:** By generating a placeholder for the fragment, the fragment content is rendered **after** caching
+    the page, which allows a fragment to have a different cache time than the main page. In case of `esi` the reverse
+    proxy (cache) will parse these placeholders before delivering to the client.
     There's also an `hinclude` renderer which allows browser to merge fragments using JavaScript, but the client-side
     part is not provided out-of-the-box.
 
