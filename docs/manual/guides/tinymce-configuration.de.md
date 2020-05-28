@@ -114,7 +114,5 @@ paste_as_text: true
 ```
 
 
-### Eigene Format Definitionen
-
 
 
