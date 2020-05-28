@@ -57,7 +57,7 @@ und dann im Template zu referenzieren:
 <script src="files/myfolder/custom.js"></script>
 ```
 
-Alternativ kann man die Assets im Template auch so hinterlegen, das diese z. B. im Html-Header oder -Footer 
+Alternativ kann man die Assets im Template auch so hinterlegen, das diese z. B. im HTML-Header oder -Footer 
 der Seite ausgegeben werden:
 
 ```php
