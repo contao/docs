@@ -22,13 +22,14 @@ Auch wenn die direkte Nutzung in Contao funktioniert wird dennoch die Einbindung
 lokale Erstellung über CSS-Präprozessoren empfohlen.
 {{% /notice %}}
 
-Für unser einfaches Beispiel erstellen wir uns im `files` Ordner zwei Dateien: `theme.scss` und `_elements.scss`.
-In der `theme.scss` wird lediglich eine Variable mit einem Farbwert und die Datei `_elements.scss` (Sass-Partial)
-über die [@import](https://sass-lang.com/documentation/at-rules/import) Anweisung inkludiert. In der Datei `_elements.scss`
-setzen wir für das H1 Element den Farbwert über die Variable `$main-color` und einen separaten Farbwert für einen Absatz.
+Für unser einfaches Beispiel erstellen wir uns unterhalb des `files` -Ordner zwei Dateien: `theme.scss` und `_elements.scss`
+in einem bel. Verzeichnis das öffentlich zugänglich ist. In der `theme.scss` wird lediglich eine Variable 
+mit einem Farbwert und die Datei `_elements.scss` (Sass-Partial) über die 
+[@import](https://sass-lang.com/documentation/at-rules/import) Anweisung inkludiert. In der Datei `_elements.scss`
+setzen wir für das H1-Element den Farbwert über die Variable `$main-color` und einen separaten Farbwert für einen Absatz.
 
 
-```php
+```css
 // theme.scss
 
 $mainCol: rgb(255, 0, 0) !default;
@@ -36,7 +37,7 @@ $mainCol: rgb(255, 0, 0) !default;
 @import '_elements';
 ```
 
-```php
+```css
 // _elements.scss
 
 h1 { color: $mainCol; }
@@ -47,8 +48,8 @@ p { color: rgb(0, 255, 0); }
 Selbstverständlich bieten die CSS-Präprozessoren viel mehr Möglichkeiten. Für unsere Beispiel reicht es aber aus.
 
 Du kannst nun die Datei `theme.scss` in deinem Seitenlayout einbinden, analog zur üblichen Vorgehensweise mit 
-.css Dateien. Die Datei `_elements.scss` muß hierbei nicht zusätzlich ausgewählt werden. Deine Webseite sollte im Anschluß 
-rote H1-Überschriften und blaue Absatz Texte anzeigen.
+.css -Dateien. Die Datei `_elements.scss` muß hierbei nicht zusätzlich ausgewählt werden. Deine Webseite sollte im Anschluß 
+rote H1-Überschriften und blaue Textabsätze anzeigen.
 
 Du kannst nun über die Contao [Dateiverwaltung](../../dateiverwaltung) die Datei `theme.scss` direkt bearbeiten. 
 Setze für die Variable `$main-color` einen anderen Farbwert und speichere die Änderung ab. Die H1-Überschrift wird mit 
@@ -61,7 +62,10 @@ Trage nun über die Contao [Dateiverwaltung](../../dateiverwaltung) in der Datei
 für den Absatz ein und speichere die Änderung ab. Leider wird diese Änderung im Frontend nicht sofort übernommen! 
 
 Damit deine Änderung in der Sass-Partial Datei wirksam wird musst du im Anschluss die `theme.scss` bearbeiten (Einfach
-eine Leerzeile einfügen und speichern). Erst jetzt wird auch diese Änderung im Frontend dargestellt.
+eine Leerzeile einfügen und speichern). Eventuell musst du im Anschluss in der Systemwartung auch den `Scriptcache` leeren. 
+Erst jetzt wird auch diese Änderung im Frontend dargestellt.
+
+
 
 
 ### Hinweis II - CSS-Präprozessor Version
@@ -71,7 +75,7 @@ nutzt Contao [scssphp/scssphp](https://github.com/scssphp/scssphp). Welche Versi
 herangezogen wird kann man der jeweiligen Contao [composer.json](https://github.com/contao/contao/blob/master/composer.json#L78) entnehmen.
 
 Hierbei handelt es sich also hinsichtlich des Sass-Funktionsumfangs um eine eigenständige Umsetzung die nicht unbedingt 
-immer der tatsächlichen [Sass-Version](https://sass-lang.com/install) entspricht. Falls du also in deinen .scss Dateien 
+immer der tatsächlichen [Sass-Version](https://sass-lang.com/install) entspricht. Falls du also in deinen .scss -Dateien 
 Funktionalitäten entsprechend der aktuellen [Sass-Dokumentation](https://sass-lang.com/documentation) benutzen willst, werden 
 diese evtl. über die Contao Integration gar nicht unterstützt. In diesem Fall hilft nur der Vergleich mit den jeweiligen 
 Angaben des [scssphp/scssphp Entwicklers](https://github.com/scssphp/scssphp/blob/master/tests/specs/sass-spec-exclude.txt).
