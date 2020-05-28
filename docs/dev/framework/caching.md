@@ -326,7 +326,7 @@ class MySuperController extends AbstractFrontendModuleController
 ### Edge Side Includes (ESI)
 
 By setting the fragment renderer to `esi`, the fragment will be cached **separately** from the main content.
-The page can be cached for 24 hours, but the frament can be cached for one week. On every request to the page,
+The page can be cached for 24 hours, but the fragment can be cached for one week. On every request to the page,
 the reverse proxy will merge the two pieces, rebuilding each if its cache has expired.
 
 A common use case for this is a fragment that can certainly be cached longer than the current page, but is
