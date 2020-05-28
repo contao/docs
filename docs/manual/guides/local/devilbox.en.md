@@ -6,7 +6,7 @@ weight: 100
 ---
 
 The [Devilbox Project](http://devilbox.org/) is a complete LAMP stack for [Docker](https://www.docker.com/).
-If you use the Docker-Toolbox, [this part](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker- toolbox-and-the-devilbox) of the documentation are worth reading.
+If you use the Docker-Toolbox, [this part](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox) of the documentation are worth reading.
 
 
 ## Install and configure the Devilbox
@@ -21,7 +21,7 @@ the file to `.env`. In the new file you can now make your configurations. The fo
 * [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)
 * [MYSQL_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#mysql-server)
 
-The individual steps (especially for the entries `NEW_UID` and` NEW_GID`) are well described in the [Devilbox Documentation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html # set-uid-and-gid). For Contao itself, the other entries should be set to something like this:
+The individual steps (especially for the entries `NEW_UID` and` NEW_GID`) are well described in the [Devilbox Documentation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html#set-uid-and-gid). For Contao itself, the other entries should be set to something like this:
 
 - `HTTPD_DOCROOT_DIR=web`
 - `HTTPD_SERVER=apache-2.4`

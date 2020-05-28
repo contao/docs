@@ -977,9 +977,10 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 {{< version "4.8" >}}
 
 Das Frontend-Modul »Zwei-Faktor-Authentifizierung« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied die 
-Zwei-Faktor-Authentifizierung aktivieren kann. Dieses Modul muss auf der in der Seitenstruktur unter 
+Zwei-Faktor-Authentifizierung aktivieren kann. Wenn im Startpunkt einer Website die Zwei-Faktor-Authentifizierung für
+Mitglieder erzwungen wird, muss dieses Modul auf der in der Seitenstruktur unter 
 [Weitere Einstellungen bei Startpunkten](../../seitenstruktur/seiten-konfigurieren/#weitere-einstellungen-bei-startpunkten) 
-ausgewählten Seite eingerichtet werden.
+ausgewählten Zwei-Faktor-Weiterleitungsseite hinzugefügt werden.
 
 **Frontend-Ausgabe**
 
