@@ -6,7 +6,7 @@ weight: 40
 ---
 
 Ein Template wird zur Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponente 
-verwendet und beinhaltet HTML- und PHP-Code. Im Navigationsbereich "Layout" unter "Templates" können die Dateien erstellt, 
+verwendet und beinhaltet HTML- und PHP-Code. Im [Navigationsbereich](../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-navigationsbereich) »Layout« unter »Templates« können die Dateien erstellt, 
 in Ordnern abgelegt und bearbeitet werden. Diese Anpassungen sind updatesicher.
 
 {{% notice note %}}
@@ -31,18 +31,17 @@ Template-Dateien in weiteren Unterodnern werden bei der Auswahl nicht berücksic
 ## Dateinamen
 
 Die Template-Dateien werden zur Erkennung mit einem Präfix versehen. Beispielsweise deutet `ce_` auf ein
-Inhaltselement hin. Möchte man z. B. die Ausgabe des Inhaltselement vom Typ "Text" ändern kann man das 
-Template `ce_text.html5` hierzu verwenden. 
+Inhaltselement (**c**ontent **e**lement) hin. Möchte man z. B. die Ausgabe des Inhaltselement vom Typ »Text« ändern kann man das Template `ce_text.html5` hierzu verwenden. 
 
-In diesem Fall haben die Template Änderungen Auswirkung auf alle Inhaltselemente vom Typ "Text". Dies ist nicht immer
+In diesem Fall haben die Template Änderungen Auswirkung auf alle Inhaltselemente vom Typ »Text«. Dies ist nicht immer
 erwünscht. Zur gezielten Nutzung kann man das Template individuell bezeichnen. Hierbei muss die jeweils vorgegebene
 Template Bezeichnung beibehalten und lediglich erweitert werden. Also z. B. `ce_text.html5` 
 umbenennen nach  `ce_text_individuell.html5`.
 
-Dieses Template kann dann gezielt zur Ausgabe für ein (o. mehrere) Inhaltselement(e) vom Typ "Text" genutzt werden.
+Dieses Template kann dann gezielt zur Ausgabe für ein (o. mehrere) Inhaltselement(e) vom Typ »Text« genutzt werden.
 
 
-## CSS und JavaScript Assets
+## CSS- und JavaScript-Assets
 
 Oft werden zu einem individuellen Template zusätzliche Assets wie CSS- oder JavaScript-Dateien benötigt. Man kann diese 
 Dateien grundsätzlich über das Seitenlayout eines Themes einbinden. Allerdings werden die Assets dann immer geladen 
@@ -92,7 +91,7 @@ Hierzu erstellen wir ein neues Template `fe_page_meta.html5` mit folgenden Inhal
 ```
 
 Die Funktion `extend()` definiert das übergeordnete Template und die Funktion `parent()` übernimmt den originalen 
-(Block-) Inhalt. Wenn wir dieses Template einsetzen werden alle Seiten mit der zusätzlichen Meta-Angabe ausgeliefert.
+(Block-)Inhalt. Wenn wir dieses Template einsetzen werden alle Seiten mit der zusätzlichen Meta-Angabe ausgeliefert.
 
 
 ## Templates mischen
@@ -114,7 +113,7 @@ Wir erstellen ein Template `image_copyright.html5` mit folgenden Inhalt:
 <small>Fotografiert von <?php echo $this->name; ?>, lizenziert als <?php echo $this->license; ?></small>
 ```
 
-Das Template `ce_image.html5` beinhaltet den Block `content`. Über die Vererbung überschreiben wir diesen Block Inhalt
+Das Template `ce_image.html5` beinhaltet den Block `content`. Über die Vererbung überschreiben wir diesen Block-Inhalt
 und mischen bzw. fügen den Inhalt aus dem eigenen Copyright-Template (`image_copyright.html5`) hinzu:
 
 ```php
@@ -129,7 +128,7 @@ und mischen bzw. fügen den Inhalt aus dem eigenen Copyright-Template (`image_co
 <?php $this->endblock(); ?>
 ```
 
-Wird das Template in einem Inhaltselement vom Typ "Bild" herangezogen werden unsere Copyright-Angaben zusätzlich 
+Wird das Template in einem Inhaltselement vom Typ »Bild« herangezogen werden unsere Copyright-Angaben zusätzlich 
 zur eigentlichen Bild Ausgabe ausgegeben:
 
 - Fotografiert von Donna Evans, lizenziert als Creative Commons
