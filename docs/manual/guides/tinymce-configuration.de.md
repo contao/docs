@@ -39,7 +39,7 @@ Template löschen. Es wird dann wieder die Contao Standard Konfiguration des Edi
 ### Funktion "Als Text einfügen" standardmäßig aktivieren
 
 Im Editor kann du über das Menü `Bearbeiten` oder über eine Tastenkombination Text aus der Zwischenablage einfügen. 
-Hierbei kann es passieren das nicht nur der Text sondern auch weitere Formatierungen (z. B. aus einer Word Datei) übernommen
+Hierbei kann es passieren, dass nicht nur der Text sondern auch weitere Formatierungen (z. B. aus einer Word Datei) übernommen
 werden. Damit nur Text eingefügt wird kannst du über das Menü die Option `Bearbeiten\Als Text einfügen` manuell auswählen.
 
 Über die Konfiguration werden wir die Option standardmäßig aktivieren. Diese Funktion des Editors erfolgt über das `Paste` 
@@ -58,9 +58,9 @@ paste_as_text: true
 ```
 
 Im Beispiel haben wir dies über eine neue Zeile unterhalb der bestehenden Zeile (toolbar: ...) eingetragen. Da unsere
-neue Zeile die letzte Zeile ist brauchen wir hier kein Komma setzen. 
+neue Zeile die letzte Zeile, ist brauchen wir hier kein Komma setzen. 
 
-Allerdings musst du darauf achten das die bestehende Zeile (toolbar: ...) nun zusätzlich mit einem Komma abgeschlossen 
+Allerdings musst du darauf achten, dass die bestehende Zeile (toolbar: ...) nun zusätzlich mit einem Komma abgeschlossen 
 werden muss. Im Editor ist die Option `Bearbeiten\Als Text einfügen` jetzt immer aktiviert.
 
 
@@ -159,7 +159,7 @@ Lesenswert sind auch die [Informationen](https://www.tiny.cloud/docs-4x/configur
 ### Die eigene TinyMCE.css
 
 In unserem obigen `style_formats` Beispiel haben wir im ersten Eintrag den Farbwert über eine inline CSS-Angabe definiert.
-Das sollte du möglichst vermeiden und lieber mit CSS-KLassen arbeiten. Möchtest du später den Style, z. B. den Farbwert 
+Das sollte du möglichst vermeiden und lieber mit CSS-KLassen arbeiten. Möchtest du später den Style z. B. den Farbwert 
 ändern, kannst du das global über deine CSS-Klasse realisieren.
 
 Der Nachteil ist hierbei das du oder deine Redakteure die Styles im Editor nicht sehen können. Hierzu kannst du dem
