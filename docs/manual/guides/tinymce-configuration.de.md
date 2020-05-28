@@ -19,9 +19,9 @@ Erstelle über den Navigationsbereich »Layout« unter »Templates« ein neues [
 Wähle über `Original-Template` das Template `be_tinyMCE.html5` aus und gebe als `Zielverzeichnis` das Hauptverzeichnis an. 
 
 {{% notice note %}}
-Das Template **muss** im Hauptverzeichnis (`templates/be_tinyMCE.html5`) abgelegt werden und du solltest die Datei
-in keinem Fall umbenennen. Alle Zeilen innerhalb von `<script>...</script>` bis auf die letzte Zeile müssen 
-mit einem **Komma** abgeschlossen werden. Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
+Das Template **muss** im Hauptverzeichnis (`templates/be_tinyMCE.html5`) abgelegt werden. Alle Zeilen 
+innerhalb von `<script>...</script>` bis auf die letzte Zeile müssen mit einem **Komma** abgeschlossen werden. 
+Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
 {{% /notice %}}
 
 
@@ -86,7 +86,7 @@ paste_as_text: true
 Analog zur Toolbar kannst du auch das Menü konfigurieren. Wenn du den Menüpunkt `Tabelle` vollständig entfernen
 möchtest lösche den Eintrag `table` in der Zeile der Menübar Definition (`menubar:...`).
 
-Zur gezielten Kontolle einzelner Menüpunkte steht die `menu` Definition zur Verfügung. Die detaillierten Infos hierzu
+Zur gezielten Kontrolle einzelner Menüpunkte steht die `menu` Definition zur Verfügung. Die detaillierten Infos hierzu
 findest du in der [TinyMCE-Dokumentation](https://www.tiny.cloud/docs-4x/configure/editor-appearance/#menu).
 
 Wir haben in der Toolbar die Absatz Ausrichtung entfernt. Allerdings ist diese noch im Menü unter `Format\Ausrichtung` 
