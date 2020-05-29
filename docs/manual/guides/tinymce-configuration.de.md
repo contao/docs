@@ -26,7 +26,7 @@ Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
 {{% /notice %}}
 
 
-## Verschiedene Editor Konfigurationen
+## Verschiedene Editor-Konfigurationen
 
 Wenn du den Template Namen `be_tinyMCE.html5` beibehälst führt dies dazu, dass deine Änderungen sich auf alle Bereiche 
 auswirken die den Editor benutzen. Dies gilt zumindest für die Contao eigenen Komponenten.
