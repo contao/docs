@@ -33,7 +33,7 @@ auswirken die den Editor benutzen. Dies gilt zumindest für die Contao eigenen K
 können u. U. hierbei eigene Templates zur Verfügung stellen.
 
 Du möchstest gezielt eine Editor Konfiguration z. B. nur für das Inhaltselement vom Typ »Text« erstellen? Dazu kannst
-du das Template beliebig umbenennen: z.B. nach `myTinyCustomText.html5`.
+du das Template beliebig umbenennen: z.B. nach `be_myTinyMCE.html5`.
 
 Als nächstes müssen wir Contao dazu bringen dieses Template zu nutzen. Erstelle dir hierzu zwei neue Ordner `contao/dca` 
 im Contao Hauptverzeichnis. Im Verzeichnis `dca` benötigen wir eine neue Datei `tl_content.php` mit folgenden Inhalt:
@@ -42,20 +42,24 @@ im Contao Hauptverzeichnis. Im Verzeichnis `dca` benötigen wir eine neue Datei 
 // contao/dca/tl_content.php
 
 // Custom RTE-Configuration for Content Text
-$GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['rte'] = 'myTinyCustomText';
+$GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['rte'] = 'myTinyMCE';
 ```
 
-Der letzte Eintrag entspricht der Template Bezeichnung. In unserem Fall `myTinyCustomText`. Im Anschluß musst du über 
+Der letzte Eintrag entspricht der Template Bezeichnung (ohne be_ Präfix). In unserem Fall `myTinyMCE`. Im Anschluß musst du über 
 den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole einmalig den Anwendungs-Cache leeren. 
 
-Analog wäre die Vorgehensweise z. B. für deine Nachrichten Texte über die `tl_news.php`:
+Analog wäre die Vorgehensweise z. B. für deine Nachrichten Texte mit einem Template `be_myTinyMCENews` und 
+einer `tl_news.php`:
 
 ```php
 // contao/dca/tl_news.php
 
 // Custom RTE-Configuration for News Text
-$GLOBALS['TL_DCA']['tl_news']['fields']['text']['eval']['rte'] = 'myTinyCustomNewsText';
+$GLOBALS['TL_DCA']['tl_news']['fields']['text']['eval']['rte'] = 'myTinyMCENews';
 ```
+
+Eine detaillierte Beschreibung hierzu findest du in der Entwickler-Dokumentation 
+unter [Data Container Array](https://docs.contao.org/dev/reference/dca/).
 
 
 ## Beispiele
