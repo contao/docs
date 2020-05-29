@@ -6,7 +6,8 @@ weight: 40
 ---
 
 
-Zur Bearbeitung der meisten Inhalte mit individueller Formatierung wird der [TinyMCE-Editor](https://www.tiny.cloud/) eingesetzt. Der Editor ist für Contao bereits vorkonfiguriert, aber eine individuelle Konfiguration ist optional möglich. 
+Zur Bearbeitung der meisten Inhalte mit individueller Formatierung wird der [TinyMCE-Editor](https://www.tiny.cloud/) eingesetzt.
+Der Editor ist für Contao bereits vorkonfiguriert, aber eine individuelle Konfiguration ist optional möglich. 
 
 
 ## Das Template be_tinyMCE.html5
