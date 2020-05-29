@@ -89,7 +89,7 @@ möchtest lösche den Eintrag `table` in der Zeile der Menübar Definition (`men
 Zur gezielten Kontrolle einzelner Menüpunkte steht die `menu` Definition zur Verfügung. Die detaillierten Infos hierzu
 findest du in der [TinyMCE-Dokumentation](https://www.tiny.cloud/docs-4x/configure/editor-appearance/#menu).
 
-Wir haben in der Toolbar die Absatz Ausrichtung entfernt. Allerdings ist diese noch im Menü unter `Format\Ausrichtung` 
+Wir haben in der Toolbar die Absatz Ausrichtung entfernt. Allerdings ist diese noch im Menü unter `Format > Ausrichtung` 
 erreichbar. Wir möchten gezielt diesen Menüpunkt entfernen und die übrigen Menü-Einträge beibehalten. Hierzu kannst
 du den Eintrag [removed_menuitems](https://www.tiny.cloud/docs-4x/configure/editor-appearance/#removed_menuitems) benutzen. 
 
