@@ -30,7 +30,6 @@ Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
 
 Wenn du den Template Namen `be_tinyMCE.html5` beibehälst führt dies dazu, dass deine Änderungen sich auf alle Bereiche 
 auswirken die den Editor benutzen. Dies gilt zumindest für die Contao eigenen Komponenten.
-können u. U. hierbei eigene Templates zur Verfügung stellen.
 
 Du möchstest gezielt eine Editor Konfiguration z. B. nur für das Inhaltselement vom Typ »Text« erstellen? Dazu kannst
 du das Template beliebig umbenennen: z.B. nach `be_myTinyMCE.html5`.
