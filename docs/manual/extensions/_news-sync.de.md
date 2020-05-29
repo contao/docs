@@ -105,7 +105,7 @@ Datenbank zu aktualisieren.
 
 ### Contao 3
 
-Die Installation unter Contao 3 setzt die Verwendung der Composer Paketverwaltung voraus. Ansonsten ist die vorgehensweise
+Die Installation unter Contao 3 setzt die Verwendung der Composer Paketverwaltung voraus. Ansonsten ist die Vorgehensweise
 gleich. Die von der Composer Paketverwaltung verwendete `composer.json` befindet sich im `composer/` Unterordner der
 Contao 3 Installation. Als Versionsangabe muss `"^1.0"` verwendet werden.
 
@@ -339,7 +339,7 @@ Danach muss wie gewohnt das Contao Install Tool aufgerufen werden, um die Datenb
 
 Die Extension muss in allen Contao Installationen installiert werden, die in die Synchronisation der Nachrichten involviert
 sein sollen. Nach der Installation stehen zusätzliche Einstellungen in den Nachrichtenarchiven unter dem Punkt _Synchronisation_
-zur Vefügung. 
+zur Verfügung. 
 
 Um die Nachrichten eines Nachrichtenarchivs als Quelle für die Synchronisation zur Verfügung zu stellen, muss die Einstellung
 **Quelle für Synchronisation** aktiviert werden.
@@ -361,7 +361,7 @@ werden, unter die andere Contao Installation erreichbar ist. Speichert man die E
 * **Zielverzeichnis** - hier muss ein Verzeichnis für die synchronisierten Bilddaten und Anhänge angegeben werden.
 
 {{% notice note %}}
-<sup>1</sup> Dies funktioniert derzeit noch nur mit Version `2.x` der ´news_categories` Extension.
+<sup>1</sup> Dies funktioniert derzeit noch nur mit Version `2.x` der `news_categories` Extension.
 {{% /notice %}}
 
 
