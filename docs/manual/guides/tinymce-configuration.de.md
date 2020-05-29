@@ -33,7 +33,7 @@ TinyMCE-Version findest du die Infos zur weiteren Konfiguration in der
 [TinyMCE-Dokumentation](https://www.tiny.cloud/docs-4x/configure/content-formatting/).
 
 Falls etwas nach deinen Änderungen nicht funktionieren sollte entferne diese zunächst wieder. Du kannst auch das 
-Template löschen. Es wird dann wieder die Contao Standard Konfiguration des Editors benutzt.
+Template löschen. Es wird dann wieder die Contao-Standardkonfiguration des Editors benutzt.
 
 
 ### Funktion »Als Text einfügen« standardmäßig aktivieren
