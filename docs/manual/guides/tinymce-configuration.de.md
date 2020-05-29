@@ -40,7 +40,7 @@ Template löschen. Es wird dann wieder die Contao-Standardkonfiguration des Edit
 
 Im Editor kann du über das Menü `Bearbeiten` oder über eine Tastenkombination Text aus der Zwischenablage einfügen. 
 Hierbei kann es passieren, dass nicht nur der Text sondern auch weitere Formatierungen (z. B. aus einer Word Datei) übernommen
-werden. Damit nur Text eingefügt wird kannst du über das Menü die Option `Bearbeiten\Als Text einfügen` manuell auswählen.
+werden. Damit nur Text eingefügt wird kannst du über das Menü die Option `Bearbeiten > Als Text einfügen` manuell auswählen.
 
 Über die Konfiguration werden wir die Option standardmäßig aktivieren. Diese Funktion des Editors erfolgt über das `Paste` 
 -Plugin und die möglichen Einstellungen findest du in der 
