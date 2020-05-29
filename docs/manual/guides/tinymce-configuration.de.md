@@ -15,7 +15,7 @@ Der Editor ist für Contao bereits vorkonfiguriert. Individuelle Änderungen sin
 Deine individuelle Konfiguration erfolgt über das Template `be_tinyMCE.html5`. Hier findest du die von Contao gesetzte
 Konfiguration vor und kannst die Angaben updatesicher anpassen.
 
-Erstelle über den Navigationsbereich »Layout« unter »Templates« ein neues [Template](../../theme-manager/templates-verwalten). 
+Erstelle über den [Navigationsbereich](../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-navigationsbereich) »Layout« unter »Templates« ein neues [Template](../../theme-manager/templates-verwalten). 
 Wähle über `Original-Template` das Template `be_tinyMCE.html5` aus und gebe als `Zielverzeichnis` das Hauptverzeichnis an. 
 
 {{% notice note %}}
