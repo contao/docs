@@ -15,7 +15,8 @@ Der Editor ist für Contao bereits vorkonfiguriert. Individuelle Änderungen sin
 Deine individuelle Konfiguration erfolgt über das Template `be_tinyMCE.html5`. Hier findest du die von Contao gesetzte
 Konfiguration vor und kannst die Angaben updatesicher anpassen.
 
-Erstelle über den Navigationsbereich »Layout« unter »Templates« ein neues [Template](../../theme-manager/templates-verwalten). 
+Erstelle über den [Navigationsbereich](../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-navigationsbereich) 
+»Layout« unter »Templates« ein neues [Template](../../theme-manager/templates-verwalten). 
 Wähle über `Original-Template` das Template `be_tinyMCE.html5` aus und gebe als `Zielverzeichnis` das Hauptverzeichnis an. 
 
 {{% notice note %}}
@@ -33,21 +34,21 @@ TinyMCE-Version findest du die Infos zur weiteren Konfiguration in der
 [TinyMCE-Dokumentation](https://www.tiny.cloud/docs-4x/configure/content-formatting/).
 
 Falls etwas nach deinen Änderungen nicht funktionieren sollte entferne diese zunächst wieder. Du kannst auch das 
-Template löschen. Es wird dann wieder die Contao Standard Konfiguration des Editors benutzt.
+Template löschen. Es wird dann wieder die Contao-Standardkonfiguration des Editors benutzt.
 
 
-### Funktion "Als Text einfügen" standardmäßig aktivieren
+### Funktion »Als Text einfügen« standardmäßig aktivieren
 
 Im Editor kann du über das Menü `Bearbeiten` oder über eine Tastenkombination Text aus der Zwischenablage einfügen. 
 Hierbei kann es passieren, dass nicht nur der Text sondern auch weitere Formatierungen (z. B. aus einer Word Datei) übernommen
-werden. Damit nur Text eingefügt wird kannst du über das Menü die Option `Bearbeiten\Als Text einfügen` manuell auswählen.
+werden. Damit nur Text eingefügt wird kannst du über das Menü die Option `Bearbeiten > Als Text einfügen` manuell auswählen.
 
 Über die Konfiguration werden wir die Option standardmäßig aktivieren. Diese Funktion des Editors erfolgt über das `Paste` 
 -Plugin und die möglichen Einstellungen findest du in der 
 [Dokumentation](https://www.tiny.cloud/docs-4x/plugins/paste/#paste_as_text). Wir müssen demnach die 
 Angabe `paste_as_text` im Template hinzufügen:
 
-```php
+```js
 // be_tinyMCE.html5
 ...
 
@@ -61,7 +62,7 @@ Im Beispiel haben wir dies über eine neue Zeile unterhalb der bestehenden Zeile
 neue Zeile die letzte Zeile, ist brauchen wir hier kein Komma setzen. 
 
 Allerdings musst du darauf achten, dass die bestehende Zeile (toolbar: ...) nun zusätzlich mit einem Komma abgeschlossen 
-werden muss. Im Editor ist die Option `Bearbeiten\Als Text einfügen` jetzt immer aktiviert.
+werden muss. Im Editor ist die Option `Bearbeiten > Als Text einfügen` jetzt immer aktiviert.
 
 
 ### Die Toolbar ändern
@@ -69,7 +70,7 @@ werden muss. Im Editor ist die Option `Bearbeiten\Als Text einfügen` jetzt imme
 Die Toolbar des Editors bietet u. a. die Möglichkeit der Absatz Ausrichtung. Wenn du dies für deine Redakteure 
 unterbinden möchtest entferne die Einträge `alignleft aligncenter alignright alignjustify` in der `toolbar` Definition:
 
-```php
+```js
 // be_tinyMCE.html5
 ...
 
@@ -89,7 +90,7 @@ möchtest lösche den Eintrag `table` in der Zeile der Menübar Definition (`men
 Zur gezielten Kontrolle einzelner Menüpunkte steht die `menu` Definition zur Verfügung. Die detaillierten Infos hierzu
 findest du in der [TinyMCE-Dokumentation](https://www.tiny.cloud/docs-4x/configure/editor-appearance/#menu).
 
-Wir haben in der Toolbar die Absatz Ausrichtung entfernt. Allerdings ist diese noch im Menü unter `Format\Ausrichtung` 
+Wir haben in der Toolbar die Absatz Ausrichtung entfernt. Allerdings ist diese noch im Menü unter `Format > Ausrichtung` 
 erreichbar. Wir möchten gezielt diesen Menüpunkt entfernen und die übrigen Menü-Einträge beibehalten. Hierzu kannst
 du den Eintrag [removed_menuitems](https://www.tiny.cloud/docs-4x/configure/editor-appearance/#removed_menuitems) benutzen. 
 
@@ -97,7 +98,7 @@ Eine vollständige Liste der Toolbar-Items und Menü-Items findest du in der
 [TinyMCE-Dokumentation](https://www.tiny.cloud/docs-4x/advanced/editor-control-identifiers/).
 
 
-```php
+```js
 // be_tinyMCE.html5
 ...
 
@@ -125,7 +126,7 @@ mit Inline-Style Angaben versehen oder bestimmte CSS-KLassen übergeben.
 Du erweiterst die Toolbar mit dem Eintrag `styleselect`. Über die Toolbar können dann deine eigenen Angaben aus den 
 `style_formats` Definitionen ausgewählt werden:
 
-```php
+```js
 // be_tinyMCE.html5
 ...
 
@@ -182,9 +183,9 @@ Wir erstellen uns unterhalb des `files`-Ordner in einem öffentlichen Verzeichni
 
 Die hier angegebenen CSS-KLassen entsprechen den `style_formats` Definitionen. Die Angabe `content_css` existiert
 bereits im Template. Du kannst den bestehenden Eintrag mit deiner eigenen CSS-Datei vollständig ersetzen oder du 
-fügst deine CSS-Datei lediglich hinzu. Wir fügen unsere eigene CSS-Datei wie folgt hinzu:
+fügst deine CSS-Datei hinzu: 
 
-```php
+```js
 // be_tinyMCE.html5
 ...
 
@@ -205,12 +206,17 @@ Die Option `importcss_selector_filter` ist eigentlich dazu gedacht die Anzeige a
 Informationen findest du in der [TinyMCE-Dokumentation](https://www.tiny.cloud/docs/plugins/importcss/#importcss_selector_filter).
 Wir verwenden dies in unserem Sinne und geben einen Filter an der gar nicht existiert:
 
-```php
+```js
 // be_tinyMCE.html5
 ...
 
 //content_css: 'system/themes/<?= Backend::getTheme() ?>/tinymce.min.css',
-content_css: 'files/myfolder/myCustomTiny.css',
+
+// add new custom css file
+content_css: [
+	'system/themes/<?= Backend::getTheme() ?>/tinymce.min.css',
+	'files/myfolder/myCustomTiny.css'
+],
 
 // do not import all css-classes from custom .css, only classes starts with prefix
 importcss_selector_filter: ".myDummyPrefix-",
