@@ -36,7 +36,7 @@ Falls etwas nach deinen Änderungen nicht funktionieren sollte entferne diese zu
 Template löschen. Es wird dann wieder die Contao Standard Konfiguration des Editors benutzt.
 
 
-### Funktion "Als Text einfügen" standardmäßig aktivieren
+### Funktion »Als Text einfügen« standardmäßig aktivieren
 
 Im Editor kann du über das Menü `Bearbeiten` oder über eine Tastenkombination Text aus der Zwischenablage einfügen. 
 Hierbei kann es passieren, dass nicht nur der Text sondern auch weitere Formatierungen (z. B. aus einer Word Datei) übernommen
