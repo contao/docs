@@ -61,7 +61,7 @@ Im Beispiel haben wir dies über eine neue Zeile unterhalb der bestehenden Zeile
 neue Zeile die letzte Zeile, ist brauchen wir hier kein Komma setzen. 
 
 Allerdings musst du darauf achten, dass die bestehende Zeile (toolbar: ...) nun zusätzlich mit einem Komma abgeschlossen 
-werden muss. Im Editor ist die Option `Bearbeiten\Als Text einfügen` jetzt immer aktiviert.
+werden muss. Im Editor ist die Option `Bearbeiten > Als Text einfügen` jetzt immer aktiviert.
 
 
 ### Die Toolbar ändern
