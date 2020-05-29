@@ -26,6 +26,38 @@ Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
 {{% /notice %}}
 
 
+## Verschiedene Editor Konfigurationen
+
+Wenn du den Template Namen `be_tinyMCE.html5` beibehälst führt dies dazu, dass deine Änderungen sich auf alle Bereiche 
+auswirken die den Editor benutzen. Dies gilt zumindest für die Contao eigenen Komponenten. Mögliche Erweiterungen 
+können u. U. hierbei eigene Templates zur Verfügung stellen.
+
+Du möchstest gezielt eine Editor Konfiguration z. B. nur für das Inhaltselement vom Typ »Text« erstellen? Dazu kannst
+du das Template beliebig umbenennen: z.B. nach `myTinyCustomText.html5`.
+
+Als nächstes müssen wir Contao dazu bringen dieses Template zu nutzen. Erstelle dir hierzu zwei neue Ordner `contao/dca` 
+im Contao Hauptverzeichnis. Im Verzeichnis `dca` benötigen wir eine neue Datei `tl_content.php` mit folgenden Inhalt:
+
+```php
+// contao/dca/tl_content.php
+
+// Custom RTE-Configuration for Content Text
+$GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['rte'] = 'myTinyCustomText';
+```
+
+Der letzte Eintrag entspricht der Template Bezeichnung. In unserem Fall `myTinyCustomText`. Im Anschluß musst du über 
+den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole einmalig den Anwendungs-Cache leeren. 
+
+Analog wäre die Vorgehensweise z. B. für deine Nachrichten Texte über die `tl_news.php`:
+
+```php
+// contao/dca/tl_news.php
+
+// Custom RTE-Configuration for News Text
+$GLOBALS['TL_DCA']['tl_news']['fields']['text']['eval']['rte'] = 'myTinyCustomNewsText';
+```
+
+
 ## Beispiele
 
 Welche Version des Editors herangezogen wird kannst du der aktuellen Contao 
