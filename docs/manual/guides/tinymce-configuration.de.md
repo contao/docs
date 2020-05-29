@@ -261,5 +261,5 @@ In der Toolbar werden jetzt wieder nur unsere eigenen Format-Definitionen entspr
 Wenn du also eigene Format-Definitionen im Editor zu Verfügung stellst, solltest du möglichst auch eine eigene CSS-Datei einbinden.
 Die CSS-Datei kann darüber hinaus auch weitere Styles beinhalten die du für das eigentliche Layout deiner Webseite benutzt.
 
-Allerdings kann das sehr schnell aufwendig werden. Bei dieser Vorgehensweise musst du abwegen was du in welchem Umfang 
+Allerdings kann das sehr schnell aufwendig werden. Bei dieser Vorgehensweise musst du abwägen was du in welchem Umfang 
 zur Verfügung stellen möchtest.
