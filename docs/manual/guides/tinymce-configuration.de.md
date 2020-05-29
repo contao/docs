@@ -58,9 +58,8 @@ einer `tl_news.php`:
 $GLOBALS['TL_DCA']['tl_news']['fields']['text']['eval']['rte'] = 'myTinyMCENews';
 ```
 
-Eine detaillierte Beschreibung hierzu findest du in der Entwickler-Dokumentation 
-unter [Data Container Array](https://docs.contao.org/dev/reference/dca/) 
-und [Adjusting the DCA](https://docs.contao.org/dev/getting-started/dca/). 
+Eine erste Einführung zum Contao `Data Container Array` findest du unter [Adjusting the DCA](https://docs.contao.org/dev/getting-started/dca/) 
+und die detaillierte Referenz unter [Data Container Array](https://docs.contao.org/dev/reference/dca/) in der Entwickler-Dokumentation.
 
 
 ## Beispiele
