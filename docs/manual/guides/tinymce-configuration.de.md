@@ -6,8 +6,8 @@ weight: 40
 ---
 
 
-Zur Bearbeitung der meisten Inhalte wird der [TinyMCE-Editor](https://www.tiny.cloud/) herangezogen. 
-Der Editor ist für Contao bereits vorkonfiguriert. Individuelle Änderungen sind optional. 
+Zur Bearbeitung der meisten Inhalte mit individueller Formatierung wird der [TinyMCE-Editor](https://www.tiny.cloud/) eingesetzt.
+Der Editor ist für Contao bereits vorkonfiguriert, aber eine individuelle Konfiguration ist optional möglich. 
 
 
 ## Das Template be_tinyMCE.html5
@@ -20,9 +20,9 @@ Erstelle über den [Navigationsbereich](../../administrationsbereich/aufruf-und-
 Wähle über `Original-Template` das Template `be_tinyMCE.html5` aus und gebe als `Zielverzeichnis` das Hauptverzeichnis an. 
 
 {{% notice note %}}
-Das Template **muss** im Hauptverzeichnis (`templates/be_tinyMCE.html5`) abgelegt werden. Alle Zeilen 
-innerhalb von `<script>...</script>` bis auf die letzte Zeile müssen mit einem **Komma** abgeschlossen werden. 
-Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
+Das Template **muss** im Hauptverzeichnis (`templates/be_tinyMCE.html5`) abgelegt werden, da das Backend von Contao das
+Template nur dort findet. Alle Zeilen innerhalb von `<script>...</script>` bis auf die letzte Zeile müssen mit einem
+**Komma** abgeschlossen werden. Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
 {{% /notice %}}
 
 
