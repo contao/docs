@@ -34,8 +34,8 @@ auswirken die den Editor benutzen. Dies gilt zumindest für die Contao eigenen K
 Du möchstest gezielt eine Editor-Konfiguration z. B. nur für das Inhaltselement vom Typ »Text« erstellen? Dazu kannst
 du das Template beliebig umbenennen: z.B. nach `be_myTinyMCE.html5`.
 
-Als nächstes müssen wir Contao dazu bringen dieses Template zu nutzen. Erstelle dir hierzu zwei neue Ordner `contao/dca` 
-im Contao Hauptverzeichnis. Im Verzeichnis `dca` benötigen wir eine neue Datei `tl_content.php` mit folgenden Inhalt:
+Als nächstes müssen wir Contao dazu bringen dieses Template zu nutzen. Dazu muss folgendes in die `contao/dca/tl_content.php` 
+eingefügt werden:
 
 ```php
 // contao/dca/tl_content.php
