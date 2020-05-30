@@ -1,7 +1,10 @@
 ---
 title: "Anwendungen"
 description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Anwendungen« vorgestellt."
-url: "modulverwaltung/anwendungen"
+url: "layout/modulverwaltung/anwendungen"
+aliases:
+    - /de/modulverwaltung/anwendungen/
+    - /modulverwaltung/anwendungen/
 weight: 40
 ---
 
@@ -12,7 +15,7 @@ kann darüber hinaus durch (Third-Party-)Erweiterungen beliebig verlängert wer
 ## Formular
 
 Mit dem Modultyp »Formular« kann ein Formular auf einer Seite hinzugefügt werden. Informationen zur Erstellung und 
-Verwaltung von Formularen findest du auf der Seite [Formulargenerator](../../formulargenerator/).
+Verwaltung von Formularen findest du auf der Seite [Formulargenerator](../../../formulargenerator/).
 
 **Formular:** Hier kannst du ein Formular auswählen
 
@@ -23,7 +26,7 @@ Das Frontend-Modul »Auflistung« fügt der Webseite eine Liste von Datensätze
 und durchsucht werden können. Als Grundlage für die Auflistung dient eine beliebige Tabelle der Datenbank, wie z. B. 
 die Mitgliedertabelle `tl_member`.
 
-![Das Auflistungsmodul konfigurieren](/de/module-management/images/de/das-auflistungsmodul-konfigurieren.png?classes=shadow)
+![Das Auflistungsmodul konfigurieren](/de/layout/module-management/images/de/das-auflistungsmodul-konfigurieren.png?classes=shadow)
 
 **Tabelle:** Hier legst du die Tabelle fest, deren Datensätze aufgelistet werden sollen.
 

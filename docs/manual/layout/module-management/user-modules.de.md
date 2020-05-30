@@ -2,7 +2,10 @@
 title: "Benutzermodule"
 description: "Benutzermodule sind Module, die im Zusammenhang mit der Verwaltung von Frontend-Benutzern gebraucht 
 werden."
-url: "modulverwaltung/benutzermodule"
+url: "layout/modulverwaltung/benutzermodule"
+aliases:
+    - /de/modulverwaltung/benutzermodule/
+    - /modulverwaltung/benutzermodule/
 weight: 20
 ---
 <style>
@@ -294,7 +297,7 @@ welche Felder bearbeitet werden dürfen und welche nicht.
 
 **Editierbare Felder:** Hier kannst du die editierbaren Felder festlegen.
 
-![Editierbare Felder festlegen](/de/module-management/images/de/editierbare-felder-festlegen.png?classes=shadow)
+![Editierbare Felder festlegen](/de/layout/module-management/images/de/editierbare-felder-festlegen.png?classes=shadow)
 
 **Abonnierbare Newsletter:** Wenn du die Contao Newsletter-Erweiterung verwendest, kannst du hier festlegen, welche 
 Verteiler ein Mitglied abonnieren kann.

@@ -2,7 +2,10 @@
 title: "Navigationsmodule"
 description: "Navigationsmodule sind mit die wichtigsten Frontend-Module überhaupt und kommen auf fast jeder Webseite 
 in irgendeiner Form zum Einsatz."
-url: "modulverwaltung/navigationsmodule"
+url: "layout/modulverwaltung/navigationsmodule"
+aliases:
+    - /de/modulverwaltung/navigationsmodule/
+    - /modulverwaltung/navigationsmodule/
 weight: 10
 ---
 
@@ -24,7 +27,7 @@ Unterebenen bis zur am tiefsten verschachtelten Ebene. Das Startlevel bietet dir
 beispielsweise von der zweiten Ebene aus starten zu lassen, sodass nur ein Teil des Seitenbaums ausgegeben wird 
 (Untermenü).
 
-![Die Navigationsmenüs im Frontend](/de/module-management/images/de/die-navigationsmenues-im-frontend.png?classes=shadow)
+![Die Navigationsmenüs im Frontend](/de/layout/module-management/images/de/die-navigationsmenues-im-frontend.png?classes=shadow)
 
 **Stoplevel:** Im Gegensatz zum Startlevel, das die Einstiegsebene des Navigationsmenüs vorgibt, bestimmt das Stoplevel 
 die Ausstiegsebene, also die maximale Tiefe der Verschachtelung. Das Hauptmenü unserer Webseite soll beispielsweise nur 
@@ -147,7 +150,7 @@ angezeigt, die normalerweise übersprungen würden.
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_breadcrumb` überschreiben.
 
-![Der Navigationspfad im Frontend](/de/module-management/images/de/der-navigationspfad-im-frontend.png?classes=shadow)
+![Der Navigationspfad im Frontend](/de/layout/module-management/images/de/der-navigationspfad-im-frontend.png?classes=shadow)
 
 **HTML-Ausgabe**  
 Das Frontend-Modul generiert folgenden HTML-Code:
@@ -267,7 +270,7 @@ Das Frontend-Modul »Buchnavigation« fügt der Webseite ein Navigationsmenü 
 Seitenstruktur vorwärts, zurück oder eine Ebene nach oben navigieren kannst. Die einzelnen Seiten werden dabei wie bei 
 einem Buch quasi umgeblättert, daher der Name des Moduls.
 
-![Die Buchnavigation im Frontend](/de/module-management/images/de/die-buchnavigation-im-frontend.png?classes=shadow)
+![Die Buchnavigation im Frontend](/de/layout/module-management/images/de/die-buchnavigation-im-frontend.png?classes=shadow)
 
 **Referenzseite:** Die Referenzseite legt den Ausgangspunkt der Buchnavigation fest. Übergeordnete Seiten werden nicht 
 in der Buchnavigation angezeigt.
@@ -303,7 +306,7 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 Das Modul »Artikelnavigation« fügt der Webseite ein Navigationsmenü hinzu, mit dem du ähnlich wie bei einer 
 Buchnavigation die Artikel einer bestimmten Seite vorwärts- und rückwärts durchblättern kannst.
 
-![Die Artikelnavigation im Frontend](/de/module-management/images/de/die-artikelnavigation-im-frontend.png?classes=shadow)
+![Die Artikelnavigation im Frontend](/de/layout/module-management/images/de/die-artikelnavigation-im-frontend.png?classes=shadow)
 
 **Erstes Element laden:** Wenn du diese Option auswählst, wird automatisch der erste Artikel geladen, wenn kein 
 bestimmter Artikel angefordert wurde.

@@ -1,7 +1,10 @@
 ---
 title: "Seitenlayouts verwalten"
 description: "Das Seitenlayout bestimmt den Aufbau einer Seite und teilt diese in verschiedene Layoutbereiche ein."
-url: "theme-manager/seitenlayouts-verwalten"
+url: "layout/theme-manager/seitenlayouts-verwalten"
+aliases:
+    - /de/theme-manager/seitenlayouts-verwalten/
+    - /theme-manager/seitenlayouts-verwalten/
 weight: 30
 ---
 
@@ -168,7 +171,7 @@ Seitenlayouts gemeint, sondern das `<head>`-Tag des HTML-Quelltextes.
 In dieser Sektion weist du den einzelnen Layoutbereichen die Frontend-Module zu, die auf der Seite dargestellt werden 
 sollen. Die Module jedes Layoutbereichs werden in der von dir festgelegten Reihenfolge untereinander angeordnet.
 
-![Frontend-Module der Contao Official Demo](/de/theme-manager/images/de/frontend-module-der-contao-official-demo.png?classes=shadow)
+![Frontend-Module der Contao Official Demo](/de/layout/theme-manager/images/de/frontend-module-der-contao-official-demo.png?classes=shadow)
 
 **Eingebundene Module:** Hier wählst du die Module für das Seitenlayout aus.
 

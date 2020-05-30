@@ -2,11 +2,14 @@
 title: "Stylesheets verwalten"
 description: "In Contao steht für die Verwaltung von Stylesheets ein komfortables Backend-Modul zur Verfügung, mit dem 
 du alle Formatdefinitionen in einer Eingabemaske erfassen kannst."
-url: "theme-manager/stylesheets-verwalten"
+url: "layout/theme-manager/stylesheets-verwalten"
+aliases:
+    - /de/theme-manager/stylesheets-verwalten/
+    - /theme-manager/stylesheets-verwalten/
 weight: 20
 ---
 
-Wie schon im Abschnitt, [Contao im Schnelldurchlauf](../../einleitung/contao-im-schnelldurchlauf/), erwähnt 
+Wie schon im Abschnitt, [Contao im Schnelldurchlauf](../../../einleitung/contao-im-schnelldurchlauf/), erwähnt 
 wurde, sind Cascading Stylesheets, kurz CSS, das Mittel der Wahl bei der Formatierung von Webseiten. Falls du also 
 nicht zumindest über Grundkenntnisse in CSS verfügst, solltest du dich diese spätestens jetzt aneignen, denn die 
 Erstellung bzw. Anpassung eines Themes ist ohne CSS-Kenntnisse nicht möglich. Eine sehr gute Einführung in die Thematik 
@@ -101,7 +104,7 @@ In Contao kannst du mit dieser Schreibweise allerdings so gar nicht in Berühru
 Eingabemaske festlegen kannst. Lediglich den Teil vor den geschweiften Klammern, den sogenannten Selektor, musst du von 
 Hand in das dafür vorgesehene Feld eingeben.
 
-![Den Außenabstand im Stylesheet-Editor festlegen](/de/theme-manager/images/de/den-aussenabstand-im-stylesheet-editor-festlegen.png?classes=shadow)
+![Den Außenabstand im Stylesheet-Editor festlegen](/de/layout/theme-manager/images/de/den-aussenabstand-im-stylesheet-editor-festlegen.png?classes=shadow)
 
 
 ### Reihenfolge der Formatdefinitionen

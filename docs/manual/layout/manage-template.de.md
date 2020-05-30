@@ -1,13 +1,17 @@
 ---
 title: "Templates verwalten"
-description: "Templates werden zur Ausgabe eines Moduls oder Inhaltelements verwendet."
-url: "theme-manager/templates-verwalten"
+description: "Templates werden u. a. zur Ausgabe eines Moduls oder Inhaltelements verwendet."
+url: "layout/templates-verwalten"
+aliases:
+    - /de/theme-manager/templates-verwalten/
+    - /theme-manager/templates-verwalten/
 weight: 40
 ---
 
 Ein Template wird zur Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponente 
-verwendet und beinhaltet HTML- und PHP-Code. Im [Navigationsbereich](../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-navigationsbereich) »Layout« unter »Templates« können die Dateien erstellt, 
-in Ordnern abgelegt und bearbeitet werden. Diese Anpassungen sind updatesicher.
+verwendet und beinhaltet HTML- und PHP-Code. Im 
+[Navigationsbereich](../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-navigationsbereich) »Layout« 
+unter »Templates« können die Dateien erstellt, in Ordnern abgelegt und bearbeitet werden. Diese Anpassungen sind updatesicher.
 
 {{% notice note %}}
 Im [Debug-Modus](../../system/debug-modus/) werden die Template-Namen im HTML-Quellcode als Kommentare ausgegeben. 

@@ -2,7 +2,11 @@
 title: "Theme-Manager"
 description: "Fertige Designs werden in Contao als Themes bezeichnet, die du mit dem Theme-Manager verwalten und 
 insbesondere ex- und importieren kannst."
-weight: 7
+url: "layout/theme-manager"
+aliases:
+    - /de/theme-manager/
+    - /theme-manager/
+weight: 20
 ---
 
 In einem Content Management System sind Design und Inhalte per Definition voneinander getrennt. In Abschnitt, 
