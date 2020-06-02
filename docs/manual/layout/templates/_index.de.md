@@ -18,7 +18,7 @@ unter »Templates« können die Dateien erstellt, in Ordnern abgelegt und bearbe
 {{% children %}}
 
 {{% notice info %}}
-Template Änderungen sind nicht notwendig wenn du nur eine zusätzliche CSS-ID oder CSS-Klasse benötigst. In den meisten 
+Template Änderungen sind nicht notwendig, wenn du nur eine zusätzliche CSS-ID oder CSS-Klasse benötigst. Bei den meisten 
 Contao Komponenten kannst du diese im Bereich »Experten-Einstellungen« eintragen. Die entsprechenden Bezeichnungen 
 werden von den Templates übernommen und im Quelltext ausgegeben.
 {{% /notice %}}
@@ -32,6 +32,5 @@ Man kann hierüber nachvollziehen welches Template zum Einsatz kommt.
 ### Weitere Anleitungen
 
 - [Den TinyMce-Editor konfigurieren]({{< ref "tinymce-configuration.de.md" >}})
-
 
 
