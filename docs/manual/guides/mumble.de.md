@@ -102,7 +102,7 @@ eine Art virtueller Aufenthaltsraum. Ansonsten ist der »CCA-Mumble-Server« in 
 geteilt: »Galaxie« und »Universum«. 
 
 Diese wiederum in verschiedene Subchannel. Alle Channels im »Universum« sind für jeden frei zugänglich, außerdem 
-in der »Galaxy« die Channel »Galaktische Spiele«, »Galaktischer Salat« und »Galaktischer Senat« mit »offener Senat«. 
+sind in der »Galaxy« die Channels »Galaktische Spiele«, »Galaktischer Salat« und »Galaktischer Senat« mit »offener Senat« für euch zugänglich.
 
 In den Channel »geschlossener Senat« (in »Galaktischer Senat«) dürfen nur Administratoren. Diese Administratoren 
 dürfen aber nun alle anderen in den Channel einladen und ihnen u. a. Sprachrechte zuweisen.
