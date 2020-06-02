@@ -12,7 +12,7 @@ weight: 50
 
 Informationen zu Mumble findest du über [mumble.info](https://www.mumble.info/). Zur 
 [Installation](https://www.mumble.info/downloads/) musst du dir die passenden Dateien für dein 
-Betriebssystem herunterladen. Du benötigst nur den Mumble-Client. Die Installation der Mumble-Server Anwendung 
+Betriebssystem herunterladen. Du benötigst nur den Mumble-Client. Die Installation der Mumble-Server-Anwendung 
 ist nicht notwendig.
 
 
