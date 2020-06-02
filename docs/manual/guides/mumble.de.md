@@ -8,14 +8,21 @@ aliases:
 weight: 50
 ---
 
+## Was ist Mumble
+Mumble ist ein Audio-Chat in dem man mit mehreren Personen sich unterhalten kann. Zusätzlich gibt es noch
+die Möglichkeit, kurze Informationen in einem Chatfenster einzugeben. Mumble wird üblicher Weise in mehrere
+Räume unterteilt, so dass man sich auch in kleineren Gruppen oder auch zu zweit in einen Raum zurückziehen kann.
+
+Die Contao-Calls finden in Mumble statt. Wann der nächste Contao Mumble-Call stattfindet, erfährst du 
+auf der [Projekt-Website](https://contao.org/de/mumble-calls.html).
+
+Mehr zu Mumble findest du über [mumble.info](https://www.mumble.info/).
+
+
 ## Installation
-
-Informationen zu Mumble findest du über [mumble.info](https://www.mumble.info/). Zur 
-[Installation](https://www.mumble.info/downloads/) musst du dir die passenden Dateien für dein 
-Betriebssystem herunterladen. Du benötigst nur den Mumble-Client. Die Installation der Mumble-Server-Anwendung 
-ist nicht notwendig.
-
-Wann der nächste Contao Mumble-Call stattfindet, erfährst du auf der [Projekt-Website](https://contao.org/de/mumble-calls.html).
+Zur Installation musst du dir die passenden Dateien für dein Betriebssystem
+[herunterladen](https://www.mumble.info/downloads/) und ausführen. Du benötigst nur den Mumble-Client - die
+Installation der Mumble-Server-Anwendung ist nicht notwendig.
 
 
 ## Mumble einrichten
