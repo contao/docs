@@ -16,3 +16,9 @@ wird dir nun gezeigt, wie man ein Design erstellt und wie du das Aussehen deiner
 ändern kannst.
 
 {{% children %}}
+
+
+### Weitere Anleitungen
+
+- [Ein Theme mit Seitenlayout anlegen und die erste Seite veröffentlichen]({{< ref "add-first-index-page.de.md" >}})
+- [Sass/Less Integration]({{< ref "sass-less-integration.de.md" >}})
