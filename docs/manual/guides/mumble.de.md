@@ -88,7 +88,7 @@ Folgende Daten sollte man eingeben:
 - **Port:** 62492
 - **Benutzername:** Kann frei gewählt werden
 
-In der Serverliste sollte der "CCA-Mumble-Server" nun unter den Favoriten auftauchen. Diesen Eintrag auswählen 
+In der Serverliste sollte der »CCA-Mumble-Server« nun unter den Favoriten auftauchen. Diesen Eintrag auswählen 
 und auf »Verbinden« klicken.
 
 ![Mumble Server Verbindung wählen](/de/guides/images/de/mumble/mumble-server-auswaehlen.jpg?classes=shadow)
