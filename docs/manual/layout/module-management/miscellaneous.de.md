@@ -1,7 +1,10 @@
 ---
 title: "Verschiedenes"
 description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Verschiedenes« vorgestellt."
-url: "modulverwaltung/verschiedenes"
+url: "layout/modulverwaltung/verschiedenes"
+aliases:
+    - /de/modulverwaltung/verschiedenes/
+    - /modulverwaltung/verschiedenes/
 weight: 50
 ---
 
