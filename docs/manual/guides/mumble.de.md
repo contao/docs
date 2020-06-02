@@ -11,7 +11,7 @@ weight: 50
 ## Was ist Mumble
 Mumble ist ein Audio-Chat in dem man sich mit mehreren Personen unterhalten kann. Zusätzlich gibt es noch
 die Möglichkeit, kurze Informationen in einem Chatfenster einzugeben. Mumble wird üblicherweise in mehrere
-Räume unterteilt, so dass man sich auch in kleineren Gruppen oder auch zu zweit in einen Raum zurückziehen kann.
+Räume unterteilt, so dass man sich auch in kleineren Gruppen oder zu zweit in einen Raum zurückziehen kann.
 
 Die Contao-Calls finden in Mumble statt. Wann der nächste Contao Mumble-Call stattfindet, erfährst du 
 auf der [Projekt-Website](https://contao.org/de/mumble-calls.html).
