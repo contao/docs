@@ -144,7 +144,3 @@ Wenn es unter »Audioausgabe« einen Ausschlag gibt, dieser aber nur im roten Be
 
 - **Gelber Bereich:** Hier wird noch übertragen, falls es zuvor im grünen Bereich war.
 - **Roter Bereich:** Auch wenn hier ein Ausschlag zu sehen ist, wird hiervon nichts übertragen.
-
-## Contao Mumble-Calls
-
-Wann der nächste Contao Mumble-Call stattfindet, erfährst du auf der [Projekt-Website](https://contao.org/de/mumble-calls.html).
