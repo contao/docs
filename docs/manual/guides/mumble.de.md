@@ -29,7 +29,7 @@ Wenn man den »Weiter«-Button betätigt, kann man auf dem nächsten Screen die 
 
 ![Mumble Audio Einstellungs-Assistent Geräteauswahl](/de/guides/images/de/mumble/mumble-audio-assistant-geraeteauswahl.jpg?classes=shadow)
 
-Im nächsten Screen wird die Leistung der Grafikkarte ermittelt. Dies wird im Assistentenfenster beschrieben. Man hört also 
+Im nächsten Screen wird die Leistung der Soundkarte ermittelt. Dies wird im Assistentenfenster beschrieben. Man hört also 
 einen Text und soll den Schieberegler unter dem Text soweit wie möglich nach links schieben, ohne dass der vorgelesene 
 Text qualitativ schlechter wird oder anfängt zu stocken.
 
@@ -46,9 +46,8 @@ das Mikrofon aufgenommen werden, als Sprache einzuordnen sind. Wir empfehlen vor
 Mitte stellen. 
 
 Wenn man dann im Mumble ist, kann man diese Einstellung noch besser anpassen, aber so sollte es 
-erstmal funktionieren. Auf diesem Screen erkennt man auch schon den Mund, der bei erkannter und aktivierter Sprache rot 
-wird und somit ein Zeichen für die Spracheingabe ist. Auch im späteren Mumble-Statusfenster wird dieser Mund zu sehen sein 
-und zeigt an, wer gerade spricht.
+erstmal funktionieren. Auf diesem Screen sieht man auch schon das Icon als Avatar, der bei erkannter und aktivierter Sprache
+von Grün zu Blau wechselt und zusätzlich »Schallwellen« anzeigt das ist somit ein Zeichen für die eigene Spracheingabe. Auch im späteren Mumble-Statusfenster wird dieses Icon mit dem Farbwechsel zu sehen sein und zeigt an, wer gerade spricht.
 
 ![Mumble Audio Einstellungs-Assistent Sprachaktivierung](/de/guides/images/de/mumble/mumble-audio-assistant-sprachaktivitaetserkennung.jpg?classes=shadow)
 
