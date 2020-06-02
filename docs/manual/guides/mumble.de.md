@@ -19,7 +19,7 @@ ist nicht notwendig.
 ## Mumble einrichten
 
 Nach dem ersten Start von Mumble sollte sich der »Audio Einstellungs-Assistent« öffnen. Alle Einstellungen können 
-nachträglich angepasst werden.
+auch nachträglich angepasst werden.
 
 ![Mumble Audio Einstellungs-Assistent](/de/guides/images/de/mumble/mumble-audio-assistant.jpg?classes=shadow)
 
