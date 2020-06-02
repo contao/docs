@@ -85,6 +85,11 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
 
     public function onTransportException(CrawlUri $crawlUri, TransportExceptionInterface $exception, ResponseInterface $response): void
     {
+        // Do not report timeout issues, they happen from time to time and are most likely not broken
+        if (false !== stripos($exception->getMessage(), 'timeout')) {
+            return;
+        }
+
         $this->writeCrawlUri($crawlUri, $exception->getMessage());
     }
 

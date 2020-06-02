@@ -17,6 +17,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\HttpClient\HttpClient;
 use Terminal42\Escargot\BaseUriCollection;
 use Terminal42\Escargot\Escargot;
 use Terminal42\Escargot\Queue\InMemoryQueue;
@@ -62,7 +63,11 @@ class CheckCommand extends Command
 
         $resultSubscriber = new ResultSubscriber($outputPath);
 
-        $escargot = Escargot::create($baseUriCollection, new InMemoryQueue())
+        $httpClient = HttpClient::create([
+            'max_duration' => 5,
+        ]);
+
+        $escargot = Escargot::create($baseUriCollection, new InMemoryQueue(), $httpClient)
                     ->withConcurrency(5)
                     ->withRequestDelay(500000) // 0.5s
         ;
