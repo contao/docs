@@ -1,6 +1,6 @@
 ---
 title: "Template-Daten anzeigen"
-description: "Alle Template Daten anzeigen."
+description: "Alle Template-Daten anzeigen."
 url: "layout/templates/data"
 aliases:
     - /de/templates/data/
