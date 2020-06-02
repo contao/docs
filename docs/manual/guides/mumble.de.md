@@ -9,7 +9,7 @@ weight: 50
 ---
 
 ## Was ist Mumble
-Mumble ist ein Audio-Chat in dem man mit mehreren Personen sich unterhalten kann. Zusätzlich gibt es noch
+Mumble ist ein Audio-Chat in dem man sich mit mehreren Personen unterhalten kann. Zusätzlich gibt es noch
 die Möglichkeit, kurze Informationen in einem Chatfenster einzugeben. Mumble wird üblicher Weise in mehrere
 Räume unterteilt, so dass man sich auch in kleineren Gruppen oder auch zu zweit in einen Raum zurückziehen kann.
 
