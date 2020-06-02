@@ -23,7 +23,7 @@ nachträglich angepasst werden.
 
 ![Mumble Audio Einstellungs-Assistent](/de/guides/images/de/mumble/mumble-audio-assistant.jpg?classes=shadow)
 
-Wenn man den »Weiter« -Button betätigt, kann man auf dem nächsten Screen die bevorzugte Audio-Ein- und Ausgabegeräte auswählen.
+Wenn man den »Weiter«-Button betätigt, kann man auf dem nächsten Screen die bevorzugte Audio-Ein- und Ausgabegeräte auswählen.
 
 ![Mumble Audio Einstellungs-Assistent Geräteauswahl](/de/guides/images/de/mumble/mumble-audio-assistant-geraeteauswahl.jpg?classes=shadow)
 
