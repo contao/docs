@@ -101,7 +101,7 @@ dem Mumble-Server anmeldet wird man am Anfang immer automatisch in die »Mos Eis
 eine Art virtueller Aufenthaltsraum. Ansonsten ist der »CCA-Mumble-Server« in folgende »Hauptkanäle« (sog. Channel) 
 geteilt: »Galaxie« und »Universum«. 
 
-Diese wiederum in verschiedene Unterchannel. Alle Channel im »Universum« sind für jeden frei zugänglich, außerdem 
+Diese wiederum in verschiedene Subchannel. Alle Channels im »Universum« sind für jeden frei zugänglich, außerdem 
 in der »Galaxy« die Channel »Galaktische Spiele«, »Galaktischer Salat« und »Galaktischer Senat« mit »offener Senat«. 
 
 In den Channel »geschlossener Senat« (in »Galaktischer Senat«) dürfen nur Administratoren. Diese Administratoren 
