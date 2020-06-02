@@ -85,7 +85,7 @@ auf »Server hinzufügen« klicken.
 
 Folgende Daten sollte man eingeben:
 
-- **Bezeichnung:** Kann frei gewählt werden, z.B. "CCA-Mumble-Server"
+- **Bezeichnung:** Kann frei gewählt werden, z.B. CCA-Mumble-Server
 - **Adresse:** mumble.c-c-a.org
 - **Port:** 62492
 - **Benutzername:** Kann frei gewählt werden
