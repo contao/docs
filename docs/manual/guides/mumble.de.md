@@ -15,6 +15,8 @@ Informationen zu Mumble findest du über [mumble.info](https://www.mumble.info/)
 Betriebssystem herunterladen. Du benötigst nur den Mumble-Client. Die Installation der Mumble-Server-Anwendung 
 ist nicht notwendig.
 
+Wann der nächste Contao Mumble-Call stattfindet, erfährst du auf der [Projekt-Website](https://contao.org/de/mumble-calls.html).
+
 
 ## Mumble einrichten
 
