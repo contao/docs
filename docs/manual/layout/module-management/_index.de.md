@@ -2,8 +2,11 @@
 title: "Modulverwaltung"
 description: "Frontend-Module generieren den HTML-Code der Webseite. Sie gehören zu den designrelevanten Elementen und 
 sind deswegen dem Theme-Manager untergeordnet."
-url: "modulverwaltung"
-weight: 8
+url: "layout/modulverwaltung"
+aliases:
+    - /de/modulverwaltung/
+    - /modulverwaltung/
+weight: 30
 ---
 
 Auf den vorangegangenen Seiten hast du gelernt, dass der Aufbau einer Seite durch das ihr zugewiesene Seitenlayout 
@@ -22,7 +25,7 @@ Die Modulverwaltung rufst du demzufolge über den Theme-Manager wie im Abschnit
 Genau wie bei den Inhaltselementen kannst du unter **Zugriffsschutz** auch den Zugriff auf ein Frontend-Modul auf bestimmte 
 Mitgliedergruppen beschränken.
 
-![Den Zugriff auf ein Modul einschränken](/de/module-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png?classes=shadow)
+![Den Zugriff auf ein Modul einschränken](/de/layout/module-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png?classes=shadow)
 
 **Modul schützen:** Das Modul ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein Mitglied im 
 Frontend angemeldet hat.

@@ -2,7 +2,10 @@
 title: "Website-Suche"
 description: "Contao indiziert die Seiten deiner Webpräsenz automatisch, sobald sie aufgerufen werden, und speichert 
 die darauf zu findenden Wörter als Suchbegriffe in einer Tabelle in der Datenbank."
-url: "modulverwaltung/website-suche"
+url: "layout/modulverwaltung/website-suche"
+aliases:
+    - /de/modulverwaltung/website-suche/
+    - /modulverwaltung/website-suche/
 weight: 30
 ---
 
@@ -10,7 +13,7 @@ Contao indiziert die Seiten deiner Webpräsenz automatisch, sobald sie aufgerufe
 findenden Wörter als Suchbegriffe in einer Tabelle in der Datenbank. Das Suchmodul durchsucht diese Tabelle und liefert 
 die Seiten zurück, die den gesuchten Begriff bzw. die gesuchten Begriffe enthalten.
 
-![Die On-Site-Suche im Frontend](/de/module-management/images/de/die-on-site-suche-im-frontend.png?classes=shadow)
+![Die On-Site-Suche im Frontend](/de/layout/module-management/images/de/die-on-site-suche-im-frontend.png?classes=shadow)
 
 Beachte jedoch, dass deine Webseite aus Sicherheitsgründen nicht indiziert wird, wenn du im Backend angemeldet bist und 
 die Frontend-Vorschau aufrufst. Es könnte ja sein, dass sich dort noch nicht veröffentlichte Inhalte befinden, die vor 
@@ -213,7 +216,7 @@ können. Dafür gibt es in Contao drei Lösungen:
 verweist, und bindest dieses in die Kopfzeile ein.
 
 2. Du erstellst ein Suchformular mit dem Formulargenerator. Diese Variante ist im Abschnitt 
-[Ein Suchformular erstellen](../../formulargenerator/ein-suchformular-erstellen/), beschrieben.
+[Ein Suchformular erstellen](../../../formulargenerator/ein-suchformular-erstellen/), beschrieben.
 
 3. Du erstellst ein Suchformular mit dem Modul »Eigener HTML-Code«.
 
@@ -238,7 +241,7 @@ sieht folgendermaßen aus:
 ```
 
 Die Zielseite, die beim Abschicken des Formulars aufgerufen wird, wurde hier über einen
-[Insert-Tag](../../artikelverwaltung/insert-tags/) erfasst, damit das
+[Insert-Tag](../../../artikelverwaltung/insert-tags/) erfasst, damit das
 Formular auch dann noch funktioniert, wenn sich der Alias der Zielseite im Laufe der Zeit ändert. Als 
 Übertragungsmethode wurde »GET« ausgewählt, und dem Suchfeld den Feldnamen »keywords« gegeben.
 

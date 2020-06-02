@@ -2,7 +2,10 @@
 title: "Seiten als zentrale Elemente"
 description: "Contao gehört zur Gruppe der seitenbasierten Content Management Systeme, das heißt, die Seitenstruktur 
 ist das zentrale Element deiner Webseite."
-url: "seitenstruktur/seiten-als-zentrale-elemente"
+url: "layout/seitenstruktur/seiten-als-zentrale-elemente"
+aliases:
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/
+    - /seitenstruktur/seiten-als-zentrale-elemente/
 weight: 10
 ---
 
@@ -26,7 +29,7 @@ mit allen Haupt- und Unterseiten erstellt. Benutze die grauen Icons mit dem
 ![Bereich schließen](/de/icons/folMinus.svg?classes=icon) Minuszeichen links neben den Seitennamen, um Unterseiten 
 aus- oder einzuklappen.
 
-![Unterseiten aus- und einklappen](/de/site-structure/images/de/unterseiten-aus-und-einklappen.png?classes=shadow)
+![Unterseiten aus- und einklappen](/de/layout/site-structure/images/de/unterseiten-aus-und-einklappen.png?classes=shadow)
 
 Dank der hierarchischen Seitenstruktur ist es möglich, Eigenschaften einer übergeordneten Seite an ihre Unterseiten zu 
 vererben. Für deine Arbeit bedeutet das, dass du ein bestimmtes Seitenlayout oder eine bestimmte Zugriffsberechtigung 
@@ -48,7 +51,7 @@ In der Seitenstruktur kommen außerdem die designrelevanten Elemente, die in ein
 Definition vom Inhalt getrennt sind, mit den eigentlichen Inhalten aus der Artikelverwaltung zusammen. Jeder Artikel 
 besteht wiederum aus Inhaltselementen, die für jeden Inhaltstyp wie z. B. Texte, Bilder oder Tabellen eine 
 entsprechende Ein- und Ausgabefunktion bereitstellen. Pro Seite können beliebig viele Artikel angelegt werden. Weitere 
-Informationen dazu findest du auf der Seite [Artikelverwaltung](../../artikelverwaltung).
+Informationen dazu findest du auf der Seite [Artikelverwaltung](../../../artikelverwaltung).
 
 In ihrer zentralen Rolle haben Seiten aber noch weit mehr Aufgaben, als nur das Design und die Inhalte zusammenzuführen. 
 Auch die Zugriffsrechte für Backend-Benutzer auf Seiten und Artikel werden beispielsweise in der Seitenstruktur 
