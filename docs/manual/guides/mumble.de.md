@@ -138,11 +138,12 @@ in der Box »Mumblestatus«.
 Unter dem Menüpunkt »Einstellungen« gibt es (unter Windows/Linux unten links, unter Mac OS X oben rechts) 
 den Punkt »Erweitert«.
 
-Jetzt unter »Audioeingabe« nachschauen, ob ein Ausschlag bei der Spracheingabe in das Mikrodon gemessen wird. 
-Wenn es keinen Ausschlag gibt, wird vom Mikro überhaupt gar kein Ton aufgenommen. Deshalb sollte man unter 
-»Audioeingabe« den Punkt »Gerät« (unter »Schnittstelle«) prüfen ob die passende Eingabequelle/Mikrofon ausgewählt ist.
+Jetzt unter »Audioeingabe« nachschauen, ob ein Ausschlag bei der Spracheingabe in das Mikrofon gemessen wird. 
+Wenn es keinen Ausschlag gibt, wird vom Mikrofon überhaupt kein Ton aufgenommen. Deshalb sollte man unter 
+»Audioeingabe« den Punkt »Gerät« (unter »Schnittstelle«) prüfen, ob die passende Eingabequelle/Mikrofon
+ausgewählt ist.
 
-Wenn es unter »Audioausgabe« einen Ausschlag gibt, dieser aber nur im roten Bereich bleibt sollte man die Regler 
+Wenn es unter »Audioausgabe« einen Ausschlag gibt, dieser aber nur im roten Bereich bleibt, sollte man die Regler 
 »Stille bis« und »Sprache über« so verschieben, dass der Ausschlag im grünen Bereich ist.
 
 
