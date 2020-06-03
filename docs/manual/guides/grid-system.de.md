@@ -9,8 +9,8 @@ weight: 54
 ---
 
 Ein beliebtes Stilmittel ist die inhaltliche Aufteilung in Spalten. Hierbei hat sich der Einsatz von »Grid-Systemen«
-etabliert. Der zur Verfügung stehende Bereich wird in eine feste Anzahl von Spalten (Grids) unterteilt. Ein 
-fester, äußerer Abstand wird einmal für die Gesamtbreite und dann zwischen den einzelnen Grids selbst definiert. 
+etabliert. Der zur Verfügung stehende Bereich wird in eine feste Anzahl von Spalten (Columns) unterteilt. Ein 
+fester, äußerer Abstand wird einmal für die Gesamtbreite und dann zwischen den einzelnen Spalten des Rasters (Grid) selbst definiert. 
 
 Möchtest du z. B. bei einem »12-Spalten System« zwei Spalten anzeigen musst du deinen beiden Bereichen jeweils sechs Grids 
 zuordnen. Diese Zuordnung erfolgt über CSS-Klassen.
@@ -39,7 +39,6 @@ Das Contao-Grid wurde bereits mit der Contao Version 3.x eingeführt und basiert
 [CSS-float](https://developer.mozilla.org/de/docs/Web/CSS/float)) ist »pixelbasierend« mit 12-Spalten wobei
 die Abstandsbreite via [CSS-margin](https://developer.mozilla.org/de/docs/Web/CSS/margin) jeweils 10 Pixel beträgt.
 
-
 Die Gesamtbreite ist mit 960 Pixel fest vorgegeben mit zwei »Breakpoints« bei `kleiner 980 Pixel` 
 und `kleiner 768 Pixel`. Als CSS-Klassen stehen die Bezeichnungen von »grid1 bis grid12« und 
 »offset1 bis offset12« zur Verfügung. 
@@ -50,7 +49,6 @@ du auch entnehmen unter welchen Bedingugen  u. a. die Abstände gesetzt werden:
 - Float und Margin für alle Elemente deren Klasse die Bezeichnung »grid« enthält
 - Margin für alle Elemente innerhalb von »mod_article« wenn sie eine Klasse beginnend mit »ce_« oder »mod_« enthalten
 - Kein Margin für »mod_article« mit zusätlicher »grid« Bezeichnung.
-
 
 Das Contao-Grid kann über dein [Seitenlayout]({{< ref "manage-page-layouts.de.md" >}}) im Bereich 
 »CSS-Framework > 12-Spalten Grid« eingebunden werden. 
