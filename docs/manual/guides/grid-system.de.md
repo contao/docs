@@ -45,11 +45,11 @@ und `kleiner 768 Pixel` ist fest vorgegeben. Als CSS-Klassen stehen die Bezeichn
 »offset1 bis offset12« zur Verfügung. 
 
 Die CSS-Datei findest du zur Ansicht im Verzeichnis `assets/contao/css/grid.min.css` bzw. `grid.css`. Dieser kannst
-du auch entnehmen unter welchen Bedingungen  u. a. die Abstände gesetzt werden:
+du auch entnehmen unter welchen Bedingungen u. a. die Abstände gesetzt werden:
 
 - Float und Margin für alle Elemente deren Klasse die Bezeichnung »grid« enthält
 - Margin für alle Elemente innerhalb von »mod_article« wenn sie eine Klasse beginnend mit »ce_« oder »mod_« enthalten
-- Kein Margin für »mod_article« mit zusätlicher »grid« Bezeichnung.
+- Kein Margin für »mod_article« mit zusätzlicher »grid« Bezeichnung.
 
 Das Contao-Grid kann über dein [Seitenlayout]({{< ref "manage-page-layouts.de.md" >}}) im Bereich 
 »CSS-Framework > 12-Spalten Grid« eingebunden werden. 
