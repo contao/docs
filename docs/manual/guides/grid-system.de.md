@@ -13,7 +13,7 @@ etabliert. Der zur Verfügung stehende Bereich wird in eine feste Anzahl von Spa
 fester, äußerer Abstand wird einmal für die Gesamtbreite und dann zwischen den einzelnen Grids selbst definiert. 
 
 Möchtest du z. B. bei einem »12-Spalten System« zwei Spalten anzeigen musst du deinen beiden Bereichen jeweils sechs Grids 
-zuordnen. Diese Zuordnung erfolgt über CSS-Klassen Namen.
+zuordnen. Diese Zuordnung erfolgt über CSS-Klassen.
 
 ![Grid Demo](/de/guides/images/de/grid/grid-structure.jpg?classes=shadow)
 
