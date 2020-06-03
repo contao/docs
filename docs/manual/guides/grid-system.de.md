@@ -28,7 +28,7 @@ hierbei ist die Unterstützung älterer Browser-Versionen. Es folgten Realisieru
 aktuellen Browser-Versionen vorhanden.
 
 Häufig findest du die Bezeichnung »responsive« Grid vor. Darunter ist nicht allein die variable Breitenanpassung 
-der einzelnen Grids in Abhängigkeit von der Gesamtbreite zu verstehen. Du kannst hiermit gezielt die Spaltenanzahl
+der einzelnen Spalten in Abhängigkeit von der Gesamtbreite zu verstehen. Du kannst hiermit gezielt die Spaltenanzahl
 selbst kontrollieren. Beispielsweise auf einem Desktop »4-spaltig«, beim Tablet »2-spaltig« und auf einem Smartphone »1-spaltig«.
 
 
@@ -39,8 +39,8 @@ Das Contao-Grid wurde bereits mit der Contao Version 3.x eingeführt und basiert
 [CSS-float](https://developer.mozilla.org/de/docs/Web/CSS/float)) ist »pixelbasierend« mit 12-Spalten wobei
 die Abstandsbreite via [CSS-margin](https://developer.mozilla.org/de/docs/Web/CSS/margin) jeweils 10 Pixel beträgt.
 
-Die Gesamtbreite ist mit 960 Pixel fest vorgegeben mit zwei »Breakpoints« bei `kleiner 980 Pixel` 
-und `kleiner 768 Pixel`. Als CSS-Klassen stehen die Bezeichnungen von »grid1 bis grid12« und 
+Die Gesamtbreite von 960 Pixel mit zwei »Breakpoints« bei `kleiner 980 Pixel` 
+und `kleiner 768 Pixel` ist fest vorgegeben. Als CSS-Klassen stehen die Bezeichnungen von »grid1 bis grid12« und 
 »offset1 bis offset12« zur Verfügung. 
 
 Die CSS-Datei findest du zur Ansicht im Verzeichnis `assets/contao/css/grid.min.css` bzw. `grid.css`. Dieser kannst
