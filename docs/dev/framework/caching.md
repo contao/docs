@@ -259,7 +259,7 @@ There are two fundamentally different ways to render fragments:
  2. **Subrequest:** By generating a placeholder for the fragment, the fragment content is rendered **after** caching
     the page, which allows a fragment to have a different cache time than the main page. In case of `esi` the reverse
     proxy (cache) will parse these placeholders before delivering to the client.
-    There's also an `hinclude` renderer which allows browser to merge fragments using JavaScript, but the client-side
+    There's also an `hinclude` renderer which allows browsers to merge fragments using JavaScript, but the client-side
     part is not provided out-of-the-box.
 
 
