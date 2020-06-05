@@ -94,16 +94,21 @@ Layoutbereiche wie folgt positioniert werden:
 
 ## Webfonts
 
-Hier kannst du eine oder mehrere [Google-Webfonts](https://fonts.google.com/) zu deiner Webseite hinzufügen.
-
-Sobald du eine Webfont ausgewählt hast, kannst du diesen in das dafür vorgesehene Feld `Roboto:400,700` einfügen.
+Hier kannst du eine oder mehrere [Google Fonts](https://fonts.google.com/) zu deiner Webseite hinzufügen. Sobald 
+du einen Webfont ausgewählt hast, kannst du diesen, über die Angabe der Parameter `Roboto:400,700`, hier einfügen.
 
 **Ausgabe im Quellcode:**
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 ```
 
-Danach kannst du die Webfont über deine CSS-Datei ansprechen.
+{{% notice note %}}
+Es wird eine manuelle Einbindung von »Webfonts« empfohlen. Ansonsten solltest du dich bei den Angaben an den folgenden
+Google-Anweisungen orientieren: [Get Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started). 
+Die »Google Fonts API Version 2« wird zur Zeit nicht unterstützt.
+{{% /notice %}}
+
+Danach kannst du den Webfont über deine CSS-Datei ansprechen.
 
 ```css
 body {
