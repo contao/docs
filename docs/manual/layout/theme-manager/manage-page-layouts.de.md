@@ -95,7 +95,7 @@ Layoutbereiche wie folgt positioniert werden:
 ## Webfonts
 
 Hier kannst du eine oder mehrere [Google-Webfonts](https://fonts.google.com/) zu deiner Webseite hinzufügen. Sobald 
-du einen Webfont ausgewählt hast, kannst du diesen, z. B. über die Angabe der Parameter `Roboto:400,700`, hier einfügen.
+du einen Webfont ausgewählt hast, kannst du diesen, über die Angabe der Parameter `Roboto:400,700`, hier einfügen.
 
 **Ausgabe im Quellcode:**
 ```html
