@@ -167,7 +167,7 @@ Die Datei `parameters.yml` findest du im Ordner `app/config/` und wird bei der I
 angelegt.
 
 {{% notice note %}}
-Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config/`.
+Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
 {{% /notice %}}
 
 Die `parameters.yml` nach der Installation von Contao:
@@ -237,7 +237,7 @@ mehr Logging im Debug Modus). Außerdem committest du die `config.yml` im Gegens
 [Repository](https://de.wikipedia.org/wiki/Repository). Ein Repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z. B. mit Git.
 
 {{% notice note %}}
-Ab der Version **4.8** von Contao befindet sich die Datei im Ordner `config`.
+Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
 {{% /notice %}}
 
 Über die Kommandozeile kommst du an die Standard-Konfiguration für Contao:
