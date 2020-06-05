@@ -391,3 +391,32 @@ option {
     left: 0;
     max-width: 100%;
 }
+
+/*
+ * Shortcode expand
+ */  
+ .expand-label {
+    border: 1px solid rgb(218, 218, 218);
+    height: auto;
+    padding: 4px 0 4px 10px;
+    margin: 0 0 1rem 0;
+    color: var(--MAIN-TITLES-TEXT-color);
+ }
+ .expand-label:hover {
+    background-color: rgba(218, 218, 218, 0.1);
+ }
+ 
+ .expand-label i { 
+    font-size: 1rem !important;
+    width: 1rem; 
+    color: var(--MENU-SEARCH-BG-color);
+ }
+ 
+ .expand-label span { 
+    display: inline-block;
+    line-height: 1rem;
+ }
+ 
+ .expand-content {
+    margin: 1rem 0 1rem 0;
+ }
