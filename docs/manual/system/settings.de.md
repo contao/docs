@@ -167,7 +167,7 @@ Die Datei `parameters.yml` findest du im Ordner `app/config/` und wird bei der I
 angelegt.
 
 {{% notice note %}}
-Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config/`.
+Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
 {{% /notice %}}
 
 Die `parameters.yml` nach der Installation von Contao:
