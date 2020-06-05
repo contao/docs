@@ -3,9 +3,10 @@ title: "Grid-System Einführung"
 description: "Ein Grid-System verstehen und einsetzen."
 url: "anleitungen/grid"
 aliases:
-    - /de/anleitungen/grid/
-    - /anleitungen/grid/
+    - /de/grid/
+    - /grid/
 weight: 54
+hidden: true
 ---
 
 Ein beliebtes Stilmittel ist die inhaltliche Aufteilung in Spalten. Hierbei hat sich der Einsatz von »Grid-Systemen«

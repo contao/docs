@@ -2,6 +2,9 @@
 title: "Anleitungen"
 description: "Hier findest du Anleitungen für verschiedene Aufgaben."
 url: "anleitungen"
+aliases:
+    - /de/anleitungen/
+    - /anleitungen/
 weight: 100
 ---
 
@@ -9,4 +12,4 @@ Hier findest du Anleitungen für verschiedene Aufgaben. So zahlreich wie die Mö
 Vorgehensweisen. Oft ist die Einhaltung bestimmter Reihenfolgen sinnvoll, aber nicht zwingend notwendig. Daher sind 
 die folgenden Hilfestellungen auch nur mögliche Vorgehensweisen zur Umsetzung bestimmter Aufgaben.
 
-{{% children %}}
+{{% children showhidden="true" description="true" %}}

@@ -2,7 +2,11 @@
 title: "Testversionen installieren"
 description: "Anleitung zur Installation von Entwicklungsversionen und Release Candidates."
 url: "anleitungen/testversionen-installieren"
-weight: 20
+aliases:
+    - /de/testversionen-installieren/
+    - /testversionen-installieren/
+weight: 5
+hidden: true
 ---
 
 
