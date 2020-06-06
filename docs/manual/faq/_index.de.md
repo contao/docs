@@ -21,7 +21,7 @@ du über das [Install-Tool](/de/installation/contao-installtool/) einen neuen Ad
 
 {{% expand "Ich habe das Install-Tool Passwort vergessen." %}}
 Entferne in der Datei »system/config/localconfig.php« die Zeile beginnend mit `$GLOBALS['TL_CONFIG']['installPassword']`
-vollständig. Anschließend kannst du über das [Install-Tool](/de/installation/contao-installtool/) ein neues Passwort vergeben
+vollständig. Anschließend kannst du über das [Install-Tool](/de/installation/contao-installtool/) ein neues Passwort vergeben.
 {{% /expand %}}
 
 {{% expand "Kann ich mit Contao mehrere Webseiten pflegen?" %}}
