@@ -3,8 +3,7 @@ title: "Grid-System Einführung"
 description: "Ein Grid-System verstehen und einsetzen."
 url: "anleitungen/grid"
 aliases:
-    - /de/grid/
-    - /grid/
+    - /de/anleitungen/grid/
 weight: 54
 hidden: true
 ---

@@ -3,8 +3,7 @@ title: "TinyMCE-Editor Konfiguration"
 description: "Den TinyMCE-Editor für verschiedene Bereiche unterschiedlich konfigurieren."
 url: "anleitungen/tinymce-konfiguration"
 aliases:
-    - /de/tinymce-konfiguration/
-    - /tinymce-konfiguration/
+    - /de/anleitungen/tinymce-konfiguration/
 weight: 40
 hidden: true
 ---

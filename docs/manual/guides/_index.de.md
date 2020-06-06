@@ -4,7 +4,6 @@ description: "Hier findest du Anleitungen für verschiedene Aufgaben."
 url: "anleitungen"
 aliases:
     - /de/anleitungen/
-    - /anleitungen/
 weight: 100
 ---
 

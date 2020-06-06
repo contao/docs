@@ -3,8 +3,7 @@ title: "Die erste Startseite erstellen"
 description: "Ein Theme mit Seitenlayout erstellen und die erste Seite veröffentlichen."
 url: "anleitungen/die-erste-startseite"
 aliases:
-    - /de/die-erste-startseite/
-    - /die-erste-startseite/
+    - /de/anleitungen/die-erste-startseite/
 weight: 10
 hidden: true
 ---

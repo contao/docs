@@ -2,6 +2,8 @@
 title: "Lokale Installationen"
 description: "Hier lernst du alles, was du für die lokale Contao Installation wissen musst."
 url: "anleitungen/lokale-installation"
+aliases:
+    - /de/anleitungen/lokale-installation/
 weight: 900
 hidden: true
 ---

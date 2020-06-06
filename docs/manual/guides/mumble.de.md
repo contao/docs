@@ -3,8 +3,7 @@ title: "Mumble Installation"
 description: "Die Mumble Installation. Falls du an den Contao-Calls teilnehmen möchtest."
 url: "anleitungen/mumble"
 aliases:
-    - /de/mumble/
-    - /mumble/
+    - /de/anleitungen/mumble/
 weight: 890
 hidden: true
 ---
