@@ -3,7 +3,7 @@ title: "Einstellungen"
 description: ""
 url: "system/einstellungen"
 aliases:
-    - /de//system/einstellungen/
+    - /de/system/einstellungen/
 weight: 10
 ---
 
