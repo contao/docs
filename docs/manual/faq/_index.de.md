@@ -7,19 +7,89 @@ aliases:
 weight: 110
 ---
 
-Hier findest du eine Sammlung der häufigsten Fragen mit enstprechenden Lösungen. 
+Hier findest du eine Sammlung der häufigsten Fragen mit entsprechenden Lösungen. 
 
-{{% expand "Kein E-Mail Versand über Formular?" %}}
+Wenn du selbst einen Vorschlag für diesen Bereich hast, verwende den Link »Diese Seite bearbeiten« oben rechts. 
+Besitzt du ein GitHub-Konto und bist angemeldet erstellt GitHub automatisch einen Fork in dem du 
+deine Vorschläge hinzufügen kannst. Anschließend kannst du über GitHub einen Pull-Request erstellen.
+</br></br>
+
+{{% expand "Ich habe mein Administrator-Passwort vergessen." %}}
+Entferne hierzu in der Tabelle »tl_user« deiner Datenbank in der Spalte »admin« den Wert »1«. Anschließend kannst
+du über das [Install-Tool](/de/installation/contao-installtool/) einen neuen Administrator erstellen.
+{{% /expand %}}
+
+{{% expand "Ich habe das Install-Tool Passwort vergessen." %}}
+Entferne in der Datei »system/config/localconfig.php« die Zeile beginnend mit `$GLOBALS['TL_CONFIG']['installPassword']`
+vollständig. Anschließend kannst du über das [Install-Tool](/de/installation/contao-installtool/) ein neues Passwort vergeben
+{{% /expand %}}
+
+{{% expand "Kann ich mit Contao mehrere Webseiten pflegen?" %}}
+Ja. Contao unterstützt den [Multidomain-Betrieb](/de/layout/seitenstruktur/multidomain-betrieb/) und 
+[Mehrsprachige Webseiten](/de/layout/seitenstruktur/mehrsprachige-webseiten/).
+{{% /expand %}}
+
+{{% expand "Kann ich mit Contao »Mehrsprachige Webseiten« pflegen?" %}}
+Ja. Contao unterstützt [Mehrsprachige Webseiten](/de/layout/seitenstruktur/mehrsprachige-webseiten/).
+{{% /expand %}}
+
+{{% expand "Wie kann ich alle Variablen meines Templates anzeigen?" %}}
+Die Information hierzu findest du unter [Template-Daten anzeigen](/de/templates/data/).
+{{% /expand %}}
+
+{{% expand "Wie kann ich ein Insert-Tag in meinem Template verwenden?" %}}
+Zur Nutzung eines [Insert-Tag](/de/artikelverwaltung/insert-tags/) `{{date}}` in deinem Template muss du dieses 
+über `$this->replaceInsertTags('{{date}}')` einsetzen.
+{{% /expand %}}
+
+{{% expand "Es wird keine E-Mail über mein Formular versendet." %}}
 Überprpüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#smtp-versand) deines Hosters oder 
-füge diese hinzu. 
+füge diese hinzu. Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die 
+Konsole einmalig den Anwendungs-Cache leeren.
+{{% /expand %}}
+
+{{% expand "Wie kann ich Sprachenkürzel der URL hinzufügen" %}}
+Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `prepend_locale: true` hinzufügen.
+Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
+einmalig den Anwendungs-Cache leeren.
+{{% /expand %}}
+
+{{% expand "Meine Bilder werden im Frontend nicht angezeigt." %}}
+Überprüfe in der [Dateiverwaltung](/de/dateiverwaltung/) ob das Verzeichnis mit deinen Bildern als »Öffentlich« 
+gekennzeichnet ist. 
 {{% /expand %}}
 
 {{% expand "Kann man die URL Suffix ».html« entfernen?" %}}
-Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `url_suffix: ''` eintragen.
+Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `url_suffix: ''` hinzufügen. 
+Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
+einmalig den Anwendungs-Cache leeren.
 {{% /expand %}}
 
-### Layout
+{{% expand "Änderungen an meinen SCSS-Dateien werden nicht übernommen." %}}
+Bei Änderungen an einer [SCSS Partial-Datei](/de/anleitungen/sass-less-integration#hinweis-i-umgang-mit-partials) musst 
+du im Anschluss in der »Systemwartung« den Scriptcache leeren.
+{{% /expand %}}
 
-{{% expand "Änderungen an meinen SCSS Einträgen werden nicht übernommen?" %}}
-Bei Änderungen an einer [SCSS Partial-Datei](#) musst du im Anschluss in der »Systemwartung« den Scriptcache leeren.
+{{% expand "Kann ich den Contao Manager einer bestehenden Installation hinzufügen?" %}}
+Ja. Der [Contao Manager](/de/installation/contao-manager/#kann-der-contao-manager-zu-einer-bestehenden-installation-hinzugefuegt-werden) 
+erkennt bei der Installation deine bestehende Contao Installation.
+{{% /expand %}}
+
+{{% expand "Was ist der Composer Resolver Cloud?" %}}
+Der [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Installation von Composer-Abhängigkeiten 
+über den [Contao Manager](/de/installation/contao-manager/), selbst wenn dein Server nicht über genug Arbeitsspeicher verfügt.
+{{% /expand %}}
+
+{{% expand "Wie aktiviere ich den Contao Debug-Modus?" %}}
+Hier findest du alle Informationen zum Contao [Debug-Modus](/de/system/debug-modus/).
+{{% /expand %}}
+
+{{% expand "Wo finde ich weitere Contao-Ressourcen?" %}}
+Hier erhälst du eine Übersicht zu weiteren [Contao-Ressourcen](https://contao.org/de/netzwerk.html).
+{{% /expand %}}
+
+{{% expand "Darf ich Contao für kommerzielle Projekte verwenden?" %}}
+Ja, die [GNU Lesser General Public License](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) (LGPL), unter der 
+Contao seit der Version 2.5 lizenziert ist, erlaubt die Verwendung des Systems für kommerzielle Projekte. Beachte jedoch, 
+dass die Copyright-Hinweise in den Contao-Dateien gemäß den Lizenzbedingungen nicht entfernt oder verändert werden dürfen.
 {{% /expand %}}
