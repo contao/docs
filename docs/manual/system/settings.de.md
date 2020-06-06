@@ -2,6 +2,8 @@
 title: "Einstellungen"
 description: ""
 url: "system/einstellungen"
+aliases:
+    - /system/einstellungen/
 weight: 10
 ---
 
