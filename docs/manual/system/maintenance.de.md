@@ -3,6 +3,8 @@ title: "Systemwartung"
 description: "Die meisten Wartungsaufgaben in Contao sind automatisiert, sodass du dich auf deine eigentliche Arbeit 
 konzentrieren kannst."
 url: "system/systemwartung"
+aliases:
+    - /de/system/systemwartung/
 weight: 20
 ---
 
