@@ -2,6 +2,9 @@
 title: "Keyboard shortcuts"
 description: "To speed up the workflow when working with Contao, there are several keyboard shortcuts in the back end, 
 with which certain commands can be called directly."
+url: "administrationsbereich/keyboard-shortcuts"
+aliases:
+    - /de/administrationsbereich/keyboard-shortcuts/
 weight: 20
 ---
 
