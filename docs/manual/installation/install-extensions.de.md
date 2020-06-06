@@ -2,6 +2,8 @@
 title: "Erweiterungen installieren"
 description: "Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du drei Möglichkeiten."
 url: "installation/erweiterungen-installieren"
+aliases:
+    - /de/installation/erweiterungen-installieren/
 weight: 60
 ---
 

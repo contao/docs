@@ -3,6 +3,8 @@ title: "Über den Contao Manager"
 description: "Der Contao Manager ist ein Tool, welches eine grafische Oberfläche zur einfachen Verwaltung einer 
 Contao-Installation bietet."
 url: "installation/contao-manager"
+aliases:
+    - /de/installation/contao-manager/
 weight: 20
 ---
 

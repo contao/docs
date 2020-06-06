@@ -2,6 +2,8 @@
 title: "Erweiterungen deinstallieren"
 description: "Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du drei Möglichkeiten."
 url: "installation/erweiterungen-deinstallieren"
+aliases:
+    - /de/installation/erweiterungen-deinstallieren/
 weight: 80
 ---
 
