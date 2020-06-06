@@ -2,6 +2,8 @@
 title: "Erweiterungen aktualisieren"
 description: "Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du drei Möglichkeiten."
 url: "installation/erweiterungen-aktualisieren"
+aliases:
+    - /de/installation/erweiterungen-aktualisieren/
 weight: 70
 ---
 

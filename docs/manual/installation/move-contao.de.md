@@ -2,6 +2,8 @@
 title: "Contao umziehen"
 description: "Der Umzug einer lokalen Installation auf einen Live-Server läuft fast genauso ab wie eine Neuinstallation."
 url: "installation/contao-umziehen"
+aliases:
+    - /de/installation/contao-umziehen/
 weight: 50
 ---
 

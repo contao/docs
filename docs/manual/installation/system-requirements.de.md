@@ -2,6 +2,8 @@
 title: "Systemvoraussetzungen"
 description: ""
 url: "installation/systemvoraussetzungen"
+aliases:
+    - /de/installation/systemvoraussetzungen/
 weight: 10
 ---
 
