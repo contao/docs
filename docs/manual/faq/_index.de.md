@@ -15,8 +15,9 @@ deine Vorschläge hinzufügen kannst. Anschließend kannst du über GitHub einen
 </br></br>
 
 {{% expand "Ich habe mein Administrator-Passwort vergessen." %}}
-Entferne hierzu in der Tabelle »tl_user« deiner Datenbank in der Spalte »admin« den Wert »1«. Anschließend kannst
-du über das [Install-Tool](/de/installation/contao-installtool/) einen neuen Administrator erstellen.
+Falls es in der Tabelle »tl_user« mehrere Datensätze gibt, bei denen das Admin-Flag gesetzt ist, kannst du den Wert 
+zunächst bei allen zurücksetzen, um anschließend im Contao [Install-Tool](/de/installation/contao-installtool/) 
+einen neuen Administrator anzulegen.
 {{% /expand %}}
 
 {{% expand "Ich habe das Install-Tool Passwort vergessen." %}}
