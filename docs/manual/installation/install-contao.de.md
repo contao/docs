@@ -3,6 +3,8 @@ title: "Contao installieren"
 description: "Es gibt zwei Wege um Contao auf deinem Server zu installieren, zum einen über die grafische Oberfläche 
 des Contao Managers und zum anderen über die Kommandozeile."
 url: "installation/contao-installieren"
+aliases:
+    - /de/installation/contao-installieren/
 weight: 30
 ---
 

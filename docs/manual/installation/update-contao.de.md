@@ -2,6 +2,8 @@
 title: "Contao aktualisieren"
 description: "Wie die meisten Open-Source-Projekte wird auch Contao kontinuierlich weiterentwickelt."
 url: "installation/contao-aktualisieren"
+aliases:
+    - /de/installation/contao-aktualisieren/
 weight: 40
 ---
 
