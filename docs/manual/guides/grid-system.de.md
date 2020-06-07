@@ -4,7 +4,6 @@ description: "Ein Grid-System verstehen und einsetzen."
 url: "anleitungen/grid"
 aliases:
     - /de/anleitungen/grid/
-    - /anleitungen/grid/
 weight: 54
 ---
 

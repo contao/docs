@@ -2,6 +2,8 @@
 title: "Die Startseite anlegen"
 description: "Anleitung zur Erstellung der Startseite nach der Installation."
 url: "anleitungen/die-erste-startseite"
+aliases:
+    - /de/anleitungen/die-erste-startseite/
 weight: 10
 ---
 

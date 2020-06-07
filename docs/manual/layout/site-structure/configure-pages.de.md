@@ -5,7 +5,7 @@ Anforderungen entsprechend konfigurieren. Die Einstellungsmöglichkeiten variier
 url: "layout/seitenstruktur/seiten-konfigurieren"
 aliases:
     - /de/seitenstruktur/seiten-konfigurieren/
-    - /seitenstruktur/seiten-konfigurieren/
+    - /de/layout/seitenstruktur/seiten-konfigurieren/
 weight: 20
 ---
 

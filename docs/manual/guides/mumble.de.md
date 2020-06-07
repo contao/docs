@@ -4,7 +4,6 @@ description: "Die Mumble Installation."
 url: "anleitungen/mumble"
 aliases:
     - /de/anleitungen/mumble/
-    - /anleitungen/mumble/
 weight: 50
 ---
 

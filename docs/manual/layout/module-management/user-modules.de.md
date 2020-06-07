@@ -5,7 +5,7 @@ werden."
 url: "layout/modulverwaltung/benutzermodule"
 aliases:
     - /de/modulverwaltung/benutzermodule/
-    - /modulverwaltung/benutzermodule/
+    - /de/layout/modulverwaltung/benutzermodule/
 weight: 20
 ---
 <style>

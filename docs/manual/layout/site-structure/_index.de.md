@@ -5,7 +5,7 @@ Systems verstehst."
 url: "layout/seitenstruktur"
 aliases:
     - /de/seitenstruktur/
-    - /seitenstruktur/
+    - /de/layout/seitenstruktur/  
 weight: 10
 ---
 

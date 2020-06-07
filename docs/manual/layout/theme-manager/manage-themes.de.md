@@ -5,7 +5,7 @@ description: "Ein fertiges Design wird in Contao als »Theme« bezeichnet, was a
 url: "layout/theme-manager/themes-verwalten"
 aliases:
     - /de/theme-manager/themes-verwalten/
-    - /theme-manager/themes-verwalten
+    - /de/layout/theme-manager/themes-verwalten/
 weight: 10
 ---
 

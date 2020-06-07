@@ -2,6 +2,8 @@
 title: "Sass/Less Integration"
 description: "Anleitung zur Nutzung von CSS-Präprozessoren."
 url: "anleitungen/sass-less-integration"
+aliases:
+    - /de/anleitungen/sass-less-integration/
 weight: 30
 ---
 

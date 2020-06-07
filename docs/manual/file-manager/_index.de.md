@@ -3,6 +3,8 @@ title: "Dateiverwaltung"
 description: "Mit der Dateiverwaltung kannst du Dateien und Ordner auf deinem Server verwalten und Dateien von deinem 
 lokalen Rechner auf den Server übertragen."
 url: "dateiverwaltung"
+aliases:
+    - /de/dateiverwaltung/
 weight: 12
 ---
 

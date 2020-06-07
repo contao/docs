@@ -2,6 +2,8 @@
 title: "TinyMCE-Editor Konfiguration"
 description: "Die TinyMCE-Editor Konfiguration"
 url: "anleitungen/tinymce-konfiguration"
+aliases:
+    - /de/anleitungen/tinymce-konfiguration/
 weight: 40
 ---
 

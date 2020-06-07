@@ -3,8 +3,7 @@ title: "Template-Daten anzeigen"
 description: "Alle Template-Daten anzeigen."
 url: "layout/templates/data"
 aliases:
-    - /de/templates/data/
-    - /templates/data/
+    - /de/layout/templates/data/
 weight: 50
 ---
 

@@ -2,6 +2,8 @@
 title: "FAQ-Verwaltung"
 description: "Die FAQ-Verwaltung ist ein eigenes Modul im Backend, das du in der Gruppe »Inhalte« findest."
 url: "core-erweiterung/faq/faq-verwaltung"
+aliases:
+    - /de/core-erweiterung/faq/faq-verwaltung/
 weight: 10
 ---
 

@@ -2,6 +2,8 @@
 title: "Anleitungen"
 description: "Hier findest du Anleitungen für verschiedene Aufgaben."
 url: "anleitungen"
+aliases:
+    - /de/anleitungen/
 weight: 100
 ---
 
