@@ -208,7 +208,7 @@ auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal 
 **Sortierreihenfolge:** Hier kannst du die Sortierreihenfolge der Events ändern.
 
 **Eventleser:** Hier kannst du festlegen ob automatisch zum Eventleser gewechselt werden soll, wenn ein Event 
-ausgewählt wurde.
+ausgewählt wurde. Damit würden alternativ die Eventliste und die Eventdetails auf derselben Seite angezeigt.
 
 **Anzahl an Events:** Wenn du hier einen Wert größer 0 eingibst, wird die Anzahl der Events der Eventliste automatisch 
 auf diesen Wert limitiert.
