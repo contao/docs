@@ -6,6 +6,7 @@ aliases:
     - /framework/hooks/
 ---
 
+
 Hooks are entry points into the Contao core (and some of its extension bundles).
 Have a look at the [hook reference][1] for a list of all available hooks.
 You can register your own callable logic that will be executed as soon as a certain
