@@ -5,7 +5,7 @@ die darauf zu findenden Wörter als Suchbegriffe in einer Tabelle in der Datenba
 url: "layout/modulverwaltung/website-suche"
 aliases:
     - /de/modulverwaltung/website-suche/
-    - /modulverwaltung/website-suche/
+    - /de/layout/modulverwaltung/website-suche/
 weight: 30
 ---
 

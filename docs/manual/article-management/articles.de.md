@@ -2,6 +2,8 @@
 title: "Artikel"
 description: "Jeder Artikel ist einer bestimmten Seite und einem bestimmten Layoutbereich zugeordnet."
 url: "artikelverwaltung/artikel"
+aliases:
+    - /de/artikelverwaltung/artikel/
 weight: 10
 ---
 

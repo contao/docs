@@ -5,7 +5,7 @@ du alle Formatdefinitionen in einer Eingabemaske erfassen kannst."
 url: "layout/theme-manager/stylesheets-verwalten"
 aliases:
     - /de/theme-manager/stylesheets-verwalten/
-    - /theme-manager/stylesheets-verwalten/
+    - /de/layout/theme-manager/stylesheets-verwalten/
 weight: 20
 ---
 

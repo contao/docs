@@ -3,6 +3,8 @@ title: "Formulare"
 description: "Mit dem Formulargenerator kannst du Formulare erstellen und deren Daten entweder per E-Mail verschicken 
 oder in die Datenbank schreiben."
 url: "formulargenerator/formulare"
+aliases:
+    - /de/formulargenerator/formulare/
 weight: 10
 ---
 

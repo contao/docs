@@ -5,7 +5,7 @@ insbesondere ex- und importieren kannst."
 url: "layout/theme-manager"
 aliases:
     - /de/theme-manager/
-    - /theme-manager/
+    - /de/layout/theme-manager/
 weight: 20
 ---
 

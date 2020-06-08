@@ -5,7 +5,7 @@ in irgendeiner Form zum Einsatz."
 url: "layout/modulverwaltung/navigationsmodule"
 aliases:
     - /de/modulverwaltung/navigationsmodule/
-    - /modulverwaltung/navigationsmodule/
+    - /de/layout/modulverwaltung/navigationsmodule/
 weight: 10
 ---
 
