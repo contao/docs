@@ -3,9 +3,10 @@ title: "Aufruf und Aufbau des Backends"
 description: "Im Administrationsbereich, dem sogenannten Backend, kannst du alle Arbeiten im Zusammenhang mit der 
 Verwaltung deiner Webseite erledigen. "
 url: "administrationsbereich/aufruf-und-aufbau-des-backends"
+aliases:
+    - /de/administrationsbereich/aufruf-und-aufbau-des-backends/
 weight: 10
 ---
-
 
 ## Aufruf des Backends
 

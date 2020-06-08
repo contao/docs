@@ -5,7 +5,7 @@ ist das zentrale Element deiner Webseite."
 url: "layout/seitenstruktur/seiten-als-zentrale-elemente"
 aliases:
     - /de/seitenstruktur/seiten-als-zentrale-elemente/
-    - /seitenstruktur/seiten-als-zentrale-elemente/
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/
 weight: 10
 ---
 

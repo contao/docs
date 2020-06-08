@@ -123,8 +123,9 @@ variables on top of your markdown content:
 * `title`: A title for the file (language specific). The title will be used in the main left navigation as well.
 * `description`: The content description (language specific).
 * `url` (optional): The URL path (language specific). This should only be used if you want the URL to be different from
-  the effective file path.
-  E.g. for the German translation.
+  the effective file path. E.g. for the German translation.
+* `aliases`: Aliases can be used to create redirects to your page. On multilingual sites, each translation 
+  of a post can have unique aliases. To use the same alias across multiple languages, prefix it with the language code.
 * `weight` (optional): Used for the sorting order in the left main navigation of the documentation.
   The weight might not be necessary everywhere. It's only necessary, when files need to be sorted according to something
   different from the default sorting (= different from the filename).

@@ -2,6 +2,8 @@
 title: "News/Blog-Erweiterung"
 description: "Damit können im Backend News-Einträge verwaltet und mit Hilfe von Frontend-Modulen ausgegeben werden."
 url: "core-erweiterung/nachrichten"
+aliases:
+    - /de/core-erweiterung/nachrichten/
 weight: 1
 ---
 

@@ -1,6 +1,9 @@
 ---
 title: "Installation"
 description: "Hier lernst du alles, was du für die Installation und Pflege von Contao wissen musst."
+url: "installation"
+aliases:
+    - /de/installation/
 weight: 2
 ---
 

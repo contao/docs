@@ -8,6 +8,7 @@ aliases:
 
 
 Hooks are entry points into the Contao core (and some of its extension bundles).
+Have a look at the [hook reference][1] for a list of all available hooks.
 You can register your own callable logic that will be executed as soon as a certain
 point in the execution flow of the core will be reached.
 Consider the following example.
@@ -53,8 +54,6 @@ if (isset($GLOBALS['TL_HOOKS']['compileFormFields']) && \is_array($GLOBALS['TL_H
 
 
 ## Registering hooks
-
-Have a look at the [hook reference][1] for a list of all available hooks.
 
 As of Contao 4.8, there are three different ways of subscribing to a hook:
 

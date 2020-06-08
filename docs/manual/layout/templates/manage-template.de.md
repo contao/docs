@@ -3,8 +3,7 @@ title: "Templates verwalten"
 description: "Die Verwaltung der Template-Dateien."
 url: "layout/templates/verwaltung"
 aliases:
-    - /de/templates/verwaltung/
-    - /templates/verwaltung/
+    - /de/layout/templates/verwaltung/
 weight: 10
 ---
 

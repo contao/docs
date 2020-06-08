@@ -5,7 +5,7 @@ sind deswegen dem Theme-Manager untergeordnet."
 url: "layout/modulverwaltung"
 aliases:
     - /de/modulverwaltung/
-    - /modulverwaltung/
+    - /de/layout/modulverwaltung/
 weight: 30
 ---
 

@@ -4,7 +4,7 @@ description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereic
 url: "layout/modulverwaltung/verschiedenes"
 aliases:
     - /de/modulverwaltung/verschiedenes/
-    - /modulverwaltung/verschiedenes/
+    - /de/layout/modulverwaltung/verschiedenes/
 weight: 50
 ---
 

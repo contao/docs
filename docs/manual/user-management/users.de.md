@@ -3,6 +3,8 @@ title: "Benutzer (Backend)"
 description: "Bisher haben wir ausschließlich als Administrator gearbeitet, der auf alle Bereiche und Elemente des 
 Systems zugreifen darf."
 url: "benutzerverwaltung/benutzer"
+aliases:
+    - /de/benutzerverwaltung/benutzer/
 weight: 10
 ---
 

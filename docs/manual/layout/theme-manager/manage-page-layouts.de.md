@@ -4,7 +4,7 @@ description: "Das Seitenlayout bestimmt den Aufbau einer Seite und teilt diese i
 url: "layout/theme-manager/seitenlayouts-verwalten"
 aliases:
     - /de/theme-manager/seitenlayouts-verwalten/
-    - /theme-manager/seitenlayouts-verwalten/
+    - /de/layout/theme-manager/seitenlayouts-verwalten/
 weight: 30
 ---
 

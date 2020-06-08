@@ -3,8 +3,7 @@ title: "CSS- und JavaScript-Assets"
 description: "CSS- und JavaScript-Assets in Templates einsetzen."
 url: "layout/templates/assets"
 aliases:
-    - /de/templates/assets/
-    - /templates/assets/
+    - /de/layout/templates/assets/
 weight: 20
 ---
 
