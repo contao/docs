@@ -228,6 +228,10 @@ Der *newsletteralias* teilt dem »Newsletterleser« mit, dass er einen bestimmte
 ausgeben soll. Existiert der gesuchte Eintrag nicht, gibt das Modul eine Fehlermeldung und den HTTP-Status-Code 
 »404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
+WARNUNG
+
+Befinden sich mehr als ein Leser auf einer Seite, kann das dazu führen, dass die Details nicht angezeigt werden können (Fehler 404). Das ist z.B. der Fall, wenn man einen Eventleser im Footer der Detailseite hat. 
+
 
 ### Modul-Konfiguration
 
