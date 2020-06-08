@@ -359,3 +359,8 @@ Ausgabe im »Eventleser« mitgeben, klicke dazu beim gewünschten Event auf
 
 In den Events stehen dir alle [Inhaltselemente](../../../artikelverwaltung/inhaltselemente/) von Contao zur 
 Verfügung.
+
+
+WARNUNG
+
+Befinden sich mehr als ein Leser auf einer Seite, kann das dazu führen, dass die Details nicht angezeigt werden können (Fehler 404). Das ist z.B. der Fall, wenn man einen Eventleser im Footer der Detailseite hat. 
