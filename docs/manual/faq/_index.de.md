@@ -84,7 +84,7 @@ einmalig den Anwendungs-Cache leeren.
 {{% /expand %}}
 
 
-## Datei Manager
+## Dateiverwaltung
 
 {{% expand "Meine Bilder werden im Frontend nicht angezeigt, was kann ich machen?" %}}
 Überprüfe in der [Dateiverwaltung](/de/dateiverwaltung/) ob das Verzeichnis mit deinen Bildern als »Öffentlich« 
@@ -100,15 +100,15 @@ du im Anschluss in der »Systemwartung« den Scriptcache leeren.
 {{% /expand %}}
 
 
-## Conta Manager
+## Contao Manager
+
+{{% expand "Wozu benötige ich den Contao Manager?" %}}
+Du benötigst den Contao Manager um Contao und Erweiterung zu installieren/aktualisieren/deinstallieren. Weiterführende Informationen findest du unter [Über den Contao Manager](/de/installation/contao-manager/).
+{{% /expand %}}
 
 {{% expand "Kann ich den Contao Manager einer bestehenden Installation hinzufügen?" %}}
 Ja. Der [Contao Manager](/de/installation/contao-manager/#kann-der-contao-manager-zu-einer-bestehenden-installation-hinzugefuegt-werden) 
 erkennt bei der Installation deine bestehende Contao Installation.
-{{% /expand %}}
-
-{{% expand "Wozu benötige ich den Contao Manager?" %}}
-Du benötigst den Contao Manager um Contao und Erweiterung zu installieren/aktualisieren/deinstallieren. Weiterführende Informationen findest du unter [Über den Contao Manager](/de/installation/contao-manager/).
 {{% /expand %}}
 
 {{% expand "Wie kann man den Contao Manager aktualisieren?" %}}
