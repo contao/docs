@@ -76,6 +76,15 @@ Ja. Der [Contao Manager](/de/installation/contao-manager/#kann-der-contao-manage
 erkennt bei der Installation deine bestehende Contao Installation.
 {{% /expand %}}
 
+{{% expand "Wozu benötige ich den Contao Manager?" %}}
+Alle Informationen findest du unter [Über den Contao Manager](/de/installation/contao-manager/).
+{{% /expand %}}
+
+{{% expand "Wie kann man den Contao Manager aktualisieren?" %}}
+Der [Contao Manager](/de/installation/contao-manager/#haeufige-fragen-zum-contao-manager) führt beim Aufruf automatisch 
+im Hintergrund eine Prüfung durch. Sollte eine neue Version verfügbar sein, aktualisiert sich der Contao Manager selbst.
+{{% /expand %}}
+
 {{% expand "Was ist der Composer Resolver Cloud?" %}}
 Der [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Installation von Composer-Abhängigkeiten 
 über den [Contao Manager](/de/installation/contao-manager/), selbst wenn dein Server nicht über genug Arbeitsspeicher verfügt.
