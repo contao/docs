@@ -77,7 +77,7 @@ erkennt bei der Installation deine bestehende Contao Installation.
 {{% /expand %}}
 
 {{% expand "Wozu benötige ich den Contao Manager?" %}}
-Alle Informationen findest du unter [Über den Contao Manager](/de/installation/contao-manager/).
+Du benötigst den Contao Manager um Contao und Erweiterung zu installieren/aktualisieren/deinstallieren. Weiterführende Informationen findest du unter [Über den Contao Manager](/de/installation/contao-manager/).
 {{% /expand %}}
 
 {{% expand "Wie kann man den Contao Manager aktualisieren?" %}}
