@@ -4,7 +4,8 @@ description: "Anleitung zur Installation von Entwicklungsversionen und Release C
 url: "anleitungen/testversionen-installieren"
 aliases:
     - /de/anleitungen/testversionen-installieren/
-weight: 20
+weight: 5
+hidden: true
 ---
 
 

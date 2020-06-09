@@ -1,8 +1,11 @@
 ---
 title: "Lokale Installationen"
-description: "Hier lernst du alles, was du für die lokale Installation und Pflege von Contao wissen musst."
+description: "Hier lernst du alles, was du für die lokale Contao Installation wissen musst."
 url: "anleitungen/lokale-installation"
-weight: 100
+aliases:
+    - /de/anleitungen/lokale-installation/
+weight: 900
+hidden: true
 ---
 
 Du kannst dir Contao auch lokal installieren. Hierzu werden Webserver, Datenbank und PHP benötigt. Für die verschiedenen 
