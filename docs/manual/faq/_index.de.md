@@ -7,7 +7,7 @@ aliases:
 weight: 110
 ---
 
-Hier findest du eine Sammlung der häufigsten Fragen mit entsprechenden Lösungen. 
+Hier findest du eine Sammlung der häufigsten Fragen mit den passenden Antworten. 
 
 Wenn du selbst einen Vorschlag für diesen Bereich hast, verwende den Link »Diese Seite bearbeiten« oben rechts. 
 Besitzt du ein GitHub-Konto und bist angemeldet erstellt GitHub automatisch einen Fork in dem du 
