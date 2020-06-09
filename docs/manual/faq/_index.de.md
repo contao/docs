@@ -66,7 +66,7 @@ Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cac
 einmalig den Anwendungs-Cache leeren.
 {{% /expand %}}
 
-{{% expand "Änderungen an meinen SCSS-Dateien werden nicht übernommen." %}}
+{{% expand "Warum werden Änderungen an meinen SCSS-Dateien nicht übernommen?" %}}
 Bei Änderungen an einer [SCSS Partial-Datei](/de/anleitungen/sass-less-integration#hinweis-i-umgang-mit-partials) musst 
 du im Anschluss in der »Systemwartung« den Scriptcache leeren.
 {{% /expand %}}
