@@ -86,7 +86,7 @@ im Hintergrund eine Prüfung durch. Sollte eine neue Version verfügbar sein, ak
 {{% /expand %}}
 
 {{% expand "Was ist die Composer Resolver Cloud?" %}}
-Der [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Installation von Composer-Abhängigkeiten 
+Die [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Installation von Composer-Abhängigkeiten 
 über den [Contao Manager](/de/installation/contao-manager/), selbst wenn dein Server nicht über genug Arbeitsspeicher verfügt.
 {{% /expand %}}
 
