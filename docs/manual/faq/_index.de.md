@@ -14,13 +14,13 @@ Besitzt du ein GitHub-Konto und bist angemeldet erstellt GitHub automatisch eine
 deine Vorschläge hinzufügen kannst. Anschließend kannst du über GitHub einen Pull-Request erstellen.
 </br></br>
 
-{{% expand "Ich habe mein Administrator-Passwort vergessen." %}}
-Falls es in der Tabelle »tl_user« mehrere Datensätze gibt, bei denen das Admin-Flag gesetzt ist, kannst du den Wert 
+{{% expand "Ich habe mein Administrator-Passwort vergessen, wie kann ich es zurücksetzen?" %}}
+Falls es in der Datenbank-Tabelle »tl_user« mehrere Datensätze gibt, bei denen das Admin-Flag gesetzt ist, kannst du den Wert 
 zunächst bei allen zurücksetzen, um anschließend im Contao [Install-Tool](/de/installation/contao-installtool/) 
 einen neuen Administrator anzulegen.
 {{% /expand %}}
 
-{{% expand "Ich habe das Install-Tool Passwort vergessen." %}}
+{{% expand "Ich habe das Install-Tool Passwort vergessen, wie kann ich es zurücksetzen?" %}}
 Entferne in der Datei »system/config/localconfig.php« die Zeile beginnend mit `$GLOBALS['TL_CONFIG']['installPassword']`
 vollständig. Anschließend kannst du über das [Install-Tool](/de/installation/contao-installtool/) ein neues Passwort vergeben.
 {{% /expand %}}
