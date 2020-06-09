@@ -95,7 +95,7 @@ Du kannst den [Contao Debug-Modus](/de/system/debug-modus/) über das Backend ak
 {{% /expand %}}
 
 {{% expand "Wo finde ich weitere Contao-Ressourcen?" %}}
-Weiter Contao-Ressourcen findest du auf der [Projektwebseite](https://contao.org/de/netzwerk.html).
+Weitere Contao-Ressourcen findest du auf der [Projektwebseite](https://contao.org/de/netzwerk.html).
 {{% /expand %}}
 
 {{% expand "Darf ich Contao für kommerzielle Projekte verwenden?" %}}
