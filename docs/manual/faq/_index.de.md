@@ -91,7 +91,7 @@ Die [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Inst
 {{% /expand %}}
 
 {{% expand "Wie aktiviere ich den Contao Debug-Modus?" %}}
-Hier findest du alle Informationen zum Contao [Debug-Modus](/de/system/debug-modus/).
+Du kannst den [Contao Debug-Modus](/de/system/debug-modus/) über das Backend aktivieren.
 {{% /expand %}}
 
 {{% expand "Wo finde ich weitere Contao-Ressourcen?" %}}
