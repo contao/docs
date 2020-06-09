@@ -4,9 +4,8 @@ description: "Der Navigationsbereich Templates."
 url: "layout/templates"
 aliases:
     - /de/templates/
-    - /templates/
     - /de/theme-manager/templates-verwalten/
-    - /theme-manager/templates-verwalten/    
+    - /de/layout/templates/    
 weight: 40
 ---
 

@@ -5,7 +5,7 @@ diese jeweils eine unterschiedliche Ausgabe bewirken."
 url: "layout/seitenstruktur/multidomain-betrieb"
 aliases:
     - /de/seitenstruktur/multidomain-betrieb/
-    - /seitenstruktur/multidomain-betrieb/
+    - /de/layout/seitenstruktur/multidomain-betrieb/
 weight: 30
 ---
 

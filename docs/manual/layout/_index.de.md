@@ -4,7 +4,6 @@ description: "Der Navigationsbereich Layout."
 url: "layout"
 aliases:
     - /de/layout/
-    - /layout/
 weight: 7
 ---
 

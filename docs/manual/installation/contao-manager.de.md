@@ -117,7 +117,7 @@ Wähle die passende Konfiguration für deinen Server- oder Hosting-Anbieter aus.
 
 #### Composer Resolver Cloud
 
-Der [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Installation von Composer-Abhängigkeiten, 
+Die [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Installation von Composer-Abhängigkeiten, 
 selbst wenn der Server nicht über genug Arbeitsspeicher verfügt. Bitte beachte, dass deine Paketinformationen für die 
 Auflösung der Abhängigkeiten an einen Cloud-Dienst der [Contao Association](https://association.contao.org/) 
 übermittelt werden.

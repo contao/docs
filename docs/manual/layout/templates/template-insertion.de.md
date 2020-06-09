@@ -3,8 +3,7 @@ title: "Template mischen"
 description: "Ein Template mischen."
 url: "layout/templates/insertion"
 aliases:
-    - /de/templates/insertion/
-    - /templates/insertion/
+    - /de/layout/templates/insertion/
 weight: 40
 ---
 

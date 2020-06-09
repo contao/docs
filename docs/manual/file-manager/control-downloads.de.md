@@ -3,6 +3,8 @@ title: "Downloads kontrollieren"
 description: "Mit Contao kannst du ganz einfach den Zugriff auf bestimmte Dateien beschränken und genau festlegen, wer 
 diese herunterladen darf und wer nicht."
 url: "dateiverwaltung/downloads-kontrollieren"
+aliases:
+    - /de/dateiverwaltung/downloads-kontrollieren/
 weight: 30
 ---
 

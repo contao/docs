@@ -1,8 +1,11 @@
 ---
 title: "Sass/Less Integration"
-description: "Anleitung zur Nutzung von CSS-Präprozessoren."
+description: "Anleitung zur direkten Nutzung von CSS-Präprozessoren innerhalb von Contao."
 url: "anleitungen/sass-less-integration"
+aliases:
+    - /de/anleitungen/sass-less-integration/
 weight: 30
+hidden: true
 ---
 
 

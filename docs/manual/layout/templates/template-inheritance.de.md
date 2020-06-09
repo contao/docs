@@ -3,8 +3,7 @@ title: "Template vererben"
 description: "Die Template Vererbung."
 url: "layout/templates/vererbung"
 aliases:
-    - /de/templates/vererbung/
-    - /templates/vererbung/
+    - /de/layout/templates/vererbung/
 weight: 30
 ---
 

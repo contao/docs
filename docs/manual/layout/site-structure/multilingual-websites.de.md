@@ -6,7 +6,7 @@ der Sprache."
 url: "layout/seitenstruktur/mehrsprachige-webseiten"
 aliases:
     - /de/seitenstruktur/mehrsprachige-webseiten/
-    - /seitenstruktur/mehrsprachige-webseiten/
+    - /de/layout/seitenstruktur/mehrsprachige-webseiten/
 weight: 40
 ---
 
