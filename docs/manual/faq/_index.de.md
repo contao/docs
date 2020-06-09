@@ -55,7 +55,7 @@ Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cac
 einmalig den Anwendungs-Cache leeren.
 {{% /expand %}}
 
-{{% expand "Meine Bilder werden im Frontend nicht angezeigt." %}}
+{{% expand "Meine Bilder werden im Frontend nicht angezeigt, was kann ich machen?" %}}
 Überprüfe in der [Dateiverwaltung](/de/dateiverwaltung/) ob das Verzeichnis mit deinen Bildern als »Öffentlich« 
 gekennzeichnet ist. 
 {{% /expand %}}
