@@ -49,7 +49,7 @@ füge diese hinzu. Anschließend musst du über den Contao-Manager (»Systemwart
 Konsole einmalig den Anwendungs-Cache leeren.
 {{% /expand %}}
 
-{{% expand "Wie kann ich Sprachenkürzel der URL hinzufügen" %}}
+{{% expand "Wie kann ich das Sprachenkürzel der URL hinzufügen?" %}}
 Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `prepend_locale: true` hinzufügen.
 Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
 einmalig den Anwendungs-Cache leeren.
