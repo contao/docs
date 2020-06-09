@@ -43,7 +43,7 @@ Zur Nutzung eines [Insert-Tag](/de/artikelverwaltung/insert-tags/) `{{date}}` in
 über `$this->replaceInsertTags('{{date}}')` einsetzen.
 {{% /expand %}}
 
-{{% expand "Es wird keine E-Mail über mein Formular versendet." %}}
+{{% expand "Es wird keine E-Mail über mein Formular versendet, was muss ich machen?" %}}
 Überprpüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#smtp-versand) deines Hosters oder 
 füge diese hinzu. Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die 
 Konsole einmalig den Anwendungs-Cache leeren.
