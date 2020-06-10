@@ -158,7 +158,7 @@ die Änderungen speichern. Insgesamt würde die `composer.json` dann so aussehen
     "license": "proprietary",
     "require": {
         "contao-community-alliance/composer-client": "~0.14",
-        "inspiredminds/contao-news-sync": "^3.0"
+        "inspiredminds/contao-news-sync": "^1.0"
     },
     "prefer-stable": true,
     "minimum-stability": "stable",

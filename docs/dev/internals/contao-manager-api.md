@@ -4,7 +4,7 @@ description: "How to control and access the Contao Manager through its REST API.
 ---
 
 
-The Contao Manager is distributed as a Phar application. Appart from the graphical user interface,
+The Contao Manager is distributed as a Phar application. Apart from the graphical user interface,
 the application also provides a REST API to interact with the webserver and Contao application.
 
 The Contao Manager API is available under `/api` wherever you installed the Phar. 
