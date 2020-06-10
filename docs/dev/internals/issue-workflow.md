@@ -3,11 +3,17 @@ title: "Issue/PR workflow"
 description: "How Contao developers are supposed to handle issues and PRs on GitHub"
 ---
 <style>
+    span[class^="label-"] {
+      padding: 0 3px 2px;
+      border-radius: 3px;
+    }
     .label-bug {
       background-color: #bd2c00;
+      color: #fff;
     }
     .label-feature {
       background-color: #3364b7;
+      color: #fff;
     }
     .label-discuss {
       background-color: #86c60d;
