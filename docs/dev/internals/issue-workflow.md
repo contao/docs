@@ -30,7 +30,7 @@ If it is a bug, please also assign the ticket to the milestone of the version in
 
 New issues do not get an assignee by default.
 
-# Handling new PRs
+## Handling new PRs
 
 After reading a new PR, please label it either as <span class="label-bug">bug</span> or as
 <span class="label-feature">feature</span>.
