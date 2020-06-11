@@ -60,6 +60,10 @@ If any maintainer wants to work on a bug, they self-assign the issue.
 If no maintainer assigns themselves an issue, it will get the <span class="label-help">help wanted</span> label to indicate
 that we are looking for volunteers to complete it.
 
+{{% notice note %}}
+FIXME: How is this process supposed to work? When do we know all of the core devs do not have any plans to work on a bug?
+{{% /notice %}}
+
 If the bug cannot be fixed without breaking backwards compatibility, it becomes a "known limitation" for the current
 version, and it gets the <span class="label-status">incompatible</span> label. These issues will be addressed in the
 next major version.
