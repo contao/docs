@@ -70,7 +70,7 @@
                         {{ $strTemp := "" }}
                  
                         {{ if $withDescription }}
-                            {{ $strTemp = printf "<li><a href=\"%s\" class=\"highlight\">%s</a></li><p>%s</p>" .RelPermalink .Title .Description }}
+                            {{ $strTemp = printf "<li><a href=\"%s\" class=\"highlight\">%s</a><p>%s</p></li>" .RelPermalink .Title .Description }}
                         {{ else }}
                             {{ $strTemp = printf "<li><a href=\"%s\" class=\"highlight\">%s</a></li>" .RelPermalink .Title  }}
                         {{ end }}
