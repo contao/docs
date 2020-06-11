@@ -34,7 +34,7 @@ Da es sich bei PHP um eine interpretierte Skript-Sprache handelt, wird jedes PHP
 interpretiert. Dabei werden für jede Datei folgende Schritte durchlaufen:
 
 1. Lexing (lexikalische Analyse: zerlegt Quellcode in logisch zusammengehörige Einheiten (sog. Tokens))
-2. Parsing (semantische Analyse: "versteht" eine Menge an Tokens. Definiert also was valide Syntax ist)
+2. Parsing (semantische Analyse: »versteht« eine Menge an Tokens. Definiert also was valide Syntax ist)
 3. Compilation (übersetzt PHP in direkte Instruktionen, auch Bytecode genannt, welche dann durch die PHP Virtual Machine ausgeführt werden können)
 4. Execution (die Ausführung des Bytecodes)
 
