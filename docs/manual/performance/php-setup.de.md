@@ -28,7 +28,7 @@ sich erheblich verbessern.
 
 ## OPcache
 
-Der grösste Perfromance-Gewinn lässt sich durch den Einsatz des PHP OPcache erzielen.
+Der grösste Performance-Gewinn lässt sich durch den Einsatz des PHP OPcache erzielen.
 
 Da es sich bei PHP um eine interpretierte Skript-Sprache handelt, wird jedes PHP-Skript normalerweise zur Laufzeit
 interpretiert. Dabei werden für jede Datei folgende Schritte durchlaufen:
