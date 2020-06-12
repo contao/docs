@@ -5,7 +5,10 @@ url: "anleitungen/die-erste-startseite"
 aliases:
     - /de/anleitungen/die-erste-startseite/
 weight: 10
-hidden: true
+tags: 
+   - "Theme"
+   - "Seitenlayout"
+   - "Seitenstruktur"
 ---
 
 Du hast die [Contao Installation](../../installation) abgeschlossen und kannst jetzt deine Startseite erstellen. 

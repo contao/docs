@@ -27,8 +27,5 @@ Im [Debug-Modus](../../system/debug-modus/) werden die Template-Namen im HTML-Qu
 Man kann hierüber nachvollziehen welches Template zum Einsatz kommt.
 {{% /notice %}}
 
-
-### Weitere Anleitungen
-
-- [Den TinyMce-Editor konfigurieren]({{< ref "tinymce-configuration.de.md" >}})
+{{% taxonomylist context="tags" filter="Template" title="Anleitungen" description=true %}}
 

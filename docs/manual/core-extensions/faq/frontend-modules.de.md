@@ -64,6 +64,12 @@ Das Schlüsselwort des FAQ-Lesers lautet *frage* und teilt dem Modul mit, dass 
 ausgeben soll. Existiert die gesuchte Frage nicht, gibt der FAQ-Leser eine Fehlermeldung und den HTTP-Status-Code 
 »404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
+{{% notice info %}}
+Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
+oder andere Modul eine 404 Seite auslösen, da zum Beispiel der Alias einer FAQ nicht in einem Kalender gefunden 
+wird, oder umgekehrt der Alias eines Events in einer FAQ-Kategorie.
+{{% /notice %}}
+
 
 ### Modul-Konfiguration
 

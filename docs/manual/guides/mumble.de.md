@@ -5,7 +5,6 @@ url: "anleitungen/mumble"
 aliases:
     - /de/anleitungen/mumble/
 weight: 890
-hidden: true
 ---
 
 ## Was ist Mumble

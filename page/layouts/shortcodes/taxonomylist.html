@@ -1,0 +1,95 @@
+{{/*
+   *    Shortcode: taxonomylist
+   *    Version: 1.0.0
+   *
+   *    Create a List with linked Pages matching one or more Taxonomy Terms. 
+   *    The Taxonomic Context could be "categories" or "tags".
+   *
+   *    Declare one or more Taxonomy Terms with Front Matter: 
+   *    tags: 
+   *        - "Tag1"
+   *        - "Tag2"    
+   *
+   *    Or
+   *
+   *    categories: 
+   *        - "Cat1"
+   *        - "Cat2"
+   *    
+   *    Example Shortcode Usage: Context "Categories"
+   *    {{% taxonomylist context="categories" filter="Cat1, Cat2" title="More" description=true %}}
+   *
+   *    Example Shortcode Usage: Context "Tags"
+   *    {{% taxonomylist context="tags" filter="Tag1, Tag2" title="More" description=true %}}
+   *    
+   *    Parameter:
+   *
+   *    context - String
+   *    The Taxonomy Context to use: "categories" or "tags" (default)
+   *    Context sensitive
+   *
+   *    filter -  String (mandatory)
+   *    One or more Taxonomy Terms (Comma separated) for filtering 
+   *    Context sensitive
+   *    
+   *    title - String (optional) 
+   *    Show a Title above the List
+   *    
+   *    description - Boolean (optional)
+   *    Show Page Description below each List Item
+   * 
+*/}}
+ 
+{{ $_hugo_config := `{ "version": 1 }` }}
+ 
+{{ $taxonomyContext := .Get "context" | default "tags" }}
+{{ $taxonomyFilter  := .Get "filter" }}
+{{ $withTitle       := .Get "title" }}
+{{ $withDescription := .Get "description" | default false }}
+ 
+ 
+{{ $scratchAllResults := newScratch }}
+ 
+{{/* ## Render only if Paramater filter provided ## */}} 
+{{ if $taxonomyFilter }} 
+ 
+    {{ range $taxonomyName, $taxonomies := .Site.Taxonomies }}
+ 
+        {{/* ## Use provided Taxonomy Context (categories or tags) ## */}}
+        {{ if eq $taxonomyName $taxonomyContext }}
+ 
+            {{ range $key, $value := $taxonomies }}
+
+                {{/* ## Use provided Terms for filtering ## */}}
+                {{ if in $taxonomyFilter $key }}
+ 
+                    {{/* ## Get Results - If multiple Terms provided possibly with Duplicates  ## */}}
+                    {{ range $value.Pages }}
+ 
+                        {{/* ## Define outside see: https://gohugo.io/templates/introduction/#variables ## */}}
+                        {{ $strTemp := "" }}
+                 
+                        {{ if $withDescription }}
+                            {{ $strTemp = printf "<li><a href=\"%s\" class=\"highlight\">%s</a><p>%s</p></li>" .RelPermalink .Title .Description }}
+                        {{ else }}
+                            {{ $strTemp = printf "<li><a href=\"%s\" class=\"highlight\">%s</a></li>" .RelPermalink .Title  }}
+                        {{ end }}
+ 
+                        {{ $scratchAllResults.Add "Links" (slice $strTemp) }}
+             
+                    {{ end }}
+                {{ end }}
+            {{ end }}            
+        {{ end }}
+    {{ end }}
+ 
+{{/* ## Caution: Render for Markdown - Do not indent here ## */}}    
+{{if $withTitle }}<h3>{{ $withTitle }}</h3>{{ end }}
+<ul class="children children-li">
+{{/* ## Only unique Items ## */}}
+{{ range uniq ($scratchAllResults.Get "Links") }}
+{{ . | safeHTML }}
+{{ end }}
+</ul>
+ 
+{{ end }}

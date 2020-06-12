@@ -228,6 +228,12 @@ Der *newsletteralias* teilt dem »Newsletterleser« mit, dass er einen bestimmte
 ausgeben soll. Existiert der gesuchte Eintrag nicht, gibt das Modul eine Fehlermeldung und den HTTP-Status-Code 
 »404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
+{{% notice info %}}
+Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
+oder andere Modul eine 404 Seite auslösen, da zum Beispiel der Alias eines Newsletters nicht in einem Kalender gefunden 
+wird, oder umgekehrt der Alias eines Events in einem Newsletterarchiv.
+{{% /notice %}}
+
 
 ### Modul-Konfiguration
 

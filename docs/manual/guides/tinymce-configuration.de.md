@@ -5,7 +5,9 @@ url: "anleitungen/tinymce-konfiguration"
 aliases:
     - /de/anleitungen/tinymce-konfiguration/
 weight: 40
-hidden: true
+tags:
+   - "Template"
+   - "Konfiguration"
 ---
 
 

@@ -23,6 +23,16 @@ You can also use [anonymous functions](http://php.net/functions.anonymous) for D
 The following is a reference of all available callbacks, using their service tag
 callback property name.
 
+{{% notice info %}}
+Generally these callbacks are exectued in the back end, e.g. when editing data records.
+However in some instances they might also be executed by front end modules, most
+prominently the member modules. In this case the parameters passed to the callback
+will be different, as there will be no `\Contao\DataContainer` instance for example,
+which only exists in the back end. The reference below will list these differences
+of the respective callbacks. Keep in mind that any extension might also execute
+any of these callbacks in the front end.
+{{% /notice %}}
+
 ***
 
 ## Global callbacks

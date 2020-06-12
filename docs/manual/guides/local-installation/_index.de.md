@@ -5,7 +5,8 @@ url: "anleitungen/lokale-installation"
 aliases:
     - /de/anleitungen/lokale-installation/
 weight: 900
-hidden: true
+tags: 
+   - "Installation"
 ---
 
 Du kannst dir Contao auch lokal installieren. Hierzu werden Webserver, Datenbank und PHP benötigt. Für die verschiedenen 

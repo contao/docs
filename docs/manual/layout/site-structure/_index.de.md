@@ -15,3 +15,5 @@ verstehst. Eine komprimierte Zusammenfassung dieser Informationen findest du im 
 folgenden Kapiteln werden dir die dort angerissenen Inhalte ausführlich erklärt.
 
 {{% children %}}
+
+{{% taxonomylist context="tags" filter="Seitenstruktur" title="Anleitungen" description=true %}}

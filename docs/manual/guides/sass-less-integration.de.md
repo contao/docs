@@ -5,7 +5,10 @@ url: "anleitungen/sass-less-integration"
 aliases:
     - /de/anleitungen/sass-less-integration/
 weight: 30
-hidden: true
+tags: 
+   - "Layout"
+   - "Theme"
+   - "Seitenlayout"   
 ---
 
 

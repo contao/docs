@@ -6,6 +6,8 @@ url: "anleitungen/lokale-installation/devilbox"
 aliases:
     - /de/anleitungen/lokale-installation/devilbox/
 weight: 10
+tags: 
+   - "Installation"
 ---
 
 Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für [Docker](https://www.docker.com/). 

@@ -17,3 +17,5 @@ Aus diesem Grund werden dir hier alle wichtigen Installationsvarianten vorgestel
 der lokalen Umgebung auf den Webserver gegeben, sowie das Aktualisieren einer bestehenden Installation erklärt.
 
 {{% children %}}
+
+{{% taxonomylist context="tags" filter="Installation" title="Anleitungen" description=true %}}
