@@ -6,6 +6,8 @@ aliases:
     - /de/anleitungen/testversionen-installieren/
 weight: 5
 hidden: true
+tags: 
+   - "Installation"
 ---
 
 
