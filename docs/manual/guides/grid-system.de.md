@@ -6,9 +6,7 @@ aliases:
     - /de/anleitungen/grid/
 weight: 54
 tags: 
-   - "Layout"
    - "Theme"
-   - "Seitenlayout"   
 ---
 
 Ein beliebtes Stilmittel ist die inhaltliche Aufteilung in Spalten. Hierbei hat sich der Einsatz von »Grid-Systemen«
