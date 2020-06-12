@@ -5,7 +5,6 @@ url: "anleitungen/grid"
 aliases:
     - /de/anleitungen/grid/
 weight: 54
-hidden: true
 tags: 
    - "Layout"
    - "Theme"
