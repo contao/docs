@@ -2,7 +2,6 @@
 title: "Installing test versions"
 description: "Guide on how to install development versions and release candidates of Contao."
 weight: 5
-hidden: true
 ---
 
 
