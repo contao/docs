@@ -6,9 +6,7 @@ aliases:
     - /de/anleitungen/sass-less-integration/
 weight: 30
 tags: 
-   - "Layout"
    - "Theme"
-   - "Seitenlayout"   
 ---
 
 
