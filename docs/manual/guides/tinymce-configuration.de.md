@@ -7,7 +7,6 @@ aliases:
 weight: 40
 tags:
    - "Template"
-   - "Konfiguration"
 ---
 
 
