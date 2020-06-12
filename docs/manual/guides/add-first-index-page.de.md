@@ -7,7 +7,6 @@ aliases:
 weight: 10
 tags: 
    - "Theme"
-   - "Seitenlayout"
    - "Seitenstruktur"
 ---
 
