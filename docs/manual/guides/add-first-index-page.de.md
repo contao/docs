@@ -5,7 +5,6 @@ url: "anleitungen/die-erste-startseite"
 aliases:
     - /de/anleitungen/die-erste-startseite/
 weight: 10
-hidden: true
 tags: 
    - "Theme"
    - "Seitenlayout"
