@@ -63,12 +63,18 @@ Zur Nutzung eines [Insert-Tag](/de/artikelverwaltung/insert-tags/) `{{date}}` in
 {{% /expand %}}
 
 
-## Konfiguration
+## Konfiguration und Einstellung
 
 {{% expand "Es wird keine E-Mail über mein Formular versendet, was muss ich machen?" %}}
 Überprpüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#smtp-versand) deines Hosters oder 
 füge diese hinzu. Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die 
 Konsole einmalig den Anwendungs-Cache leeren.
+{{% /expand %}}
+
+{{% expand "Kann ich eine andere E-Mail-Adresse als Absender für Formulare benutzen?" %}}
+Die im Bereich »Einstellungen > E-Mail-Adresse des Systemadministrators« gesetzte E-Mail-Adresse wird u. a. auch als
+Absender für Formulare herangezogen. Du kannst im Bereich »Seitenstruktur« für den Seitentyp »Startpunkt einer Webseite«
+eine zusätzliche E-Mail-Adresse eintragen. Anschließend wird diese dann als Absender genutzt.
 {{% /expand %}}
 
 {{% expand "Wie kann ich das Sprachenkürzel der URL hinzufügen?" %}}
