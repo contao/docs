@@ -5,7 +5,6 @@ url: "anleitungen/testversionen-installieren"
 aliases:
     - /de/anleitungen/testversionen-installieren/
 weight: 5
-hidden: true
 tags: 
    - "Installation"
 ---
