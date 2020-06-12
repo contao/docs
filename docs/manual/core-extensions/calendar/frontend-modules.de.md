@@ -119,6 +119,12 @@ Das Schlüsselwort des Eventlesers lautet *event* und teilt dem Modul mit, dass
 ausgeben soll. Existiert der gesuchte Eintrag nicht, gibt der Eventleser eine Fehlermeldung und den HTTP-Status-Code 
 »404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
+{{% notice info %}}
+Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
+oder andere Modul eine 404 Seite auslösen, da zum Beispiel der Alias einer Nachricht nicht in einem Kalender gefunden 
+wird, oder umgekehrt der Alias eines Events in einem Nachrichtenarchiv.
+{{% /notice %}}
+
 
 ### Modul-Konfiguration
 
@@ -207,8 +213,15 @@ auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal 
 
 **Sortierreihenfolge:** Hier kannst du die Sortierreihenfolge der Events ändern.
 
-**Eventleser:** Hier kannst du festlegen ob automatisch zum Eventleser gewechselt werden soll, wenn ein Event 
-ausgewählt wurde.
+**Eventleser:** Hier kannst du festlegen ob automatisch das ausgewählte Eventleser-Modul anstatt dem Eventlisten-Modul angezeigt
+werden soll, wenn ein Event ausgewählt wurde. Dadurch ist es möglich die Eventliste und den Eventleser auf der selben Seite
+mit nur einem Modul unterzubringen, anstatt eine eigene Seite für den Eventleser zu haben.
+
+{{% notice info %}}
+**Vorsicht:** in den meisten Fällen sollte diese Funktionalität nicht für Eventlisten benutzt werden, die im Seitenlayout
+platziert werden. Andernfalls hätte man dann auf jeder Seite des Seitenlayouts automatisch auch einen Eventleser an der 
+jeweiligen Stelle im Layout. Dies würde die Funktionalität anderer »Lesermodule« auf der selben Seite verhindern.
+{{% /notice %}}
 
 **Anzahl an Events:** Wenn du hier einen Wert größer 0 eingibst, wird die Anzahl der Events der Eventliste automatisch 
 auf diesen Wert limitiert.
