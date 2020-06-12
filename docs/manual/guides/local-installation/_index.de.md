@@ -5,7 +5,6 @@ url: "anleitungen/lokale-installation"
 aliases:
     - /de/anleitungen/lokale-installation/
 weight: 900
-hidden: true
 tags: 
    - "Installation"
 ---
