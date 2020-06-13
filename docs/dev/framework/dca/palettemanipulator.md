@@ -121,6 +121,7 @@ PaletteManipulator::create()
 If you do not provide a parent (and position), the legend will simply be appended at the end.
 
 
+
 ## Removing fields
 {{< version "4.7" >}}
 
@@ -150,6 +151,9 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 PaletteManipulator::create()
     // adding the field as usual
     ->addField('custom_field', 'singleSRC')
+
+    // remove a field from the subpalette
+    ->removeField('floating')
 
     // applying the new configuration to the "addImage" subpalette
     ->applyToSubpalette('addImage', 'tl_content')
