@@ -14,7 +14,7 @@ tags:
 
 Die Nutzung von Dateien im [SVG-Format](https://developer.mozilla.org/en-US/docs/Web/SVG) bietet zahlreiche Vorteile. 
 Als reines Vektorformat werden diese, im Gegensatz zu anderen Formaten, verlustfrei skaliert. Häufig werden SVG-Dateien 
-daher zur Darstellung des Logo's oder von Symbolen eingesetzt.
+daher zur Darstellung eines Logo's oder von Symbolen eingesetzt.
 
 Du möchtest deine SVG-Datei in Contao einsetzen?<br>
 Für unser Beispiel verwenden wir das Contao-Logo im SVG-Format (`contao.svg`):
@@ -115,7 +115,7 @@ CSS-KLasse »ce_text«. Wenn du gezielt das SVG-Symbol ändern möchtest:
 ![SVG Contao Brand Color Orange 100px](/de/guides/images/de/svg/contao-orange.svg?width=100px)
 
 
-## Die Macht des Templates
+## Das »{{file::*}}« Insert-Tag mit Argument
 
 Mit CSS kannst du deine »inline« verwendeten SVG-Dateien farblich gestalten. Du möchtest ohne weitere CSS Anpassungen 
 gezielt eine SVG-Datei über das [Inhaltselement](/de/artikelverwaltung/inhaltselemente/) 
