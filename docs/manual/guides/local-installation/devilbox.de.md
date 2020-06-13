@@ -28,7 +28,7 @@ die Datei anschließend um in `.env`. In der neuen Datei kannst du jetzt deine K
 * [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)
 * [MYSQL_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#mysql-server)
 
-Die einzelnen Schritte (gerade auch für die Einträge `NEW_UID` und `NEW_GID`) sind in der [Devilbox Dokuemtation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html#set-uid-and-gid) gut beschrieben. Für Contao selbst sollten die weiteren Einträge etwa so gesetzt werden:
+Die einzelnen Schritte (gerade auch für die Einträge `NEW_UID` und `NEW_GID`) sind in der [Devilbox Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html#set-uid-and-gid) gut beschrieben. Für Contao selbst sollten die weiteren Einträge etwa so gesetzt werden:
 
 - `HTTPD_DOCROOT_DIR=web`
 - `HTTPD_SERVER=apache-2.4`
@@ -106,7 +106,7 @@ in der Navigation auf die Seite `Virtual Hosts`. Hier solltest du nun eine Liste
 und auch gleich aufrufen können. Du kannst jetzt die Contao-Installation über den Contao Manager einleiten. In unserem 
 Beispiel also über: `contao4.loc/contao-manager.phar.php`. 
 
-Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../../installation/contao-installieren/) beschrieben.
+Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../../../installation/contao-installieren/) beschrieben.
 
 
 ## Installation über die Kommandozeile
