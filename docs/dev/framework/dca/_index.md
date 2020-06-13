@@ -63,8 +63,8 @@ For a `list.label.group` callback for example your callback might look like
 this:
 
 ```php
-// src/EventListener/Dca/ContentListener.php
-namespace App\EventListener\Dca;
+// src/EventListener/DataContainer/ContentListener.php
+namespace App\EventListener\DataContainer;
 
 use Contao\DataContainer;
 
