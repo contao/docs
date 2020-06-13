@@ -91,6 +91,10 @@ Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data\w
 musst du hier ein separates Verzeichnis anlegen. Der Verzeichnisname entspricht dann dem späteren vhost Namen. Aus dem 
 Verzeichnisnamen `contao4` resultiert dann `contao4.loc`.
 
+Damit der vhost Name aufgelöst werden kann, musst du noch in `/etc/hosts` den Eintrag
+**`127.0.0.1 localhost`** in **`127.0.0.1 contao4.loc`** abändern. 
+
+
 Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichnis und erstelle einen neuen 
 Unterordner `web`. Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
 
