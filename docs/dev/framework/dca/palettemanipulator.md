@@ -121,7 +121,6 @@ PaletteManipulator::create()
 If you do not provide a parent (and position), the legend will simply be appended at the end.
 
 
-
 ## Removing fields
 {{< version "4.7" >}}
 
