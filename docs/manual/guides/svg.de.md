@@ -14,7 +14,7 @@ tags:
 
 Die Nutzung von Dateien im [SVG-Format](https://developer.mozilla.org/en-US/docs/Web/SVG) bietet zahlreiche Vorteile. 
 Als reines Vektorformat werden diese, im Gegensatz zu anderen Formaten, verlustfrei skaliert. Häufig werden SVG-Dateien 
-daher zur Darstellung eines Logo's oder von Symbolen eingesetzt.
+daher zur Darstellung eines Logos oder von Symbolen eingesetzt.
 
 Du möchtest deine SVG-Datei in Contao einsetzen?<br>
 Für unser Beispiel verwenden wir das Contao-Logo im SVG-Format (`contao.svg`):
@@ -62,7 +62,7 @@ SVG-Code in die Template-Datei.
 
 Anschließend kannst du die Datei in einem [Inhaltselement](/de/artikelverwaltung/inhaltselemente/) über das 
 Insert-Tag `{{file::/mysvgfolder/mysvgicon.html5}}` einbinden und mit CSS-Angaben kontrollieren. Die Ausgabe 
-bei Nutzung innerhalb des Inhaltslement vom Typ »Text« (verkürzt):
+bei Nutzung innerhalb des Inhaltslements vom Typ »Text« (verkürzt):
 
 ```html
 <div class="ce_text first block">
@@ -82,11 +82,11 @@ unterhalb von »Templates« legen. Die relativen Pfadangaben definierst du im In
 
 Du könntest unser Beispiel mit der CSS-Angabe »svg { fill: #ff0000; }« einfärben. Allerdings möchten wir lieber
 die CSS-Eigenschaft `color` verwenden. Hierzu ergänzen wir den SVG-Code im Template mit der Eigenschaft `fill` 
-und dem Wert `currentcolor`:
+und dem Wert `currentColor`:
 
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="currentcolor" d="M45.4 305c14.4 67.1 26.4 129 68.2 175H34c-18.7 0-34-15.2-34-34V66c0-18.7 15.2-34 34-34h57.7C77.9 44.6 65.6 59.2 54.8 75.6c-45.4 70-27 146.8-9.4 229.4zM478 32h-90.2c21.4 21.4 39.2 49.5 52.7 84.1l-137.1 29.3c-14.9-29-37.8-53.3-82.6-43.9-24.6 5.3-41 19.3-48.3 34.6-8.8 18.7-13.2 39.8 8.2 140.3 21.1 100.2 33.7 117.7 49.5 131.2 12.9 11.1 33.4 17 58.3 11.7 44.5-9.4 55.7-40.7 57.4-73.2l137.4-29.6c3.2 71.5-18.7 125.2-57.4 163.6H478c18.7 0 34-15.2 34-34V66c0-18.8-15.2-34-34-34z"/>
+<path fill="currentColor" d="M45.4 305c14.4 67.1 26.4 129 68.2 175H34c-18.7 0-34-15.2-34-34V66c0-18.7 15.2-34 34-34h57.7C77.9 44.6 65.6 59.2 54.8 75.6c-45.4 70-27 146.8-9.4 229.4zM478 32h-90.2c21.4 21.4 39.2 49.5 52.7 84.1l-137.1 29.3c-14.9-29-37.8-53.3-82.6-43.9-24.6 5.3-41 19.3-48.3 34.6-8.8 18.7-13.2 39.8 8.2 140.3 21.1 100.2 33.7 117.7 49.5 131.2 12.9 11.1 33.4 17 58.3 11.7 44.5-9.4 55.7-40.7 57.4-73.2l137.4-29.6c3.2 71.5-18.7 125.2-57.4 163.6H478c18.7 0 34-15.2 34-34V66c0-18.8-15.2-34-34-34z"/>
 </svg>
 ```
 
@@ -98,8 +98,8 @@ In deinen CSS-Angaben könnest du jetzt folgendes verwenden:
 }
 ```
 
-Das Schlüsselwort [currentcolor](https://developer.mozilla.org/de/docs/Web/CSS/Farben#currentColor_Schl%C3%BCsselwort) 
-folgt dabei der CSS-Kaskade. Daher übernimmt unser SVG-Symbol den Farbwert des übergeodneten »div« Blocks mit der
+Das Schlüsselwort [currentColor](https://developer.mozilla.org/de/docs/Web/CSS/Farben#currentColor_Schl%C3%BCsselwort) 
+folgt dabei der CSS-Kaskade. Daher übernimmt unser SVG-Symbol den Farbwert des übergeordneten »div« Blocks mit der
 CSS-KLasse »ce_text«. Wenn du gezielt das SVG-Symbol ändern möchtest:
 
 ```css
@@ -117,7 +117,7 @@ CSS-KLasse »ce_text«. Wenn du gezielt das SVG-Symbol ändern möchtest:
 
 ## Das »{{file::*}}« Insert-Tag mit Argument
 
-Mit CSS kannst du deine »inline« verwendeten SVG-Dateien farblich gestalten. Du möchtest ohne weitere CSS Anpassungen 
+Mit CSS kannst du deine »inline« verwendeten SVG-Dateien farblich gestalten. Möchtest du ohne weitere CSS Anpassungen 
 gezielt eine SVG-Datei über das [Inhaltselement](/de/artikelverwaltung/inhaltselemente/) 
 ändern? 
 
@@ -127,7 +127,7 @@ Argumenten. Du kannst hierüber z. B. den Farbwert definieren:
 `{{file::/mysvgfolder/mysvgicon.html5?color=#ff0000}}`
 
 In der Template Datei ersetzen wir den Wert der Eigenschaft `fill` mit einer PHP-Abfrage. Wird ein übergebenes Argument 
-gefunden wird dieses eingetragen, ansonsten bleibt es beim Schlüsselwort `currentcolor`. Deine CSS-Angaben werden
+gefunden wird dieses eingetragen, ansonsten bleibt es beim Schlüsselwort `currentColor`. Deine CSS-Angaben werden
 hiermit im entsprechenden Inhaltselement gezielt überschrieben.
 
 ```php
