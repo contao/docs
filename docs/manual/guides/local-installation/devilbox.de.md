@@ -28,7 +28,7 @@ die Datei anschließend um in `.env`. In der neuen Datei kannst du jetzt deine K
 * [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)
 * [MYSQL_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#mysql-server)
 
-Die einzelnen Schritte (gerade auch für die Einträge `NEW_UID` und `NEW_GID`) sind in der [Devilbox Dokuemtation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html#set-uid-and-gid) gut beschrieben. Für Contao selbst sollten die weiteren Einträge etwa so gesetzt werden:
+Die einzelnen Schritte (gerade auch für die Einträge `NEW_UID` und `NEW_GID`) sind in der [Devilbox Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html#set-uid-and-gid) gut beschrieben. Für Contao selbst sollten die weiteren Einträge etwa so gesetzt werden:
 
 - `HTTPD_DOCROOT_DIR=web`
 - `HTTPD_SERVER=apache-2.4`
@@ -91,6 +91,9 @@ Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data\w
 musst du hier ein separates Verzeichnis anlegen. Der Verzeichnisname entspricht dann dem späteren vhost Namen. Aus dem 
 Verzeichnisnamen `contao4` resultiert dann `contao4.loc`.
 
+Damit der Virtual Hosts Name aufgelöst werden kann, musst du noch in `/etc/hosts` den Eintrag
+**`127.0.0.1 localhost`** in **`127.0.0.1 contao4.loc`** abändern. 
+
 Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichnis und erstelle einen neuen 
 Unterordner `web`. Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
 
@@ -106,7 +109,7 @@ in der Navigation auf die Seite `Virtual Hosts`. Hier solltest du nun eine Liste
 und auch gleich aufrufen können. Du kannst jetzt die Contao-Installation über den Contao Manager einleiten. In unserem 
 Beispiel also über: `contao4.loc/contao-manager.phar.php`. 
 
-Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../../installation/contao-installieren/) beschrieben.
+Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../../../installation/contao-installieren/) beschrieben.
 
 
 ## Installation über die Kommandozeile
