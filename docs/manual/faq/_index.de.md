@@ -4,7 +4,7 @@ description: "Antworten zu den häufigsten Fragen."
 url: "faq"
 aliases:
     - /de/faq/
-weight: 110
+weight: 90
 ---
 
 Hier findest du eine Sammlung der häufigsten Fragen mit den passenden Antworten. 
