@@ -3,8 +3,9 @@ title: "getPageIdFromUrl"
 description: "getPageIdFromUrl hook"
 tags: ["hook-routing"]
 aliases:
+    - /reference/hooks/getPageIdFormUrl/
+    - /reference/hooks/getpageIdformurl
     - /reference/hooks/getPageIdFromUrl/
-    - /reference/hooks/getpageIdfromurl/
 ---
 
 
