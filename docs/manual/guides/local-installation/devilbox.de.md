@@ -142,7 +142,7 @@ Im Anschluss kannst du den Container über `exit` verlassen und das Contao-Insta
 
 ## Angaben im Contao-Installtool
 
-Die Angaben im [Contao-Installtool](../../installation/contao-installtool/) sind grundsätzlich identisch. Du musst lediglich 
+Die Angaben im [Contao-Installtool](/de/installation/contao-installtool/) sind grundsätzlich identisch. Du musst lediglich 
 bei `Datenbankverbindung` auf folgende Einträge achten:
 
 | Eintrag             | Wert                  |
