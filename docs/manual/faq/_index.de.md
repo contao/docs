@@ -62,6 +62,10 @@ Zur Nutzung eines [Insert-Tag](/de/artikelverwaltung/insert-tags/) `{{date}}` in
 über `$this->replaceInsertTags('{{date}}')` einsetzen.
 {{% /expand %}}
 
+{{% expand "Wie kann ich den TinyMCE-Editor konfigurieren?" %}}
+Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anleitungen/tinymce-konfiguration/).
+{{% /expand %}}
+
 
 ## Konfiguration und Einstellung
 
@@ -89,6 +93,9 @@ Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cac
 einmalig den Anwendungs-Cache leeren.
 {{% /expand %}}
 
+{{% expand "Warum werden meine HTML-Angaben im TinyMCE-Editor nicht übernommen?" %}}
+Antworten findest du im Bereich [TinyMCE-Editor Konfiguration](/de/anleitungen/tinymce-konfiguration/).
+{{% /expand %}}
 
 ## Dateiverwaltung
 
