@@ -1,10 +1,11 @@
 ---
-title: "getPageIdFormUrl"
-description: "getPageIdFormUrl hook"
+title: "getPageIdFromUrl"
+description: "getPageIdFromUrl hook"
 tags: ["hook-routing"]
 aliases:
     - /reference/hooks/getPageIdFormUrl/
-    - /reference/hooks/getpageIdformurl/
+    - /reference/hooks/getpageIdformurl
+    - /reference/hooks/getPageIdFromUrl/
 ---
 
 
