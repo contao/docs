@@ -76,6 +76,32 @@ Falls etwas nach deinen Änderungen nicht funktionieren sollte entferne diese zu
 Template löschen. Es wird dann wieder die Contao-Standardkonfiguration des Editors benutzt.
 
 
+### Die TinyMCE »extended_valid_elements« Definition
+
+Im Bereich »`Einstellungen > Sicherheitseinstellungen`« kannst du [Erlaubte HTML-Tags](/de/system/einstellungen/#sicherheitseinstellungen) definieren. Es kann vorkommen, dass diese Angaben allein nicht ausreichen. 
+
+Falls du beispielsweise mit verfügbaren »Font-Awesome« das [Contao-Logo](https://fontawesome.com/v4.7.0/icon/contao) in einem 
+[Inhaltselement](/de/artikelverwaltung/inhaltselemente/) vom Typ »Aufzählung« wie folgt einsetzt, werden deine 
+Angaben nach dem »Speichern« nicht übernommen.
+
+```html
+<i class="fa fa-contao" aria-hidden="true">Contao Logo</i>
+```
+
+Auch wenn das HTML-Element `<i>` bereits im Bereich [Erlaubte HTML-Tags](/de/system/einstellungen/#sicherheitseinstellungen) 
+berücksichtigt wird, musst du dies zusätzlich für den TinyMCE freigeben. Ergänze hierzu im Template die Zeile 
+beginnend mit »extended_valid_elements«:
+
+```js
+// be_tinyMCE.html5
+
+extended_valid_elements: 'q[cite|class|title],article,section,hgroup,figure,figcaption,i[class]/em',
+```
+
+Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
+den Anwendungs-Cache leeren, deine HTML-Angabe im Inhaltselement erneut eintragen und »Speichern«.
+
+
 ### Funktion »Als Text einfügen« standardmäßig aktivieren
 
 Im Editor kann du über das Menü `Bearbeiten` oder über eine Tastenkombination Text aus der Zwischenablage einfügen. 
