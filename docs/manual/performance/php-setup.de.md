@@ -76,8 +76,20 @@ Dafür gibt es verschiedene Lösungen wie bspw. das [cachetool](https://github.c
 
 ## Realpath Cache
 
-Wenn ein relativer Pfad in einen absoluten Pfad konvertiert wird, speichert sich PHP das Resultat, um die Performance
-zu verbessern. Du kannst dabei die TTL und die maximale Anzahl Dateien konfigurieren. Hier eine Empfehlung:
+Der Realpath Cache ist ein oft unterschätzter Cache in PHP.
+
+Wann immer der Zugriff auf eine Datei stattfindet, geschieht so einiges unter der Haube.
+Denn gerade bei Unix [ist alles eine Datei](https://de.wikipedia.org/wiki/Everything_is_a_file).
+Der Kernel muss also erstmal grundsätzlich prüfen, ob es sich um eine echte Datei, ein Verzeichnis oder ein Symlink etc. handelt. Diese sog. `stat()`-Aufrufe sind relativ kostspielig.
+
+PHP cached das Resultat dieser Aufrufe, so dass nachfolgende Anfragen innerhalb des selben Prozesses die Informationen ohne erneuten Dateisystemzugriff zur Verfügung haben. Rufen wir bspw. ein `is_dir('/pfad/zum/verzeichnis')` und später ein `is_file('/pfad/zum/verzeichnis')` auf, so wäre der zweite Aufruf quasi kostenlos, weil PHP weiss ja bereits aus dem ersten Aufruf, ob es sich dabei um eine Datei oder ein Verzeichnis handelt.
+
+PHP ist sogar so schlau und speichert sich zusätzlich die Informationen für die übergeordneten Pfadteile im Cache. In unserem Beispiel wären dann also auch `/pfad` und `/pfad/zum` im Cache abgelegt.
+
+Dateisystemzugriffe sind in Contao sehr häufig. Man denke schon nur an die Dateiverwaltung.
+Eine saubere Konfiguration des Realpath Caches kann da einen deutlich spürbaren Unterschied machen!
+
+Du kannst in deiner `php.ini` die TTL und die maximale Anzahl Dateien konfigurieren. Hier eine Empfehlung:
 
 ```ini
 ; php.ini
@@ -86,5 +98,5 @@ realpath_cache_ttl = 600
 ```
 
 {{% notice warning %}}
-Wenn in PHP die `open_basedir` Konfiguration aktiviert ist, deaktiviert PHP den Realpath Cache.
+Wenn in PHP die `open_basedir` Konfiguration aktiviert ist, deaktiviert PHP den Realpath Cache zur Laufzeit, unabhängig davon, was bei `realpath_cache_size` konfiguriert wurde.
 {{% /notice %}}
