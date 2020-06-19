@@ -69,11 +69,6 @@ Ihr Administrator
 ```
 
 
-### Benachrichtigung
-
-Wenn du ein Modul vom Typ `Abonnieren (Notification Center)` verwendest, wird dir statt der E-Mail-Einstellungen die Möglichkeit geboten, eine Benachrichtigung einbinden. Diese sollte dann die Aufgabe der Abonnementsbestätigung (double-opt-in) übernehmen. Damit hast du weitere Möglichkeiten, z.B. solche, die ein übliches Email-Programm bietet. Z.B. kannst du Empfänger hinzufügen. 
-
-
 ### Template-Einstellungen
 
 **Newslettertemplate:** Hier wählst du das Template für das Bestellformular aus.
@@ -116,38 +111,6 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 Hier macht es ggf. Sinn, das Template benutzerfreundlich anzupassen. Zum Beispiel kann die Emailadresse automatisch eingesetzt werden, wenn der Benutzer an der Homepage angemeldet ist. Oder du zeigst nur die Verteiler an, die der Benutzer nicht bereits abonniert hat. Auch können Verteiler nur für bestimmte Mitgliedsgruppen angeboten werden.
 
 
-
-## Aktivieren
-Das Frontend-Modul »Aktivieren« ist vom Typ `Aktivieren (Notification Center)` und wird nur dann benötigt, wenn das Abonnieren Modul vom Typ `Abonnieren (Notification Center)` ist.
-
-Es sollte auf der gleichen Seite wie das Abonnieren Modul eingebunden werden. Dieses Modul erzeugt keinen sichtbaren Inhalt. Es wird "dunkel" durchlaufen, nachdem der Benutzer den Aktivierungslink geklickt hat. Es dient zur Aktivierung des Newsletter-Abonnements. (Bei Verwendung des Standard-Modul für das Abonnieren ist die Aktivierung bereits inbegriffen.) 
- 
-
-### Modul-Konfiguration
-
-**Verteiler:** Hier wählst du die Verteiler aus, für die sich deine Besucher über das Frontend-Modul zum Abonnieren von 
-Verteilern registrieren können. Diese Option wurde bereits beim Abonnieren Modul festgelegt und macht an dieser Stelle keinen Sinn.
-
-**Verteilermenü ausblenden:** Hier kannst du das Menü zur Verteilerauswahl ausblenden. Der Besucher abonniert in diesem 
-Fall die von dir festgelegten Verteiler. Diese Option wurde bereits beim Abonnieren Modul festgelegt und macht an dieser Stelle keinen Sinn.
-
-
-### Weiterleitung
-
-**Weiterleitungsseite:** Hier legst du fest, zu welcher Seite Besucher nach der Aktivierung weitergeleitet werden.
-
-
-### Benachrichtigung
-
-Hier kannst du eine Benachrichtigung einbinden. Diese kann z.B. die Aufgabe der Abonnenmentsbestätigung übernehmen (Abonnements erfolgreich abonniert).  
-
-
-### Template-Einstellungen
-
-**Modul-Template:** Hier wird dir angezeigt, welches Template für das Aktivierungsmodul verwendet wird.
-
-
-
 ## Kündigen {#kuendigen}
 
 Das Frontend-Modul »Kündigen« fügt der Webseite ein Formular hinzu, mit dem sich deine Besucher aus bestimmten 
@@ -185,10 +148,6 @@ Sie haben folgende Abonnements auf ##domain## gekündigt:
 
 Ihr Administrator
 ```
-
-
-#### Benachrichtigung
-Wenn du ein Modul vom Typ `Kündigen (Notification Center)` verwendest, wird dir statt der E-Mail-Einstellungen die Möglichkeit geboten, eine Benachrichtigung einbinden. Diese kann die Aufgabe der Kündigungsbestätigung übernehmen. Damit hast du weitere Möglichkeiten, z.B. solche, die ein übliches Email-Programm bietet. Z.B. kannst du Empfänger hinzufügen. 
 
 
 ### Template-Einstellungen
