@@ -15,6 +15,7 @@ url: erweiterungen/notification-center
 Um diese Erweiterung im Rahmen der Newsletter Verwaltung zu verwenden, müssen die Module `Newsletter abonnieren` und `Newsletter kündigen` durch die korresponierenden Module `Newsletter abonnieren (Notification Center)` und `Newsletter kündigen (Notification Center)` ausgetauscht werden.
 
 Ausserdem muss das Modul `Newsletter aktivieren (Notification Center)` vorzugsweise auf derselben Seite wie schon das Modul `Newsletter abonnieren (Notification Center)` eingebunden werden. Dieses Modul erzeugt keinen sichtbaren Inhalt. Während das Modul `Newsletter abonnieren (Notification Center)` das angeforderte Abonnement aufnimmt und das double-opt-in einleitet, reagiert das Modul `Newsletter aktivieren (Notification Center)` auf den vom Benutzer versendeten Aktivierungslink und aktiviert das  Newsletter-Abonnement. 
+Damit das funktionieren kann, muss im Modul `Newsletter abonnieren (Notification Center)` die Weiterleitungsseite auf die Seite verweisen, auf welcher sich das Aktivieren-Modul befindet. 
 
 Wenn du ein Modul vom Typ `Abonnieren (Notification Center)` verwendest, wird dir statt der E-Mail-Einstellungen die Möglichkeit geboten, eine Benachrichtigung einzubinden. Diese sollte dann u.A. die Aufgabe der "Abonnementsbestätigung" (double-opt-in) übernehmen. 
 
