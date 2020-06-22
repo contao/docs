@@ -32,6 +32,6 @@ Es gelten die gleichen Optionen wie bei den Contao Modulen mit wenigen Unterschi
 
 Die E-Mail-Einstellungen entfallen, statt dessen kannst du eine zuvor angelegte Benachrichtigung auswählen.
 
-Das Feld "Eigener Text" ist nicht mehr verfügbar. 
+Das Feld »Eigener Text« ist nicht mehr verfügbar. 
 
 Beim Modul `Newsletter aktivieren (Notification Center)` benötigst du die Felder `Verteiler`und `Verteilermenü ausblenden` nicht, da durch die Dunkelverarbeitung keine Benutzereingabe während der Laufzeit möglich und auch nicht notwendig ist.
