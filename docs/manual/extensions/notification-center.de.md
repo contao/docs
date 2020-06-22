@@ -23,7 +23,7 @@ Entsprechend kannst du im Modul `Newsletter kündigen (Notification Center)` ein
 
 Last not least magst du vielleicht den Benutzer über die erfolgreiche Aktivierung der angeforderten Newsletter mittels einer Benachrichtigung informieren, die du im Modul `Newsletter aktivieren (Notification Center)` einstellst.
 
-Da dir das Notification Center die Möglichkeit bietet flexible Benachrichtigungen einzustellen, kannst du Benachrichtigungen in BCC z.B. an ein Email-Archiv adressieren, z.B. zu Nachweiszwecken.    
+Da dir das Notification Center die Möglichkeit bietet flexible Benachrichtigungen einzustellen, kannst du Benachrichtigungen in `BCC` z. B. zu Nachweiszwecken an ein E-Mail-Archiv adressieren.    
 
 
 ### Modul-Konfiguration
@@ -35,4 +35,3 @@ Die E-Mail-Einstellungen entfallen, statt dessen kannst du eine zuvor angelegte 
 Das Feld "Eigener Text" ist nicht mehr verfügbar. 
 
 Beim Modul `Newsletter aktivieren (Notification Center)` benötigst du die Felder `Verteiler`und `Verteilermenü ausblenden` nicht, da durch die Dunkelverarbeitung keine Benutzereingabe während der Laufzeit möglich und auch nicht notwendig ist.
-
