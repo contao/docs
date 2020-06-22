@@ -4,7 +4,7 @@ description: "Der Leistungsumfang von Contao  kann durch das Installieren von Pa
 url: "erweiterungen"
 aliases:
     - /de/erweiterungen/
-weight: 15
+weight: 200
 ---
 
 Der Leistungsumfang von Contao  kann durch das Installieren von Paketen erweitert werden.
