@@ -7,7 +7,7 @@ url: erweiterungen/notification-center
 
 **[terminal42/contao-notification_center](https://github.com/terminal42/contao-notification_center)**
 
--von [terminal42](https://terminal42.ch)_
+_von [terminal42](https://terminal42.ch)_
 
 
 ## Integration in den Contao-Newsletter
@@ -35,6 +35,5 @@ Die E-Mail-Einstellungen entfallen, statt dessen kannst du eine zuvor angelegte 
 Das Feld "Eigener Text" ist nicht mehr verfügbar. 
 
 Beim Modul `Newsletter aktivieren (Notification Center)` benötigst du die Felder `Verteiler`und `Verteilermenü ausblenden` nicht, da durch die Dunkelverarbeitung keine Benutzereingabe während der Laufzeit möglich und auch nicht notwendig ist.
-
 
 
