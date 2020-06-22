@@ -10,13 +10,15 @@ tags:
    - "Installation"
 ---
 
-In diesem Tutorial wird die Einrichtung einer lokalen Entwicklungsumgebung exemplarisch am Beispiel von Laragon beschrieben.  
+In diesem Tutorial wird die Einrichtung einer lokalen Entwicklungsumgebung exemplarisch am Beispiel von [Laragon](https://laragon.org) beschrieben.  
+
 Mit **Laragon WAMP** wird ein lokaler Software-Stack bestehend aus folgenden Serverkomponenten installiert:
 
 + Apache Webserver
 + MySQL
 + PHP
 
+Das Installationspaket umfasst auch noch weitere nützliche Tools, auf die an dieser Stelle aber nicht näher eingegangen wird.  
 Weitere Informationen zu Laragon (Installation, Features usw.) findet man ebenfalls in der [offiziellen Dokumentation](https://laragon.org/docs/).
 
 
@@ -35,12 +37,12 @@ Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht 
 
 **ToDo: Berechtigung zum Erstellen symbolischer Links in den Gruppenrichtlinien konfigurieren**
 
-+ [Polsedit herunterladen](https://www.southsoftware.com/polsedit.html)
++ Polsedit herunterladen: [https://www.southsoftware.com/polsedit.html](https://www.southsoftware.com/polsedit.html)
 + ZIP-Archiv entpacken
 + Für Windows 10 64 Bit: `polseditx64.exe` (64 Bit Version) ausführen
 + Im rechten Fensterbereich nach der Richtlinie »_Create symbolic links_« `(SE_CREATE_SYMBOLIC_LINK_NAME)` suchen:
 
-![Screenshot](images/01_polsedit.png)
+![Screenshot](images/01_polsedit.png?height=250px)
 
 + Per Doppelklick auf den entsprechenden Eintrag das Eigenschaftsfenster der Richtlinie öffnen:
 
@@ -57,7 +59,7 @@ Die Installation von Laragon ist über den geführten Installationsprozess durch
 
 **ToDo: Laragon herunterladen und installieren**
 
-+ Das aktuellste Release im [Laragon GitHub Repository](https://github.com/leokhoa/laragon/releases/latest) 
++ Das aktuellste Release im Laragon GitHub Repository [https://github.com/leokhoa/laragon/releases/latest](https://github.com/leokhoa/laragon/releases/latest) herunterladen
 + Für Windows 10 64 Bit: `laragon-wamp.exe` (64 Bit Version) herunterladen
 + Installationsdatei `laragon-wamp.exe` ausführen. Unter Umständen erscheint an dieser Stelle eine Meldung des Windows Defender SmartScreen mit dem Hinweis, dass der Start einer unbekannten App verhindert wurde. Über den Link »_Weitere Informationen_« kann das Laragon Setup jedoch »_Trotzdem ausgeführt_« werden.
 + Im ersten Schritt des Setup-Prozesses kann – falls gewünscht – die Sprache auf »_Deutsch_« umgestellt werden.
@@ -119,7 +121,7 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 + Über »_Menü_« > »_PHP_« > »_PHP-Erweiterungen_« können bei Bedarf weitere PHP-Erweiterungen bequem aktiviert oder deaktiviert werden.
 + Über den Button »_Alle Dienste..._« den Web- und Datenbankserver starten:
 
-![Screenshot](images/11_laragon_server.png)
+![Screenshot](images/11_laragon_servers.png)
 
 + An dieser Stelle meldet sich ziemlich sicher die Windows Defender Firewall (oder ggf. auch eine andere System-Firewall) und fordert sowohl für den »_Apache HTTP Server_« als auch für den MySQL Server »_mysqld.exe_« dazu auf, den Zugriff auf das lokale Netzwerk zuzulassen. Diese beiden Zugriffe müssen für den weiteren Betrieb des Web- und Datenbankservers natürlich gewährt werden.
 + Wenn die Server erfolgreich auf die entsprechenden Ports zugreifen dürfen, sollte Laragon die beiden Dienste »_Apache_« und »_MySQL_« als »_gestartet_« anzeigen:
@@ -218,7 +220,7 @@ Laragon bringt zwar Composer bereits mit, es kann aber dennoch opportun sein, si
 
 **ToDo: Composer global installieren**
 
-+ [Composer Windows Installer herunterladen](https://getcomposer.org/Composer-Setup.exe)
++ Composer Windows Installer herunterladen: [https://getcomposer.org/Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
 + Installationsdatei `Composer-Setup.exe` ausführen und dem geführten Installationsprozess im Setup-Assistenten folgen:
 
 ![Screenshot](images/16_composer_install.png)
@@ -244,7 +246,7 @@ Wie bereits erwähnt, kann über das Laragon-Feature »_Neue Website erstellen_�
 
 + Im Eingabefeld den Projektnamen der Beispielwebsite `mycompany` eingeben (nach Möglichkeit sollte der Projektname keine Sonderzeichen enthalten, da dieser gleichzeitig auch als Datenbankname verwendet wird) und mit "OK" bestätigen:
 
-![Screenshot](images/19_laragon_websiteproject_02.png)
+![Screenshot](images/19_laragon_websiteproject_2.png)
 
 + Es öffnet sich ein Konsolenfenster: Im Hintergrund wird zunächst Contao 4.9 (inklusive aller erforderlichen Pakete) via Composer installiert und im Anschluss das Skript des Contao Managers heruntergeladen und im Unterordner `web/` als `contao-manager.phar.php` gespeichert.
 + Laragon erstellt darüber hinaus automatisch eine gleichnamige Datenbank »_mycompany_« sowie einen virtuellen Host `mycompany.local`
@@ -267,10 +269,10 @@ hinzu:
 + Am Ende des Installationsprozesses wird schließlich noch ein Administratorkonto für das Contao Backend angelegt.
 + Das Contao Frontend und Backend, das Contao Installtool und der Contao Manager sollten nun über folgende URLs aufrufbar sein:
 
-**Contao Frontend:** http://mycompany.local/
-**Contao Backend:** http://mycompany.local/contao (bzw. http://mycompany.local/contao/login)
-**Contao Installtool:** http://mycompany.local/contao/install
-**Contao Manager:** http://mycompany.local/contao-manager.phar.php
+**Contao Frontend:** http://mycompany.local/  
+**Contao Backend:** http://mycompany.local/contao (bzw. http://mycompany.local/contao/login)  
+**Contao Installtool:** http://mycompany.local/contao/install  
+**Contao Manager:** http://mycompany.local/contao-manager.phar.php  
 (der Systemcheck des Contao Managers sollte den Pfad zur PHP-Binary automatisch erkennen, wenn in der Serverkonfiguration eine manuelle Konfiguration über »_Andere …_«  ausgewählt wird)
 
 
@@ -288,7 +290,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 **ToDo: Die neueste Version von Laragon installieren**
 
   + Zunächst alle laufenden Dienste (Apache, MySQL) beenden und Laragon schließen.
-  + Die [aktuelle Version der Laragon Executable](https://github.com/leokhoa/laragon/r...er/laragon.exe) aus dem GitHub Master-Zweig herunterladen
+  + Die aktuelle Version der Laragon Executable [https://github.com/leokhoa/laragon/r...er/laragon.exe](https://github.com/leokhoa/laragon/raw/master/laragon.exe) aus dem GitHub Master-Zweig herunterladen
   + Die bestehende `laragon.exe` im Laragon Installationsverzeichnis durch die zuvor heruntergeladene Executable ersetzen.
   + Laragon starten.
 
