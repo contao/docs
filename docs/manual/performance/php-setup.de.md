@@ -98,7 +98,5 @@ realpath_cache_ttl = 600
 ```
 
 {{% notice warning %}}
-Wenn in PHP die `open_basedir` Konfiguration aktiviert ist, [deaktiviert PHP den Realpath Cache zur Laufzeit](https://github.com/php/php-src/blob/4b77a158ef2850582aeb4834c588aba49942776c/main/main.c#L1765), unabhängig davon, was bei `realpath_cache_size` konfiguriert wurde.
-
-Leider wird `open_basedir` auch heute noch von vielen Hostern als notwendige Sicherheitsmassnahme angesehen, obwohl [PHP selber offiziell dessen Einsatz zu Sicherheitszwecken ablehnt und entsprechende Massnahmen auf Betriebssystem-Ebene empfiehlt](https://www.php.net/security-note.php).
+Wenn in PHP die `open_basedir` Konfiguration aktiviert ist, [deaktiviert PHP den Realpath Cache zur Laufzeit](https://github.com/php/php-src/blob/4b77a158ef2850582aeb4834c588aba49942776c/main/main.c#L1765), unabhängig davon, was bei `realpath_cache_size` konfiguriert wurde. Leider wird `open_basedir` auch heute noch von vielen Hostern als notwendige Sicherheitsmassnahme angesehen, obwohl [PHP selber offiziell dessen Einsatz zu Sicherheitszwecken ablehnt und entsprechende Massnahmen auf Betriebssystem-Ebene empfiehlt](https://www.php.net/security-note.php).
 {{% /notice %}}
