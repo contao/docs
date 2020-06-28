@@ -21,7 +21,7 @@ Wenn du ein Modul vom Typ `Abonnieren (Notification Center)` verwendest, wird di
 
 Entsprechend kannst du im Modul `Newsletter kündigen (Notification Center)` eine Benachrichtigung einstellen, etwa um dem Benutzer die erfolgreiche Beendigung eines Abonnements zu bestätigen. 
 
-Last not least magst du vielleicht den Benutzer über die erfolgreiche Aktivierung der angeforderten Newsletter mittels einer Benachrichtigung informieren, die du im Modul `Newsletter aktivieren (Notification Center)` einstellst.
+Zu gu­ter Letzt magst du vielleicht den Benutzer über die erfolgreiche Aktivierung der angeforderten Newsletter mittels einer Benachrichtigung informieren, die du im Modul `Newsletter aktivieren (Notification Center)` einstellst.
 
 Da dir das Notification Center die Möglichkeit bietet flexible Benachrichtigungen einzustellen, kannst du Benachrichtigungen in `BCC` z. B. zu Nachweiszwecken an ein E-Mail-Archiv adressieren.    
 
