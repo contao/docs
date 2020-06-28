@@ -28,7 +28,7 @@ Da dir das Notification Center die Möglichkeit bietet flexible Benachrichtigung
 
 ### Modul-Konfiguration
 
-Es gelten die gleichen Optionen wie bei den Contao Modulen mit wenigen Unterschieden.
+Es gelten die gleichen Optionen wie bei den Contao-Modulen mit wenigen Unterschieden.
 
 Die E-Mail-Einstellungen entfallen, statt dessen kannst du eine zuvor angelegte Benachrichtigung auswählen.
 
