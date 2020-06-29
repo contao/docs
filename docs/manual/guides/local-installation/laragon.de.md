@@ -42,11 +42,11 @@ Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht 
 + Für Windows 10 64 Bit: `polseditx64.exe` (64 Bit Version) ausführen
 + Im rechten Fensterbereich nach der Richtlinie »_Create symbolic links_« `(SE_CREATE_SYMBOLIC_LINK_NAME)` suchen:
 
-![Screenshot](images/01_polsedit.png?width=800px)
+![Screenshot](/de/guides/images/laragon/01_polsedit.png?width=800px)
 
 + Per Doppelklick auf den entsprechenden Eintrag das Eigenschaftsfenster der Richtlinie öffnen:
 
-![Screenshot](images/02_polsedit_policy_properties.png?width=300px)
+![Screenshot](/de/guides/images/laragon/02_polsedit_policy_properties.png?width=300px)
 
 + Über den Button »_Add User or Group..._« den eigenen (aktuellen) Windows-Benutzer in der Liste der Benutzerkonten auswählen und mittels "OK" die Auswahl bestätigen. Der Windows-Benutzer sollte nun in den Richtlinieneigenschaften ebenfalls gelistet sein (zusätzlich zu den bereits vorhandenen Benutzerkonten).
 + Das Eigenschaftsfenster schließen und Polsedit beenden.
@@ -70,7 +70,7 @@ Die Installation von Laragon ist über den geführten Installationsprozess durch
 
 In weiterer Folge (bzw. zukünftig) kann Laragon über den entsprechenden neuen Eintrag im Windows Startmenü oder über das Laragon Verknüpfungssymbol am Windows Desktop aufgerufen werden. Nach dem Start der Applikation erscheint im Windows Infobereich (System Tray) ein Programmicon, das ebenfalls den Status der Dienste (gestartet oder beendet) anzeigt und über welches das Laragon Verwaltungspanel geöffnet werden kann:
 
-![Screenshot](images/03_laragon.png?width=500px)
+![Screenshot](/de/guides/images/laragon/03_laragon.png?width=500px)
 
 
 ## 4. Laragon konfigurieren
@@ -82,15 +82,15 @@ Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue
 + Laragon starten (sofern das nicht bereits der Fall ist)
 + Im Laragon Verwaltungspanel auf »_Menü_« und dann »_Einstellungen_« klicken (das Menü lässt sich übrigens auch mittels Rechtsklick auf eine freie Fläche im Verwaltungspanel öffnen):
 
-![Screenshot](images/04_laragon_menu.png?width=500px)
+![Screenshot](/de/guides/images/laragon/04_laragon_menu.png?width=500px)
 
 + Im Reiter »_Allgemein_« der Laragon Einstellungen die Option »_Alle Dienste automatisch starten_« aktivieren und für die Option »_Virtuelle Hosts automatisch erzeugen_« das Schema des »_Hostnamens_« folgendermaßen ändern: `{name}.local`
 
-![Screenshot](images/05_laragon_settings.png?width=500px)
+![Screenshot](/de/guides/images/laragon/05_laragon_settings.png?width=500px)
 
 + Im Reiter »_Dienste/Ports_« der Laragon Einstellungen sicherstellen, dass die beiden Dienste »_Apache_« und »_MySQL_« ausgewählt sind. Sofern gewünscht, könnte man hier ebenfalls die SSL-Unterstützung via Port 443 aktivieren:
 
-![Screenshot](images/06_laragon_services.png?width=500px)
+![Screenshot](/de/guides/images/laragon/06_laragon_services.png?width=500px)
 
 {{% notice note %}}
 Die Laragon Konfigurationseinstellungen werden in der `laragon\usr\laragon.ini` gespeichert und können selbstverständlich auch dort geändert werden.
@@ -98,7 +98,7 @@ Die Laragon Konfigurationseinstellungen werden in der `laragon\usr\laragon.ini` 
 
 + Über »_Menü_« > »_Laragon_« > »_laragon.ini_« die Laragon Konfigurationsdatei zur Bearbeitung öffnen:
 
-![Screenshot](images/07_laragon_ini.png?width=500px)
+![Screenshot](/de/guides/images/laragon/07_laragon_ini.png?width=500px)
 
 + In der Sektion `[php]` die Werte des Schlüssels QuickSettings um die PHP-Variable `sys_temp_dir` ergänzen:
 
@@ -108,39 +108,39 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 
 + Über »_Menü_« > »_PHP_« > »_Quick settings_« die PHP Schnelleinstellungen öffnen:
 
-![Screenshot](images/08_laragon_php.png?width=500px)
+![Screenshot](/de/guides/images/laragon/08_laragon_php.png?width=500px)
 
 + Im Untermenü den Eintrag »_memory_limit = …_« auswählen und das PHP Memory Limit auf den Wert `-1` (oder `2G` bzw. `4G`) setzen:
 
-![Screenshot](images/09_laragon_php_memory_limit.png?width=250px)
+![Screenshot](/de/guides/images/laragon/09_laragon_php_memory_limit.png?width=250px)
 
 + Im selben Untermenü den Eintrag »_sys_temp_dir = …_« auswählen und das temporäre Verzeichnis auf den Wert `C:\laragon\tmp` setzen (das Laragon Rootverzeichnis ggf. anpassen, sofern Laragon nicht unter dem Standardpfad auf Laufwerk `C:\` installiert wurde):
 
-![Screenshot](images/10_laragon_php_sys_temp_dir.png?width=250px)
+![Screenshot](/de/guides/images/laragon/10_laragon_php_sys_temp_dir.png?width=250px)
 
 + Über »_Menü_« > »_PHP_« > »_PHP-Erweiterungen_« können bei Bedarf weitere PHP-Erweiterungen bequem aktiviert oder deaktiviert werden.
 + Über den Button »_Alle Dienste..._« den Web- und Datenbankserver starten:
 
-![Screenshot](images/11_laragon_servers.png?width=500px)
+![Screenshot](/de/guides/images/laragon/11_laragon_servers.png?width=500px)
 
 + An dieser Stelle meldet sich ziemlich sicher die Windows Defender Firewall (oder ggf. auch eine andere System-Firewall) und fordert sowohl für den »_Apache HTTP Server_« als auch für den MySQL Server »_mysqld.exe_« dazu auf, den Zugriff auf das lokale Netzwerk zuzulassen. Diese beiden Zugriffe müssen für den weiteren Betrieb des Web- und Datenbankservers natürlich gewährt werden.
 + Wenn die Server erfolgreich auf die entsprechenden Ports zugreifen dürfen, sollte Laragon die beiden Dienste »_Apache_« und »_MySQL_« als »_gestartet_« anzeigen:
 
-![Screenshot](images/12_laragon_running.png?width=500px)
+![Screenshot](/de/guides/images/laragon/12_laragon_running.png?width=500px)
 
 + Nun sollte der lokale Webserver laufen und die Laragon Indexseite bereits über den Webbrowser via [http://localhost/](http://localhost/) aufrufbar sein:
 
-![Screenshot](images/13_laragon_localhost.png?width=500px)
+![Screenshot](/de/guides/images/laragon/13_laragon_localhost.png?width=500px)
 
 + Damit der Zugriff auf PHP (und alle anderen Laragon Tools/Programme) systemweit möglich ist, müssen die entsprechenden Laragon Pfade in der Windows Umgebungsvariable (PATH-Variable) ergänzt werden. Über das Laragon Verwaltungspanel können die Umgebungsvariablen automatisch aktualisiert werden: »_Menü_« > »_Tools_« > »_Umgebungsvariablen_« > »_Add Laragon to Path_«:
 
-![Screenshot](images/14_laragon_path.png?width=500px)
+![Screenshot](/de/guides/images/laragon/14_laragon_path.png?width=500px)
 
 Im selben Untermenü können die Laragon Umgebungsvariablen bei Bedarf auch wieder entfernt werden. Ebenfalls kann über den Menüpunkt »_Manage Path_« überprüft werden, ob die Pfadangaben korrekt in der PATH-Umgebungsvariable ergänzt wurden.
 
 + Über »_Menü_« > »_Neue Website erstellen_« > »_Konfiguration..._« können die bestehenden App-Konfigurationen geändert oder entsprechend ergänzt werden:
 
-![Screenshot](images/15_laragon_app_config.png?width=500px)
+![Screenshot](/de/guides/images/laragon/15_laragon_app_config.png?width=500px)
 
 {{% notice note %}}
 Die App-Konfigurationen werden in der Datei `laragon\usr\sites.conf` gespeichert.
@@ -223,13 +223,13 @@ Laragon bringt zwar Composer bereits mit, es kann aber dennoch opportun sein, si
 + Composer Windows Installer herunterladen: [https://getcomposer.org/Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
 + Installationsdatei `Composer-Setup.exe` ausführen und dem geführten Installationsprozess im Setup-Assistenten folgen:
 
-![Screenshot](images/16_composer_install.png?width=500px)
+![Screenshot](/de/guides/images/laragon/16_composer_install.png?width=500px)
 
 + Den Pfad zur `php.exe` sollte der Composer Setup-Assistent automatisch ermitteln können, sofern die Laragon Pfade – wie oben bereits angegeben – in der Windows PATH-Umgebungsvariable ergänzt wurden.
 + Der Composer Windows Installer aktualisiert ebenfalls die Windows PATH-Umgebungsvariable, damit auch Composer systemweit verfügbar und aufrufbar ist.
 + Zum Testen könnte man etwa im Windows Explorer zum Laragon Verzeichnis `laragon\www` navigieren, dort per Rechtsklick die »_Konsole_« starten und beispielsweise `php -v` und  `composer -V` ausführen:
 
-![Screenshot](images/17_laragon_console.png?width=800px)
+![Screenshot](/de/guides/images/laragon/17_laragon_console.png?width=800px)
 
 
 ## 6. Contao installieren
@@ -242,11 +242,11 @@ Wie bereits erwähnt, kann über das Laragon-Feature »_Neue Website erstellen_�
 + Ziel soll nun sein, eine Beispielwebsite »_mycompany_« aufzusetzen, welche mit Contao 4.9 läuft.
 + Im Laragon Verwaltungpanel »_Menü_« > »_Neue Website erstellen_« öffnen (oder als Alternative via Rechtsklick im Laragon Verwaltungspanel bzw. mittels Rechtsklick auf das Laragon Tray-Icon) und den Eintrag »_Contao 4.9 Website …_« auswählen:
 
-![Screenshot](images/18_laragon_websiteproject.png?width=500px)
+![Screenshot](/de/guides/images/laragon/18_laragon_websiteproject.png?width=500px)
 
 + Im Eingabefeld den Projektnamen der Beispielwebsite `mycompany` eingeben (nach Möglichkeit sollte der Projektname keine Sonderzeichen enthalten, da dieser gleichzeitig auch als Datenbankname verwendet wird) und mit "OK" bestätigen:
 
-![Screenshot](images/19_laragon_websiteproject_2.png?width=250px)
+![Screenshot](/de/guides/images/laragon/19_laragon_websiteproject_2.png?width=250px)
 
 + Es öffnet sich ein Konsolenfenster: Im Hintergrund wird zunächst Contao 4.9 (inklusive aller erforderlichen Pakete) via Composer installiert und im Anschluss das Skript des Contao Managers heruntergeladen und im Unterordner `web/` als `contao-manager.phar.php` gespeichert.
 + Laragon erstellt darüber hinaus automatisch eine gleichnamige Datenbank »_mycompany_« sowie einen virtuellen Host `mycompany.local`
@@ -258,12 +258,12 @@ Wie bereits erwähnt, kann über das Laragon-Feature »_Neue Website erstellen_�
 
 hinzu:
 
-![Screenshot](images/20_laragon_hosts.png?width=500px)
+![Screenshot](/de/guides/images/laragon/20_laragon_hosts.png?width=500px)
 
 + Wenn der neue virtuelle Host korrekt konfiguriert ist, sollte man jetzt das Contao Installtool über `http://mycompany.local/contao/install` aufrufen können.
 + Nach Bestätigung der Lizenzbedingungen setzt man zunächst wie gewohnt das Passwort des Contao Installtools und trägt im nächsten Schritt die Datenbankzugangsdaten in die entsprechenden Felder ein. Standardmäßig lautet der DB-Benutzername root, das DB-Passwortfeld bleibt leer (sofern kein Passwort gesetzt wurde) und für den Datenbanknamen wird der Projektname (also mycompany) eingetragen:
 
-![Screenshot](images/21_contao_installtool.png?width=800px)
+![Screenshot](/de/guides/images/laragon/21_contao_installtool.png?width=800px)
 
 + Sofern Contao erfolgreich eine Verbindung zur angegebenen Datenbank aufbauen kann, erfolgt unmittelbar danach die Aktualisierung der Datenbank, indem alle erforderlichen Tabellen und die Datenbankstruktur generiert werden.
 + Am Ende des Installationsprozesses wird schließlich noch ein Administratorkonto für das Contao Backend angelegt.
@@ -301,7 +301,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 + Im Laragon Verwaltungpanel »_Menü_« > »_Tools_« > »_Delete project_« öffnen und im Untermenü jenes Website-Projekt auswählen, welches gelöscht werden soll:
 
-![Screenshot](images/22_laragon_deleteproject.png?width=500px)
+![Screenshot](/de/guides/images/laragon/22_laragon_deleteproject.png?width=500px)
 
 + Im nächsten Dialogfenster weist Laragon darauf hin, dass sowohl der Projektordner als auch die dazugehörige Datenbank entfernt werden. Diese Aktionen können nicht rückgängig gemacht werden, d. h. die Daten werden unwiederbringlich gelöscht. Wenn man sich dessen bewusst ist, was man macht, bestätigt man den Löschvorgang.
 
@@ -312,7 +312,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 + Im Laragon Verwaltungpanel über den Button »_WWW-Ordner_« den Laragon www-Ordner im Explorer öffnen:
 
-![Screenshot](images/23_laragon_www.png?width=500px)
+![Screenshot](/de/guides/images/laragon/23_laragon_www.png?width=500px)
 
 + Im Kontextmenü des Projektordners der Website (entspricht dem Installationsverzeichnis der Contao-Installation) über »_Konsole_« ein neues Konsolenfenster öffnen.
 + Auf der Kommandozeile den folgenden Befehl ausführen, um die [Contao Official Demo (COD)](https://packagist.org/packages/contao/official-demo) via Composer zu installieren:
@@ -383,8 +383,8 @@ Mitunter braucht man für ältere Webprojekte auch noch PHP 5.6. Neue Features m
 + Das ZIP-Archiv für Apache 2.4 VC11 im Ordner `laragon\bin\apache` in den entsprechenden Ordner (`httpd-2.4.38-win64-VC11`) entpacken. Die entpackten Dateien und Ordner müssen ggf. verschoben werden, um der vorgegebenen Ordnerstruktur (vgl. `httpd-2.4.35-win64-VC15`) zu entsprechen.
 + PHP-Version wechseln:  
 
-![Screenshot](images/24_laragon_php_versions.png?width=500px)
+![Screenshot](/de/guides/images/laragon/24_laragon_php_versions.png?width=500px)
 
 + Apache-Version wechseln:
 
-![Screenshot](images/25_laragon_apache_version.png?width=500px)
+![Screenshot](/de/guides/images/laragon/25_laragon_apache_version.png?width=500px)
