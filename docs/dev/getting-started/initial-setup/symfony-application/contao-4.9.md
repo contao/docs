@@ -186,10 +186,6 @@ Contao relies heavily on the security component of Symfony, which needs to be
 configured accordingly. Replace the contents of the file `config/security.yaml`
 with the following lines.
 
-{{% notice info %}}
-Contao does not work with `role_hierarchy` yet. For more information see https://github.com/contao/contao/issues/1548.
-{{% /notice %}}
-
 ```yaml
 security:
     providers:
