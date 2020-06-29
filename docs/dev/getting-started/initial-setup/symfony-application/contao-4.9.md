@@ -157,6 +157,7 @@ file, leaving the already existing lines there.
 
 ```yaml
 framework:
+    assets: true
     esi: { enabled: true }
 
     csrf_protection: ~
