@@ -229,7 +229,7 @@ Laragon bringt zwar Composer bereits mit, es kann aber dennoch nötig sein, sich
 + Der Composer-Windows-Installer aktualisiert ebenfalls die Windows PATH-Umgebungsvariable, damit auch Composer systemweit verfügbar und aufrufbar ist.
 + Zum Testen könnte man etwa im Windows Explorer zum Laragon Verzeichnis `laragon\www` navigieren, dort per Rechtsklick die »_Konsole_« starten und beispielsweise `php -v` und  `composer -V` ausführen:
 
-![Screenshot](/de/guides/images/laragon/17_laragon_console.png?width=800px)
+![Testen ob Composer erfolgreich installiert wurde](/de/guides/images/laragon/17_laragon_console.png?classes=shadow)
 
 
 ## 6. Contao installieren
