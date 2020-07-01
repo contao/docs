@@ -84,7 +84,7 @@ Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue
 
 ![Menü im Laragon-Verwaltungspanel öffnen](/de/guides/images/laragon/04_laragon_menu.png?classes=shadow)
 
-+ Im Reiter »_Allgemein_« der Laragon Einstellungen die Option »_Alle Dienste automatisch starten_« aktivieren und für die Option »_Virtuelle Hosts automatisch erzeugen_« das Schema des »_Hostnamens_« folgendermaßen ändern: `{name}.local`
++ Im Reiter »_Allgemein_« der Laragon-Einstellungen die Option »_Alle Dienste automatisch starten_« aktivieren und für die Option »_Virtuelle Hosts automatisch erzeugen_« das Schema des »_Hostnamens_« folgendermaßen ändern: `{name}.local`
 
 ![Screenshot](/de/guides/images/laragon/05_laragon_settings.png?width=500px)
 
