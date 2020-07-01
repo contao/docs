@@ -116,7 +116,7 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 
 + Im selben Untermenü den Eintrag »_sys_temp_dir = …_« auswählen und das temporäre Verzeichnis auf den Wert `C:\laragon\tmp` setzen (das Laragon Root-Verzeichnis ggf. anpassen, sofern Laragon nicht unter dem Standardpfad auf Laufwerk `C:\` installiert wurde):
 
-![Screenshot](/de/guides/images/laragon/10_laragon_php_sys_temp_dir.png?width=250px)
+![sys_temp_dir setzen](/de/guides/images/laragon/10_laragon_php_sys_temp_dir.png?classes=shadow)
 
 + Über »_Menü_« > »_PHP_« > »_PHP-Erweiterungen_« können bei Bedarf weitere PHP-Erweiterungen bequem aktiviert oder deaktiviert werden.
 + Über den Button »_Alle Dienste..._« den Web- und Datenbankserver starten:
