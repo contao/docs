@@ -108,7 +108,7 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 
 + Über »_Menü_« > »_PHP_« > »_Quick settings_« die PHP-Schnelleinstellungen öffnen:
 
-![Screenshot](/de/guides/images/laragon/08_laragon_php.png?width=500px)
+![PHP-Schnelleinstellungen öffnen](/de/guides/images/laragon/08_laragon_php.png?classes=shadow)
 
 + Im Untermenü den Eintrag »_memory_limit = …_« auswählen und das PHP Memory Limit auf den Wert `-1` (oder `2G` bzw. `4G`) setzen:
 
