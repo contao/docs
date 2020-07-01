@@ -75,7 +75,7 @@ In Zukunft kann Laragon über den entsprechenden neuen Eintrag im Windows-Startm
 
 ## 4. Laragon konfigurieren
 
-Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue Website erstellen_« Feature lässt sich beispielsweise die Installation einer neuen Contao-Instanz vollständig automatisieren, sodass mit nur wenigen Klicks eine frische Contao-Installation aufgesetzt werden kann.
+Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue Website erstellen_«-Feature lässt sich beispielsweise die Installation einer neuen Contao-Instanz vollständig automatisieren, sodass mit nur wenigen Klicks eine frische Contao-Installation aufgesetzt werden kann.
 
 **ToDo: Einstellungen in Laragon festlegen und Apps konfigurieren**
 
