@@ -246,7 +246,7 @@ Wie bereits erwähnt, kann über das Laragon-Feature »_Neue Website erstellen_�
 
 + Im Eingabefeld den Projektnamen der Beispielwebsite `mycompany` eingeben (nach Möglichkeit sollte der Projektname keine Sonderzeichen enthalten, da dieser gleichzeitig auch als Datenbankname verwendet wird) und mit »OK« bestätigen:
 
-![Screenshot](/de/guides/images/laragon/19_laragon_websiteproject_2.png?width=250px)
+![Projektname eingeben](/de/guides/images/laragon/19_laragon_websiteproject_2.png?classes=shadow)
 
 + Es öffnet sich ein Konsolenfenster: Im Hintergrund wird zunächst Contao 4.9 (inklusive aller erforderlichen Pakete) via Composer installiert und im Anschluss das Skript des Contao Managers heruntergeladen und im Unterordner `web/` als `contao-manager.phar.php` gespeichert.
 + Laragon erstellt darüber hinaus automatisch eine gleichnamige Datenbank »_mycompany_« sowie einen virtuellen Host `mycompany.local`
