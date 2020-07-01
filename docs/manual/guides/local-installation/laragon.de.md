@@ -216,7 +216,7 @@ Die Änderungen in der `laragon\usr\sites.conf` sind nach dem Speichern unmittel
 
 ## 5. Composer global installieren
 
-Laragon bringt zwar Composer bereits mit, es kann aber dennoch opportun sein, sich den PHP Abhängigkeitsmanager zusätzlich auch noch global im System zu installieren.
+Laragon bringt zwar Composer bereits mit, es kann aber dennoch nötig sein, sich den PHP-Abhängigkeitsmanager zusätzlich auch noch global im System zu installieren.
 
 **ToDo: Composer global installieren**
 
