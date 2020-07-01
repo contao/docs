@@ -128,7 +128,7 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 
 ![Dienste erfolgreich gestartet](/de/guides/images/laragon/12_laragon_running.png?classes=shadow)
 
-+ Nun sollte der lokale Webserver laufen und die Laragon Indexseite bereits über den Webbrowser via [http://localhost/](http://localhost/) aufrufbar sein:
++ Nun sollte der lokale Webserver laufen und die Laragon-Indexseite bereits über den Webbrowser via [http://localhost/](http://localhost/) aufrufbar sein:
 
 ![Laragon-Indexseite](/de/guides/images/laragon/13_laragon_localhost.png?classes=shadow)
 
