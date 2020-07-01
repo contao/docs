@@ -244,7 +244,7 @@ Wie bereits erwähnt, kann über das Laragon-Feature »_Neue Website erstellen_�
 
 ![Neue Website erstellen](/de/guides/images/laragon/18_laragon_websiteproject.png?classes=shadow)
 
-+ Im Eingabefeld den Projektnamen der Beispielwebsite `mycompany` eingeben (nach Möglichkeit sollte der Projektname keine Sonderzeichen enthalten, da dieser gleichzeitig auch als Datenbankname verwendet wird) und mit "OK" bestätigen:
++ Im Eingabefeld den Projektnamen der Beispielwebsite `mycompany` eingeben (nach Möglichkeit sollte der Projektname keine Sonderzeichen enthalten, da dieser gleichzeitig auch als Datenbankname verwendet wird) und mit »OK« bestätigen:
 
 ![Screenshot](/de/guides/images/laragon/19_laragon_websiteproject_2.png?width=250px)
 
