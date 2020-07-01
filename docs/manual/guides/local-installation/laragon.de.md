@@ -55,7 +55,7 @@ Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht 
 
 ## 3. Laragon herunterladen und installieren
 
-Die Installation von Laragon ist über den geführten Installationsprozess durchgängig intuitiv und eigentlich weitgehend selbsterklärend. Das aktuellste Release des WAMP-Stacks kann direkt von GitHub in der jeweils passenden Version heruntergeladen werden.
+Die Installation von Laragon ist über den geführten Installationsprozess durchgängig intuitiv und weitestgehend selbsterklärend. Das aktuellste Release des WAMP-Stacks kann direkt von GitHub in der jeweils passenden Version heruntergeladen werden.
 
 **ToDo: Laragon herunterladen und installieren**
 
