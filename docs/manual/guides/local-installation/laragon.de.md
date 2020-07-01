@@ -79,7 +79,7 @@ Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue
 
 **ToDo: Einstellungen in Laragon festlegen und Apps konfigurieren**
 
-+ Laragon starten (sofern das nicht bereits der Fall ist)
++ Laragon starten
 + Im Laragon Verwaltungspanel auf »_Menü_« und dann »_Einstellungen_« klicken (das Menü lässt sich übrigens auch mittels Rechtsklick auf eine freie Fläche im Verwaltungspanel öffnen):
 
 ![Screenshot](/de/guides/images/laragon/04_laragon_menu.png?width=500px)
