@@ -312,7 +312,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 + Im Laragon-Verwaltungpanel über den Button »_WWW-Ordner_« den Laragon www-Ordner im Explorer öffnen:
 
-![Screenshot](/de/guides/images/laragon/23_laragon_www.png?width=500px)
+![Laragon www-Ordner im Explorer öffnen](/de/guides/images/laragon/23_laragon_www.png?classes=shadow)
 
 + Im Kontextmenü des Projektordners der Website (entspricht dem Installationsverzeichnis der Contao-Installation) über »_Konsole_« ein neues Konsolenfenster öffnen.
 + Auf der Kommandozeile den folgenden Befehl ausführen, um die [Contao Official Demo (COD)](https://packagist.org/packages/contao/official-demo) via Composer zu installieren:
