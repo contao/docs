@@ -126,7 +126,7 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 + An dieser Stelle meldet sich ziemlich sicher die Windows Defender Firewall (oder ggf. auch eine andere System-Firewall) und fordert sowohl für den »_Apache HTTP Server_« als auch für den MySQL-Server »_mysqld.exe_« dazu auf, den Zugriff auf das lokale Netzwerk zuzulassen. Diese beiden Zugriffe müssen für den weiteren Betrieb des Web- und Datenbankservers gewährt werden.
 + Wenn die Server erfolgreich auf die entsprechenden Ports zugreifen dürfen, sollte Laragon die beiden Dienste »_Apache_« und »_MySQL_« als »_gestartet_« anzeigen:
 
-![Screenshot](/de/guides/images/laragon/12_laragon_running.png?width=500px)
+![Dienste erfolgreich gestartet](/de/guides/images/laragon/12_laragon_running.png?classes=shadow)
 
 + Nun sollte der lokale Webserver laufen und die Laragon Indexseite bereits über den Webbrowser via [http://localhost/](http://localhost/) aufrufbar sein:
 
