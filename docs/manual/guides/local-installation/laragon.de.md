@@ -238,7 +238,7 @@ Wie bereits erwähnt, kann über das Laragon-Feature »_Neue Website erstellen_�
 
 **ToDo: Eine neue Contao-Installation aufsetzen**
 
-+ Laragon starten (sofern das nicht bereits der Fall ist)
++ Laragon starten
 + Ziel soll nun sein, eine Beispielwebsite »_mycompany_« aufzusetzen, welche mit Contao 4.9 läuft.
 + Im Laragon Verwaltungpanel »_Menü_« > »_Neue Website erstellen_« öffnen (oder als Alternative via Rechtsklick im Laragon Verwaltungspanel bzw. mittels Rechtsklick auf das Laragon Tray-Icon) und den Eintrag »_Contao 4.9 Website …_« auswählen:
 
