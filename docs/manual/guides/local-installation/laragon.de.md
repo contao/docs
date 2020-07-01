@@ -65,7 +65,7 @@ Die Installation von Laragon ist über den geführten Installationsprozess durch
 + Im ersten Schritt des Setup-Prozesses kann – falls gewünscht – die Sprache auf »_Deutsch_« umgestellt werden.
 + Der Setup-Assistent führt dann durch die weitere Installation.
 + Im Dialog »_Zielordner wählen_« wird festgelegt, wo Laragon installiert werden soll (z. B. auf einem anderen Laufwerk bzw. einer anderen Partition).
-+ Im nächsten Dialogfenster können bereits einige Konfigurationseinstellungen festgelegt werden, darunter u. a. auch die Option, »_Virtuelle Hosts_« automatisch erzeugen" zu lassen.
++ Im nächsten Dialogfenster können bereits einige Konfigurationseinstellungen festgelegt werden, darunter u. a. auch die Option, »_Virtuelle Hosts_« automatisch erzeugen zu lassen.
 + Am Ende des Installationsprozesses besteht die Möglichkeit, Laragon automatisch zu starten.
 
 In weiterer Folge (bzw. zukünftig) kann Laragon über den entsprechenden neuen Eintrag im Windows Startmenü oder über das Laragon Verknüpfungssymbol am Windows Desktop aufgerufen werden. Nach dem Start der Applikation erscheint im Windows Infobereich (System Tray) ein Programmicon, das ebenfalls den Status der Dienste (gestartet oder beendet) anzeigt und über welches das Laragon Verwaltungspanel geöffnet werden kann:
