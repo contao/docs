@@ -19,7 +19,7 @@ Mit **Laragon WAMP** wird ein lokaler Software-Stack bestehend aus folgenden Ser
 + PHP
 
 Das Installationspaket umfasst auch noch weitere nützliche Tools, auf die an dieser Stelle aber nicht näher eingegangen wird.  
-Weitere Informationen zu Laragon (Installation, Features usw.) findet man ebenfalls in der [offiziellen Dokumentation](https://laragon.org/docs/).
+Weiterführende Informationen zu Laragon (Installation, Features usw.) finden sich in der [offiziellen Dokumentation](https://laragon.org/docs/).
 
 
 ## 1. Systemvoraussetzungen
