@@ -225,7 +225,7 @@ Laragon bringt zwar Composer bereits mit, es kann aber dennoch opportun sein, si
 
 ![Screenshot](/de/guides/images/laragon/16_composer_install.png?width=500px)
 
-+ Den Pfad zur `php.exe` sollte der Composer Setup-Assistent automatisch ermitteln können, sofern die Laragon Pfade – wie oben bereits angegeben – in der Windows PATH-Umgebungsvariable ergänzt wurden.
++ Den Pfad zur `php.exe` sollte der Composer-Setup-Assistent automatisch ermitteln können, sofern die Laragon Pfade – wie oben bereits angegeben – in der Windows PATH-Umgebungsvariable ergänzt wurden.
 + Der Composer Windows Installer aktualisiert ebenfalls die Windows PATH-Umgebungsvariable, damit auch Composer systemweit verfügbar und aufrufbar ist.
 + Zum Testen könnte man etwa im Windows Explorer zum Laragon Verzeichnis `laragon\www` navigieren, dort per Rechtsklick die »_Konsole_« starten und beispielsweise `php -v` und  `composer -V` ausführen:
 
