@@ -44,7 +44,7 @@ Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht 
 
 ![Suche nach »Create symbolic links«](/de/guides/images/laragon/01_polsedit.png?classes=shadow)
 
-+ Per Doppelklick auf den entsprechenden Eintrag das Eigenschaftsfenster der Richtlinie öffnen:
++ Per Doppelklick den entsprechenden Eintrag das Eigenschaftsfenster der Richtlinie öffnen:
 
 ![Screenshot](/de/guides/images/laragon/02_polsedit_policy_properties.png?width=300px)
 
