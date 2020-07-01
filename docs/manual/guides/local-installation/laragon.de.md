@@ -388,3 +388,8 @@ Mitunter braucht man für ältere Webprojekte auch noch PHP 5.6. Neue Features m
 + Apache-Version wechseln:
 
 ![Apache-Version wechseln](/de/guides/local-installation/images/de/laragon/25_laragon_apache_version.png?classes=shadow)
+
+
+### F Hilfe
+
+Im [Contao-Forum](https://community.contao.org/de/showthread.php?74042) gibt es einen Thread, der sich mit der Installation und Betrieb von Laragon beschäftigt oder man holt sich Rat im Laragon-Forum [DE](https://laraboard.io/forum/) oder [EN](https://forum.laragon.org/)
