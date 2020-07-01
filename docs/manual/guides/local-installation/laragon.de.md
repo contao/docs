@@ -271,7 +271,7 @@ hinzu:
 
 **Contao-Frontend:** http://mycompany.local/  
 **Contao-Backend:** http://mycompany.local/contao (bzw. http://mycompany.local/contao/login)  
-**Contao Installtool:** http://mycompany.local/contao/install  
+**Contao-Installtool:** http://mycompany.local/contao/install  
 **Contao Manager:** http://mycompany.local/contao-manager.phar.php  
 (der Systemcheck des Contao Managers sollte den Pfad zur PHP-Binary automatisch erkennen, wenn in der Serverkonfiguration eine manuelle Konfiguration über »_Andere …_«  ausgewählt wird)
 
