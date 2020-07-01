@@ -46,7 +46,7 @@ Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht 
 
 + Per Doppelklick den entsprechenden Eintrag das Eigenschaftsfenster der Richtlinie öffnen:
 
-![Screenshot](/de/guides/images/laragon/02_polsedit_policy_properties.png?width=300px)
+![Eintrag der Rcihtlinie öffnen](/de/guides/images/laragon/02_polsedit_policy_properties.png?classes=shadow)
 
 + Über den Button »_Add User or Group..._« den eigenen (aktuellen) Windows-Benutzer in der Liste der Benutzerkonten auswählen und mittels "OK" die Auswahl bestätigen. Der Windows-Benutzer sollte nun in den Richtlinieneigenschaften ebenfalls gelistet sein (zusätzlich zu den bereits vorhandenen Benutzerkonten).
 + Das Eigenschaftsfenster schließen und Polsedit beenden.
