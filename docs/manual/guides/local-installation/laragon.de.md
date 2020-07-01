@@ -240,7 +240,7 @@ Wie bereits erwähnt, kann über das Laragon-Feature »_Neue Website erstellen_�
 
 + Laragon starten
 + Ziel soll nun sein, eine Beispielwebsite »_mycompany_« aufzusetzen, welche mit Contao 4.9 läuft.
-+ Im Laragon Verwaltungpanel »_Menü_« > »_Neue Website erstellen_« öffnen (oder als Alternative via Rechtsklick im Laragon Verwaltungspanel bzw. mittels Rechtsklick auf das Laragon Tray-Icon) und den Eintrag »_Contao 4.9 Website …_« auswählen:
++ Im Laragon-Verwaltungpanel »_Menü_« > »_Neue Website erstellen_« öffnen (oder als Alternative via Rechtsklick im Laragon-Verwaltungspanel bzw. mittels Rechtsklick auf das Laragon-Tray-Icon) und den Eintrag »_Contao 4.9 Website …_« auswählen:
 
 ![Screenshot](/de/guides/images/laragon/18_laragon_websiteproject.png?width=500px)
 
