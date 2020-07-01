@@ -61,7 +61,7 @@ Die Installation von Laragon ist über den geführten Installationsprozess durch
 
 + Das aktuellste Release im Laragon [GitHub-Repository](https://github.com/leokhoa/laragon/releases/latest) herunterladen
 + Für Windows 10 (64 Bit): `laragon-wamp.exe` (64-Bit-Version) herunterladen
-+ Installationsdatei `laragon-wamp.exe` ausführen. Unter Umständen erscheint an dieser Stelle eine Meldung des Windows Defender SmartScreen mit dem Hinweis, dass der Start einer unbekannten App verhindert wurde. Über den Link »_Weitere Informationen_« kann das Laragon Setup jedoch »_Trotzdem ausgeführt_« werden.
++ Die Installationsdatei `laragon-wamp.exe` ausführen. Unter Umständen erscheint an dieser Stelle eine Meldung des Windows Defender SmartScreen mit dem Hinweis, dass der Start einer unbekannten App verhindert wurde. Über den Link »_Weitere Informationen_« kann das Laragon Setup jedoch »_Trotzdem ausgeführt_« werden.
 + Im ersten Schritt des Setup-Prozesses kann – falls gewünscht – die Sprache auf »_Deutsch_« umgestellt werden.
 + Der Setup-Assistent führt dann durch die weitere Installation.
 + Im Dialog »_Zielordner wählen_« wird festgelegt, wo Laragon installiert werden soll (z. B. auf einem anderen Laufwerk bzw. einer anderen Partition).
