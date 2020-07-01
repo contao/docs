@@ -290,7 +290,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 **ToDo: Die neueste Version von Laragon installieren**
 
   + Zunächst alle laufenden Dienste (Apache, MySQL) beenden und Laragon schließen.
-  + Die aktuelle Version der Laragon Executable [https://github.com/leokhoa/laragon/r...er/laragon.exe](https://github.com/leokhoa/laragon/raw/master/laragon.exe) aus dem GitHub Master-Zweig herunterladen
+  + Die aktuelle Version der Laragon-Executable aus dem [GitHub Master-Zweig](https://github.com/leokhoa/laragon/raw/master/laragon.exe) herunterladen
   + Die bestehende `laragon.exe` im Laragon Installationsverzeichnis durch die zuvor heruntergeladene Executable ersetzen.
   + Laragon starten.
 
