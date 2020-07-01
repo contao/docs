@@ -27,7 +27,7 @@ Weiterführende Informationen zu Laragon (Installation, Features usw.) finden si
 Windows 7, 8, 8.1, 10
 
 {{% notice note %}}
-In dieser Anleitung wird die Installation von Laragon unter Windows 10 64 Bit beschrieben.
+In dieser Anleitung wird die Installation von Laragon unter Windows 10 (64 Bit) beschrieben.
 {{% /notice %}}
 
 
