@@ -383,7 +383,7 @@ Mitunter braucht man für ältere Webprojekte auch noch PHP 5.6. Neue Features m
 + Das ZIP-Archiv für Apache 2.4 VC11 im Ordner `laragon\bin\apache` in den entsprechenden Ordner (`httpd-2.4.38-win64-VC11`) entpacken. Die entpackten Dateien und Ordner müssen ggf. verschoben werden, um der vorgegebenen Ordnerstruktur (vgl. `httpd-2.4.35-win64-VC15`) zu entsprechen.
 + PHP-Version wechseln:  
 
-![Screenshot](/de/guides/images/laragon/24_laragon_php_versions.png?width=500px)
+![PHP-Version wechseln](/de/guides/images/laragon/24_laragon_php_versions.png?classes=shadow)
 
 + Apache-Version wechseln:
 
