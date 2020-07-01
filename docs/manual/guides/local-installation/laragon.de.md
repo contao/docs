@@ -281,7 +281,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 {{% /notice %}}
 
 
-## ADDENDUM
+## Addendum
 
 **Anhang mit weiterführenden Informationen/Tasks:**
 
