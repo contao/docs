@@ -136,7 +136,7 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 
 ![Windows-Umgebungsvariable im Laragon-Verwaltungspanel ergänzen](/de/guides/images/laragon/14_laragon_path.png?classes=shadow)
 
-Im selben Untermenü können die Laragon Umgebungsvariablen bei Bedarf auch wieder entfernt werden. Ebenfalls kann über den Menüpunkt »_Manage Path_« überprüft werden, ob die Pfadangaben korrekt in der PATH-Umgebungsvariable ergänzt wurden.
+Im selben Untermenü können die Laragon-Umgebungsvariablen bei Bedarf auch wieder entfernt werden. Ebenfalls kann über den Menüpunkt »_Manage Path_« überprüft werden, ob die Pfadangaben korrekt in der PATH-Umgebungsvariable ergänzt wurden.
 
 + Über »_Menü_« > »_Neue Website erstellen_« > »_Konfiguration..._« können die bestehenden App-Konfigurationen geändert oder entsprechend ergänzt werden:
 
