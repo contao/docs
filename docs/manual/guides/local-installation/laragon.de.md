@@ -301,7 +301,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 + Im Laragon-Verwaltungpanel »_Menü_« > »_Tools_« > »_Delete project_« öffnen und im Untermenü jenes Website-Projekt auswählen, welches gelöscht werden soll:
 
-![Screenshot](/de/guides/images/laragon/22_laragon_deleteproject.png?width=500px)
+![Website-Projekt im Laragon-Verwaltungpanel entfernen](/de/guides/images/laragon/22_laragon_deleteproject.png?classes=shadow)
 
 + Im nächsten Dialogfenster weist Laragon darauf hin, dass sowohl der Projektordner als auch die dazugehörige Datenbank entfernt werden. Diese Aktionen können nicht rückgängig gemacht werden, d. h. die Daten werden unwiederbringlich gelöscht. Wenn man sich dessen bewusst ist, was man macht, bestätigt man den Löschvorgang.
 
