@@ -86,7 +86,7 @@ Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue
 
 + Im Reiter »_Allgemein_« der Laragon-Einstellungen die Option »_Alle Dienste automatisch starten_« aktivieren und für die Option »_Virtuelle Hosts automatisch erzeugen_« das Schema des »_Hostnamens_« folgendermaßen ändern: `{name}.local`
 
-![Screenshot](/de/guides/images/laragon/05_laragon_settings.png?width=500px)
+![Laragon-Einstellungen](/de/guides/images/laragon/05_laragon_settings.png?classes=shadow)
 
 + Im Reiter »_Dienste/Ports_« der Laragon Einstellungen sicherstellen, dass die beiden Dienste »_Apache_« und »_MySQL_« ausgewählt sind. Sofern gewünscht, könnte man hier ebenfalls die SSL-Unterstützung via Port 443 aktivieren:
 
