@@ -42,7 +42,7 @@ Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht 
 + Für Windows 10 (64 Bit): `polseditx64.exe` (64-Bit-Version) ausführen
 + Im rechten Fensterbereich nach der Richtlinie »_Create symbolic links_« `(SE_CREATE_SYMBOLIC_LINK_NAME)` suchen:
 
-![Screenshot](/de/guides/images/laragon/01_polsedit.png?width=800px)
+![Suche nach »Create symbolic links«](/de/guides/images/laragon/01_polsedit.png?classes=shadow)
 
 + Per Doppelklick auf den entsprechenden Eintrag das Eigenschaftsfenster der Richtlinie öffnen:
 
