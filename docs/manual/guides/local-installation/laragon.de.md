@@ -10,7 +10,7 @@ tags:
    - "Installation"
 ---
 
-In diesem Tutorial wird die Einrichtung einer lokalen Entwicklungsumgebung exemplarisch am Beispiel von [Laragon](https://laragon.org) beschrieben.  
+In diesem Tutorial wird die Einrichtung einer lokalen Entwicklungsumgebung unter Windows exemplarisch am Beispiel von [Laragon](https://laragon.org) beschrieben.  
 
 Mit **Laragon WAMP** wird ein lokaler Software-Stack bestehend aus folgenden Serverkomponenten installiert:
 
