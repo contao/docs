@@ -221,7 +221,7 @@ Laragon bringt zwar Composer bereits mit, es kann aber dennoch nötig sein, sich
 **ToDo: Composer global installieren**
 
 + Den Composer-Windows-Installer herunterladen: [https://getcomposer.org/Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
-+ Installationsdatei `Composer-Setup.exe` ausführen und dem geführten Installationsprozess im Setup-Assistenten folgen:
++ Die Installationsdatei `Composer-Setup.exe` ausführen und dem geführten Installationsprozess im Setup-Assistenten folgen:
 
 ![Screenshot](/de/guides/images/laragon/16_composer_install.png?width=500px)
 
