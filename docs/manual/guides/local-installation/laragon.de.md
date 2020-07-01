@@ -33,7 +33,7 @@ In dieser Anleitung wird die Installation von Laragon unter Windows 10 (64 Bit) 
 
 ## 2. Vorbereitende Maßnahmen
 
-Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht vor, dass für den ordnungsgemäßen Betrieb der Webapplikation u. a. auch _symbolische Links_ (sog. _Symlinks_) erstellt werden müssen. Allerdings sind für das Erstellen von Symlinks unter Windows normalerweise Administratorberechtigungen erforderlich. Es ist daher zweckmäßig, dem gewöhnlichen Windows-Benutzer ebenfalls das entsprechende Recht zum Erstellen von Symlinks zu erteilen. Am einfachsten geht das über das kostenlose Tool [Polsedit](https://www.southsoftware.com). Das ZIP-Archiv enthält sowohl eine 32 Bit als auch eine 64 Bit Version von Polsedit und kann ohne Installation direkt ausgeführt werden.
+Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht vor, dass für den ordnungsgemäßen Betrieb der Webapplikation u. a. auch _symbolische Links_ (sog. _Symlinks_) erstellt werden müssen. Allerdings sind für das Erstellen von Symlinks unter Windows normalerweise Administratorrechte erforderlich. Es wird daher empfohlen, dem gewöhnlichen Windows-Benutzer ebenfalls das entsprechende Recht zum Erstellen von Symlinks zu erteilen. Am einfachsten geht das über das kostenlose Tool [Polsedit](https://www.southsoftware.com). Das ZIP-Archiv enthält sowohl eine 32-Bit als auch eine 64-Bit-Version von Polsedit und kann ohne Installation direkt ausgeführt werden.
 
 **ToDo: Berechtigung zum Erstellen symbolischer Links in den Gruppenrichtlinien konfigurieren**
 
