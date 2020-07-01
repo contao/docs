@@ -387,4 +387,4 @@ Mitunter braucht man für ältere Webprojekte auch noch PHP 5.6. Neue Features m
 
 + Apache-Version wechseln:
 
-![Screenshot](/de/guides/images/laragon/25_laragon_apache_version.png?width=500px)
+![Apache-Version wechseln](/de/guides/images/laragon/25_laragon_apache_version.png?classes=shadow)
