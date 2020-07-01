@@ -223,7 +223,7 @@ Laragon bringt zwar Composer bereits mit, es kann aber dennoch nötig sein, sich
 + Den Composer-Windows-Installer herunterladen: [https://getcomposer.org/Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
 + Die Installationsdatei `Composer-Setup.exe` ausführen und dem geführten Installationsprozess im Setup-Assistenten folgen:
 
-![Screenshot](/de/guides/images/laragon/16_composer_install.png?width=500px)
+![Composer installieren](/de/guides/images/laragon/16_composer_install.png?classes=shadow)
 
 + Den Pfad zur `php.exe` sollte der Composer-Setup-Assistent automatisch ermitteln können, sofern die Laragon Pfade – wie oben bereits angegeben – in der Windows PATH-Umgebungsvariable ergänzt wurden.
 + Der Composer Windows Installer aktualisiert ebenfalls die Windows PATH-Umgebungsvariable, damit auch Composer systemweit verfügbar und aufrufbar ist.
