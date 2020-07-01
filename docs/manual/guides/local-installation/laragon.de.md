@@ -310,7 +310,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 **ToDo: Contao Official Demo installieren**
 
-+ Im Laragon Verwaltungpanel über den Button »_WWW-Ordner_« den Laragon www-Ordner im Explorer öffnen:
++ Im Laragon-Verwaltungpanel über den Button »_WWW-Ordner_« den Laragon www-Ordner im Explorer öffnen:
 
 ![Screenshot](/de/guides/images/laragon/23_laragon_www.png?width=500px)
 
