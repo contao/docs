@@ -328,7 +328,7 @@ composer require contao/official-demo:4.4.0
 ```
 
 + Composer führt anschließend eine Abhängigkeitsauflösung aus. Ist diese erfolgreich, wird das Paket heruntergeladen und im System installiert.
-+ Contao Installtool aufrufen und den SQL-Datenbankdump der Contao Official Demo (COD) importieren. Achtung: Alle bereits in der Datenbank vorhandenen Daten werden beim Import des COD-Dumps gelöscht.
++ Das Contao-Installtool aufrufen und den SQL-Datenbankdump der Contao Official Demo (COD) importieren. Achtung: Alle bereits in der Datenbank vorhandenen Daten werden beim Import des COD-Dumps gelöscht.
 
 {{% notice note %}}
 Wie jedes andere Paket/Bundle auch, kann die Contao Official Demo (COD) selbstverständlich genauso via Contao Manager installiert werden.
