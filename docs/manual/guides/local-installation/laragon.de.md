@@ -263,7 +263,7 @@ hinzu:
 + Wenn der neue virtuelle Host korrekt konfiguriert ist, sollte man jetzt das Contao-Installtool über `http://mycompany.local/contao/install` aufrufen können.
 + Nach Bestätigung der Lizenzbedingungen setzt man zunächst wie gewohnt das Passwort des Contao-Installtools und trägt im nächsten Schritt die Datenbankzugangsdaten in die entsprechenden Felder ein. Standardmäßig lautet der DB-Benutzername root, das DB-Passwortfeld bleibt leer (sofern kein Passwort gesetzt wurde) und für den Datenbanknamen wird der Projektname (also mycompany) eingetragen:
 
-![Screenshot](/de/guides/images/laragon/21_contao_installtool.png?width=800px)
+![Contao-Installtool](/de/guides/images/laragon/21_contao_installtool.png?classes=shadow)
 
 + Sofern Contao erfolgreich eine Verbindung zur angegebenen Datenbank aufbauen kann, erfolgt unmittelbar danach die Aktualisierung der Datenbank, indem alle erforderlichen Tabellen und die Datenbankstruktur generiert werden.
 + Am Ende des Installationsprozesses wird schließlich noch ein Administratorkonto für das Contao Backend angelegt.
