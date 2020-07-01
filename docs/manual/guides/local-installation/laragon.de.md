@@ -299,7 +299,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 **ToDo: Ein vorhandenes Website-Projekt wieder entfernen**
 
-+ Im Laragon Verwaltungpanel »_Menü_« > »_Tools_« > »_Delete project_« öffnen und im Untermenü jenes Website-Projekt auswählen, welches gelöscht werden soll:
++ Im Laragon-Verwaltungpanel »_Menü_« > »_Tools_« > »_Delete project_« öffnen und im Untermenü jenes Website-Projekt auswählen, welches gelöscht werden soll:
 
 ![Screenshot](/de/guides/images/laragon/22_laragon_deleteproject.png?width=500px)
 
