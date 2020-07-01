@@ -90,7 +90,7 @@ Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue
 
 + Im Reiter »_Dienste/Ports_« der Laragon-Einstellungen sicherstellen, dass die beiden Dienste »_Apache_« und »_MySQL_« ausgewählt sind. Sofern gewünscht, könnte man hier ebenfalls die SSL-Unterstützung via Port 443 aktivieren:
 
-![Screenshot](/de/guides/images/laragon/06_laragon_services.png?width=500px)
+![Laragon-Einstellungen](/de/guides/images/laragon/06_laragon_services.png?classes=shadow)
 
 {{% notice note %}}
 Die Laragon Konfigurationseinstellungen werden in der `laragon\usr\laragon.ini` gespeichert und können selbstverständlich auch dort geändert werden.
