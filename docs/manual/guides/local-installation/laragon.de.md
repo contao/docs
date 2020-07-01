@@ -44,9 +44,9 @@ Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht 
 
 ![Suche nach »Create symbolic links«](/de/guides/local-installation/images/de/laragon/01_polsedit.png?width=800px&classes=shadow)
 
-+ Per Doppelklick den entsprechenden Eintrag das Eigenschaftsfenster der Richtlinie öffnen:
++ Per Doppelklick auf »_Create symbolic links_« das Eigenschaftsfenster der Richtlinie öffnen:
 
-![Eintrag der Rcihtlinie öffnen](/de/guides/local-installation/images/de/laragon/02_polsedit_policy_properties.png?width=300px&classes=shadow)
+![Eintrag der Richtlinie öffnen](/de/guides/local-installation/images/de/laragon/02_polsedit_policy_properties.png?width=300px&classes=shadow)
 
 + Über den Button »_Add User or Group..._« den eigenen (aktuellen) Windows-Benutzer in der Liste der Benutzerkonten auswählen und mittels »OK« die Auswahl bestätigen. Der Windows-Benutzer sollte nun in den Richtlinieneigenschaften ebenfalls gelistet sein (zusätzlich zu den bereits vorhandenen Benutzerkonten).
 + Das Eigenschaftsfenster schließen und Polsedit beenden.
@@ -84,7 +84,7 @@ Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue
 
 ![Menü im Laragon-Verwaltungspanel öffnen](/de/guides/local-installation/images/de/laragon/04_laragon_menu.png?width=500px&classes=shadow)
 
-+ Im Reiter »_Allgemein_« der Laragon-Einstellungen die Option »_Alle Dienste automatisch starten_« aktivieren und für die Option »_Virtuelle Hosts automatisch erzeugen_« das Schema des »_Hostnamens_« folgendermaßen ändern: `{name}.local`
++ Im Reiter »_Allgemeines_« der Laragon-Einstellungen die Option »_Alle Dienste automatisch starten_« aktivieren und für die Option »_Virtuelle Hosts automatisch erzeugen_« das Schema des »_Hostnamens_« folgendermaßen ändern: `{name}.local`
 
 ![Laragon-Einstellungen](/de/guides/local-installation/images/de/laragon/05_laragon_settings.png?width=500px&classes=shadow)
 
@@ -100,7 +100,7 @@ Die Laragon-Konfigurationseinstellungen werden in der `laragon\usr\laragon.ini` 
 
 ![Laragon-Konfigurationsdatei bearbeiten](/de/guides/local-installation/images/de/laragon/07_laragon_ini.png?width=500px&classes=shadow)
 
-+ In der Sektion `[php]` die Werte des Schlüssels QuickSettings um die PHP-Variable `sys_temp_dir` ergänzen:
++ In der Sektion `[php]` die Werte des Schlüssels `QuickSettings` um die PHP-Variable `sys_temp_dir` ergänzen:
 
 ```
 QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, memory_limit, sys_temp_dir
@@ -207,7 +207,7 @@ Symfony=composer create-project symfony/website-skeleton %s
 
 Selbstverständlich können die App-Konfigurationen der anderen Webapplikationen auch entfernt oder auskommentiert werden, sofern diese nicht weiter benötigt werden.
 
-Über den Parameter `AutoCreateDatabase` im Abschnitt Options kann konfiguriert werden, ob Datenbanken ebenfalls automatisch erstellt werden sollen oder nicht. Standardmäßig wird mit jedem neu erstellten Webprojekt gleichzeitig auch eine neue, leere Datenbank mit dem selben Namen angelegt.
+Über den Parameter `AutoCreateDatabase` im Abschnitt `Options` kann konfiguriert werden, ob Datenbanken ebenfalls automatisch erstellt werden sollen oder nicht. Standardmäßig wird mit jedem neu erstellten Webprojekt gleichzeitig auch eine neue, leere Datenbank mit dem selben Namen angelegt.
 
 {{% notice note %}}
 Die Änderungen in der `laragon\usr\sites.conf` sind nach dem Speichern unmittelbar aktiv; Laragon muss also nicht neu gestartet werden.
@@ -240,9 +240,9 @@ Wie bereits erwähnt, kann über das Laragon-Feature »_Neue Website erstellen_�
 
 + Laragon starten
 + Ziel soll nun sein, eine Beispielwebsite »_mycompany_« aufzusetzen, welche mit Contao 4.9 läuft.
-+ Im Laragon-Verwaltungpanel »_Menü_« > »_Neue Website erstellen_« öffnen (oder als Alternative via Rechtsklick im Laragon-Verwaltungspanel bzw. mittels Rechtsklick auf das Laragon-Tray-Icon) und den Eintrag »_Contao 4.9 Website …_« auswählen:
++ Im Laragon-Verwaltungspanel »_Menü_« > »_Neue Website erstellen_« öffnen (oder als Alternative via Rechtsklick im Laragon-Verwaltungspanel bzw. mittels Rechtsklick auf das Laragon-Tray-Icon) und den Eintrag »_Contao 4.9 Website …_« auswählen:
 
-![Neue Website erstellen]/de/guides/local-installation/images/de/laragon/18_laragon_websiteproject.png?width=500px&classes=shadow)
+![Neue Website erstellen](/de/guides/local-installation/images/de/laragon/18_laragon_websiteproject.png?width=500px&classes=shadow)
 
 + Im Eingabefeld den Projektnamen der Beispielwebsite `mycompany` eingeben (nach Möglichkeit sollte der Projektname keine Sonderzeichen enthalten, da dieser gleichzeitig auch als Datenbankname verwendet wird) und mit »OK« bestätigen:
 
@@ -260,7 +260,7 @@ hinzu:
 
 ![Bearbeiten drivers\etc\hosts im Laragon-Verwaltungspanel](/de/guides/local-installation/images/de/laragon/20_laragon_hosts.png?width=500px&classes=shadow)
 
-+ Wenn der neue virtuelle Host korrekt konfiguriert ist, sollte man jetzt das Contao-Installtool über `http://mycompany.local/contao/install` aufrufen können.
++ Wenn der neue virtuelle Host korrekt konfiguriert ist, sollte man jetzt das [Contao-Installtool](/de/installation/contao-installtool/) über `http://mycompany.local/contao/install` aufrufen können.
 + Nach Bestätigung der Lizenzbedingungen setzt man zunächst wie gewohnt das Passwort des Contao-Installtools und trägt im nächsten Schritt die Datenbankzugangsdaten in die entsprechenden Felder ein. Standardmäßig lautet der DB-Benutzername root, das DB-Passwortfeld bleibt leer (sofern kein Passwort gesetzt wurde) und für den Datenbanknamen wird der Projektname (also mycompany) eingetragen:
 
 ![Contao-Installtool](/de/guides/local-installation/images/de/laragon/21_contao_installtool.png?width=800px&classes=shadow)
@@ -299,9 +299,9 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 **ToDo: Ein vorhandenes Website-Projekt wieder entfernen**
 
-+ Im Laragon-Verwaltungpanel »_Menü_« > »_Tools_« > »_Delete project_« öffnen und im Untermenü jenes Website-Projekt auswählen, welches gelöscht werden soll:
++ Im Laragon-Verwaltungspanel »_Menü_« > »_Tools_« > »_Delete project_« öffnen und im Untermenü jenes Website-Projekt auswählen, welches gelöscht werden soll:
 
-![Website-Projekt im Laragon-Verwaltungpanel entfernen](/de/guides/local-installation/images/de/laragon/22_laragon_deleteproject.png?width=500px&classes=shadow)
+![Website-Projekt im Laragon-Verwaltungspanel entfernen](/de/guides/local-installation/images/de/laragon/22_laragon_deleteproject.png?width=500px&classes=shadow)
 
 + Im nächsten Dialogfenster weist Laragon darauf hin, dass sowohl der Projektordner als auch die dazugehörige Datenbank entfernt werden. Diese Aktionen können nicht rückgängig gemacht werden, d. h. die Daten werden unwiederbringlich gelöscht. Wenn man sich dessen bewusst ist, was man macht, bestätigt man den Löschvorgang.
 
@@ -310,7 +310,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 **ToDo: Contao Official Demo installieren**
 
-+ Im Laragon-Verwaltungpanel über den Button »_WWW-Ordner_« den Laragon www-Ordner im Explorer öffnen:
++ Im Laragon-Verwaltungspanel über den Button »_WWW-Ordner_« den Laragon www-Ordner im Explorer öffnen:
 
 ![Laragon www-Ordner im Explorer öffnen](/de/guides/local-installation/images/de/laragon/23_laragon_www.png?width=500px&classes=shadow)
 
@@ -392,4 +392,4 @@ Mitunter braucht man für ältere Webprojekte auch noch PHP 5.6. Neue Features m
 
 ### F Hilfe
 
-Im [Contao-Forum](https://community.contao.org/de/showthread.php?74042) gibt es einen Thread, der sich mit der Installation und Betrieb von Laragon beschäftigt oder man holt sich Rat im Laragon-Forum [DE](https://laraboard.io/forum/) oder [EN](https://forum.laragon.org/)
+Im [Contao-Forum](https://community.contao.org/) gibt es einen [Thread](https://community.contao.org/de/showthread.php?74042), der sich mit der Installation und dem Betrieb von Laragon beschäftigt oder man holt sich Rat im Laragon-Forum [DE](https://laraboard.io/forum/) oder [EN](https://forum.laragon.org/)
