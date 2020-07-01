@@ -96,7 +96,7 @@ Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue
 Die Laragon-Konfigurationseinstellungen werden in der `laragon\usr\laragon.ini` gespeichert und können selbstverständlich auch dort geändert werden.
 {{% /notice %}}
 
-+ Über »_Menü_« > »_Laragon_« > »_laragon.ini_« die Laragon Konfigurationsdatei zur Bearbeitung öffnen:
++ Über »_Menü_« > »_Laragon_« > »_laragon.ini_« die Laragon-Konfigurationsdatei zur Bearbeitung öffnen:
 
 ![Laragon-Konfigurationsdatei bearbeiten](/de/guides/images/laragon/07_laragon_ini.png?classes=shadow)
 
