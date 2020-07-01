@@ -266,7 +266,7 @@ hinzu:
 ![Contao-Installtool](/de/guides/images/laragon/21_contao_installtool.png?classes=shadow)
 
 + Sofern Contao erfolgreich eine Verbindung zur angegebenen Datenbank aufbauen kann, erfolgt unmittelbar danach die Aktualisierung der Datenbank, indem alle erforderlichen Tabellen und die Datenbankstruktur generiert werden.
-+ Am Ende des Installationsprozesses wird schließlich noch ein Administratorkonto für das Contao Backend angelegt.
++ Am Ende des Installationsprozesses wird schließlich noch ein Administratorkonto für das Contao-Backend angelegt.
 + Das Contao Frontend und Backend, das Contao Installtool und der Contao Manager sollten nun über folgende URLs aufrufbar sein:
 
 **Contao Frontend:** http://mycompany.local/  
