@@ -132,7 +132,7 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 
 ![Laragon-Indexseite](/de/guides/images/laragon/13_laragon_localhost.png?classes=shadow)
 
-+ Damit der Zugriff auf PHP (und alle anderen Laragon Tools/Programme) systemweit möglich ist, müssen die entsprechenden Laragon Pfade in der Windows Umgebungsvariable (PATH-Variable) ergänzt werden. Über das Laragon Verwaltungspanel können die Umgebungsvariablen automatisch aktualisiert werden: »_Menü_« > »_Tools_« > »_Umgebungsvariablen_« > »_Add Laragon to Path_«:
++ Damit der Zugriff auf PHP (und alle anderen Laragon-Tools/Programme) systemweit möglich ist, müssen die entsprechenden Laragon-Pfade in der Windows-Umgebungsvariable (PATH-Variable) ergänzt werden. Über das Laragon-Verwaltungspanel können die Umgebungsvariablen automatisch aktualisiert werden: »_Menü_« > »_Tools_« > »_Umgebungsvariablen_« > »_Add Laragon to Path_«:
 
 ![Screenshot](/de/guides/images/laragon/14_laragon_path.png?width=500px)
 
