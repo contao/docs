@@ -146,7 +146,7 @@ Im selben Untermenü können die Laragon-Umgebungsvariablen bei Bedarf auch wied
 Die App-Konfigurationen werden in der Datei `laragon\usr\sites.conf` gespeichert.
 {{% /notice %}}
 
-+ In der Konfigurationsdatei `laragon\usr\sites.conf` können nun die contaospezifischen Anpassungen ergänzt werden (siehe auch unten als Anhang):
++ In der Konfigurationsdatei `laragon\usr\sites.conf` können nun die contaospezifischen Anpassungen ergänzt werden:
 
 ```
 # Options
