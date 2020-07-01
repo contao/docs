@@ -70,7 +70,7 @@ Die Installation von Laragon ist über den geführten Installationsprozess durch
 
 In Zukunft kann Laragon über den entsprechenden neuen Eintrag im Windows-Startmenü oder über das Laragon Verknüpfungssymbol am Windows-Desktop aufgerufen werden. Nach dem Start der Applikation erscheint im Windows-Infobereich (System Tray) ein Programmicon, das ebenfalls den Status der Dienste (gestartet oder beendet) anzeigt und über welches das Laragon-Verwaltungspanel geöffnet werden kann:
 
-![Screenshot](/de/guides/images/laragon/03_laragon.png?width=500px)
+![Laragon-Verwaltungspanel](/de/guides/images/laragon/03_laragon.png?classes=shadow)
 
 
 ## 4. Laragon konfigurieren
