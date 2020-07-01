@@ -98,7 +98,7 @@ Die Laragon-Konfigurationseinstellungen werden in der `laragon\usr\laragon.ini` 
 
 + Über »_Menü_« > »_Laragon_« > »_laragon.ini_« die Laragon Konfigurationsdatei zur Bearbeitung öffnen:
 
-![Screenshot](/de/guides/images/laragon/07_laragon_ini.png?width=500px)
+![Laragon-Konfigurationsdatei bearbeiten](/de/guides/images/laragon/07_laragon_ini.png?classes=shadow)
 
 + In der Sektion `[php]` die Werte des Schlüssels QuickSettings um die PHP-Variable `sys_temp_dir` ergänzen:
 
