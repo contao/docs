@@ -112,7 +112,7 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 
 + Im Untermenü den Eintrag »_memory_limit = …_« auswählen und das PHP Memory Limit auf den Wert `-1` (oder `2G` bzw. `4G`) setzen:
 
-![Screenshot](/de/guides/images/laragon/09_laragon_php_memory_limit.png?width=250px)
+![PHP Memory Limit setzen](/de/guides/images/laragon/09_laragon_php_memory_limit.png?classes=shadow)
 
 + Im selben Untermenü den Eintrag »_sys_temp_dir = …_« auswählen und das temporäre Verzeichnis auf den Wert `C:\laragon\tmp` setzen (das Laragon Rootverzeichnis ggf. anpassen, sofern Laragon nicht unter dem Standardpfad auf Laufwerk `C:\` installiert wurde):
 
