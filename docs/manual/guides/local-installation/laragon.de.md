@@ -106,7 +106,7 @@ Die Laragon-Konfigurationseinstellungen werden in der `laragon\usr\laragon.ini` 
 QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, memory_limit, sys_temp_dir
 ```
 
-+ Über »_Menü_« > »_PHP_« > »_Quick settings_« die PHP Schnelleinstellungen öffnen:
++ Über »_Menü_« > »_PHP_« > »_Quick settings_« die PHP-Schnelleinstellungen öffnen:
 
 ![Screenshot](/de/guides/images/laragon/08_laragon_php.png?width=500px)
 
