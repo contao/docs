@@ -140,7 +140,7 @@ Im selben Untermenü können die Laragon-Umgebungsvariablen bei Bedarf auch wied
 
 + Über »_Menü_« > »_Neue Website erstellen_« > »_Konfiguration..._« können die bestehenden App-Konfigurationen geändert oder entsprechend ergänzt werden:
 
-![Screenshot](/de/guides/images/laragon/15_laragon_app_config.png?width=500px)
+![App-Konfigurationen anpassen](/de/guides/images/laragon/15_laragon_app_config.png?classes=shadow)
 
 {{% notice note %}}
 Die App-Konfigurationen werden in der Datei `laragon\usr\sites.conf` gespeichert.
