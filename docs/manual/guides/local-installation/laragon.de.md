@@ -269,7 +269,7 @@ hinzu:
 + Am Ende des Installationsprozesses wird schließlich noch ein Administratorkonto für das Contao-Backend angelegt.
 + Das Contao-Frontend und Backend, das Contao-Installtool und der Contao Manager sollten nun über folgende URLs aufrufbar sein:
 
-**Contao Frontend:** http://mycompany.local/  
+**Contao-Frontend:** http://mycompany.local/  
 **Contao Backend:** http://mycompany.local/contao (bzw. http://mycompany.local/contao/login)  
 **Contao Installtool:** http://mycompany.local/contao/install  
 **Contao Manager:** http://mycompany.local/contao-manager.phar.php  
