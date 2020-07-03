@@ -75,9 +75,9 @@ Executed when a new record is created.
 
 ### `config.onsubmit`
 
-Executed when a back end form is submitted. Allows you to e.g. modify the form
-data before it is written to the database (used to calculate intervals in the
-calendar extension).
+Executed when a back end form is submitted _after_ the record has been updated
+in the database. Allows you to e.g. modify the record afterwards (used to calculate 
+intervals in the calendar extension).
 
 {{% expand "Parameters" %}}
 #### Back end
