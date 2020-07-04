@@ -255,6 +255,14 @@ The database connection information is stored as an environment variable called 
 the database user name, database password, host name, port and database name that will be used by your Contao system. 
 The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+
+### `MAILER_URL`
+
+The mailer connection information is stored as an environment variable called `MAILER_URL`. It defines the transport to
+be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
+applicable. The format of this variable is the following: `MAILER_URL=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
     
 
 ### `TRUSTED_PROXIES`
@@ -282,3 +290,4 @@ to the list of trusted proxies, you will get the host name that was requested in
 [Contao_ME]: ../../getting-started/initial-setup/managed-edition
 [SymfonyFlex]: https://symfony.com/doc/current/setup.html#symfony-flex
 [SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html
+[SymfonySwiftmailer]: https://symfony.com/doc/4.4/reference/configuration/swiftmailer.html
