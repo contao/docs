@@ -261,7 +261,7 @@ contao:
     csrf_token_name:      contao_csrf_token
     encryption_key:       '%kernel.secret%'
 
-    # The error reporting level set when the framework is initialized. Defaults to E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED.      
+    # The error reporting level set when the framework is initialized. Defaults to E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED.
     error_level:          8183
 
     # Allows to set TL_CONFIG variables, overriding settings stored in localconfig.php. Changes in the Contao back end will not have any effect.
@@ -281,6 +281,7 @@ contao:
         - ja
         - lv
         - nl
+        - pl
         - pt
         - ru
         - sr
@@ -320,7 +321,7 @@ contao:
             webp_lossless:        ~
             interlace:            plane
 
-        # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.        
+        # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
         imagine_service:      null
 
         # Reject uploaded images exceeding the localconfig.gdMaxImgWidth and localconfig.gdMaxImgHeight dimensions.
@@ -366,9 +367,15 @@ contao:
                         media:                ~
                         densities:            ~
                         sizes:                ~
+                        resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Using contao.image.sizes.*.items.resizeMode is deprecated. Please use contao.image.sizes.*.items.resize_mode instead.)
+                resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Using contao.image.sizes.*.resizeMode is deprecated. Please use contao.image.sizes.*.resize_mode instead.)
+                cssClass:             ~ # Deprecated (Using contao.image.sizes.*.cssClass is deprecated. Please use contao.image.sizes.*.css_class instead.)
+                lazyLoading:          ~ # Deprecated (Using contao.image.sizes.*.lazyLoading is deprecated. Please use contao.image.sizes.*.lazy_loading instead.)
+                skipIfDimensionsMatch: ~ # Deprecated (Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
 
         # The target directory for the cached images processed by Contao.
-        target_dir:           '%kernel.project_dir%/assets/images'
+        target_dir:           '%kernel.project_dir%/assets/images' # Example: %kernel.project_dir%/assets/images
+        target_path:          null # Deprecated (Use the "contao.image.target_dir" parameter instead.)
         valid_extensions:
 
             # Defaults:
