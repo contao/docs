@@ -186,48 +186,6 @@ parameters:
 ```
 
 
-### SMTP-Versand
-
-Um den SMTP-Versand einzurichten, brauchst du folgende Angaben von deinem Hoster:
-
-- Den **Hostnamen** des SMTP-Servers.
-- Den **Benutzernamen** für den SMTP-Server.
-- Das **Passwort** für den SMTP-Server.
-- Die **Portnummer** des SMTP-Servers (587 / 465).
-- Die **Verschlüsselungsmethode** für den SMTP-Server (tls / ssl).
-
-Diese fügst du dann unterhalb der bereits bestehenden Daten in die `parameters.yml` ein:
-
-```yaml
-# This file has been auto-generated during installation
-parameters:
-    …
-    mailer_transport: smtp
-    mailer_host: host.example.com
-    mailer_user: mail@example.com
-    mailer_password: 'mein-passwort'
-    mailer_port: 465
-    mailer_encryption: ssl
-```
-
-{{% notice warning %}}
-**Cache leeren**  
-Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
-»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
-Installationsverzeichnis befinden.
-
-```bash
-php vendor/bin/contao-console cache:clear --env=prod --no-warmup
-```
-{{% /notice %}}
-
-Danach kannst du den Mailversand auf der Kommandozeile testen.
-
-```bash
-php vendor/bin/contao-console swiftmailer:email:send --from=absender@example.com --to=empfaenger@example.com --subject=testmail --body=testmail
-```
-
-
 ## config.yml
 
 Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `app/config/`. 
@@ -417,3 +375,140 @@ contao:
         # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
         default_http_client_options: []
 ```
+
+
+## E-Mail Versand Konfiguration
+
+Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster:
+
+- Den **Hostnamen** des SMTP-Servers.
+- Den **Benutzernamen** für den SMTP-Server.
+- Das **Passwort** für den SMTP-Server.
+- Die **Portnummer** des SMTP-Servers (587 / 465).
+- Die **Verschlüsselungsmethode** für den SMTP-Server (tls / ssl).
+
+Diese fügst du dann unterhalb der bereits bestehenden Daten in die `parameters.yml` ein:
+
+```yaml
+# This file has been auto-generated during installation
+parameters:
+    …
+    mailer_transport: smtp
+    mailer_host: host.example.com
+    mailer_user: mail@example.com
+    mailer_password: 'mein-passwort'
+    mailer_port: 465
+    mailer_encryption: ssl
+```
+
+{{% notice warning %}}
+**Cache leeren**  
+Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
+»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
+Installationsverzeichnis befinden.
+
+```bash
+php vendor/bin/contao-console cache:clear --env=prod --no-warmup
+```
+{{% /notice %}}
+
+Danach kannst du den Mailversand auf der Kommandozeile testen.
+
+```bash
+php vendor/bin/contao-console swiftmailer:email:send --from=absender@example.com --to=empfaenger@example.com --subject=testmail --body=testmail
+```
+
+{{% notice info %}}
+Dieses Kommando steht ab Contao **4.10** nicht mehr zur Verfügung.
+{{% /notice %}}
+
+
+### Verschiedene E-Mail Konfigurationen und Absenderadressen
+
+{{< version "4.10" >}}
+
+In vielen Fällen erlauben SMTP-Server nicht den Versand von beliebigen Absenderadressen. Meist muss die Absenderadresse
+zu den verwendeten SMTP-Server Zugangsdaten passen. Vor allem in Multidomain-Installationen von Contao kann es jedoch
+wichtig sein, dass die Absenderadresse der E-Mails, die Contao verschickt, zur jeweiligen Domain passt.
+
+Ab Contao **4.10** besteht daher die Möglichkeit mehrere E-Mail Konfigurationen in Contao zu benutzen. Diese 
+Konfigurationen können dann pro Webseiten-Startpunkt, pro Formular und pro Newsletter-Kanal augewählt werden. Pro E-Mail 
+Konfiguration kann dann außerdem auch der Absender gesetzt werden, welcher dann für jede E-Mail benutzt wird, die über
+die ausgewählte E-Mail Konfiguration gesendet wird.
+
+Die Konfiguration benötigt zwei Schritte. Zuerst müssen die verfügbaren E-Mail Versandmethoden über die Symfony Framework
+Konfiguration in der `config.yml` als sogenannte »Transports« eingestellt werden. Dabei können bspw. ein oder mehrere 
+SMTP-Server über die sogenannte »DSN«-Syntax definiert werden. Diese Syntax ist grundsätzlich sehr einfach aufgebaut:
+
+```
+smtp://<BENUTZERNAME>:<PASSWORT>@<HOSTNAME>:<PORT>
+```
+
+Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, oder entfernt sie dementsprechend. Siehe 
+dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMailer].
+
+{{% notice tip %}}
+Anstatt `smtp://` kann auch `smtps://` verwendet werden, um automatisch SSL Verschlüsselung über Port `465` zu verwenden.
+{{% /notice %}} 
+
+```yml
+# config/config.yml
+framework:
+    mailer:
+        transports:
+            application: smtps://exampleuser:examplepassword@example.com
+            website1: smtps://email@example.org:foobar@example.org
+            website2: smtps://email@example.de:foobar@example.de
+```
+
+Im zweiten Schritt können die konfigurierten Transports über die Contao Framework Konfiguration im Backend verfügbar
+gemacht werden. Im folgenden Beispiel werden die Transports `website1` und `website2` verfügbar gemacht:
+
+```yml
+# config/config.yml
+contao:
+    mailer:
+        transports:
+            website1: ~
+            website2: ~
+```
+
+Wenn danach der Symfony Application Cache erneuert wurde, stehen diese E-Mail Konfigurationen zur Selektion im Contao
+Backend zur Verfügung.
+
+{{% notice note %}}
+Wird kein Transport konfiguriert, gelten nach wie vor die Informationen aus der `parameters.yml`. Werden Transports
+konfiguriert, aber es wird kein Transport im Contao Backend ausgewählt, wird automatisch der erste definierte Transport 
+verwendet.
+{{% /notice %}}
+
+Optional kann man nun pro Transport auch die Absenderadresse überschreiben:
+
+```yml
+# config/config.yml
+contao:
+    mailer:
+        transports:
+            website1:
+                from: email@example.org
+            website2:
+                form: email@example.de
+```
+
+Es besteht außerdem die Möglichkeit für die Beschreibungen der Optionen für die Selektion im Backend über Übersetzungen
+pro Sprache zu definieren:
+
+```yml
+# translations/mailer_transports.en.yml
+website1: 'SMTP for Website 1'
+website2: 'SMTP for Website 2'
+```
+
+```yml
+# translations/mailer_transports.de.yml
+website1: 'SMTP für Webseite 1'
+website2: 'SMTP für Webseite 2'
+```
+
+
+[SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
