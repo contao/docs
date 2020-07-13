@@ -431,8 +431,8 @@ In vielen Fällen erlauben SMTP-Server nicht den Versand von beliebigen Absender
 zu den verwendeten SMTP-Server Zugangsdaten passen. Vor allem in Multidomain-Installationen von Contao kann es jedoch
 wichtig sein, dass die Absenderadresse der E-Mails, die Contao verschickt, zur jeweiligen Domain passt.
 
-Ab Contao **4.10** besteht daher die Möglichkeit mehrere E-Mail Konfigurationen in Contao zu benutzen. Diese 
-Konfigurationen können dann pro Webseiten-Startpunkt, pro Formular und pro Newsletter-Kanal augewählt werden. Pro E-Mail 
+Ab Contao **4.10** besteht daher die Möglichkeit, mehrere E-Mail Konfigurationen in Contao zu benutzen. Diese 
+Konfigurationen können dann pro Webseiten-Startpunkt, pro Formular und pro Newsletter-Kanal ausgewählt werden. Pro E-Mail 
 Konfiguration kann dann außerdem auch der Absender gesetzt werden, welcher dann für jede E-Mail benutzt wird, die über
 die ausgewählte E-Mail Konfiguration gesendet wird.
 
@@ -495,7 +495,7 @@ contao:
                 form: email@example.de
 ```
 
-Es besteht außerdem die Möglichkeit für die Beschreibungen der Optionen für die Selektion im Backend über Übersetzungen
+Es besteht außerdem die Möglichkeit, für die Beschreibungen der Optionen für die Selektion im Backend über Übersetzungen
 pro Sprache zu definieren:
 
 ```yml
