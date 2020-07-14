@@ -9,7 +9,7 @@ to their site via Contao's page layouts. However, as an application or extension
 developer, you might want to add your own assets to a page, whenever necessary.
 
 
-## Gobal Arrays
+## Global Arrays
 
 Contao utilises global arrays to store references for later inclusion into the page
 layout.
