@@ -176,7 +176,7 @@ model classes to load referenced data sets efficiently and developer friendly.
 
 Since Contao 3.0, the database definition is added using the `sql` key as a string 
 to each DCA field, e.g. `varchar(255) NOT NULL default ''`. Starting from Contao 
-4.3, one can use [Doctrine Schema Representation][2] to take full advantage of
+**4.3**, one can use [Doctrine Schema Representation][2] to take full advantage of
 the Doctrine Database Abstraction Layer.
 
 **Examples:**

@@ -93,7 +93,7 @@ Each tag can have the following options:
 | table    | `string`  | The target table of the DCA.                                                                                          |
 | target   | `string`  | The target callback within the DCA with the array positions separated by periods. The last element is the callback name - however the `_callback` suffix is optional. |
 | method   | `string`  | _Optional:_ the method name in the service. Otherwise the method name will be `onCallbacknameCallback` automatically. |
-| priority | `integer` | _Optional:_ priority of the callback. By default it will be executed after all other callbacks according to the loading order of the bundles. Anything with higher than `0` will be executed before legacy callbacks. Anything with lower than `0` will be executed after legacy callbacks. |
+| priority | `integer` | _Optional:_ priority of the callback. By default it will be executed _before_ all legacy callbacks according to the loading order of the bundles. Anything with higher than `0` will be executed before legacy callbacks. Anything with lower than `0` will be executed after legacy callbacks. |
 
 The [callback reference][2] lists the appropriate target names for the callbacks.
 

@@ -73,7 +73,6 @@ is called as soon as the hook `activateAccount` is executed.
 
 ```php
 // src/EventListener/ActivateAccountListener.php
-
 namespace App\EventListener;
 
 use Contao\MemberModel;

@@ -85,7 +85,7 @@ class FilesOnLoadCallbackListener implements ServiceAnnotationInterface
 {
     public function __invoke(): void
     {
-        $GLOBALS['TL_CSS'][] = self::CSS_FILE;
+        $GLOBALS['TL_CSS'][] = 'files/path/to/my.css';
     }
 }
 ```

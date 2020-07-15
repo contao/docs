@@ -131,6 +131,15 @@ already contains the appropriate autoloading directive:
 }
 ```
 
+{{% notice info %}}
+During development it is advisable to not optimize the Autoloader by Composer, otherwise
+new classes that you created will not be available immediately. If you used the
+`-o`/`--optimize-autoloader` option previously, or the Contao Manager (which optimizes
+the Autoloader by default), execute `composer install` or `composer dump-autoload`
+without the parameter again. Then in the production environment you should use the
+parameter again for performance reasons.
+{{% /notice %}}
+
 Any of these classes can also be registered as Symfony services, which is necessary
 if you want to use dependency injection and service tagging. Registering Contao 
 hooks, content elements, front end modules, cron jobs and Data Container callbacks
