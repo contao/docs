@@ -78,7 +78,7 @@ Modules are used to simplify, everything mentioned here works exactly the same f
 {{% /notice %}}
 
 Sometimes, one might need to override/extend the functionality of an existing Contao module.
-Sure one could simply create a module *the old way*, but this limits functionality and is not
+While you can still create a module the legacy way, it limits functionality and is not
 recommended anymore. However, there's nothing limiting us from extending an existing class and
 using it as a controller in Contao 4!
 
