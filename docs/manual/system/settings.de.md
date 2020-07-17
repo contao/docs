@@ -492,7 +492,7 @@ contao:
             website1:
                 from: email@example.org
             website2:
-                form: email@example.de
+                from: Lorem Ipsum <email@example.de>
 ```
 
 Es besteht außerdem die Möglichkeit, für die Beschreibungen der Optionen für die Selektion im Backend über Übersetzungen
