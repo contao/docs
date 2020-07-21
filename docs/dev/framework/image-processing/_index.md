@@ -20,7 +20,8 @@ output images and metadata for your templates.
 |-|-|-|
 | Output images in a template | [&rarr;&nbsp;Image Studio][ImageStudio] | high |
 | Resize images with full control over each parameter | [&rarr;&nbsp;ImageFactory][ImageFactory]<br>[&rarr;&nbsp;PictureFactory][PictureFactory] | medium | 
-| Use the image processing features outside a Contao application | [&rarr;&nbsp;contao/image][LibraryImage]<br>[&rarr;&nbsp;contao/imagine&#8209;svg][LibraryImagine] | low |
+| Use the image processing features outside a Contao application | [&rarr;&nbsp;contao/image][LibraryImage] | medium rare |
+| Modify or resize images directly | [&rarr;&nbsp;imagine/imagine][LibraryImagine]<br>[&rarr;&nbsp;contao/imagine&#8209;svg][LibraryImagineSvg] | low |
 
 
 ## Templating
