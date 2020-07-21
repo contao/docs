@@ -138,6 +138,8 @@ class Example
 
 ## SimpleTokenParser
 
+{{< version "4.10" >}}
+
 This service allows parsing *simple tokens*. See the [usage examples][SimpleTokenUsage] from the tests for more details.
 
 ```php
