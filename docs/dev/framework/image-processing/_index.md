@@ -41,5 +41,6 @@ to use images in your templates.
 [ImageFactory]: /framework/image-processing/image-picture-factory/#image-factory
 [PictureFactory]: /framework/image-processing/image-picture-factory/#picture-factory
 [LibraryImage]: https://github.com/contao/image
-[LibraryImagine]: https://github.com/contao/imagine-svg
+[LibraryImagine]: https://github.com/avalanche123/Imagine
+[LibraryImagineSvg]: https://github.com/contao/imagine-svg
 [Templating]: /framework/image-processing/image-studio/#templating
