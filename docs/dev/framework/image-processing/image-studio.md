@@ -134,7 +134,7 @@ This can be helpful if you need to output multiple images with a similar configu
 ## Templating
 
 
-#### PHP Templates ####
+### PHP Templates
 
 If you are creating your own PHP templates and want to apply `Figure` data directly, you currently need to create the
 markup yourself.
