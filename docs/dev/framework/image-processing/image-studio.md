@@ -34,36 +34,6 @@ Have a look at the [templating section](#templating) for more information on how
 templates.
 {{% /notice %}}
 
-In most cases the `FigureBuilder` will be the easiest way to create `Figure` objects. You can, however, create them
-yourself as well:
-
-```php
-// Create with explicitly defined arguments
-$figure = new Figure(
-  $studio->createImage('my/image.png', [800, 600, 'crop']),
-  new MetaData([MetaData::VALUE_ALT => 'My Image']),
-  ['data-foo' => 'bar'],
-  $studio->createLightboxImage('my/image_big.png')
-);
-
-
-// Create with arguments as closures
-$figure = new Figure(
-  $studio->createImage('my/image.png', [800, 600, 'crop']),
-  static function(Figure $figure): ?MetaData {
-      return new MetaData([MetaData::VALUE_ALT => 'My Image']);
-  }
-);
-
-// Trigger the execution of the closure
-$figure->hasMetaData();
-```
-
-{{% notice info %}}
-All, but the main image resource can either be set by passing the values into the class's constructor or by passing
-closures that return the values instead when evaluated. This way you can implement a lazy/on-demand strategy. Have a
-look at the `FigureBuilder` to see an example of how this can be done.
-{{% /notice %}}
 
 ### Studio factory
 
