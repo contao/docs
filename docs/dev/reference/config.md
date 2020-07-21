@@ -213,7 +213,11 @@ That's why, after changing this value, you should regenerate the application cac
 users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
 
 
-### `COOKIE_WHITELIST`
+### `COOKIE_ALLOW_LIST`
+
+{{% notice info %}}
+In Contao **4.9** this environment variable is called `COOKIE_WHITELIST`.
+{{% /notice %}}
 
 This is a special environment variable related to the default caching proxy which is shipped with the Contao Managed
 Edition by default.
