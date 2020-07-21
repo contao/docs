@@ -16,7 +16,7 @@ The Image Studio consists of a set of classes and templates that help you genera
 
 ## Components
 
-You can find the Image Studio components in the `Contao\CoreBundle\Image\Studio` [namespace](Studio).
+You can find the Image Studio components in the `Contao\CoreBundle\Image\Studio` [namespace][Studio].
 
 
 ### Figure
