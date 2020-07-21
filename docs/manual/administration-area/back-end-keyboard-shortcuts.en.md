@@ -64,7 +64,7 @@ Further abbreviations are added in "Edit multiple" mode:
 
 ## Keyboard shortcuts under Windows, Linux and Mac
 
-The described shortcuts work in this form only under Windows and Linux. Mac users have to use `[Ctrl]+[⌥ Opt]` instead of `[Alt]` 
+The described shortcuts work in this form only under Windows and Linux. Mac users have to use `[Ctrl]+[⌥]` instead of `[Alt]` 
 together with the keyboard shortcut.
 
 In addition, Firefox on Windows deviates from the standard: you have to press `[Alt]+[Shift]` and the keyboard shortcut.
