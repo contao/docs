@@ -11,7 +11,9 @@ section you'll learn how to use this functionality in your own code and template
 
 ## Image Processing Stack
 
-Under the hood, Contao uses its own standalone library [contao/image][LibraryImage] to generate responsive images. This library is based on [imagine/imagine][LibraryImagine] and [contao/imagine-svg][LibraryImagineSvg] which do the actual modification of image files. The `CoreBundle` comes with an `ImageFactory` and `PictureFactory` that wrap around those
+Under the hood, Contao uses its own standalone library [contao/image][LibraryImage] to generate responsive images. This
+library is based on [imagine/imagine][LibraryImagine] and [contao/imagine-svg][LibraryImagineSvg] which do the actual
+modification of image files. The `CoreBundle` comes with an `ImageFactory` and `PictureFactory` that wrap around those
 libraries, adapt them to the Contao ecosystem and provide additional features like the ability to use predefined resize
 configuration. Finally, there are the `Studio` classes that allow a convenient way to use the factories to generate and
 output images and metadata for your templates.
