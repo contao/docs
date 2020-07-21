@@ -136,6 +136,51 @@ class Example
 ```
 
 
+## SimpleTokenParser
+
+{{< version "4.10" >}}
+
+This service allows parsing *simple tokens*. See the [usage examples][SimpleTokenUsage] from the tests for more details.
+
+```php
+use Contao\CoreBundle\Util\SimpleTokenParser;
+
+class Example
+{
+    private $parser;
+
+    public function __construct(SimpleTokenParser $parser)
+    {
+        $this->parser = $parser;
+    }
+
+    public function execute()
+    {
+        // Token replacement
+        $output = $this->parser->parseTokens(
+            'I like ##cms##.',
+            ['cms' => 'Contao']
+        );
+
+        // Conditional expressions
+        $output = $this->parser->parseTokens(
+            'This is {if value>=10}big{else}small{endif}',
+            ['value' => 20]
+        );
+    }
+}
+```
+
+#### Extending the parser
+
+The simple token parser builds on top of the [Symfony Expression Language][ExpressionLanguage]. If you want to extend
+its functionality, you can register an [expression provider][ExpressionProvider] that adds your own expression functions:
+
+ 1. Create a service that implements `Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface`
+ 2. Return an array of expression functions in the `getFunctions()` method
+ 3. Tag the service with `contao.simple_token_extension`
+
+
 ## TokenChecker
 
 This service let's you query information of the Contao related security tokens, if
@@ -168,3 +213,8 @@ class Example
     }
 }
 ```
+
+
+[SimpleTokenUsage]: https://github.com/contao/contao/blob/master/core-bundle/tests/Util/SimpleTokenParserTest.php
+[ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
+[ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
