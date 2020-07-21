@@ -225,7 +225,7 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 
 ## Quicklink
 
-Das Frontend-Modul »Quicklink« fügt der Webseite ein ein Drop-Down-Menü aus beliebigen Seiten hinzu, das 
+Das Frontend-Modul »Quicklink« fügt der Webseite ein Drop-Down-Menü aus beliebigen Seiten hinzu, das 
 keine hierarchischen Abhängigkeiten berücksichtigt.
 
 **Seiten:** Hier wählst du aus, welche Seiten in dem Menü enthalten sein sollen.
