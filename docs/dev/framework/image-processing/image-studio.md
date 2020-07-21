@@ -155,7 +155,7 @@ $template->setData($figure->getLegacyTemplateData());
 ```
 
 
-#### Twig ####
+### Twig
 
 If you are using Twig, there are three supported ways to get figures/images into your templates:
 
