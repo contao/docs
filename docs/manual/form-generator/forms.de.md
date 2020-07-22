@@ -67,6 +67,7 @@ immer als Attachment angehängt.
 | Rohdaten                 | Die E-Mail enthält die unbearbeiteten Daten, das heißt, die Inhalte der einzelnen Formularfelder werden einfach untereinander aufgelistet. |
 | XML-Datei                | Der E-Mail ist eine XML-Datei mit den Formulardaten angehängt. |
 | CSV-Datei                | Der E-Mail ist eine CSV-Datei mit den Formulardaten angehängt. |
+| CSV-Datei (Microsoft Excel) | {{< version "4.10" >}} Der E-Mail ist eine CSV-Datei im Microsoft-Excel-Format mit den Formulardaten angehängt. |
 | E-Mail                   | Die Formulardaten werden so formatiert, als hätte der Absender eine E-Mail mit seinem E-Mail-Programm geschrieben. In diesem Fall verarbeitet der Formulargenerator ausschließlich die Felder `name`, `email`, `subject` und `message` und ignoriert alle anderen Formularfelder. |
 
 **Leere Felder auslassen:** Wenn du diese Option auswählst, werden nur ausgefüllte Felder per E-Mail versendet. Felder 
