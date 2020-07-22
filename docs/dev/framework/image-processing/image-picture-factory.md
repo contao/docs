@@ -37,11 +37,11 @@ $image = $this->imageFactory->create(
 ```
 
 ```php
-echo $resizedImage->getPath(); 
+echo $image->getPath(); 
 // /root/assets/images/9/image-6dc4b466.jpg
-echo $resizedImage->getUrl('/root'); 
+echo $image->getUrl('/root'); 
 // assets/images/9/image-6dc4b466.jpg
-echo $resizedImage->getDimensions()->getSize()->getWidth();
+echo $image->getDimensions()->getSize()->getWidth();
 // 100
 ```
 
