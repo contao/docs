@@ -26,6 +26,13 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
 {
     use EscargotAwareTrait;
 
+    private const IGNORE_URIS = [
+        'https://github.com/contao/docs/edit',
+        'http(s?)://(www\.)?example\.',
+        'http(s?)://.+\.local(/|$)',
+        'http(s?)://localhost(/|$)',
+    ];
+
     private string $outputPath;
     private int $numberOfErrors = 0;
 
@@ -46,14 +53,11 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
 
     public function shouldRequest(CrawlUri $crawlUri): string
     {
-        // All examples in the docs use www.example.com - we never request those
-        if ('www.example.com' === $crawlUri->getUri()->getHost()) {
-            return SubscriberInterface::DECISION_NEGATIVE;
-        }
-
-        // Never request GitHub edit links
-        if ($this->stringStartsWith((string) $crawlUri->getUri(), 'https://github.com/contao/docs/edit')) {
-            return SubscriberInterface::DECISION_NEGATIVE;
+        // Ignore some URIs
+        foreach (self::IGNORE_URIS as $pattern) {
+            if (preg_match('@'.$pattern.'@i', (string) $crawlUri->getUri())) {
+                return SubscriberInterface::DECISION_NEGATIVE;
+            }
         }
 
         if (!$this->escargot->getBaseUris()->containsHost($crawlUri->getUri()->getHost())) {
@@ -141,10 +145,5 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         }
 
         fwrite($this->fileHandle, $string."\n");
-    }
-
-    private function stringStartsWith(string $haystack, string $needle): bool
-    {
-        return 0 === \strncmp($haystack, $needle, \strlen($needle));
     }
 }
