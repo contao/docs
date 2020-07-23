@@ -352,7 +352,7 @@ an additional command check via load_callback).
 ### `list.global_operations.operation.button`
 
 {{% expand "Parameters" %}}
-* `string` Button href
+* `string`/`null` Button href
 * `string` Label
 * `string` Title
 * `string` Class
@@ -368,10 +368,10 @@ an additional command check via load_callback).
 
 {{% expand "Parameters" %}}
 * `array` Record data
-* `string` Button href
+* `string`/`null` Button href
 * `string` Label
 * `string` Title
-* `string` Icon
+* `string`/`null` Icon
 * `string` HTML attributes
 * `string` Table
 * `array` IDs of all root records
