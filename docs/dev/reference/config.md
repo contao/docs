@@ -231,7 +231,7 @@ application (Contao in this case) is not interested in at all. However, because 
 serve a response from the cache or not before the application is even started, there's no way it can know which cookies
 are relevant and which ones are not.
 So, we have to tell it.
-The Contao Managed Edition ships with a list of irrelevant of cookies that are ignored by default to increase the hit rate
+The Contao Managed Edition ships with a list of irrelevant cookies that are ignored by default to increase the hit rate
 but if you want to optimize it even more, you can disable the default list by providing an explicit list of cookies
 you need.
 These are the cookies you know are **relevant** to the application and in this case, the cache must be **omitted**.
