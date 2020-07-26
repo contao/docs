@@ -45,7 +45,7 @@ class DeeplCommand extends Command
     public function configure()
     {
         $this
-            ->setName('deepl')
+            ->setName('translate')
             ->setDescription('Automatically translates pages from the manual.')
             ->addArgument('source_lang', InputArgument::OPTIONAL, 'The language to be translated from.', 'de')
             ->addArgument('target_lang', InputArgument::OPTIONAL, 'The language to be translated to.', 'en')

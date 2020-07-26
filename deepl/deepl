@@ -5,14 +5,13 @@ require __DIR__.'/vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 use Contao\Docs\DeeplTranslator\DeeplCommand;
+use Contao\Docs\DeeplTranslator\FixupCommand;
 
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-$deeplCommand = new DeeplCommand();
-
 $application = new Application();
-$application->add($deeplCommand);
-$application->setDefaultCommand($deeplCommand->getName(), true);
+$application->add(new DeeplCommand());
+$application->add(new FixupCommand());
 $application->run();
