@@ -165,6 +165,6 @@ Therefore, a separate (sub)domain is required for each Contao installation.
 
 There are a few major Internet service providers that offer special settings for running Contao. Fortunately, they are 
 only the exception to the rule. The provider-specific settings can be found in the German 
-[Contao forum](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern). You can optimal hosting
-packages for Contao from the [Contao partners](https://contao.org/en/contao-partners.html) in the service category 
-"Web hosting".
+[Contao forum](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern). You can get optimal 
+hosting packages for Contao from the [Contao partners](https://contao.org/en/contao-partners.html) in the service 
+category "Web hosting".
