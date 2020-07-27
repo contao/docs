@@ -274,7 +274,7 @@ Cache auszunehmen (also `private` zu machen):
   TODO: Soll das hier überhaupt erwähnt werden? Irgendwo muss es ja auch für Nicht-Entwickler stehen.
   {{% /notice %}}
 
-  Im Falle von Cookies, enthält der `Contao-Response-Private-Reason`-Header `request-cookies` mit einer Liste aller
+  Im Falle von Cookies, enthält der `Contao-Private-Response-Reason`-Header `request-cookies` mit einer Liste aller
   Cookies die dafür gesorgt haben, dass die Antwort `private` wurde.  
   
 ## FAQ
