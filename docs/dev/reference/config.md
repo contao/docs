@@ -258,10 +258,11 @@ not really a valid use case.
 {{< version "4.10" >}}
 
 In case you don't want to manage the whole `COOKIE_ALLOW_LIST` because you are unsure what your application needs but
-you want to disable one of the existing entries on the deny list that's managed by Contao, you can specify this using:
+you want to disable one or more of the existing entries on the deny list that's managed by Contao, you can specify this
+using:
 
 ```
-COOKIE_REMOVE_FROM_DENY_LIST=__utm.+
+COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
 ```
 
 ### `QUERY_PARAMS_ALLOW_LIST`
