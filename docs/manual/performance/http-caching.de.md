@@ -240,22 +240,26 @@ Cache auszunehmen (also `private` zu machen):
   deaktiveren, **müssen** aber nicht zwingend.
   
   Die Regel ist ganz einfach: Jedes Cookie kann potenziell einen Besucher identifizieren und somit könnte die Applikation
-  (also Contao) personalisierte Inhalte (Warenkörbe, persönliche Empfehlungen, Logins etc.) ausliefern. Somit darf ein
-  Cache Proxy standardmässig auch nichts aus dem Cache ausliefern, wenn die Anfrage ein Cookie enthält.
+  (also Contao) personalisierte Inhalte (Warenkörbe, persönliche Empfehlungen, Logins etc.) ausliefern. Wir erinnern
+  uns daran: Der Proxy ist komplett getrennt von der Applikation, kann sogar auf einem anderen Server in einem anderen
+  Teil der Welt liegen und hat deshalb auch keine Möglichkeit zu wissen, welche Cookies für die Applikation relevant
+  sind. Wir müssen es ihm mitteilen.
+  
+  Somit darf ein Cache Proxy grundsätzlich erst mal nichts aus dem Cache ausliefern, wenn die Anfrage ein Cookie enthält.
   Wir halten nochmal fest: **Jedes** einzelne Cookie bedeutet implizit, dass der Reverse Proxy umgangen wird.
   Wollen wir eine Antwort aus dem Cache generieren lassen, so müssen wir also sicherstellen, dass **kein einziges Cookie**
   den Weg zum Cache-Proxy findet.
   
   Allerdings gibt es eine Vielzahl an Cookies. Hier mal ein paar Beispiele:
   
-  * Die ganzen `_ga_*` Cookies von Google Analytics
-  * Die ganzen `_pk_*` Cookies von Matomo
+  * `_ga_*` Cookies von Google Analytics
+  * `_pk_*` Cookies von Matomo
   * Cloudflare's `__cfduid` Cookie
   * Dein `cookiebar_accepted` Cookie, um zu wissen ob die Cookie-Bestimmungen akzeptiert wurden
-  * usw.
+  * uvm.
 
   Die Liste ist ziemlich lang und der aufmerksame Leser hat jetzt schon einen grundsätzlichen Unterschied zwischen z. B. 
-  dem zuvor erwähnten PHP-Session-Cookie und z. B. dem `_ga_*` Cookie entdeckt. Denn eines davon ist wirklich relevant für
+  dem zuvor erwähnten PHP-Session-Cookie und z. B. dem `_ga_*` Cookie entdeckt: Eines davon ist wirklich relevant für
   den Server (also die PHP-Session) und das andere ist für das clientseitige Tracking (also innerhalb des Browsers)
   des Benutzers zuständig und für Contao völlig irrelevant.
   
@@ -268,15 +272,29 @@ Cache auszunehmen (also `private` zu machen):
   irrelevanten Cookies innerhalb des Contao Cache Proxys. Diese werden vor dem Cache-Lookup vom Request entfernt
   und kommen somit weder beim Cache-Proxy noch (im Falle eines Cache Misses) bei Contao selbst an.
   
-  Die fortgeschritteneren Anwender können diese Liste übersteuern.
+  Die fortgeschritteneren Anwender können diese Liste übersteuern, siehe der Abschnitt zur Konfiguration des Contao
+  Cache Proxys.
   
-  {{% notice warning %}}
-  TODO: Soll das hier überhaupt erwähnt werden? Irgendwo muss es ja auch für Nicht-Entwickler stehen.
-  {{% /notice %}}
-
   Im Falle von Cookies, enthält der `Contao-Private-Response-Reason`-Header `request-cookies` mit einer Liste aller
   Cookies die dafür gesorgt haben, dass die Antwort `private` wurde.  
   
+## Konfiguration des Contao Cache Proxys  
+
+Der Contao Cache kann natürlich wie Contao selbst auch bis zu einem gewissen Grad an die individuellen Bedürfnisse
+angepasst werden. Dadurch, dass Contao selbst interne Listen von bspw. irrelevanten Cookies mitliefert, ist er bereits
+von Haus aus mit guten Standardeinstellungen ausgestattet.
+Du kannst ihn aber durch die Anpassung von Umgebungsvariabeln weiter optimieren und auf Performance trimmen.
+  
+{{% notice idea %}}
+Du fragst dich warum Contao über die `config.yaml` gesteuert wird und der Contao Cache Proxy mit Umgebungsvariabeln?
+Wir kommen wieder darauf zurück, dass die beiden nichts voneinander wissen. Die `config.yaml` für Contao selbst ist
+Applikationskonfiguration. Der mitgelieferte Contao Cache Proxy hingegeben, muss seine Einstellungen kennen **bevor** 
+Contao überhaupt gestartet wird. Genau das wollen wir ja nämlich verhindern. Dafür sind Umgebungsvariabeln die beste
+Wahl.
+{{% /notice %}}
+
+TODO: Link to config
+
 ## FAQ
 
 {{% expand "Heisst das, die Remember-Me-Funktion deaktiviert den Cache für einen Besucher komplett?" %}}
