@@ -257,7 +257,7 @@ not really a valid use case.
 
 {{< version "4.10" >}}
 
-In case you don't want to manage the whole `COOKIE_ALLOW_LIST` because you're unsure what your application needs but
+In case you don't want to manage the whole `COOKIE_ALLOW_LIST` because you are unsure what your application needs but
 you want to disable one of the existing entries on the deny list that's managed by Contao, you can specify this using:
 
 ```
@@ -275,7 +275,7 @@ your cache.
 
 As with the irrelevant cookies, Contao also manages a list of irrelevant query parameters which again, you may completely
 override by providing a list of allowed query parameters if you know all the query parameters your application ever
-needs. This is highly unlikely which is why there's also `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`.
+needs. This is highly unlikely which is why there is also `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`.
 
 ### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
 
@@ -291,7 +291,7 @@ QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
 
 {{% notice warning %}}
 If you do so, make sure to disable caching by e.g. setting `Cache-Control: no-store` on this response if `fbclid` is
-present as otherwise you're back to having thousands of cache entries in your cache proxy.
+present as otherwise you are back to having thousands of cache entries in your cache proxy.
 {{% /notice %}}
 
 ### `DATABASE_URL`
