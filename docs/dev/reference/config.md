@@ -209,7 +209,7 @@ unique to your application and it's commonly used to add more entropy to securit
 should be a series of characters, numbers and symbols chosen randomly and the recommended length is around 
 32 characters. As with any other security-related parameter, it is a good practice to change this value from time
 to time. However, keep in mind that changing this value will invalidate all signed URIs and Remember Me cookies. 
-That's why, after changing this value, you should regenerate the application cache and log out all the application
+That is why, after changing this value, you should regenerate the application cache and log out all the application
 users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
 
 
@@ -222,7 +222,7 @@ In Contao **4.9** this environment variable is called `COOKIE_WHITELIST`.
 This is a special environment variable related to the default caching proxy which is shipped with the Contao Managed
 Edition by default.
 Contao disables any HTTP caching as soon as there is either a `Cookie` or an `Authorization` header present in the
-request. That's because these headers can potentially authenticate a user and thus cause personalized content to
+request. That is because these headers can potentially authenticate a user and thus cause personalized content to
 be generated in which case, we never want to serve any content from the cache.
 However, unfortunately, the web consists of tons of different cookies. Most of which are completely irrelevant to
 the application itself and are only used in JavaScript (although there are better alternatives such as LocalStorage,
@@ -231,8 +231,9 @@ application (Contao in this case) is not interested in at all. However, because 
 serve a response from the cache or not before the application is even started, there's no way it can know which cookies
 are relevant and which ones are not.
 So, we have to tell it.
-The Contao Managed Edition ships with a blacklist of cookies that are ignored by default to increase the hit rate
-but if you want to optimize it even more, you can disable the blacklist by providing an explicit whitelist.
+The Contao Managed Edition ships with a list of irrelevant cookies that are ignored by default to increase the hit rate
+but if you want to optimize it even more, you can disable the default list by providing an explicit list of cookies
+you need.
 These are the cookies you know are **relevant** to the application and in this case, the cache must be **omitted**.
 By default, Contao only uses the PHP session ID cookie to authenticate users and members, the CSRF cookie to
 protect visitors from CSRF attacks when submitting forms, the trusted devices cookie for two-factor authentication and
@@ -241,7 +242,7 @@ So in most cases, the following configuration will score the maximum cache hits 
 cookies of extensions you installed:
 
 ```
-COOKIE_WHITELIST=PHPSESSID,csrf_https-contao_csrf_token,trusted_device,REMEMBERME
+COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,trusted_device,REMEMBERME
 ```
     
 {{% notice note %}}
@@ -251,7 +252,48 @@ website over `http`, note that the cookie name will be `csrf_http-contao_csrf_to
 However, protecting your users from CSRF attacks but let them submit the form via unsecured `http` connections is
 not really a valid use case. 
 {{% /notice %}}
-    
+
+### `COOKIE_REMOVE_FROM_DENY_LIST`
+
+{{< version "4.10" >}}
+
+In case you don't want to manage the whole `COOKIE_ALLOW_LIST` because you are unsure what your application needs but
+you want to disable one or more of the existing entries on the deny list that is managed by Contao, you can specify this
+using:
+
+```
+COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
+```
+
+### `QUERY_PARAMS_ALLOW_LIST`
+
+{{< version "4.10" >}}
+
+For the very same reason we strip irrelevant cookies, we also strip irrelevant query parameters. E.g. you might be
+familiar with the typical `?utm_*>=<randomtoken>` query parameters that are added to links of your website. Because they
+change the URL every single time, they also generate new cache entries every single time, eventually maybe even flooding
+your cache.
+
+As with the irrelevant cookies, Contao also manages a list of irrelevant query parameters which again, you may completely
+override by providing a list of allowed query parameters if you know all the query parameters your application ever
+needs. This is highly unlikely which is why there is also `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`.
+
+### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
+
+{{< version "4.10" >}}
+
+As with `COOKIE_REMOVE_FROM_DENY_LIST`, you can use `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` to remove an entry from the
+default deny list shipped with Contao. If you e.g. need the Facebook click identifier (`fbclid`) in your server side
+code, you may update your list like so:
+
+```
+QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
+```
+
+{{% notice warning %}}
+If you do so, make sure to disable caching by e.g. setting `Cache-Control: no-store` on this response if `fbclid` is
+present as otherwise you are back to having thousands of cache entries in your cache proxy.
+{{% /notice %}}
 
 ### `DATABASE_URL`
 
