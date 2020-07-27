@@ -9,7 +9,7 @@ aliases:
 {{% notice info %}}
 Dieser gesamte Artikel bezieht sich auf Contao ab **Version 4.9**.
 Vorherige Versionen verfügen zwar auch über Caching-Mechanismen, diese sind aber nicht annähernd so effizient.
-Daher wurde darauf verzichtet, die Funktionsweise des Cachings für die älteren Versionen noch zu dokumentieren.
+Daher wurde darauf verzichtet, die Funktionsweise des Cachings für die älteren Versionen zu dokumentieren.
 {{% /notice %}}
 
 Der grösste Performance-Gewinn in jeder Applikation lässt sich dadurch erzielen, sie gar nicht erst starten zu müssen.
