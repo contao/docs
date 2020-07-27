@@ -89,10 +89,10 @@ führen.
 
 #### MySQL-Konfiguration
 
-- **MySQL** Tabellenformat `InnoDB`
+- **MySQL** Tabellenformat `InnoDB` (Standard seit MySQL 5.7)
 - **MySQL** Option `innodb_large_prefix = 1` (standardmäßig aktiviert seit MySQL 5.7.7)
 - **MySQL** Option `innodb_file_format = Barracuda` (nicht mehr notwendig seit MySQL 8.0)
-- **MySQL** Option `innodb_file_per_table = 1`
+- **MySQL** Option `innodb_file_per_table = 1` (standardmäßig aktiviert seit MySQL 5.6.7)
 - **MySQL** Zeichensatz `utf8mb4`
 
 

@@ -86,10 +86,10 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 
 #### MySQL Configuration
 
-- **MySQL** Table format `InnoDB`
+- **MySQL** storage engine `InnoDB` (default since MySQL 5.7)
 - **MySQL** option `innodb_large_prefix = 1` (enabled by default since MySQL 5.7.7)
 - **MySQL** option `innodb_file_format = Barracuda` (not necessary any more since MySQL 8.0)
-- **MySQL** Option `innodb_file_per_table = 1`
+- **MySQL** option `innodb_file_per_table = 1` (enabled by default since MySQL 5.6.7)
 - **MySQL** character set `utf8mb4`
 
 
