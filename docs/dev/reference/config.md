@@ -209,7 +209,7 @@ unique to your application and it's commonly used to add more entropy to securit
 should be a series of characters, numbers and symbols chosen randomly and the recommended length is around 
 32 characters. As with any other security-related parameter, it is a good practice to change this value from time
 to time. However, keep in mind that changing this value will invalidate all signed URIs and Remember Me cookies. 
-That's why, after changing this value, you should regenerate the application cache and log out all the application
+That is why, after changing this value, you should regenerate the application cache and log out all the application
 users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
 
 
@@ -222,7 +222,7 @@ In Contao **4.9** this environment variable is called `COOKIE_WHITELIST`.
 This is a special environment variable related to the default caching proxy which is shipped with the Contao Managed
 Edition by default.
 Contao disables any HTTP caching as soon as there is either a `Cookie` or an `Authorization` header present in the
-request. That's because these headers can potentially authenticate a user and thus cause personalized content to
+request. That is because these headers can potentially authenticate a user and thus cause personalized content to
 be generated in which case, we never want to serve any content from the cache.
 However, unfortunately, the web consists of tons of different cookies. Most of which are completely irrelevant to
 the application itself and are only used in JavaScript (although there are better alternatives such as LocalStorage,
@@ -258,7 +258,7 @@ not really a valid use case.
 {{< version "4.10" >}}
 
 In case you don't want to manage the whole `COOKIE_ALLOW_LIST` because you are unsure what your application needs but
-you want to disable one or more of the existing entries on the deny list that's managed by Contao, you can specify this
+you want to disable one or more of the existing entries on the deny list that is managed by Contao, you can specify this
 using:
 
 ```
