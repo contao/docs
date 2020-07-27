@@ -18,8 +18,8 @@ Die Mindestanforderungen hängen davon ab, ob du die neueste oder die _Long Term
 gepflegten Versionen von Contao sind mit den neuesten PHP- und MySQL-Versionen kompatibel. Daher wird grundsätzlich 
 empfohlen, diese immer zu verwenden.
 
-- **PHP:** Version 7.3+ (neueste Patch-Version)
-- **MySQL:** Version 5.7+ oder gleichwertiger **MariaDB** Server
+- **PHP:** Version 7.4+ (neueste Patch-Version)
+- **MySQL:** Version 8.0+ oder gleichwertiger **MariaDB** Server
 
 
 #### PHP-Erweiterungen
@@ -89,10 +89,10 @@ führen.
 
 #### MySQL-Konfiguration
 
-- **MySQL** Tabellenformat `InnoDB`
+- **MySQL** Tabellenformat `InnoDB` (Standard seit MySQL 5.7)
 - **MySQL** Option `innodb_large_prefix = 1` (standardmäßig aktiviert seit MySQL 5.7.7)
-- **MySQL** Option `innodb_file_format = Barracuda`
-- **MySQL** Option `innodb_file_per_table = 1`
+- **MySQL** Option `innodb_file_format = Barracuda` (nicht mehr notwendig seit MySQL 8.0)
+- **MySQL** Option `innodb_file_per_table = 1` (standardmäßig aktiviert seit MySQL 5.6.7)
 - **MySQL** Zeichensatz `utf8mb4`
 
 
