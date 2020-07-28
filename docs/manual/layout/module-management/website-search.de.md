@@ -124,7 +124,8 @@ Anzahl Suchergebnisse.
 | Erweitertes&nbsp;Formular | Das erweiterte Suchformular bietet darüber hinaus zwei Radio-Buttons zur Auswahl der Optionen »finde alle Wörter« und »finde irgendein Wort« (UND- bzw. ODER-Suche). |
 
 **Weiterleitungsseite:** Hier kannst du eine Seite angeben, zu der Besucher nach dem Abschicken des Suchformulars 
-weitergeleitet werden.
+weitergeleitet werden. Ist eine Weiterleitungsseite ausgewählt, zeigt dieses Modul keine Suchergebnisse an. Diese
+Konfiguration ist dann sinnvoll, wenn man dieses Suchmodul im Seitenlayout einbindet.
 
 **Referenzseite:** Hier kannst du die Suche auf einen Teilbereich der Seitenstruktur beschränken. Es erscheinen nur die 
 Seiten unterhalb der Referenzseite in den Ergebnissen.
