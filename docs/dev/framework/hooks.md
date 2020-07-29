@@ -97,9 +97,9 @@ Hook listener can be added to the service configuration.
 
 ```yml
 services:
-  App\EventListener\ActivateAccountListener:
-    tags:
-      - { name: contao.hook, hook: activateAccount, method: onAccountActivation, priority: 0 }
+    App\EventListener\ActivateAccountListener:
+        tags:
+            - { name: contao.hook, hook: activateAccount, method: onAccountActivation, priority: 0 }
 ```
 
 The service tag can have the following options:
@@ -125,7 +125,8 @@ legacy registered hooks.
 
 {{< version "4.8" >}}
 
-Hooks can also be registered using the `@Hook` _Annotation_. See the following example:
+Contao also supports its own annotation formats via the [Service Annotation Bundle][ServiceAnnotationBundle].
+Hooks can be registered using the `@Hook` Annotation. See the following example:
 
 ```php
 // src/EventListener/ParseArticlesListener.php
@@ -134,9 +135,8 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\FrontendTemplate;
 use Contao\Module;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseArticlesListener implements ServiceAnnotationInterface
+class ParseArticlesListener
 {
     /**
      * @Hook("parseArticles")
@@ -171,12 +171,11 @@ on the class, instead of a method:
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @Hook("indexPage")
  */
-class IndexPageListener implements ServiceAnnotationInterface
+class IndexPageListener
 {
     public function __invoke(string $content, array $pageData, array &$indexData): void
     {
@@ -189,3 +188,4 @@ class IndexPageListener implements ServiceAnnotationInterface
 [1]: ../../reference/hooks/
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
 [contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
+[ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle
