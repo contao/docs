@@ -374,7 +374,7 @@ QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
 {{% notice warning %}}
 Denk daran, dass du bei Vorhandensein dieses Parameters das Caching auf der Response deaktivierst bzw. deine(n) Entwickler*in
 darüber in Kenntnis setzt. Dies kann bequem via `Cache-Control: no-store` erreicht werden.
-Denn ansonsten rennen wir wiederum in das Problem, dass du viele Cache-Einträge generiert werden.
+Denn ansonsten rennen wir wiederum in das Problem, dass zu viele Cache-Einträge generiert werden.
 {{% /notice %}}
 
 ## FAQ
