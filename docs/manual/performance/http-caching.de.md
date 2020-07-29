@@ -95,7 +95,7 @@ Cache-Control: max-age=3600
 Der Server teilt uns hier mit, dass alles in Ordnung war (`200 OK`). Die Antwort enthält `UTF-8` encodiertes `HTML` und
 sie ist `42` Bytes lang. Ausserdem darf diese Antwort `3600` Sekunden, also eine Stunde, gecached werden.
 
-## Die HTTP-Caching Header
+## Die HTTP-Caching-Header
 
 Es gibt eine Reihe an HTTP-Headern die relevant für HTTP-Caching sind. Sie alle zu erklären würde den Rahmen
 dieser Dokumentation deutlich sprengen. Das Thema ist ausserdem bereits u. a. [bei MDN äusserst gut dokumentiert][mdn-caching],
@@ -145,7 +145,7 @@ unseren Caching-Proxy geschickt und entsprechend den HTTP-Headern im Cache abgel
 {{% notice tip %}}
 Es ist wichtig zu verstehen, dass der mitgelieferte Proxy absolut **nichts** von Contao weiss. Obwohl er ebenfalls in
 PHP geschrieben ist, ist er völlig unabhängig und kennt absolut keine Contao-Eigenheiten. Alles was er tut, basiert
-auf den Headern der HTTP-Requests und -Responses die er vom Client bzw. von Contao bekommt.
+auf den Headern der HTTP-Requests und -Responses, die er vom Client bzw. von Contao bekommt.
 {{% /notice %}}
 
 Den grossen Vorteil den wir durch die Nutzung von HTTP-Standards gewinnen, ist die freie Wahl des Caching-Proxys.
@@ -178,8 +178,8 @@ kann der Shared Cache diese Antwort nie im Cache ablegen. Daneben gibt es aber n
 * Es braucht eine Angabe zur Cache-Dauer, sprich `max-age` oder `s-maxage` im `Cache-Control` Header (auch hier gibt es
   weitere Header, die für uns aber nicht relevant sind)
  
-Im Falle des mitgelieferten Contao Cache-Proxy's könnt ihr das relativ einfach überprüfen. Alle Antworten von Contao
-werden dann nämlich mit einem `Contao-Cache` Header ausgestattet welcher grundsätzlich drei Werte annehmen kann:
+Im Falle des mitgelieferten Contao Cache-Proxys könnt ihr das relativ einfach überprüfen. Alle Antworten von Contao
+werden dann nämlich mit einem `Contao-Cache` Header ausgestattet, welcher grundsätzlich drei Werte annehmen kann:
 
 * `miss`
 
@@ -255,7 +255,7 @@ Cache auszunehmen (also `private` zu machen):
   * `_ga_*` Cookies von Google Analytics
   * `_pk_*` Cookies von Matomo
   * Cloudflare's `__cfduid` Cookie
-  * Dein `cookiebar_accepted` Cookie, um zu wissen ob die Cookie-Bestimmungen akzeptiert wurden
+  * Dein `cookiebar_accepted` Cookie, um zu wissen, ob die Cookie-Bestimmungen akzeptiert wurden
   * uvm.
 
   Die Liste ist ziemlich lang und der aufmerksame Leser hat jetzt schon einen grundsätzlichen Unterschied zwischen z. B. 
