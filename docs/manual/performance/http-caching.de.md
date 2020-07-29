@@ -293,7 +293,89 @@ Contao überhaupt gestartet wird. Genau das wollen wir ja nämlich verhindern. D
 Wahl.
 {{% /notice %}}
 
-TODO: Link to config
+Die nachfolgenden Umgebungsvariabeln erlauben dir, den Cache-Proxy weiter zu optimieren:
+
+#### `COOKIE_ALLOW_LIST`
+
+{{% notice info %}}
+In Contao **4.9** heisst diese Variable noch `COOKIE_WHITELIST`.
+{{% /notice %}}
+
+Diese Umgebungsvariable lässt dich konfigurieren, welche Cookies an die Applikation weitergereicht werden sollen und somit
+auch die Deativierung des Cachings zur Folge haben.
+Standardmässig nutzt Contao in seiner Core-Distribution ohne Erweiterungen nur **exakt vier Cookies** welche allesamt
+aus DSGVO-Sicht völlig unbedenklich sind, da technisch notwendig:
+
+1. Die ID der PHP-Session, welche standardmässig `PHPSESSID` lautet.
+
+2. Das CSRF-Cookie zur Verhinderung von [CSRF-Attacken][csrf].
+
+3. Das Trusted Device Cookie für vertrauten Geräten bei aktivierter Zweifaktorauthentifizierung.
+
+4. Das Remember-Me Cookie bei aktivierter Remember-Me-Funktion.
+
+Die höchste Anzahl Cache-Treffer und somit optimale Performance lässt sich folglich mit folgender Umgebungsvariable erzielen:
+
+```
+COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,trusted_device,REMEMBERME
+```
+    
+{{% notice note %}}
+Der Name des PHP-Session-Cookies ist konfigurierbar via `php.ini`, du solltest also nachsehen ob es bei dir auch `PHPSESSID`
+lautet. Ausserdem ist der Name des CSRF-Cookies aus sicherheitsgründen für `http` und `https` unterschiedlich. Solltest
+du `http` nutzen, lautet der Cookie-Name `csrf_http-contao_csrf_token`.
+Deine Besucher vor CSRF-Attacken schützen zu wollen, aber eine ungesicherte Verbindung einzusetzen, ist allerdings keine
+sinnvolle Konfiguration. Deine Webseiten sollten ausschliesslich über `https` laufen.
+{{% /notice %}}
+
+#### `COOKIE_REMOVE_FROM_DENY_LIST`
+
+{{< version "4.10" >}}
+
+Solltest du nicht genau wissen, welche Cookies deine Applikation braucht und somit nicht in der Lage sein, die
+`COOKIE_ALLOW_LIST` entsprechend zu pflegen, kannst du auch gewissen Cookies von der mitgelieferten Deny-Liste entfernen,
+solltest du eins oder mehrere davon brauchen:
+
+```
+COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
+```
+
+#### `QUERY_PARAMS_ALLOW_LIST`
+
+{{< version "4.10" >}}
+
+Aus dem genau gleichen Grund aus dem wir irrelevante Cookies entfernen, können wir auch irrelevante Query-Parameter entfernen.
+Ggf. kennst du die typischen `?utm_*=<zufälliges Token>` Query-Parameter welche an Links zu deiner Seite gehängt werden
+können. Sie werden benutzt um User-Tracking vorzunehmen. Allerdings sind auch die für die Applikation völlig irrelevant.
+Contao nutzt sie intern nicht. Ein zufälliges Token in der URL sorgt aber auch für ständig neue Cache-Einträge obwohl der
+Inhalt immer identisch ist, was dafür sorgen kann, dass der Cache überfüllt wird.
+
+Wie bei den irrelevanten Cookies, pflegt Contao intern auch eine Liste irrelevanter Query-Parameter welche du wiederum
+selber übersteuern kannst, indem du die gesamte Liste der relevanten Query-Parameter die irgendwo benutzt werden, mit
+der Umgebungsvariable `QUERY_PARAMS_ALLOW_LIST` pflegst.
+
+Im Gegensatz zu den Cookies hast du aber im Normalfall eine viel, viel höhere Zahl an relevanten Query-Parametern.
+Das geht von `page` für Paginierungen bis `token` für die Bestätigung von Registrierungen. Diese Liste manuell zu pflegen
+ist daher ein eher unwahrscheinlicher Fall, weshalb du wohl eher zu `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` greifen wirst,
+solltest du einen bestimmten Query-Parameter in deiner Applikation trotzdem brauchen.
+
+#### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
+
+{{< version "4.10" >}}
+
+Analog `COOKIE_REMOVE_FROM_DENY_LIST`, kannst du mittels `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` gewisse Einträge von der
+internen Deny-Liste entfernen. Brauchst du oder eine installierte Erweiterung bspw. den Facebook Click Identifier (`fbclid`)
+um serverseitig Auswertungen vorzunehmen, so kannst du diesen wie folgt erlauben:
+
+```
+QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
+```
+
+{{% notice warning %}}
+Denk daran, dass du bei Vorhandensein dieses Parameters das Caching auf der Response deaktivierst bzw. deine(n) Entwickler*in
+darüber in Kenntnis setzt. Dies kann bequem via `Cache-Control: no-store` erreicht werden.
+Denn ansonsten rennen wir wiederum in das Problem, dass du viele Cache-Einträge generiert werden.
+{{% /notice %}}
 
 ## FAQ
 
@@ -317,3 +399,4 @@ Cookie zu lösen.
 [rfc2616]: https://tools.ietf.org/html/rfc2616
 [mdn-caching]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
 [varnish]: https://varnish-cache.org/
+[csrf]: https://owasp.org/www-community/attacks/csrf
