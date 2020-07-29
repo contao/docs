@@ -293,7 +293,7 @@ Contao überhaupt gestartet wird. Genau das wollen wir ja nämlich verhindern. D
 Wahl.
 {{% /notice %}}
 
-Die nachfolgenden Umgebungsvariabeln erlauben dir, den Cache-Proxy weiter zu optimieren:
+Die nachfolgenden Umgebungsvariablen erlauben dir, den Cache-Proxy weiter zu optimieren:
 
 #### `COOKIE_ALLOW_LIST`
 
@@ -302,7 +302,7 @@ In Contao **4.9** heisst diese Variable noch `COOKIE_WHITELIST`.
 {{% /notice %}}
 
 Diese Umgebungsvariable lässt dich konfigurieren, welche Cookies an die Applikation weitergereicht werden sollen und somit
-auch die Deativierung des Cachings zur Folge haben.
+auch die Deaktivierung des Cachings zur Folge haben.
 Standardmässig nutzt Contao in seiner Core-Distribution ohne Erweiterungen nur **exakt vier Cookies** welche allesamt
 aus DSGVO-Sicht völlig unbedenklich sind, da technisch notwendig:
 
@@ -310,7 +310,7 @@ aus DSGVO-Sicht völlig unbedenklich sind, da technisch notwendig:
 
 2. Das CSRF-Cookie zur Verhinderung von [CSRF-Attacken][csrf].
 
-3. Das Trusted Device Cookie für vertrauten Geräten bei aktivierter Zweifaktorauthentifizierung.
+3. Das Trusted Device Cookie für vertrauten Geräten bei aktivierter Zwei-Faktor-Authentifizierung.
 
 4. Das Remember-Me Cookie bei aktivierter Remember-Me-Funktion.
 
@@ -322,7 +322,7 @@ COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,trusted_device,REMEMBER
     
 {{% notice note %}}
 Der Name des PHP-Session-Cookies ist konfigurierbar via `php.ini`, du solltest also nachsehen ob es bei dir auch `PHPSESSID`
-lautet. Ausserdem ist der Name des CSRF-Cookies aus sicherheitsgründen für `http` und `https` unterschiedlich. Solltest
+lautet. Ausserdem ist der Name des CSRF-Cookies aus Sicherheitsgründen für `http` und `https` unterschiedlich. Solltest
 du `http` nutzen, lautet der Cookie-Name `csrf_http-contao_csrf_token`.
 Deine Besucher vor CSRF-Attacken schützen zu wollen, aber eine ungesicherte Verbindung einzusetzen, ist allerdings keine
 sinnvolle Konfiguration. Deine Webseiten sollten ausschliesslich über `https` laufen.
