@@ -16,7 +16,7 @@ Der grösste Performance-Gewinn in jeder Applikation lässt sich dadurch erziele
 Mit anderen Worten: Wir möchten, dass die Ausgabe die Contao generiert, gespeichert und beim nächsten Aufruf direkt
 ausgeliefert wird, ohne dass Contao dafür gestartet werden muss.
 
-Contao baut dafür auf die Schultern von Giganten: dem Rückgrat des Internets, dem Hypertext Transfer Protocol (HTTP).
+Contao setzt dafür auf das Hypertext Transfer Protocol (HTTP) - das Rückgrat des Internets.
 
 Wieso sollte Contao das Rad neu erfinden, wenn sich [schlaue Köpfe schon zur Einführung von HTTP/1.1 1999][rfc2616] Gedanken
 zu Caching von HTTP-Antworten gemacht haben?
