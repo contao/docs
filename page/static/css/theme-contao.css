@@ -213,6 +213,19 @@ pre code {
     border-color: #FAE2E2;
 }
 
+div.notices.idea p {
+    border-top: 30px solid rgba(217, 79, 203, 0.8);
+    background: #f0e2fa;
+}
+
+.notices.idea pre {
+    border-color: #f0e2fa;
+}
+
+div.notices.idea p:first-child::before {
+    content: "\f0eb"; /* light bulb */
+}
+
 h1 {
     text-align: left;
 }
@@ -366,6 +379,14 @@ html[lang="de"] div.notices.warning p:first-child:after {
 
 html[lang="de"] div.notices.note p:first-child:after {
     content: 'Notiz';
+}
+
+html[lang="en"] div.notices.idea p:first-child:after {
+    content: 'Hint';
+}
+
+html[lang="de"] div.notices.idea p:first-child:after {
+    content: 'Hinweis';
 }
 
 /* fix #172 */
