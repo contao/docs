@@ -393,8 +393,7 @@ Menüpunkt **»Systemwartung«**.
 
 Contao wäre aber nicht Contao, wenn du das bei jeder Änderung selber machen müsstest.
 
-Contao verfügt über ein Framework, das es Entwicklern erlaubt, mit »Cache Tagging« zu arbeiten. Das Prinzip ist relativ
-schnörkellos: Beim Generieren der Antwort, wird diese mit Tags ausgezeichnet, so dass diese vom Cache Proxy als Metadaten
+Contao verfügt über ein Framework, das es Entwicklern erlaubt, mit »Cache Tagging« zu arbeiten. Beim Generieren der Antwort wird diese dazu mit Tags ausgezeichnet, sodass diese vom Cache Proxy als Metadaten
 zum Cache-Eintrag gespeichert werden können. Auf Basis dieser Information, können dann Einträge mit gewissen Cache Tags
 invalidiert (so nennt man den Lösch-Vorgang beim Caching) werden.
 
