@@ -211,7 +211,7 @@ Cache auszunehmen (also `private` zu machen):
 * Wenn die Anfrage einen `Authorization`-HTTP-Header enthält
 
   Der `Authorization`-Header enthält gemäss Standard Authentifizierungsdetails. Für Contao bedeutet das daher, dass ggf.
-  ein Modul, ein Inhaltselement auf diesen Header hört und potenziell benutzerspezifische Daten ausliefert. Um sicherzustellen,
+  ein Modul oder ein Inhaltselement auf diesen Header hört und potenziell benutzerspezifische Daten ausliefert. Um sicherzustellen,
   dass nicht private Daten im Shared Cache abgelegt und potenziell einem anderen Besucher ausgeliefert werden, forciert
   Contao hier `Cache-Control: private`. Contao teilt dir das auch mit: Der `Contao-Response-Private-Reason`-Header
   enthält in diesem Fall `authorization`.
@@ -280,7 +280,7 @@ Cache auszunehmen (also `private` zu machen):
   
 ## Konfiguration des Contao Cache Proxys  
 
-Der Contao Cache kann natürlich wie Contao selbst auch bis zu einem gewissen Grad an die individuellen Bedürfnisse
+Der Contao Cache kann natürlich, wie Contao selbst auch, bis zu einem gewissen Grad an die individuellen Bedürfnisse
 angepasst werden. Dadurch, dass Contao selbst interne Listen von bspw. irrelevanten Cookies mitliefert, ist er bereits
 von Haus aus mit guten Standardeinstellungen ausgestattet.
 Du kannst ihn aber durch die Anpassung von Umgebungsvariabeln weiter optimieren und auf Performance trimmen.
@@ -288,7 +288,7 @@ Du kannst ihn aber durch die Anpassung von Umgebungsvariabeln weiter optimieren 
 {{% notice idea %}}
 Du fragst dich warum Contao über die `config.yaml` gesteuert wird und der Contao Cache Proxy mit Umgebungsvariabeln?
 Wir kommen wieder darauf zurück, dass die beiden nichts voneinander wissen. Die `config.yaml` für Contao selbst ist
-Applikationskonfiguration. Der mitgelieferte Contao Cache Proxy hingegeben, muss seine Einstellungen kennen **bevor** 
+Applikationskonfiguration. Der mitgelieferte Contao Cache Proxy hingegegen, muss seine Einstellungen kennen **bevor** 
 Contao überhaupt gestartet wird. Genau das wollen wir ja nämlich verhindern. Dafür sind Umgebungsvariabeln die beste
 Wahl.
 {{% /notice %}}
