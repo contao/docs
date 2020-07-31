@@ -438,7 +438,7 @@ relevanten Informationen für den Client und würde nur unnötigen Datentransfer
 
 ## FAQ
 
-{{% expand "Welche Cache-Einstellungen sind für mich die \»richtigen\«?" %}}
+{{% expand "Welche Cache-Einstellungen sind für mich die »richtigen«?" %}}
 Diese Frage generell zu beantworten ist nicht möglich, denn wie so oft in unserer Branche lautet die Antwort »it depends«
 (dt. »es kommt drauf an«). Es gibt aber ein paar Grundprinzipien, an denen du dich orientieren kannst:
 
