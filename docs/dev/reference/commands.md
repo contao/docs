@@ -132,7 +132,7 @@ $> php bin/console contao:migrate [options]
 
 ## `contao:resize-images`
 
-{{< version "4.9" >}}
+{{< version "4.8" >}}
 
 With this command you can process all deferred images that were not yet resized.
 
