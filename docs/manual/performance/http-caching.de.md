@@ -393,11 +393,11 @@ Menüpunkt **»Systemwartung«**.
 
 Contao wäre aber nicht Contao, wenn du das bei jeder Änderung selber machen müsstest.
 
-Contao verfügt über ein Framework, das es Entwicklern erlaubt, mit »Cache Tagging« zu arbeiten. Beim Generieren der Antwort wird diese dazu mit Tags ausgezeichnet, sodass diese vom Cache Proxy als Metadaten
-zum Cache-Eintrag gespeichert werden können. Auf Basis dieser Information, können dann Einträge mit gewissen Cache Tags
-invalidiert (so nennt man den Lösch-Vorgang beim Caching) werden.
+Contao verfügt über ein Framework, das es Entwicklern erlaubt, mit »Cache-Tagging« zu arbeiten. Beim Generieren der Antwort wird diese dazu mit Tags ausgezeichnet, sodass diese vom Cache-Proxy als Metadaten
+zum Cache-Eintrag gespeichert werden können. Auf Basis dieser Information, können dann Einträge mit gewissen Cache-Tags
+invalidiert (so nennt man den Löschvorgang beim Caching) werden.
 
-Jede Antwort die Contao generiert enthält also jede Menge solcher Cache Tags. Eine Antwort könnte also bspw. so aussehen:
+Jede Antwort die Contao generiert enthält also jede Menge solcher Cache-Tags. Eine Antwort könnte also bspw. so aussehen:
 
 ````http request
 HTTP/1.1 200 OK
@@ -412,11 +412,11 @@ X-Cache-Tags: contao.db.tl_page.18, contao.db.tl_layout.16, contao.db.tl_content
 </html>
 ````
 
-Die Anzahl der Tags kann dabei beliebig wachsen. In diesem Beispiel hat Contao die Antwort mit drei Cache Tags ausgezeichnet
+Die Anzahl der Tags kann dabei beliebig wachsen. In diesem Beispiel hat Contao die Antwort mit drei Cache-Tags ausgezeichnet
 und wie du vielleicht bereits bemerkt hast, enthalten diese die Information, dass es sich bei dieser Antwort um die
 Seite mit ID `18` mit Seitenlayout ID `16` handelt und sich die Inhaltselemente mit ID `42` und `10` darauf befinden.
 
-Und hier kommt's: Bearbeitest du eins dieser Elemente im Contao Backend, invalidiert Contao automatisch alle Cache-Einträge
+Und hier kommt's: Bearbeitest du eines dieser Elemente im Contao-Backend, invalidiert Contao automatisch alle Cache-Einträge
 die mit diesem Element zusammenhängen! Wurde also bspw. das Inhaltselement `42` in einer News verwendet, würde ein
 allfälliger Cache-Eintrag der Detailseite und potenzieller Listenansichten automatisch gelöscht. Änderst du das
 Seitenlayout `18` und wählst dort bspw. eine zusätzliche CSS-Datei aus, die geladen werden soll, so werden alle Antworten
@@ -427,8 +427,8 @@ Ziemlich schlau, nicht?
 Grundsätzlich bedeutet das für uns also, dass wir die Cache-Dauer für den Shared Cache relativ hoch einstellen können,
 da die Invalidierung immer dann stattfindet, wenn wir etwas ändern. Du solltest trotzdem vorsichtig dabei sein und
 aktiv testen, denn es kann natürlich trotzdem Fälle geben, bei denen das automatische Invalidieren von Einträgen
-nicht wie gewünscht funktioniert. Bspw. könnte der/die Entwickler*in einer Erweiterung oder der Contao Core selbt es
-versäumt haben, die korrekten Cache Tags hinzuzufügen. Solche Fälle können aber bestimmt verbessert werden,
+nicht wie gewünscht funktioniert. Bspw. könnte der/die Entwickler*in einer Erweiterung oder der Contao-Core selbst es
+versäumt haben, die korrekten Cache-Tags hinzuzufügen. Solche Fälle können aber bestimmt verbessert werden,
 melde dich einfach bei den jeweiligen Verantwortlichen.
 
 {{% notice idea %}}
@@ -438,7 +438,7 @@ relevanten Informationen für den Client und würde nur unnötigen Datentransfer
 
 ## FAQ
 
-{{% expand "Welche Cache-Einstellungen sind für mich die \"richtigen\"?" %}}
+{{% expand "Welche Cache-Einstellungen sind für mich die \»richtigen\«?" %}}
 Diese Frage generell zu beantworten ist nicht möglich, denn wie so oft in unserer Branche lautet die Antwort »it depends«
 (dt. »es kommt drauf an«). Es gibt aber ein paar Grundprinzipien, an denen du dich orientieren kannst:
 
