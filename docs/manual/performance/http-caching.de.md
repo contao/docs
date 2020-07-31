@@ -377,7 +377,85 @@ darüber in Kenntnis setzt. Dies kann bequem via `Cache-Control: no-store` errei
 Denn ansonsten rennen wir wiederum in das Problem, dass zu viele Cache-Einträge generiert werden.
 {{% /notice %}}
 
+## Shared Cache-Wartung und Cache-Tagging
+
+An dieser Stelle müssen wir noch ein weiteres Konzept erläutern. Als Anwender von Contao wirst du das gar nicht bemerken,
+es ist aber ein wichtiger Teil des hervorragenden Caching-Frameworks von Contao und ist daher nicht zuletzt auch ein
+tolles Verkaufsargument.
+
+Ein entscheidender Unterschied zwischen Shared Cache und Private Cache ist, dass der Ort des Shared Caches bekannt ist und
+darauf zugegriffen werden kann. Wir können also den Shared Cache aktiv bewirtschaften und einzelne Cache-Einträge oder den
+gesamten Cache löschen. Das können wir beim privaten Cache nicht.
+
+Wenn du also Änderungen am Inhalt vornimmst, kannst du jederzeit dafür sorgen, dass der Shared Cache geleert wird und
+Besucher somit die neuste Version deiner Webseite sehen. Dazu dient die Option **»Shared Cache leeren«** beim 
+Menüpunkt **»Systemwartung«**.
+
+Contao wäre aber nicht Contao, wenn du das bei jeder Änderung selber machen müsstest.
+
+Contao verfügt über ein Framework, das es Entwicklern erlaubt, mit »Cache-Tagging« zu arbeiten. Beim Generieren der Antwort wird diese dazu mit Tags ausgezeichnet, sodass diese vom Cache-Proxy als Metadaten
+zum Cache-Eintrag gespeichert werden können. Auf Basis dieser Information, können dann Einträge mit gewissen Cache-Tags
+invalidiert (so nennt man den Löschvorgang beim Caching) werden.
+
+Jede Antwort die Contao generiert enthält also jede Menge solcher Cache-Tags. Eine Antwort könnte also bspw. so aussehen:
+
+````http request
+HTTP/1.1 200 OK
+
+Content-Type: text/html; charset=utf-8
+Content-Length: 42
+Cache-Control: max-age=3600
+X-Cache-Tags: contao.db.tl_page.18, contao.db.tl_layout.16, contao.db.tl_content.42, contao.db.tl_content.10
+
+<html>
+...
+</html>
+````
+
+Die Anzahl der Tags kann dabei beliebig wachsen. In diesem Beispiel hat Contao die Antwort mit drei Cache-Tags ausgezeichnet
+und wie du vielleicht bereits bemerkt hast, enthalten diese die Information, dass es sich bei dieser Antwort um die
+Seite mit ID `18` mit Seitenlayout ID `16` handelt und sich die Inhaltselemente mit ID `42` und `10` darauf befinden.
+
+Und hier kommt's: Bearbeitest du eines dieser Elemente im Contao-Backend, invalidiert Contao automatisch alle Cache-Einträge
+die mit diesem Element zusammenhängen! Wurde also bspw. das Inhaltselement `42` in einer News verwendet, würde ein
+allfälliger Cache-Eintrag der Detailseite und potenzieller Listenansichten automatisch gelöscht. Änderst du das
+Seitenlayout `18` und wählst dort bspw. eine zusätzliche CSS-Datei aus, die geladen werden soll, so werden alle Antworten
+die mit diesem Seitenlayout generiert wurden automatisch und ohne dein Zutun invalidiert.
+
+Ziemlich schlau, nicht?
+
+Grundsätzlich bedeutet das für uns also, dass wir die Cache-Dauer für den Shared Cache relativ hoch einstellen können,
+da die Invalidierung immer dann stattfindet, wenn wir etwas ändern. Du solltest trotzdem vorsichtig dabei sein und
+aktiv testen, denn es kann natürlich trotzdem Fälle geben, bei denen das automatische Invalidieren von Einträgen
+nicht wie gewünscht funktioniert. Bspw. könnte der/die Entwickler*in einer Erweiterung oder der Contao-Core selbst es
+versäumt haben, die korrekten Cache-Tags hinzuzufügen. Solche Fälle können aber bestimmt verbessert werden,
+melde dich einfach bei den jeweiligen Verantwortlichen.
+
+{{% notice idea %}}
+Den `X-Cache-Tags` Header wirst du im Browser nie sehen, weil der Contao Cache Proxy ihn entfernt. Er enthält keine
+relevanten Informationen für den Client und würde nur unnötigen Datentransfer verursachen.
+{{% /notice %}}
+
 ## FAQ
+
+{{% expand "Welche Cache-Einstellungen sind für mich die \»richtigen\«?" %}}
+Diese Frage generell zu beantworten ist nicht möglich, denn wie so oft in unserer Branche lautet die Antwort »it depends«
+(dt. »es kommt drauf an«). Es gibt aber ein paar Grundprinzipien, an denen du dich orientieren kannst:
+
+Zum Beispiel wird es in den wenigsten Fällen Sinn ergeben, die private Cache-Dauer höher zu setzen, als die des Shared Caches.
+Wenn eine Seite nur eine Stunde im Shared Cache liegen soll, dann bist du offenbar generell der Meinung, dass der Besucher
+spätestens nach einer Stunde den neuen Inhalt sehen sollte. Es macht daher keinen Sinn, die Cache-Dauer des privaten Caches
+auf zwei Stunden zu konfigurieren. Eine Faustregel könnte also sein: Die Dauer des Shared-Caches sollte gleich oder höher sein,
+als die des privaten Caches.
+
+Die Wahl der Cache-Dauer hängt davon ab, wie oft auf der Seite Inhalte geändert werden. Eine Seite mit dem Impressum wird
+sich bspw. ziemlich sicher äusserst selten ändern. Wir könnten also den Inhalt allgemein länger im Cache lassen. Vielleicht
+ist es uns aber wichtig, dass der Besucher - sollten Änderungen vorgenommen worden sein - die neuen Daten ziemlich schnell
+sieht. Dann würden wir in Kauf nehmen, dass der Client häufiger einen Request absetzt (= tiefere, private Cache-Zeit)
+und unsere Shared-Cache Zeit dafür relativ hoch belassen. Dank Contao's Cache-Tagging-Framework, das bereits erklärt wurde,
+würde dieser ja bei Änderungen am Inhalt automatisch geleert bzw. wir könnten ihn auch über den Wartungsmodus leeren lassen.
+Eine Homepage die eine Liste an News anzeigt, ändert sich häufiger. Da würden wir generell tiefere Cache-Zeiten wählen.
+{{% /expand %}}
 
 {{% expand "Heisst das, die Remember-Me-Funktion deaktiviert den Cache für einen Besucher komplett?" %}}
 Ja. Die Funktion von Remember-Me ist, einen Besucher beim Aufruf egal welcher URL automatisch einzuloggen, sofern
