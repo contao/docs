@@ -393,7 +393,8 @@ Menüpunkt **»Systemwartung«**.
 
 Contao wäre aber nicht Contao, wenn du das bei jeder Änderung selber machen müsstest.
 
-Contao verfügt über ein Framework, das es Entwicklern erlaubt, mit »Cache-Tagging« zu arbeiten. Beim Generieren der Antwort wird diese dazu mit Tags ausgezeichnet, sodass diese vom Cache-Proxy als Metadaten
+Contao verfügt über ein Framework, das es Entwicklern erlaubt, mit »Cache-Tagging« zu arbeiten. Beim Generieren der Antwort
+wird diese dazu mit Tags ausgezeichnet, sodass diese vom Cache-Proxy als Metadaten
 zum Cache-Eintrag gespeichert werden können. Auf Basis dieser Information, können dann Einträge mit gewissen Cache-Tags
 invalidiert (so nennt man den Löschvorgang beim Caching) werden.
 
@@ -434,6 +435,15 @@ melde dich einfach bei den jeweiligen Verantwortlichen.
 {{% notice idea %}}
 Den `X-Cache-Tags` Header wirst du im Browser nie sehen, weil der Contao Cache Proxy ihn entfernt. Er enthält keine
 relevanten Informationen für den Client und würde nur unnötigen Datentransfer verursachen.
+{{% /notice %}}
+
+{{% notice info %}}
+Übrigens: Das Invalidieren von Cache-Einträgen funktioniert ebenfalls über HTTP-Requests, da der Cache-Proxy nicht
+zwingend auf dem selben Server wie Contao liegen muss. Die meisten Cache-Proxies unterstützen dafür das Empfangen von
+`PURGE`-Requests (ja, es ist erlaubt, eigene HTTP-Methoden zusätzlich zu den üblichen `GET`, `POST` etc. zu erfinden).
+Ausserdem ist die Invalidierungslogik in Contao komplett abstrahiert, so dass bei Bedarf beliebige Cache-Proxies
+programmatisch angebunden werden können. Dadurch kann jeder Cache-Proxy dazu gebracht werden, die Cache-Tag basierte
+Invalidierungslogik von Contao zu unterstützen!
 {{% /notice %}}
 
 ## FAQ
