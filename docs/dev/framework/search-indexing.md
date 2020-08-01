@@ -110,7 +110,7 @@ The `Document` gives you access to everything you might need from an HTTP respon
 * The response body
 
 In addition to this, it provides helpers to work with [JSON-LD](https://json-ld.org/). The JSON Linked Data format is 
-very suitable to enhance your HTML responses with additional meta data such as [schema.org](https://schema.org/) information
+very suitable to enhance your HTML responses with additional metadata such as [schema.org](https://schema.org/) information
 that is also interpreted by popular search engines such as Google, Bing, DuckDuckGo etc.
 
 So let's say you would like to provide a search module that is able to filter for product prices. First of all, we 
