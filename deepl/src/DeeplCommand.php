@@ -35,6 +35,8 @@ use Webmozart\PathUtil\Path;
 
 class DeeplCommand extends Command
 {
+    private const MACHINE_TRANSLATED_WARNING = "{{% notice warning %}}\nThis article is machine translated.\n{{% /notice %}}";
+
     /**
      * @var array
      */
@@ -49,6 +51,16 @@ class DeeplCommand extends Command
      * @var DeeplClientInterface
      */
     private $deepl;
+
+    /**
+     * @var Parsedown
+     */
+    private $parsedown;
+
+    /**
+     * @var HtmlConverter
+     */
+    private $htmlConverter;
 
     public function __construct()
     {
@@ -87,6 +99,10 @@ class DeeplCommand extends Command
         $force = $input->getOption('force');
 
         $this->deepl = DeeplClient::create($_SERVER['DEEPL_API_KEY']);
+        $this->parsedown = new Parsedown();
+        $this->htmlConverter = new HtmlConverter();
+        $this->htmlConverter->getEnvironment()->addConverter(new TableConverter());
+        $this->htmlConverter->getConfig()->setOption('header_style', 'atx');
 
         if (null !== ($singleFile = $input->getOption('file'))) {
             $filePath = Path::join(self::$manualPath, $singleFile);
@@ -141,8 +157,9 @@ class DeeplCommand extends Command
         $meta = $this->processMeta($meta, $sourceLang, $targetLang, $targetFilePath);
 
         // Parse markdown body to HTML
-        $html = (new Parsedown())->parse($body);
+        $html = $this->parsedown->parse($body);
 
+        // Translate HTML nodes
         $doc = new HTMLDocument($html);
         
         foreach ($doc->children as $child) {
@@ -152,15 +169,17 @@ class DeeplCommand extends Command
         $html = $doc->saveHTML();
 
         // Convert back to markdown
-        $environment = Environment::createDefaultEnvironment(['header_style' => 'atx']);
-        $environment->addConverter(new TableConverter());
-        $markdown = (new HtmlConverter($environment))->convert($html);
-
-        // Attach processed meta data
-        $markdown = $meta."\n".$markdown;
+        $markdown = $this->htmlConverter->convert($html);
 
         // Fix some things
         $markdown = preg_replace('/{{{&lt;(.+)&gt;}}/m', '{{<$1>}}', $markdown);
+        $markdown = str_replace('{{{% ', '{{% ', $markdown);
+
+        // Add warning
+        $markdown = self::MACHINE_TRANSLATED_WARNING."\n\n".$markdown;
+
+        // Prepend processed meta data
+        $markdown = $meta."\n".$markdown;
 
         // Save to file
         file_put_contents($targetFilePath, $markdown);
@@ -175,6 +194,7 @@ class DeeplCommand extends Command
             return;
         }
 
+        // Recursively process child nodes, but not for certain elements like paragraphs
         if ($node->hasChildNodes() && !\in_array($node->nodeName, ['p'], true)) {
             foreach ($node->childNodes as $child) {
                 $this->translateNode($child, $sourceLang, $targetLang);
@@ -183,6 +203,7 @@ class DeeplCommand extends Command
             return;
         }
 
+        // Retrieve the inner HTML content of the node
         $inner = '';
 
         if ($node instanceof Element) {
@@ -195,6 +216,7 @@ class DeeplCommand extends Command
             return;
         }
 
+        // Translate the content of the node
         $translationConfig = new TranslationConfig(
             $inner,
             strtoupper($targetLang),
@@ -206,6 +228,7 @@ class DeeplCommand extends Command
         /** @var Translation $translationResult */
         $translationResult = $this->deepl->getTranslation($translationConfig);
 
+        // Write the translated content back into the node
         if ($node instanceof Element) {
             $node->innerHTML = $translationResult->getText();
         } else {

@@ -73,15 +73,15 @@ class TableConverter implements ConverterInterface
                 foreach ($headers as $pos => $header) {
                     switch ($this->alignments[$pos]) {
                         case 'right': 
-                            $separator = str_repeat('-', max(strlen($header), 3) - 1);
+                            $separator = str_repeat('-', max(mb_strlen($header), 3) - 1);
                             $headerSeparators[] = $separator.':';
                             break;
                         case 'center': 
-                            $separator = str_repeat('-', max(strlen($header), 3) - 2);
+                            $separator = str_repeat('-', max(mb_strlen($header), 3) - 2);
                             $headerSeparators[] = ':'.$separator.':';
                             break;
                         default:
-                            $separator = str_repeat('-', max(strlen($header), 3));
+                            $separator = str_repeat('-', max(mb_strlen($header), 3));
                             $headerSeparators[] = $separator;
                     }
                 }
