@@ -510,5 +510,15 @@ website1: 'SMTP für Webseite 1'
 website2: 'SMTP für Webseite 2'
 ```
 
+{{% notice warning %}}
+**Cache leeren**  
+Damit die Änderungen im Backend sichtbar werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
+»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
+Installationsverzeichnis befinden.
+
+```bash
+php vendor/bin/contao-console cache:clear --env=prod --no-warmup
+```
+{{% /notice %}}
 
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
