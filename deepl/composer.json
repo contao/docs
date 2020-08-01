@@ -4,9 +4,13 @@
     "type": "project",
     "require": {
         "php": "^7.4",
+        "erusev/parsedown": "^1.7",
+        "league/html-to-markdown": "^4.10",
+        "phpgt/dom": "^2.1",
         "scn/deepl-api-connector": "^2.0",
         "symfony/console": "^5.1",
         "symfony/finder": "^5.1",
+        "symfony/yaml": "^5.1",
         "webmozart/path-util": "^2.3"
     },
     "license": "MIT",
@@ -24,5 +28,8 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
         "symfony/var-dumper": "^5.1"
+    },
+    "config": {
+        "sort-packages": true
     }
 }

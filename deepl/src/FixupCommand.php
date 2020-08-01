@@ -79,6 +79,9 @@ class FixupCommand extends Command
         // Replace {{{% with {{%
         $content = str_replace('{{{% ', '{{% ', $content);
 
+        // Replace {{{< with {{<
+        $content = str_replace('{{{< ', '{{< ', $content);
+
         // Replace ``php with ```php
         $content = preg_replace('/^([\t ]*``[^`\n]*)$/m', '`$1', $content);
 
