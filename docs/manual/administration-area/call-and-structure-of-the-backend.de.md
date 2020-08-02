@@ -20,11 +20,10 @@ Backend verwendet. Bestätige deine Eingaben mit einem Klick auf die Schaltfläc
 
 ![Anmeldung im Contao-Backend](/de/administration-area/images/de/contao-backend-anmeldung.png?classes=shadow)
 
-Die Backend-Anmeldung ist mit einem Zeitverzögerungsmechanismus gegen [Brute-Force-
-Attacken](https://de.wikipedia.org/wiki/Brute-Force-Methode) geschützt. Wenn du mehr als dreimal hintereinander ein
-falsches Passwort eingibst, wird dein Benutzerkonto automatisch für 5 Minuten gesperrt. Auf diese Weise wird
-verhindert, dass ein Hacker eine große Anzahl Passwörter nacheinander ausprobiert, bis er das richtige Passwort
-gefunden hat.
+Die Backend-Anmeldung ist mit einem Zeitverzögerungsmechanismus gegen [Brute-Force-Attacken](https://de.wikipedia.org/wiki/Brute-Force-Methode) 
+geschützt. Wenn du mehr als dreimal hintereinander ein falsches Passwort eingibst, wird dein Benutzerkonto automatisch 
+für 5 Minuten gesperrt. Auf diese Weise wird verhindert, dass ein Hacker eine große Anzahl Passwörter nacheinander 
+ausprobiert, bis er das richtige Passwort gefunden hat.
 
 
 ## Aufbau des Backends
