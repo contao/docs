@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Contao\Docs\DeeplTranslator;
 
-use Gt\Dom\Element;
 use Gt\Dom\HTMLDocument;
 use League\HTMLToMarkdown\HtmlConverter;
 use Parsedown;
@@ -59,6 +58,11 @@ class DeeplCommand extends Command
      * @var HtmlConverter
      */
     private $htmlConverter;
+
+    /**
+     * @var array
+     */
+    private $specialTagsIndex = [];
 
     public function __construct()
     {
@@ -154,18 +158,31 @@ class DeeplCommand extends Command
         // Process the meta data
         $meta = $this->processMeta($meta, $sourceLang, $targetLang, $targetFilePath);
 
-        // Temporarily replace refs
-        $body = preg_replace('/{{< ref "(.+)" >}}/', 'REF::$1::REF', $body);
+        // Replace short codes and insert tags, since they cause trouble during translation
+        $body = $this->replaceSpecialTags($body);
 
         // Parse markdown body to HTML
-        $html = $this->parsedown->parse($body);
+        $html = trim($this->parsedown->parse($body));
 
-        // Translate HTML nodes
-        $doc = new HTMLDocument($html);
-
-        foreach ($doc->children as $child) {
-            $this->translateNode($child, $sourceLang, $targetLang);
+        if (empty($html)) {
+            $output->writeln(' » no content, skipping.');
+            return;
         }
+
+        // Translate the content of the node
+        $translationConfig = new TranslationConfig(
+            $html,
+            strtoupper($targetLang),
+            strtoupper($sourceLang),
+            ['xml'], [], ['code', 'pre'],
+            TextHandlingEnum::SPLITSENTENCES_NONEWLINES,
+        );
+
+        /** @var Translation $translationResult */
+        $translationResult = $this->deepl->getTranslation($translationConfig);
+        $html = $translationResult->getText();
+
+        $doc = new HTMLDocument($html);
 
         // Translate alt attributes
         foreach ($doc->querySelectorAll('img[alt]') as $img) {
@@ -189,19 +206,25 @@ class DeeplCommand extends Command
             $img->setAttribute('alt', $translationResult->getText());
         }
 
-        $html = $doc->saveHTML();
+        // Remove <br> from table cells
+        foreach ($doc->querySelectorAll('td,th') as $td) {
+            $td->innerHTML = str_replace('<br>', '', $td->innerHTML);
+        }
+
+        $html = str_replace("\r", '', $doc->saveHTML());
 
         // Convert back to markdown
         $markdown = $this->htmlConverter->convert($html);
 
-        // Fix some things
-        $markdown = preg_replace('/{{&lt;(.+)&gt;}}/m', '{{<$1>}}', $markdown);
-        $markdown = str_replace(['{{{% ', '{{{< '], ['{{% ', '{{< '], $markdown);
-        $markdown = preg_replace('/({{% .+ %}}) ([^\s])/', "$1\n$2", $markdown);
-        $markdown = preg_replace('@([^\s]) ({{% /.+ %}})@', "$1\n$2", $markdown);
+        // Restore short codes and insert tags
+        $markdown = $this->restoreSpecialTags($markdown);
 
-        // Restore and transform refs
-        $markdown = preg_replace('/REF::(.+)\.'.$sourceLang.'\.md::REF/', '{{< ref "$1.'.$targetLang.'.md" >}}', $markdown);
+        // Fix line breaks for short codes
+        $markdown = preg_replace('/({{% .+ %}})([^\n])/', "$1\n$2", $markdown);
+        $markdown = preg_replace('@([^\n])({{% /.+ %}})@', "$1\n$2", $markdown);
+
+        // Transform refs
+        $markdown = preg_replace('/{{< ref "(.+)\.'.$sourceLang.'\.md" >}}/', '{{< ref "$1.'.$targetLang.'.md" >}}', $markdown);
 
         // Add warning
         $markdown = self::MACHINE_TRANSLATED_WARNING."\n\n".$markdown;
@@ -215,67 +238,12 @@ class DeeplCommand extends Command
         $output->writeln(' » '.Path::makeRelative($targetFilePath, self::$manualPath));
     }
 
-    private function translateNode(\DOMNode $node, string $sourceLang, string $targetLang): void
-    {
-        // Do not translate code blocks
-        if (\in_array($node->nodeName, ['pre', 'code'], true)) {
-            return;
-        }
-
-        // Recursively process child nodes, but not for certain elements like paragraphs or table cells
-        if ($node->hasChildNodes() && !\in_array($node->nodeName, ['p', 'td', 'th', 'li'], true)) {
-            foreach ($node->childNodes as $child) {
-                $this->translateNode($child, $sourceLang, $targetLang);
-            }
-
-            return;
-        }
-
-        // Retrieve the inner HTML content of the node
-        $inner = '';
-
-        if ($node instanceof Element) {
-            $inner = $node->innerHTML;
-        } else {
-            $inner = $node->textContent;
-        }
-
-        // Remove superfluous whitespace, as this interferes with the translation output
-        $inner = str_replace(["\r", "\n"], ['', ' '], $inner);
-        $inner = str_replace('  ', ' ', $inner);
-        $inner = trim($inner);
-
-        if (empty($inner)) {
-            return;
-        }
-
-        // Translate the content of the node
-        $translationConfig = new TranslationConfig(
-            $inner,
-            strtoupper($targetLang),
-            strtoupper($sourceLang),
-            ['xml'], [], [],
-            TextHandlingEnum::SPLITSENTENCES_NONEWLINES,
-        );
-
-        /** @var Translation $translationResult */
-        $translationResult = $this->deepl->getTranslation($translationConfig);
-        $translatedText = $translationResult->getText();
-
-        // Write the translated content back into the node
-        if ($node instanceof Element) {
-            $node->innerHTML = $translatedText;
-        } else {
-            $node->textContent = $translatedText;
-        }
-    }
-
     private function processMeta(string $meta, string $sourceLang, string $targetLang, string $targetFilePath): string
     {
         $inner = trim(substr($meta, 3, -3));
 
         // Parse YAML data
-        $data = Yaml::parse($inner);
+        $data = array_filter(Yaml::parse($inner));
 
         // Remove url
         unset($data['url']);
@@ -283,6 +251,7 @@ class DeeplCommand extends Command
         // Set alias
         $aliasPath = Path::makeRelative($targetFilePath, self::$manualPath);
         $aliasPath = str_replace('.'.$targetLang.'.md', '', $aliasPath);
+        $aliasPath = str_replace('_index', '', $aliasPath);
         $aliasPath = Path::join($targetLang, $aliasPath);
         $data['aliases'] = ['/'.$aliasPath.'/'];
 
@@ -310,5 +279,32 @@ class DeeplCommand extends Command
         $yaml = Yaml::dump($data);
 
         return "---\n".$yaml."---\n";
+    }
+
+    private function replaceSpecialTags(string $buffer): string
+    {
+        while (preg_match('/{{[^{}]+}}/', $buffer)) {
+            $buffer = preg_replace_callback('/{{[^{}]+}}/', function (array $matches): string {
+                $index = \count($this->specialTagsIndex);
+                $this->specialTagsIndex[] = $matches[0];
+
+                return '%%'.$index.'%%';
+            }, $buffer);
+        }
+
+        return $buffer;
+    }
+
+    private function restoreSpecialTags(string $buffer): string
+    {
+        while (preg_match('/%%(\d+)%%/', $buffer)) {
+            $buffer = preg_replace_callback('/%%(\d+)%%/', function (array $matches): string {
+                $index = (int) $matches[1];
+
+                return $this->specialTagsIndex[$index];
+            }, $buffer);
+        }
+
+        return $buffer;
     }
 }
