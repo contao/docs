@@ -15,8 +15,8 @@ use League\HTMLToMarkdown\Converter\ConverterInterface;
 use League\HTMLToMarkdown\ElementInterface;
 
 /**
- * Table converter for League\HTMLToMarkdown\HtmlConverter
- * 
+ * Table converter for League\HTMLToMarkdown\HtmlConverter.
+ *
  * @see https://github.com/Mark-H/Docs/blob/2.x/convert/util/TableConverter.php
  */
 class TableConverter implements ConverterInterface
@@ -43,11 +43,9 @@ class TableConverter implements ConverterInterface
 
                     // Add value without the cell marker
                     $line[] = str_replace(self::CELL_MARKER, '', $value);
-                
                 }
 
-                return '| ' . implode(' | ', $line) . " |\n";
-
+                return '| '.implode(' | ', $line)." |\n";
             case 'td':
             case 'th':
                 // Save the text alignment
@@ -57,10 +55,8 @@ class TableConverter implements ConverterInterface
 
                 // "Mark" the table cell to identify valid empty cells
                 return self::CELL_MARKER.trim($element->getValue());
-
             case 'tbody':
                 return $this->getTrimmedValue($element);
-
             case 'thead':
                 $value = $this->getTrimmedValue($element);
                 $headers = array_map('trim', explode('|', trim($value, '|')));
@@ -69,11 +65,11 @@ class TableConverter implements ConverterInterface
                 // Create the thead separator
                 foreach ($headers as $pos => $header) {
                     switch ($this->alignments[$pos] ?? 'left') {
-                        case 'right': 
+                        case 'right':
                             $separator = str_repeat('-', max(mb_strlen($header), 3) - 1);
                             $separators[] = $separator.':';
                             break;
-                        case 'center': 
+                        case 'center':
                             $separator = str_repeat('-', max(mb_strlen($header), 3) - 2);
                             $separators[] = ':'.$separator.':';
                             break;
@@ -87,7 +83,7 @@ class TableConverter implements ConverterInterface
 
                 return $value."\n".$separator."\n";
             case 'table':
-                return $this->getTrimmedValue($element) . "\n\n";
+                return $this->getTrimmedValue($element)."\n\n";
         }
 
         return $element->getValue();
@@ -107,7 +103,7 @@ class TableConverter implements ConverterInterface
      */
     private function getTrimmedValue(ElementInterface $element): string
     {
-        return trim(implode("\n", array_filter(array_map(function($e) {
+        return trim(implode("\n", array_filter(array_map(function ($e) {
             return trim($e->getValue());
         }, $element->getChildren()))));
     }

@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace Contao\Docs\DeeplTranslator;
 
-use Contao\Docs\DeeplTranslator\TableConverter;
 use Gt\Dom\Element;
 use Gt\Dom\HTMLDocument;
 use League\HTMLToMarkdown\HtmlConverter;
@@ -186,7 +185,7 @@ class DeeplCommand extends Command
 
             /** @var Translation $translationResult */
             $translationResult = $this->deepl->getTranslation($translationConfig);
-            
+
             $img->setAttribute('alt', $translationResult->getText());
         }
 
