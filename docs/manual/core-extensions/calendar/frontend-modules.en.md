@@ -10,7 +10,7 @@ weight: 20
 This article is machine translated.
 {{% /notice %}}
 
-Now that you know how calendars and events are managed in the backend, we will explain how to display this content in the frontend. The "Calendar" extension contains four new frontend modules which you can configure as usual via the module management.
+Now that you know how to manage calendars and events in the backend, we will explain how to display this content in the frontend. The "Calendar" extension contains four new frontend modules, which you can configure as usual via the module management.
 
 ![Calendar modules](/de/core-extensions/calendar/images/de/kalender-module.png?classes=shadow)
 
@@ -22,15 +22,15 @@ The frontend module "Calendar" adds a calendar to the website, in which the even
 
 ### Module configuration
 
-**Calendar:** Here you define from which calendar posts should be listed.
+**Calendar:** Here you can specify the calendar from which posts should be listed.
 
 **First day of the week:** Here you define the first day of the week.
 
-**Shortened display:** By default, Contao displays events that last several days on each day individually. If you select this option, the display is shortened and the event appears only once on the first day.
+**Shortened display:** By default, Contao displays events of several days on each day individually. If you select this option, the display is shortened and the event appears only once on the first day.
 
 ### Forwarding
 
-**Forwarding page:** Here you define the page to which a visitor is forwarded when clicking a link in the mini calendar. The frontend module "Event list" or "Calendar" should be integrated on the target page.
+**Forwarding page:** Here you define the page to which a visitor is forwarded when clicking on a link in the mini calendar. On the target page the frontend module "Event list" or "Calendar" should be included.
 
 ### Template settings
 
@@ -38,15 +38,15 @@ The frontend module "Calendar" adds a calendar to the website, in which the even
 
 The following calendar templates are available by default:
 
-| Template | Declaration |
+| Template | Explanation |
 | -------- | ----------- |
 | `cal_default` | This template represents a large calendar in which the individual events are listed and can be clicked on directly. |
-| `cal_mini` | This template represents a mini-calendar which, in contrast to the large calendar, does not contain direct links to individual events, but only links to individual days. The mini-calendar was originally used to navigate the event list, but now this is done with the more flexible module "event list menu". |
+| `cal_mini` | This template represents a mini calendar, which in contrast to the large calendar does not contain direct links to individual events, but only links to individual days. The mini-calendar was originally used to navigate the event list; however, this is now done with the more flexible module "Event List Menu". |
 
 **Individual template:** Here you can overwrite the standard template.
 
-**HTML output**   
- The frontend module generates the following HTML code:
+**HTML OutputThe**  
+ frontend module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -101,19 +101,19 @@ The following calendar templates are available by default:
 
 ## Event reader
 
-The frontend module "Eventleser" is used to display a specific event. The module obtains the alias of the entry via the URL, so that events can be specifically linked with so-called [permalinks](https://de.wikipedia.org/wiki/Permalink):
+The frontend module "Eventleser" is used to display a specific event. The module obtains the alias of the entry via the URL, so that events can be linked with so-called [permalinks](https://de.wikipedia.org/wiki/Permalink):
 
 `www.domain.de/event/european-design-awards.html`
 
 The keyword of the event reader is *event* and tells the module to search and output a specific event. If the entry searched for does not exist, the event reader returns an error message and the HTTP status code "404 Not found". The status code is important for search engine optimization.
 
 {{% notice info %}}
-Only one "reader module" may be located on a single page, regardless of the type. Otherwise one or the other module would trigger a 404 page, because for example the alias of a message cannot be found in a calendar, or vice versa the alias of an event in a message archive. 
+On a single page there may only be one "reader module" at a time, regardless of the type. Otherwise, one or the other module would trigger a 404 page, because, for example, the alias of a message cannot be found in a calendar, or vice versa the alias of an event in a message archive.
 {{% /notice %}}
 
 ### Module configuration
 
-**Calendar:** Here you define in which calendars the requested event should be searched. Events from unselected calendars are generally not displayed, even if the URL is correct and the entry exists. This feature is especially important in multi-domain operation with several independent websites.
+**Calendar**: Here you can define in which calendars the requested event should be searched. Events from calendars that are not selected will not be displayed, even if the URL is correct and the entry is entered correctly. This feature is especially important in multi-domain operation with several independent websites.
 
 {{< version "4.7" >}}
 
@@ -132,16 +132,16 @@ Only one "reader module" may be located on a single page, regardless of the type
 
 **Individual template:** Here you can overwrite the standard template.
 
-### Picture settings
+### Image settings
 
-**Image size:** Here you can specify the desired image size.
+**Image size**: Here you can specify the desired image size.
 
 ### Comments settings
 
 **Comment template:** Here you can select the comment template.
 
-**HTML output**   
- The frontend module generates the following HTML code:
+**HTML outputThe**  
+ front-end module generates the following HTML code:
 
 ```html
 <div class="mod_eventreader block">
@@ -163,7 +163,7 @@ Only one "reader module" may be located on a single page, regardless of the type
 </div>
 ```
 
-For details on the markup of comments, see the [comments](../../../artikelverwaltung/inhaltselemente/#kommentare) section.
+For details on how to mark up the comments, see the Comments section.
 
 ## Event list
 
@@ -171,9 +171,9 @@ The frontend module "Event List" is used to list all events of a certain period.
 
 ### Module configuration
 
-**Calendar:** Here you define from which calendars events should be listed. The events are sorted by date in ascending order.
+**Calendar:** Here you define from which calendars events should be listed. The events are sorted in ascending order by date.
 
-**Display format:** Here you define the period of time for the display. The display format also defines the operating mode of the event list.
+**Display format:** Here you define the period of time for the display. With the display format you also define the operating mode of the event list.
 
 | Operating mode | Declaration |
 | -------------- | ----------- |
@@ -181,21 +181,21 @@ The frontend module "Event List" is used to list all events of a certain period.
 | Future events | The event list only lists future events (preview). |
 | Past events | The event list only lists past events (review). |
 
-**Shortened display:** By default, Contao displays events that last several days on each day individually. If you select this option, the display is shortened and the event appears only once on the first day.
+**Shortened display:** By default, Contao displays events of several days on each day individually. If you select this option, the display will be shortened and the event will only appear once on the first day.
 
 **Sort order:** Here you can change the sort order of the events.
 
-**Event reader:** Here you can define if the selected event reader module should automatically be displayed instead of the event list module when an event is selected. This makes it possible to have the Eventlist and the Eventleser on the same page with only one module instead of having a separate page for the Eventleser.
+**event reader:** Here you can define if the selected event reader module should be displayed automatically instead of the event list module when an event is selected. This makes it possible to have the event list and the event reader on the same page with only one module instead of having a separate page for the event reader.
 
 {{% notice info %}}
-**Caution:** in most cases, this functionality should not be used for event lists that are placed in the page layout. Otherwise, you would automatically have an event reader on each page of the page layout at the respective position in the layout. This would prevent the functionality of other "reader modules" on the same page. 
+Caution**:** In most cases, this functionality should not be used for event lists that are placed in the page layout. Otherwise, you would automatically have an event reader on each page of the page layout at the respective position in the layout. This would prevent the functionality of other "reader modules" on the same page.
 {{% /notice %}}
 
 **Number of events:** If you enter a value greater than 0 here, the number of events in the event list is automatically limited to this value.
 
-**Elements per page:** If you enter a value greater than 0 here, Contao automatically distributes the events to multiple pages - assuming you have the appropriate number.
+**Elements per page:** If you enter a value greater than 0, Contao automatically distributes the events to multiple pages - assuming the number is sufficient.
 
-**Ignore URL parameters:** If you select Ignore URL parameters here, the period is not changed using the date/month/year parameters in the URL.
+**Ignore URL parameters:** If you select Ignore URL parameters here, the period will not be changed based on thedate/month/year parameters in the URL.
 
 {{< version "4.7" >}}
 
@@ -205,21 +205,21 @@ The frontend module "Event List" is used to list all events of a certain period.
 
 **Event template:** Here you select the event template.
 
-| Template | Declaration |
+| Template | Explanation |
 | -------- | ----------- |
 | `event_full` | This template represents the complete event and is therefore recommended for use with the event reader. |
 | `event_list` | This template displays the title of an event, the date and time and the event text for the event list. |
-| `event_teaser` | This template displays the title of an event, the date and time, the teaser text and a read more link. |
+| `event_teaser` | This template outputs the event title, the date and time, the teaser text and a read more link. |
 | `event_upcoming` | This template displays the date and the heading of an event. |
 
 **Individual template:** Here you can overwrite the standard template.
 
-### Picture settings
+### Image settings
 
 **Image size:** Here you can specify the desired image size.
 
-**HTML output**   
- The frontend module generates the following HTML code:
+**HTML OutputThe**  
+ frontend module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -259,19 +259,19 @@ The frontend module "Event List" is used to list all events of a certain period.
 
 ## Eventlist menu {#eventlist-menu}
 
-The frontend module "Eventlist Menu" adds a menu to the website, with which you can call up the events of the individual days, months or years.
+The frontend module "Event List Menu" adds a menu to the website, with which you can call up the events of the individual days, months or years.
 
 ### Module configuration
 
 **Calendar:** Here you define from which calendars events should be linked. This selection should match the selection in the event list.
 
-**Display format:** Here you define the display format (day, month or year).
+**Display format**: Here you define the display format (day, month or year).
 
 **Shortened display:** By default, Contao displays events that last several days on each day individually. If you select this option, the display is shortened and the event appears only once on the first day.
 
 **Sort order:** Here you can change the sort order of the menu.
 
-**Display the number of events:** If you select this option, the number of events of each month or year will be displayed in the menu.
+**Show number of events:** If you select this option, the number of events of each month or year will be displayed in the menu.
 
 ### Forwarding
 
@@ -279,10 +279,10 @@ The frontend module "Eventlist Menu" adds a menu to the website, with which you 
 
 ### Template settings
 
-**Individual template:** Here you can overwrite the standard template.
+**Individual template**: Here you can overwrite the default template.
 
-**HTML output**   
- The frontend module generates the following HTML code:
+**HTML OutputThe**  
+ frontend module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -330,7 +330,7 @@ The frontend module "Eventlist Menu" adds a menu to the website, with which you 
 <!-- indexer::continue -->
 ```
 
-In the display format "month", the HTML markup looks like this:
+In the display format "month" the HTML markup looks like this:
 
 ```html
 <!-- indexer::stop -->
@@ -350,7 +350,7 @@ In the display format "month", the HTML markup looks like this:
 <!-- indexer::continue -->
 ```
 
-In the display format "Year" with Show number of posts the HTML markup looks like this:
+In the display format "Year" with Display number of posts, the HTML markup looks like this
 
 ```html
 <!-- indexer::stop -->

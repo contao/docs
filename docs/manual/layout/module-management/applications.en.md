@@ -10,7 +10,7 @@ weight: 40
 This article is machine translated.
 {{% /notice %}}
 
-In this section I will introduce you to the other core modules in the "Applications" section. The list of frontend modules can be extended by (third-party) extensions.
+In this section I will introduce the other core modules in the "Applications" section. The list of frontend modules can be extended by (third party) extensions.
 
 ## Form
 
@@ -20,25 +20,25 @@ With the module type "Form" a form can be added to a page. For information on cr
 
 ## Listing
 
-The frontend module "Listing" adds a list of records to the website, which can be sorted, filtered and searched in the frontend. The basis for the listing is any table in the database, such as the members `tl_member`table .
+The frontend module "Listing" adds a list of records to the website that can be sorted, filtered and searched in the frontend. The basis for the listing is any table in the database, such as the member `tl_member`table .
 
 ![Configuring the Listing Module](/de/layout/module-management/images/de/das-auflistungsmodul-konfigurieren.png?classes=shadow)
 
-**Table:** Here you can specify the table whose records should be listed.
+**table:** Here you specify the table whose records should be listed.
 
-**Fields:** Enter the fields that are to be displayed in the list here. Separate the individual fields with a comma.
+**Fields:** Enter here the fields that should be displayed in the list. Separate the individual fields with a comma.
 
-**condition:** Here you can enter a condition by which the records are filtered. Since the module principle does nothing else than a database query, you can`published=1` use SQL-compliant code such as It is also possible to use insert tags, e.g. `user={{user::id}}`.
+**condition:** Here you can enter a condition for filtering the records. Since the module principle does nothing else than a database query, you can`published=1` use SQL-compliant code such as It is also possible to use insert tags, e.g. `user={{user::id}}`.
 
-**Searchable fields:** If you define certain fields as searchable, Contao automatically creates a form that allows you to search them.
+**Searchable fields:** If you define certain fields as searchable, Contao automatically creates a form to search them.
 
-**Sort by:** Here you can specify the columns by which the listing is sorted by default. Separate multiple fields with commas.
+**Sort by:** Here you can specify the columns by which the list is sorted by default. Separate several fields with commas.
 
-**Elements per page:** If you enter a value greater than 0 here, Contao will automatically distribute the results to multiple pages - assuming there are more than one.
+**Elements per page:** If you enter a value greater than 0 here, Contao will automatically distribute the results to multiple pages - assuming there are enough of them.
 
-**Fields on the detail page:** If you enter one or more fields here, Contao adds a small icon to each line of the listing that you can use to open the detail view of a record. On the detail page, you can display additional fields of a record that might not fit in the list.
+**Fields of the detail page:** If you enter one or more fields here, Contao adds a small icon to each line of the listing which you can use to open the detail view of a record. On the detail page, you can display additional fields of a record that might not fit in the list.
 
-**Detail page condition:** Here you can enter a condition according to which the data records of the detail page are filtered (see condition above).
+**Detail page condition:** Here you can enter a condition for filtering the records of the detail page (see above condition).
 
 **List template:** Here you select the template for the list view.
 

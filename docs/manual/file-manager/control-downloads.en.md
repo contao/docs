@@ -10,30 +10,30 @@ weight: 30
 This article is machine translated.
 {{% /notice %}}
 
-With Contao, you can easily restrict access to certain files and define exactly who can and cannot download them. For example, you can set up a protected download area for members.
+With Contao, you can easily restrict access to certain files and define exactly who can and cannot download them. This way you can e.g. create a protected download area for members.
 
-## protect directory {#protect directory}
+## Protect directory {#protect directory}
 
 When you create a new folder in Contao, it is accessible via HTTP by default including all subfolders. If you want to protect a folder, make sure that "Public" is not selected when you create the folder. If a directory is public, the folders and files in it cannot be protected.
 
 ![Protect directory](/de/file-manager/images/de/verzeichnis-schuetzen.png?classes=shadow)
 
-If a folder is public, `web/files/`a [symlink](https://de.wikipedia.org/wiki/Symbolische_Verkn%C3%BCpfung) is set in the directory`files`. Without these symlinks the data would not be accessible for visitors.
+If a folder is public, a `web/files/`symlink will be placed in the directory`files`, without this symlink the data would not be accessible for visitors.
 
 ![non-public folder](/de/file-manager/images/de/nicht-oeffentlicher-ordner.png?classes=shadow)
 
 If the folder is not public, nobody can access the files with his internet browser and download them directly. However, the files can still be accessed via the content elements "Download" or "Downloads".
 
-## Protect download element {#download-element-protect}
+## Protect download element {#protect download element}
 
-Next, you will need to restrict access to the download items where you can still download the files. To do this, either set up a protected page in the site structure or a protected content element that can only be accessed by registered members.
+Next, you will need to restrict access to the download items that will allow you to download the files as before. To do this, either set up a protected page in the site structure or a protected content element that can only be accessed by registered members.
 
-Because downloads are only available through the "Download" and "Downloads" content elements and you have restricted access to these content elements, only logged in members can now download files. This protection can be further refined by using different member groups and different download elements.
+Since downloads are only available through the Download and Downloads content elements, and you have restricted access to these content elements, only registered members will be able to download files. This protection can be further refined by using different member groups and different download elements.
 
 ![Content elements Downloads](/de/file-manager/images/de/inhaltselemente-downloads.png?classes=shadow)
 
-**HTML output**   
- The content element of element type "Downloads" generates the following HTML code:
+**HTML outputThe**  
+ content element of element type "Downloads" generates the following HTML code:
 
 ```html
 <div class="ce_downloads first block">

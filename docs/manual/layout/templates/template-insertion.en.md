@@ -10,7 +10,7 @@ weight: 40
 This article is machine translated.
 {{% /notice %}}
 
-This `insert()`function can be used to insert a template into another template. The function also accepts additional variables as second parameters.
+This `insert()`function can be used to insert a template into another template. The function also accepts additional variables as second parameter.
 
 ```php
 <?php $this->insert('template_name', array('key'=>'value')); ?>
@@ -26,7 +26,7 @@ We create a template `image_copyright.html5`with the following content:
 <small>Fotografiert von <?php echo $this->name; ?>, lizenziert als <?php echo $this->license; ?></small>
 ```
 
-The template `ce_image.html5`contains the block `content`. Through inheritance, we overwrite this block content and mix or add the content from our own copyright template (`image_copyright.html5`):
+The template `ce_image.html5`contains the block `content`. Through inheritance we overwrite this block content and mix or add the content from our own copyright template (`image_copyright.html5`):
 
 ```php
 // ce_image_copyright.html5
@@ -40,6 +40,6 @@ The template `ce_image.html5`contains the block `content`. Through inheritance, 
 <?php $this->endblock(); ?>
 ```
 
-If the template is used in a content element of the type "image", our copyright information is output in addition to the actual image output:
+If the template is used in a content element of the type "image", our copyright information is displayed in addition to the actual image output:
 
 - Photographed by Donna Evans, licensed as Creative Commons

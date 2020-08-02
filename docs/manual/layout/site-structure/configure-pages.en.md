@@ -10,20 +10,21 @@ weight: 20
 This article is machine translated.
 {{% /notice %}}
 
-After you have selected the correct page types for your pages, you can configure them to meet your requirements. The setting options vary depending on the page type.
+After you have selected the right page types for your pages, you can configure them to suit your needs. The configuration options vary depending on the page type.
 
 ## Page aliases
 
 The **alias of** a page is a unique and meaningful reference that you can use to call up a page in your browser. If you leave this field empty when creating a page, Contao will automatically assign the alias. Each alias must be unique within the domain used, i.e. it can only occur once.
 
 {{% notice warning %}}
-The alias of the start page should always `index`be Only then will the URL generated for this page be an empty request.
+The alias of the home page should always `index`be Only then will the generated URL for this page be an empty request. 
+{{% /notice %}}
 
 ## Metadata
 
-The meta data of a page mostly refers to the corresponding meta tags in the header of the HTML page. You can use them to define the title and description of a page, among other things.
+The metadata of a page mostly refers to the corresponding meta tags in the header area of the HTML page. You can use them to define the title and description of a page, among other things.
 
-**Page title:** The page title is used in the `<title>`tag of the web page and often appears in Google and other search results. It should not contain more than 65 characters, as many search engines simply cut off titles that are longer.
+**Page title:** The page title is used in the `<title>`tag of the website and often appears in search results of Google and Co. It should not contain more than 65 characters, because many search engine longer titles simply cut off.
 
 **Output in source code:**
 
@@ -31,17 +32,18 @@ The meta data of a page mostly refers to the corresponding meta tags in the head
 <title>Seitentitel</title>
 ```
 
-**Robots tag:** The Robots tag defines how search engines treat a page.
+**Robots tag:** The robots tag defines how search engines treat a page.
 
-- *index:* include the page in the search index
+- *index:* add the page to the search index
 - *follow:* follow the links on the page
 - *noindex:* do not include the page in the search index
 - *nofollow:* do not follow the links on the page
 
-The standard case is *index,follow*, because we want Google to include our pages as comprehensively as possible in the search index. However, certain pages, such as the imprint or registration page, can be excluded from indexing using the statement index*,follow*.
+The default case is *index,follow*, because we want Google to include our pages as comprehensive as possible in the search index. However, certain pages, such as the imprint or the registration page, can be excluded from indexing using the statement index*,follow*.
 
 {{% notice note %}}
 The Robots tag setting has no effect on Contao's search index for website search.
+{{% /notice %}}
 
 **Output in source code:**
 
@@ -49,7 +51,7 @@ The Robots tag setting has no effect on Contao's search index for website search
 <meta name="robots" content="index,follow">
 ```
 
-**Page description:** The description of a page is indexed by all common search engines just like the page title and is displayed in the search results, for example, if no context information is available for the search term. The recommended length of a description is between 150 and 300 characters. The meta description of a page is an important tool for search engine optimization, so you should take the time to provide each page with a unique description.
+**Description of the page:** The description of a page is indexed by all common search engines just like the page title and is displayed in the search results, for example, if no context information is available for the search term. The recommended length of a description is between 150 and 300 characters. The meta description of a page is an important tool for search engine optimization, so you should take the time to provide each page with a unique description.
 
 **Output in source code:**
 
@@ -61,44 +63,44 @@ The Robots tag setting has no effect on Contao's search index for website search
 
 For pages of the type "Starting point of a web page" there are additional input fields available, with which you can overwrite certain global settings per web page.
 
-**Website administrator's email address:** Here you can override the email address of the system administrator for a specific website, which is set in the backend settings. Notifications about blocked accounts or newly registered users are sent to this address. If you have multiple websites within the site structure, it may be useful to set a separate administrator for each website, who will only receive notifications from his website. You can also use the following notation to add a name to your email address:
+**E-mail address of the website administrator:** Here you can overwrite the e-mail address of the system administrator defined in the backend settings for a specific website. This address is used to send notifications about blocked accounts or newly registered users, for example. If you have multiple websites within the site structure, it may be useful to set a separate administrator for each website, who will only receive notifications from his website. You can also use the following notation to add a name to your email address:
 
 ```text
 Kevin Jones [kevin.jones@example.com]
 ```
 
-**Date format**: Here you can overwrite the date format defined in the backend settings. In contrast to the backend, which only supports numeric formats, you can also use text formats in the frontend.
+**Date format:** Here you can overwrite the date format defined in the backend settings. In contrast to the backend, which only supports numeric formats, you can also use text formats in the frontend.
 
 **Time format:** Here you can overwrite the time format defined in the backend settings. Text formats are also supported in the frontend.
 
-**Date and time format:** Here you can override the date and time format defined in the backend settings. Text formats are supported.
+**Date and Time Format:** Here you can override the date and time format defined in the backend settings. Text formats are supported.
 
-Contao supports all date and time formats that can be parsed with thePHP function[ date](https://www.php.net/manual/de/function.date.php). However, to convert all input into aUNIX timestamp, only numeric formats(j, d, m, n, y, Y, g, G, h, H, i, s) are allowed in the back end.
+Contao supports all date and time formats that can be parsed with thePHP function[ date](https://www.php.net/manual/de/function.date.php). To convert all input into aUNIX timestamp, only numeric formats (j, d, m, n, y, Y, g, G, h, H, i, s) are allowed in the back end.
 
-Here are some examples of valid date and time settings:
+Here are some examples of valid dates and times:
 
-| Details | Declaration |
-| ------- | ----------- |
+| Specifications | Declaration |
+| -------------- | ----------- |
 | Y-m-d | YYYY-MM-DD, international ISO-8601, for example `2005-01-28` |
 | m/d/Y | MM/DD/YYYY, English format, for example `01/28/2005` |
-| d.m.y. | DD.MM.YYYY, German format, for example `28.01.2005` |
+| d.m.Y | DD.MM.YYYY, German format, for example `28.01.2005` |
 | y-n-j | JJ-M-T, without leading zeros, e.g. `05-1-28` |
 | Ymd | YYYYMMDD, time stamp, for example `20050128` |
 | H:i:s | 24 hours, minutes and seconds, for example `20:36:59` |
-| g:i | 12 hours without leading zeros and minutes, e.g. `8:36` |
+| g:i | 12 hours without leading zeros and minutes, for example `8:36` |
 
 {{< version "4.5" >}}
 
-**Alias settings:** The slug generator allows to select an individual character set for automatically created aliases.
+**Alias settings:** The slug generator allows you to select an individual character set for automatically generated aliases.
 
-| Alias settings | Declaration |
+| Alias Settings | Declaration |
 | -------------- | ----------- |
 | Unicode numbers and small letters | The alias `über-uns`is generated from the page name "About us". |
 | Unicode numbers and letters | The alias `Über-uns`is generated from the page name "About us". |
 | ASCII numbers and small letters | The alias `ueber-uns`is generated from the page name "About us". |
 | ASCII numbers and letters | The alias `Ueber-uns`is generated from the page name "About us". |
 
-For the generation of the alias, the set language is also relevant in individual cases. So a German "Über" is converted to "über" but a Finnish "eläinkö" is converted to "elainko".
+For the creation of the alias, the set language is also relevant in some cases. So we convert a German "Über" to "über" but a Finnish "eläinkö" to "elainko".
 
 {{< version "4.8" >}}
 
@@ -108,19 +110,19 @@ For the generation of the alias, the set language is also relevant in individual
 
 A page layout is a prerequisite for Contao to be able to display a page in the frontend at all. If no page layout has been assigned or inherited, Contao confirms the service with a short "No layout specified".
 
-**Assign a layout:** Here you can assign a page layout to a page. The assignment automatically applies to all subordinate pages without their own page layout.
+**Assign a layout:** Here you can assign a page layout to a page. The assignment automatically applies to all sub pages without a page layout.
 
-**Page layout**: Here you can see all available page layouts grouped by themes. You activate a theme by assigning a page layout.
+**Page layout:** Here you can see all available page layouts grouped by themes. You activate a theme by assigning a page layout.
 
 ## Cache settings
 
 In the cache settings you can define if and how long a page should be cached. Cached pages load much faster because they do not have to be generated by Contao and they do not need a connection to the database for delivery.
 
-**Set cache time:** Here you can set a cache time for a page. If you do not select this option, the cache settings will be inherited from a parent page.
+**Set the cache time:** Here you can assign a cache time to a page. If you do not select this option, the cache settings are inherited from a parent page.
 
 **Private Cache (client cache time)**: Allows you to assign a cache time to a page. This sets the time in seconds after which the browser will consider the page out of date.
 
-**Shared Cache (server cache time):** Here you can assign a cache time to a page. This defines the time in seconds after which the page is to be classified as obsolete by a shared cache.
+**Shared Cache (server cache time):** Here you can assign a cache time to a page. This defines the time in seconds after which the page is considered obsolete by a shared cache.
 
 Note that for security reasons, pages are only cached if they are not protected and no user is logged on to the backend. Otherwise, there is a risk that confidential data is written to the cache and accidentally displayed in the frontend. So don't be surprised if your password-protected pages don't show up in the cache despite their assigned expiration time.
 
@@ -142,17 +144,17 @@ For example, the "Company" page is assigned access rights and belongs to the use
 
 **Assign access rights:** Here you can assign access rights to a page. If you do not select this option, the access rights will be inherited from a parent page.
 
-**Owner:** Here you define the owner of the page.
+**Owner:** Here you can set the owner of the page.
 
 **Group:** Here you define the group of the page.
 
-**Access rights:** Here you assign the rights to the individual access levels.
+**Access rights**: Here you assign the rights to the individual access levels.
 
 For more information on the permissions system and the configuration of users and user groups, see the [System Administration](/de/system/einstellungen/) page.
 
 ## Access protection
 
-In contrast to access rights, which define the rights in the backend, access protection refers to the protection of a page from access in the frontend. Visitors must first log in with their user name and password before they can access the page. Otherwise they would only see an error page.
+In contrast to access rights, which define the rights in the back end, access protection refers to the protection of a page from access in the front end. Visitors must first log in with their username and password before they can access the page. Otherwise they would only see an error page.
 
 **Protect page:** Here you can restrict access to a page. If you do not select this option, access protection is inherited from a parent page.
 
@@ -167,12 +169,12 @@ There may be pages within your site structure that are available in the frontend
 **Show in the sitemap:** If desired, Contao creates an XML sitemap for each website that you can submit to Google[ (XML sitemap](#xml-sitemap)). By default, this includes all public pages and not those hidden in the menu. You can change this behavior per page if needed:
 
 - **Default:** Use the default settings.
-- **Always display:** The page is always displayed in the XML Sitemap, even if it is hidden in the menu, for example, and would not normally be displayed.
-- **Never display:** The page is excluded from the XML sitemap.
+- **Always display:** The page is always displayed in the XML Sitemap, even if, for example, it is hidden in the menu and would not normally be displayed.
+- **Never display:** The page is excluded from the XML Sitemap.
 
 **Hide in menu:** If you select this option, the page will not be displayed in the menu of your website, but you can still access the page - if it has been published - via a direct link or in a frontend module.
 
-Contao indexes the finished pages of your website and creates a search index that you can search with the frontend module "search engine". With this setting, you can exclude certain pages from the indexing. In the backend settings, you can also disable the search function completely.
+Contao indexes the finished pages of your website and creates a search index that you can search with the frontend module "search engine". With this setting, you can exclude certain pages from the indexing process. In the backend settings, you can also disable the search function completely.
 
 **Do not search:** Here you can exclude a page from the search.
 
@@ -182,23 +184,23 @@ Contao indexes the finished pages of your website and creates a search index tha
 
 **Element required:** If you select this option, this page will show error page 404 if the URL does not contain an alias for an element.
 
-## Keyboard Navigation
+## Keyboard navigation
 
 From section [Backend shortcuts](/de/administrationsbereich/backend-tastaturkuerzel/) you already know that Contao supports navigation using shortcuts. This not only has a positive effect on accessibility but also speeds up the workflow. For this reason, the feature is also available in the frontend and each page can optionally be provided with a keyboard shortcut and a tab index.
 
-**Tab Index:** By default, you can use the Tab key to jump from top to bottom through the navigation menu. However, you can customize the order by assigning a number between 1 and 32,767 to each page, and the tab will follow your sorting in ascending order instead of the default order.
+**Tab Index:** By default, you can use the Tab key to jump from top to bottom through the navigation menu. However, you can specify an individual order by assigning a number between 1 and 32,767 to each page, and the tab will then follow your sorting in ascending order instead of the default order.
 
-**Keyboard shortcut:** A keyboard shortcut is a single character that is linked to a page. Visitors to your site can then access that page directly from the keyboard. This function is especially required for accessible websites.
+**Shortcut keys:** A shortcut key is a single character associated with a page. Visitors to your site can then access that page directly from the keyboard. This function is especially required for accessible websites.
 
 ## DNS Settings
 
-DNS settings are only available for pages of type "Starting point of a web page". You determine which starting pointContao loads depending on the domain called and the language set in the visitor's browser.
+DNS settings are only available for pages of type "Starting point of a website". You determine which starting pointContao loads depending on the domain called and the language set in the visitor's browser.
 
-**Domain name:** If you want a website in your site structure to be accessible under a specific domain such as "company.com", you can enter it here. If a visitor then calls up "company.de" in his browser, he will be automatically forwarded to the corresponding starting point of a website.
+**Domain name:** If you want a website in your site structure to be accessible under a specific domain such as "company.com", you can enter it here. If a visitor then calls up "company.de" in his browser, he will be automatically redirected to the corresponding starting point of a website.
 
 **Use HTTPS:** Activate this checkbox if your website is available via HTTPS.
 
-**Language**: Here you can set the language of the starting point. Languages are recorded via their primary subtag according to ISO 639-1, e.g. via`de` for German or `en`for English.
+**Language**: Here you can set the language of the starting point. Languages are recorded via their primary subtag according to ISO 639-1, e.g.`de` for German or `en`for English.
 
 **Language fallback:** Contao always searches for a starting point in the language that a visitor has selected in his browser. If there is only a German starting point, an English visitor would only see the error message "No pages found" because there is no website in his language.
 
@@ -212,19 +214,19 @@ Contao automatically creates an XML sitemap from the page structure of the websi
 
 **Create an XML Sitemap:** Here you activate the creation of the XML Sitemap.
 
-**Filename**: Enter the name of the Sitemap file without file extension`.xml`. Contao will automatically add the file extension when saving the file.
+**Filename:** Enter the name of the Sitemap file here without the file extension`.xml`. Contao will automatically add the file extension when saving the file.
 
-The settings are only available for pages of the type "Starting point of a website".
+The settings are only available for pages of type "Starting point of a web page".
 
 ## Forwarding
 
-The following settings are only available for redirect pages. Contao distinguishes between internal and external redirections[ (page types](../seiten-als-zentrale-elemente/#seitentypen)).
+The following settings are only available for redirect pages. Contao distinguishes between internal and external redirects[ (page types](../seiten-als-zentrale-elemente/#seitentypen)).
 
 **Forwarding type:** Here you can specify whether the forwarding is temporary (HTTP 302) or permanent (HTTP 301). The redirection type is especially important for search engine optimization.
 
 **Forwarding page:** Here you specify the target page for internal forwarding.
 
-**Link address:** Here you can enter the destination URL for external forwarding. For redirection to another website you have to `https://`use the protocol, for linking an e-mail address the protocol `mailto:`and for linking a phone number the protocol `tel:`.
+**Link address:** Here you can enter the destination URL in case of external redirection. You must use the protocol `https://`for redirection to another website, the protocol for linking an e-mail address `mailto:`and the protocol `tel:`for linking a phone number.
 
 **Open in a new window:** The target page will open in a new browser window.
 
@@ -232,7 +234,7 @@ The following settings are only available for redirect pages. Contao distinguish
 
 With error pages, you can optionally redirect visitors to another page instead of displaying a message. For example, if an unregistered visitor comes across the error 403 page when trying to access a protected page, you could redirect them directly to the login page.
 
-**Redirect to another page:** Here you activate the auto-redirect feature.
+**Redirect to another page:** Here you activate the auto-redirect.
 
 ## Publication
 
@@ -240,6 +242,6 @@ As long as a page is not published, it practically does not exist in the fronten
 
 **Publish a page:** Here you can publish a page.
 
-**Show from:** Here you can activate a page on a certain date.
+**Show from:** Here you activate a page on a specific date.
 
 **Show until:** Here you deactivate a page at a certain date.

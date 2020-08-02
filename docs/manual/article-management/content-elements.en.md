@@ -10,7 +10,7 @@ weight: 20
 This article is machine translated.
 {{% /notice %}}
 
-To make the creation of content as intuitive as possible, Contao provides a content element for each content type that is tailored to its requirements. You can create an unlimited number of content elements per article and restrict access to individual elements if needed.
+To make the creation of content as intuitive as possible, Contao provides a content element for each content type that is tailored to its requirements. You can create an unlimited number of content elements per article and restrict access to individual elements as needed.
 
 ![Restrict access to a content element](/de/article-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png?classes=shadow)
 
@@ -20,18 +20,18 @@ To make the creation of content as intuitive as possible, Contao provides a cont
 
 **Show guests only:** The content element is visible by default and is hidden as soon as a member has logged on to the frontend.
 
-## Heading {#heading}
+## Header {#header}
 
 The content element "Heading" adds a heading to the article. Most content elements support entering a heading directly, so you don't have to use the element separately each time.
 
-**Heading:** Here you can enter the headline.
+**heading:** Here you can enter the heading.
 
-With the select menu to the right you can define the semantic hierarchy of this heading. The most important headline of the page is given as `h1` (usually only one per page), while the values `h2` to `h6` represent hierarchically lower headlines and occur several times, of course.
+With the select menu to the right you can define the semantic hierarchy of this heading. The most important headline of the page is shown as `h1`specified (usually only one per page), while the values up `h2`to `h6`hierarchically lower headlines are shown and of course occur several times.
 
-**Individual template:** Here you can overwrite the standard template `ce_headline`.
+**Individual template:** Here you can overwrite the standard `ce_headline`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML outputThe**  
+ element generates the following HTML code:
 
 ```html
 <h1 class="ce_headline first last">…</h1>
@@ -39,15 +39,15 @@ With the select menu to the right you can define the semantic hierarchy of this 
 
 ## Text
 
-The content element "Text" adds a formatted text to the article. The input is done via a so-called Rich Text Editor, which allows you to set certain formatting at the push of a button, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/) , an open source editor from the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
+The content element "Text" adds formatted text to the article. The input takes place via a so-called Rich Text Editor, which allows you to set certain formatting at the touch of a button, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/), an open source editor by the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
 
 ![The Rich Text Editor TinyMCE](/de/article-management/images/de/der-rich-text-editor-tinymce.png?classes=shadow)
 
 **Heading:** Here you can enter a headline.
 
-With the select menu to the right you can define the semantic hierarchy of this heading. The most important headline of the page is given as `h1` (usually only one per page), while the values `h2` to `h6` represent hierarchically lower headlines and occur several times, of course.
+With the select menu to the right you can define the semantic hierarchy of this heading. The most important headline of the page is specified as `h1`(usually only one per page), while the values up `h2`to `h6`hierarchically lower headlines and of course occur several times.
 
-**Text:** Here you enter the text of the content element.
+**text:** Here you enter the text of the content element.
 
 **Add an image**
 
@@ -69,34 +69,34 @@ You can add an image to the text element, which is then surrounded by your text.
 | Important part | Preserves the important part of the image as specified in the file manager. |
 | Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
 | Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
-| Right / Top | Preserves the right part of a landscape image and the upper part of a portrait image. |
+| Right / Top | Get the right part of a landscape image and the upper part of a portrait image. |
 | Left / Middle | Preserves the left part of a landscape image and the center part of a portrait image. |
 | Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
-| Right / middle | Preserves the right part of a landscape image and the center part of a portrait image. |
-| Left / Bottom | Preserves the left part of a landscape image and the lower part of a portrait image. |
+| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
+| Left / Bottom | Contains the left part of a landscape image and the lower part of a portrait image. |
 | Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
 | Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
 
-**Image Alignment:** Here you set the alignment of the image. If it is ![right-justified](/de/icons/right.svg?classes=icon)inserted **above**, **below**, **left-aligned** or ![right-justified](/de/icons/right.svg?classes=icon)**right-aligned**. If **left-** or **right-aligned**, the text flows around the image (as symbolized by the icon).
+**Image alignment:** Here you can set the alignment of the image. If it is inserted![above](/de/icons/above.svg?classes=icon) **above**,![under](/de/icons/below.svg?classes=icon) **below**,![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or![right-justified](/de/icons/right.svg?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
 
-**Image distance:** Here you define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
+**Image distance:** Here you can define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
 
 **Large View/New Window:** If this option is selected, the image will be opened in its original size when clicked. This option is not available for linked images.
 
 **Overwrite metadata:**  Here you can overwrite the metadata from the file manager.
 
-**Alternative text:** Here you can enter an alternative text for the image *(alt attribute)*. A barrier-free website should contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
+**Alternative text:** Here you can enter an alternative text for the image *(alt attribute)*. Accessible web pages should contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
 
-**Picture title:** Here you can enter the title of the image *(title attribute)* .
+**Picture title:** Here you can enter the title of the image *(title attribute)*.
 
-**Image link address:** When you click on a linked image, you will be redirected to the specified target page (corresponds to an image link). Please note that for a linked image a lightbox large view is no longer possible.
+**Image link address:** When you click on a linked image, you will be redirected to the specified destination page (corresponds to an image link). Please note that a lightbox large view is no longer possible for a linked image.
 
-**Caption:** Here you can enter a caption.
+**caption:** Here you can enter a caption.
 
-**Individual template:** Here you can overwrite the standard template `ce_text`.
+**Individual template:** Here you can overwrite the standard `ce_text`template.
 
-**HTML output**   
- The element generates the following HTML code:
+  
+**HTML Output**The element generates the following HTML code:
 
 ```html
 <div class="ce_text first last block">
@@ -124,22 +124,22 @@ The content element "HTML" adds any HTML code to the article. Note that not all 
 
 **HTML code:** Here you can enter the HTML code.
 
-**Individual template:** Here you can overwrite the default template `ce_html`.
+**Individual template:** Here you can overwrite the standard `ce_html`template.
 
 The content element has no enclosing HTML markup.
 
 ## enumeration {#enumeration}
 
-The content element "Enumeration" adds a non-nested list to the article. You can choose between a numbered ("ordered list") and an unnumbered ("unordered list") enumeration. A JavaScript wizard helps you to create and edit the list items.
+The content element "Enumeration" adds a non-nested list to the article. You can choose between an ordered list and an unordered list enumeration. A JavaScript assistant supports you in creating and editing the list items.
 
 ![JavaScript wizard for listings](/de/article-management/images/de/javascript-assistent-fuer-auflistungen.png?classes=shadow)
 
-With a click on the icon ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon)next to the field label "List entries" you open the CSV import wizard, which allows you to import list data from a CSV file. The CSV file must have been transferred to the upload directory before.
+With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon)to the field name "List entries" you open the CSV import wizard, with which you can import list data from a CSV file. The CSV file must have been transferred to the upload directory before.
 
-**Individual template:** Here you can overwrite the default template `ce_list`.
+**Individual Template**: Here you can overwrite the standard `ce_list`template.
 
-**HTML output**   
- The element generates the following HTML code:
+  
+**HTML Output**The element generates the following HTML code:
 
 ```html
 <div class="ce_list first last block">
@@ -151,42 +151,42 @@ With a click on the icon ![Import list data from a CSV file](/de/icons/tablewiza
 </div>
 ```
 
-A numbered enumeration uses the `<ol> tag` instead of the &lt;ul&gt; `tag.`
+A numbered enumeration uses the `<ol>`tag instead of the `<ul>`tag.
 
 ## Table
 
-The content element "Table" adds a table to the article. A JavaScript wizard helps you to create the rows and columns. With the following navigation icons you can edit the table:
+The content element "Table" adds a table to the article. A JavaScript assistant supports you in creating the rows and columns. You can edit the table with the following navigation icons:
 
 - ![Reduce the size of the input fields](/de/icons/demagnify.svg?classes=icon) **Reduce the size of the input fields**
 - ![Enlarge the input fields](/de/icons/magnify.svg?classes=icon) **Enlarge the input fields**
 - ![Duplicate the column/row](/de/icons/copy.svg?classes=icon) **Duplicate the column/row**
-- ![Move the column one position to the left](/de/icons/movel.svg?classes=icon) **Move the column one position to the left**
-- ![Move the column one position to the right](/de/icons/mover.svg?classes=icon) **Move the column one position to the right**
+- ![Move the column one position to the left](/de/icons/movel.svg?classes=icon)**Move the column one position to the left**
+- ![Move the column one position to the right](/de/icons/mover.svg?classes=icon)**Move the column one position to the right**
 - ![Delete the column/row](/de/icons/delete.svg?classes=icon) **Delete the column/row**
-- ![Move the element by dragging and dropping it](/de/icons/drag.svg?classes=icon) **Move the element by dragging and dropping it**
+- ![Move the element by dragging and dropping it](/de/icons/drag.svg?classes=icon)**Move the element by dragging and dropping it**
 
 ![JavaScript wizard for tables](/de/article-management/images/de/javascript-assistent-fuer-tabellen.png?classes=shadow)
 
-With a click on the icon ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon)next to the field label "Table entries" you open the CSV import wizard, which allows you to import table data from a CSV file. The CSV file has to be transferred to the upload directory first.
+With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon)to the field label "Table entries" you open the CSV import wizard, with which you can import table data from aCSV file. The CSV file has to be transferred to the upload directory first.
 
-**Summary:** An accessible website should contain a short summary of the content for each table, which you can enter here.
+**Summary:** An accessible website should contain a short summary of the content of each table, which you can enter here.
 
-**Add header:** If you select this option, the first row of the table is formatted as a header using the `<thead> tag`.
+**Add header:** If you select this option, the first row of the table is formatted as a header using the tag`<thead>`.
 
-**Add footer:** If you select this option, the last row of the table is formatted as a footer using the `<foot> tag`.
+**Add footer:** If you select this option, the last row of the table is formatted as a footer using the tag`<tfoot>`.
 
-**Add series headings:** If you select this option, the first column of the table is formatted as a row header using the `<th> tag`.
+**Add row headings:** If you select this option, the first column of the table is formatted as a row header using the tag`<th>`.
 
-**Sortable table:** Makes the table sortable in the frontend using JavaScript. The *moo\_tablesort* or *j\_tablesort* template must be included in the page layout.
+**Sortable table:** Makes the table sortable in the frontend using JavaScript. The *moo\_tablesort* orj\_tablesort template must be included in the page layout.
 
 **Sorting index:** The number of the column to be sorted by default, as long as the visitor has not made a selection. The count starts at 0.
 
 **Sort order:** The order of the default sort (ascending or descending).
 
-**Individual template:** Here you can overwrite the default template `ce_table`.
+**Individual template:** Here you can overwrite the standard `ce_table`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_table first last block">
@@ -232,9 +232,9 @@ With a click on the icon ![Import list data from a CSV file](/de/icons/tablewiza
 
 ## Code
 
-The content element "Code" adds formatted code to the article. The input is done via a so-called code editor. Contao uses the open source code editor of [Ace](https://ace.c9.io/) .
+The content element "Code" adds formatted code to the article. The input is done with a so-called code editor. Contao uses the open source code editor from [Ace](https://ace.c9.io/).
 
-For the frontend output to work, the *js\_highlight* template must be included in the page layout.
+For the output in the frontend to work, the *js\_highlight template* must be included in the page layout.
 
 **Syntax highlighting:** Here you can select the desired script language. The following script languages are available:
 
@@ -262,12 +262,12 @@ For the frontend output to work, the *js\_highlight* template must be included i
 - YAML
 - XML
 
-**Code:** Here you can enter the desired code.
+**code:** Here you can enter the desired code.
 
-**Individual template:** Here you can overwrite the standard template `ce_code`.
+**Individual template**: Here you can overwrite the standard `ce_code`template.
 
-**HTML output**   
- The element generates the following HTML code:
+  
+**HTML OutputThe** element generates the following HTML code:
 
 ```html
 <div class="ce_code first last block">
@@ -279,12 +279,12 @@ For the frontend output to work, the *js\_highlight* template must be included i
 
 The content element "Markdown" is used to generate HTML code from a markdown text.
 
-**Code:** Here you can enter the desired code. Note that the code will not be executed.
+**code:** Here you can enter the desired code. Note that the code will not be executed.
 
-**Individual template:** Here you can overwrite the default template `ce_markdown`.
+**Individual template**: Here you can `ce_markdown`overwrite the default template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_markdown first last block">
@@ -295,7 +295,7 @@ The content element "Markdown" is used to generate HTML code from a markdown tex
 </div>
 ```
 
-Below are some examples of markdown syntax:
+Below are some examples of Markdown syntax:
 
 ### Syntax
 
@@ -346,7 +346,7 @@ To highlight text:
 _emphasize_
 ```
 
-Will be converted to the following HTML code:
+Converts to the following HTML code:
 
 ```html
 <em>emphasize</em>
@@ -360,7 +360,7 @@ To mark a text as computer code:
 `monospaced font`
 ```
 
-Will be converted to the following HTML code:
+Is converted to the following HTML code:
 
 ```html
 monospaced font
@@ -377,7 +377,7 @@ Schrift mit fester Laufweite …
 
 #### Quote block
 
-Blocks of quotations can be created by placing a right angle bracket at the beginning of the line.
+Citation blocks can be created by placing a right angle bracket at the beginning of the line.
 
 ```md
 > Dies ist ein Zitat.
@@ -402,7 +402,7 @@ An inline link looks like this:
 [Contao](https://contao.org/de)
 ```
 
-or optionally also with a title:
+or optionally with a title:
 
 ```md
 [Contao](https://contao.org/de "Offizielle Contao-Webseite")
@@ -418,7 +418,7 @@ A reference link looks like this:
 
 The reference can be placed anywhere in the document.
 
-#### pictures
+#### Images
 
 As for links, there are two syntax options for images.
 
@@ -466,9 +466,9 @@ Sorted lists use numbers:
 3. Listeneintrag
 ```
 
-### Extended syntax
+### Extended Syntax
 
-Not all HTML elements such as tables or footnotes can be described with normal markdown. For this reason there is a project for "Markdown Extra" to extend the syntax.
+Not all HTML elements like tables or footnotes can be described with normal Markdown, so there is a project for "Markdown Extra" to extend the syntax.
 
 Below are some examples of the extended syntax:
 
@@ -504,38 +504,38 @@ Dies ist ein Text mit Fußnote.[^1]
 
 The footnote definition can be placed anywhere in the document.
 
-### Further Information
+### Further information about footnotes
 
-For complete documentation on Markdown, visit the [official website](http://daringfireball.net/projects/markdown/syntax) .
+For complete documentation on Markdown, visit the official[ website](http://daringfireball.net/projects/markdown/syntax).
 
-For complete documentation on Markdown Extra, visit the [official website](http://michelf.ca/projects/php-markdown/extra) .
+For complete documentation on Markdown Extra, visit the official[ website](http://michelf.ca/projects/php-markdown/extra).
 
 ## Accordion
 
-The accordion effect allows you to create several sections, of which only one is open at a time. If another section is selected, the first one closes automatically.
+The accordion effect allows you to create several sections, of which only one is open at a time. If one section is selected, the first one closes automatically.
 
 **Operating mode:** Here you select the operating mode of the accordion element.
 
 | Operating mode | Declaration |
 | -------------- | ----------- |
 | Single element | In this mode the element creates a single accordion section with a text element and an optional image. |
-| Envelope beginning | In this mode the element opens a new accordion section into which any other content elements can be inserted. |
+| Start envelope | In this mode the element opens a new accordion section into which any other content elements can be inserted. |
 | Envelope end | In this mode, the element closes an accordion section previously opened using "Envelope Beginning". |
 
-**Area heading:** Each accordion section has a heading that is always visible and can be opened. HTML input is allowed here.
+**Section Heading:** Each accordion section has a always visible heading, which can be used to open it. HTML input is allowed here.
 
-**CSS format:** If you want to format the area header using CSS code, you can enter a format definition here.
+**CSS-Format:** If you want to format the section headline with CSS code, you can enter a format definition here.
 
-**Class names:** Leave this field empty to use the default class names or enter your own toggler and accordion classes.
+**Class names:** Leave this field empty to use the default class names or enter your own Toggler andAccordion classes.
 
-**Text:** Here you can enter the text of the accordion section. The input is done in the same way as for the text element using the Rich Text Editor.
+**Text:** Here you can enter the text of the accordion section. The input is done in the same way as for the text element using theRich Text Editor.
 
 **Add an image:** Here you can add an image to the element.
 
-**Individual template:** Here you can overwrite the standard template `ce_accordionSingle` or `ce_accordionStart`.
+**Individual Template**: Here you can overwrite `ce_accordionStart`the standard `ce_accordionSingle`template.
 
-**HTML output**   
- The element generates the following HTML code for a "Single Element":
+**HTML OutputThe**  
+ element generates the following HTML code for a "Single Element
 
 ```html
 <section class="ce_accordionSingle first ce_accordion ce_text block">
@@ -569,20 +569,20 @@ Otherwise the generated HTML code looks like this:
 </section>
 ```
 
-Note that the contents of each accordion section are enclosed by two (!) `<div> elements`. This is necessary for the effect to work and be formatted across browsers.
+Note that the contents of each accordion section are `<div>`enclosed by two (!) elements. This is necessary for the effect to work and be formatted across browsers.
 
 ## Content slider
 
 With the content element "Content Slider" a slider is created from different content elements.
 
-For the slider to work, the *js\_slider* template must be included in the page layout.
+For the slider to work, the *js\_slider template* must be included in the page layout.
 
-**Operating mode:** Here you select the operating mode of the slider element.
+**Operation mode:** Here you select the operation mode of the slider element.
 
 | Operating mode | Declaration |
 | -------------- | ----------- |
 | Envelope beginning | In this mode the element opens a new slider section into which any other content elements can be inserted. |
-| Envelope end | In this mode, the element closes a slider section previously opened using "Envelope Start". |
+| End envelope | In this mode, the element closes a slider section previously opened using "Envelope Start". |
 
 **Slide Interval:** Here you can define the time interval in milliseconds between slides (1000 = 1s). 0 disables the automatic change.
 
@@ -592,10 +592,10 @@ For the slider to work, the *js\_slider* template must be included in the page l
 
 **Continuous:** Create a continuous slider (start over when the end is reached).
 
-**Individual template:** Here you can overwrite the default template `ce_sliderStart`.
+**Individual template:** Here you can overwrite the default `ce_sliderStart`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_sliderStart first block">
@@ -628,44 +628,44 @@ For the slider to work, the *js\_slider* template must be included in the page l
 
 ## Hyperlink
 
-The Hyperlink content element adds a link to an external Web page or e-mail address to the article. Of course, you can also enter hyperlinks using the Rich Text Editor in the text element.
+The Hyperlink content element adds a link to an external Web page or e-mail address to the article. Of course, you can also enter hyperlinks in the text element using the Rich Text Editor.
 
 ![Creating a hyperlink](/de/article-management/images/de/einen-hyperlink-anlegen.png?classes=shadow)
 
-**Link address:** Enter the link address including the network protocol. For web pages the network protocol is usually `http://` or `https://` , for e-mail addresses `mailto:` and for telephone numbers `tel:` . Contao automatically encrypts email addresses so that they cannot be read by spambots.
+**Link address:** Enter the link address including the network protocol. For web pages, the network protocol is usually `http://`or `https://`, for e-mail `mailto:`addresses and phone `tel:`numbers, Contao automatically encrypts e-mail addresses so that they cannot be read by spambots.
 
 **Open in a new window:** Opens the link in a new browser window.
 
 **Link text:** The link text is displayed instead of the link address.
 
-**Embed the link:** To turn only certain words in a sentence into a hyperlink, you can embed the link in the sentence. For example, if the title of the link is "Company page", you can embed it in the sentence "Visit our %s! The placeholder %s will be replaced by the link in the output, so that the sentence "Visit our company page!
+**Embed the link:** To turn only certain words of a sentence into a hyperlink, you can embed the link into the sentence. For example, if the title of the link is "Company page", you can embed it in the sentence "Visit our %s! The placeholder %s will be replaced by the link in the output, so that the sentence "Visit our company page!
 
-**Link title:** The link title is inserted as a `title` attribute in the HTML markup.
+**Link title:** The link title is inserted as `title`-attribute in the HTML markup.
 
-**Lightbox:** Here you can set the `data-lightbox` attribute of the link used to control the lightbox.
+**lightbox:** Here you can set the `data-lightbox`-attribute of the link that is used to control the lightbox.
 
 **Image link settings**
 
-If you select the **Create an image link** option, you can create an image link instead of a text link. Alternatively, you can also create an image element and link it.
+If you select the **Create an image link** option, you can create an image link instead of a text link, or alternatively, you can create an image element and link to it.
 
 ![Create an image link](/de/article-management/images/de/einen-bildlink-erstellen.png?classes=shadow)
 
 **Source file:** Here you select the image to be used.
 
-**Image size:** Here you can specify the dimensions of the image. You can find more information in the [text](#text) .
+**Image size**: Here you can specify the dimensions of the image. You can find more information in the text.
 
 **Overwrite metadata:** Here you can overwrite the metadata from the file manager.
 
-**Alternative text:** A barrier-free website should contain a short description for each object. This description is displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
+**Alternative text:** An accessible website should contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternative text is also evaluated by search engines and is therefore an important tool for onpage optimization.
 
-**Picture title:** Here you can enter the title of the image (title attribute).
+**Image title:** Here you can enter the title of the image (title attribute).
 
-**Caption:** Here you can enter a caption.
+**Image caption:** Here you can enter a caption for the image.
 
-**Individual template:** Here you can overwrite the default template `ce_hyperlink`.
+**Individual template:** Here you can overwrite the standard `ce_hyperlink`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_hyperlink first last block">
@@ -690,14 +690,14 @@ If an image link is used, the HTML output looks like this:
 
 ## Top link
 
-The content element "Top-Link" adds a link to the article, with which you can jump to the top of the page. This is especially useful for long pages.
+The content element "Top-Link" adds a link to the article, with which you can jump to the top of the page, which is especially useful for long pages.
 
-**Link text:** Here you can enter a name for the link. If you leave this field empty, the default name "Up" will be used.
+**Link text:** Here you can enter a name for the link. If you leave this field empty, the default name "Top" will be used.
 
-**Individual template:** Here you can overwrite the standard template `ce_text`.
+**Individual template**: Here you can overwrite the standard `ce_text`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML outputThe**  
+ element generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -707,34 +707,34 @@ The content element "Top-Link" adds a link to the article, with which you can ju
 <!-- indexer::continue -->
 ```
 
-## Picture
+## Image
 
 The content element "Image" adds an image to the article. An image can have a large view or it can be an image link to a specific URL.
 
 ![Create a screen element](/de/article-management/images/de/ein-bildelement-anlegen.png?classes=shadow)
 
-**Source file:** Here you select the image to be used.
+**source file:** Here you select the image to be used.
 
-**Image size:** Here you can specify the dimensions of the image. For more information, see the [Text](#text) section.
+**Image size**: Here you can specify the dimensions of the image. See the [Text](#text) section for more information.
 
-*Image distance:* Here you define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
+*Image distance*: Here you can set the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
 
 **Large View/New Window:** If this option is selected, the image will be opened in its original size when clicked. This option is not available for linked images.
 
 **Overwrite metadata:** Here you can overwrite the metadata from the file manager.
 
-**Alternative text:** A barrier-free website should contain a short description for each object. This description is displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
+**Alternative text:** An accessible web page should contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternative text is also evaluated by search engines and is therefore an important tool for onpage optimization.
 
-**Picture title:** Here you can enter the title of the image (title attribute).
+**Image title:** Here you can enter the title of the image (title attribute).
 
-**Image link address:** When you click on a linked image, you will be redirected to the specified target page (corresponds to an image link). Please note that for a linked image a lightbox large view is no longer possible.
+**Image link address:** When clicking on a linked image, you will be redirected to the specified target page (corresponds to an image link). Please note that for a linked image a lightbox full view is no longer possible.
 
-**Caption:** Here you can enter a caption.
+**caption:** Here you can enter a caption.
 
-**Individual template:** Here you can overwrite the default template `ce_image`.
+**Individual template**: Here you can overwrite the standard `ce_image`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML outputThe**  
+ element generates the following HTML code:
 
 ```html
 div class="ce_image first last block">
@@ -749,15 +749,15 @@ div class="ce_image first last block">
 
 ## Gallery
 
-The content element "Picture gallery" adds a picture gallery to the article, i.e. a collection of several thumbnails that are listed in a list and are enlarged when clicked. If there are a lot of images, the gallery can be spread over several pages.
+The content element "Picture gallery" adds a picture gallery to the article, i.e. a collection of several thumbnails that are listed in a list and are enlarged when clicked. With so many images, the gallery can be spread over several pages.
 
 ![The picture gallery in the frontend](/de/article-management/images/de/die-bildergalerie-im-frontend.png?classes=shadow)
 
-**Source files:** Here you select one or more folders or files to be included in the image gallery. If you select a folder, Contao automatically transfers all images contained in the folder to the gallery. You can rearrange the images by dragging them.
+**Source files:** Here you can select one or more folders or files to be included in the gallery. If you select a folder, Contao will automatically add all images in the folder to the gallery. You can rearrange the individual images by dragging them.
 
-**Sort by:** Here you select the sort order. The following sort orders are available:
+**Sort by:** Here you can choose the sort order. The following sort orders are available:
 
-- Individual sequence
+- Individual order
 - File name (ascending)
 - File name (descending)
 - Date (ascending)
@@ -766,24 +766,24 @@ The content element "Picture gallery" adds a picture gallery to the article, i.e
 
 **Ignore files without metadata:** If no metadata for the appropriate page language has been entered for the files, they are not displayed when activated.
 
-**Image size:** Here you can specify the dimensions of the image. For more information, see the [Text](#text) section.
+**Image size:** Here you can specify the dimensions of the image. See the [Text](#text) section for more information.
 
-**Image distance:** Here you can set the distance between the image and the text. The order of the fields is clockwise "top, right, bottom, left".
+**Image distance**: Here you can set the distance between the image and the text. The order of the fields is clockwise "top, right, bottom, left".
 
-**Thumbnails per row:** Here you define the number of thumbnails per row.
+**Thumbnails per row:** Here you can set the number of thumbnails per row.
 
-**Large view/New window:** If this option is selected, the image will be opened in its original size in the lightbox when clicked (JavaScript is required for this).
+**Large View/New Window:** If this option is selected, the image will be opened in its original size in the Lightbox when clicked (JavaScript is required for this).
 
-**Elements per page:** Contao can automatically spread large image galleries across multiple pages to reduce the loading time of the gallery. Set the maximum number of thumbnails per page here.
+**Elements per page:** Contao can automatically spread large image galleries over multiple pages to reduce the loading time of the gallery. Set the maximum number of thumbnails per page here.
 
-**Total number of images:** Here you can limit the total number of pictures. Enter 0 to display all.
+**Total number of images:** Here you can limit the total number of images. Enter 0 to display all.
 
-**Gallery template:** Here you can overwrite the gallery template.
+**Gallery template**: Here you can overwrite the gallery template.
 
-**Individual template:** Here you can overwrite the default template `ce_gallery`.
+**Individual template**: Here you can overwrite the default `ce_gallery`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_gallery first last block">
@@ -823,7 +823,7 @@ The content element "Picture gallery" adds a picture gallery to the article, i.e
 
 The content element "Video/Audio" adds a video or audio file to the article.
 
-**Video/audio files:** Here you can add the video/audio file or - if you use different codecs - the video/audio files.
+**video/audio files:** Here you can add the video/audio file or, if you use different codecs, the video/audio files.
 
 {{< version "4.6" >}}
 
@@ -841,16 +841,16 @@ The content element "Video/Audio" adds a video or audio file to the article.
 
 **Stop at:** Playback will stop at the specified number of seconds. Enter 0 to disable the feature.
 
-**Caption:** Here you can enter a caption.
+**Caption:** You can enter a caption here.
 
-**Preloading:** Here you can recommend to the browser how the browser should preload the video. There are the following three options "Auto (preload the whole video)", "Metadata (preload only the metadata)" and "None (preload nothing)
+**Preloading:** Here you can recommend to the browser how the browser should preload the video. There are three options "Auto (preload the whole video)", "Metadata (preload only the metadata)" and "None (preload nothing)
 
 **Preview image:** Display the image instead of the first frame of the video before playing.
 
-**Individual template:** Here you can overwrite the standard template `ce_player`.
+**Individual template:** Here you can overwrite the default `ce_player`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_player first last block">
@@ -892,22 +892,22 @@ The YouTube content element adds a YouTube video to the article.
 
 **Stop at:** Playback will stop at the specified number of seconds. Enter 0 to disable the feature.
 
-**Caption:** Here you can enter a caption.
+**Caption:** You can enter a caption here.
 
-**Aspect ratio:** Here you can set the [aspect ratio of the video](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) to make it responsive.
+**Aspect Ratio**: Here you can set the aspect ratio[ of the video](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) to make it responsive.
 
 {{< version "4.8" >}}
 
 **Use a startup image:** The video will not load until the user clicks on the startup image.
 
-**Source file:** Here you select an image from the file overview.
+**source file:** Here you select an image from the file overview.
 
-**Image size:** Here you can specify the dimensions of the image. For more information, see the [Text](#text) section.
+**Image size:** Here you can specify the dimensions of the image. See the [Text](#text) section for more information.
 
-**Individual template:** Here you can overwrite the standard template `ce_youtube`.
+**Individual template**: Here you can overwrite the standard `ce_youtube`template.
 
-**HTML output**   
- The element generates the following HTML code:
+  
+**HTML OutputThe** element generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -941,7 +941,7 @@ The YouTube content element adds a YouTube video to the article.
 
 The content element "Vimeo" adds a Vimeo video to the article.
 
-**Vimeo ID:** Please enter the Vimeo video ID (e.g. 275028611).
+**Vimeo ID:** Please enter the Vimeo video ID (for example, 275028611).
 
 {{< version "4.5" >}}
 
@@ -957,24 +957,24 @@ The content element "Vimeo" adds a Vimeo video to the article.
 
 **Start at:** Playback starts at the specified number of seconds. Enter 0 to disable the feature.
 
-**Colors of the control elements:** Here you can enter a hexadecimal color code (e.g. ff0000) for the control elements.
+**Colors of the controls:** Here you can enter a hexadecimal color code (for example, ff0000) for the controls.
 
-**Caption:** Here you can enter a caption.
+**Caption:** Here you can enter a caption for the image.
 
-**Aspect ratio:** Here you can set the [aspect ratio of the video](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) to make it responsive.
+**Aspect ratio**: Here you can set the aspect ratio[ of the video](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) to make it responsive.
 
 {{< version "4.8" >}}
 
 **Use a startup image:** The video will not load until the user clicks on the startup image.
 
-**Source file:** Here you select an image from the file overview.
+**source file:** Here you select an image from the file overview.
 
-**Image size:** Here you can specify the dimensions of the image. For more information, see the [Text](#text) section.
+**Image size**: Here you can specify the dimensions of the image. See the [Text](#text) section for more information.
 
-**Individual template:** Here you can overwrite the default template `ce_vimeo`.
+**Individual template**: Here you can overwrite the standard `ce_vimeo`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -1008,9 +1008,9 @@ The content element "Vimeo" adds a Vimeo video to the article.
 
 The content element "Download" adds a download link to the article. Clicking on the link opens the "Save file as ..." dialog and you can save the linked file on your local computer.
 
-The special feature of Contao is that this download link also works with protected files that you cannot access directly from your browser. This way you can easily create a protected download area. For more information, see the section [File management](../../dateiverwaltung/) .
+The special feature of Contao is that this download link also works with protected files that you cannot access directly from your browser. This way you can easily create a protected download area. For more information, see the section [File management](../../dateiverwaltung/).
 
-**Source file:** Here you can select the download file.
+**source file:** Here you can select the download file.
 
 {{< version "4.8" >}}
 
@@ -1018,14 +1018,14 @@ The special feature of Contao is that this download link also works with protect
 
 **Link text:** The link text is displayed instead of the file name.
 
-**Link title:** The link title is inserted as a `title` attribute in the HTML markup.
+**Link title:** The link title is inserted as an `title`attribute in the HTML markup.
 
-**Individual template:** Here you can overwrite the default template `ce_download`.
+**Individual Template:** Here you can overwrite the default `ce_download`template.
 
-Note that only the file types you have specified in the backend settings under "Allowed download file types" can be downloaded.
+Note that only those file types can be downloaded that you have specified in the backend settings under "AllowedDownload file types".
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_download first last block">
@@ -1041,9 +1041,9 @@ The content element "Downloads" adds several download links to the article. Clic
 
 ![The Downloads element in the frontend](/de/article-management/images/de/das-downloads-element-im-frontend.png?classes=shadow)
 
-The special feature of Contao is that these download links also work with protected files that you cannot access directly from your browser. This way you can easily create a protected download area. For more information, see the section [File management](../../dateiverwaltung/) .
+The special feature of Contao is that these download links also work with protected files that you cannot access directly from your browser. This way, you can easily create a protected download area. For more information, see the section [File management](../../dateiverwaltung/).
 
-**Source files:** Here you select one or more folders or files to be included in the Donwloads item. When you select a folder, Contao automatically takes all downloadable files contained in it.
+**Source files:** Here you select one or more folders or files to be included in the donwloads item. If you select a folder, Contao automatically takes all downloadable files contained in it.
 
 {{< version "4.8" >}}
 
@@ -1051,7 +1051,7 @@ The special feature of Contao is that these download links also work with protec
 
 **Sort by:** Here you select the sort order. The following sort orders are available:
 
-- Individual sequence
+- Individual order
 - File name (ascending)
 - File name (descending)
 - Date (ascending)
@@ -1060,12 +1060,12 @@ The special feature of Contao is that these download links also work with protec
 
 **Ignore files without metadata:** If no metadata for the appropriate page language has been entered for the files, they are not displayed when activated.
 
-**Individual template:** Here you can overwrite the default template `ce_downloads`.
+**Individual template:** Here you can overwrite the default `ce_downloads`template.
 
-Note that only the file types you have specified in the backend settings under "Allowed download file types" can be downloaded.
+Note that only those file types can be downloaded that you have specified in the backend settings under "AllowedDownload file types".
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_downloads first last block">
@@ -1083,19 +1083,19 @@ Note that only the file types you have specified in the backend settings under "
 </div>
 ```
 
-## Article
+## Item
 
-The content element "Article" allows the multiple integration of an article without having to copy it. Note that only the content elements and not the article header are copied.
+The content element "Article" allows multiple integration of an article without having to copy it. Note that only the content elements and not the article header are copied.
 
-**Article referred to:** Here you choose the original article.
+**Item referred to:** Here you select the original article.
 
 Alias elements use the same HTML markup as the original element.
 
 ## Content element
 
-The content element "Content element" is used to insert an existing content element a second time without having to copy it. The advantage of this method is that you only have to enter any changes in the original content element and these changes are automatically copied to all alias elements.
+The content element "Content element" is used to insert an existing content element a second time without having to copy it. The advantage of this method is that you only need to make any changes in the original content element and these changes are automatically copied to all alias elements.
 
-**Related content element:** Here you select the original element.
+**Related content element:** Here you select the original content element.
 
 Alias elements use the same HTML markup as the original element.
 
@@ -1103,26 +1103,26 @@ Alias elements use the same HTML markup as the original element.
 
 The content element "Form" adds a form to the article. For information on creating and managing forms, see the [Form Generator](../../formulargenerator/) section.
 
-**Form:** Select the form you want to insert here.
+**Form:** Select the form you want to insert.
 
 ## Module
 
-The content element "Module" adds a frontend module to the article. You already know how to create and configure modules from the section [Module Management](../../modulverwaltung/) .
+The content element "Module" adds a frontend module to the article. You already know how to create and configure modules from the section [Module Management](../../modulverwaltung/).
 
 **Module:** Here you select the module you want to insert.
 
-The HTML output depends on the respective module type.
+The HTML output depends on the module type.
 
 ## Article teaser
 
 The content element "Article teaser" adds the teaser text of another article to the article, followed by a read more link. Clicking on this link will take you directly to the linked article.
 
-**Article:** Here you choose the original article.
+**article:** Here you select the original article.
 
-**Individual template:** Here you can overwrite the standard template `ce_teaser`.
+**Individual template:** Here you can overwrite the standard `ce_teaser`template.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_teaser first last ce_text block">
@@ -1135,15 +1135,15 @@ The content element "Article teaser" adds the teaser text of another article to 
 
 The content element "Comments" offers visitors the possibility to leave comments on your website. You can also run a guestbook with it.
 
-**Sorting order:** Here you define the order of the comments. Guestbooks normally show the newest entry first (descending order), comments on the other hand show the oldest (ascending order).
+**Sort order:** Here you can determine the order of the comments. Guestbooks usually show the newest entry first (descending order), comments show the oldest (ascending order).
 
-**Elements per page:** Here you can define the number of comments per page. Contao automatically generates a page break if required. Enter 0 to disable the automatic page break.
+**Elements per page:** Here you can define the number of comments per page. Contao automatically creates a page break when needed. Enter 0 to disable the automatic page break.
 
-**Moderate:** If you choose this option, comments will not appear on the website immediately, but only after you have approved them in the backend.
+**Moderate:** If you select this option, comments do not appear on the website immediately but only after you have enabled them in the back end.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
+**Allow BBCode:** If you select this option, your visitors can use [BBCode to](https://de.wikipedia.org/wiki/BBCode) format their comments. The following tags are supported:
 
-| Tag | Explanation |
+| tag | Declaration |
 | --- | ----------- |
 | `[b][/b]` | Boldface |
 | `[i][/i]` | Italics |
@@ -1151,20 +1151,20 @@ The content element "Comments" offers visitors the possibility to leave comments
 | `[img][/img]` | Insert picture |
 | `[code][/code]` | Insert program code |
 | `[color=#f00][/color]` | Coloured text |
-| `[quota][/quote]` | Insert quote |
-| `[quote=time][/quote]` | Insert quote with mention of the author |
+| `[quote][/quote]` | Insert quote |
+| `[quote=Tim][/quote]` | Insert quote with mention of the author |
 | `[url][/url]` | Insert link |
 | `[url=http://example.com][/url]` | Insert link with link title |
-| `[email] [email]` | Insert e-mail address |
+| `[email][email]` | Insert e-mail address |
 | `[email=info@example.com][/email]` | Insert e-mail address with title |
 
 **Login required for commenting:** If you select this option, only logged in members can add comments. However, comments already submitted will still be visible to all visitors of the website.
 
 **Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this question is only "displayed" to spambots. Without a security question, it is possible that spammers automatically create user accounts and abuse your website.
 
-**Comment template:** Here you can select the template for the individual posts.
+**Comment template:** Here you can choose the template for the individual posts.
 
-**Individual template:** Here you can overwrite the default template `ce_comments`.
+**Individual template**: Here you can overwrite the default `ce_comments`template.
 
 **Comment management**
 
@@ -1172,10 +1172,10 @@ The management of the comments your visitors make is done centrally in the backe
 
 ![Filter comments by origin](/de/article-management/images/de/kommentare-nach-ihrem-ursprung-filtern.png?classes=shadow)
 
-If you have enabled the "Moderate comments" option, you can check new comments in the comment management before they appear on the website. In this way, you can prevent spam attempts, for example.
+If you have enabled the "Moderate Comments" option, you can check new comments in the comment manager before they appear on the website. This will help you to prevent spam attempts, for example.
 
-**HTML output**   
- The element generates the following HTML code:
+**HTML OutputThe**  
+ element generates the following HTML code:
 
 ```html
 <div class="ce_comments first last block">

@@ -10,15 +10,15 @@ weight: 30
 This article is machine translated.
 {{% /notice %}}
 
-On the previous pages, you learned that the layout of a page is determined by the page layout assigned to it. Among other things, this defines various layout areas in which you can place any frontend module, which in turn generates the HTML code for your website.
+On the previous pages you have learned that the structure of a page is determined by the page layout assigned to it. Among other things, it defines different layout areas in which you can place any frontend module, which in turn generates the HTML code of your website.
 
-This page is now concerned with the creation and configuration of these frontend modules, which are subordinate to theTheme Manager as part of the design. Each module that you create is therefore automatically assigned to a particular theme and can be exported with that theme and reused in another installation.
+This page is now about creating and configuring these frontend modules, which are subordinated to theTheme Manager as part of the design. So every module you create is automatically assigned to a specific theme and can be exported with this theme and reused in another installation.
 
-Therefore, you can access the module manager via the Theme Manager, as described in the[ Configuring](../theme-manager/themes-verwalten/#themes-konfigurieren) Themes section.
+You therefore access the module manager via the Theme Manager, as described in the[ Configuring](../theme-manager/themes-verwalten/#themes-konfigurieren) Themes section.
 
 {{% children %}}
 
-As with content elements, you can restrict access to a front-end module to specific groups of members under **Access Protection**.
+As with content elements, you can restrict access to a front-end module to certain groups of members under **Access Protection**.
 
 ![Restrict access to a module](/de/layout/module-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png?classes=shadow)
 
@@ -26,6 +26,6 @@ As with content elements, you can restrict access to a front-end module to speci
 
 **Allowed member groups**: Here you define who has access to the module.
 
-In the **expert settings** the module can only be displayed for guests.
+In the **expert settings** the module can only be shown to guests.
 
-**Show guests only:** The module is visible by default and is hidden as soon as a member has logged on to the frontend.
+**Show guests only:** The module is visible by default and is hidden once a member has logged on to the frontend.

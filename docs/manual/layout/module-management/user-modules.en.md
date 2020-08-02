@@ -11,7 +11,7 @@ This article is machine translated.
 {{% /notice %}}
 
 <style>
-    .formbody .invisible { border: 0; clip: rect(0 0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .formbody { background: #f2f2f2; border: 1px solid #ddd; padding: 20px; min-width: 250px; width: 80%; } .formbody label { margin-bottom: 0.125rem; } .formbody .checkbox_container { border: none; margin: 0 0 20px 0; padding: 0; } .formbody .checkbox_container label { display: inline; } .formbody .error { color: #ff0000; } .formbody .submit { background: #f47c00; color: #fff; padding: 5px 10px; }</style></head><body>User modules are modules that are used in the context of frontend user management. This includes, for example, the registration of new members or the login/logout of existing members.
+    .formbody .invisible { border: 0; clip: rect(0 0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } .formbody { background: #f2f2f2; border: 1px solid #ddd; padding: 20px; min-width: 250px; width: 80%; } .formbody label { margin-bottom: 0.125rem; } .formbody .checkbox_container { border: none; margin: 0 0 20px 0; padding: 0; } .formbody .checkbox_container label { display: inline; } .formbody .error { color: #ff0000; } .formbody .submit { background: #f47c00; color: #fff; padding: 5px 10px; }</style></head><body>User modules are modules that are used in connection with the administration of frontend users. This includes, for example, the registration of new members or the login/logout of existing members.
 
 ## Login form
 
@@ -23,18 +23,18 @@ The front-end module "Login Form" adds a form to the website, with which registe
 
 **Frontend output**
 
-<div class="mod_login logout block"> <form action="#" id="tl_logout" method="post"><div class="formbody"> You are registered as j.smith.  
+<div class="mod_login logout block"> <form action="#" id="tl_logout" method="post"><div class="formbody"> You are logged on as j.smith.  
  Your last login was 2015-11-15 20:54. Welcome back!
 
-<div class="widget widget-submit"> <button class="submit" type="submit">Log off</button> </div> </div> </form></div>So when formatting CSS, consider both states of the module, and also remember that an error message may be issued.
+<div class="widget widget-submit"> <button class="submit" type="submit">Sign out</button> </div> </div> </form></div>So when formatting CSS, consider both states of the module, and also remember that an error message may be output.
 
-**Allow Autologin:** If you select this option, members can remain logged in if they wish. If a user session expires, Contao automatically creates a new session without requiring the user to enter the password again.
+**Allow Autologin:** If you select this option, members can remain logged in if they wish. If a user session expires, Contao will automatically create a new session without requiring you to enter the password again.
 
 **Forwarding page:** Here you can define to which page a member will be forwarded after successful registration. You can override this setting per user group to set up a group-specific redirection.
 
-**Last visited page:** If you select this option, the frontend user will be redirected to the last visited page instead of the redirection page.
+**Go to last visited page:** If you select this option, the frontend user will be redirected to the last visited page instead of the redirection page.
 
-**Individual template**: Here you can overwrite the standard `mod_login`template.
+**Individual template:** Here you can overwrite the standard `mod_login`template.
 
 **HTML outputThe**  
  frontend module generates the following HTML code:
@@ -104,35 +104,35 @@ After a member has logged in, the HTML code changes as follows:
 
 The front-end module "Automatic Logout" adds an invisible module to the website that automatically logs off a logged in front-end user.
 
-As soon as a member has logged in to the frontend of the website, a logout link appears in the main menu on the right-hand side, which can be used to log out again. In reality, these are two different pages in the site structure, one containing the login and the other the logout module.
+As soon as a member has logged in to the frontend of the website, a logout link appears in the main menu on the right hand side, with which the member can log out again. In reality, these are two different pages in the page structure, which contain the login and the logout module.
 
-**Forwarding page:** Here you define to which page a frontend user is forwarded after logging out.
+**Forwarding page:** Here you can define to which page a frontend user will be forwarded after logging out.
 
 **Go to last visited page:** If you select this option, the member will be redirected to the last page visited instead of the redirection page.
 
 The module does not generate HTML output.
 
-## Personal data
+## Personal information
 
 The front-end module "personal data" adds a form to the website, which allows a member to change his personal data such as his e-mail address or password. As an administrator, you can define exactly which fields can be edited and which cannot.
 
 **Frontend output `member_default`**
 
-<div class="mod_personalData block"> <form action="#" id="tl_member" method="post"><div class="formbody"><div class="fields"><div class="widget widget-text"> <label for="ctrl_firstname"> <span class="invisible"> Mandatory field </span>First name\* </label> <input class="text" id="ctrl_firstname" maxlength="255" name="firstname" required="" type="text" value="John"></input> </div><div class="widget widget-text"> <label for="ctrl_lastname"> <span class="invisible"> Mandatory field </span>Last name\* </label> <input class="text" id="ctrl_lastname" maxlength="255" name="lastname" required="" type="text" value="Smith"></input> </div><div class="widget widget-text"> <label for="ctrl_email"> <span class="invisible"> Mandatory field </span>E-mail address\* </label> <input class="text" id="ctrl_email" maxlength="255" name="email" required="" type="email" value="j.smith@example.com"></input> </div><div class="widget widget-password"> <label for="ctrl_password">Password</label> <input class="text password" id="ctrl_password" name="password" type="password" value=""></input> </div><div class="widget widget-password confirm"> <label class="confirm" for="ctrl_password_confirm">Confirmation</label> <input class="text password" id="ctrl_password_confirm" name="password_confirm" type="password" value=""></input> </div> </div><div class="widget widget-submit"> <button class="submit" type="submit">store data</button> </div> </div> </form></div>**Frontend output `member_grouped`**
+<div class="mod_personalData block"> <form action="#" id="tl_member" method="post"><div class="formbody"><div class="fields"><div class="widget widget-text"> <label for="ctrl_firstname"> <span class="invisible"> Mandatory field </span>First name\* </label> <input class="text" id="ctrl_firstname" maxlength="255" name="firstname" required="" type="text" value="John"></input> </div><div class="widget widget-text"> <label for="ctrl_lastname"> <span class="invisible"> Mandatory field </span>Last Name\* </label> <input class="text" id="ctrl_lastname" maxlength="255" name="lastname" required="" type="text" value="Smith"></input> </div><div class="widget widget-text"> <label for="ctrl_email"> <span class="invisible"> Mandatory field </span>E-mail address\* </label> <input class="text" id="ctrl_email" maxlength="255" name="email" required="" type="email" value="j.smith@example.com"></input> </div><div class="widget widget-password"> <label for="ctrl_password">Password</label> <input class="text password" id="ctrl_password" name="password" type="password" value=""></input> </div><div class="widget widget-password confirm"> <label class="confirm" for="ctrl_password_confirm">Confirmation</label> <input class="text password" id="ctrl_password_confirm" name="password_confirm" type="password" value=""></input> </div> </div><div class="widget widget-submit"> <button class="submit" type="submit">Save data</button> </div> </div> </form></div>**Frontend output `member_grouped`**
 
-<div class="mod_personalData block"> <form action="#" id="tl_member" method="post"><div class="formbody"> <fieldset> <legend>Personal data</legend><div class="widget widget-text"> <label for="ctrl_firstname"> <span class="invisible"> Mandatory field </span>First name\* </label> <input class="text" id="ctrl_firstname" maxlength="255" name="firstname" required="" type="text" value="John"></input> </div><div class="widget widget-text"> <label for="ctrl_lastname"> <span class="invisible"> Mandatory field </span>Last name\* </label> <input class="text" id="ctrl_lastname" maxlength="255" name="lastname" required="" type="text" value="Smith"></input> </div> </fieldset> <fieldset> <legend>Contact details</legend><div class="widget widget-text"> <label for="ctrl_email"> <span class="invisible"> Mandatory field </span>E-mail address\* </label> <input class="text" id="ctrl_email" maxlength="255" name="email" required="" type="email" value="j.smith@example.com"></input> </div> </fieldset> <fieldset> <legend>Login details</legend><div class="widget widget-password"> <label for="ctrl_password">Password</label> <input class="text password" id="ctrl_password" name="password" type="password" value=""></input> </div><div class="widget widget-password confirm"> <label class="confirm" for="ctrl_password__confirm">Confirmation</label> <input class="text password" id="ctrl_password_confirm" name="password_confirm" type="password" value=""></input> </div> </fieldset><div class="widget widget-submit"> <button class="submit" type="submit">Save data</button> </div> </div> </form></div>**Editable fields:** Here you can define the editable fields.
+<div class="mod_personalData block"> <form action="#" id="tl_member" method="post"><div class="formbody"> <fieldset> <legend>Personal data</legend><div class="widget widget-text"> <label for="ctrl_firstname"> <span class="invisible"> Mandatory field </span>First name\* </label> <input class="text" id="ctrl_firstname" maxlength="255" name="firstname" required="" type="text" value="John"></input> </div><div class="widget widget-text"> <label for="ctrl_lastname"> <span class="invisible"> Mandatory field </span>Last name\* </label> <input class="text" id="ctrl_lastname" maxlength="255" name="lastname" required="" type="text" value="Smith"></input> </div> </fieldset> <fieldset> <legend>Contact details</legend><div class="widget widget-text"> <label for="ctrl_email"> <span class="invisible"> Mandatory field </span>E-mail address\* </label> <input class="text" id="ctrl_email" maxlength="255" name="email" required="" type="email" value="j.smith@example.com"></input> </div> </fieldset> <fieldset> <legend>Access data</legend><div class="widget widget-password"> <label for="ctrl_password">Password</label> <input class="text password" id="ctrl_password" name="password" type="password" value=""></input> </div><div class="widget widget-password confirm"> <label class="confirm" for="ctrl_password__confirm">Confirmation</label> <input class="text password" id="ctrl_password_confirm" name="password_confirm" type="password" value=""></input> </div> </fieldset><div class="widget widget-submit"> <button class="submit" type="submit">store data</button> </div> </div> </form></div>**Editable fields:** Here you can define the editable fields.
 
 ![Set editable fields](/de/layout/module-management/images/de/editierbare-felder-festlegen.png?classes=shadow)
 
-**Subscribable newsletters**: If you are using the Contao newsletter extension, you can select here which distribution lists a member can subscribe to.
+**Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution lists a member can subscribe to.
 
-**Forwarding page:** Here you can select to which page a member will be forwarded after submitting the changes.
+**Forwarding page**: Here you can choose to which page a member is forwarded to after submitting the changes.
 
-**Form template:** Here you can select the template of the form.
+**Form template:** Here you select the template of the form.
 
-| Template | Declaration |
+| Template | Explanation |
 | -------- | ----------- |
-| `member_default` | The input fields are listed one below the other. |
+| `member_default` | The editable fields are listed below each other. |
 | `member_grouped` | The input fields are grouped using field sets. |
 
 **HTML OutputThe**  
@@ -245,7 +245,7 @@ The frontend module generates with the `member_grouped`following HTML code:
 
 ## Member registration
 
-The front-end module "Member Registration" adds a form to the website, with which new members can register and, depending on the configuration, automatically receive a user account for the protected area.
+The frontend module "Member registration" adds a form to the website, with which new members can register and, depending on the configuration, automatically receive a user account for the protected area.
 
 **Frontend output `member_default`**
 
@@ -253,13 +253,13 @@ The front-end module "Member Registration" adds a form to the website, with whic
 
 <div class="mod_registration block"> <form action="#" id="tl_registration" method="post"><div class="formbody"> <fieldset> <legend>Personal data</legend><div class="widget widget-text mandatory"> <label class="mandatory" for="ctrl_firstname"> <span class="invisible"> Mandatory field </span>First name\* </label> <input class="text mandatory" id="ctrl_firstname" maxlength="255" name="firstname" required="" type="text" value=""></input> </div><div class="widget widget-text mandatory"> <label class="mandatory" for="ctrl_lastname"> <span class="invisible"> Mandatory field </span>Last name\* </label> <input class="text mandatory" id="ctrl_lastname" maxlength="255" name="lastname" required="" type="text" value=""></input> </div> </fieldset> <fieldset> <legend>Contact details</legend><div class="widget widget-text mandatory"> <label class="mandatory" for="ctrl_email"> <span class="invisible"> Mandatory field </span>E-mail address\* </label> <input class="text mandatory" id="ctrl_email" maxlength="255" name="email" required="" type="email" value=""></input> </div> </fieldset> <fieldset> <legend>Access data</legend><div class="widget widget-text mandatory"> <label class="mandatory" for="ctrl_username"> <span class="invisible"> Mandatory field </span>Username\* </label> <input class="text mandatory" id="ctrl_username" maxlength="64" name="username" required="" type="text" value=""></input> </div><div class="widget widget-password mandatory"> <label class="mandatory" for="ctrl_password"> <span class="invisible"> Mandatory field </span>Password\* </label> <input class="text password mandatory" id="ctrl_password" name="password" required="" type="password" value=""></input> </div><div class="widget widget-password confirm mandatory"> <label class="confirm mandatory" for="ctrl_password_confirm"> <span class="invisible"> Mandatory field </span>Confirmation\* </label> <input class="text password mandatory" id="ctrl_password_confirm" name="password_confirm" required="" type="password" value=""></input> </div> </fieldset><div class="widget widget-submit"> <button class="submit" type="submit">Register</button> </div> </div> </form></div>**Editable fields:** Here you can define which fields a new member has to fill out during registration. To enable the login in the frontend, you have to activate at least the fields username and password.
 
-**Subscribable newsletters**: If you are using the Contao newsletter extension, you can define here which distribution lists a member can subscribe to.
+**Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution lists a member can subscribe to.
 
 **Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this question is only "displayed" to spambots. Without a security question it is possible that spammers automatically create user accounts and abuse your website.
 
-**Member groups:** Here you set the new member's group membership.
+**member groups:** Here you define the group membership of the new member.
 
-**Allow login:** If you select this option, a new member can log in in the frontend after registration. For this to work, the registration form must contain the fields username and password.
+**Allow login:** If you select this option, a new member can log in after registering in the frontend login. For this to work, the registration form must contain the fields username and password.
 
 **Create a user directory:** If you select this option, a new user directory is automatically created in a folder of your choice during registration. The name of the new directory will be generated from the username.
 
@@ -293,7 +293,7 @@ Wenn Sie keinen Zugang angefordert haben, ignorieren Sie diese E-Mail bitte.
 Ihr Administrator
 ```
 
-**Form template:** Here you can select the template of the form.
+**Form template:** Here you select the template of the form.
 
 | Template | Declaration |
 | -------- | ----------- |
@@ -301,7 +301,7 @@ Ihr Administrator
 | `member_grouped` | The input fields are grouped using field sets. |
 
 **HTML OutputThe**  
- frontend module generates with the `member_default`following HTML code:
+ front-end module generates with the `member_default`following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -359,7 +359,7 @@ Ihr Administrator
 <!-- indexer::continue -->
 ```
 
-The frontend module generates with the `member_grouped`following HTML code:
+The front-end module generates using the `member_grouped`following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -436,7 +436,7 @@ The frontend module "Change Password" adds a form to the website that allows a l
 
 <div class="mod_changePassword block"> <form action="#" id="tl_change_password" method="post"><div class="formbody"><div class="fields"><div class="widget widget-text mandatory"> <label class="mandatory" for="ctrl_oldpassword"> <span class="invisible"> Mandatory field </span>Old password\* </label> <input class="text password mandatory" id="ctrl_oldpassword" name="oldpassword" required="" type="password" value=""></input> </div><div class="widget widget-password mandatory"> <label class="mandatory" for="ctrl_password"> <span class="invisible"> Mandatory field </span>New password\* </label> <input class="text password mandatory" id="ctrl_password" name="password" required="" type="password" value=""></input> </div><div class="widget widget-password confirm mandatory"> <label class="confirm mandatory" for="ctrl_password_confirm"> <span class="invisible"> Mandatory field </span>Confirmation\* </label> <input class="text password mandatory" id="ctrl_password_confirm" name="password_confirm" required="" type="password" value=""></input> </div> </div><div class="widget widget-submit"> <button class="submit" type="submit">Change password</button> </div> </div> </form></div>**Forwarding page:** Here you can select to which page a member will be forwarded after submitting the changes.
 
-**Individual template:** Here you can overwrite the standard `mod_changePassword`template.
+**Individual template:** Here you can overwrite the default `mod_changePassword`template.
 
 **HTML outputThe**  
  frontend module generates the following HTML code:
@@ -479,7 +479,7 @@ The frontend module "Change Password" adds a form to the website that allows a l
 <!-- indexer::continue -->
 ```
 
-## Forgotten Password
+## Forgot your password?
 
 The front-end module "Forgot your password" adds a form to the website that a member can use to request a new password. Contao sends an automatic email with a confirmation link to the email address stored in the user account. Only after clicking on this confirmation link is it possible to enter a new password.
 
@@ -491,7 +491,7 @@ The front-end module "Forgot your password" adds a form to the website that a me
 
 **Forwarding page:** Here you can define to which page a user is forwarded after requesting a new password.
 
-**Confirmation page**: Here you can define to which page a user will be redirected after a new password has been successfully created.
+**Confirmation page:** Here you can define to which page a user will be redirected after a new password has been successfully created.
 
 **Confirmation mail:** Enter the text of the confirmation mail here. You can use placeholders in the format `##key##`for all user properties as well as the placeholders `##domain##`for the current domain and `##link##`for the confirmation link.
 
@@ -513,7 +513,7 @@ Ihr Administrator
 
 **Individual template:** Here you can overwrite the default `mod_lostPassword`template.
 
-**HTML OutputThe**  
+**HTML outputThe**  
  frontend module generates the following HTML code:
 
 ```html
@@ -548,7 +548,7 @@ Ihr Administrator
 <!-- indexer::continue -->
 ```
 
-## Close account
+## close account
 
 The front-end module "Close Account" adds a form to the website, which a member can use to close his account. Depending on the configuration, the account is either deactivated or completely deleted from the database.
 
@@ -556,11 +556,11 @@ The front-end module "Close Account" adds a form to the website, which a member 
 
 <div class="mod_closeAccount block"> <form action="#" id="tl_close_account" method="post"><div class="formbody"><div class="fields"><div class="widget widget-text mandatory"> <label class="mandatory" for="ctrl_password"> <span class="invisible"> Mandatory field </span>Password\* </label> <input class="text password mandatory" id="ctrl_password" name="password" required="" type="password" value=""></input> </div> </div><div class="widget widget-submit"> <button class="submit" type="submit">Close account</button> </div> </div> </form></div>**Mode:** Here you can specify whether the account should be deactivated or completely deleted from the database when the form is submitted.
 
-**Forwarding page:** Here you can define to which page a member will be forwarded after account closure. The target page must not be protected.
+**Forwarding page:** Here you define to which page a member will be forwarded after account closure. The target page must not be protected.
 
 **Individual template:** Here you can overwrite the default `mod_closeAccount`template.
 
-**HTML outputThe**  
+**HTML OutputThe**  
  frontend module generates the following HTML code:
 
 ```html

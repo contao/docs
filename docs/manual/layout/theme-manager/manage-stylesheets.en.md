@@ -10,9 +10,9 @@ weight: 20
 This article is machine translated.
 {{% /notice %}}
 
-As already mentioned in the section, [Contao in Quick](../../../einleitung/contao-im-schnelldurchlauf/) Look, cascading stylesheets, CSS for short, are the formatting tool of choice for web pages. If you don't have at least some basic knowledge of CSS, you should learn it now, because creating or adapting a theme is not possible without CSS knowledge. A very good introduction to the topic can be found in the book series "[Little Boxes](https://www.little-boxes.de/little-boxes-teil1-online.html)" by Peter Müller.
+As already mentioned in the section, [Contao in Quick](../../../einleitung/contao-im-schnelldurchlauf/) Look, cascading stylesheets, CSS for short, are the formatting tool of choice for formatting web pages. If you don't have at least some basic knowledge of CSS, you should learn it now, because creating or adapting a theme is not possible without CSS knowledge. A very good introduction to the topic can be found in the book series "[Little Boxes](https://www.little-boxes.de/little-boxes-teil1-online.html)" by Peter Müller.
 
-Contao provides a convenient backend module for stylesheet management that allows you to enter all format definitions in a single input mask. The actual CSS file is created automatically in the background.
+Contao provides a convenient backend module for stylesheet management that allows you to enter all format definitions in a single input mask. The creation of the actual CSS file is done automatically in the background.
 
 {{% notice info %}}
 The internal CSS editor is deprecated and will be removed  
@@ -25,12 +25,12 @@ The media type of a style sheet determines the type of end device for which it i
 
 | Media type | Explanation |
 | ---------- | ----------- |
-| aural | The stylesheet applies to computer-controlled voice output. |
-| braille | The stylesheet applies to output devices with a Braille display for blind users. |
+| aural | The stylesheet applies to computer generated speech. |
+| braille | The stylesheet applies to output devices with a Braille line for blind users. |
 | embossed | The stylesheet applies to Braille printers. |
-| handheld | The stylesheet applies to handheld PCs and smartphones. However, not all devices request this media type; iPhone, for example, always uses *screen* style sheets. |
-| print | The stylesheet applies to the print output of the web page. |
-| projection | The stylesheet is valid for the presentation with beamers and similar devices. |
+| handheld | The stylesheet applies to handheld PCs and smartphones. However, not all end devices request this media type; the iPhone, for example, always uses *screen* style sheets. |
+| print | The stylesheet is valid for the print version of the website. |
+| projection | The stylesheet is valid for presentation with beamers and similar devices. |
 | screen | The stylesheet is valid for screen output (standard for web pages). |
 | tty | The stylesheet applies to non-graphical output media with fixed character width. |
 | tv | The stylesheet applies to TV-like output media with coarse resolution. |
@@ -38,20 +38,20 @@ The media type of a style sheet determines the type of end device for which it i
 
 You define the media type of a style sheet in the stylesheet settings.
 
-The media types relevant for websites are *screen* and *print*.
+The media types relevant for web pages are *screen* and *print*.
 
 ## Conditional Comments
 
-Conditional Comments are proprietary instructions that are only understood by Internet Explorer and allow, among other things, the inclusion of specific stylesheets and other scripts. In such a stylesheet, you can, for example, fix display errors separately, which are unfortunately abundant, especially in older versions of Internet Explorer.
+Conditional Comments are proprietary instructions that are only understood by Internet Explorer and allow, among other things, the inclusion of specific stylesheets and other scripts. In such a stylesheet you can, for example, fix display errors separately, which are unfortunately abundant in older versions of Internet Explorer.
 
-The condition of a Conditional Comment can be read as follows:
+The condition of a conditional comment can be read as follows:
 
-| Condition | Explanation |
+| Condition | Declaration |
 | --------- | ----------- |
 | `if IE` | Applies to all versions of Internet Explorer. |
-| `if IE 6` | Only applies to version 6. |
+| `if IE 6` | Applies only to version 6. |
 | `if lt IE 6` | Applies to all versions smaller than 6  **(**less than). |
-| `if lte IE 6` | Applies to all versions less than or equal to 6  **(**less than or equals). |
+| `if lte IE 6` | Applies to all versions smaller or equal to 6  **(**less than or equals). |
 | `if gt IE 6` | Applies to all versions greater than 6 **.** |
 | `if gte IE 6` | Applies to all versions greater than or equal to 6  **(**greater than or equals). |
 
@@ -65,7 +65,7 @@ To create format definitions, you need to know two things: What are the class na
 
 The CSS class names of the Contao elements are logical throughout. Content elements begin with the prefix`ce_` (for content element), followed by the type of the content element. For example, a text element has the class`ce_text`, a picture element has the class `ce_image`.
 
-The same applies to modules, except that they start with the prefix (for `mod_`modules). For example, the module "Navigation menu" has the class`mod_navigation`, the module "Message list" has the class`mod_newslist`. If you are not sure about the class of an element, just look at the source code of the web page.
+The same applies to modules, except that they start with the prefix (for `mod_`modules). For example, the "Navigation Menu" module has the class`mod_navigation`, the "Message List" module the class`mod_newslist`. If you are not sure about the class of an element, just look in the source code of the web page.
 
 In your stylesheet, you can then use the class name of an element to assign a format to it. For example, the followingCSS statement sets the outer spacing of a Contao text element to 24 pixels:
 
@@ -75,11 +75,11 @@ In your stylesheet, you can then use the class name of an element to assign a fo
 }
 ```
 
-In Contao, however, you cannot use this notation because you can specify all formats in the input mask. Only the part in front of the curly brackets, the selector, has to be entered manually in the field provided.
+In Contao, however, you cannot touch this style sheet at all because you can specify all formats in the input mask. Only the part in front of the curly brackets, the so-called selector, has to be entered manually in the field provided.
 
 ![Set the outer distance in the stylesheet editor](/de/layout/theme-manager/images/de/den-aussenabstand-im-stylesheet-editor-festlegen.png?classes=shadow)
 
-### Order of format definitions
+### Sequence of the format definitions
 
 The order of the format definitions plays an important role in Cascading Stylesheets, because each statement in a subsequent format definition can be overwritten. This feature is especially useful for compensating browser-specific peculiarities, for example:
 
@@ -95,16 +95,16 @@ html .mod_search {
 }
 ```
 
-If the order of format definitions were reversed, the specific format for Internet Explorer would be loaded first and then overwritten by the general format for all browsers. So the specific statement would never be applied, and the outer distance would always be 24 pixels.
+If the order of the format definitions were reversed, the specific format for Internet Explorer would be loaded first and then overwritten by the generally valid format for all browsers. The specific statement would therefore never be applied, and the outer distance would always be 24 pixels.
 
 You can change the order of the records in Contao using the navigation icons![Move format definition](/de/icons/drag.svg?classes=icon) **Drag&amp;Drop** or![Move format definition](/de/icons/cut.svg?classes=icon) **Move and**![Insert after format definition](/de/icons/pasteafter.svg?classes=icon) **then Insert**.
 
-You can also assign a category to format definitions so that you can later filter the records by that category and more easily identify related definitions. These categories are only used for a better overview in the backend and are not used for sorting in the stylesheet itself.
+You can also assign a category to format definitions so that you can later filter records by that category and more easily identify related definitions. These categories are only used for a better overview in the backend and are not used for sorting in the stylesheet itself.
 
 ## Export stylesheets
 
-You can export individual stylesheets by clicking on the navigation![Export style sheet](/de/icons/theme_export.svg?classes=icon) icon **Export stylesheet** behind the stylesheet.
+You can export individual stylesheets by clicking on the navigation![Export style sheet](/de/icons/theme_export.svg?classes=icon) icon **Export Stylesheet** behind the stylesheet.
 
-## Importing stylesheets
+## Import stylesheets
 
-To be able to edit existing stylesheets with the internal stylesheet editor, the stylesheets module offers you the possibility to import CSS files. First transfer your CSS file to the Contao upload directory, and then click on the CSS Import button. A page with a file browser will open, from which you can select the stylesheets to import.
+To enable you to edit existing stylesheets with the internal stylesheet editor, the stylesheets module offers you the possibility to import CSS files. To do this, first transfer your CSS file to the Contao upload directory, and then click on the CSS Import button. A page with a file browser will open, from which you can select the stylesheets to import.

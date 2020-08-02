@@ -10,29 +10,29 @@ weight: 10
 This article is machine translated.
 {{% /notice %}}
 
-Navigation modules are among the most important frontend modules and are used on almost every website in any form. A navigation module creates a navigation menu from the hierarchical page structure, which, depending on the requirements, either displays the entire page tree or specific parts of it. Your visitors can then click through the pages of the website using this navigation menu.
+Navigation modules are one of the most important frontend modules and are used on almost every website in any form. A navigation module creates a navigation menu out of the hierarchical page structure, which, depending on your needs, either displays the whole page tree or certain parts of it. Your visitors can then click through the pages of the website using this navigation menu.
 
 ## Navigation menu
 
-The frontend module "Navigation Menu" adds a hierarchical navigation menu to the website, which contains all published and not hidden pages including their subpages. If needed, you can reconfigure the module to display only the main pages or only the sub pages above a certain depth - called "level" in Contao - to create main and sub menus.
+The front-end module "Navigation Menu" adds a hierarchical navigation menu to the Web page, which contains all published and non-hidden pages including their subpages. If needed, you can reconfigure the module to display only the main pages or only the sub pages above a certain depth - called "level" in Contao - to create main and sub menus.
 
-**Start level:** By default, the navigation menu starts at the highest level and works its way through all sublevels to the lowest nested level. The start level allows you to start the navigation menu from the second level, for example, so that only a part of the page tree is displayed (submenu).
+**Startlevel:** By default the navigation menu starts at the highest level and works its way through all sublevels to the lowest nested level. The start level offers you the possibility to start the navigation menu from the second level, for example, so that only a part of the page tree is displayed (submenu).
 
 ![The navigation menus in the frontend](/de/layout/module-management/images/de/die-navigationsmenues-im-frontend.png?classes=shadow)
 
 **Stoplevel:** In contrast to the start level, which determines the entry level of the navigation menu, the stop level determines the exit level, i.e. the maximum depth of the nesting. The main menu of our website, for example, should only display the main pages, so the output of the subpages has been limited to the first level of the page structure by means of stoplevel 1.
 
-This works only for the pages of the first level. If you call up a page of the second or third level, it will appear in the navigation menu including all its parent pages despite the stop level. This behaviour is intentional, because the path to the active page should always be displayed completely in the navigation menu.
+This only works for the pages of the first level. If you call up a page of the second or third level, it will appear in the navigation menu, including all its parent pages, despite the stop level. This behaviour is intentional, because the path to the active page should always be displayed completely in the navigation menu.
 
-For a real main navigation like on our website this behaviour is rather counterproductive, because only the pages of the first level are needed here and any subpages are displayed in a separate submenu. For this reason, there is the **Hard Limit** option, which ensures that subpages beyond the top level are never displayed.
+For a real main navigation like on our website, this behaviour is rather counterproductive, since only the pages of the first level are needed here and any subpages are displayed in a separate submenu. For this reason, there is the **Hard Limit** option, which ensures that subpages beyond the top level are never displayed.
 
 **Display protected pages:** If you select this option, protected pages are always displayed in the navigation menu. By default, such pages are only visible if a frontend user is logged on.
 
 **Show hidden pages:** If you select this option, menu items are displayed which are otherwise not visible in the navigation.
 
-**Set a reference page:** Normally, a navigation menu starts at the root page of the page structure (start point of a web page). If you only want to display a subtree, you can define an individual starting point here.
+**Set a reference page:** Normally a navigation menu starts at the root page of the page structure (starting point of a web page). If you only want to display a subtree, you can define an individual starting point here.
 
-**Navigation template**: Here you choose the template for the navigation.
+**Navigation template:** Here you choose the template for the navigation.
 
 **Individual template:** Here you can overwrite the standard `mod_navigation`template.
 
@@ -76,22 +76,22 @@ For a real main navigation like on our website this behaviour is rather counterp
 <!-- indexer::continue -->
 ```
 
-Note that the CSS classes are assigned to the `<li>`element and the `<strong>`element`<a>`(s), so you can define in your selectors exactly which elements you mean, e.g. instead `li.first`of just `.first`. The currently active page is not displayed as an active link, but as an element`<strong>` in accordance with accessibility requirements.
+Note that the CSS classes are assigned to both the `<li>`element and the `<strong>`element(s`<a>`), so define in your selectors exactly which elements you mean, for example `li.first`instead of just `.first`. The currently active page is not displayed as an active link, but as an element`<strong>` in accordance with accessibility requirements.
 
-## Individual Navigation
+## Individual navigation
 
-The front-end module "Individual Navigation" adds a navigation menu to the website from any number of pages, which does not take hierarchical dependencies into account.
+The front-end module "Individual Navigation" adds a navigation menu to the Web page from any number of pages that does not take hierarchical dependencies into account.
 
 **pages:** Here you select which pages should be included in the menu.
 
-**Show protected pages:** If you select this option, protected pages will be displayed in the individual navigation. By default such pages are only visible if a frontend user is logged in.
+**Display protected pages:** If you select this option, protected pages are displayed in the individual navigation. By default, such pages are only visible if a frontend user is logged on.
 
 **Navigation template:** Here you select the template for the navigation.
 
-**Individual Template:** Here you can overwrite the default `mod_customnav`template.
+**Individual template:** Here you can overwrite the default `mod_customnav`template.
 
-**HTML outputThe**  
- frontend module generates the following HTML code:
+  
+**HTML OutputThe** front-end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -118,12 +118,12 @@ The front-end module "Individual Navigation" adds a navigation menu to the websi
 
 **Show hidden pages:** If you select this option, hidden pages that would normally be skipped are also displayed in the navigation path.
 
-**Individual template**: Here you can overwrite the standard `mod_breadcrumb`template.
+**Individual template:** Here you can overwrite the standard `mod_breadcrumb`template.
 
 ![The navigation path in the frontend](/de/layout/module-management/images/de/der-navigationspfad-im-frontend.png?classes=shadow)
 
-**HTML outputThe**  
- frontend module generates the following HTML code:
+**HTML OutputThe**  
+ frontend module generates **the** following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -146,20 +146,20 @@ The front-end module "Quick-navigation" adds a drop-down menu to the website, wi
 
 **Individual name:** Here you can enter an individual name for the first option of the quick-navigation.
 
-**Stoplevel:** Here you can define up to which level of nesting subpages will be displayed in the quick-navigation (see [navigation menu](#navigationsmenu)).
+**Stoplevel**: Here you can define the level of nesting to which subpages are displayed in the quick-navigation (see [navigation menu](#navigationsmenu)).
 
-**Hard Limit:** If you select this option, menu items beyond the stop level will never be displayed.
+**Hard Limit:** If you select this option, menu items beyond the top level will never be displayed.
 
-**Display protected pages:** If you select this option, protected pages are also displayed that are otherwise only available to logged in members.
+**Show protected pages:** If you select this option, protected pages will also be displayed, which are otherwise only available to logged in members.
 
 **Show hidden pages:** If you select this option, hidden pages that would normally be skipped are also displayed in the quick-navigation.
 
-**Reference page:** Here you define the initial page of the quick-navigation.
+**Reference page:** Here you define the starting page of the quick-navigation.
 
 **Individual template:** Here you can overwrite the standard `mod_quicknav`template.
 
-  
-**HTML Output**The front-end module generates the following HTML code:
+**HTML OutputThe**  
+ frontend module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -190,14 +190,14 @@ The front-end module "Quick-navigation" adds a drop-down menu to the website, wi
 
 The front-end module "Quicklink" adds a drop-down menu of any pages to the website, which does not consider any hierarchical dependencies.
 
-**pages:** Here you select which pages should be included in the menu.
+**Pages:** Here you select which pages should be included in the menu.
 
-**Individual name:** Here you can enter an individual name for the first option of the quick-navigation.
+**Individual name**: Here you can enter an individual name for the first option of the quick-navigation.
 
-**Individual template**: Here you can overwrite the default `mod_quicklink`template.
+**Individual template:** Here you can overwrite the default `mod_quicklink`template.
 
 **HTML OutputThe**  
- frontend module generates **the** following HTML code:
+ frontend module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -226,19 +226,19 @@ The front-end module "Quicklink" adds a drop-down menu of any pages to the websi
 
 ## Book navigation
 
-The frontend module "book navigation" adds a navigation menu to the website, which allows you to navigate forward, backward or up one level within the page structure. The individual pages are turned over like a book, hence the name of the module.
+The frontend module "Book Navigation" adds a navigation menu to the website, which allows you to navigate forward, backward or one level up within the page structure. The individual pages are turned like a book, hence the name of the module.
 
 ![The book navigation in the frontend](/de/layout/module-management/images/de/die-buchnavigation-im-frontend.png?classes=shadow)
 
-**Reference page:** The reference page defines the starting point of the book navigation. Parent pages are not displayed in the book navigation.
+**Reference page**: The reference page defines the starting point of the book navigation. Parent pages are not displayed in the book navigation.
 
-**Display protected pages:** If you select this option, protected pages are also displayed, which are otherwise only available to registered members.
+**Show protected pages:** If you select this option, protected pages will also be displayed, which are otherwise only available to registered members.
 
 **Show hidden pages:** If you select this option, hidden pages that would normally be skipped are also displayed in the book navigation.
 
-**Individual template**: Here you can overwrite the default `mod_booknav`template.
+**Individual template:** Here you can overwrite the default `mod_booknav`template.
 
-**HTML OutputThe**  
+**HTML outputThe**  
  frontend module generates the following HTML code:
 
 ```html
@@ -257,16 +257,16 @@ The frontend module "book navigation" adds a navigation menu to the website, whi
 
 ## Article navigation
 
-The Article Navigation module adds a navigation menu to the website that allows you to browse back and forth through the articles on a particular page, similar to book navigation.
+The "Article Navigation" module adds a navigation menu to the website, which allows you to browse forward and backward through the articles on a particular page, similar to book navigation.
 
 ![The article navigation in the frontend](/de/layout/module-management/images/de/die-artikelnavigation-im-frontend.png?classes=shadow)
 
-**Load first element:** If you select this option, the first article is automatically loaded if no specific article has been requested.
+**Load first element:** If you select this option, the first item is automatically loaded if no specific item has been requested.
 
-**Individual template**: Here you can overwrite the default template`mod_articlenav`.
+**Individual template**: Here you can overwrite the default `mod_articlenav`template.
 
-  
-**HTML OutputThe** front-end module generates the following HTML code:
+**HTML outputThe**  
+ frontend module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -284,24 +284,24 @@ The Article Navigation module adds a navigation menu to the website that allows 
 <!-- indexer::continue -->
 ```
 
-Note that the active element is output as `<strong>`a link and not as a link.
+Note that the active element is displayed as `<strong>`a link and not as a link.
 
-## sitemap
+## Sitemap
 
 The frontend module "Sitemap" adds an overview of all published and not hidden pages to the website. The individual entries are displayed as links so that visitors can jump directly to a specific page. Whether or not a page is displayed in the sitemap also depends on its configuration in the page structure (see [Expert Settings](../../seitenstruktur/seiten-konfigurieren/#experten-einstellungen)).
 
 **Show protected pages:** If you select this option, protected pages will also be displayed, which are otherwise only available to registered members.
 
-**Show hidden pages:** If you select this option, hidden pages that would normally be skipped will also be displayed in the sitemap.
+**Show hidden pages:** If you select this option, hidden pages that would normally be skipped are also displayed in the sitemap.
 
-**Reference page:** Here you can set the initial page of the Sitemap.
+**Reference page:** Here you specify the initial page of the sitemap.
 
-**Navigation template**: Here you can select the template for the module.
+**Navigation template:** Here you choose the template for the module.
 
 **Individual template**: Here you can overwrite the standard `mod_sitemap`template.
 
-  
-**HTML OutputThe** front-end module generates the following HTML code:
+**HTML OutputThe**  
+ front-end module generates **the** following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -351,4 +351,4 @@ The frontend module "Sitemap" adds an overview of all published and not hidden p
 <!-- indexer::continue -->
 ```
 
-The HTML markup corresponds as far as possible to that of the navigation menu.
+The HTML markup is very similar to that of the navigation menu.

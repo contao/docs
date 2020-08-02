@@ -10,34 +10,35 @@ This article is machine translated.
 {{% /notice %}}
 
 {{% notice info %}}
-This entire article applies to Contao **4.9** and later. Previous versions also have caching mechanisms, but they are not nearly as efficient, so we have not documented how caching works for the older versions.
+This whole article refers to Contao **4.9** and higher. Previous versions also have caching mechanisms, but they are not nearly as efficient, so we have not documented how the caching works for the older versions. 
+{{% /notice %}}
 
-The greatest performance gain in any application is achieved by not having to start it at all, in other words: We want the output that Contao generates to be saved and delivered directly the next time it is called without having to start Contao.
+The greatest performance gain in any application can be achieved by not having to start it at all, in other words: We want the output that Contao generates to be saved and delivered the next time it is called without having to start Contao.
 
-Contao uses the Hypertext Transfer Protocol (HTTP) - the backbone of the Internet.
+Contao relies on the Hypertext Transfer Protocol (HTTP) - the backbone of the Internet.
 
-Why should Contao reinvent the wheel when [smart people](https://tools.ietf.org/html/rfc2616) thought about caching of HTTP replies [when HTTP/1.1 was introduced in 1999](https://tools.ietf.org/html/rfc2616)?
+Why should Contao reinvent the wheel when [smart people](https://tools.ietf.org/html/rfc2616) thought about caching HTTP replies [when HTTP/1.1 was introduced in 1999](https://tools.ietf.org/html/rfc2616)?
 
 ## HTTP
 
-Back to the basics, then. To understand how HTTP caching can be configured in Contao, let's take a look at how HTTP and therefore the whole Internet and the communication of many other devices works:
+Back to the basics, then. To understand how HTTP caching can be configured in Contao, let's take a quick look at how HTTP, and therefore the entire Internet and the communication of many other devices, works:
 
-{{<mermaid align="left">}}sequenceDiagramParticipant ClientParticipant ServerClient-&gt;&gt;Server: Request (Request)Server-&gt;&gt;Client: Response {{< /mermaid >}}
+{{<mermaid align="left">}}sequenceDiagramParticipant ClientParticipant ServerClient-&gt;&gt;Server: Request (Request)Server-&gt;&gt;Client: Answer (Response){{< /mermaid >}}
 
-It is a fact that any number of other intermediaries (so-called "proxies") can be connected in between, which is not only conceivable but also very common:
+In principle, any other intermediaries (so-called "proxies") can be connected in between, which is not only conceivable but also very common:
 
-{{<mermaid align="left">}}sequenceDiagramParticipant ClientParticipant Proxy 1participant Proxy 2participant ServerClient-&gt;&gt;Proxy 1: RequestProxy 1-&gt;&gt;Proxy 2: RequestProxy 2-&gt;&gt;Server: RequestServer-&gt;&gt;Proxy 2: ResponseProxy 2-&gt;&gt;Proxy 1: ResponseProxy 1-&gt;&gt;Client: Response%%62%
+{{<mermaid align="left">}}sequenceDiagramParticipant ClientParticipant Proxy 1participant Proxy 2participant ServerClient-&gt;&gt;Proxy 1: RequestProxy 1-&gt;&gt;Proxy 2: RequestProxy 2-&gt;&gt;Server: RequestServer-&gt;&gt;Proxy 2: ResponseProxy 2-&gt;&gt;Proxy 1: ResponseProxy 1-&gt;&gt;Client: Response%%362%
 
-These proxies can take on any task, including
+These proxies can perform any tasks, including
 
 - Load Balancing (Distribute high load on different servers)
 - CDN tasks (lower latency due to geographically shorter distances to the client)
 - Authentication/Authorization
 - Encryption (SSL/TLS)
-- Apply optimizations (e.g. compression)
+- Applying optimizations (e.g. compression)
 - and even: **Caching!**
 
-To enable the client (in our case mostly the browser) and the server or proxies/servers to communicate with each other, every HTTP request and every HTTP response can be provided with metadata. These so called "HTTP headers" are standardized but it is up to each developer\* to invent and use additional headers, e.g. a typical request could look like this:
+To allow the client (in our case mostly the browser) and the server or proxies/servers to communicate with each other, every HTTP request and every HTTP response can be provided with metadata. These so called "HTTP headers" are standardized but it is up to each developer\* to invent and use additional headers, e.g. a typical request could look like this:
 
 ```http
 GET /about-us.html HTTP/1.1
@@ -46,7 +47,7 @@ Accept-Language: de,en
 Host: www.contao.org
 ```
 
-In this case, the client would like to have the resource that is below `/about-us.html`and tells the server that it `de``de`understands the languages `en`and understands the server itself. It also wants the answer from the host`www.contao.org`. The communication between client and server takes place via IP and one server can serve any number of domains.
+In this case the client would like to have the resource that is below `/about-us.html`and he tells the server that he `de`understands the languages `en`and he `de`prefers to do so. He also wants the answer from the host`www.contao.org`. The communication between client and server takes place via IP and one server can serve any number of domains.
 
 An answer to this could look like this:
 
@@ -68,7 +69,7 @@ The server tells us here that everything was fine (`200 OK`). The response conta
 
 There are a number of HTTP headers that are relevant for HTTP caching. To explain them all would go beyond the scope of this documentation. The topic is also already [well documented on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching), so you can learn more there if you are interested.
 
-Regular users of Contao are mainly interested in the `Cache-Control`header and the three most important attributes:
+The regular user of Contao is mainly interested in the `Cache-Control`header and the three most important attributes:
 
 - `private` or `public`
   
@@ -78,18 +79,18 @@ Regular users of Contao are mainly interested in the `Cache-Control`header and t
   Contains the number of seconds a client may cache this response.
 - `s-maxage`
   
-  Contains the number of seconds a public client may cache this response. This attribute is only used if the cache duration should be different for public and private clients.
+  Contains the number of seconds a public client is allowed to cache this response. This attribute is only used if the cache duration should be different for public and private clients.
 
 For better understanding a few examples:
 
 | HTTP header | Interpretation |
 | ----------- | -------------- |
-| `Cache-Control: max-age=3600` | Only private clients are allowed to cache this answer for one hour. |
+| `Cache-Control: max-age=3600` | Only private clients may cache this answer for one hour. |
 | `Cache-Control: max-age=3600, private` | Only private clients may cache this answer for one hour. |
 | `Cache-Control: max-age=3600, public` | Both public and private clients may cache this response for one hour. |
-| `Cache-Control: max-age=3600, s-maxage=7200, public` | Both public and private clients may cache this response. Private clients may cache for one hour, public clients for two hours. |
+| `Cache-Control: max-age=3600, s-maxage=7200, public` | Both public and private clients may cache this response. Private for one hour, public for two hours. |
 
-And so you can find exactly these cache duration settings in the Contao page settings. The following selection translates to `Cache-Control: max-age=1800, s-maxage=3600, public`:
+And that is why you can find exactly these cache duration settings in the Contao page settings. The following selection translates to `Cache-Control: max-age=1800, s-maxage=3600, public`:
 
 ![Caching settings in the Contao back end](/de/performance/images/de/cache-einstellungen.png?classes=shadow)
 
@@ -98,47 +99,47 @@ And so you can find exactly these cache duration settings in the Contao page set
 The Contao Managed Edition comes with a caching proxy that is also written in PHP and sits directly in front of Contao. This means that every response that Contao generates is sent through our caching proxy before it is delivered to the client and is cached according to the HTTP headers or not.
 
 {{% notice tip %}}
-It is important to understand that the included proxy knows absolutely **nothing** about Contao. Although it is also written inPHP, it is completely independent and knows absolutely nothing about Contao. Everything it does is based on the headers of the HTTP requests and responses it receives from the client and Contao.
+It is important to understand that the included proxy knows absolutely **nothing** about Contao. Although it is also written inPHP, it is completely independent and knows absolutely no Contao features. Everything it does is based on the headers of the HTTP requests and responses it receives from the client and Contao.
 
 The big advantage we gain by using HTTP standards is the free choice of the caching proxy, because if the number of visitors is really high, PHP will eventually reach its limits. Maybe you will come to the conclusion to use more powerful proxies - explicitly designed for caching - like [Varnish](https://varnish-cache.org/) before Contao.
 
-But that would lead too far at this point.
+However, this would go too far at this point.
 
-{{% notice note %}}
-Good to know for you: Whatever settings you have made in the pages, Contao follows the HTTP standards and just works out-of-the-box for you. If the requirements become more complex, Contao will not let you down! 
+{{% notice note %}}Good to know for you: Whatever settings you have made in the pages, Contao follows the HTTP standards and just works out-of-the-box for you. If the requirements become more complex, Contao will not let you down! 
 {{% /notice %}}
+%
 
-## Cached the Shared-Proxy?
+## Cached the shared proxy?
 
-This section is about what can be stored in the shared cache. We don't talk about the private cache anymore, i.e. your personal browser cache, because we want to make sure that as many of our visitors as possible do not have to start Contao but can benefit from the shared cache.
+This section is about what can be stored in the shared cache. We don't talk about the private cache anymore, i.e. your personal browser cache, because we want to make sure that as many of our visitors as possible don't have to start Contao but can benefit from the shared cache.
 
-We already know the most important criterion: The `Cache-Control: public`-Response header. If this header is missing, the shared cache will never be able to cache the response. But there are other criteria as well:
+We already know the most important criterion: The -Response `Cache-Control: public`header. If this header is missing, then the shared cache can never cache this response. But there are other criteria as well:
 
-- The HTTP status code must always `200 OK`be , `301 Permanent Redirect`or `404 Not Found`be (there are a number of other statuses, but they are probably not so relevant for us here)
+- The HTTP status code must always `200 OK`be , `301 Permanent Redirect`or `404 Not Found`be (there are a number of other statuses, but they are not so relevant for us here)
 - `Cache-Control` must not `no-store`contain. This value prevents any caching.
-- You need to specify the duration of the cache, i.e`max-age`. or in `s-maxage`the `Cache-Control`header (there are additional headers here as well, but they are not relevant for us)
+- You need to specify the cache duration, i.e`max-age`. or in `s-maxage`the `Cache-Control`header (there are additional headers here as well, but they are not relevant for us)
 
-In case of the included Contao cache proxy, you can easily check this. All responses from Contao will have a `Contao-Cache`header that can have three values:
+In case of the included Contao cache proxy, you can easily check this. All responses from Contao will have a `Contao-Cache`header that can take three values:
 
 - `miss`
   
-  The Contao cache could not find a cache entry. Contao will be started, generate the answer and this answer can not be cached.
+  The Contao cache could not find a cache entry. Contao is started, generates the response and this response cannot be stored in the cache.
 - `miss/store`
   
   The Contao cache could not find a cache entry. Contao is started, generates the response and this response can be cached and is stored accordingly.
 - `fresh`
   
-  The Contao cache has found the cache entry and the response comes directly from the cache. Ideally, you should have already noticed the speed. In case of `Contao-Cache: fresh`there is also the HTTP`Age` header. It tells you how many seconds the cache entry already exists. A `Age: 60`means that this entry was created one minute ago.
+  The Contao cache has found the cache entry and the answer comes directly from the cache. Ideally, you should already have noticed the speed of the cache. In case of `Contao-Cache: fresh`there is also the HTTP`Age` header. It tells you how many seconds the cache entry already exists. A `Age: 60`means that this entry was created one minute ago.
 
 {{% notice info %}}
-If the Contao Managed Edition is running in debug mode, the entire cache proxy is disabled as well.
+If the Contao Managed Edition runs in debug mode, the entire cache proxy is also disabled. 
 {{% /notice %}}
 
 ## When Shared Caching cannot work
 
-As we have seen, there are some basic requirements for HTTP caching to work: In addition to the requirements mentioned above, there are other reasons for Contao `private`to exclude a response from the shared cache:
+As we have seen, there are some basic requirements for HTTP caching to work: In addition to the requirements mentioned above, there are other special reasons for Contao `private`to exclude a response from the shared cache:
 
-- If the request contains a `Authorization`-HTTP header
+- If the request contains an `Authorization`HTTP header
   
   The `Authorization`header contains standard authentication details. For Contao this means that a module or content element may listen to this header and potentially deliver user-specific data. To ensure that non-private data is stored in the shared cache and potentially delivered to another visitor, Contao forces `Cache-Control: private`. Contao will also tell you about this: The `Contao-Response-Private-Reason`-header in this case contains `authorization`.
   
@@ -148,7 +149,7 @@ It is very popular to protect installations during development with Basic Authen
 - If the request contains a PHP session cookie or the response sets it
   
   The most obvious case here is of course the PHP session, i.e. when a user logs into the backend or a member logs into the frontend. In this case all answers are always `private`and the `Contao-Response-Private-Reason`-header contains `session-cookie`.
-- If the response contains a cookie
+- If the answer contains a cookie
   
   If the answer contains a cookie, it means that the developer\* wants to personalize the answer. The current answer therefore potentially already contains personal data. The `Contao-Response-Private-Reason`-header in this case `response-cookies`includes a list of the affected cookie names.
 - If the request contains a cookie
@@ -164,19 +165,19 @@ It is very popular to protect installations during development with Basic Authen
   
   - `_ga_*` Cookies from Google Analytics
   - `_pk_*` Cookies from Matomo
-  - Cloudflare's `__cfduid`cookie
+  - Cloudflare's `__cfduid`Cookie
   - Your `cookiebar_accepted`cookie, to know if the cookie policy has been accepted
   - and much more.
   
-  The list is quite long and the attentive reader has already discovered a fundamental difference between the PHP session cookie and the `_ga_*`cookie: One of them is really relevant for the server (i.e. the PHP session) and the other one is responsible for the client-side tracking (i.e. within the browser) of the user and completely irrelevant for Contao.
+  The list is quite long and the attentive reader has already discovered a fundamental difference between the PHP session cookie and the `_ga_*`cookie: One of them is really relevant for the server (i.e. the PHP session) and the other one is responsible for the client-side tracking (i.e. within the browser) of the user and is completely irrelevant for Contao.
   
-  In other words, if a request contains only one `_ga_*`cookie, we can still deliver the response from the cache because this cookie does not generate any personal content. A smart cache proxy could therefore only consider cookies that are relevant for the service and throw away all others before deciding whether a response can be delivered from the cache.
+  In other words, if a request contains only one `_ga_*`cookie, we can still get the response from the cache, because this cookie does not generate any personal content. A smart cache proxy could therefore only consider session-relevant cookies and throw away all others before deciding whether a response can be delivered from the cache.
   
   To get the highest possible hit rate when caching out-of-the-box, Contao maintains a list of anirrelevant cookies within the Contao cache proxy. These cookies are removed from the request before the cache lookup and therefore do not reach the cache proxy or (in case of a cache miss) Contao itself.
   
   More advanced users can override this list, see the section about configuring the Contao Cache Proxy.
   
-  In the case of cookies, the `Contao-Private-Response-Reason`header `request-cookies`contains a list of all cookies that made the response `private`happen.
+  In the case of cookies, the `Contao-Private-Response-Reason`header `request-cookies`contains a list of all the cookies that have been used to ensure that the response `private`was successful.
 
 ## Configuration of the Contao Cache Proxy
 
@@ -191,13 +192,13 @@ The following environment variables allow you to further optimize the cache prox
 #### `COOKIE_ALLOW_LIST`
 
 {{% notice info %}}
-In Contao **4.9** this variable is still called `COOKIE_WHITELIST`.
+In Contao **4.9**, this variable is still called `COOKIE_WHITELIST`.
 {{% /notice %}}
 
-This environment variable allows you to configure which cookies should be passed to the application and therefore disable the caching. By default, Contao uses only **four cookies** in its core distribution without any extensions which are all DSGVO-safe because it is technically necessary:
+This environment variable allows you to configure which cookies are passed to the application and therefore disable caching. By default, Contao uses only **four cookies** in its core distribution without any extensions which are all DSGVO-safe because it is technically necessary:
 
 1. The ID of the PHP session, which by default `PHPSESSID`is
-2. The CSRF cookie to prevent [CSRF attacks](https://owasp.org/www-community/attacks/csrf).
+2. The CSRF cookie to prevent [CSRF attacks](https://owasp.org/www-community/attacks/csrf)
 3. The Trusted Device Cookie for trusted devices with two-factor authentication enabled.
 4. The Remember-Me cookie when the Remember-Me function is enabled.
 
@@ -229,7 +230,7 @@ For the exact same reason we remove irrelevant cookies, we can also remove irrel
 
 As with the irrelevant cookies, Contao internally maintains a list of irrelevant query parameters which you can override by maintaining the entire list of relevant query parameters that are used somewhere with the environment `QUERY_PARAMS_ALLOW_LIST`variable.
 
-In contrast to cookies, you usually have a much, much higher number of relevant query parameters, from `page`pagination to `token`registration confirmation. It is therefore unlikely that you will need to maintain this list manually, which is why you are more likely to `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`use it if you still need a particular query parameter in your application.
+In contrast to cookies, you usually have a much, much higher number of relevant query parameters, from `page`pagination to `token`registration confirmation. Maintaining this list manually is therefore a rather unlikely case, so if you need a certain query parameter in your application, you will probably `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`use it anyway.
 
 #### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
 
@@ -241,7 +242,7 @@ Similarly`COOKIE_REMOVE_FROM_DENY_LIST`, you can remove from the internal deny l
 QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
 ```
 
-{{% notice warning %}}Remember that if this parameter is present, you should disable caching on the response or notify your developer(s)\* about it. This can be easily done via`Cache-Control: no-store`, otherwise we run into the problem of too many cache entries being generated. 
+{{% notice warning %}}Remember that if this parameter is present, you should disable caching on the response or notify your developer(s)\* about it. This can be easily done via`Cache-Control: no-store`, otherwise we run into the problem that too many cache entries are generated. 
 {{% /notice %}}
 %
 
@@ -249,11 +250,11 @@ QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
 
 At this point we need to explain another concept. As a user of Contao, you won't even notice this, but it is an important part of the excellent caching framework of Contao and therefore a great selling point.
 
-A key difference between Shared Cache and Private Cache is that the location of the shared cache is known and can be accessed. So we can actively manage the shared cache and delete single cache entries or the whole cache. We cannot do this for the private cache.
+A key difference between shared cache and private cache is that the location of the shared cache is known and can be accessed. So we can actively manage the shared cache and delete single cache entries or the whole cache. We cannot do this for the private cache.
 
 So if you make changes to the content, you can always make sure that the shared cache is emptied and visitors can see the latest version of your website. To do this, use the **"Empty Shared Cache"** option in the **"System Maintenance"** menu.
 
-But Contao would not be Contao if you had to do this yourself every time you made a change.
+Contao would not be Contao if you had to do it yourself every time you made a change.
 
 Contao has a framework that allows developers to work with "cache tagging". When the response is generated, it is tagged so that the cache proxy can store it as metadata for the cache entry. Based on this information, entries with certain cache tags can then be invalidated (this is what the caching process is called).
 
@@ -274,7 +275,7 @@ X-Cache-Tags: contao.db.tl_page.18, contao.db.tl_layout.16, contao.db.tl_content
 
 The number of tags can grow as many as you want. In this example, Contao has tagged the answer with three cache tags and as you might have noticed, these tags contain the information that the answer is the page with ID `18`with page layout ID `16`and the content elements with ID `42`and on `10`it.
 
-And here it comes: When you edit one of these elements in the Contao back end, Contao automatically invalidates all cache entries that are related to this element! For example, if the content `42`element was used in a news item, all cache entries of the detail page and potential list views would be deleted automatically. If you change the page layout `18`and select an additional CSS file to be loaded, all responses generated with this page layout will be invalidated automatically without your intervention.
+And here's the kicker: When you edit one of these elements in the Contao back end, Contao automatically invalidates all cache entries that are related to this element! For example, if the content `42`element was used in a news item, all cache entries of the detail page and potential list views would be deleted automatically. If you change the page layout `18`and select an additional CSS file to be loaded, all responses generated with this page layout will be invalidated automatically without your intervention.
 
 Pretty clever, isn't it?
 
@@ -289,7 +290,7 @@ By the way: Invalidating cache entries also works via HTTP requests because the 
 ## FAQ
 
 {{% expand "Welche Cache-Einstellungen sind für mich die »richtigen«?" %}}
-%It is not possible to answer this question in general, because as so often in our industry the answer is "it depends". However, there are a few basic principles that you can follow:
+%It is not possible to answer this question in general, because as is so often the case in our industry, the answer is "it depends". However, there are a few basic principles that you can use as a guide:
 
 For example, it will rarely make sense to set the private cache duration higher than the shared cache duration, and if a page is only supposed to be in the shared cache for one hour, you seem to generally think that the visitor should see the new content after one hour at the latest. Therefore it makes no sense to configure the cache duration of the private cache to two hours. A rule of thumb could be: The duration of the shared cache should be equal or higher than the private cache.
 

@@ -9,47 +9,47 @@ weight: 10
 This article is machine translated.
 {{% /notice %}}
 
-The system settings will slowly but surely leave the backend. Basic system settings influence Contao as an application and therefore there is a chance that a wrong setting will render the system non-functional. If this happens, you will not be able to undo the settings and restore the system because you will not be able to log in anymore. For this reason, most settings outside of Contao are or can be `config.yml`done through the Contao Manager.
+The system settings will slowly but surely leave the backend. Basic system settings affect Contao as an application and therefore there is a chance that a wrong setting will cause the system to become non-functional. If this happens, you will not be able to undo the settings and restore the system because you will not be able to log in anymore. For this reason, most settings outside of Contao are or can be `config.yml`done through the Contao Manager.
 
 ## Settings
 
 ### Global settings
 
-**E-mail address of the system administrator:** Notifications about locked accounts or newly registered users are sent to this address. You can also use the following notation to add a name to the e-mail address
+**System administrator's e-mail address:** This is the address to which notifications about locked accounts or newly registered users are sent, for example. You can also use the following notation to add a name to the email address:
 
 ```text
 Kevin Jones [kevin.jones@example.com]
 ```
 
-### Date and Time
+### Date and time
 
 **Date and time format:** All date and time formats must be entered as in thePHP function[ date](https://www.php.net/manual/de/function.date.php). Contao processes only numeric formats in the backend, i.e. the letters j, d, m, n, y, Y, g, G, h, H, i and s.
 
 Here are some examples of valid date and time specifications:
 
-| Information | Declaration |
+| Information | Explanation |
 | ----------- | ----------- |
-| Y-m-d | YYYY-MM-DD, international ISO-8601, e.g. `2005-01-28` |
+| Y-m-d | YYYY-MM-DD, international ISO-8601, for example `2005-01-28` |
 | m/d/Y | MM/DD/YYYY, English format, for example `01/28/2005` |
 | d.m.Y | DD.MM.YYYY, German format, for example `28.01.2005` |
-| y-n-j | JJ-M-T, without leading zeros, e.g. `05-1-28` |
-| Ymd | YYYYMMDD, timestamp, for example `20050128` |
+| y-n-j | YY-M-D, without leading zeros, e.g. `05-1-28` |
+| Ymd | YYYYMMDD, time stamp, for example `20050128` |
 | H:i:s | 24 hours, minutes and seconds, for example `20:36:59` |
 | g:i | 12 hours without leading zeros and minutes, e.g. `8:36` |
 
 **Timezone:** You should set the timezone before creating your website because Contao stores all times as [Unix timestamps](https://www.php.net/time) and PHP does not automatically adjust these timestamps when the timezone changes.
 
-### Backend settings
+### Backend Settings
 
 **Do not shorten elements:** In the "Parent View", Contao displays the elements in a shortened form for clarity reasons. Individual elements can be unfolded using a navigation icon if needed. Select this option to disable the feature completely.
 
-**Elements per page:** In the section [Listing records](../../administrationsbereich/datensaetze-auflisten/#datensaetze-sortieren-und-filtern) you learned that Contao limits the number of records per page to 30 by default. You can change this value here. Higher values mean a longer loading time.
+**elements per page:** In the [Listing Records](../../administrationsbereich/datensaetze-auflisten/#datensaetze-sortieren-und-filtern) section, you learned that Contao limits the number of records per page to 30 by default. You can change this value here. Higher values mean a longer loading time.
 
-**Maximum number of records per page**: To avoid that an inexperienced user can display 5000 records at once and thus exceed the PHP memory limit, you can set the maximum number of records that can be displayed per page.
+**Maximum number of records per page:** To prevent an inexperienced user from displaying 5000 records at once and thus exceeding the PHP memory limit, you can specify the maximum number of records that can be displayed per page.
 
 ### Frontend settings
 
-**Use folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" `docs/install/download.html`instead of just .
+**Use folder URLs:** Here you can enable folder structures in page aliases. This way, the aliases in the page hierarchy are included in the aliases, e.g. the page "Download" in the page path "Docs &gt; Install" `docs/install/download.html`instead of just .
 
 **Do not redirect empty URLs:** If the URL is empty, display the web page instead of redirecting to the starting point of the language redirection *(not recommended)*.
 
@@ -61,21 +61,21 @@ Here are some examples of valid date and time specifications:
 
 ### Files and images
 
-**Allowed download file types:** Here you can define which file types can be downloaded from your server (Download).
+**Allowed download file types:** Here you can define which file types may be downloaded from your server (Download).
 
 **Maximum GD image width**: Here you can define the maximum width of images and other media in the frontend. If this value is exceeded, the corresponding object is automatically reduced in size.
 
 **Maximum GD image height**: Here you can define the maximum height of images and other media in the frontend. If this value is exceeded, the corresponding object will be reduced automatically.
 
-### File uploads
+### File Uploads
 
-**Permitted upload file types:** Here you can define which file types can be transferred to your server (upload).
+**Permitted upload file types:** Here you can define which file types may be transferred to your server (upload).
 
-**Maximum upload file size:** Here you can define the maximum size of a file transferred to your server with the file management. The entry is in bytes (1 MiB = 1024 KiB = 1,048,567 bytes). Larger files will be rejected.
+**Maximum upload file size**: Here you can define the maximum size of a file transferred to your server with the file management. The input is in bytes (1 MiB = 1024 KiB = 1,048,567 bytes). Larger files will be rejected.
 
-**Maximum image width:** When uploading images, the file manager automatically checks their width and compares them with the width you have defined here. If an image exceeds the maximum width, it will be reduced automatically.
+**Maximum image width:** When uploading images, the file manager automatically checks their width and compares these values with your default values. If an image exceeds the maximum width, it will be reduced automatically.
 
-**Maximum image height:** When uploading images, the file manager automatically checks their height and compares these values with your default values. If an image exceeds the maximum height, it will be automatically reduced.
+**Maximum image height:** When uploading images, the file manager automatically checks their height and compares these values with your default values. If an image exceeds the maximum height, it will be reduced automatically.
 
 ### Cronjob settings
 
@@ -85,10 +85,10 @@ Here are some examples of valid date and time specifications:
 
 **Activate search:** If you select this option, Contao indexes the finished pages of your website and creates a search index from them. With the frontend module "[search engine](../../modulverwaltung/website-suche/#konfiguration-des-suchmoduls)", you can search this index.
 
-**Index protected pages:** Select this option to also index protected pages for search. Use this feature with care, and make sure to exclude personalized pages from searches.
+**Index protected pages:** Select this option to also index protected pages for the search. Use this feature with care and make sure to exclude personalized pages from the search.
 
 {{% notice note %}}
-From version **4.9** on, a new search indexer is used. The settings **Enable search** and **Index** protected **pages** are now `config/config.yml`configured using the
+From version **4.9** a new search indexer is used. The settings **Enable Search** and **Index** Protected **Pages** are now `config/config.yml`configured via the
 
 ```yml
 contao:
@@ -102,23 +102,23 @@ contao:
 
 ### Standard access rights
 
-**Default Owner:** Here you can specify the default owner of the pages for which no access rights have been defined. For more information, see the Access Rights section.
+**Default Owner**: Here you can specify the default owner of the pages for which no access rights have been defined. For more information, see the Access Rights section.
 
-**Default Group:** Here you can specify the default group to which the pages for which no access rights have been defined belong. See the Access Rights section for more information.
+**Default group:** Here you can define to which group the pages for which no access rights have been defined belong by default. For more information, see the Access Rights section.
 
-**Default access rights:** Here you can define which access rights apply by default to the pages for which no special access rights have been defined. For more information, see the Access Rights section.
+**Default Access Rights**: Allows you to specify the default access rights for the pages for which no specific access rights have been defined. For more information, please refer to the Access Rights section.
 
 ## parameters.yml
 
-In the Contao Managed Edition, the parameters (e.g. database data) are `parameters.yml`stored in the database and are used by the Contao installation tool. This file is usually excluded from the versioning process and can also contain additional entries such as the information for sending e-mails via SMTP.
+In the Contao Managed Edition, the parameters (e.g. database data) are `parameters.yml`stored in the database, which is also used by the Contao installation tool. This file is usually excluded from the versioning process and can also contain additional entries such as the information for sending e-mails via SMTP.
 
-You can `parameters.yml`find the file in the folder `app/config/`and it will be created automatically when you install Contao.
+You can `parameters.yml`find the file in the folder `app/config/`and it is created automatically during the installation of Contao.
 
 {{% notice note %}}
 From version **4.8** of Contao, the file is located directly in the root directory of the installation under `config/`.
 {{% /notice %}}
 
-The `parameters.yml`ones after installing Contao:
+The `parameters.yml`settings after installing Contao:
 
 ```yaml
 # This file has been auto-generated during installation
@@ -133,21 +133,21 @@ parameters:
 
 ## config.yml
 
-The normal Bundle Config belongs in `config.yml`and is located in the folder `app/config/`.if the file does not exist yet, it must be created. Contao automatically loads the or `config_prod.yml``config_dev.yml`and if not available the `config.yml`.
+The normal Bundle Config belongs in `config.yml`and is located in the folder `app/config/`.if the file does not exist yet, you have to create it. Contao automatically loads the or `config_prod.yml``config_dev.yml`and if not available the `config.yml`.
 
-This allows you to implement different configurations for your test or production environment (dev/prod) (e.g. more logging in debug mode). In addition, you can also commit the `config.yml`data that is stored `parameters.yml`in your repository. You can use a repository to store your project versions, for example, with Git.
+This allows you to realize different configurations for your test- or production environment (dev/prod) (e.g. more logging in debug mode). In addition, you can commit the `config.yml`configuration files `parameters.yml`in your repository. You can use a repository to store your project versions, for example, with Git.
 
 {{% notice note %}}
 From version **4.8** of Contao, the file is located directly in the root directory of the installation under `config/`.
 {{% /notice %}}
 
-Use the command line to get the default configuration for Contao:
+You can access the default configuration for Contao on the command line:
 
 ```bash
 php vendor/bin/contao-console config:dump-reference contao
 ```
 
-Information on the current configuration is given here:
+This will give you information about the current configuration:
 
 ```bash
 php vendor/bin/contao-console debug:config contao
@@ -317,17 +317,17 @@ contao:
         default_http_client_options: []
 ```
 
-## Email sending configuration
+## E-Mail sending configuration
 
-To set up e-mail transmission via an SMTP server, you need the following information from your host:
+To set up the e-mail dispatch via SMTP server, you need the following information from your host:
 
-- The **host name** of the SMTP server.
+- The **hostname** of the SMTP server.
 - The **user name** for the SMTP server.
 - The **password** for the SMTP server.
-- The **port number of** the SMTP server (587 / 465).
-- The **encryption method** for the SMTP server (tls / ssl)
+- The **port number of** the SMTP server (587 / 465)
+- The **encryption method** for the SMTP server (tls / ssl).
 
-You can then `parameters.yml`add these rights below the existing data:
+You can then add the file below the existing data in the `parameters.yml`:
 
 ```yaml
 # This file has been auto-generated during installation
@@ -343,7 +343,7 @@ parameters:
 
 **{{% notice warning %}}
 Empty cacheTo**  
- make the changes active, the application cache must be emptied at the end of the application via the Contao Manager ("System maintenance" &gt; "Refresh product cache") or alternatively via the command line. To do this, you have to be in the Contao installation directory.
+ make the changes active, the application cache must be emptied at the end of the application using the Contao Manager ("System maintenance" &gt; "Refresh product cache") or alternatively via the command line. To do this, you have to be in the Contao installation directory.
 
 ```bash
 php vendor/bin/contao-console cache:clear --env=prod --no-warmup
@@ -359,6 +359,7 @@ php vendor/bin/contao-console swiftmailer:email:send --from=absender@example.com
 
 {{% notice info %}}
 This command is no longer available in Contao **4.10** and later.
+{{% /notice %}}
 
 ### Different e-mail configurations and sender addresses
 
@@ -368,16 +369,16 @@ In many cases, SMTP servers do not allow sending from any sender address. In mos
 
 From Contao **4.10** on, it is therefore possible to use multiple email configurations in Contao. These configurations can be selected per website start point, per form and per newsletter channel. For each e-mail configuration, you can also set the sender which will be used for each e-mail that is sent via the selected e-mail configuration.
 
-The configuration takes two steps. First, the available e-mail sending methods have to be set in the Symfony framework configuration in the `config.yml`so-called "Transports". For example, one or moreSMTP servers can be defined using the so-called "DSN" syntax. This syntax is basically very simple:
+The configuration takes two steps. First, the available e-mail sending methods have to be set up via the Symfony Framework configuration in the `config.yml`so-called "Transports". For example, one or moreSMTP servers can be defined using the so-called "DSN" syntax. This syntax is basically very simple:
 
 ```
 smtp://<BENUTZERNAME>:<PASSWORT>@<HOSTNAME>:<PORT>
 ```
 
-You replace them `<PLATZHALTER>`with the information of the SMTP server used, or remove them accordingly. See also the information in the official [Symfony documentation](https://symfony.com/doc/4.4/mailer.html#transport-setup).
+Replace them `<PLATZHALTER>`with the ones specified by the SMTP server you are using, or remove them accordingly. See also the information in the official [Symfony documentation](https://symfony.com/doc/4.4/mailer.html#transport-setup).
 
 {{% notice tip %}}
-Instead `smtp://`of this, it can also `smtps://`be used to automatically use SSL encryption over port`465`.
+Instead `smtp://`of using this option, you can also `smtps://`use it to automatically use SSL encryption over port`465`.
 {{% /notice %}}
 
 ```yml
@@ -390,7 +391,7 @@ framework:
             website2: smtps://email@example.de:foobar@example.de
 ```
 
-In the second step, the configured transports can be made available via the Contao framework configuration in the back end. In the following example, the transports `website1`and `website2`are made available:
+In the second step, the configured transports can be made available in the back end using the Contao framework configuration. In the following example, the transports `website1`and `website2`are made available:
 
 ```yml
 # config/config.yml
@@ -401,12 +402,12 @@ contao:
             website2: ~
 ```
 
-If the symfony application cache has been renewed afterwards, these e-mail configurations are available for selection in the Contao back end.
+If the symfony application cache has been refreshed afterwards, these e-mail configurations are available for selection in the Contao back end.
 
 {{% notice note %}}
-If no transport is configured, the information from the `parameters.yml`. If a transport is configured but no transport is selected in the Contao back end, the first defined transport is automatically used.
+If no transport is configured, the information from the `parameters.yml`. If a transport is configured but no transport is selected in the Contao back end, the first defined transport is used automatically.
 
-Optionally you can now overwrite the sender address for each transport:
+Optionally, you can now overwrite the sender address for each transport:
 
 ```yml
 # config/config.yml
@@ -419,7 +420,7 @@ contao:
                 from: Lorem Ipsum <email@example.de>
 ```
 
-It is also possible to define language for the descriptions of the selection options in the back end via Translations per language:
+It is also possible to define language for the description of the selection options in the backend via Translations per language:
 
 ```yml
 # translations/mailer_transports.en.yml

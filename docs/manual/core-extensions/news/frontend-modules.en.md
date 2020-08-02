@@ -10,57 +10,58 @@ weight: 20
 This article is machine translated.
 {{% /notice %}}
 
-Now that you know how archives and posts are managed in the backend, we will now explain how to display this content in the frontend. The news extension contains four new frontend modules that you can configure as usual via the module management.
+Now that you know how archives and posts are managed in the backend, we will explain how to display this content in the frontend. The message extension contains four new frontend modules, which you can configure as usual via the module management.
 
 ![News/Blog modules](/de/core-extensions/news/images/de/news-blog-module.png?classes=shadow)
 
 ## News list
 
-The frontend module "Message List" displays any number of posts from one or more message archives in the frontend. Which parts of a news item are displayed depends on the respective template. Everything is possible from a simple headline to a complete article.
+The frontend module "message list" displays any number of posts from one or more message archives in the frontend. Which parts of a news item are displayed depends on the respective template. Everything is possible from a simple headline to a complete post.
 
 ### Module configuration
 
-**News archives:** Here you define from which archives posts should be listed. By default, the posts are sorted by date in descending order.
+**News archives:** Here you define from which archives posts should be listed. By default the posts are sorted by date in descending order.
 
-**News reader:** Here you can determine whether the system should automatically switch to the news reader when a post is selected.
+**News reader:** Here you can determine whether the system should automatically switch to the news reader when an article is selected.
 
-{{% notice info %}}} **Caution:** in most cases, this functionality should not be used for message lists that are placed in the page layout. Otherwise you would automatically have a news reader on each page of the page layout at the respective position in the layout. This would prevent the functionality of other "reader modules" on the same page.
+{{% notice info %}}
+Caution**:** in most cases this functionality should not be used for message lists that are placed in the page layout. Otherwise, you would automatically have a message reader on each page of the page layout at a different position in the layout. This would prevent the functionality of other "reader modules" on the same page.
 {{% /notice %}}
 
-**Total number of contributions:** If you enter a value greater than 0 here, the number of messages or blog posts is automatically limited to this value.
+**Total number of posts:** If you enter a value greater than 0 here, the number of messages or blog posts will automatically be limited to this value.
 
-**Highlighted contributions:** Here you define whether only highlighted, only unhighlighted, highlighted first   
-or all contributions of the selected archives are displayed.
+**Highlighted posts:** Here you define whether only highlighted, only unhighlighted, highlighted first  
+ or all posts of the selected archives are displayed.
 
 {{< version "4.5" >}}
 
-**Sort order:** Here you can define the sort order. There are the following five sort orders available: by date ascending, by date descending (default), by heading ascending, by heading descending and by a random order.
+**Sort order:** Here you can set the sort order. There are five sort orders available: by date ascending, by date descending (default), by headline ascending, by headline descending and by a random order.
 
-**Skip elements:** Here you define the number of items to skip.
+**Skip elements:** Here you define the number of items to be skipped.
 
-**Elements per page:** If you enter a value greater than 0 here, Contao will automatically spread the posts over multiple pages - assuming there are enough of them.
+**Elements per page:** If you enter a value greater than 0, Contao automatically distributes the posts to multiple pages - assuming you have enough of them.
 
 ### Template settings
 
-**Meta-fields:** Here you define which meta information (date of the post, author of the post and number of comments) is displayed.
+**Meta fields:** Here you can specify which meta-information (date of the post, author of the post and number of comments) is displayed.
 
 **Message template:** Here you select the template for the posts. The following message templates are available by default:
 
-| Template | Declaration |
+| Template | Explanation |
 | -------- | ----------- |
 | `news_full` | This template represents the complete article and is therefore recommended for use with the news reader. |
-| `news_latest` | This template displays the meta-information of a post, a possibly added image, the headline, the teaser text and a read more link. |
+| `news_latest` | This template displays the meta-information of a post, an image (if added), the headline, the teaser text and a read more link. |
 | `news_short` | This template outputs the meta information of a post, the headline, the teaser text and a read more link. |
-| `news_simple` | This template displays the date and the heading of a contribution. |
+| `news_simple` | This template displays the date and the title of a post. |
 
 **Individual template:** Here you can overwrite the standard template.
 
-### Picture settings
+### Image settings
 
 **Image size:** Here you can specify the desired image size.
 
-**HTML output**   
- The frontend module generates the following HTML code:
+**HTML OutputThe**  
+ frontend module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -89,25 +90,25 @@ or all contributions of the selected archives are displayed.
 
 ## News reader
 
-The front-end module "news reader" is used to display a specific news item. The module obtains the alias of the article via the URL, so that messages with so-called [permalinks](https://de.wikipedia.org/wiki/Permalink) can be linked specifically:
+The front-end module "news reader" is used to display a specific news item. The module obtains the alias of the article via the URL, so that news with so-called permanent links can be specifically linked:
 
 `www.domain.de/nachricht/form-folgt-funktion.html`
 
-In this example, the message with the alias "form-folgt-function" is called via the "message" page. If the searched message does not exist, the message reader returns an error message and the HTTP status code "404 Not found". The status code is important for search engine optimization.
+In this example, the message with the alias "form-folgt-funktion" is called via the "message" page: If the searched message does not exist, the message reader returns an error message and the HTTP status code "404 Notfound". The status code is important for search engine optimization.
 
 {{% notice info %}}
-Only one "reader module" may be located on a single page, regardless of the type. Otherwise one or the other module would trigger a 404 page, because for example the alias of a message cannot be found in a calendar, or vice versa the alias of an event in a message archive.
+There can only be one "reader module" on a single page, regardless of type. Otherwise, one or the other module would trigger a 404 page, because, for example, the alias of a message cannot be found in a calendar, or vice versa, the alias of an event in a message archive.
 {{% /notice %}}
 
 ### Module configuration
 
-**News archives:** Here you can define in which archives the requested post should be searched. Contributions from archives that are not selected are generally not displayed, even if the URL is correct and the message exists. This feature is especially important in multi-domain operations with several independent websites.
+**Message archives:** Here you can define in which archives the requested post is to be searched for; posts from archives that have not been selected are not displayed, even if the URL is correct and the message exists. This feature is especially important in multi-domain operations with several independent websites.
 
 ### Template settings
 
-**Meta-fields:** Here you define which meta information (date of the post, author of the post and number of comments) is displayed.
+**Meta-fields:** Here you can define which meta information (date of the post, author of the post and number of comments) is displayed.
 
-**Message template:** Here you select the message template. By default, the `news_full` template displays the complete article.
+**Message template:** Here you select the message template. By `news_full`default, the template displays the complete article.
 
 **Individual template:** Here you can overwrite the standard template.
 
@@ -115,8 +116,8 @@ Only one "reader module" may be located on a single page, regardless of the type
 
 **Image size:** Here you can specify the desired image size.
 
-**HTML output**   
- The frontend module generates the following HTML code:
+**HTML outputThe**  
+ frontend module generates **the** following HTML code:
 
 ```html
 <div class="mod_newsreader formbottomborder block">
@@ -139,48 +140,48 @@ Only one "reader module" may be located on a single page, regardless of the type
 </div>
 ```
 
-For details on the markup of comments, see the [comments](../../../artikelverwaltung/inhaltselemente/#kommentare) section.
+For details on how to mark up the comments, see theComments section.
 
 ## News archive
 
-The front-end module "News archive" is used to list all news items of a certain period. In connection with the module "News archive menu" you can search through all available posts on a daily, monthly or yearly basis.
+The front-end module "News archive" is used to list all news items of a certain period. In connection with the module "News archive menu" you can search through all available articles by day, month or year.
 
 ### Module configuration
 
-**News archives:** Here you define from which archives posts should be listed. By default, the posts are sorted by date in descending order.
+**Message archives:** Here you can specify the archives from which the posts should be listed. By default, the posts are sorted by date in descending order.
 
-**News reader:** Here you can determine whether the system should automatically switch to the news reader when a post is selected.
+**Message reader:** Here you can define whether the system should automatically switch to the message reader when a post is selected.
 
 **Archive format:** Here you define the archive format (day, month or year).
 
 {{< version "4.5" >}}
 
-**Sort order:** Here you can define the sort order. There are the following five sort orders available: by date ascending, by date descending (default), by heading ascending, by heading descending and by a random order.
+**Sort order:** Here you can define the sort order. There are five sort orders available: by date ascending, by date descending (default), by heading ascending, by heading descending and by a random order.
 
 **No period selected:** Here you define what the frontend module should display if no specific time period is selected.
 
 | Option | Declaration |
 | ------ | ----------- |
 | Hide the module | The module is completely hidden if no period is selected. |
-| Jump to current period | The posts of the current period (day, month or year) are automatically displayed if no period is selected. |
+| Jump to the current period | If no time period is selected, the posts of the current time period (day, month or year) are displayed automatically. |
 | Show all posts | All contributions of the archive are displayed if no period is selected. |
 
-**Elements per page:** If you enter a value greater than 0 here, Contao will automatically spread the posts over multiple pages - assuming there are enough of them.
+**Elements per page:** If you enter a value greater than 0 here, Contao automatically distributes the posts to multiple pages - assuming you have entered the correct number.
 
 ### Template settings
 
-**Meta-fields:** Here you define which meta information (date of the post, author of the post and number of comments) is displayed.
+**Meta-fields:** Here you can define which meta information (date of the post, author of the post and number of comments) is displayed.
 
 **Message template:** Here you select the template.
 
-**Individual template:** Here you can overwrite the standard template.
+**Individual template:** Here you can overwrite the default template.
 
-### Picture settings
+### Image settings
 
 **Image size:** Here you can specify the desired image size.
 
-**HTML output**   
- The frontend module generates the following HTML code:
+**HTML outputThe**  
+ frontend module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -213,26 +214,26 @@ The frontend module "News Archive Menu" adds a menu to the website, which allows
 
 ### Module configuration
 
-**News archives:** Here you define from which archives articles should be linked. This selection should be the same as for the news archive.
+**News archives:** Here you define from which archives articles should be linked. This selection should be the same as that of the news archive.
 
-**Show number of posts:** If you select this option, the number of posts per month or year will be displayed in the menu.
+**Show number of posts:** If you select this option, the number of posts per month or year will be shown in the menu.
 
-**Archive format:** Here you define the archive format (day, month or year).
+**Archive format**: Here you can define the archive format (day, month or year).
 
-**First day of the week:** Here you define with which day the week starts.
+**First day of the week**: Here you can specify the day of the week.
 
 **Sort order:** Here you can change the sort order of the menu.
 
 ### Forwarding
 
-**Forwarding page:** Here you define to which page a visitor is forwarded after clicking on a menu item (day, month or year).
+**Forwarding page:** Here you can define to which page a visitor is forwarded after clicking on a menu item (day,month or year).
 
 ### Template settings
 
 **Individual template:** Here you can overwrite the standard template.
 
-**HTML output**   
- The frontend module generates the following HTML code:
+**HTML outputThe**  
+ frontend module generates **the** following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -264,7 +265,7 @@ In the archive format "Year" with Show number of posts the HTML markup looks lik
 <!-- indexer::continue -->
 ```
 
-In the archive format "Tag" the HTML markup looks like this:
+In the "Tag" archive format, the HTML markup looks like this:
 
 ```html
 <!-- indexer::stop -->

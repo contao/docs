@@ -10,17 +10,17 @@ weight: 30
 This article is machine translated.
 {{% /notice %}}
 
-The page layout determines the structure of a page and divides it into different layout areas. Within these layout areas, you can place any frontend modules that will be executed one after the other when the page is called and generate the HTML code for the web page. A frontend module is also used to insert the articles, that is, the content.
+The page layout determines the structure of a page and divides it into different layout areas. Within these layout areas you can place any number of frontend modules, which are executed one after the other when the page is called and generate the HTML code of the web page. A frontend module is also used to insert the articles, that is, the content.
 
 If a page is not assigned a page layout, it inherits the page layout from a parent page. If no page layout is linked there either, the frontend output is limited to a short "No layoutspecified".
 
-## Structure of the front end
+## Structure of the frontend
 
-In order to be able to convert individually compiled page layouts in the frontend into a cleanly structured and above all cross-browser functional website, a powerful CSS framework is required that is prepared for all eventualities. The Contao CSS framework fulfills this task very well and is also quite compact. It automatically generates the basic structure of the website based on a page layout, which by default consists of up to three columns and an optional header and footer.
+In order to be able to convert individual page layouts in the frontend into a neatly arranged and above all cross-browser functional website, a powerful CSS framework is required, which is prepared for all eventualities. The Contao CSS framework fulfills this task very well and is also quite compact. It automatically generates the basic structure of the website based on a page layout, which by default consists of up to three columns and an optional header and footer.
 
-## header and footer
+## Header and Footer
 
-Each page layout can have a header and a footer. Typically, the header contains the company logo and the footer contains copyright information and a link to the imprint and privacy policy.
+Each page layout can have a header and a footer. Usually the header contains the company logo, the footer contains copyright information and a link to the imprint and privacy policy.
 
 **lines**: Here you add a header and footer to the layout.
 
@@ -32,7 +32,7 @@ Each page layout can have a header and a footer. Typically, the header contains 
 
 ## Column configuration
 
-Up to three columns are available by default. You can specify the width of the left or right column, the main column adjusts automatically.
+By default, up to three columns are available. You can specify the width of the left or right column, the main column adjusts automatically.
 
 **Columns**: Here you select the number of columns in your page layout.
 
@@ -40,13 +40,13 @@ Up to three columns are available by default. You can specify the width of the l
 
 **Width of the left column**: Here you define the width of the left column.
 
-**Width of the right column**: Here you can set the width of the right column.
+**Width of the right column**: Here you set the width of the right column.
 
-## Own layout areas
+## Custom layout areas
 
 By default, the Contao CSS framework defines the following layout areas:
 
-- Headline
+- Header
 - Left column
 - Right column
 - Main column
@@ -56,9 +56,9 @@ With these five areas, at least 90% of all common page layouts can be easily imp
 
 To realize such "exotic" page layouts in Contao, you can define additional layout areas in the backend settings and arrange them using a style sheet. Your own layout areas can be used in the page layout just like the standard areas.
 
-**Your own layout areas**: Here you activate your own layout areas.
+**Own layout areas**: Here you activate your own layout areas.
 
-**Position of the layout areas**: In conjunction with the standard `fe_page`page template, you can position your own layout areas as follows:
+**Position of the layout areas**: In connection with the standard `fe_page`page template, you can position your own layout areas as follows:
 
 - Before the enclosing element `top`
 - Below the header line `before`
@@ -78,9 +78,10 @@ Here you can add one or more [Google Fonts](https://fonts.google.com/) to your w
 ```
 
 {{% notice note %}}
-A manual integration of "web fonts" is recommended. Otherwise, you should follow the followingGoogle instructions: [Get Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started), the "Google Fonts API Version 2" is currently not supported.
+Manual integration of "web fonts" is recommended. Otherwise, you should follow the followingGoogle instructions: [Get Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started), the "Google Fonts API Version 2" is currently not supported. 
+{{% /notice %}}
 
-After that you can access the web font via your CSS file.
+Then you can access the web font via your CSS file.
 
 ```css
 body {
@@ -92,7 +93,7 @@ body {
 
 {{< version "4.8" >}}
 
-With this setting you can define the image size for the lightbox in the page layout.
+With these settings you can define the image size for the lightbox in the page layout.
 
 **Image size for the lightbox:** Here you can set the dimensions of the image and the scaling mode for the lightbox.
 
@@ -106,15 +107,15 @@ With this setting you can define the image size for the lightbox in the page lay
 
 Here you define which stylesheets are included in the page layout and in which order.
 
-The components of the Contao **CSS framework**, **Internal stylesheets** and **External stylesheets** are available.
+The components of the Contao **CSS framework**, **internal stylesheets** and **external stylesheets** are available.
 
 **Components of the Contao CSS framework:** Here you can activate the components of the Contao CSS framework.
 
 | Components | Explanation |
 | ---------- | ----------- |
 | Layout Builder | Creates the CSS layout based on the page layout settings. This component must be active for the page generator to work correctly! |
-| Responsive Layout | Adds a viewport tag to the header and scales the CSS layout based on the width of the device. |
-| 12-column grid | Creates a responsive 12-column grid, which is `offset12` controlled by the CSS `grid1` classes to `grid12` and `offset1` bis. |
+| Responsive layout | Adds a viewport tag to the header and scales the CSS layout based on the width of the device. |
+| 12-column grid | Creates a responsive 12-column grid, which is `offset12`controlled by the CSS classes `grid1`to `grid12`and `offset1`to. |
 | CSS reset | Removes the inconsistent standard formatting of HTML elements in different browsers |
 | Forms | Basic formatting of form elements and buttons. |
 | Icons | Basic icons for downloads and file attachments. |
@@ -125,13 +126,13 @@ The components of the Contao **CSS framework**, **Internal stylesheets** and **E
 
 **Loading order:** Here you can set the loading order of the internal and external stylesheets.
 
-**Combine scripts:** Here you can determine whether the .css and .js files should be combined.
+**Combine scripts:** Here you can determine if the .css and .js files should be merged.
 
 ## RSS/Atom feeds
 
 Feeds embedded in a page layout are linked in the header area of the page and can be subscribed to directly in the address bar of most modern web browsers. The "header" is not the header of your page layout, but the `<head>`tag of the HTML source code.
 
-**News feeds:** Here you select the feeds of the news archives.
+**News Feeds:** Here you can select the feeds of the news archives.
 
 **Calendar feeds**: Here you can select the feeds of the calendars.
 
@@ -141,7 +142,7 @@ In this section, you assign the frontend modules to the individual layout areas 
 
 ![Frontend modules of the Contao Official Demo](/de/layout/theme-manager/images/de/frontend-module-der-contao-official-demo.png?classes=shadow)
 
-**Included modules:** Here you select the modules for the page layout.
+**Integrated modules:** Here you select the modules for the page layout.
 
 ## JavaScript
 
@@ -151,7 +152,7 @@ The **JavaScript templates**, **Analytics templates**, **External JavaScript** a
 
 | Template | Declaration |
 | -------- | ----------- |
-| js\_autofocus | If, for example, a field in a form is filled in incorrectly, this field will receive an "error" `<p>` tag after submission. The JavaScript ensures that the system automatically scrolls to this class. |
+| js\_autofocus | If, for example, a field in a form is filled in incorrectly, this field will receive a `<p>`tag with the class "error" after it is submitted. The JavaScript ensures that the system automatically scrolls to this class. |
 | js\_highlight | This is a syntax highlighter for script languages, it is needed for the content element "Code". |
 | js\_nocookie | In order for Contao to protect you from CSRF attacks, visitors must allow cookies. The template dynamically generates a message if a visitor has disabled cookies in his browser. {{< version "4.7" >}} |
 | js\_slider | Provides JavaScript for the content element "Content Slider". |
@@ -183,7 +184,7 @@ $PiwikPath = '//www.example.com/piwik/';
 | -------- | ----------- |
 | j\_accordion | Provides the jQuery plugin for the content element "Accordion". |
 | j\_colorbox | Provides the jQuery plugin for displaying images in large view (lightbox effect). |
-| j\_tablesort | Provides jQuery plugin for the sort option of the content element "table". |
+| j\_tablesort | Provides jQuery plugin for the sorting option of the content element "Table". |
 
 **jQuery source:** Here you can select from where the jQuery script should be loaded. The following three options are available:
 
@@ -197,24 +198,24 @@ $PiwikPath = '//www.example.com/piwik/';
 
 **MooTools templates:** Here you can select one or more MooTools templates.
 
-| Template | Explanation |
+| Template | Declaration |
 | -------- | ----------- |
 | moo\_accordion | Provides the MooTools plugin for the content element "Accordion". |
 | moo\_choses | With this MooTools plugin you can make long select menus clearer and more user-friendly. The select menu must be given the CSS class "tl\_chosen". |
 | moo\_mediabox | Provides the MooTools plugin for displaying images in large view (lightbox effect). |
 | moo\_tablesort | Provides MooTools plugin for the sort option of the content element "table". |
 
-**MooTools source:** Here you can select from where the MooTools script should be loaded. The following three options are available:
+**MooTools source:** Here you can select from where to load the MooTools script. The following three options are available:
 
 - Local file
 - CDN (googleapis.com)
 - CDN with local fallback
 
-## Static layout
+## Static Layout
 
 The CSS framework adjusts the page layout to the width of the browser window by default, which is also called "liquid layout". In contrast, a static layout has a fixed width and is displayed in the center of your browser window, for example. In Contao, both layout types are supported.
 
-**Static layout**: Here you define a page layout as static.
+**Static layout:** Here you define a page layout as static.
 
 **Total width**: Here you can enter the total width of the website.
 
@@ -236,10 +237,10 @@ In the expert settings, you can change the page template that is used for the pa
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 ```
 
-**Title-Tag:** Here you can overwrite the title tag.
+**Title tag:** Here you can overwrite the title tag.
 
 **Body class:** Here you can assign a CSS class to the body tag of the HTML page and thus create format definitions for a certain page layout.
 
-**Body onload:** Some JavaScript require a so-called "body onload event" to initialize the script when the page loads. If you want to use such a JavaScript, you can enter the required code here.
+**Body onload:** Some JavaScripts require a so-called "Body Onload Event" to initialize the script when the page is loaded. If you want to use such a JavaScript, you can enter the required code here.
 
 **Additional `<head>`tags:** In the header of your website, the meta information of the page is displayed and the included stylesheets and JavaScript are linked. Here you can add any additions and e.g. insert further stylesheets.

@@ -10,46 +10,46 @@ weight: 10
 This article is machine translated.
 {{% /notice %}}
 
-The message management is a separate module in the backend, which you can find in the group "Content". There you can create several archives, which contain the individual news or blog entries. By using several archives, it is possible to categorize the posts.
+The news management is a separate module in the backend, which you can find in the group "Contents", where you can create several archives, which in turn contain the individual news or blog entries. By using several archives, it is possible to categorize the posts.
 
 ## News archives
 
 Archives are used to group and/or categorize messages. Each archive can refer to a specific language or topic.
 
-To create a new message archive click on ![Create a new message archive](/de/icons/new.svg?classes=icon "Ein neues Nachrichtenarchiv erstellen")**New** .
+To create a new news archive click onNew![Create a new message archive](/de/icons/new.svg?classes=icon "Ein neues Nachrichtenarchiv erstellen").
 
 ### Title and forwarding
 
 **Title:** The title of a news archive is used in the backend overview.
 
-**Forwarding page:** Here you define to which page a visitor is forwarded when clicking on the read more link of a post. The target page should contain the "news reader" module to display the complete post.
+**Forwarding page:** Here you can define the page to which a visitor is forwarded when clicking on the read more link of a post. The target page should contain the "News reader" module to display the complete article.
 
 ### Access protection
 
-Just like content elements, news or blog posts can also be protected. In this case, only registered members will be able to view the archive's articles.
+Just like content elements, news or blog posts can also be protected. Only registered members will be able to view the archive entries.
 
-**Protect archive:** Here you activate the access protection.
+**Protect archive:** Here you can activate the access protection.
 
 **Allowed member groups:** Here you define which member groups should have access to the posts after logging in to the frontend.
 
 ### Comments
 
-You already know the Contao comment function from the [content element (comments)](../../../artikelverwaltung/inhaltselemente/#kommentare) . It is also available for news and blog posts and should be activated if you use the extensions as a blog.
+You already know the Contao comment function from the content element with the same name[ (comments)](../../../artikelverwaltung/inhaltselemente/#kommentare). It is also available for news and blog posts and should be activated if you use the extensions as a blog.
 
-**Enable comments:** Here you activate the comment function for the archive.
+**Activate comments:** Here you activate the comment function for the archive.
 
-**Notification on:** Here you define whether the system administrator, the author of a post or both are notified when new comments are added.
+**Notification on:** Here you can specify whether the system administrator, the author of a post or both are to be notified when new comments are made.
 
-**Sorting:** Here you define the order of the comments. Normally the oldest comment is shown first in a blog (ascending order).
+**Sorting**: Here you can determine the order of the comments. Normally the oldest comment is shown first in a blog (ascending order).
 
-**Comments per page:** Here you can set the number of comments per page. Contao automatically generates a page break if needed.
+**Comments per page:** Here you can set the number of comments per page. Contao automatically creates a page break when it is needed.
 
-**Moderate comments:** If you choose this option, comments will not appear on the website immediately, but only after you have approved them in the backend.
+**Moderate comments:** If you select this option, comments will not appear on the website immediately, but only after you have enabled them in the back end.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
+**Allow BBCode:** If you select this option, your visitors can use [BBCode to](https://de.wikipedia.org/wiki/BBCode) format their comments. The following tags are supported:
 
-| Day | Declaration |
-| --- | ----------- |
+| Day | Statement |
+| --- | --------- |
 | `[b][/b]` | Boldface |
 | `[i][/i]` | Italics |
 | `[u][/u]` | Underlined |
@@ -65,13 +65,13 @@ You already know the Contao comment function from the [content element (comments
 
 **Login required for commenting:** If you select this option, only logged in members can add comments. However, comments already submitted will still be visible to all visitors of the website.
 
-**Disable spam protection:** By default, visitors are required to answer a security question when posting comments, to prevent the commenting feature from being misused for spam purposes. If you want to allow only logged in members to comment anyway, you can disable the security question here. Since Contao 4.4 this question is only "displayed" to spambots.
+**Disable spam protection:** By default, visitors have to answer a security question when creating comments, so that the comment function cannot be misused for spam purposes. However, if you want to allow only logged in members to comment, you can disable the security question here. Since Contao 4.4, this question is only "displayed" to spambots.
 
 ## RSS feeds
 
-Every news or blog archive can be exported as RSS/Atom feed if desired. RSS feeds are XML files containing your contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
+Every news or blog archive can be exported as RSS/Atom feed if desired. RSSFeeds are XML files containing your contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
-The feeds can be integrated via the [page layout](../../../theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) in the header area of the page. The "header" is not the header of your page layout, but the `head`tag of the HTML source code.
+The feeds can be integrated via the [page layout](../../../theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) in the header of the page. The "header" is not the header of your page layout, but the tag`head` of the HTML source code.
 
 Furthermore, the XML file can also be opened directly in the browser.
 
@@ -104,7 +104,7 @@ The URL is:
 </rss>
 ```
 
-To create a new feed click on **RSS feeds** and then on ![Create a new feed](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen")**New** .
+To create a new feed click on ![Manage RSS feeds](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten")**RSS Feeds** and then on **New**![Create a new feed](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen").
 
 ### Title and language
 
@@ -112,7 +112,7 @@ To create a new feed click on **RSS feeds** and then on ![Create a new feed](/de
 
 **Feed Alias:** The alias of a feed is used as the file name.
 
-**Feed language:** Here you can enter the language of the [feed](http://www.rssboard.org/rss-language-codes#table).
+**Feed language**: Here you can enter the language of the [feed](http://www.rssboard.org/rss-language-codes#table).
 
 ### News archives
 
@@ -120,37 +120,37 @@ To create a new feed click on **RSS feeds** and then on ![Create a new feed](/de
 
 ### Feed settings
 
-**Feed format:** Here you define the format of the feed. Contao supports RSS 2.0 and Atom, the two most common formats.
+**Feed format**: Here you can define the format of the feed. Contao supports RSS 2.0 and Atom, the two most popular formats.
 
-**Export settings:** Here you can define whether only the teaser texts of the posts or the complete posts are exported as feed.
+**Export settings:** Here you can specify whether only the teaser texts of the posts or the complete posts are exported as feed.
 
 **Maximum number of contributions:** Here you can limit the number of posts of the feed. Usually about 25 posts per feed are sufficient. Most of the time only the first three to five are actually used anyway.
 
-**Base URL:** The base URL is especially important in multi-domain environments when you run multiple websites with one Contao installation. To make sure that the feed links to the correct domain, you can enter it here.
+**Base URL:** The base URL is especially important in multi-domain operation, if you run several websites with one Contao installation. To make sure that the feed links to the correct domain, you can enter it here.
 
-**Feed description:** Here you can enter a description of the feed.
+**Feed description**: Here you can enter a description of the feed.
 
 ## News items {#news items}
 
-This section explains how to create a news item. News items are always sorted by date, so there are no icons to change the order.
+This section explains how to create a news item. News items are generally sorted by date, so there are no icons to change the order.
 
-The news items consist of the settings for the items ("message list") and their contents ("message reader").
+The news items consist of the settings for the items ("Message List") and their contents ("Message Reader").
 
-To create a new post, click on the desired archive and then on ![Create a new post](/de/icons/new.svg?classes=icon "Einen neuen Beitrag erstellen")**New** .
+To create a new post, click on the desired archive![Edit message archive](/de/icons/edit.svg?classes=icon "Nachrichtenarchiv bearbeiten") and then on![Create a new post](/de/icons/new.svg?classes=icon "Einen neuen Beitrag erstellen") **New**.
 
-### Title and author
+### Title and Author
 
 **Titles:** Here you can enter the title of the message.
 
 **Message aliases:** The alias of a post is a unique and meaningful reference that you can use to view it in your browser.
 
-**Author:** Here you can change the author of the article.
+**Author:** Here you can change the author of the post.
 
 ### Date and time
 
 **Date:** Enter the date of the contribution here.
 
-**Time:** Enter the time of the contribution here.
+**Time**: Enter the time of the post here.
 
 ### Metadata
 
@@ -160,21 +160,21 @@ To create a new post, click on the desired archive and then on ![Create a new po
 
 **Meta description:** Here you can enter an individual meta description to override the default page description.
 
-### Subheading and teaser {#subheading-and-teaser}
+### Subheading and Teaser {#underheading-and-teaser}
 
 **Subheading:** Here you can enter an optional subheading.
 
-**Teaser text:** Here you can enter a short summary of the news item (teaser), which can then be displayed, for example, with the "News list" module, followed by a read more link to the actual post.
+**Teaser text:** Here you can enter a short summary of the news item (teaser), which can then be displayed, for example, with the module "News list", followed by a link to the actual post.
 
-### Picture settings
+### Image settings
 
 **Add an image:** You can add an image to your post if you wish.
 
-**Source file:** Here you select the image to be inserted. If you have not yet transferred the image to the server, you can do so directly in the pop-up window without leaving the input mask.
+**source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you can upload it directly in the pop-up window without leaving the input mask.
 
 ![Add an image to a post](/de/core-extensions/news/images/de/einem-beitrag-ein-bild-hinzufuegen.png?classes=shadow)
 
-**Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
+**Image size:** Here you can specify the image size. You can choose between the following scaling modes:
 
 | Relative format |  |
 | --------------- | --- |
@@ -183,19 +183,19 @@ To create a new post, click on the desired archive and then on ![Create a new po
 
 | Exact format |  |
 | ------------ | --- |
-| Important part | Preserves the important part of the image as specified in the file manager. |
+| Important part | Keeps the important part of the image as specified in the file management. |
 | Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
 | Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
 | Right / Top | Preserves the right part of a landscape image and the upper part of a portrait image. |
-| Left / Middle | Preserves the left part of a landscape image and the center part of a portrait image. |
+| Left / Center | Preserves the left part of a landscape image and the center part of a portrait image. |
 | Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
-| Right / middle | Preserves the right part of a landscape image and the center part of a portrait image. |
+| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
 | Left / Bottom | Preserves the left part of a landscape image and the lower part of a portrait image. |
-| Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
+| Center / Bottom | Preserves the middle part of a landscape image and the lower part of a portrait image. |
 | Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
 
-**Image alignment:** Here you can set the alignment of the image. If it is   
- ![above](/de/icons/above.svg?classes=icon) ![right-justified](/de/icons/right.svg?classes=icon) inserted **above**, **below**, **left-justified** or ![right-justified](/de/icons/right.svg?classes=icon)**right-justified**. If **left-** or **right-aligned**, the text flows around the image (as symbolized by the icon).
+**Image Alignment:** Here you set the alignment of the image. If it is inserted  
+![above](/de/icons/above.svg?classes=icon) **above**,![under](/de/icons/below.svg?classes=icon) **below**,![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or![right-justified](/de/icons/right.svg?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
 
 **Image distance:** Here you define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
 
@@ -203,35 +203,35 @@ To create a new post, click on the desired archive and then on ![Create a new po
 
 **Overwrite metadata:**  Here you can overwrite the metadata from the file manager.
 
-**Alternative text:** Here you can enter an alternative text for the image *(alt attribute)*. A barrier-free website should contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
+**Alternative text:** Here you can enter an alternative text for the image *(alt attribute)*. Accessible web pages should contain a short description for each object, which will be displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
 
-**Picture title:** Here you can enter the title of the image *(title attribute)* .
+**Image title:** Here you can enter the title of the image *(title attribute)*.
 
-**Image link address:** When you click on a linked image, you will be redirected to the specified target page (corresponds to an image link). Please note that for a linked image a lightbox large view is no longer possible.
+**Image link address:** When you click on a linked image, you will be redirected to the specified target page (corresponds to an image link). Please note that for a linked image a lightbox full view is no longer possible.
 
-**Caption:** Here you can enter a caption.
+**caption:** Here you can enter a caption.
 
-### Annexes
+### Attachments
 
-Enclosures, also known as "enclosures" in the context of RSS feeds, are files that are linked to an article. These files are both exported in the RSS feed and offered for download on the website.
+Enclosures, also known as "Enclosures" in connection with RSS feeds, are files that are linked to an article; these files are both exported in the RSS feed and offered for download on the website.
 
-**Add attachments:** Here you activate the adding of attachments.
+**Add Enclosures:** Here you can activate the adding of attachments.
 
-**Put it on:** Here you select the files you want to attach to the post.
+**Enclose:** Here you select the files you want to link to the post.
 
 ### Forwarding destination
 
-The redirection destination determines which page a visitor is redirected to when clicking on a post. Normally, this is the page on which the front-end module "news reader" is integrated to display the complete article.
+The redirection destination determines which page a visitor is redirected to when clicking on a post, usually the page where the frontend module "message reader" is integrated to display the complete post.
 
-**Forwarding destination:** Here you set the forwarding destination.
+Forwarding **destination:** Here you define the forwarding destination.
 
 **Forwarding page:** Here you select the target page from the page structure.
 
-**Article:** Here you select the target article.
+**Articles:** Here you select the target article.
 
 **Link address:** Here you enter the URL of the external target page.
 
-**Open in a new window:** Here you can determine whether the external target page is opened in a new browser window or not.
+**Open in a new window:** Here you can determine whether the external target page will be opened in a new browser window or not.
 
 | Forwarding destination | Declaration |
 | ---------------------- | ----------- |
@@ -240,28 +240,28 @@ The redirection destination determines which page a visitor is redirected to whe
 | Article | The redirection is to a specific article. |
 | Individual URL | The redirection is to an individual URL. |
 
-### Expert Settings
+### Expert settings
 
-In this section the highlighting of contributions is particularly interesting. Highlighted articles allow the creation of a "virtual archive", which contains only the highlighted articles from the different archives. This allows you to display a comprehensive list of important messages on the home page, for example.
+In this section the highlighting of contributions is particularly interesting. Highlighted articles allow the creation of a "virtual archive", which contains only the highlighted articles from the various archives. This allows you to display a comprehensive list of important messages on the home page, for example.
 
-**CSS class:** Here you can add a CSS class to your post.
+**CSS class:** Here you can add a CSS class to the post.
 
-**Disable comments:** Here you deactivate the comment function for a post.
+**Disable comments:** Here you can deactivate the comment function for a post.
 
-**Highlight contribution:** Here you mark a post as highlighted.
+**Highlight post:** Here you can mark a post as highlighted.
 
 ### Publication {#publication}
 
-As long as an article is not published, it will not be displayed in the frontend. You already know this behavior from pages and articles and we will encounter it in several other places in Contao. In addition to manual publishing, you have the option to activate posts automatically on a specific date.
+As long as an article is not published, it will not be displayed in the frontend. You already know this behavior from pages and articles and we will encounter it in several other places in Contao. In addition to manual publishing, you also have the option to automatically activate posts on a certain date.
 
-**Publish a contribution:** Here you can publish your contribution.
+**Publish a post:** Here you can post your contribution.
 
-**Displays off:** Here you activate a post on a specific date.
+**Show from:** Here you can activate a post on a specific date.
 
-**Display until:** Here you deactivate a post on a specific date.
+**Show until:** Here you can deactivate a post on a certain date.
 
-## Content for news articles {#content-for-news-articles}
+## Content for news posts {#content-for-message}
 
-After we have made the settings for the article, we can add content elements for the output in the "product reader", click on the desired article and then on ![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New** .
+After we have made the settings for the article, we can add content elements for the output in the "product reader", click on the desired article![Edit contribution](/de/icons/edit.svg?classes=icon "Beitrag bearbeiten") and then on![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
 
-In the news posts, you can use all the [content elements](../../../artikelverwaltung/inhaltselemente/) of Contao.
+All [content elements](../../../artikelverwaltung/inhaltselemente/) of Contaozur are available in the news items.

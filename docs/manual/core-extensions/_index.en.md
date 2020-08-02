@@ -10,6 +10,6 @@ weight: 10
 This article is machine translated.
 {{% /notice %}}
 
-Besides the extensions below, " [comments](../artikelverwaltung/inhaltselemente/#kommentare) " and " [listing](../modulverwaltung/anwendungen/#auflistung) " complete this group.
+Besides the extensions below, "[Comments](../artikelverwaltung/inhaltselemente/#kommentare)" and "[Listing](../modulverwaltung/anwendungen/#auflistung)" complete this group.
 
 {{% children description="true" %}}

@@ -12,6 +12,6 @@ This article is machine translated.
 
 **[contao/news bundle](https://packagist.org/packages/contao/news-bundle)**
 
-This allows news entries to be managed in the back end and output using front-end modules. A news item can be structured as desired using content elements. Archive and commentary functions are also available.
+This allows news entries to be managed in the back end and output using front-end modules. A message can be structured as desired using content elements. Archive and commentary functions are also available.
 
 {{% children %}}

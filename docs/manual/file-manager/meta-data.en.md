@@ -10,19 +10,19 @@ weight: 20
 This article is machine translated.
 {{% /notice %}}
 
-In Contao, you can add so-called metadata to any kind of file. Metadata is mainly used in image galleries and downloads to display a short description or caption for each file. In a multilingual project you can create separate metadata for each language.
+In Contao, you can add so-called metadata to any kind of file. Metadata is mainly used in image galleries and downloads to display a short description or caption for each file. In a multilingual project, you can create separate metadata for each language.
 
 Contao supports the following metadata:
 
 - Title
 - Alternative text
-- Link
+- link
 - Caption
 
 ![Maintaining the metadata](/de/file-manager/images/de/pflegen-der-metadaten.png?classes=shadow)
 
-**HTML output**   
- The content element of element type "Image" generates the following HTML code:
+**HTML outputThe**  
+ content element of element type "Image" generates the following HTML code:
 
 ```html
 <div class="ce_image first block">

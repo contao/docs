@@ -10,9 +10,9 @@ weight: 50
 This article is machine translated.
 {{% /notice %}}
 
-The available template data varies depending on the source of the template. Usually the complete data set is available in the template. The individual data records correspond to the respective database entries and are `$this->…`accessible in the template by specifying
+The available template data varies depending on the template source. Usually the complete data set is available in the template. The individual data records correspond to the respective database entries and can be `$this->…`accessed in the template by specifying
 
-You can display all available template data of a template. Either with
+You can display all available template data of a template. You can either use
 
 ```php
 <?php $this->dumpTemplateVars() ?>

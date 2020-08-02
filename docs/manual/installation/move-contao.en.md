@@ -13,10 +13,10 @@ This article is machine translated.
 Moving a local installation to a live server is almost the same as a new installation.
 
 {{% notice warning %}}
-To avoid inconveniences when moving, your local server should have the**[same PHP version](../systemvoraussetzungen/#mindestanforderungen-an-php)** as running on the live server.
+%To avoid inconvenience during the move, your local server should have the**[same PHP version](../systemvoraussetzungen/#mindestanforderungen-an-php)** as running on the live server.
 {{% /notice %}}
 
-## Moving Contao with the Contao Manager
+## Move Contao with the Contao Manager
 
 ### Export database on the local server
 
@@ -34,7 +34,7 @@ Open "phpMyAdmin" on the target server and create a new database for Contao. Dep
 
 Before you can move Contao to your server, you need to[ install and configure](../contao-manager#contao-manager-installieren) the Contao[ Manager](../contao-manager#contao-manager-installieren).
 
-### Transfer files to the live server {#transfer files to server}
+### Transfer files to the live server {#transfer files to the server}
 
 Open your FTP program and connect to your server. Copy the following files and folders from the localContao directory to the server.
 
@@ -43,21 +43,21 @@ Open your FTP program and connect to your server. Copy the following files and f
 - `composer.json`
 - `composer.lock`
 
-If you have any old extensions or if you have created one `config.yml`in the directory or `app/config/`in **Contao 4.8 or later**`config/`, you need to move them to your server.
+If you still have old extensions or if you have created one `config.yml`in the directory or `app/config/`in **Contao 4.8 or later**`config/`, they have to be transferred to your server.
 
 ### Install Contao on the live server
 
-Log in to the Contao manager. To do so, go to your domain with the extension `/contao-manager.phar.php`and enter your login data.
+Log in to the Contao Manager. Call your domain with the extension `/contao-manager.phar.php`and enter your access data.
 
 The Contao Manager automatically detects the extensions you have stored in the root directory `composer.json`and `composer.lock`when you click on the "Install" button, the manager `composer install`runs in the background and installs Contao and the extensions you used in the local installation.
 
 ![Install Composer dependencies](/de/installation/images/de/composer-abhaengigkeiten-installieren.png?classes=shadow)
 
-The installation can now take several minutes. Details about the installation process can be displayed by clicking on the icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+The installation can now take several minutes. Details of the installation process can be displayed by clicking on the icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
 
 ![Relocation completed](/de/installation/images/de/umzug-abgeschlossen.png?classes=shadow)
 
-Then open the [Contao install tool](../contao-installtool/) and enter the access data for the new database.
+Open the [Contao install tool](../contao-installtool/) and enter the access data for the new database.
 
 ## Moving Contao from the command line {#contao-over-the-command line-move}
 
@@ -69,7 +69,7 @@ The easiest way to create a MySQL dump on the command line is to use the followi
 mysqldump -h localhost -u Benutzer -p --opt Datenbankname | gzip -c > mysqldump.sql.gz
 ```
 
-The file is stored in the directory you are in when you send the command.
+The file will be saved in the directory you are in when you send the command.
 
 ### Transfer files to the server
 
@@ -82,7 +82,7 @@ scp -r /pfad/lokal/files/ /pfad/lokal/templates/ /pfad/lokal/composer.json /pfad
 
 ### Hosting Configuration
 
-In Contao, all publicly accessible files are located in the subfolder `/web`of the installation. Use the admin panel of the hosting provider to set the document root of the installation to this subfolder and create a database on this occasion.
+In Contao, all publicly accessible files are located in the subfolder `/web`of the installation. Set the document root of the installation to this subfolder via the admin panel of the hosting provider and set up a database on this occasion.
 
 Example: `example.com`points to the directory `/www/example/web`
 
@@ -98,7 +98,7 @@ You have logged on to your server with your user name and domain.
 ssh benutzername@example.com
 ```
 
-On the console, change to the directory where you want to install Contao.
+To do this, change to the directory on the console where you want to install Contao.
 
 ```bash
 cd www/example/
@@ -106,7 +106,7 @@ cd www/example/
 
 If [Composer](../contao-installieren/#composer-installieren) has [not yet](../contao-installieren/#composer-installieren) been [installed](../contao-installieren/#composer-installieren), we will install it later.
 
-In the next step, you can import the MySQL dump with the following command followed by the password
+In the next step you can import the MySQL dump with the following command followed by the password.
 
 ```bash
 gunzip < mysqldump.sql.gz | mysql -h localhost -u Benutzer -p Datenbankname

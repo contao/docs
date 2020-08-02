@@ -10,7 +10,7 @@ weight: 30
 This article is machine translated.
 {{% /notice %}}
 
-The structure of a template can vary from simple to complex content. Most templates will be renamed block functions (`block()` and `endblock()`) and divided into areas. These areas can be accessed via template inheritance. This makes individual template changes more transparent.
+The structure of a template can vary from simple to complex content. Most of the templates are divided into areas with the above-mentioned block functions (`block()` and `endblock()`). You can access these areas via template inheritance. This makes individual template changes more transparent.
 
 The template `fe_page.html`is divided into several blocks (including `head`, `meta`, `body`, , , `footer`etc.). We only want to add an additional meta specification.
 
