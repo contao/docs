@@ -74,7 +74,7 @@ class DeeplCommand extends Command
             ->setDescription('Automatically translates pages from the manual.')
             ->addArgument('source_lang', InputArgument::OPTIONAL, 'The language to be translated from.', 'de')
             ->addArgument('target_lang', InputArgument::OPTIONAL, 'The language to be translated to.', 'en')
-            ->addOption('file', null, InputOption::VALUE_REQUIRED, 'A single file to translate.')
+            ->addOption('file', null, InputOption::VALUE_REQUIRED, 'A single file to translate. Path must be relative to the docs/manual/ directory.')
             ->addOption('force', null, InputOption::VALUE_NONE, 'Forces a file to be translated, even if the translated file already exists.')
         ;
     }
