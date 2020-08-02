@@ -21,11 +21,11 @@ use League\HTMLToMarkdown\ElementInterface;
  */
 class TableConverter implements ConverterInterface
 {
+    private const CELL_MARKER = '{{cell}}';
+
     private $alignments = [];
 
     /**
-     * @param ElementInterface $element
-     *
      * @return string
      */
     public function convert(ElementInterface $element)
@@ -33,87 +33,82 @@ class TableConverter implements ConverterInterface
         switch ($element->getTagName()) {
             case 'tr':
                 $line = [];
-                $i = 1;
+
                 foreach ($element->getChildren() as $td) {
-                    $i++;
-                    $v = $td->getValue();
-                    $v = trim($v);
-                    if ($v !== '') {
-                        $line[] = $v;
+                    $value = trim($td->getValue());
+
+                    if ('' === $value) {
+                        continue;
                     }
+
+                    // Add value without the cell marker
+                    $line[] = str_replace(self::CELL_MARKER, '', $value);
+                
                 }
+
                 return '| ' . implode(' | ', $line) . " |\n";
 
             case 'td':
-            case 'th':               
+            case 'th':
+                // Save the text alignment
                 if (preg_match('/text-align:([^;]+)/', $element->getAttribute('style'), $matches)) {
-                    $this->alignments[(int) $element->getSiblingPosition()] = trim($matches[1]);
+                    $this->alignments[(int) $element->getSiblingPosition() - 1] = trim($matches[1]);
                 }
 
-                return preg_replace("#\n+#", '\n', trim($element->getValue()));
+                // "Mark" the table cell to identify valid empty cells
+                return self::CELL_MARKER.trim($element->getValue());
 
             case 'tbody':
-                return trim($element->getValue());
+                return $this->getTrimmedValue($element);
 
             case 'thead':
-                $headerLine = '';
+                $value = $this->getTrimmedValue($element);
+                $headers = array_map('trim', explode('|', trim($value, '|')));
+                $separators = [];
 
-                foreach ($element->getChildren() as $child) {
-                    $headerLine .= trim($child->getValue());
-                }
-
-                if (empty($headerLine)) {
-                    return '';
-                }
-
-                $headers = array_filter(array_map('trim', explode('|', $headerLine)));
-
-                $headerSeparators = [];
-
+                // Create the thead separator
                 foreach ($headers as $pos => $header) {
-                    switch ($this->alignments[$pos]) {
+                    switch ($this->alignments[$pos] ?? 'left') {
                         case 'right': 
                             $separator = str_repeat('-', max(mb_strlen($header), 3) - 1);
-                            $headerSeparators[] = $separator.':';
+                            $separators[] = $separator.':';
                             break;
                         case 'center': 
                             $separator = str_repeat('-', max(mb_strlen($header), 3) - 2);
-                            $headerSeparators[] = ':'.$separator.':';
+                            $separators[] = ':'.$separator.':';
                             break;
                         default:
                             $separator = str_repeat('-', max(mb_strlen($header), 3));
-                            $headerSeparators[] = $separator;
+                            $separators[] = $separator;
                     }
                 }
 
-                $headerSeparator = '| '.implode(' | ', $headerSeparators).' |';
-                
-                return $headerLine."\n".$headerSeparator."\n";
+                $separator = '| '.implode(' | ', $separators).' |';
+
+                return $value."\n".$separator."\n";
             case 'table':
-                $inner = $element->getValue();
-                if (strpos($inner, '-----') === false) {
-                    $inner = explode("\n", $inner);
-                    $single = explode(' | ', trim($inner[0], '|'));
-                    $hr = [];
-                    foreach ($single as $td) {
-                        $length = strlen(trim($td)) + 2;
-                        $hr[] = str_repeat('-', $length > 3 ? $length : 3);
-                    }
-                    $hr = '|' . implode('|', $hr) . '|';
-                    array_splice($inner, 1, 0, $hr);
-                    $inner = implode("\n", $inner);
-                }
-                return trim($inner) . "\n\n";
+                return $this->getTrimmedValue($element) . "\n\n";
         }
 
         return $element->getValue();
     }
 
     /**
-     * @return string[]
+     * @return array<string>
      */
     public function getSupportedTags()
     {
-        return array('table', 'tr', 'thead', 'th', 'td', 'tbody');
+        return ['table', 'tr', 'thead', 'th', 'td', 'tbody'];
+    }
+
+    /**
+     * Returns the individually trimmed values of all of the element's children
+     * and disregards empty children.
+     */
+    private function getTrimmedValue(ElementInterface $element): string
+    {
+        return trim(implode("\n", array_filter(array_map(function($e) {
+            return trim($e->getValue());
+        }, $element->getChildren()))));
     }
 }

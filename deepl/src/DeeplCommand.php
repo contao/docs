@@ -14,7 +14,6 @@ namespace Contao\Docs\DeeplTranslator;
 use Contao\Docs\DeeplTranslator\TableConverter;
 use Gt\Dom\Element;
 use Gt\Dom\HTMLDocument;
-use League\HTMLToMarkdown\Environment;
 use League\HTMLToMarkdown\HtmlConverter;
 use Parsedown;
 use Scn\DeeplApiConnector\DeeplClient;
@@ -156,14 +155,39 @@ class DeeplCommand extends Command
         // Process the meta data
         $meta = $this->processMeta($meta, $sourceLang, $targetLang, $targetFilePath);
 
+        // Temporarily replace refs
+        $body = preg_replace('/{{< ref "(.+)" >}}/', 'REF::$1::REF', $body);
+
         // Parse markdown body to HTML
         $html = $this->parsedown->parse($body);
 
         // Translate HTML nodes
         $doc = new HTMLDocument($html);
-        
+
         foreach ($doc->children as $child) {
             $this->translateNode($child, $sourceLang, $targetLang);
+        }
+
+        // Translate alt attributes
+        foreach ($doc->querySelectorAll('img[alt]') as $img) {
+            $alt = $img->getAttribute('alt');
+
+            if (empty($alt)) {
+                continue;
+            }
+
+            $translationConfig = new TranslationConfig(
+                $alt,
+                strtoupper($targetLang),
+                strtoupper($sourceLang),
+                [], [], [],
+                TextHandlingEnum::SPLITSENTENCES_NONEWLINES,
+            );
+
+            /** @var Translation $translationResult */
+            $translationResult = $this->deepl->getTranslation($translationConfig);
+            
+            $img->setAttribute('alt', $translationResult->getText());
         }
 
         $html = $doc->saveHTML();
@@ -172,14 +196,19 @@ class DeeplCommand extends Command
         $markdown = $this->htmlConverter->convert($html);
 
         // Fix some things
-        $markdown = preg_replace('/{{{&lt;(.+)&gt;}}/m', '{{<$1>}}', $markdown);
-        $markdown = str_replace('{{{% ', '{{% ', $markdown);
+        $markdown = preg_replace('/{{&lt;(.+)&gt;}}/m', '{{<$1>}}', $markdown);
+        $markdown = str_replace(['{{{% ', '{{{< '], ['{{% ', '{{< '], $markdown);
+        $markdown = preg_replace('/({{% .+ %}}) ([^\s])/', "$1\n$2", $markdown);
+        $markdown = preg_replace('@([^\s]) ({{% /.+ %}})@', "$1\n$2", $markdown);
+
+        // Restore and transform refs
+        $markdown = preg_replace('/REF::(.+)\.'.$sourceLang.'\.md::REF/', '{{< ref "$1.'.$targetLang.'.md" >}}', $markdown);
 
         // Add warning
         $markdown = self::MACHINE_TRANSLATED_WARNING."\n\n".$markdown;
 
         // Prepend processed meta data
-        $markdown = $meta."\n".$markdown;
+        $markdown = $meta."\n".$markdown."\n";
 
         // Save to file
         file_put_contents($targetFilePath, $markdown);
@@ -194,8 +223,8 @@ class DeeplCommand extends Command
             return;
         }
 
-        // Recursively process child nodes, but not for certain elements like paragraphs
-        if ($node->hasChildNodes() && !\in_array($node->nodeName, ['p'], true)) {
+        // Recursively process child nodes, but not for certain elements like paragraphs or table cells
+        if ($node->hasChildNodes() && !\in_array($node->nodeName, ['p', 'td', 'th', 'li'], true)) {
             foreach ($node->childNodes as $child) {
                 $this->translateNode($child, $sourceLang, $targetLang);
             }
@@ -212,6 +241,11 @@ class DeeplCommand extends Command
             $inner = $node->textContent;
         }
 
+        // Remove superfluous whitespace, as this interferes with the translation output
+        $inner = str_replace(["\r", "\n"], ['', ' '], $inner);
+        $inner = str_replace('  ', ' ', $inner);
+        $inner = trim($inner);
+
         if (empty($inner)) {
             return;
         }
@@ -221,18 +255,19 @@ class DeeplCommand extends Command
             $inner,
             strtoupper($targetLang),
             strtoupper($sourceLang),
-            [], [], [],
+            ['xml'], [], [],
             TextHandlingEnum::SPLITSENTENCES_NONEWLINES,
         );
 
         /** @var Translation $translationResult */
         $translationResult = $this->deepl->getTranslation($translationConfig);
+        $translatedText = $translationResult->getText();
 
         // Write the translated content back into the node
         if ($node instanceof Element) {
-            $node->innerHTML = $translationResult->getText();
+            $node->innerHTML = $translatedText;
         } else {
-            $node->textContent = $translationResult->getText();
+            $node->textContent = $translatedText;
         }
     }
 
