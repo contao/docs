@@ -49,8 +49,8 @@ Die CSS-Datei findest du zur Ansicht im Verzeichnis `assets/contao/css/grid.min.
 du auch entnehmen unter welchen Bedingungen u. a. die Abstände gesetzt werden:
 
 - Float und Margin für alle Elemente deren Klasse die Bezeichnung »grid« enthält
-- Margin für alle Elemente innerhalb von »mod_article« wenn sie eine Klasse beginnend mit »ce_« oder »mod_« enthalten
-- Kein Margin für »mod_article« mit zusätzlicher »grid« Bezeichnung.
+- Margin für alle Elemente innerhalb von »mod\_article« wenn sie eine Klasse beginnend mit »ce\_« oder »mod\_« enthalten
+- Kein Margin für »mod\_article« mit zusätzlicher »grid« Bezeichnung.
 
 Das Contao-Grid kann über dein [Seitenlayout]({{< ref "manage-page-layouts.de.md" >}}) im Bereich 
 »CSS-Framework > 12-Spalten Grid« eingebunden werden. 
