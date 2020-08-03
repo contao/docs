@@ -7,7 +7,7 @@ aliases:
 
 
 Data Container Arrays (DCAs) are used to describe a _Data Container_ for holding
-any type of record. The meta data in these DCAs is used by the Contao core engine
+any type of record. The metadata in these DCAs is used by the Contao core engine
 to determine how to list records, how to render back end forms for these records
 and how to edit and save each record.
 
