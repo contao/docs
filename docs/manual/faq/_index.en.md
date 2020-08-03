@@ -62,6 +62,7 @@ The information about this can be found under [TinyMCE Editor Configuration](/de
 
 {{% expand "Es wird keine E-Mail über mein Formular versendet, was muss ich machen?" %}}
 Check in or add `parameters.yml` the [SMTP details](/de/system/einstellungen/#smtp-versand) of your hoster Then you have to empty the application cache once via Contao Manager ("System maintenance" &gt; "Replace product cache") or via the console.
+{{% /expand %}}
 
 {{% expand "Kann ich eine andere E-Mail-Adresse als Absender für Formulare benutzen?" %}}
 The e-mail address set in the "Settings &gt; System administrator's e-mail address" area is also used as the sender of forms. You can enter an additional e-mail address in the "Page structure" section for the "Starting point of a website" page type. This e-mail address will then be used as the sender.
@@ -69,6 +70,7 @@ The e-mail address set in the "Settings &gt; System administrator's e-mail addre
 
 {{% expand "Wie kann ich das Sprachkürzel der URL hinzufügen?" %}}
 You can add the entry `prepend_locale: true` in [config.yml](/de/system/einstellungen/#config-yml) and then you have to empty the application cache once using the Contao Manager ("System Maintenance" &gt; "Replace Prod. cache") or the console.
+{{% /expand %}}
 
 {{% expand "Kann man die URL Suffix ».html« entfernen?" %}}
 You can add the entry `url_suffix: ''` in [config.yml](/de/system/einstellungen/#config-yml) and then you have to empty the application cache once using the Contao Manager ("System Maintenance" &gt; "Replace Prod. cache") or the console. 
