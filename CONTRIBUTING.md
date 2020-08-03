@@ -143,3 +143,37 @@ offer you to create a Pull Request.
 
 When changes to your Pull Request are requested, you can directly edit the files 
 within the Pull Request.
+
+
+## Manual: English Translation Revision
+
+On August 3th, 2020 the missing articles for the English translation of the manual
+were added, using machine translation ([#504](https://github.com/contao/docs/pull/504)). 
+These automatically translated articles have a warning at the top. The quality of 
+the translation is fairly good, there are a few limitations however:
+
+* The DeepL API often does not deal well with inline HTML tags. So there are many 
+  instances, where there is a space missing in front of or behind of `<code>` or 
+  `<a>` tags.
+* Sometimes DeepL even shuffles an inline tag around, breaking words up (that should 
+  be pretty rare though).
+* No 80 to 140 character line breaks.
+* Any `` `…` `` content is not translated. Sometimes that's an issue, because it 
+  was used to emphasize regular words that are not code.
+* The translation script caused some closing shortcode tags to be missing.
+
+These articles now need to be reviewed and revised. If you want to look over a section, 
+please create an [issue](https://github.com/contao/docs/issues) beforehand, which 
+we will assign to you then, so that we know that you are working on this. When working 
+on/fixing an article make sure that you:
+
+* look over the translations themselves,
+* look for specific terminologies, that should not be translated or should be translated 
+  in a specific way,
+* fix any white space errors,
+* provide English versions of screenshots (if applicable),
+* look for any missing shortcode tags,
+* review the result locally,
+* and remove the warning at the top once finished
+
+before submitting the Pull Request.
