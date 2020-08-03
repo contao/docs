@@ -1,7 +1,4 @@
 contentDir: '../docs/manual'
 title: 'Contao Manual'
 defaultContentLanguageInSubdir: true
-
-# temporary
 DefaultContentLanguage: de
-#disableLanguages: ['en']

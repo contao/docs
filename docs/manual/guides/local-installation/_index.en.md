@@ -2,7 +2,8 @@
 title: "Local installations"
 description: "All you need to know about a local Contao installation."
 weight: 900
-hidden: true
+tags: 
+   - "Installation"
 ---
 
 You can also install Contao locally. This requires a web server, a database and PHP. For the different operating systems
