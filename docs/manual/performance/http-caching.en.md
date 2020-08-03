@@ -432,7 +432,7 @@ This way, any cache proxy can be tought to support the cache tag based invalidat
 
 ## FAQ
 
-{{% expand "What cache settings are the »right ones« for me?" %}}
+{{% expand "What cache settings are the \"right ones\" for me?" %}}
 It is not really possible to answer this question in general, because as it is so often the case in our industry, the answer
 is "it depends". However, there are a few basic principles that you can use as a guide:
 
