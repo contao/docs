@@ -9,7 +9,7 @@ weight: 10
 This article is machine translated.
 {{% /notice %}}
 
-The system settings will slowly but surely leave the backend. Basic system settings affect Contao as an application and therefore there is a chance that a wrong setting will cause the system to become non-functional. If this happens, you will not be able to undo the settings and restore the system because you will not be able to log in anymore. For this reason, most settings outside of Contao are or can be `config.yml`done through the Contao Manager.
+The system settings slowly but surely leave the backend. Basic system settings influence Contao as an application and therefore there is a chance that a wrong setting will render the system non-functional. If this happens, you will not be able to undo the settings and restore the system because you will not be able to log in anymore. For this reason, most settings outside of Contao are or can be `config.yml`done through the Contao Manager.
 
 ## Settings
 
@@ -23,7 +23,7 @@ Kevin Jones [kevin.jones@example.com]
 
 ### Date and time
 
-**Date and time format:** All date and time formats must be entered as in thePHP function[ date](https://www.php.net/manual/de/function.date.php). Contao processes only numeric formats in the backend, i.e. the letters j, d, m, n, y, Y, g, G, h, H, i and s.
+**Date and time format:** All date and time formats must be entered as in thePHP function [date](https://www.php.net/manual/de/function.date.php). Contao processes only numeric formats in the backend, i.e. the letters j, d, m, n, y, Y, g, G, h, H, i and s.
 
 Here are some examples of valid date and time specifications:
 
@@ -33,13 +33,13 @@ Here are some examples of valid date and time specifications:
 | m/d/Y | MM/DD/YYYY, English format, for example `01/28/2005` |
 | d.m.Y | DD.MM.YYYY, German format, for example `28.01.2005` |
 | y-n-j | YY-M-D, without leading zeros, e.g. `05-1-28` |
-| Ymd | YYYYMMDD, time stamp, for example `20050128` |
-| H:i:s | 24 hours, minutes and seconds, for example `20:36:59` |
+| Ymd | YYYYMMDD, timestamp, for example `20050128` |
+| H:i:s | 24 hours, minutes and seconds, e.g. `20:36:59` |
 | g:i | 12 hours without leading zeros and minutes, e.g. `8:36` |
 
-**Timezone:** You should set the timezone before creating your website because Contao stores all times as [Unix timestamps](https://www.php.net/time) and PHP does not automatically adjust these timestamps when the timezone changes.
+**Timezone:** You should set the timezone before you create your website because Contao stores all [timestamps](https://www.php.net/time) as [Unix timestamps](https://www.php.net/time) and PHP does not automatically adjust these timestamps when the timezone changes.
 
-### Backend Settings
+### Backend settings
 
 **Do not shorten elements:** In the "Parent View", Contao displays the elements in a shortened form for clarity reasons. Individual elements can be unfolded using a navigation icon if needed. Select this option to disable the feature completely.
 
@@ -49,13 +49,13 @@ Here are some examples of valid date and time specifications:
 
 ### Frontend settings
 
-**Use folder URLs:** Here you can enable folder structures in page aliases. This way, the aliases in the page hierarchy are included in the aliases, e.g. the page "Download" in the page path "Docs &gt; Install" `docs/install/download.html`instead of just .
+**Use folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" `docs/install/download.html`instead of just .
 
 **Do not redirect empty URLs:** If the URL is empty, display the web page instead of redirecting to the starting point of the language redirection *(not recommended)*.
 
-### Security Settings
+### Security settings
 
-**Deactivate request tokens:** Here you can activate that the request tokens are not checked when a form is submitted *(unsafe!)*.
+**Disable request tokens:** Here you can activate that the request tokens are not checked when submitting a form *(insecure!)*.
 
 **Allowed HTML tags:** By default, Contao does not allow HTML tags in forms and removes them automatically when saving. For input fields where the use of HTML is desired, you can specify a list of allowed HTML tags here.
 
@@ -63,29 +63,29 @@ Here are some examples of valid date and time specifications:
 
 **Allowed download file types:** Here you can define which file types may be downloaded from your server (Download).
 
-**Maximum GD image width**: Here you can define the maximum width of images and other media in the frontend. If this value is exceeded, the corresponding object is automatically reduced in size.
+**Maximum GD image width**: Here you can define the maximum width of images and other media in the frontend. If this value is exceeded, the corresponding object is automatically resized.
 
-**Maximum GD image height**: Here you can define the maximum height of images and other media in the frontend. If this value is exceeded, the corresponding object will be reduced automatically.
+**Maximum GD image height**: Here you can define the maximum height of images and other media in the frontend. If this value is exceeded, the corresponding object is automatically reduced in size.
 
 ### File Uploads
 
-**Permitted upload file types:** Here you can define which file types may be transferred to your server (upload).
+**Permitted upload file types:** Here you can define which file types can be transferred to your server (upload).
 
-**Maximum upload file size**: Here you can define the maximum size of a file transferred to your server with the file management. The input is in bytes (1 MiB = 1024 KiB = 1,048,567 bytes). Larger files will be rejected.
+**Maximum upload file size:** Here you can define the maximum size of a file that can be uploaded to your server using the file manager. The entry is in bytes (1 MiB = 1024 KiB = 1,048,567 bytes). Larger files will be rejected.
 
-**Maximum image width:** When uploading images, the file manager automatically checks their width and compares these values with your default values. If an image exceeds the maximum width, it will be reduced automatically.
+**Maximum image width:** When uploading images, the file manager automatically checks the width of the image and compares it with the width you set here. If an image exceeds the maximum width, it will be reduced automatically.
 
-**Maximum image height:** When uploading images, the file manager automatically checks their height and compares these values with your default values. If an image exceeds the maximum height, it will be reduced automatically.
+**Maximum image height:** When uploading images, the file manager automatically checks their height and compares it with your default value. If an image exceeds the maximum height, it will be resized automatically.
 
 ### Cronjob settings
 
-**Disable the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route`_contao/cron` using a real cron job (which you have to set up yourself).
+**Deactivate the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route`_contao/cron` using a real cron job (which you have to set up yourself).
 
 ### Website search
 
 **Activate search:** If you select this option, Contao indexes the finished pages of your website and creates a search index from them. With the frontend module "[search engine](../../modulverwaltung/website-suche/#konfiguration-des-suchmoduls)", you can search this index.
 
-**Index protected pages:** Select this option to also index protected pages for the search. Use this feature with care and make sure to exclude personalized pages from the search.
+**Index protected pages:** Select this option to index protected pages for your search. Use this feature with care and make sure to exclude personalized pages from the search.
 
 {{% notice note %}}
 From version **4.9** a new search indexer is used. The settings **Enable Search** and **Index** Protected **Pages** are now `config/config.yml`configured via the
@@ -102,23 +102,23 @@ contao:
 
 ### Standard access rights
 
-**Default Owner**: Here you can specify the default owner of the pages for which no access rights have been defined. For more information, see the Access Rights section.
+**Default Owner:** Here you can specify the default owner of the pages for which no access rights have been defined. For more information, see the Access Rights section.
 
-**Default group:** Here you can define to which group the pages for which no access rights have been defined belong by default. For more information, see the Access Rights section.
+**Default group**: Here you can define to which group the pages for which no access rights are defined belong by default. For more information, see the Access Rights section.
 
-**Default Access Rights**: Allows you to specify the default access rights for the pages for which no specific access rights have been defined. For more information, please refer to the Access Rights section.
+**Default access rights:** Here you can set the default access rights for the pages for which no special access rights are defined. For more information, see the Access Rights section.
 
 ## parameters.yml
 
-In the Contao Managed Edition, the parameters (e.g. database data) are `parameters.yml`stored in the database, which is also used by the Contao installation tool. This file is usually excluded from the versioning process and can also contain additional entries such as the information for sending e-mails via SMTP.
+In the Contao Managed Edition, the parameters (e.g. database data) are `parameters.yml`stored in the file that is used by the Contao installation tool. This file is usually excluded from the versioning process and can also contain additional entries such as the information for sending e-mails via SMTP.
 
-You can `parameters.yml`find the file in the folder `app/config/`and it is created automatically during the installation of Contao.
+The file `parameters.yml`is located in the folder `app/config/`and is created automatically when you install Contao.
 
 {{% notice note %}}
 From version **4.8** of Contao, the file is located directly in the root directory of the installation under `config/`.
 {{% /notice %}}
 
-The `parameters.yml`settings after installing Contao:
+The `parameters.yml`ones after installing Contao:
 
 ```yaml
 # This file has been auto-generated during installation
@@ -133,7 +133,7 @@ parameters:
 
 ## config.yml
 
-The normal Bundle Config belongs in `config.yml`and is located in the folder `app/config/`.if the file does not exist yet, you have to create it. Contao automatically loads the or `config_prod.yml``config_dev.yml`and if not available the `config.yml`.
+The normal Bundle Config belongs in `config.yml`and is located in the folder `app/config/`.if the file does not exist yet, it must be created. Contao automatically loads the or `config_prod.yml``config_dev.yml`and if not available the `config.yml`.
 
 This allows you to realize different configurations for your test- or production environment (dev/prod) (e.g. more logging in debug mode). In addition, you can commit the `config.yml`configuration files `parameters.yml`in your repository. You can use a repository to store your project versions, for example, with Git.
 
@@ -141,13 +141,13 @@ This allows you to realize different configurations for your test- or production
 From version **4.8** of Contao, the file is located directly in the root directory of the installation under `config/`.
 {{% /notice %}}
 
-You can access the default configuration for Contao on the command line:
+You can access the default configuration for Contao from the command line:
 
 ```bash
 php vendor/bin/contao-console config:dump-reference contao
 ```
 
-This will give you information about the current configuration:
+You can get information about the current configuration this way:
 
 ```bash
 php vendor/bin/contao-console debug:config contao
@@ -319,15 +319,15 @@ contao:
 
 ## E-Mail sending configuration
 
-To set up the e-mail dispatch via SMTP server, you need the following information from your host:
+To set up the sending of e-mails via an SMTP server, you need the following information from your host:
 
 - The **hostname** of the SMTP server.
 - The **user name** for the SMTP server.
 - The **password** for the SMTP server.
 - The **port number of** the SMTP server (587 / 465)
-- The **encryption method** for the SMTP server (tls / ssl).
+- The **encryption method** for the SMTP server (tls / ssl)
 
-You can then add the file below the existing data in the `parameters.yml`:
+You will then insert this below the existing data in the`parameters.yml`
 
 ```yaml
 # This file has been auto-generated during installation
@@ -367,18 +367,18 @@ This command is no longer available in Contao **4.10** and later.
 
 In many cases, SMTP servers do not allow sending from any sender address. In most cases, the sender address must match the SMTP server access data used. Especially in multi-domain installations of Contao it might be important that the sender address of the emails that Contao sends matches the domain.
 
-From Contao **4.10** on, it is therefore possible to use multiple email configurations in Contao. These configurations can be selected per website start point, per form and per newsletter channel. For each e-mail configuration, you can also set the sender which will be used for each e-mail that is sent via the selected e-mail configuration.
+Since Contao **4.10**, it is possible to use multiple email configurations in Contao. These configurations can be selected per website start point, per form and per newsletter channel. For each e-mail configuration, you can also set the sender that will be used for each e-mail sent by the selected e-mail configuration.
 
-The configuration takes two steps. First, the available e-mail sending methods have to be set up via the Symfony Framework configuration in the `config.yml`so-called "Transports". For example, one or moreSMTP servers can be defined using the so-called "DSN" syntax. This syntax is basically very simple:
+The configuration requires two steps. First, the available e-mail sending methods have to be set in the Symfony framework configuration in the `config.yml`so-called "Transports". For example, one or moreSMTP servers can be defined using the so-called "DSN" syntax. This syntax is basically very simple:
 
 ```
 smtp://<BENUTZERNAME>:<PASSWORT>@<HOSTNAME>:<PORT>
 ```
 
-Replace them `<PLATZHALTER>`with the ones specified by the SMTP server you are using, or remove them accordingly. See also the information in the official [Symfony documentation](https://symfony.com/doc/4.4/mailer.html#transport-setup).
+Replace them `<PLATZHALTER>`with the information of the SMTP server used, or remove them accordingly. See also the information in the official [Symfony documentation](https://symfony.com/doc/4.4/mailer.html#transport-setup).
 
 {{% notice tip %}}
-Instead `smtp://`of using this option, you can also `smtps://`use it to automatically use SSL encryption over port`465`.
+Instead `smtp://`of using this, you can also `smtps://`use to automatically use SSL encryption over port`465`.
 {{% /notice %}}
 
 ```yml
@@ -391,7 +391,7 @@ framework:
             website2: smtps://email@example.de:foobar@example.de
 ```
 
-In the second step, the configured transports can be made available in the back end using the Contao framework configuration. In the following example, the transports `website1`and `website2`are made available:
+In the second step, the configured transports can be made available in the back end via the Contao framework configuration. In the following example, the transports `website1`and `website2`are made available:
 
 ```yml
 # config/config.yml
@@ -402,7 +402,7 @@ contao:
             website2: ~
 ```
 
-If the symfony application cache has been refreshed afterwards, these e-mail configurations are available for selection in the Contao back end.
+If the symfony application cache has been refreshed afterwards, these email configurations will be available for selection in the Contao back end.
 
 {{% notice note %}}
 If no transport is configured, the information from the `parameters.yml`. If a transport is configured but no transport is selected in the Contao back end, the first defined transport is used automatically.
@@ -420,7 +420,7 @@ contao:
                 from: Lorem Ipsum <email@example.de>
 ```
 
-It is also possible to define language for the description of the selection options in the backend via Translations per language:
+It is also possible to define language for the descriptions of the selection options in the back end via Translations per language:
 
 ```yml
 # translations/mailer_transports.en.yml
@@ -433,3 +433,13 @@ website2: 'SMTP for Website 2'
 website1: 'SMTP für Webseite 1'
 website2: 'SMTP für Webseite 2'
 ```
+
+**{{% notice warning %}}
+Empty cacheTo**  
+ make the changes visible in the back end, you have to empty the application cache at the end of the application using the Contao Manager ("System maintenance" &gt; "Refresh product cache") or alternatively on the command line. To do this, you have to be in the Contao installation directory.
+
+```bash
+php vendor/bin/contao-console cache:clear --env=prod --no-warmup
+```
+
+{{% /notice %}}

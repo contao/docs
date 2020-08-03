@@ -14,17 +14,17 @@ Contao automatically indexes the pages of your website as soon as they are acces
 
 ![The on-site search in the frontend](/de/layout/module-management/images/de/die-on-site-suche-im-frontend.png?classes=shadow)
 
-Note, however, that for security reasons your website will not be indexed if you are logged into the backend and access the frontend preview. It could be that there is content that has not yet been published, and you don't want it to appear in the search index before you publish it.
+Note, however, that for security reasons your website will not be indexed if you are logged into the backend and access the frontend preview. It could be that there is unpublished content on your website, which should not appear in the search index before you publish it.
 
 ## Search syntax
 
-With the Contao search engine you can find more than just words. The so-called search syntax supports the AND/OR search as well as phrase search and the use of wildcards.
+With the Contao search engine, you can find more than just words. The so-called search syntax supports the AND/OR search as well as the phrase search and the use of wildcards.
 
-This feature is by no means specific to Contao. Google and other search engines also support searching for phrases or forcing or excluding search terms. Most of the major providers offer even more options, e.g. searching for specific file types, languages or time periods.
+This feature is by no means specific to Contao. Google and other search engines also support searching for phrases or forcing or excluding search terms. Most of the major search engines offer even more options, for example, searching for specific file types, languages or time periods.
 
 ### AND/OR search
 
-The simple search for e.g. "web design" will return five hits.
+For example, a simple search for "web design" will return five hits.
 
 By default, Contao only searches for pages that contain all search terms (AND search). If you select the Find *any word* option, pages that contain only one of the two words will be returned (OR search). This increases the number of hits to seven.
 
@@ -34,41 +34,41 @@ Phrase searches are not just looking for single words, but for word combinations
 
 ### Search with wildcards
 
-Maybe you are not only interested in web design, but also in all sorts of other things related to the web, such as web hosting. That's why you want to find everything that starts with the word "web". This is exactly what Contao offers the wildcard search.
+Maybe you are not only interested in web design, but also in all kinds of other things related to the web, such as web hosting. That's why you want to find everything that starts with the word "web". This is exactly what Contao offers the wildcard search.
 
-Start a new search and enter "web\*" in the search field. The asterisk is a wildcard and stands for any other characters. As you can see, this search with 32 hits returns significantly more results than the previous two. It now includes words like "web application", "web hosting" or "web technology".
+Start a new search, and enter "web\*" in the search field. The asterisk is a wildcard and stands for any other characters. As you can see, this search with 32 hits returns significantly more results than the previous two. It now includes words like "web application", "web hosting" or "web technology".
 
-### Force keywords
+### Force search terms
 
-Enforcing search terms is a good way to further refine OR searches. Let's say you want to find all pages that contain the terms "web", "hosting" or "design" (eight hits), but you are only interested in design related to the web. The design of industrial products is not relevant for you and should therefore not appear in the results.
+Enforcing search terms is a good way to further refine OR searches. Let's say you want to find all pages that contain the terms "web", "hosting" or "design" (eight hits) but you are only interested in design related to the web. The design of industrial products is not relevant for you and should therefore not appear in the results.
 
-Surely you immediately realized that you can achieve this with two AND searches for "Web Design" and "Web Hosting". However, this solution is quite uncomfortable, as the two hit lists must be searched separately and cannot be sorted by a common relevance.
+Surely you immediately realized that you can achieve this with two AND searches for "web design" and "web hosting". However, this solution is quite uncomfortable, as the two hit lists must be searched separately and cannot be sorted by a common relevance.
 
-A better option is to search for "+web hosting design", which means "search for the words 'hosting' and 'design', but only on pages where the word web occurs". From the plus signContao recognizes that a search term must be included in any case. Note that there must be no space between the plus sign and the search term.
+A better option is to search for "+web hosting design", which means: "Search for the words 'hosting' and 'design', but only on pages where the word web occurs". From the plus signContao recognizes that a search term must be included in any case. Note that there must be no space between the plus sign and the search term.
 
-The refined search now returns only five hits.
+The refined search will now return only five hits.
 
 ### Exclude search term
 
-Excluding a search term is the counterpart to forcing a search term and ensures that only those pages are found that do not contain a specific term. In the example above, you have reduced the number of results from eight to five by using the enforcing word "Web". If you now exclude the word "Web", you will find exactly the three missing pages.
+Excluding a search term is the counterpart to forcing a search term and has the effect that only those pages are found which do not contain a certain term. In the example above, you have reduced the number of results from eight to five by using the enforcing word "Web". If you now exclude the word "Web", you will find exactly the three missing pages.
 
-Start a final search and enter "-web hosting design" in the search field. The minus sign indicates toContao that a search term must never appear on the page. Please note that there must not be a space between the minus sign and the search term.
+Start a last search and enter "-web hosting design" in the search field. The minus sign tells Contao that a search term must never appear on the page. Note that there must not be any space between the minus sign and the search term.
 
 As expected, the search now returns exactly three hits.
 
 ## Configuration of the search module
 
-Now that you know how to use the module in the frontend, we will now briefly explain how to configure it in the backend. Open the module administration and select the module "Application - Search Engine".
+Now that you know how to use the module in the frontend, we will now explain briefly how to configure it in the backend. Open the module manager and select the module "Application - Search Engine".
 
-**Default query type:** Here you define whether AND search (find all words) or OR search (find any word) is active by default.
+**Default query type:** Here you can specify whether AND search (find all words) or OR search (find any word) is active by default.
 
-**Inaccurate search:** If an inaccurate search for e.g. "design" is performed, the search module will return not only pages containing the term "design", but also pages containing the terms "web design" or "designer" (equivalent to a search with wildcards).
+**Inaccurate search:** If an inaccurate search for e.g. "design" is made, the search module will not only return pages with the term "design", but also pages with the terms "web design" or "designer" (corresponds to a search with wildcards).
 
-**Context range:** When displaying the search results, Contao not only shows the term found, but also the context to the left and right of it. Here you can specify how many characters to the right and left of a found term should be used as context.
+**Context range:** When displaying the search results, Contao not only displays the term found, but also the context to the right and left of it. Here you can specify how many characters to the right and left of a found term should be used as context.
 
 {{< version "4.8" >}}
 
-**Minimum keyword length:** Keywords that exceed the minimum length are ignored in the search results; set to 0 to disable.
+**Minimum search word length:** Search words that exceed the minimum length are ignored in the search results; set to 0 to deactivate.
 
 **Elements per page:** If you enter a value greater than 0, Contao will automatically wrap the page after this number of search results.
 
@@ -76,16 +76,16 @@ Now that you know how to use the module in the frontend, we will now briefly exp
 
 | Layout | Explanation |
 | ------ | ----------- |
-| Simple form | The simple search form consists of a text field to enter the search terms and a button to submit the form. |
+| Simple form | The simple search form consists of a text field for entering the search terms and a button for submitting the form. |
 | Extended form | The advanced search form also offers two radio buttons to select the options "find all words" and "find any word" (AND or OR search). |
 
-**Forwarding page:** Here you can specify a page to which visitors will be forwarded after submitting the search form.
+**Forwarding page:** Here you can specify a page to which visitors are forwarded after submitting the search form. If a redirect page is selected, this module will not display any search results. This configuration is useful if you include this search module in the page layout.
 
 **Reference page:** Here you can limit the search to a part of the page structure. Only the pages below the reference page will appear in the results.
 
 **Result template:** Here you select the template for the search results.
 
-**Individual template:** Here you can overwrite the standard `mod_search`template.
+**Custom template:** Here you can override the default `mod_search`template.
 
 **HTML outputThe**  
  frontend module generates the following HTML code:
@@ -160,13 +160,13 @@ The `<nav>`-element with the class pagination contains the markup of the page br
 
 ## Own search forms
 
-You may have noticed that the "Search Engine" module contains both the search form and the results list, but on many websites these elements are used separately to display a search field in the header. There are three solutions for this in Contao:
+You may have noticed that the search engine module contains both the search form and the result list, but on many websites, these elements are used separately to display a search field in the header. There are three solutions for this in Contao:
 
-1. You create a second search module in which you link to the actual search page using the redirect page and include it in the header.
-2. You create a search form with the form generator. This variant is described in[ Creating](../../../formulargenerator/ein-suchformular-erstellen/) a[ Search Form](../../../formulargenerator/ein-suchformular-erstellen/).
-3. You create a search form with the module "Own HTML code".
+1. You create a second search module, in which you use the redirect page to refer to the actual search page, and include it in the header.
+2. You create a search form with the form generator. This variant is described in section [Creating](../../../formulargenerator/ein-suchformular-erstellen/) a[ search form](../../../formulargenerator/ein-suchformular-erstellen/).
+3. You create a search form with the "Custom HTML code" module.
 
-**Creating a search form with the HTML module**
+**Create a search form with the HTML module**
 
 I will introduce the frontend module "Own HTML code" at the end of this page. The markup for the search form looks like this:
 
@@ -185,11 +185,11 @@ I will introduce the frontend module "Own HTML code" at the end of this page. Th
 <!-- indexer::continue -->
 ```
 
-The target page, which is called up when the form is submitted, has been entered here using an insert tag so that the form will still work even if the alias of the target page changes over time. GET" was selected as the transmission method and the search field was given the field name "keywords".
+The target page that is called when the form is submitted has been entered here using an insert tag so that the form still works even if the alias of the target page changes over time. GET" was selected as the transmission method and the search field was given the field name "keywords".
 
 ## Exclude areas from the search
 
-You must have just wondered what the two strange comments that surround the HTML code of our search form mean. These comments, invisible in the frontend, tell the search engine not to index the content inside.
+You might have just wondered what the two strange comments that enclose the HTML code of our search form mean. These comments, invisible in the frontend, tell the search engine not to index the content.
 
 ```html
 <!-- indexer::stop -->
