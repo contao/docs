@@ -175,10 +175,10 @@ kann der Shared Cache diese Antwort nie im Cache ablegen. Daneben gibt es aber n
   
 * `Cache-Control` darf nicht `no-store` enthalten. Dieser Wert verhindert jegliches Caching.
 
-* Es braucht eine Angabe zur Cache-Dauer, sprich `max-age` oder `s-maxage` im `Cache-Control` Header (auch hier gibt es
-  weitere Header, die für uns aber nicht relevant sind)
+* Es braucht eine Angabe zur Cache-Dauer, sprich `max-age` und optional `s-maxage` im `Cache-Control` Header (auch hier
+  gibt es weitere Header, die für uns aber nicht relevant sind)
  
-Im Falle des mitgelieferten Contao Cache-Proxys könnt ihr das relativ einfach überprüfen. Alle Antworten von Contao
+Im Falle des mitgelieferten Contao Cache-Proxys könnt ihr das relativ einfach überprüfen. Alle Antworten
 werden dann nämlich mit einem `Contao-Cache` Header ausgestattet, welcher grundsätzlich drei Werte annehmen kann:
 
 * `miss`
