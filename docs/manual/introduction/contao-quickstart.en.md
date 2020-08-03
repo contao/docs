@@ -1,8 +1,8 @@
 ---
-title: 'Contao in fast forward'
+title: 'Contao Quickstart'
 description: 'In this section, you will learn about the basic concepts and functionality of Contao in a condensed form.'
 aliases:
-    - /en/introduction/contao-in-fast-forward/
+    - /en/introduction/contao-quickstart/
 weight: 30
 ---
 
@@ -18,7 +18,7 @@ Contao is divided into two areas. The "backend" is the administration area where
 
 Access to the backend, i.e. the administration area, is basically only possible for registered users, who must log in with their user name and password before they can make changes to the website, whereas the frontend, i.e. the actual website, is publicly accessible by default.
 
-You can access the backend by adding `/contao`to the URL of your website.
+You can access the backend by adding `/contao` to the URL of your website.
 
 ## Users and Members
 
