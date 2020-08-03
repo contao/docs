@@ -18,6 +18,7 @@ If you have a suggestion for this section, use the "Edit this page" link in the 
 
 {{% expand "Ich habe mein Administrator-Passwort vergessen, wie kann ich es zurücksetzen?" %}}
 If there are multiple records in the database table "tl\_user" for which the admin flag is set, you can reset the first value for all of them to create a new administrator in the Contao [install toolbar](/de/installation/contao-installtool/).
+{{% /expand %}}
 
 {{% expand "Ich habe das Install-Tool Passwort vergessen, wie kann ich es zurücksetzen?" %}}
 Remove the line in the file "system/config/localconfig.php" starting with complete`$GLOBALS['TL_CONFIG']['installPassword']`. Afterwards you can set a new password with the [Install-Tool](/de/installation/contao-installtool/).
