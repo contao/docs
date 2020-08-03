@@ -162,10 +162,10 @@ the translation is fairly good, there are a few limitations however:
   was used to emphasize regular words that are not code.
 * The translation script caused some closing shortcode tags to be missing.
 
-These articles now need to be reviewed and revised. If you want to look over a section, 
-please create an [issue](https://github.com/contao/docs/issues) beforehand, which 
-we will assign to you then, so that we know that you are working on this. When working 
-on/fixing an article make sure that you:
+These articles now need to be reviewed and revised. Post in the 
+[issue of the respective section](https://github.com/contao/docs/issues?q=is%3Aissue+is%3Aopen+milestone%3A%22Manual%3A+English+translation+revision%22) 
+beforehand (see ), which we will then assign to you , so that we know that you are 
+working on this. When working on/fixing an article make sure that you:
 
 * look over the translations themselves,
 * look for specific terminologies, that should not be translated or should be translated 
