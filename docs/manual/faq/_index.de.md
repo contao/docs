@@ -70,7 +70,7 @@ Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anlei
 ## Konfiguration und Einstellung
 
 {{% expand "Es wird keine E-Mail über mein Formular versendet, was muss ich machen?" %}}
-Überprpüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#smtp-versand) deines Hosters oder 
+Überprüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#smtp-versand) deines Hosters oder 
 füge diese hinzu. Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die 
 Konsole einmalig den Anwendungs-Cache leeren.
 {{% /expand %}}
@@ -81,7 +81,7 @@ Absender für Formulare herangezogen. Du kannst im Bereich »Seitenstruktur« f�
 eine zusätzliche E-Mail-Adresse eintragen. Anschließend wird diese dann als Absender genutzt.
 {{% /expand %}}
 
-{{% expand "Wie kann ich das Sprachenkürzel der URL hinzufügen?" %}}
+{{% expand "Wie kann ich das Sprachkürzel der URL hinzufügen?" %}}
 Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `prepend_locale: true` hinzufügen.
 Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
 einmalig den Anwendungs-Cache leeren.
@@ -120,7 +120,7 @@ Du benötigst den Contao Manager um Contao und Erweiterung zu installieren/aktua
 {{% /expand %}}
 
 {{% expand "Kann ich den Contao Manager einer bestehenden Installation hinzufügen?" %}}
-Ja. Der [Contao Manager](/de/installation/contao-manager/#kann-der-contao-manager-zu-einer-bestehenden-installation-hinzugefuegt-werden) 
+Ja, der [Contao Manager](/de/installation/contao-manager/#kann-der-contao-manager-zu-einer-bestehenden-installation-hinzugefuegt-werden) 
 erkennt bei der Installation deine bestehende Contao Installation.
 {{% /expand %}}
 
