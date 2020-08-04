@@ -2,6 +2,8 @@
 title: "Debug Mode"
 description: "The debug mode is useful during development of the web application and for tracking down errors."
 weight: 30
+aliases:
+    - /en/system/debug-mode/
 ---
 
 

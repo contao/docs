@@ -54,7 +54,7 @@ dass die Copyright-Hinweise in den Contao-Dateien gemäß den Lizenzbedingungen 
 ## Template
 
 {{% expand "Wie kann ich alle Variablen meines Templates anzeigen?" %}}
-Die Information hierzu findest du unter [Template-Daten anzeigen](/de/templates/data/).
+Die Information hierzu findest du unter [Template-Daten anzeigen](/de/layout/templates/data/).
 {{% /expand %}}
 
 {{% expand "Wie kann ich ein Insert-Tag in meinem Template verwenden?" %}}
@@ -70,7 +70,7 @@ Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anlei
 ## Konfiguration und Einstellung
 
 {{% expand "Es wird keine E-Mail über mein Formular versendet, was muss ich machen?" %}}
-Überprüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#smtp-versand) deines Hosters oder 
+Überprüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#e-mail-versand-konfiguration) deines Hosters oder 
 füge diese hinzu. Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die 
 Konsole einmalig den Anwendungs-Cache leeren.
 {{% /expand %}}
@@ -79,6 +79,7 @@ Konsole einmalig den Anwendungs-Cache leeren.
 Die im Bereich »Einstellungen > E-Mail-Adresse des Systemadministrators« gesetzte E-Mail-Adresse wird u. a. auch als
 Absender für Formulare herangezogen. Du kannst im Bereich »Seitenstruktur« für den Seitentyp »Startpunkt einer Webseite«
 eine zusätzliche E-Mail-Adresse eintragen. Anschließend wird diese dann als Absender genutzt.
+Ab Contao 4.10 kannst du dies [konfigurieren](/de/system/einstellungen/#verschiedene-e-mail-konfigurationen-und-absenderadressen).
 {{% /expand %}}
 
 {{% expand "Wie kann ich das Sprachkürzel der URL hinzufügen?" %}}
