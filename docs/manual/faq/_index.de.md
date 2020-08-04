@@ -57,11 +57,6 @@ dass die Copyright-Hinweise in den Contao-Dateien gemäß den Lizenzbedingungen 
 Die Information hierzu findest du unter [Template-Daten anzeigen](/de/layout/templates/data/).
 {{% /expand %}}
 
-{{% expand "Wie kann ich ein Insert-Tag in meinem Template verwenden?" %}}
-Zur Nutzung eines [Insert-Tag](/de/artikelverwaltung/insert-tags/) `{{date}}` in deinem Template muss du dieses 
-über `$this->replaceInsertTags('{{date}}')` einsetzen.
-{{% /expand %}}
-
 {{% expand "Wie kann ich den TinyMCE-Editor konfigurieren?" %}}
 Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anleitungen/tinymce-konfiguration/).
 {{% /expand %}}
