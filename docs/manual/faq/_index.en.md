@@ -55,11 +55,6 @@ Please note that the copyright notices in the Contao files may not be removed or
 The information about this can be found under [Show Template Data](/en/layout/templates/template-data/).
 {{% /expand %}}
 
-{{% expand "How can I use an insert tag in my template?" %}}
-To use an [Insert-Tag](/en/article-management/insert-tags/) `{{date}}` in your template you have to insert 
-`$this->replaceInsertTags('{{date}}')`.
-{{% /expand %}}
-
 {{% expand "How can I configure the TinyMCE editor?" %}}
 The information about this can be found under [TinyMCE Editor Configuration](/en/guides/tinymce-configuration/).
 {{% /expand %}}
