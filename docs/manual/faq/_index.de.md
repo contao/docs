@@ -86,12 +86,24 @@ Ab Contao 4.10 kannst du dies [konfigurieren](/de/system/einstellungen/#verschie
 Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `prepend_locale: true` hinzufügen.
 Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
 einmalig den Anwendungs-Cache leeren.
+
+```yml
+# config/config.yml
+contao:
+    prepend_locale: true
+```
 {{% /expand %}}
 
 {{% expand "Kann man die URL Suffix ».html« entfernen?" %}}
 Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `url_suffix: ''` hinzufügen. 
 Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
 einmalig den Anwendungs-Cache leeren.
+
+```yml
+# config/config.yml
+contao:
+    url_suffix: ''
+```
 {{% /expand %}}
 
 {{% expand "Warum werden meine HTML-Angaben im TinyMCE-Editor nicht übernommen?" %}}
