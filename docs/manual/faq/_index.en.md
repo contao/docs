@@ -84,11 +84,21 @@ Since Contao 4.10 you can [set different e-mail configurations](/en/system/setti
 You can add the entry `prepend_locale: true` in [config.yml](/en/system/settings/#config-yml) and then you have to 
 empty the application cache once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
 Since Contao 4.10, you can freely define the URL prefix, independently of the language.
+```yml
+# config/config.yml
+contao:
+    prepend_locale: true
+```
 {{% /expand %}}
 
 {{% expand "Can the URL suffix .html be removed?" %}}
 You can add the entry `url_suffix: ''` in [config.yml](/en/system/settings/#config-yml) and then you have to 
 empty the application cache once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console. 
+```yml
+# config/config.yml
+contao:
+    url_suffix: ''
+```
 {{% /expand %}}
 
 {{% expand "Why is my HTML code not applied in the TinyMCE editor?" %}}
