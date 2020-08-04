@@ -1,6 +1,6 @@
 ---
-title: 'PHP setup'
-description: 'Ideal PHP setup for Contao.'
+title: 'PHP Setup'
+description: 'PHP setup recommendations for Contao.'
 aliases:
     - /en/performance/php-setup/
 ---
