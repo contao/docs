@@ -21,13 +21,13 @@ value for all of them to create a new administrator in the Contao [install toolb
 {{% /expand %}}
 
 {{% expand "I have forgotten the Install Tool password, how can I reset it?" %}}
-Remove the line in the file "system/config/localconfig.php" starting with complete`$GLOBALS['TL_CONFIG']['installPassword']`. 
+Remove the line in the file "system/config/localconfig.php" starting with `$GLOBALS['TL_CONFIG']['installPassword']`. 
 Afterwards you can set a new password with the [Install-Tool](/en/installation/contao-installtool/).
 {{% /expand %}}
 
 {{% expand "Can I maintain multiple websites with Contao?" %}}
 Yes Contao supports [multi-domain operation](/en/layout/site-structure/multi-domain-operation/) and 
-multilingual [ websites](/en/layout/site-structure/multilingual-websites/).
+multilingual [websites](/en/layout/site-structure/multilingual-websites/).
 {{% /expand %}}
 
 {{% expand "Can I maintain multilingual websites with Contao?" %}}
@@ -39,7 +39,7 @@ You can activate the [Contao debug mode](/en/system/debug-mode/) via the backend
 {{% /expand %}}
 
 {{% expand "Where can I find more Contao resources?" %}}
-You can find more Contao resources on the [project website](https://contao.org/de/netzwerk.html).
+You can find more Contao resources on the [project website](https://contao.org/en/network.html).
 {{% /expand %}}
 
 {{% expand "May I use Contao for commercial projects?" %}}
@@ -68,29 +68,30 @@ The information about this can be found under [TinyMCE Editor Configuration](/en
 ## Configuration and adjustment
 
 {{% expand "No e-mail is sent via my Form, what do I have to do?" %}}
-Check in or add `parameters.yml` the [SMTP details](/en/system/settings/#e-mail-sending-configuration) of your hoster. 
-Then you have to empty the application cache once via Contao Manager ("System maintenance" &gt; "Replace product cache") 
+Check the [SMTP details](/en/system/settings/#e-mail-sending-configuration) of your hoster in your `parameters.yml` or add them if missing.
+Then you have to empty the application cache once via Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") 
 or via the console.
 {{% /expand %}}
 
 {{% expand "Can I use a different e-mail Address as sender for forms?" %}}
-The e-mail address set in the "Settings &gt; System administrator's e-mail address" area is also used as the sender of forms. 
-You can enter an additional e-mail address in the "Page structure" section for the "Starting point of a website" page type. 
+The e-mail address set in "Settings &gt; E-mail address of the system administrator" is also used as the sender for e-mails sent by the form generator. 
+You can enter an additional e-mail address in the "Site structure" section for the "Starting point of a website" page type. 
 This E-Mail address will then be used as the sender.
-Since Contao 4.10 you can [configure](/en/system/settings/#different-e-mail-configurations-and-sender-addresses) this.
+Since Contao 4.10 you can [set different e-mail configurations](/en/system/settings/#different-e-mail-configurations-and-sender-addresses) per website starting point, form and newsletter channel.
 {{% /expand %}}
 
-{{% expand "How can I add the language abbreviation to the URL?" %}}
+{{% expand "How can I add the language parameter to the URL?" %}}
 You can add the entry `prepend_locale: true` in [config.yml](/en/system/settings/#config-yml) and then you have to 
-empty the application cache once using the Contao Manager ("System Maintenance" &gt; "Replace Prod. cache") or the console.
+empty the application cache once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
+Since Contao 4.10, you can freely define the URL prefix, independently of the language.
 {{% /expand %}}
 
 {{% expand "Can the URL suffix .html be removed?" %}}
 You can add the entry `url_suffix: ''` in [config.yml](/en/system/settings/#config-yml) and then you have to 
-empty the application cache once using the Contao Manager ("System Maintenance" &gt; "Replace Prod. cache") or the console. 
+empty the application cache once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console. 
 {{% /expand %}}
 
-{{% expand "Why is my HTML information not transferred in the TinyMCE editor?" %}}
+{{% expand "Why is my HTML code not applied in the TinyMCE editor?" %}}
 Answers can be found in the [TinyMCE Editor Configuration](/en/guides/tinymce-configuration/) section.
 {{% /expand %}}
 
@@ -113,21 +114,21 @@ you must then empty the script cache in "System Maintenance".
 ## Contao Manager
 
 {{% expand "Why do I need the Contao Manager?" %}}
-You need Contao Manager to install/upgrade/uninstall Contao and extensions. You can find more information 
+You need the Contao Manager to install/upgrade/uninstall Contao and extensions. You can find more information 
 under [About Contao Manager](/en/installation/contao-manager/).
 {{% /expand %}}
 
-{{% expand "Can I add Contao Manager to an existing installation?" %}}
+{{% expand "Can I add the Contao Manager to an existing installation?" %}}
 Yes, the [Contao Manager recognizes](/en/installation/contao-manager/#can-contao-manager-be-added-to-an-existing-installation) 
 your existing Contao installation during the installation process. 
 {{% /expand %}}
 
 {{% expand "How to update the Contao Manager?" %}}
 The [Contao Manager](/en/installation/contao-manager/#how-to-update-the-contao-manager) automatically performs 
-a background check when it is called. If a new version is available, Contao Manager will update itself.
+an update check when it is accessed. If a new version is available, Contao Manager will update itself.
 {{% /expand %}}
 
 {{% expand "What is the Composer Resolver Cloud?" %}}
 The [Composer Resolver Cloud](https://composer-resolver.cloud/) allows you to install Composer dependencies 
-via [Contao Manager](/en/installation/contao-manager/) even if your server does not have enough memory.
+via the [Contao Manager](/en/installation/contao-manager/) even if your server does not have enough memory.
 {{% /expand %}}
