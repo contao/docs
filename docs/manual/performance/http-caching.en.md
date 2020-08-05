@@ -71,12 +71,12 @@ Host: www.contao.org
 ```
 
 In this case the client would like to request the resource that is at `/about-us.html` and it tells the server that it
-understands the languages `en` and `de` (German) whereas it prefers `de` over `en`. It also requests the answer from
+understands the languages `en` and `de` (German) whereas it prefers `de` over `en`. It also requests the response from
 the host `www.contao.org`.
 Remember, the communication between client and server uses TCP/IP and one server can serve any number of domains so
 it is important to tell the server which one you'd like.
 
-An answer to this could look like this:
+A response to this could look like this:
 
 ```http
 HTTP/1.1 200 OK
@@ -104,8 +104,8 @@ The regular user of Contao is mainly interested in the `Cache-Control` header an
 - `private` or `public`
   
   Tells a client whether the response is private or public. The browser, for example, may cache both private and public
-  answers, since it does not pass on the response. A proxy, on the other hand, may not cache private responses, because
-  it passes the answer on. They cannot be combined. Something that can be cached publicly can also be cached privately,
+  responses, since it does not pass on the response. A proxy, on the other hand, may not cache private responses, because
+  it passes the response on. They cannot be combined. Something that can be cached publicly can also be cached privately,
   so a public (`public`) response implicitly means that multiple clients share the same cache entry. This is why we also
   speak of a "shared cache" in this case.
 
