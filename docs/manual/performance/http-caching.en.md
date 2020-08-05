@@ -16,8 +16,8 @@ having to even boot Contao at all.
 
 To do so, Contao relies on the Hypertext Transfer Protocol (HTTP) - the backbone of the Internet.
 
-Why should Contao reinvent the wheel when [smart people](https://tools.ietf.org/html/rfc2616) thought about caching
-HTTP responses already [when HTTP/1.1 was introduced in 1999](https://tools.ietf.org/html/rfc2616)?
+Why should Contao reinvent the wheel when [smart people thought about caching
+HTTP responses already when HTTP/1.1 was introduced back in 1999](https://tools.ietf.org/html/rfc2616)?
 
 ## HTTP
 
