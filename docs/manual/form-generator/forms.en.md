@@ -10,9 +10,9 @@ weight: 10
 This article is machine translated.
 {{% /notice %}}
 
-With the form generator you can create forms and either send their data by e-mail or write them into the database. Contao automatically checks the form input according to the rules you specify. TransferFiles can be sent as attachments or saved on the server.
+With the form generator you can create forms and either send their data by e-mail or write them to the database. Contao automatically validates the form input according to the rules you specify. Files can be sent as attachments or saved on the server.
 
-## Own SMTP server
+## Setting your own SMTP server
 
 Without specifying a separate SMTP server, the data is [sent](https://de.wikipedia.org/wiki/Sendmail) via [sendmail](https://de.wikipedia.org/wiki/Sendmail), which can lead to problems.
 
@@ -22,17 +22,17 @@ We recommend sending via the [e-mail transport protocol (SMTP)](../../system/ein
 
 ## Form configuration
 
-You can find the form generator in the backend navigation in the group "Contents".
+You can find the form generator in the "Content" group in the backend navigation.
 
-To create a new form click on![Create a new form](/de/icons/new.svg?classes=icon "Ein neues Formular anlegen") **New**.
+To create a new form click on **New** ![Create a new form](/de/icons/new.svg?classes=icon).
 
 ### Title and forwarding
 
 **Title:** The title of a form is only used in the backend.
 
-**Formalias:** The formalias is a unique reference that can be called instead of the numeric form ID.
+**Form alias:** The form alias is a unique reference that can be called instead of the numeric form ID.
 
-**Forwarding page:** Here you can define to which page a visitor is forwarded after submitting a form (confirmation page).
+**Redirect page:** Here you can define to which page a visitor is redirected to after submitting a form (confirmation/thank you page).
 
 ### Form configuration
 
@@ -40,7 +40,7 @@ To create a new form click on![Create a new form](/de/icons/new.svg?classes=icon
 
 ## Send form data
 
-If desired, Contao will send the form data by email to one or more recipients. If a form contains a fieldFor file transfer, the file will be attached to the e-mail.
+If desired, Contao will send the form data by email to one or more recipients. If a form contains a file upload field, the file will be attached to the e-mail.
 
 **Send by e-mail:** Here you can activate the sending of e-mails.
 
@@ -48,7 +48,7 @@ If desired, Contao will send the form data by email to one or more recipients. I
 
 **Subject:** Here you enter the subject of the e-mail.
 
-**Data format:** Here you can define the format in which the form data will be sent. Transferred files are always attached as an attachment.
+**Data format:** Here you can define the format in which the form data will be sent. Uploaded files are always sent as an attachment.
 
 | Data format | Declaration |
 | ----------- | ----------- |
@@ -56,7 +56,7 @@ If desired, Contao will send the form data by email to one or more recipients. I
 | XML file | An XML file with the form data is attached to the e-mail. |
 | CSV file | A CSV file with the form data is attached to the e-mail. |
 | CSV file (Microsoft Excel) | {{< version "4.10" >}} A CSV file in Microsoft Excel format with the form data is attached to the e-mail. |
-| E-mail | The form data is formatted as if the sender had written an e-mail with his e-mail program. In this case, the form generator only processes the fields `name`, `email`, `subject`and `message`ignores all other form fields. |
+| E-mail | The form data is formatted as if the sender had written an e-mail with his e-mail program. In this case, the form generator only processes the fields `name`, `email`, `subject`, and `message`, and ignores all other form fields. |
 
 **Omit empty fields:** If you select this option, only completed fields will be sent by e-mail. Fields without any input will be skipped.
 
@@ -76,9 +76,9 @@ In addition to or instead of sending the form by e-mail, form entries can also b
 
 In the expert settings you can change the transmission method of a form. By default, forms are sent as a POST request, which allows you to transfer large amounts of data such as files. However, in special cases, for example if you want to create a search form to control the Contao search engine, it is necessary to send a GET request instead, which attaches the form data to the URL of the page.
 
-**Transmission method:** Here you define the transmission method.
+**Submission method:** Here you define the submission method.
 
-**Disable HTML5 validation:** Here you add the `novalidate`-attribute to the form.
+**Disable HTML5 validation:** Here you add the `novalidate` attribute to the form.
 
 **CSS ID/class:** To address a specific form in a specific stylesheet, you can assign it a CSS ID or CSS class here.
 
