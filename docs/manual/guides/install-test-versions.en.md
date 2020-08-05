@@ -24,7 +24,7 @@ compatible with previous versions.
 
 Even though Contao uses thousands of automatic tests, unforeseen issues can always 
 occur after implementing new features or changing existing ones. Thus, testing still 
-needs to be done by actual users. Since Contao is an open source software it can 
+needs to be done by actual users. Since Contao is an Open Source software it can 
 benefit from community engagement for such tests.
 
 The following explains how you can participate in testing, by installing either

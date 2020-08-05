@@ -1,6 +1,6 @@
 ---
 title: 'Contao Open Source CMS'
-description: 'It is a CMS, i.e. a content management system under an open source license called Contao.'
+description: 'It is a CMS, i.e. a content management system under an Open Source license called Contao.'
 aliases:
     - /en/introduction/contao-open-source-cms/
 weight: 10
@@ -30,13 +30,13 @@ And even if you maintain your website all by yourself and don't need any rights 
 
 And because Contao is installed on a web server, you have access to your data around the clock and from anywhere in the world. So you can theoretically work on your website from a beach in Ibiza - although this often leads to problems during your family vacation, which are not technical.
 
-## open source
+## Open Source
 
 Open source software is characterized above all by the fact that the comprehensive "free" use of the program is permitted and there is no restriction of licensees or areas of use. The openly accessible source code and freedom from license fees are essential prerequisites for free usability.
 
-For you as a user, this means that you can use the program as you like - even for commercial projects. It is a common misconception that open source software may only be used for non-commercial projects. Such a "restriction of licensees" is just not allowed!
+For you as a user, this means that you can use the program as you like - even for commercial projects. It is a common misconception that Open Source software may only be used for non-commercial projects. Such a "restriction of licensees" is just not allowed!
 
-Of all open source licenses, the *General Public License*, or GPL for short, is probably the best known and most frequently used. It guarantees the licensee the right to use a program
+Of all Open Source licenses, the *General Public License*, or GPL for short, is probably the best known and most frequently used. It guarantees the licensee the right to use a program
 
 - to use,
 - to be changed at will,
@@ -46,6 +46,6 @@ Of all open source licenses, the *General Public License*, or GPL for short, is 
 
 In addition to these rights, the GPL also creates obligations for the licensee. For example, you may not remove any existing copyright notices or pass on the program under another license.
 
-Further details and answers to common questions about open source licenses in German (the license itself is in English) can be found on the website of [ifrOSS](http://www.ifross.org/faq-haeufig-gestellte-fragen), the Institute *for Legal Issues of Free and Open Source Software*.
+Further details and answers to common questions about Open Source licenses in German (the license itself is in English) can be found on the website of [ifrOSS](http://www.ifross.org/faq-haeufig-gestellte-fragen), the Institute *for Legal Issues of Free and Open Source Software*.
 
-Contao was initially also licensed under the GPL, but is now licensed under the *Lesser General Public License*, shortLGPL, which is legally an extension of the GPL. The main difference for us is that third party developers who do not write their own extensions for Contao do not necessarily have to put them under an open source license as it would be the case with the GPL.
+Contao was initially also licensed under the GPL, but is now licensed under the *Lesser General Public License*, shortLGPL, which is legally an extension of the GPL. The main difference for us is that third party developers who do not write their own extensions for Contao do not necessarily have to put them under an Open Source license as it would be the case with the GPL.

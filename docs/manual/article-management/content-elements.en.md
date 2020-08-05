@@ -39,7 +39,7 @@ With the select menu to the right you can define the semantic hierarchy of this 
 
 ## Text
 
-The content element "Text" adds formatted text to the article. The input takes place via a so-called Rich Text Editor, which allows you to set certain formatting at the touch of a button, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/), an open source editor by the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
+The content element "Text" adds formatted text to the article. The input takes place via a so-called Rich Text Editor, which allows you to set certain formatting at the touch of a button, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/), an Open Source editor by the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
 
 ![The Rich Text Editor TinyMCE](/de/article-management/images/de/der-rich-text-editor-tinymce.png?classes=shadow)
 
@@ -232,7 +232,7 @@ With a click on the icon next ![Import list data from a CSV file](/de/icons/tabl
 
 ## Code
 
-The content element "Code" adds formatted code to the article. The input is done with a so-called code editor. Contao uses the open source code editor from [Ace](https://ace.c9.io/).
+The content element "Code" adds formatted code to the article. The input is done with a so-called code editor. Contao uses the Open Source code editor from [Ace](https://ace.c9.io/).
 
 For the output in the frontend to work, the *js\_highlight template* must be included in the page layout.
 
