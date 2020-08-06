@@ -6,11 +6,8 @@ aliases:
 weight: 10
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
-With the form generator you can create forms and either send their data by e-mail or write them to the database. Contao automatically validates the form input according to the rules you specify. Files can be sent as attachments or saved on the server.
+With the form generator you can create forms and either send their data by e-mail or write them to the database. Contao 
+automatically validates the form input according to the rules you specify. Files can be sent as attachments or saved on the server.
 
 ## Setting your own SMTP server
 
@@ -36,11 +33,13 @@ To create a new form click on **New** ![Create a new form](/de/icons/new.svg?cla
 
 ### Form configuration
 
-**Allow HTML tags:** If you select this option, your visitors can use HTML code in the form fields. In the backend settings under "Allowed HTML Tags" you define which HTML tags are allowed.
+**Allow HTML tags:** If you select this option, your visitors can use HTML code in the form fields. In the backend 
+settings under "Allowed HTML Tags" you define which HTML tags are allowed.
 
 ## Send form data
 
-If desired, Contao will send the form data by email to one or more recipients. If a form contains a file upload field, the file will be attached to the e-mail.
+If desired, Contao will send the form data by email to one or more recipients. If a form contains a file upload field, 
+the file will be attached to the e-mail.
 
 **Send by e-mail:** Here you can activate the sending of e-mails.
 
@@ -48,7 +47,8 @@ If desired, Contao will send the form data by email to one or more recipients. I
 
 **Subject:** Here you enter the subject of the e-mail.
 
-**Data format:** Here you can define the format in which the form data will be sent. Uploaded files are always sent as an attachment.
+**Data format:** Here you can define the format in which the form data will be sent. Uploaded files are always sent as 
+an attachment.
 
 | Data format | Declaration |
 | ----------- | ----------- |
@@ -62,11 +62,13 @@ If desired, Contao will send the form data by email to one or more recipients. I
 
 ## Save form data
 
-In addition to or instead of sending the form by e-mail, form entries can also be stored in a table in the database. To do this, you have to create a corresponding field in the target table for each form field and make sure that the field names match.
+In addition to or instead of sending the form by e-mail, form entries can also be stored in a table in the database. To do 
+this, you have to create a corresponding field in the target table for each form field and make sure that the field names match.
 
 **Save entries:** Here you activate the saving of the data in the database.
 
-**Destination table:** Here you select the table in which the data should be written. The table must be created before. B. via phpMyAdmin must have been created before.
+**Destination table:** Here you select the table in which the data should be written. The table must be created
+ before (e.g. via phpMyAdmin) in order to show up as a choice.
 
 ## Template settings
 
@@ -74,7 +76,9 @@ In addition to or instead of sending the form by e-mail, form entries can also b
 
 ## Expert settings
 
-In the expert settings you can change the transmission method of a form. By default, forms are sent as a POST request, which allows you to transfer large amounts of data such as files. However, in special cases, for example if you want to create a search form to control the Contao search engine, it is necessary to send a GET request instead, which attaches the form data to the URL of the page.
+In the expert settings you can change the transmission method of a form. By default, forms are sent as a POST request, 
+which allows you to transfer large amounts of data such as files. However, in special cases, for example if you want to 
+create a search form to control the Contao search engine, it is necessary to send a GET request instead, which attaches the form data to the URL of the page.
 
 **Submission method:** Here you define the submission method.
 
@@ -82,4 +86,5 @@ In the expert settings you can change the transmission method of a form. By defa
 
 **CSS ID/class:** To address a specific form in a specific stylesheet, you can assign it a CSS ID or CSS class here.
 
-**Form ID:** Most frontend modules that receive user input have a form ID that can be used to uniquely identify them. If you want to access such a module with your own form, you have to specify this form ID here.
+**Form ID:** Most frontend modules that receive user input have a form ID that can be used to uniquely identify them. 
+If you want to access such a module with your own form, you have to specify this form ID here.

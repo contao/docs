@@ -6,10 +6,8 @@ aliases:
 weight: 11
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
-Forms are an important tool for interacting and collecting information from your visitors. The Contao form generator makes this easier by creating forms and abstracting both the process of code generation and the complexity of validating user input. Creating forms and form fields is done with a mouse click in the back end.
+Forms are an important tool for interacting and collecting information from your visitors. The Contao form generator 
+makes this easier by creating forms and abstracting both the process of code generation and the complexity of validating 
+user input. Creating forms and form fields is done with a mouse click in the back end.
 
 {{% children %}}
