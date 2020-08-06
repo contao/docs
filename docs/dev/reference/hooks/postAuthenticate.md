@@ -13,7 +13,7 @@ passes the user object as argument and does not expect a return value.
 
 
 {{% notice info %}}
-Using the `postAuthenticate` hook has been deprecated and will no longer work in Contao 5.0.
+Using the `postAuthenticate` hook has been deprecated and will no longer work in Contao 5.0. Use the [`security.interactive_login`](https://symfony.com/doc/current/components/security/authentication.html#security-events) event instead. 
 {{% /notice %}}
 
 
