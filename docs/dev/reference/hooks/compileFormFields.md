@@ -42,14 +42,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CompileFormFieldsListener implements ServiceAnnotationInterface
+/**
+ * @Hook("compileFormFields")
+ */
+class CompileFormFieldsListener
 {
-    /**
-     * @Hook("compileFormFields")
-     */
-    public function onCompileFormFields(array $fields, string $formId, Form $form): array
+    public function __invoke(array $fields, string $formId, Form $form): array
     {
         // Modify $fields as needed
 

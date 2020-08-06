@@ -71,14 +71,13 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Image;
 use Contao\File;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetImageListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getImage")
+ */
+class GetImageListener
 {
-    /**
-     * @Hook("getImage")
-     */
-    public function onGetImage(
+    public function __invoke(
         string $originalPath, 
         int $width, 
         int $height, 

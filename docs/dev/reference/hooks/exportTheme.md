@@ -37,14 +37,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ZipWriter;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ExportThemeListener implements ServiceAnnotationInterface
+/**
+ * @Hook("exportTheme")
+ */
+class ExportThemeListener
 {
-    /**
-     * @Hook("exportTheme")
-     */
-    public function onExportTheme(\DOMDocument $xml, ZipWriter $zipArchive, int $themeId): void
+    public function __invoke(\DOMDocument $xml, ZipWriter $zipArchive, int $themeId): void
     {
         // Do something …
     }

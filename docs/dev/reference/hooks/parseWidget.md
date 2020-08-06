@@ -36,14 +36,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Widget;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseWidgetListener implements ServiceAnnotationInterface
+/**
+ * @Hook("parseWidget")
+ */
+class ParseWidgetListener
 {
-    /**
-     * @Hook("parseWidget")
-     */
-    public function onParseWidget(string $buffer, Widget $widget): string
+    public function __invoke(string $buffer, Widget $widget): string
     {
         // Do something …
         

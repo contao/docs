@@ -37,14 +37,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\FormModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetFormListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getForm")
+ */
+class GetFormListener
 {
-    /**
-     * @Hook("getForm")
-     */
-    public function onGetForm(FormModel $form, string $buffer): string
+    public function __invoke(FormModel $form, string $buffer): string
     {
         if (2 === (int) $form->id) {
             // Do something …

@@ -27,14 +27,13 @@ not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostDownloadListener implements ServiceAnnotationInterface
+/**
+ * @Hook("postDownload")
+ */
+class PostDownloadListener
 {
-    /**
-     * @Hook("postDownload")
-     */
-    public function onPostDownload(string $file): void
+    public function __invoke(string $file): void
     {
         // Do something …
     }

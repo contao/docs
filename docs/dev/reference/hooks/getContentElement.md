@@ -44,14 +44,13 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ContentElement;
 use Contao\ContentModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetContentElementListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getContentElement")
+ */
+class GetContentElementListener
 {
-    /**
-     * @Hook("getContentElement")
-     */
-    public function onGetContentElement(ContentModel $contentModel, string $buffer, $element): string
+    public function __invoke(ContentModel $contentModel, string $buffer, $element): string
     {
         // Modify or create new $buffer here …
 

@@ -49,14 +49,13 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
 use Contao\Widget;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class LoadFormFieldListener implements ServiceAnnotationInterface
+/**
+ * @Hook("loadFormField")
+ */
+class LoadFormFieldListener
 {
-    /**
-     * @Hook("loadFormField")
-     */
-    public function onLoadFormField(Widget $widget, string $formId, array $formData, Form $form): Widget
+    public function __invoke(Widget $widget, string $formId, array $formData, Form $form): Widget
     {
         if ('myForm' === $formId) {
             $widget->class.= ' myclass';

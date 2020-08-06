@@ -64,14 +64,13 @@ If your function is not responsible for this insert tag, you **must** return
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ReplaceInsertTagsListener implements ServiceAnnotationInterface
+/**
+ * @Hook("replaceInsertTags")
+ */
+class ReplaceInsertTagsListener
 {
-    /**
-     * @Hook("replaceInsertTags")
-     */
-    public function onReplaceInsertTags(
+    public function __invoke(
         string $insertTag,
         bool $useCache,
         string $cachedValue,

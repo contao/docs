@@ -51,14 +51,13 @@ Return `true` if the current page should be reloaded. Otherwise return `false` o
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ReviseTableListener implements ServiceAnnotationInterface
+/**
+ * @Hook("reviseTable")
+ */
+class ReviseTableListener
 {
-    /**
-     * @Hook("reviseTable")
-     */
-    public function onReviseTable(string $table, array $newRecords, ?string $parentTable, ?array $childTables): ?bool
+    public function __invoke(string $table, array $newRecords, ?string $parentTable, ?array $childTables): ?bool
     {
         // Do something …
     }

@@ -34,14 +34,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\User;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostAuthenticateListener implements ServiceAnnotationInterface
+/**
+ * @Hook("postAuthenticate")
+ */
+class PostAuthenticateListener
 {
-    /**
-     * @Hook("postAuthenticate")
-     */
-    public function onPostAuthenticate(User $user): void
+    public function __invoke(User $user): void
     {
         // Do something …
     }

@@ -42,14 +42,13 @@ Return the original `$buffer` or override with your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class OutputFrontendTemplateListener implements ServiceAnnotationInterface
+/**
+ * @Hook("outputFrontendTemplate")
+ */
+class OutputFrontendTemplateListener
 {
-    /**
-     * @Hook("outputFrontendTemplate")
-     */
-    public function onOutputFrontendTemplate(string $buffer, string $template): string
+    public function __invoke(string $buffer, string $template): string
     {
         if ($template === 'fe_page') {
             // Modify $buffer

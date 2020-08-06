@@ -39,14 +39,13 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\PageRegular;
 use Contao\LayoutModel;
 use Contao\PageModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetPageLayoutListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getPageLayout")
+ */
+class GetPageLayoutListener
 {
-    /**
-     * @Hook("getPageLayout")
-     */
-    public function onGetPageLayout(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
+    public function __invoke(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
     {
         // Modify the page or layout object
     }

@@ -76,12 +76,11 @@ the `onload` [DCA callback][DcaCallbacks] for the specific DCA.
 namespace App\EventListener\DataContainer;
 
 use Contao\CoreBundle\ServiceAnnotation\Callback;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @Callback(target="config.onload", table="tl_content")
  */
-class FilesOnLoadCallbackListener implements ServiceAnnotationInterface
+class FilesOnLoadCallbackListener
 {
     public function __invoke(): void
     {

@@ -35,14 +35,13 @@ and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ActivateRecipientListener implements ServiceAnnotationInterface
+/**
+ * @Hook("activateRecipient")
+ */
+class ActivateRecipientListener
 {
-    /**
-     * @Hook("activateRecipient")
-     */
-    public function onActivateRecipient(string $email, array $recipientIds, array $channelIds): void
+    public function __invoke(string $email, array $recipientIds, array $channelIds): void
     {
         // Do something …
     }

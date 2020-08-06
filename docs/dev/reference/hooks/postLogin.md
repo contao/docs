@@ -34,14 +34,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\User;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostLoginListener implements ServiceAnnotationInterface
+/**
+ * @Hook("postLogin")
+ */
+class PostLoginListener
 {
-    /**
-     * @Hook("postLogin")
-     */
-    public function onPostLogin(User $user): void
+    public function __invoke(User $user): void
     {
         if ($user instanceof \Contao\FrontendUser) {
             // Do something with the front end user $user  

@@ -52,14 +52,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetAllEventsListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getAllEvents")
+ */
+class GetAllEventsListener
 {
-    /**
-     * @Hook("getAllEvents")
-     */
-    public function onGetAllEvents(array $events, array $calendars, int $timeStart, int $timeEnd, Module $module): array
+    public function __invoke(array $events, array $calendars, int $timeStart, int $timeEnd, Module $module): array
     {
         // Add events to $events or modify the array …
 

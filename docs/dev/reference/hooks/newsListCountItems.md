@@ -42,14 +42,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class NewsListCountItemsListener implements ServiceAnnotationInterface
+/**
+ * @Hook("newsListCountItems")
+ */
+class NewsListCountItemsListener
 {
-    /**
-     * @Hook("newsListCountItems")
-     */
-    public function onNewsListCountItems(array $newsArchives, bool $featuredOnly, Module $module)
+    public function __invoke(array $newsArchives, bool $featuredOnly, Module $module)
     {
         if (…) {
             // Query the database and return the number of records

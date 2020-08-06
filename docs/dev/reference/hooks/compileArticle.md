@@ -38,14 +38,13 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 use Contao\FrontendTemplate;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CompileArticleListener implements ServiceAnnotationInterface
+/**
+ * @Hook("compileArticle")
+ */
+class CompileArticleListener
 {
-    /**
-     * @Hook("compileArticle")
-     */
-    public function onCompileArticle(FrontendTemplate $template, array $data, Module $module): void
+    public function __invoke(FrontendTemplate $template, array $data, Module $module): void
     {
         $template->customContent = '<p>This will be available in mod_article.html5 via $this->customContent</p>';
     }

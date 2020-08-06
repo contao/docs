@@ -27,14 +27,13 @@ nothing to keep.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class RemoveOldFeedsListener implements ServiceAnnotationInterface
+/**
+ * @Hook("removeOldFeeds")
+ */
+class RemoveOldFeedsListener
 {
-    /**
-     * @Hook("removeOldFeeds")
-     */
-    public function onRemoveOldFeeds(): array
+    public function __invoke(): array
     {
         // Return the names of your custom feeds which should not be removed
         return ['custom'];

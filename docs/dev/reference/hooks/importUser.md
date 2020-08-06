@@ -46,14 +46,13 @@ you added the user to the respective table, or `false` if not.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ImportUserListener implements ServiceAnnotationInterface
+/**
+ * @Hook("importUser")
+ */
+class ImportUserListener
 {
-    /**
-     * @Hook("importUser")
-     */
-    public function onImportUser(string $username, string $password, string $table): bool
+    public function __invoke(string $username, string $password, string $table): bool
     {
         if ('tl_member' === $table) {
             // Import user from an LDAP server

@@ -36,14 +36,13 @@ Add your custom modules to the list and return the array of back end modules.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetUserNavigationListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getUserNavigation")
+ */
+class GetUserNavigationListener
 {
-    /**
-     * @Hook("getUserNavigation")
-     */
-    public function onGetUserNavigation(array $modules, bool $showAll): array
+    public function __invoke(array $modules, bool $showAll): array
     {
         // Add custom navigation item to the Contao website
         $modules['system']['modules']['contao'] = [

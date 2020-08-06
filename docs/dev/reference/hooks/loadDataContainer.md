@@ -26,14 +26,13 @@ the file name as argument and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class LoadDataContainerListener implements ServiceAnnotationInterface
+/**
+ * @Hook("loadDataContainer")
+ */
+class LoadDataContainerListener
 {
-    /**
-     * @Hook("loadDataContainer")
-     */
-    public function onLoadDataContainer(string $table): void
+    public function __invoke(string $table): void
     {
         // Do something …
     }
