@@ -43,9 +43,8 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Database\Result;
 use Contao\Email;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class SendNewsletterListener implements ServiceAnnotationInterface
+class SendNewsletterListener
 {
     /**
      * @Hook("sendNewsletter")

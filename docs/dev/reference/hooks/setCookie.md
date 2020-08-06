@@ -39,9 +39,8 @@ Return `$cookie` or a custom object with all properties.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class SetCookieListener implements ServiceAnnotationInterface
+class SetCookieListener
 {
     /**
      * @Hook("setCookie")

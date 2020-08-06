@@ -49,9 +49,8 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
 use Contao\Widget;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class LoadFormFieldListener implements ServiceAnnotationInterface
+class LoadFormFieldListener
 {
     /**
      * @Hook("loadFormField")

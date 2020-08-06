@@ -42,9 +42,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Model;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class IsVisibleElementListener implements ServiceAnnotationInterface
+class IsVisibleElementListener
 {
     /**
      * @Hook("isVisibleElement")

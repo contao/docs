@@ -27,9 +27,8 @@ nothing to keep.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class RemoveOldFeedsListener implements ServiceAnnotationInterface
+class RemoveOldFeedsListener
 {
     /**
      * @Hook("removeOldFeeds")

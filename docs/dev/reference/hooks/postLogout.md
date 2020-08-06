@@ -31,9 +31,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\User;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostLogoutListener implements ServiceAnnotationInterface
+class PostLogoutListener
 {
     /**
      * @Hook("postLogout")

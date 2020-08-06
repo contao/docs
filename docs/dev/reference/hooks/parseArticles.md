@@ -38,9 +38,8 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\FrontendTemplate;
 use Contao\Module;
 use Contao\UserModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseArticlesListener implements ServiceAnnotationInterface
+class ParseArticlesListener
 {
     /**
      * @Hook("parseArticles")

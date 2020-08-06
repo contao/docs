@@ -46,9 +46,8 @@ you added the user to the respective table, or `false` if not.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ImportUserListener implements ServiceAnnotationInterface
+class ImportUserListener
 {
     /**
      * @Hook("importUser")

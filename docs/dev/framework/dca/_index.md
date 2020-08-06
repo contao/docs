@@ -122,9 +122,8 @@ namespace App\EventListener\DataContainer;
 
 use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\DataContainer;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class NewsOnsubmitCallbackListener implements ServiceAnnotationInterface
+class NewsOnsubmitCallbackListener
 {
     /**
      * @Callback(table="tl_news", target="config.onsubmit")
@@ -147,12 +146,11 @@ namespace App\EventListener\DataContainer;
 
 use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\DataContainer;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @Callback(table="tl_news", target="config.onsubmit")
  */
-class NewsOnsubmitCallbackListener implements ServiceAnnotationInterface
+class NewsOnsubmitCallbackListener
 {
     public function __invoke(DataContainer $dc): void
     {

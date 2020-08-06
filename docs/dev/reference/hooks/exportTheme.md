@@ -37,9 +37,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ZipWriter;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ExportThemeListener implements ServiceAnnotationInterface
+class ExportThemeListener
 {
     /**
      * @Hook("exportTheme")

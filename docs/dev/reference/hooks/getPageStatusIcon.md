@@ -38,9 +38,8 @@ the unchanged second parameter.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetPageStatusIconListener implements ServiceAnnotationInterface
+class GetPageStatusIconListener
 {
     /**
      * @Hook("getPageStatusIcon")

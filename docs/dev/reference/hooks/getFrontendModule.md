@@ -41,9 +41,8 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 use Contao\ModuleModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetFrontendModuleListener implements ServiceAnnotationInterface
+class GetFrontendModuleListener
 {
     /**
      * @Hook("getFrontendModule")

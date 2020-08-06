@@ -36,9 +36,8 @@ Add your custom modules to the list and return the array of back end modules.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetUserNavigationListener implements ServiceAnnotationInterface
+class GetUserNavigationListener
 {
     /**
      * @Hook("getUserNavigation")

@@ -33,9 +33,8 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 use Contao\MemberModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ActivateAccountListener implements ServiceAnnotationInterface
+class ActivateAccountListener
 {
     /**
      * @Hook("activateAccount")

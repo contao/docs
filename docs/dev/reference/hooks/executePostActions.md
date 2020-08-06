@@ -32,9 +32,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\DataContainer;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ExecutePostActionsListener implements ServiceAnnotationInterface
+class ExecutePostActionsListener
 {
     /**
      * @Hook("executePostActions")

@@ -90,12 +90,11 @@ use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
 use Contao\ModuleModel;
 use Contao\ModuleNewsList;
 use Symfony\Component\HttpFoundation\Response;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @FrontendModule(category="news")
  */
-class AppExampleController extends ModuleNewsList implements ServiceAnnotationInterface
+class AppExampleController extends ModuleNewsList
 {
     public function __construct() {}
 
@@ -119,12 +118,11 @@ use Contao\ContentGallery;
 use Contao\ContentModel;
 use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Symfony\Component\HttpFoundation\Response;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @ContentElement(category="news")
  */
-class AppExampleController extends ContentGallery implements ServiceAnnotationInterface
+class AppExampleController extends ContentGallery
 {
     public function __construct() {}
 

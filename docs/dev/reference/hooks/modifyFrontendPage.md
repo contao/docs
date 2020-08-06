@@ -43,9 +43,8 @@ Return the original `$buffer` or override with your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ModifyFrontendPageListener implements ServiceAnnotationInterface
+class ModifyFrontendPageListener
 {
     /**
      * @Hook("modifyFrontendPage")

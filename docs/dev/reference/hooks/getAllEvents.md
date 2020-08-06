@@ -52,9 +52,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetAllEventsListener implements ServiceAnnotationInterface
+class GetAllEventsListener
 {
     /**
      * @Hook("getAllEvents")

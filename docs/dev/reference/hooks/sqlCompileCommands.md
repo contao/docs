@@ -31,9 +31,8 @@ Return the array of changes that should be applied to the database.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class SqlCompileCommandsListener implements ServiceAnnotationInterface
+class SqlCompileCommandsListener
 {
     /**
      * @Hook("sqlCompileCommands")

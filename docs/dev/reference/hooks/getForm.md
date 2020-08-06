@@ -37,9 +37,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\FormModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetFormListener implements ServiceAnnotationInterface
+class GetFormListener
 {
     /**
      * @Hook("getForm")

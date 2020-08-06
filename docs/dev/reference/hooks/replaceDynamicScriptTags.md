@@ -43,9 +43,8 @@ A string containing the (modified) bufffer content.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ReplaceDynamicScriptTagsListener implements ServiceAnnotationInterface
+class ReplaceDynamicScriptTagsListener
 {
     /**
      * @Hook("replaceDynamicScriptTags")

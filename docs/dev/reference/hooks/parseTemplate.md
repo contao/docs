@@ -27,9 +27,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Template;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseTemplateListener implements ServiceAnnotationInterface
+class ParseTemplateListener
 {
     /**
      * @Hook("parseTemplate")

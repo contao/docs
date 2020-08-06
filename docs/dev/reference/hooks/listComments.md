@@ -33,9 +33,8 @@ responsible for the source table.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ListCommentsListener implements ServiceAnnotationInterface
+class ListCommentsListener
 {
     /**
      * @Hook("listComments")

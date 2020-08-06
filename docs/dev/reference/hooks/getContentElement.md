@@ -44,9 +44,8 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ContentElement;
 use Contao\ContentModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetContentElementListener implements ServiceAnnotationInterface
+class GetContentElementListener
 {
     /**
      * @Hook("getContentElement")

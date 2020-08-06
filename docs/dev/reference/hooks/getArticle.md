@@ -27,9 +27,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ArticleModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetArticleListener implements ServiceAnnotationInterface
+class GetArticleListener
 {
     /**
      * @Hook("getArticle")

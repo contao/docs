@@ -45,9 +45,8 @@ definition should be used.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CompileDefinitionListener implements ServiceAnnotationInterface
+class CompileDefinitionListener
 {
     /**
      * @Hook("compileDefinition")

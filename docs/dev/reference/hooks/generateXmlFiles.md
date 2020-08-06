@@ -20,9 +20,8 @@ It has no parameters and does not expect a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GenerateXmlFilesListener implements ServiceAnnotationInterface
+class GenerateXmlFilesListener
 {
     /**
      * @Hook("generateXmlFiles")

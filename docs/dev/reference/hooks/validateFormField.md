@@ -46,9 +46,8 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
 use Contao\Widget;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ValidateFormFieldListener implements ServiceAnnotationInterface
+class ValidateFormFieldListener
 {
     /**
      * @Hook("validateFormField")

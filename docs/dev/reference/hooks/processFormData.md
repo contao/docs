@@ -44,9 +44,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ProcessFormDataListener implements ServiceAnnotationInterface
+class ProcessFormDataListener
 {
     /**
      * @Hook("processFormData")

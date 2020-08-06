@@ -39,9 +39,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ZipReader;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CompareThemeFilesListener implements ServiceAnnotationInterface
+class CompareThemeFilesListener
 {
     /**
      * @Hook("compareThemeFiles")

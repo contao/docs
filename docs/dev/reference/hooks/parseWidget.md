@@ -36,9 +36,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Widget;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseWidgetListener implements ServiceAnnotationInterface
+class ParseWidgetListener
 {
     /**
      * @Hook("parseWidget")

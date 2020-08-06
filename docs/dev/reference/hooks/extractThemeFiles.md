@@ -42,9 +42,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ZipReader;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ExtractThemeFilesListener implements ServiceAnnotationInterface
+class ExtractThemeFilesListener
 {
     /**
      * @Hook("extractThemeFiles")

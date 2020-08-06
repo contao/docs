@@ -44,9 +44,8 @@ A string containing the new (or previous) URL.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GenerateFrontendUrlListener implements ServiceAnnotationInterface
+class GenerateFrontendUrlListener
 {
     /**
      * @Hook("generateFrontendUrl")

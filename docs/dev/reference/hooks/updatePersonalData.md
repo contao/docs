@@ -40,9 +40,8 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 use Contao\FrontendUser;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class UpdatePersonalDataListener implements ServiceAnnotationInterface
+class UpdatePersonalDataListener
 {
     /**
      * @Hook("updatePersonalData")

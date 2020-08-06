@@ -41,9 +41,8 @@ use Contao\Form;
 use Contao\FrontendUser;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\Security\Core\Security;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class StoreFormDataListener implements ServiceAnnotationInterface
+class StoreFormDataListener
 {
     /**
      * @var Connection

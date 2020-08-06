@@ -33,9 +33,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ModuleArticle;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PrintArticleAsPdfListener implements ServiceAnnotationInterface
+class PrintArticleAsPdfListener
 {
     /**
      * @Hook("printArticleAsPdf")

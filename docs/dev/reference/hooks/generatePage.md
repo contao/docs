@@ -38,9 +38,8 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\PageRegular;
 use Contao\LayoutModel;
 use Contao\PageModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GeneratePageListener implements ServiceAnnotationInterface
+class GeneratePageListener
 {
     /**
      * @Hook("generatePage")

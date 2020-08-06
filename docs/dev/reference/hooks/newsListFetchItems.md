@@ -50,9 +50,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class NewsListFetchItemsListener implements ServiceAnnotationInterface
+class NewsListFetchItemsListener
 {
     /**
      * @Hook("newsListFetchItems")

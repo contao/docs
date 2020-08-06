@@ -50,9 +50,8 @@ Using the `addLogEntry` hook has been deprecated and will no longer work in Cont
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class AddLogEntryListener implements ServiceAnnotationInterface
+class AddLogEntryListener
 {
     /**
      * @Hook("addLogEntry")

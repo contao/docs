@@ -45,9 +45,8 @@ as value or null to keep the default behaviour.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CreateDefinitionListener implements ServiceAnnotationInterface
+class CreateDefinitionListener
 {
     /**
      * @Hook("createDefinition")

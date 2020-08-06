@@ -35,14 +35,13 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\FrontendTemplate;
 use Contao\Module;
 use Contao\UserModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseArticlesListener implements ServiceAnnotationInterface
+/**
+ * @Hook("parseArticles")
+ */
+class ParseArticlesListener
 {
-    /**
-     * @Hook("parseArticles")
-     */
-    public function onParseArticles(FrontendTemplate $template, array $newsEntry, Module $module): void
+    public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void
     {
         // Fetch the news entry's author
         $author = UserModel::findByPk($newsEntry['author']);
@@ -93,9 +92,8 @@ use App\ExternalMembers\ExternalMemberService;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 use Contao\FrontendUser;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class UpdatePersonalDataListener implements ServiceAnnotationInterface
+class UpdatePersonalDataListener
 {
     private $externalMemberService;
 

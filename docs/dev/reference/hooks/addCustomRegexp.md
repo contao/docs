@@ -54,9 +54,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Widget;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class AddCustomRegexpListener implements ServiceAnnotationInterface
+class AddCustomRegexpListener
 {
     /**
      * @Hook("addCustomRegexp")

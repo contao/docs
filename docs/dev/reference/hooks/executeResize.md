@@ -39,9 +39,8 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Image;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ExecuteResizeListener implements ServiceAnnotationInterface
+class ExecuteResizeListener
 {
     /**
      * @Hook("executeResize")

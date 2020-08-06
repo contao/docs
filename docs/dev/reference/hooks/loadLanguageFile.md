@@ -36,9 +36,8 @@ return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class LoadLanguageFileListener implements ServiceAnnotationInterface
+class LoadLanguageFileListener
 {
     /**
      * @Hook("loadLanguageFile")
