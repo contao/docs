@@ -1,24 +1,20 @@
 ---
-title: 'Use of SVG files'
-description: 'Practical information on how to include SVG files.'
+title: "Use of SVG files"
+description: "Practical information on how to include SVG files."
 aliases:
     - /en/guides/svg/
 weight: 60
 tags:
-    - Theme
-    - Template
+    - "Theme"
+    - "Template"
 ---
-
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
 
 ## The "SVG file"
 
 Using files in [SVG format](https://developer.mozilla.org/en-US/docs/Web/SVG) offers many advantages: As a pure vector format, they are scaled lossless, unlike other formats. SVG files are often used to display a logo or symbols.
 
-You want to use your SVG file in Contao  
-? For our example, we use the Contao logo in SVG format (`contao.svg`):
+You want to use your SVG file in Contao?<br>
+For our example, we use the Contao logo in SVG format (`contao.svg`):
 
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -26,9 +22,12 @@ You want to use your SVG file in Contao
 </svg>
 ```
 
-Copy the SVG file into a directory below "files" that is marked as "Public". As with other image formats, you will see a preview in the [file manager](/de/dateiverwaltung/).
+Copy the SVG file into a directory below "files" that is marked as "Public". As with other image formats, you will 
+see a preview in the [file manager](/en/file-manager/).
 
-Then you can select the SVG file in the [content element](/de/artikelverwaltung/inhaltselemente/) of type "Image". Optionally, the settings for the "[image size](/de/artikelverwaltung/inhaltselemente/#bild)" can also be defined here, similar to other image formats. Contao creates the following source code:
+Then you can select the SVG file in the [content element](/en/article-management/content-elements/) of type "Image". 
+Optionally, the settings for the "[image size](/en/article-management/content-elements/#image)" can also be defined here, 
+similar to other image formats. Contao creates the following source code:
 
 ```html
 <div class="ce_image first last block">
@@ -38,17 +37,25 @@ Then you can select the SVG file in the [content element](/de/artikelverwaltung/
 </div>
 ```
 
-With different "[image size](/de/artikelverwaltung/inhaltselemente/#bild)" settings we get the following representation(s) via the "`img`" HTML element:
+With different "[image size](/en/article-management/content-elements/#image)" settings we get the following 
+representation(s) via the "`img`" HTML element:
 
 ![SVG Contao Brand 40px](/de/guides/images/de/svg/contao-gray.svg?width=40px)![SVG Contao Brand 60px](/de/guides/images/de/svg/contao-gray.svg?width=60px)![SVG Contao Brand 80px](/de/guides/images/de/svg/contao-gray.svg?width=80px)![SVG Contao Brand 100px](/de/guides/images/de/svg/contao-gray.svg?width=100px)
 
+
 ## The "inline" alternative
 
-The integration of SVG files using the HTML element "`img`" is a variant. More options are available if you use the SVG file "`inline`". The content of the SVG file "`<svg>...</svg>`" is directly stored in the HTML source code. In this form you can then influence the presentation with CSS information.
+The integration of SVG files using the HTML element "`img`" is a variant. More options are available if you use 
+the SVG file "`inline`". The content of the SVG file "`<svg>...</svg>`" is directly stored in the HTML source code. 
+In this form you can then influence the presentation with CSS information.
 
-For implementation we use a [template](/de/layout/templates) together with theInsert-Tag `{{file::*}}`. Create a new template "mysvgicon.html5" in the directory "mysvgfolder" below the directory "Templates" and copy the completeSVG code into the template file.
+For implementation we use a [template](/en/layout/templates/) together with the Insert-Tag `{{file::*}}`. 
+Create a new template "mysvgicon.html5" in the directory "mysvgfolder" below the directory "Templates" and copy 
+the complete SVG code into the template file.
 
-Then you can embed the file in a [content element](/de/artikelverwaltung/inhaltselemente/) using the insert `{{file::/mysvgfolder/mysvgicon.html5}}`tag and control it with CSS information. The output when used within the content element of type "Text" (shortened):
+Then you can embed the file in a [content element](/en/article-management/content-elements/) using the 
+insert `{{file::/mysvgfolder/mysvgicon.html5}}` tag and control it with CSS information. The output when used 
+within the content element of type "Text" (shortened):
 
 ```html
 <div class="ce_text first block">
@@ -59,12 +66,15 @@ Then you can embed the file in a [content element](/de/artikelverwaltung/inhalts
 ```
 
 {{% notice tip %}}
-In contrast to Contao's own template files, you can place these files in any nested directory below "templates". You define the relative paths in the insert tag.
+In contrast to Contao's own template files, you can place these files in any nested directory below "templates". 
+You define the relative paths in the insert tag.
 {{% /notice %}}
+
 
 ## Colorize SVG via CSS
 
-You could color our example with the CSS specification "svg { fill: #ff0000; }". However, we prefer to use the CSS property`color`. To do this, we add the property and `fill`the value `currentColor`:
+You could color our example with the CSS specification "svg { fill: #ff0000; }". However, we prefer to use the 
+CSS property `color`. To do this, we add the property `fill` with the value `currentColor`:
 
 ```html
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -80,7 +90,8 @@ In your CSS specifications you can now use the following:
 }
 ```
 
-The keyword [currentColor follows](https://developer.mozilla.org/de/docs/Web/CSS/Farben#currentColor_Schl%C3%BCsselwort) the CSS cascade. Therefore our SVG symbol takes the color value of the parent "div" block with theCSS-Class "ce\_text". If you specifically want to change the SVG symbol
+The keyword `currentColor` follows the CSS cascade. Therefore our SVG symbol takes the color value of the parent "div" 
+block with the CSS-Class "ce_text". If you specifically want to change the SVG symbol
 
 ```css
 .ce_text {
@@ -94,15 +105,20 @@ The keyword [currentColor follows](https://developer.mozilla.org/de/docs/Web/CSS
 
 ![SVG Contao Brand Color Orange 100px](/de/guides/images/de/svg/contao-orange.svg?width=100px)
 
+
 ## The "{{file::*}}" insert tag with argument
 
-With CSS you can color your "inline" used SVG files. Do you want to [change the](/de/artikelverwaltung/inhaltselemente/) color of your SVG files without further CSS adjustments?
+With CSS you can color your "inline" used SVG files. Do you want to change the color of 
+your SVG files without further CSS adjustments?
 
-The [insert-tag](/de/artikelverwaltung/insert-tags/#include-elemente)`{{file::*}}` supports the passing of arguments. You can use it to define the color value, for example:
+The [insert-tag](/en/article-management/insert-tags/) `{{file::*}}` supports the passing of arguments. 
+You can use it to define the color value, for example:
 
 `{{file::/mysvgfolder/mysvgicon.html5?color=#ff0000}}`
 
-In the template file we replace the value of the property `fill`with a PHP query. If a passed argument is found, it is entered, otherwise it remains with the keyword `currentColor`. Your CSS information is overwritten with the corresponding content element.
+In the template file we replace the value of the property `fill` with a PHP query. If a passed argument is found, 
+it is entered, otherwise it remains with the keyword `currentColor`. Your CSS information is overwritten with 
+the corresponding content element.
 
 ```php
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

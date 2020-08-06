@@ -12,7 +12,7 @@ tags:
 
 ## Die »SVG-Datei«
 
-Die Nutzung von Dateien im [SVG-Format](https://developer.mozilla.org/en-US/docs/Web/SVG) bietet zahlreiche Vorteile. 
+Die Nutzung von Dateien im [SVG-Format](https://developer.mozilla.org/de/docs/Web/SVG) bietet zahlreiche Vorteile. 
 Als reines Vektorformat werden diese, im Gegensatz zu anderen Formaten, verlustfrei skaliert. Häufig werden SVG-Dateien 
 daher zur Darstellung eines Logos oder von Symbolen eingesetzt.
 
