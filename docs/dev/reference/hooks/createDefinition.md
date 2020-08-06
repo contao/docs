@@ -46,12 +46,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("createDefinition")
+ */
 class CreateDefinitionListener
 {
-    /**
-     * @Hook("createDefinition")
-     */
-    public function onCreateDefinition(string $key, string $value, string $definition, array &$dataSet): ?array
+    public function __invoke(string $key, string $value, string $definition, array &$dataSet): ?array
     {
         if ('border-radius' === $key) {
             return ['border-radius' => $value];

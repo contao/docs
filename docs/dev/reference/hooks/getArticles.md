@@ -39,12 +39,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("getArticles")
+ */
 class GetArticlesListener
 {
-    /**
-     * @Hook("getArticles")
-     */
-    public function onGetArticles(int $pageId, string $column): ?string
+    public function __invoke(int $pageId, string $column): ?string
     {
         if (10 === (int) $pageId && 'main' === $column) {
             // Generate your custom articles content here

@@ -48,12 +48,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\User;
 
+/**
+ * @Hook("checkCredentials")
+ */
 class CheckCredentialsListener
 {
-    /**
-     * @Hook("checkCredentials")
-     */
-    public function onCheckCredentials(string $username, string $credentials, User $user): bool
+    public function __invoke(string $username, string $credentials, User $user): bool
     {
         // Custom method of checking credentials (e.g. external service)
         if ($this->customCredentialsCheck($username, $credentials)) {

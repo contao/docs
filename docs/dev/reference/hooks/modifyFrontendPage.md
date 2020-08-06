@@ -44,12 +44,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("modifyFrontendPage")
+ */
 class ModifyFrontendPageListener
 {
-    /**
-     * @Hook("modifyFrontendPage")
-     */
-    public function onModifyFrontendPage(string $buffer, string $templateName): string
+    public function __invoke(string $buffer, string $templateName): string
     {
         if ('fe_page' === $templateName) {
             // Modify $buffer

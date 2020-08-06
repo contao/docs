@@ -34,12 +34,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ModuleArticle;
 
+/**
+ * @Hook("printArticleAsPdf")
+ */
 class PrintArticleAsPdfListener
 {
-    /**
-     * @Hook("printArticleAsPdf")
-     */
-    public function onPrintArticleAsPdf(string $articleContent, ModuleArticle $module): void
+    public function __invoke(string $articleContent, ModuleArticle $module): void
     {
         // Trigger your own PDF engine and exit
         exit;

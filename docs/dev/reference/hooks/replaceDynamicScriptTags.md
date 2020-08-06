@@ -44,12 +44,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("replaceDynamicScriptTags")
+ */
 class ReplaceDynamicScriptTagsListener
 {
-    /**
-     * @Hook("replaceDynamicScriptTags")
-     */
-    public function onReplaceDynamicScriptTags(string $buffer): string
+    public function __invoke(string $buffer): string
     {
         // Modify $buffer here …
 

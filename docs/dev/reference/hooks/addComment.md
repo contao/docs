@@ -36,12 +36,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Comments;
 
+/**
+ * @Hook("addComment")
+ */
 class AddCommentListener
 {
-    /**
-     * @Hook("addComment")
-     */
-    public function onAddComment(int $commentId, array $commentData, Comments $comments): void
+    public function __invoke(int $commentId, array $commentData, Comments $comments): void
     {
         // Do something …
     }

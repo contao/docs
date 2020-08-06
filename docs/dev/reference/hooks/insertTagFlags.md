@@ -70,12 +70,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("insertTagFlags")
+ */
 class InsertTagFlagsListener
 {
-    /**
-     * @Hook("insertTagFlags")
-     */
-    public function onInsertTagFlags(
+    public function __invoke(
         string $flag, 
         string $tag, 
         string $cachedValue, 

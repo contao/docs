@@ -55,12 +55,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Widget;
 
+/**
+ * @Hook("addCustomRegexp")
+ */
 class AddCustomRegexpListener
 {
-    /**
-     * @Hook("addCustomRegexp")
-     */
-    public function onAddCustomRegexp(string $regexp, $input, Widget $widget): bool
+    public function __invoke(string $regexp, $input, Widget $widget): bool
     {
         if ('plz' === $regexp) {
             $exp = '\b((?:0[1-46-9]\d{3})|(?:[1-357-9]\d{4})|(?:[4][0-24-9]\d{3})|(?:[6][013-9]\d{3}))\b';

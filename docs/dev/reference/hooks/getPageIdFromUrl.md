@@ -41,12 +41,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("getPageIdFromUrl")
+ */
 class GetPageIdFromUrlListener
 {
-    /**
-     * @Hook("getPageIdFromUrl")
-     */
-    public function onGetPageIdFromUrl(array $fragments): array
+    public function __invoke(array $fragments): array
     {
         // Analyze the fragments
         if (…) {

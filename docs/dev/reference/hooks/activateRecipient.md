@@ -36,12 +36,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("activateRecipient")
+ */
 class ActivateRecipientListener
 {
-    /**
-     * @Hook("activateRecipient")
-     */
-    public function onActivateRecipient(string $email, array $recipientIds, array $channelIds): void
+    public function __invoke(string $email, array $recipientIds, array $channelIds): void
     {
         // Do something …
     }

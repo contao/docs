@@ -33,12 +33,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\DataContainer;
 
+/**
+ * @Hook("executePostActions")
+ */
 class ExecutePostActionsListener
 {
-    /**
-     * @Hook("executePostActions")
-     */
-    public function onExecutePostActions(string $action, DataContainer $dc): void
+    public function __invoke(string $action, DataContainer $dc): void
     {
         if ('update' === $action) {
             // Do something …

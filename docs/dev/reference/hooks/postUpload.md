@@ -34,12 +34,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("postUpload")
+ */
 class PostUploadListener
 {
-    /**
-     * @Hook("postUpload")
-     */
-    public function onPostUpload(array $files): void
+    public function __invoke(array $files): void
     {
         // Do something …
     }

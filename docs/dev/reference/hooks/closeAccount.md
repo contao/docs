@@ -40,12 +40,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 
+/**
+ * @Hook("closeAccount")
+ */
 class CloseAccountListener
 {
-    /**
-     * @Hook("closeAccount")
-     */
-    public function onCloseAccount(int $userId, string $mode, Module $module): void
+    public function __invoke(int $userId, string $mode, Module $module): void
     {
         // Do something …
     }

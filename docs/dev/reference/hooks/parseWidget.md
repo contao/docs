@@ -37,12 +37,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Widget;
 
+/**
+ * @Hook("parseWidget")
+ */
 class ParseWidgetListener
 {
-    /**
-     * @Hook("parseWidget")
-     */
-    public function onParseWidget(string $buffer, Widget $widget): string
+    public function __invoke(string $buffer, Widget $widget): string
     {
         // Do something …
         

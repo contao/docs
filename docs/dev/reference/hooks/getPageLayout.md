@@ -40,12 +40,12 @@ use Contao\PageRegular;
 use Contao\LayoutModel;
 use Contao\PageModel;
 
+/**
+ * @Hook("getPageLayout")
+ */
 class GetPageLayoutListener
 {
-    /**
-     * @Hook("getPageLayout")
-     */
-    public function onGetPageLayout(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
+    public function __invoke(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
     {
         // Modify the page or layout object
     }

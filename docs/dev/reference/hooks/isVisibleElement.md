@@ -43,12 +43,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Model;
 
+/**
+ * @Hook("isVisibleElement")
+ */
 class IsVisibleElementListener
 {
-    /**
-     * @Hook("isVisibleElement")
-     */
-    public function onIsVisibleElement(Model $element, bool $isVisible): bool
+    public function __invoke(Model $element, bool $isVisible): bool
     {
         if ($element instanceof \Contao\ContentModel) {
             // Check if this content element can be shown

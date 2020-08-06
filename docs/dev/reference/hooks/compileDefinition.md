@@ -46,12 +46,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("compileDefinition")
+ */
 class CompileDefinitionListener
 {
-    /**
-     * @Hook("compileDefinition")
-     */
-    public function onCompileDefinition(array $row, bool $writeToFile, array $vars, array $parent): string
+    public function __invoke(array $row, bool $writeToFile, array $vars, array $parent): string
     {
         if (isset($row['border-radius'])) {
             return "\nborder-radius:" . $arrRow['border-radius'] . ";";

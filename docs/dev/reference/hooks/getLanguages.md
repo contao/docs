@@ -43,12 +43,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("getLanguages")
+ */
 class GetLanguagesListener
 {
-    /**
-     * @Hook("getLanguages")
-     */
-    public function onGetLanguages(array &$compiledLanguages, array $languages, array $langsNative, bool $installedOnly): void
+    public function __invoke(array &$compiledLanguages, array $languages, array $langsNative, bool $installedOnly): void
     {
         // Make your changes to $compiledLanguages
     }

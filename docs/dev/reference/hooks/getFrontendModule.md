@@ -42,12 +42,12 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 use Contao\ModuleModel;
 
+/**
+ * @Hook("getFrontendModule")
+ */
 class GetFrontendModuleListener
 {
-    /**
-     * @Hook("getFrontendModule")
-     */
-    public function onGetFrontendModule(ModuleModel $model, string $buffer, Module $module): string
+    public function __invoke(ModuleModel $model, string $buffer, Module $module): string
     {
         // Wrap a specific module in an additional wrapper div
         if (2 === (int) $model->id) {

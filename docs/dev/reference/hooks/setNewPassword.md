@@ -38,12 +38,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 
+/**
+ * @Hook("setNewPassword")
+ */
 class SetNewPasswordListener
 {
-    /**
-     * @Hook("setNewPassword")
-     */
-    public function onSetNewPassword($member, string $password, Module $module = null): void
+    public function __invoke($member, string $password, Module $module = null): void
     {
         // Do something …
     }

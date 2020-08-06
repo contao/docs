@@ -34,12 +34,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("listComments")
+ */
 class ListCommentsListener
 {
-    /**
-     * @Hook("listComments")
-     */
-    public function onListComments(array $comment): string
+    public function __invoke(array $comment): string
     {
         if ('tl_mytable' === $comment['source']) {
             return '<a href="contao/main.php?do=…">' . $comment['title'] . '</a>';

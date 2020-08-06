@@ -37,12 +37,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("parseBackendTemplate")
+ */
 class ParseBackendTemplateListener
 {
-    /**
-     * @Hook("parseBackendTemplate")
-     */
-    public function onParseBackendTemplate(string $buffer, string $template): string
+    public function __invoke(string $buffer, string $template): string
     {
         if ('be_main' === $template) {
             // Modify $buffer

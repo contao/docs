@@ -39,12 +39,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("getPageStatusIcon")
+ */
 class GetPageStatusIconListener
 {
-    /**
-     * @Hook("getPageStatusIcon")
-     */
-    public function onGetPageStatusIcon($page, string $image): string
+    public function __invoke($page, string $image): string
     {
         if ('my_page' === $page->type) {
             return 'path/to/custom_icon.svg';

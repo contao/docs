@@ -41,12 +41,12 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 use Contao\FrontendUser;
 
+/**
+ * @Hook("updatePersonalData")
+ */
 class UpdatePersonalDataListener
 {
-    /**
-     * @Hook("updatePersonalData")
-     */
-    public function onUpdatePersonalData(FrontendUser $member, array $data, Module $module): void
+    public function __invoke(FrontendUser $member, array $data, Module $module): void
     {
         // Do something …
     }

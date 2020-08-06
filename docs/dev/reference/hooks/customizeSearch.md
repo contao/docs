@@ -47,12 +47,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 
+/**
+ * @Hook("customizeSearch")
+ */
 class CustomizeSearchListener
 {
-    /**
-     * @Hook("customizeSearch")
-     */
-    public function onCustomizeSearch(array &$pageIds, string $keywords, string $queryType, bool $fuzzy, Module $module): void
+    public function __invoke(array &$pageIds, string $keywords, string $queryType, bool $fuzzy, Module $module): void
     {
         // Change the $pageIds array here or do some other adjustments …
     }

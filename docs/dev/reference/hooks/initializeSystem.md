@@ -20,12 +20,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("initializeSystem")
+ */
 class InitializeSystemListener
 {
-    /**
-     * @Hook("initializeSystem")
-     */
-    public function onInitializeSystem(): void
+    public function __invoke(): void
     {
         // Do something …
     }

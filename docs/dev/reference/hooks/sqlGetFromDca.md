@@ -32,12 +32,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("sqlGetFromDca")
+ */
 class SqlGetFromDcaListener
 {
-    /**
-     * @Hook("sqlGetFromDca")
-     */
-    public function onSqlGetFromDca(array $sql): array
+    public function __invoke(array $sql): array
     {
         // Modify the array of SQL statements
 

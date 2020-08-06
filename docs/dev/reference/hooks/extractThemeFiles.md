@@ -43,12 +43,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ZipReader;
 
+/**
+ * @Hook("extractThemeFiles")
+ */
 class ExtractThemeFilesListener
 {
-    /**
-     * @Hook("extractThemeFiles")
-     */
-    public function onExtractThemeFiles(\DOMDocument $xml, ZipReader $zipArchive, int $themeId, array $mapper): void
+    public function __invoke(\DOMDocument $xml, ZipReader $zipArchive, int $themeId, array $mapper): void
     {
         // Do something …
     }

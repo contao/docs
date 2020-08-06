@@ -37,12 +37,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("colorizeLogEntries")
+ */
 class ColorizeLogEntriesListener
 {
-    /**
-     * @Hook("colorizeLogEntries")
-     */
-    public function onColorizeLogEntries(array $row, string $label): string
+    public function __invoke(array $row, string $label): string
     {
         // Wrap the label with a span containing a custom CSS class or style attributes
         if (…) {

@@ -38,12 +38,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 
+/**
+ * @Hook("createNewUser")
+ */
 class CreateNewUserListener
 {
-    /**
-     * @Hook("createNewUser")
-     */
-    public function onCreateNewUser(int $userId, array $userData, Module $module): void
+    public function __invoke(int $userId, array $userData, Module $module): void
     {
         // Do something …
     }

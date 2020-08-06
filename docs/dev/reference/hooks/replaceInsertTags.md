@@ -65,12 +65,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("replaceInsertTags")
+ */
 class ReplaceInsertTagsListener
 {
-    /**
-     * @Hook("replaceInsertTags")
-     */
-    public function onReplaceInsertTags(
+    public function __invoke(
         string $insertTag,
         bool $useCache,
         string $cachedValue,

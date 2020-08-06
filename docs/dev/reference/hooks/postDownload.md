@@ -28,12 +28,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("postDownload")
+ */
 class PostDownloadListener
 {
-    /**
-     * @Hook("postDownload")
-     */
-    public function onPostDownload(string $file): void
+    public function __invoke(string $file): void
     {
         // Do something …
     }

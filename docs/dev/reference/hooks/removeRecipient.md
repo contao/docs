@@ -32,12 +32,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("removeRecipient")
+ */
 class RemoveRecipientListener
 {
-    /**
-     * @Hook("removeRecipient")
-     */
-    public function onRemoveRecipient(string $email, array $channels): void
+    public function __invoke(string $email, array $channels): void
     {
         // Do something …
     }

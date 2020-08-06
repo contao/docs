@@ -43,12 +43,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
 
+/**
+ * @Hook("compileFormFields")
+ */
 class CompileFormFieldsListener
 {
-    /**
-     * @Hook("compileFormFields")
-     */
-    public function onCompileFormFields(array $fields, string $formId, Form $form): array
+    public function __invoke(array $fields, string $formId, Form $form): array
     {
         // Modify $fields as needed
 

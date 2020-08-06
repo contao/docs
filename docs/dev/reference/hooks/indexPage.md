@@ -36,12 +36,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("indexPage")
+ */
 class IndexPageListener
 {
-    /**
-     * @Hook("indexPage")
-     */
-    public function onIndexPage(string $content, array $pageData, array &$indexData): void
+    public function __invoke(string $content, array $pageData, array &$indexData): void
     {
         // Modify $indexData which will eventually be stored in tl_search
     }

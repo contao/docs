@@ -47,12 +47,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("importUser")
+ */
 class ImportUserListener
 {
-    /**
-     * @Hook("importUser")
-     */
-    public function onImportUser(string $username, string $password, string $table): bool
+    public function __invoke(string $username, string $password, string $table): bool
     {
         if ('tl_member' === $table) {
             // Import user from an LDAP server

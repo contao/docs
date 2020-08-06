@@ -45,12 +45,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
 
+/**
+ * @Hook("processFormData")
+ */
 class ProcessFormDataListener
 {
-    /**
-     * @Hook("processFormData")
-     */
-    public function onProcessFormData(
+    public function __invoke(
         array $submittedData, 
         array $formData, 
         ?array $files, 

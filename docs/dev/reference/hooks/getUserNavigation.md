@@ -37,12 +37,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("getUserNavigation")
+ */
 class GetUserNavigationListener
 {
-    /**
-     * @Hook("getUserNavigation")
-     */
-    public function onGetUserNavigation(array $modules, bool $showAll): array
+    public function __invoke(array $modules, bool $showAll): array
     {
         // Add custom navigation item to the Contao website
         $modules['system']['modules']['contao'] = [

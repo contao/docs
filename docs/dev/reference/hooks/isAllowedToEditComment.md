@@ -39,12 +39,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("isAllowedToEditComment")
+ */
 class IsAllowedToEditCommentListener
 {
-    /**
-     * @Hook("isAllowedToEditComment")
-     */
-    public function onIsAllowedToEditComment(int $parentId, string $parentTable): bool
+    public function __invoke(int $parentId, string $parentTable): bool
     {
         // Check the access to your custom module
         if (\Contao\BackendUser::getInstance()->hasAccess('custom', 'modules')) {

@@ -34,12 +34,12 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
 use Contao\MemberModel;
 
+/**
+ * @Hook("activateAccount")
+ */
 class ActivateAccountListener
 {
-    /**
-     * @Hook("activateAccount")
-     */
-    public function onActivateAccount(MemberModel $member, Module $module): void
+    public function __invoke(MemberModel $member, Module $module): void
     {
         // Do something …
     }

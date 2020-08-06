@@ -39,12 +39,12 @@ use Contao\FrontendTemplate;
 use Contao\Module;
 use Contao\UserModel;
 
+/**
+ * @Hook("parseArticles")
+ */
 class ParseArticlesListener
 {
-    /**
-     * @Hook("parseArticles")
-     */
-    public function onParseArticles(FrontendTemplate $template, array $newsEntry, Module $module): void
+    public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void
     {
         // Remove the default "by …" from Contao
         $template->author = UserModel::findByPk($newsEntry['author'])->name;

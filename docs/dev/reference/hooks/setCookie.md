@@ -40,12 +40,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("setCookie")
+ */
 class SetCookieListener
 {
-    /**
-     * @Hook("setCookie")
-     */
-    public function onSetCookie($cookie)
+    public function __invoke($cookie)
     {
         // Make sure the cookie is also valid for the whole domain
         $cookie->strPath = '/';

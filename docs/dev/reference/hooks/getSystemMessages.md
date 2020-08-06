@@ -26,12 +26,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("getSystemMessages")
+ */
 class GetSystemMessagesListener
 {
-    /**
-     * @Hook("getSystemMessages")
-     */
-    public function onGetSystemMessages(): string
+    public function __invoke(): string
     {
         // Display a warning if the system admin's email is not set
         if (empty($GLOBALS['TL_ADMIN_EMAIL'])) {

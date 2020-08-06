@@ -51,12 +51,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("addLogEntry")
+ */
 class AddLogEntryListener
 {
-    /**
-     * @Hook("addLogEntry")
-     */
-    public function onAddLogEntry(string $message, string $func, string $action): void
+    public function __invoke(string $message, string $func, string $action): void
     {
         // Do something …
     }

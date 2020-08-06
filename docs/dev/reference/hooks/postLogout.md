@@ -32,12 +32,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\User;
 
+/**
+ * @Hook("postLogout")
+ */
 class PostLogoutListener
 {
-    /**
-     * @Hook("postLogout")
-     */
-    public function onPostLogout(User $user): void
+    public function __invoke(User $user): void
     {
         if ($user instanceof \Contao\FrontendUser) {
             // Do something with the front end user $user  

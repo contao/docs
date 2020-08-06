@@ -40,12 +40,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("parseDate")
+ */
 class ParseDateListener
 {
-    /**
-     * @Hook("parseDate")
-     */
-    public function onParseDate(string $formattedDate, string $format, ?int $timestamp): string
+    public function __invoke(string $formattedDate, string $format, ?int $timestamp): string
     {
         // Modify or create your own formatted date …
 

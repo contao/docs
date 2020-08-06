@@ -72,12 +72,12 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Image;
 use Contao\File;
 
+/**
+ * @Hook("getImage")
+ */
 class GetImageListener
 {
-    /**
-     * @Hook("getImage")
-     */
-    public function onGetImage(
+    public function __invoke(
         string $originalPath, 
         int $width, 
         int $height, 

@@ -43,12 +43,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("outputFrontendTemplate")
+ */
 class OutputFrontendTemplateListener
 {
-    /**
-     * @Hook("outputFrontendTemplate")
-     */
-    public function onOutputFrontendTemplate(string $buffer, string $template): string
+    public function __invoke(string $buffer, string $template): string
     {
         if ($template === 'fe_page') {
             // Modify $buffer

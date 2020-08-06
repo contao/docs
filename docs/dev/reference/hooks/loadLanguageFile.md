@@ -37,12 +37,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("loadLanguageFile")
+ */
 class LoadLanguageFileListener
 {
-    /**
-     * @Hook("loadLanguageFile")
-     */
-    public function onLoadLanguageFile(string $name, string $currentLanguage, string $cacheKey): void
+    public function __invoke(string $name, string $currentLanguage, string $cacheKey): void
     {
         // Do something …
     }

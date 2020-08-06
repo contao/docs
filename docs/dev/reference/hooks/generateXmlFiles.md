@@ -21,12 +21,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("generateXmlFiles")
+ */
 class GenerateXmlFilesListener
 {
-    /**
-     * @Hook("generateXmlFiles")
-     */
-    public function onGenerateXmlFiles(): void
+    public function __invoke(): void
     {
         // Do something …
     }

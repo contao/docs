@@ -44,12 +44,12 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Database\Result;
 use Contao\Email;
 
+/**
+ * @Hook("sendNewsletter")
+ */
 class SendNewsletterListener
 {
-    /**
-     * @Hook("sendNewsletter")
-     */
-    public function onSendNewsletter(Email $email, Result $newsletter, array $recipient, string $text, string $html): void
+    public function __invoke(Email $email, Result $newsletter, array $recipient, string $text, string $html): void
     {
         // Do something …
     }

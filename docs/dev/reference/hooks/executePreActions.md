@@ -28,12 +28,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("executePreActions")
+ */
 class ExecutePreActionsListener
 {
-    /**
-     * @Hook("executePreActions")
-     */
-    public function onExecutePreActions(string $action): void
+    public function __invoke(string $action): void
     {
         if ('update' === $action) {
             // Do something …

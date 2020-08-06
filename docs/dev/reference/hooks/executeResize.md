@@ -40,12 +40,12 @@ namespace App\EventListener;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Image;
 
+/**
+ * @Hook("executeResize")
+ */
 class ExecuteResizeListener
 {
-    /**
-     * @Hook("executeResize")
-     */
-    public function onExecuteResize(Image $image): ?string
+    public function __invoke(Image $image): ?string
     {
         if (…) {
             // Do something and return the path to the resized image

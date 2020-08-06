@@ -37,12 +37,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("outputBackendTemplate")
+ */
 class OutputBackendTemplateListener
 {
-    /**
-     * @Hook("outputBackendTemplate")
-     */
-    public function onOutputBackendTemplate(string $buffer, string $template): string
+    public function __invoke(string $buffer, string $template): string
     {
         if ($template === 'be_main') {
             // Modify $buffer

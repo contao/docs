@@ -47,12 +47,12 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
 use Contao\Widget;
 
+/**
+ * @Hook("validateFormField")
+ */
 class ValidateFormFieldListener
 {
-    /**
-     * @Hook("validateFormField")
-     */
-    public function onValidateFormField(Widget $widget, string $formId, array $formData, Form $form): Widget
+    public function __invoke(Widget $widget, string $formId, array $formData, Form $form): Widget
     {
         if ('myform' === $formId && $widget instanceof \Contao\FormTextField && 'mywidget' === $widget->name) {
             // Do your custom validation and add an error if widget does not validate

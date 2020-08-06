@@ -39,12 +39,12 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
+/**
+ * @Hook("getAttributesFromDca")
+ */
 class GetAttributesFromDcaListener
 {
-    /**
-     * @Hook("getAttributesFromDca")
-     */
-    public function onGetAttributesFromDca(array $attributes, $context = null): array
+    public function __invoke(array $attributes, $context = null): array
     {
         // Modify $attributes here …
 
