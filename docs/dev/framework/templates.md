@@ -92,6 +92,83 @@ The output of the `fe_custom.html5` template will be:
 </html>
 ```
 
+Contao also provides default base templates for content elements and modules, called
+`block_searchable` and `block_unsearchable`. These templates provide a basic wrapper
+for your element or module, including attributes for CSS classes and IDs as well
+as other attributes, if defined. It also automatically displays a headline and provides
+a inheritance block for the headline section and the content section. This is the
+content of the `block_serachable` template for example:
+
+```html
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+
+  <?php $this->block('headline'); ?>
+    <?php if ($this->headline): ?>
+      <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+    <?php endif; ?>
+  <?php $this->endblock(); ?>
+
+  <?php $this->block('content'); ?>
+  <?php $this->endblock(); ?>
+
+</div>
+```
+
+The content of the `block_unsearchable` template is the same, but it is additionally
+wrapped with `<!-- indexer::stop -->` and `<!-- indexer::continue -->`, meaning
+its contents will not be indexed by Contao's [search indexer][ContaoSearch].
+
+Most of the templates for Contao's content elements and front end modules extend
+from these templates. This is the content of the the newslist module's template
+`mod_newslist` for example:
+
+```html
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php if (empty($this->articles)): ?>
+    <p class="empty"><?= $this->empty ?></p>
+  <?php else: ?>
+    <?= implode('', $this->articles) ?>
+    <?= $this->pagination ?>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>
+```
+
+It extends from `block_unsearchable`, as the news article teasers should not be
+indexed by Contao's search indexer by default (only the detail pages) and only overrides
+the parent's `content` block, where the news articles (and pagination) will be shown.
+
+It is also possible to override parent blocks with empty content. For example, if
+you want to show a text content element's headline not in its default location, 
+but somewhere else entirely, you could extend that template, override the `headline`
+block with empty content and instead show the headline in a custom location within
+the `content` block.
+
+```php
+<?php $this->extends('ce_text'); ?>
+
+<?php $this->block('headline'); ?>
+<?php $this->endblock(); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php if ($this->addImage): ?>
+    <?php $this->insert('image', $this->arrData); ?>
+  <?php endif; ?>
+
+  <div class="my-text-wrapper">
+    <?php if ($this->headline): ?>
+      <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+    <?php endif; ?>
+    <?= $this->text ?>
+  </div>
+
+<?php $this->endblock(); ?>
+```
+
 
 ## Template Insertion
 
@@ -172,3 +249,4 @@ and `$this->endblock()` statements.
 
 
 [SymfonyVarDumper]: https://symfony.com/doc/current/components/var_dumper.html
+[ContaoSearch]: https://docs.contao.org/manual/en/layout/module-management/website-search/
