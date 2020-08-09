@@ -12,6 +12,8 @@ The `replaceInsertTags` hook is triggered when an unknown insert tag is found.
 It passes the insert tag as argument and expects the replacement value or
 false as return value.
 
+See also the dedicated [framework article][FrameworkInsertTags] about Insert Tags.
+
 
 ## Parameters
 
