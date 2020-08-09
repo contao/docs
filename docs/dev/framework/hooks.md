@@ -59,8 +59,6 @@ As of Contao **4.9**, there are three different ways of subscribing to a hook. T
 recommended way is [using annotations](#using-annotations) together with [invokable services](#invokable-services).
 Which one you use depends on your setup. If you still develop hooks for Contao **4.4**
 for example, then you still need to use the [PHP array configuration](#using-the-php-array-configuration).
-If multiple hooks share some functionality, then it might make sense to implement
-them in one class and _not_ use invokable services.
 
 
 ### Using the PHP Array Configuration
