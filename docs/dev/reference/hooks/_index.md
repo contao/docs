@@ -4,7 +4,7 @@ description: "Developer Reference for Contao Hooks."
 ---
 
 
-This is the reference for [Hooks](HooksFramework) explaining all the available hooks 
+This is the reference for [Hooks][HooksFramework] explaining all the available hooks 
 of the Contao core and their parameters. The examples in this reference implement 
 Hooks using [_Service Annotation_][HooksServiceAnnotation] and [_Invokable Services_][HooksInvokableServices]. 
 These examples will work out of the box within a Contao **4.9+** installation. 
