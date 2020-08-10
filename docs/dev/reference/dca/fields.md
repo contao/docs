@@ -87,6 +87,8 @@ Each field can be validated against a regular expression.
 | allowHtml          | true/false (`bool`)           | If true the current field will accept HTML input (see "Allowed HTML tags" in the back end System => Settings).                                                            |
 | preserveTags       | true/false (`bool`)           | If true no HTML tags will be removed at all.                                                                                                                             |
 | decodeEntities     | true/false (`bool`)           | If true HTML entities will be decoded. Note that HTML entities are always decoded if allowHtml is true.                                                                  |
+| useRawRequestData  | true/false (`bool`)           | If true the raw request data from the Symfony request is used. Input filtering is bypassed!
+
 | doNotSaveEmpty     | true/false (`bool`)           | If true the field will not be saved if it is empty.                                                                                                                      |
 | alwaysSave         | true/false (`bool`)           | If true the field will always be saved, even if its value has not changed. This can be useful in conjunction with a load_callback.                                       |
 | spaceToUnderscore  | true/false (`bool`)           | If true any whitespace character will be replaced by an underscore.                                                                                                      |
