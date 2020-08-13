@@ -310,12 +310,19 @@ contao:
                 # Allows to convert one image format to another or to provide additional image formats for an image (e.g. WebP).
                 formats:
 
-                    # Examples:
+                    # Examples (for webp settings analogous to the options in the backend):
+                    png:
+                        - webp
+                        - png
                     jpg:
                         - webp
                         - jpg
+                    jpeg:
+                        - webp
+                        - jpeg
                     gif:
-                        - png
+                        - webp
+                        - gif
 
                     # Prototype
                     source:               []
