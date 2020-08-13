@@ -29,6 +29,13 @@ Controller::addImageToTemplate($template, [
 ], null, null, $image);
 ```
 
+{{% notice tip %}}
+If you want to use the image size `name` from the [configuration file](/../../reference/config/#contao-bundle-configuration) you have to use the following size format:
+```php
+$size = [0, 0, '_name'];
+```
+{{% /notice %}}
+
 In the template itself the image can then be inserted with `<?php $this->insert('image', $this->arrData); ?>`. This creates a `<figure class="image_container">` containing the image, an image link and a caption if one was specified.
 
 To use the image without the boilerplate code around it `<?php $this->insert('picture_default', $this->picture); ?>` can be used instead.
