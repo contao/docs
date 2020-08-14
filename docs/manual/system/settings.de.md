@@ -311,18 +311,10 @@ contao:
                 formats:
 
                     # Examples (for webp settings analogous to the options in the backend):
-                    png:
-                        - webp
-                        - png
-                    jpg:
-                        - webp
-                        - jpg
-                    jpeg:
-                        - webp
-                        - jpeg
-                    gif:
-                        - webp
-                        - gif
+                    png: [webp, png]
+                    gif: [webp, gif]
+                    jpg: [webp, jpg]
+                    jpeg: [webp, jpeg]
 
                     # Prototype
                     source:               []
