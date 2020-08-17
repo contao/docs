@@ -59,9 +59,8 @@ If you do **not** add a _Contao Manager Plugin_ to your extension, it will still
 work with Contao, but:
 
  - it will require a user to manually register the bundle class in Symfony.
- - therefore, the Contao Manager will list the package as **not being compatible**
-   to the Contao Managed Edition, and won't allow its installation with
-   a push of a button.
+ - therefore, your extension will **not** be listed on [extensions.contao.org](extensions.contao.org) nor in the
+   Contao Manager.
 
 
 ## Publishing to the Contao ecosystem
@@ -71,8 +70,14 @@ to be able to discover it. In most cases, this means making the
 package discoverable in the Contao Manager search. A public version of this search index
 is available on [extensions.contao.org][extensions].
 
-If your package is of `"type": "contao-bundle"` and is published to
-[packagist.org](https://packagist.org), our search index will [automatically pick it up](https://github.com/contao/package-metadata/actions).
+Your extension will be [automatically picked up](https://github.com/contao/package-metadata/actions) in our search index
+once
+
+* your package is published to [packagist.org](https://packagist.org)
+* your package is of type `contao-bundle`
+* your package does have at least one version tag (packages with only branches and no tags are ignored)
+* your package references a [Contao Manager Plugin][Plugin] in the `extra` section of your `composer.json`.
+
 To extend the description, add multilingual translations, a logo etc., you have to add
 your package to the `contao/package-metadata` repository. Read and follow
 [the metadata documentation][metadata] on how to do that.
