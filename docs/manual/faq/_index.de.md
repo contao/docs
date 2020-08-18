@@ -110,7 +110,7 @@ Antworten findest du im Bereich [TinyMCE-Editor Konfiguration](/de/anleitungen/t
 {{% expand "Meine Bilder werden im Frontend nicht angezeigt, was kann ich machen?" %}}
 Überprüfe in der [Dateiverwaltung](/de/dateiverwaltung/), ob das Verzeichnis mit deinen Bildern als »Öffentlich« 
 gekennzeichnet ist.
-Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/web` oder einem übergeordneten Ordner deiner Installation befindet
+Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/web` oder einem übergeordneten Ordner deiner Installation befindet.
 {{% /expand %}}
 
 
