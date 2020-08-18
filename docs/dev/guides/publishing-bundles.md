@@ -85,8 +85,8 @@ your package to the `contao/package-metadata` repository. Read and follow
 If your extension is **not** available on [packagist.org](https://packagist.org)
 or not of `"type": "contao-bundle"`, you can still add it to the
 `contao/package-metadata` repository. It will then show up in the search results 
-with a link to your homepage, where you can provide installation instructions,
-buying options or anything you like.
+with a link to your homepage, where you can provide custom installation instructions, information
+regarding pricing or licensing and more.
 
 
 ## Private and commercial packages
