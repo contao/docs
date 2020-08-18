@@ -1,6 +1,6 @@
 ---
 title: "Mumble Installation"
-description: "The Mumble installation. If you want to participate in the Contao calls."
+description: "How to install and use Mumble, if you want to participate in the Contao calls."
 aliases:
     - /en/guides/mumble/
 weight: 890
@@ -8,7 +8,7 @@ weight: 890
 
 ## What is Mumble
 
-Mumble is an audio chat where you can talk to several people. Additionally, there is the possibility to enter 
+Mumble is an audio chat software where you can talk to several people. Additionally, there is the possibility to enter 
 short information in a chat window. Mumble is usually divided into several rooms, so that you can withdraw into a 
 room in smaller groups or as a couple.
 
@@ -20,7 +20,7 @@ You can find more about Mumble at [mumble.info](https://www.mumble.info/).
 
 ## Installation
 
-To install it you have to download and run the appropriate files for your operating system. You only need the 
+To install you have to download and run the appropriate files for your operating system. You only need the 
 Mumble client - the installation of the Mumble server application is not necessary.
 
 
@@ -71,7 +71,7 @@ The audio configuration is now complete.
 
 ## Certificate Management
 
-With Mumble, you generally do not have to think of a user name or password, but are identified by means of a certificate. 
+With Mumble, you generally do not have to think of a username or password, but are identified by means of a certificate. 
 If you already have a certificate (e.g. a mail certificate or similar) you can use it. 
 But you can also have a certificate created by Mumble.
 
