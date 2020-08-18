@@ -16,7 +16,7 @@ Using files in [SVG format](https://developer.mozilla.org/en-US/docs/Web/SVG) of
 You want to use your SVG file in Contao?<br>
 For our example, we use the Contao logo in SVG format (`contao.svg`):
 
-```html
+```xml
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 <path d="M45.4 305c14.4 67.1 26.4 129 68.2 175H34c-18.7 0-34-15.2-34-34V66c0-18.7 15.2-34 34-34h57.7C77.9 44.6 65.6 59.2 54.8 75.6c-45.4 70-27 146.8-9.4 229.4zM478 32h-90.2c21.4 21.4 39.2 49.5 52.7 84.1l-137.1 29.3c-14.9-29-37.8-53.3-82.6-43.9-24.6 5.3-41 19.3-48.3 34.6-8.8 18.7-13.2 39.8 8.2 140.3 21.1 100.2 33.7 117.7 49.5 131.2 12.9 11.1 33.4 17 58.3 11.7 44.5-9.4 55.7-40.7 57.4-73.2l137.4-29.6c3.2 71.5-18.7 125.2-57.4 163.6H478c18.7 0 34-15.2 34-34V66c0-18.8-15.2-34-34-34z"/>
 </svg>
@@ -45,7 +45,7 @@ representation(s) via the "`img`" HTML element:
 
 ## The "inline" alternative
 
-The integration of SVG files using the HTML element "`img`" is a variant. More options are available if you use 
+The integration of SVG files using the HTML element "`img`" is one variant. More options are available if you use 
 the SVG file "`inline`". The content of the SVG file "`<svg>...</svg>`" is directly stored in the HTML source code. 
 In this form you can then influence the presentation with CSS information.
 
@@ -54,7 +54,7 @@ Create a new template "mysvgicon.html5" in the directory "mysvgfolder" below the
 the complete SVG code into the template file.
 
 Then you can embed the file in a [content element](/en/article-management/content-elements/) using the 
-insert `{{file::/mysvgfolder/mysvgicon.html5}}` tag and control it with CSS information. The output when used 
+insert `{{file::mysvgfolder/mysvgicon.html5}}` tag and control it with CSS information. The output when used 
 within the content element of type "Text" (shortened):
 
 ```html
@@ -108,13 +108,13 @@ block with the CSS-Class "ce_text". If you specifically want to change the SVG s
 
 ## The "{{file::*}}" insert tag with argument
 
-With CSS you can color your "inline" used SVG files. Do you want to change the color of 
+With CSS you can color your "inline" SVG files. Do you want to change the color of 
 your SVG files without further CSS adjustments?
 
 The [insert-tag](/en/article-management/insert-tags/) `{{file::*}}` supports the passing of arguments. 
 You can use it to define the color value, for example:
 
-`{{file::/mysvgfolder/mysvgicon.html5?color=#ff0000}}`
+`{{file::mysvgfolder/mysvgicon.html5?color=#ff0000}}`
 
 In the template file we replace the value of the property `fill` with a PHP query. If a passed argument is found, 
 it is entered, otherwise it remains with the keyword `currentColor`. Your CSS information is overwritten with 
@@ -122,7 +122,7 @@ the corresponding content element.
 
 ```php
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<path fill="<?= (is_null(\Contao\Input::get('color')) ? 'currentColor' : \Contao\Input::get('color')) ?>" 
+<path fill="<?= \Contao\Input::get('color') ?: 'currentColor' ?>" 
 d="M45.4 305c14.4 67.1 26.4 129 68.2 175H34c-18.7 0-34-15.2-34-34V66c0-18.7 15.2-34 34-34h57.7C77.9 44.6 65.6 59.2 54.8 75.6c-45.4 70-27 146.8-9.4 229.4zM478 32h-90.2c21.4 21.4 39.2 49.5 52.7 84.1l-137.1 29.3c-14.9-29-37.8-53.3-82.6-43.9-24.6 5.3-41 19.3-48.3 34.6-8.8 18.7-13.2 39.8 8.2 140.3 21.1 100.2 33.7 117.7 49.5 131.2 12.9 11.1 33.4 17 58.3 11.7 44.5-9.4 55.7-40.7 57.4-73.2l137.4-29.6c3.2 71.5-18.7 125.2-57.4 163.6H478c18.7 0 34-15.2 34-34V66c0-18.8-15.2-34-34-34z"/>
 </svg>
 ```
