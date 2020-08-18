@@ -18,7 +18,7 @@ With **Laragon WAMP** a local software stack consisting of the following server 
 - MySQL
 - PHP
 
-The installation package also includes other useful tools, which will  not be discussed here, but you can find more 
+The installation package also includes other useful tools, which will not be discussed here, but you can find more 
 information about Laragon (installation, features, etc.) in the [official documentation](https://laragon.org/docs/).
 
 
@@ -44,8 +44,8 @@ version of Polsedit and can be run directly without installation.
 
 - Download Polsedit: <https://www.southsoftware.com/polsedit.html>
 - Unpack ZIP archive
-- For Windows 10 (64 bit): `polseditx64.exe` (64 bit version) run
-- In the right pane, `(SE_CREATE_SYMBOLIC_LINK_NAME)` search for the policy "*Create symbolic links*":
+- For Windows 10 (64 bit): run `polseditx64.exe` (64 bit version)
+- In the right pane, search for the policy "*Create symbolic links*" (`SE_CREATE_SYMBOLIC_LINK_NAME`):
 
 ![Search for "Create symbolic links"](/de/guides/local-installation/images/de/laragon/01_polsedit.png?width=800px&classes=shadow)
 
@@ -53,7 +53,7 @@ version of Polsedit and can be run directly without installation.
 
 ![Open the policy entry](/de/guides/local-installation/images/de/laragon/02_polsedit_policy_properties.png?width=300px&classes=shadow)
 
-- Via the button "*Add User or Group*... " button to select your (current) Windows user in the list of user accounts 
+- Select your (current) Windows user in the list of user accounts via the button "*Add User or Group...*"  
 and click "OK" to confirm your selection. The Windows user should now also be listed in the policy properties 
 (in addition to the existing user accounts).
 - Close the properties window and quit Polsedit.
@@ -62,17 +62,16 @@ and click "OK" to confirm your selection. The Windows user should now also be li
 
 ## 3. Download and install Laragon
 
-The installation of Laragon is consistently intuitive and largely self-explanatory via the guided installation process. 
+The installation of Laragon should be intuitive and largely self-explanatory via the guided installation process. 
 The latest release of the WAMP stack can be downloaded directly from GitHub in the appropriate version.
 
 **ToDo: Download and install Laragon**
 
 - Download the latest release from the Laragon [GitHub repository](https://github.com/leokhoa/laragon/releases/latest)
-- For Windows 10 (64-bit): `laragon-wamp.exe` (64-bit version) download
+- For Windows 10 (64-bit): download `laragon-wamp.exe` (64-bit version)
 - Run the installation file `laragon-wamp.exe`. Under certain circumstances, a message from the Windows Defender 
 SmartScreen may appear at this point, indicating that the start of an unknown app has been prevented. However, 
-the link "*More Information*" allows you to "*Run* Laragon Setup *anyway*".
-- In the first step of the setup process the language can be changed to "*German*" if desired.
+the link "*More Information*" allows you to "*Run anyway*".
 - The setup wizard will then guide you through the installation.
 - In the dialog "*Select destination folder*" you can specify where Laragon should be installed 
 (e. g. on another drive or partition).
@@ -113,11 +112,11 @@ are selected. If desired, you could also enable SSL support via port 443 here:
 ![Laragon Settings](/de/guides/local-installation/images/de/laragon/06_laragon_services.png?width=500px&classes=shadow)
 
 {{% notice note %}}
-The Laragon configuration settings are `laragon\usr\laragon.ini` stored in the file and can of course be changed 
+The Laragon configuration settings are stored in the file `laragon\usr\laragon.ini` and can of course be changed 
 there as well.
 {{% /notice %}}
 
-- Use "*Menu*" &gt; "Laragon*"* &gt; "laragon*.ini"* to open *the* Laragon configuration file for editing:
+- Use "*Menu*" &gt; "*Laragon*" &gt; "*laragon.ini*" to open the Laragon configuration file for editing:
 
 ![Edit Laragon configuration file](/de/guides/local-installation/images/de/laragon/07_laragon_ini.png?width=500px&classes=shadow)
 
@@ -127,22 +126,22 @@ there as well.
 QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, memory_limit, sys_temp_dir
 ```
 
-- Open the PHP quick settings via "*Menu*" &gt; "PHP*"* &gt; "Quick *settings"*:
+- Open the PHP quick settings via "*Menu*" &gt; "*PHP*" &gt; "*Quick settings*":
 
 ![Open PHP quick settings](/de/guides/local-installation/images/de/laragon/08_laragon_php.png?width=500px&classes=shadow)
 
-- Select the entry "memorylimit *= ..."* from the submenu and set the PHP memory limit to the value `-1` (or `2G`, `4G`):
+- Select the entry "*memory_limit = …*" from the submenu and set the PHP memory limit to the value `-1` (or `2G`, `4G`):
 
 ![Set PHP memory limit](/de/guides/local-installation/images/de/laragon/09_laragon_php_memory_limit.png?width=250px&classes=shadow)
 
-- In the same submenu, select the entry "sys_tempdir *= ..."* and set the temporary directory to the 
+- In the same submenu, select the entry "*sys_tempdir = …*" and set the temporary directory to the 
 value `C:\laragon\tmp` (adjust the Laragon root directory if necessary, if Laragon is not installed 
 on the drive `C:\` under the default path):
 
 ![set sys_temp_dir](/de/guides/local-installation/images/de/laragon/10_laragon_php_sys_temp_dir.png?width=250px&classes=shadow)
 
-- Via "*Menu*" &gt; "PHP*"* &gt; "PHP extensions*"* further PHP extensions can be easily activated or deactivated if required.
-- The button "*All services*... " starts the web and database server:
+- Via "*Menu*" &gt; "*PHP*" &gt; "*PHP extensions*" further PHP extensions can be easily activated or deactivated if required.
+- The button "*All services...*" starts the web and database server:
 
 ![Start web and database server](/de/guides/local-installation/images/de/laragon/11_laragon_servers.png?width=500px&classes=shadow)
 
@@ -167,7 +166,7 @@ automatically via the Laragon management panel: "*Menu*" &gt; "*Tools"* &gt; "*E
 In the same submenu, the Laragon environment variables can be removed if necessary. You can also use the 
 menu item "*Manage Path*" to check if the path information has been added correctly to the PATH environment variable.
 
-- Via "*Menu*" &gt; "*Create New Website"* &gt; "*Configuration*... " the existing app configurations can be 
+- Via "*Menu*" &gt; "*Create New Website*"* &gt; "*Configuration...*" the existing app configurations can be 
 changed or supplemented accordingly:
 
 ![Customizing App Configurations](/de/guides/local-installation/images/de/laragon/15_laragon_app_config.png?width=500px&classes=shadow)
@@ -278,8 +277,8 @@ database and configure the virtual host.
 
 - Start Laragon
 - The goal is to create a sample website "*mycompany*" that runs with Contao 4.9.
-- Open "*Menu*" &gt; "*Create new website"* in the Laragon Management Panel (or alternatively right-click the 
-Laragon tray icon in the Laragon Management Panel) and select the entry "Contao *4.9 Website ..."*:
+- Open "*Menu*" &gt; "*Create new website*" in the Laragon Management Panel (or alternatively right-click the 
+Laragon tray icon in the Laragon Management Panel) and select the entry "Contao *4.9 Website ...*":
 
 ![Create new website](/de/guides/local-installation/images/de/laragon/18_laragon_websiteproject.png?width=500px&classes=shadow)
 
@@ -296,7 +295,7 @@ Control (UAC) configuration, you may be prompted to confirm the changes to the s
 In addition, a message from the anti-virus software (or other security software) may indicate that access to the 
 Windows hosts file is blocked for security reasons. If this is indeed the case, you would first have to temporarily 
 disable the corresponding setting in the security software and then manually add the entry in the Windows hosts file. 
-To do this, open *the* Hosts file in the editor in the Laragon management panel via "*Menu*" &gt; "*Tools"* &gt; "*Edit drivers\etc\hosts"* 
+To do this, open *the* Hosts file in the editor in the Laragon management panel via "*Menu*" &gt; "*Tools*" &gt; "*Edit drivers\etc\hosts*" 
 and add a new line
 
 ```
@@ -326,7 +325,7 @@ generating all necessary tables and the database structure.
 **Contao installation tool:** [http://mycompany.local/contao/install](http://mycompany.local/contao/install)<br>
 **Contao Manager:** [http://mycompany.local/contao-manager.phar.php](http://mycompany.local/contao-manager.phar.php)<br>
 (The system check of the Contao Manager should automatically detect the path to the PHP binary if a manual configuration is selected in 
-the server configuration via "*Other .*..")
+the server configuration via "*Other ...*")
 
 {{% notice note %}}
 If the browser software performs a web search for this keyword when entering, for example, contrary `mycompany.local` 
@@ -339,7 +338,7 @@ to expectations, the schema or network protocol `http://` should also be specifi
 **Appendix with further information/tasks:**
 
 
-### Update A Laragon
+### Update Laragon
 
 **ToDo: Install the latest version of Laragon**
 
@@ -349,11 +348,11 @@ to expectations, the schema or network protocol `http://` should also be specifi
 - Start Laragon.
 
 
-### B Delete project
+### Delete project
 
 **ToDo: Remove an existing website project**
 
-- Open "*Menu*" &gt; "*Tools"* &gt; "Delete *project"* in the Laragon management panel and select the website 
+- Open "*Menu*" &gt; "*Tools*" &gt; "*Delete project*" in the Laragon management panel and select the website 
 project to be deleted from the submenu:
 
 ![Remove Website Project in the Laragon Management Panel](/de/guides/local-installation/images/de/laragon/22_laragon_deleteproject.png?width=500px&classes=shadow)
@@ -362,7 +361,7 @@ project to be deleted from the submenu:
 These actions cannot be undone, i.e. the data will be irretrievably deleted. When you are aware of what you are doing, confirm the deletion.
 
 
-### C Install Contao Official Demo (COD)
+### Install Contao Official Demo (COD)
 
 **ToDo: Install Contao Official Demo**
 
@@ -393,7 +392,7 @@ Like any other package/bundle, the Contao Official Demo (COD) can be installed i
 {{% /notice %}}
 
 
-### D Database administration with phpMyAdmin
+### Database administration with phpMyAdmin
 
 **ToDo: Install phpMyAdmin**
 
@@ -427,7 +426,7 @@ The Apache alias configuration for phpMyAdmin is located in `laragon\etc\apache2
 {{% /notice %}}
 
 
-### E Additional PHP versions
+### Additional PHP versions
 
 Sometimes you need PHP 5.6 for older web projects, but you want to test new features with PHP 7.3. 
 In the following, both PHP 5.6 and PHP 7.3 will be made available in Laragon.
@@ -454,7 +453,7 @@ of Visual C++ (VCxx) for the Apache web server and PHP match:
 ![Changing Apache Version](/de/guides/local-installation/images/de/laragon/25_laragon_apache_version.png?width=500px&classes=shadow)
 
 
-### F Help
+### Help
 
 There is a [thread](https://community.contao.org/de/showthread.php?74042) in the [Contao forum](https://community.contao.org/) 
 that deals with the installation and operation of Laragon or you can get advice in the Laragon forum [DE](https://laraboard.io/forum/) 
