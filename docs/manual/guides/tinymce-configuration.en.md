@@ -27,6 +27,11 @@ will only find the template there. All lines within the template `<script>...</s
 be closed with a comma. After saving the template, your changes are applied immediately. 
 {{% /notice %}}
 
+{{% notice tip %}}
+Starting with Contao **4.10** you can use [template inheritance](/en/layout/templates/template-inheritance/) in order to
+only adjust parts of the default `be_tinyMCE` template to your needs.
+{{% /notice %}}
+
 
 ## Various Editor Configurations
 
@@ -58,7 +63,7 @@ The procedure would be similar for your messages texts with a template `be_myTin
 $GLOBALS['TL_DCA']['tl_news']['fields']['text']['eval']['rte'] = 'myTinyMCENews';
 ```
 
-For an introduction to Contao `Data Container Array`, 
+For an introduction to the Contao `Data Container Array`, 
 see [Adjusting the DCA](https://docs.contao.org/dev/getting-started/dca/) and the detailed reference 
 in the [Data Container Array](https://docs.contao.org/dev/reference/dca/) section of the developer documentation.
 
