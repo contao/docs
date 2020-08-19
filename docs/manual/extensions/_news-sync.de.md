@@ -355,7 +355,7 @@ werden, unter der die andere Contao Installation erreichbar ist. Speichert man d
 
 * **News Archive** - damit aktiviert man die Nachrichtenarchive, aus denen Nachrichten aus der Quell-Installation geholt werden sollen.
 * **Auf Kategorien beschränken** - ist in beiden Installationen die `codefog/contao-news_categories` Extension installiert, kann die Synchronisation auf bestimmte Kategorien beschränkt werden.<sup>1</sup>
-* **Alias-Duplikate ignorieren** - in manchen Situationen kann es sein, dass man bereits Nachrichten mit dem selben Alias in der Ziel-Installation hat. Mit aktivierte Option werden diese Nachrichten übersprungen. Andernfalls wird ein Duplikat angelegt.
+* **Alias-Duplikate ignorieren** - in manchen Situationen kann es sein, dass man bereits Nachrichten mit dem selben Alias in der Ziel-Installation hat. Mit dieser Option werden diese Nachrichten übersprungen. Andernfalls wird ein Duplikat angelegt.
 * **Periodisch synchronisieren** - dies aktiviert die periodische Synchronisation über den Contao Cronjob. Die Synchronisierung erfolgt stündlich.
 * **Einträge aktualisieren** - ist diese Einstellung aktiv, werden Änderungen in der Quell-Installation bereits synchronisierter Nachrichten in der Ziel-Installation übernommen.
 * **Zielverzeichnis** - hier muss ein Verzeichnis für die synchronisierten Bilddaten und Anhänge angegeben werden.
