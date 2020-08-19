@@ -2,6 +2,8 @@
 title: "Local installations"
 description: "All you need to know about a local Contao installation."
 weight: 900
+aliases:
+    - /en/guides/local-installation/
 tags: 
    - "Installation"
 ---

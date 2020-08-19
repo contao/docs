@@ -3,6 +3,10 @@ title: "The Docker Devilbox"
 menuTitle : "With Docker Devilbox"
 description: "With the Docker Devilbox one or more Contao installations can be installed and maintained locally."
 weight: 10
+aliases:
+    - /en/guides/local-installation/devilbox/
+tags: 
+   - "Installation"
 ---
 
 The [Devilbox Project](http://devilbox.org/) is a complete LAMP stack for [Docker](https://www.docker.com/).
