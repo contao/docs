@@ -348,7 +348,7 @@ Um die Nachrichten eines Nachrichtenarchivs als Quelle für die Synchronisation 
 
 Um Nachrichten in einem Nachrichtenarchiv von einer Quelle holen zu lassen muss die Einstellung **Ziel für Synchronisation**
 aktiviert werden. Danach stehen zusätzliche Einstellungen zur Verfügung. Unter **Quell-URL** muss zunächst die URL eingetragen
-werden, unter die andere Contao Installation erreichbar ist. Speichert man die Einstellungen danach, stehen unter 
+werden, unter der die andere Contao Installation erreichbar ist. Speichert man die Einstellungen danach, stehen unter 
 **News Archive** alle Nachrichtenarchive zur Auswahl, die auf der Quell-Installation für die Synchronisation freigegeben.
 
 ![News Sync Einstellungen](/de/extensions/images/de/contao-news-sync-2-de.png?classes=shadow)
