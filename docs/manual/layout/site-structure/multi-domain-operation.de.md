@@ -18,7 +18,7 @@ zu tun.
 Für einen echten Multidomain-Betrieb brauchst du neben mehreren Domains auch mehrere Startpunkte in deiner 
 Contao-Seitenstruktur. Hast du hingegen nur einen Startpunkt, ist deine Installation einfach nur unter mehreren Domains 
 erreichbar. In diesem Fall entscheidest du dich am besten für eine Hauptdomain und leitest die anderen Domains auf 
-dies weiter. Eine solche Umleitung lässt sich in der Regel im Control Panel deines Servers oder auch in einer 
+diese weiter. Eine solche Umleitung lässt sich in der Regel im Control Panel deines Servers oder auch in einer 
 `.htaccess`-Datei einrichten.
 
 **Umleitung von example.com auf example.org per .htaccess**
