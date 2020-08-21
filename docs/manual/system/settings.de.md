@@ -45,8 +45,8 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 | g:i      | 12 Stunden ohne führende Nullen sowie Minuten, z. B. `8:36`   |
 
 **Zeitzone:** Die Zeitzone solltest du unbedingt vor dem Erstellen deiner Webseite einstellen, da Contao alle 
-Zeitangaben als [Unix-Zeitstempel](https://www.php.net/time) speichert und PHP diese Zeitstempel bei einer Änderung der 
-Zeitzone nicht automatisch anpasst.
+Zeitangaben als [Unix-Zeitstempel](https://www.php.net/time) speichert und Contao diese Zeitstempel bei einer Änderung 
+der Zeitzone nicht automatisch anpasst.
 
 
 ### Backend-Einstellungen
@@ -73,6 +73,14 @@ Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite
 **Leere URLs nicht umleiten:** Bei einer leeren URL die Webseite anzeigen anstatt auf den Startpunkt der Sprache 
 weiterzuleiten _(nicht empfohlen)_.
 
+**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
+`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen. Seit Contao **4.9** kann
+auch folgendes Kommando benutzt werden:
+
+```
+php vendor/bin/contao-console contao:cron
+```
+
 
 ### Sicherheitseinstellungen
 
@@ -89,11 +97,13 @@ HTML-Tags festlegen.
 **Erlaubte Download-Dateitypen:** Hier kannst du festlegen, welche Dateitypen von deinem Server heruntergeladen werden 
 dürfen (Download).
 
-**Maximale GD-Bildbreite**: Hier kannst du festlegen, wie breit Bilder und andere Medien im Frontend maximal sein 
-dürfen. Bei einer Überschreitung dieses Werts wird das entsprechende Objekt automatisch verkleinert.
+**Maximale GD-Bildbreite:** Hier kannst du festlegen, wie breit Bilder sein dürfen, damit sie von der GD 
+Bildbearbeitungs-Bibliothek noch verarbeitet werden können. Jegliche Bilder, die diesen Wert übersteigen, werden nicht
+verarbeitet.
 
-**Maximale GD-Bildhöhe**: Hier kannst du festlegen, wie hoch Bilder und andere Medien im Frontend maximal sein 
-dürfen. Bei einer Überschreitung dieses Werts wird das entsprechende Objekt automatisch verkleinert.
+**Maximale GD-Bildhöhe:** Hier kannst du festlegen, wie hoch Bilder sein dürften, damit sie von der GD 
+Bildbearbeitungs-Bibliothek noch verarbeitet werden können. Jegliche Bilder, die diesen Wert übersteigen, werden nicht
+verarbeitet.
 
 
 ### Datei-Uploads
@@ -111,12 +121,6 @@ verkleinert.
 
 **Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese Werte 
 mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
-
-
-### Cronjob-Einstellungen
-
-**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
-`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen.
 
 
 ### Website-Suche
@@ -446,6 +450,13 @@ smtp://<BENUTZERNAME>:<PASSWORT>@<HOSTNAME>:<PORT>
 
 Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, oder entfernt sie dementsprechend. Siehe 
 dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMailer].
+
+{{% notice warning %}}
+Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese "URL enkodiert" werden. Es gibt
+verschiedene Online-Services, mit denen man auf einfache Weise eine beliebige Zeichenfolgen URL-encoden kann, z. B.
+[urlencoder.org](https://www.urlencoder.org/). Enkodiere den Benutzernamen und das Passwort separat, nicht gemeinsam
+mit dem Doppelpunkt.
+{{% /notice %}}
 
 {{% notice tip %}}
 Anstatt `smtp://` kann auch `smtps://` verwendet werden, um automatisch SSL Verschlüsselung über Port `465` zu verwenden.
