@@ -468,7 +468,7 @@ If the symfony application cache has been refreshed afterwards, these email conf
 selection in the Contao back end.
 
 {{% notice note %}}
-If no transport is configured, the information from the `parameters.yml`. If a transport is configured but no transport 
+If no transport is configured, the information from the `parameters.yml` is used. If a transport is configured but no transport 
 is selected in the Contao back end, the first defined transport is used automatically.
 {{% /notice %}}
 
