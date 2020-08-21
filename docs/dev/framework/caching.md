@@ -6,7 +6,7 @@ alias:
 ---
 
 
-Contao heavily relies on HTTP caching and tries it's very best to comply to the HTTP standards to provide the best
+Contao heavily relies on HTTP caching and tries its very best to comply to the HTTP standards to provide the best
 performance possible.
 
 It's thus essential that you understand the basics of HTTP caching. Before we get into details of Contao too much, let's
