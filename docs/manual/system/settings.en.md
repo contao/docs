@@ -137,7 +137,7 @@ contao:
 {{% /notice %}}
 
 
-### Default6 access rights
+### Default access rights
 
 **Default page owner:** Here you can specify the default owner of the pages for which no access rights have been 
 defined. For more information, see the Access Rights section.
