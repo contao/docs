@@ -11,7 +11,7 @@ weight: 20
 
 Wie schon im Abschnitt, [Contao im Schnelldurchlauf](../../../einleitung/contao-im-schnelldurchlauf/), erwähnt 
 wurde, sind Cascading Stylesheets, kurz CSS, das Mittel der Wahl bei der Formatierung von Webseiten. Falls du also 
-nicht zumindest über Grundkenntnisse in CSS verfügst, solltest du dich diese spätestens jetzt aneignen, denn die 
+nicht zumindest über Grundkenntnisse in CSS verfügst, solltest du dir diese spätestens jetzt aneignen, denn die 
 Erstellung bzw. Anpassung eines Themes ist ohne CSS-Kenntnisse nicht möglich. Eine sehr gute Einführung in die Thematik 
 bietet beispielsweise die Buchreihe »[Little Boxes](https://www.little-boxes.de/little-boxes-teil1-online.html)« 
 von Peter Müller.
