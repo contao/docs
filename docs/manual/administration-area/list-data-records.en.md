@@ -42,7 +42,7 @@ These are data records that are hierarchically dependent on each other and are t
 
 ![The Tree View](/de/administration-area/images/de/der-tree-view.png?classes=shadow)
 
-## Sort and filter records {#sort-and-filter records}
+## Sort and filter records {#sort-and-filter-records}
 
 To keep track of tables with many records, Contao offers you several ways to sort and filter your listings. Most listings can be filtered so that you only see the records that you really need for a specific action.
 
