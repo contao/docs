@@ -12,7 +12,7 @@ The [TinyMCE editor](https://www.tiny.cloud/) is used to edit most content with 
 preconfigured for Contao. A custom configuration is optional.
 
 
-## The template be_tinyMCE.html5
+## The `be_tinyMCE.html5` template 
 
 Your individual configuration is done via the template `be_tinyMCE.html5`. Here you can find the configuration set 
 by Contao and you can change the settings in an update proof way.
