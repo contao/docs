@@ -1,8 +1,8 @@
 ---
-title: 'Form Generator'
-description: 'The Contao form generator helps you create forms by abstracting both the process of code generation and the complexity of validating the user input.'
+title: "Form Generator"
+description: "The Contao form generator helps you create forms by abstracting both the process of code generation and the complexity of validating the user input."
 aliases:
-    - /en/form-generator/_index/
+    - /en/form-generator/
 weight: 11
 ---
 

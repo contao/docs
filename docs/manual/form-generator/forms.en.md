@@ -11,7 +11,7 @@ automatically validates the form input according to the rules you specify. Files
 
 ## Setting your own SMTP server
 
-Without specifying a separate SMTP server, the data is [sent](https://de.wikipedia.org/wiki/Sendmail) via [sendmail](https://de.wikipedia.org/wiki/Sendmail), which can lead to problems.
+Without specifying a separate SMTP server, the data is sent via [sendmail](https://en.wikipedia.org/wiki/Sendmail), which can lead to problems.
 
 {{% notice info %}}
 We recommend sending via the [e-mail transport protocol (SMTP)](../../system/einstellungen/#smtp-versand).
