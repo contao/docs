@@ -6,6 +6,15 @@ aliases:
 weight: 890
 ---
 
+
+## Quick Info for Settings
+
+- **Adress:** mumble.c-c-a.org
+- **Port:** 62492
+- **Username:** Can be defined freely
+- **Label:** Can be defined freely, e.g. CCA-Mumble-Server
+
+
 ## What is Mumble
 
 Mumble is an audio chat software where you can talk to several people. Additionally, there is the possibility to enter 
