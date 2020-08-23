@@ -7,12 +7,13 @@ aliases:
 weight: 890
 ---
 
+
 ## Kurzinfo Einstellungen
 
-- **Bezeichnung:** Kann frei gewählt werden, z.B. CCA-Mumble-Server
 - **Adresse:** mumble.c-c-a.org
 - **Port:** 62492
 - **Benutzername:** Kann frei gewählt werden
+- **Bezeichnung:** Kann frei gewählt werden, z.B. CCA-Mumble-Server
 
 
 ## Was ist Mumble
