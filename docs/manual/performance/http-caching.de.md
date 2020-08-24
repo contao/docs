@@ -107,19 +107,19 @@ Attribute:
 * `private` oder `public`
 
   Gibt einem Client an, ob die Antwort privat oder öffentlich ist. Der Browser bspw. darf sowohl private als auch
-  öffentliche Antworten cachen, da er die Antwort ja nicht mehr weiterreicht. Ein Proxy hingegen, darf private Antworten
-  nicht cachen, da er die Antwort weiterreicht. Sie können nicht kombiniert werden. Etwas das öffentlich gecached werden
+  öffentliche Antworten cachen, da er die Antwort ja nicht mehr weiterreicht. Ein Proxy hingegen darf private Antworten
+  nicht cachen, da er die Antwort weiterreicht. Sie können nicht kombiniert werden. Etwas, das öffentlich gecached werden
   darf, darf auch privat gecached werden.
   Eine öffentliche (`public`) Antwort bedeutet also auch implizit, dass sich mehrere Clients den selben Cache-Eintrag
   teilen. Man spricht deshalb auch von einem geteilten Cache, dem »Shared Cache«.
   
 * `max-age`
 
-  Enthält die Anzahl Sekunden die ein Client diese Antwort cachen darf.
+  Enthält die Anzahl Sekunden, die ein Client diese Antwort cachen darf.
 
 * `s-maxage`
 
-  Enthält die Anzahl Sekunden die ein öffentlicher Client diese Antwort cachen darf. Dieses Attribut wird nur dann
+  Enthält die Anzahl Sekunden, die ein öffentlicher Client diese Antwort cachen darf. Dieses Attribut wird nur dann
   verwendet, wenn sich die Cache-Dauer für öffentliche und private Clients unterscheiden soll.
   
 Zum besseren Verständnis ein paar Beispiele:
@@ -148,8 +148,8 @@ PHP geschrieben ist, ist er völlig unabhängig und kennt absolut keine Contao-E
 auf den Headern der HTTP-Requests und -Responses, die er vom Client bzw. von Contao bekommt.
 {{% /notice %}}
 
-Den grossen Vorteil den wir durch die Nutzung von HTTP-Standards gewinnen, ist die freie Wahl des Caching-Proxys.
-Bei wirklich hohem Besuchervorkommen, kommt PHP irgendwann an seine Grenzen. Vielleicht kommt man dann zum Schluss,
+Den grossen Vorteil, den wir durch die Nutzung von HTTP-Standards gewinnen, ist die freie Wahl des Caching-Proxys.
+Bei wirklich hohem Besuchervorkommen kommt PHP irgendwann an seine Grenzen. Vielleicht kommt man dann zum Schluss,
 leistungsfähigere - explizit für Caching ausgelegte - Proxies wie bspw. [Varnish][varnish] vor Contao zu setzen.
 
 Das würde allerdings an dieser Stelle zu weit führen.
@@ -288,7 +288,7 @@ Du kannst ihn aber durch die Anpassung von Umgebungsvariabeln weiter optimieren 
 {{% notice idea %}}
 Du fragst dich warum Contao über die `config.yaml` gesteuert wird und der Contao Cache Proxy mit Umgebungsvariabeln?
 Wir kommen wieder darauf zurück, dass die beiden nichts voneinander wissen. Die `config.yaml` für Contao selbst ist
-Applikationskonfiguration. Der mitgelieferte Contao Cache Proxy hingegegen, muss seine Einstellungen kennen **bevor** 
+Applikationskonfiguration. Der mitgelieferte Contao Cache Proxy hingegegen muss seine Einstellungen kennen, **bevor** 
 Contao überhaupt gestartet wird. Genau das wollen wir ja nämlich verhindern. Dafür sind Umgebungsvariabeln die beste
 Wahl.
 {{% /notice %}}
@@ -303,7 +303,7 @@ In Contao **4.9** heisst diese Variable noch `COOKIE_WHITELIST`.
 
 Diese Umgebungsvariable lässt dich konfigurieren, welche Cookies an die Applikation weitergereicht werden sollen und somit
 auch die Deaktivierung des Cachings zur Folge haben.
-Standardmässig nutzt Contao in seiner Core-Distribution ohne Erweiterungen nur **exakt vier Cookies** welche allesamt
+Standardmässig nutzt Contao in seiner Core-Distribution ohne Erweiterungen nur **exakt vier Cookies**, welche allesamt
 aus DSGVO-Sicht völlig unbedenklich sind, da technisch notwendig:
 
 1. Die ID der PHP-Session, welche standardmässig `PHPSESSID` lautet.
@@ -321,7 +321,7 @@ COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,trusted_device,REMEMBER
 ```
     
 {{% notice note %}}
-Der Name des PHP-Session-Cookies ist konfigurierbar via `php.ini`, du solltest also nachsehen ob es bei dir auch `PHPSESSID`
+Der Name des PHP-Session-Cookies ist konfigurierbar via `php.ini`, du solltest also nachsehen, ob es bei dir auch `PHPSESSID`
 lautet. Ausserdem ist der Name des CSRF-Cookies aus Sicherheitsgründen für `http` und `https` unterschiedlich. Solltest
 du `http` nutzen, lautet der Cookie-Name `csrf_http-contao_csrf_token`.
 Deine Besucher vor CSRF-Attacken schützen zu wollen, aber eine ungesicherte Verbindung einzusetzen, ist allerdings keine
@@ -332,7 +332,7 @@ sinnvolle Konfiguration. Deine Webseiten sollten ausschliesslich über `https` l
 
 {{< version "4.10" >}}
 
-Solltest du nicht genau wissen, welche Cookies deine Applikation braucht und somit nicht in der Lage sein, die
+Solltest du nicht genau wissen, welche Cookies deine Applikation braucht, und somit nicht in der Lage sein, die
 `COOKIE_ALLOW_LIST` entsprechend zu pflegen, kannst du auch gewissen Cookies von der mitgelieferten Deny-Liste entfernen,
 solltest du eins oder mehrere davon brauchen:
 
@@ -344,18 +344,18 @@ COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
 
 {{< version "4.10" >}}
 
-Aus dem genau gleichen Grund aus dem wir irrelevante Cookies entfernen, können wir auch irrelevante Query-Parameter entfernen.
-Ggf. kennst du die typischen `?utm_*=<zufälliges Token>` Query-Parameter welche an Links zu deiner Seite gehängt werden
-können. Sie werden benutzt um User-Tracking vorzunehmen. Allerdings sind auch die für die Applikation völlig irrelevant.
-Contao nutzt sie intern nicht. Ein zufälliges Token in der URL sorgt aber auch für ständig neue Cache-Einträge obwohl der
+Aus dem genau gleichen Grund, aus dem wir irrelevante Cookies entfernen, können wir auch irrelevante Query-Parameter entfernen.
+Ggf. kennst du die typischen `?utm_*=<zufälliges Token>` Query-Parameter, welche an Links zu deiner Seite gehängt werden
+können. Sie werden benutzt, um User-Tracking vorzunehmen. Allerdings sind auch die für die Applikation völlig irrelevant.
+Contao nutzt sie intern nicht. Ein zufälliges Token in der URL sorgt aber auch für ständig neue Cache-Einträge, obwohl der
 Inhalt immer identisch ist, was dafür sorgen kann, dass der Cache überfüllt wird.
 
-Wie bei den irrelevanten Cookies, pflegt Contao intern auch eine Liste irrelevanter Query-Parameter welche du wiederum
-selber übersteuern kannst, indem du die gesamte Liste der relevanten Query-Parameter die irgendwo benutzt werden, mit
+Wie bei den irrelevanten Cookies, pflegt Contao intern auch eine Liste irrelevanter Query-Parameter, welche du wiederum
+selber übersteuern kannst, indem du die gesamte Liste der relevanten Query-Parameter, die irgendwo benutzt werden, mit
 der Umgebungsvariable `QUERY_PARAMS_ALLOW_LIST` pflegst.
 
 Im Gegensatz zu den Cookies hast du aber im Normalfall eine viel, viel höhere Zahl an relevanten Query-Parametern.
-Das geht von `page` für Paginierungen bis `token` für die Bestätigung von Registrierungen. Diese Liste manuell zu pflegen
+Das geht von `page` für Paginierungen bis `token` für die Bestätigung von Registrierungen. Diese Liste manuell zu pflegen,
 ist daher ein eher unwahrscheinlicher Fall, weshalb du wohl eher zu `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` greifen wirst,
 solltest du einen bestimmten Query-Parameter in deiner Applikation trotzdem brauchen.
 
@@ -363,8 +363,8 @@ solltest du einen bestimmten Query-Parameter in deiner Applikation trotzdem brau
 
 {{< version "4.10" >}}
 
-Analog `COOKIE_REMOVE_FROM_DENY_LIST`, kannst du mittels `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` gewisse Einträge von der
-internen Deny-Liste entfernen. Brauchst du oder eine installierte Erweiterung bspw. den Facebook Click Identifier (`fbclid`)
+Analog `COOKIE_REMOVE_FROM_DENY_LIST` kannst du mittels `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` gewisse Einträge von der
+internen Deny-Liste entfernen. Brauchst du oder eine installierte Erweiterung bspw. den Facebook Click Identifier (`fbclid`),
 um serverseitig Auswertungen vorzunehmen, so kannst du diesen wie folgt erlauben:
 
 ```
@@ -395,10 +395,10 @@ Contao wäre aber nicht Contao, wenn du das bei jeder Änderung selber machen m�
 
 Contao verfügt über ein Framework, das es Entwicklern erlaubt, mit »Cache-Tagging« zu arbeiten. Beim Generieren der Antwort
 wird diese dazu mit Tags ausgezeichnet, sodass diese vom Cache-Proxy als Metadaten
-zum Cache-Eintrag gespeichert werden können. Auf Basis dieser Information, können dann Einträge mit gewissen Cache-Tags
+zum Cache-Eintrag gespeichert werden können. Auf Basis dieser Information können dann Einträge mit gewissen Cache-Tags
 invalidiert (so nennt man den Löschvorgang beim Caching) werden.
 
-Jede Antwort die Contao generiert enthält also jede Menge solcher Cache-Tags. Eine Antwort könnte also bspw. so aussehen:
+Jede Antwort, die Contao generiert, enthält also jede Menge solcher Cache-Tags. Eine Antwort könnte also bspw. so aussehen:
 
 ````http request
 HTTP/1.1 200 OK
@@ -417,11 +417,11 @@ Die Anzahl der Tags kann dabei beliebig wachsen. In diesem Beispiel hat Contao d
 und wie du vielleicht bereits bemerkt hast, enthalten diese die Information, dass es sich bei dieser Antwort um die
 Seite mit ID `18` mit Seitenlayout ID `16` handelt und sich die Inhaltselemente mit ID `42` und `10` darauf befinden.
 
-Und hier kommt's: Bearbeitest du eines dieser Elemente im Contao-Backend, invalidiert Contao automatisch alle Cache-Einträge
+Und hier kommt's: Bearbeitest du eines dieser Elemente im Contao-Backend, invalidiert Contao automatisch alle Cache-Einträge,
 die mit diesem Element zusammenhängen! Wurde also bspw. das Inhaltselement `42` in einer News verwendet, würde ein
 allfälliger Cache-Eintrag der Detailseite und potenzieller Listenansichten automatisch gelöscht. Änderst du das
-Seitenlayout `18` und wählst dort bspw. eine zusätzliche CSS-Datei aus, die geladen werden soll, so werden alle Antworten
-die mit diesem Seitenlayout generiert wurden automatisch und ohne dein Zutun invalidiert.
+Seitenlayout `18` und wählst dort bspw. eine zusätzliche CSS-Datei aus, die geladen werden soll, so werden alle Antworten,
+die mit diesem Seitenlayout generiert wurden, automatisch und ohne dein Zutun invalidiert.
 
 Ziemlich schlau, nicht?
 
@@ -464,7 +464,7 @@ ist es uns aber wichtig, dass der Besucher - sollten Änderungen vorgenommen wor
 sieht. Dann würden wir in Kauf nehmen, dass der Client häufiger einen Request absetzt (= tiefere, private Cache-Zeit)
 und unsere Shared-Cache Zeit dafür relativ hoch belassen. Dank Contao's Cache-Tagging-Framework, das bereits erklärt wurde,
 würde dieser ja bei Änderungen am Inhalt automatisch geleert bzw. wir könnten ihn auch über den Wartungsmodus leeren lassen.
-Eine Homepage die eine Liste an News anzeigt, ändert sich häufiger. Da würden wir generell tiefere Cache-Zeiten wählen.
+Eine Homepage, die eine Liste an News anzeigt, ändert sich häufiger. Da würden wir generell tiefere Cache-Zeiten wählen.
 {{% /expand %}}
 
 {{% expand "Heisst das, die Remember-Me-Funktion deaktiviert den Cache für einen Besucher komplett?" %}}
@@ -473,7 +473,7 @@ dies noch nicht der Fall ist. Es ist daher unmöglich, die Antwort aus dem Cache
 ja nie eingeloggt werden.
 {{% /expand %}}
 
-{{% expand "Meine Erweiterung speichert aber in einem Cookie ob die Cookie-Bar noch angezeigt werden soll, dann ist der Cache ja auch immer deaktiviert?" %}}
+{{% expand "Meine Erweiterung speichert aber in einem Cookie, ob die Cookie-Bar noch angezeigt werden soll, dann ist der Cache ja auch immer deaktiviert?" %}}
 Korrekt. Das wäre ein perfektes Beispiel für `localStorage`. Der Server braucht das nicht zu wissen, denn den Inhalt
 der Cookie-Bar kann man auch mit JavaScript dynamisch in den DOM einfügen lassen, wenn der entsprechende Key noch nicht
 im `localStorage` existiert. Informiere den/die Entwickler*in der Erweiterung darüber, das doch wenn möglich ohne
