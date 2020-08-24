@@ -34,7 +34,7 @@ For a real main navigation like on our website, this behaviour is rather counter
 
 **Navigation template:** Here you choose the template for the navigation.
 
-**Individual template:** Here you can overwrite the standard `mod_navigation`template.
+**Individual template:** Here you can overwrite the standard `mod_navigation` template.
 
 **HTML OutputThe**  
  frontend module generates the following HTML code:
@@ -76,7 +76,7 @@ For a real main navigation like on our website, this behaviour is rather counter
 <!-- indexer::continue -->
 ```
 
-Note that the CSS classes are assigned to both the `<li>`element and the `<strong>`element(s`<a>`), so define in your selectors exactly which elements you mean, for example `li.first`instead of just `.first`. The currently active page is not displayed as an active link, but as an element`<strong>` in accordance with accessibility requirements.
+Note that the CSS classes are assigned to both the `<li>` element and the `<a>` respectively `<strong>`, so define in your selectors exactly which elements you mean, for example `li.first` instead of just `.first`. The currently active page is not displayed as an active link, but as an element `<strong>` in accordance with accessibility requirements.
 
 ## Individual navigation
 
@@ -88,7 +88,7 @@ The front-end module "Individual Navigation" adds a navigation menu to the Web p
 
 **Navigation template:** Here you select the template for the navigation.
 
-**Individual template:** Here you can overwrite the default `mod_customnav`template.
+**Individual template:** Here you can overwrite the default `mod_customnav` template.
 
   
 **HTML OutputThe** front-end module generates the following HTML code:
@@ -118,7 +118,7 @@ The front-end module "Individual Navigation" adds a navigation menu to the Web p
 
 **Show hidden pages:** If you select this option, hidden pages that would normally be skipped are also displayed in the navigation path.
 
-**Individual template:** Here you can overwrite the standard `mod_breadcrumb`template.
+**Individual template:** Here you can overwrite the standard `mod_breadcrumb` template.
 
 ![The navigation path in the frontend](/de/layout/module-management/images/de/der-navigationspfad-im-frontend.png?classes=shadow)
 
@@ -146,7 +146,7 @@ The front-end module "Quick-navigation" adds a drop-down menu to the website, wi
 
 **Individual name:** Here you can enter an individual name for the first option of the quick-navigation.
 
-**Stoplevel**: Here you can define the level of nesting to which subpages are displayed in the quick-navigation (see [navigation menu](#navigationsmenu)).
+**Stoplevel**: Here you can define the level of nesting to which subpages are displayed in the quick-navigation (see [navigation menu](#navigation-menu).
 
 **Hard Limit:** If you select this option, menu items beyond the top level will never be displayed.
 
@@ -156,7 +156,7 @@ The front-end module "Quick-navigation" adds a drop-down menu to the website, wi
 
 **Reference page:** Here you define the starting page of the quick-navigation.
 
-**Individual template:** Here you can overwrite the standard `mod_quicknav`template.
+**Individual template:** Here you can overwrite the standard `mod_quicknav` template.
 
 **HTML OutputThe**  
  frontend module generates the following HTML code:
@@ -194,7 +194,7 @@ The front-end module "Quicklink" adds a drop-down menu of any pages to the websi
 
 **Individual name**: Here you can enter an individual name for the first option of the quick-navigation.
 
-**Individual template:** Here you can overwrite the default `mod_quicklink`template.
+**Individual template:** Here you can overwrite the default `mod_quicklink` template.
 
 **HTML OutputThe**  
  frontend module generates the following HTML code:
@@ -236,7 +236,7 @@ The frontend module "Book Navigation" adds a navigation menu to the website, whi
 
 **Show hidden pages:** If you select this option, hidden pages that would normally be skipped are also displayed in the book navigation.
 
-**Individual template:** Here you can overwrite the default `mod_booknav`template.
+**Individual template:** Here you can overwrite the default `mod_booknav` template.
 
 **HTML outputThe**  
  frontend module generates the following HTML code:
@@ -263,7 +263,7 @@ The "Article Navigation" module adds a navigation menu to the website, which all
 
 **Load first element:** If you select this option, the first item is automatically loaded if no specific item has been requested.
 
-**Individual template**: Here you can overwrite the default `mod_articlenav`template.
+**Individual template**: Here you can overwrite the default `mod_articlenav` template.
 
 **HTML outputThe**  
  frontend module generates the following HTML code:
@@ -288,7 +288,7 @@ Note that the active element is displayed as `<strong>`a link and not as a link.
 
 ## Sitemap
 
-The frontend module "Sitemap" adds an overview of all published and not hidden pages to the website. The individual entries are displayed as links so that visitors can jump directly to a specific page. Whether or not a page is displayed in the sitemap also depends on its configuration in the page structure (see [Expert Settings](../../seitenstruktur/seiten-konfigurieren/#experten-einstellungen)).
+The frontend module "Sitemap" adds an overview of all published and not hidden pages to the website. The individual entries are displayed as links so that visitors can jump directly to a specific page. Whether or not a page is displayed in the sitemap also depends on its configuration in the page structure (see [Expert Settings](/en/layout/site-structure/configure-pages/#expert-settings).
 
 **Show protected pages:** If you select this option, protected pages will also be displayed, which are otherwise only available to registered members.
 
@@ -298,7 +298,7 @@ The frontend module "Sitemap" adds an overview of all published and not hidden p
 
 **Navigation template:** Here you choose the template for the module.
 
-**Individual template**: Here you can overwrite the standard `mod_sitemap`template.
+**Individual template**: Here you can overwrite the standard `mod_sitemap` template.
 
 **HTML OutputThe**  
  front-end module generates **the** following HTML code:
