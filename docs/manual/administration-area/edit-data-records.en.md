@@ -32,7 +32,7 @@ Contao always offers several buttons to save your entries. Each button takes you
 
 Go to the [keyboard shortcuts in edit mode](/en/administrationsbereich/keyboard-shortcuts/#keyboard-shortcuts-in-edit-mode).
 
-## Edit multiple records at once { #edit multiple records at once }
+## Edit multiple records at once
 
 In Contao, you can easily edit multiple records at once instead of having to access and change each record individually. Just click on the link `Mehrere bearbeiten`. As you can see, the navigation icons are automatically replaced by checkboxes that let you select the records you want to edit.
 
