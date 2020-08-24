@@ -35,7 +35,7 @@ It is still possible to manage the installation of Contao 4 and extensions direc
 
 ### System requirements
 
-The system requirements are basically the same as for [Contao](en/installation/system-requirements/). The Contao Manager automatically checks if the requirements are met.
+The system requirements are basically the same as for [Contao](/en/installation/system-requirements/). The Contao Manager automatically checks if the requirements are met.
 
 - PHP version 7.1 or newer
 - PHP extension *Intl* and *OpenSSL*
@@ -92,7 +92,7 @@ Select the appropriate configuration for your server or hosting provider. For a 
 
 The [Composer Resolver Cloud](https://composer-resolver.cloud/) allows you to install Composer dependencies even if the server does not have enough memory. Please note that your dependency resolution package information is [sent](https://association.contao.org/) to a [Contao Association](https://association.contao.org/) cloud service.
 
-After the successful basic configuration, Contao can now be [installed](../contao-installieren/#contao-mit-dem-contao-manager-installieren).
+After the successful basic configuration, Contao can now be [installed](/en/installation/install-contao/#installing-contao-with-the-contao-manager).
 
 ## Frequently asked questions about the Contao Manager {#frequently asked questions about the Contao Manager}
 
