@@ -14,7 +14,7 @@ On the previous pages you have learned that the structure of a page is determine
 
 This page is now about creating and configuring these frontend modules, which are subordinated to theTheme Manager as part of the design. So every module you create is automatically assigned to a specific theme and can be exported with this theme and reused in another installation.
 
-You therefore access the module manager via the Theme Manager, as described in the[ Configuring](../theme-manager/themes-verwalten/#themes-konfigurieren) Themes section.
+You therefore access the module manager via the Theme Manager, as described in the [Configuring](/en/layout/theme-manager/manage-themes/#configuring-themes) Themes section.
 
 {{% children %}}
 
