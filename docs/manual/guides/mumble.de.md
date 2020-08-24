@@ -7,6 +7,15 @@ aliases:
 weight: 890
 ---
 
+
+## Kurzinfo Einstellungen
+
+- **Adresse:** mumble.c-c-a.org
+- **Port:** 62492
+- **Benutzername:** Kann frei gewählt werden
+- **Bezeichnung:** Kann frei gewählt werden, z. B. CCA-Mumble-Server
+
+
 ## Was ist Mumble
 Mumble ist ein Audio-Chat in dem man sich mit mehreren Personen unterhalten kann. Zusätzlich gibt es noch
 die Möglichkeit, kurze Informationen in einem Chatfenster einzugeben. Mumble wird üblicherweise in mehrere
