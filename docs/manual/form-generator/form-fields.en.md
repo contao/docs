@@ -20,9 +20,9 @@ Similar to articles and content elements, forms have a separate element for each
 
 **Mandatory field:** If you select this option, the field must be filled in to submit the form. If it remains empty, an error message will appear.
 
-## Explanation {#explanation}
+## Explanation
 
-The form `Erklärung`field adds any formatted explanation to the form. The input is done with the Rich Text Editor.
+The form `Explanation` field adds any formatted explanation to the form. The input is done with the Rich Text Editor.
 
 **Text:** Enter here the formatted text of the explanation.
 
@@ -31,7 +31,8 @@ The form `Erklärung`field adds any formatted explanation to the form. The input
 **Individual template:** Here you can overwrite the default template.
 
   
-**HTML OutputThe** form field generates the following HTML code:
+**HTML Output**
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-explanation explanation">
@@ -41,7 +42,7 @@ The form `Erklärung`field adds any formatted explanation to the form. The input
 
 ## HTML
 
-The form `HTML`field adds any HTML code to the form. In the backend settings under "AllowedHTML tags" you can define which HTML tags can be used.
+The form `HTML` field adds any HTML code to the form. In the backend settings under "AllowedHTML tags" you can define which HTML tags can be used.
 
 **HTML:** Enter your HTML code here.
 
@@ -51,14 +52,14 @@ HTML fields have no enclosing HTML markup.
 
 ## Fieldset Start and Fieldset End
 
-The `fieldset`element is used to group several controls and labels in a web form.
+The `fieldset` element is used to group several controls and labels in a web form.
 
 **CSS class**: Here you can enter one or more classes.
 
 **Individual template:** Here you can overwrite the standard template.
 
-**HTML outputThe**  
- form field generates the following HTML code:
+**HTML output**  
+The form field generates the following HTML code:
 
 ```html
 <fieldset>
@@ -101,14 +102,14 @@ The form field Text Field adds a single-line input field to the form. You should
 
 **Maximum input length**: Here you can specify the maximum number of characters that can be entered in the text field.
 
-**Keyboard shortcut:** A keyboard shortcut allows a visitor to jump directly to a specific input field by pressing the `[Alt]`- or - `[Strg]`key in conjunction with the keyboard shortcut, e.g. a number[ (see backend keyboard shortcut](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Keyboard shortcut:** A keyboard shortcut allows a visitor to jump directly to a specific input field by pressing the `[Alt]`- or `[Strg]`-key in conjunction with the keyboard shortcut, e.g. a number [see backend keyboard shortcut](/en/administrationsbereich/keyboard-shortcuts/).
 
 **Tab-Index:** Here you can determine the position of the form field within the tab order.
 
 **Individual template:** Here you can overwrite the default template.
 
-**HTML outputThe**  
- form field generates the following HTML code:
+**HTML output**  
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-text … mandatory">
@@ -121,10 +122,10 @@ The form field Text Field adds a single-line input field to the form. You should
 
 ## Password field
 
-The form field `Passwortfeld`adds two single-line input fields for the password and its confirmation to the form. In principle, password fields work just like [text fields](#textfeld), except that the input is hidden.
+The form field `Passwortfeld`adds two single-line input fields for the password and its confirmation to the form. In principle, password fields work just like [text fields](#text-field), except that the input is hidden.
 
-**HTML OutputThe**  
- form field generates the following HTML code:
+**HTML Output**  
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-password mandatory">
@@ -144,7 +145,7 @@ The form field `Passwortfeld`adds two single-line input fields for the password 
 
 ## Text area
 
-The form field `Textarea`adds a multiline input field to the form for longer texts. Dustest should also activate the input check here to prevent misuse of the form.
+The form field `Textarea` adds a multiline input field to the form for longer texts. Dustest should also activate the input check here to prevent misuse of the form.
 
 **Rows and columns:** Here you define how many rows and columns the text area should have. You can also define the dimensions of the field via CSS.
 
@@ -158,14 +159,14 @@ The form field `Textarea`adds a multiline input field to the form for longer tex
 
 **Maximum input length**: Here you can specify the maximum number of characters that can be entered in the text field.
 
-**Keyboard shortcut:** A keyboard shortcut allows a visitor to jump directly to a specific input field by pressing the `[Alt]`- or - `[Strg]`key in conjunction with the keyboard shortcut, e.g. a number[ (see backend keyboard shortcut](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Keyboard shortcut:** A keyboard shortcut allows a visitor to jump directly to a specific input field by pressing the `[Alt]`- or `[Strg]`-key in conjunction with the keyboard shortcut, e.g. a number [see backend keyboard shortcut](/en/administrationsbereich/keyboard-shortcuts/).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
 **Individual template:** Here you can overwrite the standard template.
 
-**HTML outputThe**  
- form field generates the following HTML code:
+**HTML output**  
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-textarea mandatory">
@@ -178,7 +179,7 @@ The form field `Textarea`adds a multiline input field to the form for longer tex
 
 ## Select menu {#select-menu}
 
-The form field `Select-Menü`adds a drop-down menu to the form from which you can select exactly one option. To allow multiple options to be selected, you can either enable multiple selection or use a [checkbox menu](#checkbox-menue) instead of the Select menu.
+The form field `Select-Menü` adds a drop-down menu to the form from which you can select exactly one option. To allow multiple options to be selected, you can either enable multiple selection or use a [checkbox menu](#checkbox-menu) instead of the Select menu.
 
 ![A select menu in the frontend](/de/form-generator/images/de/ein-select-menue-im-frontend.png?classes=shadow)
 
@@ -194,14 +195,14 @@ A JavaScript wizard supports you in creating the options. You can group options 
 
 **CSS class:** Here you can enter one or more classes.
 
-**Shortcut key:** A shortcut key allows a visitor to jump directly to a certain input field by pressing the `[Alt]``[Strg]`key in conjunction with the shortcut key, e.g. a number[ (see backend shortcut key](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Shortcut key:** A shortcut key allows a visitor to jump directly to a certain input field by pressing the `[Alt]`- or `[Strg]`-key in conjunction with the shortcut key, e.g. a number [see backend shortcut key](/en/administrationsbereich/keyboard-shortcuts/).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
 **Individual template:** Here you can overwrite the standard template.
 
-**HTML outputThe**  
- form field generates the following HTML code:
+**HTML output**  
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-select select mandatory">
@@ -217,9 +218,9 @@ A JavaScript wizard supports you in creating the options. You can group options 
 </div>
 ```
 
-Fields with multiple selection use the CSS `multiselect`class instead `select`of .
+Fields with multiple selection use the CSS `multiselect` class instead `select`.
 
-## Radio button menu {#radio-button-menu}
+## Radio button menu
 
 The form field Radio button menu adds a list of options to the form from which you can choose exactly one. To allow multiple options to be selected, you must use a [checkbox menu](#checkbox-menue).
 
@@ -231,8 +232,8 @@ The form field Radio button menu adds a list of options to the form from which y
 
 **Individual template:** Here you can overwrite the default template.
 
-**HTML outputThe**  
- form field generates the following HTML code:
+**HTML output**  
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-radio mandatory">   
@@ -260,20 +261,20 @@ The form field Radio button menu adds a list of options to the form from which y
 </div>
 ```
 
-## Checkbox Menu {#checkbox-menu}
+## Checkbox Menu
 
 The form field `Checkbox-Menü`adds a list of options to the form, from which you can select as many options as you like or none at all. To allow the selection of just one option, you must use a radio button menu or a [select menu](#select-menue).
 
 ![A checkbox menu in the frontend](/de/form-generator/images/de/ein-checkbox-menue-im-frontend.png?classes=shadow)
 
-**options:** Here you can enter the different options. A JavaScript assistant supports you when creating the options.
+**Options:** Here you can enter the different options. A JavaScript assistant supports you when creating the options.
 
 **CSS class:** Here you can enter one or more classes.
 
 **Individual template**: Here you can overwrite the standard template.
 
-**HTML outputThe**  
- form field generates the following HTML code:
+**HTML output**  
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-checkbox mandatory">
@@ -304,7 +305,7 @@ The form field `Checkbox-Menü`adds a list of options to the form, from which y
 
 ## File Upload
 
-The form field `Datei-Upload`adds a field to the form that allows visitors to transfer a file from their local computer to the server. For each upload field, you can define individually which file types may be uploaded and where the transferred files are stored.
+The form field `File Upload` adds a field to the form that allows visitors to transfer a file from their local computer to the server. For each upload field, you can define individually which file types may be uploaded and where the transferred files are stored.
 
 **Allowed file types:** Here you can enter a comma-separated list of allowed file extensions. If you try to upload another file, Contao will automatically display an error message and refuse to accept the file.
 
@@ -320,7 +321,7 @@ The form field `Datei-Upload`adds a field to the form that allows visitors to tr
 
 **CSS class:** Here you can enter one or more classes.
 
-**Shortcut** key: A shortcut key allows a visitor to jump directly to a certain input field by pressing the `[Alt]``[Strg]`key in connection with the shortcut key, e.g. a number[ (see backend shortcut key](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Shortcut** key: A shortcut key allows a visitor to jump directly to a certain input field by pressing the `[Alt]`- or `[Strg]`-key in connection with the shortcut key, e.g. a number [see backend shortcut key](/en/administrationsbereich/keyboard-shortcuts/).
 
 **Tab index:** Here you can determine the position of the form field within the tab order.
 
@@ -328,8 +329,8 @@ The form field `Datei-Upload`adds a field to the form that allows visitors to tr
 
 **Individual template**: Here you can overwrite the standard template.
 
-**HTML outputThe**  
- form field generates the following HTML code:
+**HTML output**  
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-upload mandatory">
@@ -342,7 +343,7 @@ The form field `Datei-Upload`adds a field to the form that allows visitors to tr
 
 ## Hidden Field
 
-The form field `Verstecktes Feld`adds a hidden field to the form. Hidden fields can contain any values that are not visible in the form, but are still submitted when the form is submitted.
+The form field `Hidden Field` adds a hidden field to the form. Hidden fields can contain any values that are not visible in the form, but are still submitted when the form is submitted.
 
 **Default value:** Here you can enter the value of the hidden field.
 
@@ -365,8 +366,8 @@ Hidden fields have no CSS class.
 
 **Individual template:** Here you can overwrite the default template.
 
-**HTML OutputThe**  
- form field generates the following HTML code:
+**HTML Output**  
+The form field generates the following HTML code:
 
 ```html
 <input type="hidden" name="…" value="…">
@@ -374,7 +375,7 @@ Hidden fields have no CSS class.
 
 ## Security question
 
-The form field `Sicherheitsfrage`adds a [CAPTCHA](https://de.wikipedia.org/wiki/Captcha) to the form.
+The form field `Security question` adds a [CAPTCHA](https://de.wikipedia.org/wiki/Captcha) to the form.
 
 A [honeypot](https://de.wikipedia.org/wiki/Honeypot) is used to trap and lock out spambots. The honeypot consists of several hidden fields that serve as bait. Normal users cannot see the fields and therefore do not change them - most spambots do. In addition, other factors are checked in the background to differentiate between users and spambots.
 
@@ -384,14 +385,14 @@ If it happens that a visitor is falsely identified as a spambot, he only has to 
 
 **CSS class:** Here you can enter one or more classes.
 
-**Keyboard shortc**ut: With a keyboard shortcut a visitor can jump directly to a certain input field by pressing the `[Alt]`- or - `[Strg]`key in connection with the keyboard shortcut, e.g. a number[ (see backend keyboard shortcut](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Keyboard shortcut:** With a keyboard shortcut a visitor can jump directly to a certain input field by pressing the `[Alt]`- or `[Strg]`-key in connection with the keyboard shortcut, e.g. a number [see backend keyboard shortcut](/en/administrationsbereich/keyboard-shortcuts/).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
 **Individual template:** Here you can overwrite the standard template.
 
-**HTML OutputThe**  
- form field generates the following HTML code:
+**HTML Output**  
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-captcha mandatory">
@@ -419,7 +420,7 @@ If it happens that a visitor is falsely identified as a spambot, he only has to 
 
 ## Submit field
 
-The form field `Absendefeld`adds a button to the form to submit the form, which can be either a text button or a screen button.
+The form field `Submit field` adds a button to the form to submit the form, which can be either a text button or a screen button.
 
 **Name of the submit button:** Enter the text of the submit button or mouse-rollover text of the screen button here.
 
@@ -429,14 +430,15 @@ The form field `Absendefeld`adds a button to the form to submit the form, which 
 
 **CSS class**: Here you can enter one or more classes.
 
-**Keyboard shortc**ut: With a keyboard shortcut a visitor can jump directly to a certain input field by pressing the `[Alt]`- or - `[Strg]`key in connection with the keyboard shortcut, e.g. a number[ (see backend keyboard shortcut](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Keyboard shortc**ut: With a keyboard shortcut a visitor can jump directly to a certain input field by pressing the `[Alt]`- or `[Strg]`-key in connection with the keyboard shortcut, e.g. a number [see backend keyboard shortcut](/en/administrationsbereich/keyboard-shortcuts/).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
 **Individual template**: Here you can overwrite the standard template.
 
   
-**HTML OutputThe** form field generates the following HTML code:
+**HTML Output**
+The form field generates the following HTML code:
 
 ```html
 <div class="widget widget-submit">
