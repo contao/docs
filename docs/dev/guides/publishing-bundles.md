@@ -59,7 +59,7 @@ If you do **not** add a _Contao Manager Plugin_ to your extension, it will still
 work with Contao, but:
 
  - it will require a user to manually register the bundle class in Symfony.
- - therefore, your extension will **not** be listed on [extensions.contao.org](https://extensions.contao.org/) nor in the
+ - therefore, your extension will **not** be listed on [extensions.contao.org][extensions] nor in the
    Contao Manager.
 
 
