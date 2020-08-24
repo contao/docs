@@ -14,7 +14,7 @@ The newsletter administration is a separate module in the backend, which you can
 
 ## Distributor
 
-To create a new distribution list click on![Create a new distribution list](/de/icons/new.svg?classes=icon "Einen neuen Verteiler erstellen") **New**.
+To create a new distribution list click on ![Create a new distribution list](/de/icons/new.svg?classes=icon "Einen neuen Verteiler erstellen") **New**.
 
 ### Title and forwarding
 
@@ -37,14 +37,14 @@ To create a new distribution list click on![Create a new distribution list](/de/
 Without specifying a separate SMTP server, the data is [sent](https://de.wikipedia.org/wiki/Sendmail) via [sendmail](https://de.wikipedia.org/wiki/Sendmail), which can lead to problems.
 
 {{% notice info %}}
-We recommend sending via the [e-mail transport protocol (SMTP)](../../../system/einstellungen/#smtp-versand).
+We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/settings/#e-mail-sending-configuration).
 {{% /notice %}}
 
 ## Newsletter
 
 Newsletters are always sorted according to their date of dispatch.
 
-To create a new newsletter click on![Edit distribution list](/de/icons/edit.svg?classes=icon "Verteiler bearbeiten") and then onNew![Create a new newsletter](/de/icons/new.svg?classes=icon "Einen neuen Newsletter erstellen").
+To create a new newsletter click on ![Edit distribution list](/de/icons/edit.svg?classes=icon "Verteiler bearbeiten") and then on New![Create a new newsletter](/de/icons/new.svg?classes=icon "Einen neuen Newsletter erstellen").
 
 ### Subject and newsletter aliases
 
@@ -85,7 +85,7 @@ E-Mail:      ##email##
 Ihr Administrator
 ```
 
-In contrast to insert tags, simple tokens not only allow you to access `tl_member`the data in the member table, but also to implement simple if-else queries and thus, for example, to specify the gender of the salutation:
+In contrast to insert tags, simple tokens not only allow you to access `tl_member` the data in the member table, but also to implement simple if-else queries and thus, for example, to specify the gender of the salutation:
 
 ```text
 {if gender=="male"}
@@ -120,7 +120,7 @@ There are two things you need to know about the e-mail template:
 - It is only used for HTML newsletters.
 - It is primarily intended for page layout and not for content.
 
-HTML mails are basically structured like HTML web pages, but unfortunately, e-mail programs cannot handle HTML code like modern Internet browsers. Therefore the template generates an `mail_default`outdated HTML 3.2 document, which is processed by most email clients.
+HTML mails are basically structured like HTML web pages, but unfortunately, e-mail programs cannot handle HTML code like modern Internet browsers. Therefore the template generates an `mail_default` outdated HTML 3.2 document, which is processed by most email clients.
 
 **E-Mail Template:** Here you select the template for the HTML mail.
 
@@ -134,7 +134,7 @@ If you do not provide an individual sender address, the mailing list email addre
 
 ### Expert settings
 
-To send a newsletter as a plain text mail, it is not enough to simply leave the HTML content field empty. You also have to select the option `Als Text senden`in the expert settings.
+To send a newsletter as a plain text mail, it is not enough to simply leave the HTML content field empty. You also have to select the option `Als Text senden` in the expert settings.
 
 **Send as text:** Here you deactivate the HTML-sending
 
@@ -148,7 +148,7 @@ Usually, the recipients of a newsletter manage themselves using the correspondin
 
 According to the [double opt-in procedure](https://de.wikipedia.org/wiki/Opt-In), every subscriber receives an e-mail with a confirmation link when ordering, without which he cannot complete his subscription. This is sufficient to comply with the provisions of §7 paragraph 2 numbers 2 and 3 of the Law against Unfair Competition (UWG).
 
-To edit a subscriber to the distribution list, click onand![Edit subscribers of the distribution list](/de/icons/mgroup.svg?classes=icon "Abonnenten des Verteilers bearbeiten") then onNew![Create a new subscriber](/de/icons/new.svg?classes=icon "Einen neuen Abonnenten erstellen") or ![Edit subscriber](/de/icons/edit.svg?classes=icon "Abonnent bearbeiten").
+To edit a subscriber to the distribution list, click on ![Edit subscribers of the distribution list](/de/icons/mgroup.svg?classes=icon "Abonnenten des Verteilers bearbeiten") and then on New ![Create a new subscriber](/de/icons/new.svg?classes=icon "Einen neuen Abonnenten erstellen") or ![Edit subscriber](/de/icons/edit.svg?classes=icon "Abonnent bearbeiten").
 
 **Email address:** Enter the recipient's e-mail address here.
 
@@ -168,7 +168,7 @@ Then start the import by clicking the button `CSV-Import`.
 
 ## Send newsletter
 
-You can start sending a newsletter by clicking on the corresponding navigation![Send newsletter](/de/icons/send.svg?classes=icon "Newsletter versenden") symbol in the distribution list overview, which will take you to a preview page where you can check the configuration and content of the newsletter again. It is also recommended that you make active use of the button`Testsendung`. You can change the recipient address in the field`Testsendung an`.
+You can start sending a newsletter by clicking on the corresponding navigation![Send newsletter](/de/icons/send.svg?classes=icon "Newsletter versenden") symbol in the distribution list overview, which will take you to a preview page where you can check the configuration and content of the newsletter again. It is also recommended that you make active use of the button `Testsendung`. You can change the recipient address in the field `Testsendung an`.
 
 ![Sending a newsletter](/de/core-extensions/newsletter/images/de/einen-newsletter-versenden.png?classes=shadow)
 
@@ -194,7 +194,7 @@ Normally, the sending of a newsletter is completely automated, and you can do ot
 
 1. Filter in the backend under "System" &gt; "System-Log" the category after the last newsletter entry.
 2. Determine how many newsletters were sent.
-3. Enter the desired offset in the field`Versatz`.
+3. Enter the desired offset in the field `Versatz`.
 
 You can find the log data of the transmission in the backend under "System" &gt; "System Log". The filter category is calledNEWSLETTER\_X, where the X stands for the ID of the respective newsletter. The total number of e-mails sent can be seen in the field `Anzeigen`. For example, if there were 120 mails, enter "120" to continue with the 121st recipient (counting starts at 0).
 
