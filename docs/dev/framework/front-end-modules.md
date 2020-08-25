@@ -252,6 +252,16 @@ $GLOBALS['TL_DCA']['tl_module']['palettes'][ExampleController::TYPE] =
 ;
 ```
 
+```php
+// contao/languages/en/modules.php
+use App\Controller\FrontendModule\ExampleController;
+
+$GLOBALS['TL_LANG']['FMD'][ExampleController::TYPE] = [
+    'My example module', 
+    'A front end module for testing purposes.',
+];
+```
+
 
 ## Read more
 

@@ -166,12 +166,12 @@ code example above. The annotation can be used on the class of the content eleme
 if the class is invokable (has an `__invoke` method) or extends from the `AbstractFragmentController`.
 Otherwise the annotation can be used on the method that will deliver the response.
 
-The following example sets the type of the content element to `my_example`, puts 
-it in the `media` category, sets the template name to `ce_some_example` and defines
-the renderer to be `forward` (which is the default):
+The following example uses the annotation and only defines the category under which
+the module should be displayed within the type select of the back end, as this is
+the only required property that needs to be set.
 
 ```php
-// src/Controller/ContentElement/ExampleElement.php
+// src/Controller/ContentElement/ExampleController.php
 namespace App\Controller\ContentElement;
 
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
@@ -182,19 +182,68 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @ContentElement("my_example",
- *   category="media", 
- *   template="ce_some_example",
- *   renderer="forward"
- * )
+ * @ContentElement(category="texts")
  */
-class ExampleElement extends AbstractContentElementController
+class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
     {
         return $template->getResponse();
     }
 }
+```
+
+Every other property is inferred from the class name or uses the default. The element
+type in this case will be `example`, the template will be `ce_example` and the
+renderer will be `forward`.
+
+The following example sets the type of the element to `my_example`, puts it in the
+`texts` category, sets the template name to `ce_some_example` and defines the renderer 
+to be `forward` (which is the default):
+
+```php
+/**
+ * @ContentElement("my_example",
+ *   category="texts", 
+ *   template="ce_some_example",
+ *   renderer="forward"
+ * )
+ */
+class ExampleController extends AbstractContentElementController
+{
+}
+```
+
+You can also use class constants within annotations. This can be helpful to make
+the module's type a reusable reference:
+
+```php
+/**
+ * @ContentElement(ExampleController::TYPE, category="miscellaneous")
+ */
+class ExampleController extends AbstractContentElementController
+{
+    public const TYPE = 'my_element';
+}
+```
+
+```php
+// contao/dca/tl_module.php
+use App\Controller\ContentElement\ExampleController;
+
+$GLOBALS['TL_DCA']['tl_content']['palettes'][ExampleController::TYPE] = 
+   '{type_legend},type;{text_legend},text'
+;
+```
+
+```php
+// contao/languages/en/default.php
+use App\Controller\ContentElement\ExampleController;
+
+$GLOBALS['TL_LANG']['CTE'][ExampleController::TYPE] = [
+    'My Example Element', 
+    'A Content Element for testing purposes.',
+];
 ```
 
 
