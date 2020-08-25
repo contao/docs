@@ -182,12 +182,12 @@ code example above. The annotation can be used on the class of the content eleme
 if the class is invokable (has an `__invoke` method) or extends from the `AbstractFragmentController`.
 Otherwise the annotation can be used on the method that will deliver the response.
 
-The following example sets the type of the module to `my_example`, puts it in the
-`miscellaneous` category, sets the template name to `mod_some_example` and defines
-the renderer to be `forward` (which is the default):
+The following example uses the annotation and only defines the category under which
+the module should be displayed within the type select of the back end, as this is
+the only required property that needs to be set.
 
 ```php
-// src/Controller/FrontendModule/ExampleModule.php
+// src/Controller/FrontendModule/ExampleController.php
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -198,19 +198,58 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @FrontendModule("my_example",
- *   category="miscellaneous", 
- *   template="mod_some_example",
- *   renderer="forward"
- * )
+ * @FrontendModule(category="miscellaneous")
  */
-class ExampleModule extends AbstractFrontendModuleController
+class ExampleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
     {
         return $template->getResponse();
     }
 }
+```
+
+Every other property is inferred from the class name or uses the default. The module
+type in this case will be `example`, the template will be `mod_example` and the
+renderer will be `forward`.
+
+The following example sets the type of the module to `my_example`, puts it in the
+`miscellaneous` category, sets the template name to `mod_some_example` and defines
+the renderer to be `forward` (which is the default):
+
+```php
+/**
+ * @FrontendModule("my_example",
+ *   category="miscellaneous", 
+ *   template="mod_some_example",
+ *   renderer="forward"
+ * )
+ */
+class ExampleController extends AbstractFrontendModuleController
+{
+}
+```
+
+You can also use class constants within annotations. This can be helpful to make
+the module's type a reusable reference:
+
+```php
+/**
+ * @FrontendModule(ExampleController::TYPE, category="miscellaneous")
+ */
+class ExampleController extends AbstractFrontendModuleController
+{
+    public const TYPE = 'my_module';
+}
+```
+
+```php
+// contao/dca/tl_module.php
+use App\Controller\FrontendModule\ExampleController;
+
+$GLOBALS['TL_DCA']['tl_module']['palettes'][ExampleController::TYPE] = 
+    '{title_legend},name,type;{redirect_legend},jumpTo'
+;
 ```
 
 
