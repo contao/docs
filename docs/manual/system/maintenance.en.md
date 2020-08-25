@@ -1,33 +1,56 @@
 ---
-title: 'System maintenance'
+title: 'Maintenance'
 description: 'Most maintenance tasks in Contao are automated so you can concentrate on your real work.'
 aliases:
     - /en/system/maintenance/
 weight: 20
 ---
 
-{{% notice warning %}}
-This article is machine translated.
+
+Most maintenance tasks in Contao are automated so that you can concentrate on your real work. Sometimes, however, it 
+might be necessary to manually start the system maintenance tasks that are otherwise performed automatically.
+
+
+## Maintenance mode
+
+This feature allows you to put the Contao instance into a "maintenance mode". While this mode is active, the front end
+is not reachable for regular visitors. Instead an appropriate message is shown. The back end is accessible as usual,
+logged in back end users can also visit the front end normally.
+
+This mode is useful, if more in depth work needs to be done in the back end, the effects of which should not be
+immediately visible in the front end.
+
+
+## Crawler
+
+Pages are automatically indexed when you access them in the front end (unless you are logged into the backend at the same 
+time), so you don't normally have to worry about the search index. However, if you have updated many pages at once, it is 
+more convenient to rebuild the search index manually than to call up all changed pages one by one in the browser.
+
+The crawler can also check for broken links, when enabled.
+
+{{% notice note %}}
+In versions prior to Contao **4.9** this section is called **Rebuild search index**. The feature of being able to check
+for broken links is not available there.
 {{% /notice %}}
 
-Most maintenance tasks in Contao are automated so that you can concentrate on your real work. Sometimes, however, it might be necessary to manually start the system maintenance tasks that are otherwise performed automatically.
+![Build the search index automatically](/de/system/images/en/rebuild-the-search-index.png?classes=shadow)
 
-## Clean up data
+### Indexing protected pages
 
-In addition to the user-generated content, Contao stores various system data that is used to search for or restore deleted records or previous versions. You can manually clean this data, for example to remove old thumbnails or to update the XML sitemaps after a change in the page structure.
+To allow the search of protected pages, you must first enable this feature in the backend settings. Use this feature 
+very carefully and always exclude personalized pages from the search!
 
-![Clean up data manually](/de/system/images/de/daten-manuell-bereinigen.png?classes=shadow)
+Then create a new front end user and allow them to access the protected pages to be indexed.
 
-## Rebuild search index
+Later during the search, the protected pages will of course only appear in the results if the registered front end user 
+is allowed to access them.
 
-Pages are automatically indexed when you access them in the frontend (unless you are logged into the backend at the same time), so you don't normally have to worry about the search index. However, if you have updated many pages at once, it is more convenient to rebuild the search index manually than to call up all changed pages one by one in the browser.
 
-![Build the search index automatically](/de/system/images/de/den-suchindex-automatisch-aufbauen.png?classes=shadow)
+## Purge data
 
-## Indexing protected pages
+In addition to the user-generated content, Contao stores various system data that is used the search or for restoring 
+deleted records or previous versions. You can manually clean this data, for example to remove old thumbnails or to 
+update the XML sitemaps after a change in the page structure.
 
-To allow the search of protected pages, you must first enable this feature in the backend settings. Use this feature very carefully and always exclude personalized pages from the search!
-
-Then create a new front-end user and allow him or her to access the protected pages to be indexed.
-
-Later during the search, the protected pages will of course only appear in the results if the registered frontend user is allowed to access them.
+![Purge data manually](/de/system/images/en/purge-data-manually.png?classes=shadow)
