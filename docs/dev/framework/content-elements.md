@@ -99,7 +99,7 @@ Using the naming convention for templates mentioned above, the final template na
 for this content element will be `ce_my_content_element`:
 
 ```html
-<!-- templates/ce_my_content_element.html5 -->
+<!-- contao/templates/ce_my_content_element.html5 -->
 <div class="my-content-element">    
     <?= $this->text; ?>
 </div>
