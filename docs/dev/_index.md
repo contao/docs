@@ -140,6 +140,7 @@ In any case, the current core team members consist of (in alphabetical order)
 * [Auswöger, Martin (@ausi)](https://github.com/ausi) 
 * [Feyer, Leo (@leofeyer)](https://github.com/leofeyer), Project Lead 
 * [Greminger, David (@bytehead)](https://github.com/bytehead) 
+* [Gschwantner, Fritz Michael (@fritzmg)](https://github.com/fritzmg) 
 * [Schempp, Andreas (@aschempp)](https://github.com/aschempp) 
 * [Schmid, Jim (@sheeep)](https://github.com/sheeep) 
 * [Witschi, Yanick (@toflar)](https://github.com/toflar) 
