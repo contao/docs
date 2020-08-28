@@ -11,7 +11,7 @@ weight: 20
 Similar to articles and content elements, forms will contain a separate element for each form field, which is specifically 
 configured to meet the requirements for that field. Each form field must have at least one field name and one field label.
 
-![Edit form fields](/en/form-generator/images/en/formfield-editor.png?classes=shadow)
+![Edit form fields](/de/form-generator/images/en/formfield-editor.png?classes=shadow)
 
 **Field name:** The field name is used to reference the user input after the form has been submitted. If you store the 
 form data in the database, there must be a field in the table with the same name.
@@ -107,7 +107,7 @@ for e-mail addresses.
 **Maximum input length**: Here you can specify the maximum number of characters that can be entered in the text field.
 
 **Keyboard shortcut**: A keyboard shortcut allows a visitor to jump directly to a certain input field by pressing the 
-`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number[ (see backend keyboard shortcuts](../../administrationsbereich/backend-tastaturkuerzel/)).
+`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](/en/administration-area/call-and-structure-of-the-backend/)).
 
 **Tab-Index:** Here you can determine the position of the form field within the tab order.
 
@@ -168,7 +168,7 @@ dimensions of the field via CSS.
 **Maximum input length**: Here you can specify the maximum number of characters that can be entered in the text field.
 
 **Keyboard shortcut**: A keyboard shortcut allows a visitor to jump directly to a certain input field by pressing the 
-`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number[ (see backend keyboard shortcuts](../../administrationsbereich/backend-tastaturkuerzel/)).
+`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](/en/administration-area/call-and-structure-of-the-backend/)).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
@@ -192,7 +192,7 @@ The form field `Select Menu` adds a drop-down menu to the form, where users can 
 multiple options to be selected, you can either enable multiple selection or use a [Checkbox Menu](#checkbox-menu) 
 instead of the Select Menu.
 
-![A select menu in the frontend](/en/form-generator/images/en/select-menu-in-frontend.png?classes=shadow)
+![A select menu in the frontend](/de/form-generator/images/en/select-menu-in-frontend.png?classes=shadow)
 
 **Multiple selection:** Here you can allow the selection of multiple options.
 
@@ -203,12 +203,12 @@ instead of the Select Menu.
 A JavaScript wizard helps you when creating the options. You can group options and assign a heading to each group. To 
 make a line a group heading, select the Group option.
 
-![JavaScript wizard for creating options](/en/form-generator/images/en/select-options-wizard.png?classes=shadow)
+![JavaScript wizard for creating options](/de/form-generator/images/en/select-options-wizard.png?classes=shadow)
 
 **CSS class:** Here you can enter one or more classes.
 
 **Keyboard shortcut**: A keyboard shortcut allows a visitor to jump directly to a certain input field by pressing the 
-`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number[ (see backend keyboard shortcuts](../../administrationsbereich/backend-tastaturkuerzel/)).
+`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](/en/administration-area/call-and-structure-of-the-backend/)).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
@@ -238,7 +238,7 @@ Fields with multiple selection use the CSS `multiselect` class instead of `selec
 The form field Radio button menu adds a list of options to the form from which you can choose exactly one. To allow 
 multiple options to be selected, you must use a [checkbox menu](#checkbox-menu).
 
-![A radio button menu in the front end](/en/form-generator/images/en/radio-button-in-frontend.png?classes=shadow)
+![A radio button menu in the front end](/de/form-generator/images/en/radio-button-in-frontend.png?classes=shadow)
 
 **Options:** Here you can enter the different options. A JavaScript-based editor will help you when creating the options.
 
@@ -280,7 +280,7 @@ The form field generates the following HTML code:
 The form field `Checkbox Menu` adds a list of options to the form, from which you can select as many options as you 
 like, or none at all. To allow the selection of just one option, you must instead use a radio button menu or a [select menu](#select-menu).
 
-![A checkbox menu in the frontend](/en/form-generator/images/en/checkboxes-in-frontend.png?classes=shadow)
+![A checkbox menu in the frontend](/de/form-generator/images/en/checkboxes-in-frontend.png?classes=shadow)
 
 **Options:** Here you can enter the different options. A JavaScript editor helps you when creating the options.
 
@@ -343,7 +343,7 @@ If you select this option, existing files are preserved, and new files are given
 **CSS class:** Here you can enter one or more CSS classes.
 
 **Keyboard shortcut**: A keyboard shortcut allows a visitor to jump directly to a certain input field by pressing the 
-`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number[ (see backend keyboard shortcuts](../../administrationsbereich/backend-tastaturkuerzel/)).
+`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](/en/administration-area/call-and-structure-of-the-backend/)).
 
 **Tab index:** Here you can determine the position of the form field within the tab order.
 
@@ -412,7 +412,7 @@ form data will not be lost under any circumstances.
 **CSS class:** Here you can enter one or more classes.
 
 **Keyboard shortcut**: A keyboard shortcut allows a visitor to jump directly to a certain input field by pressing the 
-`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](../../administrationsbereich/keyboard-shortcuts/)).
+`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](/en/administration-area/call-and-structure-of-the-backend/)).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
@@ -459,7 +459,7 @@ or an image button.
 **CSS class**: Here you can enter one or more CSS classes.
 
 **Keyboard shortcut**: A keyboard shortcut allows a visitor to jump directly to a certain input field by pressing the 
-`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](../../administrationsbereich/keyboard-shortcuts/)).
+`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](/en/administration-area/call-and-structure-of-the-backend/)).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
