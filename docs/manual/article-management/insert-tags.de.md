@@ -23,10 +23,10 @@ oder den Alias der Zielseite.
 
 | Insert-Tag                | Beschreibung                                                                                                                 |
 |:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-| `{{link::*}}`             | Dieses Tag wird mit einem Link zu einer internen Seite ersetzt (ersetze * mit der ID oder dem Alias).                        |
+| `{{link::*}}`             | Dieses Tag wird mit dem HTML-Code für einen Link ersetzt. Der Parameter kann entweder die ID oder der Alias einer Seite sein, auch eine absolute URL ist möglich. |
 | `{{link::back}}`          | Dieses Tag wird mit einem Link zur der zuletzt besuchte Seite ersetzt. Kann auch als `{{link_open::back}}`, `{{link_url::back}}` und `{{link_title::back}}` verwendet werden.    |
 | `{{link::login}}`         | Dieses Tag wird mit einem Link zur Anmeldeseite des aktuellen Frontend-Benutzers (falls vorhanden) ersetzt.                  |
-| `{{link_open::*}}`        | Wird mit dem öffnenden Tag eines Links zu einer internen Seite ersetzt: `{{link_open::12}}Hier klicken{{link_close}}`.       |
+| `{{link_open::*}}`        | Wird mit dem öffnenden Tag eines Links ersetzt. Der Parameter kann entweder die ID oder der Alias einer Seite sein, auch eine absolute URL ist möglich: `{{link_open::12}}Hier klicken{{link_close}}`.       |
 | `{{link_url::*}}`         | Dieses Tag wird mit der URL einer internen Seite ersetzt: `<a href="{{link_url::12}}">Hier klicken</a>`.                     |
 | `{{link_target::*}}`      | Dieses Tag wird mit ` target="_blank" rel="noreferrer noopener"` ersetzt, wenn es sich bei der angegebenen Seite um eine externe Weiterleitungsseite handelt, und dort eingestellt ist, dass sich der Link in einem neuen Fenster öffnen soll. |
 | `{{link_title::*}}`       | Dieses Tag wird mit dem Titel einer internen Seite ersetzt: `<a title="{{link_title::12}}">Hier klicken</a>`.                |
@@ -161,7 +161,7 @@ Lightbox-Bild einfügen.
 | `{{label::*}}`           | Dieses Tag wird mit einer Übersetzung ersetzt. Der erste Parameter ist der Name einer Sprachdatei oder einem Akronym (z. B. `CNT` für Länder oder `LNG` für Sprachen). Beispiele: `{{label::CNT:au}}` wird zu »Australien« und `{{label::tl_article:title:0}}` wird zu »Titel«. Beachte, dass innerhalb des Pfads zur Bezeichnung nur einfache Doppelpunkte verwendet werden. |
 | `{{version}}`            | Dieses Tag wird mit der verwendeten Contao-Version (z. B. 4.8.2) ersetzt.                            |
 | `{{request_token}}`      | Dieses Tag wird mit dem zur aktuellen Session gehörenden Request-Token ersetzt.                      |
-| `{{toggle_view}}`        | Dieses Tag wird mit einem Link ersetzt, welcher zwischen Mobile- und Desktop-Layout wechselt. Das mobile Seitenlayout ist **ab Contao 4.8** nicht mehr Teil der Core-Distribution. Wenn du die Funktion benötigst, muss du das Paket `contao/mobile-page-layout-bundle` installieren. |
+| `{{toggle_view}}`        | Dieses Tag wird mit einem Link ersetzt, welcher zwischen Mobile- und Desktop-Layout wechselt. Das mobile Seitenlayout ist **ab Contao 4.8** nicht mehr Teil der Core-Distribution. Wenn du die Funktion benötigst, musst du das Paket `contao/mobile-page-layout-bundle` installieren. |
 | `{{br}}`                 | Dieses Tag wird mit einem HTML <code>&lt;br&gt;</code> Element (Zeilenumbruch) ersetzt.              |
 | `{{asset::*::*}}`        | Mit diesem Tag können Pfade zu CSS und JavaScript Dateien aus Paketen eingebunden werden. Siehe die [Entwickler-Dokumentation][DevAssets]. |
 | `{{trans::*::*::*}}`     | Mit diesem Tag können Übersetzungen ausgegeben werden. Im Gegensatz zum `{{label::*}}` Insert-Tag können damit alle Übersetzungen aus dem Symfony System ausgegeben werden. Beispiel: `{{trans::MSC.updateVersion::contao_default::4.10}}`. Siehe auch die [Entwickler-Dokumentation][Translations]. |

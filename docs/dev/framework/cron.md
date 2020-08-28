@@ -138,12 +138,11 @@ to tag the service accordingly.
 namespace App\Cron;
 
 use Contao\CoreBundle\ServiceAnnotation\CronJob;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @CronJob("hourly")
  */
-class ExampleCron implements ServiceAnnotationInterface
+class ExampleCron
 {
     public function __invoke(): void
     {

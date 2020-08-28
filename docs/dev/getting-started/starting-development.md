@@ -160,7 +160,7 @@ services:
 
     App\:
         resource: ../src
-        exclude: ../src/{Entity,Migrations,Model,Resources,Tests}
+        exclude: ../src/{Entity,Migrations,Model,Resources,Tests,Widget}
     
     App\Controller\:
         resource: ../src/Controller
@@ -200,7 +200,6 @@ to register your routes.
 {{% /notice %}}
 
 Next: [create your first DCA adjustment][12].
-
 
 
 [1]: /getting-started/extension/

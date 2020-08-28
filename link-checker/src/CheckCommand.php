@@ -65,9 +65,13 @@ class CheckCommand extends Command
 
         $httpClient = HttpClient::create([
             'max_duration' => 5,
+            'headers' => [
+                'User-Agent' => 'contao/docs-crawler'
+            ]
         ]);
 
-        $escargot = Escargot::create($baseUriCollection, new InMemoryQueue(), $httpClient)
+        $escargot = Escargot::create($baseUriCollection, new InMemoryQueue())
+                    ->withHttpClient($httpClient)
                     ->withConcurrency(5)
                     ->withRequestDelay(500000) // 0.5s
         ;

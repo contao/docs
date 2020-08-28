@@ -19,14 +19,13 @@ process is finished and before the request processing is started.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class InitializeSystemListener implements ServiceAnnotationInterface
+/**
+ * @Hook("initializeSystem")
+ */
+class InitializeSystemListener
 {
-    /**
-     * @Hook("initializeSystem")
-     */
-    public function onInitializeSystem(): void
+    public function __invoke(): void
     {
         // Do something …
     }

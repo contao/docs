@@ -39,14 +39,13 @@ A string containing the formatted date.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseDateListener implements ServiceAnnotationInterface
+/**
+ * @Hook("parseDate")
+ */
+class ParseDateListener
 {
-    /**
-     * @Hook("parseDate")
-     */
-    public function onParseDate(string $formattedDate, string $format, ?int $timestamp): string
+    public function __invoke(string $formattedDate, string $format, ?int $timestamp): string
     {
         // Modify or create your own formatted date …
 

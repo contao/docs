@@ -58,7 +58,7 @@ To realize such "exotic" page layouts in Contao, you can define additional layou
 
 **Own layout areas**: Here you activate your own layout areas.
 
-**Position of the layout areas**: In connection with the standard `fe_page`page template, you can position your own layout areas as follows:
+**Position of the layout areas**: In connection with the standard `fe_page` page template, you can position your own layout areas as follows:
 
 - Before the enclosing element `top`
 - Below the header line `before`
@@ -69,7 +69,7 @@ To realize such "exotic" page layouts in Contao, you can define additional layou
 
 ## Web Fonts
 
-Here you can add one or more [Google Fonts](https://fonts.google.com/) to your website. Once you have selected a web font, you can add it here by specifying the parameters`Roboto:400,700`.
+Here you can add one or more [Google Fonts](https://fonts.google.com/) to your website. Once you have selected a web font, you can add it here by specifying the parameters `Roboto:400,700`.
 
 **Output in source code:**
 
@@ -97,7 +97,7 @@ With these settings you can define the image size for the lightbox in the page l
 
 **Image size for the lightbox:** Here you can set the dimensions of the image and the scaling mode for the lightbox.
 
-**Pixel densities for the standard image:** The image sizes are adjusted automatically. For example, the entry`1x, 1.5x, 2x` generates the following HTML code:
+**Pixel densities for the standard image:** The image sizes are adjusted automatically. For example, the entry `1x, 1.5x, 2x` generates the following HTML code:
 
 ```html
 <img srcset="img-a.jpg 1x, img-b.jpg 1.5x, img-c.jpg 2x">
@@ -115,12 +115,12 @@ The components of the Contao **CSS framework**, **internal stylesheets** and **e
 | ---------- | ----------- |
 | Layout Builder | Creates the CSS layout based on the page layout settings. This component must be active for the page generator to work correctly! |
 | Responsive layout | Adds a viewport tag to the header and scales the CSS layout based on the width of the device. |
-| 12-column grid | Creates a responsive 12-column grid, which is `offset12`controlled by the CSS classes `grid1`to `grid12`and `offset1`to. |
+| 12-column grid | Creates a responsive 12-column grid, which is `offset12` controlled by the CSS classes `grid1` to `grid12` and `offset1` to. |
 | CSS reset | Removes the inconsistent standard formatting of HTML elements in different browsers |
 | Forms | Basic formatting of form elements and buttons. |
 | Icons | Basic icons for downloads and file attachments. |
 
-**Internal stylesheets:** Here you can add [internal stylesheets](../stylesheets-verwalten/) to the layout.
+**Internal stylesheets:** Here you can add [internal stylesheets](/en/layout/theme-manager/manage-stylesheets/) to the layout.
 
 **External stylesheets:** Here you can add external CSS, SCSS or LESS files from the file system.
 
@@ -130,7 +130,7 @@ The components of the Contao **CSS framework**, **internal stylesheets** and **e
 
 ## RSS/Atom feeds
 
-Feeds embedded in a page layout are linked in the header area of the page and can be subscribed to directly in the address bar of most modern web browsers. The "header" is not the header of your page layout, but the `<head>`tag of the HTML source code.
+Feeds embedded in a page layout are linked in the header area of the page and can be subscribed to directly in the address bar of most modern web browsers. The "header" is not the header of your page layout, but the `<head>` tag of the HTML source code.
 
 **News Feeds:** Here you can select the feeds of the news archives.
 
@@ -152,7 +152,7 @@ The **JavaScript templates**, **Analytics templates**, **External JavaScript** a
 
 | Template | Declaration |
 | -------- | ----------- |
-| js\_autofocus | If, for example, a field in a form is filled in incorrectly, this field will receive a `<p>`tag with the class "error" after it is submitted. The JavaScript ensures that the system automatically scrolls to this class. |
+| js\_autofocus | If, for example, a field in a form is filled in incorrectly, this field will receive a `<p>` tag with the class "error" after it is submitted. The JavaScript ensures that the system automatically scrolls to this class. |
 | js\_highlight | This is a syntax highlighter for script languages, it is needed for the content element "Code". |
 | js\_nocookie | In order for Contao to protect you from CSRF attacks, visitors must allow cookies. The template dynamically generates a message if a visitor has disabled cookies in his browser. {{< version "4.7" >}} |
 | js\_slider | Provides JavaScript for the content element "Content Slider". |
@@ -243,4 +243,4 @@ In the expert settings, you can change the page template that is used for the pa
 
 **Body onload:** Some JavaScripts require a so-called "Body Onload Event" to initialize the script when the page is loaded. If you want to use such a JavaScript, you can enter the required code here.
 
-**Additional `<head>`tags:** In the header of your website, the meta information of the page is displayed and the included stylesheets and JavaScript are linked. Here you can add any additions and e.g. insert further stylesheets.
+**Additional `<head>` tags:** In the header of your website, the meta information of the page is displayed and the included stylesheets and JavaScript are linked. Here you can add any additions and e.g. insert further stylesheets.

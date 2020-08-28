@@ -1,6 +1,6 @@
 ---
 title: 'Update Contao'
-description: 'Like most open source projects, Contao is continuously being developed.'
+description: 'Like most Open Source projects, Contao is continuously being developed.'
 aliases:
     - /en/installation/update-contao/
 weight: 40
@@ -10,7 +10,7 @@ weight: 40
 This article is machine translated.
 {{% /notice %}}
 
-Like most open source projects, Contao is under continuous development. With each update, components are updated, bugs are fixed, new features are added or performance is improved. It is therefore recommended to always use the latest version.
+Like most Open Source projects, Contao is under continuous development. With each update, components are updated, bugs are fixed, new features are added or performance is improved. It is therefore recommended to always use the latest version.
 
 ### The Contao update cycle
 

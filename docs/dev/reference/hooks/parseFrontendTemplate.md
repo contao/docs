@@ -37,14 +37,13 @@ modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseFrontendTemplateListener implements ServiceAnnotationInterface
+/**
+ * @Hook("parseFrontendTemplate")
+ */
+class ParseFrontendTemplateListener
 {
-    /**
-     * @Hook("parseFrontendTemplate")
-     */
-    public function onParseFrontendTemplate(string $buffer, string $template): string
+    public function __invoke(string $buffer, string $template): string
     {
         if ('ce_text' === $template) {
             // Modify $buffer

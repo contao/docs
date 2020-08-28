@@ -30,9 +30,9 @@ Contao always offers several buttons to save your entries. Each button takes you
 
 **Save and back:** Clicking this button will save your entries and close the form. You will be forwarded to the parent page, e.g. from a content element directly to the article overview.
 
-Go to the [keyboard shortcuts in edit mode](../backend-tastaturkuerzel/#tastaturkuerzel-im-bearbeitungsmodus).
+Go to the [keyboard shortcuts in edit mode](/en/administrationsbereich/keyboard-shortcuts/#keyboard-shortcuts-in-edit-mode).
 
-## Edit multiple records at once {#edit multiple records at once}
+## Edit multiple records at once
 
 In Contao, you can easily edit multiple records at once instead of having to access and change each record individually. Just click on the link `Mehrere bearbeiten`. As you can see, the navigation icons are automatically replaced by checkboxes that let you select the records you want to edit.
 
@@ -50,11 +50,11 @@ In Contao, you can easily edit multiple records at once instead of having to acc
 
 **Generate aliases:** The aliases of the selected records are regenerated.
 
-Go to the [keyboard shortcuts in "Edit multiple" mode](../backend-tastaturkuerzel/#tastaturkuerzel-im-modus-mehrere-bearbeiten).
+Go to the [keyboard shortcuts in "Edit multiple" mode](/en/administrationsbereich/keyboard-shortcuts/#keyboard-shortcuts-in-edit-multiple-mode).
 
 Use the overwrite function carefully, because here all existing values of the selected data sets are actually replaced by the new value!
 
-Clicking `Überschreiben`or `Bearbeiten`takes you to the overview of the fields in the table, where you can select the fields you want to overwrite or edit and click `Weiter`.
+Clicking `Überschreiben` or `Bearbeiten` takes you to the overview of the fields in the table, where you can select the fields you want to overwrite or edit and click `Weiter`.
 
 ![Select the input fields to be edited](/de/administration-area/images/de/die-zu-bearbeitenden-eingabefelder-auswaehlen.png?classes=shadow)
 
@@ -74,7 +74,7 @@ Similar to this example, you could have used the "Overwrite" function to overwri
 
 ## Different versions of a record
 
-Contao automatically creates a new version of the edited data set each time you save it, so you can always undo your changes. As soon as more than one version is available, a drop-down menu appears above the input mask listing the different versions, their date and creator. With a click on `Wiederherstellen`you can restore a previous version.
+Contao automatically creates a new version of the edited data set each time you save it, so you can always undo your changes. As soon as more than one version is available, a drop-down menu appears above the input mask listing the different versions, their date and creator. With a click on `Wiederherstellen` you can restore a previous version.
 
 ![Restore previous versions of a record](/de/administration-area/images/de/fruehere-versionen-eines-datensatzes-wiederherstellen.png?classes=shadow)
 

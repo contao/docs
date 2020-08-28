@@ -42,14 +42,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Form;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PrepareFormDataListener implements ServiceAnnotationInterface
+/**
+ * @Hook("prepareFormData")
+ */
+class PrepareFormDataListener
 {
-    /**
-     * @Hook("prepareFormData")
-     */
-    public function onPrepareFormData(array &$submittedData, array $labels, array $fields, Form $form): void
+    public function __invoke(array &$submittedData, array $labels, array $fields, Form $form): void
     {
         // This calculates a deadline from a given timestamp
         // and stores it as deadline in $submittedData.

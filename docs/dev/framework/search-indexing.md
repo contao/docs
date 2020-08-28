@@ -166,14 +166,14 @@ There are multiple ways to achieve this. One way is to use the [generatePage][ge
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
+use Contao\PageModel;
 
 /**
  * @Hook("generatePage")
  */
-class GeneratePageListener implements ServiceAnnotationInterface
+class GeneratePageListener
 {
-    public function __invoke(\Contao\PageModel $pageModel): void
+    public function __invoke(PageModel $pageModel): void
     {
         if (/* … */) {
             $pageModel->noSearch = true;

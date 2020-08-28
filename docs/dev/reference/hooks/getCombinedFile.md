@@ -45,14 +45,13 @@ The contents of the combined file as a string.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetCombinedFileListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getCombinedFile")
+ */
+class GetCombinedFileListener
 {
-    /**
-     * @Hook("getCombinedFile")
-     */
-    public function onGetCombinedFile(string $content, string $key, string $mode, array $file): string
+    public function __invoke(string $content, string $key, string $mode, array $file): string
     {
         // Modify $content here …
 

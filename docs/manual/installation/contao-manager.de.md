@@ -52,7 +52,7 @@ Contao Manager prüft automatisch, ob die Anforderungen erfüllt sind.
 
 ### Hosting-Konfiguration
 
-In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterorder <code>/web</code> der Installation. Erstelle 
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner <code>/web</code> der Installation. Erstelle 
 dazu den Ordner <code>web</code> und setze das Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel 
 des Hosting-Providers auf diesen Unterordner.
 

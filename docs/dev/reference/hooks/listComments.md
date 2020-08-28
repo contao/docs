@@ -33,14 +33,13 @@ responsible for the source table.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ListCommentsListener implements ServiceAnnotationInterface
+/**
+ * @Hook("listComments")
+ */
+class ListCommentsListener
 {
-    /**
-     * @Hook("listComments")
-     */
-    public function onListComments(array $comment): string
+    public function __invoke(array $comment): string
     {
         if ('tl_mytable' === $comment['source']) {
             return '<a href="contao/main.php?do=…">' . $comment['title'] . '</a>';

@@ -16,7 +16,7 @@ The news management is a separate module in the backend, which you can find in t
 
 Archives are used to group and/or categorize messages. Each archive can refer to a specific language or topic.
 
-To create a new news archive click onNew![Create a new message archive](/de/icons/new.svg?classes=icon "Ein neues Nachrichtenarchiv erstellen").
+To create a new news archive click on New ![Create a new message archive](/de/icons/new.svg?classes=icon "Ein neues Nachrichtenarchiv erstellen").
 
 ### Title and forwarding
 
@@ -34,7 +34,7 @@ Just like content elements, news or blog posts can also be protected. Only regis
 
 ### Comments
 
-You already know the Contao comment function from the content element with the same name[ (comments)](../../../artikelverwaltung/inhaltselemente/#kommentare). It is also available for news and blog posts and should be activated if you use the extensions as a blog.
+You already know the Contao comment function from the content element with the same name [comments](/en/article-management/content-elements/#comments). It is also available for news and blog posts and should be activated if you use the extensions as a blog.
 
 **Activate comments:** Here you activate the comment function for the archive.
 
@@ -46,7 +46,7 @@ You already know the Contao comment function from the content element with the s
 
 **Moderate comments:** If you select this option, comments will not appear on the website immediately, but only after you have enabled them in the back end.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode to](https://de.wikipedia.org/wiki/BBCode) format their comments. The following tags are supported:
+**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
 
 | Day | Statement |
 | --- | --------- |
@@ -71,7 +71,7 @@ You already know the Contao comment function from the content element with the s
 
 Every news or blog archive can be exported as RSS/Atom feed if desired. RSSFeeds are XML files containing your contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
-The feeds can be integrated via the [page layout](../../../theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) in the header of the page. The "header" is not the header of your page layout, but the tag`head` of the HTML source code.
+The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the header of the page. The "header" is not the header of your page layout, but the tag `head` of the HTML source code.
 
 Furthermore, the XML file can also be opened directly in the browser.
 
@@ -104,7 +104,7 @@ The URL is:
 </rss>
 ```
 
-To create a new feed click on ![Manage RSS feeds](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten")**RSS Feeds** and then on **New**![Create a new feed](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen").
+To create a new feed click on **RSS Feeds** ![Manage RSS feeds](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten") and then on **New** ![Create a new feed](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen").
 
 ### Title and language
 
@@ -130,13 +130,13 @@ To create a new feed click on ![Manage RSS feeds](/de/icons/rss.svg?classes=icon
 
 **Feed description**: Here you can enter a description of the feed.
 
-## News items {#news items}
+## News items
 
 This section explains how to create a news item. News items are generally sorted by date, so there are no icons to change the order.
 
 The news items consist of the settings for the items ("Message List") and their contents ("Message Reader").
 
-To create a new post, click on the desired archive![Edit message archive](/de/icons/edit.svg?classes=icon "Nachrichtenarchiv bearbeiten") and then on![Create a new post](/de/icons/new.svg?classes=icon "Einen neuen Beitrag erstellen") **New**.
+To create a new post, click on the desired archive ![Edit message archive](/de/icons/edit.svg?classes=icon "Nachrichtenarchiv bearbeiten") and then on ![Create a new post](/de/icons/new.svg?classes=icon "Einen neuen Beitrag erstellen") **New**.
 
 ### Title and Author
 
@@ -262,6 +262,6 @@ As long as an article is not published, it will not be displayed in the frontend
 
 ## Content for news posts {#content-for-message}
 
-After we have made the settings for the article, we can add content elements for the output in the "product reader", click on the desired article![Edit contribution](/de/icons/edit.svg?classes=icon "Beitrag bearbeiten") and then on![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
+After we have made the settings for the article, we can add content elements for the output in the "product reader", click on the desired article ![Edit contribution](/de/icons/edit.svg?classes=icon "Beitrag bearbeiten") and then on ![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
 
-All [content elements](../../../artikelverwaltung/inhaltselemente/) of Contaozur are available in the news items.
+All [content elements](/en/article-management/content-elements/) of Contaozur are available in the news items.

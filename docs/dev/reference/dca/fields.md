@@ -87,6 +87,8 @@ Each field can be validated against a regular expression.
 | allowHtml          | true/false (`bool`)           | If true the current field will accept HTML input (see "Allowed HTML tags" in the back end System => Settings).                                                            |
 | preserveTags       | true/false (`bool`)           | If true no HTML tags will be removed at all.                                                                                                                             |
 | decodeEntities     | true/false (`bool`)           | If true HTML entities will be decoded. Note that HTML entities are always decoded if allowHtml is true.                                                                  |
+| useRawRequestData  | true/false (`bool`)           | If true the raw request data from the Symfony request is used. Input filtering is bypassed!
+                                                             |
 | doNotSaveEmpty     | true/false (`bool`)           | If true the field will not be saved if it is empty.                                                                                                                      |
 | alwaysSave         | true/false (`bool`)           | If true the field will always be saved, even if its value has not changed. This can be useful in conjunction with a load_callback.                                       |
 | spaceToUnderscore  | true/false (`bool`)           | If true any whitespace character will be replaced by an underscore.                                                                                                      |
@@ -119,7 +121,8 @@ Each field can be validated against a regular expression.
 | csv                | Delimiter (`string`)             | The choice of this field will not be stored as serialized string but rather as given delimiter-separated list. Example: `'eval' => ['csv'=>',']`                 |
 | tl_class           | CSS class(es) (`string`)         | Add the given CSS class(es) to the generated HTML. See section [Arranging Fields](/reference/dca/palettes/#arranging-fields) for supported values.                                 |
 | dcaPicker          | true/false (`bool`)           | If true the dca-picker will be shown.  Enables pick up different data sets from the system.                                                                              |
-| placeholder        | Placeholder (`string`)        | Displays a placeholder for the respective field.                                                                                                                         |       
+| placeholder        | Placeholder (`string`)        | Displays a placeholder for the respective field.    
+| isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
 
 {{% notice warning %}}
 Using the `encrypt` option is deprecated and its internal implementation relies 

@@ -8,7 +8,7 @@ aliases:
 
 
 Hooks are entry points into the Contao core (and some of its extension bundles).
-Have a look at the [hook reference][1] for a list of all available hooks.
+Have a look at the [hook reference][HookReference] for a list of all available hooks.
 You can register your own callable logic that will be executed as soon as a certain
 point in the execution flow of the core will be reached.
 Consider the following example.
@@ -55,17 +55,22 @@ if (isset($GLOBALS['TL_HOOKS']['compileFormFields']) && \is_array($GLOBALS['TL_H
 
 ## Registering hooks
 
-As of Contao 4.8, there are three different ways of subscribing to a hook:
+As of Contao **4.9**, there are three different ways of subscribing to a hook. The
+recommended way is [using annotations](#using-annotations) together with [invokable services](#invokable-services).
+Which one you use depends on your setup. If you still develop hooks for Contao **4.4**
+for example, then you still need to use the [PHP array configuration](#using-the-php-array-configuration).
 
 
-### Using the PHP Array configuration
+### Using the PHP Array Configuration
 
 You can add your custom logic to hooks by extending the `TL_HOOKS` key in the
 `$GLOBALS` array in your [`config.php`][contaoConfig] file.
 
 ```php
 // contao/config.php
-$GLOBALS['TL_HOOKS']['activateAccount'][] = [\App\EventListener\ActivateAccountListener::class, 'onActivateAccount'];
+use App\EventListener\ActivateAccountListener;
+
+$GLOBALS['TL_HOOKS']['activateAccount'][] = [ActivateAccountListener::class, 'onActivateAccount'];
 ```
 
 In this case, the method `onActivateAccount` in the class (or service) `App\EventListener\ActivateAccountListener` 
@@ -88,7 +93,7 @@ class ActivateAccountListener
 ```
 
 
-### Using service tagging
+### Using Service Tagging
 
 {{< version "4.5" >}}
 
@@ -185,7 +190,7 @@ class IndexPageListener
 ```
 
 
-[1]: ../../reference/hooks/
+[HookReference]: /reference/hooks/
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
 [contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
 [ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle

@@ -45,14 +45,13 @@ as value or null to keep the default behaviour.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CreateDefinitionListener implements ServiceAnnotationInterface
+/**
+ * @Hook("createDefinition")
+ */
+class CreateDefinitionListener
 {
-    /**
-     * @Hook("createDefinition")
-     */
-    public function onCreateDefinition(string $key, string $value, string $definition, array &$dataSet): ?array
+    public function __invoke(string $key, string $value, string $definition, array &$dataSet): ?array
     {
         if ('border-radius' === $key) {
             return ['border-radius' => $value];

@@ -37,14 +37,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CreateNewUserListener implements ServiceAnnotationInterface
+/**
+ * @Hook("createNewUser")
+ */
+class CreateNewUserListener
 {
-    /**
-     * @Hook("createNewUser")
-     */
-    public function onCreateNewUser(int $userId, array $userData, Module $module): void
+    public function __invoke(int $userId, array $userData, Module $module): void
     {
         // Do something …
     }

@@ -69,14 +69,13 @@ how to handle the `date` insert tag and the `utf8_strtoupper` flag. The unknown
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class InsertTagFlagsListener implements ServiceAnnotationInterface
+/**
+ * @Hook("insertTagFlags")
+ */
+class InsertTagFlagsListener
 {
-    /**
-     * @Hook("insertTagFlags")
-     */
-    public function onInsertTagFlags(
+    public function __invoke(
         string $flag, 
         string $tag, 
         string $cachedValue, 

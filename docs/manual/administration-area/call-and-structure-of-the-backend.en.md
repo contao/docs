@@ -12,11 +12,11 @@ This article is machine translated.
 
 ## Calling the backend
 
-You can access the backend of your Contao installation by appending `/contao`the URL of your website. The complete address looks like this:
+You can access the backend of your Contao installation by appending `/contao` the URL of your website. The complete address looks like this:
 
 `https://www.example.com/contao/`
 
-Enter your `Benutzernamen`and yours`Passwort`. The default language of the internet browser is also used for the backend. Confirm your entries by clicking the button `Weiter`.
+Enter your `Benutzernamen` and yours `Passwort`. The default language of the internet browser is also used for the backend. Confirm your entries by clicking the button `Weiter`.
 
 ![Registration in the Contao backend](/de/administration-area/images/de/contao-backend-anmeldung.png?classes=shadow)
 
@@ -36,7 +36,7 @@ The info area shows some important links that are needed when working with Conta
 
 **Notes:** Clicking on this link opens a modal and displays possible hints (e.g. maintenance mode).
 
-**Debug Mode:** Clicking on this link will switch the [debug mode](../../system/debug-modus/) on or off.{{< version "4.8" >}}
+**Debug Mode:** Clicking on this link will switch the [debug mode](/en/system/debug-mode/) on or off.{{< version "4.8" >}}
 
 **Preview:** This link opens the frontend, i.e. the actual website, in a new window. If you edit a specific page or article in the backend, you will be automatically forwarded to the corresponding page in the frontend.
 

@@ -90,7 +90,7 @@ Die Theme-Datei enthält folgende Ressourcen:
 
 ## Themes importieren
 
-Der Import eines Themes erfolgt in dem du im Theme-Manager auf die Schaltfläche **Theme importieren** klickst, wähle 
+Der Import eines Themes erfolgt, indem du im Theme-Manager auf die Schaltfläche **Theme importieren** klickst. Wähle 
 die Datei aus und starte den Importvorgang.
 
 Contao führt dann eine Reihe von Prüfungen durch, um eventuelle Inkompatibilitäten zwischen dem Theme und deiner 

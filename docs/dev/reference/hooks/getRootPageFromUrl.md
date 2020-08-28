@@ -26,14 +26,13 @@ for searching the root page.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetRootPageFromUrlListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getRootPageFromUrl")
+ */
+class GetRootPageFromUrlListener
 {
-    /**
-     * @Hook("getRootPageFromUrl")
-     */
-    public function onGetRootPageFromUrl(): ?\Contao\PageModel
+    public function __invoke(): ?\Contao\PageModel
     {
         // Do something …
     }

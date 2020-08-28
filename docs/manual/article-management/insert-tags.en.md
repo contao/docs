@@ -20,12 +20,12 @@ With these insert tags you can create links to other pages or articles. You only
 
 | Insert tag | Description |
 | ---------- | ----------- |
-| `{{link::*}}` | This tag is replaced with a link to an internal page (replace \* with the ID or alias). |
+| `{{link::*}}` | This tag is replaced with HTML code for a link. The parameter can be the ID or alias of an internal page or an absolute URL. |
 | `{{link::back}}` | This tag is replaced with a link to the last page visited. Can also be used as `{{link_open::back}}`, `{{link_url::back}}`and `{{link_title::back}}`. |
 | `{{link::login}}` | This tag is replaced with a link to the logon page of the current front-end user (if available). |
-| `{{link_open::*}}` | Is replaced with the opening tag of a link to an internal page: `{{link_open::12}}Hier klicken{{link_close}}`. |
-| `{{link_url::*}}` | This tag is replaced with the URL of an internal page: `<a href="{{link_url::12}}">Hier klicken</a>`. |
-| `{{link_target::*}}` | This tag will be replaced with `target="_blank" rel="noreferrer noopener"`if the specified page is an external redirection page and it is set there that the link should open in a new window. |
+| `{{link_open::*}}` | Is replaced with the opening tag of a link. The parameter can be the ID or alias of an internal page or an absolute URL: `{{link_open::12}}Click here{{link_close}}`. |
+| `{{link_url::*}}` | This tag is replaced with the URL of an internal page: `<a href="{{link_url::12}}">Click here</a>`. |
+| `{{link_target::*}}` | This tag will be replaced with `target="_blank" rel="noreferrer noopener"` if the specified page is an external redirection page and it is set there that the link should open in a new window. |
 | `{{link_title::*}}` | This tag is replaced with the title of an internal page: `<a title="{{link_title::12}}">Hier klicken</a>`. |
 | `{{link_name::*}}` | This tag will be replaced with the name of an internal page: `<a>{{link_name::12}}</a>`. |
 | `{{link_close}}` | Will be replaced with the closing tag of a link to an internal page: `{{link_open::12}}Hier klicken{{link_close}}`. |

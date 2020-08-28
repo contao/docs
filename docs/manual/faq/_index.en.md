@@ -104,7 +104,7 @@ Answers can be found in the [TinyMCE Editor Configuration](/en/guides/tinymce-co
 ## File management
 
 {{% expand "My pictures are not displayed in the frontend, what can I do?" %}}
-Check in the [file manager](/en/file-manager/) if the directory with your images is marked as "Public". 
+Check in the [file manager](/en/file-manager/) if the directory with your images is marked as "Public". Also make sure that there is no outdated `.htaccess` file in the `/web` folder or a parent folder of your installation.
 {{% /expand %}}
 
 

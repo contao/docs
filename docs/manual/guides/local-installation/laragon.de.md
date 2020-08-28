@@ -40,7 +40,7 @@ Das Sicherheitskonzept aktueller Contao-Versionen (konkret ab Contao 4.x) sieht 
 + Polsedit herunterladen: [https://www.southsoftware.com/polsedit.html](https://www.southsoftware.com/polsedit.html)
 + ZIP-Archiv entpacken
 + Für Windows 10 (64 Bit): `polseditx64.exe` (64-Bit-Version) ausführen
-+ Im rechten Fensterbereich nach der Richtlinie »_Create symbolic links_« `(SE_CREATE_SYMBOLIC_LINK_NAME)` suchen:
++ Im rechten Fensterbereich nach der Richtlinie »_Create symbolic links_« (`SE_CREATE_SYMBOLIC_LINK_NAME`) suchen:
 
 ![Suche nach »Create symbolic links«](/de/guides/local-installation/images/de/laragon/01_polsedit.png?width=800px&classes=shadow)
 
@@ -285,7 +285,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 
 **Anhang mit weiterführenden Informationen/Tasks:**
 
-### A Laragon aktualisieren
+### Laragon aktualisieren
 
 **ToDo: Die neueste Version von Laragon installieren**
 
@@ -295,7 +295,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
   + Laragon starten.
 
 
-### B Projekt löschen
+### Projekt löschen
 
 **ToDo: Ein vorhandenes Website-Projekt wieder entfernen**
 
@@ -306,7 +306,7 @@ Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider
 + Im nächsten Dialogfenster weist Laragon darauf hin, dass sowohl der Projektordner als auch die dazugehörige Datenbank entfernt werden. Diese Aktionen können nicht rückgängig gemacht werden, d. h. die Daten werden unwiederbringlich gelöscht. Wenn man sich dessen bewusst ist, was man macht, bestätigt man den Löschvorgang.
 
 
-### C Contao Official Demo (COD) installieren
+### Contao Official Demo (COD) installieren
 
 **ToDo: Contao Official Demo installieren**
 
@@ -335,7 +335,7 @@ Wie jedes andere Paket/Bundle auch, kann die Contao Official Demo (COD) selbstve
 {{% /notice %}}
 
 
-### D Datenbankverwaltung mit phpMyAdmin
+### Datenbankverwaltung mit phpMyAdmin
 
 **ToDo: phpMyAdmin installieren**
 
@@ -367,7 +367,7 @@ Die Apache Alias-Konfiguration für phpMyAdmin befindet sich in `laragon\etc\apa
 {{% /notice %}}
 
 
-### E Zusätzliche PHP-Versionen
+### Zusätzliche PHP-Versionen
 
 Mitunter braucht man für ältere Webprojekte auch noch PHP 5.6. Neue Features möchte man hingegen mit PHP 7.3 testen. Im Folgenden wird daher sowohl PHP 5.6 als auch PHP 7.3 in Laragon verfügbar gemacht.
 
@@ -390,6 +390,6 @@ Mitunter braucht man für ältere Webprojekte auch noch PHP 5.6. Neue Features m
 ![Apache-Version wechseln](/de/guides/local-installation/images/de/laragon/25_laragon_apache_version.png?width=500px&classes=shadow)
 
 
-### F Hilfe
+### Hilfe
 
 Im [Contao-Forum](https://community.contao.org/) gibt es einen [Thread](https://community.contao.org/de/showthread.php?74042), der sich mit der Installation und dem Betrieb von Laragon beschäftigt oder man holt sich Rat im Laragon-Forum [DE](https://laraboard.io/forum/) oder [EN](https://forum.laragon.org/)

@@ -44,14 +44,13 @@ A string containing the new (or previous) URL.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GenerateFrontendUrlListener implements ServiceAnnotationInterface
+/**
+ * @Hook("generateFrontendUrl")
+ */
+class GenerateFrontendUrlListener
 {
-    /**
-     * @Hook("generateFrontendUrl")
-     */
-    public function onGenerateFrontendUrl(array $page, string $params, string $url): string
+    public function __invoke(array $page, string $params, string $url): string
     {
         // Create or modify $url …
 

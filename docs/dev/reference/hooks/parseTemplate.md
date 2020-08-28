@@ -27,14 +27,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Template;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class ParseTemplateListener implements ServiceAnnotationInterface
+/**
+ * @Hook("parseTemplate")
+ */
+class ParseTemplateListener
 {
-    /**
-     * @Hook("parseTemplate")
-     */
-    public function onParseTemplate(Template $template): void
+    public function __invoke(Template $template): void
     {
         if ('fe_page' === $template->getName()) {
             // Do something …

@@ -14,6 +14,8 @@ passes the user object as argument and does not expect a return value.
 
 {{% notice info %}}
 Using the `postAuthenticate` hook has been deprecated and will no longer work in Contao 5.0.
+You can use the [security.authentication.success](https://symfony.com/doc/4.4/components/security/authentication.html#authentication-events)
+event instead for example.
 {{% /notice %}}
 
 
@@ -32,14 +34,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\User;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostAuthenticateListener implements ServiceAnnotationInterface
+/**
+ * @Hook("postAuthenticate")
+ */
+class PostAuthenticateListener
 {
-    /**
-     * @Hook("postAuthenticate")
-     */
-    public function onPostAuthenticate(User $user): void
+    public function __invoke(User $user): void
     {
         // Do something …
     }

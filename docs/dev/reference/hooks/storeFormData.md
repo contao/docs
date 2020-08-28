@@ -41,9 +41,11 @@ use Contao\Form;
 use Contao\FrontendUser;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\Security\Core\Security;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class StoreFormDataListener implements ServiceAnnotationInterface
+/**
+ * @Hook("storeFormData")
+ */
+class StoreFormDataListener
 {
     /**
      * @var Connection
@@ -60,11 +62,7 @@ class StoreFormDataListener implements ServiceAnnotationInterface
         $this->connection = $connection;
         $this->security = $security;
     }
-
-    /**
-     * @Hook("storeFormData")
-     */
-    public function onStoreFormData(array $data, Form $form): array
+    public function __invoke(array $data, Form $form): array
     {
         $data['member'] = 0;
 

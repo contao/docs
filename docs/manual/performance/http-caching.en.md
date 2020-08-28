@@ -16,8 +16,8 @@ having to even boot Contao at all.
 
 To do so, Contao relies on the Hypertext Transfer Protocol (HTTP) - the backbone of the Internet.
 
-Why should Contao reinvent the wheel when [smart people](https://tools.ietf.org/html/rfc2616) thought about caching
-HTTP responses already [when HTTP/1.1 was introduced in 1999](https://tools.ietf.org/html/rfc2616)?
+Why should Contao reinvent the wheel when [smart people thought about caching
+HTTP responses already when HTTP/1.1 was introduced back in 1999](https://tools.ietf.org/html/rfc2616)?
 
 ## HTTP
 
@@ -58,7 +58,7 @@ These proxies can perform any tasks, including but not limited to
 - Applying optimizations (e.g. compression)
 - and of course: **Caching!**
 
-To allow the client (in our case mostly the browser) and the server or proxies/servers to communicate with each other,
+To allow the client (in our case mostly the browser), the server and intermediaries to communicate with each other,
 every HTTP request and every HTTP response can be enhanced with metadata. These so called "HTTP headers" are
 standardized but it is up to every developer to invent and use additional headers.
 E.g. a typical request could look like this:
@@ -71,12 +71,12 @@ Host: www.contao.org
 ```
 
 In this case the client would like to request the resource that is at `/about-us.html` and it tells the server that it
-understands the languages `en` and `de` (German) whereas it prefers `de` over `en`. It also requests the answer from
+understands the languages `en` and `de` (German) whereas it prefers `de` over `en`. It also requests the response from
 the host `www.contao.org`.
 Remember, the communication between client and server uses TCP/IP and one server can serve any number of domains so
 it is important to tell the server which one you'd like.
 
-An answer to this could look like this:
+A response to this could look like this:
 
 ```http
 HTTP/1.1 200 OK
@@ -104,8 +104,8 @@ The regular user of Contao is mainly interested in the `Cache-Control` header an
 - `private` or `public`
   
   Tells a client whether the response is private or public. The browser, for example, may cache both private and public
-  answers, since it does not pass on the response. A proxy, on the other hand, may not cache private responses, because
-  it passes the answer on. They cannot be combined. Something that can be cached publicly can also be cached privately,
+  responses, since it does not pass on the response. A proxy, on the other hand, may not cache private responses, because
+  it passes the response on. They cannot be combined. Something that can be cached publicly can also be cached privately,
   so a public (`public`) response implicitly means that multiple clients share the same cache entry. This is why we also
   speak of a "shared cache" in this case.
 
@@ -128,13 +128,13 @@ For better understanding, let's look at a few examples:
 | `Cache-Control: max-age=3600, s-maxage=7200, public` | Both public and private clients may cache this response. Private ones for one hour, public ones for two hours. |
 
 And that is why you can find exactly these cache duration settings in the Contao page settings.
-The following selection translates to `Cache-Control: max-age=1800, s-maxage=3600, public`:
+The following configuration translates to `Cache-Control: max-age=1800, s-maxage=3600, public`:
 
 ![Caching settings in the Contao back end](/de/performance/images/en/cache-settings.png?classes=shadow)
 
 ## Advantages of using standards
 
-The Contao Managed Edition is shipped with a caching proxy that is written in PHP too and sits directly in front of Contao.
+The Contao Managed Edition is shipped with a cache proxy that is written in PHP too and sits directly in front of Contao.
 This means that every response that Contao generates is sent through our caching proxy before it is delivered to the client
 and is cached (or not) according to the HTTP headers.
 
@@ -160,7 +160,7 @@ out-of-the-box for you. And if one day, the requirements become more complex, Co
 
 This section is about what can be stored in the shared cache. We don't talk about the private cache anymore,
 i.e. your personal browser cache, because we want to make sure that as many of our visitors as possible don't have to
-start Contao but can benefit from the shared cache instead.
+wait for Contao to generate the response but can benefit from the shared cache instead.
 
 We already know the most important criterion: The `Cache-Control: public` response header. If this header is missing,
 the shared cache can never cache this response. But there are other criteria as well:
@@ -173,7 +173,7 @@ the shared cache can never cache this response. But there are other criteria as 
 * You need to specify the cache duration, i.e `max-age` and optionally `s-maxage` in the `Cache-Control`header
   (there are additional headers here as well, but they are not relevant for us either)
 
-In case of the included Contao cache proxy, you can easily check if caching happens. All responses 
+In case of the included Contao cache proxy, you can easily check if caching works. All responses 
 will have a `Contao-Cache` header that can take on three values:
 
 - `miss`
@@ -189,10 +189,10 @@ will have a `Contao-Cache` header that can take on three values:
   
   The Contao cache has found the cache entry and the response is served directly from the cache. Ideally, you should
   have already noticed the speed. In case of `Contao-Cache: fresh` there is also the HTTP `Age` header. It tells you how
-  many seconds the cache entry already exists. An `Age: 60` means that this entry was created one minute ago.
+  many seconds the cache entry already exists. An `Age: 120` means that this entry was created two minutes ago.
 
 {{% notice info %}}
-If the Contao Managed Edition runs in debug mode, the entire cache proxy is disabled entirely. 
+If the Contao Managed Edition runs in debug mode, the cache proxy is disabled entirely. 
 {{% /notice %}}
 
 ## When shared caching cannot work
@@ -205,11 +205,11 @@ from the shared cache:
   
   The `Authorization` header contains standard authentication details. For Contao this means that a module or content
   element may listen to this header and potentially deliver user-specific data. To ensure that private data is not stored
-  in the shared cache and potentially delivered to another visitor, Contao forces `Cache-Control: private`. Contao will
+  in the shared cache and potentially delivered to a different visitor, Contao forces `Cache-Control: private`. Contao will
   also tell you about this: The `Contao-Response-Private-Reason` header contains `authorization` in this case.
   
   {{% notice warning %}}
-  It is very popular to protect installations during development using Basic Authentication. This means that the
+  It is very popular to protect installations using Basic Authentication during development. This means that the
   request contains an `Authorization` header and therefore the cache is always disabled. Keep this in mind when
   testing cache settings. 
   {{% /notice %}}

@@ -26,12 +26,12 @@ The content element "Heading" adds a heading to the article. Most content elemen
 
 **heading:** Here you can enter the heading.
 
-With the select menu to the right you can define the semantic hierarchy of this heading. The most important headline of the page is shown as `h1`specified (usually only one per page), while the values up `h2`to `h6`hierarchically lower headlines are shown and of course occur several times.
+With the select menu to the right you can define the semantic hierarchy of this heading. The most important headline of the page is shown as `h1` specified (usually only one per page), while the values up `h2` to `h6` hierarchically lower headlines are shown and of course occur several times.
 
-**Individual template:** Here you can overwrite the standard `ce_headline`template.
+**Individual template:** Here you can overwrite the standard `ce_headline` template.
 
-**HTML outputThe**  
- element generates the following HTML code:
+**HTML output**  
+The element generates the following HTML code:
 
 ```html
 <h1 class="ce_headline first last">…</h1>
@@ -39,7 +39,7 @@ With the select menu to the right you can define the semantic hierarchy of this 
 
 ## Text
 
-The content element "Text" adds formatted text to the article. The input takes place via a so-called Rich Text Editor, which allows you to set certain formatting at the touch of a button, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/), an open source editor by the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
+The content element "Text" adds formatted text to the article. The input takes place via a so-called Rich Text Editor, which allows you to set certain formatting at the touch of a button, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/), an Open Source editor by the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
 
 ![The Rich Text Editor TinyMCE](/de/article-management/images/de/der-rich-text-editor-tinymce.png?classes=shadow)
 
@@ -93,10 +93,11 @@ You can add an image to the text element, which is then surrounded by your text.
 
 **caption:** Here you can enter a caption.
 
-**Individual template:** Here you can overwrite the standard `ce_text`template.
+**Individual template:** Here you can overwrite the standard `ce_text` template.
 
   
-**HTML Output**The element generates the following HTML code:
+**HTML Output** 
+The element generates the following HTML code:
 
 ```html
 <div class="ce_text first last block">
@@ -124,22 +125,23 @@ The content element "HTML" adds any HTML code to the article. Note that not all 
 
 **HTML code:** Here you can enter the HTML code.
 
-**Individual template:** Here you can overwrite the standard `ce_html`template.
+**Individual template:** Here you can overwrite the standard `ce_html` template.
 
 The content element has no enclosing HTML markup.
 
-## enumeration {#enumeration}
+## List
 
-The content element "Enumeration" adds a non-nested list to the article. You can choose between an ordered list and an unordered list enumeration. A JavaScript assistant supports you in creating and editing the list items.
+The content element "List" adds a non-nested list to the article. You can choose between an ordered list and an unordered list enumeration. A JavaScript assistant supports you in creating and editing the list items.
 
 ![JavaScript wizard for listings](/de/article-management/images/de/javascript-assistent-fuer-auflistungen.png?classes=shadow)
 
-With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon)to the field name "List entries" you open the CSV import wizard, with which you can import list data from a CSV file. The CSV file must have been transferred to the upload directory before.
+With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon) to the field name "List entries" you open the CSV import wizard, with which you can import list data from a CSV file. The CSV file must have been transferred to the upload directory before.
 
-**Individual Template**: Here you can overwrite the standard `ce_list`template.
+**Individual Template**: Here you can overwrite the standard `ce_list` template.
 
   
-**HTML Output**The element generates the following HTML code:
+**HTML Output**
+The element generates the following HTML code:
 
 ```html
 <div class="ce_list first last block">
@@ -151,7 +153,7 @@ With a click on the icon next ![Import list data from a CSV file](/de/icons/tabl
 </div>
 ```
 
-A numbered enumeration uses the `<ol>`tag instead of the `<ul>`tag.
+A numbered enumeration uses the `<ol>` tag instead of the `<ul>` tag.
 
 ## Table
 
@@ -167,15 +169,15 @@ The content element "Table" adds a table to the article. A JavaScript assistant 
 
 ![JavaScript wizard for tables](/de/article-management/images/de/javascript-assistent-fuer-tabellen.png?classes=shadow)
 
-With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon)to the field label "Table entries" you open the CSV import wizard, with which you can import table data from aCSV file. The CSV file has to be transferred to the upload directory first.
+With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon) to the field label "Table entries" you open the CSV import wizard, with which you can import table data from aCSV file. The CSV file has to be transferred to the upload directory first.
 
 **Summary:** An accessible website should contain a short summary of the content of each table, which you can enter here.
 
-**Add header:** If you select this option, the first row of the table is formatted as a header using the tag`<thead>`.
+**Add header:** If you select this option, the first row of the table is formatted as a header using the tag `<thead>`.
 
-**Add footer:** If you select this option, the last row of the table is formatted as a footer using the tag`<tfoot>`.
+**Add footer:** If you select this option, the last row of the table is formatted as a footer using the tag `<tfoot>`.
 
-**Add row headings:** If you select this option, the first column of the table is formatted as a row header using the tag`<th>`.
+**Add row headings:** If you select this option, the first column of the table is formatted as a row header using the tag `<th>`.
 
 **Sortable table:** Makes the table sortable in the frontend using JavaScript. The *moo\_tablesort* orj\_tablesort template must be included in the page layout.
 
@@ -183,10 +185,10 @@ With a click on the icon next ![Import list data from a CSV file](/de/icons/tabl
 
 **Sort order:** The order of the default sort (ascending or descending).
 
-**Individual template:** Here you can overwrite the standard `ce_table`template.
+**Individual template:** Here you can overwrite the standard `ce_table` template.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_table first last block">
@@ -232,7 +234,7 @@ With a click on the icon next ![Import list data from a CSV file](/de/icons/tabl
 
 ## Code
 
-The content element "Code" adds formatted code to the article. The input is done with a so-called code editor. Contao uses the open source code editor from [Ace](https://ace.c9.io/).
+The content element "Code" adds formatted code to the article. The input is done with a so-called code editor. Contao uses the Open Source code editor from [Ace](https://ace.c9.io/).
 
 For the output in the frontend to work, the *js\_highlight template* must be included in the page layout.
 
@@ -264,7 +266,7 @@ For the output in the frontend to work, the *js\_highlight template* must be inc
 
 **code:** Here you can enter the desired code.
 
-**Individual template**: Here you can overwrite the standard `ce_code`template.
+**Individual template**: Here you can overwrite the standard `ce_code` template.
 
   
 **HTML OutputThe** element generates the following HTML code:
@@ -281,10 +283,10 @@ The content element "Markdown" is used to generate HTML code from a markdown tex
 
 **code:** Here you can enter the desired code. Note that the code will not be executed.
 
-**Individual template**: Here you can `ce_markdown`overwrite the default template.
+**Individual template**: Here you can `ce_markdown` overwrite the default template.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_markdown first last block">
@@ -506,9 +508,9 @@ The footnote definition can be placed anywhere in the document.
 
 ### Further information about footnotes
 
-For complete documentation on Markdown, visit the official[ website](http://daringfireball.net/projects/markdown/syntax).
+For complete documentation on Markdown, visit [the official website](http://daringfireball.net/projects/markdown/syntax).
 
-For complete documentation on Markdown Extra, visit the official[ website](http://michelf.ca/projects/php-markdown/extra).
+For complete documentation on Markdown Extra, visit [the official website](http://michelf.ca/projects/php-markdown/extra).
 
 ## Accordion
 
@@ -532,10 +534,10 @@ The accordion effect allows you to create several sections, of which only one is
 
 **Add an image:** Here you can add an image to the element.
 
-**Individual Template**: Here you can overwrite `ce_accordionStart`the standard `ce_accordionSingle`template.
+**Individual Template**: Here you can overwrite `ce_accordionStart` the standard `ce_accordionSingle` template.
 
-**HTML OutputThe**  
- element generates the following HTML code for a "Single Element
+**HTML Output**  
+The element generates the following HTML code for a Single Element:
 
 ```html
 <section class="ce_accordionSingle first ce_accordion ce_text block">
@@ -569,7 +571,7 @@ Otherwise the generated HTML code looks like this:
 </section>
 ```
 
-Note that the contents of each accordion section are `<div>`enclosed by two (!) elements. This is necessary for the effect to work and be formatted across browsers.
+Note that the contents of each accordion section are `<div>` enclosed by two (!) elements. This is necessary for the effect to work and be formatted across browsers.
 
 ## Content slider
 
@@ -592,10 +594,10 @@ For the slider to work, the *js\_slider template* must be included in the page l
 
 **Continuous:** Create a continuous slider (start over when the end is reached).
 
-**Individual template:** Here you can overwrite the default `ce_sliderStart`template.
+**Individual template:** Here you can overwrite the default `ce_sliderStart` template.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_sliderStart first block">
@@ -632,7 +634,7 @@ The Hyperlink content element adds a link to an external Web page or e-mail addr
 
 ![Creating a hyperlink](/de/article-management/images/de/einen-hyperlink-anlegen.png?classes=shadow)
 
-**Link address:** Enter the link address including the network protocol. For web pages, the network protocol is usually `http://`or `https://`, for e-mail `mailto:`addresses and phone `tel:`numbers, Contao automatically encrypts e-mail addresses so that they cannot be read by spambots.
+**Link address:** Enter the link address including the network protocol. For web pages, the network protocol is usually `http://` or `https://`, for e-mail `mailto:` addresses and phone `tel:` numbers, Contao automatically encrypts e-mail addresses so that they cannot be read by spambots.
 
 **Open in a new window:** Opens the link in a new browser window.
 
@@ -662,10 +664,10 @@ If you select the **Create an image link** option, you can create an image link 
 
 **Image caption:** Here you can enter a caption for the image.
 
-**Individual template:** Here you can overwrite the standard `ce_hyperlink`template.
+**Individual template:** Here you can overwrite the standard `ce_hyperlink` template.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_hyperlink first last block">
@@ -694,10 +696,10 @@ The content element "Top-Link" adds a link to the article, with which you can ju
 
 **Link text:** Here you can enter a name for the link. If you leave this field empty, the default name "Top" will be used.
 
-**Individual template**: Here you can overwrite the standard `ce_text`template.
+**Individual template**: Here you can overwrite the standard `ce_text` template.
 
-**HTML outputThe**  
- element generates the following HTML code:
+**HTML output**  
+The element generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -731,10 +733,10 @@ The content element "Image" adds an image to the article. An image can have a la
 
 **caption:** Here you can enter a caption.
 
-**Individual template**: Here you can overwrite the standard `ce_image`template.
+**Individual template**: Here you can overwrite the standard `ce_image` template.
 
-**HTML outputThe**  
- element generates the following HTML code:
+**HTML output**  
+The element generates the following HTML code:
 
 ```html
 div class="ce_image first last block">
@@ -780,10 +782,10 @@ The content element "Picture gallery" adds a picture gallery to the article, i.e
 
 **Gallery template**: Here you can overwrite the gallery template.
 
-**Individual template**: Here you can overwrite the default `ce_gallery`template.
+**Individual template**: Here you can overwrite the default `ce_gallery` template.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_gallery first last block">
@@ -847,10 +849,10 @@ The content element "Video/Audio" adds a video or audio file to the article.
 
 **Preview image:** Display the image instead of the first frame of the video before playing.
 
-**Individual template:** Here you can overwrite the default `ce_player`template.
+**Individual template:** Here you can overwrite the default `ce_player` template.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_player first last block">
@@ -894,7 +896,7 @@ The YouTube content element adds a YouTube video to the article.
 
 **Caption:** You can enter a caption here.
 
-**Aspect Ratio**: Here you can set the aspect ratio[ of the video](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) to make it responsive.
+**Aspect Ratio**: Here you can set [the aspect ratio of the video](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) to make it responsive.
 
 {{< version "4.8" >}}
 
@@ -904,10 +906,11 @@ The YouTube content element adds a YouTube video to the article.
 
 **Image size:** Here you can specify the dimensions of the image. See the [Text](#text) section for more information.
 
-**Individual template**: Here you can overwrite the standard `ce_youtube`template.
+**Individual template**: Here you can overwrite the standard `ce_youtube` template.
 
   
-**HTML OutputThe** element generates the following HTML code:
+**HTML Output**
+The element generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -961,7 +964,7 @@ The content element "Vimeo" adds a Vimeo video to the article.
 
 **Caption:** Here you can enter a caption for the image.
 
-**Aspect ratio**: Here you can set the aspect ratio[ of the video](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) to make it responsive.
+**Aspect ratio**: Here you can set [the aspect ratio of the video](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) to make it responsive.
 
 {{< version "4.8" >}}
 
@@ -971,10 +974,10 @@ The content element "Vimeo" adds a Vimeo video to the article.
 
 **Image size**: Here you can specify the dimensions of the image. See the [Text](#text) section for more information.
 
-**Individual template**: Here you can overwrite the standard `ce_vimeo`template.
+**Individual template**: Here you can overwrite the standard `ce_vimeo` template.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -1008,7 +1011,7 @@ The content element "Vimeo" adds a Vimeo video to the article.
 
 The content element "Download" adds a download link to the article. Clicking on the link opens the "Save file as ..." dialog and you can save the linked file on your local computer.
 
-The special feature of Contao is that this download link also works with protected files that you cannot access directly from your browser. This way you can easily create a protected download area. For more information, see the section [File management](../../dateiverwaltung/).
+The special feature of Contao is that this download link also works with protected files that you cannot access directly from your browser. This way you can easily create a protected download area. For more information, see the section [File management](/en/file-manager/).
 
 **source file:** Here you can select the download file.
 
@@ -1018,14 +1021,14 @@ The special feature of Contao is that this download link also works with protect
 
 **Link text:** The link text is displayed instead of the file name.
 
-**Link title:** The link title is inserted as an `title`attribute in the HTML markup.
+**Link title:** The link title is inserted as an `title` attribute in the HTML markup.
 
-**Individual Template:** Here you can overwrite the default `ce_download`template.
+**Individual Template:** Here you can overwrite the default `ce_download` template.
 
 Note that only those file types can be downloaded that you have specified in the backend settings under "AllowedDownload file types".
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_download first last block">
@@ -1041,7 +1044,7 @@ The content element "Downloads" adds several download links to the article. Clic
 
 ![The Downloads element in the frontend](/de/article-management/images/de/das-downloads-element-im-frontend.png?classes=shadow)
 
-The special feature of Contao is that these download links also work with protected files that you cannot access directly from your browser. This way, you can easily create a protected download area. For more information, see the section [File management](../../dateiverwaltung/).
+The special feature of Contao is that these download links also work with protected files that you cannot access directly from your browser. This way, you can easily create a protected download area. For more information, see the section [File management](/en/file-manager/).
 
 **Source files:** Here you select one or more folders or files to be included in the donwloads item. If you select a folder, Contao automatically takes all downloadable files contained in it.
 
@@ -1060,12 +1063,12 @@ The special feature of Contao is that these download links also work with protec
 
 **Ignore files without metadata:** If no metadata for the appropriate page language has been entered for the files, they are not displayed when activated.
 
-**Individual template:** Here you can overwrite the default `ce_downloads`template.
+**Individual template:** Here you can overwrite the default `ce_downloads` template.
 
 Note that only those file types can be downloaded that you have specified in the backend settings under "AllowedDownload file types".
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_downloads first last block">
@@ -1083,7 +1086,7 @@ Note that only those file types can be downloaded that you have specified in the
 </div>
 ```
 
-## Item
+## Article
 
 The content element "Article" allows multiple integration of an article without having to copy it. Note that only the content elements and not the article header are copied.
 
@@ -1101,13 +1104,13 @@ Alias elements use the same HTML markup as the original element.
 
 ## Form
 
-The content element "Form" adds a form to the article. For information on creating and managing forms, see the [Form Generator](../../formulargenerator/) section.
+The content element "Form" adds a form to the article. For information on creating and managing forms, see the [Form Generator](/en/form-generator/) section.
 
 **Form:** Select the form you want to insert.
 
 ## Module
 
-The content element "Module" adds a frontend module to the article. You already know how to create and configure modules from the section [Module Management](../../modulverwaltung/).
+The content element "Module" adds a frontend module to the article. You already know how to create and configure modules from the section [Module Management](/en/layout/module-management/).
 
 **Module:** Here you select the module you want to insert.
 
@@ -1119,10 +1122,10 @@ The content element "Article teaser" adds the teaser text of another article to 
 
 **article:** Here you select the original article.
 
-**Individual template:** Here you can overwrite the standard `ce_teaser`template.
+**Individual template:** Here you can overwrite the standard `ce_teaser` template.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_teaser first last ce_text block">
@@ -1141,7 +1144,7 @@ The content element "Comments" offers visitors the possibility to leave comments
 
 **Moderate:** If you select this option, comments do not appear on the website immediately but only after you have enabled them in the back end.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode to](https://de.wikipedia.org/wiki/BBCode) format their comments. The following tags are supported:
+**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
 
 | tag | Declaration |
 | --- | ----------- |
@@ -1164,7 +1167,7 @@ The content element "Comments" offers visitors the possibility to leave comments
 
 **Comment template:** Here you can choose the template for the individual posts.
 
-**Individual template**: Here you can overwrite the default `ce_comments`template.
+**Individual template**: Here you can overwrite the default `ce_comments` template.
 
 **Comment management**
 
@@ -1174,8 +1177,8 @@ The management of the comments your visitors make is done centrally in the backe
 
 If you have enabled the "Moderate Comments" option, you can check new comments in the comment manager before they appear on the website. This will help you to prevent spam attempts, for example.
 
-**HTML OutputThe**  
- element generates the following HTML code:
+**HTML Output**  
+The element generates the following HTML code:
 
 ```html
 <div class="ce_comments first last block">

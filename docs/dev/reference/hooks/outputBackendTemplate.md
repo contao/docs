@@ -36,14 +36,13 @@ Return the original `$buffer` or return your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class OutputBackendTemplateListener implements ServiceAnnotationInterface
+/**
+ * @Hook("outputBackendTemplate")
+ */
+class OutputBackendTemplateListener
 {
-    /**
-     * @Hook("outputBackendTemplate")
-     */
-    public function onOutputBackendTemplate(string $buffer, string $template): string
+    public function __invoke(string $buffer, string $template): string
     {
         if ($template === 'be_main') {
             // Modify $buffer

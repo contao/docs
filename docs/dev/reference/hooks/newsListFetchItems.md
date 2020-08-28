@@ -50,14 +50,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Module;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class NewsListFetchItemsListener implements ServiceAnnotationInterface
+/**
+ * @Hook("newsListFetchItems")
+ */
+class NewsListFetchItemsListener
 {
-    /**
-     * @Hook("newsListFetchItems")
-     */
-    public function onNewsListFetchItems(array $newsArchives, ?bool $featuredOnly, int $limit, int $offset, Module $module)
+    public function __invoke(array $newsArchives, ?bool $featuredOnly, int $limit, int $offset, Module $module)
     {
         if (…) {
             // Query the database and return the records

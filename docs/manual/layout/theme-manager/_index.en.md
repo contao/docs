@@ -10,7 +10,7 @@ weight: 20
 This article is machine translated.
 {{% /notice %}}
 
-In a content management system, design and content are separated by definition. In section,[ Components of a Page](../seitenstruktur/seiten-als-zentrale-elemente/#bestandteile-einer-seite), you learned that these two worlds are combined in the page structure for the output of the website. On this page you will be shown how to create a design and how you can change the look of your website with a few mouse clicks.
+In a content management system, design and content are separated by definition. In section, [Components of a Page](/en/layout/site-structure/pages-as-central-elements/#components-of-a-page), you learned that these two worlds are combined in the page structure for the output of the website. On this page you will be shown how to create a design and how you can change the look of your website with a few mouse clicks.
 
 {{% children %}}
 

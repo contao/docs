@@ -17,14 +17,14 @@ After you have selected the right page types for your pages, you can configure t
 The **alias of** a page is a unique and meaningful reference that you can use to call up a page in your browser. If you leave this field empty when creating a page, Contao will automatically assign the alias. Each alias must be unique within the domain used, i.e. it can only occur once.
 
 {{% notice warning %}}
-The alias of the home page should always `index`be Only then will the generated URL for this page be an empty request. 
+The alias of the home page should always be `index`. Only then the generated URL for this page will be an empty request. 
 {{% /notice %}}
 
 ## Metadata
 
 The metadata of a page mostly refers to the corresponding meta tags in the header area of the HTML page. You can use them to define the title and description of a page, among other things.
 
-**Page title:** The page title is used in the `<title>`tag of the website and often appears in search results of Google and Co. It should not contain more than 65 characters, because many search engine longer titles simply cut off.
+**Page title:** The page title is used in the `<title>` tag of the website and often appears in search results of Google and Co. It should not contain more than 65 characters, because many search engine longer titles simply cut off.
 
 **Output in source code:**
 
@@ -75,7 +75,7 @@ Kevin Jones [kevin.jones@example.com]
 
 **Date and Time Format:** Here you can override the date and time format defined in the backend settings. Text formats are supported.
 
-Contao supports all date and time formats that can be parsed with thePHP function[ date](https://www.php.net/manual/de/function.date.php). To convert all input into aUNIX timestamp, only numeric formats (j, d, m, n, y, Y, g, G, h, H, i, s) are allowed in the back end.
+Contao supports all date and time formats that can be parsed with the [PHP function date](https://www.php.net/manual/de/function.date.php). To convert all input into aUNIX timestamp, only numeric formats (j, d, m, n, y, Y, g, G, h, H, i, s) are allowed in the back end.
 
 Here are some examples of valid dates and times:
 
@@ -95,10 +95,10 @@ Here are some examples of valid dates and times:
 
 | Alias Settings | Declaration |
 | -------------- | ----------- |
-| Unicode numbers and small letters | The alias `über-uns`is generated from the page name "About us". |
-| Unicode numbers and letters | The alias `Über-uns`is generated from the page name "About us". |
-| ASCII numbers and small letters | The alias `ueber-uns`is generated from the page name "About us". |
-| ASCII numbers and letters | The alias `Ueber-uns`is generated from the page name "About us". |
+| Unicode numbers and small letters | The alias `über-uns` is generated from the page name "About us". |
+| Unicode numbers and letters | The alias `Über-uns` is generated from the page name "About us". |
+| ASCII numbers and small letters | The alias `ueber-uns` is generated from the page name "About us". |
+| ASCII numbers and letters | The alias `Ueber-uns` is generated from the page name "About us". |
 
 For the creation of the alias, the set language is also relevant in some cases. So we convert a German "Über" to "über" but a Finnish "eläinkö" to "elainko".
 
@@ -200,7 +200,7 @@ DNS settings are only available for pages of type "Starting point of a website".
 
 **Use HTTPS:** Activate this checkbox if your website is available via HTTPS.
 
-**Language**: Here you can set the language of the starting point. Languages are recorded via their primary subtag according to ISO 639-1, e.g.`de` for German or `en`for English.
+**Language**: Here you can set the language of the starting point. Languages are recorded via their primary subtag according to ISO 639-1, e.g. `de` for German or `en` for English.
 
 **Language fallback:** Contao always searches for a starting point in the language that a visitor has selected in his browser. If there is only a German starting point, an English visitor would only see the error message "No pages found" because there is no website in his language.
 
@@ -214,19 +214,19 @@ Contao automatically creates an XML sitemap from the page structure of the websi
 
 **Create an XML Sitemap:** Here you activate the creation of the XML Sitemap.
 
-**Filename:** Enter the name of the Sitemap file here without the file extension`.xml`. Contao will automatically add the file extension when saving the file.
+**Filename:** Enter the name of the Sitemap file here without the file extension `.xml`. Contao will automatically add the file extension when saving the file.
 
 The settings are only available for pages of type "Starting point of a web page".
 
 ## Forwarding
 
-The following settings are only available for redirect pages. Contao distinguishes between internal and external redirects[ (page types](../seiten-als-zentrale-elemente/#seitentypen)).
+The following settings are only available for redirect pages. Contao distinguishes between internal and external redirects [(page types](/en/layout/site-structure/pages-as-central-elements/#page-types).
 
 **Forwarding type:** Here you can specify whether the forwarding is temporary (HTTP 302) or permanent (HTTP 301). The redirection type is especially important for search engine optimization.
 
 **Forwarding page:** Here you specify the target page for internal forwarding.
 
-**Link address:** Here you can enter the destination URL in case of external redirection. You must use the protocol `https://`for redirection to another website, the protocol for linking an e-mail address `mailto:`and the protocol `tel:`for linking a phone number.
+**Link address:** Here you can enter the destination URL in case of external redirection. You must use the protocol `https://` for redirection to another website, the protocol for linking an e-mail address `mailto:` and the protocol `tel:` for linking a phone number.
 
 **Open in a new window:** The target page will open in a new browser window.
 

@@ -25,14 +25,13 @@ HTML markup) or an empty string.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetSystemMessagesListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getSystemMessages")
+ */
+class GetSystemMessagesListener
 {
-    /**
-     * @Hook("getSystemMessages")
-     */
-    public function onGetSystemMessages(): string
+    public function __invoke(): string
     {
         // Display a warning if the system admin's email is not set
         if (empty($GLOBALS['TL_ADMIN_EMAIL'])) {

@@ -31,14 +31,13 @@ Return `$sql` after adding your custom definitions.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class SqlGetFromDcaListener implements ServiceAnnotationInterface
+/**
+ * @Hook("sqlGetFromDca")
+ */
+class SqlGetFromDcaListener
 {
-    /**
-     * @Hook("sqlGetFromDca")
-     */
-    public function onSqlGetFromDca(array $sql): array
+    public function __invoke(array $sql): array
     {
         // Modify the array of SQL statements
 

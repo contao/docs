@@ -40,14 +40,13 @@ Return the (modified) array of URL fragments.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetPageIdFromUrlListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getPageIdFromUrl")
+ */
+class GetPageIdFromUrlListener
 {
-    /**
-     * @Hook("getPageIdFromUrl")
-     */
-    public function onGetPageIdFromUrl(array $fragments): array
+    public function __invoke(array $fragments): array
     {
         // Analyze the fragments
         if (…) {

@@ -31,14 +31,13 @@ a return value.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class RemoveRecipientListener implements ServiceAnnotationInterface
+/**
+ * @Hook("removeRecipient")
+ */
+class RemoveRecipientListener
 {
-    /**
-     * @Hook("removeRecipient")
-     */
-    public function onRemoveRecipient(string $email, array $channels): void
+    public function __invoke(string $email, array $channels): void
     {
         // Do something …
     }

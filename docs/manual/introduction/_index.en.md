@@ -1,6 +1,6 @@
 ---
 title: 'Contao at a glance'
-description: 'Contao is a web content management system published under an open source license, namely the Lesser General Public License.'
+description: 'Contao is a web content management system published under an Open Source license, namely the Lesser General Public License.'
 aliases:
     - /en/introduction/_index/
 weight: 1

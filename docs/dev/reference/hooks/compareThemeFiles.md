@@ -39,14 +39,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ZipReader;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class CompareThemeFilesListener implements ServiceAnnotationInterface
+/**
+ * @Hook("compareThemeFiles")
+ */
+class CompareThemeFilesListener
 {
-    /**
-     * @Hook("compareThemeFiles")
-     */
-    public function onCompareThemeFiles(\DOMDocument $xml, ZipReader $zip): string
+    public function __invoke(\DOMDocument $xml, ZipReader $zip): string
     {
         // Execute your custom theme comparison
         if ($this->doCustomComparison()) {

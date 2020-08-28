@@ -35,12 +35,11 @@ namespace App\EventListener;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\MenuEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::BACKEND_MENU_BUILD)
  */
-class BackendMenuBuildListener implements ServiceAnnotationInterface
+class BackendMenuBuildListener
 {
     public function __invoke(MenuEvent $event): void
     {
@@ -93,12 +92,11 @@ namespace App\EventListener;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\GenerateSymlinksEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::GENERATE_SYMLINKS)
  */
-class GenerateSymlinksListener implements ServiceAnnotationInterface
+class GenerateSymlinksListener
 {
     public function __invoke(GenerateSymlinksEvent $event): void
     {
@@ -132,12 +130,11 @@ namespace App\EventListener;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\ImageSizesEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::IMAGE_SIZES_ALL)
  */
-class ImageSizesAllListener implements ServiceAnnotationInterface
+class ImageSizesAllListener
 {
     public function __invoke(ImageSizesEvent $event): void
     {
@@ -169,12 +166,11 @@ namespace App\EventListener;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\ImageSizesEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::IMAGE_SIZES_USER)
  */
-class ImageSizesUserListener implements ServiceAnnotationInterface
+class ImageSizesUserListener
 {
     public function __invoke(ImageSizesEvent $event): void
     {
@@ -206,12 +202,11 @@ namespace App\EventListener;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\PreviewUrlCreateEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::PREVIEW_URL_CREATE)
  */
-class PreviewUrlCreateListener implements ServiceAnnotationInterface
+class PreviewUrlCreateListener
 {
     public function __invoke(PreviewUrlCreateEvent $event): void
     {
@@ -244,12 +239,11 @@ namespace App\EventListener;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\PreviewUrlConvertEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::PREVIEW_URL_CONVERT)
  */
-class PreviewUrlConvertListener implements ServiceAnnotationInterface
+class PreviewUrlConvertListener
 {
     public function __invoke(PreviewUrlConvertEvent $event): void
     {
@@ -285,7 +279,7 @@ namespace App\EventListener;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\RobotsTxtEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
+
 use webignition\RobotsTxt\Directive\Directive;
 use webignition\RobotsTxt\Directive\UserAgentDirective;
 use webignition\RobotsTxt\Inspector\Inspector;
@@ -294,7 +288,7 @@ use webignition\RobotsTxt\Record\Record;
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::ROBOTS_TXT)
  */
-class RobotsTxtListener implements ServiceAnnotationInterface
+class RobotsTxtListener
 {
     public function __invoke(RobotsTxtEvent $event): void
     {
@@ -343,12 +337,11 @@ namespace App\EventListener;
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\SlugValidCharactersEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
 /**
  * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::SLUG_VALID_CHARACTERS)
  */
-class SlugValidCharactersListener implements ServiceAnnotationInterface
+class SlugValidCharactersListener
 {
     public function __invoke(SlugValidCharactersEvent $event): void
     {

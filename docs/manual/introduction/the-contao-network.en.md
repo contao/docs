@@ -40,7 +40,7 @@ Once you have installed and understood the system, you can roughly estimate what
 
 ## The Development Environment
 
-Of all the many tasks and activities involved in an open source project, the further development of the software is of course the most important. After all, the entire network has built up around the product. And because development is so important, it is driven transparently on the platformGitHub[ in the monorepository contao/contao](https://github.com/contao/contao/). In addition, monthly public[ conference calls](https://contao.org/de/mumble-calls.html) are held, where core developers can exchange information via tickets marked "up for discussion".
+Of all the many tasks and activities involved in an Open Source project, the further development of the software is of course the most important. After all, the entire network has built up around the product. And because development is so important, it is driven transparently on the platformGitHub[ in the monorepository contao/contao](https://github.com/contao/contao/). In addition, monthly public[ conference calls](https://contao.org/de/mumble-calls.html) are held, where core developers can exchange information via tickets marked "up for discussion".
 
 ![The development environment](/de/introduction/images/de/die-entwicklungsumgebung.png?classes=shadow)
 

@@ -32,14 +32,13 @@ Return `$sql` after adding your custom definitions.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class SqlGetFromDBListener implements ServiceAnnotationInterface
+/**
+ * @Hook("sqlGetFromDB")
+ */
+class SqlGetFromDBListener
 {
-    /**
-     * @Hook("sqlGetFromDB")
-     */
-    public function onSqlGetFromDB(array $sql): array
+    public function __invoke(array $sql): array
     {
         // Modify the array of SQL statements
 

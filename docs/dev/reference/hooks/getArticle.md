@@ -27,14 +27,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\ArticleModel;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetArticleListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getArticle")
+ */
+class GetArticleListener
 {
-    /**
-     * @Hook("getArticle")
-     */
-    public function onGetArticle(ArticleModel $article): void
+    public function __invoke(ArticleModel $article): void
     {
         // Modify $article here …
     }

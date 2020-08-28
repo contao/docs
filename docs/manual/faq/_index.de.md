@@ -10,7 +10,7 @@ weight: 90
 Hier findest du eine Sammlung der häufigsten Fragen mit den passenden Antworten. 
 
 Wenn du selbst einen Vorschlag für diesen Bereich hast, verwende den Link »Diese Seite bearbeiten« oben rechts. 
-Besitzt du ein GitHub-Konto und bist angemeldet erstellt GitHub automatisch einen Fork in dem du 
+Besitzt du ein GitHub-Konto und bist angemeldet, erstellt GitHub automatisch einen Fork, in dem du 
 deine Vorschläge hinzufügen kannst. Anschließend kannst du über GitHub einen Pull-Request erstellen.
 
 
@@ -108,8 +108,9 @@ Antworten findest du im Bereich [TinyMCE-Editor Konfiguration](/de/anleitungen/t
 ## Dateiverwaltung
 
 {{% expand "Meine Bilder werden im Frontend nicht angezeigt, was kann ich machen?" %}}
-Überprüfe in der [Dateiverwaltung](/de/dateiverwaltung/) ob das Verzeichnis mit deinen Bildern als »Öffentlich« 
-gekennzeichnet ist. 
+Überprüfe in der [Dateiverwaltung](/de/dateiverwaltung/), ob das Verzeichnis mit deinen Bildern als »Öffentlich« 
+gekennzeichnet ist.
+Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/web` oder einem übergeordneten Ordner deiner Installation befindet.
 {{% /expand %}}
 
 
@@ -124,7 +125,7 @@ du im Anschluss in der »Systemwartung« den Scriptcache leeren.
 ## Contao Manager
 
 {{% expand "Wozu benötige ich den Contao Manager?" %}}
-Du benötigst den Contao Manager um Contao und Erweiterung zu installieren/aktualisieren/deinstallieren. Weiterführende Informationen findest du unter [Über den Contao Manager](/de/installation/contao-manager/).
+Du benötigst den Contao Manager, um Contao und Erweiterung zu installieren/aktualisieren/deinstallieren. Weiterführende Informationen findest du unter [Über den Contao Manager](/de/installation/contao-manager/).
 {{% /expand %}}
 
 {{% expand "Kann ich den Contao Manager einer bestehenden Installation hinzufügen?" %}}

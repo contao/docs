@@ -29,6 +29,11 @@ Template nur dort findet. Alle Zeilen innerhalb von `<script>...</script>` bis a
 **Komma** abgeschlossen werden. Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
 {{% /notice %}}
 
+{{% notice tip %}}
+Seit Contao **4.10** kann [Template Vererbung](/en/layout/templates/template-inheritance/) benutzt werden, um nur Teile
+des Standard `be_tinyMCE` Templates nach den eigenen Bedürfnissen anzupassen.
+{{% /notice %}}
+
 
 ## Verschiedene Editor-Konfigurationen
 

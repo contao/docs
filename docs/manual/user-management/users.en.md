@@ -36,7 +36,7 @@ Mounting a file system so that a user can access it is called "mounting" on the 
 
 **Pagemounts:** Here you select the pagemounts of the group.
 
-**Allowed page types:** Here you can define which page types the members of the user group are allowed to create, see [Page Types](../../seitenstruktur/seiten-als-zentrale-elemente/#seitentypen).
+**Allowed page types:** Here you can define which page types the members of the user group are allowed to create, see [Page Types](/en/layout/site-structure/pages-as-central-elements/#page-types).
 
 ### Filemounts
 
@@ -44,7 +44,7 @@ Similar to the pagemount, which determines the entry point into the page structu
 
 ![Filemounts of the user](/de/user-management/images/de/filemounts-des-benutzers.png?classes=shadow)
 
-The user only sees the folders `files/public/media/content-images``files/public/media/documents`and`files/public/media/slider` any subfolders they may contain. All other directories, which are on the same or a higher level, are not displayed
+The user only sees the folders `files/public/media/content-images`, `files/public/media/documents` and `files/public/media/slider` any subfolders they may contain. All other directories, which are on the same or a higher level, are not displayed
 
 ![The file management from the user's point of view](/de/user-management/images/de/die-dateiverwaltung-aus-sicht-des-benutzers.png?classes=shadow)
 
@@ -67,7 +67,7 @@ In this point you can restrict access to the different image sizes.
 
 ### Form rights
 
-[Form Generator](../../formulargenerator/)
+[Form Generator](/en/form-generator/)
 
 **Allowed forms:** Here you define which forms the members of the user group can access.
 
@@ -75,7 +75,7 @@ In this point you can restrict access to the different image sizes.
 
 ### FAQ rights
 
-[FAQ extension](../../core-erweiterung/faq/)
+[FAQ extension](/en/core-extensions/faq/)
 
 **Allowed FAQ categories:** Here you define which FAQ categories the members of the usergroup are allowed to access.
 
@@ -83,7 +83,7 @@ In this point you can restrict access to the different image sizes.
 
 ### Archive rights
 
-[News/Blog extension](../../core-erweiterung/nachrichten/)
+[News/Blog extension](/en/core-extensions/news/)
 
 **Allowed archives:** Here you define which news/blog archives the members of the user group are allowed to access.
 
@@ -95,7 +95,7 @@ In this point you can restrict access to the different image sizes.
 
 ### Newsletter rights
 
-[Newsletter extension](../../core-erweiterung/newsletter/)
+[Newsletter extension](/en/core-extensions/newsletter/)
 
 **Permitted distributors:** Here you define which distribution lists the members of the user group are allowed to access.
 
@@ -103,7 +103,7 @@ In this point you can restrict access to the different image sizes.
 
 ### Event rights
 
-[Calendar extension](../../core-erweiterung/kalender/)
+[Calendar extension](/en/core-extensions/calendar/)
 
 **Allowed calendars:** Here you define which calendars the members of the user group are allowed to access.
 
@@ -210,7 +210,7 @@ Among other things, this is where you define the group membership of the user. T
 | Extend group rights | The rights of the active groups are inherited and additionally extended by individual rights. |
 | Use user rights only | Only individual rights are used. |
 
-Individual rights are configured in the same way as [user groups](#benutzergruppen).
+Individual rights are configured in the same way as [user groups](#user-groups-1).
 
 ### Account settings
 
@@ -232,17 +232,17 @@ In order to unlock certain pages and to allow editing of articles on these pages
 
 First you need a user group, in which you activate the modules "Page structure" and "Articles" and have to include the pages to be edited as pagemount. This way you create the conditions for a user to access the page tree and see certain pages or articles there.
 
-Then you have to activate`tl_article` and `tl_content`unlock the input fields of the tables `tl_page`in the user group under "Allowed fields". In this way you create the conditions for the user to see more than just an empty page, for example, when he wants to edit an article.
+Then you have to activate `tl_article` and `tl_content` unlock the input fields of the tables `tl_page` in the user group under "Allowed fields". In this way you create the conditions for the user to see more than just an empty page, for example, when he wants to edit an article.
 
 Finally you have to create a user and assign him to the group.
 
 ### Requirements in the page structure
 
-In section [Access Rights](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte), you have already learned that each page belongs to a specific user and group, and that there are different levels of access based on that.
+In section [Access Rights](/en/layout/site-structure/configure-pages/#access-rights), you have already learned that each page belongs to a specific user and group, and that there are different levels of access based on that.
 
 ![access rights of a page](/de/user-management/images/de/zugriffsrechte-einer-seite.png?classes=shadow)
 
-For example, this page belongs to the user `Helen Lewis`who can edit, move or delete it and the articles it contains. Other users in the group `Editors`may only edit the articles, but not the page itself.
+For example, this page belongs to the user `Helen Lewis` who can edit, move or delete it and the articles it contains. Other users in the group `Editors` may only edit the articles, but not the page itself.
 
 So you have to assign access rights to the pages that a user should be able to edit or create articles on and assign them either to the user or to his group. In this way you create the conditions for a user to be able to click on the corresponding navigation icons.
 

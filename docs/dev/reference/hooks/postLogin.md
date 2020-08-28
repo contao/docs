@@ -14,6 +14,8 @@ as argument and does not expect a return value.
 
 {{% notice info %}}
 Using the `postLogin` hook has been deprecated and will no longer work in Contao 5.0.
+You can use the [security.interactive_login](https://symfony.com/doc/4.4/components/security/authentication.html#authentication-events)
+event instead for example.
 {{% /notice %}}
 
 
@@ -32,14 +34,13 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\User;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class PostLoginListener implements ServiceAnnotationInterface
+/**
+ * @Hook("postLogin")
+ */
+class PostLoginListener
 {
-    /**
-     * @Hook("postLogin")
-     */
-    public function onPostLogin(User $user): void
+    public function __invoke(User $user): void
     {
         if ($user instanceof \Contao\FrontendUser) {
             // Do something with the front end user $user  

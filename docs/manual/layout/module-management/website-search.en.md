@@ -85,7 +85,7 @@ Now that you know how to use the module in the frontend, we will now explain bri
 
 **Result template:** Here you select the template for the search results.
 
-**Custom template:** Here you can override the default `mod_search`template.
+**Custom template:** Here you can override the default `mod_search` template.
 
 **HTML outputThe**  
  frontend module generates the following HTML code:
@@ -163,7 +163,7 @@ The `<nav>`-element with the class pagination contains the markup of the page br
 You may have noticed that the search engine module contains both the search form and the result list, but on many websites, these elements are used separately to display a search field in the header. There are three solutions for this in Contao:
 
 1. You create a second search module, in which you use the redirect page to refer to the actual search page, and include it in the header.
-2. You create a search form with the form generator. This variant is described in section [Creating](../../../formulargenerator/ein-suchformular-erstellen/) a[ search form](../../../formulargenerator/ein-suchformular-erstellen/).
+2. You create a search form with the form generator. This variant is described in section [Creating a search form](/en/form-generator/create-a-search-form/).
 3. You create a search form with the "Custom HTML code" module.
 
 **Create a search form with the HTML module**

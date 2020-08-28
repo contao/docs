@@ -48,14 +48,13 @@ sitemap or only for the search index.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetSearchablePagesListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getSearchablePages")
+ */
+class GetSearchablePagesListener
 {
-    /**
-     * @Hook("getSearchablePages")
-     */
-    public function onGetSearchablePages(array $pages, int $rootId = null, bool $isSitemap = false, string $language = null): array
+    public function __invoke(array $pages, int $rootId = null, bool $isSitemap = false, string $language = null): array
     {
         // Modify the $pages array …
 

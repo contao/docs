@@ -38,14 +38,13 @@ Return the attributes for the widget as an associative array.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface;
 
-class GetAttributesFromDcaListener implements ServiceAnnotationInterface
+/**
+ * @Hook("getAttributesFromDca")
+ */
+class GetAttributesFromDcaListener
 {
-    /**
-     * @Hook("getAttributesFromDca")
-     */
-    public function onGetAttributesFromDca(array $attributes, $context = null): array
+    public function __invoke(array $attributes, $context = null): array
     {
         // Modify $attributes here …
 

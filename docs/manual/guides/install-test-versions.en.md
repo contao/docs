@@ -1,7 +1,11 @@
 ---
 title: "Installing test versions"
 description: "Guide on how to install development versions and release candidates of Contao."
+aliases:
+    - /en/guides/install-test-versions/
 weight: 5
+tags: 
+   - "Installation"
 ---
 
 
@@ -24,7 +28,7 @@ compatible with previous versions.
 
 Even though Contao uses thousands of automatic tests, unforeseen issues can always 
 occur after implementing new features or changing existing ones. Thus, testing still 
-needs to be done by actual users. Since Contao is an open source software it can 
+needs to be done by actual users. Since Contao is an Open Source software it can 
 benefit from community engagement for such tests.
 
 The following explains how you can participate in testing, by installing either
@@ -187,7 +191,7 @@ Open Source CMS" to `4.9.*@RC` for example, in order to install release candidat
 Or you can enter `4.9.x-dev` or `dev-master` respectively, in order to install development
 versions.
 
-![Contao Manager Versionsangabe](/de/guides/images/en/contao-manager-enter-custom-version.gif?classes=shadow)
+![Contao Manager Versionsangabe](/de/guides/images/en/install-version/contao-manager-enter-custom-version.gif?classes=shadow)
 
 Instead of updating an existing Contao installation to a release candidate or development
 version, you can also create a fresh installation with the Contao Manager.

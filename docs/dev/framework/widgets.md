@@ -37,8 +37,8 @@ contains the label as a headline and executes `$this->generateWithError(true)`,
 which in turn will execute `$this->generate()`.
 
 ```php
-// src/Contao/BackEndWidget/CustomWidget.php
-namespace App\Contao\BackEndWidget;
+// src/Widget/Backend/CustomWidget.php
+namespace App\Widget\Backend;
 
 use Contao\StringUtil;
 use Contao\Widget;
@@ -69,7 +69,9 @@ The widget is registered in the `$GLOBALS['BE_FFL']` array with its own key:
 
 ```php
 // contao/config/config.php
-$GLOBALS['BE_FFL']['custom_widget'] = \App\Contao\BackendWidget\CustomWidget::class;
+use App\Widget\Backend\CustomWidget;
+
+$GLOBALS['BE_FFL']['custom_widget'] = CustomWidget::class;
 ```
 
 Now the widget can be used as an `inputType` in your DCA.
@@ -80,21 +82,21 @@ Now the widget can be used as an `inputType` in your DCA.
 Similar to the back end example, the following example creates a simple text input
 widget (form field) for the form generator. The input is allowed to be submitted
 and the generated label should contain the `for` attribute. The template is set to
-`form_myfield` and the CSS class prefix is set to `widget widget-myfield`.
+`form_custom_field` and the CSS class prefix is set to `widget widget-custom-field`.
 
 ```php
-// src/Contao/FrontEndWidget/MyField.php
-namespace App\Contao\FrontEndWidget;
+// src/Widget/Frontend/CustomField.php
+namespace App\Widget\Frontend;
 
 use Contao\StringUtil;
 use Contao\Widget;
 
-class MyField extends Widget
+class CustomField extends Widget
 {
     protected $blnSubmitInput = true;
     protected $blnForAttribute = true;
-    protected $strTemplate = 'form_myfield';
-    protected $strPrefix = 'widget widget-myfield';
+    protected $strTemplate = 'form_custom_field';
+    protected $strPrefix = 'widget widget-custom-field';
 
     public function generate(): string
     {
@@ -137,16 +139,18 @@ The widget is registered in the `$GLOBALS['TL_FFL']` array with its own key:
 
 ```php
 // contao/config/config.php
-$GLOBALS['TL_FFL']['myfield'] = \App\Contao\FrontEndWidget\MyField::class;
+use App\Widget\Frontend\CustomField;
+
+$GLOBALS['TL_FFL']['custom_field'] = CustomField::class;
 ```
 
 Now the widget can be selected as an additional form field in the form generator.
-To translate the form field's name, use the `FFL.myfield.0` & `FFL.myfield.1` key
+To translate the form field's name, use the `FFL.custom_field.0` & `FFL.custom_field.1` key
 in the `contao_default` domain, e.g.
 
 ```php
 // contao/languages/en/default.php
-$GLOBALS['TL_LANG']['FFL']['myfield'] = [
+$GLOBALS['TL_LANG']['FFL']['custom_field'] = [
     'My custom form field',
     'Provides a custom form field.'
 ];
