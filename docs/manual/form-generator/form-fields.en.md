@@ -459,7 +459,7 @@ or an image button.
 **CSS class**: Here you can enter one or more CSS classes.
 
 **Keyboard shortcut**: A keyboard shortcut allows a visitor to jump directly to a certain input field by pressing the 
-`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number[ (see backend keyboard shortcuts](../../administrationsbereich/backend-tastaturkuerzel/)).
+`[Alt]` or `[Strg]` key in connection with the shortcut key, e.g. a number ([see backend keyboard shortcuts](../../administrationsbereich/keyboard-shortcuts/)).
 
 **Tab Index:** Here you can determine the position of the form field within the tab order.
 
