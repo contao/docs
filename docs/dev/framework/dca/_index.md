@@ -114,7 +114,7 @@ services:
 {{< version "4.8" >}}
 
 Since Contao 4.8 DCA callbacks can be registered using the `Contao\CoreBundle\ServiceAnnotation\Callback`
-service annotation on the callback method, together with the `Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface`:
+service annotation on the callback method:
 
 ```php
 // src/EventListener/DataContainer/NewsOnsubmitCallbackListener.php

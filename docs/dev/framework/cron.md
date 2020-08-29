@@ -130,8 +130,7 @@ services:
 ### Using Service Annotation
 
 You can also use the `Contao\CoreBundle\ServiceAnnotation\CronJob` service annotation
-together with the `Terminal42\ServiceAnnotationBundle\ServiceAnnotationInterface`
-to tag the service accordingly.
+to tag the service accordingly:
 
 ```php
 // src/Cron/ExampleCron.php
