@@ -14,7 +14,7 @@ In this section I will introduce the other core modules in the "Applications" se
 
 ## Form
 
-With the module type "Form" a form can be added to a page. For information on creating and managing forms, see the [Form Generator](../../../formulargenerator/) page.
+With the module type "Form" a form can be added to a page. For information on creating and managing forms, see the [Form Generator](/en/form-generator/) page.
 
 **form:** Here you can select a form
 
