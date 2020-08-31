@@ -10,7 +10,7 @@ weight: 20
 This article is machine translated.
 {{% /notice %}}
 
-As already mentioned in the section, [Contao in Quick](../../../einleitung/contao-im-schnelldurchlauf/) Look, cascading stylesheets, CSS for short, are the formatting tool of choice for formatting web pages. If you don't have at least some basic knowledge of CSS, you should learn it now, because creating or adapting a theme is not possible without CSS knowledge. A very good introduction to the topic can be found in the book series "[Little Boxes](https://www.little-boxes.de/little-boxes-teil1-online.html)" by Peter Müller.
+As already mentioned in the section, [Contao in Quick](/en/introduction/contao-quickstart/) Look, cascading stylesheets, CSS for short, are the formatting tool of choice for formatting web pages. If you don't have at least some basic knowledge of CSS, you should learn it now, because creating or adapting a theme is not possible without CSS knowledge. A very good introduction to the topic can be found in the book series "[Little Boxes](https://www.little-boxes.de/little-boxes-teil1-online.html)" by Peter Müller.
 
 Contao provides a convenient backend module for stylesheet management that allows you to enter all format definitions in a single input mask. The creation of the actual CSS file is done automatically in the background.
 
