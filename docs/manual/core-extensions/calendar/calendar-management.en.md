@@ -16,7 +16,7 @@ The event management is a separate module in the backend called "Events", which 
 
 Archives are used to group and/or categorize calendars. Each archive can refer to a specific language or topic.
 
-To create a new calendar, clickNew![Create a new calendar](/de/icons/new.svg?classes=icon "Einen neuen Kalender erstellen").
+To create a new calendar, click ![Create a new calendar](/de/icons/new.svg?classes=icon "Einen neuen Kalender erstellen") **New**.
 
 ### Title and forwarding
 
@@ -34,7 +34,7 @@ Just like content elements, calendars can also be protected. The events of the c
 
 ### Comments
 
-You already know the Contao comment function from the "News/Blog" extension or the content element with the same name[ (comments)](../../../artikelverwaltung/inhaltselemente/#kommentare). It is also available for calendars and events.
+You already know the Contao comment function from the "News/Blog" extension or the content element with the same name [(comments)](/en/article-management/content-elements/#comments). It is also available for calendars and events.
 
 **Enable comments:** Here you activate the comment function for the calendar.
 
@@ -46,7 +46,7 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 **Moderate comments:** If you select this option, comments will not appear on the website immediately, but will appear after you have shared them in the backend.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode to](https://de.wikipedia.org/wiki/BBCode) format their comments. The following tags are supported:
+**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
 
 | Day | Declaration |
 | --- | ----------- |
@@ -71,7 +71,7 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 Each calendar can be exported as RSS feed if desired. RSS feeds are XML files containing your contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
-The feeds can be integrated via the [page layout](../../../theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) in the header of the page. The "header" is not the header of your page layout, but the `<head>`tag of the HTML source code.
+The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the header of the page. The "header" is not the header of your page layout, but the `<head>` tag of the HTML source code.
 
 Furthermore, the XML file can also be opened directly in the browser.
 
@@ -104,7 +104,7 @@ The URL is:
 </rss>
 ```
 
-To create a new feed click on ![Manage RSS feeds](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten")**RSS feeds** and then click on **New**![Create a new feed](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen").
+To create a new feed click on ![Manage RSS feeds](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten") **RSS feeds** and then click on ![Create a new feed](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen") **New**.
 
 ### Title and language
 
@@ -136,7 +136,7 @@ This section explains how to create an event. Events are always sorted by date, 
 
 The events consist of the event settings ("Event list") and their contents ("Event reader").
 
-To create a new event, click on the desired archive![Edit Calendar](/de/icons/edit.svg?classes=icon "Kalender bearbeiten") and then on![Create a new event](/de/icons/new.svg?classes=icon "Ein neues Event erstellen") **New**.
+To create a new event, click on the desired archive ![Edit Calendar](/de/icons/edit.svg?classes=icon "Kalender bearbeiten") and then on![Create a new event](/de/icons/new.svg?classes=icon "Ein neues Event erstellen") **New**.
 
 ### Title and author
 
@@ -275,6 +275,6 @@ As long as an event is not published, it is not displayed in the frontend. You a
 
 ## Content for Events {#content-for-events}
 
-After we have made the settings for the event, we can add content elements for the output in the "event reader", click on the desired event![Edit Event](/de/icons/edit.svg?classes=icon "Event bearbeiten") and then on![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
+After we have made the settings for the event, we can add content elements for the output in the "event reader", click on the desired event![Edit Event](/de/icons/edit.svg?classes=icon "Event bearbeiten") and then on ![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
 
-In the events, all [content elements](../../../artikelverwaltung/inhaltselemente/) of Contao are available to you.
+In the events, all [content elements](/en/article-management/content-elements/) of Contao are available to you.
