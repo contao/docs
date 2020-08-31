@@ -478,7 +478,6 @@ registrieren kÃ¶nnen und je nach Konfiguration automatisch ein Benutzerkonto fuÌ
 
 **Frontend-Ausgabe `member_grouped`**
 
-<!-- indexer::stop -->
 <div class="mod_registration block">
     <form action="#" id="tl_registration" method="post">
         <div class="formbody">
