@@ -162,7 +162,7 @@ wizard'`).
 </tr>
 <tr>
   <td>cbx m12</td>
-  <td>An combination of cbx and m12 set the field minimum height to 80 pixels (used for single checkboxes; more space at top and bottom).</td>
+  <td>A combination of cbx and m12 sets the minimum height of the field to 80 pixels (used for single checkboxes; more space at top and bottom).</td>
 </tr>
 </table>
 
