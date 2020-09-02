@@ -465,7 +465,7 @@ then and the error message will be shown in the form.
 #### Back end
 
 * `mixed` Value to be saved
-* `\Contoa\DataContainer` Data Container object
+* `\Contao\DataContainer` Data Container object
 
 **return:** `mixed` New value to be saved
 
