@@ -158,7 +158,7 @@ wizard'`).
 </tr>
 <tr>
   <td>m12</td>
-  <td>Add a 17 pixels to padding for top and bottom to the element (used for single checkboxes; more space at top and bottom).</td>
+  <td>Adds a 17 pixels top and bottom padding to the element (used for single checkboxes; more space at top and bottom).</td>
 </tr>
 <tr>
   <td>cbx m12</td>
