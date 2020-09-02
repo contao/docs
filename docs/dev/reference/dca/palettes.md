@@ -153,9 +153,16 @@ wizard'`).
   <td>Make the text input field span two columns.</td>
 </tr>
 <tr>
+  <td>cbx</td>
+  <td>Set the field minimum height to 46 pixels (used for single checkboxes; more space at bottom).</td>
+</tr>
+<tr>
   <td>m12</td>
-  <td>Add a 12 pixels top margin to the element (used for single
-      checkboxes).</td>
+  <td>Add a 17 pixels to padding for top and bottom to the element (used for single checkboxes; more space at top and bottom).</td>
+</tr>
+<tr>
+  <td>cbx m12</td>
+  <td>An combination of cbx and m12 set the field minimum height to 80 pixels (used for single checkboxes; more space at top and bottom).</td>
 </tr>
 </table>
 
