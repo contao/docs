@@ -43,14 +43,11 @@ Links steht dort nicht zur Verfügung.
 
 ### Geschützte Seiten indizieren
 
-Um das Durchsuchen von geschützten Seiten zu erlauben, musst du die Funktion zunächst in den Backend-Einstellungen 
+Um das Durchsuchen von geschützten Seiten zu erlauben, musst du die Funktion zunächst in den [Backend-Einstellungen][BackendSettings] 
 aktivieren. Benutze dieses Feature sehr sorgfältig, und schließe personalisierte Seiten immer von der Suche aus!
 
-Lege danach einen neuen Frontend-Benutzer an, und erlaube ihm den Zugriff auf die zu indizierenden geschützten Seiten. 
-Beim Aufbauen des Suchindexes wird dieser Benutzer dann automatisch angemeldet.
-
-Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den Ergebnissen, wenn der angemeldete 
-Frontend-Benutzer auch auf sie zugreifen darf.
+{{% notice note %}}
+Ab Contao **4.9** wird dies in der Applikations-Konfiguration aktiviert:
 
 ```yml
 # config/config.yml
@@ -59,6 +56,14 @@ contao:
         # Enable indexing of protected pages.
         index_protected: true
 ```
+{{% /notice %}}
+
+Lege danach einen neuen Frontend-Benutzer an, und erlaube ihm den Zugriff auf die zu indizierenden geschützten Seiten. 
+Beim Aufbauen des Suchindexes wird dieser Benutzer dann automatisch angemeldet.
+
+Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den Ergebnissen, wenn der angemeldete 
+Frontend-Benutzer auch auf sie zugreifen darf.
+
 
 ## Daten bereinigen
 
@@ -68,3 +73,6 @@ bereinigen, um z. B. alte Vorschaubilder zu entfernen oder die XML-Sitemaps nach
 zu aktualisieren.
 
 ![Daten manuell bereinigen](/de/system/images/de/daten-manuell-bereinigen.png?classes=shadow)
+
+
+[BackendSettings]: /de/system/einstellungen/
