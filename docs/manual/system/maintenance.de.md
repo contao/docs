@@ -52,6 +52,13 @@ Beim Aufbauen des Suchindexes wird dieser Benutzer dann automatisch angemeldet.
 Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den Ergebnissen, wenn der angemeldete 
 Frontend-Benutzer auch auf sie zugreifen darf.
 
+```yml
+# config/config.yml
+contao:
+    search:
+        # Enable indexing of protected pages.
+        index_protected: true
+```
 
 ## Daten bereinigen
 
