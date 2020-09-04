@@ -38,8 +38,20 @@ for broken links is not available there.
 
 ### Indexing protected pages
 
-To allow the search of protected pages, you must first enable this feature in the backend settings. Use this feature 
+To allow the search of protected pages, you must first enable this feature in the [backend settings][BackendSettings]. Use this feature 
 very carefully and always exclude personalized pages from the search!
+
+{{% notice note %}}
+Since Contao **4.9** this is enabled in the application configuration:
+
+```yml
+# config/config.yml
+contao:
+    search:
+        # Enable indexing of protected pages.
+        index_protected: true
+```
+{{% /notice %}}
 
 Then create a new front end user and allow them to access the protected pages to be indexed.
 
@@ -54,3 +66,6 @@ deleted records or previous versions. You can manually clean this data, for exam
 update the XML sitemaps after a change in the page structure.
 
 ![Purge data manually](/de/system/images/en/purge-data-manually.png?classes=shadow)
+
+
+[BackendSettings]: /en/system/settings/
