@@ -54,7 +54,7 @@ class BackendController extends AbstractController
         $this->twig = $twig;
     }
 
-    public function __invoke()
+    public function __invoke(): Response
     {
         return new Response($this->twig->render(
             'my_backend_route.html.twig', 
