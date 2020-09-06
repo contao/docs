@@ -1,13 +1,20 @@
 ---
-title: "Back End Routes"
+title: "Adding Custom Back End Routes"
+menuTitle: "Back End Routes"
 description: "Custom routes within the Contao back end."
+
 aliases:
   - /guides/backend-routes
   - /guides/back-end-routes
 ---
 
 
-## Adding custom back end routes
+{{% notice note %}}
+This guide assumes a Contao version of at least **4.9**. Back end routes can be
+created in previous Contao versions as well, but might require additional steps.
+For example, in Contao **4.4** instead of using the `contao.backend_menu_build`
+event, the back end menu needs to be altered using the `getUserNavigation` hook.
+{{% /notice %}}
 
 You can use the Contao back end to display content generated in your own custom Controllers.
 This way you can develop custom extensions without the need to use DCA configuration.
@@ -16,7 +23,7 @@ not obliged to use the annotation configuration for your routes you could use
 XML or YAML interchangeably.
 
 
-### Create your Controller and Template
+## Create your Controller and Template
 
 The first step is to create your own Controller. A more detailed explanation
 on how Symfony Controller work can be found in the [Symfony documentation](https://symfony.com/doc/current/controller.html).
@@ -35,11 +42,7 @@ use Twig\Environment as TwigEnvironment;
 /**
  * @Route("/contao/my-backend-route",
  *     name=BackendController::class,
- *     defaults={
- *         "_scope" = "backend",
- *         "_token_check" = true,
- *         "_backend_module" = "my-module"
- *     }
+ *     defaults={"_scope" = "backend"}
  * )
  */
 class BackendController extends AbstractController
@@ -61,28 +64,27 @@ class BackendController extends AbstractController
 }
 ```
 
-We need three different route parameters.
+There are two requirements for the route definition, in order to have a correct Contao
+back end route:
 
-* `_scope`: This forces the scope of this route to be `backend`. That way you're
-telling Contao, that this route belongs to the back end and should be handled accordingly.
-* `_token_check`: If you're using Contao forms with the RequestToken integration
-you need to set this to true, in order to get it to work.
-* `_backend_module`: This attribute is not mandatory but will be used to match
-the current route in order to highlight the currently active node in the back end menu.
-More on this later.
+- The route must start with `/contao/`, otherwise Contao's back end firewall will 
+  not be in effect.
+- We need an additional request parameter called `_scope` with the value `backend`.
+  That way you are telling Contao, that this route belongs to the back end and should
+  be handled accordingly.
 
-Be sure to have imported your bundles Controllers in your `routing.yml` *before*
+Be sure to have imported your bundle's Controllers in your `routing.yml` *before*
 the `ContaoCoreBundle` routes.
 
 ```yaml
-# config/routing.yml
+# config/routes.yaml
 app.controller:
     resource: ../src/Controller
     type: annotation
 ```
 
-Our route `backendRouteAction` will render the template `my_backend_route.html.twig`
-which must be placed into `/templates`.
+Our route will render the template `my_backend_route.html.twig` which must be placed 
+into `/templates`.
 
 ```twig
 {% extends "@ContaoCore/Backend/be_page.html.twig" %}
@@ -115,7 +117,7 @@ This example renders like this:
 ![](../images/custom-backend-routes-1.png?classes=shadow)
 
 
-### Extend the back end menu
+## Extend the Back End Menu
 
 Most of the time you probably want to add a menu entry for your back end module.
 Since the back end menu can be extended with an `EventListener` we can easily
@@ -129,7 +131,11 @@ use App\Controller\BackendController;
 use Contao\CoreBundle\Event\MenuEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
+use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
+/**
+ * @ServiceTag("kernel.event_listener", event="contao.backend_menu_build", priority=-255)
+ */
 class BackendMenuListener
 {
     protected $router;
@@ -141,7 +147,7 @@ class BackendMenuListener
         $this->requestStack = $requestStack;
     }
 
-    public function onBuild(MenuEvent $event): void
+    public function __invoke(MenuEvent $event): void
     {
         $factory = $event->getFactory();
         $tree = $event->getTree();
@@ -158,37 +164,28 @@ class BackendMenuListener
                 ->setLabel('My Modules')
                 ->setLinkAttribute('title', 'Title')
                 ->setLinkAttribute('class', 'my-module')
-                ->setCurrent($this->requestStack->getCurrentRequest()->get('_backend_module') === 'my-module')
+                ->setCurrent($this->requestStack->getCurrentRequest()->get('_controller') === BackendController::class)
         ;
 
         $contentNode->addChild($node);
     }
 }
-
 ```
 
-This EventListener creates a new menu node and handles its own `currentState` by
-reading and matching the previously mentioned request attribute `_backend_module`.
+This EventListener creates a new menu node and handles its own current state by
+reading and matching the controller class, which Symfony provides under the `_controller`
+request attribute by default.
 
-The only thing left to do is to register the EventListener in the service container.
-For this to work, we add the following lines to our service configuration in `config/services.yml`.
-
-```yaml
-services:
-    App\EventListener\BackendMenuListener:
-        arguments:
-            - "@router"
-            - "@request_stack"
-        tags:
-            - { name: kernel.event_listener, event: contao.backend_menu_build, method: onBuild, priority: -255 }
-```
-
-We purposely assign it a low priority, so that we can be sure to be loaded after
-the Contao Core EventListeners. Otherwise, the `content` node we assign ourself to
-will not be available yet.
+The EventListener registers itself to the `contao.backend_menu_build` event by using
+a [`@ServiceTag` annotation][ServiceAnnotationBundle] directly in the PHP file. 
+This allows us to skip defining a service tag in the service configuration. We 
+purposely assign it a low priority, so that we can be sure to be loaded after the 
+Contao Core EventListeners. Otherwise, the `content` node we assign ourself to will 
+not be available yet.
 
 And that's it. You controller should now be callable from the main back end menu in
 the sidebar.
 
 
 [BackEndMenuEvent]: /reference/events/#contao-backend-menu-build
+[ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle
