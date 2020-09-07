@@ -1,6 +1,6 @@
 ---
 title: "FAQ management"
-description: "The FAQ management is a separate module in the backend, which you can find in the group "Contents"."
+description: "The FAQ management is a separate module in the backend, which you can find in the group \"Contents\"."
 aliases:
     - /en/core-extensions/faq/faq-management/
 weight: 10
