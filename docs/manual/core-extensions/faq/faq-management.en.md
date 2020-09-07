@@ -1,6 +1,6 @@
 ---
-title: 'FAQ management'
-description: 'The FAQ management is a separate module in the backend, which you can find in the group "Contents".'
+title: "FAQ management"
+description: "The FAQ management is a separate module in the backend, which you can find in the group "Contents"."
 aliases:
     - /en/core-extensions/faq/faq-management/
 weight: 10
@@ -16,7 +16,7 @@ The FAQ management is a separate module in the backend, which you can find in th
 
 Categories are used to group FAQs. Each category can refer to a specific language or topic.
 
-To create a new category click onNew![Create a new category](/de/icons/new.svg?classes=icon "Eine neue Kategorie anlegen").
+To create a new category click on New ![Create a new category](/de/icons/new.svg?classes=icon "Create a new category").
 
 ### Title and forwarding
 
@@ -28,9 +28,9 @@ To create a new category click onNew![Create a new category](/de/icons/new.svg?c
 
 ### Comments
 
-You already know the Contao comment function from the "News/Blog" extension or the content element with the same name[ (comments)](../../../artikelverwaltung/inhaltselemente/#kommentare). It is also available for FAQs.
+You already know the Contao comment function from the "News/Blog" extension or the content element with the same name [content element (comments)](/en/article-management/content-elements/#comments). It is also available for FAQs.
 
-**Enable comments:** Here you activate the comment function for the category...
+**Enable comments:** Here you activate the comment function for the category.
 
 **Notification to:** Here you determine whether the system administrator, the author of a question, or both are notified when new comments are made.
 
@@ -40,7 +40,7 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 **Moderate comments:** If you select this option, comments will not appear on the website immediately, but will appear after you have shared them in the backend.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode to](https://de.wikipedia.org/wiki/BBCode) format their comments. The following tags are supported:
+**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
 
 | Day | Explanation |
 | --- | ----------- |
@@ -63,9 +63,9 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 ## Questions
 
-This section explains how to create a question. You can determine the order of the questions within a category by dragging and dropping them with the corresponding navigation ![Move question](/de/icons/drag.svg?classes=icon "Frage verschieben")symbol.
+This section explains how to create a question. You can determine the order of the questions within a category by dragging and dropping them with the corresponding navigation ![Move question](/de/icons/drag.svg?classes=icon "Move question") symbol.
 
-To create a new question, click on![Create a new question](/de/icons/new.svg?classes=icon "Eine neue Frage erstellen") **New**.
+To create a new question, click on **New** ![Create a new question](/de/icons/new.svg?classes=icon "Create a new question").
 
 ### Title and author
 
@@ -107,7 +107,7 @@ To create a new question, click on![Create a new question](/de/icons/new.svg?cla
 | Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
 | Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
 
-**Image Alignment:** Here you set the alignment of the image. If it is inserted![above](/de/icons/above.svg?classes=icon) **above**,![under](/de/icons/below.svg?classes=icon) **below**,![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or![right-justified](/de/icons/right.svg?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
+**Image Alignment:** Here you set the alignment of the image. If it is inserted ![above](/de/icons/above.svg?classes=icon) **above**,![under](/de/icons/below.svg?classes=icon) **below**, ![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or ![right-justified](/de/icons/right.svg?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
 
 **Image distance:** Here you define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
 
