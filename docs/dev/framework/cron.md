@@ -65,9 +65,10 @@ a Linux crontab you could use the following instructions for example:
 ```
 
 {{% notice tip %}}
-On the command line is no HTTP request context available. Contao needs this for example 
-to generate the sitemap. You can set the domain in the root site configuration or via 
-configuration file. See [Symfony Routing Documentation](https://symfony.com/doc/current/routing.html#generating-urls-in-commands)
+There is no HTTP request context available on the command line. However, Contao needs
+this to generate the sitemap for example. You can set the domain either in the settings of
+your website roots or you can define a default domain in your application configuration.
+See the [Symfony Routing Documentation](https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands) for more details.
 {{% /notice %}}
 
 ## Registering Cron Jobs
