@@ -64,6 +64,11 @@ a Linux crontab you could use the following instructions for example:
 * * * * * php /path/to/contao/vendor/bin/contao-console contao:cron
 ```
 
+{{% notice tip %}}
+On the command line is no HTTP request context available. Contao needs this for example 
+to generate the sitemap. You can set the domain in the root site configuration or via 
+configuration file. See [Symfony Routing Documentation](https://symfony.com/doc/current/routing.html#generating-urls-in-commands)
+{{% /notice %}}
 
 ## Registering Cron Jobs
 
