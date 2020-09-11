@@ -71,6 +71,13 @@ your website roots or you can define a default domain in your application config
 See the [Symfony Routing Documentation](https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands) for more details.
 {{% /notice %}}
 
+```yml
+# config/parameters.yml
+parameters:
+    router.request_context.host: 'example.org'
+    router.request_context.scheme: 'https'
+```
+
 ## Registering Cron Jobs
 
 Registering custom cron jobs is similar to [registering to hooks][1].
