@@ -280,7 +280,7 @@ database and configure the virtual host.
 - Open "*Menu*" &gt; "*Create new website*" in the Laragon Management Panel (or alternatively right-click the 
 Laragon tray icon in the Laragon Management Panel) and select the entry "Contao *4.9 Website ...*":
 
-![Create new website](/de/guides/local-installation/images/en/laragon/18_laragon_websiteproject.png?width=500px&classes=shadow)
+![Create new website](/de/guides/local-installation/images/en/laragon/18_laragon_website_project.png?width=500px&classes=shadow)
 
 - Enter the project name of the example website `mycompany` in the input field (if possible, the project name should 
 not contain any special characters, because it is also used as database name) and confirm with "OK":
