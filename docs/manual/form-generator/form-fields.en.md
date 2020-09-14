@@ -94,6 +94,8 @@ validation for each text field to prevent misuse of the form.
 | Phone number | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ). |
 | E-mail address | Allows users to enter a valid email address. |
 | URL format | Allows the entry of a valid URL. |
+| Absolute URL | Allows users to enter absolute URLs (starting with `http://` or `https://`). |
+| Custom | Allows users to enter text according to the given custom regular expression. |
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
 
