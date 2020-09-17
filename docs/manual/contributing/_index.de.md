@@ -227,7 +227,7 @@ git add .
 Danach fügst du die Änderungen dem Lokalen-Repository hinzu.
 
 ```bash
-git commit -m "Eine aussagekräftige Commit-Nachricht eingeben" .
+git commit -m "Eine aussagekräftige Commit-Nachricht eingeben"
 ```
 
 Um die Änderungen an dein entferntes Repository zu senden, führe folgenden Befehl aus.
