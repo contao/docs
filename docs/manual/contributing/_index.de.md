@@ -239,6 +239,19 @@ git push origin master
 
 ### Pull-Request erzeugen
 
+Rufe deinen Fork auf GitHub (https://github.com/DEIN-GITHUB-BENUTZERNAME/docs) auf.
 
+Klicke in der Mitteilung auf »Pull request.
 
-https://github.com/DEIN-GITHUB-BENUTZERNAME/docs
+![GitHub-Mitteilung](/de/contributing/images/de/github-message.png?classes=shadow)
+
+Vergleiche die Änderungen und schliesse diesen Schritt mit dem Klick auf »Create pull request« ab.
+
+![Änderungen vergleichen](/de/contributing/images/de/comparing-changes.png?classes=shadow)
+
+Bestätige das Erstellen eines Pull requests mit »Create pull request«.
+
+![Pull-Request erzeugen](/de/contributing/images/de/open-a-pull-request.png?classes=shadow)
+
+**Herzlichen Glückwunsch!** Du hast soeben einen Pull-Request für die offizielle Contao-Dokumentation erstellt! Die 
+Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
