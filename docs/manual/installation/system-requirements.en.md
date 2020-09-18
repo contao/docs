@@ -124,7 +124,7 @@ If the above recommended options cannot be enabled on your server, please config
 database engine and a different character set in your `app/config/config.yml` file:
 
 {{% notice note %}}
-As of **Contao 4.8**, you can find the file under [`config/config.yml`](../../system/ settings/#config-yml)  
+As of **Contao 4.8**, you can find the file under [`config/config.yml`](../../system/settings/#config-yml)  
 {{% /notice %}}
 
 ```yml
