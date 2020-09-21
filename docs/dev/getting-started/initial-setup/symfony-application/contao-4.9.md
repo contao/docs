@@ -123,7 +123,7 @@ return [
 ## Configure your Contao installation
 
 First, we need to configure the `ContaoCoreBundle`. To do so, create (or edit
-if the file already exists) the file config/contao_core.yaml and add the following entries:
+if the file already exists) the file config/packages/contao_core.yaml and add the following entries:
 
 ```yaml
 contao:
@@ -144,7 +144,7 @@ ContaoCoreBundle:
 ```
 
 Add the `binary_string` type to the list of Doctrine types.
-Edit the file `config/doctrine.yaml`. Be sure to merge the following configuration
+Edit the file `config/packages/doctrine.yaml`. Be sure to merge the following configuration
 into the existing one.
 
 ```yaml
@@ -155,7 +155,7 @@ doctrine:
                 class: 'Contao\CoreBundle\Doctrine\DBAL\Types\BinaryStringType'
 ```
 
-Be sure to add the following configuration key/values to the `config/framework.yaml`
+Be sure to add the following configuration key/values to the `config/packages/framework.yaml`
 file, leaving the already existing lines there.
 
 ```yaml
@@ -171,7 +171,7 @@ framework:
 ```
 
 Depending on the language of your choice, change the default and fallback language to e.g. `de`, so the install tool comes
-up translated in German. In order to do so, change `en` to `de` in `config/translation.yaml`.
+up translated in German. In order to do so, change `en` to `de` in `config/packages/translation.yaml`.
 
 
 ```yaml
@@ -183,7 +183,7 @@ framework:
 ```
 
 Contao relies heavily on the security component of Symfony, which needs to be
-configured accordingly. Replace the contents of the file `config/security.yaml`
+configured accordingly. Replace the contents of the file `config/packages/security.yaml`
 with the following lines.
 
 ```yaml
@@ -270,7 +270,7 @@ Core Bundle. A few last steps are required to properly set up the caching and
 the front end preview.
 
 First, we need to configure the `FOSHttpCacheBundle`. To do so, create (or edit
-if the file already exists) the file `config/fos_http_cache.yaml` and add the following entries:
+if the file already exists) the file `config/packages/fos_http_cache.yaml` and add the following entries:
 
 ```yaml
 # FOS HttpCache configuration
