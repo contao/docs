@@ -45,7 +45,7 @@ you can proceed to the second step, the installation of Contao itself.
 $ composer require \
     doctrine/common:^2.1 \
     doctrine/dbal:^2.10 \
-    doctrine/doctrine-bundle ^1.8 \
+    doctrine/doctrine-bundle:^1.8 \
     doctrine/doctrine-migrations-bundle:^2.2 \
     doctrine/migrations:^2.2 \
     doctrine/persistence:^1.3 \
