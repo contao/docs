@@ -43,15 +43,18 @@ you can proceed to the second step, the installation of Contao itself.
 
 ```
 $ composer require \
+    doctrine/common:^2.1 \
     doctrine/dbal:^2.10 \
-    doctrine/doctrine-bundle ^1.8 \
+    doctrine/doctrine-bundle:^1.8 \
+    doctrine/doctrine-migrations-bundle:^2.2 \
     doctrine/migrations:^2.2 \
+    doctrine/persistence:^1.3 \
     contao/conflicts:@dev \
     contao/core-bundle:4.9.* \
     contao/installation-bundle:4.9.* \
     php-http/guzzle6-adapter \
     toflar/psr6-symfony-http-cache-store \
-    twig/twig ^2.7
+    twig/twig:^2.7
 ```
 
 If the installation request fails, try to check for conflicting packages in
