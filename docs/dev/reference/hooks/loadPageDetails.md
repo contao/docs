@@ -40,7 +40,7 @@ class LoadPageDetailsListener
 {
     public function __invoke(array $parentModels, PageModel $page): void
     {
-        // Add some additional date from the root page to the processed page
+        // Add additional data from the root page to the processed page
         if (count($parentModels) > 0) {
             $rootPage = end($parentModels);
             $page->myCustomVariable = $rootPage->myCustomRootVariable;
