@@ -6,10 +6,7 @@ aliases:
 weight: 10
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
+A “Full Installation“ of Contao includes the following extensions, which are supported
+and maintained by the core development team.
 
-Besides the extensions below, "[Comments](/en/article-management/content-elements/#comments)" and "[Listing](/en/layout/module-management/applications/#listing)" complete this group.
-
-{{% children description="true" %}}
+{{% children description="true" showhidden="true" %}}
