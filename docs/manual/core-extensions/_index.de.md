@@ -8,9 +8,8 @@ aliases:
 weight: 10
 ---
 
-Neben den unten stehenden Erweiterungen, komplettieren »[Kommentare](../artikelverwaltung/inhaltselemente/#kommentare)« 
-und »[Auflistung](../modulverwaltung/anwendungen/#auflistung)« diese Gruppe.
+Zum Standardumfang einer »Vollständigen Installation« gehören folgende Erweiterungen, welche vom Core-Entwickler-Team
+gepflegt und getestet werden.
 
-{{% children description="true" %}}
-
+{{% children description="true" showhidden="true" %}}
 
