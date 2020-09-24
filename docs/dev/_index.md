@@ -81,7 +81,7 @@ and likely will only become a thing when we switch to Contao 5.
 
 {{% notice warning %}}
 So be aware of this. Don't just use e.g. Symfony's `Request` class to fetch user input, store it as is in the DB and
-let Contao display it in the back end.
+let Contao display it in the front end or back end.
 {{% /notice %}}
 
 
