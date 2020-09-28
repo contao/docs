@@ -157,13 +157,13 @@ class Example
     public function execute()
     {
         // Token replacement
-        $output = $this->parser->parseTokens(
+        $output = $this->parser->parse(
             'I like ##cms##.',
             ['cms' => 'Contao']
         );
 
         // Conditional expressions
-        $output = $this->parser->parseTokens(
+        $output = $this->parser->parse(
             'This is {if value>=10}big{else}small{endif}',
             ['value' => 20]
         );
