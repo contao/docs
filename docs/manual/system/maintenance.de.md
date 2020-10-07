@@ -40,6 +40,27 @@ Links steht dort nicht zur Verfügung.
 
 ![Den Suchindex automatisch aufbauen](/de/system/images/de/den-suchindex-automatisch-aufbauen.png?classes=shadow)
 
+{{< version "4.9" >}}
+
+Der Crawler kann auch direkt über die Konsole ausgeführt werden:
+
+```sh
+$ vendor/bin/contao-console contao:crawl
+```
+
+Da über die Konsole aber ein HTTP Request Kontext fehlt, muss zwingend eine Domain angegeben werden. Daher sollte die 
+jeweilige Domain immer im Startpunkt der Website eingetragen werden, auch wenn man nur eine Domain betreibt. Alternativ
+kann die Default-Domain für die Konsole auch über Konfigurations-Parameter angegeben werden:
+
+```yml
+# config/parameters.yml
+parameters:
+    router.request_context.host: 'example.org'
+    router.request_context.scheme: 'https'
+```
+
+Nähere Informationen dazu findet man in der [Symfony Routing Dokumentation][SymfonyUrlCommands].
+
 
 ### Geschützte Seiten indizieren
 
@@ -76,3 +97,4 @@ zu aktualisieren.
 
 
 [BackendSettings]: /de/system/einstellungen/
+[SymfonyUrlCommands]: https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands
