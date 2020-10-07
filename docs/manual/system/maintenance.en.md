@@ -44,7 +44,7 @@ The crawler can also be executed directly from the command line:
 $ vendor/bin/contao-console contao:crawl
 ```
 
-However since there is no HTTP requst context available on the console, a domain must be defined. For this reason you
+However since there is no HTTP request context available on the console, a domain must be defined. For this reason you
 should always define the domain in the website root settings, even if you only use one domain in your Contao instance.
 Alternatively you can define the default domain for the console via configuration parameters:
 
