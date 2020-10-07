@@ -48,7 +48,7 @@ Der Crawler kann auch direkt über die Konsole ausgeführt werden:
 $ vendor/bin/contao-console contao:crawl
 ```
 
-Da über die Konsole aber ein HTTP Request Kontext fehlt, muss zwingend eine Domain angegeben werden. Daher sollte die 
+Da über die Konsole aber ein HTTP-Request-Kontext fehlt, muss zwingend eine Domain angegeben werden. Daher sollte die 
 jeweilige Domain immer im Startpunkt der Website eingetragen werden, auch wenn man nur eine Domain betreibt. Alternativ
 kann die Default-Domain für die Konsole auch über Konfigurations-Parameter angegeben werden:
 
