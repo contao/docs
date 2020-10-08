@@ -123,6 +123,7 @@ Each field can be validated against a regular expression.
 | dcaPicker          | true/false (`bool`)           | If true the dca-picker will be shown.  Enables pick up different data sets from the system.                                                                              |
 | placeholder        | Placeholder (`string`)        | Displays a placeholder for the respective field.    
 | isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
+| metaFields         | `metaWizard` fields (`array`) | Defines the available fields for the `metaWizard` input type.
 
 {{% notice warning %}}
 Using the `encrypt` option is deprecated and its internal implementation relies 
@@ -160,6 +161,50 @@ can be [registered using a hook][3].
 | language    | expects a valid language code                                                                                     |
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
+
+
+#### Meta Wizard Fields
+
+When using the `metaWizard` input type, as it is used in `tl_files` within the Contao
+core for example, the available fields can be defined through the `metaFields` key
+in the `eval` definition of the field. This definition is an associative array,
+where the key is the key of the meta field and its value will be used for additional
+attributes of the text input field.
+
+For example, this is the definition of the `tl_files.meta` field from the Contao
+core:
+
+```php
+$GLOBALS['TL_DCA']['tl_files']['fields']['meta']['eval']['metaFields'] = [
+    'title' => 'maxlength="255"',
+    'alt' => 'maxlength="255"',
+    'link' => 'maxlength="255"',
+    'caption' => 'maxlength="255"',
+];
+```
+
+Each meta field is always a simple text input, which can be expanded with additional
+HTML attributes. In this case, all the meta fields get the attribute `maxlength="255"`.
+
+If you want to add an additional meta field to the file manager of Contao, you could
+do it like this:
+
+```php
+// contao/dca/tl_files.php
+$GLOBALS['TL_DCA']['tl_files']['fields']['meta']['eval']['metaFields']['example'] = 
+    'maxlength="255"'
+;
+```
+
+This will insert the new meta field, however it will have no label in the back end,
+as its translation is still missing. The translation key for these meta fields consists
+of the name of the field, grouped and prefixed by `MSC.aw_`. So for this new field
+the translation definition could look like this:
+
+```php
+// contao/languages/en/default.php
+$GLOBALS['TL_LANG']['MSC']['aw_example'] = 'My example';
+```
 
 
 ### Relations
