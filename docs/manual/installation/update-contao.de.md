@@ -143,3 +143,119 @@ $ vendor/bin/contao-console contao:migrate
 verwenden.
 
 Deine Contao-Installation ist jetzt auf dem neuesten Stand.
+
+
+### Lokale Aktualisierung ohne die Composer Resolver Cloud
+
+Das Vorgehen, das oben in ["Aktualisierung über die Kommandozeile"](#aktualisierung-ueber-die-kommandozeile) beschrieben wurde, kannst du auch lokal durchführen.
+Dies hat den Vorteil, dass du im Gegensatz zur Umgebung bei einem Hoster keine Probleme mit nicht erfüllten
+Systemanforderungen wie z.B. ungenügendem Arbeitsspeicher bekommst, denn du kannst die entsprechende Konfiguration
+selbst nach Bedarf anpassen.
+
+
+#### Voraussetzungen
+
+Was benötigst Du auf deinem Computer?
+
+- ein beliebiges Verzeichnis, in dem Du arbeitest (dein Arbeitsverzeichnis)
+- PHP, idealerweise in der gleichen Version, wie sie auf deinem Hosting verwendet wird.  
+- Composer (wir gehen hier davon aus, dass du Composer in deinem Arbeitsverzeichnis installierst)
+- Kopien der `composer.json` und `composer.lock` der Contao-Installation bei deinem Hoster
+
+Was benötigst du _nicht_?
+
+- MySQL
+- Eine lokale Contao-Installation
+
+
+#### Die Aktualisierung durchführen
+
+Kopiere die `composer.json` und `composer.lock` von deinem Hosting in dein Arbeitsverzeichnis.
+Im Wesentlichen machst du dann das Gleiche, wie oben unter
+["Aktualisierung über die Kommandozeile"](#aktualisierung-ueber-die-kommandozeile) beschrieben:
+ 
+Öffne ein Terminal und wechsle in das Arbeitsverzeichnis. Führe dort
+
+```bash
+php composer.phar update
+```
+
+aus. Nach dem erfolgreichen Abschluss der Aktualisierung kopierst du die aktualisierte `composer.lock`
+(und die `composer.json`, falls du dort Änderungen gemacht hast) zurück in die Contao-Installation 
+auf deinem Hosting. 
+
+Danach meldest du dich entweder per `ssh` auf deinem Server (Hosting) an
+
+```bash
+ssh benutzername@example.com
+```
+
+und lässt Composer die aktualisierten Pakete installieren
+
+```bash
+php composer.phar install
+```
+
+oder du verwendest den Contao Manager. Dort wählts du unter Systemwartung den Punkt Composer-Abhängigkeiten, Installer ausführen
+
+![Paketinstallation mit demContao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
+
+Zum Abschluss musst du noch die Datenbanktabellen aktualisieren. 
+
+
+#### Datenbanktabellen aktualisieren
+
+Öffne das [Contao-Installtool](../contao-installtool/), und überprüfe, ob nach der Aktualisierung irgendwelche 
+Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe 
+dann das Installtool.
+
+Anstelle des Contao-Installtools kannst du (ab Contao 4.9) zur Aktualisierung der Datenbanktabellen auf der 
+Kommandozeile das Command 
+```bash
+$ vendor/bin/contao-console contao:migrate
+``` 
+verwenden.
+
+Deine Contao-Installation ist jetzt auf dem neuesten Stand.
+
+
+#### Verschiedene PHP-Versionen
+
+Wenn die lokal verwendete PHP-Version eine andere ist, als bei deinem Hosting, musst du in der `composer.json`
+angeben, welche PHP-Version verwendet werden soll:
+
+```json
+    ...
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    },
+    "require": {
+        ...
+```
+
+#### Ausblick
+
+Wenn dir das zu viele Einzelschritte sind, kannst du den Prozess auch per Skript ausführen lassen. Das könnte in etwa
+so aussehen:
+
+```bash
+# Der Pfad zur Contao-Installation auf deinem Hosting
+REMOTE_PATH=/mein/installationsverzeichnis/beim/hoster
+
+# composer.json und composer.lock vom Hosting holen
+scp user@host:${REMOTE_PATH}/composer.json composer.json
+scp user@host:${REMOTE_PATH}/composer.lock composer.lock
+
+# lokales Update
+php composer update
+
+# composer.json und composer.lock zurück zum Hosting
+scp composer.json user@host:${REMOTE_PATH}/composer.json
+scp composer.lock user@host:${REMOTE_PATH}/composer.lock
+
+# composer install auf dem Hosting
+ssh user@host "cd ${REMOTE_PATH} && php composer.phar install"
+ssh user@host "cd ${REMOTE_PATH} && vendor/bin/contao-console contao:migrate --no-interaction --with-deletes"
+```
