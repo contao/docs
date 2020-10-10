@@ -352,6 +352,44 @@ class SlugValidCharactersListener
 {{% /expand %}}
 
 
+## `FilterPageTypeEvent`
+
+{{% version "4.10" %}}
+
+This event event is triggered when the available page types are collected in the
+`PageTypeOptionsListener` for the `type` select of `tl_page`. The event allows you
+to add or remove options.
+
+<table>
+<tr><th>Name</th><td><code>\Contao\CoreBundle\Event\FilterPageTypeEvent::class</code></td></tr>
+<tr><th>Constant</th><td>N/A</td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\FilterPageTypeEvent</code></td></tr>
+</table>
+<br>
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/FilterPageTypeListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\FilterPageTypeEvent;
+use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+
+/**
+ * @ServiceTag("kernel.event_listener")
+ */
+class FilterPageTypeListener
+{
+    public function __invoke(FilterPageTypeEvent $event): void
+    {
+        // Removes the "redirect" page type from the available page types
+        $event->removeOption('redirect');
+    }
+}
+```
+{{% /expand %}}
+
+
 [SymfonyEventDispatcher]: https://symfony.com/doc/current/event_dispatcher.html
 [ContaoHooks]: /framework/hooks
 [BackEndRoutes]: /guides/back-end-routes
