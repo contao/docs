@@ -547,10 +547,6 @@ class EditButtonsCallbackListener
 {
     public function __invoke(array $buttons, DataContainer $dc): array
     {
-        if ('tl_example' !== $dc->table) {
-            return $buttons;
-        }
-
         // Remove the "Save and close" button
         unset($buttons['saveNclose']);
 
