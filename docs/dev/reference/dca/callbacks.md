@@ -35,7 +35,8 @@ any of these callbacks in the front end.
 
 ***
 
-## Global callbacks
+
+## Global Callbacks
 
 
 ### `config.onload`
@@ -225,7 +226,7 @@ window.
 ***
 
 
-## Listing callbacks
+## Listing Callbacks
 
 {{% notice note %}}
 All listing callbacks are _singular_ callbacks - meaning there can only be one
@@ -387,7 +388,7 @@ an additional command check via load_callback).
 ***
 
 
-## Field callbacks
+## Field Callbacks
 
 The following is a list of callbacks for DCA fields. Replace `field` with a
 field name of your choice.
@@ -509,6 +510,57 @@ a button for an import "wizard".
 
 **return:** `string` HTML for the button
 {{% /expand %}}
+
+
+## Edit Callbacks
+
+The following is a list of callbacks relating to edit actions of a Data Container.
+
+
+### `edit.buttons`
+
+Allows you to modify the action buttons at the bottom of record editing form. This
+can be used to add additional buttons or remove any of the existing buttons.
+
+{{% expand "Parameters" %}}
+* `array` Array of strings
+* `\Contao\DataContainer` Data Container object
+
+**return:** `array` Array of strings containing the buttons' markup
+{{% /expand %}}
+
+{{% expand "Example" %}}
+This example removes the "Save and close" button from the editing form of a record
+of the `tl_example` Data Container.
+
+```php
+// src/EventListener/DataContainer/EditButtonsCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+
+/**
+ * @Callback(table="tl_example", target="edit.buttons")
+ */
+class EditButtonsCallbackListener
+{
+    public function __invoke(array $buttons, DataContainer $dc): array
+    {
+        if ('tl_example' !== $dc->table) {
+            return $buttons;
+        }
+
+        // Remove the "Save and close" button
+        unset($buttons['saveNclose']);
+
+        return $buttons;
+    }
+}
+```
+{{% /expand %}}
+
+
 
 [hooks]: ../../../framework/hooks/
 [registerCallbacks]: /framework/dca/#registering-callbacks
