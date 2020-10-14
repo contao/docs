@@ -229,8 +229,7 @@ Translation here ...
 ```php
 // block_searchable_filter.html5
 
-<?php 
-if ($this->myCustomDataAttributes) {
+<?php if ($this->myCustomDataAttributes) {
   $dataAttributesString = "";
   $dataAttributes = \StringUtil::deserialize($this->myCustomDataAttributes); 
   $parsedDataAttributes = [];
@@ -305,7 +304,7 @@ return array(
 );
 ```
 
-```html
+```php
 // rsce_my_filter.html5
 
 <?php if ($this->data){
