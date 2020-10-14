@@ -388,10 +388,10 @@ return array(
     'inputType' => 'group',
   ),
   'data' => array(
-    'label'			=> ['Data-Attribut:', 'Attribut-Bezeichnung / Attribut-Wert'],
-    'inputType'     => 'keyValueWizard',
+    'label'     => ['Data-Attribut:', 'Attribut-Bezeichnung / Attribut-Wert'],
+    'inputType' => 'keyValueWizard',
     'default'   => serialize([['key' => 'data-category']]),
-    'eval' 			=> ['tl_class' => 'w50'],
+    'eval'      => ['tl_class' => 'w50'],
     ),
   ),
 );
