@@ -230,7 +230,7 @@ das Contao »[Data Container Array](https://docs.contao.org/dev/reference/dca/)�
 
 In der Developer Documentation findest du [ein Beispiel](https://docs.contao.org/dev/getting-started/dca/) zur
 Contao [DCA](https://docs.contao.org/dev/framework/dca/) Manipulation. In Zusammenhang mit Inhaltselementen ist hierbei 
-die Contao Datei [tl_content.php](https://github.com/contao/core-bundle/blob/master/src/Resources/contao/dca/tl_content.php) 
+die Contao Datei [»tl_content.php«](https://github.com/contao/core-bundle/blob/master/src/Resources/contao/dca/tl_content.php) 
 und die entsprechende Datenbanktabelle »`tl_content`« verantwortlich die wir wie folgt erweitern:
 
 Sofern noch nicht vorhanden erstellst du dir in deinem Contao Hauptverzeichnis ein neues Verzeichns »`contao/dca`« mit 
@@ -434,12 +434,12 @@ return array(
 </div>
 ```
 
-Hierüber erhälst du ein neues, eigenes Inhaltselement unter der Bezeichnug »Filter-Element» zur Auswahl. Dieses kannst
+Hierüber erhälst du ein neues, eigenes Inhaltselement unter der Bezeichnug »`Filter-Element`» zur Auswahl. Dieses kannst
 du im Anschluss für die zu filternden Inhalte in Kombination mit den Inhaltselementen vom Typ »HTML« (s. o.) einsetzen. 
 
 {{% notice tip %}}
 Mit der »RSCE« Erweiterung könntest du dir auch eigene 
-[Umschlags-Elemente]((https://rocksolidthemes.com/de/contao/plugins/custom-content-elements/dokumentation)) erstellen 
+[Umschlags-Elemente](https://rocksolidthemes.com/de/contao/plugins/custom-content-elements/dokumentation) erstellen 
 und diese statt der bisherigen Inhaltselemente vom Typ »HTML« verwenden.
 {{% /notice %}}
 
