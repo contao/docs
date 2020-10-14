@@ -244,6 +244,7 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 $GLOBALS['TL_DCA']['tl_content']['fields']['myCustomDataAttributes'] = [
   'label'     => ['Data-Attribut', 'Hier können Sie Data-Attribute vergeben.'],
   'inputType' => 'keyValueWizard',
+  'default'   => serialize([['key' => 'data-category']]),
   'eval'      => ['tl_class' => 'w50'],
   'exclude'   => true,
   'sql'       => "text NULL",
@@ -389,6 +390,7 @@ return array(
   'data' => array(
     'label'			=> ['Data-Attribut:', 'Attribut-Bezeichnung / Attribut-Wert'],
     'inputType'     => 'keyValueWizard',
+    'default'   => serialize([['key' => 'data-category']]),
     'eval' 			=> ['tl_class' => 'w50'],
     ),
   ),
