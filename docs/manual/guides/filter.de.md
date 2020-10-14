@@ -22,7 +22,7 @@ Kategorien zugeordnet werden. Im Anschluß kann die Darstellung gezielt über di
 
 Für unsere Anforderung kannst du beispielsweise die Erweiterung 
 [codefog/contao-elements-filter](https://extensions.contao.org/?q=filter&pages=1&p=codefog%2Fcontao-elements-filter) nutzen.
-Weitere Informationen hierzu findest du dann auf der [GitHub](https://github.com/codefog/contao-elements-filter/tree/1.1.0) 
+Weitere Informationen hierzu findest du dann auf der [GitHub](https://github.com/codefog/contao-elements-filter) 
 Seite des Autors.
 
 {{% notice info %}}
