@@ -296,8 +296,7 @@ verwenden wir hierzu wieder die beiden Template Dateien »`ce_text_filter.html5`
 ```php
 // block_searchable_filter.html5
 
-<?php 
-if ($this->myCustomDataAttributes) {
+<?php if ($this->myCustomDataAttributes) {
   $dataAttributesString = "";
   $dataAttributes = \StringUtil::deserialize($this->myCustomDataAttributes); 
   $parsedDataAttributes = [];
@@ -398,7 +397,7 @@ return array(
 
 ```
 
-```html
+```php
 // rsce_my_filter.html5
 
 <?php if ($this->data){
