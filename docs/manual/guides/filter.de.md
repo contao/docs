@@ -206,7 +206,7 @@ Das Script erwartet die Inhalte innerhalb eines HTML Blocks »`<div class="filte
 übersichtlicheren Backend Darstellung könntest du die Contao [Accordeon](/de/artikelverwaltung/inhaltselemente/#akkordeon) 
 Elemente »Umschlag Anfang« und »Umschlag Ende« zweck­ent­frem­den. Im Element »Umschlag Anfang« setzt du dann die 
 CSS-Klasse »filter-container« ein.<br><br>
-Weiterhin haben wir einfachheisthalber die Javascript Referenzen direkt im Inhaltselement eingetragen. Alternativ
+Weiterhin haben wir einfachheitshalber die Javascript Referenzen direkt im Inhaltselement eingetragen. Alternativ
 könntest du diese auch als [Javascript Asset im Template](/de/layout/templates/assets/) hinterlegen.
 {{% /notice %}}
 
@@ -216,7 +216,7 @@ Du bist nicht auf Erweiterungen angewiesen und du hast die vollständige Kontrol
 und der Pflege. Bei Contao Updates müssen u. U. lediglich mögliche Änderungen der Core Templates berücksichtigt werden.
 <br><br>
 <strong>Nachteil:</strong><br>
-Für Template Anpassungen in dieser Form sind zumindest rudimentäre PHP Kenntnisse vorteilhaft. Die 
+Für Template Anpassungen in dieser Form sind zumindest rudimentäre PHP Kenntnisse notwendig. Die 
 [Contao Community](https://community.contao.org/de/) steht dir bei derartigen Fragen hilfreich zur Seite. Die Nutzung 
 der Data-Attribute ist für Redakteure nicht offensichtlich und Bedarf entsprechender Dokumentation.
 {{% /notice %}}
@@ -330,7 +330,7 @@ Du hast die vollständige Kontrolle hinsichtlich der Umsetzung und der Pflege. D
 und deinen Redakteuren bequem über Eingabefelder gesetzt werden.<br><br>
 <strong>Nachteil:</strong><br>
 Rudimentäre Kenntnisse in PHP und zum gut [dokumentierten Contao DCA](https://docs.contao.org/dev/reference/dca/) 
-sind vorteilhaft. Die [Contao Community](https://community.contao.org/de/) steht dir auch bei derartigen Fragen 
+sind notwendig. Die [Contao Community](https://community.contao.org/de/) steht dir auch bei derartigen Fragen 
 hilfreich zur Seite. 
 {{% /notice %}}
 
