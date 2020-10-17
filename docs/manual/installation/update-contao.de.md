@@ -157,7 +157,7 @@ selbst nach Bedarf anpassen.
 
 Was benötigst Du auf deinem Computer?
 
-- ein beliebiges Verzeichnis, in dem Du arbeitest (dein Arbeitsverzeichnis)
+- ein beliebiges Verzeichnis, in dem du arbeitest (dein Arbeitsverzeichnis)
 - PHP, idealerweise in der gleichen Version, wie sie auf deinem Hosting verwendet wird.  
 - Composer (wir gehen hier davon aus, dass du Composer in deinem Arbeitsverzeichnis installierst)
 - Kopien der `composer.json` und `composer.lock` der Contao-Installation bei deinem Hoster
