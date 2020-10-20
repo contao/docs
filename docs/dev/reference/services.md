@@ -124,11 +124,15 @@ class Example
 
     public function execute()
     {
-        if (($backendUser = $this->security->getUser()) instanceof BackendUser) {
+        if ($isBackendAdmin = $this->security->isGranted('ROLE_ADMIN')) {
+            // …
+        }
+    
+        if ($isBackendUser = $this->security->isGranted('ROLE_USER')) {
             // …
         }
 
-        if (($frontendUser = $this->security->getUser()) instanceof FrontendUser) {
+        if ($isFrontendUser = $this->security->isGranted('ROLE_MEMBER')) {
             // …
         }
     }
