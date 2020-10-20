@@ -228,7 +228,7 @@ angeben, welche PHP-Version verwendet werden soll:
     ...
     "config": {
         "platform": {
-            "php": "7.4"
+            "php": "7.4.99"
         }
     },
     "require": {
