@@ -91,6 +91,8 @@ Contao Manager `.phar` file into this folder and rename the file to` contao-mana
 
 {{% notice note %}}
 The domain suffix `.loc` is the default. However, this can be changed in the `.env` file via the entry `TLD_SUFFIX`.
+The manual editing of »`/etc/hosts`« may be neglected. The »Devilbox« offers a 
+"[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) feature. 
 {{% /notice %}}
 
 

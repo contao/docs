@@ -99,6 +99,8 @@ Unterordner `web`. Kopiere in diesen Ordner die Contao Manager `.phar` Datei und
 
 {{% notice note %}}
 Die Domain-Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert werden.
+Die manuelle Bearbeitung der »`/etc/hosts`« kann u. U. vernachlässigt werden. Die »Devilbox« bietet hierzu eine 
+»[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität an. 
 {{% /notice %}}
 
 
