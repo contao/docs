@@ -50,6 +50,16 @@ Contao seit der Version 2.5 lizenziert ist, erlaubt die Verwendung des Systems f
 dass die Copyright-Hinweise in den Contao-Dateien gemäß den Lizenzbedingungen nicht entfernt oder verändert werden dürfen.
 {{% /expand %}}
 
+{{% expand "Wie kann ich über die Konsole den »Anwendungs-Cache« erneuern?" %}}
+Falls du den »Anwendungs-Cache« erneuern möchtest kannst du dies über die 
+[Konsole](https://docs.contao.org/dev/reference/commands/) durchführen: 
+
+```php
+vendor/bin/contao-console cache:clear --no-warmup
+vendor/bin/contao-console cache:warmup
+```
+{{% /expand %}}
+
 
 ## Template
 
@@ -141,4 +151,9 @@ im Hintergrund eine Prüfung durch. Sollte eine neue Version verfügbar sein, ak
 {{% expand "Was ist die Composer Resolver Cloud?" %}}
 Die [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Installation von Composer-Abhängigkeiten 
 über den [Contao Manager](/de/installation/contao-manager/), selbst wenn dein Server nicht über genug Arbeitsspeicher verfügt.
+{{% /expand %}}
+
+{{% expand "Wie kann ich über den Contao-Manager den »Anwendungs-Cache« erneuern?" %}}
+Falls du den »Anwendungs-Cache« erneuern möchtest kannst du dies im [Contao Manager](/de/installation/contao-manager/) 
+im Bereich »Systemwartung/Anwendungs-Cache« durchführen.
 {{% /expand %}}
