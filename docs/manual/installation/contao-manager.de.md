@@ -175,6 +175,12 @@ weiteres Benutzerkonto hinzufügen. In unserem Fall ist das <code>h.lewis</code>
 
 ```
 
+{{% notice info %}}
+Der Wert für »password« muss hierbei verschlüsselt eingetragen werden. Über [bcrypt-generator.com](https://bcrypt-generator.com/)
+könntest du z. B. den notwendigen Hash-Wert generieren.
+{{% /notice %}}
+
+
 ### Kann der Contao Manager zu einer bestehenden Installation hinzugefügt werden? {#kann-der-contao-manager-zu-einer-bestehenden-installation-hinzugefuegt-werden}
     
 Ja, wenn du eine Contao Installation in der Managed Edition verwendest, dann kann der Contao Manager nachinstalliert 

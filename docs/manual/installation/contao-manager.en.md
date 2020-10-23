@@ -134,6 +134,12 @@ Yes, you have to edit the file `users.json` in the directory `contao-manager` an
 
 ```
 
+{{% notice info %}}
+The value for "password" must be encrypted. You can use services like [bcrypt-generator.com](https://bcrypt-generator.com/) 
+for example in order to generate the necessary hashed value.
+{{% /notice %}}
+
+
 ### Can Contao Manager be added to an existing installation? {#the-contao manager can be added to an existing installation}
 
 Yes, if you use a Contao installation in the Managed Edition, you can install Contao Manager later. Just upload the `contao-manager.phar` files into the directory `web` and add the file extension `.php`.
