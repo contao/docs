@@ -135,8 +135,8 @@ Yes, you have to edit the file `users.json` in the directory `contao-manager` an
 ```
 
 {{% notice info %}}
-The value for "password" must be entered in encrypted form. About [bcrypt-generator.com](https://bcrypt-generator.com/)
-you could, for example, generate the necessary hash value.
+The value for "password" must be encrypted. You can use services like [bcrypt-generator.com](https://bcrypt-generator.com/) 
+for example in order to generate the necessary hashed value.
 {{% /notice %}}
 
 
