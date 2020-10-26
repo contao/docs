@@ -390,14 +390,14 @@ an additional command check via load_callback).
 
 ## Field Callbacks
 
-The following is a list of callbacks for DCA fields. Replace `field` with a
+The following is a list of callbacks for DCA fields. Replace `<FIELD>` with a
 field name of your choice.
 
 
-### `fields.field.options`
+### `fields.<FIELD>.options`
 
 {{% notice note %}}
-The `fields.field.options` callback is a _singular_ callback - meaning there can
+The `fields.<FIELD>.options` callback is a _singular_ callback - meaning there can
 only be one callback, not multiple ones.
 {{% /notice %}}
 
@@ -411,10 +411,10 @@ or checkbox list. Useful e.g. for conditional foreinKey-relations.
 {{% /expand %}}
 
 
-### `fields.field.input_field`
+### `fields.<FIELD>.input_field`
 
 {{% notice note %}}
-The `fields.field.input_field` callback is a _singular_ callback - meaning there
+The `fields.<FIELD>.input_field` callback is a _singular_ callback - meaning there
 can
 only be one callback, not multiple ones.
 {{% /notice %}}
@@ -431,7 +431,7 @@ field is not saved automatically!
 {{% /expand %}}
 
 
-### `fields.field.load`
+### `fields.<FIELD>.load`
 
 Executed when a form field is initialized and can e.g. be used to load a default
 value.
@@ -455,7 +455,7 @@ value.
 {{% /expand %}}
 
 
-### `fields.field.save`
+### `fields.<FIELD>.save`
 
 Executed when a field is submitted and can e.g. be used to add an individual
 validation routine. If the new value does not validate, you can throw an
@@ -488,7 +488,7 @@ then and the error message will be shown in the form.
 {{% /expand %}}
 
 
-### `fields.field.wizard`
+### `fields.<FIELD>.wizard`
 
 Allows you to add additional HTML after the field input, typically used to show
 a button that starts a "wizard".
@@ -500,7 +500,7 @@ a button that starts a "wizard".
 {{% /expand %}}
 
 
-### `fields.field.xlabel`
+### `fields.<FIELD>.xlabel`
 
 Allows you to add additional HTML after the field label, typically used to show
 a button for an import "wizard".
