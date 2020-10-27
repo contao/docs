@@ -149,7 +149,7 @@ can be [registered using a hook][3].
 | date        | expects a valid date                                                                                              |
 | time        | expects a valid time                                                                                              |
 | datim       | expects a valid date and time                                                                                     |
-| friendly    | expects a valid "friendly name format" e-mail address                                                             |
+| friendly    | expects a valid "friendly name format" e-mail address (`Lorem Ipsum <foobar@example.com>` or `Lorem Ipsum [foobar@example.com]` |
 | email       | expects a valid e-mail address                                                                                    |
 | emails      | expects a valid list of valid e-mail addresses                                                                    |
 | url         | expects a valid URL                                                                                               |
