@@ -147,15 +147,17 @@ Deine Contao-Installation ist jetzt auf dem neuesten Stand.
 
 ### Lokale Aktualisierung ohne die Composer Resolver Cloud
 
-Das Vorgehen, das oben in ["Aktualisierung über die Kommandozeile"](#aktualisierung-ueber-die-kommandozeile) beschrieben wurde, kannst du auch lokal durchführen.
-Dies hat den Vorteil, dass du im Gegensatz zur Umgebung bei einem Hoster keine Probleme mit nicht erfüllten
-Systemanforderungen wie z.B. ungenügendem Arbeitsspeicher bekommst, denn du kannst die entsprechende Konfiguration
-selbst nach Bedarf anpassen.
+Die Vorgehensweisen, die oben in ["Aktualisierung über die Kommandozeile"](#aktualisierung-ueber-die-kommandozeile) 
+und ["Aktualisierung mit dem Contao Manager"](#aktualisierung-mit-dem-contao-manager) beschrieben wurden, kannst du
+auch lokal durchführen. Dies hat den Vorteil, dass du im Gegensatz zur Umgebung bei einem Hoster keine Probleme mit 
+nicht erfüllten Systemanforderungen wie z.B. ungenügendem Arbeitsspeicher bekommst, denn du kannst die entsprechende 
+Konfiguration selbst nach Bedarf anpassen.
 
 
-#### Voraussetzungen
 
-Was benötigst Du auf deinem Computer?
+#### Voraussetzungen bei Verwendung der Kommandozeile
+
+Was benötigst du auf deinem Computer?
 
 - ein beliebiges Verzeichnis, in dem du arbeitest (dein Arbeitsverzeichnis)
 - PHP, idealerweise in der gleichen Version, wie sie auf deinem Hosting verwendet wird.  
@@ -196,18 +198,18 @@ und lässt Composer die aktualisierten Pakete installieren
 php composer.phar install
 ```
 
-oder du verwendest den Contao Manager. Dort wählts du unter Systemwartung den Punkt Composer-Abhängigkeiten, Installer ausführen
+oder du verwendest den Contao Manager. Dort wählst du unter Systemwartung den Punkt Composer-Abhängigkeiten, Installer 
+ausführen.
 
-![Paketinstallation mit demContao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
+![Paketinstallation mit dem Contao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
 
 Zum Abschluss musst du noch die Datenbanktabellen aktualisieren. 
 
 
 #### Datenbanktabellen aktualisieren
 
-Öffne das [Contao-Installtool](../contao-installtool/), und überprüfe, ob nach der Aktualisierung irgendwelche 
-Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe 
-dann das Installtool.
+Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung Änderungen an deiner 
+Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe dann das Installtool.
 
 Anstelle des Contao-Installtools kannst du (ab Contao 4.9) zur Aktualisierung der Datenbanktabellen auf der 
 Kommandozeile das Command 
@@ -235,27 +237,19 @@ angeben, welche PHP-Version verwendet werden soll:
         ...
 ```
 
-#### Ausblick
+#### Lokale Updates mit dem Contao Manager
 
-Wenn dir das zu viele Einzelschritte sind, kannst du den Prozess auch per Skript ausführen lassen. Das könnte in etwa
-so aussehen:
+Du benötigst eine lokale Contao-Installation. In dieser installierst du den Contao Manager und führst das Update wie
+im Abschnitt ["Aktualisierung mit dem Contao Manager"](#aktualisierung-mit-dem-contao-manager) beschrieben durch. 
 
-```bash
-# Der Pfad zur Contao-Installation auf deinem Hosting
-REMOTE_PATH=/mein/installationsverzeichnis/beim/hoster
+Stelle zuvor jedoch sicher, daß die Composer Resolver Cloud nicht verwendet wird. Du benötigst sie nicht, da du auf 
+deinem eigenen Server genügend Arbeitsspeicher bereitstellen kannst und entlastest so die Cloud.
 
-# composer.json und composer.lock vom Hosting holen
-scp user@host:${REMOTE_PATH}/composer.json composer.json
-scp user@host:${REMOTE_PATH}/composer.lock composer.lock
+Die Einstellung findest du in der Systemprüfung im Bereich Serverkonfiguration.
 
-# lokales Update
-php composer update
+![Deaktivierung der Composer Resolver Cloud](/de/installation/images/de/cloud_resolver_abschalten.png?classes=shadow)
 
-# composer.json und composer.lock zurück zum Hosting
-scp composer.json user@host:${REMOTE_PATH}/composer.json
-scp composer.lock user@host:${REMOTE_PATH}/composer.lock
-
-# composer install auf dem Hosting
-ssh user@host "cd ${REMOTE_PATH} && php composer.phar install"
-ssh user@host "cd ${REMOTE_PATH} && vendor/bin/contao-console contao:migrate --no-interaction --with-deletes"
-```
+Nach dem erfolgreichen Update überträgst du wie im vorherigen Abschnitt beschrieben die `composer.json` und 
+`composer.lock` zurück in die Contao-Installation auf deinem Hosting. Die weiteren Schritte auf deinem Hosting sind die 
+gleichen wie oben beschrieben.
+ 
