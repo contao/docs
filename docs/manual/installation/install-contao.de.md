@@ -83,7 +83,7 @@ php -r "unlink('composer-setup.php');"
 ```
 
 
-### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
+### Contao über die Kommandozeile installieren
 
 Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
 Installations-Verzeichnis und die 4.8 für die zu [installierende Contao-Version](https://contao.org/de/download.html). 
@@ -106,11 +106,39 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 {{% /notice %}}
 
 
-### Datenbanktabellen aktualisieren
+### Datenbank erstellen
 
-Nach der Installation ist vor der Datenbank-Aktualisierung, rufe dazu das [Contao-Installtool](../contao-installtool/)
-auf oder verwende (ab Contao 4.9) 
+Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
+
+```bash
+php vendor/bin/contao-console doctrine:database:create
+``` 
+
+
+### Datenbanktabellen erstellen
+
+Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
+
 ```bash
 php vendor/bin/contao-console contao:migrate
 ``` 
-auf der Kommandozeile.
+
+{{% notice info %}}
+Contao muss hierzu die entsprechenden Verbindungsdaten deiner Datenbank kennen. Diese Information kann entweder über 
+eine vorhandene »config/parameters.yml« (Wird zur Zeit über das [Contao-Installtool](/de/installation/contao-installtool/) 
+erstellt) oder über eine ».env« Datei im Hauptverzeichnis deiner Installation bereit gestellt werden.<br><br> 
+Weitere Details für die notwendigen Umgebungsvariablen ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 
+und [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in einer ».env« Datei findest du 
+[hier](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration).
+{{% /notice %}}
+
+
+### Contao Backend-Benutzer erstellen
+
+Im Anschluss kannst du über folgenden Konsolen Befehl einen neuen Backend Benutzer mit Administrator Rechten anlegen:
+
+```bash
+php vendor/bin/contao-console contao:user:create --username=h.lewis --email=hlewis@demo.de --password=meinkennwort --language=de --admin
+
+``` 
+
