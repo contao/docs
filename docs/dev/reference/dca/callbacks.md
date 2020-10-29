@@ -52,7 +52,7 @@ permissions or to modify the Data Container Array dynamically at runtime.
 **return:** _void_
 
 
-#### Front end modules "Personal data" & "Registration"
+#### Front end modules "Personal data", "Registration", "Password" & "Change Password"
 
 _No parameters._
 
