@@ -20,7 +20,7 @@ Neben kommerziellen Dienstleistern wie »[Adobe-Fonts](https://fonts.adobe.com/)
 werden die Webfonts »vermietet« und über eigene Server gehostet. Nur wenige bieten die Webfonts darüber hinaus zum Download an.
 
 Der wohl bekannteste, kostenfreie Anbieter ist Google mit den »[Google Fonts](https://fonts.google.com/)». Du findest 
-aber auch Alternativen z. B. auf [Github](https://github.com/adobe-fonts/). Bei den Open Source Angeboten solltest du 
+aber auch Alternativen z. B. auf [GitHub](https://github.com/adobe-fonts/). Bei den Open Source Angeboten solltest du 
 darauf achten das diese beispielsweise deutsche Sonderzeichen beinhalten. Auch sind hierbei möglicherweise nur wenige
 oder sogar keine weiteren Schriftschnitte vorhanden.
 
