@@ -83,7 +83,7 @@ php -r "unlink('composer-setup.php');"
 ```
 
 
-### Contao über die Kommandozeile installieren
+### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
 
 Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
 Installations-Verzeichnis und die 4.8 für die zu [installierende Contao-Version](https://contao.org/de/download.html). 
@@ -140,4 +140,3 @@ Im Anschluss kannst du über folgenden Konsolen Befehl einen neuen Backend Benut
 ```bash
 php vendor/bin/contao-console contao:user:create --username=h.lewis --email=hlewis@demo.de --password=meinkennwort --language=de --admin
 ``` 
-
