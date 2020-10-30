@@ -1,6 +1,6 @@
 ---
-title: "Frontend-Filter implementation"
-description: "Options for implementing a frontend-filter"
+title: "Front end filter implementation"
+description: "Options for implementing a front end filter"
 aliases:
   - /en/guides/filter/
 weight: 70
@@ -11,7 +11,7 @@ tags:
 
 
 Contao offers numerous possibilities for content creation. The respective advantages and disadvantages can be helpful 
-when weighing and selecting. As an example here is the implementation of a »frontend filter«:
+when weighing and selecting. As an example here is the implementation of a »front end filter«:
 
 The animated filtering of arbitrary contents is often used to display e.g. references without having to reload the 
 website. The contents to be filtered must first be assigned to appropriate categories. Subsequently, the presentation 
@@ -24,22 +24,22 @@ For our request you can use the extension [codefog/contao-elements-filter](https
 on the author's [GitHub](https://github.com/codefog/contao-elements-filter) page.
 
 {{% notice info %}}
-<strong>Pro:</strong><br>
+<strong>Pro:</strong>  
 A Contao [extension](https://extensions.contao.org/) performs a special task, is mostly free of charge and can be easily 
 installed. You do not have to worry about the actual technical implementation. The editing for you or other editors is 
 easily done using the well-known Contao input options. Documentation, especially for free extensions, is usually done 
 via the corresponding GitHub pages. Alternatively, you can find helpful support via the community in the 
-[Contao forum](https://community.contao.org/de/).<br><br>
-<strong>Contra:</strong><br>
+[Contao forum](https://community.contao.org/en/).<br><br>
+<strong>Contra:</strong>  
 If you update Contao or change the PHP version, it might happen that the extension is not yet ready for this. In this 
 case you have to rely on the author's modifications. Especially if you get a free offer, you will get help from the 
-Contao [community](https://community.contao.org/de/) too.
+Contao [community](https://community.contao.org/en/) too.
 {{% /notice %}}
 
 
 ## Without extension
 
-Known Javascript solutions for our requirements are e.g. [Isotopes](https://isotope.metafizzy.co/) or 
+Known JavaScript solutions for our requirements are e.g. [Isotopes](https://isotope.metafizzy.co/) or 
 [MixItUp](https://www.kunkalabs.com/mixitup/). In case of a commercial use the purchase of licenses is necessary. 
 For our example we use the open source solution [Filterizr](https://yiotis.net/filterizr/#/).
 
@@ -47,15 +47,15 @@ For our example we use the open source solution [Filterizr](https://yiotis.net/f
 ### Use of »Filterizr«
 
 Examples and documentation can be found on the [Filterizr website](https://yiotis.net/filterizr/#/tutorials/quickstart) 
-and on [Github](https://github.com/giotiskl/filterizr). The solution can be implemented either 
-as »jQuery Plugin« or as »Vanilla Javascript«. We use the latter in the following.
+and on [GitHub](https://github.com/giotiskl/filterizr). The solution can be implemented either 
+as »jQuery Plugin« or as »Vanilla JS«. We use the latter in the following.
 
-After the [download](https://github.com/giotiskl/filterizr/tags) you will find the directory »`dist`« with the 
-file »`vanilla.filterizr.min.js`« in the .zip archive. Copy this file into a public directory of your Contao installation 
-below »`files`«.
+After the [download](https://github.com/giotiskl/filterizr/tags) you will find the directory »dist« with the 
+file »vanilla.filterizr.min.js« in the zip archive. Copy this file into a public directory of your Contao installation 
+below »files«.
 
-For the »Filterizr« script, the content to be filtered must be declared with the CSS class »`filtr-item`«. The category 
-assignment is done via a HTML5 data attribute »`data-category`«. An exemplary HTML structure could look like the following 
+For the »Filterizr« script, the content to be filtered must be declared with the CSS class `filtr-item`. The category 
+assignment is done via a HTML5 data attribute `data-category`. An exemplary HTML structure could look like the following 
 and must be mapped within Contao:
 
 ```html
@@ -83,8 +83,8 @@ and must be mapped within Contao:
 
 ### With template adaptation
 
-The above HTMl structure can be created with Contao's own content elements. We use the content element of type »`HTML`« 
-for the HTML blocks and one or more elements of type »`Text`« for the actual content. The implementation in the Contao 
+The above HTMl structure can be created with Contao's own content elements. We use the content element of type »HTML« 
+for the HTML blocks and one or more elements of type »Text« for the actual content. The implementation in the Contao 
 backend would therefore be:
 
 {{% expand "Content element of type »HTML«" %}}
@@ -107,7 +107,7 @@ backend would therefore be:
 
 {{% expand "One or more content element(s) of type »Text«" %}}
 Enter your texts/photos here as usual. In the section »Expert settings CSS-ID/Class« you set the required 
-CSS class »filtr-item«.
+CSS class `filtr-item`.
 {{% /expand %}}
 
 
@@ -120,11 +120,11 @@ CSS class »filtr-item«.
 ```
 {{% /expand %}}
 
-The only thing missing is the assignment of our categories via the Html5 data attribute. In the content element of 
-type »`Text`« this input option is missing. We can realize this by using customized Contao templates.
+The only thing missing is the assignment of our categories via the HTML5 data attribute. In the content element of 
+type »Text« this input option is missing. We can realize this by using customized Contao templates.
 
-When certain conventionally defined specifications are entered in the »`Expert settings CSS-ID/Class`« section, these 
-are to be output as data-attributes via the template. When entering »`filtr-item DATA dog`« in the CSS class area, we 
+When certain conventionally defined specifications are entered in the »Expert settings CSS-ID/Class« section, these 
+are to be output as HTML5 data attributes via the template. When entering `filtr-item DATA dog` in the CSS class area, we 
 want to achieve the following output:
 
 ```html
@@ -133,11 +133,11 @@ want to achieve the following output:
 ...
 ```
 
-Create two new templates based on »`ce_text.html5`« and »`block_searchable.html5`« in the template directory you 
+Create two new templates based on »ce_text.html5« and »block_searchable.html5« in the template directory you 
 specified under »Themes«.
 
-For example as »`ce_text_filter.html5`« and »`block_searchable_filter.html5`« and use the new template 
-»`ce_text_filter.html5`« in your content elements of type »text« to be filtered.
+For example as »ce_text_filter.html5« and »block_searchable_filter.html5« and use the new template 
+»ce_text_filter.html5« in your content elements of type »text« to be filtered.
 
 ```php
 // ce_text_filter.html5
@@ -198,22 +198,22 @@ if ( substr_count($strCSS, $strDelimiter) > 0 ) {
 ```
 
 {{% notice tip %}}
-The script expects the contents within a HTML block »`<div class="filter-container">...</div>`«. For a clearer backend 
+The script expects the contents within a HTML block `<div class="filter-container">...</div>`. For a clearer backend 
 display, you could use the Contao [Accordeon elements](/en/article-management/content-elements/#accordion) 
 »Envelope start« and »Envelope end« for other purposes. In the element »Envelope start« you then use the CSS class 
 »filter-container«.<br><br>
-Furthermore, for simplicity's sake, we have entered the Javascript references directly in the content element. 
-Alternatively, you could also store them as [Javascript Asset](/en/layout/templates/template-assets/) in the template.
+Furthermore, for simplicity's sake, we have entered the JavaScript references directly in the content element. 
+Alternatively, you could also store them as [JavaScript Asset](/en/layout/templates/template-assets/) in the template.
 {{% /notice %}}
 
 {{% notice info %}}
-<strong>Pro:</strong><br>
+<strong>Pro:</strong>  
 You don't have to rely on extensions and you have complete control over the implementation and maintenance. For Contao 
 updates, you might only have to consider possible changes to the core templates.
 <br><br>
-<strong>Contra:</strong><br>
+<strong>Contra:</strong>  
 For template adjustments in this form, at least rudimentary PHP knowledge is required. The 
-[Contao community](https://community.contao.org/de/) will help you with these questions. The use of data-attributes 
+[Contao community](https://community.contao.org/en/) will help you with these questions. The use of HTML5 data attributes 
 is not obvious to editors and requires documentation.
 {{% /notice %}}
 
@@ -221,13 +221,13 @@ is not obvious to editors and requires documentation.
 ### Manipulation of »Data Container Arrays«
 
 For the next example, we take over the previous implementation via the content elements. For the input of the 
-data-attributes, however, we will create a new, additional input field for the content element of type »`Text`« and 
-extend the Contao »[Data Container Array](https://docs.contao.org/dev/reference/dca/)« (DCA) for this purpose.
+HTML5 data attributes, however, we will create a new, additional input field for the content element of type »Text« and 
+extend the Contao [Data Container Array](https://docs.contao.org/dev/reference/dca/) (DCA) for this purpose.
 
 In the developer documentation you can find an [example](https://docs.contao.org/dev/getting-started/dca/) of Contao 
-DCA manipulation. The Contao file »[tl_content.php](https://github.com/contao/core-bundle/blob/master/src/Resources/contao/dca/tl_content.php)« and the corresponding database table »`tl_content`« is responsible for the content elements:
+DCA manipulation. The Contao file »[tl_content.php](https://github.com/contao/core-bundle/blob/master/src/Resources/contao/dca/tl_content.php)« and the corresponding database table `tl_content` is responsible for the content elements:
 
-If not already there, create a new directory »`contao/dca`« in your Contao root directory with a file »`tl_content.php`«:
+If not already there, create a new directory »contao/dca« in your Contao root directory with a file »tl_content.php«:
 
 ```php
 // contao/dca/tl_content.php
@@ -252,8 +252,8 @@ PaletteManipulator::create()
 ```
 
 In order for Contao to take over this information, you have to update the »application cache« in the 
-»System maintenance« section of the »[Contao Manager](/en/installation/contao-manager/)«. Then call the 
-Contao installation tool. The tool recognizes the new field and offers you to create it in the database table 
+»System maintenance« section of the [Contao Manager](/en/installation/contao-manager/). Then call the 
+[Contao installation tool](/en/installation/contao-installtool/). The tool recognizes the new field and offers you to create it in the database table 
 »tl_content«. Every time you change the file »contao/dca/tl_content.php« this will be necessary again.
 
 The content element of type »`Text`« now contains a new input field (As key/value pair) for our data-attributes below 
@@ -317,12 +317,12 @@ two template files »`ce_text_filter.html5`« and »`block_searchable_filter.htm
 ```
 
 {{% notice info %}}
-<strong>Pro:</strong><br>
+<strong>Pro:</strong>  
 You have complete control over the implementation and maintenance. You and your editors can easily enter the required 
 information in input fields.<br><br>
-<strong>Contra:</strong><br>
+<strong>Contra:</strong>  
 Rudimentary knowledge of PHP and the well [documented Contao DCA](https://docs.contao.org/dev/reference/dca/) is required. 
-The Contao [community](https://community.contao.org/de/) will also help you with such questions.
+The Contao [community](https://community.contao.org/en/) will also help you with such questions.
 {{% /notice %}}
 
 
@@ -336,25 +336,25 @@ and frontend modules with convenient input and output in Contao.
 If you are wondering why another extension is presented in this context:
 
 {{% notice info %}}
-<strong>Pro:</strong><br>
+<strong>Pro:</strong>  
 You use three different extensions from different authors e.g. a »frontend filter«, an alternative »content slider« and 
 your favourite »photo gallery«. The more extensions you use, the more work you might have to do for future Contao updates.<br><br>
 By using »RSCE«, you limit this to one single extension and you can still allow yourself and your editors to easily 
-edit all three within Contao. Furthermore, the extension is maintained and kept up-to-date by the author 
-»Martin Auswöger« ([@ausi](https://github.com/ausi) / member of the Contao core team).<br><br>
-<strong>Contra:</strong><br>
+edit all three within Contao. Furthermore, the extension is maintained and kept up-to-date by 
+Martin Auswöger ([@ausi](https://github.com/ausi) / member of the Contao core team).<br><br>
+<strong>Contra:</strong>  
 Knowledge of the well [documented Contao DCA](https://docs.contao.org/dev/reference/dca/) is necessary. The Contao 
-[community](https://community.contao.org/de/) is also there to help you with such questions.
+[community](https://community.contao.org/en/) is also there to help you with such questions.
 {{% /notice %}}
 
 The »RSCE« extension is based on the existing Contao conventions. You only need two files that are created in the 
 specified template directory of your theme. You can then edit and maintain them within Contao.
 
 These files are a ».php« configuration file with [Contao DCA](https://docs.contao.org/dev/reference/dca/) information 
-and a «.html5« [template](/en/layout/templates/_index/) file for output. You have to consider the following convention for the file names:
+and a «.html5« [template file](/en/layout/templates/_index/) for output. You have to consider the following convention for the file names:
 
-The name of the template file must start with »`rsce_`«, the configuration file must have the same name as the template 
-and additionally the suffix »`_config`«: For example »rsce_my_filter.html5« and »rsce_my_filter_config.php«.
+The name of the template file must start with »rsce_«, the configuration file must have the same name as the template 
+and additionally the suffix »_config«: For example »rsce_my_filter.html5« and »rsce_my_filter_config.php«.
 
 ```php
 // rsce_my_filter_config.php
@@ -419,7 +419,7 @@ return array(
 </div>
 ```
 
-Here you can choose a new, own content element under the name »`Filter-Element`«. You can then use this for the 
+Here you can choose a new, own content element under the name »Filter-Element«. You can then use this for the 
 content to be filtered in combination with the content elements of the type »HTML« (see above).
 
 {{% notice tip %}}
