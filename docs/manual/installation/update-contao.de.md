@@ -198,7 +198,7 @@ und lässt Composer die aktualisierten Pakete installieren
 php composer.phar install
 ```
 
-oder du verwendest den Contao Manager. Dort wählst du unter Systemwartung den Punkt Composer-Abhängigkeiten, Installer 
+oder du verwendest den Contao Manager. Dort wählst du unter »Systemwartung« den Punkt »Composer-Abhängigkeiten«, »Installer 
 ausführen.
 
 ![Paketinstallation mit dem Contao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
