@@ -125,6 +125,12 @@ Input options for the Google web fonts. This option will no longer be available 
 Therefore the described procedure is recommended.
 {{% /notice %}}
 
+{{% notice warning %}}
+The retrieval of the web fonts triggers a communication between the browser displaying the website and the Google server.
+In the process, data about the browser or the IP are also transmitted. This transmission is to be considered with the GDPR or ePrivacy.  
+It is recommended to install the fonts via a local integration.
+{{% /notice %}}
+
 
 ### Local integration
 
