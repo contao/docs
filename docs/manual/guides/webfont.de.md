@@ -98,20 +98,20 @@ Hier beispielsweise mit den Schriftschnitten »Bold 700 italic« und »Semi-bold
 <span class="fontDemoAuthor">Ralph Waldo Emerson</span></p>
 
 
-### Über externes Google Hosting
+### Über externes Google Hosting  {#ueber-externes-google-hosting}
 
 Über »[Google Fonts](https://fonts.google.com/specimen/Vollkorn)« kannst du dir die benötigten Schriftschnitte 
 der Schriftart »Vollkorn« auswählen und erhältst im Anschluß eine entsprechende »Embed« Anweisung zwecks Einbindung. 
-Diese könnte z.B. wie folgt aussehen:
+Diese könnte z. B. wie folgt aussehen:
 
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,600;1,700&display=swap" rel="stylesheet">
 ```
 
-Trage diese Anweisung im Bereich »`Experten-Einstellungen -> Zusätzliche <head>-Tags`« des 
+Trage diese Anweisung im Bereich »Experten-Einstellungen -> Zusätzliche `<head>`-Tags« des 
 [Seitenlayouts](/de/layout/theme-manager/seitenlayouts-verwalten/#experten-einstellungen) deines 
 [Themes](/de/layout/theme-manager/) ein. Google liefert hierüber die vom jeweiligen Browser benötigten Informationen 
-und es Bedarf diesbezüglich keiner weiteren Aktionen deinerseits. Anschließend kannst du die ausgewählten 
+und es Bedarf diesbezüglich keiner weiteren Zuwendung deinerseits. Anschließend kannst du die ausgewählten 
 »Schriftart(en) / Schriftschnitt(e)« in deinen CSS-Angaben verwenden:
 
 ```CSS
@@ -131,30 +131,30 @@ Verfügung stehen! Es wird daher die beschriebene Vorgehensweise empfohlen.
 
 ### Lokale Einbindung
 
-Du kannst Webfonts auch »lokal« einbinden. Im Sinne von: Über dein eigenes Hosting.<br>
+Du kannst Webfonts auch »lokal« einbinden. Im Sinne von: Über dein eigenes Hosting.  
 Hierbei benötigst du die jeweiligen Dateien (s. o.) und stellst diese in einem öffentlich zugänglichen Verzeichnis 
-deiner Contao Installation unterhalb von »`files`» zur Verfügung.
+deiner Contao Installation unterhalb von »files» zur Verfügung.
 
-Im Falle von »Google Fonts« wird dir hierzu zwar eine Download Option angeboten, allerdings beinhaltet das jeweilige Download 
-Archiv dann lediglich Dateien in den Formaten ».ttf«. 
+Im Falle von »Google Fonts« wird dir hierzu zwar eine Download-Option angeboten, allerdings beinhaltet das jeweilige Download-
+Archiv lediglich Dateien in den Formaten ».ttf«. 
 
 Die Webapplikation »[Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/fonts)» stellt die Google 
 Webfonts in verschiedenen Dateiformaten zur Verfügung. Darüber hinaus werden, abhängig von deiner Auswahl, die passenden 
 CSS Angaben via »`@font-face`« mitgeliefert. Diese CSS Angaben müssen deiner eigenen ».css« Datei hinzugefügt werden. 
-Dabei ist es gleichgültig ob du direkt mit ».css« Dateien arbeitest oder ob du diese 
+Dabei ist es gleichgültig ob du direkt mit CSS-Dateien arbeitest oder ob du diese 
 über [Präprozessoren](/de/anleitungen/sass-less-integration/) wie »Sass/Less« erstellst. 
 
-Du bindest dann die ».css« Datei als externes Stylesheet im Bereich »`Experten-Einstellungen -> Stylsheets`« 
+Du bindest dann die CSS-Datei als externes Stylesheet im Bereich »Experten-Einstellungen -> Stylesheets« 
 des [Seitenlayouts](/de/layout/theme-manager/seitenlayouts-verwalten/#stylesheets) deines [Themes](/de/layout/theme-manager/)
 ein.
 
 {{% notice note %}}
-Die Pfadangaben (»`url()`«) auf die Webfont Dateien innerhalb der CSS »`@font-face`« Direktive erfolgen relativ zur
-Position der ».css« Datei. Dies ist abhängig von deiner Verzeichnis Struktur.
+Die Pfadangaben (`url()`) auf die Webfont-Dateien innerhalb der CSS `@font-face` Direktive erfolgen relativ zur
+Position der CSS-Datei. Dies ist abhängig von deiner Verzeichnisstruktur.
 {{% /notice  %}}
 
-Angenommen du hast die Webfont Dateien in ein Verzeichnis »`files/theme/fonts`« kopiert und deine ».css« Datei liegt im 
-Verzeichnis »`files/theme/css`«. Die korrekten, relativen Pfadangaben zu den Webfont Dateien wären demnach:
+Angenommen du hast die Webfont-Dateien in ein Verzeichnis »files/theme/fonts« kopiert und deine CSS-Datei liegt im 
+Verzeichnis »files/theme/css«. Dann wären die korrekten relativen Pfadangaben demnach:
 
 ```CSS
 /* vollkorn-600 - latin */
@@ -174,33 +174,32 @@ Verzeichnis »`files/theme/css`«. Die korrekten, relativen Pfadangaben zu den W
 
 {{% notice info %}}
 Im [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#stylesheets) kannst du die Option 
-»Skripte zusammenfassen« aktivieren. Hierbei werden alle CSS Angaben der ausgewählten internen und externen ».css« 
+»Skripte zusammenfassen« aktivieren. Hierbei werden alle CSS-Angaben der ausgewählten internen und externen CSS- 
 Dateien in eine einzige, neue Datei zusammengefaßt und von Contao im Verzeichnis »assets/css« abgelegt.<br><br>
-Da sich die neue ».css« Datei nun im Verzeichnis »assets/css« befindet, müssen die Pfade auf die Schriften angepaßt werden. 
-Dies wird von Contao bei diesem Vorgang automatisch durchgeführt:<br>
-»`... url('../../files/theme/fonts/vollkorn-v12-latin-600.woff2') format('woff2'), ...`«.
+Da sich die neue CSS-Datei nun im Verzeichnis »assets/css« befindet, passt Contao die Pfade zu den Schriften automatisch an.  
+`... url('../../files/theme/fonts/vollkorn-v12-latin-600.woff2') format('woff2'), ...`.
 {{% /notice  %}}
 
 
 ## Die CSS »font-display« Eigenschaft
 
-Eine Webfont Datei, sofern sich diese nicht bereits im Browser Cache befindet, muss zunächst vom Browser vollständig 
+Eine Webfont-Datei, sofern sich diese nicht bereits im Browser-Cache befindet, muss zunächst vom Browser vollständig 
 geladen werden bevor diese genutzt werden kann. Entsprechend muss der Browser beim Laden der Webseite hinsichtlich 
-der Darstellung reagieren. Möglichkeiten wären:
+der Darstellung reagieren. Das führt zu folgenden Unschönheiten:
 
-* Solange eine Webfont Datei nicht komplett vorliegt, versteckt der Browser diese. Nach dem vollständigen Laden wird 
-der Webfont ausgegeben: »Flash Of Invisible Text-Effekt (FOIT)«.
+* Solange eine Webfont-Datei nicht komplett vorliegt, versteckt der Browser diese. Nach dem vollständigen Laden wird 
+die Webfont ausgegeben: »Flash Of Invisible Text-Effekt (FOIT)«.
 
 * Bei einer längeren Ladezeit wird zunächst eine Fallback-Schrift ausgegeben.
 
-Eine Zeit lang wurde versucht hierbei mit clientseitigen Javascript Lösungen entgegenzuwirken. Mittlerweile kannst du 
-über die CSS Eigenschaft »[font-display](https://www.w3.org/TR/css-fonts-4/#font-display-desc)« zumindest das Browser 
+Eine Zeit lang wurde versucht hierbei mit clientseitigen JavaScript-Lösungen entgegenzuwirken. Mittlerweile kannst du 
+über die CSS-Eigenschaft `[font-display](https://www.w3.org/TR/css-fonts-4/#font-display-desc)` zumindest das Browser-
 Verhalten einheitlich steuern 
 (s. a.: [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)). Eingesetzt 
-wird »`font-display`» innerhalb einer CSS »`@font-face`« Deklaration und bietet vier verschiedene Werte:<br>
+wird `font-display` innerhalb einer CSS `@font-face` Deklaration und bietet vier verschiedene Werte:  
 »auto«, »swap«, »fallback« und »optional«.
 
-Der Wert »`swap`« wird in den meisten Fällen verwendet und du findest diesen auch in den »Google Fonts« »Embed« 
+Der Wert `swap` wird in den meisten Fällen verwendet und du findest diesen auch in den Google Fonts-Embed- 
 Anweisungen vor (s. o.). Entsprechend kannst du bei einer lokalen Nutzung deine CSS Angaben erweitern:
 
 ```CSS

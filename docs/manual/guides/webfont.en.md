@@ -1,8 +1,8 @@
 ---
-title: "Using Webfonts"
-description: "Information on the integration of webfonts."
+title: "Using web fonts"
+description: "Information on the integration of web fonts."
 aliases:
-    - /en/guides/webfont/
+    - /en/guides/web-font/
 weight: 80
 tags: 
     - "Theme"
@@ -20,14 +20,14 @@ Besides commercial service providers like »[Adobe-Fonts](https://fonts.adobe.co
 web fonts are "rented" and hosted on their own servers. Only few offer the web fonts for download.
 
 The probably most well-known, free offerer is Google with the »[Google Fonts](https://fonts.google.com/)«. You will find 
-alternatives on [Github](https://github.com/adobe-fonts/) too. With the Open Source offers you should 
+alternatives on [GitHub](https://github.com/adobe-fonts/) too. With the Open Source offers you should 
 make sure that they contain special characters. Also there are possibly only a few or even no further typefaces available.
 
 
 ## File formats
 
-For historical reasons there are different file formats such as ».eot«, ».ttf«, ».woff« or ».woff2«. In the meantime
-the formats »[.woff](https://caniuse.com/?search=woff)« or »[.woff2](https://caniuse.com/?search=woff2)« can be used 
+For historical reasons there are different file formats such as »[.eot](https://caniuse.com/?search=eot)«, »[.ttf](https://caniuse.com/?search=ttf)«, »[.woff](https://caniuse.com/?search=woff)« or »[.woff2](https://caniuse.com/?search=woff2)«. In the meantime
+the formats ».woff« or ».woff2« can be used 
 in current browser versions. 
 
 If you want to support older browsers you can also use the other file formats.
@@ -89,7 +89,7 @@ If you want to support older browsers you can also use the other file formats.
 }
 </style>
 
-In the following we use the Google Webfont »[Vollkorn](https://fonts.google.com/specimen/Vollkorn)«.<br>
+In the following we use the Google Font »[Vollkorn](https://fonts.google.com/specimen/Vollkorn)«.<br>
 Here for example with the typefaces »Bold 700 italic« and »Semi-bold 600«:
 
 <p class="fontDemoLyric">"Life is a journey, not a destination."<br>
@@ -106,7 +106,7 @@ This could look as follows:
 <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,600;1,700&display=swap" rel="stylesheet">
 ```
 
-Write this instruction in the »`Expert Settings -> Additional <head>-Tags`« within the 
+Write this instruction in the »Expert Settings -> Additional `<head>`-Tags« within the 
 [Page Layouts](/en/layout/theme-manager/manage-page-layouts/) of your 
 [Theme](/en/layout/theme-manager/). Google provides the information required by the respective browser 
 and there is no need for further action on your part. You can then use the selected »fonts« in your CSS information:
@@ -121,35 +121,35 @@ h1, h2 {
 
 {{% notice note %}}
 In the [Page layouts](/en/layout/theme-manager/manage-page-layouts/) you may find direct 
-Input options for the Google Webfonts. This option will no longer be available in future versions of Contao. 
+Input options for the Google web fonts. This option will no longer be available in future versions of Contao. 
 Therefore the described procedure is recommended.
 {{% /notice %}}
 
 
 ### Local integration
 
-You can also integrate web fonts «locally». In the sense of: Via your own hosting.<br>
+You can also integrate web fonts «locally». In the sense of: Via your own hosting.  
 You need the respective files (see above) and place them in a publicly accessible directory 
-of your Contao installation under »`files`«.
+of your Contao installation under »files«.
 
-In the case of »Google Fonts" you will be offered a download option, but this download includes only files in the ».ttf« format. 
+In the case of »Google Fonts« you will be offered a download option, but this download includes only files in the ».ttf« format. 
 
 The web application »[Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/fonts)« provides the Google 
-Web fonts in various file formats. Furthermore, depending on your selection, the appropriate 
-CSS information via »`@font-face`« is supplied. This CSS information must be added to your own ».css« file. 
-It doesn't matter if you work directly with ».css« files or if you use these 
+web fonts in various file formats. Furthermore, depending on your selection, the appropriate 
+CSS information via `@font-face` is supplied. This CSS information must be added to your own CSS file. 
+It doesn't matter if you work directly with CSS files or if you use these 
 via [Preprocessors](/en/guides/sass-less-integration/) such as »Sass/Less«. 
 
-You then include the ».css« file as an external stylesheet in the »`Expert settings -> Stylesheets`« within the 
+You then include the CSS file as an external stylesheet in the »Expert settings -> Stylesheets« within the 
 [page layout](/en/layout/theme-manager/manage-page-layouts/) section of your [theme](/en/layout/theme-manager/).
 
 {{% notice note %}}
-The paths provided in (»`url()`«) regarding the web font files within the CSS »`@font-face`« directive are relative to the
-position of the ».css« file. This depends on your directory structure.
+The paths provided in (`url()`) regarding the web font files within the CSS `@font-face` directive are relative to the
+position of the CSS file. This depends on your directory structure.
 {{% /notice  %}}
 
-Assuming you have copied the webfont files into a directory »`files/theme/fonts`« and your ».css« file is in the 
-directory »`files/theme/css`«. The correct, relative paths to the webfont files would be:
+Assuming you have copied the web font files into a directory »files/theme/fonts« and your CSS file is in the 
+directory »files/theme/css«. The correct, relative paths to the web font files would be:
 
 ```CSS
 /* vollkorn-600 - latin */
@@ -169,11 +169,11 @@ directory »`files/theme/css`«. The correct, relative paths to the webfont file
 
 {{% notice info %}}
 In [Page Layout](/en/layout/theme-manager/manage-page-layouts/), you can activate the »Combine Scripts« option. All 
-CSS information of the selected internal and external ».css« files will be combined into a single, new file and stored 
+CSS information of the selected internal and external CSS files will be combined into a single, new file and stored 
 by Contao in the directory »assets/css«.<br><br>
-Since the new ».css« file is now located in the directory »assets/css«, the paths to the fonts must be adapted. Contao 
-does this automatically during this process:<br>
-»`... url('../../files/theme/fonts/vollkorn-v12-latin-600.woff2') format('woff2'), ...`«.
+Since the new CSS file is now located in the directory »assets/css«, the paths to the web fonts must be adapted. Contao 
+does this automatically during this process:
+`... url('../../files/theme/fonts/vollkorn-v12-latin-600.woff2') format('woff2'), ...`.
 {{% /notice  %}}
 
 
@@ -187,13 +187,13 @@ the web font will be used: »Flash Of Invisible Text Effect (FOIT)«.
 
 * If a longer loading time is required, a fallback font will be used first.
 
-For a while, attempts were made to counteract this with client-side Javascript solutions. Meanwhile you can control 
-at least the browser behaviour via the CSS property »[font-display](https://www.w3.org/TR/css-fonts-4/#font-display-desc)« 
+For a while, attempts were made to counteract this with client-side JavaScript solutions. Meanwhile you can control 
+at least the browser behaviour via the CSS property `[font-display](https://www.w3.org/TR/css-fonts-4/#font-display-desc)` 
 (see also [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)). You can 
-use the »`font-display`« property within a CSS »`@font-face`» declaration with four values:<br>
+use the `font-display` property within a CSS `@font-face` declaration with four values: 
 »auto«, »swap«, »fallback« and »optional«.
 
-The value »`swap`« is used in most cases and you can also find this value in the »Google Fonts« »Embed« 
+The value `swap` is used in most cases and you can also find this value in the Google Fonts Embed 
 instructions (see above). Accordingly, you can extend your CSS information for local use:
 
 ```CSS
@@ -202,6 +202,5 @@ instructions (see above). Accordingly, you can extend your CSS information for l
 ...
 }
 ```
-
 
 
