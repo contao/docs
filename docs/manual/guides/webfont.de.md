@@ -149,7 +149,7 @@ des [Seitenlayouts](/de/layout/theme-manager/seitenlayouts-verwalten/#stylesheet
 ein.
 
 {{% notice note %}}
-Die Pfadangaben (`url()`) auf die Webfont-Dateien innerhalb der CSS `@font-face` Direktive erfolgen relativ zur
+Die Pfadangaben `url()` auf die Webfont-Dateien innerhalb der CSS `@font-face` Direktive erfolgen relativ zur
 Position der CSS-Datei. Dies ist abhängig von deiner Verzeichnisstruktur.
 {{% /notice  %}}
 
@@ -193,7 +193,7 @@ die Webfont ausgegeben: »Flash Of Invisible Text-Effekt (FOIT)«.
 * Bei einer längeren Ladezeit wird zunächst eine Fallback-Schrift ausgegeben.
 
 Eine Zeit lang wurde versucht hierbei mit clientseitigen JavaScript-Lösungen entgegenzuwirken. Mittlerweile kannst du 
-über die CSS-Eigenschaft `[font-display](https://www.w3.org/TR/css-fonts-4/#font-display-desc)` zumindest das Browser-
+über die CSS-Eigenschaft [`font-display`](https://www.w3.org/TR/css-fonts-4/#font-display-desc) zumindest das Browser-
 Verhalten einheitlich steuern 
 (s. a.: [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)). Eingesetzt 
 wird `font-display` innerhalb einer CSS `@font-face` Deklaration und bietet vier verschiedene Werte:  
