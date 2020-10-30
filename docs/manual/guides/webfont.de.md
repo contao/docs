@@ -101,7 +101,7 @@ Hier beispielsweise mit den Schriftschnitten »Bold 700 italic« und »Semi-bold
 ### Über externes Google Hosting
 
 Über »[Google Fonts](https://fonts.google.com/specimen/Vollkorn)« kannst du dir die benötigten Schriftschnitte 
-der Schriftart »Vollkorn« auswählen und erhälst im Anschluß eine entsprechende »Embed« Anweisung zwecks Einbindung. 
+der Schriftart »Vollkorn« auswählen und erhältst im Anschluß eine entsprechende »Embed« Anweisung zwecks Einbindung. 
 Diese könnte z.B. wie folgt aussehen:
 
 ```html
