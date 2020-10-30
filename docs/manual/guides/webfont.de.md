@@ -130,7 +130,7 @@ Verfügung stehen! Es wird daher die beschriebene Vorgehensweise empfohlen.
 
 {{% notice warning %}}
 Mit dem Abruf der Fonts wird ein Kommunikation des Browsers, der die Webseite anzeigt, und dem Google-Server angestossen.
-Dabei werden auch Daten zum Browser oder die IP übermittelt. Diese Übermittlung ist bei der DSGVO oder ePrivacy zu beachten.
+Dabei werden auch Daten vom Browser oder die IP des Rechners/Device übermittelt. Diese Übermittlung ist bei der DSGVO oder ePrivacy zu beachten.
 Zu empfehlen ist der Einbau der Fonts über ein lokale Einbindung.
 {{% /notice %}}
 
