@@ -174,7 +174,7 @@ Was benötigst du _nicht_?
 
 Kopiere die `composer.json` und `composer.lock` von deinem Hosting in dein Arbeitsverzeichnis.
 Im Wesentlichen machst du dann das Gleiche, wie oben unter
-["Aktualisierung über die Kommandozeile"](#aktualisierung-ueber-die-kommandozeile) beschrieben:
+[Aktualisierung über die Kommandozeile](#aktualisierung-ueber-die-kommandozeile) beschrieben:
  
 Öffne ein Terminal und wechsle in das Arbeitsverzeichnis. Führe dort
 
