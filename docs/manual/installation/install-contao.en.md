@@ -14,11 +14,14 @@ After you have checked all requirements and set up your web server, you can now 
 
 There are two ways to install Contao on your server, using the graphical user interface of the [ContaoManager](#installation-mit-dem-contao-manager) or using the command line.
 
+
 ## Installation with the Contao Manager
+
 
 ### Install Contao Manager
 
 Before you can install Contao on your server, you need to[ install and configure](../../installation/contao-manager/#contao-manager-installieren) the Contao[ Manager](../../installation/contao-manager/#contao-manager-installieren).
+
 
 ### Installing Contao with the Contao Manager
 
@@ -30,11 +33,13 @@ The installation can now take several minutes. Details about the installation pr
 
 ![Contao is installed](/de/installation/images/de/contao-wird-installiert.png?classes=shadow)
 
+
 ### Update database tables
 
 Once the Contao Manager has installed all packages, you have to [run](../contao-installtool/) the [Contao install tool](../contao-installtool/) to update the database.
 
-## Installation via the command line {#installation-over-the-command line}
+
+## Installation via the command line
 
 When installing from the command line, `create-project`a `composer update`command is executed during the installation. This will cause some hosters not to be able to terminate the process due to high system load, and the installation will fail. In this case you should use theContao[ Manager](#installation-mit-dem-contao-manager).
 
@@ -86,7 +91,7 @@ Pro Contao installation therefore requires its own (sub)domain.
 
 
 ### Create database
-
+After installation, you can update the database using the Contao [install tool](/en/installation/contao-installtool/). 
 Since Contao 4.9 you can use the following command on the command line:
 
 ```bash

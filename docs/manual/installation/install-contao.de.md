@@ -45,7 +45,7 @@ Sobald der Contao Manager alle Pakete installiert hat, musst du das [Contao-Inst
 aufrufen um die Datenbank zu aktualisieren.
 
 
-## Installation über die Kommandozeile {#installation-ueber-die-kommandozeile}
+## Installation über die Kommandozeile
 
 Bei der Installation über die Kommandozeile wird während dem `create-project` ein `composer update` ausgeführt. Das 
 wird bei einigen Hostern dazu führen, dass der Prozess wegen der zu hohen Systemanforderung nicht beendet werden kann 
@@ -108,7 +108,8 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 ### Datenbank erstellen
 
-Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
+Nach der Installation kannst du die Datenbank Aktualisierung über das [Contao-Installtool](/de/installation/contao-installtool/) 
+durchführen. Ab Contao 4.9 steht dir hierzu auch der folgende Befehl auf der Kommandozeile zur Verfügung:
 
 ```bash
 php vendor/bin/contao-console doctrine:database:create
@@ -117,7 +118,7 @@ php vendor/bin/contao-console doctrine:database:create
 
 ### Datenbanktabellen erstellen
 
-Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
+ Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
 
 ```bash
 php vendor/bin/contao-console contao:migrate
