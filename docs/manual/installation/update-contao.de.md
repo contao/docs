@@ -240,7 +240,7 @@ angeben, welche PHP-Version verwendet werden soll:
 #### Lokale Updates mit dem Contao Manager
 
 Du benötigst eine lokale Contao-Installation. In dieser installierst du den Contao Manager und führst das Update wie
-im Abschnitt ["Aktualisierung mit dem Contao Manager"](#aktualisierung-mit-dem-contao-manager) beschrieben durch. 
+im Abschnitt [Aktualisierung mit dem Contao Manager](#aktualisierung-mit-dem-contao-manager) beschrieben durch. 
 
 Stelle zuvor jedoch sicher, daß die Composer Resolver Cloud nicht verwendet wird. Du benötigst sie nicht, da du auf 
 deinem eigenen Server genügend Arbeitsspeicher bereitstellen kannst und entlastest so die Cloud.
