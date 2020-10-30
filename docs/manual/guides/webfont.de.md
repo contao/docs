@@ -21,7 +21,7 @@ werden die Webfonts »vermietet« und über eigene Server gehostet. Nur wenige b
 
 Der wohl bekannteste, kostenfreie Anbieter ist Google mit den »[Google Fonts](https://fonts.google.com/)». Du findest 
 aber auch Alternativen z. B. auf [GitHub](https://github.com/adobe-fonts/). Bei den Open Source Angeboten solltest du 
-darauf achten das diese beispielsweise deutsche Sonderzeichen beinhalten. Auch sind hierbei möglicherweise nur wenige
+darauf achten, dass diese beispielsweise deutsche Sonderzeichen beinhalten. Auch sind hierbei möglicherweise nur wenige
 oder sogar keine weiteren Schriftschnitte vorhanden.
 
 
@@ -31,7 +31,7 @@ Historisch bedingt existieren verschiedene Dateiformate wie »[.eot](https://can
 sich die Formate ».woff« oder ».woff2« zur Nutzung 
 in aktuellen Browser Versionen etabliert. 
 
-Möchtest du ältere Browser unterstützen kannst du die weiteren Dateiformate zusätzlich einsetzen. Ansonsten wird 
+Möchtest du ältere Browser unterstützen, kannst du die weiteren Dateiformate zusätzlich einsetzen. Ansonsten wird 
 auf die in deiner CSS-Datei eingetragenen Systemschriften zurückgegriffen.
 
 
@@ -101,7 +101,7 @@ Hier beispielsweise mit den Schriftschnitten »Bold 700 italic« und »Semi-bold
 ### Über externes Google Hosting  {#ueber-externes-google-hosting}
 
 Über »[Google Fonts](https://fonts.google.com/specimen/Vollkorn)« kannst du dir die benötigten Schriftschnitte 
-der Schriftart »Vollkorn« auswählen und erhältst im Anschluß eine entsprechende »Embed« Anweisung zwecks Einbindung. 
+der Schriftart »Vollkorn« auswählen und erhältst im Anschluss eine entsprechende »Embed« Anweisung zwecks Einbindung. 
 Diese könnte z. B. wie folgt aussehen:
 
 ```html
@@ -153,8 +153,8 @@ Die Pfadangaben `url()` auf die Webfont-Dateien innerhalb der CSS `@font-face` D
 Position der CSS-Datei. Dies ist abhängig von deiner Verzeichnisstruktur.
 {{% /notice  %}}
 
-Angenommen du hast die Webfont-Dateien in ein Verzeichnis »files/theme/fonts« kopiert und deine CSS-Datei liegt im 
-Verzeichnis »files/theme/css«. Dann wären die korrekten relativen Pfadangaben demnach:
+Angenommen, du hast die Webfont-Dateien in ein Verzeichnis »files/theme/fonts« kopiert und deine CSS-Datei liegt im 
+Verzeichnis »files/theme/css«, dann wären die korrekten relativen Pfadangaben demnach:
 
 ```CSS
 /* vollkorn-600 - latin */
