@@ -139,7 +139,7 @@ specified under »Themes«.
 For example as »ce_text_filter.html5« and »block_searchable_filter.html5« and use the new template 
 »ce_text_filter.html5« in your content elements of type »text« to be filtered.
 
-```php
+```html
 // ce_text_filter.html5
 
 <?php $this->extend('block_searchable_filter'); ?>
@@ -162,7 +162,7 @@ For example as »ce_text_filter.html5« and »block_searchable_filter.html5« an
 ```
 
 
-```php
+```html
 // block_searchable_filter.html5
 
 <?php
@@ -262,7 +262,7 @@ the »Expert settings«. For example to specify »`data-category`« in the field
 For the output on the website we have to adapt the template files again. Analogous to the previous example we use the 
 two template files »`ce_text_filter.html5`« and »`block_searchable_filter.html5`«.
 
-```php
+```html
 // ce_text_filter.html5
 
 <?php $this->extend('block_searchable_filter'); ?>
@@ -285,7 +285,7 @@ two template files »`ce_text_filter.html5`« and »`block_searchable_filter.htm
 ```
 
 
-```php
+```html
 // block_searchable_filter.html5
 
 <?php if ($this->myCustomDataAttributes) {
@@ -382,7 +382,7 @@ return array(
 );
 ```
 
-```php
+```html
 // rsce_my_filter.html5
 
 <?php if ($this->data){
