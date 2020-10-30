@@ -199,7 +199,7 @@ php composer.phar install
 ```
 
 oder du verwendest den Contao Manager. Dort wählst du unter »Systemwartung« den Punkt »Composer-Abhängigkeiten«, »Installer 
-ausführen.
+ausführen«.
 
 ![Paketinstallation mit dem Contao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
 
