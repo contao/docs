@@ -226,7 +226,7 @@ Deine Contao-Installation ist jetzt auf dem neuesten Stand.
 Wenn die lokal verwendete PHP-Version eine andere ist, als bei deinem Hosting, musst du in der `composer.json`
 angeben, welche PHP-Version verwendet werden soll:
 
-```json
+```json 
     ...
     "config": {
         "platform": {
