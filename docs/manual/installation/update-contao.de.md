@@ -147,7 +147,7 @@ Deine Contao-Installation ist jetzt auf dem neuesten Stand.
 
 ### Lokale Aktualisierung ohne die Composer Resolver Cloud
 
-Die Vorgehensweisen, die oben in ["Aktualisierung über die Kommandozeile"](#aktualisierung-ueber-die-kommandozeile) 
+Die Vorgehensweisen, die oben in [Aktualisierung über die Kommandozeile](#aktualisierung-ueber-die-kommandozeile) 
 und ["Aktualisierung mit dem Contao Manager"](#aktualisierung-mit-dem-contao-manager) beschrieben wurden, kannst du
 auch lokal durchführen. Dies hat den Vorteil, dass du im Gegensatz zur Umgebung bei einem Hoster keine Probleme mit 
 nicht erfüllten Systemanforderungen wie z.B. ungenügendem Arbeitsspeicher bekommst, denn du kannst die entsprechende 
