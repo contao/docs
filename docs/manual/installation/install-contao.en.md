@@ -39,7 +39,7 @@ The installation can now take several minutes. Details about the installation pr
 Once the Contao Manager has installed all packages, you have to [run](../contao-installtool/) the [Contao install tool](../contao-installtool/) to update the database.
 
 
-## Installation via the command line
+## Installation via the command line {#installation-over-the-command line}
 
 When installing from the command line, `create-project`a `composer update`command is executed during the installation. This will cause some hosters not to be able to terminate the process due to high system load, and the installation will fail. In this case you should use theContao[ Manager](#installation-mit-dem-contao-manager).
 
@@ -90,16 +90,8 @@ Pro Contao installation therefore requires its own (sub)domain.
 {{% /notice %}}
 
 
-### Create database
+### Update database tables
 After installation, you can update the database using the Contao [install tool](/en/installation/contao-installtool/). 
-Since Contao 4.9 you can use the following command on the command line:
-
-```bash
-php vendor/bin/contao-console doctrine:database:create
-``` 
-
-
-### Create database tables
 
 Since Contao 4.9 you can use the following command on the command line:
 
@@ -107,10 +99,16 @@ Since Contao 4.9 you can use the following command on the command line:
 php vendor/bin/contao-console contao:migrate
 ``` 
 
+{{% notice tip %}}
+You can also create a database beforehand on the command line:<br>
+`php vendor/bin/contao-console doctrine:database:create`
+{{% /notice %}}
+
 {{% notice info %}}
 Contao needs to know the corresponding connection data for your database. This information can either be retrieved via 
 an existing "config/paramters.yml" (currently installed using the [Contao-Install tool](/en/installation/contao-installtool/) 
-) or via a ".env" file in the root directory of your installation.<br><br> 
+) or via a "[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)" file 
+in the root directory of your installation.<br><br> 
 For details on the necessary environment variables ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 
 and [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in a ".env" file you can find 
 [here](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration).
@@ -123,7 +121,6 @@ Afterwards you can create a new backend user with administrator rights using the
 
 ```bash
 php vendor/bin/contao-console contao:user:create --username=h.lewis --email=hlewis@demo.org --password=mypass --language=en --admin
-
 ``` 
 
 
