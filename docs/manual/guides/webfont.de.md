@@ -128,6 +128,11 @@ Eingabemöglichkeiten für die Google Webfonts. Diese Option wird in zukünftige
 Verfügung stehen! Es wird daher die beschriebene Vorgehensweise empfohlen.
 {{% /notice %}}
 
+{{% notice note %}}
+Mit dem Abruf der Fonts wird ein Kommunikation des Browsers, der die Webseite anzeigt, und dem Google-Server angestossen.
+Dabei werden auch Daten zum Browser oder die IP übermittelt. Diese Übermittlung ist bei der DSGVO oder ePrivacy zu beachten.
+Zu empfehlen ist der Einbau der Fonts über ein lokale Einbindung.
+{{% /notice %}}
 
 ### Lokale Einbindung
 
