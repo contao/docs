@@ -108,7 +108,7 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 ### Datenbanktabellen aktualisieren
 
-Nach der Installation kannst du die Datenbank Aktualisierung über das [Contao-Installtool](/de/installation/contao-installtool/) 
+Nach der Installation kannst du die Datenbank-Aktualisierung über das [Contao-Installtool](/de/installation/contao-installtool/) 
 durchführen. 
 
 Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
