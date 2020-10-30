@@ -27,7 +27,7 @@ oder sogar keine weiteren Schriftschnitte vorhanden.
 
 ## Dateiformate
 
-Historisch bedingt existieren verschiedene Dateiformate wie ».eot«, ».ttf«, ».woff« oder ».woff2«. Mittlerweile haben
+Historisch bedingt existieren verschiedene Dateiformate wie »[.eot](https://caniuse.com/?search=eot)«, »[.ttf](https://caniuse.com/?search=ttf)«, »[.woff](https://caniuse.com/?search=woff)« oder »[.woff2](https://caniuse.com/?search=woff2)«. Mittlerweile haben 
 sich die Formate »[.woff](https://caniuse.com/?search=woff)« oder »[.woff2](https://caniuse.com/?search=woff2)« zur Nutzung 
 in aktuellen Browser Versionen etabliert. 
 
