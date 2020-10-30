@@ -143,7 +143,7 @@ Beispielsweise als »ce_text_filter.html5« und »block_searchable_filter.html5�
 Template »ce_text_filter.html5« in deinen zu filternden Inhaltselementen vom Typ »Text«.
 
 
-```php
+```html
 // ce_text_filter.html5
 
 <?php $this->extend('block_searchable_filter'); ?>
@@ -166,7 +166,7 @@ Template »ce_text_filter.html5« in deinen zu filternden Inhaltselementen vom T
 ```
 
 
-```php
+```html
 // block_searchable_filter.html5
 
 <?php
@@ -270,7 +270,7 @@ HTML5 Data-Attribute unterhalb der »Experteneinstellungen«. Beispielsweise zur
 Zur Ausgabe auf der Webseite müssen wir auch hier wieder die Template-Dateien anpassen. Analog zum vorherigen Beispiel 
 verwenden wir hierzu wieder die beiden Template Dateien »ce_text_filter.html5« und »block_searchable_filter.html5«. 
 
-```php
+```html
 // ce_text_filter.html5
 
 <?php $this->extend('block_searchable_filter'); ?>
@@ -293,7 +293,7 @@ verwenden wir hierzu wieder die beiden Template Dateien »ce_text_filter.html5«
 ```
 
 
-```php
+```html
 // block_searchable_filter.html5
 
 <?php if ($this->myCustomDataAttributes) {
@@ -396,7 +396,7 @@ return array(
 
 ```
 
-```php
+```html
 // rsce_my_filter.html5
 
 <?php if ($this->data){
