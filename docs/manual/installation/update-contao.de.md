@@ -245,7 +245,7 @@ im Abschnitt [Aktualisierung mit dem Contao Manager](#aktualisierung-mit-dem-con
 Stelle zuvor jedoch sicher, daß die Composer Resolver Cloud nicht verwendet wird. Du benötigst sie nicht, da du auf 
 deinem eigenen Server genügend Arbeitsspeicher bereitstellen kannst und entlastest so die Cloud.
 
-Die Einstellung findest du in der Systemprüfung im Bereich Serverkonfiguration.
+Die Einstellung findest du in der »Systemprüfung« im Bereich »Serverkonfiguration«.
 
 ![Deaktivierung der Composer Resolver Cloud](/de/installation/images/de/cloud_resolver_abschalten.png?classes=shadow)
 
