@@ -235,6 +235,8 @@ angeben, welche PHP-Version verwendet werden soll:
     },
     "require": {
         ...
+    }
+    ...
 ```
 
 #### Lokale Updates mit dem Contao Manager
