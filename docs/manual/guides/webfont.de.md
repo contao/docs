@@ -32,7 +32,7 @@ sich die Formate ».woff« oder ».woff2« zur Nutzung
 in aktuellen Browser Versionen etabliert. 
 
 Möchtest du ältere Browser unterstützen kannst du die weiteren Dateiformate zusätzlich einsetzen. Ansonsten wird 
-auf die in deinen CSS eingetragenen Systemschriften zurückgegriffen.
+auf die in deiner CSS-Datei eingetragenen Systemschriften zurückgegriffen.
 
 
 ## Contao Integration
