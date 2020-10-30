@@ -144,7 +144,7 @@ You then include the CSS file as an external stylesheet in the »Expert settings
 [page layout](/en/layout/theme-manager/manage-page-layouts/) section of your [theme](/en/layout/theme-manager/).
 
 {{% notice note %}}
-The paths provided in (`url()`) regarding the web font files within the CSS `@font-face` directive are relative to the
+The paths provided in `url()` regarding the web font files within the CSS `@font-face` directive are relative to the
 position of the CSS file. This depends on your directory structure.
 {{% /notice  %}}
 
@@ -188,7 +188,7 @@ the web font will be used: »Flash Of Invisible Text Effect (FOIT)«.
 * If a longer loading time is required, a fallback font will be used first.
 
 For a while, attempts were made to counteract this with client-side JavaScript solutions. Meanwhile you can control 
-at least the browser behaviour via the CSS property `[font-display](https://www.w3.org/TR/css-fonts-4/#font-display-desc)` 
+at least the browser behaviour via the CSS property [`font-display`](https://www.w3.org/TR/css-fonts-4/#font-display-desc) 
 (see also [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)). You can 
 use the `font-display` property within a CSS `@font-face` declaration with four values: 
 »auto«, »swap«, »fallback« and »optional«.
