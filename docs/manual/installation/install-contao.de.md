@@ -124,7 +124,7 @@ Du kannst dir auf der Kommandozeile auch zuvor eine Datenbank erstellen:<br>
 
 {{% notice info %}}
 Contao muss hierzu die entsprechenden Verbindungsdaten deiner Datenbank kennen. Diese Information kann entweder über 
-eine vorhandene »config/parameters.yml« (Wird zur Zeit über das [Contao-Installtool](/de/installation/contao-installtool/) 
+eine vorhandene »config/parameters.yml« (wird zur Zeit über das [Contao-Installtool](/de/installation/contao-installtool/) 
 erstellt) oder über eine »[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)« 
 Datei im Hauptverzeichnis deiner Installation bereit gestellt werden.<br><br> 
 Weitere Details für die notwendigen Umgebungsvariablen ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 
