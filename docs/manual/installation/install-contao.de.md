@@ -83,7 +83,7 @@ php -r "unlink('composer-setup.php');"
 ```
 
 
-### Contao über die Kommandozeile installieren
+### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
 
 Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
 Installations-Verzeichnis und die 4.8 für die zu [installierende Contao-Version](https://contao.org/de/download.html). 
@@ -108,7 +108,7 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 ### Datenbanktabellen aktualisieren
 
-Nach der Installation kannst du die Datenbank Aktualisierung über das [Contao-Installtool](/de/installation/contao-installtool/) 
+Nach der Installation kannst du die Datenbank-Aktualisierung über das [Contao-Installtool](/de/installation/contao-installtool/) 
 durchführen. 
 
 Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
@@ -124,7 +124,7 @@ Du kannst dir auf der Kommandozeile auch zuvor eine Datenbank erstellen:<br>
 
 {{% notice info %}}
 Contao muss hierzu die entsprechenden Verbindungsdaten deiner Datenbank kennen. Diese Information kann entweder über 
-eine vorhandene »config/parameters.yml« (Wird zur Zeit über das [Contao-Installtool](/de/installation/contao-installtool/) 
+eine vorhandene »config/parameters.yml« (wird zur Zeit über das [Contao-Installtool](/de/installation/contao-installtool/) 
 erstellt) oder über eine »[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)« 
 Datei im Hauptverzeichnis deiner Installation bereit gestellt werden.<br><br> 
 Weitere Details für die notwendigen Umgebungsvariablen ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 
@@ -142,4 +142,3 @@ auf der Kommandozeile abgefragt:
 ```bash
 php vendor/bin/contao-console contao:user:create
 ``` 
-
