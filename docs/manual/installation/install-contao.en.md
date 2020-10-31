@@ -117,10 +117,11 @@ and [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in a
 
 ### Creating Contao backend users
 
-Afterwards you can create a new backend user with administrator rights using the following console command:
+Using the [Contao-Installtool](/en/installation/contao-installtool/), you can create your backend user. Since Contao 
+4.10.x you can use the following command on the command line:
 
 ```bash
-php vendor/bin/contao-console contao:user:create --username=h.lewis --email=hlewis@demo.org --password=mypass --language=en --admin
+php vendor/bin/contao-console contao:user:create
 ``` 
 
 
