@@ -342,7 +342,7 @@ All operations callbacks are _singular_ callbacks - meaning there can only be
 one callback, not multiple ones.
 {{% /notice %}}
 
-The following is a list of button callbacks for operations. Replace `operation`
+The following is a list of button callbacks for operations. Replace `<OPERATION>`
 in each case with the actual operation you want to use the callback for.
 
 These callbacks allow for individual navigation icons and is e.g. used in the
@@ -350,7 +350,7 @@ site structure to disable buttons depending on the user's permissions (requires
 an additional command check via load_callback).
 
 
-### `list.global_operations.operation.button`
+### `list.global_operations.<OPERATION>.button`
 
 {{% expand "Parameters" %}}
 * `string`/`null` Button href
@@ -365,7 +365,7 @@ an additional command check via load_callback).
 {{% /expand %}}
 
 
-### `list.operations.operation.button`
+### `list.operations.<OPERATION>.button`
 
 {{% expand "Parameters" %}}
 * `array` Record data
