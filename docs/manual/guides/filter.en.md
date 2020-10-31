@@ -80,9 +80,6 @@ and must be mapped within Contao:
 <script>const filterizr = new Filterizr('.filter-container');</script>
 ```
 
-
-### With template adaptation
-
 The above HTMl structure can be created with Contao's own content elements. We use the content element of type »HTML« 
 for the HTML blocks and one or more elements of type »Text« for the actual content. The implementation in the Contao 
 backend would therefore be:
@@ -119,6 +116,9 @@ CSS class `filtr-item`.
 <script>const filterizr = new Filterizr('.filter-container');</script>
 ```
 {{% /expand %}}
+
+
+### With template adaptation
 
 The only thing missing is the assignment of our categories via the HTML5 data attribute. In the content element of 
 type »Text« this input option is missing. We can realize this by using customized Contao templates.

@@ -82,9 +82,6 @@ wie folgt aussehen und muss dann innerhalb von Contao abgebildet werden:
 <script>const filterizr = new Filterizr('.filter-container');</script>
 ```
 
-
-### Mit Template Anpassung
-
 Die obige HTML-Struktur kann mit den Contao eigenen [Inhaltselementen](/de/artikelverwaltung/inhaltselemente/) erstellt 
 werden. Hierbei verwenden wir für die HTML-Blöcke das Inhaltselement vom Typ »HTML« und für die eigentlichen Inhalte 
 ein oder mehrere Element(e) vom Typ »Text«. Die Umsetzung im Contao Backend wäre daher:
@@ -122,6 +119,8 @@ benötigte CSS-Klasse `filtr-item`.
 ```
 {{% /expand %}}
 
+
+### Mit Template Anpassung
 
 Es fehlt nur noch die Zuordnung unserer Kategorien über das HTML5 Data-Attribut. Im Inhaltselement vom Typ »Text« 
 fehlt diese Eingabemöglichkeit. Wir können dies über angepasste [Contao Templates](/de/templates/) realisieren. 
