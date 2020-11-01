@@ -42,7 +42,7 @@ $GLOBALS['TL_DCA']['tl_example']['fields']['myfield'] = [
 | [options_callback](../callbacks/#fields-field-options)         | Callback function (`array`)                     | Callback function that returns an array of options. Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | foreignKey           | table.field (`string`)                          | Get options from a database table. Returns ID as key and the field you specify as value. The field can be a complete SQL expression, e.g.: `tl_member.CONCAT(firstname,' ',lastname)`                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | reference            | `&$GLOBALS['TL_LANG']` (`array`)                | Array that holds the options labels. Typically a reference to the global language array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| explanation          | `&$GLOBALS['TL_LANG']` (`array`)                | Array that holds the explanation. Typically a reference to the global language array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| explanation          | Array key (`string`)                            | Array key that holds the explanation. This is a reference to the `XPL` category of the `explain` translation domain. See more information [below](#explanation)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | [input_field_callback](../callbacks/#fields-field-input-field) | Callback function (`array`)                     | Executes a custom function instead of using the default input field routine and passes the the DataContainer object and the label as arguments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eval                 | Field configuration (`array`)                   | Various configuration options. See next paragraph.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | [wizard](../callbacks/#fields-field-wizard)                    | Callback function (`array`)                     | Call a custom function and add its return value to the input field. Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -57,6 +57,64 @@ $GLOBALS['TL_DCA']['tl_example']['fields']['myfield'] = [
 no label is defined, Contao will automatically look for a translation in `tl_example.field_name`,
 e.g. `$GLOBALS['TL_LANG']['tl_example']['field_name']`.
 {{% /notice %}}
+
+
+### Explanation
+
+Explanations are used together with the `helpwizard` `eval` setting. The latter
+will show the help wizard icon and the help wizard itself will show the explanation.
+`explanation` is a configuration value holding a simple string. It is a reference
+to the `$GLOBALS['TL_LANG']['XPL']` translation array, i.e. a reference into the
+`XPL` category of the `explain` [translation domain][TranslationDomain].
+
+The explanation itself can be defined in two ways: either as a single string:
+
+```php
+// contao/languages/en/explain.php
+$GLOBALS['TL_LANG']['XPL']['example'] = 'Content for the help wizard.';
+```
+
+or a multi dimensonal array representing an explanation table:
+
+```php
+// contao/languages/en/explain.php
+$GLOBALS['TL_LANG']['XPL']['example'] = [
+    ['First row header', 'First row content.'],
+    ['Second row header', 'Second row content.'],
+];
+```
+
+{{% expand "Show full example" %}}
+```php
+// contao/dca/tl_content.php
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['example'] = [
+    'inputType' => 'text',
+    'explanation' => 'example',
+    'eval' => ['tl_class' => 'w50', 'helpwizard' => true],
+    'sql' => ['type' => 'string', 'default' => ''],
+];
+
+PaletteManipulator::create()
+    ->addField('example', 'text')
+    ->applyToPalette('text', 'tl_content')
+;
+```
+
+```php
+// contao/languages/en/tl_content.php
+$GLOBALS['TL_LANG']['example'] = [
+    'Example field',
+    'Field for demonstrating the explanation configuration.'
+];
+```
+
+```php
+// contao/languages/en/explain.php
+$GLOBALS['TL_LANG']['XPL']['example'] = 'Explanatory text for the <strong>example</strong> field.';
+```
+{{% /expand %}}
 
 
 ### Evaluation
@@ -242,3 +300,4 @@ the Doctrine Database Abstraction Layer.
 [1]: https://docs.contao.org/books/manual/current/en/02-administration-area/listing-records.html
 [2]: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/schema-representation.html#column
 [3]: ../../../framework/hooks/
+[TranslationDomain]: /framework/translations/#domains
