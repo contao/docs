@@ -74,7 +74,7 @@ The explanation itself can be defined in two ways: either as a single string:
 $GLOBALS['TL_LANG']['XPL']['example'] = 'Content for the help wizard.';
 ```
 
-or a multi dimensonal array representing an explanation table:
+or as a multi dimensonal array representing an explanation table:
 
 ```php
 // contao/languages/en/explain.php
