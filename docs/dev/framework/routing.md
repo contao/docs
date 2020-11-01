@@ -183,8 +183,6 @@ class ExampleController
 {{% /notice %}}
 
 
-
-
 ## Request Attributes
 
 When defining a route Symfony allows you to set some default parameters for the
