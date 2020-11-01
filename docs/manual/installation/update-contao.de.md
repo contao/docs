@@ -153,6 +153,10 @@ auch lokal durchführen. Dies hat den Vorteil, dass du im Gegensatz zur Umgebung
 nicht erfüllten Systemanforderungen wie z. B. ungenügendem Arbeitsspeicher bekommst, denn du kannst die entsprechende 
 Konfiguration selbst nach Bedarf anpassen.
 
+{{% notice tip %}}
+Die Vorgehensweise ist nicht allein auf eine Aktualisierung beschränkt. Du kannst dies auch bei einer 
+neuen Contao Installation verwenden.
+{{% /notice %}}
 
 
 #### Voraussetzungen bei Verwendung der Kommandozeile
