@@ -201,7 +201,7 @@ php composer.phar install
 oder du verwendest den Contao Manager. Dort wählst du unter »Systemwartung« den Punkt »Composer-Abhängigkeiten«, »Installer 
 ausführen«.
 
-![Paketinstallation mit dem Contao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
+![composer install mit dem Contao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
 
 Zum Abschluss musst du noch die Datenbanktabellen aktualisieren. 
 
