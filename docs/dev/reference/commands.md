@@ -116,9 +116,9 @@ The options are far more important so let's get to them right away:
 
 {{< version "4.9" >}}
 
-With this command you can execute migrations after an update of Contao or of an extension. 
-The migrations that get executed are update scripts of Contao, registered migrations of 
-extensions, legacy `runonce.php` files and the database update.
+With this command you can perform database updates and migrations after a new installation or update of Contao or an 
+extension. The migrations that get executed are update scripts of Contao, registered migrations of extensions, 
+legacy `runonce.php` files and the database update.
 
 ```sh
 $> php bin/console contao:migrate [options]

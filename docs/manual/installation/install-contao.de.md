@@ -108,9 +108,37 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 ### Datenbanktabellen aktualisieren
 
-Nach der Installation ist vor der Datenbank-Aktualisierung, rufe dazu das [Contao-Installtool](../contao-installtool/)
-auf oder verwende (ab Contao 4.9) 
+Nach der Installation kannst du die Datenbank-Aktualisierung über das [Contao-Installtool](/de/installation/contao-installtool/) 
+durchführen. 
+
+Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
+
 ```bash
 php vendor/bin/contao-console contao:migrate
 ``` 
-auf der Kommandozeile.
+
+{{% notice tip %}}
+Du kannst dir auf der Kommandozeile auch zuvor eine Datenbank erstellen:<br>
+`php vendor/bin/contao-console doctrine:database:create`
+{{% /notice %}}
+
+{{% notice info %}}
+Contao muss hierzu die entsprechenden Verbindungsdaten deiner Datenbank kennen. Diese Information kann entweder über 
+eine vorhandene »config/parameters.yml« (wird zur Zeit über das [Contao-Installtool](/de/installation/contao-installtool/) 
+erstellt) oder über eine »[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)« 
+Datei im Hauptverzeichnis deiner Installation bereit gestellt werden.<br><br> 
+Weitere Details für die notwendigen Umgebungsvariablen ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 
+und [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in einer ».env« Datei findest du 
+[hier](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration).
+{{% /notice %}}
+
+
+### Contao Backend-Benutzer erstellen
+
+Über das [Contao-Installtool](/de/installation/contao-installtool/) kannst du dir deinen Backend Benutzer anlegen. 
+Ab Contao **4.10** kannst du hierzu den folgenden Befehl auf der Kommandozeile benutzen. Die notwendigen Angaben werden dann
+auf der Kommandozeile abgefragt:
+
+```bash
+php vendor/bin/contao-console contao:user:create
+``` 
