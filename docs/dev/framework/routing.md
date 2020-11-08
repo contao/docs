@@ -186,10 +186,10 @@ class ExampleController
 ## Request Attributes
 
 When defining a route Symfony allows you to set some default parameters for the
-request handled by this route. As of Contao **4.9** there are two different special
-request attributes that Contao will listen to during the handling of a request,
-which will be outlined here. Contao will also set additional request attributes
-which you can then access within your controller.
+request handled by this route. There are two different special request attributes 
+that Contao will listen to during the handling of a request, which will be outlined
+here. Contao will also set additional request attributes which you can then access 
+within your controller.
 
 
 ### Request Scope
