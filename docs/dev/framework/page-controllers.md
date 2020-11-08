@@ -13,7 +13,7 @@ to the route of a specific page type within the Contao site structure.
 ## Registering Page Controllers
 
 As with content elements, front end modules, hooks and DCA callbacks, Page controllers
-can also be registered via annotations. The following shows the most basic example:
+can be registered via annotations. The following shows the most basic example:
 
 ```php
 // src/Controller/Page/ExamplePageController.php
@@ -35,7 +35,7 @@ class ExamplePageController
 ```
 
 The same can be achieved without annotations by tagging the respective service with 
-`contao.tag`.
+`contao.page`.
 
 Without any parameters, the type of the page is inferred from the class name. In
 this case the type of the page will be `example`, since suffixes like `Page` and
@@ -57,7 +57,7 @@ A translation for the back end label should be defined to:
 $GLOBALS['TL_LANG']['PTY']['example'] = ['Example', 'Example page type.'];
 ```
 
-Now we are all set and can add this new page type in the site structure of the Contao
+Now we are all set and can add this new page in the site structure of the Contao
 back end:
 
 ![Custom page type in the Contao back end](/framework/images/custom-page-type-back-end.png?classes=shadow)
