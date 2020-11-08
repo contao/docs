@@ -128,7 +128,7 @@ In case of page controllers the URL of the page will either be defined via its a
 which is defined in the back end, or its configured `path` - or even a combination
 of both!
 
-For instance, with the following annotation:
+For instance, with the following annotation and the default `.html` URL suffix:
 
 ```php
 /**
@@ -136,9 +136,9 @@ For instance, with the following annotation:
  */
 ```
 
-the URL of the page will _always_ be `https://example.com/foo/bar`, no matter what
-is defined in the back end. This means that you should not add the `alias` field
-to the palette of this page in the `tl_page` DCA.
+the URL of the page will _always_ be `https://example.com/foo/bar.html`, no matter
+what is defined in the back end. This means that you should not add the `alias`
+field to the palette of this page in the `tl_page` DCA.
 
 However, if the defined path of the page configuration is a relative path rather
 than an absolute one, then the URL of the page will be a combination of both the
@@ -154,7 +154,7 @@ So for example, with the following annotation:
 ```
 
 and an alias like `example/alias` defined in the back end, the final front end URL
-of the page will be `https://example.com/example/alias/foo/bar`.
+of the page will be `https://example.com/example/alias/foo/bar.html`.
 
 
 ### `urlSuffix`
@@ -170,16 +170,21 @@ that URL suffix in the page controller's configuration:
 ```
 
 So if the page in the site structure has the alias `foo/bar` then the final front
-end URL will be `https://example.com/foo/bar.csv`.
+end URL will be `https://example.com/foo/bar.csv` even though the root page's url 
+suffix might be `.html`.
 
 
 ### `contentComposition`
 
 This is a boolean property defining whether this page type is used for 
 _content composition_. By default, custom page types implemented via page controllers
-do not have content composition enabled, meaning you are not able to add page articles
-to that page in the back end. If your page handles the rendering of page articles
-then you need to enable this property on your page controller:
+do not have content composition enabled, meaning you are not able to manage the
+content and layout of this page via the back end. For example an RSS feed page controller
+would not use content composition, since its content is not supposed to be editable
+via the back end.
+
+If your page handles the rendering of page articles which are managed via the back
+end, then you need to enable this property on your page controller:
 
 ```php
 /**
