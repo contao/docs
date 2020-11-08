@@ -77,6 +77,68 @@ einer eindeutigen Beschreibung zu versehen.
 Bei Seiten vom Typ »Startpunkt einer Webseite« stehen weitere Eingabefelder zur Verfügung, mit denen du bestimmte 
 globale Einstellungen pro Webseite überschreiben kannst.
 
+{{% notice info %}}
+**Vor** Contao **4.10** sind die Sektionen _URL-Einstellungen_ und _Spracheinstellungen_ unter dem Punkt _DNS-Einstellungen_
+zusammengefasst. Die DNS-Einstellungen bestimmen, welchen Startpunkt Contao in Abhängigkeit von der aufgerufenen Domain
+und der im Browser des Besuchers eingestellten Sprache lädt.
+{{% /notice %}}
+
+
+### URL-Einstellungen
+
+**Domainname:** Wenn du möchtest, dass eine Webseite in deiner Seitenstruktur unter einer bestimmten Domain wie z. B. 
+»firma.de« erreichbar ist, kannst du diese hier eingeben. Ruft ein Besucher dann »firma.de« in seinem Browser auf, wird 
+er automatisch zu dem entsprechenden Startpunkt einer Webseite weitergeleitet.
+
+**HTTPS verwenden (Protokoll):** Wenn deine Webseite über HTTPS verfügbar ist, muss diese Einstellung entsprechend
+konfiguriert werden. Ab Contao **4.10** heißt diese Einstellung **Protokoll** und lässt die Auswahl zwischen `http://`
+und `https://` zu.
+
+{{< version "4.10" >}}
+
+**URL-Präfix**: Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
+zugewiesen werden. Diese Einstellung ist wie erwähnt ab Contao **4.10** verfügbar, davor gab es nur über die
+`contao.prepend_locale` Einstellung die Möglichkeit einen über die Sprache definierten Präfix zu verwenden. Nun ist dieser
+Präfix frei wählbar und damit unabhängig von der jeweils eingestellten Sprache.
+
+{{< version "4.5" >}}
+
+**Alias-Einstellungen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
+Aliase auszuwählen.
+
+| Alias-Einstellungen                  | Erklärung                                                            |
+|:-------------------------------------|:---------------------------------------------------------------------|
+| Unicode-Zahlen und -Kleinbuchstaben  | Aus dem Seitennamen »Über uns« wird das Alias `über-uns` generiert.  |
+| Unicode-Zahlen und -Buchstaben       | Aus dem Seitennamen »Über uns« wird das Alias `Über-uns` generiert.  |
+| ASCII-Zahlen und -Kleinbuchstaben    | Aus dem Seitennamen »Über uns« wird das Alias `ueber-uns` generiert. |
+| ASCII-Zahlen und -Buchstaben         | Aus dem Seitennamen »Über uns« wird das Alias `Ueber-uns` generiert. |
+
+Für die Erzeugung des Aliases ist in Einzelfällen auch die eingestellte Sprache relevant. So wir ein Deutsches »Über« 
+zu »ueber« jedoch ein Finnisches »eläinkö« zu »elainko« konvertiert.
+
+
+### Spracheinstellungen
+
+**Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres 
+[Subtag](http://ssgfix.sub.uni-goettingen.de/projekt/doku/sprachcode.html) nach ISO 639-1 erfasst, also z. B. über 
+`de` für Deutsch oder `en` für Englisch.
+
+**Sprachen-Fallback:** Contao sucht grundsätzlich nach einem Startpunkt in der Sprache, die ein Besucher in seinem 
+Browser voreingestellt hat. Gibt es nur einen deutschen Startpunkt, bekäme ein englischer Besucher lediglich die 
+Fehlermeldung »No pages found« zu sehen, da in seiner Sprache ja keine Webseite existiert.
+
+Um das zu vermeiden, kannst du einen bestimmten Startpunkt als Fallback definieren, was frei übersetzt so viel wie 
+»Auffangseite« oder »Ausweichseite« bedeutet. Diese Auffangseite fängt dann quasi alle Besucher auf, die aufgrund ihrer 
+Spracheinstellungen eigentlich keinem Startpunkt zugeordnet werden können.
+
+Achte also darauf, immer einen Startpunkt als Sprachen-Fallback zu definieren. Deine Webseite kann sonst nur von 
+deutschen Besuchern aufgerufen werden! Auch die Robots der Suchmaschinen, die deine Webseite indizieren, sprechen in 
+der Regel Englisch und wären ohne Sprachen-Fallback ebenfalls ausgeschlossen. Deine Seiten würden dann trotz 
+sorgfältiger Optimierung niemals bei Google auftauchen.
+
+
+### Globale Einstellungen
+
 **E-Mail-Adresse des Webseiten-Administrators:** Hier kannst du die in den Backend-Einstellungen festgelegte 
 E-Mail-Adresse des Systemadministrators für eine bestimmte Webseite überschreiben. An diese Adresse werden z. B. 
 Benachrichtigungen über gesperrte Konten oder neu registrierte Benutzer geschickt. Wenn du mehrere Webseiten innerhalb 
@@ -115,21 +177,6 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 | H:i:s    | 24 Stunden, Minuten und Sekunden, z. B. `20:36:59`            |
 | g:i      | 12 Stunden ohne führende Nullen sowie Minuten, z. B. `8:36`   |
 
-
-{{< version "4.5" >}}
-
-**Alias-Einstellungen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
-Aliase auszuwählen.
-
-| Alias-Einstellungen                  | Erklärung                                                            |
-|:-------------------------------------|:---------------------------------------------------------------------|
-| Unicode-Zahlen und -Kleinbuchstaben  | Aus dem Seitennamen »Über uns« wird das Alias `über-uns` generiert.  |
-| Unicode-Zahlen und -Buchstaben       | Aus dem Seitennamen »Über uns« wird das Alias `Über-uns` generiert.  |
-| ASCII-Zahlen und -Kleinbuchstaben    | Aus dem Seitennamen »Über uns« wird das Alias `ueber-uns` generiert. |
-| ASCII-Zahlen und -Buchstaben         | Aus dem Seitennamen »Über uns« wird das Alias `Ueber-uns` generiert. |
-
-Für die Erzeugung des Aliases ist in Einzelfällen auch die eingestellte Sprache relevant. So wir ein Deutsches »Über« 
-zu »ueber« jedoch ein Finnisches »eläinkö« zu »elainko« konvertiert.
 
 {{< version "4.8" >}}
 
@@ -275,36 +322,6 @@ Der Tabulator folgt dann aufsteigend deiner Sortierung statt der Standardreihenf
 **Tastaturkürzel:** Ein Tastaturkürzel ist ein einzelnes Zeichen, das mit einer Seite verknüpft wird. Besucher deiner 
 Webseite können diese Seite dann über die Tastatur direkt aufrufen. Diese Funktion wird vor allem für barrierefreie 
 Webseiten gefordert.
-
-
-## DNS-Einstellungen
-
-DNS-Einstellungen sind nur bei Seiten vom Typ »Startpunkt einer Webseite« verfügbar. Sie bestimmen, welchen Startpunkt 
-Contao in Abhängigkeit von der aufgerufenen Domain und der im Browser des Besuchers eingestellten Sprache lädt.
-
-**Domainname:** Wenn du möchtest, dass eine Webseite in deiner Seitenstruktur unter einer bestimmten Domain wie z. B. 
-»firma.de« erreichbar ist, kannst du diese hier eingeben. Ruft ein Besucher dann »firma.de« in seinem Browser auf, wird 
-er automatisch zu dem entsprechenden Startpunkt einer Webseite weitergeleitet.
-
-**HTTPS verwenden:** Aktiviere diese Checkbox wenn deine Webseite über HTTPS verfügbar ist.
-
-**Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres 
-[Subtag](http://ssgfix.sub.uni-goettingen.de/projekt/doku/sprachcode.html) nach ISO 639-1 erfasst, also z. B. über 
-`de` für Deutsch oder `en` für Englisch.
-
-**Sprachen-Fallback:** Contao sucht grundsätzlich nach einem Startpunkt in der Sprache, die ein Besucher in seinem 
-Browser voreingestellt hat. Gibt es nur einen deutschen Startpunkt, bekäme ein englischer Besucher lediglich die 
-Fehlermeldung »No pages found« zu sehen, da in seiner Sprache ja keine Webseite existiert.
-
-Um das zu vermeiden, kannst du einen bestimmten Startpunkt als Fallback definieren, was frei übersetzt so viel wie 
-»Auffangseite« oder »Ausweichseite« bedeutet. Diese Auffangseite fängt dann quasi alle Besucher auf, die aufgrund ihrer 
-Spracheinstellungen eigentlich keinem Startpunkt zugeordnet werden können.
-
-
-Achte also darauf, immer einen Startpunkt als Sprachen-Fallback zu definieren. Deine Webseite kann sonst nur von 
-deutschen Besuchern aufgerufen werden! Auch die Robots der Suchmaschinen, die deine Webseite indizieren, sprechen in 
-der Regel Englisch und wären ohne Sprachen-Fallback ebenfalls ausgeschlossen. Deine Seiten würden dann trotz 
-sorgfältiger Optimierung niemals bei Google auftauchen.
 
 
 ## XML-Sitemap
