@@ -137,7 +137,8 @@ For instance, with the following annotation:
 ```
 
 the URL of the page will _always_ be `https://example.com/foo/bar`, no matter what
-is defined in the back end.
+is defined in the back end. This means that you should not add the `alias` field
+to the palette of this page in the `tl_page` DCA.
 
 However, if the defined path of the page configuration is a relative path rather
 than an absolute one, then the URL of the page will be a combination of both the
