@@ -96,14 +96,32 @@ und `https://` zu.
 
 {{< version "4.10" >}}
 
-**URL-Präfix**: Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
+**URL-Präfix:** Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
 zugewiesen werden. Diese Einstellung ist wie erwähnt ab Contao **4.10** verfügbar, davor gab es nur über die
 `contao.prepend_locale` Einstellung die Möglichkeit einen über die Sprache definierten Präfix zu verwenden. Nun ist dieser
 Präfix frei wählbar und damit unabhängig von der jeweils eingestellten Sprache.
 
+{{< version "4.10" >}}
+
+**URL-Suffix:** Mit dieser Einstellung kann der »URL-Suffix« geändert oder entfernt werden. Der URL-Suffix wird bei der
+Generierung der URL einer Seite an den Seitenalias angehängt.
+
+{{% notice info %}}
+Die Einstellungen **URL-Präfix** und **URL-Suffix** so wie **Sprachweiterleitung deaktivieren** sind erst verfügbar, wenn
+das sogennante »Legacy Routing« über die Contao `contao.legacy_routing` Konfigurationseinstellung deaktiviert wurde.
+Andernfalls wird die URL-Generierung nach wie vor nur durch die Einstellungen `contao.prepend_locale` und `contao.url_suffix` 
+bestimmt.
+
+```yml
+# config/config.yml
+contao:
+    legacy_routing: false
+```
+{{% /notice %}}
+
 {{< version "4.5" >}}
 
-**Alias-Einstellungen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
+**Gültige Alias-Zeichen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
 Aliase auszuwählen.
 
 | Alias-Einstellungen                  | Erklärung                                                            |
@@ -113,8 +131,22 @@ Aliase auszuwählen.
 | ASCII-Zahlen und -Kleinbuchstaben    | Aus dem Seitennamen »Über uns« wird das Alias `ueber-uns` generiert. |
 | ASCII-Zahlen und -Buchstaben         | Aus dem Seitennamen »Über uns« wird das Alias `Ueber-uns` generiert. |
 
-Für die Erzeugung des Aliases ist in Einzelfällen auch die eingestellte Sprache relevant. So wir ein Deutsches »Über« 
+Für die Erzeugung des Aliases ist in Einzelfällen auch die eingestellte Sprache relevant. So wird ein Deutsches »Über« 
 zu »ueber« jedoch ein Finnisches »eläinkö« zu »elainko« konvertiert.
+
+{{% notice note %}}
+Diese Einstellung befindet sich in Contao **4.5** bis **4.9** in der Sektion _Alias-Einstellungen_.
+{{% /notice %}}
+
+{{< version "4.10" >}}
+
+**Ordner-URLs verwenden:** Wenn eine neue oder bestehende Seite ohne eingegebenen Alias abgespeichert wird, wird der Alias
+von Contao anhand des Seitennamens automatisch generiert. Ist diese Einstellung aktiv, wird bei der automatischen Generierung
+auch die Seitenhierarchie berücksichtigt. Dabei werden die Aliase der übergeordneten Seiten durch Slashes getrennt an den
+Alias der Seite vorangestellt.
+
+Diese Funktion kann in Contao **4.10** pro Startpunkt definiert werden. In älteren Contao Versionen wird diese Funktion
+noch über [eine Systemeinstellung][SystemSettingFolderUrl] aktiviert.
 
 
 ### Spracheinstellungen
@@ -135,6 +167,13 @@ Achte also darauf, immer einen Startpunkt als Sprachen-Fallback zu definieren. D
 deutschen Besuchern aufgerufen werden! Auch die Robots der Suchmaschinen, die deine Webseite indizieren, sprechen in 
 der Regel Englisch und wären ohne Sprachen-Fallback ebenfalls ausgeschlossen. Deine Seiten würden dann trotz 
 sorgfältiger Optimierung niemals bei Google auftauchen.
+
+{{< version "4.10" >}}
+
+**Sprachweiterleitung deaktivieren:** Bei mehrsprachigen Seiten der selben Domain leitet Contao beim Aufruf der Domain
+automatisch auf den zur Browser-Sprache passenden Startpunkt weiter (andernfalls zur Fallback-Sprache). Mit dieser Einstellung
+kann dieses Verhalten beeinflusst und die automatische Weiterleitung zu bestimmten (oder allen) Sprachen deaktiviert
+werden.
 
 
 ### Globale Einstellungen
@@ -379,3 +418,4 @@ bewerben.
 
 [Systemverwaltung]: /de/system/einstellungen/
 [BackendKeyboardShortcuts]: /de/administrationsbereich/backend-tastaturkuerzel/
+[SystemSettingFolderUrl]: /de/system/einstellungen/#frontend-einstellungen
