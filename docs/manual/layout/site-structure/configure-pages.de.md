@@ -33,9 +33,9 @@ den Titel und die Beschreibung einer Seite definieren.
 
 **Seitentitel:** Der Seitentitel wird im `<title>`-Tag der Webseite verwendet und taucht häufig auch 
 in den Suchergebnissen von Google und Co. auf. Er sollte nicht mehr als 65 Zeichen enthalten, da viele Suchmaschinen 
-längere Titel einfach abschneiden.
+längere Titel einfach abschneiden. Wenn kein Seitentitel angegeben wird, wird als Fallback der Name der Seite benutzt.
 
-**Ausgabe im Quellcode:**
+*Ausgabe im Quellcode:*
 ```html
 <title>Seitentitel</title>
 ```
@@ -49,13 +49,9 @@ längere Titel einfach abschneiden.
 
 Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten möglichst umfassend in den Suchindex 
 aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung 
-*noindex,follow* von der Indizierung ausgenommen werden.
+*noindex,nofollow* von der Indizierung ausgenommen werden.
 
-{{% notice note %}}
-Die Einstellung Robots-Tag hat keine Auswirkungen auf den Suchindex von Contao für die Website-Suche.
-{{% /notice %}}
-
-**Ausgabe im Quellcode:**
+*Ausgabe im Quellcode:*
 ```html
 <meta name="robots" content="index,follow">
 ``` 
@@ -66,7 +62,7 @@ verfügbar ist. Die empfohlene Länge einer Beschreibung liegt zwischen 150 und
 Seite ist ein wichtiges Instrument zur Suchmaschinenoptimierung, daher solltest du dir die Zeit nehmen, jede Seite mit 
 einer eindeutigen Beschreibung zu versehen.
  
-**Ausgabe im Quellcode:**
+*Ausgabe im Quellcode:*
 ```html
 <meta name="description" content="Beschreibung der Seite (150 und 300 Zeichen).">
 ```
@@ -79,20 +75,24 @@ globale Einstellungen pro Webseite überschreiben kannst.
 
 {{% notice info %}}
 **Vor** Contao **4.10** sind die Sektionen _URL-Einstellungen_ und _Spracheinstellungen_ unter dem Punkt _DNS-Einstellungen_
-zusammengefasst. Die DNS-Einstellungen bestimmen, welchen Startpunkt Contao in Abhängigkeit von der aufgerufenen Domain
-und der im Browser des Besuchers eingestellten Sprache lädt.
+zusammengefasst.
 {{% /notice %}}
 
 
 ### URL-Einstellungen
 
+Die URL-Einstellungen zusammen mit den Spracheinstellungen bestimmen, welchen Startpunkt Contao in Abhängigkeit von der 
+aufgerufenen Domain und der im Browser des Besuchers eingestellten Sprache lädt und welches Format die von Contao generierten
+URLs haben sollen.
+
 **Domainname:** Wenn du möchtest, dass eine Webseite in deiner Seitenstruktur unter einer bestimmten Domain wie z. B. 
 »firma.de« erreichbar ist, kannst du diese hier eingeben. Ruft ein Besucher dann »firma.de« in seinem Browser auf, wird 
 er automatisch zu dem entsprechenden Startpunkt einer Webseite weitergeleitet.
 
-**HTTPS verwenden (Protokoll):** Wenn deine Webseite über HTTPS verfügbar ist, muss diese Einstellung entsprechend
+**Protokoll (HTTPS verwenden):** Wenn deine Webseite über HTTPS verfügbar ist, muss diese Einstellung entsprechend
 konfiguriert werden. Ab Contao **4.10** heißt diese Einstellung **Protokoll** und lässt die Auswahl zwischen `http://`
-und `https://` zu.
+und `https://` zu. In Contao **4.9** werden Besucher automatisch auf HTTPS weitergeleitet, wenn diese Einstellung aktiv
+ist. Ab Contao **4.10** wird automatisch entweder zu `http://` oder `https://` weitergeleitet.
 
 {{< version "4.10" >}}
 
@@ -274,7 +274,7 @@ bestimmten Benutzer und einer bestimmten Benutzergruppe und unterscheidet drei Z
 - Zugriff als sonstiger Backend-Benutzer
 
 Die Seite »Unternehmen« ist beispielsweise mit Zugriffsrechten versehen und gehört dem Benutzer h.lewis sowie der 
-Benutzergruppe Nachrichten. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf 
+Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf 
 dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite 
 an sich bearbeiten und z. B. den Seitentitel ändern.
 
