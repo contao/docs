@@ -83,18 +83,6 @@ can be freely configured, independent of the respective language.
 **URL suffix:** This setting allows you to change or remove the "URL suffix". This suffix will be appended to the alias
 when generating the URL of a page.
 
-{{% notice info %}}
-The settings **URL prefix** and **URL suffix** as well as **Disable language redirect** are only available if the so called
-"legacy routing" mode is disabled via the `contao.legacy_routing` setting. Otherwise the URL generation will continue
-to be influenced via the `contao.prepend_locale` and `contao.url_suffix` setting.
-
-```yml
-# config/config.yml
-contao:
-    legacy_routing: false
-```
-{{% /notice %}}
-
 {{< version "4.5" >}}
 
 **Alias settings:** The slug generator allows you to select an individual character set for automatically generated aliases.
@@ -121,6 +109,31 @@ when generating the alias. All of the page's parent pages will be prepended to i
 
 Since Contao **4.10** this setting can be configured per website root. In previous Contao versions this setting could
 only be configured globally via [a system setting][SystemSettingFolderUrl].
+
+
+#### Legacy Routing Mode
+
+{{< version "4.10" >}}
+
+The settings **URL prefix** and **URL suffix** as well as **Disable language redirect** are only available if the so called
+"legacy routing" mode is disabled via the `contao.legacy_routing` setting. When not disabled the URL generation will continue
+to be influenced only via the `contao.prepend_locale` and `contao.url_suffix` setting.
+
+```yml
+# config/config.yml
+contao:
+    legacy_routing: false
+```
+
+**However**, be advised that disabling the legacy routing mode also disables the following hooks:
+
+* [`getRootPageFromUrl`][GetRootPageFromUrlHook]
+* [`getPageIdFromUrl`][GetPageIdFromUrlHook]
+
+{{% notice warning %}}
+If you have any extensions installed that still rely on either of these hooks, then you must either keep legacy routing
+enabled or you need to remove or replace these extensions. Otherwise an error in the front end will occur.
+{{% /notice %}}
 
 
 ### Language settings
@@ -299,3 +312,5 @@ As long as a page is not published, it practically does not exist in the fronten
 
 
 [SystemSettingFolderUrl]: /en/system/settings/#front-end-configuration
+[GetRootPageFromUrlHook]: https://docs.contao.org/dev/reference/hooks/getRootPageFromUrl/
+[GetPageIdFromUrlHook]: https://docs.contao.org/dev/reference/hooks/getPageIdFromUrl/

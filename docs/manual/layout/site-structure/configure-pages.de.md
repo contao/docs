@@ -106,19 +106,6 @@ Präfix frei wählbar und damit unabhängig von der jeweils eingestellten Sprach
 **URL-Suffix:** Mit dieser Einstellung kann der »URL-Suffix« geändert oder entfernt werden. Der URL-Suffix wird bei der
 Generierung der URL einer Seite an den Seitenalias angehängt.
 
-{{% notice info %}}
-Die Einstellungen **URL-Präfix** und **URL-Suffix** so wie **Sprachweiterleitung deaktivieren** sind erst verfügbar, wenn
-das sogennante »Legacy Routing« über die Contao `contao.legacy_routing` Konfigurationseinstellung deaktiviert wurde.
-Andernfalls wird die URL-Generierung nach wie vor nur durch die Einstellungen `contao.prepend_locale` und `contao.url_suffix` 
-bestimmt.
-
-```yml
-# config/config.yml
-contao:
-    legacy_routing: false
-```
-{{% /notice %}}
-
 {{< version "4.5" >}}
 
 **Gültige Alias-Zeichen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
@@ -147,6 +134,32 @@ Alias der Seite vorangestellt.
 
 Diese Funktion kann in Contao **4.10** pro Startpunkt definiert werden. In älteren Contao Versionen wird diese Funktion
 noch über [eine Systemeinstellung][SystemSettingFolderUrl] aktiviert.
+
+
+#### Legacy Routing Modus
+
+{{< version "4.10" >}}
+
+Die Einstellungen **URL-Präfix** und **URL-Suffix** so wie **Sprachweiterleitung deaktivieren** sind erst verfügbar, wenn
+das sogennante »Legacy Routing« über die Contao `contao.legacy_routing` Konfigurationseinstellung deaktiviert wurde.
+Andernfalls wird die URL-Generierung nach wie vor nur durch die Einstellungen `contao.prepend_locale` und `contao.url_suffix` 
+bestimmt.
+
+```yml
+# config/config.yml
+contao:
+    legacy_routing: false
+```
+
+**Beachte allerdings**, dass die Deaktivierung des Legacy Routing Modus auch folgende Hooks deaktiviert:
+
+* [`getRootPageFromUrl`][GetRootPageFromUrlHook]
+* [`getPageIdFromUrl`][GetPageIdFromUrlHook]
+
+{{% notice warning %}}
+Falls Extensions installiert sind, die diese Hooks noch benötigen, dann muss entweder das Legacy Routing aktiviert bleiben,
+oder die Extensions müssen entfernt oder ersetzt werdne. Andernfalls wird ein Fehler im Frontend auftreten.
+{{% /notice %}}
 
 
 ### Spracheinstellungen
@@ -419,3 +432,5 @@ bewerben.
 [Systemverwaltung]: /de/system/einstellungen/
 [BackendKeyboardShortcuts]: /de/administrationsbereich/backend-tastaturkuerzel/
 [SystemSettingFolderUrl]: /de/system/einstellungen/#frontend-einstellungen
+[GetRootPageFromUrlHook]: https://docs.contao.org/dev/reference/hooks/getRootPageFromUrl/
+[GetPageIdFromUrlHook]: https://docs.contao.org/dev/reference/hooks/getPageIdFromUrl/
