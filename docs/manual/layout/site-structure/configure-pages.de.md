@@ -158,7 +158,7 @@ contao:
 
 {{% notice warning %}}
 Falls Extensions installiert sind, die diese Hooks noch benötigen, dann muss entweder das Legacy Routing aktiviert bleiben,
-oder die Extensions müssen entfernt oder ersetzt werdne. Andernfalls wird ein Fehler im Frontend auftreten.
+oder die Extensions müssen entfernt oder ersetzt werden. Andernfalls wird ein Fehler im Frontend auftreten.
 {{% /notice %}}
 
 
