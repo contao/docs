@@ -38,8 +38,8 @@ vendor/bin/contao-console cache:clear --env=prod --no-warmup
 Starting with Contao **4.10** the URL prefix can also be defined for each website root individually and independently of
 the language of the website root. This way it is also possible have one website root without an URL prefix, while the other
 website roots of the same domain still have one. For example: `example.com` for the English version of the website and
-`example.com/de` for the German version. In order to be able to configure this setting the »legacy routing« mode must be
-disabled:
+`example.com/de` for the German version. In order to be able to configure this setting the »[legacy routing][LegacyRouting]« 
+mode must be disabled:
 
 ```yaml
 # config/config.yml
@@ -91,3 +91,6 @@ The first three cases all lead to the company page, even if the domain `company.
 The first two cases could be clearly assigned to a website root based on the browser language, only in the third case the language fallback page had to be loaded. The third case is therefore the most general case, which catches all requests that cannot be uniquely assigned.
 
 The fourth case clearly belongs to the private website because of the domain, no matter what language the visitor speaks, and thanks to the language fallback, visitors from all over the world have access to the website. And here you can see the importance of a language fallback: without it, the private website would only be available for German speaking visitors! All others would only see a "No pages found" error message.
+
+
+[LegacyRouting]: /en/layout/site-structure/configure-pages/#legacy-routing-mode
