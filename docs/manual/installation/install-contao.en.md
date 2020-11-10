@@ -56,7 +56,7 @@ cd www
 PHP programming language and installs dependencies.
 
 {{% notice note %}}
-You can either install composer [locally](https://getcomposer.org/doc/00-intro.md#locally) 
+You can either install Composer [locally](https://getcomposer.org/doc/00-intro.md#locally) 
 or [globally](https://getcomposer.org/doc/00-intro.md#globally). 
  
  If you install locally, you will have a `composer.phar` file in your working directory (i.e. where your project's
