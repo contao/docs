@@ -103,9 +103,9 @@ This setting is located within the section _Alias settings_ in Contao **4.5** th
 
 {{< version "4.10" >}}
 
-**Enable folder URLs:** If you save a new or existing page without an alias being defined then Contao will automatically
-generated an alias based on the page's title. If this setting is active then the current page's hierarchy will be included
-when generating the alias. All of the page's parent pages will be prepended to its alias, separated by forward slashes.
+**Enable folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in 
+the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias 
+`docs/install/download.html` instead of just `download.html`.
 
 Since Contao **4.10** this setting can be configured per website root. In previous Contao versions this setting could
 only be configured globally via [a system setting][SystemSettingFolderUrl].

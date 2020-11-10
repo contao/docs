@@ -127,10 +127,9 @@ Diese Einstellung befindet sich in Contao **4.5** bis **4.9** in der Sektion _Al
 
 {{< version "4.10" >}}
 
-**Ordner-URLs verwenden:** Wenn eine neue oder bestehende Seite ohne eingegebenen Alias abgespeichert wird, wird der Alias
-von Contao anhand des Seitennamens automatisch generiert. Ist diese Einstellung aktiv, wird bei der automatischen Generierung
-auch die Seitenhierarchie berücksichtigt. Dabei werden die Aliase der übergeordneten Seiten durch Slashes getrennt an den
-Alias der Seite vorangestellt.
+**Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
+Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
+»Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
 
 Diese Funktion kann in Contao **4.10** pro Startpunkt definiert werden. In älteren Contao Versionen wird diese Funktion
 noch über [eine Systemeinstellung][SystemSettingFolderUrl] aktiviert.
