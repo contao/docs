@@ -60,7 +60,7 @@ You can either install Composer [locally](https://getcomposer.org/doc/00-intro.m
 or [globally](https://getcomposer.org/doc/00-intro.md#globally). 
  
  If you install locally, you will have a `composer.phar` file in your working directory (i.e. where your project's
- `composer.json`and `composer.lock` files are located). You would then call composer with `php composer.phar`.
+ `composer.json`and `composer.lock` files are located). You would then call Composer with `php composer.phar`.
  
  If you install globally, you can use the `composer` command in any directory. 
 {{% /notice %}}
