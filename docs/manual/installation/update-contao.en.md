@@ -77,7 +77,7 @@ Your Contao installation is now up to date.
 ### Updating via the command line {#update-via-the-command-line}
 
 {{% notice note %}}
- To update Contao via the command line you need to have composer [installed](../install-contao/#install-composer). 
+ To update Contao via the command line you need to have Composer [installed](../install-contao/#install-composer). 
  {{% /notice %}}
 
 {{% notice note %}}
