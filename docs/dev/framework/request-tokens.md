@@ -17,12 +17,12 @@ The way Contao mitigates these attacks is by using the [Double Submit Cookie tec
 Providing CSRF protection for users that are not authenticated against the app does not make any sense. So if you
 visit a regular Contao page with a form placed on it, you will not necessarily see any cookies being set in your
 browser. Only if you are authenticated in such a way that the browser will automatically send authentication information
-along without any user interaction (logged in via `Cookie` or basic authentication  via `Authorization` headers), CSRF
+along without any user interaction (e.g. any cookies or basic authentication via `Authorization` headers), CSRF
 protection is required. So don't get fooled by the cookies not being present all the time, Contao is actually very smart
 about them to improve HTTP cache hits.
 
-By default, Contao protects all `POST` requests coming from Contao routes. That means, routes that either do have
-the Route attribute `_scope` set to `frontend` or `backend`.
+By default, Contao protects all `POST` requests coming from Contao routes (except Ajax requests). That means routes which
+have the route attribute `_scope` set to either `frontend` or `backend`.
 
 If you explicitly want to disable the CSRF protection on your own route, you can set the route attribute `_token_check`
 to `false`.
