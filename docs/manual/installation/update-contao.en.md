@@ -156,7 +156,7 @@ What do you need on your computer?
 
 - any directory you work in (your working directory)
 - PHP, ideally in the same version as used on your hosting
-- Composer (we assume here that you [install](../install-contao/#install-composer) composer globally)
+- Composer (we assume here that you [install](../install-contao/#install-composer) Composer globally)
 - copies of the `composer.json` and `composer.lock` of the Contao installation at your hoster
 
 What do you _not_ need?
