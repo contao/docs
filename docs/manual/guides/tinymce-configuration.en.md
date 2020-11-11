@@ -288,3 +288,13 @@ which can also contain other styles that you use for the actual layout of your w
 
 However, this can become very quickly complicated. With this procedure you have to consider 
 what you want to provide and in what scope.
+
+
+## Further information
+
+The official documentation can be found at [www.tiny.cloud](https://www.tiny.cloud/docs/) - please choose the appropriate version
+from the left navigation. In Contao 4 up to 4.9, version 4 of the TinyMCE is included by default and from 4.10 on, version 5.
+
+Nicky Hoff gave a presentation on the topic at the Contao Conference 2018 - there are [slides](https://contao.org/files/conference/2018/papers/ContaoKonferenz18_So-klitzeklein-ist-der-TinyMCE-gar-nicht.pdf) and a [video](https://www.youtube.com/watch?v=mjsT8J3-UDw).
+
+There are some packages in the Contao extension list that allow you to easily add more features [extensions.contao.org](https://extensions.contao.org/?q=tiny).
