@@ -23,7 +23,7 @@ The metadata of a page mostly refers to the corresponding meta tags in the heade
 
 **Page title:** The page title is used in the `<title>` tag of the website and often appears in search results of Google and Co. It should not contain more than 65 characters, because many search engines will simply cut off longer titles. If no page title is defined, the page name is used as a fallback.
 
-*Output in source code:*
+**Output in source code:**
 ```html
 <title>Page title</title>
 ```
@@ -37,14 +37,14 @@ The metadata of a page mostly refers to the corresponding meta tags in the heade
 
 The default case is *index,follow*, because we want Google and other search engines to include our pages in the search index. However, certain pages, such as the imprint or the registration page, can be excluded from indexing using the setting *noindex,nofollow*.
 
-*Output in source code:*
+**Output in source code:**
 ```html
 <meta name="robots" content="index,follow">
 ```
 
 **Description of the page:** The description of a page is indexed by all common search engines just like the page title and is displayed in the search results, if no context information is available for the search term. The recommended length of a description is between 150 and 300 characters. The meta description of a page is an important tool for search engine optimization, so you should take the time to provide each page with a unique description.
 
-*Output in source code:*
+**Output in source code:**
 ```html
 <meta name="description" content="Description of the page (between 150 and 300 characters).">
 ```
