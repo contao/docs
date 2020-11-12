@@ -1,11 +1,12 @@
 ---
-title: "Frontend-Modul Auflistung"
+title: "Modul Auflistung"
 description: "Eine Mitglieder Liste mit Kartendarstellung über das Modul Auflistung erstellen."
 aliases:
-    - /de/anleitungen/modul-auflistung/
+  - /de/anleitungen/modul-auflistung/
 weight: 90
 tags: 
-    - "Theme"
+  - "Theme"
+  - "Template"
 ---
 
 
@@ -76,7 +77,7 @@ neues Template »list_default_member.html5« und benutze dieses anschließend in
 
 <style>
 .mod_listing div.memberitem {
-	border: 1px solid #dadada;
+  border: 1px solid #dadada;
 	margin: 4px 4px;
 	display: block;
 }
