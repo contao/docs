@@ -275,14 +275,30 @@ in the page setting. If a fragment returns caching information in its response, 
 will be merged to the lowest common denominator. For example, if the page is cacheable for a day, but the fragment
 only for one hour, the whole page will only be cached for one hour.
 
-A more common use case would be something like a `{{date::Y}}` insert tag, which renders the current year. This
-fragment is cacheable until the end of 31st of December. If the page is cached on the 10th of December for one day,
-the page cache time will not be affected. However, if the page is cached at 12pm on the 31st of December, the cache
-time will be lowered to 12 instead of 24 hours. The page cache will expire at the end of the year and regenerated
-on the 1st of January.
+On the other hand, consider an example of a fragment that renders the current year. This fragment would be cacheable
+until the end of 31st of December. If the page is cached on the 10th of December for one day, the page cache time will
+not be affected. However, if the page is cached at 12pm on the 31st of December, the cache time will be lowered to 12
+instead of 24 hours. The page cache will expire at the end of the year and regenerated on the 1st of January.
 
+```php
+class CurrentYearController extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    {
+        $year = (int) date('Y');
+        $template->year = $year;
+        $response = $template->getResponse();
 
-{{%expand "How this works under the hood" %}}
+        // Cache until the end of the year
+        $response->setPublic();
+        $response->setMaxAge(strtotime(($year + 1).'-01-01 00:00:00') - time());
+
+        return $response;
+    }
+}
+```
+
+{{% expand "How this works under the hood" %}}
 A `Response` object in Symfony is `Cache-Control: private` by default. This means we cannot *always* merge an
 inline fragment, otherwise all pages would be uncacheable by default. To work around this, we've added a little
 trick: the response must have a specific header to be merged.
@@ -320,7 +336,7 @@ class MySuperController extends AbstractFrontendModuleController
     }
 }
 ```
-{{% /expand%}}
+{{% /expand %}}
 
 
 ### Edge Side Includes (ESI)
