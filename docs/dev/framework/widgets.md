@@ -155,8 +155,19 @@ $GLOBALS['TL_LANG']['FFL']['custom_field'] = [
 ];
 ```
 
-[//]: # (TODO: change to English URL when done)
-[FormGenerator]: https://docs.contao.org/manual/de/formulargenerator/
+Lastly our new field will still need a palette in the DCA of `tl_form_field`, otherwise
+you will not be able to set any options for the field within the form generator
+(like the field's name and label for example).
+
+```php
+// contao/dca/tl_form_field.php
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['custom_field'] = 
+    '{type_legend},type,name,label;{fconfig_legend},mandatory;{expert_legend:hide},class,accesskey,tabindex;{template_legend:hide},customTpl;{invisible_legend:hide},invisible'
+;
+```
+
+
+[FormGenerator]: https://docs.contao.org/manual/en/form-generator/
 [DcaFields]: /reference/dca/fields/
 [ContaoCoreWidgets]: https://github.com/contao/contao/tree/master/core-bundle/src/Resources/contao/widgets
 [TemplateInheritance]: /framework/templates/#template-inheritance
