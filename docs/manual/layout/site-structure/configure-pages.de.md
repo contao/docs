@@ -35,7 +35,7 @@ den Titel und die Beschreibung einer Seite definieren.
 in den Suchergebnissen von Google und Co. auf. Er sollte nicht mehr als 65 Zeichen enthalten, da viele Suchmaschinen 
 längere Titel einfach abschneiden. Wenn kein Seitentitel angegeben wird, wird als Fallback der Name der Seite benutzt.
 
-*Ausgabe im Quellcode:*
+**Ausgabe im Quellcode:**
 ```html
 <title>Seitentitel</title>
 ```
@@ -51,7 +51,7 @@ Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten
 aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung 
 *noindex,nofollow* von der Indizierung ausgenommen werden.
 
-*Ausgabe im Quellcode:*
+**Ausgabe im Quellcode:**
 ```html
 <meta name="robots" content="index,follow">
 ``` 
@@ -62,7 +62,7 @@ verfügbar ist. Die empfohlene Länge einer Beschreibung liegt zwischen 150 und
 Seite ist ein wichtiges Instrument zur Suchmaschinenoptimierung, daher solltest du dir die Zeit nehmen, jede Seite mit 
 einer eindeutigen Beschreibung zu versehen.
  
-*Ausgabe im Quellcode:*
+**Ausgabe im Quellcode:**
 ```html
 <meta name="description" content="Beschreibung der Seite (150 und 300 Zeichen).">
 ```
@@ -96,14 +96,14 @@ ist. Ab Contao **4.10** wird automatisch entweder zu `http://` oder `https://` w
 
 {{% notice warning %}}
 Falls du für deine Domain ein SSL-Zertifikat einsetzt, dann muss diese Einstellung in Contao **4.10** und höher von `http://` 
-auf `https://` geändert. Andernfalls könnte eine unendliche Weiterleitung im Frontend passieren, falls beispielsweise die
+auf `https://` geändert werden. Andernfalls könnte eine unendliche Weiterleitung im Frontend die Folge sein, falls beispielsweise die
 Hosting Umgebung automatisch von `http://` auf `https://` weiterleitet.
 {{% /notice %}}
 
 {{< version "4.10" >}}
 
 **URL-Präfix:** Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
-zugewiesen werden. Diese Einstellung ist wie erwähnt ab Contao **4.10** verfügbar, davor gab es nur über die
+zugewiesen werden. Diese Einstellung ist ab Contao **4.10** verfügbar, davor gab es nur über die
 `contao.prepend_locale` Einstellung die Möglichkeit einen über die Sprache definierten Präfix zu verwenden. Nun ist dieser
 Präfix frei wählbar und damit unabhängig von der jeweils eingestellten Sprache.
 
