@@ -88,7 +88,6 @@ and the generated label should contain the `for` attribute. The template is set 
 // src/Widget/Frontend/CustomField.php
 namespace App\Widget\Frontend;
 
-use Contao\StringUtil;
 use Contao\Widget;
 
 class CustomField extends Widget
