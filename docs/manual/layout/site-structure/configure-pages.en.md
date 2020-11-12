@@ -71,6 +71,12 @@ setting is called **Protocol** since Contao **4.10** and allows to select betwee
 visitors will be automatically redirected to HTTPS if this setting is enabled. Starting with Contao **4.10**, visitors will
 be automatically redirected to either `http://` or `https://`.
 
+{{% notice warning %}}
+If you use an SSL certificate for your domain then you _must_ change this setting from `http://` to `https://` under Contao
+**4.10** and up. Otherwise you might get an infinite redirect in the front end, if your hosting environment automatically
+redirects from `http://` to `https://`.
+{{% /notice %}}
+
 {{< version "4.10" >}}
 
 **URL prefix:** With this setting you can add an optional URL prefix to all page aliases under this website root. As mentioned

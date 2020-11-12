@@ -94,6 +94,12 @@ konfiguriert werden. Ab Contao **4.10** heißt diese Einstellung **Protokoll** u
 und `https://` zu. In Contao **4.9** werden Besucher automatisch auf HTTPS weitergeleitet, wenn diese Einstellung aktiv
 ist. Ab Contao **4.10** wird automatisch entweder zu `http://` oder `https://` weitergeleitet.
 
+{{% notice warning %}}
+Falls du für deine Domain ein SSL-Zertifikat einsetzt, dann muss diese Einstellung in Contao **4.10** und höher von `http://` 
+auf `https://` geändert. Andernfalls könnte eine unendliche Weiterleitung im Frontend passieren, falls beispielsweise die
+Hosting Umgebung automatisch von `http://` auf `https://` weiterleitet.
+{{% /notice %}}
+
 {{< version "4.10" >}}
 
 **URL-Präfix:** Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
