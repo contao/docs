@@ -108,6 +108,17 @@ class CustomerNameMigration extends AbstractMigration
 }
 ```
 
+The corresponding `services.yaml` looks like this:
+```yaml
+# config/services.yaml
+services:
+    App\Migration\CustomerNameMigration:
+        arguments:
+            - '@database_connection'
+        tags:
+            - { name: contao.migration, priority: 0 }
+```
+
 
 ## Read more
 
