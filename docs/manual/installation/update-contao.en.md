@@ -196,7 +196,7 @@ $ composer install
 or you use the Contao Manager. There you select "System maintenance", "Composer dependencies", "Installer 
 execute".
 
-![composer install with the Contao Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
+![composer install with the Contao Manager](/en/installation/images/en/composer-install-using-the-contao-manager.png?classes=shadow)
 
 Finally you have to update the database tables. 
 
@@ -244,7 +244,7 @@ your own server with enough memory and thus reduce the load of the resolver clou
 
 You can find the setting in the "System Check" in the "Server Configuration" section.
 
-![Disabling the Composer Resolver Cloud](/de/installation/images/de/cloud_resolver_abschalten.png?classes=shadow)
+![Disabling the Composer Resolver Cloud](/en/installation/images/en/disable_cloud_resolver.png?classes=shadow)
 
 After the successful update, transfer the `composer.json` and `composer.lock` files back to the Contao installation on 
 your hosting. The next steps on your hosting are the same as described above.
