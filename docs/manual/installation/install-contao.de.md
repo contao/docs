@@ -75,7 +75,7 @@ die Programmiersprache PHP und installiert Abhängigkeiten.
 Du kannst Composer entweder [lokal](https://getcomposer.org/doc/00-intro.md#locally) 
 oder [global](https://getcomposer.org/doc/00-intro.md#globally) installieren. 
  
-Wenn du Composer lokal installierst, befindet sich die Datei `composer.phar` in deinem Arbeitsverzeichnis (d.h. dort, wo
+Wenn du Composer lokal installierst, befindet sich die Datei `composer.phar` in deinem Arbeitsverzeichnis (d. h. dort, wo
 auch die Dateien `composer.json` und `composer.lock` deines Projekts gespeichert sind). In diesem Fall rufst du Composer 
 über `php composer.phar` auf.
  
