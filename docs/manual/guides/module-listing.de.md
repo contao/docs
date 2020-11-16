@@ -30,11 +30,11 @@ installieren. Mit Nutzung des Moduls »Auflistung« können wir dies u. a. ohne 
 
 Das Contao Frontend-Modul vom »Typ« [Auflistung](/de/layout/modulverwaltung/anwendungen/#auflistung) wird meist unterschätzt.
 Aus einer beliebigen Datenbanktabelle kannst du Datensätze abfragen, die anschließend im Frontend über 
-entsprechende [Template Dateien](/de/layout/templates/) ausgegeben werden können.
+entsprechende [Template-Dateien](/de/layout/templates/) ausgegeben werden können.
 
 Das Modul realisiert eine bequeme Eingabe einfacher SQL-Abfragen. Die Ergebnisse werden dann 
-standardmäßig u. a. zur Anzeige einer Liste (Template: `list_default.html5`) mit optionaler Verlinkung auf 
-Detail Seiten (Template: `info_default.html5`) angezeigt.
+standardmäßig u. a. zur Anzeige einer Liste (Template: »list_default.html5«) mit optionaler Verlinkung auf 
+Detail Seiten (Template: »info_default.html5«) angezeigt.
 
 Wir konzentrieren uns für unser Beispiel einfachheitshalber nur auf die Listendarstellung. Die jeweiligen 
 Feld-Bezeichnungen findest du in der Datenbanktabelle `tl_member`. Ohne Angabe einer Bedingung werden alle angegebenen 
