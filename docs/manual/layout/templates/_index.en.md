@@ -16,5 +16,6 @@ Template changes are not necessary if you only need an additional CSS ID or CSS 
 
 {{% notice note %}}
 In [debug mode](/en/system/debug-mode/), the template names in the HTML source code are displayed as comments, so you can see which template is being used.
+{{% /notice %}}
 
 {{% taxonomylist context="tags" filter="Template" title="Guides" description=true %}}

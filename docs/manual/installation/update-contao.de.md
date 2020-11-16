@@ -83,7 +83,7 @@ Deine Contao-Installation ist jetzt auf dem neuesten Stand.
 
 {{% notice note %}}
  Um Contao über die Kommandozeile aktualisieren zu können, muss Composer 
- [installiert](../install-contao/#install-composer) sein. 
+ [installiert](/de/installation/contao-installieren/#composer-installieren) sein. 
 {{% /notice %}}
 
 {{% notice note %}}
