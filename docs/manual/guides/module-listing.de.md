@@ -1,6 +1,6 @@
 ---
 title: "Modul Auflistung"
-description: "Eine Mitglieder Liste mit Kartendarstellung über das Modul Auflistung erstellen."
+description: "Eine Mitgliederliste mit Kartendarstellung über das Modul Auflistung erstellen."
 aliases:
   - /de/anleitungen/modul-auflistung/
 weight: 90
@@ -28,8 +28,8 @@ installieren. Mit Nutzung des Moduls »Auflistung« können wir dies u. a. ohne 
 
 ## Modultyp »Auflistung«
 
-Das Contao Frontend-Modul vom »Typ« [Auflistung](/de/layout/modulverwaltung/anwendungen/#auflistung) wird unterschätzt.
-Aus einer beliebigen Datenbanktabelle kannst du Datensätze abfragen die anschließend im Frontend über 
+Das Contao Frontend-Modul vom »Typ« [Auflistung](/de/layout/modulverwaltung/anwendungen/#auflistung) wird meist unterschätzt.
+Aus einer beliebigen Datenbanktabelle kannst du Datensätze abfragen, die anschließend im Frontend über 
 entsprechende [Template Dateien](/de/layout/templates/) ausgegeben werden können.
 
 Das Modul realisiert eine bequeme Eingabe einfacher SQL-Abfragen. Die Ergebnisse werden dann 
@@ -59,8 +59,8 @@ Mitgliedergruppen werden in der Datenbanktabelle `tl_member_group` geführt. Wir
 »Vorstand« hier mit einer »id« von »2« vorliegt. Die Referenz der Gruppenzugehörigkeit eines Mitglieds erfolgt 
 in der Tabelle `tl_member` über den Datensatz `groups`. 
 
-Möchtest du die Mitgliederliste auf alle «aktiven« Mitglieder beschränken die zur Gruppe »Vorstand« gehören kannst du 
-als Bedingung eintragen: `disable != 1 AND groups LIKE '%2%'`
+Möchtest du die Mitgliederliste auf alle »aktiven« Mitglieder beschränken die zur Gruppe »Vorstand« gehören kannst du 
+folgendes als Bedingung eintragen: `disable != 1 AND groups LIKE '%2%'`
 
 
 ### Template »list_default.html5«
@@ -114,13 +114,13 @@ neues Template »list_default_member.html5« und benutze dieses anschließend in
 
 {{% notice note %}}
 Einfachheitshalber haben wir rudimentäre CSS-Angaben hier direkt im Template eingetragen. 
-Alternativ könntest du diese auch als [CSS Asset](/de/layout/templates/assets/) hinterlegen.
+Alternativ könntest du diese auch als [CSS-Asset](/de/layout/templates/assets/) hinterlegen.
 {{% /notice %}}
 
 
-## Neues Feld für Geo-Koordinaten
+## Neues Feld für Geo-Koordinaten {#neues-feld-fuer-geo-koordinaten}
 
-Für die Kartendarstellung benötigen wir je Mitglied die entsprechenden Geo-Koodinaten der Adresse in Form von 
+Für die Kartendarstellung benötigen wir je Mitglied die entsprechenden Geo-Koordinaten der Adresse in Form von 
 Breitengrad und Längengrad. Sofern noch nicht vorhanden erstellst du dir in deinem Contao-Hauptverzeichnis ein neues 
 Verzeichns »contao/dca« mit einer Datei »tl_member.php«:
 
@@ -214,13 +214,13 @@ Die benötigten Voraussetzungen für eine Kartendarstellung liegen uns damit vor
 | **Felder**                 | firstname, lastname, email, postal, street, city, **myGeoData** |
 
 
-### JavaScript Framework »leaflet.js«
+### JavaScript-Framework »leaflet.js«
 
 Die Kartendarstellung erfolgt über [OpenStreetMap](https://www.openstreetmap.de/) und zur Erstellung der Karte benutzen 
-wir das JavaScript Framework [leaflet.js](https://leafletjs.com/). Über den 
+wir das JavaScript-Framework [leaflet.js](https://leafletjs.com/). Über den 
 [leaflet Download](https://github.com/Leaflet/Leaflet/tags) findest du im Anschluß in dem ZIP-Archiv (zur Zeit v.1.7.1) 
 das Verzeichnis »dist« mit den Dateien »leaflet.js«, »leaflet.css« und »images/marker-icon.png« vor. Basierend auf 
-»leaflet.js« erstellen wir uns eine JavaScript Datei `myMemberLeafletMap.js` mit folgendem Inhalt:
+»leaflet.js« erstellen wir uns eine JavaScript-Datei `myMemberLeafletMap.js` mit folgendem Inhalt:
 
 ```js
 // /files/myPathTo/myMemberLeafletMap.js
@@ -270,16 +270,16 @@ function createMemberMap(arrMemberData){
 }
 ```
 
-Die Verzeichnisangabe auf das Marker Symbol (s.: »myMarkerIconURL«) musst du entsprechend anpassen. Über `mapCssId` 
-wird die CSS-ID für den HTML-Container definiert. Die JavaScript Funktion erwatet als Argument ein Array mit den 
+Die Verzeichnisangabe auf das Marker Symbol (s. o.: »myMarkerIconURL«) musst du entsprechend anpassen. Über `mapCssId` 
+wird die CSS-ID für den HTML-Container definiert. Die JavaScript-Funktion erwatet als Argument ein Array mit den 
 entsprechenden Informationen. Diese werden einer Gruppe `memberGroup`, zusammen mit `OpenStreeMap` als Kartenanbieter, 
 zwecks Darstellung der Karte zugeordnet. Kopiere diese Dateien in ein öffentliches Verzeichnis deiner Contao 
 Installation unterhalb von »files«.
 
 {{% notice note %}}
 Du musst weiterhin jQuery im [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#jquery) 
-deines Themes aktivieren. Das Beispiel bezieht sich auf das Standard Leaflet Marker-Symbol »images/marker-icon.png«. 
-Wenn du hier ein anderes, eigenes Symbol nutzen möchtest, müssen die Angaben »iconSize«, »iconAnchor« u. »popupAnchor« 
+deines Themes aktivieren. Das Beispiel bezieht sich auf das Standard Leaflet-Marker-Symbol »images/marker-icon.png«. 
+Wenn du hier ein anderes, eigenes Symbol nutzen möchtest, müssen die Angaben »iconSize«, »iconAnchor« und »popupAnchor« 
 ebenfalls angepasst werden.
 {{% /notice %}}
 
@@ -347,10 +347,10 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 </div>
 ```
 
-Zunächst referenzieren wir die benötigten CSS- und JS Dateien (s. a.: 
-[CSS- UND JAVASCRIPT-ASSETS](/de/layout/templates/assets/)). Weiterhin definieren wir einen HTML-Container mit der CSS-ID
-`MYMEMBERMAP` zur Kartendarstellung. In der PHP Schleife erfassen wir über `tmpMemberMapData` u. a die benötigten 
-Koordinaten und erzeugen im Anschluß hierüber ein JavaScript Array zewcks Aufruf unserer Funktion `createMemberMap(arrMemberMapData)`.
+Zunächst referenzieren wir die benötigten CSS- und JS-Dateien (s. a.: 
+[CSS- und JavaScript-Assets](/de/layout/templates/assets/)). Weiterhin definieren wir einen HTML-Container mit der CSS-ID
+`MYMEMBERMAP` zur Kartendarstellung. In der PHP-Schleife erfassen wir über `tmpMemberMapData` u. a. die benötigten 
+Koordinaten und erzeugen im Anschluß hierüber ein JavaScript-Array zwecks Aufruf unserer Funktion `createMemberMap(arrMemberMapData)`.
 
 {{% notice note %}}
 Der HTML-Container zur Kartendarstellung benötigt zwingend eine CSS-Height Angabe. Wir haben diese einfachheitshalber 
@@ -369,7 +369,7 @@ Die Erstellung und Darstellung der Karte soll erst nach Bestätigung durch den A
 beispielsweise zunächst ein Bild der Karte zusammen mit entsprechenden Informationen anzeigen lassen. Nachdem der Anwender
 diese Einverständniserklärung bestätigt wird die eigentliche Kartendarstellung eingeleitet.
 
-Zunächst ergänzen wir hierzu in unserem Template den HTML-Container mit einer neuen CSS-KLasse »static» zusammen 
+Zunächst ergänzen wir hierzu in unserem Template den HTML-Container mit einer neuen CSS-Klasse »static» zusammen 
 mit entsprechenden CSS-Definitionen:
 
 ```html
@@ -399,7 +399,7 @@ mit entsprechenden CSS-Definitionen:
 ```
 
 Für unser Beispiel haben hier lediglich einen Farbwert angegeben. Hier könntest du dann z. B. ein Hintergrund Bild 
-einsetzen. Den bisherigen JavaScript Aufruf unserer Funktion ersetzen wir wie folgt:
+einsetzen. Den bisherigen JavaScript-Aufruf unserer Funktion ersetzen wir wie folgt:
 
 ```JS
 <script> 
@@ -441,11 +441,11 @@ des Browsers (Du könntest hierzu auch die
 
 ### Nützliche Leaflet Plugins
 
-Das Leaflet-Framework kann man mit [PlugIn's](https://leafletjs.com/plugins.html) erweitern. Hier eine kleine Auswahl:
+Das Leaflet-Framework kann man mit [Plugins](https://leafletjs.com/plugins.html) erweitern. Hier eine kleine Auswahl:
 
 - [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen): Erweitert die Karte mit einer FullScreen Ansicht.
-- [leaflet-grayscale](https://github.com/Zverik/leaflet-grayscale): Manche Kartenanbieter verfügen über SW/Graustufen 
-Tiles. Mit diesem PlugIn kann man bel. Karten in Graustufen anzeigen lassen.
+- [Leaflet.TileLayer.Grayscale](https://github.com/Zverik/leaflet-grayscale): Manche Kartenanbieter verfügen über SW/Graustufen 
+Tiles. Mit diesem Plugin kann man bel. Karten in Graustufen anzeigen lassen.
 - [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster): Bei zahlreichern Markern werden hierüber, 
 abhängig vom Zoom-Level, mehrere Marker übersichtlich zusammengefasst 
 und dargestellt.

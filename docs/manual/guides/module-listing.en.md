@@ -27,7 +27,7 @@ using the module »Listing« we can implement this without any extension.
 
 ## Module type »Listing«
 
-The Contao frontend module of the »type« [listing](/en/layout/module-management/applications/) is underestimated. 
+The Contao frontend module of the »type« [listing](/en/layout/module-management/applications/) is mostly underestimated. 
 From any database table you can retrieve records that can then be output to the frontend using 
 [template](/en/layout/templates/_index/) files.
 
@@ -125,15 +125,15 @@ with a file »tl_member.php«:
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 $GLOBALS['TL_DCA']['tl_member']['fields']['myGeoData'] = [
-    'label'       => ['Koordinaten der Adresse', 'Breiten- und Längengrad mit Komma getrennt.'],
+    'label'       => ['Coordinates of the address', 'Latitude and longitude separated by commas.'],
     'inputType'   => 'text', 
     'eval'        => ['tl_class' => 'w50'],
     'sql'         => ['type' => 'string', 'length' => 255, 'notnull' => false],
 ];
 
 PaletteManipulator::create()
-    ->addLegend('Geo-Koordinaten', 'address_legend', PaletteManipulator::POSITION_AFTER)
-    ->addField('myGeoData', 'Geo-Koordinaten', PaletteManipulator::POSITION_APPEND)
+    ->addLegend('Geo-Coordinates', 'address_legend', PaletteManipulator::POSITION_AFTER)
+    ->addField('myGeoData', 'Geo-Coordinates', PaletteManipulator::POSITION_APPEND)
     ->applyToPalette('default', 'tl_member')
 ;
 ```
@@ -174,15 +174,15 @@ integration instructions. After [installing](/en/installation/install-extensions
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 $GLOBALS['TL_DCA']['tl_member']['fields']['myGeoData'] = [
-    'label'       => ['Koordinaten der Adresse', 'Breiten- und Längengrad mit Komma getrennt.'],
+    'label'       => ['Coordinates of the address', 'Latitude and longitude separated by commas.'],
     'inputType'   => 'leaflet_geocode', 
     'eval'        => ['tl_class' => 'w50'],
     'sql'         => ['type' => 'string', 'length' => 255, 'notnull' => false],
 ];
 
 PaletteManipulator::create()
-    ->addLegend('Geo-Koordinaten', 'address_legend', PaletteManipulator::POSITION_AFTER)
-    ->addField('myGeoData', 'Geo-Koordinaten', PaletteManipulator::POSITION_APPEND)
+    ->addLegend('Geo-Coordinates', 'address_legend', PaletteManipulator::POSITION_AFTER)
+    ->addField('myGeoData', 'Geo-Coordinates', PaletteManipulator::POSITION_APPEND)
     ->applyToPalette('default', 'tl_member')
 ;
 ```
@@ -261,13 +261,13 @@ function createMemberMap(arrMemberData){
 ```
 
 You have to adjust the directory information on the marker symbol (see: »myMarkerIconURL«) accordingly. Via `mapCssId` 
-you define the CSS-ID for the HTML-container. The JavaScript function expects as argument an array with the corresponding 
+you define the CSS ID for the HTML container. The JavaScript function expects as argument an array with the corresponding 
 information. This information is assigned to a group `memberGroup`, together with `OpenStreeMap` as map provider, for 
 the purpose of displaying the map. Copy these files into a public directory of your Contao installation below »files«.
 
 {{% notice note %}}
 You still need to enable jQuery in the [page layout](/en/layout/theme-manager/manage-page-layouts/) of your theme. The 
-example refers to the standard leaflet marker icon »images/marker-icon.png«. If you want to use a different, own symbol 
+example refers to the standard leaflet marker icon »images/marker-icon.png«. If you want to use a different, individual symbol 
 here, the specifications »iconSize«, »iconAnchor« and »popupAnchor« must also be adapted.
 {{% /notice %}}
 
@@ -335,9 +335,9 @@ We supplement the existing template »list_default_member.html5« as follows:
 </div>
 ```
 
-First we reference the required CSS and JS files (see also: [CSS- AND JAVASCRIPT-ASSETS](/en/layout/templates/template-assets/)). 
-Furthermore we define a HTML container with the CSS-ID `MYMEMBERMAP` for map display. In the PHP loop we collect the 
-required coordinates via `tmpMemberMapData` and generate a JavaScript array zewcks call of our function `createMemberMap(arrMemberMapData)`.
+First we reference the required CSS and JS files (see also: [CSS and JavaScript asstes](/en/layout/templates/template-assets/)). 
+Furthermore we define a HTML container with the CSS ID `MYMEMBERMAP` for map display. In the PHP loop we collect the 
+required coordinates via `tmpMemberMapData` and generate a JavaScript array in order to call our function `createMemberMap(arrMemberMapData)`.
 
 {{% notice note %}}
 The HTML container for map display requires a CSS height specification. We have created this for simplicity's sake 
@@ -426,10 +426,10 @@ browser (you could also use the [sessionStorage](https://developer.mozilla.org/d
 
 ### Useful leaflet plugins
 
-The leaflet framework can be extended with [plug-ins](https://leafletjs.com/plugins.html). Here is a small selection:
+The leaflet framework can be extended with [plugins](https://leafletjs.com/plugins.html). Here is a small selection:
 
 - [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen): Expands the map with a fullscreen view.
-- [leaflet-grayscale](https://github.com/Zverik/leaflet-grayscale): Some map providers have SW/grayscale tiles. With 
-this PlugIn you can display bel. maps in greyscale.
+- [Leaflet.TileLayer.Grayscale](https://github.com/Zverik/leaflet-grayscale): Some map providers have SW/grayscale tiles. With 
+this Plugin you can display bel. maps in greyscale.
 - [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster): With numerous markers, depending on the 
 zoom level, several markers are clearly summarised and displayed.
