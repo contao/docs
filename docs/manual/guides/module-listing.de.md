@@ -196,7 +196,7 @@ PaletteManipulator::create()
 ```
 
 Anstelle unseres bisherigen Text Feldes ändern wir lediglich den »inputType« auf »leaflet_geocode« entsprechend der
-[GitHub Dokumentation](https://github.com/netzmacht/contao-leaflet-geocode-widget). Anschließend muss der Contao
+[GitHub-Dokumentation](https://github.com/netzmacht/contao-leaflet-geocode-widget). Anschließend muss der Contao
 »Anwendungs-Cache« aktualisiert (s. o.) werden.
 
 Auch wenn die Ermittlung der Geo-Koordinaten eines Mitglieds weiterhin nicht »automatisch« erfolgt, kannst du nun 
@@ -218,7 +218,7 @@ Die benötigten Voraussetzungen für eine Kartendarstellung liegen uns damit vor
 
 Die Kartendarstellung erfolgt über [OpenStreetMap](https://www.openstreetmap.de/) und zur Erstellung der Karte benutzen 
 wir das JavaScript-Framework [leaflet.js](https://leafletjs.com/). Über den 
-[leaflet Download](https://github.com/Leaflet/Leaflet/tags) findest du im Anschluß in dem ZIP-Archiv (zur Zeit v.1.7.1) 
+[leaflet Download](https://github.com/Leaflet/Leaflet/tags) findest du im Anschluß in dem ZIP-Archiv (zur Zeit Version 1.7.1) 
 das Verzeichnis »dist« mit den Dateien »leaflet.js«, »leaflet.css« und »images/marker-icon.png« vor. Basierend auf 
 »leaflet.js« erstellen wir uns eine JavaScript-Datei `myMemberLeafletMap.js` mit folgendem Inhalt:
 
@@ -363,7 +363,7 @@ ist bei der DSGVO oder ePrivacy zu beachten.
 {{% /notice %}}
 
 
-### Kartendarstellung nach Bestätigung
+### Kartendarstellung nach Bestätigung {#kartendarstellung-nach-bestaetigung}
 
 Die Erstellung und Darstellung der Karte soll erst nach Bestätigung durch den Anwender erfolgen. Hierbei könntest du
 beispielsweise zunächst ein Bild der Karte zusammen mit entsprechenden Informationen anzeigen lassen. Nachdem der Anwender
@@ -398,7 +398,7 @@ mit entsprechenden CSS-Definitionen:
 ...
 ```
 
-Für unser Beispiel haben hier lediglich einen Farbwert angegeben. Hier könntest du dann z. B. ein Hintergrund Bild 
+Für unser Beispiel haben wir lediglich einen Farbwert angegeben. Hier könntest du dann z. B. ein Hintergrund-Bild 
 einsetzen. Den bisherigen JavaScript-Aufruf unserer Funktion ersetzen wir wie folgt:
 
 ```JS
@@ -439,7 +439,7 @@ des Browsers (Du könntest hierzu auch die
 [sessionStorage](https://developer.mozilla.org/de/docs/Web/API/Window/sessionStorage) einsetzen). 
 
 
-### Nützliche Leaflet Plugins
+### Nützliche Leaflet Plugins {#nuetzliche-leaflet-plugins}
 
 Das Leaflet-Framework kann man mit [Plugins](https://leafletjs.com/plugins.html) erweitern. Hier eine kleine Auswahl:
 
