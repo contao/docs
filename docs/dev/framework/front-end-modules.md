@@ -275,5 +275,5 @@ $GLOBALS['TL_LANG']['FMD'][ExampleController::TYPE] = [
 [2]: /reference/dca/
 [3]: /reference/dca/palettes/
 [4]: /framework/templates/
-[5]: /caching/
+[5]: /framework/caching/
 [fragments]: /framework/caching/#caching-fragments
