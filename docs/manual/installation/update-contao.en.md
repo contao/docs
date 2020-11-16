@@ -240,7 +240,7 @@ be used in your `composer.json` file:
 You need a local Contao installation. In this installation, you install the Contao Manager and run the update like
 described in the section [Updating with the Contao Manager](#updating-with-the-contao-manager). 
 
-Before doing so, make sure that the Composer Resolver Cloud is not used! You do not need it, because you you can provide 
+Before doing so, make sure that the Composer Resolver Cloud is not used! You don't need it, because you can provide 
 your own server with enough memory and thus reduce the load of the resolver cloud.
 
 You can find the setting in the "System Check" in the "Server Configuration" section.
