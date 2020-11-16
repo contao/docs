@@ -207,6 +207,7 @@ Open the [Contao-Installtool](../contao-installtool/) and check if changes to yo
 make the suggested changes and then close the install tool.
 
 Instead of the Contao install tool, (with Contao 4.9 or later) you can use the command line and run the command 
+
 ```bash
 $ vendor/bin/contao-console contao:migrate
 ``` 
