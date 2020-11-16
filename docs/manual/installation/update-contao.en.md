@@ -41,7 +41,7 @@ when writing these lines is **version 4.10.4**.
 
 With version 2.11, the [release cycle of Contao](https://contao.org/de/release-plan.html) has been adjusted and 
 Long-Term Support (LTS) versions have been introduced that are supported and updated for 24 months, even if newer Contao 
-versions have been released in the meantime. An overview of all Contao versions is available on Wikipedia.
+versions have been released in the meantime. An overview of all Contao versions is available on [Wikipedia](https://en.wikipedia.org/wiki/Contao#Versions).
 
 
 ### Updating with the Contao Manager
