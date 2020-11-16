@@ -57,16 +57,19 @@ cd www
 
 ### Install Composer
 
-[Composer](https://de.wikipedia.org/wiki/Composer_(Paketverwaltung)) is an application-oriented package manager for the PHP programming language and installs dependencies.
+[Composer](https://de.wikipedia.org/wiki/Composer_(Paketverwaltung)) is an application-oriented package manager for the 
+PHP programming language and installs dependencies.
 
-To install Composer, please follow the instructions on the [Composer website and](https://getcomposer.org/download/) copy the commands from there, because the SHA hash used to verify the download changes with each version of Composer. At this point, the commands look like this.
+{{% notice note %}}
+You can either install Composer [locally](https://getcomposer.org/doc/00-intro.md#locally) 
+or [globally](https://getcomposer.org/doc/00-intro.md#globally). 
+ 
+If you install Composer locally, you will have a `composer.phar` file in your working directory (i.e. where your project's
+`composer.json` and `composer.lock` files are located). You would then call Composer with `php composer.phar`.
+ 
+If you install Composer globally, you can use the `composer` command in any directory. 
+{{% /notice %}}
 
-```bash
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-```
 
 
 ### Installing Contao from the command line

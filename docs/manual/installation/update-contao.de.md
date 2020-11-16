@@ -82,6 +82,11 @@ Deine Contao-Installation ist jetzt auf dem neuesten Stand.
 ### Aktualisierung über die Kommandozeile {#aktualisierung-ueber-die-kommandozeile}
 
 {{% notice note %}}
+ Um Contao über die Kommandozeile aktualisieren zu können, muss Composer 
+ [installiert](../install-contao/#install-composer) sein. 
+{{% /notice %}}
+
+{{% notice note %}}
 Vor der Aktualisierung von Contao empfehle ich dir ein Backup der `composer.json`, `composer.lock` sowie der Datenbank 
 anzulegen.
 {{% /notice %}}
@@ -93,19 +98,19 @@ fehlschlägt. In diesem Fall solltest du den [Contao Manager](##aktualisierung-m
 Du hast dich mit deinem Benutzernamen und deiner Domain auf deinem Server angemeldet.
 
 ```bash
-ssh benutzername@example.com
+$ ssh benutzername@example.com
 ```
 
 Wechsle dann auf der Konsole in das Verzeichnis deiner zu aktualisierenden Contao-Installation.
 
 ```bash
-cd www/example/
+$ cd www/example/
 ```
 
 Bei einer Aktualisierung für ein [Bugfix-Release](#bugfix-release) genügt es, folgendes Kommando abzusetzen.
 
 ```bash
-php composer.phar update
+$ composer update
 ```
 
 Bei einer Aktualisierung für ein [Minor-Release](#minor-release) muss die gewünschte Version des `contao/manager-bundle` 
@@ -125,7 +130,7 @@ in der `composer.json` eingetragen werden.
 Jetzt noch die Aktualisierung auf der Kommandozeile anstoßen.
 
 ```bash
-php composer.phar update
+$ composer update
 ```
 
 
@@ -161,7 +166,7 @@ Was benötigst du auf deinem Computer?
 
 - ein beliebiges Verzeichnis, in dem du arbeitest (dein Arbeitsverzeichnis)
 - PHP, idealerweise in der gleichen Version, wie sie auf deinem Hosting verwendet wird.  
-- Composer (wir gehen hier davon aus, dass du Composer in deinem Arbeitsverzeichnis installierst)
+- Composer (wir gehen hier davon aus, dass du Composer global [installierst](../contao-installieren/#composer-installieren)
 - Kopien der `composer.json` und `composer.lock` der Contao-Installation bei deinem Hoster
 
 Was benötigst du _nicht_?
@@ -179,7 +184,7 @@ Im Wesentlichen machst du dann das Gleiche, wie oben unter
 Öffne ein Terminal und wechsle in das Arbeitsverzeichnis. Führe dort
 
 ```bash
-php composer.phar update
+$ composer update
 ```
 
 aus. Nach dem erfolgreichen Abschluss der Aktualisierung kopierst du die aktualisierte `composer.lock`
@@ -189,13 +194,13 @@ auf deinem Hosting.
 Danach meldest du dich entweder per `ssh` auf deinem Server (Hosting) an
 
 ```bash
-ssh benutzername@example.com
+$ ssh benutzername@example.com
 ```
 
 und lässt Composer die aktualisierten Pakete installieren
 
 ```bash
-php composer.phar install
+$ composer install
 ```
 
 oder du verwendest den Contao Manager. Dort wählst du unter »Systemwartung« den Punkt »Composer-Abhängigkeiten«, »Installer 
