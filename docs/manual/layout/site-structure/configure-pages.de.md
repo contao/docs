@@ -336,14 +336,16 @@ konfigurieren.
 Navigationsmodulen verwendet wird. Auf diese Weise kannst du CSS-Formatierungen für eine spezielle Seite oder einen 
 bestimmten Menüpunkt erstellen.
 
-**In der Sitemap zeigen:** Auf Wunsch legt Contao pro Webseite eine XML-Sitemap an, die du z. B. bei Google einreichen 
-kannst ([XML-Sitemap](#xml-sitemap)). Standardmäßig sind darin alle öffentlichen und nicht im Menü 
-versteckten Seiten enthalten. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
+**In der HTML-Sitemap zeigen:** Hier kannst du festlegen, ob die Seite in der HTML-Sitemap angezeigt wird. Standardmäßig sind darin alle öffentlichen und nicht im Menü versteckten Seiten enthalten. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
 
 - **Standard:** Die Standard-Einstellungen verwenden.
-- **Immer anzeigen:** Die Seite wird immer in der XML-Sitemap angezeigt, auch wenn sie z. B. im Menü versteckt ist und 
+- **Immer anzeigen:** Die Seite wird immer in der HTML-Sitemap angezeigt, auch wenn sie z. B. im Menü versteckt ist und 
 somit normalerweise nicht angezeigt würde.
-- **Nie anzeigen:** Die Seite ist von der XML-Sitemap ausgenommen.
+- **Nie anzeigen:** Die Seite ist von der HTML-Sitemap ausgenommen.
+
+{{% notice info %}}
+Verwechsle nicht die HTML-Sitemap mit der [XML-Sitemap](#xml-sitemap): Die HTML-Sitemap ist ein FE-Modul, die XML-Sitemap kannst du z.B. bei Google einreichen.
+{{% /notice %}}
 
 **Im Menü verstecken:** Wenn du diese Option auswählst, wird die Seite nicht im Menü deiner Webseite angezeigt. 
 Du kannst die Seite – sofern sie veröffentlicht wurde – aber trotzdem über einen direkten Link oder in einem 
@@ -386,6 +388,8 @@ Webseiten gefordert.
 Contao erstellt bei Bedarf automatisch eine XML-Sitemap aus der Seitenstruktur der Webseite, die 
 [Google](https://support.google.com/webmasters/answer/156184?visit_id=636994052832330821-1485667470&rd=2&ref_topic=4581190) 
 lesen und auswerten kann. Um die Sitemap bei Google anzumelden, benötigst du einen Google-Account.
+
+Welche Seiten in die XML-Sitemap aufgenommen werden, kannst du über das Robots-Tag in den [Metadaten](#metadaten) steuern.
 
 **Eine XML-Sitemap erstellen:** Hier aktivierst du die Erstellung der XML-Sitemap.
 
