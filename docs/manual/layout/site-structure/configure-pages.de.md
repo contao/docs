@@ -344,7 +344,7 @@ somit normalerweise nicht angezeigt würde.
 - **Nie anzeigen:** Die Seite ist von der HTML-Sitemap ausgenommen.
 
 {{% notice info %}}
-Verwechsle nicht die HTML-Sitemap mit der [XML-Sitemap](#xml-sitemap): Die HTML-Sitemap ist ein FE-Modul, die XML-Sitemap kannst du z.B. bei Google einreichen.
+Verwechsle nicht die HTML-Sitemap mit der [XML-Sitemap](#xml-sitemap): Die HTML-Sitemap ist ein FE-Modul, die XML-Sitemap kannst du z. B. bei Google einreichen.
 {{% /notice %}}
 
 **Im Menü verstecken:** Wenn du diese Option auswählst, wird die Seite nicht im Menü deiner Webseite angezeigt. 
