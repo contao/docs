@@ -180,7 +180,7 @@ Der Wert für »password« muss hierbei verschlüsselt eingetragen werden. Über
 könntest du z. B. den notwendigen Hash-Wert generieren. Alternativ dazu, kann man den Hash-Wert auch mit dem folgenden Konsolenaufruf
 in seiner eigenen Contao-Installation erstellen:
 
-```php vendor/bin/contao-console security:encode-password 'my_1._pA~~w0rd'```
+<code>php vendor/bin/contao-console security:encode-password 'my_1._pA~~w0rd'</code>
 {{% /notice %}}
 
 
