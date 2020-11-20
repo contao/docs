@@ -152,6 +152,15 @@ Siehst du trotz des Löschens der Datei <code>users.json</code> die Loginmaske f
 Cookies der Domain oder öffne die Seite zum Contao Manager im »Inkognito-Modus« deines Browsers.
 
 
+### Der Contao Manager hat sich »aufgehangen«
+
+Sollte es vorkommen, dass der Contao Manager nicht mehr reagiert, das Fenster der Konsolenausgabe sich nicht schließen lässt
+oder nach einem Reload der Manager-Seite man immer wieder zur selben Ausgabe kommt, lösche im Verzeichnis <code>contao-manager</code>
+die Datei <code>task.json</code>.
+
+Anschließend sollte der Contao Manager wieder laufen.
+
+
 ### Kann ich dem Contao Manager ein weiteres Benutzerkonto hinzufügen? {#kann-ich-dem-contao-manager-ein-weiteres-benutzerkonto-hinzufuegen}
 
 Ja, dazu musst du im Verzeichnis <code>contao-manager</code> die Datei <code>users.json</code> bearbeiten und ein 
