@@ -456,3 +456,12 @@ option {
     margin: 0 0 0 0;
     border-top: 1px solid rgba(218, 218, 218, 1);
 }
+
+/* CSS for "version-tag" shortcoden */
+.version-tag {
+    display: inline-block;
+    padding: 2px 7px 2px 7px;
+    background-color: #6AB0DE;
+    font-size: 14px;
+    color: white;
+}

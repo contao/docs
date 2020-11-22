@@ -100,21 +100,15 @@ auf `https://` geändert werden. Andernfalls könnte eine unendliche Weiterleitu
 Hosting Umgebung automatisch von `http://` auf `https://` weiterleitet.
 {{% /notice %}}
 
-{{< version "4.10" >}}
-
-**URL-Präfix:** Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
+{{< version-tag "4.10" >}} **URL-Präfix:** Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
 zugewiesen werden. Diese Einstellung ist ab Contao **4.10** verfügbar, davor gab es nur über die
 `contao.prepend_locale` Einstellung die Möglichkeit einen über die Sprache definierten Präfix zu verwenden. Nun ist dieser
 Präfix frei wählbar und damit unabhängig von der jeweils eingestellten Sprache.
 
-{{< version "4.10" >}}
-
-**URL-Suffix:** Mit dieser Einstellung kann der »URL-Suffix« geändert oder entfernt werden. Der URL-Suffix wird bei der
+{{< version-tag "4.10" >}} **URL-Suffix:** Mit dieser Einstellung kann der »URL-Suffix« geändert oder entfernt werden. Der URL-Suffix wird bei der
 Generierung der URL einer Seite an den Seitenalias angehängt.
 
-{{< version "4.5" >}}
-
-**Gültige Alias-Zeichen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
+{{< version-tag "4.5" >}} **Gültige Alias-Zeichen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
 Aliase auszuwählen.
 
 | Alias-Einstellungen                  | Erklärung                                                            |
@@ -131,9 +125,7 @@ zu »ueber« jedoch ein Finnisches »eläinkö« zu »elainko« konvertiert.
 Diese Einstellung befindet sich in Contao **4.5** bis **4.9** in der Sektion _Alias-Einstellungen_.
 {{% /notice %}}
 
-{{< version "4.10" >}}
-
-**Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
+{{< version-tag "4.10" >}} **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
 Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
 »Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
 
@@ -186,9 +178,7 @@ deutschen Besuchern aufgerufen werden! Auch die Robots der Suchmaschinen, die de
 der Regel Englisch und wären ohne Sprachen-Fallback ebenfalls ausgeschlossen. Deine Seiten würden dann trotz 
 sorgfältiger Optimierung niemals bei Google auftauchen.
 
-{{< version "4.10" >}}
-
-**Sprachweiterleitung deaktivieren:** Bei mehrsprachigen Seiten der selben Domain leitet Contao beim Aufruf der Domain
+{{< version-tag "4.10" >}} **Sprachweiterleitung deaktivieren:** Bei mehrsprachigen Seiten der selben Domain leitet Contao beim Aufruf der Domain
 automatisch auf den zur Browser-Sprache passenden Startpunkt weiter (andernfalls zur Fallback-Sprache). Mit dieser Einstellung
 kann dieses Verhalten beeinflusst und die automatische Weiterleitung zu bestimmten (oder allen) Sprachen deaktiviert
 werden.
@@ -235,9 +225,7 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 | g:i      | 12 Stunden ohne führende Nullen sowie Minuten, z. B. `8:36`   |
 
 
-{{< version "4.8" >}}
-
-**Zwei-Faktor-Authentifizierung:** Hier kannst du die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
+{{< version-tag "4.8" >}} **Zwei-Faktor-Authentifizierung:** Hier kannst du die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
 erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die 
 Zwei-Faktor-Authentifizierung einrichten.
 
@@ -274,9 +262,7 @@ Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertra
 versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz 
 zugewiesener Verfallszeit nicht im Cache auftauchen.
 
-{{< version "4.8" >}}
-
-**Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn 
+{{< version-tag "4.8" >}} **Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn 
 ein Mitglied angemeldet ist. Beachte, dass du in diesem Fall die Seite für eingeloggte Mitglieder nicht mehr 
 personalisieren kannst.
 
@@ -361,9 +347,7 @@ ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber h
 der Webseite ausgeblendet, sobald sich ein Mitglied angemeldet hat. Dies ist z. B. für die Seiten »Anmeldung« und 
 »Registrierung« sinnvoll.
 
-{{< version "4.5" >}}
-
-**Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die Fehlerseite 404 gezeigt, wenn die 
+{{< version-tag "4.5" >}} **Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die Fehlerseite 404 gezeigt, wenn die 
 URL kein Alias zu einem Element enthält.
 
 
