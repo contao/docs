@@ -7,7 +7,17 @@ description: "Implementing Contao page types as controllers."
 
 Starting with Contao **4.10** you can implement so called _Page Controllers_. These
 are special page types implemented as controllers in order to handle the request
-to the route of a specific page type within the Contao site structure.
+to the route of a specific page type within the Contao site structure. Page controllers 
+combine the ability to define a page in Contao's site structure while still having 
+full control over the routing and route attributes like with [regular controllers][RoutingInContao].
+
+For example, imagine you need to provide an RSS feed or other structured feed for
+entries of your own DCA. This RSS feed could be implemented as controller with its
+own route. By implementing it as a page controller, you might allow the administrator
+or editor of a site to freely define the route (i.e. alias) of the page, plus additional
+configuration settings from within the back end of Contao. Even the suffix can be
+freely defined, so you might have a list of your database records under `https://example.com/foobar/records.html`,
+while the RSS feed is defined to have a route like `https://example.com/foobar/records.xml`.
 
 
 ## Registering Page Controllers
@@ -192,5 +202,41 @@ end, then you need to enable this property on your page controller:
  */
 ```
 
+In Contao **4.10** there is no abstraction yet in place for you to render such content
+easily. You _can_ use the `PageRegular` class of the legacy framework of Contao
+to render the page layout as defined in the page structure (in addition to processing 
+your own logic):
+
+```php
+// src/Controller/Page/ExamplePageController.php
+namespace App\Controller\Page;
+
+use Contao\CoreBundle\ServiceAnnotation\Page;
+use Contao\PageModel;
+use Contao\PageRegular;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @Page(contentComposition=true)
+ */
+class ExamplePageController
+{
+    public function __invoke(PageModel $pageModel): Response
+    {
+        // The legacy framework relies on the global $objPage variable
+        global $objPage;
+        $objPage = $pageModel;
+
+        // Render the page using the PageRegular handler from the legacy framework
+        return (new PageRegular())->getResponse($pageModel, true);
+    }
+}
+```
+
+However, upcoming feature versions of Contao will likely provide better abstraction
+for this task.
+
+
 
 [SymfonyRouting]: https://symfony.com/doc/current/routing.html
+[RoutingInContao]: /framework/routing/
