@@ -76,6 +76,12 @@ The alias will be the "route" of this controller. When accessing
 `https://example.com/route/to/example/page/controller` in the front end, you should
 see the `Hello World!` response.
 
+{{% notice tip %}}
+You might want to implement pages that should only exist once within a website (see
+Contao's 401, 403 and 404 error pages for example). Use the [`FilterPageTypeEvent`](/reference/events/#filterpagetypeevent)
+to dynamically limit which pages are available for selection in the back end.
+{{% /notice %}}
+
 
 ## Parameters
 
@@ -240,3 +246,4 @@ for this task.
 
 [SymfonyRouting]: https://symfony.com/doc/current/routing.html
 [RoutingInContao]: /framework/routing/
+[FilterPageTypeEvent]: /reference/events/#filterpagetypeevent
