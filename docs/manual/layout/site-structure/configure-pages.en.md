@@ -77,21 +77,15 @@ If you use an SSL certificate for your domain then you _must_ change this settin
 redirects from `http://` to `https://`.
 {{% /notice %}}
 
-{{< version "4.10" >}}
-
-**URL prefix:** With this setting you can add an optional URL prefix to all page aliases under this website root. As mentioned
+{{< version-tag "4.10" >}} **URL prefix:** With this setting you can add an optional URL prefix to all page aliases under this website root. As mentioned
 above this setting is only available since Contao **4.10**. Previously you could only influence the prefix through the
 `contao.prepend_locale` setting, which would automatically prepend the website root's language to the URL. Now this prefix
 can be freely configured, independent of the respective language.
 
-{{< version "4.10" >}}
-
-**URL suffix:** This setting allows you to change or remove the "URL suffix". This suffix will be appended to the alias
+{{< version-tag "4.10" >}} **URL suffix:** This setting allows you to change or remove the "URL suffix". This suffix will be appended to the alias
 when generating the URL of a page.
 
-{{< version "4.5" >}}
-
-**Alias settings:** The slug generator allows you to select an individual character set for automatically generated aliases.
+{{< version-tag "4.5" >}} **Alias settings:** The slug generator allows you to select an individual character set for automatically generated aliases.
 
 | Alias Settings | Declaration |
 | -------------- | ----------- |
@@ -107,9 +101,7 @@ would be converted to "ueber" while the finish word "eläinkö" would be convert
 This setting is located within the section _Alias settings_ in Contao **4.5** through **4.9**.
 {{% /notice %}}
 
-{{< version "4.10" >}}
-
-**Enable folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in 
+{{< version-tag "4.10" >}} **Enable folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in 
 the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias 
 `docs/install/download.html` instead of just `download.html`.
 
@@ -152,9 +144,7 @@ To avoid this, you can define a certain website root as a fallback, which freely
 
 So make sure to always define a website root as the language fallback. Otherwise your website can only be accessed by German visitors! Also the robots of the search engines that index your website usually speak English and would also be excluded without a language fallback. Your pages would then never appear on Google despite careful optimization.
 
-{{< version "4.10" >}}
-
-**Disable language redirect:** When using a website with multiple languages within the same Domain then Contao will automatically
+{{< version-tag "4.10" >}} **Disable language redirect:** When using a website with multiple languages within the same Domain then Contao will automatically
 redirect to the website root of the browser's language (or the fallback language otherwise) whenever the domain is requested
 without any other parameters. You can exclude certin (or all) website roots from this automatic redirect through this setting.
 
@@ -187,9 +177,7 @@ Here are some examples of valid dates and times:
 | H:i:s | 24 hours, minutes and seconds, for example `20:36:59` |
 | g:i | 12 hours without leading zeros and minutes, for example `8:36` |
 
-{{< version "4.8" >}}
-
-**Enforce two-factor authentication:** Here you can enforce two-factor authentication for all members (frontend). Select a page that visitors will be redirected to when they set up the two-factor authentication.
+{{< version-tag "4.8" >}} **Enforce two-factor authentication:** Here you can enforce two-factor authentication for all members (frontend). Select a page that visitors will be redirected to when they set up the two-factor authentication.
 
 
 ### XML Sitemap
@@ -221,9 +209,7 @@ In the cache settings you can define if and how long a page should be cached. Ca
 
 Note that for security reasons, pages are only cached if they are not protected and no user is logged on to the backend. Otherwise, there is a risk that confidential data is written to the cache and accidentally displayed in the frontend. So don't be surprised if your password-protected pages don't show up in the cache despite their assigned expiration time.
 
-{{< version "4.8" >}}
-
-**Always load from shared cache:** Always load this page from the shared cache, even if a member is logged in. Note that in this case you will not be able to personalize the page for logged in members.
+{{< version-tag "4.8" >}} **Always load from shared cache:** Always load this page from the shared cache, even if a member is logged in. Note that in this case you will not be able to personalize the page for logged in members.
 
 ## Access rights
 
@@ -275,9 +261,7 @@ Contao indexes the finished pages of your website and creates a search index tha
 
 **Show only guests:** If you select this option, the link to the page will be automatically hidden from the navigation menu of the website once a member has logged in. This is useful for the Login and Registration pages, for example.
 
-{{< version "4.5" >}}
-
-**Element required:** If you select this option, this page will show error page 404 if the URL does not contain an alias for an element.
+{{< version-tag "4.5" >}} **Element required:** If you select this option, this page will show error page 404 if the URL does not contain an alias for an element.
 
 ## Keyboard navigation
 
