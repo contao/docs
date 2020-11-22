@@ -178,8 +178,11 @@ weiteres Benutzerkonto hinzufügen. In unserem Fall ist das <code>h.lewis</code>
 {{% notice info %}}
 Der Wert für »password« muss hierbei verschlüsselt eingetragen werden. Über [bcrypt-generator.com](https://bcrypt-generator.com/)
 könntest du z. B. den notwendigen Hash-Wert generieren. Alternativ dazu, kann man den Hash-Wert auch mit dem folgenden Konsolenaufruf
-in seiner eigenen Contao-Installation erstellen:<br>
-<code>php vendor/bin/contao-console security:encode-password 'my_1._pA~~w0rd'</code>
+in seiner eigenen Contao-Installation erstellen:
+
+```bash
+php vendor/bin/contao-console security:encode-password 'my_1._pA~~w0rd'
+```
 {{% /notice %}}
 
 
