@@ -42,7 +42,7 @@ use Twig\Environment as TwigEnvironment;
 /**
  * @Route("/contao/my-backend-route",
  *     name=BackendController::class,
- *     defaults={"_scope" = "backend"}
+ *     defaults={"_scope": "backend"}
  * )
  */
 class BackendController extends AbstractController
