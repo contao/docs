@@ -192,15 +192,6 @@ Here are some examples of valid dates and times:
 **Enforce two-factor authentication:** Here you can enforce two-factor authentication for all members (frontend). Select a page that visitors will be redirected to when they set up the two-factor authentication.
 
 
-### XML Sitemap
-
-Contao automatically creates an XML sitemap from the page structure of the website that can be read and analyzed by Google. To submit the sitemap URL to Google you need a Google account.
-
-**Create an XML Sitemap:** Here you activate the creation of the XML Sitemap.
-
-**Sitemap file name:** Enter the name of the Sitemap file here without the file extension `.xml`. Contao will automatically add the file extension when saving the file.
-
-
 ## Layout settings
 
 A page layout is a prerequisite for Contao to be able to display a page in the frontend at all. If no page layout has been assigned or inherited, Contao will show an error saying "No layout specified" in the front end.
@@ -261,11 +252,15 @@ There may be pages within your site structure that are available in the frontend
 
 **CSS class:** Here you assign a CSS class to the page, which is used in the body tag of the HTML page as well as in the navigation modules. This way you can create CSS formatting for a specific page or menu item.
 
-**Show in the sitemap:** If desired, Contao creates an XML sitemap for each website that you can submit to Google[ (XML sitemap](#xml-sitemap)). By default, this includes all public pages and not those hidden in the menu. You can change this behavior per page if needed:
+**Show in HTML sitemap:** Here you can determine whether the page is displayed in the HTML Sitemap. By default, all public pages and pages not hidden in the menu are included. If necessary, this behavior can be adjusted per page:
 
 - **Default:** Use the default settings.
-- **Always display:** The page is always displayed in the XML Sitemap, even if, for example, it is hidden in the menu and would not normally be displayed.
-- **Never display:** The page is excluded from the XML Sitemap.
+- **Always display:** The page is always displayed in the HTML Sitemap, even if, for example, it is hidden in the menu and would not normally be displayed.
+- **Never display:** The page is excluded from the HTML Sitemap.
+
+{{% notice info %}}
+Do not confuse the HTML sitemap with the [XML sitemap](#xml-sitemap): The HTML sitemap is a FE-Module, you can submit the XML sitemap e.g. to Google.
+{{% /notice %}}
 
 **Hide in menu:** If you select this option, the page will not be displayed in the menu of your website, but you can still access the page - if it has been published - via a direct link or in a frontend module.
 
@@ -286,6 +281,17 @@ From section [Backend shortcuts](/de/administrationsbereich/backend-tastaturkuer
 **Tab Index:** By default, you can use the Tab key to jump from top to bottom through the navigation menu. However, you can specify an individual order by assigning a number between 1 and 32,767 to each page, and the tab will then follow your sorting in ascending order instead of the default order.
 
 **Shortcut keys:** A shortcut key is a single character associated with a page. Visitors to your site can then access that page directly from the keyboard. This function is especially required for accessible websites.
+
+
+### XML Sitemap
+
+Contao automatically creates an XML sitemap from the page structure of the website that can be read and analyzed by Google. To submit the sitemap URL to Google you need a Google account.
+
+Which pages are included in the XML sitemap can be controlled by the Robots tag in the [Metadata](#metadata).
+
+**Create an XML Sitemap:** Here you activate the creation of the XML Sitemap.
+
+**Sitemap file name:** Enter the name of the Sitemap file here without the file extension `.xml`. Contao will automatically add the file extension when saving the file.
 
 
 ## Redirecting
