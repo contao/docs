@@ -137,8 +137,11 @@ Yes, you have to edit the file `users.json` in the directory `contao-manager` an
 {{% notice info %}}
 The value for "password" must be entered encrypted. You can use services like [bcrypt-generator.com](https://bcrypt-generator.com/)
 for example in order to generate the necessary hashed value. Alternatively, you can generate the hash value with the following console call
-in your own Contao installation:<br>
-<code>php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'</code>
+in your own Contao installation:
+
+```bash
+php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'
+```
 {{% /notice %}}
 
 
