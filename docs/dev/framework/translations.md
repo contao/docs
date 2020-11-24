@@ -69,7 +69,7 @@ of a _category_ and a _key_.
 
 In the end, Contao's translations will actually be stored in the `$GLOBALS['TL_LANG']`
 array within PHP. So for example the translation for the _Go back_ link in the front
-end will defined within the `default` domain of the English (`en`) language and 
+end will be defined within the `default` domain of the English (`en`) language and 
 then resides in
 
 ```php
