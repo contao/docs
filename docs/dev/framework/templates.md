@@ -96,8 +96,8 @@ Contao also provides default base templates for content elements and modules, ca
 `block_searchable` and `block_unsearchable`. These templates provide a basic wrapper
 for your element or module, including attributes for CSS classes and IDs as well
 as other attributes, if defined. It also automatically displays a headline and provides
-a inheritance block for the headline section and the content section. This is the
-content of the `block_serachable` template for example:
+an inheritance block for the headline section and the content section. This is the
+content of the `block_searchable` template for example:
 
 ```html
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
@@ -119,7 +119,7 @@ wrapped with `<!-- indexer::stop -->` and `<!-- indexer::continue -->`, meaning
 its contents will not be indexed by Contao's [search indexer][ContaoSearch].
 
 Most of the templates for Contao's content elements and front end modules extend
-from these templates. This is the content of the the newslist module's template
+from these templates. This is the content of the newslist module's template
 `mod_newslist` for example:
 
 ```html
