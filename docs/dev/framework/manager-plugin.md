@@ -412,7 +412,7 @@ class Plugin implements ExtensionPluginInterface
 
 You can now inject the service `@monolog.logger.api` wherever you need it.
 In case you are using autowiring and the MonologBundle is installed in at least version  3.5, you can also
-autowire by specifing the correct variable name in the constructor as also [documented in Symfony](https://symfony.com/doc/current/logging/channels_handlers.html#how-to-autowire-logger-channels):
+autowire by specifying the correct variable name in the constructor as also [documented in Symfony](https://symfony.com/doc/current/logging/channels_handlers.html#how-to-autowire-logger-channels):
 
 ```diff
 -     public function __construct(LoggerInterface $logger)
