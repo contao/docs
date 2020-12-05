@@ -1,22 +1,19 @@
 ---
-title: 'User (Backend)'
+title: 'Users'
+menuTitle: 'Users (back end)'
 description: 'Up to now we have worked exclusively as an administrator, who has access to all areas and elements of the system.'
 aliases:
     - /en/user-management/users/
 weight: 10
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
 Up to now we have worked exclusively as an administrator who has access to all areas and elements of the system. However, a user will usually only be given access to the resources that he or she actually needs for a specific task.
 
-![The backend from the user's perspective](/de/user-management/images/de/das-backend-aus-sicht-des-benutzers.png?classes=shadow)
+![The back end from the user's perspective](/de/user-management/images/en/the-back-end-from-the-perspective-of-a-user.png?classes=shadow)
 
-Normal users, unlike administrators, have no rights at all by default and are only allowed to do what you explicitly allow them to do. The very comprehensive rights management in Contao allows you as an administrator to not only restrict access to certain backend modules, but also to disable every single input field if necessary.
+Normal users, unlike administrators, have no rights at all by default and are only allowed to do what you explicitly allow them to do. The very comprehensive rights management in Contao allows you as an administrator to not only restrict access to certain back end modules, but also to disable every single input field if necessary.
 
-![Activate individual input fields](/de/user-management/images/de/einzelne-eingabefelder-freischalten.png?classes=shadow)
+![Activate individual input fields](/de/user-management/images/en/activate-individual-input-fields.png?classes=shadow)
 
 ## User groups
 
@@ -24,9 +21,9 @@ Each user can be a member of several user groups and automatically inherits all 
 
 ### Allowed modules
 
-The backend navigation is created dynamically based on user rights, but backend modules that have not been released do not appear in the backend navigation for reasons of clarity. Access to the theme modules can be controlled separately.
+The back end navigation is created dynamically based on user rights, but back end modules that have not been unlocked do not appear in the back end navigation for reasons of clarity. Access to the theme modules can be controlled separately.
 
-**Backend modules:** This is where you define access to the backend modules.
+**Backend modules:** This is where you define access to the back end modules.
 
 **Theme modules:** Here you define access to the sub-modules of the Theme Manager.
 
@@ -42,90 +39,90 @@ Mounting a file system so that a user can access it is called "mounting" on the 
 
 Similar to the pagemount, which determines the entry point into the page structure, the filemount determines the entry point into the file system. The user cannot access folders outside the filemount.
 
-![Filemounts of the user](/de/user-management/images/de/filemounts-des-benutzers.png?classes=shadow)
+![Filemounts of the user](/de/user-management/images/en/filemounts-of-the-user.png?classes=shadow)
 
 The user only sees the folders `files/public/media/content-images`, `files/public/media/documents` and `files/public/media/slider` any subfolders they may contain. All other directories, which are on the same or a higher level, are not displayed
 
-![The file management from the user's point of view](/de/user-management/images/de/die-dateiverwaltung-aus-sicht-des-benutzers.png?classes=shadow)
+![The file management from the user's point of view](/de/user-management/images/en/filemanager-from-the-perspective-of-a-user.png?classes=shadow)
 
-**filemounts:** Here you select the filemounts of the group.
+**Filemounts:** Here you select the filemounts of the group.
 
-**Allowed file operations:** Being able to see a directory and the files it contains does not mean that a user is allowed to edit them. You can specify what is possible with the mounted resources here.
+**File operation permissions:** Being able to see a directory and the files it contains does not mean that a user is allowed to edit them. You can specify what is possible with the mounted resources here.
 
 | Operation | Explanation |
 | --------- | ----------- |
-| Upload files to the server | The user may transfer certain files to the server via the file management (upload). You can define the allowed files in the backend settings. |
-| Edit, copy, and move files and directories | The user may rename, duplicate and move files and directories. |
-| Delete single files and empty directories | The user may delete individual files and empty directories (not recursively). |
-| Delete directories including all files and subfolders (!) | The user can delete files and directories recursively, i.e. including all the sub-folders and files they contain. |
-| Edit files in the source code editor | The user is allowed to edit the content of certain files with the source code editor directly on the server. You can define the allowed files in the backend settings. |
+| Upload files to the server | The user may transfer certain files to the server via the file management (upload). You can define the allowed files in the back end settings. |
+| Edit, copy or move files and folders | The user may rename, duplicate and move files and directories. |
+| Delete single files and empty folders | The user may delete individual files and empty directories (not recursively). |
+| Delete folders including all files and subfolders (!) | The user can delete files and directories recursively, i.e. including all the sub-folders and files they contain. |
+| Edit files in the source editor | The user is allowed to edit the content of certain files with the source code editor directly on the server. You can define the allowed files in the back end settings. |
 | Synchronize the file system with the database | The user can synchronize the file system with the database. |
 
 ### Image sizes
 
-In this point you can restrict access to the different image sizes.
+Here you can restrict access to the different image sizes.
 
-### Form rights
+### Form permissions
 
 [Form Generator](/en/form-generator/)
 
 **Allowed forms:** Here you define which forms the members of the user group can access.
 
-**Form rights:** Here you define whether the members of the user group can create new forms or delete existing ones.
+**Form permissions:** Here you define whether the members of the user group can create new forms or delete existing ones.
 
-### FAQ rights
+### FAQ permissions
 
 [FAQ extension](/en/core-extensions/faq/)
 
 **Allowed FAQ categories:** Here you define which FAQ categories the members of the usergroup are allowed to access.
 
-**FAQ category rights:** Here you define whether the members of the user group can create new categories or delete existing ones.
+**FAQ category permissions:** Here you define whether the members of the user group can create new categories or delete existing ones.
 
-### Archive rights
+### News permissions
 
 [News/Blog extension](/en/core-extensions/news/)
 
 **Allowed archives:** Here you define which news/blog archives the members of the user group are allowed to access.
 
-**Archive rights**: Here you can define whether the members of the user group can create new news/blog archives or delete existing ones.
+**News permissions**: Here you can define whether the members of the user group can create new news/blog archives or delete existing ones.
 
-**Allowed RSS feeds:** Here you define which RSS feeds the members of the user group are allowed to access.
+**Allowed news feeds:** Here you define which RSS feeds the members of the user group are allowed to access.
 
-**RSS feed rights:** Here you define whether the members of the user group may create new RSS feeds or delete existing ones.
+**News feed permissions:** Here you define whether the members of the user group may create new RSS feeds or delete existing ones.
 
-### Newsletter rights
-
-[Newsletter extension](/en/core-extensions/newsletter/)
-
-**Permitted distributors:** Here you define which distribution lists the members of the user group are allowed to access.
-
-**Distribution rights:** Here you can define whether the members of the user group can create new distribution lists or delete existing ones.
-
-### Event rights
+### Events permissions
 
 [Calendar extension](/en/core-extensions/calendar/)
 
 **Allowed calendars:** Here you define which calendars the members of the user group are allowed to access.
 
-**Calendar rights:** Here you define whether the members of the user group are allowed to create new calendars or delete existing ones.
+**Calendar permissions:** Here you define whether the members of the user group are allowed to create new calendars or delete existing ones.
 
-**Allowed RSS feeds:** Here you can define which RSS feeds the members of the user group can access.
+**Allowed calendar feeds:** Here you can define which RSS feeds the members of the user group can access.
 
-**RSS feed rights:** Here you define whether the members of the user group are allowed to create new RSS feeds or delete existing ones.
+**Calendar feed permissions:** Here you define whether the members of the user group are allowed to create new RSS feeds or delete existing ones.
+
+### Newsletter permissions
+
+[Newsletter extension](/en/core-extensions/newsletter/)
+
+**Allowed channels:** Here you define which newsletter channels the members of the user group are allowed to access.
+
+**Channel permissions:** Here you can define whether the members of the user group can create new newsletter channels or delete existing ones.
 
 ### Allowed Member Groups
 
-**Allowed member groups:** Members of this group can be used in the frontend preview.
+**Allowed member groups:** Members of this group can be used in the front end preview.
 
-### Excluded fields
+### Allowed fields
 
 At the beginning of the section it was mentioned that by default, normal users have no rights at all ("deny all") and you as administrator have to explicitly enable all access. This also applies to the individual input fields of each module or table listed here.
 
 **Allowed fields:** Here you choose the allowed fields.
 
-With the allowed fields you can easily create workflows, e.g. by not releasing the fields for publishing an article or a news item for editors. No editor can publish something without you or an editor-in-chief having seen it first.
+With the allowed fields you can easily create workflows, e.g. by not unlocking the fields for publishing an article or a news item for editors. No editor can publish something without you or an editor-in-chief having seen it first.
 
-### Deactivation
+### Group settings
 
 User groups can be deactivated manually or automatically at a specific time. No more rights can be inherited from a deactivated group.
 
@@ -137,45 +134,45 @@ User groups can be deactivated manually or automatically at a specific time. No 
 
 ## User
 
-With the "Users" module you can manage user accounts. Users can login with their username and password in the backend and inherit the permissions of the user groups assigned to them.
+With the "Users" module you can manage user accounts. Users can login with their username and password in the back end and inherit the permissions of the user groups assigned to them.
 
 {{% notice note %}}
 The user name and email address must be unique, i.e. they can only be assigned once.
 {{% /notice %}}
 
-### Name and e-mail address
+### Name and e-mail
 
-**User name:** Here you define the user name.
+**Username:** Here you define the user name.
 
 **Name**: Here you enter the first and last name of the user.
 
-**Email address:** Enter the user's e-mail address here.
+**E-mail address:** Enter the user's e-mail address here.
 
-### Backend Settings
+### Back end Settings
 
-Every user can customize the backend to his or her personal preferences.
+Every user can customize the back end to his or her personal preferences.
 
-**Backend language:** Here you set the backend language.
+**Back end language:** Here you set the back end language.
 
-**File Uploader:** Here you can choose between "DropZone" and the "Standard Uploader".
+**File uploader:** Here you can choose between "DropZone" and the "Standard Uploader".
 
 **Show explanations:** By default, Contao displays a short explanation below each input field which you can disable here if needed.
 
-**Show thumbnails:** Here you can disable the thumbnails in the file overview of the file manager to make the directory structure load faster.
+**Show thumbnail images:** Here you can disable the thumbnails in the file overview of the file manager to make the directory structure load faster.
 
-**Use Rich Text Editor:** Here you can disable the Rich Text Editor.
+**Enable the rich text editor:** Here you can disable the Rich Text Editor.
 
-**Use Code Editor:** Here you can disable the code editor.
+**Enable the code editor:** Here you can disable the code editor.
 
-### Backend Theme
+### Back end Theme
 
-**Backend-Theme:** Here you can change the Backend-Theme, if there is another one.
+**Back end teme:** Here you can change the back end theme, if there is another one.
 
-**Full screen:** The width of the backend should not be limited.
+**Fullscreen:** The width of the back end should not be limited.
 
 ### Password settings
 
-**Password change necessary:**  Here you can force the user to change his password at the next login.
+**Password change required:**  Here you can force the user to change his password at the next login.
 
 **Password:** Here you can assign a password to the user.
 
@@ -194,7 +191,7 @@ contao:
 
 ### Administrator
 
-**Make him an administrator:** Here you can make the user an administrator. The assignment to a group is then no longer necessary.
+**Make the user an administrator:** Here you can make the user an administrator. The assignment to a group is then no longer necessary.
 
 ### User groups
 
@@ -202,13 +199,13 @@ Among other things, this is where you define the group membership of the user. T
 
 **User groups:** Here you define the group membership of the user.
 
-**Rights inheritance:** There are the following three possibilities for the assignment of rights:
+**Permission inheritance:** There are the following three possibilities for the assignment of rights:
 
 | Mode | Declaration |
 | ---- | ----------- |
-| Use group rights only | Only the rights of the active groups are inherited. |
-| Extend group rights | The rights of the active groups are inherited and additionally extended by individual rights. |
-| Use user rights only | Only individual rights are used. |
+| Use group settings only | Only the rights of the active groups are inherited. |
+| Extend group settings | The rights of the active groups are inherited and additionally extended by individual rights. |
+| Use individual settings only | Only individual rights are used. |
 
 Individual rights are configured in the same way as [user groups](#user-groups-1).
 
@@ -224,7 +221,7 @@ Just like user groups, users can be deactivated manually or automatically at a c
 
 ## Unlock pages and articles
 
-The release of pages and articles so that they can be processed in the backend often leads to confusion in practice, because the necessary authorizations have to be set at different places in the system.
+Giving access to pages and articles so that they can be processed in the back end often leads to confusion in practice, because the necessary authorizations have to be set at different places in the system.
 
 In order to unlock certain pages and to allow editing of articles on these pages, you have to create the appropriate prerequisites in the user administration as well as in the page structure.
 
@@ -240,10 +237,10 @@ Finally you have to create a user and assign him to the group.
 
 In section [Access Rights](/en/layout/site-structure/configure-pages/#access-rights), you have already learned that each page belongs to a specific user and group, and that there are different levels of access based on that.
 
-![access rights of a page](/de/user-management/images/de/zugriffsrechte-einer-seite.png?classes=shadow)
+![access rights of a page](/de/user-management/images/en/access-rights-of-a-page.png?classes=shadow)
 
 For example, this page belongs to the user `Helen Lewis` who can edit, move or delete it and the articles it contains. Other users in the group `Editors` may only edit the articles, but not the page itself.
 
 So you have to assign access rights to the pages that a user should be able to edit or create articles on and assign them either to the user or to his group. In this way you create the conditions for a user to be able to click on the corresponding navigation icons.
 
-![The page structure without assigned access rights](/de/user-management/images/de/die-seitenstruktur-ohne-zugewiesene-zugriffsrechte.png?classes=shadow)
+![The page structure without assigned access rights](/de/user-management/images/en/site-structure-without-access-rights.png?classes=shadow)

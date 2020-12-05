@@ -1,16 +1,13 @@
 ---
-title: 'Members (Frontend)'
-description: 'The administration of front-end users is much easier than the administration of back-end users, since there is no need to work with mounts and individual input fields.'
+title: 'Members'
+menuTitle: 'Members (front end)'
+description: 'The administration of front end users is much simpler than the administration of back end users, since there is no need to work with mounts and individual input fields.'
 aliases:
     - /en/user-management/members/
 weight: 20
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
-The administration of frontend users is much easier than the administration of backend users, because you do not have to work with mounts and single input fields. Member management is mainly about accessing protected subpages and changing personal data.
+The administration of front end users is much simpler than the administration of back end users, because you do not have to work with mounts and single input fields. Member management is mainly about accessing protected subpages and changing personal data.
 
 The term "members" dates back to the early days of Contao, when the software was mainly used for community pages. In the meantime, many commercial websites are also implemented with it, so you could also say "customers".
 
@@ -18,15 +15,15 @@ The term "members" dates back to the early days of Contao, when the software was
 
 Members are also organized in groups and inherit access rights to protected pages from them.
 
-### Forwarding
+### Auto-redirect
 
-In the frontend module "Login" you can define to which page members will be redirected after registration. In the group settings you can overwrite this default page with an individual destination page per group.
+In the front end module "Login" you can define to which page members will be redirected after registration. In the group settings you can overwrite this default page with an individual destination page per group.
 
-**Forward on registration:** Here you activate the individual forwarding.
+**Redirect on login:** Here you activate the individual redirect.
 
-**Forwarding page:** Here you select the target page.
+**Redirect page:** Here you select the target page.
 
-### Account settings
+### Group settings
 
 Member groups can also be deactivated manually or automatically.
 
@@ -60,9 +57,9 @@ The username and email address must be unique, i.e. they can only be used once.
 
 **Street:** Here you can enter the address of the member.
 
-**Postcode**: Here you can enter the postcode of the member.
+**Postal code**: Here you can enter the postcode of the member.
 
-**Location:** Here you can enter the residence of the member.
+**City:** Here you can enter the city of the member.
 
 **State:** Here you can enter the state or federal state where the member is located.
 
@@ -72,11 +69,11 @@ The username and email address must be unique, i.e. they can only be used once.
 
 **Phone number:** Here you can enter the phone number of the member.
 
-**Mobile number:** Here you can enter the mobile number of the member.
+**Cell phone number:** Here you can enter the mobile number of the member.
 
 **Fax number**: Here you can enter the member's fax number.
 
-**Email address:** Enter the member's e-mail address here.
+**E-mail address:** Enter the member's e-mail address here.
 
 **Website:** Here you can enter the website of the member.
 
@@ -84,15 +81,15 @@ The username and email address must be unique, i.e. they can only be used once.
 
 ### Member groups
 
-Here you define the group membership of the member. The first group, i.e. the one at the top of the drop-down menu, is the main group, which is taken into account e.g. for automatic forwarding after login.
+Here you define the group membership of the member. The first group, i.e. the one at the top of the selection, is the main group, which is taken into account e.g. for automatic forwarding after login.
 
 **Member groups:** Here you define the group membership of the member.
 
-### Access data
+### Login details
 
-In this section you can assign a username and password to the member, which will be used to log in to the frontend. For this purpose, the member should belong to at least one member group.
+In this section you can assign a username and password to the member, which will be used to log in to the front end. For this purpose, the member should belong to at least one member group.
 
-**Allow login:** Here you activate the frontend login.
+**Allow login:** Here you activate the front end login.
 
 **Username:** Here you define a unique user name.
 
@@ -102,7 +99,7 @@ In this section you can assign a username and password to the member, which will
 
 Here you can assign the member his own home directory and provide certain files there, for example with the file management. Both the module "Picture gallery" and the module "Downloads" offer the possibility to use the user directory of a member as a data source.
 
-**Set a home directory:** Here you activate your own home directory.
+**Set home directory:** Here you activate your own home directory.
 
 **Home directory:** Here you set the member's home directory.
 
@@ -112,7 +109,7 @@ Here you can assign the member his own home directory and provide certain files 
 
 ### Account settings
 
-Just like users, members can also be deactivated manually or automatically. A deactivated member can no longer log in to the frontend.
+Just like users, members can also be deactivated manually or automatically. A deactivated member can no longer log in to the front end.
 
 **Deactivate:** Here you can deactivate the member.
 

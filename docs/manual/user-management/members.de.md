@@ -1,5 +1,6 @@
 ---
-title: "Mitglieder (Frontend)"
+title: "Mitglieder"
+menuTitle: "Mitglieder (Frontend)"
 description: "Die Verwaltung von Frontend-Benutzern ist deutlich einfacher als die Verwaltung von Backend-Benutzern, da 
 hier nicht mit Mounts und einzelnen Eingabefeldern gearbeitet werden muss."
 url: "benutzerverwaltung/mitglieder"
@@ -31,7 +32,7 @@ den Gruppeneinstellungen kannst du diese Standardseite mit einer individuellen Z
 **Weiterleitungsseite:** Hier wählst du die Zielseite aus.
 
 
-### Kontoeinstellungen
+### Gruppeneinstellungen
 
 Auch Mitgliedergruppen können manuell oder automatisch deaktiviert werden.
 
