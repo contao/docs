@@ -243,7 +243,41 @@ However, upcoming feature versions of Contao will likely provide better abstract
 for this task.
 
 
+## Page Model
+
+In Symfony you can require the current `Request` object to be passed into your invokable
+controller or action method as an argument (see the [Controller documentation][SymfonyRequestArgument]).
+You could then use the request object to retrieve the page model of the current 
+page via the [`pageModel` request attribute][PageModelRequestAttribute].
+
+However, Contao also extends [Symfony's argument value resolver][SymfonyArgumentValueResolver] 
+and thus allows you to automatically pass a `PageModel` as an argument as well:
+
+
+```php
+// src/Controller/Page/ExamplePageController.php
+namespace App\Controller\Page;
+
+use Contao\CoreBundle\ServiceAnnotation\Page;
+use Contao\PageModel;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @Page
+ */
+class ExamplePageController
+{
+    public function __invoke(Request $request, PageModel $pageModel): Response
+    {
+        return new Response('Hello page: '.$pageModel->title);
+    }
+}
+```
+
 
 [SymfonyRouting]: https://symfony.com/doc/current/routing.html
 [RoutingInContao]: /framework/routing/
 [FilterPageTypeEvent]: /reference/events/#filterpagetypeevent
+[SymfonyRequestArgument]: https://symfony.com/doc/4.4/controller.html#the-request-object-as-a-controller-argument
+[PageModelRequestAttribute]: /framework/routing/#page-model
+[SymfonyArgumentValueResolver]: https://symfony.com/doc/4.4/controller/argument_value_resolver.html
