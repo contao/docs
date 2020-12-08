@@ -223,7 +223,7 @@ contao:
     csrf_token_name:      contao_csrf_token
     encryption_key:       '%kernel.secret%'
 
-    # The error reporting level set when the framework is initialized. Defaults to E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED.
+    # The error reporting level set when the framework is initialized.
     error_level:          8183
 
     # Allows to set TL_CONFIG variables, overriding settings stored in localconfig.php. Changes in the Contao back end will not have any effect.
@@ -246,6 +246,7 @@ contao:
         - pl
         - pt
         - ru
+        - sl
         - sr
         - zh
 
@@ -379,6 +380,74 @@ contao:
         # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
         default_http_client_options: []
 ```
+
+
+### localconfig
+
+Wie bereits in der oben stehenden referenz erlaubt `contao.localconfig` jegliche Variablen einzustellen, die über
+`$GLOBALS['TL_CONFIG']` definiert sind. Diese Werte können teilweise über das Contao Backend in den Systemeinstellungen
+überschrieben und in der `system/config/localconfig.php` gespeichert werden. Allerdings wird diese Art der Speicherung
+Schritt für Schritt aus Contao entfernt. Einige der Einstellungen haben bereits ein Pendant in der Bundle Konfiguration
+während andere Einstellungen nun bspw. in den Benutzereinstellungen oder in den Website Startpunkten vorgenommen werden
+können.
+
+Je nach Contao Version werden aber immer noch Einstellungen aus der localconfig benutzt. Daher kann es nütlich sein zu
+wissen, wie man diese Einstellungen über die Applikationskonfiguration (also die `config.yml`) überschreiben könnte, 
+anstatt die veraltete `localconfig.php` dafür zu benutzen. Dies kann für den eigenen Deployment-Flow wichtig sein, aber
+auch weil es gewisse Einstellungen gibt, die _nur_ manuell gesetzt werden können, weil diese weder eine Bundle Einstellung
+noch eine andere Einstellungsmöglichkeit im Backend haben.
+
+Das folgende Beispiel zeigt, wie man die Administrator E-Mail Adresse über eine Umgebungsvariable definieren und die
+Wiederherstellungsperiode auf 60 Tage verlängern könnte:
+
+```yaml
+# config/config.yaml
+contao:
+    localconfig:
+        adminEmail: '%env(ADMIN_EMAIL)%'
+        undoPeriod: 5184000
+```
+
+Im Folgenden befindet sich eine vollständige Liste an localconfig Konfigurationen, die noch benutzt werden, und deren
+Beschreibung.
+
+| Key | Description |
+| --- | --- |
+| `adminEmail` | [E-Mail-Adresse des Systemadministrators](#globale-einstellungen). |
+| `allowedDownload` | [Erlaubte Download-Dateitypen](#dateien-und-bilder). |
+| `allowedTags` | [Erlaubte HTML-Tags](#sicherheitseinstellungen). |
+| `characterSet` | Der von Contao benutzte Zeichensatz. Standard: `utf-8` |
+| `dateFormat` | [Datumsformat](#datum-und-zeit). |
+| `datimFormat` | [Datums- und Zeitformat](#datum-und-zeit). |
+| `defaultChmod` | [Standard-Zugriffsrechte](#standard-zugriffsrechte). |
+| `defaultGroup` | [Standardgruppe](#standard-zugriffsrechte). |
+| `defaultUser` | [Standardbesitzer](#standard-zugriffsrechte). |
+| `disableCron` | [Den Command-Scheduler deaktivieren](#frontend-einstellungen). |
+| `disableInsertTags` | Erlaubt es das Ersetzen von [Insert-Tags][InsertTags] global zu deaktivieren. |
+| `disableRefererCheck` | Erlaubt es die [Request Token Überprüfung][RequestTokens] komplett zu deaktivieren _(deprecated)_. |
+| `doNotCollapse` | [Elemente nicht verkürzen](#backend-einstellungen). |
+| `folderUrl` | [Ordner-URLs verwenden](#frontend-einstellungen). |
+| `gdMaxImgHeight` | [Maximale GD-Bildhöhe](#dateien-und-bilder). |
+| `gdMaxImgWidth` | [Maximale GD-Bildbreite](#dateien-und-bilder). |
+| `imageHeight` | [Maximale Bildhöhe](#datei-uploads). |
+| `imageWidth` | [Maximale Bildbreite](#datei-uploads). |
+| `installPassword` | Speichert den Hash-Wert des Contao Installtool Passworts. |
+| `licenseAccepted` | Speichert ob die Lizenz im Contao Installtool bereits akzeptiert wurde. |
+| `logPeriod` | Zeitspanne in Sekunden wie lange Einträge im Backend Systemlog behalten werden sollen. Standard: `604800`. |
+| `maxFileSize` | [Maximale Upload-Dateigröße](#datei-uploads). |
+| `maxImageWidth` | Erlaubt es eine maximale Bildbreite für das Frontend zu setzen _(deprecated)_. |
+| `maxPaginationLinks` | Erlaubt es die Anzahl an Links in den automatisch generierten Blätternavigationen zu ändern. Standard: `7`. |
+| `maxResultsPerPage` | [Maximum Datensätze pro Seite](#backend-einstellungen). |
+| `minPasswordLength` | Erlaubt es die minimale Passwortlänge für Frontend-Mitglieder und Backend-Nutzer zu ändern. Standard: `8`. |
+| `requestTokenWhitelist` | Erlaubt es die [Request Token Überprüfung][RequestTokens] für Anfragen von den definierten Hosts zu deaktivieren _(deprecated)_. |
+| `resultsPerPage` | [Elemente pro Seite](#backend-einstellungen). |
+| `sessionTimeout` | Zeitspanne in Sekunden wie lange eine Nutzer-Session (Frontend und Backend) gültig bleiben soll. Falls dieser Wert erhöht wird müssen ggf. auch die [Session-Einstellungen][PhpSessionSettings] von PHP geändert werden (`session.cookie_lifetime` und `session.gc_maxlifetime`). Standard: `3600`. |
+| `timeFormat` | [Zeitformat](#datum-und-zeit). |
+| `timeZone` | [Zeitzone](#datum-und-zeit). |
+| `undoPeriod` | Zeitspanne in Sekunden wie lange gelöschte Einträge wiederhergestellt werden können. Standard: `2592000`. |
+| `uploadTypes` | [Upload file types](#datei-uploads). |
+| `useAutoItem` | Erlaubt es das sogenannte »Auto Item« zu deaktivieren _(nicht empfohlen)_. |
+| `versionPeriod` | Zeitspanne in Sekunden wie lange ältere Versionen von geänderten Einträgen behalten werden sollen. Standard: `7776000`. |
 
 
 ## E-Mail Versand Konfiguration
@@ -532,4 +601,9 @@ php vendor/bin/contao-console cache:clear --env=prod --no-warmup
 ```
 {{% /notice %}}
 
+
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
+[InsertTags]: /artikelverwaltung/insert-tags/
+[RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
+[LegacyRouting]: /layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
+[PhpSessionSettings]: http://docs.php.net/manual/de/session.configuration.php
