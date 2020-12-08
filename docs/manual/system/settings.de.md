@@ -384,14 +384,14 @@ contao:
 
 ### localconfig
 
-Wie bereits in der oben stehenden referenz erlaubt `contao.localconfig` jegliche Variablen einzustellen, die über
+Wie bereits in der oben stehenden Referenz erwähnt erlaubt `contao.localconfig` jegliche Variablen einzustellen, die über
 `$GLOBALS['TL_CONFIG']` definiert sind. Diese Werte können teilweise über das Contao Backend in den Systemeinstellungen
 überschrieben und in der `system/config/localconfig.php` gespeichert werden. Allerdings wird diese Art der Speicherung
 Schritt für Schritt aus Contao entfernt. Einige der Einstellungen haben bereits ein Pendant in der Bundle Konfiguration
 während andere Einstellungen nun bspw. in den Benutzereinstellungen oder in den Website Startpunkten vorgenommen werden
 können.
 
-Je nach Contao Version werden aber immer noch Einstellungen aus der localconfig benutzt. Daher kann es nütlich sein zu
+Je nach Contao Version werden aber immer noch Einstellungen aus der localconfig benutzt. Daher kann es nützlich sein zu
 wissen, wie man diese Einstellungen über die Applikationskonfiguration (also die `config.yml`) überschreiben könnte, 
 anstatt die veraltete `localconfig.php` dafür zu benutzen. Dies kann für den eigenen Deployment-Flow wichtig sein, aber
 auch weil es gewisse Einstellungen gibt, die _nur_ manuell gesetzt werden können, weil diese weder eine Bundle Einstellung
