@@ -78,7 +78,7 @@ or handling image links for you out of the box. When you are ready, call `build(
       ->enableLightbox()
       ->setLightboxGroupIdentifier('group1');
    
-    // Example 1
+    // Example 2
     $figureBuilder
       ->fromPath('/path/to/my/file.png')
       ->setSize('_my_size')
