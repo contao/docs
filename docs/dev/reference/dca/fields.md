@@ -229,6 +229,11 @@ in the `eval` definition of the field. This definition is an associative array,
 where the key is the key of the meta field and its value will be used for additional
 attributes of the text input field.
 
+{{% notice note %}}
+The meta wizard only supports text input fields, and `textarea` fields since Contao
+**4.9.10**.
+{{% /notice %}}
+
 For example, this is the definition of the `tl_files.meta` field from the Contao
 core:
 
