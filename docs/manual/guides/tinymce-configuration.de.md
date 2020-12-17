@@ -304,9 +304,8 @@ zur Verfügung stellen möchtest.
 ### Weitere Informationen
 
 Die offizielle Dokumentation ist auf [www.tiny.cloud](https://www.tiny.cloud/docs/) zu finden - bitte die passende Version
-auf der linken Navigation auswählen. In Contao 4 ist bis 4.9 die Version 4 als Standard eingebunden und ab 4.10 die Version 5
-des TinyMCE.
+aus der linken Navigation auswählen. In Contao 4 ist bis 4.9 die Version 4 des TinyMCE als Standard eingebunden und ab 4.10 die Version 5.
 
 Nicky Hoff hat zur Contao-Konferenz 2018 einen Vortrag zu dem Thema gehalten - dazu gibt es [Folien](https://contao.org/files/conference/2018/papers/ContaoKonferenz18_So-klitzeklein-ist-der-TinyMCE-gar-nicht.pdf) und ein [Video](https://www.youtube.com/watch?v=mjsT8J3-UDw).
 
-In den Contao-Erweiterungen gibt es einige Pakete, mit denen sich leicht weitere Funktionen einbauen lassen [extensions.contao.org](https://extensions.contao.org/?q=tiny)
+In der Contao-Erweiterungsliste gibt es einige Pakete, mit denen sich leicht weitere Funktionen einbauen lassen [extensions.contao.org](https://extensions.contao.org/?q=tiny)
