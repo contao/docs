@@ -230,13 +230,28 @@ When working with DCAs in the Contao back end you don't have to register callbac
 tags are being invalidated. This is because Contao invalidates a certain set of tags whenever a back end entry is created,
 updated or deleted. The tags are as follows:
 
-* `contao.db.<table-name>`
 * `contao.db.<table-name>.<id>`
-* `contao.db.<parent-table-name>` (only if there is a parent table defined)
+* `contao.db.<table-name>` OR `contao.db.<parent-table-name>` (depending on whether a parent table is defined or not)
 * `contao.db.<parent-table-name>.<pid>` (only if there is a parent record)
+* `contao.db.<child-table-name>.<cid>` (only if there is a child record)
 
-So let's say you had a DCA table named `tl_news`. When you edit ID `42`, Contao would automatically send an invalidation
-request to the reverse proxy to invalidate all responses associated with the tags `contao.db.tl_news` and `contao.db.tl_news.42`.
+Imagine you  edited a news article with ID 42. Contao will now automatically send an invalidation request to the 
+reverse proxy to invalidate all responses associated with the following tags: 
+
+* `contao.db.tl_news.42`
+* `contao.db.tl_news_archive`
+* `contao.db.tl_news_archive.1`
+* `contao.db.tl_content.420`
+
+Only the top parent table tag will be invalidated, i.e. `contao.db.tl_news_archive`, but not `contao.db.tl_news` 
+or `contao.db.tl_content`.
+
+Imagine now you have your own DCA table `tl_contact_details` with no parent or child tables. When you edit the contact 
+record with ID 42, Contao will automatically invalidate the following tags:
+
+* `contao.db.tl_contact_details.42` (the contact record itself)
+* `contao.db.tl_contact_details` (the table itself)
+
 If you follow this convention and tag your responses accordingly in the front end, you don't have to do any work in the
 back end at all!
 
