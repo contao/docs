@@ -12,39 +12,39 @@ bugs are fixed, new features are added or performance is improved. It is therefo
 version.
 
 
-### The Contao update cycle
+## The Contao update cycle
 
 Contao follows the concept of [Semantic Versioning](https://semver.org) for the version numbers, which sounds a bit 
 technical so we will quickly get familiar with the terminology used:
 
 
-#### Major release
+### Major release
 
 A major release is a completely new version of the software where many basic things have been changed and existing pages 
 may not work anymore. The current major release of Contao is **version 4** when writing these lines.
 
 
-#### Minor release
+### Minor release
 
 A minor release is a kind of milestone on the development path where new features have been added. Minor changes to 
 existing pages might therefore be necessary. When writing these lines, the current minor version of Contao 
 is **version 4.10**.
 
 
-#### Bugfix release
+### Bugfix release
 
 A bugfix release is a maintenance release whose primary purpose is to fix bugs; the current bugfix version of Contao 
 when writing these lines is **version 4.10.4**.
 
 
-#### Long-Term Support Versions
+### Long-Term Support Versions
 
 With version 2.11, the [release cycle of Contao](https://contao.org/de/release-plan.html) has been adjusted and 
 Long-Term Support (LTS) versions have been introduced that are supported and updated for 24 months, even if newer Contao 
 versions have been released in the meantime. An overview of all Contao versions is available on [Wikipedia](https://en.wikipedia.org/wiki/Contao#Versions).
 
 
-### Updating with the Contao Manager
+## Updating with the Contao Manager
 
 {{% notice note %}}
  Before updating Contao, it is recommended to create a backup of the `composer.json`, `composer.lock` files and the 
@@ -67,14 +67,14 @@ icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
 ![Update for minor release completed](/de/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png?classes=shadow)
 
 
-#### Update database tables
+### Update database tables
 
 Open the [Contao install tool](../contao-installtool/) and check if any changes to your database are necessary after 
 the update. If necessary, make the suggested changes and then close the install tool.
 
 Your Contao installation is now up to date.
 
-### Updating via the command line {#update-via-the-command-line}
+## Updating via the command line {#update-via-the-command-line}
 
 {{% notice note %}}
  To update Contao via the command line you need to have Composer [installed](../install-contao/#install-composer). 
@@ -127,7 +127,7 @@ Now trigger the update on the command line.
 $ composer update
 ```
 
-#### Update database tables
+### Update database tables
 
 Open the [Contao install tool](../contao-installtool/) and check if any changes to your database are necessary after 
 the update. If necessary, make the suggested changes and then close the install tool.
@@ -141,7 +141,7 @@ $ vendor/bin/contao-console contao:migrate
 Your Contao installation is now up to date.
 
 
-### Update locally without the Composer Resolver Cloud
+## Update locally without the Composer Resolver Cloud
 
 The procedures described above in [Updating via the command line](#update-via-the-command-line) 
 and [Update with the Contao Manager](#updating-with-the-contao-manager), can also be used locally. 
@@ -150,7 +150,7 @@ unfulfilled system requirements such as insufficient memory, because you can set
 configuration as required yourself.
 
 
-#### Requirements for using the command line
+### Requirements for using the command line
 
 What do you need on your computer?
 
@@ -165,7 +165,7 @@ What do you _not_ need?
 - A local Contao installation
 
 
-#### Perform the update
+### Perform the update
 
 Copy the `composer.json` and `composer.lock` from your hosting to your working directory.
 You then do essentially the same as described above in
@@ -201,7 +201,7 @@ execute".
 Finally you have to update the database tables. 
 
 
-#### Update database tables
+### Update database tables
 
 Open the [Contao-Installtool](../contao-installtool/) and check if changes to your database are necessary. If necessary, 
 make the suggested changes and then close the install tool.
@@ -216,7 +216,7 @@ use.
 Your Contao installation is now up to date.
 
 
-#### Different PHP versions
+### Different PHP versions
 
 If the PHP version used locally is different from the one on your hosting, you need to specify which PHP version should 
 be used in your `composer.json` file:
@@ -235,7 +235,7 @@ be used in your `composer.json` file:
 ```
 
 
-#### Local updates with the Contao Manager
+### Local updates with the Contao Manager
 
 You need a local Contao installation. In this installation, you install the Contao Manager and run the update like
 described in the section [Updating with the Contao Manager](#updating-with-the-contao-manager). 
