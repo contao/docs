@@ -423,8 +423,8 @@ Beschreibung.
 | `defaultGroup` | [Standardgruppe](#standard-zugriffsrechte). |
 | `defaultUser` | [Standardbesitzer](#standard-zugriffsrechte). |
 | `disableCron` | [Den Command-Scheduler deaktivieren](#frontend-einstellungen). |
-| `disableInsertTags` | Erlaubt es das Ersetzen von [Insert-Tags][InsertTags] global zu deaktivieren. |
-| `disableRefererCheck` | Erlaubt es die [Request Token Überprüfung][RequestTokens] komplett zu deaktivieren _(deprecated)_. |
+| `disableInsertTags` | Erlaubt es das Ersetzen von [Insert-Tags][/de/artikelverwaltung/insert-tags/] global zu deaktivieren. |
+| `disableRefererCheck` | Erlaubt es die [Request Token Überprüfung][RequestTokens] komplett zu deaktivieren _(veraltet)_. |
 | `doNotCollapse` | [Elemente nicht verkürzen](#backend-einstellungen). |
 | `folderUrl` | [Ordner-URLs verwenden](#frontend-einstellungen). |
 | `gdMaxImgHeight` | [Maximale GD-Bildhöhe](#dateien-und-bilder). |
