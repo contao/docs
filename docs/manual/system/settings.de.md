@@ -423,7 +423,7 @@ Beschreibung.
 | `defaultGroup` | [Standardgruppe](#standard-zugriffsrechte). |
 | `defaultUser` | [Standardbesitzer](#standard-zugriffsrechte). |
 | `disableCron` | [Den Command-Scheduler deaktivieren](#frontend-einstellungen). |
-| `disableInsertTags` | Erlaubt es das Ersetzen von [Insert-Tags][/de/artikelverwaltung/insert-tags/] global zu deaktivieren. |
+| `disableInsertTags` | Erlaubt es das Ersetzen von [Insert-Tags][InsertTags] global zu deaktivieren. |
 | `disableRefererCheck` | Erlaubt es die [Request Token Überprüfung][RequestTokens] komplett zu deaktivieren _(veraltet)_. |
 | `doNotCollapse` | [Elemente nicht verkürzen](#backend-einstellungen). |
 | `folderUrl` | [Ordner-URLs verwenden](#frontend-einstellungen). |
@@ -603,7 +603,7 @@ php vendor/bin/contao-console cache:clear --env=prod --no-warmup
 
 
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
-[InsertTags]: /artikelverwaltung/insert-tags/
+[InsertTags]: /de/artikelverwaltung/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
-[LegacyRouting]: /layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
+[LegacyRouting]: /de/layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
 [PhpSessionSettings]: http://docs.php.net/manual/de/session.configuration.php
