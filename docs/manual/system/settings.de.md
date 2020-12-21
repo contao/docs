@@ -63,6 +63,34 @@ hier beliebig anpassen. Höhere Werte bedeuten jedoch eine längere Ladezeit.
 anzeigen lässt und damit das PHP Memory Limit überschreitet, kannst du festlegen, wie viele Datensätze maximal pro Seite 
 angezeigt werden dürfen.
 
+#### Zusätzliche Backend-Einstellungen:
+
+{{< version "4.11" >}}
+
+Ein paar zusätzliche Parameter können über die `config/config.yml` konfiguriert werden.
+
+| Key | Description |
+| --- | --- |
+| `attributes` | Fügt dem `<body>`-Tag im Backend HTML-Attribute hinzu. Für den üblichen Gebrauch sollte den Namen `data-` vorangestellt werden. |
+| `custom_css` | Fügt dem Backend individuelle CSS-Assets hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
+| `custom_js` | Fügt dem Backend individuelle Javascript-Assets hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
+| `badge_title` | Konfiguriert den Titel des Badge im Backend. |
+
+Die folgende Konfiguration definiert einige Beispielwerte:
+
+```yml
+# config/config.yaml
+contao:
+    backend:
+        attributes:
+            data-app-name: 'Meine App'
+            data-app-version: 1.2.3
+        custom_css:
+            - files/backend/custom.css
+        custom_js:
+            - files/backend/custom.js
+        badge_title: develop
+```
 
 ### Frontend-Einstellungen
 
