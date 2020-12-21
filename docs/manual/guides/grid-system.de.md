@@ -24,7 +24,7 @@ die eine definierte HTML-Struktur entsprechend darstellen.
 
 Die ersten Lösungen erfolgten über [CSS-float](https://developer.mozilla.org/de/docs/Web/CSS/float). Der Vorteil 
 hierbei ist die Unterstützung älterer Browser-Versionen. Es folgten Realisierungen via
-[CSS-flexbox](https://developer.mozilla.org/de/docs/Web/CSS/flex) und mittlerweile existiert die 
+[CSS-flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) und mittlerweile existiert die 
 [CSS-grid](https://developer.mozilla.org/de/docs/Web/CSS/grid) Eigenschaft selbst. Die Unterstützung ist in den gängigen, 
 aktuellen Browser-Versionen vorhanden.
 
