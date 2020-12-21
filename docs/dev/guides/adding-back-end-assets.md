@@ -23,6 +23,7 @@ outline two general use cases, in order to give an idea what is possible.
 {{% notice note %}}
 Starting with version **4.11** global assets can now be added via the `config/config.yml`:
 [Additional back end settings](https://docs.contao.org/manual/en/system/settings/#additional-back-end-settings)
+{{% /notice %}}
 
 ## Adding Assets Globally
 
