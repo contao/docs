@@ -1,0 +1,11 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: '532603b4ad01695b68a0f6048dc8ea46',
+    indexName: 'contao',
+    inputSelector: '#algolia-search',
+    {{ if eq .Site.Params.algolia_selector "manual"}}
+    algoliaOptions: { 'facetFilters': ["language:{{ .Page.Language | default "en" }}"] },
+    {{ end }}
+    debug: true // Set debug to true if you want to inspect the dropdown
+});
+</script>
