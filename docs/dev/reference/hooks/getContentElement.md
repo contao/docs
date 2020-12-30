@@ -29,7 +29,6 @@ as arguments and expects a buffer string as return value.
     type.
 
 
-
 ## Return Values
 
 The (modified) content of the content element as a string.
