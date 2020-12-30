@@ -22,9 +22,10 @@ modules.
 
     The generated front end module buffer.
     
-3. *\Contao\Module* `$module`
+3. *object* `$module`
 
-    The class of the front end module (inherits from `\Contao\Module`).
+    An instance of the front end module's class that is registered for this module's
+    type.
 
 
 ## Return Values
@@ -39,6 +40,7 @@ Return `$buffer` or your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Form;
 use Contao\Module;
 use Contao\ModuleModel;
 
@@ -47,7 +49,7 @@ use Contao\ModuleModel;
  */
 class GetFrontendModuleListener
 {
-    public function __invoke(ModuleModel $model, string $buffer, Module $module): string
+    public function __invoke(ModuleModel $model, string $buffer, $module): string
     {
         // Wrap a specific module in an additional wrapper div
         if (2 === (int) $model->id) {
