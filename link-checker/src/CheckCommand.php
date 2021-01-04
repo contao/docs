@@ -66,8 +66,9 @@ class CheckCommand extends Command
         $httpClient = HttpClient::create([
             'max_duration' => 5,
             'headers' => [
-                'User-Agent' => 'contao/docs-crawler'
-            ]
+                'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:84.0) Gecko/20100101 Firefox/84.0', // Use FF user agent because e.g. Twitter blocks others (...)
+                'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            ],
         ]);
 
         $escargot = Escargot::create($baseUriCollection, new InMemoryQueue())
