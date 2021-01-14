@@ -102,10 +102,56 @@ intervals in the calendar extension).
 Executed before a record is removed from the database.
 
 {{% expand "Parameters" %}}
+#### `DC_Folder` (e.g. `tl_files`)
+
+* `string` The path of the file
+* `\Contao\DataContainer` Data Container object
+
+**return:** _void_
+
+
+#### Other Data Containers
+
 * `\Contao\DataContainer` Data Container object
 * `integer` The ID of the `tl_undo` database record
 
 **return:** _void_
+{{% /expand %}}
+
+{{% expand "Example" %}}
+This example also removes a record from a different table, if a front end member
+is deleted in the back end.
+
+```php
+// src/EventListener/DataContainer/MemberDeleteCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Doctrine\DBAL\Connection;
+
+/**
+ * @Callback(table="tl_member", target="config.ondelete")
+ */
+class MemberDeleteCallbackListener
+{
+    private $db;
+
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    public function __invoke(DataContainer $dc, int $undoId): void
+    {
+        if (!$dc->id) {
+            return;
+        }
+
+        $this->db->delete('tl_foobar', ['member' => (int) $dc->id]);
+    }
+}
+```
 {{% /expand %}}
 
 
