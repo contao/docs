@@ -15,13 +15,17 @@ as return value.
 
 ## Parameters
 
-1. *\Contao\FormModel* `$form`
+1. *\Contao\FormModel* `$formModel`
 
     Database result set from table `tl_form` as a `\Contao\FormModel` instance.
 
 2. *string* `$buffer`
 
     The generated form buffer.
+    
+3. *\Contao\Form* `$form`
+
+    The Form object.
 
 
 ## Return Values
@@ -36,6 +40,7 @@ Return `$buffer` or your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Form;
 use Contao\FormModel;
 
 /**
@@ -43,7 +48,7 @@ use Contao\FormModel;
  */
 class GetFormListener
 {
-    public function __invoke(FormModel $form, string $buffer): string
+    public function __invoke(FormModel $formModel, string $buffer, Form $form): string
     {
         if (2 === (int) $form->id) {
             // Do something …
