@@ -48,7 +48,7 @@ use Contao\FormModel;
  */
 class GetFormListener
 {
-    public function __invoke(FormModel $form, string $buffer, Form $form): string
+    public function __invoke(FormModel $formModel, string $buffer, Form $form): string
     {
         if (2 === (int) $form->id) {
             // Do something …
