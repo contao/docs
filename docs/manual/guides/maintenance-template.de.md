@@ -49,16 +49,16 @@ Beispiel für eine angepasste Sprachdatei:
 
 ```xml
 <?xml version="1.0" ?><xliff version="1.1">
-<file>
-<body>
-<trans-unit id="XPT.unavailable">
-<target>Wartungsmodus</target>
-</trans-unit>
-<trans-unit id="XPT.maintenance">
-<target>Die Webseite ist deshalb zur Zeit nicht verfügbar. Bitte versuchen Sie es später noch einmal. Wir bemühen uns die Wartungsarbeiten so schnell wie möglich zu beenden.</target>
-</trans-unit>
-</body>
-</file>
+  <file>
+    <body>
+      <trans-unit id="XPT.unavailable">
+        <target>Wartungsmodus</target>
+      </trans-unit>
+      <trans-unit id="XPT.maintenance">
+        <target>Die Webseite ist deshalb zur Zeit nicht verfügbar. Bitte versuchen Sie es später noch einmal. Wir bemühen uns die Wartungsarbeiten so schnell wie möglich zu beenden.</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
 ```
 
@@ -91,11 +91,11 @@ Beispiel für ein angepasstes Logo:
 ...
 <body>
 <div id="header">
-<div class="wrap">
-<div class="header-logo">
-<img src="/files/layout/images/logo.png" alt="Mein Logo">
-</div>
-</div>
+    <div class="wrap">
+        <div class="header-logo">
+            <img src="/files/layout/images/logo.png" alt="Mein Logo">
+        </div>
+    </div>
 </div>
 ...
 </body>
