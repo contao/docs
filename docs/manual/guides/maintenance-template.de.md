@@ -7,7 +7,7 @@ description: "Wartungstemplate updatesicher anpassen"
 ## Wartungsmodus aktivieren
 Der Wartungsmodus lässt sich über den Menüpunkt Systemwartung aktivieren. Sobald du dich aus dem Backend abgemeldet hast und deine Website im Frontend aufrufst, sieht das dann so aus:
 
-![Contao Wartungsmodus](/de/guides/images/de/maintenance-template/wartungsmodus.png?classes=shadow)
+![Contao Wartungsmodus](/de/guides/images/de/maintenance/wartungsmodus.jpg?classes=shadow)
 
 Im Core von Contao 4.9 sind für die Frontendausgabe im Wartungsmodus folgende Dateien zuständig:
 
