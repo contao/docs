@@ -5,6 +5,7 @@ description: "Wartungstemplate updatesicher anpassen"
 ---
 
 ## Wartungsmodus aktivieren
+
 Der Wartungsmodus lässt sich über den Menüpunkt Systemwartung aktivieren. Sobald du dich aus dem Backend abgemeldet hast und deine Website im Frontend aufrufst, sieht das dann so aus:
 
 ![Contao Wartungsmodus](/de/guides/images/de/maintenance/wartungsmodus.jpg?classes=shadow)
@@ -14,6 +15,7 @@ Im Core von Contao 4.9 sind für die Frontendausgabe im Wartungsmodus folgende D
 - `service_unavailable.html.twig` - Wartungstemplate
 - `layout.html.twig` - Layoutemplate für alle Errortemplates
 - `exception.xlf` - Sprachdateien für Fehlermeldungen
+
 
 ## Texte des Wartungstemplates anpassen
 
@@ -62,20 +64,21 @@ Beispiel für eine angepasste Sprachdatei:
 </xliff>
 ```
 
-Alternativ kann auch die PHP Notation verwendet werden. Dazu legst du eine exeption.php an, die dann ungefähr so aussieht:
+Alternativ kann auch die PHP Notation verwendet werden. Dazu legst du eine exception.php an, die dann ungefähr so aussieht:
 
 ```php
 $GLOBALS['TL_LANG']['XPT']['unavailable'] = 'Wartungsmodus';
 $GLOBALS['TL_LANG']['XPT']['maintenance'] = 'Hier kann beliebieger Text stehen';
 ```
 
-Damit die neuen Texte nun sichtbar werden, muss der Produktion-Cache über den Contao Manager oder die Kommandozeile geleert werden.
+Damit die neuen Texte nun sichtbar werden, muss der Produktions-Cache über den Contao Manager oder die Kommandozeile geleert werden.
 
 Natürlich lassen sich auch noch weitere Texte wie z. B. die Fußzeile per `XPT.hint` überschreiben.
 
 {{% notice note %}}
 WICHTIG: Alle Änderungen wirken sich sowohl beim Wartungstemplate als auch auf alle anderen Errortemplates von Contao aus.
 {{% /notice %}}
+
 
 ## Logo anpassen
 
@@ -84,8 +87,9 @@ Das machen wir in diesem Beispiel für alle Errortemplates. Für eine updatesich
 Dort setzen wir unser eigenes Logo innerhalb des DIV's mit der Klasse `header-logo` ein. Du kannst dafür ein normales image-Tag verwenden oder wie im Originaltemplate ein Inline-SVG.
 
 Beispiel für ein angepasstes Logo:
+
 ```html
-% trans_default_domain 'contao_exception' %}
+{% trans_default_domain 'contao_exception' %}
 <!DOCTYPE html>
 <html lang="{{ language }}">
 ...
@@ -106,7 +110,9 @@ Damit die Änderungen sichtbar werden, muss zum Schluss der Produktions-Cache ü
 
 Weitere Informationen zur Anpassung von Twigtemplates findest du in der [Twig-Dokumentation von Symfony](https://twig.symfony.com/doc/3.x/)
 
+
 ## Komplettes Wartungstemplate überschreiben
+
 Anstatt nur einzelne Texte anzupassen, kannst du auch einfach das komplette Template `service_unavailable.html.twig` mit deinem eigenen HTML und CSS überschreiben.
 Damit das ganze updatesicher ist, musst du die Datei in den Ordner `/templates/bundles/ContaoCoreBundle/Error/` speichern.
 
