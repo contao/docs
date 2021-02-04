@@ -68,9 +68,9 @@ Some additional parameters can be configured via the `config/config.yml`.
 
 | Key | Description |
 | --- | --- |
-| `attributes` | Adds HTML attributes to the `<body>` tag in the back end. For common use the names should be prefixed with `data-`. |
-| `custom_css` | Adds custom css assets to the back end. The assets must be publicly accessible via URL! |
-| `custom_js` | Adds custom javascript assets to the back end. The assets must be publicly accessible via URL! |
+| `attributes` | Adds HTML attributes to the `<body>` tag in the back end. The attribute name must be a valid HTML attribute name. For common use the names should be prefixed with `data-`. |
+| `custom_css` | Adds custom style sheets to the back end. The assets must be publicly accessible via URL! |
+| `custom_js` | Adds custom JavaScript files to the back end. The assets must be publicly accessible via URL! |
 | `badge_title` | Configures the title of the badge in the back end. |
 
 The following config defines some example values: 

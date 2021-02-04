@@ -71,9 +71,9 @@ Ein paar zusätzliche Parameter können über die `config/config.yml` konfigurie
 
 | Key | Description |
 | --- | --- |
-| `attributes` | Fügt dem `<body>`-Tag im Backend HTML-Attribute hinzu. Für den üblichen Gebrauch sollte den Namen `data-` vorangestellt werden. |
-| `custom_css` | Fügt dem Backend individuelle CSS-Assets hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
-| `custom_js` | Fügt dem Backend individuelle Javascript-Assets hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
+| `attributes` | Fügt dem `<body>`-Tag im Backend HTML-Attribute hinzu. Der Attributname muss ein gültiger HTML-Attributname sein. Für den üblichen Gebrauch sollte den Namen `data-` vorangestellt werden. |
+| `custom_css` | Fügt dem Backend individuelle Stylesheets hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
+| `custom_js` | Fügt dem Backend individuelle JavaScript-Dateien hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
 | `badge_title` | Konfiguriert den Titel des Badge im Backend. |
 
 Die folgende Konfiguration definiert einige Beispielwerte:
