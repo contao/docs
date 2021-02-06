@@ -251,7 +251,6 @@ Contao also extends [Symfony's argument value resolver][SymfonyArgumentValueReso
 and thus allows you to automatically pass the `PageModel` of the page controller's
 page as an argument as well:
 
-
 ```php
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
