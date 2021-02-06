@@ -12,6 +12,11 @@ The `getContentElement` hook is triggered when a content element is rendered.
 It passes the database object, the buffer string and the content element object
 as arguments and expects a buffer string as return value.
 
+{{% notice info %}}
+This hook is executed for _all_ content elements, i.e. also for forms and front end
+modules that are integrated into a page via a content element.
+{{% /notice %}}
+
 
 ## Parameters
 

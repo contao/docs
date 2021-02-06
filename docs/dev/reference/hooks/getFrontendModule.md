@@ -22,6 +22,11 @@ You will need to implement the [`getContentElement`](/reference/hooks/getContent
 hook as well, if you want to cover all bases.
 {{% /notice %}}
 
+{{% notice info %}}
+This hook is also executed for forms that are integrated into a page layout via
+a front end module.
+{{% /notice %}}
+
 
 ## Parameters
 
