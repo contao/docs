@@ -263,7 +263,46 @@ $GLOBALS['TL_LANG']['FMD'][ExampleController::TYPE] = [
 ```
 
 
-## Read more
+## PageModel
+
+{{< version "4.9.10" >}}
+
+If your fragment extends from `AbstractFrontendModuleController` (or just `AbstractFragmentController`)
+you can use `$this->getPageModel()` in order to receive the `\Contao\PageModel`
+object of the currently rendered page of Contao's site structure.
+
+```php
+// src/Controller/FrontendModule/MyFrontendModuleController.php
+namespace App\Controller\FrontendModule;
+
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\Exception\RedirectResponseException;
+use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\ModuleModel;
+use Contao\PageModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @FrontendModule(category="miscellaneous")
+ */
+class MyFrontendModuleController extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    {
+        $page = $this->getPageModel();
+
+        // Get some information about the current page
+        $template->rootTitle = $page->rootPageTitle ?: $page->rootTitle;
+
+        return $template->getResponse();
+    }
+}
+```
+
+
+## Read More
 
 * [DCA Configuration reference][2]
 * [Manipulate and create palettes][3]

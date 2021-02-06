@@ -247,7 +247,44 @@ $GLOBALS['TL_LANG']['CTE'][ExampleController::TYPE] = [
 ```
 
 
-## Read more
+## PageModel
+
+{{< version "4.9.10" >}}
+
+If your fragment extends from `AbstractContentElementController` (or just `AbstractFragmentController`)
+you can use `$this->getPageModel()` in order to receive the `\Contao\PageModel`
+object of the currently rendered page of Contao's site structure.
+
+```php
+// src/Controller/ContentElement/MyContentElementController.php
+namespace App\Controller\ContentElement;
+
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @ContentElement(category="texts")
+ */
+class MyContentElementController extends AbstractContentElementController
+{
+    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    {
+        $page = $this->getPageModel();
+
+        // Get some information about the current page
+        $template->rootTitle = $page->rootPageTitle ?: $page->rootTitle;
+        
+        return $template->getResponse();
+    }
+}
+```
+
+
+## Read More
 
 * [Manipulate and create palettes][palettes]
 * [Create and use templates][templates]

@@ -276,53 +276,6 @@ class ExampleController
 See the article on [Request Tokens][RequestTokens] for more details.
 
 
-### Page Model
-
-{{< version "4.7" >}}
-
-If a request matches a page within the defined site structure of your Contao
-instance then Contao's `RouteProvider` will store the model of that page as a request 
-attribute, so that it is accessible anywhere via the request object. The attribute's 
-name is `pageModel` and its value will be a `\Contao\PageModel` instance.
-
-```php
-namespace App\EventListener;
-
-use Contao\PageModel;
-use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-
-/**
- * @ServiceTag("kernel.event_listener", name="kernel.requset")
- */
-class RequestListener
-{
-    public function __invoke(RequestEvent $event): void
-    {
-        $request = $event->getRequest();
-
-        if (!$request->attributes->has('pageModel')) {
-            return;
-        }
-
-        /** @var PageModel $page */
-        $page = $request->attributes->get('pageModel');
-
-        $title = $page->pageTitle ?: $page->title;
-
-        // …
-    }
-}
-```
-
-{{% notice info %}}
-Within the sub request of a fragment, this attribute is currently only the database
-_ID_ of the page, not a model instance. However, starting with Contao **4.9.10**
-you can use `$this->getPageModel()` (if your fragment extends from the `AbstractFragmentController`)
-in order to retrieve the page model of the current request.
-{{% /notice %}}
-
-
 ### Maintenance Mode
 
 The Contao back end allows you to enable a maintenance mode in the front end. The
