@@ -247,11 +247,9 @@ for this task.
 
 In Symfony you can require the current `Request` object to be passed into your invokable
 controller or action method as an argument (see the [Controller documentation][SymfonyRequestArgument]).
-You could then use the request object to retrieve the page model of the current 
-page via the [`pageModel` request attribute][PageModelRequestAttribute].
-
-However, Contao also extends [Symfony's argument value resolver][SymfonyArgumentValueResolver] 
-and thus allows you to automatically pass a `PageModel` as an argument as well:
+Contao also extends [Symfony's argument value resolver][SymfonyArgumentValueResolver] 
+and thus allows you to automatically pass the `PageModel` of the page controller's
+page as an argument as well:
 
 
 ```php
