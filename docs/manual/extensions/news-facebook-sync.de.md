@@ -154,8 +154,7 @@ _Allgemeines_ gefunden werden.
 
 Öffne die Einstellungen deines Nachrichtenarchivs. In der Sektion _Facebook sync_ kann der __Facebook sync__
 aktiviert werden. Danach kann die _numerische_ ID der Facebook Page eingegeben werden, mit der das Nachrichtenarchiv
-synchronisiert werden soll. Die ID findet man in den Einstellungen der Facebook Page, oder über Services wie z. B.
-[findmyfbid.com](https://findmyfbid.com/). Wenn automatisch Facebook Page Posts als Nachrichtenbeiträge angelegt werden
+synchronisiert werden soll. Wenn automatisch Facebook Page Posts als Nachrichtenbeiträge angelegt werden
 sollen, dann muss die Einstellung __Page Posts holen__ aktiviert werden. Optional kann auch ein 
 __Page Post Datum Limit__ eingestellt werden.
 

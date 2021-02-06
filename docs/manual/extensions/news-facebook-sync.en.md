@@ -145,9 +145,8 @@ of your Facebook App. You can find this information in your Facebook App under _
 ### Configure the Contao News Archive
 
 Go to the settings of your news archive. In the _Facebook sync_ section enable __Facebook sync__ and enter the _numeric_ 
-ID of the Facebook Page you want to synchronize with (you can find the ID in the "About" tab of the page or via 
-[findmyfbid.com](https://findmyfbid.com/)). If you wish to automatically fetch the Facebook Page posts and add them to 
-your news archive, enable the __Fetch page posts__ option. Optionally, also define a __Page post date limit__.
+ID of the Facebook Page you want to synchronize with. If you wish to automatically fetch the Facebook Page posts and add 
+them to your news archive, enable the __Fetch page posts__ option. Optionally, also define a __Page post date limit__.
 
 You can also do the same for a Facebook Group, if you want to fetch posts from that group. Note, however, that publishing
 news entries as Facebook posts is only supported for Facebook Pages, not for Groups.

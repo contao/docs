@@ -16,9 +16,10 @@ specific flows of the application, in addition to [Hooks][ContaoHooks].
 {{% version "4.5" %}}
 
 This event is dispatched, when the Contao back end menu is built. The event contains
-references to the menu factory as well as the menu tree object. This can be used
-to alter the back end menu to your needs. An example of this can be found in the
-[Back End Routes][BackEndRoutes] guide.
+references to the menu factory as well as the menu tree object of the 
+[KnpMenuBundle][KnpMenuBundle]. This can be used to alter the back end menu to your 
+needs. An example of this can also be found in the [Back End Routes][BackEndRoutes] 
+guide.
 
 <table>
 <tr><th>Name</th><td><code>contao.backend_menu_build</code></td></tr>
@@ -394,3 +395,4 @@ class FilterPageTypeListener
 [ContaoHooks]: /framework/hooks
 [BackEndRoutes]: /guides/back-end-routes
 [webignition/robots-txt-file]: https://github.com/webignition/robots-txt-file
+[KnpMenuBundle]: https://symfony.com/doc/current/bundles/KnpMenuBundle/index.html

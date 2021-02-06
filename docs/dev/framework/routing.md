@@ -109,7 +109,7 @@ with two parameters:
   name of the route. This takes advantage of your IDE's auto-complete feature, if
   you want to reference the route for the `UrlGenerator` for example.
 
-We can use the `debug:router` command to confirm its succesful registration:
+We can use the `debug:router` command to confirm its successful registration:
 
 ```
 $ vendor/bin/contao-console debug:router "App\Controller\ExampleController"

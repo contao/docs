@@ -67,8 +67,9 @@ exceeding the PHP memory limit, you can specify the maximum number of records th
 the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias 
 `docs/install/download.html` instead of just `download.html`.
 
-**Do not redirect empty URLs:** If the URL is empty, display the web page instead of redirecting to the starting point 
-of the language redirection *(not recommended)*.
+**Do not redirect empty URLs:** Allows you to disable the redirect of the "empty URL" to the start page of the browser's 
+language respective website root when using the [legacy routing mode][LegacyRouting] without `contao.prepend_locale: true` 
+*(not recommended)*.
 
 **Deactivate the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route 
 `_contao/cron` using a real cron job (which you have to set up yourself). Starting with Contao **4.9** you can also
@@ -208,7 +209,7 @@ contao:
     csrf_token_name:      contao_csrf_token
     encryption_key:       '%kernel.secret%'
 
-    # The error reporting level set when the framework is initialized. Defaults to E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED.
+    # The error reporting level set when the framework is initialized.
     error_level:          8183
 
     # Allows to set TL_CONFIG variables, overriding settings stored in localconfig.php. Changes in the Contao back end will not have any effect.
@@ -231,6 +232,7 @@ contao:
         - pl
         - pt
         - ru
+        - sl
         - sr
         - zh
 
@@ -366,6 +368,73 @@ contao:
 ```
 
 
+### localconfig
+
+As mentioned in the config reference above the configuration key `contao.localconfig` allows you to set any configuration
+that is defined via `$GLOBALS['TL_CONFIG']`, the default values of which can be overwritten via the 
+`system/config/localconfig.php`. This is where Contao stores any settings that have been customised in the back end, i.e.
+under _System_ » _Settings_. This form of storing settings is being phased out step by step. Some of the settings now
+have a counterpart in the bundle configuration, others are e.g. set in the website root or within the back end user's
+settings. 
+
+However depending on the Contao version you are using there are still settings being used from the localconfig. Thus it 
+can be useful to define them directly in your applications configuration (i.e. the `config.yml`) rather than the legacy 
+`localconfig.php`. Not only because you might need it for your deployment flow, but also because some settings can _only_ 
+be set manually - because they neither have a bundle configuration counterpart, nor is there another mean of setting them 
+via the back end.
+
+The following example defines the administrator's e-mail address via an environment variable and increases the undo period
+to 60 days:
+
+```yaml
+# config/config.yaml
+contao:
+    localconfig:
+        adminEmail: '%env(ADMIN_EMAIL)%'
+        undoPeriod: 5184000
+```
+
+The following is a comprehensive list of localconfig configurations still in use and their description.
+
+| Key | Description |
+| --- | --- |
+| `adminEmail` | [E-mail address of the system administrator](#global-configuration). |
+| `allowedDownload` | [Download file types](#files-and-images). |
+| `allowedTags` | [Allowed HTML tags](#security-settings). |
+| `characterSet` | Character set used by Contao. Default: `utf-8` |
+| `dateFormat` | [Date format](#date-and-time). |
+| `datimFormat` | [Date and time format](#date-and-time). |
+| `defaultChmod` | [Default access rights](#default-access-rights). |
+| `defaultGroup` | [Default page group](#default-access-rights). |
+| `defaultUser` | [Default page owner](#default-access-rights). |
+| `disableCron` | [Deactivate the command scheduler](#front-end-configuration). |
+| `disableInsertTags` | Allows you to disable the replacement of [insert tags][InsertTags] globally. |
+| `disableRefererCheck` | Allows you to disable the [request token check][RequestTokens] entirely _(deprecated)_. |
+| `doNotCollapse` | [Do not collapse elements](#back-end-configuration). |
+| `folderUrl` | [Enable folder URLs](#front-end-configuration). |
+| `gdMaxImgHeight` | [Maximum GD image height](#files-and-images). |
+| `gdMaxImgWidth` | [Maximum GD image width](#files-and-images). |
+| `imageHeight` | [Maximum image height](#upload-settings). |
+| `imageWidth` | [Maximum image width](#upload-settings). |
+| `installPassword` | Stores the hashed value of the Contao Install Tool password. |
+| `licenseAccepted` | Stores whether the license in the Contao Install Tool has been accepted. |
+| `logPeriod` | Duration in seconds for how long entries in the Contao back end system log should be kept. Default: `604800`. |
+| `maxFileSize` | [Maximum upload file size](#upload-settings). |
+| `maxImageWidth` | Allows you to define a maximum image width for the front end _(deprecated)_. |
+| `maxPaginationLinks` | Allows you define the number links shown in the automatically generated front end paginations. Default: `7`. |
+| `maxResultsPerPage` | [Maximum items per page](#back-end-configuration). |
+| `minPasswordLength` | Allows you to define the minimum password length for front end members and back end users. Default: `8`. |
+| `requestTokenWhitelist` | Allows you to disable the [request token check][RequestTokens] for requests coming from the the hosts in this array _(deprecated)_. |
+| `resultsPerPage` | [Items per page](#back-end-configuration). |
+| `sessionTimeout` | Duration in seconds for how long a user session (front and back end) should stay valid. If you increase this value, you also might need to increase PHP's [session timeouts][PhpSessionSettings] (`session.cookie_lifetime` and `session.gc_maxlifetime`). Default: `3600`. |
+| `timeFormat` | [Time format](#date-and-time). |
+| `timeZone` | [Time zone](#date-and-time). |
+| `undoPeriod` | Duration in seconds for how long deleted entries can still be restored. Default: `2592000`. |
+| `uploadTypes` | [Upload file types](#upload-settings). |
+| `useAutoItem` | Allows you to disable the usage of the so called _auto item_ _(not recommended)_. |
+| `versionPeriod` | Duration in seconds for how long previous versions of edited entries should be kept. Default: `7776000`. |
+
+
 ## E-Mail sending configuration
 
 To set up the sending of e-mails via an SMTP server, you need the following information from your host:
@@ -430,7 +499,7 @@ smtp://<USERNAME>:<PASSWORD>@<HOSTNAME>:<PORT>
 ```
 
 Replace the `<PLACEHOLDER>` with the information of the SMTP server used, or remove them accordingly. See also the 
-information in the official [Symfony documentation](https://symfony.com/doc/4.4/mailer.html#transport-setup).
+information in the official [Symfony documentation][SymfonyMailer].
 
 {{% notice warning %}}
 If your username or password contains special characters, they need to be "url encoded". There are several online
@@ -509,3 +578,10 @@ the Contao installation directory:
 php vendor/bin/contao-console cache:clear --env=prod --no-warmup
 ```
 {{% /notice %}}
+
+
+[SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
+[InsertTags]: /en/article-management/insert-tags/
+[RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
+[LegacyRouting]: /en/layout/site-structure/configure-pages/#legacy-routing-mode
+[PhpSessionSettings]: http://docs.php.net/manual/en/session.configuration.php

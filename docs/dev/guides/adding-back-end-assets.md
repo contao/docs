@@ -80,7 +80,7 @@ use Contao\CoreBundle\ServiceAnnotation\Callback;
 /**
  * @Callback(target="config.onload", table="tl_content")
  */
-class FilesOnLoadCallbackListener
+class ContentOnLoadCallbackListener
 {
     public function __invoke(): void
     {

@@ -135,9 +135,7 @@ enthalten.
 
 Statt einer spezifischen _Version_ wird nun ein spezifischer _Branch_ aus dem öffentlichen
 Git Repository von Contao verlangt. Jede »Minor« Version von Contao hat ihren eigenen
-»Entwicklungszweig (Branch)«, z. B. `4.9.x-dev` für Contao `4.9`. Der Branch für 
-die neueste, sich gerade in Entwicklung befindliche, _zukünftige_ Version von Contao 
-befindet sich immer im `dev-master` Branch.
+»Entwicklungszweig (Branch)«, z. B. `4.9.x-dev` für Contao `4.9`.
 
 Eine komplettes Beispiel einer `composer.json`, wo der Entwicklungszweig von Contao 
 `4.9` installiert wird, sieht so aus:
@@ -196,7 +194,7 @@ aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.
 Die Testversionen können auch ohne manuelle Änderung der `composer.json` direkt
 über den Contao Manager installiert werden. Dazu editiert man bei »Contao Open Source
 CMS« die angeforderte Versionsangabe entweder auf bspw. `4.9.*@RC`, um Release
-Candidates, oder `4.9.x-dev` bzw. `dev-master` um Entwicklerversionen installieren 
+Candidates, oder `4.9.x-dev` um Entwicklerversionen installieren 
 zu lassen.
 
 ![Contao Manager Versionsangabe](/de/guides/images/de/install-version/contao-manager-versionseingabe.gif?classes=shadow)
