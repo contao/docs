@@ -317,7 +317,9 @@ class RequestListener
 
 {{% notice info %}}
 Within the sub request of a fragment, this attribute is currently only the database
-_ID_ of the page, not a model instance.
+_ID_ of the page, not a model instance. However, starting with Contao **4.9.10**
+you can use `$this->getPageModel()` (if your fragment extends from the `AbstractFragmentController`)
+in order to retrieve the page model of the current request.
 {{% /notice %}}
 
 
