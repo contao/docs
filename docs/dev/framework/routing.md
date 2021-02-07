@@ -109,7 +109,7 @@ with two parameters:
   name of the route. This takes advantage of your IDE's auto-complete feature, if
   you want to reference the route for the `UrlGenerator` for example.
 
-We can use the `debug:router` command to confirm its succesful registration:
+We can use the `debug:router` command to confirm its successful registration:
 
 ```
 $ vendor/bin/contao-console debug:router "App\Controller\ExampleController"
@@ -274,51 +274,6 @@ class ExampleController
 ```
 
 See the article on [Request Tokens][RequestTokens] for more details.
-
-
-### Page Model
-
-{{< version "4.7" >}}
-
-If a request matches a page within the defined site structure of your Contao
-instance then Contao's `RouteProvider` will store the model of that page as a request 
-attribute, so that it is accessible anywhere via the request object. The attribute's 
-name is `pageModel` and its value will be a `\Contao\PageModel` instance.
-
-```php
-namespace App\EventListener;
-
-use Contao\PageModel;
-use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
-
-/**
- * @ServiceTag("kernel.event_listener", name="kernel.requset")
- */
-class RequestListener
-{
-    public function __invoke(RequestEvent $event): void
-    {
-        $request = $event->getRequest();
-
-        if (!$request->attributes->has('pageModel')) {
-            return;
-        }
-
-        /** @var PageModel $page */
-        $page = $request->attributes->get('pageModel');
-
-        $title = $page->pageTitle ?: $page->title;
-
-        // …
-    }
-}
-```
-
-{{% notice info %}}
-Within the sub request of a fragment, this attribute is currently only the database
-_ID_ of the page, not a model instance.
-{{% /notice %}}
 
 
 ### Maintenance Mode

@@ -310,7 +310,7 @@ aus DSGVO-Sicht völlig unbedenklich sind, da technisch notwendig:
 
 2. Das CSRF-Cookie zur Verhinderung von [CSRF-Attacken][csrf].
 
-3. Das Trusted Device Cookie für vertrauten Geräten bei aktivierter Zwei-Faktor-Authentifizierung.
+3. Das Trusted Device Cookie für vertraute Geräte bei aktivierter Zwei-Faktor-Authentifizierung.
 
 4. Das Remember-Me Cookie bei aktivierter Remember-Me-Funktion.
 

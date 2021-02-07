@@ -11,6 +11,22 @@ aliases:
 The `getFrontendModule` hook allows to manipulate the generation of the front end
 modules.
 
+{{% notice info %}}
+This hook is only executed, when a front end module is rendered directly via 
+`\Contao\Controller::getFrontendModule()`. This will _not_ be the case if a module 
+is inserted into a page via the _Module_ content element for example. The hook is
+executed when a front end module is rendered via the page layout or via an insert
+tag - or in some cases when a module dynamically inserts another module (e.g. when
+the news, events or faq list module dynamically shows the selected reader module).
+You will need to implement the [`getContentElement`](/reference/hooks/getContentElement/)
+hook as well, if you want to cover all bases.
+{{% /notice %}}
+
+{{% notice info %}}
+This hook is also executed for forms that are integrated into a page layout via
+a front end module.
+{{% /notice %}}
+
 
 ## Parameters
 
@@ -22,9 +38,10 @@ modules.
 
     The generated front end module buffer.
     
-3. *\Contao\Module* `$module`
+3. *object* `$module`
 
-    The class of the front end module (inherits from `\Contao\Module`).
+    An instance of the front end module's class that is registered for this module's
+    type.
 
 
 ## Return Values
@@ -39,6 +56,7 @@ Return `$buffer` or your custom modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\Form;
 use Contao\Module;
 use Contao\ModuleModel;
 
@@ -47,7 +65,7 @@ use Contao\ModuleModel;
  */
 class GetFrontendModuleListener
 {
-    public function __invoke(ModuleModel $model, string $buffer, Module $module): string
+    public function __invoke(ModuleModel $model, string $buffer, $module): string
     {
         // Wrap a specific module in an additional wrapper div
         if (2 === (int) $model->id) {

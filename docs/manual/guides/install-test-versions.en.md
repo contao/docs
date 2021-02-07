@@ -127,9 +127,7 @@ unstable code.
 
 In this case, instead of requiring a specific _version_ of Contao, a specific _branch_
 of Contao's public Git repository will be required. Each minor version of Contao
-has its own development branch, e.g. `4.9.x-dev` for Contao `4.9` for instance. 
-The branch of a _future_ Contao version currently in development will always be the
-`dev-master` branch.
+has its own development branch, e.g. `4.9.x-dev` for Contao `4.9` for instance.
 
 Here is a full `composer.json` example, requiring the development branch of Contao's
 `4.9` version:
@@ -188,8 +186,7 @@ pulled from Contao's public Git repository.
 These test versions can also be installed via the Contao Manager, without having
 to manually change the `composer.json`. You can edit the required version of "Contao
 Open Source CMS" to `4.9.*@RC` for example, in order to install release candidates.
-Or you can enter `4.9.x-dev` or `dev-master` respectively, in order to install development
-versions.
+Or you can enter `4.9.x-dev` in order to install development versions.
 
 ![Contao Manager Versionsangabe](/de/guides/images/en/install-version/contao-manager-enter-custom-version.gif?classes=shadow)
 

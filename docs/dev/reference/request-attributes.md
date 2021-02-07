@@ -17,10 +17,12 @@ framework itself.
 | `_locale` | `string` | Contains the locale of the current request. This can be set in the defaults of the route, or it will be set by Contao when using the `frontend` or `backend` request scope. Otherwise it will be `null`. |
 | `_scope` | `string` (`frontend`/`backend`) | The Contao request scope, either `frontend` or `backend`. See [Framework: Routing][RequestScope]. |
 | `_token_check` | `bool` | This enables or disabled the CSRF protection for POST requests to this route. The request token check is enabled by default for routes with a Contao request scope and thus can be disabled with this request attribute. Otherwise it can be enabled. See [Framwork: Routing][RoutingCsrf] and [Framework: Request Tokens][FrameworkCsrf] for more information on request tokens. |
-| `pageModel` | `\Contao\PageModel`/`int` | Contains a `PageModel` instance in Contao requests. _Note:_ contains only the page ID in the request attributes of fragments. See [Framework: Routing][RoutingPageModel]. |
+| `pageModel` | `\Contao\PageModel`/`int` | Contains an instance or an ID of a `PageModel` in Contao requests. _Note:_ do not use this directly. Use argument value resolving in [Page Controllers][PageControllers] or `$this->getPageModel()` in [Content Elements][ContentElements] or [Front End Modules][FrontEndModules]. |
 
 
 [RequestScope]: /framework/routing/#request-scope
 [RoutingCsrf]: /framework/routing/#csrf-protection
 [FrameworkCsrf]: /framework/request-tokens/
-[RoutingPageModel]: /framework/routing/#page-model
+[PageControllers]: /framework/page-controllers/
+[ContentElements]: /framework/content-elements/
+[FrontEndModules]: /framework/front-end-modules/

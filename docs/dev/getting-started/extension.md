@@ -145,12 +145,12 @@ the Contao 4 installation:
 ```
 
 In the `require` part we can then request the installation of our extension, using
-the defined package name and `dev-master` as the version.
+the defined package name and `dev-main` as the version.
 
 ```json
 {
     "require": {
-        "somevendor/contao-example-bundle": "dev-master"
+        "somevendor/contao-example-bundle": "dev-main"
     }
 }
 ```
@@ -322,7 +322,7 @@ $ git init
 $ git add --all
 $ git commit -m "initial commit"
 $ git remote add origin git@github.com:somevendor/contao-example-bundle.git
-$ git push origin master
+$ git push origin main
 ```
 
 Then the package can be published on the public Packagist by submitting the URL
@@ -335,7 +335,7 @@ a look at the [dedicated article][9].
 
 Once the package has been published to the public Packagist, the extension's repository
 can actually be removed from the root `composer.json` of the Contao installation.
-When requiring `dev-master` (or any `dev-` branch) of the extension, composer will
+When requiring `dev-main` (or any `dev-` branch) of the extension, composer will
 actually check out the code from the Git repository instead. This enables you to
 push any changes you make back to the origin branch using your SSH key.
 

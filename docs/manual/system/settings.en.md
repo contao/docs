@@ -581,7 +581,7 @@ php vendor/bin/contao-console cache:clear --env=prod --no-warmup
 
 
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
-[InsertTags]: /article-management/insert-tags/
+[InsertTags]: /en/article-management/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
-[LegacyRouting]: /layout/site-structure/configure-pages/#legacy-routing-mode
+[LegacyRouting]: /en/layout/site-structure/configure-pages/#legacy-routing-mode
 [PhpSessionSettings]: http://docs.php.net/manual/en/session.configuration.php
