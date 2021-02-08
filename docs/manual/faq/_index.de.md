@@ -157,3 +157,12 @@ Die [Composer Resolver Cloud](https://composer-resolver.cloud/) erlaubt die Inst
 Falls du den »Anwendungs-Cache« erneuern möchtest kannst du dies im [Contao Manager](/de/installation/contao-manager/) 
 im Bereich »Systemwartung/Anwendungs-Cache« durchführen.
 {{% /expand %}}
+
+{{% expand "Der Contao Manager hat sich »aufgehangen«" %}}
+Sollte es vorkommen, dass der Contao Manager nicht mehr reagiert, das Fenster der Konsolenausgabe sich nicht schließen lässt
+oder nach einem Reload der Manager-Seite man immer wieder zur selben Ausgabe kommt, lösche im Verzeichnis `contao-manager`
+die Datei `task.json`.
+
+Anschließend sollte der Contao Manager wieder laufen.
+{{% /expand %}}
+
