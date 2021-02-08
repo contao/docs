@@ -154,7 +154,7 @@ If you want to refresh the »Application Cache« you can do this in the
 [Contao Manager](/en/installation/contao-manager/) »Maintenance/Application Cache« area.
 {{% /expand %}}
 
-{{% expand "The Contao Manager has "hung up"" %}}
+{{% expand "The Contao Manager has hung up" %}}
 If the Contao Manager stops responding, the console output window does not close, or after a reload of the manager page
 or after a reload of the manager page you always get the same output, delete the file `contao-manager` in the directory `task.json`.
 delete the file `task.json`.
