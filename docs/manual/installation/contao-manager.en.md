@@ -112,6 +112,14 @@ Now call the Contao Manager from your domain with the addition `contao-manager.p
 
 If you see the login mask for an existing user despite deleting the file `users.json`, delete the cookies of the domain or open the Contao Manager page in the "incognito mode" of your browser.
 
+### The Contao Manager has "hung up"
+
+If the Contao Manager stops responding, the console output window does not close, or after a reload of the manager page
+or after a reload of the manager page you always get the same output, delete the file `contao-manager` in the directory `task.json`.
+delete the file `task.json`.
+
+After that, the Contao Manager should run again.
+
 ### Can I add another user account to Contao Manager? {#can-add-another-user-account to the Contao Manager}
 
 Yes, you have to edit the file `users.json` in the directory `contao-manager` and add an additional user account. In our case this is `h.lewis`.
