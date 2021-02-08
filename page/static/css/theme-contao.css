@@ -488,10 +488,6 @@ option {
     min-width: 600px;
 }
 
-.algolia-searchbox .algolia-docsearch-suggestion--category-header {
-    display: none !important;
-}
-
 .algolia-searchbox label[for="algolia-search"] {
     color: rgba(255, 255, 255, 0.8);
     position: absolute;
