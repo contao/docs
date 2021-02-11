@@ -42,6 +42,8 @@ Therefore, our BC promise deviates from the Symfony BC promise in some regards:
   own extensions and thus can be used is extracted into the [contao/test-case](https://packagist.org/packages/contao/test-case) package
   which is versioned according to Semantic Versioning as well.
   
+* Our BC promise does currently not cover the "Named parameters" introduced in [PHP 8.0](https://wiki.php.net/rfc/named_params). You
+  can follow or get involved in the discussion[on GitHub](https://github.com/contao/contao/issues/2624).
 
 {{% notice tip %}}
 
