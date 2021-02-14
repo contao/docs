@@ -602,7 +602,49 @@ class EditButtonsCallbackListener
 ```
 {{% /expand %}}
 
+## Select Callbacks
 
+
+The following is a list of callbacks relating to select actions of a Data Container.
+
+### `select.buttons`
+
+Allows you to modify the action buttons at the bottom after selecting rows. This
+can be used to add additional buttons or update and remove any of the existing buttons.
+
+{{% expand "Parameters" %}}
+* `array` Array of strings
+* `\Contao\DataContainer` Data Container object
+
+**return:** `array` Array of strings containing the buttons' markup
+{{% /expand %}}
+
+{{% expand "Example" %}}
+This example removes the "delete" button from the editing form of a record
+of the `tl_example` Data Container.
+
+```php
+// src/EventListener/DataContainer/SelectButtonsCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+
+/**
+ * @Callback(table="tl_example", target="select.buttons")
+ */
+class SelectButtonsCallbackListener
+{
+    public function __invoke(array $buttons, DataContainer $dc): array
+    {
+        // Remove the delete button
+        unset($buttons['delete']);
+        
+        return $buttons;
+    }
+}
+```
+{{% /expand %}}
 
 [hooks]: /framework/hooks/
 [registerCallbacks]: /framework/dca/#registering-callbacks
