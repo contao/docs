@@ -122,7 +122,7 @@ options are available.
 | template | `string`  | _Optional:_ Override the generated template name.                                                                                         |
 | type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                                                        |
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |
-| method   | `string` | _Optional:_  Which method should be invoked on the controller.                                                                            |
+| method   | `string`  | _Optional:_  Which method should be invoked on the controller.                                                                            |
 
 A more complex example of a Content Element could look like this.
 
