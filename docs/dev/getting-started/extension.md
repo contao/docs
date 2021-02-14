@@ -37,7 +37,7 @@ When creating an extension, the following objectives are relevant:
 
 The first thing you do is usually to decide on a _name_ for the extension and its 
 package. For the package name, the usual convention is to use the vendor name identical 
-to your or your organiztation's Git account name, plus the name of the extension 
+to your organization's Git account name, plus the name of the extension 
 in kebab case, prefixed with `contao-`, e.g.: `somevendor/contao-example-bundle`.
 
 When starting an extension from scratch (i.e. you do not even have a remote Git
