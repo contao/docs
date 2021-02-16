@@ -95,6 +95,11 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 
 ### Minimum PHP Requirements
 
+#### Contao 4.11 and later
+
+- **PHP** Version 7.3.0 or higher is required.
+
+
 #### Contao 4.9 and later
 
 - **PHP** Version 7.2.0 or higher is required.
