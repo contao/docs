@@ -39,18 +39,20 @@ alternative protection in place!
 {{% /notice %}}
 
 
-## Checking The Token Manually
+## Generating and Checking The Token
 
-If, for some reason, you need to check the request token yourself, you can do so by combining the token manager
-service (`@contao.csrf.token_manager`) and the configured token name (`%contao.csrf_token_name%`): 
+In order to generate a CSRF token you need the token manager service (`@contao.csrf.token_manager`) and the
+configured token name (`%contao.csrf_token_name%`). You can also validate the token yourself, if you need to do that for
+some reason.
 
 ```php
+// src/ExampleService.php
 namespace App;
 
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
-class MyTokenCheckService
+class ExampleService
 {
     /**
      * @var CsrfTokenManagerInterface
@@ -68,7 +70,12 @@ class MyTokenCheckService
         $this->csrfTokenName = $csrfTokenName;
     }
 
-    public function check(string $tokenValue): bool
+    public function generateToken(): string
+    {
+        return $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
+    }
+
+    public function checkToken(string $tokenValue): bool
     {
         $token = new CsrfToken($this->csrfTokenName, $tokenValue);
     

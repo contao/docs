@@ -220,6 +220,65 @@ class Example
 ```
 
 
+## CsrfTokenManager
+
+This service allows you to generate and validate [request tokens][RequestTokens]. You will need this service for custom
+forms for example that will allow the front end user to generate a POST request on a Contao route. Such requests need
+to have a valid request token present. Contao registers its own `Symfony\Component\Security\Csrf\CsrfTokenManager` under 
+the service ID `@contao.csrf.token_manager` and configures its own token name under the parameter 
+`%contao.csrf_token_name%`.
+
+```php
+// src/Controller/ContentElement/ExampleFormElementController.php
+namespace App\Controller\ContentElement;
+
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @ContentElement(category="texts")
+ */
+class ExampleFormElementController extends AbstractContentElementController
+{
+    /**
+     * @var CsrfTokenManagerInterface
+     */
+    private $csrfTokenManager;
+
+    /**
+     * @var string
+     */
+    private $csrfTokenName;
+
+    public function __construct(CsrfTokenManagerInterface $csrfTokenManager, string $csrfTokenName)
+    {
+        $this->csrfTokenManager = $csrfTokenManager;
+        $this->csrfTokenName = $csrfTokenName;
+    }
+
+    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    {
+        $template->token = $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
+
+        return $template->getResponse();
+    }
+}
+```
+
+```html
+<!-- contao/templates/ce_example_form_element.html5 -->
+<form>
+  <input type="hidden" name="REQUEST_TOKEN" value="<?= $this->token ?>">
+  <!-- … -->
+</form>
+```
+
+
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/master/core-bundle/tests/Util/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
+[RequestTokens]: /dev/framework/request-tokens/
