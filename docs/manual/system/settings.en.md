@@ -60,6 +60,34 @@ Higher values mean a longer loading time.
 **Maximum items per page:** To prevent an inexperienced user from displaying 5000 records at once and thus 
 exceeding the PHP memory limit, you can specify the maximum number of records that can be displayed per page.
 
+#### Additional back end settings:
+
+{{< version "4.11" >}}
+
+Some additional parameters can be configured via the `config/config.yml`.
+
+| Key | Description |
+| --- | --- |
+| `attributes` | Adds HTML attributes to the `<body>` tag in the back end. The attribute name must be a valid HTML attribute name. For common use the names should be prefixed with `data-`. |
+| `custom_css` | Adds custom style sheets to the back end. The assets must be publicly accessible via URL! |
+| `custom_js` | Adds custom JavaScript files to the back end. The assets must be publicly accessible via URL! |
+| `badge_title` | Configures the title of the badge in the back end. |
+
+The following config defines some example values: 
+
+```yml
+# config/config.yaml
+contao:
+    backend:
+        attributes:
+            data-app-name: 'My App'
+            data-app-version: 1.2.3
+        custom_css:
+            - files/backend/custom.css
+        custom_js:
+            - files/backend/custom.js
+        badge_title: develop
+```
 
 ### Front end configuration
 
