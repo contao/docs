@@ -175,7 +175,8 @@ class Example
 }
 ```
 
-#### Extending the parser
+
+### Extending the parser
 
 The simple token parser builds on top of the [Symfony Expression Language][ExpressionLanguage]. If you want to extend
 its functionality, you can register an [expression provider][ExpressionProvider] that adds your own expression functions:
