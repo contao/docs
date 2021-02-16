@@ -281,4 +281,4 @@ class ExampleFormElementController extends AbstractContentElementController
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/master/core-bundle/tests/Util/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
-[RequestTokens]: /dev/framework/request-tokens/
+[RequestTokens]: /framework/request-tokens/
