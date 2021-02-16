@@ -166,6 +166,13 @@ wizard'`).
 </tr>
 </table>
 
+{{% notice info %}}
+Due to the nature of floating elements in CSS you need to be careful about which fields of your palette are 50% width
+and thus are floating and which are not. For example if a 50% (`w50`) field is immediately followed by a full length
+field then you must add the `clr` class to the latter, otherwise the layout might break (e.g. the full length field 
+floating in the wrong place or being overlayed by other fields).
+{{% /notice %}}
+
 
 ## Manipulating palettes
 
