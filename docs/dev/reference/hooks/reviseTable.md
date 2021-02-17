@@ -28,15 +28,15 @@ This hook can also be implemented as an anonymous function.
 
 2. *array* `$newRecords`
 
-    Array containing the ID of the new records.
+    Array containing the ID of the new records. Can be `null`.
 
 3. *string* `$parentTable`
 
-    Optional parent table of the current table.
+    Optional parent table of the current table. Can be `null`.
 
 4. *array* `$childTables`
 
-    Optional array containing the names of the child tables.
+    Optional array containing the names of the child tables. Can be `null`.
 
 
 ## Return Values
@@ -57,7 +57,7 @@ use Contao\CoreBundle\ServiceAnnotation\Hook;
  */
 class ReviseTableListener
 {
-    public function __invoke(string $table, array $newRecords, ?string $parentTable, ?array $childTables): ?bool
+    public function __invoke(string $table, ?array $newRecords, ?string $parentTable, ?array $childTables): ?bool
     {
         // Do something …
     }
