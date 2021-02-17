@@ -14,6 +14,12 @@ Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für [D
 Wenn du die Docker-Toolbox einsetzt, sind [diese Angaben](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox "Docker Toolbox and the Devilbox") der Dokumentation lesenswert.
 
 
+## docker-compose installieren und konfigurieren (Linux)
+
+Voraussetzung ist eine Installation von docker-compose. Danach muss noch die Berechtigung gesetzt werden:
+sudo usermod -a -G docker $USER
+
+
 ## Devilbox installieren und konfigurieren
 
 Es ist keine Installation im eigentlichen Sinne notwendig. Du musst dir nur die Dateien von der 
