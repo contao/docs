@@ -100,7 +100,7 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 - **PHP** Version 7.3.0 or higher is required.
 
 
-#### Contao 4.9 and later
+#### Contao 4.9 (LTS)
 
 - **PHP** Version 7.2.0 or higher is required.
 - Images can be processed with the PHP extensions GD (`ext-gd`), Imagick (`ext-imagick`) or Gmagick (`ext-gmagick`). 
