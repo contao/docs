@@ -23,6 +23,19 @@ or a `contao-bundle` is a specific type of package. _Contao bundles_ are referre
 to as _extensions_ within the Contao universe.
 {{% /notice %}}
 
+This article guides you through the necessary steps of creating an extension. It 
+reflects the minimum amount of basic configuration that has to be done in order
+to be able to install such an extension in your Contao installation.
+
+{{% notice tip %}}
+Instead of creating the groundwork manually, you can also kickstart the development
+of your extension by having a look at the official [Contao 4 skeleton bundle](https://github.com/contao/skeleton-bundle).
+You can also clone it and then make the necessary adjustments that are individual
+to your own extension as outlined in its README. It might still be useful though
+to go through all the steps of this guide for a better understanding on how it all
+works together.
+{{% /notice %}}
+
 
 ## Objectives
 
