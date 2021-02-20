@@ -53,7 +53,7 @@ contao:
                 zoom: 100
                 css_class: example
                 lazy_loading: true
-                densities: 1.5x 2x
+                densities: 1.5x, 2x
 ```
 
 {{% notice note %}}
@@ -166,7 +166,7 @@ contao:
                     jpg:
                         - webp
                         - jpg
-                densities: 0.75x 2x
+                densities: 0.75x, 2x
                 lazy_loading: true
                 resize_mode: crop
                 width: 1000
@@ -177,7 +177,7 @@ contao:
                     jpg:
                         - webp
                         - jpg
-                densities: 0.75x 2x
+                densities: 0.75x, 2x
                 lazy_loading: true
                 resize_mode: crop
                 width: 500
@@ -208,7 +208,7 @@ contao:
                     jpg:
                         - webp
                         - jpg
-                densities: 0.75x 2x
+                densities: 0.75x, 2x
                 lazy_loading: true
                 resize_mode: crop
 
