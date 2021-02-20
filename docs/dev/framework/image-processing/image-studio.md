@@ -299,5 +299,5 @@ If you are using Twig, there are three supported ways to get figures/images into
 [TwigTemplates]: https://github.com/contao/contao/blob/master/core-bundle/src/Resources/views/Image/Studio
 [MacroDefinitions]: https://github.com/contao/contao/blob/master/core-bundle/src/Resources/views/Image/Studio/_macros.html.twig
 [PropertyAccess]: https://symfony.com/doc/current/components/property_access.html
-[SizeArray]: /framework/image-processing/image-picture-factory/#size-array
+[SizeArray]: /framework/image-processing/image-sizes/#size-array
 [FigureBuilderOptionsReference]: /framework/image-processing/image-studio/#setting-options
