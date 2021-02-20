@@ -149,6 +149,86 @@ The HTML output for a JPEG file would look as follows:
 ```
 
 
+### Defaults
+
+{{< version "4.11" >}}
+
+You can also define defaults for your image sizes via the special `_defaults` key so that you do not have to define them
+for each image size separately. So instead of writing:
+
+{{% expand "Example without defaults" %}}
+```yml
+contao:
+    image:
+        sizes:
+            large_photo:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 0.75x 2x
+                lazy_loading: true
+                resize_mode: crop
+                width: 1000
+                height: 500
+
+            medium_photo:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 0.75x 2x
+                lazy_loading: true
+                resize_mode: crop
+                width: 500
+                height: 250
+
+            small_box:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 2x
+                resize_mode: box
+                width: 100
+                height: 100
+```
+{{% /expand %}}
+
+you could instead incorporate some of these settings as defaults and thus ommit or overwrite them in the specific image
+size:
+
+{{% expand "Example with defaults" %}}
+```yml
+contao:
+    image:
+        sizes:
+            _defaults:
+                formats:
+                    jpg:
+                        - webp
+                        - jpg
+                densities: 0.75x 2x
+                lazy_loading: true
+                resize_mode: crop
+
+            large_photo:
+                width: 1000
+                height: 500
+
+            medium_photo:
+                width: 500
+                height: 250
+
+            small_box:
+                densities: 2x
+                resize_mode: box
+                width: 100
+                height: 100
+```
+{{% /expand %}}
+
+
 ### Translating Size Configurations
 
 Every configured image size will show up in the back end under the key given in the `config/config.yml`. However, in
