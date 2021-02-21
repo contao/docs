@@ -70,3 +70,9 @@ Die beschriebenen Tastaturkürzel funktionieren in dieser Form nur unter Windows
 
 Zudem weicht Firefox unter Windows leider vom gewohnten Standard ab, dort musst du `[Alt]+[Umsch]` in Verbindung mit
 dem gewünschten Kürzel drücken.
+
+Eine Übersicht welche Tastenkombination unter welchem Betriebsystem und Browser benutzt werden muss bietet
+[dieser Artikel][MozillaAccesskey].
+
+
+[MozillaAccesskey]: https://developer.mozilla.org/de/docs/Web/HTML/Globale_Attribute/accesskey
