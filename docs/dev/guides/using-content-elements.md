@@ -97,8 +97,8 @@ $GLOBALS['BE_MOD']['content']['example'] = [
 Editing `tl_content` records will now be possible with the previous steps - however,
 the `ptable` definition of `tl_content` will still be empty and thus Contao would
 not know which parent table should be assigned to any new record of `tl_content`.
-As already mentioned we will use a service where we listen to the [`loadDataContainer`][LoadDataContainerHook]
-and adjust the `ptable` definition of the `tl_content` DCA accordingly.
+As already mentioned we will use a service where we implement a [`loadDataContainer`][LoadDataContainerHook]
+hook and adjust the `ptable` definition of the `tl_content` DCA accordingly.
 
 ```php
 // src/EventListener/SetPtableForContentListener.php
