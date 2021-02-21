@@ -1,7 +1,12 @@
 ---
 title: "Wartungstemplate anpassen"
 description: "Wartungstemplate updatesicher anpassen"
-- "Wartungstemplate"
+url: "anleitungen/wartungstemplate-anpassen"
+aliases:
+    - /de/anleitungen/wartungstemplate-anpassen/
+weight: 10
+tags: 
+   - "Wartungstemplate"
 ---
 
 ## Wartungsmodus aktivieren
