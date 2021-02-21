@@ -68,7 +68,7 @@ together with the keyboard shortcut.
 
 In addition, Firefox on Windows and Linux deviates from the standard: you have to press `[Alt]+[Shift]` instead of just `[Alt]`.
 
-See [this article][MozillaAccesskey] for an overview on which key combination to press on which operating system and 
+See [this article][MozillaAccesskey] for an overview of which key combination to press on which operating system and 
 browser.
 
 
