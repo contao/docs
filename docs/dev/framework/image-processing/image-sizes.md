@@ -38,7 +38,7 @@ contao:
 ```
 
 There are many more options available. The following configuration called `example` would crop an image to 128 by 128
-pixel and zoom fully into its _important part_ (if defined). Furthermore the images `srcset` will contain `1.5x` and `2.x`
+pixel and zoom fully into its _important part_ (if defined). Furthermore the image's `srcset` will contain `1.5x` and `2.x`
 densities and the `<img>` will have a CSS class called `example`: 
 
 ```yaml
