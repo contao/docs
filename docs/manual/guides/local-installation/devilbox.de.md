@@ -16,7 +16,7 @@ Wenn du die Docker-Toolbox einsetzt, sind [diese Angaben](https://devilbox.readt
 
 ## docker-compose installieren und konfigurieren (Linux)
 
-Voraussetzung ist eine Installation von docker-compose. Danach muss noch die Berechtigung gesetzt werden:
+Voraussetzung ist eine Installation von docker und docker-compose. Danach muss noch die Berechtigung gesetzt werden:
 sudo usermod -a -G docker $USER
 
 
