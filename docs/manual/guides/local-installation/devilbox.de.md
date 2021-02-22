@@ -13,6 +13,13 @@ tags:
 Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für [Docker](https://www.docker.com/). 
 Wenn du die Docker-Toolbox einsetzt, sind [diese Angaben](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox "Docker Toolbox and the Devilbox") der Dokumentation lesenswert.
 
+{{% notice note %}}
+Um die Devilbox nutzen zu können muss _Docker_ und _Docker Compose_ auf deinem System installiert sein. Falls das noch
+nicht der Fall ist, kannst du dir die 
+[Devilbox Prerequisites Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/prerequisites.html) für 
+mehr Informationen zur Installation dieser Programme durchlesen.
+{{% /notice %}}
+
 
 ## Devilbox installieren und konfigurieren
 
