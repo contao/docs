@@ -71,7 +71,7 @@ Die beschriebenen Tastaturkürzel funktionieren in dieser Form nur unter Windows
 Zudem weicht Firefox unter Windows und Linux leider vom gewohnten Standard ab, dort musst du `[Alt]+[Umsch]` in Verbindung mit
 dem gewünschten Kürzel drücken.
 
-Eine Übersicht welche Tastenkombination unter welchem Betriebsystem und Browser benutzt werden muss bietet
+Eine Übersicht, welche Tastenkombination unter welchem Betriebssystem und Browser benutzt werden muss, bietet
 [dieser Artikel][MozillaAccesskey].
 
 
