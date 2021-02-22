@@ -69,7 +69,7 @@ Beispiel für eine angepasste Sprachdatei:
 </xliff>
 ```
 
-Alternativ kann auch die PHP Notation verwendet werden. Dazu legst du eine exception.php an, die dann ungefähr so aussieht:
+Alternativ kann auch die PHP Notation verwendet werden. Dazu legst du eine `exception.php` an, die dann ungefähr so aussieht:
 
 ```php
 $GLOBALS['TL_LANG']['XPT']['unavailable'] = 'Wartungsmodus';
