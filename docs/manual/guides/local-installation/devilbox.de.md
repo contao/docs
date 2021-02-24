@@ -11,10 +11,15 @@ tags:
 ---
 
 Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für [Docker](https://www.docker.com/). 
-Installationen der aktuellen »[Docker Desktop](https://www.docker.com/products/docker-desktop)« Version stehen für 
-verschiedene Betriebssysteme, u. a. auch für z. B. 
+
+{{% notice note %}}
+Um die Devilbox nutzen zu können muss _Docker_ und _Docker Compose_ auf deinem System installiert sein. Falls das noch
+nicht der Fall ist, kannst du dir die 
+[Devilbox Prerequisites Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/prerequisites.html) für 
+mehr Informationen zur Installation dieser Programme, u. a. auch für z. B. 
 »[Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/)« oder 
-»[Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/)«, bereit. 
+»[Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/)«, durchlesen.
+{{% /notice %}}
 
 
 ## Devilbox installieren und konfigurieren
