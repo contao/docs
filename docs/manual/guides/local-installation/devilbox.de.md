@@ -11,14 +11,10 @@ tags:
 ---
 
 Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für [Docker](https://www.docker.com/). 
-Wenn du die Docker-Toolbox einsetzt, sind [diese Angaben](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox "Docker Toolbox and the Devilbox") der Dokumentation lesenswert.
-
-{{% notice note %}}
-Um die Devilbox nutzen zu können muss _Docker_ und _Docker Compose_ auf deinem System installiert sein. Falls das noch
-nicht der Fall ist, kannst du dir die 
-[Devilbox Prerequisites Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/prerequisites.html) für 
-mehr Informationen zur Installation dieser Programme durchlesen.
-{{% /notice %}}
+Installationen der aktuellen »[Docker Desktop](https://www.docker.com/products/docker-desktop)« Version stehen für 
+verschiedene Betriebssysteme, u. a. auch für z. B. 
+»[Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/)« oder 
+»[Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/)«, bereit. 
 
 
 ## Devilbox installieren und konfigurieren
@@ -28,8 +24,12 @@ Devilbox [GitHub Seite](https://github.com/cytopia/devilbox) in ein leeres Verze
 erfolgt über eine einzelne Datei. In deinem Verzeichnis findest du die Datei `env-example`. Kopiere diese und benenne 
 die Datei anschließend um in `.env`. In der neuen Datei kannst du jetzt deine Konfigurationen vornehmen. Notwendig sind Änderungen der folgende Einträge:
 
-* [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid)
+* [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid) 
+(Nicht notwendig bei einer 
+»[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« Installation)
 * [NEW_GID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-gid)
+(Nicht notwendig bei einer 
+»[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« Installation)
 * [HTTPD_DOCROOT_DIR](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-docroot-dir)
 * [HTTPD_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-server)
 * [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)
