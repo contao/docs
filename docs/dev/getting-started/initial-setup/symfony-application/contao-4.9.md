@@ -391,7 +391,12 @@ if ($_SERVER['APP_DEBUG']) {
 
 $kernel = new AppKernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
+$request->attributes->set('_preview', true);
+
 $response = $kernel->handle($request);
+
+// Prevent preview URLs from being indexed
+$response->headers->set('X-Robots-Tag', 'noindex');
 
 // Force no-cache on all responses in the preview front controller
 $response->headers->set('Cache-Control', 'no-store');
