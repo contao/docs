@@ -69,6 +69,20 @@ $ composer require \
     twig/twig:^2.7
 ```
 
+{{% notice note %}}
+If you're using **PHP 8.x**, replace `php-http/guzzle6-adapter` with `php-http/guzzle7-adapter` in the prior
+`composer require` command:
+```
+$ composer require \
+    contao/conflicts:@dev \
+    contao/core-bundle:4.9.* \
+    contao/installation-bundle:4.9.* \
+    php-http/guzzle7-adapter \
+    toflar/psr6-symfony-http-cache-store \
+    twig/twig:^2.7
+```
+{{% /notice %}}
+
 As long as the Symfony flex plugin is installed you will be asked to execute
 contrib recipes for several packages. Answering `a` on those question sets you
 up faster.
