@@ -14,9 +14,9 @@ The [Devilbox Project](http://devilbox.org/) is a ready-to-use LAMP stack for [D
 {{% notice note %}}
 In order to run the Devilbox you need to have _Docker_ and _Docker Compose_ installed on your system. Read through the
 [Devilbox Prerequisites documentation](https://devilbox.readthedocs.io/en/latest/getting-started/prerequisites.html) for 
-more information on that, including »[Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/)« 
-or »[Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/)«, if you are not running these applications 
-yet on your system.
+more information on that, including »[Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/) 
+(with WSL 2)« or »[Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/)«, if you are not running 
+these applications yet on your system.
 {{% /notice %}}
 
 
@@ -26,9 +26,11 @@ There is no installation routine. You just have to download the files from the D
 the file to `.env`. In the new file you can now make your configurations. The following settings need to be changed:
 
 * [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid)
-(Not necessary for a »[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« installation)
+(Not necessary for a »[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« 
+installation with Windows 10 and WSL 2)
 * [NEW_GID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-gid)
-(Not necessary for a »[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« installation)
+(Not necessary for a »[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« 
+installation with Windows 10 and WSL 2)
 * [HTTPD_DOCROOT_DIR](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-docroot-dir)
 * [HTTPD_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-server)
 * [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)

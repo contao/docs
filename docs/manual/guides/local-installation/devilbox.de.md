@@ -17,7 +17,7 @@ Um die Devilbox nutzen zu können muss _Docker_ und _Docker Compose_ auf deinem 
 nicht der Fall ist, kannst du dir die 
 [Devilbox Prerequisites Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/prerequisites.html) für 
 mehr Informationen zur Installation dieser Programme, u. a. auch für z. B. 
-»[Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/)« oder 
+»[Windows 10 Home](https://docs.docker.com/docker-for-windows/install-windows-home/) (mit WSL 2)« oder 
 »[Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/)«, durchlesen.
 {{% /notice %}}
 
@@ -31,10 +31,12 @@ die Datei anschließend um in `.env`. In der neuen Datei kannst du jetzt deine K
 
 * [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid) 
 (Nicht notwendig bei einer 
-»[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« Installation)
+»[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« 
+Installation mit Windows 10 u. WSL 2)
 * [NEW_GID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-gid)
 (Nicht notwendig bei einer 
-»[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« Installation)
+»[Docker Desktop](https://devilbox.readthedocs.io/en/latest/howto/uid-and-gid/find-uid-and-gid-on-win.html)« 
+Installation mit Windows 10 u. WSL 2)
 * [HTTPD_DOCROOT_DIR](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-docroot-dir)
 * [HTTPD_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-server)
 * [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)
