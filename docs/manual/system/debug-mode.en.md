@@ -120,7 +120,8 @@ Next to the preview button there will be a _Debug Mode_ button. When clicked, th
 will set a special cookie that enables the debug mode only for the current user.
 
 {{% notice info %}}
-The button will only be displayed, if no app environment is defined in your `.env` file.
+The button will only be displayed, if you have not defined the app environment in your `.env` file.
+{{% /notice %}}
 
 #### Contao Manager
 
