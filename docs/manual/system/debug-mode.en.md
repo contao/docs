@@ -119,6 +119,8 @@ The debug mode can also be enabled by administrators within the back end of Cont
 Next to the preview button there will be a _Debug Mode_ button. When clicked, this
 will set a special cookie that enables the debug mode only for the current user.
 
+{{% notice info %}}
+The button will only be displayed, if no app environment is defined in your `.env` file.
 
 #### Contao Manager
 
