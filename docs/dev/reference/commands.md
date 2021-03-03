@@ -9,7 +9,7 @@ To execute these commands locate the `console` executable in your project
 and append the subsequently documented commands.
 
 ```sh
-$> php bin/console <command-name>
+$> php vendor/bin/contao-console <command-name>
 ```
 
 {{% notice note %}}
@@ -20,7 +20,7 @@ instead.
 By appending the `--help` argument to any command, a usage guide is printed to the shell.
 
 ```sh
-$> php bin/console contao:user:password --help
+$> php vendor/bin/contao-console contao:user:password --help
 
 Description:
   Changes the password of a Contao back end user.
@@ -44,7 +44,7 @@ This command is an interface to the `Automator` class of Contao. It mainly consi
 of common tasks around the maintenance of a Contao installation.
 
 ```sh
-$> php bin/console contao:automator [<task>]
+$> php vendor/bin/contao-console contao:automator [<task>]
 ```
 
 The command itself can be executed without providing a task. It will then
@@ -90,7 +90,7 @@ Any extension might provide additional subscribers so this list is not necessari
 Use it as follows:
 
 ```sh
-$> php bin/console contao:crawl [options] [<job>]
+$> php vendor/bin/contao-console contao:crawl [options] [<job>]
 ```
 
 There is only one argument to this command which is `job`. It is optional and represents a job ID.
@@ -121,7 +121,7 @@ extension. The migrations that get executed are update scripts of Contao, regist
 legacy `runonce.php` files and the database update.
 
 ```sh
-$> php bin/console contao:migrate [options]
+$> php vendor/bin/contao-console contao:migrate [options]
 ```
 
 | Option             | Description |
@@ -137,7 +137,7 @@ $> php bin/console contao:migrate [options]
 With this command you can process all deferred images that were not yet resized.
 
 ```sh
-$> php bin/console contao:resize-images [options]
+$> php vendor/bin/contao-console contao:resize-images [options]
 ```
 
 | Option             | Description |
