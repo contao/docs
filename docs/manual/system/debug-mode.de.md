@@ -125,6 +125,9 @@ werden. Dazu befindet sich ein Button gleich neben dem Vorschau Button. Dieser B
 setzt dann ein spezielles Cookie, welches den Debug-Modus nur für den aktuellen
 Benutzer aktiviert.
 
+{{% notice info %}}
+Der Button wird nur angezeigt, wenn du keine App Umgebung in deiner `.env` Datei definiert hast. 
+{{% /notice %}}
 
 #### Contao Manager
 
