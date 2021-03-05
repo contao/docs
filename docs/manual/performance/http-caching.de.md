@@ -317,7 +317,7 @@ aus DSGVO-Sicht völlig unbedenklich sind, da technisch notwendig:
 Die höchste Anzahl Cache-Treffer und somit optimale Performance lässt sich folglich mit folgender Umgebungsvariable erzielen:
 
 ```
-COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,trusted_device,REMEMBERME
+COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
     
 {{% notice note %}}
