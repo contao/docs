@@ -80,7 +80,7 @@ If the custom insert tag mentioned above should be exempted from the public cach
 add the `uncached` flag whenever used.
 
 ```html
-<div>{{rot_13::Payload|uncached}}</div>
+<div>{{rot13::Payload|uncached}}</div>
 ```
 
 
