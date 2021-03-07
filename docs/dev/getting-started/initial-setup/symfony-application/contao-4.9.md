@@ -38,17 +38,29 @@ DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
 At this point `contao-example` should contain a working Symfony application and
 you can proceed to the second step, the installation of Contao itself.
 
+### Prepare the application for the next step
+
+Contao uses features of third party bundles. Most of them are configured automatically if you use
+[Symfony flex](https://symfony.com/doc/current/setup/flex.html), except the 2FA bundle. If you skip this step, your
+`composer require` task will fail. Therefore, you need to create a basic config yourself.
+
+Create (or edit if the file already exists) the file `config/packages/scheb_two_factor.yaml` and add the following entries:
+
+```yaml
+# Scheb 2FA configuration
+scheb_two_factor:
+    trusted_device:
+        enabled: true
+    backup_codes:
+        enabled: true
+```
+
+Now you're good to install the Contao Core bundle.
 
 ## Install the Contao Core Bundle
 
 ```
 $ composer require \
-    doctrine/common:^2.1 \
-    doctrine/dbal:^2.10 \
-    doctrine/doctrine-bundle:^1.8 \
-    doctrine/doctrine-migrations-bundle:^2.2 \
-    doctrine/migrations:^2.2 \
-    doctrine/persistence:^1.3 \
     contao/conflicts:@dev \
     contao/core-bundle:4.9.* \
     contao/installation-bundle:4.9.* \
@@ -57,10 +69,19 @@ $ composer require \
     twig/twig:^2.7
 ```
 
-If the installation request fails, try to check for conflicting packages in
-the `contao/conflicts` meta-package. This is exactly the reason why `doctrine/dbal`
-and `doctrine/migrations` need to be installed in another version than the default
-one.
+{{% notice note %}}
+If you're using **PHP 8.x**, replace `php-http/guzzle6-adapter` with `php-http/guzzle7-adapter` in the prior
+`composer require` command:
+```
+$ composer require \
+    contao/conflicts:@dev \
+    contao/core-bundle:4.9.* \
+    contao/installation-bundle:4.9.* \
+    php-http/guzzle7-adapter \
+    toflar/psr6-symfony-http-cache-store \
+    twig/twig:^2.7
+```
+{{% /notice %}}
 
 As long as the Symfony flex plugin is installed you will be asked to execute
 contrib recipes for several packages. Answering `a` on those question sets you
@@ -104,8 +125,7 @@ following lines in your `config/bundles.php` file.
 ```php
 return [
     // …
-
-    Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle::class => ['all' => true],
+    Doctrine\Bundle\DoctrineBundle\DoctrineBundle::class => ['all' => true],
     Terminal42\ServiceAnnotationBundle\Terminal42ServiceAnnotationBundle::class => ['all' => true],
     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
     Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle::class => ['all' => true],
@@ -123,7 +143,7 @@ return [
 ## Configure your Contao installation
 
 First, we need to configure the `ContaoCoreBundle`. To do so, create (or edit
-if the file already exists) the file config/packages/contao_core.yaml and add the following entries:
+if the file already exists) the file `config/packages/contao_core.yaml` and add the following entries:
 
 ```yaml
 contao:
@@ -371,7 +391,12 @@ if ($_SERVER['APP_DEBUG']) {
 
 $kernel = new AppKernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
+$request->attributes->set('_preview', true);
+
 $response = $kernel->handle($request);
+
+// Prevent preview URLs from being indexed
+$response->headers->set('X-Robots-Tag', 'noindex');
 
 // Force no-cache on all responses in the preview front controller
 $response->headers->set('Cache-Control', 'no-store');
