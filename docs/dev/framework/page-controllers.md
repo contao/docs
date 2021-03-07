@@ -193,18 +193,17 @@ suffix might be `.html`.
 ### `contentComposition`
 
 This is a boolean property defining whether this page type is used for 
-_content composition_. By default, custom page types implemented via page controllers
-do not have content composition enabled, meaning you are not able to manage the
-content and layout of this page via the back end. For example an RSS feed page controller
+_content composition_. Pages with content composition manage their content and
+layout via the back end. For example an RSS feed page controller
 would not use content composition, since its content is not supposed to be editable
-via the back end.
+via the back end. By default, content composition is enabled.
 
-If your page handles the rendering of page articles which are managed via the back
-end, then you need to enable this property on your page controller:
+If you do not want to use content composition for your page controller, thus
+you do not want that articles can be assigned to those pages, disable the property:
 
 ```php
 /**
- * @Page(contentComposition=true)
+ * @Page(contentComposition=false)
  */
 ```
 
