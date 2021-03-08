@@ -272,6 +272,76 @@ security:
         - { path: ^/, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
 ```
 
+Last part of this mandatory configuration is for the logging component. There is a development and a production configuration.
+The development configuration is located in `config/packages/dev/monolog.yaml`.
+
+{{% notice tip %}}
+This is an example configuration and you can adjust this to your custom needs if required.
+{{% /notice %}}
+
+```yaml
+monolog:
+    handlers:
+        contao:
+            type: service
+            id: contao.monolog.handler
+
+        main:
+            type: rotating_file
+            max_files: 10
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            level: debug
+            channels: ['!doctrine', '!event', '!php']
+
+        console:
+            type: console
+            bubble: false
+            verbosity_levels:
+                VERBOSITY_VERBOSE: INFO
+                VERBOSITY_VERY_VERBOSE: DEBUG
+            channels: ["!event", "!doctrine", "!console"]
+
+        console_very_verbose:
+            type: console
+            bubble: false
+            verbosity_levels:
+                VERBOSITY_VERBOSE: NOTICE
+                VERBOSITY_VERY_VERBOSE: NOTICE
+                VERBOSITY_DEBUG: DEBUG
+            channels: ["!event", "!doctrine", "!console"]
+```
+
+The monolog config for the production environment is located in `config/packages/prod/monolog.yaml`.
+
+{{% notice tip %}}
+This is an example configuration and you can adjust this to your custom needs if required.
+{{% /notice %}}
+
+```yaml
+monolog:
+    handlers:
+        contao:
+            type: service
+            id: contao.monolog.handler
+
+        main:
+            type: fingers_crossed
+            action_level: error
+            handler: nested
+            excluded_http_codes: [400, 401, 403, 404]
+
+        nested:
+            type: rotating_file
+            max_files: 10
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            level: info
+
+        console:
+            type: console
+            process_psr_3_messages: false
+            channels: ["!event", "!doctrine"]
+```
+
 You can now start a local server and open up the installation tool in your browser.
 For example, if you're using the [Symfony binary](https://symfony.com/doc/current/setup/symfony_server.html), start the server like this:
 
