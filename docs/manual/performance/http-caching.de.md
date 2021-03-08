@@ -1,6 +1,6 @@
 ---
 title: "HTTP Caching"
-description: "HTTP Caching mit Contao."
+description: "Technische Aspekte des HTTP Caching mit Contao."
 url: "performance/http-caching"
 aliases:
     - /de/performance/http-caching/
