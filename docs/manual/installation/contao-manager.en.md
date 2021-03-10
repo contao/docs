@@ -120,7 +120,7 @@ delete the file `task.json`.
 
 After that, the Contao Manager should run again.
 
-### Can I add another user account to Contao Manager? {#can-add-another-user-account to the Contao Manager}
+### Can I add another user account to Contao Manager?
 
 Yes, you have to edit the file `users.json` in the directory `contao-manager` and add an additional user account. In our case this is `h.lewis`.
 
@@ -153,7 +153,7 @@ php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'
 {{% /notice %}}
 
 
-### Can Contao Manager be added to an existing installation? {#the-contao manager can be added to an existing installation}
+### Can Contao Manager be added to an existing installation?
 
 Yes, if you use a Contao installation in the Managed Edition, you can install Contao Manager later. Just upload the `contao-manager.phar` files into the directory `web` and add the file extension `.php`.
 
