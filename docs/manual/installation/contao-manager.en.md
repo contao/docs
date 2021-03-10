@@ -94,7 +94,7 @@ The [Composer Resolver Cloud](https://composer-resolver.cloud/) allows you to in
 
 After the successful basic configuration, Contao can now be [installed](/en/installation/install-contao/#installing-contao-with-the-contao-manager).
 
-## Frequently asked questions about the Contao Manager {#frequently asked questions about the Contao Manager}
+## Frequently asked questions about the Contao Manager
 
 ### How to update the Contao Manager?
 
