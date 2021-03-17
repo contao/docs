@@ -4,5 +4,5 @@
     <Description>Contao Manual</Description>
     <InputEncoding>UTF-8</InputEncoding>
     <Image width="16" height="16" type="image/x-icon">https://contao.org/favicon.ico</Image>
-    <Url type="text/html" method="get" template="https://docs.contao.org/manual/?search={searchTerms}"/>
+    <Url type="text/html" method="get" template="{{.Permalink}}?search={searchTerms}"/>
 </OpenSearchDescription>

@@ -5,7 +5,7 @@ canonifyURLs: true
 enableGitInfo: true
 disablePathToLower: true
 outputs:
-  home: ['HTML', 'JSON']
+  home: ['HTML', 'JSON', 'OpenSearchXML']
 markup:
   goldmark:
     parser:
@@ -14,3 +14,13 @@ markup:
       unsafe: true
   tableOfContents:
     endLevel: 3
+outputFormats:
+  OpenSearchXML:
+    baseName: search
+    isPlainText: true
+    mediaType: application/opensearchdescription+xml
+    protocol: bep://
+mediaTypes:
+  application/opensearchdescription+xml:
+    suffixes:
+      - xml
