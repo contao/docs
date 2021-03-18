@@ -233,7 +233,7 @@ updated or deleted. The tags are as follows:
 * `contao.db.<table-name>.<id>`
 * `contao.db.<table-name>` OR `contao.db.<parent-table-name>` (depending on whether a parent table is defined or not)
 * `contao.db.<parent-table-name>.<pid>` (only if there is a parent record)
-* `contao.db.<child-table-name>.<cid>` (only if there is a child record)
+* `contao.db.<child-table-name>.<cid>` (only if there are child records)
 
 Imagine you  edited a news article with ID 42. Contao will now automatically send an invalidation request to the 
 reverse proxy to invalidate all responses associated with the following tags: 
@@ -242,6 +242,7 @@ reverse proxy to invalidate all responses associated with the following tags:
 * `contao.db.tl_news_archive`
 * `contao.db.tl_news_archive.1`
 * `contao.db.tl_content.420`
+* `contao.db.tl_content.421`
 
 Only the top parent table tag will be invalidated, i.e. `contao.db.tl_news_archive`, but not `contao.db.tl_news` 
 or `contao.db.tl_content`.
