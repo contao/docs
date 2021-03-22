@@ -40,7 +40,7 @@ register the documentation as an additional search engine in your browser.
 - Via "Actions for this page" (symbol with three dots) select "Add search engine".
 - In "Settings/Search", enter an abbreviation: e.g. ``@doc``.
 - Restart the browser and search in the address bar for e.g.:
-- ``@docs inserttags``
+- `@docs inserttags`
 {{% /expand %}}
 
 {{% expand "Browser Chrome" %}}
