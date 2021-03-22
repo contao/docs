@@ -53,6 +53,12 @@ register the documentation as an additional search engine in your browser.
 - `docs insterttags`
 {{% /expand %}}
 
+
 ### This manual is divided into the following chapters:
 
 {{% children description="true" %}}
+
+
+{{% notice info %}}
+The English version of the manual is still a work in progress.
+{{% /notice %}}
