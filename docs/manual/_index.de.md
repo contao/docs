@@ -40,7 +40,7 @@ einmalig die Dokumentation als zusätzliche Suchmaschine in deinem Browser regis
 - Über »Aktionen für diese Seite« (Symbol mit drei Punkten) »Suchmaschine hinzufügen« wählen.
 - In »Einstellungen/Suche«, einen Kürzel eingeben: z.B. `@doc`
 - Den Browser neu starten und in der Adresszeile suchen nach z.B.:
-- ``@docs inserttags``
+- `@docs inserttags`
 {{% /expand %}}
 
 {{% expand "Browser Chrome" %}}
