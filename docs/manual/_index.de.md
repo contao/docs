@@ -38,7 +38,7 @@ einmalig die Dokumentation als zusätzliche Suchmaschine in deinem Browser regis
 {{% expand "Browser Firefox" %}}
 - Diese Seite aufrufen
 - Über »Aktionen für diese Seite« (Symbol mit drei Punkten) »Suchmaschine hinzufügen« wählen.
-- In »Einstellungen/Suche«, einen Kürzel eingeben: z.B. ``@doc``
+- In »Einstellungen/Suche«, einen Kürzel eingeben: z.B. `@doc`
 - Den Browser neu starten und in der Adresszeile suchen nach z.B.:
 - ``@docs inserttags``
 {{% /expand %}}
