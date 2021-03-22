@@ -238,7 +238,7 @@ The tags are as follows:
 If the DCA has a **parent table**, Contao recursively iterates upwards the table hierarchy and invalidates the following 
 tags as well:
 
-* `contao.db.<parent-table-name>` (Only for the top most parent table)
+* `contao.db.<parent-table-name>` (Only for the topmost parent table)
 * `contao.db.<parent-table-name>.<pid>`
 
 If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierachy and invalidates the 
@@ -247,16 +247,17 @@ following tags as well:
 * `contao.db.<child-table-name>.<cid>`
 
 ##### Example: Edit a news article
+
 Imagine you have edited a news article with ID 42. Contao will now automatically send an invalidation request to the 
 reverse proxy to invalidate all responses associated with the following tags: 
 
-* `contao.db.tl_news_archive` (The parent table)
+* `contao.db.tl_news_archive` (The topmost parent table)
 * `contao.db.tl_news_archive.1` (The parent record)
 * `contao.db.tl_news.42` (The record itself)
 * `contao.db.tl_content.420` (The first child record)
 * `contao.db.tl_content.421` (The second child record)
 
-Only the top most parent table tag will be invalidated, i.e. `contao.db.tl_news_archive`, but not `contao.db.tl_news` 
+Only the topmost parent table tag will be invalidated, i.e. `contao.db.tl_news_archive`, but not `contao.db.tl_news` 
 or `contao.db.tl_content`.
 
 ##### Example: Edit a contact record (custom DCA)
