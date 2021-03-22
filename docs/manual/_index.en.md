@@ -38,7 +38,7 @@ register the documentation as an additional search engine in your browser.
 {{% expand "Browser Firefox" %}}
 - Call up this page
 - Via "Actions for this page" (symbol with three dots) select "Add search engine".
-- In "Settings/Search", enter an abbreviation: e.g. ``@doc``.
+- In "Settings/Search", enter an abbreviation: e.g. `@doc`.
 - Restart the browser and search in the address bar for e.g.:
 - `@docs inserttags`
 {{% /expand %}}
