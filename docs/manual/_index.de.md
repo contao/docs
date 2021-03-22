@@ -33,7 +33,7 @@ Viel Spaß beim Durchforsten des Handbuches.
 ### Die Suchfunktion der Dokumentation
 
 Du kannst hier die Dokumentation durchsuchen diese aber auch direkt in deinem favorisierten Browser nutzen. Dazu mußt du
-einmalig die Dokumentation als zusätzliche Suchmaschiene in deinem Browser registrieren.
+einmalig die Dokumentation als zusätzliche Suchmaschine in deinem Browser registrieren.
 
 {{% expand "Browser Firefox" %}}
 - Diese Seite aufrufen
