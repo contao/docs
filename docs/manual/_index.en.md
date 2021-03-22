@@ -32,7 +32,7 @@ Have fun browsing through the manual.
 
 ### The search function of the documentation
 
-You can browse the documentation here, but you can also use it directly in your favorite browser. For this you have to
+You can search the documentation here, but you can also use it directly in your favorite browser. For this you have to
 register the documentation as an additional search engine in your browser.
 
 {{% expand "Browser Firefox" %}}
