@@ -50,7 +50,7 @@ register the documentation as an additional search engine in your browser.
 - Search abbreviation: e.g. `docs` (any)
 - URL with %s instead of the search query: ``https://docs.contao.org/manual/de/?search=%s``
 - Restart the browser and search by typing e.g.: 
-- ``docs insterttags``
+- `docs insterttags`
 {{% /expand %}}
 
 ### This manual is divided into the following chapters:
