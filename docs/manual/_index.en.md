@@ -48,7 +48,7 @@ register the documentation as an additional search engine in your browser.
 - The following information:
 - Search engine: `https://docs.contao.org/manual/`
 - Search abbreviation: e.g. `docs` (any)
-- URL with %s instead of the search query: ``https://docs.contao.org/manual/de/?search=%s``
+- URL with %s instead of the search query: `https://docs.contao.org/manual/de/?search=%s`
 - Restart the browser and search by typing e.g.: 
 - `docs insterttags`
 {{% /expand %}}
