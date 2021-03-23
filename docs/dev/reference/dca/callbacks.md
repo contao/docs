@@ -558,6 +558,121 @@ a button for an import "wizard".
 {{% /expand %}}
 
 
+### `fields.<FIELD>.eval.url`
+
+Allows you to add an url to the serp preview field.
+
+{{% expand "Parameters" %}}
+* `\Contao\Model` Model object (class from the table)
+
+**return:** `string` URL for the serp preview
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/ExampleSerpPreviewUrlCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use App\Model\ExampleCategoryModel;
+use App\Model\ExampleModel;
+use Contao\Config;
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\PageModel;
+
+/**
+ * @Callback(table="tl_example", target="fields.serpPreview.eval.url")
+ */
+class ExampleSerpPreviewUrlCallbackListener
+{
+    public function __invoke(ExampleModel $model): string
+    {
+        /** @var ExampleCategoryModel $category */
+        $category = $model->getRelated('pid');
+
+        if (null === $category) {
+            throw new \Exception('Invalid category');
+        }
+
+        /** @var PageModel $page */
+        $page = $category->getRelated('jumpTo');
+
+        if (null === $page) {
+            throw new \Exception('Invalid jumpTo page');
+        }
+
+        $suffix = $page->getAbsoluteUrl(Config::get('useAutoItem') ? '/%s' : '/items/%s');
+
+        return sprintf(preg_replace('/%(?!s)/', '%%', $suffix), $model->alias ?: $model->id);
+    }
+}
+```
+{{% /expand %}}
+
+
+### `fields.<FIELD>.eval.title_tag`
+
+Allows you to modify the title tag of the serp preview field.
+
+{{% expand "Parameters" %}}
+* `\Contao\Model` Model object (class from the table)
+
+**return:** `string` title tag for the serp preview
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/ExampleSerpPreviewTitleTagCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use App\Model\ExampleCategoryModel;
+use App\Model\ExampleModel;
+use Contao\Controller;
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\LayoutModel;
+use Contao\PageModel;
+
+/**
+ * @Callback(table="tl_example", target="fields.serpPreview.eval.title_tag")
+ */
+class ExampleSerpPreviewTitleTagCallbackListener
+{
+    public function __invoke(ExampleModel $model): string
+    {
+        /** @var ExampleCategoryModel $category */
+        $category = $model->getRelated('pid');
+
+        if (null === $category) {
+            return '';
+        }
+
+        /** @var PageModel $page */
+        $page = $category->getRelated('jumpTo');
+
+        if (null === $page) {
+            return '';
+        }
+
+        $page->loadDetails();
+
+        /** @var LayoutModel $layout */
+        $layout = $page->getRelated('layout');
+
+        if (null === $layout) {
+            return '';
+        }
+
+        global $objPage;
+        $objPage = $page;
+
+        return Controller::replaceInsertTags(str_replace('{{page::pageTitle}}', '%s', $layout->titleTag ?: '{{page::pageTitle}} - {{page::rootPageTitle}}'));
+    }
+}
+```
+{{% /expand %}}
+
+
 ## Edit Callbacks
 
 The following is a list of callbacks relating to edit actions of a Data Container.
