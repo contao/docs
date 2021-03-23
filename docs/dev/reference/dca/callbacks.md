@@ -558,6 +558,28 @@ a button for an import "wizard".
 {{% /expand %}}
 
 
+### `fields.<FIELD>.eval.url`
+
+Allows you to add an url to the serp preview field.
+
+{{% expand "Parameters" %}}
+* `\Contao\Model` Model object (class from the table)
+
+**return:** `string` URL for the serp preview
+{{% /expand %}}
+
+
+### `fields.<FIELD>.eval.title_tag`
+
+Allows you to modify the title tag of the serp preview field.
+
+{{% expand "Parameters" %}}
+* `\Contao\Model` Model object (class from the table)
+
+**return:** `string` title tag for the serp preview
+{{% /expand %}}
+
+
 ## Edit Callbacks
 
 The following is a list of callbacks relating to edit actions of a Data Container.
