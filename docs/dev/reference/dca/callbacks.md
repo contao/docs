@@ -628,6 +628,7 @@ namespace App\EventListener\DataContainer;
 
 use App\Model\ExampleCategoryModel;
 use App\Model\ExampleModel;
+use Contao\Controller;
 use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\LayoutModel;
 use Contao\PageModel;
@@ -657,7 +658,7 @@ class ExampleSerpPreviewTitleTagCallbackListener
 
         /** @var LayoutModel $layout */
         $layout = $page->getRelated('layout');
-        
+
         if (null === $layout) {
             return '';
         }
@@ -665,7 +666,7 @@ class ExampleSerpPreviewTitleTagCallbackListener
         global $objPage;
         $objPage = $page;
 
-        return self::replaceInsertTags(str_replace('{{page::pageTitle}}', '%s', $layout->titleTag ?: '{{page::pageTitle}} - {{page::rootPageTitle}}'));
+        return Controller::replaceInsertTags(str_replace('{{page::pageTitle}}', '%s', $layout->titleTag ?: '{{page::pageTitle}} - {{page::rootPageTitle}}'));
     }
 }
 ```
