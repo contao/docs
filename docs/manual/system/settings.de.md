@@ -79,7 +79,7 @@ Ein paar zusätzliche Parameter können über die `config/config.yml` konfigurie
 Die folgende Konfiguration definiert einige Beispielwerte:
 
 ```yml
-# config/config.yaml
+# config/config.yml
 contao:
     backend:
         attributes:
