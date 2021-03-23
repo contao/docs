@@ -623,7 +623,7 @@ Allows you to modify the title tag of the serp preview field.
 {{% expand "Example" %}}
 
 ```php
-// src/EventListener/DataContainer/ExampleSerpPreviewTagTitleCallbackListener.php
+// src/EventListener/DataContainer/ExampleSerpPreviewTitleTagCallbackListener.php
 namespace App\EventListener\DataContainer;
 
 use App\Model\ExampleCategoryModel;
@@ -635,7 +635,7 @@ use Contao\PageModel;
 /**
  * @Callback(table="tl_example", target="fields.serpPreview.eval.title_tag")
  */
-class ExampleSerpPreviewTagTitleCallbackListener
+class ExampleSerpPreviewTitleTagCallbackListener
 {
     public function __invoke(ExampleModel $model): string
     {
