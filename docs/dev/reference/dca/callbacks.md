@@ -378,7 +378,73 @@ to add status icons.
 **return:** `array` Columns with labels
 {{% /expand %}}
 
+{{% expand "Example for tree view" %}}
+
+This example adds an icon to the label of the example entity as tree view.
+
+```php
+// src/EventListener/DataContainer/ExampleLabelCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Contao\Image;
+
+/**
+ * @Callback(table="tl_example", target="list.label.label")
+ */
+class ExampleLabelCallbackListener
+{
+    public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, ?bool $isProtected = null): string
+    {
+        $icon = Image::getHtml('bundles/app/images/example.svg');
+
+        return $icon.sprintf(' %s <span class="tl_gray" style="margin-left:3px;">[%s]</span>', $row['title'], $row['name']);
+    }
+}
+```
+{{% /expand %}}
+
+{{% expand "Example for list view" %}}
+
+This example translates a dynamic status field for the label of the example entity as list view.
+
+```php
+// src/EventListener/DataContainer/ExampleLabelCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Symfony\Contracts\Translation\TranslatorInterface;
+
+/**
+ * @Callback(table="tl_example", target="list.label.label")
+ */
+class ExampleLabelCallbackListener
+{
+    private TranslatorInterface $translator;
+
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
+    
+    public function __invoke(array $row, string $label, DataContainer $dc, array $labels): array
+    {
+        $fieldName = 'status';
+        $fields = $GLOBALS['TL_DCA'][$dc->table]['list']['label']['fields'];
+        $key = array_search($fieldName, $fields, true);
+
+        $labels[$key] = $this->translator->trans('tl_example.status_option.'.$labels[$key], [], 'contao_tl_example') ?? $this->translator->trans('tl_example.status_option_unknown', [], 'contao_tl_example');
+
+        return $labels;
+    }
+}
+```
+{{% /expand %}}
+
 ***
+
 
 
 ## Operations callbacks
