@@ -78,7 +78,7 @@ unterhalb von »Templates« legen. Die relativen Pfadangaben definierst du im In
 {{% /notice %}}
 
 
-## SVG über CSS colorisieren
+## SVG über CSS kolorieren
 
 Du könntest unser Beispiel mit der CSS-Angabe »svg { fill: #ff0000; }« einfärben. Allerdings möchten wir lieber
 die CSS-Eigenschaft `color` verwenden. Hierzu ergänzen wir den SVG-Code im Template mit der Eigenschaft `fill` 
