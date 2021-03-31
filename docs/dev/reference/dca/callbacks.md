@@ -379,7 +379,6 @@ to add status icons.
 {{% /expand %}}
 
 {{% expand "Example for tree view" %}}
-
 This example adds an icon to the label of the example entity as tree view.
 
 ```php
@@ -406,7 +405,6 @@ class ExampleLabelCallbackListener
 {{% /expand %}}
 
 {{% expand "Example for list view" %}}
-
 This example translates a dynamic status field for the label of the example entity as list view.
 
 ```php
@@ -444,7 +442,6 @@ class ExampleLabelCallbackListener
 {{% /expand %}}
 
 ***
-
 
 
 ## Operations callbacks
