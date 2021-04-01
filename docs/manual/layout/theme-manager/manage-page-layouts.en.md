@@ -78,7 +78,7 @@ Here you can add one or more [Google Fonts](https://fonts.google.com/) to your w
 ```
 
 {{% notice note %}}
-Manual integration of "web fonts" is recommended. Otherwise, you should follow the followingGoogle instructions: [Get Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started), the "Google Fonts API Version 2" is currently not supported. 
+Manual integration of "web fonts" is recommended. Otherwise, you should follow the following instructions from Google: [Get Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started), the "Google Fonts API Version 2" is currently not supported. 
 {{% /notice %}}
 
 Then you can access the web font via your CSS file.
