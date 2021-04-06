@@ -77,8 +77,8 @@ class CustomerNameMigration extends AbstractMigration
         $columns = $schemaManager->listTableColumns('tl_customers');
 
         return 
-	        isset($columns['firstName']) &&
-	        isset($columns['lastName']) &&
+	        isset($columns['firstname']) &&
+	        isset($columns['lastname']) &&
 	        !isset($columns['name']);
     }
 
@@ -88,7 +88,7 @@ class CustomerNameMigration extends AbstractMigration
             ALTER TABLE
                 tl_customers
             ADD
-                name varchar(255) NOT NULL DEFAULT '',
+                name varchar(255) NOT NULL DEFAULT ''
         ");
 
         $stmt = $this->connection->prepare("
