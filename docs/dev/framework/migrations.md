@@ -84,7 +84,7 @@ class CustomerNameMigration extends AbstractMigration
 
     public function run(): MigrationResult
     {
-        $this->connection->query("
+        $this->connection->executeQuery("
             ALTER TABLE
                 tl_customers
             ADD
