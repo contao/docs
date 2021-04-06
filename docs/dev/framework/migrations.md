@@ -84,19 +84,19 @@ class CustomerNameMigration extends AbstractMigration
 
     public function run(): MigrationResult
     {
-        $this->connection->query('
+        $this->connection->query("
             ALTER TABLE
                 tl_customers
             ADD
                 name varchar(255) NOT NULL DEFAULT '',
-        ');
+        ");
 
-        $stmt = $this->connection->prepare('
+        $stmt = $this->connection->prepare("
             UPDATE
                 tl_customers
             SET
                 name = CONCAT(firstName, ' ', lastName)
-        ');
+        ");
 
         $stmt->execute();
 
