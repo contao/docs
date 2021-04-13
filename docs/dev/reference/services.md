@@ -124,15 +124,28 @@ class Example
 
     public function execute()
     {
-        if ($isBackendAdmin = $this->security->isGranted('ROLE_ADMIN')) {
-            // …
-        }
-    
-        if ($isBackendUser = $this->security->isGranted('ROLE_USER')) {
+        // Check for admin back end user role
+        if ($this->security->isGranted('ROLE_ADMIN')) {
             // …
         }
 
-        if ($isFrontendUser = $this->security->isGranted('ROLE_MEMBER')) {
+        // Check for regular back end user role
+        if ($this->security->isGranted('ROLE_USER')) {
+            // …
+        }
+
+        // Check for front end user role
+        if ($this->security->isGranted('ROLE_MEMBER')) {
+            // …
+        }
+
+        // Get current back end user
+        if (($user = $this->security->getUser()) instanceof BackendUser) {
+            // …
+        }
+
+        // Get current front end user
+        if (($user = $this->security->getUser()) instanceof FrontendUser) {
             // …
         }
     }
