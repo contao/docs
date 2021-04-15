@@ -275,7 +275,7 @@ factory fetches the configuration automatically from the database. The width and
 
 ```php
 // Uses the image size configuration of tl_image_size with the ID 8
-$size = [null, null, 8];
+$size = [0, 0, 8];
 ```
 
 Another version of the size array is `[0, 0, imageSizeConfigKey]` where _imageSizeConfigKey_ is a string beginning with 
@@ -286,7 +286,7 @@ ignored.
 
 ```php
 // Uses the "example" image size stored in contao.image.sizes
-$size = [null, null, '_example'];
+$size = [0, 0, '_example'];
 ```
 
 
