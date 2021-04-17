@@ -131,6 +131,11 @@ already contains the appropriate autoloading directive:
 }
 ```
 
+{{% notice tip %}}
+This is actually not necessary since Contao **4.9** as the Contao Managed Edition automatically adds the  necessary 
+autoloading for the `App\` namespace. However you can still add your own autoloading directives of course.
+{{% /notice %}}
+
 {{% notice info %}}
 During development it is advisable to not optimize the Autoloader by Composer, otherwise
 new classes that you created will not be available immediately. If you used the
