@@ -175,7 +175,7 @@ Insert-Tags, die als Ausgabe eine ID oder Alias haben können grundsätzlich ver
 | `{{link_url::{{page::id}}}}#sprungmarke`| Generiert einen relativen Link zur aktuellen Seite (nützlich für Onepager) | 
 
 {{% notice info %}}
-Man sollte darauf achten, keine endlosen Loops zu generieren wie z.B. durch `{{insert_article::{{page::alias}}}}`. Dies kann zum Absturz der Seite führen.
+Man sollte darauf achten, keine endlosen Loops zu generieren wie z. B. durch `{{insert_article::{{page::alias}}}}`. Dies kann zum Absturz der Seite führen.
 {{% /notice info %}}
 
 ## Insert-Tag-Flags
