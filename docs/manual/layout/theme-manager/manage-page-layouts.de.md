@@ -79,7 +79,7 @@ Um solche »exotischen« Seitenlayouts in Contao zu realisieren, kannst du in de
 Layoutbereiche definieren und mittels eines Stylesheets anordnen. Deine eigenen Layoutbereiche lassen sich im 
 Seitenlayout genauso verwenden wie die Standard-Bereiche.
 
-**Eigene Layoutbereiche**: Hier aktivierst du deine eigenen Layoutbereiche.
+**Eigene Layoutbereiche**: Hier definierst du deine eigenen Layoutbereiche mit einem Titel für die Anzeige im Backend, einer ID, dem Template und der Position.
 
 **Position der Layoutbereiche**: In Verbindung mit dem Standard-Seitentemplate `fe_page` können eigene 
 Layoutbereiche wie folgt positioniert werden:
@@ -91,6 +91,8 @@ Layoutbereiche wie folgt positioniert werden:
 - Nach dem umschließenden Element <code>bottom</code>
 - Manuelle Ausgabe <code>manual</code>
 
+Wurde als Position die »Manuelle Ausgabe« gewählt, muss für die Ausgabe des Layoutbereiches das Seitentemplate »fe_page« angepasst werden.
+Wurde als ID z. B. »custom« vergeben erfolgt die Ausgabe `<?php $this->section('custom'); ?>`.
 
 ## Webfonts
 
