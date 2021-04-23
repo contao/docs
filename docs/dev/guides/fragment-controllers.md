@@ -120,7 +120,7 @@ use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @ContentElement(category="news")
+ * @ContentElement(category="media")
  */
 class AppExampleController extends ContentGallery
 {
