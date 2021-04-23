@@ -6,9 +6,6 @@ aliases:
 weight: 1
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
 
 Here you can learn everything you need to work with Contao. This includes the system structure, basic relationships between components, using the administration area, different content elements, modules and how to use extensions.
 
