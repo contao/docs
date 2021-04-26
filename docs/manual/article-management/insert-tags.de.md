@@ -167,7 +167,7 @@ Lightbox-Bild einfügen.
 | `{{trans::*::*::*}}`     | Mit diesem Tag können Übersetzungen ausgegeben werden. Im Gegensatz zum `{{label::*}}` Insert-Tag können damit alle Übersetzungen aus dem Symfony System ausgegeben werden. Beispiel: `{{trans::MSC.updateVersion::contao_default::4.10}}`. Siehe auch die [Entwickler-Dokumentation][Translations]. |
 
 ## Verschachtelte Insert-Tags
-Insert-Tags, die als Ausgabe eine ID oder Alias haben können grundsätzlich verschachtelt werden.
+Insert-Tags, die als Ausgabe eine ID oder Alias haben, können grundsätzlich verschachtelt werden.
 
 | Insert-Tag                       | Ausgabe                |
 |:---------------------------------|:-----------------------|
@@ -175,7 +175,7 @@ Insert-Tags, die als Ausgabe eine ID oder Alias haben können grundsätzlich ver
 | `{{link_url::{{page::id}}}}#sprungmarke`| Generiert einen relativen Link zur aktuellen Seite (nützlich für Onepager) | 
 
 {{% notice info %}}
-Man sollte darauf achten, keine endlosen Loops zu generieren wie z. B. durch `{{insert_article::{{page::alias}}}}`. Dies kann zum Absturz der Seite führen.
+Man sollte darauf achten, keine endlosen Loops wie z. B. durch `{{insert_article::{{page::alias}}}}` zu generieren. Dies kann zum Absturz der Seite führen.
 {{% /notice %}}
 
 ## Insert-Tag-Flags
