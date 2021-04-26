@@ -5,11 +5,7 @@ aliases:
     - /en/extensions/isotope-core/
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
-**[isotopic/isotope core](https://packagist.org/packages/isotope/isotope-core)**
+**[isotope/isotope core](https://packagist.org/packages/isotope/isotope-core)**
 
 *from [terminal42 gmbh](https://www.terminal42.ch/de/)*
 
