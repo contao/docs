@@ -5,10 +5,10 @@
 {{ end }}
 {{ if eq .Site.Language.Lang "en" }}
 <div class="notices note">
-  <p>This feature is only available in <strong>Contao {{ $.Scratch.Get "version" }}</strong> and later.</p>
+  <p>This feature is available in <strong>Contao {{ $.Scratch.Get "version" }}</strong> and later.</p>
 </div>
 {{ else }}
 <div class="notices note">
-  <p>Diese Funktion ist erst ab <strong>Contao {{ $.Scratch.Get "version" }}</strong> verfügbar.</p>
+  <p>Diese Funktion ist ab <strong>Contao {{ $.Scratch.Get "version" }}</strong> verfügbar.</p>
 </div>
 {{ end }}
