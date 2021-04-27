@@ -137,7 +137,7 @@ services:
         tags:
             -
                 name: contao.cronjob
-                interval: 0 */2 * * *
+                interval: '0 */2 * * *'
                 method: onEveryTwoHours
 ```
 
