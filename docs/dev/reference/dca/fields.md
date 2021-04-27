@@ -180,7 +180,8 @@ Each field can be validated against a regular expression.
 | dcaPicker          | true/false (`bool`)           | If true the dca-picker will be shown.  Enables pick up different data sets from the system.                                                                              |
 | placeholder        | Placeholder (`string`)        | Displays a placeholder for the respective field.    
 | isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
-| metaFields         | `metaWizard` fields (`array`) | Defines the available fields for the `metaWizard` input type.
+| metaFields         | `metaWizard` fields (`array`) | Defines the available fields for the `metaWizard` input type. |
+| custom_rgxp        | Regular expression (`string`) | {{< version "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
 
 {{% notice warning %}}
 Using the `encrypt` option is deprecated and its internal implementation relies 
@@ -218,6 +219,8 @@ can be [registered using a hook][3].
 | language    | expects a valid language code                                                                                     |
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
+| httpurl     | {{< version "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
+| custom      | {{< version "4.11" >}} enables you to define a custom regular expression under the `custom_rgxp` evaluation key   |
 
 
 #### Meta Wizard Fields
