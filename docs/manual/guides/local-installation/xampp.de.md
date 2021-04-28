@@ -93,7 +93,7 @@ mit Eingabe von z. B.:
 php ../composer.phar create-project contao/managed-edition demo 4.9
 ```
 
-Deine Contao Installation befindet sich im Anschluss im XAMPP-Verzeichnis `htdocs\demo`.
+Deine Contao-Installation befindet sich im Anschluss im XAMPP-Verzeichnis `htdocs\demo`.
 
 {{% notice note %}}
 Diese Vorgehensweise ist optional. Du könntest die Contao Installation auch direkt über den Contao-Manager ausführen.
