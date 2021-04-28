@@ -34,7 +34,7 @@ In deinem Browser erreichst du über die Eingabe von `http://localhost` das
 Informationen zur aktuellen PHP-Konfiguration.
 
 {{% notice info %}}
-Du solltest das "XAMPP Control-Panel" (xampp-control.exe) und die »XAMPP Konsole« (xampp_shell.bat) immer mit 
+Du solltest das »XAMPP Control-Panel« (xampp-control.exe) und die »XAMPP Konsole« (xampp_shell.bat) immer mit 
 Administrator Rechten starten.
 {{% /notice %}}
 
