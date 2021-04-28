@@ -193,7 +193,7 @@ erstellen kannst. Starte in der »XAMPP-Konsole» diese Datei und folge den Anwe
 grundsätzlich beliebig. Lediglich die Angabe bei `Common Name` muss dem aktuellen, lokalen Domain-Namen entsprechen. 
 Für unser Beispiel also zwingend `demo.local`.
 
-In den Verzeichnissen `apache\conf\ssl.crt`, `apache\conf\ssl.csr` und `apache\conf\ssl.key` wurden den Angaben 
+In den Dateien `apache\conf\ssl.crt`, `apache\conf\ssl.csr` und `apache\conf\ssl.key` wurden den Angaben 
 entsprechend neue Zertifikat Informationen generiert. In der XAMPP vHost-Konfiguration müssen diese Informationen 
 hinterlegt werden. Füge dazu in der Datei `\apache\conf\extra\httpd-vhosts.conf` folgende Angaben hinzu:
 
