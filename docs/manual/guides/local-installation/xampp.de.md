@@ -96,7 +96,7 @@ php ../composer.phar create-project contao/managed-edition demo 4.9
 Deine Contao-Installation befindet sich im Anschluss im XAMPP-Verzeichnis `htdocs\demo`.
 
 {{% notice note %}}
-Diese Vorgehensweise ist optional. Du könntest die Contao Installation auch direkt über den Contao-Manager ausführen.
+Optional könntest du die Installation von Contao auch direkt über den Contao-Manager ausführen.
 Erstelle dir hierzu besipielsweise im XAMPP-Verzeichnis `htdocs` die Verzeichnisse `demo\web`. Kopiere den 
 [Contao-Manager](https://contao.org/de/download.html) in das Verzeichnis `demo\web` und benenne die Datei danach 
 in »contao-manager.phar.php« um.
