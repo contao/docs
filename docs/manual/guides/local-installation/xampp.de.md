@@ -190,7 +190,7 @@ das es sich um eine »Unsichere Verbindung« handelt. Dies ist korrekt, da XAMPP
 
 Im XAMPP-Verzeichnis `\apache` findest du die Datei »makecert.bat«, über die du dir ein neues, lokales V1-Zertifikat 
 erstellen kannst. Starte in der »XAMPP-Konsole» diese Datei und folge den Anweisungen. Deine Angaben sind hier 
-grundsätzlich beliebig. Lediglich die Angabe bei `Common Name` muss dem aktuellen, lokalen Domain Namen entsprechen. 
+grundsätzlich beliebig. Lediglich die Angabe bei `Common Name` muss dem aktuellen, lokalen Domain-Namen entsprechen. 
 Für unser Beispiel also zwingend `demo.local`.
 
 In den Verzeichnissen `apache\conf\ssl.crt`, `apache\conf\ssl.csr` und `apache\conf\ssl.key` wurden den Angaben 
