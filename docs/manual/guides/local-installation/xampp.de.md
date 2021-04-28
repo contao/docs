@@ -53,7 +53,7 @@ In der Datei `D:\xampp\apache\php.ini` suchst du die Zeilen »memory_limit« und
 
 {{% notice tip %}}
 Die genannten Änderungen sind für die Installation über den [PHP-Composer](https://getcomposer.org/) oder über den 
-[Contao-Manager](/de/installation/contao-manager/) zwingend notwendig. 
+[Contao Manager](/de/installation/contao-manager/) zwingend notwendig. 
 Darüber hinaus könntest du optional auch die Einträge »allow_url_fopen«, »max_execution_time« 
 oder »file_uploads« überprüfen und anpassen.
 {{% /notice %}}
@@ -103,11 +103,11 @@ in »contao-manager.phar.php« um.
 {{% /notice %}}
 
 
-## Contao Aufrufe (ohne eigenen vHost)
+## Contao-Aufrufe (ohne eigenen vHost)
 
 Im »XAMPP Control-Panel« kannst du im Bereich »MySql« über die Schaltfläche »Admin« `phpMyAdmin` ausführen und wie 
 gewohnt eine Datenbank anlegen. Sofern noch nicht geschehen kopierst du den 
-[Contao-Manager](https://contao.org/de/download.html) z. B. in das Verzeichnis `demo\web` und benennst die Datei danach 
+[Contao Manager](https://contao.org/de/download.html) z. B. in das Verzeichnis `demo\web` und benennst die Datei danach 
 in »contao-manager.phar.php« um. 
 
 Deine Installation kann jetzt abgeschlossen werden. Allerdings unterscheiden sich die Contao-Aufrufe, ohne
@@ -125,8 +125,8 @@ Die Contao Aufrufe für unsere Beispiel Installation im Verzeichnis `htdocs\demo
 
 {{% notice warning %}}
 Du kannst demnach ohne eigene »XAMPP vHost-Konfiguration« (s. u.) mit Contao arbeiten, solange du die obigen Aufrufe
-berücksichtigst. Innerhalb der Contao eigenen Verlinkung (z. B.: Den Contao-Manager über das Backend starten usw.) 
-erhälst du weiterhin Fehlermeldungen, da diese von einer »korrekten« Umgebung ausgehen. Empfehlenswert wäre daher die
+berücksichtigst. Innerhalb der Contao eigenen Verlinkung (z. B.: Den Contao Manager über das Backend starten usw.) 
+erhältst du weiterhin Fehlermeldungen, da diese von einer »korrekten« Umgebung ausgehen. Empfehlenswert wäre daher die
 weitere, einmalige XAMPP-Konfiguration über einen eigenen vHost.
 {{% /notice %}}
 
@@ -134,15 +134,15 @@ weitere, einmalige XAMPP-Konfiguration über einen eigenen vHost.
 ## Eigene vHost-Konfiguration
 
 Eine einmalige, eigene XAMPP vHost-Konfiguration bietet zahlreiche Vorteile. Einerseits kannst du hierüber deine 
-Contao Installation(en) außerhalb des XAMPP-Verzeichnisses pflegen und andererseits diese mit eigenen, lokalen
-Domain Namen verknüpfen. 
+Contao-Installation(en) außerhalb des XAMPP-Verzeichnisses pflegen und andererseits diese mit eigenen, lokalen
+Domain-Namen verknüpfen. 
 
-Erstelle dir ein neues Verzeichnis z. B. `D:\vhost\demo\web`. Kopiere den [Contao-Manager](https://contao.org/de/download.html) 
+Erstelle dir ein neues Verzeichnis z. B. `D:\vhost\demo\web`. Kopiere den [Contao Manager](https://contao.org/de/download.html) 
 in dieses Verzeichnis und benenne die Datei danach in »contao-manager.phar.php« um. 
 
-### Domain Namen erstellen
+### Domain-Namen erstellen
 
-Wir möchten unsere Contao Installation über die Domain `demo.local` erreichen. Im Windows Verzeichnis `System32/drivers/etc`
+Wir möchten unsere Contao-Installation über die Domain `demo.local` erreichen. Im Windows Verzeichnis `System32/drivers/etc`
 fügst du hierzu in der Datei `hosts` den Eintrag `127.0.0.1 demo.local` hinzu. Grundsätzlich könntest du nun diese 
 Domain nutzen. Allerdings macht es zur bisherigen Vorgehensweise noch keinen Unterschied. Wir müssen XAMPP zur 
 Nutzung unseres neuen Verzeichnisses erst konfigurieren.
@@ -171,8 +171,8 @@ Füge in der Datei `\apache\conf\extra\httpd-vhosts.conf` folgende Angaben hinzu
 </VirtualHost>
 ```
 
-Passe hier nötigenfalls die Pfadangaben deinen aktuellen Verzeichnisse entsprechend an. Im »XAMPP Control-Panel« 
-musst du die Module »Apache« und »MySQL« neu starten. Anschließend kannst du den Contao-Manager über den Aufruf
+Passe hier nötigenfalls die Pfadangaben deiner aktuellen Verzeichnisse entsprechend an. Im »XAMPP Control-Panel« 
+musst du die Module »Apache« und »MySQL« neu starten. Anschließend kannst du den Contao Manager über den Aufruf
 `http://demo.local/contao-manager.phar.php` erreichen.
 
 
