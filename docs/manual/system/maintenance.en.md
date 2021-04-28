@@ -36,6 +36,28 @@ for broken links is not available there.
 
 ![Build the search index automatically](/de/system/images/en/rebuild-the-search-index.png?classes=shadow)
 
+{{< version "4.9" >}}
+
+The crawler can also be executed directly from the command line:
+
+```sh
+$ vendor/bin/contao-console contao:crawl
+```
+
+However since there is no HTTP request context available on the console, a domain must be defined. For this reason you
+should always define the domain in the website root settings, even if you only use one domain in your Contao instance.
+Alternatively you can define the default domain for the console via configuration parameters:
+
+```yml
+# config/parameters.yml
+parameters:
+    router.request_context.host: 'example.org'
+    router.request_context.scheme: 'https'
+```
+
+You can find more information in the [Symfony Routing Documentation][SymfonyUrlCommands].
+
+
 ### Indexing protected pages
 
 To allow the search of protected pages, you must first enable this feature in the [backend settings][BackendSettings]. Use this feature 
@@ -69,3 +91,4 @@ update the XML sitemaps after a change in the page structure.
 
 
 [BackendSettings]: /en/system/settings/
+[SymfonyUrlCommands]: https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands

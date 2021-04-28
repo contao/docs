@@ -48,6 +48,17 @@ under which Contao has been licensed since version 2.5, allows you to use the sy
 Please note that the copyright notices in the Contao files may not be removed or changed according to the license terms.
 {{% /expand %}}
 
+{{% expand "How can I refresh the »Application Cache« from the console?" %}}
+If you want to refresh the »Application Cache« you can do this via the 
+[Console](https://docs.contao.org/dev/reference/commands/): 
+
+```php
+vendor/bin/contao-console cache:clear --no-warmup
+vendor/bin/contao-console cache:warmup
+```
+{{% /expand %}}
+
+
 
 ## Template
 
@@ -136,4 +147,17 @@ an update check when it is accessed. If a new version is available, Contao Manag
 {{% expand "What is the Composer Resolver Cloud?" %}}
 The [Composer Resolver Cloud](https://composer-resolver.cloud/) allows you to install Composer dependencies 
 via the [Contao Manager](/en/installation/contao-manager/) even if your server does not have enough memory.
+{{% /expand %}}
+
+{{% expand "How can I renew the »Application Cache« via Contao Manager?" %}}
+If you want to refresh the »Application Cache« you can do this in the 
+[Contao Manager](/en/installation/contao-manager/) »Maintenance/Application Cache« area.
+{{% /expand %}}
+
+{{% expand "The Contao Manager has hung up" %}}
+If the Contao Manager stops responding, the console output window does not close, or after a reload of the manager page
+or after a reload of the manager page you always get the same output, delete the file `contao-manager` in the directory `task.json`.
+delete the file `task.json`.
+
+After that, the Contao Manager should run again.
 {{% /expand %}}

@@ -42,7 +42,7 @@ After reading a new PR, please label it either as <span class="label-bug">bug</s
 <span class="label-feature">feature</span>.
 
 If the PR is targeted against an active version branch (e.g. `4.4`), please assign it to the corresponding milestone.
-Do not assign PRs targeted against the `master` branch to a milestone.
+Do not assign PRs targeted against the `4.x` branch to a milestone.
 
 Please assign new PRs to their creator.
 

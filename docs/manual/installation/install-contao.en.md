@@ -14,11 +14,14 @@ After you have checked all requirements and set up your web server, you can now 
 
 There are two ways to install Contao on your server, using the graphical user interface of the [ContaoManager](#installation-mit-dem-contao-manager) or using the command line.
 
+
 ## Installation with the Contao Manager
+
 
 ### Install Contao Manager
 
 Before you can install Contao on your server, you need to[ install and configure](../../installation/contao-manager/#contao-manager-installieren) the Contao[ Manager](../../installation/contao-manager/#contao-manager-installieren).
+
 
 ### Installing Contao with the Contao Manager
 
@@ -30,9 +33,11 @@ The installation can now take several minutes. Details about the installation pr
 
 ![Contao is installed](/de/installation/images/de/contao-wird-installiert.png?classes=shadow)
 
+
 ### Update database tables
 
 Once the Contao Manager has installed all packages, you have to [run](../contao-installtool/) the [Contao install tool](../contao-installtool/) to update the database.
+
 
 ## Installation via the command line {#installation-over-the-command line}
 
@@ -52,24 +57,30 @@ cd www
 
 ### Install Composer
 
-[Composer](https://de.wikipedia.org/wiki/Composer_(Paketverwaltung)) is an application-oriented package manager for the PHP programming language and installs dependencies.
+[Composer](https://de.wikipedia.org/wiki/Composer_(Paketverwaltung)) is an application-oriented package manager for the 
+PHP programming language and installs dependencies.
 
-To install Composer, please follow the instructions on the [Composer website and](https://getcomposer.org/download/) copy the commands from there, because the SHA hash used to verify the download changes with each version of Composer. At this point, the commands look like this.
+{{% notice note %}}
+You can either install Composer [locally](https://getcomposer.org/doc/00-intro.md#locally) 
+or [globally](https://getcomposer.org/doc/00-intro.md#globally). 
+ 
+If you install Composer locally, you will have a `composer.phar` file in your working directory (i.e. where your project's
+`composer.json` and `composer.lock` files are located). You would then call Composer with `php composer.phar`.
+ 
+If you install Composer globally, you can use the `composer` command in any directory. 
+{{% /notice %}}
 
-```bash
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-```
 
-### Installing Contao from the command line {#install Contao from the command line}
 
-In the second step, you install Contao using the Composer. "example" stands for the desired installation directory and 4.8 for the [version of Contao you want to install](https://contao.org/de/download.html).
+### Installing Contao from the command line
+
+In the second step, you install Contao using the Composer. "example" stands for the desired installation directory and 
+4.8 for the [version of Contao you want to install](https://contao.org/de/download.html).
 
 ```bash
 php composer.phar create-project contao/managed-edition example 4.8
 ```
+
 
 ### Hosting Configuration
 
@@ -81,12 +92,40 @@ Example: `example.com`points to the directory `/www/example/web`
 Pro Contao installation therefore requires its own (sub)domain.
 {{% /notice %}}
 
-### Update database tables
 
-After the installation is before the database update, call the [Contao install tool](../contao-installtool/) or use (from Contao 4.9)
+### Update database tables
+After installation, you can update the database using the Contao [install tool](/en/installation/contao-installtool/). 
+
+Since Contao 4.9 you can use the following command on the command line:
 
 ```bash
 php vendor/bin/contao-console contao:migrate
-```
+``` 
 
-on the command line.
+{{% notice tip %}}
+You can also create a database beforehand on the command line:<br>
+`php vendor/bin/contao-console doctrine:database:create`
+{{% /notice %}}
+
+{{% notice info %}}
+Contao needs to know the corresponding connection data for your database. This information can either be retrieved via 
+an existing "config/paramters.yml" (currently installed using the [Contao-Install tool](/en/installation/contao-installtool/)) 
+or via a "[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)" file 
+in the root directory of your installation.<br><br> 
+For details on the necessary environment variables ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 
+and [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in a ".env" file you can find 
+[here](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration).
+{{% /notice %}}
+
+
+### Creating Contao back end users
+
+Using the [Contao-Installtool](/en/installation/contao-installtool/), you can create your back end user. Since Contao 
+**4.10** you can use the following command on the command line:
+
+```bash
+php vendor/bin/contao-console contao:user:create
+``` 
+
+
+

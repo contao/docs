@@ -103,11 +103,15 @@ Datenbank zu aktualisieren.
 
 ## Konfiguration
 
-Um diese Erweiterung zu konfigurieren muss zuerst eine sogenannte »Facebook App« erzeugt werden. Die Details dieser App
-werden dann für die Konfiguration im Backend benötigt.
+Vor Version **7.0** dieser Erweiterung muss, um sie konfigurieren zu können, zuerst eine sogenannte »Facebook App« erzeugt 
+werden. Die Details dieser App werden dann für die Konfiguration im Backend benötigt.
 
 
 ### Facebook App anlegen
+
+{{% notice tip %}}
+Dieser Schritt kann ab Version **7.0** der Extension übersprungen werden.
+{{% /notice %}}
 
 1. Gehe zuerst zu [developers.facebook.com](https://developers.facebook.com). Wenn noch kein Facebook Developer Account
 existiert, muss nun einer angelegt werden (bzw. der Developer Account muss für einen existierenden Facebook Benutzer
@@ -135,6 +139,10 @@ Developer zur Facebook App unter _Rollen_ hinzugefügt werden.
 
 ### App ID und App Secret in Contao konfigurieren
 
+{{% notice tip %}}
+Dieser Schritt kann ab Version **7.0** der Extension übersprungen werden.
+{{% /notice %}}
+
 Gehe im Contao Backend zu _System_ » _Einstellungen_. Dort unter _Facebook App_ müssen die __App ID__ und das 
 __App Secret__ eingegeben werden. Diese Informationen können in den Facebook App Einstellungen unter _Einstellungen_ » 
 _Allgemeines_ gefunden werden.
@@ -146,8 +154,7 @@ _Allgemeines_ gefunden werden.
 
 Öffne die Einstellungen deines Nachrichtenarchivs. In der Sektion _Facebook sync_ kann der __Facebook sync__
 aktiviert werden. Danach kann die _numerische_ ID der Facebook Page eingegeben werden, mit der das Nachrichtenarchiv
-synchronisiert werden soll. Die ID findet man in den Einstellungen der Facebook Page, oder über Services wie z. B.
-[findmyfbid.com](https://findmyfbid.com/). Wenn automatisch Facebook Page Posts als Nachrichtenbeiträge angelegt werden
+synchronisiert werden soll. Wenn automatisch Facebook Page Posts als Nachrichtenbeiträge angelegt werden
 sollen, dann muss die Einstellung __Page Posts holen__ aktiviert werden. Optional kann auch ein 
 __Page Post Datum Limit__ eingestellt werden.
 

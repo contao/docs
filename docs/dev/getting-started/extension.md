@@ -23,6 +23,19 @@ or a `contao-bundle` is a specific type of package. _Contao bundles_ are referre
 to as _extensions_ within the Contao universe.
 {{% /notice %}}
 
+This article guides you through the necessary steps of creating an extension. It 
+reflects the minimum amount of basic configuration that has to be done in order
+to be able to install such an extension in your Contao installation.
+
+{{% notice tip %}}
+Instead of creating the groundwork manually, you can also kickstart the development
+of your extension by having a look at the official [Contao 4 skeleton bundle](https://github.com/contao/skeleton-bundle).
+You can also clone it and then make the necessary adjustments that are individual
+to your own extension as outlined in its README. It might still be useful though
+to go through all the steps of this guide for a better understanding on how it all
+works together.
+{{% /notice %}}
+
 
 ## Objectives
 
@@ -37,7 +50,7 @@ When creating an extension, the following objectives are relevant:
 
 The first thing you do is usually to decide on a _name_ for the extension and its 
 package. For the package name, the usual convention is to use the vendor name identical 
-to your or your organiztation's Git account name, plus the name of the extension 
+to your organization's Git account name, plus the name of the extension 
 in kebab case, prefixed with `contao-`, e.g.: `somevendor/contao-example-bundle`.
 
 When starting an extension from scratch (i.e. you do not even have a remote Git
@@ -145,12 +158,12 @@ the Contao 4 installation:
 ```
 
 In the `require` part we can then request the installation of our extension, using
-the defined package name and `dev-master` as the version.
+the defined package name and `dev-main` as the version.
 
 ```json
 {
     "require": {
-        "somevendor/contao-example-bundle": "dev-master"
+        "somevendor/contao-example-bundle": "dev-main"
     }
 }
 ```
@@ -322,7 +335,7 @@ $ git init
 $ git add --all
 $ git commit -m "initial commit"
 $ git remote add origin git@github.com:somevendor/contao-example-bundle.git
-$ git push origin master
+$ git push origin main
 ```
 
 Then the package can be published on the public Packagist by submitting the URL
@@ -335,7 +348,7 @@ a look at the [dedicated article][9].
 
 Once the package has been published to the public Packagist, the extension's repository
 can actually be removed from the root `composer.json` of the Contao installation.
-When requiring `dev-master` (or any `dev-` branch) of the extension, composer will
+When requiring `dev-main` (or any `dev-` branch) of the extension, composer will
 actually check out the code from the Git repository instead. This enables you to
 push any changes you make back to the origin branch using your SSH key.
 

@@ -2,7 +2,6 @@
 title: "Keyboard shortcuts"
 description: "To speed up the workflow when working with Contao, there are several keyboard shortcuts in the back end, 
 with which certain commands can be called directly."
-url: "administrationsbereich/keyboard-shortcuts"
 aliases:
     - /de/administrationsbereich/keyboard-shortcuts/
 weight: 20
@@ -67,4 +66,10 @@ Further abbreviations are added in "Edit multiple" mode:
 The described shortcuts work in this form only under Windows and Linux. Mac users have to use `[Ctrl]+[⌥ Opt]` instead of `[Alt]` 
 together with the keyboard shortcut.
 
-In addition, Firefox on Windows deviates from the standard: you have to press `[Alt]+[Shift]` and the keyboard shortcut.
+In addition, Firefox on Windows and Linux deviates from the standard: you have to press `[Alt]+[Shift]` instead of just `[Alt]`.
+
+See [this article][MozillaAccesskey] for an overview of which key combination to press on which operating system and 
+browser.
+
+
+[MozillaAccesskey]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey

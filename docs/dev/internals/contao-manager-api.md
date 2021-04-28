@@ -100,5 +100,5 @@ the standardized `Authentication` header is the preferred way. If you need to su
 approach is to use the `Contao-Manager-Auth` header which will be ignored by Apache.
 
 
-[API]: https://docs.contao.org/books/manager/api/
+[API]: https://contao.github.io/contao-manager/api/index.html
 [rfc6750]: https://tools.ietf.org/html/rfc6750

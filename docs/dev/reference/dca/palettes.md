@@ -127,44 +127,24 @@ $GLOBALS['TL_LANG']['tl_news']['date_legend']  = 'Date and time';
 
 The Contao back end uses a simple two-column grid system to arrange input fields
 within their groups. You can apply the following CSS classes in the evaluation
-section of the Data Container Array as `tl_class` (e.g. `'tl_class'=>'w50
-wizard'`).
+section of the Data Container Array as `tl_class` (e.g. `'tl_class' => 'w50 wizard'`).
 
-<table>
-<tr>
-  <th>tl_class</th>
-  <th>Description</th>
-</tr>
-<tr>
-  <td>w50</td>
-  <td>Set the field width to 50% and float it (<code>float:left</code>).</td>
-</tr>
-<tr>
-  <td>clr</td>
-  <td>Clear all floats (<code>clear:both</code>). Use this for any fields coming after a <code>w50</code> field within a fieldset.</td>
-</tr>
-<tr>
-  <td>wizard</td>
-  <td>Shorten the input field so there is enough room for the wizard button
-      (e.g. date picker fields).</td>
-</tr>
-<tr>
-  <td>long</td>
-  <td>Make the text input field span two columns.</td>
-</tr>
-<tr>
-  <td>cbx</td>
-  <td>Set the field minimum height to 46 pixels (used for single checkboxes; more space at bottom).</td>
-</tr>
-<tr>
-  <td>m12</td>
-  <td>Adds a 17 pixels top and bottom padding to the element (used for single checkboxes; more space at top and bottom).</td>
-</tr>
-<tr>
-  <td>cbx m12</td>
-  <td>A combination of cbx and m12 sets the minimum height of the field to 80 pixels (used for single checkboxes; more space at top and bottom).</td>
-</tr>
-</table>
+| `tl_class` | Description |
+| --- | --- |
+| `w50` | Set the field width to 50% and float it (`float:left`). |
+| `clr` | Clear all floats (`clear:both`). Use this for any full length field coming after a `w50` field within a fieldset (see note below). |
+| `wizard` | Shorten the input field so there is enough room for the wizard button (e.g. date picker fields). |
+| `long` | Make the text input field span two columns. |
+| `cbx` | Set the field minimum height to 46 pixels (used for single checkboxes; more space at bottom). |
+| `m12` | Adds a 17 pixels top and bottom padding to the element (used for single checkboxes; more space at top and bottom). |
+| `cbx m12` | A combination of cbx and m12 sets the minimum height of the field to 80 pixels (used for single checkboxes; more space at top and bottom). |
+
+{{% notice info %}}
+Due to the nature of floating elements in CSS you need to be careful about which fields of your palette are 50% width
+and thus are floating and which are not. For example if a 50% (`w50`) field is immediately followed by a full length
+field then you must add the `clr` class to the latter, otherwise the layout might break (e.g. the full length field 
+floating in the wrong place or being overlayed by other fields).
+{{% /notice %}}
 
 
 ## Manipulating palettes

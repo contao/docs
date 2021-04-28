@@ -3,7 +3,7 @@ name: Build and deploy to https://docs.contao.org
 on:
     push:
         branches:
-            - master
+            - main
     workflow_dispatch: ~
 
 jobs:
@@ -15,9 +15,9 @@ jobs:
               with:
                   submodules: true
             - name: Setup Hugo
-              uses: peaceiris/actions-hugo@v2.2.2
+              uses: peaceiris/actions-hugo@v2
               with:
-                  hugo-version: '0.74.3'
+                  hugo-version: '0.75.1'
             - name: Build user manual
               run: make build-manual
             - name: Build developer manual

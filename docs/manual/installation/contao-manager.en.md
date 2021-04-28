@@ -94,7 +94,7 @@ The [Composer Resolver Cloud](https://composer-resolver.cloud/) allows you to in
 
 After the successful basic configuration, Contao can now be [installed](/en/installation/install-contao/#installing-contao-with-the-contao-manager).
 
-## Frequently asked questions about the Contao Manager {#frequently asked questions about the Contao Manager}
+## Frequently asked questions about the Contao Manager
 
 ### How to update the Contao Manager?
 
@@ -112,7 +112,15 @@ Now call the Contao Manager from your domain with the addition `contao-manager.p
 
 If you see the login mask for an existing user despite deleting the file `users.json`, delete the cookies of the domain or open the Contao Manager page in the "incognito mode" of your browser.
 
-### Can I add another user account to Contao Manager? {#can-add-another-user-account to the Contao Manager}
+### The Contao Manager has "hung up"
+
+If the Contao Manager stops responding, the console output window does not close, or after a reload of the manager page
+or after a reload of the manager page you always get the same output, delete the file `contao-manager` in the directory `task.json`.
+delete the file `task.json`.
+
+After that, the Contao Manager should run again.
+
+### Can I add another user account to Contao Manager?
 
 Yes, you have to edit the file `users.json` in the directory `contao-manager` and add an additional user account. In our case this is `h.lewis`.
 
@@ -134,7 +142,18 @@ Yes, you have to edit the file `users.json` in the directory `contao-manager` an
 
 ```
 
-### Can Contao Manager be added to an existing installation? {#the-contao manager can be added to an existing installation}
+{{% notice info %}}
+The value for "password" must be entered encrypted. You can use services like [bcrypt-generator.com](https://bcrypt-generator.com/)
+for example in order to generate the necessary hashed value. Alternatively, you can generate the hash value with the following console call
+in your own Contao installation:
+
+```bash
+php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'
+```
+{{% /notice %}}
+
+
+### Can Contao Manager be added to an existing installation?
 
 Yes, if you use a Contao installation in the Managed Edition, you can install Contao Manager later. Just upload the `contao-manager.phar` files into the directory `web` and add the file extension `.php`.
 

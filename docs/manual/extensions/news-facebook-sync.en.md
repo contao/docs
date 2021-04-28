@@ -101,11 +101,15 @@ Manager. Then open the Contao Install Tool to update the database as usual.
 
 ## Configuration
 
-To configure this extension, a "Facebook App" needs to created first. The details of this app are then needed for the
-configuration in the back end.
+To configure this extension, a "Facebook App" needs to created first prior to version **7.0** of this extension. The 
+details of this app are then needed for the configuration in the back end.
 
 
 ### Creating a Facebook App
+
+{{% notice tip %}}
+Starting with version **7.0** of the extension this step can be skipped.
+{{% /notice %}}
 
 1. First you need to go to [developers.facebook.com](https://developers.facebook.com). If you do not have a Facebook 
 developer account yet, you need to create one (or unlock your existing Facebook user as a developer account).
@@ -128,6 +132,10 @@ you can also add further Administrator or Developers after you created the App i
 
 ### Configure the App ID and App Secret in Contao
 
+{{% notice tip %}}
+Starting with version **7.0** of the extension this step can be skipped.
+{{% /notice %}}
+
 In Contao, go to _System - Settings_, scroll down to the _Facebook App_ section, enter the __App ID__ and __App Secret__ 
 of your Facebook App. You can find this information in your Facebook App under _Settings_ » _Basic_.
 
@@ -137,9 +145,8 @@ of your Facebook App. You can find this information in your Facebook App under _
 ### Configure the Contao News Archive
 
 Go to the settings of your news archive. In the _Facebook sync_ section enable __Facebook sync__ and enter the _numeric_ 
-ID of the Facebook Page you want to synchronize with (you can find the ID in the "About" tab of the page or via 
-[findmyfbid.com](https://findmyfbid.com/)). If you wish to automatically fetch the Facebook Page posts and add them to 
-your news archive, enable the __Fetch page posts__ option. Optionally, also define a __Page post date limit__.
+ID of the Facebook Page you want to synchronize with. If you wish to automatically fetch the Facebook Page posts and add 
+them to your news archive, enable the __Fetch page posts__ option. Optionally, also define a __Page post date limit__.
 
 You can also do the same for a Facebook Group, if you want to fetch posts from that group. Note, however, that publishing
 news entries as Facebook posts is only supported for Facebook Pages, not for Groups.

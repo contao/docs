@@ -71,16 +71,14 @@ cd www
 [Composer](https://de.wikipedia.org/wiki/Composer_(Paketverwaltung)) ist ein anwendungsorientierter Paketmanager für 
 die Programmiersprache PHP und installiert Abhängigkeiten.
 
-Um Composer zu installieren, folge bitte der Anleitung auf der [Composer-Website](https://getcomposer.org/download/) 
-und kopiere die Kommandos auch von dort, denn der SHA-Hash zum Verifizieren des Downloads ändert sich mit jeder 
-Composer-Version. Zum jetzigen Zeitpunkt sehen die Kommandos wie folgt aus.
-
-```bash
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-```
+{{% notice note %}}
+Du kannst Composer entweder [lokal](https://getcomposer.org/doc/00-intro.md#locally) 
+oder [global](https://getcomposer.org/doc/00-intro.md#globally) installieren.<br>
+Wenn du Composer lokal installierst, befindet sich die Datei `composer.phar` in deinem Arbeitsverzeichnis (d. h. dort, wo
+auch die Dateien `composer.json` und `composer.lock` deines Projekts gespeichert sind). In diesem Fall rufst du Composer 
+über `php composer.phar` auf.<br> 
+Wenn du Composer global installierst, kannst du den Befehl `composer` in jedem Verzeichnis verwenden. 
+{{% /notice %}}
 
 
 ### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
@@ -108,9 +106,37 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 ### Datenbanktabellen aktualisieren
 
-Nach der Installation ist vor der Datenbank-Aktualisierung, rufe dazu das [Contao-Installtool](../contao-installtool/)
-auf oder verwende (ab Contao 4.9) 
+Nach der Installation kannst du die Datenbank-Aktualisierung über das [Contao-Installtool](/de/installation/contao-installtool/) 
+durchführen. 
+
+Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
+
 ```bash
 php vendor/bin/contao-console contao:migrate
 ``` 
-auf der Kommandozeile.
+
+{{% notice tip %}}
+Du kannst dir auf der Kommandozeile auch zuvor eine Datenbank erstellen:<br>
+`php vendor/bin/contao-console doctrine:database:create`
+{{% /notice %}}
+
+{{% notice info %}}
+Contao muss hierzu die entsprechenden Verbindungsdaten deiner Datenbank kennen. Diese Information kann entweder über 
+eine vorhandene »config/parameters.yml« (wird zur Zeit über das [Contao-Installtool](/de/installation/contao-installtool/) 
+erstellt) oder über eine »[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)« 
+Datei im Hauptverzeichnis deiner Installation bereit gestellt werden.<br><br> 
+Weitere Details für die notwendigen Umgebungsvariablen ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 
+und [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in einer ».env« Datei findest du 
+[hier](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration).
+{{% /notice %}}
+
+
+### Contao Backend-Benutzer erstellen
+
+Über das [Contao-Installtool](/de/installation/contao-installtool/) kannst du dir deinen Backend Benutzer anlegen. 
+Ab Contao **4.10** kannst du hierzu den folgenden Befehl auf der Kommandozeile benutzen. Die notwendigen Angaben werden dann
+auf der Kommandozeile abgefragt:
+
+```bash
+php vendor/bin/contao-console contao:user:create
+``` 

@@ -78,7 +78,7 @@ or handling image links for you out of the box. When you are ready, call `build(
       ->enableLightbox()
       ->setLightboxGroupIdentifier('group1');
    
-    // Example 1
+    // Example 2
     $figureBuilder
       ->fromPath('/path/to/my/file.png')
       ->setSize('_my_size')
@@ -136,23 +136,69 @@ This can be helpful if you need to output multiple images with a similar configu
 
 ### PHP Templates
 
-If you are creating your own PHP templates and want to apply `Figure` data directly, you currently need to create the
-markup yourself.
+There are two ways to output images in your PHP templates:
 
-If you are instead using the legacy Contao `image.html5` template, you can make use of two builtin helper functions to
-apply/get an array of data ready to use. 
+1) **Rendering a `Figure`** &mdash; If you are creating your own PHP templates and want to apply `Figure` data
+   directly, you currently need to create the markup yourself.
 
-```php
-$template = new FrontendTemplate('image');
+   If you are instead using the legacy Contao `image.html5` template, you can make use of two builtin helper functions
+   to apply/get an array of data ready to use.
 
-// Transform and apply the figure data to a given template
-// - comparable to `Controller::addImageToTemplate` 
-$figure->applyLegacyTemplateData($template);
+   ```php
+   $template = new FrontendTemplate('image');
+   
+   // Transform and apply the figure data to a given template
+   // - comparable to `Controller::addImageToTemplate` 
+   $figure->applyLegacyTemplateData($template);
+   
+   // If you want you can set the data yourself. Note that you might
+   // have to deal with a collision of the 'href' key yourself
+   $template->setData($figure->getLegacyTemplateData());
+   ```
 
-// If you want you can set the data yourself. Note that you might
-// have to deal with a collision of the 'href' key yourself
-$template->setData($figure->getLegacyTemplateData());
-```
+2) **Inline** &mdash; You can also configure and output a figure directly from within your template by using the
+   `Template#figure()` function. 
+   
+   {{< version "4.11" >}}
+
+   The function expects a *resource* (uuid, id, path) as the first and the *image size* as the second argument.
+   If you want to specify more config, you can pass a *config* array as the third argument.
+
+   In the config array you can configure the same things you would as when using the `FigureBuilder` (see
+   [reference][FigureBuilderOptionsReference]). In fact, under the hood, the template function uses
+   [PropertyAccess][PropertyAccess] to configure a `FigureBuilder` instance.
+
+   ```php
+   <?php 
+     // It's enough to specifiy the resource and size…
+     echo $this->figure('path/to/my/image.png', '_my_size');
+   ?>
+     
+   <?php
+     // …but you can also go wild with the options.
+     echo $this->figure(
+       $id, [200, 200, 'proportional'], 
+       [ 
+         'metadata' => new Metadata([
+           Metadata::VALUE_ALT => 'Contao Logo', Metadata::VALUE_CAPTION => 'Look at this CMS!'
+         ]),
+         'enableLightbox' => true,
+         'lightboxGroupIdentifier' => 'logos',
+         'lightboxSize' => '_big_size',
+         'linkHref' => 'https://contao.org',
+         'options' => ['attr' => ['class' => 'logo-container']],
+       ]
+     ); 
+   ?>
+   ``` 
+
+   {{% notice info %}}
+   By default, the `image.html5` template is used to render the result, but you can optionally pass a custom template 
+   name as the fourth argument to use instead. This also accepts Twig templates: Make sure to specify the fully
+   qualified template path including the `.twig` file extension in this case. The template will then receive a `figure`
+   variable with your configured `Figure` as its context.
+   {{% /notice %}}
+
 
 
 ### Twig
@@ -208,10 +254,10 @@ If you are using Twig, there are three supported ways to get figures/images into
    you can also just pass an object which will internally be converted into `Metadata`. 
    
    ```twig
-   {# It's enough to specifiy the resource and size... #}
+   {# It's enough to specifiy the resource and size… #}
    {{ contao_figure('path/to/my/image.png', '_my_size') }}
      
-   {# ...but you can also go wild with the options. #}
+   {# …but you can also go wild with the options. #}
    {{ contao_figure(id, [200, 200, 'proportional'], { 
      metadata: { alt: 'Contao Logo', caption: 'Look at this CMS!' },
      enableLightbox: true,
@@ -253,5 +299,5 @@ If you are using Twig, there are three supported ways to get figures/images into
 [TwigTemplates]: https://github.com/contao/contao/blob/master/core-bundle/src/Resources/views/Image/Studio
 [MacroDefinitions]: https://github.com/contao/contao/blob/master/core-bundle/src/Resources/views/Image/Studio/_macros.html.twig
 [PropertyAccess]: https://symfony.com/doc/current/components/property_access.html
-[SizeArray]: /framework/image-processing/image-picture-factory/#size-array
+[SizeArray]: /framework/image-processing/image-sizes/#size-array
 [FigureBuilderOptionsReference]: /framework/image-processing/image-studio/#setting-options

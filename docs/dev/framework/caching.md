@@ -227,16 +227,47 @@ event.
 #### Cache tag invalidation within the Contao back end
 
 When working with DCAs in the Contao back end you don't have to register callbacks at various places to make sure certain
-tags are being invalidated. This is because Contao invalidates a certain set of tags whenever a back end entry is created,
-updated or deleted. The tags are as follows:
+tags are being invalidated. This is because Contao invalidates a certain set of tags whenever a back end entry is created, 
+updated or deleted. 
 
-* `contao.db.<table-name>`
-* `contao.db.<table-name>.<id>`
-* `contao.db.<parent-table-name>` (only if there is a parent table defined)
-* `contao.db.<parent-table-name>.<pid>` (only if there is a parent record)
+The tags are as follows:
 
-So let's say you had a DCA table named `tl_news`. When you edit ID `42`, Contao would automatically send an invalidation
-request to the reverse proxy to invalidate all responses associated with the tags `contao.db.tl_news` and `contao.db.tl_news.42`.
+* `contao.db.<table-name>.<id>` (The record itself)
+* `contao.db.<table-name>` (Only if the DCA has no parent table defined)
+
+If the DCA has a **parent table**, Contao recursively iterates upwards the table hierarchy and invalidates the following 
+tags as well:
+
+* `contao.db.<parent-table-name>` (Only for the topmost parent table)
+* `contao.db.<parent-table-name>.<pid>`
+
+If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierachy and invalidates the 
+following tags as well:
+
+* `contao.db.<child-table-name>.<cid>`
+
+##### Example: Edit a news article
+
+Imagine you have edited a news article with ID 42. Contao will now automatically send an invalidation request to the 
+reverse proxy to invalidate all responses associated with the following tags: 
+
+* `contao.db.tl_news_archive` (The topmost parent table)
+* `contao.db.tl_news_archive.1` (The parent record)
+* `contao.db.tl_news.42` (The record itself)
+* `contao.db.tl_content.420` (The first child record)
+* `contao.db.tl_content.421` (The second child record)
+
+Only the topmost parent table tag will be invalidated, i.e. `contao.db.tl_news_archive`, but not `contao.db.tl_news` 
+or `contao.db.tl_content`.
+
+##### Example: Edit a contact record (custom DCA)
+
+Imagine now you have your own DCA table `tl_contact_details` with no parent or child tables. When you edit the contact 
+record with ID 42, Contao will automatically invalidate the following tags:
+
+* `contao.db.tl_contact_details.42` (the contact record itself)
+* `contao.db.tl_contact_details` (the table itself)
+
 If you follow this convention and tag your responses accordingly in the front end, you don't have to do any work in the
 back end at all!
 
@@ -244,24 +275,120 @@ Moreover, you don't have to register to all the different callbacks such as `ons
 You can register to the [`oninvalidate_cache_tags` callback][5] and add your own tags.
 
 
-## Fragments and Edge Side Includes
+## Caching Fragments
 
 In Contao, content elements and front end modules can be implemented as so called
-_fragment controllers_. These fragments are then rendered with their defined renderer 
-and merged into the main content. Each fragment can also provide its own response
-and thus define whether it can be cached or not. If a fragment returns a response
-with a `Cache-Control: private` header for example, then the page on which the fragment
-is visible cannot be cached. On the other hand, if the fragment can be cached, it
-can provide its own cache tags, as mentioned previously.
+_fragment controllers_. These fragments are rendered with their defined renderer
+and merged into the main content. Each fragment returns a response and thus can
+tell whether it can be cached or not.
 
-Contao brings its own `forward` fragment renderer, which provides the fragment with 
-a full clone of the request. This provides the fragment with the full `POST` data
-for example, contrary to Symfony's default `inline` renderer.
 
-The renderer can also be set to `esi`. In that case, if Symfony detects that it 
-is talking to  a gateway cache that supports ESI (like Symfony's built in reverse 
-proxy, that Contao uses), it generates an ESI include tag. See also [Symfony's documentation][esi] 
-on _Edge Side Includes_.
+There are two fundamentally different ways to render fragments:
+ 1. **Inline:** Inside the main page request and merged with the content before caching. In Symfony, this is handled
+    by the `inline` renderer, but Contao provides its own default `forward` renderer, which copies the original
+    request (whereas Symfony does not) to e.g. pass POST data to the subrequest.
+ 2. **Subrequest:** By generating a placeholder for the fragment, the fragment content is rendered **after** caching
+    the page, which allows a fragment to have a different cache time than the main page. In case of `esi` the reverse
+    proxy (cache) will parse these placeholders before delivering to the client.
+    There's also an `hinclude` renderer which allows browsers to merge fragments using JavaScript, but the client-side
+    part is not provided out-of-the-box.
+
+
+### Inline Fragments
+
+{{% notice note %}}
+Before **Contao 4.9**, inline fragments cannot affect the cache time of the page response.
+{{% /notice %}}
+
+By default, fragments like frontend modules and content elements are rendered directly inside the main request.
+This means the content of an inline fragment will be cached for as long as the page is cached, as configured
+in the page setting. If a fragment returns caching information in its response, the page's cache time and the fragment
+will be merged to the lowest common denominator. For example, if the page is cacheable for a day, but the fragment
+only for one hour, the whole page will only be cached for one hour.
+
+On the other hand, consider an example of a fragment that renders the current year. This fragment would be cacheable
+until the end of 31st of December. If the page is cached on the 10th of December for one day, the page cache time will
+not be affected. However, if the page is cached at 12pm on the 31st of December, the cache time will be lowered to 12
+instead of 24 hours. The page cache will expire at the end of the year and regenerated on the 1st of January.
+
+```php
+class CurrentYearController extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    {
+        $year = (int) date('Y');
+        $template->year = $year;
+        $response = $template->getResponse();
+
+        // Cache until the end of the year
+        $response->setPublic();
+        $response->setMaxAge(strtotime(($year + 1).'-01-01 00:00:00') - time());
+
+        return $response;
+    }
+}
+```
+
+{{% expand "How this works under the hood" %}}
+A `Response` object in Symfony is `Cache-Control: private` by default. This means we cannot *always* merge an
+inline fragment, otherwise all pages would be uncacheable by default. To work around this, we've added a little
+trick: the response must have a specific header to be merged.
+
+```php
+use Symfony\Component\HttpFoundation\Response;
+
+/** @var Response $response */
+$response->headers->set('Contao-Merge-Cache-Control', true);
+```
+
+This *trick* is automatically applied if a response is generated from a Contao template. A fragment controller
+can affect the cache lifetime by setting it on the template response:
+
+```php
+// src/Controller/MySuperController.php
+namespace App\Controller;
+
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\ModuleModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class MySuperController extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    {
+        $response = $template->getResponse();
+        
+        $response->setPublic();
+        $response->setMaxAge(3600);
+        
+        return $response;
+    }
+}
+```
+{{% /expand %}}
+
+
+### Edge Side Includes (ESI)
+
+By setting the fragment renderer to `esi`, the fragment will be cached **separately** from the main content.
+The page can be cached for 24 hours, but the fragment can be cached for one week. On every request to the page,
+the reverse proxy will merge the two pieces, rebuilding each if its cache has expired.
+
+A common use case for this is a fragment that can certainly be cached longer than the current page, but is
+expensive to generate. Something like a weather preview, which requires an API request, but only updates once a day.
+Do not use ESI if your fragment is inexpensive to generate (like the `{{date::Y}}` insert tag). For inexpensive
+cases, it is most likely better to cache the whole page and **re-generate more often** than having to merge multiple
+fragments **on each request**.
+
+Symfony automatically detects if it is talking to  a gateway cache that supports ESI
+(like Symfony's built in reverse proxy, that the Contao Managed Edition uses). ESI is also supported by
+reverse proxies like Varnish and several major CDNs. If ESI is not supported by the
+reverse proxy, the fragments will be rendered *inline* automatically.
+
+See also [Symfony's documentation][esi] on _Edge Side Includes_.
+
 
 
 [1]: https://github.com/Toflar/psr6-symfony-http-cache-store

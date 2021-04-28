@@ -75,5 +75,5 @@ ist auf Englisch) findest du auf der Seite des [ifrOSS](http://www.ifross.org/fa
 
 Contao stand anfänglich ebenfalls unter der GPL, wird inzwischen jedoch unter der *Lesser General Public License*, kurz 
 LGPL, lizenziert, die juristisch gesehen eine Erweiterung der GPL ist. Der für uns wesentliche Unterschied ist, dass 
-dritte Entwickler, die nichteigenständige Erweiterungen für Contao programmieren, diese nicht zwangsläufig unter eine 
+dritte Entwickler, die nicht eigenständige Erweiterungen für Contao programmieren, diese nicht zwangsläufig unter eine 
 Open Source-Lizenz stellen müssen, wie es bei der GPL der Fall wäre.

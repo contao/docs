@@ -17,12 +17,12 @@ The way Contao mitigates these attacks is by using the [Double Submit Cookie tec
 Providing CSRF protection for users that are not authenticated against the app does not make any sense. So if you
 visit a regular Contao page with a form placed on it, you will not necessarily see any cookies being set in your
 browser. Only if you are authenticated in such a way that the browser will automatically send authentication information
-along without any user interaction (logged in via `Cookie` or basic authentication  via `Authorization` headers), CSRF
+along without any user interaction (e.g. any cookies or basic authentication via `Authorization` headers), CSRF
 protection is required. So don't get fooled by the cookies not being present all the time, Contao is actually very smart
 about them to improve HTTP cache hits.
 
-By default, Contao protects all `POST` requests coming from Contao routes. That means, routes that either do have
-the Route attribute `_scope` set to `frontend` or `backend`.
+By default, Contao protects all `POST` requests coming from Contao routes (except Ajax requests). That means routes which
+have the route attribute `_scope` set to either `frontend` or `backend`.
 
 If you explicitly want to disable the CSRF protection on your own route, you can set the route attribute `_token_check`
 to `false`.
@@ -39,18 +39,20 @@ alternative protection in place!
 {{% /notice %}}
 
 
-## Checking The Token Manually
+## Generating and Checking The Token
 
-If, for some reason, you need to check the request token yourself, you can do so by combining the token manager
-service (`@contao.csrf.token_manager`) and the configured token name (`%contao.csrf_token_name%`): 
+In order to generate a CSRF token you need the token manager service (`@contao.csrf.token_manager`) and the
+configured token name (`%contao.csrf_token_name%`). You can also validate the token yourself, if you need to do that for
+some reason.
 
 ```php
+// src/ExampleService.php
 namespace App;
 
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
-class MyTokenCheckService
+class ExampleService
 {
     /**
      * @var CsrfTokenManagerInterface
@@ -68,7 +70,12 @@ class MyTokenCheckService
         $this->csrfTokenName = $csrfTokenName;
     }
 
-    public function check(string $tokenValue): bool
+    public function generateToken(): string
+    {
+        return $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
+    }
+
+    public function checkToken(string $tokenValue): bool
     {
         $token = new CsrfToken($this->csrfTokenName, $tokenValue);
     

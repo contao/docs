@@ -95,7 +95,12 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 
 ### Minimum PHP Requirements
 
-#### Contao 4.9 and later
+#### Contao 4.11 and later
+
+- **PHP** Version 7.3.0 or higher is required.
+
+
+#### Contao 4.9 (LTS)
 
 - **PHP** Version 7.2.0 or higher is required.
 - Images can be processed with the PHP extensions GD (`ext-gd`), Imagick (`ext-imagick`) or Gmagick (`ext-gmagick`). 
@@ -124,7 +129,7 @@ If the above recommended options cannot be enabled on your server, please config
 database engine and a different character set in your `app/config/config.yml` file:
 
 {{% notice note %}}
-As of **Contao 4.8**, you can find the file under [`config/config.yml`](../../system/ settings/#config-yml)  
+As of **Contao 4.8**, you can find the file under [`config/config.yml`](../../system/settings/#config-yml)  
 {{% /notice %}}
 
 ```yml

@@ -412,7 +412,7 @@ class Plugin implements ExtensionPluginInterface
 
 You can now inject the service `@monolog.logger.api` wherever you need it.
 In case you are using autowiring and the MonologBundle is installed in at least version  3.5, you can also
-autowire by specifing the correct variable name in the constructor as also [documented in Symfony](https://symfony.com/doc/current/logging/channels_handlers.html#how-to-autowire-logger-channels):
+autowire by specifying the correct variable name in the constructor as also [documented in Symfony](https://symfony.com/doc/current/logging/channels_handlers.html#how-to-autowire-logger-channels):
 
 ```diff
 -     public function __construct(LoggerInterface $logger)
@@ -516,4 +516,34 @@ class Plugin implements RoutingPluginInterface
 ```
 
 
+## The `HttpCacheSubscriberPluginInterface`
+
+This interface enables you to add event subscribers to modify the behavior of the Symfony HttpCache.
+Through event subscribers, you can modify a request (e.g. strip cookies) or response (e.g. add headers)
+before they hit the cache or are forwarded to Contao. For more information about HttpCache,
+please refer to [the FosHttpCache documentation][2].
+
+{{% notice note %}}
+This feature is available from **contao/manager-plugin 2.9.0** and **Contao 4.9.6**.
+{{% /notice %}}
+
+
+```php
+namespace Vendor\SomeBundle\ContaoManager;
+
+use Contao\ManagerPlugin\Routing\HttpCacheSubscriberPluginInterface;
+
+class Plugin implements HttpCacheSubscriberPluginInterface
+{
+    public function getHttpCacheSubscribers(): array
+    {
+        return [
+            new CustomCacheSubscriber(),
+        ];
+    }
+}
+```
+
+
 [1]: http://api.symfony.com/master/Symfony/Component/Config/Definition/Builder/ArrayNodeDefinition.html#method_disallowNewKeysInSubsequentConfigs
+[2]: https://foshttpcache.readthedocs.io/en/latest/symfony-cache-configuration.html#cache-event-listeners

@@ -43,7 +43,7 @@ Open your FTP program and connect to your server. Copy the following files and f
 - `composer.json`
 - `composer.lock`
 
-If you still have old extensions or if you have created one `config.yml` in the directory or `app/config/` in **Contao 4.8 or later** `config/`, they have to be transferred to your server.
+If you still have old extensions within `system/modules/` or if you have created a `config.yml` in the directory `config/` or **before Contao 4.8** `app/config/` or if you created Contao adjustments under `contao/` or **before Contao 4.8** `app/Resources/contao/` then they have to be transferred to your server as well.
 
 ### Install Contao on the live server
 

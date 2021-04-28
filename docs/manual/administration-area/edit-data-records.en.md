@@ -30,7 +30,7 @@ Contao always offers several buttons to save your entries. Each button takes you
 
 **Save and back:** Clicking this button will save your entries and close the form. You will be forwarded to the parent page, e.g. from a content element directly to the article overview.
 
-Go to the [keyboard shortcuts in edit mode](/en/administrationsbereich/keyboard-shortcuts/#keyboard-shortcuts-in-edit-mode).
+Go to the [keyboard shortcuts in edit mode](/en/administration-area/back-end-keyboard-shortcuts/#keyboard-shortcuts-in-edit-mode).
 
 ## Edit multiple records at once
 
@@ -50,7 +50,7 @@ In Contao, you can easily edit multiple records at once instead of having to acc
 
 **Generate aliases:** The aliases of the selected records are regenerated.
 
-Go to the [keyboard shortcuts in "Edit multiple" mode](/en/administrationsbereich/keyboard-shortcuts/#keyboard-shortcuts-in-edit-multiple-mode).
+Go to the [keyboard shortcuts in "Edit multiple" mode](/en/administration-area/back-end-keyboard-shortcuts/#keyboard-shortcuts-in-edit-multiple-mode).
 
 Use the overwrite function carefully, because here all existing values of the selected data sets are actually replaced by the new value!
 

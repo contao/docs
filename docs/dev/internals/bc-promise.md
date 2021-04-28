@@ -37,6 +37,13 @@ Therefore, our BC promise deviates from the Symfony BC promise in some regards:
 
 * Our BC promise also does not cover the `ContaoManager/Plugin` class, which is required to integrate a bundle into
   the [Contao Managed Edition][Contao_ME].
+  
+* Our BC promise does not apply to any tests in any bundles. Everything that is meant to facilitate testing in your
+  own extensions and thus can be used is extracted into the [contao/test-case](https://packagist.org/packages/contao/test-case) package
+  which is versioned according to Semantic Versioning as well.
+  
+* Our BC promise does currently not cover the "Named parameters" introduced in [PHP 8.0](https://wiki.php.net/rfc/named_params). You
+  can follow or get involved in the discussion [on GitHub](https://github.com/contao/contao/issues/2624).
 
 {{% notice tip %}}
 

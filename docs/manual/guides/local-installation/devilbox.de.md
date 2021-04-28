@@ -13,6 +13,13 @@ tags:
 Das [Devilbox Project](http://devilbox.org/) ist ein fertiges LAMP Stack für [Docker](https://www.docker.com/). 
 Wenn du die Docker-Toolbox einsetzt, sind [diese Angaben](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox "Docker Toolbox and the Devilbox") der Dokumentation lesenswert.
 
+{{% notice note %}}
+Um die Devilbox nutzen zu können muss _Docker_ und _Docker Compose_ auf deinem System installiert sein. Falls das noch
+nicht der Fall ist, kannst du dir die 
+[Devilbox Prerequisites Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/prerequisites.html) für 
+mehr Informationen zur Installation dieser Programme durchlesen.
+{{% /notice %}}
+
 
 ## Devilbox installieren und konfigurieren
 
@@ -23,7 +30,7 @@ die Datei anschließend um in `.env`. In der neuen Datei kannst du jetzt deine K
 
 * [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid)
 * [NEW_GID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-gid)
-* [HTTPD_DOCROOT](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-docroot-dir)
+* [HTTPD_DOCROOT_DIR](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-docroot-dir)
 * [HTTPD_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-server)
 * [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)
 * [MYSQL_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#mysql-server)
@@ -99,6 +106,8 @@ Unterordner `web`. Kopiere in diesen Ordner die Contao Manager `.phar` Datei und
 
 {{% notice note %}}
 Die Domain-Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert werden.
+Die manuelle Bearbeitung der »`/etc/hosts`« kann u. U. vernachlässigt werden. Die »Devilbox« bietet hierzu eine 
+»[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität an. 
 {{% /notice %}}
 
 

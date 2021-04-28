@@ -98,7 +98,12 @@ führen.
 
 ### Mindestanforderungen an PHP
 
-#### Contao 4.9 und später
+#### Contao 4.11 und später
+
+- **PHP** Version 7.3.0 oder höher ist erforderlich.
+
+
+#### Contao 4.9 (LTS)
 
 - **PHP** Version 7.2.0 oder höher ist erforderlich.
 - Bilder können mit den PHP-Erweiterungen GD (`ext-gd`), Imagick (`ext-imagick`) oder Gmagick (`ext-gmagick`) 

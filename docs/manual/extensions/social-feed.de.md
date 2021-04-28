@@ -13,6 +13,5 @@ Instagram unterstützt, weitere Kanäle folgen in Zukunft. Die Posts werden dire
 News angelegt und können anschließend mit dem Modultyp Nachrichtenliste auf der Webseite angezeigt werden.
 
 Eine detaillierte Anleitung findest du bei [docs.pdir.de](https://docs.pdir.de/#/social-feed/index).
-Eine Demo findest du bei [demo.pdir.de](https://demo.pdir.de/social-feed).
 
 ![Social Feed](/de/extensions/images/de/social-feed.png?classes=shadow)

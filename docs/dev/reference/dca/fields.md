@@ -42,7 +42,7 @@ $GLOBALS['TL_DCA']['tl_example']['fields']['myfield'] = [
 | [options_callback](../callbacks/#fields-field-options)         | Callback function (`array`)                     | Callback function that returns an array of options. Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | foreignKey           | table.field (`string`)                          | Get options from a database table. Returns ID as key and the field you specify as value. The field can be a complete SQL expression, e.g.: `tl_member.CONCAT(firstname,' ',lastname)`                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | reference            | `&$GLOBALS['TL_LANG']` (`array`)                | Array that holds the options labels. Typically a reference to the global language array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| explanation          | `&$GLOBALS['TL_LANG']` (`array`)                | Array that holds the explanation. Typically a reference to the global language array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| explanation          | Array key (`string`)                            | Array key that holds the explanation. This is a reference to the `XPL` category of the `explain` translation domain. See more information [below](#explanation).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | [input_field_callback](../callbacks/#fields-field-input-field) | Callback function (`array`)                     | Executes a custom function instead of using the default input field routine and passes the the DataContainer object and the label as arguments.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eval                 | Field configuration (`array`)                   | Various configuration options. See next paragraph.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | [wizard](../callbacks/#fields-field-wizard)                    | Callback function (`array`)                     | Call a custom function and add its return value to the input field. Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -57,6 +57,64 @@ $GLOBALS['TL_DCA']['tl_example']['fields']['myfield'] = [
 no label is defined, Contao will automatically look for a translation in `tl_example.field_name`,
 e.g. `$GLOBALS['TL_LANG']['tl_example']['field_name']`.
 {{% /notice %}}
+
+
+### Explanation
+
+Explanations are used together with the `helpwizard` `eval` setting. The latter
+will show the help wizard icon and the help wizard itself will show the explanation.
+`explanation` is a configuration value holding a simple string. It is a reference
+to the `$GLOBALS['TL_LANG']['XPL']` translation array, i.e. a reference into the
+`XPL` category of the `explain` [translation domain][TranslationDomain].
+
+The explanation itself can be defined in two ways: either as a single string:
+
+```php
+// contao/languages/en/explain.php
+$GLOBALS['TL_LANG']['XPL']['example'] = 'Content for the help wizard.';
+```
+
+or as a multi dimensonal array representing an explanation table:
+
+```php
+// contao/languages/en/explain.php
+$GLOBALS['TL_LANG']['XPL']['example'] = [
+    ['First row header', 'First row content.'],
+    ['Second row header', 'Second row content.'],
+];
+```
+
+{{% expand "Show full example" %}}
+```php
+// contao/dca/tl_content.php
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['example'] = [
+    'inputType' => 'text',
+    'explanation' => 'example',
+    'eval' => ['tl_class' => 'w50', 'helpwizard' => true],
+    'sql' => ['type' => 'string', 'default' => ''],
+];
+
+PaletteManipulator::create()
+    ->addField('example', 'text')
+    ->applyToPalette('text', 'tl_content')
+;
+```
+
+```php
+// contao/languages/en/tl_content.php
+$GLOBALS['TL_LANG']['example'] = [
+    'Example field',
+    'Field for demonstrating the explanation configuration.'
+];
+```
+
+```php
+// contao/languages/en/explain.php
+$GLOBALS['TL_LANG']['XPL']['example'] = 'Explanatory text for the <strong>example</strong> field.';
+```
+{{% /expand %}}
 
 
 ### Evaluation
@@ -87,8 +145,7 @@ Each field can be validated against a regular expression.
 | allowHtml          | true/false (`bool`)           | If true the current field will accept HTML input (see "Allowed HTML tags" in the back end System => Settings).                                                            |
 | preserveTags       | true/false (`bool`)           | If true no HTML tags will be removed at all.                                                                                                                             |
 | decodeEntities     | true/false (`bool`)           | If true HTML entities will be decoded. Note that HTML entities are always decoded if allowHtml is true.                                                                  |
-| useRawRequestData  | true/false (`bool`)           | If true the raw request data from the Symfony request is used. Input filtering is bypassed!
-                                                             |
+| useRawRequestData  | true/false (`bool`)           | If true the raw request data from the Symfony request is used. **Warning:** input filtering is bypassed! Make sure the data is never output anywhere in the back end unescaped which it would if you added the field to a regular back end list view for example. |
 | doNotSaveEmpty     | true/false (`bool`)           | If true the field will not be saved if it is empty.                                                                                                                      |
 | alwaysSave         | true/false (`bool`)           | If true the field will always be saved, even if its value has not changed. This can be useful in conjunction with a load_callback.                                       |
 | spaceToUnderscore  | true/false (`bool`)           | If true any whitespace character will be replaced by an underscore.                                                                                                      |
@@ -123,6 +180,8 @@ Each field can be validated against a regular expression.
 | dcaPicker          | true/false (`bool`)           | If true the dca-picker will be shown.  Enables pick up different data sets from the system.                                                                              |
 | placeholder        | Placeholder (`string`)        | Displays a placeholder for the respective field.    
 | isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
+| metaFields         | `metaWizard` fields (`array`) | Defines the available fields for the `metaWizard` input type. |
+| custom_rgxp        | Regular expression (`string`) | {{< version "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
 
 {{% notice warning %}}
 Using the `encrypt` option is deprecated and its internal implementation relies 
@@ -143,12 +202,12 @@ can be [registered using a hook][3].
 | digit       | allows numeric characters only (including full stop [.] and minus [-])                                            |
 | natural     | allows non-negative natural numbers (including 0)                                                                 |
 | alpha       | allows alphabetic characters only (including full stop [.] minus [-] and space [ ])                               |
-| alnum       | allows alphanumeric characters only (including full stop [.] minus [-], underscore [_] and space [ ])             |
+| alnum       | allows alphanumeric characters only (including full stop [.] minus [-], underscore [\_] and space [ ])            |
 | extnd       | disallows `#<>()\\=`                                                                                              |
 | date        | expects a valid date                                                                                              |
 | time        | expects a valid time                                                                                              |
 | datim       | expects a valid date and time                                                                                     |
-| friendly    | expects a valid "friendly name format" e-mail address                                                             |
+| friendly    | expects a valid "friendly name format" e-mail address (`Lorem Ipsum <foobar@example.com>` or `Lorem Ipsum [foobar@example.com]`) |
 | email       | expects a valid e-mail address                                                                                    |
 | emails      | expects a valid list of valid e-mail addresses                                                                    |
 | url         | expects a valid URL                                                                                               |
@@ -160,6 +219,57 @@ can be [registered using a hook][3].
 | language    | expects a valid language code                                                                                     |
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
+| httpurl     | {{< version "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
+| custom      | {{< version "4.11" >}} enables you to define a custom regular expression under the `custom_rgxp` evaluation key   |
+
+
+#### Meta Wizard Fields
+
+When using the `metaWizard` input type, as it is used in `tl_files` within the Contao
+core for example, the available fields can be defined through the `metaFields` key
+in the `eval` definition of the field. This definition is an associative array,
+where the key is the key of the meta field and its value will be used for additional
+attributes of the text input field.
+
+{{% notice note %}}
+The meta wizard only supports text input fields, and `textarea` fields since Contao
+**4.9.10**.
+{{% /notice %}}
+
+For example, this is the definition of the `tl_files.meta` field from the Contao
+core:
+
+```php
+$GLOBALS['TL_DCA']['tl_files']['fields']['meta']['eval']['metaFields'] = [
+    'title' => 'maxlength="255"',
+    'alt' => 'maxlength="255"',
+    'link' => 'maxlength="255"',
+    'caption' => 'maxlength="255"',
+];
+```
+
+Each meta field is always a simple text input, which can be expanded with additional
+HTML attributes. In this case, all the meta fields get the attribute `maxlength="255"`.
+
+If you want to add an additional meta field to the file manager of Contao, you could
+do it like this:
+
+```php
+// contao/dca/tl_files.php
+$GLOBALS['TL_DCA']['tl_files']['fields']['meta']['eval']['metaFields']['example'] = 
+    'maxlength="255"'
+;
+```
+
+This will insert the new meta field, however it will have no label in the back end,
+as its translation is still missing. The translation key for these meta fields consists
+of the name of the field, grouped and prefixed by `MSC.aw_`. So for this new field
+the translation definition could look like this:
+
+```php
+// contao/languages/en/default.php
+$GLOBALS['TL_LANG']['MSC']['aw_example'] = 'My example';
+```
 
 
 ### Relations
@@ -197,3 +307,4 @@ the Doctrine Database Abstraction Layer.
 [1]: https://docs.contao.org/books/manual/current/en/02-administration-area/listing-records.html
 [2]: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/schema-representation.html#column
 [3]: ../../../framework/hooks/
+[TranslationDomain]: /framework/translations/#domains

@@ -242,7 +242,7 @@ So in most cases, the following configuration will score the maximum cache hits 
 cookies of extensions you installed:
 
 ```
-COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,trusted_device,REMEMBERME
+COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
     
 {{% notice note %}}

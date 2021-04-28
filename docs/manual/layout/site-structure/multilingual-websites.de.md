@@ -45,8 +45,19 @@ erneuern«) oder alternativ über die Kommandozeile erneuert werden.
 ```bash
 vendor/bin/contao-console cache:clear --env=prod --no-warmup
 ```
-
 {{% /notice %}}
+
+Ab Contao **4.10** kann der URL-Präfix beliebig im Startpunkt der Website festgelegt werden. Dadurch ist es einerseits
+möglich einen Präfix zu verwenden, der anders als die Sprache selbst lautet und andererseits ist es möglich einen Startpunkt
+auch ohne Präfix zu benutzen, während die anderen Startpunkte der selben Domain weiterhin einen Präfix haben. Zum Beispiel
+`example.com` für die Englische Version der Website und `example.com/de` für die Deutsche Version. Damit diese Einstellung
+möglich wird, muss aber das »[Legacy Routing][LegacyRouting]« über die Konfiguration deaktiviert werden:
+
+```yaml
+# config/config.yml
+contao:
+    legacy_routing: false
+```
 
 
 ## Auffinden des richtigen Startpunkts
@@ -104,3 +115,6 @@ Der vierte Fall gehört aufgrund der Domain ganz klar zur privaten Webseite, ega
 Dank des Sprachen-Fallbacks haben Surfer auf der ganzen Welt Zugriff auf die Webseite. Und hier erkennst du auch die 
 Wichtigkeit eines Sprachen-Fallbacks: ohne dieses wäre die private Webseite nur für deutschsprachige Besucher verfügbar!
 Alle anderen sähen nur ein »No pages found«.
+
+
+[LegacyRouting]: /de/layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus

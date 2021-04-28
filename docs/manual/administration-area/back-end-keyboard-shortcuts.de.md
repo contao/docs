@@ -68,5 +68,11 @@ Im Modus »Mehrere bearbeiten« kommen weitere Kürzel hinzu:
 Die beschriebenen Tastaturkürzel funktionieren in dieser Form nur unter Windows und Linux. Mac-Nutzer müssen anstatt der
 `[Alt]`-Taste `[Ctrl]+[⌥ Opt]` in Verbindung mit dem jeweiligen Kürzel verwenden.
 
-Zudem weicht Firefox unter Windows leider vom gewohnten Standard ab, dort musst du `[Alt]+[Umsch]` in Verbindung mit
+Zudem weicht Firefox unter Windows und Linux leider vom gewohnten Standard ab, dort musst du `[Alt]+[Umsch]` in Verbindung mit
 dem gewünschten Kürzel drücken.
+
+Eine Übersicht, welche Tastenkombination unter welchem Betriebssystem und Browser benutzt werden muss, bietet
+[dieser Artikel][MozillaAccesskey].
+
+
+[MozillaAccesskey]: https://developer.mozilla.org/de/docs/Web/HTML/Globale_Attribute/accesskey

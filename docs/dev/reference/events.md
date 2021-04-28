@@ -16,9 +16,10 @@ specific flows of the application, in addition to [Hooks][ContaoHooks].
 {{% version "4.5" %}}
 
 This event is dispatched, when the Contao back end menu is built. The event contains
-references to the menu factory as well as the menu tree object. This can be used
-to alter the back end menu to your needs. An example of this can be found in the
-[Back End Routes][BackEndRoutes] guide.
+references to the menu factory as well as the menu tree object of the 
+[KnpMenuBundle][KnpMenuBundle]. This can be used to alter the back end menu to your 
+needs. An example of this can also be found in the [Back End Routes][BackEndRoutes] 
+guide.
 
 <table>
 <tr><th>Name</th><td><code>contao.backend_menu_build</code></td></tr>
@@ -72,7 +73,7 @@ class BackendMenuBuildListener
 
 {{% version "4.7" %}}
 
-This event is dispatched after Contao generateed all its necessary symlinks (e.g.
+This event is dispatched after Contao generated all its necessary symlinks (e.g.
 from `web/files/` to all the public folders in `files/`). The event object returns
 a list of custom symlinks to be built and offers the possibility to add your own 
 custom symlink to the list.
@@ -352,7 +353,46 @@ class SlugValidCharactersListener
 {{% /expand %}}
 
 
+## `FilterPageTypeEvent`
+
+{{% version "4.10" %}}
+
+This event event is triggered when the available page types are collected in the
+`PageTypeOptionsListener` for the `type` select of `tl_page`. The event allows you
+to add or remove options.
+
+<table>
+<tr><th>Name</th><td><code>\Contao\CoreBundle\Event\FilterPageTypeEvent::class</code></td></tr>
+<tr><th>Constant</th><td>N/A</td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\FilterPageTypeEvent</code></td></tr>
+</table>
+<br>
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/FilterPageTypeListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\FilterPageTypeEvent;
+use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+
+/**
+ * @ServiceTag("kernel.event_listener")
+ */
+class FilterPageTypeListener
+{
+    public function __invoke(FilterPageTypeEvent $event): void
+    {
+        // Removes the "redirect" page type from the available page types
+        $event->removeOption('redirect');
+    }
+}
+```
+{{% /expand %}}
+
+
 [SymfonyEventDispatcher]: https://symfony.com/doc/current/event_dispatcher.html
 [ContaoHooks]: /framework/hooks
 [BackEndRoutes]: /guides/back-end-routes
 [webignition/robots-txt-file]: https://github.com/webignition/robots-txt-file
+[KnpMenuBundle]: https://symfony.com/doc/current/bundles/KnpMenuBundle/index.html

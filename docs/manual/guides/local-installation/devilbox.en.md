@@ -12,6 +12,12 @@ tags:
 The [Devilbox Project](http://devilbox.org/) is a complete LAMP stack for [Docker](https://www.docker.com/).
 If you use the Docker-Toolbox, [this part](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox) of the documentation are worth reading.
 
+{{% notice note %}}
+In order to run the Devilbox you need to have _Docker_ and _Docker Compose_ installed on your system. Read through the
+[Devilbox Prerequisites documentation](https://devilbox.readthedocs.io/en/latest/getting-started/prerequisites.html) for 
+more information on that, if you are not running these applications yet on your system.
+{{% /notice %}}
+
 
 ## Install and configure the Devilbox
 
@@ -20,7 +26,7 @@ the file to `.env`. In the new file you can now make your configurations. The fo
 
 * [NEW_UID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-uid)
 * [NEW_GID](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#new-gid)
-* [HTTPD_DOCROOT](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-docroot-dir)
+* [HTTPD_DOCROOT_DIR](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-docroot-dir)
 * [HTTPD_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#httpd-server)
 * [PHP_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#php-server)
 * [MYSQL_SERVER](https://devilbox.readthedocs.io/en/latest/configuration-files/env-file.html#mysql-server)
@@ -91,6 +97,8 @@ Contao Manager `.phar` file into this folder and rename the file to` contao-mana
 
 {{% notice note %}}
 The domain suffix `.loc` is the default. However, this can be changed in the `.env` file via the entry `TLD_SUFFIX`.
+The manual editing of »`/etc/hosts`« may be neglected. The »Devilbox« offers a 
+"[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) feature. 
 {{% /notice %}}
 
 

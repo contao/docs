@@ -33,7 +33,7 @@ den Titel und die Beschreibung einer Seite definieren.
 
 **Seitentitel:** Der Seitentitel wird im `<title>`-Tag der Webseite verwendet und taucht häufig auch 
 in den Suchergebnissen von Google und Co. auf. Er sollte nicht mehr als 65 Zeichen enthalten, da viele Suchmaschinen 
-längere Titel einfach abschneiden.
+längere Titel einfach abschneiden. Wenn kein Seitentitel angegeben wird, wird als Fallback der Name der Seite benutzt.
 
 **Ausgabe im Quellcode:**
 ```html
@@ -49,11 +49,7 @@ längere Titel einfach abschneiden.
 
 Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten möglichst umfassend in den Suchindex 
 aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung 
-*noindex,follow* von der Indizierung ausgenommen werden.
-
-{{% notice note %}}
-Die Einstellung Robots-Tag hat keine Auswirkungen auf den Suchindex von Contao für die Website-Suche.
-{{% /notice %}}
+*noindex,nofollow* von der Indizierung ausgenommen werden.
 
 **Ausgabe im Quellcode:**
 ```html
@@ -76,6 +72,119 @@ einer eindeutigen Beschreibung zu versehen.
 
 Bei Seiten vom Typ »Startpunkt einer Webseite« stehen weitere Eingabefelder zur Verfügung, mit denen du bestimmte 
 globale Einstellungen pro Webseite überschreiben kannst.
+
+{{% notice info %}}
+**Vor** Contao **4.10** sind die Sektionen _URL-Einstellungen_ und _Spracheinstellungen_ unter dem Punkt _DNS-Einstellungen_
+zusammengefasst.
+{{% /notice %}}
+
+
+### URL-Einstellungen
+
+Die URL-Einstellungen zusammen mit den Spracheinstellungen bestimmen, welchen Startpunkt Contao in Abhängigkeit von der 
+aufgerufenen Domain und der im Browser des Besuchers eingestellten Sprache lädt und welches Format die von Contao generierten
+URLs haben sollen.
+
+**Domainname:** Wenn du möchtest, dass eine Webseite in deiner Seitenstruktur unter einer bestimmten Domain wie z. B. 
+»firma.de« erreichbar ist, kannst du diese hier eingeben. Ruft ein Besucher dann »firma.de« in seinem Browser auf, wird 
+er automatisch zu dem entsprechenden Startpunkt einer Webseite weitergeleitet.
+
+**Protokoll (HTTPS verwenden):** Wenn deine Webseite über HTTPS verfügbar ist, muss diese Einstellung entsprechend
+konfiguriert werden. Ab Contao **4.10** heißt diese Einstellung **Protokoll** und lässt die Auswahl zwischen `http://`
+und `https://` zu. In Contao **4.9** werden Besucher automatisch auf HTTPS weitergeleitet, wenn diese Einstellung aktiv
+ist. Ab Contao **4.10** wird automatisch entweder zu `http://` oder `https://` weitergeleitet.
+
+{{% notice warning %}}
+Falls du für deine Domain ein SSL-Zertifikat einsetzt, dann muss diese Einstellung in Contao **4.10** und höher von `http://` 
+auf `https://` geändert werden. Andernfalls könnte eine unendliche Weiterleitung im Frontend die Folge sein, falls beispielsweise die
+Hosting Umgebung automatisch von `http://` auf `https://` weiterleitet.
+{{% /notice %}}
+
+{{< version-tag "4.10" >}} **URL-Präfix:** Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
+zugewiesen werden. Diese Einstellung ist ab Contao **4.10** verfügbar, davor gab es nur über die
+`contao.prepend_locale` Einstellung die Möglichkeit einen über die Sprache definierten Präfix zu verwenden. Nun ist dieser
+Präfix frei wählbar und damit unabhängig von der jeweils eingestellten Sprache.
+
+{{< version-tag "4.10" >}} **URL-Suffix:** Mit dieser Einstellung kann der »URL-Suffix« geändert oder entfernt werden. Der URL-Suffix wird bei der
+Generierung der URL einer Seite an den Seitenalias angehängt.
+
+{{< version-tag "4.5" >}} **Gültige Alias-Zeichen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
+Aliase auszuwählen.
+
+| Alias-Einstellungen                  | Erklärung                                                            |
+|:-------------------------------------|:---------------------------------------------------------------------|
+| Unicode-Zahlen und -Kleinbuchstaben  | Aus dem Seitennamen »Über uns« wird das Alias `über-uns` generiert.  |
+| Unicode-Zahlen und -Buchstaben       | Aus dem Seitennamen »Über uns« wird das Alias `Über-uns` generiert.  |
+| ASCII-Zahlen und -Kleinbuchstaben    | Aus dem Seitennamen »Über uns« wird das Alias `ueber-uns` generiert. |
+| ASCII-Zahlen und -Buchstaben         | Aus dem Seitennamen »Über uns« wird das Alias `Ueber-uns` generiert. |
+
+Für die Erzeugung des Aliases ist in Einzelfällen auch die eingestellte Sprache relevant. So wird ein Deutsches »Über« 
+zu »ueber« jedoch ein Finnisches »eläinkö« zu »elainko« konvertiert.
+
+{{% notice note %}}
+Diese Einstellung befindet sich in Contao **4.5** bis **4.9** in der Sektion _Alias-Einstellungen_.
+{{% /notice %}}
+
+{{< version-tag "4.10" >}} **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
+Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
+»Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
+
+Diese Funktion kann in Contao **4.10** pro Startpunkt definiert werden. In älteren Contao Versionen wird diese Funktion
+noch über [eine Systemeinstellung][SystemSettingFolderUrl] aktiviert.
+
+
+#### Legacy Routing Modus
+
+{{< version "4.10" >}}
+
+Die Einstellungen **URL-Präfix** und **URL-Suffix** so wie **Sprachweiterleitung deaktivieren** sind erst verfügbar, wenn
+das sogennante »Legacy Routing« über die Contao `contao.legacy_routing` Konfigurationseinstellung deaktiviert wurde.
+Andernfalls wird die URL-Generierung nach wie vor nur durch die Einstellungen `contao.prepend_locale` und `contao.url_suffix` 
+bestimmt.
+
+```yml
+# config/config.yml
+contao:
+    legacy_routing: false
+```
+
+**Beachte allerdings**, dass die Deaktivierung des Legacy Routing Modus auch folgende Hooks deaktiviert:
+
+* [`getRootPageFromUrl`][GetRootPageFromUrlHook]
+* [`getPageIdFromUrl`][GetPageIdFromUrlHook]
+
+{{% notice warning %}}
+Falls Extensions installiert sind, die diese Hooks noch benötigen, dann muss entweder das Legacy Routing aktiviert bleiben,
+oder die Extensions müssen entfernt oder ersetzt werden. Andernfalls wird ein Fehler im Frontend auftreten.
+{{% /notice %}}
+
+
+### Spracheinstellungen
+
+**Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres 
+[Subtag](http://ssgfix.sub.uni-goettingen.de/projekt/doku/sprachcode.html) nach ISO 639-1 erfasst, also z. B. über 
+`de` für Deutsch oder `en` für Englisch.
+
+**Sprachen-Fallback:** Contao sucht grundsätzlich nach einem Startpunkt in der Sprache, die ein Besucher in seinem 
+Browser voreingestellt hat. Gibt es nur einen deutschen Startpunkt, bekäme ein englischer Besucher lediglich die 
+Fehlermeldung »No pages found« zu sehen, da in seiner Sprache ja keine Webseite existiert.
+
+Um das zu vermeiden, kannst du einen bestimmten Startpunkt als Fallback definieren, was frei übersetzt so viel wie 
+»Auffangseite« oder »Ausweichseite« bedeutet. Diese Auffangseite fängt dann quasi alle Besucher auf, die aufgrund ihrer 
+Spracheinstellungen eigentlich keinem Startpunkt zugeordnet werden können.
+
+Achte also darauf, immer einen Startpunkt als Sprachen-Fallback zu definieren. Deine Webseite kann sonst nur von 
+deutschen Besuchern aufgerufen werden! Auch die Robots der Suchmaschinen, die deine Webseite indizieren, sprechen in 
+der Regel Englisch und wären ohne Sprachen-Fallback ebenfalls ausgeschlossen. Deine Seiten würden dann trotz 
+sorgfältiger Optimierung niemals bei Google auftauchen.
+
+{{< version-tag "4.10" >}} **Sprachweiterleitung deaktivieren:** Bei mehrsprachigen Seiten der selben Domain leitet Contao beim Aufruf der Domain
+automatisch auf den zur Browser-Sprache passenden Startpunkt weiter (andernfalls zur Fallback-Sprache). Mit dieser Einstellung
+kann dieses Verhalten beeinflusst und die automatische Weiterleitung zu bestimmten (oder allen) Sprachen deaktiviert
+werden.
+
+
+### Globale Einstellungen
 
 **E-Mail-Adresse des Webseiten-Administrators:** Hier kannst du die in den Backend-Einstellungen festgelegte 
 E-Mail-Adresse des Systemadministrators für eine bestimmte Webseite überschreiben. An diese Adresse werden z. B. 
@@ -116,24 +225,7 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 | g:i      | 12 Stunden ohne führende Nullen sowie Minuten, z. B. `8:36`   |
 
 
-{{< version "4.5" >}}
-
-**Alias-Einstellungen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
-Aliase auszuwählen.
-
-| Alias-Einstellungen                  | Erklärung                                                            |
-|:-------------------------------------|:---------------------------------------------------------------------|
-| Unicode-Zahlen und -Kleinbuchstaben  | Aus dem Seitennamen »Über uns« wird das Alias `über-uns` generiert.  |
-| Unicode-Zahlen und -Buchstaben       | Aus dem Seitennamen »Über uns« wird das Alias `Über-uns` generiert.  |
-| ASCII-Zahlen und -Kleinbuchstaben    | Aus dem Seitennamen »Über uns« wird das Alias `ueber-uns` generiert. |
-| ASCII-Zahlen und -Buchstaben         | Aus dem Seitennamen »Über uns« wird das Alias `Ueber-uns` generiert. |
-
-Für die Erzeugung des Aliases ist in Einzelfällen auch die eingestellte Sprache relevant. So wir ein Deutsches »Über« 
-zu »ueber« jedoch ein Finnisches »eläinkö« zu »elainko« konvertiert.
-
-{{< version "4.8" >}}
-
-**Zwei-Faktor-Authentifizierung:** Hier kannst du die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
+{{< version-tag "4.8" >}} **Zwei-Faktor-Authentifizierung:** Hier kannst du die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
 erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die 
 Zwei-Faktor-Authentifizierung einrichten.
 
@@ -170,9 +262,7 @@ Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertra
 versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz 
 zugewiesener Verfallszeit nicht im Cache auftauchen.
 
-{{< version "4.8" >}}
-
-**Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn 
+{{< version-tag "4.8" >}} **Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn 
 ein Mitglied angemeldet ist. Beachte, dass du in diesem Fall die Seite für eingeloggte Mitglieder nicht mehr 
 personalisieren kannst.
 
@@ -188,7 +278,7 @@ bestimmten Benutzer und einer bestimmten Benutzergruppe und unterscheidet drei Z
 - Zugriff als sonstiger Backend-Benutzer
 
 Die Seite »Unternehmen« ist beispielsweise mit Zugriffsrechten versehen und gehört dem Benutzer h.lewis sowie der 
-Benutzergruppe Nachrichten. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf 
+Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf 
 dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite 
 an sich bearbeiten und z. B. den Seitentitel ändern.
 
@@ -232,14 +322,16 @@ konfigurieren.
 Navigationsmodulen verwendet wird. Auf diese Weise kannst du CSS-Formatierungen für eine spezielle Seite oder einen 
 bestimmten Menüpunkt erstellen.
 
-**In der Sitemap zeigen:** Auf Wunsch legt Contao pro Webseite eine XML-Sitemap an, die du z. B. bei Google einreichen 
-kannst ([XML-Sitemap](#xml-sitemap)). Standardmäßig sind darin alle öffentlichen und nicht im Menü 
-versteckten Seiten enthalten. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
+**In der HTML-Sitemap zeigen:** Hier kannst du festlegen, ob die Seite in der HTML-Sitemap angezeigt wird. Standardmäßig sind darin alle öffentlichen und nicht im Menü versteckten Seiten enthalten. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
 
 - **Standard:** Die Standard-Einstellungen verwenden.
-- **Immer anzeigen:** Die Seite wird immer in der XML-Sitemap angezeigt, auch wenn sie z. B. im Menü versteckt ist und 
+- **Immer anzeigen:** Die Seite wird immer in der HTML-Sitemap angezeigt, auch wenn sie z. B. im Menü versteckt ist und 
 somit normalerweise nicht angezeigt würde.
-- **Nie anzeigen:** Die Seite ist von der XML-Sitemap ausgenommen.
+- **Nie anzeigen:** Die Seite ist von der HTML-Sitemap ausgenommen.
+
+{{% notice info %}}
+Verwechsle nicht die HTML-Sitemap mit der [XML-Sitemap](#xml-sitemap): Die HTML-Sitemap ist ein FE-Modul, die XML-Sitemap kannst du z. B. bei Google einreichen.
+{{% /notice %}}
 
 **Im Menü verstecken:** Wenn du diese Option auswählst, wird die Seite nicht im Menü deiner Webseite angezeigt. 
 Du kannst die Seite – sofern sie veröffentlicht wurde – aber trotzdem über einen direkten Link oder in einem 
@@ -255,9 +347,7 @@ ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber h
 der Webseite ausgeblendet, sobald sich ein Mitglied angemeldet hat. Dies ist z. B. für die Seiten »Anmeldung« und 
 »Registrierung« sinnvoll.
 
-{{< version "4.5" >}}
-
-**Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die Fehlerseite 404 gezeigt, wenn die 
+{{< version-tag "4.5" >}} **Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die Fehlerseite 404 gezeigt, wenn die 
 URL kein Alias zu einem Element enthält.
 
 
@@ -277,41 +367,13 @@ Webseite können diese Seite dann über die Tastatur direkt aufrufen. Diese Fun
 Webseiten gefordert.
 
 
-## DNS-Einstellungen
-
-DNS-Einstellungen sind nur bei Seiten vom Typ »Startpunkt einer Webseite« verfügbar. Sie bestimmen, welchen Startpunkt 
-Contao in Abhängigkeit von der aufgerufenen Domain und der im Browser des Besuchers eingestellten Sprache lädt.
-
-**Domainname:** Wenn du möchtest, dass eine Webseite in deiner Seitenstruktur unter einer bestimmten Domain wie z. B. 
-»firma.de« erreichbar ist, kannst du diese hier eingeben. Ruft ein Besucher dann »firma.de« in seinem Browser auf, wird 
-er automatisch zu dem entsprechenden Startpunkt einer Webseite weitergeleitet.
-
-**HTTPS verwenden:** Aktiviere diese Checkbox wenn deine Webseite über HTTPS verfügbar ist.
-
-**Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres 
-[Subtag](http://ssgfix.sub.uni-goettingen.de/projekt/doku/sprachcode.html) nach ISO 639-1 erfasst, also z. B. über 
-`de` für Deutsch oder `en` für Englisch.
-
-**Sprachen-Fallback:** Contao sucht grundsätzlich nach einem Startpunkt in der Sprache, die ein Besucher in seinem 
-Browser voreingestellt hat. Gibt es nur einen deutschen Startpunkt, bekäme ein englischer Besucher lediglich die 
-Fehlermeldung »No pages found« zu sehen, da in seiner Sprache ja keine Webseite existiert.
-
-Um das zu vermeiden, kannst du einen bestimmten Startpunkt als Fallback definieren, was frei übersetzt so viel wie 
-»Auffangseite« oder »Ausweichseite« bedeutet. Diese Auffangseite fängt dann quasi alle Besucher auf, die aufgrund ihrer 
-Spracheinstellungen eigentlich keinem Startpunkt zugeordnet werden können.
-
-
-Achte also darauf, immer einen Startpunkt als Sprachen-Fallback zu definieren. Deine Webseite kann sonst nur von 
-deutschen Besuchern aufgerufen werden! Auch die Robots der Suchmaschinen, die deine Webseite indizieren, sprechen in 
-der Regel Englisch und wären ohne Sprachen-Fallback ebenfalls ausgeschlossen. Deine Seiten würden dann trotz 
-sorgfältiger Optimierung niemals bei Google auftauchen.
-
-
 ## XML-Sitemap
 
 Contao erstellt bei Bedarf automatisch eine XML-Sitemap aus der Seitenstruktur der Webseite, die 
 [Google](https://support.google.com/webmasters/answer/156184?visit_id=636994052832330821-1485667470&rd=2&ref_topic=4581190) 
 lesen und auswerten kann. Um die Sitemap bei Google anzumelden, benötigst du einen Google-Account.
+
+Welche Seiten in die XML-Sitemap aufgenommen werden, kannst du über das Robots-Tag in den [Metadaten](#metadaten) steuern.
 
 **Eine XML-Sitemap erstellen:** Hier aktivierst du die Erstellung der XML-Sitemap.
 
@@ -362,3 +424,6 @@ bewerben.
 
 [Systemverwaltung]: /de/system/einstellungen/
 [BackendKeyboardShortcuts]: /de/administrationsbereich/backend-tastaturkuerzel/
+[SystemSettingFolderUrl]: /de/system/einstellungen/#frontend-einstellungen
+[GetRootPageFromUrlHook]: https://docs.contao.org/dev/reference/hooks/getRootPageFromUrl/
+[GetPageIdFromUrlHook]: https://docs.contao.org/dev/reference/hooks/getPageIdFromUrl/
