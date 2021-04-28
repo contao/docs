@@ -161,7 +161,7 @@ hierzu in das Unterverzeichnis `page` und erstellst die lokale Vorschau über de
 ## Fork mit dem Original-Repository synchronisieren
 
 Wenn du schon länger nicht mehr mit deinem Fork gearbeitet hast, kann es sein, dass bei deinem Fork auf GitHub folgende 
-Meldung `This branch is 7 commits behind contao:master.` ausgegeben wird.
+Meldung `This branch is 7 commits behind contao:main.` ausgegeben wird.
 
 
 Bevor du also Anpassungen an der Doku vernimmst, kannst du dafür sorgen, dass dein Fork mit dem Original-Repository 
