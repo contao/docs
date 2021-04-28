@@ -39,7 +39,7 @@ Administrator Rechten starten.
 {{% /notice %}}
 
 
-## Die PHP Konfiguration
+## Die PHP-Konfiguration
 
 Entsprechend den [Contao Systemvoraussetzungen](/de/installation/systemvoraussetzungen/) müssen wir die 
 PHP-Konfiguration einmalig anpassen. Hierzu stoppst du zunächst im »XAMPP Control-Panel« die Module »Apache« und »MySQL«.
