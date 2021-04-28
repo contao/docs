@@ -110,7 +110,7 @@ gewohnt eine Datenbank anlegen. Sofern noch nicht geschehen kopierst du den
 [Contao-Manager](https://contao.org/de/download.html) z. B. in das Verzeichnis `demo\web` und benennst die Datei danach 
 in »contao-manager.phar.php« um. 
 
-Deine Contao Installation kann jetzt abgeschlossen werden. Allerdings unterscheiden sich die Contao Aufrufe, ohne
+Deine Installation kann jetzt abgeschlossen werden. Allerdings unterscheiden sich die Contao-Aufrufe, ohne
 weitere vHost-Konfiguration (s. u.), von den bekannten Möglichkeiten. Zum aktuellen Zeitpunkt steht dir nur die lokale,
 interne Domain `localhost` zur Verfügung und diese zeigt in XAMPP standardmäßig auf das Verzeichnis `htdocs`.
 
