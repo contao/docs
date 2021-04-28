@@ -12,16 +12,16 @@ weight: 300
 Bevor du an der Dokumentation mit schreiben kannst, musst du noch folgendes tun:
 
 - Erstelle ein kostenloses Konto bei [GitHub](https://github.com/join). [GitHub](https://de.wikipedia.org/wiki/GitHub) 
-ist eine Versionsverwaltung für Software-Projekte und beheimatet unter anderem die 
-[Contao-Dokumentation](https://github.com/contao/docs/).
+ist ein Dienst für die Versionsverwaltung mit [Git](https://de.wikipedia.org/wiki/Git) für Software-Projekte und beheimatet 
+unter anderem die [Contao-Dokumentation](https://github.com/contao/docs/).
 - Die Dokumentation wird in [Markdown](https://de.wikipedia.org/wiki/Markdown) geschrieben, mache dich mit der 
 [Syntax](https://docs.contao.org/manual/de/artikelverwaltung/inhaltselemente/#syntax) dieser Auszeichnungssprache 
-ertraut.
+vertraut.
 
 
 ## Kleine Fehler korrigieren
 
-Wenn du während dem Lesen der Dokumentation einen Tippfehler entdeckst oder etwas umformulieren möchtest, ist es am 
+Wenn du während des Lesen der Dokumentation einen Tippfehler entdeckst oder etwas umformulieren möchtest, ist es am 
 einfachsten, dies direkt über GitHub zutun.
 
 
@@ -52,6 +52,13 @@ GitHub wird nun einen Branch und einen Commit für deine Änderungen erzeugen au
 ![Branch und Commit erzeugen](/de/contributing/images/de/branch-und-commit-erzeugen.png?classes=shadow)
 
 Wenn alles korrekt ist, klicke auf die Schaltfläche »Create pull request«.
+
+{{% notice info %}}
+Im verteilten Versionierungssystem Git und somit auch auf GitHub werden Vorschläge als sog. »Pull-Requests« erstellt. 
+Da du keinen Berechtigunge hast, direkt Änderungen im offiziellen Repository zu vollziehen (»to commit«) stellst du 
+eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Änderungen in das offizielle Repository zu 
+»ziehen« (engl. »to pull«).
+{{% /notice %}}
 
 
 ### Pull-Request erzeugen
@@ -108,13 +115,6 @@ oder
 git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git
 ```
 
-Wechsle nachdem Klonen in das Verzeichnis »docs« und aktualisiere mit folgendem Befehl noch das Theme.
-
-```bash
-cd docs
-git submodule foreach git pull origin master
-```
-
 
 ### Hugo-Site-Generator installieren
 
@@ -167,12 +167,17 @@ Wechsle mit `cd` in den Klone des geforkten Repositories.
 cd docs
 ```
 
-Füge das Original-Repository als neues Remote-Repository hinzu und gebe es als Upstream-Repository an.
+Füge das Original-Repository einmalig als neues Remote-Repository hinzu und gebe es als Upstream-Repository an.
 
 
 ```bash
 git remote add upstream https://github.com/contao/docs.git
 ```
+
+{{% notice info %}}
+Der [Remote-Name](https://docs.github.com/en/github/using-git/renaming-a-remote) »upstream« kann frei gewählt werden bzw. 
+auch nachträglich umbenannt werden.
+{{% /notice %}}
 
 Hole die Daten des Upstream-Repositories mit `fetch`.
 
@@ -187,7 +192,7 @@ untergebracht. Mit dem nächsten Befehl führst du diese zusammen.
 
 
 ```bash
-git merge upstream/master
+git merge upstream/main
 ```
 
 Jetzt führst du noch folgendes Kommando aus um deinen Fork zu aktualisieren.
@@ -197,7 +202,21 @@ Jetzt führst du noch folgendes Kommando aus um deinen Fork zu aktualisieren.
 git push
 ```
 
-Auf GitHub wird bei deinem Fork jetzt die Meldung `This branch is even with contao:master.` ausgegeben.
+Auf GitHub wird bei deinem Fork jetzt die Meldung `This branch is even with contao:main.` ausgegeben.
+
+
+
+### Branch erstellen
+
+Bevor du den Inhalt bearbeitest, sorgen wir mit dem Erstellen eines eigenen Branches (Verweis auf einen Snapshot) dafür, 
+dass du mit anderen parallel an der Dokumentation arbeiten kannst. Branches sind also unabhängige Entwicklungszweige.
+
+Erstelle einen neuen Branch aus dem aktuellen.
+
+
+```bash
+git checkout -b DEIN-BRANCHNAME
+```
 
 
 ### Inhalt bearbeiten
@@ -233,8 +252,12 @@ git commit -m "Eine aussagekräftige Commit-Nachricht eingeben"
 Um die Änderungen an dein entferntes Repository zu senden, führe folgenden Befehl aus.
 
 ```bash
-git push origin master
+git push origin DEIN-BRANCHNAME
 ```
+
+{{% notice info %}}
+Nach dem »push« eines eigenen neuen Branches wird dir auf der Konsole ein Link zum Erstellen des Pull-Request angezeigt.
+{{% /notice %}}
 
 
 ### Pull-Request erzeugen
@@ -255,3 +278,5 @@ Bestätige das Erstellen eines Pull requests mit »Create pull request«.
 
 **Herzlichen Glückwunsch!** Du hast soeben einen Pull-Request für die offizielle Contao-Dokumentation erstellt! Die 
 Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
+
+
