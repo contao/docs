@@ -151,6 +151,12 @@ make clean
 
 Bereinigt das `Build`-Verzeichnis.
 
+{{% notice tip %}}
+Alternativ kannst du die lokale Vorschau auch ohne `make`-Befehl erstellen. Auf der Konsole wechselst du 
+hierzu in das Unterverzeichnis `page` und erstellst die lokale Vorschau über den Befehl: 
+`hugo server --cleanDestinationDir --environment manual --destination ../build/manual`. 
+{{% /notice %}}
+
 
 ## Fork mit dem Original-Repository synchronisieren
 
