@@ -2,7 +2,7 @@
 title: 'Module management'
 description: 'Frontend modules generate the HTML code of the web page. They belong to the design-relevant elements and are therefore subordinate to the Theme Manager.'
 aliases:
-    - /en/layout/module-management/_index/
+    - /en/layout/module-management/
 weight: 30
 ---
 

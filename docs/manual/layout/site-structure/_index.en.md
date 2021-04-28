@@ -2,7 +2,7 @@
 title: 'Site structure'
 description: 'To use Contao effectively, it is important that you understand the basic principles and the structure of the system.'
 aliases:
-    - /en/layout/site-structure/_index/
+    - /en/layout/site-structure/
 weight: 10
 ---
 

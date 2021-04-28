@@ -351,7 +351,7 @@ The »RSCE« extension is based on the existing Contao conventions. You only nee
 specified template directory of your theme. You can then edit and maintain them within Contao.
 
 These files are a ».php« configuration file with [Contao DCA](https://docs.contao.org/dev/reference/dca/) information 
-and a «.html5« [template file](/en/layout/templates/_index/) for output. You have to consider the following convention for the file names:
+and a «.html5« [template file](/en/layout/templates/) for output. You have to consider the following convention for the file names:
 
 The name of the template file must start with »rsce_«, the configuration file must have the same name as the template 
 and additionally the suffix »_config«: For example »rsce_my_filter.html5« and »rsce_my_filter_config.php«.

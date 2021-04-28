@@ -2,7 +2,7 @@
 title: "Templates"
 description: "The Templates navigation area."
 aliases:
-    - /en/layout/templates/_index/
+    - /en/layout/templates/
 weight: 40
 ---
 

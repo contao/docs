@@ -29,7 +29,7 @@ using the module »Listing« we can implement this without any extension.
 
 The Contao frontend module of the »type« [listing](/en/layout/module-management/applications/) is mostly underestimated. 
 From any database table you can retrieve records that can then be output to the frontend using 
-[template](/en/layout/templates/_index/) files.
+[template](/en/layout/templates/) files.
 
 The module realizes a comfortable input of simple SQL queries. The results are then displayed by default, among other 
 things to display a list (template: `list_default.html5`) with optional links to detail pages (template: `info_default.html5`).

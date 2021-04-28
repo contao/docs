@@ -2,7 +2,7 @@
 title: 'Calendar extension'
 description: 'This allows future and past events to be managed in the backend.'
 aliases:
-    - /en/core-extensions/calendar/_index/
+    - /en/core-extensions/calendar/
 weight: 2
 ---
 
