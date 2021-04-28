@@ -220,7 +220,7 @@ hinterlegt werden. Füge dazu in der Datei `\apache\conf\extra\httpd-vhosts.conf
 ```
 
 Ändere auch hier wieder die Pfade entsprechend deiner aktuellen Umsetzung und starte im »XAMPP Control-Panel« 
-die Module »Apache« und »MySQL« erneut. Anschließend kannst du den Contao-Manager über `https://demo.local/contao-manager.phar`
+die Module »Apache« und »MySQL« erneut. Anschließend kannst du den Contao Manager über `https://demo.local/contao-manager.phar.php`
 erreichen.
 
 Dein Browser wird dir einen Warnhinweis ausgeben, da dieser unser lokal erstelltes Zertifikat zwar erkennt aber 
