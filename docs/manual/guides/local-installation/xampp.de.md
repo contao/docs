@@ -54,7 +54,7 @@ In der Datei `D:\xampp\apache\php.ini` suchst du die Zeilen »memory_limit« und
 {{% notice tip %}}
 Die genannten Änderungen sind für die Installation über den [PHP-Composer](https://getcomposer.org/) oder über den 
 [Contao-Manager](/de/installation/contao-manager/) zwingend notwendig. 
-Darüber hinaus könnstest du optional auch die Einträge »allow_url_fopen«, »max_execution_time« 
+Darüber hinaus könntest du optional auch die Einträge »allow_url_fopen«, »max_execution_time« 
 oder »file_uploads« überprüfen und anpassen.
 {{% /notice %}}
 
