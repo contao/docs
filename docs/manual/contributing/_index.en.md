@@ -146,7 +146,14 @@ reloads. The frontend is accessible via [localhost:1313](http://localhost:1313).
 make clean
 ```
 
-Bereinigt das `Build`-Verzeichnis.
+Cleans up the `build` directory.
+
+
+{{% notice tip %}}
+Alternatively, you can create the local preview without the `make` command. On the console you change 
+to the subdirectory `page` and create the local preview with the command: 
+`hugo server --cleanDestinationDir --environment manual --destination ../build/manual`. 
+{{% /notice %}}
 
 
 ## Synchronize fork with original repository
