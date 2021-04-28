@@ -177,7 +177,7 @@ musst du die Module »Apache« und »MySQL« neu starten. Anschließend kannst d
 
 
 {{% notice tip %}}
-Mit dieser Vorgehensweise könntest du auch mehrere Contao Installationen über verschiedene, lokale Domain Namen mit 
+Mit dieser Vorgehensweise könntest du auch mehrere Contao-Installationen über verschiedene, lokale Domain-Namen mit 
 separaten vHost-Einträgen pflegen.
 {{% /notice %}}
 
