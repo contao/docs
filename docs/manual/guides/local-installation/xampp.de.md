@@ -86,7 +86,7 @@ du eine entsprechende Rückmeldung erhalten.
 ### Contao mit PHP-Composer installieren
 
 Ohne weitere vHost-Konfiguration (s. u.) erwartet XAMPP die Dateien deiner Webseite im XAMPP-Verzeichnis `htdocs`. 
-In der »XAMPP-Konsole« wechselst du daher in dieses Unterverzeichnis und installierst eine Contao Version 
+In der »XAMPP-Konsole« wechselst du daher in dieses Unterverzeichnis und installierst eine Contao-Version 
 mit Eingabe von z. B.:
 
 ```php
