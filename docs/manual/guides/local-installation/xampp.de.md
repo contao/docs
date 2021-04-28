@@ -59,7 +59,7 @@ oder »file_uploads« überprüfen und anpassen.
 {{% /notice %}}
 
 **Herzlichen Glückwunsch!** 
-Du hast alle Vorbereitungen für eine lokale Contao Installation abgeschlossen.
+Du hast alle Vorbereitungen für eine lokale Installation von Contao abgeschlossen.
 
 
 ## Lokale PHP-Composer Installation
