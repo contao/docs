@@ -65,7 +65,7 @@ Du hast alle Vorbereitungen für eine lokale Installation von Contao abgeschloss
 ## Lokale PHP-Composer Installation
 
 Wir haben keine »XAMPP» Installation unter Windows im eigentlichen Sinne durchgeführt. Daher werden wir die benötigte 
-PHP-Composer Datei ebenfalls lediglich kopieren. 
+PHP-Composer-Datei ebenfalls lediglich kopieren. 
 
 Starte über das »XAMPP Control-Panel« mit Administrator-Berechtigung die 
 Module »Apache« und »MySQL«. Öffne ebenfalls die »XAMPP-Konsole« (xampp_shell.bat) mit Administrator-Berechtigung und 
