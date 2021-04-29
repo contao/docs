@@ -55,7 +55,7 @@ Wenn alles korrekt ist, klicke auf die Schaltfläche »Create pull request«.
 
 {{% notice info %}}
 Im verteilten Versionierungssystem Git und somit auch auf GitHub werden Vorschläge als sog. »Pull-Requests« erstellt. 
-Da du keinen Berechtigunge hast, direkt Änderungen im offiziellen Repository zu vollziehen (»to commit«) stellst du 
+Da du keine Berechtigungen hast, direkt Änderungen im offiziellen Repository zu vollziehen (»to commit«) stellst du 
 eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Änderungen in das offizielle Repository zu 
 »ziehen« (engl. »to pull«).
 {{% /notice %}}
