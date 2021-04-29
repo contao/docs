@@ -92,7 +92,8 @@ for these possibilities.
 
 There are however a few differences and additional options.
 
-{{% expand "All specific parameters using annotations" %}}
+{{< tabs >}}
+{{% tab name="Annotation" %}}
 ```php
 /**
  * @Page(
@@ -103,9 +104,8 @@ There are however a few differences and additional options.
  * )
  */
 ```
-{{% /expand %}}
-
-{{% expand "All specific parameters using the service tag" %}}
+{{% /tab %}}
+{{% tab name="YAML" %}}
 ```yaml
 # config/services.yaml
 services:
@@ -118,7 +118,8 @@ services:
                 urlSuffix: html
                 contentComposition: true
 ```
-{{% /expand %}}
+{{% /tab %}}
+{{< /tabs >}}
 
 
 ### `type`
