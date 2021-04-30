@@ -76,6 +76,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 |-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | label           | `&$GLOBALS['TL_LANG']` (`string`) | Button label. Typically a reference to the global language array.                                                  |
 | href            | URL fragment (`string`)           | URL fragment that is added to the URI string when the button is clicked (e.g. `act=editAll`).                      |
+| icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
 | class           | CSS class (`string`)              | CSS class attribute of the button.                                                                                 |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
