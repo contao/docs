@@ -182,7 +182,7 @@ Each field can be validated against a regular expression.
 | isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
 | metaFields         | `metaWizard` fields (`array`) | Defines the available fields for the `metaWizard` input type. |
 | custom_rgxp        | Regular expression (`string`) | {{< version "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
-| addWizardClass     | true/false (`bool`) | Prevents the `wizard` class from being added to the CSS. |
+| addWizardClass     | true/false (`bool`) | If false, do **not** add the `wizard` class, if a wizard is present. |
 
 {{% notice warning %}}
 Using the `encrypt` option is deprecated and its internal implementation relies 
