@@ -16,6 +16,7 @@ Only major versions are documented (e.g. Contao 4 and later on Contao 5).
 * Add line breaks after 80 characters in paragraphs.
 * Code examples should follow the Symfony Best Practices Book, use PHP 7.1 and
   put Contao related files to `contao`.
+* Use the »[tab view shortcode](https://learn.netlify.app/en/shortcodes/tabs/)« to display code examples.  
 * When using examples for PHP code or YAML configurations etc., include the example
   path to the file as a comment as the very first line. Do not use the `<?php` open
   tag and also do not use the `declare()` statement.
