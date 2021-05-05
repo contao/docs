@@ -59,6 +59,33 @@ _No parameters._
 **return:** _void_
 {{% /expand %}}
 
+{{% expand "Example" %}}
+This example changes the `mandatory` attribute for the `tl_content.text` field for a specific content element.
+
+```php
+// src/EventListener/DataContainer/MakeTextNotMandatoryCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+
+/**
+ * @Callback(table="tl_content", target="config.onload")
+ */
+class MakeTextNotMandatoryCallback
+{
+    public function __invoke(DataContainer $dc = null): void
+    {
+        if (null === $dc || 'my_content_element' !== $dc->activeRecord->type) {
+            return;
+        }
+
+        $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['mandatory'] = false;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `config.oncreate`
 
