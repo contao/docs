@@ -99,7 +99,7 @@ There are however a few differences and additional options.
  * @Page(
  *   type="example",
  *   path="/foo/bar",
- *   urlSuffix="html",
+ *   urlSuffix=".html",
  *   contentComposition=true
  * )
  */
@@ -115,7 +115,7 @@ services:
                 name: contao.page
                 type: example
                 path: /foo/bar
-                urlSuffix: html
+                urlSuffix: .html
                 contentComposition: true
 ```
 {{% /tab %}}
