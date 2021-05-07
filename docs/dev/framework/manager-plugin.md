@@ -176,22 +176,65 @@ class Plugin implements BundlePluginInterface
         return [
             BundleConfig::create(KnpMenuBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class]),
-                
-                // In case you also need your bundle to be loaded after a legacy
-                // style module that resides in system/modules, you can just use
-                // its name as string:
-                // ->setLoadAfter([ContaoCoreBundle::class, 'legacy_module_name']),
-                
-                // Speaking about legacy modules:
-                // In case your bundle replaces an old legacy module, you can indicate
-                // this to the plugin loader.
-                // This will enable other legacy modules to be still loaded after your
-                // newly created bundle in case they require this to work properly.
-                // ->setReplace(['old_module_name']),
         ];
     }
 }
 ```
+
+The `setLoadAfter()` method takes an array, so you can define multiple bundles there to indicate that your bundle should 
+be loaded after all of them.
+
+It is also possible to define that your bundle needs to be loaded after a _legacy_ style module that resides in
+`system/modules/`. And in case your bundle replaces and old legacy module you can indicate this to the plugin loader as
+well. This will enable other legacy modules to be still loaded after your newly created bundle in case they require
+this to work properly.
+
+```php
+namespace Vendor\SomeBundle\ContaoManager;
+
+use Contao\CoreBundle\ContaoCoreBundle;
+use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
+use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
+use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use Vendor\SomeBundle\SomeBundle;
+
+class Plugin implements BundlePluginInterface
+{
+    public function getBundles(ParserInterface $parser)
+    {
+        return [
+            BundleConfig::create(SomeBundle::class)
+                // This loads the bundle after the ContaoCorebundle
+                // and after the legacy module called "notification_center".
+                ->setLoadAfter([
+                    ContaoCoreBundle::class,
+                    'notification_center'
+                ]),
+                // This will replace the legacy module called "old_module_name"
+                // with SomeBundle in the plugin loader.
+                ->setReplace(['old_module_name']),
+        ];
+    }
+}
+```
+
+{{% notice info %}}
+The internal name of a legacy style Contao 2/3 module is derived from its folder name within the `system/modules/`
+directory. So if the module is placed in `system/modules/notification_center/` then it needs to be referenced by
+`notification_center`. This can also be derived from the target directory of the `extra.contao.sources` configuration 
+within the module's composer.json.
+```json
+{
+    "extra":{
+        "contao": {
+            "sources":{
+                "": "system/modules/notification_center"
+            }
+        }
+    }
+}
+```
+{{% /notice %}}`
 
 
 ## The `ConfigPluginInterface`
