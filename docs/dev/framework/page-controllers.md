@@ -115,7 +115,7 @@ services:
                 name: contao.page
                 type: example
                 path: /foo/bar
-                urlSuffix: html
+                urlSuffix: .html
                 contentComposition: true
 ```
 {{% /tab %}}
