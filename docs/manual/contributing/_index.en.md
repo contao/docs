@@ -2,7 +2,7 @@
 title: "Contribute to the documentation"
 description: "Learn how you can contribute to the documentation here."
 aliases:
-    - /en/contributing/_index/
+    - /en/contributing/
 weight: 300
 ---
 
@@ -104,13 +104,13 @@ cd contao
 When cloning, you install the Hugo Learn theme as a submodule of git.
 
 ```bash
-git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git
 ```
 
 or
 
 ```bash
-git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git
 ```
 
 
@@ -219,7 +219,7 @@ Create a new branch from the current one.
 
 
 ```bash
-git checkout -b DEIN-BRANCHNAME
+git checkout -b YOUR-BRANCH-NAME
 ```
 
 
@@ -256,7 +256,7 @@ git commit -m "Eine aussagekräftige Commit-Nachricht eingeben"
 To send the changes to your remote repository, run the following command.
 
 ```bash
-git push origin DEIN-BRANCHNAME
+git push origin YOUR-BRANCH-NAME
 ```
 
 {{% notice info %}}
@@ -266,7 +266,7 @@ After "pushing" your own new branch, you will see a link to create the pull requ
 
 ### Create a pull request
 
-Access your fork on GitHub (https://github.com/DEIN-GITHUB-BENUTZERNAME/docs).
+Access your fork on GitHub (https://github.com/YOUR-GITHUB-USERNAME/docs).
 
 In the message, click on "Pull request.
 
