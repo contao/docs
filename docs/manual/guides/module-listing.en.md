@@ -11,7 +11,7 @@ tags:
 
 
 We would like to realise a list of members together with a map display via the service provider 
-[OpenStreetMap](https://www.openstreetmap.de/) for a fictitious club site. For this we need corresponding 
+[OpenStreetMap](https://www.openstreetmap.org/) for a fictitious club site. For this we need corresponding 
 Contao [members](/en/user-management/members/) who can be assigned to one or more Contao 
 [member groups](/en/user-management/members/) (e.g. »tournament riders« or »board«).
 
@@ -207,7 +207,7 @@ The necessary prerequisites for a map display are thus available to us. The fiel
 
 ### JavaScript Framework »leaflet.js«
 
-The map is displayed via [OpenStreetMap](https://www.openstreetmap.de/) and to create the map we use the JavaScript 
+The map is displayed via [OpenStreetMap](https://www.openstreetmap.org/) and to create the map we use the JavaScript 
 framework [leaflet.js](https://leafletjs.com/). With the leaflet [download](https://github.com/Leaflet/Leaflet/tags) you 
 will find the directory »dist« with the files »leaflet.js«, »leaflet.css« and »images/marker-icon.png« in the ZIP 
 archive (currently v.1.7.1). Based on »leaflet.js« we create a JavaScript file `myMemberLeafletMap.js` with the following content
@@ -239,7 +239,7 @@ function createMemberMap(arrMemberData){
 	}
 
 	var mapProvider =
-	new L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+	new L.tileLayer('https://{s}.tile.openstreetmap.org/tiles/osmde/{z}/{x}/{y}.png', {
 	  attribution: '&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	});
 
