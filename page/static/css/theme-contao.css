@@ -389,6 +389,10 @@ html[lang="de"] div.notices.idea p:first-child:after {
     content: 'Hinweis';
 }
 
+html[lang="de"] div.notices.tip p:first-child:after {
+    content: 'Tipp';
+}
+
 /* fix #172 */
 option {
     color: initial;
