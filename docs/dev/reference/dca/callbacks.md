@@ -66,17 +66,32 @@ This example changes the `mandatory` attribute for the `tl_content.text` field f
 // src/EventListener/DataContainer/MakeTextNotMandatoryCallback.php
 namespace App\EventListener\DataContainer;
 
+use Contao\ContentModel;
 use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\DataContainer;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * @Callback(table="tl_content", target="config.onload")
  */
 class MakeTextNotMandatoryCallback
 {
+    private $requestStack;
+
+    public function __construct(RequestStack $requestStack)
+    {
+        $this->requestStack = $requestStack;
+    }
+
     public function __invoke(DataContainer $dc = null): void
     {
-        if (null === $dc || 'my_content_element' !== $dc->activeRecord->type) {
+        if (!$dc->id || 'edit' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
+            return;
+        }
+
+        $element = ContentModel::findById($dc->id);
+
+        if (null === $element || 'text' !== $element->type) {
             return;
         }
 
