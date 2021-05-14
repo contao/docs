@@ -85,7 +85,7 @@ class MakeTextNotMandatoryCallback
 
     public function __invoke(DataContainer $dc = null): void
     {
-        if (!$dc->id || 'edit' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
+        if (null === $dc || !$dc->id || 'edit' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
             return;
         }
 
