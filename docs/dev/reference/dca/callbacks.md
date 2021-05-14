@@ -91,7 +91,7 @@ class MakeTextNotMandatoryCallback
 
         $element = ContentModel::findById($dc->id);
 
-        if (null === $element || 'text' !== $element->type) {
+        if (null === $element || 'my_content_element' !== $element->type) {
             return;
         }
 
