@@ -271,7 +271,7 @@ From section [Backend shortcuts](/de/administrationsbereich/backend-tastaturkuer
 
 Contao automatically creates an XML sitemap from the page structure of the website that can be read and analyzed by Google. To submit the sitemap URL to Google you need a Google account.
 
-Which pages are included in the XML sitemap can be controlled by the Robots tag in the [Metadata](#metadata).
+Which pages are included in the XML sitemap can be controlled by the Robots tag in the [Metadata](#metadata). To prevent a page from being included in the XML sitemap, you can set the robots tag to the value "noindex,nofollow" under metadata.
 
 **Create an XML Sitemap:** Here you activate the creation of the XML Sitemap.
 
