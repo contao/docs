@@ -49,7 +49,7 @@ längere Titel einfach abschneiden. Wenn kein Seitentitel angegeben wird, wird a
 
 Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten möglichst umfassend in den Suchindex 
 aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung 
-*noindex,nofollow* von der Indizierung ausgenommen werden.
+*noindex,nofollow* von der Indexierung ausgenommen werden.
 
 **Ausgabe im Quellcode:**
 ```html
