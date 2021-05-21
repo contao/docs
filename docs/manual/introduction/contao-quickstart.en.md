@@ -70,6 +70,6 @@ The concept of content elements has many advantages. For example, the risk of re
 
 ## Each article is assigned to a page
 
-Each article is permanently linked to a specific page. You can create any number of articles per page and assign them to different layout areas. You are not limited to one article in the main column, but can create five articles in the main column and one in the side column. After all, it is the visitor who calls up the page and not a specific article (see section Everything[ revolves around the page structure](#alles-dreht-sich-um-die-seitenstruktur)).
+Each article is permanently linked to a specific page. You can create any number of articles per page and assign them to different layout areas. You are not limited to one article in the main column, but can create five articles in the main column and one in the side column. After all, it is the visitor who calls up the page and not a specific article (see section [Everything revolves around the page structure](#everything-revolves-around-the-page-structure)).
 
 An exception to this concept of static articles are dynamic articles such as news or events, which are managed in separate backend modules and output with special frontend modules such as a news list or calendar. I mention this here because you may have wondered if you really need to create a separate page plus an article for each blog post. But of course this is not the case and would be impractical for an active blog or calendar with many entries.
