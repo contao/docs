@@ -6,11 +6,7 @@ aliases:
 weight: 40
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
-One of the main tasks of a CMS is to provide a comfortable way to edit data - at least that is how it should be, but if you have ever had the problem of having to edit 25 records at once, you know that many systems of this discipline do not do so well. Often you have no other choice than to call up and change each data record individually. That costs time and nerves.
+One of the main tasks of a CMS is to provide a comfortable way to edit data - at least that's how it should be, but if you have ever had the problem of having to edit 25 records at once, you know that many systems of this discipline do not do so well. You often have no other choice than to call up and change each data record individually. That costs time and nerves.
 
 Of course, this would not be explained here if Contao could not come up with a well thought-out solution. In the following sections, I will show you how Contao supports you in editing records.
 
@@ -34,50 +30,50 @@ Go to the [keyboard shortcuts in edit mode](/en/administration-area/back-end-key
 
 ## Edit multiple records at once
 
-In Contao, you can easily edit multiple records at once instead of having to access and change each record individually. Just click on the link `Mehrere bearbeiten`. As you can see, the navigation icons are automatically replaced by checkboxes that let you select the records you want to edit.
+In Contao, you can easily edit multiple records at once instead of having to access and change each record individually. Just click on the link `Edit multiple`. As you can see, the navigation icons are automatically replaced by checkboxes that let you select the records you want to edit.
 
-![Editing Multiple Records](/de/administration-area/images/de/mehrere-datensaetze-bearbeiten.png?classes=shadow)
+![Editing Multiple Records](/de/administration-area/images/en/edit-multiple.png?classes=shadow)
 
 **Edit:** The selected records can be edited.
 
-**Delete:** The selected records are deleted.
+**Delete:** The selected records will be deleted.
 
-**Copy:** The selected records are duplicated using the clipboard.
+**Copy:** The selected records will be duplicated using the clipboard.
 
-**Move the record:** The selected records are moved using the clipboard.
+**Move the record:** The selected records will be moved using the clipboard.
 
-**Overwrite:** The selected records can be overwritten.
+**Override:** The selected records will be overwritten.
 
-**Generate aliases:** The aliases of the selected records are regenerated.
+**Generate aliases:** The aliases of the selected records will be regenerated.
 
 Go to the [keyboard shortcuts in "Edit multiple" mode](/en/administration-area/back-end-keyboard-shortcuts/#keyboard-shortcuts-in-edit-multiple-mode).
 
-Use the overwrite function carefully, because here all existing values of the selected data sets are actually replaced by the new value!
+Use the override function carefully, because all existing values of the selected data sets are actually replaced by the new value!
 
-Clicking `Überschreiben` or `Bearbeiten` takes you to the overview of the fields in the table, where you can select the fields you want to overwrite or edit and click `Weiter`.
+Clicking `Override` or `Edit` takes you to the overview of the fields in the table, where you can select the fields you want to overwrite or edit and click `Continue`.
 
-![Select the input fields to be edited](/de/administration-area/images/de/die-zu-bearbeitenden-eingabefelder-auswaehlen.png?classes=shadow)
+![Select the input fields to be edited](/de/administration-area/images/en/edit-multiple-available-fields.png?classes=shadow)
 
 Now you can see the selected input fields of the selected data sets and can easily change them in a single step. Even when editing several data sets, you will of course only see the input fields that you actually need for your project.
 
-![Only the selected input fields are displayed](/de/administration-area/images/de/nur-die-ausgewaehlten-eingabefelder-werden-angezeigt.png?classes=shadow)
+![Only the selected input fields are displayed](/de/administration-area/images/en/edit-multiple-edit-fields.png?classes=shadow)
 
-Similar to this example, you could have used the "Overwrite" function to overwrite the language of all pages with a new value in one go. And the function can do even more: You might find yourself in the situation that you have created a new member group and now want to add it to the access rights of several page additions without deleting the existing assignment. You can also do this with the "Overwrite" function by selecting the appropriate update mode.
+Similar to this example, you could have used the "Override" function to override the language of all pages with a new value in one go. And the function can do even more: You might find yourself in the situation that you have created a new member group and now want to add it to the access rights of several page additions without deleting the existing assignment. You can also do this with the "Overwrite" function by selecting the appropriate update mode.
 
-![Selecting the update mode when overwriting data records](/de/administration-area/images/de/auswahl-des-update-modus-beim-ueberschreiben-von-datensaetzen.png?classes=shadow)
+![Selecting the update mode when overwriting data records](/de/administration-area/images/en/edit-multiple-override.png?classes=shadow)
 
-**Add selected values:** The existing values are retained and are supplemented by the newly selected values. A page that already has the group *Piano Students* assigned would have the groupsPiano *Students* and *Violin Students* after saving.
+**Add selected values:** The existing values are retained and are supplemented by the newly selected values. A page that already has the group *Piano Students* assigned would have the groups *Piano Students* and *Violin Students* after saving.
 
 **Remove selected values:** The newly selected values (if available) are removed from the existing values. Our page with the groups *Piano Students* and *Violin Students* would have only the group *Piano Students* after saving.
 
-**Overwrite existing entries:** The existing values are deleted and replaced by the newly selected values. So after saving, our page would have only the group *Violin Students*, no matter which groups were previously assigned.
+**Overrride existing entries:** The existing values are deleted and replaced by the newly selected values. So after saving, our page would have only the group *Violin Students*, no matter which groups were previously assigned.
 
 ## Different versions of a record
 
-Contao automatically creates a new version of the edited data set each time you save it, so you can always undo your changes. As soon as more than one version is available, a drop-down menu appears above the input mask listing the different versions, their date and creator. With a click on `Wiederherstellen` you can restore a previous version.
+Contao automatically creates a new version of the edited data set each time you save it, so you can always undo your changes. As soon as more than one version is available, a drop-down menu appears above the input mask listing the different versions, their date and creator. With a click on `Restore` you can restore a previous version.
 
-![Restore previous versions of a record](/de/administration-area/images/de/fruehere-versionen-eines-datensatzes-wiederherstellen.png?classes=shadow)
+![Restore previous versions of a record](/de/administration-area/images/en/contao-edit-versions.png?classes=shadow)
 
-Clicking on the icon ![Show differences](/de/icons/diff.svg?classes=icon)next to the drop-down menu will display the differences between the current and the selected version.
+Clicking on the icon ![Show differences](/de/icons/diff.svg?classes=icon) next to the drop-down menu will display the differences between the current and the selected version.
 
-![Differences between the selected versions](/de/administration-area/images/de/unterschiede-zwischen-den-gewaehlten-versionen.png?classes=shadow)
+![Differences between the selected versions](/de/administration-area/images/en/contao-edit-diff-view.png?classes=shadow)
