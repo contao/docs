@@ -66,7 +66,7 @@ Similar to this example, you could have used the "Override" function to override
 
 **Remove selected values:** The newly selected values (if available) are removed from the existing values. Our page with the groups *Piano Students* and *Violin Students* would have only the group *Piano Students* after saving.
 
-**Overrride existing entries:** The existing values are deleted and replaced by the newly selected values. So after saving, our page would have only the group *Violin Students*, no matter which groups were previously assigned.
+**Override existing entries:** The existing values are deleted and replaced by the newly selected values. So after saving, our page would have only the group *Violin Students*, no matter which groups were previously assigned.
 
 ## Different versions of a record
 
