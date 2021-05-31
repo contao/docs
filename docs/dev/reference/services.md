@@ -307,6 +307,82 @@ its functionality, you can register an [expression provider][ExpressionProvider]
  3. Tag the service with `contao.simple_token_extension`
 
 
+## Slug
+
+The `contao.slug` service can be used to generate a so called "slug", i.e. a human-readable, unique identifier from non-standardized string. 
+The service then in turn uses [`ausi/slug-generator`](https://github.com/ausi/slug-generator) and you can pass the same 
+[options](https://github.com/ausi/slug-generator#options) as an associative array as the second parameter of the `generate` method:
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Slug\Slug;
+
+class Example
+{
+    private $slug;
+
+    public function __construct(Slug $slug)
+    {
+        $this->slug = $slug;
+    }
+
+    public function getSlug(string $text, string $locale = 'en', string $validChars = '0-9a-zA-Z'): string
+    {
+        $options = [
+            'locale' => $locale,
+            'validChars' => $validChars,
+        ];
+
+        return $this->slug->generate($text, $options);
+    }
+}
+```
+
+When using the `contao.slug` service rather than the `ausi/slug-generator` directly additional Contao-specific processing of the passed
+string will take place, e.g. decoding HTML entities and stripping insert tags for example. The `contao.slug` service's `generate` method
+also allows to pass a _duplicate check_ as a callable for the third parameter. This check will be used to automatically append a number to
+the slug, if the slug already exists.
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Slug\Slug;
+use Doctrine\DBAL\Connection;
+
+class Example
+{
+    private $slug;
+    private $db;
+
+    public function __construct(Slug $slug, Connection $db)
+    {
+        $this->slug = $slug;
+        $this->db = $db;
+    }
+
+    public function getSlug(string $text, string $locale = 'en', string $validChars = '0-9a-zA-Z'): string
+    {
+        $options = [
+            'locale' => $locale,
+            'validChars' => $validChars,
+        ];
+
+        $duplicateCheck = function (string $slug): bool {
+            return $this->slugExists($slug);
+        };
+
+        return $this->slug->generate($text, $options, $duplicateCheck);
+    }
+
+    private function slugExists(string $slug): bool
+    {
+        return !empty($this->db->fetchAllAssociative("SELECT * FROM tl_example WHERE slug = ?", [$slug]));
+    }
+}
+```
+
+
 ## TokenChecker
 
 This service let's you query information of the Contao related security tokens, if
