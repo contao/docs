@@ -44,6 +44,56 @@ class Example
 ```
 
 
+## OptIn
+
+Contao offers an opt-in service (`contao.opt-in`) so that any opt-in process can be tracked centrally. The opt-in references will be saved 
+for the legally required duration and are then automatically discarded (if applicable).
+
+```php
+namespace App;
+
+use App\Model\ExampleModel;
+use Contao\CoreBundle\OptIn\OptIn;
+
+class Example
+{
+    private $optIn;
+
+    public function __construct(OptIn $optIn)
+    {
+        $this->optIn = $optIn;
+    }
+
+    public function createOptIn(string $email, ExampleModel $model, string $optInUrl): void
+    {
+        $token = $this->optIn->create('example-', $email, ['tl_example' => $model->id]);
+        $token->send('Opt-In', 'Click this link to opt-in: '.$optInUrl.'?token='.$token->getIdentifier());
+    }
+
+    public function confirmOptIn($tokenId): void
+    {
+        $token = $this->optIn->find($tokenId);
+
+        if (null === $token) {
+            throw new \RuntimeException('Invalid token identifier');
+        }
+
+        if ($token->isConfirmed()) {
+            throw new \RuntimeException('Token already confirmed');
+        }
+
+        $related = $token->getRelatedRecords();
+
+        if (1 !== count($related) || 'tl_example' !== key($related) || null === ExampleModel::findByPk(current($related))) {
+            throw new \RuntimeException('Invalid token');
+        }
+
+        $token->confirm();
+    }
+}
+```
+
+
 ## Router
 
 This service from symfony handles any routing task and can be ued to generate URLs
