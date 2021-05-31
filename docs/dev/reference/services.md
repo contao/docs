@@ -44,6 +44,64 @@ class Example
 ```
 
 
+## CsrfTokenManager
+
+This service allows you to generate and validate [request tokens][RequestTokens]. You will need this service for custom
+forms for example that will allow the front end user to generate a POST request on a Contao route. Such requests need
+to have a valid request token present. Contao registers its own `Symfony\Component\Security\Csrf\CsrfTokenManager` under 
+the service ID `@contao.csrf.token_manager` and configures its own token name under the parameter 
+`%contao.csrf_token_name%`.
+
+```php
+// src/Controller/ContentElement/ExampleFormElementController.php
+namespace App\Controller\ContentElement;
+
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @ContentElement(category="texts")
+ */
+class ExampleFormElementController extends AbstractContentElementController
+{
+    /**
+     * @var CsrfTokenManagerInterface
+     */
+    private $csrfTokenManager;
+
+    /**
+     * @var string
+     */
+    private $csrfTokenName;
+
+    public function __construct(CsrfTokenManagerInterface $csrfTokenManager, string $csrfTokenName)
+    {
+        $this->csrfTokenManager = $csrfTokenManager;
+        $this->csrfTokenName = $csrfTokenName;
+    }
+
+    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    {
+        $template->token = $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
+
+        return $template->getResponse();
+    }
+}
+```
+
+```html
+<!-- contao/templates/ce_example_form_element.html5 -->
+<form>
+  <input type="hidden" name="REQUEST_TOKEN" value="<?= $this->token ?>">
+  <!-- … -->
+</form>
+```
+
+
 ## OptIn
 
 Contao offers an opt-in service (`contao.opt-in`) so that any opt-in process can be tracked centrally. The opt-in references will be saved 
@@ -280,64 +338,6 @@ class Example
         if (null !== ($backendUsername = $this->tokenChecker->getBackendUsername())) { /* … */ }
     }
 }
-```
-
-
-## CsrfTokenManager
-
-This service allows you to generate and validate [request tokens][RequestTokens]. You will need this service for custom
-forms for example that will allow the front end user to generate a POST request on a Contao route. Such requests need
-to have a valid request token present. Contao registers its own `Symfony\Component\Security\Csrf\CsrfTokenManager` under 
-the service ID `@contao.csrf.token_manager` and configures its own token name under the parameter 
-`%contao.csrf_token_name%`.
-
-```php
-// src/Controller/ContentElement/ExampleFormElementController.php
-namespace App\Controller\ContentElement;
-
-use Contao\ContentModel;
-use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
-use Contao\Template;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
-/**
- * @ContentElement(category="texts")
- */
-class ExampleFormElementController extends AbstractContentElementController
-{
-    /**
-     * @var CsrfTokenManagerInterface
-     */
-    private $csrfTokenManager;
-
-    /**
-     * @var string
-     */
-    private $csrfTokenName;
-
-    public function __construct(CsrfTokenManagerInterface $csrfTokenManager, string $csrfTokenName)
-    {
-        $this->csrfTokenManager = $csrfTokenManager;
-        $this->csrfTokenName = $csrfTokenName;
-    }
-
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
-    {
-        $template->token = $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
-
-        return $template->getResponse();
-    }
-}
-```
-
-```html
-<!-- contao/templates/ce_example_form_element.html5 -->
-<form>
-  <input type="hidden" name="REQUEST_TOKEN" value="<?= $this->token ?>">
-  <!-- … -->
-</form>
 ```
 
 
