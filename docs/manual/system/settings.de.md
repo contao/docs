@@ -634,4 +634,4 @@ php vendor/bin/contao-console cache:clear --env=prod --no-warmup
 [InsertTags]: /de/artikelverwaltung/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
 [LegacyRouting]: /de/layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
-[PhpSessionSettings]: http://docs.php.net/manual/de/session.configuration.php
+[PhpSessionSettings]: https://www.php.net/manual/de/session.configuration.php
