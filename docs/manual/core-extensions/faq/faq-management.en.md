@@ -133,6 +133,6 @@ Attachments are files that are linked to an FAQ. These files are offered for dow
 
 ### Publication
 
-As long as an FAQ is not published, it will not be displayed in the frontend.
+As long as an FAQ is not published, it will not be displayed in the front end.
 
 **Publish question:** Here you can publish the question.
