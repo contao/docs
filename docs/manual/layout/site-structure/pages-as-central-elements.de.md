@@ -10,7 +10,7 @@ weight: 10
 ---
 
 Contao gehört zur Gruppe der seitenbasierten Content Management Systeme, das heißt, die Seitenstruktur ist das zentrale 
-Element deiner Webseite. Du kannst die darin enthaltenen Seiten über deren ID bzw. Namen (Alias) im Frontend aufrufen 
+Element deiner Webseite. Du kannst die darin enthaltenen Seiten über deren Alias im Frontend aufrufen 
 und so die Inhalte ansehen, die sich auf der jeweiligen Seite befinden.
 
 Stelle dir eine Seite wie eine Sendung im Fernsehen vor, für die Redakteure verschiedene Beiträge (Inhalte) erstellen. 
