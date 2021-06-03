@@ -6,21 +6,17 @@ aliases:
 weight: 30
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
 Contao stores all information about your website in its database. This includes backend data like users, modules, pages or articles as well as frontend data like guestbook entries or comments. All this data is collected in different tables and can be listed, searched, copied, moved, deleted or edited in the back end.
 
 ## The different views
 
 The three most common forms of listings, which are called views below, are the simple list ("List View"), the list grouped by the parent table ("Parent View") and the tree view ("Tree View").
 
-### list view
+### List View
 
 These are records from a single table that are listed in a certain order, usually alphabetically, and the rows are grouped by their first letter.
 
-![The List View](/de/administration-area/images/de/der-list-view.png?classes=shadow)
+![The List View](/de/administration-area/images/en/the-list-view.png?classes=shadow)
 
 ### Parent View
 
@@ -34,25 +30,25 @@ In Contao, such parent-child relationships are very common, e.g.
 
 When you list the contents of a shopping cart, you only want to see the products of this shopping cart and not the products of the second one. Therefore, Contao shows you only the child elements of the selected parent element in the Parent View.
 
-![The Parent View](/de/administration-area/images/de/der-parent-view.png?classes=shadow)
+![The Parent View](/de/administration-area/images/en/the-parent-view.png?classes=shadow)
 
-### tree view
+### Tree View
 
 These are data records that are hierarchically dependent on each other and are therefore displayed in a tree structure. Typically, this is the case with a file system that has directories and subdirectories, so the Contao file manager also uses this view. Hierarchical structures can also be displayed within a table, like the page structure of your website.
 
-![The Tree View](/de/administration-area/images/de/der-tree-view.png?classes=shadow)
+![The Tree View](/de/administration-area/images/en/the-tree-view.png?classes=shadow)
 
 ## Sort and filter records {#sort-and-filter-records}
 
 To keep track of tables with many records, Contao offers you several ways to sort and filter your listings. Most listings can be filtered so that you only see the records that you really need for a specific action.
 
-![Sort and filter records](/de/administration-area/images/de/datensaetze-sortieren-und-filtern.png?classes=shadow)
+![Sort and filter records](/de/administration-area/images/en/sort-and-filter-records.png?classes=shadow)
 
 **Filtering:** Here you can set one or more filters to show only the members who are male and speak German.
 
 **Sort:** Here you define the field by which the listing is sorted.
 
-**Find:** Here you can search a field for a specific value so that only those records are displayed that contain the term you are searching for. The query supports so-called regular[ expressions](https://wiki.selfhtml.org/wiki/Perl/Regul%C3%A4re_Ausdr%C3%BCcke#zeichen), which means you can search for the term you want. B. Retrieve `^a`all records that begin with the letter A, or similarly, `a$`all those that end with the letter A. The search for `meier|schmidt`, which finds both Mr. Meier's and Mr. Schmidt's accounts, is also extremely helpful.
+**Find:** Here you can search a field for a specific value so that only those records are displayed that contain the term you are searching for. The query supports so-called [regular expressions](https://regexone.com/), which means you can search for the term you want. B. Retrieve `^a` all records that begin with the letter A, or similarly, `a$` all those that end with the letter A. The search for `meier|schmidt`, which finds both Mr. Meier's and Mr. Schmidt's accounts, is also extremely helpful.
 
 **Display:** Here you can limit the number of records per page. This filter is always active by default and set to 30 records, as listing several hundred records can take quite some time.
 
@@ -70,13 +66,13 @@ Surely you have noticed the colorful icons that appear in each view to the right
 
 ### Standard Icons
 
-The following navigation icons appear in almost all views. For reasons of clarity, they are not additionally provided with a text. However, if you position the pointer of your mouse over an icon, you will be shown the corresponding description.
+The following navigation icons appear in almost all views. For reasons of clarity, they are not additionally provided with a text. However, if you position the pointer of your mouse over an icon, the corresponding description will be shown.
 
 ![Edit](/de/icons/edit.svg?classes=icon) **Edit:** calls a specific record in edit mode.
 
 ![Duplicate](/de/icons/copy.svg?classes=icon) **Duplicate:** creates a copy of an existing record.
 
-![Delete](/de/icons/delete.svg?classes=icon) **Delete:** deletes a record[ (this process can be revoked](#geloeschte-datensaetze-wiederherstellen)).
+![Delete](/de/icons/delete.svg?classes=icon) **Delete:** deletes a record [(this process can be revoked)](#deleted-records-recover).
 
 ![Publishing/unpublishing](/de/icons/visible.svg?classes=icon) **Publish/unpublish:** show or hide in the frontend
 
@@ -86,7 +82,7 @@ The following navigation icons appear in almost all views. For reasons of clarit
 
 The List View can offer the following additional commands besides the basic commands.
 
-![Icons in List View](/de/administration-area/images/de/icons-im-list-view.png?classes=shadow)
+![Icons in List View](/de/administration-area/images/en/icons-in-the-list-view.png?classes=shadow)
 
 ![Edit settings](/de/icons/header.svg?classes=icon) **Edit settings:** adjust the settings for the parent element.
 
@@ -94,7 +90,7 @@ The List View can offer the following additional commands besides the basic comm
 
 The Parent View offers two additional icons to determine the order of the data records. The sequence can also be changed by drag &amp; drop. Simply click on the Drag &amp; Drop icon![Move](/de/icons/drag.svg?classes=icon) and move to the new position.
 
-![Icons in the Parent View](/de/administration-area/images/de/icons-im-parent-view.png?classes=shadow)
+![Icons in the Parent View](/de/administration-area/images/en/icons-in-the-parent-view.png?classes=shadow)
 
 ![Move](/de/icons/cut.svg?classes=icon) **Move:** Moves a record to another position.
 
@@ -108,7 +104,7 @@ The Parent View offers two additional icons to determine the order of the data r
 
 In the tree view, there are other icons that are necessary because of the hierarchical relationships between the records. For example, when moving or duplicating records, you need a way to specify whether they should be inserted after a record in the same level or below a record in a new level.
 
-![Icons in the Tree View](/de/administration-area/images/de/icons-im-tree-view.png?classes=shadow)
+![Icons in the Tree View](/de/administration-area/images/en/icons-in-the-tree-view.png?classes=shadow)
 
 ![Duplicate subpages](/de/icons/copychilds.svg?classes=icon) **Duplicate subpages:** duplicates a page including all subpages.
 
@@ -126,12 +122,12 @@ The clipboard is not a separate application that you can call and view anywhere.
 
 You can think of the clipboard as the clipboard on your computer, where you can copy `[Ctrl]+[c]`certain data to and paste them to `[Ctrl]+[v]`another place. In Contao, you can move content elements from one article to another.
 
-![Move content elements using the clipboard](/de/administration-area/images/de/inhaltselemente-mittels-klemmbrett-verschieben.png?classes=shadow)
+![Move content elements using the clipboard](/de/administration-area/images/en/move-records-with-the-clipboard.png?classes=shadow)
 
 ## Restore deleted records {#deleted-records-recover}
 
 Whenever you delete one or more records, they are not immediately removed from the database, but moved to a virtual trashcan. You can retrieve the data from this recycle bin at any time and restore it to its original location.
 
-You will find the "Recycle Bin" in the navigation area in the group System under the item Restore. There you will see a dueine list of all deleted records, which you can sort by either the date of deletion or the origin of the record. You can undo a deletion by clicking on the corresponding navigation icon![Restore entry](/de/icons/undo.svg?classes=icon).
+You will find the "Recycle Bin" in the navigation area in the group System under the item Restore. There you will see a list of all deleted records, which you can sort by either the date of deletion or the origin of the record. You can undo a deletion by clicking on the corresponding navigation icon![Restore entry](/de/icons/undo.svg?classes=icon).
 
-![To undo a delete operation](/de/administration-area/images/de/einen-loeschvorgang-rueckgaengig-machen.png?classes=shadow)
+![To undo a delete operation](/de/administration-area/images/en/restore-deleted-records.png?classes=shadow)
