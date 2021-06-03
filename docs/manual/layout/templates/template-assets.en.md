@@ -6,24 +6,30 @@ aliases:
 weight: 20
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
+Oftentimes, templates require additional assets, such as CSS or JavaScript files. You *can* integrate them via your
+theme's page layout, but this also means they will always be loaded, no matter if they are needed or not. Luckily,
+you can also tie assets to specific templates.
 
-Often additional assets such as CSS or JavaScript files are required for an individual template. These files can always be integrated via the page layout of a theme. However, the assets are always loaded, even if they are not needed on different pages. It is therefore useful to specify these files in the template itself. There are several options available.
+#### Adding assets
 
-The easiest way is to `files`create the files in a public directory below and then to reference them in the template:
+The easiest way is to put the needed files into a public directory inside `/files` and then reference them in the
+template:
 
 ```php
 <link href="files/myfolder/custom.css" rel="stylesheet">
 <script src="files/myfolder/custom.js"></script>
 ```
 
-Alternatively, you can also store the assets in the template so that they are displayed in the HTML header or footer of the page, for example:
+If the assets should be included in the HTML header or footer instead, you can use the following PHP code in your
+template:
 
 ```php
-$GLOBALS['TL_CSS'][] = 'files/myfolder/custom.css|static';
-$GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static';
+<?php 
+$GLOBALS['TL_CSS'][] = 'files/myfolder/custom.css|static'; // will be added at the end of <head>
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static'; // will be added at the end of <body>
+?>
 ```
 
-This conversion offers further options. By specifying , for example, the files can `static`be added to the existing asset page layouts or combined. A detailed description of all options can be found in the developer documentation under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
+Doing it this way, there are more options: By adding `|static`, for example, the files will be appended to or combined 
+with existing assets from page layouts. A detailed description of all options can be found in the developer
+documentation under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
