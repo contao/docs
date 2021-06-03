@@ -2,7 +2,8 @@
 title: 'Accessing and structure of the back end'
 description: 'In the administration area, the so-called back end, you can do all the work related to the administration of your website.'
 aliases:
-- /en/administration-area/call-and-structure-of-the-backend/
+  - /en/administration-area/call-and-structure-of-the-backend/
+  - /en/administration-area/accessing-and-structure-of-the-backend/
 weight: 10
 ---
 
