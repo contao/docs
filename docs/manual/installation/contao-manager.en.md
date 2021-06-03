@@ -6,10 +6,6 @@ aliases:
 weight: 20
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
 The development of the Contao Manager is supported by the [Contao Association](https://association.contao.org/).
 
 ## Task of the manager
@@ -37,24 +33,24 @@ It is still possible to manage the installation of Contao 4 and extensions direc
 
 The system requirements are basically the same as for [Contao](/en/installation/system-requirements/). The Contao Manager automatically checks if the requirements are met.
 
-- PHP version 7.1 or newer
+- PHP version 7.4 or newer
 - PHP extension *Intl* and *OpenSSL*
 - PHP functions *proc\_open* and *proc\_close*
 - PHP setting *allow\_url\_fopen* must be active
 
 ### Hosting Configuration
 
-In Contao, all publicly accessible files are located in the subfolder `/web`of the installation. Create the folder `web`and set the Document Root of the installation to this subfolder using the Hosting Provider Admin panel.
+In Contao, all publicly accessible files are located in the subfolder `/web` of the installation. Create the folder `web` and set the document root of the installation to this subfolder using your hosting provider's admin panel.
 
-**Example:** `example.com`points to the directory `/www/example/web`
+**Example:** `example.com` points to the directory `/www/example/web`
 
 {{% notice note %}}
-Pro Contao installation therefore requires a separate (sub)domain.
+Every Contao installation requires a separate (sub)domain.
 {{% /notice %}}
 
 ### Download and Installation
 
-The Contao Manager consists of a single file that can be [downloaded from contao.org](https://contao.org/de/download.html). After successful download you will receive a file `contao-manager.phar`. transfer this file to the directory `web` on your web server.
+The Contao Manager consists of a single file that can be [downloaded from contao.org](https://contao.org/en/download.html). After the successful download you will receive a file `contao-manager.phar`. transfer this file to the directory `web` on your web server.
 
 {{% notice info %}}
 Files `.phar` are not executed by all hosting providers. For best compatibility, add the file extension `.php`(final file name: `contao-manager.phar.php`).
@@ -68,25 +64,21 @@ Files `.phar` are not executed by all hosting providers. For best compatibility,
 
 Then use your browser to access the URL `www.example.com/contao-manager.phar.php`. You should see the Contao Manager welcome page.
 
-![Welcome page of the Contao Manager](/de/installation/images/de/willkommensseite-des-contao-managers.png?classes=shadow)
+![Welcome page of the Contao Manager](/de/installation/images/en/welcomepage-contao-manager.png?classes=shadow)
 
 ### Basic configuration
 
-Before you install Contao, you have to configure the manager itself. Create a new user by entering a username and password. The password is independent from the later Contao installation.
+Before you install Contao, you have to configure the manager itself. Create a new user by entering a username and password. The password is independent from the following Contao installation.
 
-Contao Manager does not need its own database. The configuration of the Contao Manager is stored in the database `manager.json` and the user data in the `users.json` directory `/contao-manager`.
+Contao Manager does not need its own database. The configuration of the Contao Manager is stored in the database `manager.json` and the user data in the `users.json` in the directory `/contao-manager`.
 
 ### Server configuration
 
-The Contao Manager needs the path to the PHP binary and other server information to run background processes correctly.
+The Contao Manager needs the path to the PHP binary and other server information to run background processes correctly. The path is usually automatically detected by the Contao Manager.
+faulhaber.com
 
-Most servers are detected automatically. If your hosting provider is not listed, you can [add](https://github.com/contao/contao-manager/wiki) it [to our Wiki](https://github.com/contao/contao-manager/wiki).
 
-#### Server configuration
-
-Select the appropriate configuration for your server or hosting provider. For a manual configuration select "Other ...".
-
-![Server configuration](/de/installation/images/de/serverkonfiguration.png?classes=shadow)
+![Server configuration](/de/installation/images/en/server-configuration.png?classes=shadow)
 
 #### Composer Resolver Cloud
 
@@ -100,7 +92,7 @@ After the successful basic configuration, Contao can now be [installed](/en/inst
 
 Basically, a manual update is not necessary. The manager automatically checks in the background and updates itself if a new version is available.
 
-In case of problems, you can always download the latest `contao-manager.phar` version and [upload and replace](#download-und-installation) it manually via [FTP](#download-und-installation).
+In case of problems, you can always download the latest `contao-manager.phar` version and [upload and replace](#download-and-installation) it manually via [FTP](#download-and-installation).
 
 ### Did you forget your Contao Manager login information?
 
