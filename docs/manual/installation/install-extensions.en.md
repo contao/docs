@@ -14,13 +14,13 @@ To find a suitable extension for a desired function, you have three options.
 
 You can search for an extension on the [extensions.contao.org](https://extensions.contao.org/) website.
 
-![Extensions search on extensions.contao.org](/de/installation/images/de/erweiterungssuche-extensions-contao-org.png?classes=shadow)
+![Extensions search on extensions.contao.org](/de/installation/images/en/extensions-contao-org.png?classes=shadow)
 
 ### Contao Manager
 
 You can search for an extension directly within the Contao Manager of your installation.
 
-![Advanced search in Contao Manager](/de/installation/images/de/erweiterungssuche-im-contao-manager.png?classes=shadow)
+![Advanced search in Contao Manager](/de/installation/images/en/search-extensions-in-the-contao-manager.png?classes=shadow)
 
 ### Command line
 
@@ -72,19 +72,19 @@ The installation process may take several minutes. Details about the running pro
 
 #### Example
 
-If you want to install the extension `terminal42/contao-easy\_themes`, enter "EasyThemes" in the search field, click
+If you want to install the extension `terminal42/contao-easy_themes`, enter "EasyThemes" in the search field, click
 "Add", …
 
-![Search for extensions in Contao Manager](/de/installation/images/de/erweiterungen-im-contao-manager-suchen.png?classes=shadow)
+![Search for extensions in Contao Manager](/de/installation/images/en/search-package-in-contao-manager.png?classes=shadow)
 
 … then go to "Packages" and apply the changes.
 
-![Installing extensions in Contao Manager](/de/installation/images/de/erweiterungen-im-contao-manager-installieren.png?classes=shadow)
+![Installing extensions in Contao Manager](/de/installation/images/en/install-package-in-contao-manager.png?classes=shadow)
 
 Once finished, run the [Contao install tool](../contao-installtool/) to update the database. The extension is now ready
 to be used.
 
-![Extensions installed in Contao Manager](/de/installation/images/de/erweiterungen-im-contao-manager-installiert.png?classes=shadow)
+![Extensions installed in Contao Manager](/de/installation/images/en/package-installed-in-the-contao-manager.png?classes=shadow)
 
 ### Installation via the command line
 
