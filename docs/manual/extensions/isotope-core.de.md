@@ -12,4 +12,5 @@ Isotope eCommerce ist eine kostenlose eCommerce-Lösung für das Contao CMS.
 
 ![Isotope eCommerce im Backend](/de/extensions/images/de/isotope-core-backend.png?classes=shadow)
 
-Eine detaillierte Anleitung findest du im [Isotope eCommerce Benutzerhandbuch](https://isotopeecommerce.org/de/handbuch.html).
+Eine detaillierte Anleitung findest du im 
+[Isotope eCommerce Benutzerhandbuch](https://docs.isotopeecommerce.org/manual/de/).
