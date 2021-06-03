@@ -36,7 +36,7 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 **Moderate comments:** If you select this option, comments will not appear on the website immediately, but only after you have approved them in the back end.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
+**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://en.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
 
 | Day | Explanation |
 | --- | ----------- |
