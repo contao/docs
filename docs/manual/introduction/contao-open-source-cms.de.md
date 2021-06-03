@@ -38,7 +38,7 @@ vorher geprüft hat.
 
 Und selbst dann, wenn du deine Webseite ganz allein pflegen und weder die Rechteverwaltung noch Arbeitsabläufe 
 benötigst, macht es trotzdem Sinn, ein CMS zu verwenden. Denn es erleichtert einem das Leben ungemein, indem es z. B.
-Aufgaben wie das Erstellen und Prüfen eines Formulars oder das Einbinden einer Google Map abstrahiert – was bedeutet,
+Aufgaben, wie das Erstellen und Prüfen eines Formulars oder das Einbinden einer Google Map abstrahiert – was bedeutet,
 »Du musst nicht wissen, wie es technisch gemacht wird«. Um Contao zu nutzen, musst du nicht einmal HTML können, obwohl 
 das die Auszeichnungssprache ist, mit der Webseiten realisiert werden.
 
