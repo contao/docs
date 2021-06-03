@@ -6,7 +6,7 @@ aliases:
 weight: 10
 ---
 
-"Contao Open Source CMS" is the full, official name of the project and says all you need to know when you first encounter the system. It is a CMS, i.e. a content management system under an open source license called Contao. If you already know what an open source CMS is you can skip the next two sections. Otherwise ...
+"Contao Open Source CMS" is the full, official name of the project and says all you need to know when you first encounter the system. It is a CMS, i.e. a content management system under an open source license called Contao. If you already know what an open source CMS is, you can skip the next two sections. Otherwise ...
 
 ## content management system
 
@@ -44,4 +44,4 @@ In addition to these rights, the GPL also creates obligations for the licensee. 
 
 Further details and answers to common questions about Open Source licenses can be found on the website of [ifrOSS](https://www.ifross.org/?q=en/faq-frequently-asked-questions), the Institute *for Legal Issues of Free and Open Source Software*.
 
-Contao was initially licensed under the GPL, but is now licensed under the *Lesser General Public License*, shortLGPL, which is a legal extension of the GPL. The main difference is that third party developers who write their own extensions for Contao are not required to put them under an Open Source license like they would under the GPL.
+Contao was initially licensed under the GPL, but is now licensed under the *Lesser General Public License*, short LGPL, which is a legal extension of the GPL. The main difference is that third party developers who write their own extensions for Contao are not required to put them under an Open Source license like they would under the GPL.
