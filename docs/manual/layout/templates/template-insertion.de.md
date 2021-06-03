@@ -7,8 +7,8 @@ aliases:
 weight: 40
 ---
 
-Mit Hilfe der `insert()` Funktion kann ein Template in ein anderes Template eingefügt werden. Die Funktion akzeptiert 
-auch die Übergabe von zusätzlichen Variablen als zweiten Parameter.
+Mit Hilfe der `insert()`-Funktion kann ein Template in ein anderes Template eingefügt werden. Die Funktion akzeptiert 
+die Übergabe von Variablen als optionalen zweiten Parameter.
 
 ```php
 <?php $this->insert('template_name', array('key'=>'value')); ?>
@@ -17,15 +17,16 @@ auch die Übergabe von zusätzlichen Variablen als zweiten Parameter.
 <?php $this->insert('template_name', $this->getData()); ?>
 ```
 
-Wir erstellen ein Template `image_copyright.html5` mit folgenden Inhalt:
+#### Beispiel
+Wir erstellen ein Template `image_copyright.html5` mit folgendem Inhalt:
 
 ```php
 // image_copyright.html5
 <small>Fotografiert von <?php echo $this->name; ?>, lizenziert als <?php echo $this->license; ?></small>
 ```
 
-Das Template `ce_image.html5` beinhaltet den Block `content`. Über die Vererbung überschreiben wir diesen Block-Inhalt
-und mischen bzw. fügen den Inhalt aus dem eigenen Copyright-Template (`image_copyright.html5`) hinzu:
+Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier fügen wir z.&nbsp;B. dem `content` Block des
+`ce_image.html5` Templates unseren Copyright-Hinweis (`image_copyright.html5`) hinzu:
 
 ```php
 // ce_image_copyright.html5
@@ -39,7 +40,7 @@ und mischen bzw. fügen den Inhalt aus dem eigenen Copyright-Template (`image_co
 <?php $this->endblock(); ?>
 ```
 
-Wird das Template in einem Inhaltselement vom Typ »Bild« herangezogen werden unsere Copyright-Angaben zusätzlich 
-zur eigentlichen Bild Ausgabe ausgegeben:
-
-- Fotografiert von Donna Evans, lizenziert als Creative Commons
+Wird das Template ausgegeben, erscheint nun unter dem Bild:
+```html
+Fotografiert von Donna Evans, lizenziert als Creative Commons
+```
