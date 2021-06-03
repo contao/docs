@@ -11,7 +11,7 @@ you don't need to think about it if you have never heard one or the other term b
 in the following texts.
 
 
-## back end and front end
+## Back end and Front end
 
 Contao is divided into two areas. The "back end" is the administration area where all the work such as writing articles 
 is done. The "front end" is the actual website where the written articles can be read by visitors.
