@@ -34,7 +34,7 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 **Comments per page:** Here you can set the number of comments per page. Contao automatically creates a page break when it is needed.
 
-**Moderate comments:** If you select this option, comments will not appear on the website immediately, but only after you have approved them in the backend.
+**Moderate comments:** If you select this option, comments will not appear on the website immediately, but only after you have approved them in the back end.
 
 **Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
 
