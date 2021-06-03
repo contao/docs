@@ -12,27 +12,27 @@ This article is machine translated.
 
 ## Uninstalling with Contao Manager
 
-You first need to log back in to Contao Manager. To do so, you need to`/contao-manager.phar.php` access your domain again and enter your access data.
+You first need to log in to Contao Manager. To do so, call up your domain again with the addition `/contao-manager.phar.php` and enter your access data.
 
 If you want to uninstall the extension "terminal42/contao-easy\_themes", go to the "Packages" tab and click on the "Remove" button next to the extension. Of course you can also reserve other extensions for uninstallation.
 
 ![Mark extensions in Contao Manager for uninstallation](/de/installation/images/de/erweiterungen-im-contao-manager-zur-deinstallation-vormerken.png?classes=shadow)
 
-Click on "Apply changes" to start the uninstallation. The uninstallation can now take several minutes. Details of the uninstallation process can be displayed by clicking on the following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+Click on "Apply changes" to start the uninstallation. The uninstallation can take several minutes. Details of the uninstallation process can be displayed by clicking on the following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
 
 ![Uninstalling extensions in Contao Manager](/de/installation/images/de/erweiterungen-im-contao-manager-deinstallieren.png?classes=shadow)
 
-Once the Contao Manager has uninstalled the extension(s), you have to [run](../contao-installtool/) the [Contao installation tool](../contao-installtool/) to update the database if necessary.
+Once the Contao Manager has uninstalled the extension(s), you have to run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
 
-## Uninstalling from the command line {#deinstallation-using the command line}
+## Uninstalling using the command line {#uninstallation-using-the-command-line}
 
-You have logged on to your server with your user name and domain.
+You have logged on to your server with your username and domain.
 
 ```bash
-ssh benutzername@example.com
+ssh username@example.com
 ```
 
-Then change to the directory of your Contao installation on the console.
+Then go to the directory of your Contao installation.
 
 ```bash
 cd www/example/
@@ -40,7 +40,7 @@ cd www/example/
 
 The command `remove`removes the extension from the `composer.json`and deletes the code from the project.
 
-To remove an extension and update it`composer.lock`, the command is `remove`executed. This will cause some hosters to not be able to finish the process because of the high system load and the update will fail. In this case you should use theContao[ Manager](#aktualisierung-mit-dem-contao-manager).
+To remove an extension and update the `composer.lock`, the command `remove` is executed. This will cause some hosters to not be able to finish the process because of the high system load and the update will fail. In this case you should use the [Contao Manager](#uninstalling-with-contao-manager).
 
 **Uninstall a single extension:**
 
@@ -54,4 +54,4 @@ php composer.phar remove terminal42/contao-easy_themes
 php composer.phar remove terminal42/notification_center terminal42/contao-leads
 ```
 
-Once the uninstallation of the extension(s) is complete, you have to run the [Contao install tool](../contao-installtool/) to update the database if necessary.
+Once the uninstallation of the extension(s) is complete, you have to run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
