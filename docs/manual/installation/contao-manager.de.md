@@ -44,7 +44,7 @@ verwalten.
 Die Systemvoraussetzungen entsprechen grundsätzlich denen von [Contao](../../installation/systemvoraussetzungen). Der 
 Contao Manager prüft automatisch, ob die Anforderungen erfüllt sind.
 
-- PHP Version 7.1 oder neuer
+- PHP Version 7.4 oder neuer
 - PHP Erweiterung *Intl* und *OpenSSL*
 - PHP Funktionen *proc_open* und *proc_close*
 - PHP Einstellung *allow_url_fopen* muss aktiv sein
@@ -101,16 +101,7 @@ Der Contao Manager benötigt keine eigene Datenbank. Die Konfiguration des Conta
 ### Serverkonfiguration
 
 Der Contao Manager benötigt den Pfad zum PHP-Binary und weitere Server-Informationen, um Hintergrund-Prozesse korrekt 
-auszuführen.
-
-Die meisten Server werden automatisch erkannt. Sollte dein Hosting-Anbieter nicht aufgeführt sein, kannst du diesen [in 
-unserem Wiki ergänzen](https://github.com/contao/contao-manager/wiki).
-
-
-#### Serverkonfiguration
-
-Wähle die passende Konfiguration für deinen Server- oder Hosting-Anbieter aus. Für eine manuelle Konfiguration wähle 
-»Andere …«.
+auszuführen. In der Regel wird der Pfad automatisch erkannt.
 
 ![Serverkonfiguration](/de/installation/images/de/serverkonfiguration.png?classes=shadow)
 
