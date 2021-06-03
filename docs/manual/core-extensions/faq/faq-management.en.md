@@ -6,7 +6,7 @@ aliases:
 weight: 10
 ---
 
-The FAQ management is a separate module in the backend, which you can find in the group "Contents". There you can create several categories, which contain the individual questions. By using multiple categories you can group FAQs by topic, language or website (multi-domain operation).
+The FAQ management is a separate module in the back end, which you can find in the group "Contents". There you can create several categories, which contain the individual questions. By using multiple categories you can group FAQs by topic, language or website (multi-domain operation).
 
 ## Categories
 
