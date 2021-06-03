@@ -1,23 +1,27 @@
 ---
-title: 'Front-end modules'
-description: 'The newsletter extension contains four additional frontend modules which you can configure as usual via the module management.'
+title: 'Front end modules'
+description: 'The newsletter extension contains four additional front end modules which you can configure as usual 
+via the module management.'
 aliases:
     - /en/core-extensions/newsletter/frontend-modules/
 weight: 20
 ---
 
-Now that you know how mailing lists, newsletters, and recipients are managed in the backend, we will explain how 
-visitors can subscribe or unsubscribe to mailing lists in the frontend and how to create an archive that displays all sent newsletters. The newsletter extension contains four additional frontend modules, which you can configure as usual via the module management.
+Now that you know how mailing lists, newsletters, and recipients are managed in the back end, we will explain how 
+visitors can subscribe or unsubscribe to mailing lists in the front end and how to create an archive that displays 
+all sent newsletters. The newsletter extension contains four additional front end modules, which you can configure 
+as usual via the module management.
 
 ![Newsletter modules](/de/core-extensions/newsletter/images/en/newsletter_modules.png?classes=shadow)
 
 ## Subscribe
 
-The frontend module "Subscribe" adds a form to the website which allows your visitors to register for specific mailing lists.
+The front end module "Subscribe" adds a form to the website which allows your visitors to register for specific 
+mailing lists.
 
 ### Module Configuration
 
-**Channels:** Here you select the distribution lists for which your visitors can register via the frontend module for 
+**Channels:** Here you select the distribution lists for which your visitors can register via the front end module for 
 subscribing to distribution lists, or channels.
 
 **Hide the channel menu:** Here you can hide the menu for the distribution list/channel selection. In this case the 
@@ -64,7 +68,7 @@ Your administrator
 **Newsletter template:** Here you choose the template for the order form.
 
   
-**HTML Output** The frontend module generates the following HTML code:
+**HTML Output** The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -100,12 +104,13 @@ Your administrator
 
 ## Unsubscribe {#cancell}
 
-The frontend module "Unsubscribe" adds a form to the website, with which your visitors can unsubscribe from certain mailing lists.
+The front end module "Unsubscribe" adds a form to the website, with which your visitors can unsubscribe from certain 
+mailing lists.
 
 ### Module configuration
 
 **Channels:** Here you can select the distribution lists/channels from which your visitors can unsubscribe via this 
-frontend module.
+front end module.
 
 **Hide channel menu:** Here you can hide the menu for selecting distribution lists/channels. In this case the user 
 is removed from all the distribution lists you have defined.
@@ -135,7 +140,7 @@ Your administrator
 
 **Newsletter template:** Here you select the template for the cancellation form.
 
-**The HTML output** The frontend module generates **the** following HTML code:
+**The HTML output** The front end module generates **the** following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -168,7 +173,7 @@ Your administrator
 
 ## Newsletter list
 
-The frontend module "Newsletter list" lists all sent newsletters. The subject, the sending date, and a link to the 
+The front end module "Newsletter list" lists all sent newsletters. The subject, the sending date, and a link to the 
 detail view are displayed.
 
 ### Module configuration
@@ -180,7 +185,7 @@ descending order by date of dispatch.
 
 **Module template:** Here you can overwrite the standard module template.
 
-**The HTML Output** The frontend module generates the following HTML code:
+**The HTML Output** The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -195,7 +200,7 @@ descending order by date of dispatch.
 
 ## Newsletter reader
 
-The frontend module "Newsletter reader" is used to display the details of a specific newsletter. The module obtains 
+The front end module "Newsletter reader" is used to display the details of a specific newsletter. The module obtains 
 the ID or the alias of the newsletter via the URL, so that newsletters can be specifically linked via permanent links:
 
 `www.example.com/newslettereader/newsletteralias.html`
@@ -217,7 +222,7 @@ Newsletters from unselected distribution lists are not displayed, even if the UR
 
 **Module template:** Here you can overwrite the standard template.
 
-**The HTML output** The frontend module generates the following HTML code:
+**The HTML output** The front end module generates the following HTML code:
 
 ```html
 <div class="mod_newsletterreader block">
