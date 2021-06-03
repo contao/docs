@@ -6,10 +6,6 @@ aliases:
 weight: 80
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
 ## Uninstalling with Contao Manager
 
 You first need to log in to Contao Manager. To do so, call up your domain again with the addition `/contao-manager.phar.php` and enter your access data.
@@ -24,7 +20,7 @@ Click on "Apply changes" to start the uninstallation. The uninstallation can tak
 
 Once the Contao Manager has uninstalled the extension(s), you have to run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
 
-## Uninstalling using the command line {#uninstallation-using-the-command-line}
+## Uninstalling using the command line
 
 You have logged on to your server with your username and domain.
 
