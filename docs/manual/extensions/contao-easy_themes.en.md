@@ -9,8 +9,8 @@ aliases:
 
 *from [terminal42 gmbh](https://www.terminal42.ch/de/)*
 
-Enables direct access to stylesheets, modules, page layouts and image sizes - not only in case of multiple themes a 
-click number reducer.
+Enables direct access to stylesheets, modules, page layouts and image sizes - reduces the number of clicks even if only 
+one theme is used.
 
 After successful installation, log in to the back end and go to the "Users" tab in "User Management". From the user 
 list, select the user who is to benefit from EasyThemes. Click on the 
