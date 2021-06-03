@@ -131,7 +131,7 @@ Attachments are files that are linked to an FAQ. These files are offered for dow
 
 **Disable comments:** Here you deactivate the comment function for a question.
 
-### Publication {#publication}
+### Publication
 
 As long as an FAQ is not published, it will not be displayed in the frontend.
 
