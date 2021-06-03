@@ -16,7 +16,7 @@ Ansonsten …
 
 ## Content Management System
 
-Ein Content Management System ist per definitionem ein Programm zur Verwaltung (engl. »Management«) von Inhalten (engl. 
+Ein Content Management System ist per Definition ein Programm zur Verwaltung (engl. »Management«) von Inhalten (engl. 
 »Content«). Innerhalb dieser sehr allgemein gehaltenen Kategorie gibt es unzählige Untergruppen, wie z. B.
 
 - Document Management Systeme zur Verwaltung von Dokumenten,
