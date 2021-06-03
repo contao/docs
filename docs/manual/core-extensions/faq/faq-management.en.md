@@ -81,7 +81,7 @@ To create a new question, click on **New** ![Create a new question](/de/icons/ne
 
 **source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you can upload it directly in the pop-up window without leaving the input mask.
 
-![Add an image to an FAQ](/de/core-extensions/faq/images/de/einer-faq-ein-bild-hinzufuegen.png?classes=shadow)
+![Add an image to an FAQ](/de/core-extensions/faq/images/en/add-an-image-to-an-faq.png?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
