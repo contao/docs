@@ -84,16 +84,16 @@ Wenn du Composer global installierst, kannst du den Befehl `composer` in jedem V
 ### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
 
 Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
-Installations-Verzeichnis und die 4.8 für die zu [installierende Contao-Version](https://contao.org/de/download.html). 
+Installations-Verzeichnis und die 4.11 für die zu [installierende Contao-Version](https://contao.org/de/download.html). 
 
 ```bash
-php composer.phar create-project contao/managed-edition example 4.8
+php composer.phar create-project contao/managed-edition example 4.11
 ```
 
 
 ### Hosting-Konfiguration
 
-In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/web` der Installation. Setze das 
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/web` der Installation. Erstelle diesen Ordner und setze das 
 Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel des Hosting-Providers auf diesen 
 Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
 

@@ -8,7 +8,7 @@ weight: 10
 
 "Contao Open Source CMS" is the full, official name of the project and says all you need to know when you first encounter the system. It is a CMS, i.e. a content management system under an open source license called Contao. If you already know what an open source CMS is you can skip the next two sections. Otherwise ...
 
-## content management system
+## Content Management System
 
 A content management system is, by definition, a program for managing content. Within this very general category there are countless subgroups, such as
 

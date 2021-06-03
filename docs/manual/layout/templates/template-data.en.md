@@ -6,26 +6,19 @@ aliases:
 weight: 50
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
+The available template context varies depending on the template source. Usually, the complete data can be accessed via
+`$this->…`.
 
-The available template data varies depending on the template source. Usually the complete data set is available in the template. The individual data records correspond to the respective database entries and can be `$this->…`accessed in the template by specifying
-
-You can display all available template data of a template. You can either use
+You can dump all available template data to see what's there:
 
 ```php
 <?php $this->dumpTemplateVars() ?>
 ```
 
-or via
-
-```php
-<?php dump($this) ?>
-```
-
-Both statements use the [Symfony VarDumper component to](https://symfony.com/doc/current/components/var_dumper.html) display the template data.
+This statement uses the [Symfony VarDumper component](https://symfony.com/doc/current/components/var_dumper.html) to 
+display the data. In debug mode, the output will therefore be redirected to the Symfony Debug Toolbar.
 
 {{% notice info %}}
-If you use [template inheritance]({{< ref "template-inheritance.en.md" >}}), the template data is only displayed in debug mode or if the statement is between `$this->block(…)`and `$this->endblock()`
+If you use [template inheritance]({{< ref "template-inheritance.en.md" >}}), the template data is only displayed in
+debug mode or if the statement is enclosed between `$this->block(…)` and `$this->endblock()` statements.
 {{% /notice %}}
