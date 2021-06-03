@@ -121,7 +121,7 @@ To create a new question, click on **New** ![Create a new question](/de/icons/ne
 
 ### Attachments
 
-Attachments are files that are linked to an FAQ. These files are offered for download in the frontend module "FAQ reader".
+Attachments are files that are linked to an FAQ. These files are offered for download in the front end module "FAQ reader".
 
 **Add attachments:** Here you activate the adding of attachments.
 
