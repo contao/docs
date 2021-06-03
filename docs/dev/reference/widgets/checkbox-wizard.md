@@ -3,10 +3,7 @@ title: "Checkbox Wizard"
 description: Not yet documented
 ---
 
-This widget renders a single or multiple checkboxes. Choose this if you want the editor to choose from a set of options.
+This widget is similar to the regular [Checkbox widget](/reference/widgets/checkbox) but it supports manual sorting of the multiple 
+checkboxes.
 
-{{% notice info %}}
-
-This widget is not documented yet. Please consider contributing when you research a widget configuration to help others! 
-
-{{% /notice %}}
+{{< widget-notice >}}
