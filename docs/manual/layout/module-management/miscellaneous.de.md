@@ -45,7 +45,7 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 ## Zufallsbild
 
 Das Frontend-Modul »Zufallsbild« fügt der Webseite ein zufälliges Bild aus einer bestimmten Auswahl an Bildern hinzu. 
-Du kannst sowohl einzelne Bilder als auch ganze Ordner als Quelle auswählen. Vorhandene Meta-Dateien werden ausgewertet.
+Du kannst sowohl einzelne Bilder als auch ganze Ordner als Quelle auswählen. Vorhandene Metadaten werden ausgewertet.
 
 **Quelldateien:** Hier kannst du mehrere Dateien bzw. Ordner auswählen. Die in einem Ordner enthaltenen Bilder werden 
 automatisch bei der Auswahl berücksichtigt.
@@ -75,7 +75,7 @@ automatisch bei der Auswahl berücksichtigt.
 **Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
 geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
-**Bildunterschrift anzeigen:** Wenn du diese Option auswählst, wird entweder die entsprechende Bildunterschrift aus der 
+**Bildunterschrift anzeigen:** Wenn du diese Option auswählst, wird entweder die entsprechende Bildunterschrift aus den 
 Metadaten angezeigt oder eine automatische Bildunterschrift aus dem Namen der Datei generiert.
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_randomImage` überschreiben.
@@ -115,8 +115,7 @@ Das Modul hat kein umschließendes HTML-Markup.
 Mit dem Frontend-Modul »RSS-Reader« kannst du einen beliebigen RSS-Feed abonnieren und in deine Webseite einfügen. 
 Damit kannst du z. B. den Nachrichtenfeed von contao.org einbinden.
 
-Öffne die Modulverwaltung im Backend, und wähle das Modul »RSS-Leser« aus. Nachfolgend werden dir die einzelnen Eingabefelder 
-näher erklärt.
+Öffne die Modulverwaltung im Backend, und wähle das Modul »RSS-Leser« aus.
 
 **Feed-URLs:** Hier kannst du eine oder mehrere RSS-Feed-URLs eingeben.
 
