@@ -1,18 +1,14 @@
 ---
 title: Insert tags
-description: 'Insert tags are placeholders that are replaced by specific values when a page is output.'
+description: 'Insert tags are placeholders that are replaced by specific values when a page is rendered.'
 aliases:
     - /en/article-management/insert-tags/
 weight: 30
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
+Insert tags are placeholders that are replaced by specific values when a page is rendered. With insert tags you can e.g. create a link to a page or an article, insert page variables or read user properties. Insert tags can be used everywhere in Contao.
 
-Insert tags are placeholders that are replaced by specific values when a page is output. With insert tags you can, for example, create a link to a page or an article, insert environment variables or read user properties. Insert tags can be used everywhere in Contao.
-
-An insert tag always starts with two opening curly brackets, followed by a keyword and two closing curly brackets, e.g. `{{date}}`. Many insert tags require an additional argument that is written with two colons after the keyword, e.g. `{{link::12}}`.
+An insert tag always starts with two opening curly brackets, followed by arbitrary content and two closing curly brackets, e.g. `{{date}}`. Many insert tags require additional arguments which are usually separated by two colons after the insert tag name, e.g. `{{link::12}}`.
 
 ## Link elements
 
@@ -22,41 +18,41 @@ With these insert tags you can create links to other pages or articles. You only
 | ---------- | ----------- |
 | `{{link::*}}` | This tag is replaced with HTML code for a link. The parameter can be the ID or alias of an internal page or an absolute URL. |
 | `{{link::back}}` | This tag is replaced with a link to the last page visited. Can also be used as `{{link_open::back}}`, `{{link_url::back}}`and `{{link_title::back}}`. |
-| `{{link::login}}` | This tag is replaced with a link to the logon page of the current front-end user (if available). |
+| `{{link::login}}` | This tag is replaced with a link to the logon page of the current front end user (if available). |
 | `{{link_open::*}}` | Is replaced with the opening tag of a link. The parameter can be the ID or alias of an internal page or an absolute URL: `{{link_open::12}}Click here{{link_close}}`. |
 | `{{link_url::*}}` | This tag is replaced with the URL of an internal page: `<a href="{{link_url::12}}">Click here</a>`. |
 | `{{link_target::*}}` | This tag will be replaced with `target="_blank" rel="noreferrer noopener"` if the specified page is an external redirection page and it is set there that the link should open in a new window. |
-| `{{link_title::*}}` | This tag is replaced with the title of an internal page: `<a title="{{link_title::12}}">Hier klicken</a>`. |
+| `{{link_title::*}}` | This tag is replaced with the title of an internal page: `<a title="{{link_title::12}}">Click here</a>`. |
 | `{{link_name::*}}` | This tag will be replaced with the name of an internal page: `<a>{{link_name::12}}</a>`. |
-| `{{link_close}}` | Will be replaced with the closing tag of a link to an internal page: `{{link_open::12}}Hier klicken{{link_close}}`. |
+| `{{link_close}}` | Will be replaced with the closing tag of a link to an internal page: `{{link_open::12}}Click here{{link_close}}`. |
 | `{{article::*}}` | This tag is replaced with a link to an article (replace \* with the ID or alias). |
-| `{{article_open::*}}` | Will be replaced with the opening tag of a link to an article: `{{article_open::12}}Hier klicken{{link_close}}`. |
-| `{{article_url::*}}` | This tag is replaced with the URL of an article: `<a href="{{article_url::12}}">Hier klicken</a>`. |
-| `{{article_title::*}}` | This day is replaced by the title of an article: `<a title="{{article_title::12}}">Hier klicken</a>`. |
+| `{{article_open::*}}` | Will be replaced with the opening tag of a link to an article: `{{article_open::12}}Click here{{link_close}}`. |
+| `{{article_url::*}}` | This tag is replaced with the URL of an article: `<a href="{{article_url::12}}">Click here</a>`. |
+| `{{article_title::*}}` | This day is replaced by the title of an article: `<a title="{{article_title::12}}">Click here</a>`. |
 | `{{news::*}}` | This tag is replaced with a link to a message (replace \* with the ID or alias). |
-| `{{news_open::*}}` | Is replaced with the opening tag of a link to a message: `{{news_open::12}}Hier klicken{{link_close}}`. |
-| `{{news_url::*}}` | This tag will be replaced with the URL of a message: `<a href="{{news_url::12}}">Hier klicken</a>`. |
-| `{{news_title::*}}` | This tag is replaced with the title of a message: `<a title="{{news_title::12}}">Hier klicken</a>`. |
+| `{{news_open::*}}` | Is replaced with the opening tag of a link to a message: `{{news_open::12}}Click here{{link_close}}`. |
+| `{{news_url::*}}` | This tag will be replaced with the URL of a message: `<a href="{{news_url::12}}">Click here</a>`. |
+| `{{news_title::*}}` | This tag is replaced with the title of a message: `<a title="{{news_title::12}}">Click here</a>`. |
 | `{{news_feed::*}}` | This tag will replace with the URL to a news feed (replace \* with the ID). |
 | `{{event::*}}` | This tag will be replaced with a link to an event (replace \* with the ID or alias) |
-| `{{event_open::*}}` | Is replaced with the opening tag of a link to an event: `{{event_open::12}}Hier klicken{{link_close}}`. |
-| `{{event_url::*}}` | This tag is replaced with the URL of an event: `<a href="{{event_url::12}}">Hier klicken</a>`. |
-| `{{event_title::*}}` | This tag is replaced with the title of an event: `<a title="{{event_title::12}}">Hier klicken</a>`. |
+| `{{event_open::*}}` | Is replaced with the opening tag of a link to an event: `{{event_open::12}}Click here{{link_close}}`. |
+| `{{event_url::*}}` | This tag is replaced with the URL of an event: `<a href="{{event_url::12}}">Click here</a>`. |
+| `{{event_title::*}}` | This tag is replaced with the title of an event: `<a title="{{event_title::12}}">Click here</a>`. |
 | `{{calendar_feed::*}}` | This tag is replaced with the URL to a calendar feed (replace \* with the ID). |
 | `{{faq::*}}` | This tag will be replaced with a link to a frequently asked question (replace \* with the ID or alias) |
-| `{{faq_open::*}}` | Will be replaced with the opening tag of a link to a question: `{{faq_open::12}}Hier klicken{{link_close}}`. |
-| `{{faq_url::*}}` | This tag will be replaced with the URL of a question: `<a href="{{faq_url::12}}">Hier klicken</a>`. |
-| `{{faq_title::*}}` | This tag will be replaced with the title of a question: `<a title="{{faq_title::12}}">Hier klicken</a>`. |
+| `{{faq_open::*}}` | Will be replaced with the opening tag of a link to a question: `{{faq_open::12}}Click here{{link_close}}`. |
+| `{{faq_url::*}}` | This tag will be replaced with the URL of a question: `<a href="{{faq_url::12}}">Click here</a>`. |
+| `{{faq_title::*}}` | This tag will be replaced with the title of a question: `<a title="{{faq_title::12}}">Click here</a>`. |
 
 ## Member properties
 
-With the following insert tags you can read certain properties of a logged in frontend user and address him e.g. with his name. In principle, you can pass all field names of the table `tl_member`as arguments.
+With the following insert tags you can read certain properties of a logged in front end user and address them with their name. You can pass all field names of the table `tl_member` as arguments.
 
 | Insert tag | Description |
 | ---------- | ----------- |
-| `{{user::*}}` | This tag will be replaced with the content of a field of `tl_member`the logged in member (replace \* with the field name). |
+| `{{user::*}}` | This tag will be replaced with the content of a field of `tl_member` the logged in member (replace \* with the field name). |
 | `{{user::firstname}}` | This tag is replaced with the first name of the registered member. |
-| `{{user::lastname}}` | This tag will be replaced with the surname of the registered member. |
+| `{{user::lastname}}` | This tag will be replaced with the last name of the registered member. |
 | `{{user::company}}` | This tag will be replaced with the company name of the logged in member. |
 | `{{user::phone}}` | This tag will be replaced with the phone number of the logged in member. |
 | `{{user::mobile}}` | This tag will be replaced with the mobile phone number of the logged in member. |
@@ -75,7 +71,7 @@ The following insert tags can be used to output page properties such as the page
 
 | Insert tag | Description |
 | ---------- | ----------- |
-| `{{page::*}}` | This tag is replaced with the content of a field from `tl_page`the current page (replace \* with the field name). |
+| `{{page::*}}` | This tag is replaced with the content of a field from `tl_page` the current page (replace \* with the field name). |
 | `{{page::id}}` | This tag is replaced with the ID of the current page. |
 | `{{page::alias}}` | This tag is replaced with the alias of the current page. |
 | `{{page::title}}` | This tag is replaced with the name of the current page. |
@@ -84,16 +80,16 @@ The following insert tags can be used to output page properties such as the page
 | `{{page::language}}` | This tag is replaced with the language of the current page. |
 | `{{page::parentAlias}}` | This tag will be replaced with the alias of the parent page. |
 | `{{page::parentTitle}}` | This tag is replaced with the name of the parent page. |
-| `{{page::parentPageTitle}}` | This tag is replaced with the title of the parent page. |
+| `{{page::parentPageTitle}}` | This tag is replaced with the page title of the parent page. |
 | `{{page::mainAlias}}` | This tag is replaced with the alias of the parent main page. |
 | `{{page::mainTitle}}` | This tag is replaced with the name of the parent main page. |
-| `{{page::mainPageTitle}}` | This tag will be replaced with the title of the parent main page. |
-| `{{page::rootTitle}}` | This tag is replaced with the name of the website. |
-| `{{page::rootPageTitle}}` | This tag is replaced with the title of the web page. |
+| `{{page::mainPageTitle}}` | This tag will be replaced with the page title of the parent main page. |
+| `{{page::rootTitle}}` | This tag is replaced with the name of the root page. |
+| `{{page::rootPageTitle}}` | This tag is replaced with the page title of the root page. |
 
 ## Environment Variables
 
-The following insert tags can be used to output environment variables such as the page name or the request string.
+The following insert tags can be used to output environment variables such as the page name, or the request string.
 
 | Insert tag | Description |
 | ---------- | ----------- |
@@ -108,7 +104,7 @@ The following insert tags can be used to output environment variables such as th
 
 ## Include Elements
 
-The following insert tags can be used to include resources such as articles, modules or files from the `templates`directory.
+The following insert tags can be used to include resources such as articles, modules or files from the `templates` directory.
 
 | Insert tag | Description |
 | ---------- | ----------- |
@@ -119,11 +115,11 @@ The following insert tags can be used to include resources such as articles, mod
 | `{{article_teaser::*}}` | This tag will be replaced with the teaser of an article (replace \* with the ID of the article). |
 | `{{news_teaser::*}}` | This tag is replaced with the teaser of a message (replace \* with the ID of the message). |
 | `{{event_teaser::*}}` | This tag is replaced with the teaser of an event (replace \* with the ID of the event). |
-| `{{file::*}}` | This tag is replaced with the content of a .php or .html5 file from the `templates`directory (replace \* with the name). If necessary, you can pass arguments: `{{file::file.php?arg1=val}}`. You can also use UUID to get the path of a file from the database: `{{file::6939a448-9b30-11e4-bcba-079af1e9baea}}`. |
+| `{{file::*}}` | This tag is replaced with the content of a .php or .html5 file from the `templates` directory (replace \* with the name). If necessary, you can pass arguments: `{{file::file.php?arg1=val}}`. You can also use a UUID to get the path of a file from the database: `{{file::6939a448-9b30-11e4-bcba-079af1e9baea}}`. |
 
 ## Miscellaneous
 
-The following insert tags allow you to perform various tasks, such as inserting the current date or a Lightbox image.
+The following insert tags allow you to perform various tasks, such as inserting the current date, or a lightbox image.
 
 | Insert tag | Description |
 | ---------- | ----------- |
@@ -135,7 +131,7 @@ The following insert tags allow you to perform various tasks, such as inserting 
 | `{{last_update::*}}` | This tag will be replaced with the date of the last update according to an individual date format. Contao supports all date and time formats that can be parsed with the [PHP function date](https://www.php.net/manual/de/function.date.php). `{{last_update::d.m.Y}}` |
 | `{{email::*}}` | This tag is replaced with an encrypted link to an e-mail address. |
 | `{{email_open::*}}` | This tag will be replaced with an encrypted link to an e-mail address. However, the closing `</a>`one is not added. |
-| `{{email_close}}` | This tag is replaced with `</a>`. Example: `{{email_open::foo@example.org}}E-Mail Kontakt{{email_close}}`. |
+| `{{email_close}}` | This tag is replaced with `</a>`. Example: `{{email_open::foo@example.org}}Contact us{{email_close}}`. |
 | `{{email_url::*}}` | This tag is replaced only by the encrypted e-mail address. |
 | `{{post::*}}` | This tag can be used to read and display a specified post variable. Can be used, for example, to access individual fields of a sent form. |
 | `{{lang::*}}` | With this tag foreign words in a text can be marked: `{{lang::fr}}Au revoir{{lang}}`. This is replaced with `<span lang="fr">Au revoir</span>`. |
@@ -159,7 +155,7 @@ With `en,de,fr` you can test for multiple instead of just one language. On top o
 
 ## Insert tag flags
 
-With flags you can process insert tags further. The value can be passed to a PHP function, for example. Any number of flags can be combined with each other:
+With flags, you can process insert tags further. The value can be passed to a PHP function, for example. Any number of flags can be combined with each other:
 
 ```
 {{ua::browser|uncached}}
@@ -172,7 +168,7 @@ Available Flags:
 | ---- | ----------- | ------------------- |
 | `uncached` | Receives the tag when writing the cache file. |  |
 | `refresh` | Rebuilds the output on each request. |  |
-| `addslashes` | Prepends certain characters in a string ( `\`). | [PHP function](https://php.net/addslashes) |
+| `addslashes` | Prepends certain characters in a string (`\`). | [PHP function](https://php.net/addslashes) |
 | `standardize` | Standardizes the output (for example, the alias in the page structure). |  |
 | `absolute` | Generates an absolute path including host name and protocol | Available in Contao **4.5** and later |
 | `ampersand` | Converts `&`characters into entities. |  |
@@ -204,12 +200,12 @@ The following "Basic Enities" are converted back into the respective HTML entiti
 
 | basic entities | HTML entities |
 | -------------- | ------------- |
-| `[&]` | `&amp;` = ampersand ( `&`) |
-| `[lt]` | `&lt;` = less than ( `<`) |
-| `[gt]` | `&gt;` = greater than ( `>`) |
-| `[nbsp]` | `&nbsp;` = non-breaking spaceIf you want to prevent the break between two words, a protected space must be inserted. e.g. `Contao[nbsp]CMS` |
-| `[-]` | `&shy;` = soft hyphenThe word is wrapped if there is not enough space. The separation is done with a hyphen. e.g. `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft` |
-| `[{]`, `[}]` | Replaced in the frontend with `{{` bzw. `}}`. This enables you to display insert tags in the frontend, for example, to explain them. |
+| `[&]` | `&amp;` = ampersand (`&`) |
+| `[lt]` | `&lt;` = less than (`<`) |
+| `[gt]` | `&gt;` = greater than (`>`) |
+| `[nbsp]` | `&nbsp;` = non-breaking space. If you want to prevent the break between two words, a protected space must be inserted. e.g. `Contao[nbsp]CMS` |
+| `[-]` | `&shy;` = soft hyphenThe word is wrapped if there is not enough space. The separation is done with a hyphen. e.g. if you want to separate the typical German compound words like `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft` |
+| `[{]`, `[}]` | Replaced in the front end with `{{` bzw. `}}`. This enables you to display insert tags in the front end. For example, to explain them. |
 
 
 [DevFigureBuilder]: https://docs.contao.org/dev/framework/image-processing/image-studio/#setting-options
