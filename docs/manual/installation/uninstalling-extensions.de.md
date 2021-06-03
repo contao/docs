@@ -1,6 +1,6 @@
 ---
 title: "Erweiterungen deinstallieren"
-description: "Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du drei Möglichkeiten."
+description: "Erweiterungen mit dem Contao Manager oder via Kommandozeile deinstallieren"
 url: "installation/erweiterungen-deinstallieren"
 aliases:
     - /de/installation/erweiterungen-deinstallieren/
