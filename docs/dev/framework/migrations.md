@@ -100,7 +100,7 @@ class CustomerNameMigration extends AbstractMigration
 
         $stmt->execute();
 
-        return new MigrationResult(
+        return $this->createResult(
             true, 
             'Combined '. $stmt->rowCount().' customer names.'
         );
