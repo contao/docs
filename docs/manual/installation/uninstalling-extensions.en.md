@@ -1,6 +1,6 @@
 ---
 title: 'Uninstalling extensions'
-description: 'To find a suitable extension for a desired function, you have three options.'
+description: 'Uninstalling Extensions with the Contao Manager or via command line'
 aliases:
     - /en/installation/uninstalling-extensions/
 weight: 80
