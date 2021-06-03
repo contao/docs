@@ -101,16 +101,7 @@ Der Contao Manager benötigt keine eigene Datenbank. Die Konfiguration des Conta
 ### Serverkonfiguration
 
 Der Contao Manager benötigt den Pfad zum PHP-Binary und weitere Server-Informationen, um Hintergrund-Prozesse korrekt 
-auszuführen.
-
-Die meisten Server werden automatisch erkannt. Sollte dein Hosting-Anbieter nicht aufgeführt sein, kannst du diesen [in 
-unserem Wiki ergänzen](https://github.com/contao/contao-manager/wiki).
-
-
-#### Serverkonfiguration
-
-Wähle die passende Konfiguration für deinen Server- oder Hosting-Anbieter aus. Für eine manuelle Konfiguration wähle 
-»Andere …«.
+auszuführen. In der Regel wird der Pfad automatisch erkannt.
 
 ![Serverkonfiguration](/de/installation/images/de/serverkonfiguration.png?classes=shadow)
 
