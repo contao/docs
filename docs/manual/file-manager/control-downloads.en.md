@@ -10,11 +10,15 @@ weight: 30
 This article is machine translated.
 {{% /notice %}}
 
-With Contao, you can easily restrict access to certain files and define exactly who can and cannot download them. This way you can e.g. create a protected download area for members.
+With Contao, you can easily restrict access to certain files and define permissions for exactly who can and cannot 
+download them. This way you can e.g. create a protected download area for members.
+
 
 ## Protect directory {#protect directory}
 
-When you create a new folder in Contao, it is accessible via HTTP by default including all subfolders. If you want to protect a folder, make sure that "Public" is not selected when you create the folder. If a directory is public, the folders and files in it cannot be protected.
+When you create a new folder in Contao's file manager, it is accessible via HTTP by default including all subfolders.
+If you want to protect a folder, make sure that "Public" is not selected when you create the folder. If a directory is 
+made public, all the folders and files within it cannot be protected.
 
 ![Protect directory](/de/file-manager/images/de/verzeichnis-schuetzen.png?classes=shadow)
 
