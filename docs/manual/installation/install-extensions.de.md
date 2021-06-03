@@ -102,10 +102,10 @@ Wechsle dazu auf der Konsole in das Verzeichnis deiner Contao-Installation.
 cd www/example/
 ```
 
-Mit dem Befehl `require` fügst du der Datei `composer.json` das neue Paket hinzu und lädst dieses, sowie alle Pakete, 
+Mit dem Befehl `require` fügst du der Datei `composer.json` das neue Paket hinzu und lädst dieses sowie alle Pakete, 
 von denen dieses Paket anhängig ist, herunter.
 
-**Ein einzelne Erweiterung installieren:**
+**Eine einzelne Erweiterung installieren:**
 
 ```bash
 php composer.phar require terminal42/contao-easy_themes
@@ -117,5 +117,13 @@ php composer.phar require terminal42/contao-easy_themes
 php composer.phar require terminal42/notification_center terminal42/contao-leads
 ```
 
-Sobald die Installation der Erweiterung(en) abgeschlossen ist, musst du das [Contao-Installtool](../contao-installtool/) 
-aufrufen um die Datenbank zu aktualisieren.
+Sobald die Installation der Erweiterung(en) abgeschlossen ist, musst du die Datenbank aktualisieren.
+
+```bash
+php vendor/bin/contao-console contao:migrate
+```
+
+{{% notice note %}}
+Das `contao:migrate`-Kommando ist ab Version **4.9** verfügbar. Alternativ kannst du dafür das [Contao Install-Tool](../contao-installtool/)
+nutzen.
+{{% /notice %}}

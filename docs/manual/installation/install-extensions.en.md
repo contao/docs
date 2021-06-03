@@ -6,23 +6,19 @@ aliases:
 weight: 60
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
 ## Search for extensions
 
 To find a suitable extension for a desired function, you have three options.
 
-### website
+### Website
 
-You can search for an extension on the website [extensions.contao.org](https://extensions.contao.org/).
+You can search for an extension on the [extensions.contao.org](https://extensions.contao.org/) website.
 
 ![Extensions search on extensions.contao.org](/de/installation/images/de/erweiterungssuche-extensions-contao-org.png?classes=shadow)
 
 ### Contao Manager
 
-You can search for an extension in the Contao Manager of your installation.
+You can search for an extension directly within the Contao Manager of your installation.
 
 ![Advanced search in Contao Manager](/de/installation/images/de/erweiterungssuche-im-contao-manager.png?classes=shadow)
 
@@ -30,7 +26,7 @@ You can search for an extension in the Contao Manager of your installation.
 
 You can search for an extension via the command line.
 
-**Search e.g. for extensions of the company "codefog":**
+**Search e.g. for extensions of the vendor "codefog":**
 
 ```bash
 php composer.phar search codefog
@@ -56,52 +52,66 @@ codefog/contao-template_override template_override extension for Contao Open Sou
 codefog/contao-elements-filter elements-filter extension for Contao Open Source CMS
 ```
 
-Once you have found the desired extension, you can [install](#installation-ueber-die-kommandozeile) it using the Contao[ Manager](#installation-mit-dem-contao-manager) or the [command line](#installation-ueber-die-kommandozeile).
+Once you have found an extension, you can install it via the [Contao Manager](#installation-via-the-contao-manager) or
+the [command line](#installation-via-the-command-line).
 
 ## Install extensions
 
-### Installation with the Contao Manager
+### Installation via the Contao Manager
 
-You need to log back in to Contao Manager first. To do so, call up your domain with the extension`/contao-manager.phar.php` again and enter your login data.
+1. Open the Contao Manager (`my-domain.com/contao-manager.phar.php`) and enter your login data.
+2. Search for the extension you want to install, then click "Add".
+3. Repeat step 2 if you want to add more extensions.
+4. Open the "Packages" tab and click "Apply changes" to start the installation process.
+5. Once finished, run the [Contao install tool](../contao-installtool/) to update the database.
 
-If you want to install the extension "terminal42/contao-easy\_themes", enter "EasyThemes" in the search field and click on "Add". Repeat the search if you want to find more extensions and mark them for installation.
+{{% notice info %}}
+The installation process may take several minutes. Details about the running process can be displayed by clicking on the
+![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon) icon.
+{{% /notice %}}
+
+#### Example
+
+If you want to install the extension `terminal42/contao-easy\_themes`, enter "EasyThemes" in the search field, click
+"Add", …
 
 ![Search for extensions in Contao Manager](/de/installation/images/de/erweiterungen-im-contao-manager-suchen.png?classes=shadow)
 
-Afterwards, change to the "Packages" tab and click on "Apply changes" to start the installation. The installation can now take several minutes. Details about the installation process can be displayed by clicking on the icon ![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon)below.
+… then go to "Packages" and apply the changes.
 
 ![Installing extensions in Contao Manager](/de/installation/images/de/erweiterungen-im-contao-manager-installieren.png?classes=shadow)
 
-Once Contao Manager has installed the extension(s), you have to [run](../contao-installtool/) the [Contao installer](../contao-installtool/) to update the database.
+Once finished, run the [Contao install tool](../contao-installtool/) to update the database. The extension is now ready
+to be used.
 
 ![Extensions installed in Contao Manager](/de/installation/images/de/erweiterungen-im-contao-manager-installiert.png?classes=shadow)
 
-### Installation via the command line {#installation-over-the-command line}
+### Installation via the command line
 
-You have logged on to your server with your user name and domain.
+1. Log into your server via `ssh`.
+2. Navigate to your project's root directory.
+3. Run `php composer.phar require <extension>` to install a single extension or `php composer.phar require <extension1> <extension2> …`
+   to install multiple extensions.
+4. Once finished, run `contao:migrate` or use the [Contao install tool](../contao-installtool/) to update the database.
+
+#### Example
+We log in and navigate to the project root.
 
 ```bash
-ssh benutzername@example.com
+ssh user@example.com
 ```
-
-To do this, change to the directory of your Contao installation on the console.
 
 ```bash
-cd www/example/
+cd www/my-project/
 ```
 
-With this command `require`you add the new package to the file `composer.json`and download it, as well as all packages this package is pending from.
-
-**Install a single extension:**
+Let's install `terminal42/contao-easy_themes`.
 
 ```bash
 php composer.phar require terminal42/contao-easy_themes
+php vendor/bin/contao-console contao:migrate
 ```
 
-**Install multiple extensions:**
-
-```bash
-php composer.phar require terminal42/notification_center terminal42/contao-leads
-```
-
-Once the installation of the extension(s) is complete, you need to [run](../contao-installtool/) the [Contao install tool](../contao-installtool/) to update the database.
+{{% notice note %}}
+The `contao:migrate` command is available in versions **4.9** and up. You can alternatively use the [Contao install tool](../contao-installtool/).
+{{% /notice %}}
