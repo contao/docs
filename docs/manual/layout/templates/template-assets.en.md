@@ -20,16 +20,16 @@ template:
 <script src="files/myfolder/custom.js"></script>
 ```
 
-If the assets should be included in the HTML header or footer instead, you can use the following PHP code in your
-template:
+If the assets should be included in the HTML header instead, you can use the following PHP code in your template:
 
 ```php
 <?php 
-$GLOBALS['TL_CSS'][] = 'files/myfolder/custom.css|static'; // will be added at the end of <head>
-$GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static'; // will be added at the end of <body>
+// will be output inside <head>
+$GLOBALS['TL_CSS'][] = 'files/myfolder/custom.css|static';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static';
 ?>
 ```
 
 Doing it this way, there are more options: By adding `|static`, for example, the files will be appended to or combined 
-with existing assets from page layouts. A detailed description of all options can be found in the developer
-documentation under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
+with existing assets from page layouts. A detailed description of all options and output locations can be found in the
+developer documentation under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).

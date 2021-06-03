@@ -22,16 +22,17 @@ Template zu referenzieren:
 <script src="files/myfolder/custom.js"></script>
 ```
 
-Sollen die Dateien stattdessen im HTML-Header oder -Footer eingebunden werden, so lässt sich das mit folgendem PHP-Code
-im Template anweisen:
+Sollen die Dateien stattdessen im HTML-Header eingebunden werden, so lässt sich das mit folgendem PHP-Code im Template
+anweisen:
 
 ```php
-<?php 
-$GLOBALS['TL_CSS'][] = 'files/myfolder/custom.css|static'; // wird am Ende des <head> eingefügt
-$GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static'; // wird am Ende des <body> eingefügt
+<?php
+// wird in <head> ausgegeben
+$GLOBALS['TL_CSS'][] = 'files/myfolder/custom.css|static';
+$GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static';
 ?>
 ```
 
 Diese Umsetzung bietet weitere Optionen: Mit Angabe von `|static` werden die Dateien z.&nbsp;B. zu den bestehenden
-Assets eines Seitenlayouts hinzugefügt bzw. zusammengefasst. Eine detaillierte Beschreibung aller Optionen findest du 
-in der Entwickler-Dokumentation unter [Adding CSS & JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
+Assets eines Seitenlayouts hinzugefügt bzw. zusammengefasst. Eine detaillierte Beschreibung aller Optionen und
+Ausgabeorte findest du in der Entwickler-Dokumentation unter [Adding CSS & JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
