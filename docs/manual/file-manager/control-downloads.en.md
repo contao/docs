@@ -16,7 +16,7 @@ When you create a new folder in Contao's File Manager, it is accessible via HTTP
 If you want to protect a folder, make sure that "Public" is not selected when you create the folder. If a directory is 
 made public, all the folders and files within it cannot be protected.
 
-![Project directory](/de/file-manager/images/en/project_directory?classes=shadow)
+![Protect a directory](/de/file-manager/images/en/protect_directory.jpg?classes=shadow)
 
 If a folder is public, a `web/files/` symlink will be placed in the directory `files`, without this symlink the data 
 would not be accessible to visitors.
