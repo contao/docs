@@ -24,7 +24,7 @@ To create a new category click on New ![Create a new category](/de/icons/new.svg
 
 ### Comments
 
-You already know the Contao comment function from the "News/Blog" extension or the content element with the same name [(Comments)](/en/article-management/content-elements/#comments). It is also available for FAQs.
+You already know the Contao comment function from the "News/Blog" extension or the content element with the same name [(Comments)](../../../article-management/content-elements/#comments). It is also available for FAQs.
 
 **Enable comments:** Here you can activate the comment function for the category.
 
