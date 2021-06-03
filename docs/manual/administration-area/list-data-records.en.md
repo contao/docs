@@ -6,7 +6,7 @@ aliases:
 weight: 30
 ---
 
-Contao stores all information about your website in its database. This includes backend data like users, modules, pages or articles as well as frontend data like guestbook entries or comments. All this data is collected in different tables and can be listed, searched, copied, moved, deleted or edited in the back end.
+Contao stores all information about your website in its database. This includes back end data like users, modules, pages or articles as well as frontend data like guestbook entries or comments. All this data is collected in different tables and can be listed, searched, copied, moved, deleted or edited in the back end.
 
 ## The different views
 
