@@ -2,7 +2,7 @@
 title: 'FAQ extension'
 description: 'This makes managing frequently asked questions a breeze.'
 aliases:
-    - /en/core-extensions/faq/_index/
+    - /en/core-extensions/faq/
 weight: 3
 ---
 

@@ -2,7 +2,7 @@
 title: Layout
 description: 'The Layout navigation pane.'
 aliases:
-    - /en/layout/_index/
+    - /en/layout/
 weight: 7
 ---
 

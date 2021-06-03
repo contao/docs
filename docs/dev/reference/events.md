@@ -73,7 +73,7 @@ class BackendMenuBuildListener
 
 {{% version "4.7" %}}
 
-This event is dispatched after Contao generateed all its necessary symlinks (e.g.
+This event is dispatched after Contao generated all its necessary symlinks (e.g.
 from `web/files/` to all the public folders in `files/`). The event object returns
 a list of custom symlinks to be built and offers the possibility to add your own 
 custom symlink to the list.

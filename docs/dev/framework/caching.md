@@ -227,16 +227,47 @@ event.
 #### Cache tag invalidation within the Contao back end
 
 When working with DCAs in the Contao back end you don't have to register callbacks at various places to make sure certain
-tags are being invalidated. This is because Contao invalidates a certain set of tags whenever a back end entry is created,
-updated or deleted. The tags are as follows:
+tags are being invalidated. This is because Contao invalidates a certain set of tags whenever a back end entry is created, 
+updated or deleted. 
 
-* `contao.db.<table-name>`
-* `contao.db.<table-name>.<id>`
-* `contao.db.<parent-table-name>` (only if there is a parent table defined)
-* `contao.db.<parent-table-name>.<pid>` (only if there is a parent record)
+The tags are as follows:
 
-So let's say you had a DCA table named `tl_news`. When you edit ID `42`, Contao would automatically send an invalidation
-request to the reverse proxy to invalidate all responses associated with the tags `contao.db.tl_news` and `contao.db.tl_news.42`.
+* `contao.db.<table-name>.<id>` (The record itself)
+* `contao.db.<table-name>` (Only if the DCA has no parent table defined)
+
+If the DCA has a **parent table**, Contao recursively iterates upwards the table hierarchy and invalidates the following 
+tags as well:
+
+* `contao.db.<parent-table-name>` (Only for the topmost parent table)
+* `contao.db.<parent-table-name>.<pid>`
+
+If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierachy and invalidates the 
+following tags as well:
+
+* `contao.db.<child-table-name>.<cid>`
+
+##### Example: Edit a news article
+
+Imagine you have edited a news article with ID 42. Contao will now automatically send an invalidation request to the 
+reverse proxy to invalidate all responses associated with the following tags: 
+
+* `contao.db.tl_news_archive` (The topmost parent table)
+* `contao.db.tl_news_archive.1` (The parent record)
+* `contao.db.tl_news.42` (The record itself)
+* `contao.db.tl_content.420` (The first child record)
+* `contao.db.tl_content.421` (The second child record)
+
+Only the topmost parent table tag will be invalidated, i.e. `contao.db.tl_news_archive`, but not `contao.db.tl_news` 
+or `contao.db.tl_content`.
+
+##### Example: Edit a contact record (custom DCA)
+
+Imagine now you have your own DCA table `tl_contact_details` with no parent or child tables. When you edit the contact 
+record with ID 42, Contao will automatically invalidate the following tags:
+
+* `contao.db.tl_contact_details.42` (the contact record itself)
+* `contao.db.tl_contact_details` (the table itself)
+
 If you follow this convention and tag your responses accordingly in the front end, you don't have to do any work in the
 back end at all!
 

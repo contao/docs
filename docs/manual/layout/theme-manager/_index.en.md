@@ -2,7 +2,7 @@
 title: 'Theme Manager'
 description: 'Finished designs are called themes in Contao. You can manage them with the theme manager and especially export and import them.'
 aliases:
-    - /en/layout/theme-manager/_index/
+    - /en/layout/theme-manager/
 weight: 20
 ---
 

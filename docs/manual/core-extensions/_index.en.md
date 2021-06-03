@@ -2,7 +2,7 @@
 title: 'Core Extensions'
 description: 'The following extensions are included with Contao: News, events, FAQ, newsletter, comments and listings.'
 aliases:
-    - /en/core-extensions/_index/
+    - /en/core-extensions/
 weight: 10
 ---
 

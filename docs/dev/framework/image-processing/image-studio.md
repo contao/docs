@@ -173,7 +173,8 @@ There are two ways to output images in your PHP templates:
      // It's enough to specifiy the resource and size…
      echo $this->figure('path/to/my/image.png', '_my_size');
    ?>
-     
+   ```
+   ```php     
    <?php
      // …but you can also go wild with the options.
      echo $this->figure(

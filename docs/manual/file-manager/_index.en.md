@@ -2,7 +2,7 @@
 title: 'File management'
 description: 'With the file management you can manage files and folders on your server and transfer files from your local computer to the server.'
 aliases:
-    - /en/file-manager/_index/
+    - /en/file-manager/
 weight: 12
 ---
 

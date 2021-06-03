@@ -199,9 +199,25 @@ which do not.
 
 It is possible to create custom DCA drivers by following these requirements:
 
-* The driver's class must start with `DC_`.
-* The driver's class must be available in the global namespace.
+* The driver's class must start with `DC_`. <sup>1</sup>
+* The driver's class must be available in the global namespace. <sup>1</sup>
 * The driver must extend from `\Contao\DataContainer`.
+
+{{% notice "note" %}}
+<sup>1</sup> Since Contao **4.11** the driver is not required to be in the global namespace and does not need to be
+prefixed with `DC_` anymore. Instead you can  reference the FQCN of the driver in your DCA:
+
+```php
+// contao/tl_example.php
+use Vendor\Driver\FoobarDriver;
+
+$GLOBALS['TL_DCA']['tl_example'] => [
+    'config' => [
+        'dataContainer' => FoobarDriver::class,
+    ],
+];
+```
+{{% /notice %}}
 
 The driver can implement any of the following interfaces:
 

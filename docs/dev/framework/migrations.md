@@ -77,30 +77,30 @@ class CustomerNameMigration extends AbstractMigration
         $columns = $schemaManager->listTableColumns('tl_customers');
 
         return 
-	        isset($columns['firstName']) &&
-	        isset($columns['lastName']) &&
+	        isset($columns['firstname']) &&
+	        isset($columns['lastname']) &&
 	        !isset($columns['name']);
     }
 
     public function run(): MigrationResult
     {
-        $this->connection->query('
+        $this->connection->executeQuery("
             ALTER TABLE
                 tl_customers
             ADD
-                name varchar(255) NOT NULL DEFAULT '',
-        ');
+                name varchar(255) NOT NULL DEFAULT ''
+        ");
 
-        $stmt = $this->connection->prepare('
+        $stmt = $this->connection->prepare("
             UPDATE
                 tl_customers
             SET
                 name = CONCAT(firstName, ' ', lastName)
-        ');
+        ");
 
         $stmt->execute();
 
-        return new MigrationResult(
+        return $this->createResult(
             true, 
             'Combined '. $stmt->rowCount().' customer names.'
         );

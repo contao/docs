@@ -2,7 +2,7 @@
 title: 'News/Blog extension'
 description: 'This allows news entries to be managed in the back end and output using front-end modules.'
 aliases:
-    - /en/core-extensions/news/_index/
+    - /en/core-extensions/news/
 weight: 1
 ---
 

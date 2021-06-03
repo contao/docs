@@ -19,6 +19,16 @@ configuration settings from within the back end of Contao. Even the suffix can b
 freely defined, so you might have a list of your database records under `https://example.com/foobar/records.html`,
 while the RSS feed is defined to have a route like `https://example.com/foobar/records.xml`.
 
+{{% notice info %}}
+For Page Controllers to work the [_Legacy Routing Mode_](https://docs.contao.org/manual/en/layout/site-structure/configure-pages/#legacy-routing-mode)
+must be disabled in your application configuration:
+
+```yaml
+contao:
+    legacy_routing: false
+```
+{{% /notice %}}
+
 
 ## Registering Page Controllers
 
@@ -92,20 +102,20 @@ for these possibilities.
 
 There are however a few differences and additional options.
 
-{{% expand "All specific parameters using annotations" %}}
+{{< tabs >}}
+{{% tab name="Annotation" %}}
 ```php
 /**
  * @Page(
  *   type="example",
  *   path="/foo/bar",
- *   urlSuffix="html",
+ *   urlSuffix=".html",
  *   contentComposition=true
  * )
  */
 ```
-{{% /expand %}}
-
-{{% expand "All specific parameters using the service tag" %}}
+{{% /tab %}}
+{{% tab name="YAML" %}}
 ```yaml
 # config/services.yaml
 services:
@@ -115,10 +125,11 @@ services:
                 name: contao.page
                 type: example
                 path: /foo/bar
-                urlSuffix: html
+                urlSuffix: .html
                 contentComposition: true
 ```
-{{% /expand %}}
+{{% /tab %}}
+{{< /tabs >}}
 
 
 ### `type`

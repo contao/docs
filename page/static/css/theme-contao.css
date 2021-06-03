@@ -389,6 +389,10 @@ html[lang="de"] div.notices.idea p:first-child:after {
     content: 'Hinweis';
 }
 
+html[lang="de"] div.notices.tip p:first-child:after {
+    content: 'Tipp';
+}
+
 /* fix #172 */
 option {
     color: initial;
@@ -533,4 +537,12 @@ option {
 
 .algolia-searchbox input[type="search"]:-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.6);
+}
+
+#body .tab-content .tab-item > *:first-child {
+    margin-top: 0;
+}
+
+#body .tab-content .tab-item > *:last-child {
+    margin-bottom: 0;
 }

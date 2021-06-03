@@ -62,7 +62,7 @@ entry's author directly.
 -  <?php if ($this->hasMetaFields): ?>
 -    <p class="info"><time datetime="<?= $this->datetime ?>" itemprop="datePublished"><?= $this->date ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
 -  <?php endif; ?>
-+  <p class="author"><a href="mailto:<?= $this->author->email ?>"><?= $this->author->name ?></a></p>
++  <p class="author"><a href="mailto:<?= $this->author['email'] ?>"><?= $this->author['name'] ?></a></p>
 
    <h2 itemprop="name"><?= $this->linkHeadline ?></h2>
  

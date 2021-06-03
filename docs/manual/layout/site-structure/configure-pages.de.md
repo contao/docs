@@ -49,7 +49,7 @@ längere Titel einfach abschneiden. Wenn kein Seitentitel angegeben wird, wird a
 
 Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten möglichst umfassend in den Suchindex 
 aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung 
-*noindex,nofollow* von der Indizierung ausgenommen werden.
+*noindex,nofollow* von der Indexierung ausgenommen werden.
 
 **Ausgabe im Quellcode:**
 ```html
@@ -374,6 +374,8 @@ Contao erstellt bei Bedarf automatisch eine XML-Sitemap aus der Seitenstruktur d
 lesen und auswerten kann. Um die Sitemap bei Google anzumelden, benötigst du einen Google-Account.
 
 Welche Seiten in die XML-Sitemap aufgenommen werden, kannst du über das Robots-Tag in den [Metadaten](#metadaten) steuern.
+Soll eine Seite nicht in die XML-Sitemap aufgenommen werden, dann unter Metadaten den Robots-Tag auf den Wert
+»noindex,nofollow« setzen.
 
 **Eine XML-Sitemap erstellen:** Hier aktivierst du die Erstellung der XML-Sitemap.
 

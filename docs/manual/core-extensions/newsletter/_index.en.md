@@ -2,7 +2,7 @@
 title: 'Newsletter extension'
 description: 'This allows newsletter and various recipient lists to be managed in the backend.'
 aliases:
-    - /en/core-extensions/newsletter/_index/
+    - /en/core-extensions/newsletter/
 weight: 4
 ---
 

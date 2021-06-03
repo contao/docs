@@ -50,8 +50,9 @@ Contao-Verzeichnis auf den Server.
 - `composer.json`
 - `composer.lock`
 
-Falls du noch, alte Erweiterungen unter `system/modules` abgelegt hast oder eine `config.yml` im Verzeichnis `app/config/` 
-bzw. **ab Contao 4.8** `config/` angelegt hast, müssen diese auch auf deinen Server übertragen werden.
+Falls du noch alte Erweiterungen unter `system/modules` abgelegt hast, eine `config.yml` im Verzeichnis `config/` 
+bzw. **vor Contao 4.8** `app/config/` oder Contao Anpassungen unter `contao/` bzw. **vor Contao 4.8** `app/Resources/contao/` angelegt 
+hast, müssen diese auch auf deinen Server übertragen werden.
 
 
 ### Contao auf dem Live-Server installieren

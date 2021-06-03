@@ -59,6 +59,48 @@ _No parameters._
 **return:** _void_
 {{% /expand %}}
 
+{{% expand "Example" %}}
+This example changes the `mandatory` attribute for the `tl_content.text` field for a specific content element.
+
+```php
+// src/EventListener/DataContainer/MakeTextNotMandatoryCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\ContentModel;
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Symfony\Component\HttpFoundation\RequestStack;
+
+/**
+ * @Callback(table="tl_content", target="config.onload")
+ */
+class MakeTextNotMandatoryCallback
+{
+    private $requestStack;
+
+    public function __construct(RequestStack $requestStack)
+    {
+        $this->requestStack = $requestStack;
+    }
+
+    public function __invoke(DataContainer $dc = null): void
+    {
+        if (null === $dc || !$dc->id || 'edit' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
+            return;
+        }
+
+        $element = ContentModel::findById($dc->id);
+
+        if (null === $element || 'my_content_element' !== $element->type) {
+            return;
+        }
+
+        $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['mandatory'] = false;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `config.oncreate`
 
@@ -378,6 +420,69 @@ to add status icons.
 **return:** `array` Columns with labels
 {{% /expand %}}
 
+{{% expand "Example for tree view" %}}
+This example adds an icon to the label of the example entity as tree view.
+
+```php
+// src/EventListener/DataContainer/ExampleLabelCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Contao\Image;
+
+/**
+ * @Callback(table="tl_example", target="list.label.label")
+ */
+class ExampleLabelCallbackListener
+{
+    public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, ?bool $isProtected = null): string
+    {
+        $icon = Image::getHtml('bundles/app/images/example.svg');
+
+        return $icon.sprintf(' %s <span class="tl_gray" style="margin-left:3px;">[%s]</span>', $row['title'], $row['name']);
+    }
+}
+```
+{{% /expand %}}
+
+{{% expand "Example for list view" %}}
+This example translates a dynamic status field for the label of the example entity as list view.
+
+```php
+// src/EventListener/DataContainer/ExampleLabelCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Symfony\Contracts\Translation\TranslatorInterface;
+
+/**
+ * @Callback(table="tl_example", target="list.label.label")
+ */
+class ExampleLabelCallbackListener
+{
+    private TranslatorInterface $translator;
+
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
+    
+    public function __invoke(array $row, string $label, DataContainer $dc, array $labels): array
+    {
+        $fieldName = 'status';
+        $fields = $GLOBALS['TL_DCA'][$dc->table]['list']['label']['fields'];
+        $key = array_search($fieldName, $fields, true);
+
+        $labels[$key] = $this->translator->trans('tl_example.status_option.'.$labels[$key], [], 'contao_tl_example') ?? $this->translator->trans('tl_example.status_option_unknown', [], 'contao_tl_example');
+
+        return $labels;
+    }
+}
+```
+{{% /expand %}}
+
 ***
 
 
@@ -555,6 +660,121 @@ a button for an import "wizard".
 * `\Contao\DataContainer` Data Container object
 
 **return:** `string` HTML for the button
+{{% /expand %}}
+
+
+### `fields.<FIELD>.eval.url`
+
+Allows you to add an url to the serp preview field.
+
+{{% expand "Parameters" %}}
+* `\Contao\Model` Model object (class from the table)
+
+**return:** `string` URL for the serp preview
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/ExampleSerpPreviewUrlCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use App\Model\ExampleCategoryModel;
+use App\Model\ExampleModel;
+use Contao\Config;
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\PageModel;
+
+/**
+ * @Callback(table="tl_example", target="fields.serpPreview.eval.url")
+ */
+class ExampleSerpPreviewUrlCallbackListener
+{
+    public function __invoke(ExampleModel $model): string
+    {
+        /** @var ExampleCategoryModel $category */
+        $category = $model->getRelated('pid');
+
+        if (null === $category) {
+            throw new \Exception('Invalid category');
+        }
+
+        /** @var PageModel $page */
+        $page = $category->getRelated('jumpTo');
+
+        if (null === $page) {
+            throw new \Exception('Invalid jumpTo page');
+        }
+
+        $suffix = $page->getAbsoluteUrl(Config::get('useAutoItem') ? '/%s' : '/items/%s');
+
+        return sprintf(preg_replace('/%(?!s)/', '%%', $suffix), $model->alias ?: $model->id);
+    }
+}
+```
+{{% /expand %}}
+
+
+### `fields.<FIELD>.eval.title_tag`
+
+Allows you to modify the title tag of the serp preview field.
+
+{{% expand "Parameters" %}}
+* `\Contao\Model` Model object (class from the table)
+
+**return:** `string` title tag for the serp preview
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/ExampleSerpPreviewTitleTagCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use App\Model\ExampleCategoryModel;
+use App\Model\ExampleModel;
+use Contao\Controller;
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\LayoutModel;
+use Contao\PageModel;
+
+/**
+ * @Callback(table="tl_example", target="fields.serpPreview.eval.title_tag")
+ */
+class ExampleSerpPreviewTitleTagCallbackListener
+{
+    public function __invoke(ExampleModel $model): string
+    {
+        /** @var ExampleCategoryModel $category */
+        $category = $model->getRelated('pid');
+
+        if (null === $category) {
+            return '';
+        }
+
+        /** @var PageModel $page */
+        $page = $category->getRelated('jumpTo');
+
+        if (null === $page) {
+            return '';
+        }
+
+        $page->loadDetails();
+
+        /** @var LayoutModel $layout */
+        $layout = $page->getRelated('layout');
+
+        if (null === $layout) {
+            return '';
+        }
+
+        global $objPage;
+        $objPage = $page;
+
+        return Controller::replaceInsertTags(str_replace('{{page::pageTitle}}', '%s', $layout->titleTag ?: '{{page::pageTitle}} - {{page::rootPageTitle}}'));
+    }
+}
+```
 {{% /expand %}}
 
 

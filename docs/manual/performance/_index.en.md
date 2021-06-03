@@ -2,7 +2,7 @@
 title: Performance
 description: 'Here you can find information about the high-performance operation of Contao.'
 aliases:
-    - /en/performance/_index/
+    - /en/performance/
 weight: 80
 ---
 

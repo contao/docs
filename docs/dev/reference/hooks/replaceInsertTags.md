@@ -94,6 +94,7 @@ class ReplaceInsertTagsListener
 
 * [\Contao\CalendarBundle\EventListener\InsertTagsListener#L33-L58](https://github.com/contao/contao/blob/4.7.6/calendar-bundle/src/EventListener/InsertTagsListener.php#L33-L58)
 * [\Contao\CoreBundle\EventListener\InsertTags\AssetListener#L29-L46](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/EventListener/InsertTags/AssetListener.php#L29-L46)
+* [\Contao\CoreBundle\EventListener\InsertTags\DateListener](https://github.com/contao/contao/blob/4.11.2/core-bundle/src/EventListener/InsertTags/DateListener.php)
 * [\Contao\CoreBundle\EventListener\InsertTags\TranslationListener#L29-L45](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/EventListener/InsertTags/TranslationListener.php#L29-L45)
 * [\Contao\FaqBundle\EventListener\InsertTagsListener.php#L34-L67](https://github.com/contao/contao/blob/4.7.6/faq-bundle/src/EventListener/InsertTagsListener.php#L34-L67)
 * [\Contao\NewsBundle\EventListener\InsertTagsListener#L33-L58](https://github.com/contao/contao/blob/4.7.6/news-bundle/src/EventListener/InsertTagsListener.php#L33-L58)

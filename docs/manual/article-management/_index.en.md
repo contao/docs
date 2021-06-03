@@ -2,7 +2,7 @@
 title: 'Article management'
 description: 'Contao encapsulates static content in articles that are assigned to a specific page and layout area in the article management.'
 aliases:
-    - /en/article-management/_index/
+    - /en/article-management/
 weight: 9
 ---
 

@@ -11,7 +11,7 @@ tags:
 
 
 Wir möchten für eine fiktive Vereinsseite eine Liste der Mitglieder zusammen mit einer Kartendarstellung 
-über den Dienstleister [OpenStreetMap](https://www.openstreetmap.de/) realisieren. Hierzu benötigen wir entsprechende
+über den Dienstleister [OpenStreetMap](https://www.openstreetmap.org/) realisieren. Hierzu benötigen wir entsprechende
 [Mitglieder](/de/benutzerverwaltung/mitglieder/) die jeweils einer oder mehreren 
 [Mitgliedergruppen](/de/benutzerverwaltung/mitglieder/#mitgliedergruppen) (z. B. »Turnierreiter« oder 
 »Vorstand«) zugeordnet werden können.
@@ -216,7 +216,7 @@ Die benötigten Voraussetzungen für eine Kartendarstellung liegen uns damit vor
 
 ### JavaScript-Framework »leaflet.js«
 
-Die Kartendarstellung erfolgt über [OpenStreetMap](https://www.openstreetmap.de/) und zur Erstellung der Karte benutzen 
+Die Kartendarstellung erfolgt über [OpenStreetMap](https://www.openstreetmap.org/) und zur Erstellung der Karte benutzen 
 wir das JavaScript-Framework [leaflet.js](https://leafletjs.com/). Über den 
 [leaflet Download](https://github.com/Leaflet/Leaflet/tags) findest du im Anschluß in dem ZIP-Archiv (zur Zeit Version 1.7.1) 
 das Verzeichnis »dist« mit den Dateien »leaflet.js«, »leaflet.css« und »images/marker-icon.png« vor. Basierend auf 
@@ -249,7 +249,7 @@ function createMemberMap(arrMemberData){
 	}
 
 	var mapProvider =
-	new L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+	new L.tileLayer('https://{s}.tile.openstreetmap.org/tiles/osmde/{z}/{x}/{y}.png', {
 	  attribution: '&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	});
 

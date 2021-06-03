@@ -71,7 +71,7 @@ Ein paar zusätzliche Parameter können über die `config/config.yml` konfigurie
 
 | Key | Description |
 | --- | --- |
-| `attributes` | Fügt dem `<body>`-Tag im Backend HTML-Attribute hinzu. Der Attributname muss ein gültiger HTML-Attributname sein. Für den üblichen Gebrauch sollte den Namen `data-` vorangestellt werden. |
+| `attributes` | Fügt dem `<body>`-Tag im Backend HTML-Attribute hinzu. Der Attributname muss ein gültiger HTML-Attributname sein - ihm wird automatisch `data-` vorangestellt. |
 | `custom_css` | Fügt dem Backend individuelle Stylesheets hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
 | `custom_js` | Fügt dem Backend individuelle JavaScript-Dateien hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
 | `badge_title` | Konfiguriert den Titel des Badge im Backend. |
@@ -83,8 +83,8 @@ Die folgende Konfiguration definiert einige Beispielwerte:
 contao:
     backend:
         attributes:
-            data-app-name: 'Meine App'
-            data-app-version: 1.2.3
+            app-name: 'Meine App'
+            app-version: 1.2.3
         custom_css:
             - files/backend/custom.css
         custom_js:
@@ -634,4 +634,4 @@ php vendor/bin/contao-console cache:clear --env=prod --no-warmup
 [InsertTags]: /de/artikelverwaltung/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
 [LegacyRouting]: /de/layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
-[PhpSessionSettings]: http://docs.php.net/manual/de/session.configuration.php
+[PhpSessionSettings]: https://www.php.net/manual/de/session.configuration.php

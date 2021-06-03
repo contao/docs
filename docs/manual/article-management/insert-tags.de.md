@@ -154,10 +154,13 @@ Lightbox-Bild einfügen.
 | `{{abbr::*}}`            | Abkürzungen in einem Text markieren: `{{abbr::World Wide Web}}WWW{{abbr}}`. Dies wird ersetzt mit `<abbr title="World Wide Web">WWW</abbr>`. |
 | `{{acronym::*}}`         | Akronyme in einem Text markieren: `{{acronym::Multipurpose Internet Mail Extensions}}MIME{{acronym}}`. Dies wird ersetzt mit `<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym>`. |
 | `{{ua::*}}`              | Eigenschaften des Browsers (User Agent) ausgeben: `{{ua::browser}}`. Dies wird beispielsweise ersetzt mit "chrome". |
-| `{{iflng::*}}`           | Dieses Tag wird komplett entfernt, wenn die Sprache der Seite nicht mit der Tag-Sprache übereinstimmt. Du kannst so sprachspezifische Bezeichnungen erstellen: `{{iflng::en}}Your name{{iflng::de}}Ihr Name{{iflng}}` |
-| `{{ifnlng::*}}`          | Dieses Tag wird komplett entfernt, wenn die Sprache der Seite mit der Tag-Sprache übereinstimmt. Du kannst so sprachspezifische Bezeichnungen erstellen: `{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}` |
+| `{{iflng::*}}`           | Dieses Tag wird komplett entfernt, wenn die Sprache der Seite nicht mit der Tag-Sprache übereinstimmt. Du kannst so sprachspezifische Bezeichnungen erstellen: `{{iflng::en}}Your name{{iflng::de}}Ihr Name{{iflng}}` {{% notice tip %}}
+Du kannst mit `en,de,fr` statt nur auf eine auch auf mehrere Sprachen testen. Zusätzlich kannst du auch `*` als Wildcard verwenden, was insbesondere bei Dialekten nützlich ist (bspw. gilt `de*` dann sowohl für `de_CH` als auch `de_AT`).
+{{% /notice %}} |
+| `{{ifnlng::*}}`          | Dieses Tag wird komplett entfernt, wenn die Sprache der Seite mit der Tag-Sprache (siehe auch Tipp bei `{{iflng}}` für weitere Optionen) übereinstimmt. Du kannst so sprachspezifische Bezeichnungen erstellen: `{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}` |
 | `{{image::*}}`           | Dieses Tag wird mit der Vorschauansicht eines Bildes ersetzt (wobei * eine Datenbank ID, eine UUID oder ein Pfad aus dem Dateisystem sein kann):<br>`{{image::58ca4a90-2d30-11e4-8c21-0800200c9a66?width=200&height=150}}`<br>**width**: Breite des Vorschaubildes,<br>**height**: Höhe des Vorschaubildes,<br>**alt**: Alternativer Text,<br>**class**: CSS-Klasse,<br>**rel**: rel-Attribut (z. B. "lightbox"),<br>**mode**: Modus ("proportional", "crop" oder "box"). |
-| `{{picture::*}}`         | Dieses Tag wird mit einem `<picture>`-Element und verschiedenen Bildgrößen ersetzt, abhängig von der verwendeten Bildgrößen-Konfiguration (wobei * eine Datenbank ID, eine UUID oder ein Pfad aus dem Dateisystem sein kann):<br>`{{picture::58ca4a90-2d30-11e4-8c21-0800200c9a66?size=1&template=picture_default}}`.<br>**width**: Breite des Vorschaubildes,<br>**height**: Höhe des Vorschaubildes,<br>**alt**: Alternativer Text,<br>**class**: CSS-Klasse,<br>**rel**: rel-Attribut (z. B. "lightbox"),<br>**mode**: Modus ("proportional", "crop" oder "box"),<br>**size**: ID einer Bildgröße (siehe Themes -&gt; Bildgrößen) ({{< version-tag "4.8" >}}<strong>size</strong> unterstützt die vordefinierten Bildgrößen aus `config.yml`),<br>**template**: Zu verwendendes Template (picture_default). |
+| `{{picture::*}}`         | Dieses Tag wird mit einem `<picture>`-Element und verschiedenen Bildgrößen ersetzt, abhängig von der verwendeten Bildgrößen-Konfiguration (wobei * eine Datenbank ID, eine UUID oder ein Pfad aus dem Dateisystem sein kann):<br>`{{picture::58ca4a90-2d30-11e4-8c21-0800200c9a66?size=1&template=picture_default}}`.<br>**width**: Breite des Vorschaubildes,<br>**height**: Höhe des Vorschaubildes,<br>**alt**: Alternativer Text,<br>**class**: CSS-Klasse,<br>**rel**: rel-Attribut (z. B. "lightbox"),<br>**mode**: Modus ("proportional", "crop" oder "box"),<br>**size**: ID einer Bildgröße (siehe Themes -&gt; Bildgrößen) ({{< version-tag "4.8" >}} **size** unterstützt die vordefinierten Bildgrößen aus `config.yml`),<br>**template**: Zu verwendendes Template (`picture_default`). |
+| `{{figure::*}}`          | {{< version-tag "4.11" >}} Dieses Tag wird mit einem `<figure>`-Element ersetzt, welches ein entsprechendes `<picture>`- und `<figcaption>`-Element (falls anwendbar) enthält. Wie bei `{{picture::*}}` kann der Parameter eine Datenbank ID, eine UUID oder ein Pfad aus dem Dateisystem sein. Als weitere URL-Parameter können alle vom [`FigureBuilder`][DevFigureBuilder] unterstützten Methoden eingesetzt werden:<br><br>`{{figure::58ca4a90-2d30-11e4-8c21-0800200c9a66?`<br><div style="padding-left: 2em">`size=1&`<br>`metadata[title]=Mein%20Bild&`<br>`enableLightbox=1&`<br>`options[attr][class]=main_figure&`<br>`template=image`</div>`}}`.<br><br>**size**: ID einer Bildgröße (siehe Themes -> Bildgrößen) oder vordefinierten Bildgrößen aus `config.yml`,<br>**metadata**: Erlaubt das Überschreiben von Metadaten (z.B. "alt", "title", "caption"),<br>**enableLightbox**: Generiert ein zweites Bild in Lightbox-Größe (siehe Themes -&gt; Lightbox) und fügt dem `<figure>`-Element einen Link hinzu,<br>**options**: Ein Array an Optionen, das ans Template übergeben wird und im Fall des Standard-Templates zum Setzen von HTML-Attributen genutzt werden kann,<br>**template**: Zu verwendendes Twig- oder Contao-Template (z.B. `@FooBundle/figure.html.twig` / `image`).<br><br>Alle Parameter müssen URL-kodiert angegeben werden. Siehe die  [FigureBuilder-Referenz][DevFigureBuilder] aus der Entwickler-Dokumentation für die vollständige Liste an Konfigurationsmöglichkeiten. |
 | `{{label::*}}`           | Dieses Tag wird mit einer Übersetzung ersetzt. Der erste Parameter ist der Name einer Sprachdatei oder einem Akronym (z. B. `CNT` für Länder oder `LNG` für Sprachen). Beispiele: `{{label::CNT:au}}` wird zu »Australien« und `{{label::tl_article:title:0}}` wird zu »Titel«. Beachte, dass innerhalb des Pfads zur Bezeichnung nur einfache Doppelpunkte verwendet werden. |
 | `{{version}}`            | Dieses Tag wird mit der verwendeten Contao-Version (z. B. 4.8.2) ersetzt.                            |
 | `{{request_token}}`      | Dieses Tag wird mit dem zur aktuellen Session gehörenden Request-Token ersetzt.                      |
@@ -166,6 +169,17 @@ Lightbox-Bild einfügen.
 | `{{asset::*::*}}`        | Mit diesem Tag können Pfade zu CSS und JavaScript Dateien aus Paketen eingebunden werden. Siehe die [Entwickler-Dokumentation][DevAssets]. |
 | `{{trans::*::*::*}}`     | Mit diesem Tag können Übersetzungen ausgegeben werden. Im Gegensatz zum `{{label::*}}` Insert-Tag können damit alle Übersetzungen aus dem Symfony System ausgegeben werden. Beispiel: `{{trans::MSC.updateVersion::contao_default::4.10}}`. Siehe auch die [Entwickler-Dokumentation][Translations]. |
 
+## Verschachtelte Insert-Tags
+Insert-Tags, die als Ausgabe eine ID oder Alias haben, können grundsätzlich verschachtelt werden.
+
+| Insert-Tag                       | Ausgabe                |
+|:---------------------------------|:-----------------------|
+| `{{link::{{page::id}}|absolute}}`| Generiert einen Link, mit einer absoluten Ausgabe der aktuell aufgerufenen Seite.    |
+| `{{link_url::{{page::id}}}}#sprungmarke`| Generiert einen relativen Link zur aktuellen Seite (nützlich für Onepager) | 
+
+{{% notice info %}}
+Man sollte darauf achten, keine endlosen Loops wie z. B. durch `{{insert_article::{{page::alias}}}}` zu generieren. Dies kann zum Absturz der Seite führen.
+{{% /notice %}}
 
 ## Insert-Tag-Flags
 
@@ -224,4 +238,5 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 
 
 [DevAssets]: https://docs.contao.org/dev/framework/asset-management/#accessing-assets-in-templates
+[DevFigureBuilder]: https://docs.contao.org/dev/framework/image-processing/image-studio/#setting-options
 [Translations]: https://docs.contao.org/dev/framework/translations/#accessing-translations
