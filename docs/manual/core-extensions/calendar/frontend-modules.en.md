@@ -6,13 +6,9 @@ aliases:
 weight: 20
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
+Now that you know how to manage calendars and events in the backend, we'll explain how to display this content in the frontend. The "Calendar" extension contains four frontend modules, which you can configure as usual in module management.
 
-Now that you know how to manage calendars and events in the backend, we will explain how to display this content in the frontend. The "Calendar" extension contains four new frontend modules, which you can configure as usual via the module management.
-
-![Calendar modules](/de/core-extensions/calendar/images/de/kalender-module.png?classes=shadow)
+![Calendar modules](/en/core-extensions/calendar/images/en/calendar-module.png?classes=shadow)
 
 ## Calendar
 
@@ -30,7 +26,7 @@ The frontend module "Calendar" adds a calendar to the website, in which the even
 
 ### Forwarding
 
-**Forwarding page:** Here you define the page to which a visitor is forwarded when clicking on a link in the mini calendar. On the target page the frontend module "Event list" or "Calendar" should be included.
+**Forwarding page:** Here you define the page which a visitor is forwarded when clicking on a link in the calendar. On the target page the frontend module "Event reader" should be included.
 
 ### Template settings
 
@@ -101,14 +97,14 @@ The following calendar templates are available by default:
 
 ## Event reader
 
-The frontend module "Eventleser" is used to display a specific event. The module obtains the alias of the entry via the URL, so that events can be linked with so-called [permalinks](https://de.wikipedia.org/wiki/Permalink):
+The frontend module "Event reader" is used to display a specific event. The module obtains the alias of the entry via the URL, so that events can be linked with [permalinks](https://wikipedia.org/wiki/Permalink):
 
-`www.domain.de/event/european-design-awards.html`
+`www.domain.en/event/european-design-awards.html`
 
 The keyword of the event reader is *event* and tells the module to search and output a specific event. If the entry searched for does not exist, the event reader returns an error message and the HTTP status code "404 Not found". The status code is important for search engine optimization.
 
 {{% notice info %}}
-On a single page there may only be one "reader module" at a time, regardless of the type. Otherwise, one or the other module would trigger a 404 page, because, for example, the alias of a message cannot be found in a calendar, or vice versa the alias of an event in a message archive.
+On a single page there can only be one "reader module" at a time, regardless of the type. Otherwise, one or the other module will trigger a 404 page, because, for example, the alias of a message cannot be found in a calendar, or vice versa the alias of an event in a message archive.
 {{% /notice %}}
 
 ### Module configuration
@@ -140,8 +136,8 @@ On a single page there may only be one "reader module" at a time, regardless of 
 
 **Comment template:** Here you can select the comment template.
 
-**HTML outputThe**  
- front-end module generates the following HTML code:
+**HTML output**  
+ The front-end module generates the following HTML code:
 
 ```html
 <div class="mod_eventreader block">
