@@ -137,7 +137,7 @@ On a single page there can only be one "reader module" at a time, regardless of 
 **Comment template:** Here you can select the comment template.
 
 **HTML output**  
- The front-end module generates the following HTML code:
+ The front end module generates the following HTML code:
 
 ```html
 <div class="mod_eventreader block">
