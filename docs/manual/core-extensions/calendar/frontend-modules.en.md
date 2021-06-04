@@ -97,7 +97,7 @@ The following calendar templates are available by default:
 
 ## Event reader
 
-The frontend module "Event reader" is used to display a specific event. The module obtains the alias of the entry via the URL, so that events can be linked with [permalinks](https://wikipedia.org/wiki/Permalink):
+The front end module "Event reader" is used to display a specific event. The module obtains the alias of the entry via the URL, so that events can be linked with [permalinks](https://wikipedia.org/wiki/Permalink):
 
 `www.domain.en/event/european-design-awards.html`
 
