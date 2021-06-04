@@ -91,7 +91,7 @@ personal account. This is only necessary if you are contributing to the document
 ![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow)
 
 
-### Clone the forged repository 
+### Clone the forked repository 
 
 Clone the forged repository on your local machine:
 
