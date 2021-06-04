@@ -314,7 +314,7 @@ Verfügung:
 - YAML
 - XML
 
-**Code:** Hier kannst du den gewünschten Code eingeben.
+**Code:** Hier kannst du den gewünschten Code eingeben. Beachte, dass der Code nicht ausgeführt wird.
 
 **Individuelles Template:** Hier kannst du das Standard-Template `ce_code` überschreiben.
 
@@ -332,7 +332,7 @@ Das Element generiert folgenden HTML-Code:
 
 Mit dem Inhaltselement »Markdown« wird aus einem Markdown-Text HTML-Code erzeugt.
 
-**Code:** Hier kannst du den gewünschten Code eingeben. Beachte, dass der Code nicht ausgeführt wird.
+**Code:** Hier kannst du den gewünschten Code eingeben. 
 
 **Individuelles Template:** Hier kannst du das Standard-Template `ce_markdown` überschreiben.
 
@@ -426,8 +426,8 @@ Wird zu folgendem HTML-Code konvertiert:
 Um einen ganzen Absatz in Code zu konvertieren, den Text mit vier Leerzeichen einrücken.
 
 ```md
-Schrift mit fester Laufweite …
-… über mehrere Zeilen
+    Schrift mit fester Laufweite ...
+    ... über mehrere Zeilen
 ```
 
 #### Zitat-Block
@@ -1000,7 +1000,7 @@ Das Inhaltselement »YouTube« fügt dem Artikel ein YouTube-Video hinzu.
 - Die Contao-Seitensprache verwenden
 - Anmerkungen verstecken
 - Das YouTube-Logo ausblenden
-- Keine ähnlichen Videos am Ende zeigen
+- Ähnliche Videos auf denselben Kanal beschränken
 - Die Linkleiste in der Vorschau ausblenden
 - Die youtube-nocookie.com-Domain verwenden
 
@@ -1013,7 +1013,7 @@ deaktivieren.
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.
 
 **Seitenverhältnis:** Hier kannst du das 
-[Seitenverhältnis des Videos](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) bestimmen, um es responsive zu 
+[Seitenverhältnis des Videos](https://de.wikipedia.org/wiki/Seitenverh%C3%A4ltnis#Fernsehen_und_Video) bestimmen, um es responsive zu 
 machen.
 
 {{< version "4.8" >}}
@@ -1086,7 +1086,7 @@ eingeben.
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.
 
 **Seitenverhältnis:** Hier kannst du das 
-[Seitenverhältnis des Videos](https://de.wikipedia.org/wiki/Bildaufl%C3%B6sung#Video) bestimmen, um es responsive zu 
+[Seitenverhältnis des Videos](https://de.wikipedia.org/wiki/Seitenverh%C3%A4ltnis#Fernsehen_und_Video) bestimmen, um es responsive zu 
 machen.
 
 {{< version "4.8" >}}
@@ -1146,6 +1146,8 @@ erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](.
 {{< version "4.8" >}}
 
 **Im Browser anzeigen:** Zeige die Datei im Browser an, anstatt den Download-Dialog zu öffnen.
+
+**Metadaten überschreiben:** Die Metadaten aus der Dateiverwaltung überschreiben.
 
 **Link-Text:** Der Link-Text wird anstelle des Dateinamens angezeigt.
 

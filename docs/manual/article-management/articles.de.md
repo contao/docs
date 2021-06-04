@@ -57,7 +57,7 @@ mehr als ein Artikel pro Layoutbereich vorhanden ist.
 
 ## Syndikation
 
-In den Syndikation legst du fest, wie ein Artikel syndiziert werden kann. Als 
+Unter Syndikation legst du fest, wie ein Artikel syndiziert werden kann. Als 
 »[Content-Syndication](https://de.wikipedia.org/wiki/Content-Syndication)« bezeichnet man die Mehrfachverwendung 
 medialer Inhalte, womit im Online-Bereich vor allem die Verknüpfung von Inhalten verschiedener Webseiten gemeint ist. 
 Folgende Möglichkeiten stehen zur Auswahl:
@@ -68,7 +68,7 @@ Folgende Möglichkeiten stehen zur Auswahl:
 | Auf&nbsp;Facebook&nbsp;teilen   | Diese Schaltfläche öffnet ein Popup-Fenster, in dem du den Artikel direkt auf Facebook teilen kannst. Du benötigst dazu ein Facebook-Konto.                                                                         |
 | Auf Twitter teilen              | Diese Schaltfläche öffnet ein Popup-Fenster, in dem du den Artikel direkt auf Twitter teilen kannst. Die Verkürzung der URL mithilfe von [tinyurl.com](https://tinyurl.com/) nimmt Contao dabei automatisch vor.    |
 
-**Syndikation:** Hier wählst du die Syndikationsmöglichkeiten aus.
+**Syndikation:** Hier wählst du die Syndikationsmöglichkeiten aus, die im Frontend angezeigt werden sollen.
 
 
 ## Template-Einstellungen
