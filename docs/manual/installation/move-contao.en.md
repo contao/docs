@@ -90,13 +90,13 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
 
 ## Installing Contao
 
-1. Make sure you have correctly set up your [hosting configuration](/en//installation/install-contao/#hosting-configuration).
+1. Make sure you have correctly set up your [hosting configuration](/en/installation/install-contao/#hosting-configuration).
 2. Then we let Composer do its work – as we also transferred the `composer.lock` file containing all package version
    details from the original server, Composer will replicate the identical state as before.
    
    To do so, either use the [Contao Manager](/en/installation/install-contao#installation-via-the-contao-manager) or the 
-   [command line](/en//installation/install-contao#installation-via-the-command-line) like you would with a regular
+   [command line](/en/installation/install-contao#installation-via-the-command-line) like you would with a regular
    installation.
-3. Run the [install tool](/en//installation/contao-installtool) to configure the new database connection. 
+3. Run the [install tool](/en/installation/contao-installtool) to configure the new database connection. 
 
 That's it! You're now ready to use your Contao installation on a new location.
