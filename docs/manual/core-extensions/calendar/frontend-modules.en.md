@@ -26,7 +26,7 @@ The frontend module "Calendar" adds a calendar to the website, in which the even
 
 ### Forwarding
 
-**Forwarding page:** Here you define the page which a visitor is forwarded when clicking on a link in the calendar. On the target page the frontend module "Event reader" should be included.
+**Forwarding page:** Here you define the page which a visitor is forwarded when clicking on a link in the calendar. On the target page the front end module "Event reader" should be included.
 
 ### Template settings
 
