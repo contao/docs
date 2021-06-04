@@ -93,7 +93,7 @@ personal account. This is only necessary if you are contributing to the document
 
 ### Clone the forked repository 
 
-Clone the forged repository on your local machine:
+Clone the forked repository on your local machine:
 
 Create a directory named `contao` and change to it with **c**hange **d**irectory.
 
