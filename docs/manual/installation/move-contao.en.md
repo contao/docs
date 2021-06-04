@@ -23,7 +23,7 @@ To reduce the risk of conflicts, make sure your source and target server both ru
 You can either create a MySQL dump with the graphical database administration tool [phpMyAdmin](https://www.phpmyadmin.net/)
 or use the `mysqldump` program from the command line.
 
-{{< tabs >}}
+{{< tabs groupId="mysql-transfer" >}}
 {{% tab name="phpMyAdmin" %}}
 Log into "phpMyAdmin", select the database you want to export, select the "Export" tab in the upper menu and click "Ok".
 
@@ -47,7 +47,7 @@ A `my_dump.sql.gz` file containing the dumps will be saved in the current direct
 
 
 ### Import the database (target)
-{{< tabs >}}
+{{< tabs groupId="mysql-transfer" >}}
 {{% tab name="phpMyAdmin" %}}
 Open "phpMyAdmin" on the target server and create a new database for your Contao application. Depending on the server
 configuration, this might only be possible via the provider's administration interface (e.g. Confixx, Plesk or cPanel). 
