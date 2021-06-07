@@ -169,6 +169,10 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 </div>
 <!-- indexer::continue -->
 ```
+**Einbindung**
+Der Navigationspfad sollte nicht in die Kopfzeile (Header) eingefügt werden, da die Eigenschaft »breadcrumb« von
+dem Schema (z. B. schema.org) nicht als Objekt des Typs WPHeader erkannt wird. Die korrekte Einbindung kann z. B.
+mit dem [»Testtool für strukturierte Daten«](https://search.google.com/structured-data/testing-tool) geprüft werden.
 
 
 ## Quicknavigation
