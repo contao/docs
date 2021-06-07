@@ -7,7 +7,7 @@ weight: 50
 ---
 
 Moving a Contao installation from one location to another (e.g. from a local installation to a live server) is almost
-the same as [installing](/en/installation/install-contao) but also includes transferring the existing database and
+the same as [installing](../install-contao) but also includes transferring the existing database and
 application related files.
 
 1. [Transferring the database](#transferring-the-database)
@@ -15,7 +15,7 @@ application related files.
 3. [Installing Contao](#installing-contao)
 
 {{% notice warning %}}
-To reduce the risk of conflicts, make sure your source and target server both run the **[same PHP version](/en/installation/system-requirements/#minimum-php-requirements)**.
+To reduce the risk of conflicts, make sure your source and target server both run the **[same PHP version](../system-requirements/#minimum-php-requirements)**.
 {{% /notice %}}
 
 ## Transferring the database
@@ -90,13 +90,13 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
 
 ## Installing Contao
 
-1. Make sure you have correctly set up your [hosting configuration](/en/installation/install-contao/#hosting-configuration).
+1. Make sure you have correctly set up your [hosting configuration](../install-contao/#hosting-configuration).
 2. Then we let Composer do its work – as we also transferred the `composer.lock` file containing all package version
    details from the original server, Composer will replicate the identical state as before.
    
-   To do so, either use the [Contao Manager](/en/installation/install-contao#installation-via-the-contao-manager) or the 
-   [command line](/en/installation/install-contao#installation-via-the-command-line) like you would with a regular
+   To do so, either use the [Contao Manager](../install-contao#installation-via-the-contao-manager) or the 
+   [command line](../install-contao#installation-via-the-command-line) like you would with a regular
    installation.
-3. Run the [install tool](/en/installation/contao-installtool) to configure the new database connection. 
+3. Run the [install tool](../contao-installtool) to configure the new database connection. 
 
 That's it! You're now ready to use your Contao installation on a new location.
