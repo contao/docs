@@ -8,7 +8,7 @@ weight: 20
 
 Now that you know how to manage calendars and events in the back end, we'll explain how to display this content in the front end. The "Calendar" extension contains four front end modules, which you can configure as usual in module management.
 
-![Calendar modules](/en/core-extensions/calendar/images/en/calendar-module.png?classes=shadow)
+![Calendar modules](/de/core-extensions/calendar/images/en/calendar-module.png?classes=shadow)
 
 ## Calendar
 
