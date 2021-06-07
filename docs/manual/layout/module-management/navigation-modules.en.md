@@ -140,6 +140,12 @@ The front-end module "Individual Navigation" adds a navigation menu to the Web p
 <!-- indexer::continue -->
 ```
 
+**Inclusion**
+The navigation path should not be inserted in the header, because the property "breadcrumb" is not recognized by
+the schema (e.g. schema.org) does not recognize it as an object of type WPHeader. The correct inclusion can be checked e.g.
+with the ["Structured Data Test Tool"](https://search.google.com/structured-data/testing-tool).
+
+
 ## Quick navigation
 
 The front-end module "Quick-navigation" adds a drop-down menu to the website, with which a visitor can jump directly to a specific page.
