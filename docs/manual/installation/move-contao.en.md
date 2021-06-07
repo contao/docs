@@ -18,6 +18,7 @@ application related files.
 To reduce the risk of conflicts, make sure your source and target server both run the **[same PHP version](../system-requirements/#minimum-php-requirements)**.
 {{% /notice %}}
 
+
 ## Transferring the database
 ### Export the database (source)
 You can either create a SQL dump with the graphical database administration tool [phpMyAdmin](https://www.phpmyadmin.net/)
@@ -69,6 +70,7 @@ Enter your database password if asked for.
 {{% /tab %}}
 {{< /tabs >}}
 
+
 ## Transferring the files
 The following files and folders need to be transferred from the source to the target machine.
 
@@ -82,6 +84,7 @@ If you still have old extensions within `system/modules/` or if you have created
 Contao 4.8** `app/Resources/contao/`), then they have to be transferred as well.
 
 You can use an FTP client for this task or, if you prefer the command line, use `scp`:
+
 ```bash
 cd /path/to/project
 
@@ -91,7 +94,7 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
 ## Installing Contao
 
 1. Make sure you have correctly set up your [hosting configuration](../install-contao/#hosting-configuration).
-2. Then we let Composer do its work – as we also transferred the `composer.lock` file containing all package version
+2. Then we let *Composer* do its work – as we also transferred the `composer.lock` file containing all package version
    details from the original server, Composer will replicate the identical state as before.
    
    To do so, either use the [Contao Manager](../install-contao#installation-via-the-contao-manager) or the 
