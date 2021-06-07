@@ -92,10 +92,10 @@ Um eine neue Frage anzulegen, klicke auf
 
 **Frage:** Hier kannst du die Frage eingeben.
 
-**FAQ-Alias:** Der Alias einer Frage ist eine eindeutige und aussagekräftige Referenz, über die du sie in deinem 
+**FAQ-Alias:** Der Alias einer Frage ist eine eindeutige und aussagekräftige Referenz, über die du diese in deinem 
 Browser aufrufen kannst.
 
-**Autor:** Hier kannst du den Autor des Events ändern.
+**Autor:** Hier kannst du den Autor der Frage ändern.
 
 
 ### Antwort

@@ -1,40 +1,36 @@
 ---
 title: 'Update extensions'
-description: 'To find a suitable extension for a desired function, you have three options.'
+description: 'Updating Extensions with the Contao Manager or via command line'
 aliases:
     - /en/installation/update-extensions/
 weight: 70
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
 ## Updating with the Contao Manager
 
-You first need to log back in to Contao Manager. To do so, you need to`/contao-manager.phar.php` access your domain again and enter your access data.
+You first need to log in to Contao Manager. To do so, call up your domain again with the addition `/contao-manager.phar.php` and enter your access data.
 
-If you want to update the extension "terminal42/contao-easy\_themes", switch to the "Packages" tab and click the "Update" button next to the extension. Of course you can also select other extensions to update. Click on "Apply changes" to start the update. The update can take several minutes. Details of the update process can be displayed by clicking on the following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+If you want to update the extension "terminal42/contao-easy\_themes", switch to the "Packages" tab and click the "Update" button next to the extension. Of course you can also reserve other extensions to update. Click on "Apply changes" to start the update. The update can take several minutes. Details of the update process can be displayed by clicking on the following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
 
-![Update extensions in Contao Manager](/de/installation/images/de/erweiterungen-im-contao-manager-aktualisieren.png?classes=shadow)
+![Update extensions in Contao Manager](/de/installation/images/en/update-extensions-in-contao-manager.png?classes=shadow)
 
-Once the Contao Manager has updated the extension(s), you have to [call](../contao-installtool/) the [Contao install tool](../contao-installtool/) to update the database if necessary.
+Once the Contao Manager has updated the extension(s), you have to run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
 
-## Update via the command line {#update via the command line}
+## Update via the command line
 
-You have logged on to your server with your user name and domain.
+You have logged in to your server with your username and domain.
 
 ```bash
-ssh benutzername@example.com
+ssh username@example.com
 ```
 
-Change to the directory of your Contao installation on the console.
+Go to the directory of your Contao installation.
 
 ```bash
 cd www/example/
 ```
 
-To get the latest version of an extension and update it`composer.lock`, the command is`update` executed. On some hosters, this will cause the process to fail because the system requirements are too high and the update will fail. In this case you should use theContao[ Manager](#aktualisierung-mit-dem-contao-manager).
+To get the latest version of an extension and update the `composer.lock`, the command `update` is executed. On some hosters, this will cause the process to fail because the system requirements are too high and the update will fail. In this case you should use the [Contao Manager](#updating-with-the-contao-manager).
 
 **Update a single extension:**
 
@@ -48,7 +44,7 @@ php composer.phar update terminal42/contao-easy_themes
 php composer.phar update terminal42/notification_center terminal42/contao-leads
 ```
 
-You can also use the command `outdated`to display a list of installed extensions for which updates are available, including their current and latest versions, in advance of the update.
+To display a list of installed extensions for which updates are available, including their current and latest versions, you can also use the command `outdated`.
 
 ```bash
 php composer.phar outdated
@@ -66,4 +62,4 @@ php-http/httplug            v1.1.0 v2.0.0  HTTPlug, the HTTP client abstraction 
 sensiolabs/security-checker v5.0.3 v6.0.2  A security checker for your composer.lock
 ```
 
-Once the update of the extension(s) is complete, you need to [run](../contao-installtool/) the [Contao install tool](../contao-installtool/) to update the database if necessary.
+Once the update of the extension(s) is complete, you need to  run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
