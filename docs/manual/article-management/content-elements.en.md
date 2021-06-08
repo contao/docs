@@ -8,7 +8,7 @@ weight: 20
 
 To make the creation of content as intuitive as possible, Contao provides a content element for each content type that is tailored to its requirements. You can create an unlimited number of content elements per article and restrict access to individual elements as needed.
 
-![Restrict access to a content element](/de/article-management/images/de/restrict-access-to-a-module.png?classes=shadow)
+![Restrict access to a content element](/de/article-management/images/en/restrict-access-to-a-module.png?classes=shadow)
 
 **Protect element:** The content element is invisible by default and is only displayed after a member has logged in to the frontend.
 
@@ -37,7 +37,7 @@ The element generates the following HTML code:
 
 The content element "Text" adds formatted text to the article. The input takes place via a so-called Rich Text Editor, which allows you to apply some formatting, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/), an Open Source editor by the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
 
-![The Rich Text Editor TinyMCE](/de/article-management/images/de/the-tinymce-rich-text-editor.png?classes=shadow)
+![The Rich Text Editor TinyMCE](/de/article-management/images/en/the-tinymce-rich-text-editor.png?classes=shadow)
 
 **Heading:** Here you can enter a headline.
 
@@ -51,7 +51,7 @@ You can add an image to the text element, which is then surrounded by your text.
 
 **Source file:** Here you select the image to be inserted. If you have not yet transferred the image to the server, you can upload it here without leaving the input mask.
 
-![Adding an image to a text](/de/article-management/images/de/add-an-image-to-a-text.png?classes=shadow)
+![Adding an image to a text](/de/article-management/images/en/add-an-image-to-a-text.png?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
@@ -129,7 +129,7 @@ The content element has no enclosing HTML markup.
 
 The content element "List" adds a non-nested list to the article. You can choose between an ordered list and an unordered list enumeration. A JavaScript assistant supports you in creating and editing the list items.
 
-![JavaScript wizard for listings](/de/article-management/images/de/javascript-assistant-for-lists.png?classes=shadow)
+![JavaScript wizard for listings](/de/article-management/images/en/javascript-assistant-for-lists.png?classes=shadow)
 
 With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon) to the field name "List entries" you open the CSV import wizard, with which you can import list data from a CSV file. The CSV file must have been transferred to the upload directory before.
 
@@ -163,7 +163,7 @@ The content element "Table" adds a table to the article. A JavaScript assistant 
 - ![Delete the column/row](/de/icons/delete.svg?classes=icon) **Delete the column/row**
 - ![Move the element by dragging and dropping it](/de/icons/drag.svg?classes=icon)**Move the row by dragging and dropping it**
 
-![JavaScript wizard for tables](/de/article-management/images/de/javascript-assistant-forr-tables.png?classes=shadow)
+![JavaScript wizard for tables](/de/article-management/images/en/javascript-assistant-for-tables.png?classes=shadow)
 
 With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon) to the field label "Table entries" you open the CSV import wizard, with which you can import table data from a CSV file. The CSV file has to be transferred to the upload directory first.
 
@@ -628,7 +628,7 @@ The element generates the following HTML code:
 
 The Hyperlink content element adds a link to an external Web page or e-mail address to the article. Of course, you can also enter hyperlinks in the text element using the Rich Text Editor.
 
-![Creating a hyperlink](/de/article-management/images/de/create-a-hyperlink.png?classes=shadow)
+![Creating a hyperlink](/de/article-management/images/en/create-a-hyperlink.png?classes=shadow)
 
 **Link target:** Enter the link target including the network protocol. For web pages, the network protocol usually is `http://` or `https://`, for e-mail addresses use `mailto:` and for phone numbers use `tel:`. Contao automatically encrypts e-mail addresses so that they cannot be read by spambots.
 
@@ -646,7 +646,7 @@ The Hyperlink content element adds a link to an external Web page or e-mail addr
 
 If you select the **Create an image link** option, you can create an image link instead of a text link, or alternatively, you can create an image element and link to it.
 
-![Create an image link](/de/article-management/images/de/create-an-image-link.png?classes=shadow)
+![Create an image link](/de/article-management/images/en/create-an-image-link.png?classes=shadow)
 
 **Source file:** Here you select the image to be used.
 
@@ -709,7 +709,7 @@ The element generates the following HTML code:
 
 The content element "Image" adds an image to the article. An image can have a large view or it can be an image link to a specific URL.
 
-![Create a screen element](/de/article-management/images/de/create-an-imageelement.png?classes=shadow)
+![Create a screen element](/de/article-management/images/en/create-an-imageelement.png?classes=shadow)
 
 **Source file:** Here you select the image to be used.
 
@@ -747,10 +747,9 @@ div class="ce_image first last block">
 
 ## Gallery
 
-The content element "Picture gallery" adds a picture gallery to the article, i.e. a collection of several thumbnails that are listed in a list and are enlarged when clicked. With so many images, the gallery can be spread over several pages.
+The content element "Gallery" adds a picture gallery to the article, i.e. a collection of several thumbnails that are listed in a list and are enlarged when clicked. With so many images, the gallery can be spread over several pages.
 
-<!-- no need to localize image -->
-![The picture gallery in the frontend](/de/article-management/images/de/die-bildergalerie-im-frontend.png?classes=shadow)
+![The gallery in the frontend](/de/article-management/images/en/the-gallery-in-the-frontend.png?classes=shadow)
 
 **Source files:** Here you can select one or more folders or files to be included in the gallery. If you select a folder, Contao will automatically add all images in the folder to the gallery. You can rearrange the individual images by dragging them.
 
@@ -1041,7 +1040,7 @@ The element generates the following HTML code:
 
 The content element "Downloads" adds several download links to the article. Clicking on a link opens the "Save file as ..." dialog and you can save the file on your local computer.
 
-![The Downloads element in the frontend](/de/article-management/images/de/the-downloads-element-in-frontend.png?classes=shadow)
+![The Downloads element in the frontend](/de/article-management/images/en/the-downloads-element-in-frontend.png?classes=shadow)
 
 The special feature of Contao is that these download links also work with protected files that you cannot access directly from your browser. This way, you can easily create a protected download area. For more information, see the section [File management](/en/file-manager/).
 
@@ -1172,7 +1171,7 @@ The content element "Comments" offers visitors the possibility to leave comments
 
 The management of the comments your visitors make is done centrally in the backend with the module "Comments", which you can find in the navigation in the group Content. All comments are displayed there, no matter if they refer to a content element, an article or a blog post. If you want, you can filter the list of comments by their origin or parent element.
 
-![Filter comments by origin](/de/article-management/images/de/filter-comments-by-origin.png?classes=shadow)
+![Filter comments by origin](/de/article-management/images/en/filter-comments-by-origin.png?classes=shadow)
 
 If you have enabled the "Moderate Comments" option, you can check and approve new comments in the comment manager before they appear on the website. This will help you to prevent spam attempts, for example.
 
