@@ -1,48 +1,45 @@
 ---
-title: Article
+title: Articles
 description: 'Each article is assigned to a specific page and layout area.'
 aliases:
     - /en/article-management/articles/
 weight: 10
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
 Article management is a separate module in Contao that you can *find* in the navigation at the top of the *Content* group. Each article is assigned to a specific page and layout area. In contrast to too many other CMSs, the inclusion of articles in Contao is not limited to the main column, so you can design your website flexibly.
 
-![The article management](/de/article-management/images/de/die-artikelverwaltung.png?classes=shadow)
+![The article management](/de/article-management/images/en/articlemanagement.png?classes=shadow)
 
-Each page can contain any number of articles, which are displayed one below the other within their layout area in the order determined by you. Contao automatically detects whether the whole article or only the text followed by a `Weiterlesen`link should be displayed.
+Each page can contain any number of articles, which are displayed one below the other within their layout area in the order determined by you. Contao automatically detects whether the whole article or only the text followed by a `Read more` link should be displayed.
 
-![Several articles with teaser text](/de/article-management/images/de/mehrere-artikel-mit-teasertext.png?classes=shadow)
+![Several articles with teaser text](/de/article-management/images/en/multiple-articles-with-teasertext.png?classes=shadow)
 
-You assign an item to a layout part in the item settings in the Display in field. The quickest way to access the article settings is to use the **Edit Article Settings** navigation![Edit the article settings](/de/icons/header.svg?classes=icon) icon.
+You assign an article to a layout area in the article's settings in the "Display in" field. The quickest way to access the article settings is to use the **Edit the article settings** buttton 
+![Edit the article settings](/de/icons/header.svg?classes=icon).
 
 ## Article aliases
 
-The alias of an article is a unique and meaningful reference that you can use to call up an article in your browser. The alias allows you to use the following URL:
+The alias of an article is a unique and meaningful reference that you can use to view an article in your browser. The alias allows you to use the following URL:
 
-`unternehmen/articles/unser-team.html`
+`company/articles/our-team.html`
 
-You may wonder why it is possible to call up an article directly in the frontend. In the introductory chapter it was mentioned that visitors in the frontend can only access pages and never specific content.
+You might wonder why it is possible to view an article directly in the frontend. In the introductory chapter it was mentioned that frontend visitors can only access pages and never specific content.
 
-But if you look closely, you will see that the page is still part of the URL. Strictly speaking, this is where the page is called up and the display of the article module in the main column is changed; all other articles that are not included in the main column are still displayed as normal.
+Looking closely at the URL, you see that the page is still part of the URL. What happens is that the page is requested and additionally the display of the article module in the main column is modified; all other articles not included in the main column are displayed as normal.
 
 ## Teaser text
 
-A teaser text is a short summary of an article, which can be displayed in an overview instead of the actual article. Contao automatically detects whether the whole article or only the teaser text should be displayed.
+A teaser text is a short summary of an article, which can be displayed as an overview instead of the complete article. Contao automatically detects whether the complete article or only the teaser text should be displayed.
 
 **Teaser CSS ID/Class:** Here you can assign a CSS ID and class to the teaser.
 
-**Show teaser text:** If this option is selected, Contao automatically displays the teaser text of the article if there is more than one article per layout area.
+**Show teaser text:** If this option is selected, Contao automatically displays the teaser text of the article if there is more than one article in the respective layout area.
 
 **Teaser text:** Here you enter the teaser text using the rich text editor.
 
 ## Syndication
 
-In the syndication you define how an article can be syndicated.[ Content Syndication](https://de.wikipedia.org/wiki/Content-Syndication)" is the term used to describe the multiple use of media content, which in the online sector refers primarily to the linking of content from different websites:
+In the syndication you define how an article can be syndicated. "[Content Syndication](https://de.wikipedia.org/wiki/Content-Syndication)" is the term used to describe the multiple use of media content. In the online sector it primarily refers to the linking of content from other websites:
 
 | Name | Explanation |
 | ---- | ----------- |
@@ -50,11 +47,11 @@ In the syndication you define how an article can be syndicated.[ Content Syndica
 | Share on Facebook | This button opens a pop-up window where you can share the article directly on Facebook. You will need a Facebook account to do this. |
 | Share on Twitter | This button opens a pop-up window where you can share the article directly on Twitter. Contao automatically shortens the URL using [tinyurl.com](https://tinyurl.com/). |
 
-**Syndication:** Here you select the syndication options.
+**Syndication:** Here you select the syndication options that will be available in the front end.
 
 ## Template settings
 
-**Individual template:** Here you can overwrite the standard `mod_article`template.
+**Individual template:** Here you can overwrite the standard `mod_article` template.
 
 ## Access protection
 
