@@ -35,8 +35,8 @@ module "Newsletter list". This target page should contain the module "Newsletter
 
 ### Own SMTP server
 
-Without specifying a separate SMTP server, the data is [sent](https://en.wikipedia.org/wiki/Sendmail) via [sendmail]
-(https://en.wikipedia.org/wiki/Sendmail), which can lead to problems.
+Without specifying a separate SMTP server, the data is sent via [sendmail](https://en.wikipedia.org/wiki/Sendmail), 
+which can lead to problems.
 
 {{% notice info %}}
 We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/settings/#e-mail-sending-configuration).
