@@ -8,7 +8,7 @@ weight: 50
 ---
 
 Der Umzug einer Contao Installation (z.&nbsp;B. vom lokalen System auf den Live-Server) läuft fast genauso ab wie eine
-[Neuinstallation](../install-contao). Hinzu kommen der Transfer der bestehenden Datenbank sowie anwendungsspezifische
+[Neuinstallation](../contao-installieren/). Hinzu kommen der Transfer der bestehenden Datenbank sowie anwendungsspezifische
 Dateien.
 
 1. [Datenbank übertragen](#datenbank-übertragen)
@@ -99,7 +99,7 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
 
 ## Contao installieren
 
-1. Stelle sicher, dass deine  [Hosting-Konfiguration](../install-contao/#hosting-konfiguration) korrekt ist.
+1. Stelle sicher, dass deine  [Hosting-Konfiguration](../contao-installieren/#hosting-konfiguration) korrekt ist.
 2. Führe dann eine Installation mit *Composer* aus – da du zuvor auch die `composer.lock`-Datei übertragen hast, die
    Details über alle installierten Paket-Versionen enthält, wird Composer den identischen Stand wie auf dem Quellsystem
    herstellen.
