@@ -327,7 +327,7 @@ class Example
         $this->slug = $slug;
     }
 
-    public function getSlug(string $text, string $locale = 'en', string $validChars = '0-9a-zA-Z'): string
+    public function getSlug(string $text, string $locale = 'en', string $validChars = '0-9a-z'): string
     {
         $options = [
             'locale' => $locale,
