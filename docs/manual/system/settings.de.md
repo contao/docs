@@ -444,7 +444,7 @@ Beschreibung.
 | `adminEmail` | [E-Mail-Adresse des Systemadministrators](#globale-einstellungen). |
 | `allowedDownload` | [Erlaubte Download-Dateitypen](#dateien-und-bilder). |
 | `allowedTags` | [Erlaubte HTML-Tags](#sicherheitseinstellungen). |
-| `characterSet` | Der von Contao benutzte Zeichensatz. Standard: `utf-8` |
+| `characterSet` | Der von Contao benutzte Zeichensatz. _(veraltet)_ Nutze den Parameter `kernel.charset` stattdessen. Standard: `UTF-8`. |
 | `dateFormat` | [Datumsformat](#datum-und-zeit). |
 | `datimFormat` | [Datums- und Zeitformat](#datum-und-zeit). |
 | `defaultChmod` | [Standard-Zugriffsrechte](#standard-zugriffsrechte). |
