@@ -37,6 +37,10 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | ctable             | Child tables (`array`)            | Name of the related child tables (table.id = ctable.pid).                                                                                       |
 | dataContainer      | Data Container (`string`)         | `Table` (database table)<sup>1</sup>, `File` (local configuration file) or `Folder` (file manager).                                                               |
 | markAsCopy         | Field name (`string`)             | Appends "(copy)" to this field when copying a record (Contao __4.6__ and up).                                                                         |
+| uploadPath         | Field name (`string`)             | Only for `Folder`: Path to the root folder of the file manager (Contao __4.12__ and up).                                                                       |
+| validFileTypes     | File extensions (`string`)        | Only for `Folder`: Limits the file manager to certain file types (comma separated list).                                                                     |
+| editableFileTypes  | File extensions (`string`)        | Only for `Folder`: Limits the file types that can be edited with the source code editor (comma separated list) (Contao __4.12__ and up).        |
+| databaseAssisted   | true/false (`bool`)               | Only for `Folder`: If true, the file structure is synchornized with a database table.                                                            |
 | closed             | true/false (`bool`)               | If true, you cannot add further records to the table.                                                                                           |
 | notEditable        | true/false (`bool`)               | If true, the table cannot be edited.                                                                                                            |
 | notDeletable       | true/false (`bool`)               | If true, records in the table cannot be deleted.                                                                                                |
