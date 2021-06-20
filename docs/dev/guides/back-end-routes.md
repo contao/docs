@@ -73,7 +73,7 @@ back end route:
   That way you are telling Contao, that this route belongs to the back end and should
   be handled accordingly.
 
-Be sure to have imported your bundle's Controllers in your `routing.yml` *before*
+Be sure to have imported your bundle's Controllers in your `routes.yaml` *before*
 the `ContaoCoreBundle` routes.
 
 ```yaml

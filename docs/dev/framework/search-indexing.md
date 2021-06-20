@@ -55,7 +55,7 @@ to the browser, which may extend the time needed to finish the response.
 This is why you can configure the behaviour of the `SearchIndexListener` as follows:
 
 ```yaml
-# config/config.yml
+# config/config.yaml
 contao:
     search:
         listener:
@@ -76,7 +76,7 @@ within the MySQL database that holds all the other content.
 If you build your own search indexer, you might want to disable the core search indexer:
 
 ```yaml
-# config/config.yml
+# config/config.yaml
 contao:
     search:
         default_indexer:

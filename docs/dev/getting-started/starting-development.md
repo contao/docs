@@ -66,23 +66,34 @@ configurations, if present:
 | `.env`                   | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
 | `.env.local`             | Loaded if both `.env` and `.env.local` are found. Overrides parameters for local development. |
 | `.env.dist`              | Loaded if `.env` is not found. Contains default parameters for the application.               |
-| `config/config.yml`      | Configuration of any bundle/package/extension.                                                |
-| `config/config_dev.yml`  | Configuration for the `dev` environment.                                                      |
-| `config/config_prod.yml` | Configuration for the `prod` environment.                                                     |
-| `config/parameters.yml`  | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
-| `config/routing.yml`     | Definition of application specific routes.                                                    |
-| `config/services.yml`    | {{< version-tag "4.9" >}} Definition of services.<sup>2</sup>                                 |
+| `config/config.yaml`      | Configuration of any bundle/package/extension.                                                |
+| `config/config_dev.yaml`  | Configuration for the `dev` environment.                                                      |
+| `config/config_prod.yaml` | Configuration for the `prod` environment.                                                     |
+| `config/parameters.yaml`  | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
+| `config/routes.yaml`     | Definition of application specific routes.<sup>2</sup>                                                    |
+| `config/services.yaml`    | {{< version-tag "4.9" >}} Definition of services.<sup>3</sup>                                 |
+
+{{% notice info %}}
+Contao versions _prior_ to **4.9** only support the `*.yml` file extension.
+{{% /notice %}}
 
 {{% notice note %}}
 <sup>1</sup> Contao still supports the legacy way of defining parameters in a Symfony
-application through the `parameters.yml`. However it is best-practice to use the
+application through the `parameters.yaml`. However it is best-practice to use the
 `.env` files instead. See also Symfony's documentation about the 
 [Dotenv Component](https://symfony.com/doc/current/components/dotenv.html) for more 
 information about the `.env*` files.
 {{% /notice %}}
 
+{{% notice note %}}
+<sup>2</sup> Contao versions **4.6**, **4.7** and **4.8** only support the `routing.yml` file. Starting with Contao **4.9** all 4 variants 
+(`routes.yaml`, `routing.yaml`, `routes.yml` and `routing.yml`) are supported. Prior to Contao **4.6** you will need to implement an 
+[`App\ContaoManager\Plugin`](/framework/manager-plugin/#the-application-specific-manager-plugin) that implements the 
+[`RoutingPluginInterface`](/framework/manager-plugin/#the-routingplugininterface).
+{{% /notice %}}
+
 {{% notice tip %}}
-<sup>2</sup> While Contao versions prior to **4.9** do not load a `config/services.yml` automatically, 
+<sup>3</sup> While Contao versions prior to **4.9** do not load a `config/services.yml` automatically, 
 you can still import it in your `config/config.yml` via
 
 ```yml
@@ -156,7 +167,7 @@ or class interfaces) - and thus enables quick development of Contao content elem
 hooks, callbacks etc.
 
 ```yaml
-# config/services.yml
+# config/services.yaml
 services:
     _defaults:
         autowire: true
@@ -173,18 +184,18 @@ services:
 ```
 
 ```yaml
-# config/routing.yml
+# config/routes.yaml
 app.controller:
     resource: ../src/Controller
     type: annotation
 ```
 
 {{% notice note %}}
-The above `services.yml` and `routing.yml` also contain configurations for using
+The above `services.yaml` and `routes.yaml` also contain configurations for using
 controllers and routes. You will need to create the `src/Controller/` folder, otherwise
 there will be an error during cache warmup. If you do not plan to use any controllers,
-simply remove the `routing.yml` and the the respective service registration from 
-the `services.yml`.
+simply remove the `routes.yaml` and the the respective service registration from 
+the `services.yaml`.
 {{% /notice %}}
 
 Once this is configured, hooks, callbacks, content elements and front end modules
@@ -199,8 +210,8 @@ example.
 Starting with Contao **4.9** (Managed Edition), any class within the `App\` namespace 
 within `src/` will be automatically registered as a service, with autowiring and
 autoconfiguration enabled. Controllers as services will work as well. You can still 
-provide your own `services.yml` in order to adjust the service registration to your 
-needs. Keep in mind that you still need to provide your own `routing.yml` in order 
+provide your own `services.yaml` in order to adjust the service registration to your 
+needs. Keep in mind that you still need to provide your own `routing.yaml` in order 
 to register your routes.
 {{% /notice %}}
 

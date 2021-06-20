@@ -257,7 +257,7 @@ for your application, an extension or bundle will have to load the service
 configuration itself. The details are described in the [Symfony documentation][6].
 However, the basic steps are:
 
-1. Create a `services.yml` within `src/Resources/config/`.
+1. Create a `services.yaml` within `src/Resources/config/`.
 2. [Create an extension class][7] in the `DependencyInjection` namespace.
 
 The class name of the dependency injection extension needs to be the same as the 
@@ -277,12 +277,12 @@ class ContaoExampleExtension extends Extension
     public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('services.yml');
+        $loader->load('services.yaml');
     }
 }
 ```
 
-Now, services can be registered as usual in your `src/Resources/config/services.yml`.
+Now, services can be registered as usual in your `src/Resources/config/services.yaml`.
 
 {{% notice tip %}}
 In order to take advantage of service annotations, enable [auto-configuration](https://symfony.com/doc/current/service_container.html#the-autoconfigure-option)
@@ -314,13 +314,13 @@ class Plugin implements RoutingPluginInterface
 {
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
-        $file = __DIR__.'/../Resources/config/routing.yml';
+        $file = __DIR__.'/../Resources/config/routes.yaml';
         return $resolver->resolve($file)->load($file);
     }
 }
 ```
 
-This will load the routing configuration located under `src/Resources/config/routing.yml`
+This will load the routing configuration located under `src/Resources/config/routes.yaml`
 of this extension.
 
 

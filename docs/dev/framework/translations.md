@@ -38,7 +38,7 @@ be selected for each back end user. However, you can adjust this configuration i
 your own application:
 
 ```yaml
-# config/config.yml
+# config/config.yaml
 contao:
     locales:
         - en
