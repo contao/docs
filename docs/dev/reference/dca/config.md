@@ -35,11 +35,11 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | ptable             | Parent table (`string`)           | Name of the related parent table (table.pid = ptable.id).                                                                                       |
 | dynamicPtable      | true/false (`bool`)               | Dynamically set the parent table like in `tl_content`.                                                                                          |
 | ctable             | Child tables (`array`)            | Name of the related child tables (table.id = ctable.pid).                                                                                       |
-| dataContainer      | Data Container (`string`)         | `Table` (database table)<sup>1</sup>, `File` (local configuration file) or `Folder` (file manager).                                                               |
-| markAsCopy         | Field name (`string`)             | Appends "(copy)" to this field when copying a record (Contao __4.6__ and up).                                                                         |
-| uploadPath         | Folder name (`string`)            | Path to the root folder of the file manager (Contao __4.12__ and up).                                                                            |
-| validFileTypes     | File extensions (`string`)        | Limits the file manager to certain file types (comma separated list).                                                                            |
-| editableFileTypes  | File extensions (`string`)        | Limits the file types that can be edited with the source code editor (comma separated list) (Contao __4.12__ and up).                      |
+| dataContainer      | Data Container (`string`)         | `Table` (database table)<sup>1</sup>, `File` (local configuration file) or `Folder` (file manager).                                             |
+| markAsCopy         | Field name (`string`)             | {{< version-tag "4.6" >}} Appends "(copy)" to this field when copying a record.                                                                 |
+| uploadPath         | Folder name (`string`)            | {{< version-tag "4.12" >}} "Path to the root folder of the file manager.                                                                        |
+| validFileTypes     | File extensions (`string`)        | Limits the file manager to certain file types (comma separated list).                                                                           |
+| editableFileTypes  | File extensions (`string`)        | {{< version-tag "4.12" >}} Limits the file types that can be edited with the source code editor (comma separated list).                         |
 | databaseAssisted   | true/false (`bool`)               | If true, the file manager is synchornized with a database table.                                                                                |
 | closed             | true/false (`bool`)               | If true, you cannot add further records to the table.                                                                                           |
 | notEditable        | true/false (`bool`)               | If true, the table cannot be edited.                                                                                                            |

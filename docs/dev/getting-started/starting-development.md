@@ -71,7 +71,7 @@ configurations, if present:
 | `config/config_prod.yml` | Configuration for the `prod` environment.                                                     |
 | `config/parameters.yml`  | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
 | `config/routing.yml`     | Definition of application specific routes.                                                    |
-| `config/services.yml`    | Definition of services (Contao **4.9** and up).<sup>2</sup>                                   |
+| `config/services.yml`    | {{< version-tag "4.9" >}} Definition of services.<sup>2</sup>                                 |
 
 {{% notice note %}}
 <sup>1</sup> Contao still supports the legacy way of defining parameters in a Symfony
