@@ -2,7 +2,7 @@
 title: "Simple reservations"
 description: "Save transferred form data in a database table."
 aliases:
-  - /de/guides/form-save/
+  - /en/guides/form-save/
 weight: 95
 tags: 
   - "Form"

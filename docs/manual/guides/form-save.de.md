@@ -2,7 +2,7 @@
 title: "Einfache Reservierungen"
 description: "Übertragene Formulardaten in eine Datenbanktabelle speichern."
 aliases:
-  - /de/anleitungen/formular-speichern/
+  - /de/anleitungen/form-save/
 weight: 95
 tags: 
   - "Formular"
