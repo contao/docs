@@ -40,6 +40,13 @@ The migration interface specifies three methods that need to be implemented:
   It returns a `MigrationResult` object that can hold more information about what happened during the execution and if the migration was successful or not.<br>
   If something goes unexpectedly wrong here and you want to abort the migration process completeley you should throw an exception here.
 
+{{% notice tip %}}
+You can extend from `Contao\CoreBundle\Migration\AbstractMigration` which already implements the `MigrationInterface` and provides two
+methods: `getName()` and `createResult()`. You can use the latter to automatically generate a `MigrationResult` with a default message. You 
+can also override its `getName()` method to provide a custom name for your migration, otherwise it will automatically use the FQCN of your 
+migration class.
+{{% /notice %}}
+
 
 ## Example
 
