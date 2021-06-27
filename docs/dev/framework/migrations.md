@@ -33,11 +33,15 @@ The migration interface specifies three methods that need to be implemented:
   A name that describes what the migration does. This text is shown to users when they are asked if they want to execute the migration.
 
 * __shouldRun()__ <br>
-  This method checks if all prerequisites that are needed for the migration to run are met and if it actually needs to run. This method should be written very defensively because the application might be in an unexpected state when the method gets called, e.g. the database could be completely empty.
+  This method checks if all prerequisites that are needed for the migration to run are met and if it actually needs to run. This method 
+  should be written very defensively because the application might be in an unexpected state when the method gets called, e.g. the database 
+  could be completely empty.
 
 * __run()__ <br>
-  As the name suggests, that is where the real magic happens. If `shouldRun()` returned `true`, this method will be called and should do the actual migration.<br>
-  It returns a `MigrationResult` object that can hold more information about what happened during the execution and if the migration was successful or not.<br>
+  As the name suggests, that is where the real magic happens. If `shouldRun()` returned `true`, this method will be called and should do the
+  actual migration.<br>
+  It returns a `MigrationResult` object that can hold more information about what happened during the execution and if the migration was 
+  successful or not.<br>
   If something goes unexpectedly wrong here and you want to abort the migration process completeley you should throw an exception here.
 
 {{% notice tip %}}
@@ -50,7 +54,8 @@ migration class.
 
 ## Example
 
-Lets say we have a database table `tl_customers` with a `firstName` and `lastName` column that we combined to a `name` column in the new version:
+Lets say we have a database table `tl_customers` with a `firstName` and `lastName` column that we combined to a `name` column in the new 
+version:
 
 ```php
 // src/Migration/CustomerNameMigration.php
