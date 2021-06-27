@@ -157,6 +157,21 @@ class ExampleRecordedMigration extends AbstractRecordedMigration
 }
 ```
 
+{{% notice info %}}
+Any migration extending from `AbstractRecordedMigration` need the container injected via `setContainer`, similar to Symfony's
+`AbstractController`. This will happen automatically if your service is autowired, otherwise you will have to do it manually in your service
+definition, either directly on the service or via:
+
+```yaml
+# config/services.yaml
+services:
+    _instanceof:
+        Contao\CoreBundle\Migration\AbstractRecordedMigration:
+            calls:
+                - [setContainer, ['@Psr\Container\ContainerInterface']]
+```
+{{% /notice %}}
+
 {{% notice warning %}}
 For recorded migrations the migration's name must be unique! Keep that in mind if you implement `getName()` on your own.
 {{% /notice %}}
