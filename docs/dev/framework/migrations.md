@@ -121,6 +121,102 @@ class CustomerNameMigration extends AbstractMigration
 ```
 
 
+## Recorded Migration
+
+{{< version "4.12" >}}
+
+Contao's own migration usually use the inherent state of the database in order to check whether a specific migration should be run or not.
+For example they check for the existence of certain table fields and may be their content to determine if the execution of a migration is
+necessary. However, there might be some migrations where this cannot be done and thus you need a record of whether or not a migration has
+already been run or not.
+
+In Contao **4.12** a new  `Contao\CoreBundle\Migration\AbstractRecordedMigration` class has been introduced that allows you to automatically
+track whether a migration already ran in a Contao instance. This abstract class will create a record for a migration in the `tl_migration`
+table where the name of the migration and its execution date will be stored.
+
+This happens in the `createResult()` method of the abstract class. The new abstract class also brings its own `shouldRun()` implementation
+which already checks whether the migration has been run via the `tl_migration` database table. So the minimum requirement when extending
+from `AbstractRecordedMigration` would look like this:
+
+```php
+// src/Migration/ExampleRecordedMigration.php
+namespace App\Migration;
+
+use Contao\CoreBundle\Migration\AbstractRecordedMigration;
+use Contao\CoreBundle\Migration\MigrationResult;
+
+class ExampleRecordedMigration extends AbstractRecordedMigration
+{
+    public function run(): MigrationResult
+    {
+        // Execute your migration here
+        // …
+
+        return $this->createResult(true);
+    }
+}
+```
+
+{{% notice warning %}}
+For recorded migrations the migration's name must be unique! Keep that in mind if you implement `getName()` on your own.
+{{% /notice %}}
+
+If your migration still processes database tables and fields, then your migration still needs to check for the existence of these tables and
+fields, otherwise an error would occur (after a fresh deployment for example, where these tables and fields might not exist yet). The
+`AbstractRecordedMigration` class additionally provides a `hasRun()` method with which you can check whether this migration was already
+executed once before:
+
+```php
+namespace App\Migration;
+
+use Contao\CoreBundle\Migration\AbstractRecordedMigration;
+use Contao\CoreBundle\Migration\MigrationResult;
+use Doctrine\DBAL\Connection;
+
+class ExampleRecordedMigration extends AbstractRecordedMigration
+{
+    /**
+     * @var Connection
+     */
+    private $connection;
+
+    public function __construct(Connection $connection)
+    {
+        $this->connection = $connection;
+    }
+
+    public function shouldRun(): bool
+    {
+        // We check whether the migration already ran early
+        if ($this->hasRun()) {
+            return false;
+        }
+
+        // Check for the existence of tl_example.foobar
+        $schemaManager = $this->connection->getSchemaManager();
+
+        if (!$schemaManager->tablesExist(['tl_example'])) {
+            return false;
+        }
+
+        $columns = $schemaManager->listTableColumns('tl_example');
+
+        return isset($columns['foobar']);
+    }
+
+    public function run(): MigrationResult
+    {
+        // Execute migration for tl_example.foobar
+        // …
+
+        return $this->createResult(true);
+    }
+}
+```
+
+Alternatively you can also `return parent::shouldRun();` in your `shouldRun()` implementation.
+
+
 ## Read more
 
 * [Contao's console commands][commands]
