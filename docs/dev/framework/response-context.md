@@ -24,7 +24,7 @@ In Contao, however, most of the content is dynamically created. That's why it's 
 System after all. Let's take e.g. a news reader front end module as an example. It displays the 
 detail of a certain news entry and thus also would like to adjust the `<title>` tag in the `<head>`
 section of the HTML document. The controller, however, does not know if that news reader front end module
-was placed on that page and the front end module, on the other hand, does not even know if there is a `<title>`
+was placed on that page and the front end module on the other hand does not even know if there is a `<title>`
 element it can update.
 The news reader element is a fragment only so it can be used in a completely different context other than a
 regular HTML web page. E.g. it could be rendered as an ESI fragment, a partial loaded via Ajax, rendered into
