@@ -27,7 +27,7 @@ section of the HTML document. The controller, however, does not know if that new
 was placed on that page and the front end module on the other hand does not even know if there is a `<title>`
 element it can update.
 The news reader element is a fragment only so it can be used in a completely different context other than a
-regular HTML web page. E.g. it could be rendered as an ESI fragment, a partial loaded via Ajax, rendered into
+regular HTML web page. E.g. it could be rendered as an ESI fragment, a partial loaded via Ajax or rendered into
 an e-mail. In all cases there is no `<title>` element to update.
 
 The "Response Context" is here to solve this problem.
