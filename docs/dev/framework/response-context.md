@@ -16,7 +16,7 @@ Content Management Systems do not share all the same properties as static site g
 good old Symfony based website.
 In a traditional Symfony application, you as the developer control 100% of the output of
 a particular HTML website. Speaking in Symfony terms, your controller 
-controls the full `Response` instance, from its HTTP headers to it's content, everything from
+controls the full `Response` instance, from its HTTP headers to its content, everything from
 the opening `<html>` to the closing `</html>`, all the scripts, the stylesheets, the page title and
 the description.
 
