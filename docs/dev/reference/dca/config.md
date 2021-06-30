@@ -76,8 +76,8 @@ table (and thus is only relevant for the `Table` data container).
 
 | Key | Value | Description |
 | --- | --- | --- |
-| `engine` | Storage engine (`string`) | Allows you to define a different storage engine for this table than the default one. |
-| `charset` | Character set (`string`) | Allows you to define a different charset than the default one. |
+| `engine` | Storage engine (`string`) | Allows you to define the storage engine for this table different to the default. |
+| `charset` | Character set (`string`) | Allows you to define the character set for this table different to the default. |
 | `keys` | Keys and indexes (`array`) | Allows you to define primary keys and indexes for your fields. |
 
 
