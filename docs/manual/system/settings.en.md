@@ -429,7 +429,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `adminEmail` | [E-mail address of the system administrator](#global-configuration). |
 | `allowedDownload` | [Download file types](#files-and-images). |
 | `allowedTags` | [Allowed HTML tags](#security-settings). |
-| `characterSet` | Character set used by Contao. Default: `utf-8` |
+| `characterSet` | Character set used by Contao. _(deprecated)_ Use the parameter `kernel.charset` instead. Default: `UTF-8` |
 | `dateFormat` | [Date format](#date-and-time). |
 | `datimFormat` | [Date and time format](#date-and-time). |
 | `defaultChmod` | [Default access rights](#default-access-rights). |
