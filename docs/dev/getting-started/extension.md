@@ -55,8 +55,8 @@ in kebab case, prefixed with `contao-`, e.g.: `somevendor/contao-example-bundle`
 
 When starting an extension from scratch (i.e. you do not even have a remote Git
 repository set up yet for your extension), you first create a folder for the source
-of your extension. This can be anywhere in your file system, as it will be later 
-on installed via Composer.
+of your extension. This folder must be placed in the "vendor" subfolder within the Contao installation.
+E.g.: `vendor/somevendor/contao-example-bundle`.
 
 
 ### Composer Setup
@@ -151,7 +151,7 @@ the Contao 4 installation:
     "repositories": [
         {
             "type": "path",
-            "url": "/path/to/your/extension/directory"
+            "url": "/vendor/somevendor/contao-example-bundle"
         }
     ]
 }
@@ -168,7 +168,7 @@ the defined package name and `dev-main` as the version.
 }
 ```
 
-When running a `composer update`, Composer will now symlink the given path into the
+When running a `composer update`, Composer will now use the given path into the
 vendor directory of the Contao 4 installation and everything is ready to go. You
 can now continue developing within `vendor/somevendor/contao-example-bundle`.
 
