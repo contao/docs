@@ -204,7 +204,7 @@ It is possible to create custom DCA drivers by following these requirements:
 * The driver must extend from `\Contao\DataContainer`.
 
 {{% notice "note" %}}
-<sup>1</sup> Since Contao **4.11** the driver is not required to be in the global namespace and does not need to be
+<sup>1</sup> Since Contao **4.9.17** the driver is not required to be in the global namespace and does not need to be
 prefixed with `DC_` anymore. Instead you can  reference the FQCN of the driver in your DCA:
 
 ```php
@@ -227,14 +227,14 @@ The driver can implement any of the following interfaces:
 When creating your own driver it is probably best to just have a look at the existing
 drivers in order to get an idea on what is possible and how it needs to be done:
 
-* [\DC_File](https://github.com/contao/contao/blob/4.8.1/core-bundle/src/Resources/contao/drivers/DC_File.php)
-* [\DC_Folder](https://github.com/contao/contao/blob/4.8.1/core-bundle/src/Resources/contao/drivers/DC_Folder.php)
-* [\DC_Table](https://github.com/contao/contao/blob/4.8.1/core-bundle/src/Resources/contao/drivers/DC_Table.php)
+* [\DC_File](https://github.com/contao/contao/blob/4.x/core-bundle/src/Resources/contao/drivers/DC_File.php)
+* [\DC_Folder](https://github.com/contao/contao/blob/4.x/core-bundle/src/Resources/contao/drivers/DC_Folder.php)
+* [\DC_Table](https://github.com/contao/contao/blob/4.x/core-bundle/src/Resources/contao/drivers/DC_Table.php)
 
 
-[1]: ../hooks/
-[2]: ../../reference/dca/callbacks/
-[3]: ../models/
-[4]: ../../reference/dca/
+[1]: /framework/hooks/
+[2]: /reference/dca/callbacks/
+[3]: /framework/models/
+[4]: /reference/dca/
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
 [contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
