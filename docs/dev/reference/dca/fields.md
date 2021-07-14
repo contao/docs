@@ -183,6 +183,7 @@ Each field can be validated against a regular expression.
 | tl_class           | CSS class(es) (`string`)         | Add the given CSS class(es) to the generated HTML. See section [Arranging Fields](/reference/dca/palettes/#arranging-fields) for supported values.                                 |
 | trailingSlash      | true/false (`bool`)           | If true a trailing slash will be added to the field value. If false, an existing trailing slash will be removed from the field value.                                    |
 | unique             | true/false (`bool`)           | If true the field value cannot be saved if it exists already.                                                                                                            |
+| uploadFolder       | Path (`string`)                  | The target path for file uploads of the `upload` widget.                                                                                                              |
 | useRawRequestData  | true/false (`bool`)           | If true the raw request data from the Symfony request is used. **Warning:** input filtering is bypassed! Make sure the data is never output anywhere in the back end unescaped which it would if you added the field to a regular back end list view for example. |
 
 {{% notice warning %}}
