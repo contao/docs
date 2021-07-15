@@ -217,7 +217,7 @@ parameters:
     secret: …
 ```
 {{% notice note %}}
-Datenbankpasswörter, die nur aus Zahlen bestehen müssen in Hochkommatas gesetzt werden.
+Datenbankpasswörter, die nur aus Ziffern bestehen müssen in Hochkommatas gesetzt werden.
 {{% /notice %}}
 
 ## config.yml
