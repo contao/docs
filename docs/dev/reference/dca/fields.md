@@ -134,7 +134,7 @@ Each field can be validated against a regular expression.
 | colorpicker        | true/false (`bool`)           | If true the current field has a color picker.                                                                                                                            |
 | cols               | Columns (`integer`)              | Number of columns (used for `textarea`, `radioTable` and `tableWizard` fields).                                                                                                                                |
 | csv                | Delimiter (`string`)             | The choice of this field will not be stored as serialized string but rather as given delimiter-separated list. Example: `'eval' => ['csv'=>',']`                 |
-| custom_rgxp        | Regular expression (`string`) | {{< version "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
+| customRgxp        | Regular expression (`string`) | {{< version "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
 | datepicker         | true/false (`bool`)           | If true the current field has a date picker.                                                                                                                             |
 | dcaPicker          | true/false (`bool`)           | If true the dca-picker will be shown.  Enables pick up different data sets from the system.                                                                              |
 | decodeEntities     | true/false (`bool`)           | If true HTML entities will be decoded. Note that HTML entities are always decoded if allowHtml is true.                                                                  |
@@ -223,7 +223,7 @@ can be [registered using a hook][3].
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
 | httpurl     | {{< version "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
-| custom      | {{< version "4.11" >}} enables you to define a custom regular expression under the `custom_rgxp` evaluation key   |
+| custom      | {{< version "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/']` |
 
 
 #### Meta Wizard Fields
