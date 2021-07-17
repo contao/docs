@@ -223,7 +223,7 @@ can be [registered using a hook][3].
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
 | httpurl     | {{< version "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
-| custom      | {{< version "4.11" >}} enables you to define a custom regular expression under the `custom_rgxp` evaluation key   |
+| custom      | {{< version "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. 'eval' => array('rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/') |
 
 
 #### Meta Wizard Fields
