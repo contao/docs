@@ -136,6 +136,9 @@ Contao uses the following categories in various domains:
 | `LNG`      | `languages` | Translation of language names.             |
 | `MOD`      | `modules`   | Back end module labels and descriptions.   |
 | `FMD`      | `modules`   | Front end module labels and descriptions.  |
+| `FFL`      | `tl_form_field` | Translations for form generator form fields. |
+| `CACHE`    | `tl_page`   | Labels for the different cache time page settings. |
+| `CRAWL`    | `default`   | Translations for the crawler interface in the back end. |
 
 There is also a category for each Data Container. The category's name is the same 
 as the Data Container's name. For example, for `tl_content` the translation's category
@@ -216,7 +219,9 @@ You can load translations by using the following legacy function:
 \Contao\System::loadLanguageFile('tl_content', 'de');
 ```
 
-Starting with Contao **4.5** you can also use Symfony's Translator service:
+The first parameter is the domain ("language file") while the second parameter is the language you want to load.
+
+Starting with Contao **4.5** you can also use Symfony's Translator service instead:
 
 ```php
 // src/Controller/ExampleController.php
@@ -245,7 +250,8 @@ class ExampleController
 }
 ```
 
-To access a specific Contao translation domain, simply prepend it with `contao_`.
+To access a specific Contao translation domain, simply prepend it with `contao_`. This also takes care of loading the respective language
+file automatically. You do not need to call `System::loadLanguageFile` when using the translator service.
 
 
 ### Translations within Contao PHP Templates
