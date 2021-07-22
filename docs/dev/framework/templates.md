@@ -19,6 +19,19 @@ etc. and that is why they are prefixed. They can be easily grouped, ordered and
 recognized. For example: the prefix `ce_` means "Content Element" and `mod_` means "Module".
 
 
+## Template Groups
+
+In order for a new template to show up in the template selection in the back end for a certain content element or front end module, 
+the template's name must be prefixed with either `ce_` or `mod_` and then its type. For example, if you want to create a new template 
+for the _Text_ content element, whose defined type in the DCA is `text`, then the template name needs to be `ce_text_ipsum.html5`. 
+Or if you want to create an additional template for the _HTML_ module, whose defined type in the DCA is `html`, then the template 
+name must be `mod_html_foobar.html5`.
+
+The same applies to form field templates of the form generator. For a new _Textarea_ template, the template's name must be
+`form_textarea_custom.html5`. For sub-item templates, like news templates, navigation item templates or event templates, there will
+only be one required prefix, i.e. `news_`, `nav_` and `event_` respectively.
+
+
 ## Template Inheritance
 
 The inheritance allow you to create a template based on a second template. This
