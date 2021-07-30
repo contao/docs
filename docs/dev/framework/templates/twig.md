@@ -245,7 +245,7 @@ managed `@Contao` namespace:
 <section class="card">
   <div class="inner">
     <header class="title">
-      <div class="inner">🤩 {{ title }} 🤯</div>
+      🤩 <div class="inner">{{ title }}</div> 🤯
     </header>     
     <main>
         {{ studio.figure(figure) }}
