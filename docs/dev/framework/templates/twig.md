@@ -139,7 +139,7 @@ directories in their respective namespaces:
 | `/vendor/…/templates`<br>`/vendor/foo/bar/contao/templates` | `@Contao_<bundle>`<br>`@Contao_FooBarBundle` | Any bundle template/views directory. | 1 |
 | `/contao/templates`<br>`/src/Resources/contao/templates`<br>`/app/Resources/contao/templates` | `@Contao_App` | Template directory of the application. | 2 |
 | `/templates` | `@Contao_Global` | Global template directory. | 3 |
-| `/templates/<theme>`<br>`/templates/foo/theme` | `@Contao_Theme_<theme>`<br>`@Contao_Theme_foo_theme` | Any theme directory. The path (`foo/theme`) will be a transformed into a slug (`foo_theme`) and appended as a suffix. | 4 |
+| `/templates/<theme>`<br>`/templates/foo/theme` | `@Contao_Theme_<theme>`<br>`@Contao_Theme_foo_theme` | Any theme directory. The path (`foo/theme`) will be transformed into a slug (`foo_theme`) and appended as a suffix. | 4 |
 
 <sup>*) Higher values mean higher priority.</sup>
 
@@ -229,6 +229,7 @@ And finally the application's `emoji` theme adding, well, …
 {# /templates/emoji/card.html.twig #}
    
 {% extends '@Contao/card' %}
+
 {% block title %}🤩 {{ parent() }} 🤯{% endblock %}
 ```
 {{% /tab %}}
@@ -290,24 +291,41 @@ template.
 
 ⚠️ There is a small difference when it comes to callables like anonymous functions
 or closures. Every element in Twig's context needs to be a literal or an object,
-so we're wrapping functions into objects with `__toString()` functionality.
-In case you need to supply arguments or you need anything else than the string
-output, you'll need to add `.invoke()` to the variable name:
+so when overwriting a PHP Template, we're wrapping any function in the template
+data into an object with `__toString()` functionality. In case you need to
+supply arguments, or you need anything else than string output, you'll need to
+add `.invoke()` to the variable name:
+
+```php
+// Template data, that was set for a PHP template 
+$this->Template->setData([
+    'normalValue' => 'foo',
+    'lazyValue' => static function(): string {
+        return 'foo';
+    },
+    'fooFunction' => static function(string $value): string {
+        return "foo-$value";
+    },
+     'lazyArray' => static function(): array {
+        return [1, 2, 3, 4, 5];
+    },
+]);
+```
 
 {{< tabs groupId="twig">}}
 {{% tab name="PHP" %}}
 ```html
 <?php echo $this->normalValue; ?>
-<?php echo $this->lazyValue1(); ?>
-<?php echo $this->lazyValue2('foo'); ?>
+<?php echo $this->lazyValue(); ?>
+<?php echo $this->fooFunction('bar'); ?>
 <?php echo implode(', ', $this->lazyArray()); ?>
 ```
 {{% /tab %}}
 {{% tab name="Twig" %}}
 ```twig
 {{ normalValue }}
-{{ lazyValue1 }}
-{{ lazyValue2.invoke('foo') }}
+{{ lazyValue }}
+{{ fooFunction.invoke('bar') }}
 {{ lazyArray.invoke()|join(', ') }}
 ```
 {{% /tab %}}
@@ -422,7 +440,7 @@ strategy will depend on the template's file extension: your `.html.twig`
 templates will automatically get the `|e('html')` treatment, so you could omit
 this part in the above example.
 
-Try it our for yourself in this [TwigFiddle](https://twigfiddle.com/d0w2yt).
+Try it out for yourself in this [TwigFiddle](https://twigfiddle.com/d0w2yt).
 
 {{% /tab %}}
 {{< /tabs >}}
