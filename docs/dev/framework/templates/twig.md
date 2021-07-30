@@ -36,12 +36,12 @@ template would translate to an analog Twig template:
 {{% tab name="PHP" %}}
 ```html
 <div class="about-me">
-    <h2><?php echo $this->name; ?></h2>
-    <p>I am <?php echo round($this->age); ?> years old.</p>
+    <h2><?= $this->name ?></h2>
+    <p>I am <?= round($this->age) ?> years old.</p>
 
     <ul class="hobby-list">
         <?php foreach $this->hobbies as $hobby: ?>
-          <li><?php echo ucfirst($hobby); ?></li>
+          <li><?= ucfirst($hobby) ?></li>
         <?php endforeach; ?>
     </ul>
 </div>
@@ -315,10 +315,10 @@ $this->Template->setData([
 {{< tabs groupId="twig">}}
 {{% tab name="PHP" %}}
 ```html
-<?php echo $this->normalValue; ?>
-<?php echo $this->lazyValue; ?>
-<?php echo $this->fooFunction('bar'); ?>
-<?php echo implode(', ', $this->lazyArray); ?>
+<?= $this->normalValue ?>
+<?= $this->lazyValue ?>
+<?= $this->fooFunction('bar') ?>
+<?= implode(', ', $this->lazyArray) ?>
 ```
 {{% /tab %}}
 {{% tab name="Twig" %}}
@@ -354,12 +354,12 @@ color inside a box with a background of this color. Maybe like so:
 
 ```php
 <style>
-  .box { background: <?php echo $this->color; ?> }
+  .box { background: <?= $this->color ?> }
 </style>
 
 […]
 
-<div class="box"><?php echo $this->color; ?></div>
+<div class="box"><?= $this->color ?></div>
 ```
 
 ⚡ **This is dangerous.** The content of the variable has a different
