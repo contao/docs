@@ -432,8 +432,12 @@ If you intentionally **do** want to output a variable containing raw HTML, like
 `<b>nice</b>`, you need to add the `|raw` escaper filter to your variable
 `{{ tiny_mce_content|raw }}` which tells Twig to skip escaping this value.
 Otherwise `&lt;b&gt;nice&lt;/b&gt;` will be output, i.e. a text saying
-*&lt;b&gt;nice&lt;/b&gt;* and not a bold word <b>nice</b>. Just keep in mind,
-that you only add `|raw` to trusted input!
+*&lt;b&gt;nice&lt;/b&gt;* and not a bold word <b>nice</b>. 
+
+{{% notice warning %}}
+Keep in mind, that you only ever add `|raw` to trusted input! Using `|raw` on 
+anything else may result in severe XSS vulnerabilities!
+{{% /notice %}}
 
 {{% notice info %}}
 Our Twig implementation makes sure you can use Twig templates as you would
