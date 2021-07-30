@@ -316,9 +316,9 @@ $this->Template->setData([
 {{% tab name="PHP" %}}
 ```html
 <?php echo $this->normalValue; ?>
-<?php echo $this->lazyValue(); ?>
+<?php echo $this->lazyValue; ?>
 <?php echo $this->fooFunction('bar'); ?>
-<?php echo implode(', ', $this->lazyArray()); ?>
+<?php echo implode(', ', $this->lazyArray); ?>
 ```
 {{% /tab %}}
 {{% tab name="Twig" %}}
