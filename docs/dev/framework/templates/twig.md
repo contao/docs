@@ -352,7 +352,7 @@ Assume you have a variable `color` that should contain color names (like `red`,
 `green`, `rebeccapurple`, …) and a template that should output the name of the
 color inside a box with a background of this color. Maybe like so:
 
-```php
+```html
 <style>
   .box { background: <?= $this->color ?> }
 </style>
@@ -375,7 +375,7 @@ red; } { body: display:none;
 A perfectly valid, safe value for `color` in the HTML context would effectively
 produce this style - certainly not what we want:
 
-```php
+```html
 <style>
   .box { background: red; } body { display: none; }
 </style>
@@ -390,7 +390,7 @@ Similar, stripping/encoding seemingly dangerous characters in CSS like `;`, `}`
 or `{` would still allow an input like this which again would produce unwanted
 HTML:
 
-```php
+```html
 <div class="box"><script>alert(1)</script></div>
 ``` 
 </div>
