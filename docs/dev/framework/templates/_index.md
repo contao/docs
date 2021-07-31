@@ -5,6 +5,10 @@ aliases:
     - /framework/templates/
 ---
 
+{{% notice note %}}
+This section is about Contao's PHP template framework. However, Contao **4.12** introduced experimental support for Twig templates accross 
+the board. See [this article](/framework/templates/twig/) for more details.
+{{% /notice %}}
 
 A template is mainly composed of HTML and PHP code. It is used to structure a
 piece of content of a module or a content element, etc. For example, the template
