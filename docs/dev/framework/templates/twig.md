@@ -36,28 +36,28 @@ template would translate to an analog Twig template:
 {{% tab name="PHP" %}}
 ```html
 <div class="about-me">
-    <h2><?= $this->name ?></h2>
-    <p>I am <?= round($this->age) ?> years old.</p>
+  <h2><?= $this->name ?></h2>
+  <p>I am <?= round($this->age) ?> years old.</p>
 
-    <ul class="hobby-list">
-        <?php foreach $this->hobbies as $hobby: ?>
-          <li><?= ucfirst($hobby) ?></li>
-        <?php endforeach; ?>
-    </ul>
+  <ul class="hobby-list">
+    <?php foreach $this->hobbies as $hobby: ?>
+      <li><?= ucfirst($hobby) ?></li>
+    <?php endforeach; ?>
+  </ul>
 </div>
 ```
 {{% /tab %}}
 {{% tab name="Twig" %}}
 ```twig
 <div class="about-me">
-    <h2>{{ name }}</h2>
-    <p>I am {{ age|round }} years old.</p>
+  <h2>{{ name }}</h2>
+  <p>I am {{ age|round }} years old.</p>
 
-    <ul class="hobby-list">
-        {% for hobby in hobbies %}
-          <li>{{ hobby|capitalize }}</li>
-        {% endfor %}
-    </ul>
+  <ul class="hobby-list">
+    {% for hobby in hobbies %}
+      <li>{{ hobby|capitalize }}</li>
+    {% endfor %}
+  </ul>
 </div>
 ```
 {{% /tab %}}
@@ -107,8 +107,8 @@ else the same:
 {% extends '@Contao/fe_page' %}
 
 {% block main %}
-    <h1>Hello from Twig!</h1>
-    {{ parent() }}
+  <h1>Hello from Twig!</h1>
+  {{ parent() }}
 {% endblock %}
 ```
 
@@ -249,12 +249,12 @@ managed `@Contao` namespace:
       🤩 <div class="inner">{{ title }}</div> 🤯
     </header>     
     <main>
-        {{ studio.figure(figure) }}
-        {{ description|raw }}
+      {{ studio.figure(figure) }}
+      {{ description|raw }}
     </main>
     <footer>
-       <p class="author">by {{ author }}</p>
-       <p class="last-modified">edited at {{ modified_at|ago }}</p>
+     <p class="author">by {{ author }}</p>
+     <p class="last-modified">edited at {{ modified_at|ago }}</p>
     </footer
   </div>>
 </section>
