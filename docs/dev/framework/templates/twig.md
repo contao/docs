@@ -141,7 +141,7 @@ directories in their respective namespaces:
 | `/templates` | `@Contao_Global` | Global template directory. | 3 |
 | `/templates/<theme>`<br>`/templates/foo/theme` | `@Contao_Theme_<theme>`<br>`@Contao_Theme_foo_theme` | Any theme directory. The path (`foo/theme`) will be transformed into a slug (`foo_theme`) and appended as a suffix. | 4 |
 
-<sup>*) Higher values mean higher priority.</sup>
+<sup>*) Higher higher priority values mean "considered as template candidate first".</sup>
 
 {{% notice info %}}
 You can run `contao-console debug:contao-twig` to get a list of all registered
