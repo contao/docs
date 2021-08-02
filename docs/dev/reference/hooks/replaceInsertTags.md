@@ -103,3 +103,5 @@ class ReplaceInsertTagsListener
 ## References
 
 * [\Controller\InsertTags#L1016-L1035](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/library/Contao/InsertTags.php#L1016-L1035)
+
+[FrameworkInsertTags]: /framework/insert-tags/
