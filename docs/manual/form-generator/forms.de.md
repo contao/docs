@@ -83,7 +83,12 @@ achten, dass die Feldnamen jeweils übereinstimmen.
 **Eingaben speichern:** Hier aktivierst du das Speichern der Daten in der Datenbank.
 
 **Zieltabelle:** Hier wählst du die Tabelle aus, in die die Daten geschrieben werden sollen. Die Tabelle muss vorher 
-z. B. über phpMyAdmin angelegt worden sein.
+z. B. über phpMyAdmin oder als [DCA](../../../../dev/reference/dca/) angelegt worden sein. Die SQL-Zieltabelle muss für jedes Formularfeld eine gleichnamige Spalte enthalten. Sonderzeichen wie Bindestriche im Feldnamen können zu Problemen führen.
+
+Beispiel-SQL-Code um eine neue Tabelle `prefix_beispielname` in der Datenbank `##DB-NAME##` für ein Formular mit den (Text-)Feldern `Feld1` , `Feld2` , `Feld3` anzulegen:
+```SQL
+CREATE TABLE `##DB-NAME##`.`prefix_beispielname` ( `ID` INT NOT NULL AUTO_INCREMENT , `Feld1` TEXT NOT NULL , `Feld2` TEXT NOT NULL , `Feld3` TEXT NOT NULL , INDEX (`ID`)) ENGINE = InnoDB;
+```
 
 
 ## Template-Einstellungen
