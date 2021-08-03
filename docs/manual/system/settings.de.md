@@ -216,7 +216,9 @@ parameters:
     database_name: …
     secret: …
 ```
-
+{{% notice note %}}
+Datenbankpasswörter, die nur aus Ziffern bestehen müssen in Hochkommatas gesetzt werden.
+{{% /notice %}}
 
 ## config.yml
 
