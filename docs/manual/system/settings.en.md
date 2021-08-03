@@ -512,9 +512,10 @@ This command is no longer available in Contao **4.10** and later.
 
 {{< version "4.10" >}}
 
-In many cases, SMTP servers do not allow sending from any sender address. In most cases, the sender address must match 
-the SMTP server access data used. Especially in multi-domain installations of Contao it might be important that the 
-sender address of the emails that Contao sends matches the domain.
+In many cases, SMTP servers do not allow sending from any sender address. Oftentimes the sender address must match 
+the SMTP server credentials. Especially in multi-domain installations of Contao it might be important that the 
+sender address of the emails that Contao sends matches the domain. Or you might want to have different sender
+addresses for different front end forms created via the Contao form generator.
 
 Since Contao **4.10**, it is possible to use multiple email configurations in Contao. These configurations can be 
 selected per website root, per form and per newsletter channel. For each e-mail configuration, you can also set the 
