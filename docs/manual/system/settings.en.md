@@ -203,6 +203,7 @@ parameters:
     secret: …
 ```
 
+{{% notice note %}} Database passwords that consist only of digits must be set in quotation marks. {{% /notice %}}
 
 ## config.yml
 
