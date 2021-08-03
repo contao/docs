@@ -261,7 +261,7 @@ managed `@Contao` namespace:
 ```
 
 {{% notice note %}}
-When extending/including/embedding templates from the `@Contao` namespace,
+When extending, including or embedding templates from the `@Contao` namespace,
 the file extension is not considered. This means `@Contao/card.html.twig` will
 target the same template as `@Contao/card.html5`. For this reason you can omit
 the extension completely in that case. 
