@@ -95,7 +95,7 @@ contao:
 ### Frontend-Einstellungen
 
 {{% notice note %}}
-Ab Version **4.?** wird die folgende Einstellung im Startpunkt der Webseite vorgenommen:
+Ab Version **4.10** wird die folgende Einstellung im Startpunkt der Webseite vorgenommen:
 
 **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
 Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
