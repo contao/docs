@@ -103,7 +103,7 @@ Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite
 {{% /notice %}}
 
 {{% notice note %}}
-Ab Version **4.?** ist diese Einstellung fortgefallen:
+Ab Version **4.10** ist diese Einstellung entfallen:
 
 **Leere URLs nicht umleiten:** Bei einer leeren URL die Webseite anzeigen anstatt auf den Startpunkt der Sprache 
 weiterzuleiten _(nicht empfohlen)_.
