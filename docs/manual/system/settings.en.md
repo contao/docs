@@ -116,6 +116,11 @@ php vendor/bin/contao-console contao:cron
 **Allowed HTML tags:** By default, Contao does not allow HTML tags in forms and removes them automatically when saving. 
 For input fields where the use of HTML is desired, you can specify a list of allowed HTML tags here.
 
+{{< version-tag "4.11.7, 4.9.18 and 4.4.56" >}}
+**Allowed HTML attributes:** You can extend the list of allowed HTML attributes for input fields here. If an HTML 
+attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for 
+all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
+
 
 ### Files and images
 
