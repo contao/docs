@@ -12,7 +12,7 @@ tags:
 ---
 
 
-Mit Contao kannst du übertragende Formulardaten nicht nur als E-Mail versenden, sondern auch in eine vorhandene
+Mit Contao kannst du Formulardaten nicht nur via E-Mail versenden, sondern diese auch in eine
 Datenbanktabelle speichern. Möchtest du dazu keine vorhandene oder eigene Datenbanktabelle nutzen, kann als
 Alternative die [Erweiterung Leads](https://extensions.contao.org/?q=Leads&pages=1&p=terminal42%2Fcontao-leads) installiert werden.
 
