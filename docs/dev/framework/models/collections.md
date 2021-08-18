@@ -33,7 +33,7 @@ For more complex conditions, optionally pass arrays as parameters:
 $pages = PageModel::findBy(['language = ?', 'pid = ?'], ['de', 1]);
 
 // find all entries of a model with type "store" within a given array of ids
-$foos = FoobarModel::findBy(["type = 'store'", 'id IN('.implode(',', array_map('\intval', $ids)).')'], []);
+$foos = FoobarModel::findBy(['type = ?', 'id IN (?)'], ['store', implode(',', array_map('\intval', $ids))]);
 ```
 
 ## Collection specific methods
