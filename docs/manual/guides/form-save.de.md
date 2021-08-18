@@ -20,7 +20,7 @@ Im ersten Beispiel verwenden wir zur Speicherung die in Contao zur Verfügung st
 [Hook](https://docs.contao.org/dev/reference/hooks/) »[prepareFormData](https://docs.contao.org/dev/reference/hooks/prepareFormData/)«.
 Im Backend werden die Reservierungen in der [Terminverwaltung](/de/core-erweiterung/kalender/terminverwaltung/) aufgeführt. 
 
-Im zweiten Beispiel nutzen wir zur Speicherung und Backend Darstellung der Daten 
+Im zweiten Beispiel nutzen wir zur Speicherung und Backend-Darstellung der Daten 
 die [Erweiterung Leads](https://extensions.contao.org/?q=Leads&pages=1&p=terminal42%2Fcontao-leads).
 
 
