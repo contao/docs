@@ -27,7 +27,7 @@ die [Erweiterung Leads](https://extensions.contao.org/?q=Leads&pages=1&p=termina
 ## Formularaufbau
 
 Für unser Beispiel halten wir den Formularaufbau übersichtlich. Über den [Formulargenerator](/de/formulargenerator/)
-erstellst du dir ein neues Formular mit dem Titel ``Reservierung``. Als [Formularfelder](/de/formulargenerator/formularfelder/) 
+erstellst du ein neues Formular mit dem Titel ``Reservierung``. Als [Formularfelder](/de/formulargenerator/formularfelder/) 
 benötigen wir lediglich folgende Feldtypen zusammen mit einem 
 [Absendefeld](http://localhost:1313/de/formulargenerator/formularfelder/#absendefeld):
 
