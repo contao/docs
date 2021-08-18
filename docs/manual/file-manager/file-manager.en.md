@@ -43,9 +43,9 @@ and files.
 ## Transferring files
 
 Go to the File Manager and click the **![Upload files to the server](/de/icons/new.svg?classes=icon) File Upload** 
-link to transfer files to the server. Use the navigation icon **![Add to folder](/de/icons/pasteinto.svg?
-classes=icon) Insert into** and select the destination directory. Alternatively, you can click the navigation icon !
-[Upload files to the server](/de/icons/new.svg?classes=icon) at the desired folder in order to upload there directly.
+link to transfer files to the server. Use the navigation icon **![Add to folder](/de/icons/pasteinto.svg?classes=icon) Insert into** 
+and select the destination directory. Alternatively, you can click the **![Upload files to the server](/de/icons/new.svg?classes=icon) navigation icon** 
+at the desired folder in order to upload there directly.
 
 You can also activate [DropZone](https://www.dropzonejs.com/) in the user settings.
 
@@ -57,6 +57,9 @@ In both cases, the File Manager checks the size of the file to be transferred du
   maximum allowed dimensions.
 
 Note that you can only upload the file types that you have specified in the back end settings under "Allowed upload file types".
+
+If you upload a file to a folder where there is a file with the same name already, the existing file will be updated, keeping the existing UUID. This way
+you may update existing files without having to reassign the file in any content element etc. 
 
 ## Transferring files via FTP
 

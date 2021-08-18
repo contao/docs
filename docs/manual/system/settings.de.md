@@ -119,6 +119,12 @@ geprüft werden _(unsicher!)_.
 automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter 
 HTML-Tags festlegen.
 
+{{< version-tag "4.11.7, 4.9.18 und 4.4.56" >}}  
+**Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
+Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeichern automatisch entfernt. Das Tag bzw. 
+der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B. 
+data-* benutzt werden.
+
 
 ### Dateien und Bilder
 
@@ -216,7 +222,9 @@ parameters:
     database_name: …
     secret: …
 ```
-
+{{% notice note %}}
+Datenbankpasswörter, die nur aus Ziffern bestehen müssen in Hochkommatas gesetzt werden.
+{{% /notice %}}
 
 ## config.yml
 
@@ -444,7 +452,7 @@ Beschreibung.
 | `adminEmail` | [E-Mail-Adresse des Systemadministrators](#globale-einstellungen). |
 | `allowedDownload` | [Erlaubte Download-Dateitypen](#dateien-und-bilder). |
 | `allowedTags` | [Erlaubte HTML-Tags](#sicherheitseinstellungen). |
-| `characterSet` | Der von Contao benutzte Zeichensatz. Standard: `utf-8` |
+| `characterSet` | Der von Contao benutzte Zeichensatz. _(veraltet)_ Nutze den Parameter `kernel.charset` stattdessen. Standard: `UTF-8`. |
 | `dateFormat` | [Datumsformat](#datum-und-zeit). |
 | `datimFormat` | [Datums- und Zeitformat](#datum-und-zeit). |
 | `defaultChmod` | [Standard-Zugriffsrechte](#standard-zugriffsrechte). |

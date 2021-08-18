@@ -155,6 +155,8 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
 ];
 ```
 
+If you used a custom category for your content element, its label can also be translated there.
+
 
 ## Annotation
 

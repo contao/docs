@@ -80,9 +80,8 @@ Contao versions _prior_ to **4.9** only support the `*.yml` file extension.
 {{% notice note %}}
 <sup>1</sup> Contao still supports the legacy way of defining parameters in a Symfony
 application through the `parameters.yaml`. However it is best-practice to use the
-`.env` files instead. See also Symfony's documentation about the 
-[Dotenv Component](https://symfony.com/doc/current/components/dotenv.html) for more 
-information about the `.env*` files.
+`.env` files instead. See also [Symfony's documentation](https://symfony.com/doc/4.4/configuration.html#configuring-environment-variables-in-env-files)
+for more information about the `.env*` files.
 {{% /notice %}}
 
 {{% notice note %}}

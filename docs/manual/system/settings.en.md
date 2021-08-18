@@ -116,6 +116,11 @@ php vendor/bin/contao-console contao:cron
 **Allowed HTML tags:** By default, Contao does not allow HTML tags in forms and removes them automatically when saving. 
 For input fields where the use of HTML is desired, you can specify a list of allowed HTML tags here.
 
+{{< version-tag "4.11.7, 4.9.18 and 4.4.56" >}}  
+**Allowed HTML attributes:** You can extend the list of allowed HTML attributes for input fields here. If an HTML 
+attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for 
+all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
+
 
 ### Files and images
 
@@ -203,6 +208,7 @@ parameters:
     secret: …
 ```
 
+{{% notice note %}} Database passwords that consist only of digits must be set in quotation marks. {{% /notice %}}
 
 ## config.yml
 
@@ -429,7 +435,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `adminEmail` | [E-mail address of the system administrator](#global-configuration). |
 | `allowedDownload` | [Download file types](#files-and-images). |
 | `allowedTags` | [Allowed HTML tags](#security-settings). |
-| `characterSet` | Character set used by Contao. Default: `utf-8` |
+| `characterSet` | Character set used by Contao. _(deprecated)_ Use the parameter `kernel.charset` instead. Default: `UTF-8` |
 | `dateFormat` | [Date format](#date-and-time). |
 | `datimFormat` | [Date and time format](#date-and-time). |
 | `defaultChmod` | [Default access rights](#default-access-rights). |
@@ -511,9 +517,10 @@ This command is no longer available in Contao **4.10** and later.
 
 {{< version "4.10" >}}
 
-In many cases, SMTP servers do not allow sending from any sender address. In most cases, the sender address must match 
-the SMTP server access data used. Especially in multi-domain installations of Contao it might be important that the 
-sender address of the emails that Contao sends matches the domain.
+In many cases, SMTP servers do not allow sending from any sender address. Oftentimes the sender address must match 
+the SMTP server credentials. Especially in multi-domain installations of Contao it might be important that the 
+sender address of the emails that Contao sends matches the domain. Or you might want to have different sender
+addresses for different front end forms created via the Contao form generator.
 
 Since Contao **4.10**, it is possible to use multiple email configurations in Contao. These configurations can be 
 selected per website root, per form and per newsletter channel. For each e-mail configuration, you can also set the 

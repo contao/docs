@@ -102,7 +102,7 @@ Beispiel für ein angepasstes Logo:
 <div id="header">
     <div class="wrap">
         <div class="header-logo">
-            <img src="/files/layout/images/logo.png" alt="Mein Logo">
+            <img src="files/layout/images/logo.png" alt="Mein Logo">
         </div>
     </div>
 </div>

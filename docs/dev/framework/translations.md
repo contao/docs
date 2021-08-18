@@ -112,30 +112,33 @@ name is also `tl_content`.
 
 Contao uses the following categories in various domains:
 
-| Category   | Domain      | Description                                |
-| ---------- | ----------- | ------------------------------------------ |
-| `CNT`      | `countries` | _Country_.                                 |
-| `ERR`      | `default`   | Error messages.                            |
-| `SEC`      | `default`   | Security questions (captcha).              |
-| `CTE`      | `default`   | _Content Element_.                         |
-| `PTY`      | `default`   | _Page type_ (site structure).              |
-| `FOP`      | `default`   | _File operation permissions_.              |
-| `CHMOD`    | `default`   |                                            |
-| `DATE`     | `default`   | Date format definitions.                   |
-| `DAYS`     | `default`   | Translations for weekdays.                 |
-| `MONTHS`   | `default`   | Translations for month names.              |
-| `MSC`      | `default`   | _Miscellaneous_.                           |
-| `UNITS`    | `default`   | Binary units like _KiB_.                   |
-| `CONFIRM`  | `default`   |                                            |
-| `DP`       | `default`   | Date picker.                               |
-| `COLS`     | `default`   | Layout section names.                      |
-| `SECTIONS` | `default`   | Layout section positions.                  |
-| `DCA`      | `default`   | Various data container view translations.  |
-| `XPT`      | `exception` | Error messages for the front and back end. |
-| `XPL`      | `explain`   | Help wizard content.                       |
-| `LNG`      | `languages` | Translation of language names.             |
-| `MOD`      | `modules`   | Back end module labels and descriptions.   |
-| `FMD`      | `modules`   | Front end module labels and descriptions.  |
+| Category   | Domain          | Description                                                        |
+| ---------- | --------------- | ------------------------------------------------------------------ |
+| `CNT`      | `countries`     | _Country_.                                                         |
+| `ERR`      | `default`       | Error messages.                                                    |
+| `SEC`      | `default`       | Security questions (captcha).                                      |
+| `CTE`      | `default`       | _Content Element_.                                                 |
+| `PTY`      | `default`       | _Page type_ (site structure).                                      |
+| `FOP`      | `default`       | _File operation permissions_.                                      |
+| `CHMOD`    | `default`       | Translations for the access rights widget (`ChmodTable`).          |
+| `DATE`     | `default`       | Date format definitions.                                           |
+| `DAYS`     | `default`       | Translations for weekdays.                                         |
+| `MONTHS`   | `default`       | Translations for month names.                                      |
+| `MSC`      | `default`       | _Miscellaneous_.                                                   |
+| `UNITS`    | `default`       | Binary units like _KiB_.                                           |
+| `CONFIRM`  | `default`       | Translations for the invalid request token notice in the back end. |
+| `DP`       | `default`       | Date picker.                                                       |
+| `COLS`     | `default`       | Layout section names.                                              |
+| `SECTIONS` | `default`       | Layout section positions.                                          |
+| `DCA`      | `default`       | Various data container view translations.                          |
+| `XPT`      | `exception`     | Error messages for the front and back end.                         |
+| `XPL`      | `explain`       | Help wizard content.                                               |
+| `LNG`      | `languages`     | Translation of language names.                                     |
+| `MOD`      | `modules`       | Back end module labels and descriptions.                           |
+| `FMD`      | `modules`       | Front end module labels and descriptions.                          |
+| `FFL`      | `tl_form_field` | Translations for form generator form fields.                       |
+| `CACHE`    | `tl_page`       | Labels for the different cache time page settings.                 |
+| `CRAWL`    | `default`       | Translations for the crawler interface in the back end.            |
 
 There is also a category for each Data Container. The category's name is the same 
 as the Data Container's name. For example, for `tl_content` the translation's category
@@ -216,7 +219,9 @@ You can load translations by using the following legacy function:
 \Contao\System::loadLanguageFile('tl_content', 'de');
 ```
 
-Starting with Contao **4.5** you can also use Symfony's Translator service:
+The first parameter is the domain ("language file") while the second parameter is the language you want to load.
+
+Starting with Contao **4.5** you can also use Symfony's Translator service instead:
 
 ```php
 // src/Controller/ExampleController.php
@@ -245,7 +250,8 @@ class ExampleController
 }
 ```
 
-To access a specific Contao translation domain, simply prepend it with `contao_`.
+To access a specific Contao translation domain, simply prepend it with `contao_`. This also takes care of loading the respective language
+file automatically. You do not need to call `System::loadLanguageFile` when using the translator service.
 
 
 ### Translations within Contao PHP Templates

@@ -59,6 +59,7 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         'dataContainer' => 'Table',
         'ctable' => ['tl_parts'],
         'enableVersioning' => true,
+        'switchToEdit' => true,
         'sql' => [
             'keys' => [
                 'id' => 'primary',
@@ -147,32 +148,27 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0]
         ],
         'name' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['name'],
             'search' => true,
             'inputType' => 'text',
             'eval' => ['tl_class' => 'w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'street' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['street'],
             'inputType' => 'text',
             'eval' => ['tl_class' => 'w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'postal' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['postal'],
             'inputType' => 'text',
             'eval' => ['tl_class' => 'clr w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'city' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['city'],
             'inputType' => 'text',
             'eval' => ['tl_class' => 'w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'country' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['country'],
             'inputType' => 'select',
             'options' => \Contao\System::getCountries(),
             'eval' => ['tl_class' => 'w50', 'mandatory' => true, 'includeBlankOption' => true],
@@ -230,6 +226,7 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         'dataContainer' => 'Table',
         'ctable' => ['tl_parts'],
         'enableVersioning' => true,
+        'switchToEdit' => true,
         'sql' => [
             'keys' => [
                 'id' => 'primary',
@@ -274,32 +271,27 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0]
         ],
         'name' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['name'],
             'search' => true,
             'inputType' => 'text',
             'eval' => ['tl_class' => 'w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'street' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['street'],
             'inputType' => 'text',
             'eval' => ['tl_class' => 'w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'postal' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['postal'],
             'inputType' => 'text',
             'eval' => ['tl_class' => 'clr w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'city' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['city'],
             'inputType' => 'text',
             'eval' => ['tl_class' => 'w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'country' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_vendor']['country'],
             'inputType' => 'select',
             'options' => \Contao\System::getCountries(),
             'eval' => ['tl_class' => 'w50', 'mandatory' => true, 'includeBlankOption' => true],
@@ -432,7 +424,6 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0]
         ],
         'name' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_parts']['name'],
             'search' => true,
             'flag' => 1,
             'inputType' => 'text',
@@ -440,20 +431,17 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'number' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_parts']['number'],
             'search' => true,
             'inputType' => 'text',
             'eval' => ['tl_class' => 'w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'description' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_parts']['description'],
             'inputType' => 'textarea',
             'eval' => ['tl_class' => 'clr', 'rte' => 'tinyMCE', 'mandatory' => true],
             'sql' => ['type' => 'text', 'notnull' => false]
         ],
         'singleSRC' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_parts']['singleSRC'],
             'inputType' => 'fileTree',
             'eval' => [
                 'tl_class' => 'clr',
@@ -555,7 +543,6 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'sql' => ['type' => 'integer', 'unsigned' => true, 'default' => 0]
         ],
         'name' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_parts']['name'],
             'search' => true,
             'flag' => 1,
             'inputType' => 'text',
@@ -563,20 +550,17 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'number' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_parts']['number'],
             'search' => true,
             'inputType' => 'text',
             'eval' => ['tl_class' => 'w50', 'maxlength' => 255, 'mandatory' => true],
             'sql' => ['type' => 'string', 'length' => 255, 'default' => '']
         ],
         'description' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_parts']['description'],
             'inputType' => 'textarea',
             'eval' => ['tl_class' => 'clr', 'rte' => 'tinyMCE', 'mandatory' => true],
             'sql' => ['type' => 'text', 'notnull' => false]
         ],
         'singleSRC' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_parts']['singleSRC'],
             'inputType' => 'fileTree',
             'eval' => [
                 'tl_class' => 'clr',
@@ -624,8 +608,7 @@ Now that we have finished the DCA configuration and added our back end module, w
 can actually start creating and managing records. However, things will look a bit
 off since our back end module is missing translations in many places. For example
 labels for creating records and palette legends need to be defined for each data
-container. Also we used references to translation variables for the labels of each
-field - which are still empty.
+container.
 
 Translations must be put into the `/contao/languages` folder, while each language
 will have its own subfolder there. Our translations will go into the `/contao/languages/en` folder.
@@ -644,12 +627,14 @@ $GLOBALS['TL_LANG']['MOD']['tl_vendor'] = 'Vendors';
 $GLOBALS['TL_LANG']['MOD']['tl_parts'] = 'Parts';
 ```
 
-All other translations will go into files that have the same name as our data container
-table names:
+All other translations will go into files that have the same name as our data container table names. Contao **4.9** and up will 
+automatically pull these translations for our fields if the translation key is the same as the field's key. There are also special 
+translation keys like `new` which are used for the button that create a new data record.
 
 ```php
 // contao/languages/en/tl_vendor.php
 $GLOBALS['TL_LANG']['tl_vendor']['new'] = ['Create new vendor', 'Creates a new vendor.'];
+$GLOBALS['TL_LANG']['tl_vendor']['edit'] = ['Edit vendor ID %s', 'Edit vendor ID %s'];
 $GLOBALS['TL_LANG']['tl_vendor']['vendor_legend'] = 'Vendor';
 $GLOBALS['TL_LANG']['tl_vendor']['address_legend'] = 'Address';
 $GLOBALS['TL_LANG']['tl_vendor']['name'] = ['Name', 'Name of the vendor.'];
@@ -662,6 +647,7 @@ $GLOBALS['TL_LANG']['tl_vendor']['country'] = ['Country', "Country of the vendor
 ```php
 // contao/languages/en/tl_parts.php
 $GLOBALS['TL_LANG']['tl_parts']['new'] = ['Create new part', 'Creates a new part.'];
+$GLOBALS['TL_LANG']['tl_parts']['edit'] = ['Edit part ID %s', 'Edit part ID %s'];
 $GLOBALS['TL_LANG']['tl_parts']['parts_legend'] = 'Part';
 $GLOBALS['TL_LANG']['tl_parts']['name'] = ['Name', 'Name of the part.'];
 $GLOBALS['TL_LANG']['tl_parts']['number'] = ['Number', 'Part number.'];
@@ -670,10 +656,10 @@ $GLOBALS['TL_LANG']['tl_parts']['singleSRC'] = ['Image', 'Image of the part.'];
 ```
 
 
-[1]: ../../framework/dca
-[2]: ../../reference/dca/config
-[3]: ../../reference/dca/list
-[4]: ../../reference/dca/fields
-[5]: ../../reference/dca/palettes
-[6]: ../../reference/dca/callbacks
-[7]: ../../reference/dca/callbacks/#config-onload
+[1]: /framework/dca
+[2]: /reference/dca/config
+[3]: /reference/dca/list
+[4]: /reference/dca/fields
+[5]: /reference/dca/palettes
+[6]: /reference/dca/callbacks
+[7]: /reference/dca/callbacks/#config-onload

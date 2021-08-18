@@ -68,7 +68,12 @@ this, you have to create a corresponding field in the target table for each form
 **Save entries:** Here you activate the saving of the data in the database.
 
 **Destination table:** Here you select the table in which the data should be written. The table must be created
- before (e.g. via phpMyAdmin) in order to show up as a choice.
+ before (e.g. via phpMyAdmin or as [DCA](../../../../dev/reference/dca/)) in order to show up as a choice. The SQL-table must contain a column of the same name for each form field. Special characters such as hyphens in the field name can cause problems.
+
+Example SQL code to create a new table `prefix_example` in the database `##DB-name##` for a form with the (text) fields `field1` , `field2` , `field3`:
+```SQL
+CREATE TABLE `##DB-name##`.`prefix_example` ( `ID` INT NOT NULL AUTO_INCREMENT , `field1` TEXT NOT NULL , `field2` TEXT NOT NULL , `field3` TEXT NOT NULL , INDEX (`ID`)) ENGINE = InnoDB;
+``` 
 
 ## Template settings
 

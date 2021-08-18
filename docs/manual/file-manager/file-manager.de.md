@@ -73,6 +73,9 @@ das Bild automatisch auf die maximal zulässigen Abmessungen.
 Beachte, dass nur die Dateitypen hochgeladen werden können, die du in den Backend-Einstellungen unter »Erlaubte 
 Upload-Dateitypen« festgelegt hast.
 
+Wenn du eine Datei in einen Ordner hochlädst, wo bereits eine Datei mit dem gleichen Namen liegt, wird diese Datei aktualisiert 
+und die bestehende UUID bleibt erhalten. So kannst du eine existierende Datei überschreiben, ohne bestehende Verknüpfungen in 
+Inhaltselementen o.ä. neu zuweisen zu müssen.
 
 ## Dateien per FTP übertragen {#dateien-per-ftp-uebertragen}
 
