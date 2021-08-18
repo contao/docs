@@ -27,7 +27,7 @@ die [Erweiterung Leads](https://extensions.contao.org/?q=Leads&pages=1&p=termina
 ## Formularaufbau
 
 Für unser Beispiel halten wir den Formularaufbau übersichtlich. Über den [Formulargenerator](/de/formulargenerator/)
-erstellst du ein neues Formular mit dem Titel ``Reservierung``. Als [Formularfelder](/de/formulargenerator/formularfelder/) 
+erstellst du ein neues Formular mit dem Titel `Reservierung`. Als [Formularfelder](/de/formulargenerator/formularfelder/) 
 benötigen wir lediglich folgende Feldtypen zusammen mit einem 
 [Absendefeld](http://localhost:1313/de/formulargenerator/formularfelder/#absendefeld):
 
@@ -42,11 +42,11 @@ benötigen wir lediglich folgende Feldtypen zusammen mit einem
 ## Beispiel I
 
 Die Daten sollen im Backend über die [Terminverwaltung](/de/core-erweiterung/kalender/terminverwaltung/) zur Verfügung 
-stehen. Erstelle dir dazu ein neues Event-Archiv mit dem Namen ``Reservierungen``.
+stehen. Erstelle dir dazu ein neues Event-Archiv mit dem Namen `Reservierungen`.
 
 In den Einstellungen deines Formulars aktivierst du nun die Option 
 [Eingaben speichern](http://localhost:1313/de/formulargenerator/formulare/#formulardaten-speichern) und verwendest 
-als Zieltabelle den Eintrag ``tl_calendar_events``.
+als Zieltabelle den Eintrag `tl_calendar_events`.
 
 {{% notice info %}}
 Zur Auswahl der Zieltabelle stehen alle vorhandenen Datenbanktabellen deiner Contao Installation zur Verfügung. 
@@ -58,7 +58,7 @@ übereinstimmen.
 
 ### Der Hook prepareFormData
 
-Die Datenbanktabelle ``tl_calendar_events`` beinhaltet zahlreiche Felder. Nicht alle sind für unser Beispiel notwendig.
+Die Datenbanktabelle `tl_calendar_events` beinhaltet zahlreiche Felder. Nicht alle sind für unser Beispiel notwendig.
 Wir benötigen Einträge für die Felder »pid«, »title«, »alias«, »author«, »startDate«, »startTime«, »endDate«, 
 »endTime« und »published«, damit wir im Backend eine gültige Darstellung unserer Reservierungen erhalten. Optional 
 wären auch Einträge für »location«, »description« oder »teaser« möglich. 
@@ -71,7 +71,7 @@ könnte man über versteckte Formularfelder hinzufügen. Diese Vorgehensweise er
 
 Dieser Hook greift nach der Formular-Übermittlung aber vor der eigentlichen Datenspeicherung. Du kannst darüber 
 die übermittelten Daten bearbeiten und neue Informationen hinzufügen. Erstelle in deiner Contao-Installation 
-die Verzeichnisse ``src\EventListener\`` und platziere darin die Datei ``PrepareFormDataListener.php`` mit folgendem Inhalt:
+die Verzeichnisse `src\EventListener\` und platziere darin die Datei `PrepareFormDataListener.php` mit folgendem Inhalt:
 
 
 ```php
@@ -216,7 +216,7 @@ jeweiligen Formularfeldern die Auswahl »In Anfrage speichern« auf »ja« setze
 Die Erweiterung bietet keine eigenen Frontend Module zur Darstellung. Hierzu kannst du dann die 
 Core-Erweiterung [Auflistungen](/de/layout/modulverwaltung/anwendungen/#auflistung) nutzen. 
 Erstelle dir ein neues [Modul](/de/layout/modulverwaltung/) vom 
-Typ ``Auflistung`` mit folgenden Angaben:
+Typ `Auflistung` mit folgenden Angaben:
 
 
 | Feld                       | Wert                                             |
