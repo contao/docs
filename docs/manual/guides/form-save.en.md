@@ -37,7 +37,7 @@ For our example, we will keep the form structure clear. Use the form generator t
 |Text field   |endDate     |To            |No        |Date                  |
 
 
-## Sample I
+## Example I
 
 The data should be available in the backend via the [event management](/en/core-extensions/calendar/calendar-management/). 
 To do this, create a new event archive, e.g. with the name ``Reservations``.
@@ -55,7 +55,7 @@ the field names of your form must match the corresponding field names of the dat
 
 The database table ``tl_calendar_events`` contains numerous fields. Not all of them are necessary for our example.
 We need at least entries for the fields »pid«, »title«, »alias«, »author«, »startDate«, »startTime«, »endDate«, 
-»endTime« and »published« so that we get a valid representation of our reservations in the Contao backend. Optional 
+»endTime« and »published« so that we get a valid representation of our reservations in the backend. Optional 
 would be entries for »location«, »description« or »teaser«. 
 
 Our form currently serves at least the fields »title«, »startDate« and optional »endDate«. The other fields
@@ -63,8 +63,8 @@ could be added via hidden form fields. This procedure, however, makes it possibl
 transmitted form data. For this reason we use the hook »[prepareFormData](https://docs.contao.org/dev/reference/hooks/prepareFormData/)«.
 
 This hook takes effect after the form submission but before the actual data storage. You can use it to 
-edit the submitted data and add new information. Create the following directories in your Contao installation 
-create the directory ``src\EventListener\`` and in it the file ``PrepareFormDataListener.php`` with the following content:
+edit the submitted data and add new information. Create the following directories ``src\EventListener\`` in your Contao installation 
+and in it the file ``PrepareFormDataListener.php`` with the following content:
 
 ```php
 // src/EventListener/PrepareFormDataListener.php
@@ -149,7 +149,7 @@ according to your environment:
 - »$idEventArchiv« (The ID of your event archive)
 - »$idAuthor« (The ID of the author/backend user)
 
-You can get this information in the Contao backend via the detailed information of the respective entries.
+You can get this information in the backend via the detailed information of the respective entries.
 
 The field "alias" corresponds to the "event alias" of your event archive and must be unique. For this we use the 
 [Contao Slug-Service](https://docs.contao.org/dev/reference/services/#slug). First of all, we use the content of our 
@@ -167,13 +167,13 @@ is also necessary after you have made changes to the file »PrepareFormDataListe
 
 ### Conclusion
 
-At the current time, your form data is saved and can be viewed in the Contao backend in the corresponding event archive 
+At the current time, your form data is saved and can be viewed in the backend in the corresponding event archive 
 and can also be changed. You can also manually maintain further reservations here.
 
 Furthermore, all frontend modules (e.g. the mini calendar) are available for displaying this event archive.
 
 
-## Sample II
+## Example II
 
 If you do not want to use existing Contao database tables or if you do not want to use your own database table, 
 you can use the [Extension Leads](https://extensions.contao.org/?q=Leads&pages=1&p=terminal42%2Fcontao-leads). 
@@ -182,7 +182,7 @@ you can use the [Extension Leads](https://extensions.contao.org/?q=Leads&pages=1
 ### The Leads extension
 
 The extension automatically stores the data for each form in the database tables »tl_lead« and »tl_lead_data«. 
-Existing entries can also be viewed in the Contao backend. 
+Existing entries can also be viewed in the backend. 
 
 Our previous [formlayout](#formlayout) remains unchanged. After installing 
 the [extension Leads](https://extensions.contao.org/?q=Leads&pages=1&p=terminal42%2Fcontao-leads) you have to activate 
@@ -202,7 +202,7 @@ Furthermore, you must explicitly activate this in each form field that is to be 
 the selection »Save in leads« to »yes« in the respective form fields.
 
 The extension does not provide its own frontend modules for display. To display the data in the frontend, you can use the 
-extension [Listings](https://extensions.contao.org/?q=Auflistung&pages=1&p=contao%2Flisting-bundle).
+core extension [Listings](/en/layout/module-management/applications/#listing).
 You can then create a new module of the type ``Listing`` with the following specifications:
 
 
@@ -220,5 +220,5 @@ The extension also provides a method for querying the table "tl_lead_data" in an
 
 ### Conclusion
 
-If you now use the fromular, the data will be saved and can be viewed in the navigation area of the Contao backend 
+If you now use the form, the data will be saved and can be viewed in the navigation area of the backend 
 in the »Leads« section.

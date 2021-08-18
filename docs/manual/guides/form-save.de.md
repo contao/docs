@@ -42,7 +42,7 @@ benötigen wir lediglich folgende Feldtypen zusammen mit einem
 ## Beispiel I
 
 Die Daten sollen im Backend über die [Terminverwaltung](/de/core-erweiterung/kalender/terminverwaltung/) zur Verfügung 
-stehen. Erstelle dir dazu ein neues Event-Archiv z. B. mit dem Namen ``Reservierungen``.
+stehen. Erstelle dir dazu ein neues Event-Archiv mit dem Namen ``Reservierungen``.
 
 In den Einstellungen deines Formulars aktivierst du nun die Option 
 [Eingaben speichern](http://localhost:1313/de/formulargenerator/formulare/#formulardaten-speichern) und verwendest 
@@ -50,7 +50,7 @@ als Zieltabelle den Eintrag ``tl_calendar_events``.
 
 {{% notice info %}}
 Zur Auswahl der Zieltabelle stehen alle vorhandenen Datenbanktabellen deiner Contao Installation zur Verfügung. 
-Du könntest dir auch eine eigene Datenbanktabelle erstellen. Der entsprechende Tabellenname muss dann mit dem Präfix »tl_«
+Du könntest auch eine eigene Datenbanktabelle erstellen. Der entsprechende Tabellenname muss dann mit dem Präfix »tl_«
 beginnen. Grundsätzlich müssen die Feldnamen deines Formulars mit den entsprechenden Feldnamen der Datenbanktabelle 
 übereinstimmen.
 {{% /notice %}}
@@ -59,9 +59,9 @@ übereinstimmen.
 ### Der Hook prepareFormData
 
 Die Datenbanktabelle ``tl_calendar_events`` beinhaltet zahlreiche Felder. Nicht alle sind für unser Beispiel notwendig.
-Wir benötigen zumindest Einträge für die Felder »pid«, »title«, »alias«, »author«, »startDate«, »startTime«, »endDate«, 
-»endTime« und »published«, damit wir im Contao Backend eine gültige Darstellung unserer Reservierungen erhalten. Optional 
-wären Einträge für »location«, »description« oder »teaser«. 
+Wir benötigen Einträge für die Felder »pid«, »title«, »alias«, »author«, »startDate«, »startTime«, »endDate«, 
+»endTime« und »published«, damit wir im Backend eine gültige Darstellung unserer Reservierungen erhalten. Optional 
+wären auch Einträge für »location«, »description« oder »teaser« möglich. 
 
 Unser Formular bedient zur Zeit zumindest die Felder »title«, »startDate« und optionales »endDate«. Die weiteren Felder
 könnte man über versteckte Formularfelder hinzufügen. Diese Vorgehensweise ermöglicht jedoch die Manipulation der zu 
@@ -69,9 +69,9 @@ könnte man über versteckte Formularfelder hinzufügen. Diese Vorgehensweise er
 »[prepareFormData](https://docs.contao.org/dev/reference/hooks/prepareFormData/)«.
 
 
-Dieser Hook greift nach der Formular Übermittlung aber vor der eigentlichen Datenspeicherung. Du kannst darüber 
-die übermittelten Daten bearbeiten und neue Informationen hinzufügen. Erstelle dir in deiner Contao Installation 
-die Verzeichnisse ``src\EventListener\`` und darin die Datei ``PrepareFormDataListener.php`` mit folgendem Inhalt:
+Dieser Hook greift nach der Formular-Übermittlung aber vor der eigentlichen Datenspeicherung. Du kannst darüber 
+die übermittelten Daten bearbeiten und neue Informationen hinzufügen. Erstelle in deiner Contao-Installation 
+die Verzeichnisse ``src\EventListener\`` und platziere darin die Datei ``PrepareFormDataListener.php`` mit folgendem Inhalt:
 
 
 ```php
@@ -150,19 +150,19 @@ class PrepareFormDataListener
 }
 ```
 
-Die für unser Event-Archiv benötigten Felder werden hierüber gesetzt. Die folgenden Werte mußt du entsprechend
+Die für unser Event-Archiv benötigten Felder werden in dieser Datei gesetzt. Die folgenden Werte mußt du entsprechend
 deiner Umgebung anpassen:
 
 - »$idForm« (Die ID deines Formulars)
 - »$idEventArchiv« (Die ID deines Event-Archivs)
 - »$idAuthor« (Die ID des Autors/Backend Benutzer)
 
-Diese Angaben erhälst du im Contao Backend über die Detailinformationen der jeweiligen Einträge.
+Diese Angaben erhältst du im Backend über die Detailinformationen der jeweiligen Einträge.
 
 Das Feld »alias« entspricht dem »Event-Alias« deines Event-Archivs und muß eindeutig sein. Hierzu benutzen wir den
-[Contao Slug-Service](https://docs.contao.org/dev/reference/services/#slug). Zunächst nutzen wir dazu den Inhalt 
+[Contao Slug-Service](https://docs.contao.org/dev/reference/services/#slug). Zunächst verwenden wir dazu den Inhalt 
 unseres übermittelten »title« Feldes und lassen lediglich Kleinbuchstaben und Ziffern zu. Umlaute 
-werden umgeschrieben und Leerzeichzen ausgetauscht. 
+werden umgeschrieben und Leerzeichen ersetzt. 
 
 Die Methode »generate()» des Contao Slug-Service erlaubt auch die Übergabe einer Duplikatsprüfung als Callable 
 für den dritten Parameter. Sofern erforderlich wird darüber automatisch eine eindeutige Nummer dem »alias« 
@@ -177,8 +177,8 @@ vorgenommen hast.
 
 ### Fazit
 
-Zum aktuellen Zeitpunkt werden deine Formulardaten gespeichert und können im Contao Backend im entsprechenden 
-[Event-Archiv](/de/core-erweiterung/kalender/terminverwaltung/) eingesehen und auch geändert werden. Du könntest hier 
+Zum aktuellen Zeitpunkt werden deine Formulardaten gespeichert und können im Backend im entsprechenden 
+[Event-Archiv](/de/core-erweiterung/kalender/terminverwaltung/) eingesehen und auch geändert werden. Zusätzlich könntest du hier 
 weitere Einträge manuell pflegen.
 
 Weiterhin stehen dir alle [Frontend Module](/de/core-erweiterung/kalender/frontend-module/#template-einstellungen) 
@@ -187,20 +187,20 @@ Weiterhin stehen dir alle [Frontend Module](/de/core-erweiterung/kalender/fronte
 
 ## Beispiel II
 
-Falls du keine vorhandenen Contao Datenbanktabellen benötigst und keinen Hook erstellen möchtest, bietet sich die 
+Falls du keine vorhandenen Contao-Datenbanktabellen benötigst und keinen Hook erstellen möchtest, bietet sich die 
 [Erweiterung Leads](https://extensions.contao.org/?q=Leads&pages=1&p=terminal42%2Fcontao-leads) an. 
 
 
 ### Die Erweiterung Leads
 
 Die Erweiterung legt je Formular die Daten automatisch in die Datenbanktabellen »tl_lead« bzw. »tl_lead_data« ab. 
-Vorhandene Einträge sind darüber hinaus im Contao Backend einsehbar. 
+Vorhandene Einträge sind darüber hinaus im Backend einsehbar. 
 
 Unser bisheriger [Formularaufbau](#formularaufbau) bleibt unverändert. Nach Installation 
 der [Erweiterung Leads](https://extensions.contao.org/?q=Leads&pages=1&p=terminal42%2Fcontao-leads)
-musst du die Leads-Speicherung in den Formular Einstellungen über den Eintrag »Anfragen speichern« aktivieren.
+musst du die Leads-Speicherung in den Formular-Einstellungen über den Eintrag »Anfragen speichern« aktivieren.
 
-Anschließend stehen dir weitere Optionen zur Verfügung, die der Leads Backend Darstellung dienen. Wir verwenden
+Anschließend stehen dir weitere Optionen zur Verfügung, die der Leads Backend-Darstellung dienen. Wir verwenden
 hierzu folgende Einträge:
 
 
@@ -210,12 +210,12 @@ hierzu folgende Einträge:
 |Navigations-Bezeichnung  |Reservierung Vereinsboot                          |
 |Datensatz-Bezeichnung    |##title## - {{formatted_datetime::##startDate##::d.m.Y}} {{formatted_datetime::##endDate##::d.m.Y}}|
 
-Weiterhin musst du in jedem Formularfeld, das gespeichert werden soll, dies expliziet aktivieren. Hierzu kannst du in den
+Weiterhin musst du in jedem Formularfeld, das gespeichert werden soll, dies explizit aktivieren. Hierzu kannst du in den
 jeweiligen Formularfeldern die Auswahl »In Anfrage speichern« auf »ja« setzen.
 
 Die Erweiterung bietet keine eigenen Frontend Module zur Darstellung. Hierzu kannst du dann die 
-Erweiterung [Auflistungen](https://extensions.contao.org/?q=Auflistung&pages=1&p=contao%2Flisting-bundle) nutzen. 
-Erstelle dir nach Installation der Erweiterung ein neues [Modul](/de/layout/modulverwaltung/) vom 
+Core-Erweiterung [Auflistungen](/de/layout/modulverwaltung/anwendungen/#auflistung) nutzen. 
+Erstelle dir ein neues [Modul](/de/layout/modulverwaltung/) vom 
 Typ ``Auflistung`` mit folgenden Angaben:
 
 
@@ -227,12 +227,12 @@ Typ ``Auflistung`` mit folgenden Angaben:
 
 
 {{% notice tip %}}
-Die Erweiterung bietet darüber hinaus zur gezielten Abfrage der Tabelle »tl_lead_data», in beliebigen Contao Templates, 
+Die Erweiterung bietet darüber hinaus zur gezielten Abfrage der Tabelle »tl_lead_data», in beliebigen Contao-Templates, 
 die Methode »getExportData()« der Klasse »DataCollector« 
-(s.: Leads »[DataCollector.php](https://github.com/terminal42/contao-leads/blob/master/library/Leads/DataCollector.php)»)
+(s. a.: Leads »[DataCollector.php](https://github.com/terminal42/contao-leads/blob/master/library/Leads/DataCollector.php)»)
 {{% /notice %}}
 
 ### Fazit
 
-Wenn du jetzt das Fromular benutzt, werden die Daten gespeichert und sind im Navigationsbereich des Contao Backend über den 
+Wenn du jetzt das Fromular benutzt, werden die Daten gespeichert und sind im Navigationsbereich des Backends über den 
 Bereich »Anfragen« einsehbar.
