@@ -13,7 +13,7 @@ tags:
 
 
 Mit Contao kannst du Formulardaten nicht nur via E-Mail versenden, sondern diese auch in eine
-Datenbanktabelle speichern. Möchtest du dazu keine vorhandene oder eigene Datenbanktabelle nutzen, kann du als
+Datenbanktabelle speichern. Möchtest du dazu keine vorhandene oder eigene Datenbanktabelle nutzen, kannst du als
 Alternative die [Erweiterung Leads](https://extensions.contao.org/?q=Leads&pages=1&p=terminal42%2Fcontao-leads) installieren.
 
 Im ersten Beispiel verwenden wir zur Speicherung die in Contao zur Verfügung stehenden Möglichkeiten zusammen mit dem
