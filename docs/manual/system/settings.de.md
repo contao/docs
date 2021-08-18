@@ -94,21 +94,20 @@ contao:
 
 ### Frontend-Einstellungen
 
+{{% notice note %}}
+Ab Version **4.10** wird die folgende Einstellung im Startpunkt der Webseite vorgenommen:
+
 **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
 Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
 »Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
+{{% /notice %}}
+
+{{% notice note %}}
+Ab Version **4.10** ist diese Einstellung entfallen:
 
 **Leere URLs nicht umleiten:** Bei einer leeren URL die Webseite anzeigen anstatt auf den Startpunkt der Sprache 
 weiterzuleiten _(nicht empfohlen)_.
-
-**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
-`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen. Seit Contao **4.9** kann
-auch folgendes Kommando benutzt werden:
-
-```
-php vendor/bin/contao-console contao:cron
-```
-
+{{% /notice %}}
 
 ### Sicherheitseinstellungen
 
@@ -181,6 +180,16 @@ contao:
 {{% /notice %}}
 
 
+### Cronjob-Einstellungen
+
+**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
+`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen. Seit Contao **4.9** kann
+auch folgendes Kommando benutzt werden:
+
+```
+php vendor/bin/contao-console contao:cron
+```
+
 ### Standard-Zugriffsrechte
 
 **Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine 
@@ -223,7 +232,7 @@ parameters:
     secret: …
 ```
 {{% notice note %}}
-Datenbankpasswörter, die nur aus Ziffern bestehen müssen in Hochkommatas gesetzt werden.
+Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen enthalten, müssen in Hochkommatas gesetzt werden.
 {{% /notice %}}
 
 ## config.yml
