@@ -109,35 +109,35 @@ class PrepareFormDataListener
         // form restriction 
         if ((int) $form->id === $idForm) {
 
-          // mandatory fields
-          $submittedData['pid']       = $idEventArchiv;
-          $submittedData['author']    = $idAuthor;
-          $submittedData['published'] = 1;
+            // mandatory fields
+            $submittedData['pid']       = $idEventArchiv;
+            $submittedData['author']    = $idAuthor;
+            $submittedData['published'] = 1;
         
-          // generate unique alias 
-          $submittedData['alias'] = $this->getSlug($submittedData['title']);
+            // generate unique alias 
+            $submittedData['alias'] = $this->getSlug($submittedData['title']);
       
-          $submittedData['startTime'] = strtotime($submittedData['startDate']);
+            $submittedData['startTime'] = strtotime($submittedData['startDate']);
         
-          // optional fields
-          if (!empty(trim($submittedData['endDate']))) {
-            $submittedData['endTime'] = strtotime($submittedData['endDate']);
-          } else {
-            $submittedData['endTime'] = null;
-            $submittedData['endDate'] = null;
-          }
+            // optional fields
+            if (!empty(trim($submittedData['endDate']))) {
+                $submittedData['endTime'] = strtotime($submittedData['endDate']);
+            } else {
+                $submittedData['endTime'] = null;
+                $submittedData['endDate'] = null;
+            }
         }
     }
   
     public function getSlug(string $text, string $locale = 'de', string $validChars = '0-9a-z'): string
     {
         $options = [
-          'locale' => $locale,
-          'validChars' => $validChars,
+            'locale' => $locale,
+            'validChars' => $validChars,
         ];
 
         $duplicateCheck = function (string $slug): bool {
-          return $this->slugExists($slug);
+            return $this->slugExists($slug);
         };
 
         return $this->slug->generate($text, $options, $duplicateCheck);
@@ -145,7 +145,7 @@ class PrepareFormDataListener
 
     private function slugExists(string $slug): bool
     {
-      return !empty($this->db->fetchAllAssociative("SELECT * FROM tl_calendar_events WHERE alias = ?", [$slug]));
+        return !empty($this->db->fetchAllAssociative("SELECT * FROM tl_calendar_events WHERE alias = ?", [$slug]));
     }  
 }
 ```
