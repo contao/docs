@@ -196,6 +196,8 @@ Verfügbare Flags:
 |:--------------------|:-------------------------------------------------------------------------|:--------------------------------------------------|
 | `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           |                                                   |
 | `refresh`           | Erstellt die Ausgabe bei jeder Anfrage neu.                              |                                                   |
+| `attr`              | Wandelt Sonderzeichen in Entities um damit der Insert-Tag in einem HTML-Attribut (z. B. `title="…"`) verwendet werden kann. | siehe&nbsp;`StringUtil::specialcharsAttribute()` |
+| `urlattr`           | Wandelt Sonderzeichen in Entities um, gleich wie `attr`. Zusätzlich werden Doppelpunkte URL-enkodiert um unerlaubte Protokolle wie `javascript:` zu verhindern. | siehe&nbsp;`StringUtil::specialcharsUrl()` |
 | `addslashes`        | Stellt bestimmten Zeichen eines Strings ein (<code>\\</code>) voran.     | [PHP-Funktion](https://php.net/addslashes)        |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
 | `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                       |
