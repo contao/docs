@@ -168,6 +168,8 @@ Available Flags:
 | ---- | ----------- | ------------------- |
 | `uncached` | Receives the tag when writing the cache file. |  |
 | `refresh` | Rebuilds the output on each request. |  |
+| `attr` | Converts special characters into entities to make usage of the insert tag possible inside html attributes (like `title=""`) | see&nbsp;`StringUtil::specialcharsAttribute()` |
+| `urlattr` | Converts special characters into entities, same as `attr`. Additionally colons get URL encoded to disable disallowed protocols like `javascript:`. | see&nbsp;`StringUtil::specialcharsUrl()` |
 | `addslashes` | Prepends certain characters in a string (`\`). | [PHP function](https://php.net/addslashes) |
 | `standardize` | Standardizes the output (for example, the alias in the page structure). |  |
 | `absolute` | Generates an absolute path including host name and protocol | Available in Contao **4.5** and later |
