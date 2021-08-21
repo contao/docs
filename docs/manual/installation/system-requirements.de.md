@@ -163,7 +163,7 @@ bzw. stelle sicher, dass die Einstellung entsprechend angepasst oder erweitert w
 ```
 [mysqld]
 …
-sql_mode="STRICT_TRANS_TABLES"
+sql_mode="TRADITIONAL"
 …
 ```
 
