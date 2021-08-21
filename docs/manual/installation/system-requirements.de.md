@@ -179,6 +179,10 @@ doctrine:
                     1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
 ```
 
+{{% notice note %}}
+Im Falle von MySQLi lautet der Key `3` anstelle von `1002`, was nur angezeigt wird, wenn PDO verwendet wird.
+{{% /notice %}}
+
 
 ## Webserver
 
