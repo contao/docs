@@ -149,6 +149,36 @@ doctrine:
                     engine: MyISAM
 ```
 
+Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte oder abgeschnittene
+Daten zu verhindern und die Datenintegrität zu gewährleisten.
+
+{{% notice note %}}
+Ab **Contao 4.12** zeigt das Install-Tool eine Warnmeldung an, wenn der Datenbankserver nicht im
+"Strict Mode" läuft.
+{{% /notice %}}
+
+Um den "Strict Mode" zu aktivieren, ergänze folgendes in deiner `my.cnf` oder `my.ini` Datei
+bzw. stelle sicher, dass die Einstellung entsprechend angepasst oder erweitert wird:
+
+```
+[mysqld]
+…
+sql_mode="STRICT_TRANS_TABLES"
+…
+```
+
+Wenn die oben empfohlene Einstellung auf deinem Server nicht aktiviert werden kann, konfiguriere
+die Verbindungsoptionen bitte in deiner `app/config/config.yml`-Datei ({{< version-tag "4.8" >}} `config/config.yml`-Datei):
+
+```yml
+doctrine:
+    dbal:
+        connections:
+            default:
+                options:
+                    1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
+```
+
 
 ## Webserver
 
