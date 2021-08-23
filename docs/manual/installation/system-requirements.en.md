@@ -170,12 +170,9 @@ doctrine:
         connections:
             default:
                 options:
+                    # Depending on the DB driver, the option key is either 1002 (pdo_mysql) or 3 (mysqli)
                     1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
 ```
-
-{{% notice note %}}
-For MySQLi the key is named `3` instead of `1002` which is shown only if PDO is used.
-{{% /notice %}}
 
 
 ## Web server
