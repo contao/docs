@@ -149,7 +149,7 @@ floating in the wrong place or being overlayed by other fields).
 
 ## Manipulating palettes
 
-Palette definnitions are simple strings and thus can be modified in their Data
+Palette definitions are simple strings and thus can be modified in their Data
 Container Array via string replacement for example. This can be a cumbersome
 tasks, especially if you want to add or remove fields at specific positions or
 groups. The [Contao Palette Manipulator][1] can help in such a case.
