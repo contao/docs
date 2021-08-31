@@ -153,7 +153,7 @@ Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte od
 Daten zu verhindern und die Datenintegrität zu gewährleisten.
 
 {{% notice note %}}
-Ab **Contao 4.12** zeigt das Install-Tool eine Warnmeldung an, wenn der Datenbankserver nicht im
+Ab **Contao 4.9** zeigt das Install-Tool eine Warnmeldung an, wenn der Datenbankserver nicht im
 "Strict Mode" läuft.
 {{% /notice %}}
 
