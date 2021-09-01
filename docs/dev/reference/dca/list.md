@@ -79,6 +79,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
 | class           | CSS class (`string`)              | CSS class attribute of the button.                                                                                 |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
+| showOnSelect    | Show on select `bool`             | ? Default `false`                                                                                                  |
 | [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
 
 {{< version "4.7" >}}
@@ -103,6 +104,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | href            | URL fragment (`string`)           | URL fragment that is added to the URI string when the button is clicked (e.g. `act=edit`).                         |
 | icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
+| showInHeader    | Show in header `bool`             | ? Default `false`                                                                                                  |
 | [button_callback](../callbacks/#list-operations-operation-button) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
 
 {{< version "4.7" >}}
