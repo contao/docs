@@ -230,7 +230,7 @@ class ExampleController extends AbstractContentElementController
 ```
 
 ```php
-// contao/dca/tl_module.php
+// contao/dca/tl_content.php
 use App\Controller\ContentElement\ExampleController;
 
 $GLOBALS['TL_DCA']['tl_content']['palettes'][ExampleController::TYPE] = 
