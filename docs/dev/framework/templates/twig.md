@@ -260,6 +260,12 @@ managed `@Contao` namespace:
 </section>
 ```
 
+{{% notice note %}}
+When extending, including or embedding templates from the `@Contao` namespace,
+the file extension is not considered. This means `@Contao/card.html.twig` will
+target the same template as `@Contao/card.html5`. For this reason you can omit
+the extension completely in that case. 
+{{% /notice %}}
 
 ### Template context 
 
@@ -500,8 +506,8 @@ composer require twig/intl-extra
 Twig has lots of extension points. The easiest things to add are filters and
 functions. Have a look at the [offical docs][ExtendingTwigDocs] where things
 are explained in detail. For fun, we are now going to implement a simple
-`|reverse` filter in our application that will turn strings upside down
-(`abc` &rarr; `cba`).
+`|rot13` filter in our application that will scramble strings by shifting
+every letter by 13 places in the alphabet (`Abcd` &rarr; `Nopq`).
 
 If you are using the [Symfony maker bundle][MakerBundle] you can use the command
 `make:twig-extension` to create a new extension. Otherwise, go ahead and create
@@ -522,13 +528,13 @@ class AppExtension extends AbstractExtension
     public function getFilters(): array
     {
         return [
-            new TwigFilter('reverse', [$this, 'reverseString']),
+            new TwigFilter('rot13', [$this, 'rotateString']),
         ];
     }
 
-    public function reverseString(string $value): string
+    public function rotateString(string $value): string
     {
-        return strrev($value);
+        return str_rot13($value);
     }
 }
 ```
@@ -536,11 +542,11 @@ class AppExtension extends AbstractExtension
 That's it - our filter is now ready to be used in any template:
 
 ```twig
-{% set my_cms = 'Contao' %}
+{% set secret_cms = 'Pbagnb' %}
 
-This is {{ my_cms }} backwards: {{ my_cms|reverse }}
+Turns out "{{ secret_cms }}" means "{{ secret_cms|rot13 }}".
 
-{# This is Contao backwards: oatnoC #}
+{# Turns out "Pbagnb" means "Contao". #}
 ```
 
 
