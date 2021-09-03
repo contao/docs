@@ -384,6 +384,8 @@ Speichern automatisch ergänzt.
 
 Die Einstellungen sind nur bei Seiten vom Typ »Startpunkt einer Webseite« verfügbar.
 
+{{< version-tag "4.11" >}} Die Sitemap ist ab Contao 4.11 automatisch pro Domain verfügbar. Hat man mehrere Sprachen unter einer einzigen Domain, sind alle Links in dieser Sitemap enthalten.
+
 
 ## Weiterleitung
 
