@@ -40,9 +40,9 @@ For our example, we will keep the form structure clear. Use the form generator t
 ## Example I
 
 The data should be available in the backend via the [event management](/en/core-extensions/calendar/calendar-management/). 
-To do this, create a new event archive, e.g. with the name ``Reservations``.
+To do this, create a new event archive, e.g. with the name `Reservations``.
 
-In the settings of your form, activate the option ``Store data`` and use the entry ``tl_calendar_events`` as the target table.
+In the settings of your form, activate the option `Store data` and use the entry `tl_calendar_events` as the target table.
 
 {{% notice info %}}
 To select the target table, you can use all the existing database tables of your Contao installation. You can also 
@@ -53,7 +53,7 @@ the field names of your form must match the corresponding field names of the dat
 
 ### Hook prepareFormData
 
-The database table ``tl_calendar_events`` contains numerous fields. Not all of them are necessary for our example.
+The database table `tl_calendar_events` contains numerous fields. Not all of them are necessary for our example.
 We need at least entries for the fields »pid«, »title«, »alias«, »author«, »startDate«, »startTime«, »endDate«, 
 »endTime« and »published« so that we get a valid representation of our reservations in the backend. Optional 
 would be entries for »location«, »description« or »teaser«. 
@@ -63,8 +63,8 @@ could be added via hidden form fields. This procedure, however, makes it possibl
 transmitted form data. For this reason we use the hook »[prepareFormData](https://docs.contao.org/dev/reference/hooks/prepareFormData/)«.
 
 This hook takes effect after the form submission but before the actual data storage. You can use it to 
-edit the submitted data and add new information. Create the following directories ``src\EventListener\`` in your Contao installation 
-and in it the file ``PrepareFormDataListener.php`` with the following content:
+edit the submitted data and add new information. Create the following directories `src/EventListener/` in your Contao installation 
+and in it the file `PrepareFormDataListener.php` with the following content:
 
 ```php
 // src/EventListener/PrepareFormDataListener.php
@@ -203,7 +203,7 @@ the selection »Save in leads« to »yes« in the respective form fields.
 
 The extension does not provide its own frontend modules for display. To display the data in the frontend, you can use the 
 core extension [Listings](/en/layout/module-management/applications/#listing).
-You can then create a new module of the type ``Listing`` with the following specifications:
+You can then create a new module of the type `Listing` with the following specifications:
 
 
 | Field                      | Value                                            |
