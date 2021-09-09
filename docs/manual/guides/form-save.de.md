@@ -76,20 +76,23 @@ die Verzeichnisse `src/EventListener/` und platziere darin die Datei `PrepareFor
 
 ```php
 // src/EventListener/PrepareFormDataListener.php
-
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Contao\Form;
-
 use Contao\CoreBundle\Slug\Slug;
+use Contao\Form;
 use Doctrine\DBAL\Connection;
 
 /**
  * @Hook("prepareFormData")
  */
-class PrepareFormDataListener 
+class PrepareFormDataListener
 {
+    // Change these variables for your form, calendar and author
+    private const FORM_ID = 3;
+    private const CALENDAR_ID = 5;
+    private const AUTHOR_ID = 1;
+
     private $slug;
     private $db;
 
@@ -97,38 +100,39 @@ class PrepareFormDataListener
     {
         $this->slug = $slug;
         $this->db = $db;
-    }  
-  
+    }
+
     public function __invoke(array &$submittedData, array $labels, array $fields, Form $form): void
     {
-        // set id of form, eventarchiv and author
-        $idForm         = 3;
-        $idEventArchiv  = 5;
-        $idAuthor       = 1;
-    
-        // form restriction 
-        if ((int) $form->id === $idForm) {
+        // Check if this is the right form
+        if (self::FORM_ID !== (int) $form->id) {
+            return;
+        }
 
-            // mandatory fields
-            $submittedData['pid']       = $idEventArchiv;
-            $submittedData['author']    = $idAuthor;
-            $submittedData['published'] = 1;
-        
-            // generate unique alias 
-            $submittedData['alias'] = $this->getSlug($submittedData['title']);
-      
-            $submittedData['startTime'] = strtotime($submittedData['startDate']);
-        
-            // optional fields
-            if (!empty(trim($submittedData['endDate']))) {
-                $submittedData['endTime'] = strtotime($submittedData['endDate']);
-            } else {
-                $submittedData['endTime'] = null;
-                $submittedData['endDate'] = null;
-            }
+        // Mandatory fields
+        $submittedData['pid'] = self::CALENDAR_ID;
+        $submittedData['author'] = self::AUTHOR_ID;
+
+        // Set this to false, if newly created events should not be immediately published
+        $submittedData['published'] = true;
+
+        // Generate unique alias
+        $submittedData['alias'] = $this->getSlug($submittedData['title']);
+
+        // Convert and set date fields
+        $submittedData['startDate'] = strtotime(trim($submittedData['startDate']));
+        $submittedData['startTime'] = $submittedData['startDate'];
+
+        // Optional fields
+        if (!empty(trim($submittedData['endDate']))) {
+            $submittedData['endDate'] = strtotime($submittedData['endDate']);
+            $submittedData['endTime'] = $submittedData['endDate'];
+        } else {
+            $submittedData['endTime'] = null;
+            $submittedData['endDate'] = null;
         }
     }
-  
+
     public function getSlug(string $text, string $locale = 'de', string $validChars = '0-9a-z'): string
     {
         $options = [
@@ -145,17 +149,17 @@ class PrepareFormDataListener
 
     private function slugExists(string $slug): bool
     {
-        return !empty($this->db->fetchAllAssociative("SELECT * FROM tl_calendar_events WHERE alias = ?", [$slug]));
-    }  
+        return !empty($this->db->fetchAllAssociative('SELECT * FROM tl_calendar_events WHERE alias = ?', [$slug]));
+    }
 }
 ```
 
 Die für unser Event-Archiv benötigten Felder werden in dieser Datei gesetzt. Die folgenden Werte mußt du entsprechend
 deiner Umgebung anpassen:
 
-- »$idForm« (Die ID deines Formulars)
-- »$idEventArchiv« (Die ID deines Event-Archivs)
-- »$idAuthor« (Die ID des Autors/Backend Benutzer)
+- `FORM_ID` (Die ID deines Formulars)
+- `CALENDAR_ID` (Die ID deines Event-Archivs)
+- `AUTHOR_ID` (Die ID des Autors/Backend Benutzer)
 
 Diese Angaben erhältst du im Backend über die Detailinformationen der jeweiligen Einträge.
 
