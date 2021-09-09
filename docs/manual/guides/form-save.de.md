@@ -42,7 +42,7 @@ benötigen wir lediglich folgende Feldtypen zusammen mit einem
 ## Beispiel I
 
 Die Daten sollen im Backend über die [Terminverwaltung](/de/core-erweiterung/kalender/terminverwaltung/) zur Verfügung 
-stehen. Erstelle dir dazu ein neues Event-Archiv mit dem Namen `Reservierungen`.
+stehen. Erstelle dir dazu ein neues Kalender mit dem Namen `Reservierungen`.
 
 In den Einstellungen deines Formulars aktivierst du nun die Option 
 [Eingaben speichern](http://localhost:1313/de/formulargenerator/formulare/#formulardaten-speichern) und verwendest 
@@ -154,16 +154,16 @@ class PrepareFormDataListener
 }
 ```
 
-Die für unser Event-Archiv benötigten Felder werden in dieser Datei gesetzt. Die folgenden Werte mußt du entsprechend
+Die für unser Kalender benötigten Felder werden in dieser Datei gesetzt. Die folgenden Werte mußt du entsprechend
 deiner Umgebung anpassen:
 
 - `FORM_ID` (Die ID deines Formulars)
-- `CALENDAR_ID` (Die ID deines Event-Archivs)
+- `CALENDAR_ID` (Die ID deines Kalenders)
 - `AUTHOR_ID` (Die ID des Autors/Backend Benutzer)
 
 Diese Angaben erhältst du im Backend über die Detailinformationen der jeweiligen Einträge.
 
-Das Feld »alias« entspricht dem »Event-Alias« deines Event-Archivs und muß eindeutig sein. Hierzu benutzen wir den
+Das Feld »alias« entspricht dem »Event-Alias« deines Kalenders und muß eindeutig sein. Hierzu benutzen wir den
 [Contao Slug-Service](https://docs.contao.org/dev/reference/services/#slug). Zunächst verwenden wir dazu den Inhalt 
 unseres übermittelten »title« Feldes und lassen lediglich Kleinbuchstaben und Ziffern zu. Umlaute 
 werden umgeschrieben und Leerzeichen ersetzt. 
@@ -182,11 +182,11 @@ vorgenommen hast.
 ### Fazit
 
 Zum aktuellen Zeitpunkt werden deine Formulardaten gespeichert und können im Backend im entsprechenden 
-[Event-Archiv](/de/core-erweiterung/kalender/terminverwaltung/) eingesehen und auch geändert werden. Zusätzlich könntest du hier 
+[Kalender](/de/core-erweiterung/kalender/terminverwaltung/) eingesehen und auch geändert werden. Zusätzlich könntest du hier 
 weitere Einträge manuell pflegen.
 
 Weiterhin stehen dir alle [Frontend Module](/de/core-erweiterung/kalender/frontend-module/#template-einstellungen) 
-(z. B. der Mini-Kalendar) zwecks Darstellung dieses Event-Archivs zur Verfügung.
+(z. B. der Mini-Kalendar) zwecks Darstellung dieses Kalenders zur Verfügung.
 
 
 ## Beispiel II

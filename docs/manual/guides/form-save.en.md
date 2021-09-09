@@ -40,7 +40,7 @@ For our example, we will keep the form structure clear. Use the form generator t
 ## Example I
 
 The data should be available in the backend via the [event management](/en/core-extensions/calendar/calendar-management/). 
-To do this, create a new event archive, e.g. with the name `Reservations`.
+To do this, create a new calendar, e.g. with the name `Reservations`.
 
 In the settings of your form, activate the option `Store data` and use the entry `tl_calendar_events` as the target table.
 
@@ -146,16 +146,16 @@ class PrepareFormDataListener
 }
 ```
 
-The fields required for our event archive are set here. You must adjust the following values
+The fields required for our calendar are set here. You must adjust the following values
 according to your environment:
 
 - `FORM_ID` (The ID of your form)
-- `CALENDAR_ID` (The ID of your event archive)
+- `CALENDAR_ID` (The ID of your calendar)
 - `AUTHOR_ID` (The ID of the author/backend user)
 
 You can get this information in the backend via the detailed information of the respective entries.
 
-The field "alias" corresponds to the "event alias" of your event archive and must be unique. For this we use the 
+The field "alias" corresponds to the "event alias" of your calendar and must be unique. For this we use the 
 [Contao Slug-Service](https://docs.contao.org/dev/reference/services/#slug). First of all, we use the content of our 
 of our transmitted »title« field and only allow lower case letters and numbers. Special characters 
 are rewritten and blanks are replaced. 
@@ -171,10 +171,10 @@ is also necessary after you have made changes to the file »PrepareFormDataListe
 
 ### Conclusion
 
-At the current time, your form data is saved and can be viewed in the backend in the corresponding event archive 
+At the current time, your form data is saved and can be viewed in the backend in the corresponding calendar 
 and can also be changed. You can also manually maintain further reservations here.
 
-Furthermore, all frontend modules (e.g. the mini calendar) are available for displaying this event archive.
+Furthermore, all frontend modules (e.g. the mini calendar) are available for displaying this calendar.
 
 
 ## Example II
