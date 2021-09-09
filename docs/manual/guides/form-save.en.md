@@ -27,7 +27,7 @@ for storage and backend presentation.
 ## Formlayout
 
 For our example, we will keep the form structure clear. Use the form generator to create a new form with the title 
-``Reservation``. We only need the following field types as form fields together with a submit field:
+`Reservation`. We only need the following field types as form fields together with a submit field:
 
 
 |Field type   |Field name  |Field label   |Mandatory |Validation            |
@@ -40,7 +40,7 @@ For our example, we will keep the form structure clear. Use the form generator t
 ## Example I
 
 The data should be available in the backend via the [event management](/en/core-extensions/calendar/calendar-management/). 
-To do this, create a new event archive, e.g. with the name `Reservations``.
+To do this, create a new event archive, e.g. with the name `Reservations`.
 
 In the settings of your form, activate the option `Store data` and use the entry `tl_calendar_events` as the target table.
 
