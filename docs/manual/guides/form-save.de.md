@@ -3,7 +3,7 @@ title: "Formulardaten speichern"
 description: "Übertragene Formulardaten in eine Datenbanktabelle speichern."
 url: "/de/anleitungen/formulardaten-speichern"
 aliases:
-  - /de/anleitungen/form-save/
+  - /de/anleitungen/formulardaten-speichern/
 weight: 95
 tags: 
   - "Formular"
@@ -71,7 +71,7 @@ könnte man über versteckte Formularfelder hinzufügen. Diese Vorgehensweise er
 
 Dieser Hook greift nach der Formular-Übermittlung aber vor der eigentlichen Datenspeicherung. Du kannst darüber 
 die übermittelten Daten bearbeiten und neue Informationen hinzufügen. Erstelle in deiner Contao-Installation 
-die Verzeichnisse `src\EventListener\` und platziere darin die Datei `PrepareFormDataListener.php` mit folgendem Inhalt:
+die Verzeichnisse `src/EventListener/` und platziere darin die Datei `PrepareFormDataListener.php` mit folgendem Inhalt:
 
 
 ```php
@@ -169,7 +169,7 @@ für den dritten Parameter. Sofern erforderlich wird darüber automatisch eine e
 Eintrag hinzugefügt.
 
 {{% notice info %}}
-Du mußst im Anschluß den Contao Cache über den »Contao Manager« oder über die »Konsole« löschen damit der Hook 
+Du musst im Anschluß den Contao Cache über den »Contao Manager« oder über die »Konsole« löschen damit der Hook 
 verarbeitet werden kann. Dies wird auch notwendig nachdem du Änderungen an der Datei »PrepareFormDataListener.php«
 vorgenommen hast.
 {{% /notice %}}

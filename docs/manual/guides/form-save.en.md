@@ -3,7 +3,7 @@ title: "Save form data"
 description: "Save transferred form data in a database table."
 url: "/en/guides/save-form-data"
 aliases:
-  - /en/guides/form-save/
+  - /en/guides/save-form-data/
 weight: 95
 tags: 
   - "Form"
