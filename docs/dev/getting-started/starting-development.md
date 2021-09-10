@@ -211,7 +211,7 @@ within `src/` will be automatically registered as a service, with autowiring and
 autoconfiguration enabled. Controllers as services will work as well. However, any class extending from a class from the legacy Contao 
 framework will not be automatically registered as a service (as well as any class that would cause an error during compilation). You can 
 still provide your own `services.yaml` in order to adjust the service registration to your 
-needs. Keep in mind that you still need to provide your own `routing.yaml` in order 
+needs. Keep in mind that you still need to provide your own `routes.yaml` in order 
 to register your routes.
 {{% /notice %}}
 
