@@ -74,7 +74,7 @@ Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änder
 
 ### Fork aktualisieren
 
-Falls du weitere Änderungen vorschlagen möchtest überprüfe zuvor ob dein Fork auf dem aktuellen Stand ist.
+Falls du weitere Änderungen vorschlagen möchtest, überprüfe zuvor, ob dein Fork auf dem aktuellen Stand ist.
 Über GitHub kannst du dann deinen Fork über »Fetch upstream« synchronisieren.
 
 ![GitHub Fetch upstream](/de/contributing/images/de/github-fork-fetch-upstream.png?classes=shadow)
