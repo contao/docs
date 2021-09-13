@@ -166,3 +166,6 @@ die Datei `task.json`.
 Anschließend sollte der Contao Manager wieder laufen.
 {{% /expand %}}
 
+{{% expand "Kann ich die .phar Datei umbenennen?" %}}
+Ja. Du kannst einen beliebigen Dateinamen verwenden.
+{{% /expand %}}
