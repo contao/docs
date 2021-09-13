@@ -161,3 +161,7 @@ delete the file `task.json`.
 
 After that, the Contao Manager should run again.
 {{% /expand %}}
+
+{{% expand "Can I rename the .phar file?" %}}
+Yes. You can use any file name you want.
+{{% /expand %}}
