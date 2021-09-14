@@ -194,7 +194,7 @@ Document Root hinterlegen. Dadurch kann im Browser das korrekte Favicon pro Doma
 keine HTML-Ausgabe beinhalten (wie zum Beispiel Bilder, PDFs, etc.).
 
 {{% notice "warning" %}}
-Dies wird nicht funktionieren, wenn sich bereits eine physiche `favicon.ico` Datei im Document Root befindet, da der Web Server diese Datei
+Dies wird nicht funktionieren, wenn sich bereits eine physische `favicon.ico` Datei im Document Root befindet, da der Web Server diese Datei
 dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, bevor du diese Funktion nutzt.
 {{% /notice %}}
 
@@ -207,7 +207,7 @@ im Multidomain-Betrieb hilfreich, damit jede Domain ihre eigenen Direktiven habe
 _physische_ `robots.txt` Datei im Document Root hinterlegen.
 
 {{% notice "warning" %}}
-Dies wird nicht funktionieren, wenn sich bereits eine physiche `robots.txt` Datei im Document Root befindet, da der Web Server diese Datei
+Dies wird nicht funktionieren, wenn sich bereits eine physische `robots.txt` Datei im Document Root befindet, da der Web Server diese Datei
 dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, bevor du diese Funktion nutzt.
 {{% /notice %}}
 
