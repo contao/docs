@@ -97,6 +97,10 @@ Der Contao Manager benötigt keine eigene Datenbank. Die Konfiguration des Conta
 <code>manager.json</code> und die Benutzerdaten in der <code>users.json</code> im Verzeichnis 
 <code>/contao-manager</code> gespeichert.
 
+{{% notice warning %}}
+Es ist wichtig die Grundkonfiguration abzuschließen. Anderenfalls könnte sich jeder mit einem eigenen Benutzernamen und Passwort Zugriff verschaffen.
+{{% /notice %}}
+
 
 ### Serverkonfiguration
 
