@@ -155,3 +155,15 @@ php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'
 Yes, if you use a Contao installation in the Managed Edition, you can install Contao Manager later. Just upload the `contao-manager.phar` files into the directory `web` and add the file extension `.php`.
 
 During the basic installation, the manager recognizes that Contao is already installed.
+
+
+### Can I rename the ».phar« file?
+Yes. You can use any file name you want. However, the Contao Manager is no longer accessible from the Contao Backend. 
+In this case, you can change the [config.yml](/en/system/settings/#config-yml) accordingly. Afterwards, you have to empty the application cache 
+once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
+```yml
+# config/config.yml
+contao_manager:
+    manager_path: your-name.phar.php
+```
+
