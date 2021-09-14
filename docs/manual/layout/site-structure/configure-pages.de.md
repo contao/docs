@@ -184,6 +184,34 @@ kann dieses Verhalten beeinflusst und die automatische Weiterleitung zu bestimmt
 werden.
 
 
+### Website-Einstellungen
+
+{{< version "4.9" >}}
+
+**Favicon:** Hier kannst du das Favicon für die `/favicon.ico` URL der Domain festlegen. Dies ist besonders im Multidomain-Betrieb
+hilfreich, damit jede Domain ihr eigenes Standard-Favicon hat. Andernfalls könnte man nur eine einzelne, _physische_ `favicon.ico` Datei im 
+Document Root hinterlegen. Dadurch kann im Browser das korrekte Favicon pro Domain angezeigt werden, wenn Inhalte dargestellt werden, die
+keine HTML-Ausgabe beinhalten (wie zum Beispiel Bilder, PDFs, etc.).
+
+{{% notice "warning" %}}
+Dies wird nicht funktionieren, wenn sich bereits eine physiche `favicon.ico` Datei im Document Root befindet, da der Web Server diese Datei
+dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, bevor du diese Funktion nutzt.
+{{% /notice %}}
+
+{{% notice "info" %}}
+Diese Funktion gibt keine zusätzlichen HTML Meta Tags auf der Seite aus.
+{{% /notice %}}
+
+**Individuelle robots.txt-Anweisungen:** Hier kannst du eigene Direktiven für die `/robots.txt` URL der Domain eingeben. Dies ist besonders
+im Multidomain-Betrieb hilfreich, damit jede Domain ihre eigenen Direktiven haben kann. Andernfalls könnte man nur eine einzelne, 
+_physische_ `robots.txt` Datei im Document Root hinterlegen.
+
+{{% notice "warning" %}}
+Dies wird nicht funktionieren, wenn sich bereits eine physiche `robots.txt` Datei im Document Root befindet, da der Web Server diese Datei
+dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, bevor du diese Funktion nutzt.
+{{% /notice %}}
+
+
 ### Globale Einstellungen
 
 **E-Mail-Adresse des Webseiten-Administrators:** Hier kannst du die in den Backend-Einstellungen festgelegte 
