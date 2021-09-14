@@ -72,6 +72,11 @@ Before you install Contao, you have to configure the manager itself. Create a ne
 
 Contao Manager does not need its own database. The configuration of the Contao Manager is stored in the database `manager.json` and the user data in the `users.json` in the directory `/contao-manager`.
 
+{{% notice warning %}}
+It is important to complete the basic configuration. Otherwise, anyone could gain access with their own username and password.
+{{% /notice %}}
+
+
 ### Server configuration
 
 The Contao Manager needs the path to the PHP binary and other server information to run background processes correctly. The path is usually automatically detected by the Contao Manager.
