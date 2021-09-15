@@ -161,3 +161,14 @@ delete the file `task.json`.
 
 After that, the Contao Manager should run again.
 {{% /expand %}}
+
+{{% expand "Can I rename the ».phar« file?" %}}
+Yes. You can use any file name you want. However, the Contao Manager is no longer accessible from the Backend. 
+In this case, you can change the [config.yml](/en/system/settings/#config-yml) accordingly. Afterwards, you have to empty the application cache 
+once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
+```yml
+# config/config.yml
+contao_manager:
+    manager_path: your-name.phar.php
+```
+{{% /expand %}}
