@@ -72,6 +72,14 @@ Klicke erneut auf die Schaltfläche »Create pull request«.
 Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
 
 
+### Fork aktualisieren
+
+Falls du weitere Änderungen vorschlagen möchtest, überprüfe zuvor, ob dein Fork auf dem aktuellen Stand ist.
+Über GitHub kannst du dann deinen Fork über »Fetch upstream« synchronisieren.
+
+![GitHub Fetch upstream](/de/contributing/images/de/github-fork-fetch-upstream.png?classes=shadow)
+
+
 ## Einen Beitrag für die Dokumentation schreiben
 
 Wenn du einen umfangreichen Beitrag planst oder du es vorziehst, an deinem eigenen Computer zu arbeiten, lese hier weiter 

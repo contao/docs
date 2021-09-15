@@ -71,6 +71,13 @@ Click the "Create pull request" button again.
 community will now review your pull request and (possibly) suggest changes.
 
 
+### Fork update
+
+If you want to propose further changes, check first if your fork is up to date. You can then sync your fork via GitHub using »Fetch upstream«.
+
+![GitHub Fetch upstream](/de/contributing/images/de/github-fork-fetch-upstream.png?classes=shadow)
+
+
 ## Write a contribution for the documentation
 
 If you are planning a large contribution or you prefer to work on your own computer, read on here 
