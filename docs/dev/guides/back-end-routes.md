@@ -64,14 +64,9 @@ class BackendController extends AbstractController
 }
 ```
 
-There are two requirements for the route definition, in order to have a correct Contao
-back end route:
-
-- The route must start with `/contao/`, otherwise Contao's back end firewall will 
-  not be in effect.
-- We need an additional request parameter called `_scope` with the value `backend`.
-  That way you are telling Contao, that this route belongs to the back end and should
-  be handled accordingly.
+In order to have a correct Contao back end route, we need an additional request parameter called `_scope` with the value `backend`. This way
+you are telling Contao that this route belongs to the back end and should be handled accordingly. See [this article][RequestScope] for more
+information about the `backend` scope.
 
 Be sure to have imported your bundle's Controllers in your `routes.yaml` *before*
 the `ContaoCoreBundle` routes.
@@ -189,3 +184,4 @@ the sidebar.
 
 [BackEndMenuEvent]: /reference/events/#contao-backend-menu-build
 [ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle
+[RequestScope]: /framework/routing/#request-scope
