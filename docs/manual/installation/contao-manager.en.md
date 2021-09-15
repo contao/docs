@@ -158,7 +158,7 @@ During the basic installation, the manager recognizes that Contao is already ins
 
 
 ### Can I rename the ».phar« file?
-Yes. You can use any file name you want. However, the Contao Manager is no longer accessible from the Contao Backend. 
+Yes. You can use any file name you want. However, the Contao Manager is no longer accessible from the Backend. 
 In this case, you can change the [config.yml](/en/system/settings/#config-yml) accordingly. Afterwards, you have to empty the application cache 
 once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
 ```yml
