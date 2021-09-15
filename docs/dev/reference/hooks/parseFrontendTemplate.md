@@ -23,6 +23,10 @@ and expects the template content as return value.
 
     The template name (e.g. `nav_default`) without file extension.
 
+3. {{< version-tag "4.9.21" >}} *\Contao\FrontendTemplate* `$template`
+
+    The front end template instance.
+
 
 ## Return Values
 
@@ -37,13 +41,14 @@ modification.
 namespace App\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\FrontendTemplate;
 
 /**
  * @Hook("parseFrontendTemplate")
  */
 class ParseFrontendTemplateListener
 {
-    public function __invoke(string $buffer, string $template): string
+    public function __invoke(string $buffer, string $template, FrontendTemplate $template): string
     {
         if ('ce_text' === $template) {
             // Modify $buffer
@@ -57,4 +62,4 @@ class ParseFrontendTemplateListener
 
 ## References
 
-* [\Contao\FrontendTemplate#L47-L55](https://github.com/contao/contao/blob/4.7.6/core-bundle/src/Resources/contao/classes/FrontendTemplate.php#L47-L55)
+* [\Contao\FrontendTemplate#L45-L53](https://github.com/contao/contao/blob/1525618c3b8aea3c1aec97c3c1629f72475d93bd/core-bundle/src/Resources/contao/classes/FrontendTemplate.php#L45-L53)
