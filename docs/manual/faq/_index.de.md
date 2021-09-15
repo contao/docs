@@ -167,9 +167,9 @@ Anschließend sollte der Contao Manager wieder laufen.
 {{% /expand %}}
 
 {{% expand "Kann ich die ».phar« Datei umbenennen?" %}}
-Ja. Du kannst einen beliebigen Dateinamen verwenden. Allerdings ist der Contao Manager dann nicht mehr über das Contao Backend erreichbar.
+Ja. Du kannst einen beliebigen Dateinamen verwenden. Allerdings ist der Contao Manager dann nicht mehr über das Backend erreichbar.
 In diesem Fall kannst du die [config.yml](/de/system/einstellungen/#config-yml) entsprechend anpassen. Anschließend musst du über den 
-Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole einmalig den Anwendungs-Cache leeren.
+Contao Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole einmalig den Anwendungs-Cache leeren.
 
 ```yml
 # config/config.yaml
