@@ -193,6 +193,10 @@ on this occasion.
 
 Example: `example.com` points to the directory `/www/example/web`
 
+({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to 
+`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
+
+
 {{% notice note %}}
 Therefore, a separate (sub)domain is required for each Contao installation.
 {{% /notice %}}
