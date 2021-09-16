@@ -40,7 +40,7 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | uploadPath         | Folder name (`string`)            | {{< version-tag "4.12" >}} "Path to the root folder of the file manager.                                                                        |
 | validFileTypes     | File extensions (`string`)        | Limits the file manager to certain file types (comma separated list).                                                                           |
 | editableFileTypes  | File extensions (`string`)        | {{< version-tag "4.12" >}} Limits the file types that can be edited with the source code editor (comma separated list).                         |
-| databaseAssisted   | true/false (`bool`)               | If true, the file manager is synchornized with a database table.                                                                                |
+| databaseAssisted   | true/false (`bool`)               | If true, the file manager is synchronized with a database table.                                                                                |
 | closed             | true/false (`bool`)               | If true, you cannot add further records to the table.                                                                                           |
 | notEditable        | true/false (`bool`)               | If true, the table cannot be edited.                                                                                                            |
 | notDeletable       | true/false (`bool`)               | If true, records in the table cannot be deleted.                                                                                                |
