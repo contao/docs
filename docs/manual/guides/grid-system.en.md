@@ -61,3 +61,56 @@ The old Contao grid works with the above restrictions. However, it is recommende
 Alternatively, there are [numerous extensions](https://extensions.contao.org/?q=grid) available for 
 simple [installation](/en/installation/install-extensions/).
 {{% /notice %}}
+
+
+## CSS Grid Layout without extension
+
+You are not restricted to the use of the »Contao-Grid«. With the 
+»[CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)« you can implement appropriate 
+representations at any time using your own CSS specifications. Let's assume you need one or more content elements 
+of the type »[Text](/en/article-management/content-elements/#text)« in 
+an »[article](/en/article-management/articles/)« and you want to split them into two columns.
+
+For the grid definition you always need an enclosing HTML container. This is already available in the form of the article. 
+The content elements are listed below each other in the article, in the respective order. With the following 
+specifications you can realize a simple grid representation:
+
+{{< tabs groupId="Grid Layout">}}
+{{% tab name="HTML Abstract" %}}
+```html
+<div class="mod_article block" id="article-1">
+    <div class="ce_text block">
+      ...
+    </div>
+    <div class="ce_text block">
+      ...
+    </div>
+</div>
+```
+{{% /tab %}}
+{{% tab name="CSS Abstract" %}}
+```css
+.mod_article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20px;
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+The example is deliberately kept simple. In practice, you should name the enclosing HTML container unambiguously and 
+reference it specifically. If you need a grid layout only occasionally, you can do this without any extension. 
+Of course the »CSS Grid Layout« offers further possibilities and is 
+well [documented]((https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)).
+
+
+## With an extension
+
+For a comfortable implementation in the backend there are extensions, among others the 
+»[contao-grid-bundle](https://extensions.contao.org/?q=euf&pages=1&p=erdmannfreunde%2Fcontao-grid-bundle)«. 
+The extension supports a »12 column grid« by default, based on the »CSS Grid Layout«, but can 
+be [customized](https://github.com/ErdmannFreunde/contao-grid-bundle) as you like.
+
+Detailed information and documentation about the extension can be found 
+[here](https://erdmann-freunde.de/dokumentationen/contao-erweiterungen/euf-grid/).

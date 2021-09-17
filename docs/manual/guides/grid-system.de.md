@@ -64,3 +64,57 @@ Das in die Jahre gekommene Contao-Grid funktioniert mit obigen Einschränkungen.
 aktuellen Grid-Lösung. Als Alternative stehen hierzu [zahlreiche Erweiterungen](https://extensions.contao.org/?q=grid) zur 
 einfachen [Installation]({{< ref "install-extensions.de.md" >}}) zur Verfügung. 
 {{% /notice %}}
+
+
+## CSS Grid Layout ohne Erweiterung
+
+Du bist nicht auf die Nutzung des »Contao-Grid« angewiesem. Mit dem 
+»[CSS Grid Layout](https://developer.mozilla.org/de/docs/Web/CSS/CSS_Grid_Layout)« kannst du jederzeit entsprechende
+Darstellungen über deine eigenen CSS Angaben umsetzen. Angenommen du benötigst in 
+einem »[Artikel](/de/artikelverwaltung/artikel/)« ein oder mehrere Inhaltselemente vom Typ 
+»[Text](/de/artikelverwaltung/inhaltselemente/#text)« und möchtest diese jeweils in zwei Spalten aufteilen.
+
+Zur Grid Definition wird immer ein umschließender HTML-Container benötigt. Dieser liegt uns in Form des Artikels bereits
+vor. Die Inhaltselemente werden im Artikel, in der jeweiligen Reihenfolge, untereinander aufgeführt. Über folgende
+Angaben kannst du eine einfache Grid Darstellung realisieren:
+
+{{< tabs groupId="Grid Layout">}}
+{{% tab name="HTML Auszug" %}}
+```html
+<div class="mod_article block" id="article-1">
+    <div class="ce_text block">
+      ...
+    </div>
+    <div class="ce_text block">
+      ...
+    </div>
+</div>
+```
+{{% /tab %}}
+{{% tab name="CSS Auszug" %}}
+```css
+.mod_article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20px;
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+Das Beispiel ist bewußt einfach gehalten. In der Praxis solltest du den umschließenden HTML-Container eindeutig 
+benennen und gezielt referenzieren. Falls du nur gelegentlich eine Grid Darstellung benötigst, kannst du dies ohne
+Erweiterung realisieren. Selbstverständlich bietet das »CSS Grid Layout« weitere Möglichkeiten und ist gut
+[dokumentiert](https://developer.mozilla.org/de/docs/Web/CSS/CSS_Grid_Layout).
+
+
+## Mit einer Erweiterung
+
+Zur bequemen Umsetzung im Backend existieren hierzu Erweiterungen, u. a. das 
+»[contao-grid-bundle](https://extensions.contao.org/?q=euf&pages=1&p=erdmannfreunde%2Fcontao-grid-bundle)«. Die 
+Erweiterung unterstützt standardmäßig ein »12 Spalten Grid«, basierend auf dem »CSS Grid Layout«, kann aber beliebig 
+[angepaßt](https://github.com/ErdmannFreunde/contao-grid-bundle) werden. 
+
+Detaillierte Informationen und Dokumentation zur Erweiterung findest du 
+[hier](https://erdmann-freunde.de/dokumentationen/contao-erweiterungen/euf-grid/).
+
