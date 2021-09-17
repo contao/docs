@@ -79,7 +79,7 @@ app.controller:
 ```
 
 Our route will render the template `my_backend_route.html.twig` which must be placed 
-into `/templates`.
+into `/views`.
 
 ```twig
 {% extends "@ContaoCore/Backend/be_page.html.twig" %}
