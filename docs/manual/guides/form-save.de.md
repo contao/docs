@@ -120,38 +120,34 @@ class PrepareFormDataListener
         $submittedData['alias'] = $this->getSlug($submittedData['title']);
 
         // Convert and set date fields
-        $submittedData['startDate'] = strtotime(trim($submittedData['startDate']));
+        $submittedData['startDate'] = strtotime(trim($submittedData['startDate'])) ?: null;
         $submittedData['startTime'] = $submittedData['startDate'];
 
         // Optional fields
         if (!empty(trim($submittedData['endDate']))) {
-            $submittedData['endDate'] = strtotime($submittedData['endDate']);
+            $submittedData['endDate'] = strtotime(trim($submittedData['endDate'])) ?: null;
             $submittedData['endTime'] = $submittedData['endDate'];
         } else {
-            $submittedData['endTime'] = null;
             $submittedData['endDate'] = null;
+            $submittedData['endTime'] = null;
         }
     }
 
-    public function getSlug(string $text, string $locale = 'de', string $validChars = '0-9a-z'): string
+    private function getSlug(string $text, string $locale = 'de', string $validChars = '0-9a-z'): string
     {
         $options = [
             'locale' => $locale,
             'validChars' => $validChars,
         ];
-
+        
         $duplicateCheck = function (string $slug): bool {
-            return $this->slugExists($slug);
+            return $this->db->fetchOne('SELECT COUNT(*) FROM tl_calendar_events WHERE alias = ?', [$slug]) > 0;
         };
 
         return $this->slug->generate($text, $options, $duplicateCheck);
     }
-
-    private function slugExists(string $slug): bool
-    {
-        return !empty($this->db->fetchAllAssociative('SELECT * FROM tl_calendar_events WHERE alias = ?', [$slug]));
-    }
 }
+
 ```
 
 Die für unser Kalender benötigten Felder werden in dieser Datei gesetzt. Die folgenden Werte mußt du entsprechend
