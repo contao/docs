@@ -66,22 +66,22 @@ einfachen [Installation]({{< ref "install-extensions.de.md" >}}) zur Verfügung.
 {{% /notice %}}
 
 
-## CSS Grid Layout ohne Erweiterung
+## CSS-Grid-Layout ohne Erweiterung
 
-Du bist nicht auf die Nutzung des »Contao-Grid« angewiesem. Mit dem 
-»[CSS Grid Layout](https://developer.mozilla.org/de/docs/Web/CSS/CSS_Grid_Layout)« kannst du jederzeit entsprechende
-Darstellungen über deine eigenen CSS Angaben umsetzen. Angenommen du benötigst in 
+Du bist nicht auf die Nutzung des »Contao-Grid« angewiesen. Mit dem 
+»[CSS-Grid-Layout](https://developer.mozilla.org/de/docs/Web/CSS/CSS_Grid_Layout)« kannst du jederzeit entsprechende
+Darstellungen über deine eigenen CSS-Angaben umsetzen. Angenommen du benötigst in 
 einem »[Artikel](/de/artikelverwaltung/artikel/)« zwei oder mehrere Inhaltselemente vom Typ 
 »[Text](/de/artikelverwaltung/inhaltselemente/#text)« und möchtest diese jeweils in zwei Spalten aufteilen.
 
-Zur Grid Definition wird immer ein umschließender HTML-Container benötigt. Dieser liegt uns in Form des Artikels bereits
+Zur Grid-Definition wird immer ein umschließender HTML-Container benötigt. Dieser liegt uns in Form des Artikels bereits
 vor. Die Inhaltselemente werden im Artikel, in der jeweiligen Reihenfolge, untereinander aufgeführt. 
-Zunächst setzt du die CSS-Klasse »mygrid» im Bereich »Experteneinstellungen« 
+Zunächst setzt du die CSS-Klasse »mygrid« im Bereich »Experteneinstellungen« 
 der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inhaltselemente vom Typ »Text«.
 Über folgende Angaben kannst du eine einfache Grid Darstellung realisieren:
 
 {{< tabs groupId="Grid Layout">}}
-{{% tab name="HTML Auszug" %}}
+{{% tab name="HTML-Auszug" %}}
 ```html
 <div class="mod_article mygrid block" id="article-1">
     <div class="ce_text block">
@@ -93,7 +93,7 @@ der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inha
 </div>
 ```
 {{% /tab %}}
-{{% tab name="CSS Auszug" %}}
+{{% tab name="CSS-Auszug" %}}
 ```css
 .mygrid {
     display: grid;
@@ -106,11 +106,11 @@ der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inha
 
 Falls du ein Grid nur gezielt innerhalb einzelner Bereiche eines Artikels setzen möchtest, kannst du die umschließenden
 HTML-Container mit dem Inhaltselement vom Typ »[HTML](/de/artikelverwaltung/inhaltselemente/#html)« realisieren. 
-Erstelle dir hierzu zwei entsprechende Inhaltselemente mit den Angaben »&lt;div class="mygrid"&gt;« und »&lt;/div&gt;».
-Deine Text Elememte müssen sich dann innerhalb dieser beiden Inhaltselemente vom Typ »HTML« befinden.
+Erstelle dir hierzu zwei entsprechende Inhaltselemente mit den Angaben »&lt;div class="mygrid"&gt;« und »&lt;/div&gt;«.
+Deine Text-Elemente müssen sich dann innerhalb dieser beiden Inhaltselemente vom Typ »HTML« befinden.
  
 {{< tabs groupId="Grid Layout 02">}}
-{{% tab name="HTML Auszug" %}}
+{{% tab name="HTML-Auszug" %}}
 ```html
 <div class="mod_article block" id="article-1">
     <div class="mygrid">
@@ -124,7 +124,7 @@ Deine Text Elememte müssen sich dann innerhalb dieser beiden Inhaltselemente vo
 </div>
 ```
 {{% /tab %}}
-{{% tab name="CSS Auszug" %}}
+{{% tab name="CSS-Auszug" %}}
 ```css
 .mygrid {
     display: grid;
@@ -136,7 +136,7 @@ Deine Text Elememte müssen sich dann innerhalb dieser beiden Inhaltselemente vo
 {{< /tabs >}}
 
 Die Beispiele sind bewußt einfach gehalten. Falls du nur gelegentlich eine Grid Darstellung benötigst, kannst du dies ohne
-Erweiterung realisieren. Selbstverständlich bietet das »CSS Grid Layout« weitere Möglichkeiten und ist gut
+Erweiterung realisieren. Selbstverständlich bietet das »CSS-Grid-Layout« weitere Möglichkeiten und ist gut
 [dokumentiert](https://developer.mozilla.org/de/docs/Web/CSS/CSS_Grid_Layout).
 
 
@@ -144,11 +144,11 @@ Erweiterung realisieren. Selbstverständlich bietet das »CSS Grid Layout« weit
 
 Zur bequemen Umsetzung im Backend existieren hierzu Erweiterungen, u. a. das 
 »[contao-grid-bundle](https://extensions.contao.org/?q=euf&pages=1&p=erdmannfreunde%2Fcontao-grid-bundle)«. Die 
-Erweiterung unterstützt standardmäßig ein »12 Spalten Grid«, basierend auf dem »CSS Grid Layout«, kann aber beliebig 
+Erweiterung unterstützt standardmäßig ein »12-Spalten Grid«, basierend auf dem »CSS-Grid-Layout«, kann aber beliebig 
 [konfiguriert](https://github.com/ErdmannFreunde/contao-grid-bundle) werden. 
 
 Für die umschließenden HTML-Container werden eigene Inhaltselemente im Backend bereit gestellt und in den 
 Inhaltselementen selbst kannst du bequem die benötigten Spalten für verschiedene Viewports auswählen. Detaillierte 
 Informationen und Dokumentation zur Erweiterung findest du 
-[hier](https://erdmann-freunde.de/dokumentationen/contao-erweiterungen/euf-grid/).
+[auf der Projekt-Website](https://erdmann-freunde.de/dokumentationen/contao-erweiterungen/euf-grid/).
 

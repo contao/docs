@@ -102,7 +102,7 @@ content elements of type »Text«. With the following specifications you can rea
 
 If you want to set a grid only specifically within individual areas of an article, you can realize the enclosing 
 HTML containers with the content element of the type »[HTML](/en/article-management/content-elements/#html)«. Create 
-two content elements with the specifications »&lt;div class="mygrid"&gt;" and "&lt;/div&gt;«. Your text elements must then be 
+two content elements with the specifications »&lt;div class="mygrid"&gt;« and »&lt;/div&gt;«. Your text elements must then be 
 located within these two content elements of type »HTML«.
 
 {{< tabs groupId="Grid Layout 02">}}
@@ -146,4 +146,4 @@ be [customized](https://github.com/ErdmannFreunde/contao-grid-bundle) as you lik
 For the enclosing HTML containers, separate content elements are provided in the backend and in the 
 content elements themselves, you can easily select the required columns for different viewports. Detailed information 
 and documentation about the extension can be found 
-[here](https://erdmann-freunde.de/dokumentationen/contao-erweiterungen/euf-grid/).
+[on the project website](https://erdmann-freunde.de/dokumentationen/contao-erweiterungen/euf-grid/).
