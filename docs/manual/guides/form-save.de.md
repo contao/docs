@@ -89,8 +89,8 @@ use Doctrine\DBAL\Connection;
 class PrepareFormDataListener
 {
     // Change these variables for your form, calendar and author
-    private const FORM_ID = 3;
-    private const CALENDAR_ID = 5;
+    private const FORM_ID = 6;
+    private const CALENDAR_ID = 2;
     private const AUTHOR_ID = 1;
 
     private $slug;
@@ -120,12 +120,12 @@ class PrepareFormDataListener
         $submittedData['alias'] = $this->getSlug($submittedData['title']);
 
         // Convert and set date fields
-        $submittedData['startDate'] = strtotime(trim($submittedData['startDate']));
+        $submittedData['startDate'] = strtotime(trim($submittedData['startDate'])) ?: null;
         $submittedData['startTime'] = $submittedData['startDate'];
 
         // Optional fields
         if (!empty(trim($submittedData['endDate']))) {
-            $submittedData['endDate'] = strtotime($submittedData['endDate']);
+            $submittedData['endDate'] = strtotime(trim($submittedData['endDate'])) ?: null;
             $submittedData['endTime'] = $submittedData['endDate'];
         } else {
             $submittedData['endDate'] = null;
@@ -147,6 +147,7 @@ class PrepareFormDataListener
         return $this->slug->generate($text, $options, $duplicateCheck);
     }
 }
+
 ```
 
 Die für unser Kalender benötigten Felder werden in dieser Datei gesetzt. Die folgenden Werte mußt du entsprechend
