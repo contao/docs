@@ -99,6 +99,10 @@ Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
 
 Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web`
 
+({{< version-tag "4.12" >}} Dem Standard von Symfony folgend, wurde der öffentlich erreichbare Unterordner von `/web`
+in `/public` umbenannt. Falls in deiner Installation ein Verzeichnis `/web` existiert, wird dieses von Contao
+automatisch anstelle von `/public` verwendet.)
+
 {{% notice note %}}
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 {{% /notice %}}
