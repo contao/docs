@@ -147,7 +147,6 @@ class PrepareFormDataListener
         return $this->slug->generate($text, $options, $duplicateCheck);
     }
 }
-
 ```
 
 Die für unser Kalender benötigten Felder werden in dieser Datei gesetzt. Die folgenden Werte mußt du entsprechend
