@@ -133,7 +133,7 @@ located within these two content elements of type »HTML«.
 
 The examples are deliberately kept simple. If you need a grid layout only occasionally, you can do this without 
 any extension. Of course the »CSS Grid Layout« offers further possibilities and is 
-well [documented]((https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)).
+well [documented](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout).
 
 
 ## With an extension
