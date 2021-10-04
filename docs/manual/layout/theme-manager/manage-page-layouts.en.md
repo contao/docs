@@ -6,25 +6,28 @@ aliases:
 weight: 30
 ---
 
-The page layout determines how a page is structured and divides it into different layout areas. Within these layout areas you can place any number of frontend modules, which are executed one after the other when the page is called and HTML page code is generated for the web page. A frontend module is also used to insert the articles, that is, the content.
+The page layout determines how a page is structured and divides it into different layout areas. Within these layout areas you can place any number of front end modules, which are executed one after the other when the page is called and HTML page code is generated for the web page. A front end module is also used to insert the articles, that is, the content.
 
-If a page is not assigned a page layout, it inherits the page layout from a parent page. If no page layout is linked there either, the frontend output is limited to a short "No layoutspecified".
+If a page is not assigned a page layout, it inherits the page layout from a parent page. If no page layout is linked there either, the front end output is limited to a short "No layout specified".
 
-## Structure of the frontend
 
-In order to be able to convert individual page layouts in the frontend into a neatly arranged and above all cross-browser functional website, a powerful CSS framework is required, which is prepared for all eventualities. The compact Contao CSS framework fulfills this task very well. It automatically generates the basic structure of the website based on a page layout, which by default consists of up to three columns and an optional header and footer.
+## Structure of the front end
+
+In order to be able to convert individual page layouts in the front end into a neatly arranged and above all cross-browser functional website, a powerful CSS framework is required, which is prepared for all eventualities. The compact Contao CSS framework fulfills this task very well. It automatically generates the basic structure of the website based on a page layout, which by default consists of up to three columns and an optional header and footer.
+
 
 ## Header and Footer
 
-Each page layout can have a header and a footer. Usually the header contains the company logo, the footer contains copyright information and a link to the imprint and privacy policy.
+Each page layout can have a header and a footer. Usually, the header contains the company logo, the footer contains copyright information and a link to the imprint and privacy policy.
 
 **lines**: Here you add a header and footer to the layout.
 
-![No header and footer](/de/icons/1rw.svg?classes=icon "Keine Kopf- und Fusszeile")![Add header](/de/icons/2rwh.svg?classes=icon "Kopfzeile hinzufügen")![Add footer](/de/icons/2rwf.svg?classes=icon "Fusszeile hinzufügen")![Add header and footer](/de/icons/3rw.svg?classes=icon "Kopf- und Fusszeile hinzufügen")
+![No header and footer](/de/icons/1rw.svg?classes=icon "No header and footer")![Add header](/de/icons/2rwh.svg?classes=icon "Add header")![Add footer](/de/icons/2rwf.svg?classes=icon "Add footer")![Add header and footer](/de/icons/3rw.svg?classes=icon "Add header and footer")
 
 **Height of the header**: Here you can set the height of the header.
 
 **Height of the footer**: Here you can set the height of the footer.
+
 
 ## Column configuration
 
@@ -32,11 +35,12 @@ By default, up to three columns are available. You can specify the width of the 
 
 **Columns**: Here you select the number of columns in your page layout.
 
-![No columns](/de/icons/1cl.svg?classes=icon "Keine Spalten")![Add left column](/de/icons/2cll.svg?classes=icon "Linke Spalte hinzufügen")![Add right column](/de/icons/2clr.svg?classes=icon "Rechte Spalte hinzufügen")![Add left and right column](/de/icons/3cl.svg?classes=icon "Linke und rechte Spalte hinzufügen")
+![No columns](/de/icons/1cl.svg?classes=icon "No columns")![Add left column](/de/icons/2cll.svg?classes=icon "Add left column")![Add right column](/de/icons/2clr.svg?classes=icon "Add right column")![Add left and right column](/de/icons/3cl.svg?classes=icon "Add left and right column")
 
 **Width of the left column**: Here you define the width of the left column.
 
 **Width of the right column**: Here you set the width of the right column.
+
 
 ## Custom layout areas
 
@@ -50,7 +54,7 @@ By default, the Contao CSS framework defines the following layout areas:
 
 With these five areas, most common page layouts can be easily implemented. However, there are some layouts that deviate from this classic division, such as those with an additional area under the header or a two-part main column.
 
-To help with these page layouts Contao allows you to define additional layout areas in the backend settings and arrange them. Your own layout areas can be used in the page layout just like the standard areas.
+To help with these page layouts Contao allows you to define additional layout areas in the back end settings and arrange them. Your own layout areas can be used in the page layout just like the standard areas.
 
 **Own layout areas**: Here you activate your own layout areas.
 
@@ -62,6 +66,7 @@ To help with these page layouts Contao allows you to define additional layout ar
 - Above the footer `after`
 - After the enclosing element `bottom`
 - Manual output `manual`
+
 
 ## Web Fonts
 
@@ -85,6 +90,7 @@ body {
 }
 ```
 
+
 ## Image sizes
 
 {{< version "4.8" >}}
@@ -98,6 +104,7 @@ With these settings you can define the image size for the lightbox in the page l
 ```html
 <img srcset="img-a.jpg 1x, img-b.jpg 1.5x, img-c.jpg 2x">
 ```
+
 
 ## Style sheets
 
@@ -124,21 +131,24 @@ The components of the Contao **CSS framework**, **internal stylesheets** and **e
 
 **Combine scripts:** Here you can determine if the .css and .js files should be merged.
 
+
 ## RSS/Atom feeds
 
 Feeds embedded in a page layout are linked in the header area of the page and can be subscribed to directly in the address bar of most modern web browsers. The "header" is not the header of your page layout, but the `<head>` tag of the HTML source code.
 
-**News Feeds:** Here you can select the feeds from your news archives.
+**News feeds:** Here you can select the feeds from your news archives.
 
 **Calendar feeds**: Here you can select the feeds from your calendars.
 
-## Frontend modules
 
-In this section, you assign the frontend modules to the individual layout areas that are to be displayed on the page. The modules of each layout area are arranged one below the other in the order you specify.
+## Front end modules
 
-![Frontend modules of the Contao Official Demo](/de/layout/theme-manager/images/de/frontend-module-der-contao-official-demo.png?classes=shadow)
+In this section, you assign the front end modules to the individual layout areas that are to be displayed on the page. The modules of each layout area are arranged one below the other in the order you specify.
+
+![Front end modules of the Contao Official Demo](/de/layout/theme-manager/images/de/frontend-module-der-contao-official-demo.png?classes=shadow)
 
 **Integrated modules:** Here you select the modules for the page layout.
+
 
 ## JavaScript
 
@@ -153,7 +163,7 @@ The **JavaScript templates**, **Analytics templates**, **External JavaScript** a
 | js\_nocookie | In order for Contao to protect you from CSRF attacks, visitors must allow cookies. The template dynamically generates a message if a visitor has disabled cookies in his browser. {{< version "4.7" >}} |
 | js\_slider | Provides JavaScript for the content element "Content Slider". |
 
-**Analytics-Templates:** Here you can select the analytics template of Google Analytics and/or Matomo (Piwik).
+**Analytics templates:** Here you can select the analytics template of Google Analytics and/or Matomo (Piwik).
 
 To do this, one of the desired templates must be placed in the templates folder of the theme and provided with the Google Analytics ID or Piwik ID and Piwik URL.
 
@@ -169,6 +179,7 @@ $PiwikPath = '//www.example.com/piwik/';
 **External JavaScripts:** Here you can add external JS files from the file system.
 
 **Own JavaScript code:** Here you can add your own JavaScript code, which will be displayed at the end of the page.
+
 
 ## jQuery
 
@@ -188,6 +199,7 @@ $PiwikPath = '//www.example.com/piwik/';
 - CDN (code.jquery.com)
 - CDN with local fallback
 
+
 ## MooTools
 
 **Load MooTools:** Add the MooTools library to the layout.
@@ -197,15 +209,16 @@ $PiwikPath = '//www.example.com/piwik/';
 | Template | Declaration |
 | -------- | ----------- |
 | moo\_accordion | Provides the MooTools plugin for the content element "Accordion". |
-| moo\_choses | With this MooTools plugin you can make long select menus clearer and more user-friendly. The select menu must be given the CSS class "tl\_chosen". |
+| moo\_chosen | With this MooTools plugin you can make long select menus clearer and more user-friendly. The select menu must be given the CSS class "tl\_chosen". |
 | moo\_mediabox | Provides the MooTools plugin for displaying images in large view (lightbox effect). |
-| moo\_tablesort | Provides MooTools plugin for the sort option of the content element "table". |
+| moo\_tablesort | Provides MooTools plugin for the sort option of the content element "Table". |
 
 **MooTools source:** Here you can select from where to load the MooTools script. The following three options are available:
 
 - Local file
 - CDN (googleapis.com)
 - CDN with local fallback
+
 
 ## Static Layout
 
@@ -216,6 +229,7 @@ The CSS framework adjusts the page layout to the width of the browser window by 
 **Total width**: Here you can enter the total width of the website.
 
 **Alignment:** Here you can set the alignment (left-aligned, right-aligned or centered) of the web page.
+
 
 ## Expert settings
 
