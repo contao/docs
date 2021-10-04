@@ -1,6 +1,6 @@
 ---
-title: 'Message management'
-description: 'The message management is a separate module in the backend, which you can find in the group "Content".'
+title: 'News management'
+description: 'The news management is a separate module in the backend, which you can find in the group "Content".'
 aliases:
     - /en/core-extensions/news/news-management/
 weight: 10
@@ -168,7 +168,7 @@ To create a new post, click on the desired archive ![Edit message archive](/de/i
 
 **source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you can upload it directly in the pop-up window without leaving the the News section.
 
-![Add an image to a post](/de/core-extensions/news/images/de/einem-beitrag-ein-bild-hinzufuegen.png?classes=shadow)
+![Add an image to a post](/de/core-extensions/news/images/en/add-an-image-to-a-post.png?classes=shadow)
 
 **Image size:** Here you can specify the image size. You can choose between the following scaling modes:
 
