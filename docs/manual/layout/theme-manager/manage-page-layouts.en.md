@@ -6,17 +6,13 @@ aliases:
 weight: 30
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
-The page layout determines the structure of a page and divides it into different layout areas. Within these layout areas you can place any number of frontend modules, which are executed one after the other when the page is called and generate the HTML code of the web page. A frontend module is also used to insert the articles, that is, the content.
+The page layout determines how a page is structured and divides it into different layout areas. Within these layout areas you can place any number of frontend modules, which are executed one after the other when the page is called and HTML page code is generated for the web page. A frontend module is also used to insert the articles, that is, the content.
 
 If a page is not assigned a page layout, it inherits the page layout from a parent page. If no page layout is linked there either, the frontend output is limited to a short "No layoutspecified".
 
 ## Structure of the frontend
 
-In order to be able to convert individual page layouts in the frontend into a neatly arranged and above all cross-browser functional website, a powerful CSS framework is required, which is prepared for all eventualities. The Contao CSS framework fulfills this task very well and is also quite compact. It automatically generates the basic structure of the website based on a page layout, which by default consists of up to three columns and an optional header and footer.
+In order to be able to convert individual page layouts in the frontend into a neatly arranged and above all cross-browser functional website, a powerful CSS framework is required, which is prepared for all eventualities. The compact Contao CSS framework fulfills this task very well. It automatically generates the basic structure of the website based on a page layout, which by default consists of up to three columns and an optional header and footer.
 
 ## Header and Footer
 
@@ -52,9 +48,9 @@ By default, the Contao CSS framework defines the following layout areas:
 - Main column
 - Footer
 
-With these five areas, at least 90% of all common page layouts can be easily implemented, so you'll get by with the rule. However, there are some layouts that deviate from this classic division, such as those with an additional area under the header or a two-part main column.
+With these five areas, most common page layouts can be easily implemented. However, there are some layouts that deviate from this classic division, such as those with an additional area under the header or a two-part main column.
 
-To realize such "exotic" page layouts in Contao, you can define additional layout areas in the backend settings and arrange them using a style sheet. Your own layout areas can be used in the page layout just like the standard areas.
+To help with these page layouts Contao allows you to define additional layout areas in the backend settings and arrange them. Your own layout areas can be used in the page layout just like the standard areas.
 
 **Own layout areas**: Here you activate your own layout areas.
 
@@ -132,9 +128,9 @@ The components of the Contao **CSS framework**, **internal stylesheets** and **e
 
 Feeds embedded in a page layout are linked in the header area of the page and can be subscribed to directly in the address bar of most modern web browsers. The "header" is not the header of your page layout, but the `<head>` tag of the HTML source code.
 
-**News Feeds:** Here you can select the feeds of the news archives.
+**News Feeds:** Here you can select the feeds from your news archives.
 
-**Calendar feeds**: Here you can select the feeds of the calendars.
+**Calendar feeds**: Here you can select the feeds from your calendars.
 
 ## Frontend modules
 
