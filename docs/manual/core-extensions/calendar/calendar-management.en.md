@@ -1,15 +1,16 @@
 ---
 title: 'Calendar management'
-description: 'The calendar management is a separate module in the backend called "Events", which you can find in the 
+description: 'The calendar management is a separate module in the back end called "Events", which you can find in the 
 group "Contents".'
 aliases:
     - /en/core-extensions/calendar/calendar-management/
 weight: 10
 ---
 
-The event management is a separate module in the backend called "Events", which you can find in the "Content" group. 
+The event management is a separate module in the back end called "Events", which you can find in the "Content" group. 
 You can create multiple calendars there, which in turn contain the individual appointments or events. By using multiple 
 calendars, a categorization of the entries is possible.
+
 
 ## Calendar
 
@@ -19,10 +20,11 @@ To create a new calendar, click ![Create a new calendar](/de/icons/new.svg?class
 
 ### Title and redirect page
 
-**Title:** The title of a calendar is used in the backend overview.
+**Title:** The title of a calendar is used in the back end overview.
 
 **Redirect page***: Here you define which page a visitor is redirected to when clicking on an event. This landing page 
 should contain the Event Reader module to display the full post.
+
 
 ### Access protection
 
@@ -32,7 +34,8 @@ registered members.
 **Protect calendar:** Here you activate the access protection.
 
 **Allowed member groups:** Here you define which member groups should have access to the calendar after logging in to 
-the frontend.
+the front end.
+
 
 ### Comments
 
@@ -50,9 +53,9 @@ comments are made.
 it is needed.
 
 **Moderate comments:** If you select this option, comments will not appear on the website immediately, but will appear 
-after you have shared them in the backend.
+after you have shared them in the back end.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to 
+**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://en.wikipedia.org/wiki/BBCode) to 
 format their comments. The following tags are supported:
 
 | Day | Declaration |
@@ -77,6 +80,7 @@ already submitted will still be visible to all visitors of the website.
 prevent the commenting feature from being misused for spam purposes. However, if you want to allow only logged in 
 members to comment, you can disable the security question here. Since Contao 4.4, this question is only "displayed" to 
 spambots.
+
 
 ## RSS feeds
 
@@ -119,6 +123,7 @@ The URL is:
 
 To create a new feed click on ![Manage calendar feeds](/de/icons/rss.svg?classes=icon "Manage calendar feeds") 
 **RSS feeds** and then click on ![Create a new feed](/de/icons/new.svg?classes=icon "Create a new feed") **New**.
+
 
 ### Title and language
 
@@ -183,7 +188,7 @@ that the event will last one day.
 ### Redirect target
 
 The redirection destination determines to which page a visitor is redirected when clicking on an event, usually the page 
-on which the frontend module "Eventleser" is integrated to display the complete event.
+on which the front end module "Eventleser" is integrated to display the complete event.
 
 **Redirect target:** Here you can set the forwarding destination.
 
@@ -198,7 +203,7 @@ not.
 
 | Redirect target | Explanation |
 | ---------------------- | ----------- |
-| Use default | You will be redirected to the page you specified in the archive settings. On this page the frontend module "news reader" should be included. |
+| Use default | You will be redirected to the page you specified in the archive settings. On this page the front end module "news reader" should be included. |
 | Page | The redirection is to a specific page in the page structure. |
 | Article | The redirection is to a specific article. |
 | Custom URL | The redirection is to an individual URL. |
@@ -302,7 +307,7 @@ are both exported in the RSS feed and offered for download on the website.
 
 ### Publish settings
 
-As long as an event is not published, it is not displayed in the frontend. You already know this behaviour from pages 
+As long as an event is not published, it is not displayed in the front end. You already know this behaviour from pages 
 and articles. In addition to the manual publication you have the possibility to activate events automatically at a 
 certain date.
 
