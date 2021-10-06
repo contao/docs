@@ -23,7 +23,7 @@ headline to a complete post.
 
 ### Module configuration
 
-**News archives:** Here you define from which archives posts should be listed. By default the posts are sorted by date 
+**News archives:** Here you define from which archives posts should be listed. By default, the posts are sorted by date 
 in descending order.
 
 **News reader module :** Here you can determine whether the system should automatically switch to the news reader when 
@@ -54,7 +54,7 @@ assuming you have enough of them.
 
 ### Template settings
 
-**Meta fields:** Here you can specify which meta-information (date of the post, author of the post and number of 
+**Meta fields:** Here you can specify which meta information (date of the post, author of the post and number of 
 comments) is displayed.
 
 **News template:** Here you select the template for the posts. The following message templates are available by default:
@@ -110,7 +110,7 @@ via the URL, so that news with so-called permanent links can be specifically lin
 `www.example.com/news/form-follows-function.html`
 
 In this example, the message with the alias "form-follows-function" is called via the "news" page: If the searched 
-message does not exist, the message reader returns an error message and the HTTP status code "404 Notfound". The 
+message does not exist, the message reader returns an error message and the HTTP status code "404 Not Found". The 
 status code is important for search engine optimization.
 
 {{% notice info %}}
@@ -132,7 +132,7 @@ especially important in multi-domain operations with several independent website
 **Meta fields:** Here you can define which meta information (date of the post, author of the post and number of 
 comments) is displayed.
 
-**News template:** Here you select the message template. By default `news_full`, the template displays the complete 
+**News template:** Here you select the message template. By default, the template `news_full` displays the complete 
 article.
 
 **Module template:** Here you can overwrite the standard template.
@@ -245,7 +245,7 @@ The front end module generates the following HTML code:
 ```
 
 
-## Message archive menu
+## News archive menu
 
 The front end module "News archive menu" adds a menu to the website, which allows you to view the posts of the 
 individual days, months or years.

@@ -7,7 +7,7 @@ aliases:
 weight: 20
 ---
 
-Now that you know how categories and questions are managed in the backend, we will explain how to display this content 
+Now that you know how categories and questions are managed in the back end, we will explain how to display this content 
 in the front end. The FAQ extension contains three new front end modules which you can configure as usual via the 
 module management.
 
@@ -56,7 +56,7 @@ the question via the URL, so that FAQs can be linked with so-called [permalinks]
 `example.com/question/can-I-use-my-own-php-scripts.html`
 
 The keyword of the FAQ reader is **question** and tells the module to search and output a specific question. If the 
-searched question does not exist, the FAQ reader returns an error message and the HTTP status code "404 Not found". 
+searched question does not exist, the FAQ reader returns an error message and the HTTP status code "404 Not Found". 
 The status code is important for search engine optimization.
 
 {{% notice info %}}
@@ -83,7 +83,7 @@ especially important in multi-domain operation with several independent websites
 **Comment template:** Here you can select the comment template.
 
 **The HTML output**  
-The frontend module generates the following HTML code:
+The front end module generates the following HTML code:
 
 ```html
 <div class="mod_faqreader block">
@@ -123,7 +123,7 @@ feature is especially important in multi-domain operation with several independe
 **Module template:** Here you can overwrite the default template.
 
 **The HTML output**  
-The frontend module generates the following HTML code:
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
