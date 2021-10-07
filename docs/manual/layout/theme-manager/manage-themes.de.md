@@ -66,10 +66,10 @@ Versionierung für dich in diesem Zusammenhang eine Rolle spielt.
 **Ordner**: Hier wählst du aus, welche Ordner aus dem Contao-Upload-Verzeichnis zu dem Theme gehören. Die hier 
 verknüpften Ressourcen werden beim Theme-Export mit exportiert.
 
+**Bildschirmfoto**: Hier kannst du ein Bildschirmfoto für die Theme-Übersicht auswählen.
+
 **Templates-Ordner**: Hier kannst du einen bestimmten Unterordner aus dem Templates-Verzeichnis mit dem Theme 
 verknüpfen. Die darin enthaltenen angepassten Templates werden dann ebenfalls mit exportiert.
-
-**Bildschirmfoto**: Hier kannst du ein Bildschirmfoto für die Theme-Übersicht auswählen.
 
 
 ## Themes exportieren
