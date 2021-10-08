@@ -638,6 +638,37 @@ then and the error message will be shown in the form.
 **return:** `mixed` New value to be saved
 {{% /expand %}}
 
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/ContentTextSaveCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+
+/**
+ * @Callback(table="tl_content", target="fields.text.save")
+ */
+class ContentTextSaveCallback
+{
+    public function __invoke($value, DataContainer $dc)
+    {
+        // Show an error if tl_content.text contains "foobar"
+        if (false !== stripos($value, 'foobar')) {
+            throw new \Exception('String "foobar" is not allowed.');
+        }
+
+        // Or process the value before saving
+        $value = strtoupper($value);
+
+        // Return the processed value
+        return $value;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `fields.<FIELD>.wizard`
 
