@@ -48,9 +48,9 @@ use Contao\FrontendTemplate;
  */
 class ParseFrontendTemplateListener
 {
-    public function __invoke(string $buffer, string $template, FrontendTemplate $template): string
+    public function __invoke(string $buffer, string $templateName, FrontendTemplate $template): string
     {
-        if ('ce_text' === $template) {
+        if ('ce_text' === $templateName) {
             // Modify $buffer
         }
 
