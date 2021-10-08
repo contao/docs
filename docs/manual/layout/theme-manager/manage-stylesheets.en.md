@@ -81,7 +81,7 @@ The CSS class names of the Contao elements are logical throughout. Content eleme
 a picture element has the class `ce_image`.
 
 The same applies to modules, except that they start with the prefix `mod_` (for *mod*ules). For example, the 
-"Navigation Menu" module has the class `mod_navigation`, the "Message List" module the class `mod_newslist`. If you are 
+"Navigation menu" module has the class `mod_navigation`, the "News list" module the class `mod_newslist`. If you are 
 not sure about the class of an element, just look in the source code of the web page.
 
 In your stylesheet, you can then use the class name of an element to assign a format to it. For example, the following 
@@ -107,7 +107,7 @@ peculiarities, for example:
 
 ```css
 /* Outer distance for all browsers */
-mod_search {
+.mod_search {
     margin: 24px;
 }
 
