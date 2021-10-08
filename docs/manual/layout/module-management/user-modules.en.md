@@ -524,7 +524,7 @@ the configuration, automatically receive a user account for the protected area.
 </div>
 
 **Editable fields:** Here you can define which fields a new member has to fill in during registration. To enable the 
-login in the frontend, you have to activate at least the fields username and password.
+login in the front end, you have to activate at least the fields username and password.
 
 **Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution 
 lists a member can subscribe to.
