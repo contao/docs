@@ -122,7 +122,7 @@ The easiest way to find commercial themes is to use Google, for example by using
 or without a hyphen). The company Feyer Media GmbH &amp; Co KG by Contao initiator Leo Feyer offers commercial themes 
 that were partly created by himself and partly by other providers. There is also an online demo of these themes where 
 you can quickly get an impression of the designs. Another provider of themes is the company 
-[RockSolid Themes](https://rocksolidthemes.com/de/contao/themes) from core developer Martin Auswöger.
+[RockSolid Themes](https://rocksolidthemes.com/en/contao/themes) from core developer Martin Auswöger.
 
 Despite all the theme euphoria, it should also be said that themes - just like third-party extensions - are always a 
 potential gateway for hackers. After all, you upload files from other people to your server without knowing exactly 
