@@ -180,6 +180,15 @@ doctrine:
                     1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
 ```
 
+{{% notice "note" %}}
+Der [`TRADITIONAL` SQL Modus](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_traditional) ist ein Kombinations-Modus
+welcher unter Anderem aus den Modi `STRICT_TRANS_TABLES` und `STRICT_ALL_TABLES` besteht. Der »[Strict SQL Modus](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict)« 
+ist aktiv wenn einer dieser Modi aktiviert ist. Der »Strict Modus« ist in aktuellen MySQL und MariaDB Versionen über die Einstellung 
+`STRICT_TRANS_TABLES` der Standard, jedoch nutzen viele Shared Hosting Umgebungen eigene Einstellungen. Der Vorteil des Strict Modus ist,
+dass fehlerhafte Datenbankoperationen auch tatsächlich einen Fehler verursachen, anstatt ohne Meldung vom Datenbankserver ignoriert zu
+werden. Dies führt zu einer verbesserten Datenintegrität und Sicherheit.
+{{% /notice %}}
+
 
 ## Webserver
 
