@@ -6,6 +6,9 @@ aliases:
 weight: 890
 ---
 
+{{% notice note %}}
+Since 1st of October 2021 we are not using Mumble for our regular public calls anymore. Instead we are using Huddles in the [Contao Slack Workspace](https://to.contao.org/slack).
+{{% /notice %}}
 
 ## Quick Info for Settings
 
