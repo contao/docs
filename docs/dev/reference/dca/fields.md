@@ -158,6 +158,7 @@ Each field can be validated against a regular expression.
 | includeBlankOption | true/false (`bool`)           | If true a blank option will be added to the options array. Applies to drop-down menus only.                                                                              |
 | isAssociative      | true/false (`boolean`)           | Indicates that an array of options is indeed an associative array. Example of an ambiguous array of options: `['0' => 'Zero', '1' => 'One']`.                         |
 | isBoolean          | true/false (`bool`)           | Indicates that a particular field is boolean.                                                                                                                            |
+| isGallery          | true/false (`bool`)     | *todo* 
 | isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
 | isSortable         | true/false (`bool`)           | {{< version "4.10" >}} Enable sorting for the selected items. Applies to file trees only.                                                                              |
 | mandatory          | true/false (`bool`)           | If true the field cannot be empty.                                                                                                                                       |
