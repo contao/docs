@@ -364,6 +364,43 @@ Allows for individual labels in header of "parent view".
 **return:** `array` Header labels
 {{% /expand %}}
 
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/CalendarHeaderCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Doctrine\DBAL\Connection;
+
+/**
+ * Adds the total number of events to the header fields.
+ *
+ * @Callback(table="tl_calendar_events", target="list.sorting.header")
+ */
+class CalendarHeaderCallback
+{
+    /** @var Connection */
+    private $db;
+
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    public function __invoke(array $labels, DataContainer $dc): array
+    {
+        $count = $this->db->fetchOne("SELECT COUNT(*) FROM tl_calendar_events WHERE pid = ?", [$dc->id]);
+
+        $labels['Total events'] = $count;
+
+        return $labels;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `list.sorting.panel_callback.subpanel`
 
