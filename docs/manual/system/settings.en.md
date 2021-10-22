@@ -91,21 +91,21 @@ contao:
 
 ### Front end configuration
 
+{{% notice note %}}
+Starting with version **4.10** this setting can be changed in the settings of the website root instead:
+{{% /notice %}}
+
 **Enable folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in 
 the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias 
 `docs/install/download.html` instead of just `download.html`.
 
+{{% notice note %}}
+This setting does not exist anymore in Contao **4.10** and higher:
+{{% /notice %}}
+
 **Do not redirect empty URLs:** Allows you to disable the redirect of the "empty URL" to the start page of the browser's 
 language respective website root when using the [legacy routing mode][LegacyRouting] without `contao.prepend_locale: true` 
 *(not recommended)*.
-
-**Deactivate the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route 
-`_contao/cron` using a real cron job (which you have to set up yourself). Starting with Contao **4.9** you can also
-use the following command:
-
-```
-php vendor/bin/contao-console contao:cron
-```
 
 
 ### Security settings
@@ -169,6 +169,17 @@ contao:
         index_protected: false
 ```
 {{% /notice %}}
+
+
+### Cron job settings
+
+**Deactivate the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route 
+`_contao/cron` using a real cron job (which you have to set up yourself). Starting with Contao **4.9** you can also
+use the following command:
+
+```
+php vendor/bin/contao-console contao:cron
+```
 
 
 ### Default access rights
@@ -445,6 +456,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `disableInsertTags` | Allows you to disable the replacement of [insert tags][InsertTags] globally. |
 | `disableRefererCheck` | Allows you to disable the [request token check][RequestTokens] entirely _(deprecated)_. |
 | `doNotCollapse` | [Do not collapse elements](#back-end-configuration). |
+| `doNotRedirectEmpty` | [Do not redirect empty URLs](#front-end-configuration). |
 | `folderUrl` | [Enable folder URLs](#front-end-configuration). |
 | `gdMaxImgHeight` | [Maximum GD image height](#files-and-images). |
 | `gdMaxImgWidth` | [Maximum GD image width](#files-and-images). |
