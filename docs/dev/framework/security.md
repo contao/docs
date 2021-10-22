@@ -84,16 +84,19 @@ If you want to learn more about Symfony's Security Component use the provided li
 implmentation details that are unique to Contao.
 
 Since within Contao you can put a login form on basically any page, Contao does not utilise Symfony's built-in 
-[`form_login` Authentication Provider][SymfonyFormLogin]. Instead, Contao implements its own user providers, 
-[user checkers][SymfonyUserChecker] and [request matcher service][SymfonyRequestMatcherService], the latter of which checks the 
-[request scope][RequestScope]. For example in the front end, all URLs to Contao pages will have the `_scope` request attribute set to 
-`frontend` and the `contao_frontend` firewall will thus be applicable to all these URLs.
+[`form_login` Authentication Provider][SymfonyFormLogin]. Instead, Contao implements its own [user checker][SymfonyUserChecker] and 
+[request matcher service][SymfonyRequestMatcherService], the latter of which checks the [request scope][RequestScope]. For example in the 
+front end, all URLs to Contao pages will have the `_scope` request attribute set to `frontend` and the `contao_frontend` firewall will thus 
+be applicable to all these URLs. Contao implements an [authentication listener][SymfonyAuthenticationListener] which will check for any
+POST request containing the parameters `username` and `password` and the parameter `FORM_SUBMIT` with the value `tl_login` (as these are the
+parameters used by Contao's login module).
 
 
 ## Voters
 
-Starting with Contao **4.7** Contao implements so called [Voters][SymfonyVoters] in order to easily check whether an authenticated user is
-authorized to access specific resources. These voters are automatically used by Symfony via the [Security Helper][SecurityHelperService].
+Starting with Contao **4.7** Contao implements [Voters][SymfonyVoters] in order to easily check whether an authenticated user is authorized 
+to access specific resources. These voters are automatically added to Symfony's security system and then invoked when the respective
+permission is accessed via the [Security Helper][SecurityHelperService].
 
 {{< version "4.7" >}}
 
@@ -126,11 +129,11 @@ $security->isGranted('contao_user.can_edit_page', $pageModel);
 
 {{< version "4.12" >}}
 
-The security helper can also be used to check whether a front end or back end user belongs to any of the specified user groups:
+The security helper can also be used to check whether a front end user belongs to any of the specified user groups:
 
 ```php
-$security->isGranted('contao_group', $groupId);
-$security->isGranted('contao_group', [/* array of group IDs */]);
+$security->isGranted('contao_member.groups', $groupId);
+$security->isGranted('contao_member.groups', [/* array of group IDs */]);
 ```
 
 {{% notice tip %}}
@@ -164,23 +167,34 @@ $security->isGranted(ContaoNewsPermissions::USER_CAN_CREATE_ARCHIVES);
 
 To implement your own back end access rights (e.g. for custom modules in the back end) the following steps are necessary:
 
-1. Add your new permission to `$GLOBALS['TL_PERMISSIONS']`.
+1. Add your new permission to `$GLOBALS['TL_PERMISSIONS']`. This registers this permission to be used by Contao's `contao_user` voter.
 2. Add your new permission to `tl_user` and `tl_user_group`.
 
 ```php
 // contao/config/config.php
-$GLOBALS['TL_PERMISSIONS'][] = 'my_permission';
+$GLOBALS['TL_PERMISSIONS'][] = 'my_permissions';
 ```
 
 ```php
 // contao/dca/tl_user.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
-$GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permission'] = [
+$GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
     'exclude' => true,
     'inputType' => 'checkbox',
-    'sql' => ['type' => 'boolean', 'default' => false],
+    'eval' => ['multiple' => true],
+    'options' => [
+        'first_permission' => 'First permission',
+        'second_permission' => 'Second permission',
+    ],
+    'sql' => ['type' => 'blob', 'notnull' => false],
 ];
+
+	'exclude'                 => true,
+	'inputType'               => 'checkbox',
+	'foreignKey'              => 'tl_calendar.title',
+	'eval'                    => array('multiple'=>true),
+	'sql'                     => "blob NULL"
 
 PaletteManipulator::create()
     ->addLegend('my_legend', null)
@@ -191,12 +205,17 @@ PaletteManipulator::create()
 ```
 
 ```php
+// contao/dca/tl_user_group.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
-$GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permission'] = [
+$GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
     'exclude' => true,
     'inputType' => 'checkbox',
-    'sql' => ['type' => 'boolean', 'default' => false],
+    'options' => [
+        'first_permission' => 'First permission',
+        'second_permission' => 'Second permission',
+    ],
+    'sql' => ['type' => 'blob', 'notnull' => false],
 ];
 
 PaletteManipulator::create()
@@ -207,8 +226,8 @@ PaletteManipulator::create()
 ```
 
 Once that is done you can check for this permission in your own back end controller for example. These permissions can be checked via the 
-security helper by using the `contao_user.*` attribute. Since our new permission is only a boolean field, we check whether it is `true`. We 
-also check that the current user is not `ROLE_ADMIN` because administrators should always be able to access the controller.
+security helper by using the `contao_user.*` attribute. We also check that the current user is not `ROLE_ADMIN` because administrators 
+should always be able to access the controller.
 
 ```php
 // src/Controller/BackendController.php
@@ -239,7 +258,7 @@ class BackendController
 
     public function __invoke(): Response
     {
-        if (!$this->security->isGranted('ROLE_ADMIN') && !$this->security->isGranted('contao_user.my_permission', true)) {
+        if (!$this->security->isGranted('ROLE_ADMIN') && !$this->security->isGranted('contao_user.my_permissions', 'first_permission')) {
             throw new AccessDeniedException('Not enough permissions to access this controller.');
         }
 
@@ -261,6 +280,7 @@ Instead of extending Contao's own permissions system you are also free to implem
 
 [SymfonySecurityComponent]: https://symfony.com/doc/4.4/components/security.html
 [SymfonyFirewall]: https://symfony.com/doc/4.4/components/security/firewall.html
+[SymfonyAuthenticationListener]: https://github.com/symfony/symfony/blob/4.4/src/Symfony/Component/Security/Http/Firewall/AbstractAuthenticationListener.php
 [SymfonyUserProvider]: https://symfony.com/doc/4.4/security/user_provider.html
 [SymfonyAccessControl]: https://symfony.com/doc/4.4/security/access_control.html
 [ContaoConfiguration]: /getting-started/initial-setup/symfony-application/contao-4.9/#configure-your-contao-installation
