@@ -96,18 +96,18 @@ contao:
 
 {{% notice note %}}
 Ab Version **4.10** wird die folgende Einstellung im Startpunkt der Webseite vorgenommen:
+{{% /notice %}}
 
 **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
 Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
 »Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
-{{% /notice %}}
 
 {{% notice note %}}
 Ab Version **4.10** ist diese Einstellung entfallen:
+{{% /notice %}}
 
 **Leere URLs nicht umleiten:** Bei einer leeren URL die Webseite anzeigen anstatt auf den Startpunkt der Sprache 
 weiterzuleiten _(nicht empfohlen)_.
-{{% /notice %}}
 
 ### Sicherheitseinstellungen
 
@@ -471,6 +471,7 @@ Beschreibung.
 | `disableInsertTags` | Erlaubt es das Ersetzen von [Insert-Tags][InsertTags] global zu deaktivieren. |
 | `disableRefererCheck` | Erlaubt es die [Request Token Überprüfung][RequestTokens] komplett zu deaktivieren _(veraltet)_. |
 | `doNotCollapse` | [Elemente nicht verkürzen](#backend-einstellungen). |
+| `doNotRedirectEmpty` | [Leere URLs nicht umleiten](#frontend-einstellungen). |
 | `folderUrl` | [Ordner-URLs verwenden](#frontend-einstellungen). |
 | `gdMaxImgHeight` | [Maximale GD-Bildhöhe](#dateien-und-bilder). |
 | `gdMaxImgWidth` | [Maximale GD-Bildbreite](#dateien-und-bilder). |
