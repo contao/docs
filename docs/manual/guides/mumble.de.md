@@ -7,6 +7,10 @@ aliases:
 weight: 890
 ---
 
+{{% notice note %}}
+Seit 01.10.2021 nutzen wir nicht mehr Mumble für unsere regelmäßigen Contao-Calls, sondern die Huddle-Funktion des [Contao Slack-Workspaces](https://to.contao.org/slack).
+{{% /notice %}}
+
 
 ## Kurzinfo Einstellungen
 
