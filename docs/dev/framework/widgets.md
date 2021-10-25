@@ -167,6 +167,29 @@ $GLOBALS['TL_DCA']['tl_form_field']['palettes']['custom_field'] =
 ```
 
 
+### Finalizing
+
+{{< version "4.9.23" >}}
+
+In some cases you want to execute additional logic for your front end widget only if all other widgets are valid. For this purpose you can
+implement a `finalize()` method which will be executed for all widgets, if all widgets have been validated after form submission.
+
+```php
+// src/Widget/Frontend/CustomField.php
+namespace App\Widget\Frontend;
+
+use Contao\Widget;
+
+class CustomField extends Widget
+{
+    public function finalize(): void
+    {
+        // Execute additional logic, e.g. move file uploads to their final destination.
+    }
+}
+```
+
+
 [FormGenerator]: https://docs.contao.org/manual/en/form-generator/
 [DcaFields]: /reference/dca/fields/
 [ContaoCoreWidgets]: https://github.com/contao/contao/tree/master/core-bundle/src/Resources/contao/widgets
