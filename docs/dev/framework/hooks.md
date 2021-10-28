@@ -131,6 +131,8 @@ legacy registered hooks.
 {{< version "4.8" >}}
 
 Contao also supports its own annotation formats via the [Service Annotation Bundle][ServiceAnnotationBundle].
+This means that it is only necessary to create one file for the respective adaptation. It should be noted,
+however, that one adheres to the provided [Contao folder structure][ContaoFolderStructure].
 Hooks can be registered using the `@Hook` Annotation. See the following example:
 
 ```php
@@ -194,3 +196,4 @@ class IndexPageListener
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
 [contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
 [ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle
+[ContaoFolderStructure] /getting-started/starting-development/
