@@ -132,7 +132,7 @@ legacy registered hooks.
 
 Contao also supports its own annotation formats via the [Service Annotation Bundle][ServiceAnnotationBundle].
 This means that it is only necessary to create one file for the respective adaptation. It should be noted,
-however, that one adheres to the provided [Contao folder structure][ContaoFolderStructure].
+however, that one has to adhere to the provided [Contao folder structure][ContaoFolderStructure].
 Hooks can be registered using the `@Hook` Annotation. See the following example:
 
 ```php
