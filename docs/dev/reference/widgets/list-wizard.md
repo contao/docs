@@ -9,7 +9,8 @@ A simple list widget example:
 
 ![A simple list widget example](../images/list-wizard-simple.png?classes=shadow)
 
-Usage in list content element: 
+Usage in the list content element: 
+
 
 ![A simple list widget example](../images/list-wizard-ce.png?classes=shadow)
 
