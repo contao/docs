@@ -21,7 +21,8 @@ This table only shows the options relevant to the core functionality of this wid
 | ----- | ----- | --------------- |
 | `inputType` | `listWizard` | |
 | `eval.allowHtml` | `bool` | If true the list fields will accept HTML input (see “Allowed HTML tags” in the back end System => Settings). |
-| `eval.maxlength` | `integer` | Maximum number of characters that are allowed in list fields.|
+| `eval.maxlength` | `integer` | Maximum number of characters that are allowed in list fields. |
+
 
 ## Examples
 
