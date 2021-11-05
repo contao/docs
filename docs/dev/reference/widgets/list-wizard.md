@@ -32,7 +32,11 @@ This table only shows the options relevant to the core functionality of this wid
     'eval' => [
         'maxlength' => 32
     ],
-    'sql' => 'blob NULL',
+    'sql' => [
+        'type' => 'blob',
+        'notnull' => false
+    ],
+
 ],
 // ...
 ```
