@@ -3,7 +3,8 @@ title: "List Wizard"
 description: Render an expandable list
 ---
 
-This widget renders a list wizard which allows to add, remove and reorder list items.
+This widget renders a list wizard which allows you to add, remove and reorder list items.
+
 
 A simple list widget example:
 
