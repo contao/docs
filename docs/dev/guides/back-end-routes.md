@@ -68,6 +68,12 @@ In order to have a correct Contao back end route, we need an additional request 
 you are telling Contao that this route belongs to the back end and should be handled accordingly. See [this article][RequestScope] for more
 information about the `backend` scope.
 
+
+{{% notice note %}}
+Contao 4.13 allows configuring a custom backend path. Use `"%contao.backend.route_prefix%/my-backend-route"` instead of `"/contao/my-backend-route"` in the example above to support this feature.
+{{% /notice %}}
+
+
 Be sure to have imported your bundle's Controllers in your `routes.yaml` *before*
 the `ContaoCoreBundle` routes.
 
