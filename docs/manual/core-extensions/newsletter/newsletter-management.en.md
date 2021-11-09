@@ -108,6 +108,11 @@ Dear Sirs and Madams,
 Please update your details and include your phone number.
 {endif}
 
+<!-- query on "not empty" -->
+{if phone!=""}
+We have the following phone number stored by you: ##phone##
+{endif}
+
 Your administrator
 ```
 
