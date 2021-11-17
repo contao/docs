@@ -42,7 +42,7 @@ auch dann zeitnah Hilfe mit Unterstützung der [Contao Community](https://commun
 ## Umsetzung ohne Erweiterung
 
 Bekannte JavaScript Lösungen für unsere Anforderung sind z. B. [Isotope](https://isotope.metafizzy.co/) 
-oder [MixItUp](https://www.kunkalabs.com/mixitup/). Bei einer kommerziellen Nutzung ist hierbei der Erwerb von Lizenzen 
+oder [MixItUp](https://github.com/patrickkunka/mixitup). Bei einer kommerziellen Nutzung ist hierbei der Erwerb von Lizenzen 
 notwendig. Für unser Beispiel nutzen wir die Open Source Lösung [Filterizr](https://yiotis.net/filterizr/#/). 
 
 
