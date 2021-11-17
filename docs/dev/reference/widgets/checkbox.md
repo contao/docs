@@ -57,7 +57,7 @@ If you simply want to toggle a property:
     'inputType' => 'checkbox',
     'sql' => [
         'type' => 'boolean',
-        'default' => false,
+        'default' => 0,
     ],
 ],
 // ...
