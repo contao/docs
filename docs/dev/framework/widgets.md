@@ -169,18 +169,20 @@ $GLOBALS['TL_DCA']['tl_form_field']['palettes']['custom_field'] =
 
 ### Finalizing
 
-{{< version "4.9.23" >}}
+{{< version "4.13" >}}
 
 In some cases you want to execute additional logic for your front end widget only if all other widgets are valid. For this purpose you can
-implement a `finalize()` method which will be executed for all widgets, if all widgets have been validated after form submission.
+implement the `Contao\FinalizableWidgetInterface` interface. Its `finalize()` method will be executed for all widgets, if all widgets have 
+been validated after form submission.
 
 ```php
 // src/Widget/Frontend/CustomField.php
 namespace App\Widget\Frontend;
 
+Use Contao\FinalizableWidgetInterface;
 use Contao\Widget;
 
-class CustomField extends Widget
+class CustomField extends Widget implements FinalizableWidgetInterface
 {
     public function finalize(): void
     {
