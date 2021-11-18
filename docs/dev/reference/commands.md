@@ -112,6 +112,10 @@ The options are far more important so let's get to them right away:
 | `--enable-debug-csv` | By default the subscriber results are written to the standard output. You can ask the command to write everything to a CSV file by passing this option. |
 | `--debug-csv-path`   | This option allows you to override the default CSV file path, if you used `--enable-debug-csv`. |
 
+**Notes**
+1. If you have problems with the crawler, check if you have configured a domain on your root page.
+2. Protected pages can currently only be indexed via the backend.
+
 ## `contao:migrate`
 
 {{< version "4.9" >}}
