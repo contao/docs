@@ -58,6 +58,7 @@ namespace App\Controller\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;
 use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
@@ -69,7 +70,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ExampleFormElementController extends AbstractContentElementController
 {
     /**
-     * @var CsrfTokenManagerInterface
+     * @var ContaoCsrfTokenManager
      */
     private $csrfTokenManager;
 
@@ -78,7 +79,7 @@ class ExampleFormElementController extends AbstractContentElementController
      */
     private $csrfTokenName;
 
-    public function __construct(CsrfTokenManagerInterface $csrfTokenManager, string $csrfTokenName)
+    public function __construct(ContaoCsrfTokenManager $csrfTokenManager, string $csrfTokenName)
     {
         $this->csrfTokenManager = $csrfTokenManager;
         $this->csrfTokenName = $csrfTokenName;
@@ -417,7 +418,7 @@ class Example
 ```
 
 
-[SimpleTokenUsage]: https://github.com/contao/contao/blob/master/core-bundle/tests/Util/SimpleTokenParserTest.php
+[SimpleTokenUsage]: https://github.com/contao/contao/blob/4.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
 [RequestTokens]: /framework/request-tokens/

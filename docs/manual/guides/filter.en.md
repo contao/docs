@@ -40,7 +40,7 @@ Contao [community](https://community.contao.org/en/) too.
 ## Without extension
 
 Known JavaScript solutions for our requirements are e.g. [Isotopes](https://isotope.metafizzy.co/) or 
-[MixItUp](https://www.kunkalabs.com/mixitup/). In case of a commercial use the purchase of licenses is necessary. 
+[MixItUp](https://github.com/patrickkunka/mixitup). In case of a commercial use the purchase of licenses is necessary. 
 For our example we use the open source solution [Filterizr](https://yiotis.net/filterizr/#/).
 
 
