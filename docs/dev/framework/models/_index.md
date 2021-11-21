@@ -82,6 +82,8 @@ The following options are available:
 | offset | skip the first n records of the result             | OFFSET         | 10                    |
 | order  | Order the models by a certain field                | ORDER BY       | 'id DESC'             |
 | return | Define the return value as `Model` or `Collection` | -              | 'Model', 'Collection' |
+| eager  | Load all related records                           | LEFT JOIN      | true                  |
+| having | Add HAVING clause                                  | HAVING         | 'id = 1'              |
 
 ```php
 $options = [
@@ -96,6 +98,29 @@ $pages = PageModel::findBy('pid', 1, $options);
 $pages = PageModel::findByPid(1, $options);
 ```
 
+If the model has any relations defined in the [DCA](/framework/dca), setting `'eager' => true` will make Contao load all related records within the same database call, using joined query under the hood. Columns from each joined table will be prefixed with the column identifier from the main table, followed by double underscore character. This allows you to further filter your query with `having` option, like so:
+
+```php
+// tl_article.php
+'author' => array
+(
+    'foreignKey'              => 'tl_user.name',
+    'relation'                => array('type'=>'hasOne', 'load'=>'lazy')
+)
+
+// your application code
+use Contao\ArticleModel;
+
+$articles = ArticleModel::findBy( 'tl_article.published = ?', true, [
+    'return' => 'Array',
+    'eager' => true,
+    'having' => "author__username = 'k.jones' AND author__disable != '1'"
+]);
+```
+
+{{% notice info %}}
+`eager` only works when relation type is `hasOne` or `belongsTo`
+{{% /notice %}}
 
 ## Special cases
 
