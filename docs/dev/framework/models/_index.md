@@ -105,11 +105,10 @@ character. This allows you to further filter your query with `having` option, fo
 
 ```php
 // tl_article.php
-'author' => array
-(
-    'foreignKey'              => 'tl_user.name',
-    'relation'                => array('type'=>'hasOne', 'load'=>'lazy')
-)
+'author' => [
+    'foreignKey' => 'tl_user.name',
+    'relation' => ['type'=>'hasOne', 'load'=>'lazy'],
+],
 
 // your application code
 use Contao\ArticleModel;
