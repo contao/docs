@@ -481,7 +481,6 @@ option {
     border: 1px solid var(--MENU-SEARCH-BOX-color);
     background: var(--MENU-SEARCH-BG-color);
     border-radius: 4px;
-    -webkit-text-fill-color: rgb(244,124,0);
 }
 
 .algolia-searchbox .algolia-autocomplete {
