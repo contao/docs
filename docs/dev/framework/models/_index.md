@@ -118,6 +118,9 @@ $articles = ArticleModel::findBy( 'tl_article.published = ?', true, [
     'eager' => true,
     'having' => "author__username = 'k.jones' AND author__disable != '1'"
 ]);
+
+$article = $articles[0];                    // $article is an instance of ArticleModel
+$author = $article->getRelated('author');   // $author is an instance of UserModel
 ```
 
 ## Special cases
