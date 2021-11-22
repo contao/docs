@@ -99,7 +99,7 @@ $pages = PageModel::findByPid(1, $options);
 ```
 
 If the model has relations of type `hasOne` or `belongsTo` defined in the [DCA](/framework/dca), setting `'eager' => true`
-will make Contao load all related records within the same database call, using joined query under the hood.
+will make Contao load all related records of those types within the same database call, using joined query under the hood.
 Columns from each joined table will be prefixed with the column identifier from the main table, followed by double underscore character. This allows you to further filter your query with `having` option, for example:
 
 ```php
