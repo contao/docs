@@ -127,7 +127,7 @@ class Example
 
     public function createOptIn(string $email, ExampleModel $model, string $optInUrl): void
     {
-        $token = $this->optIn->create('example-', $email, ['tl_example' => $model->id]);
+        $token = $this->optIn->create('example-', $email, ['tl_example' => [$model->id]]);
         $token->send('Opt-In', 'Click this link to opt-in: '.$optInUrl.'?token='.$token->getIdentifier());
     }
 
