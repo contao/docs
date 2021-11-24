@@ -118,6 +118,15 @@ Answers can be found in the [TinyMCE Editor Configuration](/en/guides/tinymce-co
 Check in the [file manager](/en/file-manager/) if the directory with your images is marked as "Public". Also make sure that there is no outdated `.htaccess` file in the `/web` folder or a parent folder of your installation.
 {{% /expand %}}
 
+{{% expand "Is it possible to hide the search in the file manager?" %}}
+Yes. Via a DCA entry:
+
+```php
+    //contao/dca/tl_files.php
+    unset($GLOBALS['TL_DCA']['tl_files']['list']['sorting']['panelLayout']);
+```
+{{% /expand %}}
+
 
 ## Theme
 
