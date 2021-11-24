@@ -124,7 +124,7 @@ Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/
 {{% /expand %}}
 
 {{% expand "Kann man die Suche in der Dateiverwaltung ausblenden?" %}}
-Über einen DCA Eintrag:
+Ja. Über einen DCA-Eintrag:
 
 ```yml
     //contao/dca/tl_files.php
