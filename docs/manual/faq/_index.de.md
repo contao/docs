@@ -123,6 +123,15 @@ gekennzeichnet ist.
 Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/web` oder einem übergeordneten Ordner deiner Installation befindet.
 {{% /expand %}}
 
+{{% expand "Kann man die Suche in der Dateiverwaltung ausblenden?" %}}
+Über einen DCA Eintrag:
+
+```yml
+    //contao/dca/tl_files.php
+    unset($GLOBALS['TL_DCA']['tl_files']['list']['sorting']['panelLayout']);
+```
+{{% /expand %}}
+
 
 ## Theme
 
