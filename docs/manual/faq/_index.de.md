@@ -126,7 +126,7 @@ Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/
 {{% expand "Kann man die Suche in der Dateiverwaltung ausblenden?" %}}
 Ja. Über einen DCA-Eintrag:
 
-```yml
+```php
     //contao/dca/tl_files.php
     unset($GLOBALS['TL_DCA']['tl_files']['list']['sorting']['panelLayout']);
 ```
