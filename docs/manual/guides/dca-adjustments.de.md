@@ -1,7 +1,7 @@
 ---
 title: "DCA Anpassungen"
 description: "Eine Liste praktischer DCA Anpassungen."
-url: "anleitungen/dca"
+url: "/de/anleitungen/dca"
 aliases:
     - /de/anleitungen/dca/
 weight: 12
@@ -81,3 +81,4 @@ $GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['mandatory'] = true
 unset($GLOBALS['TL_DCA']['tl_files']['list']['sorting']['panelLayout']);
 ```
 {{% /expand %}}
+
