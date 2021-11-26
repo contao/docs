@@ -14,6 +14,7 @@ um die Ohren schlagen, um die Contao-Entwicklung voranzutreiben:
 - [Jim (@sheeep)](https://github.com/sheeep)
 - [Leo (@leofeyer)](https://github.com/leofeyer), Initiator
 - [Martin (@ausi)](https://github.com/ausi)
+- [Moritz (@m-vo)](https://github.com/m-vo)
 - [Yanick (@toflar)](https://github.com/toflar)
 
 Neben dem Core-Team sorgen viele weitere [Freiwillige](https://github.com/contao/contao/graphs/contributors) dafür,

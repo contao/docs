@@ -27,10 +27,12 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
     use EscargotAwareTrait;
 
     private const IGNORE_URIS = [
-        'https://github.com/contao/docs/edit',
-        'http(s?)://(www\.)?example\.',
-        'http(s?)://.+\.local(/|$)',
-        'http(s?)://localhost(/|$)',
+        'https://github\.com/contao/docs/edit',
+        'https?://(www\.)?example\.',
+        'https?://.+\.local(/|$)',
+        'https?://localhost(/|$|:[0-9]+)',
+        'https?://github\.com/DEIN-GITHUB-BENUTZERNAME/docs',
+        'https?://github\.com/YOUR-GITHUB-USERNAME/docs',
     ];
 
     private string $outputPath;

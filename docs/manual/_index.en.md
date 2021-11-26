@@ -14,6 +14,7 @@ of Contao:
 - [Jim (@sheeep)](https://github.com/sheeep)
 - [Leo (@leofeyer)](https://github.com/leofeyer), initiator
 - [Martin (@ausi)](https://github.com/ausi)
+- [Moritz (@m-vo)](https://github.com/m-vo)
 - [Yanick (@toflar)](https://github.com/toflar)
 
 In addition to the core team, many more [contributors](https://github.com/contao/contao/graphs/contributors)

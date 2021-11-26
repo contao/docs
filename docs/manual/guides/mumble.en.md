@@ -6,6 +6,9 @@ aliases:
 weight: 890
 ---
 
+{{% notice note %}}
+Since 1st of October 2021 we are not using Mumble for our regular public calls anymore. Instead we are using Huddles in the [Contao Slack workspace](https://to.contao.org/slack).
+{{% /notice %}}
 
 ## Quick Info for Settings
 
@@ -20,9 +23,6 @@ weight: 890
 Mumble is an audio chat software where you can talk to several people. Additionally, there is the possibility to enter 
 short information in a chat window. Mumble is usually divided into several rooms, so that you can withdraw into a 
 room in smaller groups or as a couple.
-
-The Contao calls will take place in Mumble. You can find out when the next Contao Mumble call will 
-take place on the [project website](https://contao.org/en/mumble-calls.html).
 
 You can find more about Mumble at [mumble.info](https://www.mumble.info/).
 

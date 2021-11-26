@@ -1,14 +1,10 @@
 ---
 title: "User modules"
-description: "User modules are modules that are used in connection with the administration of frontend users."
+description: "User modules are modules that are used in connection with the administration of front end users."
 aliases:
     - /en/layout/module-management/user-modules/
 weight: 20
 ---
-
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
 
 <style>
     .formbody .invisible {
@@ -49,13 +45,15 @@ This article is machine translated.
      }
 </style>
 
-User modules are modules that are used in connection with the administration of frontend users. This includes, for example, the registration of new members or the login/logout of existing members.
+User modules are modules that are used in connection with the administration of front end users. This includes, for 
+example, the registration of new members or the login/logout of existing members.
+
 
 ## Login form
 
-The front-end module "Login Form" adds a form to the website, with which registered members can authenticate themselves.
+The front end module "Login form" adds a form to the website, with which registered members can authenticate themselves.
 
-**Frontend output**
+**Front end output**
 
 <div class="mod_login login block">
     <form action="#" id="tl_login" method="post">
@@ -83,9 +81,9 @@ The front-end module "Login Form" adds a form to the website, with which registe
     </form>
 </div>
 
-As soon as a frontend user is logged on, a logoff button is automatically displayed instead of the logon form.
+As soon as a front end user is logged in, a logoff button is automatically displayed instead of the login form.
 
-**Frontend output**
+**Front end output**
 
 <div class="mod_login logout block">
     <form action="#" id="tl_logout" method="post">
@@ -102,16 +100,19 @@ As soon as a frontend user is logged on, a logoff button is automatically displa
 
 So when formatting CSS, consider both states of the module, and also remember that an error message may be output.
 
-**Allow Autologin:** If you select this option, members can remain logged in if they wish. If a user session expires, Contao will automatically create a new session without requiring you to enter the password again.
+**Allow auto login:** If you select this option, members can remain logged in if they wish. If a user session expires, 
+Contao will automatically create a new session without requiring you to enter the password again.
 
-**Forwarding page:** Here you can define to which page a member will be forwarded after successful registration. You can override this setting per user group to set up a group-specific redirection.
+**Redirect page:** Here you can define to which page a member will be forwarded after successful registration. You can 
+override this setting per user group to set up a group-specific redirection.
 
-**Go to last visited page:** If you select this option, the frontend user will be redirected to the last visited page instead of the redirection page.
+**Redirect to last page visited:** If you select this option, the front end user will be redirected to the last visited 
+page instead of the redirection page.
 
-**Individual template:** Here you can overwrite the standard `mod_login` template.
+**Module template:** Here you can overwrite the standard `mod_login` template.
 
-**HTML output**  
-The frontend module generates the following HTML code:
+**The HTML output**  
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -174,23 +175,31 @@ After a member has logged in, the HTML code changes as follows:
 <!-- indexer::continue -->
 ```
 
-## Automatic Logout
 
-The frontend module "Automatic Logout" adds an invisible module to the website that automatically logs off a logged in front-end user.
+## Automatic logout
 
-As soon as a member has logged in to the frontend of the website, a logout link appears in the main menu on the right hand side, with which the member can log out again. In reality, these are two different pages in the page structure, which contain the login and the logout module.
+The front end module "Automatic logout" adds an invisible module to the website that automatically logs out a logged in 
+front end user.
 
-**Forwarding page:** Here you can define to which page a frontend user will be forwarded after logging out.
+As soon as a member has logged in to the front end of the website, a logout link appears in the main menu on the right 
+hand side, with which the member can log out again. In reality, these are two different pages in the page structure, 
+which contain the login and the logout module.
 
-**Go to last visited page:** If you select this option, the member will be redirected to the last page visited instead of the redirection page.
+**Redirect page:** Here you can define to which page a front end user will be forwarded after logging out.
+
+**Redirect to last page visited:** If you select this option, the member will be redirected to the last page visited 
+instead of the redirection page.
 
 The module does not generate HTML output.
 
-## Personal information
 
-The frontend module "personal data" adds a form to the website, which allows a member to change his personal data such as his e-mail address or password. As an administrator, you can define exactly which fields can be edited and which cannot.
+## Personal data
 
-**Frontend output `member_default`**
+The front end module "Personal data" adds a form to the website, which allows a member to change his personal data such 
+as his e-mail address or password. As an administrator, you can define exactly which fields can be edited and which 
+cannot.
+
+**Front end output `member_default`**
 
 <div class="mod_personalData block">
     <form action="#" id="tl_member" method="post">
@@ -230,7 +239,7 @@ The frontend module "personal data" adds a form to the website, which allows a m
     </form>
 </div>
 
-**Frontend output `member_grouped`**
+**Front end output `member_grouped`**
 
 <div class="mod_personalData block">
     <form action="#" id="tl_member" method="post">
@@ -279,11 +288,12 @@ The frontend module "personal data" adds a form to the website, which allows a m
 
 **Editable fields:** Here you can define the editable fields.
 
-![Set editable fields](/de/layout/module-management/images/de/editierbare-felder-festlegen.png?classes=shadow)
+![Set editable fields](/de/layout/module-management/images/en/set-editable-fields.png?classes=shadow)
 
-**Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution lists a member can subscribe to.
+**Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution 
+lists a member can subscribe to.
 
-**Forwarding page**: Here you can choose to which page a member is forwarded to after submitting the changes.
+**Redirect page:** Here you can choose to which page a member is forwarded to after submitting the changes.
 
 **Form template:** Here you select the template of the form.
 
@@ -292,8 +302,8 @@ The frontend module "personal data" adds a form to the website, which allows a m
 | `member_default` | The editable fields are listed below each other. |
 | `member_grouped` | The input fields are grouped using field sets. |
 
-**HTML Output**  
-The frontend module generated using the `member_default` following HTML code:
+**The HTML Output**  
+The front end module generated using the `member_default` following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -341,7 +351,7 @@ The frontend module generated using the `member_default` following HTML code:
 <!-- indexer::continue -->
 ```
 
-The frontend module generates with the `member_grouped` following HTML code:
+The front end module generates with the `member_grouped` following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -400,11 +410,13 @@ The frontend module generates with the `member_grouped` following HTML code:
 <!-- indexer::continue -->
 ```
 
-## Member registration
 
-The frontend module "Member registration" adds a form to the website, with which new members can register and, depending on the configuration, automatically receive a user account for the protected area.
+## Registration
 
-**Frontend output `member_default`**
+The front end module "Registration" adds a form to the website, with which new members can register and, depending on 
+the configuration, automatically receive a user account for the protected area.
+
+**Front end output `member_default`**
 
 <div class="mod_registration block">
     <form action="#" id="tl_registration" method="post">
@@ -454,7 +466,7 @@ The frontend module "Member registration" adds a form to the website, with which
     </form>
 </div>
 
-**Frontend output `member_grouped`**
+**Front end output `member_grouped`**
 
 <div class="mod_registration block">
     <form action="#" id="tl_registration" method="post">
@@ -511,27 +523,40 @@ The frontend module "Member registration" adds a form to the website, with which
     </form>
 </div>
 
-**Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution lists a member can subscribe to.
+**Editable fields:** Here you can define which fields a new member has to fill in during registration. To enable the 
+login in the front end, you have to activate at least the fields username and password.
 
-**Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this question is only "displayed" to spambots. Without a security question it is possible that spammers automatically create user accounts and abuse your website.
+**Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution 
+lists a member can subscribe to.
+
+**Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this 
+question is only "displayed" to spambots. Without a security question it is possible that spammers automatically create 
+user accounts and abuse your website.
 
 **Member groups:** Here you define the group membership of the new member.
 
-**Allow login:** If you select this option, a new member can log in after registering in the frontend login. For this to work, the registration form must contain the fields username and password.
+**Allow login:** If you select this option, a new member can log in after registering in the front end login. For this 
+to work, the registration form must contain the fields username and password.
 
-**Create a user directory:** If you select this option, a new user directory is automatically created in a folder of your choice during registration. The name of the new directory will be generated from the username.
+**Create a home directory:** If you select this option, a new user directory is automatically created in a folder of 
+your choice during registration. The name of the new directory will be generated from the username.
 
-**Forwarding page:** Here you can define to which page a member will be forwarded after registration (e.g. to the page with the login form).
+**Redirect page:** Here you can define to which page a member will be forwarded after registration (e.g. to the page 
+with the login form).
 
 **Automation of member registration**
 
-You can fully automate the registration process if you wish. A new member will then receive an e-mail with a confirmation link when registering, with which they can activate their account independently.
+You can fully automate the registration process if you wish. A new member will then receive an e-mail with a 
+confirmation link when registering, with which they can activate their account independently.
 
-**Send activation email:** Here you can switch on the automatic activation.
+**Send activation e-mail:** Here you can switch on the automatic activation.
 
-**Confirmation page:** Here you can define to which page a user is redirected after successful activation of his account (e.g. the login page).
+**Confirmation page:** Here you can define to which page a user is redirected after successful activation of his 
+account (e.g. the login page).
 
-**Activation mail:** Enter the text of the activation mail here. You can use placeholders in the format `##key##` for all input fields of the registration form as well as the placeholders `##domain##` for the domain and `##link##` for the confirmation link.
+**Activation message:** Enter the text of the activation mail here. You can use placeholders in the format `##key##` 
+for all input fields of the registration form as well as the placeholders `##domain##` for the domain and `##link##` 
+for the confirmation link.
 
 Below is a short example:
 
@@ -558,8 +583,8 @@ Your administrator
 | `member_default` | The input fields are listed one below the other. |
 | `member_grouped` | The input fields are grouped using field sets. |
 
-**HTML Output**  
-The frontend module generates with the `member_default` following HTML code:
+**The HTML Output**  
+The front end module generates with the `member_default` following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -617,7 +642,7 @@ The frontend module generates with the `member_default` following HTML code:
 <!-- indexer::continue -->
 ```
 
-The frontend module generates using the `member_grouped` following HTML code:
+The front end module generates using the `member_grouped` following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -686,11 +711,13 @@ The frontend module generates using the `member_grouped` following HTML code:
 <!-- indexer::continue -->
 ```
 
-## Change Password
 
-The frontend module "Change Password" adds a form to the website that allows a logged in frontend user to change his password.
+## Change password
 
-**Frontend output**
+The front end module "Change password" adds a form to the website that allows a logged in front end user to change his 
+password.
+
+**Front end output**
 
 <div class="mod_changePassword block">
     <form action="#" id="tl_change_password" method="post">
@@ -722,12 +749,12 @@ The frontend module "Change Password" adds a form to the website that allows a l
     </form>
 </div>
 
-**Forwarding page:** Here you can select to which page a member will be forwarded after submitting the changes.
+**Redirect page:** Here you can select to which page a member will be forwarded after submitting the changes.
 
-**Individual template:** Here you can overwrite the default `mod_changePassword` template.
+**Module template:** Here you can overwrite the default `mod_changePassword` template.
 
-**HTML output**  
-The frontend module generates the following HTML code:
+**The HTML output**  
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -767,11 +794,14 @@ The frontend module generates the following HTML code:
 <!-- indexer::continue -->
 ```
 
-## Forgot your password?
 
-The front-end module "Forgot your password" adds a form to the website that a member can use to request a new password. Contao sends an automatic email with a confirmation link to the email address stored in the user account. Only after clicking on this confirmation link is it possible to enter a new password.
+## Lost password
 
-**Frontend output**
+The front end module "Lost password" adds a form to the website that a member can use to request a new password. Contao 
+sends an automatic e-mail with a confirmation link to the e-mail address stored in the user account. Only after 
+clicking on this confirmation link is it possible to enter a new password.
+
+**Front end output**
 
 <div class="mod_lostPassword block">
     <form action="#" id="tl_lost_password" method="post">
@@ -797,15 +827,20 @@ The front-end module "Forgot your password" adds a form to the website that a me
     </form>
 </div>
 
-**Do not query username:** If you select this option, the username will not be queried when you request it.
+**Skip username:** If you select this option, the username will not be queried when you request it.
 
-**Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this question is only "displayed" to spambots. Without a security question it is possible that spammers automatically create user accounts and abuse your website.
+**Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this 
+question is only "displayed" to spambots. Without a security question it is possible that spammers automatically 
+create user accounts and abuse your website.
 
-**Forwarding page:** Here you can define to which page a user is forwarded after requesting a new password.
+**Redirect page:** Here you can define to which page a user is forwarded after requesting a new password.
 
-**Confirmation page:** Here you can define to which page a user will be redirected after a new password has been successfully created.
+**Confirmation page:** Here you can define to which page a user will be redirected after a new password has been 
+successfully created.
 
-**Confirmation mail:** Enter the text of the confirmation mail here. You can use placeholders in the format `##key##` for all user properties as well as the placeholders `##domain##` for the current domain and `##link##` for the confirmation link.
+**Password message:** Enter the text of the confirmation mail here. You can use placeholders in the format `##key##` 
+for all user properties as well as the placeholders `##domain##` for the current domain and `##link##` for the 
+confirmation link.
 
 For example, a confirmation mail could look like this:
 
@@ -823,10 +858,10 @@ If you have not requested this email, please contact the website administrator.
 Your administrator
 ```
 
-**Individual template:** Here you can overwrite the default `mod_lostPassword` template.
+**Module template:** Here you can overwrite the default `mod_lostPassword` template.
 
-**HTML output**  
-The frontend module generates the following HTML code:
+**The HTML output**  
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -860,11 +895,13 @@ The frontend module generates the following HTML code:
 <!-- indexer::continue -->
 ```
 
+
 ## Close account
 
-The frontend module "Close Account" adds a form to the website, which a member can use to close his account. Depending on the configuration, the account is either deactivated or completely deleted from the database.
+The front end module "Close account" adds a form to the website, which a member can use to close his account. Depending 
+on the configuration, the account is either deactivated or completely deleted from the database.
 
-**Frontend output**
+**Front end output**
 
 <div class="mod_closeAccount block">
     <form action="#" id="tl_close_account" method="post">
@@ -884,14 +921,16 @@ The frontend module "Close Account" adds a form to the website, which a member c
     </form>
 </div>
 
-**Mode:** Here you can specify whether the account should be deactivated or completely deleted from the database when the form is submitted.
+**Mode:** Here you can specify whether the account should be deactivated or completely deleted from the database when 
+the form is submitted.
 
-**Forwarding page:** Here you define to which page a member will be forwarded after account closure. The target page must not be protected.
+**Redirect page:** Here you define to which page a member will be forwarded after account closure. The target page must 
+not be protected.
 
-**Individual template:** Here you can overwrite the default `mod_closeAccount` template.
+**Module template:** Here you can overwrite the default `mod_closeAccount` template.
 
-**HTML Output**  
-The frontend module generates the following HTML code:
+**The HTML Output**  
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -919,13 +958,17 @@ The frontend module generates the following HTML code:
 <!-- indexer::continue -->
 ```
 
-## Two-Factor Authentication
+
+## Two-factor authentication
 
 {{< version "4.8" >}}
 
-The "Two-Factor Authentication" front-end module adds a form to the website that a member can use to enable two-factor authentication.  If the two-factor authentication for members is forced, this module must be used on the page structure described in [Further settings at start points](/en/layout/site-structure/configure-pages/#further-settings-for-starting-points) can be added to the selected two-factor forwarding page.
+The "Two-factor authentication" front end module adds a form to the website that a member can use to enable two-factor 
+authentication. If the two-factor authentication for members is forced, this module must be used on the page structure 
+described in [Further settings for starting points](/en/layout/site-structure/configure-pages/#further-settings-for-starting-points) 
+can be added to the selected two-factor forwarding page.
 
-**Frontend output**
+**Front end output**
 
 <div class="mod_two_factor two-factor block"> 
     <form action="#" class="tl_two_factor_form" method="post">
@@ -952,17 +995,17 @@ The "Two-Factor Authentication" front-end module adds a form to the website that
 </div>
 
  
- **Individual template:** Here you can overwrite the standard `mod_two_factor`template.
+**Module template:** Here you can overwrite the standard `mod_two_factor`template.
 
-**HTML Output**  
-The frontend module generates the following HTML code:
+**The HTML Output**  
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
 <div class="mod_two_factor two-factor block">
 
-    <p class="error">Bitte aktivieren Sie die Zwei-Faktor-Authentifizierung bevor Sie fortfahren.</p>
-    <p>Bitte scannen Sie den QR-Code mit Ihrer 2FA/TOTP-App.</p>
+    <p class="error">Please enable two-factor authentication before you proceed.</p>
+    <p>Please scan the QR Code with your 2FA/TOTP app.</p>
 
     <form action="" class="tl_two_factor_form" method="post">
         <div class="formbody">

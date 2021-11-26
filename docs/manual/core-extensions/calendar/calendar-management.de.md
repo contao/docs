@@ -201,6 +201,31 @@ nicht aus.
 von einem eintägigen Event aus.
 
 
+### Weiterleitungsziel
+
+Das Weiterleitungsziel bestimmt, auf welche Seite ein Besucher beim Anklicken eines Events weitergeleitet wird.
+Normalerweise ist das die Seite, auf der das Frontend-Modul »Eventleser« zur Darstellung des kompletten Events
+eingebunden ist.
+
+**Weiterleitungsziel:** Hier legst du das Weiterleitungsziel fest.
+
+**Weiterleitungsseite:** Hier wählst du die Zielseite aus der Seitenstruktur aus.
+
+**Artikel:** Hier wählst du den Zielartikel aus.
+
+**Link-Adresse:** Hier gibst du die URL der externen Zielseite ein.
+
+**In neuem Fenster öffnen:** Hier kannst du festlegen, ob die externe Zielseite in einem neuen Browserfenster geöffnet
+wird oder nicht.
+
+| Weiterleitungsziel   | Erklärung                                                                                    |
+|:---------------------|:---------------------------------------------------------------------------------------------|
+| Standard             | Die Weiterleitung erfolgt auf die Seite, die du in den Archiv-Einstellungen festgelegt hast. Auf dieser Seite sollte das Frontend-Modul »Nachrichtenleser« eingebunden sein. |
+| Seite                | Die Weiterleitung erfolgt zu einer bestimmten Seite in der Seitenstruktur.                   |
+| Artikel              | Die Weiterleitung erfolgt zu einem bestimmten Artikel.                                       |
+| Individuelle URL     | Die Weiterleitung erfolgt zu einer individuellen URL.                                        |
+
+
 ### Metadaten
 
 {{< version "4.7" >}}
@@ -303,31 +328,6 @@ Diese Dateien werden sowohl im RSS-Feed exportiert als auch auf der Webseite zum
 **Anlagen hinzufügen:** Hier aktivierst du das Hinzufügen von Anlagen.
 
 **Anlangen:** Hier wählst du die Dateien aus, die du mit dem Event verknüpfen möchtest.
-
-
-### Weiterleitungsziel
-
-Das Weiterleitungsziel bestimmt, auf welche Seite ein Besucher beim Anklicken eines Events weitergeleitet wird. 
-Normalerweise ist das die Seite, auf der das Frontend-Modul »Eventleser« zur Darstellung des kompletten Events 
-eingebunden ist.
-
-**Weiterleitungsziel:** Hier legst du das Weiterleitungsziel fest.
-
-**Weiterleitungsseite:** Hier wählst du die Zielseite aus der Seitenstruktur aus.
-
-**Artikel:** Hier wählst du den Zielartikel aus.
-
-**Link-Adresse:** Hier gibst du die URL der externen Zielseite ein.
-
-**In neuem Fenster öffnen:** Hier kannst du festlegen, ob die externe Zielseite in einem neuen Browserfenster geöffnet 
-wird oder nicht.
-
-| Weiterleitungsziel   | Erklärung                                                                                    |
-|:---------------------|:---------------------------------------------------------------------------------------------|
-| Standard             | Die Weiterleitung erfolgt auf die Seite, die du in den Archiv-Einstellungen festgelegt hast. Auf dieser Seite sollte das Frontend-Modul »Nachrichtenleser« eingebunden sein. |
-| Seite                | Die Weiterleitung erfolgt zu einer bestimmten Seite in der Seitenstruktur.                   |
-| Artikel              | Die Weiterleitung erfolgt zu einem bestimmten Artikel.                                       |
-| Individuelle URL     | Die Weiterleitung erfolgt zu einer individuellen URL.                                        |
 
 
 ### Experteneinstellungen

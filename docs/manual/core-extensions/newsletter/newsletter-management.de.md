@@ -125,6 +125,11 @@ Sehr geehrte Damen und Herren,
 Bitte aktualisieren Sie Ihre Daten und geben Sie Ihre Telefonnummer an.
 {endif}
 
+<!-- Abfrage auf "nicht leer" -->
+{if phone!=""}
+Wir haben folgende Telefonnummer von Ihnen gespeichert: ##phone##
+{endif}
+
 Ihr Administrator
 ```
 

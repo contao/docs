@@ -2,7 +2,7 @@
 title: "Contribute to the documentation"
 description: "Learn how you can contribute to the documentation here."
 aliases:
-    - /en/contributing/_index/
+    - /en/contributing/
 weight: 300
 ---
 
@@ -71,6 +71,13 @@ Click the "Create pull request" button again.
 community will now review your pull request and (possibly) suggest changes.
 
 
+### Fork update
+
+If you want to propose further changes, check first if your fork is up to date. You can then sync your fork via GitHub using »Fetch upstream«.
+
+![GitHub Fetch upstream](/de/contributing/images/de/github-fork-fetch-upstream.png?classes=shadow)
+
+
 ## Write a contribution for the documentation
 
 If you are planning a large contribution or you prefer to work on your own computer, read on here 
@@ -91,9 +98,9 @@ personal account. This is only necessary if you are contributing to the document
 ![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow)
 
 
-### Clone the forged repository 
+### Clone the forked repository 
 
-Clone the forged repository on your local machine:
+Clone the forked repository on your local machine:
 
 Create a directory named `contao` and change to it with **c**hange **d**irectory.
 
@@ -104,13 +111,13 @@ cd contao
 When cloning, you install the Hugo Learn theme as a submodule of git.
 
 ```bash
-git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git
 ```
 
 or
 
 ```bash
-git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git
 ```
 
 
@@ -219,7 +226,7 @@ Create a new branch from the current one.
 
 
 ```bash
-git checkout -b DEIN-BRANCHNAME
+git checkout -b YOUR-BRANCH-NAME
 ```
 
 
@@ -256,7 +263,7 @@ git commit -m "Eine aussagekräftige Commit-Nachricht eingeben"
 To send the changes to your remote repository, run the following command.
 
 ```bash
-git push origin DEIN-BRANCHNAME
+git push origin YOUR-BRANCH-NAME
 ```
 
 {{% notice info %}}
@@ -266,7 +273,7 @@ After "pushing" your own new branch, you will see a link to create the pull requ
 
 ### Create a pull request
 
-Access your fork on GitHub (https://github.com/DEIN-GITHUB-BENUTZERNAME/docs).
+Access your fork on GitHub (https://github.com/YOUR-GITHUB-USERNAME/docs).
 
 In the message, click on "Pull request.
 

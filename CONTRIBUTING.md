@@ -10,7 +10,7 @@ Only major versions are documented (e.g. Contao 4 and later on Contao 5).
 
 * Only use ATX style headlines (e.g. `# H1` or `### H3`).
 * See [learn.netlify.com/en/cont/markdown/](https://learn.netlify.com/en/cont/markdown/) 
-  and [learn.netlify.com/en/shortcodes/notice/](https://learn.netlify.com/en/shortcodes/) 
+  and [learn.netlify.com/en/shortcodes/](https://learn.netlify.com/en/shortcodes/) 
   for available markdown and shortcode syntax.
 * Always add two empty lines above each headline.
 * Add line breaks after 80 characters in paragraphs.

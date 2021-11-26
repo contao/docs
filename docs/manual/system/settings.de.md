@@ -94,21 +94,20 @@ contao:
 
 ### Frontend-Einstellungen
 
+{{% notice note %}}
+Ab Version **4.10** wird die folgende Einstellung im Startpunkt der Webseite vorgenommen:
+{{% /notice %}}
+
 **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
 Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
 »Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
 
+{{% notice note %}}
+Ab Version **4.10** ist diese Einstellung entfallen:
+{{% /notice %}}
+
 **Leere URLs nicht umleiten:** Bei einer leeren URL die Webseite anzeigen anstatt auf den Startpunkt der Sprache 
 weiterzuleiten _(nicht empfohlen)_.
-
-**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
-`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen. Seit Contao **4.9** kann
-auch folgendes Kommando benutzt werden:
-
-```
-php vendor/bin/contao-console contao:cron
-```
-
 
 ### Sicherheitseinstellungen
 
@@ -118,6 +117,12 @@ geprüft werden _(unsicher!)_.
 **Erlaubte HTML-Tags:** Standardmäßig erlaubt Contao keine HTML-Tags in Formularen und entfernt diese beim Speichern 
 automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter 
 HTML-Tags festlegen.
+
+{{< version-tag "4.11.7, 4.9.18 und 4.4.56" >}}  
+**Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
+Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeichern automatisch entfernt. Das Tag bzw. 
+der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B. 
+data-* benutzt werden.
 
 
 ### Dateien und Bilder
@@ -175,6 +180,16 @@ contao:
 {{% /notice %}}
 
 
+### Cronjob-Einstellungen
+
+**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
+`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen. Seit Contao **4.9** kann
+auch folgendes Kommando benutzt werden:
+
+```
+php vendor/bin/contao-console contao:cron
+```
+
 ### Standard-Zugriffsrechte
 
 **Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine 
@@ -216,7 +231,9 @@ parameters:
     database_name: …
     secret: …
 ```
-
+{{% notice note %}}
+Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen enthalten, müssen in Hochkommatas gesetzt werden.
+{{% /notice %}}
 
 ## config.yml
 
@@ -444,7 +461,7 @@ Beschreibung.
 | `adminEmail` | [E-Mail-Adresse des Systemadministrators](#globale-einstellungen). |
 | `allowedDownload` | [Erlaubte Download-Dateitypen](#dateien-und-bilder). |
 | `allowedTags` | [Erlaubte HTML-Tags](#sicherheitseinstellungen). |
-| `characterSet` | Der von Contao benutzte Zeichensatz. Standard: `utf-8` |
+| `characterSet` | Der von Contao benutzte Zeichensatz. _(veraltet)_ Nutze den Parameter `kernel.charset` stattdessen. Standard: `UTF-8`. |
 | `dateFormat` | [Datumsformat](#datum-und-zeit). |
 | `datimFormat` | [Datums- und Zeitformat](#datum-und-zeit). |
 | `defaultChmod` | [Standard-Zugriffsrechte](#standard-zugriffsrechte). |
@@ -454,6 +471,7 @@ Beschreibung.
 | `disableInsertTags` | Erlaubt es das Ersetzen von [Insert-Tags][InsertTags] global zu deaktivieren. |
 | `disableRefererCheck` | Erlaubt es die [Request Token Überprüfung][RequestTokens] komplett zu deaktivieren _(veraltet)_. |
 | `doNotCollapse` | [Elemente nicht verkürzen](#backend-einstellungen). |
+| `doNotRedirectEmpty` | [Leere URLs nicht umleiten](#frontend-einstellungen). |
 | `folderUrl` | [Ordner-URLs verwenden](#frontend-einstellungen). |
 | `gdMaxImgHeight` | [Maximale GD-Bildhöhe](#dateien-und-bilder). |
 | `gdMaxImgWidth` | [Maximale GD-Bildbreite](#dateien-und-bilder). |
@@ -634,4 +652,4 @@ php vendor/bin/contao-console cache:clear --env=prod --no-warmup
 [InsertTags]: /de/artikelverwaltung/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
 [LegacyRouting]: /de/layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
-[PhpSessionSettings]: http://docs.php.net/manual/de/session.configuration.php
+[PhpSessionSettings]: https://www.php.net/manual/de/session.configuration.php

@@ -207,10 +207,9 @@ as a "Contao request" and thus handled accordingly with the following effects:
 * The output of content elements and front end modules change, depending on the
   scope. For example, front end modules typically do not show their output in the
   back end, but instead show the headline and name of the module instead.
-* If the scope is `backend`, Contao will automatically generate a "referer ID token"
-  and store it as another request attribute under `_contao_referer_id`. Plus the
-  current and last URL will be stored in the session. This is used in the back end
-  for the "go back" links for example.
+* If the scope is `backend`, the route is automatically protected by the `contao_backend` firewall. Contao will also automatically generate 
+  a "referer ID token" and store it as another request attribute under `_contao_referer_id`. Plus the current and last URL will be stored in
+  the session. This is used in the back end for the "go back" links for example.
 * Depending on the scope, different session bags will be used in the session and
   the session bag's data will be replaced with the user's stored session from the
   database.

@@ -102,11 +102,11 @@ slightly. If you are familiar with the default Symfony 4 application structure a
 used by the Symfony Skeleton for example, then it might help to know some of these
 differences.
 
-* Automatically loaded configuration files use the file extension `.yml` instead 
+* Prior to Contao **4.9** automatically loaded configuration files use the file extension `.yml` instead 
   of `.yaml`.<sup>1</sup>
-* The automatically loaded file containing the routes definition is called `routing.yml`
-  rather than `routing.yaml`.<sup>1</sup>
-* The public entry point is called `web/` instead of `public/`.
+* In Contao **4.6**, **4.7** and **4.8** the automatically loaded file containing the routes definition is called `routing.yml`
+  rather than `routes.yaml`.<sup>1</sup>
+* Prior to Contao **4.12** the public entry point is called `web/` instead of `public/`.
 
 <sup>1</sup> See [here][1] for a list of configuration files, that are automatically 
 loaded.

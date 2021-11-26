@@ -11,9 +11,9 @@ weight: 90
 Rufe in deinem Internetbrowser die URL deiner Contao-Installation auf, und hänge `/contao/install` hinten 
 dran, um das Installtool zu starten.
 
-z. B. `www.example.com/contao/install`
+> `www.example.com/contao/install`
 
-Akzeptiere die Lizenz und vergebe ein Passwort.
+Akzeptiere die Lizenz und vergebe ein Passwort mit welchem du das Installtool später wieder aufrufen kannst.
 
 
 ## Datenbankverbindung herstellen

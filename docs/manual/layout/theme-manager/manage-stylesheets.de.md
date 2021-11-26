@@ -36,6 +36,7 @@ Verfügung:
 
 | Medientyp    | Erklärung                                                                                           |
 |:-------------|:----------------------------------------------------------------------------------------------------|
+| all          | Das Stylesheet gilt für sämtliche genannten Medientypen.                                            |
 | aural        | Das Stylesheet gilt für computergesteuerte Sprachausgaben.                                          |
 | braille      | Das Stylesheet gilt für Ausgabegeräte mit einer Braille-Zeile für blinde Nutzer.                    |
 | embossed     | Das Stylesheet gilt für Braille-Drucker.                                                            |
@@ -45,7 +46,6 @@ Verfügung:
 | screen       | Das Stylesheet gilt für die Bildschirmausgabe (Standard für Webseiten).                             |
 | tty          | Das Stylesheet gilt für nicht-grafische Ausgabemedien mit fester Zeichenbreite.                     |
 | tv           | Das Stylesheet gilt für TV-ähnliche Ausgabemedien mit grober Auflösung.                             |
-| all          | Das Stylesheet gilt für sämtliche genannten Medientypen.                                            |
 
 Den Medientyp eines Stylesheets legst du in den Stylesheet-Einstellungen fest.
 
@@ -115,7 +115,7 @@ beispielsweise browserspezifische Eigenarten auszugleichen:
 
 ```css
 /* Außenabstand für alle Browser */
-mod_search {
+.mod_search {
     margin: 24px;
 }
 

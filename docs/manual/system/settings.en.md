@@ -91,21 +91,21 @@ contao:
 
 ### Front end configuration
 
+{{% notice note %}}
+Starting with version **4.10** this setting can be changed in the settings of the website root instead:
+{{% /notice %}}
+
 **Enable folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in 
 the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias 
 `docs/install/download.html` instead of just `download.html`.
 
+{{% notice note %}}
+This setting does not exist anymore in Contao **4.10** and higher:
+{{% /notice %}}
+
 **Do not redirect empty URLs:** Allows you to disable the redirect of the "empty URL" to the start page of the browser's 
 language respective website root when using the [legacy routing mode][LegacyRouting] without `contao.prepend_locale: true` 
 *(not recommended)*.
-
-**Deactivate the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route 
-`_contao/cron` using a real cron job (which you have to set up yourself). Starting with Contao **4.9** you can also
-use the following command:
-
-```
-php vendor/bin/contao-console contao:cron
-```
 
 
 ### Security settings
@@ -115,6 +115,11 @@ php vendor/bin/contao-console contao:cron
 
 **Allowed HTML tags:** By default, Contao does not allow HTML tags in forms and removes them automatically when saving. 
 For input fields where the use of HTML is desired, you can specify a list of allowed HTML tags here.
+
+{{< version-tag "4.11.7, 4.9.18 and 4.4.56" >}}  
+**Allowed HTML attributes:** You can extend the list of allowed HTML attributes for input fields here. If an HTML 
+attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for 
+all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
 
 
 ### Files and images
@@ -166,6 +171,17 @@ contao:
 {{% /notice %}}
 
 
+### Cron job settings
+
+**Deactivate the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route 
+`_contao/cron` using a real cron job (which you have to set up yourself). Starting with Contao **4.9** you can also
+use the following command:
+
+```
+php vendor/bin/contao-console contao:cron
+```
+
+
 ### Default access rights
 
 **Default page owner:** Here you can specify the default owner of the pages for which no access rights have been 
@@ -203,6 +219,7 @@ parameters:
     secret: …
 ```
 
+{{% notice note %}} Database passwords that consist only of digits must be set in quotation marks. {{% /notice %}}
 
 ## config.yml
 
@@ -429,7 +446,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `adminEmail` | [E-mail address of the system administrator](#global-configuration). |
 | `allowedDownload` | [Download file types](#files-and-images). |
 | `allowedTags` | [Allowed HTML tags](#security-settings). |
-| `characterSet` | Character set used by Contao. Default: `utf-8` |
+| `characterSet` | Character set used by Contao. _(deprecated)_ Use the parameter `kernel.charset` instead. Default: `UTF-8` |
 | `dateFormat` | [Date format](#date-and-time). |
 | `datimFormat` | [Date and time format](#date-and-time). |
 | `defaultChmod` | [Default access rights](#default-access-rights). |
@@ -439,6 +456,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `disableInsertTags` | Allows you to disable the replacement of [insert tags][InsertTags] globally. |
 | `disableRefererCheck` | Allows you to disable the [request token check][RequestTokens] entirely _(deprecated)_. |
 | `doNotCollapse` | [Do not collapse elements](#back-end-configuration). |
+| `doNotRedirectEmpty` | [Do not redirect empty URLs](#front-end-configuration). |
 | `folderUrl` | [Enable folder URLs](#front-end-configuration). |
 | `gdMaxImgHeight` | [Maximum GD image height](#files-and-images). |
 | `gdMaxImgWidth` | [Maximum GD image width](#files-and-images). |
@@ -511,9 +529,10 @@ This command is no longer available in Contao **4.10** and later.
 
 {{< version "4.10" >}}
 
-In many cases, SMTP servers do not allow sending from any sender address. In most cases, the sender address must match 
-the SMTP server access data used. Especially in multi-domain installations of Contao it might be important that the 
-sender address of the emails that Contao sends matches the domain.
+In many cases, SMTP servers do not allow sending from any sender address. Oftentimes the sender address must match 
+the SMTP server credentials. Especially in multi-domain installations of Contao it might be important that the 
+sender address of the emails that Contao sends matches the domain. Or you might want to have different sender
+addresses for different front end forms created via the Contao form generator.
 
 Since Contao **4.10**, it is possible to use multiple email configurations in Contao. These configurations can be 
 selected per website root, per form and per newsletter channel. For each e-mail configuration, you can also set the 
@@ -612,4 +631,4 @@ php vendor/bin/contao-console cache:clear --env=prod --no-warmup
 [InsertTags]: /en/article-management/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
 [LegacyRouting]: /en/layout/site-structure/configure-pages/#legacy-routing-mode
-[PhpSessionSettings]: http://docs.php.net/manual/en/session.configuration.php
+[PhpSessionSettings]: https://www.php.net/manual/en/session.configuration.php

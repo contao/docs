@@ -1,16 +1,12 @@
 ---
-title: 'Message management'
-description: 'The message management is a separate module in the backend, which you can find in the group "Content".'
+title: 'News management'
+description: 'The news management is a separate module in the backend, which you can find in the group "Content".'
 aliases:
     - /en/core-extensions/news/news-management/
 weight: 10
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
-
-The news management is a separate module in the backend, which you can find in the group "Contents", where you can create several archives, which in turn contain the individual news or blog entries. By using several archives, it is possible to categorize the posts.
+The news management is a separate module in the backend, which you can find under "Contents". In new management you can create several archives, which contain individual news or blog entries. By using several archives you can categorize your posts.
 
 ## News archives
 
@@ -69,7 +65,7 @@ You already know the Contao comment function from the content element with the s
 
 ## RSS feeds
 
-Every news or blog archive can be exported as RSS/Atom feed if desired. RSSFeeds are XML files containing your contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
+Every news or blog archive can be exported as RSS/Atom feed if desired. RSSFeeds are XML files containing your news contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
 The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the header of the page. The "header" is not the header of your page layout, but the tag `head` of the HTML source code.
 
@@ -134,13 +130,13 @@ To create a new feed click on **RSS Feeds** ![Manage RSS feeds](/de/icons/rss.sv
 
 This section explains how to create a news item. News items are generally sorted by date, so there are no icons to change the order.
 
-The news items consist of the settings for the items ("Message List") and their contents ("Message Reader").
+The news items consist of the settings for the items ("News List") and their contents ("News Reader").
 
 To create a new post, click on the desired archive ![Edit message archive](/de/icons/edit.svg?classes=icon "Nachrichtenarchiv bearbeiten") and then on ![Create a new post](/de/icons/new.svg?classes=icon "Einen neuen Beitrag erstellen") **New**.
 
 ### Title and Author
 
-**Titles:** Here you can enter the title of the message.
+**Titles:** Here you can enter the title of the news post.
 
 **Message aliases:** The alias of a post is a unique and meaningful reference that you can use to view it in your browser.
 
@@ -148,7 +144,7 @@ To create a new post, click on the desired archive ![Edit message archive](/de/i
 
 ### Date and time
 
-**Date:** Enter the date of the contribution here.
+**Date:** Enter the contribution date here.
 
 **Time**: Enter the time of the post here.
 
@@ -170,9 +166,9 @@ To create a new post, click on the desired archive ![Edit message archive](/de/i
 
 **Add an image:** You can add an image to your post if you wish.
 
-**source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you can upload it directly in the pop-up window without leaving the input mask.
+**source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you can upload it directly in the pop-up window without leaving the the News section.
 
-![Add an image to a post](/de/core-extensions/news/images/de/einem-beitrag-ein-bild-hinzufuegen.png?classes=shadow)
+![Add an image to a post](/de/core-extensions/news/images/en/add-an-image-to-a-post.png?classes=shadow)
 
 **Image size:** Here you can specify the image size. You can choose between the following scaling modes:
 
@@ -203,7 +199,7 @@ To create a new post, click on the desired archive ![Edit message archive](/de/i
 
 **Overwrite metadata:**  Here you can overwrite the metadata from the file manager.
 
-**Alternative text:** Here you can enter an alternative text for the image *(alt attribute)*. Accessible web pages should contain a short description for each object, which will be displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
+**Alternative text:** Here you can enter alternative text for the image *(alt attribute)*. Accessible web pages should contain a short description for each object, which will be displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
 
 **Image title:** Here you can enter the title of the image *(title attribute)*.
 
@@ -213,7 +209,7 @@ To create a new post, click on the desired archive ![Edit message archive](/de/i
 
 ### Attachments
 
-Enclosures, also known as "Enclosures" in connection with RSS feeds, are files that are linked to an article; these files are both exported in the RSS feed and offered for download on the website.
+Enclosures, also known as "Enclosures" in connection with RSS feeds, are files that are linked to an article; these files are both exported in the RSS feed and offered for download on your website.
 
 **Add Enclosures:** Here you can activate the adding of attachments.
 
@@ -221,7 +217,7 @@ Enclosures, also known as "Enclosures" in connection with RSS feeds, are files t
 
 ### Forwarding destination
 
-The redirection destination determines which page a visitor is redirected to when clicking on a post, usually the page where the frontend module "message reader" is integrated to display the complete post.
+The redirection destination determines which page a visitor is redirected to when clicking on a post, usually the page where the frontend module "News reader" is integrated to display the complete post.
 
 Forwarding **destination:** Here you define the forwarding destination.
 
@@ -235,24 +231,24 @@ Forwarding **destination:** Here you define the forwarding destination.
 
 | Forwarding destination | Declaration |
 | ---------------------- | ----------- |
-| Standard | You will be redirected to the page you specified in the archive settings. On this page the frontend module "news reader" should be included. |
+| Standard | You will be redirected to the page you specified in the News archive settings. On this page the frontend module "News reader" should be included. |
 | Page | The redirection is to a specific page in the page structure. |
 | Article | The redirection is to a specific article. |
 | Individual URL | The redirection is to an individual URL. |
 
 ### Expert settings
 
-In this section the highlighting of contributions is particularly interesting. Highlighted articles allow the creation of a "virtual archive", which contains only the highlighted articles from the various archives. This allows you to display a comprehensive list of important messages on the home page, for example.
+In this section the featured posts are particularly interesting. Featured posts allow the creation of a "virtual archive", which contains only the Featured posts from the various archives. This allows you to display a comprehensive list of important posts on the home page, for example.
 
 **CSS class:** Here you can add a CSS class to the post.
 
 **Disable comments:** Here you can deactivate the comment function for a post.
 
-**Highlight post:** Here you can mark a post as highlighted.
+**Highlight post:** Here you can mark a post as Featured.
 
 ### Publication {#publication}
 
-As long as an article is not published, it will not be displayed in the frontend. You already know this behavior from pages and articles and we will encounter it in several other places in Contao. In addition to manual publishing, you also have the option to automatically activate posts on a certain date.
+As long as an article is not published, it will not be displayed in the frontend. You already know this behavior from pages and articles and will encounter it in several other places in Contao. In addition to manual publishing, you also have the option to automatically activate posts on a certain date.
 
 **Publish a post:** Here you can post your contribution.
 
@@ -262,6 +258,6 @@ As long as an article is not published, it will not be displayed in the frontend
 
 ## Content for news posts {#content-for-message}
 
-After we have made the settings for the article, we can add content elements for the output in the "product reader", click on the desired article ![Edit contribution](/de/icons/edit.svg?classes=icon "Beitrag bearbeiten") and then on ![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
+After we have made the settings for the post, we can add content elements for the output in the "News reader", click on the desired article ![Edit contribution](/de/icons/edit.svg?classes=icon "Beitrag bearbeiten") and then on ![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
 
-All [content elements](/en/article-management/content-elements/) of Contaozur are available in the news items.
+All [content elements](/en/article-management/content-elements/) of Contao are available in the news items.

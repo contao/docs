@@ -189,7 +189,7 @@ container is even built. Settings like trusted proxies or caching are considered
 
 {{% notice info %}}
 Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_URL` replace their respective counterparts 
-of the `config/parameters.yml` and thus you should not use these parameters, if you are using the environment variable instead.
+of the `config/parameters.yaml` and thus you should not use these parameters, if you are using the environment variable instead.
 {{% /notice %}}
 
 

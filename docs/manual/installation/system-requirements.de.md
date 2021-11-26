@@ -149,6 +149,46 @@ doctrine:
                     engine: MyISAM
 ```
 
+Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte oder abgeschnittene
+Daten zu verhindern und die Datenintegrität zu gewährleisten.
+
+{{% notice note %}}
+Ab **Contao 4.9** zeigt das Install-Tool eine Warnmeldung an, wenn der Datenbankserver nicht im
+"Strict Mode" läuft.
+{{% /notice %}}
+
+Um den "Strict Mode" zu aktivieren, ergänze folgendes in deiner `my.cnf` oder `my.ini` Datei
+bzw. stelle sicher, dass die Einstellung entsprechend angepasst oder erweitert wird:
+
+```
+[mysqld]
+…
+sql_mode="TRADITIONAL"
+…
+```
+
+Wenn die oben empfohlene Einstellung auf deinem Server nicht aktiviert werden kann, konfiguriere
+die Verbindungsoptionen bitte in deiner `app/config/config.yml`-Datei ({{< version-tag "4.8" >}} `config/config.yml`-Datei):
+
+```yml
+doctrine:
+    dbal:
+        connections:
+            default:
+                options:
+                    # Depending on the DB driver, the option key is either 1002 (pdo_mysql) or 3 (mysqli)
+                    1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
+```
+
+{{% notice "note" %}}
+Der [`TRADITIONAL` SQL Modus](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_traditional) ist ein Kombinations-Modus
+welcher unter anderem aus den Modi `STRICT_TRANS_TABLES` und `STRICT_ALL_TABLES` besteht. Der »[Strict SQL Modus](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict)« 
+ist aktiv wenn einer dieser Modi aktiviert ist. Der »Strict Modus« ist in aktuellen MySQL und MariaDB Versionen über die Einstellung 
+`STRICT_TRANS_TABLES` der Standard, jedoch nutzen viele Shared Hosting Umgebungen eigene Einstellungen. Der Vorteil des Strict Modus ist,
+dass fehlerhafte Datenbankoperationen auch tatsächlich einen Fehler verursachen, anstatt ohne Meldung vom Datenbankserver ignoriert zu
+werden. Dies führt zu einer verbesserten Datenintegrität und Sicherheit.
+{{% /notice %}}
+
 
 ## Webserver
 
@@ -167,7 +207,11 @@ In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `we
 Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel des Hosting-Providers auf diesen 
 Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
 
-Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web`
+Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web` 
+
+({{< version-tag "4.12" >}} Dem Standard von Symfony folgend, wurde der öffentlich erreichbare Unterordner von `/web`
+in `/public` umbenannt. Falls in deiner Installation ein Verzeichnis `/web` existiert, wird dieses von Contao
+automatisch anstelle von `/public` verwendet.)
 
 {{% notice note %}}
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.

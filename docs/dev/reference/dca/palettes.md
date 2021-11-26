@@ -23,9 +23,11 @@ the most basic form you will have at least a `default` palette:
 ```php
 // contao/dca/tl_example.php
 $GLOBALS['TL_DCA']['tl_example'] = [
+    // …
     'palettes' => [
         'default' => '{title_legend},title,alias,addImage',
     ],
+    // …
 ];
 ```
 
@@ -42,6 +44,7 @@ definition.
 ```php
 // contao/dca/tl_example.php
 $GLOBALS['TL_DCA']['tl_example'] = [
+    // …
     'palettes' => [
         '__selector__' => ['addImage'],
         'default' => '{title_legend},title,alias,addImage',
@@ -49,11 +52,17 @@ $GLOBALS['TL_DCA']['tl_example'] = [
     'subpalettes' => [
         'addImage' => 'singleSRC,size'
     ],
+    // …
 ];
 ```
 
 In the above example the fields `singleSRC` and `size` will be shown after the
 `addImage` checkbox field, when `addImage` has been activated.
+
+{{% notice tip %}}
+When working with sub palettes you typically want to enable the `submitOnChange` `eval` option of your `__selector__` field. This will cause
+the sub palette to immediately appear or disappear, when the value of the field changes.
+{{% /notice %}}
 
 
 ## Sub palettes with selects
@@ -64,6 +73,7 @@ depending on different value for a select input field:
 ```php
 // contao/dca/tl_example.php
 $GLOBALS['TL_DCA']['tl_example'] = [
+    // …
     'palettes' => [
         '__selector__' => ['selectField'],
         'default' => '{title_legend},title,alias,selectField',
@@ -72,6 +82,7 @@ $GLOBALS['TL_DCA']['tl_example'] = [
         'selectField_value1' => 'field1,field2',
         'selectField_value2' => 'field3,field4',
     ],
+    // …
 ];
 ```
 
@@ -88,12 +99,14 @@ main palette's key needs to be the selector's value.
 ```php
 // contao/dca/tl_example.php
 $GLOBALS['TL_DCA']['tl_example'] = [
+    // …
     'palettes' => [
         '__selector__' => ['type'],
         'default' => '{title_legend},type',
         'text' => '{title_legend},type,textField',
         'image' => '{title_legend},type,imageField',
     ],
+    // …
 ];
 ```
 
@@ -149,7 +162,7 @@ floating in the wrong place or being overlayed by other fields).
 
 ## Manipulating palettes
 
-Palette definnitions are simple strings and thus can be modified in their Data
+Palette definitions are simple strings and thus can be modified in their Data
 Container Array via string replacement for example. This can be a cumbersome
 tasks, especially if you want to add or remove fields at specific positions or
 groups. The [Contao Palette Manipulator][1] can help in such a case.

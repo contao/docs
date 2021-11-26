@@ -155,6 +155,8 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
 ];
 ```
 
+If you used a custom category for your content element, its label can also be translated there.
+
 
 ## Annotation
 
@@ -228,7 +230,7 @@ class ExampleController extends AbstractContentElementController
 ```
 
 ```php
-// contao/dca/tl_module.php
+// contao/dca/tl_content.php
 use App\Controller\ContentElement\ExampleController;
 
 $GLOBALS['TL_DCA']['tl_content']['palettes'][ExampleController::TYPE] = 

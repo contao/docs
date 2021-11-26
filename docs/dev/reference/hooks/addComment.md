@@ -16,7 +16,7 @@ the record and the data array as arguments and does not expect a return value.
 
 1. *int* `$commentId`
 
-    ID of the new comment database record (Table `tl_comment`).
+    ID of the new comment database record (Table `tl_comments`).
 
 2. *array* `$commentData`
 

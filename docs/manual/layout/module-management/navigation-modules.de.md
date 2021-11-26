@@ -335,20 +335,21 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 Beachte, dass das aktive Element als `<strong>` und nicht als Link ausgegeben wird.
 
 
-## Sitemap
+## HTML-Sitemap
 
-Das Frontend-Modul »Sitemap« fügt der Webseite eine Übersicht aller veröffentlichten und nicht versteckten Seiten 
+Das Frontend-Modul »HTML-Sitemap« fügt der Webseite eine Übersicht aller veröffentlichten und nicht versteckten Seiten 
 hinzu. Die einzelnen Einträge werden als Links ausgegeben, sodass Besucher direkt zu einer bestimmten Seite springen 
-können. Ob eine Seite in der Sitemap angezeigt wird oder nicht, hängt auch von ihrer Konfiguration in der 
+können. Ob eine Seite in der HTML-Sitemap angezeigt wird oder nicht, hängt auch von ihrer Konfiguration in der 
 Seitenstruktur ab (vgl. [Experten-Einstellungen](../../seitenstruktur/seiten-konfigurieren/#experten-einstellungen)).
 
 **Geschützte Seiten anzeigen:** Wenn du diese Option auswählst, werden auch geschützte Seiten angezeigt, die sonst nur 
 für angemeldete Mitglieder verfügbar sind.
 
-**Versteckte Seiten anzeigen:** Wenn du diese Option auswählst, werden auch versteckte Seiten in der Sitemap angezeigt, 
+**Versteckte Seiten anzeigen:** Wenn du diese Option auswählst, werden auch versteckte Seiten in der HTML-Sitemap 
+angezeigt, 
 die normalerweise übersprungen würden.
 
-**Referenzseite:** Hier legst du die Ausgangsseite der Sitemap fest.
+**Referenzseite:** Hier legst du die Ausgangsseite der HTML-Sitemap fest.
 
 **Navigationstemplate:** Hier wählst du das Template für das Modul aus.
 

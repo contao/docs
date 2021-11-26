@@ -21,7 +21,8 @@ along without any user interaction (e.g. any cookies or basic authentication via
 protection is required. So don't get fooled by the cookies not being present all the time, Contao is actually very smart
 about them to improve HTTP cache hits.
 
-By default, Contao protects all `POST` requests coming from Contao routes (except Ajax requests). That means routes which
+By default, Contao protects all `POST` requests coming from Contao routes (except Ajax requests that are
+hinted as such by the de-facto standard header `X-Requested-With: XMLHttpRequest`). That means routes which
 have the route attribute `_scope` set to either `frontend` or `backend`.
 
 If you explicitly want to disable the CSRF protection on your own route, you can set the route attribute `_token_check`

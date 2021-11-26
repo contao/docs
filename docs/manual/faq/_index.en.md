@@ -118,6 +118,15 @@ Answers can be found in the [TinyMCE Editor Configuration](/en/guides/tinymce-co
 Check in the [file manager](/en/file-manager/) if the directory with your images is marked as "Public". Also make sure that there is no outdated `.htaccess` file in the `/web` folder or a parent folder of your installation.
 {{% /expand %}}
 
+{{% expand "Is it possible to hide the search in the file manager?" %}}
+Yes. Via a DCA entry:
+
+```php
+    //contao/dca/tl_files.php
+    unset($GLOBALS['TL_DCA']['tl_files']['list']['sorting']['panelLayout']);
+```
+{{% /expand %}}
+
 
 ## Theme
 
@@ -160,4 +169,15 @@ or after a reload of the manager page you always get the same output, delete the
 delete the file `task.json`.
 
 After that, the Contao Manager should run again.
+{{% /expand %}}
+
+{{% expand "Can I rename the ».phar« file?" %}}
+Yes. You can use any file name you want. However, the Contao Manager is no longer accessible from the Backend. 
+In this case, you can change the [config.yml](/en/system/settings/#config-yml) accordingly. Afterwards, you have to empty the application cache 
+once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
+```yml
+# config/config.yml
+contao_manager:
+    manager_path: your-name.phar.php
+```
 {{% /expand %}}

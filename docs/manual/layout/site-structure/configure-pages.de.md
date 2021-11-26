@@ -49,7 +49,7 @@ längere Titel einfach abschneiden. Wenn kein Seitentitel angegeben wird, wird a
 
 Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten möglichst umfassend in den Suchindex 
 aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung 
-*noindex,nofollow* von der Indizierung ausgenommen werden.
+*noindex,nofollow* von der Indexierung ausgenommen werden.
 
 **Ausgabe im Quellcode:**
 ```html
@@ -182,6 +182,34 @@ sorgfältiger Optimierung niemals bei Google auftauchen.
 automatisch auf den zur Browser-Sprache passenden Startpunkt weiter (andernfalls zur Fallback-Sprache). Mit dieser Einstellung
 kann dieses Verhalten beeinflusst und die automatische Weiterleitung zu bestimmten (oder allen) Sprachen deaktiviert
 werden.
+
+
+### Website-Einstellungen
+
+{{< version "4.9" >}}
+
+**Favicon:** Hier kannst du das Favicon für die `/favicon.ico` URL der Domain festlegen. Dies ist besonders im Multidomain-Betrieb
+hilfreich, damit jede Domain ihr eigenes Standard-Favicon hat. Andernfalls könnte man nur eine einzelne, _physische_ `favicon.ico` Datei im 
+Document Root hinterlegen. Dadurch kann im Browser das korrekte Favicon pro Domain angezeigt werden, wenn Inhalte dargestellt werden, die
+keine HTML-Ausgabe beinhalten (wie zum Beispiel Bilder, PDFs, etc.).
+
+{{% notice "warning" %}}
+Dies wird nicht funktionieren, wenn sich bereits eine physische `favicon.ico` Datei im Document Root befindet, da der Web Server diese Datei
+dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, bevor du diese Funktion nutzt.
+{{% /notice %}}
+
+{{% notice "info" %}}
+Diese Funktion gibt keine zusätzlichen HTML Meta Tags auf der Seite aus.
+{{% /notice %}}
+
+**Individuelle robots.txt-Anweisungen:** Hier kannst du eigene Direktiven für die `/robots.txt` URL der Domain eingeben. Dies ist besonders
+im Multidomain-Betrieb hilfreich, damit jede Domain ihre eigenen Direktiven haben kann. Andernfalls könnte man nur eine einzelne, 
+_physische_ `robots.txt` Datei im Document Root hinterlegen.
+
+{{% notice "warning" %}}
+Dies wird nicht funktionieren, wenn sich bereits eine physische `robots.txt` Datei im Document Root befindet, da der Web Server diese Datei
+dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, bevor du diese Funktion nutzt.
+{{% /notice %}}
 
 
 ### Globale Einstellungen
@@ -374,6 +402,8 @@ Contao erstellt bei Bedarf automatisch eine XML-Sitemap aus der Seitenstruktur d
 lesen und auswerten kann. Um die Sitemap bei Google anzumelden, benötigst du einen Google-Account.
 
 Welche Seiten in die XML-Sitemap aufgenommen werden, kannst du über das Robots-Tag in den [Metadaten](#metadaten) steuern.
+Soll eine Seite nicht in die XML-Sitemap aufgenommen werden, dann unter Metadaten den Robots-Tag auf den Wert
+»noindex,nofollow« setzen.
 
 **Eine XML-Sitemap erstellen:** Hier aktivierst du die Erstellung der XML-Sitemap.
 
@@ -381,6 +411,10 @@ Welche Seiten in die XML-Sitemap aufgenommen werden, kannst du über das Robots-
 Speichern automatisch ergänzt.
 
 Die Einstellungen sind nur bei Seiten vom Typ »Startpunkt einer Webseite« verfügbar.
+
+{{% notice "info" %}}
+Die Sitemap ist ab Contao 4.11 automatisch pro Domain verfügbar. Hat man mehrere Sprachen unter einer einzigen Domain, sind alle Links in dieser Sitemap enthalten.
+{{% /notice %}}
 
 
 ## Weiterleitung

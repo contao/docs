@@ -59,6 +59,48 @@ _No parameters._
 **return:** _void_
 {{% /expand %}}
 
+{{% expand "Example" %}}
+This example changes the `mandatory` attribute for the `tl_content.text` field for a specific content element.
+
+```php
+// src/EventListener/DataContainer/MakeTextNotMandatoryCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\ContentModel;
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Symfony\Component\HttpFoundation\RequestStack;
+
+/**
+ * @Callback(table="tl_content", target="config.onload")
+ */
+class MakeTextNotMandatoryCallback
+{
+    private $requestStack;
+
+    public function __construct(RequestStack $requestStack)
+    {
+        $this->requestStack = $requestStack;
+    }
+
+    public function __invoke(DataContainer $dc = null): void
+    {
+        if (null === $dc || !$dc->id || 'edit' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
+            return;
+        }
+
+        $element = ContentModel::findById($dc->id);
+
+        if (null === $element || 'my_content_element' !== $element->type) {
+            return;
+        }
+
+        $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['mandatory'] = false;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `config.oncreate`
 
@@ -320,6 +362,43 @@ Allows for individual labels in header of "parent view".
 * `\Contao\DataContainer` Data Container object
 
 **return:** `array` Header labels
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/CalendarHeaderCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+use Doctrine\DBAL\Connection;
+
+/**
+ * Adds the total number of events to the header fields.
+ *
+ * @Callback(table="tl_calendar_events", target="list.sorting.header")
+ */
+class CalendarHeaderCallback
+{
+    /** @var Connection */
+    private $db;
+
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    public function __invoke(array $labels, DataContainer $dc): array
+    {
+        $count = $this->db->fetchOne("SELECT COUNT(*) FROM tl_calendar_events WHERE pid = ?", [$dc->id]);
+
+        $labels['Total events'] = $count;
+
+        return $labels;
+    }
+}
+```
 {{% /expand %}}
 
 
@@ -594,6 +673,37 @@ then and the error message will be shown in the form.
 * `mixed` Value to be saved
 
 **return:** `mixed` New value to be saved
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/ContentTextSaveCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+
+/**
+ * @Callback(table="tl_content", target="fields.text.save")
+ */
+class ContentTextSaveCallback
+{
+    public function __invoke($value, DataContainer $dc)
+    {
+        // Show an error if tl_content.text contains "foobar"
+        if (false !== stripos($value, 'foobar')) {
+            throw new \Exception('String "foobar" is not allowed.');
+        }
+
+        // Or process the value before saving
+        $value = strtoupper($value);
+
+        // Return the processed value
+        return $value;
+    }
+}
+```
 {{% /expand %}}
 
 

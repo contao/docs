@@ -149,6 +149,34 @@ redirect to the website root of the browser's language (or the fallback language
 without any other parameters. You can exclude certin (or all) website roots from this automatic redirect through this setting.
 
 
+### Website settings
+
+{{< version "4.9" >}}
+
+**Favicon:** This allows you to select a favicon for the `/favicon.ico` URL of your domain. This is especially useful for multi-domain setups
+so that you can easily serve different favicons for different domains from within the same Contao instance, since you can only have one
+_physical_ `favicon.ico` file in your document root otherwise. This will enable you to show the correct favicon per domain, if any non-HTML 
+resources are displayed in the browser directly (like images or PDFs, etc.).
+
+{{% notice "warning" %}}
+Keep in mind that this will not work if you already have a physical `favicon.ico` file in your document root, as the web server will then
+serve said file directly. Make sure to delete that file before trying to use this feature.
+{{% /notice %}}
+
+{{% notice "info" %}}
+Keep in mind that this feature will not add any additional meta tags to the HTML output.
+{{% /notice %}}
+
+**Custom robots.txt content:** This allows you to define the content of the `/robots.txt` URL of your domain. This is especially useful for 
+multi-domain setups, since you can only have one _physical_ `robots.txt` file in your document root otherwise. This will enable you to define 
+different directives per domain.
+
+{{% notice "warning" %}}
+Keep in mind that this will not work if you already have a physical `robots.txt` file in your document root, as the web server will then
+serve said file directly. Make sure to delete that file before trying to use this feature.
+{{% /notice %}}
+
+
 ### Global settings
 
 **E-mail address of the website administrator:** Here you can overwrite the e-mail address of the system administrator defined in the backend settings for a specific website. This address is used to send notifications about blocked accounts or newly registered users, for example. If you have multiple websites within the site structure, it may be useful to set a separate administrator for each website, who will only receive notifications from his website. You can also use the following notation to add a name to your email address:
@@ -271,7 +299,7 @@ From section [Backend shortcuts](/de/administrationsbereich/backend-tastaturkuer
 
 Contao automatically creates an XML sitemap from the page structure of the website that can be read and analyzed by Google. To submit the sitemap URL to Google you need a Google account.
 
-Which pages are included in the XML sitemap can be controlled by the Robots tag in the [Metadata](#metadata).
+Which pages are included in the XML sitemap can be controlled by the Robots tag in the [Metadata](#metadata). To prevent a page from being included in the XML sitemap, you can set the robots tag to the value "noindex,nofollow" under metadata.
 
 **Create an XML Sitemap:** Here you activate the creation of the XML Sitemap.
 

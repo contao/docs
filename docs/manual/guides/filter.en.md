@@ -40,7 +40,7 @@ Contao [community](https://community.contao.org/en/) too.
 ## Without extension
 
 Known JavaScript solutions for our requirements are e.g. [Isotopes](https://isotope.metafizzy.co/) or 
-[MixItUp](https://www.kunkalabs.com/mixitup/). In case of a commercial use the purchase of licenses is necessary. 
+[MixItUp](https://github.com/patrickkunka/mixitup). In case of a commercial use the purchase of licenses is necessary. 
 For our example we use the open source solution [Filterizr](https://yiotis.net/filterizr/#/).
 
 
@@ -124,7 +124,7 @@ The only thing missing is the assignment of our categories via the HTML5 data at
 type »Text« this input option is missing. We can realize this by using customized Contao templates.
 
 When certain conventionally defined specifications are entered in the »Expert settings CSS-ID/Class« section, these 
-are to be output as HTML5 data attributes via the template. When entering `filtr-item DATA dog` in the CSS class area, we 
+are to be output as HTML5 data attributes via the template. When entering `filtr-item DATA-dog` in the CSS class area, we 
 want to achieve the following output:
 
 ```html

@@ -7,27 +7,32 @@ aliases:
 weight: 20
 ---
 
-Oft werden zu einem individuellen Template zusätzliche Assets wie CSS- oder JavaScript-Dateien benötigt. Man kann diese 
-Dateien grundsätzlich über das Seitenlayout eines Themes einbinden. Allerdings werden die Assets dann immer geladen 
-auch wenn diese auf verschiedenen Seiten gar nicht benötigt werden. Es ist daher sinnvoll diese Dateien im Template 
-selbst anzugeben. Hierbei stehen verschiedene Möglichkeiten zur Verfügung. 
+Oft werden zu einem individuellen Template zusätzliche Inhalte (»Assets«)m wie CSS- oder JavaScript-Dateien benötigt.
+Man kann diese Dateien grundsätzlich über das Seitenlayout eines Themes einbinden, allerdings werden sie dann immer
+geladen, egal ob sie auf einer Seite benötigt werden oder nicht. Es kann daher sinnvoll sein, Assets an spezifische
+Templates zu binden.
 
-Am einfachsten ist es die Dateien in einem öffentlichen Verzeichnis unterhalb von `files` anzulegen 
-und dann im Template zu referenzieren:
+#### Assets einbinden
+
+Am einfachsten ist es, die Dateien in einem öffentlichen Verzeichnis unterhalb von `/files` anzulegen und dann im
+Template zu referenzieren:
 
 ```php
 <link href="files/myfolder/custom.css" rel="stylesheet">
 <script src="files/myfolder/custom.js"></script>
 ```
 
-Alternativ kann man die Assets im Template auch so hinterlegen, das diese z. B. im HTML-Header oder -Footer 
-der Seite ausgegeben werden:
+Sollen die Dateien stattdessen im HTML-Header eingebunden werden, so lässt sich das mit folgendem PHP-Code im Template
+anweisen:
 
 ```php
+<?php
+// wird in <head> ausgegeben
 $GLOBALS['TL_CSS'][] = 'files/myfolder/custom.css|static';
 $GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static';
+?>
 ```
 
-Diese Umsetzung bietet weitere Optionen. Mit Angabe von `static` werden die Dateien z. B. zu den bestehenden Assets
-eines Seitenlayouts hinzugefügt bzw. diese zusammengefasst. Eine detaillierte Beschreibung aller Optionen findest du 
-in der Entwickler-Dokumentation unter [Adding CSS & JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
+Diese Umsetzung bietet weitere Optionen: Mit Angabe von `|static` werden die Dateien z.&nbsp;B. zu den bestehenden
+Assets eines Seitenlayouts hinzugefügt bzw. zusammengefasst. Eine detaillierte Beschreibung aller Optionen und
+Ausgabeorte findest du in der Entwickler-Dokumentation unter [Adding CSS & JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).

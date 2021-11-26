@@ -7,6 +7,10 @@ aliases:
 weight: 890
 ---
 
+{{% notice note %}}
+Seit 01.10.2021 nutzen wir nicht mehr Mumble für unsere regelmäßigen Contao-Calls, sondern die Huddle-Funktion des [Contao Slack-Workspaces](https://to.contao.org/slack).
+{{% /notice %}}
+
 
 ## Kurzinfo Einstellungen
 
@@ -20,9 +24,6 @@ weight: 890
 Mumble ist ein Audio-Chat in dem man sich mit mehreren Personen unterhalten kann. Zusätzlich gibt es noch
 die Möglichkeit, kurze Informationen in einem Chatfenster einzugeben. Mumble wird üblicherweise in mehrere
 Räume unterteilt, so dass man sich auch in kleineren Gruppen oder zu zweit in einen Raum zurückziehen kann.
-
-Die Contao-Calls finden in Mumble statt. Wann der nächste Contao Mumble-Call stattfindet, erfährst du 
-auf der [Projekt-Website](https://contao.org/de/mumble-calls.html).
 
 Mehr zu Mumble findest du über [mumble.info](https://www.mumble.info/).
 

@@ -21,7 +21,7 @@ vertraut.
 
 ## Kleine Fehler korrigieren
 
-Wenn du während des Lesen der Dokumentation einen Tippfehler entdeckst oder etwas umformulieren möchtest, ist es am 
+Wenn du während des Lesens der Dokumentation einen Tippfehler entdeckst oder etwas umformulieren möchtest, ist es am 
 einfachsten, dies direkt über GitHub zutun.
 
 
@@ -31,8 +31,8 @@ Klicke auf den Link »Diese Seite bearbeiten« in der oberen rechten Ecke und du
 
 ![Diese Seite bearbeiten](/de/contributing/images/de/diese-seite-bearbeiten.png?classes=shadow)
 
-Bei deinem ersten Beitrag, wirst du gebeten einen [Fork](https://de.wikipedia.org/wiki/Abspaltung_(Softwareentwicklung)) 
-vom [Repository](https://de.wikipedia.org/wiki/Repository) »contao/docs« zu erstellen, klicke auf »Fork this repository«.
+Bei deinem ersten Beitrag wirst du gebeten, einen [Fork](https://de.wikipedia.org/wiki/Abspaltung_(Softwareentwicklung)) 
+vom [Repository](https://de.wikipedia.org/wiki/Repository) »contao/docs« zu erstellen. Klicke auf »Fork this repository«.
 
 ![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow)
 
@@ -46,7 +46,7 @@ Bearbeite den Inhalt, beschreibe deine Änderungen und klicke auf die Schaltflä
 
 ### Branch und Commit erzeugen
 
-GitHub wird nun einen Branch und einen Commit für deine Änderungen erzeugen ausserdem wird eine Vorschau deiner 
+GitHub wird nun einen Branch und einen Commit für deine Änderungen erzeugen. Ausserdem wird eine Vorschau deiner 
 Änderungen angezeigt:
 
 ![Branch und Commit erzeugen](/de/contributing/images/de/branch-und-commit-erzeugen.png?classes=shadow)
@@ -55,7 +55,7 @@ Wenn alles korrekt ist, klicke auf die Schaltfläche »Create pull request«.
 
 {{% notice info %}}
 Im verteilten Versionierungssystem Git und somit auch auf GitHub werden Vorschläge als sog. »Pull-Requests« erstellt. 
-Da du keine Berechtigungen hast, direkt Änderungen im offiziellen Repository zu vollziehen (»to commit«) stellst du 
+Da du keine Berechtigungen hast, direkt Änderungen im offiziellen Repository zu vollziehen (»to commit«), stellst du 
 eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Änderungen in das offizielle Repository zu 
 »ziehen« (engl. »to pull«).
 {{% /notice %}}
@@ -63,7 +63,7 @@ eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Än
 
 ### Pull-Request erzeugen
 
-Auf der nächsten Seite, kannst du, falls nötig, noch letzte Anpassungen an deinen Pull-Request vornehmen. 
+Auf der nächsten Seite kannst du, falls nötig, noch letzte Anpassungen an deinen Pull-Request vornehmen. 
 Klicke erneut auf die Schaltfläche »Create pull request«.
 
 ![Pull-Request erzeugen](/de/contributing/images/de/create-pull-request.png?classes=shadow)
@@ -72,10 +72,18 @@ Klicke erneut auf die Schaltfläche »Create pull request«.
 Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
 
 
+### Fork aktualisieren
+
+Falls du weitere Änderungen vorschlagen möchtest, überprüfe zuvor, ob dein Fork auf dem aktuellen Stand ist.
+Über GitHub kannst du dann deinen Fork über »Fetch upstream« synchronisieren.
+
+![GitHub Fetch upstream](/de/contributing/images/de/github-fork-fetch-upstream.png?classes=shadow)
+
+
 ## Einen Beitrag für die Dokumentation schreiben
 
 Wenn du einen umfangreichen Beitrag planst oder du es vorziehst, an deinem eigenen Computer zu arbeiten, lese hier weiter 
-und wir zeigen dir eine alternative Möglichkeit auf, wie du Pull-Request an die Contao-Dokumentation senden kannst.
+und wir zeigen dir eine alternative Möglichkeit auf, wie du Pull-Requests an die Contao-Dokumentation senden kannst.
 
 ### Git installieren
 
@@ -201,7 +209,7 @@ untergebracht. Mit dem nächsten Befehl führst du diese zusammen.
 git merge upstream/main
 ```
 
-Jetzt führst du noch folgendes Kommando aus um deinen Fork zu aktualisieren.
+Jetzt führst du noch folgendes Kommando aus, um deinen Fork zu aktualisieren.
 
 
 ```bash

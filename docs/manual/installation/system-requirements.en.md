@@ -143,6 +143,46 @@ doctrine:
                     engine: MyISAM
 ```
 
+It is further recommended to run MySQL in "strict mode" to prevent corrupt or truncated
+data and to guarantee data integrity.
+
+{{% notice note %}}
+As of **Contao 4.9**, the install tool shows a warning if the database server is not running
+in strict mode.
+{{% /notice %}}
+
+To enable it, add the following to your `my.cnf` or `my.ini` file or make sure that the
+setting is adjusted accordingly:
+
+```
+[mysqld]
+…
+sql_mode="TRADITIONAL"
+…
+```
+
+If the setting cannot be enabled on your server, please configure the connection
+options in your `app/config/config.yml` file ({{< version-tag "4.8" >}} `config/config.yml` file):
+
+```yml
+doctrine:
+    dbal:
+        connections:
+            default:
+                options:
+                    # Depending on the DB driver, the option key is either 1002 (pdo_mysql) or 3 (mysqli)
+                    1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
+```
+
+{{% notice "note" %}}
+The [`TRADITIONAL` SQL mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_traditional) is a combination mode consisting of
+several SQL modes like `STRICT_TRANS_TABLES` and `STRICT_ALL_TABLES` among others. The "[Strict SQL Mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict)" 
+is active when either `STRICT_TRANS_TABLES` or `STRICT_ALL_TABLES` is enabled. Strict mode (specifically `STRICT_TRANS_TABLES`) is enabled 
+by default in current versions of MySQL as well as MariaDB. However, many shared hosting environments use different settings. The advantage 
+of strict mode is that erroneous database operations will actually cause an error instead of being silently ignored by the database server, 
+leading to better data integrity and security.
+{{% /notice %}}
+
 
 ## Web server
 
@@ -161,6 +201,10 @@ document root of the installation via the admin panel of the hosting provider to
 on this occasion.
 
 Example: `example.com` points to the directory `/www/example/web`
+
+({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to 
+`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
+
 
 {{% notice note %}}
 Therefore, a separate (sub)domain is required for each Contao installation.

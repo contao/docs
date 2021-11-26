@@ -1,6 +1,6 @@
 ---
 title: "Erweiterungen deinstallieren"
-description: "Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du drei Möglichkeiten."
+description: "Erweiterungen mit dem Contao Manager oder via Kommandozeile deinstallieren"
 url: "installation/erweiterungen-deinstallieren"
 aliases:
     - /de/installation/erweiterungen-deinstallieren/
@@ -48,7 +48,7 @@ Der Befehl `remove` entfernt die Erweiterung aus der `composer.json` und löscht
 Um eine Erweiterung zu entfernen und die `composer.lock` zu aktualisieren, wird der Befehl `remove` ausgeführt, 
 das wird bei einigen Hostern dazu führen, dass der Prozess wegen der zu hohen Systemanforderung nicht beendet werden 
 kann und die Aktualisierung dadurch fehlschlägt. In diesem Fall solltest du den 
-[Contao Manager](#aktualisierung-mit-dem-contao-manager) nutzen.
+[Contao Manager](#deinstallation-mit-dem-contao-manager) nutzen.
 
 **Eine einzelne Erweiterung deinstallieren:**
 

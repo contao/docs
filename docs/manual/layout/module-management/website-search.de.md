@@ -32,11 +32,11 @@ wesentlich mehr Optionen an, z. B. das Suchen nach bestimmten Dateitypen, Sprach
 
 ### UND/ODER-Suche
 
-Die einfache Suche nach z. B. »web design« ergibt fünf Treffer.
+Gehen wir davon aus, eine einfache Suche nach z. B. »web design« ergäbe fünf Treffer.
 
 Contao sucht standardmäßig nur nach Seiten, die alle Suchbegriffe enthalten (UND-Suche). Wenn du hingegen die Option 
-*finde irgendein Wort* auswählst, werden auch die Seiten zurückgegeben, die nur eines der beiden Wörter enthalten 
-(ODER-Suche). Die Zahl der Treffer erhöht sich dadurch auf sieben.
+*finde irgendein Wort* auswählst, werden auch die Seiten gefunden, die nur eines der beiden Wörter enthalten 
+(ODER-Suche). Die Zahl der Treffer erhöht sich dadurch in unserem Beispiel auf bspw. sieben.
 
 
 ### Phrasensuche
@@ -44,7 +44,7 @@ Contao sucht standardmäßig nur nach Seiten, die alle Suchbegriffe enthalten (U
 Bei der Phrasensuche wird nicht nur nach einzelnen Wörtern gesucht, sondern nach Wortkombinationen, die in einer 
 bestimmten Reihenfolge stehen. Um nach einer Phrase zu suchen, musst du lediglich die entsprechenden Wörter in 
 Anführungszeichen setzen. Die Suche nach "web design" (in diesem Fall musst du die Anführungszeichen mit eingeben!)
-ergibt im Vergleich zur UND/ODER-Suche nur drei Treffer, nämlich die Seiten, die tatsächlich
+ergibt im Vergleich zur UND/ODER-Suche weniger Treffer, nämlich nur die Seiten, die tatsächlich
 den Begriff »Web Design« enthalten.
 
 
@@ -55,7 +55,7 @@ Web, wie z. B. Web Hosting. Aus diesem Grund möchtest du am liebsten alles find
 genau diesen Fall bietet Contao die Suche mit Platzhaltern.
 
 Starte eine neue Suche, und gebe »web*« in das Suchfeld ein. Der Stern dient als Platzhalter und steht für beliebige 
-weitere Zeichen. Wie du siehst, gibt diese Suche mit 32 Treffern deutlich mehr Ergebnisse zurück als die beiden 
+weitere Zeichen. Wie du siehst, gibt diese Suche jetzt deutlich mehr Ergebnisse zurück als die beiden 
 vorherigen. Sie enthält jetzt auch Wörter wie »Webanwendung«, »Webhosting« oder »Webtechnologie«.
 
 
@@ -75,8 +75,6 @@ Eine bessere Möglichkeit ist die Suche nach »+web hosting design«, was so vie
 Contao, dass ein Suchbegriff auf jeden Fall enthalten sein muss. Beachte, dass zwischen dem Pluszeichen und dem
 Suchbegriff kein Leerzeichen stehen darf.
 
-Die verfeinerte Suche ergibt jetzt nur noch fünf Treffer.
-
 
 ### Suchbegriff ausschließen
 
@@ -88,8 +86,6 @@ du genau die drei weggefallenen Seiten finden.
 Starte einen letzten Suchvorgang, und gebe »-web hosting design« in das Suchfeld ein. An dem Minuszeichen erkennt 
 Contao, dass ein Suchbegriff auf keinen Fall auf der Seite vorkommen darf. Beachte, dass zwischen dem Minuszeichen und 
 dem Suchbegriff kein Leerzeichen stehen darf.
-
-Wie erwartet ergibt die Suche jetzt genau drei Treffer.
 
 
 ## Konfiguration des Suchmoduls
@@ -134,76 +130,7 @@ Seiten unterhalb der Referenzseite in den Ergebnissen.
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_search` überschreiben.
 
-**HTML-Ausgabe**  
-Das Frontend-Modul generiert folgenden HTML-Code:
-
-```html
-<!-- indexer::stop -->
-<div class="mod_search block">
-
-    <form action="…" method="get">
-        <div class="formbody">
-            <div class="widget widget-text">
-                <label for="ctrl_keywords" class="invisible">Suchbegriffe</label>
-                <input type="search" name="keywords" id="ctrl_keywords" class="text" value="contao">
-            </div>
-            <div class="widget widget-submit">
-                <button type="submit" id="ctrl_submit" class="submit">Suchen</button>
-            </div>
-            <div class="widget widget-radio">
-                <fieldset class="radio_container">
-                    <legend class="invisible">Optionen</legend>
-                    <span>
-                        <input type="radio" name="query_type" id="matchAll" class="radio" value="and" checked> 
-                        <label for="matchAll">finde alle Wörter</label>
-                    </span>
-                    <span>
-                        <input type="radio" name="query_type" id="matchAny" class="radio" value="or"> 
-                        <label for="matchAny">finde irgendein Wort</label>
-                    </span>
-                </fieldset>
-            </div>
-        </div>
-    </form>
-
-    <p class="header"> … </p>
-  
-    <div class="first even">
-        <h3><a href="…" title="…"> … </a> <span class="relevance">[… Relevanz]</span></h3>
-        <p class="context">… <mark class="highlight">…</mark> … <mark class="highlight">…</mark> …</p>
-        <p class="url">…<span class="filesize"> - …</span></p>
-    </div>
-
-    <div class="odd">
-        <h3><a href="…" title="…"> … </a> <span class="relevance">[… Relevanz]</span></h3>
-        <p class="context">… <mark class="highlight">…</mark> … <mark class="highlight">…</mark> …</p>
-        <p class="url">…<span class="filesize"> - …</span></p>
-    </div>
-
-    <div class="last even">
-        <h3><a href="…" title="…"> … </a> <span class="relevance">[… Relevanz]</span></h3>
-        <p class="context">… <mark class="highlight">…</mark> … <mark class="highlight">…</mark> …</p>
-        <p class="url">…<span class="filesize"> - …</span></p>
-    </div>
-
-    <!-- indexer::stop -->
-    <nav class="pagination block" aria-label="Seitenumbruch-Menü">
-        <p>Seite 1 von 3</p>
-        <ul>
-        <li><strong class="active">1</strong></li>
-            <li><a href="…" class="link" title="Gehe zu Seite 2">2</a></li>
-            <li><a href="…" class="link" title="Gehe zu Seite 3">3</a></li>
-            <li class="next"><a href="…" class="next" title="Gehe zu Seite 2">Vorwärts</a></li>
-            <li class="last"><a href="…" class="last" title="Gehe zu Seite 3">Ende</a></li>
-        </ul>
-    </nav>
-    <!-- indexer::continue -->
-
-</div>
-<!-- indexer::continue -->
-```
-
-Das `<nav>`-Element mit der Klasse pagination enthält das Markup des Seitenumbruch-Menüs, das beispielsweise auch bei 
+Das `<nav>`-Element mit der CSS-Klasse `pagination` enthält das Markup des Seitenumbruch-Menüs, das beispielsweise auch bei 
 Bildergalerien zum Einsatz kommt.
 
 
@@ -223,8 +150,7 @@ verweist, und bindest dieses in die Kopfzeile ein.
 
 **Ein Suchformular mit dem HTML-Modul erstellen**
 
-Das Frontend-Modul »Eigener HTML-Code« werde ich dir am Ende dieser Seite vorstellen. Das Markup für das Suchformular 
-sieht folgendermaßen aus:
+Das Markup für das Suchformular könnte folgendermaßen ausssehen:
 
 ```html
 <!-- indexer::stop -->
@@ -245,7 +171,7 @@ Die Zielseite, die beim Abschicken des Formulars aufgerufen wird, wurde hier ü
 [Insert-Tag](../../../artikelverwaltung/insert-tags/) erfasst, damit das
 Formular auch dann noch funktioniert, wenn sich der Alias der Zielseite im Laufe der Zeit ändert. Als 
 Übertragungsmethode wurde »GET« ausgewählt, und dem Suchfeld den Feldnamen »keywords« gegeben.
-
+Das war's!
 
 ## Bereiche von der Suche ausnehmen
 

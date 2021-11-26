@@ -176,22 +176,65 @@ class Plugin implements BundlePluginInterface
         return [
             BundleConfig::create(KnpMenuBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class]),
-                
-                // In case you also need your bundle to be loaded after a legacy
-                // style module that resides in system/modules, you can just use
-                // its name as string:
-                // ->setLoadAfter([ContaoCoreBundle::class, 'legacy_module_name']),
-                
-                // Speaking about legacy modules:
-                // In case your bundle replaces an old legacy module, you can indicate
-                // this to the plugin loader.
-                // This will enable other legacy modules to be still loaded after your
-                // newly created bundle in case they require this to work properly.
-                // ->setReplace(['old_module_name']),
         ];
     }
 }
 ```
+
+The `setLoadAfter()` method takes an array, so you can define multiple bundles there to indicate that your bundle should 
+be loaded after all of them.
+
+It is also possible to define that your bundle needs to be loaded after a _legacy_ style module that resides in
+`system/modules/`. And in case your bundle replaces and old legacy module you can indicate this to the plugin loader as
+well. This will enable other legacy modules to be still loaded after your newly created bundle in case they require
+this to work properly.
+
+```php
+namespace Vendor\SomeBundle\ContaoManager;
+
+use Contao\CoreBundle\ContaoCoreBundle;
+use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
+use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
+use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use Vendor\SomeBundle\SomeBundle;
+
+class Plugin implements BundlePluginInterface
+{
+    public function getBundles(ParserInterface $parser)
+    {
+        return [
+            BundleConfig::create(SomeBundle::class)
+                // This loads the bundle after the ContaoCorebundle
+                // and after the legacy module called "notification_center".
+                ->setLoadAfter([
+                    ContaoCoreBundle::class,
+                    'notification_center'
+                ]),
+                // This will replace the legacy module called "old_module_name"
+                // with SomeBundle in the plugin loader.
+                ->setReplace(['old_module_name']),
+        ];
+    }
+}
+```
+
+{{% notice info %}}
+The internal name of a legacy style Contao 2/3 module is derived from its folder name within the `system/modules/`
+directory. So if the module is placed in `system/modules/notification_center/` then it needs to be referenced by
+`notification_center`. This can also be derived from the target directory of the `extra.contao.sources` configuration 
+within the module's composer.json.
+```json
+{
+    "extra":{
+        "contao": {
+            "sources":{
+                "": "system/modules/notification_center"
+            }
+        }
+    }
+}
+```
+{{% /notice %}}`
 
 
 ## The `ConfigPluginInterface`
@@ -218,7 +261,7 @@ class Plugin implements ConfigPluginInterface
 {
     public function registerContainerConfiguration(LoaderInterface $loader, array $config)
     {
-        $loader->load('@VendorSomeBundle/Resources/config/config.yml');
+        $loader->load('@VendorSomeBundle/Resources/config/config.yaml');
     }
 }
 ```
@@ -233,7 +276,7 @@ This works in _most_ of the cases. The Symfony ContainerBuilder performs
 a recursive array merge operation of all configurations. The result is:
 
 1. Plugin configuration is loaded before the global config
-   (`config/config.yml`), therefore the global config can override bundles.
+   (`config/config.yaml`), therefore the global config can override bundles.
 
 2. Plugin configuration is loaded (and overridden) in order of the plugins.
    One plugin can override the bundle configuration set by another plugin by setting the same keys. The order of
@@ -261,7 +304,7 @@ the issues mentioned in point 4.
 A typical example for overriding previous bundle configuration would be the `security.firewalls` configuration. 
 You might want to configure another firewall than the one Contao ships by default. As you know, the order matters
 because the first firewall that matches a specific pattern or request is the one that Symfony is going to use.
-That's why you cannot have a `config.yml` with your own `security.firewalls` configuration – the Symfony Config
+That's why you cannot have a `config.yaml` with your own `security.firewalls` configuration – the Symfony Config
 component will tell you:
 
 > You are not allowed to define new elements for path "security.firewalls".
@@ -336,7 +379,7 @@ class Plugin implements ExtensionPluginInterface
 
 {{% notice info %}}
 Note that you receive an array of `$extensionConfigs` and you may have to apply your changes multiple times. This is
-because of the way the Symfony Dependency Injection Container works. E.g. you have a configuration from `config.yml` one
+because of the way the Symfony Dependency Injection Container works. E.g. you have a configuration from `config.yaml` one
 from "Bundle X" and another one from "Bundle Y". The container then merges all these configurations into one
 (which is exactly where that firewall error message comes from). Unfortunately, there is no way you can determine where
 a certain configuration is coming from.
@@ -508,7 +551,7 @@ class Plugin implements RoutingPluginInterface
 {
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
-        $file = '@VendorSomeBundle/Resources/config/routing.yml';
+        $file = '@VendorSomeBundle/Resources/config/routes.yaml';
 
         return $resolver->resolve($file)->load($file);
     }

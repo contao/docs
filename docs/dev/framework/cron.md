@@ -72,7 +72,7 @@ See the [Symfony Routing Documentation](https://symfony.com/doc/4.4/routing.html
 for more details.
 
 ```yml
-# config/parameters.yml
+# config/parameters.yaml
 parameters:
     router.request_context.host: 'example.org'
     router.request_context.scheme: 'https'
