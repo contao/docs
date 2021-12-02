@@ -51,7 +51,7 @@ einmalig die Dokumentation als zusätzliche Suchmaschine in deinem Browser regis
 - Suchkürzel: z.B. `docs` (beliebig)
 - URL mit %s statt der Suchanfrage: `https://docs.contao.org/manual/de/?search=%s`
 - Den Browser neu starten und suchen mit Eingabe von z.B.: 
-- `docs insterttags`
+- `docs inserttags`
 {{% /expand %}}
 
 
