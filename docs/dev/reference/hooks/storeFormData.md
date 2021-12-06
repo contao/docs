@@ -62,6 +62,7 @@ class StoreFormDataListener
         $this->connection = $connection;
         $this->security = $security;
     }
+
     public function __invoke(array $data, Form $form): array
     {
         $data['member'] = 0;
