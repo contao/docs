@@ -40,7 +40,7 @@ Um die Abhängigkeit hinzuzufügen, muss folgendes in der `composer.json` eingef
 ```json
 {
     "require": {
-        "inspiredminds/contao-news-facebook": "^6.0"
+        "inspiredminds/contao-news-facebook": "^7.0"
     }
 }
 ```
