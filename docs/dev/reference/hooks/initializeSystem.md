@@ -9,7 +9,7 @@ aliases:
 
 
 The `initializeSystem` hook is triggered right after the system initialization
-process is finished and before the request processing is started. This also means the request has no [contao request scope](https://docs.contao.org/dev/framework/routing/#request-scope) set and no language redirects have been executed.
+process is finished and before the request processing is started. This also means the request has no [contao request scope](/framework/routing/#request-scope) set and no language redirects have been executed.
 
 
 ## Example
