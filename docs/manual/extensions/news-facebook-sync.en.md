@@ -39,7 +39,7 @@ To add the dependency, add the following to your `composer.json`:
 ```json
 {
     "require": {
-        "inspiredminds/contao-news-facebook": "^6.0"
+        "inspiredminds/contao-news-facebook": "^7.0"
     }
 }
 ```
