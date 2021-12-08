@@ -23,6 +23,39 @@ etc. and that is why they are prefixed. They can be easily grouped, ordered and
 recognized. For example: the prefix `ce_` means "Content Element" and `mod_` means "Module".
 
 
+## Template Instantiation and Rendering
+
+Contao provides two template classes: `Contao\FrontendTemplate` and `Contao\BackendTemplate`, which both inherit from the abstract
+`Contao\Template` class and use the `Contao\TemplateInheritance` trait. The `FrontendTemplate` class should be used whenever you want to
+render a template in the front end, while the `BackendTemplate` can be used to render a template in the back end. All `ce_*`, `mod_*`, news
+and event templates etc. are always front end templates, whereas most back end templates start with the prefix `be_`.
+
+The following example will instantiate a front end template instance and render the template as a string:
+
+```php
+use Contao\FrontendTemplate;
+
+$template = new FrontendTemplate('my_front_end_template');
+$template->someData = 'foobar';
+$buffer = $template->parse();
+```
+
+The instantiation references a template named `my_front_end_template`. This will refer to a template file named 
+`my_front_end_template.html5` which will then be searched for by Contao in different [locations](#template-folders).
+
+
+## Template Folders
+
+When a template instance is created, Contao will search for the appropriate template in the following locations and the following order:
+
+| Folder | Description |
+| --- | --- |
+| `templates/<THEME>/` | A subfolder within `templates/` as defined in the front end [theme][FrontEndTheme]. This folder will contain overridden and extended templates that will only apply for page layouts of a specific theme in the front end. |
+| `templates/`| This folder can contain template overrides and extensions, as well as custom templates. |
+| `contao/templates/` | Here you can organize your application specific templates, e.g. the templates for custom content elements or front end modules etc. of your application. These templates can then still be overridden and extended via the previous folders. |
+| `<BUNDLE>/contao/templates/` | Each Contao extension (i.e. `contao-bundle`) can provide templates for their own content elements or front end modules etc. These templates can then be overridden and extended via templates in the `templates/` directory (including the theme's subdirectory). |
+
+
 ## Template Groups
 
 In order for a new template to show up in the template selection in the back end for a certain content element or front end module, 
@@ -164,7 +197,7 @@ but somewhere else entirely, you could extend that template, override the `headl
 block with empty content and instead show the headline in a custom location within
 the `content` block.
 
-```php
+```html
 <?php $this->extends('ce_text'); ?>
 
 <?php $this->block('headline'); ?>
@@ -186,6 +219,14 @@ the `content` block.
 <?php $this->endblock(); ?>
 ```
 
+{{% notice tip %}}
+Any template within the `templates/` folder can override and extend existing templates from the `contao/templates/` folder or from any
+Contao extension. The `templates/` folder also allows you to override and extend from the same template at the same time. For instance, you 
+can create a `templates/fe_page.html5` and still use `$this->extend('fe_page')` as this will extend from the Contao Core Bundle's `fe_page`. 
+However, you cannot do the same within Contao extensions. You can only extend from other templates there using a different template name.
+The same applies to the `contao/templates/` folder as this can be considered your application's extension.
+{{% /notice %}}
+
 
 ## Template Insertion
 
@@ -197,7 +238,7 @@ A template can be inserted into another template thanks to the `insert()` functi
 
 The `insert()` function also accepts the assignment of variables as second parameter.
 
-```php
+```html
 <?php $this->insert('template_name', ['key' => 'value']); ?>
 
 // This passes all variables from the current template
@@ -243,7 +284,48 @@ the complete data set of the database record of the element will be available in
 the template via `$this->…`. The content of some fields might have been changed 
 by the content element or module controller though.
 
-You can inspect the available template data by using either
+To set template data you can use one of two ways. On the one hand the `Template` class implements the `__set` method so that you can
+directly set a template variable as if it was an object variable:
+
+```php
+use Contao\FrontendTemplate;
+
+$template = new FrontendTemplate('my_template');
+$template->foobar = 'foobar';
+```
+
+This variable can then be accessed from within the template:
+
+```html
+<!-- contao/templates/my_template.html5 -->
+<?= $this->foobar ?>
+```
+
+You can also set and override the template data via an associative array:
+
+```php
+$template->setData([
+    'myVariable' => 'foobar',
+    'myOtherVariable' => 'Lorem Ipsum',
+]);
+```
+
+You can also assign a callable to a template variable:
+
+```php
+$template->getHash = function(string $string): string {
+    return substr(md5($string), 0, 8);
+};
+```
+
+This function can then be called from within the template, as Contao's `Template` class implements `__call` and checks whether a template
+variable of this name is available as a callable:
+
+```php
+<?= $this->getHash('foobar') ?>
+```
+
+You can also inspect the available template data by using either
 
 ```php
 <?php $this->dumpTemplateVars() ?>
@@ -267,3 +349,4 @@ and `$this->endblock()` statements.
 
 [SymfonyVarDumper]: https://symfony.com/doc/current/components/var_dumper.html
 [ContaoSearch]: https://docs.contao.org/manual/en/layout/module-management/website-search/
+[FrontEndTheme]: https://docs.contao.org/manual/en/layout/theme-manager/manage-themes/#configuring-themes
