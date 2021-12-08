@@ -82,6 +82,17 @@ class ParseTemplateListener
 }
 ```
 
+```html
+<!-- templates/my_template.html5 -->
+<?php if ($this->isMemberOf(1)): ?>
+  <p>Member belongs to group ID 1!</p>
+<?php endif; ?>
+
+<?php if ($this->isMemberOf([1, 2])): ?>
+  <p>Member belongs to group IDs 1 or 2!</p>
+<?php endif; ?>
+```
+
 {{% notice note %}}
 The [`ContaoCorePermissions::MEMBER_IN_GROUPS` check](/framework/security/#voters) is only available in Contao **4.12** or higher.
 {{% /notice %}}
