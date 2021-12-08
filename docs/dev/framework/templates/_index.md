@@ -30,7 +30,7 @@ Contao provides two template classes: `Contao\FrontendTemplate` and `Contao\Back
 render a template in the front end, while the `BackendTemplate` can be used to render a template in the back end. All `ce_*`, `mod_*`, news
 and event templates etc. are always front end templates, whereas most back end templates start with the prefix `be_`.
 
-The following example will instantiate a front end template instance and render the template as a string:
+The following example will instantiate a front end template object and render the template as a string:
 
 ```php
 use Contao\FrontendTemplate;
