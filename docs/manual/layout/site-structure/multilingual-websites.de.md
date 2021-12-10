@@ -44,6 +44,7 @@ erneuern«) oder alternativ über die Kommandozeile erneuert werden.
 
 ```bash
 vendor/bin/contao-console cache:clear --env=prod --no-warmup
+vendor/bin/contao-console cache:warmup --env=prod
 ```
 {{% /notice %}}
 
