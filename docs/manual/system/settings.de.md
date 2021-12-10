@@ -528,6 +528,7 @@ Installationsverzeichnis befinden.
 
 ```bash
 php vendor/bin/contao-console cache:clear --env=prod --no-warmup
+php vendor/bin/contao-console cache:warmup --env=prod
 ```
 {{% /notice %}}
 
@@ -644,6 +645,7 @@ Installationsverzeichnis befinden.
 
 ```bash
 php vendor/bin/contao-console cache:clear --env=prod --no-warmup
+php vendor/bin/contao-console cache:warmup --env=prod
 ```
 {{% /notice %}}
 

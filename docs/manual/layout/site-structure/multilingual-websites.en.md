@@ -32,6 +32,7 @@ For the changes to take effect, the application cache must be refreshed via the 
 
 ```bash
 vendor/bin/contao-console cache:clear --env=prod --no-warmup
+vendor/bin/contao-console cache:warmup --env=prod
 ```
 {{% /notice %}}
 

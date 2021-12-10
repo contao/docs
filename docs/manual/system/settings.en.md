@@ -511,6 +511,7 @@ In order to enable these changes, the application cache must be rebuilt using th
 
 ```bash
 php vendor/bin/contao-console cache:clear --env=prod --no-warmup
+php vendor/bin/contao-console cache:warmup --env=prod
 ```
 {{% /notice %}}
 
@@ -623,6 +624,7 @@ the Contao installation directory:
 
 ```bash
 php vendor/bin/contao-console cache:clear --env=prod --no-warmup
+php vendor/bin/contao-console cache:warmup --env=prod
 ```
 {{% /notice %}}
 
