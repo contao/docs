@@ -93,7 +93,6 @@ Contao Manager does not need its own database. The configuration of the Contao M
 
 The Contao Manager needs the path to the PHP binary and other server information to run background processes correctly. 
 The path is usually automatically detected by the Contao Manager.
-faulhaber.com
 
 
 ![Server configuration](/de/installation/images/en/server-configuration.png?classes=shadow)
