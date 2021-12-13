@@ -158,12 +158,14 @@ the Contao 4 installation:
 ```
 
 In the `require` part we can then request the installation of our extension, using
-the defined package name and `dev-main` as the version.
+the defined package name and `dev-master` as the version, as this is the default 
+branch alias that Composer will use, if nothing else is defined in the `composer.json`
+or via Git.
 
 ```json
 {
     "require": {
-        "somevendor/contao-example-bundle": "dev-main"
+        "somevendor/contao-example-bundle": "dev-master"
     }
 }
 ```
