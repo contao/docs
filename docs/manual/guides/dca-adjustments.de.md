@@ -14,7 +14,7 @@ Das Contao »[Data Container Array](https://docs.contao.org/dev/reference/dca/)�
 praktische Konfigurationsmöglichkeiten. Hier findest du eine Auswahl hilfreicher Beispiele.
 
 Ab Contao 4.9 werden die jeweiligen Anpassungen im Verzeichnis »contao/dca« erwartet. Falls die Verzeichnisse noch 
-nicht existieren, musst du diese zunächst erstellen. Für jede Contao Tabelle benötigst du eine eigene Datei, 
+nicht existieren, musst du diese zunächst erstellen. Für jede Contao-Tabelle benötigst du eine eigene Datei, 
 beispielsweise »contao/dca/tl_content.php«. Anschließend mußt du den Anwendungs-Cache über den 
 [Contao-Manager](/de/installation/contao-manager/) oder über die Konsole neu aufbauen. Dieser Schritt ist nach 
 jeder Änderung erforderlich.
