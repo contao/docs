@@ -33,6 +33,10 @@ der einzelnen Spalten in Abhängigkeit von der Gesamtbreite zu verstehen. Du kan
 selbst kontrollieren. Beispielsweise kann der Inhalt auf einem Desktop »4-spaltig«, beim Tablet »2-spaltig« und auf 
 einem Smartphone »1-spaltig« angezeigt werden.
 
+{{% notice note %}}
+Die »Contao Show« hat das Thema »[Inhalte mehrspaltig in Contao umsetzen](https://to.contao.org/tv/show/12)« behandelt.
+{{% /notice %}}
+
 
 ## Das Contao-Grid
 
