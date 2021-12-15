@@ -1,5 +1,5 @@
 ---
-title: "DCA Anpassungen"
+title: "DCA-Anpassungen"
 description: "Eine Liste praktischer DCA Anpassungen."
 url: "/de/anleitungen/dca"
 aliases:
