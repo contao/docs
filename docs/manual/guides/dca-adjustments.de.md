@@ -54,9 +54,9 @@ PaletteManipulator::create()
     ->applyToPalette('default', 'tl_member')
 ;
 
-unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']['eval']['feEditable']);
-unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']['eval']['feViewable']);
-unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']['eval']['feGroup']);
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feEditable']);
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feViewable']);
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feGroup']);
 ```
 
 Du kannst das Feld aber auch vollständig entfernen:   
@@ -69,11 +69,11 @@ PaletteManipulator::create()
     ->applyToPalette('default', 'tl_member')
 ;
 
-unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']);
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']);
 ```
 Beachte: dadurch wird beim nächsten 
-[Aktualisieren der Datenbank](/de/installation/contao-installtool/#tabellen-aktualisieren) die Spalte `dateOfBirth` 
-gelöscht!
+[Aktualisieren der Datenbank](/de/installation/contao-installtool/#tabellen-aktualisieren) die Spalte `company` 
+zum Löschen vorgeschlagen!
 {{% /expand %}}
 
 
