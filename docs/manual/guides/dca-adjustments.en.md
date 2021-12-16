@@ -42,12 +42,39 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['headline']['eval']['preserveTags'] = tr
 
 
 {{% expand "Hide a field in the backend" %}}
-```php
-// for example: contao/dca/tl_member.php
-unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']);
-```
-{{% /expand %}}
+To hide the field, you change the palette and remove the field from the configuration settings of the
+[module Personal data](/en/layout/module-management/user-modules/#personal-data):
 
+```php
+// contao/dca/tl_member.php
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
+    ->removeField('company')
+    ->applyToPalette('default', 'tl_member')
+;
+
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feEditable']);
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feViewable']);
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feGroup']);
+```
+
+You can also remove the field entirely:
+```php
+// contao/dca/tl_member.php
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
+    ->removeField('company')
+    ->applyToPalette('default', 'tl_member')
+;
+
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']);
+```
+
+Note: with this change, the column `company` will be suggested for deletion when you run
+[Update tables](/en/installation/contao-installtool/#update-tables) in the Contao Install Tool!
+{{% /expand %}}
 
 {{% expand "Show IDs in page tree" %}}
 ```php
