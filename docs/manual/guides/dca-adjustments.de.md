@@ -71,6 +71,7 @@ PaletteManipulator::create()
 
 unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']);
 ```
+
 Beachte: dadurch wird beim nächsten 
 [Aktualisieren der Datenbank](/de/installation/contao-installtool/#tabellen-aktualisieren) die Spalte `company` 
 zum Löschen vorgeschlagen!
