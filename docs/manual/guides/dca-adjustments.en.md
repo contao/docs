@@ -43,7 +43,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['headline']['eval']['preserveTags'] = tr
 
 {{% expand "Hide a field in the backend" %}}
 ```php
-// for example: contao/dca/tl_member.php
+// contao/dca/tl_member.php
 unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']);
 ```
 {{% /expand %}}
