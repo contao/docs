@@ -58,6 +58,16 @@ Darüber hinaus könntest du optional auch die Einträge »allow_url_fopen«, »
 oder »file_uploads« überprüfen und anpassen.
 {{% /notice %}}
 
+## Die Appache-Konfiguration
+Bei XAMPP bzw. Apache unter Windows ist der Default-Wert der sogenannten ThreadStackSize nur 1MB, während der Wert auf Linux-Plattformen standardmäßig bei 8MB liegt. Um Abstürze des lokalen Servers zu vermeiden, wird empfohlen diesen Wert zu erhöhen.
+Ergänze dazu die Datei D:\xampp\apache\conf\httpd.conf am Ende durch folgenden Code um die ThreadThreadStackSize auf 8MB zu erhöhen 
+
+```php
+<IfModule mpm_winnt_module>
+    ThreadStackSize 8388608
+</IfModule> 
+```
+
 **Herzlichen Glückwunsch!** 
 Du hast alle Vorbereitungen für eine lokale Installation von Contao abgeschlossen.
 
@@ -154,7 +164,7 @@ Nutzung unseres neuen Verzeichnisses erst konfigurieren.
 `#LoadModule vhost_alias_module modules/mod_vhost_alias.so`. Entferne hier den Hashtag `#` und speichere deine Änderung. 
 Füge in der Datei `\apache\conf\extra\httpd-vhosts.conf` folgende Angaben hinzu:
 
-```php
+{{% notice info %}}
 <VirtualHost *:80>
   ServerAdmin webmaster@demo.local
   DocumentRoot "D:\vhost\demo\web"
