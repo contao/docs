@@ -42,10 +42,38 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['headline']['eval']['preserveTags'] = tr
 
 
 {{% expand "Ein Feld im Backend ausblenden" %}}
+Um das Feld auszublenden, wird die Palette geändert und das Feld aus den Einstellungen der Konfiguration des 
+[Moduls Personendaten](/de/layout/modulverwaltung/benutzermodule/#personendaten) entfernt:
+
 ```php
 // contao/dca/tl_member.php
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
+    ->removeField('company')
+    ->applyToPalette('default', 'tl_member')
+;
+
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']['eval']['feEditable']);
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']['eval']['feViewable']);
+unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']['eval']['feGroup']);
+```
+
+Du kannst das Feld aber auch vollständig entfernen:   
+```php
+// contao/dca/tl_member.php
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
+    ->removeField('company')
+    ->applyToPalette('default', 'tl_member')
+;
+
 unset($GLOBALS['TL_DCA']['tl_member']['fields']['dateOfBirth']);
 ```
+Beachte: dadurch wird beim nächsten 
+[Aktualisieren der Datenbank](/de/installation/contao-installtool/#tabellen-aktualisieren) die Spalte `dateOfBirth` 
+gelöscht!
 {{% /expand %}}
 
 
