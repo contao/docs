@@ -138,8 +138,7 @@ Dazu als Schlüssel `nav` bzw. `input` eintragen und als Wert der gewünschte We
 
 Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüssel `*` und als Wert `*` eintragen. Hierdurch sind alle Attribute für alle Elemente erlaubt.  
 
-![sicherheitseinstellungen](https://user-images.githubusercontent.com/33038265/146532333-116c2333-cf82-4048-873f-9bede40b6e24.jpg?classes=shadow)
-
+![Sicherheitseinstellungen](/de/system/images/de/sicherheitseinstellungen.jpg?classes=shadow)
 
 ### Dateien und Bilder
 
