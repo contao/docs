@@ -1,3 +1,4 @@
+![sicherheitseinstellungen](https://user-images.githubusercontent.com/33038265/146532333-116c2333-cf82-4048-873f-9bede40b6e24.jpg)
 ---
 title: "Einstellungen"
 description: ""
@@ -122,7 +123,21 @@ HTML-Tags festlegen.
 **Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
 Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeichern automatisch entfernt. Das Tag bzw. 
 der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B. 
-data-* benutzt werden.
+data-* benutzt werden.  
+
+**Beispiele:** 
+`<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden. Kann aber einfach unter Schlüssel eingefügt werden. 
+{{% notice note %}}
+Um die selbst hinzugefügten HTML-Tags besser zu erkennen, sollten diese zu Beginn der Liste eingetragen werden.
+{{% /notice %}}  
+In den erlaubten HTML-Attributen, als Wert muss hierzu dann auch noch das Attribut mit eingefügt werden.  
+
+`<nav>` und `<input>` sind beispielsweise bereits in den erlaubten HTML-Tags vorhanden und kann damit einfach mit erlaubten Attributen erweitert werden.  
+Dazu als Schlüssel `nav` bzw. `input` eintragen und als Wert der gewünschte Wert - in unserem Beispiel `role` bzw. `type`.
+
+Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüssel `*` und als Wert `*` eintragen. Hierdurch sind alle Attribute für alle Elemente erlaubt.  
+
+
 
 
 ### Dateien und Bilder
