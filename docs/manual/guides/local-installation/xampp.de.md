@@ -58,7 +58,7 @@ Darüber hinaus könntest du optional auch die Einträge »allow_url_fopen«, »
 oder »file_uploads« überprüfen und anpassen.
 {{% /notice %}}
 
-## Die Appache-Konfiguration
+## Die Apache-Konfiguration
 
 Bei XAMPP bzw. Apache unter Windows ist der Default-Wert der sogenannten ThreadStackSize nur 1 MB, während der Wert auf Linux-Plattformen standardmäßig bei 8 MB liegt. Um Abstürze des lokalen Servers zu vermeiden, wird empfohlen, diesen Wert zu erhöhen.
 Ergänze dazu die Datei D:\xampp\apache\conf\httpd.conf am Ende durch folgenden Code um die ThreadThreadStackSize auf 8MB zu erhöhen 
