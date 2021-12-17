@@ -14,7 +14,7 @@ Contao bietet zahlreiche Möglichkeiten zur Inhaltserstellung. Die jeweiligen Vo
 Abwägung und Auswahl hilfreich sein. Als Beispiel hier anhand der Umsetzung eines »Frontend-Filters«:
 
 Die animierte Filterung beliebiger Inhalte wird gerne bei der Darstellung von z. B. Referenzen herangezogen 
-ohne das hierbei die Webseite neu geladen werden muß. Den zu filternden Inhalten müssen zunächst entsprechende 
+ohne dass hierbei die Webseite neu geladen werden muß. Den zu filternden Inhalten müssen zunächst entsprechende 
 Kategorien zugeordnet werden. Im Anschluß kann die Darstellung gezielt über diese Kategorien beeinflusst werden.
 
 
@@ -33,7 +33,7 @@ Bearbeitung für dich oder weitere Redakteure erfolgt bequem über die bekannten
 Dokumentation, gerade bei kostenfreien Erweiterungen, erfolgt zumeist über die entsprechenden GitHub-Seiten. Als
 Alternative findest du hilfreiche Unterstützung über die Community im [Contao Forum](https://community.contao.org/de/).
 <br><br><strong>Nachteil:</strong>  
-Bei einem Contao-Update oder Wechsel der PHP-Version kann es vorkommen, das die Erweiterung hierfür noch nicht ausgelegt 
+Bei einem Contao-Update oder Wechsel der PHP-Version kann es vorkommen, dass die Erweiterung hierfür noch nicht ausgelegt 
 ist. In diesem Fall bist du auf die Anpassungen des Autors angewiesen. Gerade bei kostenfreien Angeboten erhältst du aber 
 auch dann zeitnah Hilfe mit Unterstützung der [Contao Community](https://community.contao.org/de/).
 {{% /notice %}}
