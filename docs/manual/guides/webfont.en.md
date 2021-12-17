@@ -144,6 +144,10 @@ Web applications like »[Google Webfonts Helper](https://google-webfonts-helper.
 provides the Google web fonts in various file formats. Furthermore, depending on your selection, the appropriate CSS information via `@font-face` is supplied. This CSS information must be added to your own CSS file. It doesn't matter if you work directly with CSS files or if you use these 
 via [Preprocessors](/en/guides/sass-less-integration/) such as »Sass/Less«. 
 
+{{% notice info %}}
+If you are not sure which of the mentioned web applications you should use, [here is a post](https://webfontloader.altmann.de/about/#more) that clarifies the differences.
+{{% /notice %}}
+
 You then include the CSS file as an external stylesheet in the »Expert settings -> Stylesheets« within the 
 [page layout](/en/layout/theme-manager/manage-page-layouts/) section of your [theme](/en/layout/theme-manager/).
 
