@@ -68,6 +68,7 @@ Ergänze dazu die Datei `D:\xampp\apache\conf\httpd.conf` am Ende durch folgende
     ThreadStackSize 8388608
 </IfModule> 
 ```
+
 Danach muss XAMPP (Apache) neu gestartet werden.
 
 **Herzlichen Glückwunsch!** 
