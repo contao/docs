@@ -138,7 +138,7 @@ Dazu als Schlüssel `nav` bzw. `input` eintragen und als Wert der gewünschte We
 
 Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüssel `*` und als Wert `*` eintragen. Hierdurch sind alle Attribute für alle Elemente erlaubt.  
 
-![Sicherheitseinstellungen](/de/system/images/de/sicherheitseinstellungen.jpg?classes=shadow)
+![Sicherheitseinstellungen](/de/system/images/de/security-settings-de.png?classes=shadow)
 
 ### Dateien und Bilder
 
