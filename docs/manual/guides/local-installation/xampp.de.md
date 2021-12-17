@@ -67,6 +67,7 @@ Ergänze dazu die Datei D:\xampp\apache\conf\httpd.conf am Ende durch folgenden 
     ThreadStackSize 8388608
 </IfModule> 
 ```
+Danach muss XAMPP (Apache) neu gestartet werden.
 
 **Herzlichen Glückwunsch!** 
 Du hast alle Vorbereitungen für eine lokale Installation von Contao abgeschlossen.
@@ -164,7 +165,7 @@ Nutzung unseres neuen Verzeichnisses erst konfigurieren.
 `#LoadModule vhost_alias_module modules/mod_vhost_alias.so`. Entferne hier den Hashtag `#` und speichere deine Änderung. 
 Füge in der Datei `\apache\conf\extra\httpd-vhosts.conf` folgende Angaben hinzu:
 
-{{% notice info %}}
+```php
 <VirtualHost *:80>
   ServerAdmin webmaster@demo.local
   DocumentRoot "D:\vhost\demo\web"
