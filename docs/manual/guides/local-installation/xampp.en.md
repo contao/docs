@@ -52,6 +52,22 @@ the [Contao manager](/en/installation/contao-manager/). In addition, you can opt
 »allow_url_fopen«, »max_execution_time« or »file_uploads« and adjust them.
 {{% /notice %}}
 
+
+## Apache configuration
+
+XAMPP or Apache on Windows are having a default value of the so called `ThreadStackSize` of only 1 MB, while Linux 
+system are configured with a default value of 8 MB liegt. In order to avoid crashes of the local server, it is 
+recommended to increase the setting of this value.
+Add an entry to the file `D:\xampp\apache\conf\httpd.conf` to increase the `ThreadStackSize` to 8 MB
+
+```
+<IfModule mpm_winnt_module>
+    ThreadStackSize 8388608
+</IfModule> 
+```
+
+After this change XAMPP (Apache) has to be restarted.
+
 **Congratulations!** You have completed all preparations for a local Contao installation.
 
 
