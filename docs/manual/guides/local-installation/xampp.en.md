@@ -56,7 +56,7 @@ the [Contao manager](/en/installation/contao-manager/). In addition, you can opt
 ## Apache configuration
 
 XAMPP or Apache on Windows are having a default value of the so called `ThreadStackSize` of only 1 MB, while Linux 
-system are configured with a default value of 8 MB liegt. In order to avoid crashes of the local server, it is 
+system are configured with a default value of 8 MB. In order to avoid crashes of the local server, it is 
 recommended to increase the setting of this value.
 Add an entry to the file `D:\xampp\apache\conf\httpd.conf` to increase the `ThreadStackSize` to 8 MB
 
