@@ -14,7 +14,7 @@ Before you can contribute to the documentation, you need to do the following:
 is a version control service for software projects using [Git](https://en.wikipedia.org/wiki/Git) and is home to 
 among other things, the [Contao documentation](https://github.com/contao/docs/).
 - The documentation is written in [Markdown](https://en.wikipedia.org/wiki/Markdown), familiarize yourself with the 
-[syntax](https://docs.contao.org/manual/en/article-management/content-elements/#syntax) of this markup language. 
+[syntax](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) of this markup language. 
 familiar with it.
 
 
