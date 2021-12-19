@@ -46,19 +46,12 @@ Bearbeite den Inhalt, beschreibe deine Änderungen und klicke auf die Schaltflä
 
 ### Branch und Commit erzeugen
 
-GitHub wird nun einen Branch und einen Commit für deine Änderungen erzeugen. Ausserdem wird eine Vorschau deiner 
+GitHub wird nun einen neuen Branch in deinem Fork und einen Commit für deine Änderungen erzeugen. Ausserdem wird eine Vorschau deiner 
 Änderungen angezeigt:
 
 ![Branch und Commit erzeugen](/de/contributing/images/de/branch-und-commit-erzeugen.png?classes=shadow)
 
 Wenn alles korrekt ist, klicke auf die Schaltfläche »Create pull request«.
-
-{{% notice info %}}
-Im verteilten Versionierungssystem Git und somit auch auf GitHub werden Vorschläge als sog. »Pull-Requests« erstellt. 
-Da du keine Berechtigungen hast, direkt Änderungen im offiziellen Repository zu vollziehen (»to commit«), stellst du 
-eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Änderungen in das offizielle Repository zu 
-»ziehen« (engl. »to pull«).
-{{% /notice %}}
 
 
 ### Pull-Request erzeugen
@@ -70,6 +63,21 @@ Klicke erneut auf die Schaltfläche »Create pull request«.
 
 **Herzlichen Glückwunsch!** Du hast soeben einen Pull-Request für die offizielle Contao-Dokumentation erstellt! Die 
 Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
+
+{{% notice info %}}
+Im verteilten Versionierungssystem Git und somit auch auf GitHub werden Vorschläge als sog. »Pull-Requests« erstellt. 
+Da du keine Berechtigungen hast, direkt Änderungen im offiziellen Repository zu vollziehen (»to commit«), stellst du 
+eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Änderungen in das offizielle Repository zu 
+»ziehen« (engl. »to pull«).
+{{% /notice %}}
+
+
+### Weitere Änderungen vor dem Pull-Request hinzufügen
+
+Möchtest du vor dem Pull-Request noch weitere Inhalte bearbeiten, beispielsweise Anpassungen entsprechender Übersetzungen, wechselst du stattdessen 
+zunächst zu deinem Fork und wählst den neu erstellten Branch aus. Hier kannst du deine zusätzlichen Änderungen vornehmen und kommentieren.
+
+Im Anschluß kannst du dann abschließend den Pull-Request über »Contribute/Open pull request« starten.
 
 
 ### Fork aktualisieren
