@@ -45,19 +45,12 @@ Edit the content, describe your changes and click the "Propose file change" butt
 
 ### Create branch and commit
 
-GitHub will now create a branch and a commit for your changes and will show a preview of your 
+GitHub will now create a new branch within your fork and a commit for your changes and will show a preview of your 
 changes will be displayed:
 
 ![Create Branch and Commit](/de/contributing/images/de/branch-und-commit-erzeugen.png?classes=shadow)
 
 If everything is correct, click the "Create pull request" button.
-
-{{% notice info %}}
-In the distributed versioning system Git and thus also on GitHub, proposals are created as so-called "pull requests". 
-Since you do not have permission to commit changes directly to the official repository, you submit a 
-a request to the repository's authorizers to "pull" your changes into the official repository. 
-"to pull" your changes into the official repository.
-{{% /notice %}}
 
 
 ### Create pull request
@@ -69,6 +62,20 @@ Click the "Create pull request" button again.
 
 **Congratulations!** You have just created a pull request for the official Contao documentation! The 
 community will now review your pull request and (possibly) suggest changes.
+
+{{% notice info %}}
+In the distributed versioning system Git and thus also on GitHub, proposals are created as so-called "pull requests". 
+Since you do not have permission to commit changes directly to the official repository, you submit a 
+a request to the repository's authorizers to "pull" your changes into the official repository. 
+"to pull" your changes into the official repository.
+{{% /notice %}}
+
+
+### Adding further changes before the pull request
+
+If you want to edit more content before the pull request, for example by making adjustments to corresponding translations, switch to your fork instead and select the newly created branch. Here you can make your additional changes and comment them.
+
+Then you can finally start the pull request via "Contribute/Open pull request".
 
 
 ### Fork update
