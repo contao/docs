@@ -77,7 +77,7 @@ eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Än
 Möchtest du vor dem Pull-Request noch weitere Inhalte bearbeiten, beispielsweise Anpassungen entsprechender Übersetzungen, wechselst du stattdessen 
 zunächst zu deinem Fork und wählst den neu erstellten Branch aus. Hier kannst du deine zusätzlichen Änderungen vornehmen und kommentieren.
 
-Im Anschluß kannst du dann abschließend den Pull-Request über »Contribute/Open pull request« starten.
+Im Anschluss kannst du dann abschließend den Pull-Request über »Contribute/Open pull request« starten.
 
 
 ### Fork aktualisieren
