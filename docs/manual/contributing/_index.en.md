@@ -67,7 +67,6 @@ community will now review your pull request and (possibly) suggest changes.
 In the distributed versioning system Git and thus also on GitHub, proposals are created as so-called "pull requests". 
 Since you do not have permission to commit changes directly to the official repository, you submit a 
 request to the repository's authorizers to "pull" your changes into the official repository. 
-"to pull" your changes into the official repository.
 {{% /notice %}}
 
 
