@@ -54,6 +54,14 @@ GitHub wird nun einen neuen Branch in deinem Fork und einen Commit für deine Ä
 Wenn alles korrekt ist, klicke auf die Schaltfläche »Create pull request«.
 
 
+### Weitere Änderungen vor dem Pull-Request hinzufügen
+
+Möchtest du vor dem Pull-Request noch weitere Inhalte bearbeiten, beispielsweise Anpassungen entsprechender Übersetzungen, wechselst du stattdessen 
+zunächst zu deinem Fork und wählst den neu erstellten Branch aus. Hier kannst du deine zusätzlichen Änderungen vornehmen und kommentieren.
+
+Im Anschluss kannst du dann abschließend den Pull-Request über »Contribute/Open pull request« starten.
+
+
 ### Pull-Request erzeugen
 
 Auf der nächsten Seite kannst du, falls nötig, noch letzte Anpassungen an deinen Pull-Request vornehmen. 
@@ -70,14 +78,6 @@ Da du keine Berechtigungen hast, direkt Änderungen im offiziellen Repository zu
 eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Änderungen in das offizielle Repository zu 
 »ziehen« (engl. »to pull«).
 {{% /notice %}}
-
-
-### Weitere Änderungen vor dem Pull-Request hinzufügen
-
-Möchtest du vor dem Pull-Request noch weitere Inhalte bearbeiten, beispielsweise Anpassungen entsprechender Übersetzungen, wechselst du stattdessen 
-zunächst zu deinem Fork und wählst den neu erstellten Branch aus. Hier kannst du deine zusätzlichen Änderungen vornehmen und kommentieren.
-
-Im Anschluss kannst du dann abschließend den Pull-Request über »Contribute/Open pull request« starten.
 
 
 ### Fork aktualisieren
