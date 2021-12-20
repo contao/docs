@@ -64,20 +64,16 @@ Im Anschluss kannst du dann abschließend den Pull-Request über »Contribute/Op
 
 ### Pull-Request erzeugen
 
-Auf der nächsten Seite kannst du, falls nötig, noch letzte Anpassungen an deinen Pull-Request vornehmen. 
+Da du keine Berechtigungen hast, direkt Änderungen im offiziellen Repository zu vollziehen, stellst du
+eine Anfrage an die Berechtigten des Repositories deine Änderungen in das offizielle Repository zu übernehmen.
+
+Falls nötig, kannst du noch letzte Anpassungen an deinen Pull-Request vornehmen. 
 Klicke erneut auf die Schaltfläche »Create pull request«.
 
 ![Pull-Request erzeugen](/de/contributing/images/de/create-pull-request.png?classes=shadow)
 
 **Herzlichen Glückwunsch!** Du hast soeben einen Pull-Request für die offizielle Contao-Dokumentation erstellt! Die 
 Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
-
-{{% notice info %}}
-Im verteilten Versionierungssystem Git und somit auch auf GitHub werden Vorschläge als sog. »Pull-Requests« erstellt. 
-Da du keine Berechtigungen hast, direkt Änderungen im offiziellen Repository zu vollziehen (»to commit«), stellst du 
-eine Anfrage (engl. »Request«) an die Berechtigten des Repositories, deine Änderungen in das offizielle Repository zu 
-»ziehen« (engl. »to pull«).
-{{% /notice %}}
 
 
 ### Fork aktualisieren
