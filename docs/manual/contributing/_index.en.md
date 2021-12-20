@@ -53,6 +53,13 @@ changes will be displayed:
 If everything is correct, click the "Create pull request" button.
 
 
+### Adding further changes before the pull request
+
+If you want to edit more content before the pull request, for example by making adjustments to corresponding translations, switch to your fork instead and select the newly created branch. Here you can make your additional changes and comment them.
+
+Then you can finally start the pull request via "Contribute/Open pull request".
+
+
 ### Create pull request
 
 On the next page, you can make final adjustments to your pull request if necessary. 
@@ -68,13 +75,6 @@ In the distributed versioning system Git and thus also on GitHub, proposals are 
 Since you do not have permission to commit changes directly to the official repository, you submit a 
 request to the repository's authorizers to "pull" your changes into the official repository. 
 {{% /notice %}}
-
-
-### Adding further changes before the pull request
-
-If you want to edit more content before the pull request, for example by making adjustments to corresponding translations, switch to your fork instead and select the newly created branch. Here you can make your additional changes and comment them.
-
-Then you can finally start the pull request via "Contribute/Open pull request".
 
 
 ### Fork update
