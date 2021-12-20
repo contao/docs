@@ -62,19 +62,15 @@ Then you can finally start the pull request via "Contribute/Open pull request".
 
 ### Create pull request
 
-On the next page, you can make final adjustments to your pull request if necessary. 
+Since you do not have permissions to make changes directly to the official repository, you make a request to commit your changes to the official repository.
+
+You can make final adjustments to your pull request if necessary. 
 Click the "Create pull request" button again.
 
 ![Create pull request](/de/contributing/images/de/create-pull-request.png?classes=shadow)
 
 **Congratulations!** You have just created a pull request for the official Contao documentation! The 
 community will now review your pull request and (possibly) suggest changes.
-
-{{% notice info %}}
-In the distributed versioning system Git and thus also on GitHub, proposals are created as so-called "pull requests". 
-Since you do not have permission to commit changes directly to the official repository, you submit a 
-request to the repository's authorizers to "pull" your changes into the official repository. 
-{{% /notice %}}
 
 
 ### Fork update
