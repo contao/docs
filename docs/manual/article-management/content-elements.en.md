@@ -64,8 +64,7 @@ To make the creation of content as intuitive as possible, Contao provides a cont
 [Form](#form)<br>
 [Module](#module)<br>
 [Article teaser](#article-teaser)<br>
-[Comments](#comments)<br>
-[Custom template](#template)
+[Comments](#comments)
 {{% /expand %}}
 
 
@@ -1316,17 +1315,3 @@ The element generates the following HTML code:
 
 </div>
 ```
-
-
-## Custom Template {#template}
-
-The content element »Custom template« offers the possibility to select any template and to define your own, 
-individual placeholders which can be output in the respective template.
-
-| Info |   |
-| ---- | - |
-| **Template data:** | Specification of one or more key/value pairs. |
-| **Content element template:** | Here you can overwrite the default template `ce_template`. |
-
-{{< version "4.13" >}}
-
