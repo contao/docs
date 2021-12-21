@@ -1405,3 +1405,16 @@ Das Element generiert folgenden HTML-Code:
 
 </div>
 ```
+
+
+## Custom Template {#template}
+
+Das Inhaltselement »Custom template« bietet die Möglichkeit beliebige Templates auszuwählen und dabei 
+eigene, individuelle Platzhalter zu definieren die im jeweiligen Template ausgegeben werden können.
+
+| Info |   |
+| ---- | - |
+| **Template data:** | Angabe eines oder mehrerer Schlüssel/Wert Paare zur Ausgabe im Template. |
+| **Inhaltselement-Template:** | Hier kannst du das Standard-Template `ce_template` überschreiben. |
+
+{{< version "4.13" >}}
