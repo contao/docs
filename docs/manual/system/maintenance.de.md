@@ -86,6 +86,23 @@ Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den
 Frontend-Benutzer auch auf sie zugreifen darf.
 
 
+### Basic Authentication
+
+Oft wird eine Webseite vor der Veröffentlichung per »Basic Authentication« in der Produktiv- oder Staging-Umgebung geschützt. Damit der
+Crawler auch in diesem Fall weiterhin auf alle Seiten zugreifen kann, muss Benutzername und Passwort dafür in der Konfiguration hinterlegt
+werden. Dabei wird Benutzername und Passwort mit einem Doppelpunkt getrennt folgendermaßen definiert:
+
+```yml
+# config/config.yaml
+contao:
+    crawl:
+        default_http_client_options:
+            auth_basic: 'benutzername:passwort'
+```
+
+Weitere Konfigurationsmöglichkeiten für den Http-Client des Crawlers findet man in der [Symfony Dokumentation][HttpClientOptions].
+
+
 ## Daten bereinigen
 
 Neben den benutzergenerierten Inhalten speichert Contao verschiedene Systemdaten, die für die Suche oder das 
@@ -98,3 +115,4 @@ zu aktualisieren.
 
 [BackendSettings]: /de/system/einstellungen/
 [SymfonyUrlCommands]: https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands
+[HttpClientOptions]: https://symfony.com/doc/current/reference/configuration/framework.html#reference-http-client
