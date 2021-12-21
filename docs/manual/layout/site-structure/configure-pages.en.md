@@ -295,7 +295,7 @@ From section [Backend shortcuts](/de/administrationsbereich/backend-tastaturkuer
 **Shortcut keys:** A shortcut key is a single character associated with a page. Visitors to your site can then access that page directly from the keyboard. This function is especially required for accessible websites.
 
 
-### XML Sitemap
+## XML Sitemap
 
 Contao automatically creates an XML sitemap from the page structure of the website that can be read and analyzed by Google. To submit the sitemap URL to Google you need a Google account.
 
@@ -304,6 +304,11 @@ Which pages are included in the XML sitemap can be controlled by the Robots tag 
 **Create an XML Sitemap:** Here you activate the creation of the XML Sitemap.
 
 **Sitemap file name:** Enter the name of the Sitemap file here without the file extension `.xml`. Contao will automatically add the file extension when saving the file.
+
+{{% notice "info" %}}
+Since Contao **4.11** the sitemap is always available unter the `/sitemap.xml` path, e.g. `https://example.com/sitemap.xml`. If you have 
+more than one language under the same domain then the URLs of all languages will be collected in this sitemap.
+{{% /notice %}}
 
 
 ## Redirecting
