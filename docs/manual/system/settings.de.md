@@ -122,7 +122,7 @@ HTML-Tags festlegen.
 **Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
 Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeichern automatisch entfernt. Das Tag bzw. 
 der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B. 
-data-* benutzt werden.  
+data-* benutzt werden.
 
 **Beispiele:**  
 `<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden. Kann aber einfach unter Schlüssel eingefügt werden. 
