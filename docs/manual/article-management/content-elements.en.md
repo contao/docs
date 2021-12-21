@@ -20,7 +20,7 @@ To make the creation of content as intuitive as possible, Contao provides a cont
 ## Overview
 
 {{% expand "Text elements" %}}
-[Header](#title)<br>
+[Heading](#heading)<br>
 [Text](#text)<br>
 [HTML](#html)<br>
 [List](#list)<br>
