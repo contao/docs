@@ -146,7 +146,6 @@ doctrine:
                 default_table_options:
                     charset: utf8
                     collate: utf8_unicode_ci
-                    engine: MyISAM
 ```
 
 Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte oder abgeschnittene
