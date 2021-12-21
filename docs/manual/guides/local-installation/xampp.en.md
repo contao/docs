@@ -34,7 +34,7 @@ administrator rights.
 {{% /notice %}}
 
 
-## Die PHP Konfiguration
+## PHP configuration
 
 According to the [Contao system requirements](/en/installation/system-requirements/) we have to adjust the 
 PHP configuration once. To do this, first stop the modules »Apache« and »MySQL« in the »XAMPP Control-Panel«.
