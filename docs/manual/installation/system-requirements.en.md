@@ -140,7 +140,6 @@ doctrine:
                 default_table_options:
                     charset: utf8
                     collate: utf8_unicode_ci
-                    engine: MyISAM
 ```
 
 It is further recommended to run MySQL in "strict mode" to prevent corrupt or truncated
