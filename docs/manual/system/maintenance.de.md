@@ -100,7 +100,7 @@ contao:
             auth_basic: 'benutzername:passwort'
 ```
 
-Weitere Konfigurationsmöglichkeiten für den Http-Client des Crawlers findet man in der [Symfony Dokumentation][HttpClientOptions].
+Weitere Konfigurationsmöglichkeiten für den HTTP-Client des Crawlers findet man in der [Symfony Dokumentation][HttpClientOptions].
 
 
 ## Daten bereinigen
