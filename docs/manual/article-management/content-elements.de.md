@@ -14,13 +14,63 @@ den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 
 ![Den Zugriff auf ein Inhaltselement einschränken](/de/article-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png?classes=shadow)
 
-**Element schützen:** Das Inhaltselement ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein 
-Mitglied im Frontend angemeldet hat.
 
-**Erlaubte Mitgliedergruppen:** Hier legst du fest, wer Zugriff auf das Inhaltselement hat.
+| Info |
+| -----| - |
+| **Element schützen:** | Das Inhaltselement ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein Mitglied im Frontend angemeldet hat. |
+| **Erlaubte Mitgliedergruppen:** | Hier legst du fest, wer Zugriff auf das Inhaltselement hat. |
+| **Nur Gästen anzeigen:** |Das Inhaltselement ist standardmäßig sichtbar und wird ausgeblendet, sobald sich ein Mitglied im Frontend angemeldet hat. |
 
-**Nur Gästen anzeigen:** Das Inhaltselement ist standardmäßig sichtbar und wird ausgeblendet, sobald sich ein Mitglied 
-im Frontend angemeldet hat.
+
+## Übersicht
+
+{{% expand "Text-Elemente" %}}
+[Überschrift](#ueberschrift)<br>
+[Text](#text)<br>
+[HTML](#html)<br>
+[Aufzählung](#aufzaehlung)<br>
+[Tabelle](#tabelle)<br>
+[Code](#code)<br>
+[Markdown](#markdown)
+{{% /expand %}}
+
+{{% expand "Accordion" %}}
+[Einzelelement](#akkordeon)<br>
+[Umschlag Anfang](#akkordeon)<br>
+[Umschlag Ende](#akkordeon)
+{{% /expand %}}
+
+{{% expand "Content-Slider" %}}
+[Umschlag Anfang](#content-slider)<br>
+[Umschlag Ende](#content-slider)
+{{% /expand %}}
+
+{{% expand "Link-Elemente" %}}
+[Hyperlink](#hyperlink)<br>
+[Top-Link](#top-link)
+{{% /expand %}}
+
+{{% expand "Media-Elemente" %}}
+[Bild](#bild)<br>
+[Galerie](#galerie)<br>
+[Video/Audio](#video-audio)<br>
+[YouTube](#youtube)<br>
+[Vimeo](#vimeo)
+{{% /expand %}}
+
+{{% expand "Datei-Elemente" %}}
+[Download](#download)<br>
+[Downloads](#downloads)
+{{% /expand %}}
+
+{{% expand "Include-Elemente" %}}
+[Artikel](#artikel)<br>
+[Inhaltselement](#inhaltselement)<br>
+[Formular](#formular)<br>
+[Modul](#modul)<br>
+[Artikelteaser](#artikelteaser)<br>
+[Kommentare](#kommentare)
+{{% /expand %}}
 
 
 ## Überschrift {#ueberschrift}
@@ -44,7 +94,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Text
+## Text {#text}
 
 Das Inhaltselement »Text« fügt dem Artikel einen formatierten Text hinzu. Die Eingabe erfolgt über einen sogenannten 
 Rich Text Editor, der es dir ähnlich wie in einem Textverarbeitungsprogramm erlaubt, bestimmte Formatierungen auf 
@@ -148,7 +198,7 @@ Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
 ```
 
 
-## HTML
+## HTML {#html}
 
 Das Inhaltselement »HTML« fügt dem Artikel beliebigen HTML-Code hinzu. Beachte, dass nicht alle HTML-Tags standardmäßig 
 erlaubt sind. Die Liste der erlaubten Tags findest du in den Backend-Einstellungen.
@@ -190,7 +240,7 @@ Das Element generiert folgenden HTML-Code:
 Eine nummerierte Aufzählung verwendet das `<ol>`-Tag statt des `<ul>`-Tags.
 
 
-## Tabelle
+## Tabelle {#tabelle}
 
 Das Inhaltselement »Tabelle« fügt dem Artikel eine Tabelle hinzu. Beim Anlegen der Reihen und Spalten unterstützt dich 
 ein JavaScript-Assistent. Mit den folgenden Navigationsicons kannst du die Tabelle bearbeiten:
@@ -280,7 +330,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Code
+## Code {#code}
 
 Das Inhaltselement »Code« fügt dem Artikel formatierten Code hinzu. Die Eingabe erfolgt über einen sogenannten 
 Code-Editor. Contao verwendet den Open Source Code-Editor von [Ace](https://ace.c9.io/). 
@@ -328,7 +378,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Markdown
+## Markdown {#markdown}
 
 Mit dem Inhaltselement »Markdown« wird aus einem Markdown-Text HTML-Code erzeugt.
 
@@ -577,7 +627,7 @@ Für eine komplette Dokumentation zu Markdown Extra, besuche die
 [offizielle Webseite](http://michelf.ca/projects/php-markdown/extra).
 
 
-## Akkordeon
+## Akkordeon {#akkordeon}
 
 Der Akkordeon-Effekt erlaubt das Anlegen mehrerer Abschnitte, von denen jeweils nur einer geöffnet ist. Wird ein 
 anderer Abschnitt ausgewählt, schließt sich der erste automatisch.
@@ -646,7 +696,7 @@ Beachte, dass die Inhalte jedes Akkordeon-Abschnitts von jeweils zwei (!) `<div>
 umschlossen werden. Das ist notwendig, damit der Effekt browserübergreifend funktioniert und formatiert werden kann.
 
 
-## Content-Slider
+## Content-Slider {#content-slider}
 
 Mit dem Inhaltselement »Content-Slider« wird aus verschiedenen Inhaltselementen ein Slider erstellt.  
 
@@ -703,7 +753,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Hyperlink
+## Hyperlink {#hyperlink}
 
 Das Inhaltselement »Hyperlink« fügt dem Artikel einen Link auf eine externe Webseite oder eine E-Mail-Adresse hinzu. Du 
 kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement eingeben.
@@ -776,7 +826,7 @@ Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
 ```
 
 
-## Top-Link
+## Top-Link {#top-link}
 
 Das Inhaltselement »Top-Link« fügt dem Artikel einen Link hinzu, mit dem du an den Anfang der Seite springen kannst. 
 Das ist speziell bei langen Seiten sinnvoll.
@@ -798,7 +848,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Bild
+## Bild {#bild}
 
 Das Inhaltselement »Bild« fügt dem Artikel ein Bild hinzu. Ein Bild kann eine Großansicht haben oder als Bildlink auf 
 eine bestimmte URL verweisen.
@@ -847,7 +897,7 @@ div class="ce_image first last block">
 ```
 
 
-## Galerie
+## Galerie {#galerie}
 
 Das Inhaltselement »Bildergalerie« fügt dem Artikel eine Bildergalerie hinzu, also eine Sammlung mehrerer 
 Vorschaubilder (engl. »Thumbnails«), die in einer Liste aufgelistet sind und beim Anklicken vergrößert werden. Bei 
@@ -929,7 +979,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Video/Audio
+## Video/Audio {#video-audio}
 
 Das Inhaltselement »Video/Audio« fügt dem Artikel eine Video- bzw. Audio-Datei hinzu. 
 
@@ -981,7 +1031,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## YouTube
+## YouTube {#youtube}
 
 Das Inhaltselement »YouTube« fügt dem Artikel ein YouTube-Video hinzu. 
 
@@ -1059,7 +1109,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Vimeo
+## Vimeo {#vimeo}
 
 Das Inhaltselement »Vimeo« fügt dem Artikel ein Vimeo-Video hinzu. 
 
@@ -1132,7 +1182,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Download
+## Download {#download}
 
 Das Inhaltselement »Download« fügt dem Artikel einen Download-Link hinzu. Beim Anklicken des Links öffnet sich der 
 »Datei speichern unter …«-Dialog und du kannst die verlinkte Datei auf deinem lokalen Rechner speichern.
@@ -1170,7 +1220,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Downloads
+## Downloads {#downloads}
 
 Das Inhaltselement »Downloads« fügt dem Artikel mehrere Download-Links hinzu. Beim Anklicken eines Links öffnet sich 
 der »Datei speichern unter …«-Dialog, und du kannst die Datei auf deinem lokalen Rechner speichern.
@@ -1226,7 +1276,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Artikel
+## Artikel {#artikel}
 
 Das Inhaltselement »Artikel« ermöglicht die mehrfache Einbindung eines Artikels, ohne dass dieser dafür kopiert werden 
 muss. Beachte, dass nur die Inhaltselemente und nicht der Artikel-Header übernommen werden.
@@ -1236,7 +1286,7 @@ muss. Beachte, dass nur die Inhaltselemente und nicht der Artikel-Header übern
 Aliaselemente verwenden dasselbe HTML-Markup wie das Originalelement.
 
 
-## Inhaltselement
+## Inhaltselement {#inhaltselement}
 
 Das Inhaltselement »Inhaltselement« dient dazu, ein vorhandenes Inhaltselement ein zweites Mal einzufügen, ohne es 
 dafür kopieren zu müssen. Der Vorteil dieser Methode ist, dass du eventuelle Änderungen nur in dem originalen 
@@ -1247,7 +1297,7 @@ Inhaltselement erfassen musst und diese automatisch in allen Aliaselementen üb
 Aliaselemente verwenden dasselbe HTML-Markup wie das Originalelement.
 
 
-## Formular
+## Formular {#formular}
 
 Das Inhaltselement »Formular« fügt dem Artikel ein Formular hinzu. Informationen zur Erstellung und Verwaltung von 
 Formularen findest du im Abschnitt [Formulargenerator](../../formulargenerator/).
@@ -1255,7 +1305,7 @@ Formularen findest du im Abschnitt [Formulargenerator](../../formulargenerator/)
 **Formular:** Wähle hier das Formular aus, das du einfügen möchtest.
 
 
-## Modul
+## Modul {#modul}
 
 Das Inhaltselement »Modul« fügt dem Artikel ein Frontend-Modul hinzu. Wie du Module erstellst und konfigurierst, weißt 
 du ja bereits aus dem Abschnitt [Modulverwaltung](../../modulverwaltung/).
@@ -1265,7 +1315,7 @@ du ja bereits aus dem Abschnitt [Modulverwaltung](../../modulverwaltung/).
 Die HTML-Ausgabe richtet sich nach dem jeweiligen Modultyp.
 
 
-## Artikelteaser
+## Artikelteaser {#artikelteaser}
 
 Das Inhaltselement »Artikelteaser« fügt dem Artikel den Teasertext eines anderen Artikels, gefolgt von einem 
 Weiterlesen-Link, hinzu. Beim Anklicken dieses Links wirst du direkt zu dem verlinkten Artikel weitergeleitet.
@@ -1285,7 +1335,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Kommentare
+## Kommentare {#kommentare}
 
 Das Inhaltselement »Kommentare« bietet Besuchern die Möglichkeit, Kommentare auf deiner Webseite zu hinterlassen. Du 
 kannst auch ein Gästebuch damit betreiben.
