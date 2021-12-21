@@ -68,11 +68,7 @@ To make the creation of content as intuitive as possible, Contao provides a cont
 {{% /expand %}}
 
 
-<<<<<<< HEAD
 ## Heading
-=======
-## Heading {#heading}
->>>>>>> de09c717099ddf098eb72ba6b9a5bc529c4e1eeb
 
 The content element "Heading" adds a heading to the article. Most content elements support entering a heading directly, so you don't have to use the element separately each time.
 
