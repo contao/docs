@@ -1244,6 +1244,8 @@ The element generates the following HTML code:
 
 ## Custom Template {#template}
 
+{{< version "4.13" >}}
+
 The content element »Custom template« offers the possibility to select any template and to define your own, 
 individual placeholders which can be output in the respective template.
 
@@ -1251,5 +1253,3 @@ individual placeholders which can be output in the respective template.
 | ---- | - |
 | **Template data:** | Specification of one or more key/value pairs. |
 | **Content element template:** | Here you can overwrite the default template `ce_template`. |
-
-{{< version "4.13" >}}
