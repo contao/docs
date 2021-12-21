@@ -10,13 +10,65 @@ To make the creation of content as intuitive as possible, Contao provides a cont
 
 ![Restrict access to a content element](/de/article-management/images/en/restrict-access-to-a-module.png?classes=shadow)
 
-**Protect element:** The content element is invisible by default and is only displayed after a member has logged in to the frontend.
+| Info |
+| ----- | - |
+| **Protect element:** | The content element is invisible by default and is only displayed after a member has logged in to the frontend. |
+| **Allowed member groups:** | Here you define who has access to the content element. |
+| **Show guests only:** | The content element is visible by default and is hidden as soon as a member has logged in to the frontend. |
 
-**Allowed member groups:** Here you define who has access to the content element.
 
-**Show guests only:** The content element is visible by default and is hidden as soon as a member has logged in to the frontend.
+## Overview
 
-## Header {#header}
+{{% expand "Text elements" %}}
+[Header](#title)<br>
+[Text](#text)<br>
+[HTML](#html)<br>
+[List](#list)<br>
+[Table](#table)<br>
+[Code](#code)<br>
+[Markdown](#markdown)
+{{% /expand %}}
+
+{{% expand "Accordion" %}}
+[Single element](#accordion)<br>
+[Wrapper start](#accordion)<br>
+[Wrapper stop](#accordion)
+{{% /expand %}}
+
+{{% expand "Content slider" %}}
+[Wrapper start](#content-slider)<br>
+[Wrapper stop](#content-slider)
+{{% /expand %}}
+
+{{% expand "Link elements" %}}
+[Hyperlink](#hyperlink)<br>
+[Top Link](#top-link)
+{{% /expand %}}
+
+{{% expand "Media elements" %}}
+[Image](#image)<br>
+[Gallery](#gallery)<br>
+[Video/Audio](#video-audio)<br>
+[YouTube](#youtube)<br>
+[Vimeo](#vimeo)
+{{% /expand %}}
+
+{{% expand "File elements" %}}
+[Download](#download)<br>
+[Downloads](#downloads)
+{{% /expand %}}
+
+{{% expand "Include elements" %}}
+[Article](#article)<br>
+[Content element](#content-element)<br>
+[Form](#form)<br>
+[Module](#module)<br>
+[Article teaser](#article-teaser)<br>
+[Comments](#comments)
+{{% /expand %}}
+
+
+## Header {#title}
 
 The content element "Heading" adds a heading to the article. Most content elements support entering a heading directly, so you don't have to use the element separately each time.
 
@@ -33,7 +85,8 @@ The element generates the following HTML code:
 <h1 class="ce_headline first last">…</h1>
 ```
 
-## Text
+
+## Text {#text}
 
 The content element "Text" adds formatted text to the article. The input takes place via a so-called Rich Text Editor, which allows you to apply some formatting, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/), an Open Source editor by the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
 
@@ -115,7 +168,8 @@ If an image was added to the text, the HTML output looks like this:
 </div>
 ```
 
-## HTML
+
+## HTML {#html}
 
 The content element "HTML" adds arbitrary HTML code to the article. Note that not all HTML tags are allowed by default. The list of allowed tags can be configured in the backend settings.
 
@@ -125,7 +179,8 @@ The content element "HTML" adds arbitrary HTML code to the article. Note that no
 
 The content element has no enclosing HTML markup.
 
-## List
+
+## List {#list}
 
 The content element "List" adds a non-nested list to the article. You can choose between an ordered list and an unordered list enumeration. A JavaScript assistant supports you in creating and editing the list items.
 
@@ -151,7 +206,8 @@ The element generates the following HTML code:
 
 A numbered enumeration uses the `<ol>` tag instead of the `<ul>` tag.
 
-## Table
+
+## Table {#table}
 
 The content element "Table" adds a table to the article. A JavaScript assistant supports you in creating the rows and columns. You can edit the table with the following navigation icons:
 
@@ -228,7 +284,8 @@ The element generates the following HTML code:
 </div>
 ```
 
-## Code
+
+## Code {#code}
 
 The content element "Code" adds formatted code to the article. You enter the code with a so-called code editor. Contao uses the Open Source code editor from [Ace](https://ace.c9.io/).
 
@@ -273,7 +330,8 @@ For the output in the frontend to be properly formatted, the `js_highlight` temp
 </div>
 ```
 
-## Markdown
+
+## Markdown {#markdown}
 
 The content element "Markdown" is used to generate HTML code from a markdown text.
 
@@ -508,7 +566,8 @@ For complete documentation on Markdown, visit [the official website](http://dari
 
 For complete documentation on Markdown Extra, visit [the official website](http://michelf.ca/projects/php-markdown/extra).
 
-## Accordion
+
+## Accordion {#accordion}
 
 The accordion effect allows you to create several sections, of which only one is open at a time. If one section is selected, the first one closes automatically.
 
@@ -569,7 +628,8 @@ Otherwise the generated HTML code looks like this:
 
 Note that the contents of each accordion section is enclosed by two (!) `<div>` elements. This is necessary for the effect to work and be formatted across browsers.
 
-## Content slider
+
+## Content slider {#content-slider}
 
 With the content element "Content Slider" a slider is created from different content elements.
 
@@ -624,7 +684,8 @@ The element generates the following HTML code:
 </div>
 ```
 
-## Hyperlink
+
+## Hyperlink {#hyperlink}
 
 The Hyperlink content element adds a link to an external Web page or e-mail address to the article. Of course, you can also enter hyperlinks in the text element using the Rich Text Editor.
 
@@ -686,7 +747,8 @@ If an image link is used, the HTML output looks like this:
 </div>
 ```
 
-## Top link
+
+## Top link {#top-link}
 
 The content element "Top-Link" adds a link to the article, with which you can jump to the top of the page, which is especially useful for long pages.
 
@@ -705,7 +767,8 @@ The element generates the following HTML code:
 <!-- indexer::continue -->
 ```
 
-## Image
+
+## Image {#image}
 
 The content element "Image" adds an image to the article. An image can have a large view or it can be an image link to a specific URL.
 
@@ -745,7 +808,8 @@ div class="ce_image first last block">
 </div>
 ```
 
-## Gallery
+
+## Gallery {#gallery}
 
 The content element "Gallery" adds a picture gallery to the article, i.e. a collection of several thumbnails that are listed in a list and are enlarged when clicked. With so many images, the gallery can be spread over several pages.
 
@@ -817,7 +881,8 @@ The element generates the following HTML code:
 </div>
 ```
 
-## Video/Audio
+
+## Video/Audio {#video-audio}
 
 The content element "Video/Audio" adds a video or audio file to the article.
 
@@ -863,7 +928,8 @@ The element generates the following HTML code:
 </div>
 ```
 
-## YouTube
+
+## YouTube {#youtube}
 
 The YouTube content element adds a YouTube video to the article.
 
@@ -936,7 +1002,8 @@ The element generates the following HTML code:
 <!-- indexer::continue -->
 ```
 
-## Vimeo
+
+## Vimeo {#vimeo}
 
 The content element "Vimeo" adds a Vimeo video to the article.
 
@@ -1003,7 +1070,8 @@ The element generates the following HTML code:
 <!-- indexer::continue -->
 ```
 
-## Download
+
+## Download {#download}
 
 The content element "Download" adds a download link to the article. Clicking on the link opens the "Save file as ..." dialog and you can save the linked file to your local computer.
 
@@ -1036,7 +1104,8 @@ The element generates the following HTML code:
 </div>
 ```
 
-## Downloads
+
+## Downloads {#downloads}
 
 The content element "Downloads" adds several download links to the article. Clicking on a link opens the "Save file as ..." dialog and you can save the file on your local computer.
 
@@ -1084,7 +1153,8 @@ The element generates the following HTML code:
 </div>
 ```
 
-## Article
+
+## Article {#article}
 
 The content element "Article" allows multiple integration of an article without having to copy it. Note that only the content elements and not the article header are copied.
 
@@ -1092,7 +1162,8 @@ The content element "Article" allows multiple integration of an article without 
 
 Alias elements use the same HTML markup as the original element.
 
-## Content element
+
+## Content element {#content-element}
 
 The content element "Content element" is used to insert an existing content element a second time without having to copy it. The advantage of this method is that you only need to make changes in the original content element and these changes are automatically reflected in all alias elements.
 
@@ -1100,13 +1171,15 @@ The content element "Content element" is used to insert an existing content elem
 
 Alias elements use the same HTML markup as the original element.
 
-## Form
+
+## Form {#form}
 
 The content element "Form" adds a form to the article. For information on creating and managing forms, see the [Form Generator](/en/form-generator/) section.
 
 **Form:** Select the form you want to insert.
 
-## Module
+
+## Module {#module}
 
 The content element "Module" adds a frontend module to the article. You already know how to create and configure modules from the section [Module Management](/en/layout/module-management/).
 
@@ -1114,7 +1187,8 @@ The content element "Module" adds a frontend module to the article. You already 
 
 The HTML output depends on the module type.
 
-## Article teaser
+
+## Article teaser {#article-teaser}
 
 The content element "Article teaser" adds the teaser text of another article to the article, followed by a read more link. Clicking on this link will take you directly to the linked article.
 
@@ -1132,7 +1206,8 @@ The element generates the following HTML code:
 </div>
 ```
 
-## Comments
+
+## Comments {#comments}
 
 The content element "Comments" offers visitors the possibility to leave comments on your website. You can also run a guestbook with it.
 
