@@ -34,7 +34,7 @@ den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 [Markdown](#markdown)
 {{% /expand %}}
 
-{{% expand "Accordion" %}}
+{{% expand "Akkordeon" %}}
 [Einzelelement](#akkordeon)<br>
 [Umschlag Anfang](#akkordeon)<br>
 [Umschlag Ende](#akkordeon)
