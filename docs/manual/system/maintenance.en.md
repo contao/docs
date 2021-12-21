@@ -78,7 +78,7 @@ contao:
 Then create a new front end user and allow them to access the protected pages to be indexed.
 
 Later during the search, the protected pages will of course only appear in the results if the registered front end user 
-is allowed to access them.^
+is allowed to access them.
 
 
 ### Basic Authentication
