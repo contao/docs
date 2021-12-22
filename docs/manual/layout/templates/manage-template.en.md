@@ -25,7 +25,15 @@ Template files in other (non-linked) subdirectories won't be considered.
 Template file names contain a prefix that let you identify their type: `ce_`, for example, stands for **c**ontent
 **e**lement. If you want to adjust the output of the "Text" content element, you would use the `ce_text.html5` template.
 
-In this case, changes to the template will affect all content elements of type "Text". If this isn't what you're after,
+In this case, changes to the template will affect all content elements of type »Text«. If this isn't what you're after,
 you can also provide a specific variant template by appending an individual suffix to the existing name: `ce_text.html5`
 would then become `ce_text_specific.html5` for instance. This template will then be specifically selectable in any of
-the "Text" content elements.
+the »Text« content elements.
+
+
+### Twig Template
+
+{{< version "4.13" >}}
+
+If you want to provide the output of the content elements via Twig templates, the file extension `.html.twig` is used.
+For the purpose of individual template designation for a content element of the type »Text« then e.g. as `ce_text_individual.html.twig`.
