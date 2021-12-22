@@ -66,12 +66,13 @@ Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier füge
 ```twig
 {# templates/ce_image.html.twig #}
 
-{% extends '@Contao/block_searchable' %}
+{% extends '@Contao/ce_image' %}
 
 {% block content %}
-    {% include('@Contao/image') %}
+    {{ parent() }}
     
-    {{ include('image_copyright.html.twig', {name: "Dona Evans", license: "Creative Commons"}) }}
+    {{ include('image_copyright.html.twig', {name: "Dona Evans A", license: "Creative Commons B"}) }}
+
 {% endblock %}
 ```
 
