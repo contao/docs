@@ -6,8 +6,10 @@ aliases:
 weight: 50
 ---
 
-The available template context varies depending on the template source. Usually, the complete data can be accessed via
-`$this->…`.
+The available template context varies depending on the template source. 
+
+
+## PHP Template
 
 You can dump all available template data to see what's there:
 
@@ -22,3 +24,18 @@ display the data. In debug mode, the output will therefore be redirected to the 
 If you use [template inheritance]({{< ref "template-inheritance.en.md" >}}), the template data is only displayed in
 debug mode or if the statement is enclosed between `$this->block(…)` and `$this->endblock()` statements.
 {{% /notice %}}
+
+
+## Twig Template
+
+{{< version "4.13" >}}
+
+Within Twig Templates you can display all available or specific template data.
+The output is only done when debug mode is enabled.
+
+```twig
+{{ dump() }}
+{{ dump(varA) }}
+{{ dump(varA, varB) }}
+
+```

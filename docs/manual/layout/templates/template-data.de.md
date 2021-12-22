@@ -7,8 +7,10 @@ aliases:
 weight: 50
 ---
 
-Die verfügbaren Template-Daten variieren je nach Quelle der Vorlage. In der Regel ist der vollständige 
-Datensatz im Template über die Angabe von `$this->…` erreichbar.
+Die verfügbaren Template-Daten variieren je nach Quelle der Vorlage. 
+
+
+## PHP Template
 
 Du kannst dir alle verfügbaren Daten eines Templates anzeigen lassen: 
 
@@ -24,3 +26,18 @@ Falls du [Template-Vererbung]({{< ref "template-inheritance.de.md" >}}) nutzt, w
 [Debug-Modus]({{< ref "debug-mode.de.md" >}}) angezeigt oder wenn sich die Anweisung zwischen `$this->block(…)` und
 `$this->endblock()` befindet.
 {{% /notice %}}
+
+
+## Twig Template
+
+{{< version "4.13" >}}
+
+Innerhalb von Twig Templates kannst du dir alle verfügbaren oder gezielt einzelne Template-Daten anzeigen lassen.
+Die Ausgabe erfolgt lediglich bei aktivierten Debug-Modus.
+
+```twig
+{{ dump() }}
+{{ dump(varA) }}
+{{ dump(varA, varB) }}
+
+```
