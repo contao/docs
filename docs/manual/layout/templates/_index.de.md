@@ -10,7 +10,7 @@ weight: 40
 ---
 
 Ein Template wird zur Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponente 
-verwendet und beinhaltet HTML- und PHP-Code. Im 
+verwendet. Im 
 [Navigationsbereich](../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-navigationsbereich) »Layout« 
 unter »Templates« können die Dateien erstellt, in Ordnern abgelegt und bearbeitet werden. Diese Anpassungen sind updatesicher.
 
