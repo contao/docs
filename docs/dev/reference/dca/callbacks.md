@@ -47,7 +47,7 @@ permissions or to modify the Data Container Array dynamically at runtime.
 {{% expand "Parameters" %}}
 #### Back end
 
-* `\Contao\DataContainer` Data Container object
+* `\Contao\DataContainer` Data Container object or `null`
 
 **return:** _void_
 
