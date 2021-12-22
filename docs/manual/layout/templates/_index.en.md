@@ -22,4 +22,18 @@ In [debug mode](/en/system/debug-mode/), the template names in the HTML source c
 so you can see which template is being used.
 {{% /notice %}}
 
+
+## Twig support
+
+{{< version "4.13" >}}
+
+The output can, in addition to PHP templates, also be done via Twig Templats. Detailed information about this 
+is provided in the "[Developer Documentation](https://docs.contao.org/dev/framework/templates/twig/)".
+
+
+{{% taxonomylist context="tags" filter="Template" title="Anleitungen" description=true %}}
+
+
+
+
 {{% taxonomylist context="tags" filter="Template" title="Guides" description=true %}}
