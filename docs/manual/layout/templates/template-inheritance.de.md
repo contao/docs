@@ -12,6 +12,7 @@ einzelne Teilbereiche (Blöcke) angepasst.
 
 
 ### Blöcke anpassen
+
 Zur Gliederung umschließen viele Templates ihre Inhalte bereits in Teilbereiche (Blöcke). 
 Nur Inhalte, die in solchen Blöcken liegen, können angepasst werden.
 
