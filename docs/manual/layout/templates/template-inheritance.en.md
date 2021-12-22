@@ -10,6 +10,7 @@ Contao template inheritance allows overwriting only certain sections of a templa
 
 
 ### Adjust blocks
+
 Many templates already structure their contents. Only contents wrapped in such blocks can be adjusted.
 First, the base template must be declared. Then you can provide new block content.
 
