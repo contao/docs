@@ -1407,14 +1407,14 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Custom Template {#template}
+## Custom Template
 
 {{< version "4.13" >}}
 
-Das Inhaltselement »Custom template« bietet die Möglichkeit beliebige Templates auszuwählen und dabei 
-eigene, individuelle Platzhalter zu definieren die im jeweiligen Template ausgegeben werden können.
+Das Inhaltselement »Custom template« bietet die Möglichkeit ein Template auszuwählen und dabei individuelle 
+Platzhalter zu definieren die im jeweiligen Template ausgegeben werden können.
 
 | Info |   |
-| ---- | - |
-| **Template data:** | Angabe eines oder mehrerer Schlüssel/Wert Paare zur Ausgabe im Template. |
+| -----| - |
+| **Template data:** | Angabe eines oder mehrerer Schlüssel/Wert Paare. |
 | **Inhaltselement-Template:** | Hier kannst du das Standard-Template `ce_template` überschreiben. |
