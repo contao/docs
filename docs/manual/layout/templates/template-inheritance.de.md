@@ -27,6 +27,8 @@ Wir möchten lediglich eine weitere Meta-Angabe hinzufügen. Mittels `$this->par
 Inhalt des Blocks ausgeben. Dazu schreiben wir unser Template wie folgt:
 
 ```php
+// /templates/fe_page.html5
+
 <?php $this->extend('fe_page'); ?>
 
 <?php $this->block('meta'); ?>

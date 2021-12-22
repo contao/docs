@@ -20,6 +20,8 @@ The `fe_page.html` template contains multiple blocks (such as `head`, `meta`, `b
 another meta tag, we could write the following:
 
 ```php
+// /templates/fe_page.html5
+
 <?php $this->extend('fe_page'); ?>
 
 <?php $this->block('meta'); ?>

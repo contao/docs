@@ -7,6 +7,11 @@ aliases:
 weight: 40
 ---
 
+Ein Template kann in ein anderes Template eingefügt werden. 
+
+
+### PHP Beispiel
+
 Mit Hilfe der `insert()`-Funktion kann ein Template in ein anderes Template eingefügt werden. Die Funktion akzeptiert 
 die Übergabe von Variablen als optionalen zweiten Parameter.
 
@@ -17,12 +22,12 @@ die Übergabe von Variablen als optionalen zweiten Parameter.
 <?php $this->insert('template_name', $this->getData()); ?>
 ```
 
-#### Beispiel
 Wir erstellen ein Template `image_copyright.html5` mit folgendem Inhalt:
 
 ```php
 // image_copyright.html5
-<small>Fotografiert von <?php echo $this->name; ?>, lizenziert als <?php echo $this->license; ?></small>
+
+<small>Fotografiert von <?php echo $this->name; ?>, lizenziert als <?php echo $this->license; ?>.</small>
 ```
 
 Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier fügen wir z.&nbsp;B. dem `content` Block des
@@ -30,6 +35,7 @@ Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier füge
 
 ```php
 // ce_image_copyright.html5
+
 <?php $this->extend('ce_image'); ?>
 
 <?php $this->block('content'); ?>
@@ -40,7 +46,40 @@ Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier füge
 <?php $this->endblock(); ?>
 ```
 
+
+### Twig Beispiel
+
+{{< version "4.13" >}}
+
+Wir erstellen ein Template `image_copyright.html.twig` mit folgendem Inhalt:
+
+```twig
+{# /templates/image_copyright.html.twig #}
+
+<small>Fotografiert von {{ name }}, lizenziert als {{ license }}.</small>
+```
+
+Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier fügen wir z.&nbsp;B. dem `content` Block des
+`ce_image.html.twig` Templates unseren Copyright-Hinweis (`image_copyright.html.twig`) hinzu:
+
+
+```twig
+{# templates/ce_image.html.twig #}
+
+{% extends '@Contao/block_searchable' %}
+
+{% block content %}
+    {% include('@Contao/image') %}
+    
+    {{ include('image_copyright.html.twig', {name: "Dona Evans", license: "Creative Commons"}) }}
+{% endblock %}
+```
+
+
+### Ausgabe
+
 Wird das Template ausgegeben, erscheint nun unter dem Bild:
+
 ```html
-Fotografiert von Donna Evans, lizenziert als Creative Commons
+Fotografiert von Donna Evans, lizenziert als Creative Commons.
 ```

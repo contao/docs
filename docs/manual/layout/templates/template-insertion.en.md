@@ -6,6 +6,12 @@ aliases:
 weight: 40
 ---
 
+
+A template can be inserted into another template.
+
+
+### PHP Example
+
 The `insert()` function allows inserting a template into another one. You can pass variables as an optional second
 argument.
 
@@ -16,7 +22,6 @@ argument.
 <?php $this->insert('template_name', $this->getData()); ?>
 ```
 
-#### Example
 We create an `image_copyright.html5` template with the following content:
 
 ```php
@@ -39,7 +44,39 @@ This template can now be reused at any place. Here, we're for instance adding ou
 <?php $this->endblock(); ?>
 ```
 
+
+### Twig Example
+
+{{< version "4.13" >}}
+
+We create a template `image_copyright.html.twig` with the following content:
+
+```twig
+{# /templates/image_copyright.html.twig #}
+
+<small>Photographed by {{ name }}, licensed as {{ license }}.</small>
+```
+
+This template can now be reused anywhere. Here, for example, we add our copyright notice (`image_copyright.html.twig`) 
+to the content block of the `ce_image.html.twig` template:
+
+```twig
+{# templates/ce_image.html.twig #}
+
+{% extends '@Contao/block_searchable' %}
+
+{% block content %}
+    {% include('@Contao/image') %}
+    
+    {{ include('image_copyright.html.twig', {name: "Dona Evans", license: "Creative Commons"}) }}
+{% endblock %}
+```
+
+
+### Output
+
 When rendered, the template now shows:
+
 ```html
-Photographed by Donna Evans, licensed as Creative Commons
+Photographed by Donna Evans, licensed as Creative Commons.
 ```
