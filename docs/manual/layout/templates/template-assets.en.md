@@ -33,3 +33,10 @@ $GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static';
 Doing it this way, there are more options: By adding `|static`, for example, the files will be appended to or combined 
 with existing assets from page layouts. A detailed description of all options and output locations can be found in the
 developer documentation under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
+
+
+#### Twig template support
+
+{{< version "4.13" >}}
+
+When using Twig templates, the options for combined inclusion in the HTML header are not available.

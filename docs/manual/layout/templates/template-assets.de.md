@@ -7,7 +7,7 @@ aliases:
 weight: 20
 ---
 
-Oft werden zu einem individuellen Template zusätzliche Inhalte (»Assets«)m wie CSS- oder JavaScript-Dateien benötigt.
+Oft werden zu einem individuellen Template zusätzliche Inhalte (»Assets«) wie CSS- oder JavaScript-Dateien benötigt.
 Man kann diese Dateien grundsätzlich über das Seitenlayout eines Themes einbinden, allerdings werden sie dann immer
 geladen, egal ob sie auf einer Seite benötigt werden oder nicht. Es kann daher sinnvoll sein, Assets an spezifische
 Templates zu binden.
@@ -36,3 +36,10 @@ $GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static';
 Diese Umsetzung bietet weitere Optionen: Mit Angabe von `|static` werden die Dateien z.&nbsp;B. zu den bestehenden
 Assets eines Seitenlayouts hinzugefügt bzw. zusammengefasst. Eine detaillierte Beschreibung aller Optionen und
 Ausgabeorte findest du in der Entwickler-Dokumentation unter [Adding CSS & JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
+
+
+#### Twig Template Unterstützung
+
+{{< version "4.13" >}}
+
+Bei der Nutzung von Twig Templates stehen die Optionen zwecks kombinierter Einbindung im HTML-Header nicht zur Verfügung.
