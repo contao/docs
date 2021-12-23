@@ -36,4 +36,4 @@ the "Text" content elements.
 {{< version "4.13" >}}
 
 If you want to provide the output of the content elements via Twig templates, the file extension `.html.twig` is used.
-For the purpose of individual template designation for a content element of the type »Text« then e.g. as `ce_text_individual.html.twig`.
+For the purpose of individual template designation for a content element of the type "Text" then e.g. as `ce_text_individual.html.twig`.
