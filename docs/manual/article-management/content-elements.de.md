@@ -1412,7 +1412,7 @@ Das Element generiert folgenden HTML-Code:
 {{< version "4.13" >}}
 
 Das Inhaltselement »Custom template« bietet die Möglichkeit, ein Template auszuwählen und dabei individuelle 
-Platzhalter zu definieren die im jeweiligen Template ausgegeben werden können.
+Platzhalter zu definieren, die im jeweiligen Template ausgegeben werden können.
 
 | Info |   |
 | -----| - |
