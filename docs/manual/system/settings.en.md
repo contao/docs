@@ -122,6 +122,23 @@ attribute is not present in the list, it will be automatically removed when savi
 all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
 
 
+**Examples:**  
+`<iframe>` is not present in the allowed HTML tags, but can easily be inserted under key.
+
+{{% notice note %}}  
+In order to better recognise the HTML tags added by the user, these should be entered at the beginning of the list.
+{{% /notice %}}  
+
+In the permitted HTML attributes, the attribute must then also be inserted as a value for this.    
+
+`<nav>` and `<input>` are, for example, already present in the permitted HTML tags and can thus be easily extended with permitted attributes. 
+Enter `nav` or `input` as the key and the desired value as the value - in our example `role` or `type`.
+
+If you trust all backend users 100%, you can also enter `*` as the key and `*` as the value. This will allow all attributes for all elements.
+
+![Security settings](/de/system/images/en/security-settings-de.png?classes=shadow)
+
+
 ### Files and images
 
 **Download file types:** Here you can define which file types may be downloaded from your server.
