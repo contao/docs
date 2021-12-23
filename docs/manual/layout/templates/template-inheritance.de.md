@@ -26,8 +26,8 @@ Das Template `fe_page.html5` ist in mehrere Blöcke aufgeteilt (u.&nbsp;a. `head
 Wir möchten lediglich eine weitere Meta-Angabe hinzufügen. Mittels `$this->parent()` lässt sich der originale 
 Inhalt des Blocks ausgeben. Dazu schreiben wir unser Template wie folgt:
 
-```php
-// /templates/fe_page.html5
+```html
+<!-- templates/fe_page.html5 -->
 
 <?php $this->extend('fe_page'); ?>
 
