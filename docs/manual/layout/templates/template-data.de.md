@@ -39,5 +39,4 @@ Die Ausgabe erfolgt lediglich bei aktivierten Debug-Modus.
 {{ dump() }}
 {{ dump(varA) }}
 {{ dump(varA, varB) }}
-
 ```
