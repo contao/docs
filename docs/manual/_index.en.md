@@ -42,6 +42,14 @@ register the documentation as an additional search engine in your browser.
 - In "Settings/Search", enter an abbreviation: e.g. `@doc`.
 - Restart the browser and search in the address bar for e.g.:
 - `@docs inserttags`
+
+For newer versions:  
+- Go to this page  
+- Right click in the address bar  
+- In the context menu that opens, last line: `Add "Search Contao manual"`.  
+- In the address bar, search for e.g.: `inserttags`  
+- Below the address bar, a menu will open where you can also find the Contao icon at the bottom of the page, under `Search once with:`.  
+- Click on the Contao icon and a tag will be added to the left of the search term: `Contao manual`  
 {{% /expand %}}
 
 {{% expand "Browser Chrome" %}}
