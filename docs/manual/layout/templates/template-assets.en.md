@@ -6,9 +6,11 @@ aliases:
 weight: 20
 ---
 
+
 Oftentimes, templates require additional assets, such as CSS or JavaScript files. You *can* integrate them via your
 theme's page layout, but this also means they will always be loaded, no matter if they are needed or not. Luckily,
 you can also tie assets to specific templates.
+
 
 #### Adding assets
 
@@ -20,7 +22,11 @@ template:
 <script src="files/myfolder/custom.js"></script>
 ```
 
-If the assets should be included in the HTML header instead, you can use the following PHP code in your template:
+If the assets should be included in the HTML header instead, you can use the following code in your template:
+
+
+{{< tabs groupId="templateGroup">}}
+{{% tab name="PHP" %}}
 
 ```php
 <?php 
@@ -31,12 +37,20 @@ $GLOBALS['TL_JAVASCRIPT'][] = 'files/myfolder/custom.js|static';
 ```
 
 Doing it this way, there are more options: By adding `|static`, for example, the files will be appended to or combined 
-with existing assets from page layouts. A detailed description of all options and output locations can be found in the
-developer documentation under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
+with existing assets from page layouts. 
+
+A detailed description of all options and output locations can be found in the developer documentation 
+under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
 
 
-#### Twig template support
+{{% /tab %}}
+{{% tab name="Twig" %}}
+
 
 {{< version "4.13" >}}
 
-When using Twig templates, the options for combined inclusion in the HTML header are not available.
+``Need update ...``
+
+
+{{% /tab %}}
+{{< /tabs >}}
