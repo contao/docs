@@ -19,9 +19,8 @@ First, the base template must be declared. Then you can provide new block conten
 The `fe_page.html` template contains multiple blocks (such as `head`, `meta`, `body`, `footer`). If we only want to add
 another meta tag, we could write the following:
 
-```php
-// /templates/fe_page.html5
-
+```html
+<!-- templates/fe_page.html5 -->
 <?php $this->extend('fe_page'); ?>
 
 <?php $this->block('meta'); ?>
