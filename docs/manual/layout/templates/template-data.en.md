@@ -6,12 +6,15 @@ aliases:
 weight: 50
 ---
 
+
 The available template context varies depending on the template source. 
 
 
-## PHP Template
+{{< tabs groupId="templateGroup">}}
+{{% tab name="PHP" %}}
 
-You can dump all available template data to see what's there:
+
+Usually, the complete data can be accessed via `$this->…`. You can dump all available template data to see what's there:
 
 ```php
 <?php $this->dumpTemplateVars() ?>
@@ -26,7 +29,9 @@ debug mode or if the statement is enclosed between `$this->block(…)` and `$thi
 {{% /notice %}}
 
 
-## Twig Template
+{{% /tab %}}
+{{% tab name="Twig" %}}
+
 
 {{< version "4.13" >}}
 
@@ -38,3 +43,7 @@ The output is only done when debug mode is enabled.
 {{ dump(varA) }}
 {{ dump(varA, varB) }}
 ```
+
+
+{{% /tab %}}
+{{< /tabs >}}

@@ -7,19 +7,22 @@ aliases:
 weight: 50
 ---
 
+
 Die verfügbaren Template-Daten variieren je nach Quelle der Vorlage. 
 
 
-## PHP Template
+{{< tabs groupId="templateGroup">}}
+{{% tab name="PHP" %}}
 
-Du kannst dir alle verfügbaren Daten eines Templates anzeigen lassen: 
+
+In der Regel ist der vollständige Datensatz im Template über die Angabe von `$this->…` erreichbar.
 
 ```php
 <?php $this->dumpTemplateVars() ?>
 ```
 
 Die Anweisung verwendet die [Symfony VarDumper-Komponente](https://symfony.com/doc/current/components/var_dumper.html) 
-zur Anzeige der Template-Daten – im Debug-Modus wird die Ausgabe dabei an die Symfony Debug Toolbar umgeleitet.  
+zur Anzeige der Template-Daten. Im Debug-Modus wird die Ausgabe dabei an die Symfony Debug Toolbar umgeleitet.  
 
 {{% notice info %}}
 Falls du [Template-Vererbung]({{< ref "template-inheritance.de.md" >}}) nutzt, wird der Auszug der Template-Daten nur im 
@@ -28,7 +31,9 @@ Falls du [Template-Vererbung]({{< ref "template-inheritance.de.md" >}}) nutzt, w
 {{% /notice %}}
 
 
-## Twig Template
+{{% /tab %}}
+{{% tab name="Twig" %}}
+
 
 {{< version "4.13" >}}
 
@@ -40,3 +45,6 @@ Die Ausgabe erfolgt lediglich bei aktivierten Debug-Modus.
 {{ dump(varA) }}
 {{ dump(varA, varB) }}
 ```
+
+{{% /tab %}}
+{{< /tabs >}}
