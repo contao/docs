@@ -25,19 +25,38 @@ Template-Dateien in weiteren (unverknüpften) Unterordnern werden bei der Auswah
 ## Dateinamen
 
 Die Template-Dateien werden zur Erkennung mit einem Präfix versehen. Beispielsweise deutet `ce_` auf ein
-Inhaltselement (**c**ontent **e**lement) hin. Möchte man z.&nbsp;B. die Ausgabe des Inhaltselements vom Typ »Text«
-ändern, kann man das Template `ce_text.html5` hierzu verwenden. 
-
-In diesem Fall haben die Template-Änderungen Auswirkung auf alle Inhaltselemente vom Typ »Text«. Dies ist nicht immer
-erwünscht. Zur gezielten Nutzung kann man das Template individuell bezeichnen. Hierbei muss die jeweils vorgegebene
-Template-Bezeichnung beibehalten und lediglich erweitert werden: also z.&nbsp;B. `ce_text.html5` 
-umbenennen nach `ce_text_individuell.html5`. Dieses Template kann dann gezielt zur Ausgabe für ein (o. mehrere)
-Inhaltselement(e) vom Typ »Text« genutzt werden.
+Inhaltselement (**c**ontent **e**lement) hin. 
 
 
-### Twig Template
+{{< tabs groupId="templateGroup">}}
+{{% tab name="PHP" %}}
+
+
+Möchte man z.&nbsp;B. die Ausgabe des Inhaltselements vom Typ »Text« ändern, kann man das Template `ce_text.html5` 
+hierzu verwenden. In diesem Fall haben die Template-Änderungen Auswirkung auf alle Inhaltselemente vom Typ »Text«. 
+
+Dies ist nicht immer erwünscht. Zur gezielten Nutzung kann man das Template individuell bezeichnen. Hierbei muss die 
+jeweils vorgegebene Template-Bezeichnung beibehalten und lediglich erweitert werden: also z.&nbsp;B. `ce_text.html5` 
+umbenennen nach `ce_text_individuell.html5`. 
+
+Dieses Template kann dann gezielt zur Ausgabe für ein (o. mehrere) Inhaltselement(e) vom Typ »Text« genutzt werden.
+
+
+{{% /tab %}}
+{{% tab name="Twig" %}}
+
 
 {{< version "4.13" >}}
 
-Möchte man die Ausgabe der Inhaltselemente über Twig Templates bereit stellen, wird die Dateiendung `.html.twig` herangezogen.
-Zwecks individueller Template-Bezeichnung für ein Inhaltselements vom Typ »Text« dann z. B. als `ce_text_individuell.html.twig`.
+Möchte man z.&nbsp;B. die Ausgabe des Inhaltselements vom Typ »Text« ändern, kann man das Template `ce_text.html.twig` 
+hierzu verwenden. In diesem Fall haben die Template-Änderungen Auswirkung auf alle Inhaltselemente vom Typ »Text«. 
+
+Dies ist nicht immer erwünscht. Zur gezielten Nutzung kann man das Template individuell bezeichnen. Hierbei muss die 
+jeweils vorgegebene Template-Bezeichnung beibehalten und lediglich erweitert werden: also z.&nbsp;B. `ce_text.html.twig` 
+umbenennen nach `ce_text_individuell.html.twig`. 
+
+Dieses Template kann dann gezielt zur Ausgabe für ein (o. mehrere) Inhaltselement(e) vom Typ »Text« genutzt werden.
+
+
+{{% /tab %}}
+{{< /tabs >}}
