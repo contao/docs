@@ -73,7 +73,6 @@ to the content block of the `ce_image.html.twig` template:
 {% endblock %}
 ```
 
-
 ### Output
 
 When rendered, the template now shows:
