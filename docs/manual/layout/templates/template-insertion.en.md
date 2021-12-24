@@ -10,7 +10,9 @@ weight: 40
 A template can be inserted into another template.
 
 
-### PHP Example
+{{< tabs groupId="templateGroup">}}
+{{% tab name="PHP" %}}
+
 
 The `insert()` function allows inserting a template into another one. You can pass variables as an optional second
 argument.
@@ -18,14 +20,15 @@ argument.
 ```php
 <?php $this->insert('template_name', array('key'=>'value')); ?>
 
-// Passes all variables of the current template
+<?php // Passes all variables of the current template ?>
 <?php $this->insert('template_name', $this->getData()); ?>
 ```
 
 We create an `image_copyright.html5` template with the following content:
 
 ```php
-// image_copyright.html5
+<?php // image_copyright.html5 ?>
+
 <small>Photographed by <?php echo $this->name; ?>, licensed as <?php echo $this->license; ?></small>
 ```
 
@@ -33,7 +36,8 @@ This template can now be reused at any place. Here, we're for instance adding ou
 (`image_copyright.html5`) to the `content` block of the `ce_image.html5` template:
 
 ```php
-// ce_image_copyright.html5
+<?php // ce_image_copyright.html5 ?>
+
 <?php $this->extend('ce_image'); ?>
 
 <?php $this->block('content'); ?>
@@ -45,7 +49,9 @@ This template can now be reused at any place. Here, we're for instance adding ou
 ```
 
 
-### Twig Example
+{{% /tab %}}
+{{% tab name="Twig" %}}
+
 
 {{< version "4.13" >}}
 
@@ -72,6 +78,16 @@ to the content block of the `ce_image.html.twig` template:
 
 {% endblock %}
 ```
+
+{{% notice info %}}
+Twig templates live in namespaces like "@Contao_Global/ce_text.html.twig (/templates folder)". More Information about 
+available namespaces can be found [here](https://docs.contao.org/dev/framework/templates/twig/#namespace-magic).
+{{% /notice %}}
+
+
+{{% /tab %}}
+{{< /tabs >}}
+
 
 ### Output
 

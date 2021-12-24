@@ -71,7 +71,6 @@ Mittels `{{ parent() }}` lässt sich der originale Inhalt des Blocks ausgeben.
 ```
 
 {{% notice info %}}
-Twig templates live in namespaces like @Foo/my_template.html.twig (Foo) or @ContaoCore/Image/Studio/figure.html.twig (ContaoCore).
 Twig-Vorlagen befinden sich in Namespaces wie »@Contao_Global/ce_text.html.twig (/templates Verzeichnis)«. Weitere 
 Informationen zu verfügbaren Namespaces findest du [hier](https://docs.contao.org/dev/framework/templates/twig/#namespace-magic).
 {{% /notice %}}

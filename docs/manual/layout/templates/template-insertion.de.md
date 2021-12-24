@@ -7,10 +7,13 @@ aliases:
 weight: 40
 ---
 
+
 Ein Template kann in ein anderes Template eingefügt werden. 
 
 
-### PHP Beispiel
+{{< tabs groupId="templateGroup">}}
+{{% tab name="PHP" %}}
+
 
 Mit Hilfe der `insert()`-Funktion kann ein Template in ein anderes Template eingefügt werden. Die Funktion akzeptiert 
 die Übergabe von Variablen als optionalen zweiten Parameter.
@@ -18,14 +21,14 @@ die Übergabe von Variablen als optionalen zweiten Parameter.
 ```php
 <?php $this->insert('template_name', array('key'=>'value')); ?>
 
-// Übergibt alle Variablen aus dem aktuellen Template
+<?php // Übergibt alle Variablen aus dem aktuellen Template ?>
 <?php $this->insert('template_name', $this->getData()); ?>
 ```
 
 Wir erstellen ein Template `image_copyright.html5` mit folgendem Inhalt:
 
 ```php
-// image_copyright.html5
+<?php // image_copyright.html5 ?>
 
 <small>Fotografiert von <?php echo $this->name; ?>, lizenziert als <?php echo $this->license; ?>.</small>
 ```
@@ -34,7 +37,7 @@ Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier füge
 `ce_image.html5` Templates unseren Copyright-Hinweis (`image_copyright.html5`) hinzu:
 
 ```php
-// ce_image_copyright.html5
+<?php // ce_image_copyright.html5 ?>
 
 <?php $this->extend('ce_image'); ?>
 
@@ -45,6 +48,10 @@ Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier füge
 
 <?php $this->endblock(); ?>
 ```
+
+
+{{% /tab %}}
+{{% tab name="Twig" %}}
 
 
 ### Twig Beispiel
@@ -75,6 +82,15 @@ Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier füge
 
 {% endblock %}
 ```
+
+{{% notice info %}}
+Twig-Vorlagen befinden sich in Namespaces wie »@Contao_Global/ce_text.html.twig (/templates Verzeichnis)«. Weitere 
+Informationen zu verfügbaren Namespaces findest du [hier](https://docs.contao.org/dev/framework/templates/twig/#namespace-magic).
+{{% /notice %}}
+
+
+{{% /tab %}}
+{{< /tabs >}}
 
 
 ### Ausgabe
