@@ -163,6 +163,50 @@ $security->isGranted(ContaoNewsPermissions::USER_CAN_CREATE_ARCHIVES);
 {{% /notice %}}
 
 
+### Example
+
+By default admins can access everything and you can restrict access only for non-admins via back end user groups. The following example 
+implements a custom voter for your application which grants access to the "Maintenance" back end section only for the admin with ID "1".
+
+```php
+// src/Security/Voter/MaintenanceVoter.php
+namespace App\Security\Voter;
+
+use Contao\BackendUser;
+use Contao\CoreBundle\Security\ContaoCorePermissions;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authorization\Voter\Voter;
+
+class MaintenanceVoter extends Voter
+{
+    protected function supports(string $attribute, $subject)
+    {
+        // Let this voter only handle access to the "Maintenance" back end section
+        return $attribute === ContaoCorePermissions::USER_CAN_ACCESS_MODULE && 'maintenance' === $subject;
+    }
+
+    protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token)
+    {
+        // Get the currently logged in user
+        $user = $token->getUser();
+
+        // Check if user is actually a back end user
+        if (!$user instanceof BackendUser) {
+            return false;
+        }
+
+        // Let default access voter handle non-admins
+        if (!$user->isAdmin) {
+            return true;
+        }
+
+        // Only allow admin with ID "1"
+        return 1 === (int) $user->id;
+    }
+}
+```
+
+
 ## Custom Back End Access Rights
 
 To implement your own back end access rights (e.g. for custom modules in the back end) the following steps are necessary:
