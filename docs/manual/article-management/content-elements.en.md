@@ -277,7 +277,11 @@ For the output in the frontend to be properly formatted, the `js_highlight` temp
 
 The content element "Markdown" is used to generate HTML code from a markdown text.
 
-**code:** Here you can enter the desired markdown code. 
+| Markdown source |   |
+| --------------- | - |
+| **Text:** | Here you can enter the desired markdown code. |
+| **File:** | Here you can select a Markdown file and use it as content. {{< version-tag "4.12" >}} |
+
 
 **Individual template**: Here you can `ce_markdown` overwrite the default template.
 
