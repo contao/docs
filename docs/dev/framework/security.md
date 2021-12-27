@@ -165,7 +165,7 @@ $security->isGranted(ContaoNewsPermissions::USER_CAN_CREATE_ARCHIVES);
 
 ### Example
 
-By default admins can access everything and you can restrict access to back end section only for non-admins via back end user groups. The 
+By default admins can access everything and you can restrict access to back end sections only for non-admins via back end user groups. The 
 following example implements a custom voter for your application which grants access to the "Maintenance" back end section only for the 
 admin with ID "1".
 
