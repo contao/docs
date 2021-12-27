@@ -353,11 +353,7 @@ Das Element generiert folgenden HTML-Code:
 
 Nachfolgend einige Beispiele für die Markdown-Syntax:
 
-
-### Syntax
-
-#### Paragrafen
-
+{{% expand "Paragrafen" %}}
 Absätze werden durch eine Leerzeile erstellt:
 
 ```md
@@ -365,10 +361,10 @@ Erster Absatz
 
 Zweiter Absatz
 ``` 
+{{% /expand %}}
 
 
-#### Überschriften
-
+{{% expand "Überschriften" %}}
 Es sind sechs Ebenen für Überschriften möglich:
 
 ```md
@@ -379,10 +375,10 @@ Es sind sechs Ebenen für Überschriften möglich:
 ##### Überschrift 5
 ###### Überschrift 6
 ```
+{{% /expand %}}
 
 
-#### Wichtig
-
+{{% expand "Wichtig" %}}
 Um wichtigen Text zu markieren:
 
 ```md
@@ -394,10 +390,10 @@ Wird zu folgendem HTML-Code konvertiert:
 ```html
 <strong>strong</strong>
 ```
+{{% /expand %}}
 
 
-#### Hervorhebung
-
+{{% expand "Hervorhebung" %}}
 Um Text hervor zu heben:
 
 ```md
@@ -409,9 +405,10 @@ Wird zu folgendem HTML-Code konvertiert:
 ```html
 <em>emphasize</em>
 ```
+{{% /expand %}}
 
-#### Code
 
+{{% expand "Code" %}}
 Um einen Text als Computercode zu markieren:
 
 ```md
@@ -422,8 +419,10 @@ Wird zu folgendem HTML-Code konvertiert:
 ```html
 <code>monospaced font</code>
 ```
+{{% /expand %}}
 
-#### Code-Blöcke
+
+{{% expand "Code-Blöcke" %}}
 
 Um einen ganzen Absatz in Code zu konvertieren, den Text mit vier Leerzeichen einrücken.
 
@@ -431,28 +430,29 @@ Um einen ganzen Absatz in Code zu konvertieren, den Text mit vier Leerzeichen ei
     Schrift mit fester Laufweite ...
     ... über mehrere Zeilen
 ```
+{{% /expand %}}
 
-#### Zitat-Block
 
+{{% expand "Zitat-Block" %}}
 Zitatblöcke können durch eine rechte spitze Klammer am Beginn der Zeile erstellt werden.
 
 ```md
 > Dies ist ein Zitat.
 ```
+{{% /expand %}}
 
 
-#### Zeilenumbruch
-
+{{% expand "Zeilenumbruch" %}}
 Durch zwei oder mehr Leerzeichen am Ende einer Zeile wird ein Umbruch erzeugt:
 
 ```md
 Contao ist ein barrierefreies Open Source  
 content management system.
 ```
+{{% /expand %}}
 
 
-#### Links
-
+{{% expand "Links" %}}
 Es gibt zwei Möglichkeiten für Links: **inline** und **als Referenz**.
 
 Ein Inline-Link sieht wie folgt aus:
@@ -476,10 +476,10 @@ Ein Referenz-Link sieht wie folgt aus:
 ```
 
 Die Referenz kann an beliebiger Stelle im Dokument platziert werden.
+{{% /expand %}}
 
 
-#### Bilder
-
+{{% expand "Bilder" %}}
 Wie für Links gibt es auch für Bilder zwei Syntax-Möglichkeiten.
 
 Ein Inline-Bild sieht wie folgt aus:
@@ -497,10 +497,10 @@ Ein Bild im Referenz-Stil wird durch folgende Syntax erreicht:
 ```
 
 Die Referenz kann an beliebiger Stelle im Dokument platziert werden.
+{{% /expand %}}
 
 
-#### Aufzählungslisten
-
+{{% expand "Aufzählungslisten" %}}
 **Unsortierte Listen**
 
 Unsortierte Listen verwenden Sternzeichen oder Trennstriche:
@@ -526,6 +526,7 @@ Sortierte Listen verwenden Zahlen:
 2. Listeneintrag  
 3. Listeneintrag
 ```
+{{% /expand %}}
 
 
 ### Erweiterter Syntax
@@ -535,8 +536,7 @@ Aus diesem Grund gibt es ein Projekt für »Markdown Extra« um die Syntax zu er
 
 Nachfolgend einige Beispiele für die erweiterte Syntax:
 
-
-#### Tabellen
+{{% expand "Tabellen" %}}
 
 Eine Tabelle kann wie folgt erstellt werden:
 
@@ -555,10 +555,10 @@ Erste Kopfzeile | Zweite Kopfzeile | Dritte Kopfzeile
 Linksbündig     | Zentriert        | Rechtsbündig  
 Linksbündig     | Zentriert        | Rechtsbündig  
 ```
+{{% /expand %}}
 
 
-#### Fußnoten
-
+{{% expand "Fußnoten" %}}
 Fußnoten werden wie folgt erstellt:
 
 ```md
@@ -568,15 +568,12 @@ Dies ist ein Text mit Fußnote.[^1]
 ```
 
 Die Fußnoten-Definition kann an beliebiger Stelle im Dokument platziert werden.
+{{% /expand %}}
 
-
-### Weitere Informationen
 
 Für eine komplette Dokumentation zu Markdown, besuche die 
-[offizielle Webseite](http://daringfireball.net/projects/markdown/syntax).
-
-Für eine komplette Dokumentation zu Markdown Extra, besuche die 
-[offizielle Webseite](http://michelf.ca/projects/php-markdown/extra).
+[offizielle Webseite](http://daringfireball.net/projects/markdown/syntax). Für eine komplette Dokumentation zu 
+Markdown Extra, besuche die [offizielle Webseite](http://michelf.ca/projects/php-markdown/extra).
 
 
 ## Akkordeon

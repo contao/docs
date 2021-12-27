@@ -299,10 +299,7 @@ The element generates the following HTML code:
 
 Below are some examples of Markdown syntax:
 
-### Syntax
-
-#### Paragraphs
-
+{{% expand "Paragraphs" %}}
 Paragraphs are created by a blank line:
 
 ```md
@@ -310,9 +307,10 @@ First paragraph
 
 Second paragraph
 ```
+{{% /expand %}}
 
-#### Headlines
 
+{{% expand "Headlines" %}}
 Six levels of headings are possible:
 
 ```md
@@ -323,9 +321,10 @@ Six levels of headings are possible:
 ##### Headline 5
 ###### Headline 6
 ```
+{{% /expand %}}
 
-#### Important
 
+{{% expand "Important" %}}
 To highlight important text:
 
 ```md
@@ -338,9 +337,10 @@ Will be converted to the following HTML code:
 ```html
 <strong>strong</strong>
 ```
+{{% /expand %}}
 
-#### Highlighting
 
+{{% expand "Highlighting" %}}
 To highlight text:
 
 ```md
@@ -353,9 +353,10 @@ Converts to the following HTML code:
 ```html
 <em>emphasize</em>
 ```
+{{% /expand %}}
 
-#### Code
 
+{{% expand "Code" %}}
 To mark a text as computer code:
 
 ```md
@@ -367,35 +368,39 @@ Is converted to the following HTML code:
 ```html
 <code>monospaced font</code>
 ```
+{{% /expand %}}
 
-#### Code blocks
 
+{{% expand "Code blocks" %}}
 To convert an entire paragraph to code, indent the text with four spaces.
 
 ```md
     Monospac font ...
     ... spanning several lines
 ```
+{{% /expand %}}
 
-#### Quote block
 
+{{% expand "Quote block" %}}
 Citation blocks can be created by placing a right angle bracket at the beginning of the line.
 
 ```md
 > This is a quotation.
 ```
+{{% /expand %}}
 
-#### Line break
 
+{{% expand "Line break" %}}
 Two or more blanks at the end of a line create a line wrap:
 
 ```md
 Contao ist ein barrierefreies Open Source  
 content management system.
 ```
+{{% /expand %}}
 
-#### Links
 
+{{% expand "Links" %}}
 There are two possibilities for links: **inline** and **for reference**.
 
 An inline link looks like this:
@@ -419,9 +424,10 @@ A reference link looks like this:
 ```
 
 The reference can be placed anywhere in the document.
+{{% /expand %}}
 
-#### Images
 
+{{% expand "Images" %}}
 As for links, there are two syntax options for images.
 
 An inline image looks like this:
@@ -439,9 +445,10 @@ An image in reference style is achieved by the following syntax:
 ```
 
 The reference can be placed anywhere in the document.
+{{% /expand %}}
 
-#### Enumeration lists
 
+{{% expand "Enumeration lists" %}}
 **Unordered lists**
 
 Unordered lists use asterisks or hyphens:
@@ -467,6 +474,8 @@ Ordered lists use numbers:
 2. List entry  
 3. List entry
 ```
+{{% /expand %}}
+
 
 ### Extended Syntax
 
@@ -474,7 +483,7 @@ Not all HTML elements like tables or footnotes can be described with regular Mar
 
 Below are some examples of the extended syntax:
 
-#### Tables
+{{% expand "Tables" %}}
 
 A table can be created as follows:
 
@@ -493,9 +502,10 @@ First Headline  | Second Headline  | Third Headline
 left aligned    | centered         | right aligned  
 left aligned    | centered         | right aligned  
 ```
+{{% /expand %}}
 
-#### Footnotes
 
+{{% expand "Footnotes" %}}
 Footnotes are created as follows:
 
 ```md
@@ -505,11 +515,9 @@ This is a text with a footnote.[^1]
 ```
 
 The footnote definition can be placed anywhere in the document.
+{{% /expand %}}
 
-### Further information about footnotes
-
-For complete documentation on Markdown, visit [the official website](http://daringfireball.net/projects/markdown/syntax).
-
+For complete documentation on Markdown, visit [the official website](http://daringfireball.net/projects/markdown/syntax). 
 For complete documentation on Markdown Extra, visit [the official website](http://michelf.ca/projects/php-markdown/extra).
 
 ## Accordion
