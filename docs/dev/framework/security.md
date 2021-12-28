@@ -94,11 +94,19 @@ parameters used by Contao's login module).
 
 ## Voters
 
+{{< version "4.7" >}}
+
 Starting with Contao **4.7** Contao implements [Voters][SymfonyVoters] in order to easily check whether an authenticated user is authorized 
 to access specific resources. These voters are automatically added to Symfony's security system and then invoked when the respective
 permission is accessed via the [Security Helper][SecurityHelperService].
 
-{{< version "4.7" >}}
+{{% notice note %}}
+Contao automatically uses the `priority` 
+[access decision strategy](https://symfony.com/doc/current/security/voters.html#changing-the-access-decision-strategy) for any request that
+is either in Contao's `frontend` or `backend` scope. This means the first voter that does not abstain will decide on the vote. Thus if you 
+want to expand voting on a certain back end privilige you need to make sure that your voter abstains from any query it is not concerned 
+with and that the service has a priority higher than the default via the `security.voter` service tag.
+{{% /notice %}}
 
 The security helper can be used to check whether the currently authenticated user has access in the back end to specific forms, table fields
 (as defined via the DCA), folders and modules for example:
@@ -170,36 +178,46 @@ following example implements a custom voter for your application which grants ac
 admin with ID "1".
 
 ```php
-// src/Security/Voter/MaintenanceVoter.php
+// src/Security/Voter/AdminMaintenanceAccessVoter.php
 namespace App\Security\Voter;
 
 use Contao\BackendUser;
 use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
+use Symfony\Component\Security\Core\Security;
 
-class MaintenanceVoter extends Voter
+class AdminMaintenanceAccessVoter extends Voter
 {
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+
     protected function supports(string $attribute, $subject)
     {
-        // Let this voter only handle access to the "Maintenance" back end section
-        return $attribute === ContaoCorePermissions::USER_CAN_ACCESS_MODULE && 'maintenance' === $subject;
+        // Abstain, if we are not voting for maintenance back end module access
+        if ('maintenance' !== $subject || $attribute !== ContaoCorePermissions::USER_CAN_ACCESS_MODULE) {
+            return false;
+        }
+
+        // Get the currently logged in user
+        $user = $this->security->getUser();
+
+        // Abstain, if not back end admin
+        if (!$user instanceof BackendUser || !$user->isAdmin) {
+            return false;
+        }
+
+        return true;
     }
 
     protected function voteOnAttribute(string $attribute, $subject, TokenInterface $token)
     {
         // Get the currently logged in user
         $user = $token->getUser();
-
-        // Check if user is actually a back end user
-        if (!$user instanceof BackendUser) {
-            return false;
-        }
-
-        // Let default access voter handle non-admins
-        if (!$user->isAdmin) {
-            return true;
-        }
 
         // Only allow admin with ID "1"
         return 1 === (int) $user->id;
