@@ -521,6 +521,7 @@ option {
     padding: 0 25px 0 30px;
     margin: 0;
     font-weight: 300;
+    appearance: none;
     -webkit-appearance: none;
 }
 
