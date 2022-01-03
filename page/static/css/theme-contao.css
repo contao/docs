@@ -521,6 +521,7 @@ option {
     padding: 0 25px 0 30px;
     margin: 0;
     font-weight: 300;
+    -webkit-appearance: none;
 }
 
 .algolia-searchbox input[type="search"]::-webkit-input-placeholder {
