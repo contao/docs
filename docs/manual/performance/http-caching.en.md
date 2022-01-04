@@ -274,8 +274,8 @@ lists of irrelevant cookies, it has good default settings, but you can optimize 
 environment variables and tune it for performance.
 
 {{% notice idea %}}
-Are you wondering why Contao is configured by editing the `config.yaml` and the Contao Cache Proxy using environment variables?
-The `config.yaml` for Contao itself is application configuration. The included Contao Cache Proxy, however, needs to know its
+Are you wondering why Contao is configured by editing the `config.yml` and the Contao Cache Proxy using environment variables?
+The `config.yml` for Contao itself is application configuration. The included Contao Cache Proxy, however, needs to know its
 settings **before Contao** is even booted. Booting is exactly what we want to prevent.
 Thus, environment variables are the best choice for configuring our proxy.
 {{% /notice %}}

@@ -22,12 +22,12 @@ different settings again.
 ## Size Configuration
 
 As already mentioned you can pre-configure image sizes in the container configuration of your application 
-(`config/config.yaml`) via `contao.image.sizes` without the need to store them in the database. Here you can define 
+(`config/config.yml`) via `contao.image.sizes` without the need to store them in the database. Here you can define 
 multiple image sizes and their properties. The following is a basic example that creates two image size configurations 
 called `example` and `foobar` which will resize the images to a width of 512 or 1024 pixels respectively when selected:
 
 ```yaml
-# config/config.yaml
+# config/config.yml
 contao:
     image:
         sizes:
@@ -42,7 +42,7 @@ pixel and zoom fully into its _important part_ (if defined). Furthermore the ima
 densities and the `<img>` will have a CSS class called `example`: 
 
 ```yaml
-# config/config.yaml
+# config/config.yml
 contao:
     image:
         sizes:
@@ -231,7 +231,7 @@ contao:
 
 ### Translating Size Configurations
 
-Every configured image size will show up in the back end under the key given in the `config/config.yaml`. However, in
+Every configured image size will show up in the back end under the key given in the `config/config.yml`. However, in
 order to improve usability for your back end users you might want to have a better label for these size configurations.
 This is possible via Symfony translations by using the `image_sizes` translation domain. The translation label will be
 the name of the size according to your configuration. The following example would change the label for the `example` and

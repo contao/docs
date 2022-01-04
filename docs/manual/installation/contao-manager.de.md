@@ -205,7 +205,7 @@ In diesem Fall kannst du die [config.yml](/de/system/einstellungen/#config-yml) 
 Contao Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole einmalig den Anwendungs-Cache leeren.
 
 ```yml
-# config/config.yaml
+# config/config.yml
 contao_manager:
     manager_path: dein-name.phar.php
 ```

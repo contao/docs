@@ -76,7 +76,7 @@ Some additional parameters can be configured via the `config/config.yml`.
 The following config defines some example values: 
 
 ```yml
-# config/config.yaml
+# config/config.yml
 contao:
     backend:
         attributes:
@@ -449,7 +449,7 @@ The following example defines the administrator's e-mail address via an environm
 to 60 days:
 
 ```yaml
-# config/config.yaml
+# config/config.yml
 contao:
     localconfig:
         adminEmail: '%env(ADMIN_EMAIL)%'

@@ -79,7 +79,7 @@ Ein paar zusätzliche Parameter können über die `config/config.yml` konfigurie
 Die folgende Konfiguration definiert einige Beispielwerte:
 
 ```yml
-# config/config.yaml
+# config/config.yml
 contao:
     backend:
         attributes:
@@ -446,7 +446,7 @@ Das folgende Beispiel zeigt, wie man die E-Mail-Adresse des Systemadministrators
 Wiederherstellungsperiode auf 60 Tage verlängern könnte:
 
 ```yaml
-# config/config.yaml
+# config/config.yml
 contao:
     localconfig:
         adminEmail: '%env(ADMIN_EMAIL)%'
