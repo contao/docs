@@ -32,7 +32,7 @@ After reading a new issue, please label it either as <span class="label-bug">bug
 <span class="label-feature">feature</span>.
 
 If it is a bug, please also assign the ticket to the milestone of the version in which the bug needs to be fixed (e.g.
-`4.4`). Do not assign feature requests to a milestone. 
+`4.9`). Do not assign feature requests to a milestone. 
 
 New issues do not get an assignee by default.
 
@@ -41,7 +41,7 @@ New issues do not get an assignee by default.
 After reading a new PR, please label it either as <span class="label-bug">bug</span> or as
 <span class="label-feature">feature</span>.
 
-If the PR is targeted against an active version branch (e.g. `4.4`), please assign it to the corresponding milestone.
+If the PR is targeted against an active version branch (e.g. `4.9`), please assign it to the corresponding milestone.
 Do not assign PRs targeted against the `4.x` branch to a milestone.
 
 Please assign new PRs to their creator.
