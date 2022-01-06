@@ -124,7 +124,7 @@ Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeiche
 der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B. 
 data-* benutzt werden.
 
-**Password Hash:** Standardmäßig verwendet Contao den defaut der aktuellen PHP-Version, hier kannst du aber auch einen Wert festlegen. Dieses ist z.B. nötig wenn du das Passwort in ein weiteres System wie LDAP syncronisieren möchtest.
+**Passwort-Hash:** Standardmäßig verwendet Contao den Defaut der aktuellen PHP-Version, hier kannst du aber auch einen Wert festlegen. Dieses ist z. B. nötig wenn du das Passwort in ein weiteres System wie LDAP syncronisieren möchtest.
 
 Die folgende Konfiguration definiert einige Beispielwerte:
 
@@ -132,7 +132,7 @@ Die folgende Konfiguration definiert einige Beispielwerte:
 # config/config.yaml
 security:
   password_hashers:
-      Contao\User: 'auto' # bcrypt sha256 sah512 ...
+      Contao\User: 'auto' # Hash function: bcrypt, sha256, sah512 ...
 ```
 
 ### Dateien und Bilder
