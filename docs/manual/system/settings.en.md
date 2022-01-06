@@ -121,6 +121,18 @@ For input fields where the use of HTML is desired, you can specify a list of all
 attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for 
 all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
 
+**Password hash:** By default, Contao uses the defaut of the current PHP version, but you can also set a value. This 
+is necessary if you want to sync the password to another system like LDAP.
+
+The following configuration defines some example values:
+
+```yml
+# config/config.yaml
+security:
+  password_hashers:
+      Contao\User: 'auto' # Hash function: bcrypt, sha256, sah512 ...
+```
+
 
 **Examples:**  
 `<iframe>` is not present in the allowed HTML tags, but can easily be inserted under key.
