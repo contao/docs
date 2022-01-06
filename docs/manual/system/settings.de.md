@@ -663,7 +663,7 @@ php vendor/bin/contao-console cache:warmup --env=prod
 ### E-Mails asynchron senden
 
 Anstatt Contao E-Mails sofort im Zuge einer Server-Anfrage senden zu lassen (bspw. wenn ein Formular abgeschickt wird) besteht die
-Möglichkeit diese E-Mails stattdessen asynchron vom Server später versenden zu lassen. Dies könnte man aus folgenden Gründen brauchen:
+Möglichkeit diese E-Mails stattdessen später asynchron vom Server versenden zu lassen. Dies könnte man aus folgenden Gründen brauchen:
 
 * Die Antwort-Zeit der Anfrage verringern (in manchen Fällen kann der SMTP-Versand ein paar Sekunden beanspruchen).
 * Die Server-Last verringern, wenn eine stark frequentierte Website auch viele E-Mails versendet.
@@ -736,7 +736,7 @@ framework:
 {{% notice "note" %}}
 Anstatt den Messenger Transport direkt zu definieren können wie immer auch Umgebungsvariablen benutzt werden, falls man in verschiedenen
 Umgebungen verschiedene Transports haben möchte (bspw. lokal zum testen den 
-[InMemory Transport](https://symfony.com/doc/current/messenger.html#in-memory-transport)).
+[In Memory Transport](https://symfony.com/doc/current/messenger.html#in-memory-transport)).
 
 ```yaml
 # config/config.yaml
@@ -767,7 +767,7 @@ Bei einem minütlichen Aufruf würde das also den E-Mail Versand auf 600 E-Mails
 
 {{% notice "info" %}}
 In den Kommandos wird die Option `--time-limit=1` benutzt. Von Haus aus läuft der `messenger:consume` Prozess unendlich lang und verarbeitet
-alle E-Mails in dieser Zeit automatisch - und es müsste daher auch kein Cronjob eingerichetet werden. Um sicherzustellen, dass dieser 
+alle E-Mails in dieser Zeit automatisch - und es müsste daher auch kein Cronjob eingerichtet werden. Um sicherzustellen, dass dieser 
 Prozess läuft und ggf. neu gestartet wird könnten entsprechende Tools am Server verwendet werden. In Shared Hosting Umgebungen hat man diese
 Möglichkeit meist jedoch nicht, daher muss in der Cronjob Variante sichergestellt werden, dass der Prozess nur einmalig läuft. Mit der
 bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens einer Sekunde beendet. Nähere Details dazu findet man in der 

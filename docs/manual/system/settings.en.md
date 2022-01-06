@@ -733,7 +733,7 @@ framework:
 {{% notice "note" %}}
 Instead of defining the Messenger transport directly we can also use environment variables as usual, in case you want to use different
 transports in different environments (e.g. using the 
-[InMemory transport](https://symfony.com/doc/current/messenger.html#in-memory-transport) locally for testing).
+[In Memory transport](https://symfony.com/doc/current/messenger.html#in-memory-transport) locally for testing).
 
 ```yaml
 # config/config.yaml
