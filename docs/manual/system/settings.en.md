@@ -658,7 +658,7 @@ php vendor/bin/contao-console cache:warmup --env=prod
 {{% /notice %}}
 
 
-### Send Emails asynchronously
+### Send Emails Asynchronously
 
 Instead of letting Contao send emails immediately when a request is processed (e.g. when a form was submitted) the email can be sent 
 asynchronously by the server later. There are several reasons why this can be important:
