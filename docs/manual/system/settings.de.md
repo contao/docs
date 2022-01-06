@@ -660,8 +660,128 @@ php vendor/bin/contao-console cache:warmup --env=prod
 {{% /notice %}}
 
 
+### E-Mails asynchron senden
+
+Anstatt Contao E-Mails sofort im Zuge einer Server-Anfrage senden zu lassen (bspw. wenn ein Formular abgeschickt wird) besteht die
+Möglichkeit diese E-Mails stattdessen später asynchron vom Server versenden zu lassen. Dies könnte man aus folgenden Gründen brauchen:
+
+* Die Antwort-Zeit der Anfrage verringern (in manchen Fällen kann der SMTP-Versand ein paar Sekunden beanspruchen).
+* Die Server-Last verringern, wenn eine stark frequentierte Website auch viele E-Mails versendet.
+* Kontrolle über die Menge an E-Mails pro Zeiteinheit (falls das in der jeweiligen Server-Umgebung limitiert ist).
+* Kein Verlust von E-Mails, falls der SMTP-Server gerade nicht zur Verfügung steht.
+
+
+#### E-Mail Spooling via Swiftmailer
+
+In Contao **4.9** kann das [Spooling Feature des Symfony Swiftmailer Bundles][SwiftmailerSpooling] benutzt werden. Um das E-Mail Spooling zu
+aktivieren muss folgendes in die `config/config.yaml` eingetragen werden:
+
+```yaml
+# config/config.yaml
+swiftmailer:
+    spool:
+        type: file
+        path: '%kernel.project_dir%/var/spool'
+``` 
+
+In diesem Fall bedienen wir uns dem _File_ Spool, das heißt wenn Contao eine E-Mail sendet wird diese zuerst als Datei in das angegebene
+Verzeichnis abgelegt. In der beschriebenen Konfiguration wird der Ordner `var/spool/` der Contao Installation benutzt (beachte, dass dieser
+Ordner nicht verloren geht, wenn Deployments benutzt werden, damit dabei auch keine E-Mails verloren gehen).
+
+Um die E-Mails nun tatsächlich senden lassen zu können, muss folgendes Kommando auf der Kommandozeile ausgeführt werden:
+
+```bash
+php vendor/bin/contao-console swiftmailer:spool:send
+```
+
+Anstatt dies manuell aufzurufen sollte dieses Kommando als minütlicher Cronjob am Server eingerichtet werden. Will man pro Aufruf bspw. nur
+10 E-Mails verschicken, kann die `--message-limit` Option benutzt werden:
+
+```bash
+php vendor/bin/contao-console swiftmailer:spool:send --message-limit=10
+```
+
+Bei einem minütlichen Aufruf würde das also den E-Mail Versand auf 600 E-Mails pro Stunde beschränken.
+
+
+#### Asynchrone E-Mails mit Symfony Mailer
+
+{{< version "4.10" >}}
+
+Ab Contao **4.10** steht das Swiftmailer Bundle nicht mehr von Haus aus zur Verfügung, statt dessen nutzt Contao 
+[Symfony Mailer][SymfonyMailer]. Um E-Mail asnychron senden zu können wird in diesem Fall die [Symfony Messenger][SymfonyMessenger]
+Komponente benötigt. Diese muss zuerst via Composer installiert werden:
+
+```bash
+composer require symfony/messenger
+```
+
+Danach können wir einen Messenger Transport definieren und das Routing für E-Mail Messages festlegen. Zuerst müssen wir uns jedoch dafür
+entscheiden, welchen Messenger Transport wir nutzen wollen. Symfony Messenger stellt verschiedene [Transports][SymfonyMessengerTransports]
+von Haus aus zur Verfügung. Für unsere Zwecke eignet sich der [Doctrine Transport][SymfonyMessengerDoctrine], damit werden die E-Mails
+zuerst in der Datenbank gespeichert und können später abgearbeitet werden. Um nun den asynchronen Versand über Symfony Mailer zu aktivieren
+muss [folgendes konfiguriert werden][SmyonfyMailerMessenger]:
+
+```yaml
+# config/config.yaml
+framework:
+    messenger:
+        transports:
+            async: 'doctrine://default'
+
+        routing:
+            'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
+```
+
+{{% notice "note" %}}
+Anstatt den Messenger Transport direkt zu definieren können wie immer auch Umgebungsvariablen benutzt werden, falls man in verschiedenen
+Umgebungen verschiedene Transports haben möchte (bspw. lokal zum testen den 
+[In Memory Transport](https://symfony.com/doc/current/messenger.html#in-memory-transport)).
+
+```yaml
+# config/config.yaml
+framework:
+    messenger:
+        transports:
+            async: "%env(MESSENGER_TRANSPORT_DSN)%"
+
+        routing:
+            'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
+```
+{{% /notice %}}
+
+Um den Symfony Messenger die E-Mails nun tatsächlich senden zu lassen, muss folgendes Kommando ausgeführt werden:
+
+```bash
+php vendor/bin/contao-console messenger:consume --time-limit=1
+```
+
+Anstatt dies manuell aufzurufen sollte dieses Kommando als minütlicher Cronjob am Server eingerichtet werden. Will man pro Aufruf bspw. nur
+10 E-Mails verschicken, kann die `--limit` Option benutzt werden:
+
+```bash
+php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
+```
+
+Bei einem minütlichen Aufruf würde das also den E-Mail Versand auf 600 E-Mails pro Stunde beschränken.
+
+{{% notice "info" %}}
+In den Kommandos wird die Option `--time-limit=1` benutzt. Von Haus aus läuft der `messenger:consume` Prozess unendlich lang und verarbeitet
+alle E-Mails in dieser Zeit automatisch - und es müsste daher auch kein Cronjob eingerichtet werden. Um sicherzustellen, dass dieser 
+Prozess läuft und ggf. neu gestartet wird könnten entsprechende Tools am Server verwendet werden. In Shared Hosting Umgebungen hat man diese
+Möglichkeit meist jedoch nicht, daher muss in der Cronjob Variante sichergestellt werden, dass der Prozess nur einmalig läuft. Mit der
+bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens einer Sekunde beendet. Nähere Details dazu findet man in der 
+[Symfony Dokumentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
+{{% /notice %}}
+
+
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
 [InsertTags]: /de/artikelverwaltung/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
 [LegacyRouting]: /de/layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
 [PhpSessionSettings]: https://www.php.net/manual/de/session.configuration.php
+[SwiftmailerSpooling]: https://symfony.com/doc/4.2/email/spool.html
+[SymfonyMessenger]: https://symfony.com/doc/current/messenger.html
+[SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
+[SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
+[SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
