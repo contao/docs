@@ -130,7 +130,7 @@ The following configuration defines some example values:
 # config/config.yaml
 security:
   password_hashers:
-      Contao\User: 'auto' # Hash function: bcrypt, sha256, sah512 ...
+      Contao\User: 'auto' # Hash function: bcrypt, sha256, sha512 ...
 ```
 
 
