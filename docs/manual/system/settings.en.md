@@ -121,6 +121,35 @@ For input fields where the use of HTML is desired, you can specify a list of all
 attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for 
 all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
 
+**Password hash:** By default, Contao uses the defaut of the current PHP version, but you can also set a value. This 
+is necessary if you want to sync the password to another system like LDAP.
+
+The following configuration defines some example values:
+
+```yml
+# config/config.yaml
+security:
+  password_hashers:
+      Contao\User: 'auto' # Hash function: bcrypt, sha256, sha512 ...
+```
+
+
+**Examples:**  
+`<iframe>` is not present in the allowed HTML tags, but can easily be inserted under key.
+
+{{% notice note %}}  
+In order to better recognise the HTML tags added by the user, these should be entered at the beginning of the list.
+{{% /notice %}}  
+
+In the permitted HTML attributes, the attribute must then also be inserted as a value for this.    
+
+`<nav>` and `<input>` are, for example, already present in the permitted HTML tags and can thus be easily extended with permitted attributes. 
+Enter `nav` or `input` as the key and the desired value as the value - in our example `role` or `type`.
+
+If you trust all backend users 100%, you can also enter `*` as the key and `*` as the value. This will allow all attributes for all elements.
+
+![Security settings](/de/system/images/en/security-settings-en.png?classes=shadow)
+
 
 ### Files and images
 
@@ -629,8 +658,128 @@ php vendor/bin/contao-console cache:warmup --env=prod
 {{% /notice %}}
 
 
+### Send Emails Asynchronously
+
+Instead of letting Contao send emails immediately when a request is processed (e.g. when a form was submitted) the email can be sent 
+asynchronously by the server later. There are several reasons why this can be important:
+
+* It reduces the server response time of such requests (in some cases sending via a defined SMTP server can take several seconds).
+* It can reduce the load on the web server on high volume sites that also send a lot of emails.
+* It allows you to control the amount of emails in a given unit of time (e.g. if the SMTP server imposes a limit on that).
+* No emails will be lost in case the SMTP server happens to be unreachable at the moment.
+
+
+#### Email Spooling via Swiftmailer
+
+You can use the [Swiftmailer bundle's spooling feature][SwiftmaielrSpooling] in Contao **4.9**. In order to enable spooling the following
+needs to be configurted in your `config/config.yaml`:
+
+```yaml
+# config/config.yaml
+swiftmailer:
+    spool:
+        type: file
+        path: '%kernel.project_dir%/var/spool'
+```
+
+In this case we are using the _file_ spool. This means that when Contao sends an email it will be first stored in the given folder,
+`var/spool/` within the Contao installation folder in this case (keep in mind to not lose this folder if you are using deployments, so that
+no emails get lost).
+
+In order to actually send the emails the following command can be used:
+
+```bash
+php vendor/bin/contao-console swiftmailer:spool:send
+```
+
+Instead of manually executing this command a minutely cronjob should be configured on the server. If you want to limit the amount of emails
+per call you can use the `--message-limit` option:
+
+```bash
+php vendor/bin/contao-console swiftmailer:spool:send --message-limit=10
+```
+
+With a minutely cronjob this would mean that at most 600 emails are sent per hour in this case.
+
+
+#### Asynchronous Emails with Symfony Mailer
+
+{{< version "4.10" >}}
+
+The Swiftmaielr Bundle is not available anymore by default since Contao **4.10**. Instead the [Symfony Mailer][SymfonyMailer] component is
+used. In order to send emails asynchronously in this case we can make use of the [Symfony Messenger][SymfonyMessenger] component, which must
+be installed first via Composer:
+
+```bash
+composer require symfony/messenger
+```
+
+Now we can define a Messenger transport and routing for email messages. First we need to decide on the type of Messenger transport though.
+The component already provides different [transport types][SymfonyMessengerTransports]. In this case the 
+[Doctrine transport][SymfonyMessengerDoctrine] is a good fit since it will save our emails in the database first for later consumption.
+In order to enable asynchronous emails via Symfony Mailer [the following needs to be configured][SmyonfyMailerMessenger]:
+
+```yaml
+# config/config.yaml
+framework:
+    messenger:
+        transports:
+            async: 'doctrine://default'
+
+        routing:
+            'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
+```
+
+{{% notice "note" %}}
+Instead of defining the Messenger transport directly we can also use environment variables as usual, in case you want to use different
+transports in different environments (e.g. using the 
+[In Memory transport](https://symfony.com/doc/current/messenger.html#in-memory-transport) locally for testing).
+
+```yaml
+# config/config.yaml
+framework:
+    messenger:
+        transports:
+            async: "%env(MESSENGER_TRANSPORT_DSN)%"
+
+        routing:
+            'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
+```
+{{% /notice %}}
+
+In order to let the Messenger actually send the emails now we can use the following command:
+
+```bash
+php vendor/bin/contao-console messenger:consume --time-limit=1
+```
+
+Instead of manually executing this command a minutely cronjob should be configured on the server. If you want to limit the amount of emails
+per call you can use the `--limit` option:
+
+```bash
+php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
+```
+
+With a minutely cronjob this would mean that at most 600 emails are sent per hour in this case.
+
+{{% notice "info" %}}
+The commands described above use the `--time-limit=1` option. By default the `messenger:consume` process will run indefinitely, processing
+any new messages continuously. Therefore you would not need to run a separate cronjob. In order to make sure that this process is always
+running and is restarted on demand, different tools can be used on the server. However, in shared hosting environments such tools are
+usually not available. Thus, when using a cronjob you need to make sure that the process will only run a limited time when executed. The
+aforementioned `--time-limit=1` option will cause the process to exit after one second. You can find more details in the 
+[Symfony documentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
+{{% /notice %}}
+
+
+
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
 [InsertTags]: /en/article-management/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
 [LegacyRouting]: /en/layout/site-structure/configure-pages/#legacy-routing-mode
 [PhpSessionSettings]: https://www.php.net/manual/en/session.configuration.php
+[SwiftmailerSpooling]: https://symfony.com/doc/4.2/email/spool.html
+[SymfonyMessenger]: https://symfony.com/doc/current/messenger.html
+[SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
+[SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
+[SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async

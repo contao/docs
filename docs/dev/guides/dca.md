@@ -337,6 +337,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             function () {
                 $db = \Contao\Database::getInstance();
                 $pid = \Contao\Input::get('pid');
+                if (empty($pid)) {
+                    return;
+                }
                 $result = $db->prepare('SELECT `name` FROM `tl_vendor` WHERE `id` = ?')
                              ->execute([$pid]);
                 $prefix = strtoupper(substr($result->name, 0, 2));

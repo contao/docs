@@ -19,13 +19,17 @@ Therefore, our BC promise deviates from the Symfony BC promise in some regards:
   of services Contao provides. If you want to change the behaviour of a service, do not replace it with your own
   instance of the class but instead decorate the original service (see the tip about "Composition over Inheritance").
 
+* Our BC promise does not cover classes and methods marked as `@experimental`. Being able to add experimental code
+  is a great opportunity for us to release new features early without having to worry about the backwards compatibility
+  of the yet unstable API.
+
 * Our BC promise does not cover templates. Templates are subject to change very often and you have to compare
   them with every update of Contao. Generally, we try to only ever apply template changes in major and minor
   versions but if a bugfix requires us to change a template, then we might do that as well.
   
 * Our BC promise does not cover translation keys. Translations may be added and removed in every minor version as
   they change quite often. If you want to reuse the labels provided by the core, double check them after
-  every update. You may also provide your own labels so you are not affected by any changes in the core.
+  every update. You may also provide your own labels, so you are not affected by any changes in the core.
   
 * Because Contao is a Symfony bundle like every other bundle, our BC promise does not cover anything that is about 
   integrating Contao into the Symfony application. This includes:
@@ -55,7 +59,7 @@ Also see how you can [decorate a service in Symfony](https://symfony.com/doc/cur
 
 {{% /notice %}}
 
-If you should encounter a problematic break, please open an issue in our [monorepository on GitHub][Monorepo_Issues]
+If you should encounter a problematic break, please open an issue in our [monorepository on GitHub][Monorepo_Issues],
 so we can analyze and discuss if there is a possible solution.
 
 [SF_BC_Promise]: https://symfony.com/doc/current/contributing/code/bc.html

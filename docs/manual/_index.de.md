@@ -50,7 +50,7 @@ Für neuere Versionen:
 - In der Adresszeile suchen nach z. B.: `inserttags`  
 - Es öffnet sich unterhalb der Adresszeile ein Menü, in dem am unteren Ende, unter `Einmalig suchen mit:`, auch das Contao-Icon erscheint  
 - Auf das Contao-Icon klicken und links vom Suchbegriff wird ein Tag hinzugefügt: `Contao Handbuch`  
-
+- `@docs inserttags`
 {{% /expand %}}
 
 {{% expand "Browser Chrome" %}}
