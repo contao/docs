@@ -454,7 +454,7 @@ to add status icons.
 * `\Contao\DataContainer` Data Container object
 * `array` Columns with existing labels
 
-**return:** `array` Columns with labels
+**return:** If the DCA uses `showColumns` then the return value must be an `array` of strings. Otherwise just the label as a `string`.
 {{% /expand %}}
 
 {{% expand "Example for tree view" %}}
