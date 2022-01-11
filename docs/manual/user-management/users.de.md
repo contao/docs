@@ -306,7 +306,7 @@ Zugriffsebenen gibt.
 
 ![Zugriffsrechte einer Seite](/de/user-management/images/de/zugriffsrechte-einer-seite.png?classes=shadow)
 
-Diese Seite gehört z. B. dem Benutzer `Helen Lewis`, der sie und die darin enthaltenen Artikel bearbeiten, verschieben 
+Diese Seite gehört z. B. der Benutzerin `Helen Lewis`, welche diese Seite und die darin enthaltenen Artikel bearbeiten, verschieben 
 oder löschen darf. Andere Benutzer der Gruppe `Editors` dürfen lediglich die Artikel bearbeiten, nicht aber die Seite 
 an sich.
 
