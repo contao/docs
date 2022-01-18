@@ -588,5 +588,5 @@ class Plugin implements HttpCacheSubscriberPluginInterface
 ```
 
 
-[1]: http://api.symfony.com/master/Symfony/Component/Config/Definition/Builder/ArrayNodeDefinition.html#method_disallowNewKeysInSubsequentConfigs
+[1]: https://github.com/symfony/config/blob/5.4/Definition/Builder/ArrayNodeDefinition.php#L185
 [2]: https://foshttpcache.readthedocs.io/en/latest/symfony-cache-configuration.html#cache-event-listeners
