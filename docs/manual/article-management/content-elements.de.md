@@ -1407,11 +1407,11 @@ Das Element generiert folgenden HTML-Code:
 ```
 
 
-## Custom Template
+## Eigenes Template
 
 {{< version "4.13" >}}
 
-Das Inhaltselement »Custom template« bietet die Möglichkeit, ein Template auszuwählen und dabei individuelle 
+Das Inhaltselement »Eigenes Template« bietet die Möglichkeit, ein Template auszuwählen und dabei individuelle 
 Platzhalter zu definieren, die im jeweiligen Template ausgegeben werden können.
 
 | Info |   |
