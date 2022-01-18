@@ -188,3 +188,19 @@ Das Frontend-Modul generiert mit `rss_items_only` folgenden HTML-Code:
 </div>
 <!-- indexer::continue -->
 ```
+
+
+## Startpunktabhängige Module
+
+{{< version "4.13" >}}
+
+Über das Modul kann je Startpunkt ein existierendes Modul ausgewählt werden. Das »Startpunktabhängige Modul« kann dann 
+im Layout an der gewünschten Position eingesetzt werden zwecks Ausgabe der jeweiligen Modul Inhalte .
+
+Hilfreich um z. B. mehrere Seitenlayouts, die bisher für mehrere Startseiten (mit z. B. verschiedenen Sprachen) 
+benötigt wurden, zu vermeiden.
+
+| Modul-Konfiguration |   |
+| -----| - |
+| **Module:** | Angabe eines verfügbaren Moduls je vorhandenen Startpunkt. |
+
