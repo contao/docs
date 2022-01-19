@@ -68,6 +68,20 @@ einer eindeutigen Beschreibung zu versehen.
 ```
 
 
+## Kanonische URL
+
+{{< version-tag "4.13" >}} Du kannst hier eine [kanonische URL](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls?hl=de) eintragen oder auswählen.
+
+**Individuelle URL:** Hier kannst du eine individuelle kanonische URL setzen.
+
+**Query-Parameter:** Standardmäßig entfernt Contao die Query-Parameter in der kanonischen URL. Hier kannst du eine 
+kommagetrennte Liste von Query-Parametern hinzufügen, die erhalten bleiben sollen. Verwende dabei  "*" als Platzhalter. 
+
+{{% notice note %}}
+Zur Ausgabe muß im Seitentyp »Startpunkt einer Webseite« die Einstellung rel="canonical" aktiviert sein (Standard).
+{{% /notice %}}
+
+
 ## Weitere Einstellungen bei Startpunkten
 
 Bei Seiten vom Typ »Startpunkt einer Webseite« stehen weitere Eingabefelder zur Verfügung, mit denen du bestimmte 
@@ -214,6 +228,9 @@ dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, be
 
 ### Globale Einstellungen
 
+{{< version-tag "4.13" >}} **rel="canonical" aktivieren:** Im Seitentyp »Startpunkt einer Webseite« kannst du hier 
+die Ausgabe der rel="canonical"-Tags erlauben.
+
 **E-Mail-Adresse des Webseiten-Administrators:** Hier kannst du die in den Backend-Einstellungen festgelegte 
 E-Mail-Adresse des Systemadministrators für eine bestimmte Webseite überschreiben. An diese Adresse werden z. B. 
 Benachrichtigungen über gesperrte Konten oder neu registrierte Benutzer geschickt. Wenn du mehrere Webseiten innerhalb 
@@ -253,9 +270,10 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 | g:i      | 12 Stunden ohne führende Nullen sowie Minuten, z. B. `8:36`   |
 
 
-{{< version-tag "4.8" >}} **Zwei-Faktor-Authentifizierung:** Hier kannst du die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
-erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die 
-Zwei-Faktor-Authentifizierung einrichten.
+### Zwei-Faktor-Authentifizierung 
+
+{{< version-tag "4.8" >}} Du kannst hier die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
+erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die Zwei-Faktor-Authentifizierung einrichten.
 
 
 ## Layout-Einstellungen
