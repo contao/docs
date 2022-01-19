@@ -125,7 +125,7 @@ der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Binde
 data-* benutzt werden.
 
 **Beispiele:**  
-`<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden. Kann aber einfach unter Schlüssel eingefügt werden. 
+`<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden, kann aber einfach unter Schlüssel eingefügt werden. 
 
 {{% notice note %}}  
 Um die selbst hinzugefügten HTML-Tags besser zu erkennen, sollten diese zu Beginn der Liste eingetragen werden.  
