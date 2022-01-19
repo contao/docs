@@ -70,7 +70,7 @@ information about the `backend` scope.
 
 
 {{% notice note %}}
-Contao 4.13 allows configuring a custom backend path. Use `"%contao.backend.route_prefix%/my-backend-route"` instead of `"/contao/my-backend-route"` in the example above to support this feature.
+Contao **4.13** allows configuring a custom backend path. Use `"%contao.backend.route_prefix%/my-backend-route"` instead of `"/contao/my-backend-route"` in the example above to support this feature.
 {{% /notice %}}
 
 
