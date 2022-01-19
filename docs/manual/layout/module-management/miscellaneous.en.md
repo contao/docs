@@ -169,6 +169,7 @@ Using the `rss_items_only` template, the frontend module generates the following
 <!-- indexer::continue -->
 ```
 
+
 ## Root page dependent modules
 
 {{< version "4.13" >}}
@@ -181,3 +182,26 @@ Helpful to avoid several page layouts, which were needed so far for several star
 | Module configuration |   |
 | -----| - |
 | **Modules:** | Specification of one available module per existing starting point. |
+
+
+## Custom Template
+
+{{< version "4.13" >}}
+
+The module "Custom template" offers the possibility to select a template and to define individual placeholders 
+which can be used.
+
+| Info |   |
+| ---- | - |
+| **Template data:** | Specification of one or more key/value pairs. |
+| **Module template:** | Here you can overwrite the default template `mod_template`. |
+
+**HTML output**  
+The default template generates the following HTML code:
+
+```html
+<dl>
+  <dt>Key</dt>
+  <dd>Value</dd>
+</dl>
+```

@@ -204,3 +204,25 @@ benötigt wurden, zu vermeiden.
 | -----| - |
 | **Module:** | Angabe eines verfügbaren Moduls je vorhandenen Startpunkt. |
 
+
+## Individuelles Template
+
+{{< version "4.13" >}}
+
+Das Modul vom Typ »Individuelles Template« bietet die Möglichkeit, ein Template auszuwählen und dabei individuelle 
+Platzhalter zu definieren, die im jeweiligen Template ausgegeben werden können.
+
+| Info |   |
+| -----| - |
+| **Template-Daten:** | Angabe eines oder mehrerer Schlüssel/Wert Paare. |
+| **Modul-Template:** | Hier kannst du das Standard-Template `mod_template` überschreiben. |
+
+**HTML-Ausgabe**  
+Das Standard-Template generiert folgenden HTML-Code:
+
+```html
+<dl>
+  <dt>Schlüssel</dt>
+  <dd>Wert</dd>
+</dl>
+```

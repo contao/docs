@@ -135,6 +135,23 @@ security:
       Contao\User: 'auto' # Hash function: bcrypt, sha256, sha512 ...
 ```
 
+**Beispiele:**  
+`<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden, kann aber einfach unter Schlüssel eingefügt werden. 
+
+{{% notice note %}}  
+Um die selbst hinzugefügten HTML-Tags besser zu erkennen, sollten diese zu Beginn der Liste eingetragen werden.  
+{{% /notice %}}  
+
+In den erlaubten HTML-Attributen, als Wert muss hierzu dann auch noch das Attribut mit eingefügt werden.  
+
+`<nav>` und `<input>` sind beispielsweise bereits in den erlaubten HTML-Tags vorhanden und können damit einfach mit erlaubten Attributen erweitert werden.  
+Dazu als Schlüssel `nav` bzw. `input` eintragen und als Wert der gewünschte Wert - in unserem Beispiel `role` bzw. `type`.
+
+Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüssel `*` und als Wert `*` eintragen. Hierdurch sind alle Attribute für alle Elemente erlaubt.  
+
+![Sicherheitseinstellungen](/de/system/images/de/security-settings-de.png?classes=shadow)
+
+
 ### Dateien und Bilder
 
 **Erlaubte Download-Dateitypen:** Hier kannst du festlegen, welche Dateitypen von deinem Server heruntergeladen werden 
