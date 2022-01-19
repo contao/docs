@@ -271,6 +271,7 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 
 
 ### Zwei-Faktor-Authentifizierung 
+
 {{< version-tag "4.8" >}} Du kannst hier die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
 erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die Zwei-Faktor-Authentifizierung einrichten.
 
