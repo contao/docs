@@ -237,6 +237,10 @@ A page layout is a prerequisite for Contao to be able to display a page in the f
 
 **Page layout:** Here you can see all available page layouts grouped by themes. You activate a theme by assigning a page layout.
 
+{{< version-tag "4.13" >}} **Subpage layout:** With the selection of »Inherit page layout« (default) the assignment of the 
+page layout also applies to all sub pages without their own page layout. Alternatively, a separate, different page layout 
+for sub pages can be assigned here.
+
 
 ## Cache settings
 

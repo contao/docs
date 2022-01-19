@@ -281,11 +281,15 @@ erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, we
 Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein 
 Seitenlayout zugewiesen oder vererbt worden, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
 
-**Ein Layout zuweisen:** Hier kannst du einer Seite ein Seitenlayout zuweisen. Die Zuweisung gilt automatisch auch für 
-alle untergeordneten Seiten ohne eigenes Seitenlayout.
+**Ein Layout zuweisen:** Hier kannst du einer Seite ein Seitenlayout zuweisen. Die Zuweisung des Seitenlayouts 
+gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
 
 **Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines 
 Themes erfolgt durch Zuweisung eines Seitenlayouts.
+
+{{< version-tag "4.13" >}} **Unterseitenlayout:** Mit der Auswahl »Seitenlayout vererben« (Standard) gilt die Zuweisung 
+des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
+abweichendes Seitenlayout für untergeordnete Seiten zugewiesen werden.
 
 
 ## Cache-Einstellungen
