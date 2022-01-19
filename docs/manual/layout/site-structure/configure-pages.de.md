@@ -269,7 +269,7 @@ gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayou
 **Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines 
 Themes erfolgt durch Zuweisung eines Seitenlayouts.
 
-{{< version-tag "4.13" >}} **Unterseitenlayout:** Mir der Auswahl »Seitenlayout vererben« (Standard) gilt die Zuweisung 
+{{< version-tag "4.13" >}} **Unterseitenlayout:** Mit der Auswahl »Seitenlayout vererben« (Standard) gilt die Zuweisung 
 des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
 abweichendes Seitenlayout für untergeordnete Seiten zugewiesen werden.
 
