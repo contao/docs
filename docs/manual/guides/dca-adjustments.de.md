@@ -46,9 +46,9 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['headline']['eval']['preserveTags'] = tr
 // contao/dca/tl_page.php
 
 // HTML in Seitennamen
-$GLOBALS['TL_DCA']['tl_page']['fields']['title']['eval']['preserveTags'] = true;
+$GLOBALS['TL_DCA']['tl_page']['fields']['title']['eval']['allowHtml'] = true;
 // HTML in Seitentitel
-$GLOBALS['TL_DCA']['tl_page']['fields']['pageTitle']['eval']['preserveTags'] = true;
+$GLOBALS['TL_DCA']['tl_page']['fields']['pageTitle']['eval']['allowHtml'] = true;
 ```
 {{% /expand %}}
 
