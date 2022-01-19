@@ -14,7 +14,7 @@ Before you can contribute to the documentation, you need to do the following:
 is a version control service for software projects using [Git](https://en.wikipedia.org/wiki/Git) and is home to 
 among other things, the [Contao documentation](https://github.com/contao/docs/).
 - The documentation is written in [Markdown](https://en.wikipedia.org/wiki/Markdown), familiarize yourself with the 
-[syntax](https://docs.contao.org/manual/en/article-management/content-elements/#syntax) of this markup language. 
+[syntax](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) of this markup language. 
 familiar with it.
 
 
@@ -45,24 +45,26 @@ Edit the content, describe your changes and click the "Propose file change" butt
 
 ### Create branch and commit
 
-GitHub will now create a branch and a commit for your changes and will show a preview of your 
+GitHub will now create a new branch within your fork and a commit for your changes and will show a preview of your 
 changes will be displayed:
 
 ![Create Branch and Commit](/de/contributing/images/de/branch-und-commit-erzeugen.png?classes=shadow)
 
 If everything is correct, click the "Create pull request" button.
 
-{{% notice info %}}
-In the distributed versioning system Git and thus also on GitHub, proposals are created as so-called "pull requests". 
-Since you do not have permission to commit changes directly to the official repository, you submit a 
-a request to the repository's authorizers to "pull" your changes into the official repository. 
-"to pull" your changes into the official repository.
-{{% /notice %}}
+
+### Adding further changes before the pull request
+
+If you want to edit more content before the pull request, for example by making adjustments to corresponding translations, switch to your fork instead and select the newly created branch. Here you can make your additional changes and comment them.
+
+Then you can finally start the pull request via "Contribute/Open pull request".
 
 
 ### Create pull request
 
-On the next page, you can make final adjustments to your pull request if necessary. 
+Since you do not have permissions to make changes directly to the official repository, you make a request to commit your changes to the official repository.
+
+You can make final adjustments to your pull request if necessary. 
 Click the "Create pull request" button again.
 
 ![Create pull request](/de/contributing/images/de/create-pull-request.png?classes=shadow)

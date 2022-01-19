@@ -10,7 +10,7 @@ tags:
 
 
 Analog zum Druckbereich kannst du mit Schriftarten Aussagen hervorheben, Emotionen transportieren und passend zur Branche 
-beziehungsweise zum Erscheinungsbild deines Unternehmen die Präsentation der Webseite individualisieren. 
+beziehungsweise zum Erscheinungsbild deines Unternehmen die Präsentation der Website individualisieren. 
 
 
 ## Kommerziell oder Open Source?
@@ -29,7 +29,7 @@ oder sogar keine weiteren Schriftschnitte vorhanden.
 
 Historisch bedingt existieren verschiedene Dateiformate wie »[.eot](https://caniuse.com/?search=eot)«, »[.ttf](https://caniuse.com/?search=ttf)«, »[.woff](https://caniuse.com/?search=woff)« oder »[.woff2](https://caniuse.com/?search=woff2)«. Mittlerweile haben 
 sich die Formate ».woff« oder ».woff2« zur Nutzung 
-in aktuellen Browser Versionen etabliert. 
+in aktuellen Browser-Versionen etabliert. 
 
 Möchtest du ältere Browser unterstützen, kannst du die weiteren Dateiformate zusätzlich einsetzen. Ansonsten wird 
 auf die in deiner CSS-Datei eingetragenen Systemschriften zurückgegriffen.
@@ -124,15 +124,16 @@ h1, h2 {
 
 {{% notice note %}}
 In den [Seitenlayouts](/de/layout/theme-manager/seitenlayouts-verwalten/) findest du u. U. noch direkte 
-Eingabemöglichkeiten für die Google Webfonts. Diese Option wird in zukünftigen Contao Versionen nicht mehr zur 
+Eingabemöglichkeiten für die Google Webfonts. Diese Option wird in zukünftigen Contao-Versionen nicht mehr zur 
 Verfügung stehen! Es wird daher die beschriebene Vorgehensweise empfohlen.
 {{% /notice %}}
 
 {{% notice warning %}}
-Mit dem Abruf der Fonts wird ein Kommunikation des Browsers, der die Webseite anzeigt, und dem Google-Server angestossen.
+Mit dem Abruf der Fonts wird eine Kommunikation zwischen Browser, der die Website anzeigt, und dem Google-Server angestossen.
 Dabei werden auch Daten vom Browser oder die IP des Rechners/Device übermittelt. Diese Übermittlung ist bei der DSGVO oder ePrivacy zu beachten.
 Zu empfehlen ist der Einbau der Fonts über ein lokale Einbindung.
 {{% /notice %}}
+
 
 ### Lokale Einbindung
 
@@ -143,11 +144,14 @@ deiner Contao Installation unterhalb von »files» zur Verfügung.
 Im Falle von »Google Fonts« wird dir hierzu zwar eine Download-Option angeboten, allerdings beinhaltet das jeweilige Download-
 Archiv lediglich Dateien in den Formaten ».ttf«. 
 
-Die Webapplikation »[Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/fonts)» stellt die Google 
-Webfonts in verschiedenen Dateiformaten zur Verfügung. Darüber hinaus werden, abhängig von deiner Auswahl, die passenden 
-CSS Angaben via »`@font-face`« mitgeliefert. Diese CSS Angaben müssen deiner eigenen ».css« Datei hinzugefügt werden. 
-Dabei ist es gleichgültig ob du direkt mit CSS-Dateien arbeitest oder ob du diese 
-über [Präprozessoren](/de/anleitungen/sass-less-integration/) wie »Sass/Less« erstellst. 
+Webapplikationen wie »[Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/fonts)» oder »[Web Font Loader](https://webfontloader.altmann.de/)« 
+stellen die Google Webfonts in verschiedenen Dateiformaten zur Verfügung. Darüber hinaus werden, abhängig von deiner Auswahl, die passenden CSS Angaben 
+via »`@font-face`« mitgeliefert. Diese CSS Angaben müssen deiner eigenen ».css« Datei hinzugefügt werden. Dabei ist es gleichgültig, ob du direkt mit CSS-Dateien arbeitest oder ob du diese über [Präprozessoren](/de/anleitungen/sass-less-integration/) wie »Sass/Less« erstellst. 
+
+{{% notice info %}}
+Falls du nicht sicher bist, welche der genannten Webapplikationen du benutzen solltest, findest du [hier einen Beitrag](https://webfontloader.altmann.de/about/#more) 
+der die Unterschiede verdeutlicht.
+{{% /notice  %}}
 
 Du bindest dann die CSS-Datei als externes Stylesheet im Bereich »Experten-Einstellungen -> Stylesheets« 
 des [Seitenlayouts](/de/layout/theme-manager/seitenlayouts-verwalten/#stylesheets) deines [Themes](/de/layout/theme-manager/)
@@ -180,7 +184,7 @@ Verzeichnis »files/theme/css«, dann wären die korrekten relativen Pfadangaben
 {{% notice info %}}
 Im [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#stylesheets) kannst du die Option 
 »Skripte zusammenfassen« aktivieren. Hierbei werden alle CSS-Angaben der ausgewählten internen und externen CSS- 
-Dateien in eine einzige, neue Datei zusammengefaßt und von Contao im Verzeichnis »assets/css« abgelegt.<br><br>
+Dateien in eine einzige, neue Datei zusammengefasst und von Contao im Verzeichnis »assets/css« abgelegt.<br><br>
 Da sich die neue CSS-Datei nun im Verzeichnis »assets/css« befindet, passt Contao die Pfade zu den Schriften automatisch an.  
 `... url('../../files/theme/fonts/vollkorn-v12-latin-600.woff2') format('woff2'), ...`.
 {{% /notice  %}}
@@ -189,7 +193,7 @@ Da sich die neue CSS-Datei nun im Verzeichnis »assets/css« befindet, passt Con
 ## Die CSS »font-display« Eigenschaft
 
 Eine Webfont-Datei, sofern sich diese nicht bereits im Browser-Cache befindet, muss zunächst vom Browser vollständig 
-geladen werden bevor diese genutzt werden kann. Entsprechend muss der Browser beim Laden der Webseite hinsichtlich 
+geladen werden, bevor diese genutzt werden kann. Entsprechend muss der Browser beim Laden der Webseite hinsichtlich 
 der Darstellung reagieren. Das führt zu folgenden Unschönheiten:
 
 * Solange eine Webfont-Datei nicht komplett vorliegt, versteckt der Browser diese. Nach dem vollständigen Laden wird 

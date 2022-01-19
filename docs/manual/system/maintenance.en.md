@@ -81,6 +81,23 @@ Later during the search, the protected pages will of course only appear in the r
 is allowed to access them.
 
 
+### Basic Authentication
+
+Before a website is published it will often be protected via "Basic Authentication" on the live or staging environment. In order for the
+crawler to be able to still access the site in this case the username and password needs to be defined in the configuration. The value
+of this configuration option must follow the format `username:password`:
+
+```yml
+# config/config.yaml
+contao:
+    crawl:
+        default_http_client_options:
+            auth_basic: 'username:password'
+```
+
+You can find more configuration options for the HTTP client of the crawler in the [Symfony documentation][HttpClientOptions].
+
+
 ## Purge data
 
 In addition to the user-generated content, Contao stores various system data that is used the search or for restoring 
@@ -92,3 +109,4 @@ update the XML sitemaps after a change in the page structure.
 
 [BackendSettings]: /en/system/settings/
 [SymfonyUrlCommands]: https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands
+[HttpClientOptions]: https://symfony.com/doc/current/reference/configuration/framework.html#reference-http-client

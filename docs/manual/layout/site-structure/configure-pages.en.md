@@ -49,6 +49,22 @@ The default case is *index,follow*, because we want Google and other search engi
 <meta name="description" content="Description of the page (between 150 and 300 characters).">
 ```
 
+
+## Canonical URL
+
+{{< version-tag "4.13" >}} You can enter or select 
+a [canonical URL](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls?hl=en).
+
+**Custom URL:** Here you can set a custom canonical URL.
+
+**Query parameters:** By default, Contao strips the query parameters in the canonical URL. Here you can add a comma-separated 
+list of query parameters to preserve. Use "*" as a wildcard. 
+
+{{% notice note %}}
+The rel="canonical" setting must be activated in the "website root" page type (default).
+{{% /notice %}}
+
+
 ## Further settings for website roots
 
 For pages of the type "Website root" there are additional input fields available, with which you can overwrite certain 
@@ -179,6 +195,9 @@ serve said file directly. Make sure to delete that file before trying to use thi
 
 ### Global settings
 
+{{< version-tag "4.13" >}} **Enable rel="canonical":** Within the page type "Starting point of a website" you can 
+allow the output of rel="canonical" tags.
+
 **E-mail address of the website administrator:** Here you can overwrite the e-mail address of the system administrator defined in the backend settings for a specific website. This address is used to send notifications about blocked accounts or newly registered users, for example. If you have multiple websites within the site structure, it may be useful to set a separate administrator for each website, who will only receive notifications from his website. You can also use the following notation to add a name to your email address:
 
 ```text
@@ -205,8 +224,10 @@ Here are some examples of valid dates and times:
 | H:i:s | 24 hours, minutes and seconds, for example `20:36:59` |
 | g:i | 12 hours without leading zeros and minutes, for example `8:36` |
 
-{{< version-tag "4.8" >}} **Enforce two-factor authentication:** Here you can enforce two-factor authentication for all members (frontend). Select a page that visitors will be redirected to when they set up the two-factor authentication.
 
+### Two-factor authentication
+
+{{< version-tag "4.8" >}} You can enforce two-factor authentication for all members (frontend) here. Select a page that visitors will be redirected to when they set up the two-factor authentication.
 
 ## Layout settings
 
@@ -215,6 +236,7 @@ A page layout is a prerequisite for Contao to be able to display a page in the f
 **Assign a layout:** Here you can assign a page layout to a page. The assignment automatically applies to all sub pages without a page layout.
 
 **Page layout:** Here you can see all available page layouts grouped by themes. You activate a theme by assigning a page layout.
+
 
 ## Cache settings
 
@@ -295,7 +317,7 @@ From section [Backend shortcuts](/de/administrationsbereich/backend-tastaturkuer
 **Shortcut keys:** A shortcut key is a single character associated with a page. Visitors to your site can then access that page directly from the keyboard. This function is especially required for accessible websites.
 
 
-### XML Sitemap
+## XML Sitemap
 
 Contao automatically creates an XML sitemap from the page structure of the website that can be read and analyzed by Google. To submit the sitemap URL to Google you need a Google account.
 
@@ -304,6 +326,11 @@ Which pages are included in the XML sitemap can be controlled by the Robots tag 
 **Create an XML Sitemap:** Here you activate the creation of the XML Sitemap.
 
 **Sitemap file name:** Enter the name of the Sitemap file here without the file extension `.xml`. Contao will automatically add the file extension when saving the file.
+
+{{% notice "info" %}}
+Since Contao **4.11** the sitemap is always available unter the `/sitemap.xml` path, e.g. `https://example.com/sitemap.xml`. If you have 
+more than one language under the same domain then the URLs of all languages will be collected in this sitemap.
+{{% /notice %}}
 
 
 ## Redirecting

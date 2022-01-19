@@ -14,7 +14,7 @@ start how to…
  - use Twig templates in [Contao's ecosystem](#twig-in-contao)
  - and briefly how to [write your own extensions](#extending-twig).
 
-Please provide feedback on [Github] or the Contao Slack channel in case you
+Please provide feedback on [GitHub] or the Contao Slack channel in case you
 notice bugs, unwanted behavior or have suggestions how to improve the
 experience. 🙏
 
