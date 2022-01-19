@@ -146,7 +146,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'date_desc';
 // Sortieren nach Zufällige Reihenfolge
 $GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'random'; 
 
-// Bildgröße zum Beispiel Exaktes Format Mitte | MItte
+// Bildgröße zum Beispiel Exaktes Format Mitte | Mitte
 $GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [500,500,'center_center'];
 // weitere Variablen für Exaktes Format:
 // 'crop', 'left_top', 'left_center', 'left_bottom', 'center_top', 'center_bottom', 'right_top', 'right_center', 'right_bottom'
