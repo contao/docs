@@ -176,7 +176,7 @@ Using the `rss_items_only` template, the frontend module generates the following
 An existing module can be selected for each starting point. The module "Root page dependent modules" can then be 
 be inserted in the layout at the desired position to output the various contents.
 
-Helpful to avoid e.g. several page layouts, which were needed so far for several start pages (with e.g. different languages). 
+Helpful to avoid several page layouts, which were needed so far for several start pages (e.g. different languages). 
 
 | Module configuration |   |
 | -----| - |
