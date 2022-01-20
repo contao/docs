@@ -34,11 +34,17 @@ Contao version, some features will be documented which are only available in new
 Contao version. In such a case, document the _old_ way first (if applicable), then 
 show the new way with a notice of the minimum Contao version required.
 
-You can use the following short code to automatically add a note for features of a 
+You can use the following short codes to automatically add a note for features of a 
 specific Contao version:
 
 ```
-{{< version "4.7" >}}
+{{< version "4.13" >}}
+```
+
+or
+
+```
+{{< version-tag "4.13" >}}
 ```
 
 
@@ -51,9 +57,18 @@ specific Contao version:
 
 …
 
-### Service tag
+### Content 
 
-{{< version "4.8" >}}
+{{< version "4.13" >}}
+
+Lorem ipsum dolor sit amet ...
+
+…
+
+### Content 
+
+{{< version-tag "4.13" >}} Lorem ipsum dolor sit amet ...
+
 ```
 
 
