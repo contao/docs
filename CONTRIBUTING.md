@@ -85,6 +85,17 @@ Lorem ipsum dolor sit amet ...
 ```
 
 
+### Short code expand
+
+The expand short code displays an expandable/collapsible section of text.
+
+```
+{{%expand "Expand title" %}}
+Lorem ipsum dolor sit amet ...
+{{% /expand%}}
+```
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 
