@@ -27,6 +27,64 @@ Cum sociis [natoque](https://www.google.com/) penatibus et magnis dis.
 ```
 
 
+### Short code notice
+
+The `notice` shortcode allows you to display 4 different types of disclaimers.
+
+
+#### Note
+
+```
+{{% notice note %}}
+A notice disclaimer
+{{% /notice %}}
+```
+
+#### Info
+
+```
+{{% notice info %}}
+An information disclaimer
+{{% /notice %}}
+```
+
+#### Tip
+
+```
+{{% notice tip %}}
+A tip disclaimer
+{{% /notice %}}
+```
+
+#### Warning
+
+```
+{{% notice warning %}}
+A warning disclaimer
+{{% /notice %}}
+```
+
+
+### Short code tabs
+
+The short code tabs allows you to group content. Very handy for providing code snippets for multiple languages or 
+providing configuration in different formats.
+
+```
+{{< tabs groupId="Example">}}
+
+{{% tab name="PHP" %}}
+Lorem ipsum dolor sit amet ...
+{{% /tab %}}
+
+{{% tab name="Twig" %}}
+Lorem ipsum dolor sit amet ...
+{{% /tab %}}
+
+{{< /tabs >}}
+```
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 
@@ -34,11 +92,17 @@ Contao version, some features will be documented which are only available in new
 Contao version. In such a case, document the _old_ way first (if applicable), then 
 show the new way with a notice of the minimum Contao version required.
 
-You can use the following short code to automatically add a note for features of a 
+You can use the following short codes to automatically add a note for features of a 
 specific Contao version:
 
 ```
-{{< version "4.7" >}}
+{{< version "4.13" >}}
+```
+
+or
+
+```
+{{< version-tag "4.13" >}}
 ```
 
 
@@ -51,9 +115,18 @@ specific Contao version:
 
 …
 
-### Service tag
+### Content 
 
-{{< version "4.8" >}}
+{{< version "4.13" >}}
+
+Lorem ipsum dolor sit amet ...
+
+…
+
+### Content 
+
+{{< version-tag "4.13" >}} Lorem ipsum dolor sit amet ...
+
 ```
 
 
