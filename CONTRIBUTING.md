@@ -27,6 +27,44 @@ Cum sociis [natoque](https://www.google.com/) penatibus et magnis dis.
 ```
 
 
+### Short Code Notice
+
+The notice shortcode shows 4 types of disclaimers to help you structure the page.
+
+
+#### Note
+
+```
+{{% notice note %}}
+A notice disclaimer
+{{% /notice %}}
+```
+
+#### Info
+
+```
+{{% notice info %}}
+An information disclaimer
+{{% /notice %}}
+```
+
+#### Tip
+
+```
+{{% notice tip %}}
+A tip disclaimer
+{{% /notice %}}
+```
+
+#### Warning
+
+```
+{{% notice warning %}}
+A warning disclaimer
+{{% /notice %}}
+```
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 
