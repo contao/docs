@@ -65,6 +65,26 @@ A warning disclaimer
 ```
 
 
+### Short Code tabs
+
+Choose which content to see across the page. Very handy for providing code snippets for multiple languages or 
+providing configuration in different formats.
+
+```
+{{< tabs groupId="Example">}}
+
+{{% tab name="PHP" %}}
+Lorem ipsum dolor sit amet ...
+{{% /tab %}}
+
+{{% tab name="Twig" %}}
+Lorem ipsum dolor sit amet ...
+{{% /tab %}}
+
+{{< /tabs >}}
+```
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 
