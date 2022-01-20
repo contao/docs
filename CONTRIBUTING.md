@@ -67,7 +67,7 @@ A warning disclaimer
 
 ### Short code tabs
 
-Choose which content to see across the page. Very handy for providing code snippets for multiple languages or 
+The short code tabs allows you to group content. Very handy for providing code snippets for multiple languages or 
 providing configuration in different formats.
 
 ```
