@@ -49,6 +49,22 @@ The default case is *index,follow*, because we want Google and other search engi
 <meta name="description" content="Description of the page (between 150 and 300 characters).">
 ```
 
+
+## Canonical URL
+
+{{< version-tag "4.13" >}} You can enter or select 
+a [canonical URL](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls?hl=en).
+
+**Custom URL:** Here you can set a custom canonical URL.
+
+**Query parameters:** By default, Contao strips the query parameters in the canonical URL. Here you can add a comma-separated 
+list of query parameters to preserve. Use "*" as a wildcard. 
+
+{{% notice note %}}
+The rel="canonical" setting must be activated in the "website root" page type (default).
+{{% /notice %}}
+
+
 ## Further settings for website roots
 
 For pages of the type "Website root" there are additional input fields available, with which you can overwrite certain 
@@ -179,6 +195,9 @@ serve said file directly. Make sure to delete that file before trying to use thi
 
 ### Global settings
 
+{{< version-tag "4.13" >}} **Enable rel="canonical":** Within the page type "Starting point of a website" you can 
+allow the output of rel="canonical" tags.
+
 **E-mail address of the website administrator:** Here you can overwrite the e-mail address of the system administrator defined in the backend settings for a specific website. This address is used to send notifications about blocked accounts or newly registered users, for example. If you have multiple websites within the site structure, it may be useful to set a separate administrator for each website, who will only receive notifications from his website. You can also use the following notation to add a name to your email address:
 
 ```text
@@ -205,8 +224,10 @@ Here are some examples of valid dates and times:
 | H:i:s | 24 hours, minutes and seconds, for example `20:36:59` |
 | g:i | 12 hours without leading zeros and minutes, for example `8:36` |
 
-{{< version-tag "4.8" >}} **Enforce two-factor authentication:** Here you can enforce two-factor authentication for all members (frontend). Select a page that visitors will be redirected to when they set up the two-factor authentication.
 
+### Two-factor authentication
+
+{{< version-tag "4.8" >}} You can enforce two-factor authentication for all members (frontend) here. Select a page that visitors will be redirected to when they set up the two-factor authentication.
 
 ## Layout settings
 
@@ -215,6 +236,11 @@ A page layout is a prerequisite for Contao to be able to display a page in the f
 **Assign a layout:** Here you can assign a page layout to a page. The assignment automatically applies to all sub pages without a page layout.
 
 **Page layout:** Here you can see all available page layouts grouped by themes. You activate a theme by assigning a page layout.
+
+{{< version-tag "4.13" >}} **Subpage layout:** With the selection of »Inherit page layout« (default) the assignment of the 
+page layout also applies to all sub pages without their own page layout. Alternatively, a separate, different page layout 
+for sub pages can be assigned here.
+
 
 ## Cache settings
 
