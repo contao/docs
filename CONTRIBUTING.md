@@ -27,7 +27,7 @@ Cum sociis [natoque](https://www.google.com/) penatibus et magnis dis.
 ```
 
 
-### Short Code Notice
+### Short code notice
 
 The notice shortcode shows 4 types of disclaimers to help you structure the page.
 
@@ -65,7 +65,7 @@ A warning disclaimer
 ```
 
 
-### Short Code tabs
+### Short code tabs
 
 Choose which content to see across the page. Very handy for providing code snippets for multiple languages or 
 providing configuration in different formats.
