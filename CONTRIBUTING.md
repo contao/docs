@@ -29,7 +29,7 @@ Cum sociis [natoque](https://www.google.com/) penatibus et magnis dis.
 
 ### Short code notice
 
-The notice shortcode shows 4 types of disclaimers to help you structure the page.
+The notice shortcode shows 4 types of disclaimers.
 
 
 #### Note
