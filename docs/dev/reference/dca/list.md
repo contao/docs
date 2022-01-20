@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['sorting'] = [
 | child_record_class    | CSS class (`string`)             | Allows you to add a CSS class to the parent view elements.                                                                                                                                                                                                                                                                                                                                             |
 
 {{% notice tip %}}
-Since Contao **4.13** there are class constants available for the various sorting modes and flags. You find the constants in `Contao\DataContainer`, e.g.
+Since Contao **4.13** the `Contao\DataContainer` class provides constants for the various sorting modes and flags, e.g.
 
 ```php
 // Displays the child records of a parent record (see content elements)
