@@ -44,13 +44,4 @@ under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework
 
 
 {{% /tab %}}
-{{% tab name="Twig" %}}
-
-
-{{< version "4.13" >}}
-
-``Need update ...``
-
-
-{{% /tab %}}
 {{< /tabs >}}
