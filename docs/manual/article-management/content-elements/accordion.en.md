@@ -7,27 +7,25 @@ weight: 22
 ---
 
 
-The accordion effect allows you to create several sections, of which only one is open at a time. If one section is selected, the first one closes automatically.
+The accordion effect allows you to create several sections, of which only one is open at a time. If one section is 
+selected, the first one closes automatically.
 
-**Operating mode:** Here you select the operating mode of the accordion element.
-
-| Operating mode | Declaration |
-| -------------- | ----------- |
+| Operating mode | Here you select the operating mode of the accordion element |
+| -------------- | ---- |
 | Single element | In this mode the element creates a single accordion section with a text element and an optional image. |
 | Start envelope | In this mode the element opens a new accordion section into which any other content elements can be inserted. |
 | Envelope end | In this mode, the element closes an accordion section previously opened using "Envelope Beginning". |
 
-**Section Heading:** Each accordion section has an always visible heading, which can be used to open it. HTML input is allowed here.
+</br>
 
-**CSS-Format:** If you want to format the section headline with CSS code, you can enter a format definition here.
-
-**Class names:** Leave this field empty to use the default class names or enter your own toggler and accordion classes.
-
-**Text:** Here you can enter the text of the accordion section. The input is done in the same way as for the text element using the Rich Text Editor.
-
-**Add an image:** Here you can add an image to the element.
-
-**Individual Template**: Here you can overwrite `ce_accordionStart` the standard `ce_accordionSingle` template.
+| Settings |
+| -------- | --- |
+| **Section Heading:** | Each accordion section has an always visible heading, which can be used to open it. HTML input is allowed here. |
+| **CSS-Format:** | If you want to format the section headline with CSS code, you can enter a format definition here. |
+| **Class names:** | Leave this field empty to use the default class names or enter your own toggler and accordion classes. |
+| **Text:** | Here you can enter the text of the accordion section. The input is done in the same way as for the text element using the Rich Text Editor. |
+| **Add an image:** | Here you can add an image to the element. |
+| **Individual&nbsp;Template:** |Here you can overwrite `ce_accordionStart` the standard `ce_accordionSingle` template. |
 
 **HTML Output**  
 The element generates the following HTML code for a Single Element:
