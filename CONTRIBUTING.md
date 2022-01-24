@@ -13,7 +13,7 @@ Only major versions are documented (e.g. Contao 4 and later on Contao 5).
   and [learn.netlify.com/en/shortcodes/](https://learn.netlify.com/en/shortcodes/) 
   for available markdown and shortcode syntax.
 * Always add two empty lines above each headline.
-* Add line breaks after 80 characters in paragraphs.
+* Add line breaks after 140 characters in paragraphs.
 * Code examples should follow the Symfony Best Practices Book, use PHP 7.1 and
   put Contao related files to `contao`.
 * When using examples for PHP code or YAML configurations etc., include the example
