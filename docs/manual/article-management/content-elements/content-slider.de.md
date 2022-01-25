@@ -8,23 +8,27 @@ weight: 23
 ---
 
 
-Mit dem Inhaltselement »Content-Slider« wird aus verschiedenen Inhaltselementen ein Slider erstellt. Damit der Slider 
-funktioniert muss das *js_slider*-Template im Seitenlayout eingebunden sein.
+Mit dem Inhaltselement »Content-Slider« wird aus verschiedenen Inhaltselementen ein Slider erstellt.  
 
-| Betriebsart | Hier wählst du die Betriebsart des Slider-Elements aus |
-| ----------- | ---- |
-| Umschlag&nbsp;Anfang | In diesem Modus eröffnet das Element einen neuen Slider-Abschnitt, in den beliebige weitere Inhaltselemente eingefügt werden können. |
-| Umschlag Ende        | In diesem Modus schließt das Element einen zuvor mittels »Umschlag Anfang« eröffneten Slider-Abschnitt. |
+Damit der Slider funktioniert muss das *js_slider*-Template im Seitenlayout eingebunden sein.
 
-</br>
+**Betriebsart:** Hier wählst du die Betriebsart des Slider-Elements aus.
 
-| Einstellungen |
-| --- | --- |
-| **Slide-Intervall:** | Hier kannst du den Zeitraum in Millisekunden zwischen den Slides (1000 = 1s) bestimmen. 0 deaktiviert den automatischen Wechsel. |
-| **Übergangsgeschwindigkeit:** | Hier kannst du die Übergangsgeschwindigkeit in Millisekunden (1000 = 1s) bestimmen. |
-| **Slide-Versatz:** | Hier kannst du den Slider mit einer bestimmten Folie beginnen (die Zählung beginnt bei 0). |
-| **Kontinuierlich:** | Einen kontinuierlichen Slider erstellen (beim Erreichen des Endes von vorne beginnen). |
-| **Individuelles Template:** |Hier kannst du das Standard-Template `ce_sliderStart` überschreiben. |
+| Betriebsart             | Erklärung                                                                                                                            |
+|:------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| Umschlag&nbsp;Anfang    | In diesem Modus eröffnet das Element einen neuen Slider-Abschnitt, in den beliebige weitere Inhaltselemente eingefügt werden können. |
+| Umschlag Ende           | In diesem Modus schließt das Element einen zuvor mittels »Umschlag Anfang« eröffneten Slider-Abschnitt.                              |
+
+**Slide-Intervall:** Hier kannst du den Zeitraum in Millisekunden zwischen den Slides (1000 = 1s) bestimmen. 0 
+deaktiviert den automatischen Wechsel.
+
+**Übergangsgeschwindigkeit:** Hier kannst du die Übergangsgeschwindigkeit in Millisekunden (1000 = 1s) bestimmen.
+
+**Slide-Versatz:** Hier kannst du den Slider mit einer bestimmten Folie beginnen (die Zählung beginnt bei 0).
+
+**Kontinuierlich:** Einen kontinuierlichen Slider erstellen (beim Erreichen des Endes von vorne beginnen).
+
+**Individuelles Template:** Hier kannst du das Standard-Template `ce_sliderStart` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
