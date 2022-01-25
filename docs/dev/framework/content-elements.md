@@ -291,7 +291,7 @@ class MyContentElementController extends AbstractContentElementController
 In Contao there are special content elements called "wrappers" which you insert before and after one or a group of content elements. These
 wrappers affect the back end view, indicating that all elements contained within the two wrappers are decendants of the parent wrapper. The
 wrapper content elements typically consist of a `start`and `stop` element, though there are also wrappers of type `single` and `separator`. 
-The `start` element typically opens a specific HTML tag, while the `stop` element will closes it again.
+The `start` element typically opens a specific HTML tag, while the `stop` element will close it again.
 
 In order to define that a content element is a wrapper of a specific type, it needs to be registered in the `$GLOBALS['TL_WRAPPERS']` array
 in your `contao/config.php`. The `$GLOBALS['TL_WRAPPERS']` array holds the element types for each type of wrapper. For example:
