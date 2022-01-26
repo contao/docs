@@ -39,7 +39,7 @@ Dies ist nicht immer erwünscht. Zur gezielten Nutzung kann man das Template ind
 jeweils vorgegebene Template-Bezeichnung beibehalten und lediglich erweitert werden: also z.&nbsp;B. `ce_text.html5` 
 umbenennen nach `ce_text_individuell.html5`. 
 
-Dieses Template kann dann gezielt zur Ausgabe für ein (o. mehrere) Inhaltselement(e) vom Typ »Text« genutzt werden.
+Dieses Template kann dann gezielt zur Ausgabe für ein (oder mehrere) Inhaltselement(e) vom Typ »Text« genutzt werden.
 
 
 {{% /tab %}}
