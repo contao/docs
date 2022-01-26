@@ -29,7 +29,7 @@ Backups beginnen immer mit einem beliebigen Namen (standardmässig `backup`) und
 Du wirst also eine Datei `var/backups` liegen haben, die z. B. so aussieht: `backup__20220126153243.sql.gz`.
 
 Wenn du möchtest, kannst du den Namen und somit die Uhrzeit selber beeinflussen, indem du den kompletten Backup-Namen
-angibst. Durch das Weglassen von `.gz` deaktivierst du ausserdem bequem die Komprimierung:
+als Argument angibst. Durch das Weglassen von `.gz` deaktivierst du ausserdem bequem die Komprimierung:
 
 ```bash
 vendor/bin/contao-console contao:backup:create mein_super_backup_name__20220101000000.sql
