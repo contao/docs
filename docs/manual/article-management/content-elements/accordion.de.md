@@ -1,7 +1,7 @@
 ---
 title: "Akkordeon"
 description: "Inhaltselemente im Bereich Akkordeon"
-url: "artikelverwaltung/inhaltselemente/akkordion"
+url: "artikelverwaltung/inhaltselemente/akkordeon"
 aliases:
     - /de/artikelverwaltung/inhaltselemente/akkordion/
 weight: 22
