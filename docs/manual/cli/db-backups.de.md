@@ -95,7 +95,7 @@ contao:
         keep_intervals: ['1D', '7D', '14D', '1M']
 ```
 
-Es werden also die konfigurierten Tabellen bei einem Backup ignoriert und maximal `5` Backups werden zurückbehalten.
+Es werden also die konfigurierten Tabellen bei einem Backup ignoriert und maximal `5` Backups zurückbehalten.
 Allerdings nicht die neusten fünf, sondern gem. der `keep_intervals` Konfiguration. Mittels `keep_intervals` kannst du
 eine beliebige Anzahl Intervalle definieren. Für jedes dieser Intervalle wird dann das jeweils **älteste** Backup behalten.
 Hast du also wie in diesem Artikel aufgezeigt einen Cronjob definiert, der täglich ein Backup auslöst, dann werden
