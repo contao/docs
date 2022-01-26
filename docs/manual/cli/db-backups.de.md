@@ -37,7 +37,7 @@ vendor/bin/contao-console contao:backup:create mein_super_backup_name__202201010
 
 {{% notice tip %}}
 Jedes Mal, wenn ein neues Backup erstellt wird, räumt Contao veraltete Backups automatisiert auf. Siehe
-Abschnitt »Konfigurationsmöglichkeiten«.
+Abschnitt »[Konfigurationsmöglichkeiten](#konfigurationsmoeglichkeiten)«.
 {{% /notice %}}
 
 ## contao:backup:list
