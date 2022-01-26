@@ -88,7 +88,6 @@ available namespaces can be found [here](https://docs.contao.org/dev/framework/t
 {{% /tab %}}
 {{< /tabs >}}
 
-
 ### Output
 
 When rendered, the template now shows:
