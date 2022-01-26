@@ -36,7 +36,7 @@ debug mode or if the statement is enclosed between `$this->block(…)` and `$thi
 {{< version "4.13" >}}
 
 Within Twig Templates you can display all available or specific template data.
-The output is only done when debug mode is enabled.
+This only works while the debug mode is enabled.
 
 ```twig
 {{ dump() }}

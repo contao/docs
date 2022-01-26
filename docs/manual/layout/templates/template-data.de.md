@@ -38,7 +38,7 @@ Falls du [Template-Vererbung]({{< ref "template-inheritance.de.md" >}}) nutzt, w
 {{< version "4.13" >}}
 
 Innerhalb von Twig Templates kannst du dir alle verfügbaren oder gezielt einzelne Template-Daten anzeigen lassen.
-Die Ausgabe erfolgt lediglich bei aktivierten Debug-Modus.
+Dies funktioniert allerdings nur bei aktiviertem Debug-Modus.
 
 ```twig
 {{ dump() }}

@@ -24,7 +24,7 @@ Template zu referenzieren:
 <script src="files/myfolder/custom.js"></script>
 ```
 
-Sollen die Dateien stattdessen im HTML-Header eingebunden werden, so lässt sich das mit folgendem Angaben im Template
+Sollen die Dateien stattdessen im HTML-Header eingebunden werden, so lässt sich das mit folgenden Angaben im Template
 anweisen:
 
 
