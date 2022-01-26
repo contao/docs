@@ -196,10 +196,9 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Individuelles Template« bietet die Möglichkeit, ein Template auszuwählen und dabei individuelle 
 Platzhalter zu definieren, die im jeweiligen Template ausgegeben werden können.
 
-| Info |   |
-| -----| - |
-| **Template data:** | Angabe eines oder mehrerer Schlüssel/Wert Paare. |
-| **Inhaltselement-Template:** | Hier kannst du das Standard-Template `ce_template` überschreiben. |
+**Template data:** Angabe eines oder mehrerer Schlüssel/Wert Paare.
+
+**Inhaltselement-Template:** Hier kannst du das Standard-Template `ce_template` überschreiben.
 
 **HTML-Ausgabe**  
 Das Standard-Template generiert folgenden HTML-Code:
