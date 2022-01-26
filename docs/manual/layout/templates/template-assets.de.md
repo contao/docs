@@ -27,11 +27,6 @@ Template zu referenzieren:
 Sollen die Dateien stattdessen im HTML-Header eingebunden werden, so lässt sich das mit folgenden Angaben im Template
 anweisen:
 
-
-{{< tabs groupId="templateGroup">}}
-{{% tab name="PHP" %}}
-
-
 ```php
 <?php
 // wird in <head> ausgegeben
@@ -46,7 +41,3 @@ Assets eines Seitenlayouts hinzugefügt bzw. zusammengefasst.
 
 Eine detaillierte Beschreibung aller Optionen und Ausgabeorte findest du in der Entwickler-Dokumentation 
 unter [Adding CSS & JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
-
-
-{{% /tab %}}
-{{< /tabs >}}
