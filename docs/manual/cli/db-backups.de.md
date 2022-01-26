@@ -79,7 +79,7 @@ in der `crontab` könnte dann so aussehen:
 10 23 * * * /pfad/zum/system/vendor/bin/contao-console contao:backup:create
 ```
 
-## Konfigurationsmöglichkeiten
+## Konfigurationsmöglichkeiten {#konfigurationsmoeglichkeiten}
 
 Konfigurieren lässt sich sowohl, welche Datenbanktabellen bei einem Backup ignoriert werden sollen, wie auch
 die sog. »Retention Policy«, also wie bzw. bis wann, ältere Backups noch gespeichert bleiben.
