@@ -1,6 +1,6 @@
 ---
 title: "Akkordeon"
-description: "Inhaltselemente im Bereich Akkordion"
+description: "Inhaltselemente im Bereich Akkordeon"
 url: "artikelverwaltung/inhaltselemente/akkordion"
 aliases:
     - /de/artikelverwaltung/inhaltselemente/akkordion/
