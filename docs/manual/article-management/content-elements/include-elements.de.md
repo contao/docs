@@ -187,3 +187,26 @@ Das Element generiert folgenden HTML-Code:
 
 </div>
 ```
+
+
+## Individuelles Template
+
+{{< version "4.13" >}}
+
+Das Inhaltselement »Individuelles Template« bietet die Möglichkeit, ein Template auszuwählen und dabei individuelle 
+Platzhalter zu definieren, die im jeweiligen Template ausgegeben werden können.
+
+| Info |   |
+| -----| - |
+| **Template data:** | Angabe eines oder mehrerer Schlüssel/Wert Paare. |
+| **Inhaltselement-Template:** | Hier kannst du das Standard-Template `ce_template` überschreiben. |
+
+**HTML-Ausgabe**  
+Das Standard-Template generiert folgenden HTML-Code:
+
+```html
+<dl>
+  <dt>Schlüssel</dt>
+  <dd>Wert</dd>
+</dl>
+```
