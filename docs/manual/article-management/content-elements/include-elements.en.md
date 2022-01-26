@@ -168,3 +168,25 @@ The element generates the following HTML code:
 
 </div>
 ```
+
+
+## Custom Template
+
+{{< version "4.13" >}}
+
+The content element »Custom template« offers the possibility to select a template and to define individual placeholders 
+which can be used.
+
+**Template data:** Specification of one or more key/value pairs.
+
+**Content element template:** Here you can overwrite the default template `ce_template`.
+
+**HTML output**  
+The default template generates the following HTML code:
+
+```html
+<dl>
+  <dt>Key</dt>
+  <dd>Value</dd>
+</dl>
+```
