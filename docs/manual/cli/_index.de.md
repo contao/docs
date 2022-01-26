@@ -7,15 +7,14 @@ aliases:
 weight: 91
 ---
 
-Die Kommandozeile braucht nicht furchteinflössend zu sein. Im Gegenteil, sie ist sogar sehr nützlich. Der Contao
-Manager ist die grafische Oberfläche für unsere Kommandozeile. Folglich kann die Kommandozeile alles, was der Contao Manager
-auch kann. Es ist andersrum: Der Manager bietet nur einen Bruchteil der Funktionen an, die auf der Kommandozeile zur
-Verfügung stehen.
+Die Kommandozeile ist nicht furchteinflössend, sondern bietet dir eine Vielzahl an Möglichkeiten, um deine Produktivität
+zu steigern. Der Contao Manager ist die grafische Oberfläche für unsere Kommandozeile. Es stehen im Contao Manager
+aber nur ein Bruchteil aller in Contao implementierten Funktionen zur Verfügung.
 
 Viele Befehle sind relativ selbsterklärend. Wie beispielsweise `contao:user:create` welcher dich einen Backend-Benutzer
 anlegen lässt. Einfach aufrufen und den Anweisungen folgen.
 
-Für eine Liste aller zur Verfügung stehenden Befehle, kannst du folgenden Befehl ausführen:
+Eine Liste aller zur Verfügung stehenden Befehle erhältst du so:
 
 ```bash
 vendor/bin/contao-console list
