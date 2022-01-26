@@ -24,10 +24,6 @@ template:
 
 If the assets should be included in the HTML header instead, you can use the following code in your template:
 
-
-{{< tabs groupId="templateGroup">}}
-{{% tab name="PHP" %}}
-
 ```php
 <?php 
 // will be output inside <head>
@@ -41,7 +37,3 @@ with existing assets from page layouts.
 
 A detailed description of all options and output locations can be found in the developer documentation 
 under [Adding CSS &amp; JavaScript Assets](https://docs.contao.org/dev/framework/asset-management/).
-
-
-{{% /tab %}}
-{{< /tabs >}}
