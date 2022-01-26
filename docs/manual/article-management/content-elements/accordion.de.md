@@ -1,5 +1,5 @@
 ---
-title: "Akkordion"
+title: "Akkordeon"
 description: "Inhaltselemente im Bereich Akkordion"
 url: "artikelverwaltung/inhaltselemente/akkordion"
 aliases:
