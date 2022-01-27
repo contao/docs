@@ -41,7 +41,26 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['headline']['eval']['preserveTags'] = tr
 {{% /expand %}}
 
 
-{{% expand "Hide a field in the backend" %}}
+{{% expand "Allow HTML in page name and page title" &}}
+```php
+// contao/dca/tl_page.php
+// HTML in page names
+$GLOBALS['TL_DCA']['tl_page']['fields']['title']['eval']['allowHtml'] = true;
+// HTML in page title
+$GLOBALS['TL_DCA']['tl_page']['fields']['pageTitle']['eval']['allowHtml'] = true;
+```
+{{% /expand %}}
+
+
+{{% expand "Allow HTML in captions" &}}
+```php
+// contao/dca/tl_content.php
+$GLOBALS['TL_DCA']['tl_content']['fields']['caption']['eval']['allowHtml'] = true;
+```
+{{% /expand %}}
+
+
+{{% expand "Hide a field in the back end" %}}
 To hide the field, you change the palette and remove the field from the configuration settings of the
 [module Personal data](/en/layout/module-management/user-modules/#personal-data):
 
@@ -109,3 +128,51 @@ unset($GLOBALS['TL_DCA']['tl_files']['list']['sorting']['panelLayout']);
 ```
 {{% /expand %}}
 
+
+{{% expand "Restrict H-tag in headings" %}}
+```php
+// contao/dca/tl_files.php
+$GLOBALS['TL_DCA']['tl_content']['fields']['headline']['options']= ['h2','h3']; # Restrict example to h2 and h3
+```
+{{% /expand %}}
+
+
+{{% expand "Presets player size" %}}
+```php
+// contao/dca/tl_content.php
+$GLOBALS['TL_DCA']['tl_content']['fields']['playerSize']['default'] = [960,540];
+```
+{{% /expand %}}
+
+
+{{% expand "Presets image setting" %}}
+```php
+// contao/dca/tl_content.php
+// The presets are applied to all content with image elements. Image, gallery
+// Thumbnails per row
+$GLOBALS['TL_DCA']['tl_content']['fields']['perRow']['default'] = '4';
+// Tick large view/new window
+$GLOBALS['TL_DCA']['tl_content']['fields']['fullsize']['default'] = '1';
+// Preselection image spacing in px
+$GLOBALS['TL_DCA']['tl_content']['fields']['imagemargin']['default'] = serialize(['unit' => 'px']);
+// Sort by individual order
+$GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'custom'; 
+// Sort by file name (ascending)
+$GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'name_asc'; 
+// Sort by file name (descending)
+$GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'name_desc'; 
+// Sort by date (ascending)
+$GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'date_asc'; 
+// Sort by date (descending)
+$GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'date_desc'; 
+// Sort by random order
+$GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'random'; 
+// Image size for example exact format center | center
+$GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [500,500,'center_center'];
+// other variables for Exact format:
+// 'crop', 'left_top', 'left_center', 'left_bottom', 'center_top', 'center_bottom', 'right_top', 'right_center', 'right_bottom'
+$GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [150]; # Image width of 150px
+$GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [150,150]; # Image width and height of 150px
+// Custom image sizes
+$GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [0, 0, 2]; # the '2' is the ID of the image size
+```
