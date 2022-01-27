@@ -75,8 +75,8 @@ Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anlei
 ## Installation
 
 {{% expand "Meldung: Ihr Datenbank-Server läuft nicht im Strict-Mode!" %}}
-Es handelt sich um einen Hinweis wie du den Strict Mode aktivieren kannst. Weitere Informationen findest du im 
-[Handbuch](../installation/systemvoraussetzungen/#mysql-mindestanforderungen).
+Es handelt sich um einen Hinweis wie du den Strict Mode aktivieren kannst. Weitere Informationen findest du 
+[hier](../installation/systemvoraussetzungen/#mysql-mindestanforderungen).
 {{% /expand %}}
 
 
