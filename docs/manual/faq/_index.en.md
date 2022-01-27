@@ -74,8 +74,7 @@ The information about this can be found under [TinyMCE Editor Configuration](/en
 ## Installation
 
 {{% expand "Notification: The database server is not running in strict mode!" %}}
-This is a hint how to activate the strict mode. More information can be found in 
-the [manual](../installation/system-requirements/).
+This is a hint how to activate the strict mode. More information can be found [here](../installation/system-requirements/).
 {{% /expand %}}
 
 
