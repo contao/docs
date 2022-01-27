@@ -13,7 +13,7 @@ You can use all features of Monolog and the Monolog Bundle in your Contao applic
 In more complex applications, log channels are used to group related messages and
 optionally process them differently.
 
-A typical Symfony application typically uses channels such as `request` or `security`
+A Symfony application typically uses channels such as `request` or `security`
 to assign messages to the appropriate parts of the application.
 
 Contao itself uses the `contao` channel for all Contao-specific messages.
@@ -25,7 +25,7 @@ For more information, see [Contao channels](#contao-channels-convenience-loggers
 
 ## Log Contexts & Contao's System Log
 
-The system log in the Contao backend lists all log entries that have been specifically flagged for Contao.
+The system log in the Contao back end lists all log entries that have been specifically flagged for Contao.
 This flagging is done via a special context that is attached to a particular log entry:
 
 ```php
@@ -37,7 +37,7 @@ $logger->info(
 );
 ```
 
-All messages with this `ContaoContext` are automatically send to the system log
+All messages with this `ContaoContext` are automatically sent to the system log
 and do not appear in the regular log files of the application.
 
 In addition to the mere tagging, the `ContaoContext` also offers the possibility to add
