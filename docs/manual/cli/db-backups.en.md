@@ -66,9 +66,6 @@ php vendor/bin/contao-console contao:backup:restore
 php vendor/bin/contao-console contao:backup:restore backup__20220126153243.sql.gz
 ```
 
-{{% notice warning %}}
-The database must be completely emptied before restoring a backup.
-{{% /notice %}}
 
 ## Have backups created automatically
 
