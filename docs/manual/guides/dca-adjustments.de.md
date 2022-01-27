@@ -133,7 +133,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['fullsize']['default'] = '1';
 // Vorauswahl Bildabstände in px
 $GLOBALS['TL_DCA']['tl_content']['fields']['imagemargin']['default'] = serialize(['unit' => 'px']);
 
-// Sortieren nach Individuelle Reihenfolge
+// Sortieren nach individueller Reihenfolge
 $GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'custom'; 
 // Sortieren nach Dateiname (aufsteigend)
 $GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'name_asc'; 
@@ -143,15 +143,15 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'name_desc';
 $GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'date_asc'; 
 // Sortieren nach Datum (absteigend)
 $GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'date_desc'; 
-// Sortieren nach Zufällige Reihenfolge
+// Sortieren nach zufälliger Reihenfolge
 $GLOBALS['TL_DCA']['tl_content']['fields']['sortBy']['default'] = 'random'; 
 
-// Bildgröße zum Beispiel Exaktes Format Mitte | Mitte
+// Bildgrösse zum Beispiel Exaktes Format Mitte | Mitte
 $GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [500,500,'center_center'];
 // weitere Variablen für Exaktes Format:
 // 'crop', 'left_top', 'left_center', 'left_bottom', 'center_top', 'center_bottom', 'right_top', 'right_center', 'right_bottom'
 $GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [150]; # Bildbreite von 150px
-$GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [150,150]; # Bildbreite von 150 x 150px
+$GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [150,150]; # Bildbreite und Bildhöhe von 150px
 
 // Eigene Bildgrössen
 $GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [0, 0, 2]; # die '2' ist die ID der Bildgrösse
