@@ -74,7 +74,7 @@ of your choice. For example, how about creating one daily at 23:10? An entry in 
 could look like this:
 
 ```
-10 23 * * * /pfad/zum/system/vendor/bin/contao-console contao:backup:create
+10 23 * * * /path/to/system/vendor/bin/contao-console contao:backup:create
 ```
 
 ## Configuration
