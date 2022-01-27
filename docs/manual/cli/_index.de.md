@@ -17,13 +17,13 @@ anlegen lässt. Einfach aufrufen und den Anweisungen folgen.
 Eine Liste aller zur Verfügung stehenden Befehle erhältst du so:
 
 ```bash
-vendor/bin/contao-console list
+php vendor/bin/contao-console list
 ```
 
 Du kannst ausserdem auch für jeden Befehl den Hilfetext anzeigen lassen. Bei `contao:user:create` würde das so aussehen:
 
 ```bash
-vendor/bin/contao-console contao:user:create --help
+php vendor/bin/contao-console contao:user:create --help
 ```
 
 
