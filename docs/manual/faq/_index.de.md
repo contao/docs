@@ -72,6 +72,14 @@ Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anlei
 {{% /expand %}}
 
 
+## Installation
+
+{{% expand "Meldung: Ihr Datenbank-Server läuft nicht im Strict-Mode!" %}}
+Es handelt sich um einen Hinweis wie du den Strict Mode aktivieren kannst. Weitere Informationen findest du 
+[hier](../installation/systemvoraussetzungen/#mysql-mindestanforderungen).
+{{% /expand %}}
+
+
 ## Konfiguration und Einstellung
 
 {{% expand "Es wird keine E-Mail über mein Formular versendet, was muss ich machen?" %}}
