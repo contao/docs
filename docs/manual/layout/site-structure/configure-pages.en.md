@@ -192,6 +192,9 @@ Keep in mind that this will not work if you already have a physical `robots.txt`
 serve said file directly. Make sure to delete that file before trying to use this feature.
 {{% /notice %}}
 
+{{< version-tag "4.13" >}} **Maintenance mode:** If this item is enabled, visitors to the site will see that it is currently being maintained (For the
+maintenance page there is a new [Page type: 503 Service unavailable](../pages-as-central-elements/#page-types)).
+
 
 ### Global settings
 
