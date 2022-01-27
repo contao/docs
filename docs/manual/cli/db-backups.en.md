@@ -80,7 +80,7 @@ could look like this:
 10 23 * * * /pfad/zum/system/vendor/bin/contao-console contao:backup:create
 ```
 
-## Configuration {#configuration}
+## Configuration
 
 You can configure which database tables should be ignored during a backup, as well as the retention policy.
 The retention policy defines how long older backups remain stored on the system.
