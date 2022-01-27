@@ -20,7 +20,7 @@ Of course, the most important command. Without having a backup, we can do very l
 The simplest form of use is without any arguments:
 
 ```bash
-vendor/bin/contao-console contao:backup:create
+php vendor/bin/contao-console contao:backup:create
 ```
 
 Done. Contao will now create a backup in `var/backups` and add the current date and time to it.
@@ -33,7 +33,7 @@ If you want, you can change the name and thus the time yourself by specifying th
 `.gz` you also conveniently disable compression:
 
 ```bash
-vendor/bin/contao-console contao:backup:create my_super_backup_name__20220101000000.sql
+php vendor/bin/contao-console contao:backup:create my_super_backup_name__20220101000000.sql
 ```
 
 {{% notice tip %}}
@@ -60,10 +60,10 @@ However, you can also specify a specific backup:
 
 ```bash
 # The most recent backup
-vendor/bin/contao-console contao:backup:restore
+php vendor/bin/contao-console contao:backup:restore
 
 # Any given backup
-vendor/bin/contao-console contao:backup:restore backup__20220126153243.sql.gz
+php vendor/bin/contao-console contao:backup:restore backup__20220126153243.sql.gz
 ```
 
 {{% notice warning %}}
