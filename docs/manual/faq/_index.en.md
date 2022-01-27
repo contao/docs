@@ -71,6 +71,14 @@ The information about this can be found under [TinyMCE Editor Configuration](/en
 {{% /expand %}}
 
 
+## Installation
+
+{{% expand "The database server is not running in strict mode!" %}}
+This is a hint how to activate the strict mode. More information can be found in 
+the [manual(https://docs.contao.org/manual/en/installation/system-requirements/).
+{{% /expand %}}
+
+
 ## Configuration and adjustment
 
 {{% expand "No e-mail is sent via my Form, what do I have to do?" %}}
