@@ -21,7 +21,7 @@ Therefore, our BC promise deviates from the Symfony BC promise in some regards:
 
 * Our BC promise does not cover classes and methods marked as `@experimental`. Being able to add experimental code
   is a great opportunity for us to release new features early without having to worry about the backwards compatibility
-  of the yet unstable API.
+  of the yet unstable API. You'll find more details in the [respective chapter](/internals/experimental-features).
 
 * Our BC promise does not cover templates. Templates are subject to change very often and you have to compare
   them with every update of Contao. Generally, we try to only ever apply template changes in major and minor
