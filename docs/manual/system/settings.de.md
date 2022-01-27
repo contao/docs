@@ -75,6 +75,7 @@ Ein paar zusätzliche Parameter können über die `config/config.yml` konfigurie
 | `custom_css` | Fügt dem Backend individuelle Stylesheets hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
 | `custom_js` | Fügt dem Backend individuelle JavaScript-Dateien hinzu. Die Assets müssen per URL öffentlich zugänglich sein! |
 | `badge_title` | Konfiguriert den Titel des Badge im Backend. |
+| `route_prefix` | {{< version-tag "4.13" >}} Konfiguriert den Pfad des Contao-Backends, z. B., `/admin` an Stelle von `/contao`. |
 
 Die folgende Konfiguration definiert einige Beispielwerte:
 
@@ -90,6 +91,7 @@ contao:
         custom_js:
             - files/backend/custom.js
         badge_title: develop
+        route_prefix: '/admin'
 ```
 
 ### Frontend-Einstellungen
