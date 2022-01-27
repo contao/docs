@@ -26,7 +26,7 @@ git clone --recurse-submodules https://github.com/contao/docs.git
 To update the theme after cloning, simply run the following command:
 
 ```bash
-git submodule foreach git pull origin master
+git submodule foreach git pull origin main
 ```
 
 
