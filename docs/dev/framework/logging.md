@@ -10,6 +10,7 @@ to log messages and process them through a variety of sources.
 You can use all features of Monolog and the Monolog Bundle in your Contao application.
 
 ## Log Channels
+
 In more complex applications, log channels are used to group related messages and
 optionally process them differently.
 
@@ -114,6 +115,7 @@ services:
 
 Please note that you can only use existing log channels in this way. 
 The following channels are provided by Contao out of the box:
+
 * `contao.access`
 * `contao.configuration`
 * `contao.cron`
