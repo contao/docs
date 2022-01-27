@@ -76,7 +76,7 @@ Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anlei
 
 {{% expand "Meldung: Ihr Datenbank-Server läuft nicht im Strict-Mode!" %}}
 Es handelt sich um einen Hinweis wie du den Strict Mode aktivieren kannst. Weitere Informationen findest du im 
-[Handbuch](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#mysql-mindestanforderungen).
+[Handbuch](../installation/systemvoraussetzungen/#mysql-mindestanforderungen).
 {{% /expand %}}
 
 

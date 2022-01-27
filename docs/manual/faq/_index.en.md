@@ -73,9 +73,9 @@ The information about this can be found under [TinyMCE Editor Configuration](/en
 
 ## Installation
 
-{{% expand "The database server is not running in strict mode!" %}}
+{{% expand "Notification: The database server is not running in strict mode!" %}}
 This is a hint how to activate the strict mode. More information can be found in 
-the [manual](https://docs.contao.org/manual/en/installation/system-requirements/).
+the [manual](../installation/system-requirements/).
 {{% /expand %}}
 
 
