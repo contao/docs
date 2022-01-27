@@ -72,7 +72,7 @@ Some additional parameters can be configured via the `config/config.yml`.
 | `custom_css` | Adds custom style sheets to the back end. The assets must be publicly accessible via URL! |
 | `custom_js` | Adds custom JavaScript files to the back end. The assets must be publicly accessible via URL! |
 | `badge_title` | Configures the title of the badge in the back end. |
-| `route_prefix` | Configures the path to the Contao back end, e.g., `/admin` instead of `/contao`. Supported from Contao 4.13. |
+| `route_prefix` | {{< version-tag "4.13" >}} Configures the path to the Contao back end, e.g., `/admin` instead of `/contao`. |
 
 The following config defines some example values: 
 
