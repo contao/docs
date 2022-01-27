@@ -19,7 +19,7 @@ Natürlich der wichtigste Befehl. Ohne dass wir ein Backup haben, können wir mi
 anfangen. Die einfachste Form der Nutzung erfolgt ohne jegliche Argumente:
 
 ```bash
-vendor/bin/contao-console contao:backup:create
+php vendor/bin/contao-console contao:backup:create
 ```
 
 Fertig. Contao erstellt dir jetzt ein Backup in `var/backups` und versieht es mit dem aktuellen Datum und der Uhrzeit.
@@ -32,7 +32,7 @@ Wenn du möchtest, kannst du den Namen und somit die Uhrzeit selber beeinflussen
 als Argument angibst. Durch das Weglassen von `.gz` deaktivierst du ausserdem bequem die Komprimierung:
 
 ```bash
-vendor/bin/contao-console contao:backup:create mein_super_backup_name__20220101000000.sql
+php vendor/bin/contao-console contao:backup:create mein_super_backup_name__20220101000000.sql
 ```
 
 {{% notice tip %}}
@@ -59,10 +59,10 @@ Backup verwendet. Du kannst aber wiederum auch ein bestimmtes Backup angeben:
 
 ```bash
 # Das jüngste Backup
-vendor/bin/contao-console contao:backup:restore
+php vendor/bin/contao-console contao:backup:restore
 
 # Ein bestimmtes Backup
-vendor/bin/contao-console contao:backup:restore backup__20220126153243.sql.gz
+php vendor/bin/contao-console contao:backup:restore backup__20220126153243.sql.gz
 ```
 
 {{% notice warning %}}
