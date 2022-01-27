@@ -41,7 +41,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['headline']['eval']['preserveTags'] = tr
 {{% /expand %}}
 
 
-{{% expand "HTML im Seitennamen und Seitentitel erlauben" &}}
+{{% expand "HTML im Seitennamen und Seitentitel erlauben" %}}
 ```php
 // contao/dca/tl_page.php
 
@@ -53,7 +53,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['pageTitle']['eval']['allowHtml'] = true
 {{% /expand %}}
 
 
-{{% expand "HTML in Bildunterschriften erlauben" &}}
+{{% expand "HTML in Bildunterschriften erlauben" %}}
 ```php
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['fields']['caption']['eval']['allowHtml'] = true;
