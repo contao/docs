@@ -16,13 +16,13 @@ Just call it and follow the instructions.
 You can get a list of all available commands like so:
 
 ```bash
-vendor/bin/contao-console list
+php vendor/bin/contao-console list
 ```
 
 You can also display the help text for each command. For `contao:user:create` that would look like this:
 
 ```bash
-vendor/bin/contao-console contao:user:create --help
+php vendor/bin/contao-console contao:user:create --help
 ```
 
 Some commands require more detailed explanations. These are covered in this chapter accordingly:
