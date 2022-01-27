@@ -65,9 +65,6 @@ php vendor/bin/contao-console contao:backup:restore
 php vendor/bin/contao-console contao:backup:restore backup__20220126153243.sql.gz
 ```
 
-{{% notice warning %}}
-Die Datenbank muss vor der Wiederherstellung eines Backups komplett geleert werden.
-{{% /notice %}}
 
 ## Automatisiert Backups erstellen lassen
 
