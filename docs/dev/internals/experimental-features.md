@@ -21,7 +21,7 @@ The following features are currently in their `@experimental` phase:
 
 {{% notice tip %}}
 If a feature is experimental, it does not mean you shouldn't be using it. Please, by all means **do use it**! Otherwise, how are
-we supposed to gather real-world feedback? The Contao core itself uses them too. The only difference to a stable API is that
+we supposed to gather real-world feedback? The Contao core itself uses them, too. The only difference to a stable API is that
 you may watch the development in the Contao core a bit more closely and be ready to adjust your code in a more timely
 manner.
 {{% /notice %}}
