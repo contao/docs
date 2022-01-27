@@ -225,6 +225,9 @@ Dies wird nicht funktionieren, wenn sich bereits eine physische `robots.txt` Dat
 dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, bevor du diese Funktion nutzt.
 {{% /notice %}}
 
+{{< version-tag "4.13" >}} **Wartungsmodus:** Wenn dieser Punkt aktiviert ist, wird den Besuchern der Website angezeigt, dass diese gerade gewartet wird (Für die 
+Wartungsseite gibt es einen neuen [Seitentyp: 503 Dienst nicht verfügbar](../seiten-als-zentrale-elemente/#seitentypen)).
+
 
 ### Globale Einstellungen
 
