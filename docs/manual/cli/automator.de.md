@@ -1,5 +1,5 @@
 ---
-title: "Automator"
+title: "contao:automator"
 description: "Allgemeine Aufgaben rund um die Wartung einer Contao-Installation."
 aliases:
     - /de/cli/automator/
