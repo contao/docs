@@ -24,7 +24,7 @@ As of PHP 7, [encapsed strings are more efficient][2] than concatenated strings,
 2. _A service name must be the same as the fully qualified class name (FQCN) of its class_
 
 Please note that this does not apply if you are maintaining a reusable bundle! Symfony explicitly points this out in
-their [best practices for reusable bundles][3].
+their [best practices for reusable bundles][3]:
 
 > If the bundle defines services, they must be prefixed with the bundle alias instead of using fully qualified class
 > names like you do in your project services.
