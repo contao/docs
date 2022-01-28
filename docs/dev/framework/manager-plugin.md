@@ -385,6 +385,10 @@ from "Bundle X" and another one from "Bundle Y". The container then merges all t
 a certain configuration is coming from.
 {{% /notice %}}
 
+{{% notice warning %}}
+You cannot use `$container->addCompilerPass()` here because ???. See how the [respective guide](/guides/modify-container-at-compile-time/modify-container-at-compile-time/) to see how to register a compiler pass.
+{{% /notice %}}
+
 
 #### Adding a custom Monolog handler with a custom channel
 
