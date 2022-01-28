@@ -2,6 +2,7 @@
 title: "Datenbank Backups"
 description: "Ganz einfach Backups der Datenbank erstellen"
 url: "cli/datenbank-backups"
+weight: 10
 ---
 
 {{< version "4.13" >}}
