@@ -77,7 +77,7 @@ Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier füge
 {% block content %}
     {{ parent() }}
     
-    {{ include('image_copyright.html.twig', {name: "Dona Evans A", license: "Creative Commons B"}) }}
+    {% include 'image_copyright.html.twig' with {name: 'Dona Evans A', license: 'Creative Commons B'} only %}
 
 {% endblock %}
 ```
