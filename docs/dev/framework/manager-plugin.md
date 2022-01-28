@@ -386,7 +386,11 @@ a certain configuration is coming from.
 {{% /notice %}}
 
 {{% notice warning %}}
-You cannot use `$container->addCompilerPass()` here because ???. See how the [respective guide](/guides/modify-container-at-compile-time/modify-container-at-compile-time/) to see how to register a compiler pass.
+You cannot use `$container->addCompilerPass()` to add a compiler pass to the app here because `getExtensionConfig()` 
+is called on every plugin during the process of merging the configuration of all the bundles (done in Symfony
+in the `MergeExtensionConfigurationPass`). If you want to register a regular compiler pass that is called **after**
+the extensions have been merged, see the [respective guide](/guides/modify-container-at-compile-time/)
+to learn more.
 {{% /notice %}}
 
 

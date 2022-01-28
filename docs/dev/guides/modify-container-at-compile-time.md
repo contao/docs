@@ -47,3 +47,39 @@ class Plugin implements ConfigPluginInterface
     }
 }
 ```
+
+This can be very useful for example to make certain services public, if you need to access them in
+legacy code where you cannot use Dependency Injection yet and have to rely on `Contao\System::getContainer()->get('<service.id>')`
+for that matter. Combined with anonymous classes, this could look like this:
+
+
+```php
+// src/ContaoManager/Plugin.php
+namespace App\ContaoManager;
+
+use App\DependencyInjection\Compiler\MyCompilerPass;
+use Contao\ManagerPlugin\Config\ConfigPluginInterface;
+use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+
+class Plugin implements ConfigPluginInterface
+{
+    public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig)
+    {
+        $loader->load(static function (ContainerBuilder $container) {
+            $container->addCompilerPass(new class implements CompilerPassInterface {
+                public function process(ContainerBuilder $container)
+                {
+                    // Example for making a custom monolog logger public
+                    $container->getDefinition('monolog.logger.api')
+                        ->setPublic(true);
+                    
+                    // Or the general "logger" alias
+                    $container->getAlias('logger')
+                        ->setPublic(true);
+                }
+            });
+        });
+    }
+}
+```
