@@ -53,7 +53,7 @@ This template can now be reused at any place. Here, we're for instance adding ou
 {{% tab name="Twig" %}}
 
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
 We create a template `image_copyright.html.twig` with the following content:
 

@@ -30,9 +30,9 @@ Man kann hierüber nachvollziehen welches Template zum Einsatz kommt.
 
 ## Twig Unterstützung
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
-Die Ausgabe kann, neben PHP Templates, zusätzlich über Twig Templates erfolgen. Detaillierte Informationen hierzu 
+Die Ausgabe kann, neben PHP-Templates, zusätzlich über Twig-Templates erfolgen. Detaillierte Informationen hierzu 
 werden über die »[Entwickler Dokumentation](https://docs.contao.org/dev/framework/templates/twig/)« bereit gestellt.
 
 {{% taxonomylist context="tags" filter="Template" title="Anleitungen" description=true %}}

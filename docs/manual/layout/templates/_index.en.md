@@ -6,7 +6,7 @@ aliases:
 weight: 40
 ---
 
-A template is used to output a module, content element, form or other component. In the navigation area "Layout" 
+A template is used to output a module, content element, form or other component. In the [navigation area](../../administration-area/accessing-and-structure-of-the-backend/#the-navigation-area) "Layout" 
 under "Templates" the files can be created, stored in folders and edited. These adjustments are update proof.
 
 {{% children %}}
@@ -25,9 +25,9 @@ so you can see which template is being used.
 
 ## Twig support
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
-In addition to PHP templates the output can also be generated via Twig Templates. Detailed information about this 
+In addition to PHP templates the output can also be generated via Twig templates. Detailed information about this 
 is provided in the "[Developer Documentation](https://docs.contao.org/dev/framework/templates/twig/)".
 
 {{% taxonomylist context="tags" filter="Template" title="Guides" description=true %}}

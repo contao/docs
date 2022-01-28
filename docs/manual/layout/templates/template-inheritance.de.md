@@ -49,7 +49,7 @@ Mittels `$this->parent()` lässt sich der originale Inhalt des Blocks ausgeben.
 {{% tab name="Twig" %}}
 
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
 Zunächst muss das Basis-Template mittels `{% extends '@Contao/fe_page' %}` angegeben werden. Anzupassende Blöcke
 können dann, wie im originalen Template, durch Einschließen in `{% block name-des-blocks %}` 

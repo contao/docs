@@ -45,7 +45,7 @@ The original block content is available via `$this->parent()`.
 {{% tab name="Twig" %}}
 
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
 First, the base template must be declared with `{% extends 'name-of-the-template' %}`. Then you can provide new block 
 content by wrapping it in `{% block name-of-the-block %}` and  `{% endblock %}` statements like in the original

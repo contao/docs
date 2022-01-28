@@ -54,9 +54,8 @@ Dieses Template lässt sich nun an beliebiger Stelle wiederverwenden. Hier füge
 {{% tab name="Twig" %}}
 
 
-### Twig Beispiel
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
 Wir erstellen ein Template `image_copyright.html.twig` mit folgendem Inhalt:
 

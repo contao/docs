@@ -35,9 +35,9 @@ Falls du [Template-Vererbung]({{< ref "template-inheritance.de.md" >}}) nutzt, w
 {{% tab name="Twig" %}}
 
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
-Innerhalb von Twig Templates kannst du dir alle verfügbaren oder gezielt einzelne Template-Daten anzeigen lassen.
+Innerhalb von Twig-Templates kannst du dir alle verfügbaren oder gezielt einzelne Template-Daten anzeigen lassen.
 Dies funktioniert allerdings nur bei aktiviertem Debug-Modus.
 
 ```twig

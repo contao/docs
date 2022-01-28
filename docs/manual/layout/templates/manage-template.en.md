@@ -43,7 +43,7 @@ This template will then be specifically selectable in any of the "Text" content 
 {{% tab name="Twig" %}}
 
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
 If you want to adjust the output of the "Text" content element, you would use the `ce_text.html.twig` template. In this case, 
 changes to the template will affect all content elements of type "Text". 

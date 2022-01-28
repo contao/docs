@@ -33,9 +33,9 @@ debug mode or if the statement is enclosed between `$this->block(…)` and `$thi
 {{% tab name="Twig" %}}
 
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
-Within Twig Templates you can display all available or specific template data.
+Within Twig templates you can display all available or specific template data.
 This only works while the debug mode is enabled.
 
 ```twig

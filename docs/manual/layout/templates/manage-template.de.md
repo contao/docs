@@ -46,7 +46,7 @@ Dieses Template kann dann gezielt zur Ausgabe für ein (oder mehrere) Inhaltsele
 {{% tab name="Twig" %}}
 
 
-{{< version "4.13" >}}
+{{< version "4.12" >}}
 
 Möchte man z.&nbsp;B. die Ausgabe des Inhaltselements vom Typ »Text« ändern, kann man das Template `ce_text.html.twig` 
 hierzu verwenden. In diesem Fall haben die Template-Änderungen Auswirkung auf alle Inhaltselemente vom Typ »Text«. 
