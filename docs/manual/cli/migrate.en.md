@@ -13,8 +13,8 @@ With this command you can perform database updates and migrations after a new in
 extension. The migrations that get executed are update scripts of Contao, registered migrations of extensions, 
 legacy `runonce.php` files and the database update.
 
-```sh
-$> php vendor/bin/contao-console contao:migrate [options]
+```bash
+php vendor/bin/contao-console contao:migrate [options]
 ```
 
 | Option             | Description |
