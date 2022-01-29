@@ -22,4 +22,7 @@ php vendor/bin/contao-console contao:migrate [options]
 | --- | --- |
 | `--with-deletes`   | Führt alle Datenbankmigrationen einschließlich `DROP`-Befehlen aus. |
 | `--schema-only`    | Führt nur die Migration des Datenbankschemas aus. Update-Skripte, registrierte Migrationen und `runonce.php`-Dateien werden übersprungen. |
+| `--migrations-only` | Führt nur die Migrationen aus, ohne die Datenbanktabellen und -Felder zu aktualisieren. |
+| `--dry-run` | Zeigt anstehende Migrationen und Schemaaktualisierungen an, ohne sie tatsächlich auszuführen. |
 | `--no-interaction` | Wenn diese Option aktiviert ist, werden alle Bestätigungsfragen automatisch mit »Ja« beantwortet. Dies ist nützlich, wenn die Migrationen in einem automatisierten System durchgeführt werden sollen. |
+| `--no-backup` | {{< version-tag "4.13" }} Deaktiviert das Datenbank-Backup, das standardmäßig vor der Ausführung der Migrationen erstellt wird. |
