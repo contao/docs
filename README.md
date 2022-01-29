@@ -71,6 +71,13 @@ cd page
 hugo server --cleanDestinationDir --environment manual --destination ../build/manual 
 ```
 
+Or for the Developer Documentation:
+
+```
+cd page
+hugo server --cleanDestinationDir --environment dev --destination ../build/dev 
+```
+
 
 ## License
 
