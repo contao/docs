@@ -24,8 +24,8 @@ two subscribers:
 Any extension might provide additional subscribers so this list is not necessarily conclusive.
 Use it as follows:
 
-```sh
-$> php vendor/bin/contao-console contao:crawl [options] [<job>]
+```bash
+php vendor/bin/contao-console contao:crawl [options] [<job>]
 ```
 
 There is only one argument to this command which is `job`. It is optional and represents a job ID.

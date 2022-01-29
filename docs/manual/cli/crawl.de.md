@@ -10,9 +10,9 @@ weight: 20
 {{< version "4.9" >}}
 
 Contao ist mit einem HTTP-Crawler ausgestattet. Intern basiert dieser auf [Escargot](https://github.com/terminal42/escargot).
-Der Crawler durchforstet im wesentlichen alle von Contao generierten URLs, wie jede andere Suchmaschiene. Er folgt Links, 
+Der Crawler durchforstet im wesentlichen alle von Contao generierten URLs, wie jede andere Suchmaschine. Er folgt Links, 
 die Teil der `sitemap.xml` sind, respektiert `robots.txt` Informationen, das `rel`-Attribut bei Links und vieles mehr.
-Dabei können eine beliebige Anzahl von sogenannten »Subscribern« die Ergebnisse der HTTP Anfragen abonnieren und 
+Dabei können eine beliebige Anzahl von sogenannten »Subscribern« die Ergebnisse der HTTP-Anfragen abonnieren und 
 grundsätzlich beliebig weiterverarbeiten. Zum jetzigen Zeitpunkt kennt Contao zwei Abonnenten:
 
 * `search-index` - Aktualisiert den integrierten Suchindex (nur verfügbar, wenn die Suche überhaupt aktiviert wurde)
@@ -20,8 +20,8 @@ grundsätzlich beliebig weiterverarbeiten. Zum jetzigen Zeitpunkt kennt Contao z
 
 Jede Erweiterung kann weitere »Subscriber« bereitstellen, so dass diese Liste nicht unbedingt abschließend ist.
 
-```sh
-$> php vendor/bin/contao-console contao:crawl [options] [<job>]
+```bash
+php vendor/bin/contao-console contao:crawl [options] [<job>]
 ```
 
 Es gibt nur ein Argument für diesen Befehl, nämlich `job`. Dieses ist optional und steht für eine Auftragskennung. Crawling kann eine sehr 
