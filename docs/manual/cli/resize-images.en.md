@@ -12,7 +12,7 @@ weight: 30
 With this command you can process all deferred images that were not yet resized.
 
 ```sh
-$> php vendor/bin/contao-console contao:resize-images [options]
+ php vendor/bin/contao-console contao:resize-images [options]
 ```
 
 | Option             | Description |
