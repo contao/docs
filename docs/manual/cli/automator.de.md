@@ -27,8 +27,8 @@ Die folgenden Aufgaben sind verfügbar.
 | `purgeScriptCache`      | Entfernt verarbeitete und/oder verkleinerte JavaScript- und Stylesheets-Dateien. |
 | `purgePageCache`        | Löscht den Seiten-Cache, indem zwischengespeicherte HTML-Seiten entfernt werden. |
 | `purgeSearchCache`      | Löscht den Cache der Suchergebnisse. |
-| `purgeInternalCache`    | Löscht das interne Cache-Verzeichnis in `kernel.cache_dir`. Dies beinhaltet den Symfony-Anwendungscache und trifft möglicherweise auf Nicht-Contao-Caches. |
-| `purgeTempFolder`       | Löscht den gesamten temporären Ordner. |
+| `purgeInternalCache`    | Löscht den internen Cache von Contao. |
+| `purgeTempFolder`       | Löscht den Inhalt von `system/tmp`. |
 | `purgeRegistrations`    | Die nicht aktivierten Mitgliederregistrierungen werden bereinigt. |
 | `purgeOptInTokens`      | Die abgelaufenen Double-Opt-In-Tokens werden gelöscht. |
 | `purgeXmlFiles`         | Entfernt die von `generateXmlFiles` erzeugten xml-Dateien. |
