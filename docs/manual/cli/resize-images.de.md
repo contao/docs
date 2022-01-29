@@ -11,7 +11,7 @@ weight: 30
 
 Mit diesem Befehl können alle fehlenden, verzögert erzeugten Bilder erstellt werden.
 
-```sh
+```bash
 php vendor/bin/contao-console contao:resize-images [options]
 ```
 
