@@ -20,7 +20,7 @@ Die folgenden Aufgaben sind verfügbar.
 | Aufgabe | Beschreibung |
 | --- | --- |
 | `purgeSearchTables`     | Löscht den Suchindex durch löschen der Tabellen `tl_search` und `tl_search_index`. |
-| `purgeUndoTable`        | Entfernt die zwischengespeicherten Rückgängig-Einträge und ermöglicht so die Wiederherstellung gelöschter Einträge. |
+| `purgeUndoTable`        | Löscht die Tabelle `tl_undo` |
 | `purgeVersionTable`     | Löscht die Tabelle `tl_version`, die verschiedene Versionen für Zeilen in Tabellen enthält, die die Versionierungsfunktion aktiviert haben. |
 | `purgeSystemLog`        | Löscht die Einträge im Systemprotokoll. |
 | `purgeImageCache`       | Bereinigt den Bild-Cache, indem alle verarbeiteten und in der Größe veränderten Bilder im konfigurierbaren `image.target_dir` gelöscht werden. |
