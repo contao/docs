@@ -1,10 +1,10 @@
 ---
 title: "Templates verwalten"
 description: "Die Verwaltung der Template-Dateien."
-url: "layout/templates/verwaltung"
+url: "layout/templates/php/verwaltung"
 aliases:
-    - /de/layout/templates/verwaltung/
-weight: 10
+    - /de/layout/templates/php/verwaltung/
+weight: 20
 ---
 
 ## Ordnerstruktur

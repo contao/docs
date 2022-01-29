@@ -2,8 +2,8 @@
 title: 'Manage templates'
 description: 'The management of the template files.'
 aliases:
-    - /en/layout/templates/manage-template/
-weight: 10
+    - /en/layout/templates/php/manage-template/
+weight: 20
 ---
 
 ## Directory structure

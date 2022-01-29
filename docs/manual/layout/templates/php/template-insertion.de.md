@@ -1,10 +1,10 @@
 ---
 title: "Template mischen"
 description: "Ein Template mischen."
-url: "layout/templates/insertion"
+url: "layout/templates/php/insertion"
 aliases:
-    - /de/layout/templates/insertion/
-weight: 40
+    - /de/layout/templates/php/insertion/
+weight: 50
 ---
 
 Mit Hilfe der `insert()`-Funktion kann ein Template in ein anderes Template eingefügt werden. Die Funktion akzeptiert 

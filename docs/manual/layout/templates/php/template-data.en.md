@@ -2,8 +2,8 @@
 title: 'Display template data'
 description: 'Display all template data.'
 aliases:
-    - /en/layout/templates/template-data/
-weight: 50
+    - /en/layout/templates/php/template-data/
+weight: 60
 ---
 
 The available template context varies depending on the template source. Usually, the complete data can be accessed via

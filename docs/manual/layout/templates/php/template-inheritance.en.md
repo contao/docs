@@ -2,8 +2,8 @@
 title: 'Inherit templates'
 description: 'The template inheritance.'
 aliases:
-    - /en/layout/templates/template-inheritance/
-weight: 30
+    - /en/layout/templates/php/template-inheritance/
+weight: 40
 ---
 
 Contao template inheritance allows overwriting only certain sections of a template (blocks).
