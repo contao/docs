@@ -10,8 +10,8 @@ weight: 15
 Dieser Befehl ist eine Schnittstelle zur Contao Klasse `Automator`. Er besteht hauptsächlich aus allgemeinen Aufgaben 
 rund um die Wartung einer Contao-Installation.
 
-```sh
-$> php vendor/bin/contao-console contao:automator [<task>]
+```bash
+php vendor/bin/contao-console contao:automator [<task>]
 ```
 
 Der Befehl selbst kann ohne Angabe einer Aufgabe ausgeführt werden. Es wird dann nach einer Aufgabe gefragt. 
@@ -24,7 +24,7 @@ Die folgenden Aufgaben sind verfügbar.
 | `purgeVersionTable`     | Löscht die Tabelle `tl_version`, die verschiedene Versionen für Zeilen in Tabellen enthält, die die Versionierungsfunktion aktiviert haben. |
 | `purgeSystemLog`        | Löscht die Einträge im Systemprotokoll. |
 | `purgeImageCache`       | Bereinigt den Bild-Cache, indem alle verarbeiteten und in der Größe veränderten Bilder im konfigurierbaren `image.target_dir` gelöscht werden. |
-| `purgeScriptCache`      | Entfernt verarbeitete und/oder verkleinerte JavaScript-Dateien und Stylesheets. |
+| `purgeScriptCache`      | Entfernt verarbeitete und/oder verkleinerte JavaScript- und Stylesheets-Dateien. |
 | `purgePageCache`        | Löscht den Seiten-Cache, indem zwischengespeicherte HTML-Seiten entfernt werden. |
 | `purgeSearchCache`      | Löscht den Cache der Suchergebnisse. |
 | `purgeInternalCache`    | Löscht das interne Cache-Verzeichnis in `kernel.cache_dir`. Dies beinhaltet den Symfony-Anwendungscache und trifft möglicherweise auf Nicht-Contao-Caches. |
@@ -34,5 +34,5 @@ Die folgenden Aufgaben sind verfügbar.
 | `purgeXmlFiles`         | Entfernt die von `generateXmlFiles` erzeugten xml-Dateien. |
 | `generateSitemap`       | Erzeugt die sitemap.xml-Dateien auf der Grundlage des Seitenbaums und der Einstellungen auf der Stammseite. |
 | `generateXmlFiles`      | Erzeugt die sitemap.xml-Dateien und ruft den Hook `generateXmlFiles` auf, den andere Bundles nutzen können. Das `ContaoNewsBundle` verwendet ihn, um RSS-Feeds zu erzeugen. |
-| `generateSymlinks`      | Erzeugt verschiedene Symlinks zum Webverzeichnis, z.B. öffentlich erreichbare Dateiverzeichnisse, das Verzeichnis assets oder `system/themes`. |
+| `generateSymlinks`      | Erzeugt verschiedene Symlinks zum Web-Verzeichnis, z. B. öffentlich erreichbare Dateiverzeichnisse, das Verzeichnis assets oder `system/themes`. |
 | `generateInternalCache` | Wärmt den internen Cache auf. |

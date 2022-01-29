@@ -3,7 +3,6 @@ title: "Database Backups"
 description: "Creating database backups made easy"
 aliases:
     - /en/cli/database-backups/
-weight: 10    
 ---
 
 {{< version "4.13" >}}

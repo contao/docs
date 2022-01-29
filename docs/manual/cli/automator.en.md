@@ -10,12 +10,11 @@ weight: 15
 This command is an interface to the `Automator` class of Contao. It mainly consists
 of common tasks around the maintenance of a Contao installation.
 
-```sh
-$> php vendor/bin/contao-console contao:automator [<task>]
+```bash
+php vendor/bin/contao-console contao:automator [<task>]
 ```
 
-The command itself can be executed without providing a task. It will then
-ask for it. The following tasks are available.
+The command will prompt you for which task should be executed, if no specific task is provided. The following tasks are available.
 
 | Task                    | Description                                                                                                                                           |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
