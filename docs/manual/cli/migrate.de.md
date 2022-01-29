@@ -20,6 +20,6 @@ php vendor/bin/contao-console contao:migrate [options]
 
 | Option | Beschreibung |
 | --- | --- |
-| `--with-deletes`   | Führt alle Datenbankmigrationen einschließlich `DROP`-Abfragen aus. |
+| `--with-deletes`   | Führt alle Datenbankmigrationen einschließlich `DROP`-Befehlen aus. |
 | `--schema-only`    | Führt nur die Migration des Datenbankschemas aus. Update-Skripte, registrierte Migrationen und `runonce.php`-Dateien werden übersprungen. |
 | `--no-interaction` | Wenn diese Option aktiviert ist, werden alle Bestätigungsfragen automatisch mit »Ja« beantwortet. Dies ist nützlich, wenn die Migrationen in einem automatisierten System durchgeführt werden sollen. |
