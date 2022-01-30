@@ -391,6 +391,49 @@ class FilterPageTypeListener
 {{% /expand %}}
 
 
+## `contao.sitemap`
+
+{{% version "4.11" %}}
+
+This event is triggered in Contao's `SitemapController` when the sitemap is built. The event allows you to modify the XML DOM of the 
+sitemap. The event also stores for which website roots this sitemap was created.
+
+<table>
+<tr><th>Name</th><td><code>contao.sitemap</code></td></tr>
+<tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::SITEMAP</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\SitemapEvent</code></td></tr>
+</table>
+<br>
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/SitemapListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\ContaoCoreEvents;
+use Contao\CoreBundle\Event\SitemapEvent;
+use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+
+/**
+ * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::SITEMAP)
+ */
+class SitemapListener
+{
+    public function __invoke(SitemapEvent $event): void
+    {
+        $sitemap = $event->getDocument();
+        $urlSet = $sitemap->childNodes[0];
+
+        $loc = $sitemap->createElement('loc', 'https://example.com/foobar');
+        $urlEl = $sitemap->createElement('url');
+        $urlEl->appendChild($loc);
+        $urlSet->appendChild($urlEl);
+    }
+}
+```
+{{% /expand %}}
+
+
 ## `SendNewsletterEvent`
 
 {{% version "4.13" %}}
