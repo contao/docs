@@ -22,7 +22,7 @@ empfohlen, diese immer zu verwenden.
 - **MySQL:** Version 8.0+ oder gleichwertiger **MariaDB** Server
 
 
-#### PHP-Erweiterungen
+### PHP-Erweiterungen
 
 | Name der Erweiterung                      | Contao 4.4                   | Contao 4.9                                     |
 |:------------------------------------------|:-----------------------------|:-----------------------------------------------|
@@ -66,7 +66,7 @@ deaktivieren sie jedoch explizit. Die Anforderungen werden bei der Installation 
 [Contao Manager](../../installation/contao-manager) oder [Composer](https://getcomposer.org) automatisch überprüft.
 
 
-#### PHP-Konfiguration (`php.ini`)
+### PHP-Konfiguration (`php.ini`)
 
 Diese Einstellungen sind die Empfehlungen für den idealen Betrieb von Contao. Eine andere Konfiguration bedeutet nicht, 
 dass Contao nicht funktioniert, kann jedoch zu unerwartetem Verhalten oder Leistungseinbußen/langsamen Reaktionen 
@@ -87,7 +87,7 @@ führen.
 | `open_basedir`                  | `NULL`                       | `NULL`                  | Wenn aktiv, stelle sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                   |
 
 
-#### MySQL-Konfiguration
+### MySQL-Konfiguration
 
 - **MySQL** Tabellenformat `InnoDB` (Standard seit MySQL 5.7)
 - **MySQL** Option `innodb_large_prefix = 1` (standardmäßig aktiviert seit MySQL 5.7.7)
