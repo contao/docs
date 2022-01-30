@@ -12,6 +12,12 @@ and append the subsequently documented commands.
 php vendor/bin/contao-console <command-name>
 ```
 
+You can get a list of all available commands like so:
+
+```sh
+php vendor/bin/contao-console list
+```
+
 By appending the `--help` argument to any command, a usage guide is printed to the shell.
 
 ```sh
