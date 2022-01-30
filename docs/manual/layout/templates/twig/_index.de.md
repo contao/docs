@@ -25,8 +25,7 @@ einige Änderungen geben, also sei darauf vorbereitet.
 {{% /notice %}}
 
 {{% notice info %}}
-Die Dokumentation der Twig Nutzung in Contao wird ständig erweitert. Bis dahin findest du in 
-[diesem Beitrag](https://docs.contao.org/dev/framework/templates/twig/) weitere, detaillierte Informationen zum Thema.
+Eine Auswahl vorhandener Twig-Templates, z. B. über ein Inhaltselement, ist derzeit noch nicht möglich. Die Dokumentation der Twig Nutzung in Contao wird ständig erweitert. Bis dahin findest du in [diesem Beitrag](https://docs.contao.org/dev/framework/templates/twig/) weitere, detaillierte Informationen zum Thema.
 {{% /notice %}}
 
 
@@ -58,6 +57,5 @@ speziellen `@Contao` [Namensraum](https://docs.contao.org/dev/framework/template
 3. Verwende den gleichen Blocknamen wie in der ursprünglichen Vorlage.
 
 {{% notice note %}}
-Du kannst Twig-Templates nicht aus PHP-Templates heraus erweitern, nur umgekehrt. Eine Auswahl vorhandener Twig-Templates,
-z. B. über ein Inhaltselement, ist derzeit noch nicht möglich.
+Du kannst Twig-Templates nicht aus PHP-Templates heraus erweitern, nur umgekehrt.
 {{% /notice %}}
