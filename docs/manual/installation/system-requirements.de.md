@@ -87,18 +87,6 @@ führen.
 | `open_basedir`                  | `NULL`                       | `NULL`                  | Wenn aktiv, stelle sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                   |
 
 
-### Wechsel der PHP Version
-
-Falls die PHP Version einer laufenden Contao Instanz geändert werden soll, sollte immer ein volles `composer update` nach dem Wechsel
-durchgeführt werden. Dies ist besonders dann wichtig, wenn zwischen Haupt-Versionen gewechselt wird, z. B. von PHP 7.x zu PHP 8.x - oder
-umgekehrt. Dadurch wird für die installierten Pakete die Kompatibilität zu der jeweiligen PHP Version sichergestellt.
-
-Unter Verwendung des Contao Managers kann das `composer update` in der Systemwartung unter _Composer-Abhängigkeiten_ ausgeführt werden:
-
-![Composer Update im Contao Manager](/de/installation/images/de/composer-update.png?classes=shadow)
-
-
-
 ### MySQL-Konfiguration
 
 - **MySQL** Tabellenformat `InnoDB` (Standard seit MySQL 5.7)
@@ -132,6 +120,17 @@ Contao erkennt und verwendet automatisch die beste verfügbare Erweiterung.
 Wird ein MySQL Server in Version **8.0.17** oder höher eingesetzt, ist mindestens 
 PHP **7.2.0** erforderlich.
 {{% /notice %}}
+
+
+### Wechsel der PHP Version
+
+Falls die PHP Version einer laufenden Contao Instanz geändert werden soll, sollte immer ein volles `composer update` nach dem Wechsel
+durchgeführt werden. Dies ist besonders dann wichtig, wenn zwischen Haupt-Versionen gewechselt wird, z. B. von PHP 7.x zu PHP 8.x - oder
+umgekehrt. Dadurch wird für die installierten Pakete die Kompatibilität zu der jeweiligen PHP Version sichergestellt.
+
+Unter Verwendung des Contao Managers kann das `composer update` in der Systemwartung unter _Composer-Abhängigkeiten_ ausgeführt werden:
+
+![Composer Update im Contao Manager](/de/installation/images/de/composer-update.png?classes=shadow)
 
 
 ### MySQL-Mindestanforderungen 
