@@ -22,8 +22,7 @@ considered internal for now. Although not likely, there could also be some behav
 {{% /notice %}}
 
 {{% notice info %}}
-The documentation of Twig usage in Contao is constantly being extended. Until then you can find more detailed information 
-[here](https://docs.contao.org/dev/framework/templates/twig/).
+A selection of existing Twig templates, e.g. via a content element, is currently not yet possible. The documentation of Twig usage in Contao is constantly being extended. Until then you can find more detailed information [here](https://docs.contao.org/dev/framework/templates/twig/).
 {{% /notice %}}
 
 
@@ -55,6 +54,5 @@ There can **either** be a Twig **or** a PHP variant of the same template in the 
 3. Use the same block names as in the original template.
 
 {{% notice note %}}
-You cannot extend Twig templates from within PHP templates only the other way round. A selection of existing Twig templates,
-e.g. via a content element, is currently not yet possible.
+You cannot extend Twig templates from within PHP templates only the other way round.
 {{% /notice %}}
