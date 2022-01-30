@@ -95,7 +95,7 @@ umgekehrt. Dadurch wird für die installierten Pakete die Kompatibilität zu der
 
 Unter Verwendung des Contao Managers kann das `composer update` in der Systemwartung unter _Composer-Abhängigkeiten_ ausgeführt werden:
 
-![Composer update in the Contao Manager](/de/installation/images/de/composer-update.png?classes=shadow)
+![Composer Update im Contao Manager](/de/installation/images/de/composer-update.png?classes=shadow)
 
 
 
