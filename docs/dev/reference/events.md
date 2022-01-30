@@ -396,7 +396,7 @@ class FilterPageTypeListener
 {{% version "4.11" %}}
 
 This event is triggered in Contao's `SitemapController` when the sitemap is built. The event allows you to modify the XML DOM of the 
-sitemap.
+sitemap. The event also stores for which website roots this sitemap was created.
 
 <table>
 <tr><th>Name</th><td><code>contao.sitemap</code></td></tr>
