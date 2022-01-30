@@ -21,11 +21,11 @@ Die folgenden Aufgaben sind verfügbar.
 | --- | --- |
 | `purgeSearchTables`     | Löscht den Suchindex durch löschen der Tabellen `tl_search` und `tl_search_index`. |
 | `purgeUndoTable`        | Löscht den Inhalt der Tabelle `tl_undo`. Danach können gelöschte Datensätze nicht wiederhergestellt werden. |
-| `purgeVersionTable`     | Löscht die Tabelle `tl_version`, die verschiedene Versionen für Zeilen in Tabellen enthält, die die Versionierungsfunktion aktiviert haben. |
+| `purgeVersionTable`     | Löscht den Inhalt der Tabelle `tl_version`, die verschiedene Versionen für Zeilen in Tabellen enthält, die die Versionierungsfunktion aktiviert haben. |
 | `purgeSystemLog`        | Löscht die Einträge im Systemprotokoll. |
 | `purgeImageCache`       | Bereinigt den Bild-Cache, indem alle verarbeiteten und in der Größe veränderten Bilder im konfigurierbaren `image.target_dir` gelöscht werden. |
 | `purgeScriptCache`      | Entfernt verarbeitete und/oder verkleinerte JavaScript- und Stylesheets-Dateien. |
-| `purgePageCache`        | Löscht den Seiten-Cache, indem zwischengespeicherte HTML-Seiten entfernt werden. |
+| `purgePageCache`        | Löscht den Seiten-Cache, in dem zwischengespeicherte HTML-Seiten entfernt werden. |
 | `purgeSearchCache`      | Löscht den Cache der Suchergebnisse. |
 | `purgeInternalCache`    | Löscht den internen Cache von Contao. |
 | `purgeTempFolder`       | Löscht den Inhalt von `system/tmp`. |
