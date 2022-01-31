@@ -143,7 +143,7 @@ In any case, the current core team members consist of (in alphabetical order)
 * [Gschwantner, Fritz Michael (@fritzmg)](https://github.com/fritzmg) 
 * [Schempp, Andreas (@aschempp)](https://github.com/aschempp) 
 * [Schmid, Jim (@sheeep)](https://github.com/sheeep) 
-* [Vondano, Moritz (@mv-o)](https://github.com/mv-o) 
+* [Vondano, Moritz (@m-vo)](https://github.com/m-vo) 
 * [Witschi, Yanick (@toflar)](https://github.com/toflar) 
 
 In addition, there's a core team for the documentation:
