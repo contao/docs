@@ -124,9 +124,9 @@ Only the requested version of the `contao/manager-bundle` needs to be adjusted.
 
 ## Installing Developer Versions
 
-During the [development of a Contao version][releasePlan] you can also install the development 
-version for testing purposes. This way you can test the latest changes without having
-to wait for a new release. Though this might of course also contain some unstable code.
+You can also install the [development version][releasePlan] for testing purposes instead of 
+just the already defined release candidates. This way you can test the latest changes without 
+having to wait for a new release. Though this might of course also contain some unstable code.
 
 In this case instead of requiring a specific _version_ of Contao, a specific _branch_
 of Contao's public Git repository will be required. The current minor version in development
