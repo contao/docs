@@ -143,7 +143,7 @@ will always have a branch name corresponding to the current major version, e.g. 
 of this year. This branch needs to be required as `5.x-dev` in Composer.
 
 Statt einer spezifischen _Version_ wird nun ein spezifischer _Branch_ aus dem öffentlichen
-Git Repository von Contao verlangt. Die aktuell entwickelte »Minor« Version von Contao hat immer 
+Git-Repository von Contao verlangt. Die aktuell entwickelte »Minor« Version von Contao hat immer 
 einen »Entwicklungszweig (Branch)« dessen Namen der aktuellen »Major« Version entspricht, z. B.
 `5.x` seit Anfang 2022. Dieser Branch muss als `5.x-dev` in Composer verlangt werden.
 
