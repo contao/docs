@@ -32,7 +32,7 @@ Aliaselemente verwenden dasselbe HTML-Markup wie das Originalelement.
 ## Formular
 
 Das Inhaltselement »Formular« fügt dem Artikel ein Formular hinzu. Informationen zur Erstellung und Verwaltung von 
-Formularen findest du im Abschnitt [Formulargenerator](../../formulargenerator/).
+Formularen findest du im Abschnitt [Formulargenerator](../../../formulargenerator/).
 
 **Formular:** Wähle hier das Formular aus, das du einfügen möchtest.
 
@@ -40,7 +40,7 @@ Formularen findest du im Abschnitt [Formulargenerator](../../formulargenerator/)
 ## Modul
 
 Das Inhaltselement »Modul« fügt dem Artikel ein Frontend-Modul hinzu. Wie du Module erstellst und konfigurierst, weißt 
-du ja bereits aus dem Abschnitt [Modulverwaltung](../../modulverwaltung/).
+du ja bereits aus dem Abschnitt [Modulverwaltung](../../../modulverwaltung/).
 
 **Modul:** Hier wählst du das Modul aus, das du einfügen möchtest.
 
