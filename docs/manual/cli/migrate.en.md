@@ -24,6 +24,6 @@ php vendor/bin/contao-console contao:migrate [options]
 | `--migrations-only` | Only executes the migrations without updating the database tables and fields. |
 | `--dry-run` | Shows pending migrations and schema updates without actually executing them. |
 | `--no-interaction` | With this option enabled all confirmation questions are automatically answered with “yes”. This is useful if you want to execute the migrations in an automated system. |
-| `--no-backup` | {{< version-tag "4.13" }} Disable the [database backup][DatabaseBackup] which is created by default before executing the migrations. |
+| `--no-backup` | {{< version-tag "4.13" >}} Disable the [database backup][DatabaseBackup] which is created by default before executing the migrations. |
 
 [DatabaseBackup]: /en/cli/db-backups/
