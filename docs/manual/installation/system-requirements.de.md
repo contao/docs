@@ -127,7 +127,7 @@ PHP **7.2.0** erforderlich.
 Falls die PHP Version einer laufenden Contao Instanz geändert werden soll, sollte immer ein volles `composer update` nach dem Wechsel
 durchgeführt werden. Dies ist besonders dann wichtig, wenn zwischen Haupt-Versionen gewechselt wird, z. B. von PHP 7.x zu PHP 8.x - oder
 umgekehrt. Dadurch wird für die installierten Pakete die Kompatibilität zu der jeweiligen PHP Version sichergestellt, da jedes Paket
-(inklusive Contao selbst, installierte Contao Extensions oder Dritt-Pakete) nach spezifischen PHP Versionen und PHP Extensions verlangen
+(inklusive Contao selbst, installierte Contao-Extensions oder Dritt-Pakete) nach spezifischen PHP-Versionen und PHP-Extensions verlangen
 kann.
 
 Unter Verwendung des Contao Managers kann das `composer update` in der Systemwartung unter _Composer-Abhängigkeiten_ ausgeführt werden:
