@@ -15,7 +15,7 @@ Das Inhaltselement »Download« fügt dem Artikel einen Download-Link hinzu. Be
 
 Die Besonderheit in Contao ist, dass dieser Download-Link auch mit geschützten Dateien funktioniert, auf die du nicht 
 direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
-erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](../../dateiverwaltung/).
+erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](../../../dateiverwaltung/).
 
 **Quelldatei:** Hier kannst du die Download-Datei auswählen.
 
