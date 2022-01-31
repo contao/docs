@@ -135,7 +135,7 @@ Nur die Version des `contao/manager-bundle` muss angepasst werden.
 Während der [Entwicklungsphase][ReleasePlan] einer Contao Version kann auch die Entwicklerversion 
 zum Testen installiert werden. Auf diese Weise können die neuesten Änderungen sofort 
 getestet werden, ohne auf die Veröffentlichung einer neuen Version warten zu müssen. 
-Natürlich  kann dies auch instabilen Programmcode enthalten.
+Natürlich kann diese auch instabilen Programmcode enthalten.
 
 In this case instead of requiring a specific _version_ of Contao, a specific _branch_
 of Contao's public Git repository will be required. The current minor version in development
