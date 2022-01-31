@@ -385,6 +385,14 @@ from "Bundle X" and another one from "Bundle Y". The container then merges all t
 a certain configuration is coming from.
 {{% /notice %}}
 
+{{% notice warning %}}
+You cannot use `$container->addCompilerPass()` to add a compiler pass to the app here because `getExtensionConfig()` 
+is called on every plugin during the process of merging the configuration of all the bundles (done in Symfony
+in the `MergeExtensionConfigurationPass`). If you want to register a regular compiler pass that is called **after**
+the extensions have been merged, see the [respective guide](/guides/modify-container-at-compile-time/)
+to learn more.
+{{% /notice %}}
+
 
 #### Adding a custom Monolog handler with a custom channel
 
