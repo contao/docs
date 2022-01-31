@@ -137,11 +137,6 @@ zum Testen installiert werden. Auf diese Weise können die neuesten Änderungen 
 getestet werden, ohne auf die Veröffentlichung einer neuen Version warten zu müssen. 
 Natürlich kann diese auch instabilen Programmcode enthalten.
 
-In this case instead of requiring a specific _version_ of Contao, a specific _branch_
-of Contao's public Git repository will be required. The current minor version in development
-will always have a branch name corresponding to the current major version, e.g. `5.x` as
-of this year. This branch needs to be required as `5.x-dev` in Composer.
-
 Statt einer spezifischen _Version_ wird nun ein spezifischer _Branch_ aus dem öffentlichen
 Git-Repository von Contao verlangt. Die aktuell entwickelte »Minor« Version von Contao hat immer 
 einen »Entwicklungszweig (Branch)« dessen Namen der aktuellen »Major« Version entspricht, z. B.
