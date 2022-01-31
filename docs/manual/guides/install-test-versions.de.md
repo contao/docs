@@ -132,7 +132,7 @@ Nur die Version des `contao/manager-bundle` muss angepasst werden.
 
 ## Entwicklerversionen installieren
 
-Während der Entwicklungsphase einer Contao Version kann auch die Entwicklerversion 
+Während der [Entwicklungsphase][ReleasePlan] einer Contao Version kann auch die Entwicklerversion 
 zum Testen installiert werden. Auf diese Weise können die neuesten Änderungen sofort 
 getestet werden, ohne auf die Veröffentlichung einer neuen Version warten zu müssen. 
 Natürlich  kann dies auch instabilen Programmcode enthalten.
@@ -226,7 +226,10 @@ Zuerst führt man wie gewohnt die Grundkonfiguration des Contao Managers durch. 
 Anschließend wechselt man zum Menüpunkt »Pakete« und editiert bei »Contao Open Source
 CMS« die Versionsangabe wie oben beschrieben. Abschließend klickt man auf »Änderungen anwenden« und wartet die Aktualisierung der Pakete ab.
 
-[releasePlan]: https://contao.org/de/release-plan.html
 
 ## Weblinks ##
+
 Videoanleitung: [Contao 4 – Testversion | Entwicklerversion | Release Candidate installieren](https://youtu.be/0nUROGy_jLU)
+
+
+[releasePlan]: https://to.contao.org/release-plan
