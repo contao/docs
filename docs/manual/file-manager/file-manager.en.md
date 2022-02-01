@@ -32,11 +32,7 @@ and files.
 
 **![Upload files to the folder](/de/icons/new.svg?classes=icon) Upload:** Upload files to the folder.
 
-**![Edit file](/de/icons/editor.svg?classes=icon) Edit file:** Opens a form to edit the contents of a file with a text editor. Which files may be edited can be defined in the configuration file [`config/config.yml`](/en/system/settings/#config-yml) under the key `editable_files` <sup>1</sup>.
-
-{{% notice note %}}
-<sup>1</sup>Until version 4.6 of Contao, this could be set in the system settings under "Files and Images-&gt; Editable files".
-{{% /notice %}}
+**![Edit file](/de/icons/editor.svg?classes=icon) Edit file:** Opens a form to edit the contents of a file with a text editor. Which files may be edited can be defined in the configuration file [`config/config.yml`](/en/system/settings/#config-yml) under the key `editable_files`.
 
 **![Move file or directory](/de/icons/drag.svg?classes=icon) Move:** Move a file or folder using drag and drop.
 

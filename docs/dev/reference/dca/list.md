@@ -98,11 +98,6 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | class           | CSS class (`string`)              | CSS class attribute of the button.                                                                                 |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
-
-{{< version "4.7" >}}
-
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
 
 
@@ -122,9 +117,4 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-operations-operation-button) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
-
-{{< version "4.7" >}}
-
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |

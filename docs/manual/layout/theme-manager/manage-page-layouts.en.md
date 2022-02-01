@@ -93,8 +93,6 @@ body {
 
 ## Image sizes
 
-{{< version "4.8" >}}
-
 With these settings you can define the image size for the lightbox in the page layout.
 
 **Image size for the lightbox:** Here you can set the dimensions of the image and the scaling mode for the lightbox.
@@ -160,7 +158,7 @@ The **JavaScript templates**, **Analytics templates**, **External JavaScript** a
 | -------- | ----------- |
 | js\_autofocus | If, for example, a field in a form is filled in incorrectly, this field will receive a `<p>` tag with the class "error" after it is submitted. The JavaScript ensures that the system automatically scrolls to this class. |
 | js\_highlight | This is a syntax highlighter for script languages, it is needed for the content element "Code". |
-| js\_nocookie | In order for Contao to protect you from CSRF attacks, visitors must allow cookies. The template dynamically generates a message if a visitor has disabled cookies in his browser. {{< version "4.7" >}} |
+| js\_nocookie | In order for Contao to protect you from CSRF attacks, visitors must allow cookies. The template dynamically generates a message if a visitor has disabled cookies in his browser. |
 | js\_slider | Provides JavaScript for the content element "Content Slider". |
 
 **Analytics templates:** Here you can select the analytics template of Google Analytics and/or Matomo (Piwik).

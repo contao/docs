@@ -89,7 +89,7 @@ The content element "Comments" offers visitors the possibility to leave comments
 
 **Require login to comment:** If you select this option, only logged in members can add comments. However, comments already submitted will still be visible to all visitors of the website.
 
-**Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this question is only "displayed" to spambots. Without a security question, it is possible that spammers automatically create user accounts and abuse your website.
+**Disable spam protection:** Here you can disable the spam protection (not recommended). Normally, this question is only "displayed" to spambots. Without a security question, it is possible that spammers automatically create user accounts and abuse your website.
 
 **Comments template:** Here you can choose the template for the individual posts.
 

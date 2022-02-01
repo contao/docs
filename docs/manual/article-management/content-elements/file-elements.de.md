@@ -19,8 +19,6 @@ erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](.
 
 **Quelldatei:** Hier kannst du die Download-Datei auswählen.
 
-{{< version "4.8" >}}
-
 **Im Browser anzeigen:** Zeige die Datei im Browser an, anstatt den Download-Dialog zu öffnen.
 
 **Metadaten überschreiben:** Die Metadaten aus der Dateiverwaltung überschreiben.
@@ -60,8 +58,6 @@ erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung
 **Quelldateien:** Hier wählst du einen oder mehrere Ordner bzw. Dateien aus, die in dem Donwloads-Element enthalten 
 sein sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen herunterladbaren 
 Dateien.
-
-{{< version "4.8" >}}
 
 **Im Browser anzeigen:** Zeige die Datei im Browser an, anstatt den Download-Dialog zu öffnen.
 

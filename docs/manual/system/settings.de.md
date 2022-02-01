@@ -120,7 +120,6 @@ geprüft werden _(unsicher!)_.
 automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter 
 HTML-Tags festlegen.
 
-{{< version-tag "4.11.7, 4.9.18 und 4.4.56" >}}  
 **Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
 Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeichern automatisch entfernt. Das Tag bzw. 
 der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B. 
@@ -185,34 +184,10 @@ verkleinert.
 mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
 
 
-### Website-Suche
-
-**Suche aktivieren:** Wenn du diese Option auswählst, indiziert Contao die fertigen Seiten deiner Webseite und erstellt 
-daraus einen Suchindex. Mit dem Frontend-Modul 
-»[Suchmaschine](../../modulverwaltung/website-suche/#konfiguration-des-suchmoduls)« kannst du diesen Index dann 
-durchsuchen.
-
-**Geschützte Seiten indizieren:** Wähle diese Option, um auch geschützte Seiten für die Suche zu indizieren. Nutze 
-dieses Feature mit Bedacht, und achte darauf, personalisierte Seiten grundsätzlich von der Suche auszuschließen.
-
-{{% notice note %}}
-Ab Version **4.9** kommt ein neuer Such-Indexer zum Einsatz. Die Einstellungen **Suche aktivieren** und 
-**Geschützte Seiten indizieren** werden nun über die `config/config.yml` konfiguriert:
-
-```yml
-contao:
-    search:
-        default_indexer:
-            enable: true
-        index_protected: false
-```
-{{% /notice %}}
-
-
 ### Cronjob-Einstellungen
 
 **Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
-`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen. Seit Contao **4.9** kann
+`_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen. Es kann
 auch folgendes Kommando benutzt werden:
 
 ```
@@ -241,12 +216,8 @@ In der Contao Managed Edition werden die Parameter (z. B. Datenbankdaten) in der
 Auf diese Daten greift auch das Contao-Installtool zurück. Diese Datei wird normalerweise von der Versionierung 
 ausgenommen und kann auch zusätzliche Einträge wie z. B. die Angaben für den E-Mail-Versand über SMTP enthalten.
 
-Die Datei `parameters.yml` findest du im Ordner `app/config/` und wird bei der Installation von Contao automatisch 
+Die Datei `parameters.yml` findest du im Ordner `config/` und wird bei der Installation von Contao automatisch 
 angelegt.
-
-{{% notice note %}}
-Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
-{{% /notice %}}
 
 Die `parameters.yml` nach der Installation von Contao:
 
@@ -266,7 +237,7 @@ Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen en
 
 ## config.yml
 
-Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `app/config/`. 
+Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `config/`. 
 Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lädt automatisch die `config_prod.yml` 
 bzw. `config_dev.yml` und falls nicht vorhanden die `config.yml`.
 
@@ -274,9 +245,6 @@ Damit kannst du unterschiedliche Konfigurationen für deine Test- bzw. Produktio
 mehr Logging im Debug Modus). Außerdem committest du die `config.yml` im Gegensatz zur `parameters.yml` in dein 
 [Repository](https://de.wikipedia.org/wiki/Repository). Ein Repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z. B. mit Git.
 
-{{% notice note %}}
-Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
-{{% /notice %}}
 
 Über die Kommandozeile kommst du an die Standard-Konfiguration für Contao:
 

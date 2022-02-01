@@ -51,8 +51,7 @@ class Rot13InsertTagListener
 ```
 
 Creating this file while using the `Hook` service annotation within is all you have
-to do in Contao **4.9** and upwards. See the [framework article][FrameworkHooks] 
-about Hooks on how to implement this Hook in previous Contao versions.
+to do.
 
 The Hook provides many additional parameters. See the [reference article][ReplaceInsertTagsHook]
 for this Hook for more information about the possible parameters.

@@ -187,14 +187,11 @@ Blank=
 
 ------------------------------------------------------
 
-# Contao 3.5
-Contao 3.5 Website …=composer create-project contao/core %s 3.5.*
-
-# Contao 4.4 LTS
-Contao 4.4 Website …=composer create-project contao/managed-edition %s 4.4.* && curl https://download.contao.org/contao-manager/stable/contao-manager.phar -o %s/web/contao-manager.phar.php
-
 # Contao 4.9 LTS
-Contao 4.9 Website …=composer create-project contao/managed-edition %s 4.9.* && curl https://download.contao.org/contao-manager/stable/contao-manager.phar -o %s/web/contao-manager.phar.php
+Contao 4.9 Website …=composer create-project contao/managed-edition %s 4.9 && curl https://download.contao.org/contao-manager/stable/contao-manager.phar -o %s/web/contao-manager.phar.php
+
+# Contao 4.13 LTS
+Contao 4.13 Website …=composer create-project contao/managed-edition %s 4.13 && curl https://download.contao.org/contao-manager/stable/contao-manager.phar -o %s/web/contao-manager.phar.php
 
 ------------------------------------------------------
 

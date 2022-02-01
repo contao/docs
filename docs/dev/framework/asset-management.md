@@ -197,9 +197,7 @@ $GLOBALS['TL_HEAD'][] = \Contao\Template::generateFeedTag('share/myfeed.xml', 'r
 ```
 
 
-## Accessing Assets in Templates
-
-{{< version "4.5" >}}
+## Accessing Assets in Template
 
 Contao also provides the possibility to access assets via the [Symfony Asset Component][SymfonyAssetComponent].
 It automatically registers assets from packages and these assets are grouped by

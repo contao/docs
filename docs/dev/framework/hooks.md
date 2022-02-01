@@ -55,11 +55,9 @@ if (isset($GLOBALS['TL_HOOKS']['compileFormFields']) && \is_array($GLOBALS['TL_H
 
 ## Registering hooks
 
-As of Contao **4.9**, there are three different ways of subscribing to a hook. The
+There are three different ways of subscribing to a hook. The
 recommended way is [using annotations](#using-annotations) together with [invokable services](#invokable-services).
-Which one you use depends on your setup. If you still develop hooks for Contao **4.4**
-for example, then you still need to use the [PHP array configuration](#using-the-php-array-configuration).
-
+Which one you use depends on your setup. 
 
 ### Using the PHP Array Configuration
 
@@ -95,9 +93,7 @@ class ActivateAccountListener
 
 ### Using Service Tagging
 
-{{< version "4.5" >}}
-
-Since Contao 4.5 hooks can be registered using the `contao.hook` service tag.
+Hhooks can be registered using the `contao.hook` service tag.
 Hook listener can be added to the service configuration.
 
 ```yml
@@ -127,8 +123,6 @@ legacy registered hooks.
 
 
 ### Using Annotations
-
-{{< version "4.8" >}}
 
 Contao also supports its own annotation formats via the [Service Annotation Bundle][ServiceAnnotationBundle].
 Hooks can be registered using the `@Hook` Annotation. See the following example:
@@ -163,8 +157,6 @@ You can also define the priority through the annotation:
 
 
 ### Invokable Services
-
-{{< version "4.9" >}}
 
 You can also use [invokable classes][invoke] for your services. If a service is
 tagged with `contao.hook` and no method name is given, the `__invoke` method will

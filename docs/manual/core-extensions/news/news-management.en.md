@@ -61,7 +61,7 @@ You already know the Contao comment function from the content element with the s
 
 **Login required for commenting:** If you select this option, only logged in members can add comments. However, comments already submitted will still be visible to all visitors of the website.
 
-**Disable spam protection:** By default, visitors have to answer a security question when creating comments, so that the comment function cannot be misused for spam purposes. However, if you want to allow only logged in members to comment, you can disable the security question here. Since Contao 4.4, this question is only "displayed" to spambots.
+**Disable spam protection:** By default, visitors have to answer a security question when creating comments, so that the comment function cannot be misused for spam purposes. However, if you want to allow only logged in members to comment, you can disable the security question here. Normally, this question is only "displayed" to spambots.
 
 ## RSS feeds
 
@@ -149,8 +149,6 @@ To create a new post, click on the desired archive ![Edit message archive](/de/i
 **Time**: Enter the time of the post here.
 
 ### Metadata
-
-{{< version "4.7" >}}
 
 **Meta-title:** Here you can enter an individual meta-title to overwrite the default page title.
 

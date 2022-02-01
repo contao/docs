@@ -41,8 +41,6 @@ be limited to this value.
 **Featured items:** Here you define whether only highlighted, only unhighlighted, highlighted first or all posts of the 
 selected archives are displayed.
 
-{{< version "4.5" >}}
-
 **Sort order:** Here you can set the sort order. There are five sort orders available: by date ascending, by date 
 descending, by headline ascending, by headline descending and by a random order.
 
@@ -184,8 +182,6 @@ sorted by date in descending order.
 post is selected.
 
 **Archive format:** Here you define the archive format (day, month or year).
-
-{{< version "4.5" >}}
 
 **Sort order:** Here you can define the sort order. There are five sort orders available: by date ascending, by date 
 descending, by heading ascending, by heading descending and by a random order.

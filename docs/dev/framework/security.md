@@ -81,7 +81,7 @@ security:
 {{% /expand %}}
 
 If you want to learn more about Symfony's Security Component use the provided links to read up on. This documentation will only cover
-implmentation details that are unique to Contao.
+implementation details that are unique to Contao.
 
 Since within Contao you can put a login form on basically any page, Contao does not utilise Symfony's built-in 
 [`form_login` Authentication Provider][SymfonyFormLogin]. Instead, Contao implements its own [user checker][SymfonyUserChecker] and 
@@ -94,11 +94,9 @@ parameters used by Contao's login module).
 
 ## Voters
 
-Starting with Contao **4.7** Contao implements [Voters][SymfonyVoters] in order to easily check whether an authenticated user is authorized 
+Contao implements [Voters][SymfonyVoters] in order to easily check whether an authenticated user is authorized 
 to access specific resources. These voters are automatically added to Symfony's security system and then invoked when the respective
 permission is accessed via the [Security Helper][SecurityHelperService].
-
-{{< version "4.7" >}}
 
 The security helper can be used to check whether the currently authenticated user has access in the back end to specific forms, table fields
 (as defined via the DCA), folders and modules for example:

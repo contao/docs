@@ -179,8 +179,6 @@ contao:
 
 ## Environment variables for the Contao Managed Edition
 
-{{< version "4.9" >}}
-
 If you use Contao together with the [Contao Managed Edition][Contao_ME], you can use environment variables to influence
 the behaviour of the Managed Edition, similar to [Symfony Flex][SymfonyFlex].
 The reason why they are environment variables is because these settings affect the setup before the dependency injection

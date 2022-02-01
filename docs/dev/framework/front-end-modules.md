@@ -7,12 +7,6 @@ aliases:
     - /framework/front-end-modules/
 ---
 
-{{% notice note %}}
-This covers the documentation on how to create front end modules in Contao **4.6**
-and up. In previous Contao version, front end modules must extend from `\Contao\Module`
-and then be registered via the `$GLOBALS['FE_MOD']` array.
-{{% /notice %}}
-
 Front end modules in Contao are used for more complex functionality, which are typically
 used on more than one page or even in page layouts. They are used to generate dynamic
 content, like news lists, displaying the detailed content of news or navigation items.
@@ -175,8 +169,6 @@ If you used a custom category for your front end module, its label can also be t
 
 
 ## Annotation
-
-{{< version "4.8" >}}
 
 Instead of tagging the front end module controller service via the service configuration,
 the service tag can also be configured through annotations, as already used in the

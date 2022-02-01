@@ -53,7 +53,7 @@ $GLOBALS['TL_DCA']['tl_example']['fields']['myfield'] = [
 | [xlabel](../callbacks/#fields-field-xlabel)                    | Callback functions (`array`)                    | These functions will be called when the widget is rendered and allows you to add additional html after the field label. Please specify each callback function as `['Class', 'Method']`.
 
 {{% notice tip %}}
-<sup>1</sup> Since Contao **4.9**, defining a label for a DCA field is optional. If
+<sup>1</sup> Defining a label for a DCA field is optional. If
 no label is defined, Contao will automatically look for a translation in `tl_example.field_name`,
 e.g. `$GLOBALS['TL_LANG']['tl_example']['field_name']`.
 {{% /notice %}}
@@ -295,9 +295,8 @@ model classes to load referenced data sets efficiently and developer friendly.
 
 ### SQL Column Definition
 
-Since Contao 3.0, the database definition is added using the `sql` key as a string 
-to each DCA field, e.g. `varchar(255) NOT NULL default ''`. Starting from Contao 
-**4.3**, one can use [Doctrine Schema Representation][2] to take full advantage of
+You can either use the `sql` key as a string to define the SQL definition for every DCA field
+(e.g. `varchar(255) NOT NULL default ''`) or you can use [Doctrine Schema Representation][2] to take full advantage of
 the Doctrine Database Abstraction Layer.
 
 **Examples:**

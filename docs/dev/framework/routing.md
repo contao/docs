@@ -23,53 +23,12 @@ Routes can be defined either in XML/PHP/YAML files or via annotations. For simpl
 this guide will only show the latter. To start off, we first need to tell Symfony
 that our routes will be defined via annotations:
 
-{{% expand "Defining routes in Contao 4.4" %}}
-In Contao **4.4** you need to create a YAML file with the following definition:
-
-```yaml
-# app/config/routes.yaml
-app.controller:
-    resource: ../src/Controller
-    type: annotation
-```
-
-This definition will not be automatically loaded however. In order to load this
-YAML file within your Contao Managed Edition, you first need to create an
-[Application-Specific Manager Plugin](/framework/manager-plugin/#the-application-specific-manager-plugin)
-and implement the [`RoutingPluginInterface`](/framework/manager-plugin/#the-routingplugininterface):
-
-```php
-// src/ContaoManager/Plugin.php
-namespace App\ContaoManager;
-
-use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
-use Symfony\Component\Config\Loader\LoaderResolverInterface;
-use Symfony\Component\HttpKernel\KernelInterface;
-
-class Plugin implements RoutingPluginInterface
-{
-    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
-    {
-        return $resolver
-            ->resolve(__DIR__.'/../../app/config/routes.yaml')
-            ->load(__DIR__.'/../../app/config/routes.yaml')
-        ;
-    }
-}
-```
-{{% /expand %}}
-
-{{% expand "Defining routes in Contao 4.9 and up" %}}
-In Contao **4.9** and up you can create a `config/routes.yaml` which will automatically
-be loaded:
-
 ```yaml
 # config/routes.yaml
 app.controller:
     resource: ../src/Controller
     type: annotation
 ```
-{{% /expand %}}
 
 This will tell Symfony that any controller defined under `src/Controller` within
 your application (i.e. the `App\Controller\` namespace) will use PHP annotations

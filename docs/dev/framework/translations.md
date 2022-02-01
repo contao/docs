@@ -221,7 +221,7 @@ You can load translations by using the following legacy function:
 
 The first parameter is the domain ("language file") while the second parameter is the language you want to load.
 
-Starting with Contao **4.5** you can also use Symfony's Translator service instead:
+You can also use Symfony's Translator service instead:
 
 ```php
 // src/Controller/ExampleController.php

@@ -3,11 +3,6 @@ title: "Migrations"
 description: "Database migrations and general purpose migration scripts."
 ---
 
-{{% notice note %}}
-This covers the documentation on how to create migrations in Contao **4.9**
-and up. In previous Contao versions, migrations were written in `runonce.php` files that got deleted after execution.
-{{% /notice %}}
-
 Updating Contao, extensions or the application itself sometimes requires to migrate data to be compatible with the new version(s). For this purpose Contao has a migration framework that lets you write migration services that are integrated in the update process.
 
 The migrations get executed via the install tool database update or with the [`contao:migrate` command][commands].

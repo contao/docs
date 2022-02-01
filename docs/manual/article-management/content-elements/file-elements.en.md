@@ -15,8 +15,6 @@ The special feature of Contao is that this download link also works with protect
 
 **Source file:** Here you can select the download file.
 
-{{< version "4.8" >}}
-
 **Show in browser:** Display the file in the browser instead of opening the download dialog.
 
 **Overwrite meta data:** Overwrite the meta data from the file manager.
@@ -50,8 +48,6 @@ The content element "Downloads" adds several download links to the article. Clic
 The special feature of Contao is that these download links also work with protected files that you cannot access directly from your browser. This way, you can easily create a protected download area. For more information, see the section [File management](/en/file-manager/).
 
 **Source files:** Here you select one or more folders or files to be included in the donwloads item. If you select a folder, Contao automatically takes all downloadable files contained in it.
-
-{{< version "4.8" >}}
 
 **Show in browser:** Display the file in the browser instead of opening the download dialog.
 

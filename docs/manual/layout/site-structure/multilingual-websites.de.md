@@ -26,11 +26,7 @@ In Contao wird ausschließlich die erste Variante unterstützt (bis auf einige 
 Verwaltung eigener Inhalte von diesem Konzept abweichen).
 
 Damit die Sprache der URL (z. B. `www.example.com/de/`) hinzugefügt wird, musst du folgende Zeilen in die `config.yml` 
-im Ordner `app/config/` einfügen. Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden.
-
-{{% notice note %}}
-Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.
-{{% /notice %}}
+im Ordner `config/` einfügen. Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden.
 
 ```yaml
 contao:

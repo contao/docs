@@ -22,19 +22,19 @@ always use them.
 
 ### PHP Extensions
 
-| Extension Name | Contao 4.4 | Contao 4.9 |
+| Extension Name | Contao 4.9 | Contao 4.13 |
 |:------------------------------------------|:-------------------------|:--------------------------------------------|
 | [DOM][ext-dom] (`ext-dom`)                | **required**             | **required**                                |
 | [PCRE][ext-pcre] (`ext-pcre`)             | **required**             | **required**                                |
-| [Intl][ext-intl] (`ext-intl`)             | recommended              | **required**                                |
+| [Intl][ext-intl] (`ext-intl`)             | **required**             | **required**                                |
 | [PDO][ext-pdo] (`ext-pdo`)                | **required**             | **required**                                |
 | [ZLIB][ext-zlib] (`ext-zlib`)             | **required**             | **required**                                |
 | [JSON][ext-json] (`ext-json`)             | **required**             | **required**                                |
 | [Curl][ext-curl] (`ext-curl`)             | **required**             | **required**                                |
 | [Mbstring][ext-mbstring] (`ext-mbstring`) | **required**             | **required**                                |
 | [GD][ext-gd] (`ext-gd`)                   | **required**<sup>1</sup> | **required**<sup>1</sup>                    |
-| [Imagick][ext-imagick] (`ext-imagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [Imagick][ext-imagick] (`ext-imagick`)    | requires GD, Imagick or Gmagick<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)    | requires GD, Imagick or Gmagick<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> |
 
 {{% notice note %}}
 <sup>1</sup> Contao automatically selects an image processing library depending on its availability.
@@ -107,16 +107,6 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 Contao automatically detects and uses the best available extension.
 
 
-#### Contao 4.4 (LTS)
-
-- **PHP** Version 5.6.0 or higher is required.
-- The GD extension (`ext-gd`) is required for image processing.
-
-{{% notice info %}}
-If a MySQL server in version **8.0.17** or higher is used, at least PHP **7.2.0** is required.
-{{% /notice %}}
-
-
 ### MySQL minimum requirements
 
 Although Contao uses the [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) database abstraction layer, 
@@ -126,11 +116,7 @@ Contao has been successfully tested on MySQL servers version 5.1 / 5.5 with `MyI
 of `utf8_general_*` instead of the `utf8mb4` character set results in a worse UTF8 support (e.g. no emojis).
 
 If the above recommended options cannot be enabled on your server, please configure another
-database engine and a different character set in your `app/config/config.yml` file:
-
-{{% notice note %}}
-As of **Contao 4.8**, you can find the file under [`config/config.yml`](../../system/settings/#config-yml)  
-{{% /notice %}}
+database engine and a different character set in your `config/config.yml` file:
 
 ```yml
 doctrine:
@@ -161,7 +147,7 @@ sql_mode="TRADITIONAL"
 ```
 
 If the setting cannot be enabled on your server, please configure the connection
-options in your `app/config/config.yml` file ({{< version-tag "4.8" >}} `config/config.yml` file):
+options in your `config/config.yml` file:
 
 ```yml
 doctrine:

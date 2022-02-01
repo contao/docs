@@ -132,8 +132,6 @@ wird, oder umgekehrt der Alias eines Events in einem Nachrichtenarchiv.
 nicht ausgewählten Kalendern werden grundsätzlich nicht angezeigt, selbst wenn die URL stimmt und der Eintrag 
 existiert. Dieses Feature ist vor allem im Multidomain-Betrieb mit mehreren unabhängigen Webseiten wichtig.
 
-{{< version "4.7" >}}
-
 **Laufende Events ausblenden:** Hier kannst du die laufenden Events in der Liste der zukünftigen Events nicht anzeigen 
 lassen.
 
@@ -231,8 +229,6 @@ Seiten – eine entsprechende Anzahl vorausgesetzt.
 
 **URL-Parameter ignorieren:** Wenn du hier URL-Parameter ignorieren auswählst, wird der Zeitraum nicht anhand der 
 date/month/year-Parameter in der URL geändern.
-
-{{< version "4.7" >}}
 
 **Laufende Events ausblenden:** Hier kannst du die laufenden Events in der Liste der zukünftigen Events nicht anzeigen 
 lassen.

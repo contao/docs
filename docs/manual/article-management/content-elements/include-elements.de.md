@@ -102,8 +102,8 @@ zur Formatierung ihrer Kommentare verwenden. Folgende Tags werden unterstützt:
 **Login zum Kommentieren benötigt:** Wenn du diese Option auswählst, können nur angemeldete Mitglieder Kommentare 
 hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle Besucher der Webseite sichtbar.
 
-**Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen). Seit Contao 4.4 
-wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
+**Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen). Im Normalfall
+wird diese Frage nur den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 
 **Kommentartemplate:** Hier kannst du das Template für die einzelnen Beiträge auswählen.

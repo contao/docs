@@ -539,8 +539,8 @@ Um die Anmeldung im Frontend zu ermöglichen, musst du mindestens die Felder Ben
 **Abonnierbare Newsletter:** Wenn du die Contao Newsletter-Erweiterung verwendest, kannst du hier festlegen, welche 
 Verteiler ein Mitglied abonnieren kann.
 
-**Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen). Seit Contao 4.4 
-wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
+**Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen). Im Normalfall 
+wird diese Frage nur den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 
 **Mitgliedergruppen:** Hier legst du die Gruppenmitgliedschaft des neuen Mitglieds fest.
@@ -843,8 +843,8 @@ neuen Passworts möglich.
 **Benutzernamen nicht abfragen:** Wenn du diese Option auswählst, wird der Benutzername bei der Anforderung nicht 
 abgefragt.
 
-**Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen). Seit Contao 4.4 
-wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
+**Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen). Im Normallfall
+wird diese Frage nur den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 
 **Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Benutzer nach dem Anfordern eines neuen Passworts 
@@ -975,8 +975,6 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 
 
 ## Zwei-Faktor-Authentifizierung
-
-{{< version "4.8" >}}
 
 Das Frontend-Modul »Zwei-Faktor-Authentifizierung« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied die 
 Zwei-Faktor-Authentifizierung aktivieren kann. Wenn im Startpunkt einer Website die Zwei-Faktor-Authentifizierung für

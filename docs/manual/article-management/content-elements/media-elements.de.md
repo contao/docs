@@ -146,8 +146,6 @@ Das Inhaltselement »Video/Audio« fügt dem Artikel eine Video- bzw. Audio-Dat
 **Video-/Audio-Dateien:** Hier kannst du die Video-/Audio-Datei bzw. – wenn du verschiedene Codecs verwendest – die 
 Video-/Audio-Dateien hinzufügen.
 
-{{< version "4.6" >}}
-
 **Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z. B. 640x480) bestimmen.
 
 **Player-Optionen:** Hier kannst du die verschiedenen Player-Optionen auswählen.
@@ -197,8 +195,6 @@ Das Inhaltselement »YouTube« fügt dem Artikel ein YouTube-Video hinzu.
 
 **YouTube-ID:** Bitte gebe die YouTube-Video-ID für dein Video ein (z. B. rOGhp63Lvbo).
 
-{{< version "4.5" >}}
-
 **Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z. B. 640x480) bestimmen.
 
 **Player-Optionen:** Hier kannst du die verschiedenen Player-Optionen auswählen.
@@ -225,8 +221,6 @@ deaktivieren.
 **Seitenverhältnis:** Hier kannst du das 
 [Seitenverhältnis des Videos](https://de.wikipedia.org/wiki/Seitenverh%C3%A4ltnis#Fernsehen_und_Video) bestimmen, um es responsive zu 
 machen.
-
-{{< version "4.8" >}}
 
 **Verwenden Sie ein Startbild:** Das Video wird erst geladen, nachdem der Benutzer auf das Startbild geklickt hat.
 
@@ -275,8 +269,6 @@ Das Inhaltselement »Vimeo« fügt dem Artikel ein Vimeo-Video hinzu.
 
 **Vimeo-ID:** Bitte gebe die Vimeo-Video-ID ein (z. B. 275028611).
 
-{{< version "4.5" >}}
-
 **Player-Größe:** Hier kannst du die Breite und Höhe des Mediaplayers in Pixeln (z. B. 640x480) bestimmen.
 
 **Player-Optionen:** Hier kannst du die verschiedenen Player-Optionen auswählen.
@@ -298,8 +290,6 @@ eingeben.
 **Seitenverhältnis:** Hier kannst du das 
 [Seitenverhältnis des Videos](https://de.wikipedia.org/wiki/Seitenverh%C3%A4ltnis#Fernsehen_und_Video) bestimmen, um es responsive zu 
 machen.
-
-{{< version "4.8" >}}
 
 **Verwenden Sie ein Startbild:** Das Video wird erst geladen, nachdem der Benutzer auf das Startbild geklickt hat.
 

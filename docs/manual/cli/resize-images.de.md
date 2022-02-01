@@ -6,9 +6,6 @@ aliases:
 weight: 30
 ---
 
-
-{{< version "4.8" >}}
-
 Mit diesem Befehl können alle fehlenden, verzögert erzeugten Bilder erstellt werden.
 
 ```bash

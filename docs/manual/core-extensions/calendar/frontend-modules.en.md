@@ -111,8 +111,6 @@ On a single page there can only be one "reader module" at a time, regardless of 
 
 **Calendar**: Here you can define in which calendars the requested event should be searched. Events from calendars that are not selected will not be displayed, even if the URL is correct and the entry is entered correctly. This feature is especially important in multi-domain operation with several independent websites.
 
-{{< version "4.7" >}}
-
 **Hide running events:** Here you can hide the running events in the list of future events.
 
 ### Template settings
@@ -192,8 +190,6 @@ Caution**:** In most cases, this functionality should not be used for event list
 **Elements per page:** If you enter a value greater than 0, Contao automatically distributes the events to multiple pages - assuming the number is sufficient.
 
 **Ignore URL parameters:** If you select Ignore URL parameters here, the period will not be changed based on thedate/month/year parameters in the URL.
-
-{{< version "4.7" >}}
 
 **Hide running events:** Here you can hide the running events in the list of future events.
 

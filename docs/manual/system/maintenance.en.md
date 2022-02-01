@@ -29,14 +29,7 @@ more convenient to rebuild the search index manually than to call up all changed
 
 The crawler can also check for broken links, when enabled.
 
-{{% notice note %}}
-In versions prior to Contao **4.9** this section is called **Rebuild search index**. The feature of being able to check
-for broken links is not available there.
-{{% /notice %}}
-
 ![Build the search index automatically](/de/system/images/en/rebuild-the-search-index.png?classes=shadow)
-
-{{< version "4.9" >}}
 
 The crawler can also be executed directly from the command line:
 
@@ -64,7 +57,7 @@ To allow the search of protected pages, you must first enable this feature in th
 very carefully and always exclude personalized pages from the search!
 
 {{% notice note %}}
-Since Contao **4.9** this is enabled in the application configuration:
+This is enabled in the application configuration:
 
 ```yml
 # config/config.yml

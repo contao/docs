@@ -6,9 +6,6 @@ aliases:
 weight: 30
 ---
 
-
-{{< version "4.8" >}}
-
 With this command you can process all deferred images that were not yet resized.
 
 ```bash

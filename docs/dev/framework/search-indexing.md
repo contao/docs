@@ -23,8 +23,6 @@ engine.
 That's why Contao ships with a search indexer abstraction, giving you the freedom to disable the core features and
 connect it with your favourite search engine such as [Algolia](https://www.algolia.com) or [Elasticsearch](https://www.elastic.co).
 
-{{< version "4.9" >}}
-
 
 ## Triggering the Search Index
 
@@ -182,7 +180,7 @@ class GeneratePageListener
 }
 ```
 
-Starting with Contao **4.6** you could also fetch the `pageModel` from the request attributes (if present) in your own 
+You could also fetch the `pageModel` from the request attributes (if present) in your own 
 `kernel` event listener.
 
 

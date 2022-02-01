@@ -86,7 +86,7 @@ hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle 
 **Spam-Schutz deaktivieren:** Standardmäßig müssen Besucher beim Erstellen von Kommentaren eine Sicherheitsfrage 
 beantworten, damit die Kommentarfunktion nicht zu Spam-Zwecken missbraucht werden kann. Falls du aber ohnehin nur 
 angemeldeten Mitgliedern das Kommentieren erlauben möchtest, kannst du die Sicherheitsfrage hier deaktivieren.
-Seit Contao 4.4 wird diese Frage nur noch den Spambots »angezeigt«.
+Im Normalfall wird diese Frage nur den Spambots »angezeigt«.
 
 
 ## RSS-Feeds
@@ -196,8 +196,6 @@ in deinem Browser aufrufen kannst.
 
 
 ### Metadaten
-
-{{< version "4.7" >}}
 
 **Meta-Titel:** Hier kannst du einen individuellen Meta-Titel eingeben, um den Standard-Seitentitel zu überschreiben.
 

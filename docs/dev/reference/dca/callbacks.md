@@ -282,8 +282,6 @@ Executed after a deleted record has been restored from the "undo" table.
 
 ### `config.oninvalidate_cache_tags`
 
-{{< version "4.7" >}}
-
 This callback is executed whenever a record is changed in any way via the Contao
 back end. It allows you to add additional cache tags that should be invalidated.
 
@@ -296,8 +294,6 @@ back end. It allows you to add additional cache tags that should be invalidated.
 
 
 ### `config.onshow`
-
-{{< version "4.7" >}}
 
 Allows you to customize the info <i class="fa fa-info-circle"></i> modal window
 of a database record.

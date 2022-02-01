@@ -113,5 +113,5 @@ php vendor/bin/contao-console contao:migrate
 ```
 
 {{% notice note %}}
-The `contao:migrate` command is available in versions **4.9** and up. You can alternatively use the [Contao install tool](../contao-installtool/).
+You can alternatively use the [Contao install tool](../contao-installtool/).
 {{% /notice %}}

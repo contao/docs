@@ -8,14 +8,6 @@ aliases:
   - /guides/back-end-routes
 ---
 
-
-{{% notice note %}}
-This guide assumes a Contao version of at least **4.9**. Back end routes can be
-created in previous Contao versions as well, but might require additional steps.
-For example, in Contao **4.4** instead of using the `contao.backend_menu_build`
-event, the back end menu needs to be altered using the `getUserNavigation` hook.
-{{% /notice %}}
-
 You can use the Contao back end to display content generated in your own custom Controllers.
 This way you can develop custom extensions without the need to use DCA configuration.
 The following example can be changed according to your own setup. For example you're

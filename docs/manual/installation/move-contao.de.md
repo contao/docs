@@ -86,11 +86,10 @@ Die folgenden Dateien und Ordner müssen vom Quell- zum Zielserver übertragen w
 - `composer.lock`
 
 Falls du noch alte Erweiterungen unter `system/modules` abgelegt hast, alte Konfigurationen unter `system/config`,
-eine `config.yml` im Verzeichnis `config/` (bzw. **vor Contao 4.8** `app/config/`) oder Contao Anpassungen unter
-`contao/` (bzw. **vor Contao 4.8**  `app/Resources/contao/`) angelegt hast, müssen diese auch auf deinen Server
-übertragen werden.
+eine `config.yml` im Verzeichnis `config/` oder Contao Anpassungen unter `contao/` angelegt hast, müssen
+diese auch auf deinen Server übertragen werden.
 
-Du kannst dazu entweder einen FTP-Client verwenden oder – falls du die Konsole bevorzugst – das Programm `scp`:
+Du kannst dazu entweder einen (S)FTP-Client verwenden oder – falls du die Konsole bevorzugst – das Programm `scp`:
 
 ```bash
 cd /path/to/project

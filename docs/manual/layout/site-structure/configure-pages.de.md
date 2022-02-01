@@ -122,7 +122,7 @@ Präfix frei wählbar und damit unabhängig von der jeweils eingestellten Sprach
 {{< version-tag "4.10" >}} **URL-Suffix:** Mit dieser Einstellung kann der »URL-Suffix« geändert oder entfernt werden. Der URL-Suffix wird bei der
 Generierung der URL einer Seite an den Seitenalias angehängt.
 
-{{< version-tag "4.5" >}} **Gültige Alias-Zeichen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
+**Gültige Alias-Zeichen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte 
 Aliase auszuwählen.
 
 | Alias-Einstellungen                  | Erklärung                                                            |
@@ -134,10 +134,6 @@ Aliase auszuwählen.
 
 Für die Erzeugung des Aliases ist in Einzelfällen auch die eingestellte Sprache relevant. So wird ein Deutsches »Über« 
 zu »ueber« jedoch ein Finnisches »eläinkö« zu »elainko« konvertiert.
-
-{{% notice note %}}
-Diese Einstellung befindet sich in Contao **4.5** bis **4.9** in der Sektion _Alias-Einstellungen_.
-{{% /notice %}}
 
 {{< version-tag "4.10" >}} **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
 Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
@@ -199,8 +195,6 @@ werden.
 
 
 ### Website-Einstellungen
-
-{{< version "4.9" >}}
 
 **Favicon:** Hier kannst du das Favicon für die `/favicon.ico` URL der Domain festlegen. Dies ist besonders im Multidomain-Betrieb
 hilfreich, damit jede Domain ihr eigenes Standard-Favicon hat. Andernfalls könnte man nur eine einzelne, _physische_ `favicon.ico` Datei im 
@@ -275,7 +269,7 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 
 ### Zwei-Faktor-Authentifizierung 
 
-{{< version-tag "4.8" >}} Du kannst hier die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
+Du kannst hier die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
 erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die Zwei-Faktor-Authentifizierung einrichten.
 
 
@@ -315,7 +309,7 @@ Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertra
 versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz 
 zugewiesener Verfallszeit nicht im Cache auftauchen.
 
-{{< version-tag "4.8" >}} **Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn 
+**Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn 
 ein Mitglied angemeldet ist. Beachte, dass du in diesem Fall die Seite für eingeloggte Mitglieder nicht mehr 
 personalisieren kannst.
 
@@ -400,7 +394,7 @@ ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber h
 der Webseite ausgeblendet, sobald sich ein Mitglied angemeldet hat. Dies ist z. B. für die Seiten »Anmeldung« und 
 »Registrierung« sinnvoll.
 
-{{< version-tag "4.5" >}} **Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die Fehlerseite 404 gezeigt, wenn die 
+**Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die Fehlerseite 404 gezeigt, wenn die 
 URL kein Alias zu einem Element enthält.
 
 

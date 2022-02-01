@@ -6,9 +6,6 @@ aliases:
 weight: 25
 ---
 
-
-{{< version "4.9" >}}
-
 With this command you can perform database updates and migrations after a new installation or update of Contao or an 
 extension. The migrations that get executed are update scripts of Contao, registered migrations of extensions, 
 legacy `runonce.php` files and the database update.

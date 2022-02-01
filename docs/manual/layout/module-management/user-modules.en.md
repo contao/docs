@@ -529,7 +529,7 @@ login in the front end, you have to activate at least the fields username and pa
 **Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution 
 lists a member can subscribe to.
 
-**Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this 
+**Disable spam protection:** Here you can disable the spam protection (not recommended). Normally, this 
 question is only "displayed" to spambots. Without a security question it is possible that spammers automatically create 
 user accounts and abuse your website.
 
@@ -829,7 +829,7 @@ clicking on this confirmation link is it possible to enter a new password.
 
 **Skip username:** If you select this option, the username will not be queried when you request it.
 
-**Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this 
+**Disable spam protection:** Here you can disable the spam protection (not recommended). Normally, this 
 question is only "displayed" to spambots. Without a security question it is possible that spammers automatically 
 create user accounts and abuse your website.
 
@@ -960,8 +960,6 @@ The front end module generates the following HTML code:
 
 
 ## Two-factor authentication
-
-{{< version "4.8" >}}
 
 The "Two-factor authentication" front end module adds a form to the website that a member can use to enable two-factor 
 authentication. If the two-factor authentication for members is forced, this module must be used on the page structure 

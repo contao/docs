@@ -58,8 +58,6 @@ Now that you know how to use the module in the front end, we will now explain br
 
 **Context length:** When displaying the search results, Contao not only displays the term found, but also the context to the right and left of it. Here you can specify how many characters to the right and left of a found term should be used as context.
 
-{{< version "4.8" >}}
-
 **Minimum search word length:** Search words that exceed the minimum length are ignored in the search results; set to 0 to deactivate.
 
 **Elements per page:** If you enter a value greater than 0, Contao will automatically wrap the page after this number of search results.

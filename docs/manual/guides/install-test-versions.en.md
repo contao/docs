@@ -110,8 +110,8 @@ its latest release candidates (if there are any):
 
 {{% notice tip %}}
 The version requirement of the other bundles do not need to be changed from their
-default value. For example, a version requirement of `^4.4` (like if you would update 
-from the Contao 4.4 LTS version) also allows any `4.9` version. See Composer's documentation
+default value. For example, a version requirement of `^4.9` (like if you would update 
+from the Contao 4.9 LTS version) also allows any `4.13` version. See Composer's documentation
 on the [version requirement syntax](https://getcomposer.org/doc/articles/versions.md). 
 Only the requested version of the `contao/manager-bundle` needs to be adjusted.
 {{% /notice %}}

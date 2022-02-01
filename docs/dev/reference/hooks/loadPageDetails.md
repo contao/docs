@@ -8,8 +8,6 @@ aliases:
 ---
 
 
-{{< version "4.8" >}}
-
 This hook is executed whenever the details of a page are loaded via
 `\Contao\PageModel::loadDetails`. This hook allows you to add additional details
 to the `\Contao\PageModel` instance.

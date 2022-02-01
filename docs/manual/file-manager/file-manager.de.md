@@ -43,12 +43,7 @@ Datei bzw. des Ordners anzeigen.
 **![Datei bearbeiten](/de/icons/editor.svg?classes=icon) Datei bearbeiten:** Öffnet eine Eingabemaske zur 
 Bearbeitung des Inhalts einer Datei mit einem Texteditor. Welche Dateien editiert werden dürfen, kannst du in der
 Konfigurationsdatei [`config/config.yml`](../../system/einstellungen/#config-yml) unter dem Schlüssel `editable_files`
-festlegen<sup>1</sup>.
-
-{{% notice note %}}
-<sup>1</sup>Bis zur Version 4.6 von Contao konnte dies in den System-Einstellungen unter »Dateien und Bilder 
--&gt; Editierbare Dateien« festlegt werden.
-{{% /notice %}}
+festlegen.
 
 **![Datei oder Verzeichnis verschieben](/de/icons/drag.svg?classes=icon) Verschieben:** Eine Datei bzw. einen Ordner per Drag & Drop verschieben.
 

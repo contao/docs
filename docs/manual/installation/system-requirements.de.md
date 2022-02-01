@@ -24,19 +24,19 @@ empfohlen, diese immer zu verwenden.
 
 ### PHP-Erweiterungen
 
-| Name der Erweiterung                      | Contao 4.4                   | Contao 4.9                                     |
-|:------------------------------------------|:-----------------------------|:-----------------------------------------------|
-| [DOM][ext-dom] (`ext-dom`)                | **erforderlich**             | **erforderlich**                               |
-| [PCRE][ext-pcre] (`ext-pcre`)             | **erforderlich**             | **erforderlich**                               |
-| [Intl][ext-intl] (`ext-intl`)             | empfohlen                    | **erforderlich**                               |
-| [PDO][ext-pdo] (`ext-pdo`)                | **erforderlich**             | **erforderlich**                               |
-| [ZLIB][ext-zlib] (`ext-zlib`)             | **erforderlich**             | **erforderlich**                               |
-| [JSON][ext-json] (`ext-json`)             | **erforderlich**             | **erforderlich**                               |
-| [Curl][ext-curl] (`ext-curl`)             | **erforderlich**             | **erforderlich**                               |
-| [Mbstring][ext-mbstring] (`ext-mbstring`) | **erforderlich**             | **erforderlich**                               |
-| [GD][ext-gd] (`ext-gd`)                   | **erforderlich**<sup>1</sup> | **erforderlich**<sup>1</sup> |
-| [Imagick][ext-imagick] (`ext-imagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+| Name der Erweiterung                      | Contao 4.9                                     | Contao 4.13                  |
+|:------------------------------------------|:-----------------------------------------------|:-----------------------------|
+| [DOM][ext-dom] (`ext-dom`)                | **erforderlich**                               | **erforderlich**             |
+| [PCRE][ext-pcre] (`ext-pcre`)             | **erforderlich**                               | **erforderlich**             |
+| [Intl][ext-intl] (`ext-intl`)             | **erforderlich**                               | **erforderlich**                    |
+| [PDO][ext-pdo] (`ext-pdo`)                | **erforderlich**                               | **erforderlich**             |
+| [ZLIB][ext-zlib] (`ext-zlib`)             | **erforderlich**                               | **erforderlich**             |
+| [JSON][ext-json] (`ext-json`)             | **erforderlich**                               | **erforderlich**             |
+| [Curl][ext-curl] (`ext-curl`)             | **erforderlich**                               | **erforderlich**             |
+| [Mbstring][ext-mbstring] (`ext-mbstring`) | **erforderlich**                               | **erforderlich**             |
+| [GD][ext-gd] (`ext-gd`)                   | **erforderlich**<sup>1</sup>                   | **erforderlich**<sup>1</sup> |
+| [Imagick][ext-imagick] (`ext-imagick`)    | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup>        |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)    | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup>        |
 
 {{% notice note %}}
 <sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus.
@@ -111,17 +111,6 @@ verarbeitet werden.
 Contao erkennt und verwendet automatisch die beste verfügbare Erweiterung.
 
 
-#### Contao 4.4 (LTS)
-
-- **PHP** Version 5.6.0 oder höher ist erforderlich.
-- Die GD-Erweiterung (`ext-gd`) wird für die Bildverarbeitung benötigt.
-
-{{% notice info %}}
-Wird ein MySQL Server in Version **8.0.17** oder höher eingesetzt, ist mindestens 
-PHP **7.2.0** erforderlich.
-{{% /notice %}}
-
-
 ### MySQL-Mindestanforderungen 
 
 Obwohl Contao die [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) Datenbank-Abstraktionsschicht 
@@ -132,11 +121,7 @@ von `utf8_general_*` anstelle des `utf8mb4`-Zeichensatzes führt zu einer versch
 kein Emojis).
 
 Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden können, konfiguriere bitte eine andere 
-Datenbank-Engine und einen anderen Zeichensatz in deiner `app/config/config.yml`-Datei:
-
-{{% notice note %}}
-Ab **Contao 4.8** findest du die Datei unter [`config/config.yml`](../../system/einstellungen/#config-yml).  
-{{% /notice %}}
+Datenbank-Engine und einen anderen Zeichensatz in deiner `config/config.yml`-Datei:
 
 ```yml
 doctrine:
@@ -167,7 +152,7 @@ sql_mode="TRADITIONAL"
 ```
 
 Wenn die oben empfohlene Einstellung auf deinem Server nicht aktiviert werden kann, konfiguriere
-die Verbindungsoptionen bitte in deiner `app/config/config.yml`-Datei ({{< version-tag "4.8" >}} `config/config.yml`-Datei):
+die Verbindungsoptionen bitte in deiner `config/config.yml`-Datei:
 
 ```yml
 doctrine:

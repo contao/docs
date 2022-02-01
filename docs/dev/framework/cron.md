@@ -32,26 +32,8 @@ will block any subsequent request by the same user.
 
 You can disable the front end cron by going to _System_ » _Settings_ » _Cron job 
 settings_ and enabling the setting __Disable the command scheduler__. After disabling
-the front end cron you should periodically let Contao executes its cron jobs, by
-either making a request to a web URL, or by executing them via the command line.
-
-
-### Web URL
-
-In order to trigger cron job execution via a web URL, a request to the `_contao/cron`,
-route, e.g. `https://example.org/_contao/cron`, needs to be made. In a Linux crontab 
-you could use the following instructions for example:
-
-```none
-* * * * * wget -q -O /dev/null https://example.org/_contao/cron
-```
-
-
-### Command Line
-
-{{< version "4.9" >}}
-
-You can also execute the cron jobs directly via the command line:
+the front end cron you should periodically let Contao executes its cron jobs, 
+by executing them via the command line:
 
 ```bash
 $ vendor/bin/contao-console contao:cron
@@ -119,8 +101,6 @@ class ExampleCron
 
 
 ### Using Service Tagging
-
-{{< version "4.9" >}}
 
 Cron jobs can also be registered using the `contao.cronjob` service tag  with the following 
 options:
@@ -204,16 +184,11 @@ class HourlyCron
 
 ### Testing
 
-Contao keeps track of a cronjob's last execution in the `tl_cron_job` table. Thus,
+Contao keeps track of a cronjob's last execution in the `tl_cron` table. Thus,
 if you want to test a cron job even though it has already been executed within
 its defined interval, either truncate the whole table or delete the entry for the
-specific cron job you want to test. If the table is empty every cronjob will be 
+specific interval you want to test. If the table is empty every cronjob will be 
 executed on the first cron call. After that only on its defined interval.
-
-{{% notice note %}}
-In Contao **4.4**, the table is called `tl_cron` and it contains only the last execution
-times of the named intervals, not the last execution time of individual cron jobs.
-{{% /notice %}}
 
 
 [1]: /framework/hooks/

@@ -82,9 +82,7 @@ class ContentListener
 
 ### Using Service Tagging
 
-{{< version "4.7" >}}
-
-Since Contao 4.7 DCA callbacks can be registered using the `contao.callback` service tag.
+DCA callbacks can be registered using the `contao.callback` service tag.
 Each tag can have the following options:
 
 | Option   | Type      | Description                                                                                                           |
@@ -111,9 +109,7 @@ services:
 
 ### Using Service Annotation
 
-{{< version "4.8" >}}
-
-Since Contao 4.8 DCA callbacks can be registered using the `Contao\CoreBundle\ServiceAnnotation\Callback`
+DCA callbacks can be registered using the `Contao\CoreBundle\ServiceAnnotation\Callback`
 service annotation on the callback method:
 
 ```php
@@ -135,8 +131,6 @@ class NewsOnsubmitCallbackListener
 }
 ```
 
-{{< version "4.9" >}}
-
 If you are using an [invokable class][invoke], you can also define the annotation
 on the class itself:
 
@@ -157,38 +151,6 @@ class NewsOnsubmitCallbackListener
         // Do something …
     }
 }
-```
-
-
-### Using the PHP array configuration
-
-This is the old way of using DCA callbacks prior to Contao **4.7**. The table
-`tl_content` and target definition `fields.module.options` translates to a PHP
-array configuration in the following way for example:
-
-```php
-// contao/dca/tl_content.php
-$GLOBALS['TL_DCA']['tl_content']['fields']['module']['options_callback'] = [
-    \App\DataContainer\ContentListener::class, 'onModuleOptionsCallback'
-];
-```
-
-Note that you have to add the suffix `_callback` to the last key - _except_ for
-these callbacks:
-
-* `fields.field.wizard`
-* `fields.field.xlabel`
-* `list.sorting.panel_callback.subpanel`
-
-Also note that the above example is a _singular_ callback, i.e. it only
-supports _one_ subscriber. For callbacks that support multiple callback
-subscribers you'll have to append the callable:
-
-```php
-// contao/dca/tl_content.php
-$GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = [
-    \App\DataContainer\ContentListener::class, 'onLoadCallback'
-];
 ```
 
 See the [reference][2] for which callbacks support multiple subscribers and

@@ -13,8 +13,6 @@ specific flows of the application, in addition to [Hooks][ContaoHooks].
 
 ## `contao.backend_menu_build`
 
-{{% version "4.5" %}}
-
 This event is dispatched, when the Contao back end menu is built. The event contains
 references to the menu factory as well as the menu tree object of the 
 [KnpMenuBundle][KnpMenuBundle]. This can be used to alter the back end menu to your 
@@ -70,8 +68,6 @@ class BackendMenuBuildListener
 
 
 ## `contao.generate_symlinks`
-
-{{% version "4.7" %}}
 
 This event is dispatched after Contao generated all its necessary symlinks (e.g.
 from `web/files/` to all the public folders in `files/`). The event object returns
@@ -257,8 +253,6 @@ class PreviewUrlConvertListener
 
 ## `contao.robots_txt`
 
-{{% version "4.9" %}}
-
 This event is triggered when the `/robots.txt` route is called. The event allows you
 to retrieve the `webignition\RobotsTxt\File\File` object of the dynamically generated
 `robots.txt`, which allows you to add your own custom records programatically. See
@@ -317,8 +311,6 @@ class RobotsTxtListener
 
 
 ## `contao.slug_valid_characters`
-
-{{% version "4.5" %}}
 
 This event event is triggered when the valid slug characters options in the back
 end are generated. The event allows you to set custom options.

@@ -6,12 +6,6 @@ aliases:
     - /framework/content-elements/
 ---
 
-{{% notice note %}}
-This covers the documentation on how to create content elements in Contao **4.6**
-and up. In previous Contao version, Content elements must extend from `\Contao\ContentElement`
-and then be registered via the `$GLOBAL['TL_CTE']` array.
-{{% /notice %}}
-
 In Contao, Content Elements are the fundamental content blocks. In its simplest
 form it is a fragment controller which receives data in form of a content model
 and returns a response.
@@ -159,8 +153,6 @@ If you used a custom category for your content element, its label can also be tr
 
 
 ## Annotation
-
-{{< version "4.8" >}}
 
 Instead of tagging the content element controller service via the service configuration,
 the service tag can also be configured through annotations, as already used in the

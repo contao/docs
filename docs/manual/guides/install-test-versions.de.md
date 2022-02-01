@@ -118,8 +118,8 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 {{% notice tip %}}
 Die angeforderten Versionen der anderen Contao Bundles muss nicht unbedingt von
 deren ursprünglichen Angaben geändert werden. Zum Beispiel erlaubt eine Angabe von
-`^4.4` (wie es der Fall wäre, wenn man von einer Contao 4.4 LTS Version aktualisieren
-würde) auch die Installation aller `4.9` Versionen. Siehe dazu auch die Dokumentation
+`^4.9` (wie es der Fall wäre, wenn man von einer Contao 4.9 LTS Version aktualisieren
+würde) auch die Installation aller `4.13` Versionen. Siehe dazu auch die Dokumentation
 von Composer über diese spezielle [Versions Syntax](https://getcomposer.org/doc/articles/versions.md).
 Nur die Version des `contao/manager-bundle` muss angepasst werden.
 {{% /notice %}}

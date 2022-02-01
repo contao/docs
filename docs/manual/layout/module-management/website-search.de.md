@@ -104,8 +104,6 @@ Platzhaltern).
 sondern auch den Kontext rechts und links davon. Hier legst du fest, wie viele Zeichen rechts und links eines 
 gefundenen Begriffs als Kontext verwendet werden sollen.
 
-{{< version "4.8" >}}
-
 **Minimale Suchwort-Länge:** Suchwörter, die die Mindestlänge überschreiten, werden in den Suchergebnissen ignoriert. 
 Zum Deaktivieren auf 0 setzen.
 

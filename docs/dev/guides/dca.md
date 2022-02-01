@@ -630,7 +630,7 @@ $GLOBALS['TL_LANG']['MOD']['tl_vendor'] = 'Vendors';
 $GLOBALS['TL_LANG']['MOD']['tl_parts'] = 'Parts';
 ```
 
-All other translations will go into files that have the same name as our data container table names. Contao **4.9** and up will 
+All other translations will go into files that have the same name as our data container table names. Contao will 
 automatically pull these translations for our fields if the translation key is the same as the field's key. There are also special 
 translation keys like `new` which are used for the button that create a new data record.
 

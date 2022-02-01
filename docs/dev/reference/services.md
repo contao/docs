@@ -105,8 +105,6 @@ class ExampleFormElementController extends AbstractContentElementController
 
 ## OptIn
 
-{{< version "4.7" >}}
-
 Contao offers an opt-in service (`contao.opt-in`) so that any opt-in process can be tracked centrally. The opt-in references will be saved 
 for the legally required duration and are then automatically discarded (if applicable).
 

@@ -43,7 +43,6 @@ Der Infobereich zeigt einige wichtige Links an, die beim Arbeiten mit Contao imm
 **Hinweise:** Beim Klick auf diesen Link öffnet ein Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
 
 **Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
-{{< version "4.8" >}}
 
 **Vorschau:** Dieser Link ruft das Frontend, also die eigentliche Webseite, in einem neuen Fenster auf. Wenn du eine
 bestimmte Seite oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprechende Seite im Frontend
@@ -59,7 +58,6 @@ Passwort ändern oder die Sprache wechseln.
 **Sicherheit:** Über diesen Link kann die 
 [Zwei-Faktor-Authentifizierung](https://de.wikipedia.org/wiki/Zwei-Faktor-Authentisierung) für dein Backend aktiviert 
 werden.
-{{< version "4.6" >}}
 
 
 ### Der Navigationsbereich

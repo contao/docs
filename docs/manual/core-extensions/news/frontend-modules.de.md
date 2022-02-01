@@ -42,8 +42,6 @@ Blog-Beiträge automatisch auf diesen Wert limitiert.
 **Hervorgehobene Beiträge:** Hier legst du fest, ob nur hervorgehobene, nur nicht hervorgehobene, hervorgehobene zuerst  
 oder alle Beiträge der ausgewählten Archive angezeigt werden.
 
-{{< version "4.5" >}}
-
 **Sortierreihenfolge:** Hier kannst du die Sortierreihenfolge festlegen. Es stehen folgende fünf Sortierreihenfolgen 
 zur Verfügung: nach Datum aufsteigend, nach Datum absteigend (Standard), nach Überschrift aufsteigend, nach Überschrift 
 absteigend und nach einer zufälligen Reihenfolge.
@@ -190,8 +188,6 @@ werden standardmäßig absteigend nach Datum sortiert.
 Beitrag ausgewählt wurde.
 
 **Archivformat:** Hier legst du das Archivformat (Tag, Monat oder Jahr) fest.
-
-{{< version "4.5" >}}
 
 **Sortierreihenfolge:** Hier kannst du die Sortierreihenfolge festlegen. Es stehen folgende fünf Sortierreihenfolgen 
 zur Verfügung: nach Datum aufsteigend, nach Datum absteigend (Standard), nach Überschrift aufsteigend, nach Überschrift 

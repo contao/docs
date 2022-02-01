@@ -5,11 +5,6 @@ aliases:
     - /en/performance/http-caching/
 ---
 
-{{% notice info %}}
-This whole article refers to Contao **4.9** and higher. Previous versions also have caching mechanisms, but they are not
-nearly as efficient, so we have not documented how the caching works for the older versions. 
-{{% /notice %}}
-
 The greatest performance gain in any application can be achieved by not having to start it at all.
 In other words: We want the output that Contao generates to be saved and delivered the next time it is called without
 having to even boot Contao at all.

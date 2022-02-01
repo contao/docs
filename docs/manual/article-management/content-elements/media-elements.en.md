@@ -125,9 +125,7 @@ The element generates the following HTML code:
 
 The content element "Video/Audio" adds a video or audio file to the article.
 
-**video/audio files:** Here you can add the video/audio file or, if you use different codecs, the video/audio files.
-
-{{< version "4.6" >}}
+**Video/audio files:** Here you can add the video/audio file or, if you use different codecs, the video/audio files.
 
 **Player size:** Here you can set the width and height of the media player in pixels (e.g. 640x480).
 
@@ -174,8 +172,6 @@ The YouTube content element adds a YouTube video to the article.
 
 **YouTube ID:** Please enter the YouTube video ID for your video (e.g. rOGhp63Lvbo).
 
-{{< version "4.5" >}}
-
 **Player size:** Here you can set the width and height of the media player in pixels (e.g. 640x480).
 
 **Player options:** Here you can select the different player options.
@@ -198,8 +194,6 @@ The YouTube content element adds a YouTube video to the article.
 **Caption:** You can enter a caption here.
 
 **Aspect Ratio**: Here you can set [the aspect ratio of the video](https://en.wikipedia.org/wiki/Aspect_ratio_(image)#Current_video_standards) to make it responsive.
-
-{{< version "4.8" >}}
 
 **Use a splash image:** The video will not load until the user clicks on the splash image.
 
@@ -248,8 +242,6 @@ The content element "Vimeo" adds a Vimeo video to the article.
 
 **Vimeo ID:** Please enter the Vimeo video ID (for example, 275028611).
 
-{{< version "4.5" >}}
-
 **Player size:** Here you can set the width and height of the media player in pixels (e.g. 640x480).
 
 **Player options:** Here you can select the different player options.
@@ -267,8 +259,6 @@ The content element "Vimeo" adds a Vimeo video to the article.
 **Caption:** Here you can enter a caption for the image.
 
 **Aspect ratio**: Here you can set [the aspect ratio of the video](https://en.wikipedia.org/wiki/Aspect_ratio_(image)#Current_video_standards) to make it responsive.
-
-{{< version "4.8" >}}
 
 **Use a splash image:** The video will not load until the user clicks on the splash image.
 

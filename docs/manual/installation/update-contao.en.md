@@ -28,13 +28,13 @@ may not work anymore. The current major release of Contao is **version 4** when 
 
 A minor release is a kind of milestone on the development path where new features have been added. Minor changes to 
 existing pages might therefore be necessary. When writing these lines, the current minor version of Contao 
-is **version 4.10**.
+is **version 4.13**.
 
 
 ### Bugfix release
 
 A bugfix release is a maintenance release whose primary purpose is to fix bugs; the current bugfix version of Contao 
-when writing these lines is **version 4.10.4**.
+when writing these lines is **version 4.13.1**.
 
 
 ### Long-Term Support Versions

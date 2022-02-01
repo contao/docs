@@ -101,7 +101,7 @@ can be freely configured, independent of the respective language.
 {{< version-tag "4.10" >}} **URL suffix:** This setting allows you to change or remove the "URL suffix". This suffix will be appended to the alias
 when generating the URL of a page.
 
-{{< version-tag "4.5" >}} **Alias settings:** The slug generator allows you to select an individual character set for automatically generated aliases.
+**Alias settings:** The slug generator allows you to select an individual character set for automatically generated aliases.
 
 | Alias Settings | Declaration |
 | -------------- | ----------- |
@@ -112,10 +112,6 @@ when generating the URL of a page.
 
 For the creation of the alias, the defined language is also relevant in some cases. For instance the German word "über"
 would be converted to "ueber" while the finish word "eläinkö" would be converted to "elainko".
-
-{{% notice note %}}
-This setting is located within the section _Alias settings_ in Contao **4.5** through **4.9**.
-{{% /notice %}}
 
 {{< version-tag "4.10" >}} **Enable folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in 
 the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias 
@@ -166,8 +162,6 @@ without any other parameters. You can exclude certin (or all) website roots from
 
 
 ### Website settings
-
-{{< version "4.9" >}}
 
 **Favicon:** This allows you to select a favicon for the `/favicon.ico` URL of your domain. This is especially useful for multi-domain setups
 so that you can easily serve different favicons for different domains from within the same Contao instance, since you can only have one
@@ -230,7 +224,7 @@ Here are some examples of valid dates and times:
 
 ### Two-factor authentication
 
-{{< version-tag "4.8" >}} You can enforce two-factor authentication for all members (frontend) here. Select a page that visitors will be redirected to when they set up the two-factor authentication.
+You can enforce two-factor authentication for all members (frontend) here. Select a page that visitors will be redirected to when they set up the two-factor authentication.
 
 ## Layout settings
 
@@ -257,7 +251,7 @@ In the cache settings you can define if and how long a page should be cached. Ca
 
 Note that for security reasons, pages are only cached if they are not protected and no user is logged on to the backend. Otherwise, there is a risk that confidential data is written to the cache and accidentally displayed in the frontend. So don't be surprised if your password-protected pages don't show up in the cache despite their assigned expiration time.
 
-{{< version-tag "4.8" >}} **Always load from shared cache:** Always load this page from the shared cache, even if a member is logged in. Note that in this case you will not be able to personalize the page for logged in members.
+**Always load from shared cache:** Always load this page from the shared cache, even if a member is logged in. Note that in this case you will not be able to personalize the page for logged in members.
 
 ## Access rights
 
@@ -313,7 +307,7 @@ Contao indexes the finished pages of your website and creates a search index tha
 
 **Show only guests:** If you select this option, the link to the page will be automatically hidden from the navigation menu of the website once a member has logged in. This is useful for the Login and Registration pages, for example.
 
-{{< version-tag "4.5" >}} **Element required:** If you select this option, this page will show error page 404 if the URL does not contain an alias for an element.
+**Element required:** If you select this option, this page will show error page 404 if the URL does not contain an alias for an element.
 
 ## Keyboard navigation
 

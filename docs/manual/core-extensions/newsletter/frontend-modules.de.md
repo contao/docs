@@ -32,8 +32,6 @@ Fall die von dir festgelegten Verteiler.
 **Spam-Schutz deaktivieren:** Hier kannst du den Spam-Schutz deaktivieren (nicht empfohlen).
 
 
-{{< version "4.6" >}}
-
 ### Eigener Text
 
 **Eigener Text:** Hier kannst du z. B. einen Datenschutzhinweis eingeben, um die Anmeldung DSGVO-konform zu gestalten.

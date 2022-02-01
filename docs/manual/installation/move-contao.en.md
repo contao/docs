@@ -80,10 +80,9 @@ The following files and folders need to be transferred from the source to the ta
 - `composer.lock`
 
 If you still have old extensions within `system/modules/` or if you have created a `config.yml` in the directory
-`config/` (or **before Contao 4.8** `app/config/`) or if you created Contao adjustments under `contao/` (or **before 
-Contao 4.8** `app/Resources/contao/`), then they have to be transferred as well.
+`config/` or if you created Contao adjustments under `contao/`, then they have to be transferred as well.
 
-You can use an FTP client for this task or, if you prefer the command line, use `scp`:
+You can use an (S)FTP client for this task or, if you prefer the command line, use `scp`:
 
 ```bash
 cd /path/to/project

@@ -55,7 +55,7 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 **Login required for commenting:** If you select this option, only registered members can add comments. Comments already submitted will still be visible to all visitors of the website.
 
-**Disable spam protection:** By default, visitors must answer a security question when creating comments, so that the commenting function cannot be misused for spam purposes. However, if you want to allow only logged in members to comment, you can disable the security question here. Since Contao 4.4, this question is only "displayed" to spambots.
+**Disable spam protection:** By default, visitors must answer a security question when creating comments, so that the commenting function cannot be misused for spam purposes. However, if you want to allow only logged in members to comment, you can disable the security question here. Normally, this question is only "displayed" to spambots.
 
 ## Questions
 

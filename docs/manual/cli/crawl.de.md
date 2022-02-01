@@ -6,9 +6,6 @@ aliases:
 weight: 20
 ---
 
-
-{{< version "4.9" >}}
-
 Contao ist mit einem HTTP-Crawler ausgestattet. Intern basiert dieser auf [Escargot](https://github.com/terminal42/escargot).
 Der Crawler durchforstet im wesentlichen alle von Contao generierten URLs, wie jede andere Suchmaschine. Er folgt Links, 
 die Teil der `sitemap.xml` sind, respektiert `robots.txt` Informationen, das `rel`-Attribut bei Links und vieles mehr.

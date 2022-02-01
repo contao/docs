@@ -78,7 +78,7 @@ already submitted will still be visible to all visitors of the website.
 
 **Disable spam protection:** By default, visitors are required to answer a security question when creating comments to 
 prevent the commenting feature from being misused for spam purposes. However, if you want to allow only logged in 
-members to comment, you can disable the security question here. Since Contao 4.4, this question is only "displayed" to 
+members to comment, you can disable the security question here. Normally, this question is only "displayed" to 
 spambots.
 
 
@@ -209,8 +209,6 @@ not.
 | Custom URL | The redirection is to an individual URL. |
 
 ### Metadata
-
-{{< version "4.7" >}}
 
 **Meta-title:** Here you can enter an individual meta-title to overwrite the default page title.
 

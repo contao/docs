@@ -33,14 +33,7 @@ aufzurufen.
 
 Der Crawler kann außerdem auf defekte Links überprüfen, wenn das aktiviert wurde.
 
-{{% notice note %}}
-In Contao Versionen vor **4.9** heißt diese Sektion **Suchindex neu aufbauen**. Die Funktion zum Überprüfen auf defekte
-Links steht dort nicht zur Verfügung.
-{{% /notice %}}
-
 ![Den Suchindex automatisch aufbauen](/de/system/images/de/den-suchindex-automatisch-aufbauen.png?classes=shadow)
-
-{{< version "4.9" >}}
 
 Der Crawler kann auch direkt über die Konsole ausgeführt werden:
 
@@ -68,7 +61,7 @@ Um das Durchsuchen von geschützten Seiten zu erlauben, musst du die Funktion z
 aktivieren. Benutze dieses Feature sehr sorgfältig, und schließe personalisierte Seiten immer von der Suche aus!
 
 {{% notice note %}}
-Ab Contao **4.9** wird dies in der Applikations-Konfiguration aktiviert:
+Dies wird in der Applikations-Konfiguration aktiviert:
 
 ```yml
 # config/config.yml
