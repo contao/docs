@@ -39,9 +39,10 @@ when writing these lines is **version 4.10.4**.
 
 ### Long-Term Support Versions
 
-The [release cycle](https://contao.org/de/release-plan.html) of Contao also includes a Long-Term Support. Contao LTS versions are 
-supported and updated for up to 4 years, even if newer Contao versions have been released in the meantime. An overview of all Contao versions 
-can be found on [Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
+The [release cycle](https://contao.org/de/release-plan.html) of Contao also includes versions with 
+[Long Term Support](https://de.wikipedia.org/wiki/Support_(service)#Long_Term_Support). The Contao versions with extended 
+support period are provided with bug fixes for 3 years and security updates for 1 year, even if newer Contao versions have been released 
+in the meantime. An overview of all Contao versions can be found on [Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
 
 
 ## Updating with the Contao Manager
