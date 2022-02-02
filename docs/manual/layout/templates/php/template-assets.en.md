@@ -2,8 +2,8 @@
 title: 'CSS and JavaScript assets'
 description: 'Use CSS and JavaScript assets in templates.'
 aliases:
-    - /en/layout/templates/template-assets/
-weight: 20
+    - /en/layout/templates/php/template-assets/
+weight: 30
 ---
 
 Oftentimes, templates require additional assets, such as CSS or JavaScript files. You *can* integrate them via your

@@ -1,10 +1,10 @@
 ---
 title: "Template-Daten anzeigen"
 description: "Alle Template-Daten anzeigen."
-url: "layout/templates/data"
+url: "layout/templates/php/data"
 aliases:
-    - /de/layout/templates/data/
-weight: 50
+    - /de/layout/templates/php/data/
+weight: 60
 ---
 
 Die verfügbaren Template-Daten variieren je nach Quelle der Vorlage. In der Regel ist der vollständige 

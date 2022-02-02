@@ -1,10 +1,10 @@
 ---
 title: "Template vererben"
 description: "Die Template Vererbung."
-url: "layout/templates/vererbung"
+url: "layout/templates/php/vererbung"
 aliases:
-    - /de/layout/templates/vererbung/
-weight: 30
+    - /de/layout/templates/php/vererbung/
+weight: 40
 ---
 
 Contao erlaubt das Vererben von Templates. Dabei wird ein Template nicht komplett überschrieben, sondern nur gezielt

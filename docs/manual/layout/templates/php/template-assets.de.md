@@ -1,10 +1,10 @@
 ---
 title: "CSS- und JavaScript-Assets"
 description: "CSS- und JavaScript-Assets in Templates einsetzen."
-url: "layout/templates/assets"
+url: "layout/templates/php/assets"
 aliases:
-    - /de/layout/templates/assets/
-weight: 20
+    - /de/layout/templates/php/assets/
+weight: 30
 ---
 
 Oft werden zu einem individuellen Template zusätzliche Inhalte (»Assets«)m wie CSS- oder JavaScript-Dateien benötigt.

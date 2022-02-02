@@ -2,8 +2,8 @@
 title: 'Mix templates'
 description: 'Mix a template.'
 aliases:
-    - /en/layout/templates/template-insertion/
-weight: 40
+    - /en/layout/templates/php/template-insertion/
+weight: 50
 ---
 
 The `insert()` function allows inserting a template into another one. You can pass variables as an optional second
