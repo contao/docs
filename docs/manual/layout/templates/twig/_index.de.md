@@ -4,7 +4,7 @@ description: "Übersicht Twig-Templates."
 url: "layout/templates/twig"
 aliases:
     - /de/layout/templates/twig/
-weight: 10
+weight: 15
 ---
 
 
@@ -18,44 +18,54 @@ einige Änderungen geben, also sei darauf vorbereitet.
 
 Twig ist Symfony's Standardmethode zum Schreiben von Templates. Es ist schnell, sicher und leicht erweiterbar. Im Gegensatz zu 
 PHP-Templates enthalten Twig-Templates keine Geschäftslogik, was die gemeinsame Nutzung durch Designer und Programmierer erleichtert. 
-Diese Tatsache hilft, eine saubere Trennung zwischen der Präsentations- und der Daten-/Logikschicht aufrechtzuerhalten.
 
-Twig bietet außerdem viele leistungsstarke Methoden zur Strukturierung von Vorlagen, wie z. B. das Einbinden, Vererben, Wiederverwenden 
-von Blöcken oder Makros, den erleichterten Zugriff auf Objekte mit »Property Access«, verfügt über Leerzeichenkontrolle, 
-String-Interpolationsfunktionen und vieles mehr.
-
-{{% notice info %}}
-Eine Auswahl vorhandener Twig-Templates, z. B. über ein Inhaltselement, ist derzeit noch nicht möglich. Die Dokumentation der Twig Nutzung in Contao wird ständig erweitert. Bis dahin findest du in [diesem Beitrag](https://docs.contao.org/dev/framework/templates/twig/) weitere, detaillierte Informationen zum Thema.
-{{% /notice %}}
+{{% children %}}
 
 
-## Erste Schritte
+## Erste Schritte mit Twig
 
-Du kannst Twig-Templates überall dort verwenden, wo du auch eine PHP-Vorlage verwenden würdest, nur mit einer anderen Dateierweiterung 
-(`.html.twig` statt `.html5`). Es ist sogar möglich, PHP-Templates aus den Twig-Templates heraus zu erweitern.
+Wenn du bereits mit Twig vertraut bist, kannst du diesen Schritt überspringen.
 
-Lege dir eine `fe_page.html.twig` in deinem Template-Verzeichnis an. In diesem Beispiel wird eine Überschrift über dem Hauptabschnitt 
-hinzugefügt und alles andere bleibt gleich:
+Twig-Templates haben ihre eigene Syntax. Das folgende Beispiel zeigt wie ein PHP-Template in ein analoges Twig-Template übersetzt werden kann:
 
-```twig
-{# /templates/fe_page.html.twig #}
+{{< tabs groupId="twig">}}
+{{% tab name="PHP" %}}
+```html
+<div class="about-me">
+  <h2><?= $this->name ?></h2>
+  <p>I am <?= round($this->age) ?> years old.</p>
 
-{% extends '@Contao/fe_page' %}
-
-{% block main %}
-  <h1>Hello from Twig!</h1>
-  {{ parent() }}
-{% endblock %}
+  <ul class="hobby-list">
+    <?php foreach $this->hobbies as $hobby: ?>
+      <li><?= ucfirst($hobby) ?></li>
+    <?php endforeach; ?>
+  </ul>
+</div>
 ```
+{{% /tab %}}
+{{% tab name="Twig" %}}
+```twig
+<div class="about-me">
+  <h2>{{ name }}</h2>
+  <p>I am {{ age|round }} years old.</p>
 
-1. Benenne dein Twig-Template wie das Contao-Pendant (mit Ausnahme der Dateierweiterung) und lege dieses in einem normalen 
-Contao Template Verzeichnis ab. Es kann derzeit **entweder** eine Twig- **oder** eine PHP-Variante des gleichen Templates am gleichen Ort geben.
+  <ul class="hobby-list">
+    {% for hobby in hobbies %}
+      <li>{{ hobby|capitalize }}</li>
+    {% endfor %}
+  </ul>
+</div>
+```
+{{% /tab %}}
+{{< /tabs >}}
 
-2. Um eine bestehende Vorlage zu erweitern (anstatt diese komplett zu ersetzen), verwende das Schlüsselwort `extends` und den 
-speziellen `@Contao` [Namensraum](https://docs.contao.org/dev/framework/templates/twig/#namespace-magic).
 
-3. Verwende den gleichen Blocknamen wie in der ursprünglichen Vorlage.
+### Die Syntax erlernen
 
-{{% notice note %}}
-Du kannst Twig-Templates nicht aus PHP-Templates heraus erweitern, nur umgekehrt.
-{{% /notice %}}
+Zur Ausgabe von Variablen benutzt du deren Namen in geschweiften Klammern `{{ foo }}`. Schlüsselwörter wie `for` werden innerhalb von `{%` und `%}` 
+gesetzt. Zur weiteren Verarbeitung der Ausgabe verwendest du [Filter](https://twig.symfony.com/doc/3.x/filters/index.html)
+`|foo` und [Funktionen](https://twig.symfony.com/doc/3.x/functions/index.html) `bar()`.
+
+Die Twig Syntax ist [gut dokumentiert](https://twig.symfony.com/doc/3.x/). Ein guter Startpunkt ist der
+Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templates.html). Du möchtest schnell etwas ausprobieren? 
+Verwende dazu [Twig fiddle](https://twigfiddle.com/).
