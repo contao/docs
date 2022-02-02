@@ -15,7 +15,7 @@ PHP-Templates enthalten Twig-Templates keine Geschäftslogik, was die gemeinsame
 Diese Tatsache hilft, eine saubere Trennung zwischen der Präsentations- und der Daten-/Logikschicht aufrechtzuerhalten.
 
 Twig bietet außerdem viele leistungsstarke Methoden zur Strukturierung von Vorlagen, wie z. B. das Einbinden, Vererben, Wiederverwenden 
-von Blöcken oder Makros, erleichtert den Zugriff auf Objekte mit »Property Access«, verfügt über Leerzeichenkontrolle, 
+von Blöcken oder Makros, den erleichterten Zugriff auf Objekte mit »Property Access«, verfügt über Leerzeichenkontrolle, 
 String-Interpolationsfunktionen und vieles mehr.
 
 {{% notice warning %}}
