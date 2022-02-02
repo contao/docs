@@ -40,11 +40,10 @@ Die aktuelle Bugfix-Version von Contao ist beim Schreiben dieser Zeilen die **Ve
 
 ### Long-Term-Support-Versionen
 
-Mit Version 2.11 wurde der [Release-Zyklus von Contao](https://contao.org/de/release-plan.html) angepasst und 
-[Long-Term-Support](https://de.wikipedia.org/wiki/Support_(Dienstleistung)#Long_Term_Support)-Versionen (LTS) 
-eingeführt, die 24 Monate lang unterstützt und mit Updates versorgt werden, auch wenn zwischenzeitlich schon neuere 
-Contao-Versionen veröffentlicht wurden. Eine Übersicht aller Contao Versionen gibt es auf 
-[Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
+Der [Release-Zyklus](https://contao.org/de/release-plan.html) von Contao beinhaltet auch den 
+[Long-Term-Support](https://de.wikipedia.org/wiki/Support_(Dienstleistung)#Long_Term_Support). Die Contao LTS-Versionen werden bis zu 4 Jahre 
+lang unterstützt und mit Updates versorgt, auch wenn zwischenzeitlich schon neuere Contao-Versionen veröffentlicht wurden. Eine Übersicht 
+aller Contao Versionen gibt es auf [Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
 
 
 ## Aktualisierung mit dem Contao Manager
