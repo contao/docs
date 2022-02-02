@@ -22,8 +22,9 @@ Da dieses Bundle eine Twig-Erweiterung mit einem `|ago`-Filter bereitstellt, kan
 ### Weitere Erweiterungen verwenden
 
 Tatsächlich gibt es bereits eine Menge Twig-Erweiterungen, darunter einige
-[offizielle](https://github.com/twigphp/Twig/tree/3.x/extra). Diese "twig-extra"-Bundles können einfach
-mit Composer oder über den [Contao Manager](https://extensions.contao.org/?q=twig&pages=1) installiert werden und sind dann einsatzbereit.
+[offizielle](https://github.com/twigphp/Twig/tree/3.x/extra). Diese »[twig-extra](https://extensions.contao.org/?q=twig&pages=1)« Bundles 
+können einfach mit Composer oder über den Contao Manager (siehe [extensions.contao.org](https://extensions.contao.org/?q=twig&pages=1)) 
+installiert werden und sind dann einsatzbereit.
 
 ```twig
 {# using twig/intl-extra #}

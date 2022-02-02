@@ -23,8 +23,9 @@ directly use this functionality in your templates:
 ### Using twig-extra bundles
 
 In fact, there are already a lot of Twig extensions in the wild, including some
-[official ones](https://github.com/twigphp/Twig/tree/3.x/extra). These "twig-extra" bundles can simply be installed
-with composer or with the [Contao Manager](https://extensions.contao.org/?q=twig&pages=1) and are directly ready to be used.
+[official ones](https://github.com/twigphp/Twig/tree/3.x/extra). These "[twig-extra](https://extensions.contao.org/?q=twig&pages=1)" bundles 
+can simply be installed with composer or with the Contao Manager (see [extensions.contao.org](https://extensions.contao.org/?q=twig&pages=1)) 
+and are directly ready to be used.
 
 ```twig
 {# using twig/intl-extra #}
