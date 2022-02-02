@@ -18,8 +18,8 @@ The gist: You, as a template designer, have to decide how things should be
 output, because *you* know the context and which content you trust or not. The
 *exact same* data can be dangerous in one context and harmless in another:
 
-With Twig we can be specific how a certain variable should be treated. Use the
-`|escape` or - short - `|e` filter for this:
+With Twig we can be specific how a certain variable should be treated. Use the `|escape` or - short - `|e` 
+[filter](https://twig.symfony.com/doc/3.x/filters/escape.html) for this:
 
 ```twig
 <style>

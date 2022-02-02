@@ -18,7 +18,8 @@ diesem [OWASP-Artikel](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site
 Das Wesentliche: Als Vorlagendesigner musst du entscheiden, wie Dinge ausgegeben werden sollen, denn *du* kennst den Kontext und weißt, 
 welchen Inhalten du vertrauen kannst oder nicht. Die *exakt gleichen* Daten können in einem Kontext gefährlich und in einem anderen harmlos sein:
 
-Mit Twig können wir genau festlegen, wie eine bestimmte Variable behandelt werden soll. Verwende dazu den Filter `|escape` oder kurz `|e`:
+Mit Twig können wir genau festlegen, wie eine bestimmte Variable behandelt werden soll. Verwende dazu den 
+[Filter](https://twig.symfony.com/doc/3.x/filters/escape.html) `|escape` oder kurz `|e`:
 
 ```twig
 <style>
