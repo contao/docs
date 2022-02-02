@@ -1,6 +1,6 @@
 ---
-title: "Erweiterungen"
-description: "Twig Erweiterungen."
+title: "Twig Erweiterungen"
+description: "Informationen zu offiziellen Twig Erweiterungen."
 url: "layout/templates/twig/extensions"
 aliases:
     - /de/layout/templates/twig/extensions/
