@@ -42,7 +42,7 @@ Die aktuelle Bugfix-Version von Contao ist beim Schreiben dieser Zeilen die **Ve
 
 Der [Release-Zyklus](https://contao.org/de/release-plan.html) von Contao beinhaltet auch Versionen mit 
 [Long Term Support](https://de.wikipedia.org/wiki/Support_(Dienstleistung)#Long_Term_Support). Die Contao-Versionen mit verlängertem 
-Supportzeitraum werden während 3 Jahren mit Bugfixes und 1 Jahr mit sicherheitsrelevante Updates versorgt, auch wenn zwischenzeitlich schon neuere Contao-Versionen veröffentlicht wurden. Eine Übersicht aller Contao-Versionen gibt es auf [Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
+Supportzeitraum werden während 3 Jahren mit Bugfixes und 1 Jahr mit sicherheitsrelevanten Updates versorgt, auch wenn zwischenzeitlich schon neuere Contao-Versionen veröffentlicht wurden. Eine Übersicht aller Contao-Versionen gibt es auf [Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
 
 
 ## Aktualisierung mit dem Contao Manager
