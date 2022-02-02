@@ -21,3 +21,4 @@ With this command you can process all deferred images that were not yet resized.
 | `--time-limit`     | Time limit in seconds after which the command should stop execution.|
 | `--image=IMAGE`    | Pass an image path like `1/foobar-f6eac395d.jpg` (without the `assets/images` prefix) to resize one specific image only.|
 | `--no-sub-process` | Disables the use of a sub process for each image resize. Use with caution, this could result in an extremely high memory consumption.|
+| `--preserve-missing` | Do not delete deferred image references to images that no longer exist. |

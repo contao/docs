@@ -21,3 +21,4 @@ php vendor/bin/contao-console contao:resize-images [options]
 | `--time-limit`     | Zeitlimit in Sekunden, nach dem der Befehl beendet werden soll, auch wenn noch nicht alle Bilder erzeugt wurden. |
 | `--image=IMAGE`    | Übergebe einen Bildpfad wie `1/foobar-f6eac395d.jpg` (ohne das Präfix `assets/images`), um nur ein bestimmtes Bild zu erzeugen. |
 | `--no-sub-process` | Deaktiviert die Verwendung eines Unterprozesses für jede Bildgrößenänderung. Verwende diese Option mit Vorsicht, da es zu einem extrem hohen Speicherverbrauch führen kann. |
+| `--preserve-missing` | Entfernt keine latenten Bildreferenzen auf Bilder, die nicht mehr existieren. |
