@@ -36,11 +36,14 @@ Standardmäßig kodiert Twig **alle** Variablen. Die gewählte Escaper Strategie
 `.html.twig` Vorlagen werden automatisch mit `|e('html')` behandelt, so dass du diesen Teil im obigen Beispiel weglassen könntest.
 {{% /notice %}}
 
+Mit dem [autoescape](https://twig.symfony.com/doc/3.x/tags/autoescape.html) Tag kannst du einen ganzen Abschnitt so markieren, 
+dass er escaped wird oder nicht.
+
 
 ## Vertrauenswürdige Rohdaten
 
-Wenn du absichtlich eine Variable ausgeben möchtest, die reines HTML enthält, wie z. B.  `<b>nett</b>`, musst du den Escape-Filter 
-`|raw` der Variablen hinzufügen. Andernfalls wird `&lt;b&gt;nett&lt;/b&gt;` ausgegeben.
+Wenn du absichtlich eine Variable ausgeben möchtest, die reines HTML enthält, wie z. B.  `<b>nett</b>`, musst du den 
+[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` der Variablen hinzufügen. Andernfalls wird `&lt;b&gt;nett&lt;/b&gt;` ausgegeben.
 
 {{% notice warning %}}
 Denke daran, dass du `|raw` immer nur vertrauenswürdigen Eingaben hinzufügst. Die Verwendung von `|raw` kann ansonsten zu schwerwiegenden XSS-Schwachstellen führen.
