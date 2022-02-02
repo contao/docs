@@ -9,17 +9,17 @@ weight: 10
 
 {{< version "4.12" >}}
 
+{{% notice warning %}}
+Twig support is currently *experimental* and therefore not covered by Contao's BC promise. Classes marked with `@experimental` should be 
+considered internal for now. Although not likely, there could also be some behavioral changes, so be prepared. 
+{{% /notice %}}
+
 Twig is Symfony’s default way to write templates. It’s fast, safe and easily extensible. Contrary to PHP templates, Twig templates won’t 
 contain business logic which allows to share them more easily between designers and programmers. This fact also helps you maintain 
 a clean separation between your presentation and data/logic layer.
 
 Twig also features a lot of powerful methods to structure your templates like including, embedding, inheriting, reusing blocks or macros, 
 eases accessing objects with “property access”, has whitespace control, string interpolation features and a ton more… Give it a try!
-
-{{% notice warning %}}
-Twig support is currently *experimental* and therefore not covered by Contao's BC promise. Classes marked with `@experimental` should be 
-considered internal for now. Although not likely, there could also be some behavioral changes, so be prepared. 
-{{% /notice %}}
 
 {{% notice info %}}
 A selection of existing Twig templates, e.g. via a content element, is currently not yet possible. The documentation of Twig usage in Contao is constantly being extended. Until then you can find more detailed information [here](https://docs.contao.org/dev/framework/templates/twig/).
