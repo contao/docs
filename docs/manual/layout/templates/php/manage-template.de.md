@@ -13,7 +13,7 @@ Du kannst Templates im  `/templates` Ordner ablegen, damit diese im Backend, etw
 Inhaltselements, zur Auswahl angeboten werden.
 
 * Templates, die dabei direkt im **Hauptverzeichnis** liegen, werden als `global` gekennzeichnet.
-* Im [Theme-Manager](../../theme-manager/themes-verwalten) kannst du ein vorhandenes **Unterverzeichnis** mit einem
+* Im [Theme-Manager](../../../theme-manager/themes-verwalten) kannst du ein vorhandenes **Unterverzeichnis** mit einem
   Theme verknüpfen. Template-Dateien aus diesem Ordner werden bei der Auswahl dann mit dem jeweiligen `Theme-Namen`
   gekennzeichnet.
 
