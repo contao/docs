@@ -135,7 +135,7 @@ CSS-Klasse möchten wir folgende Ausgabe erzielen:
 ...
 ```
 
-Erstelle dir hierzu in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/verwaltung/) 
+Erstelle dir hierzu in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/php/verwaltung/) 
 zwei neue Templates basierend auf »ce_text.html5« und »block_searchable.html5«. 
 
 Beispielsweise als »ce_text_filter.html5« und »block_searchable_filter.html5« und benutze das neue 
