@@ -30,7 +30,7 @@ Template nur dort findet. Alle Zeilen innerhalb von `<script>...</script>` bis a
 {{% /notice %}}
 
 {{% notice tip %}}
-Seit Contao **4.10** kann [Template Vererbung](/de/layout/templates/php/template-inheritance/) benutzt werden, um nur Teile
+Seit Contao **4.10** kann [Template Vererbung](../layout/templates/php/template-inheritance/) benutzt werden, um nur Teile
 des Standard `be_tinyMCE` Templates nach den eigenen Bedürfnissen anzupassen.
 {{% /notice %}}
 
