@@ -55,7 +55,7 @@ der »Datei speichern unter …«-Dialog, und du kannst die Datei auf deinem lok
 
 Die Besonderheit in Contao ist, dass diese Download-Links auch mit geschützten Dateien funktionieren, auf die du nicht 
 direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
-erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung](../../dateiverwaltung/).
+erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung](../../../dateiverwaltung/).
 
 **Quelldateien:** Hier wählst du einen oder mehrere Ordner bzw. Dateien aus, die in dem Donwloads-Element enthalten 
 sein sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen herunterladbaren 
