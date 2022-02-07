@@ -117,7 +117,7 @@ If a MySQL server in version **8.0.17** or higher is used, at least PHP **7.2.0*
 {{% /notice %}}
 
 
-### Switching the PHP Version
+### Switching the PHP version
 
 In case you want to switch the PHP version of an already running PHP instance, you should always run a full `composer update` after
 switching. This is especially important when switching between major versions, e.g. from PHP 7.x to 8.x - or vice versa. This ensures 
