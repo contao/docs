@@ -64,7 +64,7 @@ vendor/bin/contao-console cache:warmup
 ## Template
 
 {{% expand "Wie kann ich alle Variablen meines Templates anzeigen?" %}}
-Die Information hierzu findest du unter [Template-Daten anzeigen](/de/layout/templates/data/).
+Die Information hierzu findest du unter [Template-Daten anzeigen](/de/layout/templates/php/data/).
 {{% /expand %}}
 
 {{% expand "Wie kann ich den TinyMCE-Editor konfigurieren?" %}}
