@@ -10,7 +10,7 @@ weight: 10
 
 Ein Template wird zur Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponente 
 verwendet und beinhaltet HTML- und PHP-Code. Im 
-[Navigationsbereich](../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-navigationsbereich) »Layout« 
+[Navigationsbereich](../../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-navigationsbereich) »Layout« 
 unter »Templates« können die Dateien erstellt, in Ordnern abgelegt und bearbeitet werden. Diese Anpassungen sind updatesicher.
 
 {{% children %}}
@@ -22,7 +22,7 @@ werden von den Templates übernommen und im Quelltext ausgegeben.
 {{% /notice %}}
 
 {{% notice note %}}
-Im [Debug-Modus](../../system/debug-modus/) werden die Template-Namen im HTML-Quellcode als Kommentare ausgegeben. 
+Im [Debug-Modus](../../../system/debug-modus/) werden die Template-Namen im HTML-Quellcode als Kommentare ausgegeben. 
 Man kann hierüber nachvollziehen welches Template zum Einsatz kommt.
 {{% /notice %}}
 
