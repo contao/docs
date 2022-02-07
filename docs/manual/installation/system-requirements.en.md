@@ -117,6 +117,19 @@ If a MySQL server in version **8.0.17** or higher is used, at least PHP **7.2.0*
 {{% /notice %}}
 
 
+### Switching the PHP version
+
+In case you want to switch the PHP version of an already running PHP instance, you should always run a full `composer update` after
+switching. This is especially important when switching between major versions, e.g. from PHP 7.x to 8.x - or vice versa. This ensures 
+compatibility of your installed packages with the respective PHP version, since each package (including Contao itself, installed Contao 
+extensions and other third-party packages) can require specific PHP versions and PHP extensions that it needs and is known to be compatible 
+with.
+
+In case you are using the Contao Manager, you can run the `composer update` process in the maintenance section under _Composer Dependencies_:
+
+![Composer update in the Contao Manager](/de/installation/images/en/composer-update.png?classes=shadow)
+
+
 ### MySQL minimum requirements
 
 Although Contao uses the [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) database abstraction layer, 
