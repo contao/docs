@@ -206,7 +206,7 @@ Das Script erwartet die Inhalte innerhalb eines HTML-Blocks `<div class="filter-
 Elemente »Umschlag Anfang« und »Umschlag Ende« zweckentfremden. Im Element »Umschlag Anfang« setzt du dann die 
 CSS-Klasse `filter-container` ein.<br><br>
 Weiterhin haben wir einfachheitshalber die JavaScript-Referenzen direkt im Inhaltselement eingetragen. Alternativ
-könntest du diese auch als [JavaScript Asset im Template](/de/layout/templates/assets/) hinterlegen.
+könntest du diese auch als [JavaScript Asset im Template](/de/layout/templates/php/assets/) hinterlegen.
 {{% /notice %}}
 
 {{% notice info %}}
