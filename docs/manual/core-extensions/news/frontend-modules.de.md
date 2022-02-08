@@ -130,6 +130,12 @@ wird, oder umgekehrt der Alias eines Events in einem Nachrichtenarchiv.
 Beiträge aus nicht ausgewählten Archiven werden grundsätzlich nicht angezeigt, selbst wenn die URL stimmt und die 
 Nachricht existiert. Dieses Feature ist vor allem im Multidomain-Betrieb mit mehreren unabhängigen Webseiten wichtig.
 
+{{< version-tag "4.13" >}} **Übersichtsseite:** Hier kannst du eine Seite auswählen, um in der Detailansicht der News 
+einen Link zurück zur Übersichtsseite zu setzen. 
+
+{{< version-tag "4.13" >}} **Individuelle Bezeichnung:** Hier kannst du die Bezeichnung für den Link zur Übersichtsseite 
+ändern.
+
 
 ### Template-Einstellungen
 
