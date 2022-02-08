@@ -85,8 +85,21 @@ class ExampleService
 }
 ```
 
+{{% notice tip %}}
+Since Contao 4.13 you can omit getting the `%contao.csrf_token_name%` by explicitly using the `ContaoCsrfTokenManager`,
+that now features a `getDefaultTokenValue()` method:
 
-## Deprecated Constants And Configuration Settings
+```php
+// before:
+$csrfTokenManager->getToken($csrfTokenName)->getValue();
+
+// after:
+$contaoCsrfTokenManager->getDefaultTokenValue();
+```
+{{% /notice %}}
+
+
+## Deprecated Constants, Configuration Settings and more
 
 For historical reasons, you may still come across the following constants or configuration settings.
 They are all deprecated and you must not use them anymore. Register your own route and implement your own
