@@ -62,3 +62,23 @@ The navigation area contains links to the different back end modules, each of wh
 In the workspace, you do all your work within Contao. Depending on the module, different functions are available.
 
 Immediately after logging in, the back end homepage will show you the date of your last login, an overview of the back end keyboard shortcuts and the versions of the last edited content.
+
+
+### The preview area
+
+You can access the front end preview via the "Preview" link in [the information area](#the-information-area).
+
+The front end preview can be recognized on the one hand by the front end preview bar and on the other hand by `
+preview.php` in the URL.
+
+![Front end preview](/de/administration-area/images/en/front-end-preview-bar.png?classes=shadow)
+
+{{< version-tag "4.13" >}}  **Copy URL:** When you click on the link, the URL without `preview.php` is copied to the clipboard and can be pasted at 
+the desired position.
+
+{{< version-tag "4.13" >}} **Share URL:** When you click on the link, the back end will open in a new window and you can [activate the link](../../system/preview-links/).
+
+**Member:** If you have set up a protected area on your website and you want to preview for a specific
+member, you can enter the username.
+
+**Unpublished:** Here you can choose whether to show or hide unpublished elements and pages.

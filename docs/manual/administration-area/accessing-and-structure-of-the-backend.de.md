@@ -89,3 +89,25 @@ Funktionen zur Verfügung.
 
 Direkt nach der Anmeldung wird dir auf der Startseite des Backends das Datum deiner letzten Anmeldung, eine Übersicht
 der Backend-Tastaturkürzel sowie die Versionen der zuletzt bearbeiteten Inhalte an.
+
+
+### Der Vorschaubereich
+
+Die Frontend-Vorschau erreichst du über den Link »Vorschau« im [Infobereich](#der-infobereich).
+
+Zu erkennen ist die Frontend-Vorschau zum einen an der Frontend-Preview-Bar und zum anderen am `preview.php` in der URL.
+
+![Frontend-Vorschau](/de/administration-area/images/de/frontend-preview-bar.png?classes=shadow)
+
+{{< version-tag "4.13" >}} **URL kopieren:** Beim Klick auf den Link, wird die URL ohne `preview.php` in die Zwischenablage kopiert und kann an der 
+gewünschten Stelle eingefügt werden.
+
+{{< version-tag "4.13" >}}  **URL teilen:** Beim Klick auf den Link, wird das Backend in einem neuen Fenster geöffnet und du kannst den [Link 
+aktivieren](../../system/preview-link/).
+
+**Mitglied:** Wenn du einen Geschützen Bereich auf deiner Website eingerichtet hast und die Vorschau für ein bestimmtes 
+Mitglied anzeigen möchtest, kannst du den Benutzernamen eingeben.
+
+**Nicht veröffentlicht:** Hier kannst du auswählen, ob nicht veröffentlichte Elemente und Seiten angezeigt oder 
+versteckt werden sollen.
+
