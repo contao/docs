@@ -7,6 +7,7 @@ on:
 
 jobs:
     check:
+        if: github.repository == 'contao/docs'
         runs-on: ubuntu-latest
         steps:
             - name: Set up PHP
