@@ -110,6 +110,8 @@ handling as outlined above, if you need to disable the CSRF protection for some 
 * The localconfig configuration value `requestTokenWhitelist`. It can contain an exact hostname or regular expression.
   It will disable CSRF protection only on hostname match.
 
+Since Contao 4.13 using the `{{request_token}}` insert tag is deprecated as well. Instead, you should retrieve the value
+from the CSRF token manager in your Controller and pass it on to the template.
 
 [OWASP_CSRF]: https://owasp.org/www-community/attacks/csrf
 [OWASP_Double_Submit_Cookie]: https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie
