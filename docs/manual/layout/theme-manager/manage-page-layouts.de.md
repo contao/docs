@@ -282,12 +282,17 @@ problemlos ans Ziel kommen.
 **Markup komprimieren:** Hier kannst du bestimmen ob das HTML-Markup vor dem Senden an den Browser komprimiert werden 
 soll.
 
-**Viewport-Tag:** Hier kannst du ein individuelles Viewport-Tag setzen.
 
+**Viewport-Tag:** Hier kannst du ein individuelles Viewport-Tag setzen. 
+Beispiel: Die Seite soll sich an den Viewport anpassen, aber dennoch ein Skalieren ermöglichen:
+```html
+width=device-width, initial-scale=1.0
+```
 **Ausgabe im Quellcode:**
 ```html
-<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 ```
+
 
 **Title-Tag:** Hier kannst du das Title-Tag überschreiben.
 
