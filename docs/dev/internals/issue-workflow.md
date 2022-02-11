@@ -57,10 +57,10 @@ If nobody assigns themselves a ticket, it will get the <span class="label-help">
 that we are looking for volunteers to complete it.
 
 If the bug cannot be fixed without breaking backwards compatibility, please add the
-<span class="label-status">incompatible</span> label. 
+<span class="label-status">BC break</span> label. 
  
 ## Reviewing feature requests
 
 If it is unclear how to implement the feature, please add the <span class="label-discuss">up for discussion</span>
 label to the ticket. If the feature cannot be implemented without breaking backwards compatibility, please add the
-<span class="label-status">incompatible</span> label. 
+<span class="label-status">BC break</span> label. 
