@@ -1,5 +1,5 @@
 ---
-title: "Database Backups"
+title: "contao:backup"
 description: "Creating database backups made easy"
 aliases:
     - /en/cli/database-backups/
