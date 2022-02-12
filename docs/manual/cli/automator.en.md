@@ -3,7 +3,7 @@ title: "contao:automator"
 description: "Common tasks around the maintenance of a Contao installation."
 aliases:
     - /en/cli/automator/
-weight: 15    
+weight: 10    
 ---
 
 

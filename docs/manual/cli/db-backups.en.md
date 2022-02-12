@@ -3,6 +3,7 @@ title: "contao:backup"
 description: "Creating database backups made easy"
 aliases:
     - /en/cli/database-backups/
+weight: 20
 ---
 
 {{< version "4.13" >}}
