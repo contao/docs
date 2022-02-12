@@ -29,11 +29,20 @@ es leer, erscheint eine Fehlermeldung.
 Das Formularfeld `Erklärung` fügt dem Formular eine beliebige formatierte Erklärung hinzu. Die Eingabe erfolgt über den 
 Rich Text Editor.
 
+
+### Text/HTML
+
 **Text:** Gebe hier den formatierten Text der Erklärung ein.
+
+
+### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_explanation` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -50,9 +59,15 @@ Das Formularfeld generiert folgenden HTML-Code:
 Das Formularfeld `HTML` fügt dem Formular beliebigen HTML-Code hinzu. In den Backend-Einstellungen unter »Erlaubte 
 HTML-Tags« kannst du festlegen, welche HTML-Tags verwendet werden dürfen.
 
+
+### Text/HTML
+
 **HTML:** Gebe hier deinen HTML-Code ein.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_html` überschreiben.
 
 HTML-Felder haben kein umschließendes HTML-Markup.
 
@@ -62,9 +77,16 @@ HTML-Felder haben kein umschließendes HTML-Markup.
 Das `fieldset`-Element wird verwendet, um mehrere Steuerelemente sowie Bezeichnungen in einem Webformular 
 zu gruppieren.
 
+
+### Experteneinstellungen
+
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du die Standard-Templates `form_fieldsetStart` und `form_fieldsetStop` 
+überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -87,25 +109,31 @@ Das Formularfeld generiert folgenden HTML-Code:
 Das Formularfeld Textfeld fügt dem Formular ein einzeiliges Eingabefeld hinzu. Du solltest grundsätzlich für jedes 
 Textfeld die Eingabeprüfung aktivieren, um einer missbräuchlichen Verwendung des Formulars vorzubeugen.
 
+
+### Feldkonfiguration
+
 **Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des 
 Formulars geprüft werden.
 
-| Suchmuster                                   | Erklärung                                                                                            |
-|:---------------------------------------------|:-----------------------------------------------------------------------------------------------------|
-| Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                            |
-| Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                        |
-| Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).            |
-| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>). |
-| Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                   |
-| Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                  |
-| Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                      |
-| Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).      |
-| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                   |
-| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                              |
-| Absolute URL                                 | {{< version "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`)                      |
-| Eigene                                       | {{< version "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.                                 |
+| Suchmuster                                   | Erklärung                                                                                                  |
+|:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
+| Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
+| Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
+| Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
+| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
+| Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
+| Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
+| Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
+| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 **Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+
+
+### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
@@ -124,7 +152,10 @@ drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-t
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_textfield` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -144,6 +175,11 @@ Das Formularfeld generiert folgenden HTML-Code:
 Das Formularfeld `Passwortfeld` fügt dem Formular zwei einzeilige Eingabefelder für das Passwort und dessen Bestätigung 
 hinzu. Prinzipiell funktionieren Passwortfelder genau wie [Textfelder](#textfeld), nur dass die Eingabe verdeckt 
 erfolgt.
+
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_password` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -170,10 +206,37 @@ Das Formularfeld generiert folgenden HTML-Code:
 Das Formularfeld `Textarea` fügt dem Formular ein mehrzeiliges Eingabefeld für längere Texte hinzu. Du 
 solltest auch hier die Eingabeprüfung aktivieren, um einer missbräuchlichen Verwendung des Formulars vorzubeugen.
 
-**Reihen und Spalten:** Hier legst du fest, wie viele Reihen und Spalten die Textarea haben soll. Die Abmessungen des 
-Feldes kannst du zudem per CSS bestimmen.
+
+### Feldkonfiguration
+
+**Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des
+Formulars geprüft werden.
+
+| Suchmuster                                   | Erklärung                                                                                                  |
+|:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
+| Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
+| Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
+| Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
+| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
+| Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
+| Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
+| Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
+| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 **Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+
+
+### Reihen und Spalten
+
+**Reihen und Spalten:** Hier legst du fest, wie viele Reihen und Spalten die Textarea haben soll. Die Abmessungen des
+Feldes kannst du zudem per CSS bestimmen.
+
+
+### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
@@ -191,7 +254,10 @@ drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-t
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_textarea` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -214,10 +280,16 @@ ein [Checkbox-Menü](#checkbox-menue) anstatt des Select-Menüs verwenden.
 
 ![Ein Select-Menü im Frontend](/de/form-generator/images/de/ein-select-menue-im-frontend.png?classes=shadow)
 
+
+### Feldkonfiguration
+
 **Mehrfachauswahl:** Hier kannst du die Auswahl mehrerer Optionen erlauben.
 
 **Listengröße:** Hier legst du fest, wie viele Zeilen das Auswahlfeld bei aktivierter Mehrfachauswahl hoch sein soll. 
 Innerhalb des Feldes kann gescrollt werden.
+
+
+### Optionen
 
 **Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen.
 
@@ -225,6 +297,9 @@ Beim Anlegen der Optionen unterstützt dich ein JavaScript-Assistent. Du kannst
 einer Überschrift versehen. Um eine Zeile zu einer Gruppenüberschrift zu machen, wähle die Option Gruppe.
 
 ![JavaScript-Assistent für das Anlegen von Optionen](/de/form-generator/images/de/anlegen-von-optionen.png?classes=shadow)
+
+
+### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
@@ -234,7 +309,10 @@ drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-t
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_select` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -263,12 +341,21 @@ kannst. Um die Auswahl mehrerer Optionen zu erlauben, musst du ein [Checkbox-Men
 
 ![Ein Radio-Button-Menü im Frontend](/de/form-generator/images/de/ein-radio-button-menue-im-frontend.png?classes=shadow)
 
+
+### Optionen
+
 **Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen. Beim Anlegen der Optionen unterstützt 
 dich ein JavaScript-Assistent.
 
+
+### Experteneinstellungen
+
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_radio` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -308,12 +395,21 @@ Optionen oder auch gar keine auswählen kannst. Um die Auswahl genau einer Optio
 
 ![Ein Checkbox-Menü im Frontend](/de/form-generator/images/de/ein-checkbox-menue-im-frontend.png?classes=shadow)
 
+
+### Optionen
+
 **Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen. Beim Anlegen der Optionen unterstützt 
 dich ein JavaScript-Assistent.
 
+
+### Experteneinstellungen
+
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_checkbox` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -352,12 +448,27 @@ Das Formularfeld `Datei-Upload` fügt dem Formular ein Feld hinzu, mit dem Besu
 lokalen Rechner auf den Server übertragen können. Du kannst für jedes Upload-Feld individuell festlegen, welche 
 Dateitypen hochgeladen werden dürfen und wo die übertragenen Dateien gespeichert werden.
 
+
+### Feldkonfiguration
+
 **Erlaubte Dateitypen:** Hier kannst du eine durch Kommata getrennte Liste erlaubter Dateiendungen erfassen. Beim 
 Versuch, eine andere Datei hochzuladen, gibt Contao automatisch eine Fehlermeldung aus und verweigert die Annahme der 
 Datei.
 
 **Maximale Eingabelänge:** Hier legst du die maximale Upload-Dateigröße in Bytes fest. Standardmäßig dürfen Dateien bis 
 zu 2 MB hochgeladen werden.
+
+{{< version "4.13" >}}
+
+**Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht 
+diese Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird es automatisch 
+verkleinert.
+
+**Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese 
+Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
+
+
+### Datei speichern
 
 **Hochgeladene Dateien speichern:** Wähle diese Option, um übertragene Dateien in einem bestimmten Verzeichnis auf dem 
 Server zu speichern.
@@ -371,6 +482,9 @@ werden die übertragenen Dateien im Home-Verzeichnis des Mitglieds anstatt im U
 wird. Wenn du diese Option wählst, bleiben vorhandene Dateien erhalten und neue werden bei Namensgleichheit mit einem 
 numerischen Suffix versehen.
 
+
+### Experteneinstellungen
+
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
 **Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
@@ -381,7 +495,10 @@ drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-t
 
 **Feldgröße:** Hier kannst du die Größe des Upload-Feldes festlegen (`size`-Attribut).
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_upload` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -396,6 +513,45 @@ Das Formularfeld generiert folgenden HTML-Code:
 ```
 
 
+## Range-Slider
+
+### Experteneinstellungen
+
+**CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
+
+**Standard-Wert:** Hier kannst du einen Standard-Wert für das Feld eingeben.
+
+**Minimalwert:** Hier kannst due einen Minimalwert für numerische Eingaben festlegen.
+
+**Maximalwert:** Hier kannst due einen Maximalwert für numerische Eingaben festlegen.
+
+**Schritt:** Hier kannst du die Schrittgröße des Feldes festlegen.
+
+**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem
+er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl,
+drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
+
+**Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
+
+
+###Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_range` überschreiben.
+
+**HTML-Ausgabe**  
+Das Formularfeld generiert folgenden HTML-Code:
+
+```html
+<div class="widget widget-range mandatory">
+    <label for="ctrl" class="mandatory">
+        <span class="invisible">Pflichtfeld </span>…<span class="mandatory">*</span>
+    </label>
+    <input type="range" name="…" id="ctrl" class="range mandatory" value="5" required max="10" step="2">
+</div>
+```
+
+
+
 ## Verstecktes Feld
 
 Das Formularfeld `Verstecktes Feld` fügt dem Formular ein verstecktes Feld hinzu. Versteckte Felder können beliebige 
@@ -405,23 +561,31 @@ Werte enthalten, die im Formular nicht sichtbar sind, aber trotzdem beim Absende
 
 Versteckte Felder haben keine CSS-Klasse.
 
+
+### Feldkonfiguration
+
 **Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des 
 Formulars geprüft werden.
 
-| Suchmuster                                   | Erklärung                                                                                            |
-|:---------------------------------------------|:-----------------------------------------------------------------------------------------------------|
-| Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                            |
-| Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                        |
-| Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).            |
-| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>). |
-| Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                   |
-| Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                  |
-| Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                      |
-| Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).      |
-| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                   |
-| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                              |
+| Suchmuster                                   | Erklärung                                                                                                  |
+|:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
+| Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
+| Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
+| Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
+| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
+| Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
+| Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
+| Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
+| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_hidden` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -444,7 +608,13 @@ weitere Faktoren geprüft um Benutzer und Spambots zu unterscheiden.
 Passiert es, dass ein Besucher fälschlicherweise als Spambot identifiziert wird, so muss er nur die in Contao übliche 
 Rechenaufgabe lösen. Es gehen unter keinen Umständen abgesendete Formulardaten verloren.
 
+
+### Feldkonfiguration
+
 **Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+
+
+### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
@@ -454,7 +624,10 @@ drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-t
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_captcha` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
@@ -492,9 +665,15 @@ Ein Absendefeld kann entweder eine Textschaltfläche oder eine Bildschaltfläche
 **Bezeichnung der Absende-Schaltfläche:** Gebe hier den Text der Absende-Schaltfläche bzw. Mouse-Rollover-Text der 
 Bildschaltfläche ein.
 
+
+### Bildschaltfläche
+
 **Bildschaltfläche:** Hier definierst du das Absendefeld als Bildschaltfläche.
 
 **Quelldatei:** Hier wählst du das Bild für die Bildschaltfläche aus.
+
+
+### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
@@ -504,7 +683,10 @@ drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-t
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
-**Individuelles Template:** Hier kannst du das Standard-Template überschreiben.
+
+### Template-Einstellungen
+
+**Formularfeld-Template:** Hier kannst du das Standard-Template `form_submit` überschreiben.
 
 **HTML-Ausgabe**  
 Das Formularfeld generiert folgenden HTML-Code:
