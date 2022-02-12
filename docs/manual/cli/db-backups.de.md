@@ -1,5 +1,5 @@
 ---
-title: "Datenbank Backups"
+title: "contao:backup"
 description: "Ganz einfach Backups der Datenbank erstellen"
 url: "cli/datenbank-backups"
 ---
