@@ -102,7 +102,7 @@ $config
 ### Example
 Here is how you could make your automatic database backups be stored on a remote server via SFTP:
 ```php
-// Mount an FTP adapter to `/backups`.
+// Mount an SFTP adapter to `/backups`.
 $config->mountAdapter(
     'sftp',         
     ['host' => 'example.com', 'port' => 22, 'username' => 'foobar', 'password' => 's3cr3t'],
