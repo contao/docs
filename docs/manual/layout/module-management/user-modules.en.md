@@ -100,14 +100,23 @@ As soon as a front end user is logged in, a logoff button is automatically displ
 
 So when formatting CSS, consider both states of the module, and also remember that an error message may be output.
 
+
+### Module configuration
+
 **Allow auto login:** If you select this option, members can remain logged in if they wish. If a user session expires, 
 Contao will automatically create a new session without requiring you to enter the password again.
+
+
+### Redirect settings
 
 **Redirect page:** Here you can define to which page a member will be forwarded after successful registration. You can 
 override this setting per user group to set up a group-specific redirection.
 
 **Redirect to last page visited:** If you select this option, the front end user will be redirected to the last visited 
 page instead of the redirection page.
+
+
+### Template settings
 
 **Module template:** Here you can overwrite the standard `mod_login` template.
 
@@ -184,6 +193,9 @@ front end user.
 As soon as a member has logged in to the front end of the website, a logout link appears in the main menu on the right 
 hand side, with which the member can log out again. In reality, these are two different pages in the page structure, 
 which contain the login and the logout module.
+
+
+### Redirect settings
 
 **Redirect page:** Here you can define to which page a front end user will be forwarded after logging out.
 
@@ -286,6 +298,9 @@ cannot.
     </form>
 </div>
 
+
+### Module configuration
+
 **Editable fields:** Here you can define the editable fields.
 
 ![Set editable fields](/de/layout/module-management/images/en/set-editable-fields.png?classes=shadow)
@@ -293,7 +308,13 @@ cannot.
 **Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution 
 lists a member can subscribe to.
 
+
+### Redirect settings
+
 **Redirect page:** Here you can choose to which page a member is forwarded to after submitting the changes.
+
+
+### Template settings
 
 **Form template:** Here you select the template of the form.
 
@@ -523,6 +544,9 @@ the configuration, automatically receive a user account for the protected area.
     </form>
 </div>
 
+
+### Module configuration
+
 **Editable fields:** Here you can define which fields a new member has to fill in during registration. To enable the 
 login in the front end, you have to activate at least the fields username and password.
 
@@ -533,6 +557,9 @@ lists a member can subscribe to.
 question is only "displayed" to spambots. Without a security question it is possible that spammers automatically create 
 user accounts and abuse your website.
 
+
+### Account settings
+
 **Member groups:** Here you define the group membership of the new member.
 
 **Allow login:** If you select this option, a new member can log in after registering in the front end login. For this 
@@ -541,8 +568,14 @@ to work, the registration form must contain the fields username and password.
 **Create a home directory:** If you select this option, a new user directory is automatically created in a folder of 
 your choice during registration. The name of the new directory will be generated from the username.
 
+
+### Redirect settings
+
 **Redirect page:** Here you can define to which page a member will be forwarded after registration (e.g. to the page 
 with the login form).
+
+
+### E-mail settings
 
 **Automation of member registration**
 
@@ -575,6 +608,9 @@ If you have not requested access, please ignore this email.
 
 Your administrator
 ```
+
+
+### Template settings
 
 **Form template:** Here you select the template of the form.
 
@@ -749,7 +785,13 @@ password.
     </form>
 </div>
 
+
+### Redirect settings
+
 **Redirect page:** Here you can select to which page a member will be forwarded after submitting the changes.
+
+
+### Template settings
 
 **Module template:** Here you can overwrite the default `mod_changePassword` template.
 
@@ -827,13 +869,22 @@ clicking on this confirmation link is it possible to enter a new password.
     </form>
 </div>
 
+
+### Module configuration
+
 **Skip username:** If you select this option, the username will not be queried when you request it.
 
 **Disable spam protection:** Here you can disable the spam protection (not recommended). Since Contao 4.4, this 
 question is only "displayed" to spambots. Without a security question it is possible that spammers automatically 
 create user accounts and abuse your website.
 
+
+### Redirect settings
+
 **Redirect page:** Here you can define to which page a user is forwarded after requesting a new password.
+
+
+### E-mail settings
 
 **Confirmation page:** Here you can define to which page a user will be redirected after a new password has been 
 successfully created.
@@ -857,6 +908,9 @@ If you have not requested this email, please contact the website administrator.
 
 Your administrator
 ```
+
+
+### Template settings
 
 **Module template:** Here you can overwrite the default `mod_lostPassword` template.
 
@@ -921,11 +975,22 @@ on the configuration, the account is either deactivated or completely deleted fr
     </form>
 </div>
 
+
+### Module configuration
+
 **Mode:** Here you can specify whether the account should be deactivated or completely deleted from the database when 
 the form is submitted.
 
+{{< version-tag "4.13" >}} **Delete home directory:** Here you specify whether the home directory should be deleted.
+
+
+### Redirect settings
+
 **Redirect page:** Here you define to which page a member will be forwarded after account closure. The target page must 
 not be protected.
+
+
+### Template settings
 
 **Module template:** Here you can overwrite the default `mod_closeAccount` template.
 
@@ -994,6 +1059,8 @@ can be added to the selected two-factor forwarding page.
     </form>
 </div>
 
+
+### Template settings
  
 **Module template:** Here you can overwrite the standard `mod_two_factor`template.
 
