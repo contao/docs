@@ -52,7 +52,7 @@ Editable files".
 
 ![Create nested folders](/de/file-manager/images/en/folder-name.gif?classes=shadow)
 
-In the file manager, folder names can now be entered with a slash to create multiple, nested folders.
+In the file manager, folder names can now be entered with slashes to create multiple, nested folders.
 
 
 ## Transferring files
