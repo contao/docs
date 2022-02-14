@@ -53,15 +53,6 @@ festlegen<sup>1</sup>.
 **![Datei oder Verzeichnis verschieben](/de/icons/drag.svg?classes=icon) Verschieben:** Eine Datei bzw. einen Ordner per Drag & Drop verschieben.
 
 
-## Einen neuen verschachtelten Ordner erstellen
-
-{{< version "4.13" >}}
-
-![Verschachtelte Ordner anlegen](/de/file-manager/images/de/folder-name.gif?classes=shadow)
-
-Im Dateimanager können jetzt Ordnernamen mit Slash eingegeben werden, um mehrere, verschachtelte Ordner anzulegen.
-
-
 ## Dateien übertragen {#dateien-uebertragen}
 
 Rufe die Dateiverwaltung auf, und klicke auf den Link 

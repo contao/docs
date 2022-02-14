@@ -19,15 +19,16 @@ Eine UUID ist systemübergreifend eindeutig und sieht zum Beispiel so aus: `bb64
 
 Über die Schaltfläche »Neuer Ordner« kannst du ein neues Verzeichnis erstellen. Folgende Optionen stehen hierbei zur Verfügung:
 
-| Einstellungen | |
-| ------------- | --- |
-| **Öffentlich** | Macht den Ordner inklusive aller Unterordner über HTTP erreichbar. |
-| **Nicht synchronisieren** | Den Ordner und seine Unterordner nicht mit der Datenbank synchronisieren. |
+**Öffentlich:** Macht den Ordner inklusive aller Unterordner über HTTP erreichbar.
+
+**Nicht synchronisieren:** Den Ordner und seine Unterordner nicht mit der Datenbank synchronisieren.
 
 
 ### Verschachtelte Ordner erstellen
 
 {{< version-tag "4.13" >}} Verschachtelte Ordner können direkt über Eingabe von z. B. »OrdnerA/OrdnerB« erstellt werden.
+
+![Verschachtelte Ordner anlegen](/de/file-manager/images/de/folder-name.gif?classes=shadow)
 
 {{% notice note %}}
 Mit Auswahl »Öffentlich« wird hierbei lediglich der letzte Ordner entsprechend öffentlich markiert.

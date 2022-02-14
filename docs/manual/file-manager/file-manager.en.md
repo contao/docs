@@ -46,15 +46,6 @@ Editable files".
 **![Move file or directory](/de/icons/drag.svg?classes=icon) Move:** Move a file or folder using drag and drop.
 
 
-## Create a new nested folder
-
-{{< version "4.13" >}}
-
-![Create nested folders](/de/file-manager/images/en/folder-name.gif?classes=shadow)
-
-In the file manager, folder names can now be entered with slashes to create multiple, nested folders.
-
-
 ## Transferring files
 
 Go to the File Manager and click the **![Upload files to the server](/de/icons/new.svg?classes=icon) File Upload** 
