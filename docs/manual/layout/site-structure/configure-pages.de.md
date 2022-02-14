@@ -13,16 +13,29 @@ Nachdem du die richtigen Seitentypen für deine Seiten ausgewählt hast, kannst
 entsprechend konfigurieren. Die Einstellungsmöglichkeiten variieren dabei je nach Seitentyp.
 
 
-## Seitenaliase
+## Routing
 
-Der **Alias** einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in deinem 
-Browser aufrufen kannst. Wenn du das Feld beim Anlegen leer lässt, vergibt Contao den Alias automatisch. Jeder Alias 
-muss innerhalb der verwendeten Domain eindeutig sein, darf also nur ein einziges Mal vorkommen.
+**Seitenaliase:** Der Alias einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in 
+deinem Browser aufrufen kannst. Wenn du das Feld beim Anlegen leer lässt, vergibt Contao den Alias automatisch.
+
+{{< version-tag "4.13" >}} Wenn du eine Seite für die News-Liste mit dem Alias `news` erstellst, kannst du die Seite
+für den News-Leser mit dem gleichen Alias anlegen, sofern du zusätzlich »Element erforderlich« aktivierst.
 
 {{% notice warning %}}
 Der Alias der Startseite sollte immer auf `index` lauten. Nur dann wird die erzeugte URL für diese Seite auch ein 
 leerer Request sein.
 {{% /notice %}}
+
+{{< version-tag "4.5" >}} **Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die 
+Fehlerseite 404 gezeigt, wenn die URL kein Alias zu einem Element enthält.
+
+{{< version-tag "4.13" >}} **Routen-Pfad:** Die Vorschau des endgültigen Pfads (möglicherweise mit Platzhaltern), der 
+zu dieser Seite passt.
+
+{{< version-tag "4.13" >}} **Routenpriorität:** Optional kann die Priorität konfiguriert werden, um die Reihenfolge der 
+Routen zu beeinflussen.
+
+{{< version-tag "4.13" >}} **Routenkonflikte:** Sobald Seiten einen ähnlichen Alias haben, wirst du darauf hingewiesen.
 
 
 ## Metadaten
@@ -279,6 +292,20 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die Zwei-Faktor-Authentifizierung einrichten.
 
 
+## Zugriffsschutz
+
+Im Gegensatz zu den Zugriffsrechten, die die Rechte im Backend festlegen, bezieht sich der Zugriffsschutz auf den
+Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort
+anmelden, bevor sie die Seite aufrufen können. Andernfalls sähen sie nur eine Fehlerseite.
+
+**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der
+Zugriffsschutz von einer übergeordneten Seite geerbt.
+
+**Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie
+man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite
+[Systemverwaltung][Systemverwaltung].
+
+
 ## Layout-Einstellungen
 
 Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein 
@@ -350,20 +377,6 @@ Weitere Informationen zum Rechtesystem und zur Konfiguration von Benutzern und B
 Seite [Systemverwaltung][Systemverwaltung].
 
 
-## Zugriffsschutz
-
-Im Gegensatz zu den Zugriffsrechten, die die Rechte im Backend festlegen, bezieht sich der Zugriffsschutz auf den 
-Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort 
-anmelden, bevor sie die Seite aufrufen können. Andernfalls sähen sie nur eine Fehlerseite.
-
-**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der 
-Zugriffsschutz von einer übergeordneten Seite geerbt.
-
-**Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie 
-man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite 
-[Systemverwaltung][Systemverwaltung].
-
-
 ## Experten-Einstellungen
 
 Unter Umständen gibt es innerhalb deiner Seitenstruktur Seiten, die zwar im Frontend verfügbar sein, aber nicht im Menü 
@@ -399,9 +412,6 @@ ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber h
 **Nur Gästen anzeigen:** Wenn du diese Option auswählst, wird der Link zu der Seite automatisch aus dem Navigationsmenü 
 der Webseite ausgeblendet, sobald sich ein Mitglied angemeldet hat. Dies ist z. B. für die Seiten »Anmeldung« und 
 »Registrierung« sinnvoll.
-
-{{< version-tag "4.5" >}} **Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die Fehlerseite 404 gezeigt, wenn die 
-URL kein Alias zu einem Element enthält.
 
 
 ## Tastatur-Navigation
