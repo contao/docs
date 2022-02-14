@@ -3,7 +3,6 @@ title: "contao:resize-images"
 description: "Process deferred images that were not resized."
 aliases:
     - /en/cli/resize-images/
-weight: 30
 ---
 
 
