@@ -444,11 +444,13 @@ uploaded.
 
 {{< version "4.13" >}}
 
-**Maximum image width:** Here you can enter the maximum width for image uploads in pixels. Enter 0 to use the system 
-default.
+**Maximum image width:** When uploading images, the file manager automatically checks their width and compares these
+values with your default set here. If an image exceeds the maximum width, the upload will be aborted with an error 
+output in the form.
 
-**Maximum image height:** Here you can enter the maximum height for image uploads in pixels. Enter 0 to use the system 
-default.
+**Maximum image height:** When uploading images, the file management automatically checks their height and compares 
+these values with your default set here. If an image exceeds the maximum height, the upload will be aborted with an 
+error output in the form.
 
 
 ### Store file

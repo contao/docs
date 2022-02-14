@@ -461,11 +461,12 @@ zu 2 MB hochgeladen werden.
 {{< version "4.13" >}}
 
 **Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht 
-diese Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird es automatisch 
-verkleinert.
+diese Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird das Hochladen mit 
+einer Fehlerausgabe im Formular abgebrochen.
 
 **Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese 
-Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
+Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird das Hochladen mit
+einer Fehlerausgabe im Formular abgebrochen.
 
 
 ### Datei speichern
