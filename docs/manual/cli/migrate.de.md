@@ -3,7 +3,6 @@ title: "contao:migrate"
 description: "Durchführung von Datenbankaktualisierungen und -Migrationen."
 aliases:
     - /de/cli/migrate/
-weight: 40
 ---
 
 

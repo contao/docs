@@ -3,7 +3,6 @@ title: "contao:crawl"
 description: "Indiziert die Seiten deiner Webseite und erstellt daraus einen Suchindex."
 aliases:
     - /de/cli/crawl/
-weight: 30
 ---
 
 

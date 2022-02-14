@@ -2,7 +2,6 @@
 title: "contao:backup"
 description: "Ganz einfach Backups der Datenbank erstellen"
 url: "cli/datenbank-backups"
-weight: 20
 ---
 
 {{< version "4.13" >}}
