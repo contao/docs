@@ -69,7 +69,7 @@ Das Template »list_default.html5« ist umfangreich, da es im Zusammenspiel mit 
 Darstellung berücksichtigt. Für unser Beispiel, zusammen mit den noch folgenden Angaben hinsichtlich der 
 Kartendarstellung, vereinfachen wir das Template. 
 
-Erstelle dir in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/verwaltung/) ein 
+Erstelle dir in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/php/verwaltung/) ein 
 neues Template »list_default_member.html5« und benutze dieses anschließend in deinem Modul »Auflistung«:
 
 ```html
@@ -114,7 +114,7 @@ neues Template »list_default_member.html5« und benutze dieses anschließend in
 
 {{% notice note %}}
 Einfachheitshalber haben wir rudimentäre CSS-Angaben hier direkt im Template eingetragen. 
-Alternativ könntest du diese auch als [CSS-Asset](/de/layout/templates/assets/) hinterlegen.
+Alternativ könntest du diese auch als [CSS-Asset](/de/layout/templates/php/assets/) hinterlegen.
 {{% /notice %}}
 
 
