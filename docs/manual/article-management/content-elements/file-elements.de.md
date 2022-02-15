@@ -145,9 +145,9 @@ Dateien.
 wurden, werden sie bei der Aktivierung nicht angezeigt.
 
 
-{{< version "4.13" >}}
-
 ### Vorschau-Einstellungen
+
+{{< version "4.13" >}}
 
 {{% notice info %}}
 Die PHP-Erweiterung Imagick oder Gmagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu 
