@@ -35,9 +35,9 @@ from your browser. This way you can easily create a protected download area. For
 **Link title:** The link title is inserted as an `title` attribute in the HTML markup.
 
 
-{{< version "4.13" >}}
-
 ### Preview settings
+
+{{< version "4.13" >}}
 
 {{% notice info %}}
 The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
@@ -138,9 +138,9 @@ folder, Contao automatically takes all downloadable files contained in it.
 they are not displayed when activated.
 
 
-{{< version "4.13" >}}
-
 ### Preview settings
+
+{{< version "4.13" >}}
 
 {{% notice info %}}
 The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
