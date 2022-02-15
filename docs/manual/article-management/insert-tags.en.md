@@ -15,35 +15,63 @@ An insert tag always starts with two opening curly brackets, followed by arbitra
 
 With these insert tags you can create links to other pages or articles. You only need the ID or alias of the target page.
 
-| Insert tag | Description |
-| ---------- | ----------- |
-| `{{link::*}}` | This tag is replaced with HTML code for a link. The parameter can be the ID or alias of an internal page or an absolute URL. |
-| `{{link::back}}` | This tag is replaced with a link to the last page visited. Can also be used as `{{link_open::back}}`, `{{link_url::back}}`and `{{link_title::back}}`. |
-| `{{link::login}}` | This tag is replaced with a link to the logon page of the current front end user (if available). |
-| `{{link_open::*}}` | Is replaced with the opening tag of a link. The parameter can be the ID or alias of an internal page or an absolute URL: `{{link_open::12}}Click here{{link_close}}`. |
-| `{{link_url::*}}` | This tag is replaced with the URL of an internal page: `<a href="{{link_url::12}}">Click here</a>`. |
-| `{{link_target::*}}` | This tag will be replaced with `target="_blank" rel="noreferrer noopener"` if the specified page is an external redirection page and it is set there that the link should open in a new window. |
-| `{{link_title::*}}` | This tag is replaced with the title of an internal page: `<a title="{{link_title::12}}">Click here</a>`. |
-| `{{link_name::*}}` | This tag will be replaced with the name of an internal page: `<a>{{link_name::12}}</a>`. |
-| `{{link_close}}` | Will be replaced with the closing tag of a link to an internal page: `{{link_open::12}}Click here{{link_close}}`. |
-| `{{article::*}}` | This tag is replaced with a link to an article (replace \* with the ID or alias). |
-| `{{article_open::*}}` | Will be replaced with the opening tag of a link to an article: `{{article_open::12}}Click here{{link_close}}`. |
-| `{{article_url::*}}` | This tag is replaced with the URL of an article: `<a href="{{article_url::12}}">Click here</a>`. |
-| `{{article_title::*}}` | This tag is replaced by the title of an article: `<a title="{{article_title::12}}">Click here</a>`. |
-| `{{news::*}}` | This tag is replaced with a link to a message (replace \* with the ID or alias). |
-| `{{news_open::*}}` | Is replaced with the opening tag of a link to a message: `{{news_open::12}}Click here{{link_close}}`. |
-| `{{news_url::*}}` | This tag will be replaced with the URL of a message: `<a href="{{news_url::12}}">Click here</a>`. |
-| `{{news_title::*}}` | This tag is replaced with the title of a message: `<a title="{{news_title::12}}">Click here</a>`. |
-| `{{news_feed::*}}` | This tag will be replaced with the URL to a news feed (replace \* with the ID). |
-| `{{event::*}}` | This tag will be replaced with a link to an event (replace \* with the ID or alias) |
-| `{{event_open::*}}` | Is replaced with the opening tag of a link to an event: `{{event_open::12}}Click here{{link_close}}`. |
-| `{{event_url::*}}` | This tag is replaced with the URL of an event: `<a href="{{event_url::12}}">Click here</a>`. |
-| `{{event_title::*}}` | This tag is replaced with the title of an event: `<a title="{{event_title::12}}">Click here</a>`. |
-| `{{calendar_feed::*}}` | This tag is replaced with the URL to a calendar feed (replace \* with the ID). |
-| `{{faq::*}}` | This tag will be replaced with a link to a frequently asked question (replace \* with the ID or alias) |
-| `{{faq_open::*}}` | Will be replaced with the opening tag of a link to a question: `{{faq_open::12}}Click here{{link_close}}`. |
-| `{{faq_url::*}}` | This tag will be replaced with the URL of a question: `<a href="{{faq_url::12}}">Click here</a>`. |
-| `{{faq_title::*}}` | This tag will be replaced with the title of a question: `<a title="{{faq_title::12}}">Click here</a>`. |
+| Insert tag | Description                                                                                                                                                                                                       |
+| ---------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `{{link::*}}` | This tag is replaced with HTML code for a link. The parameter can be the ID or alias of an internal page or an absolute URL. <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup> |
+| `{{link::back}}` | This tag is replaced with a link to the last page visited. Can also be used as `{{link_open::back}}`, `{{link_url::back}}`and `{{link_title::back}}`.                                                             |
+| `{{link::login}}` | This tag is replaced with a link to the logon page of the current front end user (if available).                                                                                                                  |
+| `{{link_open::*}}` | Is replaced with the opening tag of a link. The parameter can be the ID or alias of an internal page or an absolute URL: `{{link_open::12}}Click here{{link_close}}`.                                             |
+| `{{link_url::*}}` | This tag is replaced with the URL of an internal page: `<a href="{{link_url::12}}">Click here</a>`.                                                                                                               |
+| `{{link_target::*}}` | This tag will be replaced with `target="_blank" rel="noreferrer noopener"` if the specified page is an external redirection page and it is set there that the link should open in a new window.                   |
+| `{{link_title::*}}` | This tag is replaced with the title of an internal page: `<a title="{{link_title::12}}">Click here</a>`.                                                                                                          |
+| `{{link_name::*}}` | This tag will be replaced with the name of an internal page: `<a>{{link_name::12}}</a>`.                                                                                                                          |
+| `{{link_close}}` | Will be replaced with the closing tag of a link to an internal page: `{{link_open::12}}Click here{{link_close}}`.                                                                                                 |
+| `{{article::*}}` | This tag is replaced with a link to an article (replace \* with the ID or alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                            |
+| `{{article_open::*}}` | Will be replaced with the opening tag of a link to an article: `{{article_open::12}}Click here{{link_close}}`.                                                                                                    |
+| `{{article_url::*}}` | This tag is replaced with the URL of an article: `<a href="{{article_url::12}}">Click here</a>`.                                                                                                                  |
+| `{{article_title::*}}` | This tag is replaced by the title of an article: `<a title="{{article_title::12}}">Click here</a>`.                                                                                                               |
+| `{{news::*}}` | This tag is replaced with a link to a message (replace \* with the ID or alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                             |
+| `{{news_open::*}}` | Is replaced with the opening tag of a link to a message: `{{news_open::12}}Click here{{link_close}}`.                                                                                                             |
+| `{{news_url::*}}` | This tag will be replaced with the URL of a message: `<a href="{{news_url::12}}">Click here</a>`.                                                                                                                 |
+| `{{news_title::*}}` | This tag is replaced with the title of a message: `<a title="{{news_title::12}}">Click here</a>`.                                                                                                                 |
+| `{{news_feed::*}}` | This tag will be replaced with the URL to a news feed (replace \* with the ID).                                                                                                                                   |
+| `{{event::*}}` | This tag will be replaced with a link to an event (replace \* with the ID or alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                         |
+| `{{event_open::*}}` | Is replaced with the opening tag of a link to an event: `{{event_open::12}}Click here{{link_close}}`.                                                                                                             |
+| `{{event_url::*}}` | This tag is replaced with the URL of an event: `<a href="{{event_url::12}}">Click here</a>`.                                                                                                                      |
+| `{{event_title::*}}` | This tag is replaced with the title of an event: `<a title="{{event_title::12}}">Click here</a>`.                                                                                                                 |
+| `{{calendar_feed::*}}` | This tag is replaced with the URL to a calendar feed (replace \* with the ID).                                                                                                                                    |
+| `{{faq::*}}` | This tag will be replaced with a link to a frequently asked question (replace \* with the ID or alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                      |
+| `{{faq_open::*}}` | Will be replaced with the opening tag of a link to a question: `{{faq_open::12}}Click here{{link_close}}`.                                                                                                        |
+| `{{faq_url::*}}` | This tag will be replaced with the URL of a question: `<a href="{{faq_url::12}}">Click here</a>`.                                                                                                                 |
+| `{{faq_title::*}}` | This tag will be replaced with the title of a question: `<a title="{{faq_title::12}}">Click here</a>`.                                                                                                            |
+
+
+### Link parameters
+
+{{< version "4.13" >}}
+
+#### Parameter ::absolute
+
+`{{link::*`**`::absolute`**`}}`: The parameter allows to output an insert tag link as an absolute URL.
+
+**The HTML Output**  
+The insert tag link with parameter generates the following HTML code:
+
+```html
+<a href="https://www.example.com/news.html" title="…">…</a>
+```
+
+
+#### Parameter ::blank
+
+`{{link::*`**`::blank`**`}}`: The parameter allows to open an insert tag link in a new window.
+
+**HThe HTML Output**  
+The insert tag link with parameter generates the following HTML code:
+
+```html
+<a href="news.html" title="…" target="_blank" rel="noreferrer noopener">…</a>
+```
 
 
 ## Member properties
@@ -147,7 +175,7 @@ The following insert tags allow you to perform various tasks, such as inserting 
 | `{{iflng::*}}` | This tag is completely removed if the language of the page does not match the tag language. You can create language specific tags: `{{iflng::en}}Your name{{iflng::de}}Ihr Name{{iflng}}` {{% notice tip %}}
 With `en,de,fr` you can test for multiple instead of just one language. On top of that, you can use `*` as wildcard which can be especially handy when working with dialects (e.g. `de*` then matches both, `de_CH` as well as `de_AT`).
 {{% /notice %}} |
-| `{{ifnlng::*}}` | This tag will be removed completely if the language of the page (for other options see tip in `{{iflng}}`) matches the tag language. You can create language specific tags this way: `{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}` |
+| `{{ifnlng::*}}` | This tag will be removed completely if the language of the page (for other options see tip in `{{iflng}}`) matches the tag language. You can create language specific tags this way: `{{iflng::de}}Ihr Name{{iflng}}{{ifnlng::de}}Your name{{ifnlng}}` |
 | `{{image::*}}` | This tag is replaced with the preview of an image (where \* can be a database ID, a UUID, or a path from the file system): `{{image::58ca4a90-2d30-11e4-8c21-0800200c9a66?width=200&height=150}}`**width**: width of the preview image,<br>**height**: height of the preview image,<br>**alt**: alternative text,<br>**class**: CSS class,<br>**rel**: rel attribute (e.g. "lightbox"),<br>**mode**: mode ("proportional", "crop" or "box"). |
 | `{{picture::*}}` | This tag will be replaced with a `<picture>` element and different image sizes, depending on the used image size configuration (where \* can be a database ID, a UUID or a path from the file system):<br>`{{picture::58ca4a90-2d30-11e4-8c21-0800200c9a66?size=1&template=picture_default}}`.<br>**width**: width of the preview image,<br>**height**: height of the preview image,<br>**alt**: alternative text,<br>**class**: CSS class,<br>**rel**: rel attribute (e.g. "lightbox"),<br>**mode**: mode ("proportional", "crop" or "box"),<br>**size**: ID of an image size (see Themes -&gt; Image sizes) ({{< version-tag "4.8" >}}**size** supports the predefined image sizes from the `config.yml`, the name must be preceded by an underscore e.g. `_foo`.),<br>**template**: template to use (`picture_default`). |
 | `{{figure::*}}` | {{< version-tag "4.11" >}} This tag will be replaced with a `<figure>` element containing the appropriate `<picture>` element plus a `<figcaption>` if applicable. As with `{{picture::*}}` the parameter can be a database ID, UUID or a path from the file system. Additionally, all the methods supported by the  [`FigureBuilder`][DevFigureBuilder] can be used as URL parameters:<br><br>`{{figure::58ca4a90-2d30-11e4-8c21-0800200c9a66?`<br><div style="padding-left: 2em">`size=1&`<br>`metadata[title]=My%20image&`<br>`enableLightbox=1&`<br>`options[attr][class]=main_figure&`<br>`template=image`</div>`}}`.<br><br>**size**: ID of an image size (see Themes -&gt; Image sizes) or predefined image sizes from the `config.yml`, the name must be preceded by an underscore e.g. `_foo`,<br>**metadata**: allows overwriting metadata (such as "alt", "title", "caption"),<br>**enableLightbox**: generates a second image in lightbox size (see Themes -&gt; Lightbox) und adds a link to the `<figure>` element,<br>**options**: an array of options, that will be passed on to the template (can be used to set HTML attributes in case of the default template),<br>**template**: Twig- or Contao-Template to use (e.g. `@FooBundle/figure.html.twig` / `image`).<br><br>All parameters must be URL encoded. See the [FigureBuilder reference][DevFigureBuilder] from the developer documentation for the full list of configuration options. |
