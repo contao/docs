@@ -275,6 +275,12 @@ Moreover, you don't have to register to all the different callbacks such as `ons
 You can register to the [`oninvalidate_cache_tags` callback][5] and add your own tags.
 
 
+{{% notice "tip" %}}
+Since **Contao 4.13** you can also use the [EntityCacheTags helper service](/reference/services/#entitycachetags) to
+add and invalidate tags based on entity or model classes and instances.
+{{% /notice %}}
+
+
 ## Caching Fragments
 
 In Contao, content elements and front end modules can be implemented as so called
