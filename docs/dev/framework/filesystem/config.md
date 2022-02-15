@@ -105,7 +105,9 @@ $config
 
 ### Example
 
-Here is how you could make your automatic database backups be stored on a remote server via SFTP:
+Here is how you could make your automatic database backups be stored on a remote server via SFTP. The first two
+arguments are directly passed to the Flysystem adapter (see [Flysystem docs][FlysystemInteractingWithSftp] 
+for more information):
 
 ```php
 // Mount an SFTP adapter to `/backups`.
@@ -124,3 +126,4 @@ the above example are an exception to this as they are already refactored.
 
 
 [FlysystemBundle]: https://github.com/thephpleague/flysystem-bundle
+[FlysystemInteractingWithSftp]: https://github.com/thephpleague/flysystem-bundle/blob/master/docs/3-interacting-with-ftp-and-sftp-servers.md#sftp
