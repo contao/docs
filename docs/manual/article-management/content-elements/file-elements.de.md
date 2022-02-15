@@ -36,9 +36,9 @@ erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](.
 **Link-Titel:** Der Link-Titel wird als `title`-Attribut im HTML-Markup eingefügt.
 
 
-{{< version "4.13" >}}
-
 ### Vorschau-Einstellungen
+
+{{< version "4.13" >}}
 
 {{% notice info %}}
 Die PHP-Erweiterung Imagick oder Gmagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu 
