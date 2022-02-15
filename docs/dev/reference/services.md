@@ -104,6 +104,7 @@ class ExampleFormElementController extends AbstractContentElementController
 
 
 ## EntityCacheTags
+
 {{< version "4.13" >}}
 
 The `contao.cache.entity_tags` service helps you tag responses and invalidate cache tags based on entity and model
@@ -111,8 +112,10 @@ classes and instances. Contao uses a naming convention for database related tags
 the content element with the ID 5, while `contao.db.tl_content` would target *all* content elements.
 
 #### Tagging
+
 Instead of composing this tags yourself, let the service handle this for you by passing in class names or entity/model 
 instances into one of its `tagWith()` methods:
+
 ```php
 // An instance of a blog post entity with relations to an author (1:1) and comment entity (1:n)
 $blog = $blogRepository->find(42);
@@ -124,9 +127,11 @@ $entityCacheTags->tagWith([$blog, $blog->getAuthor(), $blog->getComments()]);
 // Will add the tag 'contao.db.tl_blog'
 $entityCacheTags->tagWith(Blog::class);
 ```
+
 Tagging works with entity/model class names, objects and collections. You can also safely pass in `null`.
 
 #### Invalidating
+
 Analogous to tagging, you can also use the service to invalidate certain cache tags. This, again, works with
 entity/model class names, objects and collections as well as `null`:
 
@@ -135,7 +140,7 @@ entity/model class names, objects and collections as well as `null`:
 $entityCacheTags->invalidateTagsFor([ContentModel::class, $pages]);
 ```
 
-{{% notice info %}}
+{{% notice "info" %}}
 Contao's `AbstractController` is also using this functionality in the `tagResponse()` method.
 {{% /notice %}}
 
