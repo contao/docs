@@ -40,7 +40,7 @@ from your browser. This way you can easily create a protected download area. For
 ### Preview settings
 
 {{% notice info %}}
-The PHP extension Imagick must be installed on the server to enjoy this feature.
+The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
 {{% /notice %}}
 
 **Show preview images:** Here you can view the preview images of the selected files.
@@ -143,7 +143,7 @@ they are not displayed when activated.
 ### Preview settings
 
 {{% notice info %}}
-The PHP extension Imagick must be installed on the server to enjoy this feature.
+The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
 {{% /notice %}}
 
 **Show preview images:** Here you can view the preview images of the selected files.

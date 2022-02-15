@@ -41,7 +41,8 @@ erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](.
 ### Vorschau-Einstellungen
 
 {{% notice info %}}
-Die PHP-Erweiterung Imagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu kommen.
+Die PHP-Erweiterung Imagick oder Gmagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu 
+kommen.
 {{% /notice %}}
 
 **Vorschaubilder anzeigen:** Hier kannst du Vorschaubilder der gewählten Dateien anzeigen.
@@ -149,7 +150,8 @@ wurden, werden sie bei der Aktivierung nicht angezeigt.
 ### Vorschau-Einstellungen
 
 {{% notice info %}}
-Die PHP-Erweiterung Imagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu kommen.
+Die PHP-Erweiterung Imagick oder Gmagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu 
+kommen.
 {{% /notice %}}
 
 **Vorschaubilder anzeigen:** Hier kannst du Vorschaubilder der gewählten Dateien anzeigen.
