@@ -7,7 +7,7 @@ aliases:
 
 {{< version "4.13" >}}
 
-{{% notice warning %}}
+{{% notice "warning" %}}
 The new filesystem capabilities are currently considered *experimental* and therefore not covered by Contao's BC
 promise. Classes marked with `@experimental` should be considered internal for now. Although not likely, there could
 also be some behavioral changes, so be prepared.
@@ -15,6 +15,7 @@ also be some behavioral changes, so be prepared.
 
 
 ## Names and autowiring
+
 Each virtual filesystem instance has a unique name which is used to generate a [named autowiring alias][NamedAliases].
 If you want to work with the `documents` filesystem, you would inject a variable named `$documentsStorage` (note the
 suffix 'Storage'):
@@ -25,7 +26,7 @@ class Example {
 }
 ```
 
-{{% notice tip %}}
+{{% notice "tip" %}}
 If you cannot use autowiring, you would explicitly inject the `contao.filesystem.virtual.documents` service instead.
 {{% /notice %}}
 
@@ -33,10 +34,11 @@ If you cannot use autowiring, you would explicitly inject the `contao.filesystem
 ## Working with files and directories
 
 ### Example
-Let's build a simple content element, that displays the contents of a single directory in the filesystem. Our goal is to
+
+Let's build a simple content element that displays the contents of a single directory in the filesystem. Our goal is to
 list *files only* and show their *path*, *file size* and - if set in the back end file manager - metadata *title*.
 
-For this example, we're using the virtual filesystem named `files` that is already configured by default in Contao. If
+For this example we're using the virtual filesystem named `files` that is already configured by default in Contao. If
 you want to play along, this will be a good starting point: 
 
 ```php
@@ -120,6 +122,7 @@ like so:
 </ul>
 
 #### What happened behind the scenes?
+
 Quite a lot, let's have a closer look:
 
 1) ```php
@@ -187,6 +190,7 @@ Quite a lot, let's have a closer look:
    ```
 
 ### UUIDs
+
 UUIDs are a concept we're using in our DBAFS storages to uniquely identify a file independent of current path and
 storage. In the virtual filesystem, UUIDs are a first class citizen as well. Every method allows to either pass in a 
 path as a string or a UUID as a `Symfony\Component\Uid\Uuid`. Behind the scenes, we're using the `DbafsManager` to
@@ -206,7 +210,9 @@ $fooStorage->read(new Uuid('94cc007c-8cc0-11ec-a8a3-0242ac120002'));
 
 
 ## Operation reference
+
 #### Tests ####
+
 |  |  |
 |-|-|
 | `fileExists` | Check if the given UUID or path points to an existing file. |
@@ -224,6 +230,7 @@ default.
 {{% /notice %}}
 
 #### Reading, writing and deleting resources #### 
+
 |  |  |
 |-|-|
 | `read` | Read the file contents from a resource found at the given path or UUID. |
@@ -234,6 +241,7 @@ default.
 | `deleteDirectory` | Delete the directory found at the given path or UUID. |
 
 #### Creating and moving resources ####
+
 |  |  |
 |-|-|
 | `createDirectory` | Create a new directory at the given path. |
@@ -245,6 +253,7 @@ This is for specialised use cases only and typically only works in applications 
 mount another adapter not supporting these options later on.
 
 #### Listing content
+
 |  |  |
 |-|-|
 | `listContents` | Lists the contents of a directory found at the given path or UUID by returning a generator of `FilesystemItems`. When setting `$deep` to true, resources in subdirectories will also get listed (disabled by default). |
@@ -253,6 +262,7 @@ The list operation allows passing in optional `$accessFlags` to bypass the DBAFS
 [access flags](#access-flags) section for more details.
 
 #### Getting metadata
+
 |  |  |
 |-|-|
 | `getLastModified` | Get the last modified timestamp (`int`) of a file found at the given path or UUID. |
@@ -264,6 +274,7 @@ The metadata operations allow passing in optional `$accessFlags` to bypass the D
 [access flags](#access-flags) section for more details.
 
 #### Setting DBAFS metadata
+
 |  |  |
 |-|-|
 | `setExtraMetadata` | Set an array of metadata to a file found at the given path or UUID. The data should be set in the denormalized form (e.g. objects instead of raw array data) like it is retrieved when using `getExtraMetadata()`. It will be normalized by listeners of the `StoreDbafsMetadataEvent` when storing. |
@@ -277,6 +288,7 @@ All filesystem operations will throw a `VirtualFilesystemException` if the files
 
 
 ### Access Flags
+
 Operations allowing to pass in `$accessFlags` can be advised to deviate from the default behavior, which is to prefer
 the DBAFS over filesystem access wherever possible:
 

@@ -10,7 +10,7 @@ This section describes the modern way to interact with files and folders in Cont
 
 {{< version "4.13" >}}
 
-{{% notice warning %}}
+{{% notice "warning" %}}
 The new filesystem capabilities are currently considered *experimental* and therefore not covered by Contao's BC
 promise. Classes marked with `@experimental` should be considered internal for now. Although not likely, there could
 also be some behavioral changes, so be prepared.
@@ -18,6 +18,7 @@ also be some behavioral changes, so be prepared.
 
 
 ## Overview
+
 Our filesystem implementation is an abstraction for the real filesystem based on the popular [Flysystem][Flysystem].
 With Flysystem we can interface with different storage adapters behind the scenes: in the simplest form this is your
 local filesystem, but it could for instance also be a Dropbox share, an AWS bucket or an FTP remote.
@@ -35,10 +36,11 @@ information for images or maybe searchable attributes for your documents. We can
 table like `tl_files` but then we need to make sure both sources - database and filesystem - are in sync. This is no
 easy task, but we built a *DBAFS* (Database assisted filesystem) service that does exactly that. And because you can now
 have more than one DBAFS, there is a `DbafsManager` instance that leverages access to the individual services similar to
-the `MountManager`. Each resources stored in the database can also be accessed by a globally unique identifier, a
+the `MountManager`. Each resource stored in the database can also be accessed by a globally unique identifier, a
 *UUID*. For that reason, UUIDs are a first level citizen in the `DbafsManager` when accessing resources. 
 
 ### Virtual Filesystem
+
 The filesystem is a complex machinery under the hood, but we got you covered. We build the **Virtual Filesystem**, an
 abstraction that allows to read and write files without the need to know any internals. See the [Virtual filesystem][VirtualFilesystem]
 section for real world examples on how to use the system.
@@ -49,7 +51,7 @@ section for real world examples on how to use the system.
 | `MountManager` | Service, that allows to read from and write to a filesystem adapter whose mount path matches the resource's path prefix. Read more about mounting your own adapters in the [Config section](Config). | low  
 | `DbafsManager` | Service, that allows to access and modify metadata of a DBAFS that matches the resource's path prefix or UUID. Read more about setting up your own DBAFS service in the [Config section](Config). | low  
 
-{{% notice info %}}
+{{% notice "info" %}}
 In an application, there will typically be **one** `MountManager` and **one** `DbafsManager` but **multiple** virtual
 filesystems. Each virtual filesystem instance can be scoped to a certain path and can be set to disallow modifications
 (readonly mode). In Contao we're for instance already shipping a `$filesStorage` and a `$backupsStorage` that are scoped

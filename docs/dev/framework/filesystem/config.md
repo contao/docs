@@ -7,7 +7,7 @@ aliases:
 
 {{< version "4.13" >}}
 
-{{% notice warning %}}
+{{% notice "warning" %}}
 The new filesystem capabilities are currently considered *experimental* and therefore not covered by Contao's BC
 promise. Classes marked with `@experimental` should be considered internal for now. Although not likely, there could
 also be some behavioral changes, so be prepared.
@@ -15,6 +15,7 @@ also be some behavioral changes, so be prepared.
 
 
 ## Convenience configuration
+
 The filesystem consist of many components:
 
 * several storage adapters (`League\Flysystem\FilesystemAdapter`),
@@ -31,6 +32,7 @@ in your extensions and applications. That's why we added a `FilesystemConfigurat
 `ContainerBuilder` instance and provides convenience methods that orchestrate everything you need in the background.
 
 ### In a Bundle
+
 To use the `FilesystemConfiguration` in your bundle, implement the `ConfigureFilesystemInterface` in your extension
 class:
 
@@ -54,8 +56,10 @@ class MyFooBundleExtension extends Extension implements ConfigureFilesystemInter
 ```
 
 ### In your Application
+
 In your application in the Contao Managed Edition, you'll need to adjust the global manager plugin instead by
 implementing the `ConfigPluginInterface` and creating the `FilesystemConfiguration` yourself:
+
 ```php
 // src/ContaoManager/Plugin.php
 namespace App\ContaoManager;
@@ -79,9 +83,10 @@ class Plugin implements ConfigPluginInterface
 ```
 
 ## Reference
+
 |  |  |
 |-|-|
-| `addVirtualFilesystem` | Add a new virtual filesystem. Setting the `$name` to 'foo' will create a `contao.filesystem.virtual.foo` service and additionally enable constructor injection with an argument `VirtualFilesystemInterface $fooStorage` if autowiring is available. The `$prefix` defines the directory the instance should be scoped to. Optionally setting `$readonly` to true, will prevent mutations being made to resources and metadata. |
+| `addVirtualFilesystem` | Add a new virtual filesystem. Setting the `$name` to 'foo' will create a `contao.filesystem.virtual.foo` service and additionally enable constructor injection with an argument `VirtualFilesystemInterface $fooStorage` if autowiring is available. The `$prefix` defines the directory the instance should be scoped to. Optionally setting `$readonly` to true will prevent mutations being made to resources and metadata. |
 | `mountAdapter` | Creates a new adapter and mounts it under the given `$mountPath` in the `MountManager`. The `$adapter` and `$options` can be set analogous to the configuration of the [Flysystem Symfony bundle][FlysystemBundle]. Alternatively you can pass in an id of an already existing filesystem adapter service. If you do not set a `$name`, the id/alias for the adapter service will be derived from the mount path. |
 | `mountLocalAdapter` | Use this shortcut method if you want to create a local adapter. Internally this is using `mountAdapter` but already resolves project root relative paths and parameter placeholders for you. |
 | `registerDbafs` | Registers a custom `$dbafs` service definition in the `DbafsManager` under a given `$pathPrefix`. |
@@ -96,11 +101,12 @@ $config
   ->addDefaultDbafs(…)
   ->registerMethodCall('setMaxFileSize', [1048576])
 ;
-
 ```
 
 ### Example
+
 Here is how you could make your automatic database backups be stored on a remote server via SFTP:
+
 ```php
 // Mount an SFTP adapter to `/backups`.
 $config->mountAdapter(
@@ -111,7 +117,7 @@ $config->mountAdapter(
 ```
 
 {{% notice note %}}
-Currently there are a lot of filesystem operations in Contao that do not use the new filesystem abstraction, yet. So you
+Currently there are a lot of filesystem operations in Contao that do not use the new filesystem abstraction yet. So you
 should not expect file operations to be routed to your adapter when remounting `/files` for instance. The backups from
 the above example are an exception to this as they are already refactored.    
 {{% /notice %}}
