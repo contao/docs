@@ -118,7 +118,7 @@ $config->mountAdapter(
 );
 ```
 
-{{% notice note %}}
+{{% notice "note" %}}
 Currently there are a lot of filesystem operations in Contao that do not use the new filesystem abstraction yet. So you
 should not expect file operations to be routed to your adapter when remounting `/files` for instance. The backups from
 the above example are an exception to this as they are already refactored.    
