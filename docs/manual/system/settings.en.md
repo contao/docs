@@ -596,8 +596,8 @@ framework:
     mailer:
         transports:
             application: smtps://exampleuser:examplepassword@example.com
-            website1: smtps://email@example.org:foobar@example.org
-            website2: smtps://email@example.de:foobar@example.de
+            website1: smtps://email%%40example.org:foobar@example.org
+            website2: smtps://email%%40example.de:foobar@example.de
 ```
 
 In the second step, the configured transports can be made available in the back end via the Contao framework 
