@@ -174,6 +174,8 @@ class FilesListController extends AbstractContentElementController
     }
 }
 ```
+{{% /tab %}}
+{{< /tabs >}}
 
 ```twig
 {# templates/ce_files_list.html.twig #}
