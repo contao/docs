@@ -178,7 +178,7 @@ im Bereich »Systemwartung/Anwendungs-Cache« durchführen.
 {{% expand "Der Contao Manager hat sich »aufgehangen«" %}}
 Sollte es vorkommen, dass der Contao Manager nicht mehr reagiert, das Fenster der Konsolenausgabe sich nicht schließen lässt
 oder nach einem Reload der Manager-Seite man immer wieder zur selben Ausgabe kommt, lösche im Verzeichnis `contao-manager`
-die Datei `task.json`.
+die Datei `task.json`. Diese Datei gibt es nicht (contao 4.9 / 4.13).
 
 Anschließend sollte der Contao Manager wieder laufen.
 {{% /expand %}}
