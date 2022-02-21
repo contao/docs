@@ -19,7 +19,7 @@ um die Ohren schlagen, um die Contao-Entwicklung voranzutreiben:
 
 Neben dem Core-Team sorgen viele weitere [Freiwillige](https://github.com/contao/contao/graphs/contributors) dafür,
 dass Contao ein einzigartiges und wunderschönes Erlebnis  ist und bleibt. Möchtest du ein Teil davon werden?
-[Dann freuen wir uns auf dich](https://contao.org/de/volunteers-pool.html).
+[Dann freuen wir uns auf dich](https://contao.org/de/finanziell-unterstuetzen.html).
 
 Dieses Handbuch wurde mit Unterstützung der [Contao Association](https://association.contao.org/) und der
 [Contao Community](https://github.com/contao/docs/graphs/contributors) von folgenden Personen umgesetzt
