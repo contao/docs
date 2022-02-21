@@ -203,7 +203,7 @@ display, you could use the Contao [Accordeon elements](/en/article-management/co
 »Envelope start« and »Envelope end« for other purposes. In the element »Envelope start« you then use the CSS class 
 »filter-container«.<br><br>
 Furthermore, for simplicity's sake, we have entered the JavaScript references directly in the content element. 
-Alternatively, you could also store them as [JavaScript Asset](/en/layout/templates/template-assets/) in the template.
+Alternatively, you could also store them as [JavaScript Asset](/en/layout/templates/php/template-assets/) in the template.
 {{% /notice %}}
 
 {{% notice info %}}
