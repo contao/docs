@@ -64,7 +64,7 @@ condition: `disable != 1 AND groups LIKE '%2%'`.
 The template »list_default.html5« is extensive, because it considers all eventualities of the representation in interaction 
 with the module. For our example, together with the following information regarding the map display, we simplify the template.
 
-Create a new template »list_default_member.html5« in the [template directory](/en/layout/templates/manage-template/) you 
+Create a new template »list_default_member.html5« in the [template directory](/en/layout/templates/php/manage-template/) you 
 have specified under »Themes« and then use this in your module »Listing«:
 
 ```html
@@ -109,7 +109,7 @@ have specified under »Themes« and then use this in your module »Listing«:
 
 {{% notice note %}}
 For simplicity's sake, we have entered rudimentary CSS information here directly in the template. Alternatively, 
-you could also store them as [CSS assets](/en/layout/templates/template-assets/).
+you could also store them as [CSS assets](/en/layout/templates/php/template-assets/).
 {{% /notice %}}
 
 
