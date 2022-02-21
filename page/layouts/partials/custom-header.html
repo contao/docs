@@ -14,6 +14,6 @@
 </script>
 
 {{ $searchXml := .Site.Home.OutputFormats.Get "opensearchxml" }}
-{{ if ne $searchXml }}
+{{ if $searchXml }}
 <link rel="search" type="application/opensearchdescription+xml" title="Search {{ .Site.Title }}" href="{{ $searchXml.RelPermalink }}">
 {{ end }}
