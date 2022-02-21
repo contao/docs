@@ -28,7 +28,7 @@ be closed with a comma. After saving the template, your changes are applied imme
 {{% /notice %}}
 
 {{% notice tip %}}
-Starting with Contao **4.10** you can use [template inheritance](/en/layout/templates/template-inheritance/) in order to
+Starting with Contao **4.10** you can use [template inheritance](/en/layout/templates/php/template-inheritance/) in order to
 only adjust parts of the default `be_tinyMCE` template to your needs.
 {{% /notice %}}
 
