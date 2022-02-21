@@ -266,7 +266,7 @@ information. This information is assigned to a group `memberGroup`, together wit
 the purpose of displaying the map. Copy these files into a public directory of your Contao installation below »files«.
 
 {{% notice note %}}
-You still need to enable jQuery in the [page layout](/en/layout/theme-manager/manage-page-layouts/) of your theme. The 
+You still need to enable jQuery in the [page layout](/en/layout/theme-manager/php/manage-page-layouts/) of your theme. The 
 example refers to the standard leaflet marker icon »images/marker-icon.png«. If you want to use a different, individual symbol 
 here, the specifications »iconSize«, »iconAnchor« and »popupAnchor« must also be adapted.
 {{% /notice %}}
@@ -335,7 +335,7 @@ We supplement the existing template »list_default_member.html5« as follows:
 </div>
 ```
 
-First we reference the required CSS and JS files (see also: [CSS and JavaScript asstes](/en/layout/templates/template-assets/)). 
+First we reference the required CSS and JS files (see also: [CSS and JavaScript asstes](/en/layout/templates/php/template-assets/)). 
 Furthermore we define a HTML container with the CSS ID `MYMEMBERMAP` for map display. In the PHP loop we collect the 
 required coordinates via `tmpMemberMapData` and generate a JavaScript array in order to call our function `createMemberMap(arrMemberMapData)`.
 
