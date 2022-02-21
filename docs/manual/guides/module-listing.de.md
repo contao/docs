@@ -348,7 +348,7 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 ```
 
 Zunächst referenzieren wir die benötigten CSS- und JS-Dateien (s. a.: 
-[CSS- und JavaScript-Assets](/de/layout/templates/assets/)). Weiterhin definieren wir einen HTML-Container mit der CSS-ID
+[CSS- und JavaScript-Assets](/de/layout/templates/php/assets/)). Weiterhin definieren wir einen HTML-Container mit der CSS-ID
 `MYMEMBERMAP` zur Kartendarstellung. In der PHP-Schleife erfassen wir über `tmpMemberMapData` u. a. die benötigten 
 Koordinaten und erzeugen im Anschluß hierüber ein JavaScript-Array zwecks Aufruf unserer Funktion `createMemberMap(arrMemberMapData)`.
 
