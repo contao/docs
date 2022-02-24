@@ -81,7 +81,7 @@ security:
 {{% /expand %}}
 
 If you want to learn more about Symfony's Security Component use the provided links to read up on. This documentation will only cover
-implmentation details that are unique to Contao.
+implementation details that are unique to Contao.
 
 Since within Contao you can put a login form on basically any page, Contao does not utilise Symfony's built-in 
 [`form_login` Authentication Provider][SymfonyFormLogin]. Instead, Contao implements its own [user checker][SymfonyUserChecker] and 
