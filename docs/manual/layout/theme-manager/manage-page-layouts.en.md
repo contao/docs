@@ -241,10 +241,16 @@ In the expert settings, you can change the page template that is used for the pa
 
 **Viewport tag:** Here you can set an individual viewport tag.
 
+Example: The page should adapt to the viewport, but still allow scaling:
+
+```html
+width=device-width, initial-scale=1.0
+```
+
 **Output in source code:**
 
 ```html
-<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 ```
 
 **Title tag:** Here you can overwrite the title tag.
