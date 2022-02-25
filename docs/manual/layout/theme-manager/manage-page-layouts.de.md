@@ -284,10 +284,11 @@ soll.
 
 
 **Viewport-Tag:** Hier kannst du ein individuelles Viewport-Tag setzen. 
+
 Beispiel: Die Seite soll sich an den Viewport anpassen, aber dennoch ein Skalieren ermöglichen:
+
 ```html
 width=device-width, initial-scale=1.0
-```
 **Ausgabe im Quellcode:**
 ```html
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
