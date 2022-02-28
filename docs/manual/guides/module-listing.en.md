@@ -426,7 +426,7 @@ browser (you could also use the [sessionStorage](https://developer.mozilla.org/d
 
 ### Useful leaflet plugins
 
-The leaflet framework can be extended with [plugins](https://leafletjs.com/plugins.html). Here is a small selection:
+The leaflet framework can be extended with [plugins](https://leafletjs.com/). Here is a small selection:
 
 - [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen): Expands the map with a fullscreen view.
 - [Leaflet.TileLayer.Grayscale](https://github.com/Zverik/leaflet-grayscale): Some map providers have SW/grayscale tiles. With 
