@@ -42,16 +42,16 @@ Since Contao **4.13** the `Contao\DataContainer` class provides constants for th
 
 ```php
 // Displays the child records of a parent record (see content elements)
-'mode' => Contao\DataContainer::MODE_PARENT; // 4
+'mode' => Contao\DataContainer::MODE_PARENT, // 4
 
 // Records are displayed as tree (see site structure)
-'mode' => Contao\DataContainer::MODE_TREE; // 5
+'mode' => Contao\DataContainer::MODE_TREE, // 5
 
 //Sort by initial letter ascending
-'flag' => Contao\DataContainer::SORT_INITIAL_LETTER_ASC; // 1
+'flag' => Contao\DataContainer::SORT_INITIAL_LETTER_ASC, // 1
 
 // Sort by initial letter descending
-'flag' => Contao\DataContainer::SORT_INITIAL_LETTER_DESC; // 2
+'flag' => Contao\DataContainer::SORT_INITIAL_LETTER_DESC, // 2
 ```
 {{% /notice %}}
 
