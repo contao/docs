@@ -10,7 +10,7 @@ tags:
 ---
 
 {{% notice note %}}
-The Deployer recipe is part of Deployer 7 and is intended to work for Contao 4.13 and greater.
+The Deployer recipe is part of Deployer 7 and is intended to work for Contao 4.13 and higher.
 
 ## Install Deployer
 
