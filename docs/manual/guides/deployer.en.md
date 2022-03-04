@@ -271,7 +271,7 @@ after('deploy:failed', 'deploy:unlock');
 after('deploy:failed', 'contao:maintenance:disable');
 ```
 
-[1]: https://deployer.org/docs/7.x/getting-started
+[1]: https://deployer.org/docs/7.x/installation
 [2]: https://deployer.org/docs/7.x/hosts
 [3]: https://github.com/terminal42/deployer-recipes
 [4]: /en/installation/system-requirements/#hosting-configuration
