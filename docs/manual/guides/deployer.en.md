@@ -35,8 +35,7 @@ check out the Git repository with the current project on the remote server.
 To get started with Deployer, use the following file contents for the `deploy.php` in your project root:
 
 ```php
-<?php // /deploy.php
-
+// deploy.php
 namespace Deployer;
 
 import('recipe/contao.php');
