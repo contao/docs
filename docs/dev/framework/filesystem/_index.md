@@ -60,4 +60,4 @@ to `/files` and `/backups`.
 
 [Flysystem]: https://flysystem.thephpleague.com/docs/
 [VirtualFilesystem]: /framework/filesystem/virtual-filesystem/
-[c]: /framework/filesystem/config/
+[Config]: /framework/filesystem/config/
