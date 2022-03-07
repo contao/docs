@@ -441,7 +441,7 @@ des Browsers (Du könntest hierzu auch die
 
 ### Nützliche Leaflet Plugins {#nuetzliche-leaflet-plugins}
 
-Das Leaflet-Framework kann man mit [Plugins](https://leafletjs.com/plugins.html) erweitern. Hier eine kleine Auswahl:
+Das Leaflet-Framework kann man mit [Plugins](https://leafletjs.com/) erweitern. Hier eine kleine Auswahl:
 
 - [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen): Erweitert die Karte mit einer FullScreen Ansicht.
 - [Leaflet.TileLayer.Grayscale](https://github.com/Zverik/leaflet-grayscale): Manche Kartenanbieter verfügen über SW/Graustufen 
