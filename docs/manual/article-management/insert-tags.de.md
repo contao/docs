@@ -202,10 +202,10 @@ Du kannst mit `en,de,fr` statt nur auf eine auch auf mehrere Sprachen testen. Zu
 
 Insert-Tags, die als Ausgabe eine ID oder Alias haben, können grundsätzlich verschachtelt werden.
 
-| Insert-Tag                       | Ausgabe                |
-|:---------------------------------|:-----------------------|
-| `{{link::{{page::id}}|absolute}}`| Generiert einen Link mit einer absoluten Ausgabe der aktuell aufgerufenen Seite.   |
-| `{{link_url::{{page::id}}}}#sprungmarke`| Generiert einen relativen Link zur aktuellen Seite (nützlich für Onepager). |
+| Insert-Tag | Ausgabe |
+|:-----------|:--------|
+| `{{link::{{page::id}}\|absolute}}` | Generiert einen Link mit einer absoluten Ausgabe der aktuell aufgerufenen Seite. |
+| `{{link_url::{{page::id}}}}#sprungmarke` | Generiert einen relativen Link mit einer Sprungmarke (Anker) zu einem Bereich in der aktuellen Seite (nützlich für Onepager). |
 
 {{% notice info %}}
 Man sollte darauf achten, keine endlosen Loops wie z. B. durch `{{insert_article::{{page::alias}}}}` zu generieren. Dies kann zum Absturz der Seite führen.
