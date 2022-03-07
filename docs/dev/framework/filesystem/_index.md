@@ -48,8 +48,8 @@ section for real world examples on how to use the system.
 | Component | What is it good for? | Abstraction level |
 |-|-|-|
 | `VirtualFilesystem` | Your primary gateway to read and write resources from the filesystem, that uses the `MountManager` and `DbafsManager` under the hood. | high
-| `MountManager` | Service, that allows to read from and write to a filesystem adapter whose mount path matches the resource's path prefix. Read more about mounting your own adapters in the [Config section](Config). | low  
-| `DbafsManager` | Service, that allows to access and modify metadata of a DBAFS that matches the resource's path prefix or UUID. Read more about setting up your own DBAFS service in the [Config section](Config). | low  
+| `MountManager` | Service, that allows to read from and write to a filesystem adapter whose mount path matches the resource's path prefix. Read more about mounting your own adapters in the [Config section][Config]. | low  
+| `DbafsManager` | Service, that allows to access and modify metadata of a DBAFS that matches the resource's path prefix or UUID. Read more about setting up your own DBAFS service in the [Config section][Config]. | low  
 
 {{% notice "info" %}}
 In an application, there will typically be **one** `MountManager` and **one** `DbafsManager` but **multiple** virtual
