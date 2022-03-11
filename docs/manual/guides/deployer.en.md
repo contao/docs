@@ -167,11 +167,39 @@ add('exclude', [
 ]);
 ```
 
-**Pro tip:** You can create your own set of re-usable Deployer recipes, and when doing so, you can move the 
-`contao-rsync.php` respectively. The [terminal42/deployer-recipes][3] repository is an excellent example of how to
-create re-usable recipes for your Contao projects.
+{{% /expand %}}
 
-### Provision web server
+### Option 3: Deploy with rsync but with using an "include" pattern
+
+In the rsync deployment described above we were using "exclude" to upload _everything_ expect some environment-specific
+files. There are some advocates, however, to defining only the actual files that you need upload.
+
+Then we make the following changes to the project’s `deploy.php`:
+
+{{% expand "deploy.php recipe" %}}
+
+```php
+<?php
+
+// deploy.php
+
+/* Your existing config from "Option 1" */
+
+// Not needed anymore
+//-set('repository', 'git@github.com:acme/example.org.git');
+
+desc('Upload project files');
+task('deploy:update_code', function () {
+    upload("config/config.yml", "{{release_or_current_path}}/config/");
+    upload("config/services.yml", "{{release_or_current_path}}/config/");
+    upload("src/", "{{release_or_current_path}}/");
+    upload("templates/", "{{release_or_current_path}}/");
+});
+```
+
+{{% /expand %}}
+
+## Provision web server
 
 As you know [from the Contao documentation]([4]), you have to set the document root of the server to `/public` (or
 `/web` in older versions) of the project. The idea of Deployer is to provide updates without downtime, and to realize
