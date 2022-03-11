@@ -70,6 +70,8 @@ To use `rsync` instead of a Git checkout, we need to use the rsync recipe and ad
 
 First we create a new recipe solely for the rsync functionality:
 
+{{% expand "deploy-rsync.php recipe" %}}
+
 ```bash
 touch deploy-rsync.php
 ```
@@ -133,15 +135,25 @@ task('deploy:update_code', function () {
 });
 ```
 
+**Pro tip:** You can create your own set of re-usable Deployer recipes, and when doing so, you can move the
+`contao-rsync.php` respectively. The [terminal42/deployer-recipes][3] repository is an excellent example of how to
+create re-usable recipes for your Contao projects.
+
+{{% /expand %}}
+
 Then we make the following changes to the project’s `deploy.php`:
 
+{{% expand "deploy.php recipe" %}}
+
 ```php
-<?php // /deploy.php
+<?php 
+
+// deploy.php
 
 // Add this recipe, do not remove the contao.php recipe
-require __DIR__.'/deploy-rsync.php';
+import(__DIR__.'/deploy-rsync.php');
 
-/* Your existing config */
+/* Your existing config from "Option 1" */
 
 // Not needed anymore
 //-set('repository', 'git@github.com:acme/example.org.git');
@@ -167,10 +179,8 @@ this, Deployer utilizes rolling symlink releases. Consequently, you have to set 
 `/current/public` (or `/current/web` respectively). A full example for the document root might look like 
 `/var/www/foobar/html/example.org/current/public`.
 
----
-
-Contao is slowly migrating to use the “public” folder of the project as the document root. When your Contao 4.13
-installation is still using the folder “web” as public directory, please explicitly set it in the `composer.json`
+Contao is slowly migrating to use the `/public` folder of the project as the document root. When your Contao 4.13
+installation is still using the folder `/web` as public directory, please explicitly set it in the `composer.json`
 of the project:
 
 ```json
@@ -181,17 +191,15 @@ of the project:
 }
 ```
 
-### Finally: Deploy
-
-You are now all set to run `dep deploy`.
-
 ## Add build-task to deployment
 
 Often you have some additional build tasks tailored to your project. You can quickly add those tasks to the deployment
 process:
 
 ```php
-<?php // /deploy.php
+<?php
+
+// deploy.php
 
 /* Your existing config */
 
@@ -203,23 +211,23 @@ task('encore:compile', function () {
 
 // Define that the assets should be generated before the project is going to be deployed
 before('deploy', 'encore:compile');
-
-// When using rsync, we do not want to upload those files
-add('exclude', [
-    'package.json',
-    'package-lock.json',
-    'yarn.lock',
-    '/node_modules',
-]);
 ```
+
+## Finally: Deploy
+
+You are now all set to run `dep deploy`.
 
 ## Tips
 
 ### Custom recipes
 
-terminal42 provides some additional recipes under [terminal42/deployer-recipes/][3]. You can use one or many recipes in
-your project, and you are free to extract logic for your projects into own recipes as well (as described above for the
-rsync recipe).
+You can use one or many recipes in your project, and you are free to extract logic for your projects into own recipes as
+well (as described above for the rsync recipe).
+
+Here is a collection of Deployer recipes that you might give you an inspiration:
+
+- https://github.com/nutshell-framework/deployer-recipes
+- https://github.com/terminal42/deployer-recipes/
 
 ### Contao Manager
 
