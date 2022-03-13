@@ -68,8 +68,6 @@ project.
 To use `rsync` instead of a Git checkout, we need to override the `deploy:update_code` task:
 
 ```php
-<?php
-
 // deploy.php
 
 /* Your existing config from "Option 1" */
@@ -126,8 +124,6 @@ Often you have some additional build tasks tailored to your project. You can qui
 process:
 
 ```php
-<?php
-
 // deploy.php
 
 /* Your existing config */
@@ -162,7 +158,7 @@ recipes):
 You can also provide a task to download the Contao Manager on each deploy:
 
 ```php
-<?php
+// deploy.php
 
 /* Your existing deploy.php */
 
@@ -182,7 +178,7 @@ To check what caches are in place, you can check the Symfony toolbar (lower righ
 For the caches being in place, this is an example to clear the caches:
 
 ```php
-<?php
+// deploy.php
 
 // Add this recipe
 require 'contrib/cachetool.php';
