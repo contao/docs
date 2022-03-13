@@ -56,7 +56,7 @@ set('keep_releases', 10);
 after('deploy:failed', 'deploy:unlock');
 ```
 
-Make sure to adjust the host configuration ([Documentation][2]) and repository URL as required.
+Make sure to adjust the host configuration (see the [Documentation][2]) and repository URL as required.
 
 The deployment with Git repo has some downsides, though. First, you always need to have your local files committed
 and pushed. Second, your remote site needs to have read-access on Git repository, which requires storing the HTTPS
@@ -65,118 +65,7 @@ project.
 
 ### Option 2: Deploy with rsync
 
-To use `rsync` instead of a Git checkout, we need to use the rsync recipe and add further configuration to the
-`deploy.php` file.
-
-First we create a new recipe solely for the rsync functionality:
-
-{{% expand "deploy-rsync.php recipe" %}}
-
-```bash
-touch deploy-rsync.php
-```
-
-```php
-<?php // /deploy-rsync.php
-
-namespace Deployer;
-
-import('contrib/rsync.php');
-
-set('rsync_dest','{{release_path}}');
-
-// The files in your Contao installation that should not be uploaded
-set('exclude', [
-    '.git',
-    '/.github',
-    '/.idea',
-    '/deploy.php',
-    '/.env.local',
-    '/.gitignore',
-    '/config/parameters.yml',
-    '/contao-manager',
-    '/tests',
-    '/var',
-    '/vendor',
-    '/app/Resources/contao/config/runonce*',
-    '/assets',
-    '/files',
-    '/system',
-    '/{{public_path}}/bundles',
-    '/{{public_path}}/assets',
-    '/{{public_path}}/files',
-    '/{{public_path}}/share',
-    '/{{public_path}}/system',
-    '/{{public_path}}/app.php',
-    '/{{public_path}}/app_dev.php',
-    '/{{public_path}}/index.php',
-    '/{{public_path}}/preview.php',
-    '/{{public_path}}/robots.txt',
-]);
-
-set('rsync', function () {
-    return [
-        'exclude' => array_unique(get('exclude', [])),
-        'exclude-file' => false,
-        'include' => [],
-        'include-file' => false,
-        'filter' => [],
-        'filter-file' => false,
-        'filter-perdir' => false,
-        'flags' => 'rz',
-        'options' => ['delete'],
-        'timeout' => 300,
-    ];
-});
-
-desc('Use rsync task to pull project files');
-task('deploy:update_code', function () {
-    invoke('rsync');
-});
-```
-
-**Pro tip:** You can create your own set of re-usable Deployer recipes, and when doing so, you can move the
-`contao-rsync.php` respectively. The [terminal42/deployer-recipes][3] repository is an excellent example of how to
-create re-usable recipes for your Contao projects.
-
-{{% /expand %}}
-
-Then we make the following changes to the project’s `deploy.php`:
-
-{{% expand "deploy.php recipe" %}}
-
-```php
-<?php 
-
-// deploy.php
-
-// Add this recipe, do not remove the contao.php recipe
-import(__DIR__.'/deploy-rsync.php');
-
-/* Your existing config from "Option 1" */
-
-// Not needed anymore
-//-set('repository', 'git@github.com:acme/example.org.git');
-
-// Set current dir (project root)
-set('rsync_src', __DIR__);
-
-// Project-specific files and folders that shall not be uploaded on deployment
-add('exclude', [
-   '/README.md',
-]);
-```
-
-{{% /expand %}}
-
-### Option 3: Deploy with rsync but with using an "include" pattern
-
-In the rsync deployment described above we were using "exclude" to upload _everything_ expect some environment-specific
-files. There are some advocates, however, to defining only the actual files that you need upload.
-
-Then we make the following changes to the project’s `deploy.php`:
-
-{{% expand "deploy.php recipe" %}}
+To use `rsync` instead of a Git checkout, we need to override the `deploy:update_code` task:
 
 ```php
 <?php
@@ -190,14 +79,26 @@ Then we make the following changes to the project’s `deploy.php`:
 
 desc('Upload project files');
 task('deploy:update_code', function () {
-    upload("config/config.yml", "{{release_or_current_path}}/config/");
-    upload("config/services.yml", "{{release_or_current_path}}/config/");
-    upload("src/", "{{release_or_current_path}}/");
-    upload("templates/", "{{release_or_current_path}}/");
+    foreach([
+        'config',
+        'contao',
+        'public/layout',
+        'public/favicon.ico',
+        'src',
+        '.env',
+        'composer.json',
+        'composer.lock',
+    ] as $src) {
+        upload($src, '{{release_path}}/', ['options' => ['--recursive', '--relative']]);
+    }
 });
 ```
 
-{{% /expand %}}
+-----
+
+For the sake of completeness, instead of defining every(!) file in `upload()`, you can also use the `rsync` task. The
+`rsync` task implies an _exclude strategy_ rather than an _include strategy_. You can find an example and the
+`contao-rsync.php` recipe here: [nutshell-framework/deployer-recipes][6]
 
 ## Provision web server
 
@@ -249,10 +150,9 @@ You are now all set to run `dep deploy`.
 
 ### Custom recipes
 
-You can use one or many recipes in your project, and you are free to extract logic for your projects into own recipes as
-well (as described above for the rsync recipe).
-
-Here is a collection of Deployer recipes that you might give you an inspiration:
+You can use one or many recipes in your project, and you are free to extract logic for your projects into own recipes.
+Here is a collection of Deployer recipes that might give you an inspiration (and can use as a start for your own
+recipes):
 
 - https://github.com/nutshell-framework/deployer-recipes
 - https://github.com/terminal42/deployer-recipes/
@@ -288,7 +188,7 @@ For the caches being in place, this is an example to clear the caches:
 require 'contrib/cachetool.php';
 
 host('www.example.com')
-	  // Add this option, change {{hostname}} to the actual URL when the hostname does not match the URL.
+    // Add this option, change {{hostname}} to the actual URL when the hostname does not match the URL.
     ->set('cachetool_args', '--web=SymfonyHttpClient --web-path=./{{public_path}} --web-url=https://{{hostname}}')
 ;
 
@@ -314,3 +214,4 @@ after('deploy:failed', 'contao:maintenance:disable');
 [3]: https://github.com/terminal42/deployer-recipes
 [4]: /en/installation/system-requirements/#hosting-configuration
 [5]: https://ma.ttias.be/php-opcache-and-symlink-based-deploys
+[6]: https://github.com/nutshell-framework/deployer-recipes
