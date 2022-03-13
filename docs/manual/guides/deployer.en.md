@@ -58,8 +58,8 @@ after('deploy:failed', 'deploy:unlock');
 
 Make sure to adjust the host configuration (see the [Documentation][2]) and repository URL as required.
 
-The deployment with Git repo has some downsides, though. First, you always need to have your local files committed
-and pushed. Second, your remote site needs to have read-access on Git repository, which requires storing the HTTPS
+The deployment with Git repo has some downsides, though. First, you always need to have your local files committed and
+pushed. Second, your remote site needs to have read-access on Git repository, which requires storing the HTTPS
 credentials or configuring SSH. Therefore, another favored approach is to use `rsync` instead of Git to deploy the
 project.
 
@@ -102,8 +102,8 @@ task. The `rsync` task implies an _exclude strategy_ rather than an _include str
 
 As you know [from the Contao documentation][5], you have to set the document root of the server to `/public` (or
 `/web` in older versions) of the project. The idea of Deployer is to provide updates without downtime, and to realize
-this, Deployer utilizes rolling symlink releases. Consequently, you have to set the document root of your vHost to 
-`/current/public` (or `/current/web` respectively). A full example for the document root might look like 
+this, Deployer utilizes rolling symlink releases. Consequently, you have to set the document root of your vHost to
+`/current/public` (or `/current/web` respectively). A full example for the document root might look like
 `/var/www/foobar/html/example.org/current/public`.
 
 Contao is slowly migrating to use the `/public` folder of the project as the document root. When your Contao 4.13
@@ -196,8 +196,8 @@ after('deploy:success', 'cachetool:clear:apcu');
 ### Handle failed deployments
 
 Deployer only activates the new build when the deployment is without errors. However, when a deployment fails, you might
-find your deployment in a locked state and the Contao installation in maintenance mode. Therefore, feel free to unlock
-the deployment (to allow follow-up deployments) automatically and disable the Contao maintenance mode after failed 
+find your deployment in a locked state and the Contao installation in maintenance mode. Therefore, you can unlock the
+deployment (to allow follow-up deployments) automatically and disable the Contao maintenance mode after failed
 deployments:
 
 ```php
