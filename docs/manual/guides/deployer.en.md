@@ -201,6 +201,8 @@ deployment (to allow follow-up deployments) automatically and disable the Contao
 deployments:
 
 ```php
+// deploy.php
+
 after('deploy:failed', 'deploy:unlock');
 after('deploy:failed', 'contao:maintenance:disable');
 ```
