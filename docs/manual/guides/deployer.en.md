@@ -94,13 +94,13 @@ task('deploy:update_code', function () {
 
 -----
 
-For the sake of completeness, instead of defining every(!) file in `upload()`, you can also use the `rsync` task. The
-`rsync` task implies an _exclude strategy_ rather than an _include strategy_. You can find an example and the
-`contao-rsync.php` recipe here: [nutshell-framework/deployer-recipes][6]
+For the sake of completeness, instead of defining every(!) file and folder in `upload()`, you can also use the `rsync`
+task. The `rsync` task implies an _exclude strategy_ rather than an _include strategy_. You can find an example and the
+`contao-rsync.php` recipe here: [nutshell-framework/deployer-recipes][4]
 
 ## Provision web server
 
-As you know [from the Contao documentation]([4]), you have to set the document root of the server to `/public` (or
+As you know [from the Contao documentation][5], you have to set the document root of the server to `/public` (or
 `/web` in older versions) of the project. The idea of Deployer is to provide updates without downtime, and to realize
 this, Deployer utilizes rolling symlink releases. Consequently, you have to set the document root of your vHost to 
 `/current/public` (or `/current/web` respectively). A full example for the document root might look like 
@@ -170,7 +170,7 @@ after('contao:manager:download', 'contao:manager:lock');
 ### Symlink issues with OPCache / APCu
 
 As Deployer is using a symlink for the document root (as read above), issues might occur with internal caches like the
-OPCode Caching. [Read more here.][5]
+OPCode Caching. [Read more here.][6]
 
 To check what caches are in place, you can check the Symfony toolbar (lower right corner) which should show a green tick
 (✅) for OPCache.
@@ -208,6 +208,6 @@ after('deploy:failed', 'contao:maintenance:disable');
 [1]: https://deployer.org/docs/7.x/installation
 [2]: https://deployer.org/docs/7.x/hosts
 [3]: https://github.com/terminal42/deployer-recipes
-[4]: /en/installation/system-requirements/#hosting-configuration
-[5]: https://ma.ttias.be/php-opcache-and-symlink-based-deploys
-[6]: https://github.com/nutshell-framework/deployer-recipes
+[4]: https://github.com/nutshell-framework/deployer-recipes/blob/main/recipe/contao-rsync.php
+[5]: /en/installation/system-requirements/#hosting-configuration
+[6]: https://ma.ttias.be/php-opcache-and-symlink-based-deploys
