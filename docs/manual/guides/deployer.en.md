@@ -59,9 +59,9 @@ after('deploy:failed', 'deploy:unlock');
 Make sure to adjust the host configuration (see the [Documentation][2]) and repository URL as required.
 
 The deployment with Git repo has some downsides, though. First, you always need to have your local files committed and
-pushed. Second, your remote site needs to have read-access on Git repository, which requires storing the HTTPS
-credentials or configuring SSH. Therefore, another favored approach is to use `rsync` instead of Git to deploy the
-project.
+pushed. Second, in case your SSH clients do not support agent forwarding, your remote site needs to have read-access on
+Git repository, which requires storing the HTTPS credentials or configuring SSH. Therefore, another favored approach is
+to use `rsync` instead of Git to deploy the project.
 
 ### Option 2: Deploy with rsync
 
