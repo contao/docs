@@ -13,12 +13,13 @@ tags:
 Diese Anleitung bezieht sich auf die Deployer-Version >=7.0 und Contao-Version >=4.13.
 {{% /notice %}}
 
+
 ## Install Deployer
 
 Zuerst musst du Deployer installieren: [https://deployer.org/docs/][1]
 
 Du kannst Deployer entweder global oder per Projekt (mit Composer) installieren. Der Kommandozeilenbefehl lautet
-entsprechend `dep` or `./vendor/bin/dep`.
+entsprechend `dep` oder `./vendor/bin/dep`.
 
 Bevor du weitermachst, stelle sicher, dass du mindestens Version _7.0.0-rc.5_ installiert hast (`dep --version`).
 
@@ -28,10 +29,12 @@ Jetzt kannst du deine `deploy.php`-Datei in dem Projekt erstellen:
 touch deploy.php
 ```
 
+
 ## `deploy.php`-Datei schreiben
 
 Es gibt zwei Möglichkeiten, das Projekt auf dem Webserver zu installieren. Standardmäßig verwendet Deployer dafür das
 Git-Repository.
+
 
 ### Option 1: Deployment mit Git
 
@@ -63,11 +66,12 @@ Vergesse nicht, die Konfiguration des Hosts (siehe [Dokumentation][2]) und die U
 Das Deployment mit Git hat allerdings einige Nachteile. Zum Einen, musst du deinen lokalen Arbeitsstand immer committed
 und gepusht haben. Außerdem, wenn Agent Forwarding nicht funktioniert, musst du deinem Webserver Zugriff auf das
 Git-Repository geben (entweder mittels HTTPS oder SSH). Deswegen ist es oft einfacher, die notwendigen Dateien mit
-`rsync` auf dem Webserver hochzuladen.
+`rsync` auf den Webserver hochzuladen.
+
 
 ### Option 2: Deployment mit `rsync`
 
-Um `rsync` an Stelle des Git-Checkouts zu verwenden, müssen wir den Task  `deploy:update_code` überschreiben:
+Um `rsync` anstelle des Git-Checkouts zu verwenden, müssen wir den Task  `deploy:update_code` überschreiben:
 
 ```php
 // deploy.php
@@ -101,6 +105,7 @@ eingebauten `rsync`-Task verwenden. Der `rsync`-Task impliziert eine _»Exclude�
 _»Include«-Strategie_, was bedeutet, dass du die Dateien definierst, die _nicht_ hochgeladen werden sollen. Ein Beispiel
 für die Konfiguration findest du hier: [nutshell-framework/deployer-recipes][4]
 
+
 ## Webserver einrichten
 
 Wie du aus der [Contao-Doku][5] weißt, musst du den Document-Root auf `/public` (bzw. `/web`) einstellen. Die Idee
@@ -119,9 +124,10 @@ dann definiere diesen entsprechend, damit Deployer das auch weiß.
 }
 ```
 
+
 ## Projektspezifische Tasks
 
-Sehr oft gibt es spezifische Tasks für dein Projekt. Diese kannst du deinem Deployment ergänzen:
+Sehr oft gibt es spezifische Tasks für dein Projekt. Diese kannst du in deinem Deployment ergänzen:
 
 ```php
 // deploy.php
@@ -138,10 +144,12 @@ task('encore:compile', function () {
 before('deploy', 'encore:compile');
 ```
 
+
 ## Und nun: Deployen!
 
 Nachdem wir alles konfiguriert haben, können wir jetzt `dep deploy` ausführen und das Projekt auf den Webserver
 deployen.
+
 
 ## Tipps
 
@@ -152,6 +160,7 @@ möchtest. Hier sind einige Beispiele dafür:
 
 - https://github.com/nutshell-framework/deployer-recipes/
 - https://github.com/terminal42/deployer-recipes/
+
 
 ### Contao-Manager
 
@@ -167,12 +176,13 @@ before('deploy:publish', 'contao:manager:download');
 after('contao:manager:download', 'contao:manager:lock');
 ```
 
+
 ### Probleme mit dem Symlink und OPCache / APCu
 
 Weil Deployer einen Symlink für die Document-Root verwendet (siehe oben), kann es Probleme mit internen Caches wie z. B.
 OpCode Caching geben. [Mehr Infos.][6]
 
-Schaue zuerst, welche Caches auf deinem Webserver aktiviert sind. Öffne dafür die Symfony-Toolbar, wenn die Webseite im
+Schaue zuerst, welche Caches auf deinem Webserver aktiviert sind. Öffne dafür die Symfony-Toolbar, wenn die Website im
 Debug-Modus ist. Die aktiven Caches findest du in der unteren rechten Ecke mit einem grünen Haken (✅).
 
 Zum Leeren dieser Caches kannst du das »Cachetool«-Recipe verwenden:
@@ -192,6 +202,7 @@ after('deploy:success', 'cachetool:clear:opcache');
 // bzw.
 after('deploy:success', 'cachetool:clear:apcu');
 ```
+
 
 ### Fehlerhafte Deployments
 
