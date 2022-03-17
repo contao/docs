@@ -138,7 +138,7 @@ task('encore:compile', function () {
 before('deploy', 'encore:compile');
 ```
 
-## Und nun: Deploy!
+## Und nun: Deployen!
 
 Nachdem wir alles konfiguriert haben, können wir jetzt `dep deploy` ausführen und das Projekt auf den Webserver
 deployen.
@@ -150,12 +150,12 @@ deployen.
 Du kannst bestehende Recipes verwenden oder eigene Recipes erstellen, wenn du Logik extrahieren und wiederverwenden
 möchtest. Hier sind einige Beispiele dafür:
 
-- https://github.com/nutshell-framework/deployer-recipes
+- https://github.com/nutshell-framework/deployer-recipes/
 - https://github.com/terminal42/deployer-recipes/
 
 ### Contao-Manager
 
-Du kannst mit einem speziellen Task den Contao-Manager auf dem Webserver installieren:
+Du kannst mit einem Task den Contao-Manager auf dem Webserver installieren:
 
 ```php
 // deploy.php
@@ -170,12 +170,12 @@ after('contao:manager:download', 'contao:manager:lock');
 ### Probleme mit dem Symlink und OPCache / APCu
 
 Weil Deployer einen Symlink für die Document-Root verwendet (siehe oben), kann es Probleme mit internen Caches wie z. B.
-OpCode Cache geben. [Mehr Infos.][6]
+OpCode Caching geben. [Mehr Infos.][6]
 
 Schaue zuerst, welche Caches auf deinem Webserver aktiviert sind. Öffne dafür die Symfony-Toolbar, wenn die Webseite im
 Debug-Modus ist. Die aktiven Caches findest du in der unteren rechten Ecke mit einem grünen Haken (✅).
 
-Für diese Caches kannst du das »Cachetool«-Recipe verwenden:
+Zum Leeren dieser Caches kannst du das »Cachetool«-Recipe verwenden:
 
 ```php
 // deploy.php
@@ -196,7 +196,7 @@ after('deploy:success', 'cachetool:clear:apcu');
 ### Fehlerhafte Deployments
 
 Deployer aktiviert ein Release nur dann, wenn es fehlerfrei durchgelaufen ist. Wenn ein Deployment nun fehlerhaft ist,
-kann es sein, dass Contao im Wartungsmodus festsetzt. So kannst du die Installation automatisch wieder »freischalten«:
+kann es sein, dass Contao im Wartungsmodus festsitzt. So kannst du die Installation automatisch wieder »freischalten«:
 
 ```php
 // deploy.php
