@@ -5,4 +5,5 @@ documentation_label: Documentation
 showVisitedLinks: true
 disableInlineCopyToClipBoard: true
 #disableAssetsBusting: true
-currentContaoVersion: '4.9'
+currentContaoVersion: '4.13'
+disableLandingPageButton: true
