@@ -548,3 +548,8 @@ option {
 #body .tab-content .tab-item > *:last-child {
     margin-bottom: 0;
 }
+
+/* Remove hr introduced in theme update */
+#prefooter > hr {
+    display: none;
+}
