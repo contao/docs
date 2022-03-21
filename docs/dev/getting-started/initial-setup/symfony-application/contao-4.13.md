@@ -607,7 +607,7 @@ kernel:
 ```
 
 And the last thing to fix is the cli entrypoint `bin/console` which should reflect our new
-`HttpKernel`.
+`AppKernel`.
 
 ```php
 // bin/console
