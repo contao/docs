@@ -46,6 +46,7 @@ A string containing the (modified) bufffer content.
 // src/EventListener/ReplaceDynamicScriptTagsListener.php
 namespace App\EventListener;
 
+use Contao\CoreBundle\Framework\ContaoFramework;
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 
 /**
