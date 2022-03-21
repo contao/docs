@@ -314,37 +314,30 @@ monolog:
                 VERBOSITY_VERY_VERBOSE: NOTICE
                 VERBOSITY_DEBUG: DEBUG
             channels: ["!event", "!doctrine", "!console"]
-```
 
-The monolog config for the production environment is located in `config/packages/prod/monolog.yaml`.
+when@prod:
+    monolog:
+        handlers:
+            contao:
+                type: service
+                id: contao.monolog.handler
 
-{{% notice tip %}}
-This is an example configuration and you can adjust this to your custom needs if required.
-{{% /notice %}}
+            main:
+                type: fingers_crossed
+                action_level: error
+                handler: nested
+                excluded_http_codes: [400, 401, 403, 404]
 
-```yaml
-monolog:
-    handlers:
-        contao:
-            type: service
-            id: contao.monolog.handler
+            nested:
+                type: rotating_file
+                max_files: 10
+                path: '%kernel.logs_dir%/%kernel.environment%.log'
+                level: info
 
-        main:
-            type: fingers_crossed
-            action_level: error
-            handler: nested
-            excluded_http_codes: [400, 401, 403, 404]
-
-        nested:
-            type: rotating_file
-            max_files: 10
-            path: '%kernel.logs_dir%/%kernel.environment%.log'
-            level: info
-
-        console:
-            type: console
-            process_psr_3_messages: false
-            channels: ["!event", "!doctrine"]
+            console:
+                type: console
+                process_psr_3_messages: false
+                channels: ["!event", "!doctrine"]
 ```
 
 The next step is to install the database schema to the configured database.
