@@ -278,7 +278,7 @@ security:
 ```
 
 Last part of this mandatory configuration is for the logging component. There is a development and a production configuration.
-The development configuration is located in `config/packages/dev/monolog.yaml`.
+The development configuration is located in `config/packages/monolog.yaml`.
 
 {{% notice tip %}}
 This is an example configuration and you can adjust this to your custom needs if required.
