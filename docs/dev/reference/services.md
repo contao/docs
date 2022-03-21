@@ -85,7 +85,7 @@ class ExampleFormElementController extends AbstractContentElementController
         $this->csrfTokenName = $csrfTokenName;
     }
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $template->token = $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
 

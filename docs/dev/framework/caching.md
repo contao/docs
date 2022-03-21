@@ -182,7 +182,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class MyContentElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         // Do your stuff
         
@@ -320,7 +320,7 @@ instead of 24 hours. The page cache will expire at the end of the year and regen
 ```php
 class CurrentYearController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         $year = (int) date('Y');
         $template->year = $year;
@@ -362,7 +362,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class MySuperController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         $response = $template->getResponse();
         

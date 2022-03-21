@@ -84,7 +84,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class MyContentElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $template->text = $model->text;
         
@@ -188,7 +188,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ExampleController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         return $template->getResponse();
     }
@@ -273,7 +273,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class MyContentElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $page = $this->getPageModel();
 

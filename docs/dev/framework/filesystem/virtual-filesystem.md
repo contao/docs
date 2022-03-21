@@ -71,7 +71,7 @@ class FilesListController extends AbstractContentElementController
         $this->filesStorage = $filesStorage; 
     }
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $template->elements = $this->describeDirectory('images');
 
@@ -134,7 +134,7 @@ class FilesListController extends AbstractContentElementController
     // 'files' directory.
     public function __construct(private VirtualFilesystemInterface $filesStorage) {}
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $template->elements = $this->describeDirectory('images');
 

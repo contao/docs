@@ -88,7 +88,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class MyFrontendModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         if ($request->isMethod('post')) {
             if (null !== ($redirectPage = PageModel::findByPk($model->jumpTo))) {
@@ -204,7 +204,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ExampleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         return $template->getResponse();
     }
@@ -291,7 +291,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class MyFrontendModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         $page = $this->getPageModel();
 
