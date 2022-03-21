@@ -189,7 +189,7 @@ oder die Extensions müssen entfernt oder ersetzt werden. Andernfalls wird ein F
 ### Spracheinstellungen
 
 **Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres 
-[Subtag](http://ssgfix.sub.uni-goettingen.de/projekt/doku/sprachcode.html) nach ISO 639-1 erfasst, also z. B. über 
+Subtag nach ISO 639-1 erfasst, also z. B. über 
 `de` für Deutsch oder `en` für Englisch.
 
 **Sprachen-Fallback:** Contao sucht grundsätzlich nach einem Startpunkt in der Sprache, die ein Besucher in seinem 
