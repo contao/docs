@@ -22,7 +22,9 @@ JavaScript & CSS files etc. for the current page.
 The hook allows you to replace these script tags yourself, or execute other custom
 code before the replacement.
 
-{{% notice info %}} Since Contao 4.13 a nonce value is added to the tag names resulting in tag names like `[[TL_CSS_686b97e15f9e04213c87e53db3d7a8bd]]`. The nonce value value can be retrived from `ContaoFramework::getNonce()`. {{% /notice %}}
+{{% notice info %}}
+Since Contao 4.13 a nonce value is added to the tag names resulting in tag names like `[[TL_CSS_686b97e15f9e04213c87e53db3d7a8bd]]`. The nonce value value can be retrieved from `ContaoFramework::getNonce()`.
+{{% /notice %}}
 
 
 ## Parameters
