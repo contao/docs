@@ -56,9 +56,11 @@ class ReplaceDynamicScriptTagsListener
     public function __invoke(string $buffer): string
     {
         $nonce = '';
+
         if (method_exists(ContaoFramework::class, 'getNonce')) {
             $nonce = '_'.ContaoFramework::getNonce();
         }
+
         return str_replace("[[TL_CSS$nonce]]", "[[TL_CSS$nonce]]".'<link rel="stylesheet" href="assets/custom.css">', $buffer);
     }
 }
