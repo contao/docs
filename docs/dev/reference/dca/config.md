@@ -65,8 +65,7 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | sql                | Table configuration (`array`)     | Describes table configuration, e.g. `'keys' => [ 'id' => 'primary', 'pid' => 'index' ]`, see [SQL configuration](#sql-configuration).                                                                                   |
 
 {{% notice note %}}
-<sup>1</sup> A Data Container of type `Table` also needs at least the primary 
-key configuration for the database table, as shown in the <nobr>[example](#example).</nobr>
+<sup>1</sup> A Data Container of type `\Contao\DC_Table` also needs at least the primary key configuration for the database table, as shown in the <nobr>[example](#example).</nobr>
 {{% /notice %}}
 
 
