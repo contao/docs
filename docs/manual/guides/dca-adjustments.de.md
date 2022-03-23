@@ -134,7 +134,7 @@ unset($GLOBALS['TL_DCA']['tl_files']['list']['sorting']['panelLayout']);
 
 {{% expand "H-Tag in Überschriften einschränken" %}}
 ```php
-// contao/dca/tl_files.php
+// contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['fields']['headline']['options']= ['h2','h3']; # Beispiel auf h2 und h3 einschränken
 ```
 {{% /expand %}}
