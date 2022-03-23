@@ -131,7 +131,7 @@ unset($GLOBALS['TL_DCA']['tl_files']['list']['sorting']['panelLayout']);
 
 {{% expand "Restrict H-tag in headings" %}}
 ```php
-// contao/dca/tl_files.php
+// contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['fields']['headline']['options']= ['h2','h3']; # Restrict example to h2 and h3
 ```
 {{% /expand %}}
