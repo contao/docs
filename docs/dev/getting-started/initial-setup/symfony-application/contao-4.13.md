@@ -437,6 +437,7 @@ The front end preview is an entry script on its own and needs to be placed in
 <?php
 
 use App\HttpKernel\AppKernel;
+use FOS\HttpCache\TagHeaderFormatter\TagHeaderFormatter;
 use Symfony\Component\HttpFoundation\Request;
 
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
