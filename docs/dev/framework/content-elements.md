@@ -294,7 +294,7 @@ wrapper content elements typically consist of a `start`and `stop` element, thoug
 The `start` element typically opens a specific HTML tag, while the `stop` element will close it again.
 
 In order to define that a content element is a wrapper of a specific type, it needs to be registered in the `$GLOBALS['TL_WRAPPERS']` array
-in your `contao/config.php`. The `$GLOBALS['TL_WRAPPERS']` array holds the element types for each type of wrapper. For example:
+in your `contao/config/config.php`. The `$GLOBALS['TL_WRAPPERS']` array holds the element types for each type of wrapper. For example:
 
 ```php
 // contao/config.php
