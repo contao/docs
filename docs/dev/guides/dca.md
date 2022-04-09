@@ -327,7 +327,9 @@ two letters of the name as the default for the `number` field.
 
 ```php
 // contao/dca/tl_parts.php
+use Contao\Database;
 use Contao\DC_Table;
+use Contao\Input;
 
 $GLOBALS['TL_DCA']['tl_parts'] = [
     'config' => [
@@ -341,8 +343,8 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
         ],
         'onload_callback' => [
             function () {
-                $db = \Contao\Database::getInstance();
-                $pid = \Contao\Input::get('pid');
+                $db = Database::getInstance();
+                $pid = Input::get('pid');
                 if (empty($pid)) {
                     return;
                 }
@@ -508,6 +510,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             function () {
                 $db = Database::getInstance();
                 $pid = Input::get('pid');
+                if (empty($pid)) {
+                    return;
+                }
                 $result = $db->prepare('SELECT `name` FROM `tl_vendor` WHERE `id` = ?')
                              ->execute([$pid]);
                 $prefix = strtoupper(substr($result->name, 0, 2));
