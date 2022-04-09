@@ -58,7 +58,8 @@ class MyFooBundleExtension extends Extension implements ConfigureFilesystemInter
 ### In your Application
 
 In your application in the Contao Managed Edition, you'll need to adjust the global manager plugin instead by
-implementing the `ConfigPluginInterface` and creating the `FilesystemConfiguration` yourself:
+implementing the `ConfigPluginInterface` and creating the `FilesystemConfiguration` yourself. Because plugins are
+handled before extensions, we need to register a compiler pass (can be an anonymous class):
 
 ```php
 // src/ContaoManager/Plugin.php
@@ -73,10 +74,16 @@ class Plugin implements ConfigPluginInterface
 {
     public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig)
     {
-        $loader->load(static function (ContainerBuilder $container) {
-            $config = new FilesystemConfiguration($container);
-            
-            // Configure the filesystem here
+        $configureFilesystemPass = new class implements CompilerPassInterface {
+            public function process(ContainerBuilder $container)
+            {
+                $config = new FilesystemConfiguration($container);
+                // Configure the filesystem here
+            }
+        };
+        
+        $loader->load(static function (ContainerBuilder $container) use ($configureFilesystemPass) {
+            $container->addCompilerPass($configureFilesystemPass);
         });
     }
 }
