@@ -1,0 +1,10 @@
+{{ $.Scratch.Set "key" .Site.Params.currentContaoVersion }}
+{{ if len .Params | eq 1 }}
+{{ $key := .Get 0 }}
+{{ $.Scratch.Set "key" $key }}
+{{ end }}
+<code data-for="mac">[Control]+[Option]+[{{ $.Scratch.Get "key" }}]</code>
+<span data-for="!mac">
+  <code data-for="firefox">[Alt]+[Shift]+[{{ $.Scratch.Get "key" }}]</code>
+  <code data-for="!firefox">[Alt]+[{{ $.Scratch.Get "key" }}]</code>
+</span>
