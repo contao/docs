@@ -2,7 +2,7 @@ Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, Inhalte ausgeben kö
 
 
 ## Wie verwende ich Simple Tokens?
-Simple Tokens beginnen und enden mit zwei Rauten `##`. Welche Werte ausgegeben werden können, steht in der jeweiligen Datenbank-Spalte.
+Simple Tokens beginnen und enden mit zwei Rauten `##`. Welche Werte ausgegeben werden können, ist in dem jeweiligen Backend-Modul oder Extension zu finden.
 
 
 ## Welche Simple Tokens stehen zur Verfügung?
