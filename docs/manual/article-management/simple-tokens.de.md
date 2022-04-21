@@ -17,7 +17,7 @@ Beispiel:
 | `##link##`          | Link zum Newsletter                                       | Newsletter                  |
 | `##channels##`      | Abonnierter News-Channel                                   | Newsletter                  |
 
-## Wo können Simple Tokens eingesetzt werden? ##
+## Wo können Simple Tokens eingesetzt werden?
 - Benutzer: Modultyp 'Registrierung'
 - Benutzer: Modultyp 'Passwort vergessen'
 - Newsletter: 'Newsletterleser', 'Abonieren' und 'Kündigen' (https://docs.contao.org/manual/de/core-erweiterung/newsletter/newsletter-verwaltung/#newsletter-personalisieren)
