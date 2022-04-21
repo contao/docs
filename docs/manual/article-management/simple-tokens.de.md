@@ -32,7 +32,7 @@ Beispiel:
 
 `files/data/##form_broschuere##.pdf` Pfad zur PDF-Datei
 
-Es ist ebenso möglich, Simple Tokens als Fallabfrage zu verwenden. Hierzu werden Simple Tokens nicht mehr mit `##` geschrieben, sondern mit beginnender und endender Klammer `{}`
+Es ist ebenso möglich, Simple Tokens als Fallabfrage zu verwenden. Hierzu werden Simple Tokens nicht mehr mit `##` geschrieben, sondern mit öffnender und schließender Klammer `{}`
 
 Beispiel für das Notification-Center:
 
