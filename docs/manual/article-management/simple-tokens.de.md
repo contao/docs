@@ -59,7 +59,7 @@ Beispiel für das Newsletter-Modul:
 {elseif==de}
   Deine Sprache ist deutsch
 {else}
-  Coldn't assign a language
+  Couldn't assign a language.
 {endif}
 ```
 
