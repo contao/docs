@@ -15,7 +15,7 @@ Beispiel:
 | `##flang##`         | Aktuell verwendete Sprache                                |                             |
 | `##domain##`        | Aktuelle Domain                                           | Newsletter                  |
 | `##link##`          | Link zum Newsletter                                       | Newsletter                  |
-| `##channels##`      | Abonierter News-Channel                                   | Newsletter                  |
+| `##channels##`      | Abonnierter News-Channel                                   | Newsletter                  |
 
 ## Wo können Simple Tokens eingesetzt werden? ##
 - Benutzer: Modultyp 'Registrierung'
