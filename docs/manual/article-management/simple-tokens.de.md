@@ -25,6 +25,7 @@ Beispiel:
 - Extensions z. B. Notification-Center, Isotope, Catalog-Manager, Meta-Models, Contao-Leads
 - Als Platzhalter in Insert-Tags: https://docs.contao.org/manual/de/artikelverwaltung/insert-tags/#verschiedenes
 
+
 ## Weitere Einsatzzwecke: ##
 `datei_von_##tstamp##.pdf` für Datein erzeugt datei_von_1650437899.pdf
 
