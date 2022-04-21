@@ -6,7 +6,7 @@ Simple Tokens beginnen und enden mit zwei Rauten `##`. Welche Werte ausgegeben w
 
 
 ## Welche Simple Tokens stehen zur Verfügung?
-Simple Tokens können jedoch nur auf dafür vorgesehene Backend-Module bzw. Extensions verwendet werden. Sofern ein Simple Token nicht unterstützt wird, erfolgt eine leere Ausgabe und ein Log-Eintrag, dass ein Simple Token nicht ersetzt werden konnte.
+Simple Tokens können nur auf dafür vorgesehene Backend-Module bzw. Extensions verwendet werden. Sofern ein Simple Token nicht unterstützt wird, erfolgt eine leere Ausgabe und ein Log-Eintrag, dass ein Simple Token nicht ersetzt werden konnte.
 
 Beispiel:
 
