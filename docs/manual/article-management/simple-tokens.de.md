@@ -63,6 +63,7 @@ Beispiel für das Newsletter-Modul:
 {endif}
 ```
 
+
 ## Welche Operatoren können bei Bedingungen gesetzt werden?
 
 | Syntax      | Beschreibung                  |
