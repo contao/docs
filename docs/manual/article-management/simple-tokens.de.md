@@ -75,7 +75,7 @@ Beispiel für das Newsletter-Modul:
 | `<=`        | Kleiner gleich                |
 | `>=`        | Größer gleich                 |
 
-Generell empfiehlt es sich keine Leerzeichen vor den Operatoren zu setzen. Mittels `||` und `&&` können auch mehrere Werte per AND/OR abgefragt werden:
+Generell empfiehlt es sich, keine Leerzeichen vor den Operatoren zu setzen. Mittels `||` und `&&` können auch mehrere Werte per AND/OR abgefragt werden:
 
 `{if value=="foo" || value=="bar"}`
 
