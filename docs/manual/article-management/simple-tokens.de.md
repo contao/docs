@@ -1,4 +1,4 @@
-Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, die Inhalte ausgeben können. Simple Tokens beschränken sich jedich nur auf die Inhalte des jeweiligen Datenbank-Feldes. Der Unterschied ist jedoch, dass Simple Tokens nicht nur Inhalte des jeweiligen Datenbank-Feldes ausgegeben werden können, sondern auch Fallabfragen und reguläre Ausdrücke überprüft und ausgegeben werden können. Dank der Symfony Expression Language können die Einsatzzwecke noch erweitert werden.
+Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, die Inhalte ausgeben können. Simple Tokens beschränken sich allerdings nur auf die Inhalte des jeweiligen Datenbank-Feldes. Der Unterschied ist jedoch, dass Simple Tokens nicht nur Inhalte des jeweiligen Datenbank-Feldes ausgeben können, sondern auch Fallabfragen und reguläre Ausdrücke überprüft und ausgegeben werden können. Dank der Symfony Expression Language können die Einsatzzwecke noch erweitert werden.
 
 ## Wie verwende ich Simple Tokens? ##
 Simple Tokens beginnen und enden mit zwei Rauten `##`. Welche Werte ausgegeben werden können, steht in der jeweiligen Datenbank-Spalte.
