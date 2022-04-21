@@ -1,4 +1,4 @@
-Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, die Inhalte ausgeben können. Simple Tokens beschränken sich allerdings nur auf die Inhalte des jeweiligen Datenbank-Feldes. Der Unterschied ist jedoch, dass Simple Tokens nicht nur Inhalte des jeweiligen Datenbank-Feldes ausgeben können, sondern auch Fallabfragen und reguläre Ausdrücke überprüft und ausgegeben werden können. Dank der Symfony Expression Language können die Einsatzzwecke noch erweitert werden.
+Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, Inhalte ausgeben können. Der Unterschied ist jedoch, dass Simple Tokens nicht nur Inhalte ausgeben können, sondern auch Werte mit Fallabfragen und reguläre Ausdrücke überprüft und ausgegeben werden können. Die Entwickler entscheiden, welche Simple Tokens zur Verfügung stehen. Ab Contao 4.12 sind Simple Tokens teil der Symfony Expression Language können die Einsatzzwecke noch erweitert werden. Simple Tokens sind seit der Version Contao 2.x fester Bestandteil von Contao.
 
 ## Wie verwende ich Simple Tokens? ##
 Simple Tokens beginnen und enden mit zwei Rauten `##`. Welche Werte ausgegeben werden können, steht in der jeweiligen Datenbank-Spalte.
@@ -15,8 +15,6 @@ Beispiel:
 | `##domain##`        | Aktuelle Domain                                           | Newsletter                  |
 | `##link##`          | Link zum Newsletter                                       | Newsletter                  |
 | `##channels##`      | Abonierter News-Channel                                   | Newsletter                  |
-
-Simple Tokens sind seit der Version Contao 2.x fester Bestandteil von Contao. Seit der Version 4.12 sind diese Bestandteil der Symphony Expression Language.
 
 ## Wo können Simple Tokens eingesetzt werden? ##
 - Benutzer: Modultyp 'Registrierung'
