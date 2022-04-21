@@ -18,16 +18,13 @@ Beispiel:
 | `##link##`          | Link zum Newsletter                                       | Newsletter                  |
 | `##channels##`      | Abonnierter News-Channel                                   | Newsletter                  |
 
+
 ## Wo können Simple Tokens eingesetzt werden?
 - Benutzer: Modultyp 'Registrierung'
 - Benutzer: Modultyp 'Passwort vergessen'
 - Newsletter: 'Newsletterleser', 'Abonnieren' und 'Kündigen' (https://docs.contao.org/manual/de/core-erweiterung/newsletter/newsletter-verwaltung/#newsletter-personalisieren)
 - Extensions z. B. Notification-Center, Isotope, Catalog-Manager, Meta-Models, Contao-Leads
 - Als Platzhalter in Insert-Tags: https://docs.contao.org/manual/de/artikelverwaltung/insert-tags/#verschiedenes
-
-
-
-
 
 
 ## Weitere Einsatzzwecke:
@@ -59,6 +56,7 @@ Anfrage für: ##form_herkunft##
 ```
 
 Beispiel für das Newsletter-Modul:
+
 ```
 {if flang==en}
   Your language is English.
@@ -68,9 +66,6 @@ Beispiel für das Newsletter-Modul:
   Couldn't assign a language.
 {endif}
 ```
-
-
-
 
 
 ## Welche Operatoren können bei Bedingungen gesetzt werden?
@@ -90,6 +85,7 @@ Generell empfiehlt es sich, keine Leerzeichen vor den Operatoren zu setzen. Mitt
 `{if value=="foo" || value=="bar"}`
 
 Es kann auch überprüft werden, ob ein gewisser Wert gesetzt ist:
+
 ```
 {if foo===true}
 {if foo===TRUE}
