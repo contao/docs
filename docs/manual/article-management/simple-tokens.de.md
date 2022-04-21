@@ -64,6 +64,7 @@ Beispiel für das Newsletter-Modul:
 ```
 
 
+
 ## Welche Operatoren können bei Bedingungen gesetzt werden?
 
 | Syntax      | Beschreibung                  |
