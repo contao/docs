@@ -30,7 +30,7 @@ Beispiel:
 ## Weitere Einsatzzwecke:
 `datei_von_##tstamp##.pdf` für Dateien erzeugt datei_von_1650437899.pdf
 
-`files/data/##form_broschuere##.pdf` Pfad zur PDF
+`files/data/##form_broschuere##.pdf` Pfad zur PDF-Datei
 
 Es ist ebenso möglich, Simple Tokens als Fallabfrage zu verwenden. Hierzu werden Simple Tokens nicht mehr mit `##` geschrieben, sondern mit beginnender und endender Klammer `{}`
 
