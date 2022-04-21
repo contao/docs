@@ -79,7 +79,7 @@ Generell empfiehlt es sich keine Leerzeichen vor den Operatoren zu setzen. Mitte
 
 `{if value=="foo" || value=="bar"}`
 
-Es kann auch überprüft werden ob ein gewisser Wert gesetzt ist:
+Es kann auch überprüft werden, ob ein gewisser Wert gesetzt ist:
 ```
 {if foo===true}
 {if foo===TRUE}
