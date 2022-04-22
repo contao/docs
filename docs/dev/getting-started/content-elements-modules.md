@@ -89,6 +89,8 @@ $GLOBALS['TL_LANG']['CTE']['my_content_element'][0] = 'My Content Element';
 $GLOBALS['TL_LANG']['CTE']['my_content_element'][1] = 'A short description for my new Content Element';
 ```
 
+Labels for other languages follow the same pattern. The respective files will be located in `contao/languages/XX/` with 
+`XX` being the code for the language (e.g. `de`). 
 
 Find out more about [content elements][1] and [front end modules][2] in the framework
 documentation.
