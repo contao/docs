@@ -58,7 +58,7 @@ Anfrage für: ##form_herkunft##
 Beispiel für das Newsletter-Modul:
 
 ```
-{if flang==en}
+{if flang=="en"}
   Your language is English.
 {elseif==de}
   Deine Sprache ist Deutsch.
