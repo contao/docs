@@ -60,7 +60,7 @@ Beispiel für das Newsletter-Modul:
 ```
 {if flang=="en"}
   Your language is English.
-{elseif==de}
+{elseif=="de"}
   Deine Sprache ist Deutsch.
 {else}
   Couldn't assign a language.
