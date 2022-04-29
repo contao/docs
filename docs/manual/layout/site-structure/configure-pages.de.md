@@ -219,6 +219,7 @@ werden.
 hilfreich, damit jede Domain ihr eigenes Standard-Favicon hat. Andernfalls könnte man nur eine einzelne, _physische_ `favicon.ico` Datei im 
 Document Root hinterlegen. Dadurch kann im Browser das korrekte Favicon pro Domain angezeigt werden, wenn Inhalte dargestellt werden, die
 keine HTML-Ausgabe beinhalten (wie zum Beispiel Bilder, PDFs, etc.).
+Für dieselbe Domain kann man nur einmal ein Favicon festlegen. Dieses muss in der Fallback-Sprache geschehen.
 
 {{% notice "warning" %}}
 Dies wird nicht funktionieren, wenn sich bereits eine physische `favicon.ico` Datei im Document Root befindet, da der Web Server diese Datei
@@ -232,6 +233,7 @@ Diese Funktion gibt keine zusätzlichen HTML Meta Tags auf der Seite aus.
 **Individuelle robots.txt-Anweisungen:** Hier kannst du eigene Direktiven für die `/robots.txt` URL der Domain eingeben. Dies ist besonders
 im Multidomain-Betrieb hilfreich, damit jede Domain ihre eigenen Direktiven haben kann. Andernfalls könnte man nur eine einzelne, 
 _physische_ `robots.txt` Datei im Document Root hinterlegen.
+Für dieselbe Domain kann man nur einmal robots.txt festlegen. Dieses muss in der Fallback-Sprache geschehen.
 
 {{% notice "warning" %}}
 Dies wird nicht funktionieren, wenn sich bereits eine physische `robots.txt` Datei im Document Root befindet, da der Web Server diese Datei
