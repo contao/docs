@@ -49,7 +49,7 @@ h1 { color: $mainCol; }
 p { color: rgb(0, 255, 0); }
 ```
 
-Selbstverständlich bieten die CSS-Präprozessoren viel mehr Möglichkeiten. Für unsere Beispiel reicht es aber aus.
+Selbstverständlich bieten die CSS-Präprozessoren viel mehr Möglichkeiten. Für unser Beispiel reicht es aber aus.
 
 Du kannst nun die Datei `theme.scss` in deinem Seitenlayout einbinden, analog zur üblichen Vorgehensweise mit 
 `.css`-Dateien. Die Datei `_elements.scss` muß hierbei nicht zusätzlich ausgewählt werden. Deine Webseite sollte im Anschluß 
