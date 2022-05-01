@@ -40,3 +40,8 @@ Die Optionen sind viel wichtiger:
 | `--max-depth`        | Dies ist die Tiefe der Hierarchie, die der Crawler durchsuchen wird. Die Wurzelseite ist im Grunde Ebene 1 und alle dort gefundenen Links gehören zur Ebene 2. Alle Links, die auf Ebene 2 gefunden werden, gehören zur Ebene 3 und so weiter. Standardmäßig ist keine maximale Tiefe konfiguriert. Je höher die Zahl, desto tiefer wird der Crawler suchen, aber es wird auch länger dauern. |
 | `--enable-debug-csv` | Standardmäßig werden die Ergebnisse in die Standardausgabe geschrieben. Du kannst hierüber alles in eine CSV-Datei schreiben lassen. |
 | `--debug-csv-path`   | Mit dieser Option kannst du den Standard-CSV-Dateipfad überschreiben, wenn du `--enable-debug-csv` verwendet hast. |
+
+**Hinweise**
+
+* Stelle sicher, dass die korrekte Domain im Startpunkt der Webseite eingetragen ist. Alternativ kann auch die Standard-Domain über den `router.request_context.host` Parameter festgelegt werden.
+* Geschützte Seiten können aktuell nur über das Backend indexiert werden.
