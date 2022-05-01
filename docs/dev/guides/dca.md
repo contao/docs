@@ -172,7 +172,9 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         ],
         'country' => [
             'inputType' => 'select',
-            'options' => \Contao\System::getCountries(),
+            'options_callback' => static function(): array {
+                return \Contao\System::getContainer()->get('contao.intl.countries')->getCountries();
+            },
             'eval' => ['tl_class' => 'w50', 'mandatory' => true, 'includeBlankOption' => true],
             'sql' => ['type' => 'string', 'length' => 2, 'default' => '']
         ],
@@ -186,7 +188,7 @@ record was last edited.
 
 For the other fields have a look at the [fields reference][4] to see all the possibilities
 for each field. For the `country` selection field we also used another feature:
-we are retrieving all countries directly from the system via `\Contao\System::getCountries()`.
+we are retrieving all countries directly from the system via the `contao.intl.countries` service.
 This gives us an associative array of all translated countries, indexed by their
 country code (e.g. `'at' => 'Austria'`).
 
@@ -297,7 +299,9 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         ],
         'country' => [
             'inputType' => 'select',
-            'options' => \Contao\System::getCountries(),
+            'options_callback' => static function(): array {
+                return \Contao\System::getContainer()->get('contao.intl.countries')->getCountries();
+            },
             'eval' => ['tl_class' => 'w50', 'mandatory' => true, 'includeBlankOption' => true],
             'sql' => ['type' => 'string', 'length' => 2, 'default' => '']
         ],
