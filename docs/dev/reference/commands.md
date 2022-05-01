@@ -113,8 +113,10 @@ The options are far more important so let's get to them right away:
 | `--debug-csv-path`   | This option allows you to override the default CSV file path, if you used `--enable-debug-csv`. |
 
 **Notes**
-1. If you have problems with the crawler, check if you have configured a domain on your root page.
-2. Protected pages can currently only be indexed via the backend.
+
+* Make sure you have defined the correct domain in either your website root or a default domain via the `router.request_context.host` parameter.
+* Protected pages can currently only be indexed via the backend.
+
 
 ## `contao:migrate`
 
