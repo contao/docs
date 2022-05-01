@@ -103,6 +103,37 @@ class ExampleFormElementController extends AbstractContentElementController
 ```
 
 
+## Database Connection
+
+Being able to operate on the database is of course a very common use case. Within Contao the database connection is provided via Symfony's
+[Doctrine Bundle][DoctrineBundle]. The bundle provides each configured database connection via its own service instance. The name of the
+service is `doctrine.dbal.[name]_connection` where `[name]` is the name of the database connection in your configuration. However, commonly
+you will only have one database in your Contao instance, the `default` connection. The default database connection will be available via
+the `database_connection` service (or `doctrine.dbal.default_connection`). All connection service instances will be of the type
+`Doctrine\DBAL\Connection`.
+
+```php
+use Doctrine\DBAL\Connection;
+
+class Example
+{
+    private $connection;
+
+    public function __construct(Connection $connection)
+    {
+        $this->connection = $connection;
+    }
+
+    public function __invoke(): void
+    {
+        $records = $this->connection->fetchAllAssociative("SELECT * FROM tl_foobar");
+
+        // …
+    }
+}
+```
+
+
 ## EntityCacheTags
 
 {{< version "4.13" >}}
@@ -466,3 +497,4 @@ class Example
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
 [RequestTokens]: /framework/request-tokens/
+[DoctrineBundle]: https://symfony.com/doc/current/reference/configuration/doctrine.html
