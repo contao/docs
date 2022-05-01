@@ -45,3 +45,8 @@ The options are far more important so let's get to them right away:
 | `--max-depth`        | This is the tree depth, the crawler is going to search. The root page is basically level 1 and all the links found there will be level 2. All the links found on level 2 will be level 3 and so on. By default, there is no max-depth configured. The higher the number, the deeper the crawler will search but it will also take longer. |
 | `--enable-debug-csv` | By default the subscriber results are written to the standard output. You can ask the command to write everything to a CSV file by passing this option. |
 | `--debug-csv-path`   | This option allows you to override the default CSV file path, if you used `--enable-debug-csv`. |
+
+**Notes**
+
+* Make sure you have defined the correct domain in either your website root or a default domain via the `router.request_context.host` parameter.
+* Protected pages can currently only be indexed via the backend.
