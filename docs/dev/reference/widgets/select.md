@@ -54,13 +54,14 @@ If you simply want to select an option from a fixed set.
 ```php
 // ...
 'isVisible' => [
-    'label' => 'Visibility', 'Whether this element is visible on the page'],
+    'label' => ['Visibility', 'Whether this element is visible on the page'],
+
     'inputType' => 'select',
-    'options' => [ 'always', 'never', 'auto' ],
+    'options' => ['always', 'never', 'auto'],
+
     'sql' => [
         'type' => 'string',
         'length' => 8, // Must be large enough to store all possible values
-        'notnull' => true,
         'default' => 'auto',
     ],
 ],
@@ -91,7 +92,6 @@ If you simply want to select one option from a fixed set of grouped options.
     'sql' => [
         'type' => 'string',
         'length' => 16, // Must be large enough to store all possible options
-        'notnull' => true,
         'default' => '',
     ],
 ],
@@ -118,7 +118,6 @@ You can also dynamically generate the options array to filter them as you wish. 
     'sql' => [
         'type' => 'string',
         'length' => 16, // Must be large enough to store all possible options
-        'notnull' => true,
         'default' => '',
     ],
 ],
