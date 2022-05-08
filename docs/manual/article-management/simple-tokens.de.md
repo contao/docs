@@ -80,7 +80,9 @@ Beispiel für das Newsletter-Modul:
 | `<=`        | Kleiner gleich                |
 | `>=`        | Größer gleich                 |
 
-Generell empfiehlt es sich, keine Leerzeichen vor den Operatoren zu setzen. Mittels `||` und `&&` können auch mehrere Werte per AND/OR abgefragt werden:
+Die Operatoren können mit oder ohne Leerzeichen gesetzt werden. Es funktioniert daher sowohl `{if form_name != ""}` als auch `{if form_name!=""}`.
+
+Mittels `||` und `&&` können auch mehrere Werte per AND/OR abgefragt werden:
 
 `{if value=="foo" || value=="bar"}`
 
