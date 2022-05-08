@@ -1,4 +1,4 @@
-Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, Inhalte ausgeben können. Der Unterschied ist jedoch, dass Simple Tokens nicht nur Inhalte ausgeben können, sondern auch Werte mit Fallabfragen und reguläre Ausdrücke überprüft und ausgegeben werden können. Die Entwickler entscheiden, welche Simple Tokens zur Verfügung stehen. Ab Contao 4.12 sind Simple Tokens teil der Symfony Expression Language können die Einsatzzwecke noch erweitert werden. Simple Tokens sind seit der Version Contao 2.x fester Bestandteil von Contao.
+Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, Inhalte ausgeben können. Der Unterschied ist jedoch, dass Simple Tokens nicht nur Inhalte ausgeben können, sondern auch Werte mit Fallabfragen und regulären Ausdrücken analysiert werden können. Simple Tokens sind seit der Version Contao 2.x fester Bestandteil von Contao. Die Entwickler entscheiden, welche Simple Tokens zur Verfügung stehen. Es empfiehlt sich in die jeweilige Dokumentation der Extension hineinzusehen. Ab Contao 4.12 sind Simple Tokens teil der Symfony Expression Language, mit dem die Einsatzzwecke noch erweitert werden können.
 
 
 ## Wie verwende ich Simple Tokens?
@@ -30,7 +30,7 @@ Beispiel:
 ## Weitere Einsatzzwecke:
 `datei_von_##tstamp##.pdf` für Dateien erzeugt datei_von_1650437899.pdf
 
-`files/data/##form_broschuere##.pdf` Pfad zur PDF-Datei
+`files/data/##form_broschuere##.pdf` Pfad zur PDF-Datei mit individuellen Dateinamen
 
 Es ist ebenso möglich, Simple Tokens als Fallabfrage zu verwenden. Hierzu werden Simple Tokens nicht mehr mit `##` geschrieben, sondern mit öffnender und schließender Klammer `{}`
 
@@ -75,6 +75,7 @@ Beispiel für das Newsletter-Modul:
 | `==`        | Expliziter Vergleich          |
 | `!=`        | Ungleich                      |
 | `===`       | Strikt mit Typ-Konvertierung  |
+| `!==`       | Nicht identisch               |
 | `<`         | Kleiner als                   |
 | `>`         | Größer als                    |
 | `<=`        | Kleiner gleich                |
@@ -84,14 +85,14 @@ Die Operatoren können mit oder ohne Leerzeichen gesetzt werden. Es funktioniert
 
 Mittels `||` und `&&` können auch mehrere Werte per AND/OR abgefragt werden:
 
-`{if value=="foo" || value=="bar"}`
+`{if form_value=="foo" || form_value=="bar"}`
 
 Es kann auch überprüft werden, ob ein gewisser Wert gesetzt ist:
 
 ```
-{if foo===true}
-{if foo===TRUE}
-{if foo===false}
-{if foo===FALSE}
-{if foo===null}
+{if form_value===true}
+{if form_value===TRUE}
+{if form_value===false}
+{if form_value===FALSE}
+{if form_value===null}
 ```
