@@ -196,4 +196,3 @@ class IndexPageListener
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
 [contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
 [ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle
-[ContaoFolderStructure] /getting-started/starting-development/
