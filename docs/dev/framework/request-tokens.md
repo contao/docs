@@ -85,8 +85,21 @@ class ExampleService
 }
 ```
 
+{{% notice tip %}}
+Since Contao 4.13 you can omit getting the `%contao.csrf_token_name%` by explicitly using the `ContaoCsrfTokenManager`,
+that now features a `getDefaultTokenValue()` method:
 
-## Deprecated Constants And Configuration Settings
+```php
+// before:
+$csrfTokenManager->getToken($csrfTokenName)->getValue();
+
+// after:
+$contaoCsrfTokenManager->getDefaultTokenValue();
+```
+{{% /notice %}}
+
+
+## Deprecated Constants, Configuration Settings and more
 
 For historical reasons, you may still come across the following constants or configuration settings.
 They are all deprecated and you must not use them anymore. Register your own route and implement your own
@@ -97,6 +110,8 @@ handling as outlined above, if you need to disable the CSRF protection for some 
 * The localconfig configuration value `requestTokenWhitelist`. It can contain an exact hostname or regular expression.
   It will disable CSRF protection only on hostname match.
 
+Since Contao 4.13 using the `{{request_token}}` insert tag is deprecated as well. Instead, you should retrieve the value
+from the CSRF token manager in your Controller and pass it on to the template.
 
 [OWASP_CSRF]: https://owasp.org/www-community/attacks/csrf
 [OWASP_Double_Submit_Cookie]: https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie
