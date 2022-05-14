@@ -131,6 +131,8 @@ legacy registered hooks.
 {{< version "4.8" >}}
 
 Contao also supports its own annotation formats via the [Service Annotation Bundle][ServiceAnnotationBundle].
+This means that it is only necessary to create one file for the respective adaptation when using Contao's default
+way of automatically registering services under the `App\` namespace within the `src/` folder.
 Hooks can be registered using the `@Hook` Annotation. See the following example:
 
 ```php
