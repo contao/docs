@@ -334,9 +334,9 @@ command check via load_callback).
 * `string` Table
 * `bool` Whether this is a circular reference of the tree view
 * `array` Clipboard data
-* `array` Children
-* `string` "Previous" label
-* `string` "Next" label
+* `array`/`null` Children
+* `string`/`null` "Previous" label
+* `string`/`null` "Next" label
 
 **return:** `string` HTML for additional buttons
 {{% /expand %}}
