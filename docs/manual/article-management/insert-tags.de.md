@@ -204,7 +204,7 @@ Insert-Tags, die als Ausgabe eine ID oder Alias haben, können grundsätzlich ve
 
 | Insert-Tag | Ausgabe |
 |:-----------|:--------|
-| `{{link::{{page::id}}\|absolute}}` | Generiert einen Link mit der absoluten URL zu der aktuell aufgerufenen Seite. |
+| `{{link::{{page::id}}::absolute}}` | Generiert einen Link mit der absoluten URL zu der aktuell aufgerufenen Seite. |
 | `{{link_url::{{page::id}}}}#sprungmarke` | Generiert einen relativen Link mit einer Sprungmarke (Anker) zu einem Bereich in der aktuellen Seite (nützlich für Onepager). |
 
 {{% notice info %}}
