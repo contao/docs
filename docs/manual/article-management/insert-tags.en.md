@@ -194,7 +194,7 @@ Insert tags that have an ID or alias as output can generally be nested.
 
 | Insert tag | Description |
 |:---------- |:------------|
-| `{{link::{{page::id}}\|absolute}}` | Generates a link with the absolute URL to the currently viewed page. |
+| `{{link::{{page::id}}::absolute}}` | Generates a link with the absolute URL to the currently viewed page. (In **Contao 4.9** the flag `\|absolute` needs to be used instead of the `::absolute` parameter) |
 | `{{link_url::{{page::id}}}}#anchor` | Generates a relative link with a jump mark (anchor) to an area in the current page (useful for onepagers). |
 
 {{% notice info %}}
