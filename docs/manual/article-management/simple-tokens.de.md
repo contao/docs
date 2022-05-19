@@ -2,10 +2,12 @@ Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, Inhalte ausgeben kö
 
 
 ## Wie verwende ich Simple Tokens?
+
 Simple Tokens beginnen und enden mit zwei Rauten `##`. Welche Werte ausgegeben werden können, ist in dem jeweiligen Backend-Modul oder Extension zu finden.
 
 
 ## Welche Simple Tokens stehen zur Verfügung?
+
 Simple Tokens können nur auf dafür vorgesehene Backend-Module bzw. Extensions verwendet werden. Sofern ein Simple Token nicht unterstützt wird, erfolgt eine leere Ausgabe und ein Log-Eintrag, dass ein Simple Token nicht ersetzt werden konnte.
 
 Beispiel:
@@ -20,6 +22,7 @@ Beispiel:
 
 
 ## Wo können Simple Tokens eingesetzt werden?
+
 - Benutzer: Modultyp 'Registrierung'
 - Benutzer: Modultyp 'Passwort vergessen'
 - Newsletter: 'Newsletterleser', 'Abonnieren' und 'Kündigen' (https://docs.contao.org/manual/de/core-erweiterung/newsletter/newsletter-verwaltung/#newsletter-personalisieren)
@@ -28,6 +31,7 @@ Beispiel:
 
 
 ## Weitere Einsatzzwecke:
+
 `datei_von_##tstamp##.pdf` für Dateien erzeugt datei_von_1650437899.pdf
 
 `files/data/##form_broschuere##.pdf` Pfad zur PDF-Datei mit individuellen Dateinamen
