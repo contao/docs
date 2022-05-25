@@ -600,7 +600,7 @@ dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMa
 Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese "URL enkodiert" werden. Es gibt
 verschiedene Online-Services, mit denen man auf einfache Weise eine beliebige Zeichenfolgen URL-encoden kann, z. B.
 [urlencoder.org](https://www.urlencoder.org/). Enkodiere den Benutzernamen und das Passwort separat, nicht gemeinsam
-mit dem Doppelpunkt. Die jeweiliege Kodierung eines Sonderzeichen muß mit % eingeleitet werden: Also z.B. %%23 für das Sonderzeichen #.
+mit dem Doppelpunkt. Bei Verwendung der `config.yml` muß die jeweiliege Kodierung eines Sonderzeichen mit % eingeleitet werden: Also z.B. %%23 für das Sonderzeichen #.
 {{% /notice %}}
 
 {{% notice tip %}}
