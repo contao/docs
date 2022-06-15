@@ -90,7 +90,7 @@ regarding pricing or licensing and more.
 
 {{% notice info %}}
 Note that certain information on packagist.org is cached up to 12 hours. If you think your extension
-fulfills all the requirements listed above, you might have to wait for the next day for the search index
+meets all the above requirements, you may have to wait for the next day for the search index
 to pick it up!
 {{% /notice %}}
 
