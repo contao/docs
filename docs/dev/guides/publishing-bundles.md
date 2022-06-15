@@ -88,6 +88,12 @@ or not of `"type": "contao-bundle"`, you can still add it to the
 with a link to your homepage, where you can provide custom installation instructions, information
 regarding pricing or licensing and more.
 
+{{% notice info %}}
+Note that certain information on packagist.org is cached up to 12 hours. If you think your extension
+fulfills all the requirements listed above, you might have to wait for the next day for the search index
+to pick it up!
+{{% /notice %}}
+
 
 ## Private and commercial packages
 
