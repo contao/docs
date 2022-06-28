@@ -22,7 +22,7 @@ expect a return value.
 
 2. *string* `$password`
 
-    The new password (*encrypted*).
+    The new password (*not encrypted*).
 
 3. *\Contao\Module* `$module`
 
