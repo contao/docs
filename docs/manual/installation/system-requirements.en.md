@@ -232,6 +232,7 @@ of the project in order to be prepared for future versions of contao:
   }
 }
 ```
+
 see also: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
 
 ## Provider-specific settings
