@@ -229,6 +229,19 @@ automatisch anstelle von `/public` verwendet.)
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 {{% /notice %}}
 
+({{< version-tag "4.13" >}} Wenn du noch den `/web`-Ordner verwendest,
+dann definiere diesen entsprechend, um für zukünftige Contao Versionen gerüstet zu sein:
+
+```json
+{
+  "extra": {
+    "public-dir": "web"
+  }
+}
+```
+
+siehe auch: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
+
 ## Providerspezifische Einstellungen
 
 Es gibt ein paar wenige große Internet Service Provider, die spezielle Einstellungen für den Betrieb von Contao 
