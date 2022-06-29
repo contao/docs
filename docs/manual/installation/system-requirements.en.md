@@ -222,6 +222,19 @@ Example: `example.com` points to the directory `/www/example/web`
 Therefore, a separate (sub)domain is required for each Contao installation.
 {{% /notice %}}
 
+{{< version-tag "4.13" >}} If your installation is still using the folder `/web` as its public directory, explicitly set it in the `composer.json`
+of the project in order to be prepared for future versions of contao:
+
+```json
+{
+  "extra": {
+    "public-dir": "web"
+  }
+}
+```
+
+see also: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
+
 ## Provider-specific settings
 
 There are a few major Internet service providers that offer special settings for running Contao. Fortunately, they are 
