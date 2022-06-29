@@ -61,6 +61,19 @@ Further abbreviations are added in "Edit multiple" mode:
 | `[Shift]`             | Select&nbsp;several&nbsp;check&nbsp;boxes   | Selects several check boxes by holding down the shift key in "edit multiple" mode.                  |
 
 
+## Click to edit
+
+You can edit elements by clicking √them, without having to use the edit icon. The following actions are supported:
+
+- `[Ctrl] + click`: edit the element
+- `[Ctrl] + [Shift] + click`: edit the element settings
+
+On macOS, the command key is used instead of the control key:
+
+- `[Cmd] + click`: edit the element
+- `[Cmd] + [Shift] + click`: edit the element settings
+
+
 ## Keyboard shortcuts under Windows, Linux and Mac
 
 The described shortcuts should work on your current browser, but might be different on other operating systems or browsers.
