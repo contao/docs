@@ -222,8 +222,8 @@ Example: `example.com` points to the directory `/www/example/web`
 Therefore, a separate (sub)domain is required for each Contao installation.
 {{% /notice %}}
 
-({{< version-tag "4.13" >}} When your installation is still using the folder `/web` as public directory, please explicitly set it in the `composer.json`
-of the project, to be prepared for future version of contao:
+{{< version-tag "4.13" >}} If your installation is still using the folder `/web` as its public directory, explicitly set it in the `composer.json`
+of the project in order to be prepared for future versions of contao:
 
 ```json
 {

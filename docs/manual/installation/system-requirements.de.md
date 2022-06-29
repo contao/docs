@@ -229,7 +229,7 @@ automatisch anstelle von `/public` verwendet.)
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 {{% /notice %}}
 
-({{< version-tag "4.13" >}} Wenn du noch den `/web`-Ordner verwendest,
+{{< version-tag "4.13" >}} Wenn du noch den `/web`-Ordner verwendest,
 dann definiere diesen entsprechend, um für zukünftige Contao Versionen gerüstet zu sein:
 
 ```json
