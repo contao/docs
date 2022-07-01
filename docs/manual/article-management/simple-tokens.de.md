@@ -87,7 +87,7 @@ Beispiel für das Newsletter-Modul:
 
 Die Operatoren können mit oder ohne Leerzeichen gesetzt werden. Es funktioniert daher sowohl `{if form_name != ""}` als auch `{if form_name!=""}`.
 
-Ab 4.13 kann mittels `&&` und `||` auch mehrere Werte per AND/OR abgefragt werden:
+Ab 4.13 können mittels `&&` und `||` auch mehrere Werte per AND/OR abgefragt werden:
 
 `{if form_value=="foo" || form_value=="bar"}`
 
