@@ -1,9 +1,9 @@
-Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, Inhalte ausgeben können. Der Unterschied ist jedoch, dass Simple Tokens nicht nur Inhalte ausgeben können, sondern auch Werte mit Fallabfragen und regulären Ausdrücken analysiert werden können. Simple Tokens sind seit der Version Contao 2.x fester Bestandteil von Contao. Die Entwickler entscheiden, welche Simple Tokens zur Verfügung stehen. Es empfiehlt sich in die jeweilige Dokumentation der Extension hineinzusehen. Ab Contao 4.12 sind Simple Tokens teil der Symfony Expression Language, mit dem die Einsatzzwecke noch erweitert werden können.
+Simple Tokens sind Platzhalter, die ebenso wie Insert-Tags, Inhalte ausgeben können. Der Unterschied ist jedoch, dass Simple Tokens nicht nur Inhalte ausgeben können, sondern auch Werte mit Fallabfragen und regulären Ausdrücken analysiert werden können. Simple Tokens sind seit der Version Contao 2.x fester Bestandteil von Contao. Im Gegensatz zu Insert-Tags, die global eingesetzt werden können, entscheiden bei Simple Tokens die Entwickler*innen, welche Simple Tokens zur Verfügung stehen und wo diese eingesetzt werden können. Es empfiehlt sich in die jeweilige Dokumentation der Extension hineinzusehen. Ab Contao 4.10 nutzen Simple Tokens die Symfony Expression Language, mit der die Einsatzzwecke noch erweitert werden können.
 
 
 ## Wie verwende ich Simple Tokens?
 
-Simple Tokens beginnen und enden mit zwei Rauten `##`. Welche Werte ausgegeben werden können, ist in dem jeweiligen Backend-Modul oder Extension zu finden.
+Die Ausgabe von Simple Tokens erfolgt mit zwei umschließenden Rauten `##`. Welche Werte ausgegeben werden können, ist in dem jeweiligen Backend-Modul oder Extension zu finden. Innerhalb von Fallabfragen, werden die Rauten weggelassen.
 
 
 ## Welche Simple Tokens stehen zur Verfügung?
@@ -18,7 +18,7 @@ Beispiel:
 | `##flang##`         | Aktuell verwendete Sprache                                |                             |
 | `##domain##`        | Aktuelle Domain                                           | Newsletter                  |
 | `##link##`          | Link zum Newsletter                                       | Newsletter                  |
-| `##channels##`      | Abonnierter News-Channel                                   | Newsletter                  |
+| `##channels##`      | Abonnierter News-Channel                                  | Newsletter                  |
 
 
 ## Wo können Simple Tokens eingesetzt werden?
