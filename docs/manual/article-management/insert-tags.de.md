@@ -227,7 +227,7 @@ Verfügbare Flags:
 
 | Flag                | Beschreibung                                                             | Weitere Informationen                             |
 |:--------------------|:-------------------------------------------------------------------------|:--------------------------------------------------|
-| `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           |                                                   |
+| `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           | (seit **Contao 4.13** veraltet, ab **Contao 5.0** nicht mehr verfügbar) |
 | `refresh`           | Erstellt die Ausgabe bei jeder Anfrage neu.                              |                                                   |
 | `attr`              | Wandelt Sonderzeichen in Entities um, damit der Insert-Tag in einem HTML-Attribut (z. B. `title="…"`) verwendet werden kann. | siehe&nbsp;`StringUtil::specialcharsAttribute()` |
 | `urlattr`           | Wandelt Sonderzeichen in Entities um, gleich wie `attr`. Zusätzlich werden Doppelpunkte URL-enkodiert, um unerlaubte Protokolle wie `javascript:` zu verhindern. | siehe&nbsp;`StringUtil::specialcharsUrl()` |
