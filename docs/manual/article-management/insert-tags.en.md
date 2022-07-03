@@ -157,6 +157,7 @@ The following insert tags allow you to perform various tasks, such as inserting 
 
 | Insert tag | Description |
 | ---------- | ----------- |
+| `{{fragment::*}}` | Renders the nested insert tags using an ESI fragment. (In **Contao 4.9** the flag `\|uncached` needs to be used instead) |
 | `{{date}}` | This tag will be replaced with the current date according to the global date format. |
 | `{{date::*}}` | This tag will be replaced with the current date according to an individual date format. Contao supports all date and time formats that can be parsed with the [PHP function date](https://www.php.net/manual/en/function.date.php). `{{date::d.m.Y}}` |
 | `{{format_date::*::*}}` | {{< version-tag "4.10" >}} This tag can be used to format a UNIX timestamp or a *standardized date*. The first parameter is the timestamp or date. The second parameter is the date format (see `{{date::*}}`) and is optional. If the date format is not specified, the date is output according to the global date format. This tag makes sense in combination with other tags or simple tokens to (re)format the output date or timestamp. Examples: `{{format_date::{{user::tstamp}}::d.m.Y}}`, `{{format_date::##member_dateAdded##}}`. If the date format cannot be recognized automatically, it can be used instead `{{convert_date::*::*::*}}`. |
