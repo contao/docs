@@ -215,7 +215,7 @@ Available flags:
 
 | Flag | Description | Further Information |
 | ---- | ----------- | ------------------- |
-| `uncached` | Receives the tag when writing the cache file. |  |
+| `uncached` | Receives the tag when writing the cache file. | (deprecated since **Contao 4.13**, not available anymore in **Contao 5.0**). |
 | `refresh` | Rebuilds the output on each request. |  |
 | `attr` | Converts special characters into entities to make usage of the insert tag possible inside HTML attributes (like `title=""`) | see&nbsp;`StringUtil::specialcharsAttribute()` |
 | `urlattr` | Converts special characters into entities, same as `attr`. Additionally, colons get URL encoded to disable disallowed protocols like `javascript:`. | see&nbsp;`StringUtil::specialcharsUrl()` |
