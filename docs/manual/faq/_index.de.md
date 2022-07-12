@@ -82,6 +82,19 @@ Es handelt sich um einen Hinweis wie du den Strict Mode aktivieren kannst. Weite
 
 ## Konfiguration und Einstellung
 
+{{% expand "Wie kann ich den Contao Backend-Pfad ändern?" %}}
+{{< version-tag "4.13" >}} Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `route_prefix` hinzufügen.
+Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
+einmalig den Anwendungs-Cache leeren.
+
+```yml
+# config/config.yml
+contao:
+    backend:
+        route_prefix: '/myadmin'
+```
+{{% /expand %}}
+
 {{% expand "Es wird keine E-Mail über mein Formular versendet, was muss ich machen?" %}}
 Überprüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#e-mail-versand-konfiguration) deines Hosters oder 
 füge diese hinzu. Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die 
