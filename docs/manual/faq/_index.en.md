@@ -80,6 +80,17 @@ This is a hint how to activate the strict mode. More information can be found [h
 
 ## Configuration and adjustment
 
+{{% expand "How can I change the Contao backend path?" %}}
+{{< version-tag "4.13" >}} You can add the entry `route_prefix` in config.yml and then you have to empty the application cache once using the Contao Manager or the console.
+
+```yml
+# config/config.yml
+contao:
+    backend:
+        route_prefix: '/myadmin'
+```
+{{% /expand %}}
+
 {{% expand "No e-mail is sent via my Form, what do I have to do?" %}}
 Check the [SMTP details](/en/system/settings/#e-mail-sending-configuration) of your hoster in your `parameters.yml` or add them if missing.
 Then you have to empty the application cache once via Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") 
