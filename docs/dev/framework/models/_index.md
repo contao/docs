@@ -129,7 +129,7 @@ By default, `findOneBy()` always returns a `Model` object, `findBy()` always ret
 
 A few exceptions are `findByPk()`, `findById()` and `findByIdOrAlias()`. These methods always return a Model.
 
-For more information, please have a look into the respective Model classes on [GitHub](https://github.com/contao/contao/tree/master/core-bundle/src/Resources/contao/models).
+For more information, please have a look into the respective Model classes on [GitHub](https://github.com/contao/contao/tree/5.0/core-bundle/src/Resources/contao/models).
 
 
 ## Creating your own Model

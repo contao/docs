@@ -6,7 +6,7 @@ aliases:
 ---
 
 
-The [PaletteManipulator](https://github.com/contao/contao/blob/master/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA][DCAdocs], e.g. add fields to the back end of an existing DCA.
+The [PaletteManipulator](https://github.com/contao/contao/blob/5.0/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA][DCAdocs], e.g. add fields to the back end of an existing DCA.
 
 
 ## Introduction
