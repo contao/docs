@@ -225,7 +225,7 @@ HTML5 data attributes, however, we will create a new, additional input field for
 extend the Contao [Data Container Array](https://docs.contao.org/dev/reference/dca/) (DCA) for this purpose.
 
 In the developer documentation you can find an [example](https://docs.contao.org/dev/getting-started/dca/) of Contao 
-DCA manipulation. The Contao file »[tl_content.php](https://github.com/contao/core-bundle/blob/master/src/Resources/contao/dca/tl_content.php)« and the corresponding database table `tl_content` is responsible for the content elements:
+DCA manipulation. The Contao file »[tl_content.php](https://github.com/contao/contao/blob/4.13/core-bundle/src/Resources/contao/dca/tl_content.php)« and the corresponding database table `tl_content` is responsible for the content elements:
 
 If not already there, create a new directory »contao/dca« in your Contao root directory with a file »tl_content.php«:
 
