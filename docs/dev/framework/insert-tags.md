@@ -83,6 +83,9 @@ add the `uncached` flag whenever used.
 <div>{{rot13::Payload|uncached}}</div>
 ```
 
+{{% notice warning %}}
+Using the `uncached` flag is deprecated and doesn’t work in Contao 5.0 anymore. Use the `{{fragment::*}}` insert tag instead.
+{{% /notice %}}
 
 [ReplaceInsertTagsHook]: /reference/hooks/replaceInsertTags/
 [FrameworkHooks]: /framework/hooks/
