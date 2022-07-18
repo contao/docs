@@ -298,7 +298,8 @@ body[data-url*="/reference/hooks/z"] h1 {
 }
 
 /* show level 3 when parent is active */
-#sidebar ul.topics > li.parent > ul > li.active > ul {
+#sidebar ul.topics > li.parent > ul > li.active > ul,
+#sidebar ul.topics > li.parent > ul > li.parent > ul {
     display: block;
 }
 
