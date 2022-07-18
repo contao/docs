@@ -291,13 +291,14 @@ body[data-url*="/reference/hooks/z"] h1 {
 }
 
 /* hide level 3 in general */
+#sidebar ul.topics > li > ul > li > ul,
+#sidebar ul.topics > li.active > ul > li > ul,
 #sidebar ul.topics > li.parent > ul > li > ul {
     display: none;
 }
 
 /* show level 3 when parent is active */
-#sidebar ul.topics > li.parent > ul > li.active > ul,
-#sidebar ul.topics > li.parent > ul > li.parent > ul {
+#sidebar ul.topics > li.parent > ul > li.active > ul {
     display: block;
 }
 
