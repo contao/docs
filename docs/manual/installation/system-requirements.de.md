@@ -98,6 +98,11 @@ führen.
 
 ### Mindestanforderungen an PHP
 
+#### Contao 5.0 and später
+
+- **PHP** Version 8.1.0 oder höher ist erforderlich.
+
+
 #### Contao 4.11 und später
 
 - **PHP** Version 7.3.0 oder höher ist erforderlich.
