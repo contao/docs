@@ -229,7 +229,7 @@ das Contao [Data Container Array](https://docs.contao.org/dev/reference/dca/) (D
 
 In der Developer Documentation findest du [ein Beispiel](https://docs.contao.org/dev/getting-started/dca/) zur
 Contao [DCA](https://docs.contao.org/dev/framework/dca/) Manipulation. In Zusammenhang mit Inhaltselementen ist hierbei 
-die Contao-Datei [tl_content.php](https://github.com/contao/core-bundle/blob/master/src/Resources/contao/dca/tl_content.php) 
+die Contao-Datei [tl_content.php](https://github.com/contao/contao/blob/4.13/core-bundle/src/Resources/contao/dca/tl_content.php) 
 und die entsprechende Datenbanktabelle `tl_content` verantwortlich die wir wie folgt erweitern:
 
 Sofern noch nicht vorhanden, erstellst du dir in deinem Contao-Hauptverzeichnis ein neues Verzeichns `contao/dca` mit 
