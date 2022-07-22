@@ -555,3 +555,8 @@ option {
 #prefooter > hr {
     display: none;
 }
+
+/* Introduce gap between two consecutive code examples */
+.highlight + .highlight {
+    margin-top: 0.5em;
+}
