@@ -169,7 +169,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['palettes']['custom_field'] =
 
 [FormGenerator]: https://docs.contao.org/manual/en/form-generator/
 [DcaFields]: /reference/dca/fields/
-[ContaoCoreWidgets]: https://github.com/contao/contao/tree/5.0/core-bundle/src/Resources/contao/widgets
+[ContaoCoreWidgets]: https://github.com/contao/contao/tree/5.0/core-bundle/contao/widgets
 [TemplateInheritance]: /framework/templates/#template-inheritance
-[ContaoCoreFormFields]: https://github.com/contao/contao/tree/5.0/core-bundle/src/Resources/contao/forms
-[ContaoCoreFormFieldTemplates]: https://github.com/contao/contao/tree/5.0/core-bundle/src/Resources/contao/templates/forms
+[ContaoCoreFormFields]: https://github.com/contao/contao/tree/5.0/core-bundle/contao/forms
+[ContaoCoreFormFieldTemplates]: https://github.com/contao/contao/tree/5.0/core-bundle/contao/templates/forms
