@@ -110,10 +110,10 @@ to the controller's main method. The controller returns the parsed template
 as a response.
 
 
-## Options
+## Registration
 
-The `contao.content_element` tag can be configured further more. The following
-options are available.
+As mentioned previously a content element is registered by registering a controller as a service and tagging it with the 
+`contao.content_element` service tag. The service tag supports the following options:
 
 | Option   | Type      | Description                                                                                                                               |
 | -------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------|
@@ -124,7 +124,115 @@ options are available.
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |
 | method   | `string`  | _Optional:_  Which method should be invoked on the controller.                                                                            |
 
-A more complex example of a Content Element could look like this.
+Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
+
+{{< tabs groupId="service-config-content-element" >}}
+
+{{% tab name="Attribute" %}}
+{{< version-tag "4.13" >}}
+
+A content element can be registered using the `AsContentElement` PHP attribute.
+
+```php
+// src/Controller/ContentElement/ExampleController.php
+namespace App\Controller\ContentElement;
+
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\ContentModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+#[AsContentElement(category:'texts')]
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+
+```php
+// src/Controller/ContentElement/ExampleController.php
+namespace App\Controller\ContentElement;
+
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\ContentModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+#[AsContentElement('example', category:'texts', template:'ce_example', renderer:'forward', method:'__invoke')]
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="Annotation" %}}
+{{< version-tag "4.8" >}}
+
+A content element can be registered using the `ContentElement` annotation.
+
+```php
+// src/Controller/ContentElement/ExampleController.php
+namespace App\Controller\ContentElement;
+
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\ContentModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @ContentElement(category="texts")
+ */
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+
+```php
+// src/Controller/ContentElement/ExampleController.php
+namespace App\Controller\ContentElement;
+
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\ContentModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @ContentElement("example", category="texts", template="ce_example", renderer="forward", method="__invoke")
+ */
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{< /tabs >}}
 
 ```yaml
 # config/services.yaml
