@@ -110,7 +110,7 @@ use Contao\DataContainer;
 class ModuleCallbackListener
 {
     /**
-     * @Callback(tablet="tl_module", target="list.label.group", priority=100)
+     * @Callback(table="tl_module", target="list.label.group", priority=100)
      */
     public function onGroupCallback(string $group, string $mode, string $field, array $record, DataContainer $dc): string
     {
@@ -222,7 +222,7 @@ use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\DataContainer;
 
 /**
- * @Callback(tablet="tl_module", target="list.label.group", priority=100)
+ * @Callback(table="tl_module", target="list.label.group", priority=100)
  */
 class ModuleCallbackListener
 {
