@@ -65,7 +65,8 @@ way of automatically registering services under the `App\` namespace within the 
 
 {{< tabs groupId="serviceConfig" >}}
 {{% tab name="Attribute" %}}
-{{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) with which you can tag your service to be registered as a hook.
+{{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
+since **PHP 8**) with which you can tag your service to be registered as a hook.
 
 ```php
 // src/EventListener/ParseArticlesListener.php

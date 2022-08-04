@@ -59,117 +59,102 @@ Registering DCA callbacks is similar to [registering to hooks][1]. See the
 callback you are subscribing to, your callback will receive a certain sets of
 arguments and is expected to return certain data - or _void_.
 
-For a `list.label.group` callback for example your callback might look like
-this:
+As of Contao **4.13**, there are four different ways of subscribing to a hook. The recommended way is using _PHP attributes_ together with 
+[invokable services](#invokable-services). Which one you use depends on your setup. For example, if you still need to support PHP 7 you can
+use _annotations_. If you still develop callbacks for Contao **4.4** then you still need to use the _PHP array configuration_.
+
+{{% notice tip %}}
+Using attributes or annotations means it is only necessary to create one file for the respective adaptation when using Contao's default
+way of automatically registering services under the `App\` namespace within the `src/` folder.
+{{% /notice %}}
+
+For a `list.label.group` callback for example a callback might look like this:
+
+{{< tabs groupId="registering-dca-callbacks" >}}
+{{% tab name="Attribute" %}}
+{{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
+since **PHP 8**) with which you can tag your service to be registered as a callback.
 
 ```php
-// src/EventListener/DataContainer/ContentListener.php
+// src/EventListener/DataContainer/ModuleCallbackListener.php
 namespace App\EventListener\DataContainer;
 
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-class ContentListener
+class ModuleCallbackListener
 {
+    #[AsCallback(table: 'tl_module', target: 'list.label.group', priority: 100)]
     public function onGroupCallback(string $group, string $mode, string $field, array $record, DataContainer $dc): string
     {
-        // Custom logic
+        // Do something …
 
         return $group;
     }
 }
 ```
+{{% /tab %}}
 
+{{% tab name="Annotation" %}}
+{{% version-tag "4.8" %}}
 
-### Using Service Tagging
-
-{{< version "4.7" >}}
-
-Since Contao 4.7 DCA callbacks can be registered using the `contao.callback` service tag.
-Each tag can have the following options:
-
-| Option   | Type      | Description                                                                                                           |
-| -------- | --------- | --------------------------------------------------------------------------------------------------------------------- |
-| name     | `string`  | Must be `contao.callback`.                                                                                            |
-| table    | `string`  | The target table of the DCA.                                                                                          |
-| target   | `string`  | The target callback within the DCA with the array positions separated by periods. The last element is the callback name - however the `_callback` suffix is optional. |
-| method   | `string`  | _Optional:_ the method name in the service. Otherwise the method name will be `onCallbacknameCallback` automatically. |
-| priority | `integer` | _Optional:_ priority of the callback. By default it will be executed _before_ all legacy callbacks according to the loading order of the bundles. Anything with higher than `0` will be executed before legacy callbacks. Anything with lower than `0` will be executed after legacy callbacks. |
-
-The [callback reference][2] lists the appropriate target names for the callbacks.
-
-Callback listeners can be added to the service configuration in the following way:
-
-```yml
-services:
-    App\DataContainer\ContentListener:
-        public: true
-        tags:
-            - { name: 'contao.callback', table: 'tl_content', target: 'config.onload', priority: -1 }
-            - { name: 'contao.callback', table: 'tl_content', target: 'fields.module.options' }
-```
-
-
-### Using Service Annotation
-
-{{< version "4.8" >}}
-
-Since Contao 4.8 DCA callbacks can be registered using the `Contao\CoreBundle\ServiceAnnotation\Callback`
-service annotation on the callback method:
+Contao also supports its own annotation formats via the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
 
 ```php
-// src/EventListener/DataContainer/NewsOnsubmitCallbackListener.php
+// src/EventListener/DataContainer/ModuleCallbackListener.php
 namespace App\EventListener\DataContainer;
 
 use Contao\CoreBundle\ServiceAnnotation\Callback;
 use Contao\DataContainer;
 
-class NewsOnsubmitCallbackListener
+class ModuleCallbackListener
 {
     /**
-     * @Callback(table="tl_news", target="config.onsubmit")
+     * @Callback(table="tl_module", target="list.label.group", priority=100)
      */
-    public function onSubmitCallback(DataContainer $dc): void
+    public function onGroupCallback(string $group, string $mode, string $field, array $record, DataContainer $dc): string
     {
         // Do something …
+
+        return $group;
     }
 }
 ```
+{{% /tab %}}
 
-{{< version "4.9" >}}
+{{% tab name="YAML" %}}
+{{< version-tag "4.5" >}} Since Contao 4.5 callbacks can be registered using the `contao.callback` service tag.
 
-If you are using an [invokable class][invoke], you can also define the annotation
-on the class itself:
-
-```php
-// src/EventListener/DataContainer/NewsOnsubmitCallbackListener.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\ServiceAnnotation\Callback;
-use Contao\DataContainer;
-
-/**
- * @Callback(table="tl_news", target="config.onsubmit")
- */
-class NewsOnsubmitCallbackListener
-{
-    public function __invoke(DataContainer $dc): void
-    {
-        // Do something …
-    }
-}
+```yaml
+# config/services.yaml
+services:
+    App\EventListener\DataContainer\ModuleCallbackListener:
+        tags:
+            - { name: contao.callback, table: tl_module, target: list.label.group, method: onGroupCallback, priority: 100 }
 ```
 
+The service tag can have the following options:
 
-### Using the PHP array configuration
+| Option   | Type      | Description                                                                                                |
+| -------- | --------- | ---------------------------------------------------------------------------------------------------------- |
+| name     | `string`  | Must be `contao.callback`.                                                                                 |
+| table    | `string`  | The name of the data container for which the callback should be registered.                                |
+| target   | `string`  | Which type of callback should be registered (see [reference](/reference/dca/callbacks/)).                  |
+| method   | `string`  | _Optional:_ the method name in the service - otherwise infered from the target (e.g. `onGroupCallback`).   |
+| priority | `integer` | _Optional:_ priority of the callback. By default it will be executed _before_ all legacy callbacks according to the loading order of the bundles. Anything with higher than `0` will be executed before legacy callbacks. Anything with lower than `0` will be executed after legacy callbacks. In Contao **5.0** this has changed though so that these callbacks are executed _after_ all legacy callbacks according to the loading order of the bundles, when using a default priority of `0`. |
+{{% /tab %}}
 
+{{% tab name="DCA" %}}
 This is the old way of using DCA callbacks prior to Contao **4.7**. The table
-`tl_content` and target definition `fields.module.options` translates to a PHP
+`tl_module` and target definition `list.label.group` translates to a PHP
 array configuration in the following way for example:
 
 ```php
-// contao/dca/tl_content.php
-$GLOBALS['TL_DCA']['tl_content']['fields']['module']['options_callback'] = [
-    \App\DataContainer\ContentListener::class, 'onModuleOptionsCallback'
+// contao/dca/tl_module.php
+use App\EventListener\DataContainer\ModuleCallbackListener;
+
+$GLOBALS['TL_DCA']['tl_module']['list']['label']['group_callback'] = [
+    ModuleCallbackListener::class, 'onGroupCallback'
 ];
 ```
 
@@ -182,17 +167,128 @@ these callbacks:
 
 Also note that the above example is a _singular_ callback, i.e. it only
 supports _one_ subscriber. For callbacks that support multiple callback
-subscribers you'll have to append the callable:
+subscribers you will have to append the callable:
 
 ```php
 // contao/dca/tl_content.php
+use App\EventListener\DataContainer\ContentCallbackListener;
+
 $GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = [
-    \App\DataContainer\ContentListener::class, 'onLoadCallback'
+    ContentCallbackListener::class, 'onLoadCallback'
 ];
 ```
 
-See the [reference][2] for which callbacks support multiple subscribers and
+See the [reference](/reference/dca/callbacks/) for which callbacks support multiple subscribers and
 which do not.
+{{% /tab %}}
+{{< /tabs >}}
+
+
+### Invokable Services
+
+{{< version-tag "4.9" >}} You can also use [invokable classes][invoke] for your services. If a service is
+tagged with `contao.hook` and no method name is given, the `__invoke` method will
+be called automatically. This also means that you can define the service annotation
+on the class, instead of a method:
+
+{{< tabs groupId="registering-dca-callbacks" >}}
+{{% tab name="Attribute" %}}
+```php
+// src/EventListener/DataContainer/ModuleCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback(table: 'tl_module', target: 'list.label.group', priority: 100)]
+class ModuleCallbackListener
+{
+    public function __invoke(string $group, string $mode, string $field, array $record, DataContainer $dc): string
+    {
+        // Do something …
+
+        return $group;
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="Annotation" %}}
+```php
+// src/EventListener/DataContainer/ModuleCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\DataContainer;
+
+/**
+ * @Callback(table="tl_module", target="list.label.group", priority=100)
+ */
+class ModuleCallbackListener
+{
+    public function __invoke(string $group, string $mode, string $field, array $record, DataContainer $dc): string
+    {
+        // Do something …
+
+        return $group;
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="YAML" %}}
+```yaml
+# config/services.yaml
+services:
+    App\EventListener\DataContainer\ModuleCallbackListener:
+        tags:
+            - { name: contao.callback, table: tl_module, target: list.label.group, priority: 100 }
+```
+```php
+// src/EventListener/DataContainer/ModuleCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\DataContainer;
+
+class ModuleCallbackListener
+{
+    public function __invoke(string $group, string $mode, string $field, array $record, DataContainer $dc): string
+    {
+        // Do something …
+
+        return $group;
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="DCA" %}}
+```php
+// contao/dca/tl_module.php
+use App\EventListener\DataContainer\ModuleCallbackListener;
+
+$GLOBALS['TL_DCA']['tl_module']['list']['label']['group_callback'] = [
+    ModuleCallbackListener::class, '__invoke'
+];
+```
+```php
+// src/EventListener/DataContainer/ModuleCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\DataContainer;
+
+class ModuleCallbackListener
+{
+    public function __invoke(string $group, string $mode, string $field, array $record, DataContainer $dc): string
+    {
+        // Do something …
+
+        return $group;
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 
 ## Custom Drivers
@@ -227,9 +323,9 @@ The driver can implement any of the following interfaces:
 When creating your own driver it is probably best to just have a look at the existing
 drivers in order to get an idea on what is possible and how it needs to be done:
 
-* [\DC_File](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_File.php)
-* [\DC_Folder](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_Folder.php)
-* [\DC_Table](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_Table.php)
+* [DC_File](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_File.php)
+* [DC_Folder](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_Folder.php)
+* [DC_Table](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_Table.php)
 
 
 [1]: /framework/hooks/
