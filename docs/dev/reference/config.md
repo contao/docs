@@ -309,6 +309,8 @@ The mailer connection information is stored as an environment variable called `M
 be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
 applicable. The format of this variable is the following: `MAILER_URL=smtp://username:password@smtp.example.com:465?encryption=ssl`.
 See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
+
+{{< version-tag "5.0" >}} The variable is now called "MAILER_DSN".
     
 
 ### `TRUSTED_PROXIES`
