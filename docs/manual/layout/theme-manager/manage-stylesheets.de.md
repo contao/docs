@@ -100,7 +100,7 @@ CSS-Anweisung setzt beispielsweise den Außenabstand eines Contao-Textelements a
 }
 ```
 
-In Contao kannst du mit dieser Schreibweise allerdings so gar nicht in Berührung, da du alle Formate über die 
+In Contao kommst du mit dieser Schreibweise allerdings so gar nicht in Berührung, da du alle Formate über die 
 Eingabemaske festlegen kannst. Lediglich den Teil vor den geschweiften Klammern, den sogenannten Selektor, musst du von 
 Hand in das dafür vorgesehene Feld eingeben.
 
