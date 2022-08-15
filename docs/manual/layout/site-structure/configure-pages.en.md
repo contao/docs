@@ -135,10 +135,10 @@ automatically generated aliases.
 
 | Alias Settings | Declaration |
 | -------------- | ----------- |
-| Unicode numbers and small letters | The alias `über-uns` is generated from the page name "About us". |
-| Unicode numbers and letters | The alias `Über-uns` is generated from the page name "About us". |
-| ASCII numbers and small letters | The alias `ueber-uns` is generated from the page name "About us". |
-| ASCII numbers and letters | The alias `Ueber-uns` is generated from the page name "About us". |
+| Unicode numbers and small letters | The alias `über-uns` is generated from the page name "Über uns". |
+| Unicode numbers and letters | The alias `Über-uns` is generated from the page name "Über uns". |
+| ASCII numbers and small letters | The alias `ueber-uns` is generated from the page name "Über uns". |
+| ASCII numbers and letters | The alias `Ueber-uns` is generated from the page name "Über uns". |
 
 For the creation of the alias, the defined language is also relevant in some cases. For instance the German word "über"
 would be converted to "ueber" while the finish word "eläinkö" would be converted to "elainko".
