@@ -135,14 +135,14 @@ In case you are using the Contao Manager, you can run the `composer update` proc
 Although Contao uses the [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) database abstraction layer, 
 no database server types other than MySQL (or a compatible fork like MariaDB) are currently supported.
 
-Contao has been successfully tested on MySQL servers version 5.1 / 5.5 with `MyISAM` table format. The use of
-of `utf8_general_*` instead of the `utf8mb4` character set results in a worse UTF8 support (e.g. no emojis).
+Contao has been successfully tested on MySQL servers version 5.7 / 8.0 (and equivalent MariaDB versions) with `InnoDB` table format. 
+The use of `utf8` instead of the `utf8mb4` character set results in a worse UTF8 support (e.g. no emojis).
 
-If the above recommended options cannot be enabled on your server, please configure another
-database engine and a different character set in your `app/config/config.yml` file:
+If the above recommended options cannot be enabled on your server, please configure a different character set in your 
+[`config/config.yml`](../../system/settings/#config-yml) file:
 
 {{% notice note %}}
-As of **Contao 4.8**, you can find the file under [`config/config.yml`](../../system/settings/#config-yml)  
+Before **Contao 4.8** you can find the file under `app/config/config.yml`.  
 {{% /notice %}}
 
 ```yml
@@ -153,6 +153,7 @@ doctrine:
                 default_table_options:
                     charset: utf8
                     collate: utf8_unicode_ci
+                    collation: utf8_unicode_ci
 ```
 
 It is further recommended to run MySQL in "strict mode" to prevent corrupt or truncated
@@ -174,7 +175,7 @@ sql_mode="TRADITIONAL"
 ```
 
 If the setting cannot be enabled on your server, please configure the connection
-options in your `app/config/config.yml` file ({{< version-tag "4.8" >}} `config/config.yml` file):
+options in your `config/config.yml` file:
 
 ```yml
 doctrine:

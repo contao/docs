@@ -140,15 +140,15 @@ Unter Verwendung des Contao Managers kann das `composer update` in der Systemwar
 Obwohl Contao die [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) Datenbank-Abstraktionsschicht 
 verwendet, werden derzeit keine anderen Datenbankserver als MySQL (oder ein kompatibler Fork wie MariaDB) unterstützt.
 
-Contao wurde erfolgreich auf MySQL-Servern der Version 5.1 / 5.5 mit `MyISAM`-Tabellenformat getestet. Die Verwendung 
-von `utf8_general_*` anstelle des `utf8mb4`-Zeichensatzes führt zu einer verschlechterten UTF8-Unterstützung (z. B. 
-kein Emojis).
+Contao wurde erfolgreich auf MySQL-Servern der Version 5.7 / 8.0 (und gleichwertigen MariaDB Versionen) mit `InnoDB`-Tabellenformat
+getestet. Die Verwendung von `utf8` anstelle des `utf8mb4`-Zeichensatzes führt zu einer verschlechterten UTF8-Unterstützung (z. B. 
+keine Emojis).
 
-Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden können, konfiguriere bitte eine andere 
-Datenbank-Engine und einen anderen Zeichensatz in deiner `app/config/config.yml`-Datei:
+Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden können, konfiguriere bitte einen anderen 
+Zeichensatz in deiner [`config/config.yml`](../../system/einstellungen/#config-yml)-Datei:
 
 {{% notice note %}}
-Ab **Contao 4.8** findest du die Datei unter [`config/config.yml`](../../system/einstellungen/#config-yml).  
+Vor **Contao 4.8** findest du die Datei unter `app/config/config.yml`.  
 {{% /notice %}}
 
 ```yml
@@ -159,6 +159,7 @@ doctrine:
                 default_table_options:
                     charset: utf8
                     collate: utf8_unicode_ci
+                    collation: utf8_unicode_ci
 ```
 
 Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte oder abgeschnittene
@@ -180,7 +181,7 @@ sql_mode="TRADITIONAL"
 ```
 
 Wenn die oben empfohlene Einstellung auf deinem Server nicht aktiviert werden kann, konfiguriere
-die Verbindungsoptionen bitte in deiner `app/config/config.yml`-Datei ({{< version-tag "4.8" >}} `config/config.yml`-Datei):
+die Verbindungsoptionen bitte in deiner `config/config.yml`-Datei:
 
 ```yml
 doctrine:
