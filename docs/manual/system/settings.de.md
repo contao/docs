@@ -547,6 +547,22 @@ Die Umgebungsvariable `APP_SECRET` wird z.B. für die Generierung von CSRF-Token
 Weitere Informationen findest du in der [Symfony-Dokumentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
 
 
+### `DATABASE_URL`
+
+Die Informationen der Datenbank Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATENBANK_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
+Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+
+### `MAILER_DSN`
+
+Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariablen namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+Siehe die [Symfony Swiftmailer Bundle Dokumentation][SymfonySwiftmailer] für weitere Informationen.
+
+{{% notice note %}}
+Die Variable hieß bisher `MAILER_URL`. Ab Contao 5.0 wird nur noch `MAILER_DSN` unterstützt.
+{{% /notice %}}
+
+
 ### `COOKIE_ALLOW_LIST`
 
 {{% notice info %}}
@@ -603,22 +619,6 @@ QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
 
 {{% notice warning %}}
 Hierbei solltest du sicher stellen, dass du die Zwischenspeicherung deaktivierst, indem du z.B. `Cache-Control: no-store` auf diese Antwort setzt wenn `fbclid` vorhanden ist, da du sonst wieder Tausende von Cache-Einträgen im Cache-Proxy erhälst.
-{{% /notice %}}
-
-
-### `DATABASE_URL`
-
-Die Informationen der Datenbank Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATENBANK_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
-Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
-
-
-### `MAILER_DSN`
-
-Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariablen namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
-Siehe die [Symfony Swiftmailer Bundle Dokumentation][SymfonySwiftmailer] für weitere Informationen.
-
-{{% notice note %}}
-Die Variable hieß bisher `MAILER_URL`. Ab Contao 5.0 wird nur noch `MAILER_DSN` unterstützt.
 {{% /notice %}}
 
 
