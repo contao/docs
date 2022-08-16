@@ -529,7 +529,7 @@ Beschreibung.
 
 {{< Version "4.9" >}}
 
-Die Datei `.env` muss sich im Hauptverzeichnis der Contao-Installation befinden. Falls eine zusätzliche `.env.local` Datei existiert, wird diese automatisch verwendet.
+In Contao kannst du Umgebungsvariablen verwenden, um das Verhalten der Managed Edition zu beeinflussen. Die Variablen werden in der Datei `.env` definiert und diese Datei muß sich im Hauptverzeichnis der Contao-Installation befinden. Die Nutzung und Bezeichnung der folgenden Variablen sind vorgegeben. Du kannst aber auch beliebige Variablen definieren und dann z. B. in der `config.yml` referenzieren. Falls eine zusätzliche `.env.local` Datei im gleichen Verzeichnis existiert, wird diese automatisch verwendet.
 
 {{% notice info %}}
 Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN` ersetzen ihre jeweiligen Gegenstücke der `config/parameters.yaml`.
