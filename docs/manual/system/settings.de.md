@@ -525,6 +525,114 @@ Beschreibung.
 | `versionPeriod` | Zeitspanne in Sekunden wie lange ältere Versionen von geänderten Einträgen behalten werden sollen. Standard: `7776000`. |
 
 
+## Umgebungsvariablen
+
+{{< Version "4.9" >}}
+
+Die Datei `.env` muss sich im Hauptverzeichnis der Contao-Installation befinden. Falls eine zusätzliche `.env.local` Datei existiert, wird diese automatisch verwendet.
+
+{{% notice info %}}
+Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN` ersetzen ihre jeweiligen Gegenstücke der `config/parameters.yaml`.
+{{% /notice %}}
+
+
+### `APP_ENV`
+
+Die Umgebungsvariable `APP_ENV` kann entweder `prod` oder `dev` enthalten. Standardmäßig läuft die Contao Managed Edition im `prod`-Modus. Wenn du die Installation in den permanenten Entwicklungsmodus versetzen möchtest, um zusätzliche Logging- und Debugging-Ausgaben zu erhalten, setze die `APP_ENV` auf `dev`. Dies sollte niemals für Produktionsseiten gesetzt werden! Wenn du die Umgebung manuell setzt, können Contao-Administratoren den Debug-Modus nicht mehr vom Backend aus umschalten.
+
+
+### `APP_SECRET`
+
+Die Umgebungsvariable `APP_SECRET` wird z.B. für die Generierung von CSRF-Tokens benötigt. Dies ist eine Zeichenkette, die einmalig für die Anwendung sein sollte und wird üblicherweise verwendet, um sicherheitsrelevante Vorgänge zu entschlüsseln. Ihr Wert sollte eine Reihe von Zeichen, Zahlen und Symbolen sein, die nach dem Zufallsprinzip ausgewählt werden, und die empfohlene Länge beträgt etwa 32 Zeichen. Wie bei jedem anderen sicherheitsrelevanten Parameter ist es eine gute Praxis, diesen Wert von Zeit zu Zeit zu ändern. Beachte jedoch, dass eine Änderung dieses Wertes alle signierten URIs und Remember Me Cookies ungültig macht. Deshalb solltest du nach der Änderung dieses Wertes den Anwendungscache neu generieren und alle Benutzer der Anwendung abmelden.
+Weitere Informationen findest du in der [Symfony-Dokumentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
+
+
+### `COOKIE_ALLOW_LIST`
+
+{{% notice info %}}
+In Contao **4.9** heißt diese Umgebungsvariable `COOKIE_WHITELIST`.
+{{% /notice %}}
+
+Dies ist eine spezielle Umgebungsvariable, die sich auf den Standard-Caching-Proxy bezieht, der mit der Contao Managed Edition standardmäßig ausgeliefert wird.
+Contao deaktiviert jegliches HTTP-Caching, sobald entweder ein `Cookie`- oder ein `Authorization`-Header in der Anfrage vorhanden ist. Der Grund dafür ist, dass diese Header möglicherweise einen Benutzer authentifizieren und somit personalisierte Inhalte erzeugen können. In diesem Fall wollen wir niemals Inhalte aus dem Cache bereitstellen.Leider besteht das Web jedoch aus einer Vielzahl verschiedener Cookies. Die meisten davon sind völlig irrelevant für die Anwendung selbst und werden nur in JavaScript verwendet (obwohl es bessere Alternativen wie LocalStorage, SessionStorage oder IndexedDB gibt). 
+
+Du wirst feststellen, dass z.B. Google Analytics, Matomo, Facebook usw. alle Cookies setzen, die die Anwendung (in diesem Fall Contao) überhaupt nicht interessiert. Da der HTTP-Cache jedoch entscheiden muss, ob er eine Antwort aus dem Cache ausliefert oder nicht, bevor die Anwendung überhaupt gestartet ist, kann er nicht wissen, welche Cookies relevant sind und welche nicht. Also müssen wir es ihm sagen. Die Contao Managed Edition wird mit einer Liste von irrelevanten Cookies ausgeliefert, die standardmäßig ignoriert werden, um die Trefferquote zu erhöhen. Zur Optimierung kannst du die Standardliste deaktivieren, indem du eine explizite Liste von benötigten Cookies bereit stellst. Dies sind die Cookies, von denen du weisst, dass sie **relevant** für die Anwendung sind, und in diesem Fall muss der Cache **ausgeschaltet** werden.
+
+Standardmäßig verwendet Contao nur das PHP-Session-ID-Cookie zur Authentifizierung von Benutzern und Mitgliedern, das CSRF-Cookie zum CSRF-Cookie zum Schutz vor CSRF-Angriffen beim Absenden von Formularen, das Trusted-Devices-Cookie für die Zwei-Faktor-Authentifizierung und das "Remember Me"-Cookie, um Benutzer auf Wunsch automatisch anzumelden. In den meisten Fällen wird die folgende Konfiguration die maximale Anzahl von Cache-Treffern erzielen, aber du mußt möglicherweise zusätzliche
+Cookies von installierten Erweiterungen zulassen:
+
+```
+COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
+```
+    
+{{% notice note %}}
+Der Name des PHP-Session-Cookies ist über die `php.ini` konfigurierbar, daher solltest du überprüfen, ob er auch `PHPSESSID` lautet. Außerdem ist der CSRF-Cookie aus Sicherheitsgründen für `http` und `https` unterschiedlich. Wenn die Website über `http` ausgeliefert wird, ist zu beachten, dass der Cookie-Name `csrf_http-contao_csrf_token` lautet. Wenn du Benutzer vor CSRF-Angriffen schützen möchtest, aber das Formular über ungesicherte `http`-Verbindungen übermittelst, ist das
+nicht wirklich ein gültiger Anwendungsfall. 
+{{% /notice %}}
+
+
+### `COOKIE_REMOVE_FROM_DENY_LIST`
+
+{{< Version "4.10" >}}
+
+Für den Fall, dass du nicht die gesamte `COOKIE_ALLOW_LIST` verwalten möchtest, weil du nicht weißt was die Anwendung braucht, aber einen oder mehrere Einträge in der von Contao verwalteten Ablehnungsliste deaktivieren willst, kannst du dies angeben:
+
+```
+COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
+```
+
+
+### `QUERY_PARAMS_ALLOW_LIST`
+
+{{< Version "4.10" >}}
+
+Aus demselben Grund, aus dem wir irrelevante Cookies entfernen, entfernen wir auch irrelevante Abfrageparameter. Zum Beispiel bist du vielleicht mit den typischen `?utm_*>=<randomtoken>`-Abfrageparametern vertraut, die zu Links auf der Website hinzugefügt werden. Da sie die URL jedes Mal ändern, erzeugen sie auch jedes Mal neue Cache-Einträge und überschwemmen schließlich vielleicht sogar den Cache.
+
+Wie bei den irrelevanten Cookies verwaltet Contao auch eine Liste irrelevanter Abfrageparameter, die du ebenfalls vollständig mit einer Liste der erlaubten Abfrageparameter überschreiben kannst, wenn du alle Abfrageparameter kennst, die die Anwendung jemals benötigt. Dies ist sehr unwahrscheinlich, weshalb es auch `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` gibt.
+
+
+### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
+
+{{< Version "4.10" >}}
+
+Wie bei `COOKIE_REMOVE_FROM_DENY_LIST` kannst du  `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` verwenden, um einen Eintrag aus der Standard-Deny-Liste zu entfernen, die mit Contao ausgeliefert wird. Wenn du z.B. die Facebook-Klick-Kennung (`fbclid`) im serverseitigen Code benötigst, kannst du die Liste wie folgt aktualisieren:
+
+```
+QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
+```
+
+{{% notice warning %}}
+Hierbei solltest du sicher stellen, dass du die Zwischenspeicherung deaktivierst, indem du z.B. `Cache-Control: no-store` auf diese Antwort setzt wenn `fbclid` vorhanden ist, da du sonst wieder Tausende von Cache-Einträgen im Cache-Proxy erhälst.
+{{% /notice %}}
+
+
+### `DATABASE_URL`
+
+Die Informationen der Datenbank Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATENBANK_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
+Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+
+### `MAILER_DSN`
+
+Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariablen namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+Siehe die [Symfony Swiftmailer Bundle Dokumentation][SymfonySwiftmailer] für weitere Informationen.
+
+{{% notice note %}}
+Die Variable hieß bisher `MAILER_URL`. Ab Contao 5.0 wird nur noch `MAILER_DSN` unterstützt.
+{{% /notice %}}
+
+
+### `TRUSTED_PROXIES`
+
+Anwendungen befinden sich möglicherweise hinter einem Load Balancer oder einem Reverse Proxy (z.B. Varnish für das Caching). In den meisten Fällen verursacht dies keine Probleme mit der Contao Managed Edition. Aber wenn eine Anfrage durch einen Proxy durchläuft, werden bestimmte Anforderungsinformationen entweder mit dem Standard-Header `Forwarded` oder mit dem Header `X-Forwarded-*` gesendet. Anstatt beispielsweise den `REMOTE_ADDR`-Header zu lesen (der jetzt die IP-Adresse des Reverse-Proxys ist), wird die tatsächliche IP-Adresse des Benutzers in einem standardmäßigen `Forwarded: for="..."`-Header oder einem `X-Forwarded-For`-Header gespeichert. Wenn die Contao Managed Edition nicht so konfiguriert ist, dass sie nach diesen Headern sucht, erhälst du falsche Informationen über die
+IP-Adresse des Clients, ob der Client eine Verbindung über HTTPS herstellt oder nicht, den Port des Clients und den angeforderten Hostnamen. Angenommen, der Load Balancer läuft auf der IP-Adresse 192.0.2.1. Du kannst dieser IP vertrauen, indem du `TRUSTED_PROXIES` auf `192.0.2.1` setzt. Du kannst auch einem ganzen IP-Bereich vertrauen, wenn du das möchtest: `TRUSTED_PROXIES=192.0.2.0/24`. Siehe die [Symfony Dokumentation über Proxies][SymfonyProxies] für weitere Informationen.
+
+
+### `TRUSTED_HOSTS`
+
+Die gleiche Erklärung wie für `TRUSTED_PROXIES` und das IP-Beispiel gilt auch für `TRUSTED_HOSTS` beim Abrufen des ursprünglich gesendeten `Host` HTTP-Header. Du würdest den Hostnamen des Proxys erhalten, aber wenn du den Hostnamen des Proxys zur Liste der vertrauenswürdigen Proxys hinzufügst, erhälst du den Hostnamen, der in der ursprünglichen Anfrage angefordert wurde: `TRUSTED_HOSTS=my.proxy.com`
+
+
 ## E-Mail Versand Konfiguration
 
 Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster:
