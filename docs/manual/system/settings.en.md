@@ -544,6 +544,26 @@ That is why, after changing this value, you should regenerate the application ca
 users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
 
 
+### `DATABASE_URL`
+
+The database connection information is stored as an environment variable called `DATABASE_URL`. It defines 
+the database user name, database password, host name, port and database name that will be used by your Contao system. 
+The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
+It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+
+### `MAILER_DSN`
+
+The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
+be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
+applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
+
+{{% notice note %}}
+The variable was previously called `MAILER_URL`. Since Contao 5.0 only `MAILER_DSN` will be supported.
+{{% /notice %}}
+
+
 ### `COOKIE_ALLOW_LIST`
 
 {{% notice info %}}
@@ -625,25 +645,6 @@ QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
 If you do so, make sure to disable caching by e.g. setting `Cache-Control: no-store` on this response if `fbclid` is
 present as otherwise you are back to having thousands of cache entries in your cache proxy.
 {{% /notice %}}
-
-### `DATABASE_URL`
-
-The database connection information is stored as an environment variable called `DATABASE_URL`. It defines 
-the database user name, database password, host name, port and database name that will be used by your Contao system. 
-The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
-It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
-
-
-### `MAILER_DSN`
-
-The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
-be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
-applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
-See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
-
-{{% notice note %}}
-The variable was previously called `MAILER_URL`. Since Contao 5.0 only `MAILER_DSN` will be supported.
-{{% /notice %}}
     
 
 ### `TRUSTED_PROXIES`
@@ -666,12 +667,6 @@ The same explanation as for `TRUSTED_PROXIES` and the IP example, also applies t
 originally sent `Host` HTTP header. You would get the host name of your proxy but if you add your proxy host name
 to the list of trusted proxies, you will get the host name that was requested in the original request:
 `TRUSTED_HOSTS=my.proxy.com`
-        
-
-[Contao_ME]: ../../getting-started/initial-setup/managed-edition
-[SymfonyFlex]: https://symfony.com/doc/current/setup.html#symfony-flex
-[SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html
-[SymfonySwiftmailer]: https://symfony.com/doc/4.4/reference/configuration/swiftmailer.html
 
 
 ## E-Mail sending configuration
