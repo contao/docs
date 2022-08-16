@@ -536,6 +536,23 @@ Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN`
 {{% /notice %}}
 
 
+### Eigene Umgebungsvariablen
+
+Das folgende Beispiel zeigt, wie man die E-Mail-Adresse des Systemadministrators über eine eigene Umgebungsvariable in der Datei `.env` definiert und in der Datei `config.yml` referenziert.
+
+```yaml
+# .env
+MYADMIN_EMAIL=admin@demo.de
+```
+
+```yaml
+# config/config.yml
+contao:
+    localconfig:
+        adminEmail: '%env(MYADMIN_EMAIL)%'
+```
+
+
 ### `APP_ENV`
 
 Die Umgebungsvariable `APP_ENV` kann entweder `prod` oder `dev` enthalten. Standardmäßig läuft die Contao Managed Edition im `prod`-Modus. Wenn du die Installation in den permanenten Entwicklungsmodus versetzen möchtest, um zusätzliche Logging- und Debugging-Ausgaben zu erhalten, setze die `APP_ENV` auf `dev`. Dies sollte niemals für Produktionsseiten gesetzt werden! Wenn du die Umgebung manuell setzt, können Contao-Administratoren den Debug-Modus nicht mehr vom Backend aus umschalten.
