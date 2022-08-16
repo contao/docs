@@ -524,6 +524,23 @@ of the `config/parameters.yaml` and thus you should not use these parameters, if
 {{% /notice %}}
 
 
+### Custom Environment Variable
+
+The following example shows how to define the system administrator's e-mail address using a custom environment variable in the `.env` file and referencing it in the `config.yml` file.
+
+`yaml
+# .env
+MYADMIN_EMAIL=admin@demo.com
+```
+
+``yaml
+# config/config.yml
+contao:
+    localconfig:
+        adminEmail: '%env(MYADMIN_EMAIL)%'
+```
+
+
 ### `APP_ENV`
 
 The `APP_ENV` environment variable can contain either `prod` or `dev`. By default, the Contao Managed Edition runs
