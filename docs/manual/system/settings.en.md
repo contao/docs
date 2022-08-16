@@ -516,7 +516,7 @@ The following is a comprehensive list of localconfig configurations still in use
 
 {{< version "4.9" >}}
 
-The `.env` file must be located in the root directory of the Contao installation. If an additional `.env.local` file exists, this information will be used automatically.
+In Contao, you can use environment variables to influence the behavior of the Managed Edition. The variables are defined in the file `.env` and this file must be located in the root directory of the Contao installation. The usage and name of the following variables are predefined. However, you can also define arbitrary variables and then reference them e.g. in the `config.yml`. If an additional `.env.local` file exists in the same directory, it will be used automatically.
 
 {{% notice info %}}
 Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts 
