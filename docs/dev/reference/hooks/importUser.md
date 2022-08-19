@@ -13,7 +13,7 @@ database. It passes the username, the password and the table name as arguments
 and expects a boolean return value.
 
 {{% notice info %}}
-{{< version-tag "4.13" >}} Using the `importUser` hook has been deprecated and will no longer work in Contao 5.0.
+Using the `importUser` hook has been deprecated and will no longer work in Contao 5.0.
 {{% /notice %}}
 
 
