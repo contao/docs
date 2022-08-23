@@ -166,7 +166,7 @@ class ContentElementsPickerListener
 
         $elements = StringUtil::deserialize($value, true);
 
-        $article->setContentElements(array_map(static fn (int $elmentId) => $this->em->getReference(\App\Entity\ContentElement::class, $elementId), $elements));
+        $article->setContentElements(array_map(fn (int $elmentId) => $this->em->getReference(\App\Entity\ContentElement::class, $elementId), $elements));
 
         return null;
     }
