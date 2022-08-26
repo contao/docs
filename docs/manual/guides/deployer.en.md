@@ -107,8 +107,9 @@ this, Deployer utilizes rolling symlink releases. Consequently, you have to set 
 `/current/public` (or `/current/web` respectively). A full example for the document root might look like
 `/var/www/foobar/html/example.org/current/public`.
 
-Contao is slowly migrating to use the `/public` folder of the project as the document root. When your Contao 4.13
-installation is still using the folder `/web` as public directory, please explicitly set it in the `composer.json`
+{{% notice "info" %}}
+By default, Contao uses the `/public` folder of the project as the document root. If your Contao
+installation is still using the legacy `/web` folder as public directory, please explicitly set it in the `composer.json`
 of the project:
 
 ```json
@@ -118,6 +119,7 @@ of the project:
   }
 }
 ```
+{{% /notice %}}
 
 ## Add build-task to deployment
 

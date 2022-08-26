@@ -113,8 +113,9 @@ hinter Deployer ist, dass es keine Downtime bei Updates gibt. Deswegen werden ro
 Document-Root von deinem vHost musst du entsprechend auf `/current/public` (bzw. `/current/web`) einstellen. Ein
 komplettes Beispiel für einen Document-Root wäre: `/var/www/foobar/html/example.org/current/public`.
 
-Contao migriert langsam zum `/public`-Ordner als Web-Root. Wenn du in Contao 4.13 noch den `/web`-Ordner verwendest,
-dann definiere diesen entsprechend, damit Deployer das auch weiß.
+{{% notice "info" %}}
+Standardmäßig verwendet Contao `/public`-Ordner als Web-Root. Wenn deine Contao-Installation noch den Legacy `/web`-Ordner
+verwendet, dann definiere diesen entsprechend in `composer.json`, damit Deployer das auch weiß.
 
 ```json
 {
@@ -123,7 +124,7 @@ dann definiere diesen entsprechend, damit Deployer das auch weiß.
   }
 }
 ```
-
+{{% /notice %}}
 
 ## Projektspezifische Tasks
 
