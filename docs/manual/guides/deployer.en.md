@@ -19,7 +19,7 @@ If not done yet, install Deployer as described here: [https://deployer.org/docs/
 
 You can either install Deployer globally or per project and use the command `dep` or `./vendor/bin/dep` respectively.
 
-Verify that you are running Deployer in the minimum version _7.0.0-rc.5_ by running `dep --version`.
+Verify that you are running Deployer in the minimum version _7.0_ by running `dep --version`.
 
 Once done, you can create a `deploy.php` file in your project:
 

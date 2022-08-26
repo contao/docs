@@ -21,7 +21,7 @@ Zuerst musst du Deployer installieren: [https://deployer.org/docs/][1]
 Du kannst Deployer entweder global oder per Projekt (mit Composer) installieren. Der Kommandozeilenbefehl lautet
 entsprechend `dep` oder `./vendor/bin/dep`.
 
-Bevor du weitermachst, stelle sicher, dass du mindestens Version _7.0.0-rc.5_ installiert hast (`dep --version`).
+Bevor du weitermachst, stelle sicher, dass du mindestens Version _7.0_ installiert hast (`dep --version`).
 
 Jetzt kannst du deine `deploy.php`-Datei in dem Projekt erstellen:
 
