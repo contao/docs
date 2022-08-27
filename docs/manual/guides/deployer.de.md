@@ -114,7 +114,7 @@ Document-Root von deinem vHost musst du entsprechend auf `/current/public` (bzw.
 komplettes Beispiel für einen Document-Root wäre: `/var/www/foobar/html/example.org/current/public`.
 
 {{% notice "info" %}}
-Standardmäßig verwendet Contao `/public`-Ordner als Web-Root. Wenn deine Contao-Installation noch den Legacy `/web`-Ordner
+Contao verwendet standardmäßig den `/public`-Ordner als Web-Root. Wenn deine Contao-Installation noch den alten `/web`-Ordner
 verwendet, dann definiere diesen entsprechend in `composer.json`, damit Deployer das auch weiß.
 
 ```json
