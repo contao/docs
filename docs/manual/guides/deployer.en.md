@@ -15,11 +15,13 @@ The Deployer recipe is part of Deployer 7 and is intended to work for Contao 4.1
 
 ## Install Deployer
 
-If not done yet, install Deployer as described here: [https://deployer.org/docs/][1]
+If not done yet, install Deployer in your project as described [in the docs:][1]
 
-You can either install Deployer globally or per project and use the command `dep` or `./vendor/bin/dep` respectively.
+```bash
+composer require --dev deployer/deployer
+```
 
-Verify that you are running Deployer in the minimum version _7.0_ by running `dep --version`.
+Verify that you are running Deployer in the minimum version _7.0_ by running `vendor/bin/dep --version`.
 
 Once done, you can create a `deploy.php` file in your project:
 
@@ -143,7 +145,7 @@ before('deploy', 'encore:compile');
 
 ## Finally: Deploy
 
-You are now all set to run `dep deploy`.
+You are now all set to run `vendor/bin/dep deploy`.
 
 ## Tips
 
