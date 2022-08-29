@@ -178,14 +178,6 @@ before('deploy:publish', 'contao:manager:download');
 after('contao:manager:download', 'contao:manager:lock');
 ```
 
-Verwendest du Contao Manager nicht, dann kannst du den leeren Ordner von "Shared folders" ausschließen:
-
-```php
-// deploy.php
-
-set('shared_dirs', array_diff(get('shared_dirs'), ['contao-manager']));
-```
-
 
 ### Probleme mit dem Symlink und OPCache / APCu
 

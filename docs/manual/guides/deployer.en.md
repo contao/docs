@@ -172,14 +172,6 @@ before('deploy:publish', 'contao:manager:download');
 after('contao:manager:download', 'contao:manager:lock');
 ```
 
-If you don't use Contao Manager, you can prevent empty folder from being deployed by excluding it from shared folders:
-
-```php
-// deploy.php
-
-set('shared_dirs', array_diff(get('shared_dirs'), ['contao-manager']));
-```
-
 ### Symlink issues with OPCache / APCu
 
 As Deployer is using a symlink for the document root (as read above), issues might occur with internal caches like the
