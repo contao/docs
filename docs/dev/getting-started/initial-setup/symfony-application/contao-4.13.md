@@ -65,8 +65,8 @@ $ composer require --with-all-dependencies \
     contao/core-bundle:4.13.* \
     contao/installation-bundle:4.13.* \
     php-http/guzzle6-adapter \
-    terminal42/service-annotation-bundle ^1.1 \
-    toflar/psr6-symfony-http-cache-store ^3.0 \
+    terminal42/service-annotation-bundle:^1.1 \
+    toflar/psr6-symfony-http-cache-store:^3.0 \
     twig/twig:^3.0
 ```
 
@@ -79,8 +79,8 @@ $ composer require --with-all-dependencies \
     contao/core-bundle:4.13.* \
     contao/installation-bundle:4.13.* \
     php-http/guzzle7-adapter \
-    terminal42/service-annotation-bundle ^1.1 \
-    toflar/psr6-symfony-http-cache-store ^3.0 \
+    terminal42/service-annotation-bundle:^1.1 \
+    toflar/psr6-symfony-http-cache-store:^3.0 \
     twig/twig:^3.0
 ```
 {{% /notice %}}
