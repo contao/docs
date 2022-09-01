@@ -3,15 +3,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 <script>
   var _paq = window._paq = window._paq || [];
+  _paq.push(['setRequestMethod', 'POST'])
   _paq.push(['disableCookies']);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
+  _paq.push(['enableHeartBeatTimer', 15]);
+  _paq.push(['disableBrowserFeatureDetection']);
   (function() {
-    var u='https://matomo.contao.org/';
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    var u='https://mt.contao.org/js/';
+    _paq.push(['setTrackerUrl', u]);
     _paq.push(['setSiteId', 3]);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    g.async=true; g.defer=true; g.src=u; s.parentNode.insertBefore(g,s);
   })();
 </script>
 
