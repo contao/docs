@@ -79,7 +79,7 @@ class CustomerNameMigration extends AbstractMigration
 
     public function shouldRun(): bool
     {
-        $schemaManager = $this->connection->createSchemaManager();
+        $schemaManager = $this->connection->getSchemaManager();
 
         // If the database table itself does not exist we should do nothing
         if (!$schemaManager->tablesExist(['tl_customers'])) {
