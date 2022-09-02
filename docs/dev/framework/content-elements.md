@@ -118,15 +118,15 @@ As mentioned previously a content element is registered by registering a control
 | Option   | Type      | Description                                                                                                                               |
 | -------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------|
 | name     | `string`  | Must be `contao.content_element`.                                                                                                         |
+| type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                                                        |
 | category | `string`  | Defines in which option group this content element will be placed in the content element selector.                                        |
 | template | `string`  | _Optional:_ Override the generated template name.                                                                                         |
-| type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                                                        |
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |
 | method   | `string`  | _Optional:_  Which method should be invoked on the controller.                                                                            |
 
 Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
 
-{{< tabs groupId="service-config-content-element" >}}
+{{< tabs groupId="registering-fragments" >}}
 
 {{% tab name="Attribute" %}}
 {{< version-tag "4.13" >}}
@@ -181,7 +181,9 @@ class ExampleController extends AbstractContentElementController
 {{% tab name="Annotation" %}}
 {{< version-tag "4.8" >}}
 
-A content element can be registered using the `ContentElement` annotation.
+A content element can be registered using the `ContentElement` annotation. The annotation can be used on the class of the content element,
+if the class is invokable (has an `__invoke` method) or extends from the `AbstractContentElementController`. Otherwise the annotation can be 
+used on the method that will deliver the response.
 
 ```php
 // src/Controller/ContentElement/ExampleController.php
@@ -232,68 +234,30 @@ class ExampleController extends AbstractContentElementController
 ```
 {{% /tab %}}
 
-{{< /tabs >}}
+{{% tab name="YAML" %}}
+{{< version-tag "4.8" >}}
+
+A content element can be registered using the `contao.content_element` service tag.
 
 ```yaml
 # config/services.yaml
 services:
-    App\Controller\ContentElement\MyContentElementController:
+    App\Controller\ContentElement\ExampleController:
         tags:
             -
                 name: contao.content_element
                 category: texts
-                template: ce_my_content_element
-                method: getCustomResponse
-                renderer: esi
-                type: my_custom_type
 ```
-
-
-## Translations
-
-In order to have a nice label in the back end, we also need to add a translation
-for our content element - otherwise it will only be named *my_content_element*.
-The translation needs to be set as follows:
-
-```php
-// contao/languages/en/default.php
-$GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
-    'My Content Element', 
-    'A Content Element for testing purposes.',
-];
-```
-
-If you used a custom category for your content element, its label can also be translated there.
-
-
-## Annotation
-
-{{< version "4.8" >}}
-
-Instead of tagging the content element controller service via the service configuration,
-the service tag can also be configured through annotations, as already used in the
-code example above. The annotation can be used on the class of the content element,
-if the class is invokable (has an `__invoke` method) or extends from the `AbstractFragmentController`.
-Otherwise the annotation can be used on the method that will deliver the response.
-
-The following example uses the annotation and only defines the category under which
-the module should be displayed within the type select of the back end, as this is
-the only required property that needs to be set.
-
 ```php
 // src/Controller/ContentElement/ExampleController.php
 namespace App\Controller\ContentElement;
 
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
 use Contao\ContentModel;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="texts")
- */
 class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -303,29 +267,25 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-Every other property is inferred from the class name or uses the default. The element
-type in this case will be `example`, the template will be `ce_example` and the
-renderer will be `forward`.
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
 
-The following example sets the type of the element to `my_example`, puts it in the
-`texts` category, sets the template name to `ce_some_example` and defines the renderer 
-to be `forward` (which is the default):
-
-```php
-/**
- * @ContentElement("my_example",
- *   category="texts", 
- *   template="ce_some_example",
- *   renderer="forward"
- * )
- */
-class ExampleController extends AbstractContentElementController
-{
-}
+```yaml
+# config/services.yaml
+services:
+    App\Controller\ContentElement\ExampleController:
+        tags:
+            -
+                name: contao.content_element
+                category: texts
+                template: ce_example
+                renderer: forward
+                method: __invoke
 ```
+{{% /tab %}}
 
-You can also use class constants within annotations. This can be helpful to make
-the module's type a reusable reference:
+{{< /tabs >}}
+
+You can also use class constants within attributes and annotations. This can be helpful to make the module's type a reusable reference:
 
 ```php
 /**
@@ -355,6 +315,23 @@ $GLOBALS['TL_LANG']['CTE'][ExampleController::TYPE] = [
     'A Content Element for testing purposes.',
 ];
 ```
+
+
+## Translations
+
+In order to have a nice label in the back end, we also need to add a translation
+for our content element - otherwise it will only be named *my_content_element*.
+The translation needs to be set as follows:
+
+```php
+// contao/languages/en/default.php
+$GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
+    'My Content Element', 
+    'A Content Element for testing purposes.',
+];
+```
+
+If you used a custom category for your content element, its label can also be translated there.
 
 
 ## PageModel

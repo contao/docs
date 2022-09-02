@@ -126,67 +126,80 @@ to the controller's main method. The controller returns the parsed template
 as a response.
 
 
-## Options
+## Registration
 
-The `contao.frontend_module` tag can be configured further more. The following
-options are available.
+As mentioned previously a front end module is registered by registering a controller as a service and tagging it with the 
+`contao.frontend_module` service tag. The service tag supports the following options:
 
 | Option   | Type     | Description                                                                                                                               |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------|
 | name     | `string` | Must be `contao.frontend_module`.                                                                                                         |
+| type     | `string` | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                                                        |
 | category | `string` | Defines in which option group this front end module will be placed in the module type selector.                                           |
 | template | `string` | _Optional:_ Override the generated template name.                                                                                         |
-| type     | `string` | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                                                        |
 | renderer | `string` | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |
 | method   | `string` | _Optional:_  Which method should be invoked on the controller.                                                                            |
 
-A more complex example of a front end module could look like this.
+Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
 
-```yaml
-# config/services.yaml
-services:
-    App\Controller\FrontendModule\MyFrontendModuleController:
-        tags:
-            -
-                name: contao.frontend_module
-                category: texts
-                method: getCustomResponse
-                template: mod_my_frontend_module
-                renderer: esi
-                type: my_custom_type
-```
+{{< tabs groupId="registering-fragments" >}}
 
+{{% tab name="Attribute" %}}
+{{< version-tag "4.13" >}}
 
-## Translations
-
-In order to have a nice label in the back end, we also need to add a translation
-for our front end module - otherwise it will only be named *my_frontend_module*.
-The translation needs to be set as follows:
+A front end module can be registered using the `AsFrontendModule` PHP attribute.
 
 ```php
-// contao/languages/en/modules.php
-$GLOBALS['TL_LANG']['FMD']['my_frontend_module'] = [
-    'My front end module', 
-    'A front end module for testing purposes.',
-];
+// src/Controller/FrontendModule/ExampleController.php
+namespace App\Controller\FrontendModule;
+
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\ModuleModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+#[AsFrontendModule(category:'miscellaneous')]
+class ExampleController extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
 ```
 
-If you used a custom category for your front end module, its label can also be translated there.
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
 
+```php
+// src/Controller/FrontendModule/ExampleController.php
+namespace App\Controller\FrontendModule;
 
-## Annotation
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\ModuleModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-{{< version "4.8" >}}
+#[AsFrontendModule('example', category:'miscellaneous', template:'mod_example', renderer:'forward', method:'__invoke')]
+class ExampleController extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
 
-Instead of tagging the front end module controller service via the service configuration,
-the service tag can also be configured through annotations, as already used in the
-code example above. The annotation can be used on the class of the content element,
-if the class is invokable (has an `__invoke` method) or extends from the `AbstractFragmentController`.
-Otherwise the annotation can be used on the method that will deliver the response.
+{{% tab name="Annotation" %}}
+{{< version-tag "4.8" >}}
 
-The following example uses the annotation and only defines the category under which
-the module should be displayed within the type select of the back end, as this is
-the only required property that needs to be set.
+A front end module can be registered using the `FrontendModule` annotation. The annotation can be used on the class of the front end module,
+if the class is invokable (has an `__invoke` method) or extends from the `AbstractFrontendModuleController`. Otherwise the annotation can be 
+used on the method that will deliver the response.
 
 ```php
 // src/Controller/FrontendModule/ExampleController.php
@@ -211,29 +224,84 @@ class ExampleController extends AbstractFrontendModuleController
 }
 ```
 
-Every other property is inferred from the class name or uses the default. The module
-type in this case will be `example`, the template will be `mod_example` and the
-renderer will be `forward`.
-
-The following example sets the type of the module to `my_example`, puts it in the
-`miscellaneous` category, sets the template name to `mod_some_example` and defines
-the renderer to be `forward` (which is the default):
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
 
 ```php
+// src/Controller/FrontendModule/ExampleController.php
+namespace App\Controller\FrontendModule;
+
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\ModuleModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
- * @FrontendModule("my_example",
- *   category="miscellaneous", 
- *   template="mod_some_example",
- *   renderer="forward"
- * )
+ * @FrontendModule("example", category="miscellaneous", template="mod_example", renderer="forward", method="__invoke")
  */
 class ExampleController extends AbstractFrontendModuleController
 {
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="YAML" %}}
+{{< version-tag "4.8" >}}
+
+A front end module can be registered using the `contao.frontend_module` service tag.
+
+```yaml
+# config/services.yaml
+services:
+    App\Controller\FrontendModule\ExampleController:
+        tags:
+            -
+                name: contao.frontend_module
+                category: miscellaneous
+```
+```php
+// src/Controller/FrontendModule/ExampleController.php
+namespace App\Controller\FrontendModule;
+
+use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\ModuleModel;
+use Contao\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class ExampleController extends AbstractFrontendModuleController
+{
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
 }
 ```
 
-You can also use class constants within annotations. This can be helpful to make
-the module's type a reusable reference:
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+
+```yaml
+# config/services.yaml
+services:
+    App\Controller\FrontendModule\ExampleController:
+        tags:
+            -
+                name: contao.frontend_module
+                category: miscellaneous
+                template: mod_example
+                renderer: forward
+                method: __invoke
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+You can also use class constants within attributes and annotations. This can be helpful to make the module's type a reusable reference:
 
 ```php
 /**
@@ -263,6 +331,23 @@ $GLOBALS['TL_LANG']['FMD'][ExampleController::TYPE] = [
     'A front end module for testing purposes.',
 ];
 ```
+
+
+## Translations
+
+In order to have a nice label in the back end, we also need to add a translation
+for our front end module - otherwise it will only be named *my_frontend_module*.
+The translation needs to be set as follows:
+
+```php
+// contao/languages/en/modules.php
+$GLOBALS['TL_LANG']['FMD']['my_frontend_module'] = [
+    'My front end module', 
+    'A front end module for testing purposes.',
+];
+```
+
+If you used a custom category for your front end module, its label can also be translated there.
 
 
 ## PageModel
