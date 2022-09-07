@@ -187,3 +187,10 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [0, 0, 2]; # die
 ```
 {{% /expand %}}
 
+
+{{% expand "Anzeige der Artikel Sektion in der Listenansicht der Inhaltselemente" %}}
+```php
+// contao/dca/tl_content.php
+$GLOBALS['TL_DCA']['tl_content']['list']['sorting']['headerFields'][] = 'inColumn';
+```
+{{% /expand %}}
