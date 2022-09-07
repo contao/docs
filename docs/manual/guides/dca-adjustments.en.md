@@ -176,3 +176,12 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [150,150]; # Ima
 // Custom image sizes
 $GLOBALS['TL_DCA']['tl_content']['fields']['size']['default'] = [0, 0, 2]; # the '2' is the ID of the image size
 ```
+{{% /expand %}}
+
+
+{{% expand "Display the article section in the list view of content elements" %}}
+```php
+// contao/dca/tl_content.php
+$GLOBALS['TL_DCA']['tl_content']['list']['sorting']['headerFields'][] = 'inColumn';
+```
+{{% /expand %}}
