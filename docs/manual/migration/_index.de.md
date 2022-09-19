@@ -40,7 +40,8 @@ sind solche Änderungen in der `UPGRADE.md` des `contao/core-bundle` verzeichnet
     * `system/config/initconfig.php`
     * `system/config/localconfig.php`
     * `templates/`
-5. In der Konfiguration des Webservers die Domain auf den `public/` Unterordner zeigen lassen (siehe [Hosting Konfiguration][HostingConfig]).
+5. In der Konfiguration des Webservers die Domain auf den `public/` Unterordner zeigen lassen 
+(siehe [Hosting Konfiguration][HostingConfig]).
 6. Das [Contao Install-Tool][ContaoInstallTool] im Browser oder `vendor/bin/contao-console contao:migrate` auf der Konsole aufrufen, um
 die Datenbankmigration durchführen zu lassen. _Hinweis:_ vorerst keine Tabellen oder Felder löschen lassen.
 
@@ -110,7 +111,7 @@ Wurde mit der Contao-Installation schon in etwas älteren Versionen begonnen, da
 Contao 5 sowie auch schon Contao 4.13 nutzen den `public/` Ordner als Einstiegspunkt. Während in Contao 4.13 noch eine automatische
 Erkennung für die Nutzung des alten `web/` Ordners eingebaut ist, fehlt eine solche automatische Erkennung in Contao 5. Man muss daher
 entweder das Zielverzeichnis der Domain entsprechend ändern - oder über die `composer.json` den richtigen Einstiegspunkt dediziert
-festlegen.
+festlegen. Siehe auch [Hosting Konfiguration][HostingConfig].
 
 ```json
 {
