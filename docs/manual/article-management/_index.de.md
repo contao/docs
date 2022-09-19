@@ -5,7 +5,7 @@ einem bestimmten Layoutbereich zugeordnet werden."
 url: "artikelverwaltung"
 aliases:
     - /de/artikelverwaltung/
-weight: 9
+weight: 90
 ---
 
 Während es in den vorherigen Kapiteln darum ging, deine Webseite zu strukturieren und zu formatieren, beschäftigt sich 
