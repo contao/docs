@@ -65,7 +65,7 @@ und welchen Anpassungen vorgenommen wurden können jedoch verschiedene Schritte 
 
 ### Versions-Anforderungen ändern
 
-Für ein Update auf `4.13` auf `5.0` müssen in der `composer.json` nur die Versions-Anforderungen auf `^5.0` bzw. `5.0.*` geändert werden.
+Für ein Update von `4.13` auf `5.0` müssen in der `composer.json` nur die Versions-Anforderungen auf `^5.0` bzw. `5.0.*` geändert werden.
 Aus `"contao/news-bundle": "^4.13"` wird also `"contao/news-bundle": "^5.0"` etc. und aus `"contao/manager-bundle": "4.13.*"` wird
 `"contao/manager-bundle": "5.0.*"`.
 
