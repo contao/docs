@@ -236,12 +236,12 @@ für Nachrichtenarchive.
 
 ## Hooks
 
-Die Extension stellt einige [Hooks][Hooks] zur Verfügung, welche das Verhalten beeinflussen können, wenn zur Facebook gepostet, oder
+Die Extension stellt einige [Hooks][Hooks] zur Verfügung, welche das Verhalten beeinflussen können, wenn zu Facebook gepostet, oder
 ein Post von Facebook zu Contao geholt wird.
 
 ### `processFacebookPost`
 
-Die Erweiterung prozessiert einen Facebook Post und versucht diesen zu einem passenden Contao Nachrichtenbeitrag 
+Die Erweiterung prozessiert einen Facebook-Post und versucht diesen zu einem passenden Contao Nachrichtenbeitrag 
 umzuwandeln. Dieser Prozess kann mit dem `processFacebookPost` selbst angepasst werden. Als Rückgabewert wird
 ein Array erwartet, mit den finalen Daten für den Datenbankeintrag eines Nachrichtenbeitrags. Wenn der Rückgabewert
 `false` ist, wird kein Nachrichtenbeitrag erzeugt.
