@@ -127,7 +127,7 @@ kann das Verzeichnis über die `composer.json` geändert werden - siehe dazu die
 
 In älteren Contao Versionen wurde der Ordner `app/` für diverse Ressourcen und Applikationsanpassungen genutzt. In neueren Versionen hat
 sich die Nutzung geändert wobei die alte Struktur weiterhin unterstützt war. In Contao 5 jedoch fällt diese Unterstützung weg. Folgende
-Ordner bzw. Dateien müssen daher verschoben werden:
+Ordner bzw. Dateien müssen daher verschoben werden, falls diese noch benutzt wurden:
 
 | Alt | Neu |
 |---|---|
