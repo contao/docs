@@ -236,9 +236,12 @@ für Nachrichtenarchive.
 
 ## Hooks
 
+Die Extension stellt einige [Hooks][Hooks] zur Verfügung, welche das Verhalten beeinflussen können, wenn zu Facebook gepostet, oder
+ein Post von Facebook zu Contao geholt wird.
+
 ### `processFacebookPost`
 
-Die Erweiterung prozessiert einen Facebook Post und versucht diesen zu einem passenden Contao Nachrichtenbeitrag 
+Die Erweiterung prozessiert einen Facebook-Post und versucht diesen zu einem passenden Contao Nachrichtenbeitrag 
 umzuwandeln. Dieser Prozess kann mit dem `processFacebookPost` selbst angepasst werden. Als Rückgabewert wird
 ein Array erwartet, mit den finalen Daten für den Datenbankeintrag eines Nachrichtenbeitrags. Wenn der Rückgabewert
 `false` ist, wird kein Nachrichtenbeitrag erzeugt.
@@ -255,11 +258,135 @@ Wenn ein Contao Nachrichtenbeitrag als Facebook Post vorbereitet wird, wird entw
 Nachricht angegebene Text verwendet. Falls aber automatisch dieser Text angepasst werden soll, kann dies mit dem
 `changeFacebookMessage` Hook gemacht werden. Als Rückgabewert wird der finale Text erwartet.
 
+
 #### Parameter
 
 1. _string_ `$message` Die bereits vorgefertigte Nachricht.
 2. _object_ `$objArticle` Der originale Contao Nachrichtenbeitrag.
 3. _object_ `$objArchive` Das Newsarchiv Objekt.
+
+
+#### Beispiel
+
+Das folgende Beispiel implementiert einen Hook, der die URL zum Nachrichtenbeitrag an den Text des Facebook-Posts anhängt:
+
+{{< tabs groupId="registering-hooks" >}}
+{{% tab name="Attribute" %}}
+```php
+// src/EventListener/ChangeFacebookMessageListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
+use Contao\News;
+use Contao\NewsArchiveModel;
+use Contao\NewsModel;
+
+#[AsHook('changeFacebookMessage')]
+class ChangeFacebookMessageListener
+{
+    public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string
+    {
+        // Append the URL to photo posts
+        if ($news->addImage && $news->fbPostAsPhoto) {
+            $message .= "\n\n".News::generateNewsUrl($news, false, true);
+        }
+
+        return $message;
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="Annotation" %}}
+```php
+// src/EventListener/ChangeFacebookMessageListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\News;
+use Contao\NewsArchiveModel;
+use Contao\NewsModel;
+
+/**
+ * @Hook("changeFacebookMessage")
+ */
+class ChangeFacebookMessageListener
+{
+    public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string
+    {
+        // Append the URL to photo posts
+        if ($news->addImage && $news->fbPostAsPhoto) {
+            $message .= "\n\n".News::generateNewsUrl($news, false, true);
+        }
+
+        return $message;
+    }
+}
+```
+{{% /tab %}}
+{{% tab name="YAML" %}}
+```yaml
+# config/services.yaml
+services:
+    App\EventListener\ActivateAccountListener:
+        tags:
+            - { name: contao.hook, hook: changeFacebookMessage }
+```
+```php
+// src/EventListener/ChangeFacebookMessageListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\News;
+use Contao\NewsArchiveModel;
+use Contao\NewsModel;
+
+class ChangeFacebookMessageListener
+{
+    public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string
+    {
+        // Append the URL to photo posts
+        if ($news->addImage && $news->fbPostAsPhoto) {
+            $message .= "\n\n".News::generateNewsUrl($news, false, true);
+        }
+
+        return $message;
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="config.php" %}}
+```php
+// contao/config.php
+use App\EventListener\ChangeFacebookMessageListener;
+
+$GLOBALS['TL_HOOKS']['changeFacebookMessage'][] = [ChangeFacebookMessageListener::class, '__invoke'];
+```
+```php
+// src/EventListener/ChangeFacebookMessageListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\News;
+use Contao\NewsArchiveModel;
+use Contao\NewsModel;
+
+class ChangeFacebookMessageListener
+{
+    public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string
+    {
+        // Append the URL to photo posts
+        if ($news->addImage && $news->fbPostAsPhoto) {
+            $message .= "\n\n".News::generateNewsUrl($news, false, true);
+        }
+
+        return $message;
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 
 ## Template Daten
@@ -269,3 +396,6 @@ In den Nachrichtentemplates stehen zusätzliche Daten zur Verfügung:
 - _object_ `fbData` Die originalen Daten des Posts von Facebook.
 - _string_ `fbPostId` Die Facebook ID des verknüpften Facebook Posts.
 - _char_ `fromFb` Gibt an, ob der Nachrichtenbeitrag ursprünglich von Facebook importiert wurde.
+
+
+[Hooks]: /dev/framework/hooks/
