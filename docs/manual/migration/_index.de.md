@@ -85,6 +85,15 @@ Aus `"contao/news-bundle": "^4.13"` wird also `"contao/news-bundle": "^5.0"` etc
 }
 ```
 
+{{% notice "note" %}}
+Die `contao/managed-edition` nutzt für die einzelnen Core-Pakete die Versions-Anforderung `^5.0`. Dies bedeutet dass die einzelnen Pakete
+mindestens in Version `5.0.0` installiert werden, aber nicht in den Versionen `6.x` - `^5.0` erlaubt also auf `5.1.x`, `5.2.x` etc. Damit
+eine Paketaktualisierung aber nicht ungefragt auf eine höhere Minor-Version aktualisiert, setzt die `contao/managed-edition` die
+Versions-Anforderung des `contao/manager-bundle` auf `5.0.*` - und somit sind die Contao-Pakete auf eine gewisse Minor-Version festgesetzt
+(in diesem Fall `5.0.x`). Bei einem Update auf eine höhere Minor-Version muss dann also die Versions-Anforderung des `contao/manager-bundle`
+auf bspw. `5.1.*` gesetzt werden. Siehe auch die [Composer Dokumentation](https://getcomposer.org/doc/articles/versions.md) dazu.
+{{% /notice %}}
+
 
 ### Composer Scripts anpassen
 
@@ -142,9 +151,9 @@ ansonsten abwägen, ob die Extension noch gebraucht wird und daher entfernt werd
 ### Templates
 
 Wie schon erwähnt müssen immer die angepassten Templates übeprüft werden. Allerdings gibt es in Contao 5 generell etwas Neues zu beachten:
-alle Inhaltselemente (und in Zukunft auch Module) nutzen nun [Twig-Templates][TwigTemplates] in einer neuen Struktur. Hatte man bspw. ein
-angepasstes `templates/ce_text.html5` Template würde dieses in Contao 5 nicht mehr greifen (es sei denn man schaltet das jeweilige
-Inhaltselement auf die alte Version um).
+alle Inhaltselemente (und in Zukunft auch Module) sind neu implementiert und nutzen nun [Twig-Templates][TwigTemplates] in einer neuen 
+Struktur. Hatte man bspw. ein angepasstes `templates/ce_text.html5` Template würde dieses in Contao 5 nicht mehr greifen (es sei denn man 
+schaltet das jeweilige Inhaltselement auf die alte Version um).
 
 
 ### Applikationsanpassungen
