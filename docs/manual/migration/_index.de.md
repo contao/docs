@@ -42,7 +42,7 @@ sind solche Änderungen in der `UPGRADE.md` des `contao/core-bundle` verzeichnet
     * `templates/`
 5. In der Konfiguration des Webservers die Domain auf den `public/` Unterordner zeigen lassen 
 (siehe [Hosting Konfiguration][HostingConfig]).
-6. Das [Contao Install-Tool][ContaoInstallTool] im Browser oder `vendor/bin/contao-console contao:migrate` auf der Konsole aufrufen, um
+6. Das [Contao-Installtool][ContaoInstallTool] im Browser oder `vendor/bin/contao-console contao:migrate` auf der Konsole aufrufen, um
 die Datenbankmigration durchführen zu lassen. _Hinweis:_ vorerst keine Tabellen oder Felder löschen lassen.
 
 
@@ -53,7 +53,7 @@ eines solchen Updates überprüft werden, ob es nicht neuere, dediziert für Con
 oder kompatible Alternativen - welche dann direkt über Composer oder dem Contao Manager installiert werden können. Im Zweifelsfall sollte 
 man prüfen, ob die jeweilige Extension tatsächlich noch gebraucht wird und ansonsten ausgebaut werden kann.
 
-Hat man eine oder mehrere Extensions nachinstalliert, kann danach wieder das Install-Tool im Browser oder `contao:migrate` auf der Konsole
+Hat man eine oder mehrere Extensions nachinstalliert, kann danach wieder das Installtool im Browser oder `contao:migrate` auf der Konsole
 aufgerufen werden, um wiederum Migrationen durchführen zu lassen die die jeweilige Extension evt. mitbringt.
 
 
@@ -120,12 +120,12 @@ Wurde mit der Contao-Installation schon in etwas älteren Versionen begonnen, da
 Contao 5 sowie auch schon Contao 4.13 nutzen den `public/` Ordner als Einstiegspunkt. Während in Contao 4.13 noch eine automatische
 Erkennung für die Nutzung des alten `web/` Ordners eingebaut ist, fehlt eine solche automatische Erkennung in Contao 5. Daher sollte muss
 man vor dem Update den bestehenden `web/` Ordner auf `public/` umbenennen und das Zielverzeichnis der Domain entsprechend ändern. Alternativ
-kann das Verzeichnis über die `composer.json` geändert werden - siehe dazu die [Hosting Konfiguration][HostingConfig].
+kann das Verzeichnis über die `composer.json` geändert werden - siehe dazu die [Hosting-Konfiguration][HostingConfig].
 
 
 ### Ordnerstruktur anpassen
 
-In älteren Contao Versionen wurde der Ordner `app/` für diverse Ressourcen und Applikationsanpassungen genutzt. In neueren Versionen hat
+In älteren Contao Versionen wurde der Ordner `app/` für diverse Ressourcen und Anpassungen an der Applikation genutzt. In neueren Versionen hat
 sich die Nutzung geändert wobei die alte Struktur weiterhin unterstützt war. In Contao 5 jedoch fällt diese Unterstützung weg. Folgende
 Ordner bzw. Dateien müssen daher verschoben werden, falls diese noch benutzt wurden:
 
@@ -150,7 +150,7 @@ ansonsten abwägen, ob die Extension noch gebraucht wird und daher entfernt werd
 
 ### Templates
 
-Wie schon erwähnt müssen immer die angepassten Templates übeprüft werden. Allerdings gibt es in Contao 5 generell etwas Neues zu beachten:
+Wie schon erwähnt müssen immer die angepassten Templates überprüft werden. Allerdings gibt es in Contao 5 generell etwas Neues zu beachten:
 alle Inhaltselemente (und in Zukunft auch Module) sind neu implementiert und nutzen nun [Twig-Templates][TwigTemplates] in einer neuen 
 Struktur. Hatte man bspw. ein angepasstes `templates/ce_text.html5` Template würde dieses in Contao 5 nicht mehr greifen (es sei denn man 
 schaltet das jeweilige Inhaltselement auf die alte Version um).
@@ -166,7 +166,7 @@ in Contao 5 nicht mehr - daher muss dies nun an den richtigen Ort übertragen we
 ### Migrationen und Datenbank-Updates starten
 
 Ist die Paketaktualisierung auf Contao 5 erfolgreich durchgelaufen kann nun die Datenbank aktualisiert. In Contao 5 gibt es kein
-Install-Tool mehr, die Migration erfolgt vollständig auf der Kommandzeile bzw. über eine entsprechende Funktion im Contao Manager. Um die
+Installtool mehr, die Migration erfolgt vollständig auf der Kommandozeile bzw. über eine entsprechende Funktion im Contao Manager. Um die
 Migration auf der Kommandozeile zu starten, muss folgendes Kommando benutzt werden:
 
 ```shell
