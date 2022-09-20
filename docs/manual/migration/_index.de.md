@@ -150,7 +150,7 @@ ansonsten abwägen, ob die Extension noch gebraucht wird und daher entfernt werd
 
 ### Templates
 
-Wie schon erwähnt müssen immer die angepassten Templates übeprüft werden. Allerdings gibt es in Contao 5 generell etwas neues zu beachten:
+Wie schon erwähnt müssen immer die angepassten Templates übeprüft werden. Allerdings gibt es in Contao 5 generell etwas Neues zu beachten:
 alle Inhaltselemente (und in Zukunft auch Module) nutzen nun [Twig-Templates][TwigTemplates] in einer neuen Struktur. Hatte man bspw. ein
 angepasstes `templates/ce_text.html5` Template würde dieses in Contao 5 nicht mehr greifen (es sei denn man schaltet das jeweilige
 Inhaltselement auf die alte Version um).
