@@ -82,6 +82,12 @@ Es handelt sich um einen Hinweis wie du den Strict Mode aktivieren kannst. Weite
 
 ## Konfiguration und Einstellung
 
+{{% expand "Kann ich das Verzeichnis »web« nach »public« ändern?" %}}
+Ja. Du mußt dazu das Verzeichnis umbenennen. Überprüfe ob in der »composer.json« der Eintrag `"public-dir": "web"` existiert 
+und entferne diesen. Starte anschließend über den Manager oder der Konsole `composer install`. Setze dann dieses Verzeichnis 
+als Document Root über das Admin-Panel deines Hosting-Providers.
+{{% /expand %}}
+
 {{% expand "Wie kann ich den Contao Backend-Pfad ändern?" %}}
 {{< version-tag "4.13" >}} Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `route_prefix` hinzufügen.
 Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
