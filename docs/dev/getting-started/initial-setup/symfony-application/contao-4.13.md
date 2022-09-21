@@ -21,7 +21,7 @@ First of all we need a full stack Symfony application installed. You can
 find further information about this subject in the [Symfony documentation](https://symfony.com/doc/current/setup.html).
 
 ```
-$ composer create-project symfony/website-skeleton contao-example ^5.4
+$ composer create-project symfony/website-skeleton contao-example "^5.4"
 ```
 
 This command creates the directory `contao-example`, containing a bare bone
@@ -65,8 +65,8 @@ $ composer require --with-all-dependencies \
     contao/core-bundle:4.13.* \
     contao/installation-bundle:4.13.* \
     php-http/guzzle6-adapter \
-    terminal42/service-annotation-bundle ^1.1 \
-    toflar/psr6-symfony-http-cache-store ^3.0 \
+    terminal42/service-annotation-bundle:^1.1 \
+    toflar/psr6-symfony-http-cache-store:^3.0 \
     twig/twig:^3.0
 ```
 
@@ -79,8 +79,8 @@ $ composer require --with-all-dependencies \
     contao/core-bundle:4.13.* \
     contao/installation-bundle:4.13.* \
     php-http/guzzle7-adapter \
-    terminal42/service-annotation-bundle ^1.1 \
-    toflar/psr6-symfony-http-cache-store ^3.0 \
+    terminal42/service-annotation-bundle:^1.1 \
+    toflar/psr6-symfony-http-cache-store:^3.0 \
     twig/twig:^3.0
 ```
 {{% /notice %}}
