@@ -527,7 +527,7 @@ Beschreibung.
 
 ## Umgebungsvariablen
 
-{{< Version "4.9" >}}
+{{< version "4.9" >}}
 
 In Contao kannst du Umgebungsvariablen verwenden, um das Verhalten der Managed Edition zu beeinflussen. Die Variablen werden in der Datei `.env` definiert und diese Datei muß sich im Hauptverzeichnis der Contao-Installation befinden. Die Nutzung und Bezeichnung der folgenden Variablen sind vorgegeben. Du kannst aber auch beliebige Variablen definieren und dann z. B. in der `config.yml` referenzieren. Falls eine zusätzliche `.env.local` Datei im gleichen Verzeichnis existiert, wird diese automatisch verwendet.
 
@@ -606,7 +606,7 @@ nicht wirklich ein gültiger Anwendungsfall.
 
 ### `COOKIE_REMOVE_FROM_DENY_LIST`
 
-{{< Version "4.10" >}}
+{{< version "4.10" >}}
 
 Für den Fall, dass du nicht die gesamte `COOKIE_ALLOW_LIST` verwalten möchtest, weil du nicht weißt was die Anwendung braucht, aber einen oder mehrere Einträge in der von Contao verwalteten Ablehnungsliste deaktivieren willst, kannst du dies angeben:
 
@@ -617,7 +617,7 @@ COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
 
 ### `QUERY_PARAMS_ALLOW_LIST`
 
-{{< Version "4.10" >}}
+{{< version "4.10" >}}
 
 Aus demselben Grund, aus dem wir irrelevante Cookies entfernen, entfernen wir auch irrelevante Abfrageparameter. Zum Beispiel bist du vielleicht mit den typischen `?utm_*>=<randomtoken>`-Abfrageparametern vertraut, die zu Links auf der Website hinzugefügt werden. Da sie die URL jedes Mal ändern, erzeugen sie auch jedes Mal neue Cache-Einträge und überschwemmen schließlich vielleicht sogar den Cache.
 
@@ -626,7 +626,7 @@ Wie bei den irrelevanten Cookies verwaltet Contao auch eine Liste irrelevanter A
 
 ### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
 
-{{< Version "4.10" >}}
+{{< version "4.10" >}}
 
 Wie bei `COOKIE_REMOVE_FROM_DENY_LIST` kannst du  `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` verwenden, um einen Eintrag aus der Standard-Deny-Liste zu entfernen, die mit Contao ausgeliefert wird. Wenn du z.B. die Facebook-Klick-Kennung (`fbclid`) im serverseitigen Code benötigst, kannst du die Liste wie folgt aktualisieren:
 
