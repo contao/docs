@@ -637,7 +637,7 @@ QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
 ```
 
 {{% notice warning %}}
-Hierbei solltest du sicher stellen, dass du die Zwischenspeicherung deaktivierst, indem du z.B. `Cache-Control: no-store` auf diese Antwort setzt wenn `fbclid` vorhanden ist, da du sonst wieder Tausende von Cache-Einträgen im Cache-Proxy erhälst.
+Hierbei solltest du sicher stellen, dass du die Zwischenspeicherung deaktivierst, indem du z. B. `Cache-Control: no-store` auf diese Antwort setzt wenn `fbclid` vorhanden ist, da du sonst wieder Tausende von Cache-Einträgen im Cache-Proxy erhälst.
 {{% /notice %}}
 
 
