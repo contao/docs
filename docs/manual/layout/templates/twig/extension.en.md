@@ -20,7 +20,7 @@ can simply be installed with composer or with the Contao Manager (see [extension
 and are ready to be used.
 
 ```twig
-{# need twig/intl-extra #}
+{# needs twig/intl-extra #}
 
 {{ '1000000'|format_currency('EUR') }}
 {# 1,000,000.00 € #}
