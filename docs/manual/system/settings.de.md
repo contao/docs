@@ -568,7 +568,7 @@ Weitere Informationen findest du in der [Symfony-Dokumentation](https://symfony.
 
 ### `DATABASE_URL`
 
-Die Informationen der Datenbank Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
+Die Informationen der Datenbank-Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
 
 
