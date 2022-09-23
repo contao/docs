@@ -21,6 +21,7 @@ Since the introduction of Twig support, the possibilities have been continuously
 Therefore, we recommend using Contao versions **4.13.10** and **5.0.2** or later. The differences are described here.
 {{% /notice %}}
 
+{{% children %}}
 
 ## Getting started with Twig
 

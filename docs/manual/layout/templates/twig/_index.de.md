@@ -23,6 +23,7 @@ Seit Einführung der Twig Unterstützung wurden die Möglichkeiten in den folgen
 Empfohlen wird daher die Nutzung ab den Contao Versionen **4.13.10** bzw. **5.0.2**. Die Unterschiede werden hier jeweils beschrieben.
 {{% /notice %}}
 
+{{% children %}}
 
 ## Erste Schritte
 
