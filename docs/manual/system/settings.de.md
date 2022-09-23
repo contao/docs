@@ -649,7 +649,7 @@ IP-Adresse des Clients, ob der Client eine Verbindung über HTTPS herstellt oder
 
 ### `TRUSTED_HOSTS`
 
-Die gleiche Erklärung wie für `TRUSTED_PROXIES` und das IP-Beispiel gilt auch für `TRUSTED_HOSTS` beim Abrufen des ursprünglich gesendeten `Host` HTTP-Header. Du würdest den Hostnamen des Proxys erhalten, aber wenn du den Hostnamen des Proxys zur Liste der vertrauenswürdigen Proxys hinzufügst, erhälst du den Hostnamen, der in der ursprünglichen Anfrage angefordert wurde: `TRUSTED_HOSTS=my.proxy.com`
+Die gleiche Erklärung wie für `TRUSTED_PROXIES` und das IP-Beispiel gilt auch für `TRUSTED_HOSTS` beim Abrufen des ursprünglich gesendeten `Host` HTTP-Header. Du würdest den Hostnamen des Proxys erhalten, aber wenn du den Hostnamen des Proxys zur Liste der vertrauenswürdigen Proxys hinzufügst, erhältst du den Hostnamen, der in der ursprünglichen Anfrage angefordert wurde: `TRUSTED_HOSTS=my.proxy.com`
 
 
 ## E-Mail Versand Konfiguration
