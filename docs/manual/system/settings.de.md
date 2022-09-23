@@ -630,7 +630,7 @@ Wie bei den irrelevanten Cookies verwaltet Contao auch eine Liste irrelevanter A
 
 {{< version "4.10" >}}
 
-Wie bei `COOKIE_REMOVE_FROM_DENY_LIST` kannst du  `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` verwenden, um einen Eintrag aus der Standard-Deny-Liste zu entfernen, die mit Contao ausgeliefert wird. Wenn du z.B. die Facebook-Klick-Kennung (`fbclid`) im serverseitigen Code benötigst, kannst du die Liste wie folgt aktualisieren:
+Wie bei `COOKIE_REMOVE_FROM_DENY_LIST` kannst du  `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` verwenden, um einen Eintrag aus der Standard-Deny-Liste zu entfernen, die mit Contao ausgeliefert wird. Wenn du z. B. die Facebook-Klick-Kennung (`fbclid`) im serverseitigen Code benötigst, kannst du die Liste wie folgt aktualisieren:
 
 ```
 QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
