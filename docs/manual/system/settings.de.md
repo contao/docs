@@ -574,7 +574,7 @@ Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.db
 
 ### `MAILER_DSN`
 
-Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariablen namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariable namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
 Siehe die [Symfony Swiftmailer Bundle Dokumentation][SymfonySwiftmailer] für weitere Informationen.
 
 {{% notice note %}}
