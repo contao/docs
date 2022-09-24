@@ -51,7 +51,7 @@ nicht aus PHP-Templates heraus erweitern, nur umgekehrt.
 
 Diese Version beinhaltet fertige Twig Templates und diese können über das Backend, zwecks Anpassung, ausgewählt und erstellt werden. 
 Die entsprechenden Templates werden standardmäßig erweitert und die jeweiligen Abschnitte können dann überschrieben werden. 
-Du kannst hier aber auch beliebgen, eigenen Code eintragen. 
+Du kannst hier aber auch beliebigen, eigenen Code eintragen. 
 
 Ein Beispiel für das Inhaltselement »Text«:
 
