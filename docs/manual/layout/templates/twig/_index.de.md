@@ -8,8 +8,6 @@ weight: 10
 ---
 
 
-{{< version "4.12" >}}
-
 Twig ist Symfony's Standardmethode zum Schreiben von Templates. Es ist schnell, sicher und leicht erweiterbar. Im Gegensatz zu 
 PHP-Templates enthalten Twig-Templates keine Geschäftslogik, was die gemeinsame Nutzung durch Designer und Programmierer erleichtert. 
 Diese Tatsache hilft, eine saubere Trennung zwischen der Präsentations- und der Daten-/Logikschicht aufrechtzuerhalten.
@@ -19,7 +17,7 @@ von Blöcken oder Makros, den erleichterten Zugriff auf Objekte mit »Property A
 String-Interpolationsfunktionen und vieles mehr.
 
 {{% notice info %}}
-Seit Einführung der Twig Unterstützung wurden die Möglichkeiten in den folgenden Contao Versionen kontinuierlich ausgebaut. 
+Seit Einführung der Twig Unterstützung in Contao 4.12 wurden die Möglichkeiten in den folgenden Contao Versionen kontinuierlich ausgebaut. 
 Empfohlen wird daher die Nutzung ab den Contao Versionen **4.13.10** bzw. **5.0.2**. Die Unterschiede werden hier jeweils beschrieben.
 {{% /notice %}}
 
