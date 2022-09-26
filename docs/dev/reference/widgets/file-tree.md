@@ -3,7 +3,8 @@ title: "File tree"
 description: Render a file picker
 ---
 
-This widget renders a file picker allowing choosing one or more files from the file system.
+This widget renders a file picker allowing to choose one or more files from the file system.
+
 
 The file tree widget in the contao download element:
 
