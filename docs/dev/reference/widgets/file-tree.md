@@ -53,7 +53,8 @@ A single image file picker.
 
 {{% tab name="Image gallery" %}}
 
-An image gallery picker, allows picking multiple images, display them in the backend as gallery and be able to sort them.
+An image gallery picker, allows picking multiple images, display them in the back end as gallery and be able to sort them.
+
 
 ```php
 // ...
