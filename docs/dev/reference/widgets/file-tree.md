@@ -11,17 +11,18 @@ The file tree widget in the contao download element:
 
 ## Options
 
-| Key          | Value                       | Description                                                                                                                                                                                                                                                                                                   |
-|--------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `inputType`  | `fileTree` (string)         |                                                                                                                                                                                                                                                                                                               |
-| `fieldType`  | `checkbox`/`radio` (string) | **checkbox** allow multiple selections<br/>**radio** allow a single selection only                                                                                                                                                                                                                            |
-| `extensions` | `string`                    | Limits the file tree to certain file types (comma separated list).                                                                                                                                                                                                                                            |
-| `files`      | `bool`                      | If true files and folders will be shown. If false, only folders will be shown.                                                                                                                                                                                                                                |
-| `filesOnly`  | `bool`                      | 	Removes the radio buttons or checkboxes next to folders.                                                                                                                                                                                                                                                     |
-| `isGallery`  | `bool`                      | Displays selected files of a fileTree widget as an image gallery.                                                                                                                                                                                                                                             |
-| `isSortable` | `bool`                      | {{< version "4.10" >}} Enable sorting for the selected items.                                                                                                                                                                                                                                                 |
-| `orderField` | `string`                    | <div class="notices note"><p>Using "orderField" for the page tree has been deprecated and will <strong>no longer work in Contao 5.0</strong>. Use "isSortable" instead.</p></div>Database column where the order of the selected items gets stored. This is only required if isGallery or isDownloads is set. |
-| `path`       | `string`                    | Custom root directory for file trees.                                                                                                                                                                                                                                                                         |
+| Key               | Value                       | Description                                                                                                                                                                                                                                                                                                   |
+|-------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `inputType`       | `fileTree` (string)         |                                                                                                                                                                                                                                                                                                               |
+| `eval.extensions` | `string`                    | Limits the file tree to certain file types (comma separated list).                                                                                                                                                                                                                                            |
+| `eval.fieldType`  | `checkbox`/`radio` (string) | **checkbox** allow multiple selections<br/>**radio** allow a single selection only                                                                                                                                                                                                                            |
+| `eval.files`      | `bool`                      | If true files and folders will be shown. If false, only folders will be shown.                                                                                                                                                                                                                                |
+| `eval.filesOnly`  | `bool`                      | Removes the radio buttons or checkboxes next to folders.                                                                                                                                                                                                                                                      |
+| `eval.isGallery`  | `bool`                      | Displays selected files of a fileTree widget as an image gallery.                                                                                                                                                                                                                                             |
+| `eval.isSortable` | `bool`                      | {{< version "4.10" >}} Enable sorting for the selected items.                                                                                                                                                                                                                                                 |
+| `eval.multiple`   | `bool`                      | Make the input field multiple.                                                                                                                                                                                                                                                                                |
+| `eval.orderField` | `string`                    | <div class="notices note"><p>Using "orderField" for the page tree has been deprecated and will <strong>no longer work in Contao 5.0</strong>. Use "isSortable" instead.</p></div>Database column where the order of the selected items gets stored. This is only required if isGallery or isDownloads is set. |
+| `eval.path`       | `string`                    | Custom root directory for file trees.                                                                                                                                                                                                                                                                         |
 
 ## Examples
 
@@ -33,8 +34,7 @@ A single image file picker.
 
 ```php
 // ...
-'singleSRC' =>
-[
+'singleSRC' => [
     'exclude'   => true,
     'inputType' => 'fileTree',
     'eval'      => [
@@ -55,15 +55,16 @@ An image gallery picker, allows picking multiple images, display them in the bac
 ```php
 // ...
 'multiSRC' => [
-    'exclude'       => true,
-    'inputType'     => 'fileTree',
-    'eval'          => [
-        'fieldType' => 'checkbox', 
-        'orderField' => 'orderSRC', 
-        'files' => true,
-        'isGallery' => true,
+    'exclude'   => true,
+    'inputType' => 'fileTree',
+    'eval'      => [
+        'fieldType'  => 'checkbox',
+        'files'      => true,
+        'isGallery'  => true,
+        'multiple'   => true,
+        'orderField' => 'orderSRC',
     ],
-    'sql'           => "blob NULL",
+    'sql'       => "blob NULL",
 ],
 // ...
 ```
@@ -76,11 +77,12 @@ A folder picker.
 
 ```php
 // ...
-'folders'         => [
+'folders' => [
     'inputType' => 'fileTree',
     'eval'      => [
         'files'     => false,
         'fieldType' => 'checkbox',
+        'multiple'  => true,
     ],
     'sql'       => "blob NULL",
 ],
@@ -90,5 +92,3 @@ A folder picker.
 {{% /tab %}}
 
 {{< /tabs >}}
-
-
