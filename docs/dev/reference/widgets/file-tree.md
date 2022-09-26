@@ -10,6 +10,10 @@ The file tree widget in the contao download element:
 
 ![File tree widget](../images/file-tree.png?classes=shadow)
 
+The file tree with gallery option enabled (as in the contao gallery element):
+
+![File tree widget](../images/file-tree-gallery.png?classes=shadow)
+
 ## Options
 
 This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference](../../dca/fields).
@@ -96,3 +100,8 @@ A folder picker.
 {{% /tab %}}
 
 {{< /tabs >}}
+
+
+## Usage in Contao
+
+The file tree widget is used very often in contao. Examples are the text, download, image and gallery elements.
