@@ -11,6 +11,8 @@ The file tree widget in the contao download element:
 
 ## Options
 
+This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference](../../dca/fields).
+
 | Key               | Value                       | Description                                                                                                                                                                                                                                                                                                   |
 |-------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `inputType`       | `fileTree` (string)         |                                                                                                                                                                                                                                                                                                               |
