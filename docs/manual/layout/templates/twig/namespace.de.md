@@ -8,6 +8,8 @@ weight: 80
 ---
 
 
+
+
 Twig-Vorlagen existieren in Namensräumen wie `@Foo/my_template.html.twig` (*Foo*) oder
 `@ContaoCore/Image/Studio/figure.html.twig` (*ContaoCore*). Contao registriert automatisch die Vorlagen aus den verschiedenen 
 Verzeichnissen in ihren jeweiligen Namensräumen.
@@ -29,8 +31,8 @@ kennst. In jeder Situation wählen wir die **nächste verfügbare** Vorlage, die
 
 {{% notice tip %}}
 Du kannst auf der Konsole `contao-console debug:contao-twig` ausführen, um eine Liste aller registrierten Namensräume zu erhalten. 
-Wenn du auch Theme-Vorlagen auflisten möchtest, füge die Option `-t` mit dem Theme-Namen hinzu. Mit der Option `--tree` werden die 
-vorhandenen Vorlagen zusätzlich sortiert und in einem Präfix-Baum angezeigt.
+Wenn du auch Theme-Vorlagen auflisten möchtest, füge die Option `-t` mit dem Theme-Namen hinzu. Mit der Option `--tree` werden ab Contao 5.0.2 
+die vorhandenen Vorlagen zusätzlich sortiert und in einem Präfix-Baum angezeigt. 
 {{% /notice %}}
 
 
