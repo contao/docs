@@ -87,7 +87,7 @@ Aus `"contao/news-bundle": "^4.13"` wird also `"contao/news-bundle": "^5.0"` etc
 
 {{% notice "note" %}}
 Die `contao/managed-edition` nutzt für die einzelnen Core-Pakete die Versions-Anforderung `^5.0`. Dies bedeutet dass die einzelnen Pakete
-mindestens in Version `5.0.0` installiert werden, aber nicht in den Versionen `6.x` - `^5.0` erlaubt also auf `5.1.x`, `5.2.x` etc. Damit
+mindestens in Version `5.0.0` installiert werden, aber nicht in den Versionen `6.x` - `^5.0` erlaubt also auch `5.1.x`, `5.2.x` etc. Damit
 eine Paketaktualisierung aber nicht ungefragt auf eine höhere Minor-Version aktualisiert, setzt die `contao/managed-edition` die
 Versions-Anforderung des `contao/manager-bundle` auf `5.0.*` - und somit sind die Contao-Pakete auf eine gewisse Minor-Version festgesetzt
 (in diesem Fall `5.0.x`). Bei einem Update auf eine höhere Minor-Version muss dann also die Versions-Anforderung des `contao/manager-bundle`
@@ -95,7 +95,7 @@ auf bspw. `5.1.*` gesetzt werden. Siehe auch die [Composer Dokumentation](https:
 {{% /notice %}}
 
 
-### Composer Scripts anpassen
+### Composer Scripte anpassen
 
 Wurde mit der Contao-Installation schon in etwas älteren Versionen begonnen, dann befindet sich möglicherweise im `script` Teil der
 `composer.json` eine Referenz auf den alten `ScriptHandler`, welcher in Contao 5 nicht mehr existiert. Dieser Abschnitt muss auf 
@@ -154,9 +154,9 @@ zu erhalten.
 
 ### Extensions
 
-Nach den vorherigen Anpassungen an die `composer.json` kann nun eine vollständige Paketaktualisierung durchgeführt werden, um das Update zu
-vollziehen. Allerdings wird Composer das Update verweigern, wenn man noch nach Extensions verlangt, die noch nicht für Contao 5 freigegeben
-sind (oder deren Abhängigkeiten nicht mit Contao 5 kompatibel sind).
+Nach den vorherigen Anpassungen kann nun eine vollständige Paketaktualisierung durchgeführt werden, um das Update zu vollziehen. Allerdings 
+wird Composer das Update verweigern, wenn man noch nach Extensions verlangt, die noch nicht für Contao 5 freigegeben sind (oder deren 
+Abhängigkeiten nicht mit Contao 5 kompatibel sind).
 
 In so einem Fall muss man daher analysieren ob es für die jeweilige Extension auch eine neuere Major-Version gibt, die kompatibel ist - oder
 ansonsten abwägen, ob die Extension noch gebraucht wird und daher entfernt werden kann.
@@ -183,7 +183,7 @@ vendor/bin/contao-console contao:migrate
 
 [ContaoInstallation]: /de/installation/contao-installieren/
 [ContaoInstallTool]: /de/installation/contao-installtool/
-[HostingConfig]: /de/installation/systemvoraussetzungen#hosting-konfiguration
+[HostingConfig]: /de/installation/systemvoraussetzungen/#hosting-konfiguration
 [ContaoManager]: /de/installation/contao-manager/
 [TwigTemplates]: /de/layout/templates/twig/
 [ConfigTranslations]: https://docs.contao.org/dev/getting-started/starting-development/#contao-configuration-translations
