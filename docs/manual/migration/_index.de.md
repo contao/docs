@@ -138,6 +138,20 @@ Ordner bzw. Dateien müssen daher verschoben werden, falls diese noch benutzt wu
 | `app/Resources/views/` | `templates/bundles/` |
 
 
+### Applikationsanpassungen
+
+In Contao 4 wurden noch die Anpassungsmöglichkeiten aus Contao 3 im Ordner `system/config/` unterstützt. Eine solche Unterstützung gibt es
+in Contao 5 nicht mehr - daher muss dies nun an den richtigen Ort übertragen werden. Siehe dazu den entsprechenden Eintrag in der
+[Entwickler-Dokumentation][ConfigTranslations].
+
+
+### Interne Stylesheets exportieren
+
+In Contao 5 entfällt der [interne CSS-Editor][ManageStylesheets]. Vor der Aktualisierung müssen daher die bestehenden internen Stylesheets 
+[exportiert][ExportStylesheets] und danach wieder als [externe Stylesheets][LayoutStylesheets] im Seitenlayout ausgewählt werden, um diese 
+zu erhalten.
+
+
 ### Extensions
 
 Nach den vorherigen Anpassungen an die `composer.json` kann nun eine vollständige Paketaktualisierung durchgeführt werden, um das Update zu
@@ -154,13 +168,6 @@ Wie schon erwähnt müssen immer die angepassten Templates überprüft werden. A
 alle Inhaltselemente (und in Zukunft auch Module) sind neu implementiert und nutzen nun [Twig-Templates][TwigTemplates] in einer neuen 
 Struktur. Hatte man bspw. ein angepasstes `templates/ce_text.html5` Template würde dieses in Contao 5 nicht mehr greifen (es sei denn man 
 schaltet das jeweilige Inhaltselement auf die alte Version um).
-
-
-### Applikationsanpassungen
-
-In Contao 4 wurden noch die Anpassungsmöglichkeiten aus Contao 3 im Ordner `system/config/` unterstützt. Eine solche Unterstützung gibt es
-in Contao 5 nicht mehr - daher muss dies nun an den richtigen Ort übertragen werden. Siehe dazu den entsprechenden Eintrag in der
-[Entwickler-Dokumentation][ConfigTranslations].
 
 
 ### Migrationen und Datenbank-Updates starten
@@ -180,3 +187,6 @@ vendor/bin/contao-console contao:migrate
 [ContaoManager]: /de/installation/contao-manager/
 [TwigTemplates]: /de/layout/templates/twig/
 [ConfigTranslations]: https://docs.contao.org/dev/getting-started/starting-development/#contao-configuration-translations
+[ManageStylesheets]: /de/layout/theme-manager/stylesheets-verwalten/
+[ExportStylesheets]: /de/layout/theme-manager/stylesheets-verwalten/#stylesheets-exportieren
+[LayoutStylesheets]: /de/layout/theme-manager/seitenlayouts-verwalten/#stylesheets
