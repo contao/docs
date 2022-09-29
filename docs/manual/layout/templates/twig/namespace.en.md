@@ -7,28 +7,18 @@ weight: 80
 ---
 
 
-Twig templates live in namespaces like `@Foo/my_template.html.twig` (*Foo*) or `@ContaoCore/Image/Studio/figure.html.twig` (*ContaoCore*). 
-We are automatically registering templates from the various Contao template directories in their respective namespaces
+The full template name inside Twig contains a "namespace". And a namespace looks like `@ContaoCore/Image/Studio/figure.html.twig`.
 
-| Folder | Namespace | | Prio.<sup>*</sup>
-|-|-|-|-|
-| `/vendor/…/templates`<br>`/vendor/foo/bar/contao/templates` | `@Contao_<bundle>`<br>`@Contao_FooBarBundle` | Any bundle template/views directory. | 1 |
-| `/contao/templates`<br>`/src/Resources/contao/templates`<br>`/app/Resources/contao/templates` | `@Contao_App` | Template directory of the application. | 2 |
-| `/templates` | `@Contao_Global` | Global template directory. | 3 |
-| `/templates/<theme>`<br>`/templates/foo/theme` | `@Contao_Theme_<theme>`<br>`@Contao_Theme_foo_theme` | Any theme directory. The path (`foo/theme`) will be transformed into a slug (`foo_theme`) and appended as a suffix. | 4 |
+Our Contao templates are all inside the `@Contao` namespace, so that's why for instance the text content element's 
+"fully qualified template name" is `@Contao/content_element/text.html.twig` and why you would extend from it with 
+`{% extends "@Contao/content_element/text.html.twig" %}`.
 
-<sup>* Higher priority values mean "considered as template candidate first".</sup>
-
-
-### Namespace @Contao
-
-On top, we're also providing a **managed** `@Contao` namespace which you should use whenever you do not know the exact namespace beforehand. 
-In each situation we're choosing the **next available** template that has a **lower priority** than the current one.
+The `@Contao` namespace is a "managed namespace" and has a special feature in contrast to standard Twig: The same template can be 
+extended from various sources. This way an extension can, for instance, add a new feature to a core template while you can still adjust it 
+in your application.
 
 {{% notice tip %}}
 You can run `contao-console debug:contao-twig` on the console to get a list of all registered namespaces. 
-If you also want to list theme templates, add the `-t` option with the theme name. With the `--tree` option, the existing templates are 
-additionally sorted and displayed in a prefix tree.
 {{% /notice %}}
 
 

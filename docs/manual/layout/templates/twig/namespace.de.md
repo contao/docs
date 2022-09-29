@@ -8,31 +8,20 @@ weight: 80
 ---
 
 
+Der vollständige Name eines Templates in Twig enthält einen »Namensraum«. Und ein »Namensraum« könnte 
+so `@ContaoCore/Image/Studio/figure.html.twig` aussehen.
 
+Die Contao Templates befinden sich alle im `@Contao` Namensraum, deshalb lautet zum Beispiel der »vollqualifizierte Template Name« 
+des Inhaltselements vom Typ »Text« `@Contao/content_element/text.html.twig` und kann daher mit `{% extends "@Contao/content_element/text.html.twig" %}`
+erweitert werden.
 
-Twig-Vorlagen existieren in Namensräumen wie `@Foo/my_template.html.twig` (*Foo*) oder
-`@ContaoCore/Image/Studio/figure.html.twig` (*ContaoCore*). Contao registriert automatisch die Vorlagen aus den verschiedenen 
-Verzeichnissen in ihren jeweiligen Namensräumen.
+Der `@Contao`-Namensraum ist ein »verwalteter Namensraum« und hat im Gegensatz zu Standard-Twig eine Besonderheit: Das gleiche Template kann 
+aus verschiedenen Quellen erweitert werden. Auf diese Weise kann eine Erweiterung z. B. eine neue Funktion zu einem Kern-Template hinzufügen 
+und du kannst diese dann anpassen. 
 
-| Verzeichnis | Namensraum | | Prio.<sup>*</sup>
-|-|-|-|-|
-| `/vendor/…/templates`<br>`/vendor/foo/bar/contao/templates` | `@Contao_<bundle>`<br>`@Contao_FooBarBundle` | Jedes Bundle-Vorlagen/Views-Verzeichnis. | 1 |
-| `/contao/templates`<br>`/src/Resources/contao/templates`<br>`/app/Resources/contao/templates` | `@Contao_App` | Vorlagen-Verzeichnis der Anwendung. | 2 |
-| `/templates` | `@Contao_Global` | Globales Vorlagen-Verzeichnis. | 3 |
-| `/templates/<theme>`<br>`/templates/foo/theme` | `@Contao_Theme_<theme>`<br>`@Contao_Theme_foo_theme` | Ein beliebiges Theme-Verzeichnis. Der Pfad (`foo/theme`) wird in einen Slug (`foo_theme`) umgewandelt und als Suffix angehängt. | 4 |
-
-<sup>* Höhere Prioritätswerte bedeuten "Zuerst als Vorlagenkandidat betrachten".</sup>
-
-
-### Der Namensraum @Contao
-
-Darüber hinaus existiert ein **verwalteter** `@Contao`-Namensraum, den du immer verwenden kannst, wenn du den genauen Namensraum nicht 
-kennst. In jeder Situation wählen wir die **nächste verfügbare** Vorlage, die eine **niedrigere Priorität** hat als die aktuelle.
 
 {{% notice tip %}}
-Du kannst auf der Konsole `contao-console debug:contao-twig` ausführen, um eine Liste aller registrierten Namensräume zu erhalten. 
-Wenn du auch Theme-Vorlagen auflisten möchtest, füge die Option `-t` mit dem Theme-Namen hinzu. Mit der Option `--tree` werden ab Contao 5.0.2 
-die vorhandenen Vorlagen zusätzlich sortiert und in einem Präfix-Baum angezeigt. 
+Du kannst auf der Konsole `contao-console debug:contao-twig` ausführen, um eine Liste aller registrierten Namensräume zu erhalten.
 {{% /notice %}}
 
 
