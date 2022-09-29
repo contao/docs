@@ -8,20 +8,22 @@ weight: 90
 ---
 
 
-You can use Twig extensions without any problems. The Contao core for instance uses the [KnpTimeBundle](https://github.com/KnpLabs/KnpTimeBundle) 
-to format dates/time in a nice way.
+Extension developers can easily add more features to Twig, that you can then use in every template. This typically includes new `|filters` and `functions()`.
 
 
 ## Using twig-extra bundles
 
-In fact, there are already a lot of Twig extensions in the wild, including some
-[official ones](https://github.com/twigphp/Twig/tree/3.x/extra). These "[twig-extra](https://extensions.contao.org/?q=twig&pages=1)" bundles 
-can simply be installed with composer or with the Contao Manager (see [extensions.contao.org](https://extensions.contao.org/?q=twig&pages=1)) 
-and are ready to be used.
+In fact, there are already some [offical extensions by the Twig project](https://github.com/twigphp/Twig/tree/3.x/extra) 
+called the "[twig-extra](https://extensions.contao.org/?q=twig&pages=1)" bundles which can be installed with composer or the 
+Contao Manager (see [extensions.contao.org](https://extensions.contao.org/?q=twig&pages=1)).
 
 ```twig
-{# needs twig/intl-extra #}
+{# after installing twig/intl-extra #}
 
 {{ '1000000'|format_currency('EUR') }}
 {# 1,000,000.00 € #}
 ```
+
+{{% notice tip %}}
+The command `vendor/bin/contao-console debug:twig` shows you, among other things, a list of available Twig functions and filters.
+{{% /notice %}}
