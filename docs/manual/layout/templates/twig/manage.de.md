@@ -10,9 +10,10 @@ weight: 20
 
 Twig-Templates werden gegenüber den bisherigen PHP-Templates anders gekennzeichnet: (`.html.twig` statt `.html5`).
 
-{{% notice tip %}}
-Contao 5 beinhaltet fertige Twig Templates und diese werden favorisiert. Du kannst aber auch weitehin die entsprechenden PHP-Templates gezielt
-aktivieren und nutzen. Weitere Informationen hierzu findest du [hier](https://github.com/contao/contao/blob/5.x/UPGRADE.md#content-elements).
+{{% notice info %}}
+Zm Wechsel auf Contao 5 solltest du zuvor die [Upgrade-Anleitung](https://github.com/contao/contao/blob/5.x/UPGRADE.md#content-elements) 
+lesen. Viele Elemente wurden umgeschrieben und verfügen nun über neue Vorlagen, aber es gibt eine Möglichkeit, diese schrittweise zu aktivieren, 
+um mehr Zeit für die Überarbeitung zu ermöglichen.
 {{% /notice %}}
 
 
