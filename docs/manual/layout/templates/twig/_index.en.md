@@ -53,6 +53,16 @@ how an example PHP template would translate to an analog Twig template:
 {{< /tabs >}}
 
 
+### .twig files
+
+We identify Twig files by giving them the `.twig` file extension. And because Twig is suitable for all kinds of file types, 
+we also include the file type as well. So a template containing a HTML list could be named `my_list.html.twig` while some JSON data might 
+be in a `data.json.twig` template. 
+
+Put your Twig templates inside the `template` directory like you would with your PHP templates. There is one specialty, though: 
+Twig template names can now include sub directories, so it matters where you place them.
+
+
 ### Learning the syntax
 
 To output variables wrap their name in curly braces `{{ foo }}`, to use keywords

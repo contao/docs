@@ -54,6 +54,16 @@ Twig-Templates haben ihre eigene Syntax. Das folgende Beispiel zeigt wie ein PHP
 {{< /tabs >}}
 
 
+### .twig Dateien
+
+Wir kennzeichnen Twig Dateien mit der Dateierweiterung `.twig`. Da Twig für alle Arten von Dateitypen geeignet ist, 
+geben wir auch den Dateityp an. So könnte eine Vorlage, die eine HTML-Liste enthält, `my_list.html.twig` heißen, während einige JSON-Daten 
+in einer `data.json.twig` Vorlage stehen könnten. 
+
+Lege die Twig Templates im Verzeichnis `template` ab, wie du es von den PHP Templates gewohnt bist. Allerdings gibt es eine Besonderheit: 
+Die Twig Namen können jetzt Unterverzeichnisse enthalten. Es kommt also darauf an wo diese abgelegt werden.
+
+
 ### Die Syntax erlernen
 
 Zur Ausgabe von Variablen benutzt du deren Namen in geschweiften Klammern `{{ foo }}`. Schlüsselwörter wie `for` werden innerhalb 
