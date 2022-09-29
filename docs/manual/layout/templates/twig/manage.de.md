@@ -22,12 +22,9 @@ aktivieren und nutzen. Weitere Informationen hierzu findest du [hier](https://gi
 
 {{% tab name="Contao 4.13" %}}
 
-Fertige Twig Temlates sind in dieser Version nicht vorhanden und können auch nicht über das Backend erstellt werden. Du mußt dazu 
-im Verzeichnis `templates` eine Datei, z. B. `ce_text.html.twig`, manuell anlegen. Dieses Twig Template wird anschließend im Backend
-angezeigt (könnte hier kopiert und umbenannt werden) und steht dann im jeweiligen Inhaltselement als Auswahl zur Verfügung.
-
-Es ist möglich, bestehende PHP-Templates aus den Twig-Templates heraus zu erweitern. Lege dir z. B. eine `fe_page.html.twig` in deinem 
-Template-Verzeichnis an. In diesem Beispiel wird eine Überschrift über dem Hauptabschnitt hinzugefügt und alles andere bleibt gleich:
+Du kannst Twig Templates verwenden, um PHP Templates zu überschreiben oder zu erweitern. Behalte den Dateinamen wie bisher bei, passe 
+aber die Dateierweiterung an. Erstelle zum Beispiel eine `fe_page.html.twig` in dem `Template` Verzeichnis und füge eine weitere Überschrift 
+über dem Hauptabschnitt hinzu:
 
 ```twig
 {# /templates/fe_page.html.twig #}
@@ -49,38 +46,24 @@ nicht aus PHP-Templates heraus erweitern, nur umgekehrt.
 
 {{% tab name="Contao 5.0" %}}
 
-Diese Version beinhaltet fertige Twig Templates und diese können über das Backend, zwecks Anpassung, ausgewählt und erstellt werden. 
-Die entsprechenden Templates werden standardmäßig erweitert und die jeweiligen Abschnitte können dann überschrieben werden. 
-Du kannst hier aber auch beliebigen, eigenen Code eintragen. 
+Mit Contao 5.0 haben wir begonnen, unsere Core Templates durch Twig Templates zu ersetzen. Diese neuen Templates haben nicht nur neue Funktionen, 
+sondern auch die neue Verzeichnisstruktur, die du beim Überschreiben/Erweitern beachten mußt - z. B.: 
+`content_element/gallery.html.twig` bedeutet eine `gallery.html.twig` Datei im Verzeichnis `content_element`.
+
+Du kannst nun auch von bestehenden Twig Vorlagen im Abschnitt »Layout > Templates« im Backend ableiten. Dann wird automatisch 
+eine `extends`-Anweisung für die Basisvorlage zusammen mit einigen erklärenden Kommentaren in die neu erstellte Datei eingefügt. Du solltest 
+das Erweitern, d. h. nur die benötigten Teile anpassen, dem Überschreiben in fast allen Fällen vorziehen. Auf diese Weise bleiben Änderungen 
+kompatibel.
 
 Ein Beispiel für das Inhaltselement »Text«:
 
 ```twig
 {% extends "@Contao/content_element/text.html.twig" %}
 
-{#
-  ** Add changes to the base template here. **
-
-  Hint: Try adjusting blocks and attributes instead of
-  overwriting the whole template. This way your version
-  can remain compatible with future changes to the base
-  template as well as adjustments made by extensions.
-
-  Currently available blocks:
-    "picture_component", "image", "sources", "source",
-    "schema_org", "figure_component", "media",
-    "media_link", "caption", "caption_inner",
-    "content", "text_media", "text",
-    "text_attributes", "headline_component",
-    "headline_attributes", "headline_inner",
-    "wrapper", "wrapper_tag", "attributes", "inner"
-
-  Example:
-    {% block picture_component %}
-       {{ parent() }}
-       My additional content for 'picture_component'…
-    {% endblock %}
-#}
+{% block content %}
+  {{ parent() }}
+  <p>Mein zusätzlicher Inhalt.</p>
+{% endblock %}
 ```
 
 {{% notice note %}}
@@ -114,11 +97,11 @@ für ein (o. mehrere) Inhaltselement(e) vom Typ »Text« genutzt werden.
 
 {{% tab name="Contao 5.0" %}}
 
-Möchstest du eine oder mehrere Varianten zu einem Template anbieten, die im Backend ausgewählt werden können, so erstelle einen Unterordner analog 
-zum Dateinamen des Templates und lege die angepasste Datei darin ab. 
+Wenn du eine oder mehrere Varianten eines Templates benötigst, die im Backend ausgewählt werden können, dann erstelle ein Unterverzeichnis 
+analog zum Dateinamen des Basis Templates und lege die angepasste Datei darin ab.  
 
-Beispiel: Eine Text-Variante `highlight` zu `content_element/text.html.twig` legst du unter `content_element/text/highlight.html.twig` ab. 
-Diese ist dann als individuelles Template `content_element/text/highlight` zur Auswahl im Inhaltselement verfügbar. 
+Beispiel: Du kannst eine Textvariante `highlight` unter `content_element/text/highlight.html.twig` ablegen. Im Inhaltselement vom Typ »Text« 
+kann dann `content_element/text/highlight` als »Individuelle Vorlage« ausgewählt werden.
 
 {{% /tab %}}
 

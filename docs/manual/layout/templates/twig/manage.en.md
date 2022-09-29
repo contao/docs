@@ -14,18 +14,15 @@ Contao 5 includes ready-made Twig templates and these are favored. However, you 
 More information can be found [here](https://github.com/contao/contao/blob/5.x/UPGRADE.md#content-elements).
 {{% /notice %}}
 
+
 ## Create Template
 
 {{< tabs groupId="creation" >}}
 
 {{% tab name="Ab Contao 4.13" %}}
 
-Ready-made Twig Temlates are not available in this version and cannot be created via the backend. You have to create a file manually 
-in the `templates` directory, e.g. `ce_text.html.twig`. This Twig template will then be displayed in the backend 
-(could be copied and renamed here) and is then available for selection in the respective content element.
-
-It is possible to extend existing PHP-template from within Twig templates. For example, create a `fe_page.html.twig` in your 
-template directory. In this example, a heading is added above the main section and everything else stays the same:
+You can now use Twig templates to overwrite or extend PHP templates. Keep the file name like before, but adjust the file extension. 
+For example, create a `fe_page.html.twig` in your `template` directory and add another heading above the main section:
 
 ```twig
 {# /templates/fe_page.html.twig #}
@@ -47,38 +44,24 @@ from PHP templates, only vice versa.
 
 {{% tab name="Contao 5.0" %}}
 
-This version includes ready-made Twig templates and these can be selected and created via the backend for customization. 
-The corresponding templates are expanded by default and the respective sections can then be overwritten. 
-You can also add your own code here. 
+Beginning in Contao 5.0, we started replacing our core templates with Twig templates. Besides having new features, these new templates 
+are also making use of the new directory structure that you need to follow when overwriting/extending - e.g. 
+`content_element/gallery.html.twig` means a `gallery.html.twig` file inside the `content_element` directory.
+
+You can now also derive from existing Twig templates in the "Layout > Templates" section in the back end. Then we'll automatically 
+add an `extends` statement for the base template along with some explaining comments into the newly created file. You should favor 
+extending, i.e. adjusting only the needed parts, over overwriting in nearly all cases. This way you'll stay compatible with future 
+changes and features that are introduced by extensions.
 
 An example for the content element "Text":
 
 ```twig
 {% extends "@Contao/content_element/text.html.twig" %}
 
-{#
-  ** Add changes to the base template here. **
-
-  Hint: Try adjusting blocks and attributes instead of
-  overwriting the whole template. This way your version
-  can remain compatible with future changes to the base
-  template as well as adjustments made by extensions.
-
-  Currently available blocks:
-    "picture_component", "image", "sources", "source",
-    "schema_org", "figure_component", "media",
-    "media_link", "caption", "caption_inner",
-    "content", "text_media", "text",
-    "text_attributes", "headline_component",
-    "headline_attributes", "headline_inner",
-    "wrapper", "wrapper_tag", "attributes", "inner"
-
-  Example:
-    {% block picture_component %}
-       {{ parent() }}
-       My additional content for 'picture_component'…
-    {% endblock %}
-#}
+{% block content %}
+  {{ parent() }}
+  <p>My additional content.</p>
+{% endblock %}
 ```
 
 {{% notice note %}}
@@ -110,11 +93,11 @@ for one (or more) content element(s) of type "Text".
 
 {{% tab name="Contao 5.0" %}}
 
-If you want to offer one or more variants of a template, which can be selected in the backend, then create a subfolder analogous to 
-to the file name of the template and place the customized file in it. 
+If you want to offer one or more variants of a template, which can be selected in the back end, then create a sub directory analogous to 
+the file name of the template and place the customized file in it.  
 
 Example: You can put a text variant `highlight` under `content_element/text/highlight.html.twig`. 
-This is then available as an individual template `content_element/text/highlight` for selection in the content element. 
+You can then select `content_element/text/highlight` as "Individual template" in the content element of type "Text". 
 
 {{% /tab %}}
 
