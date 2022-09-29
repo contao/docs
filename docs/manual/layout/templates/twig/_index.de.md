@@ -16,17 +16,6 @@ Twig bietet außerdem viele leistungsstarke Methoden zur Strukturierung von Vorl
 von Blöcken oder Makros, den erleichterten Zugriff auf Objekte mit »Property Access«, verfügt über Leerzeichenkontrolle, 
 String-Interpolationsfunktionen und vieles mehr.
 
-{{% notice note %}}
-Seit Einführung der Twig Unterstützung in Contao 4.12 wurden die Möglichkeiten in den folgenden Contao Versionen kontinuierlich ausgebaut. 
-Empfohlen wird daher die Nutzung ab den Contao Versionen **4.13** bzw. **5.0**. Die Unterschiede werden hier jeweils beschrieben.
-{{% /notice %}}
-
-{{% notice info %}}
-Template Änderungen sind nicht notwendig, wenn du nur eine zusätzliche CSS-ID oder CSS-Klasse benötigst. Bei den meisten Contao-Komponenten 
-kannst du diese im Bereich »Experten-Einstellungen« eintragen. Die entsprechenden Bezeichnungen werden von den Templates übernommen 
-und im Quelltext ausgegeben.
-{{% /notice %}}
-
 {{% children %}}
 
 ## Erste Schritte

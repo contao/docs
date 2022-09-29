@@ -14,16 +14,6 @@ a clean separation between your presentation and data/logic layer.
 Twig also features a lot of powerful methods to structure your templates like including, embedding, inheriting, reusing blocks or macros, 
 eases accessing objects with “property access”, has whitespace control, string interpolation features and a ton more… Give it a try!
 
-{{% notice note %}}
-Since the introduction of Twig support in Contao 4.12, the possibilities have been continuously extended in the following Contao versions. 
-Therefore, we recommend using Contao versions **4.13** and **5.0** or later. The differences are described here.
-{{% /notice %}}
-
-{{% notice info %}}
-Template changes are not necessary if you only need an additional CSS ID or CSS class. For most Contao components, you can enter them 
-in the “Expert settings” section. The corresponding names are taken from the templates and displayed in the source code.
-{{% /notice %}}
-
 {{% children %}}
 
 ## Getting started with Twig
