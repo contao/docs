@@ -148,8 +148,7 @@ in Contao 5 nicht mehr - daher muss dies nun an den richtigen Ort übertragen we
 ### Interne Stylesheets exportieren
 
 In Contao 5 entfällt der [interne CSS-Editor][ManageStylesheets]. Vor der Aktualisierung müssen daher die bestehenden internen Stylesheets 
-[exportiert][ExportStylesheets] und danach wieder als [externe Stylesheets][LayoutStylesheets] im Seitenlayout ausgewählt werden, um diese 
-zu erhalten.
+[exportiert][ExportStylesheets] und danach wieder als [externe Stylesheets][LayoutStylesheets] im Seitenlayout ausgewählt werden.
 
 
 ### Extensions
