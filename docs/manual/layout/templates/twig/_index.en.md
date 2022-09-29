@@ -16,7 +16,7 @@ eases accessing objects with “property access”, has whitespace control, stri
 
 {{% notice note %}}
 Since the introduction of Twig support in Contao 4.12, the possibilities have been continuously extended in the following Contao versions. 
-Therefore, we recommend using Contao versions **4.13.10** and **5.0.2** or later. The differences are described here.
+Therefore, we recommend using Contao versions **4.13** and **5.0** or later. The differences are described here.
 {{% /notice %}}
 
 {{% notice info %}}

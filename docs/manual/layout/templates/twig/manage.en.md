@@ -16,9 +16,9 @@ More information can be found [here](https://github.com/contao/contao/blob/5.x/U
 
 ## Create Template
 
-{{< tabs groupId="creation">}}
+{{< tabs groupId="creation" >}}
 
-{{% tab name="Ab Contao 4.13.10" %}}
+{{% tab name="Ab Contao 4.13" %}}
 
 Ready-made Twig Temlates are not available in this version and cannot be created via the backend. You have to create a file manually 
 in the `templates` directory, e.g. `ce_text.html.twig`. This Twig template will then be displayed in the backend 
@@ -45,7 +45,7 @@ from PHP templates, only vice versa.
 
 {{% /tab %}}
 
-{{% tab name="Ab Contao 5.0.2" %}}
+{{% tab name="Contao 5.0" %}}
 
 This version includes ready-made Twig templates and these can be selected and created via the backend for customization. 
 The corresponding templates are expanded by default and the respective sections can then be overwritten. 
@@ -92,9 +92,9 @@ A Twig template may not yet be available for each module/content element. In the
 
 ## Template Variant
 
-{{< tabs groupId="variant">}}
+{{< tabs groupId="variant" >}}
 
-{{% tab name="Ab Contao 4.13.10" %}}
+{{% tab name="Ab Contao 4.13" %}}
 
 The template files are prefixed for recognition. For example, `ce_` indicates a content element (**c**ontent **e**lement). For example, 
 if you want to change the output of the content element of type "text", you can use the template `ce_text.html.twig` for this purpose. 
@@ -108,7 +108,7 @@ for one (or more) content element(s) of type "Text".
 
 {{% /tab %}}
 
-{{% tab name="Ab Contao 5.0.2" %}}
+{{% tab name="Contao 5.0" %}}
 
 If you want to offer one or more variants of a template, which can be selected in the backend, then create a subfolder analogous to 
 to the file name of the template and place the customized file in it. 

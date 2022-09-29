@@ -18,9 +18,9 @@ aktivieren und nutzen. Weitere Informationen hierzu findest du [hier](https://gi
 
 ## Templates erstellen
 
-{{< tabs groupId="creation">}}
+{{< tabs groupId="creation" >}}
 
-{{% tab name="Ab Contao 4.13.10" %}}
+{{% tab name="Contao 4.13" %}}
 
 Fertige Twig Temlates sind in dieser Version nicht vorhanden und können auch nicht über das Backend erstellt werden. Du mußt dazu 
 im Verzeichnis `templates` eine Datei, z. B. `ce_text.html.twig`, manuell anlegen. Dieses Twig Template wird anschließend im Backend
@@ -47,7 +47,7 @@ nicht aus PHP-Templates heraus erweitern, nur umgekehrt.
 
 {{% /tab %}}
 
-{{% tab name="Ab Contao 5.0.2" %}}
+{{% tab name="Contao 5.0" %}}
 
 Diese Version beinhaltet fertige Twig Templates und diese können über das Backend, zwecks Anpassung, ausgewählt und erstellt werden. 
 Die entsprechenden Templates werden standardmäßig erweitert und die jeweiligen Abschnitte können dann überschrieben werden. 
@@ -95,9 +95,9 @@ bisherigen (PHP/Legacy) Templates herangezogen.
 
 ## Template Varianten
 
-{{< tabs groupId="variant">}}
+{{< tabs groupId="variant" >}}
 
-{{% tab name="Ab Contao 4.13.10" %}}
+{{% tab name="Contao 4.13" %}}
 
 Die Template-Dateien werden zur Erkennung mit einem Präfix versehen. Beispielsweise deutet `ce_` auf ein
 Inhaltselement (**c**ontent **e**lement) hin. Möchte man z. B. die Ausgabe des Inhaltselements vom Typ »Text« ändern, kann man 
@@ -112,7 +112,7 @@ für ein (o. mehrere) Inhaltselement(e) vom Typ »Text« genutzt werden.
 
 {{% /tab %}}
 
-{{% tab name="Ab Contao 5.0.2" %}}
+{{% tab name="Contao 5.0" %}}
 
 Möchstest du eine oder mehrere Varianten zu einem Template anbieten, die im Backend ausgewählt werden können, so erstelle einen Unterordner analog 
 zum Dateinamen des Templates und lege die angepasste Datei darin ab. 

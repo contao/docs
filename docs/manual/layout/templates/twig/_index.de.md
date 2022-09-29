@@ -18,7 +18,7 @@ String-Interpolationsfunktionen und vieles mehr.
 
 {{% notice note %}}
 Seit Einführung der Twig Unterstützung in Contao 4.12 wurden die Möglichkeiten in den folgenden Contao Versionen kontinuierlich ausgebaut. 
-Empfohlen wird daher die Nutzung ab den Contao Versionen **4.13.10** bzw. **5.0.2**. Die Unterschiede werden hier jeweils beschrieben.
+Empfohlen wird daher die Nutzung ab den Contao Versionen **4.13** bzw. **5.0**. Die Unterschiede werden hier jeweils beschrieben.
 {{% /notice %}}
 
 {{% notice info %}}
