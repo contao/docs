@@ -7,8 +7,8 @@ weight: 60
 ---
 
 
-The available template context varies depending on the template source. Within Twig templates you can display all available 
-or specific template data.
+To see what data is a available in a template (we call it the "context"), you can use the `dump()` function. If you only want to 
+know more about a specific part of the context, you can pass it as an argument:
 
 ```twig
 {{ dump() }}
@@ -16,39 +16,36 @@ or specific template data.
 {{ dump(varA, varB) }}
 ```
 
-{{% notice warning %}}
-This only works while the [debug mode](/en/system/debug-mode/) is enabled.
+{{% notice info %}}
+Because the dumped data can contain security critical information about your system, it is only possible while the 
+[debug mode](/en/system/debug-mode/) is enabled.
 {{% /notice %}}
 
 
 ## Command Line
 
-On the command line, you can use the command `vendor/bin/contao-console list debug` to find two useful commands.
+On the command line, you can use the command `vendor/bin/contao-console list debug` to find two useful commands:
+
+
+### debug:contao-twig
+
+You can use the command `vendor/bin/contao-console debug:contao-twig` to find out which templates are available 
+and used in the system. By passing a template name prefix as argument you can filter for certain groups: e.g. 
+`vendor/bin/contao-console debug:contao-twig content_element/h` will show the `headline` as well as `html` content element templates (and others). 
 
 {{% notice note %}}
-The options may differ between Contao versions. Therefore, for each command you can get details about the available options by 
-specifying `--help`. For example, you can find out that the `--tree` option in `debug:contao-twig`, is only supported in Contao 
-version 5.0.2 and later.
+Since Contao 5.0.2 there is also a `--tree` option that displays the templates in tree form following the directory structure. This is 
+especially helpful when dealing with variant templates that reside in sub directories, like `content_element/text/special.html.twig` 
+or `content_element/text/info.html.twig`. Filtering for `content_element/text` then neatly groups the `special` and `info` variant under 
+the default `text` template.
 {{% /notice %}}
 
 
 ### debug:twig
 
-The command shows you, among other things, a list of available Twig functions and filters.
-
-```bash
-php vendor/bin/contao-console debug:twig --help
-```
-
-
-### debug:contao-twig
-
-The command shows you details and more information about the hierarchy of your templates.
-
-```bash
-php vendor/bin/contao-console debug:contao-twig --help
-```
+The command `vendor/bin/contao-console debug:twig` shows you, among other things, a list of available Twig functions and filters.
 
 {{% notice tip %}}
-Both commands support the `--env` option to take the environment into account : `prod` (default setting) or `dev`.
+For each command you can get details about the available options by specifying `--help`. Both commands support the `--env` option to 
+take the environment into account : `prod` (default setting) or `dev`.
 {{% /notice %}}
