@@ -42,9 +42,38 @@ dass er escaped wird oder nicht.
 
 ## Vertrauenswürdige Rohdaten
 
-Wenn du absichtlich eine Variable ausgeben möchtest, die reines HTML enthält, wie z. B.  `<b>nett</b>`, musst du den 
-[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` der Variablen hinzufügen. Andernfalls wird `&lt;b&gt;nett&lt;/b&gt;` ausgegeben.
+Wenn du absichtlich eine Variable ausgeben möchtest, die reines HTML enthält musst du den 
+[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` der Variablen hinzufügen. 
+
+In Zusammenhang mit »Contao Insert-Tags« existieren zusätzlich die Filter `|insert_tag` und `|insert_tag_raw`. Benutzt du in einem 
+Inhaltselement vom Typ »Text« z. B. den Insert-Tag `{{br}}`, kannst du über die Twig Filter die Ausgabe beeinflussen.
+
+
+```twig
+{% extends "@Contao/content_element/text.html.twig" %}
+
+{% block content %}
+
+  {# Do not replace insert tags, encode #}
+  {{ text }}
+  {# yields: "&lt;p&gt;my{{br}}text&lt;/p&gt;" #}
+
+  {# Do not replace insert tags, do not encode  #}
+  {{ text|raw }}
+  {# yields: "<p>my{{br}}text</p>" #}
+
+  {# Replace insert tags, encode everything #}
+  {{ text|insert_tag }}
+  {# yields: "&lt;p&gt;my&lt;br&gt;text&lt;/p&gt;"#}
+
+  {# Replace insert tags, but *only* encode the text around the insert tags #}
+  {{ text|insert_tag_raw }}
+  {# yields: "&lt;p&gt;my<br>text&lt;/p&gt;" (note the intact "<br>") #}
+
+{% endblock %}
+```
 
 {{% notice warning %}}
-Denke daran, dass du `|raw` immer nur vertrauenswürdigen Eingaben hinzufügst. Die Verwendung von `|raw` kann ansonsten zu schwerwiegenden XSS-Schwachstellen führen.
+Denke daran, dass du `|raw` immer nur vertrauenswürdigen Eingaben hinzufügst. Die Verwendung von `|raw` kann ansonsten zu 
+schwerwiegenden XSS-Schwachstellen führen.
 {{% /notice %}}

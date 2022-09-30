@@ -39,10 +39,35 @@ You can mark a whole section of a template to be escaped or not by using the [au
 
 ## Trusted raw data
 
-If you intentionally **do** want to output a variable containing raw HTML, like 
-`<b>nice</b>`, you need to add the `|raw` [filter](https://twig.symfony.com/doc/3.x/filters/raw.html) to your variable which tells 
-Twig to skip escaping this value. Otherwise `&lt;b&gt;nice&lt;/b&gt;` will be output, i.e. a text saying *&lt;b&gt;nice&lt;/b&gt;* and 
-not a bold word <b>nice</b>. 
+If you intentionally **do** want to output a variable containing raw HTML, you need to add the 
+`|raw` [filter](https://twig.symfony.com/doc/3.x/filters/raw.html) to your variable.
+
+In connection with "Contao insert-tags", the filters `|insert_tag` and `|insert_tag_raw` also exist. If you use for example 
+a "Contao insert-tag" `{{br}}` within an content element of type "text", you can influence the output with Twig filters.
+
+```twig
+{% extends "@Contao/content_element/text.html.twig" %}
+
+{% block content %}
+
+  {# Do not replace insert tags, encode #}
+  {{ text }}
+  {# yields: "&lt;p&gt;my{{br}}text&lt;/p&gt;" #}
+
+  {# Do not replace insert tags, do not encode  #}
+  {{ text|raw }}
+  {# yields: "<p>my{{br}}text</p>" #}
+
+  {# Replace insert tags, encode everything #}
+  {{ text|insert_tag }}
+  {# yields: "&lt;p&gt;my&lt;br&gt;text&lt;/p&gt;"#}
+
+  {# Replace insert tags, but *only* encode the text around the insert tags #}
+  {{ text|insert_tag_raw }}
+  {# yields: "&lt;p&gt;my<br>text&lt;/p&gt;" (note the intact "<br>") #}
+
+{% endblock %}
+```
 
 {{% notice warning %}}
 Keep in mind, that you only ever add `|raw` to trusted input! Using `|raw` on anything else may result in severe XSS vulnerabilities!
