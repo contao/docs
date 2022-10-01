@@ -40,40 +40,55 @@ Mit dem [autoescape](https://twig.symfony.com/doc/3.x/tags/autoescape.html) Tag 
 dass er escaped wird oder nicht.
 
 
-## Vertrauenswürdige Rohdaten
+## Vertrauenswürdige Inhalte
 
-Wenn du absichtlich eine Variable ausgeben möchtest, die reines HTML enthält musst du den 
-[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` der Variablen hinzufügen. 
+Wenn du absichtlich eine Variable ausgeben möchtest, die HTML beinhaltet, musst du den 
+[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` der Variablen hinzufügen. Denke daran, dass du `|raw` immer 
+nur in Verbindung mit vertrauenswürdigen Inhalten verwenden solltest. In Zusammenhang mit Eingaben über den TinyMCE-Editor im Backend kannst du in diesem speziellen 
+Fall jedoch den `|raw` Filter durchaus verwenden. 
 
-In Zusammenhang mit »Contao Insert-Tags« existieren zusätzlich die Filter `|insert_tag` und `|insert_tag_raw`. Benutzt du in einem 
-Inhaltselement vom Typ »Text« z. B. den Insert-Tag `{{br}}`, kannst du über die Twig Filter die Ausgabe beeinflussen.
-
+Beispiel: Das Inhaltselement vom Typ »Text« beinhaltet folgenden Eintrag `<p>Mein<br>Text</p>`:
 
 ```twig
 {% extends "@Contao/content_element/text.html.twig" %}
 
 {% block content %}
 
-  {# Do not replace insert tags, encode #}
+  {# encode #}
   {{ text }}
-  {# yields: "&lt;p&gt;my{{br}}text&lt;/p&gt;" #}
+  {# yields: "&lt;p&gt;Mein&lt;br&gt;Text&lt;/p&gt;" #}
 
-  {# Do not replace insert tags, do not encode  #}
+  {# do not encode #}
   {{ text|raw }}
-  {# yields: "<p>my{{br}}text</p>" #}
-
-  {# Replace insert tags, encode everything #}
-  {{ text|insert_tag }}
-  {# yields: "&lt;p&gt;my&lt;br&gt;text&lt;/p&gt;"#}
-
-  {# Replace insert tags, but *only* encode the text around the insert tags #}
-  {{ text|insert_tag_raw }}
-  {# yields: "&lt;p&gt;my<br>text&lt;/p&gt;" (note the intact "<br>") #}
+  {# yields: "<p>Mein<br>Text</p>" #}
 
 {% endblock %}
 ```
 
-{{% notice warning %}}
-Denke daran, dass du `|raw` immer nur vertrauenswürdigen Eingaben hinzufügst. Die Verwendung von `|raw` kann ansonsten zu 
-schwerwiegenden XSS-Schwachstellen führen.
-{{% /notice %}}
+### Twig Filter und Insert-Tags
+
+In Inhaltselementen, beispielsweise vom »Typ« Text, werden u. U. [Insert-Tags](/de/artikelverwaltung/insert-tags/) verwendet. Hierzu werden zusätzlich die Filter 
+`|insert_tag` und `|insert_tag_raw` bereit gestellt. 
+
+Beispiel: Das Inhaltselement vom Typ »Text« beinhaltet folgenden Eintrag (mit dem Insert-Tag `{{br}}`): `<p>Meine<br>Text{{br}}Demo</p>`. 
+Über diese Twig Filter kannst du die Ausgabe gezielt beeinflussen:
+
+```twig
+{% extends "@Contao/content_element/text.html.twig" %}
+
+{% block content %}
+
+  {# encode #}
+  {{ text|insert_tag }}
+  {# yields: "&lt;p&gt;Meine&lt;br&gt;Text&lt;br&gt;Demo&lt;/p&gt"#}
+
+  {# do not encode): #}
+  {{ text|insert_tag|raw }}
+  {# yields: "<p>Meine<br>Text<br>Demo</p>" #}    
+
+  {# only encode content around the insert tag #}
+  {{ text|insert_tag_raw }}
+  {# yields: "&lt;p&gt;Meine&lt;br&gt;Text<br>Demo&lt;/p&gt;" (note the intact "<br>") #}
+
+{% endblock %}
+```

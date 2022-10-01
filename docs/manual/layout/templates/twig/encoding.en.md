@@ -29,7 +29,7 @@ With Twig we can be specific how a certain variable should be treated. Use the `
 <div class="box">{{ color|e('html') }}</div>
 ```
 
-{{% notice note %}}
+{{% notice note %}}Hall
 By default Twig encodes **all** variables. The chosen escaper strategy will depend on the template's file extension: your `.html.twig`
 templates will automatically get the `|e('html')` treatment, so you could omit this part in the above example.
 {{% /notice %}}
@@ -37,38 +37,56 @@ templates will automatically get the `|e('html')` treatment, so you could omit t
 You can mark a whole section of a template to be escaped or not by using the [autoescape](https://twig.symfony.com/doc/3.x/tags/autoescape.html) tag.
 
 
-## Trusted raw data
+## Trusted content
 
-If you intentionally **do** want to output a variable containing raw HTML, you need to add the 
-`|raw` [filter](https://twig.symfony.com/doc/3.x/filters/raw.html) to your variable.
+If you want to intentionally output a variable that contains HTML, you must add the 
+[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` to the variable. Remember that you should always use `|raw` only in 
+connection with trusted content. However, in connection with input via the TinyMCE editor in the backend, you can use the `|raw` filter in 
+this particular case.
 
-In connection with "Contao insert-tags", the filters `|insert_tag` and `|insert_tag_raw` also exist. If you use for example 
-a "Contao insert-tag" `{{br}}` within an content element of type "text", you can influence the output with Twig filters.
+Example: The content element of type "Text" contains the following entry `<p>My<br>Text</p>`:
 
 ```twig
 {% extends "@Contao/content_element/text.html.twig" %}
 
 {% block content %}
 
-  {# Do not replace insert tags, encode #}
+  {# encode #}
   {{ text }}
-  {# yields: "&lt;p&gt;my{{br}}text&lt;/p&gt;" #}
+  {# yields: "&lt;p&gt;My&lt;br&gt;Text&lt;/p&gt;" #}
 
-  {# Do not replace insert tags, do not encode  #}
+  {# do not encode #}
   {{ text|raw }}
-  {# yields: "<p>my{{br}}text</p>" #}
-
-  {# Replace insert tags, encode everything #}
-  {{ text|insert_tag }}
-  {# yields: "&lt;p&gt;my&lt;br&gt;text&lt;/p&gt;"#}
-
-  {# Replace insert tags, but *only* encode the text around the insert tags #}
-  {{ text|insert_tag_raw }}
-  {# yields: "&lt;p&gt;my<br>text&lt;/p&gt;" (note the intact "<br>") #}
+  {# yields: "<p>My<br>Text</p>" #}
 
 {% endblock %}
 ```
 
-{{% notice warning %}}
-Keep in mind, that you only ever add `|raw` to trusted input! Using `|raw` on anything else may result in severe XSS vulnerabilities!
-{{% /notice %}}
+
+### Twig Filter and Insert Tags
+
+In content elements, for example of the "type" text, [insert tags](/en/article-management/insert-tags/) may be used. For this purpose the 
+additional filters `|insert_tag` and `|insert_tag_raw` are provided.
+
+Example: The content element of type "Text" contains the following entry (with the insert tag `{br}}`): `<p>My<br>Text{{br}}Demo</p>`. 
+You can use these Twig filters to target the output:
+
+```twig
+{% extends "@Contao/content_element/text.html.twig" %}
+
+{% block content %}
+
+  {# encode #}
+  {{ text|insert_tag }}
+  {# yields: "&lt;p&gt;Mye&lt;br&gt;Text&lt;br&gt;Demo&lt;/p&gt"#}
+
+  {# do not encode): #}
+  {{ text|insert_tag|raw }}
+  {# yields: "<p>My<br>Text<br>Demo</p>" #}    
+
+  {# only encode content around the insert tag #}
+  {{ text|insert_tag_raw }}
+  {# yields: "&lt;p&gt;My&lt;br&gt;Text<br>Demo&lt;/p&gt;" (note the intact "<br>") #}
+
+{% endblock %}
+```
