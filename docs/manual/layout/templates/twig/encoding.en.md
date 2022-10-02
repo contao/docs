@@ -53,11 +53,9 @@ Example: The content element of type "Text" contains the following entry `<p>My<
 
   {# encode #}
   {{ text }}
-  {# yields: "&lt;p&gt;My&lt;br&gt;Text&lt;/p&gt;" #}
 
   {# do not encode #}
   {{ text|raw }}
-  {# yields: "<p>My<br>Text</p>" #}
 
 {% endblock %}
 ```
@@ -76,17 +74,17 @@ You can use these Twig filters to target the output:
 
 {% block content %}
 
-  {# encode #}
+  {# Do not replace insert tags, encode #}
+  {{ text }}
+
+  {# Do not replace insert tags, do not encode #}
+  {{ text|raw }}
+
+  {# Replace insert tags, encode everything #}
   {{ text|insert_tag }}
-  {# yields: "&lt;p&gt;Mye&lt;br&gt;Text&lt;br&gt;Demo&lt;/p&gt"#}
 
-  {# do not encode): #}
-  {{ text|insert_tag|raw }}
-  {# yields: "<p>My<br>Text<br>Demo</p>" #}    
-
-  {# only encode content around the insert tag #}
+  {# Replace insert tags, but *only* encode the text around #}
   {{ text|insert_tag_raw }}
-  {# yields: "&lt;p&gt;My&lt;br&gt;Text<br>Demo&lt;/p&gt;" (note the intact "<br>") #}
 
 {% endblock %}
 ```

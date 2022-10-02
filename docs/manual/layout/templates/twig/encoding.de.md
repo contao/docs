@@ -54,21 +54,19 @@ Beispiel: Das Inhaltselement vom Typ »Text« beinhaltet folgenden Eintrag `<p>M
 
 {% block content %}
 
-  {# encode #}
+  {# Encode #}
   {{ text }}
-  {# yields: "&lt;p&gt;Mein&lt;br&gt;Text&lt;/p&gt;" #}
 
-  {# do not encode #}
+  {# Do not encode #}
   {{ text|raw }}
-  {# yields: "<p>Mein<br>Text</p>" #}
 
 {% endblock %}
 ```
 
 ### Twig Filter und Insert-Tags
 
-In Inhaltselementen, beispielsweise vom »Typ« Text, werden u. U. [Insert-Tags](/de/artikelverwaltung/insert-tags/) verwendet. Hierzu werden zusätzlich die Filter 
-`|insert_tag` und `|insert_tag_raw` bereit gestellt. 
+In Inhaltselementen, beispielsweise vom »Typ« Text, werden u. U. [Insert-Tags](/de/artikelverwaltung/insert-tags/) verwendet. Hierzu werden 
+zusätzlich die Filter `|insert_tag` und `|insert_tag_raw` bereit gestellt. 
 
 Beispiel: Das Inhaltselement vom Typ »Text« beinhaltet folgenden Eintrag (mit dem Insert-Tag `{{br}}`): `<p>Meine<br>Text{{br}}Demo</p>`. 
 Über diese Twig Filter kannst du die Ausgabe gezielt beeinflussen:
@@ -78,17 +76,17 @@ Beispiel: Das Inhaltselement vom Typ »Text« beinhaltet folgenden Eintrag (mit 
 
 {% block content %}
 
-  {# encode #}
+  {# Do not replace insert tags, encode #}
+  {{ text }}
+
+  {# Do not replace insert tags, do not encode #}
+  {{ text|raw }}
+
+  {# Replace insert tags, encode everything #}
   {{ text|insert_tag }}
-  {# yields: "&lt;p&gt;Meine&lt;br&gt;Text&lt;br&gt;Demo&lt;/p&gt"#}
 
-  {# do not encode): #}
-  {{ text|insert_tag|raw }}
-  {# yields: "<p>Meine<br>Text<br>Demo</p>" #}    
-
-  {# only encode content around the insert tag #}
+  {# Replace insert tags, but *only* encode the text around #}
   {{ text|insert_tag_raw }}
-  {# yields: "&lt;p&gt;Meine&lt;br&gt;Text<br>Demo&lt;/p&gt;" (note the intact "<br>") #}
 
 {% endblock %}
 ```
