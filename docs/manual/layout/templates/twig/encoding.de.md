@@ -76,17 +76,25 @@ Beispiel: Das Inhaltselement vom Typ »Text« beinhaltet folgenden Eintrag (mit 
 
 {% block content %}
 
-  {# Do not replace insert tags, encode #}
   {{ text }}
+  {# Do not replace insert tags, encode #}
+  {# yields: "&lt;p&gt;Meine&lt;br&gt;Text{{br}}Demo&lt;/p&gt;" #}
 
-  {# Do not replace insert tags, do not encode #}
   {{ text|raw }}
+  {# Do not replace insert tags, do not encode #}
+  {# yields: "<p>Meine<br>Text{{br}}Demo</p>" #}
 
-  {# Replace insert tags, encode everything #}
   {{ text|insert_tag }}
+  {# Replace insert tags, encode everything #}
+  {# yields: "&lt;p&gt;Meine&lt;br&gt;Text&lt;br&gt;Demo&lt;/p&gt;" #}
 
-  {# Replace insert tags, but *only* encode the text around #}
   {{ text|insert_tag_raw }}
+  {# Replace insert tags, but *only* encode the text around #}
+  {# yields: "&lt;p&gt;Meine&lt;br&gt;Text<br>Demo&lt;/p&gt;" (note the intact "<br>") #}
+
+  {{ text|insert_tag|raw }}
+  {# Replace insert tags, do not encode #}
+  {# yields: "<p>Meine<br>Text<br>Demo</p>" #}
 
 {% endblock %}
 ```
