@@ -51,11 +51,13 @@ Example: The content element of type "Text" contains the following entry `<p>My<
 
 {% block content %}
 
-  {# encode #}
   {{ text }}
+  {# Encode #}
+  {# yields: "&lt;p&gt;My&lt;br&gt;Text&lt;/p&gt;" #}
 
-  {# do not encode #}
   {{ text|raw }}
+  {# Do not encode #}
+  {# yields: "<p>My<br>Text</p>" #}
 
 {% endblock %}
 ```

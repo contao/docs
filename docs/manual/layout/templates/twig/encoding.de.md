@@ -54,11 +54,13 @@ Beispiel: Das Inhaltselement vom Typ »Text« beinhaltet folgenden Eintrag `<p>M
 
 {% block content %}
 
-  {# Encode #}
   {{ text }}
+  {# Encode #}
+  {# yields: "&lt;p&gt;Mein&lt;br&gt;Text&lt;/p&gt;" #}
 
-  {# Do not encode #}
   {{ text|raw }}
+  {# Do not encode #}
+  {# yields: "<p>Mein<br>Text</p>" #}
 
 {% endblock %}
 ```
