@@ -11,9 +11,22 @@ To see what data is a available in a template (we call it the "context"), you ca
 know more about a specific part of the context, you can pass it as an argument:
 
 ```twig
-{{ dump() }}
-{{ dump(varA) }}
-{{ dump(varA, varB) }}
+{% extends "@Contao/content_element/text.html.twig" %}
+
+{% block content %}
+
+	{% set varA = 'My first <br> Text' %}
+	{% set varB = 'My second Text' %}
+
+	{{ dump(varA, varB) }}
+
+	{% set myDebugBlock %}{{ text|insert_tag_raw }}{% endset %}
+
+	{{ dump(myDebugBlock) }}
+
+	{{ dump() }}
+
+{% endblock %}
 ```
 
 {{% notice info %}}

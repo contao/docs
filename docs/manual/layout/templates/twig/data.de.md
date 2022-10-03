@@ -12,9 +12,22 @@ Um zu sehen, welche Daten in einer Vorlage vorhanden sind (wir nennen es den »K
 Wenn du nur etwas über einen bestimmten Teil des Kontexts wissen möchtest, kannst du diesen als Argument übergeben:
 
 ```twig
-{{ dump() }}
-{{ dump(varA) }}
-{{ dump(varA, varB) }}
+{% extends "@Contao/content_element/text.html.twig" %}
+
+{% block content %}
+
+	{% set varA = 'My first <br> Text' %}
+	{% set varB = 'My second Text' %}
+
+	{{ dump(varA, varB) }}
+
+	{% set myDebugBlock %}{{ text|insert_tag_raw }}{% endset %}
+
+	{{ dump(myDebugBlock) }}
+
+	{{ dump() }}
+
+{% endblock %}
 ```
 
 {{% notice info %}}
