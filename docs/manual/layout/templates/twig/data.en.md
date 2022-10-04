@@ -16,11 +16,19 @@ know more about a specific part of the context, you can pass it as an argument:
 {% block content %}
 
 	{% set varA = 'My first <br> Text' %}
-	{% set varB = 'My second Text' %}
+	{% set varB = ['My second Text', 'My third Text'] %}
 
 	{{ dump(varA, varB) }}
+	
+	<ul>
+		{% for item in varB %}
+			<li>{{ item }}</li>
+			
+			{{ dump(loop) }}
+		{% endfor %}
+	</ul>
 
-	{% set myDebugBlock %}{{ text|insert_tag_raw }}{% endset %}
+	{% set myDebugBlock %}{{ text|raw }}{% endset %}
 
 	{{ dump(myDebugBlock) }}
 

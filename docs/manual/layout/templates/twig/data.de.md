@@ -8,20 +8,28 @@ weight: 60
 ---
 
 
-Um zu sehen, welche Daten in einer Vorlage vorhanden sind (wir nennen es den »Kontext«), kannst du die Funktion `dump()` verwenden. 
-Wenn du nur etwas über einen bestimmten Teil des Kontexts wissen möchtest, kannst du diesen als Argument übergeben:
+Zur Anzeige der Daten in einer Vorlage (wir nennen es den »Kontext«), kannst du die Funktion `dump()` verwenden. 
+Wenn du nur etwas über einen bestimmten Teil des »Kontext« wissen möchtest, kannst du diesen als Argument übergeben:
 
 ```twig
 {% extends "@Contao/content_element/text.html.twig" %}
 
 {% block content %}
 
-	{% set varA = 'My first <br> Text' %}
-	{% set varB = 'My second Text' %}
+	{% set varA = 'Mein erster <br> Text' %}
+	{% set varB = ['Mein zweiter Text', 'Mein dritter Text'] %}
 
 	{{ dump(varA, varB) }}
+	
+	<ul>
+		{% for item in varB %}
+			<li>{{ item }}</li>
+			
+			{{ dump(loop) }}
+		{% endfor %}
+	</ul>
 
-	{% set myDebugBlock %}{{ text|insert_tag_raw }}{% endset %}
+	{% set myDebugBlock %}{{ text|raw }}{% endset %}
 
 	{{ dump(myDebugBlock) }}
 
