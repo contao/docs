@@ -16,24 +16,24 @@ Wenn du nur etwas über einen bestimmten Teil des »Kontext« wissen möchtest, 
 
 {% block content %}
 
-	{% set varA = 'Mein erster <br> Text' %}
-	{% set varB = ['Mein zweiter Text', 'Mein dritter Text'] %}
+  {% set varA = 'Mein erster <br> Text' %}
+  {% set varB = ['Mein zweiter Text', 'Mein dritter Text'] %}
 
-	{{ dump(varA, varB) }}
+  {{ dump(varA, varB) }}
 	
-	<ul>
-		{% for item in varB %}
-			<li>{{ item }}</li>
+  <ul>
+    {% for item in varB %}
+      <li>{{ item }}</li>
 			
-			{{ dump(loop) }}
-		{% endfor %}
-	</ul>
+      {{ dump(loop) }}
+    {% endfor %}
+  </ul>
 
-	{% set myDebugBlock %}{{ text|raw }}{% endset %}
+  {% set myDebugBlock %}{{ text|raw }}{% endset %}
 
-	{{ dump(myDebugBlock) }}
+  {{ dump(myDebugBlock) }}
 
-	{{ dump() }}
+  {{ dump() }}
 
 {% endblock %}
 ```
