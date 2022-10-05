@@ -11,30 +11,9 @@ To see what data is a available in a template (we call it the "context"), you ca
 know more about a specific part of the context, you can pass it as an argument:
 
 ```twig
-{% extends "@Contao/content_element/text.html.twig" %}
-
-{% block content %}
-
-  {% set varA = 'My first <br> Text' %}
-  {% set varB = ['My second Text', 'My third Text'] %}
-
-  {{ dump(varA, varB) }}
-	
-  <ul>
-    {% for item in varB %}
-      <li>{{ item }}</li>
-			
-      {{ dump(loop) }}
-    {% endfor %}
-  </ul>
-
-  {% set myDebugBlock %}{{ text|raw }}{% endset %}
-
-  {{ dump(myDebugBlock) }}
-
-  {{ dump() }}
-
-{% endblock %}
+{{ dump() }}
+{{ dump(varA) }}
+{{ dump(varA, varB) }}
 ```
 
 {{% notice info %}}
@@ -45,7 +24,7 @@ Because the dumped data can contain security critical information about your sys
 
 ## Command Line
 
-On the command line, you can use the command `vendor/bin/contao-console list debug` to find two useful commands:
+Use the following commands on the command line to find out more about the current Twig setup:
 
 
 ### debug:contao-twig

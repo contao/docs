@@ -12,30 +12,9 @@ Zur Anzeige der Daten in einer Vorlage (wir nennen es den »Kontext«), kannst d
 Wenn du nur etwas über einen bestimmten Teil des »Kontext« wissen möchtest, kannst du diesen als Argument übergeben:
 
 ```twig
-{% extends "@Contao/content_element/text.html.twig" %}
-
-{% block content %}
-
-  {% set varA = 'Mein erster <br> Text' %}
-  {% set varB = ['Mein zweiter Text', 'Mein dritter Text'] %}
-
-  {{ dump(varA, varB) }}
-	
-  <ul>
-    {% for item in varB %}
-      <li>{{ item }}</li>
-			
-      {{ dump(loop) }}
-    {% endfor %}
-  </ul>
-
-  {% set myDebugBlock %}{{ text|raw }}{% endset %}
-
-  {{ dump(myDebugBlock) }}
-
-  {{ dump() }}
-
-{% endblock %}
+{{ dump() }}
+{{ dump(varA) }}
+{{ dump(varA, varB) }}
 ```
 
 {{% notice info %}}
@@ -46,8 +25,7 @@ Da die ausgewerteten Daten sicherheitskritische Informationen über das System e
 
 ## Kommandozeilenbefehle für Twig
 
-Auf der Kommandozeile findest du über den Befehl `vendor/bin/contao-console list debug` zwei nützliche Befehle hinsichtlich der 
-Twig Templates:
+Verwende die folgenden Befehle auf der Kommandozeile, um mehr über die aktuellen Twig Einstellungen herauszufinden:
 
 
 ### debug:contao-twig

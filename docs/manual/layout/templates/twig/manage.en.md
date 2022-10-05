@@ -7,8 +7,6 @@ weight: 20
 ---
 
 
-Twig templates are marked differently compared to the previous PHP templates: (`.html.twig` instead of `.html5`).
-
 {{% notice info %}}
 If you are upgrading to Contao 5, make sure to check our [upgrade guide](https://github.com/contao/contao/blob/5.x/UPGRADE.md#content-elements).
 Lots of elements have been rewritten and now feature new templates, but there is a way to gradually enable these to give you more time to refactor things.

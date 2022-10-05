@@ -29,37 +29,33 @@ With Twig we can be specific how a certain variable should be treated. Use the `
 <div class="box">{{ color|e('html') }}</div>
 ```
 
-{{% notice note %}}Hall
+{{% notice note %}}
 By default Twig encodes **all** variables. The chosen escaper strategy will depend on the template's file extension: your `.html.twig`
 templates will automatically get the `|e('html')` treatment, so you could omit this part in the above example.
 {{% /notice %}}
 
-You can mark a whole section of a template to be escaped or not by using the [autoescape](https://twig.symfony.com/doc/3.x/tags/autoescape.html) tag.
-
 
 ## Trusted content
 
-If you want to intentionally output a variable that contains HTML, you must add the 
-[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` to the variable. Remember that you should always use `|raw` only in 
-connection with trusted content. However, in connection with input via the TinyMCE editor in the backend, you can use the `|raw` filter in 
-this particular case.
+If you want to intentionally output something "as is", like a variable that contains HTML, you must add the 
+[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` to the variable. Remember that you must **never** use `|raw` if you 
+do not trust the data, otherwise this will create an XSS vulnerability. 
 
-Example: The content element of type "Text" contains the following entry `<p>My<br>Text</p>`:
+A typical use case, where it is fine to use `|raw`, is back end content entered via the TinyMCE editor. Contao will already sanitize the 
+user input (based on the sanitizer settings) before it passes the data to the template.
+
+In the following example, a context variable `text` has the content `<p>My<br>Text</p>`, while a variable `user_input` has the 
+content `<script>alert('I am unsafe!');</script>`. Note, how adding `|raw` in the last example is dangerous, while it is fine in the second:
 
 ```twig
-{% extends "@Contao/content_element/text.html.twig" %}
+{{ text }}
+{# outputs: "&lt;p&gt;My&lt;br&gt;Text&lt;/p&gt;" #}
 
-{% block content %}
+{{ text|raw }}
+{# outputs: "<p>My<br>Text</p>" #}
 
-  {{ text }}
-  {# Encode #}
-  {# yields: "&lt;p&gt;My&lt;br&gt;Text&lt;/p&gt;" #}
-
-  {{ text|raw }}
-  {# Do not encode #}
-  {# yields: "<p>My<br>Text</p>" #}
-
-{% endblock %}
+{{ user_input|raw }}
+{# outputs the potentially dangerous: "<script>alert('I am unsafe!');</script>" #}
 ```
 
 
@@ -72,29 +68,23 @@ Example: The content element of type "Text" contains the following entry (with t
 You can use these Twig filters to target the output:
 
 ```twig
-{% extends "@Contao/content_element/text.html.twig" %}
+{{ text }}
+{# Do not replace insert tags, encode #}
+{# yields: "&lt;p&gt;My&lt;br&gt;Text{{br}}Demo&lt;/p&gt;" #}
 
-{% block content %}
+{{ text|raw }}
+{# Do not replace insert tags, do not encode #}
+{# yields: "<p>My<br>Text{{br}}Demo</p>" #}
 
-  {{ text }}
-  {# Do not replace insert tags, encode #}
-  {# yields: "&lt;p&gt;My&lt;br&gt;Text{{br}}Demo&lt;/p&gt;" #}
+{{ text|insert_tag }}
+{# Replace insert tags, encode everything #}
+{# yields: "&lt;p&gt;My&lt;br&gt;Text&lt;br&gt;Demo&lt;/p&gt;" #}
 
-  {{ text|raw }}
-  {# Do not replace insert tags, do not encode #}
-  {# yields: "<p>My<br>Text{{br}}Demo</p>" #}
+{{ text|insert_tag_raw }}
+{# Replace insert tags, but *only* encode the text around #}
+{# yields: "&lt;p&gt;My&lt;br&gt;Text<br>Demo&lt;/p&gt;" (note the intact "<br>") #}
 
-  {{ text|insert_tag }}
-  {# Replace insert tags, encode everything #}
-  {# yields: "&lt;p&gt;My&lt;br&gt;Text&lt;br&gt;Demo&lt;/p&gt;" #}
-
-  {{ text|insert_tag_raw }}
-  {# Replace insert tags, but *only* encode the text around #}
-  {# yields: "&lt;p&gt;My&lt;br&gt;Text<br>Demo&lt;/p&gt;" (note the intact "<br>") #}
-
-  {{ text|insert_tag|raw }}
-  {# Replace insert tags, do not encode #}
-  {# yields: "<p>My<br>Text<br>Demo</p>" #}
-
-{% endblock %}
+{{ text|insert_tag|raw }}
+{# Replace insert tags, do not encode #}
+{# yields: "<p>My<br>Text<br>Demo</p>" #}
 ```
