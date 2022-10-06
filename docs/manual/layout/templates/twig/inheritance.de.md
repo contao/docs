@@ -10,7 +10,7 @@ weight: 100
 
 Du kannst ein Twig Template nicht nur komplett überschreiben, sondern auch gezielt einzelne Teilbereiche (Blöcke) updatesicher erweitern. 
 
-Um ein bestehendes Template zu erweitern (anstatt diese komplett zu ersetzen), verwende Twig 
+Um ein bestehendes Template zu erweitern (anstatt dieses komplett zu ersetzen), verwende Twig 
 [extends](https://twig.symfony.com/doc/3.x/tags/extends.html). Anzupassende Blöcke können dann angegeben, die bestehenden Inhalte 
 mittels `{{ parent() }}` übernommen und mit zusätzlichen Angaben erweitert werden. 
 
