@@ -11,7 +11,7 @@ aliases:
 The `getLanguages` hook allows to modify the system's list of languages.
 
 {{% notice info %}}
-Using the `getCountries` hook has been deprecated and will no longer work in Contao 5.0. Decorate the `Contao\CoreBundle\Intl\Locales` 
+Using the `getLanguages` hook has been deprecated and will no longer work in Contao 5.0. Decorate the `Contao\CoreBundle\Intl\Locales` 
 service instead.
 {{% /notice %}}
 
