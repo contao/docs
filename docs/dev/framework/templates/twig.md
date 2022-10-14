@@ -561,3 +561,64 @@ Turns out "{{ secret_cms }}" means "{{ secret_cms|rot13 }}".
 [TwigExtra]: https://github.com/twigphp/Twig/tree/3.x/extra
 [KnpTimeBundle]: https://github.com/KnpLabs/KnpTimeBundle
 [OWASPCheatSheet]: https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-0-never-insert-untrusted-data-except-in-allowed-locations
+
+
+## Filters & Functions
+
+Twig includes its own [Functions](https://twig.symfony.com/doc/3.x/functions/index.html) and 
+[Filters](https://twig.symfony.com/doc/3.x/filters/index.html) and you could add needed functionalities 
+via [Extensions](https://extensions.contao.org/?q=twig&pages=1). In addition, the Contao core provides its own Twig functions and filters.
+
+{{< version "5.0" >}}
+
+
+### Function
+
+| Function | Description |
+|-|-|
+| [attrs()](#attrs) | Building and outputting HTML attributes in a structured way |
+
+
+#### attrs() <a id="attrs"></a>
+
+Building and outputting HTML attributes in a structured way:
+
+```twig
+<div{{ attrs() }}>Demo</div>
+{# Outputs: <div>Demo</div> #}
+
+<div{{ attrs({'data-foo': 'bar'}) }}>Demo</div>
+{# Outputs: <div data-foo="bar">Demo</div> #}
+```
+
+
+### Filter
+
+| Filter | Description |
+|-|-|
+| [insert_tag](#insert_tag) | Replace insert tags, encode everything |
+| [insert_tag_raw](#insert_tag_raw) | Replace insert tags, but *only* encode the text around. |
+
+
+#### insert_tag <a id="insert_tag"></a>
+
+Replace insert tags, encode everything.
+
+Example: The content element of type "Text" contains the following entry (with the insert tag `{{br}}`): `<p>My<br>Text{{br}}Demo</p>`. 
+
+```twig
+{{ text|insert_tag }}
+{# yields: "&lt;p&gt;Meine&lt;br&gt;Text&lt;br&gt;Demo&lt;/p&gt;" #}
+```
+
+
+#### insert_tag_raw <a id="insert_tag_raw"></a>
+
+Replace insert tags, but *only* encode the text around.
+
+Example: The content element of type "Text" contains the following entry (with the insert tag `{{br}}`): `<p>My<br>Text{{br}}Demo</p>`. 
+
+```twig
+{{ text|insert_tag_raw }}
+{# yields: "&lt;p&gt;Meine&lt;br&gt;Text<br>Demo&lt;/p&gt;" (note the intact "<br>") #}
+```
