@@ -591,6 +591,23 @@ Building and outputting HTML attributes in a structured way:
 {# Outputs: <div data-foo="bar">Demo</div> #}
 ```
 
+This function includes the following methods:
+
+| Method | Description |
+|-|-|
+| mergeWith | Merges the instance's attributes with those of another instance/string/array of attributes |
+| set | Sets a property and validates the name. If the given value is false the property will be unset instead. All values will be coerced to strings, whereby null and true will result in an empty string. |
+| unset | Unset the property |
+| setIfExists | Set the property $name to $value if the value is truthy |
+| addClass | Add a single class ("foo") or multiple from a class string ("foo bar baz") |
+| removeClass | Remove a single class ("foo") or multiple from a class string ("foo bar baz") |
+
+{{% notice note %}}
+Note, that attribute names are constrained when being set (must start with a letter, no double hyphen/underscore, no hyphen/underscore 
+at the end) and are only escaped when being output as a string. By default a leading space is returned when converting to a string if at 
+least one attribute exists.
+{{% /notice %}}
+
 
 ### Filter
 
