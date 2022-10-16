@@ -190,12 +190,6 @@ $GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
     'sql' => ['type' => 'blob', 'notnull' => false],
 ];
 
-	'exclude'                 => true,
-	'inputType'               => 'checkbox',
-	'foreignKey'              => 'tl_calendar.title',
-	'eval'                    => array('multiple'=>true),
-	'sql'                     => "blob NULL"
-
 PaletteManipulator::create()
     ->addLegend('my_legend', null)
     ->addField('my_permission', 'my_legend', PaletteManipulator::POSITION_APPEND)
