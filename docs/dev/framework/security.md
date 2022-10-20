@@ -179,7 +179,7 @@ $GLOBALS['TL_PERMISSIONS'][] = 'my_permissions';
 // contao/dca/tl_user.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
-$GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
+$GLOBALS['TL_DCA']['tl_user']['fields']['my_permissions'] = [
     'exclude' => true,
     'inputType' => 'checkbox',
     'eval' => ['multiple' => true],
