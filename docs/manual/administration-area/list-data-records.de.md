@@ -116,7 +116,7 @@ auf.
 ![Löschen](/de/icons/delete.svg?classes=icon) **Löschen:** löscht einen Datensatz. 
 ([Dieser Vorgang kann widerrufen werden.](#geloeschte-datensaetze-wiederherstellen))
 
-![Veröffentlichen/unveröffentlichen](/de/icons/visible.svg?classes=icon) **Veröffentlichen/unveröffentlichten:** im 
+![Veröffentlichen/unveröffentlichen](/de/icons/visible.svg?classes=icon) **Veröffentlichen/unveröffentlichen:** im 
 Frontend anzeigen bzw. ausblenden
 
 ![Info](/de/icons/show.svg?classes=icon) **Info:** zeigt Informationen zu einem Datensatz.
