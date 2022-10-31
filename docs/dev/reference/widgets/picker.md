@@ -100,6 +100,7 @@ a serialized array. Since you do not know the length in advance, a blob column i
 This picker is used for content element and article include content element as well as the article teaser content element in order to pick 
 and preview the referenced element or article.
 
+
 ## Managing Many-To-Many or One-To-Many relations with association tables
 
 With `'eval.multiple' => true`, Contao writes the picker value to the database as a serialized string. You might, however, want to maintain association tables, especially if you are using Doctrine Entities internally.
@@ -124,40 +125,45 @@ Second, maintain the relations via callbacks (this example assumes Doctrine Enti
 
 
 ```php
-
+// src/EventListener/DataContainer/ContentElementsPickerListener.php
+use App\Entity\Article;
+use App\Entity\ContentElement;
+use App\Repository\ArticleRepository;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+use Doctrine\ORM\EntityManagerInterface;
 
 class ContentElementsPickerListener
 {
-    public function __construct(private \App\Repository\ArticleRepository $articleRepository, private \Doctrine\ORM\EntityManagerInterface $em)
+    public function __construct(private ArticleRepository $articleRepository, private EntityManagerInterface $em)
     {
     }
 
     #[AsCallback(table: 'tl_my_article', target: 'fields.elements.load')]
-    public function loadContentElements($value, \Contao\DataContainer $dc = null): string
+    public function loadContentElements($value, DataContainer $dc = null): string
     {
         if (!$dc || !$dc->id) {
             return '';
         }
 
-        /** @var \App\Entity\Article|null $article */
+        /** @var Article|null $article */
         $article = $this->articleRepository->find($dc->id);
 
         if (null === $article) {
             return '';
         }
 
-        return serialize(array_map(static fn (\App\Entity\ContentElement $element) => $element->getId(), $article->getContentElements()->toArray()));
+        return serialize(array_map(static fn (ContentElement $element) => $element->getId(), $article->getContentElements()->toArray()));
     }
 
     #[AsCallback(table: 'tl_my_article', target: 'fields.categories.save')]
-    public function saveCategories($value, \Contao\DataContainer $dc = null)
+    public function saveCategories($value, DataContainer $dc = null)
     {
         if (!$dc || !$dc->id) {
             return null;
         }
 
-        /** @var \App\Entity\Article|null $article */
+        /** @var Article|null $article */
         $article = $this->articleRepository->find($dc->id);
 
         if (null === $article) {
@@ -166,7 +172,7 @@ class ContentElementsPickerListener
 
         $elements = StringUtil::deserialize($value, true);
 
-        $article->setContentElements(array_map(fn (int $elmentId) => $this->em->getReference(\App\Entity\ContentElement::class, $elementId), $elements));
+        $article->setContentElements(array_map(fn (int $elmentId) => $this->em->getReference(ContentElement::class, $elementId), $elements));
 
         return null;
     }
