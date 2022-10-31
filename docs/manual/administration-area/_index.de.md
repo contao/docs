@@ -5,7 +5,7 @@ Verwaltung deiner Webseite erledigen."
 url: "administrationsbereich"
 aliases:
     - /de/administrationsbereich/
-weight: 3
+weight: 4
 ---
 
 Contao ist in zwei Bereiche aufgeteilt. Im Administrationsbereich, dem sogenannten Backend, kannst du alle Arbeiten im
