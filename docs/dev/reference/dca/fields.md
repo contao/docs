@@ -316,7 +316,7 @@ the Doctrine Database Abstraction Layer.
 [TranslationDomain]: /framework/translations/#domains
 [CheckboxWidget]: /reference/widgets/checkbox/
 [CheckboxWizardWidget]: /reference/widgets/checkbox-wizard/
-[FileTreeWidget]: /reference/widgets/checkbox-wizard/file-tree/
+[FileTreeWidget]: /reference/widgets/file-tree/
 [ListWizardWidget]: /reference/widgets/list-wizard/
 [PickerWidget]: /reference/widgets/picker/
 [SelectWidget]: /reference/widgets/select/
