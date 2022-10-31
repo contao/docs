@@ -70,4 +70,4 @@ Browsern unterschiedlich sein. Eine Übersicht, welche Tastenkombination unter w
 [dieser Artikel][MozillaAccesskey].
 
 
-[MozillaAccesskey]: https://developer.mozilla.org/de/docs/Web/HTML/Globale_Attribute/accesskey
+[MozillaAccesskey]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
