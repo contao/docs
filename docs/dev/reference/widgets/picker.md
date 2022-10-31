@@ -131,6 +131,7 @@ use App\Entity\ContentElement;
 use App\Repository\ArticleRepository;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
+use Contao\StringUtil;
 use Doctrine\ORM\EntityManagerInterface;
 
 class ContentElementsPickerListener
