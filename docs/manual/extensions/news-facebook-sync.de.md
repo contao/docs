@@ -398,4 +398,4 @@ In den Nachrichtentemplates stehen zusätzliche Daten zur Verfügung:
 - _char_ `fromFb` Gibt an, ob der Nachrichtenbeitrag ursprünglich von Facebook importiert wurde.
 
 
-[Hooks]: /dev/framework/hooks/
+[Hooks]: https://docs.contao.org/dev/framework/hooks/
