@@ -35,6 +35,7 @@ Das Inhaltselement vom Elementtyp »Bild« generiert folgenden HTML-Code:
 </div>
 ```
 
+**Lizenz-URL**
 {{< version "4.13" >}}
 
 Die Lizenz-URL wird auf der entsprechenden Seite, auf der das Bild eingebunden ist, im [JSON-LD-Format](https://de.wikipedia.org/wiki/ JSON-LD "JSON-LD-Format") als [SCHEMA-ImageObject-Eintrag](https://schema.org/ImageObject "SCHEMA-ImageObject") eingebunden, um Lizensierungshinweisen gerecht zu werden.
