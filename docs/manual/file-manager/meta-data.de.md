@@ -68,5 +68,5 @@ Die Lizenz-URL generiert folgenden HTML-Code:
 Um die Lizenz-URL unter dem Bild auf der Seite anzugeben, kann man im Template image.html5 folgenden Code einfügen:
 
 ```php
-<?php if($this->license): ?><p class="ce_image__license" ><?= $this->license ?></p><?php endif; ?>
+<?php if ($this->license): ?><p class="ce_image__license" ><?= $this->license ?></p><?php endif; ?>
 ```

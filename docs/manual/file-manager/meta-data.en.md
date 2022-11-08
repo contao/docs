@@ -38,7 +38,7 @@ Contao supports the following metadata:
 **License URL**
 {{< version "4.13" >}}
 
-The license URL is displayed on the corresponding page on which the image is embedded in [JSON-LD format](https://en.wikipedia.org/wiki/JSON-LD") as [SCHEMA-ImageObject entry](https://schema.org/ImageObject "SCHEMA-ImageObject") included to comply with licensing notices.
+On the page on which the image is embedded the license URL is used in the [SCHEMA-ImageObject](https://schema.org/ImageObject "SCHEMA-ImageObject") of the [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD") to comply with licensing notices.
 
 **The HTML output**
 The license URL generates the following HTML code:
@@ -65,9 +65,9 @@ The license URL generates the following HTML code:
 </script>
 ```
 
-To specify the license URL under the image on the page, you can add the following code to the image.html5 template:
+To display the license URL under the image on the page you can add the following code to the `image.html5` template:
 
 ```php
-<?php if($this->license): ?><p class="ce_image__license" ><?= $this->license ?></p><?php endif; ?>
+<?php if ($this->license): ?><p class="ce_image__license" ><?= $this->license ?></p><?php endif; ?>
 ```
 
