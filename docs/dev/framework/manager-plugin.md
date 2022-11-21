@@ -108,7 +108,8 @@ Here, you don't need to specify any `extra` key in your `composer.json` because 
 local app. After all, there can only be one anyway as you don't need multiple ones.
 The `Manager Plugin` automatically loads the following classes.
 
-* `\App\ContaoManager\Plugin` (recommended)
+* `\src\ContaoManager\Plugin` (recommended)
+* `\App\ContaoManager\Plugin` (discouraged)
 * `\ContaoManagerPlugin` (discouraged)
 
 {{% notice info %}}
