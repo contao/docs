@@ -441,6 +441,20 @@ contao:
 
         # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
         default_http_client_options: []
+
+    # Allows to configure which URL protocols can be used in Contao, as they are encoded by default for security reasons.
+    sanitizer:
+        allowed_url_protocols:
+
+            # Defaults:
+            - http
+            - https
+            - ftp
+            - mailto
+            - tel
+            - data
+            - skype
+            - whatsapp
 ```
 
 
