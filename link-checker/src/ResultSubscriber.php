@@ -33,6 +33,7 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         'https?://localhost(/|$|:[0-9]+)',
         'https?://github\.com/DEIN-GITHUB-BENUTZERNAME/docs',
         'https?://github\.com/YOUR-GITHUB-USERNAME/docs',
+        'https?://www\.instagram\.com/contaocms/',
     ];
 
     private string $outputPath;
