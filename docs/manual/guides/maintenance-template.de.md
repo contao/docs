@@ -15,10 +15,14 @@ Der Wartungsmodus lässt sich über den Menüpunkt Systemwartung aktivieren. Sob
 
 ![Contao Wartungsmodus](/de/guides/images/de/maintenance/wartungsmodus.jpg?classes=shadow)
 
-Ab Contao 4.13 wird der Wartungsmodus nur noch über den Contao-Manager aktiviert. Ein Backend Login ist dann nicht mehr möglich. Im sogenannten Applikationswartungsmodus, ist jegliche Interaktion mit dem System gesperrt.
-Nachfolgend genannte Techniken funktionieren weiterhin.
+{{< version "4.13" >}}
+Der Wartungmodus beherrscht seit dieser Version drei Varianten:
+- Aktiviert man den Wartungsmodus im Contao-Manager, dann startet der Applikationswartungsmodus, bei dem Front- und Backend gesperrt sind. Es werden die generischen Wartungstemplates ausgespielt.
+- Aktivierung in der Seitenstruktur (je Seitenbaum getrennt) startet einen einfachen Wartungsmodus, bei dem nur das Frontend gesperrt ist. Auch hier werden die generischen Wartungstemplates ausgespielt.
+- Wenn bei Aktivierung in der Seitenstruktur auch jeweils ein Seite vom Typ 503 vorhanden ist, dann wird diese im Frontend angezeigt. Diese Seiten können redaktionell bearbeitet werden.
 
-Im Core von Contao 4.9 sind für die Frontendausgabe im Wartungsmodus folgende Dateien zuständig:
+{{< version "4.9" >}}
+Im Core von Contao sind für die Frontendausgabe im Wartungsmodus folgende Dateien zuständig:
 
 - `service_unavailable.html.twig` - Wartungstemplate
 - `layout.html.twig` - Layoutemplate für alle Errortemplates
