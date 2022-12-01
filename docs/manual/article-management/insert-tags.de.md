@@ -99,7 +99,7 @@ so z. B. mit seinem Namen ansprechen. Prinzipiell kannst du alle Feldnamen der T
 | `{{user::street}}`        | Dieses Tag wird mit dem Staßennamen des angemeldeten Mitglieds ersetzt.                                                                  |
 | `{{user::postal}}`        | Dieses Tag wird mit der Postleitzahl des angemeldeten Mitglieds ersetzt.                                                                 |
 | `{{user::city}}`          | Dieses Tag wird mit der Stadt des angemeldeten Mitglieds ersetzt.                                                                        |
-| `{{user::country}}`       | Dieses Tag wird mit dem Land des angemeldeten Mitglieds ersetzt (`{{label::CNT:{{user::country}}}}` wird das Label z. B. "Deutschland" ausgegeben)                                                                         |
+| `{{user::country}}`       | Dieses Tag wird mit dem Land des angemeldeten Mitglieds ersetzt (Mit `{{label::CNT:{{user::country}}}}` wird das Label z. B. "Deutschland" ausgegeben).                                                                         |
 | `{{user::username}}`      | Dieses Tag wird mit dem Benutzernamen des angemeldeten Mitglieds ersetzt.                                                                |
 
 
