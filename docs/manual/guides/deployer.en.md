@@ -15,11 +15,13 @@ The Deployer recipe is part of Deployer 7 and is intended to work for Contao 4.1
 
 ## Install Deployer
 
-If not done yet, install Deployer as described here: [https://deployer.org/docs/][1]
+If not done yet, install Deployer in your project as described [in the docs:][1]
 
-You can either install Deployer globally or per project and use the command `dep` or `./vendor/bin/dep` respectively.
+```bash
+composer require --dev deployer/deployer
+```
 
-Verify that you are running Deployer in the minimum version _7.0.0-rc.5_ by running `dep --version`.
+Verify that you are running Deployer in the minimum version _7.0_ by running `vendor/bin/dep --version`.
 
 Once done, you can create a `deploy.php` file in your project:
 
@@ -102,13 +104,14 @@ task. The `rsync` task implies an _exclude strategy_ rather than an _include str
 ## Provision web server
 
 As you know [from the Contao documentation][5], you have to set the document root of the server to `/public` (or
-`/web` in older versions) of the project. The idea of Deployer is to provide updates without downtime, and to realize
-this, Deployer utilizes rolling symlink releases. Consequently, you have to set the document root of your vHost to
-`/current/public` (or `/current/web` respectively). A full example for the document root might look like
+`/web` in older versions) of the project. The idea of Deployer is to provide updates with the shortest possible downtime, 
+and to realize this, Deployer utilizes rolling symlink releases.  Consequently, you have to set the document root of your 
+vHost to`/current/public` (or `/current/web` respectively). A full example for the document root might look like
 `/var/www/foobar/html/example.org/current/public`.
 
-Contao is slowly migrating to use the `/public` folder of the project as the document root. When your Contao 4.13
-installation is still using the folder `/web` as public directory, please explicitly set it in the `composer.json`
+{{% notice "info" %}}
+By default, Contao uses the `/public` folder of the project as the document root. If your Contao
+installation is still using the legacy `/web` folder as public directory, please explicitly set it in the `composer.json`
 of the project:
 
 ```json
@@ -118,6 +121,7 @@ of the project:
   }
 }
 ```
+{{% /notice %}}
 
 ## Add build-task to deployment
 
@@ -141,7 +145,7 @@ before('deploy', 'encore:compile');
 
 ## Finally: Deploy
 
-You are now all set to run `dep deploy`.
+You are now all set to run `vendor/bin/dep deploy`.
 
 ## Tips
 
