@@ -331,7 +331,7 @@ einzufügen um sicherzustellen, dass Anfragen auf (noch) nicht existierende Bild
 
 {{< /tabs >}}
 
-Mehr Informationen über die Konfiguration des Web-Servers können auch aus der [Symfony Dokumentation][SymfonyWebServerConfiguration]
+Mehr Informationen über die Konfiguration des Webservers können auch aus der [Symfony Dokumentation][SymfonyWebServerConfiguration]
 entnommen werden.
 
 
