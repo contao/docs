@@ -119,7 +119,7 @@ Dies ist äußerst praktisch bei der Arbeit mit den zusätzlichen Operatoren, di
 | `contains`    | `form_value contains 'foobar'`                               |
 | `starts with` | `form_value starts with 'foobar'`                            |
 | `ends with`   | `form_value ends with 'foobar'`                              |
-| `matches`     | Regulärer Ausdruck (e.g. `form_value matches '^https?://'` ) |
+| `matches`     | Regulärer Ausdruck (z. B. `form_value matches '^https?://'` ) |
 
 Es gibt noch mehr!
 
