@@ -92,7 +92,7 @@ With the following insert tags you can read certain properties of a logged in fr
 | `{{user::street}}` | This tag will be replaced with the street name of the registered member. |
 | `{{user::postal}}` | This tag will be replaced with the postal code of the registered member. |
 | `{{user::city}}` | This tag will be replaced with the city of the registered member. |
-| `{{user::country}}` | This tag will be replaced with the country of the logged in member (`{label::CNT:{{user::country}}}}` the label will be output e.g. "Germany"). |
+| `{{user::country}}` | This tag will be replaced with the country of the logged in member (With `{label::CNT:{{user::country}}}}` the label will be output e.g. "Germany"). |
 | `{{user::username}}` | This tag is replaced with the username of the logged in member. |
 
 
