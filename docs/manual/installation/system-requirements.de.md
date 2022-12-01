@@ -251,9 +251,9 @@ dann definiere diesen entsprechend, um für zukünftige Contao Versionen gerüst
 siehe auch: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
 
 
-### Web-Server Konfiguration
+### Webserver-Konfiguration
 
-In der Konfiguration des Web-Servers muss sichergestellt sein, dass alle Anfragen von der Applikation über die `index.php` im öffentlichen
+In der Konfiguration des Webservers muss sichergestellt sein, dass alle Anfragen von der Applikation über die `index.php` im öffentlichen
 Verzeichnis verarbeitet werden (via »URL-Rewriting«). Wie diese Konfiguration aussehen muss hängt von der eingesetzten Web-Server Software 
 ab. Weit verbreitete Beispiele sind Apache und NGINX:
 
@@ -262,13 +262,13 @@ ab. Weit verbreitete Beispiele sind Apache und NGINX:
 {{% tab name="Apache" %}}
 Für Apache stellt Contao eine [Standard `.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess) 
 Datei im öffentlichen Verzeichnis zur Verfügung. Damit diese Datei von Apache verarbeitet wird muss sichergestellt sein, dass die Direktive
-`AllowOverride All` für das `Directory` in der `VirtualHost` Definition der Web-Server Konfiguration vorhanden ist. Darüberhinaus muss das
-Apache Modul `mod_rewrite` aktiv sein, damit URLs wie `https://example.com/contao/install` möglich sind. Falls beides nicht zutrifft würden
+`AllowOverride All` für das `Directory` in der `VirtualHost` Definition der Webserver-Konfiguration vorhanden ist. Darüberhinaus muss das
+Apache-Modul `mod_rewrite` aktiv sein, damit URLs wie `https://example.com/contao/install` möglich sind. Falls beides nicht zutrifft würden
 nur URLs wie `https://example.com/index.php/contao/install` möglich sein.
 
 Für Contao muss auch die Einstellung `Options FollowSymlinks` in der `Directory` Konfiguration aktiv sein, da Symlinks zum Einsatz kommen.
 
-Eine minimale `VirtualHost` Konfiguration für den Apache Web-Server könnte also z. B. so aussehen (`…/public` mit `…/web` austauschen für
+Eine minimale `VirtualHost` Konfiguration für den Apache-Webserver könnte also z. B. so aussehen (`…/public` mit `…/web` austauschen für
 Contao 4.9 oder älter):
 
 ```
@@ -288,7 +288,7 @@ Contao 4.9 oder älter):
 {{% /tab %}}
 
 {{% tab name="NGINX" %}}
-Am wichtigsten ist es sicherzustellen, dass alle Anfragen die nicht an eine existierende Datei gehen an die PHP Applikation zur Verarbeitung
+Am wichtigsten ist es sicherzustellen, dass alle Anfragen die nicht an eine existierende Datei gehen an die PHP-Applikation zur Verarbeitung
 weitergegeben werden. Dies passiert über die Anweisung `try_files $uri /index.php$is_args$args;`.
 
 Eine minimale `server` Definition für den NGINX könnte so aussehen (`…/public` mit `…/web` austauschen für
@@ -322,7 +322,7 @@ server {
 }
 ```
 
-Eine vollständige NGINX Konfiguration enthält normalerweise mehr Einträge, bspw. um das "not found logging" für statische Resourcen wie
+Eine vollständige NGINX Konfiguration enthält normalerweise mehr Einträge, bspw. um das "not found logging" für statische Ressourcen wie
 Bilder oder das `favicon.ico` im Root abzuschalten. In vielen Fällen befinden sich in einer Standard NGINX `server` Konfiguration allerdings
 auch Direktiven speziell für die Verarbeitung von Bildern. Hier ist es wichtig auch `try_files $uri /index.php$is_args$args;` am Ende
 einzufügen um sicherzustellen, dass Anfragen auf (noch) nicht existierende Bilder von Contao verarbeitet werden. Andernfalls würde die
