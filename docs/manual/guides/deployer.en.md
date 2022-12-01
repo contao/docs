@@ -104,9 +104,9 @@ task. The `rsync` task implies an _exclude strategy_ rather than an _include str
 ## Provision web server
 
 As you know [from the Contao documentation][5], you have to set the document root of the server to `/public` (or
-`/web` in older versions) of the project. The idea of Deployer is to provide updates without downtime, and to realize
-this, Deployer utilizes rolling symlink releases. Consequently, you have to set the document root of your vHost to
-`/current/public` (or `/current/web` respectively). A full example for the document root might look like
+`/web` in older versions) of the project. The idea of Deployer is to provide updates with the shortest possible downtime, 
+and to realize this, Deployer utilizes rolling symlink releases.  Consequently, you have to set the document root of your 
+vHost to`/current/public` (or `/current/web` respectively). A full example for the document root might look like
 `/var/www/foobar/html/example.org/current/public`.
 
 {{% notice "info" %}}
