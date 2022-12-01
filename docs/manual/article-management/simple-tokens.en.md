@@ -93,16 +93,33 @@ Example for the newsletter module:
 
 The operators can be set with or without spaces. Therefore both `{if form_name != ""}` and `{if form_name!=""}` work.
 
-As of 4.13, multiple values can also be queried via AND/OR using `&&` and `||`:
+## Improved Simple Tokens
+
+As of Contao 4.10, Simple Tokens have been improved and now support the entire Symfony Expression Language.
+This means that you can combine statements with AND/OR statements using `&&` and `||`:
 
 `{if form_value == "foo" || form_value == "bar"}`
 
-It can also be checked if a certain value is set:
+Moreover, you can now work with literals and arithmetic operators:
 
 ```
 {if form_value === true}
-{if form_value === TRUE}
-{if form_value === false}
-{if form_value === FALSE}
-{if form_value === null}
+{if form_value === (42 + 15 + form_other_value)}
 ```
+
+This is extremely handy when working with the additional operators now supported:
+
+| Syntax        | Description                                                  |
+|---------------|--------------------------------------------------------------|
+| `in`          | Array comparison (e.g. `form_value in ['value1', 'value2']`) |
+| `not in`      | Same as `in` but negated                                     |
+| `contains`    | `form_value contains 'foobar'`                               |
+| `starts with` | `form_value starts with 'foobar'`                            |
+| `ends with`   | `form_value ends with 'foobar'`                              |
+| `matches`     | Regular expression (e.g. `form_value matches '^https?://'` ) |
+
+There's more!
+
+Check the Symfony documentation for more information on the [Expression Language Syntax][Expression_Language_Syntax].
+
+[Expression_Language_Syntax]: https://symfony.com/doc/current/components/expression_language/syntax.html
