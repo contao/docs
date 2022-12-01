@@ -42,11 +42,11 @@ Beispiel für das Notification-Center:
 
 ```
 Anfrage für: ##form_herkunft##
-{if form_termine!=""}
+{if form_termine != ""}
    Termin: ##form_termine##
 {endif}
 
-{if form_formtyp!="erweitert"}
+{if form_formtyp != "erweitert"}
   Name: ##form_name##
   E-Mail: ##form_email##
   Telefon: ##form_telefon##
@@ -62,9 +62,9 @@ Anfrage für: ##form_herkunft##
 Beispiel für das Newsletter-Modul:
 
 ```
-{if flang=="en"}
+{if flang == "en"}
   Your language is English.
-{elseif=="de"}
+{elseif == "de"}
   Deine Sprache ist Deutsch.
 {else}
   Couldn't assign a language.
@@ -89,14 +89,14 @@ Die Operatoren können mit oder ohne Leerzeichen gesetzt werden. Es funktioniert
 
 Ab 4.13 können mittels `&&` und `||` auch mehrere Werte per AND/OR abgefragt werden:
 
-`{if form_value=="foo" || form_value=="bar"}`
+`{if form_value == "foo" || form_value == "bar"}`
 
 Es kann auch überprüft werden, ob ein gewisser Wert gesetzt ist:
 
 ```
-{if form_value===true}
-{if form_value===TRUE}
-{if form_value===false}
-{if form_value===FALSE}
-{if form_value===null}
+{if form_value === true}
+{if form_value === TRUE}
+{if form_value === false}
+{if form_value === FALSE}
+{if form_value === null}
 ```
