@@ -138,7 +138,7 @@ The following insert tags allow you to perform various tasks, such as inserting 
 | `{{email_close}}` | This tag is replaced with `</a>`. Example: `{{email_open::foo@example.org}}E-Mail Kontakt{{email_close}}`. |
 | `{{email_url::*}}` | This tag is replaced only by the encrypted e-mail address. |
 | `{{post::*}}` | This tag can be used to read and display a specified post variable. Can be used, for example, to access individual fields of a sent form. |
-| `{{form_session_data::*}}` | This tag can be used to access individual fields of a submitted form. Available since **Contao 5.0** and replaces the old post-tag. |
+| `{{form_session_data::*}}` | {{< version-tag "5.0" >}} This tag can be used to access individual fields of a submitted form. This replaces the old `{{post::*}}` insert tag. |
 | `{{lang::*}}` | With this tag foreign words in a text can be marked: `{{lang::fr}}Au revoir{{lang}}`. This is replaced with `<span lang="fr">Au revoir</span>`. |
 | `{{abbr::*}}` | Mark abbreviations in a text: `{{abbr::World Wide Web}}WWW{{abbr}}`. This is replaced with `<abbr title="World Wide Web">WWW</abbr>`. |
 | `{{acronym::*}}` | Select acronyms in a text: `{{acronym::Multipurpose Internet Mail Extensions}}MIME{{acronym}}`. This will be replaced with `<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym>`. |
