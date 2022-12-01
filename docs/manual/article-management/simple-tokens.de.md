@@ -35,7 +35,7 @@ Beispiel:
 - Benutzer: Modultyp 'Registrierung'
 - Benutzer: Modultyp 'Passwort vergessen'
 - Newsletter: ['Newsletterleser', 'Abonnieren' und 'Kündigen'](https://docs.contao.org/manual/de/core-erweiterung/newsletter/newsletter-verwaltung/#newsletter-personalisieren)
-- Extensions z. B. Notification-Center, Isotope, Catalog-Manager, Meta-Models, Contao-Leads, MP_Forms
+- Extensions z. B. Notification Center, Isotope eCommerce, Catalog Manager, MetaModels, Leads, Mehrseitige Formulare
 - Als Platzhalter in [Insert-Tags](https://docs.contao.org/manual/de/artikelverwaltung/insert-tags/#verschiedenes)
 
 
