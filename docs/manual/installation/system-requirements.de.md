@@ -254,7 +254,7 @@ siehe auch: https://symfony.com/doc/current/configuration/override_dir_structure
 ### Web-Server Konfiguration
 
 In der Konfiguration des Web-Servers muss sichergestellt sein, dass alle Anfragen von der Applikation über die `index.php` im öffentlichen
-Verzeichnis verarbeitet werden (via »URL-Rewriting«). Wie diese Konfiguration aussehen musst hängt von der eingesetzten Web-Server Software 
+Verzeichnis verarbeitet werden (via »URL-Rewriting«). Wie diese Konfiguration aussehen muss hängt von der eingesetzten Web-Server Software 
 ab. Weit verbreitete Beispiele sind Apache und NGINX:
 
 {{< tabs groupId="web-server-config" >}}
