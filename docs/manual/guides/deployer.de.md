@@ -109,8 +109,8 @@ für die Konfiguration findest du hier: [nutshell-framework/deployer-recipes][4]
 
 ## Webserver einrichten
 
-Wie du aus der [Contao-Doku][5] weißt, musst du den Document-Root auf `/public` (bzw. `/web`) einstellen. Die Idee
-hinter Deployer ist, dass es keine Downtime bei Updates gibt. Deswegen werden rollierende Symlinks eingesetzt. Den
+Wie du aus der [Contao-Doku][5] weißt, musst du den Document-Root auf `/public` (bzw. `/web`) einstellen. Die Idee hinter 
+Deployer ist, dass es eine möglichst kurze Downtime bei Updates gibt. Deswegen werden rollierende Symlinks eingesetzt. Den
 Document-Root von deinem vHost musst du entsprechend auf `/current/public` (bzw. `/current/web`) einstellen. Ein
 komplettes Beispiel für einen Document-Root wäre: `/var/www/foobar/html/example.org/current/public`.
 
