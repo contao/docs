@@ -250,6 +250,91 @@ dann definiere diesen entsprechend, um für zukünftige Contao Versionen gerüst
 
 siehe auch: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
 
+
+### Webserver-Konfiguration
+
+In der Konfiguration des Webservers muss sichergestellt sein, dass alle Anfragen von der Applikation über die `index.php` im öffentlichen
+Verzeichnis verarbeitet werden (via »URL-Rewriting«). Wie diese Konfiguration aussehen muss hängt von der eingesetzten Webserver-Software 
+ab. Weit verbreitete Beispiele sind Apache und NGINX:
+
+{{< tabs groupId="web-server-config" >}}
+
+{{% tab name="Apache" %}}
+Für Apache stellt Contao eine [Standard `.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess) 
+Datei im öffentlichen Verzeichnis zur Verfügung. Damit diese Datei von Apache verarbeitet wird muss sichergestellt sein, dass die Direktive
+`AllowOverride All` für das `Directory` in der `VirtualHost` Definition der Webserver-Konfiguration vorhanden ist. Darüberhinaus muss das
+Apache-Modul `mod_rewrite` aktiv sein, damit URLs wie `https://example.com/contao/install` möglich sind. Falls beides nicht zutrifft würden
+nur URLs wie `https://example.com/index.php/contao/install` möglich sein.
+
+Für Contao muss auch die Einstellung `Options FollowSymlinks` in der `Directory` Konfiguration aktiv sein, da Symlinks zum Einsatz kommen.
+
+Eine minimale `VirtualHost` Konfiguration für den Apache-Webserver könnte also z. B. so aussehen (`…/public` mit `…/web` austauschen für
+Contao 4.9 oder älter):
+
+```
+<VirtualHost *:80>
+    ServerName domain.tld
+    ServerAlias www.domain.tld
+    DocumentRoot /var/www/project/public
+
+    <Directory /var/www/project/public>
+        AllowOverride All
+        Require all granted
+        Options FollowSymlinks
+    </Directory>
+</VirtualHost>
+```
+
+{{% /tab %}}
+
+{{% tab name="NGINX" %}}
+Am wichtigsten ist es sicherzustellen, dass alle Anfragen die nicht an eine existierende Datei gehen an die PHP-Applikation zur Verarbeitung
+weitergegeben werden. Dies passiert über die Anweisung `try_files $uri /index.php$is_args$args;`.
+
+Eine minimale `server` Definition für den NGINX könnte so aussehen (`…/public` mit `…/web` austauschen für
+Contao 4.9 oder älter):
+
+```
+server {
+    server_name domain.tld www.domain.tld;
+    root /var/www/project/public;
+
+    location / {
+        try_files $uri /index.php$is_args$args;
+    }
+
+    # Haupt Einstiegspunkt
+    location ~ ^/index\.php(/|$) {
+        # the exact FastCGI configuration depends on your environment
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi.conf;
+        internal;
+    }
+
+    # preview.php und contao-manager.phar.php auch zur Verarbeitung erlauben
+    location ~ ^/(preview|contao-manager\.phar)\.php(/|$) {
+        # the exact FastCGI configuration depends on your environment
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi.conf;
+    }
+}
+```
+
+Eine vollständige NGINX Konfiguration enthält normalerweise mehr Einträge, bspw. um das "not found logging" für statische Ressourcen wie
+Bilder oder das `favicon.ico` im Root abzuschalten. In vielen Fällen befinden sich in einer Standard NGINX `server` Konfiguration allerdings
+auch Direktiven speziell für die Verarbeitung von Bildern. Hier ist es wichtig auch `try_files $uri /index.php$is_args$args;` am Ende
+einzufügen um sicherzustellen, dass Anfragen auf (noch) nicht existierende Bilder von Contao verarbeitet werden. Andernfalls würde die
+»Deferred Image Generation« von Contao nicht funktionieren.
+{{% /tab %}}
+
+{{< /tabs >}}
+
+Mehr Informationen über die Konfiguration des Web-Servers können auch aus der [Symfony Dokumentation][SymfonyWebServerConfiguration]
+entnommen werden.
+
+
 ## Providerspezifische Einstellungen
 
 Es gibt ein paar wenige große Internet Service Provider, die spezielle Einstellungen für den Betrieb von Contao 
@@ -257,3 +342,6 @@ erfordern. Zum Glück sind sie nur die Ausnahme von der Regel. Die Provider-spez
 [Contao-Forum](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern). Sorgenfreies 
 Contao-Hosting erhältst du bei den [Contao-Partnern](https://contao.org/de/contao-partner.html) in der 
 Leistungskategorie »Webhosting«.
+
+
+[SymfonyWebServerConfiguration]: https://symfony.com/doc/current/setup/web_server_configuration.html
