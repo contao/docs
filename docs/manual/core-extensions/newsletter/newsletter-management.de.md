@@ -89,7 +89,7 @@ den Rich Text Editor.
 
 ### Newsletter personalisieren
 
-Wenn du Newsletter an registrierte Mitglieder verschickst, kannst du diese mithilfe der sogenannten »Simple Tokens« 
+Wenn du Newsletter an registrierte Mitglieder verschickst, kannst du diese mithilfe der sogenannten »[Simple Tokens](https://docs.contao.org/manual/de/artikelverwaltung/simple-tokens/)« 
 personalisieren. Simple Tokens funktionieren ähnlich wie Insert-Tags und können sowohl im HTML- als auch im Text-Inhalt 
 eines Newsletters verwendet werden. Nachfolgend ein kleines Beispiel:
 
