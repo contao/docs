@@ -40,7 +40,7 @@ Standardmäßig kodiert Twig **alle** Variablen. Die gewählte Escaper Strategie
 ## Vertrauenswürdige Inhalte
 
 Wenn du absichtlich eine Variable ausgeben möchtest, die HTML beinhaltet, musst du den 
-[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` der Variablen hinzufügen. Denke daran, dass du **nie** `|raw` verwenden 
+[Filter](https://twig.symfony.com/doc/3.x/filters/raw.html) `|raw` der Variable hinzufügen. Denke daran, dass du **nie** `|raw` verwenden 
 solltest, wenn du den Daten nicht vertraust, da dies sonst eine XSS-Schwachstelle verursacht. 
 
 Ein typischer Anwendungsfall, bei dem es in Ordnung ist `|raw` zu verwenden, ist die Eingabe von Inhalten über den TinyMCE-Editor. Contao 
