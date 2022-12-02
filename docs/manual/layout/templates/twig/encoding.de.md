@@ -47,7 +47,7 @@ Ein typischer Anwendungsfall, bei dem es in Ordnung ist `|raw` zu verwenden, ist
 überprüft bereits die Benutzereingaben (basierend auf den Sanitizer-Einstellungen), bevor die Daten an das Template weiter gegeben werden.
 
 Im folgenden Beispiel hat eine Kontextvariable `text` den Inhalt `<p>Mein<br>Text</p>`, während eine Variable `user_input` den 
-Inhalt `<script>alert('Ich bin unsicher!');</script>` enthät. Beachte, dass das Hinzufügen von `|raw` im letzten Beispiel gefährlich ist, 
+Inhalt `<script>alert('Ich bin unsicher!');</script>` enthält. Beachte, dass das Hinzufügen von `|raw` im letzten Beispiel gefährlich ist, 
 während es im zweiten Beispiel in Ordnung ist:
 
 ```twig
