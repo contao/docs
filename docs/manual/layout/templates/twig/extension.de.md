@@ -8,7 +8,7 @@ weight: 90
 ---
 
 
-Entwickler können Twig problemlos weitere Funktionen hinzufügen, die du in jeder Vorlage verwenden kanst. Dazu gehören typischerweise 
+Entwickler können Twig problemlos weitere Funktionen hinzufügen, die du in jeder Vorlage verwenden kannst. Dazu gehören typischerweise 
 neue `|filter` und `funktionen()`.
 
 
