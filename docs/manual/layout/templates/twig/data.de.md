@@ -49,6 +49,6 @@ Der Befehl `vendor/bin/contao-console debug:twig` zeigt dir u. a. eine Liste der
 
 
 {{% notice tip %}}
-Zu jedem Befehl erhälst du Details über die verfügbaren Optionen mit der Angabe von `--help`. Beide Befehle unterstützen die 
+Zu jedem Befehl erhältst du Details über die verfügbaren Optionen mit der Angabe von `--help`. Beide Befehle unterstützen die 
 Option `--env` zwecks Berücksichtigung der Umgebung: `prod` (Standard Einstelung) oder `dev`.
 {{% /notice %}}
