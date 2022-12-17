@@ -270,7 +270,7 @@ Nachricht angegebene Text verwendet. Falls aber automatisch dieser Text angepass
 
 Das folgende Beispiel implementiert einen Hook, der die URL zum Nachrichtenbeitrag an den Text des Facebook-Posts anhängt:
 
-{{< tabs groupId="registering-hooks" >}}
+{{< tabs groupId="four-way-service-registration" >}}
 {{% tab name="Attribute" %}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
