@@ -63,6 +63,20 @@ Im Modus »Mehrere bearbeiten« kommen weitere Kürzel hinzu:
 | `[Shift]`             | Mehrere&nbsp;Checkboxen&nbsp;auswählen   | Wählt mehrere Checkboxen aus wenn die Shift-Taste gedrückt wird.                        |
 
 
+## Klicken und Bearbeiten
+
+Elemente können durch Anklicken in den Bearbeitungsmodus geschaltet werden, ohne dass dazu das Bearbeiten-Icon
+verwendet werden muss. Folgende Aktionen werden unterstützt:
+
+- `[Ctrl] + Klick`: das Element bearbeiten
+- `[Ctrl] + [Shift] + Klick`: die Elementeinstellungen bearbeiten
+
+Auf macOS wird die Command-Taste statt der Control-Taste verwendet:
+
+- `[Cmd] + Klick`: das Element bearbeiten
+- `[Cmd] + [Shift] + Klick`: die Elementeinstellungen bearbeiten
+
+
 ## Tastaturkürzel unter Windows, Linux und Mac {#tastaturkuerzel-unter-windows-linux-und-mac}
 
 Die beschriebenen Tastaturkürzel funktionieren in deinem aktuellen Browser, können aber auf anderen Betriebssystemen oder
@@ -70,4 +84,4 @@ Browsern unterschiedlich sein. Eine Übersicht, welche Tastenkombination unter w
 [dieser Artikel][MozillaAccesskey].
 
 
-[MozillaAccesskey]: https://developer.mozilla.org/de/docs/Web/HTML/Globale_Attribute/accesskey
+[MozillaAccesskey]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey

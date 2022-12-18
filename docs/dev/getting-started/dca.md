@@ -19,7 +19,9 @@ The following example adds a new field to news entries called `location`. When a
 a new field you will also have to add it to a so called [_palette_][2], otherwise
 the field will not show in the edit form of the news entry. The easiest way to adjust
 a palette is through the [Palette Manipulator][3]. The example adds our new field
-to the _Title_ section of a news entry.
+to the _Title_ section of a news entry for the palettes `default` and `internal`.
+You might want to look up the `palettes` section of the `tl_news`-DCA (e.g. with the 
+`debug:dca` command) to determine which of the palettes you want to adjust.
 
 ```php
 // contao/dca/tl_news.php
@@ -35,6 +37,7 @@ $GLOBALS['TL_DCA']['tl_news']['fields']['location'] = [
 PaletteManipulator::create()
     ->addField('location', 'title_legend', PaletteManipulator::POSITION_APPEND)
     ->applyToPalette('default', 'tl_news')
+    ->applyToPalette('internal', 'tl_news')
 ;
 ```
 

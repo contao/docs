@@ -32,19 +32,8 @@ will block any subsequent request by the same user.
 
 You can disable the front end cron by going to _System_ » _Settings_ » _Cron job 
 settings_ and enabling the setting __Disable the command scheduler__. After disabling
-the front end cron you should periodically let Contao executes its cron jobs, by
-either making a request to a web URL, or by executing them via the command line.
-
-
-### Web URL
-
-In order to trigger cron job execution via a web URL, a request to the `_contao/cron`,
-route, e.g. `https://example.org/_contao/cron`, needs to be made. In a Linux crontab 
-you could use the following instructions for example:
-
-```none
-* * * * * wget -q -O /dev/null https://example.org/_contao/cron
-```
+the front end cron you should periodically let Contao execute its cron jobs, either by
+executing them via the command line or by making a request to a web URL.
 
 
 ### Command Line
@@ -78,6 +67,17 @@ parameters:
     router.request_context.scheme: 'https'
 ```
 {{% /notice %}}
+
+
+### Web URL
+
+In order to trigger cron job execution via a web URL, a request to the `_contao/cron`,
+route, e.g. `https://example.org/_contao/cron`, needs to be made. In a Linux crontab 
+you could use the following instructions for example:
+
+```none
+* * * * * wget -q -O /dev/null https://example.org/_contao/cron
+```
 
 
 ## Registering Cron Jobs

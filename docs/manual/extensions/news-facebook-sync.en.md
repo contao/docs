@@ -376,4 +376,4 @@ There is additional data available in the news templates:
 - _char_ `fromFb` Indicates whether this news entry was fetched from Facebook
 
 
-[Hooks]: /dev/framework/hooks/
+[Hooks]: https://docs.contao.org/dev/framework/hooks/
