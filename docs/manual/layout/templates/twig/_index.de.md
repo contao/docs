@@ -8,7 +8,7 @@ weight: 10
 ---
 
 
-Twig ist Symfony's Standardmethode zum Schreiben von Templates. Es ist schnell, sicher und leicht erweiterbar. Im Gegensatz zu 
+Twig ist die Standard Template Engine von Symfony. Es ist schnell, sicher und leicht erweiterbar. Im Gegensatz zu 
 PHP-Templates enthalten Twig-Templates keine Geschäftslogik, was die gemeinsame Nutzung durch Designer und Programmierer erleichtert. 
 Diese Tatsache hilft, eine saubere Trennung zwischen der Präsentations- und der Daten-/Logikschicht aufrechtzuerhalten.
 
