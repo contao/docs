@@ -8,7 +8,14 @@ weight: 10
 ---
 
 
-Twig ist die Standard Template Engine von Symfony. Es ist schnell, sicher und leicht erweiterbar. Im Gegensatz zu 
+Twig ist die Standard Template Engine von Symfony. Es wird genauso wie PHP-Template zur Ausgabe eines Moduls, 
+Inhaltselements, Formulars oder einer anderen Komponente verwendet.
+
+{{% notice note %}}
+In Contao wurde Twig in der Version 4.12 eingeführt. Seit Contao 5.0 werden Twig-Templates auch im Contao-Core verwendet.  
+{{% /notice %}}
+
+Es ist schnell, sicher und leicht erweiterbar. Im Gegensatz zu 
 PHP-Templates enthalten Twig-Templates keine Geschäftslogik, was die gemeinsame Nutzung durch Designer und Programmierer erleichtert. 
 Diese Tatsache hilft, eine saubere Trennung zwischen der Präsentations- und der Daten-/Logikschicht aufrechtzuerhalten.
 
@@ -18,58 +25,35 @@ String-Interpolationsfunktionen und vieles mehr.
 
 {{% children %}}
 
-## Erste Schritte
+## Syntax
 
-Twig-Templates haben ihre eigene Syntax. Das folgende Beispiel zeigt wie ein PHP-Template in ein analoges Twig-Template übersetzt werden kann:
+Twig-Templates haben ihre eigene Syntax.
 
-{{< tabs groupId="twig">}}
-{{% tab name="PHP" %}}
-```html
-<div class="about-me">
-  <h2><?= $this->name ?></h2>
-  <p>I am <?= round($this->age) ?> years old.</p>
+### Bezeichner
 
-  <ul class="hobby-list">
-    <?php foreach $this->hobbies as $hobby: ?>
-      <li><?= ucfirst($hobby) ?></li>
-    <?php endforeach; ?>
-  </ul>
-</div>
-```
-{{% /tab %}}
-{{% tab name="Twig" %}}
+In Twig werden folgende drei Bezeichner verwendet
+* {{ ... }} - Variable ausgeben
+* {# ... #} - Kommentare
+* {% ... %} - Kommandos und Kontrollstrukturen z. B. If-Abfragen
+
+#### Beispiele
+Ausgabe der Variable `meine_variable` in einem `p-Tag`
 ```twig
-<div class="about-me">
-  <h2>{{ name }}</h2>
-  <p>I am {{ age|round }} years old.</p>
-
-  <ul class="hobby-list">
-    {% for hobby in hobbies %}
-      <li>{{ hobby|capitalize }}</li>
-    {% endfor %}
-  </ul>
-</div>
+<p>Ausgabe: {{ meine_variable }} </p>
 ```
-{{% /tab %}}
-{{< /tabs >}}
+Ausgabe eines Kommentars
+```twig
+{# mein Kommentar #}
+```
+Prüfen ob `meine_variable` einen Inhalt hat und diesen ausgeben (If-Abfrage)
+```twig
+{% if meine_variable %}
+    <p>Die Variable hat folgenden Inhalt:</p>
+    <p>{{ meine_variable }}</p>
+{% endif %}
+```
+Die Twig Syntax ist [gut dokumentiert](https://twig.symfony.com/doc/3.x/). Als Startpunkt ist der
+Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templates.html) zu empfehlen. 
 
-
-### .twig Dateien
-
-Wir kennzeichnen Twig Dateien mit der Dateierweiterung `.twig`. Da Twig für alle Arten von Dateitypen geeignet ist, 
-geben wir auch den Dateityp an. So könnte eine Vorlage, die eine HTML-Liste enthält, `my_list.html.twig` heißen, während einige JSON-Daten 
-in einer `data.json.twig` Vorlage stehen könnten. 
-
-Lege die Twig Templates im Verzeichnis `template` ab, wie du es von den PHP Templates gewohnt bist. Allerdings gibt es eine Besonderheit: 
-Die Twig Namen können jetzt Unterverzeichnisse enthalten. Es kommt also darauf an wo diese abgelegt werden.
-
-
-### Die Syntax erlernen
-
-Zur Ausgabe von Variablen benutzt du deren Namen in geschweiften Klammern `{{ foo }}`. Schlüsselwörter wie `for` werden innerhalb 
-von `{%` und `%}` gesetzt. Zur weiteren Verarbeitung der Ausgabe verwendest du [Filter](https://twig.symfony.com/doc/3.x/filters/index.html)
-`|foo` und [Funktionen](https://twig.symfony.com/doc/3.x/functions/index.html) `bar()`.
-
-Die Twig Syntax ist [gut dokumentiert](https://twig.symfony.com/doc/3.x/). Ein guter Startpunkt ist der
-Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templates.html). Du möchtest schnell etwas ausprobieren? 
+Du möchtest schnell etwas ausprobieren?
 Verwende dazu [Twig fiddle](https://twigfiddle.com/).
