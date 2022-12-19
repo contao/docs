@@ -56,3 +56,7 @@ Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templat
 
 Du möchtest schnell etwas ausprobieren?
 Verwende dazu [Twig fiddle](https://twigfiddle.com/).
+
+## Dateiendungen
+Twig-Templates haben die Dateiendung `.twig`. Zusätzlich wird noch der Ausgabetyp angegeben. 
+Für eine Ausgabe von HTML wird die Dateiendung `html.twig` verwendet
