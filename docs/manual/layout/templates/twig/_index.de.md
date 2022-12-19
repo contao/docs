@@ -18,8 +18,7 @@ von Blöcken oder Makros, den erleichterten Zugriff auf Objekte mit »Property A
 String-Interpolationsfunktionen und vieles mehr.
 
 {{% notice note %}}
-In Contao können Twig-Templates seit Version 4.12 genutzt werden. Seit Contao 5.0 werden Twig-Templates auch im Contao-Core verwendet. 
-Twig-Templates können parallel zu HTML5-Templates verwendet.
+In Contao können Twig-Templates seit Version 4.12 genutzt werden. Seit Contao 5.0 werden Twig-Templates auch im Contao-Core verwendet.
 {{% /notice %}}
 
 {{% children %}}
