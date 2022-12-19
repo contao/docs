@@ -7,21 +7,18 @@ aliases:
 weight: 10
 ---
 
+Twig ist eine Template Engine für PHP und Standard in Symfony. 
+Wie ein PHP-Template wird Twig für die Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponente verwendet. 
+Im Gegensatz zu PHP-Templates enthalten Twig-Templates keine Geschäftslogik, was die Trennung zwischen Designer und Programmierer erreicht.
+Sie ist schnell, sicher und leicht erweiterbar.
 
-Twig ist die Standard Template Engine von Symfony. Es wird genauso wie PHP-Template zur Ausgabe eines Moduls, 
-Inhaltselements, Formulars oder einer anderen Komponente verwendet.
+Twig bietet außerdem viele leistungsstarke Methoden zur Strukturierung von Vorlagen, wie z. B. das Einbinden, Vererben, Wiederverwenden
+von Blöcken oder Makros, den erleichterten Zugriff auf Objekte mit »Property Access«, verfügt über Leerzeichenkontrolle,
+String-Interpolationsfunktionen und vieles mehr.
 
 {{% notice note %}}
-In Contao wurde Twig in der Version 4.12 eingeführt. Seit Contao 5.0 werden Twig-Templates auch im Contao-Core verwendet.  
+In Contao können Twig-Templates seit Version 4.12 genutzt werden. Seit Contao 5.0 werden Twig-Templates auch im Contao-Core verwendet.  
 {{% /notice %}}
-
-Es ist schnell, sicher und leicht erweiterbar. Im Gegensatz zu 
-PHP-Templates enthalten Twig-Templates keine Geschäftslogik, was die gemeinsame Nutzung durch Designer und Programmierer erleichtert. 
-Diese Tatsache hilft, eine saubere Trennung zwischen der Präsentations- und der Daten-/Logikschicht aufrechtzuerhalten.
-
-Twig bietet außerdem viele leistungsstarke Methoden zur Strukturierung von Vorlagen, wie z. B. das Einbinden, Vererben, Wiederverwenden 
-von Blöcken oder Makros, den erleichterten Zugriff auf Objekte mit »Property Access«, verfügt über Leerzeichenkontrolle, 
-String-Interpolationsfunktionen und vieles mehr.
 
 {{% children %}}
 
