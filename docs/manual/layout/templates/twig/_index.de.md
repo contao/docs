@@ -7,9 +7,9 @@ aliases:
 weight: 10
 ---
 
-Twig ist eine Template Engine für PHP und Standard in Symfony. 
-Wie ein PHP-Template wird Twig für die Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponente verwendet. 
-Im Gegensatz zu PHP-Templates enthalten Twig-Templates keine Geschäftslogik, was die Trennung zwischen Designer und Programmierer erreicht.
+Twig ist eine Template Engine für PHP. Es ist die Standard Template Engine von Symfony. 
+Wie ein PHP-Template wird ein Twig-Template für die Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen Komponente verwendet. 
+Mit Twig-Templates kann das Design von der Programmierung strikt getrennt werden.
 Sie ist schnell, sicher und leicht erweiterbar.
 
 Twig bietet außerdem viele leistungsstarke Methoden zur Strukturierung von Vorlagen, wie z. B. das Einbinden, Vererben, Wiederverwenden
