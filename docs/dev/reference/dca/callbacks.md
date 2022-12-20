@@ -128,7 +128,7 @@ accross multiple fields. You are expected to return the values.
 * `array` Values of the record
 * `\Contao\DataContainer` Data Container object
 
-**return:** _void_
+**return:** `array` Values of the record
 {{% /expand %}}
 
 
