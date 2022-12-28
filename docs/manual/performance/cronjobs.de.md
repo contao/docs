@@ -21,7 +21,7 @@ Wir erreichen also einen grossen Vorteil mit einem verhältnismässig geringen A
 Der Cronjob dafür muss wie folgt aussehen:
 
 ```
-* * * * * <php-binary> <contao-verzeichnits>/vendor/bin/contao-console contao:cron
+* * * * * <php-binary> <contao-verzeichnis>/vendor/bin/contao-console contao:cron
 ```
 
 Ersetze dabei `<php-binary>` mit dem Pfad zum PHP CLI-Binary deiner aktuell eingesetzten Version. Ein komplettes
