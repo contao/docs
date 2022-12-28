@@ -5,7 +5,7 @@ aliases:
     - /en/performance/cronjobs/
 ---
 
-Contao ships with a cronjob framework by default. In short, this allows developers to register cronjobs 
+Contao ships with a cronjob framework out of the box. In short, this allows developers to register cronjobs 
 for their own extensions in a simpler and consistent way.
 
 By default, cronjobs are executed whenever someone visits the website. This can negatively affect the 
