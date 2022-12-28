@@ -6,7 +6,7 @@ aliases:
     - /de/performance/cronjobs/
 ---
 
-Contao wird standardmässig mit einem Cronjob-Framework ausgeliefert. Kurz zusammengefasst ermöglicht dies
+Contao wird von Haus aus mit einem Cronjob-Framework ausgeliefert. Kurz zusammengefasst ermöglicht dies
 Entwickler*innen eine einfachere und einheitliche Registrierung von Cronjobs für ihre eigenen Erweiterungen.
 
 Cronjobs werden standardmässig immer dann ausgeführt, wenn jemand die Webseite besucht. Dies kann die Performance 
