@@ -192,7 +192,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['my_permissions'] = [
 
 PaletteManipulator::create()
     ->addLegend('my_legend', null)
-    ->addField('my_permission', 'my_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('my_permissions', 'my_legend', PaletteManipulator::POSITION_APPEND)
     ->applyToPalette('extend', 'tl_user')
     ->applyToPalette('custom', 'tl_user')
 ;
@@ -214,7 +214,7 @@ $GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
 
 PaletteManipulator::create()
     ->addLegend('my_legend', null)
-    ->addField('my_permission', 'my_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('my_permissions', 'my_legend', PaletteManipulator::POSITION_APPEND)
     ->applyToPalette('default', 'tl_user_group')
 ;
 ```
