@@ -34,6 +34,8 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         'https?://github\.com/DEIN-GITHUB-BENUTZERNAME/docs',
         'https?://github\.com/YOUR-GITHUB-USERNAME/docs',
         'https?://www\.instagram\.com/contaocms/',
+        'https?://en\.wikipedia\.org/wiki/Environment_variable',
+        'https?://tinyurl\.com/app',
     ];
 
     private string $outputPath;
