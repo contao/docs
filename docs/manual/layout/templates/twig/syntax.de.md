@@ -1,7 +1,7 @@
 ---
 title: "Twig-Syntax"
 description: "Syntax von Twig."
-url: "layout/templates/twig"
+url: "layout/templates/twig/syntax"
 aliases:
     - /de/layout/templates/twig/syntax
 weight: 20
