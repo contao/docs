@@ -29,3 +29,7 @@ example could look like this:
 ```
 * * * * * /opt/plesk/php/8.2/bin/php /var/www/vhosts/my.host.com/vendor/bin/contao-console contao:cron
 ```
+
+{{% notice tip %}}
+Additional information can be found in [the developer documentation](https://docs.contao.org/dev/framework/cron/).
+{{% /notice %}}
