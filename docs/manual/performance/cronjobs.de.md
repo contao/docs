@@ -30,3 +30,7 @@ Beispiel könnte so aussehen:
 ```
 * * * * * /opt/plesk/php/8.2/bin/php /var/www/vhosts/my.host.com/vendor/bin/contao-console contao:cron
 ```
+
+{{% notice tip %}}
+Zusätzliche Informationen findest du in [der englischen Entwickler-Dokumentation](https://docs.contao.org/dev/framework/cron/).
+{{% /notice %}}
