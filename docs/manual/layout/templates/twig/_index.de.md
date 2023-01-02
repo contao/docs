@@ -10,7 +10,7 @@ weight: 10
 {{% notice info %}}
 Der gesamte Artikel behandelt die Verwendung von Twig-Templates in Contao ab Version 5.0.
 In Contao können Twig-Templates zwar seit Version 4.12 genutzt werden, aber erst seit Contao 5.0 werden Twig-Templates 
-auch im Contao-Core verwendet. Es wurde weitestgehend darauf verzichtet, die abweichende Verwendung von Twig-Templates 
+auch im Contao-Core verwendet. Es wurde darauf verzichtet, die abweichende Verwendung von Twig-Templates 
 in älteren Versionen zu dokumentieren.
 {{% /notice %}}
 
