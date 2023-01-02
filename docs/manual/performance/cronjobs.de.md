@@ -32,5 +32,5 @@ Beispiel könnte so aussehen:
 ```
 
 {{% notice tip %}}
-See the [Contao Cron Documentation](https://docs.contao.org/dev/framework/cron/)
+Zusätzliche Informationen findest du in [der englischen Entwickler-Dokumentation](https://docs.contao.org/dev/framework/cron/).
 for more details.
