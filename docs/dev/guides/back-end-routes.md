@@ -10,10 +10,8 @@ aliases:
 
 
 {{% notice note %}}
-This guide assumes a Contao version of at least **4.9**. Back end routes can be
+This guide assumes a Contao version of at least **4.13**. Back end routes can be
 created in previous Contao versions as well, but might require additional steps.
-For example, in Contao **4.4** instead of using the `contao.backend_menu_build`
-event, the back end menu needs to be altered using the `getUserNavigation` hook.
 {{% /notice %}}
 
 You can use the Contao back end to display content generated in your own custom Controllers.
@@ -34,32 +32,30 @@ and is configured through annotations.
 // src/Controller/BackendController.php
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Contao\CoreBundle\Controller\AbstractBackendController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment as TwigEnvironment;
 
 /**
- * @Route("/contao/my-backend-route",
+ * @Route("/%contao.backend.route_prefix%/my-backend-route",
  *     name=BackendController::class,
  *     defaults={"_scope": "backend"}
  * )
  */
-class BackendController extends AbstractController
+class BackendController extends AbstractBackendController
 {
-    private $twig;
-    
-    public function __construct(TwigEnvironment $twig)
-    {
-        $this->twig = $twig;
-    }
-
     public function __invoke(): Response
     {
-        return new Response($this->twig->render(
-            'my_backend_route.html.twig', 
-            []
-        ));
+        return $this->render(
+            'my_backend_route.html.twig',
+            [
+                'error' => 'Oh no, an error!',
+                'title' => 'My title',
+                'version' => 'I can overwrite what I want',
+                'foo' => 'bar',
+            ]
+        );
     }
 }
 ```
@@ -67,11 +63,6 @@ class BackendController extends AbstractController
 In order to have a correct Contao back end route, we need an additional request parameter called `_scope` with the value `backend`. This way
 you are telling Contao that this route belongs to the back end and should be handled accordingly. See [this article][RequestScope] for more
 information about the `backend` scope.
-
-
-{{% notice note %}}
-Contao **4.13** allows configuring a custom backend path. Use `"%contao.backend.route_prefix%/my-backend-route"` instead of `"/contao/my-backend-route"` in the example above to support this feature.
-{{% /notice %}}
 
 
 Be sure to have imported your bundle's Controllers in your `routes.yaml` *before*
@@ -88,30 +79,16 @@ Our route will render the template `my_backend_route.html.twig` which must be pl
 into `/templates`.
 
 ```twig
-{% extends "@ContaoCore/Backend/be_page.html.twig" %}
+{% extends "@Contao/be_main" %}
 
-{% block headline %}
-    Not only the content of the `title`-tag but also the title of the content section.
-{% endblock %}
+{% block main_headline %}Headline{% endblock %}
 
-{% block error %}
-    Will be placed within the error block.
-{% endblock %}
-
-{% block main %}
+{% block main_content %}
     <div class="tl_listing_container">
-        Main Content.
+        Main Content: {{ foo }}
     </div>
 {% endblock %}
 ```
-
-As we extend from `@ContaoCore/Backend/be_page.html.twig` it is worth noting
-that there are three different blocks you can currently use:
-
-* `headline`: This block renders the headline of the document.
-* `error`: In case of an error, place your message here, it will be placed prominently
-on the top of the page
-* `main`: This is the content area for output.
 
 This example renders like this:
 
