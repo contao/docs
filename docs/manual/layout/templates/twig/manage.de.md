@@ -12,8 +12,8 @@ weight: 30
 Twig-Templates werden innerhalb von `/templates` in einer speziellen Ordnerstruktur abgelegt.
 Bei der Auswahl des Templates ist die Struktur in eckigen Klammern hinter dem Template-Namen angegeben. Der Unterordner
 `content_element` ist zum Beispiel für Inhaltselemente vorgesehen.
-Contao unterstützt Dich bei der Strukturierung der Templates. Willst Du eines der neuen Twig-Templates anpassen,
-dann wird das Template automatisch im richtigen Unterordner angelegt.
+Contao unterstützt Dich bei der Strukturierung der Templates. Willst Du eines der neuen Twig-Templates anpassen, dann
+wird das Template automatisch im richtigen Unterordner angelegt.
 
 ### Beispiel
 
@@ -51,6 +51,7 @@ Auch diese Templates können durch Twig-Templates angepasst werden. Das entsprec
 Ordner `/templates` abgelegt werden. Es hat den gleichen Namen, wie das Original-Template und die Endung `.html.twig`.
 Die Benennung von verschiedenen Varianten erfolgt genauso wie bei den [PHP-Templates](../php/verwaltung).
 {{% /notice %}}
+
 
 
 
