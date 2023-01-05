@@ -24,7 +24,7 @@ erweiterbar.
 {{% notice notice %}}
 In Twig-Templates wird konsequent auf die leistungsstarken Methoden zur Strukturierung von Vorlagen gesetzt, wie z.B.
 [Vererben](inheritance), [Einbinden](include), Wiederverwenden von Blöcken oder Makros. Deshalb sollten keine
-Templates mehr komplett überschrieben werden, wie das bei den PHP-Templates noch üblich bzw. notwendig war.
+Templates mehr komplett überschrieben werden, wie das bei den PHP-Templates häufig üblich bzw. notwendig war.
 {{% /notice %}}
 
 {{% children %}}
@@ -32,5 +32,5 @@ Templates mehr komplett überschrieben werden, wie das bei den PHP-Templates noc
 ## Dateiendungen
 
 Twig-Templates haben die Dateiendung `.twig`. Zusätzlich wird noch der Ausgabetyp angegeben.
-Für eine Ausgabe von HTML wird die Dateiendung `html.twig` verwendet
+Für eine Ausgabe von HTML wird die Dateiendung `html.twig` verwendet.
 
