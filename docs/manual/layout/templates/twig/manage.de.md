@@ -3,7 +3,7 @@ title: "Templates verwalten"
 description: "Die Verwaltung der Template-Dateien."
 url: "layout/templates/twig/verwaltung"
 aliases:
-- /de/layout/templates/twig/verwaltung/
+    - /de/layout/templates/twig/verwaltung/
 weight: 30
 ---
 
@@ -46,8 +46,7 @@ Eine Zuordnung der Templates zu einem bestimmten Theme ist für Twig-Templates n
 
 {{% notice note %}}
 Eventuell steht noch nicht für jedes Modul/Inhaltselement ein Twig-Template zur Verfügung. In diesen Fällen werden
-weiterhin die
-bisherigen (PHP/Legacy) Templates herangezogen.
+weiterhin die bisherigen (PHP/Legacy) Templates herangezogen.
 Auch diese Templates können durch Twig-Templates angepasst werden. Das entsprechende Twig-Template muss dazu direkt im
 Ordner `/templates` abgelegt werden. Es hat den gleichen Namen, wie das Original-Template und die Endung `.html.twig`.
 Die Benennung von verschiedenen Varianten erfolgt genauso wie bei den [PHP-Templates](../php/verwaltung).
