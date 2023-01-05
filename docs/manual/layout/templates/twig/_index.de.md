@@ -4,8 +4,7 @@ description: "Übersicht Twig-Templates."
 url: "layout/templates/twig"
 aliases:
 - /de/layout/templates/twig/
-  weight: 10
-
+weight: 10
 ---
 
 {{% notice info %}}
