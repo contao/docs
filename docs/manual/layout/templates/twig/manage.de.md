@@ -54,5 +54,3 @@ Die Benennung von verschiedenen Varianten erfolgt genauso wie bei den [PHP-Templ
 
 
 
-
-
