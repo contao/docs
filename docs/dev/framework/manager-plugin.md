@@ -566,6 +566,27 @@ class Plugin implements RoutingPluginInterface
 }
 ```
 
+This will give you all the possibilities of registering routes in different formats within your
+one `routes.yaml` file. If, however, you only need one format (e.g. `attribute`) and have all your
+controllers in the same place (e.g. `src`), you may save yourself the additional config file:
+
+```php
+namespace Vendor\SomeBundle\ContaoManager;
+
+use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
+use Symfony\Component\Config\Loader\LoaderResolverInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
+
+class Plugin implements RoutingPluginInterface
+{
+    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+    {
+        $path = '@VendorSomeBundle/src/Controller';
+
+        return $resolver->resolve($path, 'attribute')->load($path);
+    }
+}
+```
 
 ## The `HttpCacheSubscriberPluginInterface`
 
