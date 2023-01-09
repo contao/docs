@@ -568,7 +568,7 @@ class Plugin implements RoutingPluginInterface
 
 This will give you all the possibilities of registering routes in different formats within your
 one `routes.yaml` file. If, however, you only need one format (e.g. `attribute`) and have all your
-controllers in the same place (e.g. `src`), you may save yourself the additional config file:
+controllers in the same place (e.g. `src/Controller`), you may save yourself the additional config file:
 
 ```php
 namespace Vendor\SomeBundle\ContaoManager;
