@@ -264,9 +264,9 @@ class HourlyCron
 ```
 
 {{% notice "note" %}}
-The above example uses the `CronExecutionSkippedException` exception (available since Contao **4.9.38** and **5.0.8**) which will tell
-Contao's Cron service that the excution of this cron job was skipped and thus the last run time will stay untouched in the database. Thus
-the cron job will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.
+The above example uses the `CronExecutionSkippedException` (available since Contao **4.9.38** and **5.0.8**) which will tell Contao's Cron 
+service that the excution of this cron job was skipped and thus the last run time will stay untouched in the database. Thus the cron job 
+will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.
 {{% /notice %}}
 
 
