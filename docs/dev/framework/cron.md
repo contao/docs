@@ -247,20 +247,27 @@ method.
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 
 class HourlyCron
 {
     public function __invoke(string $scope): void
     {
-        // Do not execute this cron job in the web scope
+        // Skip this cron job in the web scope
         if (Cron::SCOPE_WEB === $scope) {
-            return;
+            throw new CronExecutionSkippedException();
         }
 
         // …
     }
 }
 ```
+
+{{% notice "note" %}}
+The above example uses the `CronExecutionSkippedException` exception (available since Contao **4.9.38** and **5.0.8**) which will tell
+Contao's Cron service that the excution of this cron job was skipped and thus the last run time will stay untouched in the database. Thus
+the cron job will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.
+{{% /notice %}}
 
 
 ### Testing
