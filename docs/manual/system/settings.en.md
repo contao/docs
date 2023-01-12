@@ -544,12 +544,12 @@ of the `config/parameters.yaml` and thus you should not use these parameters, if
 
 The following example shows how to define the system administrator's e-mail address using a custom environment variable in the `.env` file and referencing it in the `config.yml` file.
 
-`yaml
+```ini
 # .env
 MYADMIN_EMAIL=admin@demo.com
 ```
 
-``yaml
+```yaml
 # config/config.yml
 contao:
     localconfig:

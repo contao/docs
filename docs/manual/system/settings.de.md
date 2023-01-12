@@ -556,7 +556,7 @@ Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN`
 
 Das folgende Beispiel zeigt, wie man die E-Mail-Adresse des Systemadministrators über eine eigene Umgebungsvariable in der Datei `.env` definiert und in der Datei `config.yml` referenziert.
 
-```yaml
+```ini
 # .env
 MYADMIN_EMAIL=admin@demo.de
 ```
