@@ -1,6 +1,6 @@
 ---
 title: "Checkbox Wizard"
-description: Not yet documented
+description: Multiple checkboxes with sorting support.
 ---
 
 This widget is just like the [Checkbox widget][CheckboxWidget] but it supports manual sorting of the multiple 
