@@ -56,7 +56,7 @@ könnte nginx genutzt werden. Für Contao sind dann allerdings weitere Konfigura
 
 ## Die Devilbox starten
 
-Wechsle nun in das Verzeichnis und starte die Devilbox mit Docker.
+Wechsle nun in das Verzeichnis und starte die Devilbox mit Docker:
 
 ```bash
 docker-compose up httpd php mysql
@@ -64,7 +64,7 @@ docker-compose up httpd php mysql
 
 Erstmalig kann es etwas dauern, da zunächst die jeweiligen Docker Images geladen und die Container erstellt werden müssen. Ausserdem wird empfohlen, den ersten Start im vordergrund auszuführen, damit etwaige Fehler besser sichtbar werden.
 
-Erneute Starts sind dann wesentlich schneller und können im Hintergrund (Option `-d`) ausgeführt werden .
+Erneute Starts sind dann wesentlich schneller und können im Hintergrund (Option `-d`) ausgeführt werden:
 
 ```bash
 docker-compose up -d httpd php mysql
@@ -83,7 +83,13 @@ docker-compose rm -f
 ## Das Devilbox Dashboard im Browser
 
 Ist die Devilbox gestartet, kannst du nun deinen Browser aufrufen. Mit Eingabe von **`http://127.0.0.1`** erreichst du 
-das Devilbox Dashboard. Über die Navigation erhältst du Zugriff auf die verschiedenen Funktionen.
+das Devilbox Dashboard. Über die Navigation erhältst du Zugriff auf die verschiedenen F{{% /notice %}}
+256
+So f.i. I configured php8.2 in the .env and started devilbox with bind option php74:
+257
+Any project with a .devilbox/backend.cfg with entry conf:phpfpm:tcp:php74:9000 will run under php7.4.
+258
+Any project wiithout a .devilbox/backend.cfg will run under php8.2.unktionen.
 
 {{% notice note %}}
 Die zu verwendende IP-Adresse ist abhängig von deiner Docker-Umgebung. Wenn du die Docker-Toolbox installiert hast, lautet 
@@ -106,9 +112,9 @@ deine IP-Adresse möglicherweise anders. Die IP-Adresse kann über den Befehl `d
 
 ### php Konfiguration
 
-Erstelle in `cfg\php-ini-x.y` (für jede php-Version `x.y` die du benutzst) eine Datei mit der Endung `.ini`, also z.B. `cfg\php-ini-8.1\contao.ini`, und trage hier alle [im Contao Handbuch empfohlenen Einstellungen](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#php-konfiguration-php-ini) ein. Diese Einstellungen überschreiben die default-Einstellungen. 
+Erstelle in `cfg/php-ini-x.y` (für jede php-Version `x.y` die du benutzst) eine Datei mit der Endung `.ini`, also z.B. `cfg/php-ini-8.1/contao.ini`, und trage hier alle [im Contao Handbuch empfohlenen Einstellungen](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#php-konfiguration-php-ini) ein. Diese Einstellungen überschreiben die default-Einstellungen. 
 
-Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data\www`** erstellt. Je Contao-Installation (Projekt)
+Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data/www`** erstellt. Je Contao-Installation (Projekt)
 musst du hier ein separates Verzeichnis `PROJEKTNAME` anlegen, z.B. `contao4`.
 
 
@@ -118,15 +124,15 @@ Der spätere vhost hat diese URL
 
 `PROJEKTNAME.TLD-Suffix`
 
-Für das `TLD-Suffix` hast du 3 Optionen:
+Für das `TLD-Suffix` hast du mehrere Optionen:
 
-1. Nutze die Voreinstellung `loc`.
-Damit der Virtual Host Name aufgelöst werden kann, musst du für jedes Projekt in `/etc/hosts` einen neuen Eintrag
++ Nutze die Voreinstellung `loc` (oder setze eine eigene TLD). Hier hast du 2 Alternativen:
+    - Damit der Virtual Host Name aufgelöst werden kann, musst du für jedes Projekt in `/etc/hosts` einen neuen Eintrag
 **`127.0.0.1 PROJEKTNAME.loc`** anlegen. 
 
-2. Nutze die [Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität.
+    - Nutze die [Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität.
 
-3. {{< ab devilbox version "3" (Betaversion) >}} (empfohlen:) Verwende das TLD-Suffix `dvl.to` (ändere dazu in der .env das `TLD_SUFFIX`). Hintergrund-Infos dazu findest du in den [Release-Notes](https://github.com/cytopia/devilbox/releases/tag/v3.0.0-beta-0.3). 
++ {{< ab devilbox version "3" (Betaversion) >}} (empfohlen:) Verwende das TLD-Suffix `dvl.to` (ändere dazu in der .env das `TLD_SUFFIX`). Damit werden automatisch alle *.dvl.to auf 127.0.0.1 geleitet.  Hintergrund-Infos dazu findest du in den [Release-Notes](https://github.com/cytopia/devilbox/releases/tag/v3.0.0-beta-0.3). 
 
 Tip
 {{% notice tip %}}
@@ -148,7 +154,7 @@ Wechsle in das Projektverzeichnis und erstelle einen neuen Unterordner `web` bzw
 
 ## Installation über den Contao Manager
 
-Starte `phpMyAdmin` im Devilbox Dashboard im Bereich `Tools\phpMyAdmin` und lege eine neue Datenbank an. Wechsle dann 
+Starte `phpMyAdmin` im Devilbox Dashboard im Bereich `Tools/phpMyAdmin` und lege eine neue Datenbank an. Wechsle dann 
 in der Navigation auf die Seite `Virtual Hosts`. Hier solltest du nun eine Liste deiner vorhandenen Web-Projekte sehen 
 und auch gleich aufrufen können. Du kannst jetzt die Contao-Installation über den Contao Manager einleiten. In unserem 
 Beispiel also über: `contao4.loc/contao-manager.phar.php`. 
@@ -159,7 +165,7 @@ Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../..
 ## Installation über die Kommandozeile
 
 Im Devilbox Hauptverzeichnis liegen die Dateien `shell.sh` bzw. `shell.bat`. 
-Damit kannst du dich in den laufenden Devilbox PHP Container (die `Devilbox-shell`) einklinken. Hier sind bereits [zahlreiche Tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) vorinstalliert. Auch `Composer`. Nach Aufruf befindest du dich im Container im Verzeichnis `shared\http`. Zur Installation von z. B. Contao 4.8 in ein Verzeichnis `contao4` musst du lediglich eingeben:
+Damit kannst du dich in den laufenden Devilbox PHP Container (die `Devilbox-shell`) einklinken. Hier sind bereits [zahlreiche Tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) vorinstalliert. Auch `Composer`. Nach Aufruf befindest du dich im Container im Verzeichnis `shared/http`. Zur Installation von z. B. Contao 4.8 in ein Verzeichnis `contao4` musst du lediglich eingeben:
 
 ```bash
 composer create-project contao/managed-edition contao4 4.8
@@ -183,7 +189,7 @@ geben in der Devilbox-Shell u.U. mehr Informationen preis als wenn sie unter dem
 
 
 ## Angaben im Contao-Installtool
-
+{{% /notice %}}
 Die Angaben im [Contao-Installtool](/de/installation/contao-installtool/) sind grundsätzlich identisch. Du musst lediglich 
 bei `Datenbankverbindung` auf folgende Einträge achten:
 
@@ -198,3 +204,119 @@ Der Benutzer `root` mit leerem Passwort ist die Devilbox Standard Einstellung. D
 die [Konfiguration](https://devilbox.readthedocs.io/en/latest/support/faq.html#can-i-change-the-mysql-root-password) geändert werden. 
 In diesem Fall musst du im Contao-Installtool deine Werte entsprechend eintragen.
 {{% /notice %}}
+
+
+## Mehrere php Versionen parallel betreiben  {{< ab devilbox version "3" (Betaversion) >}}
+
+Die Grundeinstellung nimmst du im devilbox Verzeichnis vor:
+
+```bash
+cp compose/docker-compose.override.yml-php-multi.yml docker-compose.override.yml
+```
+
+Du hast ein Projekt <project>, das abweichend von der in der .env eingestellten php-Version mit einer anderen php-Version phpx.y laufen soll?
+Lege in diesem Projektverzeichnis ein Verzeichnis `.devilbox` und darin eine Datei `backend.cfg` an mit diesem Inhalt (xy = ohne Punkt geschriebene abweichende php-Version):
+
+```bash
+conf:phpfpm:tcp:phpxy:9000  
+```
+
+Starte devilbox wie folgt:
+
+```bash
+docker-compose up php httpd bind phpxy
+```
+
+{{% notice note %}}
+Ein Beispiel:
+<table>
+  <tr>
+    <th>Projekt</th>
+    <th>.env php-Version</th>
+    <th>backend.cfg vorhanden?</th>
+    <th>bind Option</th>
+    <th>Projekt läuft unter<th>
+  </tr>
+  <tr>
+    <td>contao5</td>
+    <td>8.2</td>
+    <td>Nein</td>
+    <td>-</td>
+    <td>8.2</td>
+  </tr>
+  <tr>
+    <td>contao4</td>
+    <td>8.2</td>
+    <td>Ja</td>
+    <td>php74</td>
+    <td>7.4</td>
+  </tr>
+</table>
+
+{{% notice tip %}}
+Du kannst in jedem Projektverzeichnis prophylaktisch die backend.cfg anlegen und den Inhalt auskommentieren, wenn das Projekt nicht gesondert behandelt werden soll. 
+{{% /notice %}}
+
+{{% notice tip %}}
+Im devilbox Dashboard siehst du unter `Virtual Hosts` in der Spalte `Backend', welche php-Version tatsächlich für ein Projekt im Einsatz ist. (Noch gibt es dort einen kleinen Fehler: Auskommentierte Konfigurationen werden nicht als passiv erkannt.)
+{{% /notice %}}
+
+
+## PHP Xdebug
+
+Im [Devilbox-Handbuch](https://devilbox.readthedocs.io/en/latest/intermediate/configure-php-xdebug.html?highlight=xdebug#configure-php-xdebug-1) findest du eine nicht ganz aktuelle Dokumentation, die aber das grundsätzliche Vorgehen gut aufzeigt.
+
+Für Vscode funktioniert diese Konfiguration sehr gut:
+
+launch.json:
+
+```
+{
+  //
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for Xdebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "pathMappings": {
+        "/shared/httpd/": "${workspaceFolder}/projects/"
+      },
+      "log": true,
+      "stopOnEntry": true
+    },
+    .
+    .
+    .
+
+  ]
+}
+```
+
+php.ini:
+
+Erstelle eine xdebug.ini im jeweiligen Verzeichnis devilbox/cfg/php-ini-x.y mit diesem Inhalt (Beispiel für Vscode):
+
+```
+; PHP.ini configuration
+;  
+[PHP]
+; Defaults
+xdebug.mode                 = debug
+xdebug.remote_handler       = dbgp
+xdebug.start_with_request   = yes
+
+; How to connect
+xdebug.client_port          = 9003
+xdebug.client_host          = host.docker.internal
+xdebug.discover_client_host = false
+
+; Logging
+xdebug.log                  = /shared/httpd/xdebug.log
+xdebug.log_level            = 7
+
+; IDE Configuration
+xdebug.idekey               = VSCODE
+```
+
