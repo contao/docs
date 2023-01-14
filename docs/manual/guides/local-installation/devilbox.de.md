@@ -37,7 +37,7 @@ die Datei anschließend um in `.env`. In der neuen Datei kannst du jetzt deine K
 
 Die einzelnen Schritte (gerade auch für die Einträge `NEW_UID` und `NEW_GID`) sind in der [Devilbox Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html#set-uid-and-gid) gut beschrieben. Für Contao selbst sollten die weiteren Einträge etwa so gesetzt werden:
 
-- `HTTPD_DOCROOT_DIR=web`
+- `HTTPD_DOCROOT_DIR=DOCUMENT-ROOT` (DOCUMENT-ROOT = `web` bzw. `public`, siehe auch [Hosting-Konfiguration](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#hosting-konfiguration))
 - `HTTPD_SERVER=apache-2.4`
 - `PHP_SERVER=7.3`
 - `MYSQL_SERVER=mariadb-10.3`
@@ -56,19 +56,27 @@ könnte nginx genutzt werden. Für Contao sind dann allerdings weitere Konfigura
 
 ## Die Devilbox starten
 
-Wechsle nun in das Verzeichnis und starte die Devilbox mit Docker. Erstmalig kann es etwas dauern, da zunächst die 
-jeweiligen Docker Images geladen und die Container erstellt werden müssen. Erneute Starts sind dann wesentlich schneller.
+Wechsle nun in das Verzeichnis und starte die Devilbox mit Docker.
 
+```bash
+docker-compose up httpd php mysql
+```
+
+Erstmalig kann es etwas dauern, da zunächst die jeweiligen Docker Images geladen und die Container erstellt werden müssen. Ausserdem wird empfohlen, den ersten Start im vordergrund auszuführen, damit etwaige Fehler besser sichtbar werden.
+
+Erneute Starts sind dann wesentlich schneller und können im Hintergrund (Option `-d`) ausgeführt werden .
 
 ```bash
 docker-compose up -d httpd php mysql
 ```
 
+## Die Devilbox beenden 
 
-## Die Devilbox beenden
+Die Devilbox sollte durch den Stop aller Container und anschliessendem Löschen aller Container beendet werden.
 
 ```bash
 docker-compose stop
+docker-compose rm -f
 ```
 
 
@@ -86,29 +94,56 @@ deine IP-Adresse möglicherweise anders. Die IP-Adresse kann über den Befehl `d
 |:--------------------|:-------------------------------------------|
 | **Home**            | Status-Informationen                       |
 | **Virtual Hosts**   | Liste vorhandender vhosts bzw. Webseiten   |
+| **C&C**             | Command and Control                        |
 | **Emails**          | E-Mail Catch Service                       |
+| **Configs**         | Eigene PHP und HTTPD Konfiguration         |
 | **Databases**       | Infos zu den Datenbanken                   |
 | **Info**            | Weitere Informationen                      |
 | **Tools**           | Zugriff auf Tools wie z. B. `phpMyAdmin`   |
 
 
-## Contao-Installation vorbereiten
+## Contao-Installation vorbereiten (Step 1)
 
-Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data\www`** erstellt. Je Contao-Installation 
-musst du hier ein separates Verzeichnis anlegen. Der Verzeichnisname entspricht dann dem späteren vhost Namen. Aus dem 
-Verzeichnisnamen `contao4` resultiert dann `contao4.loc`.
+### php Konfiguration
 
-Damit der Virtual Host Name aufgelöst werden kann, musst du noch in `/etc/hosts` den Eintrag
-**`127.0.0.1 localhost`** in **`127.0.0.1 contao4.loc`** abändern. 
+Erstelle in `cfg\php-ini-x.y` (für jede php-Version `x.y` die du benutzst) eine Datei mit der Endung `.ini`, also z.B. `cfg\php-ini-8.1\contao.ini`, und trage hier alle [im Contao Handbuch empfohlenen Einstellungen](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#php-konfiguration-php-ini) ein. Diese Einstellungen überschreiben die default-Einstellungen. 
 
-Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichnis und erstelle einen neuen 
-Unterordner `web`. Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
+Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data\www`** erstellt. Je Contao-Installation (Projekt)
+musst du hier ein separates Verzeichnis `PROJEKTNAME` anlegen, z.B. `contao4`.
 
-{{% notice note %}}
-Die Domain-Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert werden.
-Die manuelle Bearbeitung der »`/etc/hosts`« kann u. U. vernachlässigt werden. Die »Devilbox« bietet hierzu eine 
-»[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität an. 
+
+## Top Level Domain konfigurieren
+
+Der spätere vhost hat diese URL
+
+`PROJEKTNAME.TLD-Suffix`
+
+Für das `TLD-Suffix` hast du 3 Optionen:
+
+1. Nutze die Voreinstellung `loc`.
+Damit der Virtual Host Name aufgelöst werden kann, musst du für jedes Projekt in `/etc/hosts` einen neuen Eintrag
+**`127.0.0.1 PROJEKTNAME.loc`** anlegen. 
+
+2. Nutze die [Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität.
+
+3. {{< ab devilbox version "3" (Betaversion) >}} (empfohlen:) Verwende das TLD-Suffix `dvl.to` (ändere dazu in der .env das `TLD_SUFFIX`). Hintergrund-Infos dazu findest du in den [Release-Notes](https://github.com/cytopia/devilbox/releases/tag/v3.0.0-beta-0.3). 
+
+Tip
+{{% notice tip %}}
+Falls bei dir URLs mit dem Suffix `dvl.to`nicht aufgelöst werden können, dann kann das an den DNS Server Einstellungen in deinem Netzwerk liegen. Diese kannst du in deinem Router ändern auf z.B. die DNS Server von Cloudfare:
+
+--- Hier screenshot Fritz!Box einfügen ---
+
+Daneben kann es erforderlich sein, auch die Netzwerkeinstellungen auf deinem Gerät anzupassen. Für Linux siehe dazu z.B. [hier](https://github.com/cytopia/devilbox/issues/948#issuecomment-1374912138).
+
 {{% /notice %}}
+
+Dein Vhost hat dann also z.B. die URL `contao4.loc`.
+
+
+## Contao-Installation vorbereiten (Step 2)
+
+Wechsle in das Projektverzeichnis und erstelle einen neuen Unterordner `web` bzw. `public`. Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
 
 
 ## Installation über den Contao Manager
@@ -123,30 +158,28 @@ Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../..
 
 ## Installation über die Kommandozeile
 
-Das PHP Memory Limit für die PHP Container der Devilbox ist standardmäßig zu niedrig und muss daher zur Composer Nutzung 
-zuvor konfiguriert werden. Wechsle dazu in das Verzeichnis `cfg`. Hast du die Devilbox mit PHP 7.3 in der `.env` konfiguriert, 
-mache die folgenden Änderungen dann entsprechend im Verzeichnis `cfg\php-ini-7-3`. Erstelle hier eine Datei `memory_limit.ini` mit folgendem Eintrag:
+Im Devilbox Hauptverzeichnis liegen die Dateien `shell.sh` bzw. `shell.bat`. 
+Damit kannst du dich in den laufenden Devilbox PHP Container (die `Devilbox-shell`) einklinken. Hier sind bereits [zahlreiche Tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) vorinstalliert. Auch `Composer`. Nach Aufruf befindest du dich im Container im Verzeichnis `shared\http`. Zur Installation von z. B. Contao 4.8 in ein Verzeichnis `contao4` musst du lediglich eingeben:
 
 ```bash
-[PHP]
-memory_limit = -1
-```
-
-Im Anschluss musst du die Devilbox neu starten. Im Devilbox Hauptverzeichnis liegen die Dateien `shell.sh` bzw. `shell.bat`. 
-Damit kannst du dich in den laufenden Devilbox PHP Container einklinken. Hier sind bereits [zahlreiche Tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) vorinstalliert. Auch `Composer`. Nach Aufruf befindest du dich im Container im 
-Verzeichnis `shared\http`. Zur Installation von z. B. Contao 4.8 in ein Verzeichnis `contao48` musst du lediglich eingeben:
-
-```bash
-composer create-project contao/managed-edition contao48 4.8
+composer create-project contao/managed-edition contao4 4.8
 ```
 
 Lege dir eine neue Datenbank an:
 
 ```bash
-mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao49;'
+mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao4;'
 ```
 
-Im Anschluss kannst du den Container über `exit` verlassen und das Contao-Installtool aufrufen.
+{{% notice tip %}}
+Halte die Devilbox-Shell in einem separaten Ternminalfenster während deiner Arbeit offen. Contao-Kommandos, z.B. ein
+
+```bash
+vendor/bin/contao-console cache:warmup --env=dev -v
+```
+
+geben in der Devilbox-Shell u.U. mehr Informationen preis als wenn sie unter dem Host ausgeführt werden.  
+{{% /notice %}} 
 
 
 ## Angaben im Contao-Installtool
