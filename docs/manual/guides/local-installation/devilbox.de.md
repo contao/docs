@@ -83,13 +83,7 @@ docker-compose rm -f
 ## Das Devilbox Dashboard im Browser
 
 Ist die Devilbox gestartet, kannst du nun deinen Browser aufrufen. Mit Eingabe von **`http://127.0.0.1`** erreichst du 
-das Devilbox Dashboard. Über die Navigation erhältst du Zugriff auf die verschiedenen F{{% /notice %}}
-256
-So f.i. I configured php8.2 in the .env and started devilbox with bind option php74:
-257
-Any project with a .devilbox/backend.cfg with entry conf:phpfpm:tcp:php74:9000 will run under php7.4.
-258
-Any project wiithout a .devilbox/backend.cfg will run under php8.2.unktionen.
+das Devilbox Dashboard. Über die Navigation erhältst du Zugriff auf die verschiedenen Funktionen.
 
 {{% notice note %}}
 Die zu verwendende IP-Adresse ist abhängig von deiner Docker-Umgebung. Wenn du die Docker-Toolbox installiert hast, lautet 
