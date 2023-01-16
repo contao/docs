@@ -130,9 +130,7 @@ Für das `TLD-Suffix` hast du mehrere Optionen:
 
 Tip
 {{% notice tip %}}
-Falls bei dir URLs mit dem Suffix `dvl.to`nicht aufgelöst werden können, dann kann das an den DNS Server Einstellungen in deinem Netzwerk liegen. Diese kannst du in deinem Router ändern auf z.B. die DNS Server von Cloudfare:
-
---- Hier screenshot Fritz!Box einfügen ---
+Falls bei dir URLs mit dem Suffix `dvl.to`nicht aufgelöst werden können, dann kann das an den DNS Server Einstellungen in deinem Netzwerk liegen. Dann kannst du einen anderen DNS-Server benutzen, siehe z.B. [hier](https://www.randombrick.de/cloudflare-dns-server-1-1-1-1-nutzen-einrichten/).
 
 Daneben kann es erforderlich sein, auch die Netzwerkeinstellungen auf deinem Gerät anzupassen. Für Linux siehe dazu z.B. [hier](https://github.com/cytopia/devilbox/issues/948#issuecomment-1374912138).
 
