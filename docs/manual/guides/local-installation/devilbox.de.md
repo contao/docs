@@ -102,46 +102,27 @@ deine IP-Adresse möglicherweise anders. Die IP-Adresse kann über den Befehl `d
 | **Tools**           | Zugriff auf Tools wie z. B. `phpMyAdmin`   |
 
 
-## Contao-Installation vorbereiten (Step 1)
+## Contao-Installation vorbereiten
 
-### php Konfiguration
+Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data/www`** erstellt. Je Contao-Installation 
+musst du hier ein separates Verzeichnis anlegen. Der Verzeichnisname entspricht dann dem späteren vhost Namen. Aus dem 
+Verzeichnisnamen `contao4` resultiert dann `contao4.loc`.
 
-Erstelle in `cfg/php-ini-x.y` (für jede php-Version `x.y` die du benutzst) eine Datei mit der Endung `.ini`, also z.B. `cfg/php-ini-8.1/contao.ini`, und trage hier alle [im Contao Handbuch empfohlenen Einstellungen](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#php-konfiguration-php-ini) ein. Diese Einstellungen überschreiben die default-Einstellungen. 
+Damit der Virtual Host Name aufgelöst werden kann, musst du noch in `/etc/hosts` den Eintrag
+**`127.0.0.1 localhost`** in **`127.0.0.1 contao4.loc`** abändern. 
 
-Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data/www`** erstellt. Je Contao-Installation (Projekt)
-musst du hier ein separates Verzeichnis `PROJEKTNAME` anlegen, z.B. `contao4`.
+Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichnis und erstelle einen neuen Unterordner `web` bzw. `public`.
+Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
 
-
-## Top Level Domain konfigurieren
-
-Der spätere vhost hat diese URL
-
-`PROJEKTNAME.TLD-Suffix`
-
-Für das `TLD-Suffix` hast du mehrere Optionen:
-
-+ Nutze die Voreinstellung `loc` (oder setze eine eigene TLD). Hier hast du 2 Alternativen:
-    - Damit der Virtual Host Name aufgelöst werden kann, musst du für jedes Projekt in `/etc/hosts` einen neuen Eintrag
-**`127.0.0.1 PROJEKTNAME.loc`** anlegen. 
-
-    - Nutze die [Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität.
-
-+ {{< ab devilbox version "3" (Betaversion) >}} (empfohlen:) Verwende das TLD-Suffix `dvl.to` (ändere dazu in der .env das `TLD_SUFFIX`). Damit werden automatisch alle *.dvl.to auf 127.0.0.1 geleitet.  Hintergrund-Infos dazu findest du in den [Release-Notes](https://github.com/cytopia/devilbox/releases/tag/v3.0.0-beta-0.3). 
-
-Tip
-{{% notice tip %}}
-Falls bei dir URLs mit dem Suffix `dvl.to`nicht aufgelöst werden können, dann kann das an den DNS Server Einstellungen in deinem Netzwerk liegen. Dann kannst du einen anderen DNS-Server benutzen, siehe z.B. [hier](https://www.randombrick.de/cloudflare-dns-server-1-1-1-1-nutzen-einrichten/).
-
-Daneben kann es erforderlich sein, auch die Netzwerkeinstellungen auf deinem Gerät anzupassen. Für Linux siehe dazu z.B. [hier](https://github.com/cytopia/devilbox/issues/948#issuecomment-1374912138).
-
+{{% notice note %}}
+Die Domain-Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert werden.
+Die manuelle Bearbeitung der »`/etc/hosts`« kann u. U. vernachlässigt werden. Die »Devilbox« bietet hierzu eine 
+»[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität an.
 {{% /notice %}}
 
-Dein Vhost hat dann also z.B. die URL `contao4.loc`.
-
-
-## Contao-Installation vorbereiten (Step 2)
-
-Wechsle in das Projektverzeichnis und erstelle einen neuen Unterordner `web` bzw. `public`. Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
+{{< Ab devilbox version "3" >}}
+kannst du auch das TLD-Suffix `dvl.to` verwenden.
+Damit werden automatisch alle *.dvl.to auf 127.0.0.1 geleitet.
 
 
 ## Installation über den Contao Manager
@@ -156,8 +137,18 @@ Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../..
 
 ## Installation über die Kommandozeile
 
-Im Devilbox Hauptverzeichnis liegen die Dateien `shell.sh` bzw. `shell.bat`. 
-Damit kannst du dich in den laufenden Devilbox PHP Container (die `Devilbox-shell`) einklinken. Hier sind bereits [zahlreiche Tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) vorinstalliert. Auch `Composer`. Nach Aufruf befindest du dich im Container im Verzeichnis `shared/http`. Zur Installation von z. B. Contao 4.8 in ein Verzeichnis `contao4` musst du lediglich eingeben:
+Das PHP Memory Limit für die PHP Container der Devilbox ist standardmäßig zu niedrig und muss daher zur Composer Nutzung 
+zuvor konfiguriert werden. Wechsle dazu in das Verzeichnis `cfg`. Hast du die Devilbox mit PHP 7.3 in der `.env` konfiguriert, 
+mache die folgenden Änderungen dann entsprechend im Verzeichnis `cfg/php-ini-7-3`. Erstelle hier eine Datei `memory_limit.ini` mit folgendem Eintrag:
+
+```bash
+[PHP]
+memory_limit = -1
+```
+
+Im Anschluss musst du die Devilbox neu starten. Im Devilbox Hauptverzeichnis liegen die Dateien `shell.sh` bzw. `shell.bat`. 
+Damit kannst du dich in den laufenden Devilbox PHP Container (die `Devilbox-shell`) einklinken. Hier sind bereits [zahlreiche Tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) vorinstalliert. Auch `Composer`. Nach Aufruf befindest du dich im Container im
+Verzeichnis `shared/http`. Zur Installation von z. B. Contao 4.8 in ein Verzeichnis `contao4` musst du lediglich eingeben:
 
 ```bash
 composer create-project contao/managed-edition contao4 4.8
@@ -198,13 +189,11 @@ In diesem Fall musst du im Contao-Installtool deine Werte entsprechend eintragen
 {{% /notice %}}
 
 
-## Mehrere php Versionen parallel betreiben  {{< ab devilbox version "3" (Betaversion) >}}
+{{< Ab devilbox version "3" >}}
+## Nützliche Informationen: Mehrere php Versionen parallel betreiben  
 
-Die Grundeinstellung nimmst du im devilbox Verzeichnis vor:
-
-```bash
-cp compose/docker-compose.override.yml-php-multi.yml docker-compose.override.yml
-```
+Die Grundeinstellung nimmst du im devilbox Verzeichnis vor.
+Im Verzeichnis `ompose` findest du die Datei `docker-compose.override.yml-php-multi.yml`. Kopiere die Datei in das devilbox Hautpverzeichnis und ändere den Dateinamen nach »docker-compose.override.yml«. 
 
 Du hast ein Projekt <project>, das abweichend von der in der .env eingestellten php-Version mit einer anderen php-Version phpx.y laufen soll?
 Lege in diesem Projektverzeichnis ein Verzeichnis `.devilbox` und darin eine Datei `backend.cfg` an mit diesem Inhalt (xy = ohne Punkt geschriebene abweichende php-Version):
@@ -254,7 +243,7 @@ Im devilbox Dashboard siehst du unter `Virtual Hosts` in der Spalte `Backend', w
 {{% /notice %}}
 
 
-## PHP Xdebug
+## Nützliche Informationen: PHP Xdebug
 
 Im [Devilbox-Handbuch](https://devilbox.readthedocs.io/en/latest/intermediate/configure-php-xdebug.html?highlight=xdebug#configure-php-xdebug-1) findest du eine nicht ganz aktuelle Dokumentation, die aber das grundsätzliche Vorgehen gut aufzeigt.
 
