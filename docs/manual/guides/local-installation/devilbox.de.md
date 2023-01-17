@@ -39,7 +39,7 @@ Die einzelnen Schritte (gerade auch für die Einträge `NEW_UID` und `NEW_GID`) 
 
 - `HTTPD_DOCROOT_DIR=DOCUMENT-ROOT` (DOCUMENT-ROOT = `web` bzw. `public`, siehe auch [Hosting-Konfiguration](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#hosting-konfiguration))
 - `HTTPD_SERVER=apache-2.4`
-- `PHP_SERVER=7.3`
+- `PHP_SERVER=8.2`
 - `MYSQL_SERVER=mariadb-10.3`
 
 {{% notice note %}}
@@ -138,8 +138,8 @@ Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../..
 ## Installation über die Kommandozeile
 
 Das PHP Memory Limit für die PHP Container der Devilbox ist standardmäßig zu niedrig und muss daher zur Composer Nutzung 
-zuvor konfiguriert werden. Wechsle dazu in das Verzeichnis `cfg`. Hast du die Devilbox mit PHP 7.3 in der `.env` konfiguriert, 
-mache die folgenden Änderungen dann entsprechend im Verzeichnis `cfg/php-ini-7-3`. Erstelle hier eine Datei `memory_limit.ini` mit folgendem Eintrag:
+zuvor konfiguriert werden. Wechsle dazu in das Verzeichnis `cfg`. Hast du die Devilbox mit PHP 8.2 in der `.env` konfiguriert, 
+mache die folgenden Änderungen dann entsprechend im Verzeichnis `cfg/php-ini-8.2`. Erstelle hier eine Datei `memory_limit.ini` mit folgendem Eintrag:
 
 ```bash
 [PHP]
@@ -148,10 +148,10 @@ memory_limit = -1
 
 Im Anschluss musst du die Devilbox neu starten. Im Devilbox Hauptverzeichnis liegen die Dateien `shell.sh` bzw. `shell.bat`. 
 Damit kannst du dich in den laufenden Devilbox PHP Container (die `Devilbox-shell`) einklinken. Hier sind bereits [zahlreiche Tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) vorinstalliert. Auch `Composer`. Nach Aufruf befindest du dich im Container im
-Verzeichnis `shared/http`. Zur Installation von z. B. Contao 4.8 in ein Verzeichnis `contao4` musst du lediglich eingeben:
+Verzeichnis `shared/http`. Zur Installation von z. B. Contao 4.13 in ein Verzeichnis `contao4` musst du lediglich eingeben:
 
 ```bash
-composer create-project contao/managed-edition contao4 4.8
+composer create-project contao/managed-edition contao4 4.13
 ```
 
 Lege dir eine neue Datenbank an:
@@ -192,19 +192,19 @@ In diesem Fall musst du im Contao-Installtool deine Werte entsprechend eintragen
 ## Nützliche Informationen: Mehrere php Versionen parallel betreiben {{< ab devilbox version "3" >}} 
 
 Die Grundeinstellung nimmst du im devilbox Verzeichnis vor.
-Im Verzeichnis `ompose` findest du die Datei `docker-compose.override.yml-php-multi.yml`. Kopiere die Datei in das devilbox Hautpverzeichnis und ändere den Dateinamen nach »docker-compose.override.yml«. 
+Im Verzeichnis `compose` findest du die Datei `docker-compose.override.yml-php-multi.yml`. Kopiere die Datei in das devilbox Hautpverzeichnis und ändere den Dateinamen nach »docker-compose.override.yml«. 
 
-Du hast ein Projekt <project>, das abweichend von der in der .env eingestellten php-Version mit einer anderen php-Version phpx.y laufen soll?
-Lege in diesem Projektverzeichnis ein Verzeichnis `.devilbox` und darin eine Datei `backend.cfg` an mit diesem Inhalt (xy = ohne Punkt geschriebene abweichende php-Version):
+Du hast ein Projekt <project>, das abweichend von der in der .env eingestellten php-Version (in unserem Beispiel 8.2) mit einer anderen php-Version - sagen wir 7.4 - laufen soll?
+Lege in diesem Projektverzeichnis ein Verzeichnis `.devilbox` und darin eine Datei `backend.cfg` an mit diesem Inhalt:
 
 ```bash
-conf:phpfpm:tcp:phpxy:9000  
+conf:phpfpm:tcp:php74:9000  
 ```
 
 Starte devilbox wie folgt:
 
 ```bash
-docker-compose up php httpd bind phpxy
+docker-compose up php httpd bind php74
 ```
 
 {{% notice note %}}
@@ -248,8 +248,8 @@ Im [Devilbox-Handbuch](https://devilbox.readthedocs.io/en/latest/intermediate/co
 
 Für Vscode funktioniert diese Konfiguration sehr gut:
 
-launch.json:
-
+{{< tabs >}}
+{{% tab name="launch.json" %}}
 ```
 {
   //
@@ -273,11 +273,9 @@ launch.json:
   ]
 }
 ```
-
-php.ini:
-
-Erstelle eine xdebug.ini im jeweiligen Verzeichnis devilbox/cfg/php-ini-x.y mit diesem Inhalt (Beispiel für Vscode):
-
+{{% /tab %}}
+{{% tab name="xdebug.ini" %}}
+Erstelle eine xdebug.ini im jeweiligen Verzeichnis devilbox/cfg/php-ini-x.y mit diesem Inhalt
 ```
 ; PHP.ini configuration
 ;  
@@ -299,4 +297,5 @@ xdebug.log_level            = 7
 ; IDE Configuration
 xdebug.idekey               = VSCODE
 ```
-
+{{% /tab %}}
+{{< /tabs >}}
