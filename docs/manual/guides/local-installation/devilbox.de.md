@@ -62,7 +62,7 @@ Wechsle nun in das Verzeichnis und starte die Devilbox mit Docker:
 docker-compose up httpd php mysql
 ```
 
-Erstmalig kann es etwas dauern, da zunächst die jeweiligen Docker Images geladen und die Container erstellt werden müssen. Ausserdem wird empfohlen, den ersten Start im vordergrund auszuführen, damit etwaige Fehler besser sichtbar werden.
+Erstmalig kann es etwas dauern, da zunächst die jeweiligen Docker Images geladen und die Container erstellt werden müssen. Ausserdem wird empfohlen, den ersten Start im Vordergrund auszuführen, damit etwaige Fehler besser sichtbar werden.
 
 Erneute Starts sind dann wesentlich schneller und können im Hintergrund (Option `-d`) ausgeführt werden:
 
@@ -189,8 +189,7 @@ In diesem Fall musst du im Contao-Installtool deine Werte entsprechend eintragen
 {{% /notice %}}
 
 
-{{< Ab devilbox version "3" >}}
-## Nützliche Informationen: Mehrere php Versionen parallel betreiben  
+## Nützliche Informationen: Mehrere php Versionen parallel betreiben {{< ab devilbox version "3" >}} 
 
 Die Grundeinstellung nimmst du im devilbox Verzeichnis vor.
 Im Verzeichnis `ompose` findest du die Datei `docker-compose.override.yml-php-multi.yml`. Kopiere die Datei in das devilbox Hautpverzeichnis und ändere den Dateinamen nach »docker-compose.override.yml«. 
