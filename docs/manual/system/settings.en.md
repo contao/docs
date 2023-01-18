@@ -590,7 +590,7 @@ It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(
 The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
 be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
 applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
-See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
+See the [Symfony Mailer Documentation][SymfonyMailer] for more information.
 
 {{% notice note %}}
 The variable was previously called `MAILER_URL`. Since Contao 5.0 only `MAILER_DSN` will be supported.
