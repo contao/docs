@@ -204,6 +204,8 @@ There are two ways to output images in your PHP templates:
 
 ### Twig
 
+// todo: rework/refer
+
 If you are using Twig, there are three supported ways to get figures/images into your templates:
 
 1) **Default figure template** &mdash; Rendering the default `figure.html.twig` template will produce a single figure.
