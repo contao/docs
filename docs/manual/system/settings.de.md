@@ -266,7 +266,7 @@ Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen en
 
 ## config.yml
 
-Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `app/config/`. 
+Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `config/`. 
 Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lädt automatisch die `config_prod.yml` 
 bzw. `config_dev.yml` und falls nicht vorhanden die `config.yml`.
 
@@ -275,7 +275,7 @@ mehr Logging im Debug Modus). Außerdem committest du die `config.yml` im Gegens
 [Repository](https://de.wikipedia.org/wiki/Repository). Ein Repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z. B. mit Git.
 
 {{% notice note %}}
-Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
+Vor Version **4.8** von Contao befand sich die Datei unter `app/config/`.
 {{% /notice %}}
 
 Über die Kommandozeile kommst du an die Standard-Konfiguration für Contao:
