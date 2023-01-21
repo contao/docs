@@ -708,7 +708,7 @@ parameters:
     mailer_transport: smtp
     mailer_host: host.example.com
     mailer_user: mail@example.com
-    mailer_password: 'my-password'
+    mailer_password: 'mein-passwort'
     mailer_port: 465
     mailer_encryption: ssl
 ```
