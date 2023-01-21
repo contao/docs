@@ -870,14 +870,12 @@ It is also possible to define translations for the descriptions of the options i
 
 ```yml
 # translations/mailer_transports.en.yml
-default: 'Default'
 website1: 'SMTP for Website 1'
 website2: 'SMTP for Website 2'
 ```
 
 ```yml
 # translations/mailer_transports.de.yml
-default: 'Standard'
 website1: 'SMTP für Webseite 1'
 website2: 'SMTP für Webseite 2'
 ```
