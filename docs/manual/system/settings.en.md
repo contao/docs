@@ -1018,4 +1018,3 @@ aforementioned `--time-limit=1` option will cause the process to exit after one 
 [SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
 [SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
-[SymfonyDotEnv]: https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local
