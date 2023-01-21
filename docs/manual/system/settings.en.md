@@ -828,7 +828,7 @@ Instead of using `smtp://` you can also `smtps://` to automatically use SSL encr
 framework:
     mailer:
         transports:
-            default: '%env(MAILER_URL)%'
+            application: smtps://exampleuser:examplepassword@example.com
             website1: smtps://email%%40example.org:foobar@example.org
             website2: smtps://email%%40example.de:foobar@example.de
 ```
