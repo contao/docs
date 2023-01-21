@@ -592,7 +592,7 @@ Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariable namens `MA
 Siehe die [Symfony Mailer Dokumentation][SymfonyMailer] für weitere Informationen.
 
 {{% notice note %}}
-Die Variable hieß bisher `MAILER_URL`. Ab Contao 5.0 wird nur noch `MAILER_DSN` unterstützt.
+Die Variable hieß bisher `MAILER_URL`. Ab Contao **5.0** wird nur noch `MAILER_DSN` unterstützt.
 {{% /notice %}}
 
 
@@ -668,7 +668,8 @@ Die gleiche Erklärung wie für `TRUSTED_PROXIES` und das IP-Beispiel gilt auch 
 
 ## E-Mail Versand Konfiguration
 
-Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster:
+Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster (manche davon können optional 
+sein, je nach Server):
 
 - Den **Hostnamen** des SMTP-Servers.
 - Den **Benutzernamen** für den SMTP-Server.
@@ -676,7 +677,29 @@ Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende
 - Die **Portnummer** des SMTP-Servers (587 / 465).
 - Die **Verschlüsselungsmethode** für den SMTP-Server (tls / ssl).
 
-Diese fügst du dann unterhalb der bereits bestehenden Daten in die `parameters.yml` ein:
+Diese Zugangsdaten können dann entweder in der `parameters.yml` oder über die [`MAILER_DSN`](#mailer-dsn) Umgebungsvariable (z. B. in der
+`.env.local` der Contao Installation) definiert werden.
+
+{{< tabs groupId="smtp-config" >}}
+
+{{% tab name=".env.local" %}}
+{{< version-tag "4.9" >}}
+Der SMTP Server kann über die [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
+Datei der Contao Installation definiert werden (beachte, dass auch eine `.env` Datei vorhanden sein muss, damit die Definition der
+Umgebungsvariablen in der `.env.local` auch angewandt wird). In Contao **4.9** muss die `MAILER_URL` Umgebungsvariable benutzt werden,
+während ab Contao **4.10** die [`MAILER_DSN`](#mailer-dsn) Variable benutzt werden kann. Ab Contao **5.0** gilt nur mehr die `MAILER_DSN`
+Variable.
+
+```ini
+# .env.local
+MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:465?encryption=ssl
+```
+
+Beachte, dass der _Benutzername_ und das _Password_ »URL enkodiert« sein müssen.
+{{% /tab %}}
+
+{{% tab name="parameters.yml" %}}
+Bei der Nutzung der `parameters.yml` können die SMTP Zugangsdaten über die folgenden Parameter definiert werden:
 
 ```yaml
 # This file has been auto-generated during installation
@@ -685,14 +708,16 @@ parameters:
     mailer_transport: smtp
     mailer_host: host.example.com
     mailer_user: mail@example.com
-    mailer_password: 'mein-passwort'
+    mailer_password: 'my-password'
     mailer_port: 465
     mailer_encryption: ssl
 ```
+{{% /tab %}}
+
+{{< /tabs >}}
 
 {{% notice warning %}}
-**Cache leeren**  
-Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
+**Cache leeren:** Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
 »Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
 Installationsverzeichnis befinden.
 
@@ -704,13 +729,32 @@ php vendor/bin/contao-console cache:warmup --env=prod
 
 Danach kannst du den Mailversand auf der Kommandozeile testen.
 
-```bash
-php vendor/bin/contao-console swiftmailer:email:send --from=absender@example.com --to=empfaenger@example.com --subject=testmail --body=testmail
-```
+{{< tabs groupId="mailer-test" >}}
 
-{{% notice info %}}
-Dieses Kommando steht ab Contao **4.10** nicht mehr zur Verfügung.
-{{% /notice %}}
+{{% tab name="Contao 4.0 bis 4.9" %}}
+```bash
+php vendor/bin/contao-console swiftmailer:email:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
+```
+{{% /tab %}}
+
+{{% tab name="Contao 4.13" %}}
+Zuerst muss das [`inspiredminds/contao-mailer-command`](https://packagist.org/packages/inspiredminds/contao-mailer-command) Paket
+installiert werden. Danach kann folgendes Kommando benutzt werden:
+
+```bash
+php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
+```
+{{% /tab %}}
+
+{{% tab name="Contao 5.0 und höher" %}}
+```bash
+php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+Die Parameter können auch weg gelassen werden - das Kommando fragt dann nach den einzelnen Werten interaktiv.
 
 
 ### Verschiedene E-Mail Konfigurationen und Absenderadressen
@@ -738,7 +782,7 @@ Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, od
 dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMailer].
 
 {{% notice warning %}}
-Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese "URL enkodiert" werden. Es gibt
+Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese »URL enkodiert« werden. Es gibt
 verschiedene Online-Services, mit denen man auf einfache Weise eine beliebige Zeichenfolgen URL-encoden kann, z. B.
 [urlencoder.org](https://www.urlencoder.org/). Enkodiere den Benutzernamen und das Passwort separat, nicht gemeinsam
 mit dem Doppelpunkt. Bei Verwendung der `config.yaml` muß die jeweilige Kodierung eines Sonderzeichen mit `%` eingeleitet werden: Also z.B. `%%23` für das Sonderzeichen `#`.
