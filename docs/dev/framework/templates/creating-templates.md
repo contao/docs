@@ -1,5 +1,5 @@
 ---
-title: "Creating templates"
+title: "3. Creating templates"
 description: Writing good templates and making use of components
 aliases:
 
@@ -913,10 +913,36 @@ from the global translation catalogue.
 ```
 
 #### Translations
-// todo: trans, trans_default_domain + examples
+The Symfony Twig bridge includes a `trans` tag and function to handle and output translations. If you want to define the
+default translation domain, that is used in the whole template, you can use the `trans_default_domain` tag. Read more
+about this in the [Symfony Twig documentation][Symfony Twig Docs trans tag].
+
+```twig
+{% trans_default_domain "contao_default" %}
+
+<div>
+    {# Output a translation using the default domain: #}
+    <a href="more.html">{{ 'MSC.readMore'|trans }}</a>
+
+    {# Output a translation containing placeholders and a custom domain. You
+       can either use an array with unnamed parameters, or an object, that
+       explicitly defines replacements: #}
+    {{ 'tl_race.result'|trans([best_time], 'contao_race') }}
+    {{ 'tl_race.result'|trans({'%best%': best_time}, 'contao_race') }}
+</div>
+```
 
 #### URLs
-// todo: path()
+To generate URLs from within Twig templates, you can use the `path()` function, that is shipped with the Symfony Twig
+bridge. Read more about this function in the [Symfony Twig documentation][Symfony Twig Docs path function].
+```twig
+<a href="{{ path('my_custom_route', {id: 42}) }}">Watch for this!</a>
+```
+
+{{% notice warning %}}
+As of writing this, there is unfortunately no replacement for `PageModel::getFrontendUrl()`, yet. If you need this, for
+now, stick to generating the URLs in your controller and then pass them to your template (where they are only output).
+{{% /notice %}}
 
 {{< version-tag "5.0" >}} The `prefix_url` filter prefixes relative URLs with the request base path. This is needed when
 dealing with relative URLs on a page that does not set a `<base>` tag.
@@ -1007,5 +1033,7 @@ partial. They are typically put in the same directory as the file(s) that is/are
 [Twig Docs with tag]: https://twig.symfony.com/doc/3.x/tags/with.html
 [Twig Docs include function]: https://twig.symfony.com/doc/3.x/functions/include.html
 [Twig Docs block function]: https://twig.symfony.com/doc/3.x/functions/block.html
+[Symfony Twig Docs trans tag]: https://symfony.com/doc/current/reference/twig_reference.html#trans
+[Symfony Twig Docs path function]: https://symfony.com/doc/current/reference/twig_reference.html#path
 [List component source code]: https://github.com/contao/contao/blob/5.x/core-bundle/contao/templates/_new/component/_list.html.twig
 [New Contao Docs issue]: https://github.com/contao/docs/issues/new

@@ -1,5 +1,5 @@
 ---
-title: "Architecture"
+title: "2. Architecture"
 description: How the Contao Twig integration works.
 aliases:
 

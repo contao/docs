@@ -564,6 +564,7 @@ option {
 
 /* CSS for "example" shortcode */
 .example {
+    margin-top: 24px;
     background-color: #f6f6f6;
     border: 1px solid #ccc;
     border-radius: 4px;

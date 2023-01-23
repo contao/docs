@@ -1,5 +1,5 @@
 ---
-title: "Debugging"
+title: "4. Debugging"
 description: How to resolve issues with Twig or the Contao-Twig integration and to improve your workflow.
 aliases:
 
@@ -30,6 +30,8 @@ In the `dev` environment, the `ContaoFilesystemLoaderWarmer` will dump a special
 directory, that includes a mapping of all registered namespaces and filesystem locations. With that, you'll get
 template name autocompletion, even for the managed `@Contao` namespace.  
  ![Getting autocompletion for template names](../../images/twig-file-autocompletion.png?classes=shadow)
+
+You will now also able to navigate to referenced templates by holding down `Ctrl` and clicking on the name. 
 
 #### Type resolution (PhpStorm only)
 You can also get full autocompletion for template parameters like you would inside a code file. For explicitly stated
