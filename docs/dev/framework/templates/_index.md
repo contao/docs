@@ -14,11 +14,11 @@ extension) can be found in [this article](legacy).
 
 
 ## History and development
-Contao's template system builds on the [Twig][Twig Docs] template engine. Historically, PHP templates were used and are
-now transitioned away from — this is why you can still find a lot of their remains in the current codebase. Native Twig
-support made its way into the core in Contao 4.12 and allowed users to substitute existing templates with Twig
+Contao's template system builds on the [Twig][Twig Docs Root] template engine. Historically, PHP templates were used and
+are now transitioned away from — this is why you can still find a lot of their remains in the current codebase. Native
+Twig support made its way into the core in Contao 4.12 and allowed users to substitute existing templates with Twig
 templates. Beginning with Contao 5, the majority of content elements were rewritten and are now Twig-only. Extrapolating
-from here, we ultimately plan to drop support for the PHP templating system in Contao 6.
+from here, we ultimately plan to drop support for the PHP templating system in Contao 6. 
 
 {{% notice info %}}
 It's hard to get things right in the first try and replacing the old template system with Twig is a big undertaking.
@@ -32,10 +32,10 @@ promise.
 
 ## Contao Twig Handbook
 All right! Get yourself a big coffee and start your deep-dive into the Contao-Twig ecosystem here:
- 1) [→ A quick Twig 101](getting-started)
- 2) [→ Understanding the architecture](architecture)
- 3) [→ Creating and adjusting templates](creating-templates)
- 4) [→ Debugging](debugging)
+ 1. [Getting started](getting-started) <span style="color:gray">— A quick Twig 101</span>
+ 2. [Architecture](architecture) <span style="color:gray">— About the inner workings and how things are set up</span>
+ 3. [Creating templates](creating-templates) <span style="color:gray">— How to use the various template features</span>
+ 4. [Debugging](debugging) <span style="color:gray">— Problem solving and developer experience</span>
 
 {{% notice tip %}}
 If you already got some understanding of the system and want to get started quickly, please have a look at our
@@ -43,4 +43,4 @@ If you already got some understanding of the system and want to get started quic
 {{% /notice %}}
 
 
-[Twig Docs]: https://twig.symfony.com/doc/3.x/
+[Twig Docs Root]: https://twig.symfony.com/

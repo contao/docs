@@ -4,6 +4,6 @@
     </header>
     <div>
         {{ if len .Params | eq 1 }}<h1>{{ .Get 0 }}</h1>{{ end }}
-        {{ .Inner }}
+        {{ .Inner -}}
     </div>
 </section>

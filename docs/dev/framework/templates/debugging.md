@@ -12,8 +12,8 @@ that errors regarding the syntax will already be found and raised during compila
 (well most of the time). But there are other occasions: from simply being stuck when writing a template to resolving
 runtime errors, i.e. those that only happen when the templates are finally executed.
 
-1) How to avoid errors in the first place with things like [autocompletion](#ide-support)?
-2) What [inerhitance hierarchy](#debug--contao-twig-command) did the system build from my templates?  
+1) How to avoid errors in the first place with DX things like [autocompletion](#ide-support)?
+2) What [inheritance hierarchy](#debug--contao-twig-command) did the system build from my templates?  
 3) How do I debug [runtime issues](#runtime-issues)? 
 
 
@@ -29,6 +29,7 @@ page and include it as well!
 In the `dev` environment, the `ContaoFilesystemLoaderWarmer` will dump a special `.ide-twig.json` file into your `var`
 directory, that includes a mapping of all registered namespaces and filesystem locations. With that, you'll get
 template name autocompletion, even for the managed `@Contao` namespace.  
+
  ![Getting autocompletion for template names](../../images/twig-file-autocompletion.png?classes=shadow)
 
 You will now also able to navigate to referenced templates by holding down `Ctrl` and clicking on the name. 
@@ -37,6 +38,7 @@ You will now also able to navigate to referenced templates by holding down `Ctrl
 You can also get full autocompletion for template parameters like you would inside a code file. For explicitly stated
 templates in `render()` calls, the types can get inferred, for other cases (most of the time in Contao), you can still
 get autocompletion by adding a type annotation inside the template:
+
 ![Getting autocompletion on variables](../../images/twig-type-autocompletion.png?classes=shadow)
 
 

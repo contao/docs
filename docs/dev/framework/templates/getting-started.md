@@ -8,27 +8,26 @@ aliases:
 ---
 
 If you are already familiar with writing Twig templates, you might want to skip this part and directly head over to the
-[next chapter](architecture). For everyone else, here comes a quick *Twig 101*.
+[next chapter](../architecture). For everyone else, here comes a quick *Twig 101*.
 
 
-## Why Twig
-Twig is Symfony's default way to write templates. It's fast, safe and easily extensible. Contrary to PHP templates, Twig
-templates won't contain business logic which allows to share them more easily between designers and programmers. This
-fact helps you maintain a clean separation between your presentation and data/logic layer.
+## Why Twig in Contao?
+Twig is the standard way to write templates in Symfony. And that is for a reason: It features a wide range of powerful
+methods to structure and reuse templates, has an easy-to-use syntax to access objects, helpers to transform data,
+built-in whitespace control, string interpolation features, macros, and — really — a ton more…
 
-Twig features a lot of powerful methods to structure and reuse your and other's templates, has an easy-to-use syntax to
-access objects, built-in whitespace control, string interpolation features, macros, and — really — a ton more…
-
-If not for its user features, then because of the way it handles *encoding* (which allows us to transition to a saner and
-more secure future!), Twig has been made a core requirement and will replace our old existing template system.
+But ultimately, the biggest selling point for us is security. Twig embraces *output encoding*, something that we
+desperately try to move to for a long time. That is, why Twig has been made a core requirement and will replace our old
+existing template system and also why you should familiarize yourself with it.
 
 ## Learning the syntax
-Twig templates have their own syntax, but don't be afraid, you'll quickly find your way. Switch between the following
-tabs to see how an example legacy PHP template would translate to an equivalent Twig template. In case you're new to
-Contao, you might want to skip watching the old stuff and directly focus on the Twig side. 😉
+Twig templates have their own syntax, but don't be afraid, you'll quickly find your way. Here, is an example of a PHP
+template, that was translated into an equivalent Twig template. (In case you're new to Contao, you might want to directly
+focus on the right side and ignore the old stuff on the left. 😉)
 
-{{< tabs groupId="twig">}}
-{{% tab name="PHP" %}}
+<div style="display:grid;grid-template-columns:1fr 40px 1fr;margin:-20px 0">
+<div>
+
 ```html
 <?php */ Old stuff */ ?>
 <div class="about-me">
@@ -42,8 +41,10 @@ Contao, you might want to skip watching the old stuff and directly focus on the 
   </ul>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Twig" %}}
+</div>
+<div style="align-self: center;justify-self:center;color:#282c34">➔</div>
+<div>
+
 ```twig
 {# New stuff! #}
 <div class="about-me">
@@ -57,24 +58,25 @@ Contao, you might want to skip watching the old stuff and directly focus on the 
   </ul>
 </div>
 ```
-{{% /tab %}}
-{{< /tabs >}}
+</div>
+</div>
 
-* To output parameters, wrap their name in curly braces `{{ foo }}`,
-* to use keywords — like `for` to loop over an array — wrap them in `{%` and `%}`,
-* to further process any output, use [filters][Twig Filters] `|foo` and [functions][Twig Functions] `bar()`.
-* Finally, to add comments, put them between `{#` and `#}`.
+* To output parameters, we wrap their name in curly braces `{{ foo }}`,
+* to use keywords — like `for` to loop over an array — we wrap them in `{%` and `%}`,
+* to further process any output, we use [filters][Twig Filters] `|foo` and [functions][Twig Functions] `bar()`.
+* Finally, to add comments, we put them between `{#` and `#}`.
 
-Twig is very [well documented][Twig Docs] - a good place to start is
-the [Twig for template designers][Twig Template Designers Docs] section that covers syntax details as well as helpful
-IDE plugins for autocompletion and syntax highlighting.
+Twig is very [well documented][Twig Docs]. A good place to start is the [Twig for template designers][Twig Template Designers Docs]
+section that covers syntax details as well as helpful IDE plugins for autocompletion and syntax highlighting.
 
-For quickly trying something out, you can use [Twig fiddle][Twig Fiddle] - an online playground. Take a look at
-this [demo fiddle](https://twigfiddle.com/kctdqs) for instance.
+{{% notice tip %}}
+For quickly trying something out, you can use [Twig fiddle](https://twigfiddle.com/), an online playground. Take a look
+at this [demo fiddle](https://twigfiddle.com/qq1kml) for instance.
+{{% /notice %}}
 
 ## Extending Twig
 Extending Twig yourself is easy but there are also already a lot of Twig extensions in the wild, including some official
-ones, called the [twig-extra][TwigExtra] bundles. In Contao, the latter can simply be installed with composer or the
+ones, called the [twig-extra][TwigExtra] bundles. In Contao, the latter can simply be installed with Composer or the
 Contao Manager and are directly ready to be used (no need to configure or register anything).
 
 ```bash
@@ -150,5 +152,4 @@ Turns out "{{ secret_cms }}" means "{{ secret_cms|rot13 }}".
 [Twig Filters]: https://twig.symfony.com/doc/3.x/filters/index.html
 [Extending Twig Docs]: https://twig.symfony.com/doc/3.x/advanced.html#extending-twig
 [Twig Functions]: https://twig.symfony.com/doc/3.x/functions/index.html
-[Twig Fiddle]: https://twigfiddle.com/
 [TwigExtra]: https://github.com/twigphp/Twig/tree/3.x/extra

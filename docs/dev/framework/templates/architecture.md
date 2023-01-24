@@ -37,10 +37,10 @@ $twig->render("<span style="color:bisque">@Foo/bar/baz.html.twig</span>", <span 
 The environment class itself does not know anything about your template files. Instead, it delegates retrieving the
 template source to a *loader*. Looking closer, you find, that there is a special loader, called a [chain loader][ChainLoader]
 in Symfony, which holds a list of multiple loaders and asks one after another until the request can be answered. Contao
-makes use of this and adds our own `ContaoFilesystemLoader` to the chain, that reads template files from Contao specific
+makes use of this and adds its own `ContaoFilesystemLoader` to the chain, that reads template files from Contao specific
 locations on the filesystem.
 
-Templates are identified by the logical name (the fully qualified template name, you could say). In order to make them
+Templates are identified by the *logical name* (the fully qualified template name, you could say). In order to make them
 unique across different vendors, namespaces are used. Namespaces are denoted by an `@` sign and form the first part of
 the logical name.
 
@@ -56,10 +56,10 @@ except for the file extension. We use this term when talking about templates fro
 {{% /notice %}}
 
 #### Default Symfony behavior
-The default filesystem loader in a typical Symfony application scans the root `templates` directory and groups all files
-found there under an app specific `@__main__` namespace. Also, the contents of directories inside `templates/bundles`
-will each be put under a `@<directory>` namespace. And finally, templates from bundles are also scanned and each put
-under a `@<bundle-name>` template. 
+The default filesystem loader in a typical Symfony application looks at the root `templates` directory and groups all
+files found there under an app-specific `@__main__` namespace. Also, the contents of directories inside
+`templates/bundles` will each be put under a `@<directory>` namespace. And finally, templates from bundles are also each
+put under a `@<bundle-name>` namespace. 
 
 There is a specific order and the loader will only use the first template that fits the requested logical name. That is
 why you can overwrite templates of the `FooBundle` by putting them in the `templates/bundles/FooBundle` directory: you
@@ -67,28 +67,29 @@ made the loader return early when finding your template instead of the original 
 
 {{% notice note %}}
 For Contao extensions, you do not need the `bundles` directory. We use the `@Contao` namespace, that is shared across
-the ecosystem. But more on this later.
+the ecosystem. Read on for more details about this.
 {{% /notice %}}
 
 You might have noticed, that bundle templates also get put under a second `@!<bundle-name>` namespace
-(prefixed with an exclamation mark). In Symfony, this is used to allow overwriting a template (e.g. in your application)
-while **also** extending the original one. Without the second namespace, the loader would always return the replacement,
-as it wins over the original one. But now, try imagining what happens if two extensions (or an extension and the
-application) use this trick without knowing each other? Spoiler alert: it's an issue and the reason why we invented the
-*managed namespace* concept.
+(prefixed with an exclamation mark). In Symfony, this is used to allow overwriting a template while **also** extending
+the original one. Think about how you would reference the original template: Without the second namespace, the loader
+would always return the replacement, as it wins over the original one. But now, what happens if two extensions (or an
+extension and the application) use this trick without knowing each other? Spoiler alert: it's an issue and the reason
+why we invented the *managed namespace* concept.
 
 #### Managed namespace
-Symfony's standard way has a big drawback for us: If multiple parties (e.g. extensions) want to adjust the same
-template, they **must** know each other and explicitly target their namespaces. Otherwise, when overwriting, only the
-first party would win. Contao's answer to that is called the "managed namespace" or `@Contao` namespace.
+Symfony's standard way has a big drawback for us: If multiple parties (e.g. extensions and/or the application) want to
+adjust the same template, they **must know each other** and explicitly target their namespaces. Otherwise, when
+overwriting, only the first party would win. Contao's answer to that is called the "managed namespace" or `@Contao`
+namespace, where this problem does not occur.
 
-Here is how it works: Our `ContaoFilesystemLoader` puts every template from a Contao template directory under the
-following namespaces (don't worry, you don't have to remember this):
+Our `ContaoFilesystemLoader` puts every template from a Contao template directory under the following namespaces (don't
+worry, you don't have to remember this):
 
 | Directory | Namespace | Order
 |-|-|-|
 | Any bundle's template directory:<br>`/vendor/…/templates`<br>`/vendor/foo/bar/contao/templates` | `@Contao_<bundle>`<br>`@Contao_FooBarBundle` | 1 |
-| Main template directory of the application:<br>`/contao/templates`<br>`/src/Resources/contao/templates`<br>`/app/Resources/contao/templates` | `@Contao_App` | 2 |
+| Main template directory of the application:<br>`/contao/templates`<br>(`/src/Resources/contao/templates`)<br>(`/app/Resources/contao/templates`) | `@Contao_App` | 2 |
 | Global template directory:<br>`/templates` | `@Contao_Global` | 3 |
 | Any theme directory:<br>`/templates/<theme>`<br>`/templates/foo/theme` | `@Contao_Theme_<theme>`<br>`@Contao_Theme_foo_theme` | 4 |
 
@@ -98,10 +99,11 @@ which is used inside the theme namespace name (`@Contao_Theme_foo_bar_theme`). F
 forbidden characters in any directory name contributing to the slug.
 {{% /notice %}}
 
-But, you guessed it, there is yet another namespace called `@Contao`, and that is the one primarily used in Contao in
-templates and when rendering. Initially it does also contain every template from the above Contao namespace directories.
-But the real magic happens at [compile time][How does Twig work]: We replace each usage of the `@Contao` namespace
-inside any `extends`, `include`, `embed` or `use` tag with a more specific namespace from the above table.
+But, you guessed it, there is yet another namespace called `@Contao`, and that is the one primarily used in Contao.
+The loader also puts every template from the above Contao namespace directories into this namespace but this is mainly
+for better static analysis. The real magic happens at [compile time][How does Twig work]: We **replace** each usage of
+the `@Contao` namespace inside any `extends`, `include`, `embed` or `use` tag **with a more specific namespace** from
+the above table. This happens automatically — you don't have to do anything for it.
 
 <pre>
  {% extends "<span style="color:lightblue">@Contao</span>/content_element/text.html.twig" %}
@@ -110,14 +112,16 @@ inside any `extends`, `include`, `embed` or `use` tag with a more specific names
 </pre>
 
 Instead of one single unique template per logical name, you now get a *hierarchy* of templates. First come the app's
-global and main template directory (see above), then of all bundles in inverse loading order (i.e. if you are loaded
-later, you're first). The [replacement logic][Contao Twig Inheritance Code] uses the hierarchy to always chooses the
-next logical representation that exists. By the way: Theme templates are somewhat special in that regard, for more
-details, please refer to their [own section](#themes) further down.
+global and main template directory (see above), then those of all bundles in inverse loading order (if you are loaded
+later, you're first). The [replacement logic][Contao Twig Inheritance Code] uses the hierarchy to always choose the
+next logical representation that exists (potentially skipping over levels). 
+
+By the way: Theme templates, though considered the most specific, are somewhat special in that regard. For more details,
+please refer to their [own section](#themes) further down.
 
 {{% notice tip %}}
 You can use the `debug:contao-twig` command to browse and better understand the built hierarchy. Read more on this in
-the article about [debugging](debugging) strategies. 
+the article about [debugging](../debugging/#debug-contao-twig-command) strategies. 
 {{% /notice %}}
 
 {{% example "Independent inheritance" %}}
@@ -192,11 +196,13 @@ hierarchy.
 These are the implications that follow from this setup:
 
 1) Theme templates can only be theme-specific representations of otherwise existing templates. They will, for instance,
-   never show up in any template selection dropdown.  
+   never show up in any template selection dropdown.
+
 2) As a matter of fact, you cannot create a [variant template](#variant-templates) in a theme directory and make it show
    up in the template selection. You can, however, create a theme-specific representation of an existing variant
    template. By creating a selectable non-theme variant template as a basis, you also make sure that, there will
    **always** be an available template when rendering.
+
 3) When debugging templates via the [`debug:contao-twig` command](../debugging#debug--contao-twig-command), you need to
    explicitly pass a theme (slug) to make the respective theme templates show up in the result. 
 
@@ -205,14 +211,16 @@ These are the implications that follow from this setup:
 In this section we're talking about how templates should be named and structured and why it might be more important than
 in the typical Symfony ecosystem.
 
+{{% best-practice %}}
 When creating templates, you now got the option to use the `@Contao` namespace over the bundle namespace. So when to
 choose what? As a rule of thumb: If external adjustments are not intended, feel free to use basic Symfony
-behavior/bundle namespaces, but stick to the `@Contao` namespace in for cases related to the Contao ecosystem. Only this
-way others can safely reuse/extend your output.
+behavior/bundle namespaces, but stick to the `@Contao` namespace for anything belonging to the Contao ecosystem. Only
+this way others can safely reuse/extend your output.
+{{% /best-practice %}}
 
 > Won't using the `@Contao` namespace lead to naming collisions if every vendor is using it?
 
-This is a good point and intuitively kind of works against the idea of namespaces. But Contao has proven it isn't that
+This is a good point and intuitively kind of works against the idea of namespaces. But Contao has proven, it isn't that
 big of a problem, either: In the old days, Contao's templating engine did neither use any namespaces nor
 subdirectories<sup>*)</sup> to structure templates. We instead added vendor or type prefixes to the template names based
 on a naming convention. This worked surprisingly well, but lead to a lot of files in one place. With Twig templates, the
@@ -239,14 +247,15 @@ We call the topmost directory in the above example our *Twig root*, because all 
 the template name: There is a `content_element/text` template and a `foo/bar/baz` template. As you can tell, you can
 also introduce more subdirectory layers if needed.
 
-{{% notice note %}}
-When users want to override/adjust templates from various sources, they need to replicate each filesystem structure. To
-make this a pleasant experience, please stick to the [naming conventions](#convention).
+{{% best-practice %}}
+When users want to override/adjust templates from various sources, they need to replicate the filesystem structure. To
+make this a pleasant experience, please stick to the [naming conventions](../creating-templates#naming-convention), so
+that multiple structures do not mix.
 {{% /notice %}}
 
-You might have noticed, that we referred to `@Contao/content_element/text.html.twig` above by just writing
-`content_element/text`. In fact, in the `@Contao` namespace, these two things both uniquely identify the same template.
-When using the [identifier](#namespaces), we imply the namespace and find the right file extension. The latter is
+Above, we referred to `@Contao/content_element/text.html.twig` by just writing `content_element/text`. In fact, in
+the `@Contao` namespace, these two things both uniquely identify the same template. When using
+the [identifier](#contao-filesystem-loader), we imply the namespace and find the right file extension. The latter is
 guaranteed to be unique per identifier by our loader — if there would for instance also be a `text.xml.twig` (note the
 different file extension) in a `content_element` directory, an exception would be thrown when the filesystem gets
 scanned.
@@ -260,12 +269,13 @@ and avoid extra dots: e.g. `my_file.svg.twig` for a svg file, or `foo_bar_baz.ht
 
 
 #### Twig Root
-Because we made it possible to overwrite existing legacy PHP templates with Twig templates and because the old template
-system does handle directories differently, it is not always clear to loader if your template directory (or maybe a
-subdirectory) should be treated as the Twig root (see above). In Contao 6, all the [Contao template directories](#managed-namespace)
-will implicitly be Twig roots, until then **only the global template directory and the theme directories** are.
+Because we made it possible to overwrite existing legacy PHP templates with Twig templates, and because the old template
+system does handle directories differently, the loader cannot always safely determine if your template directory (or
+maybe a subdirectory) should be treated as the Twig root. In Contao 6, all the
+[Contao template directories](#managed-namespace) will implicitly be Twig roots — until then **only the global template
+directory and the theme directories** are.
 
-For any other place, such as the main template directory (`contao/templates`) and inside bundle, you need to add a
+For any other place, such as the main template directory (`contao/templates`) and inside bundles, you need to add a
 special marker file `.twig-root` to denote that *this* directory should be used as the naming root.
 
 {{% example "Using a .twig-root file in a bundle" %}}
@@ -286,15 +296,15 @@ Twig root in the template name.
 {{% /example %}}
 
 #### Variant templates
-On of Contao's features is the ability to provide variants to an existing template and let editors choose which one to
+One of Contao's features is the ability to provide variants to an existing template and let editors choose which one to
 use in the back end on a per-element basis. You could for instance have a bunch of specialized templates for the text
-content element — one that can be use, when something should pop out in the design and one that maybe wraps lengthy
+content element — maybe one that can be used, when something should stand out in the design and one that wraps lengthy
 side notes in an expandable section.
 
 {{% example "Creating variant templates" %}}
 To get what we outlined above, we need to create two new templates. In order to not repeat ourselves and to
-potentially profit from adjustments made by others (extensions), we are going to extend the original text content
-element template (`@Contao/content_element/text.html.twig`) and only tweak some blocks.
+potentially profit from adjustments made by others, we are going to extend the original text content element template
+(`@Contao/content_element/text.html.twig`) and only tweak some blocks.
 
 The first variant template, `content_element/text/highlight.html.twig`, adds a big red border around the text — no-one
 will miss that:
@@ -326,16 +336,16 @@ end.
 {{% /example %}}
 
 #### Finder
-If you are developing your own components, where you need to find templates, it can get quite cumbersome to loop through
-and filter the template hierarchy. For your convenience, there is a `contao.twig.finder_factory` service, that makes 
-this process easy.
+If, in your own code, you need to compile a list of templates, it can get quite cumbersome to loop through and filter
+the template hierarchy. For your convenience, there is a `contao.twig.finder_factory` service, that makes this process
+easy.
 
 ```php
 // Inject the factory service, then create a new template finder instance.
 $finder = $this->finderFactory->create();
 
-// Configure it using its fluent interface; here we only want to search for a
-// `foo/bar.json.twig` template or any variant like `foo/bar/baz.json.twig`.
+// Configure it using its fluent interface; here we only want to find templates
+// named "foo/bar.json.twig" including related variants, like "foo/bar/baz.json.twig":
 $finder = $finder
     ->identifier('foo/bar')
     ->extension('json.twig')
@@ -392,8 +402,8 @@ particularly bad if the sanitization logic treating the input does not know abou
 ```text
 red; } { body: display:none;
 ```
-A perfectly valid, safe value for `color` in the HTML context would effectively produce this style - certainly not what
-we want:
+A perfectly valid and safe value for `color` in the HTML context, would produce this unwanted result in the CSS context.
+This is certainly not what we want:
 
 ```html
 <style>
@@ -406,8 +416,8 @@ we want:
 ```text
 <script>alert(1)</script>
 ```
-Similar, stripping/encoding seemingly dangerous characters in CSS like `;`, `}` or `{` would still allow an input like
-this which again would produce unwanted HTML:
+Likewise, even if you would strip or encode special CSS characters (like `;`, `}` or `{`), you would not solve the
+problem. A string, such as the one above, would pass but now gets dangerous in the HTML context:
 
 ```html
 <div class="box"><script>alert(1)</script></div>
@@ -415,14 +425,16 @@ this which again would produce unwanted HTML:
 </div>
 </div>
 
-This is a dilemma. The logic storing and processing data typically cannot know (or only assume) how the data will be
-used. Will this end up in an HTML document or inside an HTML tag? Or as a property in JSON-LD? Or as a value in a CSV
-file? …
+This is a dilemma. The logic storing and processing data **can never know** in which context the data will be used. Will
+this text end up in an HTML document or inside an HTML tag? Or as a property in JSON-LD? Or as a value in a CSV
+file? And even when there is likely only one use case, making the input side responsible for the security, is a very bad
+idea. You won't be able to fix mistakes made when "input encoding", neither will you be able to safely add another
+output context later on.
 
 {{% /tab %}}
 {{% tab name="Output encoding" %}}
-With Twig we can be specific how a certain variable should be treated. Use the
-`|escape` or - short - `|e` filter for this:
+With Twig, we can be specific how a certain variable should be treated, depending on the context! Use the `|escape` (or
+short `|e`) filter for this:
 
 ```twig
 <style>
@@ -452,19 +464,30 @@ Now, our "bad" input will be properly escaped for CSS or HTML and wouldn't do an
 </div>
 </div>
 
-By default, Twig encodes all variables and chooses the escaper strategy depending on the template's file extension:
-your `.html.twig` templates will automatically get the `|e('html')` treatment, so you could omit this part in the above
-example.
+And because this feature is essential for secure templates, **Twig will — by default — encode all parameters.** It
+selects the default escaper strategy depending on the template's file extension: your `.html.twig` templates will
+automatically get the `|e('html')` treatment, so you could omit this part in the above example.
 
-Try it out for yourself in this [TwigFiddle](https://twigfiddle.com/d0w2yt).
+Try it out for yourself in this [TwigFiddle](https://twigfiddle.com/d0w2yt) or read more about the 
+[escaper extension](https://twig.symfony.com/doc/3.x/api.html#escaper-extension) in the official Twig documentation.
 
 {{% /tab %}}
 {{< /tabs >}}
 
+{{% notice warning %}}
+Heads up: Literals and expressions which result in a literal, are never automatically escaped! For more details, please
+refer to the [official Twig documentation](https://twig.symfony.com/doc/3.x/api.html#escaper-extension).
+```twig
+{# The following terms will not be escaped! #}
+{{ "Twig<br>" }}
+{{ foo ? "Twig<br>" : "<br>Twig" }}
+```
+{{% /notice %}}
+
 #### Trusted raw data
-If you intentionally **do** want to output a variable without encoding, such as raw HTML in a `.html.twig` template 
-(`<b>nice</b>`), you need to add the `|raw` escaper filter to your variable `{{ my_content|raw }}`. This tells Twig to
-skip the escaper filter for this value. Otherwise, here, the encoded form `&lt;b&gt;nice&lt;/b&gt;` would be output and
+If you intentionally **do** want to output a variable without encoding, such as some raw HTML (`<b>nice</b>`) in a
+`.html.twig` template, you need to add the `|raw` filter to your variable `{{ my_content|raw }}`. This tells Twig to
+skip the escaper filters for this value. Otherwise, here, the encoded form `&lt;b&gt;nice&lt;/b&gt;` would be output and
 the browser would display a text saying *&lt;b&gt;nice&lt;/b&gt;* instead of the boldly written word <b>nice</b>.
 
 You typically have this situation with text from the back end's tinyMCE rich text editor. Here, Contao already sanitizes
@@ -481,9 +504,9 @@ Our Twig implementation makes sure you can use Twig templates as you would with 
 hereby is, that your templates can stay the same and are already safe, when we're removing the input encoding part in
 Contao 6. 
 
-In case you're wondering, how we achieve this: Under the hood, we added use our own `contao_html` and `contao_html_attr` 
+In case you're wondering, how we achieve this: Under the hood, we added our own `contao_html` and `contao_html_attr` 
 escaper variants for the HTML context. These work very similar to the original versions (`html` and `html_attr`), except
-they prevent double encoding (`htmlspecialchars(double_encode: false)`). At template compile time, we then exchange
+they prevent double encoding using `htmlspecialchars(double_encode: false)`. At template compile time, we then exchange
 escaper calls to point to ours instead. 
 
 In order to not cause unwanted output for any other Symfony bundle or your app's custom templates, we only do this for
@@ -496,10 +519,6 @@ enabled.
 $contaoExtension = $twig->getExtension(ContaoExtension::class);
 $contaoExtension->addContaoEscaperRule('%^@MyNamespace/%');
 ```
-
-#### HTML sanitizer filter
-// todo `sanitize_html`
-
 
 ## Legacy interoperability
 To make the transition to Twig as easy as possible, we build the ability to overwrite and extend existing PHP templates
@@ -532,7 +551,7 @@ Here we target existing blocks and use the `parent()` function as we would in a 
 
 {{% notice note %}}
 You can only use Twig templates to extend from the legacy PHP templates, not the other way round. This also means, that
-an extension doing this for a template would force everyone to change there versions to Twig as well. In this case, the
+an extension doing this for a template, would force everyone to change there versions to Twig as well. In this case, the
 behavior is likely not what you want, and you should use the legacy template, still. 
 {{% /notice %}}
 
@@ -653,8 +672,8 @@ working around that issue, is, to provide the missing template(s) yourself and m
 
 2) Use [dynamic inheritance][Twig Docs dynamic inheritance] to tell Twig, that it should use your compat template if
    the original one isn't available. When referencing the compat template, use the
-   [extension-specific namespace](../architecture#managed-namespaces), so that *your* template is targeted, even if
-   another extension used the same name:
+   [extension-specific namespace](#managed-namespace), so that *your* template is targeted, even if another extension
+   used the same name:
    ```twig
    {# Twig will use the first available template, when providing an array of options #}
    {% extends [
