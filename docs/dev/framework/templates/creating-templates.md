@@ -792,38 +792,15 @@ Example: A variant to the `content_element/gallery.html.twig` template, should b
 {{% /best-practice %}}
 
 {{< version-tag 5.2 >}} If you want to change the display names of the templates, that are selectable in the back end
-dropdowns for content elements or frontend modules, you can create translations for them. The ID follows the pattern
-`TEMPLATE.<identifier>` and is expected in the `contao_default` domain:
+dropdowns for content elements or frontend modules, you can create translations for them in the `templates` translation
+domain. The translation ID is equal to the template identifier:
+```yaml
+# translations/templates.en.yaml
+content_element/text: 'Default text'
+content_element/text/special: 'Special text'
 
-{{< tabs groupId="translations" >}}
-{{% tab name="PHP" %}}
-```php
-<?php
-// contao/languages/en/default.php
+```
 
-$GLOBALS['TL_LANG']['TEMPLATE']['content_element/text/special'] = 'Special text';
-$GLOBALS['TL_LANG']['TEMPLATE']['content_element/text'] = 'Default text';
-```
-{{% /tab %}}
-{{% tab name="XLF" %}}
-```xlf
-<!-- contao/languages/en/default.xlf -->
-<?xml version="1.0" encoding="UTF-8"?>
-<xliff version="1.1">
-  <file>
-    <body>
-      <trans-unit id="TEMPLATE.content_element/text/special">
-        <source>Special text</source>
-      </trans-unit>
-      <trans-unit id="TEMPLATE.content_element/text">
-        <source>Default text</source>
-      </trans-unit>
-    </body>
-  </file>
-</xliff>  
-```
-{{% /tab %}}
-{{< /tabs >}}
 
 
 #### Partials and components
