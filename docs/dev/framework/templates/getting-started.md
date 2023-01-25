@@ -27,9 +27,9 @@ existing template system and also why you should familiarize yourself with it.
 
 Twig templates have their own syntax, but don't be afraid, you'll quickly find your way. Here, is an example of a PHP
 template, that was translated into an equivalent Twig template. (In case you're new to Contao, you might want to directly
-focus on the right side and ignore the old stuff on the left. 😉)
+focus on the Twig side and ignore the old stuff. 😉)
 
-<div style="display:grid;grid-template-columns:1fr 40px 1fr;margin:-20px 0">
+<div class="from-to">
 <div>
 
 ```html
@@ -46,7 +46,6 @@ focus on the right side and ignore the old stuff on the left. 😉)
 </div>
 ```
 </div>
-<div style="align-self: center;justify-self:center;color:#282c34">➔</div>
 <div>
 
 ```twig

@@ -597,9 +597,9 @@ $this->Template->setData([
     },
 ]);
 ```
-… you would then access this data/evaluate the functions like so (PHP version on the left, Twig on the right):
+… you would then access this data/evaluate the functions like so:
 
-<div style="display:grid;grid-template-columns:1fr 1fr;grid-gap:.1em">
+<div class="from-to">
 <div>
 
 ```html

@@ -593,7 +593,8 @@ option {
 }
 
 .example pre {
-    margin: 0 1em 1.5em 0;
+    padding: 10px;
+    margin: 0 0 20px;
 }
 
 /* CSS for "best practice" shortcode */
@@ -618,4 +619,48 @@ option {
 
 .best-practice table td {
     background-color: white;
+}
+
+/** CSS for the "from-to" class **/
+.from-to {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 40px;
+}
+
+.from-to > div:first-child {
+    position: relative;
+}
+
+.from-to > div:first-child:after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    top: 100%;
+    right: 0;
+    bottom: -20px;
+    left: 0;
+    content: '🡇';
+}
+
+.from-to pre {
+    padding: 10px;
+    margin: 0 0 20px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .from-to {
+        grid-template-rows: unset;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .from-to > div:first-child:after {
+        top: 0;
+        right: -40px;
+        bottom: 20px;
+        left: 100%;
+        content: '🡆';
+    }
 }
