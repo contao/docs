@@ -1,6 +1,7 @@
 ---
-title: "1. Getting started"
+title: "Getting started"
 description: How to quickly get going with the most typical Twig use cases.
+weight: 100
 aliases:
 
 - /framework/templates/quick-reference/

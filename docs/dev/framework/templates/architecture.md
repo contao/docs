@@ -1,6 +1,7 @@
 ---
-title: "2. Architecture"
+title: "Architecture"
 description: How the Contao Twig integration works.
+weight: 200
 aliases:
 
 - /framework/templates/architecture/

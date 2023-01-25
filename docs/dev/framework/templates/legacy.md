@@ -1,6 +1,7 @@
 ---
 title: "Legacy templates"
 description: Working with Contao's legacy PHP template engine.
+weight: 1000
 aliases:
     - /framework/templates/legacy
 ---

@@ -1,6 +1,7 @@
 ---
-title: "4. Debugging"
+title: "Debugging"
 description: How to resolve issues with Twig or the Contao-Twig integration and to improve your workflow.
+weight: 400
 aliases:
 
 - /framework/templates/debugging/

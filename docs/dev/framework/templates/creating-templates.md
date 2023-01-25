@@ -1,6 +1,7 @@
 ---
-title: "3. Creating templates"
+title: "Creating templates"
 description: Writing good templates and making use of components
+weight: 300
 aliases:
 
 - /framework/templates/creating-templates/
