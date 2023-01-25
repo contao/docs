@@ -25,6 +25,7 @@ steps:
 
 
 ## Contao Filesystem Loader
+
 The core of Twig is the `Twig\Environment` class. You get an instance of it, when using the `@twig` service in Symfony
 and you typically use it to render a certain template, identified by a distinct name, together with an array of
 parameters:
@@ -57,6 +58,7 @@ except for the file extension. We use this term when talking about templates fro
 {{% /notice %}}
 
 #### Default Symfony behavior
+
 The default filesystem loader in a typical Symfony application looks at the root `templates` directory and groups all
 files found there under an app-specific `@__main__` namespace. Also, the contents of directories inside
 `templates/bundles` will each be put under a `@<directory>` namespace. And finally, templates from bundles are also each
@@ -79,6 +81,7 @@ extension and the application) use this trick without knowing each other? Spoile
 why we invented the *managed namespace* concept.
 
 #### Managed namespace
+
 Symfony's standard way has a big drawback for us: If multiple parties (e.g. extensions and/or the application) want to
 adjust the same template, they **must know each other** and explicitly target their namespaces. Otherwise, when
 overwriting, only the first party would win. Contao's answer to that is called the "managed namespace" or `@Contao`
@@ -179,6 +182,7 @@ not.
 {{% /example %}}
 
 #### Themes
+
 In Contao, there is the option to create theme-specific representations of templates. The `A` theme and `B` theme could
 both contain a `content_element/text.html.twig` template. They can also both extend from any existing base template.
 Whether the `A`, `B` or global version of the template gets rendered, is a runtime decision, though. And this makes them
@@ -209,6 +213,7 @@ These are the implications that follow from this setup:
 
 
 ## Naming and structure
+
 In this section we're talking about how templates should be named and structured and why it might be more important than
 in the typical Symfony ecosystem.
 
@@ -270,6 +275,7 @@ and avoid extra dots: e.g. `my_file.svg.twig` for a svg file, or `foo_bar_baz.ht
 
 
 #### Twig Root
+
 Because we made it possible to overwrite existing legacy PHP templates with Twig templates, and because the old template
 system does handle directories differently, the loader cannot always safely determine if your template directory (or
 maybe a subdirectory) should be treated as the Twig root. In Contao 6, all the
@@ -297,6 +303,7 @@ Twig root in the template name.
 {{% /example %}}
 
 #### Variant templates
+
 One of Contao's features is the ability to provide variants to an existing template and let editors choose which one to
 use in the back end on a per-element basis. You could for instance have a bunch of specialized templates for the text
 content element — maybe one that can be used, when something should stand out in the design and one that wraps lengthy
@@ -337,6 +344,7 @@ end.
 {{% /example %}}
 
 #### Finder
+
 If, in your own code, you need to compile a list of templates, it can get quite cumbersome to loop through and filter
 the template hierarchy. For your convenience, there is a `contao.twig.finder_factory` service, that makes this process
 easy.
@@ -370,12 +378,14 @@ to use it.
 
 
 ## Encoding
+
 For historic reasons Contao uses *input* encoding, but Twig embraces the more sane *output* encoding. You can read more
 about the topic (and why you should favor output encoding) in this [OWASP article][OWASPCheatSheet] about preventing
 Cross Site Scripting (XSS) attacks. We outline further down, how we want to achieve the switch in Contao 6 and how you
 can already write modern template code. 
 
 #### Why you should care
+
 The gist: You, as the template designer, have to decide how things should be output, because *only you* know the context
 in which content can be trusted or not. The *exact same* data can be dangerous in one context and harmless in another!
 
@@ -486,6 +496,7 @@ refer to the [official Twig documentation](https://twig.symfony.com/doc/3.x/api.
 {{% /notice %}}
 
 #### Trusted raw data
+
 If you intentionally **do** want to output a variable without encoding, such as some raw HTML (`<b>nice</b>`) in a
 `.html.twig` template, you need to add the `|raw` filter to your variable `{{ my_content|raw }}`. This tells Twig to
 skip the escaper filters for this value. Otherwise, here, the encoded form `&lt;b&gt;nice&lt;/b&gt;` would be output and
@@ -501,6 +512,7 @@ Only ever add `|raw` to things you trust! Using `|raw` on anything else may resu
 {{% /notice %}}
 
 #### Double encoding prevention
+
 Our Twig implementation makes sure you can use Twig templates as you would with output encoding (only). The intention
 hereby is, that your templates can stay the same and are already safe, when we're removing the input encoding part in
 Contao 6. 
@@ -521,7 +533,9 @@ $contaoExtension = $twig->getExtension(ContaoExtension::class);
 $contaoExtension->addContaoEscaperRule('%^@MyNamespace/%');
 ```
 
+
 ## Legacy interoperability
+
 To make the transition to Twig as easy as possible, we build the ability to overwrite and extend existing PHP templates
 with Twig counterparts. There are a lot of things happening in the background to make this work, and we are going to
 drop this complexity together with the whole legacy template engine in the future. You should not use this feature as an
@@ -557,6 +571,7 @@ behavior is likely not what you want, and you should use the legacy template, st
 {{% /notice %}}
 
 #### Context transformation
+
 The data passed to the legacy templates gets transformed and passed to the environment's `render()` function as an 
 array. In most cases you would not note a difference, but there is a small caveat if callables like anonymous functions
 or closures were used.
@@ -616,6 +631,7 @@ legacy templates together with everything else in the `Contao\CoreBundle\Twig\In
 
 
 ## Version compatibility
+
 🟢 As an extension developer you might ask yourself which Contao versions your extension can be compatible with. As
 a rule of thumb, we suggest to stick to **Contao 5 only** for new extensions, *if you can*.
 
@@ -628,6 +644,7 @@ to the core in Contao 4.12. Also note, that Contao 4.9 is in the [security-only 
 2023 and will not be maintained anymore a year after that.
 
 #### Considerations when also supporting Contao 4.13
+
 In Contao 5.0, a new structure for content elements was introduced, that features directories (`content_element`),
 instead of prefixes (`ce_`). Since then, several changes have been back ported to Contao 4.13. In the latest release,
 you can now do the following things (Twig only):
@@ -682,6 +699,7 @@ working around that issue, is, to provide the missing template(s) yourself and m
        "@Contao_FooBarBundle/compat/content_element/_base.html.twig"
    ] %}
    ```
+
 
 [How does Twig work]: https://twig.symfony.com/doc/3.x/internals.html#how-does-twig-work
 [Twig Docs dynamic inheritance]: https://twig.symfony.com/doc/3.x/tags/extends.html#dynamic-inheritance

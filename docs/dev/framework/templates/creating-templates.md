@@ -23,6 +23,7 @@ the [managed namespace](../architecture#managed-namespace) concept: [Extends](#e
 [embeds](#embeds), [horizontal reuse](#horizontal-reuse) and [macros](#macros). 
 
 #### Extends
+
 A template can extend another one, called the *parent* or more general the *base template*. When extending a template,
 your template **cannot contain content outside blocks**, anymore, but you **can adjust blocks** of the parent template.
 
@@ -90,8 +91,8 @@ way multiple extensions can contribute things to the same block, and you automat
 and additions as well.
 {{% /best-practice %}}
 
-
 #### Includes
+
 If you want to *include* a whole template in another one, you can either use the `{% include %}` tag or the `include()`
 function. While the tag looks analogous to when [embedding](#embeds) templates, the function returns the template as a
 string, which might come handy in rare cases, where you need to further process the result before outputting. Which one
@@ -136,6 +137,7 @@ example.
 {{% /best-practice %}}
 
 #### Embeds
+
 Sometimes you want to include a template, but at the same time adjust some of its blocks. For this, you can *embed* the
 template.
 
@@ -162,6 +164,7 @@ icon in front of the title. We overwrite the `button_inside` block of the embedd
 {{% /example %}}
 
 #### Horizontal reuse
+
 Similar to what traits are for classes in PHP, in Twig the `{% use %}` tag allows to reuse blocks of other templates
 without extending them. Used blocks are not output by default, but instead made available to the `block()` function.
 
@@ -263,6 +266,7 @@ put each component in its own file inside the `component` directory.
 {{% /best-practice %}}
 
 #### Macros
+
 Twig also features macros via the `{% macro %}` tag. These are very similar to how PHP functions work and also allow to
 reuse template logic. Head over to the Twig docs, to read more about how the [macro tag][Twig Docs macro tag] works in
 detail.
@@ -298,6 +302,7 @@ adjustable for others. Many things can also be done by using blocks and the `blo
 
 
 ## Contao components
+
 By understanding how components work in Contao, you can get the most out of the core templates. You also might want to
 reuse them in your own code. Please familiarize yourself with the concept of [horizontal reuse](#horizontal-reuse) as we
 are heavily going to make use of it.
@@ -385,6 +390,7 @@ these templates are likely to be handled by a lot of parties.
 {{% /notice %}}
 
 #### Adjusting components
+
 Talking about adjusting: You saw in the examples earlier in this article how you would adjust blocks introduced by
 components. But how would you adjust a component itself (globally)?
 
@@ -412,6 +418,7 @@ set a variable, we know the parent block is going to merge and use, and we're do
 {{% /example %}}
 
 #### Grouped parameters
+
 Until now, we only looked at the `figure` and `picture` components. They are special in a way, that every data they
 output, comes from a single `Figure` object (note the `figure` template parameter being used everywhere). Most of the
 time, you want to use several parameters, though.
@@ -460,6 +467,7 @@ available parameters and how to use them (look at the core's components for some
 
 
 ## Template features
+
 The Contao Twig extension does most of the setup needed to provide our custom functionality, like the managed namespace,
 the input encoding tolerant escapers, the legacy interoperability, or several filters and functions to make your life
 easier. On top of that, many Twig features just work out of the box for us.
@@ -473,6 +481,7 @@ easier. On top of that, many Twig features just work out of the box for us.
 * Generating and manipulating [URLs](#urls)
 
 #### Insert tags
+
 {{% notice warning %}}
 Make sure you read and understood the section about [encoding](#encoding) before continuing!
 {{% /notice %}}
@@ -506,6 +515,7 @@ back end and not to structure content in templates.
 {{% /best-practice %}}
 
 #### Response context
+
 Sometimes a template only includes part of a page, like a content element, but still wants to contribute content that is
 global to the page.
 
@@ -541,6 +551,7 @@ responsibility of the page template (like `fe_page`) to ultimately output the ga
 {{% /notice %}}
 
 #### HTML Attributes
+
 {{< version-tag "5.0" >}} HTML attributes are a heavily used feature in HTML. In the context of templates, they are also
 one of the primary things, that people want to adjust. This is why we created the `HtmlAttributes` class together with
 the `attrs()` function to create an instance of said class.
@@ -606,6 +617,7 @@ on how to use it.
 {{% /notice %}}
 
 #### Images
+
 {{< version-tag "5.0" >}} The `figure` and `picture` components are suited to render any built `Figure` object. In case
 you cannot or don't want to create a `Figure` in the controller, you can alternatively use the `figure` function to
 build a `Figure` instance on the fly. Internally, this uses the `FigureBuilder` from the Contao
@@ -661,6 +673,7 @@ object. Note, that this function is deprecated since Contao **5.0**.
 {{% /notice %}}
 
 #### Formatting
+
 {{< version-tag "5.0" >}} You can use the `highlight` and `highlight_auto` filters to generate code highlighting with
 the `scrivo/highlight.php` library. You can either pass a language to use or let the library guess the language
 (`highlight_auto`). In the latter case, you can optionally constrain the selection to a given subset of languages.
@@ -690,6 +703,7 @@ from the global translation catalogue.
 ```
 
 #### Translations
+
 The Symfony Twig bridge includes a `trans` tag and function to handle and output translations. If you want to define the
 default translation domain, that is used in the whole template, you can use the `trans_default_domain` tag. Read more
 about this in the [Symfony Twig documentation][Symfony Twig Docs trans tag].
@@ -716,6 +730,7 @@ function. For example `trans([], 'contao_default', 'de')` or  `trans(locale='it'
 
 
 #### URLs
+
 To generate URLs from within Twig templates, you can use the `path()` function, that is shipped with the Symfony Twig
 bridge. Read more about this function in the [Symfony Twig documentation][Symfony Twig Docs path function].
 ```twig
@@ -737,6 +752,7 @@ dealing with relative URLs on a page that does not set a `<base>` tag.
 
 
 ## Naming convention
+
 Because of the shared `@Contao` namespace, it is important, that the Contao ecosystem tries to stick to a common naming
 convention. For the sake of readability, we are omitting the `@Contao/` prefix to the logical name in the following
 examples.
@@ -751,6 +767,7 @@ Here are some general rules to consider for directory as well as template file n
 {{% /best-practice %}}
 
 #### Directory structure
+
 Twig allows the usage of directories as part of the template name. For extensions or if you want to use the
 application's main template directory, you might want to read the part about how to properly set up the
 [Twig root](../architecture#twig-root) first.
@@ -781,6 +798,7 @@ themselves.
 {{% /best-practice %}}
 
 #### Variants
+
 In Contao, you can create templates in multiple variants and let back end users pick the one they need. Read more about
 the architecture and how they are used in the [template variants section](../architecture#variant-templates).
 
@@ -802,9 +820,8 @@ content_element/text/special: 'Special text'
 
 ```
 
-
-
 #### Partials and components
+
 Partials are files that will never be rendered directly but included/embedded/used or extended from only. There is no
 difference in how they work, but the convention to distinguish them allows to easier find the main controller templates. 
 

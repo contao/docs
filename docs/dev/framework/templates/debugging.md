@@ -19,6 +19,7 @@ runtime errors, i.e. those that only happen when the templates are finally execu
 
 
 ## IDE support
+
 A good IDE can help your understanding a lot by providing autocompletion for syntax, files and objects. Giving your
 files a `.twig` extension is enough to enable language support in most modern IDEs.
 
@@ -27,6 +28,7 @@ and get context-sensitive autocompletion. If your IDE can do the following thing
 page and include it as well!
 
 #### Namespace mapping (PhpStorm only)
+
 In the `dev` environment, the `ContaoFilesystemLoaderWarmer` will dump a special `.ide-twig.json` file into your `var`
 directory, that includes a mapping of all registered namespaces and filesystem locations. With that, you'll get
 template name autocompletion, even for the managed `@Contao` namespace.  
@@ -36,6 +38,7 @@ template name autocompletion, even for the managed `@Contao` namespace.
 You will now also able to navigate to referenced templates by holding down `Ctrl` and clicking on the name. 
 
 #### Type resolution (PhpStorm only)
+
 You can also get full autocompletion for template parameters like you would inside a code file. For explicitly stated
 templates in `render()` calls, the types can get inferred, for other cases (most of the time in Contao), you can still
 get autocompletion by adding a type annotation inside the template:
@@ -44,6 +47,7 @@ get autocompletion by adding a type annotation inside the template:
 
 
 ## debug:contao-twig command
+
 A Contao application can consist of hundreds of templates, and they are all part of a big *template hierarchy*. This is
 why there is the `debug:contao-twig` command, that helps you get a visual representation of what is going on. 
 
@@ -70,10 +74,12 @@ and, while debugging, found out, that it is indeed there, just without the direc
 
 
 ## Runtime issues
+
 The issues, that are the hardest to deal with, are those that only happen at runtime. This could be an unexpected type
 passed to the template, a missing parameter, and so on…
 
 #### Dumping
+
 The most straightforward way to understand what's going on, is to use the [`dump()` function][Twig Docs dump function].
 It is basically a wrapper around `var_dump` and will generate a nicely formatted listing of your template parameters
 with types. The result is rendered in place:
@@ -111,6 +117,7 @@ server variables!). That is why it is only available in the `dev` environment.
 {{% /notice %}}
 
 #### File cache and debugging breakpoints
+
 The way Twig is configured in Contao (or really a regular Symfony application), is to dump the compiled templates onto
 disk as a PHP file. When rendering, the (one-time) compiled file is then simply executed. This is very effective,
 especially if you consider things like opcode caching that can be fully utilized with this strategy.

@@ -14,6 +14,7 @@ extension) can be found in [this article](legacy).
 
 
 ## History and development
+
 Contao's template system builds on the [Twig][Twig Docs Root] template engine. Historically, PHP templates were used and
 are now transitioned away from — this is why you can still find a lot of their remains in the current codebase. Native
 Twig support made its way into the core in Contao 4.12 and allowed users to substitute existing templates with Twig
@@ -30,12 +31,14 @@ mind that, even though chances for changes are getting lower and lower, these cl
 promise.  
 {{% /notice %}}
 
+
 ## Contao Twig Handbook
+
 All right! Get yourself a big coffee and start your deep-dive into the Contao-Twig ecosystem here:
  1. [Getting started](getting-started) <span style="color:gray">— A quick Twig 101</span>
  2. [Architecture](architecture) <span style="color:gray">— About the inner workings and how things are set up</span>
  3. [Creating templates](creating-templates) <span style="color:gray">— How to use the various template features</span>
- 4. [Debugging](debugging) <span style="color:gray">— Problem solving and developer experience</span>
+ 4. [Debugging](debugging) <span style="color:gray">— Problem-solving and developer experience</span>
 
 {{% notice tip %}}
 If you already got some understanding of the system and want to get started quickly, please have a look at our

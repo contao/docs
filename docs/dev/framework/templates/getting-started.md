@@ -13,6 +13,7 @@ If you are already familiar with writing Twig templates, you might want to skip 
 
 
 ## Why Twig in Contao?
+
 Twig is the standard way to write templates in Symfony. And that is for a reason: It features a wide range of powerful
 methods to structure and reuse templates, has an easy-to-use syntax to access objects, helpers to transform data,
 built-in whitespace control, string interpolation features, macros, and — really — a ton more…
@@ -21,7 +22,9 @@ But ultimately, the biggest selling point for us is security. Twig embraces *out
 desperately try to move to for a long time. That is, why Twig has been made a core requirement and will replace our old
 existing template system and also why you should familiarize yourself with it.
 
+
 ## Learning the syntax
+
 Twig templates have their own syntax, but don't be afraid, you'll quickly find your way. Here, is an example of a PHP
 template, that was translated into an equivalent Twig template. (In case you're new to Contao, you might want to directly
 focus on the right side and ignore the old stuff on the left. 😉)
@@ -75,7 +78,9 @@ For quickly trying something out, you can use [Twig fiddle](https://twigfiddle.c
 at this [demo fiddle](https://twigfiddle.com/qq1kml) for instance.
 {{% /notice %}}
 
+
 ## Extending Twig
+
 Extending Twig yourself is easy but there are also already a lot of Twig extensions in the wild, including some official
 ones, called the [twig-extra][TwigExtra] bundles. In Contao, the latter can simply be installed with Composer or the
 Contao Manager and are directly ready to be used (no need to configure or register anything).
@@ -91,6 +96,7 @@ composer require twig/intl-extra
 ```
 
 #### Custom code
+
 We also encourage you to extend Twig yourself. There are a lot of extension points with filters and functions being the
 easiest to start with. Have a look in the [official docs][Extending Twig Docs], where things are explained in more
 detail. 

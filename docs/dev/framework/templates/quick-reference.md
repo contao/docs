@@ -13,6 +13,7 @@ but with some tweaking you might be able to apply them to Contao 4.13 as well.
 
 
 #### How to…
+
  * …create a [fragment controller](#fragment-controller) for a content element/frontend module and use variant
    templates?
  * …render a [dynamic template](#dynamically-render-templates) from a controller extending the
@@ -21,7 +22,9 @@ but with some tweaking you might be able to apply them to Contao 4.13 as well.
 
 
 ## Examples
+
 #### Fragment controller
+
 We create a content element controller in this example. If you want to create a module, these work very similar: you
 then need to use`AbstractFrontendModuleController` as the abstract base class, `[#AsFrontendModule]` as the attribute
 and `frontend_module/_base.html.twig` as the parent template, instead. If you want to make DCA adjustments, also target
@@ -96,8 +99,8 @@ randomized list instead of a block of text:
 ```
 {{% /example %}}
 
+#### Dynamically render templates
 
-#### Dynamically render templates 
 Sometimes you might want to dynamically decide which template you want to render from inside your fragment controller.
 There are two ways of doing it, by using the given `FragmentTemplate` or by calling `render()` yourself. For brevity, we
 only focus on the implementation of the `getReponse()` method.
@@ -142,8 +145,8 @@ using `null` as the first argument, our abstract controller class will use the i
 makes both variants effectively equivalent.
 {{% /notice %}}
 
-
 #### Adjust the base template
+
 We want to add a custom data attribute that contains the element's ID (e.g. `data-element="42"`) to the div, that wraps
 each content element. Overwriting the `content_element/_base.html.twig` is the way to go. For this example, we don't
 even have to adjust a block. The way `HtmlAttributes` are set up, it is enough to extend from the original template and
