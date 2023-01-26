@@ -127,7 +127,7 @@ Damit werden automatisch alle *.dvl.to auf 127.0.0.1 geleitet.
 
 ## Installation über den Contao Manager
 
-Starte `phpMyAdmin` im Devilbox Dashboard im Bereich `Tools/phpMyAdmin` und lege eine neue Datenbank an. Wechsle dann 
+Starte `phpMyAdmin` im Devilbox-Dashboard im Bereich `Tools/phpMyAdmin` und lege eine neue Datenbank an. Wechsle dann 
 in der Navigation auf die Seite `Virtual Hosts`. Hier solltest du nun eine Liste deiner vorhandenen Web-Projekte sehen 
 und auch gleich aufrufen können. Du kannst jetzt die Contao-Installation über den Contao Manager einleiten. In unserem 
 Beispiel also über: `contao4.loc/contao-manager.phar.php`. 
