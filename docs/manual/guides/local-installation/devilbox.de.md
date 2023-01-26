@@ -104,7 +104,7 @@ deine IP-Adresse möglicherweise anders. Die IP-Adresse kann über den Befehl `d
 
 ## Contao-Installation vorbereiten
 
-Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data/www`** erstellt. Je Contao-Installation 
+Eine oder mehrere Contao-Installationen werden im Devilbox-Verzeichnis **`data/www`** erstellt. Je Contao-Installation 
 musst du hier ein separates Verzeichnis anlegen. Der Verzeichnisname entspricht dann dem späteren vhost Namen. Aus dem 
 Verzeichnisnamen `contao4` resultiert dann `contao4.loc`.
 
