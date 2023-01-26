@@ -37,7 +37,7 @@ die Datei anschließend um in `.env`. In der neuen Datei kannst du jetzt deine K
 
 Die einzelnen Schritte (gerade auch für die Einträge `NEW_UID` und `NEW_GID`) sind in der [Devilbox Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/install-the-devilbox.html#set-uid-and-gid) gut beschrieben. Für Contao selbst sollten die weiteren Einträge etwa so gesetzt werden:
 
-- `HTTPD_DOCROOT_DIR=DOCUMENT-ROOT` (DOCUMENT-ROOT = `web` bzw. `public`, siehe auch [Hosting-Konfiguration](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#hosting-konfiguration))
+- `HTTPD_DOCROOT_DIR=DOCUMENT-ROOT` (DOCUMENT-ROOT = `public` (bis und mit Contao 4.11 `web`), siehe auch [Hosting-Konfiguration](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/#hosting-konfiguration))
 - `HTTPD_SERVER=apache-2.4`
 - `PHP_SERVER=8.2`
 - `MYSQL_SERVER=mariadb-10.3`
