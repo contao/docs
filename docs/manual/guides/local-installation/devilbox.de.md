@@ -167,7 +167,7 @@ Halte die Devilbox-Shell in einem separaten Ternminalfenster während deiner Arb
 vendor/bin/contao-console cache:warmup --env=dev -v
 ```
 
-geben in der Devilbox-Shell u.U. mehr Informationen preis als wenn sie unter dem Host ausgeführt werden.  
+geben in der Devilbox-Shell u. U. mehr Informationen preis als wenn sie unter dem Host ausgeführt werden.  
 {{% /notice %}} 
 
 
