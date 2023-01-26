@@ -111,7 +111,7 @@ Verzeichnisnamen `contao4` resultiert dann `contao4.loc`.
 Damit der Virtual Host Name aufgelöst werden kann, musst du noch in `/etc/hosts` den Eintrag
 **`127.0.0.1 localhost`** in **`127.0.0.1 contao4.loc`** abändern. 
 
-Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichnis und erstelle einen neuen Unterordner `web` bzw. `public`.
+Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichnis und erstelle einen neuen Unterordner `public` (bis und mit Contao 4.11 `web`).
 Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
 
 {{% notice note %}}
