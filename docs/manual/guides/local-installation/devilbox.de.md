@@ -238,7 +238,7 @@ Du kannst in jedem Projektverzeichnis prophylaktisch die backend.cfg anlegen und
 {{% /notice %}}
 
 {{% notice tip %}}
-Im devilbox Dashboard siehst du unter `Virtual Hosts` in der Spalte `Backend', welche php-Version tatsächlich für ein Projekt im Einsatz ist. (Noch gibt es dort einen kleinen Fehler: Auskommentierte Konfigurationen werden nicht als passiv erkannt.)
+Im Devilbox-Dashboard siehst du unter `Virtual Hosts` in der Spalte `Backend', welche PHP-Version tatsächlich für ein Projekt im Einsatz ist. (Noch gibt es dort einen kleinen Fehler: Auskommentierte Konfigurationen werden nicht als passiv erkannt.)
 {{% /notice %}}
 
 
