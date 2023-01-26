@@ -112,7 +112,7 @@ Damit der Virtual Host Name aufgelöst werden kann, musst du noch in `/etc/hosts
 **`127.0.0.1 localhost`** in **`127.0.0.1 contao4.loc`** abändern. 
 
 Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichnis und erstelle einen neuen Unterordner `public` (bis und mit Contao 4.11 `web`).
-Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
+Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei in `contao-manager.phar.php` um. 
 
 {{% notice note %}}
 Die Domain-Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert werden.
