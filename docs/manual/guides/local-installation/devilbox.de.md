@@ -161,7 +161,7 @@ mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao4;'
 ```
 
 {{% notice tip %}}
-Halte die Devilbox-Shell in einem separaten Ternminalfenster während deiner Arbeit offen. Contao-Kommandos, z.B. ein
+Halte die Devilbox-Shell in einem separaten Ternminalfenster während deiner Arbeit offen. Contao-Kommandos, z. B. ein
 
 ```bash
 vendor/bin/contao-console cache:warmup --env=dev -v
