@@ -20,6 +20,10 @@ but with some tweaking you might be able to apply them to Contao 4.13 as well.
   `AbstractFragmentController`?
  * …add a custom attribute to [all content elements](#adjust-the-base-template)?
 
+{{% notice note %}}
+This list is far from being complete — if you are missing a typical scenario, please contribute it!
+{{% /notice %}}
+
 
 ## Examples
 
@@ -31,7 +35,7 @@ and `frontend_module/_base.html.twig` as the parent template, instead. If you wa
 `tl_module` instead of `tl_content`. 
 
 {{% example %}}
-Create a `src/Controller/FruitSaladController.php` controller that sets renders the default template with some fruits:
+Create a `src/Controller/FruitSaladController.php` controller that renders a template with some fruits as parameters:
 ```php
 <?php
 declare(strict_types=1);
@@ -59,7 +63,8 @@ class FruitSaladController extends AbstractContentElementController
 }
 ```
 
-Create or adjust the `contao/dca/tl_content.php` file:
+Create or adjust the `contao/dca/tl_content.php` file, so that there is something to see in the back end when editing
+a `fruit_salad` element:
 ```php
 // Define the palette for the back end edit mask; we are only using a minimal set for now
 $GLOBALS['TL_DCA']['tl_content']['palettes']['fruit_salad'] = 
