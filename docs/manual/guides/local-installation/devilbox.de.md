@@ -246,7 +246,7 @@ Im Devilbox-Dashboard siehst du unter `Virtual Hosts` in der Spalte `Backend', w
 
 Im [Devilbox-Handbuch](https://devilbox.readthedocs.io/en/latest/intermediate/configure-php-xdebug.html?highlight=xdebug#configure-php-xdebug-1) findest du eine nicht ganz aktuelle Dokumentation, die aber das grundsätzliche Vorgehen gut aufzeigt.
 
-Für Vscode funktioniert diese Konfiguration sehr gut:
+In meiner IDE funktioniert folgende Konfiguration sehr gut:
 
 {{< tabs >}}
 {{% tab name="launch.json" %}}
