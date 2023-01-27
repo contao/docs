@@ -109,14 +109,12 @@ Contao Manager `.phar` file into this folder and rename the file to` contao-mana
 
 {{% notice note %}}
 The domain suffix `.loc` is the default. However, this can be changed in the `.env` file via the entry `TLD_SUFFIX`.
+
 The manual editing of »`/etc/hosts`« may be neglected. The »Devilbox« offers a
 "[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) feature.
 
+Since devilbox version "3" you may also use a TLD-Suffix `dvl.to`. Then all \*.dvl.to will be redirected to 127.0.0.1 automatically.
 {{% /notice %}}
-{{< Since devilbox version "3" >}}
-you may also use a TLD-Suffix `dvl.to`.
-Then all \*.dvl.to will be redirected to 127.0.0.1 automatically.
-
 
 ## Installation via the Contao Manager
 
@@ -176,7 +174,7 @@ The user `root` with empty password is the Devilbox default setting. This could 
 {{% /notice %}}
 
 
-## Useful Information: Running multiple PHP versions in parallel {{< from devilbox version "3" >}}
+## Useful Information: Running multiple PHP versions in parallel (from devilbox version "3" on)
 
 The default settings are set in the devilbox directory.
 In the `compose` directory you will find the file `docker-compose.override.yml-php-multi.yml`. Copy the file to the devilbox directory and change the filename to "docker-compose.override.yml".
