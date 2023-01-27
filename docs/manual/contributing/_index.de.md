@@ -141,6 +141,8 @@ einem früheren Zeitpunkt installiert hast, empfiehlt sich eine
 Das Erstellen einer Vorschau der Dokumentation erfolgt mit dem `make`-Befehl. Es stehen verschiedene Befehle zur 
 Verfügung, je nachdem, welchen Teil der Dokumentation du bauen möchtest.
 
+Wechsle dazu zunächst in das Verzeichnis `docs`.
+
 ```bash
 make build-dev
 make build-manual
