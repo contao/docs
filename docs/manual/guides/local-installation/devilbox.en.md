@@ -47,7 +47,7 @@ After every change in the configuration `.env` file, the Devilbox must be restar
 is set and `# HTTPD_SERVER=apache-2.4` is disabled (see **` # `** at the beginning of the line). To change such
 entries you only have to enable or disable them by adding or removing the comment symbol. Make sure to enable `HTTPD_SERVER=apache-2.4`. As a web server nginx
 could also be used. For Contao, however, further configuration of the web server will then be necessary.
-{{% /notice %}}
+{{% /notice %}} 
 
 
 ## Start the Devilbox
