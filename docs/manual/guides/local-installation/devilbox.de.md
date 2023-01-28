@@ -116,14 +116,16 @@ Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei 
 
 {{% notice note %}}
 Die Domain-Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert werden.
+{{% /notice %}}
+
+{{% notice note %}}
 Die manuelle Bearbeitung der »`/etc/hosts`« kann u. U. vernachlässigt werden. Die »Devilbox« bietet hierzu eine 
 »[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität an.
 {{% /notice %}}
 
-{{< Ab devilbox version "3" >}}
-kannst du auch das TLD-Suffix `dvl.to` verwenden.
-Damit werden automatisch alle *.dvl.to auf 127.0.0.1 geleitet.
-
+{{% notice note %}}
+Ab Devilbox version "3" kannst du auch das TLD-Suffix `dvl.to` verwenden. Damit werden automatisch alle *.dvl.to auf 127.0.0.1 geleitet.
+{{% /notice %}}
 
 ## Installation über den Contao Manager
 
@@ -161,18 +163,17 @@ mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao4;'
 ```
 
 {{% notice tip %}}
-Halte die Devilbox-Shell in einem separaten Ternminalfenster während deiner Arbeit offen. Contao-Kommandos, z. B. ein
+Halte die Devilbox-Shell in einem separaten Ternminalfenster während deiner Arbeit offen. Contao-Kommandos geben in der Devilbox-Shell u. U. mehr Informationen preis als wenn sie unter dem Host ausgeführt werden. Z. B. :
 
 ```bash
 vendor/bin/contao-console cache:warmup --env=dev -v
 ```
 
-geben in der Devilbox-Shell u. U. mehr Informationen preis als wenn sie unter dem Host ausgeführt werden.  
 {{% /notice %}} 
 
 
 ## Angaben im Contao-Installtool
-{{% /notice %}}
+
 Die Angaben im [Contao-Installtool](/de/installation/contao-installtool/) sind grundsätzlich identisch. Du musst lediglich 
 bei `Datenbankverbindung` auf folgende Einträge achten:
 
@@ -189,12 +190,12 @@ In diesem Fall musst du im Contao-Installtool deine Werte entsprechend eintragen
 {{% /notice %}}
 
 
-## Nützliche Informationen: Mehrere php Versionen parallel betreiben {{< ab devilbox version "3" >}} 
+## Nützliche Informationen: Mehrere php Versionen parallel betreiben (ab devilbox version "3") 
 
 Die Grundeinstellung nimmst du im devilbox Verzeichnis vor.
 Im Verzeichnis `compose` findest du die Datei `docker-compose.override.yml-php-multi.yml`. Kopiere die Datei in das devilbox Hautpverzeichnis und ändere den Dateinamen nach »docker-compose.override.yml«. 
 
-Du hast ein Projekt <project>, das abweichend von der in der .env eingestellten php-Version (in unserem Beispiel 8.2) mit einer anderen php-Version - sagen wir 7.4 - laufen soll?
+Du hast ein Projekt <project>, das abweichend von der in der .env eingestellten PHP-Version (in unserem Beispiel 8.2) mit einer anderen php-Version - sagen wir 7.4 - laufen soll?
 Lege in diesem Projektverzeichnis ein Verzeichnis `.devilbox` und darin eine Datei `backend.cfg` an mit diesem Inhalt:
 
 ```bash
@@ -232,6 +233,7 @@ Ein Beispiel:
     <td>7.4</td>
   </tr>
 </table>
+{{% /notice note %}}
 
 {{% notice tip %}}
 Du kannst in jedem Projektverzeichnis prophylaktisch die backend.cfg anlegen und den Inhalt auskommentieren, wenn das Projekt nicht gesondert behandelt werden soll. 
