@@ -118,13 +118,13 @@ cd contao
 Beim Klonen installierst du das Hugo Learn Theme als Submodul von git.
 
 ```bash
-git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git ./
 ```
 
 oder
 
 ```bash
-git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git ./
 ```
 
 
@@ -141,7 +141,6 @@ einem früheren Zeitpunkt installiert hast, empfiehlt sich eine
 Das Erstellen einer Vorschau der Dokumentation erfolgt mit dem `make`-Befehl. Es stehen verschiedene Befehle zur 
 Verfügung, je nachdem, welchen Teil der Dokumentation du bauen möchtest.
 
-Wechsle dazu zunächst in das Verzeichnis `docs`.
 
 ```bash
 make build-dev
