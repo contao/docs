@@ -15,25 +15,9 @@ Bevor du an der Dokumentation mit schreiben kannst, musst du noch folgendes tun:
 - Erstelle ein kostenloses Konto bei [GitHub](https://github.com/join).
   [GitHub](https://de.wikipedia.org/wiki/GitHub) ist ein Dienst für die
   Versionsverwaltung mit [Git](https://de.wikipedia.org/wiki/Git) für
-  Software-Projekte und beheimatet ist ein Dienst für die Versionsverwaltung mit
-  [Git](https://de.wikipedia.org/wiki/Git) für Software-Projekte und beheimatet
-  ist ein Dienst für die Versionsverwaltung mit
-  [Git](https://de.wikipedia.org/wiki/Git) für Software-Projekte und beheimatet
-  ist ein Dienst für die Versionsverwaltung mit
-  [Git](https://de.wikipedia.org/wiki/Git) für Software-Projekte und beheimatet
-  ist ein Dienst für die Versionsverwaltung mit
-  [Git](https://de.wikipedia.org/wiki/Git) für Software-Projekte und beheimatet
-  unter anderem die [Contao-Dokumentation](https://github.com/contao/docs/).
+  Software-Projekte und beheimatet unter anderem die [Contao-Dokumentation](https://github.com/contao/docs/).
 - Die Dokumentation wird in [Markdown](https://de.wikipedia.org/wiki/Markdown)
   geschrieben, mache dich mit der
-  [Syntax](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) dieser
-  Auszeichnungssprache
-  [Syntax](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) dieser
-  Auszeichnungssprache
-  [Syntax](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) dieser
-  Auszeichnungssprache
-  [Syntax](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) dieser
-  Auszeichnungssprache
   [Syntax](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) dieser
   Auszeichnungssprache vertraut.
 
@@ -57,7 +41,7 @@ Bei deinem ersten Beitrag wirst du gebeten, einen
 [Repository](https://de.wikipedia.org/wiki/Repository) »contao/docs« zu
 erstellen. Klicke auf »Fork this repository«.
 
-![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow
+![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow)
 
 
 ### Inhalt bearbeiten
