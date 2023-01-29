@@ -113,13 +113,13 @@ cd contao
 When cloning, you install the Hugo Learn theme as a submodule of git.
 
 ```bash
-git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git
+git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git ./
 ```
 
 or
 
 ```bash
-git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git
+git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git ./
 ```
 
 
