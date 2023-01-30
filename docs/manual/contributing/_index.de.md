@@ -300,7 +300,7 @@ Finde den Branch, in welchem dein Pull-Request ist und checke ihn aus. Sagen wir
 git checkout patch-4
 ```
 
-Ändere auf der betreffenden Datei (im `docs` Verzeichnis).
+Bearbeite die Dateien, die geändert werden sollen.
 
 Mit folgendem Befehl kannst du alle Änderungen für den nächsten Commit stagen.
 
