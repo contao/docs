@@ -113,13 +113,13 @@ cd contao
 When cloning, you install the Hugo Learn theme as a submodule of git.
 
 ```bash
-git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git
+git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git ./
 ```
 
 or
 
 ```bash
-git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git
+git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git ./
 ```
 
 
@@ -173,12 +173,6 @@ message `This branch is 7 commits behind contao:main.`.
 
 So before you make any changes to the docs, you can make sure that your fork is synchronized with the original repository. 
 repository.
-
-Switch to the clone of the forked repository with `cd`.
-
-```bash
-cd docs
-```
 
 Add the original repository once as a new remote repository and specify it as the upstream repository.
 
@@ -292,3 +286,34 @@ Confirm the creation of a pull request with "Create pull request".
 
 **Congratulations!** You have just created a pull request for the official Contao documentation! The 
 community will now review your pull request and (possibly) suggest changes.
+
+
+### Make changes on an already opended Pull-Request
+
+Find the branch, where your Pull-Request is and check it out. Say it is branch patch-4:
+
+```bash
+git checkout patch-4
+```
+
+Make your changes in the file in question (in the `docs` directory).
+
+Stage your changes for the next commit:
+
+```bash
+git add .
+```
+
+Then you add the changes to the local repository:
+
+```bash
+git commit -m "A meaningful commit-message"
+```
+
+Send your changes to the remote repository:
+
+```bash
+git push origin patch-4
+```
+
+That's it! You have made your changes to the Pull-Request.
