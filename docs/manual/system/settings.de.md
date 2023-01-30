@@ -684,8 +684,8 @@ Diese Zugangsdaten können dann entweder in der `parameters.yml` oder über die 
 
 {{% tab name=".env.local" %}}
 {{< version-tag "4.9" >}}
-Der SMTP Server kann über die [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
-Datei der Contao Installation definiert werden (beachte, dass auch eine `.env` Datei vorhanden sein muss, damit die Definition der
+Der SMTP-Server kann über die [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
+Datei der Contao-Installation definiert werden (beachte, dass auch eine `.env` Datei vorhanden sein muss, damit die Definition der
 Umgebungsvariablen in der `.env.local` auch angewandt wird). In Contao **4.9** muss die `MAILER_URL` Umgebungsvariable benutzt werden,
 während ab Contao **4.10** die [`MAILER_DSN`](#mailer-dsn) Variable benutzt werden kann. Ab Contao **5.0** gilt nur mehr die `MAILER_DSN`
 Variable.
@@ -695,11 +695,11 @@ Variable.
 MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:465?encryption=ssl
 ```
 
-Beachte, dass der _Benutzername_ und das _Password_ »URL enkodiert« sein müssen.
+Beachte, dass der _Benutzername_ und das _Password_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.
 {{% /tab %}}
 
 {{% tab name="parameters.yml" %}}
-Bei der Nutzung der `parameters.yml` können die SMTP Zugangsdaten über die folgenden Parameter definiert werden:
+Bei der Nutzung der `parameters.yml` können die SMTP-Zugangsdaten über die folgenden Parameter definiert werden:
 
 ```yaml
 # This file has been auto-generated during installation

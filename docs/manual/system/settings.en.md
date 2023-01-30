@@ -730,7 +730,7 @@ Contao **5.0** and up only the `MAILER_DSN` environment variable will work.
 MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl
 ```
 
-Keep in mind that the _username_ and _password_ (individually) need to be URL encoded.
+Keep in mind that the _username_ and _password_ (individually) need to be [URL encoded](https://www.urlencoder.org/).
 {{% /tab %}}
 
 {{% tab name="parameters.yml" %}}
