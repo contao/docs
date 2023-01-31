@@ -151,6 +151,7 @@ toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist out
 paste_as_text: true
 ```
 
+{{< version-tag "5.0" >}} Ab Contao **5** verwendet Contao den [TinyMCE-Editor](https://www.tiny.cloud/) in der Version 6. Hier ändern sich einige Begriffe für die Anzeige von Elementen in der Toolbar. Verwende z.Bsp. `blocks` statt `formatselect` und `styles` statt `styleselect`. Eine vollständige Liste der geänderten Begriffe findest Du in den [Migrationshinweisen der TinyMCE Dokumentation][]https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#things-we-renamed
 
 ### Das Menü ändern
 
@@ -166,6 +167,8 @@ du den Eintrag [removed_menuitems](https://www.tiny.cloud/docs-4x/configure/edit
 
 Eine vollständige Liste der Toolbar-Items und Menü-Items findest du in der 
 [TinyMCE-Dokumentation](https://www.tiny.cloud/docs-4x/advanced/editor-control-identifiers/).
+
+{{< version-tag "5.0" >}} Ab Contao **5** verwendet Contao den [TinyMCE-Editor](https://www.tiny.cloud/) in der Version **6**. Hier ändern sich einige Begriffe für die Anzeige von Elementen im Menü. Verwende z.Bsp. `blocks` statt `blockformats` und `fontsize` statt `fontsizes`. Eine vollständige Liste der geänderten Begriffe findest Du in den [Migrationshinweisen der TinyMCE Dokumentation][]https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#things-we-renamed
 
 
 ```js
