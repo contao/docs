@@ -471,6 +471,16 @@ to add status icons.
 * `array` Columns with existing labels
 
 **return:** If the DCA uses `showColumns` then the return value must be an `array` of strings. Otherwise just the label as a `string`.
+
+
+#### Parent view
+
+* `array` Record data
+* `string` Current label
+* `\Contao\DataContainer` Data Container object
+
+**return:** `string` The record label
+
 {{% /expand %}}
 
 {{% expand "Example for tree view" %}}
