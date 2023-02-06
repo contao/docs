@@ -96,16 +96,13 @@ deine IP-Adresse möglicherweise anders. Die IP-Adresse kann über den Befehl `d
 
 Eine oder mehrere Contao-Installationen werden im Devilbox Verzeichnis **`data\www`** erstellt. Je Contao-Installation 
 musst du hier ein separates Verzeichnis anlegen. Der Verzeichnisname entspricht dann dem späteren vhost Namen. Aus dem 
-Verzeichnisnamen `contao4` resultiert dann `contao4.loc`.
-
-Damit der Virtual Host Name aufgelöst werden kann, musst du noch in `/etc/hosts` den Eintrag
-**`127.0.0.1 localhost`** in **`127.0.0.1 contao4.loc`** abändern. 
+Verzeichnisnamen `contao4` resultiert dann `contao4.dvl.to`.
 
 Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichnis und erstelle einen neuen 
 Unterordner `web`. Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die Datei um in `contao-manager.phar.php`. 
 
 {{% notice note %}}
-Die Domain-Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert werden.
+Die Domain-Suffix `.dvl.to` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert werden.
 Die manuelle Bearbeitung der »`/etc/hosts`« kann u. U. vernachlässigt werden. Die »Devilbox« bietet hierzu eine 
 »[Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität an. 
 {{% /notice %}}
@@ -116,7 +113,7 @@ Die manuelle Bearbeitung der »`/etc/hosts`« kann u. U. vernachlässigt werden.
 Starte `phpMyAdmin` im Devilbox Dashboard im Bereich `Tools\phpMyAdmin` und lege eine neue Datenbank an. Wechsle dann 
 in der Navigation auf die Seite `Virtual Hosts`. Hier solltest du nun eine Liste deiner vorhandenen Web-Projekte sehen 
 und auch gleich aufrufen können. Du kannst jetzt die Contao-Installation über den Contao Manager einleiten. In unserem 
-Beispiel also über: `contao4.loc/contao-manager.phar.php`. 
+Beispiel also über: `contao4.dvl.to/contao-manager.phar.php`. 
 
 Die weitere Vorgehensweise ist dann identisch wie in [Contao installieren](../../../installation/contao-installieren/) beschrieben.
 
