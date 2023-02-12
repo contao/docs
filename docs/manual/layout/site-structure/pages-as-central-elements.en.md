@@ -11,7 +11,7 @@ element of your website. You can access the pages it contains via their alias in
 that is on that page.
 
 Think of a website as a TV show for which editors create different content and at the end of the show, an editor-in-chief
-decides which of these contents will be broadcast. The other contributions were created, but never find their way into
+decides which of these pieces of content will be broadcast. The other contributions were created, but never find their way into
 your living room. It works just the same in Contao: You can create as much content as you want in the back end but it will 
 never appear on your website unless it is linked to a page (show).
 
@@ -25,7 +25,7 @@ sign to the left of the page names to expand or collapse sub pages.
 ![Toggle subpages](/de/layout/site-structure/images/en/toggle-subpages.png?classes=shadow)
 
 Thanks to the hierarchical page structure, it is possible to inherit properties of a parent page to its subpages.
-For your, this means that you only have to define a certain page layout or access permission once and these properties
+For you, this means that you only have to define a certain page layout or access permission once and these properties
 are then inherited to their respective subpages automatically.
 
 ## Components of a page
@@ -37,14 +37,14 @@ As you can see, each page is linked to a page layout, which defines its structur
 areas. Within these layout areas you can place any number of front end modules, which are executed one after the other
 when the page is requested and generate the HTML code of the web page. The HTML code is formatted using
 Cascading Stylesheets, CSS for short, which are also integrated into the page layout. You can find more information
-about this on the [Theme Manager](/en/layout/theme-manager/) page.
+about this in the [Theme Manager](/en/layout/theme-manager/) page.
 
 Every page consists of multiple articles which can be placed in different places depending on the assigned page layout.
 Each article in turn consists of content elements that provide the corresponding functionality for each content type,
-such as texts, images or tables. Any number of articles can be created per page and any number of content elements can be
+such as blocks of text, images or tables. Any number of articles can be created per page and any number of content elements can be
 assigned to an article. You can find more information on this on the [Article Management page](/en/article-management/).
 
-In their central role, pages have much more to do than just merging design and content; back end users' access rights
+In their central role, pages have much more to do than just merging design and content; back end user access rights
 to pages and articles are also defined in the page structure. Let's take a closer look at the different page types and
 how they work.
 
@@ -59,14 +59,14 @@ There are eight different page types with different features in Contao, each of 
 
 | Page type | Explanation                                                                                                                                                                                                                                                                                         |
 | --------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Regular page | Regular pages are pages on which content is output. A regular page is similar to a static HTML file that you upload to your server and request in your browser.                                                                                                                                     |
-| Internal forwarding | This page type redirects visitors to another page in the page structure. The target page must be accessible under the same domain as the redirection page, otherwise an external redirection must be used.                                                                                          |
-| External forwarding | This page type redirects visitors to an external page. This can be a page outside your server or a page within the Contao page structure but under a different domain than the redirect page.                                                                                                       |
-| Starting point of a website | This page type marks the starting point of a web page within the page structure. Contao supports the management of multiple websites with one installation. These websites can differ e.g. by different languages or run completely independently under different domains (multi-domain operation). |
-| Log off | This page type creates a logout link for a protected area. After logging out, you can redirect visitors to any page or to the last page they visited.                                                                                                                                               |
-| 401 Not authenticated | {{< version-tag "4.6" >}} This page is called up when a member is not logged in and is therefore not allowed to access a protected page. You can choose to use the page as a regular page and display a hint or automatically redirect the visitor to the login page. <sup>1</sup>                  |
-| 403 Access denied | This page is called if a member is logged in but does not have the necessary access rights to access a protected page. You can choose to use the page as a regular page and display a hint or automatically redirect the visitor to another page. <sup>1</sup>                                      |
-| 404 Page not found | This page is called when a visitor requests a page that does not exist. You can choose to use the page as a regular page and include a sitemap or automatically redirect the user to another page.                                                                                                  |
+| Regular page | Regular pages are pages that output content. A regular page is similar to a static HTML file that you upload to your server and request in your browser.                                                                                                                                     |
+| Internal forwarding | A page of this type redirects visitors to another page in the page structure. The target page must be accessible under the same domain as the redirection page, otherwise an external redirection must be used.                                                                                          |
+| External forwarding | A page of this type redirects visitors to an external page. This can be a page outside your server or a page within the Contao page structure but under a different domain than the redirect page.                                                                                                       |
+| Starting point of a website | A page of this type is the starting point of a website within the page structure. A Contao instance can manage multiple websites, which can, for example. have different languages or run completely independently under different domains (multi-domain operation). |
+| Log off | A page of this type creates a logout link for a protected area. After logging out, you can redirect visitors to any page or to the last page they visited.                                                                                                                                               |
+| 401 Not authenticated | {{< version-tag "4.6" >}} This page appears when a visitor is not logged in and is therefore not allowed to access a protected page. You can choose to use the page as a regular page and display a hint or automatically redirect the visitor to the login page. <sup>1</sup>                  |
+| 403 Access denied | This page appears if a user is logged in, but does not have the necessary access rights to access a protected page. You can choose to use the page as a regular page and display a hint or automatically redirect the visitor to another page. <sup>1</sup>                                      |
+| 404 Page not found | This page appears when a visitor requests an inexisting page. You can choose to use the page as a regular page and include a sitemap or automatically redirect the user to another page.                                                                                                  |
 | 503 Service unavailable | {{< version-tag "4.13" >}} This page is called when a root page is in maintenance mode. Maintenance mode can be enabled in the [Website root](../configure-pages/#website-settings).                                                                                                                |
 
 
