@@ -128,3 +128,53 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | Key             | Value                             | Description                                                                                                        |
 |-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
 | route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
+
+{{% notice "note" %}}
+Since Contao **5.0** you do not have to define any settings for standard operations anymore. Instead you can give a list
+of which operations should be avilable for your data container. Contao will also check the appropriate
+[`contao_dc.<data-container>` permission](/framework/security/) for these operations.
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['config']['list']['operations'] = [
+    'edit',
+    'children',
+    'copy',
+    'cut',
+    'delete',
+    'toggle',
+    'show',
+    'toggle',
+];
+```
+{{% /notice %}}
+
+
+#### Toggle Operation
+
+{{< version-tag "5.0" >}} You can implement an automatic toggle operation for data containers that contain a boolean 
+field. This is typically used for fields that control a "published" state of a data record for example, but the use case 
+can be arbitrary.
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['config']['list']['operations'][] = 'toggle';
+
+$GLOBALS['TL_DCA']['tl_foobar']['fields']['published'] = [
+    'toggle' => true,
+    'inputType' => 'checkbox',
+    'sql' => ['type' => 'boolean', 'default' => false],
+];
+```
+
+{{% notice "note" %}}
+If the state of your field is reversed you can instead define `reverseToggle`:
+
+```php
+$GLOBALS['TL_DCA']['tl_foobar']['fields']['invisible'] = [
+    'reverseToggle' => true,
+    'inputType' => 'checkbox',
+    'sql' => ['type' => 'boolean', 'default' => false],
+];
+```
+{{% /notice %}}
