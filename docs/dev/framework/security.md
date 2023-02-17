@@ -189,25 +189,20 @@ use Symfony\Component\Security\Core\Security;
 
 class AdminMaintenanceAccessVoter extends Voter
 {
-    private $security;
-
-    public function __construct(Security $security)
+    public function vote(TokenInterface $token, mixed $subject, array $attributes): int
     {
-        $this->security = $security;
+        // Abstain if not back end admin
+        if (!($user = $token->getUser()) instanceof BackendUser || !$user->isAdmin) {
+            return Voter::ACCESS_ABSTAIN;
+        }
+
+        return parent::vote($token, $subject, $attributes);
     }
 
     protected function supports(string $attribute, $subject): bool
     {
-        // Abstain, if we are not voting for maintenance back end module access
+        // Abstain if we are not voting for maintenance back end module access
         if ('maintenance' !== $subject || $attribute !== ContaoCorePermissions::USER_CAN_ACCESS_MODULE) {
-            return false;
-        }
-
-        // Get the currently logged in user
-        $user = $this->security->getUser();
-
-        // Abstain, if not back end admin
-        if (!$user instanceof BackendUser || !$user->isAdmin) {
             return false;
         }
 
@@ -216,11 +211,8 @@ class AdminMaintenanceAccessVoter extends Voter
 
     protected function voteOnAttribute(string $attribute, mixed $subject, TokenInterface $token): bool
     {
-        // Get the currently logged in user
-        $user = $token->getUser();
-
         // Only allow admin with ID "1"
-        return 1 === (int) $user->id;
+        return 1 === (int) $token->getUser()->id;
     }
 }
 ```
