@@ -135,7 +135,7 @@ CSS-Klasse möchten wir folgende Ausgabe erzielen:
 ...
 ```
 
-Erstelle dir hierzu in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/verwaltung/) 
+Erstelle dir hierzu in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/php/verwaltung/) 
 zwei neue Templates basierend auf »ce_text.html5« und »block_searchable.html5«. 
 
 Beispielsweise als »ce_text_filter.html5« und »block_searchable_filter.html5« und benutze das neue 
@@ -206,7 +206,7 @@ Das Script erwartet die Inhalte innerhalb eines HTML-Blocks `<div class="filter-
 Elemente »Umschlag Anfang« und »Umschlag Ende« zweckentfremden. Im Element »Umschlag Anfang« setzt du dann die 
 CSS-Klasse `filter-container` ein.<br><br>
 Weiterhin haben wir einfachheitshalber die JavaScript-Referenzen direkt im Inhaltselement eingetragen. Alternativ
-könntest du diese auch als [JavaScript Asset im Template](/de/layout/templates/assets/) hinterlegen.
+könntest du diese auch als [JavaScript Asset im Template](/de/layout/templates/php/assets/) hinterlegen.
 {{% /notice %}}
 
 {{% notice info %}}
@@ -229,7 +229,7 @@ das Contao [Data Container Array](https://docs.contao.org/dev/reference/dca/) (D
 
 In der Developer Documentation findest du [ein Beispiel](https://docs.contao.org/dev/getting-started/dca/) zur
 Contao [DCA](https://docs.contao.org/dev/framework/dca/) Manipulation. In Zusammenhang mit Inhaltselementen ist hierbei 
-die Contao-Datei [tl_content.php](https://github.com/contao/core-bundle/blob/master/src/Resources/contao/dca/tl_content.php) 
+die Contao-Datei [tl_content.php](https://github.com/contao/contao/blob/4.13/core-bundle/src/Resources/contao/dca/tl_content.php) 
 und die entsprechende Datenbanktabelle `tl_content` verantwortlich die wir wie folgt erweitern:
 
 Sofern noch nicht vorhanden, erstellst du dir in deinem Contao-Hauptverzeichnis ein neues Verzeichns `contao/dca` mit 

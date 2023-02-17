@@ -106,9 +106,15 @@ angezeigt.
 Berücksichtige also bei der CSS-Formatierung beide Zustände des Moduls, und denke auch daran, dass eventuell eine 
 Fehlermeldung ausgegeben wird.
 
+
+### Modul-Konfiguration
+
 **Autologin erlauben:** Wenn du diese Option auswählst, können Mitglieder auf Wunsch angemeldet bleiben. Läuft eine 
 Benutzersitzung ab, erstellt Contao automatisch eine neue Sitzung, ohne dass das Passwort dazu erneut eingegeben werden 
 muss.
+
+
+### Weiterleitung
 
 **Weiterleitungsseite:** Hier legst du fest, zu welcher Seite ein Mitglied nach erfolgreicher Anmeldung weitergeleitet 
 wird. Diese Einstellung kannst du pro Benutzergruppe überschreiben, um eine gruppenspezifische Weiterleitung 
@@ -116,6 +122,9 @@ einzurichten.
 
 **Zur zuletzt besuchten Seite:** Wenn du diese Option auswählst, wird der Frontend-Benutzer zur zuletzt besuchten Seite 
 anstatt zur Weiterleitungsseite weitergeleitet.
+
+
+### Template-Einstellungen
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_login` überschreiben.
 
@@ -192,6 +201,9 @@ Frontend-Benutzer automatisch abmeldet.
 Sobald sich ein Mitglied im Frontend der Webseite angemeldet hat, erscheint im Hauptmenü auf der rechten Seite ein 
 Logout-Link, mit dem es sich wieder abmelden kann. In Wirklichkeit handelt es sich dabei um zwei verschiedene Seiten in 
 der Seitenstruktur, die einmal das Login- und einmal das Logout-Modul enthalten.
+
+
+### Weiterleitung
 
 **Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Frontend-Benutzer nach der Abmeldung weitergeleitet 
 wird.
@@ -295,6 +307,9 @@ welche Felder bearbeitet werden dürfen und welche nicht.
     </form>
 </div>
 
+
+### Modul-Konfiguration
+
 **Editierbare Felder:** Hier kannst du die editierbaren Felder festlegen.
 
 ![Editierbare Felder festlegen](/de/layout/module-management/images/de/editierbare-felder-festlegen.png?classes=shadow)
@@ -302,8 +317,14 @@ welche Felder bearbeitet werden dürfen und welche nicht.
 **Abonnierbare Newsletter:** Wenn du die Contao Newsletter-Erweiterung verwendest, kannst du hier festlegen, welche 
 Verteiler ein Mitglied abonnieren kann.
 
+
+### Weiterleitung
+
 **Weiterleitungsseite:** Hier kannst du auswählen, auf welche Seite ein Mitglied nach dem Absenden der Änderungen 
 weitergeleitet wird.
+
+
+### Template-Einstellungen
 
 **Formulartemplate:** Hier wählst du das Template des Formulars aus.
 
@@ -533,6 +554,9 @@ registrieren können und je nach Konfiguration automatisch ein Benutzerkonto fu�
     </form>
 </div>
 
+
+### Modul-Konfiguration
+
 **Editierbare Felder:** Hier kannst du festlegen, welche Felder ein neues Mitglied bei der Registrierung ausfüllen muss. 
 Um die Anmeldung im Frontend zu ermöglichen, musst du mindestens die Felder Benutzername und Passwort aktivieren.
 
@@ -543,6 +567,9 @@ Verteiler ein Mitglied abonnieren kann.
 wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 
+
+### Kontoeinstellungen
+
 **Mitgliedergruppen:** Hier legst du die Gruppenmitgliedschaft des neuen Mitglieds fest.
 
 **Login erlauben:** Wenn du diese Option auswählst, kann sich ein neues Mitglied nach der Registrierung im Frontend 
@@ -552,8 +579,14 @@ anmelden. Damit das funktioniert, muss das Registrierungsformular die Felder Ben
 Benutzerverzeichnis in einem Ordner deiner Wahl erstellt. Der Name des neuen Verzeichnisses wird aus dem Benutzernamen 
 generiert.
 
+
+### Weiterleitung
+
 **Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Mitglied nach der Registrierung weitergeleitet wird 
 (z. B. auf die Seite mit dem Login-Formular).
+
+
+### E-Mail-Einstellungen
 
 **Automatisierung der Mitgliederregistrierung**
 
@@ -586,6 +619,9 @@ Wenn Sie keinen Zugang angefordert haben, ignorieren Sie diese E-Mail bitte.
 
 Ihr Administrator
 ```
+
+
+### Template-Einstellungen
 
 **Formulartemplate:** Hier wählst du das Template des Formulars aus.
 
@@ -760,8 +796,14 @@ ermöglicht, sein Passwort zu ändern.
     </form>
 </div>
 
+
+### Weiterleitung
+
 **Weiterleitungsseite:** Hier kannst du auswählen, auf welche Seite ein Mitglied nach dem Absenden der Änderungen 
 weitergeleitet wird.
+
+
+### Template-Einstellungen
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_changePassword` überschreiben.
 
@@ -840,6 +882,9 @@ neuen Passworts möglich.
     </form>
 </div>
 
+
+### Modul-Konfiguration
+
 **Benutzernamen nicht abfragen:** Wenn du diese Option auswählst, wird der Benutzername bei der Anforderung nicht 
 abgefragt.
 
@@ -847,8 +892,14 @@ abgefragt.
 wird diese Frage nur noch den Spambots »angezeigt«. Ohne Sicherheitsfrage ist es unter Umständen möglich, dass Spammer 
 automatisiert Benutzerkonten erstellen und deine Webseite missbrauchen.
 
+
+### Weiterleitung
+
 **Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Benutzer nach dem Anfordern eines neuen Passworts 
 weitergeleitet wird.
+
+
+### E-Mail-Einstellungen
 
 **Bestätigungsseite:** Hier legst du fest, auf welche Seite ein Benutzer nach erfolgreicher Erstellung eines neuen 
 Passworts weitergeleitet wird.
@@ -872,6 +923,9 @@ Wenn Sie diese E-Mail nicht angefordert haben, kontaktieren Sie bitte den Admini
 
 Ihr Administrator
 ````
+
+
+### Template-Einstellungen
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_lostPassword` überschreiben.
 
@@ -936,11 +990,22 @@ kann. Je nach Konfiguration wird der Account dabei entweder nur deaktiviert oder
     </form>
 </div>
 
+
+### Modul-Konfiguration
+
 **Modus:** Hier legst du fest, ob das jeweilige Konto beim Absenden des Formulars lediglich deaktiviert oder komplett 
 aus der Datenbank gelöscht werden soll.
 
+{{< version-tag "4.13" >}} **Home-Verzeichnis löschen:** Hier legst du fest, ob das Home-Verzeichnis gelöscht werden soll.
+
+
+### Weiterleitung
+
 **Weiterleitungsseite:**  Hier legst du fest, auf welche Seite ein Mitglied nach der Kontoschließung
 weitergeleitet wird. Die Zielseite darf nicht geschützt sein.
+
+
+### Template-Einstellungen
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_closeAccount` überschreiben.
 
@@ -1009,6 +1074,9 @@ ausgewählten Zwei-Faktor-Weiterleitungsseite hinzugefügt werden.
         </div>
     </form>
 </div>
+
+
+### Template-Einstellungen
 
 **Individuelles Template:** Hier kannst du das Standard-Template `mod_two_factor` überschreiben.
 

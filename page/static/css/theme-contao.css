@@ -261,36 +261,38 @@ h1 {
  * to not have text-transform: uppercase; on the h1,
  * not the /reference/hooks/ page as well.
  */
-body[data-url^="/reference/hooks/a"] h1,
-body[data-url^="/reference/hooks/b"] h1,
-body[data-url^="/reference/hooks/c"] h1,
-body[data-url^="/reference/hooks/d"] h1,
-body[data-url^="/reference/hooks/e"] h1,
-body[data-url^="/reference/hooks/f"] h1,
-body[data-url^="/reference/hooks/g"] h1,
-body[data-url^="/reference/hooks/h"] h1,
-body[data-url^="/reference/hooks/i"] h1,
-body[data-url^="/reference/hooks/j"] h1,
-body[data-url^="/reference/hooks/k"] h1,
-body[data-url^="/reference/hooks/l"] h1,
-body[data-url^="/reference/hooks/m"] h1,
-body[data-url^="/reference/hooks/n"] h1,
-body[data-url^="/reference/hooks/o"] h1,
-body[data-url^="/reference/hooks/p"] h1,
-body[data-url^="/reference/hooks/q"] h1,
-body[data-url^="/reference/hooks/r"] h1,
-body[data-url^="/reference/hooks/s"] h1,
-body[data-url^="/reference/hooks/t"] h1,
-body[data-url^="/reference/hooks/u"] h1,
-body[data-url^="/reference/hooks/v"] h1,
-body[data-url^="/reference/hooks/w"] h1,
-body[data-url^="/reference/hooks/x"] h1,
-body[data-url^="/reference/hooks/y"] h1,
-body[data-url^="/reference/hooks/z"] h1 {
+body[data-url*="/reference/hooks/a"] h1,
+body[data-url*="/reference/hooks/b"] h1,
+body[data-url*="/reference/hooks/c"] h1,
+body[data-url*="/reference/hooks/d"] h1,
+body[data-url*="/reference/hooks/e"] h1,
+body[data-url*="/reference/hooks/f"] h1,
+body[data-url*="/reference/hooks/g"] h1,
+body[data-url*="/reference/hooks/h"] h1,
+body[data-url*="/reference/hooks/i"] h1,
+body[data-url*="/reference/hooks/j"] h1,
+body[data-url*="/reference/hooks/k"] h1,
+body[data-url*="/reference/hooks/l"] h1,
+body[data-url*="/reference/hooks/m"] h1,
+body[data-url*="/reference/hooks/n"] h1,
+body[data-url*="/reference/hooks/o"] h1,
+body[data-url*="/reference/hooks/p"] h1,
+body[data-url*="/reference/hooks/q"] h1,
+body[data-url*="/reference/hooks/r"] h1,
+body[data-url*="/reference/hooks/s"] h1,
+body[data-url*="/reference/hooks/t"] h1,
+body[data-url*="/reference/hooks/u"] h1,
+body[data-url*="/reference/hooks/v"] h1,
+body[data-url*="/reference/hooks/w"] h1,
+body[data-url*="/reference/hooks/x"] h1,
+body[data-url*="/reference/hooks/y"] h1,
+body[data-url*="/reference/hooks/z"] h1 {
     text-transform: none;
 }
 
 /* hide level 3 in general */
+#sidebar ul.topics > li > ul > li > ul,
+#sidebar ul.topics > li.active > ul > li > ul,
 #sidebar ul.topics > li.parent > ul > li > ul {
     display: none;
 }
@@ -302,11 +304,11 @@ body[data-url^="/reference/hooks/z"] h1 {
 }
 
 /* hide level 3 on hooks page */
-body[data-url^="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.parent > ul {
+body[data-url*="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.parent > ul {
     display: none;
 }
 
-body[data-url^="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.parent > a {
+body[data-url*="/reference/hooks/"] #sidebar ul.topics > li.parent > ul > li.parent > a {
     border-left: 3px solid var(--MENU-HEADER-BG-color);
     background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
     color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
@@ -521,6 +523,8 @@ option {
     padding: 0 25px 0 30px;
     margin: 0;
     font-weight: 300;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .algolia-searchbox input[type="search"]::-webkit-input-placeholder {
@@ -545,4 +549,14 @@ option {
 
 #body .tab-content .tab-item > *:last-child {
     margin-bottom: 0;
+}
+
+/* Remove hr introduced in theme update */
+#prefooter > hr {
+    display: none;
+}
+
+/* Introduce gap between two consecutive code examples */
+.highlight + .highlight {
+    margin-top: 0.5em;
 }

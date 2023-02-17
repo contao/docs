@@ -19,7 +19,7 @@ um die Ohren schlagen, um die Contao-Entwicklung voranzutreiben:
 
 Neben dem Core-Team sorgen viele weitere [Freiwillige](https://github.com/contao/contao/graphs/contributors) dafür,
 dass Contao ein einzigartiges und wunderschönes Erlebnis  ist und bleibt. Möchtest du ein Teil davon werden?
-[Dann freuen wir uns auf dich](https://contao.org/de/volunteers-pool.html).
+[Dann freuen wir uns auf dich](https://contao.org/de/finanziell-unterstuetzen.html).
 
 Dieses Handbuch wurde mit Unterstützung der [Contao Association](https://association.contao.org/) und der
 [Contao Community](https://github.com/contao/docs/graphs/contributors) von folgenden Personen umgesetzt
@@ -41,6 +41,15 @@ einmalig die Dokumentation als zusätzliche Suchmaschine in deinem Browser regis
 - Über »Aktionen für diese Seite« (Symbol mit drei Punkten) »Suchmaschine hinzufügen« wählen.
 - In »Einstellungen/Suche«, einen Kürzel eingeben: z. B. `@doc`
 - Den Browser neu starten und in der Adresszeile suchen nach z. B.:
+- `@docs inserttags`  
+
+Für neuere Versionen:  
+- Diese Seite aufrufen  
+- In der Adresszeile einen Rechtsklick machen  
+- Im sich öffnenden Kontextmenü, letzte Zeile: `"Search Contao Handbuch" hinzufügen`  
+- In der Adresszeile suchen nach z. B.: `inserttags`  
+- Es öffnet sich unterhalb der Adresszeile ein Menü, in dem am unteren Ende, unter `Einmalig suchen mit:`, auch das Contao-Icon erscheint  
+- Auf das Contao-Icon klicken und links vom Suchbegriff wird ein Tag hinzugefügt: `Contao Handbuch`  
 - `@docs inserttags`
 {{% /expand %}}
 

@@ -3,13 +3,15 @@ name: Regularly check for broken links and report those as issue
 on:
     schedule:
         - cron: '0 2 * * 1'
+    workflow_dispatch:
 
 jobs:
     check:
+        if: github.repository == 'contao/docs'
         runs-on: ubuntu-latest
         steps:
             - name: Set up PHP
-              uses: shivammathur/setup-php@v1
+              uses: shivammathur/setup-php@v2
               with:
                   php-version: 7.4
                   extensions: json
@@ -35,15 +37,19 @@ jobs:
               continue-on-error: true
 
             - name: Create issue (dev)
-              uses: peter-evans/create-issue-from-file@v2
+              uses: peter-evans/create-issue-from-file@v4
               with:
                   title: Link Checker Report
                   content-filepath: ./link-checker/dev-result.md
-                  labels: Bug, Developer Documentation
+                  labels: |
+                      Bug
+                      Developer Documentation
 
             - name: Create issue (manual)
-              uses: peter-evans/create-issue-from-file@v2
+              uses: peter-evans/create-issue-from-file@v4
               with:
                   title: Link Checker Report
                   content-filepath: ./link-checker/manual-result.md
-                  labels: Bug, User Manual
+                  labels: |
+                      Bug
+                      User Manual

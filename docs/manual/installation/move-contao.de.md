@@ -104,7 +104,7 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
 2. Führe dann eine Installation mit *Composer* aus – da du zuvor auch die `composer.lock`-Datei übertragen hast, die
    Details über alle installierten Paket-Versionen enthält, wird Composer den identischen Stand wie auf dem Quellsystem
    herstellen.
-   Nutze dazu entweder den [Contao Manager](#installation-mit-dem-contao-manager) oder die [Kommandozeile](#installation-ueber-die-kommandozeile).
+   Nutze dazu entweder den [Contao Manager](../contao-installieren/#installation-mit-dem-contao-manager) oder die [Kommandozeile](../contao-installieren/#installation-ueber-die-kommandozeile).
 3. Führe dann das [Contao-Installtool](../contao-installtool) aus, um die neue Datenbankverbindung einzurichten.
 
 Das war's! Du kannst deine Contao Installation jetzt am neuen Ort nutzen. 

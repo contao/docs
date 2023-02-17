@@ -78,10 +78,10 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 ```json
 {
     "name": "contao/managed-edition",
+    "description": "Contao Managed Edition",
+    "license": "LGPL-3.0-or-later",
     "type": "project",
-    "description": "Contao Open Source CMS",
     "require": {
-        "php": "^7.1",
         "contao/calendar-bundle": "^4.9",
         "contao/comments-bundle": "^4.9",
         "contao/conflicts": "@dev",
@@ -98,11 +98,16 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
     "conflict": {
         "contao-components/installer": "<1.3"
     },
-    "extra": {
-        "contao-component-dir": "assets",
-        "symfony": {
-            "require": "^4.4"
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "contao-community-alliance/composer-plugin": true,
+            "contao-components/installer": true,
+            "contao/manager-plugin": true
         }
+    },
+    "extra": {
+        "contao-component-dir": "assets"
     },
     "scripts": {
         "post-install-cmd": [
@@ -127,52 +132,57 @@ Nur die Version des `contao/manager-bundle` muss angepasst werden.
 
 ## Entwicklerversionen installieren
 
-Während der Release Candidate und davor auch während der Entwicklungsphase einer
-Contao Version kann auch die Entwicklerversion zum Testen installiert werden. Auf
-diese Weise können die neuesten Änderungen sofort getestet werden, ohne auf einen
-neuen Release Candidate warten zu müssen. Natürlich kann dies auch instabilen Programmcode
-enthalten.
+Während der [Entwicklungsphase][ReleasePlan] einer Contao Version kann auch die Entwicklerversion 
+zum Testen installiert werden. Auf diese Weise können die neuesten Änderungen sofort 
+getestet werden, ohne auf die Veröffentlichung einer neuen Version warten zu müssen. 
+Natürlich kann diese auch instabilen Programmcode enthalten.
 
 Statt einer spezifischen _Version_ wird nun ein spezifischer _Branch_ aus dem öffentlichen
-Git Repository von Contao verlangt. Jede »Minor« Version von Contao hat ihren eigenen
-»Entwicklungszweig (Branch)«, z. B. `4.9.x-dev` für Contao `4.9`.
+Git-Repository von Contao verlangt. Die aktuell entwickelte »Minor« Version von Contao hat immer 
+einen »Entwicklungszweig (Branch)« dessen Namen der aktuellen »Major« Version entspricht, z. B.
+`5.x` seit Anfang 2022. Dieser Branch muss als `5.x-dev` in Composer verlangt werden.
 
-Eine komplettes Beispiel einer `composer.json`, wo der Entwicklungszweig von Contao 
-`4.9` installiert wird, sieht so aus:
+Eine komplettes Beispiel einer `composer.json`, wo der Entwicklungszweig von Contao's nächster
+Version wird, sieht so aus:
 
 ```json
 {
     "name": "contao/managed-edition",
+    "description": "Contao Managed Edition",
+    "license": "LGPL-3.0-or-later",
     "type": "project",
-    "description": "Contao Open Source CMS",
     "require": {
-        "php": "^7.1",
-        "contao/calendar-bundle": "4.9.x-dev",
-        "contao/comments-bundle": "4.9.x-dev",
+        "contao/calendar-bundle": "5.x-dev",
+        "contao/comments-bundle": "5.x-dev",
         "contao/conflicts": "@dev",
-        "contao/core-bundle": "4.9.x-dev",
-        "contao/faq-bundle": "4.9.x-dev",
-        "contao/installation-bundle": "4.9.x-dev",
-        "contao/listing-bundle": "4.9.x-dev",
-        "contao/manager-bundle": "4.9.x-dev",
-        "contao/news-bundle": "4.9.x-dev",
-        "contao/newsletter-bundle": "4.9.x-dev"
+        "contao/core-bundle": "5.x-dev",
+        "contao/faq-bundle": "5.x-dev",
+        "contao/installation-bundle": "5.x-dev",
+        "contao/listing-bundle": "5.x-dev",
+        "contao/manager-bundle": "5.x-dev",
+        "contao/news-bundle": "5.x-dev",
+        "contao/newsletter-bundle": "5.x-dev"
     },
     "conflict": {
         "contao-components/installer": "<1.3"
     },
-    "extra": {
-        "contao-component-dir": "assets",
-        "symfony": {
-            "require": "^4.2"
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "contao-community-alliance/composer-plugin": true,
+            "contao-components/installer": true,
+            "contao/manager-plugin": true
         }
+    },
+    "extra": {
+        "contao-component-dir": "assets"
     },
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ]
     }
 }
@@ -187,6 +197,11 @@ Update-Operation drastisch erhöhen).
 
 Jedes mal, wenn eine Paketaktualisierung durchgeführt wird, wird der neueste Programmcode
 aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.
+
+Jede vergangene und noch unterstützte »Minor« Version von Contao hat ebenfalls ihren eigenen
+Entwicklungs-Branch, z. B. `4.13.x-dev` für Contao `4.13`. Falls du also den aktuellen
+Entwicklungsstand testen möchtest ohne auf die Veröffentlichung einer neuen Version zu warten
+kann stattdessen dieser Branch in der oben erwähnten `composer.json` verlangt werden.
 
 
 ## Contao Manager
@@ -206,7 +221,10 @@ Zuerst führt man wie gewohnt die Grundkonfiguration des Contao Managers durch. 
 Anschließend wechselt man zum Menüpunkt »Pakete« und editiert bei »Contao Open Source
 CMS« die Versionsangabe wie oben beschrieben. Abschließend klickt man auf »Änderungen anwenden« und wartet die Aktualisierung der Pakete ab.
 
-[releasePlan]: https://contao.org/de/release-plan.html
 
 ## Weblinks ##
+
 Videoanleitung: [Contao 4 – Testversion | Entwicklerversion | Release Candidate installieren](https://youtu.be/0nUROGy_jLU)
+
+
+[releasePlan]: https://to.contao.org/release-plan

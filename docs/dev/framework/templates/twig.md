@@ -280,7 +280,7 @@ and render it from inside your controller:
  */
 class MyContentElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         return $this->render('@Contao/ce_my_content_element.html.twig', [
             'text' => $model->text,

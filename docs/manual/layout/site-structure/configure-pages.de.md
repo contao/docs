@@ -13,16 +13,29 @@ Nachdem du die richtigen Seitentypen für deine Seiten ausgewählt hast, kannst
 entsprechend konfigurieren. Die Einstellungsmöglichkeiten variieren dabei je nach Seitentyp.
 
 
-## Seitenaliase
+## Routing
 
-Der **Alias** einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in deinem 
-Browser aufrufen kannst. Wenn du das Feld beim Anlegen leer lässt, vergibt Contao den Alias automatisch. Jeder Alias 
-muss innerhalb der verwendeten Domain eindeutig sein, darf also nur ein einziges Mal vorkommen.
+**Seitenaliase:** Der Alias einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in 
+deinem Browser aufrufen kannst. Wenn du das Feld beim Anlegen leer lässt, vergibt Contao den Alias automatisch.
+
+{{< version-tag "4.13" >}} Wenn du eine Seite für die News-Liste mit dem Alias `news` erstellst, kannst du die Seite
+für den News-Leser mit dem gleichen Alias anlegen, sofern du zusätzlich »Element erforderlich« aktivierst.
 
 {{% notice warning %}}
 Der Alias der Startseite sollte immer auf `index` lauten. Nur dann wird die erzeugte URL für diese Seite auch ein 
 leerer Request sein.
 {{% /notice %}}
+
+{{< version-tag "4.5" >}} **Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die 
+Fehlerseite 404 gezeigt, wenn die URL kein Alias zu einem Element enthält.
+
+{{< version-tag "4.13" >}} **Routen-Pfad:** Die Vorschau des endgültigen Pfads (möglicherweise mit Platzhaltern), der 
+zu dieser Seite passt.
+
+{{< version-tag "4.13" >}} **Routenpriorität:** Optional kann die Priorität konfiguriert werden, um die Reihenfolge der 
+Routen zu beeinflussen.
+
+{{< version-tag "4.13" >}} **Routenkonflikte:** Sobald Seiten einen ähnlichen Alias haben, wirst du darauf hingewiesen.
 
 
 ## Metadaten
@@ -66,6 +79,20 @@ einer eindeutigen Beschreibung zu versehen.
 ```html
 <meta name="description" content="Beschreibung der Seite (150 und 300 Zeichen).">
 ```
+
+
+## Kanonische URL
+
+{{< version-tag "4.13" >}} Du kannst hier eine [kanonische URL](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls?hl=de) eintragen oder auswählen.
+
+**Individuelle URL:** Hier kannst du eine individuelle kanonische URL setzen.
+
+**Query-Parameter:** Standardmäßig entfernt Contao die Query-Parameter in der kanonischen URL. Hier kannst du eine 
+kommagetrennte Liste von Query-Parametern hinzufügen, die erhalten bleiben sollen. Verwende dabei  "*" als Platzhalter. 
+
+{{% notice note %}}
+Zur Ausgabe muß im Seitentyp »Startpunkt einer Webseite« die Einstellung rel="canonical" aktiviert sein (Standard).
+{{% /notice %}}
 
 
 ## Weitere Einstellungen bei Startpunkten
@@ -162,7 +189,7 @@ oder die Extensions müssen entfernt oder ersetzt werden. Andernfalls wird ein F
 ### Spracheinstellungen
 
 **Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres 
-[Subtag](http://ssgfix.sub.uni-goettingen.de/projekt/doku/sprachcode.html) nach ISO 639-1 erfasst, also z. B. über 
+Subtag nach ISO 639-1 erfasst, also z. B. über 
 `de` für Deutsch oder `en` für Englisch.
 
 **Sprachen-Fallback:** Contao sucht grundsätzlich nach einem Startpunkt in der Sprache, die ein Besucher in seinem 
@@ -192,6 +219,7 @@ werden.
 hilfreich, damit jede Domain ihr eigenes Standard-Favicon hat. Andernfalls könnte man nur eine einzelne, _physische_ `favicon.ico` Datei im 
 Document Root hinterlegen. Dadurch kann im Browser das korrekte Favicon pro Domain angezeigt werden, wenn Inhalte dargestellt werden, die
 keine HTML-Ausgabe beinhalten (wie zum Beispiel Bilder, PDFs, etc.).
+Für dieselbe Domain kann man nur einmal ein Favicon festlegen. Dieses muss in der Fallback-Sprache geschehen.
 
 {{% notice "warning" %}}
 Dies wird nicht funktionieren, wenn sich bereits eine physische `favicon.ico` Datei im Document Root befindet, da der Web Server diese Datei
@@ -205,14 +233,21 @@ Diese Funktion gibt keine zusätzlichen HTML Meta Tags auf der Seite aus.
 **Individuelle robots.txt-Anweisungen:** Hier kannst du eigene Direktiven für die `/robots.txt` URL der Domain eingeben. Dies ist besonders
 im Multidomain-Betrieb hilfreich, damit jede Domain ihre eigenen Direktiven haben kann. Andernfalls könnte man nur eine einzelne, 
 _physische_ `robots.txt` Datei im Document Root hinterlegen.
+Für dieselbe Domain kann man nur einmal robots.txt festlegen. Dieses muss in der Fallback-Sprache geschehen.
 
 {{% notice "warning" %}}
 Dies wird nicht funktionieren, wenn sich bereits eine physische `robots.txt` Datei im Document Root befindet, da der Web Server diese Datei
 dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, bevor du diese Funktion nutzt.
 {{% /notice %}}
 
+{{< version-tag "4.13" >}} **Wartungsmodus:** Wenn dieser Punkt aktiviert ist, wird den Besuchern der Website angezeigt, dass diese gerade gewartet wird (Für die 
+Wartungsseite gibt es einen neuen [Seitentyp: 503 Dienst nicht verfügbar](../seiten-als-zentrale-elemente/#seitentypen)).
+
 
 ### Globale Einstellungen
+
+{{< version-tag "4.13" >}} **rel="canonical" aktivieren:** Im Seitentyp »Startpunkt einer Webseite« kannst du hier 
+die Ausgabe der rel="canonical"-Tags erlauben.
 
 **E-Mail-Adresse des Webseiten-Administrators:** Hier kannst du die in den Backend-Einstellungen festgelegte 
 E-Mail-Adresse des Systemadministrators für eine bestimmte Webseite überschreiben. An diese Adresse werden z. B. 
@@ -253,9 +288,24 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 | g:i      | 12 Stunden ohne führende Nullen sowie Minuten, z. B. `8:36`   |
 
 
-{{< version-tag "4.8" >}} **Zwei-Faktor-Authentifizierung:** Hier kannst du die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
-erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die 
-Zwei-Faktor-Authentifizierung einrichten.
+### Zwei-Faktor-Authentifizierung 
+
+{{< version-tag "4.8" >}} Du kannst hier die Zwei-Faktor-Authentifizierung für alle Mitglieder (Frontend) 
+erzwingen. Wähle eine Seite aus, auf die die Besucher weitergeleitet werden, wenn sie die Zwei-Faktor-Authentifizierung einrichten.
+
+
+## Zugriffsschutz
+
+Im Gegensatz zu den Zugriffsrechten, die die Rechte im Backend festlegen, bezieht sich der Zugriffsschutz auf den
+Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort
+anmelden, bevor sie die Seite aufrufen können. Andernfalls sähen sie nur eine Fehlerseite.
+
+**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der
+Zugriffsschutz von einer übergeordneten Seite geerbt.
+
+**Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie
+man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite
+[Systemverwaltung][Systemverwaltung].
 
 
 ## Layout-Einstellungen
@@ -263,11 +313,15 @@ Zwei-Faktor-Authentifizierung einrichten.
 Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein 
 Seitenlayout zugewiesen oder vererbt worden, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
 
-**Ein Layout zuweisen:** Hier kannst du einer Seite ein Seitenlayout zuweisen. Die Zuweisung gilt automatisch auch für 
-alle untergeordneten Seiten ohne eigenes Seitenlayout.
+**Ein Layout zuweisen:** Hier kannst du einer Seite ein Seitenlayout zuweisen. Die Zuweisung des Seitenlayouts 
+gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
 
 **Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines 
 Themes erfolgt durch Zuweisung eines Seitenlayouts.
+
+{{< version-tag "4.13" >}} **Unterseitenlayout:** Mit der Auswahl »Seitenlayout vererben« (Standard) gilt die Zuweisung 
+des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
+abweichendes Seitenlayout für untergeordnete Seiten zugewiesen werden.
 
 
 ## Cache-Einstellungen
@@ -325,20 +379,6 @@ Weitere Informationen zum Rechtesystem und zur Konfiguration von Benutzern und B
 Seite [Systemverwaltung][Systemverwaltung].
 
 
-## Zugriffsschutz
-
-Im Gegensatz zu den Zugriffsrechten, die die Rechte im Backend festlegen, bezieht sich der Zugriffsschutz auf den 
-Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort 
-anmelden, bevor sie die Seite aufrufen können. Andernfalls sähen sie nur eine Fehlerseite.
-
-**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der 
-Zugriffsschutz von einer übergeordneten Seite geerbt.
-
-**Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie 
-man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite 
-[Systemverwaltung][Systemverwaltung].
-
-
 ## Experten-Einstellungen
 
 Unter Umständen gibt es innerhalb deiner Seitenstruktur Seiten, die zwar im Frontend verfügbar sein, aber nicht im Menü 
@@ -374,9 +414,6 @@ ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber h
 **Nur Gästen anzeigen:** Wenn du diese Option auswählst, wird der Link zu der Seite automatisch aus dem Navigationsmenü 
 der Webseite ausgeblendet, sobald sich ein Mitglied angemeldet hat. Dies ist z. B. für die Seiten »Anmeldung« und 
 »Registrierung« sinnvoll.
-
-{{< version-tag "4.5" >}} **Element erforderlich:** Wenn du diese Option auswählst, wird bei dieser Seite die Fehlerseite 404 gezeigt, wenn die 
-URL kein Alias zu einem Element enthält.
 
 
 ## Tastatur-Navigation

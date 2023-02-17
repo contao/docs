@@ -45,7 +45,7 @@ In the syndication you define how an article can be syndicated. "[Content Syndic
 | ---- | ----------- |
 | Print this page | This button calls the print function of the browser. You can use it to put the article on paper. |
 | Share on Facebook | This button opens a pop-up window where you can share the article directly on Facebook. You will need a Facebook account to do this. |
-| Share on Twitter | This button opens a pop-up window where you can share the article directly on Twitter. Contao automatically shortens the URL using [tinyurl.com](https://tinyurl.com/). |
+| Share on Twitter | This button opens a pop-up window where you can share the article directly on Twitter. Contao automatically shortens the URL using [tinyurl.com/app](https://tinyurl.com/app). |
 
 **Syndication:** Here you select the syndication options that will be available in the front end.
 

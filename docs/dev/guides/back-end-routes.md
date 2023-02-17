@@ -34,7 +34,6 @@ and is configured through annotations.
 // src/Controller/BackendController.php
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment as TwigEnvironment;
@@ -45,7 +44,7 @@ use Twig\Environment as TwigEnvironment;
  *     defaults={"_scope": "backend"}
  * )
  */
-class BackendController extends AbstractController
+class BackendController
 {
     private $twig;
     
@@ -67,6 +66,12 @@ class BackendController extends AbstractController
 In order to have a correct Contao back end route, we need an additional request parameter called `_scope` with the value `backend`. This way
 you are telling Contao that this route belongs to the back end and should be handled accordingly. See [this article][RequestScope] for more
 information about the `backend` scope.
+
+
+{{% notice note %}}
+Contao **4.13** allows configuring a custom backend path. Use `"%contao.backend.route_prefix%/my-backend-route"` instead of `"/contao/my-backend-route"` in the example above to support this feature.
+{{% /notice %}}
+
 
 Be sure to have imported your bundle's Controllers in your `routes.yaml` *before*
 the `ContaoCoreBundle` routes.

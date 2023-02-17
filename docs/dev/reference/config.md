@@ -174,6 +174,20 @@ contao:
 
         # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
         default_http_client_options: []
+
+    # Allows to configure which URL protocols can be used in Contao, as they are encoded by default for security reasons.
+    sanitizer:
+        allowed_url_protocols:
+
+            # Defaults:
+            - http
+            - https
+            - ftp
+            - mailto
+            - tel
+            - data
+            - skype
+            - whatsapp
 ```
 
 
@@ -188,7 +202,7 @@ container is even built. Settings like trusted proxies or caching are considered
 (if it even needs to be booted thanks to the cache) so they cannot be part of the application itself.
 
 {{% notice info %}}
-Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_URL` replace their respective counterparts 
+Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts 
 of the `config/parameters.yaml` and thus you should not use these parameters, if you are using the environment variable instead.
 {{% /notice %}}
 
@@ -303,12 +317,16 @@ The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_
 It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
 
 
-### `MAILER_URL`
+### `MAILER_DSN`
 
-The mailer connection information is stored as an environment variable called `MAILER_URL`. It defines the transport to
+The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
 be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
-applicable. The format of this variable is the following: `MAILER_URL=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
 See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
+
+{{% notice note %}}
+The variable was previously called `MAILER_URL`. Since Contao 5.0 only `MAILER_DSN` will be supported.
+{{% /notice %}}
     
 
 ### `TRUSTED_PROXIES`

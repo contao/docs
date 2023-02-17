@@ -66,7 +66,7 @@ Folgende Möglichkeiten stehen zur Auswahl:
 |:--------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Seite drucken                   | Diese Schaltfläche ruft die Druckfunktion des Browsers auf. Du kannst den Artikel damit zu Papier bringen.                                                                                                          |
 | Auf&nbsp;Facebook&nbsp;teilen   | Diese Schaltfläche öffnet ein Popup-Fenster, in dem du den Artikel direkt auf Facebook teilen kannst. Du benötigst dazu ein Facebook-Konto.                                                                         |
-| Auf Twitter teilen              | Diese Schaltfläche öffnet ein Popup-Fenster, in dem du den Artikel direkt auf Twitter teilen kannst. Die Verkürzung der URL mithilfe von [tinyurl.com](https://tinyurl.com/) nimmt Contao dabei automatisch vor.    |
+| Auf Twitter teilen              | Diese Schaltfläche öffnet ein Popup-Fenster, in dem du den Artikel direkt auf Twitter teilen kannst. Die Verkürzung der URL mithilfe von [tinyurl.com/app](https://tinyurl.com/app) nimmt Contao dabei automatisch vor.    |
 
 **Syndikation:** Hier wählst du die Syndikationsmöglichkeiten aus, die im Frontend angezeigt werden sollen.
 

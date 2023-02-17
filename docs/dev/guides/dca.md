@@ -54,9 +54,11 @@ For our DCA configuration of `tl_vendor`, we want to define the following:
 
 ```php
 // contao/dca/tl_vendor.php
+use Contao\DC_Table;
+
 $GLOBALS['TL_DCA']['tl_vendor'] = [
     'config' => [
-        'dataContainer' => 'Table',
+        'dataContainer' => DC_Table::class,
         'ctable' => ['tl_parts'],
         'enableVersioning' => true,
         'switchToEdit' => true,
@@ -170,7 +172,9 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         ],
         'country' => [
             'inputType' => 'select',
-            'options' => \Contao\System::getCountries(),
+            'options_callback' => static function(): array {
+                return \Contao\System::getContainer()->get('contao.intl.countries')->getCountries();
+            },
             'eval' => ['tl_class' => 'w50', 'mandatory' => true, 'includeBlankOption' => true],
             'sql' => ['type' => 'string', 'length' => 2, 'default' => '']
         ],
@@ -184,7 +188,7 @@ record was last edited.
 
 For the other fields have a look at the [fields reference][4] to see all the possibilities
 for each field. For the `country` selection field we also used another feature:
-we are retrieving all countries directly from the system via `\Contao\System::getCountries()`.
+we are retrieving all countries directly from the system via the `contao.intl.countries` service.
 This gives us an associative array of all translated countries, indexed by their
 country code (e.g. `'at' => 'Austria'`).
 
@@ -221,9 +225,11 @@ This finishes our DCA definition for `tl_vendor`.
 {{% expand "Show full example" %}}
 ```php
 // contao/dca/tl_vendor.php
+use Contao\DC_Table;
+
 $GLOBALS['TL_DCA']['tl_vendor'] = [
     'config' => [
-        'dataContainer' => 'Table',
+        'dataContainer' => DC_Table::class,
         'ctable' => ['tl_parts'],
         'enableVersioning' => true,
         'switchToEdit' => true,
@@ -293,7 +299,9 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         ],
         'country' => [
             'inputType' => 'select',
-            'options' => \Contao\System::getCountries(),
+            'options_callback' => static function(): array {
+                return \Contao\System::getContainer()->get('contao.intl.countries')->getCountries();
+            },
             'eval' => ['tl_class' => 'w50', 'mandatory' => true, 'includeBlankOption' => true],
             'sql' => ['type' => 'string', 'length' => 2, 'default' => '']
         ],
@@ -323,9 +331,13 @@ two letters of the name as the default for the `number` field.
 
 ```php
 // contao/dca/tl_parts.php
+use Contao\Database;
+use Contao\DC_Table;
+use Contao\Input;
+
 $GLOBALS['TL_DCA']['tl_parts'] = [
     'config' => [
-        'dataContainer' => 'Table',
+        'dataContainer' => DC_Table::class,
         'enableVersioning' => true,
         'ptable' => 'tl_vendor',
         'sql' => [
@@ -335,8 +347,11 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
         ],
         'onload_callback' => [
             function () {
-                $db = \Contao\Database::getInstance();
-                $pid = \Contao\Input::get('pid');
+                $db = Database::getInstance();
+                $pid = Input::get('pid');
+                if (empty($pid)) {
+                    return;
+                }
                 $result = $db->prepare('SELECT `name` FROM `tl_vendor` WHERE `id` = ?')
                              ->execute([$pid]);
                 $prefix = strtoupper(substr($result->name, 0, 2));
@@ -482,11 +497,12 @@ This finishes our DCA definition for `tl_parts`.
 ```php
 // contao/dca/tl_parts.php
 use Contao\Database;
+use Contao\DC_Table;
 use Contao\Input;
 
 $GLOBALS['TL_DCA']['tl_parts'] = [
     'config' => [
-        'dataContainer' => 'Table',
+        'dataContainer' => DC_Table::class,
         'enableVersioning' => true,
         'ptable' => 'tl_vendor',
         'sql' => [
@@ -498,6 +514,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             function () {
                 $db = Database::getInstance();
                 $pid = Input::get('pid');
+                if (empty($pid)) {
+                    return;
+                }
                 $result = $db->prepare('SELECT `name` FROM `tl_vendor` WHERE `id` = ?')
                              ->execute([$pid]);
                 $prefix = strtoupper(substr($result->name, 0, 2));

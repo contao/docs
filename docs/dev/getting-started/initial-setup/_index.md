@@ -12,7 +12,7 @@ System, head over to the [Symfony Application][1] article to learn more about th
 
 Otherwise, when installing Contao from scratch, e.g. via
 
-```none
+```bash
 composer create-project contao/managed-edition
 ```
 
@@ -22,6 +22,13 @@ to their full extent, while also having the possibility to auto-load and configu
 bundles for example (e.g. for Contao Extensions). Head over to the linked article 
 to learn more about the Managed Edition.
 
+To install a specific version of the Contao Managed Edition in the current directory (`.`), run the
+command as follows (e.g. for `4.9`):
+
+
+```bash
+composer create-project contao/managed-edition . 4.9
+```
 
 [1]: symfony-application
 [2]: managed-edition

@@ -126,6 +126,11 @@ alias of an event in a message archive.
 that have not been selected are not displayed, even if the URL is correct and the message exists. This feature is 
 especially important in multi-domain operations with several independent websites.
 
+{{< version-tag "4.13" >}} **Overview page:** Here you can select a page to set a link in the detail view back to the 
+overview page.
+
+{{< version-tag "4.13" >}} **Custom label:** Here you can change the name of the link to the overview page change.
+
 
 ### Template settings
 

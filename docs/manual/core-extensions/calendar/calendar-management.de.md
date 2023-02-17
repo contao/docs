@@ -110,17 +110,18 @@ Die URL lautet:
     <channel>
         <title>Feed-Titel</title>
         <description>Feed-Beschreibung</description>
-        <link>https://www.domain.de/</link>
+        <link>https://www.example.com/</link>
         <language>Feed-Sprache</language>
         <pubDate>…</pubDate>
         <generator>Contao Open Source CMS</generator>
-        <atom:link href="https://www.domain.de/share/feed-alias.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://www.example.com/share/feed-alias.xml" rel="self" type="application/rss+xml" />
         <item>
             <title>Titel der Nachricht</title>
             <description><![CDATA[<p>Beschreibung der Nachricht.</p>]]></description>
-            <link>https://www.domain.de/veranstaltung/alias-der-nachricht.html</link>
+            <link>https://www.example.com/veranstaltung/alias-der-nachricht.html</link>
             <pubDate>…</pubDate>
-            <guid>https://www.domain.de/veranstaltung/alias-der-nachricht.html</guid>
+            <guid>https://www.example.com/veranstaltung/alias-der-nachricht.html</guid>
+            <media:content url="https://www.example.com/assets/images/…/image.png" type="image/png" />
         </item>
         …
      </channel>
@@ -161,6 +162,34 @@ die 25 Beiträge pro Feed vollkommen aus. Meistens werden ohnehin nur die ersten
 Contao-Installation betreibst. Damit der Feed auf die richtige Domain verlinkt, kannst du diese hier eingeben.
 
 **Feed-Beschreibung:** Hier kannst du eine Beschreibung des Feeds eingeben.
+
+
+### Bildeinstellungen
+
+{{< version "4.13" >}}
+
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
+auswählen:
+
+| Relatives Format               |                                                                                                                    |
+|:-------------------------------|:-------------------------------------------------------------------------------------------------------------------|
+| Proportional                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
+| An&nbsp;Rahmen&nbsp;anpassen   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
+
+&nbsp;
+
+| Exaktes Format    |                                                                                                    |
+|:------------------|:---------------------------------------------------------------------------------------------------|
+| Wichtiger Teil    | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben.                         |
+| Links / Oben      | Erhält den linken Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.        |
+| Mitte / Oben      | Erhält den mittleren Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.     |
+| Rechts / Oben     | Erhält den rechten Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.       |
+| Links / Mitte     | Erhält den linken Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.     |
+| Mitte / Mitte     | Erhält den mittleren Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.  |
+| Rechts / Mitte    | Erhält den rechten Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.    |
+| Links / Unten     | Erhält den linken Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.       |
+| Mitte / Unten     | Erhält den mittleren Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.    |
+| Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 
 ## Events

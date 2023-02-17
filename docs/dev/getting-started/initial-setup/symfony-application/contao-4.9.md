@@ -16,12 +16,12 @@ documentation leads you through them.
 ## Install and set up your Symfony application
 
 If you already have a full stack Symfony application set up, you can skip
-this step and go directly to installation procedure for the Contao bundles.
+this step and go directly to the installation procedure for the Contao bundles.
 First of all we need a full stack Symfony application installed. You can
 find further information about this subject in the [Symfony documentation](https://symfony.com/doc/current/setup.html).
 
 ```
-$ composer create-project symfony/website-skeleton contao-example ^4.4
+$ composer create-project symfony/website-skeleton contao-example "^4.4"
 ```
 
 This command creates the directory `contao-example`, containing a bare bone

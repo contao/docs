@@ -85,7 +85,7 @@ class ExampleFormElementController extends AbstractContentElementController
         $this->csrfTokenName = $csrfTokenName;
     }
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $template->token = $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
 
@@ -101,6 +101,79 @@ class ExampleFormElementController extends AbstractContentElementController
   <!-- … -->
 </form>
 ```
+
+
+## Database Connection
+
+Being able to operate on the database is of course a very common use case. Within Contao the database connection is provided via Symfony's
+[Doctrine Bundle][DoctrineBundle]. The bundle provides each configured database connection via its own service instance. The name of the
+service is `doctrine.dbal.[name]_connection` where `[name]` is the name of the database connection in your configuration. However, commonly
+you will only have one database in your Contao instance, the `default` connection. The default database connection will be available via
+the `database_connection` service (or `doctrine.dbal.default_connection`). All connection service instances will be of the type
+`Doctrine\DBAL\Connection`.
+
+```php
+use Doctrine\DBAL\Connection;
+
+class Example
+{
+    private $connection;
+
+    public function __construct(Connection $connection)
+    {
+        $this->connection = $connection;
+    }
+
+    public function __invoke(): void
+    {
+        $records = $this->connection->fetchAllAssociative("SELECT * FROM tl_foobar");
+
+        // …
+    }
+}
+```
+
+
+## EntityCacheTags
+
+{{< version "4.13" >}}
+
+The `contao.cache.entity_tags` service helps you tag responses and invalidate cache tags based on entity and model
+classes and instances. Contao uses a naming convention for database related tags: A tag `contao.db.tl_content.5` targets
+the content element with the ID 5, while `contao.db.tl_content` would target *all* content elements.
+
+#### Tagging
+
+Instead of composing this tags yourself, let the service handle this for you by passing in class names or entity/model 
+instances into one of its `tagWith()` methods:
+
+```php
+// An instance of a blog post entity with relations to an author (1:1) and comment entity (1:n)
+$blog = $blogRepository->find(42);
+
+// Will add the following tags:
+// 'contao.db.tl_blog.42', 'contao.db.tl_author.123', 'contao.db.tl_blog_comment.1', 'contao.db.tl_blog_comment.2'
+$entityCacheTags->tagWith([$blog, $blog->getAuthor(), $blog->getComments()]);
+
+// Will add the tag 'contao.db.tl_blog'
+$entityCacheTags->tagWith(Blog::class);
+```
+
+Tagging works with entity/model class names, objects and collections. You can also safely pass in `null`.
+
+#### Invalidating
+
+Analogous to tagging, you can also use the service to invalidate certain cache tags. This, again, works with
+entity/model class names, objects and collections as well as `null`:
+
+```php
+// Invalidates 'contao.db.tl_content', 'contao.db.tl_page.4', 'contao.db.tl_page.12'
+$entityCacheTags->invalidateTagsFor([ContentModel::class, $pages]);
+```
+
+{{% notice "info" %}}
+Contao's `AbstractController` is also using this functionality in the `tagResponse()` method.
+{{% /notice %}}
 
 
 ## OptIn
@@ -183,7 +256,7 @@ class Example
 
 ## ScopeMatcher
 
-This service provides the ability to identify the Contao scope of a request, if
+The `contao.routing.scope_matcher` service provides the ability to identify the Contao scope of a request, if
 applicable. It should be used instead of checking the deprecated `TL_MODE` constant.
 
 ```php
@@ -420,7 +493,8 @@ class Example
 ```
 
 
-[SimpleTokenUsage]: https://github.com/contao/contao/blob/4.x/core-bundle/tests/String/SimpleTokenParserTest.php
+[SimpleTokenUsage]: https://github.com/contao/contao/blob/5.0/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
 [RequestTokens]: /framework/request-tokens/
+[DoctrineBundle]: https://symfony.com/doc/current/reference/configuration/doctrine.html

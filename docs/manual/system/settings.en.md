@@ -72,6 +72,7 @@ Some additional parameters can be configured via the `config/config.yml`.
 | `custom_css` | Adds custom style sheets to the back end. The assets must be publicly accessible via URL! |
 | `custom_js` | Adds custom JavaScript files to the back end. The assets must be publicly accessible via URL! |
 | `badge_title` | Configures the title of the badge in the back end. |
+| `route_prefix` | {{< version-tag "4.13" >}} Configures the path to the Contao back end, e.g., `/admin` instead of `/contao`. |
 
 The following config defines some example values: 
 
@@ -87,6 +88,7 @@ contao:
         custom_js:
             - files/backend/custom.js
         badge_title: develop
+        route_prefix: '/admin'
 ```
 
 ### Front end configuration
@@ -120,6 +122,18 @@ For input fields where the use of HTML is desired, you can specify a list of all
 **Allowed HTML attributes:** You can extend the list of allowed HTML attributes for input fields here. If an HTML 
 attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for 
 all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
+
+**Password hash:** By default, Contao uses the defaut of the current PHP version, but you can also set a value. This 
+is necessary if you want to sync the password to another system like LDAP.
+
+The following configuration defines some example values:
+
+```yml
+# config/config.yaml
+security:
+  password_hashers:
+      Contao\User: 'auto' # Hash function: bcrypt, sha256, sha512 ...
+```
 
 
 **Examples:**  
@@ -427,6 +441,20 @@ contao:
 
         # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
         default_http_client_options: []
+
+    # Allows to configure which URL protocols can be used in Contao, as they are encoded by default for security reasons.
+    sanitizer:
+        allowed_url_protocols:
+
+            # Defaults:
+            - http
+            - https
+            - ftp
+            - mailto
+            - tel
+            - data
+            - skype
+            - whatsapp
 ```
 
 
@@ -496,6 +524,182 @@ The following is a comprehensive list of localconfig configurations still in use
 | `uploadTypes` | [Upload file types](#upload-settings). |
 | `useAutoItem` | Allows you to disable the usage of the so called _auto item_ _(not recommended)_. |
 | `versionPeriod` | Duration in seconds for how long previous versions of edited entries should be kept. Default: `7776000`. |
+
+
+## Environment variables
+
+{{< version "4.9" >}}
+
+Environment variables are variables that can be defined at the operating system level, per user or even process. You can learn more about the concept at Wikipedia (https://en.wikipedia.org/wiki/Environment_variable). The big advantage of using environment variables is that an application like Contao is prepared to run inside containers. We will not discuss the operation in containers further at this point. The important thing is that Contao can be operated in this environment. For operation without the possibility to set environment variables, such as on a common shared hosting, Contao provides the possibility to define environment variables in an `.env` file. Contao then interprets these as if they were real environment variables. This way, Contao combines the best of both worlds: It is prepared for professional operation inside containers with environment variables, but can just as well be operated on a shared hosting platform.
+
+The variables are defined in the file `.env` and this file must be located in the root directory of the Contao installation. The usage and name of the following variables are predefined. However, you can also define arbitrary variables and then reference them e.g. in the `config.yml`. If an additional `.env.local` file exists in the same directory, it will be used automatically.
+
+{{% notice info %}}
+Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts 
+of the `config/parameters.yaml` and thus you should not use these parameters, if you are using the environment variable instead.
+{{% /notice %}}
+
+
+### Custom Environment Variable
+
+The following example shows how to define the system administrator's e-mail address using a custom environment variable in the `.env` file and referencing it in the `config.yml` file.
+
+```ini
+# .env
+MYADMIN_EMAIL=admin@demo.com
+```
+
+```yaml
+# config/config.yml
+contao:
+    localconfig:
+        adminEmail: '%env(MYADMIN_EMAIL)%'
+```
+
+
+### `APP_ENV`
+
+The `APP_ENV` environment variable can contain either `prod` or `dev`. By default, the Contao Managed Edition runs
+in the `prod` mode, optimizing everything for production. If you want to put your installation in permanent development
+mode to have additional logging and debugging output, set `APP_ENV` to `dev`. Never do this for production sites!
+If you set the environment manually, you will no longer be able to toggle the debug mode from the back end as a
+Contao administrator.
+    
+
+### `APP_SECRET`
+
+The `APP_SECRET` environment variable is required e.g. to generate CSRF tokens. This is a string that should be 
+unique to your application and it's commonly used to add more entropy to security related operations. Its value 
+should be a series of characters, numbers and symbols chosen randomly and the recommended length is around 
+32 characters. As with any other security-related parameter, it is a good practice to change this value from time
+to time. However, keep in mind that changing this value will invalidate all signed URIs and Remember Me cookies. 
+That is why, after changing this value, you should regenerate the application cache and log out all the application
+users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
+
+
+### `DATABASE_URL`
+
+The database connection information is stored as an environment variable called `DATABASE_URL`. It defines 
+the database user name, database password, host name, port and database name that will be used by your Contao system. 
+The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
+It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+
+### `MAILER_DSN`
+
+The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
+be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
+applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+See the [Symfony Mailer Documentation][SymfonyMailer] for more information.
+
+{{% notice note %}}
+The variable was previously called `MAILER_URL`. Since Contao 5.0 only `MAILER_DSN` will be supported.
+{{% /notice %}}
+
+
+### `COOKIE_ALLOW_LIST`
+
+{{% notice info %}}
+In Contao **4.9** this environment variable is called `COOKIE_WHITELIST`.
+{{% /notice %}}
+
+This is a special environment variable related to the default caching proxy which is shipped with the Contao Managed
+Edition by default.
+Contao disables any HTTP caching as soon as there is either a `Cookie` or an `Authorization` header present in the
+request. That is because these headers can potentially authenticate a user and thus cause personalized content to
+be generated in which case, we never want to serve any content from the cache.
+However, unfortunately, the web consists of tons of different cookies. Most of which are completely irrelevant to
+the application itself and are only used in JavaScript (although there are better alternatives such as LocalStorage,
+SessionStorage or IndexedDB). You will find that e.g. Google Analytics, Matomo, Facebook etc. all set cookies your
+application (Contao in this case) is not interested in at all. However, because the HTTP cache has to decide whether to
+serve a response from the cache or not before the application is even started, there's no way it can know which cookies
+are relevant and which ones are not.
+So, we have to tell it.
+The Contao Managed Edition ships with a list of irrelevant cookies that are ignored by default to increase the hit rate
+but if you want to optimize it even more, you can disable the default list by providing an explicit list of cookies
+you need.
+These are the cookies you know are **relevant** to the application and in this case, the cache must be **omitted**.
+By default, Contao only uses the PHP session ID cookie to authenticate users and members, the CSRF cookie to
+protect visitors from CSRF attacks when submitting forms, the trusted devices cookie for two-factor authentication and
+the remember me cookie to automatically log in users if desired.
+So in most cases, the following configuration will score the maximum cache hits but you may have to allow additional
+cookies of extensions you installed:
+
+```
+COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
+```
+    
+{{% notice note %}}
+The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
+for you too. Moreover, the CSRF cookie is different for `http` and `https` for security reasons. If you serve your
+website over `http`, note that the cookie name will be `csrf_http-contao_csrf_token`.
+However, protecting your users from CSRF attacks but let them submit the form via unsecured `http` connections is
+not really a valid use case. 
+{{% /notice %}}
+
+### `COOKIE_REMOVE_FROM_DENY_LIST`
+
+{{< version "4.10" >}}
+
+In case you don't want to manage the whole `COOKIE_ALLOW_LIST` because you are unsure what your application needs but
+you want to disable one or more of the existing entries on the deny list that is managed by Contao, you can specify this
+using:
+
+```
+COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
+```
+
+### `QUERY_PARAMS_ALLOW_LIST`
+
+{{< version "4.10" >}}
+
+For the very same reason we strip irrelevant cookies, we also strip irrelevant query parameters. E.g. you might be
+familiar with the typical `?utm_*>=<randomtoken>` query parameters that are added to links of your website. Because they
+change the URL every single time, they also generate new cache entries every single time, eventually maybe even flooding
+your cache.
+
+As with the irrelevant cookies, Contao also manages a list of irrelevant query parameters which again, you may completely
+override by providing a list of allowed query parameters if you know all the query parameters your application ever
+needs. This is highly unlikely which is why there is also `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`.
+
+### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
+
+{{< version "4.10" >}}
+
+As with `COOKIE_REMOVE_FROM_DENY_LIST`, you can use `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` to remove an entry from the
+default deny list shipped with Contao. If you e.g. need the Facebook click identifier (`fbclid`) in your server side
+code, you may update your list like so:
+
+```
+QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
+```
+
+{{% notice warning %}}
+If you do so, make sure to disable caching by e.g. setting `Cache-Control: no-store` on this response if `fbclid` is
+present as otherwise you are back to having thousands of cache entries in your cache proxy.
+{{% /notice %}}
+    
+
+### `TRUSTED_PROXIES`
+
+When you deploy your application, you may be behind a load balancer or a reverse proxy (e.g. Varnish for caching).
+For the most part, this doesn't cause any problems with the Managed Edition. But, when a request passes through a
+proxy, certain request information is sent using either the standard `Forwarded` header or `X-Forwarded-*` headers.
+For example, instead of reading the `REMOTE_ADDR` header (which will now be the IP address of your reverse proxy),
+the user's true IP will be stored in a standard `Forwarded: for="…"` header or a `X-Forwarded-For` header.
+If you don't configure the Managed Edition to look for these headers, you'll get incorrect information about the
+client's IP address, whether or not the client is connecting via HTTPS, the client's port and the hostname being
+requested. Let's say your load balancer runs on IP `192.0.2.1`. You can trust that IP by setting `TRUSTED_PROXIES` 
+to `192.0.2.1`. You can also trust a whole IP range if you like to: `TRUSTED_PROXIES=192.0.2.0/24`. See the
+[Symfony Documentation on Proxies][SymfonyProxies] for more information.
+    
+
+### `TRUSTED_HOSTS`
+
+The same explanation as for `TRUSTED_PROXIES` and the IP example, also applies to `TRUSTED_HOSTS` when fetching the
+originally sent `Host` HTTP header. You would get the host name of your proxy but if you add your proxy host name
+to the list of trusted proxies, you will get the host name that was requested in the original request:
+`TRUSTED_HOSTS=my.proxy.com`
 
 
 ## E-Mail sending configuration
@@ -569,7 +773,7 @@ information in the official [Symfony documentation][SymfonyMailer].
 {{% notice warning %}}
 If your username or password contains special characters, they need to be "url encoded". There are several online
 services you can use to quickly url encode any string, e.g. [urlencoder.org](https://www.urlencoder.org/). Make sure to
-encode the username and password separately (not together with the colon).
+encode the username and password separately (not together with the colon). When using `config.yaml`, the respective encoding of a special character must be prefixed with `%`: So e. g. `%%23` for the special character `#`.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -582,8 +786,8 @@ framework:
     mailer:
         transports:
             application: smtps://exampleuser:examplepassword@example.com
-            website1: smtps://email@example.org:foobar@example.org
-            website2: smtps://email@example.de:foobar@example.de
+            website1: smtps://email%%40example.org:foobar@example.org
+            website2: smtps://email%%40example.de:foobar@example.de
 ```
 
 In the second step, the configured transports can be made available in the back end via the Contao framework 
@@ -646,8 +850,128 @@ php vendor/bin/contao-console cache:warmup --env=prod
 {{% /notice %}}
 
 
+### Send Emails Asynchronously
+
+Instead of letting Contao send emails immediately when a request is processed (e.g. when a form was submitted) the email can be sent 
+asynchronously by the server later. There are several reasons why this can be important:
+
+* It reduces the server response time of such requests (in some cases sending via a defined SMTP server can take several seconds).
+* It can reduce the load on the web server on high volume sites that also send a lot of emails.
+* It allows you to control the amount of emails in a given unit of time (e.g. if the SMTP server imposes a limit on that).
+* No emails will be lost in case the SMTP server happens to be unreachable at the moment.
+
+
+#### Email Spooling via Swiftmailer
+
+You can use the [Swiftmailer bundle's spooling feature][SwiftmaielrSpooling] in Contao **4.9**. In order to enable spooling the following
+needs to be configurted in your `config/config.yaml`:
+
+```yaml
+# config/config.yaml
+swiftmailer:
+    spool:
+        type: file
+        path: '%kernel.project_dir%/var/spool'
+```
+
+In this case we are using the _file_ spool. This means that when Contao sends an email it will be first stored in the given folder,
+`var/spool/` within the Contao installation folder in this case (keep in mind to not lose this folder if you are using deployments, so that
+no emails get lost).
+
+In order to actually send the emails the following command can be used:
+
+```bash
+php vendor/bin/contao-console swiftmailer:spool:send
+```
+
+Instead of manually executing this command a minutely cronjob should be configured on the server. If you want to limit the amount of emails
+per call you can use the `--message-limit` option:
+
+```bash
+php vendor/bin/contao-console swiftmailer:spool:send --message-limit=10
+```
+
+With a minutely cronjob this would mean that at most 600 emails are sent per hour in this case.
+
+
+#### Asynchronous Emails with Symfony Mailer
+
+{{< version "4.10" >}}
+
+The Swiftmaielr Bundle is not available anymore by default since Contao **4.10**. Instead the [Symfony Mailer][SymfonyMailer] component is
+used. In order to send emails asynchronously in this case we can make use of the [Symfony Messenger][SymfonyMessenger] component, which must
+be installed first via Composer:
+
+```bash
+composer require symfony/messenger
+```
+
+Now we can define a Messenger transport and routing for email messages. First we need to decide on the type of Messenger transport though.
+The component already provides different [transport types][SymfonyMessengerTransports]. In this case the 
+[Doctrine transport][SymfonyMessengerDoctrine] is a good fit since it will save our emails in the database first for later consumption.
+In order to enable asynchronous emails via Symfony Mailer [the following needs to be configured][SmyonfyMailerMessenger]:
+
+```yaml
+# config/config.yaml
+framework:
+    messenger:
+        transports:
+            async: 'doctrine://default'
+
+        routing:
+            'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
+```
+
+{{% notice "note" %}}
+Instead of defining the Messenger transport directly we can also use environment variables as usual, in case you want to use different
+transports in different environments (e.g. using the 
+[In Memory transport](https://symfony.com/doc/current/messenger.html#in-memory-transport) locally for testing).
+
+```yaml
+# config/config.yaml
+framework:
+    messenger:
+        transports:
+            async: "%env(MESSENGER_TRANSPORT_DSN)%"
+
+        routing:
+            'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
+```
+{{% /notice %}}
+
+In order to let the Messenger actually send the emails now we can use the following command:
+
+```bash
+php vendor/bin/contao-console messenger:consume --time-limit=1
+```
+
+Instead of manually executing this command a minutely cronjob should be configured on the server. If you want to limit the amount of emails
+per call you can use the `--limit` option:
+
+```bash
+php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
+```
+
+With a minutely cronjob this would mean that at most 600 emails are sent per hour in this case.
+
+{{% notice "info" %}}
+The commands described above use the `--time-limit=1` option. By default the `messenger:consume` process will run indefinitely, processing
+any new messages continuously. Therefore you would not need to run a separate cronjob. In order to make sure that this process is always
+running and is restarted on demand, different tools can be used on the server. However, in shared hosting environments such tools are
+usually not available. Thus, when using a cronjob you need to make sure that the process will only run a limited time when executed. The
+aforementioned `--time-limit=1` option will cause the process to exit after one second. You can find more details in the 
+[Symfony documentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
+{{% /notice %}}
+
+
+
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
 [InsertTags]: /en/article-management/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
 [LegacyRouting]: /en/layout/site-structure/configure-pages/#legacy-routing-mode
 [PhpSessionSettings]: https://www.php.net/manual/en/session.configuration.php
+[SwiftmailerSpooling]: https://symfony.com/doc/4.2/email/spool.html
+[SymfonyMessenger]: https://symfony.com/doc/current/messenger.html
+[SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
+[SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
+[SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async

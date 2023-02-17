@@ -391,6 +391,108 @@ class FilterPageTypeListener
 {{% /expand %}}
 
 
+## `contao.sitemap`
+
+{{% version "4.11" %}}
+
+This event is triggered in Contao's `SitemapController` when the sitemap is built. The event allows you to modify the XML DOM of the 
+sitemap. The event also stores for which website roots this sitemap was created.
+
+<table>
+<tr><th>Name</th><td><code>contao.sitemap</code></td></tr>
+<tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::SITEMAP</code></td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\SitemapEvent</code></td></tr>
+</table>
+<br>
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/SitemapListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\ContaoCoreEvents;
+use Contao\CoreBundle\Event\SitemapEvent;
+use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+
+/**
+ * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::SITEMAP)
+ */
+class SitemapListener
+{
+    public function __invoke(SitemapEvent $event): void
+    {
+        $sitemap = $event->getDocument();
+        $urlSet = $sitemap->childNodes[0];
+
+        $loc = $sitemap->createElement('loc', 'https://example.com/foobar');
+        $urlEl = $sitemap->createElement('url');
+        $urlEl->appendChild($loc);
+        $urlSet->appendChild($urlEl);
+    }
+}
+```
+{{% /expand %}}
+
+
+## `SendNewsletterEvent`
+
+{{% version "4.13" %}}
+
+This event is triggered for each newsletter mail and allows  you to customize
+the newsletter text and HTML content, prevent the submission or perform other
+related actions to the newsletter (e.g. logging).
+
+The event is triggered when sending a newsletter preview as well as when sending
+a newsletter to real recipients.
+
+<table>
+<tr><th>Name</th><td><code>\Contao\NewsletterBundle\Event\SendNewsletterEvent::class</code></td></tr>
+<tr><th>Constant</th><td>N/A</td></tr>
+<tr><th>Event</th><td><code>\Contao\NewsletterBundle\Event\SendNewsletterEvent</code></td></tr>
+</table>
+<br>
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/SendNewsletterListener.php
+namespace App\EventListener;
+
+use Contao\NewsletterBundle\Event\SendNewsletterEvent;
+use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+
+/**
+ * @ServiceTag("kernel.event_listener")
+ */
+class SendNewsletterListener
+{
+    public function __invoke(SendNewsletterEvent $event): void
+    {
+        // Skip sending under certain conditions
+        if (!preg_match('/@contao\.org/i', $event->getRecipientAddress())) {
+            $event->setSkipSending(true);
+        }
+
+        if ($event->isHtmlAllowed()) {
+            // Get the parsed HTML content of the newsletter
+            $html = $event->getHtml();
+
+            // Use the original, unparsed HTML content of the newsletter
+            $html = $event->getNewsletterValue('content') ;
+
+            // Get any data from the newsletter
+            $id = $event->getNewsletterValue('id');
+
+            // Get any data from the recipient
+            $greeting = $event->getRecipientValue('greeting');
+
+            // Overwrite the HTML with custom content
+            $event->setHtml($html);
+        }
+    }
+}
+```
+{{% /expand %}}
+
 [SymfonyEventDispatcher]: https://symfony.com/doc/current/event_dispatcher.html
 [ContaoHooks]: /framework/hooks
 [BackEndRoutes]: /guides/back-end-routes

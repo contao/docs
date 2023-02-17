@@ -43,7 +43,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class MyContentElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $template->text = $model->text;
         $template->url = $model->url;
@@ -62,7 +62,7 @@ content element like so:
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
     {type_legend},type;
-    {text_legend),text,url;
+    {text_legend},text,url;
 ';
 ```
 
@@ -80,6 +80,17 @@ case.
     <?php endif; ?>
 </div>
 ```
+
+Finally we add a label for our new content element, so it is nicely displayed in the back end:
+
+```php
+// contao/languages/en/default.php
+$GLOBALS['TL_LANG']['CTE']['my_content_element'][0] = 'My Content Element';
+$GLOBALS['TL_LANG']['CTE']['my_content_element'][1] = 'A short description for my new Content Element';
+```
+
+Labels for other languages follow the same pattern. The respective files will be located in `contao/languages/XX/` with 
+`XX` being the code for the language (e.g. `de`). 
 
 Find out more about [content elements][1] and [front end modules][2] in the framework
 documentation.

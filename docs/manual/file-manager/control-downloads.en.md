@@ -10,7 +10,7 @@ With Contao, you can easily restrict access to certain files and define permissi
 download them. This way you can e.g. create a protected download area for members.
 
 
-## Protect directory {#protect directory}
+## Protect directory
 
 When you create a new folder in Contao's File Manager, it is accessible via HTTP by default including all subfolders.
 If you want to protect a folder, make sure that "Public" is not selected when you create the folder. If a directory is 
@@ -26,7 +26,7 @@ would not be accessible to visitors.
 If the folder is not made public, no one can access the files with their internet browser and download them directly. 
 However, the files can still be accessed via either of the content elements "Download" or "Downloads".
 
-## Protected download element {#protect download element}
+## Protected download element
 
 You may need to restrict access to downloadable files to certain members or groups, which will still allow them to 
 download the files as before. To do this, either set up a protected page in the site structure, or create a protected content element that can 

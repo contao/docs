@@ -21,35 +21,63 @@ das mit zwei Doppelpunkten hinter das Schlüsselwort geschrieben wird, also z. 
 Mit diesen Insert-Tags kannst du Links auf andere Seiten oder Artikel erstellen. Du benötigst dazu lediglich die ID
 oder den Alias der Zielseite.
 
-| Insert-Tag                | Beschreibung                                                                                                                 |
-|:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-| `{{link::*}}`             | Dieses Tag wird mit dem HTML-Code für einen Link ersetzt. Der Parameter kann entweder die ID oder der Alias einer Seite sein, auch eine absolute URL ist möglich. |
-| `{{link::back}}`          | Dieses Tag wird mit einem Link zur der zuletzt besuchte Seite ersetzt. Kann auch als `{{link_open::back}}`, `{{link_url::back}}` und `{{link_title::back}}` verwendet werden.    |
-| `{{link::login}}`         | Dieses Tag wird mit einem Link zur Anmeldeseite des aktuellen Frontend-Benutzers (falls vorhanden) ersetzt.                  |
-| `{{link_open::*}}`        | Wird mit dem öffnenden Tag eines Links ersetzt. Der Parameter kann entweder die ID oder der Alias einer Seite sein, auch eine absolute URL ist möglich: `{{link_open::12}}Hier klicken{{link_close}}`.       |
-| `{{link_url::*}}`         | Dieses Tag wird mit der URL einer internen Seite ersetzt: `<a href="{{link_url::12}}">Hier klicken</a>`.                     |
-| `{{link_target::*}}`      | Dieses Tag wird mit ` target="_blank" rel="noreferrer noopener"` ersetzt, wenn es sich bei der angegebenen Seite um eine externe Weiterleitungsseite handelt, und dort eingestellt ist, dass sich der Link in einem neuen Fenster öffnen soll. |
-| `{{link_title::*}}`       | Dieses Tag wird mit dem Titel einer internen Seite ersetzt: `<a title="{{link_title::12}}">Hier klicken</a>`.                |
-| `{{link_name::*}}`        | Dieses Tag wird mit dem Namen einer internen Seite ersetzt: `<a>{{link_name::12}}</a>`.                                      |
-| `{{link_close}}`          | Wird mit dem schließenden Tag eines Links zu einer internen Seite ersetzt: `{{link_open::12}}Hier klicken{{link_close}}`.    |
-| `{{article::*}}`          | Dieses Tag wird mit einem Link zu einem Artikel ersetzt (ersetze * mit der ID oder dem Alias).                          |
-| `{{article_open::*}}`     | Wird mit dem öffnenden Tag eines Links zu einem Artikel ersetzt: `{{article_open::12}}Hier klicken{{link_close}}`.           |
-| `{{article_url::*}}`      | Dieses Tag wird mit der URL eines Artikels ersetzt: `<a href="{{article_url::12}}">Hier klicken</a>`.                        |
-| `{{article_title::*}}`    | Dieses Tag wird mit dem Titel eines Artikels ersetzt: `<a title="{{article_title::12}}">Hier klicken</a>`.                   |
-| `{{news::*}}`             | Dieses Tag wird mit einem Link zu einer Nachricht ersetzt (ersetze * mit der ID oder dem Alias).                        |
-| `{{news_open::*}}`        | Wird mit dem öffnenden Tag eines Links zu einer Nachricht ersetzt: `{{news_open::12}}Hier klicken{{link_close}}`.            |
-| `{{news_url::*}}`         | Dieses Tag wird mit der URL einer Nachricht ersetzt: `<a href="{{news_url::12}}">Hier klicken</a>`.                          |
-| `{{news_title::*}}`       | Dieses Tag wird mit dem Titel einer Nachricht ersetzt: `<a title="{{news_title::12}}">Hier klicken</a>`.                     |
-| `{{news_feed::*}}`        | Dieser Tag wird mit der URL zu einem News-Feed ersetzt (ersetze * mit der ID).                                         |
-| `{{event::*}}`            | Dieses Tag wird mit einem Link zu einem Event ersetzt (ersetze * mit der ID oder dem Alias).                            |
-| `{{event_open::*}}`       | Wird mit dem öffnenden Tag eines Links zu einem Event ersetzt: `{{event_open::12}}Hier klicken{{link_close}}`.               |
-| `{{event_url::*}}`        | Dieses Tag wird mit der URL eines Events ersetzt: `<a href="{{event_url::12}}">Hier klicken</a>`.                            |
-| `{{event_title::*}}`      | Dieses Tag wird mit dem Titel eines Events ersetzt: `<a title="{{event_title::12}}">Hier klicken</a>`.                       |
-| `{{calendar_feed::*}}`    | Dieser Tag wird mit der URL zu einem Kalender-Feed ersetzt (ersetze * mit der ID).                                     |
-| `{{faq::*}}`              | Dieses Tag wird mit einem Link zu einer häufig gestellten Frage ersetzt (ersetze * mit der ID oder dem Alias).          |
-| `{{faq_open::*}}`         | Wird mit dem öffnenden Tag eines Links zu einer Frage ersetzt: `{{faq_open::12}}Hier klicken{{link_close}}`.                 |
-| `{{faq_url::*}}`          | Dieses Tag wird mit der URL einer Frage ersetzt: `<a href="{{faq_url::12}}">Hier klicken</a>`.                               |
-| `{{faq_title::*}}`        | Dieses Tag wird mit dem Titel einer Frage ersetzt: `<a title="{{faq_title::12}}">Hier klicken</a>`.                          |
+| Insert-Tag             | Beschreibung                                                                                                                                                                                                                                           |
+|:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `{{link::*}}`          | Dieses Tag wird mit dem HTML-Code für einen Link ersetzt. Der Parameter kann entweder die ID oder der Alias einer Seite sein, auch eine absolute URL ist möglich. <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup> |
+| `{{link::back}}`       | Dieses Tag wird mit einem Link zur der zuletzt besuchte Seite ersetzt. Kann auch als `{{link_open::back}}`, `{{link_url::back}}` und `{{link_title::back}}` verwendet werden.                                                                          |
+| `{{link::login}}`      | Dieses Tag wird mit einem Link zur Anmeldeseite des aktuellen Frontend-Benutzers (falls vorhanden) ersetzt.                                                                                                                                            |
+| `{{link_open::*}}`     | Wird mit dem öffnenden Tag eines Links ersetzt. Der Parameter kann entweder die ID oder der Alias einer Seite sein, auch eine absolute URL ist möglich: `{{link_open::12}}Hier klicken{{link_close}}`.                                                 |
+| `{{link_url::*}}`      | Dieses Tag wird mit der URL einer internen Seite ersetzt: `<a href="{{link_url::12}}">Hier klicken</a>`.                                                                                                                                               |
+| `{{link_target::*}}`   | Dieses Tag wird mit ` target="_blank" rel="noreferrer noopener"` ersetzt, wenn es sich bei der angegebenen Seite um eine externe Weiterleitungsseite handelt, und dort eingestellt ist, dass sich der Link in einem neuen Fenster öffnen soll.         |
+| `{{link_title::*}}`    | Dieses Tag wird mit dem Titel einer internen Seite ersetzt: `<a title="{{link_title::12}}">Hier klicken</a>`.                                                                                                                                          |
+| `{{link_name::*}}`     | Dieses Tag wird mit dem Namen einer internen Seite ersetzt: `<a>{{link_name::12}}</a>`.                                                                                                                                                                |
+| `{{link_close}}`       | Wird mit dem schließenden Tag eines Links zu einer internen Seite ersetzt: `{{link_open::12}}Hier klicken{{link_close}}`.                                                                                                                              |
+| `{{article::*}}`       | Dieses Tag wird mit einem Link zu einem Artikel ersetzt (ersetze * mit der ID oder dem Alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                                                    |
+| `{{article_open::*}}`  | Wird mit dem öffnenden Tag eines Links zu einem Artikel ersetzt: `{{article_open::12}}Hier klicken{{link_close}}`.                                                                                                                                     |
+| `{{article_url::*}}`   | Dieses Tag wird mit der URL eines Artikels ersetzt: `<a href="{{article_url::12}}">Hier klicken</a>`.                                                                                                                                                  |
+| `{{article_title::*}}` | Dieses Tag wird mit dem Titel eines Artikels ersetzt: `<a title="{{article_title::12}}">Hier klicken</a>`.                                                                                                                                             |
+| `{{news::*}}`          | Dieses Tag wird mit einem Link zu einer Nachricht ersetzt (ersetze * mit der ID oder dem Alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                                                  |
+| `{{news_open::*}}`     | Wird mit dem öffnenden Tag eines Links zu einer Nachricht ersetzt: `{{news_open::12}}Hier klicken{{link_close}}`.                                                                                                                                      |
+| `{{news_url::*}}`      | Dieses Tag wird mit der URL einer Nachricht ersetzt: `<a href="{{news_url::12}}">Hier klicken</a>`.                                                                                                                                                    |
+| `{{news_title::*}}`    | Dieses Tag wird mit dem Titel einer Nachricht ersetzt: `<a title="{{news_title::12}}">Hier klicken</a>`.                                                                                                                                               |
+| `{{news_feed::*}}`     | Dieser Tag wird mit der URL zu einem News-Feed ersetzt (ersetze * mit der ID).                                                                                                                                                                         |
+| `{{event::*}}`         | Dieses Tag wird mit einem Link zu einem Event ersetzt (ersetze * mit der ID oder dem Alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                                                      |
+| `{{event_open::*}}`    | Wird mit dem öffnenden Tag eines Links zu einem Event ersetzt: `{{event_open::12}}Hier klicken{{link_close}}`.                                                                                                                                         |
+| `{{event_url::*}}`     | Dieses Tag wird mit der URL eines Events ersetzt: `<a href="{{event_url::12}}">Hier klicken</a>`.                                                                                                                                                      |
+| `{{event_title::*}}`   | Dieses Tag wird mit dem Titel eines Events ersetzt: `<a title="{{event_title::12}}">Hier klicken</a>`.                                                                                                                                                 |
+| `{{calendar_feed::*}}` | Dieser Tag wird mit der URL zu einem Kalender-Feed ersetzt (ersetze * mit der ID).                                                                                                                                                                     |
+| `{{faq::*}}`           | Dieses Tag wird mit einem Link zu einer häufig gestellten Frage ersetzt (ersetze * mit der ID oder dem Alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                                                                                                                        |
+| `{{faq_open::*}}`      | Wird mit dem öffnenden Tag eines Links zu einer Frage ersetzt: `{{faq_open::12}}Hier klicken{{link_close}}`.                                                                                                                                           |
+| `{{faq_url::*}}`       | Dieses Tag wird mit der URL einer Frage ersetzt: `<a href="{{faq_url::12}}">Hier klicken</a>`.                                                                                                                                                         |
+| `{{faq_title::*}}`     | Dieses Tag wird mit dem Titel einer Frage ersetzt: `<a title="{{faq_title::12}}">Hier klicken</a>`.                                                                                                                                                    |
+
+
+### Link-Parameter
+
+{{< version "4.13" >}}
+
+#### Parameter ::absolute
+
+`{{link::*`**`::absolute`**`}}`: Der Parameter erlaubt es, ein Insert-Tag-Link als absolute URL auszugeben.
+
+**HTML-Ausgabe**  
+Der Insert-Tag-Link mit Parameter generiert folgenden HTML-Code:
+
+```html
+<a href="https://www.example.com/news.html" title="…">…</a>
+```
+
+
+#### Parameter ::blank
+
+`{{link::*`**`::blank`**`}}`: Der Parameter erlaubt es, ein Insert-Tag-Link in einem neuen Fenster zu öffnen.
+
+**HTML-Ausgabe**  
+Der Insert-Tag-Link mit Parameter generiert folgenden HTML-Code:
+
+```html
+<a href="news.html" title="…" target="_blank" rel="noreferrer noopener">…</a>
+```
 
 
 ## Mitgliedereigenschaften
@@ -71,7 +99,7 @@ so z. B. mit seinem Namen ansprechen. Prinzipiell kannst du alle Feldnamen der T
 | `{{user::street}}`        | Dieses Tag wird mit dem Staßennamen des angemeldeten Mitglieds ersetzt.                                                                  |
 | `{{user::postal}}`        | Dieses Tag wird mit der Postleitzahl des angemeldeten Mitglieds ersetzt.                                                                 |
 | `{{user::city}}`          | Dieses Tag wird mit der Stadt des angemeldeten Mitglieds ersetzt.                                                                        |
-| `{{user::country}}`       | Dieses Tag wird mit dem Land des angemeldeten Mitglieds ersetzt.                                                                         |
+| `{{user::country}}`       | Dieses Tag wird mit dem Land des angemeldeten Mitglieds ersetzt (Mit `{{label::CNT:{{user::country}}}}` wird das Label z. B. "Deutschland" ausgegeben).                                                                         |
 | `{{user::username}}`      | Dieses Tag wird mit dem Benutzernamen des angemeldeten Mitglieds ersetzt.                                                                |
 
 
@@ -139,6 +167,7 @@ Lightbox-Bild einfügen.
 
 | Insert-Tag               | Beschreibung                                                                                         |
 |:-------------------------|:-----------------------------------------------------------------------------------------------------|
+| `{{fragment::*}}`        | Rendert die verschachtelten Insert-Tags als ESI-Fragment. (In **Contao 4.9** muss das Flag `\|uncached` stattdessen verwendet werden) |
 | `{{date}}`               | Dieses Tag wird mit dem aktuellen Datum gemäß des globalen Datumsformats ersetzt.                    |
 | `{{date::*}}`            | Dieses Tag wird mit dem aktuellen Datum gemäß eines individuellen Datumsformats ersetzt. Contao unterstützt alle Datums- und Zeitformate, die mit der [PHP-Funktion date](https://www.php.net/manual/de/function.date.php) geparst werden können (z. B. `{{date::d.m.Y}}`). |
 | `{{format_date::*::*}}`  | {{< version-tag "4.10" >}} Mit diesem Tag kann ein UNIX Timestamp oder eine _standardisierte Datumsangabe_ formatiert werden. Der erste Parameter ist der Timestamp bzw. das Datum. Der zweite Parameter ist das Datumsformat (siehe `{{date::*}}`) und optional. Ohne Angabe des Datumsformates wird das Datum gemäß dem globalen Datumsformat ausgegeben. Dieses Tag macht in Kombination mit anderen Tags oder auch Simple Tokens Sinn, um das jeweils ausgegebene Datum bzw. einen ausgegebenen Timestamp (neu) zu formatieren. <br>Beispiele: `{{format_date::{{user::tstamp}}::d.m.Y}}`, `{{format_date::##member_dateAdded##}}`. <br>Kann das Datumsformat nicht automatisch erkannt werden, kann stattdessen `{{convert_date::*::*::*}}` benutzt werden. |
@@ -150,6 +179,7 @@ Lightbox-Bild einfügen.
 | `{{email_close}}`        | Dieses Tag wird mit `</a>` ersetzt. Beispiel: `{{email_open::foo@example.org}}E-Mail Kontakt{{email_close}}`. |
 | `{{email_url::*}}`       | Dieses Tag wird nur durch die kodierte E-Mail-Adresse ersetzt.                                 |
 | `{{post::*}}`            | Mit diesem Tag kann eine angegebene Post-Variable ausgelesen und angezeigt werden. Kann z. B. genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen. |
+| `{{form_session_data::*}}` | {{< version-tag "5.0" >}} Dieses Tag kann genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen. Dies ersetzt den alten `{{post::*}}` Insert-Tag. |
 | `{{lang::*}}`            | Mit diesem Tag können fremdsprachige Wörter in einem Text markiert werden: `{{lang::fr}}Au revoir{{lang}}`. Dies wird ersetzt mit `<span lang="fr">Au revoir</span>`. |
 | `{{abbr::*}}`            | Abkürzungen in einem Text markieren: `{{abbr::World Wide Web}}WWW{{abbr}}`. Dies wird ersetzt mit `<abbr title="World Wide Web">WWW</abbr>`. |
 | `{{acronym::*}}`         | Akronyme in einem Text markieren: `{{acronym::Multipurpose Internet Mail Extensions}}MIME{{acronym}}`. Dies wird ersetzt mit `<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym>`. |
@@ -157,13 +187,13 @@ Lightbox-Bild einfügen.
 | `{{iflng::*}}`           | Dieses Tag wird komplett entfernt, wenn die Sprache der Seite nicht mit der Tag-Sprache übereinstimmt. Du kannst so sprachspezifische Bezeichnungen erstellen: `{{iflng::en}}Your name{{iflng::de}}Ihr Name{{iflng}}` {{% notice tip %}}
 Du kannst mit `en,de,fr` statt nur auf eine auch auf mehrere Sprachen testen. Zusätzlich kannst du auch `*` als Wildcard verwenden, was insbesondere bei Dialekten nützlich ist (bspw. gilt `de*` dann sowohl für `de_CH` als auch `de_AT`).
 {{% /notice %}} |
-| `{{ifnlng::*}}`          | Dieses Tag wird komplett entfernt, wenn die Sprache der Seite mit der Tag-Sprache (siehe auch Tipp bei `{{iflng}}` für weitere Optionen) übereinstimmt. Du kannst so sprachspezifische Bezeichnungen erstellen: `{{ifnlng::de}}Your name{{ifnlng}}{{iflng::de}}Ihr Name{{iflng}}` |
+| `{{ifnlng::*}}`          | Dieses Tag wird komplett entfernt, wenn die Sprache der Seite mit der Tag-Sprache (siehe auch Tipp bei `{{iflng}}` für weitere Optionen) übereinstimmt. Du kannst so sprachspezifische Bezeichnungen erstellen: `{{iflng::de}}Ihr Name{{iflng}}{{ifnlng::de}}Your name{{ifnlng}}` |
 | `{{image::*}}`           | Dieses Tag wird mit der Vorschauansicht eines Bildes ersetzt (wobei * eine Datenbank ID, eine UUID oder ein Pfad aus dem Dateisystem sein kann):<br>`{{image::58ca4a90-2d30-11e4-8c21-0800200c9a66?width=200&height=150}}`<br>**width**: Breite des Vorschaubildes,<br>**height**: Höhe des Vorschaubildes,<br>**alt**: Alternativer Text,<br>**class**: CSS-Klasse,<br>**rel**: rel-Attribut (z. B. "lightbox"),<br>**mode**: Modus ("proportional", "crop" oder "box"). |
 | `{{picture::*}}`         | Dieses Tag wird mit einem `<picture>`-Element und verschiedenen Bildgrößen ersetzt, abhängig von der verwendeten Bildgrößen-Konfiguration (wobei * eine Datenbank ID, eine UUID oder ein Pfad aus dem Dateisystem sein kann):<br>`{{picture::58ca4a90-2d30-11e4-8c21-0800200c9a66?size=1&template=picture_default}}`.<br>**width**: Breite des Vorschaubildes,<br>**height**: Höhe des Vorschaubildes,<br>**alt**: Alternativer Text,<br>**class**: CSS-Klasse,<br>**rel**: rel-Attribut (z. B. "lightbox"),<br>**mode**: Modus ("proportional", "crop" oder "box"),<br>**size**: ID einer Bildgröße (siehe Themes -&gt; Bildgrößen) ({{< version-tag "4.8" >}} **size** unterstützt die vordefinierten Bildgrößen aus `config.yml`, der Bezeichnung muss ein Unterstrich vorangestellt werden z.B. `_foo`),<br>**template**: Zu verwendendes Template (`picture_default`). |
 | `{{figure::*}}`          | {{< version-tag "4.11" >}} Dieses Tag wird mit einem `<figure>`-Element ersetzt, welches ein entsprechendes `<picture>`- und `<figcaption>`-Element (falls anwendbar) enthält. Wie bei `{{picture::*}}` kann der Parameter eine Datenbank ID, eine UUID oder ein Pfad aus dem Dateisystem sein. Als weitere URL-Parameter können alle vom [`FigureBuilder`][DevFigureBuilder] unterstützten Methoden eingesetzt werden:<br><br>`{{figure::58ca4a90-2d30-11e4-8c21-0800200c9a66?`<br><div style="padding-left: 2em">`size=1&`<br>`metadata[title]=Mein%20Bild&`<br>`enableLightbox=1&`<br>`options[attr][class]=main_figure&`<br>`template=image`</div>`}}`.<br><br>**size**: ID einer Bildgröße (siehe Themes -> Bildgrößen) oder vordefinierten Bildgrößen aus `config.yml`, der Bezeichnung muss ein Unterstrich vorangestellt werden z.B. `_foo`,<br>**metadata**: Erlaubt das Überschreiben von Metadaten (z. B. "alt", "title", "caption"),<br>**enableLightbox**: Generiert ein zweites Bild in Lightbox-Größe (siehe Themes -&gt; Lightbox) und fügt dem `<figure>`-Element einen Link hinzu,<br>**options**: Ein Array an Optionen, das ans Template übergeben wird und im Fall des Standard-Templates zum Setzen von HTML-Attributen genutzt werden kann,<br>**template**: Zu verwendendes Twig- oder Contao-Template (z.B. `@FooBundle/figure.html.twig` / `image`).<br><br>Alle Parameter müssen URL-kodiert angegeben werden. Siehe die  [FigureBuilder-Referenz][DevFigureBuilder] aus der Entwickler-Dokumentation für die vollständige Liste an Konfigurationsmöglichkeiten. |
 | `{{label::*}}`           | Dieses Tag wird mit einer Übersetzung ersetzt. Der erste Parameter ist der Name einer Sprachdatei oder einem Akronym (z. B. `CNT` für Länder oder `LNG` für Sprachen). Beispiele: `{{label::CNT:au}}` wird zu »Australien« und `{{label::tl_article:title:0}}` wird zu »Titel«. Beachte, dass innerhalb des Pfads zur Bezeichnung nur einfache Doppelpunkte verwendet werden. |
 | `{{version}}`            | Dieses Tag wird mit der verwendeten Contao-Version (z. B. 4.8.2) ersetzt.                            |
-| `{{request_token}}`      | Dieses Tag wird mit dem zur aktuellen Session gehörenden Request-Token ersetzt.                      |
+| `{{request_token}}`      | Dieses Tag wird mit dem zur aktuellen Session gehörenden Request-Token ersetzt (seit **Contao 4.13** veraltet, ab **Contao 5.0** nicht mehr verfügbar). |
 | `{{toggle_view}}`        | Dieses Tag wird mit einem Link ersetzt, welcher zwischen Mobile- und Desktop-Layout wechselt. Das mobile Seitenlayout ist **ab Contao 4.8** nicht mehr Teil der Core-Distribution. Wenn du die Funktion benötigst, musst du das Paket `contao/mobile-page-layout-bundle` installieren. |
 | `{{br}}`                 | Dieses Tag wird mit einem HTML <code>&lt;br&gt;</code> Element (Zeilenumbruch) ersetzt.              |
 | `{{asset::*::*}}`        | Mit diesem Tag können Pfade zu CSS und JavaScript Dateien aus Paketen eingebunden werden. Siehe die [Entwickler-Dokumentation][DevAssets]. |
@@ -174,10 +204,10 @@ Du kannst mit `en,de,fr` statt nur auf eine auch auf mehrere Sprachen testen. Zu
 
 Insert-Tags, die als Ausgabe eine ID oder Alias haben, können grundsätzlich verschachtelt werden.
 
-| Insert-Tag                       | Ausgabe                |
-|:---------------------------------|:-----------------------|
-| `{{link::{{page::id}}|absolute}}`| Generiert einen Link mit einer absoluten Ausgabe der aktuell aufgerufenen Seite.   |
-| `{{link_url::{{page::id}}}}#sprungmarke`| Generiert einen relativen Link zur aktuellen Seite (nützlich für Onepager). |
+| Insert-Tag | Ausgabe |
+|:-----------|:--------|
+| `{{link::{{page::id}}::absolute}}` | Generiert einen Link mit der absoluten URL zu der aktuell aufgerufenen Seite. (In **Contao 4.9** muss das Flag `\|absolute` anstatt des Parameters `::absolute` verwendet werden) |
+| `{{link_url::{{page::id}}}}#sprungmarke` | Generiert einen relativen Link mit einer Sprungmarke (Anker) zu einem Bereich in der aktuellen Seite (nützlich für Onepager). |
 
 {{% notice info %}}
 Man sollte darauf achten, keine endlosen Loops wie z. B. durch `{{insert_article::{{page::alias}}}}` zu generieren. Dies kann zum Absturz der Seite führen.
@@ -198,7 +228,7 @@ Verfügbare Flags:
 
 | Flag                | Beschreibung                                                             | Weitere Informationen                             |
 |:--------------------|:-------------------------------------------------------------------------|:--------------------------------------------------|
-| `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           |                                                   |
+| `uncached`          | Erhält das Tag beim Schreiben der Cache-Datei.                           | (seit **Contao 4.13** veraltet, ab **Contao 5.0** nicht mehr verfügbar) |
 | `refresh`           | Erstellt die Ausgabe bei jeder Anfrage neu.                              |                                                   |
 | `attr`              | Wandelt Sonderzeichen in Entities um, damit der Insert-Tag in einem HTML-Attribut (z. B. `title="…"`) verwendet werden kann. | siehe&nbsp;`StringUtil::specialcharsAttribute()` |
 | `urlattr`           | Wandelt Sonderzeichen in Entities um, gleich wie `attr`. Zusätzlich werden Doppelpunkte URL-enkodiert, um unerlaubte Protokolle wie `javascript:` zu verhindern. | siehe&nbsp;`StringUtil::specialcharsUrl()` |

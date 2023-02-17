@@ -184,7 +184,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         // Get the parent ID via a query parameter
         $parentId = $request->query->get('example_id');

@@ -5,7 +5,7 @@ mit denen jeweils die Benutzer und Gruppen des Backends und des Frontends verwal
 url: "benutzerverwaltung"
 aliases:
     - /de/benutzerverwaltung/
-weight: 5
+weight: 6
 ---
 
 Die Benutzerverwaltung ist eine eigene Kategorie in der Backend-Navigation und beinhaltet vier Module, mit denen 

@@ -63,7 +63,7 @@ vendor/bin/contao-console cache:warmup
 ## Template
 
 {{% expand "How can I display all variables of my template?" %}}
-The information about this can be found under [Show Template Data](/en/layout/templates/template-data/).
+The information about this can be found under [Show Template Data](/en/layout/templates/php/template-data/).
 {{% /expand %}}
 
 {{% expand "How can I configure the TinyMCE editor?" %}}
@@ -71,7 +71,29 @@ The information about this can be found under [TinyMCE Editor Configuration](/en
 {{% /expand %}}
 
 
+## Installation
+
+{{% expand "Notification: The database server is not running in strict mode!" %}}
+This is a hint how to activate the strict mode. More information can be found [here](../installation/system-requirements/).
+{{% /expand %}}
+
+
 ## Configuration and adjustment
+
+{{% expand "Can I change the directory »web« to »public«?" %}}
+Yes. You have to rename the directory. Check if the entry `"public-dir": "web"` exists in the "composer.json" and remove it. Then start `composer install` from the manager or the console. Set this directory as document root via the admin panel of your hosting provider.
+{{% /expand %}}
+
+{{% expand "How can I change the Contao backend path?" %}}
+{{< version-tag "4.13" >}} You can add the entry `route_prefix` in config.yml and then you have to empty the application cache once using the Contao Manager or the console.
+
+```yml
+# config/config.yml
+contao:
+    backend:
+        route_prefix: '/myadmin'
+```
+{{% /expand %}}
 
 {{% expand "No e-mail is sent via my Form, what do I have to do?" %}}
 Check the [SMTP details](/en/system/settings/#e-mail-sending-configuration) of your hoster in your `parameters.yml` or add them if missing.

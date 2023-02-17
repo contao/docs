@@ -69,7 +69,7 @@ Das Template »list_default.html5« ist umfangreich, da es im Zusammenspiel mit 
 Darstellung berücksichtigt. Für unser Beispiel, zusammen mit den noch folgenden Angaben hinsichtlich der 
 Kartendarstellung, vereinfachen wir das Template. 
 
-Erstelle dir in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/verwaltung/) ein 
+Erstelle dir in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/php/verwaltung/) ein 
 neues Template »list_default_member.html5« und benutze dieses anschließend in deinem Modul »Auflistung«:
 
 ```html
@@ -114,7 +114,7 @@ neues Template »list_default_member.html5« und benutze dieses anschließend in
 
 {{% notice note %}}
 Einfachheitshalber haben wir rudimentäre CSS-Angaben hier direkt im Template eingetragen. 
-Alternativ könntest du diese auch als [CSS-Asset](/de/layout/templates/assets/) hinterlegen.
+Alternativ könntest du diese auch als [CSS-Asset](/de/layout/templates/php/assets/) hinterlegen.
 {{% /notice %}}
 
 
@@ -348,7 +348,7 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 ```
 
 Zunächst referenzieren wir die benötigten CSS- und JS-Dateien (s. a.: 
-[CSS- und JavaScript-Assets](/de/layout/templates/assets/)). Weiterhin definieren wir einen HTML-Container mit der CSS-ID
+[CSS- und JavaScript-Assets](/de/layout/templates/php/assets/)). Weiterhin definieren wir einen HTML-Container mit der CSS-ID
 `MYMEMBERMAP` zur Kartendarstellung. In der PHP-Schleife erfassen wir über `tmpMemberMapData` u. a. die benötigten 
 Koordinaten und erzeugen im Anschluß hierüber ein JavaScript-Array zwecks Aufruf unserer Funktion `createMemberMap(arrMemberMapData)`.
 
@@ -441,7 +441,7 @@ des Browsers (Du könntest hierzu auch die
 
 ### Nützliche Leaflet Plugins {#nuetzliche-leaflet-plugins}
 
-Das Leaflet-Framework kann man mit [Plugins](https://leafletjs.com/plugins.html) erweitern. Hier eine kleine Auswahl:
+Das Leaflet-Framework kann man mit [Plugins](https://leafletjs.com/) erweitern. Hier eine kleine Auswahl:
 
 - [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen): Erweitert die Karte mit einer FullScreen Ansicht.
 - [Leaflet.TileLayer.Grayscale](https://github.com/Zverik/leaflet-grayscale): Manche Kartenanbieter verfügen über SW/Graustufen 

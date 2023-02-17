@@ -18,6 +18,7 @@ Archives are used to group and/or categorize calendars. Each archive can be rela
 
 To create a new calendar, click ![Create a new calendar](/de/icons/new.svg?classes=icon "Create a new calendar") **New**.
 
+
 ### Title and redirect page
 
 **Title:** The title of a calendar is used in the back end overview.
@@ -115,6 +116,7 @@ The URL is:
             <link>https://www.example.com/event/alias-of-the-appointment.html</link>
             <pubDate>…</pubDate>
             <guid>https://www.example.com/event/alias-of-the-appointment.html</guid>
+            <media:content url="https://www.example.com//assets/images/…/image.png" type="image/png" />
         </item>
         …
      </channel>
@@ -133,9 +135,11 @@ To create a new feed click on ![Manage calendar feeds](/de/icons/rss.svg?classes
 
 **Feed language:** Here you can enter the language of the [feed](http://www.rssboard.org/rss-language-codes#table).
 
+
 ### Calendars
 
 **Calendars:** Here you define which calendars are included in the feed.
+
 
 ### Feed settings
 
@@ -152,6 +156,34 @@ Contao installation. To make sure that the feed links to the correct domain, you
 
 **Feed description:** Here you can enter a description of the feed.
 
+
+### Image settings
+
+{{< version "4.13" >}}
+
+**Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
+
+| Relative format |  |
+| --------------- | --- |
+| Proportional | The longer side of the image is adapted to the given dimensions and the image is proportionally reduced. |
+| Fit to frame | The shorter side of the image is adjusted to the given dimensions and the image is proportionally reduced. |
+
+&nbsp;
+
+| Exact format |  |
+| ------------ | --- |
+| Important part | Preserves the important part of the image as specified in the file manager. |
+| Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
+| Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
+| Right / Top | Get the right part of a landscape image and the upper part of a portrait image. |
+| Left / Middle | Preserves the left part of a landscape image and the center part of a portrait image. |
+| Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
+| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
+| Left / Bottom | Contains the left part of a landscape image and the lower part of a portrait image. |
+| Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
+| Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
+
+
 ## Events
 
 This section explains how to create an event. Events are always sorted by date, so there are no icons to change the 
@@ -162,6 +194,7 @@ The events consist of the event settings ("Event list") and their contents ("Eve
 To create a new event, click on the desired archive ![Edit Calendar](/de/icons/edit.svg?classes=icon "Edit Calendar") 
 and then on![Create a new event](/de/icons/new.svg?classes=icon "Create a new event") **New**.
 
+
 ### Title and author
 
 **Title:** Here you can enter the title of the event.
@@ -170,6 +203,7 @@ and then on![Create a new event](/de/icons/new.svg?classes=icon "Create a new ev
 browser.
 
 **Author:** Here you can change the author of the event.
+
 
 ### Date and time
 
@@ -184,6 +218,7 @@ last a whole day.
 
 **End date:** Here you enter the end date of the event. If you do not fill in this field, Contao automatically assumes 
 that the event will last one day.
+
 
 ### Redirect target
 
@@ -208,6 +243,7 @@ not.
 | Article | The redirection is to a specific article. |
 | Custom URL | The redirection is to an individual URL. |
 
+
 ### Metadata
 
 {{< version "4.7" >}}
@@ -215,6 +251,7 @@ not.
 **Meta-title:** Here you can enter an individual meta-title to overwrite the default page title.
 
 **Meta description**: Here you can enter an individual meta description to override the default page description.
+
 
 ### Event details
 
@@ -224,6 +261,7 @@ not.
 
 **Event teaser:** Here you can enter a short summary of the event, which will be displayed e.g. with the module 
 "Event list", followed by a read more link.
+
 
 ### Image settings
 
@@ -278,6 +316,7 @@ texts are also evaluated by search engines and are therefore an important tool f
 
 **Image caption:** Here you can enter a caption.
 
+
 ### Recurrence settings
 
 If necessary, you can repeat an event at certain intervals. Possible entries are, for example, every four days, every 
@@ -290,6 +329,7 @@ two weeks, every five months or every year.
 **Recurrences:** If you enter a value greater than 0 here, the event will not be displayed after the specified number 
 of repetitions.
 
+
 ### Enclosures
 
 Enclosures, also called "Enclosures" in the context of RSS feeds, are files that are linked to an event; these files 
@@ -299,11 +339,13 @@ are both exported in the RSS feed and offered for download on the website.
 
 **Enclosures:** Here you select the files you want to link to the event.
 
+
 ### Expert Settings
 
 **CSS class:** Here you can add a CSS class to the event.
 
 **Disable comments:** Here you deactivate the comment function for an event.
+
 
 ### Publish settings
 
@@ -316,6 +358,7 @@ certain date.
 **Show from:** Here you activate the event on a specific date.
 
 **Show until:** Here you deactivate the event on a certain date.
+
 
 ## Content for events
 

@@ -97,7 +97,7 @@ you can still import it in your `config/config.yml` via
 
 ```yml
 imports:
-  - { resource: services.yml }
+    - { resource: services.yml }
 ```
 {{% /notice %}}
 

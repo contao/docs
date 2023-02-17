@@ -12,6 +12,11 @@ The `getSearchablePages` hook is triggered when the the search index is rebuilt.
 It passes the array of pages and the ID of the root page as arguments and
 expects an array of _absolute_ URLs as return value.
 
+{{% notice info %}}
+Using the `getSearchablePages` hook is deprecated since Contao **4.11** and will no longer work in Contao 5.0. Use the 
+[`contao.sitemap` event](/reference/events/#contao-sitemap) instead.
+{{% /notice %}}
+
 
 ## Parameters
 

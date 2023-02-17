@@ -144,7 +144,7 @@ deiner Contao Installation unterhalb von »files» zur Verfügung.
 Im Falle von »Google Fonts« wird dir hierzu zwar eine Download-Option angeboten, allerdings beinhaltet das jeweilige Download-
 Archiv lediglich Dateien in den Formaten ».ttf«. 
 
-Webapplikationen wie »[Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/fonts)» oder »[Web Font Loader](https://webfontloader.altmann.de/)« 
+Webapplikationen wie »[Google Webfonts Helper](https://gwfh.mranftl.com/fonts)» oder »[Web Font Loader](https://webfontloader.altmann.de/)« 
 stellen die Google Webfonts in verschiedenen Dateiformaten zur Verfügung. Darüber hinaus werden, abhängig von deiner Auswahl, die passenden CSS Angaben 
 via »`@font-face`« mitgeliefert. Diese CSS Angaben müssen deiner eigenen ».css« Datei hinzugefügt werden. Dabei ist es gleichgültig, ob du direkt mit CSS-Dateien arbeitest oder ob du diese über [Präprozessoren](/de/anleitungen/sass-less-integration/) wie »Sass/Less« erstellst. 
 

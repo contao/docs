@@ -64,7 +64,7 @@ vendor/bin/contao-console cache:warmup
 ## Template
 
 {{% expand "Wie kann ich alle Variablen meines Templates anzeigen?" %}}
-Die Information hierzu findest du unter [Template-Daten anzeigen](/de/layout/templates/data/).
+Die Information hierzu findest du unter [Template-Daten anzeigen](/de/layout/templates/php/data/).
 {{% /expand %}}
 
 {{% expand "Wie kann ich den TinyMCE-Editor konfigurieren?" %}}
@@ -72,7 +72,34 @@ Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anlei
 {{% /expand %}}
 
 
+## Installation
+
+{{% expand "Meldung: Ihr Datenbank-Server läuft nicht im Strict-Mode!" %}}
+Es handelt sich um einen Hinweis wie du den Strict Mode aktivieren kannst. Weitere Informationen findest du 
+[hier](../installation/systemvoraussetzungen/#mysql-mindestanforderungen).
+{{% /expand %}}
+
+
 ## Konfiguration und Einstellung
+
+{{% expand "Kann ich das Verzeichnis »web« nach »public« ändern?" %}}
+Ja. Du mußt dazu das Verzeichnis umbenennen. Überprüfe ob in der »composer.json« der Eintrag `"public-dir": "web"` existiert 
+und entferne diesen. Starte anschließend über den Manager oder der Konsole `composer install`. Setze dann dieses Verzeichnis 
+als Document Root über das Admin-Panel deines Hosting-Providers.
+{{% /expand %}}
+
+{{% expand "Wie kann ich den Contao Backend-Pfad ändern?" %}}
+{{< version-tag "4.13" >}} Du kannst in der [config.yml](/de/system/einstellungen/#config-yml) den Eintrag `route_prefix` hinzufügen.
+Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
+einmalig den Anwendungs-Cache leeren.
+
+```yml
+# config/config.yml
+contao:
+    backend:
+        route_prefix: '/myadmin'
+```
+{{% /expand %}}
 
 {{% expand "Es wird keine E-Mail über mein Formular versendet, was muss ich machen?" %}}
 Überprüfe in der `parameters.yml` die [SMTP-Angaben](/de/system/einstellungen/#e-mail-versand-konfiguration) deines Hosters oder 

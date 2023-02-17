@@ -1,5 +1,5 @@
 ---
-title: 'Front-end modules'
+title: 'Front end modules'
 description: 'The "Calendar" extension contains four new frontend modules which you can configure as usual via the module management.'
 aliases:
     - /en/core-extensions/calendar/frontend-modules/
@@ -8,11 +8,11 @@ weight: 20
 
 Now that you know how to manage calendars and events in the back end, we'll explain how to display this content in the front end. The "Calendar" extension contains four front end modules, which you can configure as usual in module management.
 
-![Calendar modules](/de/core-extensions/calendar/images/en/calendar-module.png?classes=shadow)
+![Calendar modules](/de/core-extensions/calendar/images/de/kalender-module.png?classes=shadow)
 
 ## Calendar
 
-The frontend module "Calendar" adds a calendar to the website, in which the events of one or more calendars are displayed.
+The front end module "Calendar" adds a calendar to the website, in which the events of one or more calendars are displayed.
 
 ![The calendar module in the frontend](/de/core-extensions/calendar/images/de/das-kalender-modul-im-frontend.png?classes=shadow)
 
@@ -41,8 +41,8 @@ The following calendar templates are available by default:
 
 **Individual template:** Here you can overwrite the standard template.
 
-**HTML OutputThe**  
- frontend module generates the following HTML code:
+**HTML Output**  
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -111,9 +111,12 @@ On a single page there can only be one "reader module" at a time, regardless of 
 
 **Calendar**: Here you can define in which calendars the requested event should be searched. Events from calendars that are not selected will not be displayed, even if the URL is correct and the entry is entered correctly. This feature is especially important in multi-domain operation with several independent websites.
 
-{{< version "4.7" >}}
+{{< version-tag "4.7" >}} **Hide running events:** Here you can hide the running events in the list of future events.
 
-**Hide running events:** Here you can hide the running events in the list of future events.
+{{< version-tag "4.13" >}} **Overview page:** Here you can select a page to set a link in the detail view back to the
+overview page.
+
+{{< version-tag "4.13" >}} **Custom label:** Here you can change the name of the link to the overview page change.
 
 ### Template settings
 
@@ -137,7 +140,7 @@ On a single page there can only be one "reader module" at a time, regardless of 
 **Comment template:** Here you can select the comment template.
 
 **HTML output**  
- The front end module generates the following HTML code:
+The front end module generates the following HTML code:
 
 ```html
 <div class="mod_eventreader block">
@@ -163,7 +166,7 @@ For details on how to mark up the comments, see the Comments section.
 
 ## Event list
 
-The frontend module "Event List" is used to list all events of a certain period. In connection with the module "Event list menu" you can search all available events by day, month or year.
+The front end module "Event List" is used to list all events of a certain period. In connection with the module "Event list menu" you can search all available events by day, month or year.
 
 ### Module configuration
 
@@ -193,9 +196,7 @@ Caution**:** In most cases, this functionality should not be used for event list
 
 **Ignore URL parameters:** If you select Ignore URL parameters here, the period will not be changed based on thedate/month/year parameters in the URL.
 
-{{< version "4.7" >}}
-
-**Hide running events:** Here you can hide the running events in the list of future events.
+{{< version-tag "4.7" >}} **Hide running events:** Here you can hide the running events in the list of future events.
 
 ### Template settings
 
@@ -214,8 +215,8 @@ Caution**:** In most cases, this functionality should not be used for event list
 
 **Image size:** Here you can specify the desired image size.
 
-**HTML OutputThe**  
- frontend module generates the following HTML code:
+**HTML Output**  
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
@@ -255,7 +256,7 @@ Caution**:** In most cases, this functionality should not be used for event list
 
 ## Eventlist menu {#eventlist-menu}
 
-The frontend module "Event List Menu" adds a menu to the website, with which you can call up the events of the individual days, months or years.
+The front end module "Event List Menu" adds a menu to the website, with which you can call up the events of the individual days, months or years.
 
 ### Module configuration
 
@@ -277,8 +278,8 @@ The frontend module "Event List Menu" adds a menu to the website, with which you
 
 **Individual template**: Here you can overwrite the default template.
 
-**HTML OutputThe**  
- frontend module generates the following HTML code:
+**HTML Output**  
+The front end module generates the following HTML code:
 
 ```html
 <!-- indexer::stop -->
