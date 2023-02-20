@@ -235,7 +235,7 @@ If you are using Twig, there are three supported ways to get figures/images into
    {{% notice info %}}
    The macros accept an *options* object as the second argument. This can contain the same data as a `Figure`'s option
    property and will take precedence over already set values. You can for instance use these options to set custom HTML
-   properties on the various tags. Have a look at the [macro definitions](https://github.com/contao/contao/blob/5.0/core-bundle/templates/Image/Studio/_macros.html.twig)
+   properties on the various tags. Have a look at the [macro definitions](https://github.com/contao/contao/blob/5.x/core-bundle/templates/Image/Studio/_macros.html.twig)
    for more information.  
    {{% /notice %}}
    
@@ -297,8 +297,8 @@ If you are using Twig, there are three supported ways to get figures/images into
 
 
 [Studio]: https://github.com/contao/contao/tree/5.0/core-bundle/src/Image/Studio
-[TwigTemplates]: https://github.com/contao/contao/blob/5.0/core-bundle/templates/Image/Studio
-[MacroDefinitions]: https://github.com/contao/contao/blob/5.0/core-bundle/templates/Image/Studio/_macros.html.twig
+[TwigTemplates]: https://github.com/contao/contao/blob/5.x/core-bundle/templates/Image/Studio
+[MacroDefinitions]: https://github.com/contao/contao/blob/5.x/core-bundle/templates/Image/Studio/_macros.html.twig
 [PropertyAccess]: https://symfony.com/doc/current/components/property_access.html
 [SizeArray]: /framework/image-processing/image-sizes/#size-array
 [FigureBuilderOptionsReference]: /framework/image-processing/image-studio/#setting-options
