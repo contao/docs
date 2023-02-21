@@ -248,7 +248,7 @@ When posting a Contao news entry as a Facebook post, the extension either uses t
 
 The following example appends the news article's URL to any photo post:
 
-{{< tabs groupId="registering-hooks" >}}
+{{< tabs groupId="four-way-service-registration" >}}
 {{% tab name="Attribute" %}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php

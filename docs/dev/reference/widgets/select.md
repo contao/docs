@@ -32,6 +32,7 @@ This table only shows the options relevant to the core functionality of this wid
 | `eval.includeBlankOption` | true/false (default) `bool` | Includes a blank option (useful in conjunction with `mandatory` fields) |
 | `eval.blankOptionLabel` | `string` (default `-`) | The label of the blank option |
 | `eval.chosen` | true/false (default) `bool` | Enhance the select menu with Chosen.js |
+| `eval.disabled` | true/false (default) `bool` | Disables the input field |
 
 The `options` array – either set directly or returned by an options callback – can have different structures depending on what you are going for:
 

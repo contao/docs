@@ -493,7 +493,7 @@ class Example
 ```
 
 
-[SimpleTokenUsage]: https://github.com/contao/contao/blob/5.0/core-bundle/tests/String/SimpleTokenParserTest.php
+[SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
 [RequestTokens]: /framework/request-tokens/

@@ -556,7 +556,7 @@ Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN`
 
 Das folgende Beispiel zeigt, wie man die E-Mail-Adresse des Systemadministrators über eine eigene Umgebungsvariable in der Datei `.env` definiert und in der Datei `config.yml` referenziert.
 
-```yaml
+```ini
 # .env
 MYADMIN_EMAIL=admin@demo.de
 ```
@@ -589,7 +589,7 @@ Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.db
 ### `MAILER_DSN`
 
 Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariable namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
-Siehe die [Symfony Swiftmailer Bundle Dokumentation][SymfonySwiftmailer] für weitere Informationen.
+Siehe die [Symfony Mailer Dokumentation][SymfonyMailer] für weitere Informationen.
 
 {{% notice note %}}
 Die Variable hieß bisher `MAILER_URL`. Ab Contao 5.0 wird nur noch `MAILER_DSN` unterstützt.

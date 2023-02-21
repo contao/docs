@@ -323,9 +323,9 @@ The driver can implement any of the following interfaces:
 When creating your own driver it is probably best to just have a look at the existing
 drivers in order to get an idea on what is possible and how it needs to be done:
 
-* [DC_File](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_File.php)
-* [DC_Folder](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_Folder.php)
-* [DC_Table](https://github.com/contao/contao/blob/5.0/core-bundle/contao/drivers/DC_Table.php)
+* [DC_File](https://github.com/contao/contao/blob/5.x/core-bundle/contao/drivers/DC_File.php)
+* [DC_Folder](https://github.com/contao/contao/blob/5.x/core-bundle/contao/drivers/DC_Folder.php)
+* [DC_Table](https://github.com/contao/contao/blob/5.x/core-bundle/contao/drivers/DC_Table.php)
 
 
 [1]: /framework/hooks/

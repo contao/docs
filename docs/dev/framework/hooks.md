@@ -63,7 +63,7 @@ Using attributes or annotations means it is only necessary to create one file fo
 way of automatically registering services under the `App\` namespace within the `src/` folder.
 {{% /notice %}}
 
-{{< tabs groupId="registering-hooks" >}}
+{{< tabs groupId="four-way-service-registration" >}}
 {{% tab name="Attribute" %}}
 {{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
 since **PHP 8**) with which you can tag your service to be registered as a hook.
@@ -185,7 +185,7 @@ tagged with `contao.hook` and no method name is given, the `__invoke` method wil
 be called automatically. This also means that you can define the service annotation
 on the class, instead of a method:
 
-{{< tabs groupId="registering-hooks" >}}
+{{< tabs groupId="four-way-service-registration" >}}
 {{% tab name="Attribute" %}}
 ```php
 // src/EventListener/ParseArticlesListener.php
