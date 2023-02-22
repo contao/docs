@@ -276,15 +276,13 @@ a translation from domain other than `default`:
 ### Translations within Twig Templates
 
 Contao's translations can also be accessed just as any other Symfony translation
-using Twig tags and filters:
+using Twig tags and filters. For more details refer to the
+[translations section](/framework/templates/creating-templates#translations) of
+the Contao Twig documentation.
 
 ```twig
-{# templates/my_template.html5.twig #}
 {{ 'MSC.goBack'|trans({}, 'contao_default') }}
 ```
-
-See Symfony's documentation on [translations in templates](https://symfony.com/doc/current/translation/templates.html)
-for more details.
 
 
 [ContaoHistory]: /#history
