@@ -32,9 +32,9 @@ Prüfen ob `meine_variable` einen Inhalt hat und diesen ausgeben (If-Abfrage)
     <p>{{ meine_variable }}</p>
 {% endif %}
 ```
+
 Die Twig Syntax ist [gut dokumentiert](https://twig.symfony.com/doc/3.x/). Als Startpunkt ist der
 Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templates.html) zu empfehlen. 
 
-Du möchtest schnell etwas ausprobieren?
-Verwende dazu [Twig fiddle](https://twigfiddle.com/).
+Du möchtest schnell etwas ausprobieren? Dazu kannst Du [Twig fiddle](https://twigfiddle.com/) verwenden.
 

@@ -15,7 +15,8 @@ Bei der Auswahl des Templates ist die Struktur in eckigen Klammern hinter dem Te
 Contao unterstützt Dich bei der Strukturierung der Templates. Willst Du eines der neuen Twig-Templates anpassen, dann
 wird das Template automatisch im richtigen Unterordner angelegt.
 
-### Beispiel
+Beispiel:
+
 
 Du möchtest das Template für das Textelement anpassen. Dazu wählst Du aus den Original-Templates das Template
 `text [content_element/text.html.twig]` aus. Das Template wird Dir automatisch im Ordner `/template/content_element`
@@ -31,7 +32,7 @@ Willst Du mehrere Varianten eines Twig-Templates zur Verfügung stellen, dann m�
 in einem Unterordner der neuen Struktur abgelegt werden, der dem Namen des anzupassenden Templates entspricht. Der Name
 des Varianten-Templates ist vollkommen frei wählbar.
 
-#### Beispiel
+Beispiel:
 
 Du möchtest mehrere Varianten des Textelements bereitstellen.
 Dazu legst Du innerhalb von `/templates/content_element` einen Ordner `text` an. Innerhalb des neuen Ordners
@@ -45,7 +46,7 @@ Eine Zuordnung der Templates zu einem bestimmten Theme ist für Twig-Templates n
 {{% /notice %}}
 
 {{% notice note %}}
-Eventuell steht noch nicht für jedes Modul/Inhaltselement ein Twig-Template zur Verfügung. In diesen Fällen werden
+Derzeit steht noch nicht für jedes Modul/Inhaltselement ein Twig-Template zur Verfügung. In diesen Fällen werden
 weiterhin die bisherigen (PHP/Legacy) Templates herangezogen.
 Auch diese Templates können durch Twig-Templates angepasst werden. Das entsprechende Twig-Template muss dazu direkt im
 Ordner `/templates` abgelegt werden. Es hat den gleichen Namen, wie das Original-Template und die Endung `.html.twig`.
