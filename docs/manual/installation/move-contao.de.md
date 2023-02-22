@@ -77,28 +77,23 @@ Gib dein Passwort ein, wenn du danach gefragt wirst.
 {{< /tabs >}}
 
 
-## Einstellungen notieren
-Deine Einstellungen unter `System / Einstellungen` oder im Seitenroot notierst du dir am besten und trägst sie später erneut ein.
-
-{{% notice tip %}}
-Wenn du deine [Einstellungen in einer Umgebungsvariablen ablegst](https://docs.contao.org/manual/de/system/einstellungen/#umgebungsvariablen), entfällt dieser Schritt.
-{{% /notice %}} 
-
 ## Dateien übertragen
 Die folgenden Dateien und Ordner müssen vom Quell- zum Zielserver übertragen werden:
 
-- `files`
-- `templates`
-- `composer.json`
+- `files`                           (deine Dateien)
+- `templates`                       (angepasste templates)
+- `composer.json`                   (die gewünschten Abhängigkeiten)
+- `composer.lock`                   (die aktuell installierten Abhängigkeiten)
+- `system/config/localconfig.php`   (deine Einstellungen)
 
 Die folgenden Dateien und Ordner sollten - sofern genutzt - vom Quell- zum Zielserver übertragen werden:
 
-- `config`  (bzw. **vor Contao 4.8** `app/config/`)
+- `config`  (bzw. **vor Contao 4.8** `app/config/`)         
 - `contao`  (bzw. **vor Contao 4.8** `app/Resources/contao/`
 - `src`
 - `.env*`
 
-Falls du noch alte Erweiterungen unter `system/modules` abgelegt hast, alte Konfigurationen unter `system/config` angelegt hast, müssen diese auch auf deinen Server übertragen werden.
+Falls du noch alte Erweiterungen unter `system/modules` abgelegt hast oder alte Konfigurationen unter `system/config` angelegt hast, müssen diese auch auf deinen Server übertragen werden.
 
 Du kannst dazu entweder einen FTP-Client verwenden oder – falls du die Konsole bevorzugst – das Programm `scp`:
 
