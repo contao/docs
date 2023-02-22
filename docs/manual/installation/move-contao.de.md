@@ -93,7 +93,7 @@ Die folgenden Dateien und Ordner sollten - sofern genutzt - vom Quell- zum Ziels
 - `src`
 - `.env*`
 
-Falls du noch alte Erweiterungen unter `system/modules` abgelegt hast oder alte Konfigurationen unter `system/config` angelegt hast, müssen diese auch auf deinen Server übertragen werden.
+Falls du noch alte Erweiterungen unter `system/modules` oder alte Konfigurationen unter `system/config` angelegt hast, müssen diese auch auf deinen Server übertragen werden.
 
 Du kannst dazu entweder einen FTP-Client verwenden oder – falls du die Konsole bevorzugst – das Programm `scp`:
 
