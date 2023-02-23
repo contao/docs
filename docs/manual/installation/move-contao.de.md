@@ -80,15 +80,20 @@ Gib dein Passwort ein, wenn du danach gefragt wirst.
 ## Dateien übertragen
 Die folgenden Dateien und Ordner müssen vom Quell- zum Zielserver übertragen werden:
 
-- `files`
-- `templates`
-- `composer.json`
-- `composer.lock`
+- `files`                           (deine Dateien)
+- `templates`                       (angepasste templates)
+- `composer.json`                   (die gewünschten Abhängigkeiten)
+- `composer.lock`                   (die aktuell installierten Abhängigkeiten)
+- `system/config/localconfig.php`   (deine Einstellungen)
 
-Falls du noch alte Erweiterungen unter `system/modules` abgelegt hast, alte Konfigurationen unter `system/config`,
-eine `config.yml` im Verzeichnis `config/` (bzw. **vor Contao 4.8** `app/config/`) oder Contao Anpassungen unter
-`contao/` (bzw. **vor Contao 4.8**  `app/Resources/contao/`) angelegt hast, müssen diese auch auf deinen Server
-übertragen werden.
+Die folgenden Dateien und Ordner sollten - sofern genutzt - vom Quell- zum Zielserver übertragen werden:
+
+- `config`  (bzw. **vor Contao 4.8** `app/config/`)         
+- `contao`  (bzw. **vor Contao 4.8** `app/Resources/contao/`
+- `src`
+- `.env*`
+
+Falls du noch alte Erweiterungen unter `system/modules` oder alte Konfigurationen unter `system/config` angelegt hast, müssen diese auch auf deinen Server übertragen werden.
 
 Du kannst dazu entweder einen FTP-Client verwenden oder – falls du die Konsole bevorzugst – das Programm `scp`:
 
