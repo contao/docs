@@ -34,7 +34,6 @@ and is configured through annotations.
 // src/Controller/BackendController.php
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment as TwigEnvironment;
@@ -45,7 +44,7 @@ use Twig\Environment as TwigEnvironment;
  *     defaults={"_scope": "backend"}
  * )
  */
-class BackendController extends AbstractController
+class BackendController
 {
     private $twig;
     

@@ -92,7 +92,7 @@ With the following insert tags you can read certain properties of a logged in fr
 | `{{user::street}}` | This tag will be replaced with the street name of the registered member. |
 | `{{user::postal}}` | This tag will be replaced with the postal code of the registered member. |
 | `{{user::city}}` | This tag will be replaced with the city of the registered member. |
-| `{{user::country}}` | This tag will be replaced with the country of the logged in member. |
+| `{{user::country}}` | This tag will be replaced with the country of the logged in member (With `{label::CNT:{{user::country}}}}` the label will be output e.g. "Germany"). |
 | `{{user::username}}` | This tag is replaced with the username of the logged in member. |
 
 
@@ -169,6 +169,7 @@ The following insert tags allow you to perform various tasks, such as inserting 
 | `{{email_close}}` | This tag is replaced with `</a>`. Example: `{{email_open::foo@example.org}}Contact us{{email_close}}`. |
 | `{{email_url::*}}` | This tag is replaced only by the encoded email address. |
 | `{{post::*}}` | This tag can be used to read and display a specified post variable. Can be used, for example, to access individual fields of a sent form. |
+| `{{form_session_data::*}}` | {{< version-tag "5.0" >}} This tag can be used to access individual fields of a submitted form. This replaces the old `{{post::*}}` insert tag. |
 | `{{lang::*}}` | With this tag foreign words in a text can be marked: `{{lang::fr}}Au revoir{{lang}}`. This is replaced with `<span lang="fr">Au revoir</span>`. |
 | `{{abbr::*}}` | Mark abbreviations in a text: `{{abbr::World Wide Web}}WWW{{abbr}}`. This is replaced with `<abbr title="World Wide Web">WWW</abbr>`. |
 | `{{acronym::*}}` | Select acronyms in a text: `{{acronym::Multipurpose Internet Mail Extensions}}MIME{{acronym}}`. This will be replaced with `<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym>`. |

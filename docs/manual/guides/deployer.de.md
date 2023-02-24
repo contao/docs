@@ -18,10 +18,11 @@ Diese Anleitung bezieht sich auf die Deployer-Version >=7.0 und Contao-Version >
 
 Zuerst musst du Deployer installieren: [https://deployer.org/docs/][1]
 
-Du kannst Deployer entweder global oder per Projekt (mit Composer) installieren. Der Kommandozeilenbefehl lautet
-entsprechend `dep` oder `./vendor/bin/dep`.
+```bash
+composer require --dev deployer/deployer
+```
 
-Bevor du weitermachst, stelle sicher, dass du mindestens Version _7.0.0-rc.5_ installiert hast (`dep --version`).
+Bevor du weitermachst, stelle sicher, dass du mindestens Version _7.0_ installiert hast (`vendor/bin/dep --version`).
 
 Jetzt kannst du deine `deploy.php`-Datei in dem Projekt erstellen:
 
@@ -108,13 +109,14 @@ für die Konfiguration findest du hier: [nutshell-framework/deployer-recipes][4]
 
 ## Webserver einrichten
 
-Wie du aus der [Contao-Doku][5] weißt, musst du den Document-Root auf `/public` (bzw. `/web`) einstellen. Die Idee
-hinter Deployer ist, dass es keine Downtime bei Updates gibt. Deswegen werden rollierende Symlinks eingesetzt. Den
+Wie du aus der [Contao-Doku][5] weißt, musst du den Document-Root auf `/public` (bzw. `/web`) einstellen. Die Idee hinter 
+Deployer ist, dass es eine möglichst kurze Downtime bei Updates gibt. Deswegen werden rollierende Symlinks eingesetzt. Den
 Document-Root von deinem vHost musst du entsprechend auf `/current/public` (bzw. `/current/web`) einstellen. Ein
 komplettes Beispiel für einen Document-Root wäre: `/var/www/foobar/html/example.org/current/public`.
 
-Contao migriert langsam zum `/public`-Ordner als Web-Root. Wenn du in Contao 4.13 noch den `/web`-Ordner verwendest,
-dann definiere diesen entsprechend, damit Deployer das auch weiß.
+{{% notice "info" %}}
+Contao verwendet standardmäßig den `/public`-Ordner als Web-Root. Wenn deine Contao-Installation noch den alten `/web`-Ordner
+verwendet, dann definiere diesen entsprechend in `composer.json`, damit Deployer das auch weiß.
 
 ```json
 {
@@ -123,7 +125,7 @@ dann definiere diesen entsprechend, damit Deployer das auch weiß.
   }
 }
 ```
-
+{{% /notice %}}
 
 ## Projektspezifische Tasks
 
@@ -147,7 +149,7 @@ before('deploy', 'encore:compile');
 
 ## Und nun: Deployen!
 
-Nachdem wir alles konfiguriert haben, können wir jetzt `dep deploy` ausführen und das Projekt auf den Webserver
+Nachdem wir alles konfiguriert haben, können wir jetzt `vendor/bin/dep deploy` ausführen und das Projekt auf den Webserver
 deployen.
 
 

@@ -179,7 +179,7 @@ $GLOBALS['TL_PERMISSIONS'][] = 'my_permissions';
 // contao/dca/tl_user.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
-$GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
+$GLOBALS['TL_DCA']['tl_user']['fields']['my_permissions'] = [
     'exclude' => true,
     'inputType' => 'checkbox',
     'eval' => ['multiple' => true],
@@ -190,15 +190,9 @@ $GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
     'sql' => ['type' => 'blob', 'notnull' => false],
 ];
 
-	'exclude'                 => true,
-	'inputType'               => 'checkbox',
-	'foreignKey'              => 'tl_calendar.title',
-	'eval'                    => array('multiple'=>true),
-	'sql'                     => "blob NULL"
-
 PaletteManipulator::create()
     ->addLegend('my_legend', null)
-    ->addField('my_permission', 'my_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('my_permissions', 'my_legend', PaletteManipulator::POSITION_APPEND)
     ->applyToPalette('extend', 'tl_user')
     ->applyToPalette('custom', 'tl_user')
 ;
@@ -220,7 +214,7 @@ $GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
 
 PaletteManipulator::create()
     ->addLegend('my_legend', null)
-    ->addField('my_permission', 'my_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('my_permissions', 'my_legend', PaletteManipulator::POSITION_APPEND)
     ->applyToPalette('default', 'tl_user_group')
 ;
 ```

@@ -55,5 +55,5 @@ class GetPageLayoutListener
 
 ## References
 
-* [\Contao\PageRegular#L244-L252](https://github.com/contao/contao/blob/5.0/core-bundle/contao/pages/PageRegular.php#L244-L252)
+* [\Contao\PageRegular#L244-L252](https://github.com/contao/contao/blob/5.x/core-bundle/contao/pages/PageRegular.php#L244-L252)
 * https://github.com/contao/core/issues/4736

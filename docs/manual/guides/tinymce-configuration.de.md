@@ -85,7 +85,7 @@ Template löschen. Es wird dann wieder die Contao-Standardkonfiguration des Edit
 
 Im Bereich »`Einstellungen > Sicherheitseinstellungen`« kannst du [Erlaubte HTML-Tags](/de/system/einstellungen/#sicherheitseinstellungen) definieren. Es kann vorkommen, dass diese Angaben allein nicht ausreichen. 
 
-Falls du beispielsweise mit verfügbaren »Font-Awesome« das [Contao-Logo](https://fontawesome.com/v4.7.0/icon/contao) in einem 
+Falls du beispielsweise mit verfügbaren »Font-Awesome« das [Contao-Logo](https://fontawesome.com/icons/contao?s=&f=brands) in einem 
 [Inhaltselement](/de/artikelverwaltung/inhaltselemente/) vom Typ »Aufzählung« wie folgt einsetzt, werden deine 
 Angaben nach dem »Speichern« nicht übernommen.
 

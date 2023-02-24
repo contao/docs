@@ -22,19 +22,20 @@ always use them.
 
 ### PHP Extensions
 
-| Extension Name | Contao 4.4 | Contao 4.9 |
-|:------------------------------------------|:-------------------------|:--------------------------------------------|
-| [DOM][ext-dom] (`ext-dom`)                | **required**             | **required**                                |
-| [PCRE][ext-pcre] (`ext-pcre`)             | **required**             | **required**                                |
-| [Intl][ext-intl] (`ext-intl`)             | recommended              | **required**                                |
-| [PDO][ext-pdo] (`ext-pdo`)                | **required**             | **required**                                |
-| [ZLIB][ext-zlib] (`ext-zlib`)             | **required**             | **required**                                |
-| [JSON][ext-json] (`ext-json`)             | **required**             | **required**                                |
-| [Curl][ext-curl] (`ext-curl`)             | **required**             | **required**                                |
-| [Mbstring][ext-mbstring] (`ext-mbstring`) | **required**             | **required**                                |
-| [GD][ext-gd] (`ext-gd`)                   | **required**<sup>1</sup> | **required**<sup>1</sup>                    |
-| [Imagick][ext-imagick] (`ext-imagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> |
+| Extension Name                            | Contao 4.4 and up        | Contao 4.9 and up                           | Contao 4.13 and up                          |
+|:------------------------------------------|:-------------------------|:--------------------------------------------|:--------------------------------------------|
+| [DOM][ext-dom] (`ext-dom`)                | **required**             | **required**                                | **required**                                |
+| [PCRE][ext-pcre] (`ext-pcre`)             | **required**             | **required**                                | **required**                                |
+| [Intl][ext-intl] (`ext-intl`)             | recommended              | **required**                                | **required**                                |
+| [PDO][ext-pdo] (`ext-pdo`)                | **required**             | **required**                                | **required**                                |
+| [ZLIB][ext-zlib] (`ext-zlib`)             | **required**             | **required**                                | **required**                                |
+| [JSON][ext-json] (`ext-json`)             | **required**             | **required**                                | **required**                                |
+| [Curl][ext-curl] (`ext-curl`)             | **required**             | **required**                                | **required**                                |
+| [Mbstring][ext-mbstring] (`ext-mbstring`) | **required**             | **required**                                | **required**                                |
+| [GD][ext-gd] (`ext-gd`)                   | **required**<sup>1</sup> | **required**<sup>1</sup>                    | **required**<sup>1</sup>                    |
+| [Imagick][ext-imagick] (`ext-imagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [File Information][ext-fileinfo] (`ext-fileinfo`) | -                | -                                           | **required**                                |
 
 {{% notice note %}}
 <sup>1</sup> Contao automatically selects an image processing library depending on its availability.
@@ -58,6 +59,7 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 [ext-gd]: https://www.php.net/manual/en/book.image.php
 [ext-imagick]: https://www.php.net/manual/en/book.imagick.php
 [ext-gmagick]: https://www.php.net/manual/en/book.gmagick.php
+[ext-fileinfo]: https://www.php.net/manual/en/book.fileinfo.php
 
 All required extensions are enabled by default in current PHP versions. However, some hosting providers
 explicitly disable them. The requirements are automatically checked during installation via the
@@ -241,6 +243,87 @@ of the project in order to be prepared for future versions of contao:
 
 see also: https://symfony.com/doc/current/configuration/override_dir_structure.html#override-the-public-directory
 
+
+### Web server configuration
+
+Within the configuration of your web server you will need to make sure that all requests are processed by the `index.php` in the public
+directory, typically via URL rewriting. How to achieve this depends on the type of web server you are running. The most common ones are
+Apache and NGINX:
+
+{{< tabs groupId="web-server-config" >}}
+
+{{% tab name="Apache" %}}
+Contao provides a [default `.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess) file in the 
+public directory in case you are using Apache as your web server. You will need to make sure that the `AllowOverride All` directive for your
+`Directory` in your `VirtualHost` definition is set, so that the `.htaccess` is actually processed by Apache. Furthermore you will need 
+`mod_rewrite` to be enabled in your Apache web server so that URLs like `https://example.com/contao/install` will work. If either of these 
+conditions are not met, only URLs like `https://example.com/index.php/contao/install` will work.
+
+You will also need to enable the `Options FollowSymlinks` directive for your `Directory` as Contao uses symlinks.
+
+The minimum `VirtualHost` configuration would look like this for example (exchange `…/public` for `…/web` in Contao 4.9 or older):
+
+```
+<VirtualHost *:80>
+    ServerName domain.tld
+    ServerAlias www.domain.tld
+    DocumentRoot /var/www/project/public
+
+    <Directory /var/www/project/public>
+        AllowOverride All
+        Require all granted
+        Options FollowSymlinks
+    </Directory>
+</VirtualHost>
+```
+
+{{% /tab %}}
+
+{{% tab name="NGINX" %}}
+Most importantly you need to make sure that all requests not pointing to an actual file are passed along to be processed by the application
+via `try_files $uri /index.php$is_args$args;`.
+
+The minimum `server` definition could look like this for example (exchange `…/public` for `…/web` in Contao 4.9 or older):
+
+```
+server {
+    server_name domain.tld www.domain.tld;
+    root /var/www/project/public;
+
+    location / {
+        try_files $uri /index.php$is_args$args;
+    }
+
+    # main entry point
+    location ~ ^/index\.php(/|$) {
+        # the exact FastCGI configuration depends on your environment
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi.conf;
+        internal;
+    }
+
+    # also allow preview.php and contao-manager.phar.php to be processed
+    location ~ ^/(preview|contao-manager\.phar)\.php(/|$) {
+        # the exact FastCGI configuration depends on your environment
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi.conf;
+    }
+}
+```
+
+Typically a complete NGINX configuration will contain more entries, e.g. in order to disable "not found logging" for special resources like
+the `favicon.ico` or other static resources. In many cases a default NGINX configuration will also contain special handling for image
+resources. It is important that you also add `try_files $uri /index.php$is_args$args;` to these directives, i.e. you need to make sure that
+any requests to files that do not exist (yet) are processed by the application, otherwise Contao's deferred image generation will not work.
+{{% /tab %}}
+
+{{< /tabs >}}
+
+You can also find more information about the configuration of your web server in the [Symfony documentation][SymfonyWebServerConfiguration].
+
+
 ## Provider-specific settings
 
 There are a few major Internet service providers that offer special settings for running Contao. Fortunately, they are 
@@ -248,3 +331,6 @@ only the exception to the rule. The provider-specific settings can be found in t
 [Contao forum](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern). You can get optimal 
 hosting packages for Contao from the [Contao partners](https://contao.org/en/contao-partners.html) in the service 
 category "Web hosting".
+
+
+[SymfonyWebServerConfiguration]: https://symfony.com/doc/current/setup/web_server_configuration.html
