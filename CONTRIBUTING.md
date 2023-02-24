@@ -85,6 +85,17 @@ Lorem ipsum dolor sit amet ...
 ```
 
 
+### Short code example
+
+This short code allows you to group several content elements.
+
+```
+{{% example "Your example title" %}}
+Lorem ipsum dolor sit amet ...
+{{% /example %}}
+```
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 
