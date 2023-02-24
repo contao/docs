@@ -98,7 +98,7 @@ In deinen CSS-Angaben könnest du jetzt folgendes verwenden:
 }
 ```
 
-Das Schlüsselwort [currentColor](https://developer.mozilla.org/de/docs/Web/CSS/Farben#currentColor_Schl%C3%BCsselwort) 
+Das Schlüsselwort [currentColor](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword) 
 folgt dabei der CSS-Kaskade. Daher übernimmt unser SVG-Symbol den Farbwert des übergeordneten »div« Blocks mit der
 CSS-KLasse »ce_text«. Wenn du gezielt das SVG-Symbol ändern möchtest:
 

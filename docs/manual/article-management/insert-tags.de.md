@@ -99,7 +99,7 @@ so z. B. mit seinem Namen ansprechen. Prinzipiell kannst du alle Feldnamen der T
 | `{{user::street}}`        | Dieses Tag wird mit dem Staßennamen des angemeldeten Mitglieds ersetzt.                                                                  |
 | `{{user::postal}}`        | Dieses Tag wird mit der Postleitzahl des angemeldeten Mitglieds ersetzt.                                                                 |
 | `{{user::city}}`          | Dieses Tag wird mit der Stadt des angemeldeten Mitglieds ersetzt.                                                                        |
-| `{{user::country}}`       | Dieses Tag wird mit dem Land des angemeldeten Mitglieds ersetzt.                                                                         |
+| `{{user::country}}`       | Dieses Tag wird mit dem Land des angemeldeten Mitglieds ersetzt (Mit `{{label::CNT:{{user::country}}}}` wird das Label z. B. "Deutschland" ausgegeben).                                                                         |
 | `{{user::username}}`      | Dieses Tag wird mit dem Benutzernamen des angemeldeten Mitglieds ersetzt.                                                                |
 
 
@@ -179,6 +179,7 @@ Lightbox-Bild einfügen.
 | `{{email_close}}`        | Dieses Tag wird mit `</a>` ersetzt. Beispiel: `{{email_open::foo@example.org}}E-Mail Kontakt{{email_close}}`. |
 | `{{email_url::*}}`       | Dieses Tag wird nur durch die kodierte E-Mail-Adresse ersetzt.                                 |
 | `{{post::*}}`            | Mit diesem Tag kann eine angegebene Post-Variable ausgelesen und angezeigt werden. Kann z. B. genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen. |
+| `{{form_session_data::*}}` | {{< version-tag "5.0" >}} Dieses Tag kann genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen. Dies ersetzt den alten `{{post::*}}` Insert-Tag. |
 | `{{lang::*}}`            | Mit diesem Tag können fremdsprachige Wörter in einem Text markiert werden: `{{lang::fr}}Au revoir{{lang}}`. Dies wird ersetzt mit `<span lang="fr">Au revoir</span>`. |
 | `{{abbr::*}}`            | Abkürzungen in einem Text markieren: `{{abbr::World Wide Web}}WWW{{abbr}}`. Dies wird ersetzt mit `<abbr title="World Wide Web">WWW</abbr>`. |
 | `{{acronym::*}}`         | Akronyme in einem Text markieren: `{{acronym::Multipurpose Internet Mail Extensions}}MIME{{acronym}}`. Dies wird ersetzt mit `<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym>`. |

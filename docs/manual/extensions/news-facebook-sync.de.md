@@ -270,7 +270,7 @@ Nachricht angegebene Text verwendet. Falls aber automatisch dieser Text angepass
 
 Das folgende Beispiel implementiert einen Hook, der die URL zum Nachrichtenbeitrag an den Text des Facebook-Posts anhängt:
 
-{{< tabs groupId="registering-hooks" >}}
+{{< tabs groupId="four-way-service-registration" >}}
 {{% tab name="Attribute" %}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
@@ -398,4 +398,4 @@ In den Nachrichtentemplates stehen zusätzliche Daten zur Verfügung:
 - _char_ `fromFb` Gibt an, ob der Nachrichtenbeitrag ursprünglich von Facebook importiert wurde.
 
 
-[Hooks]: /dev/framework/hooks/
+[Hooks]: https://docs.contao.org/dev/framework/hooks/

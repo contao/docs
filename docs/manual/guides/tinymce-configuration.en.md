@@ -84,7 +84,7 @@ In the "`Settings > Security`" section you can define
 [allowed HTML tags](/en/system/settings/#security-settings). It might happen that this information 
 alone is not sufficient.
 
-For example, if you use the [Contao logo](https://fontawesome.com/v4.7.0/icon/contao) in a content element of 
+For example, if you use the [Contao logo](https://fontawesome.com/icons/contao?s=&f=brands) in a content element of 
 type "Enumeration" with available "Font Awesome" as follows, your entries will not be applied after "Save".
 
 ```html

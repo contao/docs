@@ -116,6 +116,22 @@ Executed when a new record is created.
 {{% /expand %}}
 
 
+### `config.onbeforesubmit`
+
+{{< version "5.0" >}}
+
+Executed when a back end form is submitted _before_ the record will be updated
+in the database. Allows you to e.g. modify the values or introduce validation
+accross multiple fields. You are expected to return the values.
+
+{{% expand "Parameters" %}}
+* `array` Values of the record
+* `\Contao\DataContainer` Data Container object
+
+**return:** `array` Values of the record
+{{% /expand %}}
+
+
 ### `config.onsubmit`
 
 Executed when a back end form is submitted _after_ the record has been updated
@@ -455,6 +471,16 @@ to add status icons.
 * `array` Columns with existing labels
 
 **return:** If the DCA uses `showColumns` then the return value must be an `array` of strings. Otherwise just the label as a `string`.
+
+
+#### Parent view
+
+* `array` Record data
+* `string` Current label
+* `\Contao\DataContainer` Data Container object
+
+**return:** `string` The record label
+
 {{% /expand %}}
 
 {{% expand "Example for tree view" %}}

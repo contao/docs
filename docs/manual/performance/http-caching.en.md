@@ -147,7 +147,7 @@ requests and responses it receives from the client and Contao.
 The big advantage we gain by using HTTP standards is the free choice of the caching proxy.
 Let's say the number of visitors gets higher and higher and PHP slowly starts reaching its limits.
 Maybe you will want to try out a more powerful caching proxy which was explicitly designed for caching such
-as [Varnish](https://varnish-cache.org/)?
+as [Varnish](http://varnish-cache.org/)?
 
 However, this would go too far at this point.
 

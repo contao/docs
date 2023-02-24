@@ -75,7 +75,7 @@ a serialized array. Since you do not know the length in advance, a blob column i
     'label' => ['Referenced elements', 'Help text'],
     'inputType' => 'picker',
     'eval' => [
-        'multple' => true,
+        'multiple' => true,
     ],
     'sql' => [
         'type' => 'blob',
