@@ -13,9 +13,9 @@ your posts.
 
 ## News archives
 
-Archives are used to group and/or categorize messages. Each archive can refer to a specific language or topic.
+Archives are used to group and/or categorize news articles. Each archive can refer to a specific language or topic.
 
-To create a new news archive click on New ![Create a new message archive](/de/icons/new.svg?classes=icon "Ein neues Nachrichtenarchiv erstellen").
+To create a new news archive click on New ![Create a new news archive](/de/icons/new.svg?classes=icon "Create a new news archive").
 
 
 ### Title and forwarding
@@ -111,11 +111,11 @@ The URL is:
         <generator>Contao Open Source CMS</generator>
         <atom:link href="https://www.example.com/share/feed-alias.xml" rel="self" type="application/rss+xml" />
         <item>
-            <title>Message title</title>
-            <description><![CDATA[<p>Description of the message.</p>]]></description>
-            <link>https://www.example.com/news/alias-of-the-message.html</link>
+            <title>News title</title>
+            <description><![CDATA[<p>Description of the news article.</p>]]></description>
+            <link>https://www.example.com/news/alias-of-the-news.html</link>
             <pubDate>…</pubDate>
-            <guid>https://www.example.com/news/alias-of-the-message.html</guid>
+            <guid>https://www.example.com/news/alias-of-the-news.html</guid>
             <media:content url="https://www.example.com/assets/images/…/image.png" type="image/png" />
         </item>
         …
@@ -193,15 +193,15 @@ change the order.
 The news items consist of the settings for the items ("News List") and their contents ("News Reader").
 
 To create a new post, click on the desired archive 
-![Edit message archive](/de/icons/edit.svg?classes=icon "Nachrichtenarchiv bearbeiten") and then on 
-![Create a new post](/de/icons/new.svg?classes=icon "Einen neuen Beitrag erstellen") **New**.
+![Edit news archive](/de/icons/edit.svg?classes=icon "Edit news archive") and then on 
+![Create a new post](/de/icons/new.svg?classes=icon "Create a new post") **New**.
 
 
 ### Title and Author
 
 **Titles:** Here you can enter the title of the news post.
 
-**Message aliases:** The alias of a post is a unique and meaningful reference that you can use to view it in your 
+**News alias:** The alias of a post is a unique and meaningful reference that you can use to view it in your 
 browser.
 
 **Author:** Here you can change the author of the post.
@@ -345,7 +345,7 @@ have the option to automatically activate posts on a certain date.
 **Show until:** Here you can deactivate a post on a certain date.
 
 
-## Content for news posts {#content-for-message}
+## Content for news posts {#content-for-news}
 
 After we have made the settings for the post, we can add content elements for the output in the "News reader", click on 
 the desired article ![Edit contribution](/de/icons/edit.svg?classes=icon "Beitrag bearbeiten") and then on 

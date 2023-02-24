@@ -37,15 +37,19 @@ jobs:
               continue-on-error: true
 
             - name: Create issue (dev)
-              uses: peter-evans/create-issue-from-file@v2
+              uses: peter-evans/create-issue-from-file@v4
               with:
                   title: Link Checker Report
                   content-filepath: ./link-checker/dev-result.md
-                  labels: Bug, Developer Documentation
+                  labels: |
+                      Bug
+                      Developer Documentation
 
             - name: Create issue (manual)
-              uses: peter-evans/create-issue-from-file@v2
+              uses: peter-evans/create-issue-from-file@v4
               with:
                   title: Link Checker Report
                   content-filepath: ./link-checker/manual-result.md
-                  labels: Bug, User Manual
+                  labels: |
+                      Bug
+                      User Manual

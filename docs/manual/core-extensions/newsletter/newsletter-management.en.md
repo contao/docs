@@ -75,7 +75,7 @@ A text newsletter does not have these problems, but you can neither include pict
 
 ### Personalizing the newsletter
 
-If you send newsletters to registered members, you can personalize them using "Simple Tokens". Simple Tokens work similar to insert tags and can be used in both HTML and text content of a newsletter. Below is a small example:
+If you send newsletters to registered members, you can personalize them using "[simple tokens](https://docs.contao.org/manual/en/article-management/simple-tokens/)". Simple tokens work similar to insert tags and can be used in both HTML and text content of a newsletter. Below is a small example:
 
 ```text
 Dear ##firstname## ##lastname##,
