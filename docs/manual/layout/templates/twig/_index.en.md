@@ -22,7 +22,7 @@ Twig also features a lot of powerful methods to structure your templates like in
 eases accessing objects with “property access”, has whitespace control, string interpolation features and a ton more… Give it a try!
 
 {{% notice info %}}
-A selection of existing Twig templates, e.g. via a content element, is currently not yet possible. The documentation of Twig usage in Contao is constantly being extended. Until then you can find more detailed information [here](https://docs.contao.org/dev/framework/templates/twig/).
+A selection of existing Twig templates, e.g. via a content element, is currently not yet possible. The documentation of Twig usage in Contao is constantly being extended. Until then you can find more detailed information [here](https://docs.contao.org/dev/framework/templates/).
 {{% /notice %}}
 
 
