@@ -25,7 +25,7 @@ von Blöcken oder Makros, den erleichterten Zugriff auf Objekte mit »Property A
 String-Interpolationsfunktionen und vieles mehr.
 
 {{% notice info %}}
-Eine Auswahl vorhandener Twig-Templates, z. B. über ein Inhaltselement, ist derzeit noch nicht möglich. Die Dokumentation der Twig Nutzung in Contao wird ständig erweitert. Bis dahin findest du in [diesem Beitrag](https://docs.contao.org/dev/framework/templates/twig/) weitere, detaillierte Informationen zum Thema.
+Eine Auswahl vorhandener Twig-Templates, z. B. über ein Inhaltselement, ist derzeit noch nicht möglich. Die Dokumentation der Twig Nutzung in Contao wird ständig erweitert. Bis dahin findest du in [diesem Beitrag](https://docs.contao.org/dev/framework/templates/) weitere, detaillierte Informationen zum Thema.
 {{% /notice %}}
 
 
