@@ -5,7 +5,7 @@ weight: 2
 ---
 
 
-If you are still new to Contao, the [Contao manual][3] ist the best place to start
+If you are still new to Contao, the [Contao manual][3] is the best place to start
 in order to familiarize yourself with the possibilities of _managing_ a web site 
 using the Contao Content Management System.
 
