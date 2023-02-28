@@ -492,6 +492,51 @@ class Example
 }
 ```
 
+## InsertTagParser
+
+{{< version "4.13" >}}
+
+This service let you replace inserttags in your string content.
+
+
+```php
+use Contao\CoreBundle\InsertTag\ChunkedText;
+use Contao\CoreBundle\InsertTag\InsertTagParser;
+
+class Example
+{
+    private InsertTagParser $insertTagParser;
+
+    public function __invoke(string $buffer): string
+    {
+        // Return a string that may contain esi tags
+        $resultReplace = $this->insertTagParser->replace($buffer);
+
+        // Return a string that will not contain esi tags
+        $resultReplaceInline = $this->insertTagParser->replaceInline($buffer);
+
+        // Return ChunkedText instance that may contain esi tags
+        $resultChunked = $this->insertTagParser->replaceChunked($buffer);
+
+        // Return ChunkedText instance that will not contain esi tags
+        $resultChunked = $this->insertTagParser->replaceInlineChunked($buffer);
+
+        // Example usage ChunkedText
+        if ($resultChunked instanceof ChunkedText) {
+            $parts = [];
+
+            foreach ($resultChunked as [$type, $chunk]) {
+                $parts[] = ChunkedText::TYPE_RAW === $type
+                    ? $chunk
+                    : htmlspecialchars($chunk);
+            }
+
+            return implode('', $parts);
+        }
+    }
+}
+```
+
 
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
