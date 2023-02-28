@@ -524,7 +524,7 @@ class Example
         // response to the client. It will allow ESI tags that can improve caching behaviour.
         $resultChunked = $this->insertTagParser->replaceChunked($buffer);
 
-        // Returns a ChunkedText instaance and should be used when the result is not sent to a client.
+        // Returns a ChunkedText instance and should be used when the result is not sent to a client.
         $resultChunked = $this->insertTagParser->replaceInlineChunked($buffer);
 
         // Example usage for ChunkedText
