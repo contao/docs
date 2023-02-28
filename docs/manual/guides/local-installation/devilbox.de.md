@@ -192,7 +192,7 @@ In diesem Fall musst du im Contao-Installtool deine Werte entsprechend eintragen
 
 ## Nützliche Informationen: Mehrere php Versionen parallel betreiben (ab devilbox version "3") 
 
-Die Grundeinstellung nimmst du im devilbox Verzeichnis vor.
+Die Grundeinstellung nimmst du im Devilbox-Verzeichnis vor.
 Im Verzeichnis `compose` findest du die Datei `docker-compose.override.yml-php-multi.yml`. Kopiere die Datei in das devilbox Hautpverzeichnis und ändere den Dateinamen nach »docker-compose.override.yml«. 
 
 Du hast ein Projekt <project>, das abweichend von der in der .env eingestellten PHP-Version (in unserem Beispiel 8.2) mit einer anderen php-Version - sagen wir 7.4 - laufen soll?
