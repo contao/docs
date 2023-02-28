@@ -498,6 +498,7 @@ class Example
 
 This service let you replace inserttags in your string content.
 
+Some methods return a `ChunkedText` instance. The `ChunkedText` container was created to keep the surrounding text containing the insert tags separate from the replacements made by the insert tag parser. It is used for example in the twig escaper to skip encoding on inserttag replacement results.
 
 ```php
 use Contao\CoreBundle\InsertTag\ChunkedText;
@@ -509,16 +510,16 @@ class Example
 
     public function __invoke(string $buffer): string
     {
-        // Return a string that may contain esi tags
+        // Return a string and should be used in HTML context when the replaced result is sent as a response to the client. It will allow for ESI tags that can improve caching behaviour.
         $resultReplace = $this->insertTagParser->replace($buffer);
 
-        // Return a string that will not contain esi tags
+        // Return a string and should be used when the result is not sent to a client ( e.g. when using `$email->subject()`).
         $resultReplaceInline = $this->insertTagParser->replaceInline($buffer);
 
-        // Return ChunkedText instance that may contain esi tags
+        // Return ChunkedText instance and should be used in HTML context when the replaced result is sent as a response to the client. It will allow for ESI tags that can improve caching behaviour.
         $resultChunked = $this->insertTagParser->replaceChunked($buffer);
 
-        // Return ChunkedText instance that will not contain esi tags
+        // Return ChunkedText and should be used when the result is not sent to a client.
         $resultChunked = $this->insertTagParser->replaceInlineChunked($buffer);
 
         // Example usage ChunkedText
