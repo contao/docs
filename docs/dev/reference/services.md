@@ -512,22 +512,22 @@ class Example
 
     public function __invoke(string $buffer): string
     {
-        // Return a string and should be used in HTML context when the replaced result is sent as a response to the 
-        // client. It will allow for ESI tags that can improve caching behaviour.
+        // Returns a string and should be used in HTML context when the replaced result is sent as a response to the 
+        // client. It will allow ESI tags that can improve caching behaviour.
         $resultReplace = $this->insertTagParser->replace($buffer);
 
-        // Return a string and should be used when the result is not sent to a client 
+        // Returns a string and should be used when the result is not sent to a client 
         // (e.g. when using `$email->subject()`).
         $resultReplaceInline = $this->insertTagParser->replaceInline($buffer);
 
-        // Return ChunkedText instance and should be used in HTML context when the replaced result is sent as a 
-        // response to the client. It will allow for ESI tags that can improve caching behaviour.
+        // Returns a ChunkedText instance and should be used in HTML context when the replaced result is sent as a 
+        // response to the client. It will allow ESI tags that can improve caching behaviour.
         $resultChunked = $this->insertTagParser->replaceChunked($buffer);
 
-        // Return ChunkedText and should be used when the result is not sent to a client.
+        // Returns a ChunkedText instaance and should be used when the result is not sent to a client.
         $resultChunked = $this->insertTagParser->replaceInlineChunked($buffer);
 
-        // Example usage ChunkedText
+        // Example usage for ChunkedText
         if ($resultChunked instanceof ChunkedText) {
             $parts = [];
 
