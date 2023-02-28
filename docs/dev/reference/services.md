@@ -498,7 +498,9 @@ class Example
 
 This service let you replace inserttags in your string content.
 
-Some methods return a `ChunkedText` instance. The `ChunkedText` container was created to keep the surrounding text containing the insert tags separate from the replacements made by the insert tag parser. It is used for example in the twig escaper to skip encoding on inserttag replacement results.
+Some methods return a `ChunkedText` instance. The `ChunkedText` container was created to keep the surrounding text 
+containing the insert tags separate from the replacements made by the insert tag parser. It is used for example in the 
+twig escaper to skip encoding on inserttag replacement results.
 
 ```php
 use Contao\CoreBundle\InsertTag\ChunkedText;
