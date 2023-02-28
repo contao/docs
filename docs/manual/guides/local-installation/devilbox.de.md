@@ -202,7 +202,7 @@ Lege in diesem Projektverzeichnis ein Verzeichnis `.devilbox` und darin eine Dat
 conf:phpfpm:tcp:php74:9000  
 ```
 
-Starte devilbox wie folgt:
+Starte Devilbox wie folgt:
 
 ```bash
 docker-compose up php httpd bind php74
