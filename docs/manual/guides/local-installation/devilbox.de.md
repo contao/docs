@@ -196,7 +196,7 @@ Die Grundeinstellung nimmst du im Devilbox-Verzeichnis vor.
 Im Verzeichnis `compose` findest du die Datei `docker-compose.override.yml-php-multi.yml`. Kopiere die Datei in das Devilbox-Hautpverzeichnis und ändere den Dateinamen nach »docker-compose.override.yml«. 
 
 Du hast ein Projekt <project>, das abweichend von der in der .env eingestellten PHP-Version (in unserem Beispiel 8.2) mit einer anderen php-Version - sagen wir 7.4 - laufen soll?
-Lege in diesem Projektverzeichnis ein Verzeichnis `.devilbox` und darin eine Datei `backend.cfg` an mit diesem Inhalt:
+Lege in diesem Projektverzeichnis ein Verzeichnis `.devilbox` und darin eine Datei `backend.cfg` mit diesem Inhalt an:
 
 ```bash
 conf:phpfpm:tcp:php74:9000  
