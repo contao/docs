@@ -302,11 +302,12 @@ the Doctrine Database Abstraction Layer.
 
 **Examples:**
 
-| Doctrine Schema Representation                                          | SQL Equivalent                    |
-|:------------------------------------------------------------------------|:----------------------------------|
-| `['type' => 'string', 'length' => 32, 'default' => '']`                 | `varchar(32) NOT NULL default ''` |
-| `['type' => 'string', 'length' => 1, 'fixed' => true, 'default' => '']` | `char(1) NOT NULL default ''`     |
-| `['type' => 'integer', 'notnull' => false, 'unsigned' => true]`         | `INT unsigned NULL`               |
+| Doctrine Schema Representation                                              | SQL Equivalent                    |
+|:----------------------------------------------------------------------------|:----------------------------------|
+| `['type' => 'string', 'length' => 32, 'default' => '']`                     | `VARCHAR(32) NOT NULL DEFAULT ''` |
+| `['type' => 'string', 'length' => 1, 'fixed' => true, 'default' => '']`     | `CHAR(1) NOT NULL DEFAULT ''`     |
+| `['type' => 'integer', 'notnull' => false, 'unsigned' => true]`             | `INT UNSIGNED NULL`               |
+| `['type' => 'binary', 'length' => 16, 'fixed' => true, 'notnull' => false]` | `BINARY(16) NULL`                 |
 
 
 
