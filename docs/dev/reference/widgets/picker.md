@@ -42,7 +42,7 @@ a serialized array. Since you do not know the length in advance, a blob column i
 
 ## Examples
 
-{{< tabs >}}
+{{< tabs groupId="picket-widget-examples" >}}
 
 {{% tab name="News article" %}}
 

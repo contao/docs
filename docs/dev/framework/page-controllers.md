@@ -101,7 +101,7 @@ for these possibilities.
 
 There are however a few differences and additional options.
 
-{{< tabs >}}
+{{< tabs groupId="page-controller-parameters" >}}
 {{% tab name="Annotation" %}}
 ```php
 /**
