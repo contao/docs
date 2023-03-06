@@ -52,7 +52,7 @@ hinzugefügt und alles andere bleibt gleich:
 Contao Template Verzeichnis ab. Es kann derzeit **entweder** eine Twig- **oder** eine PHP-Variante des gleichen Templates am gleichen Ort geben.
 
 2. Um eine bestehende Vorlage zu erweitern (anstatt diese komplett zu ersetzen), verwende das Schlüsselwort `extends` und den 
-speziellen `@Contao` [Namensraum](https://docs.contao.org/dev/framework/templates/twig/#namespace-magic).
+speziellen `@Contao` [Namensraum](https://docs.contao.org/dev/framework/templates/architecture/#naming-and-structure).
 
 3. Verwende den gleichen Blocknamen wie in der ursprünglichen Vorlage.
 
