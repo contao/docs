@@ -205,7 +205,7 @@ can be [registered using a hook][3].
 
 | Key         | Description                                                                                                       |
 |:------------|:------------------------------------------------------------------------------------------------------------------|
-| digit       | allows numeric characters only (including full stop [.] and minus [-])                                            |
+| digit       | allows numeric characters only (including full stop [.] and comma [,])                                            |
 | natural     | allows non-negative natural numbers (including 0)                                                                 |
 | alpha       | allows alphabetic characters only (including full stop [.] minus [-] and space [ ])                               |
 | alnum       | allows alphanumeric characters only (including full stop [.] minus [-], underscore [\_] and space [ ])            |
