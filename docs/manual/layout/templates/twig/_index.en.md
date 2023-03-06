@@ -49,7 +49,7 @@ and keep everything else the same:
 There can **either** be a Twig **or** a PHP variant of the same template in the same location.
 
 2. To extend an existing template (instead of completely replacing it) use the `extends` keyword and the special `@Contao` 
-[namespace](https://docs.contao.org/dev/framework/templates/twig/#namespace-magic).
+[namespace](https://docs.contao.org/dev/framework/templates/architecture/#naming-and-structure).
 
 3. Use the same block names as in the original template.
 
