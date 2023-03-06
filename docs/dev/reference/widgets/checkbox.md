@@ -44,7 +44,7 @@ Depending on the widget configuration, the widget persists different values to t
 
 ## Examples
 
-{{< tabs >}}
+{{< tabs groupId="checkbox-widget-examples" >}}
 
 {{% tab name="Toggle" %}}
 
