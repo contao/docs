@@ -26,8 +26,7 @@ In Twig-Templates wird konsequent auf die leistungsstarken Methoden zur Struktur
 Vererben, [Einbinden](einbinden), Wiederverwenden von Blöcken oder Makros. Deshalb sollten keine
 Templates mehr komplett überschrieben werden, wie das bei den PHP-Templates häufig üblich bzw. notwendig war.<br>
 Tiefer gehende Informationen zu Twig-Templates in Contao findest Du in der [Entwicklerdokumentation](https://docs.
-contao.
-org/dev/framework/templates/) finden.
+contao.org/dev/framework/templates/) finden.
 {{% /notice %}}
 
 {{% children %}}

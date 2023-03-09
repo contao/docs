@@ -33,7 +33,7 @@ This table only shows the options relevant to the core functionality of this wid
 
 ## Examples
 
-{{< tabs >}}
+{{< tabs groupId="file-tree-widget-examples" >}}
 
 {{% tab name="Image picker" %}}
 

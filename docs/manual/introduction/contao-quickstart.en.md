@@ -70,7 +70,7 @@ the integration of an external layout or the use of a completely different CSS f
 Within the layout areas activated in a page layout, you can place any number of front end modules that are executed in 
 sequence when a page is called and generate the HTML code for the front end.
 
-![The front end modules](/de/introduction/images/en/the-front end-modules.png?classes=shadow)
+![The front end modules](/de/introduction/images/en/the-front-end-modules.png?classes=shadow)
 
 Just like page layouts, front end modules can be created and configured with a mouse click. Contao comes with several 
 types of modules, e.g. for creating navigation menus, managing users or inserting forms. In addition, you can add any 

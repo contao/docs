@@ -136,6 +136,23 @@ $security->isGranted('contao_member.groups', $groupId);
 $security->isGranted('contao_member.groups', [/* array of group IDs */]);
 ```
 
+{{< version "5.0" >}}
+
+The `contao_dc.<data-container>` permission can be used to check whether a back end user has the right to perform 
+certain DCA actions. The subject in this case will be a `Contao\CoreBundle\Security\DataContainer\AbstractAction`.
+
+```php
+use Contao\CoreBundle\Security\DataContainer\CreateAction;
+use Contao\CoreBundle\Security\DataContainer\DeleteAction;
+use Contao\CoreBundle\Security\DataContainer\ReadAction;
+use Contao\CoreBundle\Security\DataContainer\UpdateAction;
+
+$security->isGranted('contao_dc.tl_foobar', new CreateAction('tl_foobar', $record));
+$security->isGranted('contao_dc.tl_foobar', new DeleteAction('tl_foobar', $record));
+$security->isGranted('contao_dc.tl_foobar', new ReadAction('tl_foobar', $record));
+$security->isGranted('contao_dc.tl_foobar', new UpdateAction('tl_foobar', $record));
+```
+
 {{% notice tip %}}
 Since Contao **4.10** there are class constants available for the various permission attributes, so that you do not have to remember them
 yourself and instead can use your IDE to find the correct attribute. For the Contao Core these constants are available in 

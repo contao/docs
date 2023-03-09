@@ -85,6 +85,17 @@ Lorem ipsum dolor sit amet ...
 ```
 
 
+### Short code example
+
+This short code will visually separate its content from the rest and display an "Example" header.
+
+```
+{{% example "Your example title" %}}
+Lorem ipsum dolor sit amet ...
+{{% /example %}}
+```
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 

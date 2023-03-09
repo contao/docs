@@ -1,6 +1,6 @@
 ---
 title: 'Front end modules'
-description: 'The message extension contains four new front end modules, which you can configure as usual via the 
+description: 'The news extension contains four new front end modules, which you can configure as usual via the 
 module management'
 aliases:
     - /en/core-extensions/news/front-end-modules/
@@ -8,15 +8,15 @@ weight: 20
 ---
 
 Now that you know how archives and posts are managed in the back end, we will explain how to display this content in 
-the front end. The message extension contains four new front end modules, which you can configure as usual via the 
+the front end. The news extension contains four new front end modules, which you can configure as usual via the 
 module management.
 
 ![News/Blog modules](/de/core-extensions/news/images/en/news-blog-modules.png?classes=shadow)
 
 
-## News list
+## Newslist
 
-The front end module "message list" displays any number of posts from one or more message archives in the front end. 
+The front end module "Newslist" displays any number of posts from one or more news archives in the front end. 
 Which parts of a news item are displayed depends on the respective template. Everything is possible from a simple 
 headline to a complete post.
 
@@ -30,12 +30,12 @@ in descending order.
 an article is selected.
 
 {{% notice info %}}
-**Caution:** in most cases this functionality should not be used for message lists that are placed in the page layout. 
-Otherwise, you would automatically have a message reader on each page of the page layout at a different position in the 
+**Caution:** in most cases this functionality should not be used for news lists that are placed in the page layout. 
+Otherwise you would automatically have a news reader on each page of the page layout at a different position in the 
 layout. This would prevent the functionality of other "reader modules" on the same page.
 {{% /notice %}}
 
-**Number of items:** If you enter a value greater than 0 here, the number of messages or blog posts will automatically 
+**Number of items:** If you enter a value greater than 0 here, the number of news or blog posts will automatically 
 be limited to this value.
 
 **Featured items:** Here you define whether only highlighted, only unhighlighted, highlighted first or all posts of the 
@@ -57,7 +57,7 @@ assuming you have enough of them.
 **Meta fields:** Here you can specify which meta information (date of the post, author of the post and number of 
 comments) is displayed.
 
-**News template:** Here you select the template for the posts. The following message templates are available by default:
+**News template:** Here you select the template for the posts. The following news templates are available by default:
 
 | Template | Explanation |
 | -------- | ----------- |
@@ -102,28 +102,28 @@ The front end module generates the following HTML code:
 ```
 
 
-## News reader
+## Newsreader
 
 The front end module "news reader" is used to display a specific news item. The module obtains the alias of the article 
 via the URL, so that news with so-called permanent links can be specifically linked:
 
 `www.example.com/news/form-follows-function.html`
 
-In this example, the message with the alias "form-follows-function" is called via the "news" page: If the searched 
-message does not exist, the message reader returns an error message and the HTTP status code "404 Not Found". The 
+In this example, the news with the alias "form-follows-function" is called via the "news" page: If the searched 
+news does not exist, the news reader returns an error message and the HTTP status code "404 Not Found". The 
 status code is important for search engine optimization.
 
 {{% notice info %}}
 There can only be one "reader module" on a single page, regardless of type. Otherwise, one or the other module would 
-trigger a 404 page, because, for example, the alias of a message cannot be found in a calendar, or vice versa, the 
-alias of an event in a message archive.
+trigger a 404 page, because, for example, the alias of a news cannot be found in a calendar, or vice versa, the 
+alias of an event in a news archive.
 {{% /notice %}}
 
 
 ### Module configuration
 
 **News archives:** Here you can define in which archives the requested post is to be searched for; posts from archives 
-that have not been selected are not displayed, even if the URL is correct and the message exists. This feature is 
+that have not been selected are not displayed, even if the URL is correct and the news exists. This feature is 
 especially important in multi-domain operations with several independent websites.
 
 {{< version-tag "4.13" >}} **Overview page:** Here you can select a page to set a link in the detail view back to the 
@@ -137,7 +137,7 @@ overview page.
 **Meta fields:** Here you can define which meta information (date of the post, author of the post and number of 
 comments) is displayed.
 
-**News template:** Here you select the message template. By default, the template `news_full` displays the complete 
+**News template:** Here you select the news template. By default, the template `news_full` displays the complete 
 article.
 
 **Module template:** Here you can overwrite the standard template.
@@ -185,7 +185,7 @@ The front end module "News archive" is used to list all news items of a certain 
 **News archives:** Here you can specify the archives from which the posts should be listed. By default, the posts are 
 sorted by date in descending order.
 
-**News reader module:** Here you can define whether the system should automatically switch to the message reader when a 
+**News reader module:** Here you can define whether the system should automatically switch to the news reader when a 
 post is selected.
 
 **Archive format:** Here you define the archive format (day, month or year).

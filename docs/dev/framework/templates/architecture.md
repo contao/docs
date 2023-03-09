@@ -566,7 +566,7 @@ Here we target existing blocks and use the `parent()` function as we would in a 
 
 {{% notice note %}}
 You can only use Twig templates to extend from the legacy PHP templates, not the other way round. This also means, that
-an extension doing this for a template, would force everyone to change there versions to Twig as well. In this case, the
+an extension doing this for a template, would force everyone to change their versions to Twig as well. In this case, the
 behavior is likely not what you want, and you should use the legacy template, still. 
 {{% /notice %}}
 

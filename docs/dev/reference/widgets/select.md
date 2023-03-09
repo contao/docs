@@ -46,7 +46,7 @@ Depending on the widget configuration, the widget persists different values to t
 
 ## Examples
 
-{{< tabs >}}
+{{< tabs groupId="select-widget-examples" >}}
 
 {{% tab name="Simple select" %}}
 
