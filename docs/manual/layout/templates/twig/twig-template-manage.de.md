@@ -42,7 +42,7 @@ Im Backend ist jetzt bei den Templates das Core-Template auswählbar und Dein
 Template `individuelles_textelement.html.twig`
 
 {{% notice info %}}
-Eine Zuordnung der Templates zu einem bestimmten Theme ist für Twig-Templates nicht vorgesehen.
+Die Verwendung themespezifischer Anpassungen ist ein spezieller Fall.
 {{% /notice %}}
 
 {{% notice note %}}
