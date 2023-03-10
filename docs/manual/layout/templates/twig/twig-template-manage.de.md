@@ -3,7 +3,7 @@ title: "Templates verwalten"
 description: "Die Verwaltung der Template-Dateien."
 url: "layout/templates/twig/verwaltung"
 aliases:
-    - /de/layout/templates/twig/verwaltung/
+- /de/layout/templates/twig/verwaltung/
 weight: 30
 ---
 
@@ -16,7 +16,6 @@ Contao unterstützt Dich bei der Strukturierung der Templates. Willst Du eines d
 wird das Template automatisch im richtigen Unterordner angelegt.
 
 Beispiel:
-
 
 Du möchtest das Template für das Textelement anpassen. Dazu wählst Du aus den Original-Templates das Template
 `text [content_element/text.html.twig]` aus. Das Template wird Dir automatisch im Ordner `/template/content_element`
@@ -39,11 +38,19 @@ Dazu legst Du innerhalb von `/templates/content_element` einen Ordner `text` an.
 `/templates/content_element/text` kannst Du jetzt ein oder mehrere Varianten des Templates für das Inhaltselement Text
 anlegen, z.B. `individuelles_textelement.html.twig`.
 Im Backend ist jetzt bei den Templates das Core-Template auswählbar und Dein
-Template `individuelles_textelement.html.twig`
+Template `individuelles_textelement.html.twig`.
+
+{{% notice tip %}}
+Du kannst auch global ein Core-Template anpassen und zusätzlich Varianten für dieses angepasste Template erstellen.
+Damit sind die Möglichkeiten zur Anpassung von Templates deutlich flexibler als das mit PHP-Templates war.
+{{% /notice %}}
+
 
 {{% notice info %}}
-Die Verwendung themespezifischer Anpassungen ist ein spezieller Fall.
+Die Verwendung themespezifischer Anpassungen ist ein spezieller Fall, der in
+einem [eigenen Abschnitt](#templates-in-themes) behandelt wird.
 {{% /notice %}}
+
 
 {{% notice note %}}
 Derzeit steht noch nicht für jedes Modul/Inhaltselement ein Twig-Template zur Verfügung. In diesen Fällen werden
@@ -52,6 +59,8 @@ Auch diese Templates können durch Twig-Templates angepasst werden. Das entsprec
 Ordner `/templates` abgelegt werden. Es hat den gleichen Namen, wie das Original-Template und die Endung `.html.twig`.
 Die Benennung von verschiedenen Varianten erfolgt genauso wie bei den [PHP-Templates](../php/verwaltung).
 {{% /notice %}}
+
+### Templates in Themes
 
 
 
