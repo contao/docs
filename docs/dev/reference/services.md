@@ -509,6 +509,11 @@ use Contao\CoreBundle\InsertTag\InsertTagParser;
 class Example
 {
     private InsertTagParser $insertTagParser;
+    
+    public function __construct(InsertTagParser $insertTagParser)
+    {
+        $this->insertTagParser = $insertTagParser;
+    }
 
     public function __invoke(string $buffer): string
     {
