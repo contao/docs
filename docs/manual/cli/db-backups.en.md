@@ -115,10 +115,17 @@ The following descriptors are available:
 * `M` for minutes
 * `S` for seconds
 
-Descriptors can also be combined: One year, two months and 5 hours would be `1Y2M5H`.
+Time elements (`H`, `M` and `S`) must be prefixed with `T`. Otherwise `M` would have a double meaning. 5 hours would
+therefore not be `5H` but `T5H`.
+
+Descriptors can also be combined: One year, two months and 5 hours would be `1Y2MT5H`. Further information can be found
+in [the PHP documentation][DateInterval_Docs]. The documented prefix `P` can be omitted. This must always be added anyway,
+so Contao does it for you automatically.
 
 {{% notice warning %}}
 Note that if you configure both `keep_max` and `keep_intervals`, `keep_max` should always be at least 1 greater
 than the number of `keep_intervals` (the newest plus the oldest per interval). `keep_max` always wins. It serves
 as a kind of safety setting, so that never more than `keep_max` backups are kept.
 {{% /notice %}}
+
+[DateInterval_Docs]: https://www.php.net/manual/en/dateinterval.construct.php

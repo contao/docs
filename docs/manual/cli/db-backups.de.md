@@ -114,10 +114,18 @@ Zur Verfügung stehen die folgenden Bezeichner:
 * `M` für Minuten
 * `S` für Sekunden
 
-Bezeichner können auch kombiniert werden: Ein Jahr, zwei Monate und 5 Stunden wäre `1Y2M5H`.
+Zeitelemente (`H`, `M` und `S`) müssen dabei mit dem Präfix `T` versehen werden. Ansonsten hätte `M` eine doppelte 
+Bedeutung. 5 Stunden wären also nicht `5H` sondern `T5H`.
+
+Bezeichner können auch kombiniert werden: Ein Jahr, zwei Monate und 5 Stunden wäre `1Y2MT5H`. Weitere Informationen 
+können [der PHP-Dokumentation][DateInterval_Docs] entnommen werden. Der dort 
+dokumentierte Präfix `P` kann weggelassen werden. Dieser 
+muss ohnehin immer hinzugefügt werden, entsprechend macht das Contao automatisch für dich.
 
 {{% notice warning %}}
 Beachte, dass wenn du sowohl `keep_max` als auch `keep_intervals` konfigurierst, sollte `keep_max` immer mind. 1 grösser
 sein, als die Anzahl der `keep_intervals` (das neuste plus pro Interval das älteste). `keep_max` gewinnt immer. Es dient
 als eine Art Sicherheitseinstellung, so dass niemals mehr als `keep_max` Backups zurückbehalten werden.
 {{% /notice %}}
+
+[DateInterval_Docs]: https://www.php.net/manual/en/dateinterval.construct.php
