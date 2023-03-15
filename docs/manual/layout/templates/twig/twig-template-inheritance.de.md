@@ -3,16 +3,16 @@ title: "Template vererben"
 description: "Die Template Vererbung."
 url: "layout/templates/twig/vererbung"
 aliases:
-    - /de/layout/templates/twig/vererbung/
+- /de/layout/templates/twig/vererbung/
 weight: 40
 ---
 
 Contao setzt mit Twig konsequent auf das Vererben von Templates. Dabei wird ein Template nicht komplett
-überschrieben, sondern nur gezielt einzelne Teilbereiche (Blöcke) angepasst.
+überschrieben, sondern es werden nur gezielt einzelne Teilbereiche (Blöcke) angepasst.
 
 ## Blöcke anpassen
 
-Zur Gliederung umschließen die Twig Templates ihre Inhalte bereits in ein oder mehreren Blöcken `{% block
+Zur Gliederung umschließen die Twig Templates ihre Inhalte in ein oder mehreren Blöcken `{% block
 ('name-des-blocks') %}` und `{% endblock %}` Ausdrücke. Nur Inhalte, die in solchen Blöcken liegen, können angepasst
 werden.
 
@@ -22,13 +22,18 @@ angegeben werden. Anzupassende Blöcke können dann, wie im originalen Template,
 
 Mittels `{{ parent() }}` lässt sich der originale Inhalt des Blocks ausgeben.
 
-Contao unterstützt Euch auch dabei. Willst Du eines der neuen Twig-Templates anpassen, dann wird Dir das neue
-Template für die Vererbung so vorbereitet, dass das Basis-Template bereits angegeben ist. In den Kommentaren findest
+Contao unterstützt Euch bei der Vererbung und bei der Verwendung von Blöcken.
+Wählst Du eines der neuen Twig-Templates zur Anpassung aus, dann wird Dir das neue Template für die Vererbung so
+vorbereitet, dass das Basis-Template bereits angegeben ist. In den Kommentaren findest
 Du die verfügbaren Blöcke, die angepasst werden können.
 
-## Reihenfolge der Vererbung
+{{% notice note %}}
+Informiere Dich auch über die neue [Ordnerstruktur](../verwaltung) bei den Twig-Templates.
+{{% /notice %}}
 
-Wenn Ihr mit der Vererbung von Templates arbeitet, solltet Ihr Euch mit der Reihenfolge der Templatevererbung bei
+## Templatehierarchie
+
+Wenn Ihr mit der Vererbung von Templates arbeitet, solltet Ihr Euch mit der Templatehierarchie bei
 Twig-Templates vertraut machen.
 
 * Template aus dem Core
@@ -38,8 +43,13 @@ Twig-Templates vertraut machen.
 * Templates aus dem Ordner für die Varianten eines Templates, z.B. `/templates/content_element/text`
   (Varianten-Ordner für das Inhaltselement `text`)
 
-Wichtig für die Anpassungen im Backend sind die letzten beiden Punkte. Damit besteht die Möglichkeit Templates einmal 
-grundsätzlich für alle Elemente anzupassen und darauf aufbauend verschiedene Varianten zu verwenden.
+Wichtig für die Anpassungen im Backend sind die letzten beiden Punkte. Damit besteht die Möglichkeit Templates des
+Cores oder aus Erweiterungen einmal grundsätzlich für alle Elemente anzupassen und darauf aufbauend verschiedene
+Varianten zu verwenden.
+
+Zusätzlich stehen noch [themespezifische Templates](../verwaltung#themespezifische-templates) zur Verfügung, die aber
+nicht zur
+Templatehierarchie gehören, weil sie erst zur Laufzeit erzeugt werden.
 
 Beispiel:
 
@@ -76,7 +86,8 @@ Text `Einleitender Text für alle Textelemente` ausgegeben.
 
 Wählen wir jetzt das Template `content_element/text/text_v1` aus, dann wird zu Beginn unseres Textelements wieder der
 Text `Einleitender Text für alle Textelemente` ausgegeben und zusätzlich am Ende der
-Text `Hier steht ein zusätzlicher Schlusstext für die Variante 1`. Zwischen diesen beiden Texten steht der komplette 
-Text, den wir 
+Text `Hier steht ein zusätzlicher Schlusstext für die Variante 1`. Zwischen diesen beiden Texten steht der komplette
+Text, den wir
 im Tiny-MCE eingegeben haben.
-Bei Verwendung des Templates `content_element/text/text_v2` gibt es dann den Schlusstext `Hier steht ein zusätzlicher Schlusstext für die Variante 2`.
+Bei Verwendung des Templates `content_element/text/text_v2` gibt es dann den
+Schlusstext `Hier steht ein zusätzlicher Schlusstext für die Variante 2`.
