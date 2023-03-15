@@ -38,7 +38,7 @@ Derzeit steht noch nicht für jedes Modul/Inhaltselement ein Twig-Template zur V
 weiterhin die bisherigen (PHP/Legacy) Templates herangezogen.
 Auch diese Templates können durch Twig-Templates angepasst werden. Das entsprechende Twig-Template muss dazu direkt im
 Ordner `/templates` abgelegt werden. Es hat den gleichen Namen, wie das Original-Template und die Endung `.html.twig`.
-Die Benennung von verschiedenen Varianten erfolgt genauso wie bei den [PHP-Templates](../php/verwaltung).
+Die Benennung von verschiedenen Varianten erfolgt in diesem Fall genauso wie bei den [PHP-Templates](../php/verwaltung).
 {{% /notice %}}
 
 ## Dateiendungen
