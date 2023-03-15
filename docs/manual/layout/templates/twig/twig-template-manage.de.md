@@ -57,7 +57,8 @@ Im [Theme-Manager](../../../theme-manager/themes-verwalten) kannst du einen vorh
 Theme verknüpfen. Das ist der **Themeordner**. Templates in diesem Ordner sind **themespezifische Templates**. Sie sind
 in
 Bezug auf Ihre Behandlung etwas Besonderes, denn sie sind zwar am spezifischsten, aber dennoch nicht Teil der
-Templatehierarchie. Erst zur Laufzeit wird entschieden, ob ein themespezifisches Template verwendet wird.<br>
+[Templatehierarchie](../vererbung#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein themespezifisches 
+Template verwendet wird.<br>
 
 {{% notice note %}}
 Du kannst mit themespezifischen Templates grundsätzlich nur Templates anpassen, die als globale Templates in der
