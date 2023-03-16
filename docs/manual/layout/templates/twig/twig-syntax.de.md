@@ -26,7 +26,7 @@ Ein Kommentar kann ein- oder mehrzeilig sein. Alles was zwischen `{#` und `#}` s
 ```
 {{% /example %}}
 
-Damit ist es auch möglich Teile des Code auszukommentieren.
+Es ist auch möglich Teile des Code auszukommentieren.
 
 {{% example "Mehrzeiliger Kommentar mit auskommentiertem Code" %}}
 ```twig
@@ -90,10 +90,10 @@ Filter werden auf Variable angewendet. Sie geben an wie eine Variable verarbeite
 {{% /example %}}
 
 Filter in Twig sind extrem leistungsfähig und vielseitig. Twig bringt viele
-[Filter](https://twig.symfony.com/doc/3.x/filters/index.html) von Haus aus mit. Entwickler können eigene Filter
-erstellen.<br>
+[Filter](https://twig.symfony.com/doc/3.x/filters/index.html) von Haus aus mit. Entwickler können aber auch eigene 
+Filter erstellen.<br>
 Wer sich für die Erstellung eigener Filter interessiert schaut bitte in die
-[Entwicklerdoku](https://docs.contao.org/dev/framework/templates/getting-started/#extending-twig).
+[Entwicklerdokumentation](https://docs.contao.org/dev/framework/templates/getting-started/#extending-twig).
 
 {{% notice info %}}
 Die Twig Syntax ist [gut dokumentiert](https://twig.symfony.com/doc/3.x/). Als Startpunkt ist der
@@ -101,5 +101,5 @@ Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templat
 {{% /notice %}}
 
 {{% notice tip %}}
-Du möchtest schnell etwas ausprobieren? Dazu kannst Du [Twig fiddle](https://twigfiddle.com/) verwenden.
+Du möchtest etwas ausprobieren? Dazu kannst Du [Twig fiddle](https://twigfiddle.com/) verwenden.
 {{% /notice %}}
