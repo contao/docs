@@ -1,16 +1,30 @@
 ---
-title: "Template vererben"
-description: "Die Template Vererbung."
-url: "layout/templates/twig/vererbung"
+title: "Templates wiederverwenden"
+description: "Template Wiederverwendung"
+url: "layout/templates/twig/wiederverwendung"
 aliases:
-- /de/layout/templates/twig/vererbung/
+- /de/layout/templates/twig/wiederverwendung/
 weight: 40
 ---
 
-Contao setzt mit Twig konsequent auf das Wiederverwenden von Teilen eines Templates. Dabei wird ein Template nicht 
+Contao setzt mit Twig konsequent auf das Wiederverwenden von Teilen eines Templates. Twig unterstützt viele
+Möglichkeiten, Teile eines Templates wiederzuverwenden.
+Dazu u.a. gehören:
+* Erweitern
+* Beinhalten
+* Einbetten
+* Verwenden
+Für weitere Möglichkeiten findest Du die Beschreibung in der Entwicklerdoku
+* [Makros](https://docs.contao.org/dev/framework/templates/creating-templates/#macros)
+* [Komponenten](https://docs.contao.org/dev/framework/templates/creating-templates/#contao-components)
+
+
+Dabei wird
+ein Template nicht
 komplett
 überschrieben, sondern es werden nur gezielt einzelne Teilbereiche (Blöcke) angepasst.
 
+## Templates Erweitern
 ## Blöcke anpassen
 
 Zur Gliederung umschließen die Twig Templates ihre Inhalte in ein oder mehreren Blöcken `{% block
