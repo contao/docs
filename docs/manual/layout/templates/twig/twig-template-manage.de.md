@@ -9,14 +9,14 @@ weight: 30
 
 ## Ordnerstruktur
 
-Du kannst Deine Templates im Ordner `/templates` ablegen, damit diese im Backend, etwa bei der Konfiguration eines
-Inhaltselements, zur Auswahl angeboten werden. Contao verwendet
+Du kannst Deine eigenen Templates im Ordner `/templates` ablegen, damit diese im Backend, etwa bei der Konfiguration 
+eines Inhaltselements, zur Auswahl angeboten werden. Contao verwendet
 * [globale Templates](#globale-templates) und
 * [themespezifische Templates](#themespezifische-templates)
 
 ## Globale Templates
 
-Globale Twig-Templates werden innerhalb von `/templates` in einer speziellen Ordnerstruktur abgelegt.
+Eigene globale Twig-Templates werden innerhalb von `/templates` in einer speziellen Ordnerstruktur abgelegt.
 Bei der Auswahl des Templates ist die Struktur in eckigen Klammern hinter dem Template-Namen angegeben. Der Unterordner
 `content_element` ist zum Beispiel für Inhaltselemente vorgesehen.
 Contao unterstützt Dich bei der Strukturierung der Templates. Willst Du eines der neuen Twig-Templates anpassen, dann
@@ -34,17 +34,17 @@ benötigt, die dann im Backend des entsprechenden Elementes ausgewählt werden k
 
 ### Globale Varianten-Templates
 
-Willst Du mehrere Varianten eines Twig-Templates zur Verfügung stellen, dann müssen die Templates für die Varianten
+Willst Du mehrere Varianten eines eigenen Templates zur Verfügung stellen, dann müssen die Templates für die Varianten
 in einem Unterordner der neuen Struktur abgelegt werden, der dem Namen des anzupassenden Templates entspricht. Der Name
 des Varianten-Templates ist unter Einhaltung der 
 [Namenskonventionen](https://docs.contao.org/dev/framework/templates/creating-templates/#naming-convention) frei
-wählbar, sollte aber aus Gründen der Übersicht einen Hinweis auf den Zweck der Templateänderung geben.
+wählbar, sollte aber aus Gründen der Übersicht einen Hinweis auf den Zweck der Templateanpassung geben.
 
 {{% example "Varianten-Templates für das Textelement" %}}
 Du möchtest mehrere Varianten des Textelements bereitstellen.
 Dazu legst Du innerhalb von `/templates/content_element` einen Ordner `text` an. Innerhalb des neuen Ordners
 `/templates/content_element/text` kannst Du jetzt ein oder mehrere Varianten des Templates für das Inhaltselement Text
-anlegen, z.B. `tooltip.html.twig` und `highlight.html.twig`.
+anlegen, z.B. `tip.html.twig` und `highlight.html.twig`.
 Im Backend stehen jetzt neben dem Core-Template `text.html.twig` auch Deine beiden Varianten-Templates zur Auswahl.
 {{% /example %}}
 
@@ -59,12 +59,13 @@ Im [Theme-Manager](../../../theme-manager/themes-verwalten) kannst du einen vorh
 Theme verknüpfen. Das ist der **Themeordner**. Templates in diesem Ordner sind **themespezifische Templates**. Sie sind
 in
 Bezug auf Ihre Behandlung etwas Besonderes, denn sie sind zwar am spezifischsten, aber dennoch nicht Teil der
-[Templatehierarchie](../vererbung#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein themespezifisches
+[Templatehierarchie](../wiederverwendung/#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein 
+themespezifisches
 Template verwendet wird.<br>
 
 {{% notice note %}}
 Du kannst mit themespezifischen Templates grundsätzlich nur Templates anpassen, die als globale Templates in der
-Templatehierarchie vorhanden sind.
+[Templatehierarchie](../wiederverwendung/#templatehierarchie) vorhanden sind.
 {{% /notice %}}
 
 Für die neuen Twig-Templates muss innerhalb des Themeordners die gleiche Ordnerstruktur für die Templates eingehalten
