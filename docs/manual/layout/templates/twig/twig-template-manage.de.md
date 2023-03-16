@@ -36,13 +36,15 @@ benötigt, die dann im Backend des entsprechenden Elementes ausgewählt werden k
 
 Willst Du mehrere Varianten eines Twig-Templates zur Verfügung stellen, dann müssen die Templates für die Varianten
 in einem Unterordner der neuen Struktur abgelegt werden, der dem Namen des anzupassenden Templates entspricht. Der Name
-des Varianten-Templates ist vollkommen frei wählbar.
+des Varianten-Templates ist unter Einhaltung der 
+[Namenskonventionen](https://docs.contao.org/dev/framework/templates/creating-templates/#naming-convention) frei
+wählbar, sollte aber aus Gründen der Übersicht einen Hinweis auf den Zweck der Templateänderung geben.
 
 {{% example "Varianten-Templates für das Textelement" %}}
 Du möchtest mehrere Varianten des Textelements bereitstellen.
 Dazu legst Du innerhalb von `/templates/content_element` einen Ordner `text` an. Innerhalb des neuen Ordners
 `/templates/content_element/text` kannst Du jetzt ein oder mehrere Varianten des Templates für das Inhaltselement Text
-anlegen, z.B. `individuelles_textelement.html.twig` und `highlight.html.twig`.
+anlegen, z.B. `tooltip.html.twig` und `highlight.html.twig`.
 Im Backend stehen jetzt neben dem Core-Template `text.html.twig` auch Deine beiden Varianten-Templates zur Auswahl.
 {{% /example %}}
 
@@ -57,7 +59,7 @@ Im [Theme-Manager](../../../theme-manager/themes-verwalten) kannst du einen vorh
 Theme verknüpfen. Das ist der **Themeordner**. Templates in diesem Ordner sind **themespezifische Templates**. Sie sind
 in
 Bezug auf Ihre Behandlung etwas Besonderes, denn sie sind zwar am spezifischsten, aber dennoch nicht Teil der
-[Templatehierarchie](../vererbung#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein themespezifisches 
+[Templatehierarchie](../vererbung#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein themespezifisches
 Template verwendet wird.<br>
 
 {{% notice note %}}
@@ -81,9 +83,9 @@ Für ein Theme B ist der Themeordner `/templates/themeB/`. In diesem Ordner kann
 Themespezifische Varianten-Templates benötigen ein globales themespezisches Template mit dem gleichen Namen.
 
 {{% example "Themespezifisches Varianten-Template" %}}
-Wenn ein themespezifisches Template`/templates/content_element/text/individuelles_textelement.html.twig` existiert,
+Wenn ein themespezifisches Template`/templates/content_element/text/highlight.html.twig` existiert,
 kannst Du zusätzlich noch themespezifische Varianten-Templates verwenden. Für das Theme A mit dem Templateordner
-`/templates/themeA/` wäre das `/templates/themeA/content_element/text/individuelles_textelement.html.twig`.
+`/templates/themeA/` wäre das `/templates/themeA/content_element/text/highlight.html.twig`.
 {{% /example %}}
 
 {{% notice warning %}}
