@@ -23,7 +23,8 @@ Komponente verwendet.
 
 {{% notice note %}}
 In Twig-Templates wird konsequent auf die leistungsstarken Methoden zur Strukturierung von Vorlagen gesetzt, wie z.B.
-[Erweitern](vererbung), Einbinden, Wiederverwenden von Blöcken oder Makros. Deshalb sollten keine
+[Erweitern](wiederverwendung#templates-erweitern), Einbinden, Wiederverwenden von Blöcken oder Makros. Deshalb sollten 
+keine
 Templates mehr komplett überschrieben werden, wie das bei den PHP-Templates häufig üblich bzw. notwendig war.<br>
 Weitergehende Informationen zu Twig-Templates in Contao findest Du in der
 [Entwicklerdokumentation](https://docs.contao.org/dev/framework/templates/).
