@@ -77,12 +77,12 @@ Templates in der
 Für die neuen Twig-Templates muss innerhalb des Themeordners die gleiche Ordnerstruktur für die Templates eingehalten
 werden, wie das für die globalen Templates der Fall ist.
 
-{{% example "Themespezifisches Template" %}}
+{{% example "Themespezifisches Template für das Textelement" %}}
 Du hast ein Theme, das Theme A. Der Themeordner für dieses Theme
 ist `/templates/themeA/`. Du möchtest für das Textelement ein themespezifisches Template anbieten. Der Pfad zu diesem
 Template ist
 `/templates/themeA/content_element/text.html.twig`.<br>
-Für ein Theme B ist der Themeordner `/templates/themeB/`. In diesem Ordner kannst Du unter
+Für ein Theme B ist der Themeordner `/templates/themeB/`. In diesem Ordner kannst Du mit
 `/templates/themeB/content_element/text.html.twig` eine andere Anpassung für das Text-Template verwenden.
 {{% /example %}}
 
@@ -90,7 +90,7 @@ Für ein Theme B ist der Themeordner `/templates/themeB/`. In diesem Ordner kann
 
 Themespezifische Varianten-Templates benötigen ein globales Varianten-Template mit dem gleichen Namen.
 
-{{% example "Themespezifisches Varianten-Template" %}}
+{{% example "Themespezifisches Varianten-Template für das Textelement" %}}
 Wenn ein themespezifisches
 Template`/templates/content_element/text/highlight.html.twig` existiert, kannst Du zusätzlich noch themespezifisches
 Varianten-Templates verwenden. Für das Theme A mit dem Templateordner
