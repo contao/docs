@@ -7,7 +7,8 @@ aliases:
 weight: 40
 ---
 
-Contao setzt mit Twig konsequent auf das Vererben von Templates. Dabei wird ein Template nicht komplett
+Contao setzt mit Twig konsequent auf das Wiederverwenden von Teilen eines Templates. Dabei wird ein Template nicht 
+komplett
 überschrieben, sondern es werden nur gezielt einzelne Teilbereiche (Blöcke) angepasst.
 
 ## Blöcke anpassen
