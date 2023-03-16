@@ -62,9 +62,8 @@ Der Name des Themeordners darf aus technischen
 Gründen ([verwalteter Namespace](https://docs.contao.org/dev/framework/templates/architecture/#managed-namespace)) keine
 Unterstriche enthalten.
 {{% /notice %}}
-Templates in diesem Ordner sind **themespezifische Templates**. Sie sind
-in
-Bezug auf Ihre Behandlung etwas Besonderes, denn sie sind zwar am spezifischsten, aber dennoch nicht Teil der
+Templates im Themeordner sind **themespezifische Templates**. Sie sind in Bezug auf Ihre Behandlung etwas Besonderes,
+denn sie sind zwar am spezifischsten, aber dennoch nicht Teil der
 [Templatehierarchie](../wiederverwendung/#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein
 themespezifisches
 Template verwendet wird.<br>
@@ -91,7 +90,7 @@ Themespezifische Varianten-Templates benötigen ein globales themespezisches Tem
 
 {{% example "Themespezifisches Varianten-Template" %}}
 Wenn ein themespezifisches Template`/templates/content_element/text/highlight.html.twig` existiert,
-kannst Du zusätzlich noch themespezifische Varianten-Templates verwenden. Für das Theme A mit dem Templateordner
+kannst Du zusätzlich noch themespezifisches Varianten-Templates verwenden. Für das Theme A mit dem Templateordner
 `/templates/themeA/` wäre das `/templates/themeA/content_element/text/highlight.html.twig`.
 {{% /example %}}
 
