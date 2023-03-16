@@ -9,7 +9,7 @@ weight: 30
 
 ## Ordnerstruktur
 
-Du kannst Deine eigenen Templates im Ordner `/templates` ablegen, damit diese im Backend, etwa bei der Konfiguration 
+Du kannst Deine eigenen Templates im Ordner `/templates` ablegen, damit diese im Backend, etwa bei der Konfiguration
 eines Inhaltselements, zur Auswahl angeboten werden. Contao verwendet
 * [globale Templates](#globale-templates) und
 * [themespezifische Templates](#themespezifische-templates)
@@ -36,7 +36,7 @@ benötigt, die dann im Backend des entsprechenden Elementes ausgewählt werden k
 
 Willst Du mehrere Varianten eines eigenen Templates zur Verfügung stellen, dann müssen die Templates für die Varianten
 in einem Unterordner der neuen Struktur abgelegt werden, der dem Namen des anzupassenden Templates entspricht. Der Name
-des Varianten-Templates ist unter Einhaltung der 
+des Varianten-Templates ist unter Einhaltung der
 [Namenskonventionen](https://docs.contao.org/dev/framework/templates/creating-templates/#naming-convention) frei
 wählbar, sollte aber aus Gründen der Übersicht einen Hinweis auf den Zweck der Templateanpassung geben.
 
@@ -56,10 +56,16 @@ Damit sind die Möglichkeiten zur Anpassung von Templates sehr flexibel.
 ## Themespezifische Templates
 
 Im [Theme-Manager](../../../theme-manager/themes-verwalten) kannst du einen vorhandenen Unterordner mit einem
-Theme verknüpfen. Das ist der **Themeordner**. Templates in diesem Ordner sind **themespezifische Templates**. Sie sind
+Theme verknüpfen. Das ist der **Themeordner**.
+{{% notice warning %}}
+Der Name des Themeordners darf aus technischen 
+Gründen ([verwalteter Namespace](https://docs.contao.org/dev/framework/templates/architecture/#managed-namespace)) keine
+Unterstriche enthalten.
+{{% /notice %}}
+Templates in diesem Ordner sind **themespezifische Templates**. Sie sind
 in
 Bezug auf Ihre Behandlung etwas Besonderes, denn sie sind zwar am spezifischsten, aber dennoch nicht Teil der
-[Templatehierarchie](../wiederverwendung/#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein 
+[Templatehierarchie](../wiederverwendung/#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein
 themespezifisches
 Template verwendet wird.<br>
 
