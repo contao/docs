@@ -47,7 +47,8 @@ weitergeleitet wird (Bestätigungsseite).
 verwenden. In den Backend-Einstellungen unter »Erlaubte HTML-Tags« legst du fest, welche HTML-Tags zulässig sind.
 
 {{< version-tag "5.1" >}}**Per Ajax senden:** Wenn du diese Option auswählst, benötigst du keine weitere Weiterleitungsseite 
-und du kannst zusätzlich einen Text als Bestätigungsmeldung setzen. 
+und du kannst zusätzlich einen Text als Bestätigungsmeldung setzen. Die übermittelten Formulardaten können als Simple-Tokens verwendet werden, 
+z. B. ##field_name##.
 
 
 ## Formulardaten versenden
