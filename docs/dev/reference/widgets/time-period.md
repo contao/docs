@@ -18,7 +18,7 @@ This widget renders a text field with a drop-down menu and is proposed to be use
 | eval.maxlength | int                  | Maximum number of characters that is allowed in the current field.          |
 
 
-Additionally, there are inherited global options like: `label`, `default`, `exclude`, `search`, `sorting`, `filter`, `flag`, `sql`.
+Additionally, there are inherited [global options](../../dca/fields/) like: `label`, `default`, `exclude`, `search`, `sorting`, `filter`, `flag`, `sql`.
 
 ## Column Definition
 
