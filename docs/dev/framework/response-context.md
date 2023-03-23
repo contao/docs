@@ -149,7 +149,7 @@ use Spatie\SchemaOrg\ImageObject;
 $schemaManager = new JsonLdManager(new ResponseContext());
 
 // This is how you would access it from the current context (in case it exists)
-$schemaManager = $this->responseContextAccessor->getCurrentContext()->get(JsonLdManager::class);
+$schemaManager = $this->responseContextAccessor->getResponseContext()->get(JsonLdManager::class);
 
 // Get the graph for schema.org
 $graph = $schemaManager->getGraphForSchema(JsonLdManager::SCHEMA_ORG);
