@@ -1,12 +1,20 @@
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script type="text/javascript">(function () {
-    var search = docsearch({
-        apiKey: '532603b4ad01695b68a0f6048dc8ea46',
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>(function () {
+    docsearch({
         indexName: 'contao',
-        inputSelector: '#algolia-search',
-        algoliaOptions: { 'facetFilters': ["language:{{ .Page.Language | default "en" }}"] },
-        debug: true // Set debug to true if you want to inspect the dropdown
+        apiKey: '2cc3dc0f193fe88f8176ccec1d413c4a',
+        container: '.algolia-searchbox',
+        appId: 'KDZKB9K935',
+        searchParameters: { 'facetFilters': ['language:{{ .Page.Language | default "en" }}'] },
+        placeholder: '{{T "Search-placeholder"}}',
+        translations: {
+            button: {
+                buttonText: '{{T "Search-placeholder"}}',
+                buttonAriaLabel: '{{T "Search-placeholder"}}',
+            }
+        }
     });
+    /*
     if (URLSearchParams !== undefined) {
         var params = new URLSearchParams(location.search);
         if (params.has('search')) {
@@ -14,5 +22,6 @@
             search.autocomplete.autocomplete.open();
         }
     }
+    */
 })();
 </script>

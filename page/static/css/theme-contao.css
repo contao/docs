@@ -544,6 +544,35 @@ option {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.DocSearch-Button {
+    --docsearch-muted-color: rgba(255, 255, 255, 0.6);
+    --docsearch-text-color: rgba(255, 255, 255, 0.6);
+    --docsearch-searchbox-background: transparent;
+    --docsearch-searchbox-focus-background: transparent;
+    --docsearch-searchbox-shadow: none;
+    margin-left: 0;
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+.DocSearch-Search-Icon {
+    width: 18px;
+    height: auto;
+}
+
+.DocSearch-Button-Placeholder {
+    font-size: inherit;
+    padding-left: 5px;
+    padding-right: 0;
+}
+
+.DocSearch-Button-Key {
+    --docsearch-muted-color: rgb(150, 159, 175);
+    --docsearch-text-color: rgb(150, 159, 175);
+}
+
 #body .tab-content .tab-item > *:first-child {
     margin-top: 0;
 }
