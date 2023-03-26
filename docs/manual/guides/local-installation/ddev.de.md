@@ -76,6 +76,7 @@ Installation Updaten
 sudo apt update && sudo apt upgrade
 ```
 
+
 ## Projekt erstellen
 
 Öffne eine Konsole deiner Wahl und erstelle und wechsel in das gewünschte Verzeichnis.
