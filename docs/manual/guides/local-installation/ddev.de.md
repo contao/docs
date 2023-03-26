@@ -93,7 +93,7 @@ ddev config
 
 DDEV-Einstellungen vornehmen, als __Project Type__ auf jeden fall `php` auswählen. Die __Docroot Location__ erstmal leer lassen, da es bei Neuinstallationen noch keinen `public` Ordner gibt und DDEV dann nicht starten kann.
 
-Zur Installation via console ist es am einfachsten via ssh in den Container gehen.
+Zur Installation via Konsole ist es am einfachsten, sich via SSH mit dem Container zu verbinden.
 
 ```shell
 ddev ssh
