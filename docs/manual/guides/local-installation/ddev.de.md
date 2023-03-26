@@ -10,7 +10,7 @@ tags:
    - "Installation"
 ---
 
-DDEV ist ein Open-Source-Tool, mit dem sich in minuten lokale PHP-Entwicklungsumgebungen einrichten lassen.
+DDEV ist ein Open-Source-Tool, mit dem sich in Minuten lokale PHP-Entwicklungsumgebungen einrichten lassen.
 
 DDEV erstellt eine `config.yml`, diese enthält alle Einstellungen für dein Projekt. Diese kann mit in GIT versioniert werden und unterstützt so das kollaboratives arbeiten in Teams oder mit Freelancern.
 
