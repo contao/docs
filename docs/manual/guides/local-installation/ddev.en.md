@@ -76,6 +76,7 @@ Installation Update
 sudo apt update && sudo apt upgrade
 ```
 
+
 ## Create project
 
 Open a console of your choice and create and change to the desired directory.
