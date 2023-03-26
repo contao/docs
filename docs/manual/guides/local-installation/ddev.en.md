@@ -1,7 +1,7 @@
 ---
 title: "DDEV"
 menuTitle : "With DDEV"
-description: "Mit DDEV kannst du eine oder mehrere Docker Instanzen starten. XDEBUG, MariaDB und MySQL in verschieden Versionen, PHP und vieles mehr."
+description: "With DDEV you can launch one or more Docker instances. XDEBUG, MariaDB and MySQL in different versions, PHP and much more."
 url: "guides/local-installation/ddev"
 aliases:
     - /en/guides/local-installation/ddev/
