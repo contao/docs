@@ -109,7 +109,7 @@ In der `.ddev/config.yml` nun das Docroot anpassen und ddev neu starten.
 docroot: "contao/public"
 ```
 
-Um Apache anstatt NGINX zu verwenden, dein Eintrag `webserver_type: nginx-fpm`in `apache-fpm` anpassen.
+Um Apache anstatt NGINX zu verwenden, den Eintrag `webserver_type: nginx-fpm` in `apache-fpm` ändern.
 
 ```yml
 webserver_type: apache-fpm
