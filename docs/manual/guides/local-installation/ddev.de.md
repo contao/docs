@@ -33,7 +33,7 @@ DDEV ist für eigentlich alle Plattformen verfügbar, für die Installation dein
 brew install ddev/ddev/ddev
 ```
 
-Nach der Installation noch die lokalen SSL Zertifikate installieren. (Im Anschluss Browser neu starten)
+Nach der Installation noch die lokalen SSL-Zertifikate installieren (im Anschluss Browser neu starten).
 
 ```shell
 mkcert -install
