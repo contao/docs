@@ -131,7 +131,7 @@ Eine Datenbank gibt es schon in DDEV. Die Verbindungsdaten für die Installation
 | **Datenbank**       | db |
 
 {{% notice note %}}
-Mit `ddev describe` erhältst du eine Übersicht Services, die im Projekt zur Verfügung stehen und wie du sie erreichst. Mit `ddev poweroff` kannst du aus jedem Verzeichnis heraus, alle gestarteten Projekte/Container stoppen.
+Mit `ddev describe` erhältst du eine Übersicht über Services, die im Projekt zur Verfügung stehen und wie du sie erreichst. Mit `ddev poweroff` kannst du aus jedem Verzeichnis heraus alle gestarteten Projekte/Container stoppen.
 
 {{% /notice %}}
 
