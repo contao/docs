@@ -147,7 +147,7 @@ DDEV bietet nun auch [Services als Addon](https://ddev.readthedocs.io/en/latest/
 ddev get ddev/ddev-adminer && ddev restart
 ```
 
-Zudem kann man PHPMyAdmin auch deaktivieren, da zu in der `.ddev/config.yml` 
+Zudem kann man phpMyAdmin in der `.ddev/config.yml` auch deaktivieren:
 
 ```yml
 omit_containers: [dba]
