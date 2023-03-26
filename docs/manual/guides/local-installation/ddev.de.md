@@ -85,7 +85,7 @@ sudo apt update && sudo apt upgrade
 mkdir -p  ~/Projekte/contao/contao-ddev && cd ~/Projekte/contao/contao-ddev
 ```
 
-DDEV konfiguration anlegen mit:
+DDEV-Konfiguration anlegen mit:
 
 ```shell
 ddev config
