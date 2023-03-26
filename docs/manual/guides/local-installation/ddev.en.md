@@ -64,7 +64,7 @@ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ 
 sudo apt update && sudo apt install -y ddev
 ```
 
-If necessary, install the local SSL certificates after the installation. (Afterwards restart your browser)
+If necessary, install the local SSL certificates after the installation (afterwards restart your browser).
 
 ```shell
 mkcert -install
