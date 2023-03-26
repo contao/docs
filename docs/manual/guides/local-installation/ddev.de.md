@@ -46,7 +46,7 @@ brew upgrade ddev
 ```
 
 {{% notice note %}}
-DDEV empfiehlt unter MacOS, Mutagen zu aktivieren, um die beste Leistung zu erzielen.
+DDEV empfiehlt unter macOS, Mutagen zu aktivieren, um die beste Leistung zu erzielen.
 
 ```shell
 ddev config global --mutagen-enabled
