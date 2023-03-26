@@ -21,6 +21,7 @@ the case, you can download the
 more information about installing these programs.
 {{% /notice %}}
 
+
 ## Install DDEV
 
 DDEV is available for all platforms, please refer to the [DDEV documentation](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) for the installation of your platform.
