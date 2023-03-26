@@ -33,7 +33,7 @@ DDEV is available for all platforms, please refer to the [DDEV documentation](ht
 brew install ddev/ddev/ddev
 ```
 
-After the installation install the local SSL certificates. (Afterwards restart your browser)
+After the installation install the local SSL certificates (afterwards restart your browser).
 
 ```shell
 mkcert -install
