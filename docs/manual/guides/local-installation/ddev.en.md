@@ -131,7 +131,7 @@ A database already exists in DDEV. The connection data for the installation are:
 | **Database** | db |
 
 {{% notice note %}}
-With `ddev describe` you get an overview of services available in the project and how to reach them. With `ddev poweroff` you can stop all started projects/containers from any directory.
+With `ddev describe` you get an overview of the services available in the project and how to reach them. With `ddev poweroff` you can stop all started projects/containers from any directory.
 
 {{% /notice %}}
 
