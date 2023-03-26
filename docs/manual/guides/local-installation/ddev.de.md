@@ -135,6 +135,7 @@ Mit `ddev describe` erhältst du eine Übersicht über Services, die im Projekt 
 
 {{% /notice %}}
 
+
 ## DDEV Addons
 
 DDEV bietet nun auch [Services als Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
