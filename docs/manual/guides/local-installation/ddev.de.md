@@ -26,6 +26,7 @@ mehr Informationen zur Installation dieser Programme durchlesen.
 
 DDEV ist für eigentlich alle Plattformen verfügbar, für die Installation deiner Plattform schau bitte in der [DDEV Dokumentation](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) nach.
 
+
 ### Beispiel: Die Installtion unter MacOS mit __brew__ durchführen.
 
 ```shell
