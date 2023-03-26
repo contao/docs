@@ -1,7 +1,7 @@
 ---
 title: "DDEV"
 menuTitle : "Mit DDEV"
-description: "Mit DDEV kannst du eine oder mehrere Docker Instanzen starten. XDEBUG, MariaDB und MySQL in verschieden Versionen, PHP und vieles mehr."
+description: "DDEV ist ein Open-Source-Tool, mit dem sich in minuten lokale PHP-Entwicklungsumgebungen einrichten lassen."
 url: "anleitungen/lokale-installation/ddev"
 aliases:
     - /de/anleitungen/lokale-installation/ddev/
@@ -10,7 +10,7 @@ tags:
    - "Installation"
 ---
 
-DDEV ist eine in GO entwickelte Anwendung, die es ermöglicht, deine Projekte einfach anzulegen und zu verwalten. Du kannst mehrere Projekte Parallel starten und auch über den `ddev-router` miteinander verlinken, was zum Testen und Entwickeln von Services interessant ist.
+DDEV ist ein Open-Source-Tool, mit dem sich in minuten lokale PHP-Entwicklungsumgebungen einrichten lassen.
 
 DDEV erstellt eine `config.yml`, diese enthält alle Einstellungen für dein Projekt. Diese kann mit in GIT versioniert werden und unterstützt so das kollaboratives arbeiten in Teams oder mit Freelancern.
 
