@@ -70,7 +70,7 @@ Evtl. nach der Installation noch die lokalen SSL-Zertifikate installieren (im An
 mkcert -install
 ```
 
-Installation Updaten
+Installation updaten
 
 ```shell
 sudo apt update && sudo apt upgrade
