@@ -1,7 +1,7 @@
 ---
 title: "DDEV"
 menuTitle : "Mit DDEV"
-description: "DDEV ist ein Open-Source-Tool, mit dem sich in minuten lokale PHP-Entwicklungsumgebungen einrichten lassen."
+description: "DDEV ist ein Open-Source-Tool, mit dem sich in Minuten lokale PHP-Entwicklungsumgebungen einrichten lassen."
 url: "anleitungen/lokale-installation/ddev"
 aliases:
     - /de/anleitungen/lokale-installation/ddev/
