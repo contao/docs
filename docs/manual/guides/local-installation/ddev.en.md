@@ -85,7 +85,7 @@ Open a console of your choice and create and change to the desired directory.
 mkdir -p ~/projects/contao/contao-ddev && cd ~/projects/contao/contao-ddev
 ```
 
-Create DDEV configuration with:
+Create the DDEV configuration with:
 
 ```shell
 ddev config
