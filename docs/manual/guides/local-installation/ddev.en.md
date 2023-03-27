@@ -93,6 +93,10 @@ ddev config
 
 Make DDEV settings, select `php` as __Project Type__ in any case. Leave the __Docroot Location__ empty for now, because there is no `public` folder for new installations and DDEV can not start then.
 
+```shell
+ddev start
+```
+
 For installation via console it is easiest to go via ssh into the container.
 
 ```shell
