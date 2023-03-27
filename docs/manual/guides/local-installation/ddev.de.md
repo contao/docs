@@ -79,7 +79,7 @@ sudo apt update && sudo apt upgrade
 
 ## Projekt erstellen
 
-Öffne eine Konsole deiner Wahl und erstelle und wechsle in das gewünschte Verzeichnis.
+Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses.
 
 ```shell
 mkdir -p  ~/Projekte/contao/contao-ddev && cd ~/Projekte/contao/contao-ddev
