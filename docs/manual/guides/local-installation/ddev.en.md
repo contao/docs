@@ -79,7 +79,7 @@ sudo apt update && sudo apt upgrade
 
 ## Create project
 
-Open a console of your choice and create and change to the desired directory.
+Open the console of your choice, create the desired directory and then change to it.
 
 ```shell
 mkdir -p ~/projects/contao/contao-ddev && cd ~/projects/contao/contao-ddev
