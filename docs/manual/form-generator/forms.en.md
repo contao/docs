@@ -36,6 +36,9 @@ To create a new form click on **New** ![Create a new form](/de/icons/new.svg?cla
 **Allow HTML tags:** If you select this option, your visitors can use HTML code in the form fields. In the backend 
 settings under "Allowed HTML Tags" you define which HTML tags are allowed.
 
+{{< version-tag "5.1" >}} **Submit via Ajax:** If you select this option, you will not need a redirect page 
+and you can additionally set a text as confirmation message. The submitted form data can be used as simple tokens like: ##field_name##.
+
 ## Send form data
 
 If desired, Contao will send the form data by email to one or more recipients. If a form contains a file upload field, 
