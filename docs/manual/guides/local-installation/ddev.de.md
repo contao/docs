@@ -134,6 +134,11 @@ Eine Datenbank gibt es schon in DDEV. Die Verbindungsdaten für die Installation
 | **Passwort**        | db |
 | **Datenbank**       | db |
 
+Auf die Datenbank des aktuellen Projektes kann über das bereits integrierte PhpMyAdmin zugegriffen werden. Mit folgenden Befehl öffnet sich nach Eingabe automatisch ein Browsertab:
+```shell
+ddev launch -p
+```
+
 {{% notice note %}}
 Mit `ddev describe` erhältst du eine Übersicht über Services, die im Projekt zur Verfügung stehen und wie du sie erreichst. Mit `ddev poweroff` kannst du aus jedem Verzeichnis heraus alle gestarteten Projekte/Container stoppen.
 
