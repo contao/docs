@@ -10,7 +10,8 @@ Contao automatically indexes the pages of your website as soon as they are acces
 
 ![The on-site search in the front end](/de/layout/module-management/images/de/die-on-site-suche-im-frontend.png?classes=shadow)
 
-Note, however, that for security reasons your website will not be indexed if you are logged into the back end and access the front end preview. It could be that there is unpublished content on your website, which should not appear in the search index before you publish it.
+Note, however, that for security reasons your website will not be indexed if you are logged into the back end and access the front end preview. It could be that there is unpublished content on your website, which should not appear in the search index before you publish it. In debug mode, the web page is also
+not indexed.
 
 ## Search syntax
 
