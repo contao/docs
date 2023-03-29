@@ -17,7 +17,8 @@ die Seiten zurück, die den gesuchten Begriff bzw. die gesuchten Begriffe entha
 
 Beachte jedoch, dass deine Webseite aus Sicherheitsgründen nicht indiziert wird, wenn du im Backend angemeldet bist und 
 die Frontend-Vorschau aufrufst. Es könnte ja sein, dass sich dort noch nicht veröffentlichte Inhalte befinden, die vor 
-ihrer Veröffentlichung natürlich auch nicht im Suchindex auftauchen sollen.
+ihrer Veröffentlichung natürlich auch nicht im Suchindex auftauchen sollen. Im Debug-Modus wird die Webseite ebenfalls
+nicht indexiert.
 
 
 ## Suchsyntax
