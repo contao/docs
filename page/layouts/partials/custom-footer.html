@@ -5,7 +5,7 @@
         apiKey: '2cc3dc0f193fe88f8176ccec1d413c4a',
         container: '.algolia-searchbox',
         appId: 'KDZKB9K935',
-        searchParameters: { 'facetFilters': ['lang:{{ .Page.Language | default "en" }}'] },
+        searchParameters: { 'facetFilters': ['manualtype:dev OR manualtype:manual_{{ .Page.Language | default "en" }}'] },
         placeholder: '{{T "Search-placeholder"}}',
         translations: {
             button: {
