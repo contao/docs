@@ -1,11 +1,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 <script>(function () {
-    docsearch({
+    const config = {
         indexName: 'contao',
         apiKey: '2cc3dc0f193fe88f8176ccec1d413c4a',
         container: '.algolia-searchbox',
         appId: 'KDZKB9K935',
-        searchParameters: { 'facetFilters': ['manualtype:dev', 'manualtype:manual_{{ .Page.Language | default "en" }}'] },
+        searchParameters: { 'facetFilters': ['lang:{{ .Page.Language | default "en" }}'] },
         placeholder: '{{T "Search-placeholder"}}',
         translations: {
             button: {
@@ -13,15 +13,27 @@
                 buttonAriaLabel: '{{T "Search-placeholder"}}',
             }
         }
-    });
-    /*
+    };
+
+    let executeClick = false;
+
     if (URLSearchParams !== undefined) {
-        var params = new URLSearchParams(location.search);
+        const params = new URLSearchParams(location.search);
+
         if (params.has('search')) {
-            search.autocomplete.autocomplete.setVal(params.get('search'));
-            search.autocomplete.autocomplete.open();
+            config.initialQuery = params.get('search');
+            executeClick = true;
         }
     }
-    */
+
+    docsearch(config);
+
+    if (executeClick) {
+        const button = document.querySelector('.DocSearch-Button');
+
+        if (null !== button) {
+            button.click();
+        }
+    }
 })();
 </script>
