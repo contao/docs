@@ -222,8 +222,8 @@ can be [registered using a hook][3].
 | folderalias | expects a valid folder URL alias                                                                                  |
 | phone       | expects a valid phone number (numeric characters, space [ ], plus [+], minus [-], parentheses [()] and slash [/]) |
 | prcnt       | allows numbers between 0 and 100                                                                                  |
-| locale      | expects a valid locale (e.g. "de-CH")                                                                             |
-| language    | expects a valid language code                                                                                     |
+| locale      | expects a valid locale (e.g. "de_CH")                                                                             |
+| language    | expects a valid language code (e.g. "de-CH")                                                                      |
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
 | httpurl     | {{< version "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
