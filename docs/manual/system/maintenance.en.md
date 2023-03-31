@@ -15,7 +15,7 @@ might be necessary to manually start the system maintenance tasks that are other
 
 This feature allows you to put the Contao instance into a "maintenance mode". While this mode is active, the front end
 is not reachable for regular visitors. Instead an appropriate message is shown. The back end is accessible as usual,
-logged in back end users can also visit the front end normally.
+logged in back end users can visit the front end in preview mode.
 
 This mode is useful, if more in depth work needs to be done in the back end, the effects of which should not be
 immediately visible in the front end.
