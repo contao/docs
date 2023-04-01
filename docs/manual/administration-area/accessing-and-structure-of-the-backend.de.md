@@ -40,27 +40,32 @@ Der Infobereich zeigt einige wichtige Links an, die beim Arbeiten mit Contao imm
 
 **Startseite:** Ein Klick auf das Contao-Logo führt zur Startseite des Backends zurück.
 
+**Handbuch:** Beim Klick auf diesen Link wird das Handbuch aufgerufen.
+
+{{< version-tag "5.1" >}} **Favorit speichern:** Beim Klick auf diesen Link kannst du aktuelle URL im Backend als Favorit Eintrag speichern.
+
 **Hinweise:** Beim Klick auf diesen Link öffnet ein Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
 
-**Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
-{{< version "4.8" >}}
+{{< version-tag "5.1" >}} **Design:** Du kannst zwischen hellen und dunklen Backend Design wählen.
 
-**Vorschau:** Dieser Link ruft das Frontend, also die eigentliche Webseite, in einem neuen Fenster auf. Wenn du eine
-bestimmte Seite oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprechende Seite im Frontend
-weitergeleitet.
+{{< version-tag "4.8" >}} **Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
+
+**Vorschau:** Dieser Link ruft das Frontend, also die eigentliche Webseite, in einem neuen Fenster auf. Wenn du eine bestimmte Seite 
+oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprechende Seite im Frontend weitergeleitet.
 
 **Benutzer:** Beim Klick auf Benutzer werden folgende Links angezeigt:
+  + **Profil:** Dieser Link führt zu den persönlichen Einstellungen deines Benutzerkontos. Du kannst dort z. B. dein Passwort ändern oder 
+  die Sprache wechseln.
 
-**Profil:** Dieser Link führt zu den persönlichen Einstellungen deines Benutzerkontos. Du kannst dort z. B. dein
-Passwort ändern oder die Sprache wechseln.
-
-**Abmelden:** Über diesen Link kannst du dich vom Backend abmelden.
-
-**Sicherheit:** Über diesen Link kann die 
+  + {{< version-tag "4.6" >}} **Sicherheit:** Über diesen Link kann die 
 [Zwei-Faktor-Authentifizierung](https://de.wikipedia.org/wiki/Zwei-Faktor-Authentisierung) für dein Backend aktiviert 
 werden.
-{{< version "4.6" >}}
 
+  + {{< version-tag "5.1" >}} **Favoriten:** Über diesen Link erreichst du die Verwaltung der Favoriten.
+
+  + **Abmelden:** Über diesen Link kannst du dich vom Backend abmelden.
+
+  
 
 ### Der Navigationsbereich
 
