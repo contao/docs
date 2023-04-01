@@ -42,13 +42,14 @@ Der Infobereich zeigt einige wichtige Links an, die beim Arbeiten mit Contao imm
 
 **Handbuch:** Beim Klick auf diesen Link wird das Handbuch aufgerufen.
 
-{{< version-tag "5.1" >}} **Favorit speichern:** Beim Klick auf diesen Link kannst du aktuelle URL im Backend als Favorit Eintrag speichern.
+**Favorit speichern:** {{< version-tag "5.1" >}} Beim Klick auf diesen Link kannst du die aktuelle URL im Backend als Favorit Eintrag 
+speichern. Vorhandene Favoriten Links werden im Navigationsbereich aufgeführt.
 
 **Hinweise:** Beim Klick auf diesen Link öffnet ein Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
 
-{{< version-tag "5.1" >}} **Design:** Du kannst zwischen hellen und dunklen Backend Design wählen.
+**Design:** {{< version-tag "5.1" >}} Du kannst zwischen hellen und dunklen Backend Design wählen.
 
-{{< version-tag "4.8" >}} **Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
+**Debug-Modus:** {{< version-tag "4.8" >}} Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
 
 **Vorschau:** Dieser Link ruft das Frontend, also die eigentliche Webseite, in einem neuen Fenster auf. Wenn du eine bestimmte Seite 
 oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprechende Seite im Frontend weitergeleitet.
@@ -57,11 +58,10 @@ oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprec
   + **Profil:** Dieser Link führt zu den persönlichen Einstellungen deines Benutzerkontos. Du kannst dort z. B. dein Passwort ändern oder 
   die Sprache wechseln.
 
-  + {{< version-tag "4.6" >}} **Sicherheit:** Über diesen Link kann die 
-[Zwei-Faktor-Authentifizierung](https://de.wikipedia.org/wiki/Zwei-Faktor-Authentisierung) für dein Backend aktiviert 
-werden.
+  + **Sicherheit:** {{< version-tag "4.6" >}} Über diesen Link kann die [Zwei-Faktor-Authentifizierung](https://de.wikipedia.org/wiki/Zwei-Faktor-Authentisierung) 
+  für dein Backend aktiviert werden.
 
-  + {{< version-tag "5.1" >}} **Favoriten:** Über diesen Link erreichst du die Verwaltung der Favoriten.
+  + **Favoriten:** {{< version-tag "5.1" >}} Über diesen Link erreichst du die Verwaltung der Favoriten.
 
   + **Abmelden:** Über diesen Link kannst du dich vom Backend abmelden.
 

@@ -38,6 +38,8 @@ favorite links are listed in the navigation area.
 
 **Notes:** Clicking on this link opens a modal and displays possible hints (e.g. maintenance mode).
 
+**Design:** {{< version-tag "5.1" >}} You can choose between light and dark mode.
+
 **Debug Mode:** {{< version-tag "4.8" >}} Clicking on this link will switch the [debug mode](/en/system/debug-mode/) on or off.
 
 **Preview:** This link opens the frontend, i.e. the actual website, in a new window. If you edit a specific page or article in the back end, you will be automatically forwarded to the corresponding page in the frontend.
