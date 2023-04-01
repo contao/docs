@@ -31,20 +31,28 @@ The info area shows some important links that are needed when working with Conta
 
 **Homepage:** A click on the Contao logo takes you back to the homepage of the back end.
 
+**Manual:** Clicking on this link opens the manual.
+
+**Save Favorite:** {{< version-tag "5.1" >}} By clicking on this link you can save the current backend URL as a favorite entry. Existing 
+favorite links are listed in the navigation area.
+
 **Notes:** Clicking on this link opens a modal and displays possible hints (e.g. maintenance mode).
 
-**Debug Mode:** Clicking on this link will switch the [debug mode](/en/system/debug-mode/) on or off.{{< version "4.8" >}}
+**Debug Mode:** {{< version-tag "4.8" >}} Clicking on this link will switch the [debug mode](/en/system/debug-mode/) on or off.
 
 **Preview:** This link opens the frontend, i.e. the actual website, in a new window. If you edit a specific page or article in the back end, you will be automatically forwarded to the corresponding page in the frontend.
 
 **User:** When you click on User, the following links are displayed:
 
-**Profile:** This link leads to the personal settings of your user account. There you can change your password or change the language.
+  + **Profile:** This link leads to the personal settings of your user account. There you can change your password or change the language.
 
-**Log out:** Log out of the back end here.
+  + **Security:** {{< version-tag "4.8" >}} Activate the two-factor authentication for your back end.
 
-**Security:** Activate the two-factor authentication for your back end.{{< version "4.6" >}}
+  + **Favorites:** {{< version-tag "5.1" >}} This link will take you to your favorite management.
 
+  + **Log out:** Log out of the back end here.
+
+  
 ### The navigation area
 
 The navigation area contains links to the different back end modules, each of which fulfills a specific task. For a better overview, the modules are organized in groups that you can expand and collapse as needed.
