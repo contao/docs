@@ -24,11 +24,13 @@ Komponente verwendet.
 
 {{% notice note %}}
 In Twig-Templates wird konsequent auf die leistungsstarken Methoden zur Strukturierung und Wiederverwendung von 
-Vorlagen gesetzt, wie z.B. [Erweitern](wiederverwendung/#erweitern), [Einfügen](wiederverwendung/#einfügen), 
-[Einbetten](wiederverwendung/#einbetten), horizontale Wiederverwendung oder Makros. Deshalb sollten keine
-Templates mehr komplett überschrieben werden, wie das bei den PHP-Templates häufig üblich bzw. notwendig war.<br>
-Wir werden innerhalb des Handbuches nur die wichtigsten Techniken von Twig-Templates in Contao behandeln. Weitergehende 
-Informationen zu Twig-Templates in Contao findest Du in der
+Vorlagen gesetzt, wie z.B. [Erweitern](wiederverwendung/#erweitern), [Einfügen](https://docs.contao.org/dev/framework/templates/creating-templates/#includes), 
+[Einbetten](https://docs.contao.org/dev/framework/templates/creating-templates/#embeds), [horizontale Wiederverwendung](https://docs.contao.org/dev/framework/templates/creating-templates/#horizontal-reuse) oder 
+[Makros](https://docs.contao.org/dev/framework/templates/creating-templates/#macros).
+Deshalb sollten keine Templates mehr komplett überschrieben werden, wie das bei den PHP-Templates häufig üblich bzw. notwendig war.<br>
+Wir werden innerhalb des Handbuches nur die wichtigste Technik - das Erweitern von Twig-Templates Contao genauer
+behandeln. 
+Weitergehende Informationen zu Twig-Templates in Contao findest Du in der
 [Entwicklerdokumentation](https://docs.contao.org/dev/framework/templates/).
 {{% /notice %}}
 
