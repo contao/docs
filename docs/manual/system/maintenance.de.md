@@ -17,8 +17,8 @@ zu starten.
 
 Mit dieser Funktion kann die gesamte Contao-Instanz in den »Wartungsmodus« versetzt werden. Während dieser Modus aktiv
 ist, ist die Webseite für reguläre Besucher nicht erreichbar und statt dessen wird ein entsprechender Hinweis angezeigt.
-Das Backend ist jedoch weiter normal erreichbar und eingeloggte Backend-Benutzer können auch das Frontend regulär
-aufrufen.
+Das Backend ist jedoch weiter normal erreichbar, angemeldete Backend-Benutzer können den Wartungsmodus über die 
+Frontend-Vorschau umgehen.
 
 Dieser Modus ist dann sinnvoll, wenn größere Umbauarbeiten im Backend vorgenommen werden müssen und die Auswirkungen
 im Frontend nicht sofort sichtbar sein sollen.
