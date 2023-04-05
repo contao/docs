@@ -2,7 +2,7 @@
 title: "Twig-Templates"
 description: "Übersicht Twig-Templates."
 url: "layout/templates/twig"
-weight: 10erweiter
+weight: 10
 aliases:
 - /de/layout/templates/twig/
 
