@@ -16,7 +16,7 @@ Für komplexere Anpassungen stehen noch viele weitere Möglichkeiten zur Verfüg
 Entwicklerdokumentation
 
 * [Einfügen](https://docs.contao.org/dev/framework/templates/creating-templates/#includes)
-* [Einbetten](https://docs.contao.org/dev/framework/templates/creating-templates/#embeds),
+* [Einbetten](https://docs.contao.org/dev/framework/templates/creating-templates/#embeds)
 * [Makros](https://docs.contao.org/dev/framework/templates/creating-templates/#macros)
 * [Komponenten](https://docs.contao.org/dev/framework/templates/creating-templates/#contao-components)
 * [Vorlagenfunktionen](https://docs.contao.org/dev/framework/templates/creating-templates/#template-features)
@@ -26,15 +26,19 @@ Entwicklerdokumentation
 Für die Wiederverwendung von Templates solltest Du Dich mit der Template-Hierarchie in Contao vertraut
 machen.
 
-* Templates aus einem Bundle (Core und Erweiterungen)
-* Templates aus einer Anwendung
+* Templates aus Core
+* Templates aus einer Erweiterung
+* Templates aus einer Applikation
 * globale Templates
 * globale Varianten-Templates
 
-Die übergeordneten Templates (Basis-Templates) des Cores, aus Erweiterungen oder Anwendungen können durch ein
+Templates aus dem Core können durch Erweiterung und Applikation verändert werden. Für
+Deine [globale Templates](../verwaltung/#globale-templates) aus dem Ordner `/templates` sind es übergeordnete
+Templates, die Du anpassen kannst.<br>
+Die übergeordneten Templates (Basis-Templates) des Cores, aus Erweiterungen oder Applikation können durch ein
 [globale Templates](../verwaltung/#globale-templates) aus dem Ordner `/templates` einmal grundsätzlich für alle Elemente
-eines Typs angepasst werden
-oder es können globale [Varianten-Templates](../verwaltung/#globale-varianten-templates) zur Verfügung gestellt
+eines Typs angepasst werden oder es können globale [Varianten-Templates](../verwaltung/#globale-varianten-templates) zur
+Verfügung gestellt
 werden. Ein Varianten-Template kann dabei entweder direkt ein Template
 aus dem Core, aus Erweiterungen oder Anwendungen anpassen oder ein globales Template aus dem Ordner `/templates`.
 
@@ -50,8 +54,7 @@ Beachte bei der Verwendung des Kommandozeilenbefehls auch den [entsprechenden Ab
 
 Zum Erweitern eines Templates steht der `{% extend %}`-Tag zu Verfügung.<br>
 Beim Erweitern wird ein Template nicht komplett überschrieben, sondern es werden nur gezielt einzelne Teilbereiche (
-Blöcke)
-eines übergeordneten Templates (Basis-Template) angepasst.
+Blöcke) eines übergeordneten Templates (Basis-Template) angepasst.
 Dazu muss das Basis-Template mit `{% extends "@Contao/('pfad-des-templates')/('name-des-templates') %}`
 angegeben werden.
 
@@ -85,7 +88,7 @@ einen zusätzlichen Text ein
         {{ parent() }}
     {% endblock %}
 ```
-In unserem Textelements wird jetzt vor dem Text, den wir im Tiny-MCE eingegeben haben, der Text `Einleitender Text
+In allen Textelementen wird jetzt vor dem Text, den wir im Tiny-MCE eingegeben haben, der Text `Einleitender Text
 für alle Textelemente` ausgegeben.
 
 Wir legen uns nun zusätzlich zwei Varianten für das Textelement an. Die Varianten erhalten im Block `{% block text%}`
@@ -163,10 +166,10 @@ Dabei können zusätzliche Template-Parameter übergeben werden.
 Weitere Informationen und Beispiele zur horizontalen Wiederverwendung findest Du in der
 [Entwicklerdokumentation](https://docs.contao.org/dev/framework/templates/creating-templates/#horizontal-reuse)
 
-Hier im Handbuch erwähnen wir diese komplexe Möglichkeit der Wiederverwendung von Templates nur deshalb, weil Du
+Hier im Handbuch erwähnen wir diese komplexe Möglichkeit der Wiederverwendung von Templates nur deshalb, weil Du Dir
 für komplexere Template-Anpassungen insbesondere das `{% use %}`-Tag und die Verwendung
 von [Contao-Komponenten](https://docs.contao.org/dev/framework/templates/creating-templates/#contao-components)
-verstehen musst.
+anschauen musst.
 
 {{% notice tip %}}
 Schau dir den Aufbau der neuen Core Templates an. Dann siehst Du, welcher Code sich in den einzelnen Blöcken der  
