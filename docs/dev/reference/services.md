@@ -496,7 +496,7 @@ class Example
 
 {{< version "4.13" >}}
 
-This service let you replace inserttags in your string content.
+This service lets you replace Insert Tags in within strings.
 
 Some methods return a `ChunkedText` instance. The `ChunkedText` container was created to keep the surrounding text 
 containing the insert tags separate from the replacements made by the insert tag parser. It is used for example in the 
@@ -509,6 +509,11 @@ use Contao\CoreBundle\InsertTag\InsertTagParser;
 class Example
 {
     private InsertTagParser $insertTagParser;
+    
+    public function __construct(InsertTagParser $insertTagParser)
+    {
+        $this->insertTagParser = $insertTagParser;
+    }
 
     public function __invoke(string $buffer): string
     {

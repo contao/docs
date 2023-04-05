@@ -23,7 +23,7 @@ php vendor/bin/contao-console contao:maintenance-mode [options] [<state>]
 
 | Option                          | Beschreibung                                                                                                                                                             |
 |---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--template=TEMPLATE`           | Ermöglicht die Verwendung eines anderen [Twig-Templates-Namens](https://docs.contao.org/dev/framework/templates/twig/#namespace-magic), wenn der Wartungsmodus aktiviert wird. Standard ist `@ContaoCore/Error/service_unavailable.html.twig` |
+| `--template=TEMPLATE`           | Ermöglicht die Verwendung eines anderen [Twig-Templates-Namens](https://docs.contao.org/dev/framework/templates/architecture/#naming-and-structure), wenn der Wartungsmodus aktiviert wird. Standard ist `@ContaoCore/Error/service_unavailable.html.twig` |
 | `--templateVars[=TEMPLATEVARS]` | Füge dem Twig-Template benutzerdefinierte Template-Variablen hinzu, wenn der Wartungsmodus aktiviert wird (als JSON bereitstellen). Standard ist `{}`                    |
 
 &nbsp;

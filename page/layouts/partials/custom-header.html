@@ -1,6 +1,5 @@
 {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
 <script src="{{"js/browser.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 <script>
   var _paq = window._paq = window._paq || [];
   _paq.push(['setRequestMethod', 'POST'])
