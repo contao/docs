@@ -4,7 +4,7 @@ description: "Alle Template-Daten anzeigen."
 url: "layout/templates/twig/data"
 aliases:
     - /de/layout/templates/twig/data/
-weight: 60
+weight: 50
 ---
 
 
