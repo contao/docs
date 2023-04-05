@@ -8,7 +8,13 @@ aliases:
 
 ---
 
-Twig-Templates haben ihre eigene Syntax.
+Twig-Templates haben ihre eigene Syntax. Wir stellen hier nur die wichtigsten Regeln vor, die zum Grundverständnis 
+von Twig notwendig sind.
+
+{{% notice info %}}
+Die Twig Syntax ist [gut dokumentiert](https://twig.symfony.com/doc/3.x/). Als Startpunkt ist der
+Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templates.html) zu empfehlen.
+{{% /notice %}}
 
 ## Bezeichner
 
@@ -95,11 +101,6 @@ Filter in Twig sind extrem leistungsfähig und vielseitig. Twig bringt viele
 Filter erstellen.<br>
 Wer sich für die Erstellung eigener Filter interessiert schaut bitte in die
 [Entwicklerdokumentation](https://docs.contao.org/dev/framework/templates/getting-started/#extending-twig).
-
-{{% notice info %}}
-Die Twig Syntax ist [gut dokumentiert](https://twig.symfony.com/doc/3.x/). Als Startpunkt ist der
-Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templates.html) zu empfehlen.
-{{% /notice %}}
 
 {{% notice tip %}}
 Du möchtest etwas ausprobieren? Dazu kannst Du [Twig fiddle](https://twigfiddle.com/) verwenden.
