@@ -11,22 +11,31 @@ aliases:
 ## Ordnerstruktur
 
 Du kannst Deine eigenen Templates im Ordner `/templates` ablegen, damit diese im Backend, etwa bei der Konfiguration
-eines Inhaltselements, zur Auswahl angeboten werden. Contao verwendet
+eines Inhaltselements, zur Auswahl angeboten werden. Contao unterscheidet im Template-Ordner zwischen
 * [globale Templates](#globale-templates) und
 * [themespezifische Templates](#themespezifische-templates)
 
+Beim Anlegen, Verschieben oder Umbenennen von Twig-Templates empfehlen wir die Verwendung
+des [Debug-Modus](/de/system/debug-modus/#contao-4-8-und-hoeher), damit die neu angelegten Templates auch verwendet
+werden.
+Nach Fertigstellung muss der Anwendungs-Cache über den Contao-Manager oder über die Konsole neu aufgebaut werden.
+
+{{% notice info %}}
+Auch im Debug-Modus kann es in manchen Fällen erforderlich sein, den Anwendungs-Cache zu löschen, damit Euer
+angepasstes Template greift.
+{{% /notice %}}
+
 ## Globale Templates
 
-Eigene globale Twig-Templates werden innerhalb von `/templates` in einer speziellen Ordnerstruktur abgelegt. Bei der
-Auswahl des Templates ist die Struktur in eckigen Klammern hinter dem Template-Namen angegeben. Der Unterordner
-`content_element` ist zum Beispiel für Inhaltselemente vorgesehen. Contao unterstützt Dich bei der Strukturierung der
-Templates. Willst Du eines der neuen Twig-Templates anpassen, dann wird das Template automatisch im richtigen
-Unterordner angelegt.
+Eigene globale Twig-Templates werden innerhalb von `/templates` in einer speziellen Ordnerstruktur abgelegt. Der
+Unterordner `content_element` ist zum Beispiel für Inhaltselemente vorgesehen.<br>
+Contao unterstützt Dich bei der Strukturierung der Templates. Willst Du eines der neuen Twig-Templates anpassen, dann
+wird das Template automatisch im richtigen Unterordner angelegt.
 
 {{% example "Globales Template für das Textelement" %}}
 Du möchtest das Template für das Textelement anpassen. Dazu wählst Du aus den Original-Templates das Template
-`text [content_element/text.html.twig]` aus. Das Template wird Dir automatisch im Ordner `/templates/content_element`
-angelegt.
+`text [content_element/text.html.twig]` aus. Die notwendige Struktur wird Dir dabei in eckigen Klammern hinter dem
+Template-Namen angegeben. Das Template wird Dir automatisch im Ordner `/templates/content_element` angelegt.
 {{% /example %}}
 
 Diese Template-Änderungen gelten für alle Elemente des jeweiligen Typs. Nicht immer ist das erwünscht. Möchte man
@@ -83,7 +92,7 @@ ist `/templates/themeA/`. Du möchtest für das Textelement ein themespezifische
 Template ist
 `/templates/themeA/content_element/text.html.twig`.<br>
 Für ein Theme B ist der Themeordner `/templates/themeB/`. In diesem Ordner kannst Du mit
-`/templates/themeB/content_element/text.html.twig` eine andere Anpassung für das Text-Template verwenden.
+`/templates/themeB/content_element/text.html.twig` eine Anpassung für das Textelement im Theme B hinterlegen.
 {{% /example %}}
 
 ### Themespezifische Varianten-Templates
@@ -101,6 +110,8 @@ Varianten-Templates verwenden. Für das Theme A mit dem Templateordner
 Themespezifische Varianten-Templates ohne gleichnamiges globales Varianten-Templates können nicht
 eingesetzt werden. Ein solches Template steht im Backend nicht zur Auswahl zur Verfügung.
 {{% /notice %}}
+
+
 
 
 
