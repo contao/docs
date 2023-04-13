@@ -33,7 +33,7 @@ The info area shows some important links that are needed when working with Conta
 
 **Manual:** Clicking this link opens the manual.
 
-**Save Favorite:** {{< version-tag "5.1" >}} By clicking on this link you can save the current backend URL as a favorite entry. Existing 
+**Save Favorite:** {{< version-tag "5.1" >}} By clicking on this link you can save the current back end URL as a favorite entry. Existing 
 favorite links are listed in the navigation area.
 
 **Notes:** Clicking on this link opens a modal and displays possible hints (e.g. maintenance mode).
