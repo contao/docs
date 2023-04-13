@@ -47,7 +47,7 @@ speichern. Vorhandene Favoriten-Links werden im Navigationsbereich aufgeführt.
 
 **Hinweise:** Beim Klick auf diesen Link öffnet ein Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
 
-**Design:** {{< version-tag "5.1" >}} Du kannst zwischen hellen und dunklen Backend Design wählen.
+**Design:** {{< version-tag "5.1" >}} Du kannst zwischen hellen und dunklen Backend-Design wählen.
 
 **Debug-Modus:** {{< version-tag "4.8" >}} Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
 
