@@ -36,7 +36,7 @@ The info area shows some important links that are needed when working with Conta
 **Save Favorite:** {{< version-tag "5.1" >}} By clicking on this link you can save the current back end URL as a favorite entry. Existing 
 favorite links are listed in the navigation area.
 
-**Notes:** Clicking on this link opens a modal and displays possible hints (e.g. maintenance mode).
+**Notes:** Clicking this link opens a modal and displays possible hints (e.g. maintenance mode).
 
 **Design:** {{< version-tag "5.1" >}} You can choose between light and dark mode.
 
