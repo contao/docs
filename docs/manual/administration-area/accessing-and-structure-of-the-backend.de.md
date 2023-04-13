@@ -59,7 +59,7 @@ oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprec
   die Sprache wechseln.
 
   + **Sicherheit:** {{< version-tag "4.6" >}} Über diesen Link kann die [Zwei-Faktor-Authentifizierung](https://de.wikipedia.org/wiki/Zwei-Faktor-Authentisierung) 
-  für dein Backend aktiviert werden.
+  für die Anmeldung im Backend aktiviert werden.
 
   + **Favoriten:** {{< version-tag "5.1" >}} Über diesen Link erreichst du die Verwaltung der Favoriten.
 
