@@ -31,7 +31,7 @@ The info area shows some important links that are needed when working with Conta
 
 **Homepage:** A click on the Contao logo takes you back to the homepage of the back end.
 
-**Manual:** Clicking on this link opens the manual.
+**Manual:** Clicking this link opens the manual.
 
 **Save Favorite:** {{< version-tag "5.1" >}} By clicking on this link you can save the current backend URL as a favorite entry. Existing 
 favorite links are listed in the navigation area.
