@@ -43,7 +43,7 @@ Der Infobereich zeigt einige wichtige Links an, die beim Arbeiten mit Contao imm
 **Handbuch:** Beim Klick auf diesen Link wird das Handbuch aufgerufen.
 
 **Favorit speichern:** {{< version-tag "5.1" >}} Beim Klick auf diesen Link kannst du die aktuelle URL im Backend als Favorit Eintrag 
-speichern. Vorhandene Favoriten Links werden im Navigationsbereich aufgeführt.
+speichern. Vorhandene Favoriten-Links werden im Navigationsbereich aufgeführt.
 
 **Hinweise:** Beim Klick auf diesen Link öffnet ein Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
 
