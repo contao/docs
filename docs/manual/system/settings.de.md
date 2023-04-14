@@ -978,6 +978,12 @@ bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens ein
 [Symfony Dokumentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
+{{% notice "note" %}}
+Es kann sein, dass Mails zeitversetzt verarbeitet werden, 
+wenn der Cronjob keine Angabe für die Zeitzone hat und dann den Standard `UTC` verwendet.
+Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt werden oder explizit im Cronjob.
+{{% /notice %}}
+
 
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
 [InsertTags]: /de/artikelverwaltung/insert-tags/
