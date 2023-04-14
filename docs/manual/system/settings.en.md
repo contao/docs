@@ -941,7 +941,7 @@ With a minutely cronjob this would mean that at most 600 emails are sent per hou
 
 {{< version "4.10" >}}
 
-The Swiftmaielr Bundle is not available anymore by default since Contao **4.10**. Instead the [Symfony Mailer][SymfonyMailer] component is
+The Swiftmailer Bundle is not available anymore by default since Contao **4.10**. Instead the [Symfony Mailer][SymfonyMailer] component is
 used. In order to send emails asynchronously in this case we can make use of the [Symfony Messenger][SymfonyMessenger] component, which must
 be installed first via Composer:
 
