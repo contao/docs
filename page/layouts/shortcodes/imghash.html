@@ -1,0 +1,37 @@
+{{/*
+  *    Shortcode: imghash (page/layouts/shortcodes/imghash.html)
+  *    Version: 1.0.0
+  *
+  *    Description:
+  *    Create image src with hash parameter
+  *
+  *    Example Shortcode Usage: 
+  *    {{% imghash src="relative/img/path" %}}
+  * 
+  *    Optional Parameter:
+  *    {{% imghash src="relative/img/path" info="Alt Text" %}}
+  *    {{% imghash src="relative/img/path" info="Alt Text" param="classes=shadow" %}}
+  *
+  *
+*/}}
+
+{{ $getPath   := .Get "src" | default false }}
+{{ $getPath   = path.Join .Page.File.Dir $getPath }}
+
+{{ $getInfo   := .Get "info" | default " " }}
+{{ $getParam  := .Get "param" }}
+
+{{ if os.FileExists $getPath }}
+
+ {{ $getFileHash := md5 (os.Stat $getPath).ModTime.Unix }}
+ {{ $strTemp := "" }}
+ 
+ {{ with $getParam }}
+   {{ $strTemp = printf "![%s](/de/%s?%s&v=%s)" $getInfo $getPath $getParam $getFileHash }}
+ {{ else }}
+   {{ $strTemp = printf "![%s](/de/%s?v=%s)" $getInfo $getPath $getFileHash }}
+ {{ end }}    
+
+ {{- $strTemp | markdownify -}}
+
+{{ end }}
