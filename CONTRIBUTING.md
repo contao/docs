@@ -96,6 +96,17 @@ Lorem ipsum dolor sit amet ...
 ```
 
 
+### Short code imghash
+
+This shortcode will add a unique hash parameter to the image.  
+
+```
+{{% imghash src="/pathto/img" info="Alt Text" param="classes=shadow" %}}
+instead of
+![Alt Text](/pathto/img?classes=shadow)
+```
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 
