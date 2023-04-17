@@ -1,0 +1,4 @@
+{{ $getAssetPath  := .Get 0 }}
+{{ $getAssetRes   := resources.Get $getAssetPath }}
+{{- $assetHash    := $getAssetRes | resources.Fingerprint -}}
+{{- $assetHash.RelPermalink -}}

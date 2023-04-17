@@ -96,14 +96,15 @@ Lorem ipsum dolor sit amet ...
 ```
 
 
-### Short code imghash
+### Short code asset
 
-This shortcode will add a unique hash parameter to the image.  
+This shortcode will add a unique fingerprint to the image file name. 
+The respective assets files must be located in the "page/assets" directory.
 
 ```
-{{% imghash src="/pathto/img" info="Alt Text" param="classes=shadow" %}}
+![Alt Text]({{% asset "/path/to/image.png"%}})
 instead of
-![Alt Text](/pathto/img?classes=shadow)
+![Alt Text](/path/to/img.png)
 ```
 
 
