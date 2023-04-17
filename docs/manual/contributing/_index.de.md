@@ -118,13 +118,13 @@ cd contao
 Beim Klonen installierst du das Hugo Learn Theme als Submodul von git.
 
 ```bash
-git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git ./
 ```
 
 oder
 
 ```bash
-git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git ./
 ```
 
 
@@ -178,12 +178,6 @@ Meldung `This branch is 7 commits behind contao:main.` ausgegeben wird.
 
 Bevor du also Anpassungen an der Doku vernimmst, kannst du dafür sorgen, dass dein Fork mit dem Original-Repository 
 synchronisiert wird.
-
-Wechsle mit `cd` in den Klone des geforkten Repositories.
-
-```bash
-cd docs
-```
 
 Füge das Original-Repository einmalig als neues Remote-Repository hinzu und gebe es als Upstream-Repository an.
 
@@ -298,3 +292,33 @@ Bestätige das Erstellen eines Pull requests mit »Create pull request«.
 Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
 
 
+### Einen Pull-Request ändern
+
+Finde den Branch, in welchem dein Pull-Request ist und checke ihn aus. Sagen wir, es sei der Branch patch-4:
+
+```bash
+git checkout patch-4
+```
+
+Bearbeite die Dateien, die geändert werden sollen.
+
+Mit folgendem Befehl kannst du alle Änderungen für den nächsten Commit stagen.
+
+```bash
+git add .
+```
+
+Danach fügst du die Änderungen dem Lokalen-Repository hinzu.
+
+```bash
+git commit -m "Eine aussagekräftige Commit-Nachricht eingeben"
+```
+
+Um die Änderungen an dein entferntes Repository zu senden, führe folgenden
+Befehl aus.
+
+```bash
+git push origin patch-4
+```
+
+Damit ist dein Pull-Request angepasst.
