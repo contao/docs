@@ -99,10 +99,10 @@ Lorem ipsum dolor sit amet ...
 ### Short code asset
 
 This shortcode will add a unique fingerprint to the image file name. 
-The respective assets files must be located in the "page/assets" directory.
+The asset file must be located in the "page/assets" directory.
 
 ```
-![Alt Text]({{% asset "/path/to/image.png"%}})
+![Alt Text]({{% asset "/path/to/image.png"% }})
 instead of
 ![Alt Text](/path/to/img.png)
 ```
