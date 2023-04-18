@@ -1006,6 +1006,11 @@ aforementioned `--time-limit=1` option will cause the process to exit after one 
 [Symfony documentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
+{{% notice "note" %}}
+It may be that mails are processed with a time delay,
+if the cronjob doesn't have any specification for the timezone and then uses the default `UTC`.
+Therefore, the local time zone should either be set globally on the server or explicitly in the cronjob.
+{{% /notice %}}
 
 
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
