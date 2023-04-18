@@ -599,6 +599,56 @@ an additional command check via load_callback).
 **return:** `string` HTML for the button
 {{% /expand %}}
 
+{{% expand "Example" %}}
+
+This example hides the delete button if user is not an admin.
+
+```php
+// src/EventListener/DataContainer/ExampleListOperationListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\Controller;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+use Contao\Image;
+use Contao\StringUtil;
+use Symfony\Component\Security\Core\Security;
+
+#[AsCallback(table: 'tl_example', target: 'list.operations.delete.button')]
+class ExampleListOperationListener
+{
+    public function __construct(
+        protected Security $security
+    )
+    {}
+
+    public function onListDeleteOperationCallback(
+        array $row,
+        ?string $href,
+        string $label,
+        string $title,
+        ?string $icon,
+        string $attributes,
+        string $table,
+        array $rootRecordIds,
+        array $childRecordIds,
+        bool $circularReference,
+        string $previous,
+        string $next,
+        DataContainer $dc
+    ): string
+    {
+        if (!$this->security->isGranted('ROLE_ADMIN')) {
+            return '';
+        }
+
+        return '<a href="' . Controller::addToUrl($href . '&amp;id=' . $row['id']) . '" title="' . StringUtil::specialchars($title) . '"' . $attributes . '>' . Image::getHtml($icon, $label) . '</a> ' ;
+
+    }
+}
+```
+{{% /expand %}}
+
 ***
 
 
