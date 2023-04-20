@@ -72,6 +72,46 @@ contao:
 
     # Absolute path to the web directory. Defaults to %kernel.project_dir%/public.
     web_dir:              '%kernel.project_dir%/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
+
+    # The path to the Symfony console. Defaults to %kernel.project_dir%/bin/console.
+    console_path:         '%kernel.project_dir%/bin/console'
+
+    # Allows to define Symfony Messenger workers (messenger:consume). Workers are started every minute using the Contao cron job framework.
+    messenger:
+        workers:
+
+            # Prototype
+            -
+
+                # The transports/receivers you would like to consume from.
+                transports:
+
+                    # Examples:
+                    - foobar_transport
+                    - foobar2_transport
+
+                # messenger:consume options. Make sure to always include "--time-limit=60".
+                options:
+
+                    # Default:
+                    - --time-limit=60
+
+                    # Examples:
+                    - '--sleep=5'
+                    - '--time-limit=60'
+
+                # Enables autoscaling.
+                autoscale:
+                    enabled:              false
+
+                    # Contao will automatically autoscale the number of workers to meet this queue size. Logic: desiredWorkers = ceil(currentSize / desiredSize)
+                    desired_size:         ~ # Required
+
+                    # Contao will never scale down to less than this configured number of workers.
+                    min:                  1
+
+                    # Contao will never scale up to more than this configured number of workers.
+                    max:                  ~ # Required
     image:
 
         # Bypass the image cache and always regenerate images when requested. This also disables deferred image resizing.
@@ -164,6 +204,7 @@ contao:
             - svg
             - svgz
             - webp
+            - avif
         preview:
 
             # The target directory for the cached previews.
@@ -285,6 +326,10 @@ contao:
             - data
             - skype
             - whatsapp
+    cron:
+
+        # Allows to enable or disable the kernel.terminate listener that executes cron jobs within the web process. "auto" will auto-disable it if a CLI cron is running.
+        web_listener:         auto # One of "auto"; true; false
 ```
 
 
