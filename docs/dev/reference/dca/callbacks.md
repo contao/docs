@@ -604,7 +604,8 @@ an additional command check via load_callback).
 This example hide a custom operation button if the user is not allowed to use it.    
 
 Attention: this won't disable the operation itself, it only hides the button!
-To disable the operation, you need to check for the permission additional before it is execution, for example in the operation backend module code.
+To disable the operation, you need to check for the permission additionally 
+before its execution, for example in the operation code or a `config.onload` callback.
 
 ```php
 // src/EventListener/DataContainer/ExampleListOperationListener.php
