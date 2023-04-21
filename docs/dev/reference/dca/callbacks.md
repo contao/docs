@@ -599,6 +599,65 @@ an additional command check via load_callback).
 **return:** `string` HTML for the button
 {{% /expand %}}
 
+{{% expand "Example" %}}
+
+This example hide a custom operation button if the user is not allowed to use it.    
+
+Attention: this won't disable the operation itself, it only hides the button!
+To disable the operation, you need to check for the permission additionally 
+before its execution, for example in the operation code or a `config.onload` callback.
+
+```php
+// src/EventListener/DataContainer/ExampleListOperationListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\Backend;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+use Contao\Image;
+use Contao\StringUtil;
+use Symfony\Component\Security\Core\Security;
+
+#[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
+class ExampleListOperationListener
+{
+    public function __construct(
+        protected Security $security
+    )
+    {}
+
+    public function onListCustomOperationCallback(
+        array $row,
+        ?string $href,
+        string $label,
+        string $title,
+        ?string $icon,
+        string $attributes,
+        string $table,
+        array $rootRecordIds,
+        array $childRecordIds,
+        bool $circularReference,
+        string $previous,
+        string $next,
+        DataContainer $dc
+    ): string
+    {
+        if (!$this->security->isGranted('contao_user.example', 'custom_operation')) {
+            return '';
+        }
+
+        return sprintf(
+            '<a href="%s" title="%s"%s>%s</a> ',
+            Backend::addToUrl($href . '&amp;id=' . $row['id']),
+            StringUtil::specialchars($title),
+            $attributes,
+            Image::getHtml($icon, $label)
+        );
+    }
+}
+```
+{{% /expand %}}
+
 ***
 
 
