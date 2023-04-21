@@ -601,20 +601,23 @@ an additional command check via load_callback).
 
 {{% expand "Example" %}}
 
-This example hides the delete button if user is not an admin.
+This example hide a custom operation button if the user is not allowed to use it.    
+
+Attention: this won't disable the operation itself, it only hides the button!
+To disable the operation, you need to check for the permission additional before it is execution, for example in the operation backend module code.
 
 ```php
 // src/EventListener/DataContainer/ExampleListOperationListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\Controller;
+use Contao\Backend;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Contao\Image;
 use Contao\StringUtil;
 use Symfony\Component\Security\Core\Security;
 
-#[AsCallback(table: 'tl_example', target: 'list.operations.delete.button')]
+#[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
 class ExampleListOperationListener
 {
     public function __construct(
@@ -622,7 +625,7 @@ class ExampleListOperationListener
     )
     {}
 
-    public function onListDeleteOperationCallback(
+    public function onListCustomOperationCallback(
         array $row,
         ?string $href,
         string $label,
@@ -638,12 +641,17 @@ class ExampleListOperationListener
         DataContainer $dc
     ): string
     {
-        if (!$this->security->isGranted('ROLE_ADMIN')) {
+        if (!$this->security->isGranted('contao_user.example', 'custom_operation')) {
             return '';
         }
 
-        return '<a href="' . Controller::addToUrl($href . '&amp;id=' . $row['id']) . '" title="' . StringUtil::specialchars($title) . '"' . $attributes . '>' . Image::getHtml($icon, $label) . '</a> ' ;
-
+        return sprintf(
+            '<a href="%s" title="%s"%s>%s</a> ',
+            Backend::addToUrl($href . '&amp;id=' . $row['id']),
+            StringUtil::specialchars($title),
+            $attributes,
+            Image::getHtml($icon, $label)
+        );
     }
 }
 ```
