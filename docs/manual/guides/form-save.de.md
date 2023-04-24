@@ -224,13 +224,6 @@ Typ `Auflistung` mit folgenden Angaben:
 |**Felder**                  |post_data                                         |
 
 
-
-{{% notice tip %}}
-Die Erweiterung bietet darüber hinaus zur gezielten Abfrage der Tabelle »tl_lead_data», in beliebigen Contao-Templates, 
-die Methode »getExportData()« der Klasse »DataCollector« 
-(s. a.: Leads »[DataCollector.php](https://github.com/terminal42/contao-leads/blob/master/library/Leads/DataCollector.php)»)
-{{% /notice %}}
-
 ### Fazit
 
 Wenn du jetzt das Formular benutzt, werden die Daten gespeichert und sind im Navigationsbereich des Backends über den 
