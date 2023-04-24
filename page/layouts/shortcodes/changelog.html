@@ -1,0 +1,32 @@
+{{/*
+  *    Shortcode: changelog (/page/layouts/shortcodes/changelog.html)
+  *
+  *    Description:
+  *    Show lastest changelog version entry from GitHub branch
+  *
+  *    Parameter:
+  *    branch: Contao GitHub branch (default "4.13")
+  * 
+*/}}
+{{ $getBranch         := .Get "branch" | default "4.13" }}
+{{ $getRemotePath     := printf "https://raw.githubusercontent.com/contao/contao/%s/CHANGELOG.md" $getBranch }}
+{{ $getRemote         := resources.GetRemote $getRemotePath }}
+
+{{ $strRemoteContent  := replace $getRemote.Content "# Changelog" "" }}
+{{ $strRemoteContent  = replace $strRemoteContent "**Fixed issues:**" "" }}
+
+{{ $strChangelog      := index (split $strRemoteContent "## ") 1 }}
+
+{{ $patternPull       := `\[#(.*?)\]` }}
+{{ $replacementPull   := `[#$1](https://github.com/contao/contao/pull/$1)` }}
+{{ $strChangelog      = replaceRE $patternPull $replacementPull $strChangelog }}
+
+{{ $patternUser      := `\(\[(.*?)\]\)` }}
+{{ $replacementUser  := `[($1)](https://github.com/$1)` }}
+{{ $strChangelog     = replaceRE $patternUser $replacementUser $strChangelog }}
+
+{{ $patternVersion      := `\[(.*?)\] \((.*?)\)` }}
+{{ $replacementVersion  := `#### $1` }}
+{{ $strChangelog        = replaceRE $patternVersion $replacementVersion $strChangelog }}
+
+{{- $strChangelog -}}
