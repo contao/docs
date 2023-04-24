@@ -211,12 +211,6 @@ You can then create a new module of the type `Listing` with the following specif
 |**Fields**                  |post_data                                         |
 
 
-{{% notice tip %}}
-The extension also provides a method for querying the table "tl_lead_data" in any Contao template with the method 
-»getExportData()« of the class »DataCollector« 
-(see: Leads "[DataCollector.php](https://github.com/terminal42/contao-leads/blob/master/library/Leads/DataCollector.php)")
-{{% /notice %}}
-
 ### Conclusion
 
 If you now use the form, the data will be saved and can be viewed in the navigation area of the backend 
