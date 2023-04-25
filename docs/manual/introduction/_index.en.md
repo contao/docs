@@ -12,11 +12,11 @@ using the administration area, different content elements, modules and how to us
 
 {{% children %}}
 
-An "[Open Source CMS](/en/introduction/contao-open-source-cms/)" like Contao is constantly being developed. Before migrating, it is worth 
-reading the information in the respective files `changelog` and `upgrade` on [GitHub](https://github.com/contao/contao). Further information 
-about the Contao [update cycle](/en/installation/update-contao/#the-contao-update-cycle) is well documented, along with the 
-[release schedule](https://contao.org/en/release-plan.html). The topic of [security](https://contao.org/en/security-advisories.html) is also 
-taken seriously and communicated transparently.
+An "[Open Source CMS](/en/introduction/contao-open-source-cms/)" like Contao is constantly being developed. Before [migrating](/en/migration/), 
+it is worth reading the information in the respective files `changelog` and `upgrade` on [GitHub](https://github.com/contao/contao). 
+Further information about the Contao [update cycle](/en/installation/update-contao/#the-contao-update-cycle) is well documented, along with 
+the [release schedule](https://contao.org/en/release-plan.html). The topic of [security](https://contao.org/en/security-advisories.html) is 
+also taken seriously and communicated transparently.
  
 
 ## Version 4.13 LTS
