@@ -81,7 +81,9 @@ This is a hint how to activate the strict mode. More information can be found [h
 ## Configuration and adjustment
 
 {{% expand "Can I change the directory »web« to »public«?" %}}
-Yes. You have to rename the directory. Check if the entry `"public-dir": "web"` exists in the "composer.json" and remove it. Then start `composer install` from the manager or the console. Set this directory as document root via the admin panel of your hosting provider.
+Yes. You have to rename the directory. Check if the entry `"public-dir": "web"` exists in the "composer.json" and remove it or change it to
+`public`. Then set this directory as the document root via the admin panel of your hosting provider. Afterwards execute `composer install` 
+from the manager or the console. 
 {{% /expand %}}
 
 {{% expand "How can I change the Contao backend path?" %}}
