@@ -6,18 +6,21 @@
   *
   *    Parameter:
   *    branch: Contao GitHub branch (default "4.13")
+  *    historyCount: The number of versions to display (int)
   * 
 */}}
-{{ $getBranch     := .Get "branch" | default "4.13" }}
+{{ $getBranch       := .Get "branch" | default "4.13" }}
+{{ $getHistoryCount := .Get "historyCount" }}
 
 {{ $getRemotePath := printf "https://raw.githubusercontent.com/contao/contao/%s/CHANGELOG.md" $getBranch }}
 {{ $getRemote     := resources.GetRemote $getRemotePath }}
-{{ $strChangelog  := index (split $getRemote.Content "## ") 1 }}
 
-{{/* Replacements: Typo - PR-Links - Contributor-Links - Version-Title */}}
-{{ $strChangelog  = replace $strChangelog "**Fixed issues:**" "" }}
-{{ $strChangelog  = replaceRE `\[#(.*?)\]` `[#$1](https://github.com/contao/contao/pull/$1)` $strChangelog }}
-{{ $strChangelog  = replaceRE `\(\[(.*?)\]\)` `[($1)](https://github.com/$1)` $strChangelog }}
-{{ $strChangelog  = replaceRE `\[(.*?)\] \((.*?)\)` `#### $1` $strChangelog }}
-
-{{- $strChangelog -}}
+{{ range $index, $strChangelog := split $getRemote.Content "## " }}
+  {{- if ge $index 1 -}}
+    {{- $strChangelog  = replace $strChangelog "**Fixed issues:**" "" -}}
+    {{- $strChangelog  = replaceRE `\[#(.*?)\]` `[#$1](https://github.com/contao/contao/pull/$1)` $strChangelog -}}
+    {{- $strChangelog  = replaceRE `\(\[(.*?)\]\)` `[($1)](https://github.com/$1)` $strChangelog -}}
+    {{- $strChangelog  = replaceRE `\[(.*?)\] \((.*?)\)` `#### $1:` $strChangelog -}}
+    {{- $strChangelog -}}
+  {{- end -}} {{ if eq $index $getHistoryCount }}{{ break }}{{ end }}
+{{ end }}

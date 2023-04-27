@@ -19,19 +19,21 @@ vor [Migrationen](/de/migration/) die Angaben in den jeweiligen Dateien `changel
 [GitHub](https://github.com/contao/contao). Weitere Informationen zum Contao [Update-Zyklus](/de/installation/contao-aktualisieren/#minor-release) 
 sind, neben dem [Release-Plan](https://contao.org/de/release-plan.html), gut dokumentiert. Das Thema 
 [Sicherheit](https://contao.org/de/sicherheitshinweise.html) wird darüber hinaus ernst genommen und transparent kommuniziert.
- 
 
-## Version 4.13 LTS
+{{< tabs >}}
+{{% tab name="Version 4.13 LTS" %}}
 
-Du findest die vollständige Liste der Änderungen in der [GitHub Übersicht](https://github.com/contao/contao/blob/4.13/CHANGELOG.md). 
-Die aktuelle Version beinhaltet z. B. folgende Änderungen:
+Eine verkürzte Auflistung der letzten Änderungen findest du hier. Die vollständige Liste findest du in der [GitHub Übersicht](https://github.com/contao/contao/blob/4.13/CHANGELOG.md). 
 
-{{% changelog branch="4.13" %}}
+{{% changelog branch="4.13" historyCount=5 %}}
 
+{{% /tab %}}
 
-## Version 5.1
+{{% tab name="Version 5.1" %}}
 
-Du findest die vollständige Liste der Änderungen in der [GitHub Übersicht](https://github.com/contao/contao/blob/5.1/CHANGELOG.md). 
-Die aktuelle Version beinhaltet z. B. folgende Änderungen:
+Eine verkürzte Auflistung der letzten Änderungen findest du hier. Die vollständige Liste findest du in der [GitHub Übersicht](https://github.com/contao/contao/blob/5.1/CHANGELOG.md).
 
-{{% changelog branch="5.1" %}}
+{{% changelog branch="5.1" historyCount=5 %}}
+
+{{% /tab %}}
+{{< /tabs >}}
