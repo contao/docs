@@ -75,8 +75,7 @@ With `{{ parent() }}` the original content of the block can be output.
 All non-customized blocks are automatically taken from the parent template.
 
 {{% example "Extension for the text element" %}}
-We create a new template for the content element text via the back end and insert an additional text into the block
-`{% block text %}` block with an additional text.
+We create a new template for the content element text via the back end and insert an additional text into the `{% block text %}` block with an additional text.
 
 ```twig
 {# /templates/content_element/text.html.twig #}
