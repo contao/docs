@@ -36,7 +36,7 @@ is automatically created in the folder `/templates/content_element`.
 {{% /example %}}
 
 These template changes apply to all elements of the respective type. This is not always desired. If you want to
-template changes only for certain elements, different variants of the template are required, which can then be
+make changes only for certain elements, different variants of the template are required, which can then be
 selected in the back end of the corresponding element.
 
 
