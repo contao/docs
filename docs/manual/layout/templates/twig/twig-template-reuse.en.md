@@ -112,11 +112,10 @@ its own closing text.
 
 If we now select the template `content_element/text/tip`, then the parent template is the template  
 `/templates/content_element/text.html.twig`.  
-At the beginning again the text `Introductory text for all text elements` is output and additionally at the end the
-text `Here is an additional closing text for the variant "Tip"`. Between these two texts is the complete
-text that we entered in TinyMCE.  
-When using the template `content_element/text/notice`, the closing text `Here is an additional closing text for the
-text for the "Notice" variant`.
+At the beginning the text `Introductory text for all text elements` is output and additionally at the end the
+text `Here is an additional closing text for the variant "Tip"`. Between these the text that we entered in TinyMCE is output.  
+When using the template `content_element/text/notice`, the text `Here is an additional closing text for the
+text for the "Notice" variant` is output at the end.
 {{% /example %}}
 
 
