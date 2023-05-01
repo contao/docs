@@ -57,8 +57,7 @@ You can output a variable with `{{ name_of_variable }}`.
 
 ### Commands and control structures
 
-In the broadest sense, this refers to everything that is connected with control when variables are output.
-is connected.   
+In the broadest sense, this refers to everything that is connected to controlling the output of variables.
 Only the most common ones are presented here, which are also often used in Contao templates.
 
 
