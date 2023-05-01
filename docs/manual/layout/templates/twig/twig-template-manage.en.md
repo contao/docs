@@ -77,8 +77,7 @@ although they are the most specific, they are not part of the [template hierarch
 Only at runtime it is decided whether a theme-specific template is used.
 
 {{% notice note %}}
-You can only use theme specific templates to customize templates that are defined as global templates in the
-templates [template hierarchy](../reuse/#template-hierarchy).
+You can only use theme specific templates to customize templates that are defined as global templates in the [template hierarchy](../reuse/#template-hierarchy).
 {{% /notice %}}
 
 For the new Twig templates, the same folder structure for the templates must be followed within the theme folder as is
