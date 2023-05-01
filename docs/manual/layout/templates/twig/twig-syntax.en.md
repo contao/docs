@@ -19,7 +19,7 @@ section [Twig for template designers](https://twig.symfony.com/doc/3.x/templates
 In Twig, the following three identifiers are used.
 
 * `{# ... #}` - [Comments](#comments)
-* `{{ ... }}` - [Output of variable](#output-of-variables)
+* `{{ ... }}` - [Output of a variable](#output-of-variables)
 * `{% ... %}` - [Commands and control structures](#commands-and-control-structures)
 
 
