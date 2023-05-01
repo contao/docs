@@ -25,7 +25,7 @@ take effect.
 ## Global templates
 
 Custom global Twig templates are stored inside `/templates` in a special folder structure. The subfolder
-`content_element` is for example for content elements.  
+`content_element` is for content elements for example.
 Contao supports you in structuring the templates. If you want to customize one of the new Twig templates, then the
 template is automatically created in the correct subfolder.
 
