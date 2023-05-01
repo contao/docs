@@ -125,8 +125,7 @@ text for the "Notice" variant`.
 For most Contao components, you can assign an additional CSS ID or CSS class in the back end.  
 These are set for the corresponding components. Sometimes this is not desired and you want to assign the class
 only for a specific HTML tag.  
-For this purpose Contao provides you with the `{{ attrs() }}` function. With this function, it is possible to set
-as a variable in the parent template.
+For this purpose Contao provides you with the `{{ attrs() }}` function. This function allows you to modify any HTML attributes that have been defined in the parent template.
 
 {{% example "Customize class for text area" %}}
 
