@@ -65,7 +65,7 @@ for template customization very flexible.
 ## Theme specific templates
 
 In the [Theme Manager](../../../theme-manager/manage-themes/) you can link an existing subfolder to a theme.
-with a theme. This is the **theme folder**.
+This is the **theme folder**.
 
 {{% notice warning %}}
 The name of the theme folder must not be changed for technical reasons
