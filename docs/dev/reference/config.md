@@ -12,6 +12,8 @@ Contao's configuration options can be reviewed by running the following command:
 $ vendor/bin/contao-console config:dump-reference contao
 ```
 
+The following is a dump of the configuration reference from Contao **5.1**.
+
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -21,46 +23,97 @@ contao:
 
     # The error reporting level set when the framework is initialized. Defaults to E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED.
     error_level:          8183
+    intl:
+
+        # Adds, removes or overwrites the list of ICU locale IDs. Defaults to all locale IDs known to the system.
+        locales:
+
+            # Examples:
+            - +de
+            - '-de_AT'
+            - gsw_CH
+
+        # Adds, removes or overwrites the list of enabled locale IDs that can be used in the Backend for example. Defaults to all languages for which a translation exists.
+        enabled_locales:
+
+            # Examples:
+            - +de
+            - '-de_AT'
+            - gsw_CH
+
+        # Adds, removes or overwrites the list of ISO 3166-1 alpha-2 country codes.
+        countries:
+
+            # Examples:
+            - +DE
+            - '-AT'
+            - CH
+
+    # Disabling legacy routing allows to configure the URL prefix and suffix per root page. However, it might not be compatible with third-party extensions.
+    legacy_routing:       true
 
     # Allows to set TL_CONFIG variables, overriding settings stored in localconfig.php. Changes in the Contao back end will not have any effect.
     localconfig:          ~
 
-    # Allows to configure which languages can be used within Contao. Defaults to all languages for which a translation exists.
-    locales:
-
-        # Defaults:
-        - en
-        - cs
-        - de
-        - es
-        - fa
-        - fr
-        - it
-        - ja
-        - lv
-        - nl
-        - pl
-        - pt
-        - ru
-        - sr
-        - zh
+    # Allows to configure which languages can be used in the Contao back end. Defaults to all languages for which a translation exists.
+    locales:              [] # Deprecated (Since contao/core-bundle 4.12: Using contao.locales is deprecated. Please use contao.intl.enabled_locales instead.)
 
     # Whether or not to add the page language to the URL.
-    prepend_locale:       false
+    prepend_locale:       false # Deprecated (Since contao/core-bundle 4.10: The URL prefix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
 
     # Show customizable, pretty error screens instead of the default PHP error messages.
     pretty_error_screens: false
 
-    # An optional entry point script that bypasses the front end cache for previewing changes (e.g. preview.php).
+    # An optional entry point script that bypasses the front end cache for previewing changes (e.g. "/preview.php").
     preview_script:       ''
 
     # The folder used by the file manager.
     upload_path:          files
-    editable_files:       'css,csv,html,ini,js,json,less,md,scss,svg,svgz,txt,xliff,xml,yml,yaml'
-    url_suffix:           .html
+    editable_files:       'css,csv,html,ini,js,json,less,md,scss,svg,svgz,ts,txt,xliff,xml,yml,yaml'
+    url_suffix:           .html # Deprecated (Since contao/core-bundle 4.10: The URL suffix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
 
-    # Absolute path to the web directory. Defaults to %kernel.project_dir%/web.
-    web_dir:              '%kernel.project_dir%/web'
+    # Absolute path to the web directory. Defaults to %kernel.project_dir%/public.
+    web_dir:              '%kernel.project_dir%/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
+
+    # The path to the Symfony console. Defaults to %kernel.project_dir%/bin/console.
+    console_path:         '%kernel.project_dir%/bin/console'
+
+    # Allows to define Symfony Messenger workers (messenger:consume). Workers are started every minute using the Contao cron job framework.
+    messenger:
+        workers:
+
+            # Prototype
+            -
+
+                # The transports/receivers you would like to consume from.
+                transports:
+
+                    # Examples:
+                    - foobar_transport
+                    - foobar2_transport
+
+                # messenger:consume options. Make sure to always include "--time-limit=60".
+                options:
+
+                    # Default:
+                    - --time-limit=60
+
+                    # Examples:
+                    - '--sleep=5'
+                    - '--time-limit=60'
+
+                # Enables autoscaling.
+                autoscale:
+                    enabled:              false
+
+                    # Contao will automatically autoscale the number of workers to meet this queue size. Logic: desiredWorkers = ceil(currentSize / desiredSize)
+                    desired_size:         ~ # Required
+
+                    # Contao will never scale down to less than this configured number of workers.
+                    min:                  1
+
+                    # Contao will never scale up to more than this configured number of workers.
+                    max:                  ~ # Required
     image:
 
         # Bypass the image cache and always regenerate images when requested. This also disables deferred image resizing.
@@ -77,6 +130,15 @@ contao:
             png_compression_filter: ~
             webp_quality:         ~
             webp_lossless:        ~
+            avif_quality:         ~
+            avif_lossless:        ~
+            heic_quality:         ~
+            heic_lossless:        ~
+            jxl_quality:          ~
+            jxl_lossless:         ~
+
+            # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
+            flatten:              ~
             interlace:            plane
 
         # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
@@ -85,7 +147,7 @@ contao:
         # Reject uploaded images exceeding the localconfig.gdMaxImgWidth and localconfig.gdMaxImgHeight dimensions.
         reject_large_uploads: false
 
-        # Allows to define image sizes in the configuration file in addition to in the Contao back end.
+        # Allows to define image sizes in the configuration file in addition to in the Contao back end. Use the special name "_defaults" to preset values for all sizes of the configuration file.
         sizes:
 
             # Prototype
@@ -106,11 +168,8 @@ contao:
                 formats:
 
                     # Examples:
-                    jpg:
-                        - webp
-                        - jpg
-                    gif:
-                        - png
+                    jpg:                 [jxl, webp, jpg]
+                    gif:                 [avif, png]
 
                     # Prototype
                     source:               []
@@ -125,15 +184,15 @@ contao:
                         media:                ~
                         densities:            ~
                         sizes:                ~
-                        resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Using contao.image.sizes.*.items.resizeMode is deprecated. Please use contao.image.sizes.*.items.resize_mode instead.)
-                resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Using contao.image.sizes.*.resizeMode is deprecated. Please use contao.image.sizes.*.resize_mode instead.)
-                cssClass:             ~ # Deprecated (Using contao.image.sizes.*.cssClass is deprecated. Please use contao.image.sizes.*.css_class instead.)
-                lazyLoading:          ~ # Deprecated (Using contao.image.sizes.*.lazyLoading is deprecated. Please use contao.image.sizes.*.lazy_loading instead.)
-                skipIfDimensionsMatch: ~ # Deprecated (Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
+                        resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.items.resizeMode is deprecated. Please use contao.image.sizes.*.items.resize_mode instead.)
+                resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.resizeMode is deprecated. Please use contao.image.sizes.*.resize_mode instead.)
+                cssClass:             ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.cssClass is deprecated. Please use contao.image.sizes.*.css_class instead.)
+                lazyLoading:          ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.lazyLoading is deprecated. Please use contao.image.sizes.*.lazy_loading instead.)
+                skipIfDimensionsMatch: ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
 
         # The target directory for the cached images processed by Contao.
-        target_dir:           '%kernel.project_dir%/assets/images' # Example: %kernel.project_dir%/assets/images
-        target_path:          null # Deprecated (Use the "contao.image.target_dir" parameter instead.)
+        target_dir:           '%kernel.project_dir%/assets/images' # Example: '%kernel.project_dir%/assets/images'
+        target_path:          null # Deprecated (Since contao/core-bundle 4.9: Use the "contao.image.target_dir" parameter instead.)
         valid_extensions:
 
             # Defaults:
@@ -147,6 +206,16 @@ contao:
             - svg
             - svgz
             - webp
+            - avif
+        preview:
+
+            # The target directory for the cached previews.
+            target_dir:           '%kernel.project_dir%/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
+            default_size:         512
+            max_size:             1024
+
+            # Whether or not to generate previews for unsupported file types that show a file icon containing the file type.
+            enable_fallback_images: true
     security:
         two_factor:
             enforce_backend:      false
@@ -174,8 +243,79 @@ contao:
 
         # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
         default_http_client_options: []
+    mailer:
 
-    # Allows to configure which URL protocols can be used in Contao, as they are encoded by default for security reasons.
+        # Specifies the mailer transports available for selection within Contao.
+        transports:
+
+            # Prototype
+            name:
+
+                # Overrides the "From" address for any e-mails sent with this mailer transport.
+                from:                 null
+    backend:
+
+        # Adds HTML attributes to the <body> tag in the back end.
+        attributes:
+
+            # Examples:
+            app-name:            'My App'
+            app-version:         1.2.3
+
+            # Prototype
+            name:                 ~
+
+        # Adds custom style sheets to the back end.
+        custom_css:
+
+            # Example:
+            - files/backend/custom.css
+
+        # Adds custom JavaScript files to the back end.
+        custom_js:
+
+            # Example:
+            - files/backend/custom.js
+
+        # Configures the title of the badge in the back end.
+        badge_title:          '' # Example: develop
+
+        # Defines the path of the Contao backend.
+        route_prefix:         /contao # Example: /admin
+    insert_tags:
+
+        # A list of allowed insert tags.
+        allowed_tags:
+
+            # Default:
+            - *
+
+            # Examples:
+            - '*_url'
+            - request_token
+    backup:
+
+        # These tables are ignored by default when creating and restoring backups.
+        ignore_tables:
+
+            # Defaults:
+            - tl_crawl_queue
+            - tl_log
+            - tl_search
+            - tl_search_index
+            - tl_search_term
+
+        # The maximum number of backups to keep. Use 0 to keep all the backups forever.
+        keep_max:             5
+
+        # The latest backup plus the oldest of every configured interval will be kept. Intervals have to be specified as documented in https://www.php.net/manual/en/dateinterval.construct.php without the P prefix.
+        keep_intervals:
+
+            # Defaults:
+            - 1D
+            - 7D
+            - 14D
+            - 1M
     sanitizer:
         allowed_url_protocols:
 
@@ -188,6 +328,10 @@ contao:
             - data
             - skype
             - whatsapp
+    cron:
+
+        # Allows to enable or disable the kernel.terminate listener that executes cron jobs within the web process. "auto" will auto-disable it if a CLI cron is running.
+        web_listener:         auto # One of "auto"; true; false
 ```
 
 
