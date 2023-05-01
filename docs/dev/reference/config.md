@@ -12,6 +12,8 @@ Contao's configuration options can be reviewed by running the following command:
 $ vendor/bin/contao-console config:dump-reference contao
 ```
 
+The following is a dump of the configuration reference from Contao **5.1**.
+
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
