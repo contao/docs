@@ -45,7 +45,7 @@ In addition, [theme-specific templates](../manage/#theme-specific-templates) are
 belong to the template hierarchy because they are created at runtime.
 
 The template hierarchy can be displayed from the command line with the
-[debug:contao-twig command](https://docs.contao.org/dev/framework/templates/debugging/#debug-contao-twig-command).   
+[`debug:contao-twig` command](https://docs.contao.org/dev/framework/templates/debugging/#debug-contao-twig-command).   
 Also note the [corresponding section in the manual](/en/cli) when using the command line command.
 
 
