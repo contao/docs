@@ -51,8 +51,8 @@ but for reasons of clarity it should give an indication of the purpose of the te
 You want to provide multiple variants of the text element.   
 To do this, create a folder called `text` inside `/templates/content_element`. Inside the new folder
 `/templates/content_element/text` you can now create one or more variants of the text element template, e.g.
-`tip.html.twig` and `highlight.html.twig`. In the back end there are now next to the core template
-`text.html.twig` also your two variant templates to choose from.
+`tip.html.twig` and `highlight.html.twig`. The back end now also offers your two variant templates for selection,
+next to the core template.
 {{% /example %}}
 
 
