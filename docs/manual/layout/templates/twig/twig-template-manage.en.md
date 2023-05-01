@@ -8,7 +8,7 @@ weight: 30
 ## Folder structure
 
 You can store your own templates in the folder `/templates`, so that they are offered for selection in the back end,
-e.g. during the configuration of a content element. Contao distinguishes in the template folder between:
+e.g. during the configuration of a content element. Within the template folder Contao distinguishes between:
 
 * [Global templates](#global-templates) and [Theme specific templates](#theme-specific-templates)
 
