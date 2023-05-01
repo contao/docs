@@ -30,13 +30,13 @@ Bevor du Contao auf deinem Server installieren kannst, musst du den
 Nach der erfolgreichen Grundkonfiguration kann nun Contao installiert werden. Dazu wählst du die gewünschte Version 
 sowie die initiale Konfiguration aus und klickst auf die Schaltfläche »Fertigstellen«. 
 
-![Contao per Contao Manager installieren](/de/installation/images/de/contao-per-contao-manager-installieren.png?classes=shadow)
+![Contao per Contao Manager installieren]({{% asset "images/manual/installation/de/contao-per-contao-manager-installieren.png" %}}?classes=shadow)
 
 Die Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf 
 folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
 werden.
 
-![Contao wird installiert](/de/installation/images/de/contao-wird-installiert.png?classes=shadow)
+![Contao wird installiert]({{% asset "images/manual/installation/de/contao-wird-installiert.png" %}}?classes=shadow)
 
 
 ### Datenbanktabellen aktualisieren

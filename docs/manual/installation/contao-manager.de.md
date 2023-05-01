@@ -89,7 +89,7 @@ Manager-Datei zerstört. Füge deshalb die Dateiendung `.php` erst nach dem Uplo
 Rufe anschließend mit deinem Browser die URL `www.example.com/contao-manager.phar.php` auf. Du solltest nun 
 die Willkommensseite des Contao Managers sehen.
 
-![Willkommensseite des Contao Managers](/de/installation/images/de/willkommensseite-des-contao-managers.png?classes=shadow)
+![Willkommensseite des Contao Managers]({{% asset "images/manual/installation/de/willkommensseite-des-contao-managers.png" %}}?classes=shadow)
 
 
 ### Grundkonfiguration
@@ -107,7 +107,7 @@ Der Contao Manager benötigt keine eigene Datenbank. Die Konfiguration des Conta
 Der Contao Manager benötigt den Pfad zum PHP-Binary und weitere Server-Informationen, um Hintergrund-Prozesse korrekt 
 auszuführen. In der Regel wird der Pfad automatisch erkannt.
 
-![Serverkonfiguration](/de/installation/images/de/serverkonfiguration.png?classes=shadow)
+![Serverkonfiguration]({{% asset "images/manual/installation/de/serverkonfiguration.png" %}}?classes=shadow)
 
 
 #### Composer Resolver Cloud

@@ -27,12 +27,12 @@ Before you can install Contao on your server, you need to
 After the successful basic configuration, you can now install Contao. Select the desired version and the initial 
 configuration and click the "Finish" button.
 
-![Installing Contao with Contao Manager](/de/installation/images/en/contao-manager-setup.png?classes=shadow)
+![Installing Contao with Contao Manager]({{% asset "images/manual/installation/en/contao-manager-setup.png" %}}?classes=shadow)
 
 The installation can now take several minutes. Details about the installation process can be displayed by clicking the 
 following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
 
-![Contao is installed](/de/installation/images/en/contao-manager-background-task.png?classes=shadow)
+![Contao is installed]({{% asset "images/manual/installation/en/contao-manager-background-task.png" %}}?classes=shadow)
 
 
 ### Update database tables

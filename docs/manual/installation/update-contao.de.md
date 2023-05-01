@@ -252,7 +252,7 @@ deinem eigenen Server genügend Arbeitsspeicher bereitstellen kannst und entlast
 
 Die Einstellung findest du in der »Systemprüfung« im Bereich »Serverkonfiguration«.
 
-![Deaktivierung der Composer Resolver Cloud](/de/installation/images/de/cloud_resolver_abschalten.png?classes=shadow)
+![Deaktivierung der Composer Resolver Cloud]({{% asset "images/manual/installation/de/cloud_resolver_abschalten.png" %}}?classes=shadow)
 
 Nach dem erfolgreichen Update überträgst du wie im vorherigen Abschnitt beschrieben die `composer.json` und 
 `composer.lock` zurück in die Contao-Installation auf deinem Hosting. Die weiteren Schritte auf deinem Hosting sind die 
