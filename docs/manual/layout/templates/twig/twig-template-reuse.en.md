@@ -36,10 +36,8 @@ Templates from the core can be modified by extension and application. For your
 [global templates](../manage/#global-templates) from the `/templates` folder they are parent
 templates that you can customize.   
 The parent templates (base templates) of the core, from extensions or the application can be replaced by a
-[global-template](../manage/#global-templates) from the folder `/templates` once basically for all elements
-of a type or global [variant-templates](../manage/#global-variants-templates) can be provided for all
-made available. A variant template can either directly be a template from the core from the core, extensions or
-applications or a global template from the folder `/templates`.
+[global-template](../manage/#global-templates) within the `/templates` folder for all elements.
+Global [variant templates](../manage/#global-variants-templates) can also be provided. A variant template adjusts a template from the core, an extension or the application - or another global template from the `/templates` folder.
 
 In addition, [theme-specific templates](../manage/#theme-specific-templates) are available, but they do not
 belong to the template hierarchy because they are created at runtime.
