@@ -18,7 +18,7 @@ After completion, the application cache must be rebuilt using the Contao manager
 
 {{% notice info %}}
 Even in debug mode, it may be necessary to clear the application cache in some cases to make your customized template
-takes effect.
+take effect.
 {{% /notice %}}
 
 
