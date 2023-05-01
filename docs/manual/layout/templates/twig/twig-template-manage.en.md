@@ -68,9 +68,8 @@ In the [Theme Manager](../../../theme-manager/manage-themes/) you can link an ex
 This is the **theme folder**.
 
 {{% notice warning %}}
-The name of the theme folder must not be changed for technical reasons
-([managed namespace](https://docs.contao.org/dev/framework/templates/architecture/#managed-namespace)), the name of the
-underscores.
+For technical reasons the folder name must not contain an underscore 
+(see [here](https://docs.contao.org/dev/framework/templates/architecture/#managed-namespace)).
 {{% /notice %}}
 
 Templates in the theme folder are **theme specific templates**. They are special in terms of their handling, because
