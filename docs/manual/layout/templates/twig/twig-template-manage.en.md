@@ -97,7 +97,7 @@ For a theme B, the theme folder is `/templates/themeB/`. In this folder you can 
 Theme specific variant templates require a global variant template with the same name.
 
 {{% example "Theme specific variant template for the text element" %}}
-If there is a theme specific template`/templates/content_element/text/highlight.html.twig`, you can additionally use
+If there is a theme specific template `/templates/content_element/text/highlight.html.twig`, you can additionally use
 theme specific variant templates. For theme A with the template folder `/templates/themeA/` this would be
 `/templates/themeA/content_element/text/highlight.html.twig`.
 {{% /example %}}
