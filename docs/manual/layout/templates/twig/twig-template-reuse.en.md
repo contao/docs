@@ -39,7 +39,7 @@ The parent templates (base templates) of the core, from extensions or the applic
 [global-template](../manage/#global-templates) within the `/templates` folder for all elements.
 Global [variant templates](../manage/#global-variants-templates) can also be provided. A variant template adjusts a template from the core, an extension or the application - or another global template from the `/templates` folder.
 
-In addition, [theme-specific templates](../manage/#theme-specific-templates) are available, but they do not
+In addition, [theme specific templates](../manage/#theme-specific-templates) are available, but they do not
 belong to the template hierarchy because they are created at runtime.
 
 The template hierarchy can be displayed from the command line with the
