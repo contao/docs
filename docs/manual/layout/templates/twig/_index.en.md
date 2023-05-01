@@ -35,7 +35,7 @@ More information about Twig templates in Contao can be found in the
 ## Twig templates in Contao core
 
 In Contao 5, Twig templates are provided for many core elements. This means that template adjustments must also be made
-in the Twig templates.    
+in Twig templates.    
 For a transition period, you can still use the PHP templates. The necessary settings for this can be found in the
 [upgrade instructions](https://github.com/contao/contao/blob/5.x/UPGRADE.md#content-elements).
 
