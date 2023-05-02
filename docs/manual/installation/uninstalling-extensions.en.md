@@ -12,11 +12,11 @@ You first need to log in to Contao Manager. To do so, call up your domain again 
 
 If you want to uninstall the extension "terminal42/contao-easy\_themes", go to the "Packages" tab and click on the "Remove" button next to the extension. Of course you can also reserve other extensions for uninstallation.
 
-![Mark extensions in Contao Manager for uninstallation](/de/installation/images/en/mark-extensions-in-contao-manager-for-uninstallation.png?classes=shadow)
+![Mark extensions in Contao Manager for uninstallation]({{% asset "images/manual/installation/en/mark-extensions-in-contao-manager-for-uninstallation.png" %}}?classes=shadow)
 
 Click on "Apply changes" to start the uninstallation. The uninstallation can take several minutes. Details of the uninstallation process can be displayed by clicking on the following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
 
-![Uninstalling extensions in Contao Manager](/de/installation/images/en/uninstalling-extensions-in-contao-manager.png?classes=shadow)
+![Uninstalling extensions in Contao Manager]({{% asset "images/manual/installation/en/uninstalling-extensions-in-contao-manager.png" %}}?classes=shadow)
 
 Once the Contao Manager has uninstalled the extension(s), you have to run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
 

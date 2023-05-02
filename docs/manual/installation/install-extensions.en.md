@@ -20,7 +20,7 @@ You can search for an extension on the [extensions.contao.org](https://extension
 
 You can search for an extension directly within the Contao Manager of your installation.
 
-![Advanced search in Contao Manager](/de/installation/images/en/search-extensions-in-the-contao-manager.png?classes=shadow)
+![Advanced search in Contao Manager]({{% asset "images/manual/installation/en/search-extensions-in-the-contao-manager.png" %}}?classes=shadow)
 
 ### Command line
 
@@ -75,16 +75,16 @@ The installation process may take several minutes. Details about the running pro
 If you want to install the extension `terminal42/contao-easy_themes`, enter "EasyThemes" in the search field, click
 "Add", …
 
-![Search for extensions in Contao Manager](/de/installation/images/en/search-package-in-contao-manager.png?classes=shadow)
+![Search for extensions in Contao Manager]({{% asset "images/manual/installation/en/search-package-in-contao-manager.png" %}}?classes=shadow)
 
 … then go to "Packages" and apply the changes.
 
-![Installing extensions in Contao Manager](/de/installation/images/en/install-package-in-contao-manager.png?classes=shadow)
+![Installing extensions in Contao Manager]({{% asset "images/manual/installation/en/install-package-in-contao-manager.png" %}}?classes=shadow)
 
 Once finished, run the [Contao install tool](../contao-installtool/) to update the database. The extension is now ready
 to be used.
 
-![Extensions installed in Contao Manager](/de/installation/images/en/package-installed-in-the-contao-manager.png?classes=shadow)
+![Extensions installed in Contao Manager]({{% asset "images/manual/installation/en/package-installed-in-the-contao-manager.png" %}}?classes=shadow)
 
 ### Installation via the command line
 

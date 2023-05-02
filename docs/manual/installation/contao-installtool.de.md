@@ -74,7 +74,7 @@ Beim Import eines Templates werden bestehende Daten überschrieben!
 Wenn du auf den Import eines Templates verzichtet hast, weil du beispielsweise eine neue Webseite mit Contao erstellen 
 möchtest, musst du einen Administrator-Benutzer anlegen, mit dem du dich später im Contao-Backend anmelden kannst.
 
-![Ein Administratorkonto anlegen](/de/installation/images/de/ein-administratorkonto-anlegen.png?classes=shadow)
+![Ein Administratorkonto anlegen]({{% asset "images/manual/installation/de/ein-administratorkonto-anlegen.png" %}}?classes=shadow)
 
 **Benutzername:** Hier legst du den Benutzernamen des Administrators fest.
 
