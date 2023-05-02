@@ -31,6 +31,7 @@ This table only shows the options relevant to the core functionality of this wid
 | `foreignKey` | `string` | Reference another table to pick from (can also be done via `relation`) |
 | `relation` | `array` | Reference another table to pick from via `'table' => 'tl_foobar'` |
 | `eval.multiple` | true/false (default) `bool` | Set this to true if you want to be able to select multiple values. |
+| `eval.isSortable` | true/false (default) `bool` | When used with `'multiple' => true`, allows for manual reordering using drag-n-drop. |
 
 
 ## Column Definition
