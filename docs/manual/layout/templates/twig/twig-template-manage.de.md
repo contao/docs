@@ -103,7 +103,7 @@ Für ein Theme B ist der Theme-Ordner `/templates/themeB/`. In diesem Ordner kan
 Themespezifische Varianten-Templates benötigen ein globales Varianten-Template mit dem gleichen Namen.
 
 {{% example "Themespezifisches Varianten-Template für das Text-Element" %}}
-Wenn ein themespezifisches Template`/templates/content_element/text/highlight.html.twig` existiert, kannst du zusätzlich
+Wenn ein Template`/templates/content_element/text/highlight.html.twig` existiert, kannst du zusätzlich
 noch themespezifisches Varianten-Templates verwenden. Für das Theme A mit dem Templateordner
 `/templates/themeA/` wäre das `/templates/themeA/content_element/text/highlight.html.twig`.
 {{% /example %}}
