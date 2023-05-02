@@ -3,7 +3,7 @@ title: "Picker"
 description: General purpose picker.
 ---
 
-This widget allows you to pick elements from arbitray data containers. The selected element will then be rendered in its back end view.
+This widget allows you to pick elements from arbitrary data containers. The selected element will then be rendered in its back end view.
 
 This is used to pick a record for the "Content element" content element for example:
 
@@ -31,6 +31,7 @@ This table only shows the options relevant to the core functionality of this wid
 | `foreignKey` | `string` | Reference another table to pick from (can also be done via `relation`) |
 | `relation` | `array` | Reference another table to pick from via `'table' => 'tl_foobar'` |
 | `eval.multiple` | true/false (default) `bool` | Set this to true if you want to be able to select multiple values. |
+| `eval.isSortable` | true/false (default) `bool` | When used with `'multiple' => true`, allows for manual reordering using drag-n-drop. |
 
 
 ## Column Definition
@@ -88,6 +89,57 @@ a serialized array. Since you do not know the length in advance, a blob column i
     ],
 ],
 // ...
+```
+
+{{% /tab %}}
+
+{{% tab name="Custom data container" %}}
+
+If you use your own data container table with a custom driver, you will need to implement a basic picker provider
+(otherwise the field will not be editable). A picker provider is a class which implements
+`Contao\CoreBundle\Picker\PickerProviderInterface`, or a service tagged as `contao.picker_provider`. However, in most
+cases it's enough to simply extend a `Contao\CoreBundle\Picker\AbstractTablePickerProvider` class:
+
+```php
+// ...
+'myProducts' => [
+    'label' => ['Referenced products', 'Help text'],
+    'inputType' => 'picker',
+    'eval' => [
+        'multiple' => true,
+    ],
+    'sql' => [
+        'type' => 'blob',
+        'notnull' => false,
+    ],
+    'relation' => [
+        'type' => 'hasMany',
+        'load' => 'lazy',
+        'table' => 'tl_product',
+    ],
+],
+// ...
+```
+
+```php
+// src/Picker/ProductsPickerProvider.php
+namespace App\Picker;
+
+use App\Driver\DC_Product;
+use Contao\CoreBundle\Picker\AbstractTablePickerProvider;
+
+class ProductsPickerProvider extends AbstractTablePickerProvider
+{
+    public function getName(): string
+    {
+        return 'productsPicker';
+    }
+
+    protected function getDataContainer(): string
+    {
+        return DC_Product::class;
+    }
+}
 ```
 
 {{% /tab %}}
