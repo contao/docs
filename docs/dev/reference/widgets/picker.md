@@ -119,7 +119,10 @@ cases it's enough to simply extend a `Contao\CoreBundle\Picker\AbstractTablePick
     ],
 ],
 // ...
+```
 
+```php
+// src/Picker/ProductsPickerProvider.php
 namespace App\Picker;
 
 use App\Driver\DC_Product;
