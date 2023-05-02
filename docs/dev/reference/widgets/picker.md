@@ -93,6 +93,54 @@ a serialized array. Since you do not know the length in advance, a blob column i
 
 {{% /tab %}}
 
+{{% tab name="Custom data container" %}}
+
+If you use your own data container table with a custom driver, you will need to implement a basic picker provider
+(otherwise the field will not be editable). A picker provider is a class which implements
+`Contao\CoreBundle\Picker\PickerProviderInterface`, or a service tagged as `contao.picker_provider`. However, in most
+cases it's enough to simply extend a `Contao\CoreBundle\Picker\AbstractTablePickerProvider` class:
+
+```php
+// ...
+'myProducts' => [
+    'label' => ['Referenced products', 'Help text'],
+    'inputType' => 'picker',
+    'eval' => [
+        'multiple' => true,
+    ],
+    'sql' => [
+        'type' => 'blob',
+        'notnull' => false,
+    ],
+    'relation' => [
+        'type' => 'hasMany',
+        'load' => 'lazy',
+        'table' => 'tl_product',
+    ],
+],
+// ...
+
+namespace App\Picker;
+
+use App\Driver\DC_Product;
+use Contao\CoreBundle\Picker\AbstractTablePickerProvider;
+
+class ProductsPickerProvider extends AbstractTablePickerProvider
+{
+    public function getName(): string
+    {
+        return 'productsPicker';
+    }
+
+    protected function getDataContainer(): string
+    {
+        return DC_Product::class;
+    }
+}
+```
+
+{{% /tab %}}
+
 {{< /tabs >}}
 
 
