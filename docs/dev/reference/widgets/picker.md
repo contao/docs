@@ -3,7 +3,7 @@ title: "Picker"
 description: General purpose picker.
 ---
 
-This widget allows you to pick elements from arbitray data containers. The selected element will then be rendered in its back end view.
+This widget allows you to pick elements from arbitrary data containers. The selected element will then be rendered in its back end view.
 
 This is used to pick a record for the "Content element" content element for example:
 
