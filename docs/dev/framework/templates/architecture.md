@@ -92,10 +92,44 @@ worry, you don't have to remember this):
 
 | Directory | Namespace | Order
 |-|-|-|
-| Any bundle's template directory:<br>`/vendor/…/templates`<br>`/vendor/foo/bar/contao/templates` | `@Contao_<bundle>`<br>`@Contao_FooBarBundle` | 1 |
+| Any bundle's template directory:<br>`/vendor/foo/bar/src/Resources/contao/templates` | `@Contao_FooBarBundle` | 1 |
 | Main template directory of the application:<br>`/contao/templates`<br>(`/src/Resources/contao/templates`)<br>(`/app/Resources/contao/templates`) | `@Contao_App` | 2 |
 | Global template directory:<br>`/templates` | `@Contao_Global` | 3 |
 | Any theme directory:<br>`/templates/<theme>`<br>`/templates/foo/theme` | `@Contao_Theme_<theme>`<br>`@Contao_Theme_foo_theme` | 4 |
+
+Optionally, you can return the path to your bundle from `getPath()` method in
+your bundle class. Starting from Symfony 6.1, this is done automatically if
+your bundle class extends `AbstractBundle`. Otherwise, you need to implement
+it yourself. See [Symfony docs][SymfonyBundleDocs] for more details.
+
+```php
+# /vendor/foo/bar/src/FooBarBundle.php
+
+// Symfony "<=6.0"
+class FooBarBundle extends Bundle
+{
+    public function getPath(): string
+    {
+        return dirname(__DIR__);
+    }
+}
+
+// Symfony "^6.1"
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+
+class FooBarBundle extends AbstractBundle
+{
+}
+```
+
+This allows your template namespaces to be discovered by Contao and Symfony
+from directories relative to the bundle path your method returns:
+
+| Folder | Namespace |
+|-|-|
+| `/vendor/foo/bar/contao/templates`<br>(instead of `/vendor/foo/bar/src/Resources/contao/templates`) | `@Contao_FooBarBundle` |
+| `/vendor/foo/bar/templates` | `@FooBar` |
+
 
 {{% notice info %}}
 For theme directories (e.g. `foo/bar/theme`), the path will be transformed into a snake-case slug (`foo_bar_theme`),
@@ -707,3 +741,4 @@ working around that issue, is, to provide the missing template(s) yourself and m
 [Contao Twig Inheritance Code]: https://github.com/contao/contao/tree/5.x/core-bundle/src/Twig/Inheritance
 [OWASPCheatSheet]: https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#rule-0-never-insert-untrusted-data-except-in-allowed-locations
 [Release plan]: https://contao.org/en/release-plan.html
+[SymfonyBundleDocs]: https://symfony.com/doc/current/bundles.html#bundle-directory-structure
