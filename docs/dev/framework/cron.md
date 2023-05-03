@@ -177,7 +177,7 @@ As mentioned before you can manually add the `contao.hook` service tag in your s
 services:
     App\Cron\ExampleCron:
         tags:
-            - { name: contao.cron, interval: hourly }
+            - { name: contao.cronjob, interval: hourly }
 ```
 ```php
 // src/Cron/ExampleCron.php
