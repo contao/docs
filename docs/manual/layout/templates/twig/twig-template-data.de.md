@@ -9,7 +9,7 @@ weight: 50
 
 
 Zur Anzeige der Daten in einer Vorlage, kannst du die  `dump()`-Funktion verwenden.  
-Wenn du nur die Daten von bestimmten Variablen benötigst, kannst du diesen als Argument übergeben:
+Wenn du nur die Daten von bestimmten Variablen benötigst, kannst du diese als Argument übergeben:
 
 ```twig
 {{ dump() }} {# Ausgabe aller verfügbaren Daten #}
