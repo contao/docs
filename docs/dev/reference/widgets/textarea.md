@@ -37,7 +37,7 @@ is expected to be JSON you can use `ace|json`. If it is expected to be PHP you c
 
 {{% notice "note" %}}
 `allowHtml` and `decodeEntities` is automatically enabled if `rte` equals to `ace\|html` or if it starts with `tiny`. If `rte` starts with
-`tiny` Contao will also convert any file pahts automatically into a `{{file::*}}` insert tag, if applicable.
+`tiny` Contao will also convert any file paths automatically into a `{{file::*}}` insert tag, if applicable.
 {{% /notice %}}
 
 
