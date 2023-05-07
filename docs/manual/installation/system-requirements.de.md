@@ -1,5 +1,6 @@
 ---
 title: "Systemvoraussetzungen"
+metaTitle: "Systemvoraussetzungen von und mit Contao"
 description: ""
 url: "installation/systemvoraussetzungen"
 aliases:
