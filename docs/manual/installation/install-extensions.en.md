@@ -14,7 +14,7 @@ To find a suitable extension for a desired function, you have three options.
 
 You can search for an extension on the [extensions.contao.org](https://extensions.contao.org/) website.
 
-![Extensions search on extensions.contao.org](/de/installation/images/en/extensions-contao-org.png?classes=shadow)
+![Extensions search on extensions.contao.org]({{% asset "images/manual/installation/en/extensions-contao-org.png" %}}?classes=shadow)
 
 ### Contao Manager
 
