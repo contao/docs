@@ -65,7 +65,7 @@ Die Aktualisierung kann nun mehrere Minuten in Anspruch nehmen. Details zum Aktu
 auf folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
 werden.
 
-![Aktualisierung für Minor-Release abgeschloßen](/de/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png?classes=shadow)
+![Aktualisierung für Minor-Release abgeschloßen]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-abgeschlossen.png" %}}?classes=shadow)
 
 
 ### Datenbanktabellen aktualisieren
@@ -204,7 +204,7 @@ $ composer install
 oder du verwendest den Contao Manager. Dort wählst du unter »Systemwartung« den Punkt »Composer-Abhängigkeiten«, »Installer 
 ausführen«.
 
-![composer install mit dem Contao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
+![composer install mit dem Contao-Manager]({{% asset "images/manual/installation/de/composer-install-mit-dem-contao-manager.png" %}}?classes=shadow)
 
 Zum Abschluss musst du noch die Datenbanktabellen aktualisieren. 
 
