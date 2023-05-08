@@ -25,7 +25,7 @@ Before you can install Contao on your server, you need to
 ### Installing Contao with the Contao Manager
 
 After the successful basic configuration, you can now install Contao. Select the desired version and the initial 
-configuration and click the "Finish" button.
+configuration and click the "Install" button.
 
 ![Installing Contao with Contao Manager]({{% asset "images/manual/installation/en/contao-manager-setup.png" %}}?classes=shadow)
 
