@@ -158,7 +158,7 @@ Usually, the recipients of a newsletter manage themselves using the correspondin
 intervention as administrator. Nevertheless, you still have the possibility to change recipients manually in the 
 back end. For data protection reasons, only the e-mail address and the activation status are saved.
 
-![Edit a recipient](/de/core-extensions/newsletter/images/en/activate_recipients.png?classes=shadow)
+![Edit a recipient](/de/core-extensions/newsletter/images/en/activate_recipents.png?classes=shadow)
 
 According to the [double opt-in procedure](https://de.wikipedia.org/wiki/Opt-In), every subscriber receives an 
 e-mail with a confirmation link when subscribing, without which he cannot complete his subscription. This is 
