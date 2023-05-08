@@ -17,7 +17,7 @@ Um eine passende Erweiterung für eine gewünschte Funktion zu finden, hast du d
 
 Du kannst auf der Website [extensions.contao.org](https://extensions.contao.org/) ein Erweiterung suchen.  
 
-![Erweiterungssuche auf extensions.contao.org](/de/installation/images/de/erweiterungssuche-extensions-contao-org.png?classes=shadow)
+![Erweiterungssuche auf extensions.contao.org]({{% asset "images/manual/installation/de/erweiterungssuche-extensions-contao-org.png" %}}?classes=shadow)
 
 
 ### Contao Manager
