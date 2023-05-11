@@ -23,7 +23,7 @@ sowieso nur über die Verwaltungssoftware (z. B. Confixx, Plesk oder cPanel) m�
 Verwaltungsoberfläche deines Servers auf, und lege dort eine neue Datenbank an. Gebe danach die Anmeldeinformationen
 für die Datenbank im Contao-Installtool ein.
 
-![Datenbankverbindung für Contao eingeben](/de/installation/images/de/datenbankverbindung-fuer-contao-eingeben.png?classes=shadow)
+![Datenbankverbindung für Contao eingeben]({{% asset "images/manual/installation/de/datenbankverbindung-fuer-contao-eingeben.png" %}}?classes=shadow)
 
 **Host:** Hier gibst du die Domain oder IP-Adresse des Datenbankservers ein.
 
@@ -43,7 +43,7 @@ vergleicht die darin enthaltenen Tabellen mit den Vorgaben der aktuellen Contao-
 notwendig, präsentiert dir das Installtool automatisch eine Liste der durchzuführenden Änderungen, die du bestätigen 
 oder ablehnen kannst.
 
-![Datenbankänderungen bestätigen](/de/installation/images/de/datenbankaenderungen-bestaetigen.png?classes=shadow)
+![Datenbankänderungen bestätigen]({{% asset "images/manual/installation/de/datenbankaenderungen-bestaetigen.png" %}}?classes=shadow)
 
 In der Regel solltest du die angebotenen Änderungen übernehmen, damit deine Tabellen immer auf dem neuesten Stand sind 
 und Contao später nicht versucht, auf fehlende Felder zuzugreifen. Bei einer neuen Installation ist die Liste der 
@@ -101,7 +101,7 @@ automatisch gesperrt, wenn mehr als dreimal hintereinander ein falsches Passwort
 Du hast drei Möglichkeiten das Installtool zu entsperren:
 
 - Über den Contao Manager, indem du unter Systemwartung auf »Installtool entsperren« klickst.
-![Das Installtool zurücksetzen](/de/installation/images/de/das-installtool-zuruecksetzen.png?classes=shadow)
+![Das Installtool zurücksetzen]({{% asset "images/manual/installation/de/das-installtool-zuruecksetzen.png" %}}?classes=shadow)
 - Über die Kommandozeile, indem du im Hauptverzeichnis deiner Contao-Installation folgendes Kommando absetzt:
 
     ```bash

@@ -59,13 +59,13 @@ Bei einer Aktualisierung für ein [Bugfix-Release](#bugfix-release) genügt es a
 Besonderheit bei einer Aktualisierung für ein [Minor-Release](#minor-release): Klicke bei »Contao Open Source CMS« auf das 
 Zahnrad-Symbol und gebe die gewünschte Version ein. Durch einen Klick auf die Schaltfläche  »Pakete aktualisieren« und danach »Änderungen anwenden« schiebst du die Aktualisierung an.
 
-![Aktualisierung für Minor-Release starten](/de/installation/images/de/aktualisierung-fuer-minor-release-starten.png?classes=shadow)
+![Aktualisierung für Minor-Release starten]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-starten.png" %}}?classes=shadow)
 
 Die Aktualisierung kann nun mehrere Minuten in Anspruch nehmen. Details zum Aktualisierungsprozess können durch Klick 
 auf folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
 werden.
 
-![Aktualisierung für Minor-Release abgeschloßen](/de/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png?classes=shadow)
+![Aktualisierung für Minor-Release abgeschloßen]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-abgeschlossen.png" %}}?classes=shadow)
 
 
 ### Datenbanktabellen aktualisieren
@@ -204,7 +204,7 @@ $ composer install
 oder du verwendest den Contao Manager. Dort wählst du unter »Systemwartung« den Punkt »Composer-Abhängigkeiten«, »Installer 
 ausführen«.
 
-![composer install mit dem Contao-Manager](/de/installation/images/de/composer-install-mit-dem-contao-manager.png?classes=shadow)
+![composer install mit dem Contao-Manager]({{% asset "images/manual/installation/de/composer-install-mit-dem-contao-manager.png" %}}?classes=shadow)
 
 Zum Abschluss musst du noch die Datenbanktabellen aktualisieren. 
 
