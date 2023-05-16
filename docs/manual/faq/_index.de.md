@@ -15,7 +15,6 @@ deine Vorschläge hinzufügen kannst. Anschließend kannst du über GitHub einen
 
 
 ## Allgemein
-FRAGE
 
 {{% faq "Ich habe mein Administrator-Passwort vergessen, wie kann ich es zurücksetzen?" %}}
 Falls es in der Datenbank-Tabelle »tl_user« mehrere Datensätze gibt, bei denen das Admin-Flag gesetzt ist, kannst du den Wert 
