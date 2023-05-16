@@ -27,7 +27,7 @@
             {{.Get "default" | default $expandMessage}}
             {{else}}
             {{.Get 0 | default $expandMessage}}
-    	{{end}}",
+    	    {{end}}",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "{{.Inner | safeHTML}}"
