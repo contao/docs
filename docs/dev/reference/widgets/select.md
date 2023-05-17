@@ -141,9 +141,9 @@ You can generate an options array from another table with the `foreignKey` prope
         'chosen' => true, // Adds a search box to filter the options
     ],
     'sql' => [
-        'type' => 'string',
-        'notnull' => false,
-        'default' => '',
+        'type' => 'integer',
+        'unsigned' => true,
+        'default' => 0,
     ],
 ],
 // ...
