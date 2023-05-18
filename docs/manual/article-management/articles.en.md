@@ -8,14 +8,14 @@ weight: 10
 
 Article management is a separate module in Contao that you can *find* in the navigation at the top of the *Content* group. Each article is assigned to a specific page and layout area. In contrast to too many other CMSs, the inclusion of articles in Contao is not limited to the main column, so you can design your website flexibly.
 
-![The article management](/de/article-management/images/en/articlemanagement.png?classes=shadow)
+![The article management]({{% asset "images/manual/article-management/en/articlemanagement.png" %}}?classes=shadow)
 
 Each page can contain any number of articles, which are displayed one below the other within their layout area in the order determined by you. Contao automatically detects whether the whole article or only the text followed by a `Read more` link should be displayed.
 
-![Several articles with teaser text](/de/article-management/images/en/multiple-articles-with-teasertext.png?classes=shadow)
+![Several articles with teaser text]({{% asset "images/manual/article-management/en/multiple-articles-with-teasertext.png" %}}?classes=shadow)
 
 You assign an article to a layout area in the article's settings in the "Display in" field. The quickest way to access the article settings is to use the **Edit the article settings** buttton 
-![Edit the article settings](/de/icons/header.svg?classes=icon).
+![Edit the article settings]({{% asset "icons/header.svg" %}}?classes=icon).
 
 ## Article aliases
 

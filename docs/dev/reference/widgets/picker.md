@@ -7,7 +7,7 @@ This widget allows you to pick elements from arbitrary data containers. The sele
 
 This is used to pick a record for the "Content element" content element for example:
 
-![A content element picker](../images/picker_content_element.png?classes=shadow)
+![A content element picker]({{% asset "images/dev/reference/widgets/picker_content_element.png" %}}?classes=shadow)
 
 When picking the element, a back end view will be rendered in the popup which allows you to switch between page articles, news articles,
 calendars etc. where you will be able to go into one of the parents to select a content element from there. The preview is then rendered via 
@@ -15,7 +15,7 @@ the `child_record_callback` of `tl_content` in this case.
 
 You could also select news articles for example:
 
-![A news article picker](../images/picker_news.png?classes=shadow)
+![A news article picker]({{% asset "images/dev/reference/widgets/picker_news.png" %}}?classes=shadow)
 
 The picker popup will show you the regular back end view of the news archives in this case which allows you to then select a news article
 from any of these archives.

@@ -11,7 +11,7 @@ Now that you know how categories and questions are managed in the back end, we w
 in the front end. The FAQ extension contains three new front end modules which you can configure as usual via the 
 module management.
 
-![FAQ modules](/de/core-extensions/faq/images/en/faq-modules.png?classes=shadow)
+![FAQ modules]({{% asset "images/manual/core-extensions/faq/images/en/faq-modules.png" %}}?classes=shadow)
 
 
 ## FAQ list
@@ -22,7 +22,7 @@ The front end module "FAQ list" adds a list of questions to the website, which c
 ### Module configuration
 
 **FAQ categories:** Here you define the categories from which questions are displayed. You can change the order of the 
-categories using the navigation icon ![Move question](/de/icons/drag.svg?classes=icon "Move question").
+categories using the navigation icon ![Move question]({{% asset "icons/drag.svg" %}}?classes=icon "Move question").
 
 **FAQ reader:** Here you can define if the system should automatically switch to the FAQ reader when a post is selected.
 

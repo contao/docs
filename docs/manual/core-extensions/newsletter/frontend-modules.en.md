@@ -12,7 +12,7 @@ visitors can subscribe or unsubscribe to mailing lists in the front end and how 
 all sent newsletters. The newsletter extension contains four additional front end modules, which you can configure 
 as usual via the module management.
 
-![Newsletter modules](/de/core-extensions/newsletter/images/en/newsletter_modules.png?classes=shadow)
+![Newsletter modules]({{% asset "images/manual/core-extensions/newsletter/images/en/newsletter_modules.png?classes=shadow" %}})
 
 ## Subscribe
 

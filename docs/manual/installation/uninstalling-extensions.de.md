@@ -21,7 +21,7 @@ vormerken.
 
 Klicke auf »Änderungen anwenden« um die Deinstallation zu starten. Die Deinstallation kann nun mehrere Minuten in 
 Anspruch nehmen. Details zum Deinstallationsprozess können durch Klick auf folgendes Symbol 
-![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
+![Konsolenausgabe anzeigen/verstecken]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon) angezeigt werden.
 
 ![Erweiterungen im Contao Manager deinstallieren]({{% asset "images/manual/installation/de/erweiterungen-im-contao-manager-deinstallieren.png" %}}?classes=shadow)
 

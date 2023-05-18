@@ -13,7 +13,7 @@ weight: 24
 Das Inhaltselement »Hyperlink« fügt dem Artikel einen Link auf eine externe Webseite oder eine E-Mail-Adresse hinzu. Du 
 kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement eingeben.
 
-![Einen Hyperlink anlegen](/de/article-management/images/de/einen-hyperlink-anlegen.png?classes=shadow)
+![Einen Hyperlink anlegen]({{% asset "images/manual/article-management/de/einen-hyperlink-anlegen.png" %}}?classes=shadow)
 
 **Link-Adresse:** Gebe die Link-Adresse inklusive des Netzwerkprotokolls ein. Für Webseiten lautet das 
 Netzwerkprotokoll normalerweise `http://` oder `https://`, für E-Mail-Adressen `mailto:` und für Telefonnummern `tel:`. 
@@ -37,7 +37,7 @@ der Satz »Besuchen Sie unsere Firmenseite!« steht.
 Wenn du die Option **Einen Bildlink erstellen** auswählst, kannst du statt eines Textlinks einen Bildlink erstellen. 
 Alternativ dazu kannst du auch ein Bildelement erstellen und mit einem Link versehen.
 
-![Einen Bildlink erstellen](/de/article-management/images/de/einen-bildlink-erstellen.png?classes=shadow)
+![Einen Bildlink erstellen]({{% asset "images/manual/article-management/de/einen-bildlink-erstellen.png" %}}?classes=shadow)
 
 **Quelldatei:** Hier wählst du das zu verwendende Bild aus.
 

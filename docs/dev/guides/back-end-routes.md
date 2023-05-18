@@ -114,7 +114,7 @@ on the top of the page
 
 This example renders like this:
 
-![](../images/custom-backend-routes-1.png?classes=shadow)
+![]({{% asset "images/dev/guides/custom-backend-routes-1.png" %}}?classes=shadow)
 
 
 ## Extend the Back End Menu

@@ -117,7 +117,7 @@ du in der Navigation in der Gruppe Inhalte findest. Dort werden sämtliche Komme
 ein Inhaltselement, einen Artikel oder einen Blog-Beitrag beziehen. Bei Bedarf kannst du die Liste der Kommentare nach 
 ihrem Ursprung oder ihrem Elternelement filtern.
 
-![Kommentare nach ihrem Ursprung filtern](/de/article-management/images/de/kommentare-nach-ihrem-ursprung-filtern.png?classes=shadow)
+![Kommentare nach ihrem Ursprung filtern]({{% asset "images/manual/article-management/de/kommentare-nach-ihrem-ursprung-filtern.png" %}}?classes=shadow)
 
 Falls du die Option »Kommentare moderieren« aktiviert hast, kannst du neue Kommentare in der Kommentarverwaltung 
 prüfen, bevor sie auf der Webseite erscheinen. So verhinderst du z. B. eventuelle Spamversuche.

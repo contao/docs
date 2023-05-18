@@ -6,15 +6,15 @@ description: Renders a textarea input field for which you can also enable the Ac
 
 In its most basic form this widget renders a `<textarea>` field which allows multi-line input.
 
-![A simple textarea](../images/textarea.png?classes=shadow)
+![A simple textarea]({{% asset "images/dev/reference/widgets/textarea.png" %}}?classes=shadow)
 
 It also allows you to enable an editor like TinyMCE for HTML content:
 
-![TinyMCE editor](../images/tinymce.png?classes=shadow)
+![TinyMCE editor]({{% asset "images/dev/reference/widgets/tinymce.png" %}}?classes=shadow)
 
 Or the Ace editor for syntax highlighting of code input, e.g. PHP:
 
-![Ace editor](../images/ace.png?classes=shadow)
+![Ace editor]({{% asset "images/dev/reference/widgets/ace.png" %}}?classes=shadow)
 
 
 ## Options

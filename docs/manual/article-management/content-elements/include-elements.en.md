@@ -99,7 +99,7 @@ The content element "Comments" offers visitors the possibility to leave comments
 
 The management of the comments your visitors make is done centrally in the backend with the module "Comments", which you can find in the navigation in the group Content. All comments are displayed there, no matter if they refer to a content element, an article or a blog post. If you want, you can filter the list of comments by their origin or parent element.
 
-![Filter comments by origin](/de/article-management/images/en/filter-comments-by-origin.png?classes=shadow)
+![Filter comments by origin]({{% asset "images/manual/article-management/en/filter-comments-by-origin.png" %}}?classes=shadow)
 
 If you have enabled the "Moderate Comments" option, you can check and approve new comments in the comment manager before they appear on the website. This will help you to prevent spam attempts, for example.
 

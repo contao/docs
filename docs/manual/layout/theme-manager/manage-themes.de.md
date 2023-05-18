@@ -42,18 +42,18 @@ allein deinem bevorzugten Organisationsansatz.
 Die Bedienung des Theme-Managers funktioniert genau wie die der meisten anderen Backend-Module, nämlich mithilfe von 
 Navigationssymbolen.
 
-![Navigationssymbole im Theme-Manager](/de/layout/theme-manager/images/de/navigationssymbole-im-theme-manager.png?classes=shadow)
+![Navigationssymbole im Theme-Manager]({{% asset "images/manual/layout/theme-manager/de/navigationssymbole-im-theme-manager.png" %}}?classes=shadow)
 
-- ![Theme bearbeiten](/de/icons/edit.svg?classes=icon) Theme bearbeiten
-- ![Theme löschen](/de/icons/delete.svg?classes=icon) Theme löschen
-- ![Details des Theme anzeigen](/de/icons/show.svg?classes=icon) Details des Theme anzeigen
-- ![Die Stylesheets des Theme bearbeiten](/de/icons/css.svg?classes=icon) Die Stylesheets des Theme bearbeiten
-- ![Die Frontend-Module des Theme bearbeiten](/de/icons/modules.svg?classes=icon) Die Frontend-Module des Theme 
+- ![Theme bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon) Theme bearbeiten
+- ![Theme löschen]({{% asset "icons/delete.svg" %}}?classes=icon) Theme löschen
+- ![Details des Theme anzeigen]({{% asset "icons/show.svg" %}}?classes=icon) Details des Theme anzeigen
+- ![Die Stylesheets des Theme bearbeiten]({{% asset "icons/css.svg" %}}?classes=icon) Die Stylesheets des Theme bearbeiten
+- ![Die Frontend-Module des Theme bearbeiten]({{% asset "icons/modules.svg" %}}?classes=icon) Die Frontend-Module des Theme 
 bearbeiten
-- ![Die Seitenlayouts des Theme bearbeiten](/de/icons/layout.svg?classes=icon) Die Seitenlayouts des Theme 
+- ![Die Seitenlayouts des Theme bearbeiten]({{% asset "icons/layout.svg" %}}?classes=icon) Die Seitenlayouts des Theme 
 bearbeiten
-- ![Die Bildgrößen des Theme bearbeiten](/de/icons/sizes.svg?classes=icon) Die Bildgrößen des Theme bearbeiten
-- ![Theme exportieren](/de/icons/theme_export.svg?classes=icon) Theme exportieren
+- ![Die Bildgrößen des Theme bearbeiten]({{% asset "icons/sizes.svg" %}}?classes=icon) Die Bildgrößen des Theme bearbeiten
+- ![Theme exportieren]({{% asset "icons/theme" %}}_export.svg?classes=icon) Theme exportieren
 
 **Theme-Titel**: Hier gibst du den Theme-Titel ein.
 
@@ -96,7 +96,7 @@ die Datei aus und starte den Importvorgang.
 Contao führt dann eine Reihe von Prüfungen durch, um eventuelle Inkompatibilitäten zwischen dem Theme und deiner 
 Contao-Installation zu entdecken.
 
-![Die Theme-Daten werden überprüft](/de/layout/theme-manager/images/de/die-theme-daten-werden-ueberprueft.png?classes=shadow)
+![Die Theme-Daten werden überprüft]({{% asset "images/manual/layout/theme-manager/de/die-theme-daten-werden-ueberprueft.png" %}}?classes=shadow)
 
 Die Überprüfung beinhaltet insbesondere:
 
@@ -124,7 +124,7 @@ Aufbau einer Seite festlegt.
 Zur Veranschaulichung wurde hier das Theme »[Contao Official Demo](https://packagist.org/packages/contao/official-demo)« 
 importiert und das Seitenlayout »2 columns - [ default ]« dem Startpunkt der Webseite in der Seitenstruktur zugewiesen.
 
-![Contao Official Demo](/de/layout/theme-manager/images/de/contao-official-demo.png?classes=shadow)
+![Contao Official Demo]({{% asset "images/manual/layout/theme-manager/de/contao-official-demo.png" %}}?classes=shadow)
 
 
 ## Bezugsquellen für Themes

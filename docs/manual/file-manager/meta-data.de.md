@@ -19,7 +19,7 @@ Contao unterstützt folgende Metadaten:
 - Bildunterschrift
 - Lizenz-URL
 
-![Pflegen der Metadaten](/de/file-manager/images/de/pflegen-der-metadaten.png?classes=shadow)
+![Pflegen der Metadaten]({{% asset "images/manual/file-manager/de/pflegen-der-metadaten.png" %}}?classes=shadow)
 
 **HTML-Ausgabe**  
 Das Inhaltselement vom Elementtyp »Bild« generiert folgenden HTML-Code:

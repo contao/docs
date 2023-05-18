@@ -15,7 +15,7 @@ and then between the individual columns of the grid itself.
 For example, if you want to display two columns in a "12-column system", you must assign six grids to each of 
 your two areas. This assignment is done via CSS classes.
 
-![Grid Demo](/de/guides/images/en/grid/grid-structure.jpg?classes=shadow)
+![Grid Demo]({{% asset "images/manual/guides/en/grid/grid-structure.jpg" %}}?classes=shadow)
 
 Among others, there are "12-column" or "16-column" implementations. Some are "pixel-based", others "percentage-based", 
 and the spacing width can also vary with different systems. Ultimately, it is CSS information in order to display a 

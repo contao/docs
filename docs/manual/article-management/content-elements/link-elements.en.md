@@ -11,7 +11,7 @@ weight: 24
 
 The Hyperlink content element adds a link to an external Web page or e-mail address to the article. Of course, you can also enter hyperlinks in the text element using the Rich Text Editor.
 
-![Creating a hyperlink](/de/article-management/images/en/create-a-hyperlink.png?classes=shadow)
+![Creating a hyperlink]({{% asset "images/manual/article-management/en/create-a-hyperlink.png" %}}?classes=shadow)
 
 **Link target:** Enter the link target including the network protocol. For web pages, the network protocol usually is `http://` or `https://`, for e-mail addresses use `mailto:` and for phone numbers use `tel:`. Contao automatically encrypts e-mail addresses so that they cannot be read by spambots.
 
@@ -29,7 +29,7 @@ The Hyperlink content element adds a link to an external Web page or e-mail addr
 
 If you select the **Create an image link** option, you can create an image link instead of a text link, or alternatively, you can create an image element and link to it.
 
-![Create an image link](/de/article-management/images/en/create-an-image-link.png?classes=shadow)
+![Create an image link]({{% asset "images/manual/article-management/en/create-an-image-link.png" %}}?classes=shadow)
 
 **Source file:** Here you select the image to be used.
 

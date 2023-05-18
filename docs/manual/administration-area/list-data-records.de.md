@@ -26,7 +26,7 @@ Die drei häufigsten Formen von Auflistungen, die nachfolgend Ansichten genannt 
 Hierbei handelt es sich um Datensätze einer einzelnen Tabelle, die in einer bestimmten Reihenfolge aufgelistet werden. 
 Die Sortierung ist meistens alphabetisch, und die einzelnen Zeilen sind nach Anfangsbuchstaben gruppiert.
 
-![Der List View](/de/administration-area/images/de/der-list-view.png?classes=shadow)
+![Der List View]({{% asset "images/manual/administration-area/de/der-list-view.png" %}}?classes=shadow)
 
 
 ### Parent View
@@ -45,7 +45,7 @@ Wenn du nun den Inhalt eines Warenkorbs auflistest, willst du natürlich nur di
 und nicht die Produkte des zweiten. Daher zeigt Contao dir im Parent View auch nur die Kindelemente des jeweils 
 ausgewählten Elternelements an.
 
-![Der Parent View](/de/administration-area/images/de/der-parent-view.png?classes=shadow)
+![Der Parent View]({{% asset "images/manual/administration-area/de/der-parent-view.png" %}}?classes=shadow)
 
 
 ### Tree View
@@ -55,7 +55,7 @@ Baumstruktur dargestellt werden. Typischerweise ist das bei einem Dateisystem de
 Unterverzeichnisse gibt, deshalb nutzt die Contao-Dateiverwaltung auch diese Ansicht. Hierarchische Strukturen können aber
 auch innerhalb einer Tabelle abgebildet werden, wie es z. B. bei der Seitenstruktur deiner Webseite der Fall ist.
 
-![Der Tree View](/de/administration-area/images/de/der-tree-view.png?classes=shadow)
+![Der Tree View]({{% asset "images/manual/administration-area/de/der-tree-view.png" %}}?classes=shadow)
 
 
 ## Datensätze sortieren und filtern {#datensaetze-sortieren-und-filtern}
@@ -65,7 +65,7 @@ Möglichkeiten, Auflistungen zu sortieren und durch Filter einzuschränken. Die 
 gezieltes Filtern so einschränken, dass dir nur die Datensätze angezeigt werden, die du auch wirklich für eine 
 bestimmte Aktion benötigst.
 
-![Datensätze sortieren und filtern](/de/administration-area/images/de/datensaetze-sortieren-und-filtern.png?classes=shadow)
+![Datensätze sortieren und filtern]({{% asset "images/manual/administration-area/de/datensaetze-sortieren-und-filtern.png" %}}?classes=shadow)
 
 **Filtern:** Hier kannst du einen oder mehrere Filter setzen und dir so z. B. nur die Mitglieder anzeigen lassen, 
 die männlich sind und Deutsch sprechen.
@@ -88,10 +88,10 @@ dem Drop-Down-Menü bzw. löschen den Suchbegriff aus dem Suchfeld.
 
 Durch Klick auf folgende Icons können die Filter angewendet bzw. zurückgesetzt werden:
 
-![Filter anwenden](/de/icons/filter-apply.svg?classes=icon) **Filter anwenden:** die Filter setzen und danach 
+![Filter anwenden]({{% asset "icons/filter-apply.svg" %}}?classes=icon) **Filter anwenden:** die Filter setzen und danach 
 anwenden.
 
-![Filter zurücksetzen](/de/icons/filter-reset.svg?classes=icon) **Filter zurücksetzen:** die Filter-Auswahl 
+![Filter zurücksetzen]({{% asset "icons/filter-reset.svg" %}}?classes=icon) **Filter zurücksetzen:** die Filter-Auswahl 
 zurücksetzen.
 
 
@@ -108,27 +108,27 @@ Die folgenden Navigationssymbole kommen in fast allen Ansichten vor. Aus Gründ
 zusätzlich mit einem Text versehen. Wenn du aber den Zeiger deiner Maus über einem Icon positionierst, wird dir die 
 entsprechende Beschreibung dazu angezeigt.
 
-![Bearbeiten](/de/icons/edit.svg?classes=icon) **Bearbeiten:** ruft einen bestimmten Datensatz im Bearbeitungsmodus 
+![Bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon) **Bearbeiten:** ruft einen bestimmten Datensatz im Bearbeitungsmodus 
 auf.
 
-![Duplizieren](/de/icons/copy.svg?classes=icon) **Duplizieren:** erstellt eine Kopie eines vorhandenen Datensatzes.
+![Duplizieren]({{% asset "icons/copy.svg" %}}?classes=icon) **Duplizieren:** erstellt eine Kopie eines vorhandenen Datensatzes.
 
-![Löschen](/de/icons/delete.svg?classes=icon) **Löschen:** löscht einen Datensatz. 
+![Löschen]({{% asset "icons/delete.svg" %}}?classes=icon) **Löschen:** löscht einen Datensatz. 
 ([Dieser Vorgang kann widerrufen werden.](#geloeschte-datensaetze-wiederherstellen))
 
-![Veröffentlichen/unveröffentlichen](/de/icons/visible.svg?classes=icon) **Veröffentlichen/unveröffentlichen:** im 
+![Veröffentlichen/unveröffentlichen]({{% asset "icons/visible.svg" %}}?classes=icon) **Veröffentlichen/unveröffentlichen:** im 
 Frontend anzeigen bzw. ausblenden
 
-![Info](/de/icons/show.svg?classes=icon) **Info:** zeigt Informationen zu einem Datensatz.
+![Info]({{% asset "icons/show.svg" %}}?classes=icon) **Info:** zeigt Informationen zu einem Datensatz.
 
 
 ### Icons im List View
 
 Der List View kann neben den grundlegenden Befehlen, noch folgende zusätzlichen Befehle anbieten.
 
-![Icons im List View](/de/administration-area/images/de/icons-im-list-view.png?classes=shadow)
+![Icons im List View]({{% asset "images/manual/administration-area/de/icons-im-list-view.png" %}}?classes=shadow)
 
-![Einstellungen bearbeiten](/de/icons/header.svg?classes=icon) **Einstellungen bearbeiten:** die Einstellungen für 
+![Einstellungen bearbeiten]({{% asset "icons/header.svg" %}}?classes=icon) **Einstellungen bearbeiten:** die Einstellungen für 
 das Eltern-Element anpassen.
 
 
@@ -136,19 +136,19 @@ das Eltern-Element anpassen.
 
 Der Parent View bietet zwei zusätzliche Icons, um die Reihenfolge der Datensätze festlegen zu können. Die Reihenfolge 
 kann auch mittels Drag & Drop geändert werden. Dazu einfach auf das Drag & Drop-Icon 
-![Verschieben](/de/icons/drag.svg?classes=icon) klicken und an die neue Position bewegen.
+![Verschieben]({{% asset "icons/drag.svg" %}}?classes=icon) klicken und an die neue Position bewegen.
 
-![Icons im Parent View](/de/administration-area/images/de/icons-im-parent-view.png?classes=shadow)
+![Icons im Parent View]({{% asset "images/manual/administration-area/de/icons-im-parent-view.png" %}}?classes=shadow)
 
-![Verschieben](/de/icons/cut.svg?classes=icon) **Verschieben:** verschiebt einen Datensatz an eine andere Position.
+![Verschieben]({{% asset "icons/cut.svg" %}}?classes=icon) **Verschieben:** verschiebt einen Datensatz an eine andere Position.
 
-![Neues Element](/de/icons/new.svg?classes=icon) **Neues Element:** erstellt einen neuen Datensatz nach dem 
+![Neues Element]({{% asset "icons/new.svg" %}}?classes=icon) **Neues Element:** erstellt einen neuen Datensatz nach dem 
 aktuellen Datensatz.
 
-![Einfügen](/de/icons/pasteafter.svg?classes=icon) **Einfügen:** fügt einen Datensatz nach dem aktuellen Datensatz 
+![Einfügen]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Einfügen:** fügt einen Datensatz nach dem aktuellen Datensatz 
 ein.
 
-**![Datei oder Verzeichnis verschieben](/de/icons/drag.svg?classes=icon) Verschieben:** Eine Datei bzw. einen 
+**![Datei oder Verzeichnis verschieben]({{% asset "icons/drag.svg" %}}?classes=icon) Verschieben:** Eine Datei bzw. einen 
 Ordner per Drag & Drop verschieben.
 
 
@@ -159,20 +159,20 @@ untereinander notwendig sind. Du brauchst beispielsweise eine Möglichkeit, beim
 Datensätzen festzulegen, ob diese nach einem Datensatz in derselben Ebene oder unterhalb eines Datensatzes in einer 
 neuen Ebene eingefügt werden sollen.
 
-![Icons im Tree View](/de/administration-area/images/de/icons-im-tree-view.png?classes=shadow)
+![Icons im Tree View]({{% asset "images/manual/administration-area/de/icons-im-tree-view.png" %}}?classes=shadow)
 
-![Unterseiten duplizieren](/de/icons/copychilds.svg?classes=icon) **Unterseiten duplizieren:** dupliziert eine 
+![Unterseiten duplizieren]({{% asset "icons/copychilds.svg" %}}?classes=icon) **Unterseiten duplizieren:** dupliziert eine 
 Seite inklusive aller Unterseiten.
 
-![Seite bearbeiten](/de/icons/article.svg?classes=icon) **Seite bearbeiten:**  die Seite bearbeiten.
+![Seite bearbeiten]({{% asset "icons/article.svg" %}}?classes=icon) **Seite bearbeiten:**  die Seite bearbeiten.
 
-![Dahinter einfügen](/de/icons/pasteafter.svg?classes=icon) **Dahinter einfügen:** fügt eine Seite nach der 
+![Dahinter einfügen]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Dahinter einfügen:** fügt eine Seite nach der 
 aktuellen Seite ein.
 
-![Darunter einfügen](/de/icons/pasteinto.svg?classes=icon) **Darunter einfügen:** fügt eine Seite unterhalb der 
+![Darunter einfügen]({{% asset "icons/pasteinto.svg" %}}?classes=icon) **Darunter einfügen:** fügt eine Seite unterhalb der 
 aktuellen Seite ein.
 
-![Artikel bearbeiten](/de/icons/article.svg?classes=icon) **Artikel bearbeiten:** den Artikel der Seite bearbeiten.
+![Artikel bearbeiten]({{% asset "icons/article.svg" %}}?classes=icon) **Artikel bearbeiten:** den Artikel der Seite bearbeiten.
 
 
 ## Das Klemmbrett
@@ -185,7 +185,7 @@ Du kannst dir das Klemmbrett wie die Zwischenablage auf deinem Rechner vorstelle
 Daten kopieren und mit `[Ctrl]+[v]` an einer anderen Stelle wieder einfügen kannst. In Contao kannst du so z. B. 
 Inhaltselemente von einem Artikel in einen anderen verschieben.
 
-![Inhaltselemente mittels Klemmbrett verschieben](/de/administration-area/images/de/inhaltselemente-mittels-klemmbrett-verschieben.png?classes=shadow)
+![Inhaltselemente mittels Klemmbrett verschieben]({{% asset "images/manual/administration-area/de/inhaltselemente-mittels-klemmbrett-verschieben.png" %}}?classes=shadow)
 
 
 ## Gelöschte Datensätze wiederherstellen {#geloeschte-datensaetze-wiederherstellen}
@@ -197,7 +197,7 @@ der ursprünglichen Stelle wiederherstellen.
 Du findest den »Papierkorb« im Navigationsbereich in der Gruppe System unter dem Punkt Wiederherstellen. Dort siehst du 
 eine Liste aller gelöschten Datensätze, die du entweder nach dem Datum der Löschung oder dem Ursprung des Datensatzes 
 sortieren kannst. Mit einem Klick auf das entsprechende Navigationssymbol 
-![Eintrag wiederherstellen](/de/icons/undo.svg?classes=icon) 
+![Eintrag wiederherstellen]({{% asset "icons/undo.svg" %}}?classes=icon) 
 kannst du einen Löschvorgang rückgängig machen.
 
-![Einen Löschvorgang rückgängig machen](/de/administration-area/images/de/einen-loeschvorgang-rueckgaengig-machen.png?classes=shadow)
+![Einen Löschvorgang rückgängig machen]({{% asset "images/manual/administration-area/de/einen-loeschvorgang-rueckgaengig-machen.png" %}}?classes=shadow)

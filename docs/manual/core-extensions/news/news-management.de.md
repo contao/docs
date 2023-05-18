@@ -18,7 +18,7 @@ Archive werden zur Gruppierung und/oder Kategorisierung von Nachrichten verwende
 bestimmte Sprache oder ein bestimmtes Thema beziehen.
 
 Um ein neues Nachrichtenarchiv anzulegen klicke auf 
-![Ein neues Nachrichtenarchiv erstellen](/de/icons/new.svg?classes=icon "Ein neues Nachrichtenarchiv erstellen") 
+![Ein neues Nachrichtenarchiv erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Nachrichtenarchiv erstellen") 
 **Neu**.
 
 
@@ -130,8 +130,8 @@ Die URL lautet:
 </rss>
 ```
 
-Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten") 
-**RSS-Feeds** und danach auf ![Einen neuen Feed erstellen](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen") 
+Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten]({{% asset "icons/rss.svg" %}}?classes=icon "RSS-Feeds verwalten") 
+**RSS-Feeds** und danach auf ![Einen neuen Feed erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Feed erstellen") 
 **Neu**.
 
 
@@ -203,8 +203,8 @@ Die Nachrichtenbeiträge bestehen aus den Einstellungen für die Beiträge (»Na
 (»Nachrichtenleser«).
 
 Um einen neuen Beitrag zu erstellen, klicke im gewünschten Archiv auf 
-![Nachrichtenarchiv bearbeiten](/de/icons/edit.svg?classes=icon "Nachrichtenarchiv bearbeiten") und danach auf 
-![Einen neuen Beitrag erstellen](/de/icons/new.svg?classes=icon "Einen neuen Beitrag erstellen") **Neu**.
+![Nachrichtenarchiv bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Nachrichtenarchiv bearbeiten") und danach auf 
+![Einen neuen Beitrag erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Beitrag erstellen") **Neu**.
 
 
 ### Titel und Autor
@@ -250,7 +250,7 @@ dargestellt werden kann.
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du es direkt im Popup-Fenster nachholen, ohne die Eingabemaske zu verlassen.
 
-![Einem Beitrag ein Bild hinzufügen](/de/core-extensions/news/images/de/einem-beitrag-ein-bild-hinzufuegen.png?classes=shadow)
+![Einem Beitrag ein Bild hinzufügen]({{% asset "images/manual/core-extensions/news/de/einem-beitrag-ein-bild-hinzufuegen.png" %}}?classes=shadow)
 
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
@@ -276,10 +276,10 @@ auswählen:
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird es  
-![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
-![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
-![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
+![oberhalb]({{% asset "icons/above.svg" %}}?classes=icon) **oberhalb**, 
+![unterhalb]({{% asset "icons/below.svg" %}}?classes=icon) **unterhalb**, 
+![linksbündig]({{% asset "icons/left.svg" %}}?classes=icon) **linksbündig** oder 
+![rechtsbündig]({{% asset "icons/right.svg" %}}?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
 umfließt der Text das Bild (wie im Icon symbolisiert).
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
@@ -370,8 +370,8 @@ aktivieren.
 
 Nachdem wir die Einstellungen für den Beitrag vorgenommen haben, können wir diesem Inhaltselemente für die 
 Ausgabe im »Produktleser« mitgeben, klicke dazu beim gewünschten Beitrag auf 
-![Beitrag bearbeiten](/de/icons/edit.svg?classes=icon "Beitrag bearbeiten")  und danach auf 
-![Ein neues Inhaltselement erstellen](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **Neu**.
+![Beitrag bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Beitrag bearbeiten")  und danach auf 
+![Ein neues Inhaltselement erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Inhaltselement erstellen") **Neu**.
 
 In den Nachrichtenbeiträgen stehen dir alle [Inhaltselemente](../../../artikelverwaltung/inhaltselemente/) von Contao 
 zur Verfügung.

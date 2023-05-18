@@ -28,7 +28,7 @@ The element generates the following HTML code:
 
 The content element "Text" adds formatted text to the article. The input takes place via a so-called Rich Text Editor, which allows you to apply some formatting, similar to a word processing program. Contao uses [TinyMCE](https://www.tiny.cloud/), an Open Source editor by the Swedish company Moxiecode that can be easily adapted to the requirements of accessibility.
 
-![The Rich Text Editor TinyMCE](/de/article-management/images/en/the-tinymce-rich-text-editor.png?classes=shadow)
+![The Rich Text Editor TinyMCE]({{% asset "images/manual/article-management/en/the-tinymce-rich-text-editor.png" %}}?classes=shadow)
 
 **Heading:** Here you can enter a headline.
 
@@ -42,7 +42,7 @@ You can add an image to the text element, which is then surrounded by your text.
 
 **Source file:** Here you select the image to be inserted. If you have not yet transferred the image to the server, you can upload it here without leaving the input mask.
 
-![Adding an image to a text](/de/article-management/images/en/add-an-image-to-a-text.png?classes=shadow)
+![Adding an image to a text]({{% asset "images/manual/article-management/en/add-an-image-to-a-text.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
@@ -64,7 +64,7 @@ You can add an image to the text element, which is then surrounded by your text.
 | Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
 | Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
 
-**Image alignment:** Here you can set the alignment of the image. If it is inserted ![above](/de/icons/above.svg?classes=icon) **above**, ![under](/de/icons/below.svg?classes=icon) **below**, ![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or ![right-justified](/de/icons/right.svg?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
+**Image alignment:** Here you can set the alignment of the image. If it is inserted ![above]({{% asset "icons/above.svg" %}}?classes=icon) **above**, ![under]({{% asset "icons/below.svg" %}}?classes=icon) **below**, ![left-justified]({{% asset "icons/left.svg" %}}?classes=icon) **left-aligned** or ![right-justified]({{% asset "icons/right.svg" %}}?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
 
 **Image margin:** Here you can define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
 
@@ -122,9 +122,9 @@ The content element has no enclosing HTML markup.
 
 The content element "List" adds a non-nested list to the article. You can choose between an ordered list and an unordered list enumeration. A JavaScript assistant supports you in creating and editing the list items.
 
-![JavaScript wizard for listings](/de/article-management/images/en/javascript-assistant-for-lists.png?classes=shadow)
+![JavaScript wizard for listings]({{% asset "images/manual/article-management/en/javascript-assistant-for-lists.png" %}}?classes=shadow)
 
-With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon) to the field name "List entries" you open the CSV import wizard, with which you can import list data from a CSV file. The CSV file must have been transferred to the upload directory before.
+With a click on the icon next ![Import list data from a CSV file]({{% asset "icons/tablewizard.svg" %}}?classes=icon) to the field name "List entries" you open the CSV import wizard, with which you can import list data from a CSV file. The CSV file must have been transferred to the upload directory before.
 
 **Individual Template**: Here you can overwrite the standard `ce_list` template.
 
@@ -149,17 +149,17 @@ A numbered enumeration uses the `<ol>` tag instead of the `<ul>` tag.
 
 The content element "Table" adds a table to the article. A JavaScript assistant supports you in creating the rows and columns. You can edit the table with the following navigation icons:
 
-- ![Reduce the size of the input fields](/de/icons/demagnify.svg?classes=icon) **Reduce the size of the input fields**
-- ![Enlarge the input fields](/de/icons/magnify.svg?classes=icon) **Enlarge the input fields**
-- ![Duplicate the column/row](/de/icons/copy.svg?classes=icon) **Duplicate the column/row**
-- ![Move the column one position to the left](/de/icons/movel.svg?classes=icon)**Move the column one position to the left**
-- ![Move the column one position to the right](/de/icons/mover.svg?classes=icon)**Move the column one position to the right**
-- ![Delete the column/row](/de/icons/delete.svg?classes=icon) **Delete the column/row**
-- ![Move the element by dragging and dropping it](/de/icons/drag.svg?classes=icon)**Move the row by dragging and dropping it**
+- ![Reduce the size of the input fields]({{% asset "icons/demagnify.svg" %}}?classes=icon) **Reduce the size of the input fields**
+- ![Enlarge the input fields]({{% asset "icons/magnify.svg" %}}?classes=icon) **Enlarge the input fields**
+- ![Duplicate the column/row]({{% asset "icons/copy.svg" %}}?classes=icon) **Duplicate the column/row**
+- ![Move the column one position to the left]({{% asset "icons/movel.svg" %}}?classes=icon)**Move the column one position to the left**
+- ![Move the column one position to the right]({{% asset "icons/mover.svg" %}}?classes=icon)**Move the column one position to the right**
+- ![Delete the column/row]({{% asset "icons/delete.svg" %}}?classes=icon) **Delete the column/row**
+- ![Move the element by dragging and dropping it]({{% asset "icons/drag.svg" %}}?classes=icon)**Move the row by dragging and dropping it**
 
-![JavaScript wizard for tables](/de/article-management/images/en/javascript-assistant-for-tables.png?classes=shadow)
+![JavaScript wizard for tables]({{% asset "images/manual/article-management/en/javascript-assistant-for-tables.png" %}}?classes=shadow)
 
-With a click on the icon next ![Import list data from a CSV file](/de/icons/tablewizard.svg?classes=icon) to the field label "Table entries" you open the CSV import wizard, with which you can import table data from a CSV file. The CSV file has to be transferred to the upload directory first.
+With a click on the icon next ![Import list data from a CSV file]({{% asset "icons/tablewizard.svg" %}}?classes=icon) to the field label "Table entries" you open the CSV import wizard, with which you can import table data from a CSV file. The CSV file has to be transferred to the upload directory first.
 
 **Summary:** An accessible website should contain a short summary of the content of each table, which you can enter here.
 

@@ -8,12 +8,12 @@ This widget renders a list wizard which allows you to add, remove and reorder li
 
 A simple list widget example:
 
-![A simple list widget example](../images/list-wizard-simple.png?classes=shadow)
+![A simple list widget example]({{% asset "images/dev/reference/widgets/list-wizard-simple.png" %}}?classes=shadow)
 
 Usage in the list content element: 
 
 
-![A simple list widget example](../images/list-wizard-ce.png?classes=shadow)
+![A simple list widget example]({{% asset "images/dev/reference/widgets/list-wizard-ce.png" %}}?classes=shadow)
 
 ## Options
 

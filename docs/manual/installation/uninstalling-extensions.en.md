@@ -14,7 +14,7 @@ If you want to uninstall the extension "terminal42/contao-easy\_themes", go to t
 
 ![Mark extensions in Contao Manager for uninstallation]({{% asset "images/manual/installation/en/mark-extensions-in-contao-manager-for-uninstallation.png" %}}?classes=shadow)
 
-Click on "Apply changes" to start the uninstallation. The uninstallation can take several minutes. Details of the uninstallation process can be displayed by clicking on the following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+Click on "Apply changes" to start the uninstallation. The uninstallation can take several minutes. Details of the uninstallation process can be displayed by clicking on the following icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
 ![Uninstalling extensions in Contao Manager]({{% asset "images/manual/installation/en/uninstalling-extensions-in-contao-manager.png" %}}?classes=shadow)
 

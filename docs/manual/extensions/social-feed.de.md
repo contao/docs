@@ -14,4 +14,4 @@ News angelegt und können anschließend mit dem Modultyp Nachrichtenliste auf de
 
 Eine detaillierte Anleitung findest du bei [docs.pdir.de](https://docs.pdir.de/#/social-feed/index).
 
-![Social Feed](/de/extensions/images/de/social-feed.png?classes=shadow)
+![Social Feed]({{% asset "images/manual/extensions/de/social-feed.png" %}}?classes=shadow)

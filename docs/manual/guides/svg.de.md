@@ -43,10 +43,10 @@ analog zu anderen Bild-Formaten, festgelegt werden. Contao erstellt folgenden Qu
 Mit unterschiedlichen Einstellungen der »[Bildgröße](/de/artikelverwaltung/inhaltselemente/#bild)« 
 erhalten wir folgende Darstellung(en) über das »`img`« HTML-Element:
 
-![SVG Contao Brand 40px](/de/guides/images/de/svg/contao-gray.svg?width=40px)
-![SVG Contao Brand 60px](/de/guides/images/de/svg/contao-gray.svg?width=60px)
-![SVG Contao Brand 80px](/de/guides/images/de/svg/contao-gray.svg?width=80px)
-![SVG Contao Brand 100px](/de/guides/images/de/svg/contao-gray.svg?width=100px)
+![SVG Contao Brand 40px]({{% asset "images/manual/guides/de/svg/contao-gray.svg" %}}?width=40px)
+![SVG Contao Brand 60px]({{% asset "images/manual/guides/de/svg/contao-gray.svg" %}}?width=60px)
+![SVG Contao Brand 80px]({{% asset "images/manual/guides/de/svg/contao-gray.svg" %}}?width=80px)
+![SVG Contao Brand 100px]({{% asset "images/manual/guides/de/svg/contao-gray.svg" %}}?width=100px)
 
 
 ## Die »inline« Alternative
@@ -112,7 +112,7 @@ CSS-KLasse »ce_text«. Wenn du gezielt das SVG-Symbol ändern möchtest:
 }
 ```
 
-![SVG Contao Brand Color Orange 100px](/de/guides/images/de/svg/contao-orange.svg?width=100px)
+![SVG Contao Brand Color Orange 100px]({{% asset "images/manual/guides/de/svg/contao-orange.svg" %}}?width=100px)
 
 
 ## Das »{{file::*}}« Insert-Tag mit Argument
@@ -137,4 +137,4 @@ d="M45.4 305c14.4 67.1 26.4 129 68.2 175H34c-18.7 0-34-15.2-34-34V66c0-18.7 15.2
 </svg>
 ```
 
-![SVG Contao Brand Color red 100px](/de/guides/images/de/svg/contao-red.svg?width=100px)
+![SVG Contao Brand Color red 100px]({{% asset "images/manual/guides/de/svg/contao-red.svg" %}}?width=100px)

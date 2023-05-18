@@ -21,7 +21,7 @@ We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/setti
 
 You can find the form generator in the "Content" group in the backend navigation.
 
-To create a new form click on **New** ![Create a new form](/de/icons/new.svg?classes=icon).
+To create a new form click on **New** ![Create a new form]({{% asset "icons/new.svg" %}}?classes=icon).
 
 ### Title and forwarding
 
