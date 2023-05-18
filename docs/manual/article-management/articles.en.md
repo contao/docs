@@ -15,7 +15,7 @@ Each page can contain any number of articles, which are displayed one below the 
 ![Several articles with teaser text]({{% asset "images/manual/article-management/en/multiple-articles-with-teasertext.png" %}}?classes=shadow)
 
 You assign an article to a layout area in the article's settings in the "Display in" field. The quickest way to access the article settings is to use the **Edit the article settings** buttton 
-![Edit the article settings](/de/icons/header.svg?classes=icon).
+![Edit the article settings]({{% asset "icons/header.svg" %}}?classes=icon).
 
 ## Article aliases
 

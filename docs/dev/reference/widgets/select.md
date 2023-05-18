@@ -7,7 +7,7 @@ This widget renders a drop-down menu.
 
 A simple select menu with hard-coded options whether to show the current page in the HTML Sitemap:
 
-![Select menu with hard-coded options](../images/select.png?classes=shadow)
+![Select menu with hard-coded options]({{% asset "images/dev/reference/widgets/select.png" %}}?classes=shadow)
 
 A select menu enhanced with Chosen.js to allow the editor to limit the available options with a simple search box:
 

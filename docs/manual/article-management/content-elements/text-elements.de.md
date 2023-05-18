@@ -80,10 +80,10 @@ auswählen:
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird es
-![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
-![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
-![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
+![oberhalb]({{% asset "icons/above.svg" %}}?classes=icon) **oberhalb**, 
+![unterhalb]({{% asset "icons/below.svg" %}}?classes=icon) **unterhalb**, 
+![linksbündig]({{% asset "icons/left.svg" %}}?classes=icon) **linksbündig** oder 
+![rechtsbündig]({{% asset "icons/right.svg" %}}?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
 umfließt der Text das Bild (wie im Icon symbolisiert).
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
@@ -153,7 +153,7 @@ Bearbeiten der Listenpunkte unterstützt dich ein JavaScript-Assistent.
 
 ![JavaScript-Assistent für Auflistungen]({{% asset "images/manual/layout/article-management/de/javascript-assistent-fuer-auflistungen.png" %}}?classes=shadow)
 
-Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/de/icons/tablewizard.svg?classes=icon) 
+Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren]({{% asset "icons/tablewizard.svg" %}}?classes=icon) 
 neben der Feldbezeichnung »Listeneinträge« öffnest du den CSV-Import-Wizard, mit dem du Listendaten aus einer CSV-Datei 
 importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
 
@@ -180,20 +180,20 @@ Eine nummerierte Aufzählung verwendet das `<ol>`-Tag statt des `<ul>`-Tags.
 Das Inhaltselement »Tabelle« fügt dem Artikel eine Tabelle hinzu. Beim Anlegen der Reihen und Spalten unterstützt dich 
 ein JavaScript-Assistent. Mit den folgenden Navigationsicons kannst du die Tabelle bearbeiten:
 
-- ![Die Eingabefelder verkleinern](/de/icons/demagnify.svg?classes=icon) **Die Eingabefelder verkleinern**
-- ![Die Eingabefelder vergrößern](/de/icons/magnify.svg?classes=icon) **Die Eingabefelder vergrößern**
-- ![Die Spalte/Reihe duplizieren](/de/icons/copy.svg?classes=icon) **Die Spalte/Reihe duplizieren**
-- ![Die Spalte eine Position nach links verschieben](/de/icons/movel.svg?classes=icon) 
+- ![Die Eingabefelder verkleinern]({{% asset "icons/demagnify.svg" %}}?classes=icon) **Die Eingabefelder verkleinern**
+- ![Die Eingabefelder vergrößern]({{% asset "icons/magnify.svg" %}}?classes=icon) **Die Eingabefelder vergrößern**
+- ![Die Spalte/Reihe duplizieren]({{% asset "icons/copy.svg" %}}?classes=icon) **Die Spalte/Reihe duplizieren**
+- ![Die Spalte eine Position nach links verschieben]({{% asset "icons/movel.svg" %}}?classes=icon) 
 **Die Spalte eine Position nach links verschieben**
-- ![Die Spalte eine Position nach rechts verschieben](/de/icons/mover.svg?classes=icon) 
+- ![Die Spalte eine Position nach rechts verschieben]({{% asset "icons/mover.svg" %}}?classes=icon) 
 **Die Spalte eine Position nach rechts verschieben**
-- ![Die Spalte/Reihe löschen](/de/icons/delete.svg?classes=icon) **Die Spalte/Reihe löschen**
-- ![Das Element durch Ziehen und Ablegen verschieben](/de/icons/drag.svg?classes=icon) 
+- ![Die Spalte/Reihe löschen]({{% asset "icons/delete.svg" %}}?classes=icon) **Die Spalte/Reihe löschen**
+- ![Das Element durch Ziehen und Ablegen verschieben]({{% asset "icons/drag.svg" %}}?classes=icon) 
 **Das Element durch Ziehen und Ablegen verschieben**
 
 ![JavaScript-Assistent für Tabellen]({{% asset "images/manual/layout/article-management/de/javascript-assistent-fuer-tabellen.png" %}}?classes=shadow)
 
-Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/de/icons/tablewizard.svg?classes=icon) 
+Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren]({{% asset "icons/tablewizard.svg" %}}?classes=icon) 
 neben der Feldbezeichnung »Tabelleneinträge« öffnest du den CSV-Import-Wizard, mit dem du Tabellendaten aus einer 
 CSV-Datei importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
 

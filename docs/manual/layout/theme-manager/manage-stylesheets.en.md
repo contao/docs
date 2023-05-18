@@ -122,9 +122,9 @@ and then overwritten by the generally valid format for all browsers. The specifi
 applied, and the outer distance would always be 24 pixels.
 
 You can change the order of the records in Contao using the navigation icons 
-![Move format definition](/de/icons/drag.svg?classes=icon) **Drag&amp;Drop** or
-![Move format definition](/de/icons/cut.svg?classes=icon) **Move and** 
-![Insert after format definition](/de/icons/pasteafter.svg?classes=icon) **then Insert**.
+![Move format definition]({{% asset "icons/drag.svg" %}}?classes=icon) **Drag&amp;Drop** or
+![Move format definition]({{% asset "icons/cut.svg" %}}?classes=icon) **Move and** 
+![Insert after format definition]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **then Insert**.
 
 You can also assign a category to format definitions so that you can later filter records by that category and more 
 easily identify related definitions. These categories are only used for a better overview in the back end and are not 
@@ -134,7 +134,7 @@ used for sorting in the stylesheet itself.
 ## Export stylesheets
 
 You can export individual stylesheets by clicking on the navigation icon 
-![Export style sheet](/de/icons/theme_export.svg?classes=icon) **Export Stylesheet** behind the stylesheet.
+![Export style sheet]({{% asset "icons/theme" %}}_export.svg?classes=icon) **Export Stylesheet** behind the stylesheet.
 
 
 ## Import stylesheets

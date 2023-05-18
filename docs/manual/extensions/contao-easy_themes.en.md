@@ -14,7 +14,7 @@ one theme is used.
 
 After successful installation, log in to the back end and go to the "Users" tab in "User Management". From the user 
 list, select the user who is to benefit from EasyThemes. Click on the 
-[Edit User](/de/icons/edit.svg?classes=icon "Edit User") edit symbol and then check the box "**Enable EasyTheme**" in 
+[Edit User]({{% asset "icons/edit.svg" %}}?classes=icon "Edit User") edit symbol and then check the box "**Enable EasyTheme**" in 
 the last section of the user administration.
 
 ![Enable EasyTheme]({{% asset "images/manual/extensions/en/enable-contao-easy_themes.png" %}}?classes=shadow)

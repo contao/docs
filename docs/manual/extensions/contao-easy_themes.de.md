@@ -13,7 +13,7 @@ Nicht nur bei mehreren Themes ein Klickzahlreduzierer.
 
 Melde dich, nach erfolgreicher Installation, im Backend an und rufe in der »Benutzerverwaltung« den Reiter »Benutzer« 
 auf. Wähle aus der Benutzerliste den Benutzer der in den Genuss von EasyThemes kommen soll. Klicke auf das 
-![Benutzer bearbeiten](/de/icons/edit.svg?classes=icon "Benutzer bearbeiten") Bearbeiten-Symbol, um dann im letzten 
+![Benutzer bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Benutzer bearbeiten") Bearbeiten-Symbol, um dann im letzten 
 Abschnitt der Benutzerverwaltung den Haken bei **EasyTheme aktivieren** zu setzen.
 
 ![EasyTheme aktivieren]({{% asset "images/manual/extensions/de/contao-easy_themes-aktivieren.png" %}}?classes=shadow)

@@ -16,7 +16,7 @@ calendars, a categorization of the entries is possible.
 
 Archives are used to group and/or categorize calendars. Each archive can be related to a specific language or topic.
 
-To create a new calendar, click ![Create a new calendar](/de/icons/new.svg?classes=icon "Create a new calendar") **New**.
+To create a new calendar, click ![Create a new calendar]({{% asset "icons/new.svg" %}}?classes=icon "Create a new calendar") **New**.
 
 
 ### Title and redirect page
@@ -123,8 +123,8 @@ The URL is:
 </rss>
 ```
 
-To create a new feed click on ![Manage calendar feeds](/de/icons/rss.svg?classes=icon "Manage calendar feeds") 
-**RSS feeds** and then click on ![Create a new feed](/de/icons/new.svg?classes=icon "Create a new feed") **New**.
+To create a new feed click on ![Manage calendar feeds]({{% asset "icons/rss.svg" %}}?classes=icon "Manage calendar feeds") 
+**RSS feeds** and then click on ![Create a new feed]({{% asset "icons/new.svg" %}}?classes=icon "Create a new feed") **New**.
 
 
 ### Title and language
@@ -191,8 +191,8 @@ order.
 
 The events consist of the event settings ("Event list") and their contents ("Event reader").
 
-To create a new event, click on the desired archive ![Edit Calendar](/de/icons/edit.svg?classes=icon "Edit Calendar") 
-and then on![Create a new event](/de/icons/new.svg?classes=icon "Create a new event") **New**.
+To create a new event, click on the desired archive ![Edit Calendar]({{% asset "icons/edit.svg" %}}?classes=icon "Edit Calendar") 
+and then on![Create a new event]({{% asset "icons/new.svg" %}}?classes=icon "Create a new event") **New**.
 
 
 ### Title and author
@@ -293,8 +293,8 @@ can do so directly in the pop-up window without leaving the input mask.
 | Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
 
 **Image Alignment:** Here you set the alignment of the image. If it is inserted 
-![above](/de/icons/above.svg?classes=icon) **above**, ![under](/de/icons/below.svg?classes=icon) **below**,
-![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or ![right-justified](/de/icons/right.svg?classes=icon) 
+![above]({{% asset "icons/above.svg" %}}?classes=icon) **above**, ![under]({{% asset "icons/below.svg" %}}?classes=icon) **below**,
+![left-justified]({{% asset "icons/left.svg" %}}?classes=icon) **left-aligned** or ![right-justified]({{% asset "icons/right.svg" %}}?classes=icon) 
 **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
 
 **Image margin:** Here you can define the distance between the image and the text. The order of the input fields is 
@@ -363,7 +363,7 @@ certain date.
 ## Content for events
 
 After we have made the settings for the event, we can add content elements for the output in the "event reader", 
-click on the desired event ![Edit event](/de/icons/edit.svg?classes=icon "Edit event") and then on 
-![Create a new content element](/de/icons/new.svg?classes=icon "Create a new content element") **New**.
+click on the desired event ![Edit event]({{% asset "icons/edit.svg" %}}?classes=icon "Edit event") and then on 
+![Create a new content element]({{% asset "icons/new.svg" %}}?classes=icon "Create a new content element") **New**.
 
 In the events, all [content elements](/en/article-management/content-elements/) of Contao are available to you.

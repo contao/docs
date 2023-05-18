@@ -7,7 +7,7 @@ weight: 10
 ---
 
 The File Manager displays the directory structure in a hierarchical tree. Each subfolder is a separate node that you can 
-expand and collapse with the ![Plus symbol](/de/icons/folPlus.svg?classes=icon) plus and ![Minus symbol](/de/icons/folMinus.svg?classes=icon) 
+expand and collapse with the ![Plus symbol]({{% asset "icons/fol" %}}Plus.svg?classes=icon) plus and ![Minus symbol]({{% asset "icons/fol" %}}Minus.svg?classes=icon) 
 minus symbol. Within each subfolder, you will see a list of the files contained there. If they are images, a 
 preview thumbnail is automatically displayed.
 If you have a large number of images, you can disable the thumbnail preview in your user profile to speed up the page 
@@ -20,21 +20,21 @@ and files.
 
 ![The File Manager]({{% asset "images/manual/file-manager/en/the_file_manager.jpg" %}}?classes=shadow)
 
-**![Edit file or directory](/de/icons/edit.svg?classes=icon) Edit:** Opens an input mask for renaming a file or folder. 
+**![Edit file or directory]({{% asset "icons/edit.svg" %}}?classes=icon) Edit:** Opens an input mask for renaming a file or folder. 
 You can also add metadata of files in the appropriate language or publish folders or exclude them before synchronization.
 
-**![Duplicate file or directory](/de/icons/copy.svg?classes=icon) Duplicate:** Copies a file or folder.
+**![Duplicate file or directory]({{% asset "icons/copy.svg" %}}?classes=icon) Duplicate:** Copies a file or folder.
 
-**![Move file or directory](/de/icons/cut.svg?classes=icon) Move:** Moves a file or folder.
+**![Move file or directory]({{% asset "icons/cut.svg" %}}?classes=icon) Move:** Moves a file or folder.
 
-**![Delete file or directory](/de/icons/delete.svg?classes=icon) Delete:** Deletes a file or folder.
+**![Delete file or directory]({{% asset "icons/delete.svg" %}}?classes=icon) Delete:** Deletes a file or folder.
 
-**![Show details of the file or folder](/de/icons/show.svg?classes=icon) information:** Show details of the file or 
+**![Show details of the file or folder]({{% asset "icons/show.svg" %}}?classes=icon) information:** Show details of the file or 
 folder.
 
-**![Upload files to the folder](/de/icons/new.svg?classes=icon) Upload:** Upload files to the folder.
+**![Upload files to the folder]({{% asset "icons/new.svg" %}}?classes=icon) Upload:** Upload files to the folder.
 
-**![Edit file](/de/icons/editor.svg?classes=icon) Edit file:** Opens a form to edit the contents of a file with a text 
+**![Edit file]({{% asset "icons/editor.svg" %}}?classes=icon) Edit file:** Opens a form to edit the contents of a file with a text 
 editor. Which files may be edited can be defined in the configuration file 
 [`config/config.yml`](/en/system/settings/#config-yml) under the key `editable_files` <sup>1</sup>.
 
@@ -43,15 +43,15 @@ editor. Which files may be edited can be defined in the configuration file
 Editable files".
 {{% /notice %}}
 
-**![Move file or directory](/de/icons/drag.svg?classes=icon) Move:** Move a file or folder using drag and drop.
+**![Move file or directory]({{% asset "icons/drag.svg" %}}?classes=icon) Move:** Move a file or folder using drag and drop.
 
 
 ## Transferring files
 
-Go to the File Manager and click the **![Upload files to the server](/de/icons/new.svg?classes=icon) File Upload** 
-link to transfer files to the server. Use the navigation icon **![Add to folder](/de/icons/pasteinto.svg?classes=icon) 
+Go to the File Manager and click the **![Upload files to the server]({{% asset "icons/new.svg" %}}?classes=icon) File Upload** 
+link to transfer files to the server. Use the navigation icon **![Add to folder]({{% asset "icons/pasteinto.svg" %}}?classes=icon) 
 Insert into** and select the destination directory. Alternatively, you can click the 
-**![Upload files to the server](/de/icons/new.svg?classes=icon) navigation icon** 
+**![Upload files to the server]({{% asset "icons/new.svg" %}}?classes=icon) navigation icon** 
 at the desired folder in order to upload there directly.
 
 You can also activate [DropZone](https://www.dropzonejs.com/) in the user settings.
@@ -75,7 +75,7 @@ you may update existing files without having to reassign the file in any content
 
 Contao can process files that have been transferred to the server with the File Manager as well as files or folders 
 that you have uploaded with an FTP program. To make sure that the resources are stored in Contao's database-driven 
-filesystem, you have to click on the **![Synchronize file system and database](/de/icons/sync.svg?classes=icon) 
+filesystem, you have to click on the **![Synchronize file system and database]({{% asset "icons/sync.svg" %}}?classes=icon) 
 Synchronize** link.
 
 When uploading via FTP, there is a small restriction: The file names should not contain special characters. Many 

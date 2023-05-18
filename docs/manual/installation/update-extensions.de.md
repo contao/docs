@@ -17,7 +17,7 @@ Wenn du die Erweiterung »terminal42/contao-easy_themes« aktualisieren möchtes
 Schaltfläche »Aktualisieren« neben der Erweiterung. Du kannst natürlich auch noch weitere Erweiterung zur 
 Aktualisierung vormerken. Klicke auf »Änderungen anwenden« um die Aktualisierung zu starten. Die Aktualisierung kann 
 nun mehrere Minuten in Anspruch nehmen. Details zum Aktualisierungsprozess können durch Klick auf folgendes Symbol 
-![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
+![Konsolenausgabe anzeigen/verstecken]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon) angezeigt werden.
 
 ![Erweiterungen im Contao Manager aktualisieren]({{% asset "images/manual/installation/de/erweiterungen-im-contao-manager-aktualisieren.png" %}}?classes=shadow)
 

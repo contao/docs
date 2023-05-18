@@ -13,7 +13,7 @@ multiple distribution lists/channels you can sort the newsletters by topic or la
 
 ## Channels
 
-To create a new channel click on ![Create a new channel](/de/icons/new.svg?classes=icon "Create a new 
+To create a new channel click on ![Create a new channel]({{% asset "icons/new.svg" %}}?classes=icon "Create a new 
 channel") **New**.
 
 ### Title and redirection
@@ -46,8 +46,8 @@ We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/setti
 
 Newsletters are always sorted according to their dispatch date.
 
-To create a new newsletter click on ![Edit channel](/de/icons/edit.svg?classes=icon "Edit Channel") and 
-then on New ![Create a new newsletter](/de/icons/new.svg?classes=icon "Create a new newsletter").
+To create a new newsletter click on ![Edit channel]({{% asset "icons/edit.svg" %}}?classes=icon "Edit Channel") and 
+then on New ![Create a new newsletter]({{% asset "icons/new.svg" %}}?classes=icon "Create a new newsletter").
 
 ### Subject and newsletter aliases
 
@@ -165,8 +165,8 @@ e-mail with a confirmation link when subscribing, without which he cannot comple
 sufficient to comply with the provisions of §7 paragraph 2 numbers 2 and 3 of the Law against Unfair Competition (UWG).
 
 To add/edit a subscriber to the distribution list, click 
-on ![Edit subscribers of the distribution list](/de/icons/mgroup.svg?classes=icon "Edit channel subscribers") and then 
-on New ![Create a new subscriber](/de/icons/new.svg?classes=icon "Create a new subscriber") or ![Edit subscriber](/de/icons/edit.svg?classes=icon 
+on ![Edit subscribers of the distribution list]({{% asset "icons/mgroup.svg" %}}?classes=icon "Edit channel subscribers") and then 
+on New ![Create a new subscriber]({{% asset "icons/new.svg" %}}?classes=icon "Create a new subscriber") or ![Edit subscriber]({{% asset "icons/edit.svg" %}}?classes=icon 
 "Edit Subscriber").
 
 **Email address:** Enter the recipient's e-mail address here.
@@ -188,7 +188,7 @@ Then start the import by clicking the button `CSV-Import`.
 
 ## Send newsletter
 
-You can start sending a newsletter by clicking on the corresponding navigation ![Send newsletter](/de/icons/send.svg?classes=icon "Send newsletter") symbol in the distribution list overview, which will take you to a preview page where 
+You can start sending a newsletter by clicking on the corresponding navigation ![Send newsletter]({{% asset "icons/send.svg" %}}?classes=icon "Send newsletter") symbol in the distribution list overview, which will take you to a preview page where 
 you can check the configuration and content of the newsletter again. It is also recommended that you make active use 
 of the button `Send preview`. You can change the recipient address in the field `Send preview to`.
 

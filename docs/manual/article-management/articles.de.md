@@ -22,7 +22,7 @@ Teasertext, gefolgt von einem `Weiterlesen`-Link, angezeigt werden soll.
 
 Die Zuweisung eines Artikels zu einem Layoutbereich erfolgt in den Artikeleinstellungen im Feld Anzeigen in. Die 
 Artikeleinstellungen erreichst du am schnellsten, über das Navigationssymbol
-![Die Artikeleinstellungen bearbeiten](/de/icons/header.svg?classes=icon) **Die Artikeleinstellungen bearbeiten**.
+![Die Artikeleinstellungen bearbeiten]({{% asset "icons/header.svg" %}}?classes=icon) **Die Artikeleinstellungen bearbeiten**.
 
 
 ## Artikelaliase

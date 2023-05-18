@@ -24,7 +24,7 @@ stammen können.
 ### Modul-Konfiguration
 
 **FAQ-Kategorien:** Hier legst du fest, aus welchen Kategorien Fragen angezeigt werden. Du kannst die Reihenfolge der 
-Kategorien mithilfe vom Navigationssymbol ![Frage verschieben](/de/icons/drag.svg?classes=icon "Frage verschieben") 
+Kategorien mithilfe vom Navigationssymbol ![Frage verschieben]({{% asset "icons/drag.svg" %}}?classes=icon "Frage verschieben") 
 anpassen.
   
 **FAQ-Leser:** Hier kannst du festlegen ob automatisch zum FAQ-Leser gewechselt werden soll, wenn ein Beitrag 

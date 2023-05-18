@@ -74,7 +74,7 @@ The supported & required parameters are:
  
 The user will be presented with the following dialog with two options:
 
-![Contao Manager OAuth Screen](../images/oauth.png?width=449&classes=shadow)
+![Contao Manager OAuth Screen]({{% asset "images/dev/internals/oauth.png" %}}?width=449&classes=shadow)
 
 1. When clicking on **Allow Access**, the Contao Manager will generate a token, append a `token=`
    query parameter to the `return_url` argument, and redirect the user to that URL. 

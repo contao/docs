@@ -18,7 +18,7 @@ Archive werden zur Gruppierung und/oder Kategorisierung von Kalendern verwendet.
 bestimmte Sprache oder ein bestimmtes Thema beziehen.
 
 Um einen neuen Kalender anzulegen klicke auf 
-![Einen neuen Kalender erstellen](/de/icons/new.svg?classes=icon "Einen neuen Kalender erstellen") 
+![Einen neuen Kalender erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Kalender erstellen") 
 **Neu**.
 
 
@@ -128,8 +128,8 @@ Die URL lautet:
 </rss>
 ```
 
-Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten") 
-**RSS-Feeds** und danach auf ![Einen neuen Feed erstellen](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen") 
+Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten]({{% asset "icons/rss.svg" %}}?classes=icon "RSS-Feeds verwalten") 
+**RSS-Feeds** und danach auf ![Einen neuen Feed erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Feed erstellen") 
 **Neu**.
 
 
@@ -200,8 +200,8 @@ daher gibt es hier keine Icons, mit denen du die Reihenfolge ändern könntest.
 Die Events bestehen aus den Einstellungen des Events (»Eventliste«) und aus deren Inhalten (»Eventleser«).
 
 Um einen neuen Event zu erstellen, klicke im gewünschten Archiv auf 
-![Kalender bearbeiten](/de/icons/edit.svg?classes=icon "Kalender bearbeiten") und danach auf 
-![Ein neues Event erstellen](/de/icons/new.svg?classes=icon "Ein neues Event erstellen") **Neu**.
+![Kalender bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Kalender bearbeiten") und danach auf 
+![Ein neues Event erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Event erstellen") **Neu**.
 
 
 ### Titel und Autor
@@ -308,10 +308,10 @@ auswählen:
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird es 
-![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
-![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
-![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
+![oberhalb]({{% asset "icons/above.svg" %}}?classes=icon) **oberhalb**, 
+![unterhalb]({{% asset "icons/below.svg" %}}?classes=icon) **unterhalb**, 
+![linksbündig]({{% asset "icons/left.svg" %}}?classes=icon) **linksbündig** oder 
+![rechtsbündig]({{% asset "icons/right.svg" %}}?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
 umfließt der Text das Bild (wie im Icon symbolisiert).
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
@@ -383,8 +383,8 @@ Events automatisch zu einem bestimmten Datum zu aktivieren.
 
 Nachdem wir die Einstellungen für das Event vorgenommen haben, können wir diesem Inhaltselemente für die 
 Ausgabe im »Eventleser« mitgeben, klicke dazu beim gewünschten Event auf 
-![Event bearbeiten](/de/icons/edit.svg?classes=icon "Event bearbeiten")  und danach auf 
-![Ein neues Inhaltselement erstellen](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **Neu**.
+![Event bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Event bearbeiten")  und danach auf 
+![Ein neues Inhaltselement erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Inhaltselement erstellen") **Neu**.
 
 In den Events stehen dir alle [Inhaltselemente](../../../artikelverwaltung/inhaltselemente/) von Contao zur 
 Verfügung.

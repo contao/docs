@@ -18,7 +18,7 @@ Kategorien werden zur Gruppierung von FAQs verwendet. Jede Kategorie kann sich a
 bestimmtes Thema beziehen.
 
 Um eine neue Kategorie anzulegen klicke auf 
-![Eine neue Kategorie anlegen](/de/icons/new.svg?classes=icon "Eine neue Kategorie anlegen") 
+![Eine neue Kategorie anlegen]({{% asset "icons/new.svg" %}}?classes=icon "Eine neue Kategorie anlegen") 
 **Neu**.
 
 
@@ -82,10 +82,10 @@ Seit Contao 4.4 wird diese Frage nur noch den Spambots »angezeigt«.
 
 In diesem Abschnitt wird dir erklärt, wie du eine Frage anlegst. Die Reihenfolge der Fragen innerhalb einer Kategorie 
 kannst du per Drag-and-Drop mit den entsprechenden 
-Navigationssymbol ![Frage verschieben](/de/icons/drag.svg?classes=icon "Frage verschieben") festlegen.
+Navigationssymbol ![Frage verschieben]({{% asset "icons/drag.svg" %}}?classes=icon "Frage verschieben") festlegen.
 
 Um eine neue Frage anzulegen, klicke auf 
-![Eine neue Frage erstellen](/de/icons/new.svg?classes=icon "Eine neue Frage erstellen") **Neu**.
+![Eine neue Frage erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Eine neue Frage erstellen") **Neu**.
 
 
 ### Titel und Autor
@@ -137,10 +137,10 @@ auswählen:
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird es 
-![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
-![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
-![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
+![oberhalb]({{% asset "icons/above.svg" %}}?classes=icon) **oberhalb**, 
+![unterhalb]({{% asset "icons/below.svg" %}}?classes=icon) **unterhalb**, 
+![linksbündig]({{% asset "icons/left.svg" %}}?classes=icon) **linksbündig** oder 
+![rechtsbündig]({{% asset "icons/right.svg" %}}?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
 umfließt der Text das Bild (wie im Icon symbolisiert).
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 

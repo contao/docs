@@ -28,7 +28,7 @@ Wir empfehlen den Versand über das [E-Mail-Transportprotkoll (SMTP)](../../syst
 Den Formulargenerator findest du in der Backend-Navigation in der Gruppe »Inhalte«.
 
 Um ein neues Formular anzulegen klicke auf 
-![Ein neues Formular anlegen](/de/icons/new.svg?classes=icon "Ein neues Formular anlegen") **Neu**.
+![Ein neues Formular anlegen]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Formular anlegen") **Neu**.
 
 
 ### Titel und Weiterleitung

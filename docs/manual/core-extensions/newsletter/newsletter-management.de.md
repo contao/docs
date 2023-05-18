@@ -15,7 +15,7 @@ Verwendung mehrerer Verteiler können die einzelnen Newsletter nach Thema oder S
 ## Verteiler
 
 Um einen neuen Verteiler anzulegen klicke auf 
-![Einen neuen Verteiler erstellen](/de/icons/new.svg?classes=icon "Einen neuen Verteiler erstellen") **Neu**.
+![Einen neuen Verteiler erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Verteiler erstellen") **Neu**.
 
 
 ### Titel und Weiterleitung
@@ -53,8 +53,8 @@ Wir empfehlen den Versand über das [E-Mail-Transportprotkoll (SMTP)](../../../s
 Newsletter werden grundsätzlich nach ihrem Versanddatum sortiert.
 
 Um einen neuen Newsletter anzulegen klicke auf 
-![Verteiler bearbeiten](/de/icons/edit.svg?classes=icon "Verteiler bearbeiten") und danach auf 
-![Einen neuen Newsletter erstellen](/de/icons/new.svg?classes=icon "Einen neuen Newsletter erstellen") 
+![Verteiler bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Verteiler bearbeiten") und danach auf 
+![Einen neuen Newsletter erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Newsletter erstellen") 
 **Neu**.
 
 
@@ -191,10 +191,10 @@ eine E-Mail mit einem Bestätigungslink, ohne den er sein Abonnement nicht absch
 des §7 Absatz 2 Nummer 2 und 3 des Gesetzes gegen den unlauteren Wettbewerb (UWG) hinreichend Genüge getan.
 
 Um einen Abonnenten des Verteilers zu bearbeiten, klicke auf 
-![Abonnenten des Verteilers bearbeiten](/de/icons/mgroup.svg?classes=icon "Abonnenten des Verteilers bearbeiten") 
+![Abonnenten des Verteilers bearbeiten]({{% asset "icons/mgroup.svg" %}}?classes=icon "Abonnenten des Verteilers bearbeiten") 
 und danach auf 
-![Einen neuen Abonnenten erstellen](/de/icons/new.svg?classes=icon "Einen neuen Abonnenten erstellen") 
-**Neu** oder ![Abonnent bearbeiten](/de/icons/edit.svg?classes=icon "Abonnent bearbeiten").
+![Einen neuen Abonnenten erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Abonnenten erstellen") 
+**Neu** oder ![Abonnent bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Abonnent bearbeiten").
 
 **E-Mail-Adresse:** Gebe hier die E-Mail-Adresse des Empfängers ein.
 
@@ -223,7 +223,7 @@ Starte den Import anschließend durch einen Klick auf die Schaltfläche `CSV-Imp
 ## Newsletter versenden
 
 Die Versendung eines Newsletters leitest du über das entsprechende Navigationssymbol 
-![Newsletter versenden](/de/icons/send.svg?classes=icon "Newsletter versenden") in der Verteiler-Übersicht ein. 
+![Newsletter versenden]({{% asset "icons/send.svg" %}}?classes=icon "Newsletter versenden") in der Verteiler-Übersicht ein. 
 Du gelangst zunächst zu einer Vorschauseite, auf der du die Konfiguration und den Inhalt des Newsletters noch einmal 
 prüfen kannst. Es wird zudem empfohlen, regen Gebrauch von der Schaltfläche `Testsendung` zu machen. Die 
 dazugehörige Empfängeradresse kannst du im Feld `Testsendung an` ändern.

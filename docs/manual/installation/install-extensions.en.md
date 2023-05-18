@@ -67,7 +67,7 @@ the [command line](#installation-via-the-command-line).
 
 {{% notice info %}}
 The installation process may take several minutes. Details about the running process can be displayed by clicking on the
-![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon) icon.
+![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon) icon.
 {{% /notice %}}
 
 #### Example

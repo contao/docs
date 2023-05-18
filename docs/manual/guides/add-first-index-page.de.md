@@ -19,7 +19,7 @@ verknüpfen und abschließend die Startseite mit Inhalten erstellen.
 ## Ein neues Theme anlegen
 
 Zunächst benötigst du ein Contao Theme. Beim ersten Aufruf des [Theme-Manager](../../theme-manager) nach der Installation
-sollten noch keine Themes existieren. Das Theme erstellst du über das Icon ![Neu](/de/icons/new.svg?classes=icon) `Neu`. 
+sollten noch keine Themes existieren. Das Theme erstellst du über das Icon ![Neu]({{% asset "icons/new.svg" %}}?classes=icon) `Neu`. 
 Weitere Informationen hierzu findest du unter [Themes konfigurieren](../../theme-manager/themes-verwalten/#themes-konfigurieren). 
 
 Für unser erstes Theme sind hier lediglich die Angaben `Theme-Titel` und `Autor` notwendig. Als Beispiel 
@@ -32,11 +32,11 @@ erstellen wir ein Theme mit Namen `Demo`. Im Anschluss kannst du hier jederzeit 
 ## Ein neues Seitenlayout im Theme anlegen
 
 Du musst nun ein [Seitenlayout](../../theme-manager/seitenlayouts-verwalten) innerhalb deines Themes anlegen. Die 
-Einstellungen erreichst du über das Icon ![Die Seitenlayouts des Theme bearbeiten](/de/icons/layout.svg?classes=icon) für `Seitenlayouts`. 
+Einstellungen erreichst du über das Icon ![Die Seitenlayouts des Theme bearbeiten]({{% asset "icons/layout.svg" %}}?classes=icon) für `Seitenlayouts`. 
 
 ![Die Seitenlayouts des Themes aufrufen]({{% asset "images/manual/guides/de/first-page/die-seitenlayouts-des-themes-aufrufen.png" %}}?classes=shadow)
 
-Ein Theme kann mehrere Seitenlayouts beinhalten. Dein erstes Seitenlayout erstellst du über das Icon ![Neu](/de/icons/new.svg?classes=icon) `Neu`.
+Ein Theme kann mehrere Seitenlayouts beinhalten. Dein erstes Seitenlayout erstellst du über das Icon ![Neu]({{% asset "icons/new.svg" %}}?classes=icon) `Neu`.
 
 ![Neues Seitenlayout anlegen]({{% asset "images/manual/guides/de/first-page/neues-seitenlayout-anlegen.png" %}}?classes=shadow)
 
@@ -54,7 +54,7 @@ mit `Speichern und schließen`. Die Einstellungen eines Seitenlayouts kannst du 
 
 ## Den Startpunkt einer Webseite anlegen
 
-Wechsle im Bereich `Layout` zur `Seitenstruktur` und wähle das Icon ![Neu](/de/icons/new.svg?classes=icon) `Neu`. 
+Wechsle im Bereich `Layout` zur `Seitenstruktur` und wähle das Icon ![Neu]({{% asset "icons/new.svg" %}}?classes=icon) `Neu`. 
 Im Anschluss fragt Contao dich nach der Position. Übernehme jetzt den Vorschlag, den Contao anbietet.
 
 ![Die Seitenstruktur konfigurieren]({{% asset "images/manual/guides/de/first-page/die-seitenstruktur-konfigurieren.png" %}}?classes=shadow)
@@ -93,7 +93,7 @@ eine Seite vom Typ `Startpunkt einer Webseite` erstellen.
 ## Die Startseite anlegen
 
 Du kannst dir nun in der Seitenstruktur deine eigentliche Startseite erstellen. Klicke hierzu auf das 
-Icon ![Neu](/de/icons/new.svg?classes=icon) `Neu` in der Seitenstruktur. Contao fragt dich hier nach der Position, 
+Icon ![Neu]({{% asset "icons/new.svg" %}}?classes=icon) `Neu` in der Seitenstruktur. Contao fragt dich hier nach der Position, 
 an welcher deine neue Seite hinzugefügt werden soll. Wir möchten die neue Seite »unterhalb« der bestehenden 
 Seite vom Typ `Startpunkt einer Webseite` einfügen. 
 
@@ -122,7 +122,7 @@ Seiten kannst du den Wünschen entsprechend benennen: z. B. »kontakt« oder »i
 
 Wähle in der linken Navigation im Bereich `Inhalte` den Link `Artikel`. Mit der Auswahl `Alle umschalten` erhältst du
 die untere Darstellung. Contao hat unterhalb deiner Startseite einen [Artikel](../../artikelverwaltung/artikel) mit 
-gleichem Namen erstellt. Wähle im Artikel das Icon ![Bearbeiten](/de/icons/edit.svg?classes=icon) für `Artikel bearbeiten` 
+gleichem Namen erstellt. Wähle im Artikel das Icon ![Bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon) für `Artikel bearbeiten` 
 zur Erstellung neuer Inhalte aus.
 
 ![Den Artikel bearbeiten]({{% asset "images/manual/guides/de/first-page/den-artikel-bearbeiten.png" %}}?classes=shadow)
@@ -135,7 +135,7 @@ den Artikel bereits jetzt [veröffentlichen](#den-artikel-veroeffentlichen) oder
 
 ## Neue Inhalte im Artikel erstellen
 
-Du befindest dich nun im Bereich `Inhaltselemente` des `Artikels`. Wähle das Icon ![Neu](/de/icons/new.svg?classes=icon) `Neu`, 
+Du befindest dich nun im Bereich `Inhaltselemente` des `Artikels`. Wähle das Icon ![Neu]({{% asset "icons/new.svg" %}}?classes=icon) `Neu`, 
 um ein neues [Inhaltselement](../../artikelverwaltung/inhaltselemente) zu erstellen. Contao fragt dich nach der Position, 
 an der das Inhaltselement eingefügt werden soll. Wähle hier die Auswahl, die Contao vorschlägt.
 
@@ -152,6 +152,6 @@ noch nicht veröffentlicht. In diesem Status werden die Inhalte des Artikels auf
 einfach nicht angezeigt. 
 
 Zur Veröffentlichung des Artikels wähle das `Augen` Icon aus. Anschließend wird das 
-Icon ![Veröffentlichen](/de/icons/published.svg?classes=icon) grün angezeigt. Jetzt kannst du deine Webseite im Browser aufrufen.
+Icon ![Veröffentlichen]({{% asset "icons/published.svg" %}}?classes=icon) grün angezeigt. Jetzt kannst du deine Webseite im Browser aufrufen.
 
 ![Artikel veröffentlichen]({{% asset "images/manual/layout/guides/de/first-page/artikel-veroeffentlichen.png" %}}?classes=shadow)

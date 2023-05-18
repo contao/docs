@@ -74,6 +74,6 @@ Contao automatically creates a new version of the edited data set each time you 
 
 ![Restore previous versions of a record]({{% asset "images/manual/administration-area/en/contao-edit-versions.png" %}}?classes=shadow)
 
-Clicking on the icon ![Show differences](/de/icons/diff.svg?classes=icon) next to the drop-down menu will display the differences between the current and the selected version.
+Clicking on the icon ![Show differences]({{% asset "icons/diff.svg" %}}?classes=icon) next to the drop-down menu will display the differences between the current and the selected version.
 
 ![Differences between the selected versions]({{% asset "images/manual/administration-area/en/contao-edit-diff-view.png" %}}?classes=shadow)

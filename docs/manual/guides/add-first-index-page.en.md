@@ -18,7 +18,7 @@ layout and finally create the start page with content.
 ## Creating a new theme
 
 First you need a Contao theme. The first time you start the [theme manager](/en/layout/theme-manager/) 
-after installation, no themes should exist. You create the theme by clicking the ![New](/de/icons/new.svg?classes=icon) 
+after installation, no themes should exist. You create the theme by clicking the ![New]({{% asset "icons/new.svg" %}}?classes=icon) 
 *New* icon. For more information see [configuring themes](/en/layout/theme-manager/manage-themes/).
 
 For our first theme we only need a **Theme title** and **Author**. 
@@ -31,13 +31,13 @@ and make changes here at any time.
 ## Create a new page layout in the theme
 
 Now you have to create a [page layout](/en/layout/theme-manager/manage-page-layouts/) within your theme. 
-You can access the settings via the icon ![Edit the page layouts of the theme](/de/icons/layout.svg?classes=icon) 
+You can access the settings via the icon ![Edit the page layouts of the theme]({{% asset "icons/layout.svg" %}}?classes=icon) 
 for *page layouts*.
 
 ![Access page layouts of the theme]({{% asset "images/manual/guides/en/first-page/page-layout.png" %}}?classes=shadow)
 
 A theme can contain several page layouts. You create your first page layout 
-by clicking on the ![New](/de/icons/new.svg?classes=icon) *New* icon.
+by clicking on the ![New]({{% asset "icons/new.svg" %}}?classes=icon) *New* icon.
 
 ![Create a new page layout]({{% asset "images/manual/guides/en/first-page/new-page-layout.png" %}}?classes=shadow)
 
@@ -54,7 +54,7 @@ Confirm all settings with _Save and close_. You can change the settings of a pag
 
 ## Create the starting point of a website
 
-Switch to _Layout_ > _Site structure_ and select the ![New](/de/icons/new.svg?classes=icon) _New_ icon.
+Switch to _Layout_ > _Site structure_ and select the ![New]({{% asset "icons/new.svg" %}}?classes=icon) _New_ icon.
 Contao will ask you for the position. Accept the suggestion that Contao offers.
 
 ![Configure the page structure]({{% asset "images/manual/guides/en/first-page/new-website-root.png" %}}?classes=shadow)
@@ -90,7 +90,7 @@ Even if you only want to maintain a single website, you have to create a new pag
 
 ## Create the start page
 
-You can now create your actual homepage in the page structure. Click on the ![New](/de/icons/new.svg?classes=icon) 
+You can now create your actual homepage in the page structure. Click on the ![New]({{% asset "icons/new.svg" %}}?classes=icon) 
 _New_ icon in the site structure. Contao will ask you for the position where your new page should be added. 
 We want to add the new page "below" the existing page of the type _Website root_.
 
@@ -120,7 +120,7 @@ You can name the alias of your other pages according to your liking: e.g. "conta
 
 Select the link _Articles_ in the left navigation under the _Content_ area. With the selection _Toggle all_ you get 
 the representation as seen below. Contao has created an [article](/en/article-management/articles/) with the same name below 
-within your new start page. In the article, select the ![Edit](/de/icons/edit.svg?classes=icon) icon for _Edit article_.
+within your new start page. In the article, select the ![Edit]({{% asset "icons/edit.svg" %}}?classes=icon) icon for _Edit article_.
 
 ![Edit the article]({{% asset "images/manual/guides/en/first-page/edit-article.png" %}}?classes=shadow)
 
@@ -132,7 +132,7 @@ or continue with the following steps first.
 
 ## Create new content in the article
 
-You are now in the area _Content elements_ of the _Article_. Select the ![New](/de/icons/new.svg?classes=icon) 
+You are now in the area _Content elements_ of the _Article_. Select the ![New]({{% asset "icons/new.svg" %}}?classes=icon) 
 _Neu_ icon to create a new [content element](/en/article-management/content-elements/). Contao asks you for the position where 
 you want to insert the content element. Choose the selection that Contao suggests.
 
@@ -147,7 +147,7 @@ For our example, just fill in the information **Headline**, **Text** and confirm
 If the article is still grayed out in the list view (including the "eye" icon), 
 you have not yet published the article. In this state the content of the article will simply not be displayed on your site.
 
-To publish the article, click on the "eye" icon. The icon will then be displayed in green ![Publish](/de/icons/published.svg?classes=icon). 
+To publish the article, click on the "eye" icon. The icon will then be displayed in green ![Publish]({{% asset "icons/published.svg" %}}?classes=icon). 
 Now you can open your website in your browser.
 
 ![Publish article]({{% asset "images/manual/guides/en/first-page/publish-article.png" %}}?classes=shadow)

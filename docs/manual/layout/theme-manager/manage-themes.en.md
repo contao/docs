@@ -37,14 +37,14 @@ The operation of the Theme Manager works just like most other back end modules, 
 
 ![Navigation icons in the Theme Manager]({{% asset "images/manual/layout/theme-manager/en/navigation-icons-in-the-theme-manager.png" %}}?classes=shadow)
 
-- ![Edit Theme](/de/icons/edit.svg?classes=icon) Edit Theme
-- ![Delete Theme](/de/icons/delete.svg?classes=icon) Delete a theme
-- ![Show details of the theme](/de/icons/show.svg?classes=icon) Show details of the theme
-- ![Edit the stylesheets of the theme](/de/icons/css.svg?classes=icon) Edit the stylesheets of the theme
-- ![Editing the front end modules of the Theme](/de/icons/modules.svg?classes=icon) The front end modules of the theme editing
-- ![Edit the page layouts of the theme](/de/icons/layout.svg?classes=icon) The page layouts of the theme editing
-- ![Edit the image sizes of the theme](/de/icons/sizes.svg?classes=icon) Edit the image sizes of the theme
-- ![Export Theme](/de/icons/theme_export.svg?classes=icon) Export Theme
+- ![Edit Theme]({{% asset "icons/edit.svg" %}}?classes=icon) Edit Theme
+- ![Delete Theme]({{% asset "icons/delete.svg" %}}?classes=icon) Delete a theme
+- ![Show details of the theme]({{% asset "icons/show.svg" %}}?classes=icon) Show details of the theme
+- ![Edit the stylesheets of the theme]({{% asset "icons/css.svg" %}}?classes=icon) Edit the stylesheets of the theme
+- ![Editing the front end modules of the Theme]({{% asset "icons/modules.svg" %}}?classes=icon) The front end modules of the theme editing
+- ![Edit the page layouts of the theme]({{% asset "icons/layout.svg" %}}?classes=icon) The page layouts of the theme editing
+- ![Edit the image sizes of the theme]({{% asset "icons/sizes.svg" %}}?classes=icon) Edit the image sizes of the theme
+- ![Export Theme]({{% asset "icons/theme" %}}_export.svg?classes=icon) Export Theme
 
 **Theme title**: Here you enter the theme title.
 
