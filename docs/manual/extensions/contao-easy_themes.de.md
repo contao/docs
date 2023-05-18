@@ -16,7 +16,7 @@ auf. Wähle aus der Benutzerliste den Benutzer der in den Genuss von EasyThemes 
 ![Benutzer bearbeiten](/de/icons/edit.svg?classes=icon "Benutzer bearbeiten") Bearbeiten-Symbol, um dann im letzten 
 Abschnitt der Benutzerverwaltung den Haken bei **EasyTheme aktivieren** zu setzen.
 
-![EasyTheme aktivieren](/de/extensions/images/de/contao-easy_themes-aktivieren.png?classes=shadow)
+![EasyTheme aktivieren]({{% asset "images/manual/extensions/de/contao-easy_themes-aktivieren.png" %}}?classes=shadow)
 
 Unter **Aktive Module** bestimmst du, welche Module angezeigt werden sollen.
 
@@ -36,25 +36,25 @@ Im **EasyTheme Modus** musst du dich für eine von vier Anzeige-Arten entscheide
 
 **Kontextmenü:** Das Auswahlmenü erscheint beim Rechtsklick auf Themes.
 
-![EasyTheme Modus: Kontextmenü](/de/extensions/images/de/contao-easy_themes-modus-kontextmenue.png?classes=shadow)
+![EasyTheme Modus: Kontextmenü]({{% asset "images/manual/layout/extensions/de/contao-easy_themes-modus-kontextmenue.png" %}}?classes=shadow)
 
 **Mouseover:** Das Auswahlmenü erscheint beim Mouseover von Themes.
 
-![EasyTheme Modus: Mouseover](/de/extensions/images/de/contao-easy_themes-modus-mouseover.png?classes=shadow)
+![EasyTheme Modus: Mouseover]({{% asset "images/manual/layout/extensions/de/contao-easy_themes-modus-mouseover.png" %}}?classes=shadow)
 
 **DOM-Inject:** Das Auswahlmenü wird direkt unter Themes angezeigt.
 
-![EasyTheme Modus: DOM-Inject](/de/extensions/images/de/contao-easy_themes-modus-dom-inject.png?classes=shadow)
+![EasyTheme Modus: DOM-Inject]({{% asset "images/manual/layout/extensions/de/contao-easy_themes-modus-dom-inject.png" %}}?classes=shadow)
 
 **Backend Module (ohne Auswahl einer Referenz-Gruppe):**
 Erstellt ein zusätzliches Backend-Modul über dem Abschnitt »Inhalte«.
 
-![EasyTheme Modus: Backend Module (ohne Auswahl einer Referenz-Gruppe)](/de/extensions/images/de/contao-easy_themes-modus-backend-module-ohne-referenz.png?classes=shadow)
+![EasyTheme Modus: Backend Module (ohne Auswahl einer Referenz-Gruppe)]({{% asset "images/manual/layout/extensions/de/contao-easy_themes-modus-backend-module-ohne-referenz.png" %}}?classes=shadow)
 
 **Backend Module (mit Auswahl einer Referenz-Gruppe):**
 Erstellt ein zusätzliches Backend-Modul unter dem gewähltem Abschnitt.
 Im Beispiel wird es unter »Inhalte« platziert.
 
-![EasyTheme Modus: Backend Module (mit Auswahl einer Referenz-Gruppe)](/de/extensions/images/de/contao-easy_themes-modus-backend-module-mit-referenz.png?classes=shadow)
+![EasyTheme Modus: Backend Module (mit Auswahl einer Referenz-Gruppe)]({{% asset "images/manual/layout/extensions/de/contao-easy_themes-modus-backend-module-mit-referenz.png" %}}?classes=shadow)
 
 Nimm dir Zeit und sei trotzdem schneller.

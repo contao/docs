@@ -32,7 +32,7 @@ Go to the [keyboard shortcuts in edit mode](/en/administration-area/back-end-key
 
 In Contao, you can easily edit multiple records at once instead of having to access and change each record individually. Just click on the link `Edit multiple`. As you can see, the navigation icons are automatically replaced by checkboxes that let you select the records you want to edit.
 
-![Editing Multiple Records](/de/administration-area/images/en/edit-multiple.png?classes=shadow)
+![Editing Multiple Records]({{% asset "images/manual/administration-area/en/edit-multiple.png" %}}?classes=shadow)
 
 **Edit:** The selected records can be edited.
 
@@ -52,15 +52,15 @@ Use the override function carefully, because all existing values of the selected
 
 Clicking `Override` or `Edit` takes you to the overview of the fields in the table, where you can select the fields you want to overwrite or edit and click `Continue`.
 
-![Select the input fields to be edited](/de/administration-area/images/en/edit-multiple-available-fields.png?classes=shadow)
+![Select the input fields to be edited]({{% asset "images/manual/administration-area/en/edit-multiple-available-fields.png" %}}?classes=shadow)
 
 Now you can see the selected input fields of the selected data sets and can easily change them in a single step. Even when editing several data sets, you will of course only see the input fields that you actually need for your project.
 
-![Only the selected input fields are displayed](/de/administration-area/images/en/edit-multiple-edit-fields.png?classes=shadow)
+![Only the selected input fields are displayed]({{% asset "images/manual/administration-area/en/edit-multiple-edit-fields.png" %}}?classes=shadow)
 
 Similar to this example, you could have used the "Override" function to override the language of all pages with a new value in one go. And the function can do even more: You might find yourself in the situation that you have created a new member group and now want to add it to the access rights of several page additions without deleting the existing assignment. You can also do this with the "Overwrite" function by selecting the appropriate update mode.
 
-![Selecting the update mode when overwriting data records](/de/administration-area/images/en/edit-multiple-override.png?classes=shadow)
+![Selecting the update mode when overwriting data records]({{% asset "images/manual/administration-area/en/edit-multiple-override.png" %}}?classes=shadow)
 
 **Add selected values:** The existing values are retained and are supplemented by the newly selected values. A page that already has the group *Piano Students* assigned would have the groups *Piano Students* and *Violin Students* after saving.
 
@@ -72,8 +72,8 @@ Similar to this example, you could have used the "Override" function to override
 
 Contao automatically creates a new version of the edited data set each time you save it, so you can always undo your changes. As soon as more than one version is available, a drop-down menu appears above the input mask listing the different versions, their date and creator. With a click on `Restore` you can restore a previous version.
 
-![Restore previous versions of a record](/de/administration-area/images/en/contao-edit-versions.png?classes=shadow)
+![Restore previous versions of a record]({{% asset "images/manual/administration-area/en/contao-edit-versions.png" %}}?classes=shadow)
 
 Clicking on the icon ![Show differences](/de/icons/diff.svg?classes=icon) next to the drop-down menu will display the differences between the current and the selected version.
 
-![Differences between the selected versions](/de/administration-area/images/en/contao-edit-diff-view.png?classes=shadow)
+![Differences between the selected versions]({{% asset "images/manual/administration-area/en/contao-edit-diff-view.png" %}}?classes=shadow)

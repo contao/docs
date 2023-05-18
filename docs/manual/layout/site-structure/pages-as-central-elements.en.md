@@ -22,7 +22,7 @@ automatically create the corresponding navigation menus with all main pages and 
 icons with the ![Open area](/de/icons/folPlus.svg?classes=icon) plus or ![Close area](/de/icons/folMinus.svg?classes=icon) minus
 sign to the left of the page names to expand or collapse sub pages.
 
-![Toggle subpages](/de/layout/site-structure/images/en/toggle-subpages.png?classes=shadow)
+![Toggle subpages]({{% asset "images/manual/layout/site-structure/en/toggle-subpages.png" %}}?classes=shadow)
 
 Thanks to the hierarchical page structure, it is possible to inherit properties of a parent page to its subpages.
 For your, this means that you only have to define a certain page layout or access permission once and these properties

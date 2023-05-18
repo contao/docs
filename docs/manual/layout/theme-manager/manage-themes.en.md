@@ -35,7 +35,7 @@ your preferred organizational approach.
 
 The operation of the Theme Manager works just like most other back end modules, using navigation icons.
 
-![Navigation icons in the Theme Manager](/de/layout/theme-manager/images/en/navigation-icons-in-the-theme-manager.png?classes=shadow)
+![Navigation icons in the Theme Manager]({{% asset "images/manual/layout/theme-manager/en/navigation-icons-in-the-theme-manager.png" %}}?classes=shadow)
 
 - ![Edit Theme](/de/icons/edit.svg?classes=icon) Edit Theme
 - ![Delete Theme](/de/icons/delete.svg?classes=icon) Delete a theme
@@ -86,7 +86,7 @@ process.
 Contao then performs a series of checks to detect possible incompatibilities between the theme and your Contao 
 installation.
 
-![The theme data is checked](/de/layout/theme-manager/images/en/the-theme-data-is-checked.png?classes=shadow)
+![The theme data is checked]({{% asset "images/manual/layout/theme-manager/en/the-theme-data-is-checked.png" %}}?classes=shadow)
 
 The review shall include in particular
 
@@ -113,7 +113,7 @@ For illustration purposes, the theme "[Contao Official Demo](https://packagist.o
 imported and the page layout "2 columns - \[ default \]" was assigned to the starting point of the website in the page 
 structure.
 
-![Contao Official Demo](/de/layout/theme-manager/images/en/contao-official-demo.png?classes=shadow)
+![Contao Official Demo]({{% asset "images/manual/layout/theme-manager/en/contao-official-demo.png" %}}?classes=shadow)
 
 
 ## Sources of supply for themes

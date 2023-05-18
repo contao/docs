@@ -134,7 +134,7 @@ Zum besseren Verständnis ein paar Beispiele:
 Und so finden sich denn auch genau diese Einstellungen zur Cache-Dauer in den Contao Seiteneinstellungen. Folgende
 Auswahl übersetzt sich also zu `Cache-Control: max-age=1800, s-maxage=3600, public`:
 
-![Caching-Einstellungsmöglichkeiten im Contao Backend](/de/performance/images/de/cache-einstellungen.png?classes=shadow)
+![Caching-Einstellungsmöglichkeiten im Contao Backend]({{% asset "images/manual/layout/performance/de/cache-einstellungen.png" %}}?classes=shadow)
 
 ## Vorteile der Nutzung von Standards
 

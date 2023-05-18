@@ -26,7 +26,7 @@ Die drei häufigsten Formen von Auflistungen, die nachfolgend Ansichten genannt 
 Hierbei handelt es sich um Datensätze einer einzelnen Tabelle, die in einer bestimmten Reihenfolge aufgelistet werden. 
 Die Sortierung ist meistens alphabetisch, und die einzelnen Zeilen sind nach Anfangsbuchstaben gruppiert.
 
-![Der List View](/de/administration-area/images/de/der-list-view.png?classes=shadow)
+![Der List View]({{% asset "images/manual/administration-area/de/der-list-view.png" %}}?classes=shadow)
 
 
 ### Parent View
@@ -45,7 +45,7 @@ Wenn du nun den Inhalt eines Warenkorbs auflistest, willst du natürlich nur di
 und nicht die Produkte des zweiten. Daher zeigt Contao dir im Parent View auch nur die Kindelemente des jeweils 
 ausgewählten Elternelements an.
 
-![Der Parent View](/de/administration-area/images/de/der-parent-view.png?classes=shadow)
+![Der Parent View]({{% asset "images/manual/administration-area/de/der-parent-view.png" %}}?classes=shadow)
 
 
 ### Tree View
@@ -55,7 +55,7 @@ Baumstruktur dargestellt werden. Typischerweise ist das bei einem Dateisystem de
 Unterverzeichnisse gibt, deshalb nutzt die Contao-Dateiverwaltung auch diese Ansicht. Hierarchische Strukturen können aber
 auch innerhalb einer Tabelle abgebildet werden, wie es z. B. bei der Seitenstruktur deiner Webseite der Fall ist.
 
-![Der Tree View](/de/administration-area/images/de/der-tree-view.png?classes=shadow)
+![Der Tree View]({{% asset "images/manual/administration-area/de/der-tree-view.png" %}}?classes=shadow)
 
 
 ## Datensätze sortieren und filtern {#datensaetze-sortieren-und-filtern}
@@ -65,7 +65,7 @@ Möglichkeiten, Auflistungen zu sortieren und durch Filter einzuschränken. Die 
 gezieltes Filtern so einschränken, dass dir nur die Datensätze angezeigt werden, die du auch wirklich für eine 
 bestimmte Aktion benötigst.
 
-![Datensätze sortieren und filtern](/de/administration-area/images/de/datensaetze-sortieren-und-filtern.png?classes=shadow)
+![Datensätze sortieren und filtern]({{% asset "images/manual/layout/administration-area/de/datensaetze-sortieren-und-filtern.png" %}}?classes=shadow)
 
 **Filtern:** Hier kannst du einen oder mehrere Filter setzen und dir so z. B. nur die Mitglieder anzeigen lassen, 
 die männlich sind und Deutsch sprechen.
@@ -126,7 +126,7 @@ Frontend anzeigen bzw. ausblenden
 
 Der List View kann neben den grundlegenden Befehlen, noch folgende zusätzlichen Befehle anbieten.
 
-![Icons im List View](/de/administration-area/images/de/icons-im-list-view.png?classes=shadow)
+![Icons im List View]({{% asset "images/manual/administration-area/de/icons-im-list-view.png" %}}?classes=shadow)
 
 ![Einstellungen bearbeiten](/de/icons/header.svg?classes=icon) **Einstellungen bearbeiten:** die Einstellungen für 
 das Eltern-Element anpassen.
@@ -138,7 +138,7 @@ Der Parent View bietet zwei zusätzliche Icons, um die Reihenfolge der Datensät
 kann auch mittels Drag & Drop geändert werden. Dazu einfach auf das Drag & Drop-Icon 
 ![Verschieben](/de/icons/drag.svg?classes=icon) klicken und an die neue Position bewegen.
 
-![Icons im Parent View](/de/administration-area/images/de/icons-im-parent-view.png?classes=shadow)
+![Icons im Parent View]({{% asset "images/manual/administration-area/de/icons-im-parent-view.png" %}}?classes=shadow)
 
 ![Verschieben](/de/icons/cut.svg?classes=icon) **Verschieben:** verschiebt einen Datensatz an eine andere Position.
 
@@ -159,7 +159,7 @@ untereinander notwendig sind. Du brauchst beispielsweise eine Möglichkeit, beim
 Datensätzen festzulegen, ob diese nach einem Datensatz in derselben Ebene oder unterhalb eines Datensatzes in einer 
 neuen Ebene eingefügt werden sollen.
 
-![Icons im Tree View](/de/administration-area/images/de/icons-im-tree-view.png?classes=shadow)
+![Icons im Tree View]({{% asset "images/manual/administration-area/de/icons-im-tree-view.png" %}}?classes=shadow)
 
 ![Unterseiten duplizieren](/de/icons/copychilds.svg?classes=icon) **Unterseiten duplizieren:** dupliziert eine 
 Seite inklusive aller Unterseiten.
@@ -185,7 +185,7 @@ Du kannst dir das Klemmbrett wie die Zwischenablage auf deinem Rechner vorstelle
 Daten kopieren und mit `[Ctrl]+[v]` an einer anderen Stelle wieder einfügen kannst. In Contao kannst du so z. B. 
 Inhaltselemente von einem Artikel in einen anderen verschieben.
 
-![Inhaltselemente mittels Klemmbrett verschieben](/de/administration-area/images/de/inhaltselemente-mittels-klemmbrett-verschieben.png?classes=shadow)
+![Inhaltselemente mittels Klemmbrett verschieben]({{% asset "images/manual/administration-area/de/inhaltselemente-mittels-klemmbrett-verschieben.png" %}}?classes=shadow)
 
 
 ## Gelöschte Datensätze wiederherstellen {#geloeschte-datensaetze-wiederherstellen}
@@ -200,4 +200,4 @@ sortieren kannst. Mit einem Klick auf das entsprechende Navigationssymbol
 ![Eintrag wiederherstellen](/de/icons/undo.svg?classes=icon) 
 kannst du einen Löschvorgang rückgängig machen.
 
-![Einen Löschvorgang rückgängig machen](/de/administration-area/images/de/einen-loeschvorgang-rueckgaengig-machen.png?classes=shadow)
+![Einen Löschvorgang rückgängig machen]({{% asset "images/manual/layout/administration-area/de/einen-loeschvorgang-rueckgaengig-machen.png" %}}?classes=shadow)

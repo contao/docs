@@ -11,7 +11,7 @@ Now that you know how categories and questions are managed in the back end, we w
 in the front end. The FAQ extension contains three new front end modules which you can configure as usual via the 
 module management.
 
-![FAQ modules](/de/core-extensions/faq/images/en/faq-modules.png?classes=shadow)
+![FAQ modules]({{% asset "images/manual/core-extensions/faq/images/en/faq-modules.png" %}}?classes=shadow)
 
 
 ## FAQ list

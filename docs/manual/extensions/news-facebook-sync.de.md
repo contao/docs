@@ -147,7 +147,7 @@ Gehe im Contao Backend zu _System_ » _Einstellungen_. Dort unter _Facebook App_
 __App Secret__ eingegeben werden. Diese Informationen können in den Facebook App Einstellungen unter _Einstellungen_ » 
 _Allgemeines_ gefunden werden.
 
-![Facebook App Einstellungen](/de/extensions/images/de/contao-news-facebook_app_settings_de.png?classes=shadow)
+![Facebook App Einstellungen]({{% asset "images/manual/extensions/de/contao-news-facebook_app_settings_de.png" %}}?classes=shadow)
 
 
 ### Contao Nachrichtenarchiv konfigurieren
@@ -171,7 +171,7 @@ werden, dass die Facebook App __öffentliche__ Posts in deinem Namen machen darf
 hier anmeldet, muss außerdem die Berechtigung haben, Posts auf der Timeline der jeweiligen Facebook Page posten zu dürfen.
 {{% /notice %}}
 
-![Nachrichtenarchiv Einstellungen](/de/extensions/images/de/contao-news-facebook_archive_settings_de.png?classes=shadow)
+![Nachrichtenarchiv Einstellungen]({{% asset "images/manual/extensions/de/contao-news-facebook_archive_settings_de.png" %}}?classes=shadow)
 
 Heruntergeladene Bilder werden im eingestellten Ordner gespeichert (Standard: `files/facebook_images`). Dieser Ordner
 muss in Contao 4 veröffentlicht werden!
@@ -189,7 +189,7 @@ ausgegeben wird, wenn der Link zu der Nachricht geteilt wird. Mit dieser Einstel
 __Als Fotos posten__: seit Version `3.0.0` werden Nachrichtenbeiträge nicht mehr automatisch als Fotos gepostet,
 wenn der Nachrichtenbeitrag ein Teaserbild hat. Mit der Einstellung kann dies wieder aktiviert werden.
 
-![Backend Einstellungen](/de/extensions/images/de/contao-news-facebook_backend_settings_de.png?classes=shadow)
+![Backend Einstellungen]({{% asset "images/manual/extensions/de/contao-news-facebook_backend_settings_de.png" %}}?classes=shadow)
 
 Falls kein Hook benutzt wird, kann die Standard Überschriftenlänge über
 
@@ -223,7 +223,7 @@ Andernfalls wird der Teaser Text benutzt.
 Die Erweiterung überprüft minütlich auf neue Nachrichten, die auf Facebook veröffentlicht
 werden sollen.
 
-![Nachrichten Einstellungen](/de/extensions/images/de/contao-news-facebook_news_settings_de.png?classes=shadow)
+![Nachrichten Einstellungen]({{% asset "images/manual/extensions/de/contao-news-facebook_news_settings_de.png" %}}?classes=shadow)
 
 
 ### Synchronisation manuell auslösen
@@ -231,7 +231,7 @@ werden sollen.
 Es gibt eine Schaltfläche zur manuellen Auslösung der Synchronisation im Backend. Oben bei den globalen Operationen
 für Nachrichtenarchive.
 
-![Globale Operationen für Nachrichtenarchive](/de/extensions/images/de/contao-news-facebook_news_global_operations_de.png?classes=shadow)
+![Globale Operationen für Nachrichtenarchive]({{% asset "images/manual/layout/extensions/de/contao-news-facebook_news_global_operations_de.png" %}}?classes=shadow)
 
 
 ## Hooks

@@ -22,7 +22,7 @@ be assumed that a visitor has already seen several CMS websites before he or she
 all important information is collected in one place, from the feature overview to news, online demo, events, case 
 studies and the Contao team.
 
-![The Contao project website](/de/introduction/images/en/the-contao-project-website.png?classes=shadow)
+![The Contao project website]({{% asset "images/manual/introduction/en/the-contao-project-website.png" %}}?classes=shadow)
 
 After the user is convinced of the system, he will usually want to download and install it himself. Consequently, 
 `Download` is the next category. In addition to the program downloads, you can find the Contao and the fanpage logo for 
@@ -46,7 +46,7 @@ important, it is driven transparently on the platform [GitHub in the monoreposit
 In addition, monthly [public conference calls](https://contao.org/en/mumble-calls.html) are held, where core developers 
 can exchange information via tickets marked "up for discussion".
 
-![The development environment](/de/introduction/images/en/the-development-environment.png?classes=shadow)
+![The development environment]({{% asset "images/manual/introduction/en/the-development-environment.png" %}}?classes=shadow)
 
 In the `Code` section you will find an overview of the commits, the branches, the releases and the contributors.
 
@@ -85,4 +85,4 @@ If you would like to meet the people you meet in this virtual world in the real 
 at the camp or at the various regulars' tables. A list of events can be found on the 
 [project website](https://contao.org/en/events.html).
 
-![The english speaking Contao community](/de/introduction/images/en/the-english-speaking-contao-community.png?classes=shadow)
+![The english speaking Contao community]({{% asset "images/manual/introduction/en/the-english-speaking-contao-community.png" %}}?classes=shadow)

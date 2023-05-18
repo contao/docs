@@ -350,7 +350,7 @@ For example, the "Company" page is assigned access rights and belongs to the use
 Both the user and everyone in the user group can edit articles on the page, but only the owner, h.lewis, and you the 
 administrator can edit the page and change its title.
 
-![Assign access rights](/de/layout/site-structure/images/en/assign-access-rights.png?classes=shadow)
+![Assign access rights]({{% asset "images/manual/layout/site-structure/en/assign-access-rights.png" %}}?classes=shadow)
 
 **Assign access rights:** Here you can assign access rights to a page. If you do not select this option, the access 
 rights will be inherited from a parent page.

@@ -18,7 +18,7 @@ loading.
 Navigation is done similar to everywhere else in Contao using navigation icons. The options are different for folders 
 and files.
 
-![The File Manager](/de/file-manager/images/en/the_file_manager.jpg?classes=shadow)
+![The File Manager]({{% asset "images/manual/file-manager/en/the_file_manager.jpg" %}}?classes=shadow)
 
 **![Edit file or directory](/de/icons/edit.svg?classes=icon) Edit:** Opens an input mask for renaming a file or folder. 
 You can also add metadata of files in the appropriate language or publish folders or exclude them before synchronization.
@@ -56,7 +56,7 @@ at the desired folder in order to upload there directly.
 
 You can also activate [DropZone](https://www.dropzonejs.com/) in the user settings.
 
-![Transferring files](/de/file-manager/images/en/transfer_files.jpg?classes=shadow)
+![Transferring files]({{% asset "images/manual/file-manager/en/transfer_files.jpg" %}}?classes=shadow)
 
 In both cases, the File Manager checks the size of the file to be transferred during upload, and - if it is an image 
 - also its dimensions. By default, files up to 2 MB and images up to 3000x3000 pixels are accepted. If a file is too 

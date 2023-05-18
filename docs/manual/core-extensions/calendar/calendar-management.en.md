@@ -270,7 +270,7 @@ not.
 **Source file:** Here you select the image to be inserted. If you have not yet transferred the image to the server, you
 can do so directly in the pop-up window without leaving the input mask.
 
-![Add an image to a post](/de/core-extensions/calendar/images/en/add-an-image-to-a-post.png?classes=shadow)
+![Add an image to a post]({{% asset "images/manual/core-extensions/calendar/en/add-an-image-to-a-post.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 

@@ -12,7 +12,7 @@ Nachdem du nun weißt, wie Kategorien und Fragen im Backend verwaltet werden, wi
 Inhalte im Frontend darstellen kannst. Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über 
 die Modulverwaltung konfigurieren kannst.
 
-![FAQ-Module](/de/core-extensions/faq/images/de/faq-module.png?classes=shadow)
+![FAQ-Module]({{% asset "images/manual/core-extensions/faq/de/faq-module.png" %}}?classes=shadow)
 
 
 ## FAQ-Liste

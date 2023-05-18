@@ -184,7 +184,7 @@ dass du als Administrator in den Prozess eingreifen musst. Trotzdem hast du natu
 Empfänger manuell zu ändern. Aus Gründen des Datenschutzes werden jeweils nur die E-Mail-Adresse und der
 Aktivierungsstatus gespeichert.
 
-![Einen Empfänger bearbeiten](/de/core-extensions/newsletter/images/de/einen-empfaenger-bearbeiten.png?classes=shadow)
+![Einen Empfänger bearbeiten]({{% asset "images/manual/core-extensions/newsletter/de/einen-empfaenger-bearbeiten.png" %}}?classes=shadow)
 
 Gemäß des [Double Opt-In-Verfahrens](https://de.wikipedia.org/wiki/Opt-In) erhält jeder Abonnent bei der Bestellung 
 eine E-Mail mit einem Bestätigungslink, ohne den er sein Abonnement nicht abschließen kann. Damit wird den Bestimmungen 
@@ -215,7 +215,7 @@ Zeilenumbrüche als Feldtrenner.
 
 Wähle die Datei für den Import auf deinem Rechner aus.
 
-![Newsletter-Empfänger importieren](/de/core-extensions/newsletter/images/de/newsletter-empfaenger-importieren.png?classes=shadow)
+![Newsletter-Empfänger importieren]({{% asset "images/manual/core-extensions/newsletter/de/newsletter-empfaenger-importieren.png" %}}?classes=shadow)
 
 Starte den Import anschließend durch einen Klick auf die Schaltfläche `CSV-Import`.
 
@@ -228,7 +228,7 @@ Du gelangst zunächst zu einer Vorschauseite, auf der du die Konfiguration und d
 prüfen kannst. Es wird zudem empfohlen, regen Gebrauch von der Schaltfläche `Testsendung` zu machen. Die 
 dazugehörige Empfängeradresse kannst du im Feld `Testsendung an` ändern.
 
-![Einen Newsletter versenden](/de/core-extensions/newsletter/images/de/einen-newsletter-versenden.png?classes=shadow)
+![Einen Newsletter versenden]({{% asset "images/manual/core-extensions/newsletter/images/de/einen-newsletter-versenden.png" %}}?classes=shadow)
 
 
 ### Serverlimits einkalkulieren
@@ -270,4 +270,4 @@ NEWSLETTER_X, wobei das X für die ID des jeweiligen Newsletters steht. Die Gesa
 du dem Feld <code>Anzeigen</code>. Waren es z. B. 120 Mails, gib "120" ein, um mit dem 121. Empfänger 
 fortzufahren (die Zählung beginnt bei 0).
 
-![Unterbrochene Versendungen wiederaufnehmen](/de/core-extensions/newsletter/images/de/unterbrochene-versendungen-wiederaufnehmen.png?classes=shadow)
+![Unterbrochene Versendungen wiederaufnehmen]({{% asset "images/manual/core-extensions/newsletter/images/de/unterbrochene-versendungen-wiederaufnehmen.png" %}}?classes=shadow)

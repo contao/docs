@@ -238,7 +238,7 @@ example, with the module "News list", followed by a link to the actual post.
 **source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you 
 can upload it directly in the pop-up window without leaving the the News section.
 
-![Add an image to a post](/de/core-extensions/news/images/en/add-an-image-to-a-post.png?classes=shadow)
+![Add an image to a post]({{% asset "images/manual/core-extensions/news/en/add-an-image-to-a-post.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the image size. You can choose between the following scaling modes:
 

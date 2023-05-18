@@ -112,7 +112,7 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Downloads« fügt dem Artikel mehrere Download-Links hinzu. Beim Anklicken eines Links öffnet sich 
 der »Datei speichern unter …«-Dialog, und du kannst die Datei auf deinem lokalen Rechner speichern.
 
-![Das Downloads-Element im Frontend](/de/article-management/images/de/das-downloads-element-im-frontend.png?classes=shadow)
+![Das Downloads-Element im Frontend]({{% asset "images/manual/article-management/de/das-downloads-element-im-frontend.png" %}}?classes=shadow)
 
 Die Besonderheit in Contao ist, dass diese Download-Links auch mit geschützten Dateien funktionieren, auf die du nicht 
 direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 

@@ -12,7 +12,7 @@ weight: 20
 das speziell auf die jeweiligen Anforderungen des Eingabefelds ausgerichtet ist. Für jedes Formularfeld musst du 
 mindestens einen Feldnamen und eine Feldbezeichnung eingeben.
 
-![Formularfelder bearbeiten](/de/form-generator/images/de/formularfelder-bearbeiten.png?classes=shadow)
+![Formularfelder bearbeiten]({{% asset "images/manual/form-generator/de/formularfelder-bearbeiten.png" %}}?classes=shadow)
 
 **Feldname:** Über den Feldnamen wird die Benutzereingabe nach dem Absenden des Formulars referenziert. Falls du die 
 Formulardaten in der Datenbank speicherst, muss es in der Tabelle ein gleich lautendes Feld geben.
@@ -278,7 +278,7 @@ Das Formularfeld `Select-Menü` fügt dem Formular ein Drop-Down-Menü hinzu,
 auswählen kannst. Um die Auswahl mehrerer Optionen zu erlauben, kannst du entweder die Mehrfachauswahl aktivieren oder 
 ein [Checkbox-Menü](#checkbox-menue) anstatt des Select-Menüs verwenden.
 
-![Ein Select-Menü im Frontend](/de/form-generator/images/de/ein-select-menue-im-frontend.png?classes=shadow)
+![Ein Select-Menü im Frontend]({{% asset "images/manual/layout/form-generator/de/ein-select-menue-im-frontend.png" %}}?classes=shadow)
 
 
 ### Feldkonfiguration
@@ -296,7 +296,7 @@ Innerhalb des Feldes kann gescrollt werden.
 Beim Anlegen der Optionen unterstützt dich ein JavaScript-Assistent. Du kannst Optionen gruppieren und jede Gruppe mit 
 einer Überschrift versehen. Um eine Zeile zu einer Gruppenüberschrift zu machen, wähle die Option Gruppe.
 
-![JavaScript-Assistent für das Anlegen von Optionen](/de/form-generator/images/de/anlegen-von-optionen.png?classes=shadow)
+![JavaScript-Assistent für das Anlegen von Optionen]({{% asset "images/manual/layout/form-generator/de/anlegen-von-optionen.png" %}}?classes=shadow)
 
 
 ### Experteneinstellungen
@@ -339,7 +339,7 @@ Felder mit Mehrfachauswahl verwenden die CSS-Klasse `multiselect` anstatt `selec
 Das Formularfeld Radio-Button-Menü fügt dem Formular eine Liste von Optionen hinzu, aus der du genau eine auswählen 
 kannst. Um die Auswahl mehrerer Optionen zu erlauben, musst du ein [Checkbox-Menü](#checkbox-menue) verwenden.
 
-![Ein Radio-Button-Menü im Frontend](/de/form-generator/images/de/ein-radio-button-menue-im-frontend.png?classes=shadow)
+![Ein Radio-Button-Menü im Frontend]({{% asset "images/manual/layout/form-generator/de/ein-radio-button-menue-im-frontend.png" %}}?classes=shadow)
 
 
 ### Optionen
@@ -393,7 +393,7 @@ Das Formularfeld `Checkbox-Menü` fügt dem Formular eine Liste von Optionen h
 Optionen oder auch gar keine auswählen kannst. Um die Auswahl genau einer Option zu erlauben, musst du ein 
 [Radio-Button-Menü](#radio-button-menue) oder ein [Select-Menü](#select-menue) verwenden.
 
-![Ein Checkbox-Menü im Frontend](/de/form-generator/images/de/ein-checkbox-menue-im-frontend.png?classes=shadow)
+![Ein Checkbox-Menü im Frontend]({{% asset "images/manual/layout/form-generator/de/ein-checkbox-menue-im-frontend.png" %}}?classes=shadow)
 
 
 ### Optionen

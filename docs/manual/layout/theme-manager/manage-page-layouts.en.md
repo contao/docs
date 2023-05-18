@@ -145,7 +145,7 @@ Feeds embedded in a page layout are linked in the header area of the page and ca
 
 In this section, you assign the front end modules to the individual layout areas that are to be displayed on the page. The modules of each layout area are arranged one below the other in the order you specify.
 
-![Front end modules of the Contao Official Demo](/de/layout/theme-manager/images/de/frontend-module-der-contao-official-demo.png?classes=shadow)
+![Front end modules of the Contao Official Demo]({{% asset "images/manual/layout/theme-manager/de/frontend-module-der-contao-official-demo.png" %}}?classes=shadow)
 
 **Integrated modules:** Here you select the modules for the page layout.
 

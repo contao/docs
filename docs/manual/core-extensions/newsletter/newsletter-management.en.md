@@ -158,7 +158,7 @@ Usually, the recipients of a newsletter manage themselves using the correspondin
 intervention as administrator. Nevertheless, you still have the possibility to change recipients manually in the 
 back end. For data protection reasons, only the e-mail address and the activation status are saved.
 
-![Edit a recipient](/de/core-extensions/newsletter/images/en/activate_recipents.png?classes=shadow)
+![Edit a recipient]({{% asset "images/manual/core-extensions/newsletter/images/en/activate_recipents.png?classes=shadow" %}})
 
 According to the [double opt-in procedure](https://de.wikipedia.org/wiki/Opt-In), every subscriber receives an 
 e-mail with a confirmation link when subscribing, without which he cannot complete his subscription. This is 
@@ -182,7 +182,7 @@ First export the existing recipients as CSV file. Most programs such as phpMyAdm
 
 Select the file for import on your computer.
 
-![Import newsletter recipients](/de/core-extensions/newsletter/images/en/csv_import.png?classes=shadow)
+![Import newsletter recipients]({{% asset "images/manual/core-extensions/newsletter/images/en/csv_import.png?classes=shadow" %}})
 
 Then start the import by clicking the button `CSV-Import`.
 
@@ -192,7 +192,7 @@ You can start sending a newsletter by clicking on the corresponding navigation !
 you can check the configuration and content of the newsletter again. It is also recommended that you make active use 
 of the button `Send preview`. You can change the recipient address in the field `Send preview to`.
 
-![Sending a newsletter](/de/core-extensions/newsletter/images/en/send_newsletter.png?classes=shadow)
+![Sending a newsletter]({{% asset "images/manual/core-extensions/newsletter/images/en/send_newsletter.png?classes=shadow" %}})
 
 ### Calculate server limits
 
@@ -226,4 +226,4 @@ is called NEWSLETTER_X, where the X stands for the ID of the respective newslett
 can be seen in the field `Show`. For example, if there were 120 mails, enter "120" to continue with the 121st 
 recipient (counting starts at 0).
 
-![Resume interrupted sending](/de/core-extensions/newsletter/images/en/system_log.png?classes=shadow)
+![Resume interrupted sending]({{% asset "images/manual/core-extensions/newsletter/images/en/system_log.png?classes=shadow" %}})

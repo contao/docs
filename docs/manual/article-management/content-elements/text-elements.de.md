@@ -36,7 +36,7 @@ Rich Text Editor, der es dir ähnlich wie in einem Textverarbeitungsprogramm erl
 Knopfdruck zu setzen. Contao verwendet [TinyMCE](https://www.tiny.cloud/), einen Open Source Editor der schwedischen 
 Firma Moxiecode, der sich gut an die Erfordernisse der Barrierefreiheit anpassen lässt.
 
-![Der Rich Text Editor TinyMCE](/de/article-management/images/de/der-rich-text-editor-tinymce.png?classes=shadow)
+![Der Rich Text Editor TinyMCE]({{% asset "images/manual/article-management/de/der-rich-text-editor-tinymce.png" %}}?classes=shadow)
 
 **Überschrift:** Hier kannst du eine Überschrift eingeben.
 
@@ -54,7 +54,7 @@ dabei zur Verfügung:
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du den Upload hier nachholen, ohne die Eingabemaske zu verlassen.
 
-![Einem Text ein Bild hinzufügen](/de/article-management/images/de/einem-text-ein-bild-hinzufuegen.png?classes=shadow)
+![Einem Text ein Bild hinzufügen]({{% asset "images/manual/layout/article-management/de/einem-text-ein-bild-hinzufuegen.png" %}}?classes=shadow)
 
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
@@ -151,7 +151,7 @@ Das Inhaltselement »Aufzählung« fügt dem Artikel eine nicht verschachtelte 
 nummerierten (»ordered list«) und einer umnummerierten (»unordered list«) Aufzählung wählen. Beim Anlegen und 
 Bearbeiten der Listenpunkte unterstützt dich ein JavaScript-Assistent.
 
-![JavaScript-Assistent für Auflistungen](/de/article-management/images/de/javascript-assistent-fuer-auflistungen.png?classes=shadow)
+![JavaScript-Assistent für Auflistungen]({{% asset "images/manual/layout/article-management/de/javascript-assistent-fuer-auflistungen.png" %}}?classes=shadow)
 
 Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/de/icons/tablewizard.svg?classes=icon) 
 neben der Feldbezeichnung »Listeneinträge« öffnest du den CSV-Import-Wizard, mit dem du Listendaten aus einer CSV-Datei 
@@ -191,7 +191,7 @@ ein JavaScript-Assistent. Mit den folgenden Navigationsicons kannst du die Tabel
 - ![Das Element durch Ziehen und Ablegen verschieben](/de/icons/drag.svg?classes=icon) 
 **Das Element durch Ziehen und Ablegen verschieben**
 
-![JavaScript-Assistent für Tabellen](/de/article-management/images/de/javascript-assistent-fuer-tabellen.png?classes=shadow)
+![JavaScript-Assistent für Tabellen]({{% asset "images/manual/layout/article-management/de/javascript-assistent-fuer-tabellen.png" %}}?classes=shadow)
 
 Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren](/de/icons/tablewizard.svg?classes=icon) 
 neben der Feldbezeichnung »Tabelleneinträge« öffnest du den CSV-Import-Wizard, mit dem du Tabellendaten aus einer 

@@ -13,7 +13,7 @@ Contao indiziert die Seiten deiner Webpräsenz automatisch, sobald sie aufgerufe
 findenden Wörter als Suchbegriffe in einer Tabelle in der Datenbank. Das Suchmodul durchsucht diese Tabelle und liefert 
 die Seiten zurück, die den gesuchten Begriff bzw. die gesuchten Begriffe enthalten.
 
-![Die On-Site-Suche im Frontend](/de/layout/module-management/images/de/die-on-site-suche-im-frontend.png?classes=shadow)
+![Die On-Site-Suche im Frontend]({{% asset "images/manual/layout/module-management/de/die-on-site-suche-im-frontend.png" %}}?classes=shadow)
 
 Beachte jedoch, dass deine Webseite aus Sicherheitsgründen nicht indiziert wird, wenn du im Backend angemeldet bist und 
 die Frontend-Vorschau aufrufst. Es könnte ja sein, dass sich dort noch nicht veröffentlichte Inhalte befinden, die vor 

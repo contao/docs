@@ -96,7 +96,7 @@ CSS statement sets the outer spacing of a Contao text element to 24 pixels:
 In Contao, however, you cannot touch this style sheet at all because you can specify all formats in the input mask. 
 Only the part in front of the curly brackets, the so-called selector, has to be entered manually in the field provided.
 
-![Set the outer distance in the stylesheet editor](/de/layout/theme-manager/images/en/set-the-outer-distance-in-the-stylesheet-editor.png?classes=shadow)
+![Set the outer distance in the stylesheet editor]({{% asset "images/manual/layout/theme-manager/en/set-the-outer-distance-in-the-stylesheet-editor.png" %}}?classes=shadow)
 
 
 ### Sequence of the format definitions

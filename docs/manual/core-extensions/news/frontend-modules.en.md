@@ -11,7 +11,7 @@ Now that you know how archives and posts are managed in the back end, we will ex
 the front end. The news extension contains four new front end modules, which you can configure as usual via the 
 module management.
 
-![News/Blog modules](/de/core-extensions/news/images/en/news-blog-modules.png?classes=shadow)
+![News/Blog modules]({{% asset "images/manual/core-extensions/news/en/news-blog-modules.png" %}}?classes=shadow)
 
 
 ## Newslist

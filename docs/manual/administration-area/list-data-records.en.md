@@ -16,7 +16,7 @@ The three most common forms of listings, which are called views below, are the s
 
 These are records from a single table that are listed in a certain order, usually alphabetically, and the rows are grouped by their first letter.
 
-![The List View](/de/administration-area/images/en/the-list-view.png?classes=shadow)
+![The List View]({{% asset "images/manual/administration-area/en/the-list-view.png" %}}?classes=shadow)
 
 ### Parent View
 
@@ -30,19 +30,19 @@ In Contao, such parent-child relationships are very common, e.g.
 
 When you list the contents of a shopping cart, you only want to see the products of this shopping cart and not the products of the second one. Therefore, Contao shows you only the child elements of the selected parent element in the Parent View.
 
-![The Parent View](/de/administration-area/images/en/the-parent-view.png?classes=shadow)
+![The Parent View]({{% asset "images/manual/administration-area/en/the-parent-view.png" %}}?classes=shadow)
 
 ### Tree View
 
 These are data records that are hierarchically dependent on each other and are therefore displayed in a tree structure. Typically, this is the case with a file system that has directories and subdirectories, so the Contao file manager also uses this view. Hierarchical structures can also be displayed within a table, like the page structure of your website.
 
-![The Tree View](/de/administration-area/images/en/the-tree-view.png?classes=shadow)
+![The Tree View]({{% asset "images/manual/administration-area/en/the-tree-view.png" %}}?classes=shadow)
 
 ## Sort and filter records {#sort-and-filter-records}
 
 To keep track of tables with many records, Contao offers you several ways to sort and filter your listings. Most listings can be filtered so that you only see the records that you really need for a specific action.
 
-![Sort and filter records](/de/administration-area/images/en/sort-and-filter-records.png?classes=shadow)
+![Sort and filter records]({{% asset "images/manual/administration-area/en/sort-and-filter-records.png" %}}?classes=shadow)
 
 **Filtering:** Here you can set one or more filters to show only the members who are male and speak German.
 
@@ -82,7 +82,7 @@ The following navigation icons appear in almost all views. For reasons of clarit
 
 The List View can offer the following additional commands besides the basic commands.
 
-![Icons in List View](/de/administration-area/images/en/icons-in-the-list-view.png?classes=shadow)
+![Icons in List View]({{% asset "images/manual/administration-area/en/icons-in-the-list-view.png" %}}?classes=shadow)
 
 ![Edit settings](/de/icons/header.svg?classes=icon) **Edit settings:** adjust the settings for the parent element.
 
@@ -90,7 +90,7 @@ The List View can offer the following additional commands besides the basic comm
 
 The Parent View offers two additional icons to determine the order of the data records. The sequence can also be changed by drag &amp; drop. Simply click on the Drag &amp; Drop icon![Move](/de/icons/drag.svg?classes=icon) and move to the new position.
 
-![Icons in the Parent View](/de/administration-area/images/en/icons-in-the-parent-view.png?classes=shadow)
+![Icons in the Parent View]({{% asset "images/manual/administration-area/en/icons-in-the-parent-view.png" %}}?classes=shadow)
 
 ![Move](/de/icons/cut.svg?classes=icon) **Move:** Moves a record to another position.
 
@@ -104,7 +104,7 @@ The Parent View offers two additional icons to determine the order of the data r
 
 In the tree view, there are other icons that are necessary because of the hierarchical relationships between the records. For example, when moving or duplicating records, you need a way to specify whether they should be inserted after a record in the same level or below a record in a new level.
 
-![Icons in the Tree View](/de/administration-area/images/en/icons-in-the-tree-view.png?classes=shadow)
+![Icons in the Tree View]({{% asset "images/manual/administration-area/en/icons-in-the-tree-view.png" %}}?classes=shadow)
 
 ![Duplicate subpages](/de/icons/copychilds.svg?classes=icon) **Duplicate subpages:** duplicates a page including all subpages.
 
@@ -122,7 +122,7 @@ The clipboard is not a separate application that you can call and view anywhere.
 
 You can think of the clipboard as the clipboard on your computer, where you can copy `[Ctrl]+[c]`certain data to and paste them to `[Ctrl]+[v]`another place. In Contao, you can move content elements from one article to another.
 
-![Move content elements using the clipboard](/de/administration-area/images/en/move-records-with-the-clipboard.png?classes=shadow)
+![Move content elements using the clipboard]({{% asset "images/manual/administration-area/en/move-records-with-the-clipboard.png" %}}?classes=shadow)
 
 ## Restore deleted records {#deleted-records-recover}
 
@@ -130,4 +130,4 @@ Whenever you delete one or more records, they are not immediately removed from t
 
 You will find the "Recycle Bin" in the navigation area in the group System under the item Restore. There you will see a list of all deleted records, which you can sort by either the date of deletion or the origin of the record. You can undo a deletion by clicking on the corresponding navigation icon![Restore entry](/de/icons/undo.svg?classes=icon).
 
-![To undo a delete operation](/de/administration-area/images/en/restore-deleted-records.png?classes=shadow)
+![To undo a delete operation]({{% asset "images/manual/administration-area/en/restore-deleted-records.png" %}}?classes=shadow)

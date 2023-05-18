@@ -282,7 +282,7 @@ gefolgt von einem Weiterlesen-Link, angezeigt wird.
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du es direkt im Popup-Fenster nachholen, ohne die Eingabemaske zu verlassen.
 
-![Einem Beitrag ein Bild hinzufügen](/de/core-extensions/calendar/images/de/einem-beitrag-ein-bild-hinzufuegen.png?classes=shadow)
+![Einem Beitrag ein Bild hinzufügen]({{% asset "images/manual/core-extensions/calendar/de/einem-beitrag-ein-bild-hinzufuegen.png" %}}?classes=shadow)
 
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:

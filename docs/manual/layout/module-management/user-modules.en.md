@@ -303,7 +303,7 @@ cannot.
 
 **Editable fields:** Here you can define the editable fields.
 
-![Set editable fields](/de/layout/module-management/images/en/set-editable-fields.png?classes=shadow)
+![Set editable fields]({{% asset "images/manual/layout/module-management/en/set-editable-fields.png" %}}?classes=shadow)
 
 **Subscribable newsletters:** If you are using the Contao newsletter extension, you can define here which distribution 
 lists a member can subscribe to.
