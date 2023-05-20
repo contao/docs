@@ -15,7 +15,7 @@ your posts.
 
 Archives are used to group and/or categorize news articles. Each archive can refer to a specific language or topic.
 
-To create a new news archive click on New ![Create a new news archive](/de/icons/new.svg?classes=icon "Create a new news archive").
+To create a new news archive click on New ![Create a new news archive]({{% asset "icons/new.svg" %}}?classes=icon "Create a new news archive").
 
 
 ### Title and forwarding
@@ -123,8 +123,8 @@ The URL is:
 </rss>
 ```
 
-To create a new feed click on **RSS Feeds** ![Manage RSS feeds](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten") 
-and then on **New** ![Create a new feed](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen").
+To create a new feed click on **RSS Feeds** ![Manage RSS feeds]({{% asset "icons/rss.svg" %}}?classes=icon "RSS-Feeds verwalten") 
+and then on **New** ![Create a new feed]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Feed erstellen").
 
 
 ### Title and language
@@ -193,8 +193,8 @@ change the order.
 The news items consist of the settings for the items ("News List") and their contents ("News Reader").
 
 To create a new post, click on the desired archive 
-![Edit news archive](/de/icons/edit.svg?classes=icon "Edit news archive") and then on 
-![Create a new post](/de/icons/new.svg?classes=icon "Create a new post") **New**.
+![Edit news archive]({{% asset "icons/edit.svg" %}}?classes=icon "Edit news archive") and then on 
+![Create a new post]({{% asset "icons/new.svg" %}}?classes=icon "Create a new post") **New**.
 
 
 ### Title and Author
@@ -238,7 +238,7 @@ example, with the module "News list", followed by a link to the actual post.
 **source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you 
 can upload it directly in the pop-up window without leaving the the News section.
 
-![Add an image to a post](/de/core-extensions/news/images/en/add-an-image-to-a-post.png?classes=shadow)
+![Add an image to a post]({{% asset "images/manual/core-extensions/news/en/add-an-image-to-a-post.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the image size. You can choose between the following scaling modes:
 
@@ -261,8 +261,8 @@ can upload it directly in the pop-up window without leaving the the News section
 | Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
 
 **Image Alignment:** Here you set the alignment of the image. If it is inserted  
-![above](/de/icons/above.svg?classes=icon) **above**,![under](/de/icons/below.svg?classes=icon) **below**,
-![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or![right-justified](/de/icons/right.svg?classes=icon) 
+![above]({{% asset "icons/above.svg" %}}?classes=icon) **above**,![under]({{% asset "icons/below.svg" %}}?classes=icon) **below**,
+![left-justified]({{% asset "icons/left.svg" %}}?classes=icon) **left-aligned** or![right-justified]({{% asset "icons/right.svg" %}}?classes=icon) 
 **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
 
 **Image distance:** Here you define the distance between the image and the text. The order of the input fields is 
@@ -348,7 +348,7 @@ have the option to automatically activate posts on a certain date.
 ## Content for news posts {#content-for-news}
 
 After we have made the settings for the post, we can add content elements for the output in the "News reader", click on 
-the desired article ![Edit contribution](/de/icons/edit.svg?classes=icon "Beitrag bearbeiten") and then on 
-![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
+the desired article ![Edit contribution]({{% asset "icons/edit.svg" %}}?classes=icon "Beitrag bearbeiten") and then on 
+![Create a new content element]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Inhaltselement erstellen") **New**.
 
 All [content elements](/en/article-management/content-elements/) of Contao are available in the news items.

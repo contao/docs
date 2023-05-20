@@ -30,7 +30,7 @@ configuration and click the "Install" button.
 ![Installing Contao with Contao Manager]({{% asset "images/manual/installation/en/contao-manager-setup.png" %}}?classes=shadow)
 
 The installation can now take several minutes. Details about the installation process can be displayed by clicking the 
-following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+following icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
 ![Contao is installed]({{% asset "images/manual/installation/en/contao-manager-background-task.png" %}}?classes=shadow)
 

@@ -33,7 +33,7 @@ sowie die initiale Konfiguration aus und klickst auf die Schaltfläche »Install
 ![Contao per Contao Manager installieren]({{% asset "images/manual/installation/de/contao-per-contao-manager-installieren.png" %}}?classes=shadow)
 
 Die Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf 
-folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
+folgendes Symbol ![Konsolenausgabe anzeigen/verstecken]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon) angezeigt 
 werden.
 
 ![Contao wird installiert]({{% asset "images/manual/installation/de/contao-wird-installiert.png" %}}?classes=shadow)

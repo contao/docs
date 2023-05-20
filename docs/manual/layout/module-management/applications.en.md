@@ -23,7 +23,7 @@ With the module type "Form" a form can be added to a page. For information on cr
 The front end module "Listing" adds a list of records to the website that can be sorted, filtered and searched in the 
 front end. The basis for the listing is any table in the database, such as the member table `tl_member`.
 
-![Configuring the Listing Module](/de/layout/module-management/images/en/configuring-the-listing-module.png?classes=shadow)
+![Configuring the Listing Module]({{% asset "images/manual/layout/module-management/en/configuring-the-listing-module.png" %}}?classes=shadow)
 
 
 ### Module configuration

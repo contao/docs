@@ -106,7 +106,7 @@ The element generates the following HTML code:
 The content element "Downloads" adds several download links to the article. Clicking on a link opens the "Save file as 
 ..." dialog and you can save the file on your local computer.
 
-![The Downloads element in the frontend](/de/article-management/images/en/the-downloads-element-in-frontend.png?classes=shadow)
+![The Downloads element in the frontend]({{% asset "images/manual/article-management/en/the-downloads-element-in-frontend.png" %}}?classes=shadow)
 
 The special feature of Contao is that these download links also work with protected files that you cannot access 
 directly from your browser. This way, you can easily create a protected download area. For more information, see the 

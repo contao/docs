@@ -12,7 +12,7 @@ tags:
 
 The maintenance mode can be activated via the menu item System Maintenance. As soon as you log out of the backend and open your website in the frontend, it will look like this:
 
-![Contao maintenance mode](/de/guides/images/de/maintenance/wartungsmodus.jpg?classes=shadow)
+![Contao maintenance mode]({{% asset "images/manual/guides/de/maintenance/wartungsmodus.jpg" %}}?classes=shadow)
 
 In the core of Contao 4.9, the following files are responsible for the frontend output in maintenance mode:
 

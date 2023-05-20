@@ -15,7 +15,7 @@ den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 
 {{% children %}}
 
-![Den Zugriff auf ein Inhaltselement einschränken](/de/article-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png?classes=shadow)
+![Den Zugriff auf ein Inhaltselement einschränken]({{% asset "images/manual/layout/article-management/de/den-zugriff-auf-ein-modul-einschraenken.png" %}}?classes=shadow)
 
 | Info |
 | ---- | --- |

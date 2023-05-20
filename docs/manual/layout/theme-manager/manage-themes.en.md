@@ -35,16 +35,16 @@ your preferred organizational approach.
 
 The operation of the Theme Manager works just like most other back end modules, using navigation icons.
 
-![Navigation icons in the Theme Manager](/de/layout/theme-manager/images/en/navigation-icons-in-the-theme-manager.png?classes=shadow)
+![Navigation icons in the Theme Manager]({{% asset "images/manual/layout/theme-manager/en/navigation-icons-in-the-theme-manager.png" %}}?classes=shadow)
 
-- ![Edit Theme](/de/icons/edit.svg?classes=icon) Edit Theme
-- ![Delete Theme](/de/icons/delete.svg?classes=icon) Delete a theme
-- ![Show details of the theme](/de/icons/show.svg?classes=icon) Show details of the theme
-- ![Edit the stylesheets of the theme](/de/icons/css.svg?classes=icon) Edit the stylesheets of the theme
-- ![Editing the front end modules of the Theme](/de/icons/modules.svg?classes=icon) The front end modules of the theme editing
-- ![Edit the page layouts of the theme](/de/icons/layout.svg?classes=icon) The page layouts of the theme editing
-- ![Edit the image sizes of the theme](/de/icons/sizes.svg?classes=icon) Edit the image sizes of the theme
-- ![Export Theme](/de/icons/theme_export.svg?classes=icon) Export Theme
+- ![Edit Theme]({{% asset "icons/edit.svg" %}}?classes=icon) Edit Theme
+- ![Delete Theme]({{% asset "icons/delete.svg" %}}?classes=icon) Delete a theme
+- ![Show details of the theme]({{% asset "icons/show.svg" %}}?classes=icon) Show details of the theme
+- ![Edit the stylesheets of the theme]({{% asset "icons/css.svg" %}}?classes=icon) Edit the stylesheets of the theme
+- ![Editing the front end modules of the Theme]({{% asset "icons/modules.svg" %}}?classes=icon) The front end modules of the theme editing
+- ![Edit the page layouts of the theme]({{% asset "icons/layout.svg" %}}?classes=icon) The page layouts of the theme editing
+- ![Edit the image sizes of the theme]({{% asset "icons/sizes.svg" %}}?classes=icon) Edit the image sizes of the theme
+- ![Export Theme]({{% asset "icons/theme" %}}_export.svg?classes=icon) Export Theme
 
 **Theme title**: Here you enter the theme title.
 
@@ -86,7 +86,7 @@ process.
 Contao then performs a series of checks to detect possible incompatibilities between the theme and your Contao 
 installation.
 
-![The theme data is checked](/de/layout/theme-manager/images/en/the-theme-data-is-checked.png?classes=shadow)
+![The theme data is checked]({{% asset "images/manual/layout/theme-manager/en/the-theme-data-is-checked.png" %}}?classes=shadow)
 
 The review shall include in particular
 
@@ -113,7 +113,7 @@ For illustration purposes, the theme "[Contao Official Demo](https://packagist.o
 imported and the page layout "2 columns - \[ default \]" was assigned to the starting point of the website in the page 
 structure.
 
-![Contao Official Demo](/de/layout/theme-manager/images/en/contao-official-demo.png?classes=shadow)
+![Contao Official Demo]({{% asset "images/manual/layout/theme-manager/en/contao-official-demo.png" %}}?classes=shadow)
 
 
 ## Sources of supply for themes

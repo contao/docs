@@ -16,7 +16,7 @@ The three most common forms of listings, which are called views below, are the s
 
 These are records from a single table that are listed in a certain order, usually alphabetically, and the rows are grouped by their first letter.
 
-![The List View](/de/administration-area/images/en/the-list-view.png?classes=shadow)
+![The List View]({{% asset "images/manual/administration-area/en/the-list-view.png" %}}?classes=shadow)
 
 ### Parent View
 
@@ -30,19 +30,19 @@ In Contao, such parent-child relationships are very common, e.g.
 
 When you list the contents of a shopping cart, you only want to see the products of this shopping cart and not the products of the second one. Therefore, Contao shows you only the child elements of the selected parent element in the Parent View.
 
-![The Parent View](/de/administration-area/images/en/the-parent-view.png?classes=shadow)
+![The Parent View]({{% asset "images/manual/administration-area/en/the-parent-view.png" %}}?classes=shadow)
 
 ### Tree View
 
 These are data records that are hierarchically dependent on each other and are therefore displayed in a tree structure. Typically, this is the case with a file system that has directories and subdirectories, so the Contao file manager also uses this view. Hierarchical structures can also be displayed within a table, like the page structure of your website.
 
-![The Tree View](/de/administration-area/images/en/the-tree-view.png?classes=shadow)
+![The Tree View]({{% asset "images/manual/administration-area/en/the-tree-view.png" %}}?classes=shadow)
 
 ## Sort and filter records {#sort-and-filter-records}
 
 To keep track of tables with many records, Contao offers you several ways to sort and filter your listings. Most listings can be filtered so that you only see the records that you really need for a specific action.
 
-![Sort and filter records](/de/administration-area/images/en/sort-and-filter-records.png?classes=shadow)
+![Sort and filter records]({{% asset "images/manual/administration-area/en/sort-and-filter-records.png" %}}?classes=shadow)
 
 **Filtering:** Here you can set one or more filters to show only the members who are male and speak German.
 
@@ -56,9 +56,9 @@ All filters can be combined with each other. Active filters are highlighted in y
 
 By clicking on the following icons the filters can be applied or reset:
 
-![Apply filter](/de/icons/filter-apply.svg?classes=icon) **Apply filter:** set the filters and apply them afterwards.
+![Apply filter]({{% asset "icons/filter-apply.svg" %}}?classes=icon) **Apply filter:** set the filters and apply them afterwards.
 
-![Reset filter](/de/icons/filter-reset.svg?classes=icon) **Reset filter:** the filter selection reset.
+![Reset filter]({{% asset "icons/filter-reset.svg" %}}?classes=icon) **Reset filter:** the filter selection reset.
 
 ## The navigation icons
 
@@ -68,53 +68,53 @@ Surely you have noticed the colorful icons that appear in each view to the right
 
 The following navigation icons appear in almost all views. For reasons of clarity, they are not additionally provided with a text. However, if you position the pointer of your mouse over an icon, the corresponding description will be shown.
 
-![Edit](/de/icons/edit.svg?classes=icon) **Edit:** calls a specific record in edit mode.
+![Edit]({{% asset "icons/edit.svg" %}}?classes=icon) **Edit:** calls a specific record in edit mode.
 
-![Duplicate](/de/icons/copy.svg?classes=icon) **Duplicate:** creates a copy of an existing record.
+![Duplicate]({{% asset "icons/copy.svg" %}}?classes=icon) **Duplicate:** creates a copy of an existing record.
 
-![Delete](/de/icons/delete.svg?classes=icon) **Delete:** deletes a record [(this process can be revoked)](#deleted-records-recover).
+![Delete]({{% asset "icons/delete.svg" %}}?classes=icon) **Delete:** deletes a record [(this process can be revoked)](#deleted-records-recover).
 
-![Publishing/unpublishing](/de/icons/visible.svg?classes=icon) **Publish/unpublish:** show or hide in the frontend
+![Publishing/unpublishing]({{% asset "icons/visible.svg" %}}?classes=icon) **Publish/unpublish:** show or hide in the frontend
 
-![Info](/de/icons/show.svg?classes=icon) **Info:** shows information about a record.
+![Info]({{% asset "icons/show.svg" %}}?classes=icon) **Info:** shows information about a record.
 
 ### Icons in List View
 
 The List View can offer the following additional commands besides the basic commands.
 
-![Icons in List View](/de/administration-area/images/en/icons-in-the-list-view.png?classes=shadow)
+![Icons in List View]({{% asset "images/manual/administration-area/en/icons-in-the-list-view.png" %}}?classes=shadow)
 
-![Edit settings](/de/icons/header.svg?classes=icon) **Edit settings:** adjust the settings for the parent element.
+![Edit settings]({{% asset "icons/header.svg" %}}?classes=icon) **Edit settings:** adjust the settings for the parent element.
 
 ### Icons in the Parent View
 
-The Parent View offers two additional icons to determine the order of the data records. The sequence can also be changed by drag &amp; drop. Simply click on the Drag &amp; Drop icon![Move](/de/icons/drag.svg?classes=icon) and move to the new position.
+The Parent View offers two additional icons to determine the order of the data records. The sequence can also be changed by drag &amp; drop. Simply click on the Drag &amp; Drop icon![Move]({{% asset "icons/drag.svg" %}}?classes=icon) and move to the new position.
 
-![Icons in the Parent View](/de/administration-area/images/en/icons-in-the-parent-view.png?classes=shadow)
+![Icons in the Parent View]({{% asset "images/manual/administration-area/en/icons-in-the-parent-view.png" %}}?classes=shadow)
 
-![Move](/de/icons/cut.svg?classes=icon) **Move:** Moves a record to another position.
+![Move]({{% asset "icons/cut.svg" %}}?classes=icon) **Move:** Moves a record to another position.
 
-![New item](/de/icons/new.svg?classes=icon) **New Item:** creates a new record after the current record.
+![New item]({{% asset "icons/new.svg" %}}?classes=icon) **New Item:** creates a new record after the current record.
 
-![Insert](/de/icons/pasteafter.svg?classes=icon) **Insert:** inserts a record after the current record
+![Insert]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Insert:** inserts a record after the current record
 
-**![Move file or directory](/de/icons/drag.svg?classes=icon) Move:** Move a file or folder using drag and drop.
+**![Move file or directory]({{% asset "icons/drag.svg" %}}?classes=icon) Move:** Move a file or folder using drag and drop.
 
 ### Icons in the Tree View
 
 In the tree view, there are other icons that are necessary because of the hierarchical relationships between the records. For example, when moving or duplicating records, you need a way to specify whether they should be inserted after a record in the same level or below a record in a new level.
 
-![Icons in the Tree View](/de/administration-area/images/en/icons-in-the-tree-view.png?classes=shadow)
+![Icons in the Tree View]({{% asset "images/manual/administration-area/en/icons-in-the-tree-view.png" %}}?classes=shadow)
 
-![Duplicate subpages](/de/icons/copychilds.svg?classes=icon) **Duplicate subpages:** duplicates a page including all subpages.
+![Duplicate subpages]({{% asset "icons/copychilds.svg" %}}?classes=icon) **Duplicate subpages:** duplicates a page including all subpages.
 
-![Edit page](/de/icons/article.svg?classes=icon) **Edit page:** edit the page.
+![Edit page]({{% asset "icons/article.svg" %}}?classes=icon) **Edit page:** edit the page.
 
-![Insert behind it](/de/icons/pasteafter.svg?classes=icon) **Insert after:** inserts a page after the current page.
+![Insert behind it]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Insert after:** inserts a page after the current page.
 
-![Insert below](/de/icons/pasteinto.svg?classes=icon) **Insert Below:** inserts a page below the current page
+![Insert below]({{% asset "icons/pasteinto.svg" %}}?classes=icon) **Insert Below:** inserts a page below the current page
 
-![Edit article](/de/icons/article.svg?classes=icon) **Edit Article**: edit the article on the page.
+![Edit article]({{% asset "icons/article.svg" %}}?classes=icon) **Edit Article**: edit the article on the page.
 
 ## The clipboard
 
@@ -122,12 +122,12 @@ The clipboard is not a separate application that you can call and view anywhere.
 
 You can think of the clipboard as the clipboard on your computer, where you can copy `[Ctrl]+[c]`certain data to and paste them to `[Ctrl]+[v]`another place. In Contao, you can move content elements from one article to another.
 
-![Move content elements using the clipboard](/de/administration-area/images/en/move-records-with-the-clipboard.png?classes=shadow)
+![Move content elements using the clipboard]({{% asset "images/manual/administration-area/en/move-records-with-the-clipboard.png" %}}?classes=shadow)
 
 ## Restore deleted records {#deleted-records-recover}
 
 Whenever you delete one or more records, they are not immediately removed from the database, but moved to a virtual trashcan. You can retrieve the data from this recycle bin at any time and restore it to its original location.
 
-You will find the "Recycle Bin" in the navigation area in the group System under the item Restore. There you will see a list of all deleted records, which you can sort by either the date of deletion or the origin of the record. You can undo a deletion by clicking on the corresponding navigation icon![Restore entry](/de/icons/undo.svg?classes=icon).
+You will find the "Recycle Bin" in the navigation area in the group System under the item Restore. There you will see a list of all deleted records, which you can sort by either the date of deletion or the origin of the record. You can undo a deletion by clicking on the corresponding navigation icon![Restore entry]({{% asset "icons/undo.svg" %}}?classes=icon).
 
-![To undo a delete operation](/de/administration-area/images/en/restore-deleted-records.png?classes=shadow)
+![To undo a delete operation]({{% asset "images/manual/administration-area/en/restore-deleted-records.png" %}}?classes=shadow)

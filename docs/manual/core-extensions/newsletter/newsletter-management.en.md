@@ -13,7 +13,7 @@ multiple distribution lists/channels you can sort the newsletters by topic or la
 
 ## Channels
 
-To create a new channel click on ![Create a new channel](/de/icons/new.svg?classes=icon "Create a new 
+To create a new channel click on ![Create a new channel]({{% asset "icons/new.svg" %}}?classes=icon "Create a new 
 channel") **New**.
 
 ### Title and redirection
@@ -46,8 +46,8 @@ We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/setti
 
 Newsletters are always sorted according to their dispatch date.
 
-To create a new newsletter click on ![Edit channel](/de/icons/edit.svg?classes=icon "Edit Channel") and 
-then on New ![Create a new newsletter](/de/icons/new.svg?classes=icon "Create a new newsletter").
+To create a new newsletter click on ![Edit channel]({{% asset "icons/edit.svg" %}}?classes=icon "Edit Channel") and 
+then on New ![Create a new newsletter]({{% asset "icons/new.svg" %}}?classes=icon "Create a new newsletter").
 
 ### Subject and newsletter aliases
 
@@ -158,15 +158,15 @@ Usually, the recipients of a newsletter manage themselves using the correspondin
 intervention as administrator. Nevertheless, you still have the possibility to change recipients manually in the 
 back end. For data protection reasons, only the e-mail address and the activation status are saved.
 
-![Edit a recipient](/de/core-extensions/newsletter/images/en/activate_recipents.png?classes=shadow)
+![Edit a recipient]({{% asset "images/manual/core-extensions/newsletter/images/en/activate_recipents.png?classes=shadow" %}})
 
 According to the [double opt-in procedure](https://de.wikipedia.org/wiki/Opt-In), every subscriber receives an 
 e-mail with a confirmation link when subscribing, without which he cannot complete his subscription. This is 
 sufficient to comply with the provisions of §7 paragraph 2 numbers 2 and 3 of the Law against Unfair Competition (UWG).
 
 To add/edit a subscriber to the distribution list, click 
-on ![Edit subscribers of the distribution list](/de/icons/mgroup.svg?classes=icon "Edit channel subscribers") and then 
-on New ![Create a new subscriber](/de/icons/new.svg?classes=icon "Create a new subscriber") or ![Edit subscriber](/de/icons/edit.svg?classes=icon 
+on ![Edit subscribers of the distribution list]({{% asset "icons/mgroup.svg" %}}?classes=icon "Edit channel subscribers") and then 
+on New ![Create a new subscriber]({{% asset "icons/new.svg" %}}?classes=icon "Create a new subscriber") or ![Edit subscriber]({{% asset "icons/edit.svg" %}}?classes=icon 
 "Edit Subscriber").
 
 **Email address:** Enter the recipient's e-mail address here.
@@ -182,17 +182,17 @@ First export the existing recipients as CSV file. Most programs such as phpMyAdm
 
 Select the file for import on your computer.
 
-![Import newsletter recipients](/de/core-extensions/newsletter/images/en/csv_import.png?classes=shadow)
+![Import newsletter recipients]({{% asset "images/manual/core-extensions/newsletter/images/en/csv_import.png?classes=shadow" %}})
 
 Then start the import by clicking the button `CSV-Import`.
 
 ## Send newsletter
 
-You can start sending a newsletter by clicking on the corresponding navigation ![Send newsletter](/de/icons/send.svg?classes=icon "Send newsletter") symbol in the distribution list overview, which will take you to a preview page where 
+You can start sending a newsletter by clicking on the corresponding navigation ![Send newsletter]({{% asset "icons/send.svg" %}}?classes=icon "Send newsletter") symbol in the distribution list overview, which will take you to a preview page where 
 you can check the configuration and content of the newsletter again. It is also recommended that you make active use 
 of the button `Send preview`. You can change the recipient address in the field `Send preview to`.
 
-![Sending a newsletter](/de/core-extensions/newsletter/images/en/send_newsletter.png?classes=shadow)
+![Sending a newsletter]({{% asset "images/manual/core-extensions/newsletter/images/en/send_newsletter.png?classes=shadow" %}})
 
 ### Calculate server limits
 
@@ -226,4 +226,4 @@ is called NEWSLETTER_X, where the X stands for the ID of the respective newslett
 can be seen in the field `Show`. For example, if there were 120 mails, enter "120" to continue with the 121st 
 recipient (counting starts at 0).
 
-![Resume interrupted sending](/de/core-extensions/newsletter/images/en/system_log.png?classes=shadow)
+![Resume interrupted sending]({{% asset "images/manual/core-extensions/newsletter/images/en/system_log.png?classes=shadow" %}})

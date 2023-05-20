@@ -62,7 +62,7 @@ Zahnrad-Symbol und gebe die gewünschte Version ein. Durch einen Klick auf die S
 ![Aktualisierung für Minor-Release starten]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-starten.png" %}}?classes=shadow)
 
 Die Aktualisierung kann nun mehrere Minuten in Anspruch nehmen. Details zum Aktualisierungsprozess können durch Klick 
-auf folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt 
+auf folgendes Symbol ![Konsolenausgabe anzeigen/verstecken]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon) angezeigt 
 werden.
 
 ![Aktualisierung für Minor-Release abgeschloßen]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-abgeschlossen.png" %}}?classes=shadow)

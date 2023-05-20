@@ -19,10 +19,10 @@ never appear on your website unless it is linked to a page (show).
 
 The page structure is organized hierarchically. You can nest the pages and create as many subpages as you want. Contao will
 automatically create the corresponding navigation menus with all main pages and subpages in the front end. Use the gray
-icons with the ![Open area](/de/icons/folPlus.svg?classes=icon) plus or ![Close area](/de/icons/folMinus.svg?classes=icon) minus
+icons with the ![Open area]({{% asset "icons/fol" %}}Plus.svg?classes=icon) plus or ![Close area]({{% asset "icons/fol" %}}Minus.svg?classes=icon) minus
 sign to the left of the page names to expand or collapse sub pages.
 
-![Toggle subpages](/de/layout/site-structure/images/en/toggle-subpages.png?classes=shadow)
+![Toggle subpages]({{% asset "images/manual/layout/site-structure/en/toggle-subpages.png" %}}?classes=shadow)
 
 Thanks to the hierarchical page structure, it is possible to inherit properties of a parent page to its subpages.
 For your, this means that you only have to define a certain page layout or access permission once and these properties

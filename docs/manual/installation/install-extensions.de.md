@@ -76,7 +76,7 @@ Wenn du die Erweiterung »terminal42/contao-easy_themes« installieren möchtest
 
 Wechsle danach in den Reiter »Pakete« und klicke auf »Änderungen anwenden« um die Installation zu starten. Die 
 Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf 
-folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt werden.
+folgendes Symbol ![Konsolenausgabe anzeigen/verstecken]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon) angezeigt werden.
 
 ![Erweiterungen im Contao Manager installieren]({{% asset "images/manual/installation/de/erweiterungen-im-contao-manager-installieren.png" %}}?classes=shadow)
 

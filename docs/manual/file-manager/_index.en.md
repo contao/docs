@@ -27,7 +27,7 @@ You can create a new directory using the "New folder" button. The following opti
 
 {{< version-tag "4.13" >}} Nested folders can be created directly by entering e. g. "FolderA/FolderB".
 
-![Create nested folders](/de/file-manager/images/en/folder-name.gif?classes=shadow)
+![Create nested folders]({{% asset "images/manual/file-manager/en/folder-name.gif" %}}?classes=shadow)
 
 {{% notice note %}}
 If you select "Public", only the last folder will be marked as public.

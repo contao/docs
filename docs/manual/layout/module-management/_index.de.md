@@ -25,7 +25,7 @@ Die Modulverwaltung rufst du demzufolge über den Theme-Manager, wie im Abschni
 Genau wie bei den Inhaltselementen kannst du unter **Zugriffsschutz** auch den Zugriff auf ein Frontend-Modul auf bestimmte 
 Mitgliedergruppen beschränken.
 
-![Den Zugriff auf ein Modul einschränken](/de/layout/module-management/images/de/den-zugriff-auf-ein-modul-einschraenken.png?classes=shadow)
+![Den Zugriff auf ein Modul einschränken]({{% asset "images/manual/layout/module-management/de/den-zugriff-auf-ein-modul-einschraenken.png" %}}?classes=shadow)
 
 **Modul schützen:** Das Modul ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein Mitglied im 
 Frontend angemeldet hat.

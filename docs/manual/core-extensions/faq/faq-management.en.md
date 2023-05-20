@@ -12,7 +12,7 @@ The FAQ management is a separate module in the back end, which you can find in t
 
 Categories are used to group FAQs. Each category can refer to a specific language or topic.
 
-To create a new category click on New ![Create a new category](/de/icons/new.svg?classes=icon "Create a new category").
+To create a new category click on New ![Create a new category]({{% asset "icons/new.svg" %}}?classes=icon "Create a new category").
 
 ### Title and forwarding
 
@@ -59,9 +59,9 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 ## Questions
 
-This section explains how to create a question. You can determine the order of the questions within a category by dragging and dropping them with the corresponding navigation ![Move question](/de/icons/drag.svg?classes=icon "Move question") symbol.
+This section explains how to create a question. You can determine the order of the questions within a category by dragging and dropping them with the corresponding navigation ![Move question]({{% asset "icons/drag.svg" %}}?classes=icon "Move question") symbol.
 
-To create a new question, click on **New** ![Create a new question](/de/icons/new.svg?classes=icon "Create a new question").
+To create a new question, click on **New** ![Create a new question]({{% asset "icons/new.svg" %}}?classes=icon "Create a new question").
 
 ### Title and author
 
@@ -81,7 +81,7 @@ To create a new question, click on **New** ![Create a new question](/de/icons/ne
 
 **source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you can upload it directly in the pop-up window without leaving the input mask.
 
-![Add an image to an FAQ](/de/core-extensions/faq/images/en/add-an-image-to-an-faq.png?classes=shadow)
+![Add an image to an FAQ]({{% asset "images/manual/core-extensions/faq/en/add-an-image-to-an-faq.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
@@ -103,7 +103,7 @@ To create a new question, click on **New** ![Create a new question](/de/icons/ne
 | Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
 | Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
 
-**Image Alignment:** Here you set the alignment of the image. If it is inserted ![above](/de/icons/above.svg?classes=icon) **above**,![under](/de/icons/below.svg?classes=icon) **below**, ![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or ![right-justified](/de/icons/right.svg?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as shown by the icon).
+**Image Alignment:** Here you set the alignment of the image. If it is inserted ![above]({{% asset "icons/above.svg" %}}?classes=icon) **above**,![under]({{% asset "icons/below.svg" %}}?classes=icon) **below**, ![left-justified]({{% asset "icons/left.svg" %}}?classes=icon) **left-aligned** or ![right-justified]({{% asset "icons/right.svg" %}}?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as shown by the icon).
 
 **Image distance:** Here you define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
 

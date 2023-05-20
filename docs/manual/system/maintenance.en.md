@@ -34,7 +34,7 @@ In versions prior to Contao **4.9** this section is called **Rebuild search inde
 for broken links is not available there.
 {{% /notice %}}
 
-![Build the search index automatically](/de/system/images/en/rebuild-the-search-index.png?classes=shadow)
+![Build the search index automatically]({{% asset "images/manual/system/en/rebuild-the-search-index.png" %}}?classes=shadow)
 
 {{< version "4.9" >}}
 
@@ -104,7 +104,7 @@ In addition to the user-generated content, Contao stores various system data tha
 deleted records or previous versions. You can manually clean this data, for example to remove old thumbnails or to 
 update the XML sitemaps after a change in the page structure.
 
-![Purge data manually](/de/system/images/en/purge-data-manually.png?classes=shadow)
+![Purge data manually]({{% asset "images/manual/system/en/purge-data-manually.png" %}}?classes=shadow)
 
 
 [BackendSettings]: /en/system/settings/

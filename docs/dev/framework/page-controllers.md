@@ -79,7 +79,7 @@ $GLOBALS['TL_LANG']['PTY']['example'] = ['Example', 'Example page type.'];
 Now we are all set and can add this new page in the site structure of the Contao
 back end:
 
-![Custom page type in the Contao back end](/framework/images/custom-page-type-back-end.png?classes=shadow)
+![Custom page type in the Contao back end]({{% asset "images/dev/framework/custom-page-type-back-end.png" %}}?classes=shadow)
 
 The alias will be the "route" of this controller. When accessing
 `https://example.com/route/to/example/page/controller` in the front end, you should

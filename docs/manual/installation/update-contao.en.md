@@ -63,7 +63,7 @@ push the update.
 ![Start update for minor release]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-starten.png" %}}?classes=shadow)
 
 The update can now take several minutes. Details of the update process can be displayed by clicking the following 
-icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
 ![Update for minor release completed]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-abgeschlossen.png" %}}?classes=shadow)
 

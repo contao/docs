@@ -13,7 +13,7 @@ However, Contao provides a custom data collector that collects and processes
 specific data from Contao requests, and presents them in the profiler.
 Furthermore there is also a Web Developer Toolbar extension that looks like this.
 
-![](../images/profiler.png?classes=shadow)
+![]({{% asset "images/dev/framework/profiler.png" %}}?classes=shadow)
 
 The data collectors, profiler and web developer toolbar are usually only enabled
 in `dev` mode. As soon as the mode is changed to `prod`, those features are disabled

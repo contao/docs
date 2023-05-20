@@ -364,7 +364,7 @@ Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der B
 dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite 
 an sich bearbeiten und z. B. den Seitentitel ändern.
 
-![Zugriffsrechte zuweisen](/de/layout/site-structure/images/de/zugriffsrechte-zuweisen.png?classes=shadow)
+![Zugriffsrechte zuweisen]({{% asset "images/manual/layout/site-structure/de/zugriffsrechte-zuweisen.png" %}}?classes=shadow)
 
 **Zugriffsrechte zuweisen:** Hier kannst du einer Seite Zugriffsrechte zuweisen. Wenn du die Option nicht auswählst, 
 werden die Zugriffsrechte von einer übergeordneten Seite geerbt.

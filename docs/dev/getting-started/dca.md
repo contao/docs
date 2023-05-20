@@ -50,7 +50,7 @@ the developer environment though.
 
 Now the field will be available when editing a news entry:
 
-![](../images/tl_news.png?classes=shadow)
+![]({{% asset "images/dev/getting-started/tl_news.png" %}}?classes=shadow)
 
 The field can also be accessed directly in the `news_*` templates:
 

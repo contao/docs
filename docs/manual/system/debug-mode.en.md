@@ -73,7 +73,7 @@ and the encrypted password.
 In Contao **4.5** through **4.7** the username and password can also be set via 
 the Contao Manager by using the _Debug Mode_ option in the _Maintenance_ section.
 
-![Debug Mode](/de/system/images/en/contao-manager_c44-debug-mode_en.png?classes=shadow)
+![Debug Mode]({{% asset "images/manual/system/en/contao-manager_c44-debug-mode_en.png" %}}?classes=shadow)
 
 When clicking on _Activate_ the Contao Manager will ask you for the username and
 password for the `app_dev.php` entry point. This in turn will execute the aforementioned
@@ -129,7 +129,7 @@ The debug mode can also be enabled from within the Contao Manager by using the
 _Debug Mode_ option in the _Maintenance_ section.
 
 
-![Debug Mode](/de/system/images/en/contao-manager_c48-debug-mode_en.png?classes=shadow)
+![Debug Mode]({{% asset "images/manual/system/en/contao-manager_c48-debug-mode_en.png" %}}?classes=shadow)
 
 By clicking _Activate_ the Contao Manager will also set a cookie enabling the debug
 mode for the current user. This cookie will only be valid for the currently active domain.
@@ -144,7 +144,7 @@ of any request. When the debug mode is enabled, the toolbar will appear at the
 bottom of the browser window in a fixed position. It can be collapsed and opened
 by clicking onto the Symfony logo.
 
-![Symfony toolbar](/de/system/images/en/symfony-toolbar.png?classes=shadow)
+![Symfony toolbar]({{% asset "images/manual/system/en/symfony-toolbar.png" %}}?classes=shadow)
 
 Some of the information you can gather via the profiler are:
 

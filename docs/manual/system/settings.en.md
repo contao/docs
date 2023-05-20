@@ -150,7 +150,7 @@ Enter `nav` or `input` as the key and the desired value as the value - in our ex
 
 If you trust all backend users 100%, you can also enter `*` as the key and `*` as the value. This will allow all attributes for all elements.
 
-![Security settings](/de/system/images/en/security-settings-en.png?classes=shadow)
+![Security settings]({{% asset "images/manual/system/en/security-settings-en.png" %}}?classes=shadow)
 
 
 ### Files and images
