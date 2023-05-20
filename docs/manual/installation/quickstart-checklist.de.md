@@ -40,7 +40,7 @@ du eine Datei `contao-manager.phar`. Übertrage diese Datei in das Verzeichnis `
 
 {{% notice info %}}
 `.phar`-Dateien werden nicht von allen Hosting-Anbietern ausgeführt. Für beste Kompatibilität füge die
-Dateiendung `.php` <b>nach dem Upload</b> hinzu (benenne die Datei <b>auf dem Server</b> in `contao-manager.phar.php` um).
+Dateiendung `.php` **nach dem Upload** hinzu (benenne die Datei **auf dem Server** in `contao-manager.phar.php` um).
 {{% /notice %}}
 
 ### Den Contao Manager aufrufen
