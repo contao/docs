@@ -91,7 +91,19 @@ muss das [Contao-Installtool](../contao-installtool/) gestartet werden (Contao 4
 direkt im Contao Manager erfasst werden (Contao 5.x). 
 
 
-## Nach Datenbank aktualisieren ("wie komme ich zum Contao Anmelde-Bildschirm")
+## Ein Administratorkonto anlegen
 
-TODO
+Zuletzt musst du einen Administrator-Benutzer anlegen, mit dem du dich später im Contao-Backend anmelden kannst.
 
+![Ein Administratorkonto anlegen]({{% asset "images/manual/installation/de/ein-administratorkonto-anlegen.png" %}}?classes=shadow)
+
+**Benutzername:** Hier legst du den Benutzernamen des Administrators fest.
+
+**Name:** Hier gibst du den Vor- und Nachnamen des Administrators ein.
+
+**E-Mail-Adresse:** Hier gibst du die E-Mail-Adresse des Administrators ein.
+
+**Passwort:** Hier legst du das Passwort des Administrators fest und bestätigst es.
+
+Nachdem du den Administrator-Benutzer erstellt hast, ist die Installation von Contao abgeschlossen.  
+Der Link am rechten unteren Rand bringt dich zum Backend.
