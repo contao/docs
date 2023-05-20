@@ -1,16 +1,15 @@
 ---
 title: "Contao Installieren – Quickstart"
 description: "Die ersten Schritte zur Contao Installation mit dem Contao Manager."
-url: "installation/quickstart"
+url: "installation/quickstart-checklist"
 aliases:
-- /de/installation/quickstart/
+- /de/installation/quickstart-checklist/
 weight: 90
 hidden: true
 ---
 
-Wir gehen hier davon aus, daß du entweder die aktuellste Version oder die Long Term Support Version mit dem Contao Manager
+Wir gehen hier davon aus, daß du entweder die aktuellste Version oder die Long Term Support Version mit dem Contao Manager 
 installieren willst. Das ist der einfachste und für Einsteiger empfohlene Weg.
-
 
 ## Hosting Konfiguration
 
@@ -31,7 +30,9 @@ Contao benötigt für den Betrieb eine Datenbank
 anlegst. Die Zugangsdaten werden später benötigt.
 
 
-## Den Contao Manager installieren
+## Contao Manager 
+
+### Den Contao Manager installieren
 
 Der [Contao Manager](../../installation/contao-manager/) besteht aus einer einzelnen Datei, welche über 
 [contao.org](https://contao.org/de/download.html) heruntergeladen werden kann. Nach erfolgreichem Download erhältst 
@@ -42,12 +43,10 @@ du eine Datei `contao-manager.phar`. Übertrage diese Datei in das Verzeichnis `
 Dateiendung `.php` <b>nach dem Upload</b> hinzu (benenne die Datei <b>auf dem Server</b> in `contao-manager.phar.php` um).
 {{% /notice %}}
 
-## Contao Manager aufrufen
+### Den Contao Manager aufrufen
 
 Rufe anschließend mit deinem Browser die URL `www.example.com/contao-manager.phar.php` auf, wobei du `www.example.com`
 durch deine Domain ersetzt. Du solltest nun die Willkommensseite des Contao Managers sehen.
-
-![Willkommensseite des Contao Managers]({{% asset "images/manual/installation/de/willkommensseite-des-contao-managers.png" %}}?classes=shadow)
 
 ### Grundkonfiguration
 
@@ -60,8 +59,7 @@ du einen Benutzernamen und ein Passwort vergibst. Benutzername und Passwort sind
 Der Contao Manager benötigt den Pfad zum PHP-Binary und weitere Server-Informationen, um Hintergrund-Prozesse korrekt
 auszuführen. In der Regel werden diese Informationen automatisch erkannt.
 
-![Serverkonfiguration]({{% asset "images/manual/installation/de/serverkonfiguration.png" %}}?classes=shadow)
-
+Details zu diesem Schritt findest Du [hier](../contao-manager/#serverkonfiguration).
 
 ### Composer Resolver Cloud
 
@@ -75,13 +73,7 @@ Auflösung der Abhängigkeiten an einen Cloud-Dienst der [Contao Association](ht
 Nach der erfolgreichen Grundkonfiguration kann nun Contao installiert werden. Dazu wählst du die gewünschte Version
 sowie die initiale Konfiguration aus und klickst auf die Schaltfläche »Installieren«.
 
-![Contao per Contao Manager installieren]({{% asset "images/manual/installation/de/contao-per-contao-manager-installieren.png" %}}?classes=shadow)
-
-Die Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf
-folgendes Symbol ![Konsolenausgabe anzeigen/verstecken](/de/icons/konsolenausgabe.png?classes=icon) angezeigt
-werden.
-
-![Contao wird installiert]({{% asset "images/manual/installation/de/contao-wird-installiert.png" %}}?classes=shadow)
+Die Installation kann nun mehrere Minuten in Anspruch nehmen.
 
 
 ### Datenbanktabellen aktualisieren
@@ -93,17 +85,7 @@ direkt im Contao Manager erfasst werden (Contao 5.x).
 
 ## Ein Administratorkonto anlegen
 
-Zuletzt musst du einen Administrator-Benutzer anlegen, mit dem du dich später im Contao-Backend anmelden kannst.
-
-![Ein Administratorkonto anlegen]({{% asset "images/manual/installation/de/ein-administratorkonto-anlegen.png" %}}?classes=shadow)
-
-**Benutzername:** Hier legst du den Benutzernamen des Administrators fest.
-
-**Name:** Hier gibst du den Vor- und Nachnamen des Administrators ein.
-
-**E-Mail-Adresse:** Hier gibst du die E-Mail-Adresse des Administrators ein.
-
-**Passwort:** Hier legst du das Passwort des Administrators fest und bestätigst es.
+Zuletzt musst du [einen Administrator-Benutzer anlegen](../contao-installtool/#ein-administratorkonto-anlegen), mit dem du dich später im Contao-Backend anmelden kannst.
 
 Nachdem du den Administrator-Benutzer erstellt hast, ist die Installation von Contao abgeschlossen.  
 Der Link am rechten unteren Rand bringt dich zum Backend.
