@@ -110,7 +110,7 @@ instead of
 
 ### Short code `faq`
 
-This shortcode displays an expandable section of text with markup for faq schema in the JSON-LD format.
+This shortcode displays an expandable section of text. It also outputs JSON-LD meta data for FAQs.
 
 ```
 {{% faq "Your example title" %}}
