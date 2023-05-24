@@ -108,6 +108,17 @@ instead of
 ```
 
 
+### Short code faq
+
+This shortcode displays an expandable section of text with markup for faq schema in the JSON-LD format.
+
+```
+{{% faq "Your example title" %}}
+Lorem ipsum dolor sit amet ...
+{{% /faq %}}
+```
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 
