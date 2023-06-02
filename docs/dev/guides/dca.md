@@ -66,7 +66,7 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
             'keys' => [
                 'id' => 'primary',
             ],
-        ], 
+        ],
     ],
 ];
 ```
@@ -237,7 +237,7 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
             'keys' => [
                 'id' => 'primary',
             ],
-        ], 
+        ],
     ],
     'list' => [
         'sorting' => [
@@ -357,7 +357,7 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
                 $prefix = strtoupper(substr($result->name, 0, 2));
                 $GLOBALS['TL_DCA']['tl_parts']['fields']['number']['default'] = $prefix;
             },
-        ] 
+        ]
     ],
 ];
 ```
@@ -460,9 +460,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'inputType' => 'fileTree',
             'eval' => [
                 'tl_class' => 'clr',
-                'fieldType' => 'radio', 
-                'filesOnly' => true, 
-                'extensions' => \Contao\Config::get('validImageTypes'), 
+                'fieldType' => 'radio',
+                'filesOnly' => true,
+                'extensions' => \Contao\Config::get('validImageTypes'),
                 'mandatory' => true,
             ],
             'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false, 'fixed' => true]
@@ -521,7 +521,7 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
                 $prefix = strtoupper(substr($result->name, 0, 2));
                 $GLOBALS['TL_DCA']['tl_parts']['fields']['number']['default'] = $prefix;
             },
-        ] 
+        ]
     ],
     'list' => [
         'sorting' => [
@@ -582,9 +582,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'inputType' => 'fileTree',
             'eval' => [
                 'tl_class' => 'clr',
-                'fieldType' => 'radio', 
-                'filesOnly' => true, 
-                'extensions' => \Contao\Config::get('validImageTypes'), 
+                'fieldType' => 'radio',
+                'filesOnly' => true,
+                'extensions' => \Contao\Config::get('validImageTypes'),
                 'mandatory' => true,
             ],
             'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false, 'fixed' => true]
