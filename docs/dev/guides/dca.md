@@ -18,7 +18,7 @@ In our example we will assume that we are creating a web application for a
 wholesale dealer who is trading "industrial parts". Each part belongs to a vendor
 and can have detailed information like the name, part number, description and an
 image. Furthermore each vendor can have detailed information as well, like the
-the name of the vendor and their main address.
+name of the vendor and their main address.
 
 For the back end workflow we decide that the "parts" should be organised as child
 records for each vendor and that we will manage these records under the main menu
@@ -66,7 +66,7 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
             'keys' => [
                 'id' => 'primary',
             ],
-        ], 
+        ],
     ],
 ];
 ```
@@ -237,7 +237,7 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
             'keys' => [
                 'id' => 'primary',
             ],
-        ], 
+        ],
     ],
     'list' => [
         'sorting' => [
@@ -357,7 +357,7 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
                 $prefix = strtoupper(substr($result->name, 0, 2));
                 $GLOBALS['TL_DCA']['tl_parts']['fields']['number']['default'] = $prefix;
             },
-        ] 
+        ]
     ],
 ];
 ```
@@ -460,10 +460,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'inputType' => 'fileTree',
             'eval' => [
                 'tl_class' => 'clr',
-                'mandatory' => true, 
-                'fieldType' => 'radio', 
-                'filesOnly' => true, 
-                'extensions' => \Contao\Config::get('validImageTypes'), 
+                'fieldType' => 'radio',
+                'filesOnly' => true,
+                'extensions' => \Contao\Config::get('validImageTypes'),
                 'mandatory' => true,
             ],
             'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false, 'fixed' => true]
@@ -522,7 +521,7 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
                 $prefix = strtoupper(substr($result->name, 0, 2));
                 $GLOBALS['TL_DCA']['tl_parts']['fields']['number']['default'] = $prefix;
             },
-        ] 
+        ]
     ],
     'list' => [
         'sorting' => [
@@ -583,10 +582,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'inputType' => 'fileTree',
             'eval' => [
                 'tl_class' => 'clr',
-                'mandatory' => true, 
-                'fieldType' => 'radio', 
-                'filesOnly' => true, 
-                'extensions' => \Contao\Config::get('validImageTypes'), 
+                'fieldType' => 'radio',
+                'filesOnly' => true,
+                'extensions' => \Contao\Config::get('validImageTypes'),
                 'mandatory' => true,
             ],
             'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false, 'fixed' => true]
