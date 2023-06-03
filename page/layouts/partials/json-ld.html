@@ -1,0 +1,8 @@
+{{ $faqs := .Page.Scratch.Get "faqs" }}
+{{ printf "%#v" $faqs }}
+{{ range $question, $answer := $faqs }}
+    <p>
+        Question: {{ $question }}<br>
+        Answer: {{ $answer }}
+    </p>
+{{ end }}
