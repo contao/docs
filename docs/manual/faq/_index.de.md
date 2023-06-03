@@ -213,20 +213,3 @@ contao_manager:
     manager_path: dein-name.phar.php
 ```
 {{% /faq %}}
-
-{#
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "{{$expandMessage := T "Expand-title"}}{{ if .IsNamedParams }}{{.Get "default" | default $expandMessage}}{{else}}{{.Get 0 | default $expandMessage}}{{end}}",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "{{.Inner | safeHTML}}"
-        }
-      }]
-    }
-</script>
-#}
