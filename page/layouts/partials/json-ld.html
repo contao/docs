@@ -1,25 +1,19 @@
-{{ $faqs := .Page.Scratch.Get "faqs" }}
-{{ printf "%#v" $faqs }}
-{{ range $question, $answer := $faqs }}
-    <p>
-        Question: {{ $question }}<br>
-        Answer: {{ $answer }}
-    </p>
-{{ end }}
-
-{{/*
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [{
-        "@type": "Question",
-        "name": "{{$expandMessage := T "Expand-title"}}{{ if .IsNamedParams }}{{.Get "default" | default $expandMessage}}{{else}}{{.Get 0 | default $expandMessage}}{{end}}",
-        "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "{{.Inner | safeHTML}}"
+{{ with .Store.Get "faqs"  }}
+    {{ $lastIndex := sub (len .) 1 }}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+            {{ range $index, $faq := . }}    {
+                    "@type": "Question",
+                    "name": "{{ $faq.question }}",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "{{ $faq.answer }}"
+                    }
+                }{{ if ne $index $lastIndex }},{{ end }}
+            {{ end }}]
         }
-        }]
-    }
-</script>
-*/}}
+    </script>
+{{ end }}

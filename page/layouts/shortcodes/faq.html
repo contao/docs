@@ -12,11 +12,5 @@
             {{ .Inner | safeHTML }}
         </div>
     </div>
-
-    {{ $faq := dict
-        "question" $question
-        "answer" .Inner
-    }}
-
-    {{ .Page.Scratch.Add "faqs" $faq }}
+    {{ .Page.Store.Add "faqs" (slice (dict "question" $question "answer" .Inner)) }}
 {{ end }}
