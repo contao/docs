@@ -187,7 +187,7 @@ $GLOBALS['TL_DCA']['tl_content']['list']['sorting']['headerFields'][] = 'inColum
 {{% /expand %}}
 
 
-{{% expand "Enable searching for CSS ID/class entries in content elements." %}}
+{{% expand "Enable searching for CSS ID/class in content elements." %}}
 ```php
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['fields']['cssID']['search'] = true;
