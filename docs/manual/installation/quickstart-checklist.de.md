@@ -88,4 +88,5 @@ direkt im Contao Manager erfasst werden (Contao 5.x).
 Zuletzt musst du [einen Administrator-Benutzer anlegen](../contao-installtool/#ein-administratorkonto-anlegen), mit dem du dich später im Contao-Backend anmelden kannst.
 
 Nachdem du den Administrator-Benutzer erstellt hast, ist die Installation von Contao abgeschlossen.  
-Der Link am rechten unteren Rand bringt dich zum Backend.
+Der Link am rechten unteren Rand bringt dich zum Backend. Dort legst Du dann
+[die erste Startseite an](../../anleitungen/die-erste-startseite/).
