@@ -8,7 +8,7 @@ weight: 90
 hidden: true
 ---
 
-Wir gehen hier davon aus, daß du entweder die aktuellste Version oder die Long Term Support Version mit dem Contao Manager 
+Wir gehen hier davon aus, dass du entweder die aktuellste Version oder die Long Term Support Version mit dem Contao Manager 
 installieren willst. Das ist der einfachste und für Einsteiger empfohlene Weg.
 
 ## Hosting Konfiguration
