@@ -89,6 +89,10 @@ durchaus nutzen. Du kannst dir aber auch ein Zertifikat von Mumble erstellen las
 
 ![Mumble Zertifikat-Management]({{% asset "images/manual/guides/de/mumble/mumble-zertifikat-management.jpg" %}}?classes=shadow)
 
+Nach der Erstellung des Zertifikats solltest Du das Zertifikat exportieren und an einem geeigeneten Platz sichern.
+Solltest Du Mumble frisch installieren müssen - z. B. auf einem zweiten Rechner oder nach einem Crash - kann das
+gesicherte Zertifikat importiert werden.
+
 
 ## Mumble-Server auswählen
 
