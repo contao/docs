@@ -424,10 +424,32 @@ class SitemapListener
         $sitemap = $event->getDocument();
         $urlSet = $sitemap->childNodes[0];
 
-        $loc = $sitemap->createElement('loc', 'https://example.com/foobar');
+        $loc = $sitemap->createElement('loc');
+        $loc->appendChild($sitemap->createTextNode('https://example.com/foobar'));
+
         $urlEl = $sitemap->createElement('url');
         $urlEl->appendChild($loc);
         $urlSet->appendChild($urlEl);
+    }
+}
+```
+
+Since Contao **5.0** you can use the `addUrlToDefaultUrlSet` method of the event:
+
+```php
+// src/EventListener/SitemapListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\ContaoCoreEvents;
+use Contao\CoreBundle\Event\SitemapEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener(ContaoCoreEvents::SITEMAP)]
+class SitemapListener
+{
+    public function __invoke(SitemapEvent $event): void
+    {
+        $event->addUrlToDefaultUrlSet('https://example.com/foobar');
     }
 }
 ```
