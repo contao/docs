@@ -35,6 +35,11 @@
             button.click();
         }
     }
+
+    // open images in lightbox
+    document.querySelectorAll('a[href*=".png"], a[href*=".jpg"]').forEach((a) => {
+        a.setAttribute('data-featherlight', 'image');
+    });
 })();
 </script>
 {{ partial "json-ld" . }}
