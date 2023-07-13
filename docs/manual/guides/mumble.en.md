@@ -86,6 +86,9 @@ But you can also have a certificate created by Mumble.
 
 ![Mumble Certificate Management]({{% asset "images/manual/guides/en/mumble/mumble-certificate-management.jpg" %}}?classes=shadow)
 
+After creating the certificate, you should export the certificate and save it in a safe place.
+If you need to reinstall Mumble - e.g. on a second computer or after a crash - you can import the saved certificate.
+ 
 
 ## Select Mumble server
 
