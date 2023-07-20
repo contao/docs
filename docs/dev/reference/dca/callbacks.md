@@ -590,10 +590,10 @@ an additional command check via load_callback).
 * `string` HTML attributes
 * `string` Table
 * `array` IDs of all root records
-* `array` IDs of all child records
+* `array`/`null` IDs of all child records
 * `bool` Whether this is a circular reference of the tree view
-* `string` "Previous" label
-* `string` "Next" label
+* `string`/`null` "Previous" label
+* `string`/`null` "Next" label
 * `\Contao\DataContainer` Data Container object
 
 **return:** `string` HTML for the button
@@ -635,10 +635,10 @@ class ExampleListOperationListener
         string $attributes,
         string $table,
         array $rootRecordIds,
-        array $childRecordIds,
+        ?array $childRecordIds,
         bool $circularReference,
-        string $previous,
-        string $next,
+        ?string $previous,
+        ?string $next,
         DataContainer $dc
     ): string
     {
