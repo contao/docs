@@ -8,13 +8,13 @@ weight: 90
 hidden: true
 ---
 
-Wir gehen hier davon aus, dass du entweder die aktuellste Version oder die Long Term Support Version mit dem Contao Manager
+Wir gehen hier davon aus, dass du entweder die aktuellste Version oder die [Long Term Support Version](https://docs.contao.org/manual/de/installation/contao-aktualisieren/#long-term-support-versionen) mit dem Contao Manager
 installieren willst. Das ist der einfachste und für Einsteiger empfohlene Weg.
 
 
 ## Hosting Konfiguration
 
-Das Hosting konfigurierst Du über das Admin-Panel deines Hosting-Providers.
+Das Hosting konfigurierst du über das Admin-Panel deines Hosting-Providers.
 
 ### Wurzelverzeichnis (Document Root)
 
@@ -27,7 +27,7 @@ des Hosting-Providers auf diesen Unterordner.
 ### Datenbank
 
 Contao benötigt für den Betrieb eine Datenbank 
-([MySQL](../../installation/systemvoraussetzungen/#mysql-mindestanforderungen)), die Du idealerweise auch gleich 
+([MySQL](../../installation/systemvoraussetzungen/#mysql-mindestanforderungen)), die du idealerweise auch gleich 
 anlegst. Die Zugangsdaten werden später benötigt.
 
 
@@ -106,5 +106,5 @@ Zuletzt musst du einen Administrator-Benutzer anlegen, mit dem du dich später i
 **Passwort:** Hier legst du das Passwort des Administrators fest und bestätigst es.
 
 Nachdem du den Administrator-Benutzer erstellt hast, ist die Installation von Contao abgeschlossen.  
-Der Link am rechten unteren Rand bringt dich zum Backend. Dort legst Du dann 
+Der Link am rechten unteren Rand bringt dich zum Backend. Dort legst du dann 
 [die erste Startseite an](../../anleitungen/die-erste-startseite/).
