@@ -27,7 +27,7 @@ des Hosting-Providers auf diesen Unterordner.
 ### Datenbank
 
 Contao benötigt für den Betrieb eine Datenbank 
-([MySQL](../../installation/systemvoraussetzungen/#mysql-mindestanforderungen)), die Du idealerweise auch gleich 
+([MySQL](../../installation/systemvoraussetzungen/#mysql-mindestanforderungen)), die du idealerweise auch gleich 
 anlegst. Die Zugangsdaten werden später benötigt.
 
 
