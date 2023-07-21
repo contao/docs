@@ -59,7 +59,7 @@ du einen Benutzernamen und ein Passwort vergibst. Benutzername und Passwort sind
 Der Contao Manager benötigt den Pfad zum PHP-Binary und weitere Server-Informationen, um Hintergrund-Prozesse korrekt
 auszuführen. In der Regel werden diese Informationen automatisch erkannt.
 
-Details zu diesem Schritt findest Du [hier](../contao-manager/#serverkonfiguration).
+Details zu diesem Schritt findest du [hier](../contao-manager/#serverkonfiguration).
 
 ### Composer Resolver Cloud
 
