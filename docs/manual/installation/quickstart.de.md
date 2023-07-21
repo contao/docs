@@ -14,7 +14,7 @@ installieren willst. Das ist der einfachste und für Einsteiger empfohlene Weg.
 
 ## Hosting Konfiguration
 
-Das Hosting konfigurierst Du über das Admin-Panel deines Hosting-Providers.
+Das Hosting konfigurierst du über das Admin-Panel deines Hosting-Providers.
 
 ### Wurzelverzeichnis (Document Root)
 
