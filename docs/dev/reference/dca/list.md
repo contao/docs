@@ -140,7 +140,6 @@ $GLOBALS['TL_DCA']['tl_foobar']['config']['list']['operations'] = [
     'delete',
     'toggle',
     'show',
-    'toggle',
 ];
 ```
 {{% /notice %}}
