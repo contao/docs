@@ -61,7 +61,7 @@ The original template `@Contao/product.html.twig` that displays a (fictive) prod
 
 We want to enhance the product title with an image:
 ```twig
-{% extends "@Contao/foo.html.twig" %}
+{% extends "@Contao/product.html.twig" %}
 
 {% block title %}
     {{ parent() }}
