@@ -11,11 +11,11 @@ A simple select menu with hard-coded options whether to show the current page in
 
 A select menu enhanced with Chosen.js to allow the editor to limit the available options with a simple search box:
 
-![Select menu enhanced with Chosen.js](../images/select-chosen.png?classes=shadow)
+![Select menu enhanced with Chosen.js]({{% asset "images/dev/reference/widgets/select-chosen.png" %}}?classes=shadow)
 
 A grouped select menu enhanced with Chosen.js:
 
-![Grouped select menu enhanced with Chosen.js](../images/select-grouped-chosen.png?classes=shadow)
+![Grouped select menu enhanced with Chosen.js]({{% asset "images/dev/reference/widgets/select-grouped-chosen.png" %}}?classes=shadow)
 
 ## Options
 
