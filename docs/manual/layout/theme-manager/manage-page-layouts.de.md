@@ -34,10 +34,10 @@ anderem das Firmenlogo und in der Fußzeile Informationen zum Copyright und ein 
 
 **Zeilen**: Hier fügst du dem Layout eine Kopfzeile und Fusszeile hinzu.
 
-![Keine Kopf- und Fusszeile](/de/icons/1rw.svg?classes=icon "Keine Kopf- und Fusszeile")
-![Kopfzeile hinzufügen](/de/icons/2rwh.svg?classes=icon "Kopfzeile hinzufügen")
-![Fusszeile hinzufügen](/de/icons/2rwf.svg?classes=icon "Fusszeile hinzufügen")
-![Kopf- und Fusszeile hinzufügen](/de/icons/3rw.svg?classes=icon "Kopf- und Fusszeile hinzufügen")
+![Keine Kopf- und Fusszeile]({{% asset "icons/1rw.svg" %}}?classes=icon "Keine Kopf- und Fusszeile")
+![Kopfzeile hinzufügen]({{% asset "icons/2rwh.svg" %}}?classes=icon "Kopfzeile hinzufügen")
+![Fusszeile hinzufügen]({{% asset "icons/2rwf.svg" %}}?classes=icon "Fusszeile hinzufügen")
+![Kopf- und Fusszeile hinzufügen]({{% asset "icons/3rw.svg" %}}?classes=icon "Kopf- und Fusszeile hinzufügen")
 
 **Höhe der Kopfzeile**: Hier kannst du die Höhe der Kopfzeile festlegen.
 
@@ -51,10 +51,10 @@ vorgeben, die Hauptspalte passt sich jeweils automatisch an.
 
 **Spalten**: Hier wählst du die Anzahl der Spalten deines Seitenlayouts aus.
 
-![Keine Spalten](/de/icons/1cl.svg?classes=icon "Keine Spalten")
-![Linke Spalte hinzufügen](/de/icons/2cll.svg?classes=icon "Linke Spalte hinzufügen")
-![Rechte Spalte hinzufügen](/de/icons/2clr.svg?classes=icon "Rechte Spalte hinzufügen")
-![Linke und rechte Spalte hinzufügen](/de/icons/3cl.svg?classes=icon "Linke und rechte Spalte hinzufügen")
+![Keine Spalten]({{% asset "icons/1cl.svg" %}}?classes=icon "Keine Spalten")
+![Linke Spalte hinzufügen]({{% asset "icons/2cll.svg" %}}?classes=icon "Linke Spalte hinzufügen")
+![Rechte Spalte hinzufügen]({{% asset "icons/2clr.svg" %}}?classes=icon "Rechte Spalte hinzufügen")
+![Linke und rechte Spalte hinzufügen]({{% asset "icons/3cl.svg" %}}?classes=icon "Linke und rechte Spalte hinzufügen")
 
 **Breite der linken Spalte**: Hier legst du die Breite der linken Spalte fest.
 
