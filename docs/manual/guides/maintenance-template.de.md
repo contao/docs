@@ -89,6 +89,8 @@ WICHTIG: Alle Änderungen wirken sich sowohl beim Wartungstemplate als auch auf 
 
 Das machen wir in diesem Beispiel für alle Errortemplates. Für eine updatesichere Anpassung kopieren wir uns das Originaltemplate `vendor/contao/core-bundle/src/Resources/views/Error/layout.html.twig` nach `/templates/bundles/ContaoCoreBundle/Error/`
 
+{{< version-tag "5.1" >}} befindet sich das Originaltemplate unter `vendor/contao/core-bundle/templates/Error/layout.html.twig`
+
 Dort setzen wir unser eigenes Logo innerhalb des DIV's mit der Klasse `header-logo` ein. Du kannst dafür ein normales image-Tag verwenden oder wie im Originaltemplate ein Inline-SVG.
 
 Beispiel für ein angepasstes Logo:
