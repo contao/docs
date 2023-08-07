@@ -47,13 +47,13 @@ Navigationssymbolen.
 - ![Theme bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon) Theme bearbeiten
 - ![Theme löschen]({{% asset "icons/delete.svg" %}}?classes=icon) Theme löschen
 - ![Details des Theme anzeigen]({{% asset "icons/show.svg" %}}?classes=icon) Details des Theme anzeigen
-- ![Die Stylesheets des Theme bearbeiten]({{% asset "icons/css.svg" %}}?classes=icon) [Die Stylesheets des Theme bearbeiten](../../layout/theme-manager/stylesheets-verwalten/)
+- ![Die Stylesheets des Theme bearbeiten]({{% asset "icons/css.svg" %}}?classes=icon) [Die Stylesheets des Theme bearbeiten](../../theme-manager/stylesheets-verwalten/)
 - ![Die Frontend-Module des Theme bearbeiten]({{% asset "icons/modules.svg" %}}?classes=icon) Die Frontend-Module des Theme 
 bearbeiten
 - ![Die Seitenlayouts des Theme bearbeiten]({{% asset "icons/layout.svg" %}}?classes=icon) [Die Seitenlayouts des Theme 
-bearbeiten](../../layout/theme-manager/seitenlayouts-verwalten/)
+bearbeiten](../../theme-manager/seitenlayouts-verwalten/)
 - ![Die Bildgrößen des Theme bearbeiten]({{% asset "icons/sizes.svg" %}}?classes=icon) Die Bildgrößen des Theme bearbeiten
-- ![Theme exportieren]({{% asset "icons/export.svg" %}}?classes=icon) Theme exportieren
+- ![Theme exportieren]({{% asset "icons/theme_export.svg" %}}?classes=icon) Theme exportieren
 
 **Theme-Titel**: Hier gibst du den Theme-Titel ein.
 
