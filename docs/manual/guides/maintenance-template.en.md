@@ -88,6 +88,8 @@ IMPORTANT: All changes affect the maintenance template as well as all other erro
 
 In this example we do this for all error templates. For an update-safe adaptation we copy the original template `vendor/contao/core-bundle/src/Resources/views/Error/layout.html.twig` to `/templates/bundles/ContaoCoreBundle/Error/`.
 
+As of {{< version-tag "5.1" >}} the original template is located at `vendor/contao/core-bundle/templates/Error/layout.html.twig`
+
 There we put our own logo inside the DIV with the class `header-logo`. You can use a normal image tag for this or an inline SVG like in the original template.
 
 Example of a customized logo:
