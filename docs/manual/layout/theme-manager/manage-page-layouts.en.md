@@ -22,7 +22,10 @@ Each page layout can have a header and a footer. Usually, the header contains th
 
 **lines**: Here you add a header and footer to the layout.
 
-![No header and footer](/de/icons/1rw.svg?classes=icon "No header and footer")![Add header](/de/icons/2rwh.svg?classes=icon "Add header")![Add footer](/de/icons/2rwf.svg?classes=icon "Add footer")![Add header and footer](/de/icons/3rw.svg?classes=icon "Add header and footer")
+![No header and footer]({{% asset "icons/1rw.svg" %}}?classes=icon "No header and footer")
+![Add header]({{% asset "icons/2rwh.svg" %}}?classes=icon "Add header")
+![Add footer]({{% asset "icons/2rwf.svg" %}}?classes=icon "Add footer")
+![Add header and footer]({{% asset "icons/3rw.svg" %}}?classes=icon "Add header and footer")
 
 **Height of the header**: Here you can set the height of the header.
 
@@ -35,7 +38,10 @@ By default, up to three columns are available. You can specify the width of the 
 
 **Columns**: Here you select the number of columns in your page layout.
 
-![No columns](/de/icons/1cl.svg?classes=icon "No columns")![Add left column](/de/icons/2cll.svg?classes=icon "Add left column")![Add right column](/de/icons/2clr.svg?classes=icon "Add right column")![Add left and right column](/de/icons/3cl.svg?classes=icon "Add left and right column")
+![No columns]({{% asset "icons/1cl.svg" %}}?classes=icon "No columns")
+![Add left column]({{% asset "icons/2cll.svg" %}}?classes=icon "Add left column")
+![Add right column]({{% asset "icons/2clr.svg" %}}?classes=icon "Add right column")
+![Add left and right column]({{% asset "icons/3cl.svg" %}}?classes=icon "Add left and right column")
 
 **Width of the left column**: Here you define the width of the left column.
 
