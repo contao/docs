@@ -48,7 +48,7 @@ Navigationssymbolen.
 - ![Theme löschen]({{% asset "icons/delete.svg" %}}?classes=icon) Theme löschen
 - ![Details des Theme anzeigen]({{% asset "icons/show.svg" %}}?classes=icon) Details des Theme anzeigen
 - ![Die Stylesheets des Theme bearbeiten]({{% asset "icons/css.svg" %}}?classes=icon) [Die Stylesheets des Theme bearbeiten](../../theme-manager/stylesheets-verwalten/)
-- ![Die Frontend-Module des Theme bearbeiten]({{% asset "icons/modules.svg" %}}?classes=icon) Die Frontend-Module des Theme 
+- ![Die Frontend-Module des Theme bearbeiten]({{% asset "icons/modules.svg" %}}?classes=icon) [Die Frontend-Module des Theme](../../modulverwaltung/) 
 bearbeiten
 - ![Die Seitenlayouts des Theme bearbeiten]({{% asset "icons/layout.svg" %}}?classes=icon) [Die Seitenlayouts des Theme 
 bearbeiten](../../theme-manager/seitenlayouts-verwalten/)
