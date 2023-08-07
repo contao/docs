@@ -40,11 +40,11 @@ The operation of the Theme Manager works just like most other back end modules, 
 - ![Edit Theme]({{% asset "icons/edit.svg" %}}?classes=icon) Edit Theme
 - ![Delete Theme]({{% asset "icons/delete.svg" %}}?classes=icon) Delete a theme
 - ![Show details of the theme]({{% asset "icons/show.svg" %}}?classes=icon) Show details of the theme
-- ![Edit the stylesheets of the theme]({{% asset "icons/css.svg" %}}?classes=icon) Edit the stylesheets of the theme
-- ![Editing the front end modules of the Theme]({{% asset "icons/modules.svg" %}}?classes=icon) The front end modules of the theme editing
-- ![Edit the page layouts of the theme]({{% asset "icons/layout.svg" %}}?classes=icon) The page layouts of the theme editing
+- ![Edit the stylesheets of the theme]({{% asset "icons/css.svg" %}}?classes=icon) [Edit the stylesheets of the theme](../../theme-manager/manage-stylesheets/)
+- ![Editing the front end modules of the Theme]({{% asset "icons/modules.svg" %}}?classes=icon) [The front end modules of the theme editing](../../module-management/)
+- ![Edit the page layouts of the theme]({{% asset "icons/layout.svg" %}}?classes=icon) [The page layouts of the theme editing](../../theme-manager/manage-page-layouts/)
 - ![Edit the image sizes of the theme]({{% asset "icons/sizes.svg" %}}?classes=icon) Edit the image sizes of the theme
-- ![Export Theme]({{% asset "icons/theme" %}}_export.svg?classes=icon) Export Theme
+- ![Export Theme]({{% asset "icons/theme__export.svg" %}}?classes=icon) Export Theme
 
 **Theme title**: Here you enter the theme title.
 
