@@ -626,7 +626,7 @@ class ExampleListOperationListener
     )
     {}
 
-    public function onListCustomOperationCallback(
+    public function __invoke(
         array $row,
         ?string $href,
         string $label,
