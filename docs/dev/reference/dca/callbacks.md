@@ -626,7 +626,7 @@ class ExampleListOperationListener
     )
     {}
 
-    public function onButtonCallback(
+    public function __invoke(
         array $row,
         ?string $href,
         string $label,
