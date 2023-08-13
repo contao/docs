@@ -29,12 +29,10 @@ Using the `postLogout` hook has been deprecated and will no longer work in Conta
 // src/EventListener/PostLogoutListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\User;
 
-/**
- * @Hook("postLogout")
- */
+#[AsHook('postLogout')]
 class PostLogoutListener
 {
     public function __invoke(User $user): void

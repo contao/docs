@@ -65,11 +65,9 @@ If your function is not responsible for this insert tag, you **must** return
 // src/EventListener/ReplaceInsertTagsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("replaceInsertTags")
- */
+#[AsHook('replaceInsertTags')]
 class ReplaceInsertTagsListener
 {
     public function __invoke(

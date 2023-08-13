@@ -41,11 +41,9 @@ Return the original `$buffer` or override with your custom modification.
 // src/EventListener/OutputFrontendTemplateListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("outputFrontendTemplate")
- */
+#[AsHook('outputFrontendTemplate')]
 class OutputFrontendTemplateListener
 {
     public function __invoke(string $buffer, string $template): string

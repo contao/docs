@@ -46,11 +46,9 @@ service instead.
 // src/EventListener/GetLanguagesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getLanguages")
- */
+#[AsHook('getLanguages')]
 class GetLanguagesListener
 {
     public function __invoke(array &$compiledLanguages, array $languages, array $langsNative, bool $installedOnly): void

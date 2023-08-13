@@ -35,12 +35,10 @@ id as arguments and expects no return value.
 // src/EventListener/ExportThemeListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\ZipWriter;
 
-/**
- * @Hook("exportTheme")
- */
+#[AsHook('exportTheme')]
 class ExportThemeListener
 {
     public function __invoke(\DOMDocument $xml, ZipWriter $zipArchive, int $themeId): void

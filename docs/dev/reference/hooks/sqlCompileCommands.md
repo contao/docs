@@ -30,11 +30,9 @@ Return the array of changes that should be applied to the database.
 // src/EventListener/SqlCompileCommandsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("sqlCompileCommands")
- */
+#[AsHook('sqlCompileCommands')]
 class SqlCompileCommandsListener
 {
     public function __invoke(array $sql): array

@@ -37,12 +37,10 @@ The path to the process image or null to keep the default behaviour.
 // src/EventListener/ExecuteResizeListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Image;
 
-/**
- * @Hook("executeResize")
- */
+#[AsHook('executeResize')]
 class ExecuteResizeListener
 {
     public function __invoke(Image $image): ?string

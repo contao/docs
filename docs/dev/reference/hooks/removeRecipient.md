@@ -30,11 +30,9 @@ a return value.
 // src/EventListener/RemoveRecipientListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("removeRecipient")
- */
+#[AsHook('removeRecipient')]
 class RemoveRecipientListener
 {
     public function __invoke(string $email, array $channels): void

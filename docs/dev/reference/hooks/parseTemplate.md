@@ -27,12 +27,10 @@ The following example will provide an additional variable called `foobar` in any
 // src/EventListener/ParseTemplateListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Template;
 
-/**
- * @Hook("parseTemplate")
- */
+#[AsHook('parseTemplate')]
 class ParseTemplateListener
 {
     public function __invoke(Template $template): void
@@ -52,14 +50,12 @@ in member is a member of the given group ID (or IDs):
 namespace App\EventListener;
 
 use Contao\CoreBundle\Security\ContaoCorePermissions;
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\FrontendTemplate;
 use Contao\Template;
 use Symfony\Component\Security\Core\Security;
 
-/**
- * @Hook("parseTemplate")
- */
+#[AsHook('parseTemplate')]
 class ParseTemplateListener
 {
     private $security;

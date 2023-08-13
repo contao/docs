@@ -35,13 +35,11 @@ data to the template.
 // src/EventListener/CompileArticleListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 use Contao\FrontendTemplate;
 
-/**
- * @Hook("compileArticle")
- */
+#[AsHook('compileArticle')]
 class CompileArticleListener
 {
     public function __invoke(FrontendTemplate $template, array $data, Module $module): void

@@ -47,11 +47,9 @@ A string containing the (modified) bufffer content.
 namespace App\EventListener;
 
 use Contao\CoreBundle\Framework\ContaoFramework;
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("replaceDynamicScriptTags")
- */
+#[AsHook('replaceDynamicScriptTags')]
 class ReplaceDynamicScriptTagsListener
 {
     public function __invoke(string $buffer): string

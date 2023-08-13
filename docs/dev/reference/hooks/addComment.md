@@ -33,12 +33,10 @@ the record and the data array as arguments and does not expect a return value.
 // src/EventListener/AddCommentListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Comments;
 
-/**
- * @Hook("addComment")
- */
+#[AsHook('addComment')]
 class AddCommentListener
 {
     public function __invoke(int $commentId, array $commentData, Comments $comments): void

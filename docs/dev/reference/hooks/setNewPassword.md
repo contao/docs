@@ -35,12 +35,10 @@ expect a return value.
 // src/EventListener/SetNewPasswordListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 
-/**
- * @Hook("setNewPassword")
- */
+#[AsHook('setNewPassword')]
 class SetNewPasswordListener
 {
     public function __invoke($member, string $password, Module $module = null): void

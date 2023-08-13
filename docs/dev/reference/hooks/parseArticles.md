@@ -34,14 +34,12 @@ and does not expect a return value.
 // src/EventListener/ParseArticlesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\FrontendTemplate;
 use Contao\Module;
 use Contao\UserModel;
 
-/**
- * @Hook("parseArticles")
- */
+#[AsHook('parseArticles')]
 class ParseArticlesListener
 {
     public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void

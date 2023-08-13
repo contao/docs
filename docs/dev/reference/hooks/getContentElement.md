@@ -45,13 +45,11 @@ The (modified) content of the content element as a string.
 // src/EventListener/GetContentElementListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\ContentElement;
 use Contao\ContentModel;
 
-/**
- * @Hook("getContentElement")
- */
+#[AsHook('getContentElement')]
 class GetContentElementListener
 {
     public function __invoke(ContentModel $contentModel, string $buffer, $element): string

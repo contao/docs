@@ -45,12 +45,10 @@ for the breadcrumb item:
 // src/EventListener/GenerateBreadcrumbListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 
-/**
- * @Hook("generateBreadcrumb")
- */
+#[AsHook('generateBreadcrumb')]
 class GenerateBreadcrumbListener
 {
     public function __invoke(array $items, Module $module): array

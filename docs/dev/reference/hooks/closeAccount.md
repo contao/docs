@@ -37,12 +37,10 @@ The operation mode will either be `close_deactivate` or `close_delete`.
 // src/EventListener/CloseAccountListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 
-/**
- * @Hook("closeAccount")
- */
+#[AsHook('closeAccount')]
 class CloseAccountListener
 {
     public function __invoke(int $userId, string $mode, Module $module): void

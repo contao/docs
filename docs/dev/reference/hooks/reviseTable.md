@@ -50,11 +50,9 @@ Return `true` if the current page should be reloaded. Otherwise return `false` o
 // src/EventListener/ReviseTableListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("reviseTable")
- */
+#[AsHook('reviseTable')]
 class ReviseTableListener
 {
     public function __invoke(string $table, ?array $newRecords, ?string $parentTable, ?array $childTables): ?bool

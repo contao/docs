@@ -44,11 +44,9 @@ as value or null to keep the default behaviour.
 // src/EventListener/CreateDefinitionListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("createDefinition")
- */
+#[AsHook('createDefinition')]
 class CreateDefinitionListener
 {
     public function __invoke(string $key, string $value, string $definition, array &$dataSet): ?array

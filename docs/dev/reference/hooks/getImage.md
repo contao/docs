@@ -68,13 +68,11 @@ Otherwise return the boolean `false`.
 // src/EventListener/GetImageListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Image;
 use Contao\File;
 
-/**
- * @Hook("getImage")
- */
+#[AsHook('getImage')]
 class GetImageListener
 {
     public function __invoke(

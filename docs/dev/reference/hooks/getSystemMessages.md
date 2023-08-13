@@ -24,11 +24,9 @@ HTML markup) or an empty string.
 // src/EventListener/GetSystemMessagesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getSystemMessages")
- */
+#[AsHook('getSystemMessages')]
 class GetSystemMessagesListener
 {
     public function __invoke(): string
