@@ -701,12 +701,10 @@ Depending on where you make your templates available, you might need to curate t
 When using fragment controllers, please note, that the template name, that is auto-generated from the type and class
 name, will be different in Contao 4.13 and Contao 5! A `FooController` content element would use a `ce_foo` template in
 Contao 4.13 and a `content_element/foo` template in Contao 5. Make sure to **explicitly define** the template identifier
-in the controller annotation/service tag, in case you want to use the new version with Contao 4.13:
+in the controller attribute, annotation or service tag, in case you want to use the new version with Contao 4.13:
 
 ```php
-/**
- * @ContentElement(category="bar", template="content_element/foo") 
- */
+#[AsContentElement(category: 'bar', template: 'content_element/foo')]
 class FooController extends AbstractContentElement
 {
     …

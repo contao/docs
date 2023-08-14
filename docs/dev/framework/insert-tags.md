@@ -22,17 +22,15 @@ the specific tag you want to process yourself.
 
 The following example will provide an insert tag which transforms a string with
 the `str_rot13` function provided by PHP. It registers the [`replaceInsertTags`][ReplaceInsertTagsHook]
-hook using service annotation:
+hook using PHP attributes:
 
 ```php
 // src/EventListener/Rot13InsertTagListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("replaceInsertTags")
- */
+#[AsHook('replaceInsertTags')]
 class Rot13InsertTagListener
 {
     public const TAG = 'rot13';
