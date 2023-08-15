@@ -67,13 +67,11 @@ This example changes the `mandatory` attribute for the `tl_content.text` field f
 namespace App\EventListener\DataContainer;
 
 use Contao\ContentModel;
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-/**
- * @Callback(table="tl_content", target="config.onload")
- */
+#[AsCallback(table: 'tl_content', target: 'config.onload')]
 class MakeTextNotMandatoryCallback
 {
     private $requestStack;
@@ -184,13 +182,11 @@ is deleted in the back end.
 // src/EventListener/DataContainer/MemberDeleteCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Doctrine\DBAL\Connection;
 
-/**
- * @Callback(table="tl_member", target="config.ondelete")
- */
+#[AsCallback(table: 'tl_member', target: 'config.ondelete')]
 class MemberDeleteCallbackListener
 {
     private $db;
@@ -386,15 +382,14 @@ Allows for individual labels in header of "parent view".
 // src/EventListener/DataContainer/CalendarHeaderCallback.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Doctrine\DBAL\Connection;
 
 /**
  * Adds the total number of events to the header fields.
- *
- * @Callback(table="tl_calendar_events", target="list.sorting.header")
  */
+#[AsCallback(table: 'tl_calendar_events', target: 'list.sorting.header')]
 class CalendarHeaderCallback
 {
     /** @var Connection */
@@ -490,13 +485,11 @@ This example adds an icon to the label of the example entity as tree view.
 // src/EventListener/DataContainer/ExampleLabelCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Contao\Image;
 
-/**
- * @Callback(table="tl_example", target="list.label.label")
- */
+#[AsCallback(table: 'tl_example', target: 'list.label.label')]
 class ExampleLabelCallbackListener
 {
     public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, ?bool $isProtected = null): string
@@ -516,13 +509,11 @@ This example translates a dynamic status field for the label of the example enti
 // src/EventListener/DataContainer/ExampleLabelCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * @Callback(table="tl_example", target="list.label.label")
- */
+#[AsCallback(table: 'tl_example', target: 'list.label.label')]
 class ExampleLabelCallbackListener
 {
     private TranslatorInterface $translator;
@@ -766,12 +757,10 @@ then and the error message will be shown in the form.
 // src/EventListener/DataContainer/ContentTextSaveCallback.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-/**
- * @Callback(table="tl_content", target="fields.text.save")
- */
+#[AsCallback(table: 'tl_content', target: 'fields.text.save')]
 class ContentTextSaveCallback
 {
     public function __invoke($value, DataContainer $dc)
@@ -835,12 +824,10 @@ namespace App\EventListener\DataContainer;
 use App\Model\ExampleCategoryModel;
 use App\Model\ExampleModel;
 use Contao\Config;
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\PageModel;
 
-/**
- * @Callback(table="tl_example", target="fields.serpPreview.eval.url")
- */
+#[AsCallback(table: 'tl_example', target: 'fields.serpPreview.eval.url')]
 class ExampleSerpPreviewUrlCallbackListener
 {
     public function __invoke(ExampleModel $model): string
@@ -887,13 +874,11 @@ namespace App\EventListener\DataContainer;
 use App\Model\ExampleCategoryModel;
 use App\Model\ExampleModel;
 use Contao\Controller;
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\LayoutModel;
 use Contao\PageModel;
 
-/**
- * @Callback(table="tl_example", target="fields.serpPreview.eval.title_tag")
- */
+#[AsCallback(table: 'tl_example', target: 'fields.serpPreview.eval.title_tag')]
 class ExampleSerpPreviewTitleTagCallbackListener
 {
     public function __invoke(ExampleModel $model): string
@@ -956,12 +941,10 @@ of the `tl_example` Data Container.
 // src/EventListener/DataContainer/EditButtonsCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-/**
- * @Callback(table="tl_example", target="edit.buttons")
- */
+#[AsCallback(table: 'tl_example', target: 'edit.buttons')]
 class EditButtonsCallbackListener
 {
     public function __invoke(array $buttons, DataContainer $dc): array
@@ -1000,12 +983,10 @@ of the `tl_example` Data Container.
 // src/EventListener/DataContainer/SelectButtonsCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-/**
- * @Callback(table="tl_example", target="select.buttons")
- */
+#[AsCallback(table: 'tl_example', target: 'select.buttons')]
 class SelectButtonsCallbackListener
 {
     public function __invoke(array $buttons, DataContainer $dc): array

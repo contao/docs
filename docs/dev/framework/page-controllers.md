@@ -35,6 +35,10 @@ contao:
 As with content elements, front end modules, hooks and DCA callbacks, Page controllers
 can be registered via attributes, annotations or YAML. The following shows the most basic example:
 
+{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< version-tag "4.13" >}}
+
+{{% tab name="Attribute" %}}
 ```php
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
@@ -51,11 +55,54 @@ class ExamplePageController
     }
 }
 ```
+{{% /tab %}}
 
-The same can be achieved without annotations by tagging the respective service with 
-`contao.page`.
+{{% tab name="Annotation" %}}
+```php
+// src/Controller/Page/ExamplePageController.php
+namespace App\Controller\Page;
 
-Without any parameters, the type of the page is inferred from the class name. In
+use Contao\CoreBundle\ServiceAnnotation\Page;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @Page
+ */
+class ExamplePageController
+{
+    public function __invoke(): Response
+    {
+        return new Response('Hello World!');
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="YAML" %}}
+```yaml
+# config/services.yaml
+services:
+    App\Controller\Page\ExamplePageController:
+        tags: [contao.page]
+```
+```php
+// src/Controller/Page/ExamplePageController.php
+namespace App\Controller\Page;
+
+use Symfony\Component\HttpFoundation\Response;
+
+class ExamplePageController
+{
+    public function __invoke(): Response
+    {
+        return new Response('Hello World!');
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+Without any additional parameters, the type of the page is inferred from the class name. In
 this case the type of the page will be `example`, since suffixes like `Page` and
 `Controller` (or both together) are automatically ignored.
 
@@ -100,7 +147,6 @@ for these possibilities.
 There are however a few differences and additional options.
 
 {{< tabs groupId="attribute-annotation-yaml" >}}
-
 {{< version-tag "4.13" >}}
 
 {{% tab name="Attribute" %}}

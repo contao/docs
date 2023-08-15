@@ -75,9 +75,7 @@ use Contao\CoreBundle\Slug\Slug;
 use Contao\Form;
 use Doctrine\DBAL\Connection;
 
-/**
- * @Hook("prepareFormData")
- */
+#[AsHook('prepareFormData')]
 class PrepareFormDataListener
 {
     // Change these variables for your form, calendar and author

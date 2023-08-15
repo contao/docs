@@ -38,12 +38,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment as TwigEnvironment;
 
-/**
- * @Route("/contao/my-backend-route",
- *     name=BackendController::class,
- *     defaults={"_scope": "backend"}
- * )
- */
+#[Route('/contao/my-backend-route', name: BackendController::class, defaults: ['_scope' => 'backend'])]
 class BackendController
 {
     private $twig;
