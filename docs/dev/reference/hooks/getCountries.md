@@ -35,11 +35,9 @@ service instead.
 // src/EventListener/GetCountriesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getCountries")
- */
+#[AsHook('getCountries')]
 class GetCountriesListener
 {
     public function __invoke(array &$translatedCountries, array $allCountries): void

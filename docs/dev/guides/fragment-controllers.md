@@ -86,14 +86,12 @@ using it as a controller in Contao 4!
 // src/Controller/FrontendModule/AppExampleController.php
 namespace App\Controller\FrontendModule;
 
-use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
 use Contao\ModuleModel;
 use Contao\ModuleNewsList;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @FrontendModule(category="news")
- */
+#[AsFrontendModule(category: 'news')]
 class AppExampleController extends ModuleNewsList
 {
     public function __construct() {}
@@ -116,12 +114,10 @@ namespace App\Controller\ContentElement;
 
 use Contao\ContentGallery;
 use Contao\ContentModel;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="media")
- */
+#[AsContentElement(category: 'media')]
 class AppExampleController extends ContentGallery
 {
     public function __construct() {}

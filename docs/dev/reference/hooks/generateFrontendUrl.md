@@ -43,11 +43,9 @@ A string containing the new (or previous) URL.
 // src/EventListener/GenerateFrontendUrlListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("generateFrontendUrl")
- */
+#[AsHook('generateFrontendUrl')]
 class GenerateFrontendUrlListener
 {
     public function __invoke(array $page, string $params, string $url): string

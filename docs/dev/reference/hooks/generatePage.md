@@ -34,14 +34,12 @@ and does not expect a return value.
 // src/EventListener/GeneratePageListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\PageRegular;
 use Contao\LayoutModel;
 use Contao\PageModel;
 
-/**
- * @Hook("generatePage")
- */
+#[AsHook('generatePage')]
 class GeneratePageListener
 {
     public function __invoke(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void

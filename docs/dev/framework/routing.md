@@ -86,9 +86,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/example", name=ExampleController::class)
- */
+#[Route('/example', name: ExampleController::class)]
 class ExampleController
 {
     public function __invoke(Request $request): Response
@@ -151,14 +149,13 @@ the controller's service needs to be set to `public` or be tagged with the
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
-/**
- * @Route("/example", name=ExampleController::class)
- * @ServiceTag("controller.service_arguments")
- */
+#[Route('/example', name: ExampleController::class)]
+#[AsController]
 class ExampleController
 {
     private $security;
@@ -229,9 +226,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/example", name=ExampleController::class, defaults={"_scope": "frontend"})
- */
+#[Route('/example', name: ExampleController::class, defaults: ['_scope' => 'frontend']})]
 class ExampleController
 {
     public function __invoke(): Response
@@ -260,9 +255,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/example", name=ExampleController::class, defaults={"_token_check": true})
- */
+#[Route('/example', name: ExampleController::class, defaults: ['_token_check' => true])]
 class ExampleController
 {
     public function __invoke(): Response
@@ -288,9 +281,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/example", name=ExampleController::class, defaults={"_bypass_maintenance": true})
- */
+#[Route('/example', name: ExampleController::class, defaults: ['_bypass_maintenance' => true])]
 class ExampleController
 {
     public function __invoke(): Response

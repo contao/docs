@@ -38,12 +38,10 @@ that the calendar module still displays pagination links to the desired months.
 // src/EventListener/FindCalendarBoundariesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 
-/**
- * @Hook("findCalendarBoundaries")
- */
+#[AsHook('findCalendarBoundaries')]
 class FindCalendarBoundariesListener
 {
     public function __invoke(int &$dateFrom, int &$dateTo, int &$repeatUntil, Module $module): array

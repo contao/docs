@@ -30,12 +30,10 @@ to the `\Contao\PageModel` instance.
 // src/EventListener/LoadPageDetailsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\PageModel;
 
-/**
- * @Hook("loadPageDetails")
- */
+#[AsHook('loadPageDetails')]
 class LoadPageDetailsListener
 {
     public function __invoke(array $parentModels, PageModel $page): void

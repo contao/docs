@@ -38,11 +38,9 @@ Return `$cookie` or a custom object with all properties.
 // src/EventListener/SetCookieListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("setCookie")
- */
+#[AsHook('setCookie')]
 class SetCookieListener
 {
     public function __invoke($cookie)

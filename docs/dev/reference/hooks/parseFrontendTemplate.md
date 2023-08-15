@@ -40,12 +40,10 @@ modification.
 // src/EventListener/ParseFrontendTemplateListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\FrontendTemplate;
 
-/**
- * @Hook("parseFrontendTemplate")
- */
+#[AsHook('parseFrontendTemplate')]
 class ParseFrontendTemplateListener
 {
     public function __invoke(string $buffer, string $templateName, FrontendTemplate $template): string

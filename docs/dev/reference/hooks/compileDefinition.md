@@ -44,11 +44,9 @@ definition should be used.
 // src/EventListener/CompileDefinitionListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("compileDefinition")
- */
+#[AsHook('compileDefinition')]
 class CompileDefinitionListener
 {
     public function __invoke(array $row, bool $writeToFile, array $vars, array $parent): string

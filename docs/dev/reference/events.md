@@ -35,11 +35,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\MenuEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::BACKEND_MENU_BUILD)
- */
+#[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD)]
 class BackendMenuBuildListener
 {
     public function __invoke(MenuEvent $event): void
@@ -92,11 +90,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\GenerateSymlinksEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::GENERATE_SYMLINKS)
- */
+#[AsEventListener(ContaoCoreEvents::GENERATE_SYMLINKS)]
 class GenerateSymlinksListener
 {
     public function __invoke(GenerateSymlinksEvent $event): void
@@ -130,11 +126,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\ImageSizesEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::IMAGE_SIZES_ALL)
- */
+#[AsEventListener(ContaoCoreEvents::IMAGE_SIZES_ALL)]
 class ImageSizesAllListener
 {
     public function __invoke(ImageSizesEvent $event): void
@@ -166,11 +160,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\ImageSizesEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::IMAGE_SIZES_USER)
- */
+#[AsEventListener(ContaoCoreEvents::IMAGE_SIZES_USER)]
 class ImageSizesUserListener
 {
     public function __invoke(ImageSizesEvent $event): void
@@ -202,11 +194,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\PreviewUrlCreateEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::PREVIEW_URL_CREATE)
- */
+#[AsEventListener(ContaoCoreEvents::PREVIEW_URL_CREATE)]
 class PreviewUrlCreateListener
 {
     public function __invoke(PreviewUrlCreateEvent $event): void
@@ -239,11 +229,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\PreviewUrlConvertEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::PREVIEW_URL_CONVERT)
- */
+#[AsEventListener(ContaoCoreEvents::PREVIEW_URL_CONVERT)]
 class PreviewUrlConvertListener
 {
     public function __invoke(PreviewUrlConvertEvent $event): void
@@ -279,16 +267,14 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\RobotsTxtEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
 use webignition\RobotsTxt\Directive\Directive;
 use webignition\RobotsTxt\Directive\UserAgentDirective;
 use webignition\RobotsTxt\Inspector\Inspector;
 use webignition\RobotsTxt\Record\Record;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::ROBOTS_TXT)
- */
+#[AsEventListener(ContaoCoreEvents::ROBOTS_TXT)]
 class RobotsTxtListener
 {
     public function __invoke(RobotsTxtEvent $event): void
@@ -339,9 +325,7 @@ use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\SlugValidCharactersEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::SLUG_VALID_CHARACTERS)
- */
+#[AsEventListener(ContaoCoreEvents::SLUG_VALID_CHARACTERS)]
 class SlugValidCharactersListener
 {
     public function __invoke(SlugValidCharactersEvent $event): void
@@ -374,11 +358,9 @@ to add or remove options.
 namespace App\EventListener;
 
 use Contao\CoreBundle\Event\FilterPageTypeEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener")
- */
+#[AsEventListener]
 class FilterPageTypeListener
 {
     public function __invoke(FilterPageTypeEvent $event): void
@@ -412,11 +394,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\SitemapEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::SITEMAP)
- */
+#[AsEventListener(ContaoCoreEvents::SITEMAP)]
 class SitemapListener
 {
     public function __invoke(SitemapEvent $event): void
@@ -480,11 +460,9 @@ a newsletter to real recipients.
 namespace App\EventListener;
 
 use Contao\NewsletterBundle\Event\SendNewsletterEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener")
- */
+#[AsEventListener]
 class SendNewsletterListener
 {
     public function __invoke(SendNewsletterEvent $event): void

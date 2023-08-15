@@ -77,13 +77,12 @@ and want to style its appearance in the back end. In that case you can also use
 the `onload` [DCA callback][DcaCallbacks] for the specific DCA.
 
 ```php
+// src/EventListener/DataContainer/ContentOnLoadCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 
-/**
- * @Callback(target="config.onload", table="tl_content")
- */
+#[AsCallback(target: 'config.onload', table: 'tl_content')]
 class ContentOnLoadCallbackListener
 {
     public function __invoke(): void

@@ -35,11 +35,9 @@ Return the processed `$label` string.
 // src/EventListener/ColorizeLogEntriesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("colorizeLogEntries")
- */
+#[AsHook('colorizeLogEntries')]
 class ColorizeLogEntriesListener
 {
     public function __invoke(array $row, string $label): string

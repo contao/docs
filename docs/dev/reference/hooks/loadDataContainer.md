@@ -25,11 +25,9 @@ the file name as argument and does not expect a return value.
 // src/EventListener/LoadDataContainerListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("loadDataContainer")
- */
+#[AsHook('loadDataContainer')]
 class LoadDataContainerListener
 {
     public function __invoke(string $table): void

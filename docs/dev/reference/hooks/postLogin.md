@@ -32,12 +32,10 @@ event instead for example.
 // src/EventListener/PostLoginListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\User;
 
-/**
- * @Hook("postLogin")
- */
+#[AsHook('postLogin')]
 class PostLoginListener
 {
     public function __invoke(User $user): void

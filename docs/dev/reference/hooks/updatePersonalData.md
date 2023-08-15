@@ -37,13 +37,11 @@ updated when this hook is triggered.
 // src/EventListener/UpdatePersonalDataListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 use Contao\FrontendUser;
 
-/**
- * @Hook("updatePersonalData")
- */
+#[AsHook('updatePersonalData')]
 class UpdatePersonalDataListener
 {
     public function __invoke(FrontendUser $member, array $data, Module $module): void

@@ -51,21 +51,17 @@ be accessed by its class name or in case it implements interfaces, by their resp
 Setting and accessing the current `ResponseContext` is simplified by the `ResponseContextAccessor`:
 
 ```php
-<?php
-
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
 
-use Contao\CoreBundle\ServiceAnnotation\Page;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
 use Contao\PageModel;
 use Contao\CoreBundle\Routing\ResponseContext\HtmlHeadBag\HtmlHeadBag;
 use Contao\CoreBundle\Routing\ResponseContext\ResponseContext;
 use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @Page
- */
+#[AsPage]
 class ExamplePageController
 {
     private ResponseContextAccessor $responseContextAccessor;

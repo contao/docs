@@ -280,14 +280,12 @@ class ChangeFacebookMessageListener
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\News;
 use Contao\NewsArchiveModel;
 use Contao\NewsModel;
 
-/**
- * @Hook("changeFacebookMessage")
- */
+#[AsHook('changeFacebookMessage')]
 class ChangeFacebookMessageListener
 {
     public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string

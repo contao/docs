@@ -52,14 +52,12 @@ use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\File\Metadata;
 use Contao\CoreBundle\Filesystem\VirtualFilesystemInterface;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="files")
- */
+#[AsContentElement(category: 'files')]
 class FilesListController extends AbstractContentElementController
 {
     private VirtualFilesystemInterface $filesStorage;

@@ -46,13 +46,11 @@ your own widget instead.
 // src/EventListener/LoadFormFieldListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 use Contao\Widget;
 
-/**
- * @Hook("loadFormField")
- */
+#[AsHook('loadFormField')]
 class LoadFormFieldListener
 {
     public function __invoke(Widget $widget, string $formId, array $formData, Form $form): Widget

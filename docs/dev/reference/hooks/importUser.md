@@ -45,11 +45,9 @@ you added the user to the respective table, or `false` if not.
 // src/EventListener/ImportUserListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("importUser")
- */
+#[AsHook('importUser')]
 class ImportUserListener
 {
     public function __invoke(string $username, string $password, string $table): bool
