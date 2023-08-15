@@ -124,7 +124,7 @@ As mentioned previously a content element is registered by registering a control
 
 Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
 
-{{< tabs groupId="registering-fragments" >}}
+{{< tabs groupId="attribute-annotation-yaml" >}}
 
 {{% tab name="Attribute" %}}
 {{< version-tag "4.13" >}}

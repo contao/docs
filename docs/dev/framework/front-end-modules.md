@@ -140,7 +140,7 @@ As mentioned previously a front end module is registered by registering a contro
 
 Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
 
-{{< tabs groupId="registering-fragments" >}}
+{{< tabs groupId="attribute-annotation-yaml" >}}
 
 {{% tab name="Attribute" %}}
 {{< version-tag "4.13" >}}

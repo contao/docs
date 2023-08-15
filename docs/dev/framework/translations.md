@@ -231,9 +231,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * @Route("/app/test", name=ExampleController::class)
- */
+#[Route('/app/test', name: ExampleController::class)]
 class ExampleController
 {
     private $translator;

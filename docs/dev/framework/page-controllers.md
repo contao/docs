@@ -33,18 +33,16 @@ contao:
 ## Registering Page Controllers
 
 As with content elements, front end modules, hooks and DCA callbacks, Page controllers
-can be registered via annotations. The following shows the most basic example:
+can be registered via attributes, annotations or YAML. The following shows the most basic example:
 
 ```php
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
 
-use Contao\CoreBundle\ServiceAnnotation\Page;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @Page
- */
+#[AsPage]
 class ExamplePageController
 {
     public function __invoke(): Response
@@ -94,14 +92,27 @@ to dynamically limit which pages are available for selection in the back end.
 
 ## Parameters
 
-In principle, the `@Page` annotation allows you to set parameters that you would
+In principle, the `AsPage` attribute and `@Page` annotation allows you to set parameters that you would
 normally be able to define with regular controllers, like `requirements`, `options`,
 `methods` and `defaults` for request attributes. See the [Symfony routing documentation][SymfonyRouting]
 for these possibilities.
 
 There are however a few differences and additional options.
 
-{{< tabs groupId="page-controller-parameters" >}}
+{{< tabs groupId="attribute-annotation-yaml" >}}
+
+{{< version-tag "4.13" >}}
+
+{{% tab name="Attribute" %}}
+```php
+#[AsPage(
+    type: 'example',
+    path: '/foo/bar',
+    urlSuffix: '.html',
+    contentComposition: true
+)]
+```
+{{% /tab %}}
 {{% tab name="Annotation" %}}
 ```php
 /**
@@ -138,9 +149,7 @@ class name, if not specified. If you want to specifically set the type string yo
 you can pass it as the first parameter of the annotation (or use `type="custom_type"`).
 
 ```php
-/**
- * @Page("custom_type")
- */
+#[AsPage(type: 'custom_type')]
 ```
 
 Note that this one of the differences between the `@Page` and Symfony's `@Route`
@@ -157,9 +166,7 @@ of both!
 For instance, with the following annotation and the default `.html` URL suffix:
 
 ```php
-/**
- * @Page(path="/foo/bar")
- */
+#[AsPage(path: '/foo/bar')]
 ```
 
 the URL of the page will _always_ be `https://example.com/foo/bar.html`, no matter
@@ -174,9 +181,7 @@ the page will be appended to the alias of the page.
 So for example, with the following annotation:
 
 ```php
-/**
- * @Page(path="foo/bar")
- */
+#[AsPage(path: 'foo/bar')]
 ```
 
 and an alias like `example/alias` defined in the back end, the final front end URL
@@ -190,9 +195,7 @@ the respective website root. However, with page controllers you can also overrid
 that URL suffix in the page controller's configuration:
 
 ```php
-/**
- * @Page(urlSuffix=".csv")
- */
+#[AsPage(urlSuffix: '.csv')]
 ```
 
 So if the page in the site structure has the alias `foo/bar` then the final front
@@ -212,9 +215,7 @@ If you do not want to use content composition for your page controller, thus
 you do not want that articles can be assigned to those pages, disable the property:
 
 ```php
-/**
- * @Page(contentComposition=false)
- */
+#[AsPage(contentComposition: false)]
 ```
 
 In Contao **4.10** there is no abstraction yet in place for you to render such content
@@ -226,14 +227,12 @@ your own logic):
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
 
-use Contao\CoreBundle\ServiceAnnotation\Page;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
 use Contao\PageModel;
 use Contao\PageRegular;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @Page(contentComposition=true)
- */
+#[AsPage(contentComposition: false)]
 class ExamplePageController
 {
     public function __invoke(PageModel $pageModel): Response
@@ -264,13 +263,11 @@ page as an argument as well:
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
 
-use Contao\CoreBundle\ServiceAnnotation\Page;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
 use Contao\PageModel;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @Page
- */
+#[AsPage]
 class ExamplePageController
 {
     public function __invoke(Request $request, PageModel $pageModel): Response

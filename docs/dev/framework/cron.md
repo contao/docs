@@ -112,7 +112,7 @@ Generally cron jobs can be registered through the `contao.cronjob` service tag. 
 | `interval` | Can be `minutely`, `hourly`, `daily`, `weekly`, `monthly`, `yearly` or a full CRON expression, like `*/5 * * * *`. |
 | `method` | Will default to `__invoke` or `onMinutely` etc. when a named interval is used. Otherwise a method name has to be defined. |
 
-{{< tabs groupId="four-way-service-registration" >}}
+{{< tabs groupId="attribute-annotation-yaml-php" >}}
 {{% tab name="Attribute" %}}
 {{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
 since **PHP 8**) with which you can tag your service to be registered as a cron job.
@@ -196,7 +196,7 @@ Only the `interval` parameter is required. In this case the cron job is executed
 be a full CRON expression, e.g. `*/5 * * * *` for "every 5 minutes".
 {{% /tab %}}
 
-{{% tab name="config.php" %}}
+{{% tab name="PHP" %}}
 
 {{% notice "info" %}}
 This method is deprecated since Contao **4.13** and does not work in Contao **5** anymore.

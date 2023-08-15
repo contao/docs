@@ -250,12 +250,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Twig\Environment;
 
-/**
- * @Route("/contao/my-backend-route",
- *     name=BackendController::class,
- *     defaults={"_scope": "backend"}
- * )
- */
+#[Route('/contao/my-backend-route', name: BackendController::class, defaults: ['_scope' => 'backend'])]
 class BackendController
 {
     private $twig;
