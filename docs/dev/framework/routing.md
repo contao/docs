@@ -226,7 +226,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route("/example", name: ExampleController::class, defaults: ['_scope' => 'frontend']})]
+#[Route('/example', name: ExampleController::class, defaults: ['_scope' => 'frontend']})]
 class ExampleController
 {
     public function __invoke(): Response
