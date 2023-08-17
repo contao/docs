@@ -269,6 +269,72 @@ service that the excution of this cron job was skipped and thus the last run tim
 will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.
 {{% /notice %}}
 
+### Asynchronous cron jobs
+
+{{< version "5.1" >}}
+
+The cron job framework executes jobs synchronously in the order they were tagged (normal service priority tags). 
+This means that if you e.g. have 10 cron jobs, and they all take 20 seconds to run, it will take the framework 200 
+seconds to complete. For most cron jobs, this is not a problem because they don't usually run 20 seconds.
+
+However, if you have cron jobs that trigger child processes or are asynchronous in any other way, you would want 
+them to start immediately in parallel without blocking the other cron jobs. You can do this by returning a 
+`GuzzleHttp\Promise\PromiseInterface`:
+
+```php
+namespace App\Cron;
+
+use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
+use GuzzleHttp\Promise\Promise;
+
+class HourlyCron
+{
+    public function __invoke(string $scope): void
+    {
+        // Skip this cron job in the web scope
+        if (Cron::SCOPE_WEB === $scope) {
+            throw new CronExecutionSkippedException();
+        }
+
+        return new Promise(static function () use (&$promise): void {
+            // Do something that is asynchronous
+            $promise->resolve('Done with asynchronous process.');
+        });
+    }
+}
+```
+
+Because most asynchronous processes are most likely things like a spawned child process using Symfony's `Process` 
+component, Contao also provides a utility for that:
+
+```php
+namespace App\Cron;
+
+use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
+use Contao\CoreBundle\Util\ProcessUtil;
+
+class HourlyCron
+{
+    public function __invoke(string $scope): void
+    {
+        // Skip this cron job in the web scope
+        if (Cron::SCOPE_WEB === $scope) {
+            throw new CronExecutionSkippedException();
+        }
+
+        // Long-running process - probably not "ls" :-)
+        $promise = ProcessUtil::createPromise(new Process(['ls']));
+        
+        // There's even a helper for another application command, so you don't have to worry about
+        // finding the right PHP binary etc.:
+        $promise = ProcessUtil::createSymfonyConsoleProcess('app:my-command', '--option-1', 'argument-1');
+        
+        return $promise;
+    }
+}
+```
 
 ### Testing
 
