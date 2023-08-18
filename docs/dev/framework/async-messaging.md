@@ -263,6 +263,12 @@ respective message handler:
 4. Dispatch the message from e.g. your controller and watch as the magic unfolds.
 5. Done! 🎉
 
+{{% notice tip %}}
+For a working example, take a look at the `SearchIndexMessage`, `SearchIndexMessageHandler` and `SearchIndexListener` 
+classes to see how Contao uses the Messenger to create and update the search index outside the actual HTTP 
+request to serve responses to the users faster.
+{{% /notice %}}
+
 ## Adjusting the configuration 
 
 In case you want to work with a real process manager, there is no point in using the `AutoFallbackTransport` or the 
