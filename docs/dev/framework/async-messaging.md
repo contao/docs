@@ -250,7 +250,7 @@ respective message handler:
     use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
     #[AsMessageHandler]
-    class SearchIndexMessageHandler
+    class CreateAsyncZipFileMessageHandler
     {
         public function __invoke(CreateAsyncZipFileMessage $message): void
         {
