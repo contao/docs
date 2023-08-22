@@ -83,8 +83,6 @@ Of course, other texts such as the footer can also be overwritten via `XPT.hint`
 IMPORTANT: All changes affect the maintenance template as well as all other error templates of Contao.
 {{% /notice %}}
 
-Wird die komplette Contao-Installation über die Kommandozeile in den Wartungsmodus versetzt, wird zur Erzeugung des Wartungstemplates die Fallback-Sprache verwendet. Die Fallback-Sprache kann in der Konfiguration festgelegt werden:
-
 When the complete Contao installation is put into maintenance mode via the command line, the fallback language is used to generate the maintenance template. The fallback language can be set in the configuration:
 
 ```yaml
