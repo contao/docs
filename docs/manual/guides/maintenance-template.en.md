@@ -83,6 +83,12 @@ Of course, other texts such as the footer can also be overwritten via `XPT.hint`
 IMPORTANT: All changes affect the maintenance template as well as all other error templates of Contao.
 {{% /notice %}}
 
+If the texts do not appear in the correct language, the desired language must be set as default in the configuration:
+```yaml
+# config/config.yml
+framework:
+  default_locale: en
+```
 
 ## Customize logo
 

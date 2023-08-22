@@ -84,6 +84,13 @@ Natürlich lassen sich auch noch weitere Texte wie z. B. die Fußzeile per `XPT.
 WICHTIG: Alle Änderungen wirken sich sowohl beim Wartungstemplate als auch auf alle anderen Errortemplates von Contao aus.
 {{% /notice %}}
 
+Erscheinen die Texte nicht in der korrekten Sprache, muss die gewünschte Sprache als Standard in der Konfiguration festgelegt werden:
+```yaml
+# config/config.yml
+framework:
+  default_locale: de
+```
+
 
 ## Logo anpassen
 
