@@ -84,7 +84,8 @@ Natürlich lassen sich auch noch weitere Texte wie z. B. die Fußzeile per `XPT.
 WICHTIG: Alle Änderungen wirken sich sowohl beim Wartungstemplate als auch auf alle anderen Errortemplates von Contao aus.
 {{% /notice %}}
 
-Erscheinen die Texte nicht in der korrekten Sprache, muss die gewünschte Sprache als Standard in der Konfiguration festgelegt werden:
+Wird die komplette Contao-Installation über die Kommandozeile in den Wartungsmodus versetzt, wird zur Erzeugung des Wartungstemplates die Fallback-Sprache verwendet. Die Fallback-Sprache kann in der Konfiguration festgelegt werden:
+
 ```yaml
 # config/config.yml
 framework:
