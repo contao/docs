@@ -306,7 +306,7 @@ class HourlyCron
 ```
 
 Because most asynchronous processes are most likely things like a spawned child process using Symfony's `Process` 
-component, Contao also provides a utility services for that:
+component, Contao also provides a utility service for that:
 
 ```php
 namespace App\Cron;
