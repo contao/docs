@@ -84,7 +84,7 @@ Natürlich lassen sich auch noch weitere Texte wie z. B. die Fußzeile per `XPT.
 WICHTIG: Alle Änderungen wirken sich sowohl beim Wartungstemplate als auch auf alle anderen Errortemplates von Contao aus.
 {{% /notice %}}
 
-Wird die komplette Contao-Installation über die Kommandozeile in den Wartungsmodus versetzt, wird zur Erzeugung des Wartungstemplates die Standardsprache des des Systems verwendet. Diese kann über die `config.yaml` angepasst werden (`framework.default_locale`), diese Einstellung wirkt sich aber auf das gesamte System aus und kann eventuell zu unerwünschten Nebeneffekten führen.
+Wird die komplette Contao-Installation über die Kommandozeile in den Wartungsmodus versetzt, wird zur Erzeugung des Wartungstemplates die Standardsprache des Systems verwendet. Diese kann über die `config.yaml` angepasst werden (`framework.default_locale`), diese Einstellung wirkt sich aber auf das gesamte System aus und kann eventuell zu unerwünschten Nebeneffekten führen.
 
 ## Logo anpassen
 
