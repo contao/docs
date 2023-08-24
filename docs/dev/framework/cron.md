@@ -306,7 +306,7 @@ class HourlyCron
 ```
 
 Because most asynchronous processes are most likely things like a spawned child process using Symfony's `Process` 
-component, Contao also provides a utility for that:
+component, Contao also provides a utility services for that:
 
 ```php
 namespace App\Cron;
@@ -317,6 +317,8 @@ use Contao\CoreBundle\Util\ProcessUtil;
 
 class HourlyCron
 {
+    public function __construct(private ProcessUtil $processUtil) {}
+
     public function __invoke(string $scope): void
     {
         // Skip this cron job in the web scope
@@ -325,11 +327,11 @@ class HourlyCron
         }
 
         // Long-running process - probably not "ls" :-)
-        $promise = ProcessUtil::createPromise(new Process(['ls']));
+        $promise = $this->processUtil->createPromise(new Process(['ls']));
         
         // There's even a helper for another application command, so you don't have to worry about
         // finding the right PHP binary etc.:
-        $promise = ProcessUtil::createSymfonyConsoleProcess('app:my-command', '--option-1', 'argument-1');
+        $promise = $this->processUtil->createSymfonyConsoleProcess('app:my-command', '--option-1', 'argument-1');
         
         return $promise;
     }
