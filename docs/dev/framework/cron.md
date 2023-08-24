@@ -331,7 +331,9 @@ class HourlyCron
         
         // There's even a helper for another application command, so you don't have to worry about
         // finding the right PHP binary etc.:
-        $promise = $this->processUtil->createSymfonyConsoleProcess('app:my-command', '--option-1', 'argument-1');
+        $promise = $this->processUtil->createPromise(
+            $this->processUtil->createSymfonyConsoleProcess('app:my-command', '--option-1', 'argument-1')
+        );
         
         return $promise;
     }
