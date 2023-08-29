@@ -299,6 +299,6 @@ your process manager respawn the process again.
 {{% /notice %}}
 
 
-[Managed_Edition]: ./../getting-started/initial-setup/managed-edition
+[Managed_Edition]: /getting-started/initial-setup/managed-edition
 [Symfony_Messenger]: https://symfony.com/doc/current/messenger.html
-[Minutely_Cron]: ./cron.md#command-line
+[Minutely_Cron]: /framework/cron#command-line
