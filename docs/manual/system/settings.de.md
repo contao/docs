@@ -748,7 +748,7 @@ php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipie
 
 {{% tab name="Contao 5.0 und höher" %}}
 ```bash
-php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
+php vendor/bin/contao-console mailer:test --from=sender@example.com --subject=testmail --body=testmail recipient@example.com
 ```
 {{% /tab %}}
 
