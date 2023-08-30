@@ -264,8 +264,8 @@ you do not want that articles can be assigned to those pages, disable the proper
 #[AsPage(contentComposition: false)]
 ```
 
-In Contao **4.10** there is no abstraction yet in place for you to render such content
-easily. You _can_ use the `PageRegular` class of the legacy framework of Contao
+There is no abstraction yet in place for you to render such content
+easily. You _can_ use the `FrontendIndex` class of the legacy framework of Contao
 to render the page layout as defined in the page structure (in addition to processing 
 your own logic):
 
@@ -274,21 +274,17 @@ your own logic):
 namespace App\Controller\Page;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
+use Contao\FrontendIndex;
 use Contao\PageModel;
-use Contao\PageRegular;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsPage(contentComposition: false)]
+#[AsPage]
 class ExamplePageController
 {
     public function __invoke(PageModel $pageModel): Response
     {
-        // The legacy framework relies on the global $objPage variable
-        global $objPage;
-        $objPage = $pageModel;
-
-        // Render the page using the PageRegular handler from the legacy framework
-        return (new PageRegular())->getResponse($pageModel, true);
+        // Render the page using the FrontendIndex handler from the legacy framework
+        return (new FrontendIndex())->renderPage($pageModel);
     }
 }
 ```
