@@ -19,7 +19,7 @@ text as return value or `false` if the flag was not handled.
 
     The name of the insert tag flag.
 
-2. *string* `$flag`
+2. *string* `$tag`
 
     The name of the insert tag.
 
