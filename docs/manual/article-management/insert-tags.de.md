@@ -178,7 +178,7 @@ Lightbox-Bild einfügen.
 | `{{email_open::*}}`      | Dieses Tag wird mit einem kodierten Link zu einer E-Mail-Adresse ersetzt. Allerdings wird das schließende `</a>` nicht angefügt. |
 | `{{email_close}}`        | Dieses Tag wird mit `</a>` ersetzt. Beispiel: `{{email_open::foo@example.org}}E-Mail Kontakt{{email_close}}`. |
 | `{{email_url::*}}`       | Dieses Tag wird nur durch die kodierte E-Mail-Adresse ersetzt.                                 |
-| `{{post::*}}`            | Mit diesem Tag kann eine angegebene Post-Variable ausgelesen und angezeigt werden. Kann z. B. genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen. |
+| `{{post::*}}`            | Mit diesem Tag kann eine angegebene Post-Variable ausgelesen und angezeigt werden. Kann z. B. genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen (nicht mehr verfügbar ab **Contao 5.0**, stattdessen `{{form_session_data::*}}` verwenden). |
 | `{{form_session_data::*}}` | {{< version-tag "5.0" >}} Dieses Tag kann genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen. Dies ersetzt den alten `{{post::*}}` Insert-Tag. |
 | `{{lang::*}}`            | Mit diesem Tag können fremdsprachige Wörter in einem Text markiert werden: `{{lang::fr}}Au revoir{{lang}}`. Dies wird ersetzt mit `<span lang="fr">Au revoir</span>`. |
 | `{{abbr::*}}`            | Abkürzungen in einem Text markieren: `{{abbr::World Wide Web}}WWW{{abbr}}`. Dies wird ersetzt mit `<abbr title="World Wide Web">WWW</abbr>`. |
