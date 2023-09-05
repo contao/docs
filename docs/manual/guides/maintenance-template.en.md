@@ -83,6 +83,7 @@ Of course, other texts such as the footer can also be overwritten via `XPT.hint`
 IMPORTANT: All changes affect the maintenance template as well as all other error templates of Contao.
 {{% /notice %}}
 
+When the complete Contao installation is put into maintenance mode via the command line, the default system language is used to generate the maintenance template. This can be adjusted via the `config.yaml` (`framework.default_locale`), but this setting affects the entire system and may lead to unwanted side effects.
 
 ## Customize logo
 
