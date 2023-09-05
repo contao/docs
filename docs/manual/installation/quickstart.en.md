@@ -48,7 +48,7 @@ You should see the welcome page of the Contao Manager.
 
 ### Basic configuration
 
-Before you install Contao, you need to configure the manager itself. To do this, create a new user by
+Before you install Contao you need to configure the manager itself. To do this create a new user by
 assigning a username and password. Username and password are independent of the later Contao installation!
 
 
