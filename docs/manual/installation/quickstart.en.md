@@ -25,7 +25,7 @@ of the hosting provider to this subfolder.
 ### Database
 
 Contao requires a [MySQL](../../installation/system-requirements/#mysql-minimum-requirements) database for operation, which you 
-should ideally create right away. The access data will be needed later.
+should ideally create right away. Its login credentials will be needed later.
 
 
 ## Installing the Contao Manager
