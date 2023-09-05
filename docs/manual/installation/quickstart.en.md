@@ -36,7 +36,7 @@ Transfer this file to the `public` directory on your web server.
 
 {{% notice info %}}
 `.phar` files are not executed by all hosting providers. For best compatibility, add the `.php` file extension 
-<b>after the upload</b> (rename the file <b>on the server</b> to `contao-manager.phar.php`).
+<b>after the upload</b> (i.e. rename the file <b>on the server</b> to `contao-manager.phar.php`).
 {{% /notice %}}
 
 ## Call Contao Manager
