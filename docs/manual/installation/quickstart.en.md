@@ -31,7 +31,7 @@ should ideally create right away. Its login credentials will be needed later.
 ## Installing the Contao Manager
 
 The [Contao Manager](../../installation/contao-manager/) consists of a single file which can be downloaded from 
-[contao.org](https://contao.org/en/download). After a successful download you will receive a file `contao-manager.phar`. 
+[contao.org](https://contao.org/en/download). After a successful download you will receive a file called `contao-manager.phar`. 
 Transfer this file to the `public` directory on your web server.
 
 {{% notice info %}}
