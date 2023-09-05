@@ -11,6 +11,11 @@ aliases:
 The `setCookie` hook is triggered when sending a cookie to the browser. It passes
 a standard object with all cookie properties and expects the same as return value.
 
+{{% notice info %}}
+Using the `setCookie` hook has been deprecated and will no longer work in Contao 6.0. Use a `kernel.response` listener
+instead.
+{{% /notice %}}
+
 
 ## Parameters
 
