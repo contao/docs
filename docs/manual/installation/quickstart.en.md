@@ -10,7 +10,7 @@ hidden: true
 We assume here that you want to install either the latest version or the [Long Term Support Version](https://docs.contao.org/manual/en/installation/update-contao/#long-term-support-versions) with the Contao Manager.
 This is the easiest and recommended way for beginners.
 
-## osting configuration
+## Hosting configuration
 
 You configure the hosting via the admin panel of your hosting provider.
 
