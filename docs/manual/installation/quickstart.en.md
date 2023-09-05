@@ -44,7 +44,7 @@ Transfer this file to the `public` directory on your web server.
 Now call up the URL `www.example.com/contao-manager.phar.php` with your browser, replacing `www.example.com` with your domain.
 You should see the welcome page of the Contao Manager.
 
-![Welcome page of the Contao Manager]({{% asset "images/manual/installation/de/willkommensseite-des-contao-managers.png" %}}?classes=shadow)
+![Welcome page of the Contao Manager]({{% asset "images/manual/installation/en/welcomepage-contao-manager.png" %}}?classes=shadow)
 
 ### Basic configuration
 
@@ -57,7 +57,7 @@ assigning a username and password. Username and password are independent of the 
 The Contao Manager needs the path to the PHP binary and other server information to run background processes correctly. 
 Usually, this information is detected automatically.
 
-![Server configuration]({{% asset "images/manual/installation/de/serverkonfiguration.png" %}}?classes=shadow)
+![Server configuration]({{% asset "images/manual/installation/en/server-configuration.png" %}}?classes=shadow)
 
 
 ### Composer Resolver Cloud
@@ -71,12 +71,14 @@ if the server does not have enough memory. Please note that your package informa
 After the successful basic configuration, Contao can now be installed. To do this, select the desired version
 and the initial configuration and click on the "Install" button.
 
-![Installing Contao with the Contao Manager]({{% asset "images/manual/installation/de/contao-per-contao-manager-installieren.png" %}}?classes=shadow)
+![Installing Contao with the Contao Manager]({{% asset "images/manual/installation/en/contao-manager-setup.png" %}}?classes=shadow)
 
 The installation may now take several minutes. Details of the installation process can be viewed by clicking on the following 
-icon ![Show/hide console output](/de/icons/konsolenausgabe.png?classes=icon).
+icon ![Show/hide console output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
-![Contao is being installed]({{% asset "images/manual/installation/de/contao-wird-installiert.png" %}}?classes=shadow)
+
+
+![Contao is being installed]({{% asset "images/manual/installation/en/contao-manager-background-task.png" %}}?classes=shadow)
 
 
 ### Updating database tables
@@ -90,7 +92,7 @@ directly in the Contao Manager (Contao 5.x).
 
 Finally, you need to create an administrator user with which you can log in to the Contao back end later.
 
-![Create an administrator account]({{% asset "images/manual/installation/de/ein-administratorkonto-anlegen.png" %}}?classes=shadow)
+![Create an administrator account]({{% asset "images/manual/installation/en/installtool-create-admin-account.png" %}}?classes=shadow)
 
 **User name:** Here you define the user name of the administrator.
 
