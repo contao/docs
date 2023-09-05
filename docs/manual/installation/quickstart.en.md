@@ -42,7 +42,7 @@ Transfer this file to the `public` directory on your web server.
 ## Call Contao Manager
 
 Now call up the URL `www.example.com/contao-manager.phar.php` with your browser, replacing `www.example.com` with your domain.
-You should now see the welcome page of the Contao Manager.
+You should see the welcome page of the Contao Manager.
 
 ![Welcome page of the Contao Manager]({{% asset "images/manual/installation/de/willkommensseite-des-contao-managers.png" %}}?classes=shadow)
 
