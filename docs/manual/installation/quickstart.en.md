@@ -3,8 +3,7 @@ title: "Install Contao - Quick start"
 description: "The first steps to installing Contao with the Contao Manager."
 aliases:
 - /en/installation/quickstart/
-weight: 90
-hidden: true
+weight: 15
 ---
 
 We assume here that you want to install either the latest version or the [Long Term Support Version](https://docs.contao.org/manual/en/installation/update-contao/#long-term-support-versions) with the Contao Manager.
