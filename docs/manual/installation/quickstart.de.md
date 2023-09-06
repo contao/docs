@@ -4,8 +4,7 @@ description: "Die ersten Schritte zur Contao Installation mit dem Contao Manager
 url: "installation/quickstart"
 aliases:
 - /de/installation/quickstart/
-weight: 90
-hidden: true
+weight: 15
 ---
 
 Wir gehen hier davon aus, dass du entweder die aktuellste Version oder die [Long Term Support Version](https://docs.contao.org/manual/de/installation/contao-aktualisieren/#long-term-support-versionen) mit dem Contao Manager
