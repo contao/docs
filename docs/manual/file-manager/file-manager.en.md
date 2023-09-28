@@ -7,7 +7,7 @@ weight: 10
 ---
 
 The File Manager displays the directory structure in a hierarchical tree. Each subfolder is a separate node that you can 
-expand and collapse with the ![Plus symbol]({{% asset "icons/fol" %}}Plus.svg?classes=icon) plus and ![Minus symbol]({{% asset "icons/fol" %}}Minus.svg?classes=icon) 
+expand and collapse with the ![Plus symbol]({{% asset "icons/folPlus.svg" %}}?classes=icon) plus and ![Minus symbol]({{% asset "icons/folMinus.svg" %}}?classes=icon) 
 minus symbol. Within each subfolder, you will see a list of the files contained there. If they are images, a 
 preview thumbnail is automatically displayed.
 If you have a large number of images, you can disable the thumbnail preview in your user profile to speed up the page 
