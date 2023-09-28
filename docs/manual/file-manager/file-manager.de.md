@@ -8,8 +8,8 @@ weight: 10
 ---
 
 Die Dateiverwaltung bildet die Verzeichnisstruktur in einem hierarchischen Baum ab. Jeder Unterordner ist ein eigener 
-Knoten, den du über das ![Plussymbol]({{% asset "icons/fol" %}}Plus.svg?classes=icon) Plus- und 
-![Minussymbol]({{% asset "icons/fol" %}}Minus.svg?classes=icon) Minussymbol aus- bzw. einklappen kannst. Innerhalb jedes 
+Knoten, den du über das ![Plussymbol]({{% asset "icons/folPlus.svg" %}}?classes=icon) Plus- und 
+![Minussymbol]({{% asset "icons/folMinus.svg" %}}?classes=icon) Minussymbol aus- bzw. einklappen kannst. Innerhalb jedes 
 Unterordners werden die darin enthaltenen Dateien aufgelistet. Handelt es sich dabei um Bilder, wird automatisch eine 
 Voransicht angezeigt. Bei einer großen Menge an Bildern kannst du die Voransicht in deinem Benutzerprofil deaktivieren,
 damit die Seite schneller lädt.
@@ -63,7 +63,7 @@ Navigationssymbol ![Dateien auf den Server hochladen]({{% asset "icons/new.svg" 
 
 In den Benutzereinstellungen kannst du darüber hinaus [DropZone](https://www.dropzonejs.com/) aktivieren.
 
-![Dateien übertragen]({{% asset "images/manual/layout/file-manager/de/dateien-uebertragen.png" %}}?classes=shadow)
+![Dateien übertragen]({{% asset "images/manual/file-manager/de/dateien-uebertragen.png" %}}?classes=shadow)
 
 In beiden Fällen prüft die Dateiverwaltung beim Upload die Größe der zu übertragenden Datei, und – falls es sich dabei um 
 ein Bild handelt – auch dessen Abmessungen. Standardmäßig werden Dateien bis zu 2 MB und Bilder bis zu 3000x3000 Pixel 
