@@ -21,7 +21,7 @@ made public, all the folders and files within it cannot be protected.
 If a folder is public, a `web/files/` symlink will be placed in the directory `files`, without this symlink the data 
 would not be accessible to visitors.
 
-![Private/public folders]({{% asset "images/manual/layout/file-manager/en/private_public_folders.jpg" %}}?classes=shadow)
+![Private/public folders]({{% asset "images/manual/file-manager/en/private_public_folders.jpg" %}}?classes=shadow)
 
 If the folder is not made public, no one can access the files with their internet browser and download them directly. 
 However, the files can still be accessed via either of the content elements "Download" or "Downloads".
