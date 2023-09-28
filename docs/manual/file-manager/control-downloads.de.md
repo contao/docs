@@ -19,13 +19,13 @@ Wenn du in Contao einen neuen Ordner anlegst, ist dieser standardmäßig inklusi
 Möchtest du ein Verzeichnis schützen, musst du beim Anlegen des Ordners darauf achten, dass »Öffentlich« nicht 
 ausgewählt ist. Ist ein Verzeichnis öffentlich, können die darin befindlichen Ordner und Dateien nicht geschützt werden.
 
-![Verzeichnis schützen]({{% asset "images/manual/layout/file-manager/de/verzeichnis-schuetzen.png" %}}?classes=shadow)
+![Verzeichnis schützen]({{% asset "images/manual/file-manager/de/verzeichnis-schuetzen.png" %}}?classes=shadow)
 
 Ist ein Ordner öffentlich wird unter `web/files/` ein 
 [Symlink](https://de.wikipedia.org/wiki/Symbolische_Verkn%C3%BCpfung) in das Verzeichnis `files` gesetzt. 
 Ohne diese Symlinks wären die Daten für Besucher nicht erreichbar.
 
-![nicht öffentlicher Ordner]({{% asset "images/manual/layout/file-manager/de/nicht-oeffentlicher-ordner.png" %}}?classes=shadow)
+![nicht öffentlicher Ordner]({{% asset "images/manual/file-manager/de/nicht-oeffentlicher-ordner.png" %}}?classes=shadow)
 
 Ist der Ordner nicht öffentlich kann nun niemand mehr mit seinem Internetbrowser auf die Dateien zugreifen und sie 
 direkt herunterladen. Über die Inhaltselemente »Download« bzw. »Downloads« sind die Dateien aber weiterhin erreichbar.
