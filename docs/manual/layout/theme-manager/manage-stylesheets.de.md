@@ -142,7 +142,7 @@ besseren Übersicht im Backend und werden nicht für die Sortierung im Styleshe
 ## Stylesheets exportieren
 
 Du kannst einzelne Stylesheets exportieren, indem du hinter dem Stylesheet auf das Navigationsicons 
-![Stylesheet exportieren]({{% asset "icons/theme" %}}_export.svg?classes=icon) **Stylesheet exportieren** klickst.
+![Stylesheet exportieren]({{% asset "icons/theme_export.svg" %}}?classes=icon) **Stylesheet exportieren** klickst.
 
 
 ## Stylesheets importieren
