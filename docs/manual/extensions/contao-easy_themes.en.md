@@ -55,6 +55,6 @@ section.
 **Back end Module (with selection of a reference group):** Creates an additional back end module under the selected 
 section.
 
-![EasyTheme mode: Back end modules (with selection of a reference group)]({{% asset "images/manual/extensions/en/contao-easy_themes-mode-back%20end-module-with-reference.png" %}}?classes=shadow)
+![EasyTheme mode: Back end modules (with selection of a reference group)]({{% asset "images/manual/extensions/en/contao-easy_themes-mode-back end-module-with-reference.png" %}}?classes=shadow)
 
 Take your time and still be faster.
