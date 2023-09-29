@@ -15,8 +15,8 @@ Bevor du an der Dokumentation mit schreiben kannst, musst du noch folgendes tun:
 ist ein Dienst für die Versionsverwaltung mit [Git](https://de.wikipedia.org/wiki/Git) für Software-Projekte und beheimatet 
 unter anderem die [Contao-Dokumentation](https://github.com/contao/docs/).
 - Die Dokumentation wird in [Markdown](https://de.wikipedia.org/wiki/Markdown) geschrieben, mache dich mit der 
-[Syntax](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) dieser Auszeichnungssprache 
-vertraut.
+[Syntax und Formatierungsmöglichkeiten](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) dieser Auszeichnungssprache 
+vertraut. Zudem hast du zu Beginn des Dokuments die Möglichkeit, entsprechende [Variablen und Metadaten](https://github.com/contao/docs/blob/main/CONTRIBUTING.md#the-hugo-front-matter-variables) zu pflegen.
 
 
 ## Kleine Fehler korrigieren
