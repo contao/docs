@@ -134,7 +134,7 @@ used for sorting in the stylesheet itself.
 ## Export stylesheets
 
 You can export individual stylesheets by clicking on the navigation icon 
-![Export style sheet]({{% asset "icons/theme" %}}_export.svg?classes=icon) **Export Stylesheet** behind the stylesheet.
+![Export style sheet]({{% asset "icons/theme_export.svg" %}}?classes=icon) **Export Stylesheet** behind the stylesheet.
 
 
 ## Import stylesheets
