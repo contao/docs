@@ -33,7 +33,7 @@ In the `dev` environment, the `ContaoFilesystemLoaderWarmer` will dump a special
 directory, that includes a mapping of all registered namespaces and filesystem locations. With that, you'll get
 template name autocompletion, even for the managed `@Contao` namespace.  
 
- ![Getting autocompletion for template names](../../images/twig-file-autocompletion.png?classes=shadow)
+![Getting autocompletion for template names]({{% asset "images/dev/framework/twig-file-autocompletion.png" %}}?classes=shadow)
 
 You will now also able to navigate to referenced templates by holding down `Ctrl` and clicking on the name. 
 
@@ -43,7 +43,8 @@ You can also get full autocompletion for template parameters like you would insi
 templates in `render()` calls, the types can get inferred, for other cases (most of the time in Contao), you can still
 get autocompletion by adding a type annotation inside the template:
 
-![Getting autocompletion on variables](../../images/twig-type-autocompletion.png?classes=shadow)
+![Getting autocompletion on variables]({{% asset "images/dev/framework/twig-type-autocompletion.png" %}}?classes=shadow)
+
 
 
 ## debug:contao-twig command
@@ -90,7 +91,8 @@ with types. The result is rendered in place:
 {# Only dump what's inside "a" and "b" #}
 {{ dump(a, b) }}
 ```
-![Dumping inside the markup](../../images/twig-dump.png?classes=shadow)
+![Dumping inside the markup]({{% asset "images/dev/framework/twig-dump.png" %}}?classes=shadow)
+
 
 Alternatively, you can use the `{% dump %}` tag from the Symfony Twig bridge. With this tag, the dump output won't be
 displayed, but send to the `VarDumper` component instead. You can then find the results, when clicking the target icon
@@ -102,7 +104,7 @@ in the *Symfony Web Debug Toolbar*:
 {# Only dump what's inside "a" and "b" #}
 {% dump a, b %}
 ```
-![Dumping into the Symfony Web Debug Toolbar](../../images/twig-web-debug-toolbar.png?classes=shadow)
+![Dumping into the Symfony Web Debug Toolbar]({{% asset "images/dev/framework/twig-web-debug-toolbar.png" %}}?classes=shadow)
 
 {{% notice tip %}}
 In `dev` mode, the profiler extension will add profiling statements to all compiled templates. The results are also
@@ -136,8 +138,8 @@ translated to PHP code. You'll also see the escaper in action if you look for li
 For tough problems, you might want to set breakpoints inside these files and step through them line. Yes, in the end 
 they are just regular PHP files, that you can debug with tools like XDebug. Some IDEs (such as PHPStorm) even support
 direct debugging in the template files itself, if you tell them where to find the cache files:
-![Directly debugging a Twig template](../../images/twig-debugging-breakpoint.png?classes=shadow)
 
+![Directly debugging a Twig template]({{% asset "images/dev/framework/twig-debugging-breakpoint.png" %}}?classes=shadow)
 
 [PhpStorm Symfony plugin]: https://plugins.jetbrains.com/plugin/7219-symfony-support
 [Twig Docs dump function]: https://twig.symfony.com/doc/3.x/functions/dump.html
