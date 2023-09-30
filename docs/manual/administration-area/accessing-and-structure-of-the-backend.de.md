@@ -18,7 +18,7 @@ vollständige Adresse sieht dann so aus:
 Gebe deinen `Benutzernamen` un dein `Passwort` ein. Die im Internetbrowser voreingestellte Sprache wird auch fürs
 Backend verwendet. Bestätige deine Eingaben mit einem Klick auf die Schaltfläche `Weiter`. 
 
-![Anmeldung im Contao-Backend](/de/administration-area/images/de/contao-backend-anmeldung.png?classes=shadow)
+![Anmeldung im Contao-Backend]({{% asset "images/manual/administration-area/de/contao-backend-anmeldung.png" %}}?classes=shadow)
 
 Die Backend-Anmeldung ist mit einem Zeitverzögerungsmechanismus gegen [Brute-Force-Attacken](https://de.wikipedia.org/wiki/Brute-Force-Methode) 
 geschützt. Wenn du mehr als dreimal hintereinander ein falsches Passwort eingibst, wird dein Benutzerkonto automatisch 
@@ -31,7 +31,7 @@ ausprobiert, bis er das richtige Passwort gefunden hat.
 Das Backend ist in drei Bereiche unterteilt. Oben befindet sich der Infobereich, auf der linken Seite die Navigation und
 auf der rechten der Arbeitsbereich.
 
-![Aufteilung des Contao-Backends](/de/administration-area/images/de/contao-backend-aufteilung.png?classes=shadow)
+![Aufteilung des Contao-Backends]({{% asset "images/manual/administration-area/de/contao-backend-aufteilung.png" %}}?classes=shadow)
 
 
 ### Der Infobereich
@@ -40,27 +40,32 @@ Der Infobereich zeigt einige wichtige Links an, die beim Arbeiten mit Contao imm
 
 **Startseite:** Ein Klick auf das Contao-Logo führt zur Startseite des Backends zurück.
 
+**Handbuch:** Beim Klick auf diesen Link wird das Handbuch aufgerufen.
+
+**Favorit speichern:** {{< version-tag "5.1" >}} Beim Klick auf diesen Link kannst du die aktuelle URL im Backend als Favorit Eintrag 
+speichern. Vorhandene Favoriten-Links werden im Navigationsbereich aufgeführt.
+
 **Hinweise:** Beim Klick auf diesen Link öffnet ein Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
 
-**Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
-{{< version "4.8" >}}
+**Design:** {{< version-tag "5.1" >}} Du kannst zwischen hellen und dunklen Backend-Design wählen.
 
-**Vorschau:** Dieser Link ruft das Frontend, also die eigentliche Webseite, in einem neuen Fenster auf. Wenn du eine
-bestimmte Seite oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprechende Seite im Frontend
-weitergeleitet.
+**Debug-Modus:** {{< version-tag "4.8" >}} Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
+
+**Vorschau:** Dieser Link ruft das Frontend, also die eigentliche Webseite, in einem neuen Fenster auf. Wenn du eine bestimmte Seite 
+oder einen Artikel im Backend bearbeitest, wirst du automatisch auf die entsprechende Seite im Frontend weitergeleitet.
 
 **Benutzer:** Beim Klick auf Benutzer werden folgende Links angezeigt:
+  + **Profil:** Dieser Link führt zu den persönlichen Einstellungen deines Benutzerkontos. Du kannst dort z. B. dein Passwort ändern oder 
+  die Sprache wechseln.
 
-**Profil:** Dieser Link führt zu den persönlichen Einstellungen deines Benutzerkontos. Du kannst dort z. B. dein
-Passwort ändern oder die Sprache wechseln.
+  + **Sicherheit:** {{< version-tag "4.6" >}} Über diesen Link kann die [Zwei-Faktor-Authentifizierung](https://de.wikipedia.org/wiki/Zwei-Faktor-Authentisierung) 
+  für die Anmeldung im Backend aktiviert werden.
 
-**Abmelden:** Über diesen Link kannst du dich vom Backend abmelden.
+  + **Favoriten:** {{< version-tag "5.1" >}} Über diesen Link erreichst du die Verwaltung der Favoriten.
 
-**Sicherheit:** Über diesen Link kann die 
-[Zwei-Faktor-Authentifizierung](https://de.wikipedia.org/wiki/Zwei-Faktor-Authentisierung) für dein Backend aktiviert 
-werden.
-{{< version "4.6" >}}
+  + **Abmelden:** Über diesen Link kannst du dich vom Backend abmelden.
 
+  
 
 ### Der Navigationsbereich
 
@@ -97,7 +102,7 @@ Die Frontend-Vorschau erreichst du über den Link »Vorschau« im [Infobereich](
 
 Zu erkennen ist die Frontend-Vorschau zum einen an der Frontend-Preview-Bar und zum anderen am `preview.php` in der URL.
 
-![Frontend-Vorschau](/de/administration-area/images/de/frontend-preview-bar.png?classes=shadow)
+![Frontend-Vorschau]({{% asset "images/manual/administration-area/de/frontend-preview-bar.png" %}}?classes=shadow)
 
 {{< version-tag "4.13" >}} **URL kopieren:** Beim Klick auf den Link, wird die URL ohne `preview.php` in die Zwischenablage kopiert und kann an der 
 gewünschten Stelle eingefügt werden.

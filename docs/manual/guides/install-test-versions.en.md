@@ -202,7 +202,7 @@ to manually change the `composer.json`. You can edit the required version of "Co
 Open Source CMS" to `4.9.*@RC` for example, in order to install release candidates.
 Or you can enter `4.9.x-dev` in order to install development versions.
 
-![Contao Manager Versionsangabe](/de/guides/images/en/install-version/contao-manager-enter-custom-version.gif?classes=shadow)
+![Contao Manager Versionsangabe]({{% asset "images/manual/guides/en/install-version/contao-manager-enter-custom-version.gif" %}}?classes=shadow)
 
 Instead of updating an existing Contao installation to a release candidate or development
 version, you can also create a fresh installation with the Contao Manager.

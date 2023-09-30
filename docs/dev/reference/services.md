@@ -59,14 +59,12 @@ namespace App\Controller\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="texts")
- */
+#[AsContentElement(category: 'texts')]
 class ExampleFormElementController extends AbstractContentElementController
 {
     /**
@@ -492,8 +490,64 @@ class Example
 }
 ```
 
+## InsertTagParser
 
-[SimpleTokenUsage]: https://github.com/contao/contao/blob/5.0/core-bundle/tests/String/SimpleTokenParserTest.php
+{{< version "4.13" >}}
+
+This service lets you replace Insert Tags in within strings.
+
+Some methods return a `ChunkedText` instance. The `ChunkedText` container was created to keep the surrounding text 
+containing the insert tags separate from the replacements made by the insert tag parser. It is used for example in the 
+twig escaper to skip encoding on inserttag replacement results.
+
+```php
+use Contao\CoreBundle\InsertTag\ChunkedText;
+use Contao\CoreBundle\InsertTag\InsertTagParser;
+
+class Example
+{
+    private InsertTagParser $insertTagParser;
+    
+    public function __construct(InsertTagParser $insertTagParser)
+    {
+        $this->insertTagParser = $insertTagParser;
+    }
+
+    public function __invoke(string $buffer): string
+    {
+        // Returns a string and should be used in HTML context when the replaced result is sent as a response to the 
+        // client. It will allow ESI tags that can improve caching behaviour.
+        $resultReplace = $this->insertTagParser->replace($buffer);
+
+        // Returns a string and should be used when the result is not sent to a client 
+        // (e.g. when using `$email->subject()`).
+        $resultReplaceInline = $this->insertTagParser->replaceInline($buffer);
+
+        // Returns a ChunkedText instance and should be used in HTML context when the replaced result is sent as a 
+        // response to the client. It will allow ESI tags that can improve caching behaviour.
+        $resultChunked = $this->insertTagParser->replaceChunked($buffer);
+
+        // Returns a ChunkedText instance and should be used when the result is not sent to a client.
+        $resultChunked = $this->insertTagParser->replaceInlineChunked($buffer);
+
+        // Example usage for ChunkedText
+        if ($resultChunked instanceof ChunkedText) {
+            $parts = [];
+
+            foreach ($resultChunked as [$type, $chunk]) {
+                $parts[] = ChunkedText::TYPE_RAW === $type
+                    ? $chunk
+                    : htmlspecialchars($chunk);
+            }
+
+            return implode('', $parts);
+        }
+    }
+}
+```
+
+
+[SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
 [RequestTokens]: /framework/request-tokens/

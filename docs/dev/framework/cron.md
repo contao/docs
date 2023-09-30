@@ -112,7 +112,7 @@ Generally cron jobs can be registered through the `contao.cronjob` service tag. 
 | `interval` | Can be `minutely`, `hourly`, `daily`, `weekly`, `monthly`, `yearly` or a full CRON expression, like `*/5 * * * *`. |
 | `method` | Will default to `__invoke` or `onMinutely` etc. when a named interval is used. Otherwise a method name has to be defined. |
 
-{{< tabs groupId="four-way-service-registration" >}}
+{{< tabs groupId="attribute-annotation-yaml-php" >}}
 {{% tab name="Attribute" %}}
 {{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
 since **PHP 8**) with which you can tag your service to be registered as a cron job.
@@ -177,7 +177,7 @@ As mentioned before you can manually add the `contao.hook` service tag in your s
 services:
     App\Cron\ExampleCron:
         tags:
-            - { name: contao.cron, interval: hourly }
+            - { name: contao.cronjob, interval: hourly }
 ```
 ```php
 // src/Cron/ExampleCron.php
@@ -196,7 +196,7 @@ Only the `interval` parameter is required. In this case the cron job is executed
 be a full CRON expression, e.g. `*/5 * * * *` for "every 5 minutes".
 {{% /tab %}}
 
-{{% tab name="config.php" %}}
+{{% tab name="PHP" %}}
 
 {{% notice "info" %}}
 This method is deprecated since Contao **4.13** and does not work in Contao **5** anymore.
@@ -247,14 +247,15 @@ method.
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 
 class HourlyCron
 {
     public function __invoke(string $scope): void
     {
-        // Do not execute this cron job in the web scope
+        // Skip this cron job in the web scope
         if (Cron::SCOPE_WEB === $scope) {
-            return;
+            throw new CronExecutionSkippedException();
         }
 
         // …
@@ -262,6 +263,82 @@ class HourlyCron
 }
 ```
 
+{{% notice "note" %}}
+The above example uses the `CronExecutionSkippedException` (available since Contao **4.9.38** and **5.0.8**) which will tell Contao's Cron 
+service that the excution of this cron job was skipped and thus the last run time will stay untouched in the database. Thus the cron job 
+will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.
+{{% /notice %}}
+
+### Asynchronous cron jobs
+
+{{< version "5.1" >}}
+
+The cron job framework executes jobs synchronously in the order they were tagged (normal service priority tags). 
+This means that if you e.g. have 10 cron jobs, and they all take 20 seconds to run, it will take the framework 200 
+seconds to complete. For most cron jobs, this is not a problem because they don't usually run 20 seconds.
+
+However, if you have cron jobs that trigger child processes or are asynchronous in any other way, you would want 
+them to start immediately in parallel without blocking the other cron jobs. You can do this by returning a 
+`GuzzleHttp\Promise\PromiseInterface`:
+
+```php
+namespace App\Cron;
+
+use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
+use GuzzleHttp\Promise\Promise;
+
+class HourlyCron
+{
+    public function __invoke(string $scope): void
+    {
+        // Skip this cron job in the web scope
+        if (Cron::SCOPE_WEB === $scope) {
+            throw new CronExecutionSkippedException();
+        }
+
+        return new Promise(static function () use (&$promise): void {
+            // Do something that is asynchronous
+            $promise->resolve('Done with asynchronous process.');
+        });
+    }
+}
+```
+
+Because most asynchronous processes are most likely things like a spawned child process using Symfony's `Process` 
+component, Contao also provides a utility service for that:
+
+```php
+namespace App\Cron;
+
+use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
+use Contao\CoreBundle\Util\ProcessUtil;
+
+class HourlyCron
+{
+    public function __construct(private ProcessUtil $processUtil) {}
+
+    public function __invoke(string $scope): void
+    {
+        // Skip this cron job in the web scope
+        if (Cron::SCOPE_WEB === $scope) {
+            throw new CronExecutionSkippedException();
+        }
+
+        // Long-running process - probably not "ls" :-)
+        $promise = $this->processUtil->createPromise(new Process(['ls']));
+        
+        // There's even a helper for another application command, so you don't have to worry about
+        // finding the right PHP binary etc.:
+        $promise = $this->processUtil->createPromise(
+            $this->processUtil->createSymfonyConsoleProcess('app:my-command', '--option-1', 'argument-1')
+        );
+        
+        return $promise;
+    }
+}
+```
 
 ### Testing
 

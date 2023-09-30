@@ -11,6 +11,11 @@ aliases:
 The `setCookie` hook is triggered when sending a cookie to the browser. It passes
 a standard object with all cookie properties and expects the same as return value.
 
+{{% notice info %}}
+Using the `setCookie` hook has been deprecated and will no longer work in Contao 6.0. Implement a `kernel.response` 
+listener instead.
+{{% /notice %}}
+
 
 ## Parameters
 
@@ -38,11 +43,9 @@ Return `$cookie` or a custom object with all properties.
 // src/EventListener/SetCookieListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("setCookie")
- */
+#[AsHook('setCookie')]
 class SetCookieListener
 {
     public function __invoke($cookie)

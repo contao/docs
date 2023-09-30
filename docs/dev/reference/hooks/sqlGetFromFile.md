@@ -30,11 +30,9 @@ Return `$sql` after adding your custom definitions.
 // src/EventListener/SqlGetFromFileListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("sqlGetFromFile")
- */
+#[AsHook('sqlGetFromFile')]
 class SqlGetFromFileListener
 {
     public function __invoke(array $sql): array

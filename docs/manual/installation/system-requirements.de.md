@@ -139,7 +139,7 @@ kann.
 
 Unter Verwendung des Contao Managers kann das `composer update` in der Systemwartung unter _Composer-Abhängigkeiten_ ausgeführt werden:
 
-![Composer Update im Contao Manager](/de/installation/images/de/composer-update.png?classes=shadow)
+![Composer Update im Contao Manager]({{% asset "images/manual/installation/de/composer-update.png" %}}?classes=shadow)
 
 
 ### MySQL-Mindestanforderungen 

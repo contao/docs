@@ -84,7 +84,7 @@ In the "`Settings > Security`" section you can define
 [allowed HTML tags](/en/system/settings/#security-settings). It might happen that this information 
 alone is not sufficient.
 
-For example, if you use the [Contao logo](https://fontawesome.com/v4.7.0/icon/contao) in a content element of 
+For example, if you use the [Contao logo](https://fontawesome.com/icons/contao?s=&f=brands) in a content element of 
 type "Enumeration" with available "Font Awesome" as follows, your entries will not be applied after "Save".
 
 ```html
@@ -148,6 +148,12 @@ toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist out
 paste_as_text: true
 ```
 
+{{< version-tag "5.0" >}} Starting with Contao **5**, Contao uses the [TinyMCE editor](https://www.tiny.cloud/) in version 6. 
+Some terms for displaying elements in the toolbar hav changed. For example, use `blocks` instead of `formatselect` and `styles` 
+instead of `styleselect`. A complete list of the changed terms can be found in the 
+[migration notes of the TinyMCE documentation](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#things-we-renamed]).
+
+
 ### Change the menu
 
 Similar to the toolbar you can also configure the menu. If you want to remove the menu item `table` completely, 
@@ -161,6 +167,11 @@ We want to remove this menu item and keep the other menu items. You can use the
 entry [removed_menuitems](https://www.tiny.cloud/docs-4x/configure/editor-appearance/#removed_menuitems) for this purpose.
 
 For a complete list of toolbar items and menu items, see the TinyMCE documentation.
+
+{{< version-tag "5.0" >}} Starting with Contao **5**, Contao uses the [TinyMCE editor](https://www.tiny.cloud/) in version 6. 
+Some terms for displaying elements in the toolbar hav changed. For example, use `blocks` instead of `formatselect` and `styles` 
+instead of `styleselect`. A complete list of the changed terms can be found in the 
+[migration notes of the TinyMCE documentation](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#things-we-renamed]).
 
 ```js
 // be_tinyMCE.html5

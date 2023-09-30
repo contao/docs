@@ -49,13 +49,11 @@ Return `$buffer` or your custom modification.
 // src/EventListener/GetFormListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 use Contao\FormModel;
 
-/**
- * @Hook("getForm")
- */
+#[AsHook('getForm')]
 class GetFormListener
 {
     public function __invoke(FormModel $formModel, string $buffer, Form $form): string

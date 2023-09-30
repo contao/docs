@@ -1,12 +1,12 @@
 ---
 title: "Checkbox Wizard"
-description: Not yet documented
+description: Multiple checkboxes with sorting support.
 ---
 
 This widget is just like the [Checkbox widget][CheckboxWidget] but it supports manual sorting of the multiple 
 checkboxes.
 
-![A checkbox wizard](../images/checkbox-wizard.png?classes=shadow)
+![A checkbox wizard]({{% asset "images/dev/reference/widgets/checkbox-wizard.png" %}}?classes=shadow)
 
 This can be useful if the order of the select element matters when processed in the front end (just like the order of CSS files in the
 example of the screenshot).

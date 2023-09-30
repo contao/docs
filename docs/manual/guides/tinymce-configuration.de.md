@@ -41,7 +41,7 @@ Wenn du den Template Namen `be_tinyMCE.html5` beibehältst führt dies dazu, das
 auswirken die den Editor benutzen. Dies gilt zumindest für die Contao eigenen Komponenten.
 
 Du möchtest gezielt eine Editor-Konfiguration z. B. nur für das Inhaltselement vom Typ »Text« erstellen? Dazu kannst
-du das Template beliebig umbenennen: z.B. nach `be_myTinyMCE.html5`.
+du das Template beliebig umbenennen: z. B. nach `be_myTinyMCE.html5`.
 
 Als nächstes müssen wir Contao dazu bringen dieses Template zu nutzen. Dazu muss folgendes in die `contao/dca/tl_content.php` 
 eingefügt werden:
@@ -85,7 +85,7 @@ Template löschen. Es wird dann wieder die Contao-Standardkonfiguration des Edit
 
 Im Bereich »`Einstellungen > Sicherheitseinstellungen`« kannst du [Erlaubte HTML-Tags](/de/system/einstellungen/#sicherheitseinstellungen) definieren. Es kann vorkommen, dass diese Angaben allein nicht ausreichen. 
 
-Falls du beispielsweise mit verfügbaren »Font-Awesome« das [Contao-Logo](https://fontawesome.com/v4.7.0/icon/contao) in einem 
+Falls du beispielsweise mit verfügbaren »Font-Awesome« das [Contao-Logo](https://fontawesome.com/icons/contao?s=&f=brands) in einem 
 [Inhaltselement](/de/artikelverwaltung/inhaltselemente/) vom Typ »Aufzählung« wie folgt einsetzt, werden deine 
 Angaben nach dem »Speichern« nicht übernommen.
 
@@ -151,6 +151,7 @@ toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist out
 paste_as_text: true
 ```
 
+{{< version-tag "5.0" >}} Ab Contao **5** verwendet Contao den [TinyMCE-Editor](https://www.tiny.cloud/) in der Version 6. Hier ändern sich einige Begriffe für die Anzeige von Elementen in der Toolbar. Verwende z. B. `blocks` statt `formatselect` und `styles` statt `styleselect`. Eine vollständige Liste der geänderten Begriffe findest Du in den [Migrationshinweisen der TinyMCE Dokumentation](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#things-we-renamed).
 
 ### Das Menü ändern
 
@@ -166,6 +167,8 @@ du den Eintrag [removed_menuitems](https://www.tiny.cloud/docs-4x/configure/edit
 
 Eine vollständige Liste der Toolbar-Items und Menü-Items findest du in der 
 [TinyMCE-Dokumentation](https://www.tiny.cloud/docs-4x/advanced/editor-control-identifiers/).
+
+{{< version-tag "5.0" >}} Ab Contao **5** verwendet Contao den [TinyMCE-Editor](https://www.tiny.cloud/) in der Version **6**. Hier ändern sich einige Begriffe für die Anzeige von Elementen im Menü. Verwende z. B. `blocks` statt `blockformats` und `fontsize` statt `fontsizes`. Eine vollständige Liste der geänderten Begriffe findest Du in den [Migrationshinweisen der TinyMCE Dokumentation](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#things-we-renamed).
 
 
 ```js

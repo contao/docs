@@ -31,12 +31,10 @@ expect a return value. Use it to override the internal PDF functionality.
 // src/EventListener/PrintArticleAsPdfListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\ModuleArticle;
 
-/**
- * @Hook("printArticleAsPdf")
- */
+#[AsHook('printArticleAsPdf')]
 class PrintArticleAsPdfListener
 {
     public function __invoke(string $articleContent, ModuleArticle $module): void

@@ -52,14 +52,12 @@ sitemap or only for the search index.
 // src/EventListener/GetSearchablePagesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getSearchablePages")
- */
+#[AsHook('getSearchablePages')]
 class GetSearchablePagesListener
 {
-    public function __invoke(array $pages, int $rootId = null, bool $isSitemap = false, string $language = null): array
+    public function __invoke(array $pages, $rootId = 0, bool $isSitemap = false, string $language = null): array
     {
         // Modify the $pages array …
 

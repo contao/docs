@@ -19,7 +19,7 @@ Contao supports the following metadata:
 - Caption
 - License URL
 
-![Maintaining the metadata](/de/file-manager/images/en/maintaining_the_metadata.jpg?classes=shadow)
+![Maintaining the metadata]({{% asset "images/manual/file-manager/en/maintaining_the_metadata.jpg" %}}?classes=shadow)
 
 **The HTML output**  
  Content element of type "Image" generates the following HTML code:

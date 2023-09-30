@@ -42,12 +42,10 @@ arguments and does not expect a return value.
 // src/EventListener/ProcessFormDataListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 
-/**
- * @Hook("processFormData")
- */
+#[AsHook('processFormData')]
 class ProcessFormDataListener
 {
     public function __invoke(

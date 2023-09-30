@@ -43,13 +43,11 @@ Return the `$widget` instance after modification or your custom widget.
 // src/EventListener/ValidateFormFieldListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 use Contao\Widget;
 
-/**
- * @Hook("validateFormField")
- */
+#[AsHook('validateFormField')]
 class ValidateFormFieldListener
 {
     public function __invoke(Widget $widget, string $formId, array $formData, Form $form): Widget

@@ -78,14 +78,12 @@ die Verzeichnisse `src/EventListener/` und platziere darin die Datei `PrepareFor
 // src/EventListener/PrepareFormDataListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\CoreBundle\Slug\Slug;
 use Contao\Form;
 use Doctrine\DBAL\Connection;
 
-/**
- * @Hook("prepareFormData")
- */
+#[AsHook('prepareFormData')]
 class PrepareFormDataListener
 {
     // Change these variables for your form, calendar and author
@@ -223,13 +221,6 @@ Typ `Auflistung` mit folgenden Angaben:
 |**Tabelle**                 |tl_lead                                           |
 |**Felder**                  |post_data                                         |
 
-
-
-{{% notice tip %}}
-Die Erweiterung bietet darüber hinaus zur gezielten Abfrage der Tabelle »tl_lead_data», in beliebigen Contao-Templates, 
-die Methode »getExportData()« der Klasse »DataCollector« 
-(s. a.: Leads »[DataCollector.php](https://github.com/terminal42/contao-leads/blob/master/library/Leads/DataCollector.php)»)
-{{% /notice %}}
 
 ### Fazit
 

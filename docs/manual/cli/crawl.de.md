@@ -44,4 +44,5 @@ Die Optionen sind viel wichtiger:
 **Hinweise**
 
 * Stelle sicher, dass die korrekte Domain im Startpunkt der Webseite eingetragen ist. Alternativ kann auch die Standard-Domain über den `router.request_context.host` Parameter festgelegt werden.
-* Geschützte Seiten können aktuell nur über das Backend indexiert werden.
+* Geschützte Seiten können aktuell nur über das Backend indexiert werden - [Freigabe der Indexierung über die config.yml](https://docs.contao.org/manual/de/system/systemwartung/#geschu-tzte-seiten-indizieren).
+* Ist eine Webseite vor der Veröffentlichung per »Basic Authentication« in der Produktiv- oder Staging-Umgebung geschützt, kann der [Zugriff für den Crawler über die config.yml](https://docs.contao.org/manual/de/system/systemwartung/#basic-authentication) erfolgen.

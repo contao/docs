@@ -17,8 +17,8 @@ zu starten.
 
 Mit dieser Funktion kann die gesamte Contao-Instanz in den »Wartungsmodus« versetzt werden. Während dieser Modus aktiv
 ist, ist die Webseite für reguläre Besucher nicht erreichbar und statt dessen wird ein entsprechender Hinweis angezeigt.
-Das Backend ist jedoch weiter normal erreichbar und eingeloggte Backend-Benutzer können auch das Frontend regulär
-aufrufen.
+Das Backend ist jedoch weiter normal erreichbar, angemeldete Backend-Benutzer können den Wartungsmodus über die 
+Frontend-Vorschau umgehen.
 
 Dieser Modus ist dann sinnvoll, wenn größere Umbauarbeiten im Backend vorgenommen werden müssen und die Auswirkungen
 im Frontend nicht sofort sichtbar sein sollen.
@@ -38,7 +38,7 @@ In Contao Versionen vor **4.9** heißt diese Sektion **Suchindex neu aufbauen**.
 Links steht dort nicht zur Verfügung.
 {{% /notice %}}
 
-![Den Suchindex automatisch aufbauen](/de/system/images/de/den-suchindex-automatisch-aufbauen.png?classes=shadow)
+![Den Suchindex automatisch aufbauen]({{% asset "images/manual/system/de/den-suchindex-automatisch-aufbauen.png" %}}?classes=shadow)
 
 {{< version "4.9" >}}
 
@@ -110,7 +110,7 @@ Wiederherstellen gelöschter Datensätze oder früherer Versionen verwendet werd
 bereinigen, um z. B. alte Vorschaubilder zu entfernen oder die XML-Sitemaps nach einer Änderung an der Seitenstruktur 
 zu aktualisieren.
 
-![Daten manuell bereinigen](/de/system/images/de/daten-manuell-bereinigen.png?classes=shadow)
+![Daten manuell bereinigen]({{% asset "images/manual/system/de/daten-manuell-bereinigen.png" %}}?classes=shadow)
 
 
 [BackendSettings]: /de/system/einstellungen/

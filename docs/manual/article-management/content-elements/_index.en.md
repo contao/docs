@@ -13,7 +13,7 @@ access to individual elements as needed.
 
 {{% children %}}
 
-![Restrict access to a content element](/de/article-management/images/en/restrict-access-to-a-module.png?classes=shadow)
+![Restrict access to a content element]({{% asset "images/manual/article-management/en/restrict-access-to-a-module.png" %}}?classes=shadow)
 
 | Info |
 | ---- | --- |

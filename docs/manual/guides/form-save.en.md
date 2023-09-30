@@ -75,9 +75,7 @@ use Contao\CoreBundle\Slug\Slug;
 use Contao\Form;
 use Doctrine\DBAL\Connection;
 
-/**
- * @Hook("prepareFormData")
- */
+#[AsHook('prepareFormData')]
 class PrepareFormDataListener
 {
     // Change these variables for your form, calendar and author
@@ -210,12 +208,6 @@ You can then create a new module of the type `Listing` with the following specif
 |**Table**                   |tl_lead                                           |
 |**Fields**                  |post_data                                         |
 
-
-{{% notice tip %}}
-The extension also provides a method for querying the table "tl_lead_data" in any Contao template with the method 
-»getExportData()« of the class »DataCollector« 
-(see: Leads "[DataCollector.php](https://github.com/terminal42/contao-leads/blob/master/library/Leads/DataCollector.php)")
-{{% /notice %}}
 
 ### Conclusion
 

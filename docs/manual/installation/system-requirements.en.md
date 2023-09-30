@@ -134,7 +134,7 @@ with.
 
 In case you are using the Contao Manager, you can run the `composer update` process in the maintenance section under _Composer Dependencies_:
 
-![Composer update in the Contao Manager](/de/installation/images/en/composer-update.png?classes=shadow)
+![Composer update in the Contao Manager]({{% asset "images/manual/installation/en/composer-update.png" %}}?classes=shadow)
 
 
 ### MySQL minimum requirements

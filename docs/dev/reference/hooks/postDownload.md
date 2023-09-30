@@ -26,11 +26,9 @@ not expect a return value.
 // src/EventListener/PostDownloadListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("postDownload")
- */
+#[AsHook('postDownload')]
 class PostDownloadListener
 {
     public function __invoke(string $file): void

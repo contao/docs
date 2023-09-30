@@ -21,7 +21,7 @@ We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/setti
 
 You can find the form generator in the "Content" group in the backend navigation.
 
-To create a new form click on **New** ![Create a new form](/de/icons/new.svg?classes=icon).
+To create a new form click on **New** ![Create a new form]({{% asset "icons/new.svg" %}}?classes=icon).
 
 ### Title and forwarding
 
@@ -35,6 +35,9 @@ To create a new form click on **New** ![Create a new form](/de/icons/new.svg?cla
 
 **Allow HTML tags:** If you select this option, your visitors can use HTML code in the form fields. In the backend 
 settings under "Allowed HTML Tags" you define which HTML tags are allowed.
+
+{{< version-tag "5.1" >}} **Submit via Ajax:** If you select this option, you will not need a redirect page 
+and you can additionally set a text as confirmation message. The submitted form data can be used as simple tokens like: ##field_name##.
 
 ## Send form data
 

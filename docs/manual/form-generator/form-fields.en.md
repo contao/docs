@@ -11,7 +11,7 @@ weight: 20
 Similar to articles and content elements, forms will contain a separate element for each form field, which is specifically 
 configured to meet the requirements for that field. Each form field must have at least one field name and one field label.
 
-![Edit form fields](/de/form-generator/images/en/formfield-editor.png?classes=shadow)
+![Edit form fields]({{% asset "images/manual/form-generator/en/formfield-editor.png" %}}?classes=shadow)
 
 **Field name:** The field name is used to reference the user input after the form has been submitted. If you store the 
 form data in the database, there must be a field in the table with the same name.
@@ -265,7 +265,7 @@ The form field `Select Menu` adds a drop-down menu to the form, where users can 
 multiple options to be selected, you can either enable multiple selection or use a [Checkbox Menu](#checkbox-menu) 
 instead of the Select Menu.
 
-![A select menu in the frontend](/de/form-generator/images/en/select-menu-in-frontend.png?classes=shadow)
+![A select menu in the frontend]({{% asset "images/manual/form-generator/en/select-menu-in-frontend.png" %}}?classes=shadow)
 
 
 ### Field configuration
@@ -282,7 +282,7 @@ instead of the Select Menu.
 A JavaScript wizard helps you when creating the options. You can group options and assign a heading to each group. To 
 make a line a group heading, select the Group option.
 
-![JavaScript wizard for creating options](/de/form-generator/images/en/select-options-wizard.png?classes=shadow)
+![JavaScript wizard for creating options]({{% asset "images/manual/form-generator/en/select-options-wizard.png" %}}?classes=shadow)
 
 
 ### Expert settings
@@ -325,7 +325,7 @@ Fields with multiple selection use the CSS `multiselect` class instead of `selec
 The form field Radio button menu adds a list of options to the form from which you can choose exactly one. To allow 
 multiple options to be selected, you must use a [checkbox menu](#checkbox-menu).
 
-![A radio button menu in the front end](/de/form-generator/images/en/radio-button-in-frontend.png?classes=shadow)
+![A radio button menu in the front end]({{% asset "images/manual/form-generator/en/radio-button-in-frontend.png" %}}?classes=shadow)
 
 
 ### Options
@@ -379,7 +379,7 @@ The form field `Checkbox Menu` adds a list of options to the form, from which yo
 like, or none at all. To allow the selection of just one option, you must instead use a radio button menu or a 
 [select menu](#select-menu).
 
-![A checkbox menu in the frontend](/de/form-generator/images/en/checkboxes-in-frontend.png?classes=shadow)
+![A checkbox menu in the frontend]({{% asset "images/manual/form-generator/en/checkboxes-in-frontend.png" %}}?classes=shadow)
 
 
 ### Options

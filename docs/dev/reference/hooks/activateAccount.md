@@ -30,13 +30,11 @@ the calling front end module as arguments and does not expect a return value.
 // src/EventListener/ActivateAccountListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 use Contao\MemberModel;
 
-/**
- * @Hook("activateAccount")
- */
+#[AsHook('activateAccount')]
 class ActivateAccountListener
 {
     public function __invoke(MemberModel $member, Module $module): void

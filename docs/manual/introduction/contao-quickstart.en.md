@@ -43,7 +43,7 @@ automatically creates navigation menus with all main and sub pages from the hier
 When you add a new page in the back end or change the order of the pages, the change is immediately visible on the 
 website.
 
-![The page structure](/de/introduction/images/en/the-page-structure.png?classes=shadow)
+![The page structure]({{% asset "images/manual/introduction/en/the-page-structure.png" %}}?classes=shadow)
 
 
 ## Each page has a page layout
@@ -70,7 +70,7 @@ the integration of an external layout or the use of a completely different CSS f
 Within the layout areas activated in a page layout, you can place any number of front end modules that are executed in 
 sequence when a page is called and generate the HTML code for the front end.
 
-![The front end modules](/de/introduction/images/en/the-front end-modules.png?classes=shadow)
+![The front end modules]({{% asset "images/manual/introduction/en/the-front-end-modules.png" %}}?classes=shadow)
 
 Just like page layouts, front end modules can be created and configured with a mouse click. Contao comes with several 
 types of modules, e.g. for creating navigation menus, managing users or inserting forms. In addition, you can add any 
@@ -100,7 +100,7 @@ The actual content - until now, it was only about the page structure and design 
 Each article consists of content elements that provide input and output functions for each content type, such as text, 
 images or tables.
 
-![The content element "Listing" in the back end](/de/introduction/images/en/the-content-element-listing-in-the-back-end.png?classes=shadow)
+![The content element "Listing" in the back end]({{% asset "images/manual/layout/introduction/en/the-content-element-listing-in-the-back-end.png" %}}?classes=shadow)
 
 The concept of content elements has many advantages. For example, the risk of redundant or even invalid HTML code is 
 reduced compared to using a rich text editor because each element is generated separately, and it is easy to move 

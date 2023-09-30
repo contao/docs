@@ -15,7 +15,7 @@ might be necessary to manually start the system maintenance tasks that are other
 
 This feature allows you to put the Contao instance into a "maintenance mode". While this mode is active, the front end
 is not reachable for regular visitors. Instead an appropriate message is shown. The back end is accessible as usual,
-logged in back end users can also visit the front end normally.
+logged in back end users can bypass the maintenance mode using the front end preview.
 
 This mode is useful, if more in depth work needs to be done in the back end, the effects of which should not be
 immediately visible in the front end.
@@ -34,7 +34,7 @@ In versions prior to Contao **4.9** this section is called **Rebuild search inde
 for broken links is not available there.
 {{% /notice %}}
 
-![Build the search index automatically](/de/system/images/en/rebuild-the-search-index.png?classes=shadow)
+![Build the search index automatically]({{% asset "images/manual/system/en/rebuild-the-search-index.png" %}}?classes=shadow)
 
 {{< version "4.9" >}}
 
@@ -104,7 +104,7 @@ In addition to the user-generated content, Contao stores various system data tha
 deleted records or previous versions. You can manually clean this data, for example to remove old thumbnails or to 
 update the XML sitemaps after a change in the page structure.
 
-![Purge data manually](/de/system/images/en/purge-data-manually.png?classes=shadow)
+![Purge data manually]({{% asset "images/manual/system/en/purge-data-manually.png" %}}?classes=shadow)
 
 
 [BackendSettings]: /en/system/settings/

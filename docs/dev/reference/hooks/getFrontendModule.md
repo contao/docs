@@ -55,14 +55,12 @@ Return `$buffer` or your custom modification.
 // src/EventListener/GetFrontendModuleListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 use Contao\Module;
 use Contao\ModuleModel;
 
-/**
- * @Hook("getFrontendModule")
- */
+#[AsHook('getFrontendModule')]
 class GetFrontendModuleListener
 {
     public function __invoke(ModuleModel $model, string $buffer, $module): string

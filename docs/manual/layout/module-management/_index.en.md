@@ -23,7 +23,7 @@ You therefore access the module manager via the Theme Manager, as described in t
 As with content elements, you can restrict access to a front end module to certain groups of members under 
 **Access Protection**.
 
-![Restrict access to a module](/de/layout/module-management/images/en/restrict-access-to-a-module.png?classes=shadow)
+![Restrict access to a module]({{% asset "images/manual/layout/module-management/en/restrict-access-to-a-module.png" %}}?classes=shadow)
 
 **Protect module:** The module is invisible by default and is only displayed after a member has logged on to the 
 front end.

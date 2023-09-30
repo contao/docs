@@ -16,7 +16,7 @@ fester, äußerer Abstand wird einmal für die Gesamtbreite und dann zwischen de
 Möchtest du z. B. bei einem »12-Spalten System« zwei Spalten anzeigen, musst du deinen beiden Bereichen jeweils sechs Grids 
 zuordnen. Diese Zuordnung erfolgt über CSS-Klassen.
 
-![Grid Demo](/de/guides/images/de/grid/grid-struktur.jpg?classes=shadow)
+![Grid Demo]({{% asset "images/manual/guides/de/grid/grid-struktur.jpg" %}}?classes=shadow)
 
 Es existieren u. a. »12-spaltige« oder »16-spaltige« Umsetzungen. Manche sind »pixelbasierend«, andere »prozentual«. 
 Auch die Abstandsbreite kann bei verschiedenen Systemen variieren. Letztlich handelt es sich um CSS-Angaben 

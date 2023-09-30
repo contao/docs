@@ -28,7 +28,7 @@ Wir empfehlen den Versand über das [E-Mail-Transportprotkoll (SMTP)](../../syst
 Den Formulargenerator findest du in der Backend-Navigation in der Gruppe »Inhalte«.
 
 Um ein neues Formular anzulegen klicke auf 
-![Ein neues Formular anlegen](/de/icons/new.svg?classes=icon "Ein neues Formular anlegen") **Neu**.
+![Ein neues Formular anlegen]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Formular anlegen") **Neu**.
 
 
 ### Titel und Weiterleitung
@@ -45,6 +45,10 @@ weitergeleitet wird (Bestätigungsseite).
 
 **HTML-Tags erlauben:** Wenn du diese Option auswählst, können deine Besucher HTML-Code in den Formularfeldern 
 verwenden. In den Backend-Einstellungen unter »Erlaubte HTML-Tags« legst du fest, welche HTML-Tags zulässig sind.
+
+{{< version-tag "5.1" >}} **Per Ajax senden:** Wenn du diese Option auswählst, benötigst du keine Weiterleitungsseite 
+und du kannst zusätzlich einen Text als Bestätigungsmeldung setzen. Die übermittelten Formulardaten können als Simple-Tokens verwendet werden, 
+z. B. ##field_name##.
 
 
 ## Formulardaten versenden

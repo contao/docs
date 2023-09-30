@@ -26,7 +26,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['sorting'] = [
 | flag                  | Sorting flag (`integer`)         | **1** Sort by initial letter ascending <br>**2** Sort by initial letter descending <br>**3** Sort by initial two letters ascending <br>**4** Sort by initial two letters descending <br>**5** Sort by day ascending <br>**6** Sort by day descending <br>**7** Sort by month ascending <br>**8** Sort by month descending <br>**9** Sort by year ascending <br>**10** Sort by year descending <br>**11** Sort ascending <br>**12** Sort descending |
 | panelLayout           | Panel layout (`string`)          | **search** show the search records menu <br>**sort** show the sort records menu <br>**filter** show the filter records menu <br>**limit** show the limit records menu. <br>Separate options with comma (= space) and semicolon (= new line) like `sort,filter;search,limit`.                                                                                                                                           |
 | fields                | Default sorting values (`array`) | One or more fields that are used to sort the table.                                                                                                                                                                                                                                                                                                                                                    |
-| headerFields          | Header fields (`array`)          | One or more fields that will be shown in the header element (sorting mode 4 only).                                                                                                                                                                                                                                                                                                                     |
+| headerFields          | Header fields (`array`)          | One or more fields that will be shown in the [header element]({{< asset "images/dev/reference/mode_parent_header.png" >}}) (sorting mode 4 only).                                                                                                                                                                                                                                                                                                                     |
 | icon                  | Tree icon (`string`)             | Path to an icon that will be shown on top of the tree (sorting mode 5 and 6 only).                                                                                                                                                                                                                                                                                                                     |
 | root                  | Root nodes (`array`)             | IDs of the root records (pagemounts). This value usually takes care of itself.                                                                                                                                                                                                                                                                                                                         |
 | rootPaste             | true/false (`bool`)           | Enable paste buttons at root level. (default: false)                                                                                                                                                                                                                                                                                                                             |
@@ -122,9 +122,54 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-operations-operation-button) | Callback function (`array`)       | Call a custom function instead of using the default button function. Please specify as `['Class', 'Method']`. |
+| showInHeader    | true/false (`bool`)               | {{< version-tag "4.5" >}} Shows the operation in the [header element]({{< asset "images/dev/reference/mode_parent_header.png" >}}) (sorting mode 4 only).                                                   |
+| route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                                               |
 
-{{< version "4.7" >}}
+{{% notice "note" %}}
+Since Contao **5.0** you do not have to define any settings for standard operations anymore. Instead you can give a list
+of which operations should be available for your data container. Contao will also check the appropriate
+[`contao_dc.<data-container>` permission](/framework/security/) for these operations.
 
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['config']['list']['operations'] = [
+    'edit',
+    'children',
+    'copy',
+    'cut',
+    'delete',
+    'toggle',
+    'show',
+];
+```
+{{% /notice %}}
+
+
+#### Toggle Operation
+
+{{< version-tag "5.0" >}} You can implement an automatic toggle operation for data containers that contain a boolean 
+field. This is typically used for fields that control a "published" state of a data record for example, but the use case 
+can be arbitrary.
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['config']['list']['operations'][] = 'toggle';
+
+$GLOBALS['TL_DCA']['tl_foobar']['fields']['published'] = [
+    'toggle' => true,
+    'inputType' => 'checkbox',
+    'sql' => ['type' => 'boolean', 'default' => false],
+];
+```
+
+{{% notice "note" %}}
+If the state of your field is reversed you can instead define `reverseToggle`:
+
+```php
+$GLOBALS['TL_DCA']['tl_foobar']['fields']['invisible'] = [
+    'reverseToggle' => true,
+    'inputType' => 'checkbox',
+    'sql' => ['type' => 'boolean', 'default' => false],
+];
+```
+{{% /notice %}}

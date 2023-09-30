@@ -212,7 +212,7 @@ CMS« die angeforderte Versionsangabe entweder auf bspw. `4.9.*@RC`, um Release
 Candidates, oder `4.9.x-dev` um Entwicklerversionen installieren 
 zu lassen.
 
-![Contao Manager Versionsangabe](/de/guides/images/de/install-version/contao-manager-versionseingabe.gif?classes=shadow)
+![Contao Manager Versionsangabe]({{% asset "images/manual/guides/de/install-version/contao-manager-versionseingabe.gif" %}}?classes=shadow)
 
 Wenn man keine bestehende Contao-Installation nutzen will, sondern mit einer frischen Installation starten möchte, dann geht man wie folgt vor.
 

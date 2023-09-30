@@ -8,9 +8,10 @@ weight: 30
 
 Contao automatically indexes the pages of your website as soon as they are accessed and stores the words that match the search criteria in a table in the database. The search module searches this table and returns the pages that contain the term(s) you are looking for.
 
-![The on-site search in the front end](/de/layout/module-management/images/de/die-on-site-suche-im-frontend.png?classes=shadow)
+![The on-site search in the front end]({{% asset "images/manual/layout/module-management/de/die-on-site-suche-im-frontend.png" %}}?classes=shadow)
 
-Note, however, that for security reasons your website will not be indexed if you are logged into the back end and access the front end preview. It could be that there is unpublished content on your website, which should not appear in the search index before you publish it.
+Note, however, that for security reasons your website will not be indexed if you are logged into the back end and access the front end preview. It could be that there is unpublished content on your website, which should not appear in the search index before you publish it. In debug mode, the web page is also
+not indexed.
 
 ## Search syntax
 

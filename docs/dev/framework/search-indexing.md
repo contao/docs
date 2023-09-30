@@ -38,6 +38,10 @@ Indexing in Contao happens in two different ways which may or may not be combine
   ```
   
     There are numerous options to this command so be sure to run it using `--help` to learn about them.
+    
+    {{% notice tip %}}
+    Make sure to set the domain, see [Command Line](https://docs.contao.org/dev/framework/cron/#command-line). 
+    {{% /notice %}}
   
 * By visiting the pages one after the other, the `SearchIndexListener` will listen to the Symfony `kernel.terminate`
   event and index the generated response content on every request.
@@ -165,12 +169,10 @@ There are multiple ways to achieve this. One way is to use the [generatePage][ge
 // src/EventListener/GeneratePageListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\PageModel;
 
-/**
- * @Hook("generatePage")
- */
+#[AsHook('generatePage')]
 class GeneratePageListener
 {
     public function __invoke(PageModel $pageModel): void

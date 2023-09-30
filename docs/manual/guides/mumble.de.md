@@ -39,22 +39,22 @@ Installation der Mumble-Server-Anwendung ist nicht notwendig.
 Nach dem ersten Start von Mumble sollte sich der »Audio Einstellungs-Assistent« öffnen. Alle Einstellungen können 
 auch nachträglich angepasst werden.
 
-![Mumble Audio Einstellungs-Assistent](/de/guides/images/de/mumble/mumble-audio-assistant.jpg?classes=shadow)
+![Mumble Audio Einstellungs-Assistent]({{% asset "images/manual/guides/de/mumble/mumble-audio-assistant.jpg" %}}?classes=shadow)
 
 Wenn man den »Weiter«-Button betätigt, kann man auf dem nächsten Screen die bevorzugte Audio-Ein- und Ausgabegeräte auswählen.
 
-![Mumble Audio Einstellungs-Assistent Geräteauswahl](/de/guides/images/de/mumble/mumble-audio-assistant-geraeteauswahl.jpg?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Geräteauswahl]({{% asset "images/manual/layout/guides/de/mumble/mumble-audio-assistant-geraeteauswahl.jpg" %}}?classes=shadow)
 
 Im nächsten Screen wird die Leistung der Soundkarte ermittelt. Dies wird im Assistentenfenster beschrieben. Man hört also 
 einen Text und soll den Schieberegler unter dem Text soweit wie möglich nach links schieben, ohne dass der vorgelesene 
 Text qualitativ schlechter wird oder anfängt zu stocken.
 
-![Mumble Audio Einstellungs-Assistent Geräteeinstellung](/de/guides/images/de/mumble/mumble-audio-assistant-geraeteeinstellungen.jpg?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Geräteeinstellung]({{% asset "images/manual/layout/guides/de/mumble/mumble-audio-assistant-geraeteeinstellungen.jpg" %}}?classes=shadow)
 
 Der nächste Schritt behandelt die Lautstärken-Einstellungen. Folgt man den Anweisungen auf dem Bildschirm, 
 sollte man die optimale Einstellung finden.
 
-![Mumble Audio Einstellungs-Assistent Lautstärke](/de/guides/images/de/mumble/mumble-audio-assistant-lautstaerkeneinstellungen-mikro.jpg?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Lautstärke]({{% asset "images/manual/layout/guides/de/mumble/mumble-audio-assistant-lautstaerkeneinstellungen-mikro.jpg" %}}?classes=shadow)
 
 Kommen wir nun zur Sprachaktivitätserkennung. Diese wird dazu benutzt, um einzustellen, ab wann die »Geräusche«, die über 
 das Mikrofon aufgenommen werden, als Sprache einzuordnen sind. Wir empfehlen vorerst die Einstellung 
@@ -65,18 +65,18 @@ Wenn man dann im Mumble ist, kann man diese Einstellung noch besser anpassen, ab
 erstmal funktionieren. Auf diesem Screen sieht man auch schon das Icon als Avatar, der bei erkannter und aktivierter Sprache
 von Grün zu Blau wechselt und zusätzlich »Schallwellen« anzeigt das ist somit ein Zeichen für die eigene Spracheingabe. Auch im späteren Mumble-Statusfenster wird dieses Icon mit dem Farbwechsel zu sehen sein und zeigt an, wer gerade spricht.
 
-![Mumble Audio Einstellungs-Assistent Sprachaktivierung](/de/guides/images/de/mumble/mumble-audio-assistant-sprachaktivitaetserkennung.jpg?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Sprachaktivierung]({{% asset "images/manual/guides/de/mumble/mumble-audio-assistant-sprachaktivitaetserkennung.jpg" %}}?classes=shadow)
 
 Der folgende Screen möchte noch zwei Einstellungen zur Qualität und den Hinweisen erfragen. Die Qualität kann man auf 
 »ausgeglichen« lassen. Bei den Benachrichtigungen empfehlen wir, den Punkt »Text-zu-Sprache deaktivieren und Sounds benutzen« 
 zu aktivieren, denn gerade »Text-zu-Sprache« kann am Anfang zu großen Verwirrungen führen.
 
-![Mumble Audio Einstellungs-Assistent Sprachqualität](/de/guides/images/de/mumble/mumble-audio-assistant-qualitaet-hinweise.jpg?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Sprachqualität]({{% asset "images/manual/layout/guides/de/mumble/mumble-audio-assistant-qualitaet-hinweise.jpg" %}}?classes=shadow)
 
 Der letzte Punkt ist eigentlich nur für die Benutzung mit Spielen interessant und kann durchaus ignoriert werden. Wenn man 
 Kopfhörer benutzt, kann man aber gern den Haken bei »Benutze Kopfhörer« setzen.
 
-![Mumble Audio Einstellungs-Assistent Audio-Position](/de/guides/images/de/mumble/mumble-audio-assistant-positionsabhaengiges-audio.jpg?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Audio-Position]({{% asset "images/manual/guides/de/mumble/mumble-audio-assistant-positionsabhaengiges-audio.jpg" %}}?classes=shadow)
 
 Damit ist die Audio-Konfiguration abgeschlossen.
 
@@ -87,7 +87,11 @@ Bei Mumble muss man sich im Allgemeinen keinen Benutzernamen oder Passwort über
 Zertifikates identifiziert. Wenn man bereits ein Zertifikat hat (z.B. ein Mail-Zertifikat o. ä.) kann man dieses 
 durchaus nutzen. Du kannst dir aber auch ein Zertifikat von Mumble erstellen lassen.
 
-![Mumble Zertifikat-Management](/de/guides/images/de/mumble/mumble-zertifikat-management.jpg?classes=shadow)
+![Mumble Zertifikat-Management]({{% asset "images/manual/guides/de/mumble/mumble-zertifikat-management.jpg" %}}?classes=shadow)
+
+Nach der Erstellung des Zertifikats solltest du das Zertifikat exportieren und an einem geeigeneten Platz sichern.
+Solltest du Mumble frisch installieren müssen - z. B. auf einem zweiten Rechner oder nach einem Crash - kann das
+gesicherte Zertifikat importiert werden.
 
 
 ## Mumble-Server auswählen
@@ -96,7 +100,7 @@ Es gibt viele verschiedene Mumble-Server auf der ganzen Welt, aber wir wollen nu
 man Mumble noch die Zugangsdaten zum »CCA-Mumble-Server« mitteilen. Dazu im erscheinenden Screen einfach 
 auf »Server hinzufügen« klicken.
 
-![Mumble Server Verbindung](/de/guides/images/de/mumble/mumble-server-verbinden.jpg?classes=shadow)
+![Mumble Server Verbindung]({{% asset "images/manual/guides/de/mumble/mumble-server-verbinden.jpg" %}}?classes=shadow)
 
 Folgende Daten sollte man eingeben:
 
@@ -108,7 +112,7 @@ Folgende Daten sollte man eingeben:
 In der Serverliste sollte der »CCA-Mumble-Server« nun unter den Favoriten auftauchen. Diesen Eintrag auswählen 
 und auf »Verbinden« klicken.
 
-![Mumble Server Verbindung wählen](/de/guides/images/de/mumble/mumble-server-auswaehlen.jpg?classes=shadow)
+![Mumble Server Verbindung wählen]({{% asset "images/manual/layout/guides/de/mumble/mumble-server-auswaehlen.jpg" %}}?classes=shadow)
 
 
 ## Mumble Statusfenster
@@ -129,7 +133,7 @@ Wenn man in der Audio-Einrichtung eingestellt hat, dass Mumble automatisch den S
 jedes Wort/Geräusch an Mumble übertragen, wenn man sich selbst nicht mutet.
 {{% /notice %}}
 
-![Mumble Status Fenster](/de/guides/images/de/mumble/mumble-statusfenster.jpg?classes=shadow)
+![Mumble Status Fenster]({{% asset "images/manual/guides/de/mumble/mumble-statusfenster.jpg" %}}?classes=shadow)
 
 
 ## Problem-Behandlung

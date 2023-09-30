@@ -38,11 +38,9 @@ A string containing the formatted date.
 // src/EventListener/ParseDateListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("parseDate")
- */
+#[AsHook('parseDate')]
 class ParseDateListener
 {
     public function __invoke(string $formattedDate, string $format, ?int $timestamp): string

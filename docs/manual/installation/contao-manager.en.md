@@ -51,7 +51,7 @@ In Contao, all publicly accessible files are located in the subfolder `/web` of 
 **Example:** `example.com` points to the directory `/www/example/web`
 
 ({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to
-`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
+`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`. When changing from `/web` to `/public`, the change must also be specified in composer.json.)
 
 {{% notice note %}}
 Every Contao installation requires a separate (sub)domain.
@@ -78,7 +78,7 @@ Therefore, add the file extension `.php` only after the upload.
 Then use your browser to access the URL `www.example.com/contao-manager.phar.php`. You should see the Contao Manager 
 welcome page.
 
-![Welcome page of the Contao Manager](/de/installation/images/en/welcomepage-contao-manager.png?classes=shadow)
+![Welcome page of the Contao Manager]({{% asset "images/manual/installation/en/welcomepage-contao-manager.png" %}}?classes=shadow)
 
 ### Basic configuration
 
@@ -95,7 +95,7 @@ The Contao Manager needs the path to the PHP binary and other server information
 The path is usually automatically detected by the Contao Manager.
 
 
-![Server configuration](/de/installation/images/en/server-configuration.png?classes=shadow)
+![Server configuration]({{% asset "images/manual/installation/en/server-configuration.png" %}}?classes=shadow)
 
 #### Composer Resolver Cloud
 

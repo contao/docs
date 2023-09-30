@@ -44,13 +44,11 @@ Use the [SendNewsletterEvent](/reference/events#sendnewsletterevent) instead.
 // src/EventListener/SendNewsletterListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Database\Result;
 use Contao\Email;
 
-/**
- * @Hook("sendNewsletter")
- */
+#[AsHook('sendNewsletter')]
 class SendNewsletterListener
 {
     public function __invoke(Email $email, Result $newsletter, array $recipient, string $text, string $html): void

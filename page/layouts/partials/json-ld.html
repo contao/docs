@@ -1,0 +1,19 @@
+{{ with .Store.Get "faqs"  }}
+    {{ $lastIndex := sub (len .) 1 }}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+            {{ range $index, $faq := . }}    {
+                    "@type": "Question",
+                    "name": "{{ $faq.question }}",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "{{ $faq.answer }}"
+                    }
+                }{{ if ne $index $lastIndex }},{{ end }}
+            {{ end }}]
+        }
+    </script>
+{{ end }}

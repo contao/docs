@@ -30,12 +30,10 @@ and does not expect a return value.
 // src/EventListener/ExecutePostActionsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\DataContainer;
 
-/**
- * @Hook("executePostActions")
- */
+#[AsHook('executePostActions')]
 class ExecutePostActionsListener
 {
     public function __invoke(string $action, DataContainer $dc): void

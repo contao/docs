@@ -11,7 +11,7 @@ weight: 25
 
 The content element "Image" adds an image to the article. An image can have a large view or it can be an image link to a specific URL.
 
-![Create a screen element](/de/article-management/images/en/create-an-imageelement.png?classes=shadow)
+![Create a screen element]({{% asset "images/manual/article-management/en/create-an-imageelement.png" %}}?classes=shadow)
 
 **Source file:** Here you select the image to be used.
 
@@ -52,7 +52,7 @@ div class="ce_image first last block">
 
 The content element "Gallery" adds a picture gallery to the article, i.e. a collection of several thumbnails that are listed in a list and are enlarged when clicked. With so many images, the gallery can be spread over several pages.
 
-![The gallery in the frontend](/de/article-management/images/en/the-gallery-in-the-frontend.png?classes=shadow)
+![The gallery in the frontend]({{% asset "images/manual/article-management/en/the-gallery-in-the-frontend.png" %}}?classes=shadow)
 
 **Source files:** Here you can select one or more folders or files to be included in the gallery. If you select a folder, Contao will automatically add all images in the folder to the gallery. You can rearrange the individual images by dragging them.
 

@@ -45,12 +45,10 @@ Return `true` if the credentials are valid, `false` otherwise.
 // src/EventListener/CheckCredentialsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\User;
 
-/**
- * @Hook("checkCredentials")
- */
+#[AsHook('checkCredentials')]
 class CheckCredentialsListener
 {
     public function __invoke(string $username, string $credentials, User $user): bool

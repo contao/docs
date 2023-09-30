@@ -8,11 +8,11 @@ This widget renders a file picker allowing to choose one or more files from the 
 
 The file tree widget in the contao download element:
 
-![File tree widget](../images/file-tree.png?classes=shadow)
+![File tree widget]({{% asset "images/dev/reference/widgets/file-tree.png" %}}?classes=shadow)
 
 The file tree with gallery option enabled (as in the contao gallery element):
 
-![File tree widget](../images/file-tree-gallery.png?classes=shadow)
+![File tree widget]({{% asset "images/dev/reference/widgets/file-tree-gallery.png" %}}?classes=shadow)
 
 ## Options
 
@@ -33,7 +33,7 @@ This table only shows the options relevant to the core functionality of this wid
 
 ## Examples
 
-{{< tabs >}}
+{{< tabs groupId="file-tree-widget-examples" >}}
 
 {{% tab name="Image picker" %}}
 

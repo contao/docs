@@ -25,11 +25,11 @@ Webseite erscheinen werden, wenn sie nicht mit einer Seite (Sendung) verknüpft
 Die Seitenstruktur ist hierarchisch organisiert. Du kannst die einzelnen Seiten ineinander verschachteln und so 
 beliebig verzweigte Unterseiten erstellen, aus denen Contao im Frontend automatisch die entsprechenden Navigationsmenüs 
 mit allen Haupt- und Unterseiten erstellt. Benutze die grauen Icons mit dem 
-![Bereich öffnen](/de/icons/folPlus.svg?classes=icon) Plus- bzw. 
-![Bereich schließen](/de/icons/folMinus.svg?classes=icon) Minuszeichen links neben den Seitennamen, um Unterseiten 
+![Bereich öffnen]({{% asset "icons/folPlus.svg" %}}?classes=icon) Plus- bzw. 
+![Bereich schließen]({{% asset "icons/folMinus.svg" %}}?classes=icon) Minuszeichen links neben den Seitennamen, um Unterseiten 
 aus- oder einzuklappen.
 
-![Unterseiten aus- und einklappen](/de/layout/site-structure/images/de/unterseiten-aus-und-einklappen.png?classes=shadow)
+![Unterseiten aus- und einklappen]({{% asset "images/manual/layout/site-structure/de/unterseiten-aus-und-einklappen.png" %}}?classes=shadow)
 
 Dank der hierarchischen Seitenstruktur ist es möglich, Eigenschaften einer übergeordneten Seite an ihre Unterseiten zu 
 vererben. Für deine Arbeit bedeutet das, dass du ein bestimmtes Seitenlayout oder eine bestimmte Zugriffsberechtigung 

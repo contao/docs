@@ -7,15 +7,15 @@ This widget renders one or multiple checkboxes. Choose this if you want the edit
 
 A simple binary checkbox that allows the editor to toggle a boolean state:
 
-![A simple binary checkbox](../images/checkbox.png?classes=shadow)
+![A simple binary checkbox]({{% asset "images/dev/reference/widgets/checkbox.png" %}}?classes=shadow)
 
 Multiple checkboxes to give the editor a defined set of options to select one or many options from:
 
-![Multiple checkboxes](../images/checkbox-multiple.png?classes=shadow)
+![Multiple checkboxes]({{% asset "images/dev/reference/widgets/checkbox-multiple.png" %}}?classes=shadow)
 
 Multiple checkboxes to choose from as before, but grouped into categories: 
 
-![A nested set of checkboxes](../images/checkbox-grouped.png?classes=shadow)
+![A nested set of checkboxes]({{% asset "images/dev/reference/widgets/checkbox-grouped.png" %}}?classes=shadow)
 
 ## Options
 
@@ -44,7 +44,7 @@ Depending on the widget configuration, the widget persists different values to t
 
 ## Examples
 
-{{< tabs >}}
+{{< tabs groupId="checkbox-widget-examples" >}}
 
 {{% tab name="Toggle" %}}
 

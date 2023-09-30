@@ -40,12 +40,10 @@ distribution or data storage.
 // src/EventListener/PrepareFormDataListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 
-/**
- * @Hook("prepareFormData")
- */
+#[AsHook('prepareFormData')]
 class PrepareFormDataListener
 {
     public function __invoke(array &$submittedData, array $labels, array $fields, Form $form): void

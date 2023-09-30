@@ -33,14 +33,12 @@ namespace App\Controller\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="texts")
- */
+#[AsContentElement(category: 'texts')]
 class MyContentElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -62,7 +60,7 @@ content element like so:
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
     {type_legend},type;
-    {text_legend),text,url;
+    {text_legend},text,url;
 ';
 ```
 

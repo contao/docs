@@ -49,11 +49,9 @@ Using the `addLogEntry` hook has been deprecated and will no longer work in Cont
 // src/EventListener/AddLogEntryListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("addLogEntry")
- */
+#[AsHook('addLogEntry')]
 class AddLogEntryListener
 {
     public function __invoke(string $message, string $func, string $action): void

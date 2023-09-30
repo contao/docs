@@ -35,14 +35,8 @@ namespace App\Controller;
 use Contao\CoreBundle\Controller\AbstractBackendController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
-use Twig\Environment as TwigEnvironment;
 
-/**
- * @Route("/%contao.backend.route_prefix%/my-backend-route",
- *     name=BackendController::class,
- *     defaults={"_scope": "backend"}
- * )
- */
+#[Route('/%contao.backend.route_prefix%/my-backend-route', name: BackendController::class, defaults: ['_scope' => 'backend'])]
 class BackendController extends AbstractBackendController
 {
     public function __invoke(): Response
@@ -92,7 +86,7 @@ into `/templates`.
 
 This example renders like this:
 
-![](../images/custom-backend-routes-1.png?classes=shadow)
+![]({{% asset "images/dev/guides/custom-backend-routes-1.png" %}}?classes=shadow)
 
 
 ## Extend the Back End Menu
@@ -106,14 +100,13 @@ create one that listens for the [menu event][BackEndMenuEvent] to be dispatched.
 namespace App\EventListener;
 
 use App\Controller\BackendController;
+use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\MenuEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Routing\RouterInterface;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
-/**
- * @ServiceTag("kernel.event_listener", event="contao.backend_menu_build", priority=-255)
- */
+#[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD, priority: -255)]
 class BackendMenuListener
 {
     protected $router;

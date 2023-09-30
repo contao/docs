@@ -39,11 +39,9 @@ Return the (modified) array of URL fragments.
 // src/EventListener/GetPageIdFromUrlListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getPageIdFromUrl")
- */
+#[AsHook('getPageIdFromUrl')]
 class GetPageIdFromUrlListener
 {
     public function __invoke(array $fragments): array

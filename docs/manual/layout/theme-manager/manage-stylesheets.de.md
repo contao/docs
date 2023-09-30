@@ -104,7 +104,7 @@ In Contao kommst du mit dieser Schreibweise allerdings so gar nicht in Berühru
 Eingabemaske festlegen kannst. Lediglich den Teil vor den geschweiften Klammern, den sogenannten Selektor, musst du von 
 Hand in das dafür vorgesehene Feld eingeben.
 
-![Den Außenabstand im Stylesheet-Editor festlegen](/de/layout/theme-manager/images/de/den-aussenabstand-im-stylesheet-editor-festlegen.png?classes=shadow)
+![Den Außenabstand im Stylesheet-Editor festlegen]({{% asset "images/manual/layout/theme-manager/de/den-aussenabstand-im-stylesheet-editor-festlegen.png" %}}?classes=shadow)
 
 
 ### Reihenfolge der Formatdefinitionen
@@ -130,9 +130,9 @@ geladen und danach wieder durch das allgemeingültige Format für alle Browser
 käme also niemals zur Anwendung, und der Außenabstand betrüge immer 24 Pixel.
 
 Du kannst die Reihenfolge der Datensätze in Contao über die Navigationsicons 
-![Formatdefinition verschieben](/de/icons/drag.svg?classes=icon) **Drag&Drop** oder 
-![Formatdefinition verschieben](/de/icons/cut.svg?classes=icon) **Verschieben** und 
-![Nach der Formatdefinition einfügen](/de/icons/pasteafter.svg?classes=icon) **Danach einfügen** ändern.
+![Formatdefinition verschieben]({{% asset "icons/drag.svg" %}}?classes=icon) **Drag&Drop** oder 
+![Formatdefinition verschieben]({{% asset "icons/cut.svg" %}}?classes=icon) **Verschieben** und 
+![Nach der Formatdefinition einfügen]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Danach einfügen** ändern.
 
 Zudem hast du die Möglichkeit, Formatdefinitionen eine Kategorie zuzuweisen, um die Datensätze später nach dieser 
 Kategorie filtern und zusammengehörende Definitionen leichter erkennen zu können. Diese Kategorien dienen lediglich der 
@@ -142,7 +142,7 @@ besseren Übersicht im Backend und werden nicht für die Sortierung im Styleshe
 ## Stylesheets exportieren
 
 Du kannst einzelne Stylesheets exportieren, indem du hinter dem Stylesheet auf das Navigationsicons 
-![Stylesheet exportieren](/de/icons/theme_export.svg?classes=icon) **Stylesheet exportieren** klickst.
+![Stylesheet exportieren]({{% asset "icons/theme_export.svg" %}}?classes=icon) **Stylesheet exportieren** klickst.
 
 
 ## Stylesheets importieren

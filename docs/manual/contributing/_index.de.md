@@ -29,19 +29,19 @@ einfachsten, dies direkt über GitHub zutun.
 
 Klicke auf den Link »Diese Seite bearbeiten« in der oberen rechten Ecke und du wirst zu GitHub weitergeleitet:
 
-![Diese Seite bearbeiten](/de/contributing/images/de/diese-seite-bearbeiten.png?classes=shadow)
+![Diese Seite bearbeiten]({{% asset "images/manual/contributing/de/diese-seite-bearbeiten.png" %}}?classes=shadow)
 
 Bei deinem ersten Beitrag wirst du gebeten, einen [Fork](https://de.wikipedia.org/wiki/Abspaltung_(Softwareentwicklung)) 
 vom [Repository](https://de.wikipedia.org/wiki/Repository) »contao/docs« zu erstellen. Klicke auf »Fork this repository«.
 
-![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow)
+![Fork this repository]({{% asset "images/manual/contributing/de/fork-this-repository.png" %}}?classes=shadow)
 
 
 ### Inhalt bearbeiten
 
 Bearbeite den Inhalt, beschreibe deine Änderungen und klicke auf die Schaltfläche »Propose file change«.
 
-![Bearbeite den Inhalt](/de/contributing/images/de/inhalt-bearbeiten.png?classes=shadow)
+![Bearbeite den Inhalt]({{% asset "images/manual/contributing/de/inhalt-bearbeiten.png" %}}?classes=shadow)
 
 
 ### Branch und Commit erzeugen
@@ -49,7 +49,7 @@ Bearbeite den Inhalt, beschreibe deine Änderungen und klicke auf die Schaltflä
 GitHub wird nun einen neuen Branch in deinem Fork und einen Commit für deine Änderungen erzeugen. Ausserdem wird eine Vorschau deiner 
 Änderungen angezeigt:
 
-![Branch und Commit erzeugen](/de/contributing/images/de/branch-und-commit-erzeugen.png?classes=shadow)
+![Branch und Commit erzeugen]({{% asset "images/manual/contributing/de/branch-und-commit-erzeugen.png" %}}?classes=shadow)
 
 Wenn alles korrekt ist, klicke auf die Schaltfläche »Create pull request«.
 
@@ -70,7 +70,7 @@ eine Anfrage an die Berechtigten des Repositories deine Änderungen in das offiz
 Falls nötig, kannst du noch letzte Anpassungen an deinen Pull-Request vornehmen. 
 Klicke erneut auf die Schaltfläche »Create pull request«.
 
-![Pull-Request erzeugen](/de/contributing/images/de/create-pull-request.png?classes=shadow)
+![Pull-Request erzeugen]({{% asset "images/manual/contributing/de/create-pull-request.png" %}}?classes=shadow)
 
 **Herzlichen Glückwunsch!** Du hast soeben einen Pull-Request für die offizielle Contao-Dokumentation erstellt! Die 
 Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
@@ -81,7 +81,7 @@ Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änder
 Falls du weitere Änderungen vorschlagen möchtest, überprüfe zuvor, ob dein Fork auf dem aktuellen Stand ist.
 Über GitHub kannst du dann deinen Fork über »Fetch upstream« synchronisieren.
 
-![GitHub Fetch upstream](/de/contributing/images/de/github-fork-fetch-upstream.png?classes=shadow)
+![GitHub Fetch upstream]({{% asset "images/manual/contributing/de/github-fork-fetch-upstream.png" %}}?classes=shadow)
 
 
 ## Einen Beitrag für die Dokumentation schreiben
@@ -102,7 +102,7 @@ die Schaltfläche »[Fork](https://help.github.com/en/github/getting-started-wit
 auf dein persönliches Konto zu übertragen. Dies ist nur erforderlich, wenn du zum ersten Mal etwas zur Dokumentation 
 beiträgst.
 
-![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow)
+![Fork this repository]({{% asset "images/manual/contributing/de/fork-this-repository.png" %}}?classes=shadow)
 
 
 ### Klone das geforkte Repository 
@@ -118,13 +118,13 @@ cd contao
 Beim Klonen installierst du das Hugo Learn Theme als Submodul von git.
 
 ```bash
-git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git ./
 ```
 
 oder
 
 ```bash
-git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git
+git clone --recurse-submodules https://github.com/DEIN-GITHUB-BENUTZERNAME/docs.git ./
 ```
 
 
@@ -178,12 +178,6 @@ Meldung `This branch is 7 commits behind contao:main.` ausgegeben wird.
 
 Bevor du also Anpassungen an der Doku vernimmst, kannst du dafür sorgen, dass dein Fork mit dem Original-Repository 
 synchronisiert wird.
-
-Wechsle mit `cd` in den Klone des geforkten Repositories.
-
-```bash
-cd docs
-```
 
 Füge das Original-Repository einmalig als neues Remote-Repository hinzu und gebe es als Upstream-Repository an.
 
@@ -284,17 +278,47 @@ Rufe deinen Fork auf GitHub (https://github.com/DEIN-GITHUB-BENUTZERNAME/docs) a
 
 Klicke in der Mitteilung auf »Pull request.
 
-![GitHub-Mitteilung](/de/contributing/images/de/github-message.png?classes=shadow)
+![GitHub-Mitteilung]({{% asset "images/manual/contributing/de/github-message.png" %}}?classes=shadow)
 
 Vergleiche die Änderungen und schliesse diesen Schritt mit dem Klick auf »Create pull request« ab.
 
-![Änderungen vergleichen](/de/contributing/images/de/comparing-changes.png?classes=shadow)
+![Änderungen vergleichen]({{% asset "images/manual/layout/contributing/de/comparing-changes.png" %}}?classes=shadow)
 
 Bestätige das Erstellen eines Pull requests mit »Create pull request«.
 
-![Pull-Request erzeugen](/de/contributing/images/de/open-a-pull-request.png?classes=shadow)
+![Pull-Request erzeugen]({{% asset "images/manual/contributing/de/open-a-pull-request.png" %}}?classes=shadow)
 
 **Herzlichen Glückwunsch!** Du hast soeben einen Pull-Request für die offizielle Contao-Dokumentation erstellt! Die 
 Community wird nun deinen Pull-Request überprüfen und (möglicherweise) Änderungen vorschlagen.
 
 
+### Einen Pull-Request ändern
+
+Finde den Branch, in welchem dein Pull-Request ist und checke ihn aus. Sagen wir, es sei der Branch patch-4:
+
+```bash
+git checkout patch-4
+```
+
+Bearbeite die Dateien, die geändert werden sollen.
+
+Mit folgendem Befehl kannst du alle Änderungen für den nächsten Commit stagen.
+
+```bash
+git add .
+```
+
+Danach fügst du die Änderungen dem Lokalen-Repository hinzu.
+
+```bash
+git commit -m "Eine aussagekräftige Commit-Nachricht eingeben"
+```
+
+Um die Änderungen an dein entferntes Repository zu senden, führe folgenden
+Befehl aus.
+
+```bash
+git push origin patch-4
+```
+
+Damit ist dein Pull-Request angepasst.

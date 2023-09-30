@@ -151,7 +151,7 @@ Dazu als Schlüssel `nav` bzw. `input` eintragen und als Wert der gewünschte We
 
 Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüssel `*` und als Wert `*` eintragen. Hierdurch sind alle Attribute für alle Elemente erlaubt.  
 
-![Sicherheitseinstellungen](/de/system/images/de/security-settings-de.png?classes=shadow)
+![Sicherheitseinstellungen]({{% asset "images/manual/system/de/security-settings-de.png" %}}?classes=shadow)
 
 
 ### Dateien und Bilder
@@ -266,7 +266,7 @@ Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen en
 
 ## config.yml
 
-Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `app/config/`. 
+Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `config/`. 
 Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lädt automatisch die `config_prod.yml` 
 bzw. `config_dev.yml` und falls nicht vorhanden die `config.yml`.
 
@@ -275,7 +275,7 @@ mehr Logging im Debug Modus). Außerdem committest du die `config.yml` im Gegens
 [Repository](https://de.wikipedia.org/wiki/Repository). Ein Repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z. B. mit Git.
 
 {{% notice note %}}
-Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
+Vor Version **4.8** von Contao befand sich die Datei unter `app/config/`.
 {{% /notice %}}
 
 Über die Kommandozeile kommst du an die Standard-Konfiguration für Contao:
@@ -503,6 +503,7 @@ Beschreibung.
 | --- | --- |
 | `adminEmail` | [E-Mail-Adresse des Systemadministrators](#globale-einstellungen). |
 | `allowedDownload` | [Erlaubte Download-Dateitypen](#dateien-und-bilder). |
+| `allowedAttributes` | [Erlaubte HTML-Attribute](#sicherheitseinstellungen). |
 | `allowedTags` | [Erlaubte HTML-Tags](#sicherheitseinstellungen). |
 | `characterSet` | Der von Contao benutzte Zeichensatz. _(veraltet)_ Nutze den Parameter `kernel.charset` stattdessen. Standard: `UTF-8`. |
 | `dateFormat` | [Datumsformat](#datum-und-zeit). |
@@ -556,7 +557,7 @@ Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN`
 
 Das folgende Beispiel zeigt, wie man die E-Mail-Adresse des Systemadministrators über eine eigene Umgebungsvariable in der Datei `.env` definiert und in der Datei `config.yml` referenziert.
 
-```yaml
+```ini
 # .env
 MYADMIN_EMAIL=admin@demo.de
 ```
@@ -589,10 +590,10 @@ Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.db
 ### `MAILER_DSN`
 
 Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariable namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
-Siehe die [Symfony Swiftmailer Bundle Dokumentation][SymfonySwiftmailer] für weitere Informationen.
+Siehe die [Symfony Mailer Dokumentation][SymfonyMailer] für weitere Informationen.
 
 {{% notice note %}}
-Die Variable hieß bisher `MAILER_URL`. Ab Contao 5.0 wird nur noch `MAILER_DSN` unterstützt.
+Die Variable hieß bisher `MAILER_URL`. Ab Contao **5.0** wird nur noch `MAILER_DSN` unterstützt.
 {{% /notice %}}
 
 
@@ -668,7 +669,8 @@ Die gleiche Erklärung wie für `TRUSTED_PROXIES` und das IP-Beispiel gilt auch 
 
 ## E-Mail Versand Konfiguration
 
-Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster:
+Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster (manche davon können optional 
+sein, je nach Server):
 
 - Den **Hostnamen** des SMTP-Servers.
 - Den **Benutzernamen** für den SMTP-Server.
@@ -676,7 +678,29 @@ Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende
 - Die **Portnummer** des SMTP-Servers (587 / 465).
 - Die **Verschlüsselungsmethode** für den SMTP-Server (tls / ssl).
 
-Diese fügst du dann unterhalb der bereits bestehenden Daten in die `parameters.yml` ein:
+Diese Zugangsdaten können dann entweder in der `parameters.yml` oder über die [`MAILER_DSN`](#mailer-dsn) Umgebungsvariable (z. B. in der
+`.env.local` der Contao Installation) definiert werden.
+
+{{< tabs groupId="smtp-config" >}}
+
+{{% tab name=".env.local" %}}
+{{< version-tag "4.9" >}}
+Der SMTP-Server kann über die [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
+Datei der Contao-Installation definiert werden (beachte, dass auch eine `.env` Datei vorhanden sein muss, damit die Definition der
+Umgebungsvariablen in der `.env.local` auch angewandt wird). In Contao **4.9** muss die `MAILER_URL` Umgebungsvariable benutzt werden,
+während ab Contao **4.10** die [`MAILER_DSN`](#mailer-dsn) Variable benutzt werden kann. Ab Contao **5.0** gilt nur mehr die `MAILER_DSN`
+Variable.
+
+```ini
+# .env.local
+MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:465?encryption=ssl
+```
+
+Beachte, dass der _Benutzername_ und das _Password_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.
+{{% /tab %}}
+
+{{% tab name="parameters.yml" %}}
+Bei der Nutzung der `parameters.yml` können die SMTP-Zugangsdaten über die folgenden Parameter definiert werden:
 
 ```yaml
 # This file has been auto-generated during installation
@@ -689,10 +713,12 @@ parameters:
     mailer_port: 465
     mailer_encryption: ssl
 ```
+{{% /tab %}}
+
+{{< /tabs >}}
 
 {{% notice warning %}}
-**Cache leeren**  
-Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
+**Cache leeren:** Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
 »Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
 Installationsverzeichnis befinden.
 
@@ -704,13 +730,32 @@ php vendor/bin/contao-console cache:warmup --env=prod
 
 Danach kannst du den Mailversand auf der Kommandozeile testen.
 
-```bash
-php vendor/bin/contao-console swiftmailer:email:send --from=absender@example.com --to=empfaenger@example.com --subject=testmail --body=testmail
-```
+{{< tabs groupId="mailer-test" >}}
 
-{{% notice info %}}
-Dieses Kommando steht ab Contao **4.10** nicht mehr zur Verfügung.
-{{% /notice %}}
+{{% tab name="Contao 4.0 bis 4.9" %}}
+```bash
+php vendor/bin/contao-console swiftmailer:email:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
+```
+{{% /tab %}}
+
+{{% tab name="Contao 4.13" %}}
+Zuerst muss das [`inspiredminds/contao-mailer-command`](https://packagist.org/packages/inspiredminds/contao-mailer-command) Paket
+installiert werden. Danach kann folgendes Kommando benutzt werden:
+
+```bash
+php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
+```
+{{% /tab %}}
+
+{{% tab name="Contao 5.0 und höher" %}}
+```bash
+php vendor/bin/contao-console mailer:test --from=sender@example.com --subject=testmail --body=testmail recipient@example.com
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+Die Parameter können auch weg gelassen werden - das Kommando fragt dann nach den einzelnen Werten interaktiv.
 
 
 ### Verschiedene E-Mail Konfigurationen und Absenderadressen
@@ -738,10 +783,10 @@ Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, od
 dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMailer].
 
 {{% notice warning %}}
-Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese "URL enkodiert" werden. Es gibt
+Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese »URL enkodiert« werden. Es gibt
 verschiedene Online-Services, mit denen man auf einfache Weise eine beliebige Zeichenfolgen URL-encoden kann, z. B.
 [urlencoder.org](https://www.urlencoder.org/). Enkodiere den Benutzernamen und das Passwort separat, nicht gemeinsam
-mit dem Doppelpunkt. Bei Verwendung der `config.yaml` muß die jeweilige Kodierung eines Sonderzeichen mit `%` eingeleitet werden: Also z.B. `%%23` für das Sonderzeichen `#`.
+mit dem Doppelpunkt. Bei Verwendung der `config.yaml` muß die jeweilige Kodierung eines Sonderzeichen mit `%` eingeleitet werden: Also z. B. `%%40` für das Sonderzeichen `@`.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -932,6 +977,12 @@ Prozess läuft und ggf. neu gestartet wird könnten entsprechende Tools am Serve
 Möglichkeit meist jedoch nicht, daher muss in der Cronjob Variante sichergestellt werden, dass der Prozess nur einmalig läuft. Mit der
 bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens einer Sekunde beendet. Nähere Details dazu findet man in der 
 [Symfony Dokumentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
+{{% /notice %}}
+
+{{% notice "note" %}}
+Es kann sein, dass Mails zeitversetzt verarbeitet werden, 
+wenn der Cronjob keine Angabe für die Zeitzone hat und dann den Standard `UTC` verwendet.
+Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt werden oder explizit im Cronjob.
 {{% /notice %}}
 
 
