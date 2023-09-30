@@ -46,6 +46,7 @@ class BackendController extends AbstractBackendController
             [
                 'error' => 'Oh no, an error!',
                 'title' => 'My title',
+                'headline' => 'My headline',
                 'version' => 'I can overwrite what I want',
                 'foo' => 'bar',
             ]
@@ -74,8 +75,6 @@ into `/templates`.
 
 ```twig
 {% extends "@Contao/be_main" %}
-
-{% block main_headline %}Headline{% endblock %}
 
 {% block main_content %}
     <div class="tl_listing_container">
