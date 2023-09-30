@@ -339,7 +339,7 @@ class ExamplePageController
 
 Within the database all pages are stored in the `tl_page` table. An entry for a page will be created there when you 
 create a new page for any page type (including your page controllers). Instances of pages in Contao are generally 
-represented by the `Contao\PageModel`. This class allows you to generated URLs to pages via its `getFrontendUrl` and
+represented by the `Contao\PageModel`. This class allows you to generate URLs to pages via its `getFrontendUrl` and
 `getAbsoluteUrl` method. The former will generate URLs relative to the `<base>` - unless the page is on a different
 domain than the current one. The latter will always produce absolute URLs (including `http://` or `https://`).
 
