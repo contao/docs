@@ -249,7 +249,7 @@ function createMemberMap(arrMemberData){
 	}
 
 	var mapProvider =
-	new L.tileLayer('https://{s}.tile.openstreetmap.org/tiles/osmde/{z}/{x}/{y}.png', {
+	new L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  attribution: '&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	});
 
