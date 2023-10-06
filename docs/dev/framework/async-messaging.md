@@ -174,7 +174,7 @@ contao:
                     max: 10
             -
                 # Read: Start "messenger:consume contao_prio_low --time-limit=60 --sleep=20",
-                # try to achieve a normal  number of messages pending on the queue (20) and make
+                # try to achieve a normal number of messages pending on the queue (20) and make
                 # sure, you never start more than 10 of these processes.
                 transports:
                     - contao_prio_low
