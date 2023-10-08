@@ -272,7 +272,7 @@ The minimum `VirtualHost` configuration would look like this for example (exchan
     <Directory /var/www/project/public>
         AllowOverride All
         Require all granted
-        Options FollowSymlinks
+        Options SymLinksIfOwnerMatch
     </Directory>
 </VirtualHost>
 ```
