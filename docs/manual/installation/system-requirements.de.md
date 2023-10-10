@@ -280,7 +280,7 @@ Contao 4.9 oder älter):
     <Directory /var/www/project/public>
         AllowOverride All
         Require all granted
-        Options FollowSymlinks
+        Options SymLinksIfOwnerMatch
     </Directory>
 </VirtualHost>
 ```
