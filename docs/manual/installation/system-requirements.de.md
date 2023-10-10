@@ -266,7 +266,7 @@ Datei im öffentlichen Verzeichnis zur Verfügung. Damit diese Datei von Apache 
 Apache-Modul `mod_rewrite` aktiv sein, damit URLs wie `https://example.com/contao/install` möglich sind. Falls beides nicht zutrifft würden
 nur URLs wie `https://example.com/index.php/contao/install` möglich sein.
 
-Für Contao muss auch die Einstellung `Options FollowSymlinks` in der `Directory` Konfiguration aktiv sein, da Symlinks zum Einsatz kommen.
+Für Contao muss auch die Einstellung `Options SymLinksIfOwnerMatch` in der `Directory` Konfiguration aktiv sein, da Symlinks zum Einsatz kommen.
 
 Eine minimale `VirtualHost` Konfiguration für den Apache-Webserver könnte also z. B. so aussehen (`…/public` mit `…/web` austauschen für
 Contao 4.9 oder älter):
