@@ -65,10 +65,13 @@ The [Composer Resolver Cloud](https://composer-resolver.cloud/) allows the insta
 if the server does not have enough memory. Please note that your package information is sent to a 
 [Contao Association](https://association.contao.org/) cloud service for dependency resolution.
 
+
 ### Installing Contao with the Contao Manager
 
 After the successful basic configuration, Contao can now be installed. To do this, select the desired version
 and the initial configuration and click on the "Install" button.
+
+Optionally, you can also install the Contao "[sample website](https://demo.contao.org/)".
 
 ![Installing Contao with the Contao Manager]({{% asset "images/manual/installation/en/contao-manager-setup.png" %}}?classes=shadow)
 

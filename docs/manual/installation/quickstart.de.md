@@ -74,6 +74,8 @@ Auflösung der Abhängigkeiten an einen Cloud-Dienst der [Contao Association](ht
 Nach der erfolgreichen Grundkonfiguration kann nun Contao installiert werden. Dazu wählst du die gewünschte Version
 sowie die initiale Konfiguration aus und klickst auf die Schaltfläche »Installieren«.
 
+Optional kannst du hierbei auch zusätzlich die Contao »[Beispiel-Webseite](https://demo.contao.org/)« installieren. 
+
 ![Contao per Contao Manager installieren]({{% asset "images/manual/installation/de/contao-per-contao-manager-installieren.png" %}}?classes=shadow)
 
 Die Installation kann nun mehrere Minuten in Anspruch nehmen. Details zum Installationsprozess können durch Klick auf
