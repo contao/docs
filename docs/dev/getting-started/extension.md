@@ -161,7 +161,7 @@ the Contao installation:
             "type": "path",
             "url": "/path/to/your/extension/directory"
         }
-    },
+    }
 }
 ```
 
