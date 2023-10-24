@@ -79,7 +79,7 @@ $ composer init
 
 This command will guide you through creating your composer.json config.
 
-Package name (<vendor>/<name>) [fmg/contao-docs]: somevendor/contao-example-bundle
+Package name (<vendor>/<name>) [user/contao-example-bundle]: somevendor/contao-example-bundle
 Description []:
 Author [User <user@example.com>, n to skip]: n
 Minimum Stability []: 
