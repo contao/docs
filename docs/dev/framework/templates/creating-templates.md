@@ -842,5 +842,5 @@ partial. It's fine, and also quite typical, that they coexist in the same direct
 [Twig Docs block function]: https://twig.symfony.com/doc/3.x/functions/block.html
 [Symfony Twig Docs trans tag]: https://symfony.com/doc/current/reference/twig_reference.html#trans
 [Symfony Twig Docs path function]: https://symfony.com/doc/current/reference/twig_reference.html#path
-[List component source code]: https://github.com/contao/contao/blob/5.x/core-bundle/contao/templates/_new/component/_list.html.twig
+[List component source code]: https://github.com/contao/contao/blob/5.x/core-bundle/contao/templates/twig/component/_list.html.twig
 [New Contao Docs issue]: https://github.com/contao/docs/issues/new
