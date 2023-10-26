@@ -171,15 +171,13 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
-        public: false
 
     App\:
         resource: ../src
-        exclude: ../src/{Entity,Migrations,Model,Resources,Tests,Widget}
-    
+
     App\Controller\:
         resource: ../src/Controller
-        public: true
+        tags: ['controller.service_arguments']
 ```
 
 ```yaml
