@@ -123,7 +123,7 @@ on how to handle translation files. The content of the `config.php` depends on t
 use-case and its documentation is covered in the applicable topics of the [framework documentation][4].
 
 
-## Autoloading, Services and Actions
+## Autoloading, Services and Controllers
 
 Any custom class that is needed for the web application - like a [Model][5], a [Content Element][6]
 or a class for a [Hook][7] for example - needs to be loaded. Typically
