@@ -164,7 +164,7 @@ Dazu muss der Block im Template verfügbar sein. Ein Block ist verfügbar, wenn
 * der Block über das `{% use %}`-Tag importiert wird.
 
 Wenn du dir
-die [neuen Contao Core-Templates auf GitHub](https://github.com/contao/contao/tree/5.x/core-bundle/contao/templates/_new)
+die [neuen Contao Core-Templates auf GitHub](https://github.com/contao/contao/tree/5.x/core-bundle/contao/templates/twig)
 anschaust, wirst du feststellen, dass das `{% use %}`-Tag neben dem `{% extends %}`-Tag am häufigsten verwendet wird.  
 Während mit dem `{% extends %}`-Tag alle Blöcke des übergeordneten Templates im Frontend ausgegeben werden, werden mit
 dem `{% use %}`-Tag die Blöcke dem Template nur zur Verfügung gestellt. Die Ausgabe eines Blockes erfolgt erst mit
@@ -181,5 +181,5 @@ anschauen solltest.
 
 {{% notice tip %}}
 Schau dir den Aufbau der neuen Core Templates an. Dann siehst du, welcher Code sich in den einzelnen Blöcken der  
-Templates befindet. Du findest diese auf [GitHub](https://github.com/contao/contao/tree/5.x/core-bundle/contao/templates/_new).
+Templates befindet. Du findest diese auf [GitHub](https://github.com/contao/contao/tree/5.x/core-bundle/contao/templates/twig).
 {{% /notice %}}

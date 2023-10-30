@@ -153,7 +153,7 @@ For this, the block must be available in the template. A block is available if
 * the block is imported via the `{% use %}` tag.
 
 If you have a look at
-the [new Contao core templates on GitHub](https://github.com/contao/contao/tree/5.x/core-bundle/contao/templates/_new)
+the [new Contao core templates on GitHub](https://github.com/contao/contao/tree/5.x/core-bundle/contao/templates/twig)
 you will notice that the `{% use %}` tag is most commonly used alongside the `{% extends %}` tag.  
 While the `{% extends %}` tag prints all blocks of the parent template to the front end, the `{% use %}` tag only makes
 the blocks available to the template. The output of a block is only done with the `{{ block }}` function.  
@@ -169,5 +169,5 @@ should be looked at.
 
 {{% notice tip %}}
 Take a look at the structure of the new core templates. Then you can see what code is in the individual blocks of the  
-templates. You can find them on [GitHub](https://github.com/contao/contao/tree/5.x/core-bundle/contao/templates/_new).
+templates. You can find them on [GitHub](https://github.com/contao/contao/tree/5.x/core-bundle/contao/templates/twig).
 {{% /notice %}}
