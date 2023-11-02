@@ -233,6 +233,21 @@ So for example, with the following annotation:
 and an alias like `example/alias` defined in the back end, the final front end URL
 of the page will be `https://example.com/example/alias/foo/bar.html`.
 
+Also, just like with routes for regular controllers in Symfony, the path of your page controller can also contain
+parameters. The following page route for example only consists of a single `foobar` parameter:
+
+```php
+#[AsPage(path: '{foobar}')]
+```
+
+Since it is defined as a relative path the final URL will consist of the page's alias, plus any mandatory parameter.
+This particular setup would be useful for reader pages for example. And, as with regular Symfony routes, parameters can
+also be optional through its `defaults`:
+
+```php
+#[AsPage(path: '{lorem}/{ipsum}', defaults: ['ipsum' => ''])]
+```
+
 
 ### `urlSuffix`
 
@@ -317,6 +332,90 @@ class ExamplePageController
         return new Response('Hello page: '.$pageModel->title);
     }
 }
+```
+
+
+## URL Generation
+
+Within the database all pages are stored in the `tl_page` table. An entry for a page will be created there when you 
+create a new page for any page type (including your page controllers). Instances of pages in Contao are generally 
+represented by the `Contao\PageModel`. This class allows you to generate URLs to pages via its `getFrontendUrl` and
+`getAbsoluteUrl` method. The former will generate URLs relative to the `<base>` - unless the page is on a different
+domain than the current one. The latter will always produce absolute URLs (including `http://` or `https://`).
+
+{{% notice "note" %}}
+Since Contao **5.0** `getFrontendUrl` will generate _path absolute_ URLs, not relative to the `<base>`.
+{{% /notice %}}
+
+Both methods allow you to specify optional parameters as one string. These are _path_ paramaters and are used when you
+want to generate a URL with an `auto_item` or other path parameters. For example
+
+```php
+$page->getAbsoluteUrl();
+```
+
+might generate a URL like `https://example.com/alias-of-the-page.html` while
+
+```php
+$page->getAbsoluteUrl('/foobar');
+```
+
+might generate a URL like `https://example.com/alias-of-the-page/foobar.html` (in these examples a `.html` suffix would 
+be configured).
+
+This works fine for any legacy page type. However, with modern page controllers there is a caveat: your `Route` might
+have specific, mandatory parameters in them that need to be known when generating the URL. So for example if you have a 
+page controller like this
+
+```php
+#[AsPage(path: '{foo}/{bar}')]
+```
+
+and you then try to execute `$page->getFrontendUrl()` for a `PageModel` of such page it will result in an error, since
+the parameters `foo` and `bar` are missing for URL generation.
+
+But for modern page controllers you can generate the URL for such pages in your code via Symfony's 
+`UrlGeneratorInterface` services:
+
+```php
+use Contao\PageModel;
+use Contao\CoreBundle\Routing\Page\PageRoute;
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+
+class MyService
+{
+    public function __construct(UrlGeneratorInterface $urlGenerator)
+    {
+    }
+
+    private function getUrlForPage(PageModel $page): string
+    {
+        return $this->urlGenerator->generate(
+            PageRoute::PAGE_BASED_ROUTE_NAME,
+            [
+                RouteObjectInterface::CONTENT_OBJECT => $page, 
+                'foo' => 'lorem',
+                'bar' => 'ipsum',
+            ]
+        );
+    }
+}
+```
+
+The important thing to note here is that the name of the route we are generating is not the name or type of the
+page controller, but a general `page_routing_object` route - and then we pass the model instance of the page as a
+`_content` parameter, alongside our actual route parameters (`foo` and `bar`).
+
+{{< version-tag "5.3" >}} Starting with Contao **5.3** you are able to use `getFrontendUrl` and `getAbsoluteUrl` of
+the `PageModel` as well though. Instead of a string representing path parameters you can instead pass an array with the
+parameters to the methods:
+
+```php
+$page->getFrontendUrl([
+    'foo' => 'lorem',
+    'bar' => 'ipsum',
+]);
 ```
 
 
