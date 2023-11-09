@@ -23,7 +23,7 @@ immediately visible in the front end.
 
 ## Crawler
 
-Pages are automatically indexed when you access them in the front end (unless you are logged into the backend at the same 
+Pages are automatically indexed when you access them in the front end (unless you are logged into the back end at the same 
 time), so you don't normally have to worry about the search index. However, if you have updated many pages at once, it is 
 more convenient to rebuild the search index manually than to call up all changed pages one by one in the browser.
 
@@ -60,7 +60,7 @@ You can find more information in the [Symfony Routing Documentation][SymfonyUrlC
 
 ### Indexing protected pages
 
-To allow the search of protected pages, you must first enable this feature in the [backend settings][BackendSettings]. Use this feature 
+To allow the search of protected pages, you must first enable this feature in the [back end settings][BackendSettings]. Use this feature 
 very carefully and always exclude personalized pages from the search!
 
 {{% notice note %}}
@@ -91,7 +91,7 @@ The duration of the crawl process depends primarily on two factors:
 #### Reducing the number of crawled pages
 
 The former can be influenced, for example, by excluding URLs that are not relevant from the crawl process.
-You can easily find out exactly which URLs are crawled via the debug log. This can be downloaded directly in the backend
+You can easily find out exactly which URLs are crawled via the debug log. This can be downloaded directly in the back end
 while the crawl process is running. On the command line you can activate the debug log as follows:
 
 ```sh
@@ -122,16 +122,16 @@ There are several ways to exclude unwanted pages from the crawl process:
 It also depends on how deep the crawler should search for further URLs. The first level is the root page,
 e.g. `https://example.com`. The second level is all pages found on `https://example.com` and so on. The higher the 
 depth value, the more links can be found and the longer the crawl process takes. You can control the depth on the 
-command line using the `--max-depth` argument. In the backend, the depth is set to `10`.
+command line using the `--max-depth` argument. In the back end, the depth is set to `10`.
 
-{{< version-tag "5.3" >}} From Contao 5.3 you can also select the depth in the backend.
+{{< version-tag "5.3" >}} From Contao 5.3 you can also select the depth in the back end.
 
 #### Adjust the number of concurrent requests
 
 You can also increase the number of concurrent requests. However, you must then make sure that you do not overload the 
 server.
 
-On the command line, you can use the `--concurrency` option (or the `-c` shortcut). In the backend the concurrency is 
+On the command line, you can use the `--concurrency` option (or the `-c` shortcut). In the back end the concurrency is 
 set to `5`.
 
 {{< version-tag "5.3" >}} From Contao 5.3 you can set this value via the `config.yml`:
@@ -145,7 +145,7 @@ contao:
 ```
 
 {{% notice "tip" %}}
-If you are wondering why it is configurable but not selectable in the backend: This value never changes. The 
+If you are wondering why it is configurable but not selectable in the back end: This value never changes. The 
 process should never take longer - i.e. a lower concurrency - and the maximum number depends on what your server can 
 take. This only ever changes if you provide more or fewer resources.
 {{% /notice %}}
