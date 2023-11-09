@@ -139,9 +139,8 @@ set to `5`.
 ```yml
 # config/config.yml
 contao:
-    backend:
-        crawl:
-            concurrency: 10
+   backend:
+      crawl_concurrency: 10
 ```
 
 {{% notice "tip" %}}

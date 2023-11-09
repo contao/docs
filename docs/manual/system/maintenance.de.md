@@ -129,7 +129,7 @@ Ausserdem kommt es darauf an, wie tief der Crawler nach weiteren URLs suchen sol
 also bspw. `https://example.com`. Die zweite Ebene sind alle Seiten, die auf `https://example.com` gefunden wurden 
 und so weiter. Je höher also die Tiefe, desto mehr Links können gefunden werden und desto länger dauert der 
 Crawl-Prozess. Die Tiefe kannst du auf der Kommandozeile über das `--max-depth` Argument steuern.
-Im Backend ist die Tiefe auf `10` festgelegt.
+Im Backend ist die Tiefe auf `3` festgelegt.
 
 {{< version-tag "5.3" >}} Ab Contao 5.3 kannst du die Tiefe auch im Backend auswählen.
 
@@ -147,8 +147,7 @@ ist die "Concurrency" auf `5` festgelegt.
 # config/config.yml
 contao:
     backend:
-        crawl:
-            concurrency: 10
+        crawl_concurrency: 10
 ```
 
 {{% notice "tip" %}}
