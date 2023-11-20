@@ -35,7 +35,7 @@ Consult the [OpenAPI Docs][API] on how to use the `/api/session` endpoint.
 ### Option 2: Persistent authentication through API tokens
 
 For long term authentication or without involving the browser, the Contao Manager
-supports authentication tokens. Tokens are always bound to a specific user acccount
+supports authentication tokens. Tokens are always bound to a specific user account
 and work similar to any other OAuth authentication.
 
 {{% notice info %}}

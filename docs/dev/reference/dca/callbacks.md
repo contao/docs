@@ -24,7 +24,7 @@ The following is a reference of all available callbacks, using their service tag
 callback property name.
 
 {{% notice info %}}
-Generally these callbacks are exectued in the back end, e.g. when editing data records.
+Generally these callbacks are executed in the back end, e.g. when editing data records.
 However in some instances they might also be executed by front end modules, most
 prominently the member modules. In this case the parameters passed to the callback
 will be different, as there will be no `\Contao\DataContainer` instance for example,
