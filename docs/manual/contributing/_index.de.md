@@ -22,7 +22,7 @@ vertraut. Zudem hast du zu Beginn des Dokuments die Möglichkeit, entsprechende 
 ## Kleine Fehler korrigieren
 
 Wenn du während des Lesens der Dokumentation einen Tippfehler entdeckst oder etwas umformulieren möchtest, ist es am 
-einfachsten, dies direkt über GitHub zutun.
+einfachsten, dies direkt über GitHub zu tun.
 
 
 ### Seite bearbeiten und Fork des Repositories erstellen

@@ -261,7 +261,7 @@ The `trans` method of the translator is available within Contao's PHP templates:
 <?= $this->trans('MSC.goBack') ?>
 ```
 
-_Note:_ in this example the second and third argument was ommitted and the default 
+_Note:_ in this example the second and third argument was omitted and the default 
 values `[]` and `contao_default` are used. The following example shows how to access
 a translation from domain other than `default`:
 

@@ -239,7 +239,7 @@ tags as well:
 * `contao.db.<parent-table-name>` (Only for the topmost parent table)
 * `contao.db.<parent-table-name>.<pid>`
 
-If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierachy and invalidates the 
+If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierarchy and invalidates the 
 following tags as well:
 
 * `contao.db.<child-table-name>.<cid>`

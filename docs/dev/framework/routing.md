@@ -199,7 +199,7 @@ as a "Contao request" and thus handled accordingly with the following effects:
   to which language the current request belongs to (depending on your site structure, 
   if the request can be matched there) or the `Accept-Language` request header.
 * The CSRF protection is automatically enabled.
-* The user session is automatically recored in the database, if a logged in user 
+* The user session is automatically recorded in the database, if a logged in user 
   is present.
 * The output of content elements and front end modules change, depending on the
   scope. For example, front end modules typically do not show their output in the

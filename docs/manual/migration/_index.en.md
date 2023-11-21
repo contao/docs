@@ -171,7 +171,7 @@ its old implementation, which is still possible in Contao 5).
 
 ### Run Migrations and Database Updates
 
-In case the Composer package update to Contao 5 was succesful you can now update the database. Contao 5 does not have the Install Tool
+In case the Composer package update to Contao 5 was successful you can now update the database. Contao 5 does not have the Install Tool
 anymore. Instead the database migration and update must be run from the command line - or via the respective method within the Contao
 Manager itself. In order to start the process on the command line you can use the following command:
 

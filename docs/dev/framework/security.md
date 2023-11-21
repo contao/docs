@@ -104,7 +104,7 @@ permission is accessed via the [Security Helper][SecurityHelperService].
 Contao automatically uses the `priority` 
 [access decision strategy](https://symfony.com/doc/current/security/voters.html#changing-the-access-decision-strategy) for any request that
 is either in Contao's `frontend` or `backend` scope. This means the first voter that does not abstain will decide on the vote. Thus if you 
-want to expand voting on a certain back end privilige you need to make sure that your voter abstains from any query it is not concerned 
+want to expand voting on a certain back end privilege you need to make sure that your voter abstains from any query it is not concerned 
 with and that the service has a priority higher than the default via the `security.voter` service tag.
 {{% /notice %}}
 
