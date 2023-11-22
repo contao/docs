@@ -5,4 +5,5 @@ de:
   languageName: Deutsch
   weight: 2
   title: 'Contao Handbuch'
-  documentation_label: Handbuch
+  params:
+    documentation_label: Handbuch

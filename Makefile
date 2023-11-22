@@ -8,7 +8,7 @@ build-dev:
 		--cleanDestinationDir \
 		--environment dev \
 		--destination ../build/dev \
-		--verbose \
+		--logLevel info \
 		--baseURL https://docs.contao.org/dev/
 
 build-manual:
@@ -16,7 +16,7 @@ build-manual:
 		--cleanDestinationDir \
 		--environment manual \
 		--destination ../build/manual \
-		--verbose \
+		--logLevel info \
 		--baseURL https://docs.contao.org/manual/
 
 # Start a live reload server
@@ -25,14 +25,14 @@ live-dev:
 		--cleanDestinationDir \
 		--environment dev \
 		--destination ../build/dev \
-		--verbose
+		--logLevel info
 
 live-manual:
 	cd page; hugo server \
 		--cleanDestinationDir \
 		--environment manual \
 		--destination ../build/manual \
-		--verbose
+		--logLevel info
 
 clean:
 	rm -r build

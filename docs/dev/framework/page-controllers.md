@@ -347,7 +347,7 @@ domain than the current one. The latter will always produce absolute URLs (inclu
 Since Contao **5.0** `getFrontendUrl` will generate _path absolute_ URLs, not relative to the `<base>`.
 {{% /notice %}}
 
-Both methods allow you to specify optional parameters as one string. These are _path_ paramaters and are used when you
+Both methods allow you to specify optional parameters as one string. These are _path_ parameters and are used when you
 want to generate a URL with an `auto_item` or other path parameters. For example
 
 ```php
