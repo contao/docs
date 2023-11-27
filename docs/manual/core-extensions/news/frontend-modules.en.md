@@ -54,6 +54,10 @@ assuming you have enough of them.
 
 ### Template settings
 
+{{% notice info %}}
+Note that Meta fields settings are no longer available as of Contao 5.
+{{% /notice %}}
+
 **Meta fields:** Here you can specify which meta information (date of the post, author of the post and number of 
 comments) is displayed.
 
