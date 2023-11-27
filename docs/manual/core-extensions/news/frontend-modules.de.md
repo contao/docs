@@ -56,6 +56,10 @@ Seiten – eine entsprechende Anzahl vorausgesetzt.
 
 ### Template-Einstellungen
 
+{{% notice info %}}
+Meta-Felder gibt es ab Contao 5 nicht mehr.
+{{% /notice %}}
+
 **Meta-Felder:** Hier legst du fest, welche Meta-Informationen (Datum des Beitrags, Autor des Beitrags und Anzahl der 
 Kommentare) angezeigt werden.
 
