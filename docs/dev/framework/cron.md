@@ -17,6 +17,13 @@ cronjobs on your system using the following command:
 $ vendor/bin/contao-console debug:container --tag contao.cronjob
 ```
 
+{{% notice "note" %}}
+The aformentioned command can also be used in Contao **4.13**. However, this will not find cronjobs that are registered
+via the legacy `config.php` (see below). Unfortunately there is no convenient way in Contao 4 to display registered
+legacy cronjobs. If you want to look these up you could either search for any `$GLOBALS['TL_CRON']` definitions in your 
+Contao instance via your IDE, or use Xdebug for example in order to inspect the `$GLOBALS['TL_CRON']` array.
+{{% /notice %}}
+
 ## Configuring the Cron Job
 
 By default the cron tasks are executed after a response is sent back to the visitor 
