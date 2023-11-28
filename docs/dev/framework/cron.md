@@ -10,7 +10,7 @@ Contao periodically executes some tasks via its own cron functionality. These in
 * Purge expired Opt-In tokens
 * etc.
 
-Because all cronjobs are registered as services and tagged using the `contao.cronjob` tag, you can find all
+Starting with Contao **5** all cronjobs are registered as services and tagged using the `contao.cronjob` tag. Thus you can find all
 cronjobs on your system using the following command:
 
 ```bash
