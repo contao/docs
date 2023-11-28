@@ -3,22 +3,26 @@ title: Cron
 description: "Contao's cron functionality."
 ---
 
+Contao periodically executes some tasks via its own cron functionality. These include mainly cleanup tasks such as
 
-Contao periodically executes some tasks via its own cron functionality. The following
-is a list of tasks executed by Contao's own bundles: 
+* Purge expired comment subscriptions
+* Purge expired registrations
+* Purge expired Opt-In tokens
+* etc.
 
-| Task                                   | Interval |
-|----------------------------------------|----------|
-| Generate calendar RSS feeds            | daily    |
-| Purge expired comment subscriptions    | daily    |
-| Purge temp folder                      | daily    |
-| Purge search cache                     | daily    |
-| Generate XML sitemap                   | daily    |
-| Purge expired registrations            | daily    |
-| Purge expired Opt-In tokens            | daily    |
-| Generate news RSS feeds                | daily    |
-| Purge expired newsletter subscriptions | daily    |
+Starting with Contao **5** all cronjobs are registered as services and tagged using the `contao.cronjob` tag. Thus you can find all
+cronjobs on your system using the following command:
 
+```bash
+$ vendor/bin/contao-console debug:container --tag contao.cronjob
+```
+
+{{% notice "note" %}}
+The aformentioned command can also be used in Contao **4.13**. However, this will not find cronjobs that are registered
+via the legacy `config.php` (see below). Unfortunately there is no convenient way in Contao 4 to display registered
+legacy cronjobs. If you want to look these up you could either search for any `$GLOBALS['TL_CRON']` definitions in your 
+Contao instance via your IDE, or use Xdebug for example in order to inspect the `$GLOBALS['TL_CRON']` array.
+{{% /notice %}}
 
 ## Configuring the Cron Job
 
