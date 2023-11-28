@@ -3,22 +3,19 @@ title: Cron
 description: "Contao's cron functionality."
 ---
 
+Contao periodically executes some tasks via its own cron functionality. These include mainly cleanup tasks such as
 
-Contao periodically executes some tasks via its own cron functionality. The following
-is a list of tasks executed by Contao's own bundles: 
+* Purge expired comment subscriptions
+* Purge expired registrations
+* Purge expired Opt-In tokens
+* etc.
 
-| Task                                   | Interval |
-|----------------------------------------|----------|
-| Generate calendar RSS feeds            | daily    |
-| Purge expired comment subscriptions    | daily    |
-| Purge temp folder                      | daily    |
-| Purge search cache                     | daily    |
-| Generate XML sitemap                   | daily    |
-| Purge expired registrations            | daily    |
-| Purge expired Opt-In tokens            | daily    |
-| Generate news RSS feeds                | daily    |
-| Purge expired newsletter subscriptions | daily    |
+Because all cronjobs are registered as services and tagged using the `contao.cronjob` tag, you can find all
+cronjobs on your system using the following command:
 
+```bash
+$ vendor/bin/contao-console debug:container --tag contao.cronjob
+```
 
 ## Configuring the Cron Job
 
