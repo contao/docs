@@ -953,7 +953,7 @@ composer require symfony/messenger
 Now we can define a Messenger transport and routing for email messages. First we need to decide on the type of Messenger transport though.
 The component already provides different [transport types][SymfonyMessengerTransports]. In this case the 
 [Doctrine transport][SymfonyMessengerDoctrine] is a good fit since it will save our emails in the database first for later consumption.
-In order to enable asynchronous emails via Symfony Mailer [the following needs to be configured][SmyonfyMailerMessenger]:
+In order to enable asynchronous emails via Symfony Mailer [the following needs to be configured][SymfonyMailerMessenger]:
 
 ```yaml
 # config/config.yaml
@@ -1023,5 +1023,5 @@ Therefore, the local time zone should either be set globally on the server or ex
 [SymfonyMessenger]: https://symfony.com/doc/current/messenger.html
 [SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
-[SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
+[SymfonyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
 [SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html

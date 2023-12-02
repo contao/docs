@@ -925,7 +925,7 @@ Danach können wir einen Messenger Transport definieren und das Routing für E-M
 entscheiden, welchen Messenger Transport wir nutzen wollen. Symfony Messenger stellt verschiedene [Transports][SymfonyMessengerTransports]
 von Haus aus zur Verfügung. Für unsere Zwecke eignet sich der [Doctrine Transport][SymfonyMessengerDoctrine], damit werden die E-Mails
 zuerst in der Datenbank gespeichert und können später abgearbeitet werden. Um nun den asynchronen Versand über Symfony Mailer zu aktivieren
-muss [folgendes konfiguriert werden][SmyonfyMailerMessenger]:
+muss [folgendes konfiguriert werden][SymfonyMailerMessenger]:
 
 ```yaml
 # config/config.yaml
@@ -995,5 +995,5 @@ Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt wer
 [SymfonyMessenger]: https://symfony.com/doc/current/messenger.html
 [SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
-[SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
+[SymfonyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
 [SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html
