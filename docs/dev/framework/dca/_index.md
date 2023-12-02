@@ -187,7 +187,7 @@ which do not.
 ### Invokable Services
 
 {{< version-tag "4.9" >}} You can also use [invokable classes][invoke] for your services. If a service is
-tagged with `contao.hook` and no method name is given, the `__invoke` method will
+tagged with `contao.callback` and no method name is given, the `__invoke` method will
 be called automatically. This also means that you can define the service annotation
 on the class, instead of a method:
 
