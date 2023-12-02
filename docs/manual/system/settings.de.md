@@ -996,3 +996,4 @@ Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt wer
 [SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
 [SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
+[SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html

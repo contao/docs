@@ -692,7 +692,7 @@ If you don't configure the Managed Edition to look for these headers, you'll get
 client's IP address, whether or not the client is connecting via HTTPS, the client's port and the hostname being
 requested. Let's say your load balancer runs on IP `192.0.2.1`. You can trust that IP by setting `TRUSTED_PROXIES` 
 to `192.0.2.1`. You can also trust a whole IP range if you like to: `TRUSTED_PROXIES=192.0.2.0/24`. See the
-[Symfony Documentation on Proxies](https://symfony.com/doc/current/deployment/proxies.html) for more information.
+[Symfony Documentation on Proxies][SymfonyProxies] for more information.
     
 
 ### `TRUSTED_HOSTS`
@@ -1024,3 +1024,4 @@ Therefore, the local time zone should either be set globally on the server or ex
 [SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
 [SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
+[SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html
