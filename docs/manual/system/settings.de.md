@@ -696,7 +696,7 @@ Variable.
 MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:465?encryption=ssl
 ```
 
-Beachte, dass der _Benutzername_ und das _Password_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.
+Beachte, dass der _Benutzername_ und das _Passwort_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.
 {{% /tab %}}
 
 {{% tab name="parameters.yml" %}}
