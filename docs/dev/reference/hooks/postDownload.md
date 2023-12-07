@@ -17,7 +17,7 @@ e.g. the new Download(s) content elements in Contao **5**. If you want to univer
 by the application you should instead implement a [`kernel.response`](https://symfony.com/doc/current/reference/events.html#kernel-response) listener:
 
 ```php
-// src/EventListner/DownloadResponseListener.php
+// src/EventListener/DownloadResponseListener.php
 namespace App\EventListener;
 
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
