@@ -8,9 +8,38 @@ aliases:
 ---
 
 
-The `postDownload` hook is triggered after a file has been downloaded with the
-download/downloads content element. It passes the file name as argument and does
-not expect a return value.
+The `postDownload` hook is triggered when a file is sent to the browser by Contao, e.g. by the Download(s) content
+elements or the enclosures in News and Events. It passes the file name as argument and does not expect a return value.
+
+{{% notice "info" %}}
+This hook is part of Contao's legacy framework and as such is not used anymore by more modern components of Contao,
+e.g. the new Download(s) content elements in Contao **5**. If you want to universally react to any download response
+by the application you should instead implement a [`kernel.response`](https://symfony.com/doc/current/reference/events.html#kernel-response) listener:
+
+```php
+// src/EventListner/DownloadResponseListener.php
+namespace App\EventListener;
+
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
+
+#[AsEventListener]
+class DownloadResponseListener
+{
+    public function __invoke(ResponseEvent $event): void
+    {
+        if (!($response = $event->getResponse()) instanceof BinaryFileResponse) {
+            return;
+        }
+
+        $file = $response->getFile();
+
+        // Do something …
+    }
+}
+```
+{{% /notice %}}
 
 
 ## Parameters
