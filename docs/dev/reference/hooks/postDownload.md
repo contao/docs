@@ -9,7 +9,7 @@ aliases:
 
 
 The `postDownload` hook is triggered when a file is sent to the browser by Contao, e.g. by the Download(s) content
-elements or the enclosures in News and Events. It passes the file name as argument and does not expect a return value.
+elements or the enclosures in News and Events. It passes the file name and does not expect a return value.
 
 {{% notice "info" %}}
 This hook is part of Contao's legacy framework and as such is not used anymore by more modern components of Contao,
