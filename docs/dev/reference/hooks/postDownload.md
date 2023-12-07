@@ -29,7 +29,7 @@ class DownloadResponseListener
 {
     public function __invoke(ResponseEvent $event): void
     {
-        if (!($response = $event->getResponse()) instanceof BinaryFileResponse) {
+        if (!$event->isMainRequest() || !($response = $event->getResponse()) instanceof BinaryFileResponse) {
             return;
         }
 
