@@ -36,7 +36,7 @@ use Contao\CoreBundle\Controller\AbstractBackendController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Route('/%contao.backend.route_prefix%/my-backend-route', name: BackendController::class, defaults: ['_scope' => 'backend'])]
+#[Route('/%contao.backend.route_prefix%/my-backend-route', name: self::class, defaults: ['_scope' => 'backend'])]
 class BackendController extends AbstractBackendController
 {
     public function __invoke(): Response
