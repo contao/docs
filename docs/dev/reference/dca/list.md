@@ -69,7 +69,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['label'] = [
 |----------------|----------------------------------|----------------------------------------------------------------------------------------------------|
 | fields         | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `['title', 'user_id:tl_user.name']`). |
 | showColumns    | true/false (`bool`)           | If true Contao will generate a table header with column names (e.g. back end member list)          |
-| showFirstOrderBy | true/false (`bool`)           | If false Contao will not force the first sorting field to show up in the list.          |
+| showFirstOrderBy | true/false (`bool`)           | {{< version-tag "4.13.36" >}} If false Contao will not force the first sorting field to show up in the list.          |
 | format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. <br>**%s** ).                       |
 | maxCharacters  | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
 | [group_callback](../callbacks#list-label-group) | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
