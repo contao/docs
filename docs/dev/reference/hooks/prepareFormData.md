@@ -52,7 +52,7 @@ class PrepareFormDataListener
         array $labels, 
         array $fields, 
         Form $form, 
-        array $files
+        array &$files
     ): void
     {
         
