@@ -53,7 +53,7 @@ class PrepareFormDataListener
         array $fields, 
         Form $form, 
         array $files
-        ): void
+    ): void
     {
         
         // Add a custom file as attachment
