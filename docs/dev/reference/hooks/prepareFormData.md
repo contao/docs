@@ -60,7 +60,7 @@ class PrepareFormDataListener
         $files[] = [
             'name' => 'MyAttachmentFileName.txt',
             'tmp_name' => 'path/to/MyAttachmentFileName.txt',
-            'type' => 'text/html'
+            'type' => 'text/plain',
         ];
     
         // This calculates a deadline from a given timestamp
