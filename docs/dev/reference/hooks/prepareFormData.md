@@ -35,7 +35,7 @@ distribution or data storage.
 
 
 ## Example
-{{< tabs groupId="attribute-annotation-yaml-php" >}}
+{{< tabs groupId="prepareFormData-example" >}}
 {{% tab name="Since Contao 5.2" %}}
 ```php
 // src/EventListener/PrepareFormDataListener.php
