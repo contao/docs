@@ -98,4 +98,4 @@ class PrepareFormDataListener
 ## References
 
 * [\Contao\Form#L309-L317](https://github.com/contao/contao/blob/4.9.13/core-bundle/src/Resources/contao/forms/Form.php#L309-L317)
-* [\Contao\Form#L394-L400](https://github.com/contao/contao/blob/5.x/core-bundle/contao/forms/Form.php#L394-L400)
+* [\Contao\Form#L393-L399](https://github.com/contao/contao/blob/5.2.7/core-bundle/contao/forms/Form.php#L393-L399)
