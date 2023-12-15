@@ -342,6 +342,7 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 $GLOBALS['TL_DCA']['tl_user_group']['fields']['my_permissions'] = [
     'exclude' => true,
     'inputType' => 'checkbox',
+    'eval' => ['multiple' => true],
     'options' => [
         'first_permission' => 'First permission',
         'second_permission' => 'Second permission',
