@@ -153,13 +153,13 @@ $c-secondary--900: hsla(126, 44%, 14%, 1);
 
 ## Fazit
 
-Die obrige Umsetung könntest du ohne weiteres auch direkt in Contao nutzen. Wie erwähnt, bietet »Dart Sass« aber eben noch zahlreiche,
+Die obrige Umsetzung könntest du ohne weiteres auch direkt in Contao nutzen. Wie erwähnt, bietet »Dart Sass« aber eben noch zahlreiche,
 weitere Möglichkeiten. Statt in der `_custom.scss` explizit die Farbangaben via »CSS hsla()« zu definieren, könntest du hierbei 
 auch [SASS Module zur Farb-Konvertierung](https://sass-lang.com/documentation/modules/color/) verwenden.
 
 Weiterhin wäre die Nutzung von »[@use](https://sass-lang.com/documentation/at-rules/use/)« und [@forward](https://sass-lang.com/documentation/at-rules/forward/)
 anstelle von »[@import](https://sass-lang.com/documentation/at-rules/import/)«, gerade bei größeren Projekten, nützlich. Hierbei wurden u. a. 
-»Namespaces« eingeführt. die eine eindeutige und sichre Referenzierung ermöglichen.
+»Namespaces« eingeführt. die eine eindeutige und sichere Referenzierung ermöglichen.
 
 Möchtest du diese und zukünftige »Dart Sass« Leistungsmerkmale nutzen, kannst du das über einen lokalen Workflow realisieren. 
 
