@@ -1,6 +1,6 @@
 ---
 title: "Customize the Contao Demo"
-description: "Use and customize the Contao-Demo."
+description: "Use and customize the Contao Demo."
 aliases:
     - /en/guides/contao-demo/
 weight: 11
