@@ -38,7 +38,7 @@ In Contao Versionen vor **4.9** heißt diese Sektion **Suchindex neu aufbauen**.
 Links steht dort nicht zur Verfügung.
 {{% /notice %}}
 
-![Den Suchindex automatisch aufbauen](/de/system/images/de/den-suchindex-automatisch-aufbauen.png?classes=shadow)
+![Den Suchindex automatisch aufbauen]({{% asset "images/manual/system/de/den-suchindex-automatisch-aufbauen.png" %}}?classes=shadow)
 
 {{< version "4.9" >}}
 
@@ -60,7 +60,6 @@ parameters:
 ```
 
 Nähere Informationen dazu findet man in der [Symfony Routing Dokumentation][SymfonyUrlCommands].
-
 
 ### Geschützte Seiten indizieren
 
@@ -84,6 +83,79 @@ Beim Aufbauen des Suchindexes wird dieser Benutzer dann automatisch angemeldet.
 
 Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den Ergebnissen, wenn der angemeldete 
 Frontend-Benutzer auch auf sie zugreifen darf.
+
+
+### Den Prozess beschleunigen
+
+Die Dauer des Crawl-Prozesses hängt primär von zwei Faktoren ab:
+
+1. Anzahl der Seiten die gecrawlet werden
+2. Anzahl gleichzeitiger Requests, die der Server verarbeiten kann
+
+#### Die Anzahl der gecrawlten Seiten reduzieren
+
+Ersteres lässt sich beeinflussen, indem beispielsweise URLs die gar nicht relevant sind, vom Crawl-Prozess 
+ausgeschlossen werden. Welche URLs genau gecrawlt werden, kannst du bequem über das Debug-Log in Erfahrung bringen.
+Im Backend kann dies während der Crawl-Prozess läuft, direkt heruntergeladen werden. Auf der Kommandozeile kannst 
+du das Debug-Log wie folgt aktivieren:
+
+```sh
+$ vendor/bin/contao-console contao:crawl --enable-debug-csv
+```
+
+Du findest das Log als `crawl_debug_log.csv` dann im Hauptverzeichnis deines Contao-Projekts. Den Pfad könntest du 
+mit `--debug-csv-path` übrigens auch noch anpassen, sollte das gewünscht sein.
+
+Um ungewünschte Seiten vom Crawl-Prozess auszuschliessen gibt es mehrere Möglichkeiten:
+
+1. Gewisse Seiten über die `robots.txt` komplett von Crawlern ausschliessen.
+
+   Die Konfiguration findet in der Rootseite statt und folgt [einem Standard][Google_Robots_Txt], womit du auch den 
+   Contao-Crawler beeinflussen kannst. Solltest du gewisse Anweisungen nur auf den Contao-Crawler beschränken wollen,
+   kannst du das mit `User-Agent: contao/crawler` tun.
+
+2. Gewisse Links komplett von allen Crawl-Aktivitäten ausschliessen.
+
+   Den Crawler den Contao nutzt, nennt sich "Escargot" und entsprechend kannst du mit `<a href="..." 
+   data-escargot-ignore>...</a>` Links von jeglichen Crawl-Aktivitäten ausschliessen. Wenn Escargot diese Links 
+   findet, wird es sie immer ignorieren.
+
+3. Gewisse Links nur vom Suchindex-Subscriber ausschliessen.
+
+   Möchtest du, dass ein Link zwar grundsätzlich von anderen Subscribern beachtet wird, aber vom 
+   Suchindex-Subscriber ausgeschlossen werden sollen, kannst du das mit `<a href="..." data-skip-search-index>...</a>`tun.
+
+Ausserdem kommt es darauf an, wie tief der Crawler nach weiteren URLs suchen soll. Die erste Ebene ist die Rootseite,
+also bspw. `https://example.com`. Die zweite Ebene sind alle Seiten, die auf `https://example.com` gefunden wurden 
+und so weiter. Je höher also die Tiefe, desto mehr Links können gefunden werden und desto länger dauert der 
+Crawl-Prozess. Die Tiefe kannst du auf der Kommandozeile über das `--max-depth` Argument steuern.
+Im Backend ist die Tiefe auf `3` festgelegt.
+
+{{< version-tag "5.3" >}} Ab Contao 5.3 kannst du die Tiefe auch im Backend auswählen.
+
+#### Die Anzahl der gleichzeitigen Requests beeinflussen
+
+Die Anzahl der gleichzeitigen Requests kannst du ebenfalls erhöhen. Allerdings musst du dann darauf achten, dass du 
+dabei den Server nicht überlastest. 
+
+Auf der Kommandozeile steht dir dafür die Option `--concurrency` (oder der Shortcut `-c`) zur Verfügung. Im Backend 
+ist die "Concurrency" auf `5` festgelegt.
+
+{{< version-tag "5.3" >}} Ab Contao 5.3 kannst du diesen Wert über die `config.yml` festlegen:
+
+```yml
+# config/config.yml
+contao:
+    backend:
+        crawl_concurrency: 10
+```
+
+{{% notice "tip" %}}
+Falls du dich fragst, warum es konfigurierbar aber nicht im Backend auswählbar ist: Dieser Wert ändert sich 
+grundsätzlich nie. Langsamer - also eine tiefere Concurrency - soll der Prozess ja nie dauern und die maximale 
+Anzahl hängt davon ab, was dein Server leisten kann. Das ändert sich immer nur dann, wenn du mehr oder weniger 
+Ressourcen zur Verfügung stellst.
+{{% /notice %}}
 
 
 ### Basic Authentication
@@ -110,9 +182,10 @@ Wiederherstellen gelöschter Datensätze oder früherer Versionen verwendet werd
 bereinigen, um z. B. alte Vorschaubilder zu entfernen oder die XML-Sitemaps nach einer Änderung an der Seitenstruktur 
 zu aktualisieren.
 
-![Daten manuell bereinigen](/de/system/images/de/daten-manuell-bereinigen.png?classes=shadow)
+![Daten manuell bereinigen]({{% asset "images/manual/system/de/daten-manuell-bereinigen.png" %}}?classes=shadow)
 
 
 [BackendSettings]: /de/system/einstellungen/
 [SymfonyUrlCommands]: https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands
 [HttpClientOptions]: https://symfony.com/doc/current/reference/configuration/framework.html#reference-http-client
+[Google_Robots_Txt]: https://developers.google.com/search/docs/crawling-indexing/robots/intro

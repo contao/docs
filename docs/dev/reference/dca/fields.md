@@ -137,6 +137,7 @@ Each field can be validated against a regular expression.
 | cols               | Columns (`integer`)              | Number of columns (used for `textarea`, `radioTable` and `tableWizard` fields).                                                                                                                                |
 | csv                | Delimiter (`string`)             | The choice of this field will not be stored as serialized string but rather as given delimiter-separated list. Example: `'eval' => ['csv'=>',']`                 |
 | customRgxp        | Regular expression (`string`) | {{< version "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
+| customTpl        | Filename (`string`) | Use own template for this input field `'customTpl' => 'template-file-name'` |
 | datepicker         | true/false (`bool`)           | If true the current field will have a [MooTools-DatePicker](https://github.com/arian/mootools-datepicker).                                                                                                                             |
 | dcaPicker          | true/false (`bool`)           | If true the general purpose picker will be shown. Allows to pick different records from the system and return them as an insert tag.                                     |
 | decodeEntities     | true/false (`bool`)           | If true HTML entities will be decoded. Note that HTML entities are always decoded if allowHtml is true.                                                                  |
@@ -162,7 +163,7 @@ Each field can be validated against a regular expression.
 | isBoolean          | true/false (`bool`)           | Indicates that a particular field is boolean.                                                                                                                            |
 | isGallery          | true/false (`bool`)     | Displays selected files of a `fileTree` widget as an image gallery. |
 | isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
-| isSortable         | true/false (`bool`)           | {{< version "4.10" >}} Enable sorting for the selected items. Applies to file trees only.                                                                              |
+| isSortable         | true/false (`bool`)           | {{< version "4.10" >}} Enable sorting for the selected items. Applies to file trees and pickers.                                                                              |
 | mandatory          | true/false (`bool`)           | If true the field cannot be empty.                                                                                                                                       |
 | maxlength          | Maximum length (`integer`)       | Maximum number of characters that is allowed in the current field.                                                                                                       |
 | maxval             | Maximum value (`integer`)        | Maximum number value to be checked (upper bound).                                                                                                                        |

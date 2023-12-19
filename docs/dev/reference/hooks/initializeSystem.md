@@ -18,11 +18,9 @@ process is finished and before the request processing is started. This also mean
 // src/EventListener/InitializeSystemListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("initializeSystem")
- */
+#[AsHook('initializeSystem')]
 class InitializeSystemListener
 {
     public function __invoke(): void

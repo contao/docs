@@ -40,12 +40,10 @@ Return `false` if this hook should not be considered. Return an integer otherwis
 // src/EventListener/NewsListCountItemsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 
-/**
- * @Hook("newsListCountItems")
- */
+#[AsHook('newsListCountItems')]
 class NewsListCountItemsListener
 {
     public function __invoke(array $newsArchives, bool $featuredOnly, Module $module)

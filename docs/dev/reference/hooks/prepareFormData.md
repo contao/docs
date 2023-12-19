@@ -35,17 +35,50 @@ distribution or data storage.
 
 
 ## Example
-
+{{< tabs groupId="prepareFormData-example" >}}
+{{% tab name="Since Contao 5.2" %}}
 ```php
 // src/EventListener/PrepareFormDataListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 
-/**
- * @Hook("prepareFormData")
- */
+#[AsHook('prepareFormData')]
+class PrepareFormDataListener
+{
+    public function __invoke(
+        array &$submittedData, 
+        array $labels, 
+        array $fields, 
+        Form $form, 
+        array &$files
+    ): void
+    {
+        
+        // Add a custom file as attachment
+        $files[] = [
+            'name' => 'MyAttachmentFileName.txt',
+            'tmp_name' => 'path/to/MyAttachmentFileName.txt',
+            'type' => 'text/plain',
+        ];
+    
+        // This calculates a deadline from a given timestamp
+        // and stores it as deadline in $submittedData.
+        $submittedData['deadline'] = strtotime('+1 hour', $submittedData['tstamp']);
+    }
+}
+```
+{{% /tab %}}
+{{% tab name="Before Contao 5.2" %}}
+```php
+// src/EventListener/PrepareFormDataListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
+use Contao\Form;
+
+#[AsHook('prepareFormData')]
 class PrepareFormDataListener
 {
     public function __invoke(array &$submittedData, array $labels, array $fields, Form $form): void
@@ -56,8 +89,13 @@ class PrepareFormDataListener
     }
 }
 ```
+{{% /tab %}}
+{{< /tabs >}}
+
+
 
 
 ## References
 
 * [\Contao\Form#L309-L317](https://github.com/contao/contao/blob/4.9.13/core-bundle/src/Resources/contao/forms/Form.php#L309-L317)
+* [\Contao\Form#L393-L399](https://github.com/contao/contao/blob/5.2.7/core-bundle/contao/forms/Form.php#L393-L399)

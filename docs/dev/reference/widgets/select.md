@@ -7,15 +7,15 @@ This widget renders a drop-down menu.
 
 A simple select menu with hard-coded options whether to show the current page in the HTML Sitemap:
 
-![Select menu with hard-coded options](../images/select.png?classes=shadow)
+![Select menu with hard-coded options]({{% asset "images/dev/reference/widgets/select.png" %}}?classes=shadow)
 
 A select menu enhanced with Chosen.js to allow the editor to limit the available options with a simple search box:
 
-![Select menu enhanced with Chosen.js](../images/select-chosen.png?classes=shadow)
+![Select menu enhanced with Chosen.js]({{% asset "images/dev/reference/widgets/select-chosen.png" %}}?classes=shadow)
 
 A grouped select menu enhanced with Chosen.js:
 
-![Grouped select menu enhanced with Chosen.js](../images/select-grouped-chosen.png?classes=shadow)
+![Grouped select menu enhanced with Chosen.js]({{% asset "images/dev/reference/widgets/select-grouped-chosen.png" %}}?classes=shadow)
 
 ## Options
 
@@ -141,9 +141,9 @@ You can generate an options array from another table with the `foreignKey` prope
         'chosen' => true, // Adds a search box to filter the options
     ],
     'sql' => [
-        'type' => 'string',
-        'notnull' => false,
-        'default' => '',
+        'type' => 'integer',
+        'unsigned' => true,
+        'default' => 0,
     ],
 ],
 // ...

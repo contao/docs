@@ -12,7 +12,7 @@ Nachdem du nun weißt, wie Archive und Beiträge im Backend verwaltet werden, wi
 Inhalte im Frontend darstellen kannst. Die Nachrichtenerweiterung enthält vier neue Frontend-Module, die du wie 
 gewohnt über die Modulverwaltung konfigurieren kannst.
 
-![News/Blog-Module](/de/core-extensions/news/images/de/news-blog-module.png?classes=shadow)
+![News/Blog-Module]({{% asset "images/manual/core-extensions/news/de/news-blog-module.png" %}}?classes=shadow)
 
 
 ## Nachrichtenliste
@@ -55,6 +55,10 @@ Seiten – eine entsprechende Anzahl vorausgesetzt.
 
 
 ### Template-Einstellungen
+
+{{% notice info %}}
+Meta-Felder gibt es ab Contao 5 nicht mehr.
+{{% /notice %}}
 
 **Meta-Felder:** Hier legst du fest, welche Meta-Informationen (Datum des Beitrags, Autor des Beitrags und Anzahl der 
 Kommentare) angezeigt werden.

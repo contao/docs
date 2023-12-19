@@ -26,11 +26,9 @@ nothing to keep.
 // src/EventListener/RemoveOldFeedsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("removeOldFeeds")
- */
+#[AsHook('removeOldFeeds')]
 class RemoveOldFeedsListener
 {
     public function __invoke(): array

@@ -27,7 +27,7 @@ Cum sociis [natoque](https://www.google.com/) penatibus et magnis dis.
 ```
 
 
-### Short code notice
+### Short code `notice`
 
 The `notice` shortcode allows you to display 4 different types of disclaimers.
 
@@ -65,7 +65,7 @@ A warning disclaimer
 ```
 
 
-### Short code tabs
+### Short code `tabs`
 
 The short code tabs allows you to group content. Very handy for providing code snippets for multiple languages or 
 providing configuration in different formats.
@@ -85,7 +85,7 @@ Lorem ipsum dolor sit amet ...
 ```
 
 
-### Short code example
+### Short code `example`
 
 This short code will visually separate its content from the rest and display an "Example" header.
 
@@ -93,6 +93,29 @@ This short code will visually separate its content from the rest and display an 
 {{% example "Your example title" %}}
 Lorem ipsum dolor sit amet ...
 {{% /example %}}
+```
+
+
+### Short code `asset`
+
+This shortcode will add a unique fingerprint to the image file name. 
+The asset file must be located in the "page/assets" directory.
+
+```
+![Alt Text]({{% asset "/path/to/image.png" %}})
+instead of
+![Alt Text](/path/to/img.png)
+```
+
+
+### Short code `faq`
+
+This shortcode displays an expandable section of text. It also outputs JSON-LD meta data for FAQs.
+
+```
+{{% faq "Your example title" %}}
+Lorem ipsum dolor sit amet ...
+{{% /faq %}}
 ```
 
 

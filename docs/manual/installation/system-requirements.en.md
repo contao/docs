@@ -134,7 +134,7 @@ with.
 
 In case you are using the Contao Manager, you can run the `composer update` process in the maintenance section under _Composer Dependencies_:
 
-![Composer update in the Contao Manager](/de/installation/images/en/composer-update.png?classes=shadow)
+![Composer update in the Contao Manager]({{% asset "images/manual/installation/en/composer-update.png" %}}?classes=shadow)
 
 
 ### MySQL minimum requirements
@@ -259,7 +259,7 @@ public directory in case you are using Apache as your web server. You will need 
 `mod_rewrite` to be enabled in your Apache web server so that URLs like `https://example.com/contao/install` will work. If either of these 
 conditions are not met, only URLs like `https://example.com/index.php/contao/install` will work.
 
-You will also need to enable the `Options FollowSymlinks` directive for your `Directory` as Contao uses symlinks.
+You will also need to enable the `Options SymLinksIfOwnerMatch` directive for your `Directory` as Contao uses symlinks.
 
 The minimum `VirtualHost` configuration would look like this for example (exchange `…/public` for `…/web` in Contao 4.9 or older):
 
@@ -272,7 +272,7 @@ The minimum `VirtualHost` configuration would look like this for example (exchan
     <Directory /var/www/project/public>
         AllowOverride All
         Require all granted
-        Options FollowSymlinks
+        Options SymLinksIfOwnerMatch
     </Directory>
 </VirtualHost>
 ```

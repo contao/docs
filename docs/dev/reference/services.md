@@ -59,14 +59,12 @@ namespace App\Controller\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="texts")
- */
+#[AsContentElement(category: 'texts')]
 class ExampleFormElementController extends AbstractContentElementController
 {
     /**

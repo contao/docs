@@ -9,11 +9,11 @@ weight: 10
 
 Up to now we have worked exclusively as an administrator who has access to all areas and elements of the system. However, a user will usually only be given access to the resources that he or she actually needs for a specific task.
 
-![The back end from the user's perspective](/de/user-management/images/en/the-back-end-from-the-perspective-of-a-user.png?classes=shadow)
+![The back end from the user's perspective]({{% asset "images/manual/layout/user-management/en/the-back-end-from-the-perspective-of-a-user.png" %}}?classes=shadow)
 
 Normal users, unlike administrators, have no rights at all by default and are only allowed to do what you explicitly allow them to do. The very comprehensive rights management in Contao allows you as an administrator to not only restrict access to certain back end modules, but also to disable every single input field if necessary.
 
-![Activate individual input fields](/de/user-management/images/en/activate-individual-input-fields.png?classes=shadow)
+![Activate individual input fields]({{% asset "images/manual/user-management/en/activate-individual-input-fields.png" %}}?classes=shadow)
 
 ## User groups
 
@@ -39,11 +39,11 @@ Mounting a file system so that a user can access it is called "mounting" on the 
 
 Similar to the pagemount, which determines the entry point into the page structure, the filemount determines the entry point into the file system. The user cannot access folders outside the filemount.
 
-![Filemounts of the user](/de/user-management/images/en/filemounts-of-the-user.png?classes=shadow)
+![Filemounts of the user]({{% asset "images/manual/user-management/en/filemounts-of-the-user.png" %}}?classes=shadow)
 
 The user only sees the folders `files/public/media/content-images`, `files/public/media/documents` and `files/public/media/slider` any subfolders they may contain. All other directories, which are on the same or a higher level, are not displayed
 
-![The file management from the user's point of view](/de/user-management/images/en/filemanager-from-the-perspective-of-a-user.png?classes=shadow)
+![The file management from the user's point of view]({{% asset "images/manual/layout/user-management/en/filemanager-from-the-perspective-of-a-user.png" %}}?classes=shadow)
 
 **Filemounts:** Here you select the filemounts of the group.
 
@@ -237,10 +237,10 @@ Finally you have to create a user and assign him to the group.
 
 In section [Access Rights](/en/layout/site-structure/configure-pages/#access-rights), you have already learned that each page belongs to a specific user and group, and that there are different levels of access based on that.
 
-![access rights of a page](/de/user-management/images/en/access-rights-of-a-page.png?classes=shadow)
+![access rights of a page]({{% asset "images/manual/user-management/en/access-rights-of-a-page.png" %}}?classes=shadow)
 
 For example, this page belongs to the user `Helen Lewis` who can edit, move or delete it and the articles it contains. Other users in the group `Editors` may only edit the articles, but not the page itself.
 
 So you have to assign access rights to the pages that a user should be able to edit or create articles on and assign them either to the user or to his group. In this way you create the conditions for a user to be able to click on the corresponding navigation icons.
 
-![The page structure without assigned access rights](/de/user-management/images/en/site-structure-without-access-rights.png?classes=shadow)
+![The page structure without assigned access rights]({{% asset "images/manual/user-management/en/site-structure-without-access-rights.png" %}}?classes=shadow)

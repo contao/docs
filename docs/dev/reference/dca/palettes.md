@@ -118,7 +118,7 @@ semicolon (;) or a comma (,). Whereas the comma is just used to separate the
 field names, the semicolon indicates the beginning of a new fieldset, which can
 be expanded and collapsed. Typically, each group will also have a specific _legend_.
 
-![palette example](../images/palette_example.png?classes=shadow)
+![palette example]({{% asset "images/dev/reference/palette_example.png" %}}?classes=shadow)
 
 The above example is defined by the following code:
 

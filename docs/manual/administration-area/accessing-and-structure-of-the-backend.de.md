@@ -18,7 +18,7 @@ vollständige Adresse sieht dann so aus:
 Gebe deinen `Benutzernamen` un dein `Passwort` ein. Die im Internetbrowser voreingestellte Sprache wird auch fürs
 Backend verwendet. Bestätige deine Eingaben mit einem Klick auf die Schaltfläche `Weiter`. 
 
-![Anmeldung im Contao-Backend](/de/administration-area/images/de/contao-backend-anmeldung.png?classes=shadow)
+![Anmeldung im Contao-Backend]({{% asset "images/manual/administration-area/de/contao-backend-anmeldung.png" %}}?classes=shadow)
 
 Die Backend-Anmeldung ist mit einem Zeitverzögerungsmechanismus gegen [Brute-Force-Attacken](https://de.wikipedia.org/wiki/Brute-Force-Methode) 
 geschützt. Wenn du mehr als dreimal hintereinander ein falsches Passwort eingibst, wird dein Benutzerkonto automatisch 
@@ -31,7 +31,7 @@ ausprobiert, bis er das richtige Passwort gefunden hat.
 Das Backend ist in drei Bereiche unterteilt. Oben befindet sich der Infobereich, auf der linken Seite die Navigation und
 auf der rechten der Arbeitsbereich.
 
-![Aufteilung des Contao-Backends](/de/administration-area/images/de/contao-backend-aufteilung.png?classes=shadow)
+![Aufteilung des Contao-Backends]({{% asset "images/manual/administration-area/de/contao-backend-aufteilung.png" %}}?classes=shadow)
 
 
 ### Der Infobereich
@@ -102,7 +102,7 @@ Die Frontend-Vorschau erreichst du über den Link »Vorschau« im [Infobereich](
 
 Zu erkennen ist die Frontend-Vorschau zum einen an der Frontend-Preview-Bar und zum anderen am `preview.php` in der URL.
 
-![Frontend-Vorschau](/de/administration-area/images/de/frontend-preview-bar.png?classes=shadow)
+![Frontend-Vorschau]({{% asset "images/manual/administration-area/de/frontend-preview-bar.png" %}}?classes=shadow)
 
 {{< version-tag "4.13" >}} **URL kopieren:** Beim Klick auf den Link, wird die URL ohne `preview.php` in die Zwischenablage kopiert und kann an der 
 gewünschten Stelle eingefügt werden.

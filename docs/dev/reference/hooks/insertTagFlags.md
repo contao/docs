@@ -19,7 +19,7 @@ text as return value or `false` if the flag was not handled.
 
     The name of the insert tag flag.
 
-2. *string* `$flag`
+2. *string* `$tag`
 
     The name of the insert tag.
 
@@ -68,11 +68,9 @@ how to handle the `date` insert tag and the `utf8_strtoupper` flag. The unknown
 // src/EventListener/InsertTagFlagsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("insertTagFlags")
- */
+#[AsHook('insertTagFlags')]
 class InsertTagFlagsListener
 {
     public function __invoke(

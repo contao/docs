@@ -86,9 +86,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/example", name=ExampleController::class)
- */
+#[Route('/example', name: ExampleController::class)]
 class ExampleController
 {
     public function __invoke(Request $request): Response
@@ -151,14 +149,13 @@ the controller's service needs to be set to `public` or be tagged with the
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
-/**
- * @Route("/example", name=ExampleController::class)
- * @ServiceTag("controller.service_arguments")
- */
+#[Route('/example', name: ExampleController::class)]
+#[AsController]
 class ExampleController
 {
     private $security;
@@ -202,7 +199,7 @@ as a "Contao request" and thus handled accordingly with the following effects:
   to which language the current request belongs to (depending on your site structure, 
   if the request can be matched there) or the `Accept-Language` request header.
 * The CSRF protection is automatically enabled.
-* The user session is automatically recored in the database, if a logged in user 
+* The user session is automatically recorded in the database, if a logged in user 
   is present.
 * The output of content elements and front end modules change, depending on the
   scope. For example, front end modules typically do not show their output in the
@@ -229,9 +226,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/example", name=ExampleController::class, defaults={"_scope": "frontend"})
- */
+#[Route('/example', name: ExampleController::class, defaults: ['_scope' => 'frontend'])]
 class ExampleController
 {
     public function __invoke(): Response
@@ -260,9 +255,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/example", name=ExampleController::class, defaults={"_token_check": true})
- */
+#[Route('/example', name: ExampleController::class, defaults: ['_token_check' => true])]
 class ExampleController
 {
     public function __invoke(): Response
@@ -288,9 +281,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/example", name=ExampleController::class, defaults={"_bypass_maintenance": true})
- */
+#[Route('/example', name: ExampleController::class, defaults: ['_bypass_maintenance' => true])]
 class ExampleController
 {
     public function __invoke(): Response

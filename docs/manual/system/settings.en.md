@@ -150,7 +150,7 @@ Enter `nav` or `input` as the key and the desired value as the value - in our ex
 
 If you trust all backend users 100%, you can also enter `*` as the key and `*` as the value. This will allow all attributes for all elements.
 
-![Security settings](/de/system/images/en/security-settings-en.png?classes=shadow)
+![Security settings]({{% asset "images/manual/system/en/security-settings-en.png" %}}?classes=shadow)
 
 
 ### Files and images
@@ -490,6 +490,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | --- | --- |
 | `adminEmail` | [E-mail address of the system administrator](#global-configuration). |
 | `allowedDownload` | [Download file types](#files-and-images). |
+| `allowedAttributes` | [Allowed HTML attributes](##security-settings). |
 | `allowedTags` | [Allowed HTML tags](#security-settings). |
 | `characterSet` | Character set used by Contao. _(deprecated)_ Use the parameter `kernel.charset` instead. Default: `UTF-8` |
 | `dateFormat` | [Date format](#date-and-time). |
@@ -781,7 +782,7 @@ php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipie
 
 {{% tab name="Contao 5.0 and up" %}}
 ```bash
-php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
+php vendor/bin/contao-console mailer:test --from=sender@example.com --subject=testmail --body=testmail recipient@example.com
 ```
 {{% /tab %}}
 
@@ -816,7 +817,7 @@ information in the official [Symfony documentation][SymfonyMailer].
 {{% notice warning %}}
 If your username or password contains special characters, they need to be "url encoded". There are several online
 services you can use to quickly url encode any string, e.g. [urlencoder.org](https://www.urlencoder.org/). Make sure to
-encode the username and password separately (not together with the colon). When using `config.yaml`, the respective encoding of a special character must be prefixed with `%`: So e. g. `%%23` for the special character `#`.
+encode the username and password separately (not together with the colon). When using `config.yaml`, the respective encoding of a special character must be prefixed with `%`: So e. g. `%%40` for the special character `@`.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -952,7 +953,7 @@ composer require symfony/messenger
 Now we can define a Messenger transport and routing for email messages. First we need to decide on the type of Messenger transport though.
 The component already provides different [transport types][SymfonyMessengerTransports]. In this case the 
 [Doctrine transport][SymfonyMessengerDoctrine] is a good fit since it will save our emails in the database first for later consumption.
-In order to enable asynchronous emails via Symfony Mailer [the following needs to be configured][SmyonfyMailerMessenger]:
+In order to enable asynchronous emails via Symfony Mailer [the following needs to be configured][SymfonyMailerMessenger]:
 
 ```yaml
 # config/config.yaml
@@ -1006,6 +1007,11 @@ aforementioned `--time-limit=1` option will cause the process to exit after one 
 [Symfony documentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
+{{% notice "note" %}}
+It may be that mails are processed with a time delay,
+if the cronjob doesn't have any specification for the timezone and then uses the default `UTC`.
+Therefore, the local time zone should either be set globally on the server or explicitly in the cronjob.
+{{% /notice %}}
 
 
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
@@ -1017,4 +1023,5 @@ aforementioned `--time-limit=1` option will cause the process to exit after one 
 [SymfonyMessenger]: https://symfony.com/doc/current/messenger.html
 [SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
-[SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
+[SymfonyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
+[SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html

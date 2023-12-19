@@ -5,7 +5,7 @@ description: Text field with drop-down menu
 
 This widget renders a text field with a drop-down menu and is proposed to be used with time periods.
 
-![Time period widget](../images/time_period.png?classes=shadow&width=600px)
+![Time period widget]({{% asset "images/dev/reference/widgets/time_period.png" %}}?classes=shadow&width=600px)
 
 ## Options
 

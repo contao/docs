@@ -70,7 +70,7 @@ way of automatically registering services under the `App\` namespace within the 
 
 For a `list.label.group` callback for example a callback might look like this:
 
-{{< tabs groupId="registering-dca-callbacks" >}}
+{{< tabs groupId="attribute-annotation-yaml-php" >}}
 {{% tab name="Attribute" %}}
 {{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
 since **PHP 8**) with which you can tag your service to be registered as a callback.
@@ -144,7 +144,7 @@ The service tag can have the following options:
 | priority | `integer` | _Optional:_ priority of the callback. By default it will be executed _before_ all legacy callbacks according to the loading order of the bundles. Anything with higher than `0` will be executed before legacy callbacks. Anything with lower than `0` will be executed after legacy callbacks. In Contao **5.0** this has changed though so that these callbacks are executed _after_ all legacy callbacks according to the loading order of the bundles, when using a default priority of `0`. |
 {{% /tab %}}
 
-{{% tab name="DCA" %}}
+{{% tab name="PHP" %}}
 This is the old way of using DCA callbacks prior to Contao **4.7**. The table
 `tl_module` and target definition `list.label.group` translates to a PHP
 array configuration in the following way for example:
@@ -187,11 +187,11 @@ which do not.
 ### Invokable Services
 
 {{< version-tag "4.9" >}} You can also use [invokable classes][invoke] for your services. If a service is
-tagged with `contao.hook` and no method name is given, the `__invoke` method will
+tagged with `contao.callback` and no method name is given, the `__invoke` method will
 be called automatically. This also means that you can define the service annotation
 on the class, instead of a method:
 
-{{< tabs groupId="registering-dca-callbacks" >}}
+{{< tabs groupId="attribute-annotation-yaml-php" >}}
 {{% tab name="Attribute" %}}
 ```php
 // src/EventListener/DataContainer/ModuleCallbackListener.php
@@ -262,7 +262,7 @@ class ModuleCallbackListener
 ```
 {{% /tab %}}
 
-{{% tab name="DCA" %}}
+{{% tab name="PHP" %}}
 ```php
 // contao/dca/tl_module.php
 use App\EventListener\DataContainer\ModuleCallbackListener;

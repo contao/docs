@@ -33,7 +33,7 @@ oberen Menü und bestätige mit "Ok".
 
 Du erhälst eine `sql`-Datei, die du im nächsten Schritt importieren kannst.
 
-![Exporting the database](/de/installation/images/de/datenbank-exportieren.png?classes=shadow)
+![Exporting the database]({{% asset "images/manual/installation/de/datenbank-exportieren.png" %}}?classes=shadow)
 {{% /tab %}}
 {{% tab name="Command line" %}}
 Stelle sicher, dass `mysqldump` und `gzip` installiert sind, dann führe folgendes Kommando aus (dabei ersetzt du 
@@ -57,7 +57,7 @@ Alle Inhalte der Datenbank wurden nun in die Datei `my_dump.sql.gz` geschrieben 
 
 Klicke auf die »Import«-Schaltfläche im oberen Menü, lade dann den zuvor erstellten SQL-Dump hoch und starte den Import.
 
-![Importing the database](/de/installation/images/de/datenbank-importieren.png?classes=shadow)
+![Importing the database]({{% asset "images/manual/installation/de/datenbank-importieren.png" %}}?classes=shadow)
 
 {{% /tab %}}
 {{% tab name="Command line" %}}

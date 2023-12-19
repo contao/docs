@@ -151,7 +151,7 @@ Dazu als Schlüssel `nav` bzw. `input` eintragen und als Wert der gewünschte We
 
 Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüssel `*` und als Wert `*` eintragen. Hierdurch sind alle Attribute für alle Elemente erlaubt.  
 
-![Sicherheitseinstellungen](/de/system/images/de/security-settings-de.png?classes=shadow)
+![Sicherheitseinstellungen]({{% asset "images/manual/system/de/security-settings-de.png" %}}?classes=shadow)
 
 
 ### Dateien und Bilder
@@ -503,6 +503,7 @@ Beschreibung.
 | --- | --- |
 | `adminEmail` | [E-Mail-Adresse des Systemadministrators](#globale-einstellungen). |
 | `allowedDownload` | [Erlaubte Download-Dateitypen](#dateien-und-bilder). |
+| `allowedAttributes` | [Erlaubte HTML-Attribute](#sicherheitseinstellungen). |
 | `allowedTags` | [Erlaubte HTML-Tags](#sicherheitseinstellungen). |
 | `characterSet` | Der von Contao benutzte Zeichensatz. _(veraltet)_ Nutze den Parameter `kernel.charset` stattdessen. Standard: `UTF-8`. |
 | `dateFormat` | [Datumsformat](#datum-und-zeit). |
@@ -695,7 +696,7 @@ Variable.
 MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:465?encryption=ssl
 ```
 
-Beachte, dass der _Benutzername_ und das _Password_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.
+Beachte, dass der _Benutzername_ und das _Passwort_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.
 {{% /tab %}}
 
 {{% tab name="parameters.yml" %}}
@@ -748,7 +749,7 @@ php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipie
 
 {{% tab name="Contao 5.0 und höher" %}}
 ```bash
-php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
+php vendor/bin/contao-console mailer:test --from=sender@example.com --subject=testmail --body=testmail recipient@example.com
 ```
 {{% /tab %}}
 
@@ -785,7 +786,7 @@ dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMa
 Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese »URL enkodiert« werden. Es gibt
 verschiedene Online-Services, mit denen man auf einfache Weise eine beliebige Zeichenfolgen URL-encoden kann, z. B.
 [urlencoder.org](https://www.urlencoder.org/). Enkodiere den Benutzernamen und das Passwort separat, nicht gemeinsam
-mit dem Doppelpunkt. Bei Verwendung der `config.yaml` muß die jeweilige Kodierung eines Sonderzeichen mit `%` eingeleitet werden: Also z. B. `%%23` für das Sonderzeichen `#`.
+mit dem Doppelpunkt. Bei Verwendung der `config.yaml` muß die jeweilige Kodierung eines Sonderzeichen mit `%` eingeleitet werden: Also z. B. `%%40` für das Sonderzeichen `@`.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -924,7 +925,7 @@ Danach können wir einen Messenger Transport definieren und das Routing für E-M
 entscheiden, welchen Messenger Transport wir nutzen wollen. Symfony Messenger stellt verschiedene [Transports][SymfonyMessengerTransports]
 von Haus aus zur Verfügung. Für unsere Zwecke eignet sich der [Doctrine Transport][SymfonyMessengerDoctrine], damit werden die E-Mails
 zuerst in der Datenbank gespeichert und können später abgearbeitet werden. Um nun den asynchronen Versand über Symfony Mailer zu aktivieren
-muss [folgendes konfiguriert werden][SmyonfyMailerMessenger]:
+muss [folgendes konfiguriert werden][SymfonyMailerMessenger]:
 
 ```yaml
 # config/config.yaml
@@ -978,6 +979,12 @@ bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens ein
 [Symfony Dokumentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
+{{% notice "note" %}}
+Es kann sein, dass Mails zeitversetzt verarbeitet werden, 
+wenn der Cronjob keine Angabe für die Zeitzone hat und dann den Standard `UTC` verwendet.
+Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt werden oder explizit im Cronjob.
+{{% /notice %}}
+
 
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
 [InsertTags]: /de/artikelverwaltung/insert-tags/
@@ -988,4 +995,5 @@ bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens ein
 [SymfonyMessenger]: https://symfony.com/doc/current/messenger.html
 [SymfonyMessengerTransports]: https://symfony.com/doc/current/messenger.html#transport-configuration
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
-[SmyonfyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
+[SymfonyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
+[SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html

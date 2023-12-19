@@ -19,8 +19,8 @@ Eine detaillierte Anleitung findest du bei [docs.pdir.de](https://docs.pdir.de/#
 
 **Horizontale Ausrichtung:**
 
-![Horizontale Ausrichtung](/de/extensions/images/de/animated-timeline_horizontal.png?classes=shadow)
+![Horizontale Ausrichtung]({{% asset "images/manual/extensions/de/animated-timeline_horizontal.png" %}}?classes=shadow)
 
 **Vertikale Ausrichtung:**
 
-![Vertikale Ausrichtung](/de/extensions/images/de/animated-timeline_vertical.png?classes=shadow)
+![Vertikale Ausrichtung]({{% asset "images/manual/extensions/de/animated-timeline_vertical.png" %}}?classes=shadow)

@@ -49,4 +49,5 @@ The options are far more important so let's get to them right away:
 **Notes**
 
 * Make sure you have defined the correct domain in either your website root or a default domain via the `router.request_context.host` parameter.
-* Protected pages can currently only be indexed via the backend.
+* Protected pages can currently only be indexed via the backend - [Enable indexing via config.yml](https://docs.contao.org/manual/en/system/maintenance/#indexing-protected-pages).
+* If a web page is protected via "Basic Authentication" in the production or staging environment before publication, [access for the crawler can be done via config.yml](https://docs.contao.org/manual/en/system/maintenance/#basic-authentication). 

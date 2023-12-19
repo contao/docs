@@ -78,7 +78,7 @@ Therefore, add the file extension `.php` only after the upload.
 Then use your browser to access the URL `www.example.com/contao-manager.phar.php`. You should see the Contao Manager 
 welcome page.
 
-![Welcome page of the Contao Manager](/de/installation/images/en/welcomepage-contao-manager.png?classes=shadow)
+![Welcome page of the Contao Manager]({{% asset "images/manual/installation/en/welcomepage-contao-manager.png" %}}?classes=shadow)
 
 ### Basic configuration
 
@@ -95,7 +95,7 @@ The Contao Manager needs the path to the PHP binary and other server information
 The path is usually automatically detected by the Contao Manager.
 
 
-![Server configuration](/de/installation/images/en/server-configuration.png?classes=shadow)
+![Server configuration]({{% asset "images/manual/installation/en/server-configuration.png" %}}?classes=shadow)
 
 #### Composer Resolver Cloud
 

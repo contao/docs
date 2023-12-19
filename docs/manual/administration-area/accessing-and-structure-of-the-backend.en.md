@@ -15,7 +15,7 @@ You can access the back end of your Contao installation by appending `/contao` t
 
 Enter your `Username` and your `Password`. The default language of the browser is also used for the back end. Confirm your entries by clicking the button `Continue`.
 
-![Registration in the Contao back end](/de/administration-area/images/en/contao-call-the-backend.png?classes=shadow)
+![Registration in the Contao back end]({{% asset "images/manual/administration-area/en/contao-call-the-backend.png" %}}?classes=shadow)
 
 The back end login is [protected](https://en.wikipedia.org/wiki/Brute-force_search) against [brute force attacks](https://en.wikipedia.org/wiki/Brute-force_attack) with a time delay mechanism. If you enter an incorrect password more than three times in a row, your account will automatically be locked for 5 minutes. This prevents a hacker from trying a large number of passwords in succession until he finds the right one.
 
@@ -23,7 +23,7 @@ The back end login is [protected](https://en.wikipedia.org/wiki/Brute-force_sear
 
 The back end is divided into three areas. At the top is the info area, on the left is the navigation and on the right is the work area.
 
-![Distribution of the Contao back end](/de/administration-area/images/en/contao-dashboard.png?classes=shadow)
+![Distribution of the Contao back end]({{% asset "images/manual/administration-area/en/contao-dashboard.png" %}}?classes=shadow)
 
 ### The information area
 
@@ -81,7 +81,7 @@ You can access the front end preview via the "Preview" link in [the information 
 The front end preview can be recognized on the one hand by the front end preview bar and on the other hand by `
 preview.php` in the URL.
 
-![Front end preview](/de/administration-area/images/en/front-end-preview-bar.png?classes=shadow)
+![Front end preview]({{% asset "images/manual/administration-area/en/front-end-preview-bar.png" %}}?classes=shadow)
 
 {{< version-tag "4.13" >}}  **Copy URL:** When you click on the link, the URL without `preview.php` is copied to the clipboard and can be pasted at 
 the desired position.

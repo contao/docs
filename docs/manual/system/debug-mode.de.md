@@ -75,7 +75,7 @@ In Contao **4.5** bis **4.7** kann der Benutzername und das Passwort auch über 
 Contao Manager gesetzt werden. Die Option dafür befindet sich in der _Systemwartung_ 
 Sektion unter _Debug-Modus_.
 
-![Debug Mode](/de/system/images/de/contao-manager_c44-debug-mode_de.png?classes=shadow)
+![Debug Mode]({{% asset "images/manual/system/de/contao-manager_c44-debug-mode_de.png" %}}?classes=shadow)
 
 Nach dem Klick auf _Aktivieren_ fragt der Contao Manager nach dem Benutzernamen
 und dem Passwort für den `app_dev.php` Einstiegspunkt. Der Contao Manager führt
@@ -134,7 +134,7 @@ Der Button wird nur angezeigt, wenn du keine App Umgebung in deiner `.env` Datei
 Der Debug-Modus kann außerdem über den Contao Manager aktiviert werden. Dazu befindet
 sich in der _Systemwartung_ Sektion unter _Debug-Modus_ eine entsprechende Schaltfläche.
 
-![Debug Mode](/de/system/images/de/contao-manager_c48-debug-mode_de.png?classes=shadow)
+![Debug Mode]({{% asset "images/manual/system/de/contao-manager_c48-debug-mode_de.png" %}}?classes=shadow)
 
 Nach dem Klick auf _Aktivieren_ setzt auch hier der Contao Manager ein spezielles
 Cookie, welches den Debug-Modus für den aktuellen Benutzer aktiviert. Das Cookie gilt
@@ -150,7 +150,7 @@ jeder Server-Anfrage. Die Toolbar erscheint am unteren Rand des Browser-Fensters
 wenn der Debug-Modus aktiv ist. Sie kann über das Symfony Logo geschlossen und geöffnet
 werden.
 
-![Symfony toolbar](/de/system/images/de/symfony-toolbar.png?classes=shadow)
+![Symfony toolbar]({{% asset "images/manual/system/de/symfony-toolbar.png" %}}?classes=shadow)
 
 Unter den Informationen, die abgefragt werden können befindet sich zum Beispiel:
 

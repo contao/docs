@@ -35,11 +35,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\MenuEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::BACKEND_MENU_BUILD)
- */
+#[AsEventListener(ContaoCoreEvents::BACKEND_MENU_BUILD)]
 class BackendMenuBuildListener
 {
     public function __invoke(MenuEvent $event): void
@@ -92,11 +90,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\GenerateSymlinksEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::GENERATE_SYMLINKS)
- */
+#[AsEventListener(ContaoCoreEvents::GENERATE_SYMLINKS)]
 class GenerateSymlinksListener
 {
     public function __invoke(GenerateSymlinksEvent $event): void
@@ -130,11 +126,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\ImageSizesEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::IMAGE_SIZES_ALL)
- */
+#[AsEventListener(ContaoCoreEvents::IMAGE_SIZES_ALL)]
 class ImageSizesAllListener
 {
     public function __invoke(ImageSizesEvent $event): void
@@ -166,11 +160,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\ImageSizesEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::IMAGE_SIZES_USER)
- */
+#[AsEventListener(ContaoCoreEvents::IMAGE_SIZES_USER)]
 class ImageSizesUserListener
 {
     public function __invoke(ImageSizesEvent $event): void
@@ -202,11 +194,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\PreviewUrlCreateEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::PREVIEW_URL_CREATE)
- */
+#[AsEventListener(ContaoCoreEvents::PREVIEW_URL_CREATE)]
 class PreviewUrlCreateListener
 {
     public function __invoke(PreviewUrlCreateEvent $event): void
@@ -239,11 +229,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\PreviewUrlConvertEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::PREVIEW_URL_CONVERT)
- */
+#[AsEventListener(ContaoCoreEvents::PREVIEW_URL_CONVERT)]
 class PreviewUrlConvertListener
 {
     public function __invoke(PreviewUrlConvertEvent $event): void
@@ -279,16 +267,14 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\RobotsTxtEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
 use webignition\RobotsTxt\Directive\Directive;
 use webignition\RobotsTxt\Directive\UserAgentDirective;
 use webignition\RobotsTxt\Inspector\Inspector;
 use webignition\RobotsTxt\Record\Record;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::ROBOTS_TXT)
- */
+#[AsEventListener(ContaoCoreEvents::ROBOTS_TXT)]
 class RobotsTxtListener
 {
     public function __invoke(RobotsTxtEvent $event): void
@@ -339,9 +325,7 @@ use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\SlugValidCharactersEvent;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::SLUG_VALID_CHARACTERS)
- */
+#[AsEventListener(ContaoCoreEvents::SLUG_VALID_CHARACTERS)]
 class SlugValidCharactersListener
 {
     public function __invoke(SlugValidCharactersEvent $event): void
@@ -374,11 +358,9 @@ to add or remove options.
 namespace App\EventListener;
 
 use Contao\CoreBundle\Event\FilterPageTypeEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener")
- */
+#[AsEventListener]
 class FilterPageTypeListener
 {
     public function __invoke(FilterPageTypeEvent $event): void
@@ -412,11 +394,9 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\SitemapEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener", event=ContaoCoreEvents::SITEMAP)
- */
+#[AsEventListener(ContaoCoreEvents::SITEMAP)]
 class SitemapListener
 {
     public function __invoke(SitemapEvent $event): void
@@ -424,10 +404,32 @@ class SitemapListener
         $sitemap = $event->getDocument();
         $urlSet = $sitemap->childNodes[0];
 
-        $loc = $sitemap->createElement('loc', 'https://example.com/foobar');
+        $loc = $sitemap->createElement('loc');
+        $loc->appendChild($sitemap->createTextNode('https://example.com/foobar'));
+
         $urlEl = $sitemap->createElement('url');
         $urlEl->appendChild($loc);
         $urlSet->appendChild($urlEl);
+    }
+}
+```
+
+Since Contao **5.0** you can use the `addUrlToDefaultUrlSet` method of the event:
+
+```php
+// src/EventListener/SitemapListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\ContaoCoreEvents;
+use Contao\CoreBundle\Event\SitemapEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener(ContaoCoreEvents::SITEMAP)]
+class SitemapListener
+{
+    public function __invoke(SitemapEvent $event): void
+    {
+        $event->addUrlToDefaultUrlSet('https://example.com/foobar');
     }
 }
 ```
@@ -458,11 +460,9 @@ a newsletter to real recipients.
 namespace App\EventListener;
 
 use Contao\NewsletterBundle\Event\SendNewsletterEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-/**
- * @ServiceTag("kernel.event_listener")
- */
+#[AsEventListener]
 class SendNewsletterListener
 {
     public function __invoke(SendNewsletterEvent $event): void
@@ -488,6 +488,88 @@ class SendNewsletterListener
             // Overwrite the HTML with custom content
             $event->setHtml($html);
         }
+    }
+}
+```
+{{% /expand %}}
+
+
+## `FetchArticlesForFeedEvent`
+
+{{% version "5.0" %}}
+
+This event is dispatched when a news feed is created and is used to collect the news articles before adding them to the
+feed. The event holds references to the feed, the page and the request and allows news articles to be added to it. This
+event is also used by the news bundle itself, so if you want to alter the collection of news articles (before they are
+added to the feed) make sure that your event listener has a lower priority.
+
+This event also allows you to alter the feed directly.
+
+<table>
+<tr><th>Name</th><td><code>\Contao\NewsBundle\Event\FetchArticlesForFeedEvent::class</code></td></tr>
+<tr><th>Constant</th><td>N/A</td></tr>
+<tr><th>Event</th><td><code>\Contao\NewsBundle\Event\FetchArticlesForFeedEvent</code></td></tr>
+</table>
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/FetchArticlesForFeedEventListener.php
+namespace App\EventListener;
+
+use Contao\NewsBundle\Event\FetchArticlesForFeedEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener]
+class FetchArticlesForFeedEventListener
+{
+    public function __invoke(FetchArticlesForFeedEvent $event): void
+    {
+        // Add additional news articles to the feed
+        $articles = NewsModel::findBy(…);
+        $event->addArticles($articles->getModels());
+
+        // Set a logo for the feed
+        $event->getFeed()->setLogo(…);
+    }
+}
+```
+{{% /expand %}}
+
+
+## `TransformArticleForFeedEvent`
+
+{{% version "5.0" %}}
+
+This event is dispatched when a news article is transformed to a news feed item node. The event holds a reference to the
+news archive, feed, page, request and the base URL. The news bundle uses this event to create a feed item based on a
+news record and sets this item in the event. You can use this event to further alter the feed item (if your event
+listener has a lower priority).
+
+<table>
+<tr><th>Name</th><td><code>\Contao\NewsBundle\Event\TransformArticleForFeedEvent::class</code></td></tr>
+<tr><th>Constant</th><td>N/A</td></tr>
+<tr><th>Event</th><td><code>\Contao\NewsBundle\Event\TransformArticleForFeedEvent</code></td></tr>
+</table>
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/TransformArticleForFeedEventListener.php
+namespace App\EventListener;
+
+use Contao\NewsBundle\Event\TransformArticleForFeedEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener(priority: -100)]
+class TransformArticleForFeedEventListener
+{
+    public function __invoke(TransformArticleForFeedEvent $event): void
+    {
+        if (!($item = $event->getItem())) {
+            return;
+        }
+
+        // Set a summary
+        $item->setSummary(…);
     }
 }
 ```

@@ -12,6 +12,9 @@ The `compileDefinition` hook is triggered when a format definition of an interna
 style sheet is written. It passes the database record of the style definition as 
 an array and expects a string as return value.
 
+{{% notice info %}}
+Using the `compileDefinition` hook has been deprecated and will no longer work in Contao 5.0. There is no replacement as the internal stylesheet functionality has been removed in Contao 5.0.
+{{% /notice %}}
 
 ## Parameters
 
@@ -44,11 +47,9 @@ definition should be used.
 // src/EventListener/CompileDefinitionListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("compileDefinition")
- */
+#[AsHook('compileDefinition')]
 class CompileDefinitionListener
 {
     public function __invoke(array $row, bool $writeToFile, array $vars, array $parent): string

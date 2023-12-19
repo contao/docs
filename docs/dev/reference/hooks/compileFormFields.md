@@ -40,12 +40,10 @@ An `array` of of `\Contao\FormFieldModel` instances.
 // src/EventListener/CompileFormFieldsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 
-/**
- * @Hook("compileFormFields")
- */
+#[AsHook('compileFormFields')]
 class CompileFormFieldsListener
 {
     public function __invoke(array $fields, string $formId, Form $form): array

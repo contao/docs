@@ -33,8 +33,31 @@ contao:
 ## Registering Page Controllers
 
 As with content elements, front end modules, hooks and DCA callbacks, Page controllers
-can be registered via annotations. The following shows the most basic example:
+can be registered via attributes, annotations or YAML. The following shows the most basic example:
 
+{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< version-tag "4.13" >}}
+
+{{% tab name="Attribute" %}}
+```php
+// src/Controller/Page/ExamplePageController.php
+namespace App\Controller\Page;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
+use Symfony\Component\HttpFoundation\Response;
+
+#[AsPage]
+class ExamplePageController
+{
+    public function __invoke(): Response
+    {
+        return new Response('Hello World!');
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="Annotation" %}}
 ```php
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
@@ -53,11 +76,33 @@ class ExamplePageController
     }
 }
 ```
+{{% /tab %}}
 
-The same can be achieved without annotations by tagging the respective service with 
-`contao.page`.
+{{% tab name="YAML" %}}
+```yaml
+# config/services.yaml
+services:
+    App\Controller\Page\ExamplePageController:
+        tags: [contao.page]
+```
+```php
+// src/Controller/Page/ExamplePageController.php
+namespace App\Controller\Page;
 
-Without any parameters, the type of the page is inferred from the class name. In
+use Symfony\Component\HttpFoundation\Response;
+
+class ExamplePageController
+{
+    public function __invoke(): Response
+    {
+        return new Response('Hello World!');
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+Without any additional parameters, the type of the page is inferred from the class name. In
 this case the type of the page will be `example`, since suffixes like `Page` and
 `Controller` (or both together) are automatically ignored.
 
@@ -79,7 +124,7 @@ $GLOBALS['TL_LANG']['PTY']['example'] = ['Example', 'Example page type.'];
 Now we are all set and can add this new page in the site structure of the Contao
 back end:
 
-![Custom page type in the Contao back end](/framework/images/custom-page-type-back-end.png?classes=shadow)
+![Custom page type in the Contao back end]({{% asset "images/dev/framework/custom-page-type-back-end.png" %}}?classes=shadow)
 
 The alias will be the "route" of this controller. When accessing
 `https://example.com/route/to/example/page/controller` in the front end, you should
@@ -94,14 +139,26 @@ to dynamically limit which pages are available for selection in the back end.
 
 ## Parameters
 
-In principle, the `@Page` annotation allows you to set parameters that you would
+In principle, the `AsPage` attribute and `@Page` annotation allows you to set parameters that you would
 normally be able to define with regular controllers, like `requirements`, `options`,
 `methods` and `defaults` for request attributes. See the [Symfony routing documentation][SymfonyRouting]
 for these possibilities.
 
 There are however a few differences and additional options.
 
-{{< tabs groupId="page-controller-parameters" >}}
+{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< version-tag "4.13" >}}
+
+{{% tab name="Attribute" %}}
+```php
+#[AsPage(
+    type: 'example',
+    path: '/foo/bar',
+    urlSuffix: '.html',
+    contentComposition: true
+)]
+```
+{{% /tab %}}
 {{% tab name="Annotation" %}}
 ```php
 /**
@@ -138,9 +195,7 @@ class name, if not specified. If you want to specifically set the type string yo
 you can pass it as the first parameter of the annotation (or use `type="custom_type"`).
 
 ```php
-/**
- * @Page("custom_type")
- */
+#[AsPage(type: 'custom_type')]
 ```
 
 Note that this one of the differences between the `@Page` and Symfony's `@Route`
@@ -157,9 +212,7 @@ of both!
 For instance, with the following annotation and the default `.html` URL suffix:
 
 ```php
-/**
- * @Page(path="/foo/bar")
- */
+#[AsPage(path: '/foo/bar')]
 ```
 
 the URL of the page will _always_ be `https://example.com/foo/bar.html`, no matter
@@ -174,13 +227,26 @@ the page will be appended to the alias of the page.
 So for example, with the following annotation:
 
 ```php
-/**
- * @Page(path="foo/bar")
- */
+#[AsPage(path: 'foo/bar')]
 ```
 
 and an alias like `example/alias` defined in the back end, the final front end URL
 of the page will be `https://example.com/example/alias/foo/bar.html`.
+
+Also, just like with routes for regular controllers in Symfony, the path of your page controller can also contain
+parameters. The following page route for example only consists of a single `foobar` parameter:
+
+```php
+#[AsPage(path: '{foobar}')]
+```
+
+Since it is defined as a relative path the final URL will consist of the page's alias, plus any mandatory parameter.
+This particular setup would be useful for reader pages for example. And, as with regular Symfony routes, parameters can
+also be optional through its `defaults`:
+
+```php
+#[AsPage(path: '{lorem}/{ipsum}', defaults: ['ipsum' => ''])]
+```
 
 
 ### `urlSuffix`
@@ -190,9 +256,7 @@ the respective website root. However, with page controllers you can also overrid
 that URL suffix in the page controller's configuration:
 
 ```php
-/**
- * @Page(urlSuffix=".csv")
- */
+#[AsPage(urlSuffix: '.csv')]
 ```
 
 So if the page in the site structure has the alias `foo/bar` then the final front
@@ -212,13 +276,11 @@ If you do not want to use content composition for your page controller, thus
 you do not want that articles can be assigned to those pages, disable the property:
 
 ```php
-/**
- * @Page(contentComposition=false)
- */
+#[AsPage(contentComposition: false)]
 ```
 
-In Contao **4.10** there is no abstraction yet in place for you to render such content
-easily. You _can_ use the `PageRegular` class of the legacy framework of Contao
+There is no abstraction yet in place for you to render such content
+easily. You _can_ use the `FrontendIndex` class of the legacy framework of Contao
 to render the page layout as defined in the page structure (in addition to processing 
 your own logic):
 
@@ -226,24 +288,18 @@ your own logic):
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
 
-use Contao\CoreBundle\ServiceAnnotation\Page;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
+use Contao\FrontendIndex;
 use Contao\PageModel;
-use Contao\PageRegular;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @Page(contentComposition=true)
- */
+#[AsPage]
 class ExamplePageController
 {
     public function __invoke(PageModel $pageModel): Response
     {
-        // The legacy framework relies on the global $objPage variable
-        global $objPage;
-        $objPage = $pageModel;
-
-        // Render the page using the PageRegular handler from the legacy framework
-        return (new PageRegular())->getResponse($pageModel, true);
+        // Render the page using the FrontendIndex handler from the legacy framework
+        return (new FrontendIndex())->renderPage($pageModel);
     }
 }
 ```
@@ -264,13 +320,11 @@ page as an argument as well:
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
 
-use Contao\CoreBundle\ServiceAnnotation\Page;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
 use Contao\PageModel;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @Page
- */
+#[AsPage]
 class ExamplePageController
 {
     public function __invoke(Request $request, PageModel $pageModel): Response
@@ -278,6 +332,90 @@ class ExamplePageController
         return new Response('Hello page: '.$pageModel->title);
     }
 }
+```
+
+
+## URL Generation
+
+Within the database all pages are stored in the `tl_page` table. An entry for a page will be created there when you 
+create a new page for any page type (including your page controllers). Instances of pages in Contao are generally 
+represented by the `Contao\PageModel`. This class allows you to generate URLs to pages via its `getFrontendUrl` and
+`getAbsoluteUrl` method. The former will generate URLs relative to the `<base>` - unless the page is on a different
+domain than the current one. The latter will always produce absolute URLs (including `http://` or `https://`).
+
+{{% notice "note" %}}
+Since Contao **5.0** `getFrontendUrl` will generate _path absolute_ URLs, not relative to the `<base>`.
+{{% /notice %}}
+
+Both methods allow you to specify optional parameters as one string. These are _path_ parameters and are used when you
+want to generate a URL with an `auto_item` or other path parameters. For example
+
+```php
+$page->getAbsoluteUrl();
+```
+
+might generate a URL like `https://example.com/alias-of-the-page.html` while
+
+```php
+$page->getAbsoluteUrl('/foobar');
+```
+
+might generate a URL like `https://example.com/alias-of-the-page/foobar.html` (in these examples a `.html` suffix would 
+be configured).
+
+This works fine for any legacy page type. However, with modern page controllers there is a caveat: your `Route` might
+have specific, mandatory parameters in them that need to be known when generating the URL. So for example if you have a 
+page controller like this
+
+```php
+#[AsPage(path: '{foo}/{bar}')]
+```
+
+and you then try to execute `$page->getFrontendUrl()` for a `PageModel` of such page it will result in an error, since
+the parameters `foo` and `bar` are missing for URL generation.
+
+But for modern page controllers you can generate the URL for such pages in your code via Symfony's 
+`UrlGeneratorInterface` services:
+
+```php
+use Contao\PageModel;
+use Contao\CoreBundle\Routing\Page\PageRoute;
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+
+class MyService
+{
+    public function __construct(UrlGeneratorInterface $urlGenerator)
+    {
+    }
+
+    private function getUrlForPage(PageModel $page): string
+    {
+        return $this->urlGenerator->generate(
+            PageRoute::PAGE_BASED_ROUTE_NAME,
+            [
+                RouteObjectInterface::CONTENT_OBJECT => $page, 
+                'foo' => 'lorem',
+                'bar' => 'ipsum',
+            ]
+        );
+    }
+}
+```
+
+The important thing to note here is that the name of the route we are generating is not the name or type of the
+page controller, but a general `page_routing_object` route - and then we pass the model instance of the page as a
+`_content` parameter, alongside our actual route parameters (`foo` and `bar`).
+
+{{< version-tag "5.3" >}} Starting with Contao **5.3** you are able to use `getFrontendUrl` and `getAbsoluteUrl` of
+the `PageModel` as well though. Instead of a string representing path parameters you can instead pass an array with the
+parameters to the methods:
+
+```php
+$page->getFrontendUrl([
+    'foo' => 'lorem',
+    'bar' => 'ipsum',
+]);
 ```
 
 

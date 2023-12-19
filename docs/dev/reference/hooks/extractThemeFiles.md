@@ -40,12 +40,10 @@ expects no return value.
 // src/EventListener/ExtractThemeFilesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\ZipReader;
 
-/**
- * @Hook("extractThemeFiles")
- */
+#[AsHook('extractThemeFiles')]
 class ExtractThemeFilesListener
 {
     public function __invoke(\DOMDocument $xml, ZipReader $zipArchive, int $themeId, array $mapper): void

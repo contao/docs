@@ -172,14 +172,12 @@ namespace App\Controller\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="texts")
- */
+#[AsContentElement(category: 'texts')]
 class MyContentElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -241,7 +239,7 @@ tags as well:
 * `contao.db.<parent-table-name>` (Only for the topmost parent table)
 * `contao.db.<parent-table-name>.<pid>`
 
-If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierachy and invalidates the 
+If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierarchy and invalidates the 
 following tags as well:
 
 * `contao.db.<child-table-name>.<cid>`

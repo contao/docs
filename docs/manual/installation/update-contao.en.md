@@ -60,12 +60,12 @@ Special feature when updating for a [minor release](#minor-release): Click on th
 "Contao Open Source CMS" and enter the desired version. Click the "Update packages" button and then "Apply changes" to 
 push the update.
 
-![Start update for minor release](/de/installation/images/de/aktualisierung-fuer-minor-release-starten.png?classes=shadow)
+![Start update for minor release]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-starten.png" %}}?classes=shadow)
 
 The update can now take several minutes. Details of the update process can be displayed by clicking the following 
-icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
-![Update for minor release completed](/de/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png?classes=shadow)
+![Update for minor release completed]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-abgeschlossen.png" %}}?classes=shadow)
 
 
 ### Update database tables
@@ -197,7 +197,7 @@ $ composer install
 or you use the Contao Manager. There you select "System maintenance", "Composer dependencies", "Installer 
 execute".
 
-![composer install with the Contao Manager](/de/installation/images/en/composer-install-using-the-contao-manager.png?classes=shadow)
+![composer install with the Contao Manager]({{% asset "images/manual/installation/en/composer-install-using-the-contao-manager.png" %}}?classes=shadow)
 
 Finally you have to update the database tables. 
 
@@ -246,7 +246,7 @@ your own server with enough memory and thus reduce the load of the resolver clou
 
 You can find the setting in the "System Check" in the "Server Configuration" section.
 
-![Disabling the Composer Resolver Cloud](/de/installation/images/en/disable_cloud_resolver.png?classes=shadow)
+![Disabling the Composer Resolver Cloud]({{% asset "images/manual/installation/en/disable_cloud_resolver.png" %}}?classes=shadow)
 
 After the successful update, transfer the `composer.json` and `composer.lock` files back to the Contao installation on 
 your hosting. The next steps on your hosting are the same as described above.

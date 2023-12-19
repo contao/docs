@@ -42,11 +42,9 @@ Return the original `$buffer` or override with your custom modification.
 // src/EventListener/ModifyFrontendPageListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("modifyFrontendPage")
- */
+#[AsHook('modifyFrontendPage')]
 class ModifyFrontendPageListener
 {
     public function __invoke(string $buffer, string $templateName): string

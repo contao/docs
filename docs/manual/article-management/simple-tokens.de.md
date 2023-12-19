@@ -96,7 +96,7 @@ Beispiel für das Newsletter-Modul:
 
 Die Operatoren können mit oder ohne Leerzeichen gesetzt werden. Es funktioniert daher sowohl `{if form_name != ""}` als auch `{if form_name!=""}`.
 
-## Verbesserete Simple Tokens
+## Verbesserte Simple Tokens
 
 Ab Contao 4.10 wurden die Simple Tokens verbessert und unterstützen nun die gesamte Symfony Expression Language.
 Das bedeutet, dass du UND/ODER-Anweisungen mittels `&&` und `||` kombinieren kannst:

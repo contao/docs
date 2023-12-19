@@ -13,7 +13,7 @@ weight: 25
 Das Inhaltselement »Bild« fügt dem Artikel ein Bild hinzu. Ein Bild kann eine Großansicht haben oder als Bildlink auf 
 eine bestimmte URL verweisen.
 
-![Ein Bildelement anlegen](/de/article-management/images/de/ein-bildelement-anlegen.png?classes=shadow)
+![Ein Bildelement anlegen]({{% asset "images/manual/article-management/de/ein-bildelement-anlegen.png" %}}?classes=shadow)
 
 **Quelldatei:** Hier wählst du das zu verwendende Bild aus.
 
@@ -63,7 +63,7 @@ Das Inhaltselement »Bildergalerie« fügt dem Artikel eine Bildergalerie hinzu
 Vorschaubilder (engl. »Thumbnails«), die in einer Liste aufgelistet sind und beim Anklicken vergrößert werden. Bei 
 sehr vielen Bildern kann die Galerie auf mehrere Seiten verteilt werden.
 
-![Die Bildergalerie im Frontend](/de/article-management/images/de/die-bildergalerie-im-frontend.png?classes=shadow)
+![Die Bildergalerie im Frontend]({{% asset "images/manual/article-management/de/die-bildergalerie-im-frontend.png" %}}?classes=shadow)
 
 **Quelldateien:** Hier wählst du einen oder mehrere Ordner bzw. Dateien aus, die in der Bildergalerie enthalten sein 
 sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen Bilder in die Galerie. Die 
