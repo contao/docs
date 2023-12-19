@@ -658,6 +658,45 @@ The following is a list of callbacks for DCA fields. Replace `<FIELD>` with a
 field name of your choice.
 
 
+### `fields.<FIELD>.attributes`
+
+{{< version "5.1" >}}
+
+Allows you do dynamically adjust the attributes of a field in a DCA before a widget is generated.
+
+{{% expand "Parameters" %}}
+* `array` Current attributes
+* `\Contao\DataContainer`/`null` Data Container object
+
+**return:** `array` The adjusted attributes array
+{{% /expand %}}
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/AttributesCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback('tl_content', 'fields.text.attributes')]
+class AttributesCallback
+{
+    public function __invoke(array $attributes, DataContainer|null $dc = null): array
+    {
+        if (!$dc || 'text' !== ($dc->getCurrentRecord()['type'] ?? null)) {
+            return $attributes;
+        }
+
+        $attributes['label'] = 'Custom text label';
+
+        return $attributes;
+    }
+}
+```
+{{% /expand %}}
+
+
 ### `fields.<FIELD>.options`
 
 {{% notice note %}}
