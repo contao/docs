@@ -115,6 +115,9 @@ $c-secondary--700: hsla(207, 44%, 26%, 1) !default;
 $c-secondary--800: hsla(207, 44%, 21%, 1) !default;
 $c-secondary--900: hsla(207, 44%, 14%, 1) !default;
 
+// background gradients
+$gradient--1: radial-gradient(50% 50% at 50% 50%, hsla(207, 44%, 26%, 1) 0%, hsla(207, 44%, 21%, 1) 100%) !default;
+
 ...
 ```
 {{% /tab %}}
@@ -123,14 +126,16 @@ $c-secondary--900: hsla(207, 44%, 14%, 1) !default;
 ```scss
 // ### custom color variables
 
-$c-primary--50: hsla(30, 8%, 70%, 1);
-$c-primary--500: hsla(310, 100%, 48%, 1);
-$c-primary--600: hsla(310, 100%, 42%, 1);
-$c-primary--700: hsla(310, 100%, 30%, 1);
+$c-primary--50: hsla(30, 100%, 97%, 1);
+$c-primary--500: hsla(212, 100%, 48%, 1);
+$c-primary--600: hsla(212, 100%, 42%, 1);
+$c-primary--700: hsla(212, 100%, 30%, 1);
 
-$c-secondary--700: hsla(126, 44%, 26%, 1);
-$c-secondary--800: hsla(126, 44%, 21%, 1);
-$c-secondary--900: hsla(126, 44%, 14%, 1);
+$c-secondary--700: hsla(242, 100%, 25%, 1);
+$c-secondary--800: hsla(242, 100%, 21%, 1);
+$c-secondary--900: hsla(242, 100%, 14%, 1);
+
+$gradient--1: radial-gradient(50% 50% at 50% 50%, $c-primary--700 0%, $c-secondary--900 100%);
 ```
 {{% /tab %}}
 
