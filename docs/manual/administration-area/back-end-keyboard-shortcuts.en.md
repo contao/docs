@@ -25,7 +25,6 @@ The following keyboard shortcuts are available in Contao:
 |:----------------------|:------------------------|:------------------------------------------------------------------------------------|
 | {{< accesskey "h" >}} | **H**ome                | Go to the home page of the back end.                                                |
 | {{< accesskey "q" >}} | **Q**uit                | Quit the current back end session (log out).                                        |
-| {{< accesskey "t" >}} | **T**op                 | Go to the top of the page.                                                          |
 | {{< accesskey "b" >}} | **B**ack                | Go back to the previous page.                                                       |
 | {{< accesskey "n" >}} | **N**ew record          | Create a new record.                                                                |
 | {{< accesskey "e" >}} | **E**dit multiple       | Switch to the "edit multiple" mode.                                                 |

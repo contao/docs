@@ -27,7 +27,6 @@ Folgende Tastaturkürzel stehen in Contao zur Verfügung:
 |:----------------------|:------------------------|:------------------------------------------------------------------------------------|
 | {{< accesskey "h" >}} | Startseite              | Führt zur Startseite des Backend (**H**ome).                                        |
 | {{< accesskey "q" >}} | Abmelden                | Beendet die aktuelle Backend-Sitzung (**Q**uit).                                    |
-| {{< accesskey "t" >}} | Nach oben               | Springt zum Anfang der Seite (**T**op).                                             |
 | {{< accesskey "b" >}} | Zurück                  | Zurück zur vorherigen Seite (**B**ack).                                             |
 | {{< accesskey "n" >}} | Neuer Datensatz         | Legt einen neuen Datensatz an (**N**ew).                                            |
 | {{< accesskey "e" >}} | Mehrere bearbeiten      | Wechselt in den »mehrere bearbeiten«-Modus (**E**dit multiple).                     |
