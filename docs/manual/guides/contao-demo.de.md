@@ -58,7 +58,7 @@ Bibliothek unterstützt u. U. keine aktuellen »[Dart Sass](https://sass-lang.co
 weitere »Dart Sass« [Module](https://sass-lang.com/documentation/modules/).
 
 {{% notice note %}}
-Die gilt u. U. auch für existierende SASS Erweiterungen z. B. für den »[Visual Studio Code](https://code.visualstudio.com/)« Editor etc. 
+Das gilt u. U. auch für existierende SASS Erweiterungen z. B. für den »[Visual Studio Code](https://code.visualstudio.com/)« Editor etc. 
 {{% /notice %}}
 
 In diesem Fall ist es, in Verbindung mit einer [lokalen Contao Installation](/de/anleitungen/lokale-installation/) und einer puren »Dart Sass« 
@@ -83,7 +83,7 @@ die du automatisch über SASS erstellen und während der lokalen Entwicklung nut
 
 {{% notice tip %}}
 Dies ist hilfreich für den nächsten Schritt. Mit dem SASS Flag »[--watch](https://sass-lang.com/documentation/cli/dart-sass/#watch)« wird
-die Erstellung einer `.css` Datei automatisch angestoßen, sobald du Änderungen an den `.scss` Dateien ( inkl. SASS Partials ) speicherst, auch 
+die Erstellung einer `.css` Datei automatisch angestoßen, sobald du Änderungen an den `.scss` Dateien (inkl. SASS Partials) speicherst, auch 
 über die Browser Dev-Tools (mit Workspace Freigaben). Einmalig aktiviert, kannst du jetzt direkt Auswirkungen deiner `.scss` Anpassungen in 
 den Browser Dev-Tools verfolgen, ändern und speichern.
 {{% /notice %}}
