@@ -62,16 +62,33 @@ Further abbreviations are added in "Edit multiple" mode:
 
 ## Click to edit
 
-You can edit elements by clicking √them, without having to use the edit icon. The following actions are supported:
+You can edit elements by clicking them, without having to use the edit icon. The following actions are supported:
+
+{{< tabs >}}
+{{% tab name="Contao 5+" %}}
+Windows:
+
+- `[Ctrl] + click`: edit the element
+- `[Ctrl] + [Shift] + click`: edit the element's children
+
+macOS:
+
+- `[Cmd] + click`: edit the element
+- `[Cmd] + [Shift] + click`: edit the element's children
+{{% /tab %}}
+
+{{% tab name="Contao 4" %}}
+Windows:
 
 - `[Ctrl] + click`: edit the element
 - `[Ctrl] + [Shift] + click`: edit the element settings
 
-On macOS, the command key is used instead of the control key:
+macOS:
 
 - `[Cmd] + click`: edit the element
 - `[Cmd] + [Shift] + click`: edit the element settings
-
+{{% /tab %}}
+{{< /tabs >}}
 
 ## Keyboard shortcuts under Windows, Linux and Mac
 
