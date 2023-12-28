@@ -346,7 +346,7 @@ $GLOBALS['TL_LANG']['FMD']['my_frontend_module'] = [
 If you used a custom category for your front end module, its label can also be translated there.
 
 
-## PageModel
+## Page Model
 
 {{< version "4.9.10" >}}
 
