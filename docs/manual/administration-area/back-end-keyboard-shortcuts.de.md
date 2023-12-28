@@ -67,13 +67,29 @@ Im Modus »Mehrere bearbeiten« kommen weitere Kürzel hinzu:
 Elemente können durch Anklicken in den Bearbeitungsmodus geschaltet werden, ohne dass dazu das Bearbeiten-Icon
 verwendet werden muss. Folgende Aktionen werden unterstützt:
 
+{{< tabs >}}
+{{% tab name="Contao 5+" %}}
+Windows:
+- `[Ctrl] + Klick`: das Element bearbeiten
+- `[Ctrl] + [Shift] + Klick`: die Kinder-Elemente bearbeiten
+
+macOS:
+
+- `[Cmd] + Klick`: das Element bearbeiten
+- `[Cmd] + [Shift] + Klick`: die Kinder-Elemente bearbeiten
+{{% /tab %}}
+
+{{% tab name="Contao 4" %}}
+Windows:
 - `[Ctrl] + Klick`: das Element bearbeiten
 - `[Ctrl] + [Shift] + Klick`: die Elementeinstellungen bearbeiten
 
-Auf macOS wird die Command-Taste statt der Control-Taste verwendet:
+macOS:
 
 - `[Cmd] + Klick`: das Element bearbeiten
 - `[Cmd] + [Shift] + Klick`: die Elementeinstellungen bearbeiten
+{{% /tab %}}
+{{< /tabs >}}
 
 
 ## Tastaturkürzel unter Windows, Linux und Mac {#tastaturkuerzel-unter-windows-linux-und-mac}
