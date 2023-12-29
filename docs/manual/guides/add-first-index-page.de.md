@@ -154,4 +154,4 @@ einfach nicht angezeigt.
 Zur Veröffentlichung des Artikels wähle das `Augen` Icon aus. Anschließend wird das 
 Icon ![Veröffentlichen]({{% asset "icons/published.svg" %}}?classes=icon) grün angezeigt. Jetzt kannst du deine Webseite im Browser aufrufen.
 
-![Artikel veröffentlichen]({{% asset "images/manual/layout/guides/de/first-page/artikel-veroeffentlichen.png" %}}?classes=shadow)
+![Artikel veröffentlichen]({{% asset "images/manual/guides/de/first-page/artikel-veroeffentlichen.png" %}}?classes=shadow)
