@@ -6,7 +6,7 @@ url: "anleitungen/lokale-installation/ddev"
 aliases:
     - /de/anleitungen/lokale-installation/ddev/
 weight: 10
-tags: 
+tags:
    - "Installation"
 ---
 
@@ -16,8 +16,8 @@ DDEV erstellt eine `config.yml`, die alle Einstellungen für dein Projekt enthä
 
 {{% notice note %}}
 Um DDEV nutzen zu können, muss _Docker_ auf deinem System installiert sein. Falls das noch
-nicht der Fall ist, kannst du dir die 
-[DDEV Dokumentation](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/) für 
+nicht der Fall ist, kannst du dir die
+[DDEV Dokumentation](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/) für
 mehr Informationen zur Installation dieser Programme durchlesen.
 {{% /notice %}}
 
@@ -44,14 +44,6 @@ Seine Installation sollte man auch regelmäßig updaten.
 ```shell
 brew upgrade ddev
 ```
-
-{{% notice note %}}
-DDEV empfiehlt unter macOS, Mutagen zu aktivieren, um die beste Leistung zu erzielen.
-
-```shell
-ddev config global --mutagen-enabled
-```
-{{% /notice %}}
 
 
 ### Beispiel: Installation unter Debian/Ubuntu
