@@ -198,7 +198,7 @@ Platzhalter zu definieren, die im jeweiligen Template ausgegeben werden können.
 
 **Template data:** Angabe eines oder mehrerer Schlüssel/Wert Paare.
 
-**Inhaltselement-Template:** Hier kannst du das Standard-Template `ce_templateXX` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Standard-Template `ce_template` überschreiben.
 
 **HTML-Ausgabe**  
 Das Standard-Template generiert folgenden HTML-Code:
