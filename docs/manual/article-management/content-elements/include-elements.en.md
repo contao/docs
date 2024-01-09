@@ -191,7 +191,7 @@ The default template generates the following HTML code:
 </dl>
 ```
 
-The "Template daat" set in the content element are available in the `keys` array:
+The "Template data" set in the content element are available in the `keys` array:
 
 ![Template Variablen]({{% asset "images/manual/article-management/en/template-data.png" %}}?classes=shadow&width=400)
 
