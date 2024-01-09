@@ -210,7 +210,7 @@ Das Standard-Template generiert folgenden HTML-Code:
 </dl>
 ```
 
-Die im Inhaltselement gesetzten "Template-Daten" sind im Array `keys` verfügbar: 
+Die im Inhaltselement gesetzten »Template-Daten« sind im Array `keys` verfügbar: 
 
 ![Template Variablen]({{% asset "images/manual/article-management/de/template-data.png" %}}?classes=shadow&width=400)
 
