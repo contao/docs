@@ -817,7 +817,7 @@ information in the official [Symfony documentation][SymfonyMailer].
 {{% notice warning %}}
 If your username or password contains special characters, they need to be "url encoded". There are several online
 services you can use to quickly url encode any string, e.g. [urlencoder.org](https://www.urlencoder.org/). Make sure to
-encode the username and password separately (not together with the colon). When using `config.yaml`, the respective encoding of a special character must be prefixed with `%`: So e. g. `%%40` for the special character `@`.
+encode the username and password separately (not together with the colon). When using `config.yaml`, the respective encoding of a special character must be prefixed with `%`: So e. g. `%40` for the special character `@`.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -830,8 +830,8 @@ framework:
     mailer:
         transports:
             application: smtps://exampleuser:examplepassword@example.com
-            website1: smtps://email%%40example.org:foobar@example.org
-            website2: smtps://email%%40example.de:foobar@example.de
+            website1: smtps://email%40example.org:foobar@example.org
+            website2: smtps://email%40example.de:foobar@example.de
 ```
 
 In the second step, the configured transports can be made available in the back end via the Contao framework 
