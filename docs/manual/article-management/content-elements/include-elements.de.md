@@ -209,3 +209,20 @@ Das Standard-Template generiert folgenden HTML-Code:
   <dd>Wert</dd>
 </dl>
 ```
+
+Die im Inhaltselement gesetzten "Template-Daten" sind im Array `keys` verfügbar: 
+
+![Template Variablen]({{% asset "images/manual/article-management/de/template-data.png" %}}?classes=shadow&width=400)
+
+{{< tabs groupId="template-data-example" >}}
+{{% tab name="PHP" %}}
+```
+Ein Beispiel für <?= $this->keys['cms'] ?> mit PHP-Templates 
+```
+{{% /tab %}}
+{{% tab name="Twig" %}}
+```twig
+Ein Beispiel für {{ keys.cms }} mit Twig-Templates
+```
+{{% /tab %}}
+{{</tabs>}}

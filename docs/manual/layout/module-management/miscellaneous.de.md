@@ -225,3 +225,8 @@ Das Standard-Template generiert folgenden HTML-Code:
   <dd>Wert</dd>
 </dl>
 ```
+
+Ein Beispiel für die Verwendung der Daten im Template findest du in der 
+[Beschreibung des Inhalts-Elements Individuelles Template](../../../artikelverwaltung/inhaltselemente/include-elemente/#individuelles-template).
+
+

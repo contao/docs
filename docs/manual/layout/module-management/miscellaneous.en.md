@@ -204,3 +204,7 @@ The default template generates the following HTML code:
   <dd>Value</dd>
 </dl>
 ```
+
+See the the 
+[Custom Template content element description](../../../article-management/content-elements/include-elements/#custom-template) 
+for an example on how to use the data in the template.
