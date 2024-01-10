@@ -65,6 +65,7 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         'sql' => [
             'keys' => [
                 'id' => 'primary',
+                'tstamp' => 'index',
             ],
         ],
     ],
@@ -236,6 +237,7 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         'sql' => [
             'keys' => [
                 'id' => 'primary',
+                'tstamp' => 'index',
             ],
         ],
     ],
@@ -342,7 +344,8 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
         'ptable' => 'tl_vendor',
         'sql' => [
             'keys' => [
-                'id' => 'primary'
+                'id' => 'primary',
+                'tstamp' => 'index',
             ],
         ],
         'onload_callback' => [
@@ -506,7 +509,8 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
         'ptable' => 'tl_vendor',
         'sql' => [
             'keys' => [
-                'id' => 'primary'
+                'id' => 'primary',
+                'tstamp' => 'index',
             ],
         ],
         'onload_callback' => [
