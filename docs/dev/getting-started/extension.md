@@ -288,7 +288,7 @@ The class name of the dependency injection extension needs to be the same as the
 bundle name (with `Bundle` replaced by `Extension`, if present).
 
 ```php
-// src/DependencyInjection/ContaoExampleBundle.php
+// src/DependencyInjection/ContaoExampleExtension.php
 namespace Somevendor\ContaoExampleBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
@@ -296,7 +296,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class ContaoExampleBundle extends Extension
+class ContaoExampleExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
