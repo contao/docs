@@ -106,7 +106,7 @@ Die eigentlichen Inhalte – bisher ging es ja nur um den Seitenaufbau und das D
 gespeichert. Jeder Artikel besteht wiederum aus Inhaltselementen, die für jeden Inhaltstyp wie z. B. Texte, Bilder oder 
 Tabellen eine entsprechende Ein- und Ausgabefunktion bereitstellen.
 
-![Das Inhaltselement »Auflistung« im Backend]({{% asset "images/manual/layout/introduction/de/das-inhaltselement-auflistung-im-backend.png" %}}?classes=shadow)
+![Das Inhaltselement »Auflistung« im Backend]({{% asset "images/manual/introduction/de/das-inhaltselement-auflistung-im-backend.png" %}}?classes=shadow)
 
 Das Konzept der Inhaltselemente hat viele Vorteile. Zum Beispiel reduziert sich das Risiko von redundantem oder sogar 
 invalidem HTML-Code gegenüber der Verwendung eines Rich Text Editors, weil jedes Element separat generiert wird. 
