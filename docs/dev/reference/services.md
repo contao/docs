@@ -547,8 +547,33 @@ class Example
 ```
 
 
+## RequestStack
+
+Symfony's [RequestStack][RequestStack] service provides a general way to retrieve the current request from the service
+container, in case the request object is not otherwise already available.
+
+```php
+use Symfony\Component\HttpFoundation\RequestStack;
+
+class Example
+{
+    public function __construct(private readonly RequestStack $requestStack)
+    {
+    }
+
+    public function __invoke()
+    {
+        $request = $this->requestStack->getCurrentRequest();
+
+        // Access request properties here
+    }
+}
+```
+
+
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
 [RequestTokens]: /framework/request-tokens/
 [DoctrineBundle]: https://symfony.com/doc/current/reference/configuration/doctrine.html
+[RequestStack]: https://symfony.com/doc/current/service_container/request.html
