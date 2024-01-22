@@ -71,7 +71,7 @@ the pre-existing field `jumpTo` via the create and edit view of this front end m
 The controller for this module could look like this:
 
 ```php
-// src/Controller/FrontendModule/MyFrontendModuleController.php
+// src/Controller/FrontendModule/ExampleModuleController.php
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -84,7 +84,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsFrontendModule(category: 'miscellaneous')]
-class MyFrontendModuleController extends AbstractFrontendModuleController
+class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
@@ -101,7 +101,7 @@ class MyFrontendModuleController extends AbstractFrontendModuleController
 }
 ```
 
-In this example the service tag was implemented via [annotations](#annotation). The controller itself
+In this example the service tag was implemented via [PHP attributes](#registration). The controller itself
 processes the request and checks, if it was a POST request. In that case, the
 redirect page is loaded via Contao's model functionality and a `RedirectResponseException`
 is thrown to redirect to that page.
@@ -148,7 +148,7 @@ Applying the service tag can either be done via PHP attributes, annotations or v
 A front end module can be registered using the `AsFrontendModule` PHP attribute.
 
 ```php
-// src/Controller/FrontendModule/ExampleController.php
+// src/Controller/FrontendModule/ExampleModuleController.php
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -159,7 +159,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsFrontendModule(category:'miscellaneous')]
-class ExampleController extends AbstractFrontendModuleController
+class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
@@ -171,7 +171,7 @@ class ExampleController extends AbstractFrontendModuleController
 The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
 
 ```php
-// src/Controller/FrontendModule/ExampleController.php
+// src/Controller/FrontendModule/ExampleModuleController.php
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -182,7 +182,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsFrontendModule('example', category:'miscellaneous', template:'mod_example', renderer:'forward', method:'__invoke')]
-class ExampleController extends AbstractFrontendModuleController
+class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
@@ -200,7 +200,7 @@ if the class is invokable (has an `__invoke` method) or extends from the `Abstra
 used on the method that will deliver the response.
 
 ```php
-// src/Controller/FrontendModule/ExampleController.php
+// src/Controller/FrontendModule/ExampleModuleController.php
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -213,7 +213,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @FrontendModule(category="miscellaneous")
  */
-class ExampleController extends AbstractFrontendModuleController
+class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
@@ -225,7 +225,7 @@ class ExampleController extends AbstractFrontendModuleController
 The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
 
 ```php
-// src/Controller/FrontendModule/ExampleController.php
+// src/Controller/FrontendModule/ExampleModuleController.php
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -238,7 +238,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @FrontendModule("example", category="miscellaneous", template="mod_example", renderer="forward", method="__invoke")
  */
-class ExampleController extends AbstractFrontendModuleController
+class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
@@ -256,14 +256,14 @@ A front end module can be registered using the `contao.frontend_module` service 
 ```yaml
 # config/services.yaml
 services:
-    App\Controller\FrontendModule\ExampleController:
+    App\Controller\FrontendModule\ExampleModuleController:
         tags:
             -
                 name: contao.frontend_module
                 category: miscellaneous
 ```
 ```php
-// src/Controller/FrontendModule/ExampleController.php
+// src/Controller/FrontendModule/ExampleModuleController.php
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -272,7 +272,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ExampleController extends AbstractFrontendModuleController
+class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
@@ -286,7 +286,7 @@ The above example only defines the mandatory `category` attribute. If you wish y
 ```yaml
 # config/services.yaml
 services:
-    App\Controller\FrontendModule\ExampleController:
+    App\Controller\FrontendModule\ExampleModuleController:
         tags:
             -
                 name: contao.frontend_module
@@ -302,8 +302,8 @@ services:
 You can also use class constants within attributes and annotations. This can be helpful to make the module's type a reusable reference:
 
 ```php
-#[AsFrontendModule(ExampleController::TYPE, 'miscellaneous')]
-class ExampleController extends AbstractFrontendModuleController
+#[AsFrontendModule(ExampleModuleController::TYPE, 'miscellaneous')]
+class ExampleModuleController extends AbstractFrontendModuleController
 {
     public const TYPE = 'my_module';
 }
@@ -311,18 +311,18 @@ class ExampleController extends AbstractFrontendModuleController
 
 ```php
 // contao/dca/tl_module.php
-use App\Controller\FrontendModule\ExampleController;
+use App\Controller\FrontendModule\ExampleModuleController;
 
-$GLOBALS['TL_DCA']['tl_module']['palettes'][ExampleController::TYPE] = 
+$GLOBALS['TL_DCA']['tl_module']['palettes'][ExampleModuleController::TYPE] = 
     '{title_legend},name,type;{redirect_legend},jumpTo'
 ;
 ```
 
 ```php
 // contao/languages/en/modules.php
-use App\Controller\FrontendModule\ExampleController;
+use App\Controller\FrontendModule\ExampleModuleController;
 
-$GLOBALS['TL_LANG']['FMD'][ExampleController::TYPE] = [
+$GLOBALS['TL_LANG']['FMD'][ExampleModuleController::TYPE] = [
     'My example module', 
     'A front end module for testing purposes.',
 ];
@@ -355,7 +355,7 @@ you can use `$this->getPageModel()` in order to receive the `\Contao\PageModel`
 object of the currently rendered page of Contao's site structure.
 
 ```php
-// src/Controller/FrontendModule/MyFrontendModuleController.php
+// src/Controller/FrontendModule/ExampleModuleController.php
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
@@ -368,7 +368,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsFrontendModule(category: 'miscellaneous')]
-class MyFrontendModuleController extends AbstractFrontendModuleController
+class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {

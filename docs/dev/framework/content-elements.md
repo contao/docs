@@ -69,7 +69,7 @@ This very simple palette enables a back end user to fill the (pre-existing) fiel
 The controller for this content element could look like this:
 
 ```php
-// src/Controller/ContentElement/MyContentElementController.php
+// src/Controller/ContentElement/ExampleElementController.php
 namespace App\Controller\ContentElement;
 
 use Contao\ContentModel;
@@ -80,7 +80,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement(category: 'texts')]
-class MyContentElementController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
@@ -91,7 +91,8 @@ class MyContentElementController extends AbstractContentElementController
 }
 ```
 
-In this example the service tag was implemented via annotations.
+In this example the service tag was implemented via PHP attributes (see the different [registration types](#registration) 
+below).
 
 Using the naming convention for templates mentioned above, the final template name
 for this content element will be `ce_my_content_element`:
