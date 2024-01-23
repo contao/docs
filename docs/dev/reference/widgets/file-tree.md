@@ -49,7 +49,12 @@ A single image file picker.
         'fieldType'  => 'radio',
         'extensions' => 'jpg,png,gif',
     ],
-    'sql'       => "binary(16) NULL"
+    'sql'       => [
+        'type' => 'binary',
+        'length' => 16,
+        'fixed' => true,
+        'notnull' => false,
+    ],
 ],
 // ...
 ```
