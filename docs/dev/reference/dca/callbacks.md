@@ -547,15 +547,20 @@ All operations callbacks are _singular_ callbacks - meaning there can only be
 one callback, not multiple ones.
 {{% /notice %}}
 
-The following is a list of button callbacks for operations. Replace `<OPERATION>`
+The following is a list of callbacks for operations. Replace `<OPERATION>`
 in each case with the actual [operation][DcaListOperations] you want to use the callback for.
 
 These callbacks allow for individual navigation icons and is e.g. used in the
 site structure to disable buttons depending on the user's permissions (requires
-an additional command check via load_callback).
+an additional command check via a [`fields.<field>.load`](#fields-field-load) callback).
 
 
 ### `list.global_operations.<OPERATION>.button`
+
+This callback allows you to generate a button for a specific global operation yourself, instead of letting Contao 
+generate it for you. The callback passes the originally generated button HTML as a string (if applicable), plus all the 
+metadata defined in the DCA that is included in the generatd button. The callback is expected to return a string 
+containing HTML for the button (or an empty string, if you do not want to show a button).
 
 {{% expand "Parameters" %}}
 * `string`/`null` Button href
@@ -571,6 +576,11 @@ an additional command check via load_callback).
 
 
 ### `list.operations.<OPERATION>.button`
+
+This callback allows you to generate a button for a specific operation yourself, instead of letting Contao generate it
+for you. The callback passes the database record, the originally generated button HTML as a string (if applicable) and
+all the metadata defined in the DCA that is included in the generatd button. The callback is expected to return a string
+containing HTML for the button (or an empty string, if you do not want to show a button).
 
 {{% expand "Parameters" %}}
 * `array` Record data
