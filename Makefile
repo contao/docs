@@ -25,14 +25,14 @@ live-dev:
 		--cleanDestinationDir \
 		--environment dev \
 		--destination ../build/dev \
-		--logLevel info
+		--debug
 
 live-manual:
 	cd page; hugo server \
 		--cleanDestinationDir \
 		--environment manual \
 		--destination ../build/manual \
-		--logLevel info
+		--debug
 
 clean:
 	rm -r build
