@@ -37,6 +37,8 @@
     --CODE-BG-color: #FFF7DD;
     --CODE-BORDER-color: #fbf0cb;
 
+    --BLOCK-QUOTE-BORDER-color: #F0F2F4; /* Border color of the left border for block quotes */
+
     --EXAMPLE-TEXT-color: #6e6e6e; /* Colors for "example" shortcode */
     --EXAMPLE-HEADER-BG-color: #e7e7e7;
     --EXAMPLE-CONTENT-BG-color: #f6f6f6;
@@ -103,6 +105,8 @@ html[data-theme=dark] {
     --CODE-TEXT-COLOR: #e5e5e5;
     --CODE-BG-color: #272a30;
     --CODE-BORDER-color: #2d2d2d;
+
+    --BLOCK-QUOTE-BORDER-color: #41454d;
 
     --EXAMPLE-TEXT-color: #bec1c6;
     --EXAMPLE-HEADER-BG-color: #2b2e35;
@@ -228,7 +232,7 @@ a:hover {
 }
 
 #body .tags a.tag-link {
-    background-color: var(--MENU-HEADER-BG-color);    
+    background-color: var(--MENU-HEADER-BG-color);
 }
 
 #body .tags a.tag-link:before {
@@ -303,6 +307,10 @@ code {
 
 pre code {
     font-size: 14px;
+}
+
+blockquote {
+    border-color: var(--BLOCK-QUOTE-BORDER-color);
 }
 
 .notices pre {
@@ -574,7 +582,7 @@ option {
     border: 1px solid var(--EXPAND-BORDER-color);
 }
 
-.expand ~ .expand { 
+.expand ~ .expand {
     margin: 1rem 0 0 0;
 }
 
@@ -588,14 +596,14 @@ option {
     line-height: 1.225;
 }
 
-.expand-label i { 
+.expand-label i {
     font-size: 1rem !important;
-    width: 1rem; 
+    width: 1rem;
     color: var(--EXPAND-ICON-color);
     margin-right: 0.5rem;
 }
 
-.expand-label span { 
+.expand-label span {
     display: inline-block;
 }
 
@@ -881,6 +889,12 @@ html[data-theme=dark] #body .tab-nav-button.active {
 
 html[data-theme=dark] #body .tab-content {
     border-color: #414448;
+}
+
+/** Adjust custom header menu border */
+html[data-theme=dark] #toc-menu,
+#sidebar-toggle-span {
+    border-color: #7b7b7b !important;
 }
 
 @media only screen and (min-width: 1200px) {
