@@ -1,5 +1,7 @@
 :root {
 
+    --MAIN-BODY-background: #fff; /* Color of the body */
+
     --MAIN-TEXT-color: #323232; /* Color of text by default */
     --MAIN-TITLES-TEXT-color: #5e5e5e; /* Color of titles h2-h3-h4-h5 */
     --MAIN-LINK-color: #1C90F3; /* Color of links */
@@ -23,9 +25,115 @@
     --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
     --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
 
+    --TOP-BAR-BG-color: #f6f6f6; /* Background color of the custom top bar */
+
+    --BODY-NAV-BG-color-hover: #f6f6f6; /* Background color of the page navigation on hover */
+    --BODY-NAV-ICON-color: #172b3b; /* Background color of the page navigation on hover */
+
+    --PROGRESS-BG-color: rgba(246,246,246, 0.97); /* Background color of the jumpTo navigation */
+    --PROGRESS-BORDER-color: #ECECEC; /* Border color of the jumpTo navigation */
+
+    --CODE-TEXT-COLOR: #5e5e5e; /* <code> */
+    --CODE-BG-color: #FFF7DD;
+    --CODE-BORDER-color: #fbf0cb;
+
+    --EXAMPLE-TEXT-color: #6e6e6e; /* Colors for "example" shortcode */
+    --EXAMPLE-HEADER-BG-color: #e7e7e7;
+    --EXAMPLE-CONTENT-BG-color: #f6f6f6;
+    --EXAMPLE-BORDER-color: #ccc;
+
+    --BEST-PRACTICE-BG-color: #e6f9e6; /* Colors for "best practice" shortcode */
+    --BEST-PRACTICE-TAG-BG-color: #78c478;
+    --BEST-PRACTICE-TABLE-BG-color: white;
+
+    --NOTICES-TEXT-color: #666; /* Notice boxes */
+    --NOTICES-INFO-BORDER-color: #F0B37E;
+    --NOTICES-INFO-BG-color: #FFF2DB;
+    --NOTICES-WARNING-BORDER-color: rgba(217, 83, 79, 0.8);
+    --NOTICES-WARNING-BG-color: #FAE2E2;
+    --NOTICES-NOTE-BORDER-color: #6AB0DE;
+    --NOTICES-NOTE-BG-color: #E7F2FA;
+    --NOTICES-TIP-BORDER-color: rgba(92, 184, 92, 0.8);
+    --NOTICES-TIP-BG-color: #E6F9E6;
+    --NOTICES-IDEA-BORDER-color: rgba(217, 79, 203, 0.8);
+    --NOTICES-IDEA-BG-color: #f0e2fa;
+
+    --EXPAND-BG-color: rgba(253, 253, 253, 0.8); /* Shortcode Expand */
+    --EXPAND-BORDER-color: rgba(218, 218, 218, 1);
+    --EXPAND-ICON-color: #f47c00;
+
+    --VERSION-TAG-BG-color: #6AB0DE; /* Contao version tag */
+
+}
+
+html[data-theme=dark] {
+
+    --MAIN-BODY-background: #121416;
+    --MAIN-TEXT-color: #cacaca;
+    --MAIN-TITLES-TEXT-color: #dedede;
+    --MAIN-LINK-color: #df7f2a;
+    --MAIN-LINK-HOVER-color: #f47c00;
+    --MAIN-ANCHOR-color: #dc6e00;
+
+    --MENU-HEADER-BG-color: #292c32;
+    --MENU-HEADER-BORDER-color: #f47c00;
+
+    --MENU-SEARCH-BG-color: #292c32;
+    --MENU-SEARCH-BOX-color: #f47c00;
+    --MENU-SEARCH-BOX-ICONS-color: #f47c00;
+
+    --MENU-SECTIONS-ACTIVE-BG-color: #1b1d21;
+    --MENU-SECTIONS-BG-color: #272a30;
+    --MENU-SECTIONS-LINK-color: #d3d6da;
+    --MENU-SECTIONS-LINK-HOVER-color: #eaedf1;
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #eaedf1;
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #272a30;
+
+    --MENU-VISITED-color: #f39b4f;
+    --MENU-SECTION-HR-color: #1b1d21;
+
+    --TOP-BAR-BG-color: #292c32;
+
+    --BODY-NAV-BG-color-hover: #272a30;
+    --BODY-NAV-ICON-color: #e3e3e3;
+
+    --PROGRESS-BG-color: rgba(41,44,50,0.97);
+    --PROGRESS-BORDER-color: #414448;
+
+    --CODE-TEXT-COLOR: #e5e5e5;
+    --CODE-BG-color: #272a30;
+    --CODE-BORDER-color: #2d2d2d;
+
+    --EXAMPLE-TEXT-color: #bec1c6;
+    --EXAMPLE-HEADER-BG-color: #2b2e35;
+    --EXAMPLE-CONTENT-BG-color: #1b1d21;
+    --EXAMPLE-BORDER-color: #282c34;
+
+    --BEST-PRACTICE-BG-color: #233626;
+    --BEST-PRACTICE-TAG-BG-color: #3c813c;
+    --BEST-PRACTICE-TABLE-BG-color: #121416;
+
+    --NOTICES-TEXT-color: #ddd;
+    --NOTICES-INFO-BORDER-color: #f47c00;
+    --NOTICES-INFO-BG-color: #5a370f;
+    --NOTICES-WARNING-BORDER-color: #770d22;
+    --NOTICES-WARNING-BG-color: #390914;
+    --NOTICES-NOTE-BORDER-color: #2576ff;
+    --NOTICES-NOTE-BG-color: #17263d;
+    --NOTICES-TIP-BORDER-color: #00914a;
+    --NOTICES-TIP-BG-color: #0f3424;
+    --NOTICES-IDEA-BORDER-color: #633ec9;
+    --NOTICES-IDEA-BG-color: #6a44d378;
+
+    --EXPAND-BG-color: rgb(41 44 50);
+    --EXPAND-BORDER-color: rgb(27 29 33);
+    --EXPAND-ICON-color: #f47c00;
+
+    --VERSION-TAG-BG-color: #0064ab;
 }
 
 body {
+    background: var(--MAIN-BODY-background);
     color: var(--MAIN-TEXT-color) !important;
     font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-weight: 400;
@@ -141,7 +249,7 @@ a:hover {
 }
 
 #sidebar ul li.active > a {
-    border-left: 3px solid var(--MENU-HEADER-BG-color);
+    border-left: 3px solid #f47c00;
 }
 
 #footer {
@@ -187,6 +295,12 @@ pre {
     margin-bottom: 0;
 }
 
+code {
+    color: var(--CODE-TEXT-COLOR);
+    background: var(--CODE-BG-color);
+    border-color: var(--CODE-BORDER-color);
+}
+
 pre code {
     font-size: 14px;
 }
@@ -197,29 +311,53 @@ pre code {
     margin: 0;
 }
 
-.notices.note pre {
-    border-color: #E7F2FA;
+div.notices p {
+    color: var(--NOTICES-TEXT-color);
+}
+
+div.notices.info p {
+    border-color: var(--NOTICES-INFO-BORDER-color);
+    background: var(--NOTICES-INFO-BG-color);
 }
 
 .notices.info pre {
-    border-color: #FFF2DB;
+    border-color: var(--NOTICES-INFO-BG-color);
 }
 
-.notices.tip pre {
-    border-color: #E6F9E6;
+div.notices.warning p {
+    border-color: var(--NOTICES-WARNING-BORDER-color);
+    background: var(--NOTICES-WARNING-BG-color);
 }
 
 .notices.warning pre {
-    border-color: #FAE2E2;
+    border-color: var(--NOTICES-WARNING-BG-color);
+}
+
+div.notices.note p {
+    border-color: var(--NOTICES-NOTE-BORDER-color);
+    background: var(--NOTICES-NOTE-BG-color);
+}
+
+.notices.note pre {
+    border-color: var(--NOTICES-NOTE-BG-color);
+}
+
+div.notices.tip p {
+    border-color: var(--NOTICES-TIP-BORDER-color);
+    background: var(--NOTICES-TIP-BG-color);
+}
+
+.notices.tip pre {
+    border-color: var(--NOTICES-TIP-BG-color);
 }
 
 div.notices.idea p {
-    border-top: 30px solid rgba(217, 79, 203, 0.8);
-    background: #f0e2fa;
+    border-top: 30px solid var(--NOTICES-IDEA-BORDER-color);
+    background: var(--NOTICES-IDEA-BG-color);
 }
 
 .notices.idea pre {
-    border-color: #f0e2fa;
+    border-color: var(--NOTICES-IDEA-BG-color);
 }
 
 div.notices.idea p:first-child::before {
@@ -250,6 +388,11 @@ h1 {
 #body .nav i {
     opacity: 0.5;
     transition: opacity 0.2s;
+    color: var(--BODY-NAV-ICON-color);
+}
+
+#body .nav:hover {
+    background: var(--BODY-NAV-BG-color-hover);
 }
 
 #body .nav:hover i {
@@ -412,20 +555,23 @@ option {
     font-weight: normal;
 }
 #top-bar {
+    background: var(--TOP-BAR-BG-color);
     position: relative;
 }
 .progress {
     left: 0;
     max-width: 100%;
+    background-color: var(--PROGRESS-BG-color);
+    border: thin solid var(--PROGRESS-BORDER-color);
 }
 
 /*
  * Shortcode expand
- */  
+ */
 .expand {
-    background-color: rgba(253, 253, 253, 0.8);
+    background-color: var(--EXPAND-BG-color);
     margin: 0 0 0 0;
-    border: 1px solid rgba(218, 218, 218, 1);
+    border: 1px solid var(--EXPAND-BORDER-color);
 }
 
 .expand ~ .expand { 
@@ -445,7 +591,7 @@ option {
 .expand-label i { 
     font-size: 1rem !important;
     width: 1rem; 
-    color: var(--MENU-SEARCH-BG-color);
+    color: var(--EXPAND-ICON-color);
     margin-right: 0.5rem;
 }
 
@@ -460,7 +606,7 @@ option {
 .expand-content {
     padding: 0 1rem 0 1rem;
     margin: 0 0 0 0;
-    border-top: 1px solid rgba(218, 218, 218, 1);
+    border-top: 1px solid var(--EXPAND-BORDER-color);
 }
 
 /* CSS for "version-tag" shortcode */
@@ -468,7 +614,7 @@ option {
     display: inline-block;
     padding: 2px 8px 2px 8px;
     margin-right: 2px;
-    background-color: #6AB0DE;
+    background-color: var(--VERSION-TAG-BG-color);
     font-size: 14px;
     color: white;
 }
@@ -607,8 +753,8 @@ option {
 /* CSS for "example" shortcode */
 .example {
     margin-top: 24px;
-    background-color: #f6f6f6;
-    border: 1px solid #ccc;
+    background-color: var(--EXAMPLE-CONTENT-BG-color);
+    border: 1px solid var(--EXAMPLE-BORDER-color);
     border-radius: 4px;
 }
 
@@ -616,9 +762,9 @@ option {
     padding: .2em 1em;
     font-variant: all-small-caps;
     font-weight: 300;
-    color: #6e6e6e;
-    background-color: #e7e7e7;
-    border-bottom: 1px solid #ccc;
+    color: var(--EXAMPLE-TEXT-color);
+    background-color: var(--EXAMPLE-HEADER-BG-color);
+    border-bottom: 1px solid var(--EXAMPLE-BORDER-color);
 }
 
 .example > div {
@@ -643,14 +789,14 @@ option {
 .best-practice {
     padding: 15px;
     margin: 20px -15px;
-    background-color: #e6f9e6;
+    background-color: var(--BEST-PRACTICE-BG-color);
 }
 
 .best-practice .tag {
     display: inline-block;
     padding: 2px 8px 2px 8px;
     margin-right: 2px;
-    background-color: #78c478;
+    background-color: var(--BEST-PRACTICE-TAG-BG-color);
     font-size: 14px;
     color: white;
 }
@@ -660,7 +806,7 @@ option {
 }
 
 .best-practice table td {
-    background-color: white;
+    background-color: var(--BEST-PRACTICE-TABLE-BG-color);
 }
 
 /** CSS for the "from-to" class **/
@@ -690,6 +836,51 @@ option {
 .from-to pre {
     padding: 10px;
     margin: 0 0 20px;
+}
+
+/* Invert contao logo */
+html[data-theme=dark] #logo svg path:nth-last-of-type(1) { fill: #f47c00 }
+html[data-theme=dark] #logo svg path:nth-last-of-type(2) { fill: #fff }
+
+/* Dark mode styles for codeblocks */
+html[data-theme=dark] pre { background-color: #1b1d21 !important }
+html[data-theme=dark] .copy-to-clipboard:hover { background-color: #ffae5b }
+
+/* Adjust box-shadow in dark mode */
+html[data-theme=dark] #body img.shadow,
+html[data-theme=dark] #body .video-container.shadow {
+    box-shadow: 0 0 2px 1px rgb(231 231 231 / 30%)
+}
+
+/* Dark mode styles for buttons */
+.btn:hover,
+.btn:focus {
+	color: #fff !important;
+}
+
+/* Dark mode styles for tables */
+html[data-theme=dark] th {
+    background: var(--MENU-SECTIONS-ACTIVE-BG-color);
+}
+
+html[data-theme=dark] table,
+html[data-theme=dark] td {
+    border-color: var(--MENU-SECTIONS-BG-color);
+}
+
+/* Dark mode styles for tabs */
+html[data-theme=dark] #body .tab-nav-button {
+    background: #212429 !important;
+    border-color: #414448 !important;
+}
+
+html[data-theme=dark] #body .tab-nav-button.active {
+    border-color: var(--MENU-SEARCH-BOX-color) #414448 var(--MAIN-BODY-background) !important;
+    background: var(--MAIN-BODY-background) !important;
+}
+
+html[data-theme=dark] #body .tab-content {
+    border-color: #414448;
 }
 
 @media only screen and (min-width: 1200px) {
