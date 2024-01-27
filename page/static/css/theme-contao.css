@@ -863,7 +863,7 @@ html[data-theme=dark] #body .video-container.shadow {
 /* Dark mode styles for buttons */
 .btn:hover,
 .btn:focus {
-	color: #fff !important;
+    color: #fff !important;
 }
 
 /* Dark mode styles for tables */
@@ -891,10 +891,18 @@ html[data-theme=dark] #body .tab-content {
     border-color: #414448;
 }
 
-/** Adjust custom header menu border */
+/* Adjust custom header menu border */
 html[data-theme=dark] #toc-menu,
 #sidebar-toggle-span {
     border-color: #7b7b7b !important;
+}
+
+@media only all and (max-width: 47.938em) {
+
+    /* Sidebar overlay on open navigation */
+    html[data-theme=dark] .sidebar-hidden #overlay {
+        background: rgba(0, 0, 0, 0.5);
+    }
 }
 
 @media only screen and (min-width: 1200px) {
