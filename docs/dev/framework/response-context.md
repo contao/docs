@@ -174,6 +174,14 @@ $graph->add((new ImageObject())->name('Name')->caption('Caption'));
 $schemaManager->collectFinalScriptFromGraphs()
 ```
 
+
+### The `CspHandler`
+
+The `CspHandler` allows you to modify Content Security Policies for the current Contao request, when enabled in the
+website root. A detailed description can be found in its [dedicated article][CspHandler].
+
+
+
 ## Future
 
 The Response Context will likely be the place where additional possibilities will be introduced such as
@@ -182,3 +190,6 @@ The Response Context will likely be the place where additional possibilities wil
 - Adding/managing `<link>` tags
 - Adding/managing `<meta>` tags
 - ...
+
+
+[CspHandler]: /framework/csp/
