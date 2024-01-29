@@ -145,10 +145,12 @@ $cspHandler->addHash('style-src', 'display:none');
 
 {{% notice "note" %}}
 In order for inline styles to work in browsers that support CSP Level 3 you will also need to add `'unsafe-hashes'` to
-the respective directive's source list. The same applies to inline JavaScripts for event listeners. See also these 
+the respective directive's source list The same applies to inline JavaScripts for event listeners. See also these
 examples for allowing 
 [inline styles](https://content-security-policy.com/examples/allow-inline-style/) and 
-[inline scripts](https://content-security-policy.com/examples/allow-inline-script/).
+[inline scripts](https://content-security-policy.com/examples/allow-inline-script/). This is done automatically for you
+when using the `cspInlineStyle()` and `cspInlineStyles()` helper method in PHP templates and the `csp_inline_styles`
+filter in Twig templates (see also the [`WysiwygStyleProcessor`](#the-wysiwygstyleprocessor) below).
 {{% /notice %}}
 
 
