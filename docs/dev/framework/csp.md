@@ -46,7 +46,7 @@ class ExampleService
 ```
 
 The following describes the most important methods of the `CspHandler`. In many cases you will want to make these
-adjustments directly from your templates though, rather than from within your controller for example. For this reason
+adjustments directly from your templates though, rather than from within your controller for example. The reason for it being that if you do it from within templates, you can provide a lot more flexibility to your users. If e.g. a part of the template is not output, it also does not need any CSP information for it. Consequently
 there are also template helper methods that you can use.
 
 
