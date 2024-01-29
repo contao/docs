@@ -46,8 +46,10 @@ class ExampleService
 ```
 
 The following describes the most important methods of the `CspHandler`. In many cases you will want to make these
-adjustments directly from your templates though, rather than from within your controller for example. The reason for it being that if you do it from within templates, you can provide a lot more flexibility to your users. If e.g. a part of the template is not output, it also does not need any CSP information for it. Consequently
-there are also template helper methods that you can use.
+adjustments directly from your templates though, rather than from within your controller for example. This way you can 
+provide a lot more flexibility to your users - if e.g. a part of the template is not output, it also does not need any 
+CSP information for it. Consequently Contao provides different template helper methods that you can use to manage CSP
+nonces, sources and hashes.
 
 
 ### Adding Sources
@@ -55,7 +57,8 @@ there are also template helper methods that you can use.
 Typically when employing CSP directives you want to only allow resources that come from the website itself, i.e. from
 the same domain. This can be achieved via `default-src 'self'` for example. If the website would then contain references
 to an external source - e.g. via an `<iframe>` or `<script src="…">` etc. - that resource will be blocked by the 
-browser. However, your application might deliberately want to include external resources and thus it is necessary to allow this resource specifically (or at least the domain of that resource). This can be done via the `addSource` method:
+browser. However, your application might deliberately want to include external resources and thus it is necessary to 
+allow this resource specifically (or at least the domain of that resource). This can be done via the `addSource` method:
 
 {{< tabs groupId="csp-methods" >}}
 {{% tab name="PHP" %}}
