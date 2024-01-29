@@ -571,9 +571,41 @@ class Example
 ```
 
 
+## ResponseContextAccessor
+
+This service allows you to access the [response context][ResponseContext] for the current Contao request or set one.
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Routing\ResponseContext\HtmlHeadBag\HtmlHeadBag;
+use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
+
+class ExampleService
+{
+    public function __construct(private readonly ResponseContextAccessor $responseContextAccessor)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        $responseContext = $this->responseContextAccessor->getResponseContext();
+
+        if ($responseContext?->has(HtmlHeadBag::class)) {
+            /** @var HtmlHeadBag $htmlHeadBag */
+            $htmlHeadBag = $responseContext->get(HtmlHeadBag::class);
+
+            // …
+        }
+    }
+}
+```
+
+
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
 [RequestTokens]: /framework/request-tokens/
 [DoctrineBundle]: https://symfony.com/doc/current/reference/configuration/doctrine.html
 [RequestStack]: https://symfony.com/doc/current/service_container/request.html
+[ResponseContext]: /framework/response-context/

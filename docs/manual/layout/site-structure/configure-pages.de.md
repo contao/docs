@@ -244,6 +244,36 @@ dann direkt ausspielt. Stelle daher sicher, dass diese Datei gelöscht wurde, be
 Wartungsseite gibt es einen neuen [Seitentyp: 503 Dienst nicht verfügbar](../seiten-als-zentrale-elemente/#seitentypen)).
 
 
+### Content-Security-Policy
+
+{{< version "5.3" >}}
+
+In dieser Sektion kann der `Content-Security-Policy`-Header für das Frontend der Webseite aktiviert werden. Vor der
+Aktivierung solltest du dich mit der Syntax von CSP-Direktiven und deren Auswirkungen auseinandersetzen. Bspw. über die
+[offizielle Referenz][CSPWebsite] oder den [MDN Web Docs][CSPMDN].
+
+**CSP aktivieren:** Aktiviert den `Content-Security-Policy`-Header für die Webseite.
+
+**Content-Security-Policy:** Hier können die Content-Security-Policies eingegeben werden, die auf der Website angewendet
+werden sollen. Die Eingabe erfolgt in der Form eines tatsächlichen `Content-Security-Policy`-Headers. Der Standard-Wert
+ist `default-src 'self'`, wodurch nur Ressourcen von der aktuellen Domain akzeptiert werden.
+
+**Nur-Bericht-Modus:** Aktiviert einen Modus wo der Browser die Content-Security-Policies nicht anwendet, die Verstöße
+aber dennoch meldet.
+
+**Protokollierung aktivieren:** Aktiviert die Protokollierung von CSP-Verstößen. Diese Berichte scheinen dann im
+System-Log auf.
+
+{{% notice "note" %}}
+Wenn CSP aktiviert wird bedeutet das in den meisten Fällen, dass Inline-Scripts und -Styles nicht mehr erlaubt sind.
+In der [Entwickler-Dokumentation](https://docs.contao.org/dev/reference/csp/) ist beschrieben wie man dies dennoch 
+programmatisch erlauben kann. Darüberhinaus würden die Inline-Styles, die von Contao's Text-Editor (TinyMCE) erzeugt
+werden, nicht mehr funktionieren. Contao erzeugt jedoch automatisch Hashes für diese Styles, aber nur für die
+dediziert erlaubten. Falls deine TinyMCE-Konfiguration andere Inline-Styles erzeugt, müssen diese über die
+[Einstellungen](/de/system/einstellungen/#config-yml) erlaubt werden.
+{{% /notice %}}
+
+
 ### Globale Einstellungen
 
 {{< version-tag "4.13" >}} **rel="canonical" aktivieren:** Im Seitentyp »Startpunkt einer Webseite« kannst du hier 
@@ -499,3 +529,5 @@ bewerben.
 [SystemSettingFolderUrl]: /de/system/einstellungen/#frontend-einstellungen
 [GetRootPageFromUrlHook]: https://docs.contao.org/dev/reference/hooks/getRootPageFromUrl/
 [GetPageIdFromUrlHook]: https://docs.contao.org/dev/reference/hooks/getPageIdFromUrl/
+[CSPWebsite]: https://content-security-policy.com/
+[CSPMDN]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
