@@ -282,7 +282,7 @@ Klicke in der Mitteilung auf »Pull request.
 
 Vergleiche die Änderungen und schliesse diesen Schritt mit dem Klick auf »Create pull request« ab.
 
-![Änderungen vergleichen]({{% asset "images/manual/layout/contributing/de/comparing-changes.png" %}}?classes=shadow)
+![Änderungen vergleichen]({{% asset "images/manual/contributing/de/comparing-changes.png" %}}?classes=shadow)
 
 Bestätige das Erstellen eines Pull requests mit »Create pull request«.
 
