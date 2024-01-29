@@ -54,7 +54,7 @@ This is also the recommended way of periodically executing Contao's cron jobs. I
 a Linux crontab you could use the following instructions for example:
 
 ```bash
-* * * * * php /path/to/contao/vendor/bin/contao-console contao:cron
+* * * * * php %kernel.project_dir%/vendor/bin/contao-console contao:cron
 ```
 
 {{% notice tip %}}

@@ -443,7 +443,7 @@ contao:
     url_suffix:           .html # Deprecated (Since contao/core-bundle 4.10: The URL suffix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
 
     # Absolute path to the web directory. Defaults to %kernel.project_dir%/public.
-    web_dir:              'C:/Users/fmg/www/c413/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
+    web_dir:              '%kernel.project_dir%/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
     image:
 
         # Bypass the image cache and always regenerate images when requested. This also disables deferred image resizing.
@@ -521,7 +521,7 @@ contao:
                 skipIfDimensionsMatch: ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
 
         # The target directory for the cached images processed by Contao.
-        target_dir:           'C:/Users/fmg/www/c413/assets/images' # Example: '%kernel.project_dir%/assets/images'
+        target_dir:           '%kernel.project_dir%/assets/images' # Example: '%kernel.project_dir%/assets/images'
         target_path:          null # Deprecated (Since contao/core-bundle 4.9: Use the "contao.image.target_dir" parameter instead.)
         valid_extensions:
 
@@ -539,7 +539,7 @@ contao:
         preview:
 
             # The target directory for the cached previews.
-            target_dir:           'C:/Users/fmg/www/c413/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
+            target_dir:           '%kernel.project_dir%/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
             default_size:         512
             max_size:             1024
 
