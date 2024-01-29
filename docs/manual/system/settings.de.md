@@ -764,7 +764,7 @@ contao:
                 skipIfDimensionsMatch: ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
 
         # The target directory for the cached images processed by Contao.
-        target_dir:           'C:/Users/fmg/www/c5x/assets/images' # Example: '%kernel.project_dir%/assets/images'
+        target_dir:           '%kernel.project_dir%/assets/images' # Example: '%kernel.project_dir%/assets/images'
         target_path:          null # Deprecated (Since contao/core-bundle 4.9: Use the "contao.image.target_dir" parameter instead.)
         valid_extensions:
 
@@ -783,7 +783,7 @@ contao:
         preview:
 
             # The target directory for the cached previews.
-            target_dir:           'C:/Users/fmg/www/c5x/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
+            target_dir:           '%kernel.project_dir%/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
             default_size:         512
             max_size:             1024
 
