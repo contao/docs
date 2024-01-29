@@ -266,7 +266,7 @@ System-Log auf.
 
 {{% notice "note" %}}
 Wenn CSP aktiviert wird bedeutet das in den meisten Fällen, dass Inline-Scripts und -Styles nicht mehr erlaubt sind.
-In der [Entwickler-Dokumentation](https://docs.contao.org/dev/reference/csp/) ist beschrieben wie man dies dennoch 
+In der [Entwickler-Dokumentation](https://docs.contao.org/dev/framework/csp/) ist beschrieben wie man dies dennoch 
 programmatisch erlauben kann. Darüberhinaus würden die Inline-Styles, die von Contao's Text-Editor (TinyMCE) erzeugt
 werden, nicht mehr funktionieren. Contao erzeugt jedoch automatisch Hashes für diese Styles, aber nur für die
 dediziert erlaubten. Falls deine TinyMCE-Konfiguration andere Inline-Styles erzeugt, müssen diese über die
