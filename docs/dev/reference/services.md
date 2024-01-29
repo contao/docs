@@ -592,6 +592,7 @@ class ExampleService
         $responseContext = $this->responseContextAccessor->getResponseContext();
 
         if ($responseContext?->has(HtmlHeadBag::class)) {
+            /** @var HtmlHeadBag $htmlHeadBag */
             $htmlHeadBag = $responseContext->get(HtmlHeadBag::class);
 
             // …

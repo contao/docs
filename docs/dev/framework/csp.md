@@ -15,8 +15,8 @@ In this article we will show you how to use Contao's CSP framework in order to a
 ## The `CspHandler`
 
 Content Security Policies are applied via Contao's [Response Context][ResponseContext] concept. When CSP is enabled in
-the settings of a website root a `CspHandler` instance will be added to the response context. You can access the
-`CspHandler` in your services like this for example:
+[the settings][CspPageSettings] of a website root a `CspHandler` instance will be added to the response context. You can 
+access the `CspHandler` in your services like this for example:
 
 ```php
 // src/ExampleService.php
@@ -36,6 +36,7 @@ class ExampleService
         $responseContext = $this->responseContextAccessor->getResponseContext();
 
         if ($responseContext?->has(CspHandler::class)) {
+            /** @var CspHandler $csp */
             $cspHandler = $responseContext->get(CspHandler::class);
 
             // Retrieve nonces, add sources, …
@@ -45,7 +46,7 @@ class ExampleService
 ```
 
 The following describes the most important methods of the `CspHandler`. In many cases you will want to make these
-adjustments directly from your templates thought, rather than from within your controller for example. For this reason
+adjustments directly from your templates though, rather than from within your controller for example. For this reason
 there are also template helper methods that you can use.
 
 
@@ -151,13 +152,72 @@ examples for allowing
 {{% /notice %}}
 
 
-### The `WysiwygStyleProcessor`
+## The `WysiwygStyleProcessor`
 
 Contao uses the WYSIWYG Editor TinyMCE which creates inline styles for certain formatting options. In Contao's default
-templates these styles are automatically processed and hashes are generated for them (the `'unsafe-hashes'` directive
-will also be added automatically). The styles are extracted and filtered by the `WysiwygStyleProcessor` and then their
-hashes are added viy the `CspHandler`. The allowed inline style properties can be configured via the 
+templates these styles are automatically processed. The styles are extracted and filtered by the `WysiwygStyleProcessor`
+and then their hashes are added via the `CspHandler`. The allowed inline style properties can be configured via the 
 `contao.csp.allowed_inline_styles` [bundle configuration][BundleConfig].
+
+The `'unsafe-hashes'` directive will also be added automatically by the template helpers for CSP Level 3 compliance.
+
+{{< tabs groupId="csp-methods" >}}
+{{% tab name="PHP" %}}
+You can use the `WysiwygStyleProcessor` directly in your services if you want to. Though typically you will likely only
+need it in your templates (see other methods).
+
+```php
+// src/ExampleService.php
+namespace App;
+
+use Contao\CoreBundle\Csp\WysiwygStyleProcessor;
+use Contao\CoreBundle\Routing\ResponseContext\Csp\CspHandler;
+use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
+
+class ExampleService
+{
+    public function __construct(
+        private readonly ResponseContextAccessor $responseContextAccessor,
+        private readonly WysiwygStyleProcessor $wysiwygProcessor,
+    ) {
+    }
+
+    public function processInlineStyles(string $html): void
+    {
+        $responseContext = $this->responseContextAccessor->getResponseContext();
+
+        if (!$responseContext?->has(CspHandler::class)) {
+            return;
+        }
+
+        if (!$styles = $this->wysiwygProcessor->extractStyles($html)) {
+            return;
+        }
+
+        /** @var CspHandler $csp */
+        $csp = $responseContext->get(CspHandler::class);
+
+        foreach ($styles as $style) {
+            $csp->addHash('style-src', $style);
+        }
+
+        $csp->addSource('style-src', 'unsafe-hashes');
+    }
+}
+```
+{{% /tab %}}
+{{% tab name="Twig" %}}
+In Twig you can use the filter `csp_inline_styles`. See the following example from Contao's `text.html.twig` template:
+```twig
+{{ text|csp_inline_styles|insert_tag|encode_email|raw }}
+```
+{{% /tab %}}
+{{% tab name="PHP Template" %}}
+```php
+<?= $this->cspInlineStyles($this->text) ?>
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 
 [CSPWebsite]: https://content-security-policy.com/
@@ -166,3 +226,4 @@ hashes are added viy the `CspHandler`. The allowed inline style properties can b
 [CSPNonce]: https://content-security-policy.com/nonce/
 [CSPHash]: https://content-security-policy.com/hash/
 [BundleConfig]: /reference/config/
+[CspPageSettings]: https://docs.contao.org/manual/en/layout/site-structure/configure-pages/#content-security-policy

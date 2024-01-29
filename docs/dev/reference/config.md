@@ -14,9 +14,8 @@ $ vendor/bin/contao-console config:dump-reference contao
 
 The following is a dump of the configuration reference.
 
-{{< tabs >}}
-
-{{% tab name="Contao 5.1" %}}
+{{< tabs groupId="bundle-config" >}}
+{{% tab name="Contao 5" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -68,7 +67,7 @@ contao:
     editable_files:       'css,csv,html,ini,js,json,less,md,scss,svg,svgz,ts,txt,xliff,xml,yml,yaml'
 
     # Absolute path to the web directory. Defaults to %kernel.project_dir%/public.
-    web_dir:              '%kernel.project_dir%/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
+    web_dir:              public # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
 
     # The path to the Symfony console. Defaults to %kernel.project_dir%/bin/console.
     console_path:         '%kernel.project_dir%/bin/console'
@@ -168,6 +167,33 @@ contao:
 
                     # Prototype
                     source:               []
+
+                # Which metadata fields to preserve when resizing images.
+                preserve_metadata_fields:
+
+                    # Examples:
+                    exif:                { IFD0: [Copyright, Artist] }
+                    iptc:                ['2#116', '2#080', '2#115', '2#110']
+
+                    # Prototype
+                    format:               []
+                imagine_options:
+                    jpeg_quality:         ~
+                    jpeg_sampling_factors: []
+                    png_compression_level: ~
+                    png_compression_filter: ~
+                    webp_quality:         ~
+                    webp_lossless:        ~
+                    avif_quality:         ~
+                    avif_lossless:        ~
+                    heic_quality:         ~
+                    heic_lossless:        ~
+                    jxl_quality:          ~
+                    jxl_lossless:         ~
+
+                    # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
+                    flatten:              ~
+                    interlace:            ~
                 items:
 
                     # Prototype
@@ -186,7 +212,7 @@ contao:
                 skipIfDimensionsMatch: ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
 
         # The target directory for the cached images processed by Contao.
-        target_dir:           '%kernel.project_dir%/assets/images' # Example: '%kernel.project_dir%/assets/images'
+        target_dir:           'C:/Users/fmg/www/c5x/assets/images' # Example: '%kernel.project_dir%/assets/images'
         target_path:          null # Deprecated (Since contao/core-bundle 4.9: Use the "contao.image.target_dir" parameter instead.)
         valid_extensions:
 
@@ -205,15 +231,30 @@ contao:
         preview:
 
             # The target directory for the cached previews.
-            target_dir:           '%kernel.project_dir%/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
+            target_dir:           'C:/Users/fmg/www/c5x/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
             default_size:         512
             max_size:             1024
 
             # Whether or not to generate previews for unsupported file types that show a file icon containing the file type.
             enable_fallback_images: true
+
+        # Which metadata fields to preserve when resizing images.
+        preserve_metadata_fields:
+
+            # Examples:
+            exif:                { IFD0: [Copyright, Artist] }
+            iptc:                ['2#116', '2#080', '2#115', '2#110']
+
+            # Prototype
+            format:               []
     security:
         two_factor:
             enforce_backend:      false
+
+        # Enables sending the HTTP Strict Transport Security (HSTS) header for secure requests.
+        hsts:
+            enabled:              true
+            ttl:                  31536000
     search:
 
         # The default search indexer, which indexes pages in the database.
@@ -277,6 +318,9 @@ contao:
 
         # Defines the path of the Contao backend.
         route_prefix:         /contao # Example: /admin
+
+        # The number of concurrent requests that are executed. Defaults to 5.
+        crawl_concurrency:    5
     insert_tags:
 
         # A list of allowed insert tags.
@@ -327,10 +371,19 @@ contao:
 
         # Allows to enable or disable the kernel.terminate listener that executes cron jobs within the web process. "auto" will auto-disable it if a CLI cron is running.
         web_listener:         auto # One of "auto"; true; false
+    csp:
+
+        # Contao provides an "csp_inline_styles" Twig filter which is able to automatically generate CSP hashes for inline style attributes of WYSIWYG editors. For security reasons, the supported properties and their regex value have to be specified here.
+        allowed_inline_styles:
+
+            # Prototype
+            property:             ~
+
+        # Do not increase this value beyond the allowed response header size of your web server, as this will result in a 500 server error.
+        max_header_size:      3072
 ```
 {{% /tab %}}
-
-{{% tab name="Contao 4.13" %}}
+{{% tab name="Contao 4" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -390,7 +443,7 @@ contao:
     url_suffix:           .html # Deprecated (Since contao/core-bundle 4.10: The URL suffix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
 
     # Absolute path to the web directory. Defaults to %kernel.project_dir%/public.
-    web_dir:              '%kernel.project_dir%/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
+    web_dir:              'C:/Users/fmg/www/c413/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
     image:
 
         # Bypass the image cache and always regenerate images when requested. This also disables deferred image resizing.
@@ -468,7 +521,7 @@ contao:
                 skipIfDimensionsMatch: ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
 
         # The target directory for the cached images processed by Contao.
-        target_dir:           '%kernel.project_dir%/assets/images' # Example: '%kernel.project_dir%/assets/images'
+        target_dir:           'C:/Users/fmg/www/c413/assets/images' # Example: '%kernel.project_dir%/assets/images'
         target_path:          null # Deprecated (Since contao/core-bundle 4.9: Use the "contao.image.target_dir" parameter instead.)
         valid_extensions:
 
@@ -486,7 +539,7 @@ contao:
         preview:
 
             # The target directory for the cached previews.
-            target_dir:           '%kernel.project_dir%/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
+            target_dir:           'C:/Users/fmg/www/c413/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
             default_size:         512
             max_size:             1024
 
@@ -604,11 +657,10 @@ contao:
             - data
             - skype
             - whatsapp
-
 ```
 {{% /tab %}}
-
 {{< /tabs >}}
+
 
 ## Environment variables for the Contao Managed Edition
 
