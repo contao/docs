@@ -1,8 +1,9 @@
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>
-  if (typeof mermaidTheme === 'undefined') {
-    mermaid.initialize({theme: (getColorMode() === 'dark') ? 'dark' : 'default'});
-  }
+  window.addEventListener('load', () => {
+    if (typeof mermaidTheme === 'undefined') {
+      mermaid.initialize({theme: (getColorMode() === 'dark') ? 'dark' : 'default'});
+    }
+  })
 </script>
 <div class="mermaid">
   {{.Inner}}
