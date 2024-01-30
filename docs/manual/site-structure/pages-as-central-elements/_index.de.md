@@ -45,13 +45,13 @@ Wie du siehst, ist jede Seite mit einem Seitenlayout verknüpft, das deren Aufb
 Layoutbereiche unterteilt. Innerhalb dieser Layoutbereiche kannst du beliebige Frontend-Module platzieren, die beim 
 Aufruf der Seite der Reihe nach ausgeführt werden und den HTML-Code der Webseite generieren. Dessen Formatierung 
 erfolgt über Cascading Stylesheets, kurz CSS, die ebenfalls im Seitenlayout eingebunden werden. Weitere Informationen 
-dazu findest du auf der Seite [Theme-Manager](../../theme-manager/).
+dazu findest du auf der Seite [Theme-Manager](/de/layout/theme-manager/).
 
 In der Seitenstruktur kommen außerdem die designrelevanten Elemente, die in einem Content Management System per 
 Definition vom Inhalt getrennt sind, mit den eigentlichen Inhalten aus der Artikelverwaltung zusammen. Jeder Artikel 
 besteht wiederum aus Inhaltselementen, die für jeden Inhaltstyp wie z. B. Texte, Bilder oder Tabellen eine 
 entsprechende Ein- und Ausgabefunktion bereitstellen. Pro Seite können beliebig viele Artikel angelegt werden. Weitere 
-Informationen dazu findest du auf der Seite [Artikelverwaltung](../../../artikelverwaltung).
+Informationen dazu findest du auf der Seite [Artikelverwaltung](/de/artikelverwaltung/).
 
 In ihrer zentralen Rolle haben Seiten aber noch weit mehr Aufgaben, als nur das Design und die Inhalte zusammenzuführen. 
 Auch die Zugriffsrechte für Backend-Benutzer auf Seiten und Artikel werden beispielsweise in der Seitenstruktur 
