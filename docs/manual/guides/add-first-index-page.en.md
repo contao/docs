@@ -6,7 +6,7 @@ aliases:
 weight: 10
 tags:
     - "Theme"
-    - "Site Structure"
+    - "SiteStructure"
 ---
 
 You have completed the [Contao installation](/en/installation/) and can now create your first page in three steps: 
