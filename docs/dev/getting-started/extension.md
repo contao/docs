@@ -201,12 +201,12 @@ choosen - typically it will have the same name as your top-level subnamespace, o
 even a combination of your complete top-level namespace. For example:
 
 ```php
-// src/ContaoExampleBundleBundle.php
+// src/ContaoExampleBundle.php
 namespace Somevendor\ContaoExampleBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ContaoExampleBundleBundle extends Bundle
+class ContaoExampleBundle extends Bundle
 {
     public function getPath(): string
     {
