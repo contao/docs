@@ -24,6 +24,31 @@ description: "How Contao developers are supposed to handle issues and PRs on Git
     .label-status {
       background-color: #fbca04;
     }
+    html[data-theme=dark] .label-bug {
+      border: 1px solid rgba(255, 131, 96, 0.3);
+      background: rgba(189, 44, 0, 0.18);
+      color: rgb(255, 131, 96);
+    }
+    html[data-theme=dark] .label-feature {
+      border: 1px solid rgba(126, 161, 219, 0.3);
+      background: rgba(51, 100, 183, 0.18);
+      color: rgb(126, 161, 219);
+    }
+    html[data-theme=dark] .label-discuss {
+      border: 1px solid rgba(135, 196, 14, 0.3);
+      background: rgba(134, 198, 13, 0.18);
+      color: rgb(135, 196, 14);
+    }
+    html[data-theme=dark] .label-help {
+      border: 1px solid rgba(192, 218, 252, 0.3);
+      background: rgba(196, 220, 252, 0.18);
+      color: rgb(192, 218, 252);
+    }
+    html[data-theme=dark] .label-status {
+      border: 1px solid rgba(250, 201, 5, 0.3);
+      background: rgba(251, 202, 4, 0.18);
+      color: rgb(250, 201, 5);
+    }
 </style>
 
 ## Handling new issues

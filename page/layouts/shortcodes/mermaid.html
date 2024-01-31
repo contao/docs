@@ -1,0 +1,10 @@
+<script>
+  window.addEventListener('load', () => {
+    if (typeof mermaidTheme === 'undefined') {
+      mermaid.initialize({theme: (getColorMode() === 'dark') ? 'dark' : 'default'});
+    }
+  })
+</script>
+<div class="mermaid">
+  {{.Inner}}
+</div>
