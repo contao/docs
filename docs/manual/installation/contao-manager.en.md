@@ -45,10 +45,10 @@ Manager automatically checks if the requirements are met.
 
 ### Hosting Configuration
 
-In Contao, all publicly accessible files are located in the subfolder `/web` of the installation. Create the folder 
-`web` and set the document root of the installation to this subfolder using your hosting provider's admin panel.
+In Contao, all publicly accessible files are located in the subfolder `/public` of the installation. Create the folder 
+`public` and set the document root of the installation to this subfolder using your hosting provider's admin panel.
 
-**Example:** `example.com` points to the directory `/www/example/web`
+**Example:** `example.com` points to the directory `/www/example/public`
 
 ({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to
 `/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`. When changing from `/web` to `/public`, the change must also be specified in composer.json.)
@@ -60,7 +60,7 @@ Every Contao installation requires a separate (sub)domain.
 ### Download and Installation
 
 The Contao Manager consists of a single file that can be [downloaded from contao.org](https://contao.org/en/download.html). 
-After the successful download you will receive a file `contao-manager.phar`. transfer this file to the directory `web` 
+After the successful download you will receive a file `contao-manager.phar`. transfer this file to the directory `public` 
 on your web server.
 
 {{% notice info %}}
@@ -175,7 +175,7 @@ php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'
 ### Can Contao Manager be added to an existing installation?
 
 Yes, if you use a Contao installation in the Managed Edition, you can install Contao Manager later. Just upload the 
-`contao-manager.phar` files into the directory `web` and add the file extension `.php`.
+`contao-manager.phar` files into the directory `public` and add the file extension `.php`.
 
 During the basic installation, the manager recognizes that Contao is already installed.
 
