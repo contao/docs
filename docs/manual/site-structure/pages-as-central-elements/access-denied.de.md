@@ -5,8 +5,8 @@ Zugriffsrechte verfügt, um auf eine geschützte Seite zuzugreifen. Du kannst di
 nutzen und einen entsprechenden Hinweis ausgeben oder den Besucher automatisch auf eine andere Seite weiterleiten."
 url: "seitenstruktur/zugriff-verweigert"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/zugriff-verweigert"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/zugriff-verweigert"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/zugriff-verweigert
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/zugriff-verweigert
 weight: 70
 ---
 

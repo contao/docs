@@ -5,8 +5,8 @@ wahlweise als reguläre Seite nutzen und dort z. B. eine Sitemap einbinden oder 
 Seite weiterleiten."
 url: "seitenstruktur/seite-nicht-gefunden"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/seite-nicht-gefunden"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/seite-nicht-gefunden"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/seite-nicht-gefunden
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/seite-nicht-gefunden
 weight: 80
 ---
 

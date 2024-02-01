@@ -3,8 +3,8 @@ title: "News-Feed"
 description: "This page type creates an RSS, Atom or JSON feed from your news archives."
 url: "seitenstruktur/news-feed"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/news-feed"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/news-feed"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/news-feed
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/news-feed
 weight: 100
 ---
 

@@ -4,8 +4,8 @@ description: "Diese Seite wird aufgerufen, wenn sich eine Root-Seite im Wartungs
 im Startpunkt einer Website aktiviert werden."
 url: "seitenstruktur/dienst-nicht-verfuegbar"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/dienst-nicht-verfuegbar"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/dienst-nicht-verfuegbar"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/dienst-nicht-verfuegbar
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/dienst-nicht-verfuegbar
 weight: 90
 ---
 

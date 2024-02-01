@@ -4,8 +4,8 @@ description: "Reguläre Seiten sind Seiten, auf denen Inhalte ausgegeben werden.
 mit einer statischen HTML-Datei, die du auf deinen Server lädst und in deinem Browser aufrufst."
 url: "seitenstruktur/regulaere-seite"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/regulaere-seite"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/regulaere-seite"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/regulaere-seite
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/regulaere-seite
 weight: 20
 ---
 

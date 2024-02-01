@@ -5,8 +5,8 @@ unter derselben Domain erreichbar sein wie die Weiterleitungsseite, andernfalls 
 verwendet werden."
 url: "seitenstruktur/interne-weiterleitung"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/interne-weiterleitung"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/interne-weiterleitung"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/interne-weiterleitung
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/interne-weiterleitung
 weight: 30
 ---
 

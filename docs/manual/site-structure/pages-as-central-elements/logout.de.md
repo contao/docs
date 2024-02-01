@@ -4,8 +4,8 @@ description: "Dieser Seitentyp erstellt einen Abmelde-Link für einen geschützt
 dem Abmelden auf eine beliebige oder zur zuletzt besuchten Seite weiterleiten."
 url: "seitenstruktur/abmelden"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/abmelden"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/abmelden"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/abmelden
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/abmelden
 weight: 50
 ---
 

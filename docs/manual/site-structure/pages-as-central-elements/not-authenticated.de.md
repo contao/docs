@@ -5,8 +5,8 @@ Seite zuzugreifen darf. Du kannst die Seite wahlweise als reguläre Seite nutzen
 ausgeben oder den Besucher automatisch z. B. auf die Anmeldeseite weiterleiten."
 url: "seitenstruktur/nicht-authentifiziert"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/nicht-authentifiziert"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/nicht-authentifiziert"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/nicht-authentifiziert
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/nicht-authentifiziert
 weight: 60
 ---
 

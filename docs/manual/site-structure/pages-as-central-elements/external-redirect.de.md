@@ -5,8 +5,8 @@ deines Servers sein als auch eine Seite innerhalb der Contao-Seitenstruktur, die
 ie Weiterleitungsseite läuft."
 url: "seitenstruktur/externe-weiterleitung"
 aliases:
-    - /de/seitenstruktur/seiten-als-zentrale-elemente/externe-weiterleitung"
-    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/externe-weiterleitung"
+    - /de/seitenstruktur/seiten-als-zentrale-elemente/externe-weiterleitung
+    - /de/layout/seitenstruktur/seiten-als-zentrale-elemente/externe-weiterleitung
 weight: 40
 ---
 
