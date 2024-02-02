@@ -291,7 +291,7 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 ```html
 // list_default_member.html5
 
-<?
+<?php
 	$GLOBALS['TL_CSS'][] = '/files/myPathTo/leaflet.css|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/leaflet.js|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/myMemberLeafletMap.js|static';
