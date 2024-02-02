@@ -56,6 +56,11 @@ automatically redirected to the corresponding website root of a website.
 **Protocol:** If your website is reachable via HTTPS then this setting must be configured accordingly. Your visitors will
 be automatically redirected to HTTPS.
 
+{{% notice tip %}}
+{{< version-tag "5.3" >}} If you select HTTPS, Contao will also automatically send the `Strict-Transport-Security`
+(HSTS) HTTP header, making your site even more secure. Of course, this does not apply to everything that is not delivered by Contao, but is delivered directly via the web server.
+{{% /notice %}}
+
 {{% notice warning %}}
 If you use an SSL certificate for your domain then you _must_ change this setting from `http://` to `https://`. 
 Otherwise you might get an infinite redirect in the front end, if your hosting environment automatically redirects from 

@@ -57,6 +57,12 @@ er automatisch zu dem entsprechenden Startpunkt einer Webseite weitergeleitet.
 **Protokoll:** Wenn deine Webseite über HTTPS verfügbar ist, muss diese Einstellung entsprechend konfiguriert werden. 
 Die Besucher werden automatisch auf HTTPS weitergeleitet.
 
+{{% notice tip %}}
+{{< version-tag "5.3" >}} Wenn du HTTPS auswählst, dann sendet Contao auch automatisch den `Strict-Transport-Security`
+(HSTS) HTTP Header und macht so deine Seite noch sicherer. Das gilt natürlich nicht für alles, was nicht von Contao,
+sondern direkt via Webserver ausgeliefert wird.
+{{% /notice %}}
+
 {{% notice warning %}}
 Falls du für deine Domain ein SSL-Zertifikat einsetzt, dann muss diese Einstellung in Contao von `http://` auf `https://` 
 geändert werden. Andernfalls könnte eine unendliche Weiterleitung im Frontend die Folge sein, falls beispielsweise die 
