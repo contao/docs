@@ -108,6 +108,20 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
 
 
+{{% notice "note" %}}
+Since Contao **5.0** you do not have to define any settings for global operations anymore. Instead, you can give a list
+of which operations should be available for your data container.
+
+```php
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
+    'all',
+    'toggleNodes',
+];
+```
+{{% /notice %}}
+
+
 ### Regular operations
 
 ```php
@@ -128,13 +142,13 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                                               |
 
 {{% notice "note" %}}
-Since Contao **5.0** you do not have to define any settings for standard operations anymore. Instead you can give a list
+Since Contao **5.0** you do not have to define any settings for standard operations anymore. Instead, you can give a list
 of which operations should be available for your data container. Contao will also check the appropriate
 [`contao_dc.<data-container>` permission](/framework/security/) for these operations.
 
 ```php
-// contao/dca/tl_foobar.php
-$GLOBALS['TL_DCA']['tl_foobar']['config']['list']['operations'] = [
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example']['config']['list']['operations'] = [
     'edit',
     'children',
     'copy',
