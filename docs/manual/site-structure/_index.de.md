@@ -2,11 +2,11 @@
 title: "Seitenstruktur"
 description: "Um Contao effektiv einsetzen zu können, ist es wichtig, dass du die Grundprinzipien und den Aufbau des 
 Systems verstehst."
-url: "layout/seitenstruktur"
+url: "seitenstruktur"
 aliases:
     - /de/seitenstruktur/
     - /de/layout/seitenstruktur/  
-weight: 10
+weight: 8
 ---
 
 Um Contao effektiv einsetzen zu können, ist es wichtig, dass du die Grundprinzipien und den Aufbau des Systems 

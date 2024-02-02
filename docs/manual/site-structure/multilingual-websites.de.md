@@ -3,7 +3,7 @@ title: "Mehrsprachige Webseiten"
 description: "Mehrsprachige Webseiten werden in Contao ebenfalls über verschiedene Webseiten in der Seitenstruktur 
 realisiert, die sich im Gegensatz zum Multidomain-Betrieb nicht anhand des Domainnamens unterscheiden, sondern anhand 
 der Sprache."
-url: "layout/seitenstruktur/mehrsprachige-webseiten"
+url: "seitenstruktur/mehrsprachige-webseiten"
 aliases:
     - /de/seitenstruktur/mehrsprachige-webseiten/
     - /de/layout/seitenstruktur/mehrsprachige-webseiten/
