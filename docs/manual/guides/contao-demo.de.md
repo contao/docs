@@ -21,7 +21,7 @@ Es werden hierbei lediglich einige der zahlreichen Optionen aufgeführt, die du 
 
 ## Installation
 
-Die Contao Demo kannst du über den Contao-Manager (ab Version 1.8), bei einer Neuinstallation, bequem installieren. Weiterhin 
+Die Contao Demo kannst du über den Contao-Manager, bei einer Neuinstallation, bequem installieren. Weiterhin 
 besteht die Möglichkeit der Installation über die Konsole. Informationen hierzu findest du auf der entsprechenden 
 [GitHub Seite](https://github.com/contao/contao-demo). Im Anschluss kannst du im Contao Backend die vollständige Umsetzung der Contao Demo 
 Website nachvollziehen.
@@ -33,8 +33,7 @@ Die Contao Demo benutzt `.scss` Dateien für die Gestaltung. Diese (bzw. nur die
 Theme Einstellungen genutzt und dann über Contao als finale `.css` Datei kompiliert und bereit gestellt. 
 
 {{% notice note %}}
-Die Vor- und Nachteile dieser Vorgehensweise, bzw. was du hierbei berücksichtigen solltest, wird im Beitrag 
-»[Sass/Less Integration](/de/anleitungen/sass-less-integration/)« näher beschrieben.
+Was du hierbei berücksichtigen solltest, wird im Beitrag »[Sass/Less Integration](/de/anleitungen/sass-less-integration/)« näher beschrieben.
 {{% /notice %}}
 
 
@@ -45,17 +44,15 @@ die `.scss` Dateien bearbeiten. Möchtest du z. B. die Farbwerte der Demo anpass
 in der Datei »`contaodemo/theme/src/scss/variables/_colors.scss`« Änderungen vornehmen und speichern. Weitere SASS Variablen findest du 
 in den Dateien »`_sizes.scss`«, »`_fonts.scss`« und »`_animation.scss`« vor.  
 
-Damit die Änderungen an dieser ([SASS-Partial](https://sass-lang.com/guide/#partials)) Datei übernommen werden, musst du allerdings im 
+Damit die Änderungen an diesen ([SASS-Partial](https://sass-lang.com/guide/#partials)) Dateien übernommen werden, musst du allerdings im 
 Anschluss die »`app.scss`« einmalig anfassen und speichern (s. a.: »[Sass/Less Integration](/de/anleitungen/sass-less-integration/)«).
 
 
 ## Dart Sass
 
-Wenn du dich aber darüber hinaus an der aktuellen» [Sass-Dokumentation](https://sass-lang.com/documentation/)« orientierst, kann es passieren,
-dass es zu ungewünschten Effekten oder Fehlermeldungen kommt. Die von Contao genutzte »[scssphp/scssphp](https://github.com/scssphp/scssphp)«
-Bibliothek unterstützt u. U. keine aktuellen »[Dart Sass](https://sass-lang.com/dart-sass/)« Leistungsmerkmale wie z. B.
-»[@use](https://sass-lang.com/documentation/at-rules/use/)«, [@forward](https://sass-lang.com/documentation/at-rules/forward/) oder
-weitere »Dart Sass« [Module](https://sass-lang.com/documentation/modules/).
+Die von Contao genutzte »[scssphp/scssphp](https://github.com/scssphp/scssphp)« Bibliothek unterstützt u. U. keine 
+aktuellen »[Dart Sass](https://sass-lang.com/dart-sass/)« Leistungsmerkmale wie z. B. »[@use](https://sass-lang.com/documentation/at-rules/use/)«, 
+[@forward](https://sass-lang.com/documentation/at-rules/forward/) oder weitere »Dart Sass« [Module](https://sass-lang.com/documentation/modules/).
 
 {{% notice note %}}
 Das gilt u. U. auch für existierende SASS Erweiterungen z. B. für den »[Visual Studio Code](https://code.visualstudio.com/)« Editor etc. 
