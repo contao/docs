@@ -320,7 +320,7 @@ Mit dem Inhaltselement »Markdown« wird aus einem Markdown-Text HTML-Code erzeu
 | Markdown-Quelle |   |
 | --------------- | - |
 | **Text:** | Hier kannst du den gewünschten Inhalt im Bereich »Code« eingeben. |
-| **Datei:** | Hier kannst du den gewünschten Inhalt aus einer Markdown Datei einfügen. {{< version-tag "4.12" >}} |
+| **Datei:** | {{< version-tag "4.12" >}} Hier kannst du den gewünschten Inhalt aus einer Markdown Datei einfügen. |
 
 **Individuelles Template:** Hier kannst du das Standard-Template `ce_markdown` überschreiben.
 

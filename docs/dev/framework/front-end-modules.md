@@ -143,9 +143,7 @@ Applying the service tag can either be done via PHP attributes, annotations or v
 {{< tabs groupId="attribute-annotation-yaml" >}}
 
 {{% tab name="Attribute" %}}
-{{< version-tag "4.13" >}}
-
-A front end module can be registered using the `AsFrontendModule` PHP attribute.
+{{< version-tag "4.13" >}} A front end module can be registered using the `AsFrontendModule` PHP attribute.
 
 ```php
 // src/Controller/FrontendModule/ExampleModuleController.php
@@ -193,9 +191,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
 {{% /tab %}}
 
 {{% tab name="Annotation" %}}
-{{< version-tag "4.8" >}}
-
-A front end module can be registered using the `FrontendModule` annotation. The annotation can be used on the class of the front end module,
+{{< version-tag "4.8" >}} A front end module can be registered using the `FrontendModule` annotation. The annotation can be used on the class of the front end module,
 if the class is invokable (has an `__invoke` method) or extends from the `AbstractFrontendModuleController`. Otherwise the annotation can be 
 used on the method that will deliver the response.
 
@@ -249,9 +245,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
 {{% /tab %}}
 
 {{% tab name="YAML" %}}
-{{< version-tag "4.8" >}}
-
-A front end module can be registered using the `contao.frontend_module` service tag.
+{{< version-tag "4.8" >}} A front end module can be registered using the `contao.frontend_module` service tag.
 
 ```yaml
 # config/services.yaml

@@ -861,8 +861,8 @@ html[data-theme=dark] #body .video-container.shadow {
 }
 
 /* Dark mode styles for buttons */
-.btn:hover,
-.btn:focus {
+html[data-theme=dark] .btn:hover,
+html[data-theme=dark] .btn:focus {
     color: #fff !important;
 }
 

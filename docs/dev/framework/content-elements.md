@@ -128,9 +128,7 @@ Applying the service tag can either be done via PHP attributes, annotations or v
 {{< tabs groupId="attribute-annotation-yaml" >}}
 
 {{% tab name="Attribute" %}}
-{{< version-tag "4.13" >}}
-
-A content element can be registered using the `AsContentElement` PHP attribute.
+{{< version-tag "4.13" >}} A content element can be registered using the `AsContentElement` PHP attribute.
 
 ```php
 // src/Controller/ContentElement/ExampleController.php
@@ -178,9 +176,7 @@ class ExampleController extends AbstractContentElementController
 {{% /tab %}}
 
 {{% tab name="Annotation" %}}
-{{< version-tag "4.8" >}}
-
-A content element can be registered using the `ContentElement` annotation. The annotation can be used on the class of the content element,
+{{< version-tag "4.8" >}} A content element can be registered using the `ContentElement` annotation. The annotation can be used on the class of the content element,
 if the class is invokable (has an `__invoke` method) or extends from the `AbstractContentElementController`. Otherwise the annotation can be 
 used on the method that will deliver the response.
 
@@ -234,9 +230,7 @@ class ExampleController extends AbstractContentElementController
 {{% /tab %}}
 
 {{% tab name="YAML" %}}
-{{< version-tag "4.8" >}}
-
-A content element can be registered using the `contao.content_element` service tag.
+{{< version-tag "4.8" >}} A content element can be registered using the `contao.content_element` service tag.
 
 ```yaml
 # config/services.yaml
