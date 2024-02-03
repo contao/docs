@@ -19,7 +19,7 @@ or [SASS/SCSS](/en/guides/sass-less-integration/) usage. It only lists some of t
 
 ## Installation
 
-You can easily install the Contao demo via the Contao Manager (from version 1.8) during a new installation. It is also possible to install 
+You can easily install the Contao demo via the Contao Manager during a new installation. It is also possible to install 
 via the console. Information on this can be found on the corresponding [GitHub page](https://github.com/contao/contao-demo). You can then 
 follow the complete implementation of the Contao demo website in the Contao backend.
 
@@ -30,8 +30,7 @@ The Contao demo uses `.scss` files for the design. These (the `app.scss`) are us
 then compiled and provided as a final `.css` file via Contao.
 
 {{% notice note %}} 
-The advantages and disadvantages of this approach, and what you should consider here, are described in more detail in the 
-article "[Sass/Less Integration](/en/guides/sass-less-integration/)". 
+What you should consider here, is described in more detail in this article "[Sass/Less Integration](/en/guides/sass-less-integration/)". 
 {{% /notice %}}
 
 
@@ -42,14 +41,13 @@ directly in the Contao backend. For example, if you want to adjust the color val
 the Contao [file manager](/en/file-manager/) in the file "`contaodemo/theme/src/scss/variables/_colors.scss`". Further SASS variables can be 
 found in the files "`_sizes.scss`", "`_fonts.scss`" and "`_animation.scss`".
 
-However, in order for the changes to this ([SASS partial](https://sass-lang.com/guide/#partials)) file to be applied, you must then touch 
+However, in order for the changes to these ([SASS partial](https://sass-lang.com/guide/#partials)) files to be applied, you must then touch 
 and save "`app.scss`" once (see also: "[Sass/Less Integration](/en/guides/sass-less-integration/)").
 
 
 ## Dart Sass
 
-However, if you follow the current "[Sass documentation](https://sass-lang.com/documentation/)", this may result in unwanted effects or 
-error messages. The "[scssphp/scssphp](https://github.com/scssphp/scssphp)" library used by Contao may not support current 
+The "[scssphp/scssphp](https://github.com/scssphp/scssphp)" library used by Contao may not support current 
 "[Dart Sass](https://sass-lang.com/dart-sass/)" features such as "[@use](https://sass-lang.com/documentation/at-rules/use/)", 
 [@forward](https://sass-lang.com/documentation/at-rules/forward/) or other "Dart Sass" [modules](https://sass-lang.com/documentation/modules/).
 
