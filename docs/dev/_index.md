@@ -5,6 +5,10 @@ title: "Contao Developer Documentation"
 
 # Contao Developer Documentation
 
+{{% notice "note" %}}
+{{< version-tag "5.3" >}} Lorem ipsum dolor.
+{{% /notice %}}
+
 Welcome to the Contao manual for developers and the Contao ecosystem!
 This introduction is meant to give you an overall idea of how things work in Contao and its ecosystem, people with assigned
 roles, whom to talk to and where to get help.

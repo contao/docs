@@ -120,8 +120,7 @@ geprüft werden _(unsicher!)_.
 automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter 
 HTML-Tags festlegen.
 
-{{< version-tag "4.11.7, 4.9.18 und 4.4.56" >}}  
-**Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
+{{< version-tag "4.11.7, 4.9.18 und 4.4.56" >}} **Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
 Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeichern automatisch entfernt. Das Tag bzw. 
 der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B. 
 data-* benutzt werden.
@@ -1152,8 +1151,7 @@ Diese Zugangsdaten können dann entweder in der `parameters.yml` oder über die 
 {{< tabs groupId="smtp-config" >}}
 
 {{% tab name=".env.local" %}}
-{{< version-tag "4.9" >}}
-Der SMTP-Server kann über die [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
+{{< version-tag "4.9" >}} Der SMTP-Server kann über die [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
 Datei der Contao-Installation definiert werden (beachte, dass auch eine `.env` Datei vorhanden sein muss, damit die Definition der
 Umgebungsvariablen in der `.env.local` auch angewandt wird). In Contao **4.9** muss die `MAILER_URL` Umgebungsvariable benutzt werden,
 während ab Contao **4.10** die [`MAILER_DSN`](#mailer-dsn) Variable benutzt werden kann. Ab Contao **5.0** gilt nur mehr die `MAILER_DSN`
