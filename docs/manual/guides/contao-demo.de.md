@@ -15,8 +15,9 @@ Du kannst auf [contao.org](https://contao.org/) die Demo einsehen und inkl. Back
 und erweiterst diese nach deinen Bedürfnissen.
 
 Bei den folgenden Angaben handelt es sich nicht um ein vollständiges Tutorial bez. einer
-[lokalen Contao Installation](/de/anleitungen/lokale-installation/), CSS oder [SASS/SCSS Nutzung](/de/anleitungen/sass-less-integration/).
-Es werden hierbei lediglich einige der zahlreichen Optionen aufgeführt, die du zur weiteren Anpassung nutzen könntest.
+[lokalen Contao Installation](/de/anleitungen/lokale-installation/), CSS oder [SASS/SCSS Nutzung](/de/anleitungen/sass-less-integration/). 
+Es werden hierbei lediglich einige der Optionen aufgeführt, die du zur Anpassung nutzen könntest. Diese sollten als Anregungen dienen und 
+sind unabhängig von den zahlreichen, weiteren Möglichkeiten in Contao.
 
 
 ## Installation
