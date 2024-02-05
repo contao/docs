@@ -277,9 +277,9 @@ here, the specifications »iconSize«, »iconAnchor« and »popupAnchor« must a
 We supplement the existing template »list_default_member.html5« as follows:
 
 ```html
-// list_default_member.html5
+<!-- list_default_member.html5 -->
 
-<?
+<?php
 	$GLOBALS['TL_CSS'][] = '/files/myPathTo/leaflet.css|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/leaflet.js|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/myMemberLeafletMap.js|static';
@@ -308,6 +308,7 @@ We supplement the existing template »list_default_member.html5« as follows:
 <?php else: ?>
 	<div id="MYMEMBERMAP" class="block" style="height:40vh"></div>
 
+	<?php $tmpMemberMapData = '' ?>
 	<?php foreach ($this->tbody as $class => $row): ?>
 		<div class="block memberitem <?= $class ?>"><p>
 		  <a href="mailto:<?= $row['email']['raw'] ?>">
@@ -316,7 +317,7 @@ We supplement the existing template »list_default_member.html5« as follows:
 		  <?= $row['postal']['content'] ?> <?= $row['city']['content'] ?></span>
 		</p></div>
 
-		<? $tmpMemberMapData .= sprintf("{'markerPopupContent': '%s',  'LatLong': [%s]},", 
+		<?php $tmpMemberMapData .= sprintf("{'markerPopupContent': '%s',  'LatLong': [%s]},", 
 			$row['firstname']['content'].' '.$row['lastname']['content'], 
 			$row['myGeoData']['content']);
 		?>
