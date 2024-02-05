@@ -118,8 +118,7 @@ language respective website root when using the [legacy routing mode][LegacyRout
 **Allowed HTML tags:** By default, Contao does not allow HTML tags in forms and removes them automatically when saving. 
 For input fields where the use of HTML is desired, you can specify a list of allowed HTML tags here.
 
-{{< version-tag "4.11.7, 4.9.18 and 4.4.56" >}}  
-**Allowed HTML attributes:** You can extend the list of allowed HTML attributes for input fields here. If an HTML 
+{{< version-tag "4.11.7, 4.9.18 and 4.4.56" >}} **Allowed HTML attributes:** You can extend the list of allowed HTML attributes for input fields here. If an HTML 
 attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for 
 all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
 
@@ -1188,8 +1187,7 @@ e.g. via the `.env.local` of your Contao instance.
 {{< tabs groupId="smtp-config" >}}
 
 {{% tab name=".env.local" %}}
-{{< version-tag "4.9" >}}
-You can define the SMTP server via the [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
+{{< version-tag "4.9" >}} You can define the SMTP server via the [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
 of your Contao instance (note that the `.env` file must also exist in order for the `.env.local` to take effect). In Contao **4.9** you need
 to use the `MAILER_URL` environment variable, while in Contao **4.10** and up the [`MAILER_DSN`](#mailer-dsn) variable can be used. In 
 Contao **5.0** and up only the `MAILER_DSN` environment variable will work.
@@ -1485,7 +1483,7 @@ Therefore, the local time zone should either be set globally on the server or ex
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
 [InsertTags]: /en/article-management/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
-[LegacyRouting]: /en/layout/site-structure/configure-pages/#legacy-routing-mode
+[LegacyRouting]: /en/site-structure/website-root/#legacy-routing-mode
 [PhpSessionSettings]: https://www.php.net/manual/en/session.configuration.php
 [SwiftmailerSpooling]: https://symfony.com/doc/4.2/email/spool.html
 [SymfonyMessenger]: https://symfony.com/doc/current/messenger.html

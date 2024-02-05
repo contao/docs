@@ -5,7 +5,7 @@ url: "site-structure"
 aliases:
   - /en/site-structure/
   - /en/layout/site-structure/
-weight: 10
+weight: 8
 ---
 
 To effectively use Contao, you need to understand the basic principles and the structure of the system. A condensed 

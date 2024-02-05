@@ -231,4 +231,4 @@ In Twig you can use the filter `csp_inline_styles`. See the following example fr
 [CSPNonce]: https://content-security-policy.com/nonce/
 [CSPHash]: https://content-security-policy.com/hash/
 [BundleConfig]: /reference/config/
-[CspPageSettings]: https://docs.contao.org/manual/en/layout/site-structure/configure-pages/#content-security-policy
+[CspPageSettings]: https://docs.contao.org/manual/en/site-structure/website-root/#content-security-policy

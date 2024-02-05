@@ -162,7 +162,7 @@ $security->isGranted('contao_dc.tl_foobar', new UpdateAction('tl_foobar', $recor
 ```
 
 {{% notice tip %}}
-Since Contao **4.10** there are class constants available for the various permission attributes, so that you do not have to remember them
+{{< version-tag "4.10" >}} There are now class constants available for the various permission attributes, so that you do not have to remember them
 yourself and instead can use your IDE to find the correct attribute. For the Contao Core these constants are available in 
 `Contao\CoreBundle\Security\ContaoCorePermissions` while the permissions of the additional bundles are available in 
 `Contao\NewsBundle\Security\ContaoNewsPermissions`, `Contao\CalendarBundle\Security\ContaoCalendarPermissions`, 
