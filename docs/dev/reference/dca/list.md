@@ -109,7 +109,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 
 
 {{% notice "note" %}}
-Since Contao **5.0** you do not have to define any settings for global operations anymore. Instead, you can give a list
+{{< version-tag "5.3" >}} You do not have to define any settings for global operations anymore. Instead, you can give a list
 of which operations should be available for your data container.
 
 ```php
