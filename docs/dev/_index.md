@@ -63,7 +63,13 @@ Contao heavily relies on superglobals in older code which basically served as so
 back in the days which is why you'll still come across loads of `$GLOBALS` usages all over the place.
 However, there's a steady transition going on and with every new release there are new ways introduced as to how you can
 e.g. register a new content element. The old code is just still floating around to make sure all the already existing
-extensions still work. It will eventually be dropped once Contao 5 becomes a thing.
+extensions still work.
+
+With the transition to Symfony with Contao 4, Contao also adopted Semantic Versioning. In August 2022, the first major version
+since migrating to Symfony was released: Contao 5. The Core team used this first major version to get rid of a ton of legacy code
+that has been accumulated over versions 4.0 to 4.13 but also some of the very old libraries from before. Yet still, you'll find
+that all the statements above are still true for many parts of Contao. We're continuing our path of transforming the Content
+Management System our community loves step by step while trying to pay highest attention to ensure smooth transitions.
 
 
 ### Input encoding
@@ -146,7 +152,6 @@ In any case, the current core team members consist of (in alphabetical order)
 * [Greminger, David (@bytehead)](https://github.com/bytehead) 
 * [Gschwantner, Fritz Michael (@fritzmg)](https://github.com/fritzmg) 
 * [Schempp, Andreas (@aschempp)](https://github.com/aschempp) 
-* [Schmid, Jim (@sheeep)](https://github.com/sheeep) 
 * [Vondano, Moritz (@m-vo)](https://github.com/m-vo) 
 * [Witschi, Yanick (@toflar)](https://github.com/toflar) 
 
