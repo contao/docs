@@ -1455,7 +1455,7 @@ Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt wer
 [SymfonyMailer]: https://symfony.com/doc/4.4/mailer.html#transport-setup
 [InsertTags]: /de/artikelverwaltung/insert-tags/
 [RequestTokens]: https://docs.contao.org/dev/framework/request-tokens/
-[LegacyRouting]: /de/layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
+[LegacyRouting]: /de/seitenstruktur/website-startseite/#legacy-routing-modus
 [PhpSessionSettings]: https://www.php.net/manual/de/session.configuration.php
 [SwiftmailerSpooling]: https://symfony.com/doc/4.2/email/spool.html
 [SymfonyMessenger]: https://symfony.com/doc/current/messenger.html
