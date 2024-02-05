@@ -11,7 +11,7 @@ weight: 8
 
 Um Contao effektiv einsetzen zu können, ist es wichtig, dass du die Grundprinzipien und den Aufbau des Systems 
 verstehst. Eine komprimierte Zusammenfassung dieser Informationen findest du im Abschnitt, 
-[Contao im Schnelldurchlauf](../../einleitung/contao-im-schnelldurchlauf/#contao-im-schnelldurchlauf). In den 
+[Contao im Schnelldurchlauf](/de/einleitung/contao-im-schnelldurchlauf/). In den 
 folgenden Kapiteln werden dir die dort angerissenen Inhalte ausführlich erklärt.
 
 {{% children %}}
