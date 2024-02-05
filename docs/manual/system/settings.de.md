@@ -108,8 +108,9 @@ Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite
 Ab Version **4.10** ist diese Einstellung entfallen:
 {{% /notice %}}
 
-**Leere URLs nicht umleiten:** Bei einer leeren URL die Webseite anzeigen anstatt auf den Startpunkt der Sprache 
-weiterzuleiten _(nicht empfohlen)_.
+**Leere URLs nicht umleiten:** Ermöglicht die Deaktivierung der Umleitung der "leeren URL" auf die Startseite der sprachlichen Website-Root des Browsers 
+bei Verwendung des [Legacy-Routing-Modus][LegacyRouting] ohne `contao.prepend_locale`: true _(nicht empfohlen)_.
+
 
 ### Sicherheitseinstellungen
 
