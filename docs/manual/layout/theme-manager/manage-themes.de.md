@@ -118,7 +118,7 @@ überschrieben.
 Nachdem ein Theme erfolgreich importiert wurde, musst du es nur noch aktivieren, damit es im Frontend angezeigt wird. 
 Mit »aktivieren« ist die Zuweisung eines der Seitenlayouts des neuen Themes zu einer Seite in der Seitenstruktur 
 gemeint. Aus den bisherigen Anleitungen weißt du ja bereits, dass die Zusammenführung von Design und Inhalten in der 
-[Seitenstruktur](../../seitenstruktur/seiten-konfigurieren/#layout-einstellungen) erfolgt und dass das Seitenlayout den 
+[Seitenstruktur](/de/seitenstruktur/regulaere-seite/#layout-einstellungen) erfolgt und dass das Seitenlayout den 
 Aufbau einer Seite festlegt.
 
 Zur Veranschaulichung wurde hier das Theme »[Contao Official Demo](https://packagist.org/packages/contao/official-demo)« 
