@@ -698,6 +698,18 @@ That is why, after changing this value, you should regenerate the application ca
 users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
 
 
+### `DISABLE_HTTP_CACHE`
+
+The `DISABLE_HTTP_CACHE` environment variable allows you to disable the default caching proxy that is shipped with the
+Contao Managed Edition. Note that if you set this to `true`, none of the following environment variables will have any
+effect anymore as they are designed to configure said proxy that you have just disabled:
+
+* `COOKIE_ALLOW_LIST`
+* `COOKIE_REMOVE_FROM_DENY_LIST`
+* `QUERY_PARAMS_ALLOW_LIST`
+* `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
+
+
 ### `COOKIE_ALLOW_LIST`
 
 {{% notice info %}}
