@@ -86,7 +86,7 @@ class ExampleService
 ```
 
 {{% notice tip %}}
-Since Contao 4.13 you can omit getting the `%contao.csrf_token_name%` by explicitly using the `ContaoCsrfTokenManager`,
+{{< version-tag "4.13" >}} You can omit getting the `%contao.csrf_token_name%` by explicitly using the `ContaoCsrfTokenManager`,
 that now features a `getDefaultTokenValue()` method:
 
 ```php
@@ -110,7 +110,7 @@ handling as outlined above, if you need to disable the CSRF protection for some 
 * The localconfig configuration value `requestTokenWhitelist`. It can contain an exact hostname or regular expression.
   It will disable CSRF protection only on hostname match.
 
-Since Contao 4.13 using the `{{request_token}}` insert tag is deprecated as well. Instead, you should retrieve the value
+{{< version-tag "4.13" >}} Using the `{{request_token}}` insert tag is deprecated as well. Instead, you should retrieve the value
 from the CSRF token manager in your Controller and pass it on to the template.
 
 [OWASP_CSRF]: https://owasp.org/www-community/attacks/csrf
