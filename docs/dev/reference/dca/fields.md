@@ -54,7 +54,7 @@ $GLOBALS['TL_DCA']['tl_example']['fields']['myfield'] = [
 | [xlabel](../callbacks/#fields-field-xlabel)                    | Callback functions (`array`)                    | These functions will be called when the widget is rendered and allows you to add additional html after the field label. Please specify each callback function as `['Class', 'Method']`.
 
 {{% notice tip %}}
-<sup>1</sup> Since Contao **4.9**, defining a label for a DCA field is optional. If
+<sup>1</sup> {{< version-tag "4.9" >}} Defining a label for a DCA field is optional. If
 no label is defined, Contao will automatically look for a translation in `tl_example.field_name`,
 e.g. `$GLOBALS['TL_LANG']['tl_example']['field_name']`.
 {{% /notice %}}

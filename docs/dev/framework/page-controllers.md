@@ -344,7 +344,7 @@ represented by the `Contao\PageModel`. This class allows you to generate URLs to
 domain than the current one. The latter will always produce absolute URLs (including `http://` or `https://`).
 
 {{% notice "note" %}}
-Since Contao **5.0** `getFrontendUrl` will generate _path absolute_ URLs, not relative to the `<base>`.
+{{< version-tag "5.0" >}} `getFrontendUrl` will now generate _path absolute_ URLs, not relative to the `<base>`.
 {{% /notice %}}
 
 Both methods allow you to specify optional parameters as one string. These are _path_ parameters and are used when you

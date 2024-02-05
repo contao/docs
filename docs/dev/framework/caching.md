@@ -274,7 +274,7 @@ You can register to the [`oninvalidate_cache_tags` callback][5] and add your own
 
 
 {{% notice "tip" %}}
-Since **Contao 4.13** you can also use the [EntityCacheTags helper service](/reference/services/#entitycachetags) to
+{{< version-tag "4.13" >}} You can also use the [EntityCacheTags helper service](/reference/services/#entitycachetags) to
 add and invalidate tags based on entity or model classes and instances.
 {{% /notice %}}
 

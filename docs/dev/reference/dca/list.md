@@ -39,7 +39,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['sorting'] = [
 | child_record_class    | CSS class (`string`)             | Allows you to add a CSS class to the parent view elements.                                                                                                                                                                                                                                                                                                                                             |
 
 {{% notice tip %}}
-Since Contao **4.13** the `Contao\DataContainer` class provides constants for the various sorting modes and flags, e.g.
+{{< version-tag "4.13" >}} The `Contao\DataContainer` class provides constants for the various sorting modes and flags, e.g.
 
 ```php
 // Displays the child records of a parent record (see content elements)
@@ -128,7 +128,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                                               |
 
 {{% notice "note" %}}
-Since Contao **5.0** you do not have to define any settings for standard operations anymore. Instead you can give a list
+{{< version-tag "5.0" >}} You do not have to define any settings for standard operations anymore. Instead, you can give a list
 of which operations should be available for your data container. Contao will also check the appropriate
 [`contao_dc.<data-container>` permission](/framework/security/) for these operations.
 

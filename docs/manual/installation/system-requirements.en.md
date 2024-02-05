@@ -167,7 +167,7 @@ It is further recommended to run MySQL in "strict mode" to prevent corrupt or tr
 data and to guarantee data integrity.
 
 {{% notice note %}}
-As of **Contao 4.9**, the install tool shows a warning if the database server is not running
+{{< version-tag "4.9" >}} The install tool now shows a warning if the database server is not running
 in strict mode.
 {{% /notice %}}
 

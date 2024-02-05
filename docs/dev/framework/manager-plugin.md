@@ -596,7 +596,7 @@ before they hit the cache or are forwarded to Contao. For more information about
 please refer to [the FosHttpCache documentation][2].
 
 {{% notice note %}}
-This feature is available from **contao/manager-plugin 2.9.0** and **Contao 4.9.6**.
+{{< version-tag "4.9.6" >}} This feature is available from **contao/manager-plugin 2.9.0** and **Contao 4.9.6**.
 {{% /notice %}}
 
 
