@@ -59,7 +59,7 @@ Die Besucher werden automatisch auf HTTPS weitergeleitet.
 
 {{% notice tip %}}
 {{< version-tag "5.3" >}} Wenn du HTTPS auswählst, dann sendet Contao auch automatisch den `Strict-Transport-Security`
-(HSTS) HTTP Header und macht so deine Seite noch sicherer. Das gilt natürlich nur für Ressourcen, die direkt von Contao geliefert werden, also z.B. nicht für alles, was direkt über den Webserver ausgeliefert wird.
+(HSTS) HTTP Header und macht so deine Seite noch sicherer. Das gilt natürlich nur für Ressourcen, die direkt von Contao geliefert werden, also z. B. nicht für alles, was direkt über den Webserver ausgeliefert wird.
 {{% /notice %}}
 
 {{% notice warning %}}
