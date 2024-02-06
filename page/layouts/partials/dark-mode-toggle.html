@@ -72,7 +72,7 @@
     height: 2px;
     background-color: #fff;
     border-radius: 50px;
-    animation: twinkle 0.8s infinite -0.6s;
+    opacity: .3;
   }
   .dark-mode__decoration::before, .dark-mode__decoration::after {
     position: absolute;
@@ -87,12 +87,11 @@
     top: -8px;
     left: 7px;
     opacity: 1;
-    animation: twinkle 0.6s infinite;
   }
   .dark-mode__decoration::after {
     top: -3px;
     left: 15px;
-    animation: twinkle 0.6s infinite -0.2s;
+    opacity: .2;
   }
   .dark-mode__input:checked + .dark-mode__label {
     background-color: #8fb5f5;
@@ -109,9 +108,9 @@
   .dark-mode__input:checked + .dark-mode__label .dark-mode__decoration {
     top: 50%;
     transform: translate(0%, -50%);
-    animation: cloud 8s linear infinite;
     width: 10px;
     height: 10px;
+    opacity: 1;
   }
   .dark-mode__input:checked + .dark-mode__label .dark-mode__decoration::before {
     width: 5px;
@@ -119,7 +118,7 @@
     top: auto;
     bottom: 0;
     left: -4px;
-    animation: none;
+    opacity: 1;
   }
   .dark-mode__input:checked + .dark-mode__label .dark-mode__decoration::after {
     width: 7px;
@@ -127,21 +126,13 @@
     top: auto;
     bottom: 0;
     left: 8px;
-    animation: none;
+    opacity: 1;
   }
   .dark-mode__input:checked + .dark-mode__label .dark-mode__decoration, .dark-mode__input:checked + .dark-mode__label .dark-mode__decoration::before, .dark-mode__input:checked + .dark-mode__label .dark-mode__decoration::after {
     border-radius: 50px 50px 0 0;
   }
   .dark-mode__input:checked + .dark-mode__label .dark-mode__decoration::after {
     border-bottom-right-radius: 50px;
-  }
-  @keyframes twinkle {
-    50%  {opacity: 0.2}
-  }
-  @keyframes cloud {
-    0%   {transform: translate(0%, -50%)}
-    50%  {transform: translate(-50%, -50%)}
-    100% {transform: translate(0%, -50%)}
   }
 </style>
 <div class="dark-mode__switch">
