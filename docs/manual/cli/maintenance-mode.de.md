@@ -13,7 +13,7 @@ Der Wartungsmodus wurde für diese Contao-Version neugeschrieben. Über die Komm
 Aktualisierung an deinem System vornehmen möchtest.
 
 Ausserdem hast du die Möglichkeit das Frontend für jeden 
-[Startpunkt einer Website](../../layout/seitenstruktur/seiten-konfigurieren/#website-einstellungen) in den 
+[Startpunkt einer Website](/de/seitenstruktur/website-startseite/#website-einstellungen) in den 
 Wartungsmodus zu versetzen.
 
 
