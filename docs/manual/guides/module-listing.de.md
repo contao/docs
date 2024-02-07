@@ -289,9 +289,9 @@ ebenfalls angepasst werden.
 Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 
 ```html
-// list_default_member.html5
+<!-- list_default_member.html5 -->
 
-<?
+<?php
 	$GLOBALS['TL_CSS'][] = '/files/myPathTo/leaflet.css|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/leaflet.js|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/myMemberLeafletMap.js|static';
@@ -320,6 +320,7 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 <?php else: ?>
 	<div id="MYMEMBERMAP" class="block" style="height:40vh"></div>
 
+	<?php $tmpMemberMapData = '' ?>
 	<?php foreach ($this->tbody as $class => $row): ?>
 		<div class="block memberitem <?= $class ?>"><p>
 		  <a href="mailto:<?= $row['email']['raw'] ?>">
@@ -328,7 +329,7 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 		  <?= $row['postal']['content'] ?> <?= $row['city']['content'] ?></span>
 		</p></div>
 
-		<? $tmpMemberMapData .= sprintf("{'markerPopupContent': '%s',  'LatLong': [%s]},", 
+		<?php $tmpMemberMapData .= sprintf("{'markerPopupContent': '%s',  'LatLong': [%s]},", 
 			$row['firstname']['content'].' '.$row['lastname']['content'], 
 			$row['myGeoData']['content']);
 		?>
