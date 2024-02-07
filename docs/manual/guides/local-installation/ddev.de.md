@@ -134,7 +134,7 @@ Eine Datenbank gibt es schon in DDEV. Die Verbindungsdaten für die Installation
 | **Passwort**        | db |
 | **Datenbank**       | db |
 
-Auf die Datenbank des aktuellen Projektes kann über das phpMyAdmin Add-on zugegriffen werden. Mit folgenden Befehl öffnet sich nach Eingabe automatisch ein Browsertab mit dem Administrationswerkzeug für MySQL-Datenbanken:
+Auf die Datenbank des aktuellen Projektes kann über das phpMyAdmin Add-On zugegriffen werden. Mit folgenden Befehl öffnet sich nach Eingabe automatisch ein Browser-Tab mit dem Administrationswerkzeug für MySQL-Datenbanken:
 
 ```shell
 ddev phpmyadmin
