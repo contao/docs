@@ -1,8 +1,7 @@
 ---
 title: 'Internal redirect'
-description: 'This page type redirects visitors to another page in the page structure. The target page must be 
-accessible under the same domain as the redirection page, otherwise an external redirection must be used.'
-url: "site-structure/internal-redirect"
+description: 'A page of this type redirects visitors to another page in the page structure. The target page must be 
+accessible under the same domain as the redirection page, otherwise an external redirection must be used.  '
 aliases:
     - /en/site-structure/pages-as-central-elements/internal-redirect/
     - /en/layout/site-structure/pages-as-central-elements/internal-redirect/
@@ -10,8 +9,8 @@ weight: 30
 ---
 
 
-This page type redirects visitors to another page in the page structure. The target page must be accessible under the 
-same domain as the redirection page, otherwise an external redirection must be used.
+A page of this type redirects visitors to another page in the page structure. The target page must be accessible under 
+the same domain as the redirection page, otherwise an external redirection must be used.
 
 
 ## Name and type

@@ -1,7 +1,7 @@
 ---
 title: 'Regular page'
-description: 'Regular pages are pages on which content is output. A regular page is similar to a static HTML file that 
-you upload to your server and request in your browser.'
+description: 'Regular pages are pages that output content. A regular page is similar to a static HTML file that you 
+upload to your server and request in your browser. '
 url: "site-structure/regular-page"
 aliases:
     - /en/site-structure/pages-as-central-elements/regular-page/
@@ -10,8 +10,8 @@ weight: 20
 ---
 
 
-Regular pages are pages on which content is output. A regular page is similar to a static HTML file that you upload to 
-your server and request in your browser.
+Regular pages are pages that output content. A regular page is similar to a static HTML file that you upload to your 
+server and request in your browser.
 
 
 ## Name and type

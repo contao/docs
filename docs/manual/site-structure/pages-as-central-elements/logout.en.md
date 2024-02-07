@@ -1,7 +1,7 @@
 ---
 title: 'Logout'
-description: 'This page type creates a logout link for a protected area. After logging out, you can redirect visitors to 
-any page or to the last page they visited.'
+description: 'A page of this type creates a logout link for a protected area. After logging out, you can redirect 
+visitors to any page or to the last page they visited. '
 url: "site-structure/logout"
 aliases:
     - /en/site-structure/pages-as-central-elements/logout/
@@ -10,8 +10,8 @@ weight: 50
 ---
 
 
-This page type creates a logout link for a protected area. After logging out, you can redirect visitors to any page or 
-to the last page they visited.
+A page of this type creates a logout link for a protected area. After logging out, you can redirect visitors to any page 
+or to the last page they visited.
 
 
 ## Name and type

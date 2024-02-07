@@ -1,7 +1,7 @@
 ---
 title: 'External redirect'
-description: 'This page type redirects visitors to an external page. This can be a page outside your server or a page 
-within the Contao page structure but under a different domain than the redirect page.'
+description: 'A page of this type redirects visitors to an external page. This can be a page outside your server or a 
+page within the Contao page structure but under a different domain than the redirect page.'
 url: "site-structure/external-redirect"
 aliases:
     - /en/site-structure/pages-as-central-elements/external-redirect/
@@ -10,9 +10,8 @@ weight: 40
 ---
 
 
-This page type redirects visitors to an external page. This can be a page outside your server or a page within the 
+A page of this type redirects visitors to an external page. This can be a page outside your server or a page within the 
 Contao page structure but under a different domain than the redirect page.
-
 
 ## Name and type
 

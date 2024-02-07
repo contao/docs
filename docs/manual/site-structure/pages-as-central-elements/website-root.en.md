@@ -1,8 +1,8 @@
 ---
 title: 'Website root'
-description: 'This page type marks the starting point of a web page within the page structure. Contao supports the 
-management of multiple websites with one installation. These websites can differ e.g. by different languages or run 
-completely independently under different domains (multi-domain operation).'
+description: 'A page of this type is the starting point of a website within the page structure. A Contao instance can 
+manage multiple websites, which can, for example. have different languages or run completely independently under 
+different domains (multi-domain operation).'
 url: "site-structure/website-root"
 aliases:
     - /en/site-structure/pages-as-central-elements/website-root/
@@ -11,10 +11,9 @@ weight: 10
 ---
 
 
-This page type marks the starting point of a web page within the page structure. Contao supports the management of 
-multiple websites with one installation. These websites can differ e.g. by different languages or run completely 
-independently under different domains ([multi-domain operation](/en/site-structure/multi-domain-operation/)).
-
+A page of this type is the starting point of a website within the page structure. A Contao instance can manage multiple 
+websites, which can, for example. have different languages or run completely independently under different domains 
+([multi-domain operation](/en/site-structure/multi-domain-operation/)).
 
 ## Name and type
 
