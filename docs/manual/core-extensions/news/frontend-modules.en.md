@@ -26,7 +26,7 @@ headline to a complete post.
 **News archives:** Here you define from which archives posts should be listed. By default, the posts are sorted by date 
 in descending order.
 
-**News reader module :** Here you can determine whether the system should automatically switch to the news reader when 
+**News reader module:** Here you can determine whether the system should automatically switch to the news reader when 
 an article is selected.
 
 {{% notice info %}}
@@ -38,13 +38,11 @@ layout. This would prevent the functionality of other "reader modules" on the sa
 **Number of items:** If you enter a value greater than 0 here, the number of news or blog posts will automatically 
 be limited to this value.
 
-**Featured items:** Here you define whether only highlighted, only unhighlighted, highlighted first or all posts of the 
-selected archives are displayed.
+**Featured items:** Here you can define how featured posts are handled. The following options are available: 
+"Show all news items", "Show featured news items only", "Skip featured news items" and "Show featured news items first".
 
-{{< version "4.5" >}}
-
-**Sort order:** Here you can set the sort order. There are five sort orders available: by date ascending, by date 
-descending, by headline ascending, by headline descending and by a random order.
+**Sort order:** Here you can set the sort order. There are five sort orders available: "Date ascending", "Date 
+descending", "Headline ascending", "Headline descending" and "Random order".
 
 **Skip items:** Here you define the number of items to be skipped.
 
@@ -54,56 +52,30 @@ assuming you have enough of them.
 
 ### Template settings
 
-{{% notice info %}}
-Note that Meta fields settings are no longer available as of Contao 5.
-{{% /notice %}}
-
-**Meta fields:** Here you can specify which meta information (date of the post, author of the post and number of 
-comments) is displayed.
+{{< version-tag "Contao 5 no longer available" >}}**Meta fields:** Here you can specify which meta information 
+(date of the post, author of the post and number of comments) is displayed.
 
 **News template:** Here you select the template for the posts. The following news templates are available by default:
 
-| Template | Explanation |
-| -------- | ----------- |
-| `news_full` | This template represents the complete article and is therefore recommended for use with the news reader. |
-| `news_latest` | This template displays the meta information of a post, an image (if added), the headline, the teaser text and a read more link. |
-| `news_short` | This template outputs the meta information of a post, the headline, the teaser text and a read more link. |
-| `news_simple` | This template displays the date and the title of a post. |
+| Template       | Explanation                                                                                                                      |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `news_full`    | This template represents the complete article and is therefore recommended for use with the news reader.                         |
+| `news_latest`  | This template displays the meta information of a post, an image (if added), the headline, the teaser text and a read more link.  |
+| `news_short`   | This template outputs the meta information of a post, the headline, the teaser text and a read more link.                        |
+| `news_simple`  | This template displays the date and the title of a post.                                                                         |
 
-**Module template:** Here you can overwrite the standard template.
+**Module template:** Here you can overwrite the module template.
 
 
 ### Image settings
 
 **Image size:** Here you can specify the desired image size.
 
-**The HTML Output**  
-The front end module generates the following HTML code:
-
-```html
-<!-- indexer::stop -->
-<div class="mod_newslist block">
-
-    <div class="layout_short arc_1 block first even" itemscope itemtype="http://schema.org/Article">
-        <p class="info"><time datetime="…" itemprop="datePublished">…</time> by <span itemprop="author">…</span></p> 
-        <h2 itemprop="name"><a href="…" title="Read the article: …" itemprop="url"><span itemprop="headline">…</span></a></h2>
-        <div class="ce_text block" itemprop="description">
-            <p>…</p> 
-        </div>
-        <p class="more"><a href="…" title="Read the article: …" itemprop="url"><span itemprop="headline">Read more …</span><span class="invisible"> …</span></a></p>
-    </div>
-
-    <div class="layout_short arc_1 block odd" itemscope itemtype="http://schema.org/Article">
-        …
-    </div>
-
-    <div class="layout_short arc_1 block last even" itemscope itemtype="http://schema.org/Article">
-        …
-    </div>
-
-</div>
-<!-- indexer::continue -->
-```
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
 
 ## Newsreader
@@ -130,52 +102,40 @@ alias of an event in a news archive.
 that have not been selected are not displayed, even if the URL is correct and the news exists. This feature is 
 especially important in multi-domain operations with several independent websites.
 
-{{< version-tag "4.13" >}} **Overview page:** Here you can select a page to set a link in the detail view back to the 
-overview page.
+**Use the current URL for canonical links:** Keep the current URL instead of the configured reader page for canonical 
+links.
 
-{{< version-tag "4.13" >}} **Custom label:** Here you can change the name of the link to the overview page change.
+
+### Overview page
+
+**Overview page:** Here you can select a page to set a link in the detail view back to the overview page.
+
+**Custom label:** Here you can change the name of the link to the overview page change.
 
 
 ### Template settings
 
-**Meta fields:** Here you can define which meta information (date of the post, author of the post and number of 
-comments) is displayed.
+{{< version-tag "Contao 5 no longer available" >}}**Meta fields:** Here you can specify which meta information
+(date of the post, author of the post and number of comments) is displayed.
 
 **News template:** Here you select the news template. By default, the template `news_full` displays the complete 
 article.
 
-**Module template:** Here you can overwrite the standard template.
+**Module template:** Here you can overwrite the module template.
 
 
 ### Image settings
 
 **Image size:** Here you can specify the desired image size.
 
-**The HTML output**  
-The front end module generates the following HTML code:
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
-```html
-<div class="mod_newsreader formbottomborder block">
-    <div class="layout_full block" itemscope itemtype="http://schema.org/Article">
-        <h1 itemprop="name">…</h1>
-        <p class="info"><time datetime="…" itemprop="datePublished">…</time> by <span itemprop="author">…</span> </p>
-        <h2 itemprop="headline">…</h2>
-        <div class="ce_text block">
-            <p>…</p>  
-        </div>
-    </div>
-
-    <!-- indexer::stop -->
-    <p class="back"><a href="javascript:history.go(-1)" title="Go back">Go back</a></p>
-    <!-- indexer::continue -->
-
-    <div class="ce_comments block">
-        … 
-    </div>
-</div>
-```
-
-For details on how to mark up the comments, see the [comments](/en/article-management/content-elements/#comments) section.
+For details on how to mark up the comments, see the 
+[comments](/en/article-management/content-elements/include-elements/#comments) section.
 
 
 ## News archive
@@ -194,18 +154,16 @@ post is selected.
 
 **Archive format:** Here you define the archive format (day, month or year).
 
-{{< version "4.5" >}}
-
-**Sort order:** Here you can define the sort order. There are five sort orders available: by date ascending, by date 
-descending, by heading ascending, by heading descending and by a random order.
+**Sort order:** Here you can set the sort order. There are five sort orders available: "Date ascending", "Date
+descending", "Headline ascending", "Headline descending" and "Random order".
 
 **No period selected:** Here you define what the front end module should display if no specific time period is selected.
 
-| Option | Declaration |
-| ------ | ----------- |
-| Hide the module | The module is completely hidden if no period is selected. |
-| Jump to the current period | If no time period is selected, the posts of the current time period (day, month or year) are displayed automatically. |
-| Show all news items | All contributions of the archive are displayed if no period is selected. |
+| Option                                           | Declaration                                                                                                             |
+|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| Hide the module                                  | The module is completely hidden if no period is selected.                                                               |
+| Jump&nbsp;to&nbsp;the&nbsp;current&nbsp;period   | If no time period is selected, the posts of the current time period (day, month or year) are displayed automatically.   |
+| Show all news items                              | All contributions of the archive are displayed if no period is selected.                                                |
 
 **Items per page:** If you enter a value greater than 0 here, Contao automatically distributes the posts to multiple 
 pages - assuming you have entered the correct number.
@@ -213,45 +171,23 @@ pages - assuming you have entered the correct number.
 
 ### Template settings
 
-**Meta fields:** Here you can define which meta information (date of the post, author of the post and number of 
-comments) is displayed.
+{{< version-tag "Contao 5 no longer available" >}}**Meta fields:** Here you can specify which meta information
+(date of the post, author of the post and number of comments) is displayed.
 
 **News template:** Here you select the template.
 
-**Module template:** Here you can overwrite the default template.
+**Module template:** Here you can overwrite the module template.
 
 
 ### Image settings
 
 **Image size:** Here you can specify the desired image size.
 
-**The HTML output**  
-The front end module generates the following HTML code:
-
-```html
-<!-- indexer::stop -->
-<div class="mod_newsarchive block">
-
-    <div class="layout_latest arc_1 block first even" itemscope itemtype="http://schema.org/Article">
-        <p class="info"><time datetime="…" itemprop="datePublished">…</time> by <span itemprop="author">…</span> </p>
-        <h2 itemprop="name"><a href="…" title="Read the article: …" itemprop="url"><span itemprop="headline">…</span></a></h2>
-        <div class="ce_text block" itemprop="description">
-            <p>…</p>
-        </div>
-        <p class="more"><a href="…" title="Read the article: …" itemprop="url"><span itemprop="headline">Read more …</span><span class="invisible"> …</span></a></p> 
-    </div>
-
-    <div class="layout_latest arc_1 block odd" itemscope itemtype="http://schema.org/Article">
-        …
-    </div>
-
-    <div class="layout_latest arc_1 block last even" itemscope itemtype="http://schema.org/Article">
-        …
-    </div>
-
-</div>
-<!-- indexer::continue -->
-```
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
 
 ## News archive menu
@@ -271,7 +207,8 @@ that of the news archive.
 
 **Week start day**: Here you can specify the day of the week.
 
-**Sort order:** Here you can change the sort order of the menu.
+**Sort order:** Here you can set the sort order. There are five sort orders available: "Date ascending", "Date
+descending", "Headline ascending", "Headline descending" and "Random order".
 
 
 ### Redirect settings
@@ -282,7 +219,7 @@ that of the news archive.
 
 ### Template settings
 
-**Module template:** Here you can overwrite the standard template.
+**Module template:** Here you can overwrite the module template.
 
 **The HTML output**  
 The front end module generates the following HTML code:
@@ -293,9 +230,9 @@ The front end module generates the following HTML code:
     <ul class="level_1">
         <li class="year submenu"><a href="…">2020</a>
             <ul class="level_2">
-                <li class="first"><a href="…" title="…">April 2020</a></li>
+                <li><a href="…" title="…">April 2020</a></li>
                 <li><a href="…" title="…">March 2020</a></li>
-                <li class="last"><a href="…" title="…">February 2020</a></li>
+                <li><a href="…" title="…">February 2020</a></li>
             </ul>
         </li>
     </ul>
@@ -309,9 +246,9 @@ In the archive format "Year" with Show number of posts the HTML markup looks lik
 <!-- indexer::stop -->
 <div class="mod_newsmenu block">
     <ul class="level_1">
-        <li class="first"><a href="…" title="…">2019 (3 entries)</a></li>
+        <li><a href="…" title="…">2019 (3 entries)</a></li>
         <li><a href="…" title="…">2018 (6 entries)</a></li>
-        <li class="last"><a href="…" title="…">2017 (2 entries)</a></li>
+        <li><a href="…" title="…">2017 (2 entries)</a></li>
     </ul>
 </div>
 <!-- indexer::continue -->
@@ -326,37 +263,37 @@ In the "Day" archive format, the HTML markup looks like this:
         <thead>
             <tr>
                 <th class="head previous"><a href="…" title="January 2020">&lt;</a></th>
-                <th colspan="5" class="head current">February 2020</th>
+                <th class="head current" colspan="5">February 2020</th>
                 <th class="head next"><a href="…" title="March 2020">&gt;</a></th>
             </tr>
             <tr>
+                <th class="label">Su</th>
                 <th class="label">Mo</th>
                 <th class="label">Tu</th>
                 <th class="label">We</th>
                 <th class="label">Th</th>
                 <th class="label">Fr</th>
                 <th class="label">Sa</th>
-                <th class="label">Su</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="week_0 first">
-                <td class="days empty col_first">&nbsp;</td>
+            <tr class="week_0">
+                <td class="days weekend">&nbsp;</td>
+                <td class="days empty">&nbsp;</td>
                 <td class="days empty">&nbsp;</td>
                 <td class="days empty">&nbsp;</td>
                 <td class="days empty">&nbsp;</td>
                 <td class="days empty">&nbsp;</td>
                 <td class="days weekend">1</td>
-                <td class="days weekend col_last">2</td>
             </tr>
             <tr class="week_1">
-                <td class="days active col_first"><a href="…" title="…">3</a></td>
+                <td class="days weekend active"><a href="…" title="…">2</a></td>
+                <td class="days">3</td>
                 <td class="days">4</td>
                 <td class="days">5</td>
                 <td class="days">6</td>
                 <td class="days">7</td>
                 <td class="days weekend">8</td>
-                <td class="days weekend col_last">9</td>
             </tr>
             …
         </tbody>
