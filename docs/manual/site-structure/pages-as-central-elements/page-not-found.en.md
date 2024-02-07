@@ -1,7 +1,7 @@
 ---
 title: '404 Page not found'
-description: 'This page is called when a visitor requests a page that does not exist. You can choose to use the page as 
-a regular page and include a sitemap or automatically redirect the user to another page.'
+description: 'This page is rendered when a visitor requests an inexisting page. You can choose to use the page as a 
+regular page and include a sitemap or automatically redirect the user to another page.'
 url: "site-structure/page-not-found"
 aliases:
     - /en/site-structure/pages-as-central-elements/page-not-found/
@@ -10,8 +10,8 @@ weight: 80
 ---
 
 
-This page is called when a visitor requests a page that does not exist. You can choose to use the page as a regular 
-page and include a sitemap or automatically redirect the user to another page.
+This page is rendered when a visitor requests an inexisting page. You can choose to use the page as a regular page and 
+include a sitemap or automatically redirect the user to another page.
 
 
 ## Name and type

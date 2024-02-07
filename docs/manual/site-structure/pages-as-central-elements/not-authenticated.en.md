@@ -1,6 +1,6 @@
 ---
 title: '401 Not authenticated'
-description: 'This page is called up when a member is not logged in and is therefore not allowed to access a protected 
+description: 'This page is rendered when a visitor is not logged in and is therefore not allowed to access a protected 
 page. You can choose to use the page as a regular page and display a hint or automatically redirect the visitor to the 
 login page.'
 url: "site-structure/not-authenticated"
@@ -11,9 +11,8 @@ weight: 60
 ---
 
 
-This page is called up when a member is not logged in and is therefore not allowed to access a protected page. You can 
+This page is rendered when a visitor is not logged in and is therefore not allowed to access a protected page. You can 
 choose to use the page as a regular page and display a hint or automatically redirect the visitor to the login page.
-
 
 ## Name and type
 

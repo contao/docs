@@ -1,6 +1,6 @@
 ---
 title: '403 Access denied'
-description: 'This page is called if a member is logged in but does not have the necessary access rights to access a 
+description: 'This page is rendered if a member is logged in, but does not have the necessary access rights to access a 
 protected page. You can choose to use the page as a regular page and display a hint or automatically redirect the 
 visitor to another page.'
 url: "site-structure/access-denied"
@@ -11,9 +11,9 @@ weight: 70
 ---
 
 
-This page is called if a member is logged in but does not have the necessary access rights to access a protected page. 
-You can choose to use the page as a regular page and display a hint or automatically redirect the visitor to another 
-page.
+This page is rendered if a member is logged in, but does not have the necessary access rights to access a protected 
+page. You can choose to use the page as a regular page and display a hint or automatically redirect the visitor to 
+another page.
 
 
 ## Name and type
