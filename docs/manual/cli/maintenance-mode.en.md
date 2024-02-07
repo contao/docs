@@ -12,7 +12,7 @@ The maintenance mode has been rewritten for this Contao version. Via the command
 (back- and front end) can be put into maintenance mode. This feature is very useful if you want to update your system.
 
 Furthermore you have the possibility to set the front end for each 
-[website root](../../layout/site-structure/configure-pages/#website-settings) into maintenance mode.
+[website root](/en/site-structure/website-root/#website-settings) into maintenance mode.
 
 
 ```bash
