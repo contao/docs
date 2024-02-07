@@ -23,7 +23,7 @@ Frontend-Vorschau umgehen.
 Dieser Modus ist dann sinnvoll, wenn größere Umbauarbeiten im Backend vorgenommen werden müssen und die Auswirkungen
 im Frontend nicht sofort sichtbar sein sollen.
 
-Der Wartungsmodus wurde für diese Contao-Version 4.13 neugeschrieben. Über die [Kommandozeile](/de/cli/maintenance-mode/) 
+Der Wartungsmodus wurde für die Contao-Version 4.13 neugeschrieben. Über die [Kommandozeile](/de/cli/maintenance-mode/) 
 kann die komplette Contao-Installation (Back- und Frontend) in den Wartungsmodus versetzt werden. Diese Funktion ist 
 sehr nützlich, wenn du eine Aktualisierung an deinem System vornehmen möchtest.
 
