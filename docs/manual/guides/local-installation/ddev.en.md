@@ -126,11 +126,13 @@ A database already exists in DDEV. The connection data for the installation are:
 | **password** | db |
 | **Database** | db |
 
-The database of the current project can be accessed via the already integrated phpMyAdmin. With the following command, a browser tab opens automatically after input:
+The database of the current project can be accessed via the phpMyAdmin add-on. Enter the following command to automatically open a browser tab with the administration tool for MySQL databases:
 
 ```shell
-ddev launch -p
+ddev phpmyadmin
 ```
+
+Since ddev version 1.22.0 the support of phpmyadmin has been converted into a DDEV add-on. Therefore the above command must be used instead of `ddev launch -p`.
 
 {{% notice note %}}
 With `ddev describe` you get an overview of the services available in the project and how to reach them. With `ddev poweroff` you can stop all started projects/containers from any directory.
