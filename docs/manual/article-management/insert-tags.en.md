@@ -18,7 +18,7 @@ With these insert tags you can create links to other pages or articles. You only
 | Insert tag | Description                                                                                                                                                                                                       |
 | ---------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `{{link::*}}` | This tag is replaced with HTML code for a link. The parameter can be the ID or alias of an internal page or an absolute URL. <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup> |
-| `{{link::back}}` | This tag is replaced with a link to the last page visited. Can also be used as `{{link_open::back}}`, `{{link_url::back}}`and `{{link_title::back}}`.                                                             |
+| `{{link::back}}` | This tag is replaced with a link to the last page visited. Can also be used as `{{link_open::back}}`, `{{link_url::back}}`and `{{link_title::back}}` (deprecated since **Contao 4.13**, not available anymore in **Contao 5.0**).                                                        |
 | `{{link::login}}` | This tag is replaced with a link to the logon page of the current front end user (if available).                                                                                                                  |
 | `{{link_open::*}}` | Is replaced with the opening tag of a link. The parameter can be the ID or alias of an internal page or an absolute URL: `{{link_open::12}}Click here{{link_close}}`.                                             |
 | `{{link_url::*}}` | This tag is replaced with the URL of an internal page: `<a href="{{link_url::12}}">Click here</a>`.                                                                                                               |
@@ -66,7 +66,7 @@ The insert tag link with parameter generates the following HTML code:
 
 `{{link::*`**`::blank`**`}}`: The parameter allows to open an insert tag link in a new window.
 
-**HThe HTML Output**  
+**The HTML Output**  
 The insert tag link with parameter generates the following HTML code:
 
 ```html
