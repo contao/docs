@@ -20,7 +20,7 @@ logged in back end users can bypass the maintenance mode using the front end pre
 This mode is useful, if more in depth work needs to be done in the back end, the effects of which should not be
 immediately visible in the front end.
 
-The maintenance mode has been rewritten for this Contao version. Via the [command line](/en/cli/maintenance-mode/), 
+The maintenance mode has been rewritten for Contao version 4.13. Via the [command line](/en/cli/maintenance-mode/), 
 the complete Contao installation (back- and front end) can be put into maintenance mode. This feature is very useful 
 if you want to update your system.
 
