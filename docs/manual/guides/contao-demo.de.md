@@ -43,7 +43,7 @@ Was du hierbei berücksichtigen solltest, wird im Beitrag »[Sass/Less Integrati
 
 Mit dem Wissen obiger Contao Möglichkeiten (via »[scssphp/scssphp](https://github.com/scssphp/scssphp)«) kannst du direkt im Contao Backend 
 die `.scss` Dateien bearbeiten. Möchtest du z. B. die Farbwerte der Demo anpassen, kannst du über die 
-[Contao-Dateiverwaltung](/de/dateiverwaltung/)in der Datei »`contaodemo/theme/src/scss/variables/_colors.scss`« 
+[Contao-Dateiverwaltung](/de/dateiverwaltung/) in der Datei »`contaodemo/theme/src/scss/variables/_colors.scss`« 
 Änderungen vornehmen und speichern. Weitere SASS-Variablen findest du in den Dateien »`_sizes.scss`«, »`_fonts.scss`« 
 und »`_animation.scss`« vor.  
 
