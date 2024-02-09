@@ -96,9 +96,7 @@ class ModuleCallbackListener
 {{% /tab %}}
 
 {{% tab name="Annotation" %}}
-{{% version-tag "4.8" %}}
-
-Contao also supports its own annotation formats via the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
+{{% version-tag "4.8" %}} Contao also supports its own annotation formats via the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
 
 ```php
 // src/EventListener/DataContainer/ModuleCallbackListener.php
