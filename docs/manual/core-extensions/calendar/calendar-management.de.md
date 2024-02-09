@@ -44,15 +44,16 @@ den Kalender haben sollen.
 ### Kommentare
 
 Die Contao-Kommentarfunktion kennst du bereits von der »News/Blog«-Erweiterung bzw. dem gleichnamigen 
-[Inhaltselement (Kommentare)](../../../artikelverwaltung/inhaltselemente/#kommentare). Sie steht auch für Kalender und 
-Events zur Verfügung.
+[Include-Element (Kommentare)](/de/artikelverwaltung/inhaltselemente/include-elemente/#kommentare). Sie steht auch für 
+Kalender und Events zur Verfügung.
 
 **Kommentare aktivieren:** Hier aktivierst du die Kommentarfunktion für den Kalender.
 
 **Benachrichtigung an:** Hier legst du fest, ob bei neuen Kommentaren der Systemadministrator, der Autor eines Beitrags 
 oder beide benachrichtigt werden.
 
-**Sortierung:** Hier legst du die Reihenfolge der Kommentare fest.
+**Sortierreihenfolge:** Hier legst du die Reihenfolge der Kommentare fest. Normalerweise wird in einem Kalender der 
+älteste Kommentar zuerst angezeigt (aufsteigend).
 
 **Kommentare pro Seite:** Hier kannst du die Anzahl der Kommentare pro Seite festlegen. Contao erzeugt bei Bedarf 
 automatisch einen Seitenumbruch.
@@ -63,20 +64,20 @@ erst, nachdem du sie im Backend freigegeben hast.
 **BBCode erlauben:** Wenn du diese Option wählst, können deine Besucher [BBCode](https://de.wikipedia.org/wiki/BBCode) 
 zur Formatierung ihrer Kommentare verwenden. Folgende Tags werden unterstützt:
 
-| Tag                                  | Erklärung                                   |
-|:-------------------------------------|:--------------------------------------------|
-| `[b][/b]`                            | Fettschrift                                 |
-| `[i][/i]`                            | Kursivschrift                               |
-| `[u][/u]`                            | Unterstrichen                               |
-| `[img][/img]`                        | Bild einfügen                               |
-| `[code][/code]`                      | Programmcode einfügen                       |
-| `[color=#f00][/color]`               | Farbiger Text                               |
-| `[quote][/quote]`                    | Zitat einfügen                              |
-| `[quote=Tim][/quote]`                | Zitat mit Nennung des Urhebers einfügen     |
-| `[url][/url]`                        | Link einfügen                               |
-| `[url=http://example.com][/url]`     | Link mit Linktitel einfügen                 |
-| `[email][email]`                     | E-Mail-Adresse einfügen                     |
-| `[email=info@example.com][/email]`   | E-Mail-Adresse mit Titel einfügen           |
+| Tag                                  | Erklärung                                |
+|:-------------------------------------|:-----------------------------------------|
+| `[b][/b]`                            | Fettschrift                              |
+| `[i][/i]`                            | Kursivschrift                            |
+| `[u][/u]`                            | Unterstrichen                            |
+| `[img][/img]`                        | Bild einfügen                           |
+| `[code][/code]`                      | Programmcode einfügen                   | 
+| `[color=#f00][/color]`               | Farbiger Text                            |
+| `[quote][/quote]`                    | Zitat einfügen                          |
+| `[quote=Tim][/quote]`                | Zitat mit Nennung des Urhebers einfügen |
+| `[url][/url]`                        | Link einfügen                           |
+| `[url=http://example.com][/url]`     | Link mit Linktitel einfügen             |
+| `[email][email]`                     | E-Mail-Adresse einfügen                 |
+| `[email=info@example.com][/email]`   | E-Mail-Adresse mit Titel einfügen       |
 
 **Login zum Kommentieren benötigt:** Wenn du diese Option auswählst, können nur angemeldete Mitglieder Kommentare 
 hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle Besucher der Webseite sichtbar.
@@ -92,41 +93,9 @@ Seit Contao 4.4 wird diese Frage nur noch den Spambots »angezeigt«.
 Jeder Kalender kann auf Wunsch als RSS-Feed exportiert werden. RSS-Feeds sind XML-Dateien mit deinen Beiträgen, die mit 
 einem RSS-Reader abonniert und z. B. in eine andere Webseite eingebunden werden können.
 
-Die Feeds können über das [Seitenlayout](../../../theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) im 
+Die Feeds können über das [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) im 
 Kopfbereich der Seite eingebaut werden. Mit »Kopfbereich« ist dabei nicht die Kopfzeile deines Seitenlayouts gemeint, 
 sondern das `<head>`-Tag des HTML-Quelltextes.
-
-Des Weiteren kann die XML-Datei auch direkt im Browser geöffnet werden.
-
-Die URL lautet:
-
-`www.example.com/share/feed-alias.xml`
-
-**Die XML-Datei des Feeds besteht aus folgenden Angaben:**
-
-```rss
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Feed-Titel</title>
-        <description>Feed-Beschreibung</description>
-        <link>https://www.example.com/</link>
-        <language>Feed-Sprache</language>
-        <pubDate>…</pubDate>
-        <generator>Contao Open Source CMS</generator>
-        <atom:link href="https://www.example.com/share/feed-alias.xml" rel="self" type="application/rss+xml" />
-        <item>
-            <title>Titel der Nachricht</title>
-            <description><![CDATA[<p>Beschreibung der Nachricht.</p>]]></description>
-            <link>https://www.example.com/veranstaltung/alias-der-nachricht.html</link>
-            <pubDate>…</pubDate>
-            <guid>https://www.example.com/veranstaltung/alias-der-nachricht.html</guid>
-            <media:content url="https://www.example.com/assets/images/…/image.png" type="image/png" />
-        </item>
-        …
-     </channel>
-</rss>
-```
 
 Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten]({{% asset "icons/rss.svg" %}}?classes=icon "RSS-Feeds verwalten") 
 **RSS-Feeds** und danach auf ![Einen neuen Feed erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Feed erstellen") 
@@ -152,7 +121,7 @@ Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten]({{% asset "icons
 **Feed-Format:** Hier legst du das Format des Feeds fest. Contao unterstützt RSS 2.0 und Atom, die beiden am weitesten 
 verbreiteten Formate.
 
-**Export-Einstellungen:** Hier legst du fest, ob lediglich die Teasertexte der Beiträge oder die kompletten Beiträge 
+**Exporteinstellungen:** Hier legst du fest, ob lediglich die Teasertexte der Beiträge oder die kompletten Beiträge 
 als Feed exportiert werden.
 
 **Maximale Anzahl an Beiträgen:** Hier kannst du die Anzahl der Beiträge des Feeds beschränken. In der Regel reichen um 
@@ -166,30 +135,14 @@ Contao-Installation betreibst. Damit der Feed auf die richtige Domain verlinkt, 
 
 ### Bildeinstellungen
 
-{{< version "4.13" >}}
-
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
 auswählen:
 
-| Relatives Format               |                                                                                                                    |
-|:-------------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| Proportional                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-| An&nbsp;Rahmen&nbsp;anpassen   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-
-&nbsp;
-
-| Exaktes Format    |                                                                                                    |
-|:------------------|:---------------------------------------------------------------------------------------------------|
-| Wichtiger Teil    | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben.                         |
-| Links / Oben      | Erhält den linken Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.        |
-| Mitte / Oben      | Erhält den mittleren Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.     |
-| Rechts / Oben     | Erhält den rechten Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.       |
-| Links / Mitte     | Erhält den linken Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.     |
-| Mitte / Mitte     | Erhält den mittleren Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.  |
-| Rechts / Mitte    | Erhält den rechten Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.    |
-| Links / Unten     | Erhält den linken Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.       |
-| Mitte / Unten     | Erhält den mittleren Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.    |
-| Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
+| Eigene Größen                                  |                                                                                                                           |
+|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+| Exaktes&nbsp;Format&nbsp;(wichtiger&nbsp;Teil) | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben. Falls erforderlich, wird das Bild beschnitten. |
+| Proportional                                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
+| An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 
 
 ## Events
@@ -200,13 +153,16 @@ daher gibt es hier keine Icons, mit denen du die Reihenfolge ändern könntest.
 Die Events bestehen aus den Einstellungen des Events (»Eventliste«) und aus deren Inhalten (»Eventleser«).
 
 Um einen neuen Event zu erstellen, klicke im gewünschten Archiv auf 
-![Kalender bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Kalender bearbeiten") und danach auf 
+![Kalender bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Kalender bearbeiten") bzw.
+![Kalender bearbeiten]({{% asset "icons/children.svg" %}}?classes=icon "Kalender bearbeiten") und danach auf 
 ![Ein neues Event erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Event erstellen") **Neu**.
 
 
 ### Titel und Autor
 
 **Titel:** Hier kannst du den Titel des Events eingeben.
+
+**Event hervorheben:** Hier kannst du den Event in einer Liste mit hervorgehobener Events anzeigen.
 
 **Event-Alias:** Der Alias eines Events ist eine eindeutige und aussagekräftige Referenz, über die du ihn
 in deinem Browser aufrufen kannst.
@@ -238,31 +194,63 @@ eingebunden ist.
 
 **Weiterleitungsziel:** Hier legst du das Weiterleitungsziel fest.
 
-**Weiterleitungsseite:** Hier wählst du die Zielseite aus der Seitenstruktur aus.
+| Weiterleitungsziel                      | Erklärung                                                                                                                                                                      |
+|:----------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Standard  <sup>1</sup>                  | Die Weiterleitung erfolgt auf die Seite, die du in den Archiv-Einstellungen festgelegt hast. Auf dieser Seite sollte das Frontend-Modul »Nachrichtenleser« eingebunden sein.   |
+| Seite <sup>2</sup>                      | Die Weiterleitung erfolgt zu einer bestimmten Seite in der Seitenstruktur.                                                                                                     |
+| Artikel <sup>3</sup>                    | Die Weiterleitung erfolgt zu einem bestimmten Artikel.                                                                                                                         |
+| Individuelle&nbsp;URL&nbsp;<sup>4</sup> | Die Weiterleitung erfolgt zu einer individuellen URL.                                                                                                                          |
 
-**Artikel:** Hier wählst du den Zielartikel aus.
+**Link-Text:** Hier kannst du den Standard-Text des "Weiterlesen…"-Links überschreiben. <sup>1</sup> <sup>2</sup> <sup>3</sup> <sup>4</sup>
 
-**Link-Adresse:** Hier gibst du die URL der externen Zielseite ein.
+{{< version-tag "5.3" >}} **Kanonische URL:** Hier kannst du eine individuelle kanonische URL wie z. B. https://www.example.com/ festlegen. <sup>1</sup>
 
-**In neuem Fenster öffnen:** Hier kannst du festlegen, ob die externe Zielseite in einem neuen Browserfenster geöffnet
-wird oder nicht.
+**Weiterleitungsseite:** Hier wählst du die Zielseite aus der Seitenstruktur aus. <sup>2</sup>
 
-| Weiterleitungsziel   | Erklärung                                                                                    |
-|:---------------------|:---------------------------------------------------------------------------------------------|
-| Standard             | Die Weiterleitung erfolgt auf die Seite, die du in den Archiv-Einstellungen festgelegt hast. Auf dieser Seite sollte das Frontend-Modul »Nachrichtenleser« eingebunden sein. |
-| Seite                | Die Weiterleitung erfolgt zu einer bestimmten Seite in der Seitenstruktur.                   |
-| Artikel              | Die Weiterleitung erfolgt zu einem bestimmten Artikel.                                       |
-| Individuelle URL     | Die Weiterleitung erfolgt zu einer individuellen URL.                                        |
+**Artikel:** Hier wählst du den Zielartikel aus. <sup>3</sup>
+
+**Link-Adresse:** Hier gibst du die URL der externen Zielseite ein. <sup>4</sup>
+
+**In neuem Fenster öffnen:** Lege fest, ob die externe Zielseite in einem neuen Browserfenster geöffnet werden soll. <sup>4</sup>
 
 
 ### Metadaten
 
-{{< version "4.7" >}}
-
 **Meta-Titel:** Hier kannst du einen individuellen Meta-Titel eingeben, um den Standard-Seitentitel zu überschreiben.
+
+**Ausgabe im Quellcode:**
+```html
+<title>Seitentitel</title>
+```
+
+**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln.
+
+- *index:* die Seite in den Suchindex aufnehmen
+- *follow:* den Links auf der Seite folgen
+- *noindex:* die Seite nicht in den Suchindex aufnehmen
+- *nofollow:* den Links auf der Seite nicht folgen
+
+Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten möglichst umfassend in den Suchindex
+aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung
+*noindex,nofollow* von der Indexierung ausgenommen werden.
+
+**Ausgabe im Quellcode:**
+```html
+<meta name="robots" content="index,follow">
+```
 
 **Meta-Beschreibung:** Hier kannst du eine individuelle Meta-Beschreibung eingeben, um die Standard-Seitenbeschreibung 
 zu überschreiben.
+
+**Ausgabe im Quellcode:**
+```html
+<meta name="description" content="Beschreibung der Seite (150 und 300 Zeichen).">
+```
+
+**Google Suchergebnis-Vorschau:** Hier kannst du sehen wie Google die Metadaten in den Suchergebnissen anzeigt. Andere 
+Suchmaschinen zeigen gegebenenfalls längere Texte an oder beschneiden diese an einer anderen Position.
+
+![Google Suchergebnis-Vorschau]({{% asset "images/manual/layout/site-structure/de/google-suchergebnis-vorschau.png" %}}?classes=shadow)
 
 
 ### Unterüberschrift und Teaser {#unterueberschrift-und-teaser}
@@ -282,30 +270,19 @@ gefolgt von einem Weiterlesen-Link, angezeigt wird.
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du es direkt im Popup-Fenster nachholen, ohne die Eingabemaske zu verlassen.
 
+**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße
+geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
+
 ![Einem Beitrag ein Bild hinzufügen]({{% asset "images/manual/core-extensions/calendar/de/einem-beitrag-ein-bild-hinzufuegen.png" %}}?classes=shadow)
 
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
 
-| Relatives Format               |                                                                                                                    |
-|:-------------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| Proportional                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-| An&nbsp;Rahmen&nbsp;anpassen   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-
-&nbsp;
-
-| Exaktes Format    |                                                                                                    |
-|:------------------|:---------------------------------------------------------------------------------------------------|
-| Wichtiger Teil    | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben.                         |
-| Links / Oben      | Erhält den linken Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.        |
-| Mitte / Oben      | Erhält den mittleren Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.     |
-| Rechts / Oben     | Erhält den rechten Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.       |
-| Links / Mitte     | Erhält den linken Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.     |
-| Mitte / Mitte     | Erhält den mittleren Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.  |
-| Rechts / Mitte    | Erhält den rechten Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.    |
-| Links / Unten     | Erhält den linken Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.       |
-| Mitte / Unten     | Erhält den mittleren Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.    |
-| Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
+| Eigene Größen                                  |                                                                                                                           |
+|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+| Exaktes&nbsp;Format&nbsp;(wichtiger&nbsp;Teil) | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben. Falls erforderlich, wird das Bild beschnitten. |
+| Proportional                                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
+| An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird es 
 ![oberhalb]({{% asset "icons/above.svg" %}}?classes=icon) **oberhalb**, 
@@ -313,12 +290,6 @@ auswählen:
 ![linksbündig]({{% asset "icons/left.svg" %}}?classes=icon) **linksbündig** oder 
 ![rechtsbündig]({{% asset "icons/right.svg" %}}?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
 umfließt der Text das Bild (wie im Icon symbolisiert).
-
-**Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
-Uhrzeigersinn »oben, rechts, unten, links«.
-
-**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
-geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Metadaten überschreiben:**  Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
@@ -343,7 +314,7 @@ alle zwei Wochen, alle fünf Monate oder jedes Jahr.
 
 **Event wiederholen:** Hier aktivierst du die Wiederholfunktion.
 
-**Intervall:** Hier legst du fest, in welchen Abständen das Event wiederholt wird.
+**Intervall:** Hier legst du fest, in welchen Abständen Tag(e), Woche(n), Monat(e) und Jahr(e) das Event wiederholt wird.
 
 **Wiederholungen:** Wenn du hier einen Wert größer 0 eingibst, wird der Termin nach der vorgegebenen Anzahl an 
 Wiederholungen nicht mehr angezeigt.
@@ -383,7 +354,8 @@ Events automatisch zu einem bestimmten Datum zu aktivieren.
 
 Nachdem wir die Einstellungen für das Event vorgenommen haben, können wir diesem Inhaltselemente für die 
 Ausgabe im »Eventleser« mitgeben, klicke dazu beim gewünschten Event auf 
-![Event bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Event bearbeiten")  und danach auf 
+![Event bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon "Event bearbeiten") bzw.
+![Beitrag bearbeiten]({{% asset "icons/children.svg" %}}?classes=icon "Beitrag bearbeiten") und danach auf 
 ![Ein neues Inhaltselement erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Ein neues Inhaltselement erstellen") **Neu**.
 
 In den Events stehen dir alle [Inhaltselemente](../../../artikelverwaltung/inhaltselemente/) von Contao zur 

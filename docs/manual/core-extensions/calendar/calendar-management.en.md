@@ -16,7 +16,8 @@ calendars, a categorization of the entries is possible.
 
 Archives are used to group and/or categorize calendars. Each archive can be related to a specific language or topic.
 
-To create a new calendar, click ![Create a new calendar]({{% asset "icons/new.svg" %}}?classes=icon "Create a new calendar") **New**.
+To create a new calendar, click 
+![Create a new calendar]({{% asset "icons/new.svg" %}}?classes=icon "Create a new calendar") **New**.
 
 
 ### Title and redirect page
@@ -40,8 +41,9 @@ the front end.
 
 ### Comments
 
-You already know the Contao comment function from the "News/Blog" extension or the content element with the same name 
-[(comments)](/en/article-management/content-elements/#comments). It is also available for calendars and events.
+You already know the Contao comment function from the "News/Blog" extension or the include element with the same name 
+[(comments)](/en/article-management/content-elements/include-elements/#comments). It is also available for calendars and 
+events.
 
 **Enable comments:** Here you activate the comment function for the calendar.
 
@@ -59,20 +61,20 @@ after you have shared them in the back end.
 **Allow BBCode:** If you select this option, your visitors can use [BBCode](https://en.wikipedia.org/wiki/BBCode) to 
 format their comments. The following tags are supported:
 
-| Day | Declaration |
-| --- | ----------- |
-| `[b][/b]` | Boldface |
-| `[i][/i]` | Italics |
-| `[u][/u]` | Underlined |
-| `[img][/img]` | Insert image |
-| `[code][/code]` | Insert program code |
-| `[color=#f00][/color]` | Coloured text |
-| `[quote][/quote]` | Insert quote |
-| `[quote=Tim][/quote]` | Insert quote with mention of the author |
-| `[url][/url]` | Insert link |
-| `[url=http://example.com][/url]` | Insert link with link title |
-| `[email][email]` | Add an e-mail address |
-| `[email=info@example.com][/email]` | Insert e-mail address with title |
+| Day                                | Declaration                               |
+|------------------------------------|-------------------------------------------|
+| `[b][/b]`                          | Boldface                                  |
+| `[i][/i]`                          | Italics                                   |
+| `[u][/u]`                          | Underlined                                |
+| `[img][/img]`                      | Insert image                              |
+| `[code][/code]`                    | Insert program code                       |
+| `[color=#f00][/color]`             | Coloured text                             |
+| `[quote][/quote]`                  | Insert quote                              |
+| `[quote=Tim][/quote]`              | Insert quote with mention of the author   |
+| `[url][/url]`                      | Insert link                               |
+| `[url=http://example.com][/url]`   | Insert link with link title               |
+| `[email][email]`                   | Add an e-mail address                     |
+| `[email=info@example.com][/email]` | Insert e-mail address with title          |
 
 **Require login to comment:** If you select this option, only logged in members can add comments. However, comments 
 already submitted will still be visible to all visitors of the website.
@@ -90,38 +92,6 @@ be subscribed to with an RSS reader and integrated into another website, for exa
 
 The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the 
 header of the page. The "header" is not the header of your page layout, but the `<head>` tag of the HTML source code.
-
-Furthermore, the XML file can also be opened directly in the browser.
-
-The URL is:
-
-`www.example.com/share/feed-alias.xml`
-
-**The XML file of the feed consists of the following information:**
-
-```rss
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Feed title</title>
-        <description>Feed description</description>
-        <link>https://www.example.com/</link>
-        <language>Feed language</language>
-        <pubDate>…</pubDate>
-        <generator>Contao Open Source CMS</generator>
-        <atom:link href="https://www.example.com/share/feed-alias.xml" rel="self" type="application/rss+xml" />
-        <item>
-            <title>Appointment title</title>
-            <description><![CDATA[<p>Appointment description.</p>]]></description>
-            <link>https://www.example.com/event/alias-of-the-appointment.html</link>
-            <pubDate>…</pubDate>
-            <guid>https://www.example.com/event/alias-of-the-appointment.html</guid>
-            <media:content url="https://www.example.com//assets/images/…/image.png" type="image/png" />
-        </item>
-        …
-     </channel>
-</rss>
-```
 
 To create a new feed click on ![Manage calendar feeds]({{% asset "icons/rss.svg" %}}?classes=icon "Manage calendar feeds") 
 **RSS feeds** and then click on ![Create a new feed]({{% asset "icons/new.svg" %}}?classes=icon "Create a new feed") **New**.
@@ -159,29 +129,13 @@ Contao installation. To make sure that the feed links to the correct domain, you
 
 ### Image settings
 
-{{< version "4.13" >}}
-
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
-| Relative format |  |
-| --------------- | --- |
-| Proportional | The longer side of the image is adapted to the given dimensions and the image is proportionally reduced. |
-| Fit to frame | The shorter side of the image is adjusted to the given dimensions and the image is proportionally reduced. |
-
-&nbsp;
-
-| Exact format |  |
-| ------------ | --- |
-| Important part | Preserves the important part of the image as specified in the file manager. |
-| Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
-| Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
-| Right / Top | Get the right part of a landscape image and the upper part of a portrait image. |
-| Left / Middle | Preserves the left part of a landscape image and the center part of a portrait image. |
-| Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
-| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
-| Left / Bottom | Contains the left part of a landscape image and the lower part of a portrait image. |
-| Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
-| Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
 
 ## Events
@@ -191,13 +145,16 @@ order.
 
 The events consist of the event settings ("Event list") and their contents ("Event reader").
 
-To create a new event, click on the desired archive ![Edit Calendar]({{% asset "icons/edit.svg" %}}?classes=icon "Edit Calendar") 
+To create a new event, click on the desired archive ![Edit Calendar]({{% asset "icons/edit.svg" %}}?classes=icon "Edit Calendar")
+or ![Edit Calendar]({{% asset "icons/children.svg" %}}?classes=icon "Edit Calendar")
 and then on![Create a new event]({{% asset "icons/new.svg" %}}?classes=icon "Create a new event") **New**.
 
 
 ### Title and author
 
 **Title:** Here you can enter the title of the event.
+
+**Featured event:** Here you can display the event in a list of featured events.
 
 **Event Alias:** The alias of an event is a unique and meaningful reference that you can use to call it up in your 
 browser.
@@ -227,30 +184,65 @@ on which the front end module "Eventleser" is integrated to display the complete
 
 **Redirect target:** Here you can set the forwarding destination.
 
-**Redirect page**: Here you can select the destination page from the page structure.
+| Redirect target                   | Explanation                                                                                                                                   |
+|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Use default <sup>1</sup>          | You will be redirected to the page you specified in the archive settings. On this page the front end module "news reader" should be included. |
+| Page <sup>2</sup>                 | The redirection is to a specific page in the page structure.                                                                                  |
+| Article <sup>3</sup>              | The redirection is to a specific article.                                                                                                     |
+| Custom&nbsp;URL&nbsp;<sup>4</sup> | The redirection is to an individual URL.                                                                                                      |
 
-**Article:** Here you select the destination article.
+**Link text:** Here you can overwrite the standard text of the "Read more..." link. <sup>1</sup> <sup>2</sup> 
+<sup>3</sup> <sup>4</sup>
 
-**Link target:** Here you enter the URL of the external target page.
+{{< version-tag "5.3" >}} **Canonical URL:** Here you can define an individual canonical URL such as 
+https://www.example.com/. <sup>1</sup>
+
+**Redirect page**: Here you can select the destination page from the page structure. <sup>2</sup>
+
+**Article:** Here you select the destination article. <sup>3</sup>
+
+**Link target:** Here you enter the URL of the external target page. <sup>4</sup>
 
 **Open in a new window:** Here you can determine whether the external target page is opened in a new browser window or 
-not.
-
-| Redirect target | Explanation |
-| ---------------------- | ----------- |
-| Use default | You will be redirected to the page you specified in the archive settings. On this page the front end module "news reader" should be included. |
-| Page | The redirection is to a specific page in the page structure. |
-| Article | The redirection is to a specific article. |
-| Custom URL | The redirection is to an individual URL. |
+not. <sup>4</sup>
 
 
 ### Metadata
 
-{{< version "4.7" >}}
+**Meta title:** Here you can enter an individual meta-title to overwrite the default page title.
 
-**Meta-title:** Here you can enter an individual meta-title to overwrite the default page title.
+**Output in source code:**
+```html
+<title>Page title</title>
+```
+
+**Robots tag:** The robots tag defines how search engines treat a page.
+
+- *index:* add the page to the search index
+- *follow:* follow the links on the page
+- *noindex:* do not include the page in the search index
+- *nofollow:* do not follow the links on the page
+
+The default case is *index,follow*, because we want Google and other search engines to include our pages in the search
+index. However, certain pages, such as the imprint or the registration page, can be excluded from indexing using the
+setting *noindex,nofollow*.
+
+**Output in source code:**
+```html
+<meta name="robots" content="index,follow">
+```
 
 **Meta description**: Here you can enter an individual meta description to override the default page description.
+
+**Output in source code:**
+```html
+<meta name="description" content="Description of the page (between 150 and 300 characters).">
+```
+
+**Google search results preview:** Here you can preview the metadata in the Google search results. Other search engines 
+might show longer texts or crop at a different position.
+
+![Google search results preview]({{% asset "images/manual/layout/site-structure/en/google-search-results-preview.png" %}}?classes=shadow)
 
 
 ### Event details
@@ -270,40 +262,25 @@ not.
 **Source file:** Here you select the image to be inserted. If you have not yet transferred the image to the server, you
 can do so directly in the pop-up window without leaving the input mask.
 
+**Full-size view/new window:** If this option is selected, the image will be opened in its original size when clicked.
+This option is not available for linked images.
+
 ![Add an image to a post]({{% asset "images/manual/core-extensions/calendar/en/add-an-image-to-a-post.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
-| Relative format |  |
-| --------------- | --- |
-| Proportionally | The longer side of the image is adapted to the given dimensions and the image is proportionally reduced. |
-| Fit to frame | The shorter side of the image is adjusted to the given dimensions and the image is proportionally reduced. |
-
-| Exact format |  |
-| ------------ | --- |
-| Important part | Preserves the important part of the image as specified in the file manager. |
-| Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
-| Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
-| Right / Top | Preserves the right part of a landscape image and the upper part of a portrait image. |
-| Left / Center | Preserves the left part of a landscape image and the center part of a portrait image. |
-| Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
-| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
-| Links / Bottom | Preserves the left part of a landscape image and the lower part of a portrait image. |
-| Center / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
-| Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
 **Image Alignment:** Here you set the alignment of the image. If it is inserted 
 ![above]({{% asset "icons/above.svg" %}}?classes=icon) **above**, ![under]({{% asset "icons/below.svg" %}}?classes=icon) **below**,
 ![left-justified]({{% asset "icons/left.svg" %}}?classes=icon) **left-aligned** or ![right-justified]({{% asset "icons/right.svg" %}}?classes=icon) 
 **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
 
-**Image margin:** Here you can define the distance between the image and the text. The order of the input fields is 
-clockwise "top, right, bottom, left".
-
-**Full-size view/new window:** If this option is selected, the image will be opened in its original size when clicked. 
-This option is not available for linked images.
-
-**Overwrite meta data:**  Here you can overwrite the meta data from the file manager.
+**Overwrite metadata:**  Here you can overwrite the metadata from the file manager.
 
 **Alternate text:** Here you can enter an alternate text for the image *(alt attribute)*. Accessible web pages should 
 contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternate 
@@ -324,7 +301,7 @@ two weeks, every five months or every year.
 
 **Repeat event:** Here you activate the repeat function.
 
-**Interval:** Here you can define the intervals at which the event is repeated.
+**Interval:** Here you can define the intervals day(s), week(s), month(s) and year(s) at which the event is repeated.
 
 **Recurrences:** If you enter a value greater than 0 here, the event will not be displayed after the specified number 
 of repetitions.
@@ -363,7 +340,8 @@ certain date.
 ## Content for events
 
 After we have made the settings for the event, we can add content elements for the output in the "event reader", 
-click on the desired event ![Edit event]({{% asset "icons/edit.svg" %}}?classes=icon "Edit event") and then on 
+click on the desired event ![Edit event]({{% asset "icons/edit.svg" %}}?classes=icon "Edit event") or
+![Edit event]({{% asset "icons/children.svg" %}}?classes=icon "Edit event") and then on 
 ![Create a new content element]({{% asset "icons/new.svg" %}}?classes=icon "Create a new content element") **New**.
 
 In the events, all [content elements](/en/article-management/content-elements/) of Contao are available to you.
