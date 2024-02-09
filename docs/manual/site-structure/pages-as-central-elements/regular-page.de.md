@@ -84,6 +84,11 @@ einer eindeutigen Beschreibung zu versehen.
 <meta name="description" content="Contao ist ein leistungsstarkes Open Source CMS, mit dem du professionelle Webseiten und skalierbare Webanwendungen erstellen kannst.">
 ```
 
+**Google Suchergebnis-Vorschau:** Hier kannst du sehen wie Google die Metadaten in den Suchergebnissen anzeigt. Andere
+Suchmaschinen zeigen gegebenenfalls längere Texte an oder beschneiden diese an einer anderen Position.
+
+![Google Suchergebnis-Vorschau]({{% asset "images/manual/layout/site-structure/de/google-suchergebnis-vorschau.png" %}}?classes=shadow)
+
 
 ## Kanonische URL
 

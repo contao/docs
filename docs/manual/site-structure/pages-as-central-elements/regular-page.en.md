@@ -83,6 +83,11 @@ search engine optimization, so you should take the time to provide each page wit
 <meta name="description" content="Contao ist ein leistungsstarkes Open Source CMS, mit dem du professionelle Webseiten und skalierbare Webanwendungen erstellen kannst.">
 ```
 
+**Google search results preview:** Here you can preview the metadata in the Google search results. Other search engines
+might show longer texts or crop at a different position.
+
+![Google search results preview]({{% asset "images/manual/layout/site-structure/en/google-search-results-preview.png" %}}?classes=shadow)
+
 
 ## Canonical URL
 
