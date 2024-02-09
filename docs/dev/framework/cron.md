@@ -166,7 +166,7 @@ In this case the cron job is executed once per hour. As mentioned before this pa
 `*/5 * * * *` for "every 5 minutes".
 
 {{% notice note %}}
-If you need an interval like `*/5 * * *` you need to escape either the `*` or `/` 
+If you need an interval like `*/5 * * * *` you need to escape either the `*` or `/` 
 with `\`, since `*/` would close the PHP comment.
 {{% /notice %}}
 {{% /tab %}}
