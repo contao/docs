@@ -15,6 +15,9 @@ kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement ei
 
 ![Einen Hyperlink anlegen]({{% asset "images/manual/article-management/de/einen-hyperlink-anlegen.png" %}}?classes=shadow)
 
+
+### Hyperlink-Einstellungen
+
 **Link-Adresse:** Gebe die Link-Adresse inklusive des Netzwerkprotokolls ein. Für Webseiten lautet das 
 Netzwerkprotokoll normalerweise `http://` oder `https://`, für E-Mail-Adressen `mailto:` und für Telefonnummern `tel:`. 
 Contao verschlüsselt E-Mail-Adressen automatisch, sodass sie nicht von Spambots ausgelesen werden können.
@@ -32,7 +35,8 @@ der Satz »Besuchen Sie unsere Firmenseite!« steht.
 
 **Lightbox:** Hier kannst du das `data-lightbox`-Attribut des Links festlegen, das zur Steuerung der Lightbox verwendet wird.
 
-**Bildlink-Einstellungen**
+
+### Bildlink-Einstellungen
 
 Wenn du die Option **Einen Bildlink erstellen** auswählst, kannst du statt eines Textlinks einen Bildlink erstellen. 
 Alternativ dazu kannst du auch ein Bildelement erstellen und mit einem Link versehen.
@@ -42,7 +46,7 @@ Alternativ dazu kannst du auch ein Bildelement erstellen und mit einem Link vers
 **Quelldatei:** Hier wählst du das zu verwendende Bild aus.
 
 **Bildgröße:** Hier kannst du die Abmessungen des Bildes vorgeben. Weitere Informationen dazu findest du im 
-[Text](#text).
+[Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinstellungen).
 
 **Metadaten überschreiben:** Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
@@ -54,31 +58,61 @@ Suchmaschinen ausgewertet und sind daher ein wichtiges Instrument der Onpage-Opt
 
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.
 
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_hyperlink` überschreiben.
+
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
+{{% tab name="Contao 4" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_hyperlink` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
 
 ```html
-<div class="ce_hyperlink first last block">
-    … <a href="…" class="hyperlink_txt" title="…" data-lightbox="…" target="_blank" rel="noreferrer noopener">…</a> …
+<div class="ce_hyperlink block">
+    <a class="hyperlink_txt" href="…" title="…" data-lightbox="…" target="_blank" rel="noreferrer noopener">…</a> …
 </div>
 ```
 
 Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
 
 ```html
-<div class="ce_hyperlink first last block">
-
+<div class="ce_hyperlink block">
     <figure class="image_container">
-        <a href="… class="hyperlink_img" target="_blank" rel="noreferrer noopener">
-            <img src="…" alt="…" title="…" itemprop="image">
+        <a class="hyperlink_img" href="…" target="_blank" rel="noreferrer noopener">
+            <img src="…" alt="…" title="…" height="…" width="…" itemprop="image">
         </a>
         <figcaption class="caption">…</figcaption>
     </figure>
-
 </div>
 ```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/hyperlink` überschreiben.
+
+**HTML-Ausgabe**  
+Das Element generiert folgenden HTML-Code:
+
+```html
+<div class="content-hyperlink">
+    <a class="…" href="…" title="…" data-lightbox="…" target="_blank" rel="noreferrer noopener">…</a> …
+</div>
+```
+
+Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
+
+```html
+<div class="content-hyperlink">
+    <figure>
+        <a class="…" href="…" title="…" data-lightbox="…"  target="_blank" rel="noreferrer noopener">
+            <img src="…" alt="…" title="…" height="…" width="…">
+        </a>
+        <figcaption>…</figcaption>
+    </figure>
+</div>
+```
+{{% /tab %}}
+{{</tabs>}}
 
 
 ## Top-Link
@@ -86,18 +120,38 @@ Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
 Das Inhaltselement »Top-Link« fügt dem Artikel einen Link hinzu, mit dem du an den Anfang der Seite springen kannst. 
 Das ist speziell bei langen Seiten sinnvoll.
 
+
+### Hyperlink-Einstellungen
+
 **Link-Text:** Hier kannst du eine Bezeichnung für den Link eingeben. Wenn du das Feld leer lässt, wird die 
 Standardbezeichnung »Nach oben« verwendet.
 
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_text` überschreiben.
+
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
+{{% tab name="Contao 4" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_toplink` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
 
 ```html
-<!-- indexer::stop -->
 <div class="ce_toplink first last block">
     <a href="#top" title="Nach oben">Nach oben</a>
 </div>
-<!-- indexer::continue -->
 ```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/toplink` überschreiben.
+
+**HTML-Ausgabe**  
+Das Element generiert folgenden HTML-Code:
+
+```html
+<div class="content-toplink">
+    <a href="#top" data-toplink="" title="Nach oben">Nach oben</a>
+</div>
+```
+{{% /tab %}}
+{{</tabs>}}

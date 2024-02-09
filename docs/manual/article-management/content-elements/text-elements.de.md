@@ -13,6 +13,9 @@ weight: 21
 Das Inhaltselement »Code« fügt dem Artikel formatierten Code hinzu. Die Eingabe erfolgt über einen sogenannten
 Code-Editor. Contao verwendet den Open Source Code-Editor von [Ace](https://ace.c9.io/).
 
+
+### Text/HTML/Code
+
 **Syntaxhervorhebung:** Hier kannst du die gewünschte Skriptsprache auswählen. Folgende Skriptsprache stehen zur
 Verfügung:
 
@@ -43,9 +46,12 @@ Verfügung:
 
 **Code:** Hier kannst du den gewünschten Code eingeben. Beachte, dass der Code nicht ausgeführt wird.
 
-{{< tabs groupId="template-data-example" >}}
+
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_code` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_code` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -59,7 +65,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/code` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/code` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -83,12 +89,18 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »Beschreibungsliste« fügt dem Artikel eine Beschreibungsliste hinzu, diese wird häufig zur 
 Implementierung eines Glossars oder zur Anzeige von Metadaten (eine Liste von Schlüssel-Wert-Paaren) verwendet.
 
-Du kannst eine Liste von Begriffen und Details zur Beschreibungsliste hinzufügen.
-Falls du das Feld für den Begriff leer lässt, kannst du mehrere Details für einen Begriff erstellen.
-
 ![Beschreibungsliste]({{% asset "images/manual/article-management/de/beschreibungsliste.png" %}}?classes=shadow)
 
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/description_list` überschreiben.
+
+### Listeneinträge
+
+**Listeneinträge:** Du kannst eine Liste von Begriffen und Details zur Beschreibungsliste hinzufügen.
+Falls du das Feld für den Begriff leer lässt, kannst du mehrere Details für einen Begriff erstellen.
+
+
+### Template-Einstellungen
+
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/description_list` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -115,9 +127,12 @@ Mit dem Select-Menü rechts daneben kannst du die semantische Hierarchie dieser 
 Überschrift der Seite wird als `h1` angegeben (meist nur eine pro Seite), während die Werte `h2` bis `h6` hierarchisch 
 niedrigere Überschriften abbilden und natürlich mehrfach vorkommen.
 
-{{< tabs groupId="template-data-example" >}}
+
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_headline` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_headline` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -127,7 +142,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/headline` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/headline` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -145,14 +160,20 @@ Das Element generiert folgenden HTML-Code:
 Das Inhaltselement »HTML« fügt dem Artikel beliebigen HTML-Code hinzu. Beachte, dass nicht alle HTML-Tags standardmäßig
 erlaubt sind. Die Liste der erlaubten Tags findest du in den Backend-Einstellungen.
 
+
+### Text/HTML/Code
+
 **HTML-Code:** Hier kannst du den HTML-Code eingeben.
 
-{{< tabs groupId="template-data-example" >}}
+
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_html` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_html` überschreiben.
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/html` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/html` überschreiben.
 {{% /tab %}}
 {{</tabs>}}
 
@@ -172,9 +193,19 @@ Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren]({{% 
 neben der Feldbezeichnung »Listeneinträge« öffnest du den CSV-Import-Wizard, mit dem du Listendaten aus einer CSV-Datei
 importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
 
-{{< tabs groupId="template-data-example" >}}
+
+### Listeneinträge
+
+**Listentyp:** Bitte wähle zwischen einer nummerierten oder unnummerierten Liste.
+
+**Listeneinträge:** Tage einen Eintrag in die Liste ein.
+
+
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_list` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_list` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -190,7 +221,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/list` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/list` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -215,14 +246,24 @@ Eine nummerierte Aufzählung verwendet das `<ol>`-Tag statt des `<ul>`-Tags.
 
 Mit dem Inhaltselement »Markdown« wird aus einem Markdown-Text HTML-Code erzeugt.
 
-| Markdown-Quelle |   |
-| --------------- | - |
-| **Text:** | Hier kannst du den gewünschten Inhalt im Bereich »Code« eingeben. |
-| **Datei:** | {{< version-tag "4.12" >}} Hier kannst du den gewünschten Inhalt aus einer Markdown Datei einfügen. |
 
-{{< tabs groupId="template-data-example" >}}
+### Text/HTML/Code
+
+**Markdown-Quelle:** Bitte wähle die Markdown-Quelle aus.
+
+| Markdown-Quelle |                                                                             |
+|-----------------|-----------------------------------------------------------------------------|
+| **Text:**       | Hier kannst du den gewünschten Inhalt im Bereich »Code« eingeben.           |
+| **Datei:**      | Hier kannst du den gewünschten Inhalt aus einer Markdown Datei einfügen.    |
+
+**Code:** Beachte, dass der Code nicht ausgeführt wird.
+
+
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_markdown` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_markdown` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -237,7 +278,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/markdown` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/markdown` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -450,7 +491,7 @@ Die Textausrichtung kann durch Doppelpunkte gesteuert werden:
 
 ```md
 Erste Kopfzeile | Zweite Kopfzeile | Dritte Kopfzeile  
-:-------------- | :--------------: | ---------------:  
+:--------------  :--------------: | ---------------:  
 Linksbündig     | Zentriert        | Rechtsbündig  
 Linksbündig     | Zentriert        | Rechtsbündig  
 ```
@@ -502,6 +543,9 @@ Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren]({{% 
 neben der Feldbezeichnung »Tabelleneinträge« öffnest du den CSV-Import-Wizard, mit dem du Tabellendaten aus einer 
 CSV-Datei importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
 
+
+### Tabellenkonfiguration
+
 **Zusammenfassung:** Eine barrierefreie Webseite sollte für jede Tabelle eine kurze Zusammenfassung des Inhalts 
 enthalten, die du hier eingeben kannst.
 
@@ -514,6 +558,9 @@ enthalten, die du hier eingeben kannst.
 **Reihenüberschriften hinzufügen:** Wenn du diese Option auswählst, wird die erste Spalte der Tabelle mithilfe des 
 `<th>`-Tags als Reihenüberschrift formatiert.
 
+
+### Sortieroptionen
+
 **Sortierbare Tabelle:** Macht die Tabelle im Frontend mittels JavaScript sortierbar. Das *j_tablesort*-Template muss im 
 Seitenlayout eingebunden sein.
 
@@ -522,9 +569,12 @@ Auswahl getroffen hat. Die Zählung beginnt bei 0.
 
 **Sortierreihenfolge:** Die Reihenfolge der Standardsortierung (auf- oder absteigend).
 
-{{< tabs groupId="template-data-example" >}}
+
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_table` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_table` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -572,7 +622,7 @@ Das Element generiert folgenden HTML-Code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/table` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/table` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -638,7 +688,13 @@ Mit dem Select-Menü rechts daneben kannst du die semantische Hierarchie dieser 
 Überschrift der Seite wird als `h1` angegeben (meist nur eine pro Seite), während die Werte `h2` bis `h6` hierarchisch
 niedrigere Überschriften abbilden und natürlich mehrfach vorkommen.
 
+
+### Text/HTML/Code
+
 **Text:** Hier gibst du den Text des Inhaltselements ein.
+
+
+### Bildeinstellungen
 
 **Ein Bild hinzufügen**
 
@@ -648,30 +704,16 @@ dabei zur Verfügung:
 **Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast,
 kannst du den Upload hier nachholen, ohne die Eingabemaske zu verlassen.
 
+**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße
+geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
+
 ![Einem Text ein Bild hinzufügen]({{% asset "images/manual/article-management/de/einem-text-ein-bild-hinzufuegen.png" %}}?classes=shadow)
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
-auswählen:
-
-| Relatives Format               |                                                                                                                    |
-|:-------------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| Proportional                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-| An&nbsp;Rahmen&nbsp;anpassen   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-
-&nbsp;
-
-| Exaktes Format    |                                                                                                    |
-|:------------------|:---------------------------------------------------------------------------------------------------|
-| Wichtiger Teil    | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben.                         |
-| Links / Oben      | Erhält den linken Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.        |
-| Mitte / Oben      | Erhält den mittleren Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.     |
-| Rechts / Oben     | Erhält den rechten Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.       |
-| Links / Mitte     | Erhält den linken Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.     |
-| Mitte / Mitte     | Erhält den mittleren Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.  |
-| Rechts / Mitte    | Erhält den rechten Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.    |
-| Links / Unten     | Erhält den linken Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.       |
-| Mitte / Unten     | Erhält den mittleren Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.    |
-| Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
+| Eigene Größen                                  |                                                                                                                           |
+|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+| Exaktes&nbsp;Format&nbsp;(wichtiger&nbsp;Teil) | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben. Falls erforderlich, wird das Bild beschnitten. |
+| Proportional                                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
+| An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird es
 ![oberhalb]({{% asset "icons/above.svg" %}}?classes=icon) **oberhalb**,
@@ -679,9 +721,6 @@ auswählen:
 ![linksbündig]({{% asset "icons/left.svg" %}}?classes=icon) **linksbündig** oder
 ![rechtsbündig]({{% asset "icons/right.svg" %}}?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig**
 umfließt der Text das Bild (wie im Icon symbolisiert).
-
-**Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße
-geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Metadaten überschreiben:**  Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
@@ -698,12 +737,12 @@ möglich ist.
 
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.
 
-{{< tabs groupId="template-data-example" >}}
-{{% tab name="Contao 4" %}}
-**Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im
-Uhrzeigersinn »oben, rechts, unten, links«.
 
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_text` überschreiben.
+### Template-Einstellungen
+
+{{< tabs groupId="contao-version" >}}
+{{% tab name="Contao 4" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_text` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -729,7 +768,7 @@ Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/text` überschreiben.
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/text` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -770,6 +809,9 @@ Das Inhaltselement »Ungefiltertes HTML« fügt dem Artikel ein ungefiltertes H
 Dinge einfügst, die du nicht verstehst. Dies könnte Angreifern ermöglichen, deine Identität zu stehlen oder die 
 Kontrolle über das gesamte System zu übernehmen.
 
-**Individuelles Template:** Hier kannst du das Standard-Template `content_element/unfiltered_html` überschreiben.
+
+### Template-Einstellungen
+
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/unfiltered_html` überschreiben.
 
 Das Inhaltselement hat kein umschließenden HTML-Markup.

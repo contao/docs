@@ -17,8 +17,7 @@ den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 
 ![Den Zugriff auf ein Inhaltselement einschränken]({{% asset "images/manual/article-management/de/den-zugriff-auf-ein-modul-einschraenken.png" %}}?classes=shadow)
 
-| Info |
-| ---- | --- |
-| **Element schützen:** | Das Inhaltselement ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein Mitglied im Frontend angemeldet hat. |
-| **Erlaubte&nbsp;Mitgliedergruppen:** | Hier legst du fest, wer Zugriff auf das Inhaltselement hat. |
-| **Nur Gästen anzeigen:** |Das Inhaltselement ist standardmäßig sichtbar und wird ausgeblendet, sobald sich ein Mitglied im Frontend angemeldet hat. |
+| Info                                  |                                                                 |
+|---------------------------------------|-----------------------------------------------------------------|
+| **Element schützen:**                | Das Inhaltselement nur bestimmten Mitgliedergruppen anzeigen.   |
+| **Erlaubte&nbsp;Mitgliedergruppen:**  | Diese Gruppen können das Inhaltselement sehen.                  |

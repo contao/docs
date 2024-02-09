@@ -15,8 +15,7 @@ access to individual elements as needed.
 
 ![Restrict access to a content element]({{% asset "images/manual/article-management/en/restrict-access-to-a-module.png" %}}?classes=shadow)
 
-| Info |
-| ---- | --- |
-| **Protect element:** | The content element is invisible by default and is only displayed after a member has logged in to the frontend. |
-| **Allowed&nbsp;member&nbsp;groups:** | Here you define who has access to the content element. |
-| **Show guests only:** | The content element is visible by default and is hidden as soon as a member has logged in to the frontend. |
+| Info                                   |                                                            |
+|----------------------------------------|------------------------------------------------------------|
+| **Protect element:**                   | Show the content element to certain member groups only.    |
+| **Allowed&nbsp;member&nbsp;groups:**   | These groups will be able to see the content element.      |

@@ -4,7 +4,9 @@ description: "Inhaltselemente im Bereich Akkordeon"
 url: "artikelverwaltung/inhaltselemente/akkordeon"
 aliases:
     - /de/artikelverwaltung/inhaltselemente/akkordeon/
-weight: 22
+hidden: true
+type: redirect
+target: "/de/artikelverwaltung/inhaltselemente/legacy-elemente/"
 ---
 
 

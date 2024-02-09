@@ -4,7 +4,9 @@ description: "Inhaltselemente im Bereich Content-Slider"
 url: "artikelverwaltung/inhaltselemente/content-slider"
 aliases:
     - /de/artikelverwaltung/inhaltselemente/content-slider/
-weight: 23
+hidden: true
+type: redirect
+target: "/de/artikelverwaltung/inhaltselemente/legacy-elemente/"
 ---
 
 

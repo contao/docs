@@ -4,7 +4,7 @@ description: "Inhaltselemente im Bereich Datei-Elemente"
 url: "artikelverwaltung/inhaltselemente/datei-elemente"
 aliases:
     - /de/artikelverwaltung/inhaltselemente/datei-elemente/
-weight: 26
+weight: 25
 ---
 
 
@@ -23,13 +23,11 @@ erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](.
 **Quelldatei:** Hier kannst du die Download-Datei auswählen.
 
 
-{{< version "4.8" >}}
-
 ### Download-Einstellungen
 
 **Im Browser anzeigen:** Zeige die Datei im Browser an, anstatt den Download-Dialog zu öffnen.
 
-**Metadaten überschreiben:** Die Metadaten aus der Dateiverwaltung überschreiben.
+**Link überschreiben:** Einen benutzerdefinierten Link-Text und Link-Titel festlegen.
 
 **Link-Text:** Der Link-Text wird anstelle des Dateinamens angezeigt.
 
@@ -37,8 +35,6 @@ erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](.
 
 
 ### Vorschau-Einstellungen
-
-{{< version "4.13" >}}
 
 {{% notice info %}}
 Die PHP-Erweiterung Imagick oder Gmagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu 
@@ -50,25 +46,11 @@ kommen.
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
 auswählen:
 
-| Relatives Format               |                                                                                                                    |
-|:-------------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| Proportional                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-| An&nbsp;Rahmen&nbsp;anpassen   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-
-&nbsp;
-
-| Exaktes Format    |                                                                                                    |
-|:------------------|:---------------------------------------------------------------------------------------------------|
-| Wichtiger Teil    | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben.                         |
-| Links / Oben      | Erhält den linken Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.        |
-| Mitte / Oben      | Erhält den mittleren Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.     |
-| Rechts / Oben     | Erhält den rechten Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.       |
-| Links / Mitte     | Erhält den linken Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.     |
-| Mitte / Mitte     | Erhält den mittleren Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.  |
-| Rechts / Mitte    | Erhält den rechten Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.    |
-| Links / Unten     | Erhält den linken Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.       |
-| Mitte / Unten     | Erhält den mittleren Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.    |
-| Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
+| Eigene Größen                                  |                                                                                                                           |
+|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+| Exaktes&nbsp;Format&nbsp;(wichtiger&nbsp;Teil) | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben. Falls erforderlich, wird das Bild beschnitten. |
+| Proportional                                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
+| An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 
 **Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße
 geöffnet.
@@ -77,13 +59,17 @@ geöffnet.
 generiert werden. Bei 0 werden alle Vorschaubilder generiert in unserem Fall also 10. Wenn du nur die erste Seite deines 
 PDFs als Vorschaubild ausgeben möchtest, trägst du eine 1 im Feld ein.
 
+{{% notice info %}}
+Beachte, dass nur die Dateitypen heruntergeladen werden können, die du in den Backend-Einstellungen unter »Erlaubte
+Download-Dateitypen« festgelegt hast.
+{{% /notice %}}
+
 
 ### Template-Einstellungen
 
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_download` überschreiben.
-
-Beachte, dass nur die Dateitypen heruntergeladen werden können, die du in den Backend-Einstellungen unter »Erlaubte 
-Download-Dateitypen« festgelegt hast.
+{{< tabs groupId="contao-version" >}}
+{{% tab name="Contao 4" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_download` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -91,20 +77,34 @@ Das Element generiert folgenden HTML-Code:
 ```html
 <div class="ce_download block">
     <figure class="image_container">
-        <a href="assets/previews/…/file-page1.png" data-lightbox="lb3">
-            <img src="assets/images/…/file-page1.png" width="177" height="250" alt="">
-        </a>
-    </figure>
-    <figure class="image_container">
-        <a href="assets/previews/…/file-page2.png" data-lightbox="lb3">
-            <img src="assets/images/…/file-page2.png" width="177" height="250" alt="">
+        <a href="…" data-lightbox="lb3">
+            <img src="…" width="…" height="…" alt="">
         </a>
     </figure>
     <p class="download-element ext-pdf">
-        <a href="download.html?file=files/download/file.pdf&amp;cid=3" title="Die Datei … herunterladen" type="application/pdf">… <span class="size">(…)</span></a>
+        <a href="…" title="Die Datei … herunterladen" type="application/pdf">… <span class="size">(…)</span></a>
     </p>
 </div>
 ```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/download` überschreiben.
+
+**HTML-Ausgabe**  
+Das Element generiert folgenden HTML-Code:
+
+```html
+<div class="download-element ext-pdf content-download">
+    <a href="…" title="Die Datei … herunterladen" type="application/pdf">…</a>
+    <figure>
+        <a href="…" data-lightbox="…" class="cboxElement">                                                                                   
+            <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
+        </a>
+    </figure>
+</div>
+```
+{{% /tab %}}
+{{</tabs>}}
 
 
 ## Downloads
@@ -116,7 +116,7 @@ der »Datei speichern unter …«-Dialog, und du kannst die Datei auf deinem lok
 
 Die Besonderheit in Contao ist, dass diese Download-Links auch mit geschützten Dateien funktionieren, auf die du nicht 
 direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
-erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung](../../../dateiverwaltung/).
+erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung](de/dateiverwaltung/).
 
 
 ### Quelle
@@ -125,8 +125,8 @@ erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung
 sein sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen herunterladbaren 
 Dateien.
 
+**Home-Verzeichnis verwenden:** Das Home-Verzeichnis als Dateiquelle verwenden, wenn sich ein Mitglied angemeldet hat.
 
-{{< version "4.8" >}}
 
 ###  Download-Einstellungen
 
@@ -147,8 +147,6 @@ wurden, werden sie bei der Aktivierung nicht angezeigt.
 
 ### Vorschau-Einstellungen
 
-{{< version "4.13" >}}
-
 {{% notice info %}}
 Die PHP-Erweiterung Imagick oder Gmagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu 
 kommen.
@@ -159,25 +157,11 @@ kommen.
 **Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
 auswählen:
 
-| Relatives Format               |                                                                                                                    |
-|:-------------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| Proportional                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-| An&nbsp;Rahmen&nbsp;anpassen   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert. |
-
-&nbsp;
-
-| Exaktes Format    |                                                                                                    |
-|:------------------|:---------------------------------------------------------------------------------------------------|
-| Wichtiger Teil    | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben.                         |
-| Links / Oben      | Erhält den linken Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.        |
-| Mitte / Oben      | Erhält den mittleren Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.     |
-| Rechts / Oben     | Erhält den rechten Teil eines Querformat-Bildes und den oberen Teil eines Hochformat-Bildes.       |
-| Links / Mitte     | Erhält den linken Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.     |
-| Mitte / Mitte     | Erhält den mittleren Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.  |
-| Rechts / Mitte    | Erhält den rechten Teil eines Querformat-Bildes und den mittleren Teil eines Hochformat-Bildes.    |
-| Links / Unten     | Erhält den linken Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.       |
-| Mitte / Unten     | Erhält den mittleren Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.    |
-| Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
+| Eigene Größen                                  |                                                                                                                           |
+|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
+| Exaktes&nbsp;Format&nbsp;(wichtiger&nbsp;Teil) | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben. Falls erforderlich, wird das Bild beschnitten. |
+| Proportional                                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
+| An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 
 **Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße
 geöffnet.
@@ -186,14 +170,17 @@ geöffnet.
 generiert werden. Bei 0 werden alle Vorschaubilder generiert in unserem Fall also 10. Wenn du nur die erste Seite deines
 PDFs als Vorschaubild ausgeben möchtest, trägst du eine 1 im Feld ein.
 
+{{% notice info %}}
+Beachte, dass nur die Dateitypen heruntergeladen werden können, die du in den Backend-Einstellungen unter »Erlaubte
+Download-Dateitypen« festgelegt hast.
+{{% /notice %}}
 
 
 ### Template-Einstellungen
 
-**Individuelles Template:** Hier kannst du das Standard-Template `ce_downloads` überschreiben.
-
-Beachte, dass nur die Dateitypen heruntergeladen werden können, die du in den Backend-Einstellungen unter »Erlaubte 
-Download-Dateitypen« festgelegt hast.
+{{< tabs groupId="contao-version" >}}
+{{% tab name="Contao 4" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_downloads` überschreiben.
 
 **HTML-Ausgabe**  
 Das Element generiert folgenden HTML-Code:
@@ -201,27 +188,37 @@ Das Element generiert folgenden HTML-Code:
 ```html
 <div class="ce_downloads block">
     <ul>
-        <li class="download-element ext-docx">
+        <li class="download-element ext-jpg">
             <figure class="image_container">
-                <a href="assets/previews/…/file1.svg" data-lightbox="lb3">
-                    <img src="assets/images/…file1.svg" width="250" height="250" alt="">
+                <a href="…" data-lightbox="lb3">
+                    <img src="…" width="…" height="…" alt="">
                 </a>
             </figure>
-            <a href="downloads.html?file=files/download/file1.docx&amp;cid=3" title="Die Datei … herunterladen" type="application/msword">… <span class="size">(…)</span></a>
-        </li>
-        <li class="download-element ext-pdf">
-            <figure class="image_container">
-                <a href="assets/previews/…/file2-page1.png" data-lightbox="lb3">
-                    <img src="assets/images/…/file2-page1.png" width="177" height="250" alt="">
-                </a>
-            </figure>
-            <figure class="image_container">
-                <a href="assets/previews/…/file2-page2.png" data-lightbox="lb3">
-                    <img src="assets/images/…/file2-page2.png" width="177" height="250" alt="">
-                </a>
-            </figure>
-            <a href="downloads.html?file=files/download/file2.pdf&amp;cid=3" title="Die Datei … herunterladen" type="application/pdf">… <span class="size">(…)</span></a>
+            <a href="…" title="Die Datei … herunterladen" type="application/jpeg">… <span class="size">(…)</span></a>
         </li>
     </ul>
 </div>
 ```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_elements/downloads` überschreiben.
+
+**HTML-Ausgabe**  
+Das Element generiert folgenden HTML-Code:
+
+```html
+<div class="content-downloads">
+    <ul>
+        <li class="download-element ext-jpg">
+            <a href="…" title="Die Datei … herunterladen" type="image/jpeg">…</a>
+            <figure>
+                <a href="…" data-lightbox="…" class="cboxElement">
+                    <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
+                </a>
+            </figure>
+        </li>
+    </ul>
+</div>
+```
+{{% /tab %}}
+{{</tabs>}}
