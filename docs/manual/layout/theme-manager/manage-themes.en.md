@@ -109,9 +109,7 @@ end: "Activate" refers to the assignment of one of the page layouts of the new t
 As you already know from the previous instructions, the merging of design and content takes place in the Page 
 Structure, and the Page Layout determines the layout of a page.
 
-For illustration purposes, the theme "[Contao Official Demo](https://packagist.org/packages/contao/official-demo)" was 
-imported and the page layout "2 columns - \[ default \]" was assigned to the starting point of the website in the page 
-structure.
+For illustration purposes, the "[Contao Demo](https://github.com/contao/contao-demo)" theme.
 
 ![Contao Official Demo]({{% asset "images/manual/layout/theme-manager/en/contao-official-demo.png" %}}?classes=shadow)
 
