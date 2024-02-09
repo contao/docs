@@ -3,7 +3,7 @@ title: 'File elements'
 description: 'Content elements in the area file elements.'
 aliases:
     - /en/article-management/content-elements/file-elements/
-weight: 26
+weight: 25
 ---
 
 
@@ -22,13 +22,11 @@ from your browser. This way you can easily create a protected download area. For
 **Source file:** Here you can select the download file.
 
 
-{{< version "4.8" >}}
-
 ### Download settings
 
 **Show in browser:** Display the file in the browser instead of opening the download dialog.
 
-**Overwrite meta data:** Overwrite the meta data from the file manager.
+**Overwrite link:** Overwrite the link text and link title from the file manager.
 
 **Link text:** The link text is displayed instead of the file name.
 
@@ -36,8 +34,6 @@ from your browser. This way you can easily create a protected download area. For
 
 
 ### Preview settings
-
-{{< version "4.13" >}}
 
 {{% notice info %}}
 The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
@@ -47,23 +43,11 @@ The PHP extension Imagick or Gmagick must be installed on the server to enjoy th
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
-| Relative format |  |
-| --------------- | --- |
-| Proportional | The longer side of the image is adapted to the given dimensions and the image is proportionally reduced. |
-| Fit to frame | The shorter side of the image is adjusted to the given dimensions and the image is proportionally reduced. |
-
-| Exact format |  |
-| ------------ | --- |
-| Important part | Preserves the important part of the image as specified in the file manager. |
-| Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
-| Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
-| Right / Top | Get the right part of a landscape image and the upper part of a portrait image. |
-| Left / Middle | Preserves the left part of a landscape image and the center part of a portrait image. |
-| Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
-| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
-| Left / Bottom | Contains the left part of a landscape image and the lower part of a portrait image. |
-| Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
-| Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
 **Full-size view/new window:** If this option is selected, the image will be opened in its original size when clicked.
 
@@ -71,13 +55,18 @@ The PHP extension Imagick or Gmagick must be installed on the server to enjoy th
 With 0 all thumbnails are generated in our case so 10. If you want to output only the first page of your PDF as a 
 preview image, enter 1 in the field.
 
+{{% notice info %}}
+Note that only those file types can be downloaded that you have specified in the backend settings under "Download
+file types".
+{{% /notice %}}
+
 
 ### Template settings
 
-**Content element template:** Here you can overwrite the default `ce_download` template.
 
-Note that only those file types can be downloaded that you have specified in the backend settings under "Download 
-file types".
+{{< tabs groupId="contao-version" >}}
+{{% tab name="Contao 4" %}}
+**Content element template:** Here you can overwrite the content element `ce_download` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -85,20 +74,34 @@ The element generates the following HTML code:
 ```html
 <div class="ce_download block">
     <figure class="image_container">
-        <a href="assets/previews/…/file-page1.png" data-lightbox="lb3">
-            <img src="assets/images/…/file-page1.png" width="177" height="250" alt="">
-        </a>
-    </figure>
-    <figure class="image_container">
-        <a href="assets/previews/…/file-page2.png" data-lightbox="lb3">
-            <img src="assets/images/…/file-page2.png" width="177" height="250" alt="">
+        <a href="…" data-lightbox="lb3">
+            <img src="…" width="…" height="…" alt="">
         </a>
     </figure>
     <p class="download-element ext-pdf">
-        <a href="download.html?file=files/download/file.pdf&amp;cid=3" title="Download …" type="application/pdf">… <span class="size">(…)</span></a>
+        <a href="…" title="Die Datei … herunterladen" type="application/pdf">… <span class="size">(…)</span></a>
     </p>
 </div>
 ```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+**Content element template:** Here you can overwrite the content element `content_element/download` template.
+
+**HTML Output**  
+The element generates the following HTML code:
+
+```html
+<div class="download-element ext-pdf content-download">
+    <a href="…" title="Die Datei … herunterladen" type="application/pdf">…</a>
+    <figure>
+        <a href="…" data-lightbox="…" class="cboxElement">                                                                                   
+            <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
+        </a>
+    </figure>
+</div>
+```
+{{% /tab %}}
+{{</tabs>}}
 
 
 ## Downloads
@@ -119,13 +122,11 @@ section [File management](/en/file-manager/).
 folder, Contao automatically takes all downloadable files contained in it.
 
 
-{{< version "4.8" >}}
-
 ### Download settings
 
 **Show in browser:** Display the file in the browser instead of opening the download dialog.
 
-**Sort by:** Here you select the sort order. The following sort orders are available:
+**Order by:** Here you select the sort order. The following sort orders are available:
 
 - Custom order
 - File name (ascending)
@@ -134,13 +135,11 @@ folder, Contao automatically takes all downloadable files contained in it.
 - Date (descending)
 - Random order
 
-**Ignore files without meta data:** If no metadata for the appropriate page language has been entered for the files, 
+**Ignore files without metadata:** If no metadata for the appropriate page language has been entered for the files, 
 they are not displayed when activated.
 
 
 ### Preview settings
-
-{{< version "4.13" >}}
 
 {{% notice info %}}
 The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
@@ -150,23 +149,11 @@ The PHP extension Imagick or Gmagick must be installed on the server to enjoy th
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
-| Relative format |  |
-| --------------- | --- |
-| Proportional | The longer side of the image is adapted to the given dimensions and the image is proportionally reduced. |
-| Fit to frame | The shorter side of the image is adjusted to the given dimensions and the image is proportionally reduced. |
-
-| Exact format |  |
-| ------------ | --- |
-| Important part | Preserves the important part of the image as specified in the file manager. |
-| Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
-| Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
-| Right / Top | Get the right part of a landscape image and the upper part of a portrait image. |
-| Left / Middle | Preserves the left part of a landscape image and the center part of a portrait image. |
-| Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
-| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
-| Left / Bottom | Contains the left part of a landscape image and the lower part of a portrait image. |
-| Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
-| Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
 **Full-size view/new window:** If this option is selected, the image will be opened in its original size when clicked.
 
@@ -174,12 +161,17 @@ The PHP extension Imagick or Gmagick must be installed on the server to enjoy th
 With 0 all thumbnails are generated in our case so 10. If you want to output only the first page of your PDF as a
 preview image, enter 1 in the field.
 
+{{% notice info %}}
+Note that only those file types can be downloaded that you have specified in the backend settings under "Download file 
+types".
+{{% /notice %}}
+
 
 ### Template settings
 
-**Content element template:** Here you can overwrite the default `ce_downloads` template.
-
-Note that only those file types can be downloaded that you have specified in the backend settings under "Download file types".
+{{< tabs groupId="contao-version" >}}
+{{% tab name="Contao 4" %}}
+**Content element template:** Here you can overwrite the content element `ce_downloads` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -187,27 +179,37 @@ The element generates the following HTML code:
 ```html
 <div class="ce_downloads block">
     <ul>
-        <li class="download-element ext-docx">
+        <li class="download-element ext-jpg">
             <figure class="image_container">
-                <a href="assets/previews/…/file1.svg" data-lightbox="lb3">
-                    <img src="assets/images/…file1.svg" width="250" height="250" alt="">
+                <a href="…" data-lightbox="lb3">
+                    <img src="…" width="…" height="…" alt="">
                 </a>
             </figure>
-            <a href="downloads.html?file=files/download/file1.docx&amp;cid=3" title="Download …" type="application/msword">… <span class="size">(…)</span></a>
-        </li>
-        <li class="download-element ext-pdf">
-            <figure class="image_container">
-                <a href="assets/previews/…/file2-page1.png" data-lightbox="lb3">
-                    <img src="assets/images/…/file2-page1.png" width="177" height="250" alt="">
-                </a>
-            </figure>
-            <figure class="image_container">
-                <a href="assets/previews/…/file2-page2.png" data-lightbox="lb3">
-                    <img src="assets/images/…/file2-page2.png" width="177" height="250" alt="">
-                </a>
-            </figure>
-            <a href="downloads.html?file=files/download/file2.pdf&amp;cid=3" title="Download …" type="application/pdf">… <span class="size">(…)</span></a>
+            <a href="…" title="Die Datei … herunterladen" type="application/jpeg">… <span class="size">(…)</span></a>
         </li>
     </ul>
 </div>
 ```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+**Content element template:** Here you can overwrite the content element `content_elements/downloads` template.
+
+**HTML Output**  
+The element generates the following HTML code:
+
+```html
+<div class="content-downloads">
+    <ul>
+        <li class="download-element ext-jpg">
+            <a href="…" title="Die Datei … herunterladen" type="image/jpeg">…</a>
+            <figure>
+                <a href="…" data-lightbox="…" class="cboxElement">
+                    <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
+                </a>
+            </figure>
+        </li>
+    </ul>
+</div>
+```
+{{% /tab %}}
+{{</tabs>}}

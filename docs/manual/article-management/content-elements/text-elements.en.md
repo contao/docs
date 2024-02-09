@@ -13,6 +13,9 @@ weight: 21
 The content element "Code" adds formatted code to the article. You enter the code with a so-called code editor. Contao 
 uses the Open Source code editor from [Ace](https://ace.c9.io/).
 
+
+### Text/HTML/Code
+
 **Syntax highlighting:** Here you can select the desired script language. The following script languages are available:
 
 - Apache
@@ -42,9 +45,12 @@ uses the Open Source code editor from [Ace](https://ace.c9.io/).
 
 **code:** Here you can enter the desired code. Note that the code will not be executed.
 
-{{< tabs groupId="template-data-example" >}}
+
+### Template settings
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individual template**: Here you can overwrite the standard `ce_code` template.
+**Content element template:** Here you can overwrite content element `ce_code` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -58,7 +64,7 @@ The element generates the following HTML code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individual template**: Here you can overwrite the standard `content_element/code` template.
+**Content element template:** Here you can overwrite the content element `content_element/code` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -87,7 +93,15 @@ If you leave the field for the term empty, you can create multiple details for a
 
 ![Description list]({{% asset "images/manual/article-management/en/description-list.png" %}}?classes=shadow)
 
-**Individual template**: Here you can overwrite the standard `content_element/description_list` template.
+#### List items
+
+**Description list items:** You can add a list of terms and details to the description list. If you leave the field for 
+the term empty, you can create multiple details for a term.
+
+
+### Template settings
+
+**Content element template:** Here you can overwrite the content element `content_element/description_list` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -104,15 +118,21 @@ The element generates the following HTML code:
 
 ## Heading
 
-The content element "Heading" adds a heading to the article. Most content elements support entering a heading directly, so you don't have to use the element separately each time.
+The content element "Heading" adds a heading to the article. Most content elements support entering a heading directly, 
+so you don't have to use the element separately each time.
 
 **heading:** Here you can enter the heading.
 
-With the select menu to the right you can define the semantic hierarchy of this heading. The most important headline of the page is shown as `h1` (usually only one per page), while the values `h2` up to `h6` create hierarchically lower headlines and of course can occur several times on a page.
+With the select menu to the right you can define the semantic hierarchy of this heading. The most important headline of 
+the page is shown as `h1` (usually only one per page), while the values `h2` up to `h6` create hierarchically lower 
+headlines and of course can occur several times on a page.
 
-{{< tabs groupId="template-data-example" >}}
+
+### Template settings
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individual template**: Here you can overwrite the standard  `ce_headline` template.
+**Content element template:** Here you can overwrite the content element  `ce_headline` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -122,7 +142,7 @@ The element generates the following HTML code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individual template**: Here you can overwrite the standard  `content_element/headline` template.
+**Content element template:** Here you can overwrite the content element `content_element/headline` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -137,16 +157,23 @@ The element generates the following HTML code:
 
 ## HTML
 
-The content element "HTML" adds arbitrary HTML code to the article. Note that not all HTML tags are allowed by default. The list of allowed tags can be configured in the backend settings.
+The content element "HTML" adds arbitrary HTML code to the article. Note that not all HTML tags are allowed by default. 
+The list of allowed tags can be configured in the backend settings.
+
+
+#### Text/HTML/Code
 
 **HTML code:** Here you can enter the HTML code.
 
-{{< tabs groupId="template-data-example" >}}
+
+### Template settings
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individual template:** Here you can overwrite the standard `ce_html` template.
+**Content element template:** Here you can overwrite the content element `ce_html` template.
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individual template:** Here you can overwrite the standard `content_element/html` template.
+**Content element template:** Here you can overwrite the content element `content_element/html` template.
 {{% /tab %}}
 {{</tabs>}}
 
@@ -156,15 +183,28 @@ The content element has no enclosing HTML markup.
 
 ## List
 
-The content element "List" adds a non-nested list to the article. You can choose between an ordered list and an unordered list enumeration. A JavaScript assistant supports you in creating and editing the list items.
+The content element "List" adds a non-nested list to the article. You can choose between an ordered list and an 
+unordered list enumeration. A JavaScript assistant supports you in creating and editing the list items.
 
 ![JavaScript wizard for listings]({{% asset "images/manual/article-management/en/javascript-assistant-for-lists.png" %}}?classes=shadow)
 
-With a click on the icon next ![Import list data from a CSV file]({{% asset "icons/tablewizard.svg" %}}?classes=icon) to the field name "List entries" you open the CSV import wizard, with which you can import list data from a CSV file. The CSV file must have been transferred to the upload directory before.
+With a click on the icon next ![Import list data from a CSV file]({{% asset "icons/tablewizard.svg" %}}?classes=icon) to 
+the field name "List entries" you open the CSV import wizard, with which you can import list data from a CSV file. The 
+CSV file must have been transferred to the upload directory before.
 
-{{< tabs groupId="template-data-example" >}}
+
+### List items
+
+**List type:** Please choose between a ordered or unordered list.
+
+**List items:** Enter an entry in the list.
+
+
+### Template settings
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individual Template**: Here you can overwrite the standard `ce_list` template.
+**Content element template:** Here you can overwrite the content element `ce_list` template.
 
 **HTML Output**
 The element generates the following HTML code:
@@ -180,7 +220,7 @@ The element generates the following HTML code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individual Template**: Here you can overwrite the standard `content_element/list` template.
+**Content element template:** Here you can overwrite the content element `content_element/list` template.
 
 **HTML Output**
 The element generates the following HTML code:
@@ -200,19 +240,28 @@ The element generates the following HTML code:
 A numbered enumeration uses the `<ol>` tag instead of the `<ul>` tag.
 
 
-
 ## Markdown
 
 The content element "Markdown" is used to generate HTML code from a markdown text.
 
-| Markdown source |   |
-| --------------- | - |
-| **Text:** | Here you can enter the desired markdown code. |
-| **File:** | {{< version-tag "4.12" >}} Here you can select a Markdown file and use it as content. |
 
-{{< tabs groupId="template-data-example" >}}
+#### Text/HTML/Code
+
+**Markdown source:** Please choose the Markdown source.
+
+| Markdown source |                                                                                        |
+|-----------------|----------------------------------------------------------------------------------------|
+| **Text:**       | Here you can enter the desired markdown code.                                          |
+| **File:**       | {{< version-tag "4.12" >}} Here you can select a Markdown file and use it as content.  |
+
+**Code:** Note that the code will not be executed.
+
+
+### Template settings
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individual template**: Here you can `ce_markdown` overwrite the default template.
+**Content element template:** Here you can `ce_markdown` overwrite the content element template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -227,7 +276,7 @@ The element generates the following HTML code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individual template**: Here you can `content_element/markdown` overwrite the default template.
+**Content element template:** Here you can `content_element/markdown` overwrite the content element template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -478,26 +527,38 @@ With a click on the icon next ![Import list data from a CSV file]({{% asset "ico
 the field label "Table entries" you open the CSV import wizard, with which you can import table data from a CSV file. 
 The CSV file has to be transferred to the upload directory first.
 
-**Summary:** An accessible website should contain a short summary of the content of each table, which you can enter here.
 
-**Add header:** If you select this option, the first row of the table is formatted as a header using the tag `<thead>`.
+### Table configuration
 
-**Add footer:** If you select this option, the last row of the table is formatted as a footer using the tag `<tfoot>`.
+**Table summary:** An accessible website should contain a short summary of the content of each table, which you can 
+enter here.
 
-**Add row headings:** If you select this option, the first column of the table is formatted as a row header using the 
+**Add table header:** If you select this option, the first row of the table is formatted as a header using the tag 
+`<thead>`.
+
+**Add table footer:** If you select this option, the last row of the table is formatted as a footer using the tag 
+`<tfoot>`.
+
+**Use row headers:** If you select this option, the first column of the table is formatted as a row header using the 
 tag `<th>`.
+
+
+### Sorting options
 
 **Sortable table:** Makes the table sortable in the frontend using JavaScript. The `j_tablesort` template must be 
 included in the page layout.
 
-**Sorting index:** The number of the column to be sorted by default, as long as the visitor has not made a selection. 
+**Sort index:** The number of the column to be sorted by default, as long as the visitor has not made a selection. 
 The count starts at 0.
 
 **Sort order:** The order of the default sort (ascending or descending).
 
-{{< tabs groupId="template-data-example" >}}
+
+### Template settings
+
+{{< tabs groupId="contao-version" >}}
 {{% tab name="Contao 4" %}}
-**Individual template:** Here you can overwrite the standard `ce_table` template.
+**Content element template:** Here you can overwrite the content element `ce_table` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -545,7 +606,7 @@ The element generates the following HTML code:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individual template:** Here you can overwrite the standard `content_element/table` template.
+**Content element template:** Here you can overwrite the content element `content_element/table` template.
 
 **HTML Output**  
 The element generates the following HTML code:
@@ -611,7 +672,13 @@ With the select menu to the right you can define the semantic hierarchy of this 
 the page is shown as `h1` (usually only one per page), while the values `h2` up to `h6` create hierarchically lower 
 headlines and of course can occur several times on a page.
 
+
+### Text/HTML/Code
+
 **text:** Here you enter the text of the content element.
+
+
+### Image settings
 
 **Add an image**
 
@@ -620,27 +687,18 @@ You can add an image to the text element, which is then surrounded by your text.
 **Source file:** Here you select the image to be inserted. If you have not yet transferred the image to the server, 
 you can upload it here without leaving the input mask.
 
+**Full-size view/new window:** If this option is selected, the image will be opened in its original size when clicked.
+This option is not available for linked images.
+
 ![Adding an image to a text]({{% asset "images/manual/article-management/en/add-an-image-to-a-text.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
-| Relative format |  |
-| --------------- | --- |
-| Proportional | The longer side of the image is adapted to the given dimensions and the image is proportionally reduced. |
-| Fit to frame | The shorter side of the image is adjusted to the given dimensions and the image is proportionally reduced. |
-
-| Exact format |  |
-| ------------ | --- |
-| Important part | Preserves the important part of the image as specified in the file manager. |
-| Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
-| Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
-| Right / Top | Get the right part of a landscape image and the upper part of a portrait image. |
-| Left / Middle | Preserves the left part of a landscape image and the center part of a portrait image. |
-| Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
-| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
-| Left / Bottom | Contains the left part of a landscape image and the lower part of a portrait image. |
-| Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
-| Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
 **Image alignment:** Here you can set the alignment of the image. If it is inserted 
 ![above]({{% asset "icons/above.svg" %}}?classes=icon) **above**, 
@@ -649,10 +707,7 @@ you can upload it here without leaving the input mask.
 ![right-justified]({{% asset "icons/right.svg" %}}?classes=icon) **right-aligned**. When **left-** or **right-aligned**, 
 the text **flows around** the image (as symbolized by the icon).
 
-**Full-size view/new window:** If this option is selected, the image will be opened in its original size when clicked. 
-This option is not available for linked images.
-
-**Overwrite meta data:**  Here you can overwrite the meta data from the file manager.
+**Overwrite metadata:**  Here you can overwrite the metadata from the file manager.
 
 **Alternate text:** Here you can enter an alternative text for the image *(alt attribute)*. Accessible web pages should 
 contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternative 
@@ -665,12 +720,12 @@ texts are also evaluated by search engines and are therefore an important tool f
 
 **Image caption:** Here you can enter a caption.
 
-{{< tabs groupId="template-data-example" >}}
-{{% tab name="Contao 4" %}}
-**Image margin:** Here you can define the distance between the image and the text. The order of the input fields is
-clockwise "top, right, bottom, left".
 
-**Individual template:** Here you can overwrite the standard `ce_text` template.
+### Template settings
+
+{{< tabs groupId="contao-version" >}}
+{{% tab name="Contao 4" %}}
+**Content element template:** Here you can overwrite the content element `ce_text` template.
 
 **HTML Output**
 The element generates the following HTML code:
@@ -696,7 +751,7 @@ If an image was added to the text, the HTML output looks like this:
 ```
 {{% /tab %}}
 {{% tab name="Contao 5" %}}
-**Individual template:** Here you can overwrite the standard `content_element/text` template.
+**Content element template:** Here you can overwrite the content element `content_element/text` template.
 
 **HTML Output**
 The element generates the following HTML code:
@@ -736,6 +791,9 @@ If an image was added to the text, the HTML output looks like this:
 The content element "Unfiltered HTML" adds unfiltered HTML to the article. Please be careful when you insert things that 
 you do not understand. This could allow attackers to steal your identity or take    take control of the entire system.
 
-**Individual template:** Here you can overwrite the standard `content_element/unfiltered_html` template.
+
+### Template settings
+
+**Content element template:** Here you can overwrite the content element `content_element/unfiltered_html` template.
 
 The content element has no enclosing HTML markup.
