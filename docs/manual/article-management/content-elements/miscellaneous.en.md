@@ -10,7 +10,7 @@ weight: 28
 {{< version "5.3" >}}
 
 If you select one of these element types, you create a nested content element. In the past, you had to create a
-wrapper start and a wrapper end and the content was then placed inside.
+wrapper start and a wrapper stop and the content was then placed inside.
 
 ![The time before the nested elements]({{% asset "images/manual/article-management/en/the-time-before-the-nested-elements.png" %}}?classes=shadow)
 
