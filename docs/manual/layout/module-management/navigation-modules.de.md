@@ -340,7 +340,7 @@ Beachte, dass das aktive Element als `<strong>` und nicht als Link ausgegeben wi
 Das Frontend-Modul »HTML-Sitemap« fügt der Webseite eine Übersicht aller veröffentlichten und nicht versteckten Seiten 
 hinzu. Die einzelnen Einträge werden als Links ausgegeben, sodass Besucher direkt zu einer bestimmten Seite springen 
 können. Ob eine Seite in der HTML-Sitemap angezeigt wird oder nicht, hängt auch von ihrer Konfiguration in der 
-Seitenstruktur ab (vgl. [Experten-Einstellungen](../../seitenstruktur/seiten-konfigurieren/#experten-einstellungen)).
+Seitenstruktur ab (vgl. [Experten-Einstellungen](/de/seitenstruktur/regulaere-seite/#experten-einstellungen)).
 
 **Geschützte Seiten anzeigen:** Wenn du diese Option auswählst, werden auch geschützte Seiten angezeigt, die sonst nur 
 für angemeldete Mitglieder verfügbar sind.

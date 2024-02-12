@@ -116,7 +116,7 @@ der »Datei speichern unter …«-Dialog, und du kannst die Datei auf deinem lok
 
 Die Besonderheit in Contao ist, dass diese Download-Links auch mit geschützten Dateien funktionieren, auf die du nicht 
 direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
-erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung](de/dateiverwaltung/).
+erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung](/de/dateiverwaltung/).
 
 
 ### Quelle

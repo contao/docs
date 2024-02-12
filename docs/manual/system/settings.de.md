@@ -223,15 +223,15 @@ php vendor/bin/contao-console contao:cron
 
 **Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine 
 Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
-[Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
+[Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
 **Standardgruppe:** Hier kannst du festlegen, welcher Gruppe standardmäßig die Seiten gehören, für die keine 
 Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
-[Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
+[Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
 **Standardzugriffsrechte:** Hier kannst du festlegen, welche Zugriffsrechte standardmäßig für die Seiten gelten, für 
 die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
-[Zugriffsrechte](../../seitenstruktur/seiten-konfigurieren/#zugriffsrechte).
+[Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
 
 

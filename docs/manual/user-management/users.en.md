@@ -316,6 +316,7 @@ Finally you have to create a user and assign him to the group.
 In section [Access Rights](/en/site-structure/regular-page/#access-rights), you have already learned that each page 
 belongs to a specific user and group, and that there are different levels of access based on that.
 
+
 ![access rights of a page]({{% asset "images/manual/user-management/en/access-rights-of-a-page.png" %}}?classes=shadow)
 
 For example, this page belongs to the user `Helen Lewis` who can edit, move or delete it and the articles it contains. 
