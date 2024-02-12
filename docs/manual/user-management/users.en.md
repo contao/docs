@@ -9,7 +9,7 @@ weight: 10
 
 Up to now we have worked exclusively as an administrator who has access to all areas and elements of the system. However, a user will usually only be given access to the resources that he or she actually needs for a specific task.
 
-![The back end from the user's perspective]({{% asset "images/manual/layout/user-management/en/the-back-end-from-the-perspective-of-a-user.png" %}}?classes=shadow)
+![The back end from the user's perspective]({{% asset "images/manual/user-management/en/the-back-end-from-the-perspective-of-a-user.png" %}}?classes=shadow)
 
 Normal users, unlike administrators, have no rights at all by default and are only allowed to do what you explicitly allow them to do. The very comprehensive rights management in Contao allows you as an administrator to not only restrict access to certain back end modules, but also to disable every single input field if necessary.
 
@@ -43,7 +43,7 @@ Similar to the pagemount, which determines the entry point into the page structu
 
 The user only sees the folders `files/public/media/content-images`, `files/public/media/documents` and `files/public/media/slider` any subfolders they may contain. All other directories, which are on the same or a higher level, are not displayed
 
-![The file management from the user's point of view]({{% asset "images/manual/layout/user-management/en/filemanager-from-the-perspective-of-a-user.png" %}}?classes=shadow)
+![The file management from the user's point of view]({{% asset "images/manual/user-management/en/filemanager-from-the-perspective-of-a-user.png" %}}?classes=shadow)
 
 **Filemounts:** Here you select the filemounts of the group.
 
@@ -235,7 +235,7 @@ Finally you have to create a user and assign him to the group.
 
 ### Requirements in the page structure
 
-In section [Access Rights](/en/layout/site-structure/configure-pages/#access-rights), you have already learned that each page belongs to a specific user and group, and that there are different levels of access based on that.
+In section [Access Rights](/en/site-structure/regular-page/#access-rights), you have already learned that each page belongs to a specific user and group, and that there are different levels of access based on that.
 
 ![access rights of a page]({{% asset "images/manual/user-management/en/access-rights-of-a-page.png" %}}?classes=shadow)
 
