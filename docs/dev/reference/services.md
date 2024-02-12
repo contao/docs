@@ -179,7 +179,7 @@ Contao's `AbstractController` is also using this functionality in the `tagRespon
 {{< version "4.7" >}}
 
 Contao offers an opt-in service (`contao.opt-in`) so that any opt-in process can be tracked centrally. The opt-in references will be saved 
-for the legally required duration and are then automatically discarded (if applicable).
+for the legally required duration and are then automatically discarded (if applicable). The maximum length of the prefix before the "-" is 6.
 
 ```php
 namespace App;
@@ -198,7 +198,7 @@ class Example
 
     public function createOptIn(string $email, ExampleModel $model, string $optInUrl): void
     {
-        $token = $this->optIn->create('example-', $email, ['tl_example' => [$model->id]]);
+        $token = $this->optIn->create('exampl-', $email, ['tl_example' => [$model->id]]);
         $token->send('Opt-In', 'Click this link to opt-in: '.$optInUrl.'?token='.$token->getIdentifier());
     }
 
