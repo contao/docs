@@ -91,14 +91,16 @@ This results in the following configuration for the `list` part of the DCA:
 
 ```php
 // contao/dca/tl_vendor.php
+use Contao\DataContainer;
+
 $GLOBALS['TL_DCA']['tl_vendor'] = [
     'config' => […],
 
     'list' => [
         'sorting' => [
-            'mode' => 1,
+            'mode' => DataContainer::MODE_SORTED,
             'fields' => ['name'],
-            'flag' => 1,
+            'flag' => DataContainer::SORT_INITIAL_LETTER_ASC,
             'panelLayout' => 'search,limit'
         ],
         'label' => [
