@@ -846,6 +846,14 @@ option {
     margin: 0 0 20px;
 }
 
+.icon.backend {
+    background: var(--MENU-HEADER-BG-color);
+    height: 25px !important;
+    margin-right: 5px !important;
+    padding: 2px 5px;
+    width: 25px !important;
+}
+
 /* Invert contao logo */
 html[data-theme=dark] #logo svg path:nth-last-of-type(1) { fill: #f47c00 }
 html[data-theme=dark] #logo svg path:nth-last-of-type(2) { fill: #fff }

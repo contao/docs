@@ -8,13 +8,44 @@ aliases:
 weight: 40
 ---
 
-Das komfortable Bearbeiten von Daten zu ermöglichen, ist eine der Hauptaufgaben eines CMS – zumindest sollte es so sein. 
-Wer aber schon mal vor dem Problem stand, 25 Datensätze auf einmal ändern zu müssen, der weiß, dass viele Systeme in 
-dieser Disziplin nicht so gut abschneiden. Oft bleibt einem nichts anderes übrig, als jeden Datensatz einzeln aufzurufen
-und zu ändern. Das kostet Zeit und Nerven.
+Das komfortable Bearbeiten von Daten zu ermöglichen, ist eine der Hauptaufgaben eines CMS. Folgende Möglichkeiten in 
+Contao erleichtern dir die Datenpflege und bringen dich schneller ans Ziel.
 
-Natürlich würde das an dieser Stelle nicht erklärt, wenn Contao hier nicht mit einer gut durchdachten Lösung glänzen könnte. In 
-den folgenden Abschnitten zeige ich dir, wie Contao dich beim Bearbeiten von Datensätzen unterstützt.
+
+## Die Sticky-Tab-Navigationsliste
+
+{{< version "5.3" >}}
+
+Wenn der zu bearbeitende Datensatz sehr lang und in einzelne Abschnitte durch Legenden unterteilt ist, musste man bis 
+jetzt endlos nach unten Scrollen (z. B. beim Einrichten einer Benutzergruppe). Damit ist nun Schluss, denn es gibt die 
+Sticky-Tab-Navigationsliste. Diese Navigationsliste wird automatisch aus allen Legenden in einem Datensatz erstellt.
+
+![Die Sticky-Tab-Navigationsliste]({{% asset "images/manual/administration-area/de/die-sticky-tab-navigationsliste.png" %}}?classes=shadow)
+
+
+## Der Picker
+
+Der Picker wird an vielen verschiedenen Orten eingesetz und ist deshalb zu einem unersetzbaren Werkzeug in Contao 
+geworden.
+
+Im Folgenden einige Beispiele:
+
+**Beim Einfügen bzw. Bearbeiten eines Links in einem Inhaltselement**
+
+![Link einfügen bzw. bearbeiten]({{% asset "images/manual/administration-area/de/link-einfuegen-bzw-bearbeiten.png" %}}?classes=shadow)
+
+{{< version-tag "5.3" >}} **Beim Bearbeiten einer Bildgröße in einem Inhaltselement**
+
+![Bildgröße bearbeiten]({{% asset "images/manual/administration-area/de/bildgroesse-bearbeiten.png" %}}?classes=shadow)
+
+**Beim Bearbeiten eines Quellelementes in einem Inhaltselement**
+
+![Quellelement bearbeiten]({{% asset "images/manual/administration-area/de/quellelement-bearbeiten.png" %}}?classes=shadow)
+
+{{< version-tag "5.3" >}} **Beim Bearbeiten eines Weiterleitungszieles in einer News oder einem Event vom Typ »Seite« 
+oder »Artikel«**
+
+![Weiterleitungsziel bearbeiten]({{% asset "images/manual/administration-area/de/weiterleitungsziel-bearbeiten.png" %}}?classes=shadow)
 
 
 ## Optionen beim Speichern

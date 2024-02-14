@@ -128,8 +128,11 @@ Der List View kann neben den grundlegenden Befehlen, noch folgende zusätzlichen
 
 ![Icons im List View]({{% asset "images/manual/administration-area/de/icons-im-list-view.png" %}}?classes=shadow)
 
-![Einstellungen bearbeiten]({{% asset "icons/header.svg" %}}?classes=icon) **Einstellungen bearbeiten:** die Einstellungen für 
-das Eltern-Element anpassen.
+![Einstellungen bearbeiten]({{% asset "icons/header.svg" %}}?classes=icon) **Einstellungen bearbeiten:** die 
+Einstellungen für das Eltern-Element anpassen.
+
+{{< version-tag "5.0" >}} ![Einstellungen bearbeiten]({{% asset "icons/children.svg" %}}?classes=icon) **Einstellungen 
+bearbeiten:** die Einstellungen für das Eltern-Element anpassen.
 
 
 ### Icons im Parent View
