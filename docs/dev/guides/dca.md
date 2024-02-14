@@ -226,6 +226,7 @@ This finishes our DCA definition for `tl_vendor`.
 {{% expand "Show full example" %}}
 ```php
 // contao/dca/tl_vendor.php
+use Contao\DataContainer;
 use Contao\DC_Table;
 
 $GLOBALS['TL_DCA']['tl_vendor'] = [
@@ -243,9 +244,9 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
     ],
     'list' => [
         'sorting' => [
-            'mode' => 1,
+            'mode' => DataContainer::MODE_SORTED,
             'fields' => ['name'],
-            'flag' => 1,
+            'flag' => DataContainer::SORT_INITIAL_LETTER_ASC,
             'panelLayout' => 'search,limit'
         ],
         'label' => [
