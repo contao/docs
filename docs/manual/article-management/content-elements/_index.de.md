@@ -33,7 +33,9 @@ den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 
 {{< version "5.3" >}}
 
-Wenn du einer dieser Elementtypen auswählst, erstellst du ein verschachteltes Inhaltselement. Früher musstest du ein
+Wenn du einer dieser Elementtypen [Akkordeon](/de/artikelverwaltung/inhaltselemente/verschiedenes/#akkordeon), 
+[Elementgruppe ](/de/artikelverwaltung/inhaltselemente/verschiedenes/#elementgruppe) und 
+[Content-Slider](/de/artikelverwaltung/inhaltselemente/verschiedenes/#content-slider) auswählst, erstellst du ein verschachteltes Inhaltselement. Früher musstest du ein
 Umschlag Anfang und ein Umschlag Ende erstellen und darin wurde dann der Inhalt platziert.
 
 ![Die Zeit vor den verschachtelten Elementen]({{% asset "images/manual/article-management/de/die-zeit-vor-den-verschachtelten-elementen.png" %}}?classes=shadow)
@@ -46,8 +48,3 @@ Einführung der verschachtelten Inhaltselemente der Vergangenheit an.
 
 Bei den neuen verschachtelten Inhaltselementen erstellst du ein Element, in welchem du dann Kind-Elemente unterbringen
 kannst. Du erkennst verschachtelte Inhaltselemente an dem Icon ![Kind-Element]({{% asset "icons/children.svg" %}}?classes=icon).
-
-Folgende verschachtelte Inhaltselemente stehen zur Verfügung: 
-[Akkordeon](/de/artikelverwaltung/inhaltselemente/verschiedenes/#akkordeon), 
-[Elementgruppe ](/de/artikelverwaltung/inhaltselemente/verschiedenes/#elementgruppe) und 
-[Content-Slider](/de/artikelverwaltung/inhaltselemente/verschiedenes/#content-slider).
