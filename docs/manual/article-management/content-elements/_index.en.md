@@ -30,8 +30,10 @@ access to individual elements as needed.
 
 {{< version "5.3" >}}
 
-If you select one of these element types, you create a nested content element. In the past, you had to create a
-wrapper start and a wrapper stop and the content was then placed inside.
+If you select one of these element types [Accordion](/en/article-management/content-elements/miscellaneous/#accordion),
+[Element group](/en/article-management/content-elements/miscellaneous/#element-group) and
+[Content slider](/en/article-management/content-elements/miscellaneous/#content-slider), you create a nested content element. 
+In the past, you had to create wrapper start and a wrapper stop and the content was then placed inside.
 
 ![The time before the nested elements]({{% asset "images/manual/article-management/en/the-time-before-the-nested-elements.png" %}}?classes=shadow)
 
@@ -43,8 +45,3 @@ the past.
 
 With the new nested content elements, you create an element in which you can then place child elements. You can
 recognize nested content elements by the icon ![Child element]({{% asset "icons/children.svg" %}}?classes=icon).
-
-The following nested content elements are available: 
-[Accordion](/en/article-management/content-elements/miscellaneous/#accordion),
-[Element group](/en/article-management/content-elements/miscellaneous/#element-group) and
-[Content slider](/en/article-management/content-elements/miscellaneous/#content-slider).
