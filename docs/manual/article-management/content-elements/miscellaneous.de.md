@@ -16,7 +16,7 @@ weight: 28
 
 Der Akkordeon-Effekt erlaubt das Anlegen mehrerer Abschnitte, von denen jeweils nur einer geöffnet ist. Wird ein
 anderer Abschnitt ausgewählt, schließt sich der erste automatisch. Als Vorlage für die Umsetzung in Contao dient dabei 
-das Paket [Handorgel](https://github.com/oncode/handorgel).
+das Paket [Handorgel](https://github.com/oncode/handorgel). 
 
 ![Akkordeon]({{% asset "images/manual/article-management/de/akkordeon.png" %}}?classes=shadow)
 
@@ -67,8 +67,9 @@ Das Element generiert folgenden HTML-Code:
 
 **Hierbei handelt es sich um ein [verschachteltes Inhaltselement](/de/artikelverwaltung/inhaltselemente/#verschachtelte-inhaltselemente).**
 
-Mit Elementgruppen kannst du Inhalte gruppieren und damit die Übersichtlichkeit in Backend erhöhen.
-
+Mit Elementgruppen kannst du Inhalte gruppieren und damit die Übersichtlichkeit in Backend erhöhen. Du kannst dieses 
+Element auch verwenden, wenn du ein einzelnes Kindelement im Content-Slider bzw. Akkordeon mit mehreren 
+Inhaltselementen erstellen möchtest.
 
 ### Template-Einstellungen
 

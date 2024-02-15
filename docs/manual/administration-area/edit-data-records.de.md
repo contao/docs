@@ -67,8 +67,12 @@ gespeicherte Element wird dupliziert und nach dem gerade bearbeiteten Element ei
 Bearbeitungsmaske des neuen Datensatzes.
 
 **Speichern und bearbeiten:** Diese Schaltfläche steht dir nur beim Erstellen neuer Elemente zur Verfügung. Beim 
-Anklicken werden deine Eingaben gespeichert, und die gelangst direkt zur Bearbeitungsansicht der Kind-Datensätze 
+Anklicken werden deine Eingaben gespeichert, und du gelangst direkt zur Bearbeitungsansicht der Kind-Datensätze 
 (Parent View).
+
+{{< version-tag "5.3" >}} **Speichern und Kindelement bearbeiten:** Diese Schaltfläche steht dir nur beim Erstellen
+[verschachteltes Inhaltselement](/de/artikelverwaltung/inhaltselemente/#verschachtelte-inhaltselemente) zur Verfügung. 
+Beim Anklicken werden deine Eingaben gespeichert, und du gelangst direkt zur Bearbeitungsansicht für die Kindelemente.
 
 **Speichern und zurück:** Beim Klick auf diese Schaltfläche werden deine Eingaben gespeichert, und das Formular 
 geschlossen. Du wirst auf die übergeordnete Seite weitergeleitet, also z. B. von einem Inhaltselement direkt zur 
