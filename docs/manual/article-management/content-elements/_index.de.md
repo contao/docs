@@ -46,5 +46,5 @@ Einführung der verschachtelten Inhaltselemente der Vergangenheit an.
 
 ![Die verschachtelten Inhaltselemente sind da]({{% asset "images/manual/article-management/de/die-verschachtelten-inhaltselemente-sind-da.png" %}}?classes=shadow)
 
-Bei den neuen verschachtelten Inhaltselementen erstellst du ein Element, in welchem du dann Kind-Elemente unterbringen
-kannst. Du erkennst verschachtelte Inhaltselemente an dem Icon ![Kind-Element]({{% asset "icons/children.svg" %}}?classes=icon).
+Bei den neuen verschachtelten Inhaltselementen erstellst du ein Element, in welchem du dann Kindelemente unterbringen
+kannst. Du erkennst verschachtelte Inhaltselemente an dem Icon ![Kindelement]({{% asset "icons/children.svg" %}}?classes=icon).

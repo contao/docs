@@ -67,7 +67,8 @@ The element generates the following HTML code:
 
 **This is a [nested content element](/en/article-management/content-elements/#nested-content-element).**
 
-You can use element groups to group content and thus increase the overview in the back end.
+You can use element groups to group content and thus increase the overview in the back end. You can also use this
+element if you want to create a single child element in the content slider or accordion with multiple content elements.
 
 
 ### Template settings

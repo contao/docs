@@ -64,6 +64,10 @@ element you are currently editing. You will be taken directly to the editing mas
 **Save and edit:** This button is only available when creating new elements. Clicking on it will save your entries and 
 take you directly to the Parent View of the child records.
 
+{{< version-tag "5.3" >}} **Save and edit child elements:** This button is only available when creating 
+[nested content elements](/en/article-management/content-elements/#nested-content-element). When you click on it, 
+your entries are saved and you are taken directly to the editing view for the child elements.
+
 **Save and back:** Clicking this button will save your entries and close the form. You will be forwarded to the parent 
 page, e.g. from a content element directly to the article overview.
 
