@@ -60,12 +60,12 @@ Special feature when updating for a [minor release](#minor-release): Click on th
 "Contao Open Source CMS" and enter the desired version. Click the "Update packages" button and then "Apply changes" to 
 push the update.
 
-![Start update for minor release]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-starten.png" %}}?classes=shadow)
+![Start update for minor release]({{% asset "images/manual/installation/en/manager-update-contao.png" %}}?classes=shadow)
 
 The update can now take several minutes. Details of the update process can be displayed by clicking the following 
 icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
-![Update for minor release completed]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-abgeschlossen.png" %}}?classes=shadow)
+![Update for minor release completed]({{% asset "images/manual/installation/en/contao-manager-packages.png" %}}?classes=shadow)
 
 
 ### Update database tables
