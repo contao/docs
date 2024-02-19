@@ -412,7 +412,7 @@ Instead of extending Contao's own permissions system you are also free to implem
 [SymfonyUserProvider]: https://symfony.com/doc/4.4/security/user_provider.html
 [SymfonyAccessControl]: https://symfony.com/doc/4.4/security/access_control.html
 [ContaoConfiguration]: /getting-started/initial-setup/symfony-application/contao-4.9/#configure-your-contao-installation
-[Contao49SecurityYaml]: https://github.com/contao/contao/blob/4.9/manager-bundle/src/Resources/skeleton/config/security.yml
+[Contao49SecurityYaml]: https://github.com/contao/contao/blob/4.9.42/manager-bundle/src/Resources/skeleton/config/security.yml
 [SymfonyFormLogin]: https://symfony.com/doc/4.4/security/form_login.html
 [SymfonyUserChecker]: https://symfony.com/doc/4.4/security/user_checkers.html
 [SymfonyRequestMatcherService]: https://symfony.com/doc/4.4/security/firewall_restriction.html#restricting-by-service
