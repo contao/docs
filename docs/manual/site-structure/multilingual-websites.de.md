@@ -118,4 +118,4 @@ Wichtigkeit eines Sprachen-Fallbacks: ohne dieses wäre die private Webseite nur
 Alle anderen sähen nur ein »No pages found«.
 
 
-[LegacyRouting]: /de/layout/seitenstruktur/seiten-konfigurieren/#legacy-routing-modus
+[LegacyRouting]: /de/seitenstruktur/website-startseite/#legacy-routing-modus
