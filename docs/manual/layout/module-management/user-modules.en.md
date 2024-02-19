@@ -979,7 +979,7 @@ The front end module generates the following HTML code:
 
 The "Two-factor authentication" front end module adds a form to the website that a member can use to enable two-factor 
 authentication. If the two-factor authentication for members is forced, this module must be used on the page structure 
-described in [Further settings for starting points](/en/layout/site-structure/configure-pages/#further-settings-for-starting-points) 
+described in [Further settings for starting points](/en/site-structure/website-root/#two-factor-authentication) 
 can be added to the selected two-factor forwarding page.
 
 **Front end output**
