@@ -18,7 +18,7 @@ Das Hosting konfigurierst du über das Admin-Panel deines Hosting-Providers.
 ### Wurzelverzeichnis (Document Root)
 
 Von deinem Provider wird dir meistens ein Ordner vorgegeben, wo du deine Webseiten ablegen kannst - das ist häufig
-ein Ordner `/www` oder `/httpsdocs`. Dort kannst du Contao für deine neue Webseite installieren. Es hat sich bewährt,
+ein Ordner `/www` oder `/httpdocs`. Dort kannst du Contao für deine neue Webseite installieren. Es hat sich bewährt,
 in diesem Pfad erstmal einen Unterordner anzulegen z. B. `/example` für die Seite `example.com` - das ist dann dein
 Installations- oder Projektordner.
 
