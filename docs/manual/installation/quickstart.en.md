@@ -15,9 +15,13 @@ You configure the hosting via the admin panel of your hosting provider.
 
 ### Root directory (document root)
 
-In Contao, all publicly accessible files are located in the `/public` subfolder of the installation. Create a
-folder called `public` and set the root directory (document root) of the installation to this subfolder via the admin panel
-of the hosting provider to this subfolder.
+Your provider will usually give you a folder where you can store your websites - this is often a `/www` or `/httpdocs`
+folder. There you can install Contao for your new website. It has proven useful to first create a subfolder in this 
+path, e.g. `/example` for the page `example.com` - this is then your installation or project folder.
+
+In Contao, all publicly accessible files are located in the `/public` subfolder. Create a folder called `public` and
+set the root directory (document root) of the installation to this subfolder via the admin panel of the hosting provider
+to this subfolder.
 
 **Example:** `example.com` points to the directory `/www/example/public`.
 
