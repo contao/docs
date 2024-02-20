@@ -15,7 +15,7 @@ You configure the hosting via the admin panel of your hosting provider.
 
 ### Root directory (document root)
 
-Your provider will usually give you a folder where you can store your websites - this is often a `/www` or `/httpdocs`
+Your provider will usually give you a folder where you can store your websites - this is often a `/www`, `/public_html` or `/httpdocs`
 folder. There you can install Contao for your new website. It has proven useful to first create a subfolder in this 
 path, e.g. `/example` for the page `example.com` - this is then your installation or project folder.
 
