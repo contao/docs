@@ -17,9 +17,14 @@ Das Hosting konfigurierst du über das Admin-Panel deines Hosting-Providers.
 
 ### Wurzelverzeichnis (Document Root)
 
-In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/public` der Installation. Erstelle
-dazu den Ordner `public` und setze das Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel
-des Hosting-Providers auf diesen Unterordner.
+Von deinem Provider wird dir meistens ein Ordner vorgegeben, wo du deine Webseiten ablegen kannst - das ist häufig
+ein Ordner `/www`, `/public_html` oder `/httpdocs`. Dort kannst du Contao für deine neue Webseite installieren. Es hat sich bewährt,
+in diesem Pfad erstmal einen Unterordner anzulegen z. B. `/example` für die Seite `example.com` - das ist dann dein
+Installations- oder Projektordner.
+
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/public`. Erstelle dazu den Ordner `public`
+in deinem Installationsordner und setze das Wurzelverzeichnis (Document Root) über das Admin-Panel des Hosting-Providers
+auf diesen Unterordner.
 
 **Beispiel:** `example.com` zeigt auf das Verzeichnis `/www/example/public`
 
