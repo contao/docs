@@ -16,7 +16,7 @@ basically create your own page structure, including extensions and layout, and u
 ![Contao per Contao Manager installieren]({{% asset "images/manual/guides/en/manager-theme-en.png" %}}?classes=shadow)
 
 
-## Theme-Manager
+## Theme Manager
 
 You can use the "[Theme Manager](/en/layout/theme-manager/)" in the backend to [export and import](/en/layout/theme-manager/manage-themes/) 
 existing themes as a `.cto` file. However, this exported `.cto` is not suitable for use in the Contao Manager! It requires further information.
@@ -39,7 +39,7 @@ theme.xml
 
 ### Assets and the "theme.xml"
 
-You can obtain this data from your existing installation via the "[theme manager](/en/layout/theme-manager/)" in the backend. The exported
+You can obtain this data from your existing installation via the "[Theme Manager](/en/layout/theme-manager/)" in the back end. The exported
 "`.cto`" file is actually a "`.zip`" archive. You can therefore rename the file accordingly and then unzip it. Afterwards
 you will find the directories "files", "templates" and the file "theme.xml".
 

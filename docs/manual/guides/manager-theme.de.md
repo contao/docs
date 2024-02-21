@@ -41,14 +41,14 @@ theme.xml
 
 ### Assets und die »theme.xml«
 
-Diese Daten deiner bestehenden Installation ehälst du über den »[Theme-Manager](/de/theme-manager/)« im Backend. Die exportierte
+Diese Daten deiner bestehenden Installation erhälst du über den »[Theme-Manager](/de/theme-manager/)« im Backend. Die exportierte
 »`.cto`« Datei ist eigentlich ein »`.zip`« Archiv. Daher kannst du die Datei entsprechend umbenennen und entpacken. Im Anschluß
 findest du hier die Verzeichnisse »files«, »templates« und die Datei »theme.xml«.
 
 
 ### SQL-Dump
 
-Den aktuellen SQL-Dump deiner Theme Installation kannst du z. B. über den [Backup Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. 
+Den aktuellen SQL-Dump deiner Theme Installation kannst du z. B. über den [Backup-Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. 
 Das Verzeichnis »var/backups« mit deinem aktuellen SQL-Dump kopierst du anschließend in das obige, entpackte Verzeichnis.
 
 ```bash
@@ -56,20 +56,20 @@ php vendor/bin/contao-console contao:backup:create
 ```
 
 {{% notice tip %}}
-Über die [Konfigurationsmöglichkeiten](/de/cli/datenbank-backups/#konfigurationsmoeglichkeiten) kannst du hierbei auch versch. 
+Über die [Konfigurationsmöglichkeiten](/de/cli/datenbank-backups/#konfigurationsmoeglichkeiten) kannst du hierbei auch verschiedene 
 Datenbanktabellen wie z. B. »tl_log« ausschließen.
 {{% /notice %}}
 
 
 ### Die »composer.json«
 
-Abschließend kopierst du die aktuelle »composer.json« deiner Theme Installation ebenfalls in das entpackte Verzeichnis. Wenn du möchstest,
+Abschließend kopierst du die aktuelle »composer.json« deiner Theme Installation ebenfalls in das entpackte Verzeichnis. Wenn du möchtest,
 könntest du diese noch um optionale Angaben erweitern (s. a.: [Contao Demo](https://github.com/contao/contao-demo/blob/5.3.x/composer.json)).
 
 
 ## Dein Theme
 
-Dein Theme Verzeichnis beinhaltet nun alle notwendigen Angaben. Du kannst das Verzeichnis jetzt als »`.zip`« Datei archivieren und 
+Dein Theme-Verzeichnis beinhaltet nun alle notwendigen Angaben. Du kannst das Verzeichnis jetzt als »`.zip`« Datei archivieren und 
 bei einer Neuinstallation über den Contao Manager nutzen.
 
 {{% notice tip %}}
