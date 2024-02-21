@@ -41,6 +41,7 @@ $GLOBALS['TL_DCA']['tl_example']['fields']['myfield'] = [
 | inputType            | Field type (`string`)                           | [`checkbox`][CheckboxWidget] Checkbox <br>[`checkboxWizard`][CheckboxWizardWidget] Checkbox Wizard <br>`chmod` CHMOD table <br>[`fileTree`][FileTreeWidget] File tree <br>`imageSize` Two text fields with drop-down menu (creates an [Image Size Array](/framework/image-processing/image-sizes/#size-array)) <br>`inputUnit` Text field with small unit drop-down menu <br>`keyValueWizard` Key » Value wizard <br>[`listWizard`][ListWizardWidget] List wizard <br>`metaWizard` Used for setting meta information in the file manager <br>`moduleWizard` Module wizard <br>`optionWizard` Option wizard <br>`pageTree` Page tree <br>`password` Password field <br>[`picker`][PickerWidget] General purpose picker <br>`radio` Radio button <br>`radioTable` Table with images and radio buttons <br>`sectionWizard` Used for defining sections in the page layout <br>[`select`][SelectWidget] Drop-down menu <br>`serpPreview` Search Engine Result Preview (SERP) widget <br>`tableWizard` Table wizard <br>`text` Text field <br>`textStore` Text field that will not display its current value <br>[`textarea`][TextareaWidget] Textarea <br>`timePeriod` Text field with drop-down menu <br>`trbl` Four text fields with a small unit drop-down menu |
 | options              | Options (`array`)                               | Options of a drop-down menu or radio button menu.<br />Specify as `['opt1', 'opt2', 'opt3']` or `['value1' => 'label1', 'value2' => 'label2']`.<br />Special case **ambiguous numerical value/index**: `[0 => 'label1', 1 => 'label2']` or `['0' => 'label1', '1' => 'label2']`: If option values are integers and starting with 0, the label will also be used as value. Use the eval option `isAssociative` to prevent this.                                                                                                                                                                                                                  |
 | [options_callback](../callbacks/#fields-field-options)         | Callback function (`array`)                     | Callback function that returns an array of options. Please specify as `['Class', 'Method']`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| enum                 | `BackedEnum`                                    | {{< version "5.3" >}} Prefill `options` and `reference` with the cases of an enum.  See more information [below](#enumerations).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | foreignKey           | table.field (`string`)                          | Get options from a database table. Returns ID as key and the field you specify as value. The field can be a complete SQL expression, e.g.: `tl_member.CONCAT(firstname,' ',lastname)`                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | reference            | `&$GLOBALS['TL_LANG']` (`array`)                | Array that holds the options labels. Typically a reference to the global language array.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | explanation          | Array key (`string`)                            | Array key that holds the explanation. This is a reference to the `XPL` category of the `explain` translation domain. See more information [below](#explanation).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -293,6 +294,81 @@ model classes to load referenced data sets efficiently and developer friendly.
 | load  | Load behaviour (`string`)       | **lazy** Loading referenced records only when necessary (default, saves RAM) <br>**eager** Loading referenced records automatically (saves database calls)                                                                                          |
 | table | Relation table (`string`)       | A database table for this relation. Optional, by default Contao tries to extract it from the `foreignKey` attribute.                                                                                                                            |
 | field | Relation table field (`string`) | Override the default relation field (`id`). Useful for relation with `tl_files.uuid` for example.                                                                                                                                               |
+
+### Enumerations
+
+By using [Enumerations](https://www.php.net/manual/language.types.enumerations.php), the options of a field can be
+generated automatically.
+
+If you store a `BackedEnum` as `enum` in the DCA, Contao will generate a matching `option` item for all `Enum::cases()`.
+
+
+#### Automatic translations
+
+By implementing the interface `Contao\CoreBundle\Translation\TranslatableLabelInterface`, Contao will also generate
+a translation for each option and provide them as `reference`.
+
+{{% expand "Show example" %}}
+```php
+// String backed enumeration that implements TranslatableLabelInterface
+namespace App/Data;
+
+use Contao\CoreBundle\Translation\TranslatableLabelInterface;
+use Symfony\Component\Translation\TranslatableMessage;
+
+enum Salutation: string implements TranslatableLabelInterface
+{
+    case ms = 'ms';
+    case mr = 'mr';
+    case mx = 'mx';
+
+    public function label(): TranslatableMessage
+    {
+        return new TranslatableMessage(
+            'salutation.label.' . $this->value,
+            [],
+            'messages',
+        );
+    }
+```
+
+```yaml
+# translations/messages.de.yaml
+salutation:
+    label:
+        ms: Frau
+        mr: Herr
+        mx: ''
+```
+
+```php
+// contao/dca/tl_member.php
+$GLOBALS['TL_DCA']['tl_member']['salutation'] => [
+  'inputType' => 'select',
+  'enum' => App\Data\Salutation::class,
+];
+
+// Will result in:
+$GLOBALS['TL_DCA']['tl_member']['salutation'] => [
+  'inputType' => 'select',
+  'options' => ['ms', 'mr', 'mx'],
+  'reference' => [
+    'ms' => 'Frau',
+    'mr' => 'Herr',
+    'mx' => '',
+  ],
+];
+```
+
+{{% notice note %}}
+In fact, the options are generated via the `options_callback`. In the example above
+the generated `options` are used for illustration purposes only.
+{{% /notice %}}
+{{% /expand %}}
+
+{{% notice tip %}}
+You can also [resolve the enumeration](../../../framework/models/enumerations) via the associated model.
+{{% /notice %}}
 
 
 ### SQL Column Definition
