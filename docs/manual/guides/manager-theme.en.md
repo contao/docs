@@ -36,6 +36,10 @@ composer.json
 theme.xml
 ```
 
+Each directory within the archive is imported into the Contao root directory. Therefore, you could also add your 
+"config/config.yml" with further settings, such as "[legacy_routing: false](/en/site-structure/website-root/#legacy-routing-mode)". You 
+can also find another example in the "[Isotope eCommerce Demo](https://github.com/isotope/isotope-demo)".
+
 
 ### Assets and the "theme.xml"
 
@@ -63,6 +67,9 @@ You can also use the [configuration options](/en/cli/db-backups/#configuration) 
 
 Finally, copy the current "composer.json" of your theme installation into the unpacked directory. If you wish,
 you could add optional information to it (see also: [Contao Demo](https://github.com/contao/contao-demo/blob/5.3.x/composer.json)).
+
+The label `"type": "contao-theme"` is useful for theme providers. During installation, your theme will appear under 
+the selectable themes, provided it has been synchronized with Packagist.
 
 
 ## Your Theme
