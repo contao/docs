@@ -1,6 +1,6 @@
 ---
-title: "Create a Manager Theme"
-description: "Create a Contao Manager Theme."
+title: "Create an installable theme"
+description: "Create an installable theme for the Contao Manager."
 aliases:
   - /en/guides/manager-theme/
 weight: 100
@@ -24,9 +24,17 @@ existing themes as a `.cto` file. However, this exported `.cto` is not suitable 
 
 ## Theme Structure for the Manager
 
-In addition to the actual "`assets`", a theme for the Contao Manager requires a "`theme.xml`", the current "`composer.json`" and a
+In addition to the actual "`assets`", a theme for the Contao Manager requires a "`theme.xml`" file, the respective "`composer.json`" and a
 "`SQL dump`". This data can be summarized as a "`.zip`" archive and then be used in the Contao Manager. As an orientation of the structure 
 the "`.zip`" [archive](https://github.com/contao/contao-demo/tags) of the "Contao Demo" is helpful.
+
+```bash
+>files
+>templates
+>var/backups
+composer.json
+theme.xml
+```
 
 
 ### Assets and the "theme.xml"
@@ -38,7 +46,7 @@ you will find the directories "files", "templates" and the file "theme.xml".
 
 ### SQL-Dump
 
-You can create the current SQL-Dump of your installation via the [backup command](/en/cli/database-backups/) on the console. 
+You can create the current SQL-Dump of your theme installation via the [backup command](/en/cli/database-backups/) on the console. 
 Then copy the "var/backups" directory with your current SQL-Dump into the unzipped directory above.
 
 
@@ -53,11 +61,15 @@ You can also use the [configuration options](/en/cli/db-backups/#configuration) 
 
 ### The "composer.json"
 
-Finally, copy the current "composer.json" of your installation into the unpacked directory. If you wish,
+Finally, copy the current "composer.json" of your theme installation into the unpacked directory. If you wish,
 you could add optional information to it (see also: [Contao Demo](https://github.com/contao/contao-demo/blob/5.3.x/composer.json)).
 
 
 ## Your Theme
 
-Your theme directory now contains all the necessary information. You can now archive the directory as a "`.zip`" file and 
+Your theme directory now contains all the necessary information. You can archive the directory as a "`.zip`" file and 
 use it during a new installation via the Contao Manager.
+
+{{% notice tip %}}
+You can easily add other files such as a "README.md" or license details.
+{{% /notice %}}

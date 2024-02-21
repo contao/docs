@@ -1,6 +1,6 @@
 ---
-title: "Ein Manager Theme erstellen"
-description: "Ein Theme für den Contao Manager erstellen."
+title: "Installierbares Theme erstellen"
+description: "Ein installierbares Theme für den Contao Manager erstellen."
 aliases:
   - /de/anleitungen/manager-theme/
 weight: 100
@@ -26,21 +26,29 @@ geeignet! Es erfordert hierzu weiterer Angaben.
 
 ## Theme Struktur für den Manager
 
-Neben den eigentlichen »`assets`« benötigt ein Theme für den Contao Manager eine »`theme.xml`«, die aktuelle »`composer.json`« und einen
+Neben den eigentlichen »`assets`« benötigt ein Theme für den Contao Manager eine »`theme.xml`« Datei, die jeweilige »`composer.json`« und einen
 »`SQL-Dump`«. Diese Daten können als »`.zip`« Archiv zusammengefasst und dann im Contao Manager genutzt werden. Als Orientierung des Aufbaus 
 ist das »`.zip`« [Archiv](https://github.com/contao/contao-demo/tags) der »Contao Demo« hilfreich.
+
+```bash
+>files
+>templates
+>var/backups
+composer.json
+theme.xml
+```
 
 
 ### Assets und die »theme.xml«
 
 Diese Daten deiner bestehenden Installation ehälst du über den »[Theme-Manager](/de/theme-manager/)« im Backend. Die exportierte
-»`.cto`« Datei ist eigentlich ein »`.zip`« Archiv. Daher kannst du die Datei entsprechend umbenennen und anschließend entpacken. Im Anschluß
+»`.cto`« Datei ist eigentlich ein »`.zip`« Archiv. Daher kannst du die Datei entsprechend umbenennen und entpacken. Im Anschluß
 findest du hier die Verzeichnisse »files«, »templates« und die Datei »theme.xml«.
 
 
 ### SQL-Dump
 
-Den aktuellen SQL-Dump deiner Installation kannst du über den [Backup Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. 
+Den aktuellen SQL-Dump deiner Theme Installation kannst du z. B. über den [Backup Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. 
 Das Verzeichnis »var/backups« mit deinem aktuellen SQL-Dump kopierst du anschließend in das obige, entpackte Verzeichnis.
 
 ```bash
@@ -55,7 +63,7 @@ Datenbanktabellen wie z. B. »tl_log« ausschließen.
 
 ### Die »composer.json«
 
-Abschließend kopierst du die aktuelle »composer.json« deiner Installation ebenfalls in das entpackte Verzeichnis. Wenn du möchstest,
+Abschließend kopierst du die aktuelle »composer.json« deiner Theme Installation ebenfalls in das entpackte Verzeichnis. Wenn du möchstest,
 könntest du diese noch um optionale Angaben erweitern (s. a.: [Contao Demo](https://github.com/contao/contao-demo/blob/5.3.x/composer.json)).
 
 
@@ -63,3 +71,7 @@ könntest du diese noch um optionale Angaben erweitern (s. a.: [Contao Demo](htt
 
 Dein Theme Verzeichnis beinhaltet nun alle notwendigen Angaben. Du kannst das Verzeichnis jetzt als »`.zip`« Datei archivieren und 
 bei einer Neuinstallation über den Contao Manager nutzen.
+
+{{% notice tip %}}
+Weitere Dateien wie z. B. eine »README.md« oder Lizenzangaben kannst du ohne weiteres hinzufügen.
+{{% /notice %}}
