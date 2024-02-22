@@ -36,9 +36,9 @@ composer.json
 theme.xml
 ```
 
-Each directory within the archive is imported into the Contao root directory. Therefore, you could also add your 
+Each file and directory within the archive is imported into the Contao root directory (except for "theme.xml"). Therefore, you could also add your 
 "config/config.yml" with further settings, such as "[legacy_routing: false](/en/site-structure/website-root/#legacy-routing-mode)". You 
-can also find another example in the "[Isotope eCommerce Demo](https://github.com/isotope/isotope-demo)".
+can find another example in the [Isotope eCommerce Demo](https://github.com/isotope/isotope-demo).
 
 
 ### Assets and the "theme.xml"
@@ -50,8 +50,9 @@ you will find the directories "files", "templates" and the file "theme.xml".
 
 ### SQL-Dump
 
-You can create the current SQL-Dump of your theme installation via the [backup command](/en/cli/database-backups/) on the console. 
-Then copy the "var/backups" directory with your current SQL-Dump into the unzipped directory above.
+You must create the current SQL-Dump of your theme installation via the [backup command](/en/cli/database-backups/) on the console. A normal 
+PHPMyAdmin export, for example, would not be sufficient. Then copy the "var/backups" directory with your current SQL-Dump into the 
+unzipped directory above.
 
 
 ```bash
@@ -68,8 +69,7 @@ You can also use the [configuration options](/en/cli/db-backups/#configuration) 
 Finally, copy the current "composer.json" of your theme installation into the unpacked directory. If you wish,
 you could add optional information to it (see also: [Contao Demo](https://github.com/contao/contao-demo/blob/5.3.x/composer.json)).
 
-The label `"type": "contao-theme"` is useful for theme providers. During installation, your theme will appear under 
-the selectable themes, provided it has been synchronized with Packagist.
+The label `"type": "contao-theme"` is mandatory and necessary for the Contao Manager.
 
 
 ## Your Theme
@@ -77,6 +77,6 @@ the selectable themes, provided it has been synchronized with Packagist.
 Your theme directory now contains all the necessary information. You can archive the directory as a "`.zip`" file and 
 use it during a new installation via the Contao Manager.
 
-{{% notice tip %}}
+{{% notice note %}}
 You can easily add other files such as a "README.md" or license details.
 {{% /notice %}}

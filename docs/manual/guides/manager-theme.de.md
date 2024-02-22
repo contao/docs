@@ -38,9 +38,8 @@ composer.json
 theme.xml
 ```
 
-Jedes Verzeichnis innerhalb des Archivs wird dabei in das Contao Stammverzeichnis importiert. Daher könntest du auch zusätzlich deine 
-»config/config.yml«, mit weiteren Einstellungen, wie z. B. »[legacy_routing: false](/de/seitenstruktur/website-startseite/#legacy-routing-modus)« 
-hinzufügen. Ein weiteres Beispiel hierzu findest du ebenfalls in der »[Isotope eCommerce Demo](https://github.com/isotope/isotope-demo)«.
+Jede Datei und jedes Verzeichnis innerhalb des Archivs wird dabei in das Contao Stammverzeichnis importiert (außer der »theme.xml«). Daher könntest 
+du auch zusätzlich deine »config/config.yml«, mit Einstellungen, wie z. B. »[legacy_routing: false](/de/seitenstruktur/website-startseite/#legacy-routing-modus)« hinzufügen. Ein weiteres Beispiel findest du in der [Isotope eCommerce Demo](https://github.com/isotope/isotope-demo).
 
 
 ### Assets und die »theme.xml«
@@ -52,8 +51,9 @@ findest du hier die Verzeichnisse »files«, »templates« und die Datei »theme
 
 ### SQL-Dump
 
-Den aktuellen SQL-Dump deiner Theme Installation kannst du z. B. über den [Backup-Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. 
-Das Verzeichnis »var/backups« mit deinem aktuellen SQL-Dump kopierst du anschließend in das obige, entpackte Verzeichnis.
+Den aktuellen SQL-Dump deiner Theme Installation musst du über den [Backup-Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. Ein 
+normaler PHPMyAdmin Export wäre z. B. nicht ausreichend. Das Verzeichnis »var/backups« mit deinem aktuellen SQL-Dump kopierst du 
+anschließend in das obige, entpackte Verzeichnis.
 
 ```bash
 php vendor/bin/contao-console contao:backup:create
@@ -70,8 +70,7 @@ Datenbanktabellen wie z. B. »tl_log« ausschließen.
 Abschließend kopierst du die aktuelle »composer.json« deiner Theme Installation ebenfalls in das entpackte Verzeichnis. Wenn du möchtest,
 könntest du diese noch um optionale Angaben erweitern (s. a.: [Contao Demo](https://github.com/contao/contao-demo/blob/5.3.x/composer.json)).
 
-Nützlich, für Theme Anbieter, ist hierbei die Kennzeichnung »`"type": "contao-theme"`«. Bei der Installation erscheint dein Theme unter 
-den auswählbaren Themen, sofern es mit Packagist synchronisiert wurde.
+Die Kennzeichnung `"type": "contao-theme"` ist dabei zwingend und für den Contao Manager notwendig.
 
 
 ## Dein Theme
@@ -79,6 +78,6 @@ den auswählbaren Themen, sofern es mit Packagist synchronisiert wurde.
 Dein Theme-Verzeichnis beinhaltet nun alle notwendigen Angaben. Du kannst das Verzeichnis jetzt als »`.zip`« Datei archivieren und 
 bei einer Neuinstallation über den Contao Manager nutzen.
 
-{{% notice tip %}}
+{{% notice note %}}
 Weitere Dateien wie z. B. eine »README.md« oder Lizenzangaben kannst du ohne weiteres hinzufügen.
 {{% /notice %}}
