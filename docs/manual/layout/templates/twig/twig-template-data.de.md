@@ -25,7 +25,16 @@ Wenn du nur die Daten von bestimmten Variablen benötigst, kannst du diese als A
     {{ dump(headline) }}
 {% endblock %}
 ```
-{{% /example %}}
+{{% /example %}}  
+
+
+Soll die Ausgabe in der Toolbar - und nicht in der Vorlage - ausgegeben werden, so kannst du die `dump`-Funktion verwenden:  
+```twig
+{% dump %} {# Ausgabe aller verfügbaren Daten #}
+{% dump(a) %} {# Ausgabe der Daten der Variable "a" #}
+{% dump(a, b) %} {# Ausgabe der Daten der Variable "a"  und "b" #}
+```
+
 
 {{% notice info %}}
 Beachte, dass in erweiterten Templates die `dump()`-Funktion innerhalb eines Blockes verwendet werden muss.
