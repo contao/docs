@@ -51,7 +51,7 @@ findest du hier die Verzeichnisse »files«, »templates« und die Datei »theme
 
 ### SQL-Dump
 
-Den aktuellen SQL-Dump deiner Theme Installation musst du über den [Backup-Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. Ein 
+Den aktuellen SQL-Dump deiner Theme-Installation musst du über den [Backup-Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. Ein 
 normaler PHPMyAdmin Export wäre z. B. nicht ausreichend. Das Verzeichnis »var/backups« mit deinem aktuellen SQL-Dump kopierst du 
 anschließend in das obige, entpackte Verzeichnis.
 
