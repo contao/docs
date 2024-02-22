@@ -47,7 +47,7 @@ A single image file picker.
     'eval'      => [
         'filesOnly'  => true,
         'fieldType'  => 'radio',
-        'extensions' => 'jpg,png,gif',
+        'extensions' => '%contao.image.valid_extensions%',
     ],
     'sql'       => [
         'type' => 'binary',
@@ -75,6 +75,7 @@ An image gallery picker, allows picking multiple images, display them in the bac
         'files'      => true,
         'isGallery'  => true,
         'multiple'   => true,
+        'extensions' => '%contao.image.valid_extensions%',
         'orderField' => 'orderSRC',
     ],
     'sql'       => "blob NULL",
