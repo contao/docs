@@ -38,7 +38,7 @@ composer.json
 theme.xml
 ```
 
-Jede Datei und jedes Verzeichnis innerhalb des Archivs wird dabei in das Contao Stammverzeichnis importiert (außer der »theme.xml«). Daher könntest 
+Jede Datei und jedes Verzeichnis innerhalb des Archivs wird dabei in das Contao-Stammverzeichnis importiert (außer der »theme.xml«). Daher könntest 
 du auch zusätzlich deine »config/config.yml«, mit Einstellungen, wie z. B. »[legacy_routing: false](/de/seitenstruktur/website-startseite/#legacy-routing-modus)« hinzufügen. Ein weiteres Beispiel findest du in der [Isotope eCommerce Demo](https://github.com/isotope/isotope-demo).
 
 
