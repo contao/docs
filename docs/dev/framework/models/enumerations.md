@@ -3,6 +3,8 @@ title: "Enumerations"
 description: "Resolve enumerations from DCA records"
 ---
 
+{{< version "5.3" >}}
+
 Models can be used to resolve the values stored for a record into enumerations:
 
 ## Set up the DCA
