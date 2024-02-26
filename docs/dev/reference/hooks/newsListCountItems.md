@@ -31,7 +31,7 @@ be shown in the current request.
 
 ## Return Values
 
-Return `false` if this hook should not be considered. Return an integer otherwise.
+Return `false` if this hook should not be considered. Return an integer otherwise. Return `0` if no news entries are found.
 
 If the return value is other than `false`, no further hooks of type `newsListCountItems` will be executed!
 
