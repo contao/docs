@@ -330,7 +330,7 @@ Note that the active element is displayed as `<strong>` a link and not as a link
 The front end module "HTML sitemap" adds an overview of all published and not hidden pages to the website. The 
 individual entries are displayed as links so that visitors can jump directly to a specific page. Whether or not a page 
 is displayed in the HTML sitemap also depends on its configuration in the page structure (see 
-[Expert Settings](/en/layout/site-structure/configure-pages/#expert-settings).
+[Expert Settings](/en/site-structure/regular-page/#expert-settings)).
 
 **Show protected items:** If you select this option, protected pages will also be displayed, which are otherwise only 
 available to registered members.
