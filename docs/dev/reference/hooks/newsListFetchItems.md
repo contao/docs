@@ -71,4 +71,4 @@ class NewsListFetchItemsListener
 
 ## References
 
-* [\Contao\ModuleNewsList#L205-L220](https://github.com/contao/contao/blob/5.3/news-bundle/contao/modules/ModuleNewsList.php#L205-L220)
+* [\Contao\ModuleNewsList#L205-L220](https://github.com/contao/contao/blob/5.3.0/news-bundle/contao/modules/ModuleNewsList.php#L205-L220)
