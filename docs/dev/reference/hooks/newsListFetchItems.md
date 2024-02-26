@@ -41,7 +41,7 @@ sorting for a news list.
 Return `false` if this hook should not be considered. Return a `\Contao\Model\Collection`
 otherwise. Return `null` if no news entries are found.
 
-If the return value is other than `false`, no further hooks of type `newsListFetchItems` will be executed!
+If the return value is anything other than `false`, no further hooks of type `newsListFetchItems` will be executed!
 
 
 ## Example
