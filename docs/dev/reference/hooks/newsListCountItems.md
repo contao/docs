@@ -33,7 +33,7 @@ be shown in the current request.
 
 Return `false` if this hook should not be considered. Return an integer otherwise.
 
-After an integer has been returned, no further hooks of type `newsListFetchItems` will be executed!
+If the return value is other than `false`, no further hooks of type `newsListCountItems` will be executed!
 
 ## Example
 
