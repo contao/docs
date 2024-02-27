@@ -52,7 +52,9 @@ you will find the directories "files", "templates" and the file "theme.xml".
 
 You must create the current SQL-Dump of your theme installation via the [backup command](/en/cli/database-backups/) on the console. A normal 
 PHPMyAdmin export, for example, would not be sufficient. Then copy the "var/backups" directory with your current SQL-Dump into the 
-unzipped directory above.
+unzipped directory above. Only one SQL-Dump may exist in this directory. 
+
+The SQL-Dump is always optional. Without this, only the files are installed.
 
 
 ```bash
@@ -74,8 +76,8 @@ The label `"type": "contao-theme"` is mandatory and necessary for the Contao Man
 
 ## Your Theme
 
-Your theme directory now contains all the necessary information. You can archive the directory as a "`.zip`" file and 
-use it during a new installation via the Contao Manager.
+Your theme directory now contains all the necessary information. You can now archive this as a "`.zip`" file and 
+use it for a new installation via the Contao Manager. Please make sure that the directory is not compressed, but only the files.
 
 {{% notice note %}}
 You can easily add other files such as a "README.md" or license details.
