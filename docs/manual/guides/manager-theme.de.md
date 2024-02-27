@@ -53,7 +53,9 @@ findest du hier die Verzeichnisse »files«, »templates« und die Datei »theme
 
 Den aktuellen SQL-Dump deiner Theme-Installation musst du über den [Backup-Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. Ein 
 normaler PHPMyAdmin Export wäre z. B. nicht ausreichend. Das Verzeichnis »var/backups« mit deinem aktuellen SQL-Dump kopierst du 
-anschließend in das obige, entpackte Verzeichnis.
+anschließend in das obige, entpackte Verzeichnis. In diesem Verzeichnis darf dabei nur ein einziger SQL-Dump vorliegen. 
+
+Grundsätzlich ist ein SQL-Dump optional. Ohne diesen werden nur die Dateien installiert.
 
 ```bash
 php vendor/bin/contao-console contao:backup:create
@@ -75,8 +77,9 @@ Die Kennzeichnung `"type": "contao-theme"` ist dabei zwingend und für den Conta
 
 ## Dein Theme
 
-Dein Theme-Verzeichnis beinhaltet nun alle notwendigen Angaben. Du kannst das Verzeichnis jetzt als »`.zip`« Datei archivieren und 
-bei einer Neuinstallation über den Contao Manager nutzen.
+Dein Theme-Verzeichnis beinhaltet nun alle notwendigen Angaben. Du kannst diese jetzt als »`.zip`« Datei archivieren und 
+bei einer Neuinstallation über den Contao Manager nutzen. Hierbei ist darauf zu achten, dass nicht das Verzeichnis komprimiert wird, 
+sondern nur die Dateien.
 
 {{% notice note %}}
 Weitere Dateien wie z. B. eine »README.md« oder Lizenzangaben kannst du ohne weiteres hinzufügen.
