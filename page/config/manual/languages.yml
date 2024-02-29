@@ -1,9 +1,18 @@
 en:
   languageName: English
   weight: 1
+  params:
+    documentation_label_overview: 'More documentation on'
+    documentation_label_website: 'More about Contao on'  
+    documentation_label_switch: 'The Developer Documentation'
+    documentation_label_switch_url: 'https://docs.contao.org/dev/'
 de:
   languageName: Deutsch
   weight: 2
   title: 'Contao Handbuch'
   params:
-    documentation_label: Handbuch
+    documentation_label: 'Handbuch'
+    documentation_label_overview: 'Weitere Dokumentationen auf'
+    documentation_label_website: 'Mehr über Contao auf'
+    documentation_label_switch: 'Die Entwickler Dokumentation'
+    documentation_label_switch_url: 'https://docs.contao.org/dev/'

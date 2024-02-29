@@ -1,3 +1,7 @@
 editURL: 'https://github.com/contao/docs/edit/main/docs/dev/'
 documentation_label: 'Developer Documentation'
 algolia_selector: dev
+documentation_label_overview: 'More documentation on'
+documentation_label_website: 'More about Contao on'
+documentation_label_switch: 'The Contao Manual'
+documentation_label_switch_url: 'https://docs.contao.org/manual/en/'
