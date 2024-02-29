@@ -28,7 +28,8 @@ Wenn du nur die Daten von bestimmten Variablen benötigst, kannst du diese als A
 {{% /example %}}  
 
 
-Soll die Ausgabe in der Toolbar - und nicht in der Vorlage - ausgegeben werden, so kannst du die `dump`-Funktion verwenden:  
+Soll die Ausgabe in der Toolbar - und nicht in der Vorlage - erfolgen, kannst du die `dump`-Funktion verwenden:
+
 ```twig
 {% dump %} {# Ausgabe aller verfügbaren Daten #}
 {% dump(a) %} {# Ausgabe der Daten der Variable "a" #}
