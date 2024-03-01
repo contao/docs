@@ -51,9 +51,10 @@ findest du hier die Verzeichnisse »files«, »templates« und die Datei »theme
 
 ### SQL-Dump
 
-Den aktuellen SQL-Dump deiner Theme-Installation musst du über den [Backup-Befehl](/de/cli/datenbank-backups/) auf der Konsole erstellen. Ein 
-normaler PHPMyAdmin Export wäre z. B. nicht ausreichend. Das Verzeichnis »var/backups« mit deinem aktuellen SQL-Dump kopierst du 
-anschließend in das obige, entpackte Verzeichnis. In diesem Verzeichnis darf dabei nur ein einziger SQL-Dump vorliegen. 
+Den aktuellen SQL-Dump deiner Theme-Installation musst du über den [Backup-Befehl](/de/cli/datenbank-backups/) auf der Konsole oder
+über den [Contao Manger](/de/installation/contao-manager/) (`Systemwartung - Datenbank-Migrationen und -Backups`) erstellen. Ein 
+normaler PHPMyAdmin Export wäre z. B. nicht ausreichend. Das Verzeichnis »var/backups« mit deinem aktuellen SQL-Dump kopierst du anschließend 
+in das obige, entpackte Verzeichnis. In diesem Verzeichnis darf dabei nur ein einziger SQL-Dump vorliegen. 
 
 Grundsätzlich ist ein SQL-Dump optional. Ohne diesen werden nur die Dateien installiert.
 
