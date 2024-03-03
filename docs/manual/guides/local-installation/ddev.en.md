@@ -80,42 +80,60 @@ mkdir -p ~/projects/contao/contao-ddev && cd ~/projects/contao/contao-ddev
 Create the DDEV configuration with:
 
 ```shell
-ddev config
+ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.2 --create-docroot
 ```
 
-Make DDEV settings, select `php` as __Project Type__ in any case. Leave the __Docroot Location__ empty for now, because there is no `public` folder for new installations and DDEV can not start then.
+Install Contao 5.3:
 
 ```shell
-ddev start
+ddev composer create contao/managed-edition:5.3
 ```
 
-For installation via console it is easiest to go via ssh into the container.
+After installation, the database access data must be entered in the `.env`. At the same time, we also set up Mailpit directly.
+
+```env
+APP_ENV=prod
+DATABASE_URL="mysql://db:db@db:3306/db"
+MAILER_DSN="smtp://localhost:1025?encryption=&auth_mode="
+```
+
+Then create the database:
 
 ```shell
-ddev ssh
+ddev exec "bin/console contao:migrate"
 ```
+
+Create backend user:
 
 ```shell
-composer create-project contao/managed-edition contao 4.13
-```
-
-In the `.ddev/config.yml` now adjust the docroot and restart ddev.
-
-```yml
-docroot: "contao/public"
+ddev exec "bin/console contao:user:create"
 ```
 
 To use Apache instead of NGINX, change your entry `webserver_type: nginx-fpm` to `apache-fpm`.
 
-```yml
-webserver_type: apache-fpm
+```shell
+ddev launch
 ```
+
+{{% notice note %}}
+
+With `ddev launch contao` you get directly to the administration.
+
+{{% /notice %}}
 
 The `ddev` binary is not available in the container, so first switch to the host console with `exit`.
 
-```shell
-ddev restart
-```
+## Additional information
+
+`ddev start` starts the project, `ddev stop` ends it. Make sure beforehand that you have changed to the project folder.
+
+`ddev poweroff` can stop all started projects/containers from any directory.
+
+With `ddev ssh` you can switch to the shell of the container and work on the console. The `ddev` binary is not available in the container, so first switch to the host console with `exit`.
+
+`ddev describe` gives an overview of the services available in the project and how to access them.
+
+`ddev xdebug on` starts Xdedug. [Information about the IDE setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
 
 A database already exists in DDEV. The connection data for the installation are:
 
@@ -125,20 +143,6 @@ A database already exists in DDEV. The connection data for the installation are:
 | **username** | db |
 | **password** | db |
 | **Database** | db |
-
-The database of the current project can be accessed via the phpMyAdmin add-on. Enter the following command to automatically open a browser tab with the administration tool for MySQL databases:
-
-```shell
-ddev phpmyadmin
-```
-
-Since ddev version 1.22.0 the support of phpmyadmin has been converted into a DDEV add-on. Therefore the above command must be used instead of `ddev launch -p`.
-
-{{% notice note %}}
-With `ddev describe` you get an overview of the services available in the project and how to reach them. With `ddev poweroff` you can stop all started projects/containers from any directory.
-
-{{% /notice %}}
-
 
 ## DDEV Addons
 
@@ -150,3 +154,5 @@ DDEV now offers [Services as Addon](https://ddev.readthedocs.io/en/latest/users/
 ```shell
 ddev get ddev/ddev-adminer && ddev restart
 ```
+
+With `ddev describe` you can find out how to reach Adminer.

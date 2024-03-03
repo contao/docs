@@ -80,42 +80,58 @@ mkdir -p  ~/Projekte/contao/contao-ddev && cd ~/Projekte/contao/contao-ddev
 DDEV-Konfiguration anlegen mit:
 
 ```shell
-ddev config
+ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.2 --create-docroot
 ```
 
-DDEV-Einstellungen vornehmen, als __Project Type__ auf jeden fall `php` auswählen. Die __Docroot Location__ erstmal leer lassen, da es bei Neuinstallationen noch keinen `public` Ordner gibt und DDEV dann nicht starten kann.
+Contao 5.3 installieren:
 
 ```shell
-ddev start
+ddev composer create contao/managed-edition:5.3
 ```
 
-Zur Installation via Konsole ist es am einfachsten, sich via SSH mit dem Container zu verbinden.
+Nach der Installation müssen die Datenbankzugangsdaten in die `.env` eingetragen werden. In diesem Zug richten wir auch direkt Mailpit ein.
+
+```env
+APP_ENV=prod
+DATABASE_URL="mysql://db:db@db:3306/db"
+MAILER_DSN="smtp://localhost:1025?encryption=&auth_mode="
+```
+
+Im Anschluss die Datenbank anlegen:
 
 ```shell
-ddev ssh
+ddev exec "bin/console contao:migrate"
 ```
+
+Backend-User anlegen:
 
 ```shell
-composer create-project contao/managed-edition contao 4.13
+ddev exec "bin/console contao:user:create"
 ```
 
-In der `.ddev/config.yml` nun das Docroot anpassen und ddev neu starten.
-
-```yml
-docroot: "contao/public"
-```
-
-Um Apache anstatt NGINX zu verwenden, den Eintrag `webserver_type: nginx-fpm` in `apache-fpm` ändern.
-
-```yml
-webserver_type: apache-fpm
-```
-
-Die `ddev` Binary steht im Container nicht zur Verfügung, also erst mit `exit` auf die Host-Konsole wechseln.
+Projekt im Browser aufrufen:
 
 ```shell
-ddev restart
+ddev launch
 ```
+
+{{% notice note %}}
+
+Mit `ddev launch contao` kommst du direkt zur Administration.
+
+{{% /notice %}}
+
+## Zusatz Informationen
+
+`ddev start` startet das Projekt, `ddev stop` beendet es. Stelle vorher sicher, dass du in den Projektordner gewechselt hast.
+
+`ddev poweroff` kann aus jedem Verzeichnis heraus alle gestarteten Projekte/Container stoppen.
+
+Mit `ddev ssh` wechselst du in die Shell des Containers und kannst auf der Konsole arbeiten. Die `ddev` Binary steht im Container nicht zur Verfügung, also erst mit `exit` auf die Host-Konsole wechseln.
+
+`ddev describe` gibt eine Übersicht der Services, die im Projekt zur Verfügung stehen und wie du sie erreichst.
+
+`ddev xdebug on` startet Xdedug. [Informationen zum IDE-Setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
 
 Eine Datenbank gibt es schon in DDEV. Die Verbindungsdaten für die Installation lauten:
 
@@ -126,22 +142,9 @@ Eine Datenbank gibt es schon in DDEV. Die Verbindungsdaten für die Installation
 | **Passwort**        | db |
 | **Datenbank**       | db |
 
-Auf die Datenbank des aktuellen Projektes kann über das phpMyAdmin Add-On zugegriffen werden. Mit folgenden Befehl öffnet sich nach Eingabe automatisch ein Browser-Tab mit dem Administrationswerkzeug für MySQL-Datenbanken:
-
-```shell
-ddev phpmyadmin
-```
-Seit ddev Version 1.22.0 ist die Unterstützung von phpmyadmin in ein DDEV Add-on umgewandelt worden. Daher muss statt `ddev launch -p` der obige Befehl verwendet werden.
-
-{{% notice note %}}
-Mit `ddev describe` erhältst du eine Übersicht über Services, die im Projekt zur Verfügung stehen und wie du sie erreichst. Mit `ddev poweroff` kannst du aus jedem Verzeichnis heraus alle gestarteten Projekte/Container stoppen.
-
-{{% /notice %}}
-
-
 ## DDEV Addons
 
-DDEV bietet nun auch [Services als Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
+DDEV bietet auch [Services als Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
 
 
 ### Beispiel: Adminer
@@ -150,14 +153,4 @@ DDEV bietet nun auch [Services als Addon](https://ddev.readthedocs.io/en/latest/
 ddev get ddev/ddev-adminer && ddev restart
 ```
 
-Zudem kann man phpMyAdmin in der `.ddev/config.yml` auch deaktivieren:
-
-```yml
-omit_containers: [dba]
-```
-
-```shell
-ddev restart
-```
-
-
+Mit `ddev describe` erfährst du, wie du Adminer erreichst.
