@@ -333,7 +333,7 @@ hosting packages for Contao from the [Contao partners](https://contao.org/en/con
 category "Web hosting".
 
 {{% notice "note" %}}
-Some hosting providers offer 1click installations, also for Contao. However, for the best user experience, we recommend using the 
+Some hosting providers offer 1-click installations. However, for the best user experience, we recommend using the 
 Contao Manager or the console.
 {{% /notice %}}
 
