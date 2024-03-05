@@ -7,8 +7,9 @@ aliases:
 weight: 15
 ---
 
-Wir gehen hier davon aus, dass du entweder die aktuellste Version oder die [Long Term Support Version](https://docs.contao.org/manual/de/installation/contao-aktualisieren/#long-term-support-versionen) mit dem Contao Manager
-installieren willst. Das ist der einfachste und für Einsteiger empfohlene Weg.
+Wir gehen hier davon aus, dass du entweder die aktuellste Version oder die [Long Term Support Version](https://docs.contao.org/manual/de/installation/contao-aktualisieren/#long-term-support-versionen) mit dem Contao Manager installieren willst. Das ist der einfachste und für Einsteiger 
+empfohlene Weg. Einige Hosting-Anbieter bieten 1click-Installationen, auch für Contao, an. Für das beste Nutzungserlebnis empfehlen wir jedoch, 
+bei der Installation von Contao, den Contao Manager oder die Konsole zu verwenden.
 
 
 ## Hosting Konfiguration
