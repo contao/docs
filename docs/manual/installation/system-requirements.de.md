@@ -345,7 +345,7 @@ Leistungskategorie »Webhosting«.
 
 {{% notice "note" %}}
 Einige Hosting-Anbieter bieten 1-Klick-Installationen an. Für das beste Nutzungserlebnis empfehlen wir jedoch, bei der 
-Installation von Contao, den Contao Manager oder die Konsole zu verwenden.
+Installation von Contao den Contao Manager oder die Konsole zu verwenden.
 {{% /notice %}}
 
 
