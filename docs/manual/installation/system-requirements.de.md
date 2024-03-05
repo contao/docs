@@ -343,5 +343,11 @@ erfordern. Zum Glück sind sie nur die Ausnahme von der Regel. Die Provider-spez
 Contao-Hosting erhältst du bei den [Contao-Partnern](https://contao.org/de/contao-partner.html) in der 
 Leistungskategorie »Webhosting«.
 
+{{% notice "note" %}}
+Einige Service Provider bieten »1click« Installationen, auch für Contao, an. Für das beste Nutzungserlebnis empfehlen wir, bei der Installation 
+von Contao, den Contao Manager oder die Konsole zu verwenden. Alle anderen Installationsmöglichkeiten, können zwar auch zum Ziel führen, 
+der Weg dorthin ist aber mitunter sehr steinig.
+{{% /notice %}}
+
 
 [SymfonyWebServerConfiguration]: https://symfony.com/doc/current/setup/web_server_configuration.html
