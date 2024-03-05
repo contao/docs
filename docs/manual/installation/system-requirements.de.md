@@ -344,9 +344,8 @@ Contao-Hosting erhältst du bei den [Contao-Partnern](https://contao.org/de/cont
 Leistungskategorie »Webhosting«.
 
 {{% notice "note" %}}
-Einige Service Provider bieten »1click« Installationen, auch für Contao, an. Für das beste Nutzungserlebnis empfehlen wir, bei der Installation 
-von Contao, den Contao Manager oder die Konsole zu verwenden. Alle anderen Installationsmöglichkeiten, können zwar auch zum Ziel führen, 
-der Weg dorthin ist aber mitunter sehr steinig.
+Einige Hosting-Anbieter bieten 1click-Installationen, auch für Contao, an. Für das beste Nutzungserlebnis empfehlen wir jedoch, bei der 
+Installation von Contao, den Contao Manager oder die Konsole zu verwenden.
 {{% /notice %}}
 
 
