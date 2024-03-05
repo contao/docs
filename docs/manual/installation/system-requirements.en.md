@@ -332,5 +332,10 @@ only the exception to the rule. The provider-specific settings can be found in t
 hosting packages for Contao from the [Contao partners](https://contao.org/en/contao-partners.html) in the service 
 category "Web hosting".
 
+{{% notice "note" %}}
+Some hosting providers offer 1-click installations. However, for the best user experience, we recommend using the 
+Contao Manager or the console.
+{{% /notice %}}
+
 
 [SymfonyWebServerConfiguration]: https://symfony.com/doc/current/setup/web_server_configuration.html
