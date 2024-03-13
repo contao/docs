@@ -343,7 +343,7 @@ class ContaoExampleExtension extends Extension
 ```
 
 {{% notice info %}}
-This will not work automatically if your bundle class already extends from `AbstractBundle`. If you which to use this
+This will not work automatically if your bundle class already extends from `AbstractBundle`. If you wish to use this
 extension class, you will need to implement the `getContainerExtension()` method in your bundle class and instantiate
 this extension class manually.
 
