@@ -52,13 +52,13 @@ With these insert tags you can create links to other pages or articles. You only
 
 #### Parameter ::absolute
 
-`{{link::*`**`::absolute`**`}}`: The parameter allows to output an insert tag link as an absolute URL.
+`{{link::https://www.example.com/news.html::absolute}}`: The parameter allows to output an insert tag link as an absolute URL.
 
 **The HTML Output**  
 The insert tag link with parameter generates the following HTML code:
 
 ```html
-<a href="https://www.example.com/news.html" title="…">…</a>
+<a href="https://www.example.com/news.html" title="https://www.example.com/news.html">www.example.com/news.html</a>
 ```
 
 
