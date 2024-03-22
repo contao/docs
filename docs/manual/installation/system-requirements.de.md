@@ -38,7 +38,7 @@ empfohlen, diese immer zu verwenden.
 | [Imagick][ext-imagick] (`ext-imagick`)            | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
 | [Gmagick][ext-gmagick] (`ext-gmagick`)            | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
 | [File Information][ext-fileinfo] (`ext-fileinfo`) | **erforderlich**                               | **erforderlich**                               |
-| [Sodium][ext-sodium] (`ext-sodium`)               | -                                              | **erforderlich** für PHP 8.3+                  |
+| [Sodium][ext-sodium] (`ext-sodium`)               | -                                              | **erforderlich** für PHP 8.3+<sup>2</sup>      |
 
 {{% notice note %}}
 <sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus.
@@ -68,6 +68,12 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 Alle erforderlichen Erweiterungen sind in aktuellen PHP-Versionen standardmäßig aktiviert. Einige Hosting-Anbieter 
 deaktivieren sie jedoch explizit. Die Anforderungen werden bei der Installation durch 
 [Contao Manager](../../installation/contao-manager) oder [Composer](https://getcomposer.org) automatisch überprüft.
+
+{{% notice tip %}}
+<sup>2</sup> Falls die PHP Sodium Erweiterung auf deinem System nicht zur Verfügung steht, kannst du in der 
+`composer.json` deines Projektes zusätzlich nach dem Paket `paragonie/sodium_compat_ext_sodium` verlangen, um das zu
+umgehen.
+{{% /notice %}}
 
 
 ### PHP-Konfiguration (`php.ini`)
