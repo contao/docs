@@ -24,20 +24,21 @@ empfohlen, diese immer zu verwenden.
 
 ### PHP-Erweiterungen
 
-| Name der Erweiterung                      | ab Contao 4.4                | ab Contao 4.9                                  | ab Contao 4.13                                 |
-|:------------------------------------------|:-----------------------------|:-----------------------------------------------|:-----------------------------------------------|
-| [DOM][ext-dom] (`ext-dom`)                | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [PCRE][ext-pcre] (`ext-pcre`)             | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [Intl][ext-intl] (`ext-intl`)             | empfohlen                    | **erforderlich**                               | **erforderlich**                               |
-| [PDO][ext-pdo] (`ext-pdo`)                | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [ZLIB][ext-zlib] (`ext-zlib`)             | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [JSON][ext-json] (`ext-json`)             | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [Curl][ext-curl] (`ext-curl`)             | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [Mbstring][ext-mbstring] (`ext-mbstring`) | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [GD][ext-gd] (`ext-gd`)                   | **erforderlich**<sup>1</sup> | **erforderlich**<sup>1</sup>                   | **erforderlich**<sup>1</sup>                   |
-| [Imagick][ext-imagick] (`ext-imagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
-| [File Information][ext-fileinfo] (`ext-fileinfo`) | -                    | -                                              | **erforderlich**                               |
+| Extension Name                                    | Contao 4                                       | Contao 5                                       |
+|:--------------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
+| [DOM][ext-dom] (`ext-dom`)                        | **erforderlich**                               | **erforderlich**                               |
+| [PCRE][ext-pcre] (`ext-pcre`)                     | **erforderlich**                               | **erforderlich**                               |
+| [Intl][ext-intl] (`ext-intl`)                     | **erforderlich**                               | **erforderlich**                               |
+| [PDO][ext-pdo] (`ext-pdo`)                        | **erforderlich**                               | **erforderlich**                               |
+| [ZLIB][ext-zlib] (`ext-zlib`)                     | **erforderlich**                               | **erforderlich**                               |
+| [JSON][ext-json] (`ext-json`)                     | **erforderlich**                               | **erforderlich**                               |
+| [Curl][ext-curl] (`ext-curl`)                     | **erforderlich**                               | **erforderlich**                               |
+| [Mbstring][ext-mbstring] (`ext-mbstring`)         | **erforderlich**                               | **erforderlich**                               |
+| [GD][ext-gd] (`ext-gd`)                           | **erforderlich**<sup>1</sup>                   | **erforderlich**<sup>1</sup>                   |
+| [Imagick][ext-imagick] (`ext-imagick`)            | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)            | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+| [File Information][ext-fileinfo] (`ext-fileinfo`) | **erforderlich**                               | **erforderlich**                               |
+| [Sodium][ext-sodium] (`ext-sodium`)               | -                                              | **erforderlich** für PHP 8.3+                  |
 
 {{% notice note %}}
 <sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus.
@@ -62,6 +63,7 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 [ext-imagick]: https://www.php.net/manual/de/book.imagick.php
 [ext-gmagick]: https://www.php.net/manual/de/book.gmagick.php
 [ext-fileinfo]: https://www.php.net/manual/de/book.fileinfo.php
+[ext-sodium]: https://www.php.net/manual/en/book.sodium.php
 
 Alle erforderlichen Erweiterungen sind in aktuellen PHP-Versionen standardmäßig aktiviert. Einige Hosting-Anbieter 
 deaktivieren sie jedoch explizit. Die Anforderungen werden bei der Installation durch 
