@@ -407,7 +407,7 @@ original templates' blocks, and then make the needed adjustments:
 {% use "@Contao/component/_picture.html.twig" %}
 
 {% block image %}
-    {% set img_attributes = attrs(img_attributes|default).addClass('my-image) %}
+    {% set img_attributes = attrs(img_attributes|default).addClass('my-image') %}
     <div>{{ parent() }}</div>
 {% endblock %}
 ```
