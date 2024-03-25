@@ -105,9 +105,9 @@ führen.
 - **PHP** Version 8.1.0 oder höher ist erforderlich.
 
 
-#### Contao 4.11 und später
+#### Contao 4.13 (LTS)
 
-- **PHP** Version 7.3.0 oder höher ist erforderlich.
+- **PHP** Version 7.4.0 oder höher ist erforderlich.
 
 
 #### Contao 4.9 (LTS)
