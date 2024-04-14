@@ -141,7 +141,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category:'texts')]
+#[AsContentElement(category: 'texts')]
 class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -164,7 +164,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement('example', category:'texts', template:'ce_example', renderer:'forward', method:'__invoke')]
+#[AsContentElement('example', 'texts', 'ce_example', '__invoke', 'forward')]
 class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -173,6 +173,8 @@ class ExampleController extends AbstractContentElementController
     }
 }
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{% tab name="Annotation" %}}
@@ -217,7 +219,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @ContentElement("example", category="texts", template="ce_example", renderer="forward", method="__invoke")
+ * @ContentElement("example", "texts", "ce_example", "__invoke", "forward")
  */
 class ExampleController extends AbstractContentElementController
 {
@@ -227,6 +229,8 @@ class ExampleController extends AbstractContentElementController
     }
 }
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{% tab name="YAML" %}}
@@ -274,6 +278,8 @@ services:
                 renderer: forward
                 method: __invoke
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{< /tabs >}}
