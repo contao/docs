@@ -390,7 +390,7 @@ $GLOBALS['TL_WRAPPERS']['stop'][] = 'my_stop_element';
 
 {{< version "5.3" >}}
 
-An alternative approach to the aforementioned wrapper elements are so called "nested fragments". This allows you to
+An alternative approach to the aforementioned wrapper elements are so called "nested fragments". These allow you to
 nest other content elements within a parent content element for which nested fragments are enabled. The following
 screenshot shows the _Element group_ content element of the Contao Core:
 
