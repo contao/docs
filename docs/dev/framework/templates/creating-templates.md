@@ -757,7 +757,7 @@ dealing with relative URLs on a page that does not set a `<base>` tag.
 {{< version "5.2" >}}
 
 You can render content elements directly in your Twig templates via the `content_element()` function. This function
-either takes a database ID of an existing content element - or just the type of a content element. In the latter case
+either takes a database ID of an existing content element, a `ContentElementReference` object - or just the type of a content element. In the latter case
 you can then also define all the options with which this content element should be rendered. This allows you to render
 content elements on the fly without having to define them in the database.
 
