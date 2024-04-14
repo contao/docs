@@ -448,14 +448,14 @@ services:
 
 With nested fragments it is also possible to restrict the fragment's children to specific content element types. Say you
 want to implement a specific slider content element which should only allow images and videos as it's children. Then
-instead of defineind `true` for the tag's `nestedFragments` option you can instead pass an array of content element
-types:
+instead of defining `true` for the tag's `nestedFragments` option you can instead pass an additional option called
+`allowedTypes`:
 
 {{< tabs groupId="attribute-annotation-yaml" >}}
 
 {{% tab name="Attribute" %}}
 ```php
-#[AsContentElement(nestedFragments: ['image', 'video'])]
+#[AsContentElement(nestedFragments: ['allowedTypes' => ['image', 'video']])]
 class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
@@ -469,7 +469,7 @@ class ExampleController extends AbstractContentElementController
 {{% tab name="Annotation" %}}
 ```php
 /**
- * @ContentElement(category="miscellaneous", nestedFragments={"image", "video"})
+ * @ContentElement(category="miscellaneous", nestedFragments={"allowedTypes" = {"image", "video"}})
  */
 class ExampleController extends AbstractContentElementController
 {
@@ -488,7 +488,8 @@ services:
         tags:
             -
                 name: contao.content_element
-                nestedFragments: ['image', 'video']
+                nestedFragments:
+                    allowedTypes: ['image', 'video']
 ```
 {{% /tab %}}
 
