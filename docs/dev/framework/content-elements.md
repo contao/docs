@@ -151,7 +151,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the `category` attribute (which is actually optional for the PHP attribute - the default 
+category is `miscellaneous`). If you wish you can also define the other options of the service tag:
 
 ```php
 // src/Controller/ContentElement/ExampleController.php
@@ -205,7 +206,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of 
+the service tag:
 
 ```php
 // src/Controller/ContentElement/ExampleController.php
@@ -264,7 +266,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of 
+the service tag:
 
 ```yaml
 # config/services.yaml
@@ -287,7 +290,7 @@ However, it is recommended to only define what you need and otherwise leave the 
 You can also use class constants within attributes and annotations. This can be helpful to make the module's type a reusable reference:
 
 ```php
-#[AsContentElement(ExampleController::TYPE, 'miscellaneous')]
+#[AsContentElement(ExampleController::TYPE)]
 class ExampleController extends AbstractContentElementController
 {
     public const TYPE = 'my_element';
