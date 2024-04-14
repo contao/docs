@@ -122,6 +122,7 @@ As mentioned previously a content element is registered by registering a control
 | template | `string`  | _Optional:_ Override the generated template name.                                                                                         |
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |
 | method   | `string`  | _Optional:_  Which method should be invoked on the controller.                                                                            |
+| nestedFragments | `bool`/`array` | _Optional:_ Allows [nested fragments](#nested-fragments) for this content element. |
 
 Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
 
