@@ -132,11 +132,11 @@ Each field can be validated against a regular expression.
 | alwaysSave         | true/false (`bool`)           | If true the field will always be saved, even if its value has not changed. This can be useful in conjunction with a load_callback.                                       |
 | blankOptionLabel   | Label (`string`)                 | Label for the blank option (defaults to `-`).                                                                                                                         |
 | chosen             | true/false (`bool`)           | Native selects enhanced with [Chosen](http://harvesthq.github.io/chosen/).                                                                                               |
-| collapseUncheckedGroups | true/false (`bool`) | {{< version "4.13" >}} If true all option groups without at least one checked option will be collapsed. The first group of options will not be collapsed if there are no options selected at all. Applies to checkbox widgets with a nested array of options only.                                                                                                                  |
+| collapseUncheckedGroups | true/false (`bool`) | {{< version-tag "4.13" >}} If true all option groups without at least one checked option will be collapsed. The first group of options will not be collapsed if there are no options selected at all. Applies to checkbox widgets with a nested array of options only.                                                                                                                  |
 | colorpicker        | true/false (`bool`)           | If true the current field will have a `mooRainbow` color picker.                                                                                                         |
 | cols               | Columns (`integer`)              | Number of columns (used for `textarea`, `radioTable` and `tableWizard` fields).                                                                                                                                |
 | csv                | Delimiter (`string`)             | The choice of this field will not be stored as serialized string but rather as given delimiter-separated list. Example: `'eval' => ['csv'=>',']`                 |
-| customRgxp        | Regular expression (`string`) | {{< version "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
+| customRgxp        | Regular expression (`string`) | {{< version-tag "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
 | customTpl        | Filename (`string`) | Use own template for this input field `'customTpl' => 'template-file-name'` |
 | datepicker         | true/false (`bool`)           | If true the current field will have a [MooTools-DatePicker](https://github.com/arian/mootools-datepicker).                                                                                                                             |
 | dcaPicker          | true/false (`bool`)           | If true the general purpose picker will be shown. Allows to pick different records from the system and return them as an insert tag.                                     |
@@ -162,7 +162,7 @@ Each field can be validated against a regular expression.
 | isBoolean          | true/false (`bool`)           | Indicates that a particular field is boolean.                                                                                                                            |
 | isGallery          | true/false (`bool`)     | Displays selected files of a `fileTree` widget as an image gallery. |
 | isHexColor         | true/false (`bool`)              | Defines the input as being a color definition in Hex notation. Invalid characters will automatically be removed. |
-| isSortable         | true/false (`bool`)           | {{< version "4.10" >}} Enable sorting for the selected items. Applies to file trees and pickers.                                                                              |
+| isSortable         | true/false (`bool`)           | {{< version-tag "4.10" >}} Enable sorting for the selected items. Applies to file trees and pickers.                                                                              |
 | mandatory          | true/false (`bool`)           | If true the field cannot be empty.                                                                                                                                       |
 | maxlength          | Maximum length (`integer`)       | Maximum number of characters that is allowed in the current field.                                                                                                       |
 | maxval             | Maximum value (`integer`)        | Maximum number value to be checked (upper bound).                                                                                                                        |
@@ -226,8 +226,8 @@ can be [registered using a hook][3].
 | language    | expects a valid language code (e.g. "de-CH")                                                                      |
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
-| httpurl     | {{< version "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
-| custom      | {{< version "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/']` |
+| httpurl     | {{< version-tag "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
+| custom      | {{< version-tag "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/']` |
 
 
 #### Meta Wizard Fields
