@@ -310,7 +310,6 @@ the Doctrine Database Abstraction Layer.
 | `['type' => 'string', 'length' => 1, 'fixed' => true, 'default' => '']`     | `CHAR(1) NOT NULL DEFAULT ''`     |
 | `['type' => 'integer', 'notnull' => false, 'unsigned' => true]`             | `INT UNSIGNED NULL`               |
 | `['type' => 'binary', 'length' => 16, 'fixed' => true, 'notnull' => false]` | `BINARY(16) NULL`                 |
-| `['type' => 'binary', 'length' => 16, 'fixed' => true, 'notnull' => false]` | `BINARY(16) NULL`                 |
 | `['type' => 'string', 'length' => 64, 'default' => '', 'customSchemaOptions' => ['collation' => 'ascii_bin']]` | `VARCHAR(64) COLLATE ascii_bin NOT NULL default ''` |
 
 
