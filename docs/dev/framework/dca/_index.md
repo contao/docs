@@ -305,7 +305,7 @@ prefixed with `DC_` anymore. Instead you can  reference the FQCN of the driver i
 // contao/tl_example.php
 use Vendor\Driver\FoobarDriver;
 
-$GLOBALS['TL_DCA']['tl_example'] => [
+$GLOBALS['TL_DCA']['tl_example'] = [
     'config' => [
         'dataContainer' => FoobarDriver::class,
     ],
