@@ -122,6 +122,7 @@ As mentioned previously a content element is registered by registering a control
 | template | `string`  | _Optional:_ Override the generated template name.                                                                                         |
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |
 | method   | `string`  | _Optional:_  Which method should be invoked on the controller.                                                                            |
+| nestedFragments | `bool`/`array` | _Optional:_ Allows [nested fragments](#nested-fragments) for this content element. |
 
 Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
 
@@ -383,6 +384,131 @@ in your `contao/config/config.php`. The `$GLOBALS['TL_WRAPPERS']` array holds th
 // contao/config.php
 $GLOBALS['TL_WRAPPERS']['start'][] = 'my_start_element';
 $GLOBALS['TL_WRAPPERS']['stop'][] = 'my_stop_element';
+```
+
+
+## Nested Fragments
+
+{{< version "5.3" >}}
+
+An alternative approach to the aforementioned wrapper elements are so called "nested fragments". These allow you to
+nest other content elements within a parent content element for which nested fragments are enabled. The following
+screenshot shows the _Element group_ content element of the Contao Core:
+
+![Element group content element]({{% asset "images/dev/framework/nested-fragments.png" %}}?classes=shadow)
+
+Just as with page articles, news archives, etc. this content element allows you to edit its children via 
+![edit children icon]({{% asset "icons/children.svg" %}}?classes=icon) which then works the same way as within the
+article of a page.
+
+Allowing nested fragments for your content element works via the `nestedFragments` option in the service tag:
+
+{{< tabs groupId="attribute-annotation-yaml" >}}
+
+{{% tab name="Attribute" %}}
+```php
+#[AsContentElement(nestedFragments: true)]
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="Annotation" %}}
+```php
+/**
+ * @ContentElement(category="miscellaneous", nestedFragments=true)
+ */
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="YAML" %}}
+```yaml
+services:
+    App\Controller\ContentElement\ExampleController:
+        tags:
+            -
+                name: contao.content_element
+                nestedFragments: true
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+With nested fragments it is also possible to restrict the fragment's children to specific content element types. Say you
+want to implement a specific slider content element which should only allow images and videos as its children. Then
+instead of defining `true` for the tag's `nestedFragments` option you can instead pass an additional option called
+`allowedTypes`:
+
+{{< tabs groupId="attribute-annotation-yaml" >}}
+
+{{% tab name="Attribute" %}}
+```php
+#[AsContentElement(nestedFragments: ['allowedTypes' => ['image', 'video']])]
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="Annotation" %}}
+```php
+/**
+ * @ContentElement(category="miscellaneous", nestedFragments={"allowedTypes" = {"image", "video"}})
+ */
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="YAML" %}}
+```yaml
+services:
+    App\Controller\ContentElement\ExampleController:
+        tags:
+            -
+                name: contao.content_element
+                nestedFragments:
+                    allowedTypes: ['image', 'video']
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+Now all you have to do is render these fragments in your template. The `AbstractContentElementController` from which
+your content element likely extends from automatically passes the available nested fragments to your template within
+the `nested_fragments` template variable. This will be a collection of `ContentElementReference` objects which you can
+render via the `content_element()` Twig function:
+
+```twig
+{# templates/content_element/example.html.twig #}
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    {% for fragment in nested_fragments %}
+        {{ content_element(fragment) }}
+    {% endfor %}
+{% endblock %}
 ```
 
 
