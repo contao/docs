@@ -447,7 +447,7 @@ services:
 {{< /tabs >}}
 
 With nested fragments it is also possible to restrict the fragment's children to specific content element types. Say you
-want to implement a specific slider content element which should only allow images and videos as it's children. Then
+want to implement a specific slider content element which should only allow images and videos as its children. Then
 instead of defining `true` for the tag's `nestedFragments` option you can instead pass an additional option called
 `allowedTypes`:
 
