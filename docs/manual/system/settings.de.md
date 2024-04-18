@@ -174,7 +174,7 @@ verarbeitet.
 (Upload).
 
 **Maximale Upload-Dateigröße:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server 
-übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MiB = 1024 KiB = 1.048.567 Bytes). Größere Dateien 
+übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MiB = 1024 KiB = 1.048.576 Bytes). Größere Dateien 
 werden abgelehnt.
 
 **Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese 
