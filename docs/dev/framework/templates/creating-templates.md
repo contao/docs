@@ -479,6 +479,7 @@ easier. On top of that, many Twig features just work out of the box for us.
 * [Formatting](#formatting) and enhancing text
 * Handling [translations](#translations)
 * Generating and manipulating [URLs](#urls)
+* Rendering [content elements](#render-content-elements) and [front end modules](#render-front-end-modules)
 
 #### Insert tags
 
@@ -748,6 +749,61 @@ dealing with relative URLs on a page that does not set a `<base>` tag.
 ```twig
 {# will outpuot something like "https://example.com/some/relative/url.html" #}
 {{ 'some/relative/url.html'|prefix_url }}
+```
+
+
+#### Render Content Elements
+
+{{< version "5.2" >}}
+
+You can render content elements directly in your Twig templates via the `content_element()` function. This function
+either takes a database ID of an existing content element, a `ContentElementReference` object - or just the type of a content element. In the latter case
+you can then also define all the options with which this content element should be rendered. This allows you to render
+content elements on the fly without having to define them in the database.
+
+```twig
+{# Render a specific content element from the database #}
+{# This is similar to the `insert_content` insert tag #}
+{{ content_element(15) }}
+```
+
+```twig
+{# Render a `gallery` content element on the fly #}
+{{
+    content_element('gallery', {
+        multiSRC: data.myGallery,
+        sortBy: 'random',
+        perRow: 4,
+        limit: 12,
+        fullsize: true
+    })
+}}
+```
+
+
+#### Render Front End Modules
+
+{{< version "5.2" >}}
+
+You can render front end modules directly in your Twig templates via the `frontend_module()` function. This function
+either takes a database ID of an existing front end module - or just the type of a front end module. In the latter case
+you can then also define all the options with which this front end module should be rendered. This allows you to render
+front end modules on the fly without having to define them in the database.
+
+```twig
+{# Render a specific front end module from the database #}
+{# This is similar to the `insert_module` insert tag #}
+{{ frontend_module(42) }}
+```
+
+```twig
+{# Render a `navigation` front end module on the fly #}
+{{
+    frontend_module('navigation', {
+        levelOffset: 1,
+        navigationTpl: 'nav_custom',
+    })
+}}
 ```
 
 

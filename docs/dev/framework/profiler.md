@@ -19,4 +19,6 @@ The data collectors, profiler and web developer toolbar are usually only enabled
 in `dev` mode. As soon as the mode is changed to `prod`, those features are disabled
 for performance and security reasons.
 
+You can access the profiler directly via `/_profiler/`.
+
 [1]: https://symfony.com/doc/current/profiler.html
