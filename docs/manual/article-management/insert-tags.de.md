@@ -182,7 +182,7 @@ Lightbox-Bild einfügen.
 | `{{form_session_data::*}}` | {{< version-tag "5.0" >}} Dieses Tag kann genutzt werden, um auf einzelne Felder eines gesendeten Formulars zuzugreifen. Dies ersetzt den alten `{{post::*}}` Insert-Tag. |
 | `{{lang::*}}`            | Mit diesem Tag können fremdsprachige Wörter in einem Text markiert werden: `{{lang::fr}}Au revoir{{lang}}`. Dies wird ersetzt mit `<span lang="fr">Au revoir</span>`. |
 | `{{abbr::*}}`            | Abkürzungen in einem Text markieren: `{{abbr::World Wide Web}}WWW{{abbr}}`. Dies wird ersetzt mit `<abbr title="World Wide Web">WWW</abbr>`. |
-| `{{acronym::*}}`         | Akronyme in einem Text markieren: `{{acronym::Multipurpose Internet Mail Extensions}}MIME{{acronym}}`. Dies wird ersetzt mit `<acronym title="Multipurpose Internet Mail Extensions">MIME</acronym>`. |
+| `{{acronym::*}}`         | Akronyme in einem Text markieren: `{{abbr::Multipurpose Internet Mail Extensions}}MIME{{abbr}}`. Dies wird ersetzt mit `<abbr title="Multipurpose Internet Mail Extensions">MIME</abbr>`. |
 | `{{ua::*}}`              | Eigenschaften des Browsers (User Agent) ausgeben: `{{ua::browser}}`. Dies wird beispielsweise ersetzt mit "chrome". |
 | `{{iflng::*}}`           | Dieses Tag wird komplett entfernt, wenn die Sprache der Seite nicht mit der Tag-Sprache übereinstimmt. Du kannst so sprachspezifische Bezeichnungen erstellen: `{{iflng::en}}Your name{{iflng::de}}Ihr Name{{iflng}}` {{% notice tip %}}
 Du kannst mit `en,de,fr` statt nur auf eine auch auf mehrere Sprachen testen. Zusätzlich kannst du auch `*` als Wildcard verwenden, was insbesondere bei Dialekten nützlich ist (bspw. gilt `de*` dann sowohl für `de_CH` als auch `de_AT`).
