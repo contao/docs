@@ -1170,6 +1170,76 @@ to the list of trusted proxies, you will get the host name that was requested in
 `TRUSTED_HOSTS=my.proxy.com`
 
 
+### `DNS_MAPPING`
+
+{{< version "5.3" >}}
+
+When creating a website in Contao you define the website's domain in the website root's settings - or in each website
+root respectively in a multi-domain setup. In order to not have to manually change the domain every time you copy the
+database from or to different hosting environments you can use the `DNS_MAPPING` environment variable:
+
+```env
+# .env.local in your local environment
+DNS_MAPPING='{
+    "www.example.com": "example.local",
+    "www.foobar.org": "foobar.local",
+    "www.lorem.at": "lorem.local"
+}'
+```
+
+```env
+# .env.local in your staging environment
+DNS_MAPPING='{
+    "www.example.com": "staging.example.com",
+    "www.foobar.org": "staging.foobar.org",
+    "www.lorem.at": "staging.lorem.at"
+}'
+```
+
+This allows you to - for example - copy the live database to your staging or local environment and then automatically 
+change the domains according to the mapping in the respective environment during `contao:migrate`.
+
+You can also migrate the protocol setting to different settings in the respective environment, which might be
+useful if you haven't set up an SSL certificate in your local development environment.
+
+```env
+DNS_MAPPING='{
+    "www.example.com": "http://example.local",
+    "www.foobar.org": "http://foobar.local",
+    "www.lorem.at": "http://lorem.local"
+}'
+```
+
+This also works if you do not use a `dns` name in some of your website roots (although that is not a recommended setup).
+
+```.env
+DNS_MAPPING='{
+    "": "http://",
+    "www.foobar.org": "http://foobar.local",
+    "www.lorem.at": "http://lorem.local"
+}'
+```
+
+```.env
+DNS_MAPPING='{
+    "": "example.local",
+    "www.foobar.org": "foobar.local",
+    "www.lorem.at": "lorem.local"
+}'
+```
+
+Instead of the environment variable, you can also directly set the `contao.dns_mapping` parameter in your 
+`parameters.yaml`, if you prefer:
+
+```yaml
+parameters:
+    contao.dns_mapping:
+        www.example.com: http://example.local
+        www.foobar.org: http://foobar.local
+        www.lorem.at: http://lorem.local
+```
+
+
 ## E-Mail sending configuration
 
 To set up the sending of e-mails via an SMTP server, you need the following information from your host (some of these might be optional,
