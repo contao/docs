@@ -303,6 +303,8 @@ to directly load your service configuration.
 // src/ContaoExampleBundle.php
 namespace Somevendor\ContaoExampleBundle;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class ContaoExampleBundle extends AbstractBundle
