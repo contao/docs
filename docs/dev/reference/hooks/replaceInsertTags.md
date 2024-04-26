@@ -83,7 +83,7 @@ class ReplaceInsertTagsListener
 }
 ```
 
-If your insert tag also supports parameter, e.g. `{{mytag::foobar}}` then you need to parse these parameters yourself.
+If your insert tag also supports parameters, e.g. `{{mytag::foobar}}` then you need to parse these parameters yourself.
 For example:
 
 ```php
