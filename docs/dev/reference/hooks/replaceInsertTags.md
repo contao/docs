@@ -61,7 +61,7 @@ If your function is not responsible for this insert tag, you **must** return
 
 ## Examples
 
-If you have simple insert tag called `{{mytag}}` then all you need is the following:
+If you have a simple insert tag called `{{mytag}}` then all you need is the following:
 
 ```php
 // src/EventListener/ReplaceInsertTagsListener.php
