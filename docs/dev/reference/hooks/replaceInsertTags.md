@@ -121,7 +121,7 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 class ReplaceInsertTagsListener
 {
     public function __invoke(
-        string $insertTag,
+        string $tag,
         bool $useCache,
         string $cachedValue,
         array $flags,
