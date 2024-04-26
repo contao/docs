@@ -8,9 +8,9 @@ aliases:
 ---
 
 
-The `replaceInsertTags` hook is triggered when an unknown insert tag is found.
-It passes the insert tag as argument and expects the replacement value or
-false as return value.
+The `replaceInsertTags` hook is triggered when an unknown insert tag is found. This allows you to implement your own
+custom insert tags. The hook passes the insert tag (i.e. everything between `{{` and `}}`, but without the flags) as an 
+argument and expects the replacement value or false as return value.
 
 See also the dedicated [framework article][FrameworkInsertTags] about Insert Tags.
 
@@ -59,7 +59,57 @@ If your function is not responsible for this insert tag, you **must** return
 `false` to continue to the next hook callback.
 
 
-## Example
+## Examples
+
+If you have simple insert tag called `{{mytag}}` then all you need is the following:
+
+```php
+// src/EventListener/ReplaceInsertTagsListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
+
+#[AsHook('replaceInsertTags')]
+class ReplaceInsertTagsListener
+{
+    public function __invoke(string $tag)
+    {
+        if ('mytag' !== $tag) {
+            return false;
+        }
+        
+        return 'mytag replacement';
+    }
+}
+```
+
+If your insert tag also supports parameter, e.g. `{{mytag::foobar}}` then you need to parse these parameters yourself.
+For example:
+
+```php
+// src/EventListener/ReplaceInsertTagsListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
+
+#[AsHook('replaceInsertTags')]
+class ReplaceInsertTagsListener
+{
+    public function __invoke(string $tag)
+    {
+        [$name, $param] = explode('::', $tag) + [null, null];
+
+        if ('mytag' !== $name) {
+            return false;
+        }
+        
+        return 'mytag replacement with parameter: '.$param;
+    }
+}
+```
+
+The hook also passes various additional parameters - for example all the flags that have been appended to the insert
+tag, or the cached values of all insert tags that occurred previously.
 
 ```php
 // src/EventListener/ReplaceInsertTagsListener.php
@@ -81,11 +131,13 @@ class ReplaceInsertTagsListener
         int $_cnt
     )
     {
-        if ('mytag' === $insertTag) {
-            return 'mytag replacement';
+        if ('mytag' !== $tag) {
+            return false;
         }
 
-        return false;
+        // …
+        
+        return 'mytag replacement';
     }
 }
 ```
