@@ -336,6 +336,32 @@ use the `getPageModel()` method in fragment controller for content elements and 
 of that method.
 {{% /notice %}}
 
+{{< version "5.4" >}}
+
+Starting with Contao **5.4** you can also use the `PageFinder` to retrieve the `PageModel` of the current request, if
+available:
+
+```php
+// src/ExampleService.php
+namespace App;
+
+use Contao\CoreBundle\Routing\PageFinder;
+
+class ExampleService
+{
+    public function __construct(private readonly PageFinder $pageFinder)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        $page = $this->pageFinder->getCurrentPage();
+
+        // …
+    }
+}
+```
+
 
 [SymfonyRouting]: https://symfony.com/doc/current/routing.html
 [InvokableController]: https://symfony.com/doc/current/controller/service.html#invokable-controllers
