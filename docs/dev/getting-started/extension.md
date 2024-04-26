@@ -295,7 +295,7 @@ configuration itself. The details are described in the [Symfony documentation][6
 
 {{< tabs groupId="service-configuration" >}}
 {{% tab name="Bundle Class" %}}
-{{< version-tag "5" >}} As noted previously, starting with Symfony **6** (Contao **5**) you can extend your bundle class from `AbstractBundle` .
+{{< version-tag "5" >}} As noted previously, starting with Symfony **6** (Contao **5**) you can extend your bundle class from `AbstractBundle`.
 There you can also use the [`loadExtension` method](https://symfony.com/doc/6.4/bundles/extension.html#loading-services-directly-in-your-bundle-class)
 to directly load your service configuration.
 
