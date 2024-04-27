@@ -12,6 +12,7 @@ weight: 10
   padding: 1rem 1rem 0.25rem;
   border: 1px solid var(--CODE-BORDER-color);
   border-radius: 6px;
+  width: min(632px, 100%);
 }
 
 .widget {
@@ -27,7 +28,7 @@ weight: 10
   padding: 0 0.75rem;
   background: none;
   border-radius: 6px;
-  inline-size: 600px;
+  inline-size: 100%;
   height: 2.5rem;
   outline: none;
   resize: none;
@@ -38,7 +39,7 @@ weight: 10
   inset: -0.5rem auto auto 0.75rem;
   padding: 0 0.25rem;
   font-weight: 300;
-  max-inline-size: calc(600px - 1.5rem);
+  max-inline-size: calc(100% - 1.5rem);
   block-size: 3.5rem;
   line-height: 3.5rem;
   opacity: 0.8;
