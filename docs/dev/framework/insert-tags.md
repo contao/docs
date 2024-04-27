@@ -74,7 +74,8 @@ content, depending on the page's language, e.g.:
 ```
 
 When implementing a block insert tag your function receives the wrapped content as a `ParsedSequence` object in addition
-to your `InsertTag`. Your function is then expected to return a `ParsedSequence` again - which could be empty in
+to your `InsertTag`. The `ParsedSequence` object consists of strings and other parsed (but not yet resolved)
+insert tags. Your function is then expected to return a `ParsedSequence` again - which could be empty in
 case your block insert tag should not output anything (e.g. in the `iflng` example if the language does not match).
 
 The following example implements a `{{ifmembergroup::*}}…{{endifmembergroup}}` block insert tag with which you can
