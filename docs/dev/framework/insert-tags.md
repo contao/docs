@@ -16,7 +16,7 @@ A list of readily available insert tags can be found in the [user manual][UserMa
 
 {{< version-tag "5.2" >}} Custom insert tags can be registered using the PHP attributes
 `AsInsertTag` and `AsBlockInsertTag` or their corresponding service tags
-`contao.insert_tag` and `contao.block_insert_tag`. The following options are 
+`contao.insert_tag` and [`contao.block_insert_tag`](#block-insert-tags). The following options are 
 supported for these service tags:
 
 | Option              | Description                                                                                                                   |
@@ -26,14 +26,14 @@ supported for these service tags:
 | `priority`          | For multiple insert tags with the same name only the one with the highest priority will be executed.                          |
 | `method`            | Will default to `__invoke` or the name of the method the attribute is attached to. Otherwise a method name has to be defined. |
 | `asFragment`        | If enabled the insert tag will be rendered as a fragment via an `<esi>` tag. Only for regular (not block) insert tags.        |
-| `endTag`            | The name of the end tag. Has to be in lowercase. Only for block insert tags.                                                  |
+| `endTag`            | The name of the end tag. Has to be in lowercase. Only for [block insert tags](#block-insert-tags).                                                  |
 
 The following example will provide an insert tag which transforms a string with
 the `str_rot13` function provided by PHP.
 
 ```php
-// src/InsertTags/Rot13InsertTag.php
-namespace App\InsertTags;
+// src/InsertTag/Rot13InsertTag.php
+namespace App\InsertTag;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsInsertTag;
 use Contao\CoreBundle\InsertTag\InsertTagResult;
@@ -61,8 +61,57 @@ class Rot13InsertTag implements InsertTagResolverNestedResolvedInterface
 
 Now the insert tag `{{rot13::Contao}}` will be replaced with `Pbagnb`.
 
-An example for a block insert tag can be found in the Contao core bundle: 
-[`IfLanguageInsertTag`][IfLanguageInsertTag].
+### Block Insert Tags
+
+This allows you to implement insert tags that wrap around some content. An example for a block insert tag can be found 
+in the Contao core bundle: the [`IfLanguageInsertTag`][IfLanguageInsertTag]. It allows you to conditionally output some
+content, depending on the page's language, e.g.:
+
+```
+{{ifnlng::de}}Some English text.{{ifnlng}}
+{{iflng::de}}Some German text.{{iflng}}
+```
+
+When implementing a block insert tag your function receives the wrapped content as a `ParsedSequence` object in addition
+to your `InsertTag`. Your function is then expected to return a `ParsedSequence` again - which could be empty in
+case your block insert tag should not output anything (e.g. in the `iflng` example if the language does not match).
+
+The following example implements a `{{ifmembergroup::*}}…{{endifmembergroup}}` block insert tag with which you can
+conditionally output some content depending on the member group of the logged in member:
+
+```php
+// src/InsertTag/IfMemberGroupInsertTag.php
+namespace App\InsertTag;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsBlockInsertTag;
+use Contao\CoreBundle\InsertTag\Exception\InvalidInsertTagException;
+use Contao\CoreBundle\InsertTag\ParsedSequence;
+use Contao\CoreBundle\InsertTag\ResolvedInsertTag;
+use Contao\CoreBundle\InsertTag\Resolver\BlockInsertTagResolverNestedResolvedInterface;
+use Contao\CoreBundle\Security\ContaoCorePermissions;
+use Symfony\Bundle\SecurityBundle\Security;
+
+#[AsBlockInsertTag('ifmembergroup', 'endifmembergroup')]
+class IfMemberGroupInsertTag implements BlockInsertTagResolverNestedResolvedInterface
+{
+    public function __construct(private readonly Security $security)
+    {
+    }
+
+    public function __invoke(ResolvedInsertTag $insertTag, ParsedSequence $wrappedContent): ParsedSequence
+    {
+        if (!$groups = $insertTag->getParameters()->all()) {
+            throw new InvalidInsertTagException('Missing parameters for insert tag.');
+        }
+
+        if ($this->security->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, $groups)) {
+            return $wrappedContent;
+        }
+
+        return new ParsedSequence([]);
+    }
+}
+```
 
 ### `InsertTag` and `InsertTagParameters` objects
 
