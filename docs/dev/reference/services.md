@@ -602,6 +602,90 @@ class ExampleService
 ```
 
 
+## Locales
+
+This service can be used to retrieve a list of locale or language IDs or to provide labels for such a list.
+See `contao.intl.locales` and `contao.intl.enabled_locales` in the [Container configuration][ContainerConfig].
+Translations can be customized using language keys like `LNG.en`, `LNG.de_AT` and so on.
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Intl\Locales;
+
+class ExampleService
+{
+    public function __construct(private readonly Locales $locales)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        // Returns all locale IDs as configured in contao.intl.locales
+        $this->locales->getLocaleIds();
+
+        // Returns only languages (de, en,…) without regions (de_DE, de_AT, en_US)
+        $this->locales->getLanguageLocaleIds();
+
+        // Returns only the enabled locale IDs as configured in contao.intl.enabled_locales
+        $this->locales->getEnabledLocaleIds();
+        
+        // Same as getLocaleIds() but the array uses the locale IDs as the key
+        // and their translated labels as values.
+        $this->locales->getLocales();
+
+        // Returns translated locales in German together with their native translation
+        $this->locales->getLocales('de', true);
+        
+        // Same as getLanguageLocaleIds() but with translated labels
+        $this->locales->getLanguages('de', true);
+        
+        // Same as getEnabledLocaleIds() but with translated labels
+        $this->locales->getEnabledLocales('de', true);
+        
+        // Returns translations for the passed locales
+        $this->locales->getDisplayNames(['de', 'en']);
+
+        // Returns translations in German together with their native translation
+        $this->locales->getDisplayNames(['de', 'en'], 'de', true);
+    }
+}
+```
+
+
+## Countries
+
+This service can be used to retrieve a list of countries or country codes.
+See `contao.intl.countries` in the [Container configuration][ContainerConfig].
+Translations can be customized using language keys like `CNT.de`, `CNT.at` and so on.
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Intl\Countries;
+
+class ExampleService
+{
+    public function __construct(private readonly Countries $countries)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        // Returns all country codes as configured in contao.intl.countries in uppercase
+        $this->countries->getCountryCodes();
+
+        // Same as getCountryCodes() but the array uses the country code as the key
+        // and their translated labels as values.
+        $this->countries->getCountries();
+
+        // Returns the translated countries in German
+        $this->countries->getCountries('de');
+    }
+}
+```
+
+
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
@@ -609,3 +693,4 @@ class ExampleService
 [DoctrineBundle]: https://symfony.com/doc/current/reference/configuration/doctrine.html
 [RequestStack]: https://symfony.com/doc/current/service_container/request.html
 [ResponseContext]: /framework/response-context/
+[ContainerConfig]: /reference/config/
