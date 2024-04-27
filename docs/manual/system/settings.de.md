@@ -7,6 +7,171 @@ aliases:
 weight: 10
 ---
 
+<style>
+.env-converter {
+  display: inline-block;
+  background: var(--MAIN-BODY-background);
+  padding: 1rem 1rem 0.25rem;
+  border: 1px solid var(--CODE-BORDER-color);
+  border-radius: 6px;
+}
+
+.widget {
+  position: relative;
+  background: inherit;
+}
+.widget input,
+.widget label {
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.widget input {
+  padding: 0 0.75rem;
+  background: none;
+  border-radius: 6px;
+  inline-size: 600px;
+  height: 2.5rem;
+  outline: none;
+  resize: none;
+  z-index: 1;
+}
+.widget input + label {
+  position: absolute;
+  inset: -0.5rem auto auto 0.75rem;
+  padding: 0 0.25rem;
+  font-weight: 300;
+  max-inline-size: calc(600px - 1.5rem);
+  block-size: 3.5rem;
+  line-height: 3.5rem;
+  opacity: 0.8;
+  transition: all 0.2s;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+.widget.separator {
+  border-bottom: 1px solid var(--CODE-BORDER-color);
+  margin-bottom: 0.85rem;
+}
+.widget > :is(:focus + label, [placeholder]:not(:placeholder-shown) + label, label.placeholder-active) {
+  background: inherit;
+  block-size: 1rem;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  opacity: 1;
+}
+</style>
+
+<script>
+class initEnvConverterTools {
+  constructor() {
+    this.urlInput = document.getElementById('database_url');
+    this.userInput = document.getElementById('database_user');
+    this.passwordInput = document.getElementById('database_password');
+    this.serverInput = document.getElementById('database_host');
+    this.databaseInput = document.getElementById('database_name');
+
+    if (!this.urlInput || !this.userInput || !this.passwordInput || !this.serverInput || !this.databaseInput) {
+      return;
+    }
+
+    this.processing = false;
+    this.validUrl = true;
+    this.valid = false;
+    this.validating = false;
+
+    this.urlPattern = '^([^:]+)://(([^:@]+)(:([^@]+))?@)?([^:/]+(:[0-9]+)?)/([^?]+)(\\?.+)?$';
+
+    this._initInputFields();
+  }
+
+  _initInputFields() {
+    [this.urlInput, this.userInput, this.passwordInput, this.serverInput, this.databaseInput].forEach((input) => {
+      if (input === this.urlInput) {
+        input.addEventListener('blur', this._parseUrl.bind(this));
+      } else {
+        input.addEventListener('input', this._updateUrl.bind(this));
+      }
+    })
+  }
+
+  _parseUrl() {
+    if (!this._validateUrl()) {
+      return;
+    }
+
+    this.validating = true;
+
+    const match = new RegExp(this.urlPattern, 'i').exec(this.urlInput.value);
+
+    this.userInput.value = match[3] ? decodeURIComponent(match[3]) : '';
+    this.passwordInput.value = match[5] ? decodeURIComponent(match[5]) : '';
+    this.serverInput.value = decodeURIComponent(match[6]);
+    this.databaseInput.value = decodeURIComponent(match[8]);
+
+    if (this.serverInput.value.substring(this.serverInput.value.length - 5) === ':3306') {
+      this.serverInput.value = this.serverInput.value.substring(0, this.serverInput.value.length - 5);
+    } else if (!this.serverInput.value.includes(':')) {
+      this.serverInput.value = `${this.serverInput.value}:3306`;
+    }
+
+    this.valid = this._validateUrl();
+    this.validating = false;
+  }
+
+  _updateUrl() {
+    if (this.validating) {
+      return;
+    }
+
+    this.valid = false;
+
+    if (!this.serverInput.value) {
+      return;
+    }
+
+    const serverParts = this.serverInput.value.split(':', 2);
+    const server = `${encodeURIComponent(serverParts[0])}:${serverParts[1] || '3306'}`;
+
+    let url = 'mysql://';
+
+    if (this.userInput.value) {
+      url += encodeURIComponent(this.userInput.value);
+
+      if (this.passwordInput.value) {
+        url += ':' + encodeURIComponent(this.passwordInput.value);
+      }
+
+      url += '@';
+    }
+
+    url += server;
+
+    if (this.databaseInput.value) {
+      url += '/' + encodeURIComponent(this.databaseInput.value);
+    }
+
+    this.urlInput.value = url;
+    this.valid = this._validateUrl();
+  }
+
+  _validateUrl() {
+    this.validUrl = true;
+    this.valid = false;
+
+    if (this.urlInput.value === '') {
+      return false;
+    }
+
+    this.validUrl = new RegExp(this.urlPattern, 'i').test(this.urlInput.value);
+
+    return this.validUrl;
+  }
+}
+
+window.onload = () => { new initEnvConverterTools }
+</script>
+
 Die Systemeinstellungen verabschieden sich langsam aber sicher aus dem Backend. Grundlegende Systemeinstellungen
 beeinflussen Contao als Applikation und somit besteht auch die Chance, dass durch eine falsche Einstellung das System
 in einen funktionsuntüchtigen Zustand gebracht wird. Sollte dies geschehen, hast du keine Möglichkeit mehr,
@@ -1054,6 +1219,32 @@ Weitere Informationen findest du in der [Symfony-Dokumentation](https://symfony.
 Die Informationen der Datenbank-Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
 
+#### Konvertieren deiner Datenbank-Parameter
+
+Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der parameters.yml oder die DATABASE_URL zu konvertieren. Es werden keine Daten übertragen.
+
+<form autocomplete="off" class="env-converter">
+  <div class="widget widget-text">
+    <input type="text" id="database_user" name="user" autocapitalize="none" placeholder=" ">
+    <label for="database_user">Username</label>
+  </div>
+  <div class="widget widget-password">
+    <input type="password" id="database_password" name="password" autocapitalize="none" placeholder=" ">
+    <label for="database_password">Password</label>
+  </div>
+  <div class="widget widget-text">
+    <input type="text" id="database_host" name="server" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_host">Server (:Port)</label>
+  </div>
+  <div class="widget widget-text separator">
+    <input type="text" id="database_name" name="database" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_name">Database Name</label>
+  </div>
+  <div class="widget widget-url">
+    <input type="url" id="database_url" name="url" placeholder="mysql://user:password@server:port/database" required="required" autocapitalize="none">
+    <label for="database_url" class="placeholder-active">DATABASE_URL</label>
+  </div>
+</form>
 
 ### `MAILER_DSN`
 
