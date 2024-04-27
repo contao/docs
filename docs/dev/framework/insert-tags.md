@@ -36,6 +36,7 @@ the `str_rot13` function provided by PHP.
 namespace App\InsertTag;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsInsertTag;
+use Contao\CoreBundle\InsertTag\Exception\InvalidInsertTagException;
 use Contao\CoreBundle\InsertTag\InsertTagResult;
 use Contao\CoreBundle\InsertTag\OutputType;
 use Contao\CoreBundle\InsertTag\ResolvedInsertTag;
