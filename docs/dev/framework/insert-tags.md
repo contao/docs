@@ -93,7 +93,7 @@ use Contao\CoreBundle\InsertTag\Resolver\BlockInsertTagResolverNestedResolvedInt
 use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Symfony\Bundle\SecurityBundle\Security;
 
-#[AsBlockInsertTag('ifmembergroup', 'endifmembergroup')]
+#[AsBlockInsertTag('ifmembergroup', endTag: 'endifmembergroup')]
 class IfMemberGroupInsertTag implements BlockInsertTagResolverNestedResolvedInterface
 {
     public function __construct(private readonly Security $security)
