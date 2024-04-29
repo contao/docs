@@ -14,34 +14,32 @@ weight: 10
   padding: 1rem 1rem 0.25rem;
   border: 1px solid var(--CODE-BORDER-color);
   border-radius: 6px;
-  width: min(632px, 100%);
 }
-
-.widget {
+.env-converter .env-widget {
   position: relative;
   background: inherit;
 }
-.widget input,
-.widget label {
+.env-converter .env-widget input,
+.env-converter .env-widget label {
   font-size: 1rem;
   box-sizing: border-box;
 }
-.widget input {
+.env-converter .env-widget input {
   padding: 0 0.75rem;
   background: none;
   border-radius: 6px;
-  inline-size: 100%;
+  inline-size: 600px;
   height: 2.5rem;
   outline: none;
   resize: none;
   z-index: 1;
 }
-.widget input + label {
+.env-converter .env-widget input + label {
   position: absolute;
   inset: -0.5rem auto auto 0.75rem;
   padding: 0 0.25rem;
   font-weight: 300;
-  max-inline-size: calc(100% - 1.5rem);
+  max-inline-size: calc(600px - 1.5rem);
   block-size: 3.5rem;
   line-height: 3.5rem;
   opacity: 0.8;
@@ -50,11 +48,11 @@ weight: 10
   user-select: none;
   pointer-events: none;
 }
-.widget.separator {
+.env-converter .env-widget.separator {
   border-bottom: 1px solid var(--CODE-BORDER-color);
   margin-bottom: 0.85rem;
 }
-.widget > :is(:focus + label, [placeholder]:not(:placeholder-shown) + label, label.placeholder-active) {
+.env-converter .env-widget > :is(:focus + label, [placeholder]:not(:placeholder-shown) + label, label.placeholder-active) {
   background: inherit;
   block-size: 1rem;
   line-height: 1rem;
@@ -66,81 +64,103 @@ weight: 10
 <script>
 class initEnvConverterTools {
   constructor() {
-    this.urlInput = document.getElementById('database_url');
-    this.userInput = document.getElementById('database_user');
-    this.passwordInput = document.getElementById('database_password');
-    this.serverInput = document.getElementById('database_host');
-    this.databaseInput = document.getElementById('database_name');
+    this.databaseUrl = document.getElementById('database_url');
+    this.databaseUser = document.getElementById('database_user');
+    this.databasePassword = document.getElementById('database_password');
+    this.databaseServer = document.getElementById('database_host');
+    this.databaseName = document.getElementById('database_name');
 
-    if (!this.urlInput || !this.userInput || !this.passwordInput || !this.serverInput || !this.databaseInput) {
-      return;
-    }
-
-    this.processing = false;
-    this.validUrl = true;
-    this.valid = false;
     this.validating = false;
-
     this.urlPattern = '^([^:]+)://(([^:@]+)(:([^@]+))?@)?([^:/]+(:[0-9]+)?)/([^?]+)(\\?.+)?$';
 
-    this._initInputFields();
+    if (
+      this.databaseUrl &&
+      this.databaseUser &&
+      this.databasePassword &&
+      this.databaseServer &&
+      this.databaseName
+    ) {
+      this._initDatabaseFields();
+    }
+
+    this.mailerUser = document.getElementById('mailer_user');
+    this.mailerPassword = document.getElementById('mailer_password');
+    this.mailerHost = document.getElementById('mailer_host');
+    this.mailerPort = document.getElementById('mailer_port');
+
+    this.mailerDsn = document.getElementById('mailer_dsn');
+    this.mailerConfig = document.getElementById('mail_config_value');
+
+    if (
+      this.mailerUser &&
+      this.mailerPassword &&
+      this.mailerHost &&
+      this.mailerPort &&
+      this.mailerDsn &&
+      this.mailerConfig
+    ) {
+      this._initMailerFields();
+    }
   }
 
-  _initInputFields() {
-    [this.urlInput, this.userInput, this.passwordInput, this.serverInput, this.databaseInput].forEach((input) => {
-      if (input === this.urlInput) {
-        input.addEventListener('blur', this._parseUrl.bind(this));
+  _initDatabaseFields() {
+    [this.databaseUrl, this.databaseUser, this.databasePassword, this.databaseServer, this.databaseName].forEach((input) => {
+      if (input === this.databaseUrl) {
+        input.addEventListener('blur', this._parseDatabaseUrl.bind(this));
       } else {
-        input.addEventListener('input', this._updateUrl.bind(this));
+        input.addEventListener('input', this._updateDatabaseUrl.bind(this));
       }
     })
   }
 
-  _parseUrl() {
-    if (!this._validateUrl()) {
+  _initMailerFields() {
+    [this.mailerUser, this.mailerPassword, this.mailerHost, this.mailerPort].forEach((input) => {
+      input.addEventListener('input', this._updateMailerDsn.bind(this));
+    })
+  }
+
+  _parseDatabaseUrl() {
+    if (!this._validateDatabaseUrl()) {
       return;
     }
 
     this.validating = true;
 
-    const match = new RegExp(this.urlPattern, 'i').exec(this.urlInput.value);
+    const match = new RegExp(this.urlPattern, 'i').exec(this.databaseUrl.value);
 
-    this.userInput.value = match[3] ? decodeURIComponent(match[3]) : '';
-    this.passwordInput.value = match[5] ? decodeURIComponent(match[5]) : '';
-    this.serverInput.value = decodeURIComponent(match[6]);
-    this.databaseInput.value = decodeURIComponent(match[8]);
+    this.databaseUser.value = match[3] ? decodeURIComponent(match[3]) : '';
+    this.databasePassword.value = match[5] ? decodeURIComponent(match[5]) : '';
+    this.databaseServer.value = decodeURIComponent(match[6]);
+    this.databaseName.value = decodeURIComponent(match[8]);
 
-    if (this.serverInput.value.substring(this.serverInput.value.length - 5) === ':3306') {
-      this.serverInput.value = this.serverInput.value.substring(0, this.serverInput.value.length - 5);
-    } else if (!this.serverInput.value.includes(':')) {
-      this.serverInput.value = `${this.serverInput.value}:3306`;
+    if (this.databaseServer.value.substring(this.databaseServer.value.length - 5) === ':3306') {
+      this.databaseServer.value = this.databaseServer.value.substring(0, this.databaseServer.value.length - 5);
+    } else if (!this.databaseServer.value.includes(':')) {
+      this.databaseServer.value = `${this.databaseServer.value}:3306`;
     }
 
-    this.valid = this._validateUrl();
     this.validating = false;
   }
 
-  _updateUrl() {
+  _updateDatabaseUrl() {
     if (this.validating) {
       return;
     }
 
-    this.valid = false;
-
-    if (!this.serverInput.value) {
+    if (!this.databaseServer.value) {
       return;
     }
 
-    const serverParts = this.serverInput.value.split(':', 2);
+    const serverParts = this.databaseServer.value.split(':', 2);
     const server = `${encodeURIComponent(serverParts[0])}:${serverParts[1] || '3306'}`;
 
     let url = 'mysql://';
 
-    if (this.userInput.value) {
-      url += encodeURIComponent(this.userInput.value);
+    if (this.databaseUser.value) {
+      url += encodeURIComponent(this.databaseUser.value);
 
-      if (this.passwordInput.value) {
-        url += ':' + encodeURIComponent(this.passwordInput.value);
+      if (this.databasePassword.value) {
+        url += ':' + encodeURIComponent(this.databasePassword.value);
       }
 
       url += '@';
@@ -148,28 +168,48 @@ class initEnvConverterTools {
 
     url += server;
 
-    if (this.databaseInput.value) {
-      url += '/' + encodeURIComponent(this.databaseInput.value);
+    if (this.databaseName.value) {
+      url += '/' + encodeURIComponent(this.databaseName.value);
     }
 
-    this.urlInput.value = url;
-    this.valid = this._validateUrl();
+    this.databaseUrl.value = url;
   }
 
-  _validateUrl() {
-    this.validUrl = true;
-    this.valid = false;
-
-    if (this.urlInput.value === '') {
+  _validateDatabaseUrl() {
+    if (this.databaseUrl.value === '') {
       return false;
     }
 
-    this.validUrl = new RegExp(this.urlPattern, 'i').test(this.urlInput.value);
+    return new RegExp(this.urlPattern, 'i').test(this.databaseUrl.value);
+  }
 
-    return this.validUrl;
+  _updateMailerDsn() {
+    if (!this.mailerHost.value) {
+      return;
+    }
+
+    let mailer_dsn = 'smtp://';
+
+    if (this.mailerUser.value) {
+      mailer_dsn += encodeURIComponent(this.mailerUser.value);
+
+      if (this.mailerPassword.value) {
+        mailer_dsn += ':' + encodeURIComponent(this.mailerPassword.value);
+      }
+
+      mailer_dsn += '@';
+    }
+
+    mailer_dsn += encodeURIComponent(this.mailerHost.value);
+
+    if (this.mailerPort.value) {
+      mailer_dsn += ':' + this.mailerPort.value;
+    }
+
+    this.mailerDsn.value = mailer_dsn;
+    this.mailerConfig.value = mailer_dsn.replaceAll('%', '%%');
   }
 }
-
 window.onload = () => { new initEnvConverterTools }
 </script>
 
@@ -1222,26 +1262,26 @@ Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.db
 
 #### Konvertieren deiner Datenbank-Parameter
 
-Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der parameters.yml oder die DATABASE_URL zu konvertieren. Es werden keine Daten übertragen.
+Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der `parameters.yml` oder die `DATABASE_URL` zu konvertieren. Es werden keine Daten übertragen.
 
 <form autocomplete="off" class="env-converter">
-  <div class="widget widget-text">
+  <div class="env-widget">
     <input type="text" id="database_user" name="user" autocapitalize="none" placeholder=" ">
     <label for="database_user">Username</label>
   </div>
-  <div class="widget widget-password">
+  <div class="env-widget">
     <input type="password" id="database_password" name="password" autocapitalize="none" placeholder=" ">
     <label for="database_password">Password</label>
   </div>
-  <div class="widget widget-text">
+  <div class="env-widget">
     <input type="text" id="database_host" name="server" required="required" autocapitalize="none" placeholder=" ">
     <label for="database_host">Server (:Port)</label>
   </div>
-  <div class="widget widget-text separator">
+  <div class="env-widget separator">
     <input type="text" id="database_name" name="database" required="required" autocapitalize="none" placeholder=" ">
     <label for="database_name">Database Name</label>
   </div>
-  <div class="widget widget-url">
+  <div class="env-widget">
     <input type="url" id="database_url" name="url" placeholder="mysql://user:password@server:port/database" required="required" autocapitalize="none">
     <label for="database_url" class="placeholder-active">DATABASE_URL</label>
   </div>
@@ -1256,6 +1296,38 @@ Siehe die [Symfony Mailer Dokumentation][SymfonyMailer] für weitere Information
 Die Variable hieß bisher `MAILER_URL`. Ab Contao **5.0** wird nur noch `MAILER_DSN` unterstützt.
 {{% /notice %}}
 
+#### Konvertieren deiner Mail-Parameter
+
+Das nachfolgende Tool läuft in deinem Browser und hilft dir deine E-Mail Zugangsdaten in die `MAILER_DSN` oder in die `config.yml`-Variante zu konvertieren. Es werden keine Daten übertragen.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="mailer_user" name="mailer_user" autocapitalize="none" placeholder=" ">
+    <label for="mailer_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="mailer_password" name="mailer_password" autocapitalize="none" placeholder=" ">
+    <label for="mailer_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="mailer_host" name="mailer_host" required="required" autocapitalize="none" placeholder=" ">
+    <label for="mailer_host">Host</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="number" id="mailer_port" name="mailer_port" pattern="[0-9]{2,5}" required="required" placeholder=" ">
+    <label for="mailer_port">Port</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mailer_dsn" name="mailer_dsn" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mailer_dsn" class="placeholder-active">MAILER_DSN</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mail_config_value" name="mail_config_value" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mail_config_value" class="placeholder-active">config.yml</label>
+  </div>
+</form>
 
 ### `COOKIE_ALLOW_LIST`
 
@@ -1440,6 +1512,8 @@ smtp://<BENUTZERNAME>:<PASSWORT>@<HOSTNAME>:<PORT>
 
 Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, oder entfernt sie dementsprechend. Siehe 
 dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMailer].
+
+Für diese Encodierung kann dieses [Tool](#konvertieren-deiner-mail-parameter) genutzt werden.
 
 {{% notice warning %}}
 Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese »URL enkodiert« werden. Es gibt
