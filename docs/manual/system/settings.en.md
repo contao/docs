@@ -957,7 +957,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | --- | --- |
 | `adminEmail` | [E-mail address of the system administrator](#global-configuration). |
 | `allowedDownload` | [Download file types](#files-and-images). |
-| `allowedAttributes` | [Allowed HTML attributes](##security-settings). |
+| `allowedAttributes` | [Allowed HTML attributes](#security-settings). |
 | `allowedTags` | [Allowed HTML tags](#security-settings). |
 | `characterSet` | Character set used by Contao. _(deprecated)_ Use the parameter `kernel.charset` instead. Default: `UTF-8` |
 | `dateFormat` | [Date format](#date-and-time). |
