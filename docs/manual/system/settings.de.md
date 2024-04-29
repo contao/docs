@@ -7,60 +7,6 @@ aliases:
 weight: 10
 ---
 
-<style>
-.env-converter {
-  display: inline-block;
-  background: var(--MAIN-BODY-background);
-  padding: 1rem 1rem 0.25rem;
-  border: 1px solid var(--CODE-BORDER-color);
-  border-radius: 6px;
-}
-.env-converter .env-widget {
-  position: relative;
-  background: inherit;
-}
-.env-converter .env-widget input,
-.env-converter .env-widget label {
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-.env-converter .env-widget input {
-  padding: 0 0.75rem;
-  background: none;
-  border-radius: 6px;
-  inline-size: 600px;
-  height: 2.5rem;
-  outline: none;
-  resize: none;
-  z-index: 1;
-}
-.env-converter .env-widget input + label {
-  position: absolute;
-  inset: -0.5rem auto auto 0.75rem;
-  padding: 0 0.25rem;
-  font-weight: 300;
-  max-inline-size: calc(600px - 1.5rem);
-  block-size: 3.5rem;
-  line-height: 3.5rem;
-  opacity: 0.8;
-  transition: all 0.2s;
-  white-space: nowrap;
-  user-select: none;
-  pointer-events: none;
-}
-.env-converter .env-widget.separator {
-  border-bottom: 1px solid var(--CODE-BORDER-color);
-  margin-bottom: 0.85rem;
-}
-.env-converter .env-widget > :is(:focus + label, [placeholder]:not(:placeholder-shown) + label, label.placeholder-active) {
-  background: inherit;
-  block-size: 1rem;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  opacity: 1;
-}
-</style>
-
 <script>
 class initEnvConverterTools {
   constructor() {
@@ -1314,7 +1260,7 @@ Das nachfolgende Tool läuft in deinem Browser und hilft dir deine E-Mail Zugang
     <label for="mailer_host">Host</label>
   </div>
   <div class="env-widget separator">
-    <input type="number" id="mailer_port" name="mailer_port" pattern="[0-9]{2,5}" required="required" placeholder=" ">
+    <input type="number" id="mailer_port" name="mailer_port" min="25" max="65535" required="required" placeholder=" ">
     <label for="mailer_port">Port</label>
   </div>
   <div class="env-widget">
