@@ -167,7 +167,7 @@ process library. Any image exceeding this value will not be processed.
 **Upload file types:** Here you can define which file types can be uploaded to your server.
 
 **Maximum upload file size:** Here you can define the maximum size of a file that can be uploaded to your server using 
-the file manager. The entry is in bytes (1 MiB = 1024 KiB = 1,048,567 bytes). Larger files will be rejected.
+the file manager. The entry is in bytes (1 MiB = 1024 KiB = 1,048,576 bytes). Larger files will be rejected.
 
 **Maximum image width:** When uploading images, the file manager automatically checks the width of the image and 
 compares it with the width you set here. If an image exceeds the maximum width, it will be reduced automatically.
