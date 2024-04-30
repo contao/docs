@@ -1054,6 +1054,32 @@ Weitere Informationen findest du in der [Symfony-Dokumentation](https://symfony.
 Die Informationen der Datenbank-Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
 
+#### Konvertieren deiner Datenbank-Parameter
+
+Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der `parameters.yml` oder die `DATABASE_URL` zu konvertieren. Es werden keine Daten übertragen.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="database_user" name="user" autocapitalize="none" placeholder=" ">
+    <label for="database_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="database_password" name="password" autocapitalize="none" placeholder=" ">
+    <label for="database_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="database_host" name="server" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_host">Server (:Port)</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="text" id="database_name" name="database" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_name">Database Name</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="database_url" name="url" placeholder="mysql://user:password@server:port/database" required="required" autocapitalize="none">
+    <label for="database_url" class="placeholder-active">DATABASE_URL</label>
+  </div>
+</form>
 
 ### `MAILER_DSN`
 
@@ -1064,6 +1090,38 @@ Siehe die [Symfony Mailer Dokumentation][SymfonyMailer] für weitere Information
 Die Variable hieß bisher `MAILER_URL`. Ab Contao **5.0** wird nur noch `MAILER_DSN` unterstützt.
 {{% /notice %}}
 
+#### Konvertieren deiner Mail-Parameter
+
+Das nachfolgende Tool läuft in deinem Browser und hilft dir deine E-Mail Zugangsdaten in die `MAILER_DSN` oder in die `config.yml`-Variante zu konvertieren. Es werden keine Daten übertragen.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="mailer_user" name="mailer_user" autocapitalize="none" placeholder=" ">
+    <label for="mailer_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="mailer_password" name="mailer_password" autocapitalize="none" placeholder=" ">
+    <label for="mailer_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="mailer_host" name="mailer_host" required="required" autocapitalize="none" placeholder=" ">
+    <label for="mailer_host">Host</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="number" id="mailer_port" name="mailer_port" min="25" max="65535" required="required" placeholder=" ">
+    <label for="mailer_port">Port</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mailer_dsn" name="mailer_dsn" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mailer_dsn" class="placeholder-active">MAILER_DSN</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mail_config_value" name="mail_config_value" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mail_config_value" class="placeholder-active">config.yml</label>
+  </div>
+</form>
 
 ### `COOKIE_ALLOW_LIST`
 
@@ -1248,6 +1306,8 @@ smtp://<BENUTZERNAME>:<PASSWORT>@<HOSTNAME>:<PORT>
 
 Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, oder entfernt sie dementsprechend. Siehe 
 dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMailer].
+
+Für diese Encodierung kann dieses [Tool](#konvertieren-deiner-mail-parameter) genutzt werden.
 
 {{% notice warning %}}
 Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese »URL enkodiert« werden. Es gibt
