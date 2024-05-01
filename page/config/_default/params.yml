@@ -7,3 +7,10 @@ disableInlineCopyToClipBoard: true
 #disableAssetsBusting: true
 currentContaoVersion: '4.13'
 disableLandingPageButton: true
+showBanner: true
+bannerTitleDE: Contao Konferenz & College München 2024
+bannerTitleEN: Contao Conference & College Munich 2024
+bannerDateDE: 17. bis 19. Oktober
+bannerDateEN: 17th to 19th October
+bannerUrlDE: https://to.contao.org/conference
+bannerUrlEN: https://to.contao.org/conference
