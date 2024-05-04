@@ -929,8 +929,8 @@ html[data-theme=dark] #toc-menu,
 }
 
 .banner {
-    background: rgba(217, 83, 79, .7);
-    border: 1px solid #FAE2E2;
+    background: rgba(244, 124, 0, 1);
+    border: 1px solid rgba(244, 124, 0, .2);
     border-radius: 4px;
     font-size: 1rem;
     margin: 2rem 0;
@@ -940,7 +940,7 @@ html[data-theme=dark] #toc-menu,
 
 .banner:focus,
 .banner:hover {
-    background: rgba(217, 83, 79, .6);
+    background: rgba(244, 124, 0, .8);
 }
 
 #body .banner a.highlight {
@@ -966,6 +966,6 @@ html[data-theme=dark] #toc-menu,
         display: inline;
     }
     .banner .title {
-        padding-right: 5rem;
+        padding-right: 3rem;
     }
 }
