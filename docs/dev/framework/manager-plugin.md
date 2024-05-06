@@ -583,8 +583,8 @@ class Plugin implements RoutingPluginInterface
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
         return $resolver
-            ->resolve(__DIR__.'/../config/routes.yaml', 'attribute')
-            ->load(__DIR__.'/../config/routes.yaml')
+            ->resolve(__DIR__.'/../Controller', 'attribute')
+            ->load(__DIR__.'/../Controller')
         ;
     }
 }
