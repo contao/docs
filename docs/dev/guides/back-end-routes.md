@@ -61,7 +61,7 @@ information about the `backend` scope.
 
 
 Be sure to have imported your bundle's Controllers in your `routes.yaml` *before*
-the `ContaoCoreBundle` routes. If you're developing a bundle for contao managed edition, be sure to [register](https://docs.contao.org/dev/framework/manager-plugin/#the-routingplugininterface) your `routes.yaml` in your `Plugin` class.
+the `ContaoCoreBundle` routes. If you are developing a bundle for the Contao Managed Edition, be sure to [load your routes](/framework/manager-plugin/#the-routingplugininterface) in your `Plugin` class.
 
 ```yaml
 # config/routes.yaml
