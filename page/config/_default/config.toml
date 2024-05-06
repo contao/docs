@@ -1,2 +1,2 @@
 [params]
-  custom_css = ["css/tools.css"]
+  custom_css = ["css/theme-toggle.css", "css/custom.css"]
