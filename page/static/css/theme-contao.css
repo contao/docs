@@ -928,24 +928,22 @@ html[data-theme=dark] #toc-menu,
     }
 }
 
-.banner {
+
+#body .banner a.highlight {
     background: rgba(244, 124, 0, 1);
     border: 1px solid rgba(244, 124, 0, .2);
     border-radius: 4px;
+    color: white;
+    display: block;
     font-size: 1rem;
     margin: 2rem 0;
     padding: 10px 15px;
     text-shadow: 0 0 1px rgba(0, 0, 0, .5);
 }
 
-.banner:focus,
-.banner:hover {
+#body .banner a:focus,
+#body .banner a:hover {
     background: rgba(244, 124, 0, .8);
-}
-
-#body .banner a.highlight {
-    color: white;
-    display: block;
 }
 
 #body .banner a.highlight::after {
