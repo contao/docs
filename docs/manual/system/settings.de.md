@@ -1193,6 +1193,76 @@ IP-Adresse des Clients, ob der Client eine Verbindung über HTTPS herstellt oder
 Die gleiche Erklärung wie für `TRUSTED_PROXIES` und das IP-Beispiel gilt auch für `TRUSTED_HOSTS` beim Abrufen des ursprünglich gesendeten `Host` HTTP-Header. Du würdest den Hostnamen des Proxys erhalten, aber wenn du den Hostnamen des Proxys zur Liste der vertrauenswürdigen Proxys hinzufügst, erhältst du den Hostnamen, der in der ursprünglichen Anfrage angefordert wurde: `TRUSTED_HOSTS=my.proxy.com`
 
 
+### `DNS_MAPPING`
+
+{{< version "5.3" >}}
+
+In Contao wird die Domain einer Webseite in den Einstellungen des Startpunkts der Webseite definiert und ist somit in
+der Datenbank gespeichert. Wenn man die Datenbank von einer Umgebung in die Andere kopiert müsste man also diese
+Einstellungen dnanach manuell ändern. Mit der `DNS_MAPPING` Umgebungsvariable kann dieser Prozess automatisiert werden:
+
+```env
+# .env.local in deiner lokalen Entwicklungs-Umgebung
+DNS_MAPPING='{
+    "www.example.com": "example.local",
+    "www.foobar.org": "foobar.local",
+    "www.lorem.at": "lorem.local"
+}'
+```
+
+```env
+# .env.local in deiner Staging-Umgebung
+DNS_MAPPING='{
+    "www.example.com": "staging.example.com",
+    "www.foobar.org": "staging.foobar.org",
+    "www.lorem.at": "staging.lorem.at"
+}'
+```
+
+Dadurch kann bspw. die Live-Datenbank zur Staging- oder Entwicklungs-Umgebung kopiert und durch die Datenbankmigration 
+(`contao:migrate`) die Domain-Einstellungen automatisch angepasst werden.
+
+Auch die Protokoll-Einstellung kann automatisch geändert werden. Dies kann hilfreich sein, wenn bspw. für die lokale
+Entwicklungsumgebung kein SSL-Zertifikat definiert ist:
+
+```env
+DNS_MAPPING='{
+    "www.example.com": "http://example.local",
+    "www.foobar.org": "http://foobar.local",
+    "www.lorem.at": "http://lorem.local"
+}'
+```
+
+Die Migration funktioniert auch wenn in einem Startpunkt keine Domain definiert ist (dies ist allerdings generell nicht
+empfohlen).
+
+```.env
+DNS_MAPPING='{
+    "": "http://",
+    "www.foobar.org": "http://foobar.local",
+    "www.lorem.at": "http://lorem.local"
+}'
+```
+
+```.env
+DNS_MAPPING='{
+    "": "example.local",
+    "www.foobar.org": "foobar.local",
+    "www.lorem.at": "lorem.local"
+}'
+```
+
+Statt der Umgebungsvariable kann auch der `contao.dns_mapping` Parameter direkt in der `parameters.yaml` gesetzt werden:
+
+```yaml
+parameters:
+    contao.dns_mapping:
+        www.example.com: http://example.local
+        www.foobar.org: http://foobar.local
+        www.lorem.at: http://lorem.local
+```
+
+
 ## E-Mail Versand Konfiguration
 
 Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster (manche davon können optional 
