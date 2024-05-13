@@ -67,7 +67,7 @@ the `ContaoCoreBundle` routes. If you are developing a bundle for the Contao Man
 # config/routes.yaml
 app.controller:
     resource: ../src/Controller
-    type: annotation
+    type: attribute
 ```
 
 Our route will render the template `my_backend_route.html.twig` which must be placed 
