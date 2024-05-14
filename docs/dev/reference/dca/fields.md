@@ -130,6 +130,7 @@ Each field can be validated against a regular expression.
 | addWizardClass     | true/false (`bool`) | Whether or not to add the `wizard` CSS class for the widget if a wizard icon is in use. Default: `true`. _Note:_ this setting does not exist anymore in Contao **4.12** and up. |
 | allowHtml          | true/false (`bool`)           | If true the current field will accept HTML input (see "Allowed HTML tags" in the back end System => Settings).                                                            |
 | alwaysSave         | true/false (`bool`)           | If true the field will always be saved, even if its value has not changed. This can be useful in conjunction with a load_callback.                                       |
+| basicEntities | true/false (`bool`) | {{< version-tag "5.0" >}} If true converts basic entities like `&shy;`, `&amp;` etc. back to their Contao representation `[&]`, `[-]` etc. when editing and vice versa when saving. |
 | blankOptionLabel   | Label (`string`)                 | Label for the blank option (defaults to `-`).                                                                                                                         |
 | chosen             | true/false (`bool`)           | Native selects enhanced with [Chosen](http://harvesthq.github.io/chosen/).                                                                                               |
 | collapseUncheckedGroups | true/false (`bool`) | {{< version-tag "4.13" >}} If true all option groups without at least one checked option will be collapsed. The first group of options will not be collapsed if there are no options selected at all. Applies to checkbox widgets with a nested array of options only.                                                                                                                  |
@@ -189,7 +190,6 @@ Each field can be validated against a regular expression.
 | uploadFolder       | Path (`string`)                  | The target path for file uploads of the `upload` widget.                                                                                                              |
 | useRawRequestData  | true/false (`bool`)           | If true the raw request data from the Symfony request is used. **Warning:** input filtering is bypassed! Make sure the data is never output anywhere in the back end unescaped which it would if you added the field to a regular back end list view for example. |
 | versionize         | true/false (`bool`)           | If false skip this field in the versioning. Default `true`. |
-| basicEntities | true/false (`bool`) | {{< version-tag "5.0" >}} If true converts basic entities like `&shy;`, `&amp;` etc. back to their Contao representation `[&]`, `[-]` etc. when editing and vice versa when saving. |
 
 {{% notice warning %}}
 Using the `encrypt` option is deprecated and its internal implementation relies 
