@@ -273,7 +273,7 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 | `[{]`, `[}]`   | Wird im Frontend jeweils mit `{{` bzw. `}}` ersetzt. Damit kann man Insert-Tags im Frontend anzeigen, um sie z. B. zu erklären. |
 
 {{% notice "info" %}}
-Seit Contao **5** passiert dies nicht mehr automatisch für einzelne Felder des DCAs. In deinen eigenen DCA Felder muss
+Seit Contao **5** passiert dies nicht mehr automatisch für einzelne Felder des DCAs. In deinen eigenen DCA Feldern muss
 diese Funktion über `'basicEntities' => true` im [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation) 
 der Feld-Definition aktiviert werden.
 {{% /notice %}}
