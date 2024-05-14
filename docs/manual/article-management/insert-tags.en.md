@@ -261,5 +261,11 @@ The following "basic entities" are converted back into the respective HTML entit
 | `[-]` | `&shy;` = soft hyphen. The word is wrapped if there is not enough space. The separation is done with a hyphen, e.g. if you want to separate the typical German compound words like `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft` |
 | `[{]`, `[}]` | Replaced in the front end with `{{` or `}}`, respectively. This enables you to display insert tags in the front end. For example, to explain them. |
 
+{{% notice "info" %}}
+Since Contao **5** this is no longer automatically the case for individual DCA fields. In your own DCA fields you will 
+need to enable the conversion via `'basicEntities' => true` in the [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation) 
+definitions.
+{{% /notice %}}
+
 
 [DevFigureBuilder]: https://docs.contao.org/dev/framework/image-processing/image-studio/#setting-options

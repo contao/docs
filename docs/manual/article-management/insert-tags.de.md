@@ -272,6 +272,12 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 | `[-]`          | `&shy;` = soft hyphen<br>Das Wort wird umgebrochen, wenn nicht ausreichend Platz zur Verfügung steht. Die Trennung erfolgt mit Trennstrich (z. B. `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft`). |
 | `[{]`, `[}]`   | Wird im Frontend jeweils mit `{{` bzw. `}}` ersetzt. Damit kann man Insert-Tags im Frontend anzeigen, um sie z. B. zu erklären. |
 
+{{% notice "info" %}}
+Seit Contao **5** passiert dies nicht mehr automatisch für einzelne Felder des DCAs. In deinen eigenen DCA Felder muss
+diese Funktion über `'basicEntities' => true` im [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation) 
+der Feld-Definition aktiviert werden.
+{{% /notice %}}
+
 
 [DevAssets]: https://docs.contao.org/dev/framework/asset-management/#accessing-assets-in-templates
 [DevFigureBuilder]: https://docs.contao.org/dev/framework/image-processing/image-studio/#setting-options
