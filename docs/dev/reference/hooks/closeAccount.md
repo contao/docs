@@ -8,7 +8,7 @@ aliases:
 ---
 
 
-The `closeAccount` hook is triggered when a user closes his account. It passes 
+The `closeAccount` hook is triggered when a user closes their account. It passes 
 the user ID, the operation mode and the module as arguments and does not expect 
 a return value.
 
@@ -19,7 +19,7 @@ The operation mode will either be `close_deactivate` or `close_delete`.
 
 1. *int* `$userId`
 
-    ID of the user which closed his account.
+    ID of the user which closed their account.
 
 2. *string* `$mode`
 

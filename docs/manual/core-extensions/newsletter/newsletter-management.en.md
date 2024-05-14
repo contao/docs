@@ -536,7 +536,7 @@ back end. For data protection reasons, only the e-mail address and the activatio
 ![Edit a recipient]({{% asset "images/manual/core-extensions/newsletter/en/activate_recipient.png" %}}?classes=shadow)
 
 According to the [double opt-in procedure](https://de.wikipedia.org/wiki/Opt-In), every subscriber receives an 
-e-mail with a confirmation link when subscribing, without which he cannot complete his subscription. This is 
+e-mail with a confirmation link when subscribing, without which he cannot complete their subscription. This is 
 sufficient to comply with the provisions of §7 paragraph 2 numbers 2 and 3 of the Law against Unfair Competition (UWG).
 
 To add/edit a subscriber to the distribution list, click 

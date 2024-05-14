@@ -59,7 +59,7 @@ an attachment.
 | XML file | An XML file with the form data is attached to the e-mail. |
 | CSV file | A CSV file with the form data is attached to the e-mail. |
 | CSV file (Microsoft Excel) | {{< version "4.10" >}} A CSV file in Microsoft Excel format with the form data is attached to the e-mail. |
-| E-mail | The form data is formatted as if the sender had written an e-mail with his e-mail program. In this case, the form generator only processes the fields `name`, `email`, `subject`, and `message`, and ignores all other form fields. |
+| E-mail | The form data is formatted as if the sender had written an e-mail with their e-mail program. In this case, the form generator only processes the fields `name`, `email`, `subject`, and `message`, and ignores all other form fields. |
 
 **Omit empty fields:** If you select this option, only completed fields will be sent by e-mail. Fields without any input will be skipped.
 

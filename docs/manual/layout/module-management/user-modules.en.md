@@ -154,8 +154,8 @@ a protected area.
 
 ## Personal data
 
-The front end module "Personal data" adds a form to the website, which allows a member to change his personal data such 
-as his e-mail address or password. As an administrator, you can define exactly which fields can be edited and which 
+The front end module "Personal data" adds a form to the website, which allows a member to change their personal data such 
+as their e-mail address or password. As an administrator, you can define exactly which fields can be edited and which 
 cannot.
 
 **Front end output `member_default`**
@@ -525,7 +525,7 @@ confirmation link when registering, with which they can activate their account i
 
 **Send activation e-mail:** Here you can switch on the automatic activation.
 
-**Confirmation page:** Here you can define to which page a user is redirected after successful activation of his 
+**Confirmation page:** Here you can define to which page a user is redirected after successful activation of their 
 account (e.g. the login page).
 
 **Activation message:** Enter the text of the activation mail here. You can use placeholders in the format `##key##` 
@@ -677,7 +677,7 @@ The front end module generates using the `member_grouped` following HTML code:
 
 ## Change password
 
-The front end module "Change password" adds a form to the website that allows a logged in front end user to change his 
+The front end module "Change password" adds a form to the website that allows a logged in front end user to change their 
 password.
 
 **Front end output**
@@ -863,7 +863,7 @@ The front end module generates the following HTML code:
 
 ## Close account
 
-The front end module "Close account" adds a form to the website, which a member can use to close his account. Depending 
+The front end module "Close account" adds a form to the website, which a member can use to close their account. Depending 
 on the configuration, the account is either deactivated or completely deleted from the database.
 
 **Front end output**

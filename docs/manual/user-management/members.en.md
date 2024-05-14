@@ -97,7 +97,7 @@ In this section you can assign a username and password to the member, which will
 
 ### Home directory
 
-Here you can assign the member his own home directory and provide certain files there, for example with the file management. Both the module "Picture gallery" and the module "Downloads" offer the possibility to use the user directory of a member as a data source.
+Here you can assign a member their own home directory and provide certain files there, for example with the file management. Both the module "Picture gallery" and the module "Downloads" offer the possibility to use the user directory of a member as a data source.
 
 **Set home directory:** Here you activate your own home directory.
 
