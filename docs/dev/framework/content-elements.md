@@ -58,7 +58,7 @@ DCA configuration.
 
 ```php
 // contao/dca/tl_content.php
-$GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = 
+$GLOBALS['TL_DCA']['tl_content']['palettes']['example_element'] = 
     '{type_legend},type;{text_legend},text'
 ;
 ```
@@ -95,10 +95,10 @@ In this example the service tag was implemented via PHP attributes (see the diff
 below).
 
 Using the naming convention for templates mentioned above, the final template name
-for this content element will be `ce_my_content_element`:
+for this content element will be `ce_example_element`:
 
 ```html
-<!-- contao/templates/ce_my_content_element.html5 -->
+<!-- contao/templates/ce_example_element.html5 -->
 <div class="my-content-element">    
     <?= $this->text; ?>
 </div>
