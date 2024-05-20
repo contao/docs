@@ -19,7 +19,7 @@ Be aware that the front end user object and the database has already been update
 
 1. *\Contao\FrontendUser* `$member`
 
-    The front end user instance who changed his data.
+    The front end user instance who changed their data.
 
 2. *array* `$data`
 
