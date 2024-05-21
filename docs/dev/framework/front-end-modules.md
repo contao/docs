@@ -156,7 +156,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsFrontendModule(category:'miscellaneous')]
+#[AsFrontendModule(category: 'miscellaneous')]
 class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
@@ -179,7 +179,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsFrontendModule('example', category:'miscellaneous', template:'mod_example', renderer:'forward', method:'__invoke')]
+#[AsFrontendModule('example', category: 'miscellaneous', template: 'mod_example', renderer: 'forward', method: '__invoke')]
 class ExampleModuleController extends AbstractFrontendModuleController
 {
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
