@@ -94,10 +94,10 @@ to get one or multiple matching logger service(s):
 use Psr\Log\LoggerInterface;
 
 // Parameter must match Psr\Log\LoggerInterface $<camelCased channel name> + Logger
-public function __construct(LoggerInterface $contaoCronLogger, LoggerInterface $contaoErrorLogger)
-{
-    $this->cronLogger = $contaoCronLogger;
-    $this->errorLogger = $contaoErrorLogger;
+public function __construct(
+    private readonly LoggerInterface $contaoCronLogger,
+    private readonly LoggerInterface $contaoErrorLogger,
+) {
 }
 ```
 
