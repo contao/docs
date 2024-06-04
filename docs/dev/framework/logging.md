@@ -109,8 +109,8 @@ in the service configuration:
 services:
     App\MyService:
         arguments:
-            - '@?monolog.logger.contao.cron'
-            - '@?monolog.logger.contao.error'
+            - '@monolog.logger.contao.cron'
+            - '@monolog.logger.contao.error'
 ```
 
 Please note that you can only use existing log channels in this way. 
