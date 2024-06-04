@@ -22,11 +22,8 @@ use Contao\CoreBundle\Framework\ContaoFramework;
 
 class Example
 {
-    private $framework;
-
-    public function __construct(ContaoFramework $framework)
+    public function __construct(private readonly ContaoFramework $framework)
     {
-        $this->framework = $framework;
     }
 
     public function execute()
@@ -67,25 +64,13 @@ use Symfony\Component\HttpFoundation\Response;
 #[AsContentElement(category: 'texts')]
 class ExampleFormElementController extends AbstractContentElementController
 {
-    /**
-     * @var ContaoCsrfTokenManager
-     */
-    private $csrfTokenManager;
-
-    /**
-     * @var string
-     */
-    private $csrfTokenName;
-
-    public function __construct(ContaoCsrfTokenManager $csrfTokenManager, string $csrfTokenName)
+    public function __construct(private readonly ContaoCsrfTokenManager $csrfTokenManager)
     {
-        $this->csrfTokenManager = $csrfTokenManager;
-        $this->csrfTokenName = $csrfTokenName;
     }
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
-        $template->token = $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
+        $template->token = $this->csrfTokenManager->getDefaultTokenValue();
 
         return $template->getResponse();
     }
@@ -115,11 +100,8 @@ use Doctrine\DBAL\Connection;
 
 class Example
 {
-    private $connection;
-
-    public function __construct(Connection $connection)
+    public function __construct(private readonly Connection $connection)
     {
-        $this->connection = $connection;
     }
 
     public function __invoke(): void
@@ -189,11 +171,8 @@ use Contao\CoreBundle\OptIn\OptIn;
 
 class Example
 {
-    private $optIn;
-
-    public function __construct(OptIn $optIn)
+    public function __construct(private readonly OptIn $optIn)
     {
-        $this->optIn = $optIn;
     }
 
     public function createOptIn(string $email, ExampleModel $model, string $optInUrl): void
@@ -237,11 +216,8 @@ use Symfony\Component\Routing\RouterInterface;
 
 class Example
 {
-    private $router;
-
-    public function __construct(RouterInterface $router)
+    public function __construct(private readonly RouterInterface $router)
     {
-        $this->router = $router;
     }
 
     public function execute()
@@ -263,13 +239,10 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class Example
 {
-    private $requestStack;
-    private $scopeMatcher;
-
-    public function __construct(RequestStack $requestStack, ScopeMatcher $scopeMatcher)
-    {
-        $this->requestStack = $requestStack;
-        $this->scopeMatcher = $scopeMatcher;
+    public function __construct(
+        private readonly RequestStack $requestStack,
+        private readonly ScopeMatcher $scopeMatcher,
+    ) {
     }
 
     public function isBackend()
@@ -297,11 +270,8 @@ use Symfony\Component\Security\Core\Security;
 
 class Example
 {
-    private $security;
-
-    public function __construct(Security $security)
+    public function __construct(private readonly Security $security)
     {
-        $this->security = $security;
     }
 
     public function execute()
@@ -346,11 +316,8 @@ use Contao\CoreBundle\Util\SimpleTokenParser;
 
 class Example
 {
-    private $parser;
-
-    public function __construct(SimpleTokenParser $parser)
+    public function __construct(private readonly SimpleTokenParser $parser)
     {
-        $this->parser = $parser;
     }
 
     public function execute()
@@ -394,11 +361,8 @@ use Contao\CoreBundle\Slug\Slug;
 
 class Example
 {
-    private $slug;
-
-    public function __construct(Slug $slug)
+    public function __construct(private readonly Slug $slug)
     {
-        $this->slug = $slug;
     }
 
     public function getSlug(string $text, string $locale = 'en', string $validChars = '0-9a-z'): string
@@ -426,11 +390,10 @@ use Doctrine\DBAL\Connection;
 
 class Example
 {
-    private $slug;
-    private $db;
-
-    public function __construct(Slug $slug, Connection $db)
-    {
+    public function __construct(
+        private readonly Slug $slug,
+        private readonly Connection $db,
+    ) {
         $this->slug = $slug;
         $this->db = $db;
     }
@@ -472,11 +435,8 @@ use Contao\FrontendUser;
 
 class Example
 {
-    private $tokenChecker;
-
-    public function __construct(TokenChecker $tokenChecker)
+    public function __construct(private readonly TokenChecker $tokenChecker)
     {
-        $this->tokenChecker = $tokenChecker;
     }
 
     public function execute()
@@ -506,11 +466,8 @@ use Contao\CoreBundle\InsertTag\InsertTagParser;
 
 class Example
 {
-    private InsertTagParser $insertTagParser;
-    
-    public function __construct(InsertTagParser $insertTagParser)
+    public function __construct(private readonly InsertTagParser $insertTagParser)
     {
-        $this->insertTagParser = $insertTagParser;
     }
 
     public function __invoke(string $buffer): string
