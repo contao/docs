@@ -215,7 +215,7 @@ class ContaoExampleBundle extends Bundle
 }
 ```
 
-In this example we also override the `getPath` method in order to take advantage of the new recommended bundle structure
+In this example we also override the `getPath` method in order to take advantage of the [recommended bundle structure][10]
 where there is no `src/Resources/` folder anymore.
 
 {{% notice "note" %}}
@@ -449,3 +449,4 @@ push any changes you make back to the origin branch using your SSH key.
 (https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class): https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class
 [8]: /framework/manager-plugin/#the-routingplugininterface
 [9]: /guides/publishing-bundles/
+[10]: https://symfony.com/doc/5.x/bundles/best_practices.html#directory-structure 
