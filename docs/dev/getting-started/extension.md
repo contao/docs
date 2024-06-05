@@ -197,7 +197,7 @@ Now it is time to do some ground work for the extension:
 3. Configure the `composer.json` for the Contao Manager Plugin.
 
 Creating the bundle class is simple enough. The name of the bundle class can be freely
-choosen - typically it will have the same name as your top-level subnamespace, or
+chosen - typically it will have the same name as your top-level subnamespace, or
 even a combination of your complete top-level namespace. For example:
 
 ```php
