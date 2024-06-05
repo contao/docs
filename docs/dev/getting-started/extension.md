@@ -215,8 +215,8 @@ class ContaoExampleBundle extends Bundle
 }
 ```
 
-In this example we also override the `getPath` method in order to take advantage of the [recommended bundle structure][10]
-where there is no `src/Resources/` folder anymore.
+In this example we also override the `getPath` method in order to take advantage of the 
+[recommended bundle structure][SymfonyBundleDirectoryStructure] where there is no `src/Resources/` folder anymore.
 
 {{% notice "note" %}}
 Starting with Symfony 6 (Contao 5) you can instead extend from `Symfony\Component\HttpKernel\Bundle\AbstractBundle`
@@ -446,7 +446,6 @@ push any changes you make back to the origin branch using your SSH key.
 [4]: /framework/manager-plugin/
 [5]: /getting-started/starting-development/
 [6]: https://symfony.com/doc/current/bundles/extension.html
-(https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class): https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class
 [8]: /framework/manager-plugin/#the-routingplugininterface
 [9]: /guides/publishing-bundles/
-[10]: https://symfony.com/doc/5.x/bundles/best_practices.html#directory-structure 
+[SymfonyBundleDirectoryStructure]: https://symfony.com/doc/5.x/bundles/best_practices.html#directory-structure 
