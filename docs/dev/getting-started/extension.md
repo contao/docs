@@ -388,7 +388,7 @@ services:
 {{% notice info %}}
 Keep in mind that Symfony [recommends](https://symfony.com/doc/current/service_container/autowiring.html#public-and-reusable-bundles) 
 to explicitly configure services in public and reusable bundles. Within the Contao ecosystem of extensions as bundles
-issues are unlikely to occur, but depending on your use-case explicit servie configuration might be required.
+issues are unlikely to occur, but depending on your use-case explicit service configuration might be required.
 {{% /notice %}}
 
 
