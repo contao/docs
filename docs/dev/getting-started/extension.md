@@ -369,16 +369,25 @@ class ContaoExampleBundle extends AbstractBundle
 {{% /tab %}}
 {{< /tabs >}}
 
-Now, services can be registered as usual in your `config/services.yaml`.
+Now services can be registered as usual in your `config/services.yaml`. The following example would enable
+[autowire][SymfonyAutowiring] and [autoconfigure][SymfonyAutoconfiguration] by default for all registered services. It
+will also automatically register every PHP class in your `src/` folder as a service. This will enable you to create
+services on-the-fly and use PHP attributes for tagging your services.
 
-{{% notice tip %}}
-In order to take advantage of service annotations and attributes enable [auto-configuration](https://symfony.com/doc/current/service_container.html#the-autoconfigure-option)
-for your services.
-```yml
+```yaml
 services:
     _defaults:
+        autowire: true
         autoconfigure: true
+    
+    Somevendor\ContaoExampleBundle\:
+        resource: ../src
 ```
+
+{{% notice info %}}
+Keep in mind that Symfony [recommends](https://symfony.com/doc/current/service_container/autowiring.html#public-and-reusable-bundles) 
+to explicitly configure services in public and reusable bundles. Within the Contao ecosystem of extensions as bundles
+issues are unlikely to occur, but depending on your use-case explicit servie configuration might be required.
 {{% /notice %}}
 
 
@@ -449,3 +458,5 @@ push any changes you make back to the origin branch using your SSH key.
 [8]: /framework/manager-plugin/#the-routingplugininterface
 [9]: /guides/publishing-bundles/
 [SymfonyBundleDirectoryStructure]: https://symfony.com/doc/5.x/bundles/best_practices.html#directory-structure 
+[SymfonyAutowiring]: https://symfony.com/doc/current/service_container.html#the-autowire-option
+[SymfonyAutoconfiguration]: https://symfony.com/doc/current/service_container.html#the-autoconfigure-option
