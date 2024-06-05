@@ -382,6 +382,7 @@ services:
     
     Somevendor\ContaoExampleBundle\:
         resource: ../src
+        exclude: ../src/{ContaoManager,DependencyInjection}
 ```
 
 {{% notice info %}}
