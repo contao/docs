@@ -174,26 +174,17 @@ services:
 
     App\:
         resource: ../src
-
-    App\Controller\:
-        resource: ../src/Controller
-        tags: ['controller.service_arguments']
 ```
+
+If you want to implement regular controllers and define their routes via PHP attributes, you will also need to register
+these routes via the automatically loaded `config/routes.yaml`:
 
 ```yaml
 # config/routes.yaml
 app.controller:
     resource: ../src/Controller
-    type: annotation
+    type: attribute
 ```
-
-{{% notice note %}}
-The above `services.yaml` and `routes.yaml` also contain configurations for using
-controllers and routes. You will need to create the `src/Controller/` folder, otherwise
-there will be an error during cache warmup. If you do not plan to use any controllers,
-simply remove the `routes.yaml` and the the respective service registration from 
-the `services.yaml`.
-{{% /notice %}}
 
 Once this is configured, hooks, callbacks, content elements and front end modules
 for example can be created without having to configure them in separate files by 
