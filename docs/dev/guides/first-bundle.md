@@ -8,7 +8,7 @@ aliases:
 
 As Contao itself is just a Symfony bundle that's loaded to your Symfony application or Contao Managed Edition, writing
 your own bundle is very similar to writing a regular Symfony bundle. It's thus very important you read the [respective
-Symfony documentation][1] first.
+Symfony documentation][1] first. You can also have a look at the [Getting Started][5] guide which covers the basics.
 
 Copying the excellent documentation of Symfony itself into the Contao documentation doesn't make much sense thus you'll
 learn about the differences between a Symfony bundle and a Contao bundle.
@@ -28,7 +28,7 @@ no sense to show any other packages to the end users.
 ## Structure
 
 We recommend you stick to the structure recommended by [Symfony in their docs][2]. One thing that will differ are the
-Contao specific resources that will go under `Resources/contao`.
+Contao specific resources that will go under `contao/` (or `src/Resources/contao/` if you are using the old bundle structure).
 Contao specific resources in general are the following folders:
 
 * `config`
@@ -52,3 +52,4 @@ If you want to provide integration with the _Contao Managed Edition_ make sure y
 [2]: https://symfony.com/doc/current/bundles.html#bundle-directory-structure
 [3]: https://github.com/contao/skeleton-bundle
 [4]: /framework/manager-plugin/
+[5]: /getting-started/extension/
