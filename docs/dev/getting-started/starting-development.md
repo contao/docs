@@ -63,9 +63,8 @@ configurations, if present:
 
 | File                     | Explanation                                                                                   |
 | ------------------------ | --------------------------------------------------------------------------------------------- |
-| `.env`                   | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
-| `.env.local`             | Loaded if both `.env` and `.env.local` are found. Overrides parameters for local development. |
-| `.env.dist`              | Loaded if `.env` is not found. Contains default parameters for the application.               |
+| `.env`                   | Defaults for environment variables or environment variables that are agnostic to the environment. |
+| `.env.local`             | Loaded if `.env` exists. Overrides parameters for the current environment (database and SMTP credentials for example). |
 | `config/config.yaml`      | Configuration of any bundle/package/extension.                                                |
 | `config/config_dev.yaml`  | Configuration for the `dev` environment.                                                      |
 | `config/config_prod.yaml` | Configuration for the `prod` environment.                                                     |
