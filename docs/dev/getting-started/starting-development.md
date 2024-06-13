@@ -63,8 +63,8 @@ configurations, if present:
 
 | File                     | Explanation                                                                                   |
 | ------------------------ | --------------------------------------------------------------------------------------------- |
-| `.env`                   | Defaults for environment variables or environment variables that are agnostic to the environment. |
-| `.env.local`             | Loaded if `.env` exists. Defines or overrides environment variables for the current environment (e.g. database and SMTP credentials). |
+| `.env`                   | Defaults for environment variables or environment variables that are agnostic to the environment. This can be comitted to your project's repository and thus should not contain any sensitive data. |
+| `.env.local`             | Loaded if `.env` exists. Defines or overrides environment variables for the current environment (e.g. database and SMTP credentials). This should be added to your `.gitignore` as it typically contains sensitive data. |
 | `config/config.yaml`      | Configuration of any bundle/package/extension.                                                |
 | `config/config_dev.yaml`  | Configuration for the `dev` environment.                                                      |
 | `config/config_prod.yaml` | Configuration for the `prod` environment.                                                     |
