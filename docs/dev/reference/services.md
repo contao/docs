@@ -643,6 +643,39 @@ class ExampleService
 ```
 
 
+## Mailer
+
+If you want to create and send emails directly instead of using Contao's legacy `Contao\Email` class, you can use the
+[Symfony Mailer][SymfonyMailer] (which is internally used by the legacy class).
+
+```php
+namespace App;
+
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+
+class ExampleService
+{
+    public function __construct(private readonly MailerInterface $mailer)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        $email = (new Email())
+            ->from('hello@example.com')
+            ->to('you@example.com')
+            ->subject('Lorem ipsum dolor')
+            ->text('Lorem ipsum dolor sit amet.')
+            ->html('<p>Lorem ipsum dolor sit amet.</p>')
+        ;
+
+        $this->mailer->send($email);
+    }
+}
+```
+
+
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
@@ -651,3 +684,4 @@ class ExampleService
 [RequestStack]: https://symfony.com/doc/current/service_container/request.html
 [ResponseContext]: /framework/response-context/
 [ContainerConfig]: /reference/config/
+[SymfonyMailer]: https://symfony.com/doc/current/mailer.html
