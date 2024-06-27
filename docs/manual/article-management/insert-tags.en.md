@@ -22,7 +22,7 @@ With these insert tags you can create links to other pages or articles. You only
 | `{{link::login}}` | This tag is replaced with a link to the logon page of the current front end user (if available).                                                                                                                  |
 | `{{link_open::*}}` | Is replaced with the opening tag of a link. The parameter can be the ID or alias of an internal page or an absolute URL: `{{link_open::12}}Click here{{link_close}}`.                                             |
 | `{{link_url::*}}` | This tag is replaced with the URL of an internal page: `<a href="{{link_url::12}}">Click here</a>`.                                                                                                               |
-| `{{link_target::*}}` | This tag will be replaced with `target="_blank" rel="noreferrer noopener"` if the specified page is an external redirection page and it is set there that the link should open in a new window.                   |
+| `{{link_target::*}}` | This tag will be replaced with `target="_blank" rel="noreferrer noopener"` if the specified page is an external redirection page and it is set there that the link should open in a new window. (deprecated since **Contao 4.4**, not available anymore in **Contao 5.0**)                  |
 | `{{link_title::*}}` | This tag is replaced with the title of an internal page: `<a title="{{link_title::12}}">Click here</a>`.                                                                                                          |
 | `{{link_name::*}}` | This tag will be replaced with the name of an internal page: `<a>{{link_name::12}}</a>`.                                                                                                                          |
 | `{{link_close}}` | Will be replaced with the closing tag of a link to an internal page: `{{link_open::12}}Click here{{link_close}}`.                                                                                                 |
@@ -54,7 +54,7 @@ With these insert tags you can create links to other pages or articles. You only
 
 `{{link::*`**`::absolute`**`}}`: The parameter allows to output an insert tag link as an absolute URL.
 
-**The HTML Output**  
+**The HTML Output**
 The insert tag link with parameter generates the following HTML code:
 
 ```html
@@ -66,7 +66,7 @@ The insert tag link with parameter generates the following HTML code:
 
 `{{link::*`**`::blank`**`}}`: The parameter allows to open an insert tag link in a new window.
 
-**The HTML Output**  
+**The HTML Output**
 The insert tag link with parameter generates the following HTML code:
 
 ```html
@@ -173,8 +173,8 @@ The following insert tags allow you to perform various tasks, such as inserting 
 | `{{lang::*}}` | With this tag foreign words in a text can be marked: `{{lang::fr}}Au revoir{{lang}}`. This is replaced with `<span lang="fr">Au revoir</span>`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `{{abbr::*}}` | Mark abbreviations in a text: `{{abbr::World Wide Web}}WWW{{abbr}}`. This is replaced with `<abbr title="World Wide Web">WWW</abbr>`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `{{acronym::*}}` | Select acronyms in a text: `{{acronym::Multipurpose Internet Mail Extensions}}MIME{{acronym}}`. This will be replaced with `<abbr title="Multipurpose Internet Mail Extensions">MIME</abbr>` since `<acronym>` has been deprecated.                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `{{ua::*}}` | Output properties of the browser (User Agent): `{{ua::browser}}`. This will be replaced with "chrome" for example.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `{{iflng::*}}` | This tag is completely removed if the language of the page does not match the tag language. You can create language specific tags: `{{iflng::en}}Your name{{iflng::de}}Ihr Name{{iflng}}` {{% notice tip %}}                                                                                                                                                                                                                                                                                                                                                                                                                                            
+| `{{ua::*}}` | Output properties of the browser (User Agent): `{{ua::browser}}`. This will be replaced with "chrome" for example. (deprecated since **Contao 4.13**, not available anymore in **Contao 5.0**)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `{{iflng::*}}` | This tag is completely removed if the language of the page does not match the tag language. You can create language specific tags: `{{iflng::en}}Your name{{iflng::de}}Ihr Name{{iflng}}` {{% notice tip %}}
 With `en,de,fr` you can test for multiple instead of just one language. On top of that, you can use `*` as wildcard which can be especially handy when working with dialects (e.g. `de*` then matches both, `de_CH` as well as `de_AT`).
 {{% /notice %}} |
 | `{{ifnlng::*}}` | This tag will be removed completely if the language of the page (for other options see tip in `{{iflng}}`) matches the tag language. You can create language specific tags this way: `{{iflng::de}}Ihr Name{{iflng}}{{ifnlng::de}}Your name{{ifnlng}}` |
@@ -223,11 +223,11 @@ Available flags:
 | `urlattr` | Converts special characters into entities, same as `attr`. Additionally, colons get URL encoded to disable disallowed protocols like `javascript:`. | see&nbsp;`StringUtil::specialcharsUrl()` |
 | `addslashes` | Prepends certain characters in a string (`\`). | [PHP function](https://php.net/addslashes) |
 | `standardize` | Standardizes the output (for example, the alias in the page structure). |  |
-| `absolute` | Generates an absolute path including host name and protocol | Available in Contao **4.5** and later |
+| `absolute` | Generates an absolute path including host name and protocol | Available in Contao **4.5** and later (deprecated since **Contao 4.12**, not available anymore in **Contao 5.0**) |
 | `ampersand` | Converts `&` characters into entities. |  |
 | `specialchars` | Converts special characters into entities. |  |
 | `nl2br` | Inserts HTML line breaks before all line breaks in a string. | [PHP function](https://php.net/nl2br) |
-| `nl2br_pre` | Keeps the line breaks within `<pre>` tags. |  |
+| `nl2br_pre` | Keeps the line breaks within `<pre>` tags. | (deprecated since **Contao 4.0**, not available anymore in **Contao 5.0**) |
 | `strtolower` | Converts the output to lower case. | [PHP function](https://php.net/strtolower) |
 | `utf8_strtolower` | Unicode-conscious conversion to lower case. |  |
 | `strtoupper` | Converts the output to capital letters. | [PHP function](https://php.net/strtoupper) |
@@ -262,8 +262,8 @@ The following "basic entities" are converted back into the respective HTML entit
 | `[{]`, `[}]` | Replaced in the front end with `{{` or `}}`, respectively. This enables you to display insert tags in the front end. For example, to explain them. |
 
 {{% notice "info" %}}
-Since Contao **5** this is no longer automatically the case for individual DCA fields. In your own DCA fields you will 
-need to enable the conversion via `'basicEntities' => true` in the [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation) 
+Since Contao **5** this is no longer automatically the case for individual DCA fields. In your own DCA fields you will
+need to enable the conversion via `'basicEntities' => true` in the [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation)
 definitions.
 {{% /notice %}}
 
