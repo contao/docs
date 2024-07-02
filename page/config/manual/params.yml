@@ -1,3 +1,4 @@
 editURL: 'https://github.com/contao/docs/edit/main/docs/manual/'
 documentation_label: Manual
 algolia_selector: manual
+documentation_label_switch_url: 'https://docs.contao.org/dev/'
