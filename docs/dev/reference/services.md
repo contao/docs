@@ -263,6 +263,8 @@ class Example
 Not directly related to Contao, but this helper service from Symfony lets you retrieve
 the current Contao front end or back end user from the firewall.
 
+{{< tabs groupId="services-contao4-contao5" >}}
+{{% tab name="Contao 4" %}}
 ```php
 use Contao\BackendUser;
 use Contao\FrontendUser;
@@ -298,6 +300,120 @@ class Example
 
         // Get current front end user
         if (($user = $this->security->getUser()) instanceof FrontendUser) {
+            // …
+        }
+    }
+}
+```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+```php
+use Contao\BackendUser;
+use Contao\FrontendUser;
+use Symfony\Bundle\SecurityBundle\Security;
+
+class Example
+{
+    public function __construct(private readonly Security $security)
+    {
+    }
+
+    public function execute()
+    {
+        // Check for admin back end user role
+        if ($this->security->isGranted('ROLE_ADMIN')) {
+            // …
+        }
+
+        // Check for regular back end user role
+        if ($this->security->isGranted('ROLE_USER')) {
+            // …
+        }
+
+        // Check for front end user role
+        if ($this->security->isGranted('ROLE_MEMBER')) {
+            // …
+        }
+
+        // Get current back end user
+        if (($user = $this->security->getUser()) instanceof BackendUser) {
+            // …
+        }
+
+        // Get current front end user
+        if (($user = $this->security->getUser()) instanceof FrontendUser) {
+            // …
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+If you only need to check the authorization you can inject the `AuthorizationCheckerInterface` instead:
+
+```php
+use Contao\CoreBundle\Security\ContaoCorePermissions;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
+class Example
+{
+    public function __construct(private readonly AuthorizationCheckerInterface $auth)
+    {
+    }
+
+    public function execute()
+    {
+        // Check for admin back end user role
+        if ($this->auth->isGranted('ROLE_ADMIN')) {
+            // …
+        }
+
+        // Check for regular back end user role
+        if ($this->auth->isGranted('ROLE_USER')) {
+            // …
+        }
+
+        // Check for front end user role
+        if ($this->auth->isGranted('ROLE_MEMBER')) {
+            // …
+        }
+
+        // Check whether the back end user can access any field in tl_page
+        if ($this->auth->isGranted(ContaoCorePermissions::USER_CAN_EDIT_FIELDS_OF_TABLE, 'tl_page')) {
+            // …
+        }
+
+        // Check whether the front end user is a member of specific groups
+        if ($this->auth->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, [2, 9])) {
+            // …
+        }
+    }
+}
+```
+
+If you only want to retrieve the logged in user you can inject the `TokenStorageInterface` instead:
+
+```php
+use Contao\BackendUser;
+use Contao\FrontendUser;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+
+class Example
+{
+    public function __construct(private readonly TokenStorageInterface $tokenStorage)
+    {
+    }
+
+    public function execute()
+    {
+        // Get current back end user
+        if (($user = $this->tokenStorage->getToken()?->getUser()) instanceof BackendUser) {
+            // …
+        }
+
+        // Get current front end user
+        if (($user = $this->tokenStorage->getToken()?->getUser()) instanceof FrontendUser) {
             // …
         }
     }
