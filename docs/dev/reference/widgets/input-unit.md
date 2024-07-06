@@ -30,6 +30,28 @@ This table only shows the options relevant to the core functionality of this wid
 | `reference`       | `array`                     | Optional translation reference for the drop-down options.
 
 
+## Example
+
+```php
+// ...
+'headline' => [
+    'exclude'   => true,
+    'inputType' => 'inputUnit',
+    'options' => ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    'eval'      => [
+        'maxlength' => 200, 
+        'basicEntities' => true, 
+        'tl_class' => 'w50',
+    ],
+    'sql'       => [
+        'type' => 'string',
+        'length' => 255,
+        'default' => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',
+    ],
+],
+```
+
+
 ## Usage in Contao
 
 The input unit widget is mainly used for the headline input in content elements and modules. In the past it was also
