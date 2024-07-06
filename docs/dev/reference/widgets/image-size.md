@@ -15,7 +15,8 @@ The predefined sizes originate either from the application configuration ("Prede
 
 ## Options
 
-This widget does not have any special options. See the DCA reference for a [full field reference](../../dca/fields).
+This widget does not have any special options. See the DCA reference for a [full field reference][FieldsReference].
+All options for the [`text`][TextWidget] are also relevant.
 
 The options for the drop down are automatically retrieved from the `contao.image.sizes` service 
 (`Contao\CoreBundle\Image\ImageSizes`). However, you can still override these options via your own 
@@ -92,4 +93,6 @@ The image size widget is used very often in contao. Examples are the text, image
 widget stores a serialized [image size array][ImageSizeArray] in the database which can then be used to resize images
 in your controller for example.
 
+[FieldsReference]: /reference/dca/fields
 [ImageSizeArray]: /framework/image-processing/image-sizes#size-array
+[TextWidget]: /reference/widgets/text
