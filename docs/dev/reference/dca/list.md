@@ -148,7 +148,7 @@ of which operations should be available for your data container. Contao will als
 
 ```php
 // contao/dca/tl_example.php
-$GLOBALS['TL_DCA']['tl_example']['config']['list']['operations'] = [
+$GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
     'edit',
     'children',
     'copy',
@@ -169,7 +169,7 @@ can be arbitrary.
 
 ```php
 // contao/dca/tl_foobar.php
-$GLOBALS['TL_DCA']['tl_foobar']['config']['list']['operations'][] = 'toggle';
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations'][] = 'toggle';
 
 $GLOBALS['TL_DCA']['tl_foobar']['fields']['published'] = [
     'toggle' => true,

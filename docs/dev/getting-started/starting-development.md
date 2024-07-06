@@ -63,9 +63,8 @@ configurations, if present:
 
 | File                     | Explanation                                                                                   |
 | ------------------------ | --------------------------------------------------------------------------------------------- |
-| `.env`                   | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
-| `.env.local`             | Loaded if both `.env` and `.env.local` are found. Overrides parameters for local development. |
-| `.env.dist`              | Loaded if `.env` is not found. Contains default parameters for the application.               |
+| `.env`                   | Defaults for environment variables or environment variables that are agnostic to the environment. This is typically comitted to your project's repository and thus should not contain any sensitive data. |
+| `.env.local`             | Loaded if `.env` exists. Defines or overrides environment variables for the current environment (e.g. database and SMTP credentials). This should be added to your `.gitignore` as it typically contains sensitive data. |
 | `config/config.yaml`      | Configuration of any bundle/package/extension.                                                |
 | `config/config_dev.yaml`  | Configuration for the `dev` environment.                                                      |
 | `config/config_prod.yaml` | Configuration for the `prod` environment.                                                     |
@@ -174,26 +173,17 @@ services:
 
     App\:
         resource: ../src
-
-    App\Controller\:
-        resource: ../src/Controller
-        tags: ['controller.service_arguments']
 ```
+
+If you want to implement regular controllers and define their routes via PHP attributes, you will also need to register
+these routes via the automatically loaded `config/routes.yaml`:
 
 ```yaml
 # config/routes.yaml
 app.controller:
     resource: ../src/Controller
-    type: annotation
+    type: attribute
 ```
-
-{{% notice note %}}
-The above `services.yaml` and `routes.yaml` also contain configurations for using
-controllers and routes. You will need to create the `src/Controller/` folder, otherwise
-there will be an error during cache warmup. If you do not plan to use any controllers,
-simply remove the `routes.yaml` and the the respective service registration from 
-the `services.yaml`.
-{{% /notice %}}
 
 Once this is configured, hooks, callbacks, content elements and front end modules
 for example can be created without having to configure them in separate files by 

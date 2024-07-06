@@ -202,7 +202,7 @@ The user name and email address must be unique, i.e. they can only be assigned o
 
 ### Back end Settings
 
-Every user can customize the back end to his or her personal preferences.
+Every user can customize the back end to their personal preferences.
 
 **Back end language:** Here you set the back end language.
 
@@ -231,7 +231,7 @@ back end preview.
 
 **Password:** Here you can assign a password to the user.
 
-**Password change required:**  Here you can force the user to change his password at the next login.
+**Password change required:**  Here you can force the user to change their password at the next login.
 
 
 #### Two-Factor Authentication
@@ -323,7 +323,7 @@ For example, this page belongs to the user `Helen Lewis` who can edit, move or d
 Other users in the group `Editors` may only edit the articles, but not the page itself.
 
 So you have to assign access rights to the pages that a user should be able to edit or create articles on and assign 
-them either to the user or to his group. In this way you create the conditions for a user to be able to click on the 
+them either to the user or to their group. In this way you create the conditions for a user to be able to click on the 
 corresponding navigation icons.
 
 ![The page structure without assigned access rights]({{% asset "images/manual/user-management/en/site-structure-without-access-rights.png" %}}?classes=shadow)

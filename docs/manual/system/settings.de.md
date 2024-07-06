@@ -174,7 +174,7 @@ verarbeitet.
 (Upload).
 
 **Maximale Upload-Dateigröße:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server 
-übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MiB = 1024 KiB = 1.048.567 Bytes). Größere Dateien 
+übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MiB = 1024 KiB = 1.048.576 Bytes). Größere Dateien 
 werden abgelehnt.
 
 **Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese 
@@ -1054,6 +1054,32 @@ Weitere Informationen findest du in der [Symfony-Dokumentation](https://symfony.
 Die Informationen der Datenbank-Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
 
+#### Konvertieren deiner Datenbank-Parameter
+
+Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der `parameters.yml` oder die `DATABASE_URL` zu konvertieren. Es werden keine Daten übertragen.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="database_user" name="user" autocapitalize="none" placeholder=" ">
+    <label for="database_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="database_password" name="password" autocapitalize="none" placeholder=" ">
+    <label for="database_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="database_host" name="server" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_host">Server (:Port)</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="text" id="database_name" name="database" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_name">Database Name</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="database_url" name="url" placeholder="mysql://user:password@server:port/database" required="required" autocapitalize="none">
+    <label for="database_url" class="placeholder-active">DATABASE_URL</label>
+  </div>
+</form>
 
 ### `MAILER_DSN`
 
@@ -1064,6 +1090,38 @@ Siehe die [Symfony Mailer Dokumentation][SymfonyMailer] für weitere Information
 Die Variable hieß bisher `MAILER_URL`. Ab Contao **5.0** wird nur noch `MAILER_DSN` unterstützt.
 {{% /notice %}}
 
+#### Konvertieren deiner Mail-Parameter
+
+Das nachfolgende Tool läuft in deinem Browser und hilft dir deine E-Mail Zugangsdaten in die `MAILER_DSN` oder in die `config.yml`-Variante zu konvertieren. Es werden keine Daten übertragen.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="mailer_user" name="mailer_user" autocapitalize="none" placeholder=" ">
+    <label for="mailer_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="mailer_password" name="mailer_password" autocapitalize="none" placeholder=" ">
+    <label for="mailer_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="mailer_host" name="mailer_host" required="required" autocapitalize="none" placeholder=" ">
+    <label for="mailer_host">Host</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="number" id="mailer_port" name="mailer_port" min="25" max="65535" required="required" placeholder=" ">
+    <label for="mailer_port">Port</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mailer_dsn" name="mailer_dsn" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mailer_dsn" class="placeholder-active">MAILER_DSN</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mail_config_value" name="mail_config_value" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mail_config_value" class="placeholder-active">config.yml</label>
+  </div>
+</form>
 
 ### `COOKIE_ALLOW_LIST`
 
@@ -1133,6 +1191,76 @@ IP-Adresse des Clients, ob der Client eine Verbindung über HTTPS herstellt oder
 ### `TRUSTED_HOSTS`
 
 Die gleiche Erklärung wie für `TRUSTED_PROXIES` und das IP-Beispiel gilt auch für `TRUSTED_HOSTS` beim Abrufen des ursprünglich gesendeten `Host` HTTP-Header. Du würdest den Hostnamen des Proxys erhalten, aber wenn du den Hostnamen des Proxys zur Liste der vertrauenswürdigen Proxys hinzufügst, erhältst du den Hostnamen, der in der ursprünglichen Anfrage angefordert wurde: `TRUSTED_HOSTS=my.proxy.com`
+
+
+### `DNS_MAPPING`
+
+{{< version "5.3" >}}
+
+In Contao wird die Domain einer Webseite in den Einstellungen des Startpunkts der Webseite definiert und ist somit in
+der Datenbank gespeichert. Wenn man die Datenbank von einer Umgebung in die Andere kopiert müsste man also diese
+Einstellungen dnanach manuell ändern. Mit der `DNS_MAPPING` Umgebungsvariable kann dieser Prozess automatisiert werden:
+
+```env
+# .env.local in deiner lokalen Entwicklungs-Umgebung
+DNS_MAPPING='{
+    "www.example.com": "example.local",
+    "www.foobar.org": "foobar.local",
+    "www.lorem.at": "lorem.local"
+}'
+```
+
+```env
+# .env.local in deiner Staging-Umgebung
+DNS_MAPPING='{
+    "www.example.com": "staging.example.com",
+    "www.foobar.org": "staging.foobar.org",
+    "www.lorem.at": "staging.lorem.at"
+}'
+```
+
+Dadurch kann bspw. die Live-Datenbank zur Staging- oder Entwicklungs-Umgebung kopiert und durch die Datenbankmigration 
+(`contao:migrate`) die Domain-Einstellungen automatisch angepasst werden.
+
+Auch die Protokoll-Einstellung kann automatisch geändert werden. Dies kann hilfreich sein, wenn bspw. für die lokale
+Entwicklungsumgebung kein SSL-Zertifikat definiert ist:
+
+```env
+DNS_MAPPING='{
+    "www.example.com": "http://example.local",
+    "www.foobar.org": "http://foobar.local",
+    "www.lorem.at": "http://lorem.local"
+}'
+```
+
+Die Migration funktioniert auch wenn in einem Startpunkt keine Domain definiert ist (dies ist allerdings generell nicht
+empfohlen).
+
+```.env
+DNS_MAPPING='{
+    "": "http://",
+    "www.foobar.org": "http://foobar.local",
+    "www.lorem.at": "http://lorem.local"
+}'
+```
+
+```.env
+DNS_MAPPING='{
+    "": "example.local",
+    "www.foobar.org": "foobar.local",
+    "www.lorem.at": "lorem.local"
+}'
+```
+
+Statt der Umgebungsvariable kann auch der `contao.dns_mapping` Parameter direkt in der `parameters.yaml` gesetzt werden:
+
+```yaml
+parameters:
+    contao.dns_mapping:
+        www.example.com: http://example.local
+        www.foobar.org: http://foobar.local
+        www.lorem.at: http://lorem.local
+```
 
 
 ## E-Mail Versand Konfiguration
@@ -1248,6 +1376,8 @@ smtp://<BENUTZERNAME>:<PASSWORT>@<HOSTNAME>:<PORT>
 
 Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, oder entfernt sie dementsprechend. Siehe 
 dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMailer].
+
+Für diese Encodierung kann dieses [Tool](#konvertieren-deiner-mail-parameter) genutzt werden.
 
 {{% notice warning %}}
 Falls der Benutzername oder das Passwort Sonderzeichen verwendet, müssen diese »URL enkodiert« werden. Es gibt

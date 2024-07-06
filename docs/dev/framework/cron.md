@@ -172,7 +172,7 @@ with `\`, since `*/` would close the PHP comment.
 {{% /tab %}}
 
 {{% tab name="YAML" %}}
-{{< version-tag "4.9" >}} As mentioned before you can manually add the `contao.hook` service tag in your service configuration.
+{{< version-tag "4.9" >}} As mentioned before you can manually add the `contao.cronjob` service tag in your service configuration.
 
 ```yaml
 # config/services.yaml
