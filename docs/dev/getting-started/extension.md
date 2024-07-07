@@ -22,7 +22,7 @@ used interchangably. For Composer, everything is a _package_, while a `symfony-b
 or a `contao-bundle` is a specific type of package. _Contao bundles_ are referred 
 to as _extensions_ within the Contao universe.
 {{% /notice %}}
-
+F
 This article guides you through the necessary steps of creating an extension. It 
 reflects the minimum amount of basic configuration that has to be done in order
 to be able to install such an extension in your Contao installation.
@@ -197,7 +197,7 @@ Now it is time to do some ground work for the extension:
 3. Configure the `composer.json` for the Contao Manager Plugin.
 
 Creating the bundle class is simple enough. The name of the bundle class can be freely
-choosen - typically it will have the same name as your top-level subnamespace, or
+chosen - typically it will have the same name as your top-level subnamespace, or
 even a combination of your complete top-level namespace. For example:
 
 ```php
@@ -215,12 +215,23 @@ class ContaoExampleBundle extends Bundle
 }
 ```
 
-In this example we also override the `getPath` method in order to take advantage of the new recommended bundle structure
-where there is no `src/Resources/` folder anymore.
+In this example we also override the `getPath` method in order to take advantage of the 
+[recommended bundle structure][SymfonyBundleDirectoryStructure] where there is no `src/Resources/` folder anymore.
 
 {{% notice "note" %}}
 Starting with Symfony 6 (Contao 5) you can instead extend from `Symfony\Component\HttpKernel\Bundle\AbstractBundle`
 and omit the `getPath` method, as the new `AbstractBundle` already includes this.
+
+```php
+// src/ContaoExampleBundle.php
+namespace Somevendor\ContaoExampleBundle;
+
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+
+class ContaoExampleBundle extends AbstractBundle
+{
+}
+```
 {{% /notice %}}
 
 The bundle class can otherwise be empty, but could contain additional bundle configurations
@@ -279,13 +290,40 @@ that we need to take care of loading our services and routes for example ourselv
 
 While the Contao Managed Edition (and also Symfony Skeleton Applications) will load certain YAML files automatically
 for your application, an extension or bundle will have to load the service
-configuration itself. The details are described in the [Symfony documentation][6]. The basic steps are:
+configuration itself. The details are described in the [Symfony documentation][6]. Starting with Symfony **6**
+(used by Contao **5**) there are two different ways.
 
-1. Create a `config/services.yaml` within the extension.
-2. [Create an extension class][7] in the `DependencyInjection` namespace.
+{{< tabs groupId="service-configuration" >}}
+{{% tab name="Bundle Class" %}}
+{{< version-tag "5" >}} As noted previously, starting with Symfony **6** (Contao **5**) you can extend your bundle class from `AbstractBundle`.
+There you can also use the [`loadExtension` method](https://symfony.com/doc/6.4/bundles/extension.html#loading-services-directly-in-your-bundle-class)
+to directly load your service configuration.
 
-The class name of the dependency injection extension needs to be the same as the 
-bundle name (with `Bundle` replaced by `Extension`, if present).
+```php
+// src/ContaoExampleBundle.php
+namespace Somevendor\ContaoExampleBundle;
+
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+
+class ContaoExampleBundle extends AbstractBundle
+{
+    public function loadExtension(
+        array $config, 
+        ContainerConfigurator $containerConfigurator, 
+        ContainerBuilder $containerBuilder,
+    ): void
+    {
+        $containerConfigurator->import('../config/services.yaml');
+    }
+}
+```
+{{% /tab %}}
+{{% tab name="Dependency Injection Extension Class" %}}
+You can also [create an extension class](https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class)
+in the `DependencyInjection` namespace which handles loading of your service definitions. The class name of the needs to 
+be the same as the  bundle name, with `Bundle` replaced by `Extension`, if present.
 
 ```php
 // src/DependencyInjection/ContaoExampleExtension.php
@@ -306,16 +344,51 @@ class ContaoExampleExtension extends Extension
 }
 ```
 
-Now, services can be registered as usual in your `config/services.yaml`.
+{{% notice info %}}
+This will not work automatically if your bundle class already extends from `AbstractBundle`. If you wish to use this
+extension class, you will need to implement the `getContainerExtension()` method in your bundle class and instantiate
+this extension class manually.
 
-{{% notice tip %}}
-In order to take advantage of service annotations and attributes enable [auto-configuration](https://symfony.com/doc/current/service_container.html#the-autoconfigure-option)
-for your services.
-```yml
+```php
+// src/ContaoExampleBundle.php
+namespace Somevendor\ContaoExampleBundle;
+
+use App\DependencyInjection\ContaoExampleExtension;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+
+class ContaoExampleBundle extends AbstractBundle
+{
+    public function getContainerExtension(): ?ExtensionInterface
+    {
+        return new ContaoExampleExtension();
+    }
+}
+```
+{{% /notice %}}
+{{% /tab %}}
+{{< /tabs >}}
+
+Now services can be registered as usual in your `config/services.yaml`. The following example would enable
+[autowire][SymfonyAutowiring] and [autoconfigure][SymfonyAutoconfiguration] by default for all registered services. It
+will also automatically register every PHP class in your `src/` folder as a service. This will enable you to create
+services on-the-fly and use PHP attributes for tagging your services.
+
+```yaml
 services:
     _defaults:
+        autowire: true
         autoconfigure: true
+    
+    Somevendor\ContaoExampleBundle\:
+        resource: ../src
+        exclude: ../src/{ContaoManager,DependencyInjection}
 ```
+
+{{% notice info %}}
+Keep in mind that Symfony [recommends](https://symfony.com/doc/current/service_container/autowiring.html#public-and-reusable-bundles) 
+to explicitly configure services in public and reusable bundles. Within the Contao ecosystem of extensions as bundles
+issues are unlikely to occur, but depending on your use-case explicit service configuration might be required.
 {{% /notice %}}
 
 
@@ -383,6 +456,8 @@ push any changes you make back to the origin branch using your SSH key.
 [4]: /framework/manager-plugin/
 [5]: /getting-started/starting-development/
 [6]: https://symfony.com/doc/current/bundles/extension.html
-[7]: https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class
 [8]: /framework/manager-plugin/#the-routingplugininterface
 [9]: /guides/publishing-bundles/
+[SymfonyBundleDirectoryStructure]: https://symfony.com/doc/5.x/bundles/best_practices.html#directory-structure 
+[SymfonyAutowiring]: https://symfony.com/doc/current/service_container.html#the-autowire-option
+[SymfonyAutoconfiguration]: https://symfony.com/doc/current/service_container.html#the-autoconfigure-option

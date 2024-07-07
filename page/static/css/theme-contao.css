@@ -927,3 +927,43 @@ html[data-theme=dark] #toc-menu,
         content: '🡆';
     }
 }
+
+
+#body .banner a.highlight {
+    background: rgba(244, 124, 0, 1);
+    border: 1px solid rgba(244, 124, 0, .2);
+    border-radius: 4px;
+    color: white;
+    display: block;
+    font-size: 1rem;
+    margin: 2rem 0;
+    padding: 10px 15px;
+    text-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+#body .banner a:focus,
+#body .banner a:hover {
+    background: rgba(244, 124, 0, .8);
+}
+
+#body .banner a.highlight::after {
+    background-color: transparent;
+}
+
+.banner span {
+    display: block;
+}
+
+.banner .title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .banner span {
+        display: inline;
+    }
+    .banner .title {
+        padding-right: 3rem;
+    }
+}

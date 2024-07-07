@@ -261,7 +261,7 @@ class Plugin implements ConfigPluginInterface
 {
     public function registerContainerConfiguration(LoaderInterface $loader, array $config)
     {
-        $loader->load('@VendorSomeBundle/Resources/config/config.yaml');
+        $loader->load(__DIR__.'/../../config/config.yaml');
     }
 }
 ```
@@ -559,9 +559,10 @@ class Plugin implements RoutingPluginInterface
 {
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
-        $file = '@VendorSomeBundle/Resources/config/routes.yaml';
-
-        return $resolver->resolve($file)->load($file);
+        return $resolver
+            ->resolve(__DIR__.'/../../config/routes.yaml')
+            ->load(__DIR__.'/../../config/routes.yaml')
+        ;
     }
 }
 ```
@@ -581,9 +582,10 @@ class Plugin implements RoutingPluginInterface
 {
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
-        $path = '@VendorSomeBundle/src/Controller';
-
-        return $resolver->resolve($path, 'attribute')->load($path);
+        return $resolver
+            ->resolve(__DIR__.'/../Controller', 'attribute')
+            ->load(__DIR__.'/../Controller')
+        ;
     }
 }
 ```

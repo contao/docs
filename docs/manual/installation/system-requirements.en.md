@@ -22,20 +22,21 @@ always use them.
 
 ### PHP Extensions
 
-| Extension Name                            | Contao 4.4 and up        | Contao 4.9 and up                           | Contao 4.13 and up                          |
-|:------------------------------------------|:-------------------------|:--------------------------------------------|:--------------------------------------------|
-| [DOM][ext-dom] (`ext-dom`)                | **required**             | **required**                                | **required**                                |
-| [PCRE][ext-pcre] (`ext-pcre`)             | **required**             | **required**                                | **required**                                |
-| [Intl][ext-intl] (`ext-intl`)             | recommended              | **required**                                | **required**                                |
-| [PDO][ext-pdo] (`ext-pdo`)                | **required**             | **required**                                | **required**                                |
-| [ZLIB][ext-zlib] (`ext-zlib`)             | **required**             | **required**                                | **required**                                |
-| [JSON][ext-json] (`ext-json`)             | **required**             | **required**                                | **required**                                |
-| [Curl][ext-curl] (`ext-curl`)             | **required**             | **required**                                | **required**                                |
-| [Mbstring][ext-mbstring] (`ext-mbstring`) | **required**             | **required**                                | **required**                                |
-| [GD][ext-gd] (`ext-gd`)                   | **required**<sup>1</sup> | **required**<sup>1</sup>                    | **required**<sup>1</sup>                    |
-| [Imagick][ext-imagick] (`ext-imagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | recommended<sup>1</sup>  | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
-| [File Information][ext-fileinfo] (`ext-fileinfo`) | -                | -                                           | **required**                                |
+| Extension Name                                    | Contao 4                                    | Contao 5                                    |
+|:--------------------------------------------------|:--------------------------------------------|:--------------------------------------------|
+| [DOM][ext-dom] (`ext-dom`)                        | **required**                                | **required**                                |
+| [PCRE][ext-pcre] (`ext-pcre`)                     | **required**                                | **required**                                |
+| [Intl][ext-intl] (`ext-intl`)                     | **required**                                | **required**                                |
+| [PDO][ext-pdo] (`ext-pdo`)                        | **required**                                | **required**                                |
+| [ZLIB][ext-zlib] (`ext-zlib`)                     | **required**                                | **required**                                |
+| [JSON][ext-json] (`ext-json`)                     | **required**                                | **required**                                |
+| [Curl][ext-curl] (`ext-curl`)                     | **required**                                | **required**                                |
+| [Mbstring][ext-mbstring] (`ext-mbstring`)         | **required**                                | **required**                                |
+| [GD][ext-gd] (`ext-gd`)                           | **required**<sup>1</sup>                    | **required**<sup>1</sup>                    |
+| [Imagick][ext-imagick] (`ext-imagick`)            | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)            | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
+| [File Information][ext-fileinfo] (`ext-fileinfo`) | **required**                                | **required**                                |
+| [Sodium][ext-sodium] (`ext-sodium`)               | -                                           | **required** for PHP 8.3+<sup>2</sup>       |
 
 {{% notice note %}}
 <sup>1</sup> Contao automatically selects an image processing library depending on its availability.
@@ -60,10 +61,16 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 [ext-imagick]: https://www.php.net/manual/en/book.imagick.php
 [ext-gmagick]: https://www.php.net/manual/en/book.gmagick.php
 [ext-fileinfo]: https://www.php.net/manual/en/book.fileinfo.php
+[ext-sodium]: https://www.php.net/manual/en/book.sodium.php
 
 All required extensions are enabled by default in current PHP versions. However, some hosting providers
 explicitly disable them. The requirements are automatically checked during installation via the
 [Contao Manager](../../installation/contao-manager) or [Composer](https://getcomposer.org).
+
+{{% notice tip %}}
+<sup>2</sup> In case the PHP Sodium extension is not available in your environment you can additionally require the
+package `paragonie/sodium_compat_ext_sodium` in your project's `composer.json` to work around this requirement.
+{{% /notice %}}
 
 
 ### PHP configuration (`php.ini`)
@@ -101,11 +108,9 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 
 - **PHP** Version 8.1.0 or higher is required.
 
+#### Contao 4.13 (LTS)
 
-#### Contao 4.11 and later
-
-- **PHP** Version 7.3.0 or higher is required.
-
+- **PHP** Version 7.4.0 or higher is required.
 
 #### Contao 4.9 (LTS)
 
@@ -331,6 +336,11 @@ only the exception to the rule. The provider-specific settings can be found in t
 [Contao forum](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern). You can get optimal 
 hosting packages for Contao from the [Contao partners](https://contao.org/en/contao-partners.html) in the service 
 category "Web hosting".
+
+{{% notice "note" %}}
+Some hosting providers offer 1-click installations. However, for the best user experience, we recommend using the 
+Contao Manager or the console.
+{{% /notice %}}
 
 
 [SymfonyWebServerConfiguration]: https://symfony.com/doc/current/setup/web_server_configuration.html

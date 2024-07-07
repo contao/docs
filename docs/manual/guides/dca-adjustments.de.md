@@ -75,7 +75,6 @@ PaletteManipulator::create()
 ;
 
 unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feEditable']);
-unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feViewable']);
 unset($GLOBALS['TL_DCA']['tl_member']['fields']['company']['eval']['feGroup']);
 ```
 

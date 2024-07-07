@@ -5,7 +5,6 @@ aliases:
 weight: 10
 ---
 
-
 The system settings slowly but surely leave the backend. Basic system settings influence Contao as an application and 
 therefore there is a chance that a wrong setting will render the system non-functional. If this happens, you will not 
 be able to undo the settings and restore the system because you will not be able to log in anymore. For this reason, 
@@ -168,7 +167,7 @@ process library. Any image exceeding this value will not be processed.
 **Upload file types:** Here you can define which file types can be uploaded to your server.
 
 **Maximum upload file size:** Here you can define the maximum size of a file that can be uploaded to your server using 
-the file manager. The entry is in bytes (1 MiB = 1024 KiB = 1,048,567 bytes). Larger files will be rejected.
+the file manager. The entry is in bytes (1 MiB = 1024 KiB = 1,048,576 bytes). Larger files will be rejected.
 
 **Maximum image width:** When uploading images, the file manager automatically checks the width of the image and 
 compares it with the width you set here. If an image exceeds the maximum width, it will be reduced automatically.
@@ -957,7 +956,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | --- | --- |
 | `adminEmail` | [E-mail address of the system administrator](#global-configuration). |
 | `allowedDownload` | [Download file types](#files-and-images). |
-| `allowedAttributes` | [Allowed HTML attributes](##security-settings). |
+| `allowedAttributes` | [Allowed HTML attributes](#security-settings). |
 | `allowedTags` | [Allowed HTML tags](#security-settings). |
 | `characterSet` | Character set used by Contao. _(deprecated)_ Use the parameter `kernel.charset` instead. Default: `UTF-8` |
 | `dateFormat` | [Date format](#date-and-time). |
@@ -1052,6 +1051,32 @@ the database user name, database password, host name, port and database name tha
 The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
 
+#### Convert your database parameters
+
+The following tool runs in your browser and helps you to convert the variables of the parameters.yml or the DATABASE_URL. No data will be transmitted.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="database_user" name="user" autocapitalize="none" placeholder=" ">
+    <label for="database_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="database_password" name="password" autocapitalize="none" placeholder=" ">
+    <label for="database_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="database_host" name="server" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_host">Server (:Port)</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="text" id="database_name" name="database" required="required" autocapitalize="none" placeholder=" ">
+    <label for="database_name">Database Name</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="database_url" name="url" placeholder="mysql://user:password@server:port/database" required="required" autocapitalize="none">
+    <label for="database_url" class="placeholder-active">DATABASE_URL</label>
+  </div>
+</form>
 
 ### `MAILER_DSN`
 
@@ -1064,6 +1089,38 @@ See the [Symfony Mailer Documentation][SymfonyMailer] for more information.
 The variable was previously called `MAILER_URL`. Since Contao **5.0** only `MAILER_DSN` will be supported.
 {{% /notice %}}
 
+#### Convert your mail parameters
+
+The following tool runs in your browser and helps you to convert your mail parameters into the `MAILER_DSN` or the `config.yml`-variant. No data will be transmitted.
+
+<form autocomplete="off" class="env-converter">
+  <div class="env-widget">
+    <input type="text" id="mailer_user" name="mailer_user" autocapitalize="none" placeholder=" ">
+    <label for="mailer_user">Username</label>
+  </div>
+  <div class="env-widget">
+    <input type="password" id="mailer_password" name="mailer_password" autocapitalize="none" placeholder=" ">
+    <label for="mailer_password">Password</label>
+  </div>
+  <div class="env-widget">
+    <input type="text" id="mailer_host" name="mailer_host" required="required" autocapitalize="none" placeholder=" ">
+    <label for="mailer_host">Host</label>
+  </div>
+  <div class="env-widget separator">
+    <input type="number" id="mailer_port" name="mailer_port" min="25" max="65535" required="required" placeholder=" ">
+    <label for="mailer_port">Port</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mailer_dsn" name="mailer_dsn" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mailer_dsn" class="placeholder-active">MAILER_DSN</label>
+  </div>
+  <div class="env-widget">
+    <input type="url" id="mail_config_value" name="mail_config_value" placeholder="smtp://user:pass@smtp.example.com:port"
+           required="required" autocapitalize="none" readonly>
+    <label for="mail_config_value" class="placeholder-active">config.yml</label>
+  </div>
+</form>
 
 ### `COOKIE_ALLOW_LIST`
 
@@ -1168,6 +1225,76 @@ The same explanation as for `TRUSTED_PROXIES` and the IP example, also applies t
 originally sent `Host` HTTP header. You would get the host name of your proxy but if you add your proxy host name
 to the list of trusted proxies, you will get the host name that was requested in the original request:
 `TRUSTED_HOSTS=my.proxy.com`
+
+
+### `DNS_MAPPING`
+
+{{< version "5.3" >}}
+
+When creating a website in Contao you define the website's domain in the website root's settings - or in each website
+root respectively in a multi-domain setup. In order to not have to manually change the domain every time you copy the
+database from or to different hosting environments you can use the `DNS_MAPPING` environment variable:
+
+```env
+# .env.local in your local environment
+DNS_MAPPING='{
+    "www.example.com": "example.local",
+    "www.foobar.org": "foobar.local",
+    "www.lorem.at": "lorem.local"
+}'
+```
+
+```env
+# .env.local in your staging environment
+DNS_MAPPING='{
+    "www.example.com": "staging.example.com",
+    "www.foobar.org": "staging.foobar.org",
+    "www.lorem.at": "staging.lorem.at"
+}'
+```
+
+This allows you to - for example - copy the live database to your staging or local environment and then automatically 
+change the domains according to the mapping in the respective environment during `contao:migrate`.
+
+You can also migrate the protocol setting to different settings in the respective environment, which might be
+useful if you haven't set up an SSL certificate in your local development environment.
+
+```env
+DNS_MAPPING='{
+    "www.example.com": "http://example.local",
+    "www.foobar.org": "http://foobar.local",
+    "www.lorem.at": "http://lorem.local"
+}'
+```
+
+This also works if you do not use a `dns` name in some of your website roots (although that is not a recommended setup).
+
+```.env
+DNS_MAPPING='{
+    "": "http://",
+    "www.foobar.org": "http://foobar.local",
+    "www.lorem.at": "http://lorem.local"
+}'
+```
+
+```.env
+DNS_MAPPING='{
+    "": "example.local",
+    "www.foobar.org": "foobar.local",
+    "www.lorem.at": "lorem.local"
+}'
+```
+
+Instead of the environment variable, you can also directly set the `contao.dns_mapping` parameter in your 
+`parameters.yaml`, if you prefer:
+
+```yaml
+parameters:
+    contao.dns_mapping:
+        www.example.com: http://example.local
+        www.foobar.org: http://foobar.local
+        www.lorem.at: http://lorem.local
+```
 
 
 ## E-Mail sending configuration
@@ -1279,6 +1406,8 @@ smtp://<USERNAME>:<PASSWORD>@<HOSTNAME>:<PORT>
 
 Replace the `<PLACEHOLDER>` with the information of the SMTP server used, or remove them accordingly. See also the 
 information in the official [Symfony documentation][SymfonyMailer].
+
+You can use this [Tool](#convert-your-mail-parameters) to encode your parameters. 
 
 {{% notice warning %}}
 If your username or password contains special characters, they need to be "url encoded". There are several online

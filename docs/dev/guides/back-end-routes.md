@@ -36,7 +36,7 @@ use Contao\CoreBundle\Controller\AbstractBackendController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Route('/%contao.backend.route_prefix%/my-backend-route', name: self::class, defaults: ['_scope' => 'backend'])]
+#[Route('%contao.backend.route_prefix%/my-backend-route', name: self::class, defaults: ['_scope' => 'backend'])]
 class BackendController extends AbstractBackendController
 {
     public function __invoke(): Response
@@ -61,13 +61,13 @@ information about the `backend` scope.
 
 
 Be sure to have imported your bundle's Controllers in your `routes.yaml` *before*
-the `ContaoCoreBundle` routes.
+the `ContaoCoreBundle` routes. If you are developing a bundle for the Contao Managed Edition, be sure to [load your routes](/framework/manager-plugin/#the-routingplugininterface) in your `Plugin` class.
 
 ```yaml
 # config/routes.yaml
 app.controller:
     resource: ../src/Controller
-    type: annotation
+    type: attribute
 ```
 
 Our route will render the template `my_backend_route.html.twig` which must be placed 
