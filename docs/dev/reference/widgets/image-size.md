@@ -16,7 +16,7 @@ The predefined sizes originate either from the application configuration ("Prede
 ## Options
 
 This widget does not have any special options. See the DCA reference for a [full field reference][FieldsReference].
-All options for the [`text`][TextWidget] are also relevant.
+All options for the [`text`][TextWidget] widget are also relevant.
 
 The options for the drop down are automatically retrieved from the `contao.image.sizes` service 
 (`Contao\CoreBundle\Image\ImageSizes`). However, you can still override these options via your own 
