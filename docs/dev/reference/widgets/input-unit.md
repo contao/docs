@@ -21,7 +21,7 @@ The value will be stored as a serialized associative array containing the keys `
 ## Options
 
 This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a 
-[full field reference][FieldsReference]. All options for the [`text`][TextWidget] are also relevant.
+[full field reference][FieldsReference]. All options for the [`text`][TextWidget] widget are also relevant.
 
 | Key               | Value                       |
 |-------------------|-----------------------------|---
