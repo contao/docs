@@ -36,6 +36,8 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         'https?://www\.instagram\.com/contaocms/',
         'https?://en\.wikipedia\.org/wiki/Environment_variable',
         'https?://tinyurl\.com/app',
+        // See https://github.com/ninsuo/twigfiddle?tab=readme-ov-file#down-right-nwo
+        'https?://twigfiddle\.com',
     ];
 
     private string $outputPath;
