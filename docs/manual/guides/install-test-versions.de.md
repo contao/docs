@@ -50,29 +50,29 @@ werden.
 ## Release Candidates installieren
 
 Release Candidates nutzen eine spezifische Form von sogenannten »Release-Tags«.
-Der erste Release Candidate von Contao `4.9` heißt z. B. `4.9.0-RC1`. Normalerweise
+Der erste Release Candidate von Contao `5.4` heißt z. B. `5.4.0-RC1`. Normalerweise
 würde Composer nur _stabile_ Versionen installieren und daher solche Release Candidates
 nicht beachten.
 
 Um die Installation von Release Candidates zu erlauben, muss die `minimum-stability`
 auf `RC` in der `composer.json` runter gesetzt werden. Außerdem sollte man Composer
-anweisen, dass bei jedem Paket _stabile_ Versionen bevorzugt werden, damit die auch
-die offiziell veröffentlichten Versionen von Contao automatisch installiert werden,
-sobald verfügbar. Schließlich muss noch die angeforderte Version von Contao selbst,
-also genau genommen des `contao/manager-bundle` auf `4.9.*` geändert werden, so
-wie bei jedem Update auf eine neuere Contao Version.
+anweisen, dass bei jedem Paket _stabile_ Versionen bevorzugt werden, damit auch die
+offiziell veröffentlichten Versionen von Contao automatisch installiert werden, sobald
+diese verfügbar sind. Schließlich muss noch die angeforderte Version von Contao selbst,
+also genau genommen des `contao/manager-bundle` auf `5.4.*` geändert werden, so wie bei
+jedem Update auf eine neuere Contao Version.
 
 ```json
 {
     "require": {
-        "contao/manager-bundle": "4.9.*"
+        "contao/manager-bundle": "5.4.*"
     },
     "minimum-stability": "RC",
     "prefer-stable": true
 }
 ```
 
-Hier ist ein komplettes Beispiel, um die neueste Contao `4.9` Version installieren
+Hier ist ein komplettes Beispiel, um die neueste Contao `5.4` Version installieren
 zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 
 ```json
@@ -82,39 +82,36 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
     "license": "LGPL-3.0-or-later",
     "type": "project",
     "require": {
-        "contao/calendar-bundle": "^4.9",
-        "contao/comments-bundle": "^4.9",
+        "contao/calendar-bundle": "^5.4",
+        "contao/comments-bundle": "^5.4",
         "contao/conflicts": "@dev",
-        "contao/core-bundle": "^4.9",
-        "contao/faq-bundle": "^4.9",
-        "contao/installation-bundle": "^4.9",
-        "contao/listing-bundle": "^4.9",
-        "contao/manager-bundle": "4.9.*",
-        "contao/news-bundle": "^4.9",
-        "contao/newsletter-bundle": "^4.9"
+        "contao/core-bundle": "^5.4",
+        "contao/faq-bundle": "^5.4",
+        "contao/listing-bundle": "^5.4",
+        "contao/manager-bundle": "5.4.*",
+        "contao/news-bundle": "^5.4",
+        "contao/newsletter-bundle": "^5.4"
     },
     "minimum-stability": "RC",
     "prefer-stable": true,
-    "conflict": {
-        "contao-components/installer": "<1.3"
-    },
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
             "contao-community-alliance/composer-plugin": true,
             "contao-components/installer": true,
-            "contao/manager-plugin": true
+            "contao/manager-plugin": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
-        "contao-component-dir": "assets"
+        "contao-component-dir": "public/assets"
     },
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ]
     }
 }
@@ -123,8 +120,8 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 {{% notice tip %}}
 Die angeforderten Versionen der anderen Contao Bundles muss nicht unbedingt von
 deren ursprünglichen Angaben geändert werden. Zum Beispiel erlaubt eine Angabe von
-`^4.4` (wie es der Fall wäre, wenn man von einer Contao 4.4 LTS Version aktualisieren
-würde) auch die Installation aller `4.9` Versionen. Siehe dazu auch die Dokumentation
+`^5.3` (wie es der Fall wäre, wenn man von einer Contao 5.3 LTS Version aktualisieren
+würde) auch die Installation aller `5.4` Versionen (oder höher). Siehe dazu auch die Dokumentation
 von Composer über diese spezielle [Versions Syntax](https://getcomposer.org/doc/articles/versions.md).
 Nur die Version des `contao/manager-bundle` muss angepasst werden.
 {{% /notice %}}
@@ -142,7 +139,7 @@ Git-Repository von Contao verlangt. Die aktuell entwickelte »Minor« Version vo
 einen »Entwicklungszweig (Branch)« dessen Namen der aktuellen »Major« Version entspricht, z. B.
 `5.x` seit Anfang 2022. Dieser Branch muss als `5.x-dev` in Composer verlangt werden.
 
-Eine komplettes Beispiel einer `composer.json`, wo der Entwicklungszweig von Contao's nächster
+Ein komplettes Beispiel einer `composer.json`, wo der Entwicklungszweig von Contao's nächster
 Version wird, sieht so aus:
 
 ```json
@@ -175,7 +172,7 @@ Version wird, sieht so aus:
         }
     },
     "extra": {
-        "contao-component-dir": "assets"
+        "contao-component-dir": "public/assets"
     },
     "scripts": {
         "post-install-cmd": [
@@ -200,7 +197,7 @@ aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.
 
 Jede vergangene und noch unterstützte »Minor« Version von Contao hat ebenfalls ihren eigenen
 Entwicklungs-Branch, z. B. `4.13.x-dev` für Contao `4.13`. Falls du also den aktuellen
-Entwicklungsstand testen möchtest ohne auf die Veröffentlichung einer neuen Version zu warten
+Entwicklungsstand testen möchtest, ohne auf die Veröffentlichung einer neuen Version zu warten,
 kann stattdessen dieser Branch in der oben erwähnten `composer.json` verlangt werden.
 
 
@@ -208,8 +205,8 @@ kann stattdessen dieser Branch in der oben erwähnten `composer.json` verlangt w
 
 Die Testversionen können auch ohne manuelle Änderung der `composer.json` direkt
 über den Contao Manager installiert werden. Dazu editiert man bei »Contao Open Source
-CMS« die angeforderte Versionsangabe entweder auf bspw. `4.9.*@RC`, um Release
-Candidates, oder `4.9.x-dev` um Entwicklerversionen installieren 
+CMS« die angeforderte Versionsangabe entweder auf bspw. `5.4.*@RC`, um Release
+Candidates, oder `5.4.x-dev` um Entwicklerversionen installieren 
 zu lassen.
 
 ![Contao Manager Versionsangabe]({{% asset "images/manual/guides/de/install-version/contao-manager-versionseingabe.gif" %}}?classes=shadow)
