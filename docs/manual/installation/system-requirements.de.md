@@ -296,7 +296,7 @@ Contao 4.9 oder älter):
 {{% /tab %}}
 
 {{% tab name="NGINX" %}}
-Am wichtigsten ist es sicherzustellen, dass alle Anfragen die nicht an eine existierende Datei gehen an die PHP-Applikation zur Verarbeitung
+Am wichtigsten ist es sicherzustellen, dass alle Anfragen, die nicht an eine existierende Datei gehen, an die PHP-Applikation zur Verarbeitung
 weitergegeben werden. Dies passiert über die Anweisung `try_files $uri /index.php$is_args$args;`.
 
 Eine minimale `server` Definition für den NGINX könnte so aussehen (`…/public` mit `…/web` austauschen für
