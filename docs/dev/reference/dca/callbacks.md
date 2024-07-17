@@ -377,6 +377,7 @@ using `config.onpalette` making it automatically work for e.g. the edit multiple
 // src/EventListener/DataContainer/PagePaletteCallback.php
 namespace App\EventListener\DataContainer;
 
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
