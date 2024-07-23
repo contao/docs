@@ -80,7 +80,7 @@ mkdir -p  ~/Projekte/contao/contao-ddev && cd ~/Projekte/contao/contao-ddev
 DDEV-Konfiguration anlegen mit:
 
 ```shell
-ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.2 --create-docroot
+ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.2 --create-docroot --timezone=Europe/Berlin
 ```
 
 Contao 5.3 installieren:
@@ -89,7 +89,7 @@ Contao 5.3 installieren:
 ddev composer create contao/managed-edition:5.3
 ```
 
-Nach der Installation müssen die Datenbankzugangsdaten in die `.env` eingetragen werden. In diesem Zug richten wir auch direkt Mailpit ein.
+Nach der Installation müssen die Datenbankzugangsdaten in die `.env.local` eingetragen werden. In diesem Zug richten wir auch direkt Mailpit ein.
 
 ```env
 APP_ENV=prod
