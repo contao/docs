@@ -93,7 +93,7 @@ Nach der Installation müssen die Datenbankzugangsdaten in die `.env.local` eing
 
 ```env
 APP_ENV=prod
-DATABASE_URL="mysql://db:db@db:3306/db"
+DATABASE_URL=mysql://db:db@db:3306/db
 MAILER_DSN=smtp://localhost:1025
 ```
 
