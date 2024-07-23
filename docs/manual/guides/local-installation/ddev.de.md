@@ -26,49 +26,6 @@ mehr Informationen zur Installation dieser Programme durchlesen.
 
 DDEV ist für alle Plattformen verfügbar, für die Installation deiner Plattform schau bitte in der [DDEV Dokumentation](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) nach.
 
-
-### Beispiel: Die Installation unter macOS mit __brew__ durchführen
-
-```shell
-brew install ddev/ddev/ddev
-```
-
-Nach der Installation noch die lokalen SSL-Zertifikate installieren (im Anschluss Browser neu starten).
-
-```shell
-mkcert -install
-```
-
-Seine Installation sollte man auch regelmäßig updaten.
-
-```shell
-brew upgrade ddev
-```
-
-
-### Beispiel: Installation unter Debian/Ubuntu
-
-```shell
-curl -fsSL https://apt.fury.io/drud/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null
-
-echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list
-
-sudo apt update && sudo apt install -y ddev
-```
-
-Evtl. nach der Installation noch die lokalen SSL-Zertifikate installieren (im Anschluss Browser neu starten).
-
-```shell
-mkcert -install
-```
-
-Installation updaten
-
-```shell
-sudo apt update && sudo apt upgrade
-```
-
-
 ## Projekt erstellen
 
 Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses.
