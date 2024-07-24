@@ -94,6 +94,20 @@ Mit `ddev ssh` wechselst du in die Shell des Containers und kannst auf der Konso
 Falls du als Windows Anwender die »Git Bash« als Konsole benutzt, kann es, abhängig von deiner »Git für Windows« Konfiguration, notwendig sein das Kommando winpty voran zu stellen (z. B.: winpty ddev ssh).
 {{% /notice %}}
 
+## Custom PHP Configuration
+
+Mit DDEV können zusätzliche PHP-Konfigurationen für ein Projekt bereitstellt werden, indem Sie ein Verzeichnis namens .ddev/php/ erstellen und eine beliebige Anzahl von *.ini PHP-Konfigurationsdateien hinzufügen.
+
+Eine Beispieldatei in .ddev/php/my-php.ini könnte wie folgt aussehen:
+
+```ìni
+[PHP]
+max_execution_time = 240;
+memory_limit = -1
+```
+
+Weitere Informationen in der [DDEV Dokumentation](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#custom-php-configuration-phpini).
+
 ## DDEV Addons
 
 DDEV bietet auch [Services als Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
