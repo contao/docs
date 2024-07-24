@@ -66,7 +66,7 @@ Create backend user:
 ddev exec "bin/console contao:user:create"
 ```
 
-To use Apache instead of NGINX, change your entry `webserver_type: nginx-fpm` to `apache-fpm`.
+Call up the project in the browser:
 
 ```shell
 ddev launch
