@@ -90,16 +90,11 @@ With `ddev ssh` you can switch to the shell of the container and work on the con
 
 `ddev describe` gives an overview of the services available in the project and how to access them.
 
-`ddev xdebug on` starts Xdedug. [Information about the IDE setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
+`ddev xdebug on` starts XDebug. [Information about the IDE setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
 
-A database already exists in DDEV. The connection data for the installation are:
-
-| entry | value |
-|:--------------------|:----------------------|
-| **host** | db |
-| **username** | db |
-| **password** | db |
-| **Database** | db |
+{{% notice note %}}
+If you are a Windows user using the "Git Bash" as a console, it may be necessary, depending on your "Git for Windows" configuration, to prepend the command winpty (e.g.: winpty ddev ssh).
+{{% /notice %}}
 
 ## DDEV Addons
 

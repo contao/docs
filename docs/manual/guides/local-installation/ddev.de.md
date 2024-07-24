@@ -88,16 +88,11 @@ Mit `ddev ssh` wechselst du in die Shell des Containers und kannst auf der Konso
 
 `ddev describe` gibt eine Übersicht der Services, die im Projekt zur Verfügung stehen und wie du sie erreichst.
 
-`ddev xdebug on` startet Xdedug. [Informationen zum IDE-Setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
+`ddev xdebug on` startet XDebug. [Informationen zum IDE-Setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
 
-Eine Datenbank gibt es schon in DDEV. Die Verbindungsdaten für die Installation lauten:
-
-| Eintrag             | Wert                  |
-|:--------------------|:----------------------|
-| **Host**            | db                 |
-| **Benutzername**    | db                  |
-| **Passwort**        | db |
-| **Datenbank**       | db |
+{{% notice note %}}
+Falls du als Windows Anwender die »Git Bash« als Konsole benutzt, kann es, abhängig von deiner »Git für Windows« Konfiguration, notwendig sein das Kommando winpty voran zu stellen (z. B.: winpty ddev ssh).
+{{% /notice %}}
 
 ## DDEV Addons
 
