@@ -28,7 +28,7 @@ DDEV is available for all platforms, please refer to the [DDEV documentation](ht
 
 ## Create project
 
-Open the console of your choice, create the desired directory and then change to it.
+Open the console of your choice, create the desired directory and then change to it. The directory name reflects the subsequent project hostname. However, you can [configure this](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/) additionally.
 
 ```shell
 mkdir -p ~/projects/contao/contao-ddev && cd ~/projects/contao/contao-ddev
