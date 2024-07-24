@@ -78,6 +78,20 @@ immer als Attachment angehängt.
 ohne eine Eingabe werden übersprungen.
 
 
+### Spezielle Feldnamen
+
+Bestimmte Feldnamen beinflussen das Verhalten des E-Mail-Versands. Um dies zu nutzen müssen im Formular also 
+entsprechende Formularfelder mit den hier beschriebenen Feldnamen angelegt werden.
+
+| Feldname | Auswirkung |
+| --- | --- |
+| `email`    | Die E-Mail-Adresse dieses Feldes wird als `Reply-To:` Addresse benutzt (die E-Mail-Adresse muss gültig sein). |
+| `name`     | Der Wert dieses Feldes wird als der Name für die `Reply-To:` Adresse benutzt. |
+| `firstname` | Der Wert dieses Feldes wird als der Vorname für die `Reply-To:` Adresse benutzt. <br>Wird nur angewendet, wenn auch `lastname` und kein `name` existiert. |
+| `lastname` | Der Wert dieses Feldes wird als der Nachname für die `Reply-To:` Adresse benutzt. <br>Wird nur angewendet, wenn auch `firstname` und kein `name` existiert. |
+| `cc` | Wenn der Wert dieses Feldes nicht leer ist, wird die E-Mail-Adresse des `email` Feldes als `Cc:` Adresse benutzt (also es wird eine Kopie der E-Mail an diese Adresse gesendet). Wird normalerweise als verstecktes oder Checkbox Feld eingesetzt. |
+
+
 ## Formulardaten speichern
 
 Zusätzlich zum bzw. anstatt des Versands per E-Mail können Formulareingaben auch in einer Tabelle in der Datenbank 

@@ -63,6 +63,21 @@ an attachment.
 
 **Omit empty fields:** If you select this option, only completed fields will be sent by e-mail. Fields without any input will be skipped.
 
+
+### Special Field Names
+
+Certain field names influence the behavior of Contao's email sending process. To take advantage of these features you 
+need to insert a form field with exactly the field name as described here.
+
+| Field&nbsp;name | Effect |
+| ---------- | ------ |
+| `email`    | The email address from this field will be used as the `Reply-To:` address (must be a valid email address). |
+| `name`     | The value of this field will be used as the name for the `Reply-To:` address. |
+| `firstname` | The value of this field will be used as the first name for the `Reply-To:` address. <br>Only applies if also a `lastname` and no `name` is present. |
+| `lastname` | The value of this field will be used as the last name for the `Reply-To:` address. <br>Only applies if also a `firstname` and no `name` is present. |
+| `cc` | If the value of this field is not empty, the email address from the `email` field will be used as a `Cc:` address (i.e. a copy of the email will be sent to that address). Typically used as a hidden or checkbox field. |
+
+
 ## Save form data
 
 In addition to or instead of sending the form by e-mail, form entries can also be stored in a table in the database. To do 
