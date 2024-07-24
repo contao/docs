@@ -70,7 +70,7 @@ Certain field names influence the behavior of Contao's email sending process. To
 need to insert a form field with exactly the field name as described here.
 
 | Field&nbsp;name | Effect |
-| ---------- | ------ |
+| --- | --- |
 | `email`    | The email address from this field will be used as the `Reply-To:` address (must be a valid email address). |
 | `name`     | The value of this field will be used as the name for the `Reply-To:` address. |
 | `firstname` | The value of this field will be used as the first name for the `Reply-To:` address. <br>Only applies if also a `lastname` and no `name` is present. |
