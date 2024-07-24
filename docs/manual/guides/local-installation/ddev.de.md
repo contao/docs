@@ -28,7 +28,7 @@ DDEV ist für alle Plattformen verfügbar, für die Installation deiner Plattfor
 
 ## Projekt erstellen
 
-Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses.
+Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses. Der Verzeichnisname spiegelt den späteren Projekt Hostnamen. Du kannst dies jedoch zusätzlich [konfigurieren](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/).
 
 ```shell
 mkdir -p  ~/Projekte/contao/contao-ddev && cd ~/Projekte/contao/contao-ddev
