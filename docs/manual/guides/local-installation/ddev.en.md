@@ -98,7 +98,9 @@ If you are a Windows user using the "Git Bash" as a console, it may be necessary
 
 ## Custom PHP Configuration
 
-You can provide additional PHP configuration for a project by creating a directory called .ddev/php/ and adding any number of *.ini PHP configuration files.
+DDEV can be used to provide additional PHP configurations for a project. You can add any number of `.ini` files in the directory `.ddev/php/`. Subsequent changes require a `ddev restart`. Further information can be found in the [DDEV documentation](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#custom-php-configuration-phpini).
+
+An example file in `.ddev/php/my-php.ini` could look like this:
 
 ```ìni
 [PHP]
