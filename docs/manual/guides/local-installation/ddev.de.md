@@ -102,7 +102,6 @@ Eine Beispieldatei in .ddev/php/my-php.ini könnte wie folgt aussehen:
 
 ```ìni
 [PHP]
-max_execution_time = 240;
 memory_limit = -1
 ```
 
