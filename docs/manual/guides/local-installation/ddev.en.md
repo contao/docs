@@ -93,7 +93,7 @@ With `ddev ssh` you can switch to the shell of the container and work on the con
 `ddev xdebug on` starts XDebug. [Information about the IDE setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
 
 {{% notice note %}}
-If you are a Windows user using the "Git Bash" as a console, it may be necessary, depending on your "Git for Windows" configuration, to prepend the command winpty (e.g.: winpty ddev ssh).
+If you are a Windows user using the "Git Bash" as a console, it may be necessary, depending on your "Git for Windows" configuration, to prepend the command `winpty` (e.g.: `winpty ddev ssh`).
 {{% /notice %}}
 
 ## Custom PHP Configuration
