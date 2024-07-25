@@ -102,7 +102,6 @@ You can provide additional PHP configuration for a project by creating a directo
 
 ```ìni
 [PHP]
-max_execution_time = 240;
 memory_limit = -1
 ```
 
