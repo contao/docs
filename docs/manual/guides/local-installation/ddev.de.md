@@ -105,7 +105,6 @@ Eine Beispieldatei in .ddev/php/my-php.ini könnte wie folgt aussehen:
 memory_limit = -1
 ```
 
-Weitere Informationen in der [DDEV Dokumentation](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#custom-php-configuration-phpini).
 
 ## DDEV Addons
 
