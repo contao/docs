@@ -51,7 +51,8 @@ php vendor/bin/contao-console contao:user:create --help
 
 ## contao:user:password
 
-Änderung eines Benutzer Passwortes:
+Änderung eines Benutzer Passwortes ( Erfordert einen Benutzernamen als Argument ). Es wird interaktiv nach allen Angaben gefragt, 
+wenn der Befehl ohne Optionen ausgeführt wird.
 
 ```bash
 php vendor/bin/contao-console contao:user:password --help
