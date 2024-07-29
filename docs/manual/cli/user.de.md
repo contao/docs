@@ -7,11 +7,8 @@ aliases:
 
 
 Hierüber können, nachdem die [Datenbank](/de/cli/migrate/) erstellt wurde, Contao [Benutzer](/de/benutzerverwaltung/benutzer/) angelegt, 
-aufgelistet und Passwörter geändert werden. Eine Übersicht der Befehle erhätlst du über:
+aufgelistet und Passwörter geändert werden. 
 
-```bash
-php vendor/bin/contao-console contao:user --help
-```
 
 ## contao:user:list
 

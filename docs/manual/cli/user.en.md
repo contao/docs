@@ -6,12 +6,8 @@ aliases:
 ---
 
 
-After the [database](/en/cli/migrate/) has been created, Contao [users](/en/user-management/users/) can be created here. You can get 
-an overview of the commands via:
+After the [database](/en/cli/migrate/) has been created, Contao [users](/en/user-management/users/) can be created here.
 
-```bash
-php vendor/bin/contao-console contao:user --help
-```
 
 ## contao:user:list
 
