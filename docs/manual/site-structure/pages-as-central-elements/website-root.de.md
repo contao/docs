@@ -101,8 +101,8 @@ das sogennante »Legacy Routing« über die Contao `contao.legacy_routing` Konfi
 Andernfalls wird die URL-Generierung nach wie vor nur durch die Einstellungen `contao.prepend_locale` und `contao.url_suffix`
 bestimmt.
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     legacy_routing: false
 ```

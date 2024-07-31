@@ -11,7 +11,7 @@ Die Systemeinstellungen verabschieden sich langsam aber sicher aus dem Backend. 
 beeinflussen Contao als Applikation und somit besteht auch die Chance, dass durch eine falsche Einstellung das System
 in einen funktionsuntüchtigen Zustand gebracht wird. Sollte dies geschehen, hast du keine Möglichkeit mehr,
 die Einstellungen rückgängig zu machen und das System wiederherzustellen, da du dich nicht mehr einloggen kannst.
-Aus diesem Grund werden die meisten Einstellungen außerhalb von Contao über die `config.yml` vorgenommen bzw. können 
+Aus diesem Grund werden die meisten Einstellungen außerhalb von Contao über die `config.yaml` vorgenommen bzw. können 
 zukünftig über den Contao Manager vorgenommen werden.
 
 ## Einstellungen
@@ -67,7 +67,7 @@ angezeigt werden dürfen.
 
 {{< version "4.11" >}}
 
-Ein paar zusätzliche Parameter können über die `config/config.yml` konfiguriert werden.
+Ein paar zusätzliche Parameter können über die `config/config.yaml` konfiguriert werden.
 
 | Key | Description |
 | --- | --- |
@@ -79,7 +79,7 @@ Ein paar zusätzliche Parameter können über die `config/config.yml` konfigurie
 
 Die folgende Konfiguration definiert einige Beispielwerte:
 
-```yml
+```yaml
 # config/config.yaml
 contao:
     backend:
@@ -130,7 +130,7 @@ data-* benutzt werden.
 
 Die folgende Konfiguration definiert einige Beispielwerte:
 
-```yml
+```yaml
 # config/config.yaml
 security:
   password_hashers:
@@ -197,9 +197,9 @@ dieses Feature mit Bedacht, und achte darauf, personalisierte Seiten grundsätzl
 
 {{% notice note %}}
 Ab Version **4.9** kommt ein neuer Such-Indexer zum Einsatz. Die Einstellungen **Suche aktivieren** und 
-**Geschützte Seiten indizieren** werden nun über die `config/config.yml` konfiguriert:
+**Geschützte Seiten indizieren** werden nun über die `config/config.yaml` konfiguriert:
 
-```yml
+```yaml
 contao:
     search:
         default_indexer:
@@ -235,20 +235,20 @@ die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu
 
 
 
-## parameters.yml
+## parameters.yaml
 
-In der Contao Managed Edition werden die Parameter (z. B. Datenbankdaten) in der `parameters.yml` abgelegt. 
+In der Contao Managed Edition werden die Parameter (z. B. Datenbankdaten) in der `parameters.yaml` abgelegt. 
 Auf diese Daten greift auch das Contao-Installtool zurück. Diese Datei wird normalerweise von der Versionierung 
 ausgenommen und kann auch zusätzliche Einträge wie z. B. die Angaben für den E-Mail-Versand über SMTP enthalten.
 
-Die Datei `parameters.yml` findest du im Ordner `app/config/` und wird bei der Installation von Contao automatisch 
+Die Datei `parameters.yaml` findest du im Ordner `app/config/` und wird bei der Installation von Contao automatisch 
 angelegt.
 
 {{% notice note %}}
 Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
 {{% /notice %}}
 
-Die `parameters.yml` nach der Installation von Contao:
+Die `parameters.yaml` nach der Installation von Contao:
 
 ```yaml
 # This file has been auto-generated during installation
@@ -264,18 +264,22 @@ parameters:
 Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen enthalten, müssen in Hochkommatas gesetzt werden.
 {{% /notice %}}
 
-## config.yml
+## config.yaml
 
-Die normale Bundle Config gehört in die `config.yml` und befindet sich im Ordner `config/`. 
-Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lädt automatisch die `config_prod.yml` 
-bzw. `config_dev.yml` und falls nicht vorhanden die `config.yml`.
+Die normale Bundle Config gehört in die `config.yaml` und befindet sich im Ordner `config/`. 
+Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lädt automatisch die `config_prod.yaml` 
+bzw. `config_dev.yaml` und falls nicht vorhanden die `config.yaml`.
 
 Damit kannst du unterschiedliche Konfigurationen für deine Test- bzw. Produktionsumgebung (dev/prod) realisieren (z. B. 
-mehr Logging im Debug Modus). Außerdem committest du die `config.yml` im Gegensatz zur `parameters.yml` in dein 
+mehr Logging im Debug Modus). Außerdem committest du die `config.yaml` im Gegensatz zur `parameters.yaml` in dein 
 [Repository](https://de.wikipedia.org/wiki/Repository). Ein Repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z. B. mit Git.
 
 {{% notice note %}}
 Vor Version **4.8** von Contao befand sich die Datei unter `app/config/`.
+{{% /notice %}}
+
+{{% notice note %}}
+Vor Version **4.9** von Contao wird nur die Dateiendung `*.yml` unterstützt.
 {{% /notice %}}
 
 Über die Kommandozeile kommst du an die Standard-Konfiguration für Contao:
@@ -948,7 +952,7 @@ während andere Einstellungen nun bspw. in den Benutzereinstellungen oder im Sta
 können.
 
 Je nach Contao-Version werden aber immer noch Einstellungen aus der `localconfig` benutzt. Daher kann es nützlich sein zu
-wissen, wie man diese Einstellungen über die Applikationskonfiguration (also die `config.yml`) überschreiben könnte, 
+wissen, wie man diese Einstellungen über die Applikationskonfiguration (also die `config.yaml`) überschreiben könnte, 
 anstatt die veraltete `localconfig.php` dafür zu benutzen. Dies kann für den eigenen Deployment-Flow wichtig sein, aber
 auch weil es gewisse Einstellungen gibt, die _nur_ manuell gesetzt werden können, weil diese weder eine Bundle Einstellung
 noch eine andere Einstellungsmöglichkeit im Backend haben.
@@ -1014,7 +1018,7 @@ Beschreibung.
 
 Umgebungsvariablen sind Variablen, die auf Betriebssystem-Ebene, pro Benutzer oder sogar Prozess definiert werden können. Du kannst mehr über das Konzept bei Wikipedia (https://de.wikipedia.org/wiki/Umgebungsvariable) erfahren. Der grosse Vorteil bei der Nutzung von Umgebungsvariablen ist, dass eine Applikation wie Contao so auf den Betrieb innerhalb von Containern vorbereitet ist. Wir werden an dieser Stelle den Betrieb in Containern nicht weiter ausführen. Wichtig ist, dass Contao dadurch in diesem Umfeld betrieben werden kann. Für den Betrieb ohne die Möglichkeit, selber Umgebungsvariablen zu setzen, wie etwa auf einem üblichen Shared Hosting, liefert Contao die Möglichkeit mit, Umgebungsvariablen in einer `.env` Datei zu definieren. Contao interpretiert diese dann, als wären es echte Umgebungsvariablen. Dadurch kombiniert Contao das Beste aus beiden Welten: Es ist vorbereitet auf den professionellen Betrieb innerhalb von Containern mit Umgebungsvariablen, kann aber genauso gut auf einer Shared Hosting-Plattform betrieben werden.
 
-Die Variablen werden in der Datei `.env` definiert und diese Datei muß sich im Hauptverzeichnis der Contao-Installation befinden. Die Nutzung und Bezeichnung der folgenden Variablen sind vorgegeben. Du kannst aber auch beliebige Variablen definieren und dann z. B. in der `config.yml` referenzieren. Falls eine zusätzliche `.env.local` Datei im gleichen Verzeichnis existiert, wird diese automatisch verwendet.
+Die Variablen werden in der Datei `.env` definiert und diese Datei muß sich im Hauptverzeichnis der Contao-Installation befinden. Die Nutzung und Bezeichnung der folgenden Variablen sind vorgegeben. Du kannst aber auch beliebige Variablen definieren und dann z. B. in der `config.yaml` referenzieren. Falls eine zusätzliche `.env.local` Datei im gleichen Verzeichnis existiert, wird diese automatisch verwendet.
 
 {{% notice info %}}
 Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN` ersetzen ihre jeweiligen Gegenstücke in der `config/parameters.yaml`.
@@ -1023,7 +1027,7 @@ Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN`
 
 ### Eigene Umgebungsvariablen
 
-Das folgende Beispiel zeigt, wie man die E-Mail-Adresse des Systemadministrators über eine eigene Umgebungsvariable in der Datei `.env` definiert und in der Datei `config.yml` referenziert.
+Das folgende Beispiel zeigt, wie man die E-Mail-Adresse des Systemadministrators über eine eigene Umgebungsvariable in der Datei `.env` definiert und in der Datei `config.yaml` referenziert.
 
 ```ini
 # .env
@@ -1031,7 +1035,7 @@ MYADMIN_EMAIL=admin@demo.de
 ```
 
 ```yaml
-# config/config.yml
+# config/config.yaml
 contao:
     localconfig:
         adminEmail: '%env(MYADMIN_EMAIL)%'
@@ -1056,7 +1060,7 @@ Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.db
 
 #### Konvertieren deiner Datenbank-Parameter
 
-Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der `parameters.yml` oder die `DATABASE_URL` zu konvertieren. Es werden keine Daten übertragen.
+Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der `parameters.yaml` oder die `DATABASE_URL` zu konvertieren. Es werden keine Daten übertragen.
 
 <form autocomplete="off" class="env-converter">
   <div class="env-widget">
@@ -1092,7 +1096,7 @@ Die Variable hieß bisher `MAILER_URL`. Ab Contao **5.0** wird nur noch `MAILER_
 
 #### Konvertieren deiner Mail-Parameter
 
-Das nachfolgende Tool läuft in deinem Browser und hilft dir deine E-Mail Zugangsdaten in die `MAILER_DSN` oder in die `config.yml`-Variante zu konvertieren. Es werden keine Daten übertragen.
+Das nachfolgende Tool läuft in deinem Browser und hilft dir deine E-Mail Zugangsdaten in die `MAILER_DSN` oder in die `config.yaml`-Variante zu konvertieren. Es werden keine Daten übertragen.
 
 <form autocomplete="off" class="env-converter">
   <div class="env-widget">
@@ -1119,7 +1123,7 @@ Das nachfolgende Tool läuft in deinem Browser und hilft dir deine E-Mail Zugang
   <div class="env-widget">
     <input type="url" id="mail_config_value" name="mail_config_value" placeholder="smtp://user:pass@smtp.example.com:port"
            required="required" autocapitalize="none" readonly>
-    <label for="mail_config_value" class="placeholder-active">config.yml</label>
+    <label for="mail_config_value" class="placeholder-active">config.yaml</label>
   </div>
 </form>
 
@@ -1274,7 +1278,7 @@ sein, je nach Server):
 - Die **Portnummer** des SMTP-Servers (587 / 465).
 - Die **Verschlüsselungsmethode** für den SMTP-Server (tls / ssl).
 
-Diese Zugangsdaten können dann entweder in der `parameters.yml` oder über die [`MAILER_DSN`](#mailer-dsn) Umgebungsvariable (z. B. in der
+Diese Zugangsdaten können dann entweder in der `parameters.yaml` oder über die [`MAILER_DSN`](#mailer-dsn) Umgebungsvariable (z. B. in der
 `.env.local` der Contao Installation) definiert werden.
 
 {{< tabs groupId="smtp-config" >}}
@@ -1294,8 +1298,8 @@ MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:465?encryption=ssl
 Beachte, dass der _Benutzername_ und das _Passwort_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.
 {{% /tab %}}
 
-{{% tab name="parameters.yml" %}}
-Bei der Nutzung der `parameters.yml` können die SMTP-Zugangsdaten über die folgenden Parameter definiert werden:
+{{% tab name="parameters.yaml" %}}
+Bei der Nutzung der `parameters.yaml` können die SMTP-Zugangsdaten über die folgenden Parameter definiert werden:
 
 ```yaml
 # This file has been auto-generated during installation
@@ -1367,7 +1371,7 @@ Konfiguration kann dann außerdem auch der Absender gesetzt werden, welcher dann
 die ausgewählte E-Mail Konfiguration gesendet wird.
 
 Die Konfiguration benötigt zwei Schritte. Zuerst müssen die verfügbaren E-Mail Versandmethoden über die Symfony Framework
-Konfiguration in der `config.yml` als sogenannte »Transports« eingestellt werden. Dabei können bspw. ein oder mehrere 
+Konfiguration in der `config.yaml` als sogenannte »Transports« eingestellt werden. Dabei können bspw. ein oder mehrere 
 SMTP-Server über die sogenannte »DSN«-Syntax definiert werden. Diese Syntax ist grundsätzlich sehr einfach aufgebaut:
 
 ```
@@ -1390,8 +1394,8 @@ mit dem Doppelpunkt. Bei Verwendung der `config.yaml` muß die jeweilige Kodieru
 Anstatt `smtp://` kann auch `smtps://` verwendet werden, um automatisch SSL Verschlüsselung über Port `465` zu verwenden.
 {{% /notice %}} 
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 framework:
     mailer:
         transports:
@@ -1403,8 +1407,8 @@ framework:
 Im zweiten Schritt können die konfigurierten Transports über die Contao Framework Konfiguration im Backend verfügbar
 gemacht werden. Im folgenden Beispiel werden die Transports `website1` und `website2` verfügbar gemacht:
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     mailer:
         transports:
@@ -1416,15 +1420,15 @@ Wenn danach der Symfony Application Cache erneuert wurde, stehen diese E-Mail Ko
 Backend zur Verfügung.
 
 {{% notice note %}}
-Wird kein Transport konfiguriert, gelten nach wie vor die Informationen aus der `parameters.yml`. Werden Transports
+Wird kein Transport konfiguriert, gelten nach wie vor die Informationen aus der `parameters.yaml`. Werden Transports
 konfiguriert, aber es wird kein Transport im Contao Backend ausgewählt, wird automatisch der erste definierte Transport 
 verwendet.
 {{% /notice %}}
 
 Optional kann man nun pro Transport auch die Absenderadresse überschreiben:
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     mailer:
         transports:
@@ -1437,14 +1441,14 @@ contao:
 Es besteht außerdem die Möglichkeit, für die Beschreibungen der Optionen für die Selektion im Backend über Übersetzungen
 pro Sprache zu definieren:
 
-```yml
-# translations/mailer_transports.en.yml
+```yaml
+# translations/mailer_transports.en.yaml
 website1: 'SMTP for Website 1'
 website2: 'SMTP for Website 2'
 ```
 
-```yml
-# translations/mailer_transports.de.yml
+```yaml
+# translations/mailer_transports.de.yaml
 website1: 'SMTP für Webseite 1'
 website2: 'SMTP für Webseite 2'
 ```

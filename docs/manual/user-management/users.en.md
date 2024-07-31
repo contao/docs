@@ -242,13 +242,13 @@ two-factor app such as 1Password, Authy, Google Authenticator, Microsoft Authent
 other TOTP app.
 
 Users can be required to use two-factor authentication. To do this, the following configuration must be 
-`config/config.yml`adopted in the:
+`config/config.yaml`adopted in the:
 
-```yml
+```yaml
 contao:
-  security:
-    two_factor:
-      enforce_backend: true
+    security:
+        two_factor:
+            enforce_backend: true
 ```
 
 

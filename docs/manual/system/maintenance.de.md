@@ -60,8 +60,8 @@ Da über die Konsole aber ein HTTP-Request-Kontext fehlt, muss zwingend eine Dom
 jeweilige Domain immer im Startpunkt der Website eingetragen werden, auch wenn man nur eine Domain betreibt. Alternativ
 kann die Default-Domain für die Konsole auch über Konfigurations-Parameter angegeben werden:
 
-```yml
-# config/parameters.yml
+```yaml
+# config/parameters.yaml
 parameters:
     router.request_context.host: 'example.org'
     router.request_context.scheme: 'https'
@@ -77,8 +77,8 @@ aktivieren. Benutze dieses Feature sehr sorgfältig, und schließe personalisier
 {{% notice note %}}
 Ab Contao **4.9** wird dies in der Applikations-Konfiguration aktiviert:
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     search:
         # Enable indexing of protected pages.
@@ -149,10 +149,10 @@ dabei den Server nicht überlastest.
 Auf der Kommandozeile steht dir dafür die Option `--concurrency` (oder der Shortcut `-c`) zur Verfügung. Im Backend 
 ist die "Concurrency" auf `5` festgelegt.
 
-{{< version-tag "5.3" >}} Ab Contao 5.3 kannst du diesen Wert über die `config.yml` festlegen:
+{{< version-tag "5.3" >}} Ab Contao 5.3 kannst du diesen Wert über die `config.yaml` festlegen:
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     backend:
         crawl_concurrency: 10
@@ -172,7 +172,7 @@ Oft wird eine Webseite vor der Veröffentlichung per »Basic Authentication« in
 Crawler auch in diesem Fall weiterhin auf alle Seiten zugreifen kann, muss Benutzername und Passwort dafür in der Konfiguration hinterlegt
 werden. Dabei wird Benutzername und Passwort mit einem Doppelpunkt getrennt folgendermaßen definiert:
 
-```yml
+```yaml
 # config/config.yaml
 contao:
     crawl:

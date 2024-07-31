@@ -118,7 +118,7 @@ You can also create a database beforehand on the command line:<br>
 
 {{% notice info %}}
 Contao needs to know the corresponding connection data for your database. This information can either be retrieved via 
-an existing "config/parameters.yml" (currently installed using the [Contao-Install tool](/en/installation/contao-installtool/)) 
+an existing "config/parameters.yaml" (currently installed using the [Contao-Install tool](/en/installation/contao-installtool/)) 
 or via a "[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)" file 
 in the root directory of your installation.<br><br> 
 For details on the necessary environment variables ([DATABASE_URL](https://docs.contao.org/dev/reference/config/#database-url) 

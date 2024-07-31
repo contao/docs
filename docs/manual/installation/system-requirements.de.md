@@ -160,13 +160,13 @@ getestet. Die Verwendung von `utf8` anstelle des `utf8mb4`-Zeichensatzes führt 
 keine Emojis).
 
 Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden können, konfiguriere bitte einen anderen 
-Zeichensatz in deiner [`config/config.yml`](../../system/einstellungen/#config-yml)-Datei:
+Zeichensatz in deiner [`config/config.yaml`](../../system/einstellungen/#config-yml)-Datei:
 
 {{% notice note %}}
-Vor **Contao 4.8** findest du die Datei unter `app/config/config.yml`.  
+Vor **Contao 4.8** findest du die Datei unter `app/config/config.yaml`.  
 {{% /notice %}}
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:
@@ -196,9 +196,9 @@ sql_mode="TRADITIONAL"
 ```
 
 Wenn die oben empfohlene Einstellung auf deinem Server nicht aktiviert werden kann, konfiguriere
-die Verbindungsoptionen bitte in deiner `config/config.yml`-Datei:
+die Verbindungsoptionen bitte in deiner `config/config.yaml`-Datei:
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:

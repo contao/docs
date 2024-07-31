@@ -98,8 +98,8 @@ The settings **URL prefix** and **URL suffix** as well as **Disable language red
 "legacy routing" mode is disabled via the `contao.legacy_routing` setting. When not disabled the URL generation will continue
 to be influenced only via the `contao.prepend_locale` and `contao.url_suffix` setting.
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     legacy_routing: false
 ```

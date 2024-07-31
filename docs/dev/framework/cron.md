@@ -64,7 +64,7 @@ your website roots or you can define a default domain in your application config
 See the [Symfony Routing Documentation](https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands)
 for more details.
 
-```yml
+```yaml
 # config/parameters.yaml
 parameters:
     router.request_context.host: 'example.org'

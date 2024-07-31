@@ -55,8 +55,8 @@ However, since there is no HTTP request context available on the console, a doma
 should always define the domain in the website root settings, even if you only use one domain in your Contao instance.
 Alternatively you can define the default domain for the console via configuration parameters:
 
-```yml
-# config/parameters.yml
+```yaml
+# config/parameters.yaml
 parameters:
     router.request_context.host: 'example.org'
     router.request_context.scheme: 'https'
@@ -73,8 +73,8 @@ very carefully and always exclude personalized pages from the search!
 {{% notice note %}}
 Since Contao **4.9** this is enabled in the application configuration:
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     search:
         # Enable indexing of protected pages.
@@ -141,10 +141,10 @@ server.
 On the command line, you can use the `--concurrency` option (or the `-c` shortcut). In the back end the concurrency is 
 set to `5`.
 
-{{< version-tag "5.3" >}} From Contao 5.3 you can set this value via the `config.yml`:
+{{< version-tag "5.3" >}} From Contao 5.3 you can set this value via the `config.yaml`:
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
    backend:
       crawl_concurrency: 10
@@ -163,7 +163,7 @@ Before a website is published it will often be protected via "Basic Authenticati
 crawler to be able to still access the site in this case the username and password needs to be defined in the configuration. The value
 of this configuration option must follow the format `username:password`:
 
-```yml
+```yaml
 # config/config.yaml
 contao:
     crawl:

@@ -37,7 +37,7 @@ theme.xml
 ```
 
 Each file and directory within the archive is imported into the Contao root directory (except for "theme.xml"). Therefore, you could also add your 
-"config/config.yml" with further settings, such as "[legacy_routing: false](/en/site-structure/website-root/#legacy-routing-mode)". You 
+"config/config.yaml" with further settings, such as "[legacy_routing: false](/en/site-structure/website-root/#legacy-routing-mode)". You 
 can find another example in the [Isotope eCommerce Demo](https://github.com/isotope/isotope-demo).
 
 

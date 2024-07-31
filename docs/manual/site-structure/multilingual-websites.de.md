@@ -25,7 +25,7 @@ für die Verwaltung der mehrsprachigen Inhalte.
 In Contao wird ausschließlich die erste Variante unterstützt (bis auf einige Third-Party-Erweiterungen, die für die 
 Verwaltung eigener Inhalte von diesem Konzept abweichen).
 
-Damit die Sprache der URL (z. B. `www.example.com/de/`) hinzugefügt wird, musst du folgende Zeilen in die `config.yml` 
+Damit die Sprache der URL (z. B. `www.example.com/de/`) hinzugefügt wird, musst du folgende Zeilen in die `config.yaml` 
 im Ordner `app/config/` einfügen. Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden.
 
 {{% notice note %}}
@@ -55,7 +55,7 @@ auch ohne Präfix zu benutzen, während die anderen Startpunkte der selben Domai
 möglich wird, muss aber das »[Legacy Routing][LegacyRouting]« über die Konfiguration deaktiviert werden:
 
 ```yaml
-# config/config.yml
+# config/config.yaml
 contao:
     legacy_routing: false
 ```
