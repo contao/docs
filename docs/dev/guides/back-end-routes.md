@@ -147,16 +147,16 @@ reading and matching the controller class, which Symfony provides under the `_co
 request attribute by default.
 
 The EventListener registers itself to the `contao.backend_menu_build` event by using
-a [`@ServiceTag` annotation][ServiceAnnotationBundle] directly in the PHP file. 
+the [`AsEventListener` PHP attribute][AsEventListenerAttribute] directly in the PHP file. 
 This allows us to skip defining a service tag in the service configuration. We 
 purposely assign it a low priority, so that we can be sure to be loaded after the 
 Contao Core EventListeners. Otherwise, the `content` node we assign ourself to will 
 not be available yet.
 
-And that's it. You controller should now be callable from the main back end menu in
+And that's it. Your controller should now be callable from the main back end menu in
 the sidebar.
 
 
 [BackEndMenuEvent]: /reference/events/#contao-backend-menu-build
-[ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle
+[AsEventListenerAttribute]: https://symfony.com/doc/5.x/event_dispatcher.html#defining-event-listeners-with-php-attributes
 [RequestScope]: /framework/routing/#request-scope
