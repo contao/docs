@@ -84,8 +84,8 @@ The retention policy defines how long older backups remain stored on the system.
 
 The default settings are as follows:
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     backup:
         ignore_tables: ['tl_crawl_queue', 'tl_log', 'tl_search', 'tl_search_index', 'tl_search_term']

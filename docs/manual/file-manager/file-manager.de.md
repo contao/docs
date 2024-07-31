@@ -42,7 +42,7 @@ Datei bzw. des Ordners anzeigen.
 
 **![Datei bearbeiten]({{% asset "icons/editor.svg" %}}?classes=icon) Datei bearbeiten:** Öffnet eine Eingabemaske zur 
 Bearbeitung des Inhalts einer Datei mit einem Texteditor. Welche Dateien editiert werden dürfen, kannst du in der
-Konfigurationsdatei [`config/config.yml`](../../system/einstellungen/#config-yml) unter dem Schlüssel `editable_files`
+Konfigurationsdatei [`config/config.yaml`](../../system/einstellungen/#config-yml) unter dem Schlüssel `editable_files`
 festlegen<sup>1</sup>.
 
 {{% notice note %}}

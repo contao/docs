@@ -94,7 +94,7 @@ for more information about the `.env*` files.
 <sup>3</sup> While Contao versions prior to **4.9** do not load a `config/services.yml` automatically, 
 you can still import it in your `config/config.yml` via
 
-```yml
+```yaml
 imports:
     - { resource: services.yml }
 ```

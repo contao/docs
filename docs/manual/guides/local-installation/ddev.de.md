@@ -12,7 +12,7 @@ tags:
 
 DDEV ist ein Open-Source-Tool, mit dem sich in Minuten lokale PHP-Entwicklungsumgebungen einrichten lassen.
 
-DDEV erstellt eine `config.yml`, die alle Einstellungen für dein Projekt enthält. Diese kann mit GIT versioniert werden und unterstützt so kollaboratives Arbeiten in Teams oder mit Freelancern.
+DDEV erstellt eine `config.yaml`, die alle Einstellungen für dein Projekt enthält. Diese kann mit GIT versioniert werden und unterstützt so kollaboratives Arbeiten in Teams oder mit Freelancern.
 
 {{% notice note %}}
 Um DDEV nutzen zu können, muss _Docker_ auf deinem System installiert sein. Falls das noch
@@ -99,15 +99,15 @@ ddev ssh
 composer create-project contao/managed-edition contao 4.13
 ```
 
-In der `.ddev/config.yml` nun das Docroot anpassen und ddev neu starten.
+In der `.ddev/config.yaml` nun das Docroot anpassen und ddev neu starten.
 
-```yml
+```yaml
 docroot: "contao/public"
 ```
 
 Um Apache anstatt NGINX zu verwenden, den Eintrag `webserver_type: nginx-fpm` in `apache-fpm` ändern.
 
-```yml
+```yaml
 webserver_type: apache-fpm
 ```
 
@@ -150,9 +150,9 @@ DDEV bietet nun auch [Services als Addon](https://ddev.readthedocs.io/en/latest/
 ddev get ddev/ddev-adminer && ddev restart
 ```
 
-Zudem kann man phpMyAdmin in der `.ddev/config.yml` auch deaktivieren:
+Zudem kann man phpMyAdmin in der `.ddev/config.yaml` auch deaktivieren:
 
-```yml
+```yaml
 omit_containers: [dba]
 ```
 
