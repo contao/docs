@@ -58,7 +58,7 @@ php vendor/bin/contao-console contao:user:password --help
 | --- | --- |
 | `--help`   | Options overview |
 | `--username` | The username of the back end user |
-| `--password` | The new password ( using this option is not recommended for security reasons ) |
+| `--password` | The new password (using this option is not recommended for security reasons) |
 | `--require-change` | Require the user to change the password on their next login |
 
 
