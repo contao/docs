@@ -6,7 +6,7 @@ aliases:
 ---
 
 
-Hierüber können, nachdem die [Datenbank](/de/cli/migrate/) erstellt wurde, Contao [Benutzer](/de/benutzerverwaltung/benutzer/) angelegt, 
+Hierüber können, nachdem die [Datenbank](/de/cli/migrate/) erstellt wurde, Contao-[Benutzer](/de/benutzerverwaltung/benutzer/) angelegt, 
 aufgelistet und Passwörter geändert werden. 
 
 
