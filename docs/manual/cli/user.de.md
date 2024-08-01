@@ -18,7 +18,7 @@ Listet bestehende Contao-Benutzer auf:
 | --- | --- |
 | `--help`   | Übersicht der Optionen |
 | `--admins` | Nur Administratoren zeigen |
-| `--column=SPALTE` | Die in der Tabelle anzuzeigende Spalte ( mehrere Werte sind zulässig )  |
+| `--column=SPALTE` | Die in der Tabelle anzuzeigende Spalte (mehrere Werte sind zulässig)  |
 | `--format=FORMAT` | Ausgabeformat ( txt, json ) |
 
 ```bash
