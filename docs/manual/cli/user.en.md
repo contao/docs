@@ -47,7 +47,7 @@ php vendor/bin/contao-console contao:user:create --help
 
 ## contao:user:password
 
-Change of a user password ( requires a username as an argument ). If the command is executed without options, 
+Change of a user password (requires a username as an argument). If the command is executed without options, 
 the required information is requested interactively.
 
 ```bash
