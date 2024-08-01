@@ -12,7 +12,7 @@ aufgelistet und Passwörter geändert werden.
 
 ## contao:user:list
 
-Listet bestehende Contao Benutzer auf:
+Listet bestehende Contao-Benutzer auf:
 
 | Option | Beschreibung |
 | --- | --- |
