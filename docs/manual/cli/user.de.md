@@ -38,7 +38,7 @@ Erstellt einen Contao-Benutzer. Es wird interaktiv nach allen Angaben des Benutz
 | `--email` | Die Benutzer E-Mail Adresse |
 | `--password` | Das Benutzer Passwort |
 | `--admin` | Benutzer ist Administrator |
-| `--group` | Gruppen, die dem Benutzer zugewiesen werden sollen ( mehrere Werte sind zulässig ) |
+| `--group` | Gruppen, die dem Benutzer zugewiesen werden sollen (mehrere Werte sind zulässig) |
 | `--change-password` | Benutzer auffordern, das Passwort bei der ersten Anmeldung im Backend zu ändern |
 
 ```bash
