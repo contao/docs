@@ -37,7 +37,7 @@ Creates a Contao user. If the command is executed without options, the user is i
 | `--email` | The user e-mail address |
 | `--password` | User password |
 | `--admin` | User is administrator |
-| `--group` | Groups to be assigned to the user ( multiple values are allowed ) |
+| `--group` | Groups to be assigned to the user (multiple values are allowed) |
 | `--change-password` | Prompt users to change their password when they first log in to the backend |
 
 ```bash
