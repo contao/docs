@@ -28,7 +28,7 @@ php vendor/bin/contao-console contao:user:list --help
 
 ## contao:user:create
 
-Erstellt einen Contao Benutzer. Es wird interaktiv nach allen Angaben des Benutzers gefragt, wenn der Befehl ohne Optionen ausgeführt wird.
+Erstellt einen Contao-Benutzer. Es wird interaktiv nach allen Angaben des Benutzers gefragt, wenn der Befehl ohne Optionen ausgeführt wird.
 
 | Option | Beschreibung |
 | --- | --- |
