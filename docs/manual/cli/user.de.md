@@ -59,7 +59,7 @@ php vendor/bin/contao-console contao:user:password --help
 | --- | --- |
 | `--help`   | Übersicht der Optionen |
 | `--username` | Angabe des Benutzernamen |
-| `--password` | Das neue Passwort ( die Verwendung dieser Option wird aus Sicherheitsgründen nicht empfohlen ) |
+| `--password` | Das neue Passwort (die Verwendung dieser Option wird aus Sicherheitsgründen nicht empfohlen) |
 | `--require-change` | Mit Aufforderung, das Passwort bei der nächsten Anmeldung zu ändern |
 
 
