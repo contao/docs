@@ -17,7 +17,7 @@ Lists existing Contao users:
 | --- | --- |
 | `--help`   | Options overview |
 | `--admins` | Show administrators only |
-| `--column=COLUMN` | The columns display in the table ( multiple values are allowed ) |
+| `--column=COLUMN` | The columns display in the table (multiple values are allowed) |
 | `--format=FORMAT` | Output format ( txt, json ) |
 
 ```bash
