@@ -97,7 +97,7 @@ its latest release candidates (if there are any):
         }
     },
     "extra": {
-        "contao-component-dir": "public/assets"
+        "contao-component-dir": "assets"
     },
     "scripts": {
         "post-install-cmd": [
