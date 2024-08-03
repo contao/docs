@@ -967,3 +967,90 @@ html[data-theme=dark] #toc-menu,
         padding-right: 3rem;
     }
 }
+
+/* contao.org Top Navigation */
+#contao-network,#contao-network * {
+  box-sizing: border-box;
+}
+
+#body { top: 40px; }
+#sidebar { top: 34px; }
+
+#contao-network {
+  height: 34px;
+  margin: 0;
+  padding: 3px 12px;
+  display: block;
+  overflow: hidden;
+  font: 14px/1 Helvetica,sans-serif;
+  color: #fff;
+  background: #222;
+  text-align: left;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+#contao-network a {
+  margin: 0 8px 0 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  opacity: .75;
+  text-align: left;
+}
+
+#contao-network a:hover,#contao-network a.active {
+  opacity: .9;
+}
+
+#contao-network a * {
+  vertical-align: middle;
+}
+
+#contao-network a span {
+  padding-right: 12px;
+}
+
+#contao-network a i {
+  width: 20px;
+  height: 20px;
+  margin: 4px 3px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#contao-network a.contao i {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTMgOWw5LTcgOSA3djExYTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yeiIvPjxwYXRoIGQ9Ik05IDIyVjEyaDZ2MTAiLz48L3N2Zz4=) 0 0 no-repeat
+}
+
+#contao-network a.docs i {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNOS4wOSA5YTMgMyAwIDAxNS44MyAxYzAgMi0zIDMtMyAzbS4wOCA0aC4wMSIvPjwvc3ZnPg==) 0 0 no-repeat
+}
+
+#contao-network a.community i {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIwIDIxdi0yYTQgNCAwIDAgMC00LTRIOGE0IDQgMCAwIDAtNCA0djIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjciIHI9IjQiLz48L3N2Zz4=) 0 0 no-repeat
+}
+
+#contao-network a.themes i {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iMyIgeT0iMyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiByeD0iMiIgcnk9IjIiLz48cGF0aCBkPSJNMyA5aDE4TTkgMjFWOSIvPjwvc3ZnPg==) 0 0 no-repeat
+}
+
+#contao-network a.extensions i {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIxIDE2VjhhMiAyIDAgMCAwLTEtMS43M2wtNy00YTIgMiAwIDAgMC0yIDBsLTcgNEEyIDIgMCAwIDAgMyA4djhhMiAyIDAgMCAwIDEgMS43M2w3IDRhMiAyIDAgMCAwIDIgMGw3LTRBMiAyIDAgMCAwIDIxIDE2eiIvPjxwYXRoIGQ9Ik0zLjI3IDYuOTZMMTIgMTIuMDFsOC43My01LjA1TTEyIDIyLjA4VjEyIi8+PC9zdmc+) 0 0 no-repeat
+}
+
+#contao-network a.fanshop i {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iOSIgY3k9IjIxIiByPSIxIi8+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMSIgcj0iMSIvPjxwYXRoIGQ9Ik0xIDFoNGwyLjY4IDEzLjM5YTIgMiAwIDAgMCAyIDEuNjFoOS43MmEyIDIgMCAwIDAgMi0xLjYxTDIzIDZINiIvPjwvc3ZnPgo=) 0 0 no-repeat
+}
+
+#contao-network a.login i {
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iMyIgeT0iMTEiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMSIgcng9IjIiIHJ5PSIyIj48L3JlY3Q+PHBhdGggZD0iTTcgMTFWN2E1IDUgMCAwIDEgMTAgMHY0Ij48L3BhdGg+PC9zdmc+) 0 0 no-repeat
+}
+
+@media (max-width: 767px) {
+  #contao-network a span {
+      display:none;
+  }
+}
