@@ -104,7 +104,7 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
         }
     },
     "extra": {
-        "contao-component-dir": "public/assets"
+        "contao-component-dir": "assets"
     },
     "scripts": {
         "post-install-cmd": [
@@ -172,7 +172,7 @@ Version wird, sieht so aus:
         }
     },
     "extra": {
-        "contao-component-dir": "public/assets"
+        "contao-component-dir": "assets"
     },
     "scripts": {
         "post-install-cmd": [
