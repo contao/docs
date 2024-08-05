@@ -56,7 +56,7 @@ listed in the database table `tl_member_group`. We assume, that e.g. the group �
 of »2«. The reference of the group membership of a member is made in the table `tl_member` via the data set `groups`.
 
 If you want to limit the member list to all »active« members of the group »board« you can enter the following 
-condition: `disable != 1 AND groups LIKE '%2%'`.
+condition: `disable != 1 AND groups LIKE '%"2"%'`.
 
 
 ### Template »list_default.html5«
