@@ -792,6 +792,39 @@ class ExampleService
 ```
 
 
+## PageFinder
+
+{{< version "5.3" >}}
+
+The `contao.routing.page_finder` service provides some utility methods in order to find pages from the site structure 
+for a hostname, a request, etc. Since Contao **5.4.** this service also provies a `getCurrentPage()` method to get the 
+current (or given) request's page (instead of having to access `$GLOBALS['objPage']`).
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Routing\PageFinder;
+
+class ExampleService
+{
+    public function __construct(private readonly PageFinder $pageFinder)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        // The root page for the given domain (and optional language)
+        $rootPageForHost = $this->pageFinder->findRootPageForHostAndLanguage('example.com');
+
+        // The current request's page, if applicable
+        $currentPage = $this->pageFinder->getCurrentPage();
+
+        // …
+    }
+}
+```
+
+
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
