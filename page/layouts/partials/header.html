@@ -25,7 +25,7 @@
     {{ range .Site.Params.custom_css -}}
     <link href="{{(printf "%s" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
     {{- end }}
-
+    <link type="text/css" rel="stylesheet" href="https://contao.org/files/js/network.min.css">
     <script src="{{"js/jquery-3.3.1.min.js"| relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
 
     <style>
