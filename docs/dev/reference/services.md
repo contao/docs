@@ -208,8 +208,7 @@ class Example
 
 ## Router
 
-This service from symfony handles any routing task and can be ued to generate URLs
-to routes in your services.
+This service from Symfony handles any routing task and can be used to generate URLs to routes in your services.
 
 ```php
 use App\Controller\ExampleController;
