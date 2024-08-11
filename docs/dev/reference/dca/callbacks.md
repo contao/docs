@@ -394,7 +394,7 @@ class PagePaletteCallback
         }
 
         // Adjust palettes for root pages
-        if ('root' === $currentRecord['type']) {
+        if ('root' !== $currentRecord['type']) {
             return $palette;
         }
 
