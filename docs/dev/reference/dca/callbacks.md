@@ -395,7 +395,7 @@ class PagePaletteCallback
 
         // Adjust palettes for root pages
         if ('root' === $currentRecord['type']) {
-            $palette = PaletteManipulator::create()
+            PaletteManipulator::create()
                 ->addLegend('my_legend')
                 ->addField(['my_field_one', 'my_field_two'], 'my_legend', PaletteManipulator::POSITION_APPEND)
                 ->applyToString($palette)
