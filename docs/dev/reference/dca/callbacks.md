@@ -381,7 +381,7 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-#[AsCallback(table: 'tl_calendar_events', target: 'list.sorting.header')]
+#[AsCallback(table: 'tl_page', target: 'config.onpalette')]
 class PagePaletteCallback
 {
     public function __invoke(string $palette, DataContainer $dc): string
