@@ -982,3 +982,8 @@ html[data-theme=dark] #toc-menu,
 .sticky-wrapper.is-sticky > #top-bar {
   top: 34px !important;
 }
+
+/* Correction search modal */
+.DocSearch-Modal {
+  top: 34px;
+}
