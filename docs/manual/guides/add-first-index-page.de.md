@@ -64,7 +64,7 @@ Du befindest dich jetzt in den Seiteneinstellungen. Setze hier lediglich folgend
 | Einstellung                | Wert                                |
 |:---------------------------|:------------------------------------|
 | **Seitenname**             | z. B. Meine Demo Webseite           |
-| **Seitentyp**              | Auswahl »Website-Startseite«        |
+| **Seitentyp**              | Auswahl »Startpunkt einer Webseite« |
 | **Sprache**                | de                                  |
 | **Sprachen-Fallback**      | Option aktivieren                   |
 | **Ein Layout zuweisen**    | Option aktivieren                   |
