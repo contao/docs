@@ -61,10 +61,10 @@ Im Anschluss fragt Contao dich nach der Position. Übernehme jetzt den Vorschlag
 
 Du befindest dich jetzt in den Seiteneinstellungen. Setze hier lediglich folgende Angaben:
 
-| Einstellung                | Wert                                |
+| Einstellung                | Wert                             |
 |:---------------------------|:------------------------------------|
 | **Seitenname**             | z. B. Meine Demo Webseite           |
-| **Seitentyp**              | Auswahl »Website-Startseite« |
+| **Seitentyp**              | Auswahl »Website-Startseite«        |
 | **Sprache**                | de                                  |
 | **Sprachen-Fallback**      | Option aktivieren                   |
 | **Ein Layout zuweisen**    | Option aktivieren                   |
@@ -102,7 +102,7 @@ Seite vom Typ `Startpunkt einer Webseite` einfügen.
 Anschließend befindest du dich wieder in den Einstellungen dieses Seitentyps. Wir setzen für unser Beispiel nur die 
 relevanten Angaben. Wie immer kannst du diese zu jedem Zeitpunkt ändern.
 
-| Einstellung                | Wert                                |
+| Einstellung                | Wert                             |
 |:---------------------------|:------------------------------------|
 | **Seitenname**             | Willkommen                          |
 | **Seitenalias**            | index                               |
