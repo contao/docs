@@ -967,3 +967,14 @@ html[data-theme=dark] #toc-menu,
         padding-right: 3rem;
     }
 }
+
+/* contao.org Top Navigation */
+#body { top: 40px; }
+#sidebar { top: 34px; }
+
+#contao-network {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
