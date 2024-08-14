@@ -152,9 +152,13 @@ body {
     z-index: 9999;
 }
 
+#contao-network ~ * {
+    margin-top: var(--BODY-TOP-OFFSET); /* Add an offset to every dynamically added component within body */
+}
+
 #main {
     background: var(--MAIN-BODY-background);
-    margin-top: var(--BODY-TOP-OFFSET); /* Offset for contao-network topbar */
+    margin-top: var(--BODY-TOP-OFFSET); /* Counter CLS when #contao-network gets loaded */
 }
 
 #main > #sidebar {
