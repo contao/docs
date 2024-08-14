@@ -970,6 +970,18 @@ html[data-theme=dark] #toc-menu,
 }
 
 /* contao.org Top Navigation */
+body:before {
+    content: '';
+    background-color: #222;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: var(--NETWORK-BAR-HEIGHT);
+    z-index: 100;
+}
+
 #contao-network {
     left: 0;
     top: 0;
@@ -979,7 +991,8 @@ html[data-theme=dark] #toc-menu,
 }
 
 #sidebar,
-#body {
+#body,
+.DocSearch-Container {
     margin-top: var(--NETWORK-BAR-HEIGHT);
 }
 
