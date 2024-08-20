@@ -1,5 +1,6 @@
 {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
 <script src="{{"js/browser.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+<script src="{{"js/tools.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
 <script>
   var _paq = window._paq = window._paq || [];
   _paq.push(['setRequestMethod', 'POST'])

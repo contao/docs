@@ -64,7 +64,7 @@ your website roots or you can define a default domain in your application config
 See the [Symfony Routing Documentation](https://symfony.com/doc/4.4/routing.html#generating-urls-in-commands)
 for more details.
 
-```yml
+```yaml
 # config/parameters.yaml
 parameters:
     router.request_context.host: 'example.org'
@@ -172,7 +172,7 @@ with `\`, since `*/` would close the PHP comment.
 {{% /tab %}}
 
 {{% tab name="YAML" %}}
-{{< version-tag "4.9" >}} As mentioned before you can manually add the `contao.hook` service tag in your service configuration.
+{{< version-tag "4.9" >}} As mentioned before you can manually add the `contao.cronjob` service tag in your service configuration.
 
 ```yaml
 # config/services.yaml

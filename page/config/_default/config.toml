@@ -1,0 +1,2 @@
+[params]
+  custom_css = ["css/theme-toggle.css", "css/custom.css"]

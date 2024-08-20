@@ -8,47 +8,6 @@ aliases:
     - /de/layout/modulverwaltung/benutzermodule/
 weight: 20
 ---
-<style>
-    .formbody .invisible {
-        border: 0;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-    }
-    .formbody {
-        background: #f2f2f2;
-        border: 1px solid #ddd;
-        padding: 20px;
-        min-width: 250px;
-        width: 80%;
-     }
-     .formbody label {
-         margin-bottom: 0.125rem;
-     }
-     .formbody .checkbox_container {
-        border: none;
-        margin: 0 0 20px 0;
-        padding: 0;
-     }
-    .formbody .password-reset {
-        margin-top: 15px;
-    }
-    .formbody .checkbox_container label {
-        display: inline;
-    }
-    .formbody .error {
-        color: #ff0000;
-    }
-    .formbody .submit {
-        background: #f47c00;
-        color: #fff;
-        padding: 5px 10px;
-    }
-</style>
 
 Benutzermodule sind Module, die im Zusammenhang mit der Verwaltung von Frontend-Benutzern gebraucht werden. Dazu zählt 
 beispielsweise die Registrierung neuer Mitglieder oder die An- bzw. Abmeldung bestehender Mitglieder.
@@ -61,7 +20,7 @@ authentifizieren können.
 
 **Frontend-Ausgabe**
 
-<div class="mod_login login block">
+<div class="user-module mod_login login block">
     <form id="tl_login_68" method="post">
         <div class="formbody">
             <div class="widget widget-text">
@@ -92,7 +51,7 @@ angezeigt.
 
 **Frontend-Ausgabe**
 
-<div class="mod_login logout block">
+<div class="user-module mod_login logout block">
     <form id="tl_logout_68" method="post">
         <div class="formbody">
             <p class="login_info">

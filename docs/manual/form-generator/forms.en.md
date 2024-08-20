@@ -59,9 +59,24 @@ an attachment.
 | XML file | An XML file with the form data is attached to the e-mail. |
 | CSV file | A CSV file with the form data is attached to the e-mail. |
 | CSV file (Microsoft Excel) | {{< version "4.10" >}} A CSV file in Microsoft Excel format with the form data is attached to the e-mail. |
-| E-mail | The form data is formatted as if the sender had written an e-mail with his e-mail program. In this case, the form generator only processes the fields `name`, `email`, `subject`, and `message`, and ignores all other form fields. |
+| E-mail | The form data is formatted as if the sender had written an e-mail with their e-mail program. In this case, the form generator only processes the fields `name`, `email`, `subject`, and `message`, and ignores all other form fields. |
 
 **Omit empty fields:** If you select this option, only completed fields will be sent by e-mail. Fields without any input will be skipped.
+
+
+### Special Field Names
+
+Certain field names influence the behavior of Contao's email sending process. To take advantage of these features you 
+need to insert a form field with exactly the field name as described here.
+
+| Field&nbsp;name | Effect |
+| --- | --- |
+| `email`    | The email address from this field will be used as the `Reply-To:` address (must be a valid email address). |
+| `name`     | The value of this field will be used as the name for the `Reply-To:` address. |
+| `firstname` | The value of this field will be used as the first name for the `Reply-To:` address. <br>Only applies if also a `lastname` and no `name` is present. |
+| `lastname` | The value of this field will be used as the last name for the `Reply-To:` address. <br>Only applies if also a `firstname` and no `name` is present. |
+| `cc` | If the value of this field is not empty, the email address from the `email` field will be used as a `Cc:` address (i.e. a copy of the email will be sent to that address). Typically used as a hidden or checkbox field. |
+
 
 ## Save form data
 

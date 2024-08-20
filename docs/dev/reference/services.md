@@ -22,11 +22,8 @@ use Contao\CoreBundle\Framework\ContaoFramework;
 
 class Example
 {
-    private $framework;
-
-    public function __construct(ContaoFramework $framework)
+    public function __construct(private readonly ContaoFramework $framework)
     {
-        $this->framework = $framework;
     }
 
     public function execute()
@@ -67,25 +64,13 @@ use Symfony\Component\HttpFoundation\Response;
 #[AsContentElement(category: 'texts')]
 class ExampleFormElementController extends AbstractContentElementController
 {
-    /**
-     * @var ContaoCsrfTokenManager
-     */
-    private $csrfTokenManager;
-
-    /**
-     * @var string
-     */
-    private $csrfTokenName;
-
-    public function __construct(ContaoCsrfTokenManager $csrfTokenManager, string $csrfTokenName)
+    public function __construct(private readonly ContaoCsrfTokenManager $csrfTokenManager)
     {
-        $this->csrfTokenManager = $csrfTokenManager;
-        $this->csrfTokenName = $csrfTokenName;
     }
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
-        $template->token = $this->csrfTokenManager->getToken($this->csrfTokenName)->getValue();
+        $template->token = $this->csrfTokenManager->getDefaultTokenValue();
 
         return $template->getResponse();
     }
@@ -115,11 +100,8 @@ use Doctrine\DBAL\Connection;
 
 class Example
 {
-    private $connection;
-
-    public function __construct(Connection $connection)
+    public function __construct(private readonly Connection $connection)
     {
-        $this->connection = $connection;
     }
 
     public function __invoke(): void
@@ -136,13 +118,14 @@ class Example
 
 {{< version "4.13" >}}
 
-The `contao.cache.entity_tags` service helps you tag responses and invalidate cache tags based on entity and model
-classes and instances. Contao uses a naming convention for database related tags: A tag `contao.db.tl_content.5` targets
-the content element with the ID 5, while `contao.db.tl_content` would target *all* content elements.
+The `contao.cache.entity_tags` (`Contao\CoreBundle\Cache\EntityCacheTags`) service helps you tag responses and 
+invalidate cache tags based on entity and model classes and instances. Contao uses a naming convention for database 
+related tags: A tag `contao.db.tl_content.5` targets the content element with the ID 5, while `contao.db.tl_content` 
+would target *all* content elements.
 
-#### Tagging
+### Tagging
 
-Instead of composing this tags yourself, let the service handle this for you by passing in class names or entity/model 
+Instead of composing these tags yourself, let the service handle this for you by passing in class names or entity/model 
 instances into one of its `tagWith()` methods:
 
 ```php
@@ -159,7 +142,7 @@ $entityCacheTags->tagWith(Blog::class);
 
 Tagging works with entity/model class names, objects and collections. You can also safely pass in `null`.
 
-#### Invalidating
+### Invalidating
 
 Analogous to tagging, you can also use the service to invalidate certain cache tags. This, again, works with
 entity/model class names, objects and collections as well as `null`:
@@ -189,11 +172,8 @@ use Contao\CoreBundle\OptIn\OptIn;
 
 class Example
 {
-    private $optIn;
-
-    public function __construct(OptIn $optIn)
+    public function __construct(private readonly OptIn $optIn)
     {
-        $this->optIn = $optIn;
     }
 
     public function createOptIn(string $email, ExampleModel $model, string $optInUrl): void
@@ -228,8 +208,7 @@ class Example
 
 ## Router
 
-This service from symfony handles any routing task and can be ued to generate URLs
-to routes in your services.
+This service from Symfony handles any routing task and can be used to generate URLs to routes in your services.
 
 ```php
 use App\Controller\ExampleController;
@@ -237,11 +216,8 @@ use Symfony\Component\Routing\RouterInterface;
 
 class Example
 {
-    private $router;
-
-    public function __construct(RouterInterface $router)
+    public function __construct(private readonly RouterInterface $router)
     {
-        $this->router = $router;
     }
 
     public function execute()
@@ -263,13 +239,10 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class Example
 {
-    private $requestStack;
-    private $scopeMatcher;
-
-    public function __construct(RequestStack $requestStack, ScopeMatcher $scopeMatcher)
-    {
-        $this->requestStack = $requestStack;
-        $this->scopeMatcher = $scopeMatcher;
+    public function __construct(
+        private readonly RequestStack $requestStack,
+        private readonly ScopeMatcher $scopeMatcher,
+    ) {
     }
 
     public function isBackend()
@@ -290,6 +263,8 @@ class Example
 Not directly related to Contao, but this helper service from Symfony lets you retrieve
 the current Contao front end or back end user from the firewall.
 
+{{< tabs groupId="services-contao4-contao5" >}}
+{{% tab name="Contao 4" %}}
 ```php
 use Contao\BackendUser;
 use Contao\FrontendUser;
@@ -297,11 +272,8 @@ use Symfony\Component\Security\Core\Security;
 
 class Example
 {
-    private $security;
-
-    public function __construct(Security $security)
+    public function __construct(private readonly Security $security)
     {
-        $this->security = $security;
     }
 
     public function execute()
@@ -333,6 +305,120 @@ class Example
     }
 }
 ```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+```php
+use Contao\BackendUser;
+use Contao\FrontendUser;
+use Symfony\Bundle\SecurityBundle\Security;
+
+class Example
+{
+    public function __construct(private readonly Security $security)
+    {
+    }
+
+    public function execute()
+    {
+        // Check for admin back end user role
+        if ($this->security->isGranted('ROLE_ADMIN')) {
+            // …
+        }
+
+        // Check for regular back end user role
+        if ($this->security->isGranted('ROLE_USER')) {
+            // …
+        }
+
+        // Check for front end user role
+        if ($this->security->isGranted('ROLE_MEMBER')) {
+            // …
+        }
+
+        // Get current back end user
+        if (($user = $this->security->getUser()) instanceof BackendUser) {
+            // …
+        }
+
+        // Get current front end user
+        if (($user = $this->security->getUser()) instanceof FrontendUser) {
+            // …
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+If you only need to check the authorization you can inject the `AuthorizationCheckerInterface` instead:
+
+```php
+use Contao\CoreBundle\Security\ContaoCorePermissions;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
+class Example
+{
+    public function __construct(private readonly AuthorizationCheckerInterface $auth)
+    {
+    }
+
+    public function execute()
+    {
+        // Check for admin back end user role
+        if ($this->auth->isGranted('ROLE_ADMIN')) {
+            // …
+        }
+
+        // Check for regular back end user role
+        if ($this->auth->isGranted('ROLE_USER')) {
+            // …
+        }
+
+        // Check for front end user role
+        if ($this->auth->isGranted('ROLE_MEMBER')) {
+            // …
+        }
+
+        // Check whether the back end user can access any field in tl_page
+        if ($this->auth->isGranted(ContaoCorePermissions::USER_CAN_EDIT_FIELDS_OF_TABLE, 'tl_page')) {
+            // …
+        }
+
+        // Check whether the front end user is a member of specific groups
+        if ($this->auth->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, [2, 9])) {
+            // …
+        }
+    }
+}
+```
+
+If you only want to retrieve the logged in user you can inject the `TokenStorageInterface` instead:
+
+```php
+use Contao\BackendUser;
+use Contao\FrontendUser;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+
+class Example
+{
+    public function __construct(private readonly TokenStorageInterface $tokenStorage)
+    {
+    }
+
+    public function execute()
+    {
+        // Get current back end user
+        if (($user = $this->tokenStorage->getToken()?->getUser()) instanceof BackendUser) {
+            // …
+        }
+
+        // Get current front end user
+        if (($user = $this->tokenStorage->getToken()?->getUser()) instanceof FrontendUser) {
+            // …
+        }
+    }
+}
+```
 
 
 ## SimpleTokenParser
@@ -346,11 +432,8 @@ use Contao\CoreBundle\Util\SimpleTokenParser;
 
 class Example
 {
-    private $parser;
-
-    public function __construct(SimpleTokenParser $parser)
+    public function __construct(private readonly SimpleTokenParser $parser)
     {
-        $this->parser = $parser;
     }
 
     public function execute()
@@ -394,11 +477,8 @@ use Contao\CoreBundle\Slug\Slug;
 
 class Example
 {
-    private $slug;
-
-    public function __construct(Slug $slug)
+    public function __construct(private readonly Slug $slug)
     {
-        $this->slug = $slug;
     }
 
     public function getSlug(string $text, string $locale = 'en', string $validChars = '0-9a-z'): string
@@ -426,11 +506,10 @@ use Doctrine\DBAL\Connection;
 
 class Example
 {
-    private $slug;
-    private $db;
-
-    public function __construct(Slug $slug, Connection $db)
-    {
+    public function __construct(
+        private readonly Slug $slug,
+        private readonly Connection $db,
+    ) {
         $this->slug = $slug;
         $this->db = $db;
     }
@@ -472,11 +551,8 @@ use Contao\FrontendUser;
 
 class Example
 {
-    private $tokenChecker;
-
-    public function __construct(TokenChecker $tokenChecker)
+    public function __construct(private readonly TokenChecker $tokenChecker)
     {
-        $this->tokenChecker = $tokenChecker;
     }
 
     public function execute()
@@ -506,11 +582,8 @@ use Contao\CoreBundle\InsertTag\InsertTagParser;
 
 class Example
 {
-    private InsertTagParser $insertTagParser;
-    
-    public function __construct(InsertTagParser $insertTagParser)
+    public function __construct(private readonly InsertTagParser $insertTagParser)
     {
-        $this->insertTagParser = $insertTagParser;
     }
 
     public function __invoke(string $buffer): string
@@ -602,6 +675,156 @@ class ExampleService
 ```
 
 
+## Locales
+
+This service can be used to retrieve a list of locale or language IDs or to provide labels for such a list.
+See `contao.intl.locales` and `contao.intl.enabled_locales` in the [Container configuration][ContainerConfig].
+Translations can be customized using language keys like `LNG.en`, `LNG.de_AT` and so on.
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Intl\Locales;
+
+class ExampleService
+{
+    public function __construct(private readonly Locales $locales)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        // Returns all locale IDs as configured in contao.intl.locales
+        $this->locales->getLocaleIds();
+
+        // Returns only languages (de, en,…) without regions (de_DE, de_AT, en_US)
+        $this->locales->getLanguageLocaleIds();
+
+        // Returns only the enabled locale IDs as configured in contao.intl.enabled_locales
+        $this->locales->getEnabledLocaleIds();
+        
+        // Same as getLocaleIds() but the array uses the locale IDs as the key
+        // and their translated labels as values.
+        $this->locales->getLocales();
+
+        // Returns translated locales in German together with their native translation
+        $this->locales->getLocales('de', true);
+        
+        // Same as getLanguageLocaleIds() but with translated labels
+        $this->locales->getLanguages('de', true);
+        
+        // Same as getEnabledLocaleIds() but with translated labels
+        $this->locales->getEnabledLocales('de', true);
+        
+        // Returns translations for the passed locales
+        $this->locales->getDisplayNames(['de', 'en']);
+
+        // Returns translations in German together with their native translation
+        $this->locales->getDisplayNames(['de', 'en'], 'de', true);
+    }
+}
+```
+
+
+## Countries
+
+This service can be used to retrieve a list of countries or country codes.
+See `contao.intl.countries` in the [Container configuration][ContainerConfig].
+Translations can be customized using language keys like `CNT.de`, `CNT.at` and so on.
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Intl\Countries;
+
+class ExampleService
+{
+    public function __construct(private readonly Countries $countries)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        // Returns all country codes as configured in contao.intl.countries in uppercase
+        $this->countries->getCountryCodes();
+
+        // Same as getCountryCodes() but the array uses the country code as the key
+        // and their translated labels as values.
+        $this->countries->getCountries();
+
+        // Returns the translated countries in German
+        $this->countries->getCountries('de');
+    }
+}
+```
+
+
+## Mailer
+
+If you want to create and send emails directly instead of using Contao's legacy `Contao\Email` class, you can use the
+[Symfony Mailer][SymfonyMailer] (which is internally used by the legacy class).
+
+```php
+namespace App;
+
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+
+class ExampleService
+{
+    public function __construct(private readonly MailerInterface $mailer)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        $email = (new Email())
+            ->from('hello@example.com')
+            ->to('you@example.com')
+            ->subject('Lorem ipsum dolor')
+            ->text('Lorem ipsum dolor sit amet.')
+            ->html('<p>Lorem ipsum dolor sit amet.</p>')
+        ;
+
+        $this->mailer->send($email);
+    }
+}
+```
+
+
+## PageFinder
+
+{{< version "5.3" >}}
+
+The `contao.routing.page_finder` service provides some utility methods in order to find pages from the site structure 
+for a hostname, a request, etc. Since Contao **5.4.** this service also provies a `getCurrentPage()` method to get the 
+current (or given) request's page (instead of having to access `$GLOBALS['objPage']`).
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Routing\PageFinder;
+
+class ExampleService
+{
+    public function __construct(private readonly PageFinder $pageFinder)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        // The root page for the given domain (and optional language)
+        $rootPageForHost = $this->pageFinder->findRootPageForHostAndLanguage('example.com');
+
+        // The current request's page, if applicable
+        $currentPage = $this->pageFinder->getCurrentPage();
+
+        // …
+    }
+}
+```
+
+
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
@@ -609,3 +832,5 @@ class ExampleService
 [DoctrineBundle]: https://symfony.com/doc/current/reference/configuration/doctrine.html
 [RequestStack]: https://symfony.com/doc/current/service_container/request.html
 [ResponseContext]: /framework/response-context/
+[ContainerConfig]: /reference/config/
+[SymfonyMailer]: https://symfony.com/doc/current/mailer.html

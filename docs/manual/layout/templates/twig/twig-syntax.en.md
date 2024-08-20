@@ -102,8 +102,7 @@ Filters are applied to variables. They specify how a variable should be processe
 {{% /example %}}
 
 Filters in Twig are extremely powerful and versatile. Twig brings many
-[Filters](https://twig.symfony.com/doc/3.x/filters/index.html) out of the box. Developers can also create their own
-create their own filters.  
+[Filters](https://twig.symfony.com/doc/3.x/filters/index.html) out of the box. Developers can also create their own filters.  
 If you are interested in creating your own filters please have a look at the
 [Developer Documentation](https://docs.contao.org/dev/framework/templates/getting-started/#extending-twig).
 

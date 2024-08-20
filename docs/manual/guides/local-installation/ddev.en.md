@@ -12,7 +12,7 @@ tags:
 
 DDEV is an open source tool for launching local PHP development environments in minutes.
 
-DDEV creates a `config.yml`, this contains all settings for your project. This can be versioned in GIT and supports collaborative work in teams or freelancers.
+DDEV creates a `config.yaml`, this contains all settings for your project. This can be versioned in GIT and supports collaborative work in teams or freelancers.
 
 {{% notice note %}}
 To use the DDEV, _Docker_ must be installed on your system. If this is not yet

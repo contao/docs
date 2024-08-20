@@ -79,9 +79,9 @@ entry's author directly.
 
 The following more complex example shows how to customize the personal data update procedure
 of your members. Assume you have an external service, against which the personal data 
-of members need to be kept in sync, whenever a member changes his personal data. 
+of members need to be kept in sync, whenever a member changes their personal data. 
 The _Personal data_ module of Contao provides a [updatePersonalData][updatePersonaldataHook] hook which
-will be triggered when, as the name of the hook suggests, a member updates his personal
+will be triggered when, as the name of the hook suggests, a member updates their personal
 data via this module.
 
 ```php
@@ -113,7 +113,7 @@ class UpdatePersonalDataListener
 ```
 
 The hook requests an instance of a hypothetical `ExternalMemberService`. Whenever
-a member updates her or his personal data, the hook will be triggered and the updated
+a member updates their personal data, the hook will be triggered and the updated
 data will be sent to that service, which then handles updating the member's data
 in that external service.
 

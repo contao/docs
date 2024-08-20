@@ -35,60 +35,6 @@ If you want to support older browsers you can also use the other file formats.
 
 ## Contao Integration
 
-<style>
-/* vollkorn-600 - latin */
-@font-face {
-  font-family: 'Vollkorn';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('src-webfont/vollkorn-v12-latin-600.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('src-webfont/vollkorn-v12-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('src-webfont/vollkorn-v12-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
-       url('src-webfont/vollkorn-v12-latin-600.woff') format('woff'), /* Modern Browsers */
-       url('src-webfont/vollkorn-v12-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('src-webfont/vollkorn-v12-latin-600.svg#Vollkorn') format('svg'); /* Legacy iOS */
-}
-/* vollkorn-700italic - latin */
-@font-face {
-  font-family: 'Vollkorn';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('src-webfont/vollkorn-v12-latin-700italic.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('src-webfont/vollkorn-v12-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('src-webfont/vollkorn-v12-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('src-webfont/vollkorn-v12-latin-700italic.woff') format('woff'), /* Modern Browsers */
-       url('src-webfont/vollkorn-v12-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('src-webfont/vollkorn-v12-latin-700italic.svg#Vollkorn') format('svg'); /* Legacy iOS */
-}
-
-.fontDemoLyric {
-  font-family: 'Vollkorn', serif;
-  background-color: #F0B37E;
-  border-radius: 8px;
-  color: #ffffff;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 30px;
-  padding: 20px 20px;
-  margin: 10px 0 10px 0;
-}
-
-.fontDemoAuthor {
-  font-family: 'Vollkorn', serif;
-  color: #666666;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
-}
-</style>
-
 In the following we use the Google Font »[Vollkorn](https://fonts.google.com/specimen/Vollkorn)«.<br>
 Here for example with the typefaces »Bold 700 italic« and »Semi-bold 600«:
 

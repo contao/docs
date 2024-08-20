@@ -3,7 +3,10 @@ title: "Asynchronous Messaging"
 description: Asynchronous Messaging using the Symfony Messenger integration
 ---
 
-{{< version "5.1" >}}
+{{% notice note %}}
+The feature has been around since Contao 5.1, but we're describing how it works as of version 5.3.10 where it was
+revamped in order to address various issues with the previous implementation.
+{{% /notice %}}
 
 Contao provides an integration of the Symfony Messenger in the [Contao Managed Edition][Managed_Edition] which is 
 documented here. This chapter assumes thorough understanding of the [Symfony Messenger Component][Symfony_Messenger] 
@@ -37,12 +40,9 @@ framework:
         transports:
             sync: sync://
             contao_failure: doctrine://default?table_name=tl_message_queue&queue_name=failure&auto_setup=false
-            contao_prio_high: contao-auto-fallback://contao_prio_high?target=contao_prio_high_doctrine&fallback=sync
-            contao_prio_normal: contao-auto-fallback://contao_prio_normal?target=contao_prio_normal_doctrine&fallback=sync
-            contao_prio_low: contao-auto-fallback://contao_prio_low?target=contao_prio_low_doctrine&fallback=sync
-            contao_prio_high_doctrine: doctrine://default?table_name=tl_message_queue&queue_name=prio_high&auto_setup=false
-            contao_prio_normal_doctrine: doctrine://default?table_name=tl_message_queue&queue_name=prio_normal&auto_setup=false
-            contao_prio_low_doctrine: doctrine://default?table_name=tl_message_queue&queue_name=prio_low&auto_setup=false
+            contao_prio_high: doctrine://default?table_name=tl_message_queue&queue_name=prio_high&auto_setup=false
+            contao_prio_normal: doctrine://default?table_name=tl_message_queue&queue_name=prio_normal&auto_setup=false
+            contao_prio_low: doctrine://default?table_name=tl_message_queue&queue_name=prio_low&auto_setup=false
 ```
 
 The `sync` transport as well as the `contao_failure` transport are not special in any way. The only thing you'll 
@@ -52,95 +52,76 @@ example, it would fail. That's why the table is dynamically added and configured
 `Contao\CoreBundle\EventListener\DoctrineSchemaListener` meaning that anytime you run `contao:migrate`, any schema 
 changes will be detected and your database will get updated. Hence, we use `auto_setup=false`.
 
-Then, we have 3 default transports that represent priorities:
+Then, we define 3 default transports that represent priorities:
 
 * contao_prio_high
 * contao_prio_normal
 * contao_prio_low
 
-They use the `contao-auto-fallback` transport, which is a transport specific to Contao. We'll get to this transport 
-in a second but let's look at the meaning of the configuration:
+## The `WebWorker`
 
-```none
-contao-auto-fallback://%current-transport%?target=%target-transport%&fallback=%fallback-transport%
-```
-
-* `%current-transport%` must be the same as the transport name itself. It is required so the `AutoFallbackTransport` 
-  can get information about the transport.
-* `%target-transport%` is the transport name that we would like to send the message to.
-* `%fallback-transport%` is the transport name that the message is sent to in case the target is not "available" 
-  (we'll get to that)
-
-So this section reads as follows:
-
-```yaml
-framework:
-    messenger:
-        transports:
-            # Create new transport named "contao_prio_high". It should use the "contao-auto-fallback"
-            # transport, and we instruct it about the fact that we are "contao_prio_high" and we target 
-            # "contao_prio_high_doctrine" and in case this should not be available, fall back to the
-            # "sync" transport.
-            contao_prio_high: contao-auto-fallback://contao_prio_high?target=contao_prio_high_doctrine&fallback=sync
-
-            # Create new transport named "contao_prio_normal". It should use the "contao-auto-fallback"
-            # transport, and we instruct it about the fact that we are "contao_prio_normal" and we target 
-            # "contao_prio_normal_doctrine" and in case this should not be available, fall back to the
-            # "sync" transport.
-            contao_prio_normal: contao-auto-fallback://contao_prio_normal?target=contao_prio_normal_doctrine&fallback=sync
-
-            # Create new transport named "contao_prio_low". It should use the "contao-auto-fallback"
-            # transport,  and we instruct it about the fact that we are "contao_prio_low" and we target 
-            # "contao_prio_low_doctrine" and in case this should not be available, fall back to the
-            # "sync" transport.
-            contao_prio_low: contao-auto-fallback://contao_prio_low?target=contao_prio_low_doctrine&fallback=sync
-```
-
-The 3 target transports `contao_prio_high_doctrine`, `contao_prio_normal_doctrine` and `contao_prio_low_doctrine` 
-use the default Doctrine Transport again, which you should be familiar with. The only thing special here is that we 
-use `auto_setup=false`. This is, as already mentioned, because we update our database schema ourselves during 
-`contao:migrate`. 
-
-So what about this `contao-auto-fallback` transport?
-
-## The `AutoFallbackTransport`
-
-For the Contao Managed Edition, we cannot assume that every user is able to have a `messenger:consume` worker 
-running all the time. It's fair to assume that probably most of the Contao setups run on some shared hosting 
+For the Contao Managed Edition, we cannot assume that every user is able to have a `messenger:consume` worker
+running all the time. It's fair to assume that probably most of the Contao setups run on some shared hosting
 provider without any access to any process manager like `Supervisor`, `systemd`, `launchd`, `runit` and Co.
 
-So when you as an extension developer want to use the Symfony Messenger integration, we somehow have to make sure, 
-your messages aren't lost, even if the Contao user installs Contao somewhere where no `messenger:consume` worker is 
-running. 
-This is exactly what the `AutoFallbackTransport` is all about. It works as follows:
+So when you as an extension developer want to use the Symfony Messenger integration, we somehow have to make sure,
+your messages aren't lost and being worked on , even if the Contao user installs Contao somewhere where no 
+`messenger:consume` worker is running.
+This is exactly what the `WebWorker` is all about. The `WebWorker` uses the Symfony `kernel.terminate` event to work 
+on the messages that are on the queue. This is how it works:
 
-1. When you start `messenger:consume contao_prio_high contao_prio_normal contao_prio_low`, our 
-   `EventListenerWorkerListener` listens to the `WorkerStartedEvent` as well as the 
-   `WorkerRunningEvent` and pings the `AutoFallbackNotifier` for each of those 3 transports.
-2. The `AutoFallbackNotifier` stores that the transport is running in cache and saves 
-   this state for `60` seconds (it does so for all the 3 of them).
-3. The `AutoFallbackTransport` asks the `AutoFallbackNotifier` whether the passed `%current-transport%` is running 
-   (hence we have to pass this in the configuration). If so, it will forward the message to the `%target-transport%`.
-   If not, it will fall back to the `%fallback-transport%` which in the Contao Managed Edition (and probably most 
-   cases if you want to override the configuration) is `sync`.
+1. It will not do this for all transports but only for the ones configured. In the Contao Managed Edition, this is 
+   enabled by default for all our 3 default transports, like so:
 
-{{% notice warning %}}
-This means that there might be a gap of 60 seconds where messages could in theory get lost. That would happen if 
-your worker once ran and Contao only detects after 60 seconds that it doesn't anymore, and you have sent a message 
-within those 60 seconds. If you have a real process manager, you may omit the `AutoFallbackTransport` entirely. See 
-[Adjusting the configuration](#adjusting-the-configuration).
-{{% /notice %}}
+   ```yaml
+   contao:
+      messenger:
+         web_worker:
+            transports:
+               - contao_prio_high
+               - contao_prio_normal
+               - contao_prio_low
+   ```
+   
+   If you define an additional transport and want to make sure, the `WebWorker` takes care of your transport as 
+   well, make sure to add it to `contao.messenger.web_worker.transports`.
+2. It will try to be smart about working on those defined transports. If it detects that there is actually a real worker
+   working on one of those queues, it will not work on any message from that transport during the web request. For 
+   this, the `WebWorker` listens to the `WorkerStartedEvent` as well as the `WorkerRunningEvent` and remembers that the 
+   given transport is running using a cache entry that is valid for a grace period of `10` minutes (configurable). On 
+   `kernel.terminate`, if that cache entry is still valid, it will conclude that a real worker is working on this 
+   transport and thus do nothing. If, however, that cache entry does not exist (never did or the grace period has 
+   expired) it will conclude that no worker is running, and thus it will start consuming messages from that 
+   transport within the web process. This is basically as if you had the `sync` transport configured with one additional advantage: As this happens in `kernel.terminate`, depending on your PHP setup, it is deferred to after the response has been sent to the client 
+   (`fastcgi_finish_request()`). So it is a win for you in any case!
+3. The `WebWorker` always limits its inline `messenger:consume` logic to a maximum of `30` seconds (not configurable)
+   in order to make sure the web process does not run forever.
+
+The grace period to determine whether a worker is running or not is needed because if there's only one worker 
+working on e.g. `contao_prio_high` and the message the worker is currently working on takes - say - 15 minutes to 
+process, no `WorkerRunningEvent` is going to be dispatched for `contao_prio_high` which would in turn force the 
+`WebWorker` to fall back to the `kernel.terminate` logic. This might be the desired behavior after the default grace 
+period of `10` minutes but probably also not - this very much depends on the type of messages and the number of real 
+workers you have configured. You may adjust the grace period like so (use the `\DateInterval` duration specification):
+
+```yaml
+contao:
+   messenger:
+      web_worker:
+         grace_period: 'PT5M' # 5 minutes
+```
 
 ## The built-in cron job process manager
 
 Contao wouldn't be Contao if it didn't try to find an ingenious solution for the missing process manager on shared 
 hosting providers problem. Sure, most of them do not - and probably never will - provide an option for you to 
-register `php bin/console messenger:consume contao_prio_high contao_prio_normal contao_prio_low` but what most of 
-them have, is - you guessed it - cron jobs!
+register e.g. `php bin/console messenger:consume contao_prio_high`.
+
+But what most of them have is - you guessed it - cron jobs!
 
 In the Contao Managed Edition - in case you [configured the Contao Cron job Framework with a real, minutely
 cronjob][Minutely_Cron] - Contao will automatically start asynchronous `messenger:consume` commands which are configured to 
-stop after `60` seconds effectively resulting in having continously running workers that are running for a minute. 
+stop after `60` seconds effectively resulting in having continuously running workers that are running for a minute. 
 Then the minutely cron job comes back around and our workes are started again - as if we had a real process manager 
 running! The workers even support simple autoscaling! Here's the default configuration of the Contao Managed Edition:
 
@@ -186,6 +167,13 @@ contao:
                     max: 10
 ```
 
+{{% notice note %}}
+In reality, things are a bit more complex than just starting the `messenger:consume` commands every minute because as 
+messages could take longer than one minute to finish being processed, we also have to supervise how many processes are running 
+and not blindly start them as we might accumulate too many processes like that. But this would go beyond the scope 
+of the documentation. Just know that Contao has your back and takes care of that problem for you! 😎
+{{% /notice %}}
+
 {{% notice idea %}}
 You don't need `Supervisor`, `systemd` or the likes when using the Contao Managed Edition! Just configure a real 
 minutely cron job triggering `contao:cron` and you're good to go!
@@ -193,8 +181,8 @@ minutely cron job triggering `contao:cron` and you're good to go!
 
 ## The priority message interfaces
 
-So we know how the transport works, and we have a solution for running the `messenger:consume` commands. One piece is 
-missing, though: How does Contao know that your message (let's assume a `CreateAsyncZipFileMessage` in this example) 
+So we know how the `WebWorker` fallback works, and we have a solution for running the `messenger:consume` commands. One 
+piece is missing, though: How does Contao know that your message (let's assume a `CreateAsyncZipFileMessage` in this example) 
 should be routed to the `contao_prio_low`, `contao_prio_normal` or `contao_prio_high` transports? The routing part is missing!
 So as an extension developer, you would need to specify the target like so:
 
@@ -271,26 +259,28 @@ request to serve responses to the users faster.
 
 ## Adjusting the configuration 
 
-In case you want to work with a real process manager, there is no point in using the `AutoFallbackTransport` or the 
-built-in cron job workers. You can disable it by adjusting the configuration:
+In case you want to work with a real process manager, there is no point in using built-in cron job workers.
+You can disable them by adjusting the configuration:
 
 ```yaml
-framework:
-    messenger:
-        transports:
-            # How about RabbitMQ?
-            contao_prio_high: amqp://guest:guest@localhost:5672/%2f/messages
-            # Or keep the existing Doctrine integration
-            # (note the missing "_doctrine" suffix in the transport name)
-            contao_prio_normal: doctrine://default?table_name=tl_message_queue&queue_name=prio_normal&auto_setup=false
-            contao_prio_low: ...
 contao:
     messenger:
         workers: [] # No workers will disable the cron job worker feature
 ```
 
-Now ensure that you run `messenger:consume` for all 3 built-in transports plus your own additional ones, in case you 
-configured any.
+The `WebWorker` will automatically detect that you have real workers running. This means you don't have to adjust the
+configuration. It will only kick in if your grace period is over because e.g. a worker takes too long to process a 
+message or something on your infrastructure failed and thus no workers are running. Having this fallback 
+solution to ensure your messages are always being worked on might be even a desirable state! If you want to absolutely
+avoid having any messages being worked on in the web process, however, you can easily disable this behavior as well by
+having the `WebWorker` listen to no transport at all:
+
+```yaml
+contao:
+   messenger:
+      web_worker:
+         transports: [] # No transports will disable the web worker feature
+```
 
 {{% notice tip %}}
 Because PHP (or your code) might leak memory, it's usually a good idea to use any of the limit options (see Symfony 

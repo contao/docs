@@ -246,13 +246,13 @@ Einmalpasswort muss von einer Zwei-Faktor-App wie z. B. 1Password, Authy, Google
 LastPass Authenticator oder jeder anderen TOTP-App generiert werden.
 
 Benutzer können verpflichtet werden, Zwei-Faktor-Authentisierung zu verwenden. Hierfür muss folgende Konfiguration in 
-die `config/config.yml` übernommen werden:
+die `config/config.yaml` übernommen werden:
 
-```yml
+```yaml
 contao:
-  security:
-    two_factor:
-      enforce_backend: true
+    security:
+        two_factor:
+            enforce_backend: true
 ```
 
 

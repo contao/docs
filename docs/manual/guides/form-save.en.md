@@ -100,6 +100,7 @@ class PrepareFormDataListener
         }
 
         // Mandatory fields
+        $submittedData['tstamp'] = time();
         $submittedData['pid'] = self::CALENDAR_ID;
         $submittedData['author'] = self::AUTHOR_ID;
 

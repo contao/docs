@@ -201,10 +201,10 @@ Der Manager erkennt bei der Grundinstallation, dass bereits Contao installiert i
 
 ### Kann ich die ».phar« Datei umbenennen?
 Ja. Du kannst einen beliebigen Dateinamen verwenden. Allerdings ist der Contao Manager dann nicht mehr über das Backend erreichbar.
-In diesem Fall kannst du die [config.yml](/de/system/einstellungen/#config-yml) entsprechend anpassen. Anschließend musst du über den 
+In diesem Fall kannst du die [config.yaml](/de/system/einstellungen/#config-yml) entsprechend anpassen. Anschließend musst du über den 
 Contao Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole einmalig den Anwendungs-Cache leeren.
 
-```yml
+```yaml
 # config/config.yaml
 contao_manager:
     manager_path: dein-name.phar.php

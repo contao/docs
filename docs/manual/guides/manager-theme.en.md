@@ -37,7 +37,7 @@ theme.xml
 ```
 
 Each file and directory within the archive is imported into the Contao root directory (except for "theme.xml"). Therefore, you could also add your 
-"config/config.yml" with further settings, such as "[legacy_routing: false](/en/site-structure/website-root/#legacy-routing-mode)". You 
+"config/config.yaml" with further settings, such as "[legacy_routing: false](/en/site-structure/website-root/#legacy-routing-mode)". You 
 can find another example in the [Isotope eCommerce Demo](https://github.com/isotope/isotope-demo).
 
 
@@ -50,9 +50,10 @@ you will find the directories "files", "templates" and the file "theme.xml".
 
 ### SQL-Dump
 
-You must create the current SQL-Dump of your theme installation via the [backup command](/en/cli/database-backups/) on the console. A normal 
-PHPMyAdmin export, for example, would not be sufficient. Then copy the "var/backups" directory with your current SQL-Dump into the 
-unzipped directory above. Only one SQL-Dump may exist in this directory. 
+You must create the current SQL-Dump of your theme installation via the [backup command](/en/cli/database-backups/) on the console or 
+via the [Contao Manager](/en/installation/contao-manager/) (`Maintenance - Database Migrations and Backups`). A normal PHPMyAdmin export, 
+for example, would not be sufficient. Then copy the "var/backups" directory with your current SQL-Dump into the unzipped directory above. 
+Only one SQL-Dump may exist in this directory. 
 
 The SQL-Dump is always optional. Without this, only the files are installed.
 

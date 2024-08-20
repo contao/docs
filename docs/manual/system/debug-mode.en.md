@@ -21,10 +21,10 @@ the following things are in effect:
 In Contao **4.4**, the debug mode also bypasses the image cache of Contao. While
 this can be useful, it will also slow down the page generation significantly on
 pages with a lot of images. To disable bypassing of the image cache add the following
-to your `config_dev.yml`:
+to your `config_dev.yaml`:
 
-```yml
-# app/config/config_dev.yml
+```yaml
+# app/config/config_dev.yaml
 contao:
     image:
         bypass_cache: false
