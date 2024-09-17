@@ -91,6 +91,7 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 | `opcache.max_accelerated_files` | `16000` empfohlen          | _not applicable_      | A lower value may cause an unnecessary slowdown.                                                                         |
 | `safe_mode`                     | `Off`                      | `Off`                 |                                                                                                                          |
 | `open_basedir`                  | `NULL`                     | `NULL`                | If active, make sure that the system's temporary directory can be accessed.                                              |
+| `opcache.save_comments`         | `On`                       | _not applicable_      | This is needed for to read Annotations in PHP files.                                                                     |
 
 
 ### MySQL Configuration
