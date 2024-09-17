@@ -39,7 +39,7 @@ supports authentication tokens. Tokens are always bound to a specific user accou
 and work similar to any other OAuth authentication.
 
 {{% notice info %}}
-The Contao Manager implements standard [OAuth Implicit Grant][OAuth] as far as possible. We are aware that Implicit Grant is 
+The Contao Manager implements standard [OAuth Implicit Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2) as far as possible. We are aware that Implicit Grant is 
 not recommended for security reasons, but other OAuth protocols require you to register an application ID prior to 
 accessing the OAuth endpoint. As an example: on Facebook, you have to register as a developer and register your 
 application to get a private key, before you can access the API and get a token. Because the Contao Manager is 

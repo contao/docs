@@ -66,6 +66,7 @@
 
     --VERSION-TAG-BG-color: #6AB0DE; /* Contao version tag */
 
+    --NETWORK-BAR-HEIGHT: 34px;
 }
 
 html[data-theme=dark] {
@@ -969,12 +970,38 @@ html[data-theme=dark] #toc-menu,
 }
 
 /* contao.org Top Navigation */
-#body { top: 40px; }
-#sidebar { top: 34px; }
-
-#contao-network {
-  position: fixed;
-  width: 100%;
-  z-index: 9999;
+body:before {
+    content: '';
+    background-color: #222;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: var(--NETWORK-BAR-HEIGHT);
+    z-index: 100;
 }
 
+#contao-network {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+#sidebar,
+#body,
+.DocSearch-Container {
+    margin-top: var(--NETWORK-BAR-HEIGHT);
+}
+
+#top-bar-sticky-wrapper {
+    padding-top: var(--NETWORK-BAR-HEIGHT);
+    margin-top: calc(var(--NETWORK-BAR-HEIGHT) * -1);
+    box-sizing: content-box;
+}
+
+#top-bar-sticky-wrapper.is-sticky #top-bar {
+    top: var(--NETWORK-BAR-HEIGHT) !important;
+}

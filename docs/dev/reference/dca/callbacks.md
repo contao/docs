@@ -641,7 +641,7 @@ an additional command check via a [`fields.<field>.load`](#fields-field-load) ca
 
 This callback allows you to generate a button for a specific global operation yourself, instead of letting Contao 
 generate it for you. The callback passes the originally generated button HTML as a string (if applicable), plus all the 
-metadata defined in the DCA that is included in the generatd button. The callback is expected to return a string 
+metadata defined in the DCA that is included in the generated button. The callback is expected to return a string 
 containing HTML for the button (or an empty string, if you do not want to show a button).
 
 {{% expand "Parameters" %}}
@@ -661,7 +661,7 @@ containing HTML for the button (or an empty string, if you do not want to show a
 
 This callback allows you to generate a button for a specific operation yourself, instead of letting Contao generate it
 for you. The callback passes the database record, the originally generated button HTML as a string (if applicable) and
-all the metadata defined in the DCA that is included in the generatd button. The callback is expected to return a string
+all the metadata defined in the DCA that is included in the generated button. The callback is expected to return a string
 containing HTML for the button (or an empty string, if you do not want to show a button).
 
 {{% expand "Parameters" %}}

@@ -6,9 +6,8 @@ aliases:
 ---
 
 
-{{% notice info %}}
-This list is still incomplete.
-{{% /notice %}}
+This is a list of potentially helpful services available within the Contao Managed Edition.
+Some are part of Contao's own framework while others originate from Symfony or other dependencies.
 
 
 ## ContaoFramework
