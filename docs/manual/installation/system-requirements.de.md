@@ -95,7 +95,7 @@ führen.
 | `opcache.max_accelerated_files` | `16000` empfohlen         | _nicht anwendbar_       | Ein niedrigerer Wert kann zu einer unnötigen Verlangsamung führen.                                                                                        |
 | `safe_mode`                     | `Off`                     | `Off`                   |                                                                                                                                                           |
 | `open_basedir`                  | `NULL`                    | `NULL`                  | Wenn aktiv, stelle sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                        |
-| `opcache.save_comments`         | `On`                      | _nicht anwendbar_       | Dies wird für das lesen von Annotations in PHP Dateien benötigt.                                                                                          |
+| `opcache.save_comments`         | `On`                      | _nicht anwendbar_       | Dies wird für das Lesen von Annotations in PHP Dateien benötigt.                                                                                          |
 
 
 ### MySQL-Konfiguration
