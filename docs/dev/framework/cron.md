@@ -48,7 +48,7 @@ automatically.
 
 {{< version "4.9" >}}
 
-Executing the cron jobs via the command line is dones via the `contao:cron` command:
+Executing the cron jobs via the command line is done via the `contao:cron` command:
 
 ```bash
 $ vendor/bin/contao-console contao:cron
