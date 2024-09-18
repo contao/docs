@@ -34,17 +34,21 @@ It is recommended to run PHP via PHP-FPM, otherwise cron execution and search in
 will block any subsequent request by the same user.
 {{% /notice %}}
 
-You can disable the front end cron by going to _System_ » _Settings_ » _Cron job 
+In Contao 4 you can disable the front end cron by going to _System_ » _Settings_ » _Cron job 
 settings_ and enabling the setting __Disable the command scheduler__. After disabling
-the front end cron you should periodically let Contao execute its cron jobs, either by
-executing them via the command line or by making a request to a web URL.
+the front end cron you should periodically let Contao execute its cron jobs, either via the command line or by making a 
+request to the web URL.
+
+{{< version-tag "5.1" >}} Starting with Contao **5.1** you cannot disable the front end cron. Instead Contao will detect 
+whether you are letting the cron jobs be executed periodically and thus disable their execution in the front end 
+automatically.
 
 
 ### Command Line
 
 {{< version "4.9" >}}
 
-You can also execute the cron jobs directly via the command line:
+Executing the cron jobs via the command line is dones via the `contao:cron` command:
 
 ```bash
 $ vendor/bin/contao-console contao:cron
@@ -54,7 +58,7 @@ This is also the recommended way of periodically executing Contao's cron jobs. I
 a Linux crontab you could use the following instructions for example:
 
 ```bash
-* * * * * php /path/to/contao/vendor/bin/contao-console contao:cron
+* * * * * /usr/bin/php /path/to/contao/vendor/bin/contao-console contao:cron
 ```
 
 {{% notice tip %}}
@@ -89,7 +93,7 @@ The latter can also be combined with the `--force` option.
 
 ### Web URL
 
-In order to trigger cron job execution via a web URL, a request to the `_contao/cron`,
+In order to trigger the execution of cron jobs via a web URL, a request to the `_contao/cron`
 route, e.g. `https://example.org/_contao/cron`, needs to be made. In a Linux crontab 
 you could use the following instructions for example:
 
