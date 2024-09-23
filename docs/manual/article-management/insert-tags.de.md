@@ -28,7 +28,7 @@ oder den Alias der Zielseite.
 | `{{link::login}}`      | Dieses Tag wird mit einem Link zur Anmeldeseite des aktuellen Frontend-Benutzers (falls vorhanden) ersetzt.                                                                                                                                            |
 | `{{link_open::*}}`     | Wird mit dem öffnenden Tag eines Links ersetzt. Der Parameter kann entweder die ID oder der Alias einer Seite sein, auch eine absolute URL ist möglich: `{{link_open::12}}Hier klicken{{link_close}}`.                                                 |
 | `{{link_url::*}}`      | Dieses Tag wird mit der URL einer internen Seite ersetzt: `<a href="{{link_url::12}}">Hier klicken</a>`.                                                                                                                                               |
-| `{{link_target::*}}`   | Dieses Tag wird mit ` target="_blank" rel="noreferrer noopener"` ersetzt, wenn es sich bei der angegebenen Seite um eine externe Weiterleitungsseite handelt, und dort eingestellt ist, dass sich der Link in einem neuen Fenster öffnen soll.         |
+| `{{link_target::*}}`   | Dieses Tag wird mit ` target="_blank" rel="noreferrer noopener"` ersetzt, wenn es sich bei der angegebenen Seite um eine externe Weiterleitungsseite handelt, und dort eingestellt ist, dass sich der Link in einem neuen Fenster öffnen soll. (veraltet seit **Contao 4.4**, nicht mehr verfügbar in **Contao 5.0**)         |
 | `{{link_title::*}}`    | Dieses Tag wird mit dem Titel einer internen Seite ersetzt: `<a title="{{link_title::12}}">Hier klicken</a>`.                                                                                                                                          |
 | `{{link_name::*}}`     | Dieses Tag wird mit dem Namen einer internen Seite ersetzt: `<a>{{link_name::12}}</a>`.                                                                                                                                                                |
 | `{{link_close}}`       | Wird mit dem schließenden Tag eines Links zu einer internen Seite ersetzt: `{{link_open::12}}Hier klicken{{link_close}}`.                                                                                                                              |
@@ -60,7 +60,7 @@ oder den Alias der Zielseite.
 
 `{{link::*`**`::absolute`**`}}`: Der Parameter erlaubt es, ein Insert-Tag-Link als absolute URL auszugeben.
 
-**HTML-Ausgabe**  
+**HTML-Ausgabe**
 Der Insert-Tag-Link mit Parameter generiert folgenden HTML-Code:
 
 ```html
@@ -72,7 +72,7 @@ Der Insert-Tag-Link mit Parameter generiert folgenden HTML-Code:
 
 `{{link::*`**`::blank`**`}}`: Der Parameter erlaubt es, ein Insert-Tag-Link in einem neuen Fenster zu öffnen.
 
-**HTML-Ausgabe**  
+**HTML-Ausgabe**
 Der Insert-Tag-Link mit Parameter generiert folgenden HTML-Code:
 
 ```html
@@ -234,11 +234,11 @@ Verfügbare Flags:
 | `urlattr`           | Wandelt Sonderzeichen in Entities um, gleich wie `attr`. Zusätzlich werden Doppelpunkte URL-enkodiert, um unerlaubte Protokolle wie `javascript:` zu verhindern. | siehe&nbsp;`StringUtil::specialcharsUrl()` |
 | `addslashes`        | Stellt bestimmten Zeichen eines Strings ein (<code>\\</code>) voran.     | [PHP-Funktion](https://php.net/addslashes)        |
 | `standardize`       | Standardisiert die Ausgabe (z. B. das Alias bei der Seitenstruktur).     |                                                   |
-| `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar                       |
+| `absolute`          | Generiert einen absoluten Pfad inkl. Hostnamen und Protokoll             | Ab Contao **4.5** verfügbar (veraltet seit **Contao 4.12**, nicht mehr verfügbar in **Contao 5.0**)                      |
 | `ampersand`         | Wandelt `&`-Zeichen in Entities um.                                      |                                                   |
 | `specialchars`      | Wandelt Sonderzeichen in Entities um.                                    |                                                   |
 | `nl2br`             | Fügt vor allen Zeilenumbrüchen eines Strings HTML-Zeilenumbrüche ein.    | [PHP-Funktion](https://php.net/nl2br)             |
-| `nl2br_pre`         | Erhält die Zeilenumbrüche innerhalb von `<pre>`-Tags.                    |                                                   |
+| `nl2br_pre`         | Erhält die Zeilenumbrüche innerhalb von `<pre>`-Tags.                    | (veraltet seit **Contao 4.0**, nicht mehr verfügbar in **Contao 5.0**)  |
 | `strtolower`        | Wandelt die Ausgabe in Kleinbuchstaben um.                               | [PHP-Funktion](https://php.net/strtolower)        |
 | `utf8_strtolower`   | Unicode-bewusste Umwandlung in Kleinbuchstaben.                          |                                                   |
 | `strtoupper`        | Wandelt die Ausgabe in Großbuchstaben um.                                | [PHP-Funktion](https://php.net/strtoupper)        |
@@ -274,7 +274,7 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 
 {{% notice "info" %}}
 Seit Contao **5** passiert dies nicht mehr automatisch für einzelne Felder des DCAs. In deinen eigenen DCA Feldern muss
-diese Funktion über `'basicEntities' => true` im [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation) 
+diese Funktion über `'basicEntities' => true` im [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation)
 der Feld-Definition aktiviert werden.
 {{% /notice %}}
 
