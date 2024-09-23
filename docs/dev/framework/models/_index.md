@@ -26,7 +26,7 @@ Each class extending `Model` has some *static* methods you can use:
 use Contao\PageModel;
 
 // get a record by its primary key
-$page = PageModel::findByPk(2);
+$page = PageModel::findById(2);
 
 // find a record by ID or alias (the parameter you pass can be both)
 $page = PageModel::findByIdOrAlias('index');

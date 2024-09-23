@@ -82,19 +82,20 @@ Diese Einstellungen sind die Empfehlungen für den idealen Betrieb von Contao. E
 dass Contao nicht funktioniert, kann jedoch zu unerwartetem Verhalten oder Leistungseinbußen/langsamen Reaktionen 
 führen.
 
-| Konfigurationsname              | Webprozess                   | Kommandozeile           | Anmerkungen                                                                                                                                               |
-|:--------------------------------|:-----------------------------|:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `memory_limit`                  | Minimum `256M`               | `-1`&nbsp;(unbegrenzt)  |                                                                                                                                                           |
-| `max_execution_time`            | Minimum `30`                 | `0` (unbegrenzt)        |                                                                                                                                                           |
-| `file_uploads`                  | `On`                         | _nicht anwendbar_       |                                                                                                                                                           |
-| `upload_max_filesize`           | Minimum `32M`                | _nicht anwendbar_       |                                                                                                                                                           |
-| `post_max_size`                 | wie `upload_max_filesize`    | _nicht anwendbar_       |                                                                                                                                                           |
-| `max_input_vars`                | `1000`                       | _nicht anwendbar_       | Benötigt möglicherweise mehr, wenn viele Erweiterungen installiert sind. Erhöhe, wenn die Benutzerzugriffsrechte nicht korrekt gespeichert werden können. |
-| `opcache.enable`                | `1` (aktiviert)              | `0` (deaktiviert)       | Das Deaktivieren des Opcode-Cache wirkt sich stark auf die Leistung aus.                                                                                  |
-| `opcache.enable_cli`            | `0` (deaktiviert)            | `0` (deaktiviert)       |                                                                                                                                                           |
-| `opcache.max_accelerated_files` | `16000` empfohlen            | _nicht anwendbar_       | Ein niedrigerer Wert kann zu einer unnötigen Verlangsamung führen.                                                                                        |
-| `safe_mode`                     | `Off`                        | `Off`                   |                                                                                                                                                           |
-| `open_basedir`                  | `NULL`                       | `NULL`                  | Wenn aktiv, stelle sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                   |
+| Konfigurationsname              | Webprozess                | Kommandozeile           | Anmerkungen                                                                                                                                               |
+|:--------------------------------|:--------------------------|:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `memory_limit`                  | Minimum `256M`            | `-1`&nbsp;(unbegrenzt)  |                                                                                                                                                           |
+| `max_execution_time`            | Minimum `30`              | `0` (unbegrenzt)        |                                                                                                                                                           |
+| `file_uploads`                  | `On`                      | _nicht anwendbar_       |                                                                                                                                                           |
+| `upload_max_filesize`           | Minimum `32M`             | _nicht anwendbar_       |                                                                                                                                                           |
+| `post_max_size`                 | wie `upload_max_filesize` | _nicht anwendbar_       |                                                                                                                                                           |
+| `max_input_vars`                | `1000`                    | _nicht anwendbar_       | Benötigt möglicherweise mehr, wenn viele Erweiterungen installiert sind. Erhöhe, wenn die Benutzerzugriffsrechte nicht korrekt gespeichert werden können. |
+| `opcache.enable`                | `1` (aktiviert)           | `0` (deaktiviert)       | Das Deaktivieren des Opcode-Cache wirkt sich stark auf die Leistung aus.                                                                                  |
+| `opcache.enable_cli`            | `0` (deaktiviert)         | `0` (deaktiviert)       |                                                                                                                                                           |
+| `opcache.max_accelerated_files` | `16000` empfohlen         | _nicht anwendbar_       | Ein niedrigerer Wert kann zu einer unnötigen Verlangsamung führen.                                                                                        |
+| `safe_mode`                     | `Off`                     | `Off`                   |                                                                                                                                                           |
+| `open_basedir`                  | `NULL`                    | `NULL`                  | Wenn aktiv, stelle sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                        |
+| `opcache.save_comments`         | `On`                      | _nicht anwendbar_       | Dies wird für das Lesen von Annotations in PHP Dateien benötigt.                                                                                          |
 
 
 ### MySQL-Konfiguration
@@ -160,13 +161,13 @@ getestet. Die Verwendung von `utf8` anstelle des `utf8mb4`-Zeichensatzes führt 
 keine Emojis).
 
 Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden können, konfiguriere bitte einen anderen 
-Zeichensatz in deiner [`config/config.yml`](../../system/einstellungen/#config-yml)-Datei:
+Zeichensatz in deiner [`config/config.yaml`](../../system/einstellungen/#config-yml)-Datei:
 
 {{% notice note %}}
-Vor **Contao 4.8** findest du die Datei unter `app/config/config.yml`.  
+Vor **Contao 4.8** findest du die Datei unter `app/config/config.yaml`.  
 {{% /notice %}}
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:
@@ -196,9 +197,9 @@ sql_mode="TRADITIONAL"
 ```
 
 Wenn die oben empfohlene Einstellung auf deinem Server nicht aktiviert werden kann, konfiguriere
-die Verbindungsoptionen bitte in deiner `config/config.yml`-Datei:
+die Verbindungsoptionen bitte in deiner `config/config.yaml`-Datei:
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:
@@ -296,7 +297,7 @@ Contao 4.9 oder älter):
 {{% /tab %}}
 
 {{% tab name="NGINX" %}}
-Am wichtigsten ist es sicherzustellen, dass alle Anfragen die nicht an eine existierende Datei gehen an die PHP-Applikation zur Verarbeitung
+Am wichtigsten ist es sicherzustellen, dass alle Anfragen, die nicht an eine existierende Datei gehen, an die PHP-Applikation zur Verarbeitung
 weitergegeben werden. Dies passiert über die Anweisung `try_files $uri /index.php$is_args$args;`.
 
 Eine minimale `server` Definition für den NGINX könnte so aussehen (`…/public` mit `…/web` austauschen für

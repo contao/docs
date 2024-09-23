@@ -90,7 +90,7 @@ contao:
 Registering your own search indexer can be done by implementing the `Contao\CoreBundle\Search\Indexer\IndexerInterface`
 and registering your service using the `contao.search_indexer` service tag:
 
-```yml
+```yaml
 # config/services.yaml
 services:
     App\Search\ExampleSearchIndexer:

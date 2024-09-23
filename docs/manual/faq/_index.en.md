@@ -87,10 +87,10 @@ from the manager or the console.
 {{% /faq %}}
 
 {{% faq "How can I change the Contao backend path?" %}}
-{{< version-tag "4.13" >}} You can add the entry `route_prefix` in config.yml and then you have to empty the application cache once using the Contao Manager or the console.
+{{< version-tag "4.13" >}} You can add the entry `route_prefix` in config.yaml and then you have to empty the application cache once using the Contao Manager or the console.
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     backend:
         route_prefix: '/myadmin'
@@ -98,7 +98,7 @@ contao:
 {{% /faq %}}
 
 {{% faq "No e-mail is sent via my Form, what do I have to do?" %}}
-Check the [SMTP details](/en/system/settings/#e-mail-sending-configuration) of your hoster in your `parameters.yml` or add them if missing.
+Check the [SMTP details](/en/system/settings/#e-mail-sending-configuration) of your hoster in your `parameters.yaml` or add them if missing.
 Then you have to empty the application cache once via Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") 
 or via the console.
 {{% /faq %}}
@@ -111,21 +111,21 @@ Since Contao 4.10 you can [set different e-mail configurations](/en/system/setti
 {{% /faq %}}
 
 {{% faq "How can I add the language parameter to the URL?" %}}
-You can add the entry `prepend_locale: true` in [config.yml](/en/system/settings/#config-yml) and then you have to 
+You can add the entry `prepend_locale: true` in [config.yaml](/en/system/settings/#config-yml) and then you have to 
 empty the application cache once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
 Since Contao 4.10, you can freely define the URL prefix, independently of the language.
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     prepend_locale: true
 ```
 {{% /faq %}}
 
 {{% faq "Can the URL suffix .html be removed?" %}}
-You can add the entry `url_suffix: ''` in [config.yml](/en/system/settings/#config-yml) and then you have to 
+You can add the entry `url_suffix: ''` in [config.yaml](/en/system/settings/#config-yml) and then you have to 
 empty the application cache once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console. 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     url_suffix: ''
 ```
@@ -197,10 +197,10 @@ After that, the Contao Manager should run again.
 
 {{% faq "Can I rename the ».phar« file?" %}}
 Yes. You can use any file name you want. However, the Contao Manager is no longer accessible from the Backend. 
-In this case, you can change the [config.yml](/en/system/settings/#config-yml) accordingly. Afterwards, you have to empty the application cache 
+In this case, you can change the [config.yaml](/en/system/settings/#config-yml) accordingly. Afterwards, you have to empty the application cache 
 once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao_manager:
     manager_path: your-name.phar.php
 ```

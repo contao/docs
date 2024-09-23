@@ -25,7 +25,7 @@ für die Verwaltung der mehrsprachigen Inhalte.
 In Contao wird ausschließlich die erste Variante unterstützt (bis auf einige Third-Party-Erweiterungen, die für die 
 Verwaltung eigener Inhalte von diesem Konzept abweichen).
 
-Damit die Sprache der URL (z. B. `www.example.com/de/`) hinzugefügt wird, musst du folgende Zeilen in die `config.yml` 
+Damit die Sprache der URL (z. B. `www.example.com/de/`) hinzugefügt wird, musst du folgende Zeilen in die `config.yaml` 
 im Ordner `app/config/` einfügen. Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden.
 
 {{% notice note %}}
@@ -55,7 +55,7 @@ auch ohne Präfix zu benutzen, während die anderen Startpunkte der selben Domai
 möglich wird, muss aber das »[Legacy Routing][LegacyRouting]« über die Konfiguration deaktiviert werden:
 
 ```yaml
-# config/config.yml
+# config/config.yaml
 contao:
     legacy_routing: false
 ```
@@ -79,18 +79,18 @@ Auffangseite geladen wird. Lass uns das an einem konkreten Beispielszenario nach
 
 Nehmen wir an, du hast zwei Domains, eine geschäftliche und eine private:
 
-- `www.firma.de`
-- `www.privat.de`
+- `www.example.com`
+- `www.example.org`
 
 Die geschäftliche Seite ist zweisprachig, daher benötigst du insgesamt drei Startpunkte:
 
 **DNS-Einstellungen für die verschiedenen Startpunkte**
 
-| Seite            | Domainname  | Sprache  | Sprachen-Fallback  |
-|:-----------------|:------------|:---------|:-------------------|
-| Firma deutsch    | -           | de       | -                  |
-| Firma englisch   | -           | en       | ja                 |
-| Privat           | privat.de   | de       | ja                 |
+| Seite            | Domainname   | Sprache  | Sprachen-Fallback  |
+|:-----------------|:--------------|:---------|:-------------------|
+| Firma deutsch    | -             | de       | -                  |
+| Firma englisch   | -             | en       | ja                 |
+| Privat           | example.org   | de       | ja                 |
 
 Besucher werden in Abhängigkeit von der aufgerufenen Domain und der im Browser eingestellten Sprache dann wie folgt 
 weitergeleitet:
@@ -99,12 +99,12 @@ weitergeleitet:
 
 | Domain           | Browsersprache  | Ziel            | Übereinstimmung    |
 |:-----------------|:----------------|:----------------|:-------------------|
-| www.firma.de     | Deutsch         | Firma deutsch   | Sprache            |
-| www.firma.de     | Englisch        | Firma englisch  | Sprache            |
-| www.firma.de     | Spanisch        | Firma englisch  | -                  |
-| www.privat.de    | (egal)          | Privat          | Domain             |
+| www.example.com  | Deutsch         | Firma deutsch   | Sprache            |
+| www.example.com  | Englisch        | Firma englisch  | Sprache            |
+| www.example.com  | Spanisch        | Firma englisch  | -                  |
+| www.example.org  | (egal)          | Privat          | Domain             |
 
-Die ersten drei Fälle führen alle zur Firmenseite, auch wenn die Domain `firma.de` gar nicht explizit in den 
+Die ersten drei Fälle führen alle zur Firmenseite, auch wenn die Domain `example.com` gar nicht explizit in den 
 DNS-Einstellungen hinterlegt ist. Das ist auch gar nicht notwendig, denn die Firmenseite ist in diesem Fall quasi die 
 Auffangseite für unbekannte Domains.
 

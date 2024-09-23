@@ -6,9 +6,8 @@ aliases:
 ---
 
 
-{{% notice info %}}
-This list is still incomplete.
-{{% /notice %}}
+This is a list of potentially helpful services available within the Contao Managed Edition.
+Some are part of Contao's own framework while others originate from Symfony or other dependencies.
 
 
 ## ContaoFramework
@@ -118,13 +117,14 @@ class Example
 
 {{< version "4.13" >}}
 
-The `contao.cache.entity_tags` service helps you tag responses and invalidate cache tags based on entity and model
-classes and instances. Contao uses a naming convention for database related tags: A tag `contao.db.tl_content.5` targets
-the content element with the ID 5, while `contao.db.tl_content` would target *all* content elements.
+The `contao.cache.entity_tags` (`Contao\CoreBundle\Cache\EntityCacheTags`) service helps you tag responses and 
+invalidate cache tags based on entity and model classes and instances. Contao uses a naming convention for database 
+related tags: A tag `contao.db.tl_content.5` targets the content element with the ID 5, while `contao.db.tl_content` 
+would target *all* content elements.
 
-#### Tagging
+### Tagging
 
-Instead of composing this tags yourself, let the service handle this for you by passing in class names or entity/model 
+Instead of composing these tags yourself, let the service handle this for you by passing in class names or entity/model 
 instances into one of its `tagWith()` methods:
 
 ```php
@@ -141,7 +141,7 @@ $entityCacheTags->tagWith(Blog::class);
 
 Tagging works with entity/model class names, objects and collections. You can also safely pass in `null`.
 
-#### Invalidating
+### Invalidating
 
 Analogous to tagging, you can also use the service to invalidate certain cache tags. This, again, works with
 entity/model class names, objects and collections as well as `null`:
@@ -207,8 +207,7 @@ class Example
 
 ## Router
 
-This service from symfony handles any routing task and can be ued to generate URLs
-to routes in your services.
+This service from Symfony handles any routing task and can be used to generate URLs to routes in your services.
 
 ```php
 use App\Controller\ExampleController;
@@ -263,6 +262,8 @@ class Example
 Not directly related to Contao, but this helper service from Symfony lets you retrieve
 the current Contao front end or back end user from the firewall.
 
+{{< tabs groupId="services-contao4-contao5" >}}
+{{% tab name="Contao 4" %}}
 ```php
 use Contao\BackendUser;
 use Contao\FrontendUser;
@@ -298,6 +299,120 @@ class Example
 
         // Get current front end user
         if (($user = $this->security->getUser()) instanceof FrontendUser) {
+            // …
+        }
+    }
+}
+```
+{{% /tab %}}
+{{% tab name="Contao 5" %}}
+```php
+use Contao\BackendUser;
+use Contao\FrontendUser;
+use Symfony\Bundle\SecurityBundle\Security;
+
+class Example
+{
+    public function __construct(private readonly Security $security)
+    {
+    }
+
+    public function execute()
+    {
+        // Check for admin back end user role
+        if ($this->security->isGranted('ROLE_ADMIN')) {
+            // …
+        }
+
+        // Check for regular back end user role
+        if ($this->security->isGranted('ROLE_USER')) {
+            // …
+        }
+
+        // Check for front end user role
+        if ($this->security->isGranted('ROLE_MEMBER')) {
+            // …
+        }
+
+        // Get current back end user
+        if (($user = $this->security->getUser()) instanceof BackendUser) {
+            // …
+        }
+
+        // Get current front end user
+        if (($user = $this->security->getUser()) instanceof FrontendUser) {
+            // …
+        }
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+If you only need to check the authorization you can inject the `AuthorizationCheckerInterface` instead:
+
+```php
+use Contao\CoreBundle\Security\ContaoCorePermissions;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
+class Example
+{
+    public function __construct(private readonly AuthorizationCheckerInterface $auth)
+    {
+    }
+
+    public function execute()
+    {
+        // Check for admin back end user role
+        if ($this->auth->isGranted('ROLE_ADMIN')) {
+            // …
+        }
+
+        // Check for regular back end user role
+        if ($this->auth->isGranted('ROLE_USER')) {
+            // …
+        }
+
+        // Check for front end user role
+        if ($this->auth->isGranted('ROLE_MEMBER')) {
+            // …
+        }
+
+        // Check whether the back end user can access any field in tl_page
+        if ($this->auth->isGranted(ContaoCorePermissions::USER_CAN_EDIT_FIELDS_OF_TABLE, 'tl_page')) {
+            // …
+        }
+
+        // Check whether the front end user is a member of specific groups
+        if ($this->auth->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, [2, 9])) {
+            // …
+        }
+    }
+}
+```
+
+If you only want to retrieve the logged in user you can inject the `TokenStorageInterface` instead:
+
+```php
+use Contao\BackendUser;
+use Contao\FrontendUser;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+
+class Example
+{
+    public function __construct(private readonly TokenStorageInterface $tokenStorage)
+    {
+    }
+
+    public function execute()
+    {
+        // Get current back end user
+        if (($user = $this->tokenStorage->getToken()?->getUser()) instanceof BackendUser) {
+            // …
+        }
+
+        // Get current front end user
+        if (($user = $this->tokenStorage->getToken()?->getUser()) instanceof FrontendUser) {
             // …
         }
     }
@@ -643,6 +758,72 @@ class ExampleService
 ```
 
 
+## Mailer
+
+If you want to create and send emails directly instead of using Contao's legacy `Contao\Email` class, you can use the
+[Symfony Mailer][SymfonyMailer] (which is internally used by the legacy class).
+
+```php
+namespace App;
+
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+
+class ExampleService
+{
+    public function __construct(private readonly MailerInterface $mailer)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        $email = (new Email())
+            ->from('hello@example.com')
+            ->to('you@example.com')
+            ->subject('Lorem ipsum dolor')
+            ->text('Lorem ipsum dolor sit amet.')
+            ->html('<p>Lorem ipsum dolor sit amet.</p>')
+        ;
+
+        $this->mailer->send($email);
+    }
+}
+```
+
+
+## PageFinder
+
+{{< version "5.3" >}}
+
+The `contao.routing.page_finder` service provides some utility methods in order to find pages from the site structure 
+for a hostname, a request, etc. Since Contao **5.4.** this service also provies a `getCurrentPage()` method to get the 
+current (or given) request's page (instead of having to access `$GLOBALS['objPage']`).
+
+```php
+namespace App;
+
+use Contao\CoreBundle\Routing\PageFinder;
+
+class ExampleService
+{
+    public function __construct(private readonly PageFinder $pageFinder)
+    {
+    }
+
+    public function __invoke(): void
+    {
+        // The root page for the given domain (and optional language)
+        $rootPageForHost = $this->pageFinder->findRootPageForHostAndLanguage('example.com');
+
+        // The current request's page, if applicable
+        $currentPage = $this->pageFinder->getCurrentPage();
+
+        // …
+    }
+}
+```
+
+
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
 [ExpressionProvider]: https://symfony.com/doc/current/components/expression_language/extending.html#components-expression-language-provider
@@ -651,3 +832,4 @@ class ExampleService
 [RequestStack]: https://symfony.com/doc/current/service_container/request.html
 [ResponseContext]: /framework/response-context/
 [ContainerConfig]: /reference/config/
+[SymfonyMailer]: https://symfony.com/doc/current/mailer.html

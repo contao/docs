@@ -59,7 +59,7 @@ Registering DCA callbacks is similar to [registering to hooks][1]. See the
 callback you are subscribing to, your callback will receive a certain sets of
 arguments and is expected to return certain data - or _void_.
 
-As of Contao **4.13**, there are four different ways of subscribing to a hook. The recommended way is using _PHP attributes_ together with 
+As of Contao **4.13**, there are four different ways of subscribing to a callback. The recommended way is using _PHP attributes_ together with 
 [invokable services](#invokable-services). Which one you use depends on your setup. For example, if you still need to support PHP 7 you can
 use _annotations_. If you still develop callbacks for Contao **4.4** then you still need to use the _PHP array configuration_.
 

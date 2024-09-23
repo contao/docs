@@ -91,6 +91,7 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 | `opcache.max_accelerated_files` | `16000` empfohlen          | _not applicable_      | A lower value may cause an unnecessary slowdown.                                                                         |
 | `safe_mode`                     | `Off`                      | `Off`                 |                                                                                                                          |
 | `open_basedir`                  | `NULL`                     | `NULL`                | If active, make sure that the system's temporary directory can be accessed.                                              |
+| `opcache.save_comments`         | `On`                       | _not applicable_      | This is needed to read Annotations in PHP files.                                                                         |
 
 
 ### MySQL Configuration
@@ -151,13 +152,13 @@ Contao has been successfully tested on MySQL servers version 5.7 / 8.0 (and equi
 The use of `utf8` instead of the `utf8mb4` character set results in a worse UTF8 support (e.g. no emojis).
 
 If the above recommended options cannot be enabled on your server, please configure a different character set in your 
-[`config/config.yml`](../../system/settings/#config-yml) file:
+[`config/config.yaml`](../../system/settings/#config-yml) file:
 
 {{% notice note %}}
-Before **Contao 4.8** you can find the file under `app/config/config.yml`.  
+Before **Contao 4.8** you can find the file under `app/config/config.yaml`.  
 {{% /notice %}}
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:
@@ -187,9 +188,9 @@ sql_mode="TRADITIONAL"
 ```
 
 If the setting cannot be enabled on your server, please configure the connection
-options in your `config/config.yml` file:
+options in your `config/config.yaml` file:
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:

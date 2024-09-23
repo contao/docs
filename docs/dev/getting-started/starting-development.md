@@ -63,9 +63,8 @@ configurations, if present:
 
 | File                     | Explanation                                                                                   |
 | ------------------------ | --------------------------------------------------------------------------------------------- |
-| `.env`                   | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
-| `.env.local`             | Loaded if both `.env` and `.env.local` are found. Overrides parameters for local development. |
-| `.env.dist`              | Loaded if `.env` is not found. Contains default parameters for the application.               |
+| `.env`                   | Defaults for environment variables or environment variables that are agnostic to the environment. This is typically comitted to your project's repository and thus should not contain any sensitive data. |
+| `.env.local`             | Loaded if `.env` exists. Defines or overrides environment variables for the current environment (e.g. database and SMTP credentials). This should be added to your `.gitignore` as it typically contains sensitive data. |
 | `config/config.yaml`      | Configuration of any bundle/package/extension.                                                |
 | `config/config_dev.yaml`  | Configuration for the `dev` environment.                                                      |
 | `config/config_prod.yaml` | Configuration for the `prod` environment.                                                     |
@@ -95,7 +94,7 @@ for more information about the `.env*` files.
 <sup>3</sup> While Contao versions prior to **4.9** do not load a `config/services.yml` automatically, 
 you can still import it in your `config/config.yml` via
 
-```yml
+```yaml
 imports:
     - { resource: services.yml }
 ```

@@ -83,8 +83,8 @@ die sog. »Retention Policy«, also wie bzw. bis wann, ältere Backups noch gesp
 
 Die Standardeinstellungen lauten wie folgt:
 
-```yml
-# config/config.yml
+```yaml
+# config/config.yaml
 contao:
     backup:
         ignore_tables: ['tl_crawl_queue', 'tl_log', 'tl_search', 'tl_search_index', 'tl_search_term']
