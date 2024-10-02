@@ -98,6 +98,59 @@ $contaoCsrfTokenManager->getDefaultTokenValue();
 ```
 {{% /notice %}}
 
+## Requiring Contao CSRF for Symfony form submits
+
+If you want to use Symfony Forms in a controller or in a custom service, you have to use the Contao CSRF configuration so that 
+the request is not blocked.
+
+If you have a Contao controller extended from `AbstractFrontendModuleController` or `AbstractContentElementController` 
+you can simply use `$this->getCsrfOptions()` and pass them to the options array:
+
+```php
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\Twig\FragmentTemplate;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class MyCustomController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        $formBuilder = $this->createFormBuilder(options: $this->getCsrfFormOptions());
+        // ....
+    }
+}
+```
+
+For Symfony controllers or servcies you need the `FormFactoryInterface`, the `ContaoCsrfTokenManager` service 
+and the `contao.csrf_token_name` parameter from the container.
+
+```php
+use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\Form\FormBuilderInterface
+use Symfony\Component\Form\FormFactoryInterface;
+
+class MyCustomService
+{
+    public function __construct(
+        private readonly FormFactoryInterface $formFactory,
+        private readonly ContaoCsrfTokenManager $csrfTokenManager,
+        #[Autowire(param: 'contao.csrf_token_name')]
+        private readonly string $csrfTokenName,
+    ){}
+
+    public function getFormBuilder(): FormBuilderInterface
+    {
+        return $this->formFactory->createBuilder(options: [
+            'csrf_field_name' => 'REQUEST_TOKEN',
+            'csrf_token_manager' => $this->csrfTokenManager,
+            'csrf_token_id' => $this->csrfTokenName,
+        ]);
+    }
+}
+```
 
 ## Deprecated Constants, Configuration Settings and more
 
