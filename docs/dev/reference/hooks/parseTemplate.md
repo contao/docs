@@ -53,16 +53,14 @@ use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\FrontendTemplate;
 use Contao\Template;
-use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 #[AsHook('parseTemplate')]
 class ParseTemplateListener
 {
-    private $security;
-
-    public function __construct(Security $security)
-    {
-        $this->security = $security;
+    public function __construct(
+        private readonly AuthorizationCheckerInterface $authorizationChecker
+    ) {
     }
 
     public function __invoke(Template $template): void
@@ -72,7 +70,7 @@ class ParseTemplateListener
         }
 
         $template->isMemberOf = function ($groupId): bool {
-            return $this->security->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, $groupId);
+            return $this->authorizationChecker->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, $groupId);
         };
     }
 }
