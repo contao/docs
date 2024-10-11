@@ -368,24 +368,21 @@ namespace App\Controller;
 use Contao\CoreBundle\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Twig\Environment;
 
 #[Route('/contao/my-backend-route', name: BackendController::class, defaults: ['_scope' => 'backend'])]
 class BackendController
 {
-    private $twig;
-    private $security;
-
-    public function __construct(Environment $twig, Security $security)
-    {
-        $this->twig = $twig;
-        $this->security = $security;
+    public function __construct(
+        private readonly Environment $twig, 
+        private readonly AuthorizationCheckerInterface $auth,
+    ) {
     }
 
     public function __invoke(): Response
     {
-        if (!$this->security->isGranted('ROLE_ADMIN') && !$this->security->isGranted('contao_user.my_permissions', 'first_permission')) {
+        if (!$this->auth->isGranted('ROLE_ADMIN') && !$this->auth->isGranted('contao_user.my_permissions', 'first_permission')) {
             throw new AccessDeniedException('Not enough permissions to access this controller.');
         }
 
