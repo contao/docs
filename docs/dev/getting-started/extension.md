@@ -421,6 +421,13 @@ class Plugin implements RoutingPluginInterface
 This will load the routing configuration located under `config/routes.yaml`
 of this extension.
 
+```yaml
+# config/routes.yaml
+somevendor.contao_example_bundle.controller:
+    resource: ../src/Controller
+    type: attribute
+```
+
 
 ## Versioning & Publishing
 
