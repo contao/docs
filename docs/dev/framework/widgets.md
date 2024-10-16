@@ -1,6 +1,6 @@
 ---
-title: "Widgets"
-description: How to develop custom input widgets for the back and front end.
+title: "Form Widgets"
+description: How to develop custom input widgets for forms in the back end and front end.
 aliases:
     - /framework/widgets/
 ---
