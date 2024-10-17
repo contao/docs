@@ -270,6 +270,7 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 | `[gt]`         | `&gt;` = greater than (`>`)  |
 | `[nbsp]`       | `&nbsp;` = non-breaking space<br>Wenn der Umbruch zwischen zwei Wörtern verhindert werden soll, muss ein geschütztes Leerzeichen eingefügt werden (z. B. `Contao[nbsp]CMS`). |
 | `[-]`          | `&shy;` = soft hyphen<br>Das Wort wird umgebrochen, wenn nicht ausreichend Platz zur Verfügung steht. Die Trennung erfolgt mit Trennstrich (z. B. `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft`). |
+| `[zwsp]`       | {{< version-tag "5.3" >}} `&ZeroWidthSpace;` = zero-width space<br>breitenlose Leerzeichen - auch nullbreites Leerzeichen; siehe [Wikipedia](https://de.wikipedia.org/wiki/Breitenloses_Leerzeichen) |
 | `[{]`, `[}]`   | Wird im Frontend jeweils mit `{{` bzw. `}}` ersetzt. Damit kann man Insert-Tags im Frontend anzeigen, um sie z. B. zu erklären. |
 
 {{% notice "info" %}}
