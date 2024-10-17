@@ -94,8 +94,8 @@ on the messages that are on the queue. This is how it works:
    expired) it will conclude that no worker is running, and thus it will start consuming messages from that 
    transport within the web process. This is basically as if you had the `sync` transport configured with one additional advantage: As this happens in `kernel.terminate`, depending on your PHP setup, it is deferred to after the response has been sent to the client 
    (`fastcgi_finish_request()`). So it is a win for you in any case!
-3. The `WebWorker` always limits its inline `messenger:consume` logic to a maximum of `30` seconds (not configurable)
-   in order to make sure the web process does not run forever.
+3. The `WebWorker` always limits its inline `messenger:consume` logic using `--time-limit`. The limit is determined using the `max_execution_time` ini directive with a certain buffer to try to ensure, the `max_execution_time`
+   is never hit.
 
 The grace period to determine whether a worker is running or not is needed because if there's only one worker 
 working on e.g. `contao_prio_high` and the message the worker is currently working on takes - say - 15 minutes to 
