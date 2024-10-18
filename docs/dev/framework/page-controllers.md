@@ -111,7 +111,7 @@ Next a palette for the back end should be defined for this page type:
 ```php
 // contao/dca/tl_page.php
 $GLOBALS['TL_DCA']['tl_page']['palettes']['example'] =
-    '{title_legend},title,alias,type;{publish_legend},published,start,stop';
+    '{title_legend},title,type,alias;{publish_legend},published,start,stop';
 ```
 
 A translation for the back end label should be defined to:
