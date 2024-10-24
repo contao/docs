@@ -60,6 +60,16 @@ opcache.memory_consumption = 128
 ; Denk daran: Mehr Extensions = mehr Code = mehr Speicherbedarf
 opcache.max_accelerated_files = 20000
 
+; Beim Parsen von PHP-Dateien mit fest codierten Zeichenketten konvertiert OPcache diese Zeichenketten
+; in «interne Zeichenketten» im Speicher. Das bedeutet, dass eine Zeichenkette wie «Contao»,
+; die an mehreren Stellen im Code und über verschiedene Anfragen hinweg verwendet wird, 
+; alle auf denselben Speicherort verweist, wodurch der Speicherverbrauch von PHP erheblich reduziert wird.
+; Die Standardgröße des internen String-Puffers beträgt jedoch nur 8 MB.
+; Für Anwendungen, die Frameworks verwenden (wie Contao, das auf Symfony basiert und viele andere Bibliotheken
+; von Drittanbietern angewiesen ist), ist es ratsam, diese Größe auf 32 MB oder 64 MB zu erhöhen, um
+; den Anforderungen solcher Systeme besser gerecht zu werden.
+opcache.interned_strings_buffer=32
+
 ; Standardmässig prüft PHP bei jeder Ausführung, ob sich eine Datei seit dem letzten Aufruf verändert hat.
 ; Das ist praktisch, verlangsamt aber natürlich den Zugriff.
 ; Wenn du dieses Verhalten deaktivierst, wird sich die Performance verbessern.
