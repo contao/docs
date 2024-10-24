@@ -164,13 +164,16 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 
 #### Toggle Operation
 
-{{< version-tag "5.0" >}} You can implement an automatic toggle operation for data containers that contain a boolean 
-field. This is typically used for fields that control a "published" state of a data record for example, but the use case 
+{{< version-tag "4.13" >}} You can implement an automatic toggle operation for data containers that contain a boolean
+field. This is typically used for fields that control a "published" state of a data record for example, but the use case
 can be arbitrary.
 
 ```php
 // contao/dca/tl_foobar.php
-$GLOBALS['TL_DCA']['tl_foobar']['list']['operations'][] = 'toggle';
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
+    'href' => 'act=toggle&amp;field=published',
+    'icon' => 'visible.gif',
+];
 
 $GLOBALS['TL_DCA']['tl_foobar']['fields']['published'] = [
     'toggle' => true,
@@ -179,7 +182,6 @@ $GLOBALS['TL_DCA']['tl_foobar']['fields']['published'] = [
 ];
 ```
 
-{{% notice "note" %}}
 If the state of your field is reversed you can instead define `reverseToggle`:
 
 ```php
@@ -189,4 +191,10 @@ $GLOBALS['TL_DCA']['tl_foobar']['fields']['invisible'] = [
     'sql' => ['type' => 'boolean', 'default' => false],
 ];
 ```
-{{% /notice %}}
+
+{{< version-tag "5.0" >}} Since contao 5 you can reduce the toggle operation to a single line:
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations'][] = 'toggle';
+```
