@@ -172,7 +172,7 @@ can be arbitrary.
 // contao/dca/tl_foobar.php
 $GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
     'href' => 'act=toggle&amp;field=published',
-    'icon' => 'visible.gif',
+    'icon' => 'visible.svg',
 ];
 
 $GLOBALS['TL_DCA']['tl_foobar']['fields']['published'] = [
