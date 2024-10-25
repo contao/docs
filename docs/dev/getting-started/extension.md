@@ -428,6 +428,29 @@ somevendor.contao_example_bundle.controller:
     type: attribute
 ```
 
+If you only need one format (e.g. `attribute`) and have all your controllers in the same place (e.g. `src/Controller`), 
+you may save yourself the additional config file:
+
+```php
+// src/ContaoManager/Plugin.php
+namespace Somevendor\ContaoExampleBundle\ContaoManager;
+
+use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
+use Symfony\Component\Config\Loader\LoaderResolverInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
+
+class Plugin implements RoutingPluginInterface
+{
+    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+    {
+        return $resolver
+            ->resolve(__DIR__.'/../Controller', 'attribute')
+            ->load(__DIR__.'/../Controller')
+        ;
+    }
+}
+```
+
 
 ## Versioning & Publishing
 
