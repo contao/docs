@@ -45,7 +45,7 @@ class ParseArticlesListener
     public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void
     {
         // Remove the default "by …" from Contao
-        $template->author = UserModel::findByPk($newsEntry['author'])->name;
+        $template->author = UserModel::findById($newsEntry['author'])->name;
     }
 }
 ```

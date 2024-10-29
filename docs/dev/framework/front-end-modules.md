@@ -89,7 +89,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
     protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
     {
         if ($request->isMethod(Request::METHOD_POST)) {
-            if (null !== ($redirectPage = PageModel::findByPk($model->jumpTo))) {
+            if (null !== ($redirectPage = PageModel::findById($model->jumpTo))) {
                 throw new RedirectResponseException($redirectPage->getAbsoluteUrl());
             }
         }

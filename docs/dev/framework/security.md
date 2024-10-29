@@ -290,7 +290,7 @@ class NewsAccessVoter extends Voter
         if ('tl_news' === $subject->getDataSource()) {
             $authorId = $record['author'];
         } else {
-            $news = NewsModel::findByPk($record['pid']);
+            $news = NewsModel::findById($record['pid']);
             $authorId = $news->author;
         }
 

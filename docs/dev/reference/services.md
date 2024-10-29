@@ -29,7 +29,7 @@ class Example
     {
         $this->framework->initialize();
 
-        $contentElement = \Contao\ContentModel::findByPk(…);
+        $contentElement = \Contao\ContentModel::findById(…);
 
         $system = $this->framework->getAdapter(\Contao\System::class);
         $system->loadLanguageFile('default');
@@ -195,7 +195,7 @@ class Example
 
         $related = $token->getRelatedRecords();
 
-        if (1 !== count($related) || 'tl_example' !== key($related) || null === ExampleModel::findByPk(current($related))) {
+        if (1 !== count($related) || 'tl_example' !== key($related) || null === ExampleModel::findById(current($related))) {
             throw new \RuntimeException('Invalid token');
         }
 
