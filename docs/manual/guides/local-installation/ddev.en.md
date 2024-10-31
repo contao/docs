@@ -102,7 +102,7 @@ DDEV can be used to provide additional PHP configurations for a project. You can
 
 An example file in `.ddev/php/my-php.ini` could look like this:
 
-```ìni
+```ini
 [PHP]
 memory_limit = -1
 ```
