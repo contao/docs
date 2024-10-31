@@ -26,52 +26,9 @@ mehr Informationen zur Installation dieser Programme durchlesen.
 
 DDEV ist für alle Plattformen verfügbar, für die Installation deiner Plattform schau bitte in der [DDEV Dokumentation](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) nach.
 
-
-### Beispiel: Die Installation unter macOS mit __brew__ durchführen
-
-```shell
-brew install ddev/ddev/ddev
-```
-
-Nach der Installation noch die lokalen SSL-Zertifikate installieren (im Anschluss Browser neu starten).
-
-```shell
-mkcert -install
-```
-
-Seine Installation sollte man auch regelmäßig updaten.
-
-```shell
-brew upgrade ddev
-```
-
-
-### Beispiel: Installation unter Debian/Ubuntu
-
-```shell
-curl -fsSL https://apt.fury.io/drud/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null
-
-echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list
-
-sudo apt update && sudo apt install -y ddev
-```
-
-Evtl. nach der Installation noch die lokalen SSL-Zertifikate installieren (im Anschluss Browser neu starten).
-
-```shell
-mkcert -install
-```
-
-Installation updaten
-
-```shell
-sudo apt update && sudo apt upgrade
-```
-
-
 ## Projekt erstellen
 
-Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses.
+Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses. Der Verzeichnisname spiegelt den späteren Projekt Hostnamen. Du kannst dies jedoch zusätzlich [konfigurieren](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/).
 
 ```shell
 mkdir -p  ~/Projekte/contao/contao-ddev && cd ~/Projekte/contao/contao-ddev
@@ -80,68 +37,78 @@ mkdir -p  ~/Projekte/contao/contao-ddev && cd ~/Projekte/contao/contao-ddev
 DDEV-Konfiguration anlegen mit:
 
 ```shell
-ddev config
+ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.2 --create-docroot --timezone=Europe/Berlin
 ```
 
-DDEV-Einstellungen vornehmen, als __Project Type__ auf jeden fall `php` auswählen. Die __Docroot Location__ erstmal leer lassen, da es bei Neuinstallationen noch keinen `public` Ordner gibt und DDEV dann nicht starten kann.
+Contao 5.3 installieren:
 
 ```shell
-ddev start
+ddev composer create contao/managed-edition:5.3
 ```
 
-Zur Installation via Konsole ist es am einfachsten, sich via SSH mit dem Container zu verbinden.
+Nach der Installation müssen die Datenbankzugangsdaten in die `.env.local` eingetragen werden. In diesem Zug richten wir auch direkt Mailpit ein.
+
+```env
+APP_ENV=prod
+DATABASE_URL=mysql://db:db@db:3306/db
+MAILER_DSN=smtp://localhost:1025
+```
+
+Im Anschluss die Datenbank anlegen:
 
 ```shell
-ddev ssh
+ddev exec "bin/console contao:migrate"
 ```
+
+Backend-User anlegen:
 
 ```shell
-composer create-project contao/managed-edition contao 4.13
+ddev exec "bin/console contao:user:create"
 ```
 
-In der `.ddev/config.yaml` nun das Docroot anpassen und ddev neu starten.
-
-```yaml
-docroot: "contao/public"
-```
-
-Um Apache anstatt NGINX zu verwenden, den Eintrag `webserver_type: nginx-fpm` in `apache-fpm` ändern.
-
-```yaml
-webserver_type: apache-fpm
-```
-
-Die `ddev` Binary steht im Container nicht zur Verfügung, also erst mit `exit` auf die Host-Konsole wechseln.
+Projekt im Browser aufrufen:
 
 ```shell
-ddev restart
+ddev launch
 ```
-
-Eine Datenbank gibt es schon in DDEV. Die Verbindungsdaten für die Installation lauten:
-
-| Eintrag             | Wert                  |
-|:--------------------|:----------------------|
-| **Host**            | db                 |
-| **Benutzername**    | db                  |
-| **Passwort**        | db |
-| **Datenbank**       | db |
-
-Auf die Datenbank des aktuellen Projektes kann über das phpMyAdmin Add-On zugegriffen werden. Mit folgenden Befehl öffnet sich nach Eingabe automatisch ein Browser-Tab mit dem Administrationswerkzeug für MySQL-Datenbanken:
-
-```shell
-ddev phpmyadmin
-```
-Seit ddev Version 1.22.0 ist die Unterstützung von phpmyadmin in ein DDEV Add-on umgewandelt worden. Daher muss statt `ddev launch -p` der obige Befehl verwendet werden.
 
 {{% notice note %}}
-Mit `ddev describe` erhältst du eine Übersicht über Services, die im Projekt zur Verfügung stehen und wie du sie erreichst. Mit `ddev poweroff` kannst du aus jedem Verzeichnis heraus alle gestarteten Projekte/Container stoppen.
+
+Mit `ddev launch contao` kommst du direkt zur Administration.
 
 {{% /notice %}}
+
+## Zusatz Informationen
+
+`ddev start` startet das Projekt, `ddev stop` beendet es. Stelle vorher sicher, dass du in den Projektordner gewechselt hast.
+
+`ddev poweroff` kann aus jedem Verzeichnis heraus alle gestarteten Projekte/Container stoppen.
+
+Mit `ddev ssh` wechselst du in die Shell des Containers und kannst auf der Konsole arbeiten. Die `ddev` Binary steht im Container nicht zur Verfügung, also erst mit `exit` auf die Host-Konsole wechseln.
+
+`ddev describe` gibt eine Übersicht der Services, die im Projekt zur Verfügung stehen und wie du sie erreichst.
+
+`ddev xdebug on` startet XDebug. [Informationen zum IDE-Setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
+
+{{% notice note %}}
+Falls du als Windows Anwender die »Git Bash« als Konsole benutzt, kann es, abhängig von deiner »Git für Windows« Konfiguration, notwendig sein das Kommando `winpty` voran zu stellen (z. B.: `winpty ddev ssh`).
+{{% /notice %}}
+
+## Custom PHP Configuration
+
+Mit DDEV können zusätzliche PHP-Konfigurationen für ein Projekt bereitgestellt werden. Du kannst eine beliebige Anzahl von `.ini` Dateien im Verzeichnis `.ddev/php/` hinzufügen. Änderungen erfordern einen Neustart mit `ddev restart`. Weitere Informationen in der [DDEV-Dokumentation](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#custom-php-configuration-phpini).
+
+Eine Beispieldatei in `.ddev/php/my-php.ini` könnte wie folgt aussehen:
+
+```ini
+[PHP]
+memory_limit = -1
+```
 
 
 ## DDEV Addons
 
-DDEV bietet nun auch [Services als Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
+DDEV bietet auch [Services als Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
 
 
 ### Beispiel: Adminer
@@ -150,14 +117,4 @@ DDEV bietet nun auch [Services als Addon](https://ddev.readthedocs.io/en/latest/
 ddev get ddev/ddev-adminer && ddev restart
 ```
 
-Zudem kann man phpMyAdmin in der `.ddev/config.yaml` auch deaktivieren:
-
-```yaml
-omit_containers: [dba]
-```
-
-```shell
-ddev restart
-```
-
-
+Mit `ddev describe` erfährst du, wie du Adminer erreichst.
