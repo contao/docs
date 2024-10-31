@@ -55,6 +55,14 @@ opcache.memory_consumption = 128
 ; The same applies here: The higher it is, the more you can store.
 ; Remember: More extensions = more code = more memory
 opcache.max_accelerated_files = 20000
+  
+; When parsing PHP files with hardcoded strings, OPcache converts these strings into "interned strings" in memory. 
+; This means that a string like "Contao" used in multiple places in the code and across different requests, will all 
+; reference the same memory location, significantly reducing PHP's memory overhead. However, the default size of 
+; the interned strings buffer is only 8 MB. For applications using frameworks (like Contao which is relying on Symfony
+; and lots of other third-party libraries) it is advisable to increase this size to 32 MB or 64 MB to better accommodate
+; the needs of such systems.
+opcache.interned_strings_buffer=32
 
 ; By default, PHP checks whether a file has changed since the last time it was called every time it is executed.
 ; This is handy especially during development, but of course it slows down the process.

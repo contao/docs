@@ -43,7 +43,7 @@ To add the dependency, add the following to your `composer.json`:
 ```json
 {
     "require": {
-        "inspiredminds/contao-news-sync": "^3.0"
+        "inspiredminds/contao-news-sync": "^4.0"
     }
 }
 ```

@@ -41,6 +41,8 @@ sorting for a news list.
 Return `false` if this hook should not be considered. Return a `\Contao\Model\Collection`
 otherwise. Return `null` if no news entries are found.
 
+If the return value is anything other than `false`, no further hooks of type `newsListFetchItems` will be executed!
+
 
 ## Example
 
@@ -69,4 +71,4 @@ class NewsListFetchItemsListener
 
 ## References
 
-* [\Contao\ModuleNewsList#L200-L215](https://github.com/contao/contao/blob/4.7.6/news-bundle/src/Resources/contao/modules/ModuleNewsList.php#L200-L215)
+* [\Contao\ModuleNewsList#L205-L220](https://github.com/contao/contao/blob/5.3.0/news-bundle/contao/modules/ModuleNewsList.php#L205-L220)

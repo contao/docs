@@ -1,0 +1,21 @@
+{{ if .Site.Params.showBanner }}
+{{ $banner_title_DE := .Site.Params.bannerTitleDE }}
+{{ $banner_title_EN := .Site.Params.bannerTitleEN }}
+{{ $banner_date_DE := .Site.Params.bannerDateDE }}
+{{ $banner_date_EN := .Site.Params.bannerDateEN }}
+{{ $banner_url_DE := .Site.Params.bannerUrlDE }}
+{{ $banner_url_EN := .Site.Params.bannerUrlEN }}
+<div class="banner">
+    {{- if eq .Site.Language.Lang "de" -}}
+        <a href="{{ $banner_url_DE | safeURL }}" target="_blank" rel="noreferrer noopener">
+            <span class="title">{{ $banner_title_DE }}</span>
+            <span class="date">{{ $banner_date_DE }}</span>
+        </a>
+    {{- else -}}
+        <a href="{{ $banner_url_EN | safeURL }}" target="_blank" rel="noreferrer noopener">
+            <span class="title">{{ $banner_title_EN }}</span>
+            <span class="date">{{ $banner_date_EN }}</span>
+        </a>
+    {{- end -}}
+</div>
+{{ end }}

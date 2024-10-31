@@ -34,7 +34,7 @@ area, for example. In the minimal configuration, you only need one user, the adm
 ## Everything revolves around the page structure
 
 Contao is a page-based content management system, which means that the page structure is the central element of your 
-website. A visitor can only view a specific page in his browser and not, for example, a single article as in other 
+website. A visitor can only view a specific page in their browser and not, for example, a single article as in other 
 systems. This approach is very flexible because a page can have any amount of content and you are not limited to a 
 single post.
 

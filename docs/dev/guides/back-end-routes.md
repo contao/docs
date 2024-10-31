@@ -36,7 +36,7 @@ use Contao\CoreBundle\Controller\AbstractBackendController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Route('/%contao.backend.route_prefix%/my-backend-route', name: self::class, defaults: ['_scope' => 'backend'])]
+#[Route('%contao.backend.route_prefix%/my-backend-route', name: self::class, defaults: ['_scope' => 'backend'])]
 class BackendController extends AbstractBackendController
 {
     public function __invoke(): Response
@@ -61,13 +61,13 @@ information about the `backend` scope.
 
 
 Be sure to have imported your bundle's Controllers in your `routes.yaml` *before*
-the `ContaoCoreBundle` routes.
+the `ContaoCoreBundle` routes. If you are developing a bundle for the Contao Managed Edition, be sure to [load your routes](/framework/manager-plugin/#the-routingplugininterface) in your `Plugin` class.
 
 ```yaml
 # config/routes.yaml
 app.controller:
     resource: ../src/Controller
-    type: annotation
+    type: attribute
 ```
 
 Our route will render the template `my_backend_route.html.twig` which must be placed 
@@ -147,16 +147,16 @@ reading and matching the controller class, which Symfony provides under the `_co
 request attribute by default.
 
 The EventListener registers itself to the `contao.backend_menu_build` event by using
-a [`@ServiceTag` annotation][ServiceAnnotationBundle] directly in the PHP file. 
+the [`AsEventListener` PHP attribute][AsEventListenerAttribute] directly in the PHP file. 
 This allows us to skip defining a service tag in the service configuration. We 
 purposely assign it a low priority, so that we can be sure to be loaded after the 
 Contao Core EventListeners. Otherwise, the `content` node we assign ourself to will 
 not be available yet.
 
-And that's it. You controller should now be callable from the main back end menu in
+And that's it. Your controller should now be callable from the main back end menu in
 the sidebar.
 
 
 [BackEndMenuEvent]: /reference/events/#contao-backend-menu-build
-[ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle
+[AsEventListenerAttribute]: https://symfony.com/doc/5.x/event_dispatcher.html#defining-event-listeners-with-php-attributes
 [RequestScope]: /framework/routing/#request-scope

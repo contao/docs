@@ -152,6 +152,37 @@ intervals in the calendar extension).
 **return:** _void_
 {{% /expand %}}
 
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/NewsSubmitCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+use Doctrine\DBAL\Connection;
+
+#[AsCallback(table: 'tl_news', target: 'config.onsubmit')]
+class NewsSubmitCallbackListener
+{
+    private $db;
+
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    public function __invoke(DataContainer $dc): void
+    {
+        if (!$dc->id) {
+            return;
+        }
+
+        $this->db->update('tl_news', ['foobar' => 'foo'], ['id' => $dc->id]);
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `config.ondelete`
 
@@ -325,6 +356,57 @@ window.
 
 ***
 
+### `config.onpalette`
+
+{{< version "5.3" >}}
+
+Allows to dynamically adjust the palette. This can also be achieved using e.g. the `config.onload` callback where you
+can modify the palette as it is a global variable. However, adjusting it depending on the object's values is way easier
+using `config.onpalette` making it automatically work for e.g. the edit multiple mode.
+
+{{% expand "Parameters" %}}
+* `string` The current palette
+* `\Contao\DataContainer` Data Container object
+
+**return:** `string` The adjusted palette
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/PagePaletteCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback(table: 'tl_page', target: 'config.onpalette')]
+class PagePaletteCallback
+{
+    public function __invoke(string $palette, DataContainer $dc): string
+    {
+        $currentRecord = $dc->getCurrentRecord();
+
+        // This shouldn't happen, defensive programming
+        if (null === $currentRecord) {
+            return $palette;
+        }
+
+        // Adjust palettes for root pages
+        if ('root' === $currentRecord['type']) {
+            $palette = PaletteManipulator::create()
+                ->addLegend('my_legend')
+                ->addField(['my_field_one', 'my_field_two'], 'my_legend', PaletteManipulator::POSITION_APPEND)
+                ->applyToString($palette)
+            ;
+        }
+        
+        return $palette;
+    }
+}
+```
+{{% /expand %}}
 
 ## Listing Callbacks
 
@@ -559,7 +641,7 @@ an additional command check via a [`fields.<field>.load`](#fields-field-load) ca
 
 This callback allows you to generate a button for a specific global operation yourself, instead of letting Contao 
 generate it for you. The callback passes the originally generated button HTML as a string (if applicable), plus all the 
-metadata defined in the DCA that is included in the generatd button. The callback is expected to return a string 
+metadata defined in the DCA that is included in the generated button. The callback is expected to return a string 
 containing HTML for the button (or an empty string, if you do not want to show a button).
 
 {{% expand "Parameters" %}}
@@ -579,7 +661,7 @@ containing HTML for the button (or an empty string, if you do not want to show a
 
 This callback allows you to generate a button for a specific operation yourself, instead of letting Contao generate it
 for you. The callback passes the database record, the originally generated button HTML as a string (if applicable) and
-all the metadata defined in the DCA that is included in the generatd button. The callback is expected to return a string
+all the metadata defined in the DCA that is included in the generated button. The callback is expected to return a string
 containing HTML for the button (or an empty string, if you do not want to show a button).
 
 {{% expand "Parameters" %}}
@@ -617,15 +699,15 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Contao\Image;
 use Contao\StringUtil;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 #[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
 class ExampleListOperationListener
 {
     public function __construct(
-        protected Security $security
-    )
-    {}
+        private readonly AuthorizationCheckerInterface $authorizationChecker,
+    ) {
+    }
 
     public function __invoke(
         array $row,
@@ -643,7 +725,7 @@ class ExampleListOperationListener
         DataContainer $dc
     ): string
     {
-        if (!$this->security->isGranted('contao_user.example', 'custom_operation')) {
+        if (!$this->authorizationChecker->isGranted('contao_user.example', 'custom_operation')) {
             return '';
         }
 

@@ -40,15 +40,28 @@ your own application:
 ```yaml
 # config/config.yaml
 contao:
-    locales:
-        - en
-        - de_AT
+    intl:
+        enabled_locales:
+            - en
+            - de_AT
 ```
 
 This example configuration will reduce the available back end languages to two languages
 and will also make _German (Austria)_ available as a back end language, which it 
 would not be by default. Keep in mind that the Contao Core only provides the translations 
 for specific languages for the front and back end.
+
+```yaml
+# config/config.yaml
+contao:
+    intl:
+        enabled_locales:
+            - '-de'
+            - '+de_AT'
+```
+
+This example configuration will remove the available back end language _German_ and
+add _German (Austria)_ while keeping the rest of the locales untouched.
 
 {{% notice note %}}
 _English_ (`en`) will always serve as the fallback in all cases, if a translation 

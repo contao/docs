@@ -15,7 +15,7 @@ In general, there are two ways to display multilingual websites:
 
 In Contao, only the first variant is supported (except for some third party extensions that differ from this concept for managing your own content).
 
-In order for the language to be added to the URL (e.g. `www.example.com/de/`), you must add the following lines in the `config.yml` located in the `app/config/` directory. If the file does not exist yet, you have to create it.
+In order for the language to be added to the URL (e.g. `www.example.com/de/`), you must add the following lines in the `config.yaml` located in the `app/config/` directory. If the file does not exist yet, you have to create it.
 
 {{% notice note %}}
 From version **4.8** of Contao the file is located in the `config/` directory.
@@ -39,11 +39,11 @@ vendor/bin/contao-console cache:warmup --env=prod
 Starting with Contao **4.10** the URL prefix can also be defined for each website root individually and independently of
 the language of the website root. This way it is also possible have one website root without an URL prefix, while the other
 website roots of the same domain still have one. For example: `example.com` for the English version of the website and
-`example.com/de` for the German version. In order to be able to configure this setting the »[legacy routing][LegacyRouting]« 
+`example.com/de` for the German version. In order to be able to configure this setting the »[legacy routing](/en/site-structure/website-root/#legacy-routing-mode)« 
 mode must be disabled:
 
 ```yaml
-# config/config.yml
+# config/config.yaml
 contao:
     legacy_routing: false
 ```
@@ -63,8 +63,8 @@ The check is carried out from the most specific case, in which both the domain a
 
 Let's assume you have two domains, one business and one private:
 
-- `www.company.com`
-- `www.private.com`
+- `www.example.com`
+- `www.example.org`
 
 The business side is bilingual, so you need a total of three website roots:
 
@@ -74,7 +74,7 @@ The business side is bilingual, so you need a total of three website roots:
 | ---- | ----------- | -------- | ----------------- |
 | Company German | - | en | - |
 | Company English | - | en | yes |
-| Private | private.com | en | yes |
+| Private | example.org | en | yes |
 
 Depending on the accessed domain and the defined language in the browser, visitors will be redirected as follows:
 
@@ -82,16 +82,13 @@ Depending on the accessed domain and the defined language in the browser, visito
 
 | Domain | Browser language | Target | Matching |
 | ------ | ---------------- | --------- | ---------- |
-| www.company.com | German | Company German | Language |
-| www.company.com | English | Company English | language |
-| www.company.com | Spanish | Company English | - |
-| www.private.com | (any) | Private | Domain |
+| www.example.com | German | Company German | Language |
+| www.example.com | English | Company English | language |
+| www.example.com | Spanish | Company English | - |
+| www.example.org | (any) | Private | Domain |
 
-The first three cases all lead to the company page, even if the domain `company.com` is not explicitly stored in the DNS settings. This is not necessary at all, because the company page is in this case the starting page for unknown domains.
+The first three cases all lead to the company page, even if the domain `example.com` is not explicitly stored in the DNS settings. This is not necessary at all, because the company page is in this case the starting page for unknown domains.
 
 The first two cases could be clearly assigned to a website root based on the browser language, only in the third case the language fallback page had to be loaded. The third case is therefore the most general case, which catches all requests that cannot be uniquely assigned.
 
 The fourth case clearly belongs to the private website because of the domain, no matter what language the visitor speaks, and thanks to the language fallback, visitors from all over the world have access to the website. And here you can see the importance of a language fallback: without it, the private website would only be available for German speaking visitors! All others would only see a "No pages found" error message.
-
-
-[LegacyRouting]: /en/layout/site-structure/configure-pages/#legacy-routing-mode

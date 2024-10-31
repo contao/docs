@@ -60,7 +60,7 @@ Mitgliedergruppen werden in der Datenbanktabelle `tl_member_group` geführt. Wir
 in der Tabelle `tl_member` über den Datensatz `groups`. 
 
 Möchtest du die Mitgliederliste auf alle »aktiven« Mitglieder beschränken die zur Gruppe »Vorstand« gehören kannst du 
-folgendes als Bedingung eintragen: `disable != 1 AND groups LIKE '%2%'`
+folgendes als Bedingung eintragen: `disable != 1 AND groups LIKE '%"2"%'`
 
 
 ### Template »list_default.html5«

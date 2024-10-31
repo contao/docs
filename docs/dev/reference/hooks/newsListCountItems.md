@@ -31,8 +31,9 @@ be shown in the current request.
 
 ## Return Values
 
-Return `false` if this hook should not be considered. Return an integer otherwise.
+Return `false` if this hook should not be considered. Return an integer otherwise. Return `0` if no news entries are found.
 
+If the return value is anything other than `false`, no further hooks of type `newsListCountItems` will be executed!
 
 ## Example
 
@@ -61,4 +62,4 @@ class NewsListCountItemsListener
 
 ## References
 
-* [\Contao\ModuleNewsList#L168-L183](https://github.com/contao/contao/blob/4.7.6/news-bundle/src/Resources/contao/modules/ModuleNewsList.php#L168-L183)
+* [\Contao\ModuleNewsList#L173-L188](https://github.com/contao/contao/blob/5.3.0/news-bundle/contao/modules/ModuleNewsList.php#L173-L188)

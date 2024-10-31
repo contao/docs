@@ -25,6 +25,14 @@ If you only need the data of certain variables, you can pass this as an argument
 ```
 {{% /example %}}
 
+If you want the output to be in the toolbar - and not in the template - you can use the `dump` function:
+
+```twig
+{% dump %} {# output all available data #}
+{% dump(a) %} {# output the data of variable "a" #}
+{% dump(a, b) %} {# output the data of variable "a"  und "b" #}
+```
+
 {{% notice info %}}
 Note that in extended templates the `dump()` function must be used inside a block.
 {{% /notice %}}

@@ -24,20 +24,21 @@ empfohlen, diese immer zu verwenden.
 
 ### PHP-Erweiterungen
 
-| Name der Erweiterung                      | ab Contao 4.4                | ab Contao 4.9                                  | ab Contao 4.13                                 |
-|:------------------------------------------|:-----------------------------|:-----------------------------------------------|:-----------------------------------------------|
-| [DOM][ext-dom] (`ext-dom`)                | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [PCRE][ext-pcre] (`ext-pcre`)             | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [Intl][ext-intl] (`ext-intl`)             | empfohlen                    | **erforderlich**                               | **erforderlich**                               |
-| [PDO][ext-pdo] (`ext-pdo`)                | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [ZLIB][ext-zlib] (`ext-zlib`)             | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [JSON][ext-json] (`ext-json`)             | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [Curl][ext-curl] (`ext-curl`)             | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [Mbstring][ext-mbstring] (`ext-mbstring`) | **erforderlich**             | **erforderlich**                               | **erforderlich**                               |
-| [GD][ext-gd] (`ext-gd`)                   | **erforderlich**<sup>1</sup> | **erforderlich**<sup>1</sup>                   | **erforderlich**<sup>1</sup>                   |
-| [Imagick][ext-imagick] (`ext-imagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
-| [Gmagick][ext-gmagick] (`ext-gmagick`)    | empfohlen<sup>1</sup>        | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
-| [File Information][ext-fileinfo] (`ext-fileinfo`) | -                    | -                                              | **erforderlich**                               |
+| Extension Name                                    | Contao 4                                       | Contao 5                                       |
+|:--------------------------------------------------|:-----------------------------------------------|:-----------------------------------------------|
+| [DOM][ext-dom] (`ext-dom`)                        | **erforderlich**                               | **erforderlich**                               |
+| [PCRE][ext-pcre] (`ext-pcre`)                     | **erforderlich**                               | **erforderlich**                               |
+| [Intl][ext-intl] (`ext-intl`)                     | **erforderlich**                               | **erforderlich**                               |
+| [PDO][ext-pdo] (`ext-pdo`)                        | **erforderlich**                               | **erforderlich**                               |
+| [ZLIB][ext-zlib] (`ext-zlib`)                     | **erforderlich**                               | **erforderlich**                               |
+| [JSON][ext-json] (`ext-json`)                     | **erforderlich**                               | **erforderlich**                               |
+| [Curl][ext-curl] (`ext-curl`)                     | **erforderlich**                               | **erforderlich**                               |
+| [Mbstring][ext-mbstring] (`ext-mbstring`)         | **erforderlich**                               | **erforderlich**                               |
+| [GD][ext-gd] (`ext-gd`)                           | **erforderlich**<sup>1</sup>                   | **erforderlich**<sup>1</sup>                   |
+| [Imagick][ext-imagick] (`ext-imagick`)            | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+| [Gmagick][ext-gmagick] (`ext-gmagick`)            | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
+| [File Information][ext-fileinfo] (`ext-fileinfo`) | **erforderlich**                               | **erforderlich**                               |
+| [Sodium][ext-sodium] (`ext-sodium`)               | -                                              | **erforderlich** für PHP 8.3+<sup>2</sup>      |
 
 {{% notice note %}}
 <sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus.
@@ -62,10 +63,17 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 [ext-imagick]: https://www.php.net/manual/de/book.imagick.php
 [ext-gmagick]: https://www.php.net/manual/de/book.gmagick.php
 [ext-fileinfo]: https://www.php.net/manual/de/book.fileinfo.php
+[ext-sodium]: https://www.php.net/manual/en/book.sodium.php
 
 Alle erforderlichen Erweiterungen sind in aktuellen PHP-Versionen standardmäßig aktiviert. Einige Hosting-Anbieter 
 deaktivieren sie jedoch explizit. Die Anforderungen werden bei der Installation durch 
 [Contao Manager](../../installation/contao-manager) oder [Composer](https://getcomposer.org) automatisch überprüft.
+
+{{% notice tip %}}
+<sup>2</sup> Falls die PHP Sodium Erweiterung auf deinem System nicht zur Verfügung steht, kannst du in der 
+`composer.json` deines Projektes zusätzlich nach dem Paket `paragonie/sodium_compat_ext_sodium` verlangen, um das zu
+umgehen.
+{{% /notice %}}
 
 
 ### PHP-Konfiguration (`php.ini`)
@@ -74,19 +82,20 @@ Diese Einstellungen sind die Empfehlungen für den idealen Betrieb von Contao. E
 dass Contao nicht funktioniert, kann jedoch zu unerwartetem Verhalten oder Leistungseinbußen/langsamen Reaktionen 
 führen.
 
-| Konfigurationsname              | Webprozess                   | Kommandozeile           | Anmerkungen                                                                                                                                               |
-|:--------------------------------|:-----------------------------|:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `memory_limit`                  | Minimum `256M`               | `-1`&nbsp;(unbegrenzt)  |                                                                                                                                                           |
-| `max_execution_time`            | Minimum `30`                 | `0` (unbegrenzt)        |                                                                                                                                                           |
-| `file_uploads`                  | `On`                         | _nicht anwendbar_       |                                                                                                                                                           |
-| `upload_max_filesize`           | Minimum `32M`                | _nicht anwendbar_       |                                                                                                                                                           |
-| `post_max_size`                 | wie `upload_max_filesize`    | _nicht anwendbar_       |                                                                                                                                                           |
-| `max_input_vars`                | `1000`                       | _nicht anwendbar_       | Benötigt möglicherweise mehr, wenn viele Erweiterungen installiert sind. Erhöhe, wenn die Benutzerzugriffsrechte nicht korrekt gespeichert werden können. |
-| `opcache.enable`                | `1` (aktiviert)              | `0` (deaktiviert)       | Das Deaktivieren des Opcode-Cache wirkt sich stark auf die Leistung aus.                                                                                  |
-| `opcache.enable_cli`            | `0` (deaktiviert)            | `0` (deaktiviert)       |                                                                                                                                                           |
-| `opcache.max_accelerated_files` | `16000` empfohlen            | _nicht anwendbar_       | Ein niedrigerer Wert kann zu einer unnötigen Verlangsamung führen.                                                                                        |
-| `safe_mode`                     | `Off`                        | `Off`                   |                                                                                                                                                           |
-| `open_basedir`                  | `NULL`                       | `NULL`                  | Wenn aktiv, stelle sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                   |
+| Konfigurationsname              | Webprozess                | Kommandozeile           | Anmerkungen                                                                                                                                               |
+|:--------------------------------|:--------------------------|:------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `memory_limit`                  | Minimum `256M`            | `-1`&nbsp;(unbegrenzt)  |                                                                                                                                                           |
+| `max_execution_time`            | Minimum `30`              | `0` (unbegrenzt)        |                                                                                                                                                           |
+| `file_uploads`                  | `On`                      | _nicht anwendbar_       |                                                                                                                                                           |
+| `upload_max_filesize`           | Minimum `32M`             | _nicht anwendbar_       |                                                                                                                                                           |
+| `post_max_size`                 | wie `upload_max_filesize` | _nicht anwendbar_       |                                                                                                                                                           |
+| `max_input_vars`                | `1000`                    | _nicht anwendbar_       | Benötigt möglicherweise mehr, wenn viele Erweiterungen installiert sind. Erhöhe, wenn die Benutzerzugriffsrechte nicht korrekt gespeichert werden können. |
+| `opcache.enable`                | `1` (aktiviert)           | `0` (deaktiviert)       | Das Deaktivieren des Opcode-Cache wirkt sich stark auf die Leistung aus.                                                                                  |
+| `opcache.enable_cli`            | `0` (deaktiviert)         | `0` (deaktiviert)       |                                                                                                                                                           |
+| `opcache.max_accelerated_files` | `16000` empfohlen         | _nicht anwendbar_       | Ein niedrigerer Wert kann zu einer unnötigen Verlangsamung führen.                                                                                        |
+| `safe_mode`                     | `Off`                     | `Off`                   |                                                                                                                                                           |
+| `open_basedir`                  | `NULL`                    | `NULL`                  | Wenn aktiv, stelle sicher, dass auf das temporäre Verzeichnis des Systems zugegriffen werden kann.                                                        |
+| `opcache.save_comments`         | `On`                      | _nicht anwendbar_       | Dies wird für das Lesen von Annotations in PHP Dateien benötigt.                                                                                          |
 
 
 ### MySQL-Konfiguration
@@ -105,9 +114,9 @@ führen.
 - **PHP** Version 8.1.0 oder höher ist erforderlich.
 
 
-#### Contao 4.11 und später
+#### Contao 4.13 (LTS)
 
-- **PHP** Version 7.3.0 oder höher ist erforderlich.
+- **PHP** Version 7.4.0 oder höher ist erforderlich.
 
 
 #### Contao 4.9 (LTS)
@@ -152,13 +161,13 @@ getestet. Die Verwendung von `utf8` anstelle des `utf8mb4`-Zeichensatzes führt 
 keine Emojis).
 
 Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden können, konfiguriere bitte einen anderen 
-Zeichensatz in deiner [`config/config.yml`](../../system/einstellungen/#config-yml)-Datei:
+Zeichensatz in deiner [`config/config.yaml`](../../system/einstellungen/#config-yml)-Datei:
 
 {{% notice note %}}
-Vor **Contao 4.8** findest du die Datei unter `app/config/config.yml`.  
+Vor **Contao 4.8** findest du die Datei unter `app/config/config.yaml`.  
 {{% /notice %}}
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:
@@ -188,9 +197,9 @@ sql_mode="TRADITIONAL"
 ```
 
 Wenn die oben empfohlene Einstellung auf deinem Server nicht aktiviert werden kann, konfiguriere
-die Verbindungsoptionen bitte in deiner `config/config.yml`-Datei:
+die Verbindungsoptionen bitte in deiner `config/config.yaml`-Datei:
 
-```yml
+```yaml
 doctrine:
     dbal:
         connections:
@@ -288,7 +297,7 @@ Contao 4.9 oder älter):
 {{% /tab %}}
 
 {{% tab name="NGINX" %}}
-Am wichtigsten ist es sicherzustellen, dass alle Anfragen die nicht an eine existierende Datei gehen an die PHP-Applikation zur Verarbeitung
+Am wichtigsten ist es sicherzustellen, dass alle Anfragen, die nicht an eine existierende Datei gehen, an die PHP-Applikation zur Verarbeitung
 weitergegeben werden. Dies passiert über die Anweisung `try_files $uri /index.php$is_args$args;`.
 
 Eine minimale `server` Definition für den NGINX könnte so aussehen (`…/public` mit `…/web` austauschen für
@@ -342,6 +351,11 @@ erfordern. Zum Glück sind sie nur die Ausnahme von der Regel. Die Provider-spez
 [Contao-Forum](https://community.contao.org/de/forumdisplay.php?67-Erfahrungen-mit-Webhostern). Sorgenfreies 
 Contao-Hosting erhältst du bei den [Contao-Partnern](https://contao.org/de/contao-partner.html) in der 
 Leistungskategorie »Webhosting«.
+
+{{% notice "note" %}}
+Einige Hosting-Anbieter bieten 1-Klick-Installationen an. Für das beste Nutzungserlebnis empfehlen wir jedoch, bei der 
+Installation von Contao den Contao Manager oder die Konsole zu verwenden.
+{{% /notice %}}
 
 
 [SymfonyWebServerConfiguration]: https://symfony.com/doc/current/setup/web_server_configuration.html

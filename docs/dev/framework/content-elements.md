@@ -58,7 +58,7 @@ DCA configuration.
 
 ```php
 // contao/dca/tl_content.php
-$GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = 
+$GLOBALS['TL_DCA']['tl_content']['palettes']['example_element'] = 
     '{type_legend},type;{text_legend},text'
 ;
 ```
@@ -95,10 +95,10 @@ In this example the service tag was implemented via PHP attributes (see the diff
 below).
 
 Using the naming convention for templates mentioned above, the final template name
-for this content element will be `ce_my_content_element`:
+for this content element will be `ce_example_element`:
 
 ```html
-<!-- contao/templates/ce_my_content_element.html5 -->
+<!-- contao/templates/ce_example_element.html5 -->
 <div class="my-content-element">    
     <?= $this->text; ?>
 </div>
@@ -122,6 +122,7 @@ As mentioned previously a content element is registered by registering a control
 | template | `string`  | _Optional:_ Override the generated template name.                                                                                         |
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |
 | method   | `string`  | _Optional:_  Which method should be invoked on the controller.                                                                            |
+| nestedFragments | `bool`/`array` | _Optional:_ Allows [nested fragments](#nested-fragments) for this content element. |
 
 Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
 
@@ -141,7 +142,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category:'texts')]
+#[AsContentElement(category: 'texts')]
 class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -151,7 +152,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the `category` attribute (which is actually optional for the PHP attribute - the default 
+category is `miscellaneous`). If you wish you can also define the other options of the service tag:
 
 ```php
 // src/Controller/ContentElement/ExampleController.php
@@ -164,7 +166,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement('example', category:'texts', template:'ce_example', renderer:'forward', method:'__invoke')]
+#[AsContentElement('example', 'texts', 'ce_example', '__invoke', 'forward')]
 class ExampleController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
@@ -173,6 +175,8 @@ class ExampleController extends AbstractContentElementController
     }
 }
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{% tab name="Annotation" %}}
@@ -203,7 +207,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of 
+the service tag:
 
 ```php
 // src/Controller/ContentElement/ExampleController.php
@@ -217,7 +222,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @ContentElement("example", category="texts", template="ce_example", renderer="forward", method="__invoke")
+ * @ContentElement("example", "texts", "ce_example", "__invoke", "forward")
  */
 class ExampleController extends AbstractContentElementController
 {
@@ -227,6 +232,8 @@ class ExampleController extends AbstractContentElementController
     }
 }
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{% tab name="YAML" %}}
@@ -260,7 +267,8 @@ class ExampleController extends AbstractContentElementController
 }
 ```
 
-The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of the service tag:
+The above example only defines the mandatory `category` attribute. If you wish you can also define the other options of 
+the service tag:
 
 ```yaml
 # config/services.yaml
@@ -274,6 +282,8 @@ services:
                 renderer: forward
                 method: __invoke
 ```
+
+However, it is recommended to only define what you need and otherwise leave the defaults.
 {{% /tab %}}
 
 {{< /tabs >}}
@@ -281,7 +291,7 @@ services:
 You can also use class constants within attributes and annotations. This can be helpful to make the module's type a reusable reference:
 
 ```php
-#[AsContentElement(ExampleController::TYPE, 'miscellaneous')]
+#[AsContentElement(ExampleController::TYPE)]
 class ExampleController extends AbstractContentElementController
 {
     public const TYPE = 'my_element';
@@ -374,6 +384,131 @@ in your `contao/config/config.php`. The `$GLOBALS['TL_WRAPPERS']` array holds th
 // contao/config.php
 $GLOBALS['TL_WRAPPERS']['start'][] = 'my_start_element';
 $GLOBALS['TL_WRAPPERS']['stop'][] = 'my_stop_element';
+```
+
+
+## Nested Fragments
+
+{{< version "5.3" >}}
+
+An alternative approach to the aforementioned wrapper elements are so called "nested fragments". These allow you to
+nest other content elements within a parent content element for which nested fragments are enabled. The following
+screenshot shows the _Element group_ content element of the Contao Core:
+
+![Element group content element]({{% asset "images/dev/framework/nested-fragments.png" %}}?classes=shadow)
+
+Just as with page articles, news archives, etc. this content element allows you to edit its children via 
+![edit children icon]({{% asset "icons/children.svg" %}}?classes=icon) which then works the same way as within the
+article of a page.
+
+Allowing nested fragments for your content element works via the `nestedFragments` option in the service tag:
+
+{{< tabs groupId="attribute-annotation-yaml" >}}
+
+{{% tab name="Attribute" %}}
+```php
+#[AsContentElement(nestedFragments: true)]
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="Annotation" %}}
+```php
+/**
+ * @ContentElement(category="miscellaneous", nestedFragments=true)
+ */
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="YAML" %}}
+```yaml
+services:
+    App\Controller\ContentElement\ExampleController:
+        tags:
+            -
+                name: contao.content_element
+                nestedFragments: true
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+With nested fragments it is also possible to restrict the fragment's children to specific content element types. Say you
+want to implement a specific slider content element which should only allow images and videos as its children. Then
+instead of defining `true` for the tag's `nestedFragments` option you can instead pass an additional option called
+`allowedTypes`:
+
+{{< tabs groupId="attribute-annotation-yaml" >}}
+
+{{% tab name="Attribute" %}}
+```php
+#[AsContentElement(nestedFragments: ['allowedTypes' => ['image', 'video']])]
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="Annotation" %}}
+```php
+/**
+ * @ContentElement(category="miscellaneous", nestedFragments={"allowedTypes" = {"image", "video"}})
+ */
+class ExampleController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        return $template->getResponse();
+    }
+}
+```
+{{% /tab %}}
+
+{{% tab name="YAML" %}}
+```yaml
+services:
+    App\Controller\ContentElement\ExampleController:
+        tags:
+            -
+                name: contao.content_element
+                nestedFragments:
+                    allowedTypes: ['image', 'video']
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+Now all you have to do is render these fragments in your template. The `AbstractContentElementController` from which
+your content element likely extends from automatically passes the available nested fragments to your template within
+the `nested_fragments` template variable. This will be a collection of `ContentElementReference` objects which you can
+render via the `content_element()` Twig function:
+
+```twig
+{# templates/content_element/example.html.twig #}
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    {% for fragment in nested_fragments %}
+        {{ content_element(fragment) }}
+    {% endfor %}
+{% endblock %}
 ```
 
 

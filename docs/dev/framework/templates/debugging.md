@@ -29,7 +29,7 @@ page and include it as well!
 
 #### Namespace mapping (PhpStorm only)
 
-In the `dev` environment, the `ContaoFilesystemLoaderWarmer` will dump a special `.ide-twig.json` file into your `var`
+In the `dev` environment, the `ContaoFilesystemLoaderWarmer` will dump a special `ide-twig.json` file into your `var`
 directory, that includes a mapping of all registered namespaces and filesystem locations. With that, you'll get
 template name autocompletion, even for the managed `@Contao` namespace.  
 

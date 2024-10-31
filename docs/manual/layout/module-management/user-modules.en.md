@@ -6,48 +6,6 @@ aliases:
 weight: 20
 ---
 
-<style>
-    .formbody .invisible {
-        border: 0;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-    }
-    .formbody {
-        background: #f2f2f2;
-        border: 1px solid #ddd;
-        padding: 20px;
-        min-width: 250px;
-        width: 80%;
-     }
-     .formbody label {
-         margin-bottom: 0.125rem;
-     }
-     .formbody .checkbox_container {
-        border: none;
-        margin: 0 0 20px 0;
-        padding: 0;
-     }
-    .formbody .password-reset {
-        margin-top: 15px;
-    }
-    .formbody .checkbox_container label {
-        display: inline;
-    }
-    .formbody .error {
-        color: #ff0000;
-    }
-    .formbody .submit {
-        background: #f47c00;
-        color: #fff;
-        padding: 5px 10px;
-    }
-</style>
-
 User modules are modules that are used in connection with the administration of front end users. This includes, for 
 example, the registration of new members or the login/logout of existing members.
 
@@ -58,7 +16,7 @@ The front end module "Login form" adds a form to the website, with which registe
 
 **Front end output**
 
-<div class="mod_login login block">
+<div class="user-module mod_login login block">
     <form id="tl_login_68" method="post">
         <div class="formbody">
             <div class="widget widget-text">
@@ -88,7 +46,7 @@ As soon as a front end user is logged in, a logoff button is automatically displ
 
 **Front end output**
 
-<div class="mod_login_68 logout block">
+<div class="user-module mod_login_68 logout block">
     <form id="tl_logout" method="post">
         <div class="formbody">
             <p class="login_info">
@@ -196,8 +154,8 @@ a protected area.
 
 ## Personal data
 
-The front end module "Personal data" adds a form to the website, which allows a member to change his personal data such 
-as his e-mail address or password. As an administrator, you can define exactly which fields can be edited and which 
+The front end module "Personal data" adds a form to the website, which allows a member to change their personal data such 
+as their e-mail address or password. As an administrator, you can define exactly which fields can be edited and which 
 cannot.
 
 **Front end output `member_default`**
@@ -567,7 +525,7 @@ confirmation link when registering, with which they can activate their account i
 
 **Send activation e-mail:** Here you can switch on the automatic activation.
 
-**Confirmation page:** Here you can define to which page a user is redirected after successful activation of his 
+**Confirmation page:** Here you can define to which page a user is redirected after successful activation of their 
 account (e.g. the login page).
 
 **Activation message:** Enter the text of the activation mail here. You can use placeholders in the format `##key##` 
@@ -719,7 +677,7 @@ The front end module generates using the `member_grouped` following HTML code:
 
 ## Change password
 
-The front end module "Change password" adds a form to the website that allows a logged in front end user to change his 
+The front end module "Change password" adds a form to the website that allows a logged in front end user to change their 
 password.
 
 **Front end output**
@@ -905,7 +863,7 @@ The front end module generates the following HTML code:
 
 ## Close account
 
-The front end module "Close account" adds a form to the website, which a member can use to close his account. Depending 
+The front end module "Close account" adds a form to the website, which a member can use to close their account. Depending 
 on the configuration, the account is either deactivated or completely deleted from the database.
 
 **Front end output**

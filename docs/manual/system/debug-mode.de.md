@@ -22,10 +22,10 @@ Damit kann zum Beispiel folgendes erreicht werden:
 In Contao **4.4** umgeht der Debug-Modus auch den Bild-Cache von Contao. Das kann
 zwar nützlich sein, verursacht aber auch eine lange Ladezeit für die Erzeugung einer
 Seite mit vielen Bildern. Um den Bild-Cache im Debug-Modus wieder zu aktivieren,
-kann folgendes in die `config_dev.yml` eingefügt werden:
+kann folgendes in die `config_dev.yaml` eingefügt werden:
 
-```yml
-# app/config/config_dev.yml
+```yaml
+# app/config/config_dev.yaml
 contao:
     image:
         bypass_cache: false

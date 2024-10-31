@@ -69,3 +69,13 @@ foreach ($pages as $page) {
     // read data / modify the page record
 }
 ```
+
+You can fetch one or all columns of each row:
+
+```php
+// fetch the column `title` of each row
+$titles = $pages->fetchEach('title');
+
+// fetch all columns of each row
+$rows = $pages->fetchAll();
+```

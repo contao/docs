@@ -123,7 +123,7 @@ the actual `<img>`. The following example will convert all JPEG files with WebP 
 back, all WebP files with WebP as another source and JPEG as the fallback and all PNG files with WebP as another source 
 and PNG as the fall back:
 
-```yml
+```yaml
 contao:
     image:
         sizes:
@@ -157,7 +157,7 @@ You can also define defaults for your image sizes via the special `_defaults` ke
 for each image size separately. So instead of writing:
 
 {{% expand "Example without defaults" %}}
-```yml
+```yaml
 contao:
     image:
         sizes:
@@ -199,7 +199,7 @@ you could instead incorporate some of these settings as defaults and thus ommit 
 size:
 
 {{% expand "Example with defaults" %}}
-```yml
+```yaml
 contao:
     image:
         sizes:
