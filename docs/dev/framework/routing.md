@@ -151,25 +151,21 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
 #[Route('/example', name: ExampleController::class)]
 #[AsController]
 class ExampleController
 {
-    private $security;
-
-    public function __construct(Security $security)
-    {
-        $this->security = $security;
+    public function __construct(
+        private readonly AuthorizationCheckerInterface $authorizationChecker
+    ) {
     }
 
     public function __invoke(): Response
     {
-        $token = $this->security->getToken();
-
-        if (null !== $token && $token->isAuthenticated('ROLE_MEMBER')) {
+        if ($this->authorizationChecker->isGranted('ROLE_MEMBER')) {
             return new Response('Member is logged in.');
         }
 

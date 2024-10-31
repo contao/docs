@@ -32,6 +32,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['sorting'] = [
 | rootPaste             | true/false (`bool`)           | Enable paste buttons at root level. (default: false)                                                                                                                                                                                                                                                                                                                             |
 | filter                | Query filter (`array`)           | Allows you to add custom filters as arrays, e.g. `[['status=?', 'active'], ['usages>?', 0]]`.                                                                                                                                                                                                                                                                                                                        |
 | disableGrouping       | true/false (`bool`)           | Allows you to disable the group headers in list view and parent view.                                                                                                                                                                                                                                                                                                                                  |
+| defaultSearchField    | Field name (`string`)           | {{< version-tag "5.1" >}} Set a default search field for the search records menu instead of selecting the alphabetically first field.                                                                                                                                                                                                                                                                                                                          |
 | [paste_button_callback](../callbacks#list-sorting-paste-button) | Callback function (`array`)      | These functions will be called instead of displaying the default paste buttons. Please specify as `['Class', 'Method']` or use an anonymous function. |
 | [child_record_callback](../callbacks#list-sorting-child-record) | Callback function (`array`)      | These functions must be specified to render the child elements (sorting mode 4 only). Please specify as `['Class', 'Method']` or use an anonymous function. |
 | [header_callback](../callbacks#list-sorting-header) | Callback function (`array`) | These functions will be called when the header fields (sorting mode 4 only) are created. Please specify as `['Class', 'Method']` or use an anonymous function. |
@@ -70,7 +71,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['label'] = [
 | fields         | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `['title', 'user_id:tl_user.name']`). |
 | showColumns    | true/false (`bool`)           | If true Contao will generate a table header with column names (e.g. back end member list)          |
 | showFirstOrderBy | true/false (`bool`)           | {{< version-tag "4.13.36" >}} If false Contao will not force the first sorting field to show up in the list.          |
-| format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. <br>**%s** ).                       |
+| format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. `'%s (%s)'`).                       |
 | maxCharacters  | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
 | [group_callback](../callbacks#list-label-group) | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
 | [label_callback](../callbacks#list-label-label) | Callback functions (`array`)     | Call a custom function instead of using the default label function.                                |
@@ -163,13 +164,16 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 
 #### Toggle Operation
 
-{{< version-tag "5.0" >}} You can implement an automatic toggle operation for data containers that contain a boolean 
-field. This is typically used for fields that control a "published" state of a data record for example, but the use case 
+{{< version-tag "4.13" >}} You can implement an automatic toggle operation for data containers that contain a boolean
+field. This is typically used for fields that control a "published" state of a data record for example, but the use case
 can be arbitrary.
 
 ```php
 // contao/dca/tl_foobar.php
-$GLOBALS['TL_DCA']['tl_foobar']['list']['operations'][] = 'toggle';
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
+    'href' => 'act=toggle&amp;field=published',
+    'icon' => 'visible.svg',
+];
 
 $GLOBALS['TL_DCA']['tl_foobar']['fields']['published'] = [
     'toggle' => true,
@@ -178,7 +182,6 @@ $GLOBALS['TL_DCA']['tl_foobar']['fields']['published'] = [
 ];
 ```
 
-{{% notice "note" %}}
 If the state of your field is reversed you can instead define `reverseToggle`:
 
 ```php
@@ -188,4 +191,10 @@ $GLOBALS['TL_DCA']['tl_foobar']['fields']['invisible'] = [
     'sql' => ['type' => 'boolean', 'default' => false],
 ];
 ```
-{{% /notice %}}
+
+{{< version-tag "5.0" >}} Since contao 5 you can reduce the toggle operation to a single line:
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations'][] = 'toggle';
+```

@@ -44,7 +44,7 @@ class ParseArticlesListener
     public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void
     {
         // Fetch the news entry's author
-        $author = UserModel::findByPk($newsEntry['author']);
+        $author = UserModel::findById($newsEntry['author']);
 
         // Override the "author" variable of the template with the row information of the author
         $template->author = $author->row();

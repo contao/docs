@@ -699,15 +699,15 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Contao\Image;
 use Contao\StringUtil;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 #[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
 class ExampleListOperationListener
 {
     public function __construct(
-        protected Security $security
-    )
-    {}
+        private readonly AuthorizationCheckerInterface $authorizationChecker,
+    ) {
+    }
 
     public function __invoke(
         array $row,
@@ -725,7 +725,7 @@ class ExampleListOperationListener
         DataContainer $dc
     ): string
     {
-        if (!$this->security->isGranted('contao_user.example', 'custom_operation')) {
+        if (!$this->authorizationChecker->isGranted('contao_user.example', 'custom_operation')) {
             return '';
         }
 

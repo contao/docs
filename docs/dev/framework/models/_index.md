@@ -25,8 +25,8 @@ Each class extending `Model` has some *static* methods you can use:
 ```php
 use Contao\PageModel;
 
-// get a record by its primary key
-$page = PageModel::findByPk(2);
+// get a record by its ID
+$page = PageModel::findById(2);
 
 // find a record by ID or alias (the parameter you pass can be both)
 $page = PageModel::findByIdOrAlias('index');
@@ -45,7 +45,7 @@ Also, `Model` implements the `__callStatic()` method from PHP. This way you can 
 At the moment, the methods `findOneBy()`, `findBy()` and `countBy()` are supported:
 
 ```php
-// find a record by ID or alias (the parameter you pass can be both)
+// find a record by its ID
 $page = PageModel::findById(5);
 
 // find the record where adminEmail is "admin@example.com"
@@ -71,7 +71,7 @@ $page->save();
 ```
 
 ## Configuration options
-You can add a third (or if you use the static binded methods with the field name, second) parameter to the Model method.
+You can add a third (or if you use the statically bound methods with the field name, second) parameter to the Model method.
 This is an array containing configuration which then will be added to the SQL query in the background.
 
 The following options are available:

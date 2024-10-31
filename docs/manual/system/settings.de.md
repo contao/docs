@@ -1203,7 +1203,7 @@ Die gleiche Erklärung wie für `TRUSTED_PROXIES` und das IP-Beispiel gilt auch 
 
 In Contao wird die Domain einer Webseite in den Einstellungen des Startpunkts der Webseite definiert und ist somit in
 der Datenbank gespeichert. Wenn man die Datenbank von einer Umgebung in die Andere kopiert müsste man also diese
-Einstellungen dnanach manuell ändern. Mit der `DNS_MAPPING` Umgebungsvariable kann dieser Prozess automatisiert werden:
+Einstellungen danach manuell ändern. Mit der `DNS_MAPPING` Umgebungsvariable kann dieser Prozess automatisiert werden:
 
 ```env
 # .env.local in deiner lokalen Entwicklungs-Umgebung

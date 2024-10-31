@@ -91,13 +91,14 @@ use Contao\CoreBundle\InsertTag\ParsedSequence;
 use Contao\CoreBundle\InsertTag\ResolvedInsertTag;
 use Contao\CoreBundle\InsertTag\Resolver\BlockInsertTagResolverNestedResolvedInterface;
 use Contao\CoreBundle\Security\ContaoCorePermissions;
-use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 #[AsBlockInsertTag('ifmembergroup', endTag: 'endifmembergroup')]
 class IfMemberGroupInsertTag implements BlockInsertTagResolverNestedResolvedInterface
 {
-    public function __construct(private readonly Security $security)
-    {
+    public function __construct(
+        private readonly AuthorizationCheckerInterface $auth
+    ) {
     }
 
     public function __invoke(ResolvedInsertTag $insertTag, ParsedSequence $wrappedContent): ParsedSequence
@@ -106,7 +107,7 @@ class IfMemberGroupInsertTag implements BlockInsertTagResolverNestedResolvedInte
             throw new InvalidInsertTagException('Missing parameters for insert tag.');
         }
 
-        if ($this->security->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, $groups)) {
+        if ($this->auth->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, $groups)) {
             return $wrappedContent;
         }
 

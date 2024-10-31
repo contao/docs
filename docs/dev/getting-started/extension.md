@@ -22,7 +22,7 @@ used interchangably. For Composer, everything is a _package_, while a `symfony-b
 or a `contao-bundle` is a specific type of package. _Contao bundles_ are referred 
 to as _extensions_ within the Contao universe.
 {{% /notice %}}
-F
+
 This article guides you through the necessary steps of creating an extension. It 
 reflects the minimum amount of basic configuration that has to be done in order
 to be able to install such an extension in your Contao installation.
@@ -420,6 +420,36 @@ class Plugin implements RoutingPluginInterface
 
 This will load the routing configuration located under `config/routes.yaml`
 of this extension.
+
+```yaml
+# config/routes.yaml
+somevendor.contao_example_bundle.controller:
+    resource: ../src/Controller
+    type: attribute
+```
+
+If you only need one format (e.g. `attribute`) and have all your controllers in the same place (e.g. `src/Controller`), 
+you may save yourself the additional config file:
+
+```php
+// src/ContaoManager/Plugin.php
+namespace Somevendor\ContaoExampleBundle\ContaoManager;
+
+use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
+use Symfony\Component\Config\Loader\LoaderResolverInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
+
+class Plugin implements RoutingPluginInterface
+{
+    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+    {
+        return $resolver
+            ->resolve(__DIR__.'/../Controller', 'attribute')
+            ->load(__DIR__.'/../Controller')
+        ;
+    }
+}
+```
 
 
 ## Versioning & Publishing

@@ -138,6 +138,7 @@ Each field can be validated against a regular expression.
 | cols               | Columns (`integer`)              | Number of columns (used for `textarea`, `radioTable` and `tableWizard` fields).                                                                                                                                |
 | csv                | Delimiter (`string`)             | The choice of this field will not be stored as serialized string but rather as given delimiter-separated list. Example: `'eval' => ['csv'=>',']`                 |
 | customRgxp        | Regular expression (`string`) | {{< version-tag "4.11" >}} Custom regular expression to be used when using `'rgxp' => 'custom'` |
+| errorMsg         | Custom Message (`string`) | Custom error message to be used when using `'rgxp' => 'custom'` |
 | customTpl        | Filename (`string`) | Use own template for this input field `'customTpl' => 'template-file-name'` |
 | datepicker         | true/false (`bool`)           | If true the current field will have a [MooTools-DatePicker](https://github.com/arian/mootools-datepicker).                                                                                                                             |
 | dcaPicker          | true/false (`bool`)           | If true the general purpose picker will be shown. Allows to pick different records from the system and return them as an insert tag.                                     |
@@ -228,7 +229,7 @@ can be [registered using a hook][3].
 | google+     | expects a Google+ ID or vanity name                                                                               |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
 | httpurl     | {{< version-tag "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
-| custom      | {{< version-tag "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/']` |
+| custom      | {{< version-tag "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/', 'errorMsg'=> 'Custom error message']` |
 
 
 #### Meta Wizard Fields
