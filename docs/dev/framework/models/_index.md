@@ -137,3 +137,6 @@ For documentation on creating your own model, [click here](customization).
 
 ## Collections
 If you want to fetch multiple records from the database, have a look into [Collections](collections).
+
+## Enumerations
+Models are able to resolve the values stored for a record into [Enumerations](enumerations).
