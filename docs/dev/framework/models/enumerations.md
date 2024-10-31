@@ -26,7 +26,7 @@ Only the `value` of an enumeration is stored in the database.
 You can use `Model::getEnum()` to resolve the enumeration.
 
 ```php
-$member = MemberModel::findByPk(42);
+$member = MemberModel::findById(42);
 
 $member->salutation; // string value, e.g. 'ms'
 $member->getEnum('salutation'); // App\Data\Salutation or null
