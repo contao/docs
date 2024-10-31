@@ -100,7 +100,7 @@ Mit DDEV können zusätzliche PHP-Konfigurationen für ein Projekt bereitgestell
 
 Eine Beispieldatei in `.ddev/php/my-php.ini` könnte wie folgt aussehen:
 
-```ìni
+```ini
 [PHP]
 memory_limit = -1
 ```
