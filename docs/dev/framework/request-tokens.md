@@ -152,6 +152,12 @@ class MyCustomService
 }
 ```
 
+{{% notice warning %}}
+If you are using Symfony forms to store records that will be shown in the backend or are rendered in the frontend using
+legacy templates, keep in mind that there won't be any input encoding! Without careful treatment, this will result in XSS
+vulnerabilities!
+{{% /notice %}}
+
 ## Deprecated Constants, Configuration Settings and more
 
 For historical reasons, you may still come across the following constants or configuration settings.
