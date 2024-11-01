@@ -104,7 +104,7 @@ If you want to use Symfony Forms in a controller or in a custom service, you hav
 the request is not blocked.
 
 If you have a Contao controller extended from `AbstractFrontendModuleController` or `AbstractContentElementController` 
-you can simply use `$this->getCsrfOptions()` and pass them to the options array:
+you can simply use `$this->getCsrfFormOptions()` and pass them to the options array:
 
 ```php
 use Contao\ContentModel;
