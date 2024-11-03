@@ -823,6 +823,39 @@ class ExampleService
 }
 ```
 
+## Content URL Generator
+
+{{< version "5.3" >}}
+
+The `contao.routing.content_url_generator` service lets you generate URLs for Contao models and entities (whenever
+applicable), e.g. for pages or news. See also the [main article][ContentUrlGenerator].
+
+```php
+// src/MyService.php
+use Contao\CoreBundle\Routing\ContentUrlGenerator;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+
+class MyService
+{
+    public function __construct(private readonly ContentUrlGenerator $contentUrlGenerator)
+    {
+    }
+
+    public function __invoke()
+    {
+        $page = PageModel::findBy(…);
+
+        // Generates an absolute URL for the given page
+        $pageUrl = $this->contentUrlGenerator->generate($page, [], UrlGeneratorInterface::ABSOLUTE_URL);
+
+        $news = NewsModel::findBy(…);
+
+        // Generates an absolte path for the given news item
+        $newsUrl = $this->contentUrlGenerator->generate($news, [], UrlGeneratorInterface::ABSOLUTE_PATH);
+    }
+}
+```
+
 
 [SimpleTokenUsage]: https://github.com/contao/contao/blob/5.x/core-bundle/tests/String/SimpleTokenParserTest.php
 [ExpressionLanguage]: https://symfony.com/doc/current/components/expression_language.html
@@ -833,3 +866,4 @@ class ExampleService
 [ResponseContext]: /framework/response-context/
 [ContainerConfig]: /reference/config/
 [SymfonyMailer]: https://symfony.com/doc/current/mailer.html
+[ContentUrlGenerator]: /framework/routing/content-routing/
