@@ -82,10 +82,8 @@ The `ddev` binary is not available in the container, so first switch to the host
 
 
 {{% notice tip %}}
-
 The [Contao Demo Website](https://demo.contao.org/) is maintained for the currently supported Contao versions and can be optionally 
 be installed via Composer. Here you can find information about the [Installation of the Contao Demo](https://github.com/contao/contao-demo).
-
 {{% /notice %}}
 
 
