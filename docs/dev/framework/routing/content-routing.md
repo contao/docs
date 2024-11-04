@@ -7,11 +7,11 @@ description: "URL generation for database records in Contao."
 {{< version "5.3" >}}
 
 In Symfony you can generate the URL to the routes of controllers via the [`router` service][RouterService]. However,
-in Contao you also want to generate front end URLs for your database records (like a news item for example) - or just
+in Contao you also want to generate front end URLs for your objects (like a news item for example) - or just
 for a regular page.
 
-Contao **5.3** introduces a system with which you can implement "URL resolvers" for your own database records (models,
-entities) and then use the `ContentUrlGenerator` service to generate URLs to these database records - or to any of the
+Contao **5.3** introduces a system with which you can implement "URL resolvers" for your own objects (models,
+Doctrine entities) and then use the `ContentUrlGenerator` service to generate URLs to these database records - or to any of the
 other existing models in Contao, like news or pages.
 
 
