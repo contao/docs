@@ -80,10 +80,8 @@ Mit `ddev launch contao` kommst du direkt zur Administration.
 
 
 {{% notice tip %}}
-
 Die [Contao Demo Webseite](https://demo.contao.org/) wird für die aktuell unterstützten Contao-Versionen gepflegt und kann optional 
 über Composer installiert werden. Hier findest du Informationen zur [Installation der Contao Demo](https://github.com/contao/contao-demo).
-
 {{% /notice %}}
 
 
