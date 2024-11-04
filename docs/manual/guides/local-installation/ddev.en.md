@@ -35,6 +35,7 @@ The [Contao Demo Website](https://demo.contao.org/) is maintained for the curren
 be installed via Composer. Here you can find information about the [Installation of the Contao Demo](https://github.com/contao/contao-demo).
 {{% /notice %}}
 
+
 ```shell
 mkdir -p ~/projects/contao/contao-ddev && cd ~/projects/contao/contao-ddev
 ```
