@@ -78,6 +78,15 @@ Mit `ddev launch contao` kommst du direkt zur Administration.
 
 {{% /notice %}}
 
+
+{{% notice tip %}}
+
+Die [Contao Demo Webseite](https://demo.contao.org/) wird für die aktuell unterstützten Contao-Versionen gepflegt und kann optional 
+über Composer installiert werden. Hier findest du Informationen zur [Installation der Contao Demo](https://github.com/contao/contao-demo).
+
+{{% /notice %}}
+
+
 ## Zusatz Informationen
 
 `ddev start` startet das Projekt, `ddev stop` beendet es. Stelle vorher sicher, dass du in den Projektordner gewechselt hast.

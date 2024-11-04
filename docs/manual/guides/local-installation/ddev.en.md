@@ -80,6 +80,15 @@ With `ddev launch contao` you get directly to the administration.
 
 The `ddev` binary is not available in the container, so first switch to the host console with `exit`.
 
+
+{{% notice tip %}}
+
+The [Contao Demo Website](https://demo.contao.org/) is maintained for the currently supported Contao versions and can be optionally 
+be installed via Composer. Here you can find information about the [Installation of the Contao Demo](https://github.com/contao/contao-demo).
+
+{{% /notice %}}
+
+
 ## Additional information
 
 `ddev start` starts the project, `ddev stop` ends it. Make sure beforehand that you have changed to the project folder.
