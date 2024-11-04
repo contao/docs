@@ -28,13 +28,12 @@ DDEV is available for all platforms, please refer to the [DDEV documentation](ht
 
 ## Create project
 
-Open the console of your choice, create the desired directory and then change to it. The directory name reflects the subsequent project hostname. However, you can [configure this](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/) additionally.
-
 {{% notice tip %}}
 The [Contao Demo Website](https://demo.contao.org/) is maintained for the currently supported Contao versions and can be optionally 
 be installed via Composer. Here you can find information about the [Installation of the Contao Demo](https://github.com/contao/contao-demo).
 {{% /notice %}}
 
+Open the console of your choice, create the desired directory and then change to it. The directory name reflects the subsequent project hostname. However, you can [configure this](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/) additionally.
 
 ```shell
 mkdir -p ~/projects/contao/contao-ddev && cd ~/projects/contao/contao-ddev

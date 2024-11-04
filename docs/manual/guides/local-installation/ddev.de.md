@@ -28,12 +28,12 @@ DDEV ist für alle Plattformen verfügbar, für die Installation deiner Plattfor
 
 ## Projekt erstellen
 
-Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses. Der Verzeichnisname spiegelt den späteren Projekt Hostnamen. Du kannst dies jedoch zusätzlich [konfigurieren](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/).
-
 {{% notice tip %}}
 Die [Contao Demo Webseite](https://demo.contao.org/) wird für die aktuell unterstützten Contao-Versionen gepflegt und kann optional 
 über Composer installiert werden. Hier findest du Informationen zur [Installation der Contao Demo](https://github.com/contao/contao-demo).
 {{% /notice %}}
+
+Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses. Der Verzeichnisname spiegelt den späteren Projekt Hostnamen. Du kannst dies jedoch zusätzlich [konfigurieren](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/).
 
 ```shell
 mkdir -p  ~/Projekte/contao/contao-ddev && cd ~/Projekte/contao/contao-ddev
