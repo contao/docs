@@ -51,8 +51,8 @@ class MyService
 }
 ```
 
-But suppose have a front end module that fetches your objects from the database and then lists them via a template in
-the front end:
+But suppose you have a front end module that fetches your objects from the database and then lists them via a template
+in the front end:
 
 ```php
 // src/Controller/FrontendModule/FoobarListController.php
