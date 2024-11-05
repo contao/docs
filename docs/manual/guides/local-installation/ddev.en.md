@@ -28,11 +28,6 @@ DDEV is available for all platforms, please refer to the [DDEV documentation](ht
 
 ## Create project
 
-{{% notice tip %}}
-The [Contao Demo Website](https://demo.contao.org/) is maintained for the currently supported Contao versions and can be optionally 
-be installed via Composer. Here you can find information about the [Installation of the Contao Demo](https://github.com/contao/contao-demo).
-{{% /notice %}}
-
 Open the console of your choice, create the desired directory and then change to it. The directory name reflects the subsequent project hostname. However, you can [configure this](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/) additionally.
 
 ```shell
@@ -50,6 +45,11 @@ Install Contao 5.3:
 ```shell
 ddev composer create contao/managed-edition:5.3
 ```
+
+{{% notice tip %}}
+The [Contao Demo Website](https://demo.contao.org/) is maintained for the currently supported Contao versions and can be optionally 
+be installed via Composer. Here you can find information about the [Installation of the Contao Demo](https://github.com/contao/contao-demo).
+{{% /notice %}}
 
 After installation, the database access data must be entered in the `.env.local`. At the same time, we also set up Mailpit directly.
 
