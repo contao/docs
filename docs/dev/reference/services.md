@@ -537,7 +537,7 @@ class Example
 
 ## TokenChecker
 
-This service let's you query information of the Contao related security tokens, if
+The `contao.security.token_checker` service let's you query information of the Contao related security tokens, if
 present. It allows you to check, whether a token for a front end user, back end
 user or the preview mode is present. It also allows you to retrieve the username 
 of the token.
