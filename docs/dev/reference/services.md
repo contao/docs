@@ -827,7 +827,7 @@ class ExampleService
 
 {{< version "5.3" >}}
 
-The `contao.routing.content_url_generator` service lets you generate URLs for Contao models and entities (whenever
+The `contao.routing.content_url_generator` service lets you generate URLs for content objects, e.g. models and entities (whenever
 applicable), e.g. for pages or news. See also the [main article][ContentUrlGenerator].
 
 ```php

@@ -206,9 +206,9 @@ either of these 3 things will happen next:
 stored URL as its `StringUrl` content. This will cause the result to be forwarded to the `StringResolver`, which will
 then process the URL further (i.e. replace insert tags and make sure that the URL reference type matches the requested
 type).
-* If the news is a reference to a Contao page or article, a `ContentUrlResult` with the page or article as its content
+* If the news redirects to a Contao page or article (and not to a news reader), a `ContentUrlResult` with the page or article as its content
 will be returned. This will cause the result to be forwarded to the `PageResolver` or `ArticleResolver` respectively.
-* Otherwise the news resolver determines the target page of the news item's archive and returns a `ContentUrlResolut`
+* Otherwise the news resolver determines the target page of the news item's archive and returns a `ContentUrlResult`
 with that page as its content.
 
 The difference in the latter case is the usage of `ContentUrlResult::resolve()` rather than 
@@ -216,7 +216,7 @@ The difference in the latter case is the usage of `ContentUrlResult::resolve()` 
 the target's content.
 
 This is important for the second part of the interface: `getParametersForContent()`. Here your URL resolver can define
-what parameters should be used during URL generation when generating the URL for your content. For example, if your
+what parameters should be used during URL generation when generating the URL for your resolved content. For example, if your
 content is expected to be shown on a regular page of Contao (like in the news item example) then you might want to
 define the `parameters` parameter (see [Legacy Parameters][LegacyParameters]). Or if your content is expected to be
 shown within a certain [page controller][PageControllers] you can generate the parameters that your page controller's
@@ -234,6 +234,7 @@ $GLOBALS['TL_DCA']['tl_foobar'] = […];
 ```
 
 ```php
+// src/Model/FoobarModel.php
 namespace App\Model;
 
 use Contao\Model;
@@ -245,6 +246,7 @@ class FoobarModel extends Model
 ```
 
 ```php
+// contao/config/config.php
 use App\Model\FoobarModel;
 
 $GLOBALS['BE_MOD']['content']['Foobar'] = ['tables' => ['tl_foobar']];
