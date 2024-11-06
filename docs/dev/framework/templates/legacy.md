@@ -347,6 +347,57 @@ and `$this->endblock()` statements.
 {{% /notice %}}
 
 
+## Lazy Template Variables
+
+You can also add functions to a template in order to process some data lazily, i.e. only when that variable is actually
+used in the template.
+
+```php
+use Contao\FrontendTemplate;
+
+$template = new FrontendTemplate('foobar');
+$template->foo = function(): string {
+    // Execute some function and return a value here
+    // …
+
+    return $result;
+};
+```
+
+These functions will be automatically executed when accessed in the template like a variable:
+
+```php
+<!-- Actually executes the stored function -->
+<?= $this->foo ?>
+```
+
+In some cases you might want to execute a function only once for performance reasons - and then that first result should
+continued to be used. An example would be the `$this->text` and `$this->hasText` variables of news templates, which 
+actually lazily loads the detail content from the database once accessed. Subsequent `$this->text` usages will then use
+the first result. This can be done easily through the `Template::once()` helper method:
+
+```php
+use Contao\FrontendTemplate;
+use Contao\Template;
+
+$template = new FrontendTemplate('foobar');
+$template->foo = Template::once(function(): string {
+    // Do some heavy lifting here and then return the result
+    // …
+
+    return $result;
+});
+```
+
+```php
+<!-- Executes the function -->
+<?= $this->foo ?>
+
+<!-- Uses the result from before -->
+<?= $this->foo ?>
+```
+
+
 [SymfonyVarDumper]: https://symfony.com/doc/current/components/var_dumper.html
 [ContaoSearch]: https://docs.contao.org/manual/en/layout/module-management/website-search/
 [FrontEndTheme]: https://docs.contao.org/manual/en/layout/theme-manager/manage-themes/#configuring-themes
