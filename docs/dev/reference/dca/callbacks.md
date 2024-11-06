@@ -574,7 +574,7 @@ use Contao\Image;
 #[AsCallback(table: 'tl_example', target: 'list.label.label')]
 class ExampleLabelCallbackListener
 {
-    public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, ?bool $isProtected = null): string
+    public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, bool|null $isProtected = null): string
     {
         $icon = Image::getHtml('bundles/app/images/example.svg');
 
