@@ -81,7 +81,7 @@ class MakeTextNotMandatoryCallback
         $this->requestStack = $requestStack;
     }
 
-    public function __invoke(DataContainer $dc = null): void
+    public function __invoke(DataContainer|null $dc = null): void
     {
         if (null === $dc || !$dc->id || 'edit' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
             return;
@@ -574,7 +574,7 @@ use Contao\Image;
 #[AsCallback(table: 'tl_example', target: 'list.label.label')]
 class ExampleLabelCallbackListener
 {
-    public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, ?bool $isProtected = null): string
+    public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, bool|null $isProtected = null): string
     {
         $icon = Image::getHtml('bundles/app/images/example.svg');
 
