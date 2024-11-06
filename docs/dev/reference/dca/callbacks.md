@@ -81,7 +81,7 @@ class MakeTextNotMandatoryCallback
         $this->requestStack = $requestStack;
     }
 
-    public function __invoke(DataContainer $dc = null): void
+    public function __invoke(?DataContainer $dc = null): void
     {
         if (null === $dc || !$dc->id || 'edit' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
             return;
@@ -774,7 +774,7 @@ use Contao\DataContainer;
 #[AsCallback('tl_content', 'fields.text.attributes')]
 class AttributesCallback
 {
-    public function __invoke(array $attributes, DataContainer|null $dc = null): array
+    public function __invoke(array $attributes, ?DataContainer $dc = null): array
     {
         if (!$dc || 'text' !== ($dc->getCurrentRecord()['type'] ?? null)) {
             return $attributes;
