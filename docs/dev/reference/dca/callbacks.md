@@ -774,7 +774,7 @@ use Contao\DataContainer;
 #[AsCallback('tl_content', 'fields.text.attributes')]
 class AttributesCallback
 {
-    public function __invoke(array $attributes, ?DataContainer $dc = null): array
+    public function __invoke(array $attributes, DataContainer|null $dc = null): array
     {
         if (!$dc || 'text' !== ($dc->getCurrentRecord()['type'] ?? null)) {
             return $attributes;
