@@ -12,8 +12,7 @@ tags:
 
 In diesem Tutorial wird die lokale Contao Nutzung mit [XAMPP](https://www.apachefriends.org/) für Windows beschrieben. 
 Wir verwenden hierbei eine »XAMPP Portable Version«, die lediglich kopiert werden muß. Du wählst hierzu das 
-passende [Windows .zip Archiv](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.16/), 
-z. B. [xampp-portable-windows-x64-7.4.16-0-VC15.zip](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.16/xampp-portable-windows-x64-7.4.16-0-VC15.zip/download), aus. 
+passende [Windows Archiv](https://www.apachefriends.org/de/download.html) aus. 
 
 Anschließend entpackst du das Archiv nach z. B. `D:\xampp` und startest einmalig die Datei `setup_xampp.bat`. Die 
 »XAMPP Installation« ist damit abgeschlossen.

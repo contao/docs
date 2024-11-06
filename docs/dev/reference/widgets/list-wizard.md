@@ -29,6 +29,8 @@ This table only shows the options relevant to the core functionality of this wid
 ## Examples
 
 ```php
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
 // ...
 'jobTitles' => [
     'inputType' => 'listWizard',
@@ -37,7 +39,8 @@ This table only shows the options relevant to the core functionality of this wid
     ],
     'sql' => [
         'type' => 'blob',
-        'notnull' => false
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
     ],
 
 ],
