@@ -111,12 +111,15 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 
 {{% notice "note" %}}
 {{< version-tag "5.3" >}} You do not have to define any settings for global operations anymore. Instead, you can give a list
-of which operations should be available for your data container.
+of which operations should be available for your data container. You can also adjust the order.
 
 ```php
 // contao/dca/tl_example.php
 $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
     'all',
+    'custom_operation' => [
+        'href' => 'do=custom_operation'
+    ],
     'toggleNodes',
 ];
 ```
