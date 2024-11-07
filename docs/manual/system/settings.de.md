@@ -1056,7 +1056,27 @@ Weitere Informationen findest du in der [Symfony-Dokumentation](https://symfony.
 ### `DATABASE_URL`
 
 Die Informationen der Datenbank-Verbindung werden als Umgebungsvariable namens `DATABASE_URL` gespeichert. Diese definiert den Datenbank-Benutzernamen, das Datenbank-Passwort, den Hostnamen, den Port und den Datenbanknamen, der von Contao verwendet wird. Das Format dieser Variable ist wie folgt: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
-Sie wird standardmäßig für die Doctrine-Konfiguration verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+Sie wird standardmäßig für die [Doctrine-Konfiguration][DoctrineConfig] verwendet: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+Falls die Datenbankverbindung aber stattdessen über einen UNIX-Socket aufgebaut werden muss, stellt die Contao
+Managed Edition von Haus aus keine entsprechende Umgebungsvariable zur Verfügung. Diese müsste man stattdessen manuell
+konfigurieren - zum Beispiel so:
+
+```yaml
+# config/config.yaml
+doctrine:
+    dbal:
+        unix_socket: '%env(string:DATABASE_SOCKET)%'
+
+parameters:
+    env(DATABASE_SOCKET): /tmp/mysql.sock
+```
+
+```ini
+# .env.local
+DATABASE_SOCKET=/tmp/mysql.sock
+```
 
 #### Konvertieren deiner Datenbank-Parameter
 
@@ -1598,3 +1618,4 @@ Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt wer
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
 [SymfonyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
 [SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html
+[DoctrineConfig]: https://symfony.com/doc/5.x/reference/configuration/doctrine.html#doctrine-dbal-configuration

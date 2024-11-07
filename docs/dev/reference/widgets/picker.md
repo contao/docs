@@ -71,6 +71,8 @@ a serialized array. Since you do not know the length in advance, a blob column i
 {{% tab name="Multiple content elements" %}}
 
 ```php
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
 // ...
 'myContentElements' => [
     'label' => ['Referenced elements', 'Help text'],
@@ -80,6 +82,7 @@ a serialized array. Since you do not know the length in advance, a blob column i
     ],
     'sql' => [
         'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
         'notnull' => false,
     ],
     'relation' => [
@@ -101,6 +104,8 @@ If you use your own data container table with a custom driver, you will need to 
 cases it's enough to simply extend a `Contao\CoreBundle\Picker\AbstractTablePickerProvider` class:
 
 ```php
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
 // ...
 'myProducts' => [
     'label' => ['Referenced products', 'Help text'],
@@ -110,6 +115,7 @@ cases it's enough to simply extend a `Contao\CoreBundle\Picker\AbstractTablePick
     ],
     'sql' => [
         'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
         'notnull' => false,
     ],
     'relation' => [
