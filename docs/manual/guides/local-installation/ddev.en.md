@@ -54,7 +54,7 @@ Install Contao 5.3:
 ddev composer create contao/managed-edition:5.3
 ```
 
-After installation, the database access data must be entered in the .env.local. At the same time, we also set up 
+After installation, the database credentials must be entered in the .env.local. At the same time, we also set up 
 [Mailpit](https://ddev.readthedocs.io/en/stable/users/usage/developer-tools/#email-capture-and-review-mailpit) directly.
 
 ```shell
@@ -70,7 +70,7 @@ ddev exec contao-console contao:migrate --no-interaction
 Create backend user (Administrator):
 
 ```shell
-ddev exec contao-console contao:user:create --username=admin --name=Administrator --email=admin@example.com --language=en --password=Password123 --admin
+ddev exec contao-console contao:user:create --username=admin --name=Administrator --email=admin@example.com --language=en --admin
 ```
 
 Call up the Administration in the browser:
