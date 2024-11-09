@@ -988,7 +988,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `minPasswordLength` | Allows you to define the minimum password length for front end members and back end users. Default: `8`. |
 | `requestTokenWhitelist` | Allows you to disable the [request token check][RequestTokens] for requests coming from the the hosts in this array _(deprecated)_. |
 | `resultsPerPage` | [Items per page](#back-end-configuration). |
-| `sessionTimeout` | Duration in seconds for how long a user session (front and back end) should stay valid. If you increase this value, you also might need to increase PHP's [session timeouts][PhpSessionSettings] (`session.cookie_lifetime` and `session.gc_maxlifetime`). Default: `3600`. |
+| `sessionTimeout` | Duration in seconds for how long a user session (front and back end) should stay valid. If you increase this value, you also might need to increase PHP's [session timeouts][PhpSessionSettings] (`session.cookie_lifetime` and `session.gc_maxlifetime`). Default: `3600`. Does not exist in Contao **5** anymore. |
 | `timeFormat` | [Time format](#date-and-time). |
 | `timeZone` | [Time zone](#date-and-time). |
 | `undoPeriod` | Duration in seconds for how long deleted entries can still be restored. Default: `2592000`. |
