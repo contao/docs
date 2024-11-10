@@ -35,7 +35,7 @@ installiert](https://github.com/contao/contao-demo) werden. Über den Contao Man
 Option auswählen.
 {{% /notice %}}
 
-{{< tabs groupId="Example">}}
+{{< tabs groupId="ddev-contao-install">}}
 
 {{% tab name="Composer" %}}
 Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses. Der Verzeichnisname spiegelt den späteren Projekt Hostnamen. Du kannst dies jedoch zusätzlich [konfigurieren](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/).
