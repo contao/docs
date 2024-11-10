@@ -70,6 +70,8 @@ If you simply want to toggle a property:
 If you want the editor to select from a fixed set of properties, you may define them via the `options` field. The selected options will be stored as a serialized array, so make sure your database field can store enough data.
 
 ```php
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
 // ...
 'myCheckbox' => [
     'label' => ['Checkbox', 'Help text'], // Or a reference to the global language array
@@ -82,6 +84,8 @@ If you want the editor to select from a fixed set of properties, you may define 
     ],
     'sql' => [
         'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
     ],
 ],
 // ...
@@ -94,6 +98,8 @@ If you want the editor to select from a fixed set of properties, you may define 
 You can also dynamically generate the options array to filter them as you wish. See the [options callback](../../dca/callbacks#fields-field-options) for further examples.
 
 ```php
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
 // ...
 'myCheckbox' => [
     'label' => ['Checkbox', 'Help text'], // Or a reference to the global language array
@@ -106,6 +112,8 @@ You can also dynamically generate the options array to filter them as you wish. 
     ],
     'sql' => [
         'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
     ],
 ],
 // ...

@@ -988,7 +988,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `minPasswordLength` | Allows you to define the minimum password length for front end members and back end users. Default: `8`. |
 | `requestTokenWhitelist` | Allows you to disable the [request token check][RequestTokens] for requests coming from the the hosts in this array _(deprecated)_. |
 | `resultsPerPage` | [Items per page](#back-end-configuration). |
-| `sessionTimeout` | Duration in seconds for how long a user session (front and back end) should stay valid. If you increase this value, you also might need to increase PHP's [session timeouts][PhpSessionSettings] (`session.cookie_lifetime` and `session.gc_maxlifetime`). Default: `3600`. |
+| `sessionTimeout` | Duration in seconds for how long a user session (front and back end) should stay valid. If you increase this value, you also might need to increase PHP's [session timeouts][PhpSessionSettings] (`session.cookie_lifetime` and `session.gc_maxlifetime`). Default: `3600`. Does not exist in Contao **5** anymore. |
 | `timeFormat` | [Time format](#date-and-time). |
 | `timeZone` | [Time zone](#date-and-time). |
 | `undoPeriod` | Duration in seconds for how long deleted entries can still be restored. Default: `2592000`. |
@@ -1053,7 +1053,27 @@ users. For more information please visit the [Symfony documentation](https://sym
 The database connection information is stored as an environment variable called `DATABASE_URL`. It defines 
 the database user name, database password, host name, port and database name that will be used by your Contao system. 
 The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
-It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+It is used by default for the [Doctrine configuration][DoctrineConfig]: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
+
+If you need to connect to the database via a UNIX socket instead, no environment variable is available by default for
+that in the Contao Managed Edition. Instead you will have to configure it manually - for example:
+
+```yaml
+# config/config.yaml
+doctrine:
+    dbal:
+        unix_socket: '%env(string:DATABASE_SOCKET)%'
+
+parameters:
+    env(DATABASE_SOCKET): /tmp/mysql.sock
+```
+
+```ini
+# .env.local
+DATABASE_SOCKET=/tmp/mysql.sock
+```
+
 
 #### Convert your database parameters
 
@@ -1624,3 +1644,4 @@ Therefore, the local time zone should either be set globally on the server or ex
 [SymfonyMessengerDoctrine]: https://symfony.com/doc/current/messenger.html#doctrine-transport
 [SymfonyMailerMessenger]: https://symfony.com/doc/current/mailer.html#sending-messages-async
 [SymfonyProxies]: https://symfony.com/doc/current/deployment/proxies.html
+[DoctrineConfig]: https://symfony.com/doc/5.x/reference/configuration/doctrine.html#doctrine-dbal-configuration

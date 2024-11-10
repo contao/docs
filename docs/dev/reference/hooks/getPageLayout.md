@@ -16,7 +16,7 @@ and does not expect a return value.
 
 ## Parameters
 
-1. *\Contao\PageModel* `$pageModel`
+1. *\Contao\PageModel* `$page`
 
 	The page model instance.
 
@@ -43,7 +43,7 @@ use Contao\PageModel;
 #[AsHook('getPageLayout')]
 class GetPageLayoutListener
 {
-    public function __invoke(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
+    public function __invoke(PageModel $page, LayoutModel $layout, PageRegular $pageRegular): void
     {
         // Modify the page or layout object
     }
