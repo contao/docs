@@ -1,6 +1,6 @@
 ---
 title: "CHMOD"
-description: Not yet documented
+description: Renders an interface where you can define access rights for the site structure.
 ---
 
 This widget renders an interface where you can define access rights for the site structure. It allows you to define
