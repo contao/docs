@@ -33,7 +33,7 @@ The [Contao demo website](https://demo.contao.org/) is maintained for the curren
 installed](https://github.com/contao/contao-demo). Via the Contao Manager you can simply select this option during the first installation.
 {{% /notice %}}
 
-{{< tabs groupId="Example">}}
+{{< tabs groupId="ddev-contao-install">}}
 
 {{% tab name="Composer" %}}
 Open the console of your choice, create the desired directory and then change to it. The directory name reflects the subsequent project hostname. However, you can [configure this](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/) additionally.
