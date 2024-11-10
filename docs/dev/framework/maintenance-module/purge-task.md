@@ -65,9 +65,12 @@ records within that table.
 
 You will also need translation labels:
 
-```php
-// contao/languages/en/tl_maintenance.php
-$GLOBALS['TL_LANG']['tl_maintenance_jobs']['foobar'] = ['Purge foobar', 'Truncates the <code>tl_foobar</code> table.'];
+```yaml
+// translations/contao_tl_maintenance.en.yaml
+tl_maintenance_jobs:
+    foobar:
+        - Purge foobar
+        - Truncates the <code>tl_foobar</code> table.
 ```
 
 This will then show the following for the purge module:
@@ -128,9 +131,12 @@ those folders.
 
 You will also need translation labels:
 
-```php
-// contao/languages/en/tl_maintenance.php
-$GLOBALS['TL_LANG']['tl_maintenance_jobs']['foobar'] = ['Purge foobar', 'Deletes the foobar entries.'];
+```yaml
+// translations/contao_tl_maintenance.en.yaml
+tl_maintenance_jobs:
+    foobar:
+        - Purge foobar
+        - Deletes the foobar entries.
 ```
 
 This will then show the following for the purge module:
@@ -170,9 +176,12 @@ class PurgeFoobarCustom
 
 You will also need translation labels:
 
-```php
-// contao/languages/en/tl_maintenance.php
-$GLOBALS['TL_LANG']['tl_maintenance_jobs']['foobar'] = ['Purge foobar', 'Executes a custom purging task.'];
+```yaml
+// translations/contao_tl_maintenance.en.yaml
+tl_maintenance_jobs:
+    foobar:
+        - Purge foobar
+        - 'Executes a custom purging task.
 ```
 
 This will then show the following for the purge module:
