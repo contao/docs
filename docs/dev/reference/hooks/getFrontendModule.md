@@ -40,8 +40,7 @@ a front end module.
     
 3. *object* `$module`
 
-    An instance of the front end module's class that is registered for this module's
-    type.
+    An instance of the front end module's class that is registered for this module's type.
 
 
 ## Return Values
@@ -63,7 +62,7 @@ use Contao\ModuleModel;
 #[AsHook('getFrontendModule')]
 class GetFrontendModuleListener
 {
-    public function __invoke(ModuleModel $model, string $buffer, $module): string
+    public function __invoke(ModuleModel $model, string $buffer, object $module): string
     {
         // Wrap a specific module in an additional wrapper div
         if (2 === (int) $model->id) {
