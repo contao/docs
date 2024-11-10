@@ -181,7 +181,7 @@ You will also need translation labels:
 tl_maintenance_jobs:
     foobar:
         - Purge foobar
-        - 'Executes a custom purging task.
+        - Executes a custom purging task.
 ```
 
 This will then show the following for the purge module:
