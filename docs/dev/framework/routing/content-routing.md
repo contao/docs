@@ -340,6 +340,6 @@ own resolver above.
 
 
 [SymfonyGenerateUrls]: https://symfony.com/doc/5.x/routing.html#generating-urls
-[RouterService]: /reference/reference/services/#router
+[RouterService]: /reference/services/#router
 [LegacyParameters]: /framework/routing/legacy-parameters/
 [PageControllers]: /framework/page-controllers/
