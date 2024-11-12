@@ -46,6 +46,7 @@ be of interest. Some of those will need to be created manually:
 | `contao/`       | Contao configuration and translations.                                         |
 | `src/`          | Your own PHP code: controllers, event listeners for hooks and other services.  |
 | `templates/`    | Templates for your own modules and elements, or customized existing templates. |
+| `translations/` | Symfony translations. {{< version-tag "5.3" >}} Can also be used for Contao translations. |
 | `composer.json` | Add dependencies, customize autoloading if required.                           |
 
 {{% notice note %}}

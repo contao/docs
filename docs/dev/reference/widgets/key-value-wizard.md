@@ -1,6 +1,6 @@
 ---
 title: "Key-Value-Wizard"
-description: Not yet documented
+description: Renders an expandable list of keys and values.
 ---
 
 
