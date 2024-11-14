@@ -30,7 +30,7 @@ using the `symfony/skeleton` for example).
 | `assets/`       | JavaScript and CSS assets of the Contao framework and third parties.        |
 | `config/`       | Application configuration files.                                            |
 | `files/`        | Public or protected files manged by Contao's file manager.                  |
-| `public/`       | Public entry points; contains symlinks to other public ressources. Prior to Contao version 4.13, the folder was called `web/` |
+| `public/`       | Public entry points; contains symlinks to other public resources. Prior to Contao version 4.13, the folder was called `web/` |
 | `system/`       | Legacy folder for Contao 3 compatibility.                                   |
 | `templates/`    | Customized Contao & Twig templates.                                         |
 | `var/`          | Transient files like the application cache and log files.                   |
