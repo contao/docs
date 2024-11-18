@@ -8,19 +8,42 @@ aliases:
 
 ## ImageFactory
 
-The image factory service `contao.image.image_factory` implements the `Contao\CoreBundle\Image\ImageFactoryInterface` and can be used to retrieve a resized version of a single image.
+The image factory service `contao.image.factory` (`contao.image.image_factory` before Contao 5) implements the
+`Contao\CoreBundle\Image\ImageFactoryInterface` and can be used to retrieve a resized version of a single image.
 
-The `create($path, $size, $options)` method supports different formats for its parameters. As an alternative to the instances of `Contao\Image\ImageInterface`, `Contao\Image\ResizeConfiguration` and `Contao\Image\ResizeOptions` you can use a `string` for the path, an `array` (see [Size Array][SizeArray]) or `integer` (ID of an image size in the database) for the size and a `string` for options that gets used as the target path.
+The `create($path, $size, $options)` method supports different formats for its parameters. As an alternative to the
+instances of `Contao\Image\ImageInterface`, `Contao\Image\ResizeConfiguration` and `Contao\Image\ResizeOptions` you can
+use a `string` for the path, an `array` (see [Size Array][SizeArray]) or `integer` (ID of an image size in the database)
+for the size and a `string` for options that gets used as the target path.
 
-As a result you get an instance of `Contao\Image\ImageInterface` back from which you can retrieve the path, URL and dimensions of the image. If you don’t specify a target path and the resized version of the image doesn’t already exist you can get an instance of `Contao\Image\DeferredImageInterface` back which holds the same information but the image file itself doesn’t exist yet.
+As a result you get an instance of `Contao\Image\ImageInterface` back from which you can retrieve the path, URL and
+dimensions of the image. If you don’t specify a target path and the resized version of the image doesn’t already exist
+you can get an instance of `Contao\Image\DeferredImageInterface` back which holds the same information but the image
+file itself doesn’t exist yet.
 
 
-#### Example
+### Example
+
+```php
+// src/ExampleService.php
+namespace App;
+
+use Contao\CoreBundle\Image\ImageFactoryInterface;
+
+class ExampleService
+{
+    public function __construct(private readonly ImageFactoryInterface $imageFactory)
+    {
+    }
+
+    // …
+}
+```
 
 ```php
 $image = $this->imageFactory->create(
     '/path/to/image.jpg',
-    [100, 100, ResizeConfiguration::MODE_CROP]
+    [100, 100, ResizeConfiguration::MODE_CROP],
 );
 ```
 
@@ -32,7 +55,7 @@ $image = $this->imageFactory->create(
     new ResizeConfiguration()
         ->setWidth(100)
         ->setHeight(100)
-        ->setMode(ResizeConfiguration::MODE_CROP)
+        ->setMode(ResizeConfiguration::MODE_CROP),
 );
 ```
 
@@ -45,14 +68,54 @@ echo $image->getDimensions()->getSize()->getWidth();
 // 100
 ```
 
+As mentioned previously, you can also define the target path, either via the `ResizeOptions` or just as a string for the
+third `$options` parameter of the `create()` method:
+
+```php
+$image = $this->imageFactory->create(
+    '/path/to/source/image.jpg',
+    [100, 100, ResizeConfiguration::MODE_CROP],
+    '/path/to/target/image.jpg',
+);
+```
+
+```php
+$image = $this->imageFactory->create(
+    '/path/to/image.jpg',
+    [100, 100, ResizeConfiguration::MODE_CROP],
+    new ResizeOptions()->setTargetPath('/path/to/target/image.jpg'),
+);
+```
+
+
 ## PictureFactory
 
-The picture factory service `contao.image.picture_factory` implements the `Contao\CoreBundle\Image\PictureFactoryInterface` and can be used to retrieve a responsive image which may consist of multiple image files in different sizes. The resulting instance of `PictureInterface` is meant to be used with `<picture>`, `srcset` and `sizes`.
+The picture factory service `contao.image.picture_factory` implements the`Contao\CoreBundle\Image\PictureFactoryInterface`
+and can be used to retrieve a responsive image which may consist of multiple image files in different sizes. The
+resulting instance of `PictureInterface` is meant to be used with `<picture>`, `srcset` and `sizes`.
 
-The `create($path, $size)` method supports different formats for its parameters. As an alternative to the instances of `Contao\Image\ImageInterface` and `Contao\Image\PictureConfiguration` you can use a `string` for the path and an `array`, `integer` or `string` for the size configuration.
+The `create($path, $size)` method supports different formats for its parameters. As an alternative to the instances of
+`Contao\Image\ImageInterface` and `Contao\Image\PictureConfiguration` you can use a `string` for the path and an
+`array`, `integer` or `string` for the size configuration.
 
 
-#### Example
+### Example
+
+```php
+// src/ExampleService.php
+namespace App;
+
+use Contao\CoreBundle\Image\PictureFactoryInterface;
+
+class ExampleService
+{
+    public function __construct(private readonly PictureFactoryInterface $imageFactory)
+    {
+    }
+
+    // …
+}
+```
 
 ```php
 $image = $this->pictureFactory->create(
