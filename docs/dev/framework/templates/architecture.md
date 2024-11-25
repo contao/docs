@@ -567,6 +567,14 @@ $contaoExtension = $twig->getExtension(ContaoExtension::class);
 $contaoExtension->addContaoEscaperRule('%^@MyNamespace/%');
 ```
 
+Since Contao 5.3.19 and 5.4.7 you can opt into double encoding by passing `double_encode = true` to the escape filter.
+This is usually required if you have HTML code nested in another language like JSON. For the `|json_encode` Twig filter
+double encoding is enabled automatically.
+
+```twig
+{{ my_json|e('html', double_encode = true) }}
+{{ my_data|json_encode }}
+```
 
 ## Legacy interoperability
 
