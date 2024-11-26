@@ -103,8 +103,8 @@ $contaoCsrfTokenManager->getDefaultTokenValue();
 If you want to use Symfony Forms in a controller or in a custom service, you have to use the Contao CSRF configuration so that 
 the request is not blocked.
 
-If you have a Contao controller extended from `AbstractFrontendModuleController` or `AbstractContentElementController` 
-you can simply use `$this->getCsrfFormOptions()` and pass them to the options array:
+If you have a Contao controller extended from `AbstractFrontendModuleController`, `AbstractContentElementController` 
+or Contao's `AbstractController`, you can simply use `$this->getCsrfFormOptions()` and pass them to the options array:
 
 ```php
 use Contao\ContentModel;
@@ -123,8 +123,8 @@ class MyCustomController extends AbstractContentElementController
 }
 ```
 
-For Symfony controllers or servcies you need the `FormFactoryInterface`, the `ContaoCsrfTokenManager` service 
-and the `contao.csrf_token_name` parameter from the container.
+Otherwise you need the `FormFactoryInterface`, the `ContaoCsrfTokenManager` service  and the `contao.csrf_token_name` parameter
+from the container:
 
 ```php
 use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;
