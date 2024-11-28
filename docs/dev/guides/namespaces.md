@@ -27,13 +27,13 @@ developing within the Contao framework. None of these are mandatory though.
 As it is customary within the Symfony environment, classes of certain namespaces
 should also be named with a namespace specific suffix:
 
-| Namespace           | Suffix       | Example                            |
-|:--------------------|--------------|------------------------------------|
-| `App\Controller`    | `Controller` | `App\Controller\ExampleController` |
-| `App\Cron`          | `Cron`       | `App\Cron\ExampleCron`             |
-| `App\EventListener` | `Listener`   | `App\EventListener\ExampleListener`|
-| `App\Model`         | `Model`      | `App\Model\ExampleModel`           |
-| …                   | …            | …                                  |
+| Namespace           | Suffix       | Example                                |
+|:--------------------|--------------|----------------------------------------|
+| `App\Controller`    | `Controller` | `App\Controller\ExampleController.php` |
+| `App\Cron`          | `Cron`       | `App\Cron\ExampleCron.php`             |
+| `App\EventListener` | `Listener`   | `App\EventListener\ExampleListener.php`|
+| `App\Model`         | `Model`      | `App\Model\ExampleModel.php`           |
+| …                   | …            | …                                      |
 
 
 [1]: /framework/managed-edition/manager-plugin/
