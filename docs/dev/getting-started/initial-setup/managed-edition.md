@@ -60,10 +60,10 @@ run `composer create-project contao/managed-edition`:
 {
     "scripts": {
         "post-install-cmd": [
-            "@php vendor/bin/contao-setup --ansi"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "@php vendor/bin/contao-setup --ansi"
+            "@php vendor/bin/contao-setup"
         ]
     }
 }
