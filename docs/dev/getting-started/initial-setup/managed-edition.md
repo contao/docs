@@ -60,18 +60,18 @@ run `composer create-project contao/managed-edition`:
 {
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ]
     }
 }
 ```
 
-So after every `composer update` or `composer install`, the `ScriptHandler` of the `Managed Edition` is called so it is
+So after every `composer update` or `composer install`, the `contao-setup` script of the `Managed Edition` is called so it is
 able to initialize the application.
-Here are examples of what the `ScriptHandler` does to give you an idea about its responsibilities:
+Here are examples of what the `contao-setup` script does to give you an idea about its responsibilities:
 
 * Creating the whole application structure. Folders such as the `app` and the `web` folders with the entry points.
 * It purges and rebuilds the cache
