@@ -24,6 +24,12 @@ legacy cronjobs. If you want to look these up you could either search for any `$
 Contao instance via your IDE, or use Xdebug for example in order to inspect the `$GLOBALS['TL_CRON']` array.
 {{% /notice %}}
 
+Starting also with Contao **5.3** you will find a special `contao.cron.supervise_workers` cronjob. This cronjob will automatically
+start worker processes for the [asynchronous messaging feature][AsyncMessaging]. There is, however, a fallback in case you do not
+configure a proper `contao:cron` cronjob (see next section). Then all messages (from the default Contao Managed Edition message
+queues) will be processed within `kernel.terminate` of the web process.
+
+
 ## Configuring the Cron Job
 
 By default the cron tasks are executed after a response is sent back to the visitor 
@@ -366,3 +372,4 @@ This is not necessary anymore in Contao **5.0** and up as you can use the `--for
 
 [1]: /framework/hooks/
 [contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
+[AsyncMessaging]: /framework/async-messaging/
