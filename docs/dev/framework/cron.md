@@ -10,7 +10,7 @@ Contao periodically executes some tasks via its own cron functionality. These in
 * Purge expired Opt-In tokens
 * etc.
 
-Starting with Contao **5** all cronjobs are registered as services and tagged using the `contao.cronjob` tag. Thus you can find all
+{{< version-tag "5.0" >}} Starting with Contao **5** all cronjobs are registered as services and tagged using the `contao.cronjob` tag. Thus you can find all
 cronjobs on your system using the following command:
 
 ```bash
@@ -24,7 +24,7 @@ legacy cronjobs. If you want to look these up you could either search for any `$
 Contao instance via your IDE, or use Xdebug for example in order to inspect the `$GLOBALS['TL_CRON']` array.
 {{% /notice %}}
 
-Starting also with Contao **5.3** you will find a special `contao.cron.supervise_workers` cronjob. This cronjob will automatically
+{{< version-tag "5.3" >}} Starting also with Contao **5.3** you will find a special `contao.cron.supervise_workers` cronjob. This cronjob will automatically
 start worker processes for the [asynchronous messaging feature][AsyncMessaging]. There is, however, a fallback in case you do not
 configure a proper `contao:cron` cronjob (see next section). Then all messages (from the default Contao Managed Edition message
 queues) will be processed within `kernel.terminate` of the web process.
