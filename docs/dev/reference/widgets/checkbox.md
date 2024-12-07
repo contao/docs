@@ -51,7 +51,7 @@ Depending on the widget configuration, the widget persists different values to t
 If you simply want to toggle a property:
 
 ```php
-// ...
+// …
 'myCheckbox' => [
     'label' => ['Checkbox', 'Help text'],
     'inputType' => 'checkbox',
@@ -60,7 +60,7 @@ If you simply want to toggle a property:
         'default' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -72,7 +72,7 @@ If you want the editor to select from a fixed set of properties, you may define 
 ```php
 use Doctrine\DBAL\Platforms\MySQLPlatform;
 
-// ...
+// …
 'myCheckbox' => [
     'label' => ['Checkbox', 'Help text'], // Or a reference to the global language array
     'inputType' => 'checkbox',
@@ -88,7 +88,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
         'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -100,7 +100,7 @@ You can also dynamically generate the options array to filter them as you wish. 
 ```php
 use Doctrine\DBAL\Platforms\MySQLPlatform;
 
-// ...
+// …
 'myCheckbox' => [
     'label' => ['Checkbox', 'Help text'], // Or a reference to the global language array
     'inputType' => 'checkbox',
@@ -116,7 +116,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
         'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -126,7 +126,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 You can generate an options array from another table with the `foreignKey` property. 
 
 ```php
-// ...
+// …
 'myUsers' => [
     'label' => ['My Users', 'Help text'], // Or a reference to the global language array
     'inputType' => 'checkbox',
@@ -137,7 +137,7 @@ You can generate an options array from another table with the `foreignKey` prope
         'default' => '',
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}

@@ -28,7 +28,9 @@ The meta data widget allows to edit meta data fields. If multiple languages are 
 The Meta Wizard configuration in the file manager.
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'meta' => [
     'exclude' => true,
     'inputType' => 'metaWizard',
@@ -49,9 +51,13 @@ The Meta Wizard configuration in the file manager.
                 ]
             ]
         ],
-    'sql' => "blob NULL"
+    'sql' => [
+        'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
+    ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}

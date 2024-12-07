@@ -31,7 +31,7 @@ This table only shows the options relevant to the core functionality of this wid
 ```php
 use Doctrine\DBAL\Platforms\MySQLPlatform;
 
-// ...
+// …
 'jobTitles' => [
     'inputType' => 'listWizard',
     'eval' => [
@@ -44,7 +44,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
     ],
 
 ],
-// ...
+// …
 ```
 
 ## Usage in Contao

@@ -48,7 +48,7 @@ a serialized array. Since you do not know the length in advance, a blob column i
 {{% tab name="News article" %}}
 
 ```php
-// ...
+// …
 'myNewsReference' => [
     'label' => ['Referenced news', 'Help text'],
     'inputType' => 'picker',
@@ -63,7 +63,7 @@ a serialized array. Since you do not know the length in advance, a blob column i
         'table' => 'tl_news',
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -73,7 +73,7 @@ a serialized array. Since you do not know the length in advance, a blob column i
 ```php
 use Doctrine\DBAL\Platforms\MySQLPlatform;
 
-// ...
+// …
 'myContentElements' => [
     'label' => ['Referenced elements', 'Help text'],
     'inputType' => 'picker',
@@ -91,7 +91,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
         'table' => 'tl_content',
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -106,7 +106,7 @@ cases it's enough to simply extend a `Contao\CoreBundle\Picker\AbstractTablePick
 ```php
 use Doctrine\DBAL\Platforms\MySQLPlatform;
 
-// ...
+// …
 'myProducts' => [
     'label' => ['Referenced products', 'Help text'],
     'inputType' => 'picker',
@@ -124,7 +124,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
         'table' => 'tl_product',
     ],
 ],
-// ...
+// …
 ```
 
 ```php

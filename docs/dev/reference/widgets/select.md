@@ -53,7 +53,7 @@ Depending on the widget configuration, the widget persists different values to t
 If you simply want to select an option from a fixed set.
 
 ```php
-// ...
+// …
 'isVisible' => [
     'label' => ['Visibility', 'Whether this element is visible on the page'],
 
@@ -66,7 +66,7 @@ If you simply want to select an option from a fixed set.
         'default' => 'auto',
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -76,7 +76,7 @@ If you simply want to select an option from a fixed set.
 If you simply want to select one option from a fixed set of grouped options.
 
 ```php
-// ...
+// …
 'mySelect' => [
     'label' => ['Select', 'Help text'],
     'inputType' => 'select',
@@ -96,7 +96,7 @@ If you simply want to select one option from a fixed set of grouped options.
         'default' => '',
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -106,7 +106,7 @@ If you simply want to select one option from a fixed set of grouped options.
 You can also dynamically generate the options array to filter them as you wish. See the [options callback](../../dca/callbacks#fields-field-options) for further examples. 
 
 ```php
-// ...
+// …
 'mySelect' => [
     'label' => ['Select', 'Help text'], // Or a reference to the global language array
     'inputType' => 'select',
@@ -122,7 +122,7 @@ You can also dynamically generate the options array to filter them as you wish. 
         'default' => '',
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -132,7 +132,7 @@ You can also dynamically generate the options array to filter them as you wish. 
 You can generate an options array from another table with the `foreignKey` property. 
 
 ```php
-// ...
+// …
 'myUsers' => [
     'label' => ['My Users', 'Help text'], // Or a reference to the global language array
     'inputType' => 'select',
@@ -146,7 +146,7 @@ You can generate an options array from another table with the `foreignKey` prope
         'default' => 0,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}

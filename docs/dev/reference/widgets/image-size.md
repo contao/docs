@@ -65,7 +65,7 @@ class ContentImageSizeOptionsListener
 ## Example
 
 ```php
-// ...
+// …
 'size' => [
     'exclude'   => true,
     'inputType' => 'imageSize',
@@ -83,7 +83,7 @@ class ContentImageSizeOptionsListener
         'customSchemaOptions' => ['collation' => 'ascii_bin'],
     ],
 ],
-// ...
+// …
 ```
 
 

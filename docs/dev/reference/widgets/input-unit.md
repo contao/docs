@@ -33,7 +33,7 @@ This table only shows the options relevant to the core functionality of this wid
 ## Example
 
 ```php
-// ...
+// …
 'headline' => [
     'exclude'   => true,
     'inputType' => 'inputUnit',

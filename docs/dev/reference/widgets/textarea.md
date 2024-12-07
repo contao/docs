@@ -43,8 +43,8 @@ is expected to be JSON you can use `ace|json`. If it is expected to be PHP you c
 
 ## Column Definition
 
-Typically the SQL column defintion for textarea fields will be `text NULL` (`['type' => 'text', 'notnull' => false]`) as it can contain
-contents of arbitrary length.
+Typically the SQL column defintion for textarea fields will be `text NULL` (`['type' => 'text', 'notnull' => false]`) as
+it can contain content of arbitrary length.
 
 
 ## Examples
@@ -56,16 +56,19 @@ contents of arbitrary length.
 If you simply want to allow multi-line text input:
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'myTextarea' => [
     'label' => ['Textarea', 'Description'],
     'inputType' => 'textarea',
     'sql' => [
         'type' => 'text',
+        'length' => MySQLPlatform::LENGTH_LIMIT_TEXT,
         'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -75,7 +78,9 @@ If you simply want to allow multi-line text input:
 If you want to provide a TinyMCE text editor for your textarea input:
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'myTextarea' => [
     'label' => ['Textarea', 'Description'],
     'inputType' => 'textarea',
@@ -85,10 +90,11 @@ If you want to provide a TinyMCE text editor for your textarea input:
     ],
     'sql' => [
         'type' => 'text',
+        'length' => MySQLPlatform::LENGTH_LIMIT_TEXT,
         'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
@@ -98,7 +104,9 @@ If you want to provide a TinyMCE text editor for your textarea input:
 If you want to provide the Ace editor with syntax highlighting for JavaScript for your textarea input:
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'myTextarea' => [
     'label' => ['Textarea', 'Description'],
     'inputType' => 'textarea',
@@ -107,10 +115,11 @@ If you want to provide the Ace editor with syntax highlighting for JavaScript fo
     ],
     'sql' => [
         'type' => 'text',
+        'length' => MySQLPlatform::LENGTH_LIMIT_TEXT,
         'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
