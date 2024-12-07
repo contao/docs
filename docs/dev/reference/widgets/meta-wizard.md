@@ -30,23 +30,22 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 'meta' => [
     'exclude' => true,
     'inputType' => 'metaWizard',
-    'eval' =>
-        [
-            'allowHtml' => true,
-            'multiple' => true,
-            'metaFields' => [
-                'title' => 'maxlength="255"',
-                'alt' => 'maxlength="255"',
-                'link' => ['attributes' => 'maxlength="2048"', 'dcaPicker' => true],
-                'caption' => ['type' => 'textarea'],
-                'license' => [
-                    'attributes' => 'maxlength="255"',
-                    'dcaPicker' => true,
-                    'rgxp' => '#(^$|^{{link_url::.+$|^https?://.+$)#',
-                    'rgxpErrMsg' => &$GLOBALS['TL_LANG']['tl_files']['licenseRgxpError']
-                ]
+    'eval' => [
+        'allowHtml' => true,
+        'multiple' => true,
+        'metaFields' => [
+            'title' => 'maxlength="255"',
+            'alt' => 'maxlength="255"',
+            'link' => ['attributes' => 'maxlength="2048"', 'dcaPicker' => true],
+            'caption' => ['type' => 'textarea'],
+            'license' => [
+                'attributes' => 'maxlength="255"',
+                'dcaPicker' => true,
+                'rgxp' => '#(^$|^{{link_url::.+$|^https?://.+$)#',
+                'rgxpErrMsg' => &$GLOBALS['TL_LANG']['tl_files']['licenseRgxpError'],
             ]
-        ],
+        ]
+    ],
     'sql' => [
         'type' => 'blob',
         'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,

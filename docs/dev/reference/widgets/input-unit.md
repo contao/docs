@@ -35,15 +35,15 @@ This table only shows the options relevant to the core functionality of this wid
 ```php
 // …
 'headline' => [
-    'exclude'   => true,
+    'exclude' => true,
     'inputType' => 'inputUnit',
     'options' => ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-    'eval'      => [
+    'eval' => [
         'maxlength' => 200, 
         'basicEntities' => true, 
         'tl_class' => 'w50',
     ],
-    'sql'       => [
+    'sql' => [
         'type' => 'string',
         'length' => 255,
         'default' => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h2";}',

@@ -67,16 +67,16 @@ class ContentImageSizeOptionsListener
 ```php
 // …
 'size' => [
-    'exclude'   => true,
+    'exclude' => true,
     'inputType' => 'imageSize',
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
-    'eval'      => [
+    'eval' => [
         'rgxp' => 'natural',
         'includeBlankOption' => true,
         'nospace' => true,
         'tl_class' => 'w50',
     ],
-    'sql'       => [
+    'sql' => [
         'type' => 'string',
         'length' => 128,
         'default' => '',

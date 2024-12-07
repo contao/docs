@@ -42,14 +42,14 @@ A single image file picker.
 ```php
 // …
 'singleSRC' => [
-    'exclude'   => true,
+    'exclude' => true,
     'inputType' => 'fileTree',
-    'eval'      => [
+    'eval' => [
         'filesOnly'  => true,
         'fieldType'  => 'radio',
         'extensions' => '%contao.image.valid_extensions%',
     ],
-    'sql'       => [
+    'sql' => [
         'type' => 'binary',
         'length' => 16,
         'fixed' => true,
@@ -70,13 +70,13 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 
 // …
 'multiSRC' => [
-    'exclude'   => true,
+    'exclude' => true,
     'inputType' => 'fileTree',
-    'eval'      => [
-        'fieldType'  => 'checkbox',
-        'files'      => true,
-        'isGallery'  => true,
-        'multiple'   => true,
+    'eval' => [
+        'fieldType' => 'checkbox',
+        'files' => true,
+        'isGallery' => true,
+        'multiple' => true,
         'extensions' => '%contao.image.valid_extensions%',
         'orderField' => 'orderSRC',
     ],
@@ -101,10 +101,10 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 // …
 'folders' => [
     'inputType' => 'fileTree',
-    'eval'      => [
-        'files'     => false,
+    'eval' => [
+        'files' => false,
         'fieldType' => 'checkbox',
-        'multiple'  => true,
+        'multiple' => true,
     ],
     'sql' => [
         'type' => 'blob',
