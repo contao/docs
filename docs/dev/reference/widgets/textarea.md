@@ -1,5 +1,5 @@
 ---
-title: "Textarea"
+title: Textarea
 description: Renders a textarea input field for which you can also enable the Ace or TinyMCE editor.
 ---
 

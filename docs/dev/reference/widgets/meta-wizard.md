@@ -1,5 +1,5 @@
 ---
-title: "Meta Wizard"
+title: Meta Wizard
 description: Allow to edit meta data fields.
 ---
 

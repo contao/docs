@@ -1,5 +1,5 @@
 ---
-title: "Key-Value-Wizard"
+title: Key-Value-Wizard
 description: Renders an expandable list of keys and values.
 ---
 

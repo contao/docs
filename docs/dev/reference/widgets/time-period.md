@@ -1,5 +1,5 @@
 ---
-title: "Time Period"
+title: Time Period
 description: Text field with drop-down menu
 ---
 

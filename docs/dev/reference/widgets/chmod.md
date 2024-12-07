@@ -1,5 +1,5 @@
 ---
-title: "CHMOD"
+title: CHMOD
 description: Renders an interface where you can define access rights for the site structure.
 ---
 

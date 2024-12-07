@@ -1,5 +1,5 @@
 ---
-title: "Image Size"
+title: Image Size
 description: Allows to define an output size for images.
 ---
 

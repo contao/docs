@@ -1,5 +1,5 @@
 ---
-title: "Table Wizard"
+title: Table Wizard
 description: Not yet documented
 ---
 

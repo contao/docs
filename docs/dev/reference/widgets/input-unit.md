@@ -1,5 +1,5 @@
 ---
-title: "Input Unit"
+title: Input Unit
 description: Text field with a small drop-down menu for the "unit".
 ---
 

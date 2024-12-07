@@ -1,5 +1,5 @@
 ---
-title: "Option Wizard"
+title: Option Wizard
 description: Not yet documented
 ---
 

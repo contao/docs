@@ -1,5 +1,5 @@
 ---
-title: "Select Menu"
+title: Select Menu
 description: Renders a drop-down menu
 ---
 

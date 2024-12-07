@@ -1,5 +1,5 @@
 ---
-title: "Checkbox"
+title: Checkbox
 description: Renders one or multiple checkboxes.
 ---
 

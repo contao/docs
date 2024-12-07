@@ -1,5 +1,5 @@
 ---
-title: "File tree"
+title: File Tree
 description: Render a file picker
 ---
 

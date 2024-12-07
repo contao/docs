@@ -1,6 +1,6 @@
 ---
-title: "Widgets"
-description: "Developer Reference for the Core widgets."
+title: Widgets
+description: Developer Reference for the Core widgets.
 aliases:
   - /reference/widgets/
 ---

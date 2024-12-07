@@ -1,5 +1,5 @@
 ---
-title: "Picker"
+title: Picker
 description: General purpose picker.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "List Wizard"
+title: List Wizard
 description: Render an expandable list
 ---
 

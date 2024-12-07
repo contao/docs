@@ -1,5 +1,5 @@
 ---
-title: "Module Wizard"
+title: Module Wizard
 description: Not yet documented
 ---
 

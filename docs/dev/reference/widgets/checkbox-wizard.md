@@ -1,5 +1,5 @@
 ---
-title: "Checkbox Wizard"
+title: Checkbox Wizard
 description: Multiple checkboxes with sorting support.
 ---
 
