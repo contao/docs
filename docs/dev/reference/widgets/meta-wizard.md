@@ -19,11 +19,7 @@ The meta data widget allows to edit meta data fields. If multiple languages are 
 | `eval.metaFields.[field].rgxp`       | `string`                | A validation regex.                                                                                                          |
 | `eval.metaFields.[field].rgxpErrMsg` | `string`                | Error message if regex validation failed.                                                                                    |
 
-## Examples
-
-{{< tabs groupId="meta-wizard-widget-examples" >}}
-
-{{% tab name="File Manager" %}}
+## Example
 
 The Meta Wizard configuration in the file manager.
 
@@ -59,7 +55,3 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 ],
 // …
 ```
-
-{{% /tab %}}
-
-{{< /tabs >}}
