@@ -11,15 +11,15 @@ Die Systemeinstellungen verabschieden sich langsam aber sicher aus dem Backend. 
 beeinflussen Contao als Applikation und somit besteht auch die Chance, dass durch eine falsche Einstellung das System
 in einen funktionsuntüchtigen Zustand gebracht wird. Sollte dies geschehen, hast du keine Möglichkeit mehr,
 die Einstellungen rückgängig zu machen und das System wiederherzustellen, da du dich nicht mehr einloggen kannst.
-Aus diesem Grund werden die meisten Einstellungen außerhalb von Contao über die `config.yaml` vorgenommen bzw. können 
+Aus diesem Grund werden die meisten Einstellungen außerhalb von Contao über die `config.yaml` vorgenommen bzw. können
 zukünftig über den Contao Manager vorgenommen werden.
 
 ## Einstellungen
 
 ### Globale Einstellungen
 
-**E-Mail-Adresse des Systemadministrators:** An diese Adresse werden z. B. Benachrichtigungen über gesperrte Konten 
-oder neu registrierte Benutzer geschickt. Du kannst auch folgende Notation verwenden, um einen Namen zur E-Mail-Adresse 
+**E-Mail-Adresse des Systemadministrators:** An diese Adresse werden z. B. Benachrichtigungen über gesperrte Konten
+oder neu registrierte Benutzer geschickt. Du kannst auch folgende Notation verwenden, um einen Namen zur E-Mail-Adresse
 hinzuzufügen:
 
 ```text
@@ -28,8 +28,8 @@ Kevin Jones [kevin.jones@example.com]
 
 ### Datum und Zeit
 
-**Datums- und Zeitformat:** Alle Datums- und Zeitformate müssen wie in der 
-[PHP-Funktion date](https://www.php.net/manual/de/function.date.php) eingegeben werden. Contao verarbeitet im Backend 
+**Datums- und Zeitformat:** Alle Datums- und Zeitformate müssen wie in der
+[PHP-Funktion date](https://www.php.net/manual/de/function.date.php) eingegeben werden. Contao verarbeitet im Backend
 ausschließlich numerische Formate, also die Buchstaben j, d, m, n, y, Y, g, G, h, H, i und s.
 
 Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
@@ -44,23 +44,23 @@ Hier sind einige Beispiele gültiger Datums- und Zeitangaben:
 | H:i:s    | 24 Stunden, Minuten und Sekunden, z. B. `20:36:59`            |
 | g:i      | 12 Stunden ohne führende Nullen sowie Minuten, z. B. `8:36`   |
 
-**Zeitzone:** Die Zeitzone solltest du unbedingt vor dem Erstellen deiner Webseite einstellen, da Contao alle 
-Zeitangaben als [Unix-Zeitstempel](https://www.php.net/time) speichert und Contao diese Zeitstempel bei einer Änderung 
+**Zeitzone:** Die Zeitzone solltest du unbedingt vor dem Erstellen deiner Webseite einstellen, da Contao alle
+Zeitangaben als [Unix-Zeitstempel](https://www.php.net/time) speichert und Contao diese Zeitstempel bei einer Änderung
 der Zeitzone nicht automatisch anpasst.
 
 
 ### Backend-Einstellungen
 
-**Elemente nicht verkürzen:** Im »Parent View« stellt Contao die Elemente aus Gründen der Übersichtlichkeit verkürzt 
-dar, wobei einzelne Elemente über ein Navigationsicon bei Bedarf ausgeklappt werden können. Wähle diese Option, um das 
+**Elemente nicht verkürzen:** Im »Parent View« stellt Contao die Elemente aus Gründen der Übersichtlichkeit verkürzt
+dar, wobei einzelne Elemente über ein Navigationsicon bei Bedarf ausgeklappt werden können. Wähle diese Option, um das
 Feature komplett zu deaktivieren.
 
-**Elemente pro Seite:** Im Abschnitt [Datensätze auflisten](../../administrationsbereich/datensaetze-auflisten/#datensaetze-sortieren-und-filtern) 
-hast du gelernt, dass Contao die Anzahl der Datensätze pro Seite standardmäßig auf 30 begrenzt. Diesen Wert kannst du 
+**Elemente pro Seite:** Im Abschnitt [Datensätze auflisten](../../administrationsbereich/datensaetze-auflisten/#datensaetze-sortieren-und-filtern)
+hast du gelernt, dass Contao die Anzahl der Datensätze pro Seite standardmäßig auf 30 begrenzt. Diesen Wert kannst du
 hier beliebig anpassen. Höhere Werte bedeuten jedoch eine längere Ladezeit.
 
-**Maximum Datensätze pro Seite:** Um zu verhindern, dass ein unbedarfter Benutzer sich 5000 Datensätze auf einmal 
-anzeigen lässt und damit das PHP Memory Limit überschreitet, kannst du festlegen, wie viele Datensätze maximal pro Seite 
+**Maximum Datensätze pro Seite:** Um zu verhindern, dass ein unbedarfter Benutzer sich 5000 Datensätze auf einmal
+anzeigen lässt und damit das PHP Memory Limit überschreitet, kannst du festlegen, wie viele Datensätze maximal pro Seite
 angezeigt werden dürfen.
 
 #### Zusätzliche Backend-Einstellungen:
@@ -101,29 +101,29 @@ Ab Version **4.10** wird die folgende Einstellung im Startpunkt der Webseite vor
 {{% /notice %}}
 
 **Ordner-URLs verwenden:** Hier kannst du Ordnerstrukturen in Seitenaliasen aktivieren. Damit werden die in der
-Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
+Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad
 »Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
 
 {{% notice note %}}
 Ab Version **4.10** ist diese Einstellung entfallen:
 {{% /notice %}}
 
-**Leere URLs nicht umleiten:** Ermöglicht die Deaktivierung der Umleitung der "leeren URL" auf die Startseite der sprachlichen Website-Root des Browsers 
+**Leere URLs nicht umleiten:** Ermöglicht die Deaktivierung der Umleitung der "leeren URL" auf die Startseite der sprachlichen Website-Root des Browsers
 bei Verwendung des [Legacy-Routing-Modus][LegacyRouting] ohne `contao.prepend_locale`: true _(nicht empfohlen)_.
 
 
 ### Sicherheitseinstellungen
 
-**Anfrage-Tokens deaktivieren:** Hier kannst du aktivieren, dass die Anfrage-Token beim Absenden eines Formulars nicht 
+**Anfrage-Tokens deaktivieren:** Hier kannst du aktivieren, dass die Anfrage-Token beim Absenden eines Formulars nicht
 geprüft werden _(unsicher!)_.
 
-**Erlaubte HTML-Tags:** Standardmäßig erlaubt Contao keine HTML-Tags in Formularen und entfernt diese beim Speichern 
-automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter 
+**Erlaubte HTML-Tags:** Standardmäßig erlaubt Contao keine HTML-Tags in Formularen und entfernt diese beim Speichern
+automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter
 HTML-Tags festlegen.
 
-{{< version-tag "4.11.7, 4.9.18 und 4.4.56" >}} **Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
-Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeichern automatisch entfernt. Das Tag bzw. 
-der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B. 
+{{< version-tag "4.11.7, 4.9.18 und 4.4.56" >}} **Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern.
+Wenn ein HTML-Attribute in der Liste nicht vorhanden ist, wird es beim Abspeichern automatisch entfernt. Das Tag bzw.
+der Attributname * steht für alle Tags bzw. Attribute. Für Attribute mit Bindestrichen können Platzhalter wie z. B.
 data-* benutzt werden.
 
 **Passwort-Hash:** Standardmäßig verwendet Contao den Default der aktuellen PHP-Version, hier kannst du aber auch einen Wert festlegen. Dieses ist z. B. nötig, wenn du das Passwort in ein weiteres System wie LDAP synchronisieren möchtest.
@@ -137,66 +137,66 @@ security:
       Contao\User: 'auto' # Hash function: bcrypt, sha256, sha512 ...
 ```
 
-**Beispiele:**  
-`<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden, kann aber einfach unter Schlüssel eingefügt werden. 
+**Beispiele:**
+`<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden, kann aber einfach unter Schlüssel eingefügt werden.
 
-{{% notice note %}}  
-Um die selbst hinzugefügten HTML-Tags besser zu erkennen, sollten diese zu Beginn der Liste eingetragen werden.  
-{{% /notice %}}  
+{{% notice note %}}
+Um die selbst hinzugefügten HTML-Tags besser zu erkennen, sollten diese zu Beginn der Liste eingetragen werden.
+{{% /notice %}}
 
-In den erlaubten HTML-Attributen, als Wert muss hierzu dann auch noch das Attribut mit eingefügt werden.  
+In den erlaubten HTML-Attributen, als Wert muss hierzu dann auch noch das Attribut mit eingefügt werden.
 
-`<nav>` und `<input>` sind beispielsweise bereits in den erlaubten HTML-Tags vorhanden und können damit einfach mit erlaubten Attributen erweitert werden.  
+`<nav>` und `<input>` sind beispielsweise bereits in den erlaubten HTML-Tags vorhanden und können damit einfach mit erlaubten Attributen erweitert werden.
 Dazu als Schlüssel `nav` bzw. `input` eintragen und als Wert der gewünschte Wert - in unserem Beispiel `role` bzw. `type`.
 
-Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüssel `*` und als Wert `*` eintragen. Hierdurch sind alle Attribute für alle Elemente erlaubt.  
+Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüssel `*` und als Wert `*` eintragen. Hierdurch sind alle Attribute für alle Elemente erlaubt.
 
 ![Sicherheitseinstellungen]({{% asset "images/manual/system/de/security-settings-de.png" %}}?classes=shadow)
 
 
 ### Dateien und Bilder
 
-**Erlaubte Download-Dateitypen:** Hier kannst du festlegen, welche Dateitypen von deinem Server heruntergeladen werden 
+**Erlaubte Download-Dateitypen:** Hier kannst du festlegen, welche Dateitypen von deinem Server heruntergeladen werden
 dürfen (Download).
 
-**Maximale GD-Bildbreite:** Hier kannst du festlegen, wie breit Bilder sein dürfen, damit sie von der GD 
+**Maximale GD-Bildbreite:** Hier kannst du festlegen, wie breit Bilder sein dürfen, damit sie von der GD
 Bildbearbeitungs-Bibliothek noch verarbeitet werden können. Jegliche Bilder, die diesen Wert übersteigen, werden nicht
 verarbeitet.
 
-**Maximale GD-Bildhöhe:** Hier kannst du festlegen, wie hoch Bilder sein dürften, damit sie von der GD 
+**Maximale GD-Bildhöhe:** Hier kannst du festlegen, wie hoch Bilder sein dürften, damit sie von der GD
 Bildbearbeitungs-Bibliothek noch verarbeitet werden können. Jegliche Bilder, die diesen Wert übersteigen, werden nicht
 verarbeitet.
 
 
 ### Datei-Uploads
 
-**Erlaubte Upload-Dateitypen:** Hier kannst du festlegen, welche Dateitypen auf deinen Server übertragen werden dürfen 
+**Erlaubte Upload-Dateitypen:** Hier kannst du festlegen, welche Dateitypen auf deinen Server übertragen werden dürfen
 (Upload).
 
-**Maximale Upload-Dateigröße:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server 
-übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MiB = 1024 KiB = 1.048.576 Bytes). Größere Dateien 
+**Maximale Upload-Dateigröße:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server
+übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MiB = 1024 KiB = 1.048.576 Bytes). Größere Dateien
 werden abgelehnt.
 
-**Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese 
-Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird es automatisch 
+**Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese
+Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird es automatisch
 verkleinert.
 
-**Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese Werte 
+**Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese Werte
 mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
 
 
 ### Website-Suche
 
-**Suche aktivieren:** Wenn du diese Option auswählst, indiziert Contao die fertigen Seiten deiner Webseite und erstellt 
-daraus einen Suchindex. Mit dem Frontend-Modul 
-»[Suchmaschine](../../modulverwaltung/website-suche/#konfiguration-des-suchmoduls)« kannst du diesen Index dann 
+**Suche aktivieren:** Wenn du diese Option auswählst, indiziert Contao die fertigen Seiten deiner Webseite und erstellt
+daraus einen Suchindex. Mit dem Frontend-Modul
+»[Suchmaschine](../../modulverwaltung/website-suche/#konfiguration-des-suchmoduls)« kannst du diesen Index dann
 durchsuchen.
 
-**Geschützte Seiten indizieren:** Wähle diese Option, um auch geschützte Seiten für die Suche zu indizieren. Nutze 
+**Geschützte Seiten indizieren:** Wähle diese Option, um auch geschützte Seiten für die Suche zu indizieren. Nutze
 dieses Feature mit Bedacht, und achte darauf, personalisierte Seiten grundsätzlich von der Suche auszuschließen.
 
 {{% notice note %}}
-Ab Version **4.9** kommt ein neuer Such-Indexer zum Einsatz. Die Einstellungen **Suche aktivieren** und 
+Ab Version **4.9** kommt ein neuer Such-Indexer zum Einsatz. Die Einstellungen **Suche aktivieren** und
 **Geschützte Seiten indizieren** werden nun über die `config/config.yaml` konfiguriert:
 
 ```yaml
@@ -211,7 +211,7 @@ contao:
 
 ### Cronjob-Einstellungen
 
-**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die 
+**Den Command-Scheduler deaktivieren:** Hier kannst du den Periodic Command Scheduler deaktivieren und die
 `_contao/cron`-Route mittels eines echten Cronjobs (den du selbst einrichten musst) ausführen. Seit Contao **4.9** kann
 auch folgendes Kommando benutzt werden:
 
@@ -221,27 +221,27 @@ php vendor/bin/contao-console contao:cron
 
 ### Standard-Zugriffsrechte
 
-**Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine 
-Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
+**Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine
+Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt
 [Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
-**Standardgruppe:** Hier kannst du festlegen, welcher Gruppe standardmäßig die Seiten gehören, für die keine 
-Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
+**Standardgruppe:** Hier kannst du festlegen, welcher Gruppe standardmäßig die Seiten gehören, für die keine
+Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt
 [Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
-**Standardzugriffsrechte:** Hier kannst du festlegen, welche Zugriffsrechte standardmäßig für die Seiten gelten, für 
-die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
+**Standardzugriffsrechte:** Hier kannst du festlegen, welche Zugriffsrechte standardmäßig für die Seiten gelten, für
+die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt
 [Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
 
 
 ## parameters.yaml
 
-In der Contao Managed Edition werden die Parameter (z. B. Datenbankdaten) in der `parameters.yaml` abgelegt. 
-Auf diese Daten greift auch das Contao-Installtool zurück. Diese Datei wird normalerweise von der Versionierung 
+In der Contao Managed Edition werden die Parameter (z. B. Datenbankdaten) in der `parameters.yaml` abgelegt.
+Auf diese Daten greift auch das Contao-Installtool zurück. Diese Datei wird normalerweise von der Versionierung
 ausgenommen und kann auch zusätzliche Einträge wie z. B. die Angaben für den E-Mail-Versand über SMTP enthalten.
 
-Die Datei `parameters.yaml` findest du im Ordner `app/config/` und wird bei der Installation von Contao automatisch 
+Die Datei `parameters.yaml` findest du im Ordner `app/config/` und wird bei der Installation von Contao automatisch
 angelegt.
 
 {{% notice note %}}
@@ -266,12 +266,12 @@ Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen en
 
 ## config.yaml
 
-Die normale Bundle Config gehört in die `config.yaml` und befindet sich im Ordner `config/`. 
-Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lädt automatisch die `config_prod.yaml` 
+Die normale Bundle Config gehört in die `config.yaml` und befindet sich im Ordner `config/`.
+Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden. Contao lädt automatisch die `config_prod.yaml`
 bzw. `config_dev.yaml` und falls nicht vorhanden die `config.yaml`.
 
-Damit kannst du unterschiedliche Konfigurationen für deine Test- bzw. Produktionsumgebung (dev/prod) realisieren (z. B. 
-mehr Logging im Debug Modus). Außerdem committest du die `config.yaml` im Gegensatz zur `parameters.yaml` in dein 
+Damit kannst du unterschiedliche Konfigurationen für deine Test- bzw. Produktionsumgebung (dev/prod) realisieren (z. B.
+mehr Logging im Debug Modus). Außerdem committest du die `config.yaml` im Gegensatz zur `parameters.yaml` in dein
 [Repository](https://de.wikipedia.org/wiki/Repository). Ein Repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z. B. mit Git.
 
 {{% notice note %}}
@@ -295,282 +295,6 @@ php vendor/bin/contao-console debug:config contao
 ```
 
 {{< tabs groupId="bundle-config" >}}
-{{% tab name="Contao 4" %}}
-```yaml
-# Default configuration for extension with alias: "contao"
-contao:
-    csrf_cookie_prefix:   csrf_
-    csrf_token_name:      contao_csrf_token
-    encryption_key:       '%kernel.secret%'
-
-    # The error reporting level set when the framework is initialized. Defaults to E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED.
-    error_level:          8183
-    intl:
-
-        # Adds, removes or overwrites the list of ICU locale IDs. Defaults to all locale IDs known to the system.
-        locales:
-
-            # Examples:
-            - +de
-            - '-de_AT'
-            - gsw_CH
-
-        # Adds, removes or overwrites the list of enabled locale IDs that can be used in the Backend for example. Defaults to all languages for which a translation exists.
-        enabled_locales:
-
-            # Examples:
-            - +de
-            - '-de_AT'
-            - gsw_CH
-
-        # Adds, removes or overwrites the list of ISO 3166-1 alpha-2 country codes.
-        countries:
-
-            # Examples:
-            - +DE
-            - '-AT'
-            - CH
-
-    # Disabling legacy routing allows to configure the URL prefix and suffix per root page. However, it might not be compatible with third-party extensions.
-    legacy_routing:       true
-
-    # Allows to set TL_CONFIG variables, overriding settings stored in localconfig.php. Changes in the Contao back end will not have any effect.
-    localconfig:          ~
-
-    # Allows to configure which languages can be used in the Contao back end. Defaults to all languages for which a translation exists.
-    locales:              [] # Deprecated (Since contao/core-bundle 4.12: Using contao.locales is deprecated. Please use contao.intl.enabled_locales instead.)
-
-    # Whether or not to add the page language to the URL.
-    prepend_locale:       false # Deprecated (Since contao/core-bundle 4.10: The URL prefix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
-
-    # Show customizable, pretty error screens instead of the default PHP error messages.
-    pretty_error_screens: false
-
-    # An optional entry point script that bypasses the front end cache for previewing changes (e.g. "/preview.php").
-    preview_script:       ''
-
-    # The folder used by the file manager.
-    upload_path:          files
-    editable_files:       'css,csv,html,ini,js,json,less,md,scss,svg,svgz,ts,txt,xliff,xml,yml,yaml'
-    url_suffix:           .html # Deprecated (Since contao/core-bundle 4.10: The URL suffix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
-
-    # Absolute path to the web directory. Defaults to %kernel.project_dir%/public.
-    web_dir:              '%kernel.project_dir%/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
-    image:
-
-        # Bypass the image cache and always regenerate images when requested. This also disables deferred image resizing.
-        bypass_cache:         false
-        imagine_options:
-            jpeg_quality:         80
-            jpeg_sampling_factors:
-
-                # Defaults:
-                - 2
-                - 1
-                - 1
-            png_compression_level: ~
-            png_compression_filter: ~
-            webp_quality:         ~
-            webp_lossless:        ~
-            avif_quality:         ~
-            avif_lossless:        ~
-            heic_quality:         ~
-            heic_lossless:        ~
-            jxl_quality:          ~
-            jxl_lossless:         ~
-
-            # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
-            flatten:              ~
-            interlace:            plane
-
-        # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
-        imagine_service:      null
-
-        # Reject uploaded images exceeding the localconfig.gdMaxImgWidth and localconfig.gdMaxImgHeight dimensions.
-        reject_large_uploads: false
-
-        # Allows to define image sizes in the configuration file in addition to in the Contao back end. Use the special name "_defaults" to preset values for all sizes of the configuration file.
-        sizes:
-
-            # Prototype
-            name:
-                width:                ~
-                height:               ~
-                resize_mode:          ~ # One of "crop"; "box"; "proportional"
-                zoom:                 ~
-                css_class:            ~
-                lazy_loading:         ~
-                densities:            ~
-                sizes:                ~
-
-                # If the output dimensions match the source dimensions, the image will not be processed. Instead, the original file will be used.
-                skip_if_dimensions_match: ~
-
-                # Allows to convert one image format to another or to provide additional image formats for an image (e.g. WebP).
-                formats:
-
-                    # Examples:
-                    jpg:                 [jxl, webp, jpg]
-                    gif:                 [avif, png]
-
-                    # Prototype
-                    source:               []
-                items:
-
-                    # Prototype
-                    -
-                        width:                ~
-                        height:               ~
-                        resize_mode:          ~ # One of "crop"; "box"; "proportional"
-                        zoom:                 ~
-                        media:                ~
-                        densities:            ~
-                        sizes:                ~
-                        resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.items.resizeMode is deprecated. Please use contao.image.sizes.*.items.resize_mode instead.)
-                resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.resizeMode is deprecated. Please use contao.image.sizes.*.resize_mode instead.)
-                cssClass:             ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.cssClass is deprecated. Please use contao.image.sizes.*.css_class instead.)
-                lazyLoading:          ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.lazyLoading is deprecated. Please use contao.image.sizes.*.lazy_loading instead.)
-                skipIfDimensionsMatch: ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
-
-        # The target directory for the cached images processed by Contao.
-        target_dir:           '%kernel.project_dir%/assets/images' # Example: '%kernel.project_dir%/assets/images'
-        target_path:          null # Deprecated (Since contao/core-bundle 4.9: Use the "contao.image.target_dir" parameter instead.)
-        valid_extensions:
-
-            # Defaults:
-            - jpg
-            - jpeg
-            - gif
-            - png
-            - tif
-            - tiff
-            - bmp
-            - svg
-            - svgz
-            - webp
-        preview:
-
-            # The target directory for the cached previews.
-            target_dir:           '%kernel.project_dir%/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
-            default_size:         512
-            max_size:             1024
-
-            # Whether or not to generate previews for unsupported file types that show a file icon containing the file type.
-            enable_fallback_images: true
-    security:
-        two_factor:
-            enforce_backend:      false
-    search:
-
-        # The default search indexer, which indexes pages in the database.
-        default_indexer:
-            enable:               true
-
-        # Enables indexing of protected pages.
-        index_protected:      false
-
-        # The search index listener can index valid and delete invalid responses upon every request. You may limit it to one of the features or disable it completely.
-        listener:
-
-            # Enables indexing successful responses.
-            index:                true
-
-            # Enables deleting unsuccessful responses from the index.
-            delete:               true
-    crawl:
-
-        # Additional URIs to crawl. By default, only the ones defined in the root pages are crawled.
-        additional_uris:      []
-
-        # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
-        default_http_client_options: []
-    mailer:
-
-        # Specifies the mailer transports available for selection within Contao.
-        transports:
-
-            # Prototype
-            name:
-
-                # Overrides the "From" address for any e-mails sent with this mailer transport.
-                from:                 null
-    backend:
-
-        # Adds HTML attributes to the <body> tag in the back end.
-        attributes:
-
-            # Examples:
-            app-name:            'My App'
-            app-version:         1.2.3
-
-            # Prototype
-            name:                 ~
-
-        # Adds custom style sheets to the back end.
-        custom_css:
-
-            # Example:
-            - files/backend/custom.css
-
-        # Adds custom JavaScript files to the back end.
-        custom_js:
-
-            # Example:
-            - files/backend/custom.js
-
-        # Configures the title of the badge in the back end.
-        badge_title:          '' # Example: develop
-
-        # Defines the path of the Contao backend.
-        route_prefix:         /contao # Example: /admin
-    insert_tags:
-
-        # A list of allowed insert tags.
-        allowed_tags:
-
-            # Default:
-            - *
-
-            # Examples:
-            - '*_url'
-            - request_token
-    backup:
-
-        # These tables are ignored by default when creating and restoring backups.
-        ignore_tables:
-
-            # Defaults:
-            - tl_crawl_queue
-            - tl_log
-            - tl_search
-            - tl_search_index
-            - tl_search_term
-
-        # The maximum number of backups to keep. Use 0 to keep all the backups forever.
-        keep_max:             5
-
-        # The latest backup plus the oldest of every configured interval will be kept. Intervals have to be specified as documented in https://www.php.net/manual/en/dateinterval.construct.php without the P prefix.
-        keep_intervals:
-
-            # Defaults:
-            - 1D
-            - 7D
-            - 14D
-            - 1M
-    sanitizer:
-        allowed_url_protocols:
-
-            # Defaults:
-            - http
-            - https
-            - ftp
-            - mailto
-            - tel
-            - data
-            - skype
-            - whatsapp
-```
-{{% /tab %}}
 {{% tab name="Contao 5" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
@@ -630,6 +354,13 @@ contao:
 
     # Allows to define Symfony Messenger workers (messenger:consume). Workers are started every minute using the Contao cron job framework.
     messenger:
+        # Contao provides a way to work on Messenger transports in the web process (kernel.terminate) if there is no real "messenger:consume" worker. You can configure its behavior here.'
+        web_worker:
+
+          # The transports to apply the web worker logic to.
+          transports:     []
+          grace_period:   PT10M # Must be a valid string for \DateInterval()
+
         workers:
 
             # Prototype
@@ -689,7 +420,12 @@ contao:
 
             # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
             flatten:              ~
+
+            # One of the Imagine\Image\ImageInterface::INTERLACE_* constants.
             interlace:            plane
+
+            # Filter used when downsampling images. One of the Imagine\Image\ImageInterface::FILTER_* constants. It has no effect with Gd or SVG as Imagine service.
+            resampling-filter:    ~
 
         # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
         imagine_service:      null
@@ -869,7 +605,7 @@ contao:
             # Example:
             - files/backend/custom.js
 
-        # Configures the title of the badge in the back end.
+        # Configures the title of the badge in the back end and the Contao Manager.
         badge_title:          '' # Example: develop
 
         # Defines the path of the Contao backend.
@@ -939,6 +675,287 @@ contao:
         max_header_size:      3072
 ```
 {{% /tab %}}
+{{% tab name="Contao 4" %}}
+```yaml
+# Default configuration for extension with alias: "contao"
+contao:
+    csrf_cookie_prefix:   csrf_
+    csrf_token_name:      contao_csrf_token
+    encryption_key:       '%kernel.secret%'
+
+    # The error reporting level set when the framework is initialized. Defaults to E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED.
+    error_level:          8183
+    intl:
+
+        # Adds, removes or overwrites the list of ICU locale IDs. Defaults to all locale IDs known to the system.
+        locales:
+
+            # Examples:
+            - +de
+            - '-de_AT'
+            - gsw_CH
+
+        # Adds, removes or overwrites the list of enabled locale IDs that can be used in the Backend for example. Defaults to all languages for which a translation exists.
+        enabled_locales:
+
+            # Examples:
+            - +de
+            - '-de_AT'
+            - gsw_CH
+
+        # Adds, removes or overwrites the list of ISO 3166-1 alpha-2 country codes.
+        countries:
+
+            # Examples:
+            - +DE
+            - '-AT'
+            - CH
+
+    # Disabling legacy routing allows to configure the URL prefix and suffix per root page. However, it might not be compatible with third-party extensions.
+    legacy_routing:       true
+
+    # Allows to set TL_CONFIG variables, overriding settings stored in localconfig.php. Changes in the Contao back end will not have any effect.
+    localconfig:          ~
+
+    # Allows to configure which languages can be used in the Contao back end. Defaults to all languages for which a translation exists.
+    locales:              [] # Deprecated (Since contao/core-bundle 4.12: Using contao.locales is deprecated. Please use contao.intl.enabled_locales instead.)
+
+    # Whether or not to add the page language to the URL.
+    prepend_locale:       false # Deprecated (Since contao/core-bundle 4.10: The URL prefix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
+
+    # Show customizable, pretty error screens instead of the default PHP error messages.
+    pretty_error_screens: false
+
+    # An optional entry point script that bypasses the front end cache for previewing changes (e.g. "/preview.php").
+    preview_script:       ''
+
+    # The folder used by the file manager.
+    upload_path:          files
+    editable_files:       'css,csv,html,ini,js,json,less,md,scss,svg,svgz,ts,txt,xliff,xml,yml,yaml'
+    url_suffix:           .html # Deprecated (Since contao/core-bundle 4.10: The URL suffix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
+
+    # Absolute path to the web directory. Defaults to %kernel.project_dir%/public.
+    web_dir:              '%kernel.project_dir%/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
+    image:
+
+        # Bypass the image cache and always regenerate images when requested. This also disables deferred image resizing.
+        bypass_cache:         false
+        imagine_options:
+            jpeg_quality:         80
+            jpeg_sampling_factors:
+
+                # Defaults:
+                - 2
+                - 1
+                - 1
+            png_compression_level: ~
+            png_compression_filter: ~
+            webp_quality:         ~
+            webp_lossless:        ~
+            avif_quality:         ~
+            avif_lossless:        ~
+            heic_quality:         ~
+            heic_lossless:        ~
+            jxl_quality:          ~
+            jxl_lossless:         ~
+
+            # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
+            flatten:              ~
+
+            # One of the Imagine\Image\ImageInterface::INTERLACE_* constants.
+            interlace:            plane
+
+            # Filter used when downsampling images. One of the Imagine\Image\ImageInterface::FILTER_* constants. It has no effect with Gd or SVG as Imagine service.
+            resampling-filter:    ~
+
+        # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
+        imagine_service:      null
+
+        # Reject uploaded images exceeding the localconfig.gdMaxImgWidth and localconfig.gdMaxImgHeight dimensions.
+        reject_large_uploads: false
+
+        # Allows to define image sizes in the configuration file in addition to in the Contao back end. Use the special name "_defaults" to preset values for all sizes of the configuration file.
+        sizes:
+
+            # Prototype
+            name:
+                width:                ~
+                height:               ~
+                resize_mode:          ~ # One of "crop"; "box"; "proportional"
+                zoom:                 ~
+                css_class:            ~
+                lazy_loading:         ~
+                densities:            ~
+                sizes:                ~
+
+                # If the output dimensions match the source dimensions, the image will not be processed. Instead, the original file will be used.
+                skip_if_dimensions_match: ~
+
+                # Allows to convert one image format to another or to provide additional image formats for an image (e.g. WebP).
+                formats:
+
+                    # Examples:
+                    jpg:                 [jxl, webp, jpg]
+                    gif:                 [avif, png]
+
+                    # Prototype
+                    source:               []
+                items:
+
+                    # Prototype
+                    -
+                        width:                ~
+                        height:               ~
+                        resize_mode:          ~ # One of "crop"; "box"; "proportional"
+                        zoom:                 ~
+                        media:                ~
+                        densities:            ~
+                        sizes:                ~
+                        resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.items.resizeMode is deprecated. Please use contao.image.sizes.*.items.resize_mode instead.)
+                resizeMode:           ~ # One of "crop"; "box"; "proportional", Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.resizeMode is deprecated. Please use contao.image.sizes.*.resize_mode instead.)
+                cssClass:             ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.cssClass is deprecated. Please use contao.image.sizes.*.css_class instead.)
+                lazyLoading:          ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.lazyLoading is deprecated. Please use contao.image.sizes.*.lazy_loading instead.)
+                skipIfDimensionsMatch: ~ # Deprecated (Since contao/core-bundle 4.9: Using contao.image.sizes.*.skipIfDimensionsMatch is deprecated. Please use contao.image.sizes.*.skip_if_dimensions_match instead.)
+
+        # The target directory for the cached images processed by Contao.
+        target_dir:           '%kernel.project_dir%/assets/images' # Example: '%kernel.project_dir%/assets/images'
+        target_path:          null # Deprecated (Since contao/core-bundle 4.9: Use the "contao.image.target_dir" parameter instead.)
+        valid_extensions:
+
+            # Defaults:
+            - jpg
+            - jpeg
+            - gif
+            - png
+            - tif
+            - tiff
+            - bmp
+            - svg
+            - svgz
+            - webp
+        preview:
+
+            # The target directory for the cached previews.
+            target_dir:           '%kernel.project_dir%/assets/previews' # Example: '%kernel.project_dir%/assets/previews'
+            default_size:         512
+            max_size:             1024
+
+            # Whether or not to generate previews for unsupported file types that show a file icon containing the file type.
+            enable_fallback_images: true
+    security:
+        two_factor:
+            enforce_backend:      false
+    search:
+
+        # The default search indexer, which indexes pages in the database.
+        default_indexer:
+            enable:               true
+
+        # Enables indexing of protected pages.
+        index_protected:      false
+
+        # The search index listener can index valid and delete invalid responses upon every request. You may limit it to one of the features or disable it completely.
+        listener:
+
+            # Enables indexing successful responses.
+            index:                true
+
+            # Enables deleting unsuccessful responses from the index.
+            delete:               true
+    crawl:
+
+        # Additional URIs to crawl. By default, only the ones defined in the root pages are crawled.
+        additional_uris:      []
+
+        # Allows to configure the default HttpClient options (useful for proxy settings, SSL certificate validation and more).
+        default_http_client_options: []
+    mailer:
+
+        # Specifies the mailer transports available for selection within Contao.
+        transports:
+
+            # Prototype
+            name:
+
+                # Overrides the "From" address for any e-mails sent with this mailer transport.
+                from:                 null
+    backend:
+
+        # Adds HTML attributes to the <body> tag in the back end.
+        attributes:
+
+            # Examples:
+            app-name:            'My App'
+            app-version:         1.2.3
+
+            # Prototype
+            name:                 ~
+
+        # Adds custom style sheets to the back end.
+        custom_css:
+
+            # Example:
+            - files/backend/custom.css
+
+        # Adds custom JavaScript files to the back end.
+        custom_js:
+
+            # Example:
+            - files/backend/custom.js
+
+        # Configures the title of the badge in the back end and the Contao Manager.
+        badge_title:          '' # Example: develop
+
+        # Defines the path of the Contao backend.
+        route_prefix:         /contao # Example: /admin
+    insert_tags:
+
+        # A list of allowed insert tags.
+        allowed_tags:
+
+            # Default:
+            - *
+
+            # Examples:
+            - '*_url'
+            - request_token
+    backup:
+
+        # These tables are ignored by default when creating and restoring backups.
+        ignore_tables:
+
+            # Defaults:
+            - tl_crawl_queue
+            - tl_log
+            - tl_search
+            - tl_search_index
+            - tl_search_term
+
+        # The maximum number of backups to keep. Use 0 to keep all the backups forever.
+        keep_max:             5
+
+        # The latest backup plus the oldest of every configured interval will be kept. Intervals have to be specified as documented in https://www.php.net/manual/en/dateinterval.construct.php without the P prefix.
+        keep_intervals:
+
+            # Defaults:
+            - 1D
+            - 7D
+            - 14D
+            - 1M
+    sanitizer:
+        allowed_url_protocols:
+
+            # Defaults:
+            - http
+            - https
+            - ftp
+            - mailto
+            - tel
+            - data
+            - skype
+            - whatsapp
+```
+{{% /tab %}}
 {{< /tabs >}}
 
 
@@ -952,7 +969,7 @@ während andere Einstellungen nun bspw. in den Benutzereinstellungen oder im Sta
 können.
 
 Je nach Contao-Version werden aber immer noch Einstellungen aus der `localconfig` benutzt. Daher kann es nützlich sein zu
-wissen, wie man diese Einstellungen über die Applikationskonfiguration (also die `config.yaml`) überschreiben könnte, 
+wissen, wie man diese Einstellungen über die Applikationskonfiguration (also die `config.yaml`) überschreiben könnte,
 anstatt die veraltete `localconfig.php` dafür zu benutzen. Dies kann für den eigenen Deployment-Flow wichtig sein, aber
 auch weil es gewisse Einstellungen gibt, die _nur_ manuell gesetzt werden können, weil diese weder eine Bundle Einstellung
 noch eine andere Einstellungsmöglichkeit im Backend haben.
@@ -1154,7 +1171,7 @@ In Contao **4.9** heißt diese Umgebungsvariable `COOKIE_WHITELIST`.
 {{% /notice %}}
 
 Dies ist eine spezielle Umgebungsvariable, die sich auf den Standard-Caching-Proxy bezieht, der mit der Contao Managed Edition standardmäßig ausgeliefert wird.
-Contao deaktiviert jegliches HTTP-Caching, sobald entweder ein `Cookie`- oder ein `Authorization`-Header in der Anfrage vorhanden ist. Der Grund dafür ist, dass diese Header möglicherweise einen Benutzer authentifizieren und somit personalisierte Inhalte erzeugen können. In diesem Fall wollen wir niemals Inhalte aus dem Cache bereitstellen.Leider besteht das Web jedoch aus einer Vielzahl verschiedener Cookies. Die meisten davon sind völlig irrelevant für die Anwendung selbst und werden nur in JavaScript verwendet (obwohl es bessere Alternativen wie LocalStorage, SessionStorage oder IndexedDB gibt). 
+Contao deaktiviert jegliches HTTP-Caching, sobald entweder ein `Cookie`- oder ein `Authorization`-Header in der Anfrage vorhanden ist. Der Grund dafür ist, dass diese Header möglicherweise einen Benutzer authentifizieren und somit personalisierte Inhalte erzeugen können. In diesem Fall wollen wir niemals Inhalte aus dem Cache bereitstellen.Leider besteht das Web jedoch aus einer Vielzahl verschiedener Cookies. Die meisten davon sind völlig irrelevant für die Anwendung selbst und werden nur in JavaScript verwendet (obwohl es bessere Alternativen wie LocalStorage, SessionStorage oder IndexedDB gibt).
 
 Du wirst feststellen, dass z. B. Google Analytics, Matomo, Facebook usw. alle Cookies setzen, die die Anwendung (in diesem Fall Contao) überhaupt nicht interessiert. Da der HTTP-Cache jedoch entscheiden muss, ob er eine Antwort aus dem Cache ausliefert oder nicht, bevor die Anwendung überhaupt gestartet ist, kann er nicht wissen, welche Cookies relevant sind und welche nicht. Also müssen wir es ihm sagen. Die Contao Managed Edition wird mit einer Liste von irrelevanten Cookies ausgeliefert, die standardmäßig ignoriert werden, um die Trefferquote zu erhöhen. Zur Optimierung kannst du die Standardliste deaktivieren, indem du eine explizite Liste von benötigten Cookies bereit stellst. Dies sind die Cookies, von denen du weisst, dass sie **relevant** für die Anwendung sind, und in diesem Fall muss der Cache **ausgeschaltet** werden.
 
@@ -1164,10 +1181,10 @@ Cookies von installierten Erweiterungen zulassen:
 ```
 COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
-    
+
 {{% notice note %}}
 Der Name des PHP-Session-Cookies ist über die `php.ini` konfigurierbar, daher solltest du überprüfen, ob er auch `PHPSESSID` lautet. Außerdem ist der CSRF-Cookie aus Sicherheitsgründen für `http` und `https` unterschiedlich. Wenn die Website über `http` ausgeliefert wird, ist zu beachten, dass der Cookie-Name `csrf_http-contao_csrf_token` lautet. Wenn du Benutzer vor CSRF-Angriffen schützen möchtest, aber das Formular über ungesicherte `http`-Verbindungen übermittelst, ist das
-nicht wirklich ein gültiger Anwendungsfall. 
+nicht wirklich ein gültiger Anwendungsfall.
 {{% /notice %}}
 
 
@@ -1243,7 +1260,7 @@ DNS_MAPPING='{
 }'
 ```
 
-Dadurch kann bspw. die Live-Datenbank zur Staging- oder Entwicklungs-Umgebung kopiert und durch die Datenbankmigration 
+Dadurch kann bspw. die Live-Datenbank zur Staging- oder Entwicklungs-Umgebung kopiert und durch die Datenbankmigration
 (`contao:migrate`) die Domain-Einstellungen automatisch angepasst werden.
 
 Auch die Protokoll-Einstellung kann automatisch geändert werden. Dies kann hilfreich sein, wenn bspw. für die lokale
@@ -1289,7 +1306,7 @@ parameters:
 
 ## E-Mail Versand Konfiguration
 
-Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster (manche davon können optional 
+Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende Angaben von deinem Hoster (manche davon können optional
 sein, je nach Server):
 
 - Den **Hostnamen** des SMTP-Servers.
@@ -1337,8 +1354,8 @@ parameters:
 {{< /tabs >}}
 
 {{% notice warning %}}
-**Cache leeren:** Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
-»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
+**Cache leeren:** Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« >
+»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao
 Installationsverzeichnis befinden.
 
 ```bash
@@ -1385,20 +1402,20 @@ In vielen Fällen erlauben SMTP-Server nicht den Versand von beliebigen Absender
 zu den verwendeten SMTP-Server Zugangsdaten passen. Vor allem in Multidomain-Installationen von Contao kann es jedoch
 wichtig sein, dass die Absenderadresse der E-Mails, die Contao verschickt, zur jeweiligen Domain passt.
 
-Ab Contao **4.10** besteht daher die Möglichkeit, mehrere E-Mail Konfigurationen in Contao zu benutzen. Diese 
-Konfigurationen können dann pro Webseiten-Startpunkt, pro Formular und pro Newsletter-Kanal ausgewählt werden. Pro E-Mail 
+Ab Contao **4.10** besteht daher die Möglichkeit, mehrere E-Mail Konfigurationen in Contao zu benutzen. Diese
+Konfigurationen können dann pro Webseiten-Startpunkt, pro Formular und pro Newsletter-Kanal ausgewählt werden. Pro E-Mail
 Konfiguration kann dann außerdem auch der Absender gesetzt werden, welcher dann für jede E-Mail benutzt wird, die über
 die ausgewählte E-Mail Konfiguration gesendet wird.
 
 Die Konfiguration benötigt zwei Schritte. Zuerst müssen die verfügbaren E-Mail Versandmethoden über die Symfony Framework
-Konfiguration in der `config.yaml` als sogenannte »Transports« eingestellt werden. Dabei können bspw. ein oder mehrere 
+Konfiguration in der `config.yaml` als sogenannte »Transports« eingestellt werden. Dabei können bspw. ein oder mehrere
 SMTP-Server über die sogenannte »DSN«-Syntax definiert werden. Diese Syntax ist grundsätzlich sehr einfach aufgebaut:
 
 ```
 smtp://<BENUTZERNAME>:<PASSWORT>@<HOSTNAME>:<PORT>
 ```
 
-Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, oder entfernt sie dementsprechend. Siehe 
+Man ersetzt die `<PLATZHALTER>` mit den Angaben des verwendeten SMTP-Servers, oder entfernt sie dementsprechend. Siehe
 dazu auch die Informationen in der offiziellen [Symfony Dokumentation][SymfonyMailer].
 
 Für diese Encodierung kann dieses [Tool](#konvertieren-deiner-mail-parameter) genutzt werden.
@@ -1412,7 +1429,7 @@ mit dem Doppelpunkt. Bei Verwendung der `config.yaml` muß die jeweilige Kodieru
 
 {{% notice tip %}}
 Anstatt `smtp://` kann auch `smtps://` verwendet werden, um automatisch SSL Verschlüsselung über Port `465` zu verwenden.
-{{% /notice %}} 
+{{% /notice %}}
 
 ```yaml
 # config/config.yaml
@@ -1441,7 +1458,7 @@ Backend zur Verfügung.
 
 {{% notice note %}}
 Wird kein Transport konfiguriert, gelten nach wie vor die Informationen aus der `parameters.yaml`. Werden Transports
-konfiguriert, aber es wird kein Transport im Contao Backend ausgewählt, wird automatisch der erste definierte Transport 
+konfiguriert, aber es wird kein Transport im Contao Backend ausgewählt, wird automatisch der erste definierte Transport
 verwendet.
 {{% /notice %}}
 
@@ -1474,9 +1491,9 @@ website2: 'SMTP für Webseite 2'
 ```
 
 {{% notice warning %}}
-**Cache leeren**  
-Damit die Änderungen im Backend sichtbar werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
-»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
+**Cache leeren**
+Damit die Änderungen im Backend sichtbar werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« >
+»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao
 Installationsverzeichnis befinden.
 
 ```bash
@@ -1508,7 +1525,7 @@ swiftmailer:
     spool:
         type: file
         path: '%kernel.project_dir%/var/spool'
-``` 
+```
 
 In diesem Fall bedienen wir uns dem _File_ Spool, das heißt wenn Contao eine E-Mail sendet wird diese zuerst als Datei in das angegebene
 Verzeichnis abgelegt. In der beschriebenen Konfiguration wird der Ordner `var/spool/` der Contao Installation benutzt (beachte, dass dieser
@@ -1534,7 +1551,7 @@ Bei einem minütlichen Aufruf würde das also den E-Mail Versand auf 600 E-Mails
 
 {{< version "4.10" >}}
 
-Ab Contao **4.10** steht das Swiftmailer Bundle nicht mehr von Haus aus zur Verfügung, statt dessen nutzt Contao 
+Ab Contao **4.10** steht das Swiftmailer Bundle nicht mehr von Haus aus zur Verfügung, statt dessen nutzt Contao
 [Symfony Mailer][SymfonyMailer]. Um E-Mail asnychron senden zu können wird in diesem Fall die [Symfony Messenger][SymfonyMessenger]
 Komponente benötigt. Diese muss zuerst via Composer installiert werden:
 
@@ -1561,7 +1578,7 @@ framework:
 
 {{% notice "note" %}}
 Anstatt den Messenger Transport direkt zu definieren können wie immer auch Umgebungsvariablen benutzt werden, falls man in verschiedenen
-Umgebungen verschiedene Transports haben möchte (bspw. lokal zum testen den 
+Umgebungen verschiedene Transports haben möchte (bspw. lokal zum testen den
 [In Memory Transport](https://symfony.com/doc/current/messenger.html#in-memory-transport)).
 
 ```yaml
@@ -1593,15 +1610,15 @@ Bei einem minütlichen Aufruf würde das also den E-Mail Versand auf 600 E-Mails
 
 {{% notice "info" %}}
 In den Kommandos wird die Option `--time-limit=1` benutzt. Von Haus aus läuft der `messenger:consume` Prozess unendlich lang und verarbeitet
-alle E-Mails in dieser Zeit automatisch - und es müsste daher auch kein Cronjob eingerichtet werden. Um sicherzustellen, dass dieser 
+alle E-Mails in dieser Zeit automatisch - und es müsste daher auch kein Cronjob eingerichtet werden. Um sicherzustellen, dass dieser
 Prozess läuft und ggf. neu gestartet wird könnten entsprechende Tools am Server verwendet werden. In Shared Hosting Umgebungen hat man diese
 Möglichkeit meist jedoch nicht, daher muss in der Cronjob Variante sichergestellt werden, dass der Prozess nur einmalig läuft. Mit der
-bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens einer Sekunde beendet. Nähere Details dazu findet man in der 
+bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens einer Sekunde beendet. Nähere Details dazu findet man in der
 [Symfony Dokumentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
 {{% notice "note" %}}
-Es kann sein, dass Mails zeitversetzt verarbeitet werden, 
+Es kann sein, dass Mails zeitversetzt verarbeitet werden,
 wenn der Cronjob keine Angabe für die Zeitzone hat und dann den Standard `UTC` verwendet.
 Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt werden oder explizit im Cronjob.
 {{% /notice %}}
