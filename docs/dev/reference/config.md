@@ -74,6 +74,13 @@ contao:
 
     # Allows to define Symfony Messenger workers (messenger:consume). Workers are started every minute using the Contao cron job framework.
     messenger:
+        # Contao provides a way to work on Messenger transports in the web process (kernel.terminate) if there is no real "messenger:consume" worker. You can configure its behavior here.'
+        web_worker:
+
+          # The transports to apply the web worker logic to.
+          transports:     []
+          grace_period:   PT10M # Must be a valid string for \DateInterval()
+
         workers:
 
             # Prototype
@@ -133,7 +140,12 @@ contao:
 
             # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
             flatten:              ~
+
+            # One of the Imagine\Image\ImageInterface::INTERLACE_* constants.
             interlace:            plane
+
+            # Filter used when downsampling images. One of the Imagine\Image\ImageInterface::FILTER_* constants. It has no effect with Gd or SVG as Imagine service.
+            resampling-filter:    ~
 
         # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
         imagine_service:      null
@@ -313,7 +325,7 @@ contao:
             # Example:
             - files/backend/custom.js
 
-        # Configures the title of the badge in the back end.
+        # Configures the title of the badge in the back end and the Contao Manager.
         badge_title:          '' # Example: develop
 
         # Defines the path of the Contao backend.
@@ -469,7 +481,12 @@ contao:
 
             # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
             flatten:              ~
+
+            # One of the Imagine\Image\ImageInterface::INTERLACE_* constants.
             interlace:            plane
+
+            # Filter used when downsampling images. One of the Imagine\Image\ImageInterface::FILTER_* constants. It has no effect with Gd or SVG as Imagine service.
+            resampling-filter:    ~
 
         # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
         imagine_service:      null
@@ -606,7 +623,7 @@ contao:
             # Example:
             - files/backend/custom.js
 
-        # Configures the title of the badge in the back end.
+        # Configures the title of the badge in the back end and the Contao Manager.
         badge_title:          '' # Example: develop
 
         # Defines the path of the Contao backend.
@@ -673,7 +690,7 @@ container is even built. Settings like trusted proxies or caching are considered
 (if it even needs to be booted thanks to the cache) so they cannot be part of the application itself.
 
 {{% notice info %}}
-Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts 
+Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts
 of the `config/parameters.yaml` and thus you should not use these parameters, if you are using the environment variable instead.
 {{% /notice %}}
 
@@ -685,15 +702,15 @@ in the `prod` mode, optimizing everything for production. If you want to put you
 mode to have additional logging and debugging output, set `APP_ENV` to `dev`. Never do this for production sites!
 If you set the environment manually, you will no longer be able to toggle the debug mode from the back end as a
 Contao administrator.
-    
+
 
 ### `APP_SECRET`
 
-The `APP_SECRET` environment variable is required e.g. to generate CSRF tokens. This is a string that should be 
-unique to your application and it's commonly used to add more entropy to security related operations. Its value 
-should be a series of characters, numbers and symbols chosen randomly and the recommended length is around 
+The `APP_SECRET` environment variable is required e.g. to generate CSRF tokens. This is a string that should be
+unique to your application and it's commonly used to add more entropy to security related operations. Its value
+should be a series of characters, numbers and symbols chosen randomly and the recommended length is around
 32 characters. As with any other security-related parameter, it is a good practice to change this value from time
-to time. However, keep in mind that changing this value will invalidate all signed URIs and Remember Me cookies. 
+to time. However, keep in mind that changing this value will invalidate all signed URIs and Remember Me cookies.
 That is why, after changing this value, you should regenerate the application cache and log out all the application
 users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
 
@@ -741,13 +758,13 @@ cookies of extensions you installed:
 ```
 COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
-    
+
 {{% notice note %}}
 The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
 for you too. Moreover, the CSRF cookie is different for `http` and `https` for security reasons. If you serve your
 website over `http`, note that the cookie name will be `csrf_http-contao_csrf_token`.
 However, protecting your users from CSRF attacks but let them submit the form via unsecured `http` connections is
-not really a valid use case. 
+not really a valid use case.
 {{% /notice %}}
 
 ### `COOKIE_REMOVE_FROM_DENY_LIST`
@@ -794,8 +811,8 @@ present as otherwise you are back to having thousands of cache entries in your c
 
 ### `DATABASE_URL`
 
-The database connection information is stored as an environment variable called `DATABASE_URL`. It defines 
-the database user name, database password, host name, port and database name that will be used by your Contao system. 
+The database connection information is stored as an environment variable called `DATABASE_URL`. It defines
+the database user name, database password, host name, port and database name that will be used by your Contao system.
 The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
 
@@ -803,14 +820,14 @@ It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(
 ### `MAILER_DSN`
 
 The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
-be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
+be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if
 applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
 See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
 
 {{% notice note %}}
 The variable was previously called `MAILER_URL`. Since Contao 5.0 only `MAILER_DSN` will be supported.
 {{% /notice %}}
-    
+
 
 ### `TRUSTED_PROXIES`
 
@@ -821,10 +838,10 @@ For example, instead of reading the `REMOTE_ADDR` header (which will now be the 
 the user's true IP will be stored in a standard `Forwarded: for="…"` header or a `X-Forwarded-For` header.
 If you don't configure the Managed Edition to look for these headers, you'll get incorrect information about the
 client's IP address, whether or not the client is connecting via HTTPS, the client's port and the hostname being
-requested. Let's say your load balancer runs on IP `192.0.2.1`. You can trust that IP by setting `TRUSTED_PROXIES` 
+requested. Let's say your load balancer runs on IP `192.0.2.1`. You can trust that IP by setting `TRUSTED_PROXIES`
 to `192.0.2.1`. You can also trust a whole IP range if you like to: `TRUSTED_PROXIES=192.0.2.0/24`. See the
 [Symfony Documentation on Proxies][SymfonyProxies] for more information.
-    
+
 
 ### `TRUSTED_HOSTS`
 
@@ -832,7 +849,7 @@ The same explanation as for `TRUSTED_PROXIES` and the IP example, also applies t
 originally sent `Host` HTTP header. You would get the host name of your proxy but if you add your proxy host name
 to the list of trusted proxies, you will get the host name that was requested in the original request:
 `TRUSTED_HOSTS=my.proxy.com`
-        
+
 
 ### `DNS_MAPPING`
 
@@ -860,7 +877,7 @@ DNS_MAPPING='{
 }'
 ```
 
-This allows you to - for example - copy the live database to your staging or local environment and then automatically 
+This allows you to - for example - copy the live database to your staging or local environment and then automatically
 change the domains according to the mapping in the respective environment during `contao:migrate`.
 
 You can also migrate the `useSSL` setting to different settings in the respective environment, which might be
