@@ -74,6 +74,13 @@ contao:
 
     # Allows to define Symfony Messenger workers (messenger:consume). Workers are started every minute using the Contao cron job framework.
     messenger:
+        # Contao provides a way to work on Messenger transports in the web process (kernel.terminate) if there is no real "messenger:consume" worker. You can configure its behavior here.'
+        web_worker:
+
+          # The transports to apply the web worker logic to.
+          transports:     []
+          grace_period:   PT10M # Must be a valid string for \DateInterval()
+
         workers:
 
             # Prototype
@@ -133,7 +140,12 @@ contao:
 
             # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
             flatten:              ~
+
+            # One of the Imagine\Image\ImageInterface::INTERLACE_* constants.
             interlace:            plane
+
+            # Filter used when downsampling images. One of the Imagine\Image\ImageInterface::FILTER_* constants. It has no effect with Gd or SVG as Imagine service.
+            resampling-filter:    ~
 
         # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
         imagine_service:      null
@@ -313,7 +325,7 @@ contao:
             # Example:
             - files/backend/custom.js
 
-        # Configures the title of the badge in the back end.
+        # Configures the title of the badge in the back end and the Contao Manager.
         badge_title:          '' # Example: develop
 
         # Defines the path of the Contao backend.
@@ -469,7 +481,12 @@ contao:
 
             # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
             flatten:              ~
+
+            # One of the Imagine\Image\ImageInterface::INTERLACE_* constants.
             interlace:            plane
+
+            # Filter used when downsampling images. One of the Imagine\Image\ImageInterface::FILTER_* constants. It has no effect with Gd or SVG as Imagine service.
+            resampling-filter:    ~
 
         # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
         imagine_service:      null
@@ -606,7 +623,7 @@ contao:
             # Example:
             - files/backend/custom.js
 
-        # Configures the title of the badge in the back end.
+        # Configures the title of the badge in the back end and the Contao Manager.
         badge_title:          '' # Example: develop
 
         # Defines the path of the Contao backend.
