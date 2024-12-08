@@ -5,9 +5,9 @@ aliases:
 weight: 10
 ---
 
-The system settings slowly but surely leave the backend. Basic system settings influence Contao as an application and 
-therefore there is a chance that a wrong setting will render the system non-functional. If this happens, you will not 
-be able to undo the settings and restore the system because you will not be able to log in anymore. For this reason, 
+The system settings slowly but surely leave the backend. Basic system settings influence Contao as an application and
+therefore there is a chance that a wrong setting will render the system non-functional. If this happens, you will not
+be able to undo the settings and restore the system because you will not be able to log in anymore. For this reason,
 most settings are configured outside of Contao via the `config.yaml`, or can be configured via the Contao Manager in the future.
 
 
@@ -16,7 +16,7 @@ most settings are configured outside of Contao via the `config.yaml`, or can be 
 
 ### Global configuration
 
-**E-mail address of the system administrator:** This is the address to which notifications about e.g. locked accounts or 
+**E-mail address of the system administrator:** This is the address to which notifications about e.g. locked accounts or
 newly registered users are sent. You can also use the following notation to add a name to the email address:
 
 ```text
@@ -26,8 +26,8 @@ Kevin Jones [kevin.jones@example.com]
 
 ### Date and time
 
-**Date and time format:** All date and time formats must be entered as used with the PHP 
-[date](https://www.php.net/manual/de/function.date.php) function. Contao processes only numeric formats in the backend, 
+**Date and time format:** All date and time formats must be entered as used with the PHP
+[date](https://www.php.net/manual/de/function.date.php) function. Contao processes only numeric formats in the backend,
 i.e. the letters j, d, m, n, y, Y, g, G, h, H, i and s.
 
 Here are some examples of valid date and time specifications:
@@ -42,21 +42,21 @@ Here are some examples of valid date and time specifications:
 | H:i:s | 24 hours, minutes and seconds, e.g. `20:36:59` |
 | g:i | 12 hours without leading zeros and minutes, e.g. `8:36` |
 
-**Time zone:** You should set the timezone before you create your website because Contao stores all dates as 
+**Time zone:** You should set the timezone before you create your website because Contao stores all dates as
 [Unix timestamps](https://www.php.net/time) and Contao will not adjust these, if the timezone is changed.
 
 
 ### Back end configuration
 
-**Do not collapse elements:** In the "Parent View", Contao displays the elements in a shortened form for clarity 
-reasons. Individual elements can be unfolded using a navigation icon if needed. Select this option to disable the 
+**Do not collapse elements:** In the "Parent View", Contao displays the elements in a shortened form for clarity
+reasons. Individual elements can be unfolded using a navigation icon if needed. Select this option to disable the
 feature completely.
 
-**Items per page:** In the [Listing Records](/en/administration-area/list-data-records/#sort-and-filter-records) 
-section, you learned that Contao limits the number of records per page to 30 by default. You can change this value here. 
+**Items per page:** In the [Listing Records](/en/administration-area/list-data-records/#sort-and-filter-records)
+section, you learned that Contao limits the number of records per page to 30 by default. You can change this value here.
 Higher values mean a longer loading time.
 
-**Maximum items per page:** To prevent an inexperienced user from displaying 5000 records at once and thus 
+**Maximum items per page:** To prevent an inexperienced user from displaying 5000 records at once and thus
 exceeding the PHP memory limit, you can specify the maximum number of records that can be displayed per page.
 
 #### Additional back end settings:
@@ -73,7 +73,7 @@ Some additional parameters can be configured via the `config/config.yaml`.
 | `badge_title` | Configures the title of the badge in the back end. |
 | `route_prefix` | {{< version-tag "4.13" >}} Configures the path to the Contao back end, e.g., `/admin` instead of `/contao`. |
 
-The following config defines some example values: 
+The following config defines some example values:
 
 ```yaml
 # config/config.yaml
@@ -96,32 +96,32 @@ contao:
 Starting with version **4.10** this setting can be changed in the settings of the website root instead:
 {{% /notice %}}
 
-**Enable folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in 
-the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias 
+**Enable folder URLs:** Here you can activate folder structures in page aliases. This will add the aliases that exist in
+the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias
 `docs/install/download.html` instead of just `download.html`.
 
 {{% notice note %}}
 This setting does not exist anymore in Contao **4.10** and higher:
 {{% /notice %}}
 
-**Do not redirect empty URLs:** Allows you to disable the redirect of the "empty URL" to the start page of the browser's 
-language respective website root when using the [legacy routing mode][LegacyRouting] without `contao.prepend_locale: true` 
+**Do not redirect empty URLs:** Allows you to disable the redirect of the "empty URL" to the start page of the browser's
+language respective website root when using the [legacy routing mode][LegacyRouting] without `contao.prepend_locale: true`
 *(not recommended)*.
 
 
 ### Security settings
 
-**Disable request tokens:** Here you can activate that the request tokens are not checked when submitting a form 
+**Disable request tokens:** Here you can activate that the request tokens are not checked when submitting a form
 *(insecure!)*.
 
-**Allowed HTML tags:** By default, Contao does not allow HTML tags in forms and removes them automatically when saving. 
+**Allowed HTML tags:** By default, Contao does not allow HTML tags in forms and removes them automatically when saving.
 For input fields where the use of HTML is desired, you can specify a list of allowed HTML tags here.
 
-{{< version-tag "4.11.7, 4.9.18 and 4.4.56" >}} **Allowed HTML attributes:** You can extend the list of allowed HTML attributes for input fields here. If an HTML 
-attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for 
+{{< version-tag "4.11.7, 4.9.18 and 4.4.56" >}} **Allowed HTML attributes:** You can extend the list of allowed HTML attributes for input fields here. If an HTML
+attribute is not present in the list, it will be automatically removed when saving. The tag or attribute name * stands for
 all tags or attributes. For attributes with hyphens, placeholders such as data-* can be used.
 
-**Password hash:** By default, Contao uses the defaut of the current PHP version, but you can also set a value. This 
+**Password hash:** By default, Contao uses the defaut of the current PHP version, but you can also set a value. This
 is necessary if you want to sync the password to another system like LDAP.
 
 The following configuration defines some example values:
@@ -134,16 +134,16 @@ security:
 ```
 
 
-**Examples:**  
+**Examples:**
 `<iframe>` is not present in the allowed HTML tags, but can easily be inserted under key.
 
-{{% notice note %}}  
+{{% notice note %}}
 In order to better recognise the HTML tags added by the user, these should be entered at the beginning of the list.
-{{% /notice %}}  
+{{% /notice %}}
 
-In the permitted HTML attributes, the attribute must then also be inserted as a value for this.    
+In the permitted HTML attributes, the attribute must then also be inserted as a value for this.
 
-`<nav>` and `<input>` are, for example, already present in the permitted HTML tags and can thus be easily extended with permitted attributes. 
+`<nav>` and `<input>` are, for example, already present in the permitted HTML tags and can thus be easily extended with permitted attributes.
 Enter `nav` or `input` as the key and the desired value as the value - in our example `role` or `type`.
 
 If you trust all backend users 100%, you can also enter `*` as the key and `*` as the value. This will allow all attributes for all elements.
@@ -166,28 +166,28 @@ process library. Any image exceeding this value will not be processed.
 
 **Upload file types:** Here you can define which file types can be uploaded to your server.
 
-**Maximum upload file size:** Here you can define the maximum size of a file that can be uploaded to your server using 
+**Maximum upload file size:** Here you can define the maximum size of a file that can be uploaded to your server using
 the file manager. The entry is in bytes (1 MiB = 1024 KiB = 1,048,576 bytes). Larger files will be rejected.
 
-**Maximum image width:** When uploading images, the file manager automatically checks the width of the image and 
+**Maximum image width:** When uploading images, the file manager automatically checks the width of the image and
 compares it with the width you set here. If an image exceeds the maximum width, it will be reduced automatically.
 
-**Maximum image height:** When uploading images, the file manager automatically checks their height and compares it with 
+**Maximum image height:** When uploading images, the file manager automatically checks their height and compares it with
 your default value. If an image exceeds the maximum height, it will be resized automatically.
 
 
 ### Search engine settings
 
-**Enable searching:** If you select this option, Contao indexes the finished pages of your website and creates a search 
-index from them. With the frontend module 
-"[search engine](/en/layout/module-management/website-search/#configuration-of-the-search-module)", you can search this 
+**Enable searching:** If you select this option, Contao indexes the finished pages of your website and creates a search
+index from them. With the frontend module
+"[search engine](/en/layout/module-management/website-search/#configuration-of-the-search-module)", you can search this
 index.
 
-**Index protected pages:** Select this option to index protected pages for your search. Use this feature with care and 
+**Index protected pages:** Select this option to index protected pages for your search. Use this feature with care and
 make sure to exclude personalized pages from the search.
 
 {{% notice note %}}
-Starting with version **4.9** a new search indexer is used. The settings **Enable searching** and 
+Starting with version **4.9** a new search indexer is used. The settings **Enable searching** and
 **Index protected pages** are now configured via the `config/config.yaml`.
 
 ```yaml
@@ -202,7 +202,7 @@ contao:
 
 ### Cron job settings
 
-**Deactivate the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route 
+**Deactivate the command scheduler:** Here you can disable the Periodic Command Scheduler and run the route
 `_contao/cron` using a real cron job (which you have to set up yourself). Starting with Contao **4.9** you can also
 use the following command:
 
@@ -213,20 +213,20 @@ php vendor/bin/contao-console contao:cron
 
 ### Default access rights
 
-**Default page owner:** Here you can specify the default owner of the pages for which no access rights have been 
+**Default page owner:** Here you can specify the default owner of the pages for which no access rights have been
 defined. For more information, see the Access Rights section.
 
-**Default page group**: Here you can define to which group the pages for which no access rights are defined belong by 
+**Default page group**: Here you can define to which group the pages for which no access rights are defined belong by
 default. For more information, see the Access Rights section.
 
-**Default access rights:** Here you can set the default access rights for the pages for which no special access rights 
+**Default access rights:** Here you can set the default access rights for the pages for which no special access rights
 are defined. For more information, see the Access Rights section.
 
 
 ## parameters.yaml
 
-In the Contao Managed Edition, the parameters (e.g. database credentials) are stored in the `parameters.yaml` file that 
-is generated by the Contao installation tool. This file is usually excluded from the versioning process and can also 
+In the Contao Managed Edition, the parameters (e.g. database credentials) are stored in the `parameters.yaml` file that
+is generated by the Contao installation tool. This file is usually excluded from the versioning process and can also
 contain additional entries such as the credentials for sending e-mails via SMTP.
 
 The file `parameters.yaml` is located in the folder `config/` and is created automatically when you install Contao.
@@ -252,11 +252,11 @@ parameters:
 
 ## config.yaml
 
-The bundle configuration belongs in the `config.yaml` and is located in the folder `config/`. If the file does not 
-exist yet, it must be created. Contao automatically loads the `config_prod.yaml` or `config_dev.yaml` and if not available 
+The bundle configuration belongs in the `config.yaml` and is located in the folder `config/`. If the file does not
+exist yet, it must be created. Contao automatically loads the `config_prod.yaml` or `config_dev.yaml` and if not available
 the `config.yaml`.
 
-This allows you to realize different configurations for your test or production environment (dev/prod) (e.g. more 
+This allows you to realize different configurations for your test or production environment (dev/prod) (e.g. more
 logging in debug mode). In addition, you can commit the `config.yaml` configuration files to your repository, if your
 project is versioned via Git for example.
 
@@ -340,6 +340,13 @@ contao:
 
     # Allows to define Symfony Messenger workers (messenger:consume). Workers are started every minute using the Contao cron job framework.
     messenger:
+        # Contao provides a way to work on Messenger transports in the web process (kernel.terminate) if there is no real "messenger:consume" worker. You can configure its behavior here.'
+        web_worker:
+
+          # The transports to apply the web worker logic to.
+          transports:     []
+          grace_period:   PT10M # Must be a valid string for \DateInterval()
+
         workers:
 
             # Prototype
@@ -399,7 +406,12 @@ contao:
 
             # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
             flatten:              ~
+
+            # One of the Imagine\Image\ImageInterface::INTERLACE_* constants.
             interlace:            plane
+
+            # Filter used when downsampling images. One of the Imagine\Image\ImageInterface::FILTER_* constants. It has no effect with Gd or SVG as Imagine service.
+            resampling-filter:    ~
 
         # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
         imagine_service:      null
@@ -579,7 +591,7 @@ contao:
             # Example:
             - files/backend/custom.js
 
-        # Configures the title of the badge in the back end.
+        # Configures the title of the badge in the back end and the Contao Manager.
         badge_title:          '' # Example: develop
 
         # Defines the path of the Contao backend.
@@ -735,7 +747,12 @@ contao:
 
             # Allows to disable the layer flattening of animated images. Set this option to false to support animations. It has no effect with Gd as Imagine service.
             flatten:              ~
+
+            # One of the Imagine\Image\ImageInterface::INTERLACE_* constants.
             interlace:            plane
+
+            # Filter used when downsampling images. One of the Imagine\Image\ImageInterface::FILTER_* constants. It has no effect with Gd or SVG as Imagine service.
+            resampling-filter:    ~
 
         # Contao automatically uses an Imagine service out of Gmagick, Imagick and Gd (in this order). Set a service ID here to override.
         imagine_service:      null
@@ -872,7 +889,7 @@ contao:
             # Example:
             - files/backend/custom.js
 
-        # Configures the title of the badge in the back end.
+        # Configures the title of the badge in the back end and the Contao Manager.
         badge_title:          '' # Example: develop
 
         # Defines the path of the Contao backend.
@@ -931,16 +948,16 @@ contao:
 ### localconfig
 
 As mentioned in the config reference above the configuration key `contao.localconfig` allows you to set any configuration
-that is defined via `$GLOBALS['TL_CONFIG']`, the default values of which can be overwritten via the 
+that is defined via `$GLOBALS['TL_CONFIG']`, the default values of which can be overwritten via the
 `system/config/localconfig.php`. This is where Contao stores any settings that have been customised in the back end, i.e.
 under _System_ » _Settings_. This form of storing settings is being phased out step by step. Some of the settings now
 have a counterpart in the bundle configuration, others are e.g. set in the website root or within the back end user's
-settings. 
+settings.
 
-However depending on the Contao version you are using there are still settings being used from the localconfig. Thus it 
-can be useful to define them directly in your applications configuration (i.e. the `config.yaml`) rather than the legacy 
-`localconfig.php`. Not only because you might need it for your deployment flow, but also because some settings can _only_ 
-be set manually - because they neither have a bundle configuration counterpart, nor is there another mean of setting them 
+However depending on the Contao version you are using there are still settings being used from the localconfig. Thus it
+can be useful to define them directly in your applications configuration (i.e. the `config.yaml`) rather than the legacy
+`localconfig.php`. Not only because you might need it for your deployment flow, but also because some settings can _only_
+be set manually - because they neither have a bundle configuration counterpart, nor is there another mean of setting them
 via the back end.
 
 The following example defines the administrator's e-mail address via an environment variable and increases the undo period
@@ -1006,7 +1023,7 @@ Environment variables are variables that can be defined at the operating system 
 The variables are defined in the file `.env` and this file must be located in the root directory of the Contao installation. The usage and name of the following variables are predefined. However, you can also define arbitrary variables and then reference them e.g. in the `config.yaml`. If an additional `.env.local` file exists in the same directory, it will be used automatically.
 
 {{% notice info %}}
-Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts 
+Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts
 of the `config/parameters.yaml` and thus you should not use these parameters, if you are using the environment variable instead.
 {{% /notice %}}
 
@@ -1035,23 +1052,23 @@ in the `prod` mode, optimizing everything for production. If you want to put you
 mode to have additional logging and debugging output, set `APP_ENV` to `dev`. Never do this for production sites!
 If you set the environment manually, you will no longer be able to toggle the debug mode from the back end as a
 Contao administrator.
-    
+
 
 ### `APP_SECRET`
 
-The `APP_SECRET` environment variable is required e.g. to generate CSRF tokens. This is a string that should be 
-unique to your application and it's commonly used to add more entropy to security related operations. Its value 
-should be a series of characters, numbers and symbols chosen randomly and the recommended length is around 
+The `APP_SECRET` environment variable is required e.g. to generate CSRF tokens. This is a string that should be
+unique to your application and it's commonly used to add more entropy to security related operations. Its value
+should be a series of characters, numbers and symbols chosen randomly and the recommended length is around
 32 characters. As with any other security-related parameter, it is a good practice to change this value from time
-to time. However, keep in mind that changing this value will invalidate all signed URIs and Remember Me cookies. 
+to time. However, keep in mind that changing this value will invalidate all signed URIs and Remember Me cookies.
 That is why, after changing this value, you should regenerate the application cache and log out all the application
 users. For more information please visit the [Symfony documentation](https://symfony.com/doc/current/reference/configuration/framework.html#secret).
 
 
 ### `DATABASE_URL`
 
-The database connection information is stored as an environment variable called `DATABASE_URL`. It defines 
-the database user name, database password, host name, port and database name that will be used by your Contao system. 
+The database connection information is stored as an environment variable called `DATABASE_URL`. It defines
+the database user name, database password, host name, port and database name that will be used by your Contao system.
 The format of this variable is the following: `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`.
 
 It is used by default for the [Doctrine configuration][DoctrineConfig]: `doctrine.dbal.url: '%env(DATABASE_URL)%'`.
@@ -1105,7 +1122,7 @@ The following tool runs in your browser and helps you to convert the variables o
 ### `MAILER_DSN`
 
 The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
-be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
+be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if
 applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
 See the [Symfony Mailer Documentation][SymfonyMailer] for more information.
 
@@ -1177,13 +1194,13 @@ cookies of extensions you installed:
 ```
 COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
-    
+
 {{% notice note %}}
 The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
 for you too. Moreover, the CSRF cookie is different for `http` and `https` for security reasons. If you serve your
 website over `http`, note that the cookie name will be `csrf_http-contao_csrf_token`.
 However, protecting your users from CSRF attacks but let them submit the form via unsecured `http` connections is
-not really a valid use case. 
+not really a valid use case.
 {{% /notice %}}
 
 ### `COOKIE_REMOVE_FROM_DENY_LIST`
@@ -1227,7 +1244,7 @@ QUERY_PARAMS_REMOVE_FROM_DENY_LIST=fbclid
 If you do so, make sure to disable caching by e.g. setting `Cache-Control: no-store` on this response if `fbclid` is
 present as otherwise you are back to having thousands of cache entries in your cache proxy.
 {{% /notice %}}
-    
+
 
 ### `TRUSTED_PROXIES`
 
@@ -1238,10 +1255,10 @@ For example, instead of reading the `REMOTE_ADDR` header (which will now be the 
 the user's true IP will be stored in a standard `Forwarded: for="…"` header or a `X-Forwarded-For` header.
 If you don't configure the Managed Edition to look for these headers, you'll get incorrect information about the
 client's IP address, whether or not the client is connecting via HTTPS, the client's port and the hostname being
-requested. Let's say your load balancer runs on IP `192.0.2.1`. You can trust that IP by setting `TRUSTED_PROXIES` 
+requested. Let's say your load balancer runs on IP `192.0.2.1`. You can trust that IP by setting `TRUSTED_PROXIES`
 to `192.0.2.1`. You can also trust a whole IP range if you like to: `TRUSTED_PROXIES=192.0.2.0/24`. See the
 [Symfony Documentation on Proxies][SymfonyProxies] for more information.
-    
+
 
 ### `TRUSTED_HOSTS`
 
@@ -1277,7 +1294,7 @@ DNS_MAPPING='{
 }'
 ```
 
-This allows you to - for example - copy the live database to your staging or local environment and then automatically 
+This allows you to - for example - copy the live database to your staging or local environment and then automatically
 change the domains according to the mapping in the respective environment during `contao:migrate`.
 
 You can also migrate the protocol setting to different settings in the respective environment, which might be
@@ -1309,7 +1326,7 @@ DNS_MAPPING='{
 }'
 ```
 
-Instead of the environment variable, you can also directly set the `contao.dns_mapping` parameter in your 
+Instead of the environment variable, you can also directly set the `contao.dns_mapping` parameter in your
 `parameters.yaml`, if you prefer:
 
 ```yaml
@@ -1340,7 +1357,7 @@ e.g. via the `.env.local` of your Contao instance.
 {{% tab name=".env.local" %}}
 {{< version-tag "4.9" >}} You can define the SMTP server via the [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
 of your Contao instance (note that the `.env` file must also exist in order for the `.env.local` to take effect). In Contao **4.9** you need
-to use the `MAILER_URL` environment variable, while in Contao **4.10** and up the [`MAILER_DSN`](#mailer-dsn) variable can be used. In 
+to use the `MAILER_URL` environment variable, while in Contao **4.10** and up the [`MAILER_DSN`](#mailer-dsn) variable can be used. In
 Contao **5.0** and up only the `MAILER_DSN` environment variable will work.
 
 ```ini
@@ -1412,26 +1429,26 @@ You can also omit the parameters. The command will then ask you for each paramet
 
 {{< version "4.10" >}}
 
-In many cases, SMTP servers do not allow sending from any sender address. Oftentimes the sender address must match 
-the SMTP server credentials. Especially in multi-domain installations of Contao it might be important that the 
+In many cases, SMTP servers do not allow sending from any sender address. Oftentimes the sender address must match
+the SMTP server credentials. Especially in multi-domain installations of Contao it might be important that the
 sender address of the emails that Contao sends matches the domain. Or you might want to have different sender
 addresses for different front end forms created via the Contao form generator.
 
-Since Contao **4.10**, it is possible to use multiple email configurations in Contao. These configurations can be 
-selected per website root, per form and per newsletter channel. For each e-mail configuration, you can also set the 
+Since Contao **4.10**, it is possible to use multiple email configurations in Contao. These configurations can be
+selected per website root, per form and per newsletter channel. For each e-mail configuration, you can also set the
 sender that will be used for each e-mail sent by the selected e-mail configuration.
 
-The configuration requires two steps. First, the available e-mail sending methods have to be set in the Symfony 
+The configuration requires two steps. First, the available e-mail sending methods have to be set in the Symfony
 framework configuration in the `config.yaml` so-called. One or more SMTP servers can be defined using the so-called "DSN" syntax:
 
 ```
 smtp://<USERNAME>:<PASSWORD>@<HOSTNAME>:<PORT>
 ```
 
-Replace the `<PLACEHOLDER>` with the information of the SMTP server used, or remove them accordingly. See also the 
+Replace the `<PLACEHOLDER>` with the information of the SMTP server used, or remove them accordingly. See also the
 information in the official [Symfony documentation][SymfonyMailer].
 
-You can use this [Tool](#convert-your-mail-parameters) to encode your parameters. 
+You can use this [Tool](#convert-your-mail-parameters) to encode your parameters.
 
 {{% notice warning %}}
 If your username or password contains special characters, they need to be "url encoded". There are several online
@@ -1453,7 +1470,7 @@ framework:
             website2: smtps://email%%40example.de:foobar@example.de
 ```
 
-In the second step, the configured transports can be made available in the back end via the Contao framework 
+In the second step, the configured transports can be made available in the back end via the Contao framework
 configuration. In the following example, the transports `website1` and `website2` are made available:
 
 ```yaml
@@ -1465,11 +1482,11 @@ contao:
             website2: ~
 ```
 
-If the symfony application cache has been refreshed afterwards, these email configurations will be available for 
+If the symfony application cache has been refreshed afterwards, these email configurations will be available for
 selection in the Contao back end.
 
 {{% notice note %}}
-If no transport is configured, the information from the `parameters.yaml` is used. If a transport is configured but no transport 
+If no transport is configured, the information from the `parameters.yaml` is used. If a transport is configured but no transport
 is selected in the Contao back end, the first defined transport is used automatically.
 {{% /notice %}}
 
@@ -1501,9 +1518,9 @@ website2: 'SMTP für Webseite 2'
 ```
 
 {{% notice warning %}}
-**Clear cache** 
-In order to enable these changes, the application cache must be rebuilt using the Contao Manager ("Maintenance" &gt; 
-"Rebuild Production Cache") or alternatively via the command line. To do the latter you have to execute the following in 
+**Clear cache**
+In order to enable these changes, the application cache must be rebuilt using the Contao Manager ("Maintenance" &gt;
+"Rebuild Production Cache") or alternatively via the command line. To do the latter you have to execute the following in
 the Contao installation directory:
 
 ```bash
@@ -1515,7 +1532,7 @@ php vendor/bin/contao-console cache:warmup --env=prod
 
 ### Send Emails Asynchronously
 
-Instead of letting Contao send emails immediately when a request is processed (e.g. when a form was submitted) the email can be sent 
+Instead of letting Contao send emails immediately when a request is processed (e.g. when a form was submitted) the email can be sent
 asynchronously by the server later. There are several reasons why this can be important:
 
 * It reduces the server response time of such requests (in some cases sending via a defined SMTP server can take several seconds).
@@ -1570,7 +1587,7 @@ composer require symfony/messenger
 ```
 
 Now we can define a Messenger transport and routing for email messages. First we need to decide on the type of Messenger transport though.
-The component already provides different [transport types][SymfonyMessengerTransports]. In this case the 
+The component already provides different [transport types][SymfonyMessengerTransports]. In this case the
 [Doctrine transport][SymfonyMessengerDoctrine] is a good fit since it will save our emails in the database first for later consumption.
 In order to enable asynchronous emails via Symfony Mailer [the following needs to be configured][SymfonyMailerMessenger]:
 
@@ -1587,7 +1604,7 @@ framework:
 
 {{% notice "note" %}}
 Instead of defining the Messenger transport directly we can also use environment variables as usual, in case you want to use different
-transports in different environments (e.g. using the 
+transports in different environments (e.g. using the
 [In Memory transport](https://symfony.com/doc/current/messenger.html#in-memory-transport) locally for testing).
 
 ```yaml
@@ -1622,7 +1639,7 @@ The commands described above use the `--time-limit=1` option. By default the `me
 any new messages continuously. Therefore you would not need to run a separate cronjob. In order to make sure that this process is always
 running and is restarted on demand, different tools can be used on the server. However, in shared hosting environments such tools are
 usually not available. Thus, when using a cronjob you need to make sure that the process will only run a limited time when executed. The
-aforementioned `--time-limit=1` option will cause the process to exit after one second. You can find more details in the 
+aforementioned `--time-limit=1` option will cause the process to exit after one second. You can find more details in the
 [Symfony documentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
