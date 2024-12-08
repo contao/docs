@@ -77,6 +77,41 @@ could look like this:
 10 23 * * * /path/to/system/vendor/bin/contao-console contao:backup:create
 ```
 
+If you cannot or do not want to manage the backup plan in the `crontab`, you can <u>alternatively</u> schedule
+the backup command in the app as follows:
+
+```php
+// src/Cron/BackupCron.php
+
+namespace App\Cron;
+
+use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
+use Contao\CoreBundle\Util\ProcessUtil;
+use GuzzleHttp\Promise\PromiseInterface;
+
+#[AsCronJob('10 23 * * *')]
+class BackupCron
+{
+    public function __construct(private readonly ProcessUtil $processUtil)
+    {
+    }
+
+    public function __invoke(string $scope): PromiseInterface
+    {
+        if (Cron::SCOPE_CLI !== $scope) {
+            throw new CronExecutionSkippedException();
+        }
+
+        $process = $this->processUtil->createSymfonyConsoleProcess('contao:backup:create');
+        $process->setTimeout(null);
+
+        return $this->processUtil->createPromise($process);
+    }
+}
+```
+
 ## Configuration
 
 You can configure which database tables should be ignored during a backup, as well as the retention policy.
