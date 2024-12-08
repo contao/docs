@@ -138,10 +138,10 @@ security:
 ```
 
 **Beispiele:**  
-`<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden, kann aber einfach unter Schlüssel eingefügt werden.
+`<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden, kann aber einfach unter Schlüssel eingefügt werden. 
 
 {{% notice note %}}  
-Um die selbst hinzugefügten HTML-Tags besser zu erkennen, sollten diese zu Beginn der Liste eingetragen werden. 
+Um die selbst hinzugefügten HTML-Tags besser zu erkennen, sollten diese zu Beginn der Liste eingetragen werden.  
 {{% /notice %}}  
 
 In den erlaubten HTML-Attributen, als Wert muss hierzu dann auch noch das Attribut mit eingefügt werden.  
@@ -1355,7 +1355,7 @@ parameters:
 
 {{% notice warning %}}
 **Cache leeren:** Damit die Änderungen aktiv werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
-»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao
+»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
 Installationsverzeichnis befinden.
 
 ```bash
@@ -1492,8 +1492,8 @@ website2: 'SMTP für Webseite 2'
 
 {{% notice warning %}}
 **Cache leeren**  
-Damit die Änderungen im Backend sichtbar werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« >
-»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao
+Damit die Änderungen im Backend sichtbar werden, muss am Ende der Anwendungs-Cache über den Contao Manager (»Systemwartung« > 
+»Prod.-Cache erneuern«) oder alternativ über die Kommandozeile geleert werden. Dazu muss man sich im Contao 
 Installationsverzeichnis befinden.
 
 ```bash
