@@ -52,7 +52,7 @@ Please note that the copyright notices in the Contao files may not be removed or
 If you want to refresh the »Application Cache« you can do this via the 
 [Console](https://docs.contao.org/dev/reference/commands/): 
 
-```php
+```bash
 vendor/bin/contao-console cache:clear --no-warmup
 vendor/bin/contao-console cache:warmup
 ```

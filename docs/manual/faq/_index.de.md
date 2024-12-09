@@ -54,7 +54,7 @@ dass die Copyright-Hinweise in den Contao-Dateien gemäß den Lizenzbedingungen 
 Falls du den »Anwendungs-Cache« erneuern möchtest kannst du dies über die 
 [Konsole](https://docs.contao.org/dev/reference/commands/) durchführen: 
 
-```php
+```bash
 vendor/bin/contao-console cache:clear --no-warmup
 vendor/bin/contao-console cache:warmup
 ```
