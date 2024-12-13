@@ -51,7 +51,7 @@ contao:
 ```
 
 After disabling the front end cron you should periodically let Contao execute its cron jobs, either via the command line (recommended)
-or by makinga request to the web URL.
+or by making a request to the web URL.
 
 {{< version-tag "5.1" >}} Starting with Contao **5.1** you cannot disable the front end cron. Instead Contao will detect 
 whether you are letting the cron jobs be executed periodically and thus disable their execution in the front end 
