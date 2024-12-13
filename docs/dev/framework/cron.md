@@ -41,9 +41,17 @@ will block any subsequent request by the same user.
 {{% /notice %}}
 
 In Contao 4 you can disable the front end cron by going to _System_ » _Settings_ » _Cron job 
-settings_ and enabling the setting __Disable the command scheduler__. After disabling
-the front end cron you should periodically let Contao execute its cron jobs, either via the command line or by making a 
-request to the web URL.
+settings_ and enabling the setting __Disable the command scheduler__. You can also force this setting via your application's config:
+
+```yaml
+# config/config.yaml
+contao:
+    localconfig:
+        disableCron: true
+```
+
+After disabling the front end cron you should periodically let Contao execute its cron jobs, either via the command line (recommended)
+or by makinga request to the web URL.
 
 {{< version-tag "5.1" >}} Starting with Contao **5.1** you cannot disable the front end cron. Instead Contao will detect 
 whether you are letting the cron jobs be executed periodically and thus disable their execution in the front end 
