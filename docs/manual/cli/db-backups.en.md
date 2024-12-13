@@ -77,7 +77,7 @@ could look like this:
 10 23 * * * /path/to/system/vendor/bin/contao-console contao:backup:create
 ```
 
-If you cannot or do not want to manage the backup plan in the `crontab`, you can <u>alternatively</u> schedule
+If you cannot or do not want to manage the backup plan in the `crontab`, you can alternatively schedule
 the backup command in the app as follows:
 
 ```php
@@ -111,6 +111,8 @@ class BackupCron
     }
 }
 ```
+
+See the [developer documentation][AsyncCronJobs] for further info.
 
 ## Configuration
 
@@ -164,3 +166,4 @@ as a kind of safety setting, so that never more than `keep_max` backups are kept
 {{% /notice %}}
 
 [DateInterval_Docs]: https://www.php.net/manual/en/dateinterval.construct.php
+[AsyncCronJobs]: /dev/framework/cron/#asynchronous-cron-jobs
