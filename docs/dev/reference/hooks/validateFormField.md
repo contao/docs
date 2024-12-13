@@ -52,11 +52,11 @@ class ValidateFormFieldListener
 {
     public function __invoke(Widget $widget, string $formId, array $formData, Form $form): Widget
     {
-        if ('myform' === $formId && $widget instanceof \Contao\FormTextField && 'mywidget' === $widget->name) {
+        if ('myform' === $formId && 'mywidget' === $widget->name) {
             // Do your custom validation and add an error if widget does not validate
-            if (!$this->validateWidget($widget)) {
-                $widget->addError('My custom widget error');
-            }
+            // …
+
+            $widget->addError('My custom widget error');
         }
 
         return $widget;
