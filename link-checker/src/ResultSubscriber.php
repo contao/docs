@@ -38,6 +38,8 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         'https?://tinyurl\.com/app',
         // See https://github.com/ninsuo/twigfiddle?tab=readme-ov-file#down-right-nwo
         'https?://twigfiddle\.com',
+        // Facebook does not like to be crawled
+        'https?://.+\.facebook\.com/',
     ];
 
     private string $outputPath;
