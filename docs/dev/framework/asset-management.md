@@ -207,7 +207,7 @@ their "package". Each package can have a different version strategy. These asset
 can then be accessed within [Contao Templates][ContaoTemplates] in several ways:
 
 * Via the `asset(…)` [Twig function][AssetTwig] in Twig templates.
-* In legacy PHP templates via the `$this->asset(…)` helper function.
+* Via the `$this->asset(…)` helper function in legacy PHP templates.
 * Via the `{{asset::*::*}}` insert tag, wherever supported.
 
 These methods are basically shortcuts to the asset component of the Symfony framework, 
