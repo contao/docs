@@ -204,9 +204,13 @@ $GLOBALS['TL_HEAD'][] = \Contao\Template::generateFeedTag('share/myfeed.xml', 'r
 Contao also provides the possibility to access assets via the [Symfony Asset Component][SymfonyAssetComponent].
 It automatically registers assets from packages and these assets are grouped by
 their "package". Each package can have a different version strategy. These assets 
-can then be accessed within [Contao Templates][ContaoTemplates] by using the 
-`$this->asset(…)` helper function, or via the `{{asset::*::*}}` insert tag. These 
-methods are basically shortcuts to the asset component of the Symfony framework, 
+can then be accessed within [Contao Templates][ContaoTemplates] in several ways:
+
+* Via the `asset(…)` [Twig function][AssetTwig] in Twig templates.
+* In legacy PHP templates via the `$this->asset(…)` helper function.
+* Via the `{{asset::*::*}}` insert tag, wherever supported.
+
+These methods are basically shortcuts to the asset component of the Symfony framework, 
 so Contao supports whatever Symfony Assets supports. The methods take two arguments: 
 the path or name of the asset within the package, and the package name.
 
@@ -243,3 +247,4 @@ There are several use cases of using the asset helper within Contao:
 [ContaoTemplates]: /framework/templates/
 [SymfonyAssetComponent]: https://symfony.com/doc/current/components/asset.html
 [WebpackEncore]: https://symfony.com/doc/current/frontend.html#webpack-encore
+[AssetTwig]: https://symfony.com/doc/current/templates.html#linking-to-css-javascript-and-image-assets
