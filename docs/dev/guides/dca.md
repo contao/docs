@@ -384,12 +384,14 @@ is implemented as an anonymous function.
 
 ```php
 // contao/dca/tl_parts.php
+use Contao\DataContainer;
+
 $GLOBALS['TL_DCA']['tl_parts'] = [
     'config' => […],
 
     'list' => [
         'sorting' => [
-            'mode' => 4,
+            'mode' => DataContainer::MODE_PARENT,
             'fields' => ['name'],
             'headerFields' => ['name'],
             'panelLayout' => 'search,limit',
@@ -502,6 +504,7 @@ This finishes our DCA definition for `tl_parts`.
 ```php
 // contao/dca/tl_parts.php
 use Contao\Database;
+use Contao\DataContainer;
 use Contao\DC_Table;
 use Contao\Input;
 
@@ -532,7 +535,7 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
     ],
     'list' => [
         'sorting' => [
-            'mode' => 4,
+            'mode' => DataContainer::MODE_PARENT,
             'fields' => ['name'],
             'headerFields' => ['name'],
             'panelLayout' => 'search,limit',
