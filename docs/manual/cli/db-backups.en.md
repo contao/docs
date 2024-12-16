@@ -166,4 +166,4 @@ as a kind of safety setting, so that never more than `keep_max` backups are kept
 {{% /notice %}}
 
 [DateInterval_Docs]: https://www.php.net/manual/en/dateinterval.construct.php
-[AsyncCronJobs]: /dev/framework/cron/#asynchronous-cron-jobs
+[AsyncCronJobs]: https://docs.contao.org/dev/framework/cron/#asynchronous-cron-jobs
