@@ -107,5 +107,5 @@ If you are interested in creating your own filters please have a look at the
 [Developer Documentation](https://docs.contao.org/dev/framework/templates/getting-started/#extending-twig).
 
 {{% notice tip %}}
-Do you want to try something? You can use [Twig fiddle](https://twigfiddle.com/) for that.
+Do you want to try something? You can use the [Twig Playground](https://twig.symfony.com/play) for that.
 {{% /notice %}}

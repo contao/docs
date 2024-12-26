@@ -111,5 +111,5 @@ Wer sich für die Erstellung eigener Filter interessiert schaut bitte in die
 [Entwicklerdokumentation](https://docs.contao.org/dev/framework/templates/getting-started/#extending-twig).
 
 {{% notice tip %}}
-Du möchtest etwas ausprobieren? Dazu kannst du [Twig fiddle](https://twigfiddle.com/) verwenden.
+Du möchtest etwas ausprobieren? Dazu kannst du den [Twig Playground](https://twig.symfony.com/play) verwenden.
 {{% /notice %}}

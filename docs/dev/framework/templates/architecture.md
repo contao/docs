@@ -513,7 +513,7 @@ And because this feature is essential for secure templates, **Twig will — by d
 selects the default escaper strategy depending on the template's file extension: your `.html.twig` templates will
 automatically get the `|e('html')` treatment, so you could omit this part in the above example.
 
-Try it out for yourself in this [TwigFiddle](https://twigfiddle.com/d0w2yt) or read more about the 
+Try it out for yourself in this [example](https://twig.symfony.com/play?data=eyJ2ZXJzaW9uIjoiMy4zLjIiLCJvcHRpb25zIjp7ImNoYXJzZXQiOiJVVEYtOCIsInN0cmljdF92YXJpYWJsZXMiOnRydWV9LCJjb250ZXh0Ijp7ImNvbG9yMSI6InJlZDsgfSB7IGJvZHk6IGRpc3BsYXk6bm9uZTsiLCJjb2xvcjIiOiI8c2NyaXB0PmFsZXJ0KDEpPC9zY3JpcHQ-In0sInRlbXBsYXRlcyI6W1sibWFpbi50d2lnIiwiTm8gb3V0cHV0IGVuY29kaW5nOlxuXG48c3R5bGU-XG4gIC5ib3gxIHsgYmFja2dyb3VuZDoge3sgY29sb3IxfHJhdyB9fSB9XG4gIC5ib3gyIHsgYmFja2dyb3VuZDoge3sgY29sb3IyfHJhdyB9fSB9XG48L3N0eWxlPlxuXG5b4oCmXVxuXG48ZGl2IGNsYXNzPVwiYm94MVwiPnt7IGNvbG9yMXxyYXcgfX08L2Rpdj5cbjxkaXYgY2xhc3M9XCJib3gyXCI-e3sgY29sb3IyfHJhdyB9fTwvZGl2PlxuXG5cbi0tLS0tLVxuXG5cbkNvbnRleHQtZGVwZW5kZW50IG91dHB1dCBlbmNvZGluZzpcblxuPHN0eWxlPlxuICAuYm94MSB7IGJhY2tncm91bmQ6IHt7IGNvbG9yMXxlKCdjc3MnKSB9fSB9XG4gIC5ib3gyIHsgYmFja2dyb3VuZDoge3sgY29sb3IyfGUoJ2NzcycpIH19IH1cbjwvc3R5bGU-XG5cblvigKZdXG5cbjxkaXYgY2xhc3M9XCJib3gxXCI-e3sgY29sb3IxfGUoJ2h0bWwnKSB9fTwvZGl2PlxuPGRpdiBjbGFzcz1cImJveDJcIj57eyBjb2xvcjJ8ZSgnaHRtbCcpIH19PC9kaXY-Il1dfQ..) or read more about the
 [escaper extension](https://twig.symfony.com/doc/3.x/api.html#escaper-extension) in the official Twig documentation.
 
 {{% /tab %}}
