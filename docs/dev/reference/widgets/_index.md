@@ -19,4 +19,4 @@ This section is still **work in progress.** Please consider contributing when yo
 {{% children description="true" %}}
 
 
-[BackendWidgets]: /dev/framework/widgets/#creating-back-end-widgets
+[BackendWidgets]: /framework/widgets/#creating-back-end-widgets
