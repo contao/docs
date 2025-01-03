@@ -13,7 +13,7 @@ layout.
 
 ## Options
 
-The section wizard does not have any special settings.
+This widget does not have any special options. See the DCA reference for a [full field reference][FieldsReference].
 
 
 ## Example

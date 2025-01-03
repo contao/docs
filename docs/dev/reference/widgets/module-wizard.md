@@ -12,7 +12,7 @@ modules to the available sections of your layout, so that they will be rendered 
 
 ## Options
 
-The module wizard does not have any special settings.
+This widget does not have any special options. See the DCA reference for a [full field reference][FieldsReference].
 
 
 ## Example
@@ -39,3 +39,4 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 
 
 [PageLayouts]: https://docs.contao.org/manual/en/layout/theme-manager/manage-page-layouts/
+[FieldsReference]: /reference/dca/fields
