@@ -73,8 +73,8 @@ Twig is very [well documented][Twig Docs]. A good place to start is the [Twig fo
 section that covers syntax details as well as helpful IDE plugins for autocompletion and syntax highlighting.
 
 {{% notice tip %}}
-For quickly trying something out, you can use [Twig fiddle](https://twigfiddle.com/), an online playground. Take a look
-at this [demo fiddle](https://twigfiddle.com/qq1kml) for instance.
+For quickly trying something out, you can use the [Twig Playground](https://twig.symfony.com/play). Take a look
+at this [demo](https://twig.symfony.com/play?data=eyJ2ZXJzaW9uIjoiMy44LjAiLCJvcHRpb25zIjp7ImNoYXJzZXQiOiJVVEYtOCIsInN0cmljdF92YXJpYWJsZXMiOnRydWV9LCJjb250ZXh0Ijp7InRpdGxlIjoiQW5udWFsIGFuaW1hbCByYW5raW5nIiwiYW5pbWFscyI6WyJjYXRzIiwibGl6YXJkcyIsImRvZ3MiLCJkb2xwaGlucyIsImVsZXBoYW50cyJdfSwidGVtcGxhdGVzIjpbWyJtYWluLnR3aWciLCJ7IyBPdXRwdXQgdmFyaWFibGVzIGRpcmVjdGx5LCBvciBhcHBseSBmaWx0ZXJzIHRvIHRoZW06ICN9XG57eyB0aXRsZSB9fSBiZXR3ZWVuIHt7IGFuaW1hbHN8am9pbignLCAnKSB9fTpcblxueyMgTG9vcCBvdmVyIGNvbGxlY3Rpb25zOiAjfVxueyUgZm9yIGFuaW1hbCBpbiBhbmltYWxzICV9XG4gIHt7IGxvb3AuaW5kZXggfX0uIHt7IGFuaW1hbHxjYXBpdGFsaXplIH19XG57JSBlbmRmb3IgJX1cblxueyMgVXNlIHZhcmlvdXMgZmlsdGVycywgZnVuY3Rpb25zIGFuZCBzdHJpbmcgaW50ZXJwb2xhdGlvbjogI31cbnt7IGFuaW1hbHN8Zmlyc3R8Y2FwaXRhbGl6ZSB9fSB3ZXJlIG11Y2ggYmV0dGVyIHRoYW4ge3sgYW5pbWFsc3xsYXN0IH19LlxuVGhlIGF1ZGllbmNlIGF3YXJkIGdvZXMgdG8ge3sgcmFuZG9tKGFuaW1hbHMpIH19Llxue3sgXCJUaGUgJXMgbWFkZSB0aGUgdGhpcmQgcGxhY2UuXCJ8Zm9ybWF0KGFuaW1hbHNbMl0pIH19Il1dfQ..) for instance.
 {{% /notice %}}
 
 

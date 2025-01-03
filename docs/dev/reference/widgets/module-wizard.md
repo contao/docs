@@ -38,5 +38,5 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 ```
 
 
-[PageLayouts]: /manual/en/layout/theme-manager/manage-page-layouts/
+[PageLayouts]: https://docs.contao.org/manual/en/layout/theme-manager/manage-page-layouts/
 [FieldsReference]: /reference/dca/fields
