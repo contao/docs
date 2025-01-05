@@ -446,6 +446,24 @@ Defines how child elements are rendered in "parent view".
 **return:** `string` HTML for the child record
 {{% /expand %}}
 
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/ExampleChildRecordCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+
+#[AsCallback('tl_calendar_events', 'list.sorting.child_record')]
+class ExampleChildRecordCallbackListener
+{
+    public function __invoke(array $row): string
+    {
+        return '<div class="tl_content_left">'.$row['title'].'</div>';
+    }
+}
+```
+{{% /expand}}
+
 
 ### `list.sorting.header`
 
