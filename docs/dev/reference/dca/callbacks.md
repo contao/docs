@@ -462,7 +462,7 @@ class ExampleChildRecordCallbackListener
     }
 }
 ```
-{{% /expand}}
+{{% /expand %}}
 
 
 ### `list.sorting.header`
