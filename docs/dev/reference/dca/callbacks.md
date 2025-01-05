@@ -453,7 +453,7 @@ namespace App\EventListener\DataContainer;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 
-#[AsCallback('tl_calendar_events', 'list.sorting.child_record')]
+#[AsCallback('tl_example', 'list.sorting.child_record')]
 class ExampleChildRecordCallbackListener
 {
     public function __invoke(array $row): string
