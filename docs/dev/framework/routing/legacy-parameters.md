@@ -71,7 +71,7 @@ with such "auto items" to not show a 404 page, even though they ought to, depend
 enable the `$blnKeepUnused` parameter for such cases:
 
 ```php
-$autoItem = Input::get('auto_item', blnKeepUnused: true);
+$autoItem = Input::get('auto_item', false, true);
 ```
 {{% /notice %}}
 
