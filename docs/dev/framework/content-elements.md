@@ -47,26 +47,14 @@ To create a new content element, the following things must be defined and implem
     palette. A `category` must be defined in the service tag for each content element.
 
 * __Template__ <br>
-  The template name follows the naming convention mentioned beforehand. It prepends
-  the *type* of the element with the prefix `ce_`.
+  If not specified, the template name follows the naming convention mentioned for the _type_ and prpends it it with the
+  prefix `ce_` in case of  legacy [PHP templates][LegacyTemplates]. For [Twig templates][TwigTemplates] it will default
+  to `content_element/<type>.html.twig`.
 
 
 ## Example
 
-Usually a content element is based on a specific [palette][palettes] in the `tl_content`
-DCA configuration.
-
-```php
-// contao/dca/tl_content.php
-$GLOBALS['TL_DCA']['tl_content']['palettes']['example_element'] = 
-    '{type_legend},type;{text_legend},text'
-;
-```
-
-This very simple palette enables a back end user to fill the (pre-existing) field
-`text` via the create and edit view of this content element.
-
-The controller for this content element could look like this:
+Consider this very simple example of a content element:
 
 ```php
 // src/Controller/ContentElement/ExampleElementController.php
@@ -94,19 +82,42 @@ class ExampleElementController extends AbstractContentElementController
 In this example the service tag was implemented via PHP attributes (see the different [registration types](#registration) 
 below).
 
-Using the naming convention for templates mentioned above, the final template name
-for this content element will be `ce_example_element`:
+In order to be able to set the options for this content element and fill it with content in the back end, we also need
+to define a specific [palette][palettes] in the `tl_content` DCA configuration. The palette key is based on the _type_
+of the content element. Since we did not specify a type in our example it defaults to `example_element` as explained
+above.
+
+```php
+// contao/dca/tl_content.php
+$GLOBALS['TL_DCA']['tl_content']['palettes']['example_element'] = 
+    '{type_legend},type;{text_legend},text'
+;
+```
+
+This very simple palette enables a back end user to fill the (pre-existing) field `text` via the create and edit view of
+this content element.
+
+Using the naming convention for templates mentioned above, the final template name for this content element will be
+`ce_example_element` for [PHP templates][LegacyTemplates]:
 
 ```html
 <!-- contao/templates/ce_example_element.html5 -->
-<div class="my-content-element">    
-    <?= $this->text; ?>
+<div class="example-element">    
+  <?= $this->text; ?>
 </div>
 ```
 
-A template instance of this template will automatically be generated and passed
-to the controller's main method. The controller returns the parsed template
-as a response.
+{{< version-tag "4.13" >}} And `content_element/example_element` for [Twig templates][TwigTemplates]:
+
+```twig
+{# templates/content_element/content_element.html.twig #}
+<div class="example-element">    
+    {{ text|raw }}
+</div>
+```
+
+A template instance of this template will automatically be generated and passed to the controller's main method. The
+controller returns the parsed template as a response.
 
 
 ## Registration
@@ -132,7 +143,7 @@ Applying the service tag can either be done via PHP attributes, annotations or v
 {{< version-tag "4.13" >}} A content element can be registered using the `AsContentElement` PHP attribute.
 
 ```php
-// src/Controller/ContentElement/ExampleController.php
+// src/Controller/ContentElement/ExampleElementController.php
 namespace App\Controller\ContentElement;
 
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
@@ -143,7 +154,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement(category: 'texts')]
-class ExampleController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
@@ -156,7 +167,7 @@ The above example only defines the `category` attribute (which is actually optio
 category is `miscellaneous`). If you wish you can also define the other options of the service tag:
 
 ```php
-// src/Controller/ContentElement/ExampleController.php
+// src/Controller/ContentElement/ExampleElementController.php
 namespace App\Controller\ContentElement;
 
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
@@ -166,8 +177,8 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement('example', 'texts', 'ce_example', '__invoke', 'forward')]
-class ExampleController extends AbstractContentElementController
+#[AsContentElement('example_element', 'texts', 'ce_example', '__invoke', 'forward')]
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
@@ -185,7 +196,7 @@ if the class is invokable (has an `__invoke` method) or extends from the `Abstra
 used on the method that will deliver the response.
 
 ```php
-// src/Controller/ContentElement/ExampleController.php
+// src/Controller/ContentElement/ExampleElementController.php
 namespace App\Controller\ContentElement;
 
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
@@ -198,7 +209,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @ContentElement(category="texts")
  */
-class ExampleController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
@@ -211,7 +222,7 @@ The above example only defines the mandatory `category` attribute. If you wish y
 the service tag:
 
 ```php
-// src/Controller/ContentElement/ExampleController.php
+// src/Controller/ContentElement/ExampleElementController.php
 namespace App\Controller\ContentElement;
 
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
@@ -222,9 +233,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @ContentElement("example", "texts", "ce_example", "__invoke", "forward")
+ * @ContentElement("example_element", "texts", "ce_example", "__invoke", "forward")
  */
-class ExampleController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
@@ -242,14 +253,14 @@ However, it is recommended to only define what you need and otherwise leave the 
 ```yaml
 # config/services.yaml
 services:
-    App\Controller\ContentElement\ExampleController:
+    App\Controller\ContentElement\ExampleElementController:
         tags:
             -
                 name: contao.content_element
                 category: texts
 ```
 ```php
-// src/Controller/ContentElement/ExampleController.php
+// src/Controller/ContentElement/ExampleElementController.php
 namespace App\Controller\ContentElement;
 
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
@@ -258,7 +269,7 @@ use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ExampleController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
@@ -273,7 +284,7 @@ the service tag:
 ```yaml
 # config/services.yaml
 services:
-    App\Controller\ContentElement\ExampleController:
+    App\Controller\ContentElement\ExampleElementController:
         tags:
             -
                 name: contao.content_element
@@ -288,11 +299,12 @@ However, it is recommended to only define what you need and otherwise leave the 
 
 {{< /tabs >}}
 
-You can also use class constants within attributes and annotations. This can be helpful to make the module's type a reusable reference:
+You can also use class constants within attributes and annotations. This can be helpful to make the module's type a
+reusable reference:
 
 ```php
-#[AsContentElement(ExampleController::TYPE)]
-class ExampleController extends AbstractContentElementController
+#[AsContentElement(ExampleElementController::TYPE)]
+class ExampleElementController extends AbstractContentElementController
 {
     public const TYPE = 'my_element';
 }
@@ -300,18 +312,18 @@ class ExampleController extends AbstractContentElementController
 
 ```php
 // contao/dca/tl_content.php
-use App\Controller\ContentElement\ExampleController;
+use App\Controller\ContentElement\ExampleElementController;
 
-$GLOBALS['TL_DCA']['tl_content']['palettes'][ExampleController::TYPE] = 
+$GLOBALS['TL_DCA']['tl_content']['palettes'][ExampleElementController::TYPE] = 
    '{type_legend},type;{text_legend},text'
 ;
 ```
 
 ```php
 // contao/languages/en/default.php
-use App\Controller\ContentElement\ExampleController;
+use App\Controller\ContentElement\ExampleElementController;
 
-$GLOBALS['TL_LANG']['CTE'][ExampleController::TYPE] = [
+$GLOBALS['TL_LANG']['CTE'][ExampleElementController::TYPE] = [
     'My Example Element', 
     'A Content Element for testing purposes.',
 ];
@@ -321,12 +333,12 @@ $GLOBALS['TL_LANG']['CTE'][ExampleController::TYPE] = [
 ## Translations
 
 In order to have a nice label in the back end, we also need to add a translation
-for our content element - otherwise it will only be named *my_content_element*.
+for our content element - otherwise it will only be named *example_element*.
 The translation needs to be set as follows:
 
 ```php
 // contao/languages/en/default.php
-$GLOBALS['TL_LANG']['CTE']['my_content_element'] = [
+$GLOBALS['TL_LANG']['CTE']['example_element'] = [
     'My Content Element', 
     'A Content Element for testing purposes.',
 ];
@@ -344,7 +356,7 @@ you can use `$this->getPageModel()` in order to receive the `\Contao\PageModel`
 object of the currently rendered page of Contao's site structure.
 
 ```php
-// src/Controller/ContentElement/MyContentElementController.php
+// src/Controller/ContentElement/ExampleElementController.php
 namespace App\Controller\ContentElement;
 
 use Contao\ContentModel;
@@ -355,7 +367,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement(category: 'texts')]
-class MyContentElementController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
@@ -408,7 +420,7 @@ Allowing nested fragments for your content element works via the `nestedFragment
 {{% tab name="Attribute" %}}
 ```php
 #[AsContentElement(nestedFragments: true)]
-class ExampleController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
@@ -423,7 +435,7 @@ class ExampleController extends AbstractContentElementController
 /**
  * @ContentElement(category="miscellaneous", nestedFragments=true)
  */
-class ExampleController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
@@ -436,7 +448,7 @@ class ExampleController extends AbstractContentElementController
 {{% tab name="YAML" %}}
 ```yaml
 services:
-    App\Controller\ContentElement\ExampleController:
+    App\Controller\ContentElement\ExampleElementController:
         tags:
             -
                 name: contao.content_element
@@ -456,7 +468,7 @@ instead of defining `true` for the tag's `nestedFragments` option you can instea
 {{% tab name="Attribute" %}}
 ```php
 #[AsContentElement(nestedFragments: ['allowedTypes' => ['image', 'video']])]
-class ExampleController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
@@ -471,7 +483,7 @@ class ExampleController extends AbstractContentElementController
 /**
  * @ContentElement(category="miscellaneous", nestedFragments={"allowedTypes" = {"image", "video"}})
  */
-class ExampleController extends AbstractContentElementController
+class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
@@ -484,7 +496,7 @@ class ExampleController extends AbstractContentElementController
 {{% tab name="YAML" %}}
 ```yaml
 services:
-    App\Controller\ContentElement\ExampleController:
+    App\Controller\ContentElement\ExampleElementController:
         tags:
             -
                 name: contao.content_element
@@ -524,3 +536,5 @@ render via the `content_element()` Twig function:
 [caching]: /framework/caching/
 [modules]: /framework/front-end-modules/
 [fragments]: /framework/caching/#caching-fragments
+[LegacyTemplates]: /framework/templates/legacy/
+[TwigTemplates]: /framework/templates/

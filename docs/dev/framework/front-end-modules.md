@@ -119,15 +119,15 @@ be `mod_example_module` for [PHP templates][LegacyTemplates]:
 </div>
 ```
 
-{{< version-tag "5.0" >}} And `frontend_module/example_module` for [Twig templates][TwigTemplates]:
+{{< version-tag "4.13" >}} And `frontend_module/example_module` for [Twig templates][TwigTemplates]:
 
 ```twig
 {# templates/frontend_module/example_module.html.twig #}
 <div class="example-module">   
-  <form action="{{ action }}" method="POST"> 
-    <input type="hidden" name="REQUEST_TOKEN" value="{{ request_token }}">
-    <button type="submit">Submit</button>
-  </form>
+    <form action="{{ action }}" method="POST"> 
+        <input type="hidden" name="REQUEST_TOKEN" value="{{ request_token }}">
+        <button type="submit">Submit</button>
+    </form>
 </div>
 ```
 
