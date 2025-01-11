@@ -49,26 +49,14 @@ To create a new front end module, the following things must be defined and imple
     module.
 
 * __Template__ <br>
-  The template name follows the naming convention mentioned beforehand. It prepends
-  the *type* of the module with the prefix `mod_`.
+  If not specified, the template name follows the naming convention mentioned for the _type_ and prpends it it with the
+  prefix `mod_` in case of  legacy [PHP templates][LegacyTemplates]. For [Twig templates][TwigTemplates] it will default
+  to `frontend_module/<type>.html.twig`.
 
 
 ## Example
 
-Usually a front end module is based on a specific [palette][2] in the `tl_module`
-DCA configuration.
-
-```php
-// contao/dca/tl_module.php
-$GLOBALS['TL_DCA']['tl_module']['palettes']['my_frontend_module'] = 
-    '{title_legend},name,type;{redirect_legend},jumpTo'
-;
-```
-
-This very simple palette enables a back end user to select a redirect page using
-the pre-existing field `jumpTo` via the create and edit view of this front end module.
-
-The controller for this module could look like this:
+Consider this fairly simple example of a front end module:
 
 ```php
 // src/Controller/FrontendModule/ExampleModuleController.php
@@ -101,17 +89,29 @@ class ExampleModuleController extends AbstractFrontendModuleController
 }
 ```
 
-In this example the service tag was implemented via [PHP attributes](#registration). The controller itself
-processes the request and checks, if it was a POST request. In that case, the
-redirect page is loaded via Contao's model functionality and a `RedirectResponseException`
-is thrown to redirect to that page.
+In this example the service tag was implemented via [PHP attributes](#registration). The controller itself processes the
+request and checks, if it was a POST request. In that case, the redirect page is loaded via Contao's model functionality
+and a `RedirectResponseException` is thrown to redirect to that page.
 
-Using the naming convention for templates mentioned above, the final template name
-for this front end module will be `mod_my_frontend_module`:
+In order to be able to set the options for our front end module in the back end, we also need to define a [palette][2]
+in the `tl_module` DCA configuration. The palette key is based on the _type_ of the front end module. Since we did not
+specify a type in our example it defaults to `example_module` as explained above.
 
-```html
-<!-- templates/mod_my_frontend_module.html5 -->
-<div class="my-frontend-module">   
+```php
+// contao/dca/tl_module.php
+$GLOBALS['TL_DCA']['tl_module']['palettes']['example_module'] = 
+    '{title_legend},name,type;{redirect_legend},jumpTo'
+;
+```
+
+This very simple palette enables us to select a redirect page using the pre-existing `jumpTo` field.
+
+Using the naming convention for templates also mentioned above, the final template name for this front end module will
+be `mod_example_module` for [PHP templates][LegacyTemplates]:
+
+```php
+<!-- templates/mod_example_module.html5 -->
+<div class="example-module">   
   <form action="<?= $this->action ?>" method="POST"> 
     <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
     <button type="submit">Submit</button>
@@ -119,9 +119,20 @@ for this front end module will be `mod_my_frontend_module`:
 </div>
 ```
 
-A template instance of this template will automatically be generated and passed
-to the controller's main method. The controller returns the parsed template
-as a response.
+{{< version-tag "5.0" >}} And `frontend_module/example_module` for [Twig templates][TwigTemplates]:
+
+```twig
+{# templates/frontend_module/example_module.html.twig #}
+<div class="example-module">   
+  <form action="{{ action }}" method="POST"> 
+    <input type="hidden" name="REQUEST_TOKEN" value="{{ request_token }}">
+    <button type="submit">Submit</button>
+  </form>
+</div>
+```
+
+A template instance of the respective template will automatically be generated and passed to the controller's main 
+method. The controller returns the parsed template as a response.
 
 
 ## Registration
@@ -326,12 +337,12 @@ $GLOBALS['TL_LANG']['FMD'][ExampleModuleController::TYPE] = [
 ## Translations
 
 In order to have a nice label in the back end, we also need to add a translation
-for our front end module - otherwise it will only be named *my_frontend_module*.
+for our front end module - otherwise it will only be named *example_module*.
 The translation needs to be set as follows:
 
 ```php
 // contao/languages/en/modules.php
-$GLOBALS['TL_LANG']['FMD']['my_frontend_module'] = [
+$GLOBALS['TL_LANG']['FMD']['example_module'] = [
     'My front end module', 
     'A front end module for testing purposes.',
 ];
@@ -391,3 +402,5 @@ class ExampleModuleController extends AbstractFrontendModuleController
 [4]: /framework/templates/
 [5]: /framework/caching/
 [fragments]: /framework/caching/#caching-fragments
+[LegacyTemplates]: /framework/templates/legacy/
+[TwigTemplates]: /framework/templates/
