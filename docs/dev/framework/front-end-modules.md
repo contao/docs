@@ -49,7 +49,7 @@ To create a new front end module, the following things must be defined and imple
     module.
 
 * __Template__ <br>
-  If not specified, the template name follows the naming convention mentioned for the _type_ and prepends it it with the
+  If not specified, the template name follows the naming convention mentioned for the _type_ and prepends it with the
   prefix `mod_` in case of legacy [PHP templates][LegacyTemplates]. For [Twig templates][TwigTemplates] it will default
   to `frontend_module/<type>.html.twig`.
 
