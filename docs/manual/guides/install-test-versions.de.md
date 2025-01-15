@@ -50,7 +50,7 @@ werden.
 ## Release Candidates installieren
 
 Release Candidates nutzen eine spezifische Form von sogenannten »Release-Tags«.
-Der erste Release Candidate von Contao `5.4` heißt z. B. `5.4.0-RC1`. Normalerweise
+Der erste Release Candidate von Contao `5.5` heißt z. B. `5.5.0-RC1`. Normalerweise
 würde Composer nur _stabile_ Versionen installieren und daher solche Release Candidates
 nicht beachten.
 
@@ -59,20 +59,20 @@ auf `RC` in der `composer.json` runter gesetzt werden. Außerdem sollte man Comp
 anweisen, dass bei jedem Paket _stabile_ Versionen bevorzugt werden, damit auch die
 offiziell veröffentlichten Versionen von Contao automatisch installiert werden, sobald
 diese verfügbar sind. Schließlich muss noch die angeforderte Version von Contao selbst,
-also genau genommen des `contao/manager-bundle` auf `5.4.*` geändert werden, so wie bei
+also genau genommen des `contao/manager-bundle` auf `5.5.*` geändert werden, so wie bei
 jedem Update auf eine neuere Contao Version.
 
 ```json
 {
     "require": {
-        "contao/manager-bundle": "5.4.*"
+        "contao/manager-bundle": "5.5.*"
     },
     "minimum-stability": "RC",
     "prefer-stable": true
 }
 ```
 
-Hier ist ein komplettes Beispiel, um die neueste Contao `5.4` Version installieren
+Hier ist ein komplettes Beispiel, um die neueste Contao `5.5` Version installieren
 zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 
 ```json
@@ -82,15 +82,15 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
     "license": "LGPL-3.0-or-later",
     "type": "project",
     "require": {
-        "contao/calendar-bundle": "^5.4",
-        "contao/comments-bundle": "^5.4",
+        "contao/calendar-bundle": "^5.5",
+        "contao/comments-bundle": "^5.5",
         "contao/conflicts": "@dev",
-        "contao/core-bundle": "^5.4",
-        "contao/faq-bundle": "^5.4",
-        "contao/listing-bundle": "^5.4",
-        "contao/manager-bundle": "5.4.*",
-        "contao/news-bundle": "^5.4",
-        "contao/newsletter-bundle": "^5.4"
+        "contao/core-bundle": "^5.5",
+        "contao/faq-bundle": "^5.5",
+        "contao/listing-bundle": "^5.5",
+        "contao/manager-bundle": "5.5.*",
+        "contao/news-bundle": "^5.5",
+        "contao/newsletter-bundle": "^5.5"
     },
     "minimum-stability": "RC",
     "prefer-stable": true,
@@ -121,7 +121,7 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
 Die angeforderten Versionen der anderen Contao Bundles muss nicht unbedingt von
 deren ursprünglichen Angaben geändert werden. Zum Beispiel erlaubt eine Angabe von
 `^5.3` (wie es der Fall wäre, wenn man von einer Contao 5.3 LTS Version aktualisieren
-würde) auch die Installation aller `5.4` Versionen (oder höher). Siehe dazu auch die Dokumentation
+würde) auch die Installation aller `5.5` Versionen (oder höher). Siehe dazu auch die Dokumentation
 von Composer über diese spezielle [Versions Syntax](https://getcomposer.org/doc/articles/versions.md).
 Nur die Version des `contao/manager-bundle` muss angepasst werden.
 {{% /notice %}}
@@ -205,8 +205,8 @@ kann stattdessen dieser Branch in der oben erwähnten `composer.json` verlangt w
 
 Die Testversionen können auch ohne manuelle Änderung der `composer.json` direkt
 über den Contao Manager installiert werden. Dazu editiert man bei »Contao Open Source
-CMS« die angeforderte Versionsangabe entweder auf bspw. `5.4.*@RC`, um Release
-Candidates, oder `5.4.x-dev` um Entwicklerversionen installieren 
+CMS« die angeforderte Versionsangabe entweder auf bspw. `5.5.*@RC`, um Release
+Candidates, oder `5.5.x-dev` um Entwicklerversionen installieren 
 zu lassen.
 
 ![Contao Manager Versionsangabe]({{% asset "images/manual/guides/de/install-version/contao-manager-versionseingabe.gif" %}}?classes=shadow)
