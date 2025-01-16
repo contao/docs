@@ -31,6 +31,10 @@ Beispiel könnte so aussehen:
 * * * * * /opt/plesk/php/8.2/bin/php /var/www/vhosts/my.host.com/vendor/bin/contao-console contao:cron
 ```
 
+Nicht jeder Provider lässt die Erstellung eines Cronjobs in der `crontab` bzw. als Konsolenbefehl zu. Hier kann
+als Alternative ein Aufruf über die Web-URL der Seite erfolgen. Der Aufruf erfolgt über die Route `_contao/cron` -
+also z. B. `https://example.org/_contao/cron`.
+
 {{% notice tip %}}
 Zusätzliche Informationen findest du in [der englischen Entwickler-Dokumentation](https://docs.contao.org/dev/framework/cron/).
 {{% /notice %}}
