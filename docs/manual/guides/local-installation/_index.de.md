@@ -15,7 +15,7 @@ etwa [Laragon](https://laragon.org/) zur Verfügung.
 
 Eine weitere Alternative ist die Umsetzung über [Docker](https://www.docker.com/). Docker selbst steht für unterschiedliche Betriebssysteme zur Installation bereit. Sollten die aktuellen Docker Releases für dein Betriebssystem nicht zur Verfügung stehen, kannst du auch [Docker-Desktop](https://docs.docker.com/desktop/) einsetzen.
 
-Die folgenden Beschreibungen spiegeln lediglich mögliche Alternativen der lokalen Installation wieder und sind daher auch nur als solche zu behandeln.
+Die folgenden Beschreibungen spiegeln lediglich mögliche Alternativen der lokalen Installation wider und sind daher auch nur als solche zu behandeln.
 
 Wenn du mit deinen lokalen Umsetzungen fertig bist, kannst du im Anschluss diese auf einen Live-Server [übertragen](../../installation/contao-umziehen/).
 
