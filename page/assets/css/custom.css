@@ -1,3 +1,156 @@
+:root {
+    --contao-orange: #f47c00;
+    --INTERNAL-MAIN-font: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --INTERNAL-MAIN-font-weight: 400;
+    --INTERNAL-MAIN-letter-spacing: normal;
+}
+
+@media screen {
+    :root:not([data-r-output-format='print']):not([data-r-theme-variant='my-custom-variant']):not([data-r-theme-variant='relearn-light']):not([data-r-theme-variant='relearn-dark']),
+    :root:not([data-r-output-format='print'])[data-r-theme-variant='relearn-light'] {
+        &:root {
+
+            --INTERNAL-MAIN-TEXT-color: #323232;
+            --INTERNAL-MAIN-TITLES-H1-TEXT-color: #5e5e5e;
+            --MAIN-TEXT-color: var(--INTERNAL-MAIN-TEXT-color);
+            --MAIN-TITLES-TEXT-color: var(--INTERNAL-MAIN-TITLES-H1-TEXT-color); 
+            --INTERNAL-MENU-HEADER-BG-color: var(--contao-orange);
+        }
+    }
+}
+
+#R-body-inner {
+    scroll-behavior: smooth;
+}
+
+#R-body .flex-block-wrapper {
+    max-width: 1200px;
+    margin-left: 0;
+    width: 100% !important;
+}
+
+/*
+ * A little ugly hack: I want only the subpages of /reference/hooks/
+ * to not have text-transform: uppercase; on the h1,
+ * not the /reference/hooks/ page as well.
+ */
+body[data-url*="/reference/hooks/"]:not([data-url*="/reference/hooks/index.html"]) h1 {
+    text-transform: none;
+}
+
+/* hide level 3 in general */
+#R-sidebar ul.collapsible-menu > li > ul > li > ul,
+#R-sidebar ul.collapsible-menu > li.active > ul > li > ul,
+#R-sidebar ul.collapsible-menu > li.parent > ul > li > ul {
+    display: none;
+}
+
+/* show level 3 when parent is active */
+#R-sidebar ul.collapsible-menu > li.parent > ul > li.active > ul,
+#R-sidebar ul.collapsible-menu > li.parent > ul > li.parent > ul {
+    display: block;
+}
+
+/* hide level 3 on hooks page */
+body[data-url*="/reference/hooks/"] #R-sidebar ul.collapsible-menu > li.parent > ul > li.parent > ul {
+    display: none;
+}
+
+/* contao.org Top Navigation */
+@media screen {
+    :root {
+        --NETWORK-BAR-HEIGHT: 34px;
+    }
+
+    body:before {
+        content: '';
+        background-color: #222;
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: var(--NETWORK-BAR-HEIGHT);
+        z-index: 100;
+    }
+
+    #contao-network {
+        left: 0;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+        letter-spacing: normal;
+    }
+
+    #R-sidebar,
+    #R-body,
+    .DocSearch-Container {
+        margin-top: var(--NETWORK-BAR-HEIGHT);
+    }
+
+    #R-sidebar,
+    #R-body {
+        min-height: calc(100% - var(--NETWORK-BAR-HEIGHT));
+        height: calc(100% - var(--NETWORK-BAR-HEIGHT));
+    }
+
+    #top-bar-sticky-wrapper {
+        padding-top: var(--NETWORK-BAR-HEIGHT);
+        margin-top: calc(var(--NETWORK-BAR-HEIGHT) * -1);
+        box-sizing: content-box;
+    }
+
+    #top-bar-sticky-wrapper.is-sticky #top-bar {
+        top: var(--NETWORK-BAR-HEIGHT) !important;
+    }
+}
+
+
+/* Banner */
+@media screen {
+    #R-body .banner a.highlight {
+        background: rgba(244, 124, 0, 1);
+        border: 1px solid rgba(244, 124, 0, .2);
+        border-radius: 4px;
+        color: white;
+        display: block;
+        font-size: 1rem;
+        margin: 2rem 0;
+        padding: 10px 15px;
+        text-shadow: 0 0 1px rgba(0, 0, 0, .5);
+        line-height: 1.1;
+    }
+
+    #R-body .banner a:focus,
+    #R-body .banner a:hover {
+        background: rgba(244, 124, 0, .8);
+    }
+
+    #R-body .banner a.highlight::after {
+        background-color: transparent;
+    }
+
+    .banner span {
+        display: block;
+    }
+
+    .banner .title {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .banner span {
+        display: inline;
+    }
+    .banner .title {
+        padding-right: 3rem;
+    }
+}
+
+
 /*
   Webfont guide (/manual/en/guides/webfont/)
 */

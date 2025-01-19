@@ -1,4 +1,6 @@
-themeVariant: 'contao'
+themeVariant:
+  - relearn-light
+  - relearn-dark
 disableSearch: false
 disableLanguageSwitch: true
 documentation_label: Documentation
