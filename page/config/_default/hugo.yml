@@ -1,6 +1,6 @@
 contentDir: '../docs'
 title: 'Contao Documentation'
-theme: 'hugo-theme-learn'
+theme: 'hugo-theme-relearn'
 canonifyURLs: true
 enableGitInfo: true
 disablePathToLower: true

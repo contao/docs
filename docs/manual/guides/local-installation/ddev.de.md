@@ -35,9 +35,9 @@ installiert](https://github.com/contao/contao-demo) werden. Über den Contao Man
 Option auswählen.
 {{% /notice %}}
 
-{{< tabs groupId="ddev-contao-install">}}
+{{< tabs groupid="ddev-contao-install">}}
 
-{{% tab name="Composer" %}}
+{{< tab title="Composer" >}}
 Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses. Der Verzeichnisname spiegelt den späteren Projekt Hostnamen. Du kannst dies jedoch zusätzlich [konfigurieren](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/).
 
 ```shell
@@ -81,9 +81,9 @@ Die Contao Administration im Browser aufrufen:
 ddev launch contao
 ```
 
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Contao Manager" %}}
+{{< tab title="Contao Manager" >}}
 
 Öffne die Konsole deiner Wahl, erstelle das gewünschte Verzeichnis und wechsle danach in ebendieses. Der Verzeichnisname spiegelt den späteren Projekt Hostnamen. Du kannst dies jedoch zusätzlich [konfigurieren](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/).
 
@@ -117,7 +117,7 @@ Den Contao Manager aufrufen und den Anweisungen folgen.
 ddev launch contao-manager.phar.php
 ```
 
-{{% /tab %}}
+{{< /tab >}}
 
 {{< /tabs >}}
 

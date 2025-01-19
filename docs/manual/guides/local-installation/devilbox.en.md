@@ -262,7 +262,7 @@ In the
 you will find an outdated documentation that still shows the basic procedure well. In my IDE, the following 
 configuration works very well:
 
-{{< tabs groupId="Xdebug">}}
+{{< tabs groupid="Xdebug">}}
 
 {{% tab name="launch.json" %}}
 ```
@@ -285,7 +285,7 @@ configuration works very well:
 
   ]
 ```
-{{% /tab %}}
+{{< /tab >}}
 
 {{% tab name="xdebug.ini" %}}
 Create a xdebug.ini in the directory `devilbox/cfg/php-ini-8.2` (example for PHP 8.2) with this content
@@ -310,6 +310,6 @@ xdebug.log_level            = 7
 ; IDE Configuration
 xdebug.idekey               = VSCODE
 ```
-{{% /tab %}}
+{{< /tab >}}
 
 {{< /tabs >}}`

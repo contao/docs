@@ -64,8 +64,8 @@ file types".
 ### Template settings
 
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template:** Here you can overwrite the content element `ce_download` template.
 
 **HTML Output**  
@@ -83,8 +83,8 @@ The element generates the following HTML code:
     </p>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template:** Here you can overwrite the content element `content_element/download` template.
 
 **HTML Output**  
@@ -100,7 +100,7 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}
 
 
@@ -169,8 +169,8 @@ types".
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template:** Here you can overwrite the content element `ce_downloads` template.
 
 **HTML Output**  
@@ -190,8 +190,8 @@ The element generates the following HTML code:
     </ul>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template:** Here you can overwrite the content element `content_elements/downloads` template.
 
 **HTML Output**  
@@ -211,5 +211,5 @@ The element generates the following HTML code:
     </ul>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}

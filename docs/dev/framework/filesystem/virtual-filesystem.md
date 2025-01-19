@@ -41,8 +41,8 @@ list *files only* and show their *path*, *file size* and - if set in the back en
 For this example we're using the virtual filesystem named `files` that is already configured by default in Contao. If
 you want to play along, this will be a good starting point: 
 
-{{< tabs groupId="service-config">}}
-{{% tab name="Annotation" %}}
+{{< tabs groupid="service-config">}}
+{{< tab title="Annotation" >}}
 ```php
 <?php
 // src/App/Controller/FilesListController.php
@@ -109,8 +109,8 @@ class FilesListController extends AbstractContentElementController
     }
 }
 ```
-{{% /tab %}}
-{{% tab name="Attribute" %}}
+{{< /tab >}}
+{{< tab title="Attribute" >}}
 ```php
 <?php
 // src/App/Controller/FilesListController.php
@@ -172,7 +172,7 @@ class FilesListController extends AbstractContentElementController
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 ```twig

@@ -20,7 +20,7 @@ Die Anweisung verwendet die [Symfony VarDumper-Komponente](https://symfony.com/d
 zur Anzeige der Template-Variablen – im Debug-Modus wird die Ausgabe dabei an die Symfony Debug Toolbar umgeleitet.  
 
 {{% notice info %}}
-Falls du [Template-Vererbung]({{< ref "template-inheritance.de.md" >}}) nutzt, wird der Auszug der Template-Variablen nur im 
-[Debug-Modus]({{< ref "debug-mode.de.md" >}}) angezeigt oder wenn sich die Anweisung zwischen `$this->block(…)` und
+Falls du [Template-Vererbung]({{% ref "template-inheritance.de.md" %}}) nutzt, wird der Auszug der Template-Variablen nur im 
+[Debug-Modus]({{% ref "debug-mode.de.md" %}}) angezeigt oder wenn sich die Anweisung zwischen `$this->block(…)` und
 `$this->endblock()` befindet.
 {{% /notice %}}

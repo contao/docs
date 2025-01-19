@@ -92,8 +92,8 @@ Seit Contao 4.4 wird diese Frage nur noch den Spambots »angezeigt«.
 
 ## RSS-Feeds
 
-{{< tabs groupId="contaoVersion">}}
-{{% tab name="Contao  4" %}}
+{{< tabs groupid="contaoVersion">}}
+{{< tab title="Contao  4" >}}
 Jedes News- bzw. Blog-Archiv kann auf Wunsch als RSS/Atom-Feed exportiert werden. RSS-Feeds sind XML-Dateien mit deinen
 Beiträgen, die mit einem RSS-Reader abonniert und z. B. in eine andere Webseite eingebunden werden können.
 
@@ -148,8 +148,8 @@ auswählen:
 | Proportional                                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 | An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 Jedes News- bzw. Blog-Archiv kann auf Wunsch als RSS-, Atom- oder JSON-Feed exportiert werden. Feeds sind XML- und 
 JSON-Dateien mit deinen Beiträgen, die mit einem RSS-Reader abonniert und z. B. in eine andere Webseite eingebunden 
 werden können.
@@ -160,7 +160,7 @@ aus und nehme die gewünschten Einstellungen für deinen Feed vor.
 Die Feeds können über das [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) im Kopfbereich
 der Seite eingebaut werden. Mit »Kopfbereich« ist dabei nicht die Kopfzeile deines Seitenlayouts gemeint, sondern das
 `head`-Tag des HTML-Quelltextes.
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 

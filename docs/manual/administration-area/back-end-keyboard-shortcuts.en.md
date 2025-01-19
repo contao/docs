@@ -75,9 +75,9 @@ macOS:
 
 - `[Cmd] + click`: edit the element
 - `[Cmd] + [Shift] + click`: edit the element's children
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Contao 4" %}}
+{{< tab title="Contao 4" >}}
 Windows:
 
 - `[Ctrl] + click`: edit the element
@@ -87,7 +87,7 @@ macOS:
 
 - `[Cmd] + click`: edit the element
 - `[Cmd] + [Shift] + click`: edit the element settings
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Keyboard shortcuts under Windows, Linux and Mac

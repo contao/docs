@@ -35,10 +35,10 @@ contao:
 As with content elements, front end modules, hooks and DCA callbacks, Page controllers
 can be registered via attributes, annotations or YAML. The following shows the most basic example:
 
-{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< tabs groupid="attribute-annotation-yaml" >}}
 {{< version-tag "4.13" >}}
 
-{{% tab name="Attribute" %}}
+{{< tab title="Attribute" >}}
 ```php
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
@@ -55,9 +55,9 @@ class ExamplePageController
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Annotation" %}}
+{{< tab title="Annotation" >}}
 ```php
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
@@ -76,9 +76,9 @@ class ExamplePageController
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="YAML" %}}
+{{< tab title="YAML" >}}
 ```yaml
 # config/services.yaml
 services:
@@ -99,7 +99,7 @@ class ExamplePageController
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 Without any additional parameters, the type of the page is inferred from the class name. In
@@ -146,10 +146,10 @@ for these possibilities.
 
 There are however a few differences and additional options.
 
-{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< tabs groupid="attribute-annotation-yaml" >}}
 {{< version-tag "4.13" >}}
 
-{{% tab name="Attribute" %}}
+{{< tab title="Attribute" >}}
 ```php
 #[AsPage(
     type: 'example',
@@ -158,8 +158,8 @@ There are however a few differences and additional options.
     contentComposition: true
 )]
 ```
-{{% /tab %}}
-{{% tab name="Annotation" %}}
+{{< /tab >}}
+{{< tab title="Annotation" >}}
 ```php
 /**
  * @Page(
@@ -170,8 +170,8 @@ There are however a few differences and additional options.
  * )
  */
 ```
-{{% /tab %}}
-{{% tab name="YAML" %}}
+{{< /tab >}}
+{{< tab title="YAML" >}}
 ```yaml
 # config/services.yaml
 services:
@@ -184,7 +184,7 @@ services:
                 urlSuffix: .html
                 contentComposition: true
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 

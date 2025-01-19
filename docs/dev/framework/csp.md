@@ -60,22 +60,22 @@ to an external source - e.g. via an `<iframe>` or `<script src="…">` etc. - th
 browser. However, your application might deliberately want to include external resources and thus it is necessary to 
 allow this resource specifically (or at least the domain of that resource). This can be done via the `addSource` method:
 
-{{< tabs groupId="csp-methods" >}}
-{{% tab name="PHP" %}}
+{{< tabs groupid="csp-methods" >}}
+{{< tab title="PHP" >}}
 ```php
 $cspHandler->addSource('frame-src', 'https://www.youtube.com/embed/foobar123');
 ```
-{{% /tab %}}
-{{% tab name="Twig" %}}
+{{< /tab >}}
+{{< tab title="Twig" >}}
 ```twig
 {% do csp_source('frame-src', 'https://www.youtube.com/embed/foobar123') %}
 ```
-{{% /tab %}}
-{{% tab name="PHP Template" %}}
+{{< /tab >}}
+{{< tab title="PHP Template" >}}
 ```php
 <?php $this->addCspSource('frame-src', 'https://www.youtube.com/embed/foobar123') ?>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 {{% notice "note" %}}
@@ -93,22 +93,22 @@ without having to resort to allowing `'unsafe-inline'` in your directives. Conta
 instance still use inline JavaScript and thus will add a nonce when used. You can retrieve a nonce for `script-src` or 
 `style-src` like this:
 
-{{< tabs groupId="csp-methods" >}}
-{{% tab name="PHP" %}}
+{{< tabs groupid="csp-methods" >}}
+{{< tab title="PHP" >}}
 ```php
 $nonce = $cspHandler->getNonce('script-src');
 ```
-{{% /tab %}}
-{{% tab name="Twig" %}}
+{{< /tab >}}
+{{< tab title="Twig" >}}
 ```twig
 <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
 ```
-{{% /tab %}}
-{{% tab name="PHP Template" %}}
+{{< /tab >}}
+{{< tab title="PHP Template" >}}
 ```php
 <script<?= $this->attr()->setIfExists('nonce', $this->nonce('script-src')) ?>>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 {{% notice "note" %}}
@@ -127,23 +127,23 @@ inline scripts or inline styles. This also includes inline scripts via HTML attr
 this is not possible such inline scripts can still be allowed through [hashes][CSPHash]. A hash can be generated and
 added to a directive for a specific inline script or style like this:
 
-{{< tabs groupId="csp-methods" >}}
-{{% tab name="PHP" %}}
+{{< tabs groupid="csp-methods" >}}
+{{< tab title="PHP" >}}
 ```php
 $cspHandler->addHash('style-src', 'display:none');
 ```
-{{% /tab %}}
-{{% tab name="Twig" %}}
+{{< /tab >}}
+{{< tab title="Twig" >}}
 ```twig
 {% do csp_hash('display:none') %}
 <div style="display:none">
 ```
-{{% /tab %}}
-{{% tab name="PHP Template" %}}
+{{< /tab >}}
+{{< tab title="PHP Template" >}}
 ```php
 <div style="<?= $this->cspInlineStyle('display:none') ?>">
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 {{% notice "note" %}}
@@ -166,8 +166,8 @@ and then their hashes are added via the `CspHandler`. The allowed inline style p
 
 The `'unsafe-hashes'` directive will also be added automatically by the template helpers for CSP Level 3 compliance.
 
-{{< tabs groupId="csp-methods" >}}
-{{% tab name="PHP" %}}
+{{< tabs groupid="csp-methods" >}}
+{{< tab title="PHP" >}}
 You can use the `WysiwygStyleProcessor` directly in your services if you want to. Though typically you will likely only
 need it in your templates (see other methods).
 
@@ -210,18 +210,18 @@ class ExampleService
     }
 }
 ```
-{{% /tab %}}
-{{% tab name="Twig" %}}
+{{< /tab >}}
+{{< tab title="Twig" >}}
 In Twig you can use the filter `csp_inline_styles`. See the following example from Contao's `text.html.twig` template:
 ```twig
 {{ text|csp_inline_styles|insert_tag|encode_email|raw }}
 ```
-{{% /tab %}}
-{{% tab name="PHP Template" %}}
+{{< /tab >}}
+{{< tab title="PHP Template" >}}
 ```php
 <?= $this->cspInlineStyles($this->text) ?>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 

@@ -60,8 +60,8 @@ tool for onpage optimization.
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template:** Here you can overwrite the standard `ce_hyperlink` template.
 
 **HTML Output**  
@@ -85,8 +85,8 @@ If an image link is used, the HTML output looks like this:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template:** Here you can overwrite the standard `content_element/hyperlink` template.
 
 **HTML Output**  
@@ -110,7 +110,7 @@ If an image link is used, the HTML output looks like this:
     </figure>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}
 
 
@@ -125,8 +125,8 @@ The content element "Top-Link" adds a link to the article, with which you can ju
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template**: Here you can overwrite the content element `ce_toplink` template.
 
 **HTML output**  
@@ -137,8 +137,8 @@ The element generates the following HTML code:
     <a href="#top" title="Nach oben">Nach oben</a>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template**: Here you can overwrite the content element `content_element/toplink` template.
 
 **HTML output**  
@@ -149,5 +149,5 @@ The element generates the following HTML code:
     <a href="#top" data-toplink="" title="Nach oben">Nach oben</a>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}

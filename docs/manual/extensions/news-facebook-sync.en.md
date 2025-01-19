@@ -248,8 +248,8 @@ When posting a Contao news entry as a Facebook post, the extension either uses t
 
 The following example appends the news article's URL to any photo post:
 
-{{< tabs groupId="four-way-service-registration" >}}
-{{% tab name="Attribute" %}}
+{{< tabs groupid="four-way-service-registration" >}}
+{{< tab title="Attribute" >}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
@@ -273,9 +273,9 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Annotation" %}}
+{{< tab title="Annotation" >}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
@@ -299,8 +299,8 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{% /tab %}}
-{{% tab name="YAML" %}}
+{{< /tab >}}
+{{< tab title="YAML" >}}
 ```yaml
 # config/services.yaml
 services:
@@ -330,7 +330,7 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
 {{% tab name="config.php" %}}
 ```php
@@ -361,7 +361,7 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 
