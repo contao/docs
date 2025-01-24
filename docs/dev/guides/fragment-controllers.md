@@ -91,7 +91,7 @@ use Contao\ModuleModel;
 use Contao\ModuleNewsList;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsFrontendModule(category: 'news')]
+#[AsFrontendModule(category: 'news', priority: 1)]
 class AppExampleController extends ModuleNewsList
 {
     public function __construct() {}
@@ -117,7 +117,7 @@ use Contao\ContentModel;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category: 'media')]
+#[AsContentElement(category: 'media', priority: 1)]
 class AppExampleController extends ContentGallery
 {
     public function __construct() {}
