@@ -1,0 +1,35 @@
+@import 'theme-relearn-dark.css';
+@import 'theme-contao.css';
+
+/*
+  Issue workflow (/dev/internals/issue-workflow/)
+*/
+.issue-label-bug {
+    border: 1px solid rgba(255, 131, 96, 0.3);
+    background: rgba(189, 44, 0, 0.18);
+    color: rgb(255, 131, 96);
+}
+
+.issue-label-feature {
+    border: 1px solid rgba(126, 161, 219, 0.3);
+    background: rgba(51, 100, 183, 0.18);
+    color: rgb(126, 161, 219);
+}
+
+.issue-label-discuss {
+    border: 1px solid rgba(135, 196, 14, 0.3);
+    background: rgba(134, 198, 13, 0.18);
+    color: rgb(135, 196, 14);
+}
+
+.issue-label-help {
+    border: 1px solid rgba(192, 218, 252, 0.3);
+    background: rgba(196, 220, 252, 0.18);
+    color: rgb(192, 218, 252);
+}
+
+.issue-label-status {
+    border: 1px solid rgba(250, 201, 5, 0.3);
+    background: rgba(251, 202, 4, 0.18);
+    color: rgb(250, 201, 5);
+}

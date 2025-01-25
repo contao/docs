@@ -1,0 +1,20 @@
+@import 'theme-relearn-light.css';
+@import 'theme-contao.css';
+
+:root {
+    --MAIN-TEXT-color: #323232;
+
+    --MAIN-TITLES-H1-TEXT-color: #5e5e5e;
+    --MAIN-TITLES-TEXT-color: #5e5e5e;
+
+    --MAIN-LINK-color: #1C90F3;
+    --MAIN-LINK-HOVER-color: #167ad0;
+    --MAIN-SECONDARY-color: #1C90F3;
+
+    --MENU-HEADER-BORDER-color: var(--CONTAO-muted);
+
+    --MENU-SECTIONS-LINK-color: white;
+
+    --MENU-SEARCH-color: var(--CONTAO-muted);
+    --MENU-SEARCH-BORDER-color: var(--MENU-SEARCH-color);
+}

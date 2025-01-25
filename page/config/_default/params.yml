@@ -1,6 +1,7 @@
 themeVariant:
-  - relearn-light
-  - relearn-dark
+  - auto
+  - contao-light
+  - contao-dark
 disableSearch: false
 disableLanguageSwitch: true
 documentation_label: Documentation
