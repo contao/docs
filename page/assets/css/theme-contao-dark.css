@@ -33,3 +33,16 @@
     background: rgba(251, 202, 4, 0.18);
     color: rgb(250, 201, 5);
 }
+
+/*
+  User-module guide (/manual/en/layout/module-management/user-modules/)
+*/
+.user-module .formbody {
+    background: var(--MENU-SEARCH-BG-color);
+    border: 1px solid var(--BLOCK-QUOTE-BORDER-color);
+}
+
+.user-module input {
+    background: var(--MENU-SEARCH-BG-color);
+    border: 1px solid var(--BLOCK-QUOTE-BORDER-color);
+}
