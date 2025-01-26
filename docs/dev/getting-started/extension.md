@@ -293,8 +293,8 @@ for your application, an extension or bundle will have to load the service
 configuration itself. The details are described in the [Symfony documentation][6]. Starting with Symfony **6**
 (used by Contao **5**) there are two different ways.
 
-{{< tabs groupId="service-configuration" >}}
-{{% tab name="Bundle Class" %}}
+{{< tabs groupid="service-configuration" >}}
+{{< tab title="Bundle Class" >}}
 {{< version-tag "5" >}} As noted previously, starting with Symfony **6** (Contao **5**) you can extend your bundle class from `AbstractBundle`.
 There you can also use the [`loadExtension` method](https://symfony.com/doc/6.4/bundles/extension.html#loading-services-directly-in-your-bundle-class)
 to directly load your service configuration.
@@ -319,8 +319,8 @@ class ContaoExampleBundle extends AbstractBundle
     }
 }
 ```
-{{% /tab %}}
-{{% tab name="Dependency Injection Extension Class" %}}
+{{< /tab >}}
+{{< tab title="Dependency Injection Extension Class" >}}
 You can also [create an extension class](https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class)
 in the `DependencyInjection` namespace which handles loading of your service definitions. The class name of the needs to 
 be the same as the  bundle name, with `Bundle` replaced by `Extension`, if present.
@@ -367,7 +367,7 @@ class ContaoExampleBundle extends AbstractBundle
 }
 ```
 {{% /notice %}}
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 Now services can be registered as usual in your `config/services.yaml`. The following example would enable

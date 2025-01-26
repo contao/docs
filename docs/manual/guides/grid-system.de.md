@@ -56,7 +56,7 @@ du auch entnehmen unter welchen Bedingungen u. a. die Abstände gesetzt werden:
 - Margin für alle Elemente innerhalb von »mod\_article« wenn sie eine Klasse beginnend mit »ce\_« oder »mod\_« enthalten
 - Kein Margin für »mod\_article« mit zusätzlicher »grid« Bezeichnung.
 
-Das Contao-Grid kann über dein [Seitenlayout]({{< ref "manage-page-layouts.de.md" >}}) im Bereich 
+Das Contao-Grid kann über dein [Seitenlayout]({{% ref "manage-page-layouts.de.md" %}}) im Bereich 
 »CSS-Framework > 12-Spalten Grid« eingebunden werden. 
 
 Zur »2-spaltigen« Darstellung zweier Inhaltselemente vom Typ »Text« kannst du die CSS-Klasse »grid6« dann jeweils im 
@@ -66,7 +66,7 @@ Bereich »Experteneinstellungen > CSS-ID/Klasse« eintragen. Oberhalb von 768 Pi
 {{% notice note %}}
 Das in die Jahre gekommene Contao-Grid funktioniert mit obigen Einschränkungen. Empfohlen wird aber die Nutzung einer 
 aktuellen Grid-Lösung. Als Alternative stehen hierzu [zahlreiche Erweiterungen](https://extensions.contao.org/?q=grid) zur 
-einfachen [Installation]({{< ref "install-extensions.de.md" >}}) zur Verfügung. 
+einfachen [Installation]({{% ref "install-extensions.de.md" %}}) zur Verfügung. 
 {{% /notice %}}
 
 
@@ -84,7 +84,7 @@ Zunächst setzt du die CSS-Klasse »mygrid« im Bereich »Experteneinstellungen�
 der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inhaltselemente vom Typ »Text«.
 Über folgende Angaben kannst du eine einfache Grid Darstellung realisieren:
 
-{{< tabs groupId="Grid Layout">}}
+{{< tabs groupid="Grid Layout">}}
 {{% tab name="HTML-Auszug" %}}
 ```html
 <div class="mod_article mygrid block" id="article-1">
@@ -96,7 +96,7 @@ der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inha
     </div>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{% tab name="CSS-Auszug" %}}
 ```css
 .mygrid {
@@ -105,7 +105,7 @@ der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inha
     grid-gap: 20px 20px;
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 Falls du ein Grid nur gezielt innerhalb einzelner Bereiche eines Artikels setzen möchtest, kannst du die umschließenden
@@ -113,7 +113,7 @@ HTML-Container mit dem Inhaltselement vom Typ »[HTML](/de/artikelverwaltung/inh
 Erstelle dir hierzu zwei entsprechende Inhaltselemente mit den Angaben »&lt;div class="mygrid"&gt;« und »&lt;/div&gt;«.
 Deine Text-Elemente müssen sich dann innerhalb dieser beiden Inhaltselemente vom Typ »HTML« befinden.
  
-{{< tabs groupId="Grid Layout 02">}}
+{{< tabs groupid="Grid Layout 02">}}
 {{% tab name="HTML-Auszug" %}}
 ```html
 <div class="mod_article block" id="article-1">
@@ -127,7 +127,7 @@ Deine Text-Elemente müssen sich dann innerhalb dieser beiden Inhaltselemente vo
     </div>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{% tab name="CSS-Auszug" %}}
 ```css
 .mygrid {
@@ -136,7 +136,7 @@ Deine Text-Elemente müssen sich dann innerhalb dieser beiden Inhaltselemente vo
     grid-gap: 20px 20px;
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 Die Beispiele sind bewußt einfach gehalten. Falls du nur gelegentlich eine Grid Darstellung benötigst, kannst du dies ohne

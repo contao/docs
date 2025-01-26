@@ -63,8 +63,8 @@ Using attributes or annotations means it is only necessary to create one file fo
 way of automatically registering services under the `App\` namespace within the `src/` folder.
 {{% /notice %}}
 
-{{< tabs groupId="attribute-annotation-yaml-php" >}}
-{{% tab name="Attribute" %}}
+{{< tabs groupid="attribute-annotation-yaml-php" >}}
+{{< tab title="Attribute" >}}
 {{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
 since **PHP 8**) with which you can tag your service to be registered as a hook.
 
@@ -87,9 +87,9 @@ class ParseArticlesListener
 ```
 
 The priority parameter is optional.
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Annotation" %}}
+{{< tab title="Annotation" >}}
 {{% version-tag "4.8" %}}
 
 Contao also supports its own annotation formats via the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
@@ -115,9 +115,9 @@ class ParseArticlesListener
 ```
 
 The priority parameter is optional.
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="YAML" %}}
+{{< tab title="YAML" >}}
 {{< version-tag "4.5" >}} Since Contao 4.5 hooks can be registered using the `contao.hook` service tag.
 
 ```yaml
@@ -136,9 +136,9 @@ The service tag can have the following options:
 | hook     | `string`  | The name of the hook this service will listen to.                                                        |
 | method   | `string`  | _Optional:_ the method name in the service - otherwise infered from the hook (e.g. `onActivateAccount`). |
 | priority | `integer` | _Optional:_ priority of the hook. (Default: `0`)                                                         |
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="PHP" %}}
+{{< tab title="PHP" >}}
 In this legacy way hooks are registered by extending the respective global array in your
 [`config.php`](/getting-started/starting-development/#contao-configuration-translations) file (ever since hooks were introduced in Contao).
 
@@ -168,7 +168,7 @@ class ActivateAccountListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 {{% notice note %}}
@@ -185,8 +185,8 @@ tagged with `contao.hook` and no method name is given, the `__invoke` method wil
 be called automatically. This also means that you can define the service annotation
 on the class, instead of a method:
 
-{{< tabs groupId="attribute-annotation-yaml-php" >}}
-{{% tab name="Attribute" %}}
+{{< tabs groupid="attribute-annotation-yaml-php" >}}
+{{< tab title="Attribute" >}}
 ```php
 // src/EventListener/ParseArticlesListener.php
 namespace App\EventListener;
@@ -204,9 +204,9 @@ class ParseArticlesListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Annotation" %}}
+{{< tab title="Annotation" >}}
 ```php
 // src/EventListener/ParseArticlesListener.php
 namespace App\EventListener;
@@ -226,9 +226,9 @@ class ParseArticlesListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="YAML" %}}
+{{< tab title="YAML" >}}
 ```yaml
 # config/services.yaml
 services:
@@ -251,9 +251,9 @@ class ParseArticlesListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="PHP" %}}
+{{< tab title="PHP" >}}
 ```php
 // contao/config.php
 use App\EventListener\ParseArticlesListener;
@@ -275,7 +275,7 @@ class ParseArticlesListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 

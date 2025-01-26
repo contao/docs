@@ -77,9 +77,9 @@ macOS:
 
 - `[Cmd] + Klick`: das Element bearbeiten
 - `[Cmd] + [Shift] + Klick`: die Kinder-Elemente bearbeiten
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Contao 4" %}}
+{{< tab title="Contao 4" >}}
 Windows:
 - `[Ctrl] + Klick`: das Element bearbeiten
 - `[Ctrl] + [Shift] + Klick`: die Elementeinstellungen bearbeiten
@@ -88,7 +88,7 @@ macOS:
 
 - `[Cmd] + Klick`: das Element bearbeiten
 - `[Cmd] + [Shift] + Klick`: die Elementeinstellungen bearbeiten
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 

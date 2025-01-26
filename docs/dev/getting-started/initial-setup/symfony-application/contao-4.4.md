@@ -1,6 +1,6 @@
 ---
 title: "Use Contao 4.4 in Symfony Application"
-menuTitle: "Contao 4.4 LTS"
+linkTitle: "Contao 4.4 LTS"
 description: "How to integrate Contao 4.4 into a Symfony application."
 weight: 2
 aliases:

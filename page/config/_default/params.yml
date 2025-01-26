@@ -1,4 +1,7 @@
-themeVariant: 'contao'
+themeVariant:
+  - auto
+  - contao-light
+  - contao-dark
 disableSearch: false
 disableLanguageSwitch: true
 documentation_label: Documentation

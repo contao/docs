@@ -41,8 +41,8 @@ to an image link). Please note that for a linked image a lightbox full view is n
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template:** Here you can overwrite the content element `ce_image` template.
 
 **HTML output**  
@@ -58,8 +58,8 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template:** Here you can overwrite the content element `content_element/image` template.
 
 **HTML output**  
@@ -75,7 +75,7 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}
 
 
@@ -129,8 +129,8 @@ when clicked (JavaScript is required for this).
 
 **Gallery template**: Here you can overwrite the gallery template.
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template**: Here you can overwrite the content element  `ce_gallery` template.
 
 **HTML Output**  
@@ -166,8 +166,8 @@ The element generates the following HTML code:
     <!-- indexer::continue -->
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template**: Here you can overwrite the content element `content_element/gallery` template.
 
 **HTML Output**  
@@ -199,7 +199,7 @@ The element generates the following HTML code:
     </nav>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}
 
 
@@ -242,8 +242,8 @@ entire video)", "Metadata (preload the metadata only)" and "None (do not preload
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template:** Here you can overwrite the content element  `ce_player` template.
 
 **HTML Output**  
@@ -259,8 +259,8 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template:** Here you can overwrite the content element  `content_element/player` template.
 
 **HTML Output**  
@@ -276,7 +276,7 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}
 
 
@@ -323,8 +323,8 @@ The content element "Vimeo" adds a Vimeo video to the article.
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template**: Here you can overwrite the content element `ce_vimeo` template.
 
 **HTML Output**  
@@ -353,8 +353,8 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template**: Here you can overwrite the content element `content_element/vimeo` template.
 
 **HTML Output**  
@@ -374,7 +374,7 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}
 
 
@@ -426,8 +426,8 @@ The YouTube content element adds a YouTube video to the article.
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" >}}
+{{< tab title="Contao 4" >}}
 **Content element template**: Here you can overwrite the content element `ce_youtube` template.
 
 **HTML Output**
@@ -458,8 +458,8 @@ The element generates the following HTML code:
 </div>
 <!-- indexer::continue -->
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 **Content element template**: Here you can overwrite the content element `content_element/youtube` template.
 
 **HTML Output**
@@ -479,5 +479,5 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}

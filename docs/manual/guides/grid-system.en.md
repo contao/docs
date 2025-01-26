@@ -76,8 +76,8 @@ The content elements are listed below each other in the article, in the respecti
 First you set the CSS class »mygrid« in the »Expert settings« section of the article settings. Then create two or more 
 content elements of type »Text«. With the following specifications you can realize a simple grid representation:
 
-{{< tabs groupId="Grid Layout">}}
-{{% tab name="HTML Abstract" %}}
+{{< tabs groupid="Grid Layout">}}
+{{< tab title="HTML Abstract" >}}
 ```html
 <div class="mod_article mygrid block" id="article-1">
     <div class="ce_text block">
@@ -88,8 +88,8 @@ content elements of type »Text«. With the following specifications you can rea
     </div>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="CSS Abstract" %}}
+{{< /tab >}}
+{{< tab title="CSS Abstract" >}}
 ```css
 .mygrid {
     display: grid;
@@ -97,7 +97,7 @@ content elements of type »Text«. With the following specifications you can rea
     grid-gap: 20px 20px;
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 If you want to set a grid only specifically within individual areas of an article, you can realize the enclosing 
@@ -105,8 +105,8 @@ HTML containers with the content element of the type »[HTML](/en/article-manage
 two content elements with the specifications »&lt;div class="mygrid"&gt;« and »&lt;/div&gt;«. Your text elements must then be 
 located within these two content elements of type »HTML«.
 
-{{< tabs groupId="Grid Layout 02">}}
-{{% tab name="HTML Abstract" %}}
+{{< tabs groupid="Grid Layout 02">}}
+{{< tab title="HTML Abstract" >}}
 ```html
 <div class="mod_article block" id="article-1">
     <div class="mygrid">
@@ -119,8 +119,8 @@ located within these two content elements of type »HTML«.
     </div>
 </div>
 ```
-{{% /tab %}}
-{{% tab name="CSS Abstract" %}}
+{{< /tab >}}
+{{< tab title="CSS Abstract" >}}
 ```css
 .mygrid {
     display: grid;
@@ -128,7 +128,7 @@ located within these two content elements of type »HTML«.
     grid-gap: 20px 20px;
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 The examples are deliberately kept simple. If you need a grid layout only occasionally, you can do this without 

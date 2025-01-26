@@ -262,8 +262,8 @@ class Example
 Not directly related to Contao, but this helper service from Symfony lets you retrieve
 the current Contao front end or back end user from the firewall.
 
-{{< tabs groupId="services-contao4-contao5" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="services-contao4-contao5" >}}
+{{< tab title="Contao 4" >}}
 ```php
 use Contao\BackendUser;
 use Contao\FrontendUser;
@@ -304,8 +304,8 @@ class Example
     }
 }
 ```
-{{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{< /tab >}}
+{{< tab title="Contao 5" >}}
 ```php
 use Contao\BackendUser;
 use Contao\FrontendUser;
@@ -346,7 +346,7 @@ class Example
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 If you only need to check the authorization you can inject the `AuthorizationCheckerInterface` instead:

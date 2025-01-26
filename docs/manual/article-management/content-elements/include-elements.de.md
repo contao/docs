@@ -152,17 +152,17 @@ Die im Inhaltselement gesetzten »Template-Daten« sind im Array `keys` verfügb
 
 ![Template Variablen]({{% asset "images/manual/article-management/de/template-data.png" %}}?classes=shadow&width=400)
 
-{{< tabs groupId="template-data-example" >}}
-{{% tab name="PHP" %}}
+{{< tabs groupid="template-data-example" >}}
+{{< tab title="PHP" >}}
 ```
 Ein Beispiel für <?= $this->keys['cms'] ?> mit PHP-Templates 
 ```
-{{% /tab %}}
-{{% tab name="Twig" %}}
+{{< /tab >}}
+{{< tab title="Twig" >}}
 ```twig
 Ein Beispiel für {{ keys.cms }} mit Twig-Templates
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{</tabs>}}
 
 

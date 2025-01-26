@@ -1,6 +1,6 @@
 ---
 title: 'Users'
-menuTitle: 'Users (back end)'
+linkTitle: 'Users (back end)'
 description: 'Up to now we have worked exclusively as an administrator, who has access to all areas and elements of the system.'
 aliases:
     - /en/user-management/users/

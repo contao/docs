@@ -1,6 +1,6 @@
 ---
 title: Contao News Facebook Sync
-menuTitle: News Facebook Sync
+linkTitle: News Facebook Sync
 description: Contao News Facebook Sync ist eine kostenpflichtige Erweiterungen zur Synchronisierung von Facebook Posts mit einem Nachrichtenarchiv.
 url: erweiterungen/news-facebook-sync
 ---
@@ -270,8 +270,8 @@ Nachricht angegebene Text verwendet. Falls aber automatisch dieser Text angepass
 
 Das folgende Beispiel implementiert einen Hook, der die URL zum Nachrichtenbeitrag an den Text des Facebook-Posts anhängt:
 
-{{< tabs groupId="four-way-service-registration" >}}
-{{% tab name="Attribute" %}}
+{{< tabs groupid="four-way-service-registration" >}}
+{{< tab title="Attribute" >}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
@@ -295,9 +295,9 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Annotation" %}}
+{{< tab title="Annotation" >}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
@@ -321,8 +321,8 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{% /tab %}}
-{{% tab name="YAML" %}}
+{{< /tab >}}
+{{< tab title="YAML" >}}
 ```yaml
 # config/services.yaml
 services:
@@ -352,7 +352,7 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
 {{% tab name="config.php" %}}
 ```php
@@ -383,7 +383,7 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 {{< /tabs >}}
 
 

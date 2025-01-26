@@ -1,6 +1,6 @@
 ---
 title: "Mitglieder"
-menuTitle: "Mitglieder (Frontend)"
+linkTitle: "Mitglieder (Frontend)"
 description: "Die Verwaltung von Frontend-Benutzern ist deutlich einfacher als die Verwaltung von Backend-Benutzern, da 
 hier nicht mit Mounts und einzelnen Eingabefeldern gearbeitet werden muss."
 url: "benutzerverwaltung/mitglieder"

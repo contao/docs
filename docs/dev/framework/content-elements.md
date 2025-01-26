@@ -128,7 +128,7 @@ As mentioned previously a content element is registered by registering a control
 | Option   | Type      | Description                                                                                                                               |
 | -------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------|
 | name     | `string`  | Must be `contao.content_element`.                                                                                                         |
-| type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{< ref "#type" >}}) can be customized.                                                        |
+| type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{% ref "#type" %}}) can be customized.                                                        |
 | category | `string`  | Defines in which option group this content element will be placed in the content element selector.                                        |
 | template | `string`  | _Optional:_ Override the generated template name.                                                                                         |
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |
@@ -137,9 +137,9 @@ As mentioned previously a content element is registered by registering a control
 
 Applying the service tag can either be done via PHP attributes, annotations or via the YAML configuration.
 
-{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< tabs groupid="attribute-annotation-yaml" >}}
 
-{{% tab name="Attribute" %}}
+{{< tab title="Attribute" >}}
 {{< version-tag "4.13" >}} A content element can be registered using the `AsContentElement` PHP attribute.
 
 ```php
@@ -188,9 +188,9 @@ class ExampleElementController extends AbstractContentElementController
 ```
 
 However, it is recommended to only define what you need and otherwise leave the defaults.
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Annotation" %}}
+{{< tab title="Annotation" >}}
 {{< version-tag "4.8" >}} A content element can be registered using the `ContentElement` annotation. The annotation can be used on the class of the content element,
 if the class is invokable (has an `__invoke` method) or extends from the `AbstractContentElementController`. Otherwise the annotation can be 
 used on the method that will deliver the response.
@@ -245,9 +245,9 @@ class ExampleElementController extends AbstractContentElementController
 ```
 
 However, it is recommended to only define what you need and otherwise leave the defaults.
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="YAML" %}}
+{{< tab title="YAML" >}}
 {{< version-tag "4.8" >}} A content element can be registered using the `contao.content_element` service tag.
 
 ```yaml
@@ -295,7 +295,7 @@ services:
 ```
 
 However, it is recommended to only define what you need and otherwise leave the defaults.
-{{% /tab %}}
+{{< /tab >}}
 
 {{< /tabs >}}
 
@@ -415,9 +415,9 @@ article of a page.
 
 Allowing nested fragments for your content element works via the `nestedFragments` option in the service tag:
 
-{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< tabs groupid="attribute-annotation-yaml" >}}
 
-{{% tab name="Attribute" %}}
+{{< tab title="Attribute" >}}
 ```php
 #[AsContentElement(nestedFragments: true)]
 class ExampleElementController extends AbstractContentElementController
@@ -428,9 +428,9 @@ class ExampleElementController extends AbstractContentElementController
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Annotation" %}}
+{{< tab title="Annotation" >}}
 ```php
 /**
  * @ContentElement(category="miscellaneous", nestedFragments=true)
@@ -443,9 +443,9 @@ class ExampleElementController extends AbstractContentElementController
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="YAML" %}}
+{{< tab title="YAML" >}}
 ```yaml
 services:
     App\Controller\ContentElement\ExampleElementController:
@@ -454,7 +454,7 @@ services:
                 name: contao.content_element
                 nestedFragments: true
 ```
-{{% /tab %}}
+{{< /tab >}}
 
 {{< /tabs >}}
 
@@ -463,9 +463,9 @@ want to implement a specific slider content element which should only allow imag
 instead of defining `true` for the tag's `nestedFragments` option you can instead pass an additional option called
 `allowedTypes`:
 
-{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< tabs groupid="attribute-annotation-yaml" >}}
 
-{{% tab name="Attribute" %}}
+{{< tab title="Attribute" >}}
 ```php
 #[AsContentElement(nestedFragments: ['allowedTypes' => ['image', 'video']])]
 class ExampleElementController extends AbstractContentElementController
@@ -476,9 +476,9 @@ class ExampleElementController extends AbstractContentElementController
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="Annotation" %}}
+{{< tab title="Annotation" >}}
 ```php
 /**
  * @ContentElement(category="miscellaneous", nestedFragments={"allowedTypes" = {"image", "video"}})
@@ -491,9 +491,9 @@ class ExampleElementController extends AbstractContentElementController
     }
 }
 ```
-{{% /tab %}}
+{{< /tab >}}
 
-{{% tab name="YAML" %}}
+{{< tab title="YAML" >}}
 ```yaml
 services:
     App\Controller\ContentElement\ExampleElementController:
@@ -503,7 +503,7 @@ services:
                 nestedFragments:
                     allowedTypes: ['image', 'video']
 ```
-{{% /tab %}}
+{{< /tab >}}
 
 {{< /tabs >}}
 
