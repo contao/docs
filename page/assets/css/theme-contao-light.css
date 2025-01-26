@@ -10,9 +10,4 @@
     --MAIN-LINK-color: #1C90F3;
     --MAIN-LINK-HOVER-color: #167ad0;
     --MAIN-SECONDARY-color: #1C90F3;
-
-    --MENU-HEADER-BORDER-color: var(--CONTAO-muted);
-
-    --MENU-SEARCH-BG-color: var(--PRIMARY-color);
-    --MENU-SEARCH-BORDER-color: var(--MENU-SEARCH-color);
 }

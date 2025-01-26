@@ -8,22 +8,27 @@
     --MAIN-font-weight: 400;
     --MAIN-letter-spacing: normal;
 
+    --MENU-HEADER-BORDER-color: var(--CONTAO-muted);
+
     --MENU-SEARCH-color: rgba(255, 255, 255, 0.6);
+    --MENU-SEARCH-BG-color: var(--MENU-HEADER-BG-color);
+    --MENU-SEARCH-BORDER-color: var(--MENU-SEARCH-color);
 
     --MENU-BG-color: #0f1c26; 
 
     --MENU-SECTIONS-ACTIVE-BG-color: var(--MENU-BG-color);
+    --MENU-SECTIONS-BG-color: #172b3b;
     --MENU-SECTIONS-LINK-color: #d3d5d7;
     --MENU-SECTIONS-LINK-HOVER-color: #fff;
 
     --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #172b3b;
     --MENU-SECTION-ACTIVE-CATEGORY-color: #fff;
 
-    --EXPAND-BG-color: rgba(253, 253, 253, 0.8); /* Shortcode Expand */
+    --EXPAND-BG-color: rgba(253, 253, 253, 0.8);
     --EXPAND-BORDER-color: rgba(218, 218, 218, 1);
     --EXPAND-ICON-color: #f47c00;
 
-    --VERSION-TAG-BG-color: #6AB0DE; /* Contao version tag */
+    --VERSION-TAG-BG-color: #6AB0DE;
 
     --NETWORK-BAR-height: 34px;
 }
@@ -72,6 +77,21 @@ b, strong, label, th {
 #R-sidebar ul.collapsible-menu li.active > a {
     border-left: 3px solid var(--PRIMARY-color);
     padding-left: calc(1rem - 3px);
+}
+
+#R-footer {
+    padding: 2rem 1rem;
+    padding-bottom: 0;
+    text-align: left;
+}
+
+#R-menu-footer {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+#R-menu-footer > hr {
+    display: none;
 }
 
 /* Logo */

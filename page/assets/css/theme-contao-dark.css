@@ -1,6 +1,32 @@
 @import 'theme-relearn-dark.css';
 @import 'theme-contao.css';
 
+:root {
+    --MAIN-LINK-color: var(--PRIMARY-color);
+    --MAIN-LINK-HOVER-color: var(--PRIMARY-color);
+    --MAIN-SECONDARY-color: #1C90F3;
+
+    --MENU-HEADER-BG-color: #292c32;
+    --MENU-HEADER-BORDER-color: var(--PRIMARY-color);
+
+    --MENU-SEARCH-BG-color: var(--MENU-HEADER-BG-color);
+    --MENU-SEARCH-BOX-color: var(--PRIMARY-color);
+    --MENU-SEARCH-BOX-ICONS-color: var(--PRIMARY-color);
+
+    --MENU-BG-color: #1b1d21;
+    --MENU-SECTIONS-BG-color: #272a30;
+    --MENU-SECTIONS-LINK-color: #d3d6da;
+    --MENU-SECTIONS-LINK-HOVER-color: #eaedf1;
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #eaedf1;
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #272a30;
+
+    --CODE-INLINE-color: #e5e5e5;
+    --CODE-INLINE-BG-color: #272a30;
+    --CODE-INLINE-BORDER-color: #2d2d2d;
+
+    --TAG-BG-color: var(--MENU-HEADER-BG-color);
+}
+
 /*
   Issue workflow (/dev/internals/issue-workflow/)
 */
@@ -45,4 +71,17 @@
 .user-module input {
     background: var(--MENU-SEARCH-BG-color);
     border: 1px solid var(--BLOCK-QUOTE-BORDER-color);
+}
+
+/* Invert contao logo */
+#logo svg path:nth-last-of-type(1) { fill: var(--PRIMARY-color) }
+#logo svg path:nth-last-of-type(2) { fill: #fff }
+
+/* White color for tags */
+article .R-taxonomy.tags a.term-link {
+    color: white;
+}
+
+article .R-taxonomy.tags a.term-link:after {
+    background-color: white;
 }

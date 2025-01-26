@@ -37,10 +37,29 @@
         }
     }
 
-    // open images in lightbox
+    // Open images in lightbox
     document.querySelectorAll('a[href*=".png"], a[href*=".jpg"]').forEach((a) => {
         a.setAttribute('data-featherlight', 'image');
     });
+
+    // Set dark mode for DocSearch
+    const getThemeMode = () => {
+        const variant = document.documentElement.dataset.rThemeVariant;
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if ('contao-dark' === variant || ('auto' === variant && prefersDark)) {
+            return 'dark';
+        }
+
+        return 'light';
+    };
+
+    const setThemeMode = () => {
+        document.documentElement.setAttribute('data-theme', getThemeMode());
+    };
+
+    document.addEventListener('DOMContentLoaded', setThemeMode);
+    document.addEventListener('themeVariantLoaded', setThemeMode);
 })();
 </script>
 {{ partial "json-ld" . }}
