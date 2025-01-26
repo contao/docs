@@ -10,6 +10,15 @@
 
     --MENU-SEARCH-color: rgba(255, 255, 255, 0.6);
 
+    --MENU-BG-color: #0f1c26; 
+
+    --MENU-SECTIONS-ACTIVE-BG-color: var(--MENU-BG-color);
+    --MENU-SECTIONS-LINK-color: #d3d5d7;
+    --MENU-SECTIONS-LINK-HOVER-color: #fff;
+
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #172b3b;
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #fff;
+
     --EXPAND-BG-color: rgba(253, 253, 253, 0.8); /* Shortcode Expand */
     --EXPAND-BORDER-color: rgba(218, 218, 218, 1);
     --EXPAND-ICON-color: #f47c00;
@@ -51,6 +60,18 @@ b, strong, label, th {
 
 .children-li p {
     font-size: small;
+}
+
+#R-shortcutmenu-home > ul.collapsible-menu {
+    background-color: var(--MENU-BG-color);
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#R-sidebar ul.collapsible-menu li.active > a {
+    border-left: 3px solid var(--PRIMARY-color);
+    padding-left: calc(1rem - 3px);
 }
 
 /* Logo */
@@ -212,6 +233,11 @@ body[data-url*="/reference/hooks/"]:not([data-url*="/reference/hooks/index.html"
 /* hide level 3 on hooks page */
 body[data-url*="/reference/hooks/"] #R-sidebar ul.collapsible-menu > li.parent > ul > li.parent > ul {
     display: none;
+}
+
+/* allow more space for the namespaces table */
+body[data-url="/cookbook/namespaces/"] #body .padding {
+    max-width: none;
 }
 
 /* Banner */

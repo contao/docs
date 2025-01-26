@@ -13,8 +13,6 @@
 
     --MENU-HEADER-BORDER-color: var(--CONTAO-muted);
 
-    --MENU-SECTIONS-LINK-color: white;
-
     --MENU-SEARCH-BG-color: var(--PRIMARY-color);
     --MENU-SEARCH-BORDER-color: var(--MENU-SEARCH-color);
 }
