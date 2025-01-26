@@ -1,6 +1,6 @@
 ---
 title: "Contao Coding Standards"
-menuTitle: "Coding Standards"
+linkTitle: "Coding Standards"
 description: "Coding Standards that Contao follows."
 
 aliases:

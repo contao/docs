@@ -1,6 +1,6 @@
 ---
 title: Contao News Sync
-menuTitle: News Sync
+linkTitle: News Sync
 description: Contao News Sync ist eine kostenpflichtige Erweiterungen zur Synchronisierung von Nachrichtenartikeln zwischen Contao Installationen.
 url: erweiterungen/news-sync
 ---

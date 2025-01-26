@@ -1,6 +1,6 @@
 ---
 title: "Adding Custom Back End Routes"
-menuTitle: "Back End Routes"
+linkTitle: "Back End Routes"
 description: "Custom routes within the Contao back end."
 
 aliases:

@@ -1,6 +1,6 @@
 ---
 title: "The Contao Managed Edition"
-menuTitle: "Managed Edition"
+linkTitle: "Managed Edition"
 description: "A pre-configured Symfony application that allows automatic configuration by third-party bundles."
 weight: 1
 ---

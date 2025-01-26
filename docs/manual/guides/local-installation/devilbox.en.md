@@ -1,6 +1,6 @@
 ---
 title: "The Docker Devilbox"
-menuTitle: "With Docker Devilbox"
+linkTitle: "With Docker Devilbox"
 description: "With the Docker Devilbox one or more Contao installations can be installed and maintained locally."
 weight: 10
 aliases:
