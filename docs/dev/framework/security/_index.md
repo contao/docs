@@ -398,23 +398,23 @@ for this controller with the configured routing parameters (see also the [back e
 
 {{% notice tip %}}
 Instead of extending Contao's own permissions system you are also free to implement 
-[your own voter](https://symfony.com/doc/4.4/security/voters.html#creating-the-custom-voter). See the examples
+[your own voter](https://symfony.com/doc/5.x/security/voters.html#creating-the-custom-voter). See the examples
 [above](#examples).
 {{% /notice %}}
 
 
-[SymfonySecurityComponent]: https://symfony.com/doc/4.4/components/security.html
-[SymfonyFirewall]: https://symfony.com/doc/4.4/components/security/firewall.html
-[SymfonyAuthenticationListener]: https://github.com/symfony/symfony/blob/4.4/src/Symfony/Component/Security/Http/Firewall/AbstractAuthenticationListener.php
-[SymfonyUserProvider]: https://symfony.com/doc/4.4/security/user_provider.html
-[SymfonyAccessControl]: https://symfony.com/doc/4.4/security/access_control.html
+[SymfonySecurityComponent]: https://symfony.com/doc/5.x/components/security.html
+[SymfonyFirewall]: https://symfony.com/doc/5.x/components/security/firewall.html
+[SymfonyAuthenticationListener]: https://github.com/symfony/symfony/blob/5.x/src/Symfony/Component/Security/Http/Firewall/AbstractAuthenticationListener.php
+[SymfonyUserProvider]: https://symfony.com/doc/5.x/security/user_provider.html
+[SymfonyAccessControl]: https://symfony.com/doc/5.x/security/access_control.html
 [ContaoConfiguration]: /getting-started/initial-setup/symfony-application/contao-4.9/#configure-your-contao-installation
 [Contao49SecurityYaml]: https://github.com/contao/contao/blob/4.9.42/manager-bundle/src/Resources/skeleton/config/security.yml
-[SymfonyFormLogin]: https://symfony.com/doc/4.4/security/form_login.html
-[SymfonyUserChecker]: https://symfony.com/doc/4.4/security/user_checkers.html
-[SymfonyRequestMatcherService]: https://symfony.com/doc/4.4/security/firewall_restriction.html#restricting-by-service
+[SymfonyFormLogin]: https://symfony.com/doc/5.x/security/form_login.html
+[SymfonyUserChecker]: https://symfony.com/doc/5.x/security/user_checkers.html
+[SymfonyRequestMatcherService]: https://symfony.com/doc/5.x/security/firewall_restriction.html#restricting-by-service
 [RequestScope]: /framework/routing/#request-scope
-[SymfonyVoters]: https://symfony.com/doc/4.4/security/voters.html
+[SymfonyVoters]: https://symfony.com/doc/5.x/security/voters.html
 [SecurityHelperService]: /reference/services/#security-helper
 [PermissionsReference]: /reference/permissions/
 [BackEndRouteGuide]: /guides/back-end-routes/
