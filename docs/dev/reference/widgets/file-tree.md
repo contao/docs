@@ -33,9 +33,9 @@ This table only shows the options relevant to the core functionality of this wid
 
 ## Examples
 
-{{< tabs groupid="file-tree-widget-examples" >}}
+{{< tabs groupid="file-tree-widget-examples" style="code" >}}
 
-{{< tab title="Image picker" >}}
+{{% tab title="Image picker" %}}
 
 A single image file picker.
 
@@ -58,9 +58,9 @@ A single image file picker.
 ],
 // …
 ```
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="Image gallery" >}}
+{{% tab title="Image gallery" %}}
 
 An image gallery picker, allows picking multiple images, display them in the back end as gallery and be able to sort them.
 
@@ -89,9 +89,9 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 // …
 ```
 
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="Select folder" >}}
+{{% tab title="Select folder" %}}
 
 A folder picker.
 
@@ -115,7 +115,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 // …
 ```
 
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 

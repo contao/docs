@@ -43,9 +43,9 @@ a serialized array. Since you do not know the length in advance, a blob column i
 
 ## Examples
 
-{{< tabs groupid="picket-widget-examples" >}}
+{{< tabs groupid="picket-widget-examples" style="code" >}}
 
-{{< tab title="News article" >}}
+{{% tab title="News article" %}}
 
 ```php
 // …
@@ -66,9 +66,9 @@ a serialized array. Since you do not know the length in advance, a blob column i
 // …
 ```
 
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="Multiple content elements" >}}
+{{% tab title="Multiple content elements" %}}
 
 ```php
 use Doctrine\DBAL\Platforms\MySQLPlatform;
@@ -94,9 +94,9 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 // …
 ```
 
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="Custom data container" >}}
+{{% tab title="Custom data container" %}}
 
 If you use your own data container table with a custom driver, you will need to implement a basic picker provider
 (otherwise the field will not be editable). A picker provider is a class which implements
@@ -148,7 +148,7 @@ class ProductsPickerProvider extends AbstractTablePickerProvider
 }
 ```
 
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 

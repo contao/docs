@@ -264,7 +264,7 @@ configuration works very well:
 
 {{< tabs groupid="Xdebug">}}
 
-{{% tab name="launch.json" %}}
+{{% tab title="launch.json" %}}
 ```
   "version": "0.2.0",
   "configurations": [
@@ -285,9 +285,9 @@ configuration works very well:
 
   ]
 ```
-{{< /tab >}}
+{{% /tab %}}
 
-{{% tab name="xdebug.ini" %}}
+{{% tab title="xdebug.ini" %}}
 Create a xdebug.ini in the directory `devilbox/cfg/php-ini-8.2` (example for PHP 8.2) with this content
 ```
 ; PHP.ini configuration
@@ -310,6 +310,6 @@ xdebug.log_level            = 7
 ; IDE Configuration
 xdebug.idekey               = VSCODE
 ```
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}`

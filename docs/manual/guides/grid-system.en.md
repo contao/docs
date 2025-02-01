@@ -77,7 +77,7 @@ First you set the CSS class »mygrid« in the »Expert settings« section of the
 content elements of type »Text«. With the following specifications you can realize a simple grid representation:
 
 {{< tabs groupid="Grid Layout">}}
-{{< tab title="HTML Abstract" >}}
+{{% tab title="HTML Abstract" %}}
 ```html
 <div class="mod_article mygrid block" id="article-1">
     <div class="ce_text block">
@@ -88,8 +88,8 @@ content elements of type »Text«. With the following specifications you can rea
     </div>
 </div>
 ```
-{{< /tab >}}
-{{< tab title="CSS Abstract" >}}
+{{% /tab %}}
+{{% tab title="CSS Abstract" %}}
 ```css
 .mygrid {
     display: grid;
@@ -97,7 +97,7 @@ content elements of type »Text«. With the following specifications you can rea
     grid-gap: 20px 20px;
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 If you want to set a grid only specifically within individual areas of an article, you can realize the enclosing 
@@ -106,7 +106,7 @@ two content elements with the specifications »&lt;div class="mygrid"&gt;« and 
 located within these two content elements of type »HTML«.
 
 {{< tabs groupid="Grid Layout 02">}}
-{{< tab title="HTML Abstract" >}}
+{{% tab title="HTML Abstract" %}}
 ```html
 <div class="mod_article block" id="article-1">
     <div class="mygrid">
@@ -119,8 +119,8 @@ located within these two content elements of type »HTML«.
     </div>
 </div>
 ```
-{{< /tab >}}
-{{< tab title="CSS Abstract" >}}
+{{% /tab %}}
+{{% tab title="CSS Abstract" %}}
 ```css
 .mygrid {
     display: grid;
@@ -128,7 +128,7 @@ located within these two content elements of type »HTML«.
     grid-gap: 20px 20px;
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 The examples are deliberately kept simple. If you need a grid layout only occasionally, you can do this without 

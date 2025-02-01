@@ -25,6 +25,17 @@
     --CODE-INLINE-BORDER-color: #2d2d2d;
 
     --TAG-BG-color: var(--MENU-HEADER-BG-color);
+
+    --VERSION-TAG-BG-color: #0064ab;
+
+    --EXAMPLE-TEXT-color: #bec1c6;
+    --EXAMPLE-HEADER-BG-color: #2b2e35;
+    --EXAMPLE-CONTENT-BG-color: #1b1d21;
+    --EXAMPLE-BORDER-color: #282c34;
+
+    --BEST-PRACTICE-BG-color: #233626;
+    --BEST-PRACTICE-TAG-BG-color: #3c813c;
+    --BEST-PRACTICE-TABLE-BG-color: #121416;
 }
 
 /*

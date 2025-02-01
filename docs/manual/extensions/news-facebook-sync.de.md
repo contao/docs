@@ -270,8 +270,8 @@ Nachricht angegebene Text verwendet. Falls aber automatisch dieser Text angepass
 
 Das folgende Beispiel implementiert einen Hook, der die URL zum Nachrichtenbeitrag an den Text des Facebook-Posts anhängt:
 
-{{< tabs groupid="four-way-service-registration" >}}
-{{< tab title="Attribute" >}}
+{{< tabs groupid="four-way-service-registration" style="code" >}}
+{{% tab title="Attribute" %}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
@@ -295,9 +295,9 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="Annotation" >}}
+{{% tab title="Annotation" %}}
 ```php
 // src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
@@ -321,8 +321,8 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{< /tab >}}
-{{< tab title="YAML" >}}
+{{% /tab %}}
+{{% tab title="YAML" %}}
 ```yaml
 # config/services.yaml
 services:
@@ -352,9 +352,9 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 
-{{% tab name="config.php" %}}
+{{% tab title="config.php" %}}
 ```php
 // contao/config.php
 use App\EventListener\ChangeFacebookMessageListener;
@@ -383,7 +383,7 @@ class ChangeFacebookMessageListener
     }
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 

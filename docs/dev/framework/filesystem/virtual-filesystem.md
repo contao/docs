@@ -42,7 +42,7 @@ For this example we're using the virtual filesystem named `files` that is alread
 you want to play along, this will be a good starting point: 
 
 {{< tabs groupid="service-config">}}
-{{< tab title="Annotation" >}}
+{{% tab title="Annotation" %}}
 ```php
 <?php
 // src/App/Controller/FilesListController.php
@@ -109,8 +109,8 @@ class FilesListController extends AbstractContentElementController
     }
 }
 ```
-{{< /tab >}}
-{{< tab title="Attribute" >}}
+{{% /tab %}}
+{{% tab title="Attribute" %}}
 ```php
 <?php
 // src/App/Controller/FilesListController.php
@@ -172,7 +172,7 @@ class FilesListController extends AbstractContentElementController
     }
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 ```twig

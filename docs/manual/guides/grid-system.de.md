@@ -85,7 +85,7 @@ der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inha
 Über folgende Angaben kannst du eine einfache Grid Darstellung realisieren:
 
 {{< tabs groupid="Grid Layout">}}
-{{% tab name="HTML-Auszug" %}}
+{{% tab title="HTML-Auszug" %}}
 ```html
 <div class="mod_article mygrid block" id="article-1">
     <div class="ce_text block">
@@ -96,8 +96,8 @@ der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inha
     </div>
 </div>
 ```
-{{< /tab >}}
-{{% tab name="CSS-Auszug" %}}
+{{% /tab %}}
+{{% tab title="CSS-Auszug" %}}
 ```css
 .mygrid {
     display: grid;
@@ -105,7 +105,7 @@ der Artikel Einstellungen. Anschließend erstellst du dir zwei oder mehrere Inha
     grid-gap: 20px 20px;
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 Falls du ein Grid nur gezielt innerhalb einzelner Bereiche eines Artikels setzen möchtest, kannst du die umschließenden
@@ -114,7 +114,7 @@ Erstelle dir hierzu zwei entsprechende Inhaltselemente mit den Angaben »&lt;div
 Deine Text-Elemente müssen sich dann innerhalb dieser beiden Inhaltselemente vom Typ »HTML« befinden.
  
 {{< tabs groupid="Grid Layout 02">}}
-{{% tab name="HTML-Auszug" %}}
+{{% tab title="HTML-Auszug" %}}
 ```html
 <div class="mod_article block" id="article-1">
     <div class="mygrid">
@@ -127,8 +127,8 @@ Deine Text-Elemente müssen sich dann innerhalb dieser beiden Inhaltselemente vo
     </div>
 </div>
 ```
-{{< /tab >}}
-{{% tab name="CSS-Auszug" %}}
+{{% /tab %}}
+{{% tab title="CSS-Auszug" %}}
 ```css
 .mygrid {
     display: grid;
@@ -136,7 +136,7 @@ Deine Text-Elemente müssen sich dann innerhalb dieser beiden Inhaltselemente vo
     grid-gap: 20px 20px;
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 Die Beispiele sind bewußt einfach gehalten. Falls du nur gelegentlich eine Grid Darstellung benötigst, kannst du dies ohne

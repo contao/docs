@@ -266,9 +266,9 @@ In der Konfiguration des Webservers muss sichergestellt sein, dass alle Anfragen
 Verzeichnis verarbeitet werden (via »URL-Rewriting«). Wie diese Konfiguration aussehen muss hängt von der eingesetzten Webserver-Software 
 ab. Weit verbreitete Beispiele sind Apache und NGINX:
 
-{{< tabs groupid="web-server-config" >}}
+{{< tabs groupid="web-server-config" style="code" >}}
 
-{{< tab title="Apache" >}}
+{{% tab title="Apache" %}}
 Für Apache stellt Contao eine [Standard `.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess) 
 Datei im öffentlichen Verzeichnis zur Verfügung. Damit diese Datei von Apache verarbeitet wird muss sichergestellt sein, dass die Direktive
 `AllowOverride All` für das `Directory` in der `VirtualHost` Definition der Webserver-Konfiguration vorhanden ist. Darüberhinaus muss das
@@ -294,9 +294,9 @@ Contao 4.9 oder älter):
 </VirtualHost>
 ```
 
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="NGINX" >}}
+{{% tab title="NGINX" %}}
 Am wichtigsten ist es sicherzustellen, dass alle Anfragen, die nicht an eine existierende Datei gehen, an die PHP-Applikation zur Verarbeitung
 weitergegeben werden. Dies passiert über die Anweisung `try_files $uri /index.php$is_args$args;`.
 
@@ -336,7 +336,7 @@ Bilder oder das `favicon.ico` im Root abzuschalten. In vielen Fällen befinden s
 auch Direktiven speziell für die Verarbeitung von Bildern. Hier ist es wichtig auch `try_files $uri /index.php$is_args$args;` am Ende
 einzufügen um sicherzustellen, dass Anfragen auf (noch) nicht existierende Bilder von Contao verarbeitet werden. Andernfalls würde die
 »Deferred Image Generation« von Contao nicht funktionieren.
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 

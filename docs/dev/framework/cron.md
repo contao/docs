@@ -134,8 +134,8 @@ Generally cron jobs can be registered through the `contao.cronjob` service tag. 
 | `interval` | Can be `minutely`, `hourly`, `daily`, `weekly`, `monthly`, `yearly` or a full CRON expression, like `*/5 * * * *`. |
 | `method` | Will default to `__invoke` or `onMinutely` etc. when a named interval is used. Otherwise a method name has to be defined. |
 
-{{< tabs groupid="attribute-annotation-yaml-php" >}}
-{{< tab title="Attribute" >}}
+{{< tabs groupid="attribute-annotation-yaml-php" style="code" >}}
+{{% tab title="Attribute" %}}
 {{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
 since **PHP 8**) with which you can tag your service to be registered as a cron job.
 
@@ -157,9 +157,9 @@ class ExampleCron
 
 In this case the cron job is executed once per hour. As mentioned before this parameter can also be a full CRON expression, e.g. 
 `*/5 * * * *` for "every 5 minutes".
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="Annotation" >}}
+{{% tab title="Annotation" %}}
 {{< version-tag "4.9" >}} Contao also supports its own annotation formats via the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
 
 ```php
@@ -187,9 +187,9 @@ In this case the cron job is executed once per hour. As mentioned before this pa
 If you need an interval like `*/5 * * * *` you need to escape either the `*` or `/` 
 with `\`, since `*/` would close the PHP comment.
 {{% /notice %}}
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="YAML" >}}
+{{% tab title="YAML" %}}
 {{< version-tag "4.9" >}} As mentioned before you can manually add the `contao.cronjob` service tag in your service configuration.
 
 ```yaml
@@ -214,9 +214,9 @@ class ExampleCron
 
 Only the `interval` parameter is required. In this case the cron job is executed once per hour. As mentioned before this parameter can also
 be a full CRON expression, e.g. `*/5 * * * *` for "every 5 minutes".
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="PHP" >}}
+{{% tab title="PHP" %}}
 
 {{% notice "info" %}}
 This method is deprecated since Contao **4.13** and does not work in Contao **5** anymore.
@@ -251,7 +251,7 @@ class ExampleCron
     }
 }
 ```
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 

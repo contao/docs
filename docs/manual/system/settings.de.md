@@ -294,8 +294,8 @@ Informationen zur aktuelle Konfiguration erhältst du so:
 php vendor/bin/contao-console debug:config contao
 ```
 
-{{< tabs groupid="bundle-config" >}}
-{{< tab title="Contao 5" >}}
+{{< tabs groupid="bundle-config" style="code" >}}
+{{% tab title="Contao 5" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -674,8 +674,8 @@ contao:
         # Do not increase this value beyond the allowed response header size of your web server, as this will result in a 500 server error.
         max_header_size:      3072
 ```
-{{< /tab >}}
-{{< tab title="Contao 4" >}}
+{{% /tab %}}
+{{% tab title="Contao 4" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -955,7 +955,7 @@ contao:
             - skype
             - whatsapp
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
@@ -1318,9 +1318,9 @@ sein, je nach Server):
 Diese Zugangsdaten können dann entweder in der `parameters.yaml` oder über die [`MAILER_DSN`](#mailer-dsn) Umgebungsvariable (z. B. in der
 `.env.local` der Contao Installation) definiert werden.
 
-{{< tabs groupid="smtp-config" >}}
+{{< tabs groupid="smtp-config" style="code" >}}
 
-{{% tab name=".env.local" %}}
+{{% tab title=".env.local" %}}
 {{< version-tag "4.9" >}} Der SMTP-Server kann über die [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
 Datei der Contao-Installation definiert werden (beachte, dass auch eine `.env` Datei vorhanden sein muss, damit die Definition der
 Umgebungsvariablen in der `.env.local` auch angewandt wird). In Contao **4.9** muss die `MAILER_URL` Umgebungsvariable benutzt werden,
@@ -1333,9 +1333,9 @@ MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:465?encryption=ssl
 ```
 
 Beachte, dass der _Benutzername_ und das _Passwort_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.
-{{< /tab >}}
+{{% /tab %}}
 
-{{% tab name="parameters.yaml" %}}
+{{% tab title="parameters.yaml" %}}
 Bei der Nutzung der `parameters.yaml` können die SMTP-Zugangsdaten über die folgenden Parameter definiert werden:
 
 ```yaml
@@ -1349,7 +1349,7 @@ parameters:
     mailer_port: 465
     mailer_encryption: ssl
 ```
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 
@@ -1366,28 +1366,28 @@ php vendor/bin/contao-console cache:warmup --env=prod
 
 Danach kannst du den Mailversand auf der Kommandozeile testen.
 
-{{< tabs groupid="mailer-test" >}}
+{{< tabs groupid="mailer-test" style="code" >}}
 
-{{% tab name="Contao 4.0 bis 4.9" %}}
+{{% tab title="Contao 4.0 bis 4.9" %}}
 ```bash
 php vendor/bin/contao-console swiftmailer:email:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
 ```
-{{< /tab >}}
+{{% /tab %}}
 
-{{% tab name="Contao 4.13" %}}
+{{% tab title="Contao 4.13" %}}
 Zuerst muss das [`inspiredminds/contao-mailer-command`](https://packagist.org/packages/inspiredminds/contao-mailer-command) Paket
 installiert werden. Danach kann folgendes Kommando benutzt werden:
 
 ```bash
 php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
 ```
-{{< /tab >}}
+{{% /tab %}}
 
-{{% tab name="Contao 5.0 und höher" %}}
+{{% tab title="Contao 5.0 und höher" %}}
 ```bash
 php vendor/bin/contao-console mailer:test --from=sender@example.com --subject=testmail --body=testmail recipient@example.com
 ```
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 

@@ -26,16 +26,16 @@ Um Unannehmlichkeiten beim Umzug zu verhindern, sollte auf deinem lokalen Server
 Ein Abbild der Datenbank (SQL-Dump) lässt sich entweder mit der grafischen Datenbankverwaltung »[phpMyAdmin](https://www.phpmyadmin.net/)« 
 oder über das `mysqldump` Programm auf der Kommandozeile erstellen.
 
-{{< tabs groupid="mysql-transfer" >}}
-{{< tab title="phpMyAdmin" >}}
+{{< tabs groupid="mysql-transfer" style="code" >}}
+{{% tab title="phpMyAdmin" %}}
 Melde dich in "phpMyAdmin" an und wähle die zu exportierende Datenbank aus. Wechsle dann in den "Exportieren"-Tab im 
 oberen Menü und bestätige mit "Ok".
 
 Du erhälst eine `sql`-Datei, die du im nächsten Schritt importieren kannst.
 
 ![Exporting the database]({{% asset "images/manual/installation/de/datenbank-exportieren.png" %}}?classes=shadow)
-{{< /tab >}}
-{{< tab title="Command line" >}}
+{{% /tab %}}
+{{% tab title="Command line" %}}
 Stelle sicher, dass `mysqldump` und `gzip` installiert sind, dann führe folgendes Kommando aus (dabei ersetzt du 
 "my_user" mit deinem Datenbank-Benutzernamen sowie "my_db_name" mit dem Namen der Datenbank):
 
@@ -46,21 +46,21 @@ mysqldump --host=localhost --user=my_user --password --hex-blob --opt my_db_name
 Gib dein Passwort ein, wenn du danach gefragt wirst.
 
 Alle Inhalte der Datenbank wurden nun in die Datei `my_dump.sql.gz` geschrieben – verwende diese im nächsten Schritt.
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
 ### Import der Datenbank (Ziel)
-{{< tabs groupid="mysql-transfer" >}}
-{{< tab title="phpMyAdmin" >}}
+{{< tabs groupid="mysql-transfer" style="code" >}}
+{{% tab title="phpMyAdmin" %}}
 Öffne »phpMyAdmin« auf dem Zielserver und wähle die neue leere Datenbank aus.
 
 Klicke auf die »Import«-Schaltfläche im oberen Menü, lade dann den zuvor erstellten SQL-Dump hoch und starte den Import.
 
 ![Importing the database]({{% asset "images/manual/installation/de/datenbank-importieren.png" %}}?classes=shadow)
 
-{{< /tab >}}
-{{< tab title="Command line" >}}
+{{% /tab %}}
+{{% tab title="Command line" %}}
 Kopiere den zuvor erstellten SQL-Dump auf den Zielserver und navigiere zur Datei. 
 
 Stelle sicher, dass `mysql` und `gunzip` installiert sind und führe das folgende Kommando aus (dabei ersetzt du 
@@ -73,7 +73,7 @@ gunzip < my_dump.sql.gz | mysql --host=localhost --user=my_user --password my_db
 
 Gib dein Passwort ein, wenn du danach gefragt wirst.
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 

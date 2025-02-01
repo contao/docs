@@ -14,8 +14,8 @@ $ vendor/bin/contao-console config:dump-reference contao
 
 The following is a dump of the configuration reference.
 
-{{< tabs groupid="bundle-config" >}}
-{{< tab title="Contao 5" >}}
+{{< tabs groupid="bundle-config" style="code" >}}
+{{% tab title="Contao 5" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -394,8 +394,8 @@ contao:
         # Do not increase this value beyond the allowed response header size of your web server, as this will result in a 500 server error.
         max_header_size:      3072
 ```
-{{< /tab >}}
-{{< tab title="Contao 4" >}}
+{{% /tab %}}
+{{% tab title="Contao 4" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -675,7 +675,7 @@ contao:
             - skype
             - whatsapp
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 

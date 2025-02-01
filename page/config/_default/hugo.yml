@@ -14,6 +14,8 @@ markup:
       unsafe: true
   tableOfContents:
     endLevel: 3
+  highlight:
+    noClasses: false
 outputFormats:
   OpenSearchXML:
     baseName: search
@@ -24,3 +26,5 @@ mediaTypes:
   application/opensearchdescription+xml:
     suffixes:
       - xml
+imageEffects:
+  shadow: true

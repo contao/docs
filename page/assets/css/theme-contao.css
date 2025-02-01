@@ -1,14 +1,16 @@
 :root {
-    --CONTAO: #f47c00;
-    --CONTAO-muted: #ffae5b;
+    --CONTAO-brand-color: #f47c00;
+    --CONTAO-brand-color-muted: #ffae5b;
+    --CODE-theme: contao;
 
-    --PRIMARY-color: var(--CONTAO);
+    --PRIMARY-color: var(--CONTAO-brand-color);
 
     --MAIN-font: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --MAIN-font-weight: 400;
     --MAIN-letter-spacing: normal;
 
-    --MENU-HEADER-BORDER-color: var(--CONTAO-muted);
+    --MENU-HEADER-BORDER-color: var(--CONTAO-brand-color-muted);
+    --MENU-HEADER-BG-color: var(--PRIMARY-color);
 
     --MENU-SEARCH-color: rgba(255, 255, 255, 0.6);
     --MENU-SEARCH-BG-color: var(--MENU-HEADER-BG-color);
@@ -31,6 +33,15 @@
     --VERSION-TAG-BG-color: #6AB0DE;
 
     --NETWORK-BAR-height: 34px;
+
+    --BEST-PRACTICE-BG-color: #e6f9e6; /* Colors for "best practice" shortcode */
+    --BEST-PRACTICE-TAG-BG-color: #78c478;
+    --BEST-PRACTICE-TABLE-BG-color: white;
+
+    --EXAMPLE-TEXT-color: #6e6e6e; /* Colors for "example" shortcode */
+    --EXAMPLE-HEADER-BG-color: #e7e7e7;
+    --EXAMPLE-CONTENT-BG-color: #f6f6f6;
+    --EXAMPLE-BORDER-color: #ccc;
 }
 
 #R-body-inner {
@@ -349,6 +360,25 @@ body:before {
     top: var(--NETWORK-BAR-height) !important;
 }
 
+#R-body img, #R-body .video-container {
+    max-width: 100%;
+    display: inline-block;
+    margin: 1rem auto;
+}
+
+#R-body img.icon {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.icon.backend {
+    background: var(--MENU-HEADER-BG-color);
+    height: 25px !important;
+    margin-right: 5px !important;
+    padding: 2px 5px !important;
+    width: 25px !important;
+}
+
 /*
   Issue workflow (/dev/internals/issue-workflow/)
 */
@@ -601,4 +631,107 @@ span[class^="issue-label-"] {
     background-color: var(--VERSION-TAG-BG-color);
     font-size: 14px;
     color: white;
+}
+
+/** CSS for the "from-to" class **/
+.from-to {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 40px;
+}
+
+.from-to > div:first-child {
+    position: relative;
+}
+
+.from-to > div:first-child:after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    top: 100%;
+    right: 0;
+    bottom: -20px;
+    left: 0;
+    content: '🡇';
+}
+
+.from-to pre {
+    padding: 10px;
+    margin: 0 0 20px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .from-to {
+        grid-template-rows: unset;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .from-to > div:first-child:after {
+        top: 0;
+        right: -40px;
+        bottom: 20px;
+        left: 100%;
+        content: '🡆';
+    }
+}
+
+/* CSS for "best practice" shortcode */
+.best-practice {
+    padding: 15px;
+    margin: 20px -15px;
+    background-color: var(--BEST-PRACTICE-BG-color);
+}
+
+.best-practice .tag {
+    display: inline-block;
+    padding: 2px 8px 2px 8px;
+    margin-right: 2px;
+    background-color: var(--BEST-PRACTICE-TAG-BG-color);
+    font-size: 14px;
+    color: white;
+}
+
+.best-practice .tag + * {
+    display: inline;
+}
+
+.best-practice table td {
+    background-color: var(--BEST-PRACTICE-TABLE-BG-color);
+}
+
+/* CSS for "example" shortcode */
+.example {
+    margin-top: 24px;
+    background-color: var(--EXAMPLE-CONTENT-BG-color);
+    border: 1px solid var(--EXAMPLE-BORDER-color);
+    border-radius: 4px;
+}
+
+.example header {
+    padding: .2em 1em;
+    font-variant: all-small-caps;
+    font-weight: 300;
+    color: var(--EXAMPLE-TEXT-color);
+    background-color: var(--EXAMPLE-HEADER-BG-color);
+    border-bottom: 1px solid var(--EXAMPLE-BORDER-color);
+}
+
+.example > div {
+    padding: 0 1em 0.25em 1em;
+}
+
+.example h1 {
+    color: unset;
+    font-size: unset;
+    text-transform: unset;
+    line-height: unset;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.example pre {
+    padding: 10px;
+    margin: 0 0 20px;
 }

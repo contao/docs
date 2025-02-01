@@ -43,8 +43,8 @@ möglich ist.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" >}}
-{{< tab title="Contao 4" >}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_image` überschreiben.
 
 **HTML-Ausgabe**  
@@ -60,8 +60,8 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{< /tab >}}
-{{< tab title="Contao 5" >}}
+{{% /tab %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/image` überschreiben.
 
 **HTML-Ausgabe**  
@@ -77,7 +77,7 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{</tabs>}}
 
 
@@ -131,8 +131,8 @@ Lightbox geöffnet (dazu ist JavaScript erforderlich).
 
 **Galerietemplate:** Hier kannst du das Galerietemplate überschreiben.
 
-{{< tabs groupid="contao-version" >}}
-{{< tab title="Contao 4" >}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_gallery` überschreiben.
 
 **HTML-Ausgabe**  
@@ -168,8 +168,8 @@ Das Element generiert folgenden HTML-Code:
     <!-- indexer::continue -->
 </div>
 ```
-{{< /tab >}}
-{{< tab title="Contao 5" >}}
+{{% /tab %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/gallery` überschreiben.
 
 **HTML-Ausgabe**  
@@ -201,7 +201,7 @@ Das Element generiert folgenden HTML-Code:
     </nav>
 </div>
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{</tabs>}}
 
 
@@ -248,8 +248,8 @@ deaktivieren.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" >}}
-{{< tab title="Contao 4" >}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_player` überschreiben.
 
 **HTML-Ausgabe**  
@@ -265,8 +265,8 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{< /tab >}}
-{{< tab title="Contao 5" >}}
+{{% /tab %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/player` überschreiben.
 
 **HTML-Ausgabe**  
@@ -282,7 +282,7 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{</tabs>}}
 
 
@@ -333,8 +333,8 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" >}}
-{{< tab title="Contao 4" >}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_vimeo` überschreiben.
 
 **HTML-Ausgabe**  
@@ -363,8 +363,8 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{< /tab >}}
-{{< tab title="Contao 5" >}}
+{{% /tab %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/vimeo` überschreiben.
 
 **HTML-Ausgabe**  
@@ -384,7 +384,7 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{</tabs>}}
 
 
@@ -440,8 +440,8 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" >}}
-{{< tab title="Contao 4" >}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_youtube` überschreiben.
 
 **HTML-Ausgabe**  
@@ -472,8 +472,8 @@ Das Element generiert folgenden HTML-Code:
 </div>
 <!-- indexer::continue -->
 ```
-{{< /tab >}}
-{{< tab title="Contao 5" >}}
+{{% /tab %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/youtube` überschreiben.
 
 **HTML-Ausgabe**  
@@ -493,5 +493,5 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{</tabs>}}

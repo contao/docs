@@ -424,7 +424,7 @@ The gist: You, as the template designer, have to decide how things should be out
 in which content can be trusted or not. The *exact same* data can be dangerous in one context and harmless in another!
 
 {{< tabs groupid="output-encoding-example">}}
-{{< tab title="Input encoding" >}}
+{{% tab title="Input encoding" %}}
 Assume you have a variable `color` that should contain color names (like `red`, `green`, `rebeccapurple`, …) and a
 template that should output the name of the color inside a box with a background of this color. Maybe like so:
 
@@ -476,8 +476,8 @@ file? And even when there is likely only one use case, making the input side res
 idea. You won't be able to fix mistakes made when "input encoding", neither will you be able to safely add another
 output context later on.
 
-{{< /tab >}}
-{{< tab title="Output encoding" >}}
+{{% /tab %}}
+{{% tab title="Output encoding" %}}
 With Twig, we can be specific how a certain variable should be treated, depending on the context! Use the `|escape` (or
 short `|e`) filter for this:
 
@@ -516,7 +516,7 @@ automatically get the `|e('html')` treatment, so you could omit this part in the
 Try it out for yourself in this [example](https://twig.symfony.com/play?data=eyJ2ZXJzaW9uIjoiMy4zLjIiLCJvcHRpb25zIjp7ImNoYXJzZXQiOiJVVEYtOCIsInN0cmljdF92YXJpYWJsZXMiOnRydWV9LCJjb250ZXh0Ijp7ImNvbG9yMSI6InJlZDsgfSB7IGJvZHk6IGRpc3BsYXk6bm9uZTsiLCJjb2xvcjIiOiI8c2NyaXB0PmFsZXJ0KDEpPC9zY3JpcHQ-In0sInRlbXBsYXRlcyI6W1sibWFpbi50d2lnIiwiTm8gb3V0cHV0IGVuY29kaW5nOlxuXG48c3R5bGU-XG4gIC5ib3gxIHsgYmFja2dyb3VuZDoge3sgY29sb3IxfHJhdyB9fSB9XG4gIC5ib3gyIHsgYmFja2dyb3VuZDoge3sgY29sb3IyfHJhdyB9fSB9XG48L3N0eWxlPlxuXG5b4oCmXVxuXG48ZGl2IGNsYXNzPVwiYm94MVwiPnt7IGNvbG9yMXxyYXcgfX08L2Rpdj5cbjxkaXYgY2xhc3M9XCJib3gyXCI-e3sgY29sb3IyfHJhdyB9fTwvZGl2PlxuXG5cbi0tLS0tLVxuXG5cbkNvbnRleHQtZGVwZW5kZW50IG91dHB1dCBlbmNvZGluZzpcblxuPHN0eWxlPlxuICAuYm94MSB7IGJhY2tncm91bmQ6IHt7IGNvbG9yMXxlKCdjc3MnKSB9fSB9XG4gIC5ib3gyIHsgYmFja2dyb3VuZDoge3sgY29sb3IyfGUoJ2NzcycpIH19IH1cbjwvc3R5bGU-XG5cblvigKZdXG5cbjxkaXYgY2xhc3M9XCJib3gxXCI-e3sgY29sb3IxfGUoJ2h0bWwnKSB9fTwvZGl2PlxuPGRpdiBjbGFzcz1cImJveDJcIj57eyBjb2xvcjJ8ZSgnaHRtbCcpIH19PC9kaXY-Il1dfQ..) or read more about the
 [escaper extension](https://twig.symfony.com/doc/3.x/api.html#escaper-extension) in the official Twig documentation.
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 {{% notice warning %}}

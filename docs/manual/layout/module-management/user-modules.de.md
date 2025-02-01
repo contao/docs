@@ -138,7 +138,7 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 ## Automatischer Logout
 
 {{< tabs groupid="contaoVersion">}}
-{{< tab title="Contao  4" >}}
+{{% tab title="Contao  4" %}}
 Das Frontend-Modul »Automatischer Logout« fügt der Webseite ein unsichtbares Modul hinzu, das einen angemeldeten 
 Frontend-Benutzer automatisch abmeldet.
 
@@ -155,11 +155,11 @@ wird.
 zur Weiterleitungsseite weitergeleitet.
 
 Das Modul erzeugt keine HTML-Ausgabe.
-{{< /tab >}}
-{{< tab title="Contao 5" >}}
+{{% /tab %}}
+{{% tab title="Contao 5" %}}
 Dieses Modul wurde durch den Seitentyp »[Abmelden](/de/seitenstruktur/abmelden/)« ersetzt, welches einen Abmelde-Link für 
 einen geschützten Bereich erstellt. 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 

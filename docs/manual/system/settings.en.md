@@ -280,8 +280,8 @@ You can get information about the current configuration this way:
 php vendor/bin/contao-console debug:config contao
 ```
 
-{{< tabs groupid="bundle-config" >}}
-{{< tab title="Contao 5" >}}
+{{< tabs groupid="bundle-config" style="code" >}}
+{{% tab title="Contao 5" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -660,8 +660,8 @@ contao:
         # Do not increase this value beyond the allowed response header size of your web server, as this will result in a 500 server error.
         max_header_size:      3072
 ```
-{{< /tab >}}
-{{< tab title="Contao 4" >}}
+{{% /tab %}}
+{{% tab title="Contao 4" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -941,7 +941,7 @@ contao:
             - skype
             - whatsapp
 ```
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
@@ -1352,9 +1352,9 @@ depending on the server):
 These credentials can then either be added in the `parameters.yaml` or configured via the [`MAILER_DSN`](#mailer-dsn) environment variable,
 e.g. via the `.env.local` of your Contao instance.
 
-{{< tabs groupid="smtp-config" >}}
+{{< tabs groupid="smtp-config" style="code" >}}
 
-{{% tab name=".env.local" %}}
+{{% tab title=".env.local" %}}
 {{< version-tag "4.9" >}} You can define the SMTP server via the [`.env.local`](https://symfony.com/doc/current/configuration.html#overriding-environment-values-via-env-local)
 of your Contao instance (note that the `.env` file must also exist in order for the `.env.local` to take effect). In Contao **4.9** you need
 to use the `MAILER_URL` environment variable, while in Contao **4.10** and up the [`MAILER_DSN`](#mailer-dsn) variable can be used. In 
@@ -1366,9 +1366,9 @@ MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl
 ```
 
 Keep in mind that the _username_ and _password_ (individually) need to be [URL encoded](https://www.urlencoder.org/).
-{{< /tab >}}
+{{% /tab %}}
 
-{{% tab name="parameters.yaml" %}}
+{{% tab title="parameters.yaml" %}}
 When using the `parameters.yaml` the SMTP credentials can be added via the following parameters:
 
 ```yaml
@@ -1382,7 +1382,7 @@ parameters:
     mailer_port: 465
     mailer_encryption: ssl
 ```
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 
@@ -1397,28 +1397,28 @@ php vendor/bin/contao-console cache:warmup --env=prod
 
 After that you can test the mail dispatch on the command line.
 
-{{< tabs groupid="mailer-test" >}}
+{{< tabs groupid="mailer-test" style="code" >}}
 
-{{% tab name="Contao 4.0 to 4.9" %}}
+{{% tab title="Contao 4.0 to 4.9" %}}
 ```bash
 php vendor/bin/contao-console swiftmailer:email:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
 ```
-{{< /tab >}}
+{{% /tab %}}
 
-{{% tab name="Contao 4.13" %}}
+{{% tab title="Contao 4.13" %}}
 First you need to install the [`inspiredminds/contao-mailer-command`](https://packagist.org/packages/inspiredminds/contao-mailer-command)
 package. Then the following command can be used:
 
 ```bash
 php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
 ```
-{{< /tab >}}
+{{% /tab %}}
 
-{{% tab name="Contao 5.0 and up" %}}
+{{% tab title="Contao 5.0 and up" %}}
 ```bash
 php vendor/bin/contao-console mailer:test --from=sender@example.com --subject=testmail --body=testmail recipient@example.com
 ```
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 
