@@ -73,13 +73,13 @@ providing configuration in different formats.
 ```
 {{< tabs groupid="Example">}}
 
-{{< tab title="PHP" >}}
+{{% tab title="PHP" %}}
 Lorem ipsum dolor sit amet ...
-{{< /tab >}}
+{{% /tab %}}
 
-{{< tab title="Twig" >}}
+{{% tab title="Twig" %}}
 Lorem ipsum dolor sit amet ...
-{{< /tab >}}
+{{% /tab %}}
 
 {{< /tabs >}}
 ```
