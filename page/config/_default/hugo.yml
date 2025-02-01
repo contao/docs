@@ -5,7 +5,7 @@ canonifyURLs: true
 enableGitInfo: true
 disablePathToLower: true
 outputs:
-  home: ['HTML', 'JSON', 'OpenSearchXML']
+  home: [html, rss, OpenSearchXML]
 markup:
   goldmark:
     parser:
