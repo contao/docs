@@ -23,8 +23,3 @@
 <link rel="search" type="application/opensearchdescription+xml" title="Search {{ .Site.Title }}" href="{{ $searchXml.RelPermalink }}">
 {{ end }}
 <link type="text/css" rel="stylesheet" href="https://contao.org/files/js/network.min.css">
-{{- $assetBusting := partialCached "assetbusting.gotmpl" . }}
-{{- if os.FileExists "assets/css/custom.css" -}}
-  {{- $resAsset := (resources.Get "css/custom.css") | resources.Fingerprint -}}
-  <link type="text/css" rel="stylesheet" href="{{ $resAsset.Permalink }}">
-{{- end -}}

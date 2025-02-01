@@ -124,6 +124,10 @@ b, strong, label, th {
     color: white;
 }
 
+.box.cstyle.transparent > .box-content {
+    padding-bottom: 1rem;
+}
+
 /* algolia */
 #sidebar {
     z-index: 1;
