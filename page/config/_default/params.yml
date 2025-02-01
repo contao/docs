@@ -5,10 +5,8 @@ themeVariant:
 disableSearch: false
 disableLanguageSwitch: true
 documentation_label: Documentation
-showVisitedLinks: true
 disableInlineCopyToClipBoard: true
-#disableAssetsBusting: true
-currentContaoVersion: '4.13'
+currentContaoVersion: '5.4'
 disableLandingPageButton: true
 showBanner: true
 bannerTitleDE: Contao Konferenz & College Düsseldorf 2025
