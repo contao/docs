@@ -270,6 +270,13 @@ body[data-url*="/reference/hooks/"] #R-sidebar ul.collapsible-menu > li.parent >
     display: none;
 }
 
+body[data-url*="/reference/hooks/"] #R-sidebar ul.collapsible-menu > li.parent > ul > li.parent > a {
+    border-left: 3px solid var(--MENU-HEADER-BG-color);
+    background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
+    color: var(--MENU-SECTION-ACTIVE-CATEGORY-color);
+    padding-left: calc(1rem - 3px);
+}
+
 /* allow more space for the namespaces table */
 body[data-url="/cookbook/namespaces/"] #body .padding {
     max-width: none;
