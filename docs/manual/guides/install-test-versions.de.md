@@ -154,7 +154,6 @@ Version wird, sieht so aus:
         "contao/conflicts": "@dev",
         "contao/core-bundle": "5.x-dev",
         "contao/faq-bundle": "5.x-dev",
-        "contao/installation-bundle": "5.x-dev",
         "contao/listing-bundle": "5.x-dev",
         "contao/manager-bundle": "5.x-dev",
         "contao/news-bundle": "5.x-dev",
