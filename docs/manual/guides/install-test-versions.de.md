@@ -54,23 +54,11 @@ Der erste Release Candidate von Contao `5.5` heißt z. B. `5.5.0-RC1`. Normalerw
 würde Composer nur _stabile_ Versionen installieren und daher solche Release Candidates
 nicht beachten.
 
-Um die Installation von Release Candidates zu erlauben, muss die `minimum-stability`
-auf `RC` in der `composer.json` runter gesetzt werden. Außerdem sollte man Composer
-anweisen, dass bei jedem Paket _stabile_ Versionen bevorzugt werden, damit auch die
-offiziell veröffentlichten Versionen von Contao automatisch installiert werden, sobald
-diese verfügbar sind. Schließlich muss noch die angeforderte Version von Contao selbst,
-also genau genommen des `contao/manager-bundle` auf `5.5.*` geändert werden, so wie bei
-jedem Update auf eine neuere Contao Version.
-
-```json
-{
-    "require": {
-        "contao/manager-bundle": "5.5.*"
-    },
-    "minimum-stability": "RC",
-    "prefer-stable": true
-}
-```
+Um die Installation von Release Candidates zu erlauben, muss die `minimum-stability` auf `RC` runter gesetzt werden.
+Alternativ kann man über sogenannte [stability-flags][ComposerStabilityContraints] direkt bei einzelnen Paketen
+niedrigere Stabilitäten erlauben, z. B. mit `"contao/manager-bundle": "5.5.*@RC"` in diesem Fall. In diesem Fall muss man
+allerdings auch zusätzlich das `contao/core-bundle` in die `composer.json` mit aufnehmen, um auch dediziert die
+niedrigere Stabilität bei diesem Paket zu erlauben.
 
 Hier ist ein komplettes Beispiel, um die neueste Contao `5.5` Version installieren
 zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
@@ -82,18 +70,16 @@ zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhanden):
     "license": "LGPL-3.0-or-later",
     "type": "project",
     "require": {
-        "contao/calendar-bundle": "^5.5",
-        "contao/comments-bundle": "^5.5",
+        "contao/calendar-bundle": "^5.5@RC",
+        "contao/comments-bundle": "^5.5@RC",
         "contao/conflicts": "@dev",
-        "contao/core-bundle": "^5.5",
-        "contao/faq-bundle": "^5.5",
-        "contao/listing-bundle": "^5.5",
-        "contao/manager-bundle": "5.5.*",
-        "contao/news-bundle": "^5.5",
-        "contao/newsletter-bundle": "^5.5"
+        "contao/core-bundle": "^5.5@RC",
+        "contao/faq-bundle": "^5.5@RC",
+        "contao/listing-bundle": "^5.5@RC",
+        "contao/manager-bundle": "5.5.*@RC",
+        "contao/news-bundle": "^5.5@RC",
+        "contao/newsletter-bundle": "^5.5@RC"
     },
-    "minimum-stability": "RC",
-    "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
@@ -184,12 +170,10 @@ Version wird, sieht so aus:
 }
 ```
 
-Zu beachten ist hier, dass diesmal auch das `contao/core-bundle` und das `contao/installation-bundle`
-angefordert wird, welches normalerweise nicht in der `composer.json` des eigenen
-Contao Projekts eingetragen wird. Das ist notwendig, weil Entwicklerversionen der
-Pakete installiert werden sollen, ohne die `minimum-stability` auf `dev` zu senken
-(das würde andernfalls die Berechnungszeit und Speicherauslastung während einer
-Update-Operation drastisch erhöhen).
+Zu beachten ist hier, dass auch diesmal das `contao/core-bundle` Paket angefordert wird, welches normalerweise nicht in
+der `composer.json` des eigenen Contao Projekts eingetragen wird. Das ist notwendig, weil Entwicklerversionen der Pakete
+installiert werden sollen, ohne die `minimum-stability` auf `dev` zu senken (das würde andernfalls die Berechnungszeit
+und Speicherauslastung während einer Update-Operation drastisch erhöhen).
 
 Jedes mal, wenn eine Paketaktualisierung durchgeführt wird, wird der neueste Programmcode
 aus diesem Branch des öffentlichen Git Repositorys von Contao geholt.
@@ -224,3 +208,4 @@ Videoanleitung: [Contao 4 – Testversion | Entwicklerversion | Release Candidat
 
 
 [releasePlan]: https://to.contao.org/release-plan
+[ComposerStabilityContraints]: https://getcomposer.org/doc/articles/versions.md#stability-constraints
