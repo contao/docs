@@ -56,7 +56,7 @@ nicht beachten.
 
 Um die Installation von Release Candidates zu erlauben, muss die `minimum-stability` auf `RC` runter gesetzt werden.
 Alternativ kann man über sogenannte [stability-flags][ComposerStabilityContraints] direkt bei einzelnen Paketen
-niedrigere Stabilitäten erlauben, z.B. mit `"contao/manager-bundle": "5.5.*@RC"` in diesem Fall. In diesem Fall muss man
+niedrigere Stabilitäten erlauben, z. B. mit `"contao/manager-bundle": "5.5.*@RC"` in diesem Fall. In diesem Fall muss man
 allerdings auch zusätzlich das `contao/core-bundle` in die `composer.json` mit aufnehmen, um auch dediziert die
 niedrigere Stabilität bei diesem Paket zu erlauben.
 
