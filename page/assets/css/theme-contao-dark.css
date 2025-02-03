@@ -2,6 +2,7 @@
 @import 'theme-contao.css';
 
 :root {
+    --MAIN-BG-color: #121416;
     --MAIN-LINK-color: var(--PRIMARY-color);
     --MAIN-LINK-HOVER-color: var(--PRIMARY-color);
     --MAIN-SECONDARY-color: #1C90F3;
