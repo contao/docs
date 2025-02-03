@@ -71,7 +71,7 @@ The short code tabs allows you to group content. Very handy for providing code s
 providing configuration in different formats.
 
 ```
-{{< tabs groupid="Example">}}
+{{< tabs groupid="Example" style="code" >}}
 
 {{% tab title="PHP" %}}
 Lorem ipsum dolor sit amet ...
