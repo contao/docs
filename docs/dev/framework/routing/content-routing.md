@@ -292,35 +292,21 @@ namespace App\Routing;
 use App\Model\FoobarModel;
 use Contao\CoreBundle\Routing\Content\ContentUrlResolverInterface;
 use Contao\CoreBundle\Routing\Content\ContentUrlResult;
-use Contao\CoreBundle\Routing\PageFinder;
 use Contao\PageModel;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 class FoobarResolver implements ContentUrlResolverInterface
 {
-    public function __construct(
-        private readonly RequestStack $requestStack,
-        private readonly PageFinder $pageFinder,
-    ) {
-    }
-
     public function resolve(object $content): ContentUrlResult|null
     {
         if (!$content instanceof FoobarModel) {
             return null;
         }
 
-        if (!$request = $this->requestStack->getCurrentRequest()) {
-            return null;
-        }
-
         /**
-         * This is a simplification for this example. We simply look for the first "foobar_reader" page type in this
-         * website and assume that this is the correct page for which we want to generate the detail URL of our record.
+         * This is a simplification and assumes your model has a property "jumpTo" that points to
+         * the target page. How the target page is determined will depend on your application.
          */
-        $foobarPage = $this->pageFinder->findFirstPageOfTypeForRequest($request, 'foobar_reader');
-
-        return ContentUrlResult::resolve($foobarPage);
+        return ContentUrlResult::resolve(PageModel::findByPk($content->jumpTo));
     }
 
     public function getParametersForContent(object $content, PageModel $pageModel): array
