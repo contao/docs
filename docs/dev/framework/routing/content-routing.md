@@ -292,9 +292,7 @@ namespace App\Routing;
 use App\Model\FoobarModel;
 use Contao\CoreBundle\Routing\Content\ContentUrlResolverInterface;
 use Contao\CoreBundle\Routing\Content\ContentUrlResult;
-use Contao\CoreBundle\Routing\PageFinder;
 use Contao\PageModel;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 class FoobarResolver implements ContentUrlResolverInterface
 {
