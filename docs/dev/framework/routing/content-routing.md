@@ -296,12 +296,6 @@ use Contao\PageModel;
 
 class FoobarResolver implements ContentUrlResolverInterface
 {
-    public function __construct(
-        private readonly RequestStack $requestStack,
-        private readonly PageFinder $pageFinder,
-    ) {
-    }
-
     public function resolve(object $content): ContentUrlResult|null
     {
         if (!$content instanceof FoobarModel) {
@@ -309,10 +303,9 @@ class FoobarResolver implements ContentUrlResolverInterface
         }
 
         /**
-         * This is a simplification and assumes your model has a property "jumpTo" that points to the target page.
-         * Determining the target page is obviously depending on your application.
+         * This is a simplification and assumes your model has a property "jumpTo" that points to
+         * the target page. How the target page is determined will depend on your application.
          */
-
         return ContentUrlResult::resolve(PageModel::findByPk($content->jumpTo));
     }
 
