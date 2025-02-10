@@ -161,12 +161,12 @@ Anschließend sollte der Contao Manager wieder laufen.
 {{< version "Manager 1.9" >}}
 
 Ja, mit ADMIN-Rechten kannst du weitere Benutzer:innen zum Contao Manager einladen.
-Klicke dazu im Menü auf das Zahnrad und dann _Konten_. Hier kannst du einen Einladungs-Link erstellen,
+Klicke dazu im Menü auf das Zahnrad und dann auf _Konten_. Hier kannst du einen Einladungs-Link erstellen,
 und dem neuen Konto eine der folgenden Berechtigungen vergeben:
 
 - **READ** – kann die installierten Pakete sehen und Log-Dateien lesen, aber
   das System nicht verändern.
-- **UPDATE** – darf bestehende Pakete aktualisieren und Wartungsaufgaben vornehmen (z.B. Cache leeren).
+- **UPDATE** – darf bestehende Pakete aktualisieren und Wartungsaufgaben vornehmen (z. B. Cache leeren).
 - **INSTALL** – darf Pakete aktualisieren und installieren und Systemeinstellungen ändern.
 - **ADMIN** – kann alle Funktionen des Contao Managers nutzen.
 

@@ -141,11 +141,11 @@ After that, the Contao Manager should run again.
 {{< version “Manager 1.9” >}}
 
 Yes, with ADMIN rights you can invite other users to the Contao Manager.
-To do this, click on the gear wheel in the menu and then _Accounts_. Here you can create an invitation link,
+To do this, click on the gear wheel in the menu and then on _Accounts_. Here you can create an invitation link,
 and assign one of the following permissions to the new account:
 
 - **READ** – can see the installed packages and read log files, but
-  not change the system.
+  cannot change the system.
 - **UPDATE** – may update existing packages and perform maintenance tasks (e.g. clear cache).
 - **INSTALL** – may update and install packages and change system settings.
 - **ADMIN** – can use all functions of the Contao Manager.
