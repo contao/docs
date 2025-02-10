@@ -310,17 +310,12 @@ class FoobarResolver implements ContentUrlResolverInterface
             return null;
         }
 
-        if (!$request = $this->requestStack->getCurrentRequest()) {
-            return null;
-        }
-
         /**
-         * This is a simplification for this example. We simply look for the first "foobar_reader" page type in this
-         * website and assume that this is the correct page for which we want to generate the detail URL of our record.
+         * This is a simplification and assumes your model has a property "jumpTo" that points to the target page.
+         * Determining the target page is obviously depending on your application.
          */
-        $foobarPage = $this->pageFinder->findFirstPageOfTypeForRequest($request, 'foobar_reader');
 
-        return ContentUrlResult::resolve($foobarPage);
+        return ContentUrlResult::resolve(PageModel::findByPk($content->jumpTo));
     }
 
     public function getParametersForContent(object $content, PageModel $pageModel): array
