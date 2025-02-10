@@ -150,6 +150,7 @@ In any case, the current core team members consist of (in alphabetical order)
 * [Schempp, Andreas (@aschempp)](https://github.com/aschempp) 
 * [Vondano, Moritz (@m-vo)](https://github.com/m-vo) 
 * [Witschi, Yanick (@toflar)](https://github.com/toflar) 
+* [Zoglowek, Sebastian (@zoglo)](https://github.com/zoglo) 
 
 In addition, there's a core team for the documentation:
 
