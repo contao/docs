@@ -164,6 +164,24 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 ```
 {{% /notice %}}
 
+{{% notice "note" %}}
+{{< version-tag "5.5" >}}
+All operations are now shown within the context-menu. If you want them to appear in the overview, you can enable them by
+prepending your key with `!` as seen in the example.
+
+```php
+
+$GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
+    '!edit',
+    '!children',
+    'copy',
+    'cut',
+    'delete',
+    'toggle',
+    'show'
+];
+```
+{{% /notice %}}
 
 #### Toggle Operation
 
