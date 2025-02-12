@@ -66,6 +66,8 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 [ext-gmagick]: https://www.php.net/manual/de/book.gmagick.php
 [ext-fileinfo]: https://www.php.net/manual/de/book.fileinfo.php
 [ext-sodium]: https://www.php.net/manual/en/book.sodium.php
+[ext-pdosqlite]: https://www.php.net/manual/en/ref.pdo-sqlite.php
+[ext-sqlite3]: https://www.php.net/manual/en/book.sqlite3.php
 
 Alle erforderlichen Erweiterungen sind in aktuellen PHP-Versionen standardmäßig aktiviert. Einige Hosting-Anbieter 
 deaktivieren sie jedoch explizit. Die Anforderungen werden bei der Installation durch 
