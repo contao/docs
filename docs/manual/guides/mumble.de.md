@@ -43,18 +43,18 @@ auch nachträglich angepasst werden.
 
 Wenn man den »Weiter«-Button betätigt, kann man auf dem nächsten Screen die bevorzugte Audio-Ein- und Ausgabegeräte auswählen.
 
-![Mumble Audio Einstellungs-Assistent Geräteauswahl]({{% asset "images/manual/layout/guides/de/mumble/mumble-audio-assistant-geraeteauswahl.jpg" %}}?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Geräteauswahl]({{% asset "images/manual/guides/de/mumble/mumble-audio-assistant-geraeteauswahl.jpg" %}}?classes=shadow)
 
 Im nächsten Screen wird die Leistung der Soundkarte ermittelt. Dies wird im Assistentenfenster beschrieben. Man hört also 
 einen Text und soll den Schieberegler unter dem Text soweit wie möglich nach links schieben, ohne dass der vorgelesene 
 Text qualitativ schlechter wird oder anfängt zu stocken.
 
-![Mumble Audio Einstellungs-Assistent Geräteeinstellung]({{% asset "images/manual/layout/guides/de/mumble/mumble-audio-assistant-geraeteeinstellungen.jpg" %}}?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Geräteeinstellung]({{% asset "images/manual/guides/de/mumble/mumble-audio-assistant-geraeteeinstellungen.jpg" %}}?classes=shadow)
 
 Der nächste Schritt behandelt die Lautstärken-Einstellungen. Folgt man den Anweisungen auf dem Bildschirm, 
 sollte man die optimale Einstellung finden.
 
-![Mumble Audio Einstellungs-Assistent Lautstärke]({{% asset "images/manual/layout/guides/de/mumble/mumble-audio-assistant-lautstaerkeneinstellungen-mikro.jpg" %}}?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Lautstärke]({{% asset "images/manual/guides/de/mumble/mumble-audio-assistant-lautstaerkeneinstellungen-mikro.jpg" %}}?classes=shadow)
 
 Kommen wir nun zur Sprachaktivitätserkennung. Diese wird dazu benutzt, um einzustellen, ab wann die »Geräusche«, die über 
 das Mikrofon aufgenommen werden, als Sprache einzuordnen sind. Wir empfehlen vorerst die Einstellung 
@@ -71,7 +71,7 @@ Der folgende Screen möchte noch zwei Einstellungen zur Qualität und den Hinwei
 »ausgeglichen« lassen. Bei den Benachrichtigungen empfehlen wir, den Punkt »Text-zu-Sprache deaktivieren und Sounds benutzen« 
 zu aktivieren, denn gerade »Text-zu-Sprache« kann am Anfang zu großen Verwirrungen führen.
 
-![Mumble Audio Einstellungs-Assistent Sprachqualität]({{% asset "images/manual/layout/guides/de/mumble/mumble-audio-assistant-qualitaet-hinweise.jpg" %}}?classes=shadow)
+![Mumble Audio Einstellungs-Assistent Sprachqualität]({{% asset "images/manual/guides/de/mumble/mumble-audio-assistant-qualitaet-hinweise.jpg" %}}?classes=shadow)
 
 Der letzte Punkt ist eigentlich nur für die Benutzung mit Spielen interessant und kann durchaus ignoriert werden. Wenn man 
 Kopfhörer benutzt, kann man aber gern den Haken bei »Benutze Kopfhörer« setzen.
@@ -112,7 +112,7 @@ Folgende Daten sollte man eingeben:
 In der Serverliste sollte der »CCA-Mumble-Server« nun unter den Favoriten auftauchen. Diesen Eintrag auswählen 
 und auf »Verbinden« klicken.
 
-![Mumble Server Verbindung wählen]({{% asset "images/manual/layout/guides/de/mumble/mumble-server-auswaehlen.jpg" %}}?classes=shadow)
+![Mumble Server Verbindung wählen]({{% asset "images/manual/guides/de/mumble/mumble-server-auswaehlen.jpg" %}}?classes=shadow)
 
 
 ## Mumble Statusfenster
