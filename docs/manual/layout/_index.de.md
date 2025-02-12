@@ -11,5 +11,3 @@ Im [Navigationsbereich](../administrationsbereich/aufruf-und-aufbau-des-backends
 befinden sich alle designrelevanten Module, mit denen du das Aussehen und die Struktur deiner Webseite festlegen kannst.
 
 {{% children %}}
-
-{{% taxonomylist context="tags" filter="Seitenstruktur, Theme, Template" title="Anleitungen" description=true %}}
