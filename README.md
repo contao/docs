@@ -35,7 +35,7 @@ once, if you had already checked out the repository before the switch.
 To update the theme after cloning - or after the theme switch, run the following command:
 
 ```bash
-git submodule foreach git pull origin master
+git submodule foreach git pull origin main
 ```
 
 ## Build
