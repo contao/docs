@@ -9,10 +9,10 @@ aliases:
 The Contao Managed Edition comes with an additional `preview.php` entry point. This entry point is either accessible via
 a back end login, or a valid preview link.
 
-When this entry point is accessed with a back end loingn it offers features like logging in as a front end member or 
+When this entry point is accessed with a back end login, it offers features like logging in as a front end member or 
 showing hidden elements.
 
-To check whether your own code (content element, front end module, etc.) is currently executed within the preview entry
+To check whether code (content element, front end module, etc.) is currently executed within the preview entry
 point you can check for the `_preview` request attribute.
 
 ```php
@@ -35,9 +35,9 @@ class FoobarController extends AbstractContentElementController
 {% endif %}
 ```
 
-This however, does not check for the actual preview _mode_, which is activated by selecting _Unpublished: show_ in the
+This however, does not check for the actual _preview mode_, which is activated by selecting _Unpublished: show_ in the
 preview toolbar - or by accessing the preview entry with a valid preview link that has this feature enabled. To check
-for this you can use the [`TokenChecker`][TokenChecker] service.
+for this, you can use the [`TokenChecker`][TokenChecker] service.
 
 ```php
 use Contao\CoreBundle\Security\Authentication\Token\TokenChecker;
@@ -50,7 +50,7 @@ class FoobarController extends AbstractContentElementController
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
-        if ($this->tokenChecker->isPreviewmode()) {
+        if ($this->tokenChecker->isPreviewMode()) {
             // Execute some code when the preview mode is active
         }
 
@@ -68,10 +68,10 @@ class FoobarController extends AbstractContentElementController
 ```
 
 {{% notice "note" %}}
-In previous Contao versions the `BE_USER_LOGGED_IN` constant was used for this. This constant was `true` whenever a
-valid back end login session is present and the unpublished elements should be shown. However, with the introduction of
+In previous Contao versions, the `BE_USER_LOGGED_IN` constant was used for this. This constant was `true` whenever a
+valid back end login session is present and the _Unpublished: show_ option was enabled. However, with the introduction of
 the preview link feature of Contao **4.13** this is not necessarily the case anymore, i.e. this constant can be `true`
-even without a back end login. The constant is deprecated in any case and the aforementioned
+even without a back end login. The constant is deprecated in Contao 4.13 and has been removed in Contao 5, the aforementioned
 `contao.security.token_checker` should be used instead.
 {{% /notice %}}
 

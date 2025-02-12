@@ -18,12 +18,12 @@ other existing models in Contao, like news or pages.
 ## Content URL Generation
 
 Since Contao **5.3** this can be done via the `ContentUrlGenerator` service, which works analogous to the Symfony
-router service. It has a `generate()` method, just like the Symfony URL generator - but instead of a route name it
-expects an object for which the URL should be generated as its first parameter. You can also optionally pass parameters
+router service. It has a `generate()` method, just like the Symfony URL generator - but instead of a route name, it
+expects an object for which the URL should be generated as its first parameter. You can optionally pass parameters
 for the URL generation and also define the URL reference type (e.g. absolute URL, absolute path, etc.).
 
-This is important for when your front end module references a page as the redirect target for a form for example. Or
-if your front end module creates a news list and you need the URL to the detail page of each news item.
+This is important for when your front end module references a page as the redirect target for example. Or
+if your front end module renders a news list and you need the URL to the details page of each news item.
 
 ```php
 // src/MyService.php
@@ -45,7 +45,7 @@ class MyService
 
         $news = NewsModel::findBy(…);
 
-        // Generates an absolte path for the given news item
+        // Generates an absolute path for the given news item
         $newsUrl = $this->contentUrlGenerator->generate($news, [], UrlGeneratorInterface::ABSOLUTE_PATH);
     }
 }
@@ -96,7 +96,7 @@ You can generate the URL directly in your template via the `content_url()` Twig 
 
 ## Content URL Resolver
 
-For your own database records (i.e. for your own models or entities) you can register a "content URL resolver" which the
+For your own objects (i.e. for your own models or entities), you can register a "content URL resolver" which the
 `ContentUrlGenerator` will then invoke whenever the generation of an URL is requested. Such a resolver needs to
 implement the `ContentUrlResolverInterface`:
 
@@ -110,7 +110,7 @@ interface ContentUrlResolverInterface
     /**
      * Returns a result for resolving the given content.
      *
-     * - ContentUrlResult::url() if the content has a URL string that could be relative or contain insert tags.
+     * - ContentUrlResult::url() if the content has a URL string that could be relative or contains an insert tag.
      * - ContentUrlResult::redirect() to generate the URL for a new content instead of the current one.
      * - ContentUrlResult::resolve() to generate the URL for the given PageModel with the current content.
      *
@@ -120,9 +120,9 @@ interface ContentUrlResolverInterface
 
     /**
      * Returns an array of parameters for the given content that can be used to
-     * generate a URL for this content. If the parameter is used in the page alias, it
+     * generate a URL for this content. If the parameter is used in the page route, it
      * will be used to generate the URL. Otherwise, it is ignored (contrary to the
-     * Symfony URL generator which would add it as a query parameter).
+     * Symfony URL generator, which would add it as a query parameter).
      *
      * @return array<string, string|int>
      */
@@ -208,18 +208,18 @@ then process the URL further (i.e. replace insert tags and make sure that the UR
 type).
 * If the news redirects to a Contao page or article (and not to a news reader), a `ContentUrlResult` with the page or article as its content
 will be returned. This will cause the result to be forwarded to the `PageResolver` or `ArticleResolver` respectively.
-* Otherwise the news resolver determines the target page of the news item's archive and returns a `ContentUrlResult`
+* Otherwise the news resolver determines the target page of the news archive and returns a `ContentUrlResult`
 with that page as its content.
 
 The difference in the latter case is the usage of `ContentUrlResult::resolve()` rather than 
 `ContentUrlResult::redirect()`. In this case the URL will be resolved for the given target with the current content as
 the target's content.
 
-This is important for the second part of the interface: `getParametersForContent()`. Here your URL resolver can define
+This is important for the second part of the interface: `getParametersForContent()`. Here, your URL resolver can define
 what parameters should be used during URL generation when generating the URL for your resolved content. For example, if your
 content is expected to be shown on a regular page of Contao (like in the news item example) then you might want to
 define the `parameters` parameter (see [Legacy Parameters][LegacyParameters]). Or if your content is expected to be
-shown within a certain [page controller][PageControllers] you can generate the parameters that your page controller's
+shown within a certain [page controller][PageControllers], it knows the parameters that your page controller's
 route uses for the given content.
 
 
@@ -292,35 +292,21 @@ namespace App\Routing;
 use App\Model\FoobarModel;
 use Contao\CoreBundle\Routing\Content\ContentUrlResolverInterface;
 use Contao\CoreBundle\Routing\Content\ContentUrlResult;
-use Contao\CoreBundle\Routing\PageFinder;
 use Contao\PageModel;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 class FoobarResolver implements ContentUrlResolverInterface
 {
-    public function __construct(
-        private readonly RequestStack $requestStack,
-        private readonly PageFinder $pageFinder,
-    ) {
-    }
-
     public function resolve(object $content): ContentUrlResult|null
     {
         if (!$content instanceof FoobarModel) {
             return null;
         }
 
-        if (!$request = $this->requestStack->getCurrentRequest()) {
-            return null;
-        }
-
         /**
-         * This is a simplification for this example. We simply look for the first "foobar_reader" page type in this
-         * website and assume that this is the correct page for which we want to generate the detail URL of our record.
+         * This is a simplification and assumes your model has a property "jumpTo" that points to
+         * the target page. How the target page is determined will depend on your application.
          */
-        $foobarPage = $this->pageFinder->findFirstPageOfTypeForRequest($request, 'foobar_reader');
-
-        return ContentUrlResult::resolve($foobarPage);
+        return ContentUrlResult::resolve(PageModel::findByPk($content->jumpTo));
     }
 
     public function getParametersForContent(object $content, PageModel $pageModel): array
@@ -334,8 +320,8 @@ class FoobarResolver implements ContentUrlResolverInterface
 }
 ```
 
-As you can see within our `getParametersForContent()` method we return a value for the `foobarId` parameter as this is
-the required parameter for our page controller for which we are leting the content URL resolver generate the URL in our
+As you can see within our `getParametersForContent()` method, we return a value for the `foobarId` parameter. This is
+the required parameter for our page controller, for which we are letting the content URL resolver generate the URL in our
 own resolver above.
 
 

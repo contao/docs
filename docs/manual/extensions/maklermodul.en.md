@@ -3,11 +3,11 @@ title: "Broker module for real estate agents"
 description: "The broker module for estate agents is a paid extension for the Contao CMS."
 ---
 
-**[pdir/maklermodul-bundle] (https://packagist.org/packages/pdir/maklermodul-bundle)**
+**[pdir/maklermodul-bundle](https://packagist.org/packages/pdir/maklermodul-bundle)**
 
-_by [pdir GmbH] (https://www.pdir.de)_
+_by [pdir GmbH](https://www.pdir.de)_
 
-_Project website under [Broker module for Contao] (https://maklermodul.de)_
+_Project website under [Broker module for Contao](https://maklermodul.de)_
 
 The broker module for estate agents is a paid extension for the Contao CMS.
 
@@ -17,17 +17,7 @@ Detailed instructions can be found in the [manual](https://docs.pdir.de/#/makler
 
 ### Contao Themes with layout templates for the Maklermodul
 
-These contao themes include layout templates for the Maklermodul.
-
-#### MATE Theme
-
-**Demo:** [mate.pdir.de/immobilien.html](https://mate.pdir.de/immobilien.html)  
-**Docs:** [docs.contao-themes.net](https://docs.contao-themes.net/#/mate_theme/maklermodul)  
-**Install for free or order a license:** [contao-themes.net/theme-detail/mate.html](https://contao-themes.net/theme-detail/mate.html)  
-
-![property list with select lists within the MATE theme]({{% asset "images/manual/extensions/en/maklermodul_mate_liste_selects_en.png" %}}?width=150px) 
-![property list with buttons within the MATE theme]({{% asset "images/manual/extensions/en/maklermodul_mate_liste_buttons_en.png" %}}?width=150px) 
-![property description within the MATE theme]({{% asset "images/manual/extensions/en/maklermodul_mate_details_en.png" %}}?width=150px)
+This contao theme include layout templates for the Maklermodul.
 
 #### ODD Theme
 

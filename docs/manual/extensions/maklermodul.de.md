@@ -18,17 +18,7 @@ Eine detaillierte Anleitung findest du im [Maklermodul Handbuch](https://docs.pd
 
 ### Contao Themes mit Layoutvorlagen für das Maklermodul
 
-Diese Themes liefern bereits Layoutvorlagen (CSS und Templates) für das Maklermodul mit.
-
-#### MATE Theme
-
-**Demo:** [mate.pdir.de/immobilien.html](https://mate.pdir.de/immobilien.html)  
-**Dokumentation:** [docs.contao-themes.net](https://docs.contao-themes.net/#/mate_theme/maklermodul)  
-**Kostenlos installieren oder Lizenz bestellen:** [contao-themes.net/theme-detail/mate.html](https://contao-themes.net/theme-detail/mate.html)  
-
-![Immobilienliste mit Auswahllisten im MATE Theme]({{% asset "images/manual/extensions/de/maklermodul_mate_liste_selects.png" %}}?width=150px) 
-![Immobilienliste mit Buttons im MATE Theme]({{% asset "images/manual/extensions/de/maklermodul_mate_liste_buttons.png" %}}?width=150px) 
-![Immobilien Exposé im MATE Theme]({{% asset "images/manual/layout/extensions/de/maklermodul_mate_details.png" %}}?width=150px)
+Dieses Theme liefert bereits Layoutvorlagen (CSS und Templates) für das Maklermodul mit.
 
 #### ODD Theme
 

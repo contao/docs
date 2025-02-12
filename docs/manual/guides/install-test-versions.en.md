@@ -49,21 +49,11 @@ Release candidates use a specific release version tag. For example the first rel
 candidate of Contao `5.5` will have a release tag called `5.5.0-RC1`. Usually Composer
 will only install _stable_ versions by default and thus skip any such release candidates.
 
-To allow the installation of release candidates, the `minimum-stability` needs to
-be lowered to `RC` in the `composer.json`. Additionally, we instruct Composer to
-always prefer _stable_ versions of each package, so that a stable release of Contao
-`5.5` gets installed, once available. Finally, the requested Contao, i.e. the `contao/manager-bundle` 
-needs to be changed to `5.5.*`, as with any minor version update.
-
-```json
-{
-    "require": {
-        "contao/manager-bundle": "5.5.*"
-    },
-    "minimum-stability": "RC",
-    "prefer-stable": true
-}
-```
+To allow the installation of release candidates, the `minimum-stability` needs to be lowered to `RC` in the
+`composer.json`. Alternatively you can also use [stability-flags][ComposerStabilityContraints] for each package in order
+to allow them to be installed in lower stabilities, e.g. `"contao/manager-bundle": "5.5.*@RC". In this case you will
+also have to add the `contao/core-bundle` package to your project's `composer.json` in order to allow the lower
+stability for this package as well.
 
 Here is a full example for installing the latest Contao `5.5` version, _including_
 its latest release candidates (if there are any):
@@ -75,18 +65,16 @@ its latest release candidates (if there are any):
     "license": "LGPL-3.0-or-later",
     "type": "project",
     "require": {
-        "contao/calendar-bundle": "^5.5",
-        "contao/comments-bundle": "^5.5",
+        "contao/calendar-bundle": "^5.5@RC",
+        "contao/comments-bundle": "^5.5@RC",
         "contao/conflicts": "@dev",
-        "contao/core-bundle": "^5.5",
-        "contao/faq-bundle": "^5.5",
-        "contao/listing-bundle": "^5.5",
-        "contao/manager-bundle": "5.5.*",
-        "contao/news-bundle": "^5.5",
-        "contao/newsletter-bundle": "^5.5"
+        "contao/core-bundle": "^5.5@RC",
+        "contao/faq-bundle": "^5.5@RC",
+        "contao/listing-bundle": "^5.5@RC",
+        "contao/manager-bundle": "5.5.*@RC",
+        "contao/news-bundle": "^5.5@RC",
+        "contao/newsletter-bundle": "^5.5@RC"
     },
-    "minimum-stability": "RC",
-    "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
@@ -145,7 +133,6 @@ next version:
         "contao/conflicts": "@dev",
         "contao/core-bundle": "5.x-dev",
         "contao/faq-bundle": "5.x-dev",
-        "contao/installation-bundle": "5.x-dev",
         "contao/listing-bundle": "5.x-dev",
         "contao/manager-bundle": "5.x-dev",
         "contao/news-bundle": "5.x-dev",
@@ -176,12 +163,10 @@ next version:
 }
 ```
 
-Note that in this case we also need to require the `contao/core-bundle` and the
-`contao/installation-bundle`, which we would usually not include in the project's
-`composer.json`. This is necessary, since we want to tell Composer to specifically
-install a development version, without lowering the `minimum-stability` to `dev`
-(wich would drastically increase computation time and memory consumption during
-a composer update).
+Note that in this case we also need to require the `contao/core-bundle` and the `contao/installation-bundle`, which we
+would usually not include in the project's `composer.json`. This is necessary, since we want to tell Composer to
+specifically install a development version, without lowering the `minimum-stability` to `dev` (wich would drastically
+increase computation time and memory consumption during a composer update).
 
 Each time the packages are updated, the most recent code for this branch will be 
 pulled from Contao's public Git repository.
@@ -213,3 +198,4 @@ package update process to finish.
 
 
 [releasePlan]: https://contao.org/en/release-plan.html
+[ComposerStabilityContraints]: https://getcomposer.org/doc/articles/versions.md#stability-constraints
