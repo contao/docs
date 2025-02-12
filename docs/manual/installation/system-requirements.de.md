@@ -39,7 +39,7 @@ empfohlen, diese immer zu verwenden.
 | [Gmagick][ext-gmagick] (`ext-gmagick`)            | erfordert GD, Imagick oder Gmagick<sup>1</sup> | erfordert GD, Imagick oder Gmagick<sup>1</sup> |
 | [File Information][ext-fileinfo] (`ext-fileinfo`) | **erforderlich**                               | **erforderlich**                               |
 | [Sodium][ext-sodium] (`ext-sodium`)               | -                                              | **erforderlich** für PHP 8.3+<sup>2</sup>      |
-| [SQLite PDO Driver][ext-pdo-sqlite] (`ext-pdo_sqlite`) | -                                       | {{< version-tag "5.5" >}} **erforderlich** für die Backend-Suche |
+| [SQLite PDO Driver][ext-pdo-sqlite] (`ext-pdo_sqlite`) | -                                         | {{< version-tag "5.5" >}} **erforderlich** für die Backend-Suche |
 | [SQLite3][ext-sqlite3] (`ext-sqlite3`)            | -                                              | {{< version-tag "5.5" >}} **erforderlich** für die Backend-Suche |
 
 {{% notice note %}}
