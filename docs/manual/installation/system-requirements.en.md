@@ -37,6 +37,8 @@ always use them.
 | [Gmagick][ext-gmagick] (`ext-gmagick`)            | requires GD, Imagick or Gmagick<sup>1</sup> | requires GD, Imagick or Gmagick<sup>1</sup> |
 | [File Information][ext-fileinfo] (`ext-fileinfo`) | **required**                                | **required**                                |
 | [Sodium][ext-sodium] (`ext-sodium`)               | -                                           | **required** for PHP 8.3+<sup>2</sup>       |
+| [SQLite PDO Driver][ext-pdo_sqlite] (`ext-pdo_sqlite`) | -                                      | {{< version-tag "5.5" >}} **required** for the back end search |
+| [SQLite3][ext-sqlite3] (`ext-sqlite3`)            | -                                           | {{< version-tag "5.5" >}} **required** for the back end search |
 
 {{% notice note %}}
 <sup>1</sup> Contao automatically selects an image processing library depending on its availability.
@@ -62,6 +64,8 @@ $ vendor/bin/contao-console debug:container contao.image.imagine
 [ext-gmagick]: https://www.php.net/manual/en/book.gmagick.php
 [ext-fileinfo]: https://www.php.net/manual/en/book.fileinfo.php
 [ext-sodium]: https://www.php.net/manual/en/book.sodium.php
+[ext-pdosqlite]: https://www.php.net/manual/en/ref.pdo-sqlite.php
+[ext-sqlite3]: https://www.php.net/manual/en/book.sqlite3.php
 
 All required extensions are enabled by default in current PHP versions. However, some hosting providers
 explicitly disable them. The requirements are automatically checked during installation via the
