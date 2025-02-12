@@ -27,6 +27,7 @@ Due to the switch of the theme from Hugo Learn to Hugo Relearn, you will need to
 
 ```bash
 git submodule sync
+git submodule update
 ```
 
 once, if you had already checked out the repository before the switch.
