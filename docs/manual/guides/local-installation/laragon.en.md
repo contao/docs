@@ -1,6 +1,6 @@
 ---
 title: "Laragon"
-menuTitle: "With Laragon"
+linkTitle: "With Laragon"
 description: "With Laragon, one or more Contao installations can be installed and maintained locally."
 aliases:
     - /en/guides/local-installation/laragon/

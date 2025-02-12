@@ -423,8 +423,8 @@ can already write modern template code.
 The gist: You, as the template designer, have to decide how things should be output, because *only you* know the context
 in which content can be trusted or not. The *exact same* data can be dangerous in one context and harmless in another!
 
-{{< tabs groupId="output-encoding-example">}}
-{{% tab name="Input encoding" %}}
+{{< tabs groupid="output-encoding-example">}}
+{{% tab title="Input encoding" %}}
 Assume you have a variable `color` that should contain color names (like `red`, `green`, `rebeccapurple`, …) and a
 template that should output the name of the color inside a box with a background of this color. Maybe like so:
 
@@ -477,7 +477,7 @@ idea. You won't be able to fix mistakes made when "input encoding", neither will
 output context later on.
 
 {{% /tab %}}
-{{% tab name="Output encoding" %}}
+{{% tab title="Output encoding" %}}
 With Twig, we can be specific how a certain variable should be treated, depending on the context! Use the `|escape` (or
 short `|e`) filter for this:
 

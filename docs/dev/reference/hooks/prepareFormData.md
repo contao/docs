@@ -35,8 +35,8 @@ distribution or data storage.
 
 
 ## Example
-{{< tabs groupId="prepareFormData-example" >}}
-{{% tab name="Since Contao 5.2" %}}
+{{< tabs groupid="prepareFormData-example" style="code" >}}
+{{% tab title="Since Contao 5.2" %}}
 ```php
 // src/EventListener/PrepareFormDataListener.php
 namespace App\EventListener;
@@ -70,7 +70,7 @@ class PrepareFormDataListener
 }
 ```
 {{% /tab %}}
-{{% tab name="Before Contao 5.2" %}}
+{{% tab title="Before Contao 5.2" %}}
 ```php
 // src/EventListener/PrepareFormDataListener.php
 namespace App\EventListener;

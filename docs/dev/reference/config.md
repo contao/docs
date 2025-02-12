@@ -14,8 +14,8 @@ $ vendor/bin/contao-console config:dump-reference contao
 
 The following is a dump of the configuration reference.
 
-{{< tabs groupId="bundle-config" >}}
-{{% tab name="Contao 5" %}}
+{{< tabs groupid="bundle-config" style="code" >}}
+{{% tab title="Contao 5" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:
@@ -395,7 +395,7 @@ contao:
         max_header_size:      3072
 ```
 {{% /tab %}}
-{{% tab name="Contao 4" %}}
+{{% tab title="Contao 4" %}}
 ```yaml
 # Default configuration for extension with alias: "contao"
 contao:

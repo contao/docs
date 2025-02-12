@@ -68,7 +68,7 @@ Elemente können durch Anklicken in den Bearbeitungsmodus geschaltet werden, ohn
 verwendet werden muss. Folgende Aktionen werden unterstützt:
 
 {{< tabs >}}
-{{% tab name="Contao 5+" %}}
+{{% tab title="Contao 5+" %}}
 Windows:
 - `[Ctrl] + Klick`: das Element bearbeiten
 - `[Ctrl] + [Shift] + Klick`: die Kinder-Elemente bearbeiten
@@ -79,7 +79,7 @@ macOS:
 - `[Cmd] + [Shift] + Klick`: die Kinder-Elemente bearbeiten
 {{% /tab %}}
 
-{{% tab name="Contao 4" %}}
+{{% tab title="Contao 4" %}}
 Windows:
 - `[Ctrl] + Klick`: das Element bearbeiten
 - `[Ctrl] + [Shift] + Klick`: die Elementeinstellungen bearbeiten
