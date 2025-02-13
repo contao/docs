@@ -158,36 +158,17 @@ Anschließend sollte der Contao Manager wieder laufen.
 
 ### Kann ich dem Contao Manager ein weiteres Benutzerkonto hinzufügen? {#kann-ich-dem-contao-manager-ein-weiteres-benutzerkonto-hinzufuegen}
 
-Ja, dazu musst du im Verzeichnis `contao-manager` die Datei `users.json` bearbeiten und ein 
-weiteres Benutzerkonto hinzufügen. In unserem Fall ist das `h.lewis`.
+{{< version "Manager 1.9" >}}
 
-```json
-{
-    "users": {
-        "k.jones": {
-            "username": "k.jones",
-            "password": "…"
-        },
-        "h.lewis": {
-            "username": "h.lewis",
-            "password": "…"
-        }
-    },
-    "version": 2,
-    "secret": "…"
-}
+Ja, mit ADMIN-Rechten kannst du weitere Benutzer:innen zum Contao Manager einladen.
+Klicke dazu im Menü auf das Zahnrad und dann auf _Konten_. Hier kannst du einen Einladungs-Link erstellen,
+und dem neuen Konto eine der folgenden Berechtigungen vergeben:
 
-```
-
-{{% notice info %}}
-Der Wert für »password« muss hierbei verschlüsselt eingetragen werden. Über [bcrypt-generator.com](https://bcrypt-generator.com/)
-könntest du z. B. den notwendigen Hash-Wert generieren. Alternativ dazu kann man den Hash-Wert auch mit dem folgenden Konsolenaufruf
-in seiner eigenen Contao-Installation erstellen:
-
-```bash
-php vendor/bin/contao-console security:encode-password 'my_1._pA~~w0rd'
-```
-{{% /notice %}}
+- **READ** – kann die installierten Pakete sehen und Log-Dateien lesen, aber
+  das System nicht verändern.
+- **UPDATE** – darf bestehende Pakete aktualisieren und Wartungsaufgaben vornehmen (z. B. Cache leeren).
+- **INSTALL** – darf Pakete aktualisieren und installieren und Systemeinstellungen ändern.
+- **ADMIN** – kann alle Funktionen des Contao Managers nutzen.
 
 
 ### Kann der Contao Manager zu einer bestehenden Installation hinzugefügt werden? {#kann-der-contao-manager-zu-einer-bestehenden-installation-hinzugefuegt-werden}
@@ -209,4 +190,3 @@ Contao Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Kon
 contao_manager:
     manager_path: dein-name.phar.php
 ```
-
