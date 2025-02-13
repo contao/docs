@@ -151,7 +151,7 @@ section of the Data Container Array as `tl_class` (e.g. `'tl_class' => 'w50 wiza
 | `w75` | Set the field width to 75% and float it (`float:left`). {{< version-tag "5.1" >}} |
 | `clr` | Clear all floats (`clear:both`). Use this for any full length field coming after a `w50` field within a fieldset (see note below). |
 | `wizard` | Shorten the input field so there is enough room for the wizard button (e.g. date picker fields). |
-| `long` | Make the text input field span two columns. |
+| `long` | Make the input field full length. |
 | `cbx` | Set the field minimum height to 46 pixels (used for single checkboxes; more space at bottom). |
 | `m12` | Adds a 17 pixels top and bottom padding to the element (used for single checkboxes; more space at top and bottom). |
 | `cbx m12` | A combination of cbx and m12 sets the minimum height of the field to 80 pixels (used for single checkboxes; more space at top and bottom). |
