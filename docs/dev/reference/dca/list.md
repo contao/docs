@@ -101,12 +101,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | class           | CSS class (`string`)              | CSS class attribute of the button.                                                                                 |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function to generate the button. Please specify as `['Class', 'Method']` or use service tagging. |
-
-{{< version "4.7" >}}
-
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
+| route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                     |
 
 
 {{% notice "note" %}}
