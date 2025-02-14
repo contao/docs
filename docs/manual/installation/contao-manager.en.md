@@ -138,38 +138,17 @@ After that, the Contao Manager should run again.
 
 ### Can I add another user account to Contao Manager?
 
-Yes, you have to edit the file `users.json` in the directory `contao-manager` and add an additional user account. In 
-our case this is `h.lewis`.
+{{< version “Manager 1.9” >}}
 
-```json
-{
-    "users": {
-        "k.jones": {
-            "username": "k.jones",
-            "password": "…"
-        },
-        "h.lewis": {
-            "username": "h.lewis",
-            "password": "…"
-        }
-    },
-    "version": 2,
-    "secret": "…"
-}
+Yes, with ADMIN rights you can invite other users to the Contao Manager.
+To do this, click on the gear wheel in the menu and then on _Accounts_. Here you can create an invitation link,
+and assign one of the following permissions to the new account:
 
-```
-
-{{% notice info %}}
-The value for "password" must be entered encrypted. You can use services like 
-[bcrypt-generator.com](https://bcrypt-generator.com/)
-for example in order to generate the necessary hashed value. Alternatively, you can generate the hash value with the 
-following console call
-in your own Contao installation:
-
-```bash
-php vendor/bin/contao-console security:encode-password 'my_1._pA~~~w0rd'
-```
-{{% /notice %}}
+- **READ** – can see the installed packages and read log files, but
+  cannot change the system.
+- **UPDATE** – may update existing packages and perform maintenance tasks (e.g. clear cache).
+- **INSTALL** – may update and install packages and change system settings.
+- **ADMIN** – can use all functions of the Contao Manager.
 
 
 ### Can Contao Manager be added to an existing installation?
@@ -190,4 +169,3 @@ once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebu
 contao_manager:
     manager_path: your-name.phar.php
 ```
-
