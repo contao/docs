@@ -1,6 +1,6 @@
 ---
 title: Contao News Twitter Sync
-menuTitle: News Twitter Sync
+linkTitle: News Twitter Sync
 description: Contao News Twitter Sync is a commercial extension for synchronisation of Twitter tweets with a news archive.
 ---
 

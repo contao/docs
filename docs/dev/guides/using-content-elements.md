@@ -1,6 +1,6 @@
 ---
 title: "Content Elements for your Table"
-menuTitle: "Using Content Elements for your Table"
+linkTitle: "Using Content Elements for your Table"
 description: "This guide shows how to use Contao's content elements as child records for the records of your own table."
 aliases:
   - /guides/using-content-elements/

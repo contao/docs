@@ -1,6 +1,6 @@
 ---
 title: 'Members'
-menuTitle: 'Members (front end)'
+linkTitle: 'Members (front end)'
 description: 'The administration of front end users is much simpler than the administration of back end users, since there is no need to work with mounts and individual input fields.'
 aliases:
     - /en/user-management/members/
