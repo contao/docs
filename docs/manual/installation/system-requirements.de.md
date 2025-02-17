@@ -11,6 +11,11 @@ Um Contao erfolgreich auszuführen, muss der Webserver diese Systemvoraussetzung
 für den vertrauten [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle))-Stack entwickelt, läuft jedoch auf 
 jedem Webserver, der eine aktuelle Version von PHP und MySQL bereitstellt.
 
+{{% notice info %}}
+Falls du den Contao Manager für die Installation und die Aktualisierung deiner Contao-Instanzen verwendest, solltest du auch 
+seine [Systemvoraussetzungen](https://docs.contao.org/manual/de/installation/contao-manager/#systemvoraussetzungen) beachten. 
+{{% /notice %}}
+
 
 ## Software-Empfehlungen
 
