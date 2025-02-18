@@ -746,3 +746,14 @@ span[class^="issue-label-"] {
     padding: 10px;
     margin: 0 0 20px;
 }
+
+/* Reset font-size of code in headlines (https://github.com/contao/docs/pull/1501#issuecomment-2653755330) */
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+nav.TableOfContents li a code {
+    font-size: 92%;
+}
