@@ -55,7 +55,8 @@ The template for `mail_responsive`:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title><?= $this->title ?></title>
-  ```
+```
+
 {{% faq "CSS of the newsletter" %}}
 ```css
     <style media="all" type="text/css">
@@ -341,6 +342,7 @@ The template for `mail_responsive`:
     </style>
 ```
 {{% /faq %}}
+
 ```html
   </head>
   <body>
