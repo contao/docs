@@ -42,6 +42,8 @@
     --EXAMPLE-HEADER-BG-color: #e7e7e7;
     --EXAMPLE-CONTENT-BG-color: #f6f6f6;
     --EXAMPLE-BORDER-color: #ccc;
+
+    --BLOCK-QUOTE-BORDER-color: #F0F2F4;
 }
 
 #R-body-inner {
