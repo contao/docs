@@ -9,6 +9,11 @@ To run Contao successfully, the web server must meet these system requirements. 
 developed for the familiar [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) stack, but runs on
 any web server that provides a current version of PHP and MySQL.
 
+{{% notice info %}}
+If you use the Contao Manager to install and update your Contao instances, you should also note
+its [System requirements](https://docs.contao.org/manual/en/installation/contao-manager/#system-requirements). 
+{{% /notice %}}
+
 
 ## Software Recommendations
 

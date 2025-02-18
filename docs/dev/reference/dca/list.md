@@ -70,7 +70,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['label'] = [
 |----------------|----------------------------------|----------------------------------------------------------------------------------------------------|
 | fields         | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `['title', 'user_id:tl_user.name']`). |
 | showColumns    | true/false (`bool`)           | If true Contao will generate a table header with column names (e.g. back end member list)          |
-| showFirstOrderBy | true/false (`bool`)           | {{< version-tag "4.13.36" >}} If false Contao will not force the first sorting field to show up in the list.          |
+| showFirstOrderBy | true/false (`bool`)           | {{< version-tag "4.13.36" >}} If false Contao will not force the first sorting field to show up in the list. (default: `true`)         |
 | format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. `'%s (%s)'`).                       |
 | maxCharacters  | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
 | [group_callback](../callbacks#list-label-group) | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
@@ -101,12 +101,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | class           | CSS class (`string`)              | CSS class attribute of the button.                                                                                 |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function to generate the button. Please specify as `['Class', 'Method']` or use service tagging. |
-
-{{< version "4.7" >}}
-
-| Key             | Value                             | Description                                                                                                        |
-|-----------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
+| route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                     |
 
 
 {{% notice "note" %}}
