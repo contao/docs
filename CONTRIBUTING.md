@@ -118,6 +118,9 @@ Lorem ipsum dolor sit amet ...
 {{% /faq %}}
 ```
 
+_Note:_ only use this for actual FAQs - otherwise use the [`expand`](https://mcshelby.github.io/hugo-theme-relearn/shortcodes/expand/index.html)
+shortcode.
+
 
 ## New features
 
