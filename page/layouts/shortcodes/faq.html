@@ -1,3 +1,4 @@
+{{- $_hugo_config := `{ "version": 1 }` }}
 {{ $question := .Get 0 }}
 {{ if $question }}
     {{- partial "shortcodes/expand.html" (dict
