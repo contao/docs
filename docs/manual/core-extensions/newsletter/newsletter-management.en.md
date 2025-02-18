@@ -57,7 +57,7 @@ The template for `mail_responsive`:
     <title><?= $this->title ?></title>
 ```
 
-{{% faq "CSS of the newsletter" %}}
+{{% expand "CSS of the newsletter" %}}
 ```css
     <style media="all" type="text/css">
 /* -------------------------------------
@@ -341,7 +341,7 @@ The template for `mail_responsive`:
     }
     </style>
 ```
-{{% /faq %}}
+{{% /expand %}}
 
 ```html
   </head>
