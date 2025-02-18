@@ -10,4 +10,8 @@
     --MAIN-LINK-color: #1C90F3;
     --MAIN-LINK-HOVER-color: #167ad0;
     --MAIN-SECONDARY-color: #1C90F3;
+
+    --CODE-INLINE-BG-color: #F6F6F6;
+    --CODE-INLINE-BORDER-color: #F6F6F6;
+    --CODE-INLINE-color: #5e5e5e;
 }
