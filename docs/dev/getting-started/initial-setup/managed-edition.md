@@ -49,8 +49,8 @@ graph LR;
     C-- requires -->E
     D-- requires -->E
     E-- manages -->A
-    style B fill:#fcc
-    style E fill:#ffc
+    style B fill:#969
+    style E fill:#cc7801
 {{< /mermaid >}}
 
 The key of a `Managed Edition` are the following lines in your `composer.json` which you'll get automatically when you
