@@ -167,7 +167,8 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 {{% notice "note" %}}
 {{< version-tag "5.5" >}}
 All operations are now shown within the context-menu. If you want them to appear in the overview, you can enable them by
-prepending your key with `!` as seen in the example.
+prepending your key with `!` as seen in the example. Note that the operations `edit`, `children` and `toggle` will always appear in
+the overview regardless.
 
 ```php
 
