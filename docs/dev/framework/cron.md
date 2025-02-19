@@ -317,7 +317,7 @@ class HourlyCron
             throw new CronExecutionSkippedException();
         }
 
-        return new Promise(static function () use (&$promise): void {
+        return $promise = new Promise(static function () use (&$promise): void {
             // Do something that is asynchronous
             $promise->resolve('Done with asynchronous process.');
         });
