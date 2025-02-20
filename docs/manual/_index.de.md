@@ -1,6 +1,6 @@
 ---
-title: "Contao Handbuch"
-description: ""
+title: Contao Handbuch
+type: home
 ---
 
 # Herzlich willkommen

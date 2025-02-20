@@ -1,5 +1,6 @@
 ---
-title: "Contao Manual"
+title: Contao Manual
+type: home
 ---
 
 # Welcome
