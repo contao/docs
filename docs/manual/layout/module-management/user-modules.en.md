@@ -127,8 +127,8 @@ The front end module generates the following HTML code:
 
 ## Automatic logout
 
-{{< tabs groupId="contaoVersion">}}
-{{% tab name="Contao  4" %}}
+{{< tabs groupid="contaoVersion">}}
+{{% tab title="Contao  4" %}}
 The front end module "Automatic logout" adds an invisible module to the website that automatically logs out a logged in 
 front end user.
 
@@ -145,7 +145,7 @@ instead of the redirection page.
 
 The module does not generate HTML output.
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 This module has been replaced by the "[Logout](/en/site-structure/logout/)" page type, which creates a logout link for 
 a protected area.
 {{% /tab %}}

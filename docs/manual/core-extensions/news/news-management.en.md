@@ -86,8 +86,8 @@ comment, you can disable the security question here. Since Contao 4.4, this ques
 
 ## RSS feeds
 
-{{< tabs groupId="contaoVersion">}}
-{{% tab name="Contao  4" %}}
+{{< tabs groupid="contaoVersion">}}
+{{% tab title="Contao  4" %}}
 Every news or blog archive can be exported as RSS/Atom feed if desired. RSS feeds are XML files containing your news 
 contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
@@ -140,7 +140,7 @@ Contao installation. To make sure that the feed links to the correct domain, you
 | Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 Every news or blog archive can be exported as RSS/Atom or JSON feed if desired. RSS feeds are XML files containing your 
 news contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 

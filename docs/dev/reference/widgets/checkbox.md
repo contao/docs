@@ -44,9 +44,9 @@ Depending on the widget configuration, the widget persists different values to t
 
 ## Examples
 
-{{< tabs groupId="checkbox-widget-examples" >}}
+{{< tabs groupid="checkbox-widget-examples" style="code" >}}
 
-{{% tab name="Toggle" %}}
+{{% tab title="Toggle" %}}
 
 If you simply want to toggle a property:
 
@@ -65,7 +65,7 @@ If you simply want to toggle a property:
 
 {{% /tab %}}
 
-{{% tab name="Fixed options" %}}
+{{% tab title="Fixed options" %}}
 
 If you want the editor to select from a fixed set of properties, you may define them via the `options` field. The selected options will be stored as a serialized array, so make sure your database field can store enough data.
 
@@ -93,7 +93,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 
 {{% /tab %}}
 
-{{% tab name="Dynamic options" %}}
+{{% tab title="Dynamic options" %}}
 
 You can also dynamically generate the options array to filter them as you wish. See the [options callback](../../dca/callbacks#fields-field-options) for further examples.
 
@@ -121,7 +121,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 
 {{% /tab %}}
 
-{{% tab name="Options from a table" %}}
+{{% tab title="Options from a table" %}}
 
 You can generate an options array from another table with the `foreignKey` property. 
 

@@ -1,5 +1,6 @@
 ---
-title: "Contao Developer Documentation"
+title: Contao Developer Documentation
+type: home
 ---
 
 

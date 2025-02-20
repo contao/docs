@@ -1,6 +1,6 @@
 ---
 title: Contao News Sync
-menuTitle: News Sync
+linkTitle: News Sync
 description: Contao News Sync is a commercial extension for synchronising news articles between Contao installations.
 aliases:
     - /en/extensions/_news-sync/

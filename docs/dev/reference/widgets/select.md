@@ -46,9 +46,9 @@ Depending on the widget configuration, the widget persists different values to t
 
 ## Examples
 
-{{< tabs groupId="select-widget-examples" >}}
+{{< tabs groupid="select-widget-examples" style="code" >}}
 
-{{% tab name="Simple select" %}}
+{{% tab title="Simple select" %}}
 
 If you simply want to select an option from a fixed set.
 
@@ -71,7 +71,7 @@ If you simply want to select an option from a fixed set.
 
 {{% /tab %}}
 
-{{% tab name="Grouped select" %}}
+{{% tab title="Grouped select" %}}
 
 If you simply want to select one option from a fixed set of grouped options.
 
@@ -101,7 +101,7 @@ If you simply want to select one option from a fixed set of grouped options.
 
 {{% /tab %}}
 
-{{% tab name="Dynamic options with search box" %}}
+{{% tab title="Dynamic options with search box" %}}
 
 You can also dynamically generate the options array to filter them as you wish. See the [options callback](../../dca/callbacks#fields-field-options) for further examples. 
 
@@ -127,7 +127,7 @@ You can also dynamically generate the options array to filter them as you wish. 
 
 {{% /tab %}}
 
-{{% tab name="Options from a table" %}}
+{{% tab title="Options from a table" %}}
 
 You can generate an options array from another table with the `foreignKey` property. 
 

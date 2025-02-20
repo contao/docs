@@ -49,9 +49,9 @@ it can contain content of arbitrary length.
 
 ## Examples
 
-{{< tabs groupId="textarea-widget-examples" >}}
+{{< tabs groupid="textarea-widget-examples" style="code" >}}
 
-{{% tab name="Textarea" %}}
+{{% tab title="Textarea" %}}
 
 If you simply want to allow multi-line text input:
 
@@ -73,7 +73,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 
 {{% /tab %}}
 
-{{% tab name="TinyMCE" %}}
+{{% tab title="TinyMCE" %}}
 
 If you want to provide a TinyMCE text editor for your textarea input:
 
@@ -99,7 +99,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 
 {{% /tab %}}
 
-{{% tab name="Ace" %}}
+{{% tab title="Ace" %}}
 
 If you want to provide the Ace editor with syntax highlighting for JavaScript for your textarea input:
 

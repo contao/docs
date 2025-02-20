@@ -43,8 +43,8 @@ möglich ist.
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_image` überschreiben.
 
 **HTML-Ausgabe**  
@@ -61,7 +61,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/image` überschreiben.
 
 **HTML-Ausgabe**  
@@ -131,8 +131,8 @@ Lightbox geöffnet (dazu ist JavaScript erforderlich).
 
 **Galerietemplate:** Hier kannst du das Galerietemplate überschreiben.
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_gallery` überschreiben.
 
 **HTML-Ausgabe**  
@@ -169,7 +169,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/gallery` überschreiben.
 
 **HTML-Ausgabe**  
@@ -248,8 +248,8 @@ deaktivieren.
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_player` überschreiben.
 
 **HTML-Ausgabe**  
@@ -266,7 +266,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/player` überschreiben.
 
 **HTML-Ausgabe**  
@@ -333,8 +333,8 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_vimeo` überschreiben.
 
 **HTML-Ausgabe**  
@@ -364,7 +364,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/vimeo` überschreiben.
 
 **HTML-Ausgabe**  
@@ -440,8 +440,8 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_youtube` überschreiben.
 
 **HTML-Ausgabe**  
@@ -473,7 +473,7 @@ Das Element generiert folgenden HTML-Code:
 <!-- indexer::continue -->
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/youtube` überschreiben.
 
 **HTML-Ausgabe**  

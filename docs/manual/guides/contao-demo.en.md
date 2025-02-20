@@ -101,9 +101,9 @@ account.
 
 The three files could now look like this in excerpts:
 
-{{< tabs groupId="SASS-SAMPLE">}}
+{{< tabs groupid="SASS-SAMPLE">}}
 
-{{% tab name="_colors.scss" %}}
+{{% tab title="_colors.scss" %}}
 ```scss
 // global colors
 $c-primary--50: hsla(30, 100%, 97%, 1)  !default;
@@ -122,7 +122,7 @@ $gradient--1: radial-gradient(50% 50% at 50% 50%, hsla(207, 44%, 26%, 1) 0%, hsl
 ```
 {{% /tab %}}
 
-{{% tab name="_custom.scss" %}}
+{{% tab title="_custom.scss" %}}
 ```scss
 // ### custom color variables
 
@@ -139,7 +139,7 @@ $gradient--1: radial-gradient(50% 50% at 50% 50%, $c-primary--700 0%, $c-seconda
 ```
 {{% /tab %}}
 
-{{% tab name="app.scss" %}}
+{{% tab title="app.scss" %}}
 ```scss
 // ### custom variables
 @import 'custom';

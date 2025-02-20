@@ -67,8 +67,8 @@ Download-Dateitypen« festgelegt hast.
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_download` überschreiben.
 
 **HTML-Ausgabe**  
@@ -87,7 +87,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/download` überschreiben.
 
 **HTML-Ausgabe**  
@@ -178,8 +178,8 @@ Download-Dateitypen« festgelegt hast.
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_downloads` überschreiben.
 
 **HTML-Ausgabe**  
@@ -200,7 +200,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_elements/downloads` überschreiben.
 
 **HTML-Ausgabe**  

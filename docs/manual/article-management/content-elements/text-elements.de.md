@@ -49,8 +49,8 @@ Verfügung:
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_code` überschreiben.
 
 **HTML-Ausgabe**  
@@ -64,7 +64,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/code` überschreiben.
 
 **HTML-Ausgabe**  
@@ -130,8 +130,8 @@ niedrigere Überschriften abbilden und natürlich mehrfach vorkommen.
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_headline` überschreiben.
 
 **HTML-Ausgabe**  
@@ -141,7 +141,7 @@ Das Element generiert folgenden HTML-Code:
 <h1 class="ce_headline">…</h1>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/headline` überschreiben.
 
 **HTML-Ausgabe**  
@@ -168,11 +168,11 @@ erlaubt sind. Die Liste der erlaubten Tags findest du in den Backend-Einstellung
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_html` überschreiben.
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/html` überschreiben.
 {{% /tab %}}
 {{</tabs>}}
@@ -203,8 +203,8 @@ importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis üb
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_list` überschreiben.
 
 **HTML-Ausgabe**  
@@ -220,7 +220,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/list` überschreiben.
 
 **HTML-Ausgabe**  
@@ -261,8 +261,8 @@ Mit dem Inhaltselement »Markdown« wird aus einem Markdown-Text HTML-Code erzeu
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_markdown` überschreiben.
 
 **HTML-Ausgabe**  
@@ -277,7 +277,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/markdown` überschreiben.
 
 **HTML-Ausgabe**  
@@ -572,8 +572,8 @@ Auswahl getroffen hat. Die Zählung beginnt bei 0.
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_table` überschreiben.
 
 **HTML-Ausgabe**  
@@ -621,7 +621,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/table` überschreiben.
 
 **HTML-Ausgabe**  
@@ -740,8 +740,8 @@ möglich ist.
 
 ### Template-Einstellungen
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_text` überschreiben.
 
 **HTML-Ausgabe**  
@@ -767,7 +767,7 @@ Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/text` überschreiben.
 
 **HTML-Ausgabe**  

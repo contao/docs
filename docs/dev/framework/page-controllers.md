@@ -35,10 +35,10 @@ contao:
 As with content elements, front end modules, hooks and DCA callbacks, Page controllers
 can be registered via attributes, annotations or YAML. The following shows the most basic example:
 
-{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< tabs groupid="attribute-annotation-yaml" style="code" >}}
 {{< version-tag "4.13" >}}
 
-{{% tab name="Attribute" %}}
+{{% tab title="Attribute" %}}
 ```php
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
@@ -57,7 +57,7 @@ class ExamplePageController
 ```
 {{% /tab %}}
 
-{{% tab name="Annotation" %}}
+{{% tab title="Annotation" %}}
 ```php
 // src/Controller/Page/ExamplePageController.php
 namespace App\Controller\Page;
@@ -78,7 +78,7 @@ class ExamplePageController
 ```
 {{% /tab %}}
 
-{{% tab name="YAML" %}}
+{{% tab title="YAML" %}}
 ```yaml
 # config/services.yaml
 services:
@@ -146,10 +146,10 @@ for these possibilities.
 
 There are however a few differences and additional options.
 
-{{< tabs groupId="attribute-annotation-yaml" >}}
+{{< tabs groupid="attribute-annotation-yaml" style="code" >}}
 {{< version-tag "4.13" >}}
 
-{{% tab name="Attribute" %}}
+{{% tab title="Attribute" %}}
 ```php
 #[AsPage(
     type: 'example',
@@ -159,7 +159,7 @@ There are however a few differences and additional options.
 )]
 ```
 {{% /tab %}}
-{{% tab name="Annotation" %}}
+{{% tab title="Annotation" %}}
 ```php
 /**
  * @Page(
@@ -171,7 +171,7 @@ There are however a few differences and additional options.
  */
 ```
 {{% /tab %}}
-{{% tab name="YAML" %}}
+{{% tab title="YAML" %}}
 ```yaml
 # config/services.yaml
 services:

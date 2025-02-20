@@ -1,6 +1,6 @@
 ---
 title: "The Docker Devilbox"
-menuTitle: "With Docker Devilbox"
+linkTitle: "With Docker Devilbox"
 description: "With the Docker Devilbox one or more Contao installations can be installed and maintained locally."
 weight: 10
 aliases:
@@ -262,9 +262,9 @@ In the
 you will find an outdated documentation that still shows the basic procedure well. In my IDE, the following 
 configuration works very well:
 
-{{< tabs groupId="Xdebug">}}
+{{< tabs groupid="Xdebug">}}
 
-{{% tab name="launch.json" %}}
+{{% tab title="launch.json" %}}
 ```
   "version": "0.2.0",
   "configurations": [
@@ -287,7 +287,7 @@ configuration works very well:
 ```
 {{% /tab %}}
 
-{{% tab name="xdebug.ini" %}}
+{{% tab title="xdebug.ini" %}}
 Create a xdebug.ini in the directory `devilbox/cfg/php-ini-8.2` (example for PHP 8.2) with this content
 ```
 ; PHP.ini configuration

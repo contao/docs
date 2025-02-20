@@ -9,8 +9,8 @@ Only major versions are documented (e.g. Contao 4 and later on Contao 5).
 ## General rules
 
 * Only use ATX style headlines (e.g. `# H1` or `### H3`).
-* See [learn.netlify.app/en/cont/markdown/](https://learn.netlify.app/en/cont/markdown/) 
-  and [learn.netlify.app/en/shortcodes/](https://learn.netlify.app/en/shortcodes/) 
+* See [mcshelby.github.io/hugo-theme-relearn/authoring/markdown/](https://mcshelby.github.io/hugo-theme-relearn/authoring/markdown/index.html) 
+  and [mcshelby.github.io/hugo-theme-relearn/shortcodes/](https://mcshelby.github.io/hugo-theme-relearn/shortcodes/index.html) 
   for available markdown and shortcode syntax.
 * Always add two empty lines above each headline.
 * Add line breaks after 140 characters in paragraphs.
@@ -71,13 +71,13 @@ The short code tabs allows you to group content. Very handy for providing code s
 providing configuration in different formats.
 
 ```
-{{< tabs groupId="Example">}}
+{{< tabs groupid="Example" style="code" >}}
 
-{{% tab name="PHP" %}}
+{{% tab title="PHP" %}}
 Lorem ipsum dolor sit amet ...
 {{% /tab %}}
 
-{{% tab name="Twig" %}}
+{{% tab title="Twig" %}}
 Lorem ipsum dolor sit amet ...
 {{% /tab %}}
 
@@ -117,6 +117,9 @@ This shortcode displays an expandable section of text. It also outputs JSON-LD m
 Lorem ipsum dolor sit amet ...
 {{% /faq %}}
 ```
+
+_Note:_ only use this for actual FAQs - otherwise use the [`expand`](https://mcshelby.github.io/hugo-theme-relearn/shortcodes/expand/index.html)
+shortcode.
 
 
 ## New features

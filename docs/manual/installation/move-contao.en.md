@@ -24,15 +24,15 @@ To reduce the risk of conflicts, make sure your source and target server both ru
 You can either create a SQL dump with the graphical database administration tool [phpMyAdmin](https://www.phpmyadmin.net/)
 or use the `mysqldump` program from the command line.
 
-{{< tabs groupId="mysql-transfer" >}}
-{{% tab name="phpMyAdmin" %}}
+{{< tabs groupid="mysql-transfer" style="code" >}}
+{{% tab title="phpMyAdmin" %}}
 Log into "phpMyAdmin", select the database you want to export, select the "Export" tab in the upper menu and click "Ok".
 
 You will receive a `sql` file that you can import in the next step.
 
 ![Exporting the database]({{% asset "images/manual/installation/en/database-export.png" %}}?classes=shadow)
 {{% /tab %}}
-{{% tab name="Command line" %}}
+{{% tab title="Command line" %}}
 Make sure `mysqldump` and `gzip` is installed, then run the following command (replacing "my_user" and "my_db_name" with
 your database user and database name):
 
@@ -48,15 +48,15 @@ A `my_dump.sql.gz` file containing the dumps will be saved in the current direct
 
 
 ### Import the database (target)
-{{< tabs groupId="mysql-transfer" >}}
-{{% tab name="phpMyAdmin" %}}
+{{< tabs groupid="mysql-transfer" style="code" >}}
+{{% tab title="phpMyAdmin" %}}
 Open "phpMyAdmin" and select a new (empty) database.
 
 Click on the "Import" button in the upper menu, upload the previously created SQL dump and start the import.
 
 ![Importing the database]({{% asset "images/manual/installation/en/database-import.png" %}}?classes=shadow)
 {{% /tab %}}
-{{% tab name="Command line" %}}
+{{% tab title="Command line" %}}
 Copy the previously created dump file to the target machine and navigate to it.
 
 Make sure `mysql` and `gunzip` is installed, then run the following command (replacing "my_user" and "my_db_name" with

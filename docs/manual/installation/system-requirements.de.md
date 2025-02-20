@@ -271,9 +271,9 @@ In der Konfiguration des Webservers muss sichergestellt sein, dass alle Anfragen
 Verzeichnis verarbeitet werden (via »URL-Rewriting«). Wie diese Konfiguration aussehen muss hängt von der eingesetzten Webserver-Software 
 ab. Weit verbreitete Beispiele sind Apache und NGINX:
 
-{{< tabs groupId="web-server-config" >}}
+{{< tabs groupid="web-server-config" style="code" >}}
 
-{{% tab name="Apache" %}}
+{{% tab title="Apache" %}}
 Für Apache stellt Contao eine [Standard `.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess) 
 Datei im öffentlichen Verzeichnis zur Verfügung. Damit diese Datei von Apache verarbeitet wird muss sichergestellt sein, dass die Direktive
 `AllowOverride All` für das `Directory` in der `VirtualHost` Definition der Webserver-Konfiguration vorhanden ist. Darüberhinaus muss das
@@ -301,7 +301,7 @@ Contao 4.9 oder älter):
 
 {{% /tab %}}
 
-{{% tab name="NGINX" %}}
+{{% tab title="NGINX" %}}
 Am wichtigsten ist es sicherzustellen, dass alle Anfragen, die nicht an eine existierende Datei gehen, an die PHP-Applikation zur Verarbeitung
 weitergegeben werden. Dies passiert über die Anweisung `try_files $uri /index.php$is_args$args;`.
 

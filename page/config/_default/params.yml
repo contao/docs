@@ -1,11 +1,12 @@
-themeVariant: 'contao'
+themeVariant:
+  - auto
+  - contao-light
+  - contao-dark
 disableSearch: false
 disableLanguageSwitch: true
 documentation_label: Documentation
-showVisitedLinks: true
 disableInlineCopyToClipBoard: true
-#disableAssetsBusting: true
-currentContaoVersion: '4.13'
+currentContaoVersion: '5.4'
 disableLandingPageButton: true
 showBanner: true
 bannerTitleDE: Contao Konferenz & College Düsseldorf 2025
@@ -14,3 +15,6 @@ bannerDateDE: 25. bis 27. September
 bannerDateEN: 25th to 27th September
 bannerUrlDE: https://to.contao.org/conference
 bannerUrlEN: https://to.contao.org/conference
+hideAuthorName: true
+hideAuthorEmail: true
+hideAuthorDate: true

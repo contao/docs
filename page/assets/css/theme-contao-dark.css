@@ -1,0 +1,105 @@
+@import 'theme-relearn-dark.css';
+@import 'theme-contao.css';
+
+:root {
+    --MAIN-BG-color: #121416;
+    --MAIN-LINK-color: var(--PRIMARY-color);
+    --MAIN-LINK-HOVER-color: var(--PRIMARY-color);
+    --MAIN-SECONDARY-color: #1C90F3;
+
+    --MENU-HEADER-BG-color: #292c32;
+    --MENU-HEADER-BORDER-color: var(--PRIMARY-color);
+
+    --MENU-SEARCH-BG-color: var(--MENU-HEADER-BG-color);
+    --MENU-SEARCH-BOX-color: var(--PRIMARY-color);
+    --MENU-SEARCH-BOX-ICONS-color: var(--PRIMARY-color);
+
+    --MENU-BG-color: #1b1d21;
+    --MENU-SECTIONS-BG-color: #272a30;
+    --MENU-SECTIONS-LINK-color: #d3d6da;
+    --MENU-SECTIONS-LINK-HOVER-color: #eaedf1;
+    --MENU-SECTION-ACTIVE-CATEGORY-color: #eaedf1;
+    --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #272a30;
+
+    --CODE-INLINE-color: #e5e5e5;
+    --CODE-INLINE-BG-color: #272a30;
+    --CODE-INLINE-BORDER-color: #2d2d2d;
+
+    --TAG-BG-color: var(--MENU-HEADER-BG-color);
+
+    --VERSION-TAG-BG-color: #0064ab;
+
+    --EXAMPLE-TEXT-color: #bec1c6;
+    --EXAMPLE-HEADER-BG-color: #2b2e35;
+    --EXAMPLE-CONTENT-BG-color: #1b1d21;
+    --EXAMPLE-BORDER-color: #282c34;
+
+    --BEST-PRACTICE-BG-color: #233626;
+    --BEST-PRACTICE-TAG-BG-color: #3c813c;
+    --BEST-PRACTICE-TABLE-BG-color: #121416;
+
+    --EXPAND-BG-color: rgb(41 44 50);
+    --EXPAND-BORDER-color: rgb(27 29 33);
+    --EXPAND-ICON-color: #f47c00;
+
+    --BLOCK-QUOTE-BORDER-color: #41454d;
+}
+
+/*
+  Issue workflow (/dev/internals/issue-workflow/)
+*/
+.issue-label-bug {
+    border: 1px solid rgba(255, 131, 96, 0.3);
+    background: rgba(189, 44, 0, 0.18);
+    color: rgb(255, 131, 96);
+}
+
+.issue-label-feature {
+    border: 1px solid rgba(126, 161, 219, 0.3);
+    background: rgba(51, 100, 183, 0.18);
+    color: rgb(126, 161, 219);
+}
+
+.issue-label-discuss {
+    border: 1px solid rgba(135, 196, 14, 0.3);
+    background: rgba(134, 198, 13, 0.18);
+    color: rgb(135, 196, 14);
+}
+
+.issue-label-help {
+    border: 1px solid rgba(192, 218, 252, 0.3);
+    background: rgba(196, 220, 252, 0.18);
+    color: rgb(192, 218, 252);
+}
+
+.issue-label-status {
+    border: 1px solid rgba(250, 201, 5, 0.3);
+    background: rgba(251, 202, 4, 0.18);
+    color: rgb(250, 201, 5);
+}
+
+/*
+  User-module guide (/manual/en/layout/module-management/user-modules/)
+*/
+.user-module .formbody {
+    background: var(--MENU-SEARCH-BG-color);
+    border: 1px solid var(--BLOCK-QUOTE-BORDER-color);
+}
+
+.user-module input {
+    background: var(--MENU-SEARCH-BG-color);
+    border: 1px solid var(--BLOCK-QUOTE-BORDER-color);
+}
+
+/* Invert contao logo */
+#logo svg path:nth-last-of-type(1) { fill: var(--PRIMARY-color) }
+#logo svg path:nth-last-of-type(2) { fill: #fff }
+
+/* White color for tags */
+article .R-taxonomy.tags a.term-link {
+    color: white;
+}
+
+article .R-taxonomy.tags a.term-link:after {
+    background-color: white;
+}

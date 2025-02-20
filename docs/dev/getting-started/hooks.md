@@ -31,14 +31,12 @@ the database entry of the news entry's author is fetched via the `\Contao\UserMo
 // src/EventListener/ParseArticlesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\FrontendTemplate;
 use Contao\Module;
 use Contao\UserModel;
 
-/**
- * @Hook("parseArticles")
- */
+#[AsHook('parseArticles')]
 class ParseArticlesListener
 {
     public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void
@@ -89,10 +87,11 @@ data via this module.
 namespace App\EventListener;
 
 use App\ExternalMembers\ExternalMemberService;
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 use Contao\FrontendUser;
 
+#[AsHook('updatePersonalData')]
 class UpdatePersonalDataListener
 {
     private $externalMemberService;
@@ -102,10 +101,7 @@ class UpdatePersonalDataListener
         $this->externalMemberService = $externalMemberService;
     }
 
-    /**
-     * @Hook("updatePersonalData")
-     */
-    public function onUpdatePersonalData(FrontendUser $member, array $data, Module $module): void
+    public function __invoke(FrontendUser $member, array $data, Module $module): void
     {
         $this->externalMemberService->updateMemberData($data);
     }

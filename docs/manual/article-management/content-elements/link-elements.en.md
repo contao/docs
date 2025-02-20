@@ -60,8 +60,8 @@ tool for onpage optimization.
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Content element template:** Here you can overwrite the standard `ce_hyperlink` template.
 
 **HTML Output**  
@@ -86,7 +86,7 @@ If an image link is used, the HTML output looks like this:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the standard `content_element/hyperlink` template.
 
 **HTML Output**  
@@ -125,8 +125,8 @@ The content element "Top-Link" adds a link to the article, with which you can ju
 
 ### Template settings
 
-{{< tabs groupId="contao-version" >}}
-{{% tab name="Contao 4" %}}
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 **Content element template**: Here you can overwrite the content element `ce_toplink` template.
 
 **HTML output**  
@@ -138,7 +138,7 @@ The element generates the following HTML code:
 </div>
 ```
 {{% /tab %}}
-{{% tab name="Contao 5" %}}
+{{% tab title="Contao 5" %}}
 **Content element template**: Here you can overwrite the content element `content_element/toplink` template.
 
 **HTML output**  

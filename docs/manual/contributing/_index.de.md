@@ -115,7 +115,7 @@ Erstelle ein Verzeichnis mit dem Namen `contao` und wechsle mit **c**hange **d**
 cd contao
 ```
 
-Beim Klonen installierst du das Hugo Learn Theme als Submodul von git.
+Beim Klonen installierst du das Hugo Relearn Theme als Submodul von git.
 
 ```bash
 git clone --recurse-submodules git@github.com:DEIN-GITHUB-BENUTZERNAME/docs.git ./

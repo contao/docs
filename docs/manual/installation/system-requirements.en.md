@@ -261,9 +261,9 @@ Within the configuration of your web server you will need to make sure that all 
 directory, typically via URL rewriting. How to achieve this depends on the type of web server you are running. The most common ones are
 Apache and NGINX:
 
-{{< tabs groupId="web-server-config" >}}
+{{< tabs groupid="web-server-config" style="code" >}}
 
-{{% tab name="Apache" %}}
+{{% tab title="Apache" %}}
 Contao provides a [default `.htaccess`](https://github.com/contao/contao/blob/5.0.7/manager-bundle/skeleton/public/.htaccess) file in the 
 public directory in case you are using Apache as your web server. You will need to make sure that the `AllowOverride All` directive for your
 `Directory` in your `VirtualHost` definition is set, so that the `.htaccess` is actually processed by Apache. Furthermore you will need 
@@ -290,7 +290,7 @@ The minimum `VirtualHost` configuration would look like this for example (exchan
 
 {{% /tab %}}
 
-{{% tab name="NGINX" %}}
+{{% tab title="NGINX" %}}
 Most importantly you need to make sure that all requests not pointing to an actual file are passed along to be processed by the application
 via `try_files $uri /index.php$is_args$args;`.
 
