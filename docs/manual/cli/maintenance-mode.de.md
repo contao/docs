@@ -36,3 +36,9 @@ php vendor/bin/contao-console contao:maintenance-mode [options] [<state>]
 {{% notice info %}}
 Wie du das Wartungstemplate anpassen kannst, erfährst du in unserer [Anleitung](../../anleitungen/wartungstemplate-anpassen/).
 {{% /notice %}}
+
+{{% notice tip %}}
+Der globale Wartungsmodus kann statt über das Kommando alternativ auch durch das Löschen der Datei
+`var/maintenance.html` manuell deaktiviert werden. Dies kann hilfreich sein, falls das Kommando aus irgendeinem Grund
+nicht funktioniert.
+{{% /notice %}}
