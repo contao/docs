@@ -8,6 +8,7 @@
     --MAIN-font: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --MAIN-font-weight: 400;
     --MAIN-letter-spacing: normal;
+    --MAIN-font-variation-settings: normal;
 
     --MENU-HEADER-BORDER-color: var(--CONTAO-brand-color-muted);
     --MENU-HEADER-BG-color: var(--PRIMARY-color);
