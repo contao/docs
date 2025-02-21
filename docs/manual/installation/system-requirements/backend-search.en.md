@@ -47,7 +47,7 @@ SEAL supports a variety of search engines. To use a specific search engine, you 
 | Typesense     | `cmsig/seal-typesense-adapter`     | typesense://S3CR3T@127.0.0.1:8108           |                                                                                                                                                                                                                           |
 | Loupe         | `cmsig/seal-loupe-adapter`         | loupe://var/indexes/                        | Loupe runs on <br/>your local filesystem and only requires PHP and an SQLite database. The minimal requirement is that either <br/>`sqlite3` or `pdo_sqlite` is available in your PHP setup. |
 
-The backend search is configured via DSN in your `config.yaml`:
+The back end search is configured via DSN in your `config.yaml`:
 
 ```yaml
 # config/config.yaml
