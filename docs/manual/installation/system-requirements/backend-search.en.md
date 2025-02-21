@@ -7,7 +7,7 @@ aliases:
 
 {{< version "5.5.0" >}}
 
-The backend search in Contao is based on a project called "SEAL" by PHP-CMSIG. SEAL stands for "Search Engine Abstraction Layer" and has the same goal as Doctrine DBAL (which stands for "Database Abstraction Layer"). While Doctrine DBAL focuses on abstracting various database servers, PHP-CMSIG SEAL abstracts different search engines. The advantage in both cases: Ideally, this allows you to use Contao with different databases and search engines and benefit from their respective advantages.
+The back end search in Contao is based on a project called "SEAL" by PHP-CMSIG. SEAL stands for "Search Engine Abstraction Layer" and has the same goal as Doctrine DBAL (which stands for "Database Abstraction Layer"). While Doctrine DBAL focuses on abstracting various database servers, PHP-CMSIG SEAL abstracts different search engines. The advantage in both cases: Ideally, this allows you to use Contao with different databases and search engines and benefit from their respective advantages.
 
 Learn more about PHP-CMSIG and the SEAL project [here][PHP-CMSIG] and [here][SEAL].
 
