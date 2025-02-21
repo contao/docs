@@ -34,3 +34,9 @@ php vendor/bin/contao-console contao:maintenance-mode [options] [<state>]
 {{% notice info %}}
 You can learn how to customize the maintenance template in our [tutorial](../../guides/maintenance-template/).
 {{% /notice %}}
+
+{{% notice tip %}}
+Instead of using the command to disable the global maintenance mode you can also manually delete the file
+`var/maintenance.html` in your Contao instance. This might be useful in case the console command fails for whatever
+reason.
+{{% /notice %}}
