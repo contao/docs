@@ -44,11 +44,18 @@ verwalten.
 Die Systemvoraussetzungen entsprechen grundsätzlich denen von [Contao](../../installation/systemvoraussetzungen). Der 
 Contao Manager prüft automatisch, ob die Anforderungen erfüllt sind.
 
-- PHP Version 7.4 oder neuer
+Für die neuste Version benötigst du:
+- PHP Version 8.1 oder neuer
 - PHP Erweiterung *Intl* und *OpenSSL*
 - PHP Funktionen *proc_open* und *proc_close*
 - PHP Einstellung *allow_url_fopen* muss aktiv sein
 
+{{% notice info %}}
+Der Contao Manager kann auch bei PHP 5 oder PHP 7 installiert werden. Beim ersten Aufruf
+wird automatisch die PHP-Version erkannt und eine entsprechend kompatible Version heruntergeladen.
+Funktionen der neueren Version sind dann natürlich nicht verfügbar, aber Contao und Erweiterungen können weiterhin
+installiert bzw. aktualisiert werden.
+{{% /notice %}}
 
 ### Hosting-Konfiguration
 
