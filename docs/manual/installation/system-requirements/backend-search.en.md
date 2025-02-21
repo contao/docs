@@ -45,7 +45,7 @@ SEAL supports a variety of search engines. To use a specific search engine, you 
 | Solr          | `cmsig/seal-solr-adapter`          | solr://solr:SolrRocks@127.0.0.1:8983        |                                                                                                                                                                                                                           |
 | Redisearch    | `cmsig/seal-redisearch-adapter`    | redis://phpredis:phpredis@127.0.0.1:6379    |                                                                                                                                                                                                                           |
 | Typesense     | `cmsig/seal-typesense-adapter`     | typesense://S3CR3T@127.0.0.1:8108           |                                                                                                                                                                                                                           |
-| Loupe         | `cmsig/seal-loupe-adapter`         | loupe://var/indexes/                        | Loupe runs on <br/>your local filesystem and only requires PHP and an SQLite database. The minimal requirement is that either <br/>`sqlite3` or `pdo_sqlite` is available in your PHP setup. |
+| Loupe         | `cmsig/seal-loupe-adapter`         | loupe://var/indexes/                        | Loupe runs on your local filesystem and only requires PHP and an SQLite database. The minimal requirement is that either `sqlite3` or `pdo_sqlite` is available in your PHP setup. |
 
 The back end search is configured via DSN in your `config.yaml`:
 
