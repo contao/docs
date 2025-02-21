@@ -38,10 +38,18 @@ It is still possible to manage the installation of Contao 4 and extensions direc
 The system requirements are basically the same as for [Contao](/en/installation/system-requirements/). The Contao 
 Manager automatically checks if the requirements are met.
 
-- PHP version 7.4 or newer
+For the latest version you'll need:
+- PHP version 8.1 or newer
 - PHP extension *Intl* and *OpenSSL*
 - PHP functions *proc\_open* and *proc\_close*
 - PHP setting *allow\_url\_fopen* must be active
+
+{{% notice info %}}
+The Contao Manager can also be installed on PHP 5 or PHP 7. On the first access, the
+PHP version is detected and a compatible version is automatically downloaded from the Contao servers.
+Features of the latest version are obviously not available in that case, but you can still install or update
+a Contao installation.
+{{% /notice %}}
 
 ### Hosting Configuration
 
