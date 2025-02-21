@@ -1,9 +1,9 @@
-name: Build and deploy to https://docs.contao.org
+name: Build and deploy to https://docs.contao.org/_old
 
 on:
     push:
         branches:
-            - main
+            - old-theme
     workflow_dispatch: ~
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
                   port: ${{ secrets.DEPLOY_PORT }}
                   key: ${{ secrets.DEPLOY_KEY }}
                   source: 'build/manual'
-                  target: ${{ secrets.DEPLOY_TARGET_PATH }}/manual
+                  target: ${{ secrets.DEPLOY_TARGET_PATH }}/_old/manual
                   rm: true
                   strip_components: 2
             - name: Deploy developer manual
@@ -41,6 +41,6 @@ jobs:
                   port: ${{ secrets.DEPLOY_PORT }}
                   key: ${{ secrets.DEPLOY_KEY }}
                   source: 'build/dev'
-                  target: ${{ secrets.DEPLOY_TARGET_PATH }}/dev
+                  target: ${{ secrets.DEPLOY_TARGET_PATH }}/_old/dev
                   rm: true
                   strip_components: 2
