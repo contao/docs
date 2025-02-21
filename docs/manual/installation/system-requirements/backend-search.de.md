@@ -44,7 +44,7 @@ Cronjob-Frameworks]({{% ref "cronjobs.de.md" %}}).
 ### Grundvoraussetzung 2: Eine Suchmaschine
 
 Mit der Einrichtung des Cronjob-Frameworks haben wir nun die Voraussetzungen zum regelmässigen Indexieren deines Inhalts
-geschafft. Jetzt fehlt noch das Gegenstück: die Suchmaschine selbst.
+geschaffen. Jetzt fehlt noch das Gegenstück: die Suchmaschine selbst.
 
 SEAL unterstützt eine Vielzahl an Suchmaschinen. Damit du die jeweilige Suchmaschine einsetzen kannst, brauchst du 
 den passenden Adapter, den man sich per Composer installieren kann.
