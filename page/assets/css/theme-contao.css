@@ -9,6 +9,9 @@
     --MAIN-font-weight: 400;
     --MAIN-letter-spacing: normal;
     --MAIN-font-variation-settings: normal;
+    --MAIN-TITLES-font-variation-settings: normal;
+    --MAIN-TITLES-H1-font-variation-settings: normal;
+    --MAIN-TITLES-H4-font-variation-settings: normal;
 
     --MENU-HEADER-BORDER-color: var(--CONTAO-brand-color-muted);
     --MENU-HEADER-BG-color: var(--PRIMARY-color);
