@@ -189,19 +189,7 @@ b, strong, label, th {
     -webkit-appearance: none;
 }
 
-.algolia-searchbox input[type="search"]::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.algolia-searchbox input[type="search"]::-moz-placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.algolia-searchbox input[type="search"]:-moz-placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.algolia-searchbox input[type="search"]:-ms-input-placeholder {
+.algolia-searchbox input[type="search"]::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
 
