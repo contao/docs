@@ -58,7 +58,7 @@ den passenden Adapter, den man sich per Composer installieren kann.
 | Solr          | `cmsig/seal-solr-adapter`          | solr://solr:SolrRocks@127.0.0.1:8983        |                                                                                                                                                                                                                                   |
 | Redisearch    | `cmsig/seal-redisearch-adapter`    | redis://phpredis:phpredis@127.0.0.1:6379    |                                                                                                                                                                                                                                   |
 | Typesense     | `cmsig/seal-typesense-adapter`     | typesense://S3CR3T@127.0.0.1:8108           |                                                                                                                                                                                                                                   |
-| Loupe         | `cmsig/seal-loupe-adapter`         | loupe://var/indexes/                        | Loupe läuft auf <br/>deinem lokalen Filesystem und erfordert nur PHP und eine SQLite-Datenbank. Entsprechend ist die Minimal-Anforderung, dass <br/>entweder `sqlite3` oder `pdo_sqlite` in deinem PHP-Setup zur Verfügung steht. |
+| Loupe         | `cmsig/seal-loupe-adapter`         | loupe://var/indexes/                        | Loupe läuft auf deinem lokalen Filesystem und erfordert nur PHP und eine SQLite-Datenbank. Entsprechend ist die Minimal-Anforderung, dass entweder `sqlite3` oder `pdo_sqlite` in deinem PHP-Setup zur Verfügung steht. |
 
 Konfiguriert wird die Backend-Suche per DSN in deiner `config.yaml`:
 
