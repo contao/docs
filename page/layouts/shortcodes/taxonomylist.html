@@ -1,26 +1,49 @@
 {{/*
-  *    Shortcode: taxonomylist
-  *    Version: 2.0.0
+  *   Shortcode: taxonomylist
+  *   Version: 2.0
   *
-  *    Create a List with linked Pages matching one Taxonomy Term. 
-  * 
+  *   Create a List with linked Pages matching one or more Taxonomies Terms 
+  *   ( Taxonomy Terms must be declared as Front Matter ) 
+  *
+  *   Examples:
+  *   {{< taxonomylist filter="DCA" >}}
+  *   {{< taxonomylist filter="DCA, Demo" >}}
+  *
+  *   Paramter:
+  *   filter (mandatory)
+  *   One or more Taxonomy Terms (Comma separated)
+  *
+  *   description - Boolean (optional)
+  *   Show Page Description below each List Item
+  *
 */}}
 
-{{ $Filter := .Get "filter" }}
+{{- $filterName := .Get "filter" -}}
+{{ $linkDescription := .Get "description" | default true }}
+{{ $checkResult := slice }} 
 
 <ul>
-{{/* Range of Tags and Categories  */}}
 {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-  {{ range $key, $value := $taxonomy }}
+  {{ range $key, $value := $taxonomy }} 
+    
+    {{ range split (lower $filterName) "," }} <!-- loop filter paramter --> 
+      {{ $trimmed := trim . " " }}
+      {{ if in $key $trimmed }}
 
-    {{ range $value.Pages }}
+        {{ range $value.Pages }} 
+          {{ $link := .Permalink }} 
 
-        {{ if or (eq $key $Filter) }}
-          <li><a href="{{ .Permalink}}">{{ .LinkTitle }}</a><br><em>{{ .Description }}</em></li>  
+          {{ if not (in $checkResult $link) }} <!-- prevent duplicates -->
+            {{ $checkResult = $checkResult | append $link }} <!-- history result --> 
+
+            <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            {{ if $linkDescription }}<br><em>{{ .Description }}</em>{{ end }}</li>
+          {{ end }}
         {{ end }}
-        
-    {{ end }}
 
+      {{ end }}
+    {{ end }}
+    
   {{ end }}
 {{ end }}
 </ul>
