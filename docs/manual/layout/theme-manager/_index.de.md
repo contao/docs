@@ -17,4 +17,6 @@ wird dir nun gezeigt, wie man ein Design erstellt und wie du das Aussehen deiner
 
 {{% children %}}
 
-{{% taxonomylist context="tags" filter="Theme" title="Anleitungen" description=true %}}
+### Anleitungen
+
+{{< taxonomyfilter filter="Theme" description=true >}}

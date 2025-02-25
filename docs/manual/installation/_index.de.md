@@ -18,4 +18,6 @@ der lokalen Umgebung auf den Webserver gegeben, sowie das Aktualisieren einer be
 
 {{% children %}}
 
-{{% taxonomylist context="tags" filter="Installation" title="Anleitungen" description=true %}}
+### Anleitungen
+
+{{< taxonomyfilter filter="Installation" description=true >}}
