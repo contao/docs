@@ -16,4 +16,6 @@ folgenden Kapiteln werden dir die dort angerissenen Inhalte ausführlich erklä
 
 {{% children %}}
 
-{{% taxonomylist context="tags" filter="Seitenstruktur" title="Anleitungen" description=true %}}
+### Anleitungen 
+
+{{< taxonomyfilter filter="Seitenstruktur" description=true >}}

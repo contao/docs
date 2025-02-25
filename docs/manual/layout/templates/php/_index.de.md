@@ -26,5 +26,7 @@ Im [Debug-Modus](../../../system/debug-modus/) werden die Template-Namen im HTML
 Man kann hierüber nachvollziehen welches Template zum Einsatz kommt.
 {{% /notice %}}
 
-{{% taxonomylist context="tags" filter="Template" title="Anleitungen" description=true %}}
+### Anleitungen
+
+{{< taxonomyfilter filter="Template" description=true >}}
 
