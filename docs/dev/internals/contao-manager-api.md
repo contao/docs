@@ -65,8 +65,16 @@ The supported parameters are:
 
 - `response_type` (REQUIRED) must be set to `token` for [OAuth Implicit Grant][OAuth]
 
-- `scope` (REQUIRED) is the requested access. Currently only `admin` is a supported value, as the Contao Manager does not yet
-  support permissions.
+- `scope` (REQUIRED) is the requested access level. Scopes are hierarchical, so a user with _admin_
+  scope automatically has all other scopes. If you pass multiple scopes as a space-separated list,
+  the user will be able to choose what access level to grant to your application. 
+  The following scopes are available:
+
+  - **read** – can see the installed packages and read log files, but
+    cannot change the system.
+  - **update** – may update existing packages and perform maintenance tasks (e.g. clear cache).
+  - **install** – may update and install packages and change system settings.
+  - **admin** – can use all functions of the Contao Manager.
   
 - `client_id` (REQUIRED) is a representative name for your application. The `client_id` is also stored alongside the token, 
   each `client_id` will get a different access token. Requesting with an existing `client_id`, a new token will be 
