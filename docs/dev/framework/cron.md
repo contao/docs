@@ -57,6 +57,13 @@ or by making a request to the web URL.
 whether you are letting the cron jobs be executed periodically and thus disable their execution in the front end 
 automatically.
 
+{{< version-tag "5.3" >}} Starting with Contao **5.3** you can disable the front end cron. Default is `auto`.
+```yaml
+# config/config.yaml
+contao:
+    cron:
+        web_listener: false
+```
 
 ### Command Line
 
