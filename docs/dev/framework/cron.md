@@ -307,10 +307,11 @@ namespace App\Cron;
 use Contao\CoreBundle\Cron\Cron;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use GuzzleHttp\Promise\Promise;
+use GuzzleHttp\Promise\PromiseInterface;
 
 class HourlyCron
 {
-    public function __invoke(string $scope): void
+    public function __invoke(string $scope): PromiseInterface
     {
         // Skip this cron job in the web scope
         if (Cron::SCOPE_WEB === $scope) {
@@ -334,12 +335,13 @@ namespace App\Cron;
 use Contao\CoreBundle\Cron\Cron;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use Contao\CoreBundle\Util\ProcessUtil;
+use GuzzleHttp\Promise\PromiseInterface;
 
 class HourlyCron
 {
     public function __construct(private ProcessUtil $processUtil) {}
 
-    public function __invoke(string $scope): void
+    public function __invoke(string $scope): PromiseInterface
     {
         // Skip this cron job in the web scope
         if (Cron::SCOPE_WEB === $scope) {
