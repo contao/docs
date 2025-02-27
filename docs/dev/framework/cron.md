@@ -53,8 +53,8 @@ contao:
 After disabling the front end cron you should periodically let Contao execute its cron jobs, either via the command line (recommended)
 or by making a request to the web URL.
 
-{{< version-tag "5.1" >}} Starting with version **5.1** Contao detects automatically whether a real cron job is executed or not and thus
-disables the front end cron automatically. However, you can modify this behavior via the following configuration:
+{{< version-tag "5.1" >}} Starting with version **5.1** Contao detects whether a real cron job is executed or not and thus disables
+the front end cron automatically if applicable. However, you can modify this behavior via the following configuration:
 
 ```yaml
 # config/config.yaml
