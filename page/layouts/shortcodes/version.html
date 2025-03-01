@@ -2,9 +2,8 @@
 {{ if len .Params | eq 1 }}
   {{ $version := .Get 0 }}
 {{ end }}
-contao_version: {{ i18n "contao_version" }}
 {{- partial "shortcodes/notice.html" (dict
   "page" .Page
   "style" "info"
-  "content" (printf (i18n "contao_version") $version)
+  "content" (printf (i18n "contao_version") $version | markdownify)
 ) }}
