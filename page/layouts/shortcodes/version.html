@@ -1,17 +1,10 @@
-{{ $.Scratch.Set "version" .Site.Params.currentContaoVersion }}
+{{ $version := .Site.Params.currentContaoVersion }}
 {{ if len .Params | eq 1 }}
   {{ $version := .Get 0 }}
-  {{ $.Scratch.Set "version" $version }}
 {{ end }}
-<details open class="box cstyle notices info">
-  <summary class="box-label" tabindex="-1">
-    <i class="fa-fw fas fa-info-circle"></i> Info
-  </summary>
-  <div class="box-content">
-    {{ if eq .Site.Language.Lang "en" }}
-      <p>This feature is available in <strong>Contao {{ $.Scratch.Get "version" }}</strong> and later.</p>
-    {{ else }}
-      <p>Diese Funktion ist ab <strong>Contao {{ $.Scratch.Get "version" }}</strong> verfügbar.</p>
-    {{ end }}
-  </div>
-</details>
+contao_version: {{ i18n "contao_version" }}
+{{- partial "shortcodes/notice.html" (dict
+  "page" .Page
+  "style" "info"
+  "content" (printf (i18n "contao_version") $version)
+) }}
