@@ -17,3 +17,7 @@ Contao instance from your local development environment to the live web server a
 installation.
 
 {{% children %}}
+
+### Guides
+
+{{< taxonomylist filter="Installation" description=true >}}

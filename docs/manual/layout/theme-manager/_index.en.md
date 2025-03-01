@@ -10,4 +10,6 @@ In a content management system, design and content are separated by definition. 
 
 {{% children %}}
 
-{{% taxonomylist context="tags" filter="Theme" title="Guides" description=true %}}
+### Guides
+
+{{< taxonomylist filter="Theme" description=true >}}

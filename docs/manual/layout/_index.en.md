@@ -10,4 +10,6 @@ In the [navigation area](/en/administration-area/call-and-structure-of-the-backe
 
 {{% children %}}
 
-{{% taxonomylist context="tags" filter="Seitenstruktur, Theme, Template" title="Guides" description=true %}}
+### Cross references
+
+{{< taxonomylist filter="Seitenstruktur, Theme, Template" description=true >}}

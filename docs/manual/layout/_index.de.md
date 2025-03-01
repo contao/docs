@@ -12,4 +12,6 @@ befinden sich alle designrelevanten Module, mit denen du das Aussehen und die St
 
 {{% children %}}
 
-{{% taxonomylist context="tags" filter="Seitenstruktur, Theme, Template" title="Anleitungen" description=true %}}
+### Querverweise
+
+{{< taxonomylist filter="Seitenstruktur, Theme, Template" description=true >}}
