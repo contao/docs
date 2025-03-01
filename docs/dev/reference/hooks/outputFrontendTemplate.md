@@ -14,7 +14,7 @@ arguments and expects the template content as return value.
 
 {{% notice info %}}
 This hook is applied before the replacement of insert tags 
-whereas the corresponding [`modifyFrontendPage`](../modifyFrontendPage) is applied after 
+whereas the corresponding [`modifyFrontendPage`]({{% ref "modifyFrontendPage" %}}) is applied after 
 insert tags have been replaced.
 {{% /notice %}}
 
