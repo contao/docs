@@ -20,4 +20,4 @@ der lokalen Umgebung auf den Webserver gegeben, sowie das Aktualisieren einer be
 
 ### Anleitungen
 
-{{< taxonomyfilter filter="Installation" description=true >}}
+{{< taxonomylist filter="Installation" description=true >}}

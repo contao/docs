@@ -21,4 +21,4 @@ In [debug mode](/en/system/debug-mode/), the template names in the HTML source c
 
 ### Guides
 
-{{< taxonomyfilter filter="Template" description=true >}}
+{{< taxonomylist filter="Template" description=true >}}

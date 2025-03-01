@@ -28,5 +28,5 @@ Man kann hierüber nachvollziehen welches Template zum Einsatz kommt.
 
 ### Anleitungen
 
-{{< taxonomyfilter filter="Template" description=true >}}
+{{< taxonomylist filter="Template" description=true >}}
 

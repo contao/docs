@@ -18,4 +18,4 @@ folgenden Kapiteln werden dir die dort angerissenen Inhalte ausführlich erklä
 
 ### Anleitungen 
 
-{{< taxonomyfilter filter="Seitenstruktur" description=true >}}
+{{< taxonomylist filter="Seitenstruktur" description=true >}}

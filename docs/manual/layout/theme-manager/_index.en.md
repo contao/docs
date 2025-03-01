@@ -12,4 +12,4 @@ In a content management system, design and content are separated by definition. 
 
 ### Guides
 
-{{< taxonomyfilter filter="Theme" description=true >}}
+{{< taxonomylist filter="Theme" description=true >}}

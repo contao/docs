@@ -19,4 +19,4 @@ wird dir nun gezeigt, wie man ein Design erstellt und wie du das Aussehen deiner
 
 ### Anleitungen
 
-{{< taxonomyfilter filter="Theme" description=true >}}
+{{< taxonomylist filter="Theme" description=true >}}

@@ -12,4 +12,4 @@ In the [navigation area](/en/administration-area/call-and-structure-of-the-backe
 
 ### Cross references
 
-{{< taxonomyfilter filter="Seitenstruktur, Theme, Template" description=true >}}
+{{< taxonomylist filter="Seitenstruktur, Theme, Template" description=true >}}

@@ -14,4 +14,4 @@ befinden sich alle designrelevanten Module, mit denen du das Aussehen und die St
 
 ### Querverweise
 
-{{< taxonomyfilter filter="Seitenstruktur, Theme, Template" description=true >}}
+{{< taxonomylist filter="Seitenstruktur, Theme, Template" description=true >}}

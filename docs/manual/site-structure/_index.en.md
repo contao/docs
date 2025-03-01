@@ -16,4 +16,4 @@ detailed explanation of the contents.
 
 ### Guides
 
-{{< taxonomyfilter filter="SiteStructure" description=true >}}
+{{< taxonomylist filter="SiteStructure" description=true >}}
