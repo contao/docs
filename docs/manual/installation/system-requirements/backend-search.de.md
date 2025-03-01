@@ -8,9 +8,9 @@ aliases:
 
 {{< version "5.5.0" >}}
 
-Die Backend-Suche in Contao basiert auf einem Projekt namens "SEAL" der PHP-CMSIG. SEAL steht für "Search Engine 
-Abstraction Layer" und hat das gleiche Ziel wie Doctrine DBAL (das für "Database Abstraction Layer" steht). Bei 
-Doctrine DBAL geht es um die Abstraktion der verschiedenen Datenbankserver. Bei PHP-CMSIG SEAL dagegegen, werden 
+Die Backend-Suche in Contao basiert auf einem Projekt namens »SEAL« der PHP-CMSIG. SEAL steht für »Search Engine 
+Abstraction Layer« und hat das gleiche Ziel wie Doctrine DBAL (das für »Database Abstraction Layer« steht). Bei 
+Doctrine DBAL geht es um die Abstraktion der verschiedenen Datenbankserver. Bei PHP-CMSIG SEAL dagegen, werden 
 verschiedene Suchmaschinen abstrahiert. Der Vorteil in beiden Fällen: Im Idealfall kannst du dadurch Contao mit 
 verschiedenen Datenbanken und Suchmaschinen einsetzen und von deren jeweiligen Vorteilen profitieren.
 
@@ -19,12 +19,12 @@ Mehr über die PHP-CMSIG das Projekt SEAL erfährst du [hier][PHP-CMSIG] und [hi
 ## Grundvoraussetzungen
 
 Jede Suchmaschine funktioniert am Ende des Tages relativ ähnlich. Man gibt ihr einen gewissen Inhalt (meistens 
-"Document" genannt), dieses wird dann so aufbereitet, dass es effizient durchsucht werden kann. Dabei gibt es 
+»Document« genannt), dieses wird dann so aufbereitet, dass es effizient durchsucht werden kann. Dabei gibt es 
 verschiedenste Techniken welche die unterschiedlichsten Anforderungen abdecken. Beispiele:
 
-* Schön wäre, wenn bei der Suche nach "Systeme" auch "System" gefunden würde (Stemming)
-* Cool wäre, wenn bei der Suche nach "Markdwon" auch "Markdown" gefunden würde (Typo Tolerance)
-* Super spannend wird es, wenn bei der Suche nach "warme Kleidung" auch "Handschuhe" gefunden wird (AI Embeddings)
+* Schön wäre, wenn bei der Suche nach »Systeme« auch »System« gefunden würde (Stemming)
+* Cool wäre, wenn bei der Suche nach »Markdwon« auch »Markdown« gefunden würde (Typo Tolerance)
+* Super spannend wird es, wenn bei der Suche nach »warme Kleidung« auch »Handschuhe« gefunden wird (AI Embeddings)
 
 Nicht alle Suchmaschinen unterstützen alle Funktionen. Manche sind schneller, dafür ungenauer. Andere wiederum haben 
 spezielle Systemanforderungen etc. pp.
@@ -33,7 +33,7 @@ spezielle Systemanforderungen etc. pp.
 
 Alle Suchmaschinen aber haben eines gemeinsam: Das Aufbereiten der Dokumente kann sehr lange dauern. Ein ganzes 
 Contao-Backend mit allen Inhalten durchsuchbar zu machen kann je nach Grösse des Systems einige Minuten dauern. Die 
-genaue Dauer hängt natürlich auch wieder der Menge des Inhalts und der eingesetzten Suchmaschine ab, aber es dauert. 
+genaue Dauer hängt natürlich auch wieder von der Menge des Inhalts und der eingesetzten Suchmaschine ab, aber es dauert. 
 
 Deswegen braucht Contao für die Suche zwingend die Möglichkeit, deine Inhalte im Hintergrund auf der Kommandozeile zu 
 indexieren, wo keine typischen Limits von 30 Sekunden wie bei einem Webserver existieren.
