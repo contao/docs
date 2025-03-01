@@ -1576,7 +1576,7 @@ framework:
             'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Anstatt den Messenger Transport direkt zu definieren können wie immer auch Umgebungsvariablen benutzt werden, falls man in verschiedenen
 Umgebungen verschiedene Transports haben möchte (bspw. lokal zum testen den 
 [In Memory Transport](https://symfony.com/doc/current/messenger.html#in-memory-transport)).
@@ -1608,7 +1608,7 @@ php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
 
 Bei einem minütlichen Aufruf würde das also den E-Mail Versand auf 600 E-Mails pro Stunde beschränken.
 
-{{% notice "info" %}}
+{{% notice "note" %}}
 In den Kommandos wird die Option `--time-limit=1` benutzt. Von Haus aus läuft der `messenger:consume` Prozess unendlich lang und verarbeitet
 alle E-Mails in dieser Zeit automatisch - und es müsste daher auch kein Cronjob eingerichtet werden. Um sicherzustellen, dass dieser 
 Prozess läuft und ggf. neu gestartet wird könnten entsprechende Tools am Server verwendet werden. In Shared Hosting Umgebungen hat man diese
@@ -1617,7 +1617,7 @@ bereits erwähnten `--time-limit=1` Option wird der Prozess nach spätestens ein
 [Symfony Dokumentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Es kann sein, dass Mails zeitversetzt verarbeitet werden, 
 wenn der Cronjob keine Angabe für die Zeitzone hat und dann den Standard `UTC` verwendet.
 Deshalb sollte die lokale Zeitzone entweder global auf dem Server festgelegt werden oder explizit im Cronjob.

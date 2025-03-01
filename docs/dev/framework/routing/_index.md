@@ -322,7 +322,7 @@ class ExampleService
 }
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 This is also available in Contao **4.9** and later. However, prior to Contao **5** the `pageModel` attribute might also
 just be an integer ID rather than a `PageModel` instance (specifically in fragment subrequests). The attribute might
 also not be available at all, depending on the request's circumstances. As explained in the respective articles you can

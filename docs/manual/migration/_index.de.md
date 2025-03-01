@@ -85,7 +85,7 @@ Aus `"contao/news-bundle": "^4.13"` wird also `"contao/news-bundle": "^5.0"` etc
 }
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Die `contao/managed-edition` nutzt für die einzelnen Core-Pakete die Versions-Anforderung `^5.0`. Dies bedeutet dass die einzelnen Pakete
 mindestens in Version `5.0.0` installiert werden, aber nicht in den Versionen `6.x` - `^5.0` erlaubt also auch `5.1.x`, `5.2.x` etc. Damit
 eine Paketaktualisierung aber nicht ungefragt auf eine höhere Minor-Version aktualisiert, setzt die `contao/managed-edition` die

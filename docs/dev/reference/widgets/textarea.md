@@ -35,7 +35,7 @@ template you can reference this template in the DCA via `'rte' => 'tinyNews'`.
 When using `ace` for the `rte` option you can optionally also pass a parameter for syntax highlighting. For example if your textarea input
 is expected to be JSON you can use `ace|json`. If it is expected to be PHP you can use `ace|php` etc.
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 `allowHtml` and `decodeEntities` is automatically enabled if `rte` equals to `ace\|html` or if it starts with `tiny`. If `rte` starts with
 `tiny` Contao will also convert any file paths automatically into a `{{file::*}}` insert tag, if applicable.
 {{% /notice %}}

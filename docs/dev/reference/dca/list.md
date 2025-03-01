@@ -104,7 +104,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                     |
 
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 {{< version-tag "5.3" >}} You do not have to define any settings for global operations anymore. Instead, you can give a list
 of which operations should be available for your data container. You can also adjust the order.
 
@@ -140,7 +140,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | showInHeader    | true/false (`bool`)               | {{< version-tag "4.5" >}} Shows the operation in the [header element]({{< asset "images/dev/reference/mode_parent_header.png" >}}) (sorting mode 4 only).                                                   |
 | route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                                               |
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 {{< version-tag "5.0" >}} You do not have to define any settings for standard operations anymore. Instead, you can give a list
 of which operations should be available for your data container. Contao will also check the appropriate
 [`contao_dc.<data-container>` permission](/framework/security/) for these operations.
@@ -159,7 +159,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 ```
 {{% /notice %}}
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 {{< version-tag "5.5" >}}
 All operations are now shown within the context-menu. If you want them to appear in the overview, you can enable them by
 prepending your key with `!` as seen in the example. Note that the operations `edit`, `children` and `toggle` will always appear in

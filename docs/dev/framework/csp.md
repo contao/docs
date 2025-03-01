@@ -78,7 +78,7 @@ $cspHandler->addSource('frame-src', 'https://www.youtube.com/embed/foobar123');
 {{% /tab %}}
 {{< /tabs >}}
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 The method will automatically not add the source, if no source list had been set yet for the given directive (or its
 fallbacks). This behavior can be switched off via the `$autoIgnore` parameter.
 {{% /notice %}}
@@ -111,7 +111,7 @@ $nonce = $cspHandler->getNonce('script-src');
 {{% /tab %}}
 {{< /tabs >}}
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 The method will automatically not return a nonce, if no source list had been set yet for the given directive (or its
 fallbacks).
 {{% /notice %}}
@@ -146,7 +146,7 @@ $cspHandler->addHash('style-src', 'display:none');
 {{% /tab %}}
 {{< /tabs >}}
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 In order for inline styles to work in browsers that support CSP Level 3 you will also need to add `'unsafe-hashes'` to
 the respective directive's source list The same applies to inline JavaScripts for event listeners. See also these
 examples for allowing 

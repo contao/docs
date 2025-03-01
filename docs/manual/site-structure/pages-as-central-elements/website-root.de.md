@@ -152,7 +152,7 @@ pro Domain angezeigt werden, wenn Inhalte dargestellt werden, die keine HTML-Aus
 Bilder, PDFs, etc.).
 Für dieselbe Domain kann man nur einmal ein Favicon festlegen. Dieses muss in der Fallback-Sprache geschehen.
 
-{{% notice "info" %}}
+{{% notice "note" %}}
 Diese Funktion gibt keine zusätzlichen HTML Meta Tags auf der Seite aus.
 {{% /notice %}}
 
@@ -198,7 +198,7 @@ aber dennoch meldet.
 **Protokollierung aktivieren:** Aktiviert die Protokollierung von CSP-Verstößen. Diese Berichte scheinen dann im
 System-Log auf.
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Wenn CSP aktiviert wird bedeutet das in den meisten Fällen, dass Inline-Scripts und -Styles nicht mehr erlaubt sind.
 In der [Entwickler-Dokumentation](https://docs.contao.org/dev/framework/csp/) ist beschrieben wie man dies dennoch
 programmatisch erlauben kann. Darüberhinaus würden die Inline-Styles, die von Contao's Text-Editor (TinyMCE) erzeugt

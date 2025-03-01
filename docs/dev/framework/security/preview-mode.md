@@ -67,7 +67,7 @@ class FoobarController extends AbstractContentElementController
 {% endif %}
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 In previous Contao versions, the `BE_USER_LOGGED_IN` constant was used for this. This constant was `true` whenever a
 valid back end login session is present and the _Unpublished: show_ option was enabled. However, with the introduction of
 the preview link feature of Contao **4.13** this is not necessarily the case anymore, i.e. this constant can be `true`

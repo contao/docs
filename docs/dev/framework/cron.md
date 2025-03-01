@@ -17,7 +17,7 @@ cronjobs on your system using the following command:
 $ vendor/bin/contao-console debug:container --tag contao.cronjob
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 The aformentioned command can also be used in Contao **4.13**. However, this will not find cronjobs that are registered
 via the legacy `config.php` (see below). Unfortunately there is no convenient way in Contao 4 to display registered
 legacy cronjobs. If you want to look these up you could either search for any `$GLOBALS['TL_CRON']` definitions in your 
@@ -225,7 +225,7 @@ be a full CRON expression, e.g. `*/5 * * * *` for "every 5 minutes".
 
 {{% tab title="PHP" %}}
 
-{{% notice "info" %}}
+{{% notice "note" %}}
 This method is deprecated since Contao **4.13** and does not work in Contao **5** anymore.
 {{% /notice %}}
 
@@ -290,7 +290,7 @@ class HourlyCron
 }
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 The above example uses the `CronExecutionSkippedException` (available since Contao **4.9.38** and **5.0.8**) which will tell Contao's Cron 
 service that the excution of this cron job was skipped and thus the last run time will stay untouched in the database. Thus the cron job 
 will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.

@@ -1602,7 +1602,7 @@ framework:
             'Symfony\Component\Mailer\Messenger\SendEmailMessage': async
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Instead of defining the Messenger transport directly we can also use environment variables as usual, in case you want to use different
 transports in different environments (e.g. using the 
 [In Memory transport](https://symfony.com/doc/current/messenger.html#in-memory-transport) locally for testing).
@@ -1634,7 +1634,7 @@ php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
 
 With a minutely cronjob this would mean that at most 600 emails are sent per hour in this case.
 
-{{% notice "info" %}}
+{{% notice "note" %}}
 The commands described above use the `--time-limit=1` option. By default the `messenger:consume` process will run indefinitely, processing
 any new messages continuously. Therefore you would not need to run a separate cronjob. In order to make sure that this process is always
 running and is restarted on demand, different tools can be used on the server. However, in shared hosting environments such tools are
@@ -1643,7 +1643,7 @@ aforementioned `--time-limit=1` option will cause the process to exit after one 
 [Symfony documentation](https://symfony.com/doc/current/messenger.html#consuming-messages-running-the-worker).
 {{% /notice %}}
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 It may be that mails are processed with a time delay,
 if the cronjob doesn't have any specification for the timezone and then uses the default `UTC`.
 Therefore, the local time zone should either be set globally on the server or explicitly in the cronjob.

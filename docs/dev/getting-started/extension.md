@@ -165,7 +165,7 @@ the Contao installation:
 }
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 The `url` can be either an absolute path (starting with `/` or a drive letter under Windows) or a path relative to your
 Contao installation.
 {{% /notice %}}
@@ -218,7 +218,7 @@ class ContaoExampleBundle extends Bundle
 In this example we also override the `getPath` method in order to take advantage of the 
 [recommended bundle structure][SymfonyBundleDirectoryStructure] where there is no `src/Resources/` folder anymore.
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Starting with Symfony 6 (Contao 5) you can instead extend from `Symfony\Component\HttpKernel\Bundle\AbstractBundle`
 and omit the `getPath` method, as the new `AbstractBundle` already includes this.
 

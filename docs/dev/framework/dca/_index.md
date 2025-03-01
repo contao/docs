@@ -297,7 +297,7 @@ It is possible to create custom DCA drivers by following these requirements:
 * The driver's class must be available in the global namespace. <sup>1</sup>
 * The driver must extend from `\Contao\DataContainer`.
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 <sup>1</sup> Since Contao **4.9.17** the driver is not required to be in the global namespace and does not need to be
 prefixed with `DC_` anymore. Instead you can  reference the FQCN of the driver in your DCA:
 

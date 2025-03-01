@@ -214,7 +214,7 @@ doctrine:
                     1002: "SET SESSION sql_mode=(SELECT CONCAT(@@sql_mode, ',TRADITIONAL'))"
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Der [`TRADITIONAL` SQL Modus](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sqlmode_traditional) ist ein Kombinations-Modus
 welcher unter anderem aus den Modi `STRICT_TRANS_TABLES` und `STRICT_ALL_TABLES` besteht. Der »[Strict SQL Modus](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict)« 
 ist aktiv wenn einer dieser Modi aktiviert ist. Der »Strict Modus« ist in aktuellen MySQL und MariaDB Versionen über die Einstellung 
@@ -357,7 +357,7 @@ erfordern. Zum Glück sind sie nur die Ausnahme von der Regel. Die Provider-spez
 Contao-Hosting erhältst du bei den [Contao-Partnern](https://contao.org/de/contao-partner.html) in der 
 Leistungskategorie »Webhosting«.
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Einige Hosting-Anbieter bieten 1-Klick-Installationen an. Für das beste Nutzungserlebnis empfehlen wir jedoch, bei der 
 Installation von Contao den Contao Manager oder die Konsole zu verwenden.
 {{% /notice %}}

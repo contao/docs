@@ -134,7 +134,7 @@ class AppExampleController extends ContentGallery
 ```
 {{% /expand%}}
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Since we are extending classes from the legacy Contao framework here, these controllers will not be automatically registered as a service
 by Contao. Therefore you will need to specifically register these controllers as services in your own `config/services.yaml`. See 
 [this article](/getting-started/starting-development#autoloading-services-and-actions) for more information.
