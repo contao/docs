@@ -5,91 +5,25 @@ aliases:
     - /framework/security/
 ---
 
-Contao uses [Symfony's Security Component][SymfonySecurityComponent] to handle front end and back end user authentication and authorization.
-The Contao Managed Edition provides its own [firewall][SymfonyFirewall], [user providers][SymfonyUserProvider] and 
-[access control][SymfonyAccessControl] via the `contao/manager-bundle`. If you do not use the Managed Edition and added Contao to your
-custom Symfony application, you will have to register Contao's security settings yourself, as mentioned in the 
-[Getting Started article][ContaoConfiguration]. Contao's Symfony Security configuration [in Contao **4.9**][Contao49SecurityYaml] looks like this for example:
+Contao uses [Symfony's Security Component][SymfonySecurityComponent] to handle front end and back end user
+authentication and authorization. The Contao Managed Edition provides its own [firewall][SymfonyFirewall],
+[user providers][SymfonyUserProvider] and [access control][SymfonyAccessControl] via the `contao/manager-bundle`. If you
+do not use the Managed Edition and added Contao to your custom Symfony application, you will have to register Contao's
+security settings yourself, as mentioned in the  [Getting Started article][ContaoConfiguration]. Contao's Symfony
+Security configuration in Contao **{{< current-version >}}** [looks like this][ContaoSecurityYaml] for example.
 
-{{% expand "Contao's Symfony Security Configuration" %}}
-```yaml
-security:
-    providers:
-        contao.security.backend_user_provider:
-            id: contao.security.backend_user_provider
+If you want to learn more about Symfony's Security Component use the provided links to read up on. This documentation
+will only cover implementation details that are unique to Contao.
 
-        contao.security.frontend_user_provider:
-            id: contao.security.frontend_user_provider
-
-    encoders:
-        Contao\User:
-            algorithm: auto
-
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
-            security: false
-
-        contao_install:
-            pattern: ^/contao/install$
-            security: false
-
-        contao_backend:
-            request_matcher: contao.routing.backend_matcher
-            provider: contao.security.backend_user_provider
-            user_checker: contao.security.user_checker
-            anonymous: ~
-            switch_user: true
-
-            contao_login:
-                remember_me: false
-
-            logout:
-                path: contao_backend_logout
-                handlers:
-                    - contao.security.logout_handler
-                    - contao_manager.security.logout_handler
-                success_handler: contao.security.logout_success_handler
-
-        contao_frontend:
-            request_matcher: contao.routing.frontend_matcher
-            provider: contao.security.frontend_user_provider
-            user_checker: contao.security.user_checker
-            anonymous: ~
-            switch_user: false
-
-            contao_login:
-                remember_me: true
-
-            remember_me:
-                secret: '%kernel.secret%'
-                remember_me_parameter: autologin
-
-            logout:
-                path: contao_frontend_logout
-                target: contao_root
-                handlers:
-                    - contao.security.logout_handler
-                success_handler: contao.security.logout_success_handler
-
-    access_control:
-        - { path: ^/contao/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/contao/logout$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/contao(/|$), roles: ROLE_USER }
-        - { path: ^/, roles: [IS_AUTHENTICATED_ANONYMOUSLY] }
-```
-{{% /expand %}}
-
-If you want to learn more about Symfony's Security Component use the provided links to read up on. This documentation will only cover
-implementation details that are unique to Contao.
-
-Since within Contao you can put a login form on basically any page, Contao does not utilise Symfony's built-in 
-[`form_login` Authentication Provider][SymfonyFormLogin]. Instead, Contao implements its own [user checker][SymfonyUserChecker] and 
-[request matcher service][SymfonyRequestMatcherService], the latter of which checks the [request scope][RequestScope]. For example in the 
-front end, all URLs to Contao pages will have the `_scope` request attribute set to `frontend` and the `contao_frontend` firewall will thus 
-be applicable to all these URLs. Contao implements an [authentication listener][SymfonyAuthenticationListener] which will check for any
-POST request containing the parameters `username` and `password` and the parameter `FORM_SUBMIT` with the value `tl_login` (as these are the
-parameters used by Contao's login module).
+Since within Contao you can put a login form on basically any page, Contao does not utilise Symfony's built-in
+[`form_login` Authentication Provider][SymfonyFormLogin]. Instead, Contao implements its own
+[user checker][SymfonyUserChecker] and [request matcher service][SymfonyRequestMatcherService], the latter of which
+checks the [request scope][RequestScope]. For example in the  front end, all URLs to Contao pages will have the `_scope`
+request attribute set to `frontend` and the `contao_frontend` firewall will thus be applicable to all these URLs. Contao
+**4.13** implements an [authentication listener][SymfonyAuthenticationListener] which will check for any POST request
+containing the parameters `username` and `password` and the parameter `FORM_SUBMIT` with the value `tl_login` (as these
+are the parameters used by Contao's login module). In Contao **5** a [custom authenticator][SymfonyAuthenticator] is
+used for this.
 
 
 ## Voters
@@ -405,11 +339,11 @@ Instead of extending Contao's own permissions system you are also free to implem
 
 [SymfonySecurityComponent]: https://symfony.com/doc/5.x/components/security.html
 [SymfonyFirewall]: https://symfony.com/doc/5.x/components/security/firewall.html
-[SymfonyAuthenticationListener]: https://github.com/symfony/symfony/blob/5.x/src/Symfony/Component/Security/Http/Firewall/AbstractAuthenticationListener.php
+[SymfonyAuthenticationListener]: https://github.com/symfony/symfony/blob/5.4/src/Symfony/Component/Security/Http/Firewall/AbstractAuthenticationListener.php
 [SymfonyUserProvider]: https://symfony.com/doc/5.x/security/user_provider.html
 [SymfonyAccessControl]: https://symfony.com/doc/5.x/security/access_control.html
 [ContaoConfiguration]: /getting-started/initial-setup/symfony-application/contao-4.9/#configure-your-contao-installation
-[Contao49SecurityYaml]: https://github.com/contao/contao/blob/4.9.42/manager-bundle/src/Resources/skeleton/config/security.yml
+[ContaoSecurityYaml]: https://github.com/contao/contao/tree/HEAD/manager-bundle/skeleton/config/security.yaml
 [SymfonyFormLogin]: https://symfony.com/doc/5.x/security/form_login.html
 [SymfonyUserChecker]: https://symfony.com/doc/5.x/security/user_checkers.html
 [SymfonyRequestMatcherService]: https://symfony.com/doc/5.x/security/firewall_restriction.html#restricting-by-service
@@ -418,3 +352,4 @@ Instead of extending Contao's own permissions system you are also free to implem
 [SecurityHelperService]: /reference/services/#security-helper
 [PermissionsReference]: /reference/permissions/
 [BackEndRouteGuide]: /guides/back-end-routes/
+[SymfonyAuthenticator]: https://symfony.com/doc/6.4/security/custom_authenticator.html
