@@ -56,12 +56,12 @@ contao:
                 densities: 1.5x, 2x
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Contao always generates the `1x` density (i.e. the original size), even if you do not define it specifically in your 
 `densities` setting.
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 As of Contao **4.9**, an image will always be served from `assets/images/` by default, when using an image size, even
 when the configured size would not require any resizing or cropping. This behavior can be changed through the
 `skip_if_dimensions_match` setting for each image size.

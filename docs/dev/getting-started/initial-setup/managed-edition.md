@@ -23,7 +23,7 @@ The `Manager Bundle` contains the full application skeleton such as entry points
 control on how the application is built during an update. Hence, if you want to install e.g. Contao 4.7, you would require
 `contao/manager-bundle` in `4.7.*`.
 
-{{% notice info %}}
+{{% notice note %}}
 To start a new project, don't just require the `contao/manager-bundle` because you'll also need the `post-install` and
 `post-update` Composer scripts to be in place. Just run `composer create-project contao/managed-edition [<directory>] [<version>]` instead.
 {{% /notice %}}

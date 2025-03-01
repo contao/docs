@@ -129,7 +129,7 @@ der Domain deiner Webseite ersetzt werden. Dann auf _Änderungen speichern_ klic
 7. Auf der linken Seite auf _Einstellungen_ » _Allgemeines_ klicken und die Domain der Webseite unter _App Domains_ 
 eingeben. Danach wieder auf _Änderungen speichern_ klicken.
 
-{{% notice info %}}
+{{% notice note %}}
 Der Facebook Account, unter dem man die App anlegt, muss die Berechtigung haben, auf der timeline der jeweiligen
 Facebook Page, mit der synchronisiert werden soll, Posts machen zu dürfen (dies ist optional, wenn nur Posts von
 der Page in das Nachrichtenarchiv geholt werden sollen). Alternativ können aber auch weitere Administratoren oder
@@ -165,7 +165,7 @@ Nun muss ein __Access Token__ von Facebook geholt werden. Dazu kann die _Faceboo
 Dadurch wird man bei Facebook eingeloggt und es werden Berechtigungen für den eingeloggten Facebook Benutzer 
 angefordert. Nachdem dies bestätigt wurde, wird ein sogenannter »Long Term Access Token« von Facebook geholt.
 
-{{% notice info %}}
+{{% notice note %}}
 Falls Nachrichtenbeiträge automatisch auf der Facebook Page gepostet werden sollen, dann muss in diesem Prozess erlaubt
 werden, dass die Facebook App __öffentliche__ Posts in deinem Namen machen darf. Der Facebook Account, mit dem man sich
 hier anmeldet, muss außerdem die Berechtigung haben, Posts auf der Timeline der jeweiligen Facebook Page posten zu dürfen.

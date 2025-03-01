@@ -36,7 +36,7 @@ more convenient to rebuild the search index manually than to call up all changed
 
 The crawler can also check for broken links, when enabled.
 
-{{% notice note %}}
+{{% notice info %}}
 In versions prior to Contao **4.9** this section is called **Rebuild search index**. The feature of being able to check
 for broken links is not available there.
 {{% /notice %}}
@@ -70,7 +70,7 @@ You can find more information in the [Symfony Routing Documentation][SymfonyUrlC
 To allow the search of protected pages, you must first enable this feature in the [back end settings][BackendSettings]. Use this feature 
 very carefully and always exclude personalized pages from the search!
 
-{{% notice note %}}
+{{% notice info %}}
 Since Contao **4.9** this is enabled in the application configuration:
 
 ```yaml

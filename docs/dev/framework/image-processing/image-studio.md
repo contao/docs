@@ -137,7 +137,7 @@ generating and outputting `Figures` in your templates. This is by far the most v
 still being able to finely control its appearance. Read more about how to use it in the
 [image section](/framework/templates/creating-templates#images) of the Twig template documentation.
 
-{{% notice note %}}
+{{% notice info %}}
 The following section covers how to use the image studio in **Contao 4.13**. For Contao 5, please refer to the best
 practices outlined in the [Twig template documentation](/framework/templates/creating-templates#images).
 {{% /notice %}}
@@ -202,7 +202,7 @@ There are two ways to output images in your PHP templates:
    ?>
    ``` 
 
-   {{% notice info %}}
+   {{% notice note %}}
    By default, the `image.html5` template is used to render the result, but you can optionally pass a custom template 
    name as the fourth argument to use instead. This also accepts Twig templates: Make sure to specify the fully
    qualified template path including the `.twig` file extension in this case. The template will then receive a `figure`
@@ -241,7 +241,7 @@ If you are using Twig, there are three supported ways to get figures/images into
    {% endfor %}
    ``` 
    
-   {{% notice info %}}
+   {{% notice note %}}
    The macros accept an *options* object as the second argument. This can contain the same data as a `Figure`'s option
    property and will take precedence over already set values. You can for instance use these options to set custom HTML
    properties on the various tags. Have a look at the [macro definitions](https://github.com/contao/contao/blob/5.x/core-bundle/templates/Image/Studio/_macros.html.twig)
@@ -278,7 +278,7 @@ If you are using Twig, there are three supported ways to get figures/images into
    }) }}
    ``` 
 
-   {{% notice info %}}
+   {{% notice note %}}
    By default, the `figure.html.twig` template (see 1) is used to render the result, but you can optionally pass a
    custom template as the fourth argument. The template will receive a `figure` variable with your configured `Figure`
    as its context.

@@ -10,7 +10,7 @@ aliases:
 
 This hook is executed directly after Contao has sent a newsletter to its recipients.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `sendNewsletter` hook has been deprecated and will no longer work in Contao 5.0.
 Use the [SendNewsletterEvent](/reference/events#sendnewsletterevent) instead.
 {{% /notice %}}

@@ -48,7 +48,7 @@ In den Einstellungen deines Formulars aktivierst du nun die Option
 [Eingaben speichern](http://localhost:1313/de/formulargenerator/formulare/#formulardaten-speichern) und verwendest 
 als Zieltabelle den Eintrag `tl_calendar_events`.
 
-{{% notice info %}}
+{{% notice note %}}
 Zur Auswahl der Zieltabelle stehen alle vorhandenen Datenbanktabellen deiner Contao Installation zur Verfügung. 
 Du könntest auch eine eigene Datenbanktabelle erstellen. Der entsprechende Tabellenname muss dann mit dem Präfix »tl_«
 beginnen. Grundsätzlich müssen die Feldnamen deines Formulars mit den entsprechenden Feldnamen der Datenbanktabelle 
@@ -166,7 +166,7 @@ Die Methode »generate()» des Contao Slug-Service erlaubt auch die Übergabe ei
 für den dritten Parameter. Sofern erforderlich wird darüber automatisch eine eindeutige Nummer dem »alias« 
 Eintrag hinzugefügt.
 
-{{% notice info %}}
+{{% notice note %}}
 Du musst im Anschluss den Contao Cache über den »Contao Manager« oder über die »Konsole« löschen damit der Hook 
 verarbeitet werden kann. Dies wird auch notwendig nachdem du Änderungen an der Datei »PrepareFormDataListener.php«
 vorgenommen hast.

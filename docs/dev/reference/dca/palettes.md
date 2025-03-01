@@ -156,7 +156,7 @@ section of the Data Container Array as `tl_class` (e.g. `'tl_class' => 'w50 wiza
 | `m12` | Adds a 17 pixels top and bottom padding to the element (used for single checkboxes; more space at top and bottom). |
 | `cbx m12` | A combination of cbx and m12 sets the minimum height of the field to 80 pixels (used for single checkboxes; more space at top and bottom). |
 
-{{% notice info %}}
+{{% notice note %}}
 Due to the nature of floating elements in CSS you need to be careful about which fields of your palette are 50% width
 and thus are floating and which are not. For example if a 50% (`w50`) field is immediately followed by a full length
 field then you must add the `clr` class to the latter, otherwise the layout might break (e.g. the full length field 

@@ -49,7 +49,7 @@ be of interest. Some of those will need to be created manually:
 | `translations/` | Symfony translations. {{< version-tag "5.3" >}} Can also be used for Contao translations. |
 | `composer.json` | Add dependencies, customize autoloading if required.                           |
 
-{{% notice note %}}
+{{% notice info %}}
 Contao **4.4** still uses the Symfony 3 directory structure. The `config/` folder 
 will be in `app/config/` and the `contao/` folder will be in `app/Resources/contao/`
 instead.
@@ -73,18 +73,18 @@ configurations, if present:
 | `config/routes.yaml`     | Definition of application specific routes.<sup>2</sup>                                                    |
 | `config/services.yaml`    | {{< version-tag "4.9" >}} Definition of services.<sup>3</sup>                                 |
 
-{{% notice info %}}
+{{% notice note %}}
 Contao versions _prior_ to **4.9** only support the `*.yml` file extension.
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Contao still supports the legacy way of defining parameters in a Symfony
 application through the `parameters.yaml`. However it is best-practice to use the
 `.env` files instead. See also [Symfony's documentation](https://symfony.com/doc/4.4/configuration.html#configuring-environment-variables-in-env-files)
 for more information about the `.env*` files.
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>2</sup> Contao versions **4.6**, **4.7** and **4.8** only support the `routing.yml` file. Starting with Contao **4.9** all 4 variants 
 (`routes.yaml`, `routing.yaml`, `routes.yml` and `routing.yml`) are supported. Prior to Contao **4.6** you will need to implement an 
 [`App\ContaoManager\Plugin`](/framework/manager-plugin/#the-application-specific-manager-plugin) that implements the 
@@ -146,7 +146,7 @@ This is actually not necessary since Contao **4.9** as the Contao Managed Editio
 autoloading for the `App\` namespace. However you can still add your own autoloading directives of course.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 During development it is advisable to not optimize the Autoloader by Composer, otherwise
 new classes that you created will not be available immediately. If you used the
 `-o`/`--optimize-autoloader` option previously, or the Contao Manager (which optimizes

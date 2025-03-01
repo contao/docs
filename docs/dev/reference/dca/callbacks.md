@@ -23,7 +23,7 @@ You can also use [anonymous functions](http://php.net/functions.anonymous) for D
 The following is a reference of all available callbacks, using their service tag
 callback property name.
 
-{{% notice info %}}
+{{% notice note %}}
 Generally these callbacks are executed in the back end, e.g. when editing data records.
 However in some instances they might also be executed by front end modules, most
 prominently the member modules. In this case the parameters passed to the callback
@@ -281,7 +281,7 @@ Executed after the old version of the record has been added to `tl_version`.
 
 Executed after a record has been restored from an old version.
 
-{{% notice info %}}
+{{% notice note %}}
 This callback is deprecated and will be removed in Contao 5.0. Use [config.onrestore_version](#configonrestore_version)
 instead.
 {{% /notice %}}
@@ -410,7 +410,7 @@ class PagePaletteCallback
 
 ## Listing Callbacks
 
-{{% notice note %}}
+{{% notice info %}}
 All listing callbacks are _singular_ callbacks - meaning there can only be one
 callback, not multiple ones.
 {{% /notice %}}
@@ -642,7 +642,7 @@ class ExampleLabelCallbackListener
 
 ## Operations callbacks
 
-{{% notice note %}}
+{{% notice info %}}
 All operations callbacks are _singular_ callbacks - meaning there can only be
 one callback, not multiple ones.
 {{% /notice %}}
@@ -809,7 +809,7 @@ class AttributesCallback
 
 ### `fields.<FIELD>.options`
 
-{{% notice note %}}
+{{% notice info %}}
 The `fields.<FIELD>.options` callback is a _singular_ callback - meaning there can
 only be one callback, not multiple ones.
 {{% /notice %}}
@@ -826,7 +826,7 @@ or checkbox list. Useful e.g. for conditional foreinKey-relations.
 
 ### `fields.<FIELD>.input_field`
 
-{{% notice note %}}
+{{% notice info %}}
 The `fields.<FIELD>.input_field` callback is a _singular_ callback - meaning there
 can
 only be one callback, not multiple ones.

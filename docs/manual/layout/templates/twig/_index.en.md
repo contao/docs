@@ -5,7 +5,7 @@ url: "layout/templates/twig"
 weight: 10
 ---
 
-{{% notice info %}}
+{{% notice note %}}
 This entire section covers the use of Twig templates in Contao since version 5.0.  
 Although Twig templates can be used in Contao since version 4.12, Twig templates are only used in Contao core since
 Contao 5.0. We did not document the different use of Twig templates in older versions in the manual.
@@ -16,7 +16,7 @@ With Twig templates, design can be strictly separated from programming.
 
 Like a PHP template, a Twig template is used to output a module, content item, form, or other component.
 
-{{% notice note %}}
+{{% notice info %}}
 Twig templates consistently rely on the powerful template structuring and reuse methods, such as
 [Extend](reuse/#extend),
 [Include](https://docs.contao.org/dev/framework/templates/creating-templates/#includes),

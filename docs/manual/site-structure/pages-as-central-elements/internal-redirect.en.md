@@ -165,7 +165,7 @@ public pages and pages not hidden in the menu are included. If necessary, this b
   and would not normally be displayed.
 - **Never display:** The page is excluded from the HTML Sitemap.
 
-{{% notice info %}}
+{{% notice note %}}
 Do not confuse the HTML sitemap with the XML sitemap: The HTML sitemap is a FE-Module, you can submit the XML sitemap 
 e.g. to Google.
 {{% /notice %}}

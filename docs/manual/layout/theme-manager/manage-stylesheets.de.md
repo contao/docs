@@ -18,7 +18,7 @@ In Contao steht für die Verwaltung von Stylesheets ein komfortables Backend-Mo
 Formatdefinitionen in einer Eingabemaske erfassen kannst. Die Erstellung der eigentlichen CSS-Datei erfolgt dabei 
 automatisch im Hintergrund.
 
-{{% notice info %}}
+{{% notice note %}}
 Der interne CSS-Editor ist veraltet und wird in einer der nächsten Contao-Versionen entfernt!  
 Bitte [exportiere deine vorhandenen Stylesheets](#stylesheets-exportieren) und füge sie als externe Stylesheets zum 
 Seitenlayout hinzu.

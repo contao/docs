@@ -16,7 +16,7 @@ or Contao Managed Edition, writing your own bundle is very similar to writing a
 regular Symfony bundle. To learn more about bundles in general, you can read the 
 [respective Symfony documentation][1] first.
 
-{{% notice note %}}
+{{% notice info %}}
 Within this documentation, the terms _package_, _bundle_ and _extension_ are often
 used interchangably. For Composer, everything is a _package_, while a `symfony-bundle`
 or a `contao-bundle` is a specific type of package. _Contao bundles_ are referred 
@@ -345,7 +345,7 @@ class ContaoExampleExtension extends Extension
 }
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 This will not work automatically if your bundle class already extends from `AbstractBundle`. If you wish to use this
 extension class, you will need to implement the `getContainerExtension()` method in your bundle class and instantiate
 this extension class manually.
@@ -386,7 +386,7 @@ services:
         exclude: ../src/{ContaoManager,DependencyInjection}
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Keep in mind that Symfony [recommends](https://symfony.com/doc/current/service_container/autowiring.html#public-and-reusable-bundles) 
 to explicitly configure services in public and reusable bundles. Within the Contao ecosystem of extensions as bundles
 issues are unlikely to occur, but depending on your use-case explicit service configuration might be required.

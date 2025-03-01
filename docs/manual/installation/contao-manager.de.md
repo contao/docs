@@ -50,7 +50,7 @@ Für die neuste Version benötigst du:
 - PHP Funktionen *proc_open* und *proc_close*
 - PHP Einstellung *allow_url_fopen* muss aktiv sein
 
-{{% notice info %}}
+{{% notice note %}}
 Der Contao Manager kann auch bei PHP 5 oder PHP 7 installiert werden. Beim ersten Aufruf
 wird automatisch die PHP-Version erkannt und eine entsprechend kompatible Version heruntergeladen.
 Funktionen der neueren Version sind dann natürlich nicht verfügbar, aber Contao und Erweiterungen können weiterhin
@@ -69,7 +69,7 @@ des Hosting-Providers auf diesen Unterordner.
 in `/public` umbenannt. Falls in deiner Installation ein Verzeichnis `/web` existiert, wird dieses von Contao
 automatisch anstelle von `/public` verwendet. Bei einem Wechsel von `/web` auf `/public` ist die Änderung auch in der composer.json anzugeben.) 
 
-{{% notice note %}}
+{{% notice info %}}
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 {{% /notice %}}
 
@@ -80,7 +80,7 @@ Der Contao Manager besteht aus einer einzelnen Datei, welche über [contao.org](
 heruntergeladen werden kann. Nach erfolgreichem Download erhältst du eine Datei `contao-manager.phar`. 
 Übertrage diese Datei in das Verzeichnis `public` auf deinem Webserver.
 
-{{% notice info %}}
+{{% notice note %}}
 `.phar`-Dateien werden nicht von allen Hosting-Anbietern ausgeführt. Für beste Kompatibilität füge die 
 Dateiendung `.php` hinzu (Finaler Dateiname: `contao-manager.phar.php`).
 {{% /notice %}}

@@ -12,7 +12,7 @@ The `createDefinition` hook is triggered when a format definition of a style
 sheet is imported. It passes the key and value, the original format definition 
 and the data array as arguments and expects an array or `null` as return value.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `createDefinition` hook has been deprecated and will no longer work in Contao 5.0. There is no replacement as the internal stylesheet functionality has been removed in Contao 5.0.
 {{% /notice %}}
 

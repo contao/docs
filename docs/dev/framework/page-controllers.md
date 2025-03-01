@@ -19,7 +19,7 @@ configuration settings from within the back end of Contao. Even the suffix can b
 freely defined, so you might have a list of your database records under `https://example.com/foobar/records.html`,
 while the RSS feed is defined to have a route like `https://example.com/foobar/records.xml`.
 
-{{% notice info %}}
+{{% notice note %}}
 For Page Controllers to work the [_Legacy Routing Mode_](https://docs.contao.org/manual/en/site-structure/website-root/#legacy-routing-mode)
 must be disabled in your application configuration:
 

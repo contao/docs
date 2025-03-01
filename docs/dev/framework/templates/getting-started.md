@@ -100,7 +100,7 @@ We also encourage you to extend Twig yourself. There are a lot of extension poin
 easiest to start with. Have a look in the [official docs][Extending Twig Docs], where things are explained in more
 detail. 
 
-{{% notice note %}}
+{{% notice info %}}
 If you created PHP templates in the past, and are missing functionality that you previously would have implemented
 directly in the templates, using filters and functions is the way to go. As a nice side effect, you can now make use of
 your custom implementation in *any* template. 

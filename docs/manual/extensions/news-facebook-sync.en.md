@@ -123,7 +123,7 @@ website. Then click on _Save Changes_.
 7. On the left, click on _Settings_ » _Basic_ and enter your website's domain unter _App Domains_. Then click on
 _Save Changes_.
 
-{{% notice info %}}
+{{% notice note %}}
 The account under which you create this App must also have the rights to create timeline posts on
 the Facebook page you wish to synchronize with (optional if you only want to fetch Facebook Page posts). Alternatively
 you can also add further Administrator or Developers after you created the App in the _Roles_ section.
@@ -155,7 +155,7 @@ Lastly you need to fetch an __Access Token__. Click on the Facebook connect butt
 log you into Facebook and it will request some permissions from your Facebook user. After you have confirmed the 
 permissions a "Long Term Access Token" will be fetched from Facebook.
 
-{{% notice info %}}
+{{% notice note %}}
 If you want to let Contao publish news posts to your Facebook page, you need to allow the Facebook App 
 to post __publicly__ on your behalf, when granting permissions. The Facebook account under which you log in to fetch 
 the Access Token also must have the rights to create timeline posts on the Facebook page.

@@ -26,7 +26,7 @@ information about Laragon (installation, features, etc.) in the [official docume
 
 Windows 7, 8, 8.1, 10
 
-{{% notice note %}}
+{{% notice info %}}
 This manual describes how to install Laragon on Windows 10 (64-bit).
 {{% /notice %}}
 
@@ -111,7 +111,7 @@ are selected. If desired, you could also enable SSL support via port 443 here:
 
 ![Laragon Settings]({{% asset "images/manual/guides/local-installation/en/laragon/06_laragon_services.png" %}}?width=500px&classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 The Laragon configuration settings are stored in the file `laragon\usr\laragon.ini` and can of course be changed 
 there as well.
 {{% /notice %}}
@@ -171,7 +171,7 @@ changed or supplemented accordingly:
 
 ![Customizing App Configurations]({{% asset "images/manual/guides/local-installation/en/laragon/15_laragon_app_config.png" %}}?width=500px&classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 The app configurations are saved to the file `laragon\usr\sites.conf`.
 {{% /notice %}}
 
@@ -241,7 +241,7 @@ Using the parameter `AutoCreateDatabase` in the section `Options` you can config
 be created automatically or not. By default, every newly created web project will also create a new, empty database 
 with the same name at the same time.
 
-{{% notice note %}}
+{{% notice info %}}
 The changes in the `laragon\usr\sites.conf` are immediately active after saving; Laragon does not need to be restarted. 
 {{% /notice %}}
 
@@ -327,7 +327,7 @@ generating all necessary tables and the database structure.
 (The system check of the Contao Manager should automatically detect the path to the PHP binary if a manual configuration is selected in 
 the server configuration via "*Other ...*")
 
-{{% notice note %}}
+{{% notice info %}}
 If the browser software performs a web search for this keyword when entering, for example, contrary `mycompany.local` 
 to expectations, the schema or network protocol `http://` should also be specified when calling, i.e. `http://mycompany.local/`.
 {{% /notice %}}
@@ -387,7 +387,7 @@ composer require contao/official-demo:4.4.0
 - Call the Contao install tool and import the SQL database dump of the Contao Official Demo (COD). Note: All data 
 already in the database will be deleted when the COD dump is imported.
 
-{{% notice note %}}
+{{% notice info %}}
 Like any other package/bundle, the Contao Official Demo (COD) can be installed in the same way via Contao Manager.
 {{% /notice %}}
 
@@ -421,7 +421,7 @@ $cfg['LoginCookieValidity'] = 36000;
   - Username: `root`
   - Password: <leer></leer>
 
-{{% notice note %}}
+{{% notice info %}}
 The Apache alias configuration for phpMyAdmin is located in `laragon\etc\apache2\alias\phpmyadmin.conf`.
 {{% /notice %}}
 

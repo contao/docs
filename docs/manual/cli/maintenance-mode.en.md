@@ -31,7 +31,7 @@ php vendor/bin/contao-console contao:maintenance-mode [options] [<state>]
 | `enable` or `on`   | Enables the Contao installation into maintenance mode.     |
 | `disable` or `off` | Disables the maintenance mode for the Contao installation. |
 
-{{% notice info %}}
+{{% notice note %}}
 You can learn how to customize the maintenance template in our [tutorial](../../guides/maintenance-template/).
 {{% /notice %}}
 

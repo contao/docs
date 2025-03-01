@@ -15,7 +15,7 @@ content element).
 * Using the [theme manager](/en/layout/theme-manager/manage-themes/), you can link an existing **subdirectory** to a
   theme. The template files in this directory will then be marked with the appropriate `Theme-Name`.
 
-{{% notice note %}}
+{{% notice info %}}
 Template files in other (non-linked) subdirectories won't be considered.
 {{% /notice %}}
 

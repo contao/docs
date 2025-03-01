@@ -12,7 +12,7 @@ The `printArticleAsPdf` hook is triggered when an article should be exported as
 PDF. It passes the article text and the article object as arguments and does not
 expect a return value. Use it to override the internal PDF functionality.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `printArticleAsPdf` hook has been deprecated and will no longer work in Contao 5.0.
 {{% /notice %}}
 

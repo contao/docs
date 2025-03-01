@@ -64,7 +64,7 @@ cd www
 [Composer](https://en.wikipedia.org/wiki/Composer_(software)) is an application-oriented package manager for the 
 PHP programming language and installs dependencies.
 
-{{% notice note %}}
+{{% notice info %}}
 You can either install Composer [locally](https://getcomposer.org/doc/00-intro.md#locally) 
 or [globally](https://getcomposer.org/doc/00-intro.md#globally). 
  
@@ -97,7 +97,7 @@ Example: `example.com`points to the directory `/www/example/web`
 ({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to
 `/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
 
-{{% notice note %}}
+{{% notice info %}}
 Every Contao installation therefore requires its own (sub)domain.
 {{% /notice %}}
 
@@ -116,7 +116,7 @@ You can also create a database beforehand on the command line:<br>
 `php vendor/bin/contao-console doctrine:database:create`
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Contao needs to know the corresponding connection data for your database. This information can either be retrieved via 
 an existing "config/parameters.yaml" (currently installed using the [Contao-Install tool](/en/installation/contao-installtool/)) 
 or via a "[.env](https://docs.contao.org/dev/getting-started/starting-development/#application-configuration)" file 

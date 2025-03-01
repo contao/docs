@@ -92,7 +92,7 @@ contao:
 
 ### Front end configuration
 
-{{% notice note %}}
+{{% notice info %}}
 Starting with version **4.10** this setting can be changed in the settings of the website root instead:
 {{% /notice %}}
 
@@ -100,7 +100,7 @@ Starting with version **4.10** this setting can be changed in the settings of th
 the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt; Install" will use the alias 
 `docs/install/download.html` instead of just `download.html`.
 
-{{% notice note %}}
+{{% notice info %}}
 This setting does not exist anymore in Contao **4.10** and higher:
 {{% /notice %}}
 
@@ -137,7 +137,7 @@ security:
 **Examples:**  
 `<iframe>` is not present in the allowed HTML tags, but can easily be inserted under key.
 
-{{% notice note %}}  
+{{% notice info %}}  
 In order to better recognise the HTML tags added by the user, these should be entered at the beginning of the list.
 {{% /notice %}}  
 
@@ -186,7 +186,7 @@ index.
 **Index protected pages:** Select this option to index protected pages for your search. Use this feature with care and 
 make sure to exclude personalized pages from the search.
 
-{{% notice note %}}
+{{% notice info %}}
 Starting with version **4.9** a new search indexer is used. The settings **Enable searching** and 
 **Index protected pages** are now configured via the `config/config.yaml`.
 
@@ -231,7 +231,7 @@ contain additional entries such as the credentials for sending e-mails via SMTP.
 
 The file `parameters.yaml` is located in the folder `config/` and is created automatically when you install Contao.
 
-{{% notice note %}}
+{{% notice info %}}
 Before version **4.8** of Contao, the file was located in `app/config/`.
 {{% /notice %}}
 
@@ -248,7 +248,7 @@ parameters:
     secret: …
 ```
 
-{{% notice note %}} Database passwords that consist only of digits must be set in quotation marks. {{% /notice %}}
+{{% notice info %}} Database passwords that consist only of digits must be set in quotation marks. {{% /notice %}}
 
 ## config.yaml
 
@@ -260,11 +260,11 @@ This allows you to realize different configurations for your test or production 
 logging in debug mode). In addition, you can commit the `config.yaml` configuration files to your repository, if your
 project is versioned via Git for example.
 
-{{% notice note %}}
+{{% notice info %}}
 In Contao versions prior to **4.9** the file is located under `app/config/`.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Contao versions _prior_ to **4.9** only support the `*.yml` file extension.
 {{% /notice %}}
 
@@ -1022,7 +1022,7 @@ Environment variables are variables that can be defined at the operating system 
 
 The variables are defined in the file `.env` and this file must be located in the root directory of the Contao installation. The usage and name of the following variables are predefined. However, you can also define arbitrary variables and then reference them e.g. in the `config.yaml`. If an additional `.env.local` file exists in the same directory, it will be used automatically.
 
-{{% notice info %}}
+{{% notice note %}}
 Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts 
 of the `config/parameters.yaml` and thus you should not use these parameters, if you are using the environment variable instead.
 {{% /notice %}}
@@ -1126,7 +1126,7 @@ be used for sending emails, as well as the login credentials, host name and port
 applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
 See the [Symfony Mailer Documentation][SymfonyMailer] for more information.
 
-{{% notice note %}}
+{{% notice info %}}
 The variable was previously called `MAILER_URL`. Since Contao **5.0** only `MAILER_DSN` will be supported.
 {{% /notice %}}
 
@@ -1165,7 +1165,7 @@ The following tool runs in your browser and helps you to convert your mail param
 
 ### `COOKIE_ALLOW_LIST`
 
-{{% notice info %}}
+{{% notice note %}}
 In Contao **4.9** this environment variable is called `COOKIE_WHITELIST`.
 {{% /notice %}}
 
@@ -1195,7 +1195,7 @@ cookies of extensions you installed:
 COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
     
-{{% notice note %}}
+{{% notice info %}}
 The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
 for you too. Moreover, the CSRF cookie is different for `http` and `https` for security reasons. If you serve your
 website over `http`, note that the cookie name will be `csrf_http-contao_csrf_token`.
@@ -1485,7 +1485,7 @@ contao:
 If the symfony application cache has been refreshed afterwards, these email configurations will be available for 
 selection in the Contao back end.
 
-{{% notice note %}}
+{{% notice info %}}
 If no transport is configured, the information from the `parameters.yaml` is used. If a transport is configured but no transport 
 is selected in the Contao back end, the first defined transport is used automatically.
 {{% /notice %}}
@@ -1634,7 +1634,7 @@ php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
 
 With a minutely cronjob this would mean that at most 600 emails are sent per hour in this case.
 
-{{% notice "note" %}}
+{{% notice "_note" %}}
 The commands described above use the `--time-limit=1` option. By default the `messenger:consume` process will run indefinitely, processing
 any new messages continuously. Therefore you would not need to run a separate cronjob. In order to make sure that this process is always
 running and is restarted on demand, different tools can be used on the server. However, in shared hosting environments such tools are

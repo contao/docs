@@ -18,7 +18,7 @@ bis ein gewisser Zeitpunkt erreicht ist. Danach werden die ersten »Release Cand
 veröffentlicht. Wenn während der Tests keine weiteren Probleme gefunden werden, 
 wird die erste stabile Version veröffentlicht.
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Contao verwendet für die Versionierung der Software »[Semantic Versioning](https://semver.org/)«.
 Eine »Major« Version bezeichnet die erste Stelle der Versionsangabe. Das sind Versionen,
 wo neue Funktionen oder strukturelle Änderungen in der Software hinzugefügt wurden,

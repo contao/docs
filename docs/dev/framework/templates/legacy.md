@@ -340,7 +340,7 @@ or
 within the template. Both of these statements will use the [Symfony VarDumper component][SymfonyVarDumper]
 to display the template's data.
 
-{{% notice info %}}
+{{% notice note %}}
 If your template uses template inheritance, the template variable dump will only
 be visible either in debug mode or if the dump is in between the `$this->block(…)`
 and `$this->endblock()` statements.

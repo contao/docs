@@ -352,7 +352,7 @@ The metadata operations allow passing in optional `$accessFlags` to bypass the D
 | `setExtraMetadata` | Set an array of metadata to a file found at the given path or UUID. The data should be set in the denormalized form (e.g. objects instead of raw array data) like it is retrieved when using `getExtraMetadata()`. It will be normalized by listeners of the `StoreDbafsMetadataEvent` when storing. |
 
 
-{{% notice info %}}
+{{% notice note %}}
 All filesystem operations will throw a `VirtualFilesystemException` if the filesystem operation failed for any reason
 (see message for more details). All operations except for those listed under "Tests" will also throw an
 `UnableToResolveUuidException` in case a non-resolvable UUID was provided.

@@ -67,7 +67,7 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | [onrestore_version_callback](../callbacks/#config-onrestore-version) | Callback functions (`array`)      | Calls a custom function when a version of a record is restored and passes the table, insert ID, the table, the version and the data array as argument.                                                                  |
 | sql                | Table configuration (`array`)     | Describes table configuration, e.g. `'keys' => [ 'id' => 'primary', 'pid' => 'index' ]`, see [SQL configuration](#sql-configuration).                                                                                   |
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> A Data Container of type `\Contao\DC_Table` also needs at least the primary key configuration for the database table, as shown in the <nobr>[example](#example).</nobr>
 {{% /notice %}}
 

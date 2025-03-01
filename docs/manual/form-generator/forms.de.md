@@ -18,7 +18,7 @@ Dateien können als Anhang versendet oder auf dem Server gespeichert werden.
 Ohne Angaben eines eigenen SMTP-Servers werden die Daten über [Sendmail](https://de.wikipedia.org/wiki/Sendmail) 
 versendet, was zu Problemen führen kann.
 
-{{% notice info %}}
+{{% notice note %}}
 Wir empfehlen den Versand über das [E-Mail-Transportprotkoll (SMTP)](../../system/einstellungen/#smtp-versand).
 {{% /notice %}}
 

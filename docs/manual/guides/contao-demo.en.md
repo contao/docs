@@ -30,7 +30,7 @@ follow the complete implementation of the Contao demo website in the Contao back
 The Contao demo uses `.scss` files for the design. The `app.scss` is used directly in the respective Contao theme 
 settings and then compiled and provided as a final `.css` file via Contao.
 
-{{% notice note %}} 
+{{% notice info %}} 
 What you should consider here, is described in more detail in this article "[Sass/Less Integration](/en/guides/sass-less-integration/)". 
 {{% /notice %}}
 
@@ -52,7 +52,7 @@ The "[scssphp/scssphp](https://github.com/scssphp/scssphp)" library used by Cont
 "[Dart Sass](https://sass-lang.com/dart-sass/)" features such as "[@use](https://sass-lang.com/documentation/at-rules/use/)", 
 "[@forward](https://sass-lang.com/documentation/at-rules/forward/)" or other "Dart Sass" [modules](https://sass-lang.com/documentation/modules/).
 
-{{% notice note %}}
+{{% notice info %}}
 This may also apply to existing SASS extensions, e.g. for the "[Visual Studio Code](https://code.visualstudio.com/)" editor etc.
 {{% /notice %}}
 

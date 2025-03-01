@@ -10,7 +10,7 @@ aliases:
 
 The `getCountries` hook allows to modify the system's list of countries.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `getCountries` hook has been deprecated and will no longer work in Contao 5.0. Decorate the `Contao\CoreBundle\Intl\Countries` 
 service instead.
 {{% /notice %}}

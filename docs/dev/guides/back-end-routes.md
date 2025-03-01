@@ -9,7 +9,7 @@ aliases:
 ---
 
 
-{{% notice note %}}
+{{% notice info %}}
 This guide assumes a Contao version of at least **4.13**. Back end routes can be
 created in previous Contao versions as well, but might require additional steps.
 {{% /notice %}}

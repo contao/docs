@@ -100,7 +100,7 @@ Starting with Contao **4.7** Contao implements [Voters][SymfonyVoters] in order 
 to access specific resources. These voters are automatically added to Symfony's security system and then invoked when the respective
 permission is accessed via the [Security Helper][SecurityHelperService].
 
-{{% notice note %}}
+{{% notice info %}}
 Contao automatically uses the `priority` 
 [access decision strategy](https://symfony.com/doc/current/security/voters.html#changing-the-access-decision-strategy) for any request that
 is either in Contao's `frontend` or `backend` scope. This means the first voter that does not abstain will decide on the vote. Thus if you 
@@ -391,7 +391,7 @@ class BackendController
 }
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 We do not need to check whether a user is logged in this case, since the Contao firewall automatically checks this
 for this controller with the configured routing parameters (see also the [back end route guide](/guides/back-end-routes/)).
 {{% /notice %}}

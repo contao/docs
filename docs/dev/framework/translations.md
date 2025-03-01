@@ -28,7 +28,7 @@ for each language has to be either the ISO 639 language code (e.g. `de` for _Ger
 or the ISO 15897 POSIX locale for regions (e.g. `de_AT` for _German (Austria)_).
 No further configuration is necessary, other than the translations being present.
 
-{{% notice note %}}
+{{% notice info %}}
 In the site structure, the _IETF Language Tag_ format is used for the site's language 
 in the website root (e.g. `de-AT`).
 {{% /notice %}}
@@ -63,7 +63,7 @@ contao:
 This example configuration will remove the available back end language _German_ and
 add _German (Austria)_ while keeping the rest of the locales untouched.
 
-{{% notice note %}}
+{{% notice info %}}
 _English_ (`en`) will always serve as the fallback in all cases, if a translation 
 string is not available in the current language.
 {{% /notice %}}

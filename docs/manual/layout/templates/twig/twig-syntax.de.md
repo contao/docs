@@ -10,7 +10,7 @@ weight: 20
 Twig-Templates haben ihre eigene Syntax. Wir stellen hier nur die wichtigsten Regeln vor, die zum Grundverständnis
 von Twig notwendig sind.
 
-{{% notice info %}}
+{{% notice note %}}
 Die Twig Syntax ist [gut dokumentiert](https://twig.symfony.com/doc/3.x/). Als Startpunkt ist der
 Abschnitt [Twig für Template-Designer](https://twig.symfony.com/doc/3.x/templates.html) zu empfehlen.
 {{% /notice %}}

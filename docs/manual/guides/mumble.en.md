@@ -6,7 +6,7 @@ aliases:
 weight: 890
 ---
 
-{{% notice note %}}
+{{% notice info %}}
 Since 1st of October 2021 we are not using Mumble for our regular public calls anymore. Instead we are using Huddles in the [Contao Slack workspace](https://to.contao.org/slack).
 {{% /notice %}}
 
@@ -123,7 +123,7 @@ with "open senate" are also accessible to you.
 In the channel "closed Senate" (in "Galactic Senate") only administrators are allowed. 
 These administrators can invite all others to the channel and assign them language rights.
 
-{{% notice note %}}
+{{% notice info %}}
 If you have set in the audio setup that Mumble automatically detects the language status, 
 from now on every word or sound will be transmitted to Mumble, if you don't believe yourself.
 {{% /notice %}}

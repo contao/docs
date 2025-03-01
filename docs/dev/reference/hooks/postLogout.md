@@ -11,7 +11,7 @@ aliases:
 The `postLogout` hook is triggered after a user has logged out from the back end 
 or front end. It passes the user object as argument and does not expect a return value.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `postLogout` hook has been deprecated and will no longer work in Contao 5.0.
 {{% /notice %}}
 

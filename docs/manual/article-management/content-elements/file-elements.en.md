@@ -35,7 +35,7 @@ from your browser. This way you can easily create a protected download area. For
 
 ### Preview settings
 
-{{% notice info %}}
+{{% notice note %}}
 The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
 {{% /notice %}}
 
@@ -55,7 +55,7 @@ The PHP extension Imagick or Gmagick must be installed on the server to enjoy th
 With 0 all thumbnails are generated in our case so 10. If you want to output only the first page of your PDF as a 
 preview image, enter 1 in the field.
 
-{{% notice info %}}
+{{% notice note %}}
 Note that only those file types can be downloaded that you have specified in the backend settings under "Download
 file types".
 {{% /notice %}}
@@ -141,7 +141,7 @@ they are not displayed when activated.
 
 ### Preview settings
 
-{{% notice info %}}
+{{% notice note %}}
 The PHP extension Imagick or Gmagick must be installed on the server to enjoy this feature.
 {{% /notice %}}
 
@@ -161,7 +161,7 @@ The PHP extension Imagick or Gmagick must be installed on the server to enjoy th
 With 0 all thumbnails are generated in our case so 10. If you want to output only the first page of your PDF as a
 preview image, enter 1 in the field.
 
-{{% notice info %}}
+{{% notice note %}}
 Note that only those file types can be downloaded that you have specified in the backend settings under "Download file 
 types".
 {{% /notice %}}

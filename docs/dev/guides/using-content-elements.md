@@ -239,7 +239,7 @@ and return these content elements.
 <?php $this->endblock(); ?>
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 The advantage of using an anonymous function for rendering the content elements
 is that the elements are only fetched from the database and rendered if they are
 actually requested within the template. Thus if you have multiple modules and templates

@@ -65,7 +65,7 @@ h1, h2 {
 }
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 In the [Page layouts](/en/layout/theme-manager/manage-page-layouts/) you may find direct 
 Input options for the Google web fonts. This option will no longer be available in future versions of Contao. 
 Therefore the described procedure is recommended.
@@ -90,14 +90,14 @@ Web applications like »[Google Webfonts Helper](https://gwfh.mranftl.com/fonts)
 provides the Google web fonts in various file formats. Furthermore, depending on your selection, the appropriate CSS information via `@font-face` is supplied. This CSS information must be added to your own CSS file. It doesn't matter if you work directly with CSS files or if you use these 
 via [Preprocessors](/en/guides/sass-less-integration/) such as »Sass/Less«. 
 
-{{% notice info %}}
+{{% notice note %}}
 If you are not sure which of the mentioned web applications you should use, [here is a post](https://webfontloader.altmann.de/about/#more) that clarifies the differences.
 {{% /notice %}}
 
 You then include the CSS file as an external stylesheet in the »Expert settings -> Stylesheets« within the 
 [page layout](/en/layout/theme-manager/manage-page-layouts/) section of your [theme](/en/layout/theme-manager/).
 
-{{% notice note %}}
+{{% notice info %}}
 The paths provided in `url()` regarding the web font files within the CSS `@font-face` directive are relative to the
 position of the CSS file. This depends on your directory structure.
 {{% /notice  %}}
@@ -121,7 +121,7 @@ directory »files/theme/css«. The correct, relative paths to the web font files
 }
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 In [Page Layout](/en/layout/theme-manager/manage-page-layouts/), you can activate the »Combine Scripts« option. All 
 CSS information of the selected internal and external CSS files will be combined into a single, new file and stored 
 by Contao in the directory »assets/css«.<br><br>

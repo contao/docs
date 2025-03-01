@@ -18,7 +18,7 @@ Beim Anlegen, Verschieben oder Umbenennen von Twig-Templates empfehlen wir dir d
 [Debug-Modus](/de/system/debug-modus/#contao-4-8-und-hoeher), damit die neu angelegten Templates auch verwendet werden.  
 Nach Fertigstellung muss der Anwendungs-Cache über den Contao-Manager oder über die Konsole neu aufgebaut werden.
 
-{{% notice info %}}
+{{% notice note %}}
 Auch im Debug-Modus kann es in manchen Fällen erforderlich sein, den Anwendungs-Cache zu löschen, damit euer
 angepasstes Template greift.
 {{% /notice %}}
@@ -80,7 +80,7 @@ auf ihre Behandlung etwas Besonderes, denn sie sind zwar am spezifischsten, aber
 [Template-Hierarchie](../wiederverwendung/#templatehierarchie). Erst zur Laufzeit wird entschieden, ob ein
 themespezifisches Template verwendet wird.
 
-{{% notice note %}}
+{{% notice info %}}
 Du kannst mit themespezifischen Templates grundsätzlich nur Templates anpassen, die als globale Templates in der
 [Template-Hierarchie](../wiederverwendung/#templatehierarchie) vorhanden sind.
 {{% /notice %}}

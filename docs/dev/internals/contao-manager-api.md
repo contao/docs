@@ -38,7 +38,7 @@ For long term authentication or without involving the browser, the Contao Manage
 supports authentication tokens. Tokens are always bound to a specific user account
 and work similar to any other OAuth authentication.
 
-{{% notice info %}}
+{{% notice note %}}
 The Contao Manager implements standard [OAuth Implicit Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2) as far as possible. We are aware that Implicit Grant is 
 not recommended for security reasons, but other OAuth protocols require you to register an application ID prior to 
 accessing the OAuth endpoint. As an example: on Facebook, you have to register as a developer and register your 

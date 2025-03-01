@@ -33,7 +33,7 @@ der einzelnen Spalten in Abhängigkeit von der Gesamtbreite zu verstehen. Du kan
 selbst kontrollieren. Beispielsweise kann der Inhalt auf einem Desktop »4-spaltig«, beim Tablet »2-spaltig« und auf 
 einem Smartphone »1-spaltig« angezeigt werden.
 
-{{% notice note %}}
+{{% notice info %}}
 Die »Contao Show« hat das Thema »[Inhalte mehrspaltig in Contao umsetzen](https://to.contao.org/tv/show/12)« behandelt.
 {{% /notice %}}
 
@@ -63,7 +63,7 @@ Zur »2-spaltigen« Darstellung zweier Inhaltselemente vom Typ »Text« kannst d
 Bereich »Experteneinstellungen > CSS-ID/Klasse« eintragen. Oberhalb von 768 Pixel werden die Inhaltselemente immer
 »2-spaltig« dargestellt und unterhalb von 768 Pixel dann »1-spaltig«.
 
-{{% notice note %}}
+{{% notice info %}}
 Das in die Jahre gekommene Contao-Grid funktioniert mit obigen Einschränkungen. Empfohlen wird aber die Nutzung einer 
 aktuellen Grid-Lösung. Als Alternative stehen hierzu [zahlreiche Erweiterungen](https://extensions.contao.org/?q=grid) zur 
 einfachen [Installation]({{% ref "install-extensions.de.md" %}}) zur Verfügung. 

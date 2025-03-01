@@ -13,7 +13,7 @@ automatically validates the form input according to the rules you specify. Files
 
 Without specifying a separate SMTP server, the data is sent via [sendmail](https://en.wikipedia.org/wiki/Sendmail), which can lead to problems.
 
-{{% notice info %}}
+{{% notice note %}}
 We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/settings/#e-mail-sending-configuration).
 {{% /notice %}}
 

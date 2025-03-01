@@ -109,7 +109,7 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
    installation.
 3. Run the [install tool](../contao-installtool) to configure the new database connection. 
 
-{{% notice note %}}
+{{% notice info %}}
 If you have not moved to another server and have simply created a 1:1 copy on the same server, make sure to delete and recreate the application cache via the Contao Manager after adjusting the database connection to ensure that the changes are applied correctly and that you are on the correct database.
 {{% /notice %}}
 

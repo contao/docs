@@ -68,7 +68,7 @@ h1, h2 {
 }
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 In den [Seitenlayouts](/de/layout/theme-manager/seitenlayouts-verwalten/) findest du u. U. noch direkte 
 Eingabemöglichkeiten für die Google Webfonts. Diese Option wird in zukünftigen Contao-Versionen nicht mehr zur 
 Verfügung stehen! Es wird daher die beschriebene Vorgehensweise empfohlen.
@@ -94,7 +94,7 @@ Webapplikationen wie »[Google Webfonts Helper](https://gwfh.mranftl.com/fonts)�
 stellen die Google Webfonts in verschiedenen Dateiformaten zur Verfügung. Darüber hinaus werden, abhängig von deiner Auswahl, die passenden CSS Angaben 
 via »`@font-face`« mitgeliefert. Diese CSS Angaben müssen deiner eigenen ».css« Datei hinzugefügt werden. Dabei ist es gleichgültig, ob du direkt mit CSS-Dateien arbeitest oder ob du diese über [Präprozessoren](/de/anleitungen/sass-less-integration/) wie »Sass/Less« erstellst. 
 
-{{% notice info %}}
+{{% notice note %}}
 Falls du nicht sicher bist, welche der genannten Webapplikationen du benutzen solltest, findest du [hier einen Beitrag](https://webfontloader.altmann.de/about/#more) 
 der die Unterschiede verdeutlicht.
 {{% /notice  %}}
@@ -103,7 +103,7 @@ Du bindest dann die CSS-Datei als externes Stylesheet im Bereich »Experten-Eins
 des [Seitenlayouts](/de/layout/theme-manager/seitenlayouts-verwalten/#stylesheets) deines [Themes](/de/layout/theme-manager/)
 ein.
 
-{{% notice note %}}
+{{% notice info %}}
 Die Pfadangaben `url()` auf die Webfont-Dateien innerhalb der CSS `@font-face` Direktive erfolgen relativ zur
 Position der CSS-Datei. Dies ist abhängig von deiner Verzeichnisstruktur.
 {{% /notice  %}}
@@ -127,7 +127,7 @@ Verzeichnis »files/theme/css«, dann wären die korrekten relativen Pfadangaben
 }
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Im [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#stylesheets) kannst du die Option 
 »Skripte zusammenfassen« aktivieren. Hierbei werden alle CSS-Angaben der ausgewählten internen und externen CSS- 
 Dateien in eine einzige, neue Datei zusammengefasst und von Contao im Verzeichnis »assets/css« abgelegt.<br><br>

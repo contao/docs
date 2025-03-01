@@ -73,7 +73,7 @@ PaletteManipulator::create()
 ;
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Each time you call an `applyTo*()` method, the fields you applied for this instance will not be cleared.
 If you do not want this behaviour, you can create a new instance:
 {{% /notice %}}

@@ -69,7 +69,7 @@ $ composer require \
     twig/twig:^2.7
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 If you're using **PHP 8.x**, replace `php-http/guzzle6-adapter` with `php-http/guzzle7-adapter` in the prior
 `composer require` command:
 ```

@@ -181,7 +181,7 @@ Add the original repository once as a new remote repository and specify it as th
 git remote add upstream https://github.com/contao/docs.git
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 The [Remote name](https://docs.github.com/en/github/using-git/renaming-a-remote) "upstream" can be freely selected or renamed. 
 can also be renamed later.
 {{% /notice %}}
@@ -262,7 +262,7 @@ To send the changes to your remote repository, run the following command.
 git push origin YOUR-BRANCH-NAME
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 After "pushing" your own new branch, you will see a link to create the pull request on the console.
 {{% /notice %}}
 

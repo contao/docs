@@ -12,7 +12,7 @@ The `getForm` hook allows to manipulate the generation of the forms. It passes t
 form object and the current form output buffer as arguments and expects a string
 as return value.
 
-{{% notice info %}}
+{{% notice note %}}
 This hook is only executed, when a form is rendered directly via 
 `\Contao\Controller::getForm()`. Within the Contao core this is currently only the
 case if a form is integrated via the `{{insert_form::*}}` insert tag. The content

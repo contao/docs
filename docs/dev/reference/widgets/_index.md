@@ -10,7 +10,7 @@ for the editing form of data records, based on the DCA configuration of the resp
 
 For a complete overview of all available options see the [full DCA field reference](../dca/fields).
 
-{{% notice info %}}
+{{% notice note %}}
 
 This section is still **work in progress.** Please consider contributing when you research a widget configuration to help others! 
 

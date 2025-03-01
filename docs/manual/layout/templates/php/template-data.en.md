@@ -18,7 +18,7 @@ You can dump all available template data to see what's there:
 This statement uses the [Symfony VarDumper component](https://symfony.com/doc/current/components/var_dumper.html) to 
 display the data. In debug mode, the output will therefore be redirected to the Symfony Debug Toolbar.
 
-{{% notice info %}}
+{{% notice note %}}
 If you use [template inheritance]({{% ref "template-inheritance.en.md" %}}), the template data is only displayed in
 debug mode or if the statement is enclosed between `$this->block(…)` and `$this->endblock()` statements.
 {{% /notice %}}

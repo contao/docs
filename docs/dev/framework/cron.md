@@ -35,7 +35,7 @@ queues) will be processed within `kernel.terminate` of the web process.
 By default the cron tasks are executed after a response is sent back to the visitor 
 when a request to the Contao site has been made.
 
-{{% notice info %}}
+{{% notice note %}}
 It is recommended to run PHP via PHP-FPM, otherwise cron execution and search indexing
 will block any subsequent request by the same user.
 {{% /notice %}}
@@ -190,7 +190,7 @@ class ExampleCron
 In this case the cron job is executed once per hour. As mentioned before this parameter can also be a full CRON expression, e.g. 
 `*/5 * * * *` for "every 5 minutes".
 
-{{% notice note %}}
+{{% notice info %}}
 If you need an interval like `*/5 * * * *` you need to escape either the `*` or `/` 
 with `\`, since `*/` would close the PHP comment.
 {{% /notice %}}
@@ -377,7 +377,7 @@ its defined interval, either truncate the whole table or delete the entry for th
 specific cron job you want to test. If the table is empty every cronjob will be 
 executed on the first cron call. After that only on its defined interval.
 
-{{% notice note %}}
+{{% notice info %}}
 In Contao **4.4**, the table is called `tl_cron` and it contains only the last execution
 times of the named intervals, not the last execution time of individual cron jobs.
 {{% /notice %}}

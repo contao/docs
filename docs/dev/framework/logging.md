@@ -19,7 +19,7 @@ to assign messages to the appropriate parts of the application.
 
 Contao itself uses the `contao` channel for all Contao-specific messages.
 
-{{% notice note %}}
+{{% notice info %}}
 Contao also creates additional log channels for sending messages with a specific context.
 For more information, see [Contao channels](#contao-channels-convenience-loggers).
 {{% /notice %}}

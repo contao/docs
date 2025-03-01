@@ -295,7 +295,7 @@ recursive tree structure (like a menu). Each node can contain more child nodes, 
 ```
 {{% /example %}}
 
-{{% notice note %}}
+{{% notice info %}}
 **Do not overuse macros**, especially in extensions. They can help avoid duplication in your code, but they are way less
 adjustable for others. Many things can also be done by using blocks and the `block()` function instead.
 {{% /notice %}}
@@ -383,7 +383,7 @@ instead uses and renders another component, the `picture` component (yes we've g
 see the ["set and merge" pattern](#html-attributes) being heavily in use (more on that further down). And we've got a
 lot of blocks. All this makes the template look more complex, but extremely adjustable on the other hand.
 
-{{% notice info %}}
+{{% notice note %}}
 Don't worry — your templates do not have to feature the same level of adjustability. Consider it, when creating an
 extension that ships components, though. For the Contao core, we try to value adjustability a bit higher in general, as
 these templates are likely to be handled by a lot of parties.
@@ -394,7 +394,7 @@ these templates are likely to be handled by a lot of parties.
 Talking about adjusting: You saw in the examples earlier in this article how you would adjust blocks introduced by
 components. But how would you adjust a component itself (globally)?
 
-{{% notice note %}}
+{{% notice info %}}
 **You cannot extend components!** In general: Twig does not allow to extend from templates that are being "used" at the
 same time. Use and overwrite the component's blocks instead (see example below).
 {{% /notice %}}
@@ -546,7 +546,7 @@ of data and returns nothing. For this, you will typically want to wrap a call to
 {% do add_schema_org(…) %}
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Behind the scenes, these features build on top of the [response context](../../response-context) concept. It is the
 responsibility of the page template (like `fe_page`) to ultimately output the gathered data.
 {{% /notice %}}
@@ -612,7 +612,7 @@ is the way to go. This way it also works with multiple extenders that want to ch
 {{% /notice %}}
 {{% /example %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Please refer to the doc block comments on each of the fluent interface methods of the `HtmlAttributes` class for details
 on how to use it.
 {{% /notice %}}
@@ -667,7 +667,7 @@ pre-made `_figure` component:
 {% with {figure: my_figure} %}{{ block('figure_component') }}{% endwith %}
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 In Contao **4.13** you need to use the `contao_figure` instead of the `figure` function. While allowing the same
 arguments, this function will directly render the (default or given) image template instead of returning a `Figure`
 object. Note, that this function is deprecated since Contao **5.0**.

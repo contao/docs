@@ -19,7 +19,7 @@ beispielsweise »contao/dca/tl_content.php«. Anschließend mußt du den Anwendu
 [Contao Manager](/de/installation/contao-manager/) oder über die Konsole neu aufbauen. Dieser Schritt ist nach 
 jeder Änderung erforderlich.
 
-{{% notice note %}}
+{{% notice info %}}
 Du kennst weitere, praktische Beispiele? Dann ergänze diese Sammlung mit deinen Informationen. Ausführliche Angaben wie
 du zur Dokumentation beitragen kannst [findest du hier](/de/beitragen/).
 {{% /notice %}}

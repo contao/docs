@@ -41,7 +41,7 @@ aufzurufen.
 
 Der Crawler kann außerdem auf defekte Links überprüfen, wenn das aktiviert wurde.
 
-{{% notice note %}}
+{{% notice info %}}
 In Contao Versionen vor **4.9** heißt diese Sektion **Suchindex neu aufbauen**. Die Funktion zum Überprüfen auf defekte
 Links steht dort nicht zur Verfügung.
 {{% /notice %}}
@@ -74,7 +74,7 @@ Nähere Informationen dazu findet man in der [Symfony Routing Dokumentation][Sym
 Um das Durchsuchen von geschützten Seiten zu erlauben, musst du die Funktion zunächst in den [Backend-Einstellungen][BackendSettings] 
 aktivieren. Benutze dieses Feature sehr sorgfältig, und schließe personalisierte Seiten immer von der Suche aus!
 
-{{% notice note %}}
+{{% notice info %}}
 Ab Contao **4.9** wird dies in der Applikations-Konfiguration aktiviert:
 
 ```yaml

@@ -23,7 +23,7 @@ Erstelle über den [Navigationsbereich](../../administrationsbereich/aufruf-und-
 »Layout« unter »Templates« ein neues [Template](../../theme-manager/templates-verwalten). 
 Wähle über `Original-Template` das Template `be_tinyMCE.html5` aus und gebe als `Zielverzeichnis` das Hauptverzeichnis an. 
 
-{{% notice note %}}
+{{% notice info %}}
 Das Template **muss** im Hauptverzeichnis (`templates/be_tinyMCE.html5`) abgelegt werden, da das Backend von Contao das
 Template nur dort findet. Alle Zeilen innerhalb von `<script>...</script>` bis auf die letzte Zeile müssen mit einem
 **Komma** abgeschlossen werden. Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.

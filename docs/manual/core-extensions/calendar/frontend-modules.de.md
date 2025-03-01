@@ -75,7 +75,7 @@ Das Schlüsselwort des Eventlesers lautet *event* und teilt dem Modul mit, dass
 ausgeben soll. Existiert der gesuchte Eintrag nicht, gibt der Eventleser eine Fehlermeldung und den HTTP-Status-Code 
 »404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
-{{% notice info %}}
+{{% notice note %}}
 Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
 oder andere Modul eine 404 Seite auslösen, da zum Beispiel der Alias einer Nachricht nicht in einem Kalender gefunden 
 wird, oder umgekehrt der Alias eines Events in einem Nachrichtenarchiv.
@@ -170,7 +170,7 @@ Möglichkeiten zur Verfügung: »Alle Events anzeigen«, »Nur hervorgehobene Ev
 werden soll, wenn ein Event ausgewählt wurde. Dadurch ist es möglich die Eventliste und den Eventleser auf der selben Seite
 mit nur einem Modul unterzubringen, anstatt eine eigene Seite für den Eventleser zu haben.
 
-{{% notice info %}}
+{{% notice note %}}
 **Vorsicht:** in den meisten Fällen sollte diese Funktionalität nicht für Eventlisten benutzt werden, die im Seitenlayout
 platziert werden. Andernfalls hätte man dann auf jeder Seite des Seitenlayouts automatisch auch einen Eventleser an der 
 jeweiligen Stelle im Layout. Dies würde die Funktionalität anderer »Lesermodule« auf der selben Seite verhindern.

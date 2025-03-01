@@ -28,7 +28,7 @@ You should receive the corresponding PHP (CLI) version as output and can then cl
 In your browser, enter `http://localhost` to access the »XAMPP Dashboard" with general information. Here you will find a 
 link in the upper menu called `PHPInfo` with information about the current PHP configuration.
 
-{{% notice info %}}
+{{% notice note %}}
 You should always start the »XAMPP Control Panel« (xampp-control.exe) and the »XAMPP Console« (xampp_shell.bat) with 
 administrator rights. 
 {{% /notice %}}
@@ -102,7 +102,7 @@ php ../composer.phar create-project contao/managed-edition demo 4.9
 
 Your Contao installation is now located in the XAMPP directory `htdocs\demo`.
 
-{{% notice note %}}
+{{% notice info %}}
 This procedure is optional. You can also run the Contao installation directly from the Contao manager.
 For example, create the directories `demo\web` in the XAMPP directory `htdocs`. Copy the 
 [Contao-Manager](https://contao.org/de/download.html) into the directory `demo\web` and rename the file to 

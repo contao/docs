@@ -5,7 +5,7 @@ aliases:
     - /en/performance/http-caching/
 ---
 
-{{% notice info %}}
+{{% notice note %}}
 This whole article refers to Contao **4.9** and higher. Previous versions also have caching mechanisms, but they are not
 nearly as efficient, so we have not documented how the caching works for the older versions. 
 {{% /notice %}}
@@ -151,7 +151,7 @@ as [Varnish](http://varnish-cache.org/)?
 
 However, this would go too far at this point.
 
-{{% notice note %}}
+{{% notice info %}}
 Good to know for you: Whatever settings you have configured in Contao, it follows the HTTP standards and just works
 out-of-the-box for you. And if one day, the requirements become more complex, Contao will not let you down! 
 {{% /notice %}}
@@ -191,7 +191,7 @@ will have a `Contao-Cache` header that can take on three values:
   have already noticed the speed. In case of `Contao-Cache: fresh` there is also the HTTP `Age` header. It tells you how
   many seconds the cache entry already exists. An `Age: 120` means that this entry was created two minutes ago.
 
-{{% notice info %}}
+{{% notice note %}}
 If the Contao Managed Edition runs in debug mode, the cache proxy is disabled entirely. 
 {{% /notice %}}
 
@@ -285,7 +285,7 @@ The following environment variables allow you to further optimize the cache prox
 
 ### `COOKIE_ALLOW_LIST`
 
-{{% notice info %}}
+{{% notice note %}}
 In Contao **4.9** this environment variable is called `COOKIE_WHITELIST`.
 {{% /notice %}}
 
@@ -315,7 +315,7 @@ cookies of extensions you installed:
 COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
     
-{{% notice note %}}
+{{% notice info %}}
 The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
 for you too. Moreover, the CSRF cookie is different for `http` and `https` for security reasons. If you serve your
 website over `http`, note that the cookie name will be `csrf_http-contao_csrf_token`.
@@ -422,7 +422,7 @@ You will never see the `X-Cache-Tags` header in your browser because the Contao 
 It contains no relevant information for the client and would only cause unnecessary data traffic.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 By the way: Invalidating cache entries also works via HTTP requests because the cache proxy does not necessarily
 have to be on the same server as Contao. Most cache proxies support receiving requests `PURGE` (yes, you are allowed
 to invent your own HTTP methods in addition to the usual ones such as `GET`, `POST` etc.) and the invalidation logic

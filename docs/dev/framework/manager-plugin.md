@@ -75,7 +75,7 @@ providing the FQCN in the `extra` section of your `composer.json` like so:
 ```
 
 
-{{% notice note %}}
+{{% notice info %}}
 If your Composer package is a monorepository, similar to `contao/contao`, it is also possible to register
 multiple `Manager Plugins` for each subsequent package. You must not create multiple plugins for one package/bundle though!
 
@@ -111,7 +111,7 @@ The `Manager Plugin` automatically loads the following classes.
 * `\App\ContaoManager\Plugin` (recommended)
 * `\ContaoManagerPlugin` (discouraged)
 
-{{% notice info %}}
+{{% notice note %}}
 After creating the application-specific Manager Plugin, you need to execute `composer install`, 
 otherwise the plugin will not be registered yet.
 {{% /notice %}}
@@ -218,7 +218,7 @@ class Plugin implements BundlePluginInterface
 }
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 The internal name of a legacy style Contao 2/3 module is derived from its folder name within the `system/modules/`
 directory. So if the module is placed in `system/modules/notification_center/` then it needs to be referenced by
 `notification_center`. This can also be derived from the target directory of the `extra.contao.sources` configuration 
@@ -243,7 +243,7 @@ The `ConfigPluginInterface` allows you to configure your own or other bundles. E
 bundle that integrates a third party Symfony bundle and depending on external configuration it could set the other
 bundles configuration. 
 
-{{% notice info %}}
+{{% notice note %}}
 Currently, the second argument `$config` is always an empty array. In a future version of the `Contao Manager` would like
 to introduce configuration via the GUI. The day this is implemented, bundles will be able to provide information on
 what's configurable and how (ideally it will be based on the existing Symfony bundle configuration so you don't have to
@@ -377,7 +377,7 @@ class Plugin implements ExtensionPluginInterface
 }
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Note that you receive an array of `$extensionConfigs` and you may have to apply your changes multiple times. This is
 because of the way the Symfony Dependency Injection Container works. E.g. you have a configuration from `config.yaml` one
 from "Bundle X" and another one from "Bundle Y". The container then merges all these configurations into one
@@ -597,7 +597,7 @@ Through event subscribers, you can modify a request (e.g. strip cookies) or resp
 before they hit the cache or are forwarded to Contao. For more information about HttpCache,
 please refer to [the FosHttpCache documentation][2].
 
-{{% notice note %}}
+{{% notice info %}}
 {{< version-tag "4.9.6" >}} This feature is available from **contao/manager-plugin 2.9.0** and **Contao 4.9.6**.
 {{% /notice %}}
 

@@ -23,7 +23,7 @@ layout.
 | `$GLOBALS['TL_JAVASCRIPT']` | Contains relative or absolute paths to JavaScripts assets to be included in the `<head>` of the document. |
 | `$GLOBALS['TL_MOOTOOLS']` | Contains HTML code to be included before `</body>`. |
 
-{{% notice info %}}
+{{% notice note %}}
 In the back end, only `TL_CSS`, `TL_JAVASCRIPT` and `TL_MOOTOOLS` will work.
 {{% /notice %}}
 
@@ -168,7 +168,7 @@ This returns a `<script src="…" …>` tag and takes six arguments:
 * `$crossorigin`: optional `crossorigin` attribute.
 * `$referrerpolicy`: optional `referrerpolicy` attribute.
 
-{{% notice note %}}
+{{% notice info %}}
 Some of these parameters are only available in newer Contao versions.
 {{% /notice %}}
 

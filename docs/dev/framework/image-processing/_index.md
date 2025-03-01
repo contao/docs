@@ -33,7 +33,7 @@ Studio component you can also profit from its matching `figure.html.twig` Twig t
 
 See the [templating section][Templating] for more information.
 
-{{% notice note %}}
+{{% notice info %}}
 For Contao versions prior to **4.10** please refer to the [Legacy section](/framework/image-processing/legacy/) on how
 to use images in your templates. 
 {{% /notice %}}

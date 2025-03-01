@@ -12,7 +12,7 @@ The `importUser` hook is triggered when a username cannot be found in the
 database. It passes the username, the password and the table name as arguments
 and expects a boolean return value.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `importUser` hook has been deprecated and will no longer work in Contao 5.0.
 {{% /notice %}}
 

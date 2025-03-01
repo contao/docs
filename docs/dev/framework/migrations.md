@@ -3,7 +3,7 @@ title: "Migrations"
 description: "Database migrations and general purpose migration scripts."
 ---
 
-{{% notice note %}}
+{{% notice info %}}
 This covers the documentation on how to create migrations in Contao **4.9**
 and up. In previous Contao versions, migrations were written in `runonce.php` files that got deleted after execution.
 {{% /notice %}}

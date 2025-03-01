@@ -48,7 +48,7 @@ Auch Mitgliedergruppen können manuell oder automatisch deaktiviert werden.
 Im Gegensatz zu Benutzern geht es bei Mitgliedern nicht so sehr um Zugriffsrechte, als vielmehr um persönliche Daten 
 wie z. B. Name, Adresse oder Telefonnummer.
 
-{{% notice note %}}
+{{% notice info %}}
 Der Benutzernamen und die E-Mail-Adresse müssen eindeutig sein, das heißt, sie dürfen nur einmal vergeben werden.
 {{% /notice %}}
 

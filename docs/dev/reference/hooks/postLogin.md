@@ -12,7 +12,7 @@ The `postLogin` hook is triggered after a user has logged in. This can
 be either in the back end or the front end. It passes the user object 
 as argument and does not expect a return value.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `postLogin` hook has been deprecated and will no longer work in Contao 5.0.
 You can use the [security.interactive_login](https://symfony.com/doc/4.4/components/security/authentication.html#authentication-events)
 event instead for example.

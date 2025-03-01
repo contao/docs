@@ -11,7 +11,7 @@ Um Contao erfolgreich auszuführen, muss der Webserver diese Systemvoraussetzung
 für den vertrauten [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle))-Stack entwickelt, läuft jedoch auf 
 jedem Webserver, der eine aktuelle Version von PHP und MySQL bereitstellt.
 
-{{% notice info %}}
+{{% notice note %}}
 Falls du den Contao Manager für die Installation und die Aktualisierung deiner Contao-Instanzen verwendest, solltest du auch 
 seine [Systemvoraussetzungen](https://docs.contao.org/manual/de/installation/contao-manager/#systemvoraussetzungen) beachten. 
 {{% /notice %}}
@@ -45,7 +45,7 @@ empfohlen, diese immer zu verwenden.
 | [File Information][ext-fileinfo] (`ext-fileinfo`) | **erforderlich**                               | **erforderlich**                               |
 | [Sodium][ext-sodium] (`ext-sodium`)               | -                                              | **erforderlich** für PHP 8.3+<sup>2</sup>      |
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Contao wählt automatisch eine Bildverarbeitungsbibliothek je nach Verfügbarkeit aus.
 Die PHP GD Bibliothek muss allerdings trotzdem noch zusätzlich zur Verfügung stehen.
 Die Verwendung von ImageMagick über die PHP Imagick oder Gmagick Bibliothek ist in allen Fällen empfohlen. ImageMagick
@@ -137,7 +137,7 @@ Contao erkennt und verwendet automatisch die beste verfügbare Erweiterung.
 - **PHP** Version 5.6.0 oder höher ist erforderlich.
 - Die GD-Erweiterung (`ext-gd`) wird für die Bildverarbeitung benötigt.
 
-{{% notice info %}}
+{{% notice note %}}
 Wird ein MySQL Server in Version **8.0.17** oder höher eingesetzt, ist mindestens 
 PHP **7.2.0** erforderlich.
 {{% /notice %}}
@@ -168,7 +168,7 @@ keine Emojis).
 Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden können, konfiguriere bitte einen anderen 
 Zeichensatz in deiner [`config/config.yaml`](../../system/einstellungen/#config-yml)-Datei:
 
-{{% notice note %}}
+{{% notice info %}}
 Vor **Contao 4.8** findest du die Datei unter `app/config/config.yaml`.  
 {{% /notice %}}
 
@@ -186,7 +186,7 @@ doctrine:
 Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte oder abgeschnittene
 Daten zu verhindern und die Datenintegrität zu gewährleisten.
 
-{{% notice note %}}
+{{% notice info %}}
 {{< version-tag "4.9" >}} Das Install-Tool zeigt jetzt eine Warnmeldung an, wenn der Datenbankserver nicht im
 "Strict Mode" läuft.
 {{% /notice %}}
@@ -247,7 +247,7 @@ Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web`
 in `/public` umbenannt. Falls in deiner Installation ein Verzeichnis `/web` existiert, wird dieses von Contao
 automatisch anstelle von `/public` verwendet.)
 
-{{% notice note %}}
+{{% notice info %}}
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 {{% /notice %}}
 

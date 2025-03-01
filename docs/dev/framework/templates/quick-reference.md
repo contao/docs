@@ -20,7 +20,7 @@ but with some tweaking you might be able to apply them to Contao 4.13 as well.
   `AbstractFragmentController`?
  * …add a custom attribute to [all content elements](#adjust-the-base-template)?
 
-{{% notice note %}}
+{{% notice info %}}
 This list is far from being complete — if you are missing a typical scenario, please contribute it!
 {{% /notice %}}
 
@@ -144,7 +144,7 @@ protected function getResponse(FragmentTemplate $template, ContentModel $model, 
 ```
 {{% /example %}}
 
-{{% notice info %}}
+{{% notice note %}}
 When calling `$template->getResponse()`, internally, `$this->render(null, $template->getData())` will get executed — by
 using `null` as the first argument, our abstract controller class will use the inferred default template name. This
 makes both variants effectively equivalent.

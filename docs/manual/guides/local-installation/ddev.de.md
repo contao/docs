@@ -14,7 +14,7 @@ DDEV ist ein Open-Source-Tool, mit dem sich in Minuten lokale PHP-Entwicklungsum
 
 DDEV erstellt eine `config.yaml`, die alle Einstellungen für dein Projekt enthält. Diese kann mit GIT versioniert werden und unterstützt so kollaboratives Arbeiten in Teams oder mit Freelancern.
 
-{{% notice note %}}
+{{% notice info %}}
 Um DDEV nutzen zu können, muss _Docker_ auf deinem System installiert sein. Falls das noch
 nicht der Fall ist, kannst du dir die
 [DDEV Dokumentation](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/) für
@@ -134,7 +134,7 @@ ddev launch contao-manager.phar.php
 
 - `ddev xdebug on` startet XDebug. [Informationen zum IDE-Setup](https://ddev.readthedocs.io/en/latest/users/debugging-profiling/step-debugging/#ide-setup)
 
-{{% notice note %}}
+{{% notice info %}}
 Falls du als Windows Anwender die »Git Bash« als Konsole benutzt, kann es, abhängig von deiner »Git für Windows« Konfiguration, notwendig sein das Kommando `winpty` voran zu stellen (z. B.: `winpty ddev ssh`).
 {{% /notice %}}
 

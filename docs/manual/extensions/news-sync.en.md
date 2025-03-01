@@ -244,7 +244,7 @@ Contao installation. The command to be executed is
 php composer.phar update --optimize-autoloader
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 The `php` part of the command may need to be exchanged with the actual path to a suitable PHP CLI. This depends on the
 server environment. See also the [composer settings](#composer-settings) section.
 {{% /notice %}}
@@ -355,7 +355,7 @@ saving, the news archives enabled for synchronisation will be available in the *
 * **Update existing entries** - with this setting, any changes in the source of already synchronised entries will also be updated in the target.
 * **Target directory** - a directory for the synchronised images and attachments needs to be set here.
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Currently this only works with version `2.x` of the `news_categories` extension.
 {{% /notice %}}
 

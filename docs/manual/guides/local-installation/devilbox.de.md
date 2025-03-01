@@ -15,7 +15,7 @@ Wenn du die Docker-Toolbox einsetzt, sind
 [diese Angaben](https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/docker-toolbox-and-the-devilbox.html#howto-docker-toolbox-and-the-devilbox "Docker Toolbox and the Devilbox") 
 der Dokumentation lesenswert.
 
-{{% notice note %}}
+{{% notice info %}}
 Um die Devilbox nutzen zu können muss _Docker_ und _Docker Compose_ auf deinem System installiert sein. Falls das noch
 nicht der Fall ist, kannst du dir die 
 [Devilbox Prerequisites Dokumentation](https://devilbox.readthedocs.io/en/latest/getting-started/prerequisites.html) für 
@@ -48,7 +48,7 @@ gut beschrieben. Für Contao selbst sollten die weiteren Einträge so gesetzt we
 - `PHP_SERVER=8.2`
 - `MYSQL_SERVER=mariadb-10.3`
 
-{{% notice note %}}
+{{% notice info %}}
 Nach jeder Änderung der Konfiguration über die `.env` Datei muss die Devilbox neu gestartet werden.
 {{% /notice %}}
 
@@ -94,7 +94,7 @@ docker-compose rm -f
 Ist die Devilbox gestartet, kannst du nun deinen Browser aufrufen. Mit Eingabe von **`http://127.0.0.1`** erreichst du 
 das Devilbox-Dashboard. Über die Navigation erhältst du Zugriff auf die verschiedenen Funktionen.
 
-{{% notice note %}}
+{{% notice info %}}
 Die zu verwendende IP-Adresse ist abhängig von deiner Docker-Umgebung. Wenn du die Docker-Toolbox installiert hast, 
 lautet deine IP-Adresse möglicherweise anders. Die IP-Adresse kann über den Befehl `docker-machine ip` ermittelt werden.
 {{% /notice %}}
@@ -124,17 +124,17 @@ Du hast ein Verzeichnis (z. B. `contao4`) erstellt. Wechsle in dieses Verzeichni
 `public` (bis und mit Contao 4.11 `web`). Kopiere in diesen Ordner die Contao Manager `.phar` Datei und benenne die 
 Datei in `contao-manager.phar.php` um. 
 
-{{% notice note %}}
+{{% notice info %}}
 Die Domain-Suffix `.loc` ist voreingestellt. Dies kann aber in der `.env` Datei über den Eintrag `TLD_SUFFIX` geändert 
 werden.
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 Die manuelle Bearbeitung der »`/etc/hosts`« kann u. U. vernachlässigt werden. Die »Devilbox« bietet hierzu eine 
 [Auto DNS](https://devilbox.readthedocs.io/en/latest/intermediate/setup-auto-dns.html) Funktionalität an.
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 Ab Devilbox 3 kannst du auch das TLD-Suffix `dvl.to` verwenden. Damit werden automatisch alle `*.dvl.to` auf 
 `127.0.0.1` geleitet.
 {{% /notice %}}
@@ -199,7 +199,7 @@ lediglich bei `Datenbankverbindung` auf folgende Einträge achten:
 | **Benutzername**    | root                  |
 | **Passwort**        | Keinen Wert eintragen |
 
-{{% notice note %}}
+{{% notice info %}}
 Der Benutzer `root` mit leerem Passwort ist die Devilbox Standard Einstellung. Dies kann über die 
 [Konfiguration](https://devilbox.readthedocs.io/en/latest/support/faq.html#can-i-change-the-mysql-root-password) 
 geändert werden. In diesem Fall musst du im Contao-Installtool deine Werte entsprechend eintragen.
@@ -226,7 +226,7 @@ Starte Devilbox wie folgt:
 docker-compose up php httpd bind php74
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Ein Beispiel:
 <table>
   <tr>

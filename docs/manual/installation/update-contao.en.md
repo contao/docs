@@ -47,7 +47,7 @@ in the meantime. An overview of all Contao versions can be found on [Wikipedia](
 
 ## Updating with the Contao Manager
 
-{{% notice note %}}
+{{% notice info %}}
  Before updating Contao, it is recommended to create a backup of the `composer.json`, `composer.lock` files and the 
  database. 
 {{% /notice %}}
@@ -77,11 +77,11 @@ Your Contao installation is now up to date.
 
 ## Updating via the command line {#update-via-the-command-line}
 
-{{% notice note %}}
+{{% notice info %}}
  To update Contao via the command line you need to have Composer [installed](../install-contao/#install-composer). 
  {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
  Before updating Contao, I recommend that you make a backup of the `composer.json` and `composer.lock` files and the 
  database. 
 {{% /notice %}}

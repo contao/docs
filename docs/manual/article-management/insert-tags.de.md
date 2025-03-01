@@ -209,7 +209,7 @@ Insert-Tags, die als Ausgabe eine ID oder Alias haben, können grundsätzlich ve
 | `{{link::{{page::id}}::absolute}}` | Generiert einen Link mit der absoluten URL zu der aktuell aufgerufenen Seite. (In **Contao 4.9** muss das Flag `\|absolute` anstatt des Parameters `::absolute` verwendet werden) |
 | `{{link_url::{{page::id}}}}#sprungmarke` | Generiert einen relativen Link mit einer Sprungmarke (Anker) zu einem Bereich in der aktuellen Seite (nützlich für Onepager). |
 
-{{% notice info %}}
+{{% notice note %}}
 Man sollte darauf achten, keine endlosen Loops wie z. B. durch `{{insert_article::{{page::alias}}}}` zu generieren. Dies kann zum Absturz der Seite führen.
 {{% /notice %}}
 
@@ -273,7 +273,7 @@ Folgende »Basic Enities« werden von Contao in die jeweiligen HTML Entities zur
 | `[zwsp]`       | {{< version-tag "5.3" >}} `&ZeroWidthSpace;` = zero-width space<br>breitenlose Leerzeichen - auch nullbreites Leerzeichen; siehe [Wikipedia](https://de.wikipedia.org/wiki/Breitenloses_Leerzeichen) |
 | `[{]`, `[}]`   | Wird im Frontend jeweils mit `{{` bzw. `}}` ersetzt. Damit kann man Insert-Tags im Frontend anzeigen, um sie z. B. zu erklären. |
 
-{{% notice "note" %}}
+{{% notice "_note" %}}
 Seit Contao **5** passiert dies nicht mehr automatisch für einzelne Felder des DCAs. In deinen eigenen DCA Feldern muss
 diese Funktion über `'basicEntities' => true` im [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation)
 der Feld-Definition aktiviert werden.

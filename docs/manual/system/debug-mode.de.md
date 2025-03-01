@@ -18,7 +18,7 @@ Damit kann zum Beispiel folgendes erreicht werden:
 * CSS und JavaScript Assets werden nicht kombiniert.
 * Template Namen werden im HTML Quellcode als Kommentare ausgegeben.
 
-{{% notice info %}}
+{{% notice note %}}
 In Contao **4.4** umgeht der Debug-Modus auch den Bild-Cache von Contao. Das kann
 zwar nützlich sein, verursacht aber auch eine lange Ladezeit für die Erzeugung einer
 Seite mit vielen Bildern. Um den Bild-Cache im Debug-Modus wieder zu aktivieren,
@@ -112,7 +112,7 @@ Diese Datei auf _keinen Fall_ auf den Live Server kopieren! Das würde ein groß
 Sicherheitsrisiko darstellen.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Auf gleichem Weg können weitere Umgebungsvariablen gesetzt werden. Eine Beschreibung der 
 Variablen findet sich in der [Entwicklerdokumentation](/../dev/reference/config/#environment-variables-for-the-contao-managed-edition).
 {{% /notice %}}
@@ -125,7 +125,7 @@ werden. Dazu befindet sich ein Button gleich neben dem Vorschau Button. Dieser B
 setzt dann ein spezielles Cookie, welches den Debug-Modus nur für den aktuellen
 Benutzer aktiviert.
 
-{{% notice info %}}
+{{% notice note %}}
 Der Button wird nur angezeigt, wenn du keine App Umgebung in deiner `.env` Datei definiert hast. 
 {{% /notice %}}
 

@@ -16,7 +16,7 @@ When creating, moving, or renaming Twig templates, we recommend that you use the
 [debug mode](/en/system/debug-mode/#contao-4-8-and-up) to ensure that the newly created templates are used.  
 After completion, the application cache must be rebuilt using the Contao manager or the console.
 
-{{% notice info %}}
+{{% notice note %}}
 Even in debug mode, it may be necessary to clear the application cache in some cases to make your customized template
 take effect.
 {{% /notice %}}
@@ -76,7 +76,7 @@ Templates in the theme folder are **theme specific templates**. They are special
 although they are the most specific, they are not part of the [template hierarchy](../reuse/#template-hierarchy).
 Only at runtime it is decided whether a theme-specific template is used.
 
-{{% notice note %}}
+{{% notice info %}}
 You can only use theme specific templates to customize templates that are defined as global templates in the [template hierarchy](../reuse/#template-hierarchy).
 {{% /notice %}}
 

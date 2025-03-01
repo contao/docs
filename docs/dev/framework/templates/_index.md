@@ -7,7 +7,7 @@ aliases:
 
 ---
 
-{{% notice note %}}
+{{% notice info %}}
 This section covers Twig templates in Contao **4.13** and up. The documentation for legacy PHP templates (`.html5`
 extension) can be found in [this article](legacy).
 {{% /notice %}}
@@ -21,7 +21,7 @@ Twig support made its way into the core in Contao 4.12 and allowed users to subs
 templates. Beginning with Contao 5, the majority of content elements were rewritten and are now Twig-only. Extrapolating
 from here, we ultimately plan to drop support for the PHP templating system in Contao 6. 
 
-{{% notice info %}}
+{{% notice note %}}
 It's hard to get things right in the first try and replacing the old template system with Twig is a big undertaking.
 That's why some classes in the `Contao\Twig` namespace are still marked with `@experimental`. First up, this neither
 means, that we will remove the functionality or randomly change things up, nor that you should not use them (in

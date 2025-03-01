@@ -112,7 +112,7 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
    Nutze dazu entweder den [Contao Manager](../contao-installieren/#installation-mit-dem-contao-manager) oder die [Kommandozeile](../contao-installieren/#installation-ueber-die-kommandozeile).
 3. Führe dann das [Contao-Installtool](../contao-installtool) aus, um die neue Datenbankverbindung einzurichten.
 
-{{% notice note %}}
+{{% notice info %}}
 Solltest du keinen Umzug auf einen anderen Server durchgeführt, sondern lediglich eine 1:1-Kopie auf demselben Server erstellt haben, achte unbedingt darauf, nach der Anpassung der Datenbankverbindung den Anwendungscache über den Contao Manager zu löschen und neu zu erstellen, um sicherzustellen, dass die Änderungen korrekt übernommen werden und du auf der richtigen Datenbank bist.
 {{% /notice %}}
 

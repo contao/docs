@@ -82,6 +82,6 @@ Dein Theme-Verzeichnis beinhaltet nun alle notwendigen Angaben. Du kannst diese 
 bei einer Neuinstallation über den Contao Manager nutzen. Hierbei ist darauf zu achten, dass nicht das Verzeichnis komprimiert wird, 
 sondern nur die Dateien.
 
-{{% notice note %}}
+{{% notice info %}}
 Weitere Dateien wie z. B. eine »README.md« oder Lizenzangaben kannst du ohne weiteres hinzufügen.
 {{% /notice %}}

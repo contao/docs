@@ -99,7 +99,7 @@ Du kannst hier eine [kanonische URL](https://developers.google.com/search/docs/a
 **Query-Parameter:** Standardmäßig entfernt Contao die Query-Parameter in der kanonischen URL. Hier kannst du eine
 kommagetrennte Liste von Query-Parametern hinzufügen, die erhalten bleiben sollen. Verwende dabei "*" als Platzhalter.
 
-{{% notice note %}}
+{{% notice info %}}
 Zur Ausgabe muß im Seitentyp »Website-Startseite« die Einstellung rel="canonical" aktiviert sein (Standard).
 {{% /notice %}}
 
@@ -203,7 +203,7 @@ sind darin alle öffentlichen und nicht im Menü versteckten Seiten enthalten. 
   somit normalerweise nicht angezeigt würde.
 - **Nie anzeigen:** Die Seite ist von der HTML-Sitemap ausgenommen.
 
-{{% notice info %}}
+{{% notice note %}}
 Verwechsle bitte nicht die HTML-Sitemap mit der XML-Sitemap: Die HTML-Sitemap ist ein Frontend-Modul, die XML-Sitemap 
 kannst du z. B. bei Google einreichen.
 {{% /notice %}}

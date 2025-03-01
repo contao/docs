@@ -14,7 +14,7 @@ knowledge of CSS, you should learn it now, because creating or adapting a theme 
 Contao provides a convenient back end module for stylesheet management that allows you to enter all format definitions 
 in a single input mask. The creation of the actual CSS file is done automatically in the background.
 
-{{% notice info %}}
+{{% notice note %}}
 The internal CSS editor is deprecated and will be removed in one of the next Contao versions!  
 Please [export your existing stylesheets](#export-stylesheets) and add them as external stylesheets to the page 
 layout.

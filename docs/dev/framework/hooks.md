@@ -171,7 +171,7 @@ class ActivateAccountListener
 {{% /tab %}}
 {{< /tabs >}}
 
-{{% notice note %}}
+{{% notice info %}}
 When using the default priority, or a priority of `0` the hook will be executed according to the extension loading order, along side hooks 
 that are using the legacy configuration via `$GLOBALS['TL_HOOK']`. With a priority that is greater than zero the hook will be executed 
 _before_ the legacy registered hooks. With a priority of lower than zero the hook will be executed _after_ the legacy registered hooks.

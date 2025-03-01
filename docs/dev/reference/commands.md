@@ -38,6 +38,6 @@ Options:
 
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Detailed information about some commands can be found [here](https://docs.contao.org/manual/en/cli/).
 {{% /notice %}}

@@ -47,7 +47,7 @@ Supportzeitraum werden während 3 Jahren mit Bugfixes und 1 Jahr mit sicherheits
 
 ## Aktualisierung mit dem Contao Manager
 
-{{% notice note %}}
+{{% notice info %}}
 Vor der Aktualisierung von Contao wird empfohlen, ein Backup der `composer.json`,  `composer.lock` sowie der Datenbank 
 anzulegen.
 {{% /notice %}}
@@ -79,12 +79,12 @@ Deine Contao-Installation ist jetzt auf dem neuesten Stand.
 
 ## Aktualisierung über die Kommandozeile {#aktualisierung-ueber-die-kommandozeile}
 
-{{% notice note %}}
+{{% notice info %}}
  Um Contao über die Kommandozeile aktualisieren zu können, muss Composer 
  [installiert](/de/installation/contao-installieren/#composer-installieren) sein. 
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 Vor der Aktualisierung von Contao empfehle ich dir ein Backup der `composer.json`, `composer.lock` sowie der Datenbank 
 anzulegen.
 {{% /notice %}}

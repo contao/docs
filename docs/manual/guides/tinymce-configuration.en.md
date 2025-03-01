@@ -21,7 +21,7 @@ Create a new [template](/en/layout/templates/) from  "Layout > Templates" in the
 [navigation area](/en/administration-area/call-and-structure-of-the-backend/#the-navigation-area) and
 select the template `be_tinyMCE.html5`.
 
-{{% notice note %}}
+{{% notice info %}}
 The template **must** be placed in the root directory (`templates/be_tinyMCE.html5`) because the Contao backend 
 will only find the template there. All lines within the template `<script>...</script>` except the last line must 
 be closed with a comma. After saving the template, your changes are applied immediately. 

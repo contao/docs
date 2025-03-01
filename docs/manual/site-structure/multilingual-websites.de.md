@@ -28,7 +28,7 @@ Verwaltung eigener Inhalte von diesem Konzept abweichen).
 Damit die Sprache der URL (z. B. `www.example.com/de/`) hinzugefügt wird, musst du folgende Zeilen in die `config.yaml` 
 im Ordner `app/config/` einfügen. Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden.
 
-{{% notice note %}}
+{{% notice info %}}
 Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.
 {{% /notice %}}
 
@@ -37,7 +37,7 @@ contao:
     prepend_locale: true
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 **Cache leeren**  
 Damit die Änderungen aktiv werden muss der Anwendungs-Cache über den Contao Manager (»Systemwartung« > »Prod.-Cache 
 erneuern«) oder alternativ über die Kommandozeile erneuert werden.

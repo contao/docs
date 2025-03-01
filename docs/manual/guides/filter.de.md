@@ -25,7 +25,7 @@ Für unsere Anforderung kannst du beispielsweise die Erweiterung
 Weitere Informationen hierzu findest du dann auf der [GitHub](https://github.com/codefog/contao-elements-filter) 
 Seite des Autors.
 
-{{% notice info %}}
+{{% notice note %}}
 <strong>Vorteil:</strong>  
 Eine [Contao Erweiterung](https://extensions.contao.org/) realisiert eine spezielle Aufgabe, ist zumeist kostenfrei und 
 kann leicht installiert werden. Du musst dir dabei keine Gedanken um die eigentliche technische Umsetzung machen. Die 
@@ -209,7 +209,7 @@ Weiterhin haben wir einfachheitshalber die JavaScript-Referenzen direkt im Inhal
 könntest du diese auch als [JavaScript Asset im Template](/de/layout/templates/php/assets/) hinterlegen.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 <strong>Vorteil:</strong>  
 Du bist nicht auf Erweiterungen angewiesen und du hast die vollständige Kontrolle hinsichtlich der Umsetzung 
 und der Pflege. Bei Contao Updates müssen u. U. lediglich mögliche Änderungen der Core Templates berücksichtigt werden.
@@ -323,7 +323,7 @@ verwenden wir hierzu wieder die beiden Template Dateien »ce_text_filter.html5«
 </div>
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 <strong>Vorteil:</strong>  
 Du hast die vollständige Kontrolle hinsichtlich der Umsetzung und der Pflege. Die erforderlichen Angaben können von dir 
 und deinen Redakteuren bequem über Eingabefelder gesetzt werden.<br><br>
@@ -343,7 +343,7 @@ Frontend-Module mit bequemen Eingabemöglichkeiten und deren Ausgabe in Contao e
 
 Falls du dich fragen solltest, warum in diesem Kontext wieder eine Erweiterung vorgestellt wird:
 
-{{% notice info %}}
+{{% notice note %}}
 <strong>Vorteil:</strong>  
 Du nutzt drei unterschiedliche Erweiterungen von verschiedenen Autoren z. B. einen »Frontend-Filter«, einen 
 alternativen »Content-Slider« und deine favorisierte »Foto-Gallerie». Je mehr Erweiterungen zum Einsatz kommen, desto 
@@ -441,7 +441,7 @@ Mit der »RSCE« Erweiterung könntest du dir auch eigene
 und diese statt der bisherigen Inhaltselemente vom Typ »HTML« verwenden.
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 Die Erweiterung »[MetaModels](/de/erweiterungen/metamodels/)« verfolgt einen ähnlichen Ansatz und konfrontiert dich 
 dabei nicht mit einer direkten Contao »DCA Konfiguration«. Allerdings geht diese Erweiterung weit über die hier 
 erfoderlichen Anforderungen hinaus. Die Lernkurve (s. [Dokumentation](https://metamodels.readthedocs.io/de/latest/)) 

@@ -13,7 +13,7 @@ used. In the [navigation-area](../../administration-area/accessing-and-structure
 
 {{% children %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Template changes are not necessary if you only need an additional CSS ID or CSS class. For most
 Contao components, you can enter them in the "Expert settings" section. The corresponding names
 will be taken over by the templates and displayed in the source code.

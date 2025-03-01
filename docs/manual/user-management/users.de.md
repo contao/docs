@@ -189,7 +189,7 @@ deaktivierten Gruppe können keine Rechte mehr geerbt werden.
 Mit dem Modul »Benutzer« kannst du Benutzerkonten verwalten. Benutzer können sich mit ihrem Benutzernamen und Passwort 
 im Backend anmelden und erben die Berechtigungen der ihnen zugewiesenen Benutzergruppen.
 
-{{% notice note %}}
+{{% notice info %}}
 Der Benutzernamen und die E-Mail-Adresse müssen eindeutig sein, das heißt, sie dürfen nur einmal vergeben werden.
 {{% /notice %}}
 

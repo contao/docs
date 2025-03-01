@@ -689,7 +689,7 @@ The reason why they are environment variables is because these settings affect t
 container is even built. Settings like trusted proxies or caching are considered very early in the application boot process
 (if it even needs to be booted thanks to the cache) so they cannot be part of the application itself.
 
-{{% notice info %}}
+{{% notice note %}}
 Some of the environment variables, like `APP_SECRET`, `DATABASE_URL` and `MAILER_DSN` replace their respective counterparts 
 of the `config/parameters.yaml` and thus you should not use these parameters, if you are using the environment variable instead.
 {{% /notice %}}
@@ -729,7 +729,7 @@ effect anymore as they are designed to configure said proxy that you have just d
 
 ### `COOKIE_ALLOW_LIST`
 
-{{% notice info %}}
+{{% notice note %}}
 In Contao **4.9** this environment variable is called `COOKIE_WHITELIST`.
 {{% /notice %}}
 
@@ -759,7 +759,7 @@ cookies of extensions you installed:
 COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
     
-{{% notice note %}}
+{{% notice info %}}
 The name of the PHP session cookie is configurable through the `php.ini` so you might want to check if it's `PHPSESSID`
 for you too. Moreover, the CSRF cookie is different for `http` and `https` for security reasons. If you serve your
 website over `http`, note that the cookie name will be `csrf_http-contao_csrf_token`.
@@ -824,7 +824,7 @@ be used for sending emails, as well as the login credentials, host name and port
 applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
 See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
 
-{{% notice note %}}
+{{% notice info %}}
 The variable was previously called `MAILER_URL`. Since Contao 5.0 only `MAILER_DSN` will be supported.
 {{% /notice %}}
     

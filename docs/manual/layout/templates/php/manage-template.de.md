@@ -17,7 +17,7 @@ Inhaltselements, zur Auswahl angeboten werden.
   Theme verknüpfen. Template-Dateien aus diesem Ordner werden bei der Auswahl dann mit dem jeweiligen `Theme-Namen`
   gekennzeichnet.
 
-{{% notice note %}}
+{{% notice info %}}
 Template-Dateien in weiteren (unverknüpften) Unterordnern werden bei der Auswahl nicht berücksichtigt.
 {{% /notice %}}
 

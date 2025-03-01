@@ -82,7 +82,7 @@ Confirm the settings with the button _Save and close_. Your page structure shoul
 
 ![The page structure with starting point of a web page]({{% asset "images/manual/guides/en/first-page/list-site-structur.png" %}}?classes=shadow)
 
-{{% notice info %}}
+{{% notice note %}}
 You can create and maintain multiple websites with Contao within one installation. 
 Even if you only want to maintain a single website, you have to create a new page of the type "Website root".
 {{% /notice %}}
@@ -110,7 +110,7 @@ The list in the page structure should now look like this:
 
 ![List of the site structure]({{% asset "images/manual/guides/en/first-page/list-site-structure-with-home-page.png" %}}?classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 The entry `index` for the **Page alias** should only be used for your actual start page. 
 You can name the alias of your other pages according to your liking: e.g. "contact" or "imprint".
 {{% /notice %}}
@@ -124,7 +124,7 @@ within your new start page. In the article, select the ![Edit]({{% asset "icons/
 
 ![Edit the article]({{% asset "images/manual/guides/en/first-page/edit-article.png" %}}?classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 In the above list, the article is grayed out, including the "eye" icon. You could publish the article now 
 or continue with the following steps first. 
 {{% /notice %}}

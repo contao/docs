@@ -84,7 +84,7 @@ Here you can add one or more [Google Fonts](https://fonts.google.com/) to your w
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Manual integration of "web fonts" is recommended. Otherwise, you should follow the following instructions from Google: [Get Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started), the "Google Fonts API Version 2" is currently not supported. 
 {{% /notice %}}
 

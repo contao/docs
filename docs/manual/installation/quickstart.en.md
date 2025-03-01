@@ -38,7 +38,7 @@ The [Contao Manager](../../installation/contao-manager/) consists of a single fi
 [contao.org](https://contao.org/en/download). After a successful download you will receive a file called `contao-manager.phar`. 
 Transfer this file to the `public` directory on your web server.
 
-{{% notice info %}}
+{{% notice note %}}
 `.phar` files are not executed by all hosting providers. For best compatibility, add the `.php` file extension 
 <b>after the upload</b> (i.e. rename the file <b>on the server</b> to `contao-manager.phar.php`).
 {{% /notice %}}

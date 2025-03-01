@@ -37,7 +37,7 @@ Member groups can also be deactivated manually or automatically.
 
 Unlike users, members are not so much concerned with access rights as with personal data such as name, address or telephone number.
 
-{{% notice note %}}
+{{% notice info %}}
 The username and email address must be unique, i.e. they can only be used once. 
 {{% /notice %}}
 

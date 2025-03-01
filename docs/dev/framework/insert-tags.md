@@ -211,7 +211,7 @@ KeyValuePair ::= Key "=" Value
 
 ## Create a custom Insert Tag hook
 
-{{% notice note %}}
+{{% notice info %}}
 This section applies to Contao versions prior to **5.2**. For later versions use the
 attributes mentioned above instead.
 {{% /notice %}}
@@ -259,7 +259,7 @@ for this Hook for more information about the possible parameters.
 
 ## Cache behaviour of legacy insert tags
 
-{{% notice note %}}
+{{% notice info %}}
 This section applies to Contao versions prior to **5.2**. For later versions take
 a look at the setting `asFragment` from above.
 {{% /notice %}}

@@ -241,7 +241,7 @@ in the `eval` definition of the field. This definition is an associative array,
 where the key is the key of the meta field and its value will be used for additional
 attributes of the text input field.
 
-{{% notice note %}}
+{{% notice info %}}
 The meta wizard only supports text input fields, and `textarea` fields since Contao
 **4.9.10**.
 {{% /notice %}}
@@ -363,7 +363,7 @@ $GLOBALS['TL_DCA']['tl_member']['salutation'] => [
 ];
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 In fact, the options are generated via the `options_callback`. In the example above
 the generated `options` are used for illustration purposes only.
 {{% /notice %}}

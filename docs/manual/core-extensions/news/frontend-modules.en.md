@@ -29,7 +29,7 @@ in descending order.
 **News reader module:** Here you can determine whether the system should automatically switch to the news reader when 
 an article is selected.
 
-{{% notice info %}}
+{{% notice note %}}
 **Caution:** in most cases this functionality should not be used for news lists that are placed in the page layout. 
 Otherwise you would automatically have a news reader on each page of the page layout at a different position in the 
 layout. This would prevent the functionality of other "reader modules" on the same page.
@@ -89,7 +89,7 @@ In this example, the news with the alias "form-follows-function" is called via t
 news does not exist, the news reader returns an error message and the HTTP status code "404 Not Found". The 
 status code is important for search engine optimization.
 
-{{% notice info %}}
+{{% notice note %}}
 There can only be one "reader module" on a single page, regardless of type. Otherwise, one or the other module would 
 trigger a 404 page, because, for example, the alias of a news cannot be found in a calendar, or vice versa, the 
 alias of an event in a news archive.

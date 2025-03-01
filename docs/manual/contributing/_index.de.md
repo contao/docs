@@ -186,7 +186,7 @@ Füge das Original-Repository einmalig als neues Remote-Repository hinzu und geb
 git remote add upstream https://github.com/contao/docs.git
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Der [Remote-Name](https://docs.github.com/en/github/using-git/renaming-a-remote) »upstream« kann frei gewählt werden bzw. 
 auch nachträglich umbenannt werden.
 {{% /notice %}}
@@ -267,7 +267,7 @@ Um die Änderungen an dein entferntes Repository zu senden, führe folgenden Bef
 git push origin DEIN-BRANCHNAME
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Nach dem »push« eines eigenen neuen Branches wird dir auf der Konsole ein Link zum Erstellen des Pull-Request angezeigt.
 {{% /notice %}}
 

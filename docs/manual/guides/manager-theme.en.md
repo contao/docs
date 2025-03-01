@@ -80,6 +80,6 @@ The label `"type": "contao-theme"` is mandatory and necessary for the Contao Man
 Your theme directory now contains all the necessary information. You can now archive this as a "`.zip`" file and 
 use it for a new installation via the Contao Manager. Please make sure that the directory is not compressed, but only the files.
 
-{{% notice note %}}
+{{% notice info %}}
 You can easily add other files such as a "README.md" or license details.
 {{% /notice %}}

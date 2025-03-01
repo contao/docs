@@ -56,7 +56,7 @@ For "2-column" display of two content elements of type "text" you can enter the 
 area *Expert Settings* &gt; **CSS ID/Class**. Above 768 pixels the content elements are always displayed in "2 columns" 
 and below 768 pixels in "1 column".
 
-{{% notice note %}}
+{{% notice info %}}
 The old Contao grid works with the above restrictions. However, it is recommended to use a current grid solution. 
 Alternatively, there are [numerous extensions](https://extensions.contao.org/?q=grid) available for 
 simple [installation](/en/installation/install-extensions/).

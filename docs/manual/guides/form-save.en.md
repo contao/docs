@@ -44,7 +44,7 @@ To do this, create a new calendar, e.g. with the name `Reservations`.
 
 In the settings of your form, activate the option `Store data` and use the entry `tl_calendar_events` as the target table.
 
-{{% notice info %}}
+{{% notice note %}}
 To select the target table, you can use all the existing database tables of your Contao installation. You can also 
 create your own database table. The corresponding table name must then begin with the »tl_«. prefix. Basically, 
 the field names of your form must match the corresponding field names of the database table.
@@ -157,7 +157,7 @@ are rewritten and blanks are replaced.
 The method »generate()« of the Contao Slug-Service also allows the passing of a duplicate check as a callable 
 for the third parameter. If necessary, a unique number is automatically added to the "alias" entry. 
 
-{{% notice info %}}
+{{% notice note %}}
 You must then delete the Contao cache via the »Contao Manager« or the »Console« so that the hook can be processed. This 
 is also necessary after you have made changes to the file »PrepareFormDataListener.php«.
 {{% /notice %}}

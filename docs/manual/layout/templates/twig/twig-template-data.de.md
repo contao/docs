@@ -37,7 +37,7 @@ Soll die Ausgabe in der Toolbar - und nicht in der Vorlage - erfolgen, kannst du
 ```
 
 
-{{% notice info %}}
+{{% notice note %}}
 Beachte, dass in erweiterten Templates die `dump()`-Funktion innerhalb eines Blockes verwendet werden muss.
 {{% /notice %}}
 

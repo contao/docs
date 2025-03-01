@@ -247,7 +247,7 @@ der Contao Installation. Das auszuführende Kommando lautet:
 php composer.phar update --optimize-autoloader
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Im angegebenen Kommando muss `php` mit dem Pfad zum passenden PHP CLI ersetzt werden. Dies hängt von der jeweiligen Serverumgebung
 ab. Siehe dazu auch der Punkt [Composer-Einstellungen](#composer-einstellungen).
 {{% /notice %}}
@@ -360,7 +360,7 @@ werden, unter der die andere Contao Installation erreichbar ist. Speichert man d
 * **Einträge aktualisieren** - ist diese Einstellung aktiv, werden Änderungen in der Quell-Installation bereits synchronisierter Nachrichten in der Ziel-Installation übernommen.
 * **Zielverzeichnis** - hier muss ein Verzeichnis für die synchronisierten Bilddaten und Anhänge angegeben werden.
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Dies funktioniert derzeit noch nur mit Version `2.x` der `news_categories` Extension.
 {{% /notice %}}
 

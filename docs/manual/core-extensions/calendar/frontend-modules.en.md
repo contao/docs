@@ -70,7 +70,7 @@ The keyword of the event reader is *event* and tells the module to search and ou
 searched for does not exist, the event reader returns an error message and the HTTP status code "404 Not found". The 
 status code is important for search engine optimization.
 
-{{% notice info %}}
+{{% notice note %}}
 On a single page there can only be one "reader module" at a time, regardless of the type. Otherwise, one or the other 
 module will trigger a 404 page, because, for example, the alias of a message cannot be found in a calendar, or vice 
 versa the alias of an event in a message archive.
@@ -157,7 +157,7 @@ operating mode of the event list.
 instead of the event list module when an event is selected. This makes it possible to have the event list and the event 
 reader on the same page with only one module instead of having a separate page for the event reader.
 
-{{% notice info %}}
+{{% notice note %}}
 **Caution**:** In most cases, this functionality should not be used for event lists that are placed in the page layout. 
 Otherwise, you would automatically have an event reader on each page of the page layout at the respective position in 
 the layout. This would prevent the functionality of other "reader modules" on the same page.

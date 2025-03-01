@@ -28,7 +28,7 @@ Es stehen folgende Module zur Verfügung:
 - **Seitenlayouts:** Hier kannst du neue Seitenlayouts anlegen und bestehende bearbeiten.
 - **Bildgrößen:** Hier kannst du neue Bildgrößen anlegen und bestehende bearbeiten.
 
-{{% notice note %}}
+{{% notice info %}}
 Der interne CSS-Editor ist veraltet und wird in einer der nächsten Contao-Versionen entfernt!
 {{% /notice %}}
 

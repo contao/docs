@@ -41,7 +41,7 @@ PaletteManipulator::create()
 ;
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Just like with Symfony's configuration files, after adjusting any Contao related
 configurations, the Symfony Application Cache needs to be rebuilt for the production
 environment. Any Contao related configuration changes are immediately visible in

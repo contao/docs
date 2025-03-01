@@ -83,7 +83,7 @@ so aussehen:
 
 ![Die Seitenstruktur mit Startpunkt einer Webseite]({{% asset "images/manual/guides/de/first-page/die-seitenstruktur-mit-dem-neuen-startpunkt.png" %}}?classes=shadow)
 
-{{% notice info %}}
+{{% notice note %}}
 Du kannst mit Contao innerhalb einer Installation mehrere Webseiten erstellen und pflegen. Diese werden jeweils 
 unter separaten Startpunkten gelistet. Auch wenn du nur eine einzelne Webseite pflegen möchtest, musst du dazu zunächst 
 eine Seite vom Typ `Startpunkt einer Webseite` erstellen.
@@ -112,7 +112,7 @@ Die Liste in der Seitenstruktur sollte nun wie folgt aussehen:
 
 ![Liste der Seitenstruktur]({{% asset "images/manual/guides/de/first-page/liste-der-seitenstruktur.png" %}}?classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 Der Eintrag `index` für den `Seitenalias` sollte nur für deine eigentliche Startseite herangezogen werden. Deine weiteren
 Seiten kannst du den Wünschen entsprechend benennen: z. B. »kontakt« oder »impressum«.
 {{% /notice %}}
@@ -127,7 +127,7 @@ zur Erstellung neuer Inhalte aus.
 
 ![Den Artikel bearbeiten]({{% asset "images/manual/guides/de/first-page/den-artikel-bearbeiten.png" %}}?classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 In der obigen Listendarstellung wird der Artikel ausgegraut dargestellt, u. a. auch das `Augen` Symbol. Du könntest 
 den Artikel bereits jetzt [veröffentlichen](#den-artikel-veroeffentlichen) oder zunächst mit den folgenden Schritte weiter machen.
 {{% /notice %}}

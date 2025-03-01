@@ -29,7 +29,7 @@ The following modules are available:
 - **Page Layouts**: Here you can create new page layouts and edit existing ones.
 - **Image sizes:** Here you can create new image sizes and edit existing ones.
 
-{{% notice note %}}
+{{% notice info %}}
 The internal CSS editor is deprecated and will be removed in one of the next Contao versions!
 {{% /notice %}}
 

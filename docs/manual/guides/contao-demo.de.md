@@ -34,7 +34,7 @@ Website nachvollziehen.
 Die Contao Demo benutzt `.scss` Dateien für die Gestaltung. Die `app.scss` wird direkt in den jeweiligen 
 Theme-Einstellungen genutzt und dann über Contao als finale `.css` Datei kompiliert und bereit gestellt. 
 
-{{% notice note %}}
+{{% notice info %}}
 Was du hierbei berücksichtigen solltest, wird im Beitrag »[Sass/Less Integration](/de/anleitungen/sass-less-integration/)« näher beschrieben.
 {{% /notice %}}
 
@@ -57,7 +57,7 @@ Die von Contao genutzte »[scssphp/scssphp](https://github.com/scssphp/scssphp)�
 aktuellen »[Dart Sass](https://sass-lang.com/dart-sass/)« Leistungsmerkmale wie z. B. »[@use](https://sass-lang.com/documentation/at-rules/use/)«, 
 »[@forward](https://sass-lang.com/documentation/at-rules/forward/)« oder weitere »Dart Sass« [Module](https://sass-lang.com/documentation/modules/).
 
-{{% notice note %}}
+{{% notice info %}}
 Das gilt u. U. auch für existierende SASS Erweiterungen z. B. für den »[Visual Studio Code](https://code.visualstudio.com/)« Editor etc. 
 {{% /notice %}}
 

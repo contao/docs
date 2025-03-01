@@ -96,7 +96,7 @@ contao:
 
 ### Frontend-Einstellungen
 
-{{% notice note %}}
+{{% notice info %}}
 Ab Version **4.10** wird die folgende Einstellung im Startpunkt der Webseite vorgenommen:
 {{% /notice %}}
 
@@ -104,7 +104,7 @@ Ab Version **4.10** wird die folgende Einstellung im Startpunkt der Webseite vor
 Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite »Download« im Seitenpfad 
 »Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
 
-{{% notice note %}}
+{{% notice info %}}
 Ab Version **4.10** ist diese Einstellung entfallen:
 {{% /notice %}}
 
@@ -140,7 +140,7 @@ security:
 **Beispiele:**  
 `<iframe>` ist in den erlaubten HTML-Tags nicht vorhanden, kann aber einfach unter Schlüssel eingefügt werden. 
 
-{{% notice note %}}  
+{{% notice info %}}  
 Um die selbst hinzugefügten HTML-Tags besser zu erkennen, sollten diese zu Beginn der Liste eingetragen werden.  
 {{% /notice %}}  
 
@@ -195,7 +195,7 @@ durchsuchen.
 **Geschützte Seiten indizieren:** Wähle diese Option, um auch geschützte Seiten für die Suche zu indizieren. Nutze 
 dieses Feature mit Bedacht, und achte darauf, personalisierte Seiten grundsätzlich von der Suche auszuschließen.
 
-{{% notice note %}}
+{{% notice info %}}
 Ab Version **4.9** kommt ein neuer Such-Indexer zum Einsatz. Die Einstellungen **Suche aktivieren** und 
 **Geschützte Seiten indizieren** werden nun über die `config/config.yaml` konfiguriert:
 
@@ -244,7 +244,7 @@ ausgenommen und kann auch zusätzliche Einträge wie z. B. die Angaben für den 
 Die Datei `parameters.yaml` findest du im Ordner `app/config/` und wird bei der Installation von Contao automatisch 
 angelegt.
 
-{{% notice note %}}
+{{% notice info %}}
 Ab der Version **4.8** von Contao befindet sich die Datei direkt im Wurzelverzeichnis der Installation unter `config/`.
 {{% /notice %}}
 
@@ -260,7 +260,7 @@ parameters:
     database_name: …
     secret: …
 ```
-{{% notice note %}}
+{{% notice info %}}
 Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen enthalten, müssen in Hochkommatas gesetzt werden.
 {{% /notice %}}
 
@@ -274,11 +274,11 @@ Damit kannst du unterschiedliche Konfigurationen für deine Test- bzw. Produktio
 mehr Logging im Debug Modus). Außerdem committest du die `config.yaml` im Gegensatz zur `parameters.yaml` in dein 
 [Repository](https://de.wikipedia.org/wiki/Repository). Ein Repository kannst du verwenden, um deine Projekt-Versionen abzulegen, z. B. mit Git.
 
-{{% notice note %}}
+{{% notice info %}}
 Vor Version **4.8** von Contao befand sich die Datei unter `app/config/`.
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 Vor Version **4.9** von Contao wird nur die Dateiendung `*.yml` unterstützt.
 {{% /notice %}}
 
@@ -1037,7 +1037,7 @@ Umgebungsvariablen sind Variablen, die auf Betriebssystem-Ebene, pro Benutzer od
 
 Die Variablen werden in der Datei `.env` definiert und diese Datei muß sich im Hauptverzeichnis der Contao-Installation befinden. Die Nutzung und Bezeichnung der folgenden Variablen sind vorgegeben. Du kannst aber auch beliebige Variablen definieren und dann z. B. in der `config.yaml` referenzieren. Falls eine zusätzliche `.env.local` Datei im gleichen Verzeichnis existiert, wird diese automatisch verwendet.
 
-{{% notice info %}}
+{{% notice note %}}
 Einige der Umgebungsvariablen, wie `APP_SECRET`, `DATABASE_URL` und `MAILER_DSN` ersetzen ihre jeweiligen Gegenstücke in der `config/parameters.yaml`.
 {{% /notice %}}
 
@@ -1127,7 +1127,7 @@ Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der `
 Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariable namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
 Siehe die [Symfony Mailer Dokumentation][SymfonyMailer] für weitere Informationen.
 
-{{% notice note %}}
+{{% notice info %}}
 Die Variable hieß bisher `MAILER_URL`. Ab Contao **5.0** wird nur noch `MAILER_DSN` unterstützt.
 {{% /notice %}}
 
@@ -1166,7 +1166,7 @@ Das nachfolgende Tool läuft in deinem Browser und hilft dir deine E-Mail Zugang
 
 ### `COOKIE_ALLOW_LIST`
 
-{{% notice info %}}
+{{% notice note %}}
 In Contao **4.9** heißt diese Umgebungsvariable `COOKIE_WHITELIST`.
 {{% /notice %}}
 
@@ -1182,7 +1182,7 @@ Cookies von installierten Erweiterungen zulassen:
 COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
     
-{{% notice note %}}
+{{% notice info %}}
 Der Name des PHP-Session-Cookies ist über die `php.ini` konfigurierbar, daher solltest du überprüfen, ob er auch `PHPSESSID` lautet. Außerdem ist der CSRF-Cookie aus Sicherheitsgründen für `http` und `https` unterschiedlich. Wenn die Website über `http` ausgeliefert wird, ist zu beachten, dass der Cookie-Name `csrf_http-contao_csrf_token` lautet. Wenn du Benutzer vor CSRF-Angriffen schützen möchtest, aber das Formular über ungesicherte `http`-Verbindungen übermittelst, ist das
 nicht wirklich ein gültiger Anwendungsfall. 
 {{% /notice %}}
@@ -1456,7 +1456,7 @@ contao:
 Wenn danach der Symfony Application Cache erneuert wurde, stehen diese E-Mail Konfigurationen zur Selektion im Contao
 Backend zur Verfügung.
 
-{{% notice note %}}
+{{% notice info %}}
 Wird kein Transport konfiguriert, gelten nach wie vor die Informationen aus der `parameters.yaml`. Werden Transports
 konfiguriert, aber es wird kein Transport im Contao Backend ausgewählt, wird automatisch der erste definierte Transport 
 verwendet.
@@ -1608,7 +1608,7 @@ php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
 
 Bei einem minütlichen Aufruf würde das also den E-Mail Versand auf 600 E-Mails pro Stunde beschränken.
 
-{{% notice "note" %}}
+{{% notice "_note" %}}
 In den Kommandos wird die Option `--time-limit=1` benutzt. Von Haus aus läuft der `messenger:consume` Prozess unendlich lang und verarbeitet
 alle E-Mails in dieser Zeit automatisch - und es müsste daher auch kein Cronjob eingerichtet werden. Um sicherzustellen, dass dieser 
 Prozess läuft und ggf. neu gestartet wird könnten entsprechende Tools am Server verwendet werden. In Shared Hosting Umgebungen hat man diese

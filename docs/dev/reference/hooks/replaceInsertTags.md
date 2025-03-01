@@ -14,7 +14,7 @@ argument and expects the replacement value or false as return value.
 
 See also the dedicated [framework article][FrameworkInsertTags] about Insert Tags.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `replaceInsertTags` hook has been deprecated and will no longer work in Contao 6. See
 [here](/framework/insert-tags/#register-custom-insert-tags) on how to register custom insert tags.
 {{% /notice %}}

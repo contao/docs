@@ -13,7 +13,7 @@ passes the image object as an argument and expects either `null` or a the path
 to the resized image as the return value. If the return value is `null`, other 
 hooks of the same type will still be executed.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `executeResize` and `getImage` hooks has been deprecated and will no 
 longer work in Contao 5.0. Use the `contao.image.resizer` service instead.
 {{% /notice %}}

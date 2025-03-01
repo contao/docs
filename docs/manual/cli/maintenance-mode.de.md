@@ -33,7 +33,7 @@ php vendor/bin/contao-console contao:maintenance-mode [options] [<state>]
 | `enable` oder `on`   | Versetzt die Contao-Installation in den Wartungsmodus.  |
 | `disable` oder `off` | Hebt den Wartungsmodus für die Contao-Installation auf. |
 
-{{% notice info %}}
+{{% notice note %}}
 Wie du das Wartungstemplate anpassen kannst, erfährst du in unserer [Anleitung](../../anleitungen/wartungstemplate-anpassen/).
 {{% /notice %}}
 

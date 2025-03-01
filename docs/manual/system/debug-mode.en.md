@@ -17,7 +17,7 @@ the following things are in effect:
 * CSS and JavaScript assets will not be combined.
 * Template names will be shown in the source as HTML comments.
 
-{{% notice info %}}
+{{% notice note %}}
 In Contao **4.4**, the debug mode also bypasses the image cache of Contao. While
 this can be useful, it will also slow down the page generation significantly on
 pages with a lot of images. To disable bypassing of the image cache add the following
@@ -108,7 +108,7 @@ Do _not_ deploy this file with the enabled debug mode to your live server! It wo
 pose a major security risk.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Further environment variables can be set this way. A description can be found in the [Developer Documentation](/../dev/reference/config/#environment-variables-for-the-contao-managed-edition).
 {{% /notice %}}
 
@@ -119,7 +119,7 @@ The debug mode can also be enabled by administrators within the back end of Cont
 Next to the preview button there will be a _Debug Mode_ button. When clicked, this
 will set a special cookie that enables the debug mode only for the current user.
 
-{{% notice info %}}
+{{% notice note %}}
 The button will only be displayed, if you have not defined the app environment in your `.env` file.
 {{% /notice %}}
 

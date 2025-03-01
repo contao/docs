@@ -19,7 +19,7 @@ Wir möchten für eine fiktive Vereinsseite eine Liste der Mitglieder zusammen m
 Diese Angaben werden in der Datenbanktabelle `tl_member` gespeichert und können dann über das Modul vom »Typ« 
 [Auflistung](/de/layout/modulverwaltung/anwendungen/#auflistung) abgefragt werden.
 
-{{% notice info %}}
+{{% notice note %}}
 Zur Listendarstellung bestehender Mitglieder könntest du auch die Erweiterung 
 [contao-memberlist](https://extensions.contao.org/?q=memberlkist&pages=1&p=friends-of-contao%2Fcontao-memberlist) 
 installieren. Mit Nutzung des Moduls »Auflistung« können wir dies u. a. ohne Erweiterung umsetzen.
@@ -112,7 +112,7 @@ neues Template »list_default_member.html5« und benutze dieses anschließend in
 </div>
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Einfachheitshalber haben wir rudimentäre CSS-Angaben hier direkt im Template eingetragen. 
 Alternativ könntest du diese auch als [CSS-Asset](/de/layout/templates/php/assets/) hinterlegen.
 {{% /notice %}}
@@ -151,7 +151,7 @@ Rufe dann das Contao-Installtool auf (Oder ab Contao **4.9** auch über die Kons
 »tl_member« angelegt. Im Contao Backend steht dir jetzt das Feld zur Eingabe der Geo-Koordinaten eines Mitglieds 
 (in Form von »Breitengrad,Längengrad«) zur Verfügung.
 
-{{% notice note %}}
+{{% notice info %}}
 Bei jeder Änderung der Datei »contao/dca/tl_member.php« muss der »Anwendungs-Cache« erneut aktualisiert werden.
 {{% /notice %}}
 
@@ -276,7 +276,7 @@ entsprechenden Informationen. Diese werden einer Gruppe `memberGroup`, zusammen 
 zwecks Darstellung der Karte zugeordnet. Kopiere diese Dateien in ein öffentliches Verzeichnis deiner Contao 
 Installation unterhalb von »files«.
 
-{{% notice note %}}
+{{% notice info %}}
 Du musst weiterhin jQuery im [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#jquery) 
 deines Themes aktivieren. Das Beispiel bezieht sich auf das Standard Leaflet-Marker-Symbol »images/marker-icon.png«. 
 Wenn du hier ein anderes, eigenes Symbol nutzen möchtest, müssen die Angaben »iconSize«, »iconAnchor« und »popupAnchor« 
@@ -353,12 +353,12 @@ Zunächst referenzieren wir die benötigten CSS- und JS-Dateien (s. a.:
 `MYMEMBERMAP` zur Kartendarstellung. In der PHP-Schleife erfassen wir über `tmpMemberMapData` u. a. die benötigten 
 Koordinaten und erzeugen im Anschluß hierüber ein JavaScript-Array zwecks Aufruf unserer Funktion `createMemberMap(arrMemberMapData)`.
 
-{{% notice note %}}
+{{% notice info %}}
 Der HTML-Container zur Kartendarstellung benötigt zwingend eine CSS-Height Angabe. Wir haben diese einfachheitshalber 
 inline gesetzt.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Mit dem Abruf der Karte wird eine Kommunikation des Browsers und dem OpenStreetMap-Server angestossen. Diese Übermittlung 
 ist bei der DSGVO oder ePrivacy zu beachten.
 {{% /notice %}}

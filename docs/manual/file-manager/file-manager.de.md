@@ -45,7 +45,7 @@ Bearbeitung des Inhalts einer Datei mit einem Texteditor. Welche Dateien editier
 Konfigurationsdatei [`config/config.yaml`](../../system/einstellungen/#config-yml) unter dem Schlüssel `editable_files`
 festlegen<sup>1</sup>.
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup>Bis zur Version 4.6 von Contao konnte dies in den System-Einstellungen unter »Dateien und Bilder 
 -&gt; Editierbare Dateien« festlegt werden.
 {{% /notice %}}

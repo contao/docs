@@ -15,7 +15,7 @@ does expect a boolean as return value (returning `true` will cause the current
 page to be reloaded).
 
 
-{{% notice note %}}
+{{% notice info %}}
 This hook can also be implemented as an anonymous function.
 {{% /notice %}}
 

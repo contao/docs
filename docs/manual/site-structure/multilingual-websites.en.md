@@ -17,7 +17,7 @@ In Contao, only the first variant is supported (except for some third party exte
 
 In order for the language to be added to the URL (e.g. `www.example.com/de/`), you must add the following lines in the `config.yaml` located in the `app/config/` directory. If the file does not exist yet, you have to create it.
 
-{{% notice note %}}
+{{% notice info %}}
 From version **4.8** of Contao the file is located in the `config/` directory.
 {{% /notice %}}
 
@@ -26,7 +26,7 @@ contao:
     prepend_locale: true
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 **Empty cache**  
 For the changes to take effect, the application cache must be refreshed via the Contao Manager ("System maintenance" &gt; "Refresh product cache") or alternatively via the command line.
 

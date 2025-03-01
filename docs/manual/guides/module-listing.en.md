@@ -18,7 +18,7 @@ Contao [members](/en/user-management/members/) who can be assigned to one or mor
 These details are stored in the database table `tl_member` and can then be queried via the module of the »Type« 
 [listing](/en/layout/module-management/applications/).
 
-{{% notice info %}}
+{{% notice note %}}
 For list display of existing members you could also install the extension 
 [contao-memberlist](https://extensions.contao.org/?q=memberlkist&pages=1&p=friends-of-contao%2Fcontao-memberlist). By 
 using the module »Listing« we can implement this without any extension.
@@ -107,7 +107,7 @@ have specified under »Themes« and then use this in your module »Listing«:
 </div>
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 For simplicity's sake, we have entered rudimentary CSS information here directly in the template. Alternatively, 
 you could also store them as [CSS assets](/en/layout/templates/php/template-assets/).
 {{% /notice %}}
@@ -146,7 +146,7 @@ Then call the Contao installation tool (or from Contao **4.9** on also via the c
 »tl_member«. In the Contao backend you can now use the field to enter the geo-coordinates of a member 
 (in the form of "latitude,longitude").
 
-{{% notice note %}}
+{{% notice info %}}
 Each time the file »contao/dca/tl_member.php« is changed, the »application cache« must be updated again.
 {{% /notice %}}
 
@@ -265,7 +265,7 @@ you define the CSS ID for the HTML container. The JavaScript function expects as
 information. This information is assigned to a group `memberGroup`, together with `OpenStreeMap` as map provider, for 
 the purpose of displaying the map. Copy these files into a public directory of your Contao installation below »files«.
 
-{{% notice note %}}
+{{% notice info %}}
 You still need to enable jQuery in the [page layout](/en/layout/theme-manager/manage-page-layouts/) of your theme. The 
 example refers to the standard leaflet marker icon »images/marker-icon.png«. If you want to use a different, individual symbol 
 here, the specifications »iconSize«, »iconAnchor« and »popupAnchor« must also be adapted.
@@ -340,12 +340,12 @@ First we reference the required CSS and JS files (see also: [CSS and JavaScript 
 Furthermore we define a HTML container with the CSS ID `MYMEMBERMAP` for map display. In the PHP loop we collect the 
 required coordinates via `tmpMemberMapData` and generate a JavaScript array in order to call our function `createMemberMap(arrMemberMapData)`.
 
-{{% notice note %}}
+{{% notice info %}}
 The HTML container for map display requires a CSS height specification. We have created this for simplicity's sake 
 set inline.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 When the map is retrieved, communication between the browser and the OpenStreetMap server is initiated. This 
 transmission must be observed in the DSGVO or ePrivacy.
 {{% /notice %}}

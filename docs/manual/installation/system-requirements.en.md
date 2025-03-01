@@ -9,7 +9,7 @@ To run Contao successfully, the web server must meet these system requirements. 
 developed for the familiar [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) stack, but runs on
 any web server that provides a current version of PHP and MySQL.
 
-{{% notice info %}}
+{{% notice note %}}
 If you use the Contao Manager to install and update your Contao instances, you should also note
 its [System requirements](https://docs.contao.org/manual/en/installation/contao-manager/#system-requirements). 
 {{% /notice %}}
@@ -43,7 +43,7 @@ always use them.
 | [File Information][ext-fileinfo] (`ext-fileinfo`) | **required**                                | **required**                                |
 | [Sodium][ext-sodium] (`ext-sodium`)               | -                                           | **required** for PHP 8.3+<sup>2</sup>       |
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Contao automatically selects an image processing library depending on its availability.
 However, the PHP GD library must still be available.
 Using ImageMagick via the PHP Imagick or Gmagick library is recommended in all cases. ImageMagick
@@ -130,7 +130,7 @@ Contao automatically detects and uses the best available extension.
 - **PHP** Version 5.6.0 or higher is required.
 - The GD extension (`ext-gd`) is required for image processing.
 
-{{% notice info %}}
+{{% notice note %}}
 If a MySQL server in version **8.0.17** or higher is used, at least PHP **7.2.0** is required.
 {{% /notice %}}
 
@@ -159,7 +159,7 @@ The use of `utf8` instead of the `utf8mb4` character set results in a worse UTF8
 If the above recommended options cannot be enabled on your server, please configure a different character set in your 
 [`config/config.yaml`](../../system/settings/#config-yml) file:
 
-{{% notice note %}}
+{{% notice info %}}
 Before **Contao 4.8** you can find the file under `app/config/config.yaml`.  
 {{% /notice %}}
 
@@ -177,7 +177,7 @@ doctrine:
 It is further recommended to run MySQL in "strict mode" to prevent corrupt or truncated
 data and to guarantee data integrity.
 
-{{% notice note %}}
+{{% notice info %}}
 {{< version-tag "4.9" >}} The install tool now shows a warning if the database server is not running
 in strict mode.
 {{% /notice %}}
@@ -237,7 +237,7 @@ Example: `example.com` points to the directory `/www/example/web`
 `/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
 
 
-{{% notice note %}}
+{{% notice info %}}
 Therefore, a separate (sub)domain is required for each Contao installation.
 {{% /notice %}}
 

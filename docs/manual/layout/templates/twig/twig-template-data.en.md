@@ -33,7 +33,7 @@ If you want the output to be in the toolbar - and not in the template - you can 
 {% dump(a, b) %} {# output the data of variable "a"  und "b" #}
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Note that in extended templates the `dump()` function must be used inside a block.
 {{% /notice %}}
 

@@ -36,7 +36,7 @@ erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](.
 
 ### Vorschau-Einstellungen
 
-{{% notice info %}}
+{{% notice note %}}
 Die PHP-Erweiterung Imagick oder Gmagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu 
 kommen.
 {{% /notice %}}
@@ -59,7 +59,7 @@ geöffnet.
 generiert werden. Bei 0 werden alle Vorschaubilder generiert in unserem Fall also 10. Wenn du nur die erste Seite deines 
 PDFs als Vorschaubild ausgeben möchtest, trägst du eine 1 im Feld ein.
 
-{{% notice info %}}
+{{% notice note %}}
 Beachte, dass nur die Dateitypen heruntergeladen werden können, die du in den Backend-Einstellungen unter »Erlaubte
 Download-Dateitypen« festgelegt hast.
 {{% /notice %}}
@@ -147,7 +147,7 @@ wurden, werden sie bei der Aktivierung nicht angezeigt.
 
 ### Vorschau-Einstellungen
 
-{{% notice info %}}
+{{% notice note %}}
 Die PHP-Erweiterung Imagick oder Gmagick muss auf dem Server installiert sein, um in den Genuss dieser Funktion zu 
 kommen.
 {{% /notice %}}
@@ -170,7 +170,7 @@ geöffnet.
 generiert werden. Bei 0 werden alle Vorschaubilder generiert in unserem Fall also 10. Wenn du nur die erste Seite deines
 PDFs als Vorschaubild ausgeben möchtest, trägst du eine 1 im Feld ein.
 
-{{% notice info %}}
+{{% notice note %}}
 Beachte, dass nur die Dateitypen heruntergeladen werden können, die du in den Backend-Einstellungen unter »Erlaubte
 Download-Dateitypen« festgelegt hast.
 {{% /notice %}}

@@ -5,7 +5,7 @@ aliases:
   - /framework/image-processing/legacy/
 ---
 
-{{% notice note %}}
+{{% notice info %}}
 This section only applies to Contao versions prior to **4.10**. For later versions use the
 [Image Studio](/framework/image-processing/image-studio/) features and templates instead.
 {{% /notice %}}

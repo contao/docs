@@ -26,7 +26,7 @@ Weiterführende Informationen zu Laragon (Installation, Features usw.) finden si
 
 Windows 7, 8, 8.1, 10
 
-{{% notice note %}}
+{{% notice info %}}
 In dieser Anleitung wird die Installation von Laragon unter Windows 10 (64 Bit) beschrieben.
 {{% /notice %}}
 
@@ -92,7 +92,7 @@ Laragon kann relativ leicht angepasst und konfiguriert werden. Über das »_Neue
 
 ![Laragon-Einstellungen]({{% asset "images/manual/guides/local-installation/de/laragon/06_laragon_services.png" %}}?width=500px&classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 Die Laragon-Konfigurationseinstellungen werden in der `laragon\usr\laragon.ini` gespeichert und können selbstverständlich auch dort geändert werden.
 {{% /notice %}}
 
@@ -142,7 +142,7 @@ Im selben Untermenü können die Laragon-Umgebungsvariablen bei Bedarf auch wied
 
 ![App-Konfigurationen anpassen]({{% asset "images/manual/guides/local-installation/de/laragon/15_laragon_app_config.png" %}}?width=500px&classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 Die App-Konfigurationen werden in der Datei `laragon\usr\sites.conf` gespeichert.
 {{% /notice %}}
 
@@ -209,7 +209,7 @@ Selbstverständlich können die App-Konfigurationen der anderen Webapplikationen
 
 Über den Parameter `AutoCreateDatabase` im Abschnitt `Options` kann konfiguriert werden, ob Datenbanken ebenfalls automatisch erstellt werden sollen oder nicht. Standardmäßig wird mit jedem neu erstellten Webprojekt gleichzeitig auch eine neue, leere Datenbank mit dem selben Namen angelegt.
 
-{{% notice note %}}
+{{% notice info %}}
 Die Änderungen in der `laragon\usr\sites.conf` sind nach dem Speichern unmittelbar aktiv; Laragon muss also nicht neu gestartet werden.
 {{% /notice %}}
 
@@ -276,7 +276,7 @@ hinzu:
 (der Systemcheck des Contao Managers sollte den Pfad zur PHP-Binary automatisch erkennen, wenn in der Serverkonfiguration eine manuelle Konfiguration über »_Andere …_«  ausgewählt wird)
 
 
-{{% notice note %}}
+{{% notice info %}}
 Falls die Browsersoftware bei Eingabe von beispielsweise `mycompany.local` wider Erwarten eine Websuche für dieses Keyword ausführt, sollte beim Aufruf zusätzlich das Schema bzw. Netzwerkprotokoll `http://` mit angegeben werden, also `http://mycompany.local/`.
 {{% /notice %}}
 
@@ -330,7 +330,7 @@ composer require contao/official-demo:4.4.0
 + Composer führt anschließend eine Abhängigkeitsauflösung aus. Ist diese erfolgreich, wird das Paket heruntergeladen und im System installiert.
 + Das Contao-Installtool aufrufen und den SQL-Datenbankdump der Contao Official Demo (COD) importieren. Achtung: Alle bereits in der Datenbank vorhandenen Daten werden beim Import des COD-Dumps gelöscht.
 
-{{% notice note %}}
+{{% notice info %}}
 Wie jedes andere Paket/Bundle auch, kann die Contao Official Demo (COD) selbstverständlich genauso via Contao Manager installiert werden.
 {{% /notice %}}
 
@@ -362,7 +362,7 @@ $cfg['LoginCookieValidity'] = 36000;
     + Benutzername: `root`
     + Passwort: <leer>
 
-{{% notice note %}}
+{{% notice info %}}
 Die Apache Alias-Konfiguration für phpMyAdmin befindet sich in `laragon\etc\apache2\alias\phpmyadmin.conf`
 {{% /notice %}}
 

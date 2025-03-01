@@ -30,7 +30,7 @@ Eine UUID ist systemübergreifend eindeutig und sieht zum Beispiel so aus: `bb64
 
 ![Verschachtelte Ordner anlegen]({{% asset "images/manual/file-manager/de/folder-name.gif" %}}?classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 Mit Auswahl »Öffentlich« wird hierbei lediglich der letzte Ordner entsprechend öffentlich markiert.
 {{% /notice %}}
 

@@ -104,7 +104,7 @@ du einen Webfont ausgewählt hast, kannst du diesen, über die Angabe der Parame
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Es wird eine manuelle Einbindung von »Webfonts« empfohlen. Ansonsten solltest du dich bei den Angaben an den folgenden
 Google-Anweisungen orientieren: [Get Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started). 
 Die »Google Fonts API Version 2« wird zur Zeit nicht unterstützt.

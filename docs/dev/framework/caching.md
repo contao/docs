@@ -300,7 +300,7 @@ There are two fundamentally different ways to render fragments:
 
 ### Inline Fragments
 
-{{% notice note %}}
+{{% notice info %}}
 Before **Contao 4.9**, inline fragments cannot affect the cache time of the page response.
 {{% /notice %}}
 

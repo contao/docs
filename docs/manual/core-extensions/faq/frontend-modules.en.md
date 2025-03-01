@@ -59,7 +59,7 @@ The keyword of the FAQ reader is **question** and tells the module to search and
 searched question does not exist, the FAQ reader returns an error message and the HTTP status code "404 Not Found". 
 The status code is important for search engine optimization.
 
-{{% notice info %}}
+{{% notice note %}}
 On a single page there may only be one "reader module" at a time, regardless of the type. Otherwise, one or the other 
 module would trigger a 404 page, because, for example, the alias of a FAQ cannot be found in a calendar, or vice versa 
 the alias of an event in a FAQ category.

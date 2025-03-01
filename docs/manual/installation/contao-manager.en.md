@@ -44,7 +44,7 @@ For the latest version you'll need:
 - PHP functions *proc\_open* and *proc\_close*
 - PHP setting *allow\_url\_fopen* must be active
 
-{{% notice info %}}
+{{% notice note %}}
 The Contao Manager can also be installed on PHP 5 or PHP 7. On the first access, the
 PHP version is detected and a compatible version is automatically downloaded from the Contao servers.
 Features of the latest version are obviously not available in that case, but you can still install or update
@@ -61,7 +61,7 @@ In Contao, all publicly accessible files are located in the subfolder `/public` 
 ({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to
 `/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`. When changing from `/web` to `/public`, the change must also be specified in composer.json.)
 
-{{% notice note %}}
+{{% notice info %}}
 Every Contao installation requires a separate (sub)domain.
 {{% /notice %}}
 
@@ -71,7 +71,7 @@ The Contao Manager consists of a single file that can be [downloaded from contao
 After the successful download you will receive a file `contao-manager.phar`. transfer this file to the directory `public` 
 on your web server.
 
-{{% notice info %}}
+{{% notice note %}}
 Files `.phar` are not executed by all hosting providers. For best compatibility, add the file extension `.php`(final 
 file name: `contao-manager.phar.php`).
 {{% /notice %}}

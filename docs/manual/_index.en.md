@@ -69,6 +69,6 @@ For newer versions:
 {{% children description="true" %}}
 
 
-{{% notice info %}}
+{{% notice note %}}
 The English version of the manual is still a work in progress.
 {{% /notice %}}

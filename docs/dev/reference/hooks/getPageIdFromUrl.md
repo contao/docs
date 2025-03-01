@@ -15,7 +15,7 @@ fragments as return value.
 
 The first fragment returned will usually be the ID or alias of a Contao page.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `getPageIdFromUrl` hook has been deprecated and will no longer work in Contao 5.0.
 {{% /notice %}}
 

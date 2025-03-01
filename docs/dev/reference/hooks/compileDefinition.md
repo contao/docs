@@ -12,7 +12,7 @@ The `compileDefinition` hook is triggered when a format definition of an interna
 style sheet is written. It passes the database record of the style definition as 
 an array and expects a string as return value.
 
-{{% notice info %}}
+{{% notice note %}}
 Using the `compileDefinition` hook has been deprecated and will no longer work in Contao 5.0. There is no replacement as the internal stylesheet functionality has been removed in Contao 5.0.
 {{% /notice %}}
 

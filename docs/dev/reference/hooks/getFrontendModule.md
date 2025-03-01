@@ -11,7 +11,7 @@ aliases:
 The `getFrontendModule` hook allows to manipulate the generation of the front end
 modules.
 
-{{% notice info %}}
+{{% notice note %}}
 This hook is only executed, when a front end module is rendered directly via 
 `\Contao\Controller::getFrontendModule()`. This will _not_ be the case if a module 
 is inserted into a page via the _Module_ content element for example. The hook is
@@ -22,7 +22,7 @@ You will need to implement the [`getContentElement`](/reference/hooks/getContent
 hook as well, if you want to cover all bases.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 This hook is also executed for forms that are integrated into a page layout via
 a front end module.
 {{% /notice %}}

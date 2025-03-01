@@ -30,7 +30,7 @@ werden standardmäßig absteigend nach Datum sortiert.
 **Nachrichtenleser:** Hier kannst du festlegen ob automatisch zum Nachrichtenleser gewechselt werden soll, wenn ein 
 Beitrag ausgewählt wurde.
 
-{{% notice info %}}
+{{% notice note %}}
 **Vorsicht:** in den meisten Fällen sollte diese Funktionalität nicht für Nachrichtenlisten benutzt werden, die im Seitenlayout
 platziert werden. Andernfalls hätte man dann auf jeder Seite des Seitenlayouts automatisch auch einen Nachrichtenleser an 
 der jeweiligen Stelle im Layout. Dies würde die Funktionalität anderer »Lesermodule« auf der selben Seite verhindern.
@@ -94,7 +94,7 @@ In diesem Beispiel wird die Nachricht mit dem Alias »form-folgt-funktion« üb
 Existiert die gesuchte Nachricht nicht, gibt der Nachrichtenleser eine Fehlermeldung und den HTTP-Status-Code »404 Not
 found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
-{{% notice info %}}
+{{% notice note %}}
 Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
 oder andere Modul eine 404 Seite auslösen, da zum Beispiel der Alias einer Nachricht nicht in einem Kalender gefunden 
 wird, oder umgekehrt der Alias eines Events in einem Nachrichtenarchiv.

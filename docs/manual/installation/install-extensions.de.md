@@ -123,7 +123,7 @@ Sobald die Installation der Erweiterung(en) abgeschlossen ist, musst du die Date
 php vendor/bin/contao-console contao:migrate
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Das `contao:migrate`-Kommando ist ab Version **4.9** verfügbar. Alternativ kannst du dafür das [Contao Install-Tool](../contao-installtool/)
 nutzen.
 {{% /notice %}}

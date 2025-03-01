@@ -16,7 +16,7 @@ unter »Templates« können die Dateien erstellt, in Ordnern abgelegt und bearbe
 
 {{% children %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Template Änderungen sind nicht notwendig, wenn du nur eine zusätzliche CSS-ID oder CSS-Klasse benötigst. Bei den meisten 
 Contao-Komponenten kannst du diese im Bereich »Experten-Einstellungen« eintragen. Die entsprechenden Bezeichnungen 
 werden von den Templates übernommen und im Quelltext ausgegeben.

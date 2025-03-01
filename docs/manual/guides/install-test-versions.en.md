@@ -17,7 +17,7 @@ is reached, after which the first release candidates will be published. If no fu
 issues are found during testing of the developer version and the release candidates, 
 the stable version of the new version will be released.
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Contao uses "[semantic versioning](https://semver.org/)". A new "major"
 version is signified by the first part of the version string. These are versions
 with new features or structural changes, that can be incompatible with previous 

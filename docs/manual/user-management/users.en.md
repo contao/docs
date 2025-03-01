@@ -187,7 +187,7 @@ User groups can be deactivated manually or automatically at a specific time. No 
 With the "Users" module you can manage user accounts. Users can login with their username and password in the back end 
 and inherit the permissions of the user groups assigned to them.
 
-{{% notice note %}}
+{{% notice info %}}
 The user name and email address must be unique, i.e. they can only be assigned once.
 {{% /notice %}}
 

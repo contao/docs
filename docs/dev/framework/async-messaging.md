@@ -3,7 +3,7 @@ title: "Asynchronous Messaging"
 description: Asynchronous Messaging using the Symfony Messenger integration
 ---
 
-{{% notice note %}}
+{{% notice info %}}
 The feature has been around since Contao 5.1, but we're describing how it works as of version 5.3.10 where it was
 revamped in order to address various issues with the previous implementation.
 {{% /notice %}}
@@ -167,7 +167,7 @@ contao:
                     max: 10
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 In reality, things are a bit more complex than just starting the `messenger:consume` commands every minute because as 
 messages could take longer than one minute to finish being processed, we also have to supervise how many processes are running 
 and not blindly start them as we might accumulate too many processes like that. But this would go beyond the scope 

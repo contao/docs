@@ -47,7 +47,7 @@ There we find the language variable `XPT.unavailable` and `XPT.maintenance`. Now
 
 Now we create a new file named `exception.xlf` and put it under `/contao/languages/en/`, copy the needed lines from the original `exception.xlf` and adjust the texts according to our wishes.
 
-{{% notice note %}}
+{{% notice info %}}
 If the folder `/contao` does not exist yet, you have to create it and the corresponding subfolders.
 {{% /notice %}}
 
@@ -79,7 +79,7 @@ To make the new texts visible now, the production cache must be cleared via the 
 
 Of course, other texts such as the footer can also be overwritten via `XPT.hint`.
 
-{{% notice note %}}
+{{% notice info %}}
 IMPORTANT: All changes affect the maintenance template as well as all other error templates of Contao.
 {{% /notice %}}
 

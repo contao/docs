@@ -99,7 +99,7 @@ You can enter or select a [canonical URL](https://developers.google.com/search/d
 comma-separated
 list of query parameters to preserve. Use "*" as a wildcard.
 
-{{% notice note %}}
+{{% notice info %}}
 The rel="canonical" setting must be activated in the "website root" page type (default).
 {{% /notice %}}
 
@@ -198,7 +198,7 @@ public pages and pages not hidden in the menu are included. If necessary, this b
   and would not normally be displayed.
 - **Never display:** The page is excluded from the HTML Sitemap.
 
-{{% notice info %}}
+{{% notice note %}}
 Do not confuse the HTML sitemap with the XML sitemap: The HTML sitemap is a FE-Module, you can submit the XML sitemap 
 e.g. to Google.
 {{% /notice %}}

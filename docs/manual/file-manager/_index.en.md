@@ -29,7 +29,7 @@ You can create a new directory using the "New folder" button. The following opti
 
 ![Create nested folders]({{% asset "images/manual/file-manager/en/folder-name.gif" %}}?classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 If you select "Public", only the last folder will be marked as public.
 {{% /notice %}}
 

@@ -6,7 +6,7 @@ aliases:
     - /framework/content-elements/
 ---
 
-{{% notice note %}}
+{{% notice info %}}
 This covers the documentation on how to create content elements in Contao **4.6**
 and up. In previous Contao version, Content elements must extend from `\Contao\ContentElement`
 and then be registered via the `$GLOBAL['TL_CTE']` array.

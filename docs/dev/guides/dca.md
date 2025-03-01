@@ -368,7 +368,7 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
 ];
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Generally it is recommended to use services for such callbacks. For the
 simplicity of this article an anonymous function is implemented, using the legacy 
 way of retrieving the database connection and parameter inputs.
@@ -640,7 +640,7 @@ container.
 Translations must be put into the `/contao/languages` folder, while each language
 will have its own subfolder there. Our translations will go into the `/contao/languages/en` folder.
 
-{{% notice note %}}
+{{% notice info %}}
 The English translations will also be the fallback when there are no other
 translations available.
 {{% /notice %}}

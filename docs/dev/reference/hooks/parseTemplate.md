@@ -87,7 +87,7 @@ class ParseTemplateListener
 <?php endif; ?>
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 The [`ContaoCorePermissions::MEMBER_IN_GROUPS` check](/framework/security/#voters) is only available in Contao **4.12** or higher.
 {{% /notice %}}
 

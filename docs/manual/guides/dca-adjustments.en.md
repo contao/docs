@@ -19,7 +19,7 @@ for example »contao/dca/tl_content.php«. After that, you need to recreate the 
 [Contao Manager](/en/installation/contao-manager/) or via the console. This step is required after every change.
 
 
-{{% notice note %}}
+{{% notice info %}}
 Do you know other practical examples? Then add your information to this collection. Detailed information how
 you can contribute to the documentation [can be found here](/en/contributing/).
 {{% /notice %}}

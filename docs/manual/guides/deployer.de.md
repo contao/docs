@@ -9,7 +9,7 @@ tags:
     - "Deployment"
 ---
 
-{{% notice note %}}
+{{% notice info %}}
 Diese Anleitung bezieht sich auf die Deployer-Version >=7.0 und Contao-Version >=4.13.
 {{% /notice %}}
 
@@ -114,7 +114,7 @@ Deployer ist, dass es eine möglichst kurze Downtime bei Updates gibt. Deswegen 
 Document-Root von deinem vHost musst du entsprechend auf `/current/public` (bzw. `/current/web`) einstellen. Ein
 komplettes Beispiel für einen Document-Root wäre: `/var/www/foobar/html/example.org/current/public`.
 
-{{% notice "note" %}}
+{{% notice "_note" %}}
 Contao verwendet standardmäßig den `/public`-Ordner als Web-Root. Wenn deine Contao-Installation noch den alten `/web`-Ordner
 verwendet, dann definiere diesen entsprechend in `composer.json`, damit Deployer das auch weiß.
 

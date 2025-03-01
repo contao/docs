@@ -7,7 +7,7 @@ aliases:
 weight: 10
 ---
 
-{{% notice info %}}
+{{% notice note %}}
 Der gesamte Abschnitt behandelt die Verwendung von Twig-Templates in Contao ab Version 5.0.  
 In Contao können Twig-Templates zwar seit Version 4.12 genutzt werden, aber erst seit Contao 5.0 werden Twig-Templates
 auch im Contao-Core verwendet. Es wurde darauf verzichtet, die abweichende Verwendung von Twig-Templates in älteren
@@ -21,7 +21,7 @@ Mit Twig-Templates kann das Design von der Programmierung strikt getrennt werden
 Wie ein PHP-Template wird ein Twig-Template für die Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen
 Komponente verwendet.
 
-{{% notice note %}}
+{{% notice info %}}
 In Twig-Templates wird konsequent auf die leistungsstarken Methoden zur Strukturierung und Wiederverwendung von
 Vorlagen gesetzt, wie
 z. B. [Erweitern](wiederverwendung/#erweitern),

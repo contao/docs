@@ -7,7 +7,7 @@ aliases:
 weight: 890
 ---
 
-{{% notice note %}}
+{{% notice info %}}
 Seit 01.10.2021 nutzen wir nicht mehr Mumble für unsere regelmäßigen Contao-Calls, sondern die Huddle-Funktion des [Contao Slack-Workspaces](https://to.contao.org/slack).
 {{% /notice %}}
 
@@ -128,7 +128,7 @@ sind in der »Galaxy« die Channels »Galaktische Spiele«, »Galaktischer Salat
 Im Channel »geschlossener Senat« (in »Galaktischer Senat«) dürfen nur Administratoren. Diese Administratoren 
 dürfen aber nun alle anderen in den Channel einladen und ihnen u. a. Sprachrechte zuweisen.
 
-{{% notice note %}}
+{{% notice info %}}
 Wenn man in der Audio-Einrichtung eingestellt hat, dass Mumble automatisch den Sprachstatus erkennt, wird ab sofort 
 jedes Wort/Geräusch an Mumble übertragen, wenn man sich selbst nicht mutet.
 {{% /notice %}}

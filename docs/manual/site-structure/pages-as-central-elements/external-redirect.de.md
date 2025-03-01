@@ -178,7 +178,7 @@ sind darin alle öffentlichen und nicht im Menü versteckten Seiten enthalten. 
   somit normalerweise nicht angezeigt würde.
 - **Nie anzeigen:** Die Seite ist von der HTML-Sitemap ausgenommen.
 
-{{% notice info %}}
+{{% notice note %}}
 Verwechsle bitte nicht die HTML-Sitemap mit der XML-Sitemap: Die HTML-Sitemap ist ein Frontend-Modul, die XML-Sitemap 
 kannst du z. B. bei Google einreichen.
 {{% /notice %}}

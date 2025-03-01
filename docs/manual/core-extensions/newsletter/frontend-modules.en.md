@@ -209,7 +209,7 @@ The *newsletteralias* tells the "Newsletter reader" to search for and display a 
 entry does not exist, the module returns an error message, and the HTTP status code "404 Not found". The status code 
 is important for search engine optimization.
 
-{{% notice info %}}
+{{% notice note %}}
 On a single page there may only be one "reader module" at a time, regardless of the type. Otherwise, one or the other module would trigger a 404 page, because, for example, the alias of a newsletter cannot be found in a calendar, or vice versa the alias of an event in a newsletter archive.
 {{% /notice %}}
 

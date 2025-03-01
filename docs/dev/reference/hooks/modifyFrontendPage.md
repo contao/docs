@@ -12,7 +12,7 @@ The `modifyFrontendPage` hook is triggered when a front end template is
 printed to the screen. It passes the template content and the template name as
 arguments and expects the template content as return value.
 
-{{% notice note %}}
+{{% notice info %}}
 This hook is applied after insert tags have been
 replaced. If you want to apply your logic before the replacement of
 insert tags, use the [`outputFrontendTemplate`](../outputFrontendTemplate) hook instead.

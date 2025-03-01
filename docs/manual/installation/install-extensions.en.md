@@ -65,7 +65,7 @@ the [command line](#installation-via-the-command-line).
 4. Open the "Packages" tab and click "Apply changes" to start the installation process.
 5. Once finished, run the [Contao install tool](../contao-installtool/) to update the database.
 
-{{% notice info %}}
+{{% notice note %}}
 The installation process may take several minutes. Details about the running process can be displayed by clicking on the
 ![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon) icon.
 {{% /notice %}}
@@ -112,6 +112,6 @@ php composer.phar require terminal42/contao-easy_themes
 php vendor/bin/contao-console contao:migrate
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 The `contao:migrate` command is available in versions **4.9** and up. You can alternatively use the [Contao install tool](../contao-installtool/).
 {{% /notice %}}

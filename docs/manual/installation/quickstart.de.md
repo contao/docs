@@ -44,7 +44,7 @@ Der [Contao Manager](../../installation/contao-manager/) besteht aus einer einze
 [contao.org](https://contao.org/de/download.html) heruntergeladen werden kann. Nach erfolgreichem Download erhältst 
 du eine Datei `contao-manager.phar`. Übertrage diese Datei in das Verzeichnis `public` auf deinem Webserver.
 
-{{% notice info %}}
+{{% notice note %}}
 `.phar`-Dateien werden nicht von allen Hosting-Anbietern ausgeführt. Für beste Kompatibilität füge die
 Dateiendung `.php` <b>nach dem Upload</b> hinzu (benenne die Datei <b>auf dem Server</b> in `contao-manager.phar.php` um).
 {{% /notice %}}
