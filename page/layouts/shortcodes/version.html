@@ -1,9 +1,6 @@
-{{ $version := .Site.Params.currentContaoVersion }}
-{{ if len .Params | eq 1 }}
-  {{ $version := .Get 0 }}
-{{ end }}
+{{ $version := default .Site.Params.currentContaoVersion (.Get 0) }}
 {{- partial "shortcodes/notice.html" (dict
   "page" .Page
   "style" "info"
   "content" (printf (i18n "contao_version") $version | markdownify)
-) }}
+) -}}
