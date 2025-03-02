@@ -751,3 +751,11 @@ h6 code,
 nav.TableOfContents li a code {
     font-size: 92%;
 }
+
+/* Change Search Highlight Color */
+mark {
+  all: unset;
+  color: #fff;
+  background-color: var(--INTERNAL-PRIMARY-color);
+}
+
