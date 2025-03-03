@@ -756,6 +756,6 @@ nav.TableOfContents li a code {
 mark {
   all: unset;
   color: #fff;
-  background-color: var(--INTERNAL-PRIMARY-color);
+  background-color: var(--PRIMARY-color);
 }
 
