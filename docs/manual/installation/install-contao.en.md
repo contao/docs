@@ -79,10 +79,10 @@ If you install Composer globally, you can use the `composer` command in any dire
 ### Installing Contao from the command line
 
 In the second step, you install Contao using the Composer. "example" stands for the desired installation directory and 
-4.11 for the [version of Contao you want to install](https://contao.org/de/download.html).
+5.3 for the [version of Contao you want to install](https://to.contao.org/release-plan).
 
 ```bash
-php composer.phar create-project contao/managed-edition example 4.11
+php composer.phar create-project contao/managed-edition example 5.3
 ```
 
 
