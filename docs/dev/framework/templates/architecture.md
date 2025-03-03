@@ -28,11 +28,11 @@ The core of Twig is the `Twig\Environment` class. You get an instance of it, whe
 and you typically use it to render a certain template, identified by a distinct name, together with an array of
 parameters:
 
-<pre>
-$twig->render("<span style="color:bisque">@Foo/bar/baz.html.twig</span>", <span style="color: lightcoral">$params</span>);
-                        ↑                 ↑
-                   <span style="color:bisque">Logical name</span>       <span style="color: lightcoral">Parameters</span>
-</pre>
+```php
+$twig->render("@Foo/bar/baz.html.twig", $params);
+                        ↑                  ↑
+                   Logical name        Parameters
+```
 
 The environment class itself does not know anything about your template files. Instead, it delegates retrieving the
 template source to a *loader*. Looking closer, you find, that there is a special loader, called a [chain loader][ChainLoader]
@@ -44,11 +44,12 @@ Templates are identified by the *logical name* (the fully qualified template nam
 unique across different vendors, namespaces are used. Namespaces are denoted by an `@` sign and form the first part of
 the logical name.
 
-<pre>
-$twig->render("<span style="color:lightblue">@Foo</span>/<span style="color:orange">bar/baz</span>.<span style="color:yellowgreen">html.twig</span><span></span>", $params);
+
+```php
+$twig->render("@Foo/bar/baz.html.twig", $params);
                 ↑        ↑         ↑  
-           <span style="color:lightblue">Namespace</span> <span style="color:orange">Identifier</span> <span style="color:yellowgreen">Extension</span>
-</pre>
+           Namespace Identifier Extension
+```
 
 {{% notice note %}}
 *Logical name* is a Symfony term. Additionally, we use the term *identifier*, which means everything after the namespace
@@ -141,11 +142,11 @@ for better static analysis. The real magic happens at [compile time][How does Tw
 the `@Contao` namespace inside any `extends`, `include`, `embed` or `use` tag **with a more specific namespace** from
 the above table. This happens automatically — you don't have to do anything for it.
 
-<pre>
- {% extends "<span style="color:lightblue">@Contao</span>/content_element/text.html.twig" %}
-                 ↓
- {% extends "<span style="color:lightblue">@Contao_ContaoCoreBundle</span>/content_element/text.html.twig" %}
-</pre>
+```twig
+{% extends "@Contao/content_element/text.html.twig" %}
+               ↓
+{% extends "@Contao_ContaoCoreBundle/content_element/text.html.twig" %}
+```
 
 Instead of one single unique template per logical name, you now get a *hierarchy* of templates. First come the app's
 global and main template directory (see above), then those of all bundles in inverse loading order (if you are loaded
@@ -269,17 +270,17 @@ means we can structure by category or vendor by creating a filesystem structure.
 
 Let's do exactly that:
 
-<pre style="margin-top:-.5em">
- <span style="color:#ffe8c3">templates</span> ← Twig root
+```
+ templates ← Twig root
  │
- ├─<span style="color:#ffc75d">content_element</span>
- │  ├─<span style="color:#ffa500">text.html.twig</span>
- │  └─<span style="color:#ffa500">image.html.twig</span> 
- ├─<span style="color:#ffc75d">foo</span>
- │  └─<span style="color:#ffa500">bar</span>
- │     └─<span style="color:#d38900">baz.json.twig</span>
+ ├─content_element
+ │  ├─text.html.twig
+ │  └─image.html.twig 
+ ├─foo
+ │  └─bar
+ │     └─baz.json.twig
  …
-</pre>
+```
 
 We call the topmost directory in the above example our *Twig root*, because all subdirectories in there contribute to
 the template name: There is a `content_element/text` template and a `foo/bar/baz` template. As you can tell, you can
@@ -319,15 +320,16 @@ special marker file `.twig-root` to denote that *this* directory should be used 
 
 {{% example "Using a .twig-root file in a bundle" %}}
 Assume the `FooBundle` has the following structure inside its Contao template directory:
-<pre style="margin-top:-.5em">
- <span style="color:#ffe8c3">vendor/…/FooBundle/contao/templates</span>
- ├─<span style="color:#ffc75d">bar</span>
- │  └─<span style="color:#ffc75d">baz.html.twig</span>
- └─<span style="color:#ffc75d">my_root</span>
-    ├─<span style="color:#ffa500">.twig-root</span> 
-    └─<span style="color:#ffc75d">content_element</span>
-       └─<span style="color:#ffa500">foobar.html.twig</span>
-</pre>
+
+```
+ vendor/…/FooBundle/contao/templates
+ ├─bar
+ │  └─baz.html.twig
+ └─my_root
+    ├─.twig-root 
+    └─content_element
+       └─foobar.html.twig
+```
 
 Now, a `@Contao/baz.html.twig` template would be available (note the ignored directory structure like with the legacy
 template engine) as well as a `@Contao/content_element/foobar.html.twig`, that includes the directory names under the
