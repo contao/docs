@@ -18,3 +18,4 @@ bannerUrlEN: https://to.contao.org/conference
 hideAuthorName: true
 hideAuthorEmail: true
 hideAuthorDate: true
+disableExplicitIndexURLs: true
