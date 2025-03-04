@@ -1,7 +1,13 @@
 themeVariant:
-  - auto
-  - contao-light
-  - contao-dark
+  - auto:
+      - contao-light
+      - contao-dark
+    identifier: auto-theme
+    name: Auto
+  - identifier: contao-light
+    name: Light
+  - identifier: contao-dark
+    name: Dark
 disableSearch: false
 disableLanguageSwitch: true
 documentation_label: Documentation
