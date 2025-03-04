@@ -6,6 +6,11 @@ aliases:
 weight: 90
 ---
 
+{{% notice info %}}
+The Contao install tool is neglected as of (Contao 5.x). Corresponding information can be entered directly in the 
+[Contao Manager](/en/installation/contao-manager/).
+{{% /notice %}}
+
 In your browser, open the URL of your Contao installation and add the `/contao/install` path to access the Install Tool.
 
 > `www.example.com/contao/install`
