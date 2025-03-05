@@ -9,8 +9,7 @@ weight: 90
 ---
 
 {{% notice info %}}
-Das Contao-Installtool wird ab (Contao 5.x) vernachlässigt. Entsprechende Informationen können direkt im 
-[Contao Manager](/de/installation/contao-manager/) erfasst werden.
+Das Contao-Installtool existiert ab Contao 5 nicht mehr.
 {{% /notice %}}
 
 Rufe in deinem Internetbrowser die URL deiner Contao-Installation auf, und hänge `/contao/install` hinten 
