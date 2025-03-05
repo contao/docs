@@ -41,8 +41,10 @@ werden.
 
 ### Datenbanktabellen aktualisieren
 
-Sobald der Contao Manager alle Pakete installiert hat, musst du das [Contao Install Tool](/de/installation/contao-installtool/) 
-(Contao 4.13 LTS) aufrufen um die Datenbank zu aktualisieren.
+Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
+[Contao Install Tool]({{% ref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr 
+nicht mehr notwendig, da die Datenbank direkt über den [Contao Manager]({{% ref "installation/contao-manager" %}}) aktualisiert werden kann.
+
 
 ## Installation über die Kommandozeile {#installation-ueber-die-kommandozeile}
 
@@ -109,8 +111,9 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 ### Datenbanktabellen aktualisieren
 
-Nach der Installation kannst du die Datenbank-Aktualisierung über das [Contao Install Tool](/de/installation/contao-installtool/) (Contao 4.13 LTS)
-durchführen. 
+Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
+[Contao Install Tool]({{% ref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr 
+nicht mehr notwendig, da die Datenbank direkt über den [Contao Manager]({{% ref "installation/contao-manager" %}}) aktualisiert werden kann.
 
 Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
 
@@ -136,11 +139,12 @@ und [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in e
 
 ### Contao Backend-Benutzer erstellen
 
-Über das [Contao Install Tool](/de/installation/contao-installtool/) (Contao 4.13 LTS) kannst du dir deinen Backend Benutzer anlegen, 
-bzw. die benötigten Informationen direkt im Contao Manager erfasst werden (Contao 5.x).
+Über das [Contao Install Tool]({{% ref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) kannst du dir deinen Backend Benutzer anlegen, 
+oder den [Contao Manager]({{% ref "installation/contao-manager" %}}) (Contao 5.x) nutzen.
 
-Ab Contao **4.10** kannst du hierzu den folgenden [Befehl](/de/cli/user/) auf der [Kommandozeile](/de/cli/) benutzen. Die notwendigen 
-Angaben werden dann auf der Kommandozeile abgefragt:
+Ab Contao **4.10** kannst du hierzu den folgenden [Befehl]({{% ref "/cli/user" %}}) auf der [Kommandozeile]({{% ref "/cli" %}}) 
+benutzen. Die notwendigen Angaben werden dann auf der Kommandozeile abgefragt:
+
 
 ```bash
 php vendor/bin/contao-console contao:user:create
