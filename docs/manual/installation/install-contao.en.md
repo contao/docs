@@ -37,8 +37,8 @@ following icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" 
 
 ### Update database tables
 
-Once the Contao Manager has installed all packages, the database needs to be updated. To do this the [Contao install tool](../contao-installtool/) 
-has to be started (Contao 4.13 LTS) or the required information has to be entered directly in the Contao Manager (Contao 5.x).
+Once the Contao Manager has installed all packages, you have to run the [Contao Install Tool](../contao-installtool/) (Contao 4.13 LTS) 
+to update the database.
 
 
 ## Installation via the command line
@@ -103,7 +103,7 @@ Every Contao installation therefore requires its own (sub)domain.
 
 
 ### Update database tables
-After installation, you can update the database using the [Contao install tool](/en/installation/contao-installtool/). 
+After installation, you can update the database using the [Contao Install Tool](/en/installation/contao-installtool/) (Contao 4.13 LTS). 
 
 Since Contao 4.9 you can use the following command on the command line:
 
