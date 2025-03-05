@@ -559,8 +559,8 @@ class Example
         if ($this->tokenChecker->hasFrontendUser()) { /* … */ }
         if ($this->tokenChecker->hasBackendUser()) { /* … */ }
         if ($this->tokenChecker->isPreviewMode()) { /* … */ }
-        if (null !== ($frontendUsername = $this->tokenChecker->getFrontendUsername())) { /* … */ }
-        if (null !== ($backendUsername = $this->tokenChecker->getBackendUsername())) { /* … */ }
+        if ($frontendUsername = $this->tokenChecker->getFrontendUsername()) { /* … */ }
+        if ($backendUsername = $this->tokenChecker->getBackendUsername()) { /* … */ }
     }
 }
 ```
