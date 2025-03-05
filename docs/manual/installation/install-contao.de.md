@@ -135,7 +135,7 @@ und [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in e
 
 ### Contao Backend-Benutzer erstellen
 
-Über das [Contao-Installtool](/de/installation/contao-installtool/) (Contao 4.13 LTS) kannst du dir deinen Backend Benutzer anlegen, 
+Über das [Contao Install Tool](/de/installation/contao-installtool/) (Contao 4.13 LTS) kannst du dir deinen Backend Benutzer anlegen, 
 bzw. die benötigten Informationen direkt im Contao Manager erfasst werden (Contao 5.x).
 
 Ab Contao **4.10** kannst du hierzu den folgenden [Befehl](/de/cli/user/) auf der [Kommandozeile](/de/cli/) benutzen. Die notwendigen 
