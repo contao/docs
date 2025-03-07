@@ -402,7 +402,7 @@ class SitemapListener
     public function __invoke(SitemapEvent $event): void
     {
         $sitemap = $event->getDocument();
-        $urlSet = $sitemap->childNodes[0];
+        $urlSet = $sitemap->childNodes->item(0);
 
         $loc = $sitemap->createElement('loc');
         $loc->appendChild($sitemap->createTextNode('https://example.com/foobar'));
