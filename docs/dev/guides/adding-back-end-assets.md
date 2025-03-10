@@ -30,40 +30,32 @@ Starting with version **4.11** global assets can now be added via the `config/co
 If you need assets globally in the back end, e.g. when customizing the back end
 theme, then one way to ensure that your assets are inserted on every back end page 
 is to use a [Symfony kernel event][SymfonyEvents] and then check for the Contao 
-back end scope there. The following example implements an [event subscriber][SymfonyEventSubscriber]
-for this purpose using the `kernel.request` event in order to add a Font-Awesome
-kit to the back end.
+back end scope there. The following example implements an event listener
+for this purpose using the `kernel.request` event.
 
 ```php
-// src/EventSubscriber/KernelRequestSubscriber.php
-namespace App\EventSubscriber;
+// src/EventListener/AddBackendAssetsListener.php
+namespace App\EventListener;
 
 use Contao\CoreBundle\Routing\ScopeMatcher;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
 
-class KernelRequestSubscriber implements EventSubscriberInterface
+#[AsEventListener]
+class AddBackendAssetsListener
 {
-    protected $scopeMatcher;
-
-    public function __construct(ScopeMatcher $scopeMatcher)
+    public function __construct(private readonly ScopeMatcher $scopeMatcher)
     {
-        $this->scopeMatcher = $scopeMatcher;
     }
 
-    public static function getSubscribedEvents()
+    public function __invoke(RequestEvent $event): void
     {
-        return [KernelEvents::REQUEST => 'onKernelRequest'];
-    }
-
-    public function onKernelRequest(RequestEvent $e): void
-    {
-        $request = $e->getRequest();
-
-        if ($this->scopeMatcher->isBackendRequest($request)) {
-            $GLOBALS['TL_JAVASCRIPT'][] = 'https://kit.fontawesome.com/xhcf1h83c6.js';
+        if (!$this->scopeMatcher->isBackendMainRequest($event)) {
+            return;
         }
+
+        $GLOBALS['TL_CSS'][] = /* add your CSS asset here */;
+        $GLOBALS['TL_JAVASCRIPT'][] = /* add your JS asset here */;
     }
 }
 ```
@@ -95,7 +87,6 @@ class ContentOnLoadCallbackListener
 
 [AssetManagement]: /framework/asset-management/
 [SymfonyEvents]: https://symfony.com/doc/current/reference/events.html
-[SymfonyEventSubscriber]: https://symfony.com/doc/current/components/event_dispatcher.html#using-event-subscribers
 [DataContainer]: /framework/dca/
 [ContentElement]: /framework/content-elements/
 [DcaCallbacks]: /reference/dca/callbacks/
