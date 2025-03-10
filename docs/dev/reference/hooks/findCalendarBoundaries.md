@@ -46,7 +46,7 @@ class FindCalendarBoundariesListener
 {
     public function __invoke(int &$dateFrom, int &$dateTo, int &$repeatUntil, Module $module): array
     {
-        // Modify $dateForm, $dateTo or $repeatUntil here
+        // Modify $dateFrom, $dateTo or $repeatUntil here
     }
 }
 ```
