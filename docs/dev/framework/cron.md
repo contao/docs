@@ -377,6 +377,14 @@ its defined interval, either truncate the whole table or delete the entry for th
 specific cron job you want to test. If the table is empty every cronjob will be 
 executed on the first cron call. After that only on its defined interval.
 
+{{% notice "tip" %}}
+You can use the `doctrine:query:sql` command to quickly execute a query on your database, e.g.:
+
+```
+vendor/bin/contao-console doctrine:query:sql "TRUNCATE tl_cron_job"
+```
+{{% /notice %}}
+
 {{% notice info %}}
 In Contao **4.4**, the table is called `tl_cron` and it contains only the last execution
 times of the named intervals, not the last execution time of individual cron jobs.
