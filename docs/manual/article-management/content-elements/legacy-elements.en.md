@@ -2,6 +2,7 @@
 title: 'Legacy elements'
 description: 'Content elements in the area legacy elements.'
 aliases:
+    - /en/article-management/content-elements/legacy-element/
     - /en/article-management/content-elements/legacy-elements/
 weight: 30
 ---
