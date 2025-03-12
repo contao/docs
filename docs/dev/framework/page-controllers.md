@@ -385,7 +385,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class MyService
 {
-    public function __construct(private UrlGeneratorInterface $urlGenerator)
+    public function __construct(private readonly UrlGeneratorInterface $urlGenerator)
     {
     }
 
