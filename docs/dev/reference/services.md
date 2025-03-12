@@ -427,7 +427,10 @@ class Example
 This service allows parsing *simple tokens*. See the [usage examples][SimpleTokenUsage] from the tests for more details.
 
 ```php
+# Contao Version 4.10+
 use Contao\CoreBundle\Util\SimpleTokenParser;
+# Since Contao Version 5.0+
+use Contao\CoreBundle\String\SimpleTokenParser;
 
 class Example
 {
