@@ -8,7 +8,7 @@ weight: 90
 
 {{% notice info %}}
 The Contao Install Tool no longer exists as of Contao 5, as the database can be updated directly via 
-the [Contao Manager]({{% ref "installation/contao-manager" %}}).
+the [Contao Manager]({{% ref "installation/contao-manager" %}}) or the console.
 {{% /notice %}}
 
 In your browser, open the URL of your Contao installation and add the `/contao/install` path to access the Install Tool.

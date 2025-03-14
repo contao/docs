@@ -132,8 +132,7 @@ and [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in a
 
 ### Creating Contao back end users
 
-Using the [Contao Install Tool]({{% ref "/installation/contao-installtool" %}}) (Contao 4.13 LTS), you can create your back end user 
-or the required information has to be entered directly in the [Contao Manager]({{% ref "installation/contao-manager" %}}) (Contao 5.x). 
+Using the [Contao Manager]({{% ref "installation/contao-manager" %}}), you can create your back end user.
 
 Since Contao **4.10** you can use the following [command]({{% ref "/cli/user" %}}) on the [command line]({{% ref "/cli" %}}).
 
