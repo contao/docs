@@ -124,6 +124,8 @@ ddev launch contao-manager.phar.php
 
 ## Zusatz Informationen
 
+Weitere Informationen bez. der Verwaltung von Projekten findest du [hier](https://ddev.readthedocs.io/en/stable/users/usage/managing-projects/#listing-project-information).
+
 - `ddev start` startet das Projekt, `ddev stop` beendet es. Stelle vorher sicher, dass du in den Projektordner gewechselt hast.
 
 - `ddev poweroff` kann aus jedem Verzeichnis heraus alle gestarteten Projekte/Container stoppen.
