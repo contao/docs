@@ -150,15 +150,22 @@ memory_limit = -1
 ```
 
 
-## DDEV Addons
+## Datenbank Tools
 
-DDEV bietet auch [Services als Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
+Wenn du beispielsweise einen Datenbank-Client wie `Adminer` oder `phpMyAdmin` verwenden möchtest, kannst du diese als 
+[Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/) installieren.
 
 
 ### Beispiel: Adminer
 
 ```shell
-ddev get ddev/ddev-adminer && ddev restart
+ddev add-on get ddev/ddev-adminer && ddev restart
 ```
 
-Mit `ddev describe` erfährst du, wie du Adminer erreichst.
+### Beispiel: phpMyAdmin
+
+```shell
+ddev add-on get ddev/ddev-phpmyadmin && ddev restart
+```
+
+Mit `ddev describe` erfährst du, wie du ds jeweilige Datenbank Tool erreichst.
