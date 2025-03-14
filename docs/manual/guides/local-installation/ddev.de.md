@@ -170,4 +170,4 @@ ddev add-on get ddev/ddev-adminer && ddev restart
 ddev add-on get ddev/ddev-phpmyadmin && ddev restart
 ```
 
-Mit `ddev describe` erfährst du, wie du ds jeweilige Datenbank Tool erreichst.
+Mit `ddev describe` erfährst du, wie du das jeweilige Datenbank Tool erreichst.
