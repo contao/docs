@@ -110,7 +110,7 @@ Using the naming convention for templates mentioned above, the final template na
 {{< version-tag "4.13" >}} And `content_element/example_element` for [Twig templates][TwigTemplates]:
 
 ```twig
-{# templates/content_element/content_element.html.twig #}
+{# templates/content_element/example_element.html.twig #}
 <div class="example-element">    
     {{ text|raw }}
 </div>
