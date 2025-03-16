@@ -152,7 +152,7 @@ memory_limit = -1
 
 ## Database Tools
 
-If you want to use a database client such as `Adminer` or `phpMyAdmin` for example,, you can install these as a 
+If you want to use a database client such as `Adminer` or `phpMyAdmin` for example, you can install these as a 
 [Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
 
 
