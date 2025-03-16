@@ -6,7 +6,7 @@ alias:
 ---
 
 
-This section covers "routing" in Contao, e.g. how to implement your on routes in
+This section covers "routing" in Contao, e.g. how to implement your own routes in
 the Managed Edition, Contao-specific route attributes and Page controllers.
 
 
