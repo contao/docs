@@ -30,10 +30,10 @@ With these insert tags you can create links to other pages or articles. You only
 | `{{article_open::*}}` | Will be replaced with the opening tag of a link to an article: `{{article_open::12}}Click here{{link_close}}`.                                                                                                    |
 | `{{article_url::*}}` | This tag is replaced with the URL of an article: `<a href="{{article_url::12}}">Click here</a>`.                                                                                                                  |
 | `{{article_title::*}}` | This tag is replaced by the title of an article: `<a title="{{article_title::12}}">Click here</a>`.                                                                                                               |
-| `{{news::*}}` | This tag is replaced with a link to a message (replace \* with the ID or alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                             |
-| `{{news_open::*}}` | Is replaced with the opening tag of a link to a message: `{{news_open::12}}Click here{{link_close}}`.                                                                                                             |
-| `{{news_url::*}}` | This tag will be replaced with the URL of a message: `<a href="{{news_url::12}}">Click here</a>`.                                                                                                                 |
-| `{{news_title::*}}` | This tag is replaced with the title of a message: `<a title="{{news_title::12}}">Click here</a>`.                                                                                                                 |
+| `{{news::*}}` | This tag is replaced with a link to a news article (replace \* with the ID or alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                             |
+| `{{news_open::*}}` | Is replaced with the opening tag of a link to a news article: `{{news_open::12}}Click here{{link_close}}`.                                                                                                             |
+| `{{news_url::*}}` | This tag will be replaced with the URL of a news article: `<a href="{{news_url::12}}">Click here</a>`.                                                                                                                 |
+| `{{news_title::*}}` | This tag is replaced with the title of a news article: `<a title="{{news_title::12}}">Click here</a>`.                                                                                                                 |
 | `{{news_feed::*}}` | This tag will be replaced with the URL to a news feed (replace \* with the ID).                                                                                                                                   |
 | `{{event::*}}` | This tag will be replaced with a link to an event (replace \* with the ID or alias). <sup>[[1]](#parameter-absolute)</sup><sup>,</sup> <sup>[[2]](#parameter-blank)</sup>                                         |
 | `{{event_open::*}}` | Is replaced with the opening tag of a link to an event: `{{event_open::12}}Click here{{link_close}}`.                                                                                                             |
@@ -146,7 +146,7 @@ The following insert tags can be used to include resources such as articles, mod
 | `{{insert_module::*}}` | This tag will be replaced with the referenced module (replace \* with the module ID). |
 | `{{insert_form::*}}` | This tag is replaced with the referenced form (replace \* with the ID of the form). |
 | `{{article_teaser::*}}` | This tag will be replaced with the teaser of an article (replace \* with the ID of the article). |
-| `{{news_teaser::*}}` | This tag is replaced with the teaser of a message (replace \* with the ID of the message). |
+| `{{news_teaser::*}}` | This tag is replaced with the teaser of a news article (replace \* with the ID of the news article). |
 | `{{event_teaser::*}}` | This tag is replaced with the teaser of an event (replace \* with the ID of the event). |
 | `{{file::*}}` | This tag is replaced with the content of a .php or .html5 file from the `templates` directory (replace \* with the name). If necessary, you can pass arguments: `{{file::file.php?arg1=val}}`. You can also use a UUID to get the path of a file from the database: `{{file::6939a448-9b30-11e4-bcba-079af1e9baea}}`. |
 
