@@ -275,8 +275,8 @@ method.
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
-use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 
 #[AsCronJob('hourly')]
 class HourlyCron
@@ -316,8 +316,8 @@ them to start immediately in parallel without blocking the other cron jobs. You 
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
-use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use GuzzleHttp\Promise\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 
@@ -347,8 +347,8 @@ component, Contao also provides a utility service for that:
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
-use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
+use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use Contao\CoreBundle\Util\ProcessUtil;
 use GuzzleHttp\Promise\PromiseInterface;
 
