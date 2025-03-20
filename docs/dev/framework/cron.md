@@ -271,11 +271,14 @@ line interface. The `Cron` service will pass a scope parameter to the cron job's
 method.
 
 ```php
+// src/Cron/HourlyCron.php
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
 
+#[AsCronJob('hourly')]
 class HourlyCron
 {
     public function __invoke(string $scope): void
@@ -309,13 +312,16 @@ them to start immediately in parallel without blocking the other cron jobs. You 
 `GuzzleHttp\Promise\PromiseInterface`:
 
 ```php
+// src/Cron/HourlyCron.php
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
 use GuzzleHttp\Promise\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 
+#[AsCronJob('hourly')]
 class HourlyCron
 {
     public function __invoke(string $scope): PromiseInterface
@@ -337,13 +343,16 @@ Because most asynchronous processes are most likely things like a spawned child 
 component, Contao also provides a utility service for that:
 
 ```php
+// src/Cron/HourlyCron.php
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
 use Contao\CoreBundle\Util\ProcessUtil;
 use GuzzleHttp\Promise\PromiseInterface;
 
+#[AsCronJob('hourly')]
 class HourlyCron
 {
     public function __construct(private ProcessUtil $processUtil) {}
