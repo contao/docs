@@ -722,11 +722,12 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 #[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
 class ExampleListOperationListener
 {
-    public function __construct(
-        private readonly AuthorizationCheckerInterface $authorizationChecker,
-    ) {
-    }
+    private $authorizationChecker;
 
+    public function __construct(AuthorizationCheckerInterface $authorizationChecker)
+    {
+        $this->authorizationChecker = $authorizationChecker;
+    }
     public function __invoke(
         array $row,
         ?string $href,
