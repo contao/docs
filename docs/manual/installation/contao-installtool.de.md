@@ -8,6 +8,11 @@ aliases:
 weight: 90
 ---
 
+{{% notice info %}}
+Das Contao Install Tool existiert ab Contao 5 nicht mehr, da die Datenbank direkt über den 
+[Contao Manager]({{% ref "installation/contao-manager" %}}) oder über die Konsole aktualisiert werden kann.
+{{% /notice %}}
+
 Rufe in deinem Internetbrowser die URL deiner Contao-Installation auf, und hänge `/contao/install` hinten 
 dran, um das Installtool zu starten.
 
