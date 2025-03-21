@@ -22,20 +22,20 @@ Das klingt etwas gar technisch weshalb wir uns schnell gemeinsam mit der verwend
 
 Bei einem Major-Release handelt es sich um eine komplett neue Version der Software, bei der viele grundlegende Dinge 
 geändert wurden und mit der bereits bestehende Seiten unter Umständen nicht mehr funktionieren. Die aktuelle 
-Major-Version von Contao ist beim Schreiben dieser Zeilen die **Version 4**.
+Major-Version von Contao ist beim Schreiben dieser Zeilen die **Version 5**.
 
 
 ### Minor-Release
 
 Bei einem Minor-Release handelt es sich um eine Art Meilenstein auf dem Weg der Entwicklung, bei dem neue Funktionen 
 hinzugefügt wurden. Kleinere Anpassungen bestehender Seiten können daher notwendig sein. Die aktuelle Minor-Version von 
-Contao ist beim Schreiben dieser Zeilen die **Version 4.8**.
+Contao ist beim Schreiben dieser Zeilen die **Version 5.5**.
 
 
 ### Bugfix-Release
 
 Bei einem Bugfix-Release handelt es sich um ein Wartungsrelease, dessen primärer Zweck die Behebung von Fehlern ist. 
-Die aktuelle Bugfix-Version von Contao ist beim Schreiben dieser Zeilen die **Version 4.8.4**.
+Die aktuelle Bugfix-Version von Contao ist beim Schreiben dieser Zeilen die **Version 5.5.3**.
 
 
 ### Long-Term-Support-Versionen
@@ -118,7 +118,7 @@ in der `composer.json` eingetragen werden.
 {
     …
     "require": {
-        "contao/manager-bundle": "4.8.*",
+        "contao/manager-bundle": "5.5.*",
         …
     },
     …

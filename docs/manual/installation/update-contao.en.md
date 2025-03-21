@@ -21,20 +21,20 @@ technical so we will quickly get familiar with the terminology used:
 ### Major release
 
 A major release is a completely new version of the software where many basic things have been changed and existing pages 
-may not work anymore. The current major release of Contao is **version 4** when writing these lines.
+may not work anymore. The current major release of Contao is **version 5** when writing these lines.
 
 
 ### Minor release
 
 A minor release is a kind of milestone on the development path where new features have been added. Minor changes to 
 existing pages might therefore be necessary. When writing these lines, the current minor version of Contao 
-is **version 4.10**.
+is **version 5.5**.
 
 
 ### Bugfix release
 
 A bugfix release is a maintenance release whose primary purpose is to fix bugs; the current bugfix version of Contao 
-when writing these lines is **version 4.10.4**.
+when writing these lines is **version 5.5.3**.
 
 
 ### Long-Term Support Versions
@@ -60,12 +60,12 @@ Special feature when updating for a [minor release](#minor-release): Click on th
 "Contao Open Source CMS" and enter the desired version. Click the "Update packages" button and then "Apply changes" to 
 push the update.
 
-![Start update for minor release]({{% asset "images/manual/installation/en/manager-update-contao.png" %}}?classes=shadow)
+![Start update for minor release]({{% asset "images/manual/installation/en/update-to-minor-release-started.png" %}}?classes=shadow)
 
 The update can now take several minutes. Details of the update process can be displayed by clicking the following 
-icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
+icon ![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
-![Update for minor release completed]({{% asset "images/manual/installation/en/contao-manager-packages.png" %}}?classes=shadow)
+![Update for minor release completed]({{% asset "images/manual/installation/en/update-to-minor-release-finished.png" %}}?classes=shadow)
 
 
 ### Update database tables
@@ -115,7 +115,7 @@ If you are updating for a [minor release](#minor-release), you need to specify t
 {
     …
     "require": {
-        "contao/manager-bundle": "4.10.*",
+        "contao/manager-bundle": "5.5.*",
         …
     },
     …
