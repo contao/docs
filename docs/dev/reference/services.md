@@ -262,12 +262,11 @@ class Example
 Not directly related to Contao, but this helper service from Symfony lets you retrieve
 the current Contao front end or back end user from the firewall.
 
-{{< tabs groupid="services-contao4-contao5" style="code" >}}
-{{% tab title="Contao 4" %}}
 ```php
 use Contao\BackendUser;
 use Contao\FrontendUser;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Bundle\SecurityBundle\Security; // Contao 5
+use Symfony\Component\Security\Core\Security; // Contao 4
 
 class Example
 {
@@ -304,50 +303,6 @@ class Example
     }
 }
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-```php
-use Contao\BackendUser;
-use Contao\FrontendUser;
-use Symfony\Bundle\SecurityBundle\Security;
-
-class Example
-{
-    public function __construct(private readonly Security $security)
-    {
-    }
-
-    public function execute()
-    {
-        // Check for admin back end user role
-        if ($this->security->isGranted('ROLE_ADMIN')) {
-            // …
-        }
-
-        // Check for regular back end user role
-        if ($this->security->isGranted('ROLE_USER')) {
-            // …
-        }
-
-        // Check for front end user role
-        if ($this->security->isGranted('ROLE_MEMBER')) {
-            // …
-        }
-
-        // Get current back end user
-        if (($user = $this->security->getUser()) instanceof BackendUser) {
-            // …
-        }
-
-        // Get current front end user
-        if (($user = $this->security->getUser()) instanceof FrontendUser) {
-            // …
-        }
-    }
-}
-```
-{{% /tab %}}
-{{< /tabs >}}
 
 If you only need to check the authorization you can inject the `AuthorizationCheckerInterface` instead:
 
