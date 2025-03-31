@@ -429,7 +429,6 @@ This service allows parsing *simple tokens*. See the [usage examples][SimpleToke
 {{< tabs groupid="services-contao4-contao5-simple-token-parser" style="code" >}}
 {{% tab title="Contao 4" %}}
 ```php
-# Contao Version 4.10+
 use Contao\CoreBundle\Util\SimpleTokenParser;
 
 class Example
