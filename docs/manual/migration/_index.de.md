@@ -118,7 +118,7 @@ Wurde mit der Contao-Installation schon in etwas älteren Versionen begonnen, da
 ### Zielverzeichnis ändern oder festlegen
 
 Contao 5 sowie auch schon Contao 4.13 nutzen den `public/` Ordner als Einstiegspunkt. Während in Contao 4.13 noch eine automatische
-Erkennung für die Nutzung des alten `web/` Ordners eingebaut ist, fehlt eine solche automatische Erkennung in Contao 5. Daher sollte muss
+Erkennung für die Nutzung des alten `web/` Ordners eingebaut ist, fehlt eine solche automatische Erkennung in Contao 5. Daher muss
 man vor dem Update den bestehenden `web/` Ordner auf `public/` umbenennen und das Zielverzeichnis der Domain entsprechend ändern. Alternativ
 kann das Verzeichnis über die `composer.json` geändert werden - siehe dazu die [Hosting-Konfiguration][HostingConfig].
 
