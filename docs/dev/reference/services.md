@@ -426,10 +426,37 @@ class Example
 
 This service allows parsing *simple tokens*. See the [usage examples][SimpleTokenUsage] from the tests for more details.
 
+{{< tabs groupid="services-contao4-contao5-simple-token-parser" style="code" >}}
+{{% tab title="Contao 4" %}}
 ```php
 # Contao Version 4.10+
 use Contao\CoreBundle\Util\SimpleTokenParser;
-# Since Contao Version 5.0+
+
+class Example
+{
+    public function __construct(private readonly SimpleTokenParser $parser)
+    {
+    }
+
+    public function execute()
+    {
+        // Token replacement
+        $output = $this->parser->parse(
+            'I like ##cms##.',
+            ['cms' => 'Contao']
+        );
+
+        // Conditional expressions
+        $output = $this->parser->parse(
+            'This is {if value>=10}big{else}small{endif}',
+            ['value' => 20]
+        );
+    }
+}
+```
+{{% /tab %}}
+{{% tab title="Contao 5" %}}
+```php
 use Contao\CoreBundle\String\SimpleTokenParser;
 
 class Example
@@ -454,6 +481,8 @@ class Example
     }
 }
 ```
+{{% /tab %}}
+{{< /tabs >}}
 
 
 ### Extending the parser
