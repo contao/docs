@@ -124,6 +124,8 @@ ddev launch contao-manager.phar.php
 
 ## Zusatz Informationen
 
+Weitere Informationen bez. der Verwaltung von Projekten findest du [hier](https://ddev.readthedocs.io/en/stable/users/usage/managing-projects/#listing-project-information).
+
 - `ddev start` startet das Projekt, `ddev stop` beendet es. Stelle vorher sicher, dass du in den Projektordner gewechselt hast.
 
 - `ddev poweroff` kann aus jedem Verzeichnis heraus alle gestarteten Projekte/Container stoppen.
@@ -150,15 +152,22 @@ memory_limit = -1
 ```
 
 
-## DDEV Addons
+## Datenbank Tools
 
-DDEV bietet auch [Services als Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
+Wenn du beispielsweise einen Datenbank-Client wie `Adminer` oder `phpMyAdmin` verwenden möchtest, kannst du diese als 
+[Addon](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/) installieren.
 
 
 ### Beispiel: Adminer
 
 ```shell
-ddev get ddev/ddev-adminer && ddev restart
+ddev add-on get ddev/ddev-adminer && ddev restart
 ```
 
-Mit `ddev describe` erfährst du, wie du Adminer erreichst.
+### Beispiel: phpMyAdmin
+
+```shell
+ddev add-on get ddev/ddev-phpmyadmin && ddev restart
+```
+
+Mit `ddev describe` erfährst du, wie du das jeweilige Datenbank Tool erreichst.
