@@ -1,6 +1,6 @@
 ---
 title: "Turbo-compatible Stimulus controllers"
-description: "Howto write Stimulus controllers for a Turbo application (that don't suck)"
+description: "How to write Stimulus controllers for a Turbo application (that don't suck)"
 ---
 
 **Lifecycle callback cheatsheet**
@@ -41,7 +41,6 @@ not do any harm. Why is this important? Because cache entries are made before th
 ### Example
 
 ```html
-
 <div data-controller="add-foo"></div>
 ```
 
@@ -58,7 +57,6 @@ connect()
 After connecting, this is what the DOM looks like and what will get cached:
 
 ```html
-
 <div data-controller="add-foo">
     <div>foo</div>
 </div>
@@ -67,7 +65,6 @@ After connecting, this is what the DOM looks like and what will get cached:
 When a cache entry is restored, the connect function will run again, producing unwanted output:
 
 ```html
-
 <div data-controller="add-foo">
     <div>foo</div>
     <div>foo</div>
