@@ -109,7 +109,6 @@ class BackendMenuListener
 {
     public function __construct(private readonly RequestStack $requestStack)
     {
-        $this->requestStack = $requestStack;
     }
 
     public function __invoke(MenuEvent $event): void
