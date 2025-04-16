@@ -510,7 +510,7 @@ use of any custom HTML around it.
 {{% best-practice %}}
 There is also an `insert_tag()` function to directly render an insert tag, but you should avoid using it if possible.
 Use proper template functions and filters instead. Keep in mind, that insert tags are meant to be used by editors inside
-back end and not to structure content in templates.
+the back end and not to structure content in templates.
 {{% /best-practice %}}
 
 #### Response context
