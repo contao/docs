@@ -482,7 +482,7 @@ easier. On top of that, many Twig features just work out of the box for us.
 #### Insert tags
 
 {{% notice warning %}}
-Make sure you read and understood the section about [encoding](#encoding) before continuing!
+Make sure you read and understood the section about [encoding]({{% ref "architecture#encoding" %}}) before continuing!
 {{% /notice %}}
 
 If you want to output a string, that contains insert tags, you, as the template designer, need to decide if and how it
