@@ -5,6 +5,7 @@ url: "layout/templates/twig/wiederverwendung"
 weight: 40
 aliases:
   - /de/layout/templates/twig/wiederverwendung/
+tags: [Twig]
 ---
 
 Contao setzt mit Twig konsequent auf das Wiederverwenden von Teilen eines Templates. Twig unterstützt viele

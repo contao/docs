@@ -3,6 +3,7 @@ title: "Twig syntax"
 description: "Syntax of Twig."
 url: "layout/templates/twig/syntax"
 weight: 20
+tags: [Twig]
 ---
 
 Twig templates have their own syntax. We present here only the most important rules necessary for a basic understanding

@@ -4,6 +4,7 @@ description: Writing good templates and making use of components
 weight: 300
 aliases:
     - /framework/templates/creating-templates/
+tags: [Twig]
 ---
 
 We talked about the general [architecture]({{% ref "architecture" %}}) in the last part. Now we are focusing on what is or should

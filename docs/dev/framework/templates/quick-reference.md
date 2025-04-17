@@ -3,8 +3,8 @@ title: "Quick reference handbook"
 description: How to quickly get going with the most typical Twig scenarios.
 weight: 500
 aliases:
-
-- /framework/templates/quick-reference/
+    - /framework/templates/quick-reference/
+tags: [Twig]
 
 ---
 

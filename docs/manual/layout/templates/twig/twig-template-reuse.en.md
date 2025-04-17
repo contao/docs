@@ -3,6 +3,7 @@ title: "Reuse templates"
 description: "Reuse templates"
 url: "layout/templates/twig/reuse"
 weight: 40
+tags: [Twig]
 ---
 
 With Twig, Contao consistently focuses on the reuse of parts of a template. Twig supports many
