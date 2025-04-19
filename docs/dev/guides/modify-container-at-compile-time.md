@@ -57,9 +57,9 @@ for that matter. Combined with anonymous classes, this could look like this:
 // src/ContaoManager/Plugin.php
 namespace App\ContaoManager;
 
-use App\DependencyInjection\Compiler\MyCompilerPass;
 use Contao\ManagerPlugin\Config\ConfigPluginInterface;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class Plugin implements ConfigPluginInterface
