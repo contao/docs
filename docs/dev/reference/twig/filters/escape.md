@@ -6,4 +6,4 @@ tags: [Twig]
 ---
 
 Contao overrides [Twig's default `escape` filter](https://twig.symfony.com/doc/3.x/filters/escape.html) in order to
-support `ChunckedText` from [insert tags]({{% ref insert-tags %}}) and its escaper strategies.
+support `ChunckedText` from [insert tags]({{% ref insert-tags %}}) and to employ its own escaper strategies.
