@@ -1,7 +1,7 @@
 ---
 title: content_element - Twig Function
 linkTitle: content_element
-description: Renders a content element either by its ID - or by on-the-fly.
+description: Renders a content element either by a reference - or on-the-fly.
 tags: [Twig]
 ---
 
@@ -24,7 +24,7 @@ You can also override the data for an existing content element:
 {{ 
     content_element(5618, {
         perRow: 4
-    }) 
+    })
 }}
 ```
 
