@@ -68,7 +68,7 @@ class Plugin implements ConfigPluginInterface
     {
         $loader->load(static function (ContainerBuilder $container) {
             $container->addCompilerPass(new class implements CompilerPassInterface {
-                public function process(ContainerBuilder $container)
+                public function process(ContainerBuilder $container): void
                 {
                     // Example for making a custom monolog logger public
                     $container->getDefinition('monolog.logger.api')
