@@ -5,6 +5,7 @@ url: "layout/templates/twig/syntax"
 aliases:
   - /de/layout/templates/twig/syntax
 weight: 20
+tags: [Twig]
 ---
 
 Twig-Templates haben ihre eigene Syntax. Wir stellen hier nur die wichtigsten Regeln vor, die zum Grundverständnis

@@ -5,6 +5,7 @@ url: "layout/templates/twig/verwaltung"
 weight: 30
 aliases:
   - /de/layout/templates/twig/verwaltung/
+tags: [Twig]
 ---
 
 ## Ordnerstruktur

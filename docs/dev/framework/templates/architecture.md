@@ -4,6 +4,7 @@ description: How the Contao Twig integration works.
 weight: 200
 aliases:
     - /framework/templates/architecture/
+tags: [Twig]
 ---
 
 Rendering a Twig template requires several things: First, the template needs to be found by a loader, that knows where
