@@ -38,8 +38,8 @@ following icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" 
 ### Update database tables
 
 As soon as the Contao Manager has installed all packages, the database must be updated. To do this you can 
-use the [Contao Install Tool]({{% ref "/installation/contao-installtool" %}}) (Contao 4.13 LTS). From Contao 5 onwards, this is no longer 
-necessary, as the database can be updated directly via the [Contao Manager]({{% ref "installation/contao-manager" %}}).
+use the [Contao Install Tool]({{% relref"/installation/contao-installtool" %}}) (Contao 4.13 LTS). From Contao 5 onwards, this is no longer 
+necessary, as the database can be updated directly via the [Contao Manager]({{% relref"installation/contao-manager" %}}).
 
 
 ## Installation via the command line
@@ -104,9 +104,9 @@ Every Contao installation therefore requires its own (sub)domain.
 
 
 ### Update database tables
-After installation, you can update the database using the [Contao Install Tool]({{% ref "/installation/contao-installtool" %}}) 
+After installation, you can update the database using the [Contao Install Tool]({{% relref"/installation/contao-installtool" %}}) 
 (Contao 4.13 LTS). From Contao 5 onwards, this is no longer necessary, as the database can be updated directly via the 
-[Contao Manager]({{% ref "installation/contao-manager" %}}).
+[Contao Manager]({{% relref"installation/contao-manager" %}}).
 
 Since Contao 4.9 you can use the following command on the command line:
 
@@ -132,9 +132,9 @@ and [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in a
 
 ### Creating Contao back end users
 
-Using the [Contao Manager]({{% ref "installation/contao-manager" %}}), you can create your back end user.
+Using the [Contao Manager]({{% relref"installation/contao-manager" %}}), you can create your back end user.
 
-Since Contao **4.10** you can use the following [command]({{% ref "/cli/user" %}}) on the [command line]({{% ref "/cli" %}}).
+Since Contao **4.10** you can use the following [command]({{% relref"/cli/user" %}}) on the [command line]({{% relref"/cli" %}}).
 
 
 ```bash

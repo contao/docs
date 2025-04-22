@@ -7,7 +7,7 @@ tags: [Twig]
 
 {{< version "5.2" >}}
 
-The [`frontend_module` function]({{% ref "creating-templates#render-front-end-modules" %}}) renders a front end module.
+The [`frontend_module` function]({{% relref"creating-templates#render-front-end-modules" %}}) renders a front end module.
 
 To render a front end module that already exists in the database (similar to the `{{insert_module::*}}` insert tag) you
 can pass its ID:

@@ -22,16 +22,16 @@ The above example uses the [`Event`](https://schema.org/Event) Schema.org Type. 
 ```twig
 {% do add_schema_org({
     '@type': 'Events',
-    'identifier': '#/schema/events/' ~ id,
-    'name': title,
-    'startDate': startTime|date('Y-m-d\TH:i:sP'),
+    'identifier' => '#/schema/events/' ~ id,
+    'name' => title,
+    'startDate' => startTime|date('Y-m-d\TH:i:sP'),
 }) %}
 ```
 
 Though typically you will want your controller to prepare said data.
 
 When it comes to files Contao can automatically generate the appropriate JSON-LD metadata for your. For this the classes
-`FilesystemItem` from the [virtual file system]({{% ref "virtual-filesystem" %}}), the legacy `FilesModel` as well as
+`FilesystemItem` from the [virtual file system]({{% relref "virtual-filesystem" %}}), the legacy `FilesModel` as well as
 the `Figure` classes have appropriate getters for that.
 
 ```twig
