@@ -80,10 +80,10 @@ What about a dynamic button?
 
 ```twig
 <button{{ attrs()
-.addClass(['btn', 'btn-primary'])
-.set('disabled', true, not isActive)
-.set('type', 'submit') }}>
-Save
+    .addClass(['btn', 'btn-primary'])
+    .set('disabled', true, not isActive)
+    .set('type', 'submit') }}>
+    Save
 </button>
 ```
 
