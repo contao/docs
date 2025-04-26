@@ -80,7 +80,7 @@ end by setting the HTML attributes of the `headline` object in the `_headline`
 {% use "@Contao/component/_headline.html.twig" %}
 
 {% block headline_attributes -%}
-    {% set headline = headline|merge({attributes: attrs().addClass('foobar').mergeWith(headline.attributes|default)}) %}
+    {%- set headline = headline|merge({attributes: attrs().addClass('foobar').mergeWith(headline.attributes|default)}) -%}
     {{ parent() }}
 {%- endblock %}
 ```

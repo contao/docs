@@ -81,7 +81,7 @@ hinzuzufügen, können die HTML Attribute des `headline` Objektes in der `_headl
 {% use "@Contao/component/_headline.html.twig" %}
 
 {% block headline_attributes -%}
-    {% set headline = headline|merge({attributes: attrs().addClass('foobar').mergeWith(headline.attributes|default)}) %}
+    {%- set headline = headline|merge({attributes: attrs().addClass('foobar').mergeWith(headline.attributes|default)}) -%}
     {{ parent() }}
 {%- endblock %}
 ```
