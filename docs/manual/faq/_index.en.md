@@ -70,6 +70,24 @@ The information about this can be found under [Show Template Data](/en/layout/te
 The information about this can be found under [TinyMCE Editor Configuration](/en/guides/tinymce-configuration/).
 {{% /faq %}}
 
+{{% faq "How can I add a CSS class to all headlines?" %}}
+You can add a CSS class to all headlines of all modern fragments (content elements or front end modules) in the front
+end by setting the HTML attributes of the `headline` object in the `_headline` Twig component:
+
+```twig
+{# templates/component/_headline.html.twig #}
+{% use "@Contao/component/_headline.html.twig" %}
+
+{% block headline_attributes -%}
+    {% set headline = headline|merge({attributes: attrs().addClass('foobar').mergeWith(headline.attributes|default)}) %}
+    {{ parent() }}
+{%- endblock %}
+```
+
+Note that this will not affect content elements and modules using legacy templates - or templates that are not using the
+`_headline` component.
+{{% /faq %}}
+
 
 ## Installation
 
