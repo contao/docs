@@ -73,7 +73,8 @@ Die Information hierzu findest du unter [TinyMCE-Editor Konfiguration](/de/anlei
 
 {{% faq "Wie kann ich eine CSS-Klasse zu allen Überschriften hinzufügen?" %}}
 Um eine CSS-Klasse zu der Überschrift aller modernen Fragments (Inhaltselemente oder Frontend-Module) im Frontend
-hinzuzufügen, können die HTML Attribute des `headline` Objektes in der `_headline` Twig Komponente angepasst werden:
+hinzuzufügen, können die HTML Attribute des `headline` Objektes in der `_headline`
+[Twig Komponente](https://docs.contao.org/dev/framework/templates/creating-templates/#contao-components) angepasst werden:
 
 ```twig
 {# templates/component/_headline.html.twig #}

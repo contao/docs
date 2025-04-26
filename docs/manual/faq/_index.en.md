@@ -72,7 +72,8 @@ The information about this can be found under [TinyMCE Editor Configuration](/en
 
 {{% faq "How can I add a CSS class to all headlines?" %}}
 You can add a CSS class to all headlines of all modern fragments (content elements or front end modules) in the front
-end by setting the HTML attributes of the `headline` object in the `_headline` Twig component:
+end by setting the HTML attributes of the `headline` object in the `_headline`
+[Twig component](https://docs.contao.org/dev/framework/templates/creating-templates/#contao-components)):
 
 ```twig
 {# templates/component/_headline.html.twig #}
