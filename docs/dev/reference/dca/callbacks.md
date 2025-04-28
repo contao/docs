@@ -142,6 +142,9 @@ class MemberOnBeforeSubmitCallbackListener
 {
     public function __invoke(array $record, DataContainer $dc): array
     {
+        // Adjust the record here
+        // …
+
         return $record;
     }
 }
