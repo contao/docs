@@ -129,6 +129,25 @@ accross multiple fields. You are expected to return the values.
 **return:** `array` Values of the record
 {{% /expand %}}
 
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/MemberOnBeforeSubmitCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback('tl_member', 'config.onbeforesubmit')]
+class MemberOnBeforeSubmitCallbackListener
+{
+    public function __invoke(array $record, DataContainer $dc): array
+    {
+        return $record;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `config.onsubmit`
 
