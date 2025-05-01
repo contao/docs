@@ -159,7 +159,7 @@ $GLOBALS['TL_HEAD'][] = \Contao\Template::generateInlineStyle($this->generateCss
   
 This returns a `<script src="…" …>` tag and takes six arguments: 
 
-* `$href`: the path to the stylesheet (absolute or relative to the _base_)
+* `$href`: the path to the script (absolute or relative to the _base_)
 * `$async`: whether the `async` attribute should be added to the tag (default `false`)
 * `$mtime`: an optional modification time, which Contao will use to append a query 
   parameter to the file for cache busting. This can also be set to `null` in order 
