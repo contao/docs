@@ -11,9 +11,11 @@ declare(strict_types=1);
 
 namespace Contao\Docs\LinkChecker;
 
+use Symfony\Component\Lock\LockFactory;
+use Symfony\Component\Lock\LockInterface;
+use Symfony\Component\Lock\Store\FlockStore;
 use Symfony\Component\RateLimiter\LimiterInterface;
 use Symfony\Component\RateLimiter\Policy\FixedWindowLimiter;
-use Symfony\Component\RateLimiter\Policy\SlidingWindowLimiter;
 use Symfony\Component\RateLimiter\Storage\InMemoryStorage;
 use Symfony\Component\RateLimiter\Storage\StorageInterface;
 use Symfony\Contracts\HttpClient\ChunkInterface;
@@ -54,18 +56,21 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
 
     private readonly StorageInterface $rateLimiterStorage;
 
+    private readonly LockInterface $lock;
+
     /**
      * @var array<string, LimiterInterface>
      */
     private array $domainRateLimiter = [];
 
     private static $domainLimitMap = [
-        'github.com' => 1,
+        'github.com' => 6,
     ];
 
     public function __construct(private string $outputPath)
     {
         $this->rateLimiterStorage = new InMemoryStorage();
+        $this->lock = (new LockFactory(new FlockStore(\dirname($this->outputPath))))->createLock('result-subscriber');
     }
 
     public function getNumberOfErrors(): int
@@ -182,9 +187,8 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
 
         // 600 requests per minute per domain by default, which is the maximum with the currently configured concurrency and delay of the crawler
         $limit = self::$domainLimitMap[$host] ?? 600;
-
         $interval = \DateInterval::createFromDateString('1 minute');
 
-        return $this->domainRateLimiter[$host] = new FixedWindowLimiter($host, $limit, $interval, $this->rateLimiterStorage);
+        return $this->domainRateLimiter[$host] = new FixedWindowLimiter($host, $limit, $interval, $this->rateLimiterStorage, $this->lock);
     }
 }
