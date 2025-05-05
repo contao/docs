@@ -16,6 +16,7 @@ use Symfony\Component\Lock\LockInterface;
 use Symfony\Component\Lock\Store\FlockStore;
 use Symfony\Component\RateLimiter\LimiterInterface;
 use Symfony\Component\RateLimiter\Policy\FixedWindowLimiter;
+use Symfony\Component\RateLimiter\Policy\SlidingWindowLimiter;
 use Symfony\Component\RateLimiter\Storage\InMemoryStorage;
 use Symfony\Component\RateLimiter\Storage\StorageInterface;
 use Symfony\Contracts\HttpClient\ChunkInterface;
@@ -87,6 +88,11 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
             }
         }
 
+        $this->getRateLimiterForHost($crawlUri->getUri()->getHost())
+            ->reserve()
+            ->wait()
+        ;
+
         if (!$this->escargot->getBaseUris()->containsHost($crawlUri->getUri()->getHost())) {
             $crawlUri->addTag('external');
         }
@@ -102,11 +108,6 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
 
     public function needsContent(CrawlUri $crawlUri, ResponseInterface $response, ChunkInterface $chunk): string
     {
-        $this->getRateLimiterForHost($crawlUri->getUri()->getHost())
-            ->reserve()
-            ->wait()
-        ;
-
         if ($crawlUri->hasTag('external')) {
             return SubscriberInterface::DECISION_NEGATIVE;
         }
@@ -185,10 +186,9 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
             return $this->domainRateLimiter[$host];
         }
 
-        // 600 requests per minute per domain by default, which is the maximum with the currently configured concurrency and delay of the crawler
-        $limit = self::$domainLimitMap[$host] ?? 600;
-        $interval = \DateInterval::createFromDateString('1 minute');
+        $limit = self::$domainLimitMap[$host] ?? 3000;
+        $interval = \DateInterval::createFromDateString('5 minutes');
 
-        return $this->domainRateLimiter[$host] = new FixedWindowLimiter($host, $limit, $interval, $this->rateLimiterStorage, $this->lock);
+        return $this->domainRateLimiter[$host] = new SlidingWindowLimiter($host, $limit, $interval, $this->rateLimiterStorage, $this->lock);
     }
 }
