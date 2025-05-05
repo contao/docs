@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Contao\Docs\LinkChecker;
 
 use Nyholm\Psr7\Uri;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,6 +25,7 @@ use Terminal42\Escargot\Queue\InMemoryQueue;
 use Terminal42\Escargot\Subscriber\HtmlCrawlerSubscriber;
 use Terminal42\Escargot\Subscriber\RobotsSubscriber;
 
+#[AsCommand('check', 'Checks https://docs.contao.org for broken links.')]
 class CheckCommand extends Command
 {
     private const BOOKS = [
@@ -31,13 +33,9 @@ class CheckCommand extends Command
         'dev',
     ];
 
-    public function configure()
+    public function configure(): void
     {
-        $this
-            ->setName('check')
-            ->setDescription('Checks https://docs.contao.org for broken links.')
-            ->addArgument('book', InputArgument::REQUIRED, 'Book. Must be one of '.implode(', ', self::BOOKS))
-        ;
+        $this->addArgument('book', InputArgument::REQUIRED, 'Book. Must be one of '.implode(', ', self::BOOKS));
     }
 
     public function execute(InputInterface $input, OutputInterface $output): int
@@ -58,7 +56,7 @@ class CheckCommand extends Command
         }
 
         $baseUriCollection = new BaseUriCollection([
-            new Uri(sprintf('https://docs.contao.org/%s/', $book)),
+            new Uri(\sprintf('https://docs.contao.org/%s/', $book)),
         ]);
 
         $resultSubscriber = new ResultSubscriber($outputPath);
@@ -66,15 +64,15 @@ class CheckCommand extends Command
         $httpClient = HttpClient::create([
             'max_duration' => 5,
             'headers' => [
-                'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0', // Use FF user agent because e.g. Twitter blocks others (...)
+                'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', // Use FF user agent because e.g. Twitter blocks others (...)
                 'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             ],
         ]);
 
         $escargot = Escargot::create($baseUriCollection, new InMemoryQueue())
-                    ->withHttpClient($httpClient)
-                    ->withConcurrency(5)
-                    ->withRequestDelay(500000) // 0.5s
+            ->withHttpClient($httpClient)
+            ->withConcurrency(5)
+            ->withRequestDelay(500000) // 0.5s
         ;
 
         $escargot->addSubscriber($resultSubscriber);
@@ -85,7 +83,7 @@ class CheckCommand extends Command
         $escargot->crawl();
 
         if ($errors = $resultSubscriber->getNumberOfErrors()) {
-            $io->error(sprintf('Finished crawling. Found %d errors.', $errors));
+            $io->error(\sprintf('Finished crawling. Found %d errors.', $errors));
 
             return 1;
         }

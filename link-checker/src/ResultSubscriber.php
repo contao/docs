@@ -11,6 +11,11 @@ declare(strict_types=1);
 
 namespace Contao\Docs\LinkChecker;
 
+use Symfony\Component\RateLimiter\LimiterInterface;
+use Symfony\Component\RateLimiter\Policy\FixedWindowLimiter;
+use Symfony\Component\RateLimiter\Policy\SlidingWindowLimiter;
+use Symfony\Component\RateLimiter\Storage\InMemoryStorage;
+use Symfony\Component\RateLimiter\Storage\StorageInterface;
 use Symfony\Contracts\HttpClient\ChunkInterface;
 use Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
@@ -40,17 +45,15 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         'https?://.+\.facebook\.com/',
     ];
 
-    private string $outputPath;
     private int $numberOfErrors = 0;
 
     /**
-     * @var resource
+     * @var resource|null
      */
     private $fileHandle;
 
-    public function __construct(string $outputPath)
+    public function __construct(private string $outputPath)
     {
-        $this->outputPath = $outputPath;
     }
 
     public function getNumberOfErrors(): int
@@ -73,7 +76,7 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
 
         $crawlUriToCheck = $crawlUri;
 
-        if (null !== $crawlUri->getFoundOn() && ($originalCrawlUri = $this->escargot->getCrawlUri($crawlUri->getFoundOn()))) {
+        if ($crawlUri->getFoundOn() && ($originalCrawlUri = $this->escargot->getCrawlUri($crawlUri->getFoundOn()))) {
             $crawlUriToCheck = $originalCrawlUri;
         }
 
@@ -125,14 +128,14 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
             && preg_match('@^'.preg_quote($baseUri->getPath(), '@').'@', $crawlUri->getUri()->getPath());
     }
 
-    private function writeCrawlUri(CrawlUri $crawlUri, string $msg)
+    private function writeCrawlUri(CrawlUri $crawlUri, string $msg): void
     {
         ++$this->numberOfErrors;
 
-        $this->writeLine(sprintf('- [ ] URL "%s" seems broken (%s). Found on: %s',
+        $this->writeLine(\sprintf('- [ ] URL "%s" seems broken (%s). Found on: %s',
             (string) $crawlUri->getUri(),
             $msg,
-            (string) $crawlUri->getFoundOn()
+            (string) $crawlUri->getFoundOn(),
         ));
     }
 
