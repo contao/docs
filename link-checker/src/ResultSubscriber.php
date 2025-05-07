@@ -15,7 +15,6 @@ use Symfony\Component\Lock\LockFactory;
 use Symfony\Component\Lock\LockInterface;
 use Symfony\Component\Lock\Store\FlockStore;
 use Symfony\Component\RateLimiter\LimiterInterface;
-use Symfony\Component\RateLimiter\Policy\FixedWindowLimiter;
 use Symfony\Component\RateLimiter\Policy\SlidingWindowLimiter;
 use Symfony\Component\RateLimiter\Storage\InMemoryStorage;
 use Symfony\Component\RateLimiter\Storage\StorageInterface;
@@ -65,7 +64,7 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
     private array $domainRateLimiter = [];
 
     private static $domainLimitMap = [
-        'github.com' => 6,
+        'github.com' => 1,
     ];
 
     public function __construct(private string $outputPath)
@@ -186,8 +185,8 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
             return $this->domainRateLimiter[$host];
         }
 
-        $limit = self::$domainLimitMap[$host] ?? 3000;
-        $interval = \DateInterval::createFromDateString('5 minutes');
+        $limit = self::$domainLimitMap[$host] ?? 600;
+        $interval = \DateInterval::createFromDateString('1 minutes');
 
         return $this->domainRateLimiter[$host] = new SlidingWindowLimiter($host, $limit, $interval, $this->rateLimiterStorage, $this->lock);
     }
