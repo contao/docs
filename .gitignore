@@ -4,6 +4,6 @@
 /build/
 /resources/
 /link-checker/vendor
-/link-checker/.php_cs.cache
+/link-checker/*.lock
 /deepl/vendor
 /deepl/.php_cs.cache
