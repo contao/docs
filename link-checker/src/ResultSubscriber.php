@@ -11,9 +11,6 @@ declare(strict_types=1);
 
 namespace Contao\Docs\LinkChecker;
 
-use Symfony\Component\Lock\LockFactory;
-use Symfony\Component\Lock\LockInterface;
-use Symfony\Component\Lock\Store\FlockStore;
 use Symfony\Component\RateLimiter\LimiterInterface;
 use Symfony\Component\RateLimiter\Policy\SlidingWindowLimiter;
 use Symfony\Component\RateLimiter\Storage\InMemoryStorage;
@@ -56,8 +53,6 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
 
     private readonly StorageInterface $rateLimiterStorage;
 
-    private readonly LockInterface $lock;
-
     /**
      * @var array<string, LimiterInterface>
      */
@@ -70,7 +65,6 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
     public function __construct(private string $outputPath)
     {
         $this->rateLimiterStorage = new InMemoryStorage();
-        $this->lock = (new LockFactory(new FlockStore(\dirname($this->outputPath))))->createLock('result-subscriber');
     }
 
     public function getNumberOfErrors(): int
@@ -188,6 +182,6 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         $limit = self::$domainLimitMap[$host] ?? 600;
         $interval = \DateInterval::createFromDateString('1 minutes');
 
-        return $this->domainRateLimiter[$host] = new SlidingWindowLimiter($host, $limit, $interval, $this->rateLimiterStorage, $this->lock);
+        return $this->domainRateLimiter[$host] = new SlidingWindowLimiter($host, $limit, $interval, $this->rateLimiterStorage);
     }
 }
