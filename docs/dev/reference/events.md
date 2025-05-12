@@ -26,7 +26,6 @@ guide.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::BACKEND_MENU_BUILD</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\MenuEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -81,7 +80,6 @@ custom symlink to the list.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::GENERATE_SYMLINKS</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\GenerateSymlinksEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -117,7 +115,6 @@ offered image sizes.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::IMAGE_SIZES_ALL</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\ImageSizesEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -151,7 +148,6 @@ user.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::IMAGE_SIZES_USER</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\ImageSizesEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -185,7 +181,6 @@ override the query parameter.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::PREVIEW_URL_CREATE</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\PreviewUrlCreateEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -220,7 +215,6 @@ controller into a front end request URL.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::PREVIEW_URL_CONVERT</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\PreviewUrlConvertEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -258,7 +252,6 @@ details.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::ROBOTS_TXT</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\RobotsTxtEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -314,7 +307,6 @@ end are generated. The event allows you to set custom options.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::SLUG_VALID_CHARACTERS</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\SlugValidCharactersEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -350,7 +342,6 @@ to add or remove options.
 <tr><th>Constant</th><td>N/A</td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\FilterPageTypeEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -385,7 +376,6 @@ sitemap. The event also stores for which website roots this sitemap was created.
 <tr><th>Constant</th><td><code>\Contao\CoreBundle\Event\ContaoCoreEvents::SITEMAP</code></td></tr>
 <tr><th>Event</th><td><code>\Contao\CoreBundle\Event\SitemapEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
@@ -452,7 +442,6 @@ a newsletter to real recipients.
 <tr><th>Constant</th><td>N/A</td></tr>
 <tr><th>Event</th><td><code>\Contao\NewsletterBundle\Event\SendNewsletterEvent</code></td></tr>
 </table>
-<br>
 
 {{% expand "Example" %}}
 ```php
