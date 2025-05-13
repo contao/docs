@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace Contao\Docs\LinkChecker;
 
 use Symfony\Component\RateLimiter\LimiterInterface;
-use Symfony\Component\RateLimiter\Policy\FixedWindowLimiter;
 use Symfony\Component\RateLimiter\Policy\SlidingWindowLimiter;
 use Symfony\Component\RateLimiter\Storage\InMemoryStorage;
 use Symfony\Component\RateLimiter\Storage\StorageInterface;
@@ -52,8 +51,20 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
      */
     private $fileHandle;
 
+    private readonly StorageInterface $rateLimiterStorage;
+
+    /**
+     * @var array<string, LimiterInterface>
+     */
+    private array $domainRateLimiter = [];
+
+    private static $domainLimitMap = [
+        'github.com' => 1,
+    ];
+
     public function __construct(private string $outputPath)
     {
+        $this->rateLimiterStorage = new InMemoryStorage();
     }
 
     public function getNumberOfErrors(): int
@@ -69,6 +80,11 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
                 return SubscriberInterface::DECISION_NEGATIVE;
             }
         }
+
+        $this->getRateLimiterForHost($crawlUri->getUri()->getHost())
+            ->reserve()
+            ->wait()
+        ;
 
         if (!$this->escargot->getBaseUris()->containsHost($crawlUri->getUri()->getHost())) {
             $crawlUri->addTag('external');
@@ -155,5 +171,17 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         }
 
         fwrite($this->fileHandle, $string."\n");
+    }
+
+    private function getRateLimiterForHost(string $host): LimiterInterface
+    {
+        if (isset($this->domainRateLimiter[$host])) {
+            return $this->domainRateLimiter[$host];
+        }
+
+        $limit = self::$domainLimitMap[$host] ?? 600;
+        $interval = \DateInterval::createFromDateString('1 minutes');
+
+        return $this->domainRateLimiter[$host] = new SlidingWindowLimiter($host, $limit, $interval, $this->rateLimiterStorage);
     }
 }

@@ -71,8 +71,8 @@ class CheckCommand extends Command
 
         $escargot = Escargot::create($baseUriCollection, new InMemoryQueue())
             ->withHttpClient($httpClient)
-            ->withConcurrency(5)
-            ->withRequestDelay(500000) // 0.5s
+            // Disable concurrency, but set no delay, to rate limit per domain in the ResultSubscriber
+            ->withConcurrency(1)
         ;
 
         $escargot->addSubscriber($resultSubscriber);
