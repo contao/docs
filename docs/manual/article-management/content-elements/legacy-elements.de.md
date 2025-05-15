@@ -3,6 +3,7 @@ title: "Legacy-Elemente"
 description: "Inhaltselemente im Bereich Legacy-Elemente"
 url: "artikelverwaltung/inhaltselemente/legacy-elemente"
 aliases:
+    - /de/artikelverwaltung/inhaltselemente/legacy-element/
     - /de/artikelverwaltung/inhaltselemente/legacy-elemente/
 weight: 30
 ---

@@ -5,6 +5,7 @@ url: "layout/templates/twig"
 aliases:
   - /de/layout/templates/twig/
 weight: 10
+tags: [Twig]
 ---
 
 {{% notice note %}}

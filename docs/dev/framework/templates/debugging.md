@@ -3,9 +3,8 @@ title: "Debugging"
 description: How to resolve issues with Twig or the Contao-Twig integration and to improve your workflow.
 weight: 400
 aliases:
-
-- /framework/templates/debugging/
-
+    - /framework/templates/debugging/
+tags: [Twig]
 ---
 
 In this article, we discuss how to analyze and resolve Twig-related issues. Twig is a compiled language, that means,

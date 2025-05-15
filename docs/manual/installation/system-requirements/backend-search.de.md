@@ -39,7 +39,7 @@ Deswegen braucht Contao für die Suche zwingend die Möglichkeit, deine Inhalte 
 indexieren, wo keine typischen Limits von 30 Sekunden wie bei einem Webserver existieren.
 
 Die einfachste Möglichkeit für dich, diese Grundvoraussetzung zu schaffen, ist die [Einrichtung des Contao 
-Cronjob-Frameworks]({{% ref "cronjobs.de.md" %}}).
+Cronjob-Frameworks]({{% relref"cronjobs.de.md" %}}).
 
 ### Grundvoraussetzung 2: Eine Suchmaschine
 

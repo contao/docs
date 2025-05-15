@@ -57,9 +57,9 @@ for that matter. Combined with anonymous classes, this could look like this:
 // src/ContaoManager/Plugin.php
 namespace App\ContaoManager;
 
-use App\DependencyInjection\Compiler\MyCompilerPass;
 use Contao\ManagerPlugin\Config\ConfigPluginInterface;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class Plugin implements ConfigPluginInterface
@@ -68,7 +68,7 @@ class Plugin implements ConfigPluginInterface
     {
         $loader->load(static function (ContainerBuilder $container) {
             $container->addCompilerPass(new class implements CompilerPassInterface {
-                public function process(ContainerBuilder $container)
+                public function process(ContainerBuilder $container): void
                 {
                     // Example for making a custom monolog logger public
                     $container->getDefinition('monolog.logger.api')

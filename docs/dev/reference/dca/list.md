@@ -139,6 +139,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | [button_callback](../callbacks/#list-operations-operation-button) | Callback function (`array`)       | Call a custom function to generate the button. Please specify as `['Class', 'Method']` or use service tagging. |
 | showInHeader    | true/false (`bool`)               | {{< version-tag "4.5" >}} Shows the operation in the [header element]({{< asset "images/dev/reference/mode_parent_header.png" >}}) (sorting mode 4 only).                                                   |
 | route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                                               |
+| primary         | true/false (`bool`)               | {{< version-tag "5.5" >}} Shows the operation in the overview, instead of hiding it in the context menu.                                                   |
 
 {{% notice "info" %}}
 {{< version-tag "5.0" >}} You do not have to define any settings for standard operations anymore. Instead, you can give a list
@@ -162,7 +163,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 {{% notice "info" %}}
 {{< version-tag "5.5" >}}
 All operations are now shown within the context-menu. If you want them to appear in the overview, you can enable them by
-prepending your key with `!` as seen in the example. Note that the operations `edit`, `children` and `toggle` will always appear in
+prepending your key with `!` as seen in the example (or use `'primary' => true` in your custom operation config). Note that the operations `edit`, `children` and `toggle` will always appear in
 the overview regardless.
 
 ```php
@@ -214,4 +215,39 @@ $GLOBALS['TL_DCA']['tl_foobar']['fields']['invisible'] = [
 ```php
 // contao/dca/tl_foobar.php
 $GLOBALS['TL_DCA']['tl_foobar']['list']['operations'][] = 'toggle';
+```
+
+Instead of using the default `visible.svg` icon you can of course also provide your own. However, in the DCA you
+only define the icon of the _active_ state - and then you additionally provide a second icon file for the inactive
+state in the same folder, but appended with an underscore in its name. So for example `myicon.svg` and `myicon_.svg`.
+
+Note that for custom icons not provided by Contao's back end theme you will need to provide a path to the icon,
+relative to the public directory, e.g.
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
+    'href' => 'act=toggle&amp;field=published',
+    'icon' => 'icons/myicon.svg',
+];
+```
+
+Or in case of a custom bundle, where the icon resides in the `public/` directory of that bundle:
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
+    'href' => 'act=toggle&amp;field=published',
+    'icon' => 'bundles/foobar/myicon.svg',
+];
+```
+
+You can also use the [`assets.packages` service]({{% ref "asset-management#accessing-assets-in-templates" %}}):
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
+    'href' => 'act=toggle&amp;field=published',
+    'icon' => Contao\System::getContainer()->get('assets.packages')->getUrl('myicon.svg', 'foobar'),
+];
 ```

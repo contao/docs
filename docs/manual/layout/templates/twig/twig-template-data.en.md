@@ -3,6 +3,7 @@ title: "Show template data"
 description: "Show all template data."
 url: "layout/templates/twig/data"
 weight: 50
+tags: [Twig]
 ---
 
 

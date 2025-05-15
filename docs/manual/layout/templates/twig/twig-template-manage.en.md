@@ -3,6 +3,7 @@ title: "Manage templates"
 description: "The management of template files."
 url: "layout/templates/twig/manage"
 weight: 30
+tags: [Twig]
 ---
 
 ## Folder structure

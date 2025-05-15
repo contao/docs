@@ -33,7 +33,7 @@ touch deploy.php
 
 ## `deploy.php`-Datei schreiben
 
-Es gibt zwei Möglichkeiten, das Projekt auf dem Webserver zu installieren. Standardmäßig verwendet Deployer dafür das
+Es gibt zwei Möglichkeiten das Projekt auf dem Webserver zu installieren. Standardmäßig verwendet Deployer dafür das
 Git-Repository.
 
 
@@ -62,12 +62,11 @@ set('keep_releases', 10);
 after('deploy:failed', 'deploy:unlock');
 ```
 
-Vergesse nicht, die Konfiguration des Hosts (siehe [Dokumentation][2]) und die URL des Git-Repositories anzupassen.
+Vergiss nicht die Konfiguration des Hosts (siehe [Dokumentation][2]) und die URL des Git-Repositories anzupassen.
 
-Das Deployment mit Git hat allerdings einige Nachteile. Zum Einen, musst du deinen lokalen Arbeitsstand immer committed
-und gepusht haben. Außerdem, wenn Agent Forwarding nicht funktioniert, musst du deinem Webserver Zugriff auf das
-Git-Repository geben (entweder mittels HTTPS oder SSH). Deswegen ist es oft einfacher, die notwendigen Dateien mit
-`rsync` auf den Webserver hochzuladen.
+Das Deployment mit Git hat allerdings einige Nachteile. Zum Einen musst du deinen lokalen Arbeitsstand immer committed
+und gepusht haben. Außerdem, wenn Agent Forwarding nicht funktioniert, musst du deinem Webserver mittels HTTPS oder SSH Zugriff auf das
+Git-Repository geben. Deswegen ist es oft einfacher, die notwendigen Dateien mit `rsync` auf den Webserver hochzuladen.
 
 
 ### Option 2: Deployment mit `rsync`
@@ -114,7 +113,7 @@ Deployer ist, dass es eine möglichst kurze Downtime bei Updates gibt. Deswegen 
 Document-Root von deinem vHost musst du entsprechend auf `/current/public` (bzw. `/current/web`) einstellen. Ein
 komplettes Beispiel für einen Document-Root wäre: `/var/www/foobar/html/example.org/current/public`.
 
-{{% notice "_note" %}}
+{{% notice "info" %}}
 Contao verwendet standardmäßig den `/public`-Ordner als Web-Root. Wenn deine Contao-Installation noch den alten `/web`-Ordner
 verwendet, dann definiere diesen entsprechend in `composer.json`, damit Deployer das auch weiß.
 

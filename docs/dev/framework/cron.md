@@ -271,11 +271,14 @@ line interface. The `Cron` service will pass a scope parameter to the cron job's
 method.
 
 ```php
+// src/Cron/HourlyCron.php
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 
+#[AsCronJob('hourly')]
 class HourlyCron
 {
     public function __invoke(string $scope): void
@@ -309,13 +312,16 @@ them to start immediately in parallel without blocking the other cron jobs. You 
 `GuzzleHttp\Promise\PromiseInterface`:
 
 ```php
+// src/Cron/HourlyCron.php
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use GuzzleHttp\Promise\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 
+#[AsCronJob('hourly')]
 class HourlyCron
 {
     public function __invoke(string $scope): PromiseInterface
@@ -337,13 +343,16 @@ Because most asynchronous processes are most likely things like a spawned child 
 component, Contao also provides a utility service for that:
 
 ```php
+// src/Cron/HourlyCron.php
 namespace App\Cron;
 
 use Contao\CoreBundle\Cron\Cron;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
 use Contao\CoreBundle\Exception\CronExecutionSkippedException;
 use Contao\CoreBundle\Util\ProcessUtil;
 use GuzzleHttp\Promise\PromiseInterface;
 
+#[AsCronJob('hourly')]
 class HourlyCron
 {
     public function __construct(private ProcessUtil $processUtil) {}
@@ -376,6 +385,14 @@ if you want to test a cron job even though it has already been executed within
 its defined interval, either truncate the whole table or delete the entry for the
 specific cron job you want to test. If the table is empty every cronjob will be 
 executed on the first cron call. After that only on its defined interval.
+
+{{% notice "tip" %}}
+You can use the `doctrine:query:sql` command to quickly execute a query on your database, e.g.:
+
+```
+vendor/bin/contao-console doctrine:query:sql "TRUNCATE tl_cron_job"
+```
+{{% /notice %}}
 
 {{% notice info %}}
 In Contao **4.4**, the table is called `tl_cron` and it contains only the last execution

@@ -2,9 +2,8 @@
 title: "Templates"
 description: Contao's template engine.
 aliases:
-
-- /framework/templates/
-
+    - /framework/templates/
+tags: [Twig]
 ---
 
 {{% notice info %}}

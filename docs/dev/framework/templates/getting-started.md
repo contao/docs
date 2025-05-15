@@ -3,9 +3,8 @@ title: "Getting started"
 description: How to quickly get going with the most typical Twig use cases.
 weight: 100
 aliases:
-
-- /framework/templates/quick-reference/
-
+    - /framework/templates/quick-reference/
+tags: [Twig]
 ---
 
 If you are already familiar with writing Twig templates, you might want to skip this part and directly head over to the

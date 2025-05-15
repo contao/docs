@@ -5,6 +5,7 @@ url: "layout/templates/twig/data"
 aliases:
   - /de/layout/templates/twig/data/
 weight: 50
+tags: [Twig]
 ---
 
 
