@@ -1634,7 +1634,7 @@ php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
 
 With a minutely cronjob this would mean that at most 600 emails are sent per hour in this case.
 
-{{% notice "_note" %}}
+{{% notice "note" %}}
 The commands described above use the `--time-limit=1` option. By default the `messenger:consume` process will run indefinitely, processing
 any new messages continuously. Therefore you would not need to run a separate cronjob. In order to make sure that this process is always
 running and is restarted on demand, different tools can be used on the server. However, in shared hosting environments such tools are

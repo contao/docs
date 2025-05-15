@@ -148,7 +148,7 @@ enable you to show the correct favicon per domain, if any non-HTML resources are
 (like images or PDFs, etc.). You can set a favicon only once for the same domain. This must be done in the fallback 
 language.
 
-{{% notice "_note" %}}
+{{% notice "note" %}}
 Keep in mind that this feature will not add any additional meta tags to the HTML output.
 {{% /notice %}}
 
