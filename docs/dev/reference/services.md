@@ -151,7 +151,7 @@ entity/model class names, objects and collections as well as `null`:
 $entityCacheTags->invalidateTagsFor([ContentModel::class, $pages]);
 ```
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Contao's `AbstractController` is also using this functionality in the `tagResponse()` method.
 {{% /notice %}}
 

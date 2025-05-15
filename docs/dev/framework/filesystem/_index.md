@@ -51,7 +51,7 @@ section for real world examples on how to use the system.
 | `MountManager` | Service, that allows to read from and write to a filesystem adapter whose mount path matches the resource's path prefix. Read more about mounting your own adapters in the [Config section][Config]. | low  
 | `DbafsManager` | Service, that allows to access and modify metadata of a DBAFS that matches the resource's path prefix or UUID. Read more about setting up your own DBAFS service in the [Config section][Config]. | low  
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 In an application, there will typically be **one** `MountManager` and **one** `DbafsManager` but **multiple** virtual
 filesystems. Each virtual filesystem instance can be scoped to a certain path and can be set to disallow modifications
 (readonly mode). In Contao we're for instance already shipping a `$filesStorage` and a `$backupsStorage` that are scoped

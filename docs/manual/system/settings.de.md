@@ -1608,7 +1608,7 @@ php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
 
 Bei einem minütlichen Aufruf würde das also den E-Mail Versand auf 600 E-Mails pro Stunde beschränken.
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 In den Kommandos wird die Option `--time-limit=1` benutzt. Von Haus aus läuft der `messenger:consume` Prozess unendlich lang und verarbeitet
 alle E-Mails in dieser Zeit automatisch - und es müsste daher auch kein Cronjob eingerichtet werden. Um sicherzustellen, dass dieser 
 Prozess läuft und ggf. neu gestartet wird könnten entsprechende Tools am Server verwendet werden. In Shared Hosting Umgebungen hat man diese

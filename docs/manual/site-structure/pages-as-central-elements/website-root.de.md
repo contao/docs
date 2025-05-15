@@ -152,7 +152,7 @@ pro Domain angezeigt werden, wenn Inhalte dargestellt werden, die keine HTML-Aus
 Bilder, PDFs, etc.).
 Für dieselbe Domain kann man nur einmal ein Favicon festlegen. Dieses muss in der Fallback-Sprache geschehen.
 
-{{% notice "note" %}}
+{{% notice "info" %}}
 Diese Funktion gibt keine zusätzlichen HTML Meta Tags auf der Seite aus.
 {{% /notice %}}
 
