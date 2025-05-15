@@ -204,7 +204,6 @@ $ composer require --with-all-dependencies \
     contao/core-bundle:"5.3.*" \
     symfony/monolog-bundle:^3.1 \
     php-http/guzzle7-adapter \
-    terminal42/service-annotation-bundle:^1.1 \
     toflar/psr6-symfony-http-cache-store:^4.0 \
     twig/twig:^3.11
 ```
@@ -261,7 +260,6 @@ return [
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle::class => ['all' => true],
     Contao\CoreBundle\ContaoCoreBundle::class => ['all' => true],
-    Terminal42\ServiceAnnotationBundle\Terminal42ServiceAnnotationBundle::class => ['all' => true],
 ];
 ```
 
