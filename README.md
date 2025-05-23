@@ -8,7 +8,7 @@ If you just want to contribute content, read the [CONTRIBUTING](CONTRIBUTING.md)
 
 ## Cloning
 
-The project installs the [Hugo Relearn Theme](https://mcshelby.github.io/hugo-theme-relearn/) as a git submodule. Thus when cloning
+The project installs the [Hugo Relearn Theme](https://mcshelby.github.io/hugo-theme-relearn/) as a git submodule. Thus, when cloning
 the repository, you need to use the `--recurse-submodules` parameter:
 
 ```bash
@@ -71,7 +71,7 @@ Cleans the build directory.
 
 ### Note
 
-Your are not dependent on the [Makefile](Makefile). If `make` is not available 
+You are not dependent on the [Makefile](Makefile). If `make` is not available 
 in your operating system, you can still invoke the hugo commands. For example:
 
 ```
