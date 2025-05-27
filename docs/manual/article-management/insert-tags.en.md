@@ -262,7 +262,7 @@ The following "basic entities" are converted back into the respective HTML entit
 | `[zwsp]`       | {{< version-tag "5.3" >}} `&ZeroWidthSpace;` = zero-width space. Separates characters without visually separating them - see [Wikipedia](https://en.wikipedia.org/wiki/Zero-width_space) |
 | `[{]`, `[}]` | Replaced in the front end with `{{` or `}}`, respectively. This enables you to display insert tags in the front end. For example, to explain them. |
 
-{{% notice "_note" %}}
+{{% notice "info" %}}
 Since Contao **5** this is no longer automatically the case for individual DCA fields. In your own DCA fields you will
 need to enable the conversion via `'basicEntities' => true` in the [`eval`](https://docs.contao.org/dev/reference/dca/fields#evaluation)
 definitions.

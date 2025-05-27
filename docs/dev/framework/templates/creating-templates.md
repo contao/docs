@@ -7,7 +7,7 @@ aliases:
 tags: [Twig]
 ---
 
-We talked about the general [architecture]({{% ref "architecture" %}}) in the last part. Now we are focusing on what is or should
+We talked about the general [architecture]({{% relref"architecture" %}}) in the last part. Now we are focusing on what is or should
 be inside the templates themselves and how to use the various features Twig ships with.
 
 1) How to make [extends, embeds and uses](#reusing-template-parts) work?
@@ -18,7 +18,7 @@ be inside the templates themselves and how to use the various features Twig ship
 
 ## Reusing template parts
 Twig supports a lot of different ways how to reuse Template parts and Contao enhances nearly all of them as well with
-the [managed namespace]({{% ref "architecture#managed-namespace" %}})) concept: [Extends](#extends), [includes](#includes),
+the [managed namespace]({{% relref"architecture#managed-namespace" %}})) concept: [Extends](#extends), [includes](#includes),
 [embeds](#embeds), [horizontal reuse](#horizontal-reuse) and [macros](#macros). 
 
 #### Extends
@@ -27,10 +27,10 @@ A template can extend another one, called the *parent* or more general the *base
 your template **cannot contain content outside blocks**, anymore, but you **can adjust blocks** of the parent template.
 
   * Typically, you want to replace and extend at the same time. This means, you name your template like the parent to
-    make the [loader]({{% ref "architecture#contao-filesystem-loader" %}}) choose yours when rendering, and then you reuse as much
+    make the [loader]({{% relref"architecture#contao-filesystem-loader" %}}) choose yours when rendering, and then you reuse as much
     as possible from the parent by extending it.
   
-  * This isn't mandatory, though — [variant templates]({{% ref "architecture#variant-templates" %}}) are a good example for when 
+  * This isn't mandatory, though — [variant templates]({{% relref"architecture#variant-templates" %}}) are a good example for when 
     you would want to create a new template but still only adjust things from the original one.
   
   * You can also use base templates like abstract base classes if you want to share a basic markup (implementation)
@@ -352,7 +352,7 @@ Let's look at a real world example first. In Contao, a template component could 
 {% endblock %}
 ```
 
-Wow, there is **a lot** going on. For a moment, let's remove the [HTML attributes]({{% ref "architecture#html-attributes" %}}) and
+Wow, there is **a lot** going on. For a moment, let's remove the [HTML attributes]({{% relref"architecture#html-attributes" %}}) and
 strip the example further down. 
 
 It is no easier to see the `<figure>` HTML tag with a `<figcaption>` and some media, optionally wrapped in an `a` tag. 
@@ -483,7 +483,7 @@ easier. On top of that, many Twig features just work out of the box for us.
 #### Insert tags
 
 {{% notice warning %}}
-Make sure you read and understood the section about [encoding]({{% ref "architecture#encoding" %}}) before continuing!
+Make sure you read and understood the section about [encoding]({{% relref"architecture#encoding" %}}) before continuing!
 {{% /notice %}}
 
 If you want to output a string, that contains insert tags, you, as the template designer, need to decide if and how it
@@ -546,7 +546,7 @@ of data and returns nothing. For this, you will typically want to wrap a call to
 ```
 
 {{% notice note %}}
-Behind the scenes, these features build on top of the [response context]({{% ref "response-context" %}}) concept. It is the
+Behind the scenes, these features build on top of the [response context]({{% relref"response-context" %}}) concept. It is the
 responsibility of the page template (like `fe_page`) to ultimately output the gathered data.
 {{% /notice %}}
 
@@ -621,7 +621,7 @@ on how to use it.
 {{< version-tag "5.0" >}} The `figure` and `picture` components are suited to render any built `Figure` object. In case
 you cannot or don't want to create a `Figure` in the controller, you can alternatively use the `figure` function to
 build a `Figure` instance on the fly. Internally, this uses the `FigureBuilder` from the Contao
-[image studio]({{% ref "image-studio#twig" %}}). In case you also want to create a picture/resize configuration
+[image studio]({{% relref"image-studio#twig" %}}). In case you also want to create a picture/resize configuration
 on the fly, you can use the respective `picture_configuration` function.
 
 ```twig
@@ -825,7 +825,7 @@ Here are some general rules to consider for directory as well as template file n
 
 Twig allows the usage of directories as part of the template name. For extensions or if you want to use the
 application's main template directory, you might want to read the part about how to properly set up the
-[Twig root]({{% ref "architecture#twig-root" %}}) first.
+[Twig root]({{% relref"architecture#twig-root" %}}) first.
 
 {{% best-practice %}}
 We strongly suggest, that you organize your templates like outlined below. Especially extensions should stick to these

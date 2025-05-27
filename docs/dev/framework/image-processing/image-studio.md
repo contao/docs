@@ -253,9 +253,25 @@ If you are using Twig, there are three supported ways to get figures/images into
    macro (and so on). You can also use these individual macros as building blocks for your custom template.
    {{% /notice %}}
 
-3) **Inline** &mdash; You can also output a figure directly from within your template by using the `contao_figure` Twig
+3) **Template** &mdash; You can also create a `Figure` object directly from within your template by using the `figure`
+   Twig function:
+
+   ```twig
+   {% use "@Contao/component/_figure.html.twig" %}
+
+   {% with {figure: figure(id, '_my_size')} %}{{ block('figure_component') }}{% endwith %}
+   ```
+
+   See the [dedicated templates section]({{% ref "creating-templates#images" %}}) and the
+   [Twig reference]({{% ref "figure" %}}) for more detailed examples.
+
+4) **Inline** &mdash; You can also output a figure directly from within your template by using the `contao_figure` Twig
    function. The function expects a *resource* (uuid, id, path) as the first and the *image size* as the second argument.
    If you want to specify more config, you can pass a *config* object as the third argument.
+
+   {{% notice "note" %}}
+   This has been deprecated in Contao **5.0** in favor of the `figure` function above.
+   {{% /notice %}}
    
    In the config object you can configure the same things you would as when using the `FigureBuilder` (see
    [reference][FigureBuilderOptionsReference]). In fact, under the hood, the Twig function uses
@@ -276,7 +292,7 @@ If you are using Twig, there are three supported ways to get figures/images into
      linkHref: 'https://contao.org',
      options: { attr: { class: 'logo-container' } }
    }) }}
-   ``` 
+   ```
 
    {{% notice note %}}
    By default, the `figure.html.twig` template (see 1) is used to render the result, but you can optionally pass a

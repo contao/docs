@@ -48,13 +48,7 @@ use Contao\Form;
 #[AsHook('processFormData')]
 class ProcessFormDataListener
 {
-    public function __invoke(
-        array $submittedData, 
-        array $formData, 
-        ?array $files, 
-        array $labels, 
-        Form $form
-    ): void
+    public function __invoke(array $submittedData, array $formData, array|null $files, array $labels, Form $form): void
     {
         // Do something …
     }

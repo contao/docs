@@ -216,3 +216,38 @@ $GLOBALS['TL_DCA']['tl_foobar']['fields']['invisible'] = [
 // contao/dca/tl_foobar.php
 $GLOBALS['TL_DCA']['tl_foobar']['list']['operations'][] = 'toggle';
 ```
+
+Instead of using the default `visible.svg` icon you can of course also provide your own. However, in the DCA you
+only define the icon of the _active_ state - and then you additionally provide a second icon file for the inactive
+state in the same folder, but appended with an underscore in its name. So for example `myicon.svg` and `myicon_.svg`.
+
+Note that for custom icons not provided by Contao's back end theme you will need to provide a path to the icon,
+relative to the public directory, e.g.
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
+    'href' => 'act=toggle&amp;field=published',
+    'icon' => 'icons/myicon.svg',
+];
+```
+
+Or in case of a custom bundle, where the icon resides in the `public/` directory of that bundle:
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
+    'href' => 'act=toggle&amp;field=published',
+    'icon' => 'bundles/foobar/myicon.svg',
+];
+```
+
+You can also use the [`assets.packages` service]({{% ref "asset-management#accessing-assets-in-templates" %}}):
+
+```php
+// contao/dca/tl_foobar.php
+$GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
+    'href' => 'act=toggle&amp;field=published',
+    'icon' => Contao\System::getContainer()->get('assets.packages')->getUrl('myicon.svg', 'foobar'),
+];
+```

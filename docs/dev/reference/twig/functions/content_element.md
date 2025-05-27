@@ -1,13 +1,13 @@
 ---
 title: content_element - Twig Function
 linkTitle: content_element
-description: Renders a content element either by its ID - or by on-the-fly.
+description: Renders a content element either by a reference - or on-the-fly.
 tags: [Twig]
 ---
 
 {{< version "5.2" >}}
 
-The [`content_element` function]({{% ref "creating-templates#render-content-elements" %}}) renders a content element.
+The [`content_element` function]({{% relref"creating-templates#render-content-elements" %}}) renders a content element.
 
 To render a content element that already exists in the database (similar to the `{{insert_content::*}}` insert tag) you
 can pass its ID:
@@ -24,7 +24,7 @@ You can also override the data for an existing content element:
 {{ 
     content_element(5618, {
         perRow: 4
-    }) 
+    })
 }}
 ```
 
