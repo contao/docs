@@ -7,7 +7,7 @@ tags: [Twig]
 
 {{< version "5.2" >}}
 
-This filter encodes a given email address with HTML entities, similar to the `{{email::*}}` insert tag. Just as the
+This filter encodes a given email address with HTML entities, similar to the `{{email_url::*}}` insert tag. Just as the
 insert tag this filter calls `Contao\StringUtil::encodeEmail()` internally.
 
 ```twig
