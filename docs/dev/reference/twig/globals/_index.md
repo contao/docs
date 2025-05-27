@@ -22,5 +22,5 @@ Contao provides its own `contao` Twig global.
 {{ contao.request_token }}
 
 {# Gives access to the back end user in the front end, if available #}
-{{ contao.backend_user.username|default }}
+{% set user = contao.backend_user.username|default %}
 ```
