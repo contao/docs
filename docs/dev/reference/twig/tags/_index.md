@@ -5,4 +5,4 @@ description: Developer Reference for Twig Tags provided by Contao.
 tags: [Twig]
 ---
 
-{{% children depth="1" %}}
+{{% children description="true" depth="1" %}}

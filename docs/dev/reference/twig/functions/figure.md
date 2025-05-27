@@ -1,7 +1,7 @@
 ---
 title: figure - Twig Function
 linkTitle: figure
-description:
+description: Creates a figure object for image processing.
 tags: [Twig]
 ---
 
