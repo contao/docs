@@ -89,7 +89,7 @@ Um die Abhängigkeit hinzuzufügen, muss folgendes in der `composer.json` eingef
 {{% /expand %}}
 
 Nachdem diese Änderungen gemacht wurden, kann nun ein `composer update` auf der Kommandozeile oder eine
-Paketaktualisierung im Contao Manager durchgeführt werden. Danach wie gewohnt das die Datenbank aktualisieren.
+Paketaktualisierung im Contao Manager durchgeführt werden. Danach wie gewohnt die Datenbank aktualisieren.
 
 
 ## Konfiguration
