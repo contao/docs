@@ -7,7 +7,7 @@ url: erweiterungen/news-facebook-sync
 
 **[inspiredminds/contao-news-facebook](https://extensions.contao.org/?q=news%20face&pages=1&p=inspiredminds%2Fcontao-news-facebook)**
 
-_by [INSPIRED MINDS](https://www.inspiredminds.at/)_
+_von [INSPIRED MINDS](https://www.inspiredminds.at/)_
 
 _Projekt Webseite unter [Contao News Facebook Sync](https://www.inspiredminds.at/contao-news-facebook)_
 
