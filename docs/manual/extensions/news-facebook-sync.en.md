@@ -6,7 +6,7 @@ description: Contao News Facebook Sync is a commercial extension for synchronisa
 
 **[inspiredminds/contao-news-facebook](https://extensions.contao.org/?q=news%20face&pages=1&p=inspiredminds%2Fcontao-news-facebook)**
 
-_by [inspiredminds](https://www.inspiredminds.at/)_
+_by [INSPIRED MINDS](https://www.inspiredminds.at/)_
 
 _Project web site: [Contao News Facebook Sync](https://www.inspiredminds.at/contao-news-facebook)_
 
@@ -26,20 +26,20 @@ To add the repository, add the following to your `composer.json`:
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
 ```
 
-Replace `<YOUR_TOKEN>` with the repository token you received from inspiredminds.
+Replace `<YOUR_USERNAME>` and `<YOUR_TOKEN>` with the credentials you received from INSPIRED MINDS.
 
 To add the dependency, add the following to your `composer.json`:
 
 ```json
 {
     "require": {
-        "inspiredminds/contao-news-facebook": "^7.0"
+        "inspiredminds/contao-news-facebook": "^9.0"
     }
 }
 ```
@@ -58,37 +58,28 @@ To add the dependency, add the following to your `composer.json`:
         }
     ],
     "require": {
-        "php": "^7.1",
         "contao/conflicts": "@dev",
-        "contao/manager-bundle": "4.9.*",
-        "inspiredminds/contao-news-facebook": "^6.0"
+        "contao/manager-bundle": "5.3.*",
+        "inspiredminds/contao-news-facebook": "^9.0"
     },
     "conflict": {
         "contao-components/installer": "<1.3"
     },
     "extra": {
         "contao-component-dir": "assets",
-        "symfony": {
-            "require": "^4.2"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
     },
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ]
     },
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
@@ -96,32 +87,35 @@ To add the dependency, add the following to your `composer.json`:
 {{% /expand %}}
 
 After making this adjustment, run a `composer update` on the command line or update your packages via the Contao 
-Manager. Then open the Contao Install Tool to update the database as usual.
+Manager. Then update the database as usual.
 
 
 ## Configuration
 
-To configure this extension, a "Facebook App" needs to created first prior to version **7.0** of this extension. The 
-details of this app are then needed for the configuration in the back end.
+To configure this extension, a "Facebook App" needs to created firs. The  details of this app are then needed for the
+configuration in the back end.
+
+{{% notice "tip" %}}
+You can skip this step if your Facebook page is _not_ associated with a Meta Business account. Then the extension will
+use its own Facebook app, which has approval to fetch and write data to your Facebook page.
+
+Facebook does not allow access to pages connected to a Meta Business account anymore, without the `business_management`
+permission for which the Facebook app the extension comes with does not have approval for.
+{{% /notice %}}
 
 
 ### Creating a Facebook App
 
-{{% notice tip %}}
-Starting with version **7.0** of the extension this step can be skipped.
-{{% /notice %}}
-
 1. First you need to go to [developers.facebook.com](https://developers.facebook.com). If you do not have a Facebook 
 developer account yet, you need to create one (or unlock your existing Facebook user as a developer account).
 2. Under _My Apps_ click on _Create App_.
-3. Type in a _Display Name_ for the App (e.g. the title of your website) and enter a contact email address.
-4. On the next page, you can add _Products_ to your App. Add the _Facebook Login_ by clicking on _Set Up_.
-5. On the next page, choose _Web_, then enter the URL of your website (including `https://`). Click on _Save_.
-6. On the left, click on _Facebook Login_ » _Settings_. Under _Valid OAuth Redirect URIs_ enter the following URL: 
-`https://example.org/system/modules/news_facebook/public/callback.php`. Replace `example.org` with the domain of your 
-website. Then click on _Save Changes_.
-7. On the left, click on _Settings_ » _Basic_ and enter your website's domain unter _App Domains_. Then click on
-_Save Changes_.
+3. Type in an _App name_ for the App (e.g. the title of your website) and enter an _App contact email_.
+4. Next you define a use case for the app. Choose _Other_ at the bottom.
+5. Next you define an app type. Choose _Business_.
+6. On the next page click on _Create app_.
+7. Next you can add "products" to your app. At the bottom click on _Set up_ for _Facebook Login for Business_.
+8. Under **Client OAuth settings** you need to enter _Valid OAuth Redirect URIs_. Here enter the following URL:
+`https://example.org/_facebook/callback`. Replace `example.org` with the domain of your website. Then click on _Save Changes_.
 
 {{% notice note %}}
 The account under which you create this App must also have the rights to create timeline posts on
@@ -132,14 +126,40 @@ you can also add further Administrator or Developers after you created the App i
 
 ### Configure the App ID and App Secret in Contao
 
-{{% notice tip %}}
-Starting with version **7.0** of the extension this step can be skipped.
-{{% /notice %}}
+In your Facebook app, go to _App settings_ » _Basic_. Copy the _App ID_ and _App secret_ and configure it in your
+`config/config.yaml`:
 
-In Contao, go to _System - Settings_, scroll down to the _Facebook App_ section, enter the __App ID__ and __App Secret__ 
-of your Facebook App. You can find this information in your Facebook App under _Settings_ » _Basic_.
+```yaml
+# config/config.yaml
+contao_news_facebook:
+    app_id: '123456789123456'
+    app_secret: 'abc123abc123abc123abc123abc123ab'
+```
 
-![Facebook App settings]({{% asset "images/manual/extensions/en/contao-news-facebook_app_settings_en.png" %}}?classes=shadow)
+However, since these are secrets, it is recommended not to store them directly in your `config.yaml` and thus possibly
+push them to the Git repository of your project. Instead you should use environment variables:
+
+```env
+# .env
+# Define empty defaults
+FACEBOOK_APP_ID=
+FACEBOOK_APP_SECRET=
+```
+
+```env
+# .env.local
+# Set the actual values
+FACEBOOK_APP_ID=123456789123456
+FACEBOOK_APP_SECRET=abc123abc123abc123abc123abc123ab
+```
+
+```yaml
+# config/config.yaml
+# Reference the environment variables
+contao_news_facebook:
+    app_id: '%env(FACEBOOK_APP_ID)%'
+    app_secret: '%env(FACEBOOK_APP_SECRET)%'
+```
 
 
 ### Configure the Contao News Archive
@@ -182,11 +202,11 @@ has a teaser image. With this option you can re-enable this functionality.
 
 If you do not use a hook, the default headline length can be configured via
 
-```php
-$GLOBALS['FACEBOOK_TITLE_LENGTH'] = …;
+```yaml
+# config/config.yaml
+contao_news_facebook:
+    headline_length: 64
 ```
-
-in your own `config.php`.
 
 
 ## Usage
@@ -248,121 +268,33 @@ When posting a Contao news entry as a Facebook post, the extension either uses t
 
 The following example appends the news article's URL to any photo post:
 
-{{< tabs groupid="four-way-service-registration" style="code" >}}
-{{% tab title="Attribute" %}}
 ```php
-// src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
-use Contao\News;
+use Contao\CoreBundle\Routing\ContentUrlGenerator;
 use Contao\NewsArchiveModel;
 use Contao\NewsModel;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 #[AsHook('changeFacebookMessage')]
 class ChangeFacebookMessageListener
 {
+    public function __construct(private readonly ContentUrlGenerator $contentUrlGenerator)
+    {
+    }
+
     public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string
     {
         // Append the URL to photo posts
         if ($news->addImage && $news->fbPostAsPhoto) {
-            $message .= "\n\n".News::generateNewsUrl($news, false, true);
+            $message .= "\n\n".$this->contentUrlGenerator->generate($news, [], UrlGeneratorInterface::ABSOLUTE_URL);
         }
 
         return $message;
     }
 }
 ```
-{{% /tab %}}
-
-{{% tab title="Annotation" %}}
-```php
-// src/EventListener/ChangeFacebookMessageListener.php
-namespace App\EventListener;
-
-use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
-use Contao\News;
-use Contao\NewsArchiveModel;
-use Contao\NewsModel;
-
-#[AsHook('changeFacebookMessage')]
-class ChangeFacebookMessageListener
-{
-    public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string
-    {
-        // Append the URL to photo posts
-        if ($news->addImage && $news->fbPostAsPhoto) {
-            $message .= "\n\n".News::generateNewsUrl($news, false, true);
-        }
-
-        return $message;
-    }
-}
-```
-{{% /tab %}}
-{{% tab title="YAML" %}}
-```yaml
-# config/services.yaml
-services:
-    App\EventListener\ActivateAccountListener:
-        tags:
-            - { name: contao.hook, hook: changeFacebookMessage }
-```
-```php
-// src/EventListener/ChangeFacebookMessageListener.php
-namespace App\EventListener;
-
-use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Contao\News;
-use Contao\NewsArchiveModel;
-use Contao\NewsModel;
-
-class ChangeFacebookMessageListener
-{
-    public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string
-    {
-        // Append the URL to photo posts
-        if ($news->addImage && $news->fbPostAsPhoto) {
-            $message .= "\n\n".News::generateNewsUrl($news, false, true);
-        }
-
-        return $message;
-    }
-}
-```
-{{% /tab %}}
-
-{{% tab title="config.php" %}}
-```php
-// contao/config.php
-use App\EventListener\ChangeFacebookMessageListener;
-
-$GLOBALS['TL_HOOKS']['changeFacebookMessage'][] = [ChangeFacebookMessageListener::class, '__invoke'];
-```
-```php
-// src/EventListener/ChangeFacebookMessageListener.php
-namespace App\EventListener;
-
-use Contao\CoreBundle\ServiceAnnotation\Hook;
-use Contao\News;
-use Contao\NewsArchiveModel;
-use Contao\NewsModel;
-
-class ChangeFacebookMessageListener
-{
-    public function __invoke(string $message, NewsModel $news, NewsArchiveModel $archive): string
-    {
-        // Append the URL to photo posts
-        if ($news->addImage && $news->fbPostAsPhoto) {
-            $message .= "\n\n".News::generateNewsUrl($news, false, true);
-        }
-
-        return $message;
-    }
-}
-```
-{{% /tab %}}
-{{< /tabs >}}
 
 
 ## Template data
