@@ -131,7 +131,7 @@ Developer zur Facebook App unter _Rollen_ hinzugefügt werden.
 ### App ID und App Secret in Contao konfigurieren
 
 {{% notice "tip" %}}
-Dieser Schritt kann übersprungen werden, die intern zur Verfügung gestellte Facebook App benutzt wird.
+Dieser Schritt kann übersprungen werden, wenn die intern zur Verfügung gestellte Facebook App benutzt wird.
 {{% /notice %}}
 
 Gehen zu _App-Einstellungen_ » _Allgemeines_ in der Facebook App. Kopiere die _App-ID_ und das _App-Secret_ und
@@ -291,6 +291,7 @@ Nachricht angegebene Text verwendet. Falls aber automatisch dieser Text angepass
 Das folgende Beispiel implementiert einen Hook, der die URL zum Nachrichtenbeitrag an den Text des Facebook-Posts anhängt:
 
 ```php
+// src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;

@@ -92,6 +92,8 @@ Manager. Then update the database as usual.
 
 ## Configuration
 
+### Creating a Facebook App
+
 To configure this extension, a "Facebook App" needs to created firs. The  details of this app are then needed for the
 configuration in the back end.
 
@@ -102,9 +104,6 @@ use its own Facebook app, which has approval to fetch and write data to your Fac
 Facebook does not allow access to pages connected to a Meta Business account anymore, without the `business_management`
 permission for which the Facebook app the extension comes with does not have approval for.
 {{% /notice %}}
-
-
-### Creating a Facebook App
 
 1. First you need to go to [developers.facebook.com](https://developers.facebook.com). If you do not have a Facebook 
 developer account yet, you need to create one (or unlock your existing Facebook user as a developer account).
@@ -125,6 +124,10 @@ you can also add further Administrator or Developers after you created the App i
 
 
 ### Configure the App ID and App Secret in Contao
+
+{{% notice "tip" %}}
+This step can be skipped if you are using the Facebook App provided by the extension.
+{{% /notice %}}
 
 In your Facebook app, go to _App settings_ » _Basic_. Copy the _App ID_ and _App secret_ and configure it in your
 `config/config.yaml`:
@@ -269,6 +272,7 @@ When posting a Contao news entry as a Facebook post, the extension either uses t
 The following example appends the news article's URL to any photo post:
 
 ```php
+// src/EventListener/ChangeFacebookMessageListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
