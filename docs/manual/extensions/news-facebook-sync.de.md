@@ -116,7 +116,7 @@ _Kontakt-E-Mail-Adresse der App_ angeben.
 4. Auf der nächsten Seite können Anwendungsfälle zur App hinzugefügt werden. Wähle ganz unten _Sonstiges_ aus.
 5. Auf der nächsten Seite muss ein App-Typ ausgewählt werden. Wähle dort _Business_ aus.
 6. Auf der nächsten Seite dann _App erstellen_ klicken.
-7. Danach können "Produkte" zur App hinzugefügt werden. Klicke weiter unten bei  _Facebook Login for Business_ auf _Einrichten_.
+7. Danach können »Produkte« zur App hinzugefügt werden. Klicke weiter unten bei  _Facebook Login for Business_ auf _Einrichten_.
 8. Unter **Client-OAuth-Einstellungen** bei _Gültige OAuth Redirect URIs_ muss folgende URL eingegeben werden:
 `https://example.org/_facebook/callback`. Ersetze `example.org` mit der Domain deiner Website. Dann _Änderungen speichern_.
 

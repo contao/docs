@@ -94,7 +94,7 @@ Manager. Then update the database as usual.
 
 ### Creating a Facebook App
 
-To configure this extension, a "Facebook App" needs to created firs. The  details of this app are then needed for the
+To configure this extension, a "Facebook App" needs to created first. The  details of this app are then needed for the
 configuration in the back end.
 
 {{% notice "tip" %}}
