@@ -1,7 +1,7 @@
 ---
 title: encode_email - Twig Filter
 linkTitle: encode_email
-description:
+description: Encodes an email address with HTML entities.
 tags: [Twig]
 ---
 
