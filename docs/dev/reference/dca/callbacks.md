@@ -129,6 +129,28 @@ accross multiple fields. You are expected to return the values.
 **return:** `array` Values of the record
 {{% /expand %}}
 
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/MemberOnBeforeSubmitCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback('tl_member', 'config.onbeforesubmit')]
+class MemberOnBeforeSubmitCallbackListener
+{
+    public function __invoke(array $record, DataContainer $dc): array
+    {
+        // Adjust the record here
+        // …
+
+        return $record;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `config.onsubmit`
 
@@ -846,8 +868,7 @@ field is not saved automatically!
 
 ### `fields.<FIELD>.load`
 
-Executed when a form field is initialized and can e.g. be used to load a default
-value.
+Executed when a form field is initialized and can e.g. be used to load a default value (in this case you will also have to enable [`alwaysSave`]({{% ref "fields#evaluation" %}})).
 
 {{% expand "Parameters" %}}
 #### Back end
