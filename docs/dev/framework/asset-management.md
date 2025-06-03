@@ -207,7 +207,7 @@ Contao also comes with a `_stylesheet` component which helps you render inline s
 {% use "@Contao/component/_stylesheet.html.twig" %}
 
 {# Renders `<link rel="stylesheet" href="…"> #}
-{% with {file: asset('styles.css'))} %}
+{% with {file: asset('styles.css')} %}
     {{ block('stylesheet_component') }}
 {% endwith %}
 ```
@@ -217,7 +217,7 @@ You can also lazy-load a  stylesheet:
 ```twig
 {% use "@Contao/component/_stylesheet.html.twig" %}
 
-{% with {file: asset('styles.css')), lazy: true} %}
+{% with {file: asset('styles.css'), lazy: true} %}
     {{ block('stylesheet_component') }}
 {% endwith %}
 ```
