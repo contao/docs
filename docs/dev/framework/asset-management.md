@@ -204,6 +204,8 @@ While you cannot directly add assets to the aforementioned globals in Twig templ
 Contao also comes with a `_stylesheet` component which helps you render inline style sheets:
 
 ```twig
+{% use "@Contao/component/_stylesheet.html.twig" %}
+
 {# Renders `<link rel="stylesheet" href="…"> #}
 {% with {file: asset('styles.css'))} %}
     {{ block('stylesheet_component') }}
@@ -213,6 +215,8 @@ Contao also comes with a `_stylesheet` component which helps you render inline s
 You can also lazy-load a  stylesheet:
 
 ```twig
+{% use "@Contao/component/_stylesheet.html.twig" %}
+
 {% with {file: asset('styles.css')), lazy: true} %}
     {{ block('stylesheet_component') }}
 {% endwith %}
