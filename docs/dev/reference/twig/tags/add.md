@@ -18,7 +18,7 @@ You can also define a name for the node which enables you to overwrite the outpu
 ```twig
 {# Adds a stylesheet #}
 {% add "my_css" to stylesheets %}
-    {% with {file: asset('styles.css'))} %}
+    {% with {file: asset('styles.css')} %}
         {{ block('stylesheet_component') }}
     {% endwith %}
 {% endadd %}
