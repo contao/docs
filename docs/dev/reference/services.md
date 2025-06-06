@@ -846,7 +846,7 @@ class ExampleService
         // The root page for the given domain (and optional language)
         $rootPageForHost = $this->pageFinder->findRootPageForHostAndLanguage('example.com');
 
-        // The current request's page, if applicable
+        // The current request's page, if applicable (Contao 5.4+)
         $currentPage = $this->pageFinder->getCurrentPage();
 
         // …
