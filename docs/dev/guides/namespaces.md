@@ -27,7 +27,7 @@ developing within the Contao framework. None of these are mandatory though.
 As it is customary within the Symfony environment, classes of certain namespaces
 should also be named with a namespace specific suffix:
 
-| Namespace           | Suffix       | Example                            |
+| Namespace           | Suffix       | Example FQCN                       |
 |:--------------------|--------------|------------------------------------|
 | `App\Controller`    | `Controller` | `App\Controller\ExampleController` |
 | `App\Cron`          | `Cron`       | `App\Cron\ExampleCron`             |
