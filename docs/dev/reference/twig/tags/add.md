@@ -8,8 +8,13 @@ tags: [Twig]
 {{< version "5.0" >}}
 
 The `add` tag allows you to create output in different predetermined sections of the document, for example in order to
-add `<script>` or `<style>` tags to the `<head>` or `<body>`. Currently supported document locations are `head`,
-`stylesheets` and `body`. The `head` location adds the output to the end of the `<head>` with the default `fe_page`
+add `<script>` or `<style>` tags to the `<head>` or `<body>`. Currently supported document locations are as follows: 
+
+* `head`
+* `stylesheets`
+* `body`
+
+The `head` location adds the output to the end of the `<head>` with the default `fe_page`
 template of Contao, while the `stylesheets` location groups the output together with the other stylesheets that are
 output by Contao. The `body` location refers to the end of the `<body>`.
 
