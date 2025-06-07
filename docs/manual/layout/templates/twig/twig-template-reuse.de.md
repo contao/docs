@@ -51,7 +51,7 @@ nicht zur Template-Hierarchie gehören, weil sie erst zur Laufzeit erzeugt werde
 Die Template-Hierarchie kann über die Kommandozeile mit
 dem [debug:contao-twig Kommando](https://docs.contao.org/dev/framework/templates/debugging/#debug-contao-twig-command)
 dargestellt werden.
-Beachte bei der Verwendung des Kommandozeilenbefehls auch den [entsprechenden Abschnitt im Handbuch]({{% relref"cli" %}}).
+Beachte bei der Verwendung des Kommandozeilenbefehls auch den [entsprechenden Abschnitt im Handbuch]({{% ref "cli" %}}).
 
 
 ## Erweitern
@@ -62,7 +62,7 @@ Beim Erweitern wird ein Template nicht komplett überschrieben, sondern es werde
 Dazu muss das Basis-Template mit `{% extends "@Contao/('pfad-des-templates')/('name-des-templates') %}`
 angegeben werden.
 
-Contao unterstützt euch bei der Erweiterung von Templates und bei der [Anpassung von Blöcken]({{% relref"#blöcke-anpassen" %}}) und
+Contao unterstützt euch bei der Erweiterung von Templates und bei der [Anpassung von Blöcken]({{% ref "#blöcke-anpassen" %}}) und
 [Anpassen von HTML-Attributen](#html-attribute-anpassen).  
 Wählst du eines der neuen Twig-Templates zur Anpassung aus, dann wird dir das neue Template für die Vererbung so
 vorbereitet, dass das Basis-Template bereits angegeben ist. In den Kommentaren findest du die Blöcke und

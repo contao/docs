@@ -31,7 +31,7 @@ The above example uses the [`Event`](https://schema.org/Event) Schema.org Type. 
 Though typically you will want your controller to prepare said data.
 
 When it comes to files Contao can automatically generate the appropriate JSON-LD metadata for your. For this the classes
-`FilesystemItem` from the [virtual file system]({{% relref "virtual-filesystem" %}}), the legacy `FilesModel` as well as
+`FilesystemItem` from the [virtual file system]({{% ref "virtual-filesystem" %}}), the legacy `FilesModel` as well as
 the `Figure` classes have appropriate getters for that.
 
 ```twig

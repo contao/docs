@@ -15,7 +15,7 @@ arguments and expects the template content as return value.
 {{% notice info %}}
 This hook is applied after insert tags have been
 replaced. If you want to apply your logic before the replacement of
-insert tags, use the [`outputFrontendTemplate`]({{% relref"outputFrontendTemplate" %}}) hook instead.
+insert tags, use the [`outputFrontendTemplate`]({{% ref "outputFrontendTemplate" %}}) hook instead.
 {{% /notice %}}
 
 

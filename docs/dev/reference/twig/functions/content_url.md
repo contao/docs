@@ -7,8 +7,8 @@ tags: [Twig]
 
 This function is similar to Symfony's [`path`](https://symfony.com/doc/current/reference/twig_reference.html#path).
 It will generate an URL for the given model using Contao's
-[Content URL Generation]({{% relref"content-routing#content-url-generation" %}}). This is useful for controllers that list
-your items - and the items are passed as an iterable collection of [Models]({{% relref"models" %}}).
+[Content URL Generation]({{% ref "content-routing#content-url-generation" %}}). This is useful for controllers that list
+your items - and the items are passed as an iterable collection of [Models]({{% ref "models" %}}).
 
 ```twig
 {# templates/frontend_module/foobar_list.html.twig #}

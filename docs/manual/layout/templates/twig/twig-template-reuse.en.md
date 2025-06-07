@@ -45,7 +45,7 @@ belong to the template hierarchy because they are created at runtime.
 
 The template hierarchy can be displayed from the command line with the
 [`debug:contao-twig` command](https://docs.contao.org/dev/framework/templates/debugging/#debug-contao-twig-command).   
-Also note the [corresponding section in the manual]({{% relref"cli" %}}) when using the command.
+Also note the [corresponding section in the manual]({{% ref "cli" %}}) when using the command.
 
 
 ## Extend
@@ -55,7 +55,7 @@ When extending a template, it is not completely overwritten, but only individual
 (base template) are adapted.  
 To do this, the base template must be specified with `{% extends "@Contao/('path-of-template')/('name-of-template') %}`.
 
-Contao supports you in extending templates and [customizing blocks]({{% relref"#customize-blocks" %}}) and
+Contao supports you in extending templates and [customizing blocks]({{% ref "#customize-blocks" %}}) and
 [customize HTML attributes](#customize-html-attributes).  
 If you select one of the new Twig templates for customization, the new template will be prepared for inheritance in
 such a way that the base template is already specified. In the comments you will find the blocks and HTML attributes

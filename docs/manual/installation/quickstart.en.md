@@ -91,8 +91,8 @@ icon ![Show/hide console output]({{% asset "icons/konsolenausgabe.png" %}}?class
 ### Updating database tables
 
 As soon as the Contao Manager has installed all packages, the database must be updated. To do this you can 
-use the [Contao Install Tool]({{% relref"/installation/contao-installtool" %}}) (Contao 4.13 LTS). From Contao 5 onwards, this is no longer 
-necessary, as the database can be updated directly via the [Contao Manager]({{% relref"installation/contao-manager" %}}).
+use the [Contao Install Tool]({{% ref "/installation/contao-installtool" %}}) (Contao 4.13 LTS). From Contao 5 onwards, this is no longer 
+necessary, as the database can be updated directly via the [Contao Manager]({{% ref "installation/contao-manager" %}}).
 
 
 ## Create an administrator account
