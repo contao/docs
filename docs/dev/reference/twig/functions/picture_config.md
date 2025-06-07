@@ -7,7 +7,7 @@ tags: [Twig]
 
 The `picture_config` Twig function allows you to create a complex picture configuration on-the-fly, instead of
 pre-defining it via `contao.image.sizes` in your `config/config.yaml` or via the image sizes in the back end. This
-picture configuration can the be passed to the [`figure` function]({{% ref "twig/functions/figure" %}}).
+picture configuration can the be passed to the [`figure` function]({{% ref "figure" %}}).
 
 ```twig
 {% use "@Contao/component/_figure.html.twig" %}
