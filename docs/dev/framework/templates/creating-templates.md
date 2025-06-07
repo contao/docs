@@ -519,7 +519,7 @@ the back end and not to structure content in templates.
 Sometimes a template only includes part of a page, like a content element, but still wants to contribute content that is
 global to the page.
 
-{{< version-tag "5.0" >}} For this, you can use the `add` tag in Contao. It allows adding content to the end of the
+{{< version-tag "5.0" >}} For this, you can use the [`add` tag in Contao]({{% relref"add" %}}). It allows adding content to the end of the
 document head or body. If you want the block to be output only once (no matter how often the template is rendered on
 the current page), you can provide a name. This is especially helpful when adding a generic javascript code or styles,
 that do not make sense getting inserted multiple times.
