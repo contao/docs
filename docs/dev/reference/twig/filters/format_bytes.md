@@ -5,6 +5,8 @@ description: Converts bytes to a human readable format.
 tags: [Twig]
 ---
 
+{{< version "5.0" >}}
+
 The `format_bytes` filter converts a number representing bytes into a human readable format like "128.0 MiB".
 
 ```twig
@@ -25,9 +27,9 @@ You can also adjust how many decimal places will be output.
 {{ 135000000|format_bytes(3) }}
 ```
 
-Internally this functions calls `Contao\System::getReadableSize()` and uses the `UNITS.*` labels from the
-`contao_default` translation domain, where `UNITS.0` starts with "bytes", then `UNITS.1` is "KiB" etc. Thus if you
-adjust the translations to
+Internally this functions calls `Contao\System::getReadableSize()` and uses the `MSC.decimalSeparator`,
+`MSC.thousandsSeparator` and `UNITS.*` labels from the `contao_default` translation domain, where `UNITS.0` starts with
+"bytes", then `UNITS.1` is "KiB" etc. Thus if you adjust the translations to
 
 ```yaml
 # translations/contao_default.en.yaml
