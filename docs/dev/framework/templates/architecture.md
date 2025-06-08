@@ -159,7 +159,7 @@ please refer to their [own section](#themes) further down.
 
 {{% notice tip %}}
 You can use the `debug:contao-twig` command to browse and better understand the built hierarchy. Read more on this in
-the article about [debugging]({{% ref "debugging#debug-contao-twig-command" %}}) strategies. 
+the article about [debugging]({{% relref "debugging#debug-contao-twig-command" %}}) strategies. 
 {{% /notice %}}
 
 {{% example "Independent inheritance" %}}
@@ -242,7 +242,7 @@ These are the implications that follow from this setup:
    template. By creating a selectable non-theme variant template as a basis, you also make sure that, there will
    **always** be an available template when rendering.
 
-3) When debugging templates via the [`debug:contao-twig` command]({{% ref "debugging#debug--contao-twig-command" %}}), you need to
+3) When debugging templates via the [`debug:contao-twig` command]({{% relref "debugging#debug--contao-twig-command" %}}), you need to
    explicitly pass a theme (slug) to make the respective theme templates show up in the result. 
 
 
@@ -289,7 +289,7 @@ also introduce more subdirectory layers if needed.
 
 {{% best-practice %}}
 When users want to override/adjust templates from various sources, they need to replicate the filesystem structure. To
-make this a pleasant experience, please stick to the [naming conventions]({{% ref "creating-templates#naming-convention" %}}), so
+make this a pleasant experience, please stick to the [naming conventions]({{% relref "creating-templates#naming-convention" %}}), so
 that multiple structures do not mix.
 {{% /notice %}}
 

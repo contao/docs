@@ -242,7 +242,7 @@ $GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
 ];
 ```
 
-You can also use the [`assets.packages` service]({{% ref "asset-management#accessing-assets-in-templates" %}}):
+You can also use the [`assets.packages` service]({{% relref "asset-management#accessing-assets-in-templates" %}}):
 
 ```php
 // contao/dca/tl_foobar.php

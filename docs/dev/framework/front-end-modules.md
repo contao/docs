@@ -143,7 +143,7 @@ As mentioned previously a front end module is registered by registering a contro
 | Option   | Type     | Description                                                                                                                               |
 | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------|
 | name     | `string` | Must be `contao.frontend_module`.                                                                                                         |
-| type     | `string` | _Optional:_ The *type* mentioned in [Type]({{% ref "#type" %}}) can be customized.                                                        |
+| type     | `string` | _Optional:_ The *type* mentioned in [Type]({{% relref "#type" %}}) can be customized.                                                        |
 | category | `string` | Defines in which option group this front end module will be placed in the module type selector.                                           |
 | template | `string` | _Optional:_ Override the generated template name.                                                                                         |
 | renderer | `string` | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |

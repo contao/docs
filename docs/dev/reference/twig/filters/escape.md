@@ -29,7 +29,7 @@ you have HTML code nested in another language.
 ```
 
 You can find more information in the double encoding section of the
-[Twig architecture]({{% ref "architecture#double-encoding-prevention" %}}) article.
+[Twig architecture]({{% relref "architecture#double-encoding-prevention" %}}) article.
 
 ## `ChunkedText` Support
 
