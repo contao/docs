@@ -10,7 +10,8 @@ There is an additional argument where you can define which template to use to re
 
 {{% notice note %}}
 Using the `contao_figure` function has been deprecated and will no longer work in Contao 6. Use the 
-[figure]({{% relref "figure" %}}) function together with the "component/_figure.html.twig" component instead.
+[figure]({{% relref "figure" %}}) function together with the `component/_figure.html.twig`
+[component]({{% relref "creating-templates#contao-components" %}}) instead.
 {{% /notice %}}
 
 ## Arguments
