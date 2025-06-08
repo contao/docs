@@ -5,6 +5,8 @@ description: Prefixes relative URLs with the base path.
 tags: [Twig]
 ---
 
+{{< version "5.0" >}}
+
 Historically, Contao made use of the `<base href="…">` HTML tag so that all relative URLs are always relative to this
 base. In Contao 5 however, we are moving away from that and instead always output path absolute URLs. In order to make
 sure though that any relative link that might have been input in the back end somewhere will continue to work even

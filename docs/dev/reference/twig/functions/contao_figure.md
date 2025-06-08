@@ -5,7 +5,6 @@ description: Renders a figure for image processing.
 tags: [Twig]
 ---
 
-
 This function takes the same arguments as the [`figure`]({{% ref "figure" %}}) function, but renders the image directly.
 There is an additional argument where you can define which template to use to render the figure.
 

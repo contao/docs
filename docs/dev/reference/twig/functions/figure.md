@@ -5,6 +5,8 @@ description: Creates a figure object for image processing.
 tags: [Twig]
 ---
 
+{{< version "5.0" >}}
+
 This function allows you to create a processed (resized and/or cropped) image directly in your Twig template via 
 Contao's [Image Studio]({{% ref "image-studio" %}}). It will return a `Figure` instance which you can then render in
 your template - or pass to a pre-existing block of a component, or a pre-existing template.

@@ -5,6 +5,8 @@ description: Generates the URL for a given model object.
 tags: [Twig]
 ---
 
+{{< version "5.3" >}}
+
 This function is similar to Symfony's [`path`](https://symfony.com/doc/current/reference/twig_reference.html#path).
 It will generate an URL for the given model using Contao's
 [Content URL Generation]({{% ref "content-routing#content-url-generation" %}}). This is useful for controllers that list

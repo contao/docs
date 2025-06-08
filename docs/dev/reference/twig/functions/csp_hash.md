@@ -5,6 +5,8 @@ description: Adds CSP hashes for inline styles and scripts.
 tags: [Twig]
 ---
 
+{{< version "5.3" >}}
+
 This allows you to add [CSP hashes](https://content-security-policy.com/hash/) for inline styles and scripts.
 
 ```twig
