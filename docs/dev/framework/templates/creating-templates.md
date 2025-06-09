@@ -687,9 +687,9 @@ the `scrivo/highlight.php` library. You can either pass a language to use or let
 The detected language was {{ highlighted.language }} with a relevance of {{ highlighted.relevance }}.
 ```
 
-{{< version-tag "5.0" >}} The `format_bytes` filter transforms a number representing a file size in bytes into a
-human-readable form. It therefore uses the `MSC.decimalSeparator`, `MSC.thousandsSeparator` and `UNITS` declarations
-from the global translation catalogue.
+{{< version-tag "5.0" >}} The [`format_bytes` filter]({{% ref "format_bytes" %}}) transforms a number representing a
+file size in bytes into a human-readable form. It therefore uses the `MSC.decimalSeparator`, `MSC.thousandsSeparator`
+and `UNITS` declarations from the global translation catalogue.
 
 ```twig
 {# outputs 1536 #} 
