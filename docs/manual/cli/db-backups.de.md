@@ -51,6 +51,7 @@ Der Backup-Befehl erlaubt zusätzliche Argumente, die zur Konfiguration des Befe
 
 {{% notice tip %}}
 Das folgende Beispiel kann verwendet werden, um `tl_undo`, `tl_message_queue` und `tl_version` auszuschliessen und vergibt zusätzlich einen Namen für das Backup.
+
 ```bash
 php bin/console contao:backup:create backup__20250101000000.sql -i +tl_undo,+tl_message_queue,+tl_version
 ```
