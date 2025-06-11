@@ -53,6 +53,7 @@ within a crontab.
 
 {{% notice tip %}}
 The following example can be used to exclude `tl_undo`, `tl_message_queue` and `tl_version` plus naming your backup.
+
 ```bash
 php bin/console contao:backup:create backup__20250101000000.sql -i +tl_undo,+tl_message_queue,+tl_version
 ```
