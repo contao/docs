@@ -41,6 +41,23 @@ Every time a new backup is created, Contao automatically cleans up obsolete back
 section "[Configuration](#configuration)" for more information.
 {{% /notice %}}
 
+### Options
+
+The backup command allows additional arguments that can be used to configure it to your liking, which can also be used
+within a crontab.
+
+| Option            | Shortcut | Description                                                                                                                                                                                                                                                        |
+|-------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--ignore-tables` | `-i`     | A comma-separated list of database tables to ignore. Defaults to the backup configuration `contao.backup.ignore_tables`.<br/>You can use the prefixes "+" and "-" to modify the existing configuration (e.g. `+tl_user` would add `tl_user` to the existing list). |
+| `--format`        |          | The output format (`txt`, `json`). Defaults to `txt`.                                                                                                                                                                                                              |
+
+{{% notice tip %}}
+The following example can be used to exclude `tl_undo`, `tl_message_queue` and `tl_version` plus naming your backup.
+```bash
+php bin/console contao:backup:create backup__20250101000000.sql -i +tl_undo,+tl_message_queue,+tl_version
+```
+{{% /notice %}}
+
 ## contao:backup:list
 
 This command lets us display the existing backups. The output should look something like this:

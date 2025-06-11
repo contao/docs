@@ -40,6 +40,22 @@ Jedes Mal, wenn ein neues Backup erstellt wird, räumt Contao veraltete Backups 
 Abschnitt »[Konfigurationsmöglichkeiten](#konfigurationsmoeglichkeiten)«.
 {{% /notice %}}
 
+### Options
+
+Der Backup-Befehl erlaubt zusätzliche Argumente, die zur Konfiguration des Befehls verwendet werden können. Diese Argumente können auch innerhalb einer crontab verwendet werden:
+
+| Option            | Shortcut | Description                                                                                                                                                                                                                                                                                                                |
+|-------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--ignore-tables` | `-i`     | Eine kommagetrennte Liste von Datenbanktabellen, die ignoriert werden sollen. Standardmäßig wird die Backup-Konfiguration `contao.backup.ignore_tables` verwendet.<br/>Über die Präfixe "+" und "-" kann die bestehende Konfiguration angepasst werden (z.B. `+tl_user` würde `tl_user` zur bestehenden Liste hinzufügen). | |
+| `--format`        |          | Das Ausgabeformat (`txt`, `json`). Standardwert ist "txt".                                                                                                                                                                                                                                                                 |
+
+{{% notice tip %}}
+Das folgende Beispiel kann verwendet werden, um `tl_undo`, `tl_message_queue` und `tl_version` auszuschliessen und vergibt zusätzlich einen Namen für das Backup.
+```bash
+php bin/console contao:backup:create backup__20250101000000.sql -i +tl_undo,+tl_message_queue,+tl_version
+```
+{{% /notice %}}
+
 ## contao:backup:list
 
 Dieses Kommando lässt uns die bestehenden Backups anzeigen. Die Ausgabe dürfte ungefähr so aussehen:
