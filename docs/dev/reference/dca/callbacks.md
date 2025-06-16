@@ -442,7 +442,8 @@ callback, not multiple ones.
 
 Allows for individual paste buttons and is e.g. used in the site structure to
 disable buttons depending on the user's permissions (requires an additional
-command check via load_callback). This callback is only available in [trees or extended trees (mode 5 and 6)](/reference/dca/list/#sorting).
+command check via load_callback). This callback is only available in
+[trees or extended trees (mode 5 and 6)]({{% relref "list#sorting" %}}).
 
 {{% expand "Parameters" %}}
 * `\Contao\DataContainer` Data Container object
@@ -699,69 +700,8 @@ containing HTML for the button (or an empty string, if you do not want to show a
 
 ### `list.operations.<OPERATION>.button`
 
-
-{{< version-tag "5.0" >}}  
-
-This callback allows you to configure or replace the button for a specific operation. The callback passes an instance 
-of `DataContainerOperation` which you can use to retrieve data and affect how the button is generated.
-
-{{% expand "Parameters" %}}
-* `DataContainerOperation` Operation instance with method to retrieve data and modify the button.
-
-**return:** _void_
-{{% /expand %}}
-
-{{% expand "Example" %}}
-
-This example hide a custom operation button if the user is not allowed to use it.
-
-Attention: this won't disable the operation itself, it only hides the button!
-To disable the operation, you need to check for the permission additionally
-before its execution, for example in the operation code or a `config.onload` callback.
-
-```php
-// src/EventListener/DataContainer/ExampleListOperationListener.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DataContainer\DataContainerOperation;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-
-#[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
-class ExampleListOperationListener
-{
-    public function __construct(
-        private readonly AuthorizationCheckerInterface $authorizationChecker,
-    ) {
-    }
-
-    public function __invoke(DataContainerOperation $operation): void
-    {
-        // Show the icon only but no link if the user cannot edit
-        if (!$this->authorizationChecker->isGranted('contao_user.example.can_edit', $operation->getRecord()['id'])) {
-            $operation->disable();
-            return;
-        }
-        
-        // Remove the operation completely by replacing the HTML if the user cannot see the record
-        if (!$this->authorizationChecker->isGranted('contao_user.example.can_view', $operation->getRecord()['id'])) {
-            $operation->setHtml('');
-            return;
-        }
-        
-        // Replace the target URL of the operation
-        $operation->setUrl('https://example.com');
-        
-        // Access the operation config through array access
-        $operation['label'] = $operation['title'] = 'See the example website';
-    }
-}
-```
-{{% /expand %}}
-
-<br>
-{{< version-tag "before 5.0" >}}  
-
+{{< tabs groupid="contao-version" style="code" >}}
+{{% tab title="Contao 4" %}}
 Before Contao 5, this callback allows you to generate a button for a specific operation yourself, instead of letting Contao generate it
 for you. The callback passes the database record, the originally generated button HTML as a string (if applicable) and
 all the metadata defined in the DCA that is included in the generated button. The callback is expected to return a string
@@ -849,6 +789,69 @@ class ExampleListOperationListener
 }
 ```
 {{% /expand %}}
+{{% /tab %}}
+{{% tab title="Contao 5" %}}
+{{< version-tag "5.0" >}}  
+
+This callback allows you to configure or replace the button for a specific operation. The callback passes an instance 
+of `DataContainerOperation` which you can use to retrieve data and affect how the button is generated.
+
+{{% expand "Parameters" %}}
+* `DataContainerOperation` Operation instance with method to retrieve data and modify the button.
+
+**return:** _void_
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+This example hide a custom operation button if the user is not allowed to use it.
+
+Attention: this won't disable the operation itself, it only hides the button!
+To disable the operation, you need to check for the permission additionally
+before its execution, for example in the operation code or a `config.onload` callback.
+
+```php
+// src/EventListener/DataContainer/ExampleListOperationListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DataContainer\DataContainerOperation;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
+#[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
+class ExampleListOperationListener
+{
+    public function __construct(
+        private readonly AuthorizationCheckerInterface $authorizationChecker,
+    ) {
+    }
+
+    public function __invoke(DataContainerOperation $operation): void
+    {
+        // Show the icon only but no link if the user cannot edit
+        if (!$this->authorizationChecker->isGranted('contao_user.example.can_edit', $operation->getRecord()['id'])) {
+            $operation->disable();
+            return;
+        }
+        
+        // Remove the operation completely by replacing the HTML if the user cannot see the record
+        if (!$this->authorizationChecker->isGranted('contao_user.example.can_view', $operation->getRecord()['id'])) {
+            $operation->setHtml('');
+            return;
+        }
+        
+        // Replace the target URL of the operation
+        $operation->setUrl('https://example.com');
+        
+        // Access the operation config through array access
+        $operation['label'] = $operation['title'] = 'See the example website';
+    }
+}
+```
+{{% /expand %}}
+{{% /tab %}}
+{{< /tabs >}}
+
 
 ***
 
