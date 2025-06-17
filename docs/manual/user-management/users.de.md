@@ -234,7 +234,7 @@ eingeklappt dargestellt werden.
 
 **Passwort:** Hier kannst du dem Benutzer ein Passwort zuweisen.
 
-**Passwort-Änderung notwendig:**  Hier kannst du den den Benutzer zwingen, sein Passwort bei der nächsten Anmeldung zu
+**Passwort-Änderung notwendig:**  Hier kannst du den Benutzer zwingen, sein Passwort bei der nächsten Anmeldung zu
 ändern.
 
 
@@ -244,6 +244,9 @@ Benutzer können die Zwei-Faktor-Authentisierung aktivieren, um den Account zus�
 Benutzernamen und Passwort muss ein Verifizierungscode (»Time-based One-time Password«) eingegeben werden. Dieses 
 Einmalpasswort muss von einer Zwei-Faktor-App wie z. B. 1Password, Authy, Google Authenticator, Microsoft Authenticator, 
 LastPass Authenticator oder jeder anderen TOTP-App generiert werden.
+
+Der Benutzer klickt dazu oben rechts auf seinen Benutzernamen und wählt im Dropdown-Menü den Punkt Sicherheit aus. 
+Hier kann die Zwei-Faktor-Authentisierung aktiviert und zusätzliche Backup-Codes erstellt werden.
 
 Benutzer können verpflichtet werden, Zwei-Faktor-Authentisierung zu verwenden. Hierfür muss folgende Konfiguration in 
 die `config/config.yaml` übernommen werden:
