@@ -245,7 +245,7 @@ Benutzernamen und Passwort muss ein Verifizierungscode (»Time-based One-time Pa
 Einmalpasswort muss von einer Zwei-Faktor-App wie z. B. 1Password, Authy, Google Authenticator, Microsoft Authenticator, 
 LastPass Authenticator oder jeder anderen TOTP-App generiert werden.
 
-Der Benutzer klickt dazu oben rechts auf seinen Benutzernamen und wählt im Dropdown-Menü den Punkt Sicherheit aus. 
+Der Benutzer klickt dazu oben rechts auf seinen Benutzernamen und wählt im Dropdown-Menü den Punkt »Sicherheit« aus. 
 Hier kann die Zwei-Faktor-Authentisierung aktiviert und zusätzliche Backup-Codes erstellt werden.
 
 Benutzer können verpflichtet werden, Zwei-Faktor-Authentisierung zu verwenden. Hierfür muss folgende Konfiguration in 
