@@ -857,7 +857,7 @@ to the list of trusted proxies, you will get the host name that was requested in
 
 When creating a website in Contao you define the website's domain in the website root's settings - or in each website
 root respectively in a multi-domain setup. In order to not have to manually change the domain every time you copy the
-database from or to different hosting environments you can use the `DNS_MAPPING` environment variable:
+database from or to different hosting environments (for example from live to your local staging environment) you can use the `DNS_MAPPING` environment variable:
 
 ```env
 # .env.local in your local environment
@@ -877,8 +877,7 @@ DNS_MAPPING='{
 }'
 ```
 
-This allows you to - for example - copy the live database to your staging or local environment and then automatically 
-change the domains according to the mapping in the respective environment during `contao:migrate`.
+After executing the `contao:migrate` console command this will automatically change the domains in the database according to the mapping in the respective environment.
 
 You can also migrate the `useSSL` setting to different settings in the respective environment, which might be
 useful if you haven't set up an SSL certificate in your local development environment.
