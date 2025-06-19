@@ -857,7 +857,7 @@ to the list of trusted proxies, you will get the host name that was requested in
 
 When creating a website in Contao you define the website's domain in the website root's settings - or in each website
 root respectively in a multi-domain setup. In order to not have to manually change the domain every time you copy the
-database from or to different hosting environments (for example from live to your local staging environment) you can use the `DNS_MAPPING` environment variable:
+database from or to different hosting environments (for example from live to your local environment) you can use the `DNS_MAPPING` environment variable:
 
 ```env
 # .env.local in your local environment
