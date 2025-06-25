@@ -14,6 +14,9 @@ template. This can be useful for executing specific functionalities that are onl
 
 {# Insert an article #}
 <p>{{ insert_tag('insert_article::123')|raw }}</p>
+
+{# Insert the value of a variable 'email' in the email insert tag. #}
+{{ insert_tag('email::'~ email)|raw }}
 ```
 
 ## Arguments
