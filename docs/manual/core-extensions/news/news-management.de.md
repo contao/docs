@@ -180,6 +180,10 @@ Um einen neuen Beitrag zu erstellen, klicke im gewünschten Archiv auf
 
 ### Titel und Autor
 
+In diesem Abschnitt ist vor allem das Hervorheben von Beiträgen interessant. Hervorgehobene Beiträge ermöglichen das 
+Erstellen eines »virtuellen Archivs«, das aus den verschiedenen Archiven jeweils nur die hervorgehobenen Beiträge 
+enthält. Dadurch kannst du z. B. eine übergreifende Liste wichtiger Nachrichten auf der Startseite ausgeben.
+
 **Titel:** Hier kannst du den Titel der Nachricht eingeben.
 
 **Beitrag hervorheben:** Hier kannst du den Beitrag in einer Liste mit hervorgehobener Nachrichten anzeigen.
@@ -234,16 +238,15 @@ eingebunden ist.
 <title>Seitentitel</title>
 ```
 
-**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln.
+**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln. Standardmäßig erben Nachrichtenbeiträge die Robots-Tag-Einstellung von der Seite, die das „Nachrichtenleser“-Modul enthält. Bei Bedarf lässt sich der Robots-Tag pro Nachrichtenbeitrag anpassen:
 
+- *Standard (-):* Es wird die Robots-Tag-Einstellung von der Seite mit dem „Nachrichtenleser“-Modul verwendet
 - *index:* die Seite in den Suchindex aufnehmen
 - *follow:* den Links auf der Seite folgen
 - *noindex:* die Seite nicht in den Suchindex aufnehmen
 - *nofollow:* den Links auf der Seite nicht folgen
 
-Der Standardfall ist *index,follow*, da wir ja wollen, dass Google unsere Seiten möglichst umfassend in den Suchindex
-aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite können jedoch mithilfe der Anweisung
-*noindex,nofollow* von der Indexierung ausgenommen werden.
+Mit *index,follow* können Suchmaschinen den Nachrichtenbeitrag in den Suchindex aufnehmen. Mit *noindex,nofollow* werden Suchmaschinen angewiesen, den Nachrichtenbeitrag nicht in den Suchindex aufzunehmen.
 
 **Ausgabe im Quellcode:**
 ```html
@@ -329,13 +332,15 @@ Diese Dateien werden sowohl im RSS-Feed exportiert als auch auf der Webseite zum
 
 ### Experteneinstellungen
 
-In diesem Abschnitt ist vor allem das Hervorheben von Beiträgen interessant. Hervorgehobene Beiträge ermöglichen das 
-Erstellen eines »virtuellen Archivs«, das aus den verschiedenen Archiven jeweils nur die hervorgehobenen Beiträge 
-enthält. Dadurch kannst du z. B. eine übergreifende Liste wichtiger Nachrichten auf der Startseite ausgeben.
-
 **CSS-Klasse:** Hier kannst du dem Beitrag eine CSS-Klasse hinzufügen.
 
 **Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für einen Beitrag.
+
+{{< version-tag "5.6" >}} **Suchindexer:** Hier kannst du festlegen, ob der Nachrichtenbeitrag bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben Nachrichtenbeiträge die Suchindexer-Einstellung von der Seite, die das „Nachrichtenleser“-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro Nachrichtenbeitrag anpassen:
+
+- **Standard (-):** Indizierung gemäß der Suchindexer-Einstellung von der Seite mit dem „Nachrichtenleser“-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
+- **Immer indizieren:** Den Nachrichtenbeitrag einbeziehen, auch wenn er den Robots-Tag *noindex* hat oder die Seite mit dem „Nachrichtenleser“-Modul andere Einstellungen hat.
+- **Niemals indizieren:** Den Nachrichtenbeitrag ausschließen, auch wenn er den Robots-Tag *index* hat oder die Seite mit dem „Nachrichtenleser“-Modul andere Einstellungen hat.
 
 
 ### Veröffentlichung {#veroeffentlichung}
