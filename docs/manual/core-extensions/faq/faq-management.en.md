@@ -79,7 +79,7 @@ To create a new question, click on **New** ![Create a new question]({{% asset "i
 ### Metadata
 
 {{% notice info %}}
-The metadata of a single questions can only be customized if a redirect page has been selected in the FAQ category.
+The metadata of a single FAQ pages can only be customized if a redirect page has been selected in the FAQ category.
 {{% /notice %}}
 
 **Meta title:** Here you can enter an individual meta-title to overwrite the default page title.

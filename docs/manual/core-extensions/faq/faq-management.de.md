@@ -101,7 +101,7 @@ Browser aufrufen kannst.
 ### Metadaten
 
 {{% notice info %}}
-Die Metadaten können nur angepasst werden, wenn in der FAQ-Kategorie eine Weiterleitungsseite ausgewählt wurde.
+Die Metadaten einzelner FAQ-Seiten können nur angepasst werden, wenn in der FAQ-Kategorie eine Weiterleitungsseite ausgewählt wurde.
 {{% /notice %}}
 
 **Meta-Titel:** Hier kannst du einen individuellen Meta-Titel eingeben, um den Standard-Seitentitel zu überschreiben.
@@ -221,14 +221,14 @@ Download angeboten.
 
 **Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für eine Frage.
 
-{{< version-tag "5.6" >}} **Suchindexer:** Hier kannst du festlegen, ob die FAQ-Seite bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben FAQ-Seiten die Suchindexer-Einstellung von der Seite, die das „FAQ-Leser“-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro FAQ-Seite anpassen:
+{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob die FAQ-Seite bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben FAQ-Seiten die Suchindexierer-Einstellung von der Seite, die das „FAQ-Leser“-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro FAQ-Seite anpassen:
 
-- **Standard (-):** Indizierung gemäß der Suchindexer-Einstellung von der Seite mit dem „FAQ-Leser“-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
+- **Standard (-):** Indizierung gemäß der Suchindexierer-Einstellung von der Seite mit dem „FAQ-Leser“-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
 - **Immer indizieren:** Die FAQ-Seite einbeziehen, auch wenn sie den Robots-Tag *noindex* hat oder die Seite mit dem „FAQ-Leser“-Modul andere Einstellungen hat.
 - **Niemals indizieren:** Die FAQ-Seite ausschließen, auch wenn sie den Robots-Tag *index* hat oder die Seite mit dem „FAQ-Leser“-Modul andere Einstellungen hat.
 
 {{% notice info %}}
-Die **Suchindexer**-Einstellung kann nur angepasst werden, wenn in der FAQ-Kategorie eine Weiterleitungsseite ausgewählt wurde.
+Die **Suchindexierer**-Einstellung kann nur angepasst werden, wenn in der FAQ-Kategorie eine Weiterleitungsseite ausgewählt wurde.
 {{% /notice %}}
 
 
