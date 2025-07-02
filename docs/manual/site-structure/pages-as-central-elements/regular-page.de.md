@@ -218,6 +218,16 @@ ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber h
 
 **Nicht durchsuchen:** Hier kannst du eine Seite von der Suche ausnehmen.
 
+{{% notice info %}}
+Die **Nicht durchsuchen**-Checkbox wurde in Contao **5.6** durch die **Suchindexierer**-Auswahlliste ersetzt.
+{{% /notice %}}
+
+{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob die Seite bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig wird die Einstellung des Metadaten-Robots-Tags beachtet und verwendet. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
+
+- **Standard (-):** Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
+- **Immer indizieren:** Die Seite einbeziehen, auch wenn sie den Robots-Tag *noindex* hat.
+- **Niemals indizieren:** Die Seite ausschließen, auch wenn sie den Robots-Tag *index* hat.
+
 
 ## Tastatur-Navigation
 
