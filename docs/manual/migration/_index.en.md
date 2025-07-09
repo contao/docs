@@ -143,6 +143,18 @@ any such adjsutments will need to be moved to the correct location now. See the 
 details.
 
 
+#### `contao/config.yaml`
+
+The following configurations within the `config.yaml` have been removed in Contao 5 and need to be deleted:
+
+| Entry                 | Replacement                                       |
+|-----------------------|---------------------------------------------------|
+| contao.prepend_locale | Adjustable within the starting point of a website |
+| contao.url_suffix     | Adjustable within the starting point of a website |
+| contao.legacy_routing | -                                                 |
+| contao.encryption_key | -                                                 |
+
+
 ### Export Internal Stylesheets
 
 Contao 5 drops the [internal CSS editor][ManageStylesheets]. If you are still using such internal stylesheets you will need to 
