@@ -733,7 +733,7 @@ stop supporting Contao 4.
 
 {{% expand "Example" %}}
 
-This example hide a custom operation button if the user is not allowed to use it.    
+This example hides a custom operation button if the user is not allowed to use it.    
 
 Attention: this won't disable the operation itself, it only hides the button!
 To disable the operation, you need to check for the permission additionally 
