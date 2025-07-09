@@ -84,6 +84,7 @@ or as a multi dimensonal array representing an explanation table:
 $GLOBALS['TL_LANG']['XPL']['example'] = [
     ['First row header', 'First row content.'],
     ['Second row header', 'Second row content.'],
+    ['colspan', 'Use `colspan` to spread this text over the header and the content']
 ];
 ```
 
