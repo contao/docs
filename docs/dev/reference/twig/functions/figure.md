@@ -9,7 +9,8 @@ tags: [Twig]
 
 This function allows you to create a processed (resized and/or cropped) image directly in your Twig template via 
 Contao's [Image Studio]({{% relref "image-studio" %}}). It will return a `Figure` instance which you can then render in
-your template - or pass to a pre-existing block of a component, or a pre-existing template.
+your template - or pass to a pre-existing block of a component, or a pre-existing template. If the resource is not found, 
+it will return `null` instead.
 
 The function takes [3 arguments](#arguments): the source image, the size configuration and additional options. The
 following example creates a `Figure` object from a hardcoded path and size and then renders it using the `_figure`
@@ -20,7 +21,9 @@ component:
 
 {% set image = figure('files/foo/bar.jpg', [1280, 720, 'crop']) %}
 
-{% with {figure: image} %}{{ block('figure_component') }}{% endwith %}
+{% if image %}
+    {% with {figure: image} %}{{ block('figure_component') }}{% endwith %}
+{% endif %}
 ```
 
 You can also set more options for the `FigureBuilder`, like setting additional meta data, a lightbox identifier, an
