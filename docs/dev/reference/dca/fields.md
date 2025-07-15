@@ -230,7 +230,7 @@ can be [registered using a hook][3].
 | prcnt       | allows numbers between 0 and 100                                                                                  |
 | locale      | expects a valid locale (e.g. "de_CH")                                                                             |
 | language    | expects a valid language code (e.g. "de-CH")                                                                      |
-| google+     | expects a Google+ ID or vanity name ({{< version-tag "5.0" >}} removed)                                           |
+| google+     | expects a Google+ ID or vanity name (removed {{< version-tag "5.0" >}})                                           |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
 | httpurl     | {{< version-tag "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
 | custom      | {{< version-tag "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/', 'errorMsg'=> 'Custom error message']` |
