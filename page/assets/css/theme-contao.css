@@ -759,7 +759,7 @@ mark {
   background-color: var(--PRIMARY-color);
 }
 
-/* Fix height of slects due to font */
+/* Fix height of selects due to font */
 .menu-control select {
     height: auto;
 }
