@@ -12,7 +12,7 @@ you are free to utilize Symfony's [translation component][SymfonyTranslations],
 you will still have to provide translations within Contao's framework for certain
 aspects, mostly in the back end (e.g. translations for managing your own data records 
 via the [Data Container Array][dca]). {{< version-tag "5.3" >}} Though since Contao **5.3** you can also provide these
-Contao translations via the Symfony translation component.
+Contao translations via the Symfony translation component (see [below]({{% relref "#symfony-translations" %}})).
 
 Translations for Contao are managed within the `contao/languages/` folder of your
 application, or the `Resources/contao/languages/` folder of your extension respectively.
