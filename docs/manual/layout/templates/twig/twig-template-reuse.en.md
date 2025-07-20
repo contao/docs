@@ -127,14 +127,14 @@ For this purpose Contao provides you with the `{{ attrs() }}` function. This fun
 {{% example "Customize class for text area" %}}
 
 We want to add the `description` class for the div tag that is around the text area. For this we adjust the
-variable `text_attributes` accordingly. With `set` we fill the variable with new content. The function
-`attrs(text_attributes|default)` provides us with the existing attributes. With `addClass` we add the desired class to
-the attributes.
+variable `text_attributes` accordingly. With `set` we fill the variable with new content. The function `attrs()`
+provides us with a new `HtmlAttributes` object and with `addClass` we add the desired class to the attributes. Then we
+merge this with the existing attributes via `.mergeWith(text_attributes|default)`.
 
 ```twig
 {# /templates/content_element/text.html.twig #}
 {% extends "@Contao/content_element/text.html.twig" %}
-{% set text_attributes = attrs(text_attributes|default).addClass('description') %}
+{% set text_attributes = attrs().addClass('description').mergeWith(text_attributes|default) %}
 ```
 {{% /example %}}
 
