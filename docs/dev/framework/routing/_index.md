@@ -85,7 +85,7 @@ app.controller:
 {{% /expand %}}
 
 {{% expand "Defining routes in Contao 5.3 and up" %}}
-Starting with Contao **5.3** routes based on annotationa or attributes in the `src/Controller/` directory are
+Starting with Contao **5.3** routes based on annotations or attributes in the `src/Controller/` directory are
 automatically loaded by the `contao/manager-bundle`, thus you do not need to create your own `config/routes.yaml` there.
 However, you can still do as shown above if you want or need to define custom routes of course.
 {{% /expand %}}
