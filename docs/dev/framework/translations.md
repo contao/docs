@@ -326,9 +326,10 @@ tl_foobar:
         - My custom field description
 ```
 
-In all cases the translation _keys_ remain the same as in the regular Contao translation PHP or XLIFF files. So in the
-previous example what would have been `$GLOBALS['TL_LANG']['tl_foobar']['new'][1]` now maps
-to `tl_foobar.new.1` in the YAML file of the Symfony translation (same as in the XLIFF case).
+In all cases the translation _keys_ remain the same as in the regular Contao translation PHP or XLIFF files (within the
+`TL_LANG` superglobal in the former case). So in the previous example what would have been
+`$GLOBALS['TL_LANG']['tl_foobar']['new'][1]` now maps to `tl_foobar.new.1` in the YAML file of the Symfony translation
+(same as in the XLIFF case).
 
 
 [ContaoHistory]: /#history
