@@ -169,3 +169,28 @@ ddev add-on get ddev/ddev-phpmyadmin && ddev restart
 ```
 
 With `ddev describe` you can find out how to access the respective database tool.
+
+
+## DDEV Cronjob einrichten
+
+{{< version-tag "5.5" >}} The [back end search](https://docs.contao.org/manual/en/installation/system-requirements/backend-search/) can be activated by setting up the [Contao cronjob framework](https://docs.contao.org/manual/en/performance/cronjobs/).
+
+To do this, first install the [cron add-on](https://github.com/ddev/ddev-cron) in DDEV:
+
+```shell
+ddev add-on get ddev/ddev-cron
+```
+
+Then create a `/.ddev/web-build/contao.cron` file with the following content:
+
+```shell
+* * * * * php /var/www/html/vendor/bin/contao-console contao:cron
+```
+
+Then restart the DDEV project/container:
+
+```shell
+ddev restart
+```
+
+The Contao cronjob is executed every minute. When setting up for the first time, it may take 1-2 minutes before the search bar is available in the back end.
