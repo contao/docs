@@ -19,6 +19,6 @@ This statement uses the [Symfony VarDumper component](https://symfony.com/doc/cu
 display the data. In debug mode, the output will therefore be redirected to the Symfony Debug Toolbar.
 
 {{% notice note %}}
-If you use [template inheritance]({{% relref"template-inheritance.en.md" %}}), the template data is only displayed in
+If you use [template inheritance]({{% relref "template-inheritance.en.md" %}}), the template data is only displayed in
 debug mode or if the statement is enclosed between `$this->block(…)` and `$this->endblock()` statements.
 {{% /notice %}}

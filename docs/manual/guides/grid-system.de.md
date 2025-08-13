@@ -56,7 +56,7 @@ du auch entnehmen unter welchen Bedingungen u. a. die Abstände gesetzt werden:
 - Margin für alle Elemente innerhalb von »mod\_article« wenn sie eine Klasse beginnend mit »ce\_« oder »mod\_« enthalten
 - Kein Margin für »mod\_article« mit zusätzlicher »grid« Bezeichnung.
 
-Das Contao-Grid kann über dein [Seitenlayout]({{% relref"manage-page-layouts.de.md" %}}) im Bereich 
+Das Contao-Grid kann über dein [Seitenlayout]({{% relref "manage-page-layouts.de.md" %}}) im Bereich 
 »CSS-Framework > 12-Spalten Grid« eingebunden werden. 
 
 Zur »2-spaltigen« Darstellung zweier Inhaltselemente vom Typ »Text« kannst du die CSS-Klasse »grid6« dann jeweils im 
@@ -66,7 +66,7 @@ Bereich »Experteneinstellungen > CSS-ID/Klasse« eintragen. Oberhalb von 768 Pi
 {{% notice info %}}
 Das in die Jahre gekommene Contao-Grid funktioniert mit obigen Einschränkungen. Empfohlen wird aber die Nutzung einer 
 aktuellen Grid-Lösung. Als Alternative stehen hierzu [zahlreiche Erweiterungen](https://extensions.contao.org/?q=grid) zur 
-einfachen [Installation]({{% relref"install-extensions.de.md" %}}) zur Verfügung. 
+einfachen [Installation]({{% relref "install-extensions.de.md" %}}) zur Verfügung. 
 {{% /notice %}}
 
 

@@ -5,7 +5,7 @@ description: Allows you to render an insert tag directly.
 tags: [Twig]
 ---
 
-The `insert_tag` function allows you to process a single [insert tag]({{% ref "insert-tags" %}}) within your Twig
+The `insert_tag` function allows you to process a single [insert tag]({{% relref "insert-tags" %}}) within your Twig
 template. This can be useful for executing specific functionalities that are only exposed via the insert tag system.
 
 ```twig

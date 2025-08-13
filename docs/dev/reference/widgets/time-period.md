@@ -9,13 +9,13 @@ This widget renders a text field with a drop-down menu and is proposed to be use
 
 ## Options
 
-| Key            | Value                | Description                                                                 |
-|----------------|----------------------|-----------------------------------------------------------------------------|
-| inputType      | 'timePeriod'         |                                                                             |
-| options        | array                | The options for select menu, typically time units like `['s', 'm', 'h']`  |
-| reference      | array                | The translation array (typically `&$GLOBALS['TL_LANG']['MSC']['timePeriod']`) |
-| eval.disabled  | bool (default false) | Disables the field                                                          |
-| eval.maxlength | int                  | Maximum number of characters allowed in the current field.          |
+| Key            | Value                | Description                                                              |
+|----------------|----------------------|--------------------------------------------------------------------------|
+| inputType      | `timePeriod`         |                                                                          |
+| options        | array                | The options for select menu, typically time units like `['s', 'm', 'h']` |
+| reference      | array                | The translation reference for the values.                                |
+| eval.disabled  | bool (default false) | Disables the field                                                       |
+| eval.maxlength | int                  | Maximum number of characters allowed in the current field.               |
 
 Additionally, there are inherited [global options](../../dca/fields/) like: `label`, `default`, `exclude`, `search`, `sorting`, `filter`, `flag`, `sql`.
 
@@ -35,7 +35,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
     'options' => [
         's', 'm', 'h'
     ],
-    'reference' => &$GLOBALS['TL_LANG']['MSC']['timePeriod'],
+    'reference' => &$GLOBALS['TL_LANG']['tl_foobar']['timePeriod'],
     'sql' => [
         'type' => 'blob',
         'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
@@ -43,4 +43,12 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
     ],
 ],
 // …
+```
+
+```yaml
+# translations/contao_tl_foobar.en.yaml
+tl_foobar:
+    s: Seconds
+    m: Minutes
+    h: Hours
 ```

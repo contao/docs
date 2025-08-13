@@ -199,7 +199,7 @@ $GLOBALS['TL_HEAD'][] = \Contao\Template::generateFeedTag('share/myfeed.xml', 'r
 ### Twig
 
 While you cannot directly add assets to the aforementioned globals in Twig templates, you can use the
-[`add` tag]({{% ref "add" %}}) to add styles and JavaScripts to different sections of the document.
+[`add` tag]({{% relref "add" %}}) to add styles and JavaScripts to different sections of the document.
 
 Contao also comes with a `_stylesheet` component which helps you render inline style sheets:
 
@@ -229,7 +229,7 @@ This will render:
 <noscript><link rel="stylesheet" href="…"></noscript>
 ```
 
-Using Contao's [`add` tag]({{% ref "add" %}}) you can output styles and JavaScripts in different sections of the
+Using Contao's [`add` tag]({{% relref "add" %}}) you can output styles and JavaScripts in different sections of the
 document.
 
 ## Accessing Assets in Templates

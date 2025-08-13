@@ -160,11 +160,6 @@ Be aware that you can **only** use repositories, you cannot add an `auth.json`
 or a `config` section with authentication details. If your repository requires
 authentication, it must be included in the repository URL.
 
-{{% notice note %}}
-Unfortunately, [GitHub](https://github.com) does not support repository-based authentication.
-Known options are [Private Packagist](https://packagist.com) or [GitLab](https://gitlab.com).
-{{% /notice %}}
-
 {{% notice tip %}}
 A `contao-provider` package is still a regular artifact, which can contain any
 number of files. A good example would be an artifact that contains a license key

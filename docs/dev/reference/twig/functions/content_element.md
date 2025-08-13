@@ -7,7 +7,7 @@ tags: [Twig]
 
 {{< version "5.2" >}}
 
-The [`content_element` function]({{% relref"creating-templates#render-content-elements" %}}) renders a content element.
+The [`content_element` function]({{% relref "creating-templates#render-content-elements" %}}) renders a content element.
 
 To render a content element that already exists in the database (similar to the `{{insert_content::*}}` insert tag) you
 can pass its ID:

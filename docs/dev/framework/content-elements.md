@@ -128,7 +128,7 @@ As mentioned previously a content element is registered by registering a control
 | Option   | Type      | Description                                                                                                                               |
 | -------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------|
 | name     | `string`  | Must be `contao.content_element`.                                                                                                         |
-| type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{% relref"#type" %}}) can be customized.                                                        |
+| type     | `string`  | _Optional:_ The *type* mentioned in [Type]({{% relref "#type" %}}) can be customized.                                                        |
 | category | `string`  | Defines in which option group this content element will be placed in the content element selector.                                        |
 | template | `string`  | _Optional:_ Override the generated template name.                                                                                         |
 | renderer | `string`  | _Optional:_ The renderer can be changed to `inline` or `esi`. Defaults to `forward`. See [Caching Fragments][fragments] for more details. |

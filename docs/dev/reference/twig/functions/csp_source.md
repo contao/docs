@@ -5,6 +5,8 @@ description: Adds a source for a CSP directive.
 tags: [Twig]
 ---
 
+{{< version "5.3" >}}
+
 This function allows you to add a [source](https://content-security-policy.com/#source_list) for a CSP directive. This
 is helpful if you have e.g. a content element that adds certain internal or external media files or iframes that can be
 inherently trusted.

@@ -600,7 +600,7 @@ class Example
 
 {{< version "4.13" >}}
 
-This service lets you replace Insert Tags in within strings.
+The `contao.insert_tag.parser` service lets you replace Insert Tags in within strings.
 
 Some methods return a `ChunkedText` instance. The `ChunkedText` container was created to keep the surrounding text 
 containing the insert tags separate from the replacements made by the insert tag parser. It is used for example in the 
@@ -846,7 +846,7 @@ class ExampleService
         // The root page for the given domain (and optional language)
         $rootPageForHost = $this->pageFinder->findRootPageForHostAndLanguage('example.com');
 
-        // The current request's page, if applicable
+        // The current request's page, if applicable (Contao 5.4+)
         $currentPage = $this->pageFinder->getCurrentPage();
 
         // …

@@ -241,6 +241,9 @@ verification code ("Time-based One-time Password") must be entered. This one-tim
 two-factor app such as 1Password, Authy, Google Authenticator, Microsoft Authenticator, LastPass Authenticator, or any 
 other TOTP app.
 
+To do this, the user clicks their username in the top right corner and selects "Security" from the dropdown menu. 
+There, two-factor authentication can be enabled and additional backup codes can be generated.
+
 Users can be required to use two-factor authentication. To do this, the following configuration must be 
 `config/config.yaml`adopted in the:
 

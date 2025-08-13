@@ -262,8 +262,8 @@ If you are using Twig, there are three supported ways to get figures/images into
    {% with {figure: figure(id, '_my_size')} %}{{ block('figure_component') }}{% endwith %}
    ```
 
-   See the [dedicated templates section]({{% ref "creating-templates#images" %}}) and the
-   [Twig reference]({{% ref "figure" %}}) for more detailed examples.
+   See the [dedicated templates section]({{% relref "creating-templates#images" %}}) and the
+   [Twig reference]({{% relref "figure" %}}) for more detailed examples.
 
 4) **Inline** &mdash; You can also output a figure directly from within your template by using the `contao_figure` Twig
    function. The function expects a *resource* (uuid, id, path) as the first and the *image size* as the second argument.

@@ -5,6 +5,8 @@ description: Adds CSP nonces for inline styles and scripts.
 tags: [Twig]
 ---
 
+{{< version "5.3" >}}
+
 This allows you to add [CSP nonces](https://content-security-policy.com/nonce/) for inline styles and scripts.
 
 ```twig

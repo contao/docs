@@ -96,8 +96,8 @@ werden.
 ### Datenbanktabellen aktualisieren
 
 Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
-[Contao Install Tool]({{% relref"/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
-da die Datenbank direkt über den [Contao Manager]({{% relref"installation/contao-manager" %}}) aktualisiert werden kann.
+[Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
+da die Datenbank direkt über den [Contao Manager]({{% relref "installation/contao-manager" %}}) aktualisiert werden kann.
 
 
 ## Ein Administratorkonto anlegen

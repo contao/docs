@@ -42,8 +42,8 @@ werden.
 ### Datenbanktabellen aktualisieren
 
 Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
-[Contao Install Tool]({{% relref"/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
-da die Datenbank direkt über den [Contao Manager]({{% relref"installation/contao-manager" %}}) aktualisiert werden kann.
+[Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
+da die Datenbank direkt über den [Contao Manager]({{% relref "installation/contao-manager" %}}) aktualisiert werden kann.
 
 
 ## Installation über die Kommandozeile {#installation-ueber-die-kommandozeile}
@@ -112,8 +112,8 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 ### Datenbanktabellen aktualisieren
 
 Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
-[Contao Install Tool]({{% relref"/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
-da die Datenbank direkt über den [Contao Manager]({{% relref"installation/contao-manager" %}}) aktualisiert werden kann.
+[Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
+da die Datenbank direkt über den [Contao Manager]({{% relref "installation/contao-manager" %}}) aktualisiert werden kann.
 
 Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
 
@@ -139,9 +139,9 @@ und [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in e
 
 ### Contao Backend-Benutzer erstellen
 
-Über den [Contao Manager]({{% relref"installation/contao-manager" %}}) kannst du dir deinen Backend Benutzer anlegen.
+Über den [Contao Manager]({{% relref "installation/contao-manager" %}}) kannst du dir deinen Backend Benutzer anlegen.
 
-Ab Contao **4.10** kannst du hierzu den folgenden [Befehl]({{% relref"/cli/user" %}}) auf der [Kommandozeile]({{% relref"/cli" %}}) 
+Ab Contao **4.10** kannst du hierzu den folgenden [Befehl]({{% relref "/cli/user" %}}) auf der [Kommandozeile]({{% relref "/cli" %}}) 
 benutzen. Die notwendigen Angaben werden dann auf der Kommandozeile abgefragt:
 
 

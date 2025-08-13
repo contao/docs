@@ -28,7 +28,7 @@ All search engines have one thing in common: processing documents can take a lon
 
 For this reason, Contao requires the ability to index your content in the background via the command line, where typical 30-second limits, as with a web server, do not exist.
 
-The simplest way to meet this requirement is to [set up the Contao Cronjob Framework]({{% relref"cronjobs.en.md" %}}).
+The simplest way to meet this requirement is to [set up the Contao Cronjob Framework]({{% relref "cronjobs.en.md" %}}).
 
 ### Basic Requirement 2: A Search Engine
 
