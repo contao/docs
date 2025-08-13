@@ -21,8 +21,7 @@ and expects the modified form fields as return value.
 
 2. *string* `$formId`
 
-	  Alias of the current form. Used in the `value` attribute of the hidden form
-    field `FORM_SUBMIT`. Don't confuse with `$objForm->id`.
+	Alias of the current form with the prefix `auto_`. Don't confuse with `$form->id`.
 
 3. *\Contao\Form* `$form`
 
