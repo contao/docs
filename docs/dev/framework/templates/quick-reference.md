@@ -160,7 +160,7 @@ define our own attribute.
 ```twig
 {% extends "@Contao/content_element/_base.html.twig" %}
 
-{% set attributes = attrs(attributes|default).set('data-element', data.id) %}
+{% set attributes = attrs().set('data-element', data.id).mergeWith(attributes|default) %}
 ```
 {{% /example %}}
 

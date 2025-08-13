@@ -406,7 +406,7 @@ original templates' blocks, and then make the needed adjustments:
 {% use "@Contao/component/_picture.html.twig" %}
 
 {% block image %}
-    {% set img_attributes = attrs(img_attributes|default).addClass('my-image') %}
+    {% set img_attributes = attrs().addClass('my-image').mergeWith(img_attributes|default) %}
     <div>{{ parent() }}</div>
 {% endblock %}
 ```
@@ -588,10 +588,11 @@ they can simply create the variable with the same pattern, and it will then get 
 {{% example "Making HtmlAttributes better adjustable (Part 2)" %}}
 Let's use the "set and merge" pattern:
 ```twig
-{% set text_attributes = attrs(text_attributes|default)
+{% set text_attributes = attrs()
     .set('id', 'main')
     .addClass(classes)
     .setIfExists('data-tooltip', tooltip|default)
+    .mergeWith(text_attributes|default)
 %}
 <div{{ text_attributes }}>
     {{ text }}
@@ -601,7 +602,7 @@ The magic really shows, when we want to adjust this template. For instance to ad
 ```twig
 {% extends "@Contao/text_example.html.twig" %}
 
-{% set text_attributes = attrs(text_attributes|default).addClass('custom-class') %}
+{% set text_attributes = attrs().addClass('custom-class').mergeWith(text_attributes|default) %}
 ```
 
 {{% notice tip %}}
