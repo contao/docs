@@ -173,7 +173,7 @@ With `ddev describe` you can find out how to access the respective database tool
 
 ## DDEV Cronjob einrichten
 
-{{< version-tag "5.5" >}} The [backend search](https://docs.contao.org/manual/en/installation/system-requirements/backend-search/) can be activated by setting up the [Contao cronjob framework](https://docs.contao.org/manual/en/performance/cronjobs/).
+{{< version-tag "5.5" >}} The [back end search](https://docs.contao.org/manual/en/installation/system-requirements/backend-search/) can be activated by setting up the [Contao cronjob framework](https://docs.contao.org/manual/en/performance/cronjobs/).
 
 To do this, first install the [cron add-on](https://github.com/ddev/ddev-cron) in DDEV:
 
@@ -193,4 +193,4 @@ Then restart the DDEV project/container:
 ddev restart
 ```
 
-The Contao cronjob is executed every minute. When setting up for the first time, it may take 1-2 minutes before the search bar is available in the backend.
+The Contao cronjob is executed every minute. When setting up for the first time, it may take 1-2 minutes before the search bar is available in the back end.
