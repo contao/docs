@@ -351,6 +351,10 @@ contao:
 
     # The path to the Symfony console. Defaults to %kernel.project_dir%/bin/console.
     console_path:         '%kernel.project_dir%/bin/console'
+    registration:
+
+        # The number of days after which unconfirmed registrations expire.
+        expiration:           14
 
     # Allows to define Symfony Messenger workers (messenger:consume). Workers are started every minute using the Contao cron job framework.
     messenger:
