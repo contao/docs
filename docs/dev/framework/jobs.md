@@ -12,9 +12,9 @@ be prepared for behavioral changes.
 {{% /notice %}}
 
 The Jobs framework provides a way to create, persist, and manage background jobs in Contao.
-It is designed for both **system-owned** and **user-owned** jobs, and integrates with Contao's backend user system.
+It is designed for both **system-owned** and **user-owned** jobs, and integrates with Contao's back end user system.
 
-The entry point is the `Contao\CoreBundle\Job\Jobs` service , which acts as the primary API for job creation and retrieval. The idea is that you interact with this service and Contao will take over the tedious work of displaying the jobs, their status, live-updates etc. in the Contao backend.
+The entry point is the `Contao\CoreBundle\Job\Jobs` service , which acts as the primary API for job creation and retrieval. The idea is that you interact with this service and Contao will take over the tedious work of displaying the jobs, their status, live-updates etc. in the Contao back end.
 
 ## Overview
 
@@ -24,7 +24,7 @@ Every job consists of:
 - **UUID** — a unique identifier
 - **Type** — a string describing the purpose or category of the job
 - **Status** — a `Status` enum (`new`, `pending`, `completed`, etc.)
-- **Owner** — an `Owner` value object representing either the system or a backend user
+- **Owner** — an `Owner` value object representing either the system or a back end user
 - **Timestamp** — creation timestamp
 - **Public** — whether the job is visible to others or not (only available for system jobs)
 
@@ -39,7 +39,7 @@ use Contao\CoreBundle\Job\Job;
 // Injected via dependency injection
 public function __construct(private Jobs $jobs) {}
 
-// Create a job for the current backend user if logged in, otherwise it's a system job automatically
+// Create a job for the current back end user if logged in, otherwise it's a system job automatically
 $job = $this->jobs->createJob('data_export');
 
 // Create a job owned by the system and list it also for other users
@@ -93,17 +93,17 @@ $job = $job->markCompleted();
 // When the job failed, you may want to add an error
 $job = $job->markFailed(['my_error']); // internally also calls ->withErrors()
 
-// Add warning translation keys to a job (Future: to be displayed in the backend)
+// Add warning translation keys to a job (Future: to be displayed in the back end)
 $job = $job->withWarnings(['my_warning']);
 
-// Add error translation keys to a job (Future: to be displayed in the backend)
+// Add error translation keys to a job (Future: to be displayed in the back end)
 // Also see markFailed()
 $job = $job->withErrors(['my_error']);
 
-// Update the progress (Future: to be displayed in the backend)
+// Update the progress (Future: to be displayed in the back end)
 $job = $job->withProgress(42); // 42% completed
 
-// Add any metadata to a job (must be serializable). Not used to display in the backend but for
+// Add any metadata to a job (must be serializable). Not used to display in the back end but for
 // you to store intermediate steps, additional information, etc.
 $job = $job->withMetadata(['api_key' => 'foobar', 'iteration_offset' => 11]);
 
