@@ -140,7 +140,7 @@ Weitere Informationen bez. der Verwaltung von Projekten findest du [hier](https:
 Falls du als Windows Anwender die »Git Bash« als Konsole benutzt, kann es, abhängig von deiner »Git für Windows« Konfiguration, notwendig sein das Kommando `winpty` voran zu stellen (z. B.: `winpty ddev ssh`).
 {{% /notice %}}
 
-## Custom PHP Configuration
+## Angepasste PHP-Konfiguration
 
 Mit DDEV können zusätzliche PHP-Konfigurationen für ein Projekt bereitgestellt werden. Du kannst eine beliebige Anzahl von `.ini` Dateien im Verzeichnis `.ddev/php/` hinzufügen. Änderungen erfordern einen Neustart mit `ddev restart`. Weitere Informationen in der [DDEV-Dokumentation](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#custom-php-configuration-phpini).
 
@@ -171,3 +171,28 @@ ddev add-on get ddev/ddev-phpmyadmin && ddev restart
 ```
 
 Mit `ddev describe` erfährst du, wie du das jeweilige Datenbank Tool erreichst.
+
+
+## DDEV Cronjob einrichten
+
+{{< version-tag "5.5" >}} Die [Backend-Suche](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/backend-suche/) kann durch die Einrichtung des [Contao Cronjob-Frameworks](https://docs.contao.org/manual/de/performance/cronjobs/) aktiviert werden.
+
+Dazu in DDEV zunächst die [Cron-Erweiterung](https://github.com/ddev/ddev-cron) installieren:
+
+```shell
+ddev add-on get ddev/ddev-cron
+```
+
+Danach eine `/.ddev/web-build/contao.cron` Datei mit folgendem Inhalt erstellen:
+
+```shell
+* * * * * php /var/www/html/vendor/bin/contao-console contao:cron
+```
+
+Anschließend das DDEV-Projekt/-Container neu starten:
+
+```shell
+ddev restart
+```
+
+Der Contao-Cronjob wird minütlich ausgeführt. Bei der erstmaligen Einrichtung kann es eventuell 1-2 Minuten dauern, bevor die Suchleiste im Backend verfügbar ist.

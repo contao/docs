@@ -46,17 +46,19 @@ the `composer.json`, a full package update needs to be executed of course.
 ## Installing Release Candidates
 
 Release candidates use a specific release version tag. For example the first release
-candidate of Contao `5.5` will have a release tag called `5.5.0-RC1`. Usually Composer
-will only install _stable_ versions by default and thus skip any such release candidates.
+candidate of Contao `{{% siteparam "currentReleaseCandidate" %}}` will have a release tag called
+`{{% siteparam "currentReleaseCandidate" %}}.0-RC1`. Usually Composer will only install _stable_ versions by default and
+thus skip any such release candidates.
 
 To allow the installation of release candidates, the `minimum-stability` needs to be lowered to `RC` in the
 `composer.json`. Alternatively you can also use [stability-flags][ComposerStabilityContraints] for each package in order
-to allow them to be installed in lower stabilities, e.g. `"contao/manager-bundle": "5.5.*@RC". In this case you will
-also have to add the `contao/core-bundle` package to your project's `composer.json` in order to allow the lower
-stability for this package as well.
+to allow them to be installed in lower stabilities, e.g.
+`"contao/manager-bundle": "{{% siteparam "currentReleaseCandidate" %}}.*@RC"`. In this case you will also have to add
+the `contao/core-bundle` package to your project's `composer.json` in order to allow the lower stability for this
+package as well.
 
-Here is a full example for installing the latest Contao `5.5` version, _including_
-its latest release candidates (if there are any):
+Here is a full example for installing the latest Contao `{{% siteparam "currentReleaseCandidate" %}}` version,
+_including_ its latest release candidates (if there are any):
 
 ```json
 {
@@ -65,15 +67,15 @@ its latest release candidates (if there are any):
     "license": "LGPL-3.0-or-later",
     "type": "project",
     "require": {
-        "contao/calendar-bundle": "^5.5@RC",
-        "contao/comments-bundle": "^5.5@RC",
+        "contao/calendar-bundle": "^{{% siteparam "currentReleaseCandidate" %}}@RC",
+        "contao/comments-bundle": "^{{% siteparam "currentReleaseCandidate" %}}@RC",
         "contao/conflicts": "@dev",
-        "contao/core-bundle": "^5.5@RC",
-        "contao/faq-bundle": "^5.5@RC",
-        "contao/listing-bundle": "^5.5@RC",
-        "contao/manager-bundle": "5.5.*@RC",
-        "contao/news-bundle": "^5.5@RC",
-        "contao/newsletter-bundle": "^5.5@RC"
+        "contao/core-bundle": "^{{% siteparam "currentReleaseCandidate" %}}@RC",
+        "contao/faq-bundle": "^{{% siteparam "currentReleaseCandidate" %}}@RC",
+        "contao/listing-bundle": "^{{% siteparam "currentReleaseCandidate" %}}@RC",
+        "contao/manager-bundle": "{{% siteparam "currentReleaseCandidate" %}}.*@RC",
+        "contao/news-bundle": "^{{% siteparam "currentReleaseCandidate" %}}@RC",
+        "contao/newsletter-bundle": "^{{% siteparam "currentReleaseCandidate" %}}@RC"
     },
     "config": {
         "allow-plugins": {
@@ -101,8 +103,8 @@ its latest release candidates (if there are any):
 {{% notice tip %}}
 The version requirement of the other bundles do not need to be changed from their
 default value. For example, a version requirement of `^5.3` (like if you would update 
-from the Contao 5.3 LTS version) also allows any `5.5` version. See Composer's documentation
-on the [version requirement syntax](https://getcomposer.org/doc/articles/versions.md). 
+from the Contao 5.3 LTS version) also allows any `{{% siteparam "currentReleaseCandidate" %}}` version. See Composer's
+documentation on the [version requirement syntax](https://getcomposer.org/doc/articles/versions.md). 
 Only the requested version of the `contao/manager-bundle` needs to be adjusted.
 {{% /notice %}}
 
@@ -181,8 +183,9 @@ of development of the next bugfix version, you can require this branch in the ab
 
 These test versions can also be installed via the Contao Manager, without having
 to manually change the `composer.json`. You can edit the required version of "Contao
-Open Source CMS" to `5.5.*@RC` for example, in order to install release candidates.
-Or you can enter `5.5.x-dev` in order to install development versions.
+Open Source CMS" to `{{% siteparam "currentReleaseCandidate" %}}.*@RC` for example, in order to install release
+candidates. Or you can enter `{{% siteparam "currentReleaseCandidate" %}}.x-dev` in order to install development
+versions.
 
 ![Contao Manager Versionsangabe]({{% asset "images/manual/guides/en/install-version/contao-manager-enter-custom-version.gif" %}}?classes=shadow)
 

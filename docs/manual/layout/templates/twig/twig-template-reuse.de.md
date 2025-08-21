@@ -138,14 +138,14 @@ als Variable verfügbare HTML-Attribute anzupassen.
 {{% example "Klasse für den Textbereich anpassen" %}}
 
 Wir möchten für das div-Tag, welches um den Textbereich liegt, die Klasse `description` ergänzen. Dazu passen wir die
-Variable `text_attributes` entsprechend an. Mit `set` wird die Variable mit neuem Inhalt gefüllt. Die
-Funktion `attrs(text_attributes|default)`
-stellt uns die vorhandenen Attribute zur Verfügung mit `addClass` ergänzen wir die Attribute um die gewünschte Klasse.
+Variable `text_attributes` entsprechend an. Mit `set` wird die Variable mit neuem Inhalt gefüllt. Die Funktion `attrs()`
+erzeugt ein neues `HtmlAttributes` Objekt, mit `addClass` ergänzen wir die Attribute um die gewünschte Klasse und mit
+`.mergeWith(text_attributes|default)` führen wir diese Attribute mit den existierenden zusammen.
 
 ```twig
 {# /templates/content_element/text.html.twig #}
 {% extends "@Contao/content_element/text.html.twig" %}
-{% set text_attributes = attrs(text_attributes|default).addClass('description') %}
+{% set text_attributes = attrs().addClass('description').mergeWith(text_attributes|default) %}
 ```
 {{% /example %}}
 

@@ -18,6 +18,8 @@ The following features are currently in their `@experimental` phase:
 
 * The Twig integration (`Contao\CoreBundle\Twig\*`), since Contao 4.12
 * The virtual filesystem (`Contao\CoreBundle\Filesystem\*`), since Contao 4.13
+* The backend search (`Contao\CoreBundle\Search\*` and related), since Contao 5.5
+* The job framework (`Contao\CoreBundle\Job\*` and related), since Contao 5.6
 
 {{% notice tip %}}
 If a feature is experimental, it does not mean you shouldn't be using it. Please, by all means **do use it**! Otherwise, how are
