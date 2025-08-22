@@ -223,9 +223,9 @@ eingebunden ist.
 <title>Seitentitel</title>
 ```
 
-**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln. Standardmäßig erben Events die Robots-Tag-Einstellung von der Seite, die das „Eventleser“-Modul enthält. Bei Bedarf lässt sich der Robots-Tag pro Event anpassen:
+**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln. Standardmäßig erben Events die Robots-Tag-Einstellung von der Seite, die das »Eventleser«-Modul enthält. Bei Bedarf lässt sich der Robots-Tag pro Event anpassen:
 
-- *Standard (-):* Es wird die Robots-Tag-Einstellung von der Seite mit dem „Eventleser“-Modul verwendet
+- *Standard (-):* Es wird die Robots-Tag-Einstellung von der Seite mit dem »Eventleser«-Modul verwendet
 - *index:* die Seite in den Suchindex aufnehmen
 - *follow:* den Links auf der Seite folgen
 - *noindex:* die Seite nicht in den Suchindex aufnehmen
@@ -335,11 +335,11 @@ Diese Dateien werden sowohl im RSS-Feed exportiert als auch auf der Webseite zum
 
 **Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für ein Event.
 
-{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob das Event bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben Events die Suchindexierer-Einstellung von der Seite, die das „Eventleser“-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro Event anpassen:
+{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob das Event bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben Events die Suchindexierer-Einstellung von der Seite, die das »Eventleser«-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro Event anpassen:
 
-- **Standard (-):** Indizierung gemäß der Suchindexierer-Einstellung von der Seite mit dem „Eventleser“-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
-- **Immer indizieren:** Das Event einbeziehen, auch wenn es den Robots-Tag *noindex* hat oder die Seite mit dem „Eventleser“-Modul andere Einstellungen hat.
-- **Niemals indizieren:** Das Event ausschließen, auch wenn es den Robots-Tag *index* hat oder die Seite mit dem „Eventleser“-Modul andere Einstellungen hat.
+- **Standard (-):** Indizierung gemäß der Suchindexierer-Einstellung von der Seite mit dem »Eventleser«-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
+- **Immer indizieren:** Das Event einbeziehen, auch wenn es den Robots-Tag *noindex* hat oder die Seite mit dem »Eventleser«-Modul andere Einstellungen hat.
+- **Niemals indizieren:** Das Event ausschließen, auch wenn es den Robots-Tag *index* hat oder die Seite mit dem »Eventleser«-Modul andere Einstellungen hat.
 
 
 ### Veröffentlichung {#veroeffentlichung}

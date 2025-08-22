@@ -238,9 +238,9 @@ eingebunden ist.
 <title>Seitentitel</title>
 ```
 
-**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln. Standardmäßig erben Nachrichtenbeiträge die Robots-Tag-Einstellung von der Seite, die das „Nachrichtenleser“-Modul enthält. Bei Bedarf lässt sich der Robots-Tag pro Nachrichtenbeitrag anpassen:
+**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln. Standardmäßig erben Nachrichtenbeiträge die Robots-Tag-Einstellung von der Seite, die das »Nachrichtenleser«-Modul enthält. Bei Bedarf lässt sich der Robots-Tag pro Nachrichtenbeitrag anpassen:
 
-- *Standard (-):* Es wird die Robots-Tag-Einstellung von der Seite mit dem „Nachrichtenleser“-Modul verwendet
+- *Standard (-):* Es wird die Robots-Tag-Einstellung von der Seite mit dem »Nachrichtenleser«-Modul verwendet
 - *index:* die Seite in den Suchindex aufnehmen
 - *follow:* den Links auf der Seite folgen
 - *noindex:* die Seite nicht in den Suchindex aufnehmen
@@ -336,11 +336,11 @@ Diese Dateien werden sowohl im RSS-Feed exportiert als auch auf der Webseite zum
 
 **Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für einen Beitrag.
 
-{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob der Nachrichtenbeitrag bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben Nachrichtenbeiträge die Suchindexierer-Einstellung von der Seite, die das „Nachrichtenleser“-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro Nachrichtenbeitrag anpassen:
+{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob der Nachrichtenbeitrag bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben Nachrichtenbeiträge die Suchindexierer-Einstellung von der Seite, die das »Nachrichtenleser«-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro Nachrichtenbeitrag anpassen:
 
-- **Standard (-):** Indizierung gemäß der Suchindexierer-Einstellung von der Seite mit dem „Nachrichtenleser“-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
-- **Immer indizieren:** Den Nachrichtenbeitrag einbeziehen, auch wenn er den Robots-Tag *noindex* hat oder die Seite mit dem „Nachrichtenleser“-Modul andere Einstellungen hat.
-- **Niemals indizieren:** Den Nachrichtenbeitrag ausschließen, auch wenn er den Robots-Tag *index* hat oder die Seite mit dem „Nachrichtenleser“-Modul andere Einstellungen hat.
+- **Standard (-):** Indizierung gemäß der Suchindexierer-Einstellung von der Seite mit dem »Nachrichtenleser«-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
+- **Immer indizieren:** Den Nachrichtenbeitrag einbeziehen, auch wenn er den Robots-Tag *noindex* hat oder die Seite mit dem »Nachrichtenleser«-Modul andere Einstellungen hat.
+- **Niemals indizieren:** Den Nachrichtenbeitrag ausschließen, auch wenn er den Robots-Tag *index* hat oder die Seite mit dem »Nachrichtenleser«-Modul andere Einstellungen hat.
 
 
 ### Veröffentlichung {#veroeffentlichung}

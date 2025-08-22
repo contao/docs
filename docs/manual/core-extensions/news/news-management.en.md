@@ -228,9 +228,9 @@ not. <sup>4</sup>
 <title>Page title</title>
 ```
 
-**Robots tag:** The robots tag defines how search engines treat a page. By default, news articles inherit the robots tag setting from the page that contains the “news reader” module. If necessary, the robots tag can be adjusted per news article:
+**Robots tag:** The robots tag defines how search engines treat a page. By default, news articles inherit the robots tag setting from the page that contains the "news reader" module. If necessary, the robots tag can be adjusted per news article:
 
-- *Default (-):* The robots tag setting from the page with the “news reader” module is used
+- *Default (-):* The robots tag setting from the page with the "news reader" module is used
 - *index:* add the page to the search index
 - *follow:* follow the links on the page
 - *noindex:* do not include the page in the search index
@@ -319,11 +319,11 @@ files are both exported in the RSS feed and offered for download on your website
 
 **Disable comments:** Here you can deactivate the comment function for a post.
 
-{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the news article should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, news articles inherit the search indexer setting from the page that contains the “news reader” module. If necessary, this behavior can be adjusted per news article:
+{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the news article should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, news articles inherit the search indexer setting from the page that contains the "news reader" module. If necessary, this behavior can be adjusted per news article:
 
-- **Default:** Indexing according to the search indexer setting from the page with the “news reader” module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
-- **Always index:** Include the news article, even if it has the robots tag *noindex* or the page with the “news reader” module has a different setting.
-- **Never index:** Exclude the news article, even if it has the robots tag *index* or the page with the “news reader” module has a different setting.
+- **Default:** Indexing according to the search indexer setting from the page with the "news reader" module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
+- **Always index:** Include the news article, even if it has the robots tag *noindex* or the page with the "news reader" module has a different setting.
+- **Never index:** Exclude the news article, even if it has the robots tag *index* or the page with the "news reader" module has a different setting.
 
 
 ### Publish settings
