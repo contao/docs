@@ -98,6 +98,48 @@ Browser aufrufen kannst.
 **Autor:** Hier kannst du den Autor der Frage ändern.
 
 
+### Metadaten
+
+{{% notice info %}}
+Die Metadaten einzelner FAQ-Seiten können nur angepasst werden, wenn in der FAQ-Kategorie eine Weiterleitungsseite ausgewählt wurde.
+{{% /notice %}}
+
+**Meta-Titel:** Hier kannst du einen individuellen Meta-Titel eingeben, um den Standard-Seitentitel zu überschreiben.
+
+**Ausgabe im Quellcode:**
+```html
+<title>Seitentitel</title>
+```
+
+**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln. Standardmäßig erben FAQ-Seiten die Robots-Tag-Einstellung von der Seite, die das »FAQ-Leser«-Modul enthält. Bei Bedarf lässt sich der Robots-Tag pro FAQ-Seite anpassen:
+
+- *Standard (-):* Es wird die Robots-Tag-Einstellung von der Seite mit dem »FAQ-Leser«-Modul verwendet
+- *index:* die Seite in den Suchindex aufnehmen
+- *follow:* den Links auf der Seite folgen
+- *noindex:* die Seite nicht in den Suchindex aufnehmen
+- *nofollow:* den Links auf der Seite nicht folgen
+
+Mit *index,follow* können Suchmaschinen die FAQ-Seite in den Suchindex aufnehmen. Mit *noindex,nofollow* werden Suchmaschinen angewiesen, die FAQ-Seite nicht in den Suchindex aufzunehmen.
+
+**Ausgabe im Quellcode:**
+```html
+<meta name="robots" content="index,follow">
+```
+
+**Meta-Beschreibung:** Hier kannst du eine individuelle Meta-Beschreibung eingeben, um die Standard-Seitenbeschreibung 
+zu überschreiben.
+
+**Ausgabe im Quellcode:**
+```html
+<meta name="description" content="Beschreibung der Seite (150 und 300 Zeichen).">
+```
+
+**Google Suchergebnis-Vorschau:** Hier kannst du sehen wie Google die Metadaten in den Suchergebnissen anzeigt. Andere 
+Suchmaschinen zeigen gegebenenfalls längere Texte an oder beschneiden diese an einer anderen Position.
+
+![Google Suchergebnis-Vorschau]({{% asset "images/manual/layout/site-structure/de/google-suchergebnis-vorschau.png" %}}?classes=shadow)
+
+
 ### Antwort
 
 **Antwort:** Gebe hier die Antwort auf die Frage ein. Die Eingabe erfolgt wie beim Inhaltselement »Text« mit dem Rich 
@@ -178,6 +220,16 @@ Download angeboten.
 ### Experteneinstellungen
 
 **Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für eine Frage.
+
+{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob die FAQ-Seite bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben FAQ-Seiten die Suchindexierer-Einstellung von der Seite, die das »FAQ-Leser«-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro FAQ-Seite anpassen:
+
+- **Standard (-):** Indizierung gemäß der Suchindexierer-Einstellung von der Seite mit dem »FAQ-Leser«-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
+- **Immer indizieren:** Die FAQ-Seite einbeziehen, auch wenn sie den Robots-Tag *noindex* hat oder die Seite mit dem »FAQ-Leser«-Modul andere Einstellungen hat.
+- **Niemals indizieren:** Die FAQ-Seite ausschließen, auch wenn sie den Robots-Tag *index* hat oder die Seite mit dem »FAQ-Leser«-Modul andere Einstellungen hat.
+
+{{% notice info %}}
+Die **Suchindexierer**-Einstellung kann nur angepasst werden, wenn in der FAQ-Kategorie eine Weiterleitungsseite ausgewählt wurde.
+{{% /notice %}}
 
 
 ### Veröffentlichung {#veroeffentlichung}
