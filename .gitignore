@@ -7,3 +7,4 @@
 /link-checker/*.lock
 /deepl/vendor
 /deepl/.php_cs.cache
+/link-checker/manual-result.md
