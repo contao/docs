@@ -39,7 +39,7 @@ installed](https://github.com/contao/contao-demo). Via the Contao Manager you ca
 Open the console of your choice, create the desired directory and then change to it. The directory name reflects the subsequent project hostname. However, you can [configure this](https://ddev.readthedocs.io/en/latest/users/extend/additional-hostnames/) additionally.
 
 ```shell
-mkdir contao && cd contao 
+mkdir contao && cd contao
 ```
 
 Create the DDEV configuration with:
