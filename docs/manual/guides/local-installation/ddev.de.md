@@ -192,7 +192,8 @@ Erstelle dann die Datei `/.ddev/web-build/contao.cron` mit folgendem Inhalt:
 * * * * * ddev exec vendor/bin/contao-console contao:cron
 ```
 {{% notice info %}} 
-Bitte beachte, dass es unter bestimmten Umständen nicht möglich ist, das contao-console-command außerhalb des ddev-containers zu referenzieren. Ein Aufruf von ```* * * * * php /var/www/html/vendor/bin/contao-console contao:cron``` ist daher nicht möglich. Bitte verwende stattdessen die Kommandos **ddev ssh** oder **ddev exec**, so wie es auch in den ddev Docs empfohlen wird. {{% /notice %}}
+Bitte beachte, dass es unter bestimmten Umständen nicht möglich ist, das contao-console-command außerhalb des ddev-containers zu referenzieren. Ein Aufruf von `* * * * * php /var/www/html/vendor/bin/contao-console contao:cron` ist daher nicht möglich. Bitte verwende stattdessen die Kommandos **ddev ssh** oder **ddev exec**, so wie es auch in den ddev Docs empfohlen wird.
+{{% /notice %}}
 
 Starte anschließend das DDEV-Projekt/ den Container neu:
 
