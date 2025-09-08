@@ -182,7 +182,9 @@ Dazu in DDEV zunächst die [Cron-Erweiterung](https://github.com/ddev/ddev-cron)
 ```shell
 ddev add-on get ddev/ddev-cron
 ```
-{{% notice info %}} Wenn du bereits länger mit DDEV entwickelt hast, kann es sein, dass du eine Fehlermeldung bei der Ausführung von ```ddev add-on get ddev/ddev-cron``` erhältst. Die Ursache dafür ist, dass das add-on erst ab der ddev-Version 1.24 unterstützt wird. Du musst also zuerst ddev updaten. {{% /notice %}}
+{{% notice info %}}
+Wenn du bereits länger mit DDEV entwickelt hast, kann es sein, dass du eine Fehlermeldung bei der Ausführung von `ddev add-on get ddev/ddev-cron` erhältst. Die Ursache dafür ist, dass das add-on erst ab der ddev-Version 1.24 unterstützt wird. Du musst also zuerst ddev updaten.
+{{% /notice %}}
 
 Erstelle dann die Datei `/.ddev/web-build/contao.cron` mit folgendem Inhalt:
 
