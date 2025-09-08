@@ -217,7 +217,7 @@ services:
     - /home/$USER/repository:/home/$USER/repository:rw
 ```
 
-Starte den Container mit ```dddev restart``` neu.
+Starte den Container mit ```ddev restart``` neu.
 
 Jetzt kannst du die im angegbenen Ordner abgelegten Bundles wie gewohnt als pfad-repository in deiner **composer.json** verwenden.
 ```
