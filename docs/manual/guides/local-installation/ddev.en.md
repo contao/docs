@@ -180,7 +180,9 @@ To do this, first install the [cron add-on](https://github.com/ddev/ddev-cron) i
 ```shell
 ddev add-on get ddev/ddev-cron
 ```
-{{% notice info %}} If you have been using DDEV for a long time, you may receive an error message when setting up ```ddev add-on get ddev/ddev-cron```. The reason for this is that the add-on has only been supported by DDEV since version 1.24. So you need to update DDEV. {{% /notice %}}
+{{% notice info %}}
+If you have been using DDEV for a long time, you may receive an error message when setting up `ddev add-on get ddev/ddev-cron`. The reason for this is that the add-on has only been supported by DDEV since version 1.24. So you need to update DDEV.
+{{% /notice %}}
 
 Then create a `/.ddev/web-build/contao.cron` file with the following content:
 
