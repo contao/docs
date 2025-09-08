@@ -227,4 +227,6 @@ Now you can use the repository in your root **composer.json**.
 ],
 ```
 
-{{% notice info %}} If the Contao Manager cannot find the repositories, it helps to deactivate the **Composer Resolver Cloud**. {{% /notice %}}
+{{% notice info %}}
+If the Contao Manager cannot find the repositories, it helps to deactivate the **Composer Resolver Cloud**.
+{{% /notice %}}
