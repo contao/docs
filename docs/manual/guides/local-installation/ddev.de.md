@@ -229,4 +229,6 @@ Jetzt kannst du die im angegbenen Ordner abgelegten Bundles wie gewohnt als pfad
 ],
 ```
 
-{{% notice info %}} Wenn der Contao Manager die so konfigurierten repositories nicht finden kann, so hilft es, die Option **Composer Resolver Cloud** im Contao Manager zu deaktivieren. {{% /notice %}}
+{{% notice info %}}
+Wenn der Contao Manager die so konfigurierten repositories nicht finden kann, so hilft es, die Option **Composer Resolver Cloud** im Contao Manager zu deaktivieren.
+{{% /notice %}}
