@@ -215,7 +215,7 @@ services:
     volumes:
     - /home/$USER/repository:/home/$USER/repository:rw
 ```
-Then restart the container with ```dddev restart```.
+Then restart the container with `ddev restart`.
 
 Now you can use the repository in your root **composer.json**. 
 ```
