@@ -58,8 +58,11 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
      */
     private array $domainRateLimiter = [];
 
+    // Requests per minute per domain
     private static $domainLimitMap = [
         'github.com' => 1,
+        'www.urlencoder.org' => 1,
+        'dev.mysql.com' => 1,
     ];
 
     public function __construct(private string $outputPath)
