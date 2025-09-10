@@ -51,7 +51,7 @@ ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --ph
 Install Contao 5.3:
 
 ```shell
-ddev composer create contao/managed-edition:5.3
+ddev composer create-project contao/managed-edition:5.3
 ```
 
 After installation, the database credentials must be entered in the `.env.local`. At the same time, we also set up 
