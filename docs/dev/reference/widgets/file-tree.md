@@ -78,7 +78,6 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
         'isGallery' => true,
         'multiple' => true,
         'extensions' => '%contao.image.valid_extensions%',
-        'orderField' => 'orderSRC',
     ],
     'sql' => [
         'type' => 'blob',
