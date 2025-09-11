@@ -183,17 +183,14 @@ Dazu in DDEV zunächst die [Cron-Erweiterung](https://github.com/ddev/ddev-cron)
 ddev add-on get ddev/ddev-cron
 ```
 {{% notice info %}}
-Wenn du bereits länger mit DDEV entwickelt hast, kann es sein, dass du eine Fehlermeldung bei der Ausführung von `ddev add-on get ddev/ddev-cron` erhältst. Die Ursache dafür ist, dass das add-on erst ab der ddev-Version 1.24 unterstützt wird. Du musst also zuerst ddev updaten.
+Wenn du bereits länger mit DDEV entwickelt hast, kann es sein, dass du eine Fehlermeldung bei der Ausführung von `ddev add-on get ddev/ddev-cron` erhältst. Die Ursache dafür ist, dass das add-on erst ab der ddev-Version 1.24 unterstützt wird. Du musst also zuerst ddev updaten. Sie zum Update auch https://docs.ddev.com/en/stable/users/install/ddev-upgrade/.
 {{% /notice %}}
 
 Erstelle dann die Datei `/.ddev/web-build/contao.cron` mit folgendem Inhalt:
 
 ```shell
-* * * * * ddev exec vendor/bin/contao-console contao:cron
+* * * * * php /var/www/html/vendor/bin/contao-console contao:cron
 ```
-{{% notice info %}} 
-Bitte beachte, dass es unter bestimmten Umständen nicht möglich ist, das contao-console-command außerhalb des ddev-containers zu referenzieren. Ein Aufruf von `* * * * * php /var/www/html/vendor/bin/contao-console contao:cron` ist daher nicht möglich. Bitte verwende stattdessen die Kommandos **ddev ssh** oder **ddev exec**, so wie es auch in den ddev Docs empfohlen wird.
-{{% /notice %}}
 
 Starte anschließend das DDEV-Projekt/ den Container neu:
 
