@@ -499,6 +499,9 @@ The form field generates the following HTML code:
 
 ## Range slider
 
+The `Range Slider` form field adds a field to the form for selecting a value or a range of values within a specified minimum and maximum.
+
+
 ### Expert settings
 
 **CSS class:** Here you can enter one or more CSS classes.

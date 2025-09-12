@@ -516,6 +516,9 @@ Das Formularfeld generiert folgenden HTML-Code:
 
 ## Range-Slider
 
+Das Formularfeld `Range-Slider` fügt dem Formular ein Feld hinzu zur Auswahl eines Wertes oder eines Wertebereichs innerhalb eines spezifizierten Mini- und Maximums.
+
+
 ### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
