@@ -52,9 +52,9 @@ The form field generates the following HTML code:
 ```
 
 
-## HTML
+## HTML code
 
-The `HTML` form field adds HTML code to the form. In the backend settings under "AllowedHTML tags", you can define 
+The `HTML code` form field adds HTML code to the form. In the backend settings under "AllowedHTML tags", you can define 
 which HTML tags can be used.
 
 

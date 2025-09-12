@@ -27,7 +27,7 @@ es leer, erscheint eine Fehlermeldung.
 ## Erklärung {#erklaerung}
 
 Das Formularfeld `Erklärung` fügt dem Formular eine beliebige formatierte Erklärung hinzu. Die Eingabe erfolgt über den 
-Rich Text Editor.
+Rich-Text-Editor.
 
 
 ### Text/HTML
@@ -54,9 +54,9 @@ Das Formularfeld generiert folgenden HTML-Code:
 ```
 
 
-## HTML
+## HTML-Code
 
-Das Formularfeld `HTML` fügt dem Formular beliebigen HTML-Code hinzu. In den Backend-Einstellungen unter »Erlaubte 
+Das Formularfeld `HTML-Code` fügt dem Formular beliebigen HTML-Code hinzu. In den Backend-Einstellungen unter »Erlaubte 
 HTML-Tags« kannst du festlegen, welche HTML-Tags verwendet werden dürfen.
 
 
@@ -130,7 +130,7 @@ Formulars geprüft werden.
 | Absolute URL                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
 | Eigene                             | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
 
 
 ### Experteneinstellungen
@@ -227,7 +227,7 @@ Formulars geprüft werden.
 | Absolute URL                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
 | Eigene                             | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
 
 
 ### Reihen und Spalten
@@ -522,9 +522,9 @@ Das Formularfeld generiert folgenden HTML-Code:
 
 **Standard-Wert:** Hier kannst du einen Standard-Wert für das Feld eingeben.
 
-**Minimalwert:** Hier kannst due einen Minimalwert für numerische Eingaben festlegen.
+**Minimalwert:** Hier kannst du einen Minimalwert für numerische Eingaben festlegen.
 
-**Maximalwert:** Hier kannst due einen Maximalwert für numerische Eingaben festlegen.
+**Maximalwert:** Hier kannst du einen Maximalwert für numerische Eingaben festlegen.
 
 **Schritt:** Hier kannst du die Schrittgröße des Feldes festlegen.
 
@@ -601,7 +601,7 @@ Das Formularfeld generiert folgenden HTML-Code:
 Das Formularfeld `Sicherheitsfrage` fügt dem Formular ein [CAPTCHA](https://de.wikipedia.org/wiki/Captcha) 
 hinzu. 
 
-Mit Hilfe eines [Honeypots](https://de.wikipedia.org/wiki/Honeypot) werden Spambots in die Falle gelockt und 
+Mithilfe eines [Honeypots](https://de.wikipedia.org/wiki/Honeypot) werden Spambots in die Falle gelockt und 
 ausgesperrt. Der Honeypot besteht aus mehreren verstecken Feldern, die als Köder dienen. Normale Benutzer können die 
 Felder nicht sehen und verändern sie deshalb nicht – die meisten Spambots schon. Zusätzlich werden im Hintergrund 
 weitere Faktoren geprüft um Benutzer und Spambots zu unterscheiden.
@@ -612,7 +612,7 @@ Rechenaufgabe lösen. Es gehen unter keinen Umständen abgesendete Formulardaten
 
 ### Feldkonfiguration
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
 
 
 ### Experteneinstellungen
