@@ -25,7 +25,7 @@ class NormalizeCommand extends Command
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $style = new SymfonyStyle($input, $output);
-        $docs = Path::canonicalize(Path::join(__DIR__, '../../docs'));
+        $docs = Path::join(__DIR__, '../../docs');
         $finder = (new Finder())
             ->in($docs)
             ->files()
