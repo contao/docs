@@ -40,7 +40,7 @@ class NormalizeCommand extends Command
             $normalized = \Normalizer::normalize($content);
 
             if ($normalized !== $content) {
-                file_put_contents($path, \Normalizer::normalize(file_get_contents($file->getPathname())));
+                file_put_contents($path, $normalized);
                 $processed[] = Path::makeRelative($path, $docs);
             }
         }
