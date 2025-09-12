@@ -8,7 +8,7 @@ weight: 40
 ---
 
 Wie die meisten Open-Source-Projekte wird auch Contao kontinuierlich weiterentwickelt. Mit jedem Update werden 
-Komponenten aktualisiert, Fehler behoben, neue Funktionen hinzugefügt oder die Performance verbessert. Es wird daher
+Komponenten aktualisiert, Fehler behoben, neue Funktionen hinzugefügt oder die Performance verbessert. Es wird daher
 empfohlen, immer eine aktuelle Version zu verwenden.
 
 
@@ -28,7 +28,7 @@ Major-Version von Contao ist beim Schreiben dieser Zeilen die **Version 5**.
 ### Minor-Release
 
 Bei einem Minor-Release handelt es sich um eine Art Meilenstein auf dem Weg der Entwicklung, bei dem neue Funktionen 
-hinzugefügt wurden. Kleinere Anpassungen bestehender Seiten können daher notwendig sein. Die aktuelle Minor-Version von 
+hinzugefügt wurden. Kleinere Anpassungen bestehender Seiten können daher notwendig sein. Die aktuelle Minor-Version von 
 Contao ist beim Schreiben dieser Zeilen die **Version 5.5**.
 
 
@@ -70,8 +70,8 @@ werden.
 
 ### Datenbanktabellen aktualisieren
 
-Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung irgendwelche 
-Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe 
+Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung irgendwelche 
+Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe 
 dann das Installtool.
 
 Deine Contao-Installation ist jetzt auf dem neuesten Stand.
@@ -134,8 +134,8 @@ $ composer update
 
 ### Datenbanktabellen aktualisieren
 
-Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung irgendwelche 
-Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe 
+Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung irgendwelche 
+Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe 
 dann das Installtool.
 
 Anstelle des Contao-Installtools kannst du (ab Contao 4.9) zur Aktualisierung der Datenbanktabellen auf der 
@@ -211,8 +211,8 @@ Zum Abschluss musst du noch die Datenbanktabellen aktualisieren.
 
 ### Datenbanktabellen aktualisieren
 
-Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung Änderungen an deiner 
-Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe dann das Installtool.
+Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung Änderungen an deiner 
+Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe dann das Installtool.
 
 Anstelle des Contao-Installtools kannst du (ab Contao 4.9) zur Aktualisierung der Datenbanktabellen auf der 
 Kommandozeile das Command 

@@ -33,10 +33,10 @@ darzustellen.
 
 ### Zugriffsschutz
 
-Genau wie Inhaltselemente können auch News- bzw. Blog-Beiträge geschützt werden. Die Beiträge des Archivs werden dann 
+Genau wie Inhaltselemente können auch News- bzw. Blog-Beiträge geschützt werden. Die Beiträge des Archivs werden dann 
 nur angemeldeten Mitgliedern angezeigt.
 
-**Archiv schützen:** Hier aktivierst du den Zugriffsschutz.
+**Archiv schützen:** Hier aktivierst du den Zugriffsschutz.
 
 **Erlaubte Mitgliedergruppen:** Hier legst du fest, welche Mitgliedergruppen nach der Anmeldung im Frontend Zugriff auf 
 die Beiträge haben sollen.
@@ -45,11 +45,11 @@ die Beiträge haben sollen.
 ### Kommentare
 
 Die Contao-Kommentarfunktion kennst du bereits von dem gleichnamigen
-[Include-Element (Kommentare)](/de/artikelverwaltung/inhaltselemente/include-elemente/#kommentare). Sie steht auch für 
-News- bzw. Blog-Beiträge zur Verfügung und sollte auf jeden Fall aktiviert werden, wenn du die Erweiterungen als Blog 
+[Include-Element (Kommentare)](/de/artikelverwaltung/inhaltselemente/include-elemente/#kommentare). Sie steht auch für 
+News- bzw. Blog-Beiträge zur Verfügung und sollte auf jeden Fall aktiviert werden, wenn du die Erweiterungen als Blog 
 nutzt.
 
-**Kommentare aktivieren:** Hier aktivierst du die Kommentarfunktion für das Archiv.
+**Kommentare aktivieren:** Hier aktivierst du die Kommentarfunktion für das Archiv.
 
 **Benachrichtigung an:** Hier legst du fest, ob bei neuen Kommentaren der Systemadministrator, der Autor eines Beitrags 
 oder beide benachrichtigt werden.
@@ -64,27 +64,27 @@ automatisch einen Seitenumbruch.
 erst, nachdem du sie im Backend freigegeben hast.
 
 **BBCode erlauben:** Wenn du diese Option wählst, können deine Besucher [BBCode](https://de.wikipedia.org/wiki/BBCode) 
-zur Formatierung ihrer Kommentare verwenden. Folgende Tags werden unterstützt:
+zur Formatierung ihrer Kommentare verwenden. Folgende Tags werden unterstützt:
 
 | Tag                                  | Erklärung                                   |
 |:-------------------------------------|:--------------------------------------------|
 | `[b][/b]`                            | Fettschrift                                 |
 | `[i][/i]`                            | Kursivschrift                               |
 | `[u][/u]`                            | Unterstrichen                               |
-| `[img][/img]`                        | Bild einfügen                              |
-| `[code][/code]`                      | Programmcode einfügen                      |
+| `[img][/img]`                        | Bild einfügen                              |
+| `[code][/code]`                      | Programmcode einfügen                      |
 | `[color=#f00][/color]`               | Farbiger Text                               |
-| `[quote][/quote]`                    | Zitat einfügen                             |
-| `[quote=Tim][/quote]`                | Zitat mit Nennung des Urhebers einfügen    |
-| `[url][/url]`                        | Link einfügen                              |
-| `[url=http://example.com][/url]`     | Link mit Linktitel einfügen                |
-| `[email][email]`                     | E-Mail-Adresse einfügen                    |
-| `[email=info@example.com][/email]`   | E-Mail-Adresse mit Titel einfügen          |
+| `[quote][/quote]`                    | Zitat einfügen                             |
+| `[quote=Tim][/quote]`                | Zitat mit Nennung des Urhebers einfügen    |
+| `[url][/url]`                        | Link einfügen                              |
+| `[url=http://example.com][/url]`     | Link mit Linktitel einfügen                |
+| `[email][email]`                     | E-Mail-Adresse einfügen                    |
+| `[email=info@example.com][/email]`   | E-Mail-Adresse mit Titel einfügen          |
 
 **Login zum Kommentieren benötigt:** Wenn du diese Option auswählst, können nur angemeldete Mitglieder Kommentare 
-hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle Besucher der Webseite sichtbar.
+hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle Besucher der Webseite sichtbar.
 
-**Spam-Schutz deaktivieren:** Standardmäßig müssen Besucher beim Erstellen von Kommentaren eine Sicherheitsfrage 
+**Spam-Schutz deaktivieren:** Standardmäßig müssen Besucher beim Erstellen von Kommentaren eine Sicherheitsfrage 
 beantworten, damit die Kommentarfunktion nicht zu Spam-Zwecken missbraucht werden kann. Falls du aber ohnehin nur 
 angemeldeten Mitgliedern das Kommentieren erlauben möchtest, kannst du die Sicherheitsfrage hier deaktivieren.
 Seit Contao 4.4 wird diese Frage nur noch den Spambots »angezeigt«.
@@ -122,14 +122,14 @@ Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten]({{% asset "icons
 
 ### Feed-Einstellungen
 
-**Feed-Format:** Hier legst du das Format des Feeds fest. Contao unterstützt RSS 2.0 und Atom, die beiden am weitesten
+**Feed-Format:** Hier legst du das Format des Feeds fest. Contao unterstützt RSS 2.0 und Atom, die beiden am weitesten
 verbreiteten Formate.
 
 **Export-Einstellungen:** Hier legst du fest, ob lediglich die Teasertexte der Beiträge oder die kompletten Beiträge
 als Feed exportiert werden.
 
 **Maximale Anzahl an Beiträgen:** Hier kannst du die Anzahl der Beiträge des Feeds beschränken. In der Regel reichen um
-die 25 Beiträge pro Feed vollkommen aus. Meistens werden ohnehin nur die ersten drei bis fünf tatsächlich verwendet.
+die 25 Beiträge pro Feed vollkommen aus. Meistens werden ohnehin nur die ersten drei bis fünf tatsächlich verwendet.
 
 **Basis-URL:** Die Basis-URL ist vor allem im Multidomain-Betrieb wichtig, wenn du mehrere Webseiten mit einer
 Contao-Installation betreibst. Damit der Feed auf die richtige Domain verlinkt, kannst du diese hier eingeben.
@@ -139,7 +139,7 @@ Contao-Installation betreibst. Damit der Feed auf die richtige Domain verlinkt, 
 
 ### Bildeinstellungen
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
 auswählen:
 
 | Eigene Größen                                  |                                                                                                                           |
@@ -182,13 +182,13 @@ Um einen neuen Beitrag zu erstellen, klicke im gewünschten Archiv auf
 
 In diesem Abschnitt ist vor allem das Hervorheben von Beiträgen interessant. Hervorgehobene Beiträge ermöglichen das 
 Erstellen eines »virtuellen Archivs«, das aus den verschiedenen Archiven jeweils nur die hervorgehobenen Beiträge 
-enthält. Dadurch kannst du z. B. eine übergreifende Liste wichtiger Nachrichten auf der Startseite ausgeben.
+enthält. Dadurch kannst du z. B. eine übergreifende Liste wichtiger Nachrichten auf der Startseite ausgeben.
 
 **Titel:** Hier kannst du den Titel der Nachricht eingeben.
 
 **Beitrag hervorheben:** Hier kannst du den Beitrag in einer Liste mit hervorgehobener Nachrichten anzeigen.
 
-**Nachrichtenalias:** Der Alias eines Beitrags ist eine eindeutige und aussagekräftige Referenz, über die du ihn
+**Nachrichtenalias:** Der Alias eines Beitrags ist eine eindeutige und aussagekräftige Referenz, über die du ihn
 in deinem Browser aufrufen kannst.
 
 **Autor:** Hier kannst du den Autor des Beitrags ändern.
@@ -269,7 +269,7 @@ Suchmaschinen zeigen gegebenenfalls längere Texte an oder beschneiden diese an 
 
 ### Unterüberschrift und Teaser {#unterueberschrift-und-teaser}
 
-**Unterüberschrift:** Hier kannst du eine optionale Unterüberschrift eingeben.
+**Unterüberschrift:** Hier kannst du eine optionale Unterüberschrift eingeben.
 
 **Teasertext:** Hier kannst du eine kurze Zusammenfassung des Nachrichtenbeitrags (Teaser) eingeben, die dann 
 beispielsweise mit dem Modul »Nachrichtenliste«, gefolgt von einem Weiterlesen-Link zum eigentlichen Beitrag, 
@@ -278,17 +278,17 @@ dargestellt werden kann.
 
 ### Bildeinstellungen
 
-**Ein Bild hinzufügen:** Bei Bedarf kannst du dem Beitrag ein Bild hinzufügen.
+**Ein Bild hinzufügen:** Bei Bedarf kannst du dem Beitrag ein Bild hinzufügen.
 
-**Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
+**Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du es direkt im Popup-Fenster nachholen, ohne die Eingabemaske zu verlassen.
 
 **Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße
-geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
+geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
-![Einem Beitrag ein Bild hinzufügen]({{% asset "images/manual/core-extensions/news/de/einem-beitrag-ein-bild-hinzufuegen.png" %}}?classes=shadow)
+![Einem Beitrag ein Bild hinzufügen]({{% asset "images/manual/core-extensions/news/de/einem-beitrag-ein-bild-hinzufuegen.png" %}}?classes=shadow)
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
 
 | Eigene Größen                                  |                                                                                                                           |
@@ -307,14 +307,14 @@ umfließt der Text das Bild (wie im Icon symbolisiert).
 **Metadaten überschreiben:**  Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
 **Alternativer Text:** Hier kannst du einen alternativen Text für das Bild eingeben *(alt-Attribut)*. Eine 
-barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die angezeigt wird, wenn das Objekt 
+barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die angezeigt wird, wenn das Objekt 
 selbst nicht dargestellt werden kann. Alternative Texte werden außerdem von Suchmaschinen ausgewertet und sind daher 
 ein wichtiges Instrument der Onpage-Optimierung.
 
 **Bildtitel:** Hier kannst du den Titel des Bildes eingeben *(title-Attribut)*.
 
 **Bildlink-Adresse:** Bei einem Klick auf ein verlinktes Bild wirst du direkt zu der angegebenen Zielseite 
-weitergeleitet (entspricht einem Bildlink). Beachte, dass für ein verlinktes Bild keine Lightbox-Großansicht mehr 
+weitergeleitet (entspricht einem Bildlink). Beachte, dass für ein verlinktes Bild keine Lightbox-Großansicht mehr 
 möglich ist.
 
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.
@@ -322,19 +322,19 @@ möglich ist.
 
 ### Anlagen
 
-Anlagen, im Zusammenhang mit RSS-Feeds auch »Enclosures« genannt, sind Dateien, die mit einem Beitrag verknüpft sind. 
+Anlagen, im Zusammenhang mit RSS-Feeds auch »Enclosures« genannt, sind Dateien, die mit einem Beitrag verknüpft sind. 
 Diese Dateien werden sowohl im RSS-Feed exportiert als auch auf der Webseite zum Download angeboten.
 
-**Anlagen hinzufügen:** Hier aktivierst du das Hinzufügen von Anlagen.
+**Anlagen hinzufügen:** Hier aktivierst du das Hinzufügen von Anlagen.
 
-**Anlangen:** Hier wählst du die Dateien aus, die du mit dem Beitrag verknüpfen möchtest.
+**Anlangen:** Hier wählst du die Dateien aus, die du mit dem Beitrag verknüpfen möchtest.
 
 
 ### Experteneinstellungen
 
-**CSS-Klasse:** Hier kannst du dem Beitrag eine CSS-Klasse hinzufügen.
+**CSS-Klasse:** Hier kannst du dem Beitrag eine CSS-Klasse hinzufügen.
 
-**Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für einen Beitrag.
+**Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für einen Beitrag.
 
 {{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob der Nachrichtenbeitrag bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben Nachrichtenbeiträge die Suchindexierer-Einstellung von der Seite, die das »Nachrichtenleser«-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro Nachrichtenbeitrag anpassen:
 

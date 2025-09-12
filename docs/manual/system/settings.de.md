@@ -28,7 +28,7 @@ Kevin Jones [kevin.jones@example.com]
 
 ### Datum und Zeit
 
-**Datums- und Zeitformat:** Alle Datums- und Zeitformate müssen wie in der 
+**Datums- und Zeitformat:** Alle Datums- und Zeitformate müssen wie in der 
 [PHP-Funktion date](https://www.php.net/manual/de/function.date.php) eingegeben werden. Contao verarbeitet im Backend 
 ausschließlich numerische Formate, also die Buchstaben j, d, m, n, y, Y, g, G, h, H, i und s.
 
@@ -51,8 +51,8 @@ der Zeitzone nicht automatisch anpasst.
 
 ### Backend-Einstellungen
 
-**Elemente nicht verkürzen:** Im »Parent View« stellt Contao die Elemente aus Gründen der Übersichtlichkeit verkürzt 
-dar, wobei einzelne Elemente über ein Navigationsicon bei Bedarf ausgeklappt werden können. Wähle diese Option, um das 
+**Elemente nicht verkürzen:** Im »Parent View« stellt Contao die Elemente aus Gründen der Übersichtlichkeit verkürzt 
+dar, wobei einzelne Elemente über ein Navigationsicon bei Bedarf ausgeklappt werden können. Wähle diese Option, um das 
 Feature komplett zu deaktivieren.
 
 **Elemente pro Seite:** Im Abschnitt [Datensätze auflisten](../../administrationsbereich/datensaetze-auflisten/#datensaetze-sortieren-und-filtern) 
@@ -60,8 +60,8 @@ hast du gelernt, dass Contao die Anzahl der Datensätze pro Seite standardmäßi
 hier beliebig anpassen. Höhere Werte bedeuten jedoch eine längere Ladezeit.
 
 **Maximum Datensätze pro Seite:** Um zu verhindern, dass ein unbedarfter Benutzer sich 5000 Datensätze auf einmal 
-anzeigen lässt und damit das PHP Memory Limit überschreitet, kannst du festlegen, wie viele Datensätze maximal pro Seite 
-angezeigt werden dürfen.
+anzeigen lässt und damit das PHP Memory Limit überschreitet, kannst du festlegen, wie viele Datensätze maximal pro Seite 
+angezeigt werden dürfen.
 
 #### Zusätzliche Backend-Einstellungen:
 
@@ -118,7 +118,7 @@ bei Verwendung des [Legacy-Routing-Modus][LegacyRouting] ohne `contao.prepend_lo
 geprüft werden _(unsicher!)_.
 
 **Erlaubte HTML-Tags:** Standardmäßig erlaubt Contao keine HTML-Tags in Formularen und entfernt diese beim Speichern 
-automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter 
+automatisch. Für Eingabefelder, bei denen die Nutzung von HTML erwünscht ist, kannst du hier eine Liste erlaubter 
 HTML-Tags festlegen.
 
 {{< version-tag "4.11.7, 4.9.18 und 4.4.56" >}} **Erlaubte HTML-Attribute:** Die Liste der erlaubten HTML-Attribute für Eingabefelder kannst du hier beliebig erweitern. 
@@ -157,7 +157,7 @@ Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüsse
 ### Dateien und Bilder
 
 **Erlaubte Download-Dateitypen:** Hier kannst du festlegen, welche Dateitypen von deinem Server heruntergeladen werden 
-dürfen (Download).
+dürfen (Download).
 
 **Maximale GD-Bildbreite:** Hier kannst du festlegen, wie breit Bilder sein dürfen, damit sie von der GD 
 Bildbearbeitungs-Bibliothek noch verarbeitet werden können. Jegliche Bilder, die diesen Wert übersteigen, werden nicht
@@ -170,18 +170,18 @@ verarbeitet.
 
 ### Datei-Uploads
 
-**Erlaubte Upload-Dateitypen:** Hier kannst du festlegen, welche Dateitypen auf deinen Server übertragen werden dürfen 
+**Erlaubte Upload-Dateitypen:** Hier kannst du festlegen, welche Dateitypen auf deinen Server übertragen werden dürfen 
 (Upload).
 
 **Maximale Upload-Dateigröße:** Hier kannst du festlegen, wie groß eine mit der Dateiverwaltung auf deinen Server 
 übertragene Datei maximal sein darf. Die Eingabe erfolgt in Bytes (1 MiB = 1024 KiB = 1.048.576 Bytes). Größere Dateien 
 werden abgelehnt.
 
-**Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese 
+**Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht diese 
 Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird es automatisch 
 verkleinert.
 
-**Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese Werte 
+**Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese Werte 
 mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird es automatisch verkleinert.
 
 
@@ -192,7 +192,7 @@ daraus einen Suchindex. Mit dem Frontend-Modul
 »[Suchmaschine](../../modulverwaltung/website-suche/#konfiguration-des-suchmoduls)« kannst du diesen Index dann 
 durchsuchen.
 
-**Geschützte Seiten indizieren:** Wähle diese Option, um auch geschützte Seiten für die Suche zu indizieren. Nutze 
+**Geschützte Seiten indizieren:** Wähle diese Option, um auch geschützte Seiten für die Suche zu indizieren. Nutze 
 dieses Feature mit Bedacht, und achte darauf, personalisierte Seiten grundsätzlich von der Suche auszuschließen.
 
 {{% notice info %}}
@@ -221,15 +221,15 @@ php vendor/bin/contao-console contao:cron
 
 ### Standard-Zugriffsrechte
 
-**Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine 
+**Standardbesitzer:** Hier kannst du vorgeben, welchem Benutzer standardmäßig die Seiten gehören, für die keine 
 Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
 [Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
-**Standardgruppe:** Hier kannst du festlegen, welcher Gruppe standardmäßig die Seiten gehören, für die keine 
+**Standardgruppe:** Hier kannst du festlegen, welcher Gruppe standardmäßig die Seiten gehören, für die keine 
 Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
 [Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
-**Standardzugriffsrechte:** Hier kannst du festlegen, welche Zugriffsrechte standardmäßig für die Seiten gelten, für 
+**Standardzugriffsrechte:** Hier kannst du festlegen, welche Zugriffsrechte standardmäßig für die Seiten gelten, für 
 die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu findest du im Abschnitt 
 [Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
@@ -1314,10 +1314,10 @@ Um den E-Mail Versand über einen SMTP-Server einzurichten, brauchst du folgende
 sein, je nach Server):
 
 - Den **Hostnamen** des SMTP-Servers.
-- Den **Benutzernamen** für den SMTP-Server.
+- Den **Benutzernamen** für den SMTP-Server.
 - Das **Passwort** für den SMTP-Server.
 - Die **Portnummer** des SMTP-Servers (587 / 465).
-- Die **Verschlüsselungsmethode** für den SMTP-Server (tls / ssl).
+- Die **Verschlüsselungsmethode** für den SMTP-Server (tls / ssl).
 
 Diese Zugangsdaten können dann entweder in der `parameters.yaml` oder über die [`MAILER_DSN`](#mailer-dsn) Umgebungsvariable (z. B. in der
 `.env.local` der Contao Installation) definiert werden.

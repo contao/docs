@@ -30,6 +30,7 @@ Das Formularfeld `Erklärung` fügt dem Formular eine beliebige formatierte Erkl
 Rich-Text-Editor.
 
 
+
 ### Text/HTML
 
 **Text:** Gebe hier den formatierten Text der Erklärung ein.

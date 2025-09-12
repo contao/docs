@@ -1,6 +1,6 @@
 ---
 title: "Frontend-Module"
-description: "Die Nachrichtenerweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
+description: "Die Nachrichtenerweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
 url: "core-erweiterung/nachrichten/frontend-module"
 aliases:
@@ -10,7 +10,7 @@ weight: 20
 
 Nachdem du nun weißt, wie Archive und Beiträge im Backend verwaltet werden, wird dir jetzt erklärt, wie du diese 
 Inhalte im Frontend darstellen kannst. Die Nachrichtenerweiterung enthält vier neue Frontend-Module, die du wie 
-gewohnt über die Modulverwaltung konfigurieren kannst.
+gewohnt über die Modulverwaltung konfigurieren kannst.
 
 ![News/Blog-Module]({{% asset "images/manual/core-extensions/news/de/news-blog-module.png" %}}?classes=shadow)
 
@@ -47,7 +47,7 @@ Möglichkeiten zur Verfügung: »Alle Beiträge anzeigen«, »Nur hervorgehobene
 zur Verfügung: »Datum aufsteigend«, »Datum absteigend«, »Überschrift aufsteigend«, »Überschrift absteigend« und 
 »Zufällige Reihenfolge«.
 
-**Elemente überspringen:** Hier legst du die Anzahl der zu überspringenden Beiträge fest.
+**Elemente überspringen:** Hier legst du die Anzahl der zu überspringenden Beiträge fest.
 
 **Elemente pro Seite:** Wenn du hier einen Wert größer 0 eingibst, verteilt Contao die Beiträge automatisch auf mehrere 
 Seiten – eine entsprechende Anzahl vorausgesetzt.
@@ -58,13 +58,13 @@ Seiten – eine entsprechende Anzahl vorausgesetzt.
 {{< version-tag "Contao 5 nicht mehr verfügbar" >}} **Meta-Felder:** Hier legst du fest, welche Meta-Informationen 
 (Datum des Beitrags, Autor des Beitrags und Anzahl der Kommentare) angezeigt werden.
 
-**Nachrichtentemplate:** Hier wählst du das Template für die Beiträge aus. Folgende Nachrichtentemplates stehen dir 
-standardmäßig zur Verfügung:
+**Nachrichtentemplate:** Hier wählst du das Template für die Beiträge aus. Folgende Nachrichtentemplates stehen dir 
+standardmäßig zur Verfügung:
 
 | Template                 | Erklärung                                                                                                                                                        |
 |:-------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `news_full`              | Dieses Template stellt den vollständigen Beitrag dar und wird deswegen zur Verwendung mit dem Nachrichtenleser empfohlen.                                        |
-| `news_latest`            | Dieses Template gibt die Meta-Informationen eines Beitrags, ein eventuell hinzugefügtes Bild, die Überschrift, den Teasertext und einen Weiterlesen-Link aus.   |
+| `news_latest`            | Dieses Template gibt die Meta-Informationen eines Beitrags, ein eventuell hinzugefügtes Bild, die Überschrift, den Teasertext und einen Weiterlesen-Link aus.   |
 | `news_short`             | Dieses Template gibt die Meta-Informationen eines Beitrags, die Überschrift, den Teasertext und einen Weiterlesen-Link aus.                                      |
 | `news_simple`            | Dieses Template gibt das Datum und die Überschrift eines Beitrags aus.                                                                                           |
 
@@ -73,7 +73,7 @@ standardmäßig zur Verfügung:
 
 ### Bildeinstellungen
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
 
 | Eigene Größen                                  |                                                                                                                           |
 |:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
@@ -85,14 +85,14 @@ standardmäßig zur Verfügung:
 ## Nachrichtenleser
 
 Das Frontend-Modul »Nachrichtenleser« dient dazu, einen bestimmten Nachrichtenbeitrag darzustellen. Den Alias des 
-Beitrags bezieht das Modul über die URL, sodass Nachrichten mit sogenannten 
+Beitrags bezieht das Modul über die URL, sodass Nachrichten mit sogenannten 
 [Permalinks](https://de.wikipedia.org/wiki/Permalink) gezielt verlinkt werden können:
 
 `www.example.com/nachricht/form-folgt-funktion.html`
 
-In diesem Beispiel wird die Nachricht mit dem Alias »form-folgt-funktion« über die Seite »nachricht« aufgerufen. 
+In diesem Beispiel wird die Nachricht mit dem Alias »form-folgt-funktion« über die Seite »nachricht« aufgerufen. 
 Existiert die gesuchte Nachricht nicht, gibt der Nachrichtenleser eine Fehlermeldung und den HTTP-Status-Code »404 Not
-found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
+found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
 {{% notice note %}}
 Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
@@ -132,7 +132,7 @@ standardmäßig den vollständigen Beitrag dar.
 
 ### Bildeinstellungen
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
 
 | Eigene Größen                                  |                                                                                                                           |
 |:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
@@ -144,7 +144,7 @@ standardmäßig den vollständigen Beitrag dar.
 ## Nachrichtenarchiv
 
 Das Frontend-Modul »Nachrichtenarchiv« dient dazu, alle Nachrichtenbeiträge eines bestimmten Zeitraums aufzulisten. In 
-Verbindung mit dem Modul »Nachrichtenarchiv-Menü« kannst du so tages-, monats- oder jahresweise alle vorhandenen 
+Verbindung mit dem Modul »Nachrichtenarchiv-Menü« kannst du so tages-, monats- oder jahresweise alle vorhandenen 
 Beiträge durchsuchen.
 
 
@@ -187,7 +187,7 @@ Kommentare) angezeigt werden.
 
 ### Bildeinstellungen
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
 
 | Eigene Größen                                  |                                                                                                                           |
 |:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
@@ -196,19 +196,19 @@ Kommentare) angezeigt werden.
 | An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 
 
-## Nachrichtenarchiv-Menü {#nachrichtenarchiv-menue}
+## Nachrichtenarchiv-Menü {#nachrichtenarchiv-menue}
 
-Das Frontend-Modul »Nachrichtenarchiv-Menü« fügt der Webseite ein Menü hinzu, mit dem du die Beiträge der einzelnen 
+Das Frontend-Modul »Nachrichtenarchiv-Menü« fügt der Webseite ein Menü hinzu, mit dem du die Beiträge der einzelnen 
 Tage, Monate oder Jahre aufrufen kannst.
 
 
 ### Modul-Konfiguration
 
 **Nachrichtenarchive:** Hier legst du fest, aus welchen Archiven Beiträge verlinkt werden sollen. Diese Auswahl sollte 
-mit der des Nachrichtenarchivs übereinstimmen.
+mit der des Nachrichtenarchivs übereinstimmen.
 
 **Anzahl der Beiträge anzeigen:** Wenn du diese Option auswählst, wird die Anzahl der Beiträge jedes Monats bzw. Jahres 
-im Menü angezeigt.
+im Menü angezeigt.
 
 **Archivformat:** Hier legst du das Archivformat (Tag, Monat oder Jahr) fest.
 
@@ -220,7 +220,7 @@ zur Verfügung: »Datum aufsteigend«, »Datum absteigend«, »Überschrift aufs
 
 ### Weiterleitung
 
-**Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Besucher nach dem Anklicken eines Menüpunkts (Tag, 
+**Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Besucher nach dem Anklicken eines Menüpunkts (Tag, 
 Monat oder Jahr) weitergeleitet wird.
 
 

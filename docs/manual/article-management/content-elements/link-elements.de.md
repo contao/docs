@@ -10,17 +10,17 @@ weight: 24
 
 ## Hyperlink
 
-Das Inhaltselement »Hyperlink« fügt dem Artikel einen Link auf eine externe Webseite oder eine E-Mail-Adresse hinzu. Du 
-kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement eingeben.
+Das Inhaltselement »Hyperlink« fügt dem Artikel einen Link auf eine externe Webseite oder eine E-Mail-Adresse hinzu. Du 
+kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement eingeben.
 
 ![Einen Hyperlink anlegen]({{% asset "images/manual/article-management/de/einen-hyperlink-anlegen.png" %}}?classes=shadow)
 
 
 ### Hyperlink-Einstellungen
 
-**Link-Adresse:** Gebe die Link-Adresse inklusive des Netzwerkprotokolls ein. Für Webseiten lautet das 
-Netzwerkprotokoll normalerweise `http://` oder `https://`, für E-Mail-Adressen `mailto:` und für Telefonnummern `tel:`. 
-Contao verschlüsselt E-Mail-Adressen automatisch, sodass sie nicht von Spambots ausgelesen werden können.
+**Link-Adresse:** Gebe die Link-Adresse inklusive des Netzwerkprotokolls ein. Für Webseiten lautet das 
+Netzwerkprotokoll normalerweise `http://` oder `https://`, für E-Mail-Adressen `mailto:` und für Telefonnummern `tel:`. 
+Contao verschlüsselt E-Mail-Adressen automatisch, sodass sie nicht von Spambots ausgelesen werden können.
 
 **In neuem Fester öffnen:** Öffnet den Link in einem neuen Browserfenster. 
 
@@ -50,7 +50,7 @@ Alternativ dazu kannst du auch ein Bildelement erstellen und mit einem Link vers
 
 **Metadaten überschreiben:** Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
-**Alternativer Text:** Eine barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die 
+**Alternativer Text:** Eine barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die 
 angezeigt wird, wenn das Objekt selbst nicht dargestellt werden kann. Alternative Texte werden außerdem von 
 Suchmaschinen ausgewertet und sind daher ein wichtiges Instrument der Onpage-Optimierung.
 
@@ -117,13 +117,13 @@ Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
 
 ## Top-Link
 
-Das Inhaltselement »Top-Link« fügt dem Artikel einen Link hinzu, mit dem du an den Anfang der Seite springen kannst. 
+Das Inhaltselement »Top-Link« fügt dem Artikel einen Link hinzu, mit dem du an den Anfang der Seite springen kannst. 
 Das ist speziell bei langen Seiten sinnvoll.
 
 
 ### Hyperlink-Einstellungen
 
-**Link-Text:** Hier kannst du eine Bezeichnung für den Link eingeben. Wenn du das Feld leer lässt, wird die 
+**Link-Text:** Hier kannst du eine Bezeichnung für den Link eingeben. Wenn du das Feld leer lässt, wird die 
 Standardbezeichnung »Nach oben« verwendet.
 
 

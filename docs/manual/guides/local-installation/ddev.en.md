@@ -171,7 +171,7 @@ ddev add-on get ddev/ddev-phpmyadmin && ddev restart
 With `ddev describe` you can find out how to access the respective database tool.
 
 
-## DDEV Cronjob einrichten
+## Setting up a cron job in DDEV
 
 {{< version-tag "5.5" >}} The [back end search](https://docs.contao.org/manual/en/installation/system-requirements/backend-search/) can be activated by setting up the [Contao cronjob framework](https://docs.contao.org/manual/en/performance/cronjobs/).
 
@@ -180,6 +180,9 @@ To do this, first install the [cron add-on](https://github.com/ddev/ddev-cron) i
 ```shell
 ddev add-on get ddev/ddev-cron
 ```
+{{% notice info %}}
+If you have been using DDEV for a long time, you may receive an error message when setting up `ddev add-on get ddev/ddev-cron`. The reason for this is that the add-on has only been supported by DDEV since version 1.24. So you need to update DDEV. For updates, see https://docs.ddev.com/en/stable/users/install/ddev-upgrade/.
+{{% /notice %}}
 
 Then create a `/.ddev/web-build/contao.cron` file with the following content:
 
@@ -194,3 +197,32 @@ ddev restart
 ```
 
 The Contao cronjob is executed every minute. When setting up for the first time, it may take 1-2 minutes before the search bar is available in the back end.
+
+## Setting up a local shared repository path inside your DDEV container
+
+If you want to configure a path in your container where all your local bundles are stored and which you can use in your **composer.json**, you can do so as follows:
+
+Create a file inside the **./ddev** folder with the name **docker-compose.bundles.yaml**.
+
+The content can look like this (Please adjust the paths to suit your needs.):
+```
+services:
+  web:
+    volumes:
+    - /home/$USER/repository:/home/$USER/repository:rw
+```
+Then restart the container with `ddev restart`.
+
+Now you can use the repository in your root **composer.json**. 
+```
+"repositories": [
+  {
+    "type": "path",
+    "url": "~/repository/my-local-bundle"
+  }
+],
+```
+
+{{% notice info %}}
+If the Contao Manager cannot find the repositories, it helps to deactivate the **Composer Resolver Cloud**.
+{{% /notice %}}

@@ -1,6 +1,6 @@
 ---
 title: "Frontend-Module"
-description: "Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
+description: "Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
 url: "core-erweiterung/faq/frontend-module"
 aliases:
@@ -9,7 +9,7 @@ weight: 20
 ---
 
 Nachdem du nun weißt, wie Kategorien und Fragen im Backend verwaltet werden, wird dir jetzt erklärt, wie du diese 
-Inhalte im Frontend darstellen kannst. Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über 
+Inhalte im Frontend darstellen kannst. Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über 
 die Modulverwaltung konfigurieren kannst.
 
 ![FAQ-Module]({{% asset "images/manual/core-extensions/faq/de/faq-module.png" %}}?classes=shadow)
@@ -17,7 +17,7 @@ die Modulverwaltung konfigurieren kannst.
 
 ## FAQ-Liste
 
-Das Frontend-Modul »FAQ-Liste« fügt der Webseite eine Liste von Fragen hinzu, die aus einer oder mehreren Kategorien 
+Das Frontend-Modul »FAQ-Liste« fügt der Webseite eine Liste von Fragen hinzu, die aus einer oder mehreren Kategorien 
 stammen können.
 
 
@@ -55,14 +55,14 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 ## FAQ-Leser
 
 Das Frontend-Modul »FAQ-Leser« dient dazu, die Antwort zu einer bestimmten Frage darzustellen. Den Alias der Frage 
-bezieht das Modul über die URL, sodass FAQs mit sogenannten [Permalinks](https://de.wikipedia.org/wiki/Permalink) 
+bezieht das Modul über die URL, sodass FAQs mit sogenannten [Permalinks](https://de.wikipedia.org/wiki/Permalink) 
 gezielt verlinkt werden können:
 
 <code>example.com/frage/kann-ich-eigene-php-skripte-verwen-den.html</code>
 
-Das Schlüsselwort des FAQ-Lesers lautet *frage* und teilt dem Modul mit, dass es eine bestimmte Frage suchen und 
+Das Schlüsselwort des FAQ-Lesers lautet *frage* und teilt dem Modul mit, dass es eine bestimmte Frage suchen und 
 ausgeben soll. Existiert die gesuchte Frage nicht, gibt der FAQ-Leser eine Fehlermeldung und den HTTP-Status-Code 
-»404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
+»404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
 {{% notice note %}}
 Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
@@ -114,7 +114,7 @@ Details zum Markup der Kommentare findest du im Abschnitt
 
 ## FAQ-Seite
 
-Das Frontend-Modul »FAQ-Seite« fügt der Webseite alle Fragen und Antworten hinzu, die aus einer oder mehreren 
+Das Frontend-Modul »FAQ-Seite« fügt der Webseite alle Fragen und Antworten hinzu, die aus einer oder mehreren 
 Kategorien stammen können.
 
 ### Modul-Konfiguration
