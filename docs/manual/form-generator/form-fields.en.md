@@ -110,20 +110,20 @@ validation for each text field to prevent misuse of the form.
 
 **Input Validation:** Here you can specify a search pattern that is used to check user input when the form is submitted.
 
-| Search pattern | Declaration                                                                                                           |
-| -------------- |-----------------------------------------------------------------------------------------------------------------------|
-| Numeric characters | Allows numbers, minus (-), period (.) and spaces ( ).                                                             |
-| Alphabetic characters | Allows letters, minus (-), period (.) and spaces ( ).                                                          |
-| Alphanumeric characters | Allows numbers and letters, minus (-), period (.), underscore (\_) and spaces ( ).                           |
-| Extended alphanumeric characters | Allows all characters except those that are normally encoded for security reasons (#/()&lt;=&gt;).  |
-| Date | Allows entries according to the global date format.                                                                             |
-| Time of day | Allows entries according to the global time format.                                                                      |
-| Date and time | Allows input according to the global date and time format.                                                             |
-| Phone number | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                                     |
-| E-mail address | Allows users to enter a valid email address.                                                                          |
-| URL format | Allows the entry of a valid URL.                                                                                          |
-| Absolute URL | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`).                |
-| Custom | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression.                      |
+| Search pattern                   | Declaration                                                                                              |
+|----------------------------------|----------------------------------------------------------------------------------------------------------|
+| Numeric characters               | Allows numbers, minus (-), period (.) and spaces ( ).                                                    |
+| Alphabetic characters            | Allows letters, minus (-), period (.) and spaces ( ).                                                    |
+| Alphanumeric characters          | Allows numbers and letters, minus (-), period (.), underscore (\_) and spaces ( ).                       |
+| Extended alphanumeric characters | Allows all characters except those that are normally encoded for security reasons (#/()&lt;=&gt;).       |
+| Date                             | Allows entries according to the global date format.                                                      |
+| Time of day                      | Allows entries according to the global time format.                                                      |
+| Date and time                    | Allows input according to the global date and time format.                                               |
+| Phone number                     | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                      |
+| E-mail address                   | Allows users to enter a valid email address.                                                             |
+| URL format                       | Allows the entry of a valid URL.                                                                         |
+| Absolute URL                     | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`). |
+| Custom                           | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression. |
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
 
@@ -202,20 +202,20 @@ input check here to prevent misuse of the form.
 
 **Input Validation:** Here you can specify a search pattern that is used to check user input when the form is submitted.
 
-| Search pattern | Declaration                                                                                                           |
-| -------------- |-----------------------------------------------------------------------------------------------------------------------|
-| Numeric characters | Allows numbers, minus (-), period (.) and spaces ( ).                                                             |
-| Alphabetic characters | Allows letters, minus (-), period (.) and spaces ( ).                                                          |
-| Alphanumeric characters | Allows numbers and letters, minus (-), period (.), underscore (\_) and spaces ( ).                           |
-| Extended alphanumeric characters | Allows all characters except those that are normally encoded for security reasons (#/()&lt;=&gt;).  |
-| Date | Allows entries according to the global date format.                                                                             |
-| Time of day | Allows entries according to the global time format.                                                                      |
-| Date and time | Allows input according to the global date and time format.                                                             |
-| Phone number | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                                     |
-| E-mail address | Allows users to enter a valid email address.                                                                          |
-| URL format | Allows the entry of a valid URL.                                                                                          |
-| Absolute URL | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`).                |
-| Custom | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression.                      |
+| Search pattern                   | Declaration                                                                                              |
+|----------------------------------|----------------------------------------------------------------------------------------------------------|
+| Numeric characters               | Allows numbers, minus (-), period (.) and spaces ( ).                                                    |
+| Alphabetic characters            | Allows letters, minus (-), period (.) and spaces ( ).                                                    |
+| Alphanumeric characters          | Allows numbers and letters, minus (-), period (.), underscore (\_) and spaces ( ).                       |
+| Extended alphanumeric characters | Allows all characters except those that are normally encoded for security reasons (#/()&lt;=&gt;).       |
+| Date                             | Allows entries according to the global date format.                                                      |
+| Time of day                      | Allows entries according to the global time format.                                                      |
+| Date and time                    | Allows input according to the global date and time format.                                               |
+| Phone number                     | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                      |
+| E-mail address                   | Allows users to enter a valid email address.                                                             |
+| URL format                       | Allows the entry of a valid URL.                                                                         |
+| Absolute URL                     | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`). |
+| Custom                           | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression. |
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
 
@@ -548,20 +548,20 @@ Hidden fields have no CSS class.
 
 **Input validation:** Here you can specify a search pattern that is used to check user input when the form is submitted.
 
-| Search pattern | Declaration                                                                                                           |
-| -------------- |-----------------------------------------------------------------------------------------------------------------------|
-| Numeric characters | Allows numbers, minus (-), period (.) and spaces ( ).                                                             |
-| Alphabetic characters | Allows letters, minus (-), period (.) and spaces ( ).                                                          |
-| Alphanumeric characters | Allows numbers and letters, minus (-), period (.), underscore (\_) and spaces ( ).                           |
-| Extended alphanumeric characters | Allows all characters except those that are normally encoded for security reasons (#/()&lt;=&gt;).  |
-| Date | Allows entries according to the global date format.                                                                             |
-| Time of day | Allows entries according to the global time format.                                                                      |
-| Date and time | Allows input according to the global date and time format.                                                             |
-| Phone number | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                                     |
-| E-mail address | Allows users to enter a valid email address.                                                                          |
-| URL format | Allows the entry of a valid URL.                                                                                          |
-| Absolute URL | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`).                |
-| Custom | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression.                      |
+| Search pattern                   | Declaration                                                                                              |
+|----------------------------------|----------------------------------------------------------------------------------------------------------|
+| Numeric characters               | Allows numbers, minus (-), period (.) and spaces ( ).                                                    |
+| Alphabetic characters            | Allows letters, minus (-), period (.) and spaces ( ).                                                    |
+| Alphanumeric characters          | Allows numbers and letters, minus (-), period (.), underscore (\_) and spaces ( ).                       |
+| Extended alphanumeric characters | Allows all characters except those that are normally encoded for security reasons (#/()&lt;=&gt;).       |
+| Date                             | Allows entries according to the global date format.                                                      |
+| Time of day                      | Allows entries according to the global time format.                                                      |
+| Date and time                    | Allows input according to the global date and time format.                                               |
+| Phone number                     | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                      |
+| E-mail address                   | Allows users to enter a valid email address.                                                             |
+| URL format                       | Allows the entry of a valid URL.                                                                         |
+| Absolute URL                     | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`). |
+| Custom                           | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression. |
 
 
 ### Template settings

@@ -115,20 +115,20 @@ Textfeld die Eingabeprüfung aktivieren, um einer missbräuchlichen Verwendung d
 **Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des 
 Formulars geprüft werden.
 
-| Suchmuster                                   | Erklärung                                                                                                  |
-|:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
-| Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
-| Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
-| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
-| Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
-| Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
-| Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
-| Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
-| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
-| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| Suchmuster                         | Erklärung                                                                                                  |
+|:-----------------------------------|:-----------------------------------------------------------------------------------------------------------|
+| Numerische Zeichen                 | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
+| Alphabetische Zeichen              | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
+| Alphanumerische Zeichen            | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
+| Erweiterte alphanumerische Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Datum                              | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
+| Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
+| Datum und Uhrzeit                  | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
+| Telefonnummer                      | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
+| E-Mail-Adresse                     | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                         | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                             | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 **Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
 
@@ -212,20 +212,20 @@ solltest auch hier die Eingabeprüfung aktivieren, um einer missbräuchlichen Ve
 **Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des
 Formulars geprüft werden.
 
-| Suchmuster                                   | Erklärung                                                                                                  |
-|:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
-| Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
-| Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
-| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
-| Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
-| Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
-| Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
-| Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
-| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
-| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| Suchmuster                         | Erklärung                                                                                                  |
+|:-----------------------------------|:-----------------------------------------------------------------------------------------------------------|
+| Numerische Zeichen                 | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
+| Alphabetische Zeichen              | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
+| Alphanumerische Zeichen            | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
+| Erweiterte alphanumerische Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Datum                              | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
+| Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
+| Datum und Uhrzeit                  | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
+| Telefonnummer                      | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
+| E-Mail-Adresse                     | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                         | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                             | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 **Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
 
@@ -568,20 +568,20 @@ Versteckte Felder haben keine CSS-Klasse.
 **Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des 
 Formulars geprüft werden.
 
-| Suchmuster                                   | Erklärung                                                                                                  |
-|:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
-| Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
-| Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
-| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
-| Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
-| Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
-| Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
-| Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
-| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
-| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| Suchmuster                         | Erklärung                                                                                                  |
+|:-----------------------------------|:-----------------------------------------------------------------------------------------------------------|
+| Numerische Zeichen                 | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
+| Alphabetische Zeichen              | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
+| Alphanumerische Zeichen            | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
+| Erweiterte alphanumerische Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Datum                              | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
+| Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
+| Datum und Uhrzeit                  | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
+| Telefonnummer                      | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
+| E-Mail-Adresse                     | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                         | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                             | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 
 ### Template-Einstellungen
