@@ -52,6 +52,6 @@ class NormalizeCommand extends Command
             $style->success('No files needed normalization.');
         }
 
-        return 0;
+        return Command::SUCCESS;
     }
 }
