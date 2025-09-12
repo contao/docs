@@ -106,6 +106,7 @@ The form field generates the following HTML code:
 The Text Field form field adds a single-line input field to the form. You should always enable some form of input 
 validation for each text field to prevent misuse of the form.
 
+
 ### Field configuration
 
 **Input Validation:** Here you can specify a search pattern that is used to check user input when the form is submitted.
@@ -633,6 +634,7 @@ The form field generates the following HTML code:
     </script>
 </div>
 ```
+
 
 ## Submit field
 
