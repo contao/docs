@@ -10,7 +10,7 @@ weight: 21
 
 ## Code
 
-Das Inhaltselement »Code« fügt dem Artikel formatierten Code hinzu. Die Eingabe erfolgt über einen sogenannten
+Das Inhaltselement »Code« fügt dem Artikel formatierten Code hinzu. Die Eingabe erfolgt über einen sogenannten
 Code-Editor. Contao verwendet den Open Source Code-Editor von [Ace](https://ace.c9.io/).
 
 
@@ -118,7 +118,7 @@ Das Element generiert folgenden HTML-Code:
 
 ## Überschrift {#ueberschrift}
 
-Das Inhaltselement »Überschrift« fügt dem Artikel eine Überschrift hinzu. Die meisten Inhaltselemente unterstützen die 
+Das Inhaltselement »Überschrift« fügt dem Artikel eine Überschrift hinzu. Die meisten Inhaltselemente unterstützen die 
 direkte Eingabe einer Überschrift, sodass du das Element nicht jedes Mal separat verwenden musst.
 
 **Überschrift:** Hier kannst du die Überschrift eingeben.
@@ -157,7 +157,7 @@ Das Element generiert folgenden HTML-Code:
 
 ## HTML
 
-Das Inhaltselement »HTML« fügt dem Artikel beliebigen HTML-Code hinzu. Beachte, dass nicht alle HTML-Tags standardmäßig
+Das Inhaltselement »HTML« fügt dem Artikel beliebigen HTML-Code hinzu. Beachte, dass nicht alle HTML-Tags standardmäßig
 erlaubt sind. Die Liste der erlaubten Tags findest du in den Backend-Einstellungen.
 
 
@@ -183,15 +183,15 @@ Das Inhaltselement hat kein umschließenden HTML-Markup.
 
 ## Aufzählung {#aufzaehlung}
 
-Das Inhaltselement »Aufzählung« fügt dem Artikel eine nicht verschachtelte Liste hinzu. Du kannst zwischen einer
+Das Inhaltselement »Aufzählung« fügt dem Artikel eine nicht verschachtelte Liste hinzu. Du kannst zwischen einer
 nummerierten (»ordered list«) und einer umnummerierten (»unordered list«) Aufzählung wählen. Beim Anlegen und
-Bearbeiten der Listenpunkte unterstützt dich ein JavaScript-Assistent.
+Bearbeiten der Listenpunkte unterstützt dich ein JavaScript-Assistent.
 
-![JavaScript-Assistent für Auflistungen]({{% asset "images/manual/article-management/de/javascript-assistent-fuer-auflistungen.png" %}}?classes=shadow)
+![JavaScript-Assistent für Auflistungen]({{% asset "images/manual/article-management/de/javascript-assistent-fuer-auflistungen.png" %}}?classes=shadow)
 
 Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren]({{% asset "icons/tablewizard.svg" %}}?classes=icon)
 neben der Feldbezeichnung »Listeneinträge« öffnest du den CSV-Import-Wizard, mit dem du Listendaten aus einer CSV-Datei
-importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
+importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
 
 
 ### Listeneinträge
@@ -523,7 +523,7 @@ Für eine komplette Dokumentation zu Markdown Extra, besuche die
 
 ## Tabelle
 
-Das Inhaltselement »Tabelle« fügt dem Artikel eine Tabelle hinzu. Beim Anlegen der Reihen und Spalten unterstützt dich 
+Das Inhaltselement »Tabelle« fügt dem Artikel eine Tabelle hinzu. Beim Anlegen der Reihen und Spalten unterstützt dich 
 ein JavaScript-Assistent. Mit den folgenden Navigationsicons kannst du die Tabelle bearbeiten:
 
 - ![Die Eingabefelder verkleinern]({{% asset "icons/demagnify.svg" %}}?classes=icon) **Die Eingabefelder verkleinern**
@@ -537,22 +537,22 @@ ein JavaScript-Assistent. Mit den folgenden Navigationsicons kannst du die Tabel
 - ![Das Element durch Ziehen und Ablegen verschieben]({{% asset "icons/drag.svg" %}}?classes=icon) 
 **Das Element durch Ziehen und Ablegen verschieben**
 
-![JavaScript-Assistent für Tabellen]({{% asset "images/manual/article-management/de/javascript-assistent-fuer-tabellen.png" %}}?classes=shadow)
+![JavaScript-Assistent für Tabellen]({{% asset "images/manual/article-management/de/javascript-assistent-fuer-tabellen.png" %}}?classes=shadow)
 
 Mit einem Klick auf das Icon ![Listendaten aus einer CSV-Datei importieren]({{% asset "icons/tablewizard.svg" %}}?classes=icon) 
 neben der Feldbezeichnung »Tabelleneinträge« öffnest du den CSV-Import-Wizard, mit dem du Tabellendaten aus einer 
-CSV-Datei importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
+CSV-Datei importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übertragen haben.
 
 
 ### Tabellenkonfiguration
 
-**Zusammenfassung:** Eine barrierefreie Webseite sollte für jede Tabelle eine kurze Zusammenfassung des Inhalts 
+**Zusammenfassung:** Eine barrierefreie Webseite sollte für jede Tabelle eine kurze Zusammenfassung des Inhalts 
 enthalten, die du hier eingeben kannst.
 
-**Kopfzeile hinzufügen:** Wenn du diese Option auswählst, wird die erste Reihe der Tabelle mithilfe des 
+**Kopfzeile hinzufügen:** Wenn du diese Option auswählst, wird die erste Reihe der Tabelle mithilfe des 
 `<thead>`-Tags als Kopfzeile formatiert.
 
-**Fusszeile hinzufügen:** Wenn du diese Option auswählst, wird die letzte Reihe der Tabelle mithilfe des 
+**Fusszeile hinzufügen:** Wenn du diese Option auswählst, wird die letzte Reihe der Tabelle mithilfe des 
 `<tfoot>`-Tags als Fußzeile formatiert.
 
 **Reihenüberschriften hinzufügen:** Wenn du diese Option auswählst, wird die erste Spalte der Tabelle mithilfe des 
@@ -675,7 +675,7 @@ Das Element generiert folgenden HTML-Code:
 
 ## Text
 
-Das Inhaltselement »Text« fügt dem Artikel einen formatierten Text hinzu. Die Eingabe erfolgt über einen sogenannten
+Das Inhaltselement »Text« fügt dem Artikel einen formatierten Text hinzu. Die Eingabe erfolgt über einen sogenannten
 Rich Text Editor, der es dir ähnlich wie in einem Textverarbeitungsprogramm erlaubt, bestimmte Formatierungen auf
 Knopfdruck zu setzen. Contao verwendet [TinyMCE](https://www.tiny.cloud/), einen Open Source Editor der schwedischen
 Firma Moxiecode, der sich gut an die Erfordernisse der Barrierefreiheit anpassen lässt.
@@ -696,18 +696,18 @@ niedrigere Überschriften abbilden und natürlich mehrfach vorkommen.
 
 ### Bildeinstellungen
 
-**Ein Bild hinzufügen**
+**Ein Bild hinzufügen**
 
-Du kannst dem Textelement ein Bild hinzufügen, das dann von deinem Text umflossen wird. Folgende Optionen stehen dir
-dabei zur Verfügung:
+Du kannst dem Textelement ein Bild hinzufügen, das dann von deinem Text umflossen wird. Folgende Optionen stehen dir
+dabei zur Verfügung:
 
-**Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast,
+**Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast,
 kannst du den Upload hier nachholen, ohne die Eingabemaske zu verlassen.
 
 **Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße
-geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
+geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
-![Einem Text ein Bild hinzufügen]({{% asset "images/manual/article-management/de/einem-text-ein-bild-hinzufuegen.png" %}}?classes=shadow)
+![Einem Text ein Bild hinzufügen]({{% asset "images/manual/article-management/de/einem-text-ein-bild-hinzufuegen.png" %}}?classes=shadow)
 
 | Eigene Größen                                  |                                                                                                                           |
 |:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
@@ -725,14 +725,14 @@ umfließt der Text das Bild (wie im Icon symbolisiert).
 **Metadaten überschreiben:**  Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
 **Alternativer Text:** Hier kannst du einen alternativen Text für das Bild eingeben *(alt-Attribut)*. Eine
-barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die angezeigt wird, wenn das Objekt
+barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die angezeigt wird, wenn das Objekt
 selbst nicht dargestellt werden kann. Alternative Texte werden außerdem von Suchmaschinen ausgewertet und sind daher
 ein wichtiges Instrument der Onpage-Optimierung.
 
 **Bildtitel:** Hier kannst du den Titel des Bildes eingeben *(title-Attribut)*.
 
 **Bildlink-Adresse:** Bei einem Klick auf ein verlinktes Bild wirst du direkt zu der angegebenen Zielseite
-weitergeleitet (entspricht einem Bildlink). Beachte, dass für ein verlinktes Bild keine Lightbox-Großansicht mehr
+weitergeleitet (entspricht einem Bildlink). Beachte, dass für ein verlinktes Bild keine Lightbox-Großansicht mehr
 möglich ist.
 
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.
@@ -754,7 +754,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 
-Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
+Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
 
 ```html
 <div class="ce_text block">
@@ -782,7 +782,7 @@ Das Element generiert folgenden HTML-Code:
 </div>
 ```
 
-Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
+Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
 
 ```html
 <div class="media media--above content-text">
@@ -805,7 +805,7 @@ Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
 
 {{< version "5.3" >}}
 
-Das Inhaltselement »Ungefiltertes HTML« fügt dem Artikel ein ungefiltertes HTML hinzu. Bitte sei vorsichtig, wenn du 
+Das Inhaltselement »Ungefiltertes HTML« fügt dem Artikel ein ungefiltertes HTML hinzu. Bitte sei vorsichtig, wenn du 
 Dinge einfügst, die du nicht verstehst. Dies könnte Angreifern ermöglichen, deine Identität zu stehlen oder die 
 Kontrolle über das gesamte System zu übernehmen.
 

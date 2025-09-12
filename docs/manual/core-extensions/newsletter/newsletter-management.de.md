@@ -410,15 +410,15 @@ Um einen neuen Newsletter anzulegen klicke auf
 
 **Betreff:** Hier kannst du den Betreff des Newsletters eingeben.
 
-**Newsletteralias:** Der Alias eines Newsletters ist eine eindeutige und aussagekräftige Referenz, über die du ihn in 
+**Newsletteralias:** Der Alias eines Newsletters ist eine eindeutige und aussagekräftige Referenz, über die du ihn in 
 deinem Browser aufrufen kannst.
 
 
 ### HTML-Inhalt
 
 Eventuell wunderst du dich, warum du den Text des Newsletters zweimal eingeben musst. Das liegt daran, dass weder die 
-HTML- noch die Text-Variante in der Praxis ohne Nachteile ist und man deshalb dazu übergegangen ist, beide in die Mail 
-einzufügen. Das jeweilige Mail-Programm des Empfängers entscheidet dann selbstständig, welche Variante es anzeigen kann.
+HTML- noch die Text-Variante in der Praxis ohne Nachteile ist und man deshalb dazu übergegangen ist, beide in die Mail 
+einzufügen. Das jeweilige Mail-Programm des Empfängers entscheidet dann selbstständig, welche Variante es anzeigen kann.
 
 Ein reiner HTML-Newsletter hat folgende Nachteile:
 
@@ -433,7 +433,7 @@ Textformatierung nehmen.
 zwischen 40 und 130 Zeichen lang sein. Der Preheader-Text ist in einer E-Mail in deiner Inbox der kurze Text nach den 
 Absenderinformationen und der Betreffzeile.
 
-**HTML-Inhalt:** Gebe hier den HTML-Inhalt des Newsletters ein. Die Eingabe erfolgt wie beim Inhaltselement »Text« über 
+**HTML-Inhalt:** Gebe hier den HTML-Inhalt des Newsletters ein. Die Eingabe erfolgt wie beim Inhaltselement »Text« über 
 den Rich-Text-Editor.
 
 
@@ -451,7 +451,7 @@ eines Newsletters verwendet werden. Nachfolgend ein kleines Beispiel:
 ```text
 Sehr geehrte(r) ##firstname## ##lastname##,
 
-bitte prüfen und aktualisieren Sie Ihre Daten:
+bitte prüfen und aktualisieren Sie Ihre Daten:
 
 Anschrift:   ##street##
 PLZ/Ort:     ##postal## ##city##
@@ -491,7 +491,7 @@ Ihr Administrator
 
 ### Dateianhänge {#dateianhaenge}
 
-Du kannst jedem Newsletter eine oder mehrere Dateien hinzufügen, die dann als E-Mail-Anhänge versendet oder auf der
+Du kannst jedem Newsletter eine oder mehrere Dateien hinzufügen, die dann als E-Mail-Anhänge versendet oder auf der
 Webseite zum Download angeboten werden.
 
 **Dateien anhängen:** Hier aktivierst du die Funktion.
@@ -504,13 +504,13 @@ Webseite zum Download angeboten werden.
 Zum E-Mail-Template musst du vor allem zwei Dinge wissen:
 
 - Es wird nur bei HTML-Newslettern verwendet.
-- Es ist primär für den Seitenaufbau und nicht für Inhalte gedacht.
+- Es ist primär für den Seitenaufbau und nicht für Inhalte gedacht.
 
 HTML-Mails sind prinzipiell wie HTML-Webseiten aufgebaut, nur können die E-Mail-Programme leider bei Weitem nicht so
 gut mit HTML-Code umgehen wie die modernen Internetbrowser. Deswegen generiert das Template `mail_default`
 ein an sich veraltetes HTML 3.2-Dokument, das jedoch von den meisten E-Mail-Clients verarbeitet wird.
 
-**E-Mail-Template:** Hier wählst du das Template für die HTML-Mail aus.
+**E-Mail-Template:** Hier wählst du das Template für die HTML-Mail aus.
 
 {{< version-tag "5.3" >}} Zusätzlich zum `mail_default` steht auch `mail_responsive` zur Verfügung.
 
@@ -533,7 +533,7 @@ anlegen und hier auswählen.
 ### Experten-Einstellungen
 
 Um einen Newsletter als reine Text-Mail zu versenden, reicht es nicht, das Feld HTML-Inhalt einfach leer zu lassen. Du 
-musst darüber hinaus in den Experten-Einstellungen die Option `Als Text senden` auswählen.
+musst darüber hinaus in den Experten-Einstellungen die Option `Als Text senden` auswählen.
 
 **Als Text senden:** Hier deaktivierst du die HTML-Versendung
 
@@ -542,16 +542,16 @@ musst darüber hinaus in den Experten-Einstellungen die Option `Als Text senden
 
 ## Abonnenten
 
-In der Regel verwalten sich die Empfänger eines Newsletters über die entsprechenden Frontend-Module selbstständig, ohne 
+In der Regel verwalten sich die Empfänger eines Newsletters über die entsprechenden Frontend-Module selbstständig, ohne 
 dass du als Administrator in den Prozess eingreifen musst. Trotzdem hast du im Backend die Möglichkeit, Abonnenten 
-manuell zu ändern. Aus Gründen des Datenschutzes werden jeweils nur die E-Mail-Adresse und der Aktivierungsstatus 
+manuell zu ändern. Aus Gründen des Datenschutzes werden jeweils nur die E-Mail-Adresse und der Aktivierungsstatus 
 gespeichert.
 
 ![Einen Abonnenten bearbeiten]({{% asset "images/manual/core-extensions/newsletter/de/einen-empfaenger-bearbeiten.png" %}}?classes=shadow)
 
 Gemäß des [Double Opt-In-Verfahrens](https://de.wikipedia.org/wiki/Opt-In) erhält jeder Abonnent bei der Bestellung 
 eine E-Mail mit einem Bestätigungslink, ohne den er sein Abonnement nicht abschließen kann. Damit wird den Bestimmungen 
-des §7 Absatz 2 Nummer 2 und 3 des Gesetzes gegen den unlauteren Wettbewerb (UWG) hinreichend Genüge getan.
+des §7 Absatz 2 Nummer 2 und 3 des Gesetzes gegen den unlauteren Wettbewerb (UWG) hinreichend Genüge getan.
 
 Um einen Abonnenten des Verteilers zu bearbeiten, klicke auf 
 ![Abonnenten des Verteilers bearbeiten]({{% asset "icons/mgroup.svg" %}}?classes=icon "Abonnenten des Verteilers bearbeiten") 
@@ -562,19 +562,19 @@ und danach auf
 **E-Mail-Adresse:** Gebe hier die E-Mail-Adresse des Empfängers ein.
 
 **Abonnenten aktivieren:** Hier kannst du die E-Mail-Adresse aktivieren. Solange eine E-Mail-Adresse nicht aktiviert 
-ist, wird der Empfänger beim Versand des Newsletters nicht berücksichtigt. Die Aktivierung erfolgt normalerweise über 
+ist, wird der Empfänger beim Versand des Newsletters nicht berücksichtigt. Die Aktivierung erfolgt normalerweise über 
 das Anklicken des Links der Bestätigungsmail, kann hier aber auch manuell angestoßen werden.
 
 
 ### CSV -Import
 
 Eventuell hast du schon vor Contao mit einem Newsletter-System gearbeitet und stehst jetzt vor der Aufgabe, die 
-vorhandenen Empfänger in Contao einzufügen. Für diesen Fall bietet das Newsletter-Modul die Funktion `CSV-Import`.
+vorhandenen Empfänger in Contao einzufügen. Für diesen Fall bietet das Newsletter-Modul die Funktion `CSV-Import`.
 
 Exportiere zunächst die vorhandenen Empfänger als CSV-Datei. Die meisten Programme wie z. B. phpMyAdmin oder Excel 
 bieten eine entsprechende Option an, um Daten im CSV-Format zu speichern. Obwohl die Bezeichnung CSV-Datei suggeriert, 
 dass nur kommagetrennte Daten verarbeitet werden könnten, akzeptiert Contao auch Strichpunkte, Tabulatoren und 
-Zeilenumbrüche als Feldtrenner.
+Zeilenumbrüche als Feldtrenner.
 
 Wähle die Datei für den Import auf deinem Rechner aus.
 
@@ -585,10 +585,10 @@ Starte den Import anschließend durch einen Klick auf die Schaltfläche `CSV-Imp
 
 ## Newsletter versenden
 
-Die Versendung eines Newsletters leitest du über das entsprechende Navigationssymbol 
+Die Versendung eines Newsletters leitest du über das entsprechende Navigationssymbol 
 ![Newsletter versenden]({{% asset "icons/send.svg" %}}?classes=icon "Newsletter versenden") in der Verteiler-Übersicht ein. 
 Du gelangst zunächst zu einer Vorschauseite, auf der du die Konfiguration und den Inhalt des Newsletters noch einmal 
-prüfen kannst. Es wird zudem empfohlen, regen Gebrauch von der Schaltfläche `Testsendung` zu machen. Die 
+prüfen kannst. Es wird zudem empfohlen, regen Gebrauch von der Schaltfläche `Testsendung` zu machen. Die 
 dazugehörige Empfängeradresse kannst du im Feld `Testsendung an` ändern.
 
 ![Einen Newsletter versenden]({{% asset "images/manual/core-extensions/newsletter/de/einen-newsletter-versenden.png" %}}?classes=shadow)
@@ -596,12 +596,12 @@ dazugehörige Empfängeradresse kannst du im Feld `Testsendung an` ändern.
 
 ### Serverlimits einkalkulieren
 
-Im Regelfall wirst du für deine Webseite keinen eigenen Server angemietet haben, sondern sich einen sogenannten 
+Im Regelfall wirst du für deine Webseite keinen eigenen Server angemietet haben, sondern sich einen sogenannten 
 Shared-Hosting-Server mit anderen Kunden teilen. Da die Systemressourcen im Shared-Hosting-Bereich allen Kunden 
-gemeinschaftlich zur Verfügung stehen, gibt es normalerweise bestimmte Limits, die deren Nutzung einschränken.
+gemeinschaftlich zur Verfügung stehen, gibt es normalerweise bestimmte Limits, die deren Nutzung einschränken.
 
 Wenn du z. B. einen Newsletter an 500.000 Empfänger versendest, kann das den Mailserver schon mal eine Zeit lang 
-beschäftigen, in der du den Dienst für alle Kunden quasi blockierst. Deswegen ist die Anzahl der E-Mails, die du pro 
+beschäftigen, in der du den Dienst für alle Kunden quasi blockierst. Deswegen ist die Anzahl der E-Mails, die du pro 
 Minute versenden kannst, normalerweise auf einen Wert zwischen 50 und 500 limitiert.
 
 Um solchen Beschränkungen Rechnung zu tragen, versendet Contao nicht alle Newsletter auf einmal, sondern unterteilt 
@@ -615,7 +615,7 @@ den Versandprozess in mehrere Zyklen, die du exakt an die Vorgaben deines Mailse
 weiterlaufen soll. 
 
 Ausgehend von einem Serverlimit von 100 E-Mails pro Minute und einer Gesamtzahl von 10.000 Empfängern kannst du also 
-beispielsweise alle 6 Sekunden 10 Mails verschicken. Der komplette Versandvorgang würde dann 100 Minuten dauern.
+beispielsweise alle 6 Sekunden 10 Mails verschicken. Der komplette Versandvorgang würde dann 100 Minuten dauern.
 
 
 ### Unterbrochene Versendungen wiederaufnehmen
@@ -626,7 +626,7 @@ doch einmal versehentlich passiert, kannst du den Versand wie folgt wiederaufneh
 
 1. Filtere im Backend unter »System« > »System-Log« die Kategorie nach dem letzten Newsletter-Eintrag.
 2. Stelle fest, wie viele Newsletter versendet wurden.
-3. Gebe den gewünschten Versatz im Feld `Versatz` ein.
+3. Gebe den gewünschten Versatz im Feld `Versatz` ein.
 
 Die Log-Daten der Versendung findest du im Backend unter »System« > »System-Log«. Die Filter-Kategorie heißt 
 NEWSLETTER_X, wobei das X für die ID des jeweiligen Newsletters steht. Die Gesamtzahl der versendeten E-Mail entnimmst 

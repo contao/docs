@@ -17,7 +17,7 @@ gelöscht oder bearbeitet werden.
 ## Die verschiedenen Ansichten
 
 Die drei häufigsten Formen von Auflistungen, die nachfolgend Ansichten genannt werden, sind die einfache Liste
-(»List View«), die nach der übergeordneten Tabelle gruppierte Liste (»Parent View«) sowie die Baumansicht
+(»List View«), die nach der übergeordneten Tabelle gruppierte Liste (»Parent View«) sowie die Baumansicht
 (»Tree View«).
 
 
@@ -41,7 +41,7 @@ In Contao kommen solche Eltern-Kind-Beziehungen sehr häufig vor, z. B. bei
 - Archiven und Nachrichtenbeiträgen oder
 - Bildgrößen und Media-Queries.
 
-Wenn du nun den Inhalt eines Warenkorbs auflistest, willst du natürlich nur die Produkte dieses einen Warenkorbs sehen 
+Wenn du nun den Inhalt eines Warenkorbs auflistest, willst du natürlich nur die Produkte dieses einen Warenkorbs sehen 
 und nicht die Produkte des zweiten. Daher zeigt Contao dir im Parent View auch nur die Kindelemente des jeweils 
 ausgewählten Elternelements an.
 
@@ -62,7 +62,7 @@ auch innerhalb einer Tabelle abgebildet werden, wie es z. B. bei der Seitenstruk
 
 Damit du auch bei Tabellen mit sehr vielen Datensätzen immer den Überblick behältst, bietet Contao dir verschiedene 
 Möglichkeiten, Auflistungen zu sortieren und durch Filter einzuschränken. Die meisten Auflistungen lassen sich durch 
-gezieltes Filtern so einschränken, dass dir nur die Datensätze angezeigt werden, die du auch wirklich für eine 
+gezieltes Filtern so einschränken, dass dir nur die Datensätze angezeigt werden, die du auch wirklich für eine 
 bestimmte Aktion benötigst.
 
 ![Datensätze sortieren und filtern]({{% asset "images/manual/administration-area/de/datensaetze-sortieren-und-filtern.png" %}}?classes=shadow)
@@ -73,8 +73,8 @@ die männlich sind und Deutsch sprechen.
 **Sortieren:** Hier legst du fest, nach welchem Feld die Auflistung sortiert wird.
 
 **Suchen:** Hier kannst du ein Feld nach einem bestimmten Wert durchsuchen, sodass nur die Datensätze angezeigt werden, 
-die den gesuchten Begriff enthalten. Die Abfrage unterstützt sogenannte 
-[reguläre Ausdrücke](https://wiki.selfhtml.org/wiki/Perl/Regul%C3%A4re_Ausdr%C3%BCcke#zeichen), das heißt du kannst 
+die den gesuchten Begriff enthalten. Die Abfrage unterstützt sogenannte 
+[reguläre Ausdrücke](https://wiki.selfhtml.org/wiki/Perl/Regul%C3%A4re_Ausdr%C3%BCcke#zeichen), das heißt du kannst 
 z. B. mit `^a` alle Datensätze abrufen, die mit dem Buchstaben A beginnen, oder analog mit `a$` alle diejenigen, die 
 mit dem Buchstaben A enden. Äußerst hilfreich ist auch die Suche nach `meier|schmidt`, die sowohl den Account von 
 Herrn Meier als auch den von Herrn Schmidt findet.
@@ -84,7 +84,7 @@ und auf 30 Datensätze eingestellt, da das Auflisten von mehreren Hundert Datens
 
 Alle Filter können beliebig miteinander kombiniert werden. Aktive Filter werden gelb hinterlegt, sodass du auf einen
 Blick erkennen kannst, welche Filter du gesetzt hast. Um einen Filter zu deaktivieren, wähle den obersten Eintrag aus
-dem Drop-Down-Menü bzw. löschen den Suchbegriff aus dem Suchfeld.
+dem Drop-Down-Menü bzw. löschen den Suchbegriff aus dem Suchfeld.
 
 Durch Klick auf folgende Icons können die Filter angewendet bzw. zurückgesetzt werden:
 
@@ -104,8 +104,8 @@ Je nach Modul kommen unter Umständen noch weitere Funktionen hinzu.
 
 ### Standard-Icons
 
-Die folgenden Navigationssymbole kommen in fast allen Ansichten vor. Aus Gründen der Übersichtlichkeit sind sie nicht 
-zusätzlich mit einem Text versehen. Wenn du aber den Zeiger deiner Maus über einem Icon positionierst, wird dir die 
+Die folgenden Navigationssymbole kommen in fast allen Ansichten vor. Aus Gründen der Übersichtlichkeit sind sie nicht 
+zusätzlich mit einem Text versehen. Wenn du aber den Zeiger deiner Maus über einem Icon positionierst, wird dir die 
 entsprechende Beschreibung dazu angezeigt.
 
 ![Bearbeiten]({{% asset "icons/edit.svg" %}}?classes=icon) **Bearbeiten:** ruft einen bestimmten Datensatz im Bearbeitungsmodus 
@@ -148,7 +148,7 @@ kann auch mittels Drag & Drop geändert werden. Dazu einfach auf das Drag & Drop
 ![Neues Element]({{% asset "icons/new.svg" %}}?classes=icon) **Neues Element:** erstellt einen neuen Datensatz nach dem 
 aktuellen Datensatz.
 
-![Einfügen]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Einfügen:** fügt einen Datensatz nach dem aktuellen Datensatz 
+![Einfügen]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Einfügen:** fügt einen Datensatz nach dem aktuellen Datensatz 
 ein.
 
 **![Datei oder Verzeichnis verschieben]({{% asset "icons/drag.svg" %}}?classes=icon) Verschieben:** Eine Datei bzw. einen 
@@ -160,7 +160,7 @@ Ordner per Drag & Drop verschieben.
 Im Tree View, der Baumansicht, gibt es noch weitere Icons, die aufgrund der hierarchischen Beziehungen der Datensätze 
 untereinander notwendig sind. Du brauchst beispielsweise eine Möglichkeit, beim Verschieben oder Duplizieren von 
 Datensätzen festzulegen, ob diese nach einem Datensatz in derselben Ebene oder unterhalb eines Datensatzes in einer 
-neuen Ebene eingefügt werden sollen.
+neuen Ebene eingefügt werden sollen.
 
 ![Icons im Tree View]({{% asset "images/manual/administration-area/de/icons-im-tree-view.png" %}}?classes=shadow)
 
@@ -169,10 +169,10 @@ Seite inklusive aller Unterseiten.
 
 ![Seite bearbeiten]({{% asset "icons/article.svg" %}}?classes=icon) **Seite bearbeiten:**  die Seite bearbeiten.
 
-![Dahinter einfügen]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Dahinter einfügen:** fügt eine Seite nach der 
+![Dahinter einfügen]({{% asset "icons/pasteafter.svg" %}}?classes=icon) **Dahinter einfügen:** fügt eine Seite nach der 
 aktuellen Seite ein.
 
-![Darunter einfügen]({{% asset "icons/pasteinto.svg" %}}?classes=icon) **Darunter einfügen:** fügt eine Seite unterhalb der 
+![Darunter einfügen]({{% asset "icons/pasteinto.svg" %}}?classes=icon) **Darunter einfügen:** fügt eine Seite unterhalb der 
 aktuellen Seite ein.
 
 ![Artikel bearbeiten]({{% asset "icons/article.svg" %}}?classes=icon) **Artikel bearbeiten:** den Artikel der Seite bearbeiten.
@@ -182,10 +182,10 @@ aktuellen Seite ein.
 
 Das Klemmbrett ist keine eigene Anwendung, die du irgendwo aufrufen und anschauen kannst. Es ist automatisch im 
 Hintergrund aktiv und merkt sich die Datensätze, die du duplizieren oder verschieben möchtest. Auf diese Weise ist es 
-möglich, Datensätze auch über die Grenzen eines Elternelements hinaus zu bewegen.
+möglich, Datensätze auch über die Grenzen eines Elternelements hinaus zu bewegen.
 
 Du kannst dir das Klemmbrett wie die Zwischenablage auf deinem Rechner vorstellen, in die du mit `[Ctrl]+[c]` bestimmte 
-Daten kopieren und mit `[Ctrl]+[v]` an einer anderen Stelle wieder einfügen kannst. In Contao kannst du so z. B. 
+Daten kopieren und mit `[Ctrl]+[v]` an einer anderen Stelle wieder einfügen kannst. In Contao kannst du so z. B. 
 Inhaltselemente von einem Artikel in einen anderen verschieben.
 
 ![Inhaltselemente mittels Klemmbrett verschieben]({{% asset "images/manual/administration-area/de/inhaltselemente-mittels-klemmbrett-verschieben.png" %}}?classes=shadow)
@@ -195,12 +195,12 @@ Inhaltselemente von einem Artikel in einen anderen verschieben.
 
 Wann immer du einen oder mehrere Datensätze löschst, werden diese nicht sofort aus der Datenbank entfernt, sondern in 
 einen virtuellen Papierkorb verschoben. Aus diesem Papierkorb kannst du die Daten jederzeit wieder hervorholen und an 
-der ursprünglichen Stelle wiederherstellen.
+der ursprünglichen Stelle wiederherstellen.
 
 Du findest den »Papierkorb« im Navigationsbereich in der Gruppe System unter dem Punkt Wiederherstellen. Dort siehst du 
 eine Liste aller gelöschten Datensätze, die du entweder nach dem Datum der Löschung oder dem Ursprung des Datensatzes 
 sortieren kannst. Mit einem Klick auf das entsprechende Navigationssymbol 
 ![Eintrag wiederherstellen]({{% asset "icons/undo.svg" %}}?classes=icon) 
-kannst du einen Löschvorgang rückgängig machen.
+kannst du einen Löschvorgang rückgängig machen.
 
-![Einen Löschvorgang rückgängig machen]({{% asset "images/manual/administration-area/de/einen-loeschvorgang-rueckgaengig-machen.png" %}}?classes=shadow)
+![Einen Löschvorgang rückgängig machen]({{% asset "images/manual/administration-area/de/einen-loeschvorgang-rueckgaengig-machen.png" %}}?classes=shadow)

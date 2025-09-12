@@ -17,7 +17,7 @@ Auf dieser Seite geht es nun um die Erstellung und Konfiguration dieser Frontend
 Theme-Manager untergeordnet sind. Jedes Modul, das du anlegst, ist also automatisch einem bestimmten Theme zugeordnet 
 und kann mit diesem exportiert und in einer anderen Installation wiederverwendet werden.
 
-Die Modulverwaltung rufst du demzufolge über den Theme-Manager, wie im Abschnitt 
+Die Modulverwaltung rufst du demzufolge über den Theme-Manager, wie im Abschnitt 
 [Themes konfigurieren](../theme-manager/themes-verwalten/#themes-konfigurieren) beschrieben, auf.
 
 {{% children %}}
@@ -27,7 +27,7 @@ Mitgliedergruppen beschränken.
 
 ![Den Zugriff auf ein Modul einschränken]({{% asset "images/manual/layout/module-management/de/den-zugriff-auf-ein-modul-einschraenken.png" %}}?classes=shadow)
 
-**Modul schützen:** Das Modul ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein Mitglied im 
+**Modul schützen:** Das Modul ist standardmäßig unsichtbar und wird erst eingeblendet, nachdem sich ein Mitglied im 
 Frontend angemeldet hat.
 
 **Erlaubte Mitgliedergruppen**: Hier legst du fest, wer Zugriff auf das Modul hat.

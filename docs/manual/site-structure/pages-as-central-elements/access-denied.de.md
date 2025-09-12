@@ -25,7 +25,7 @@ Hinweis ausgeben oder den Besucher automatisch auf eine andere Seite weiterleite
 ## Metadaten
 
 Die Metadaten einer Seite beziehen sich größtenteils auf die entsprechenden
-[Meta-Tags](https://de.wikipedia.org/wiki/Meta-Element) im Kopfbereich der HTML-Seite. Du kannst darüber unter anderem den Titel und die Beschreibung einer 
+[Meta-Tags](https://de.wikipedia.org/wiki/Meta-Element) im Kopfbereich der HTML-Seite. Du kannst darüber unter anderem den Titel und die Beschreibung einer 
 Seite definieren.
 
 **Seitentitel:** Der Seitentitel wird im `<title>`-Tag der Webseite verwendet und taucht häufig auch
@@ -54,7 +54,7 @@ aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite 
 
 **Beschreibung der Seite:** Die Beschreibung einer Seite wird genau wie der Seitentitel von allen gängigen Suchmaschinen
 indiziert und beispielsweise in den Suchergebnissen angezeigt, wenn keine Kontextinformation zum gesuchten Begriff
-verfügbar ist. Die empfohlene Länge einer Beschreibung liegt zwischen 150 und 300 Zeichen. Die Meta-Beschreibung einer
+verfügbar ist. Die empfohlene Länge einer Beschreibung liegt zwischen 150 und 300 Zeichen. Die Meta-Beschreibung einer
 Seite ist ein wichtiges Instrument zur Suchmaschinenoptimierung, daher solltest du dir die Zeit nehmen, jede Seite mit
 einer eindeutigen Beschreibung zu versehen.
 
@@ -75,17 +75,17 @@ auswählst, wird automatisch zur ersten regulären Unterseite weitergeleitet.
 
 ## Layout-Einstellungen
 
-Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein
+Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein
 Seitenlayout zugewiesen oder vererbt worden, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
 
 **Ein Layout zuweisen:** Hier kannst du einer Seite ein Seitenlayout zuweisen. Die Zuweisung des Seitenlayouts
-gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
+gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
 
-**Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines
+**Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines
 Themes erfolgt durch Zuweisung eines Seitenlayouts.
 
 **Unterseitenlayout:** Mit der Auswahl »Seitenlayout vererben« (Standard) gilt die Zuweisung
-des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
+des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
 abweichendes Seitenlayout für untergeordnete Seiten zugewiesen werden.
 
 
@@ -93,10 +93,10 @@ abweichendes Seitenlayout für untergeordnete Seiten zugewiesen werden.
 
 In den Cache-Einstellungen legst du fest, ob und wie lange eine Seite im Cache zwischengespeichert werden soll. Eine
 zwischengespeicherte Seite lädt deutlich schneller, da sie zum einen nicht erst von Contao generiert werden muss und
-zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
+zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
 
 **Cachezeit festlegen:** Hier kannst du einer Seite eine Cachezeit zuweisen. Wenn du die Option nicht auswählst, werden
-die Cache-Einstellungen von einer übergeordneten Seite geerbt.
+die Cache-Einstellungen von einer übergeordneten Seite geerbt.
 
 **Private Cache (Client-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den
 Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuft werden soll.
@@ -104,9 +104,9 @@ Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuf
 **Shared Cache (Server-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den
 Zeitraum in Sekunden fest, nach dem die Seite von einem gemeinsam genutzten Cache als veraltet eingestuft werden soll.
 
-Beachte, dass Seiten aus Sicherheitsgründen nur zwischengespeichert werden, wenn sie nicht geschützt sind und kein
-Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertrauliche Daten in den Cache geschrieben und
-versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz
+Beachte, dass Seiten aus Sicherheitsgründen nur zwischengespeichert werden, wenn sie nicht geschützt sind und kein
+Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertrauliche Daten in den Cache geschrieben und
+versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz
 zugewiesener Verfallszeit nicht im Cache auftauchen.
 
 **Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn
@@ -116,7 +116,7 @@ personalisieren kannst.
 
 ## Zugriffsrechte
 
-In den Zugriffsrechten legst du fest, welche Benutzer im **Backend** auf eine Seite zugreifen dürfen und was sie mit
+In den Zugriffsrechten legst du fest, welche Benutzer im **Backend** auf eine Seite zugreifen dürfen und was sie mit
 dieser Seite und den darin enthaltenen Artikeln machen können. Jede Seite gehört ähnlich dem Unix-Rechtesystem einem
 bestimmten Benutzer und einer bestimmten Benutzergruppe und unterscheidet drei Zugriffsebenen:
 
@@ -125,14 +125,14 @@ bestimmten Benutzer und einer bestimmten Benutzergruppe und unterscheidet drei Z
 - Zugriff als sonstiger Backend-Benutzer
 
 Die Seite »Unternehmen« ist beispielsweise mit Zugriffsrechten versehen und gehört dem Benutzer h.lewis sowie der
-Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf
-dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite
+Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf
+dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite
 an sich bearbeiten und z. B. den Seitentitel ändern.
 
 ![Zugriffsrechte zuweisen]({{% asset "images/manual/layout/site-structure/de/zugriffsrechte-zuweisen.png" %}}?classes=shadow)
 
 **Zugriffsrechte zuweisen:** Hier kannst du einer Seite Zugriffsrechte zuweisen. Wenn du die Option nicht auswählst,
-werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
+werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
 
 **Besitzer:** Hier legst du den Besitzer der Seite fest.
 
@@ -147,8 +147,8 @@ Seite [Systemverwaltung](/de/system/einstellungen/).
 ## Experten-Einstellungen
 
 **CSS-Klasse:** Hier weist du der Seite eine CSS-Klasse zu, die sowohl im Body-Tag der HTML-Seite als auch in den
-Navigationsmodulen verwendet wird. Auf diese Weise kannst du CSS-Formatierungen für eine spezielle Seite oder einen
-bestimmten Menüpunkt erstellen.
+Navigationsmodulen verwendet wird. Auf diese Weise kannst du CSS-Formatierungen für eine spezielle Seite oder einen
+bestimmten Menüpunkt erstellen.
 
 
 ## Veröffentlichung

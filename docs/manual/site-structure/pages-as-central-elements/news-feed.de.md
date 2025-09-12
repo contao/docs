@@ -30,7 +30,7 @@ der Seite eingebaut werden. Mit »Kopfbereich« ist dabei nicht die Kopfzeile de
 
 ## Routing
 
-**Seitenaliase:** Der Alias einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in
+**Seitenaliase:** Der Alias einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in
 deinem Browser aufrufen kannst. Wenn du das Feld beim Anlegen leer lässt, vergibt Contao den Alias automatisch.
 
 
@@ -41,13 +41,13 @@ deinem Browser aufrufen kannst. Wenn du das Feld beim Anlegen leer lässt, vergi
 
 ## Feed-Einstellungen
 
-**Feed-Format:** Hier legst du das Format des Feeds fest. Contao unterstützt folgende Formate: RSS 2.0, Atom, und JSON.
+**Feed-Format:** Hier legst du das Format des Feeds fest. Contao unterstützt folgende Formate: RSS 2.0, Atom, und JSON.
 
 **Export-Einstellungen:** Hier legst du fest, ob lediglich die Teasertexte der Beiträge oder die kompletten Beiträge
 als Feed exportiert werden.
 
 **Maximale Anzahl an Beiträgen:** Hier kannst du die Anzahl der Beiträge des Feeds beschränken. In der Regel reichen um
-die 25 Beiträge pro Feed vollkommen aus. Meistens werden ohnehin nur die ersten drei bis fünf tatsächlich verwendet.
+die 25 Beiträge pro Feed vollkommen aus. Meistens werden ohnehin nur die ersten drei bis fünf tatsächlich verwendet.
 
 **Hervorgehobene Beiträge:** Hier legst du fest, ob alle, nur hervorgehobene oder nur nicht hervorgehobene Beiträge der
 ausgewählten Archive angezeigt werden.
@@ -58,7 +58,7 @@ ausgewählten Archive angezeigt werden.
 ## Bildeinstellungen
 
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
 auswählen:
 
 | Relatives Format               |                                                                                                                    |
@@ -86,10 +86,10 @@ auswählen:
 
 In den Cache-Einstellungen legst du fest, ob und wie lange eine Seite im Cache zwischengespeichert werden soll. Eine
 zwischengespeicherte Seite lädt deutlich schneller, da sie zum einen nicht erst von Contao generiert werden muss und
-zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
+zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
 
 **Cachezeit festlegen:** Hier kannst du einer Seite eine Cachezeit zuweisen. Wenn du die Option nicht auswählst, werden
-die Cache-Einstellungen von einer übergeordneten Seite geerbt.
+die Cache-Einstellungen von einer übergeordneten Seite geerbt.
 
 **Private Cache (Client-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den
 Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuft werden soll.
@@ -97,9 +97,9 @@ Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuf
 **Shared Cache (Server-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den
 Zeitraum in Sekunden fest, nach dem die Seite von einem gemeinsam genutzten Cache als veraltet eingestuft werden soll.
 
-Beachte, dass Seiten aus Sicherheitsgründen nur zwischengespeichert werden, wenn sie nicht geschützt sind und kein
-Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertrauliche Daten in den Cache geschrieben und
-versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz
+Beachte, dass Seiten aus Sicherheitsgründen nur zwischengespeichert werden, wenn sie nicht geschützt sind und kein
+Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertrauliche Daten in den Cache geschrieben und
+versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz
 zugewiesener Verfallszeit nicht im Cache auftauchen.
 
 **Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn
@@ -110,15 +110,15 @@ personalisieren kannst.
 ## Experten-Einstellungen
 
 **CSS-Klasse:** Hier weist du der Seite eine CSS-Klasse zu, die sowohl im Body-Tag der HTML-Seite als auch in den
-Navigationsmodulen verwendet wird. Auf diese Weise kannst du CSS-Formatierungen für eine spezielle Seite oder einen
-bestimmten Menüpunkt erstellen.
+Navigationsmodulen verwendet wird. Auf diese Weise kannst du CSS-Formatierungen für eine spezielle Seite oder einen
+bestimmten Menüpunkt erstellen.
 
 **In der HTML-Sitemap zeigen:** Hier kannst du festlegen, ob die Seite in der HTML-Sitemap angezeigt wird. Standardmäßig
-sind darin alle öffentlichen und nicht im Menü versteckten Seiten enthalten. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
+sind darin alle öffentlichen und nicht im Menü versteckten Seiten enthalten. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
 
 - **Standard:** Die Standard-Einstellungen verwenden.
-- **Immer anzeigen:** Die Seite wird immer in der HTML-Sitemap angezeigt, auch wenn sie z. B. im Menü versteckt ist und
-  somit normalerweise nicht angezeigt würde.
+- **Immer anzeigen:** Die Seite wird immer in der HTML-Sitemap angezeigt, auch wenn sie z. B. im Menü versteckt ist und
+  somit normalerweise nicht angezeigt würde.
 - **Nie anzeigen:** Die Seite ist von der HTML-Sitemap ausgenommen.
 
 {{% notice note %}}
@@ -126,13 +126,13 @@ Verwechsle bitte nicht die HTML-Sitemap mit der XML-Sitemap: Die HTML-Sitemap is
 kannst du z. B. bei Google einreichen.
 {{% /notice %}}
 
-**Im Menü verstecken:** Wenn du diese Option auswählst, wird die Seite nicht im Menü deiner Webseite angezeigt.
-Du kannst die Seite – sofern sie veröffentlicht wurde – aber trotzdem über einen direkten Link oder in einem
+**Im Menü verstecken:** Wenn du diese Option auswählst, wird die Seite nicht im Menü deiner Webseite angezeigt.
+Du kannst die Seite – sofern sie veröffentlicht wurde – aber trotzdem über einen direkten Link oder in einem
 Frontend-Modul aufrufen.
 
 Contao indiziert die fertigen Seiten deiner Webseite und erstellt daraus einen Suchindex, den du mit dem Frontend-Modul
 »Suchmaschine« durchsuchen kannst. Mit dieser Einstellungen kannst du bestimmte Seiten gezielt von der Indizierung
-ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber hinaus komplett deaktivieren.
+ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber hinaus komplett deaktivieren.
 
 **Nicht durchsuchen:** Hier kannst du eine Seite von der Suche ausnehmen.
 
