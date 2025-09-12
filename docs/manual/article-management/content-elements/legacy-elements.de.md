@@ -21,16 +21,16 @@ Damit das Akkordeon funktioniert muss das *js_accordion*-Template im Seitenlayou
 | Betriebsart                         | Erklärung                                                                                                                                  |
 |:------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
 | Akkordeon&nbsp;Einzelelement        | In diesem Modus legt das Element einen einzelnen Akkordeon-Abschnitt mit einem Textelement und einem optionalen Bild an.                   |
-| Akkordeon&nbsp;Umschlag&nbsp;Anfang | In diesem Modus eröffnet das Element einen neuen Akkordeon-Abschnitt, in den beliebige weitere Inhaltselemente eingefügt werden können.    |
+| Akkordeon&nbsp;Umschlag&nbsp;Anfang | In diesem Modus eröffnet das Element einen neuen Akkordeon-Abschnitt, in den beliebige weitere Inhaltselemente eingefügt werden können.    |
 | Akkordeon&nbsp;Umschlag&nbsp;Ende   | In diesem Modus schließt das Element einen zuvor mittels »Umschlag Anfang« eröffneten Akkordeon-Abschnitt.                                 |
 
 
 ### Akkordeon-Einstellungen
 
-**Bereichsüberschrift:** Jeder Akkordeon-Abschnitt hat eine immer sichtbare Überschrift, über die er geöffnet werden 
+**Bereichsüberschrift:** Jeder Akkordeon-Abschnitt hat eine immer sichtbare Überschrift, über die er geöffnet werden 
 kann. HTML-Eingaben sind hier erlaubt.
 
-**CSS-Format:** Falls du die Bereichsüberschrift mittels CSS-Code formatieren möchtest, kannst du hier eine 
+**CSS-Format:** Falls du die Bereichsüberschrift mittels CSS-Code formatieren möchtest, kannst du hier eine 
 Formatdefinition erfassen.
 
 **Klassennamen:** Lasse das Feld leer, um die Standard-Klassennamen zu verwenden, oder gib eigene Toggler- und 
@@ -39,7 +39,7 @@ Accordion-Klassen ein.
 
 ### Text/HTML/Code
 
-**Text:** Hier kannst du den Text des Akkordeon-Abschnitts eingeben. Die Eingabe erfolgt wie beim Textelement über den 
+**Text:** Hier kannst du den Text des Akkordeon-Abschnitts eingeben. Die Eingabe erfolgt wie beim Textelement über den 
 Rich-Text-Editor.
 
 
@@ -47,11 +47,11 @@ Rich-Text-Editor.
 
 **Ein Bild hinzufügen:** Hier kannst du dem Element ein Bild hinzufügen.
 
-**Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast,
+**Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast,
 kannst du den Upload hier nachholen, ohne die Eingabemaske zu verlassen.
 
 **Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße
-geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
+geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 | Eigene Größen                                  |                                                                                                                           |
 |:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
@@ -69,14 +69,14 @@ umfließt der Text das Bild (wie im Icon symbolisiert).
 **Metadaten überschreiben:**  Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
 **Alternativer Text:** Hier kannst du einen alternativen Text für das Bild eingeben *(alt-Attribut)*. Eine
-barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die angezeigt wird, wenn das Objekt
+barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die angezeigt wird, wenn das Objekt
 selbst nicht dargestellt werden kann. Alternative Texte werden außerdem von Suchmaschinen ausgewertet und sind daher
 ein wichtiges Instrument der Onpage-Optimierung.
 
 **Bildtitel:** Hier kannst du den Titel des Bildes eingeben *(title-Attribut)*.
 
 **Bildlink-Adresse:** Bei einem Klick auf ein verlinktes Bild wirst du direkt zu der angegebenen Zielseite
-weitergeleitet (entspricht einem Bildlink). Beachte, dass für ein verlinktes Bild keine Lightbox-Großansicht mehr
+weitergeleitet (entspricht einem Bildlink). Beachte, dass für ein verlinktes Bild keine Lightbox-Großansicht mehr
 möglich ist.
 
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.
@@ -117,7 +117,7 @@ Ansonsten sieht der generierte HTML-Code wie folgt aus:
 ```
 
 Beachte, dass die Inhalte jedes Akkordeon-Abschnitts von jeweils zwei (!) `<div>`-Elementen umschlossen werden. Das ist 
-notwendig, damit der Effekt browserübergreifend funktioniert und formatiert werden kann.
+notwendig, damit der Effekt browserübergreifend funktioniert und formatiert werden kann.
 
 
 ## Slider
@@ -130,7 +130,7 @@ Damit der Slider funktioniert muss das *js_slider*-Template im Seitenlayout eing
 
 | Betriebsart                      | Erklärung                                                                                                                            |
 |:---------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|
-| Slider&nbsp;Umschlag&nbsp;Anfang | In diesem Modus eröffnet das Element einen neuen Slider-Abschnitt, in den beliebige weitere Inhaltselemente eingefügt werden können. |
+| Slider&nbsp;Umschlag&nbsp;Anfang | In diesem Modus eröffnet das Element einen neuen Slider-Abschnitt, in den beliebige weitere Inhaltselemente eingefügt werden können. |
 | Slider&nbsp;Umschlag&nbsp;Ende   | In diesem Modus schließt das Element einen zuvor mittels »Umschlag Anfang« eröffneten Slider-Abschnitt.                              |
 
 

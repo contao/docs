@@ -10,7 +10,7 @@ weight: 26
 
 ## Bild
 
-Das Inhaltselement »Bild« fügt dem Artikel ein Bild hinzu. Ein Bild kann eine Großansicht haben oder als Bildlink auf 
+Das Inhaltselement »Bild« fügt dem Artikel ein Bild hinzu. Ein Bild kann eine Großansicht haben oder als Bildlink auf 
 eine bestimmte URL verweisen.
 
 ![Ein Bildelement anlegen]({{% asset "images/manual/article-management/de/ein-bildelement-anlegen.png" %}}?classes=shadow)
@@ -28,7 +28,7 @@ geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Metadaten überschreiben:** Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
-**Alternativer Text:** Eine barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die 
+**Alternativer Text:** Eine barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die 
 angezeigt wird, wenn das Objekt selbst nicht dargestellt werden kann. Alternative Texte werden außerdem von 
 Suchmaschinen ausgewertet und sind daher ein wichtiges Instrument der Onpage-Optimierung.
 
@@ -83,7 +83,7 @@ Das Element generiert folgenden HTML-Code:
 
 ## Galerie
 
-Das Inhaltselement »Bildergalerie« fügt dem Artikel eine Bildergalerie hinzu, also eine Sammlung mehrerer 
+Das Inhaltselement »Bildergalerie« fügt dem Artikel eine Bildergalerie hinzu, also eine Sammlung mehrerer 
 Vorschaubilder (engl. »Thumbnails«), die in einer Liste aufgelistet sind und beim Anklicken vergrößert werden. Bei 
 sehr vielen Bildern kann die Galerie auf mehrere Seiten verteilt werden.
 
@@ -93,7 +93,7 @@ sehr vielen Bildern kann die Galerie auf mehrere Seiten verteilt werden.
 ### Quelle
 
 **Quelldateien:** Hier wählst du einen oder mehrere Ordner bzw. Dateien aus, die in der Bildergalerie enthalten sein 
-sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen Bilder in die Galerie. Die 
+sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen Bilder in die Galerie. Die 
 einzelnen Bilder können durch Ziehen umsortiert werden.
 
 **Home-Verzeichnis verwenden:** Das Home-Verzeichnis als Dateiquelle verwenden, wenn sich ein Mitglied angemeldet hat.
@@ -207,7 +207,7 @@ Das Element generiert folgenden HTML-Code:
 
 ## Video/Audio
 
-Das Inhaltselement »Video/Audio« fügt dem Artikel eine Video- bzw. Audio-Datei hinzu. 
+Das Inhaltselement »Video/Audio« fügt dem Artikel eine Video- bzw. Audio-Datei hinzu. 
 
 
 ### Quelle
@@ -288,7 +288,7 @@ Das Element generiert folgenden HTML-Code:
 
 ## Vimeo
 
-Das Inhaltselement »Vimeo« fügt dem Artikel ein Vimeo-Video hinzu.
+Das Inhaltselement »Vimeo« fügt dem Artikel ein Vimeo-Video hinzu.
 
 
 ### Quelle
@@ -390,7 +390,7 @@ Das Element generiert folgenden HTML-Code:
 
 ## YouTube
 
-Das Inhaltselement »YouTube« fügt dem Artikel ein YouTube-Video hinzu. 
+Das Inhaltselement »YouTube« fügt dem Artikel ein YouTube-Video hinzu. 
 
 
 ### Quelle

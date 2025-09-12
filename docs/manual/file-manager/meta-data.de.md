@@ -11,7 +11,7 @@ In Contao kannst du zu jeder Art von Datei sogenannte Metadaten erfassen. Metada
 Bildergalerien und Downloads ausgewertet, um zu jeder Datei eine kurze Beschreibung oder Bildunterschrift darstellen 
 zu können. In einem mehrsprachigen Projekt kannst du für jede Sprache separate Metadaten anlegen.
 
-Contao unterstützt folgende Metadaten:
+Contao unterstützt folgende Metadaten:
 
 - Titel
 - Alternativer Text

@@ -8,7 +8,7 @@ aliases:
 weight: 30
 ---
 
-Nachdem du alle Voraussetzungen geprüft und deinen Webserver eingerichtet hast, kannst du nun mit der Installation 
+Nachdem du alle Voraussetzungen geprüft und deinen Webserver eingerichtet hast, kannst du nun mit der Installation 
 beginnen.
 
 Es gibt zwei Wege um Contao auf deinem Server zu installieren, zum einen über die grafische Oberfläche des [Contao 

@@ -8,12 +8,12 @@ weight: 30
 ---
 
 Insert-Tags sind Platzhalter, die bei der Ausgabe einer Seite durch bestimmte Werte ersetzt werden. Mit Insert-Tags
-kannst du z. B. einen Link auf eine Seite oder einen Artikel erstellen, Umgebungsvariablen einfügen oder
-Benutzereigenschaften auslesen. Insert-Tags können überall in Contao verwendet werden.
+kannst du z. B. einen Link auf eine Seite oder einen Artikel erstellen, Umgebungsvariablen einfügen oder
+Benutzereigenschaften auslesen. Insert-Tags können überall in Contao verwendet werden.
 
-Ein Insert-Tag beginnt immer mit zwei öffnenden geschweiften Klammern, gefolgt von einem Schlüsselwort und zwei
+Ein Insert-Tag beginnt immer mit zwei öffnenden geschweiften Klammern, gefolgt von einem Schlüsselwort und zwei
 schließenden geschweiften Klammern, also z. B. `{{date}}`. Viele Insert-Tags benötigen zusätzlich noch ein Argument,
-das mit zwei Doppelpunkten hinter das Schlüsselwort geschrieben wird, also z. B. `{{link::12}}`.
+das mit zwei Doppelpunkten hinter das Schlüsselwort geschrieben wird, also z. B. `{{link::12}}`.
 
 
 ## Link-Elemente

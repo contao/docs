@@ -9,7 +9,7 @@ weight: 10
 ---
 
 Mit dem Formulargenerator kannst du Formulare erstellen und deren Daten entweder per E-Mail verschicken oder in die 
-Datenbank schreiben. Contao prüft die Formulareingaben automatisch anhand den von dir vorgegebenen Regeln. Übertragene 
+Datenbank schreiben. Contao prüft die Formulareingaben automatisch anhand den von dir vorgegebenen Regeln. Übertragene 
 Dateien können als Anhang versendet oder auf dem Server gespeichert werden.
 
 
@@ -54,7 +54,7 @@ z. B. ##field_name##.
 ## Formulardaten versenden
 
 Auf Wunsch verschickt Contao die Formulardaten per E-Mail an einen oder mehrere Empfänger. Falls ein Formular ein Feld 
-für die Übertragung einer Datei enthält, wird diese als Attachment an die E-Mail angehängt.
+für die Übertragung einer Datei enthält, wird diese als Attachment an die E-Mail angehängt.
 
 **Per E-Mail versenden:** Hier aktivierst du den E-Mail-Versand.
 
@@ -63,7 +63,7 @@ Formulardaten verschickt werden.
 
 **Betreff:** Hier gibst du den Betreff der E-Mail ein.
 
-**Datenformat:** Hier legst du fest, in welchem Format die Formulardaten übermittelt werden. Übertragene Dateien werden 
+**Datenformat:** Hier legst du fest, in welchem Format die Formulardaten übermittelt werden. Übertragene Dateien werden 
 immer als Attachment angehängt.
 
 | Datenformat              | Erklärung                                                                                |
@@ -74,8 +74,8 @@ immer als Attachment angehängt.
 | CSV-Datei (Microsoft Excel) | {{< version "4.10" >}} Der E-Mail ist eine CSV-Datei im Microsoft-Excel-Format mit den Formulardaten angehängt. |
 | E-Mail                   | Die Formulardaten werden so formatiert, als hätte der Absender eine E-Mail mit seinem E-Mail-Programm geschrieben. In diesem Fall verarbeitet der Formulargenerator ausschließlich die Felder `name`, `email`, `subject` und `message` und ignoriert alle anderen Formularfelder. |
 
-**Leere Felder auslassen:** Wenn du diese Option auswählst, werden nur ausgefüllte Felder per E-Mail versendet. Felder 
-ohne eine Eingabe werden übersprungen.
+**Leere Felder auslassen:** Wenn du diese Option auswählst, werden nur ausgefüllte Felder per E-Mail versendet. Felder 
+ohne eine Eingabe werden übersprungen.
 
 
 ### Spezielle Feldnamen
@@ -95,13 +95,13 @@ entsprechende Formularfelder mit den hier beschriebenen Feldnamen angelegt werde
 ## Formulardaten speichern
 
 Zusätzlich zum bzw. anstatt des Versands per E-Mail können Formulareingaben auch in einer Tabelle in der Datenbank 
-gespeichert werden. Dazu musst du für jedes Formularfeld ein entsprechendes Feld in der Zieltabelle anlegen und darauf 
-achten, dass die Feldnamen jeweils übereinstimmen.
+gespeichert werden. Dazu musst du für jedes Formularfeld ein entsprechendes Feld in der Zieltabelle anlegen und darauf 
+achten, dass die Feldnamen jeweils übereinstimmen.
 
 **Eingaben speichern:** Hier aktivierst du das Speichern der Daten in der Datenbank.
 
 **Zieltabelle:** Hier wählst du die Tabelle aus, in die die Daten geschrieben werden sollen. Die Tabelle muss vorher 
-z. B. über phpMyAdmin oder als [DCA](../../../../dev/reference/dca/) angelegt worden sein. Die SQL-Zieltabelle muss für jedes Formularfeld eine gleichnamige Spalte enthalten. Sonderzeichen wie Bindestriche im Feldnamen können zu Problemen führen.
+z. B. über phpMyAdmin oder als [DCA](../../../../dev/reference/dca/) angelegt worden sein. Die SQL-Zieltabelle muss für jedes Formularfeld eine gleichnamige Spalte enthalten. Sonderzeichen wie Bindestriche im Feldnamen können zu Problemen führen.
 
 Beispiel-SQL-Code um eine neue Tabelle `prefix_beispielname` in der Datenbank `##DB-NAME##` für ein Formular mit den (Text-)Feldern `Feld1` , `Feld2` , `Feld3` anzulegen:
 ```SQL
@@ -117,7 +117,7 @@ CREATE TABLE `##DB-NAME##`.`prefix_beispielname` ( `ID` INT NOT NULL AUTO_INCREM
 ## Experten-Einstellungen
 
 In den Experten-Einstellungen kannst du unter anderem die Übertragungsmethode eines Formulars ändern. Standardmäßig 
-werden Formulare als POST-Request gesendet, da damit auch größere Datenmengen wie z. B. Dateien übertragen werden 
+werden Formulare als POST-Request gesendet, da damit auch größere Datenmengen wie z. B. Dateien übertragen werden 
 können. In speziellen Fällen, wenn du beispielsweise ein Suchformular zur Ansteuerung der Contao-Suchmaschine erstellen 
 möchtest, ist es jedoch notwendig, stattdessen einen GET-Request zu senden, bei dem die Formulardaten an die URL der 
 Seite angehängt werden.

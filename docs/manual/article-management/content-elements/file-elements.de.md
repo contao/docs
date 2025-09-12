@@ -10,11 +10,11 @@ weight: 25
 
 ## Download
 
-Das Inhaltselement »Download« fügt dem Artikel einen Download-Link hinzu. Beim Anklicken des Links öffnet sich der 
+Das Inhaltselement »Download« fügt dem Artikel einen Download-Link hinzu. Beim Anklicken des Links öffnet sich der 
 »Datei speichern unter …«-Dialog und du kannst die verlinkte Datei auf deinem lokalen Rechner speichern.
 
-Die Besonderheit in Contao ist, dass dieser Download-Link auch mit geschützten Dateien funktioniert, auf die du nicht 
-direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
+Die Besonderheit in Contao ist, dass dieser Download-Link auch mit geschützten Dateien funktioniert, auf die du nicht 
+direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
 erstellen. Weitere Informationen dazu erhältst im Abschnitt [Dateiverwaltung](../../../dateiverwaltung/).
 
 
@@ -43,7 +43,7 @@ kommen.
 
 **Vorschaubilder anzeigen:** Hier kannst du Vorschaubilder der gewählten Dateien anzeigen.
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
 auswählen:
 
 | Eigene Größen                                  |                                                                                                                           |
@@ -109,20 +109,20 @@ Das Element generiert folgenden HTML-Code:
 
 ## Downloads
 
-Das Inhaltselement »Downloads« fügt dem Artikel mehrere Download-Links hinzu. Beim Anklicken eines Links öffnet sich 
+Das Inhaltselement »Downloads« fügt dem Artikel mehrere Download-Links hinzu. Beim Anklicken eines Links öffnet sich 
 der »Datei speichern unter …«-Dialog, und du kannst die Datei auf deinem lokalen Rechner speichern.
 
 ![Das Downloads-Element im Frontend]({{% asset "images/manual/article-management/de/das-downloads-element-im-frontend.png" %}}?classes=shadow)
 
-Die Besonderheit in Contao ist, dass diese Download-Links auch mit geschützten Dateien funktionieren, auf die du nicht 
-direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
+Die Besonderheit in Contao ist, dass diese Download-Links auch mit geschützten Dateien funktionieren, auf die du nicht 
+direkt über deinen Browser zugreifen kannst. Auf diese Weise kannst du sehr einfach einen geschützten Download-Bereich 
 erstellen. Weitere Informationen dazu erhältst du im Abschnitt [Dateiverwaltung](/de/dateiverwaltung/).
 
 
 ### Quelle
 
 **Quelldateien:** Hier wählst du einen oder mehrere Ordner bzw. Dateien aus, die in dem Donwloads-Element enthalten 
-sein sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen herunterladbaren 
+sein sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen herunterladbaren 
 Dateien.
 
 **Home-Verzeichnis verwenden:** Das Home-Verzeichnis als Dateiquelle verwenden, wenn sich ein Mitglied angemeldet hat.
@@ -154,7 +154,7 @@ kommen.
 
 **Vorschaubilder anzeigen:** Hier kannst du Vorschaubilder der gewählten Dateien anzeigen.
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
 auswählen:
 
 | Eigene Größen                                  |                                                                                                                           |
