@@ -128,6 +128,8 @@ validation for each text field to prevent misuse of the form.
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
 
+{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
+
 
 ### Expert settings
 
@@ -159,6 +161,7 @@ The form field generates the following HTML code:
         <span class="invisible">Pflichtfeld </span>…<span class="mandatory">*</span>
     </label>
     <input type="text" name="…" id="ctrl" class="text … mandatory" value="" required placeholder="…" minlength="…" maxlength="…" accesskey="…" tabindex="…">
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
@@ -167,6 +170,13 @@ The form field generates the following HTML code:
 
 The form field `Password` adds two single-line input fields for the password and its confirmation to the form. In 
 principle, password fields work just like [text fields](#textfeld), except that the input is hidden.
+
+
+### Field configuration
+
+**Placeholder:** This text is displayed as long as the field has not been filled in.
+
+{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 
 ### Template settings
@@ -189,6 +199,7 @@ The form field generates the following HTML code:
         <span class="invisible">Mandatory field </span>Confirm<span class="mandatory">*</span>
     </label>
     <input type="password" name="…_confirm" id="ctrl_confirm" class="text password mandatory" value="" required>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
@@ -219,6 +230,8 @@ input check here to prevent misuse of the form.
 | Custom                           | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression. |
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
+
+{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 
 ### Rows and columns
@@ -256,6 +269,7 @@ The form field generates the following HTML code:
         <span class="invisible">Mandatory field </span>…<span class="mandatory">*</span>
     </label>
     <textarea name="…" id="ctrl" class="textarea mandatory" rows="4" cols="40" required placeholder="…"></textarea>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
@@ -272,6 +286,8 @@ instead of the Select Menu.
 ### Field configuration
 
 **Multiple selection:** Here you can allow the selection of multiple options.
+
+{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 **List size:** Here you define how many lines/tall the selection field will be when multiple selection is activated.
 
@@ -315,6 +331,7 @@ The form field generates the following HTML code:
         <option value="…">…</option>
         <option value="…">…</option>
     </select>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
@@ -327,6 +344,11 @@ The form field Radio button menu adds a list of options to the form from which y
 multiple options to be selected, you must use a [checkbox menu](#checkbox-menu).
 
 ![A radio button menu in the front end]({{% asset "images/manual/form-generator/en/radio-button-in-frontend.png" %}}?classes=shadow)
+
+
+### Field configuration
+
+{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 
 ### Options
@@ -369,6 +391,7 @@ The form field generates the following HTML code:
             <input type="radio" name="…" id="opt_3" class="radio" value="…" required> 
             <label id="lbl_3" for="opt_3">…</label>
         </span>
+        <p class="help" id="help_ctrl">…</p>
     </fieldset>
 </div>
 ```
@@ -381,6 +404,11 @@ like, or none at all. To allow the selection of just one option, you must instea
 [select menu](#select-menu).
 
 ![A checkbox menu in the frontend]({{% asset "images/manual/form-generator/en/checkboxes-in-frontend.png" %}}?classes=shadow)
+
+
+### Field configuration
+
+{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 
 ### Options
@@ -423,6 +451,7 @@ The form field generates the following HTML code:
             <input type="checkbox" name="…[]" id="opt_3" class="checkbox" value="…"> 
             <label id="lbl_3" for="opt_3">…</label>
         </span>
+        <p class="help" id="help_ctrl">…</p>
     </fieldset>
 </div>
 ```
@@ -452,6 +481,8 @@ output in the form.
 **Maximum image height:** When uploading images, the file management automatically checks their height and compares 
 these values with your default set here. If an image exceeds the maximum height, the upload will be aborted with an 
 error output in the form.
+
+{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 
 ### Store file
@@ -501,6 +532,10 @@ The form field generates the following HTML code:
 
 The `Range Slider` form field adds a field to the form for selecting a value or a range of values within a specified minimum and maximum.
 
+### Field configuration
+
+{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
+
 
 ### Expert settings
 
@@ -534,6 +569,7 @@ The form field generates the following HTML code:
         <span class="invisible">Mandatory field </span>…<span class="mandatory">*</span>
     </label>
     <input type="range" name="…" id="ctrl" class="range mandatory" value="5" required max="10" step="2">
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
