@@ -1,0 +1,32 @@
+{
+    "name": "contao-docs/link-checker",
+    "description": "A command to check for broken links on docs.contao.org",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "symfony/console": "^7.3",
+        "symfony/filesystem": "^7.3",
+        "symfony/finder": "^7.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fritz Michael Gschwantner",
+            "email": "fmg@inspiredminds.at"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Contao\\Docs\\Normalizer\\": "src"
+        }
+    },
+    "require-dev": {
+        "contao/easy-coding-standard": "^6.0",
+        "contao/rector": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
