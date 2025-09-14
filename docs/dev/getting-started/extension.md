@@ -383,7 +383,7 @@ services:
     
     Somevendor\ContaoExampleBundle\:
         resource: ../src
-        exclude: ../src/{ContaoManager,DependencyInjection}
+        exclude: ../src/{ContaoManager,DependencyInjection,ContaoExampleBundle.php}
 ```
 
 {{% notice note %}}
