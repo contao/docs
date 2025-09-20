@@ -43,7 +43,7 @@ might need to implement your own website. In this case a look or a search in the
 Of all the many tasks and activities involved in an Open Source project, the further development of the software is of 
 course the most important. After all, the entire network has built up around the product. And because development is so 
 important, it is driven transparently on the platform [GitHub in the monorepository contao/contao](https://github.com/contao/contao/). 
-In addition, monthly [public conference calls](https://contao.org/de/contao-calls) are held, where core developers 
+In addition, monthly [public conference calls](https://contao.org/en/contao-calls) are held, where core developers 
 can exchange information via tickets marked "up for discussion".
 
 ![The development environment]({{% asset "images/manual/introduction/en/the-development-environment.png" %}}?classes=shadow)
