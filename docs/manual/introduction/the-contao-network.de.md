@@ -63,7 +63,7 @@ Von all den vielen Aufgaben und Tätigkeiten, die bei einem Open Source-Projekt 
 Software natürlich die wichtigste. Schließlich hat sich das gesamte Netzwerk um das Produkt herum aufgebaut. Und weil 
 die Entwicklung so wichtig ist, wird diese transparent auf der Plattform 
 [GitHub im Monorepository contao/contao](https://github.com/contao/contao/) vorangetrieben. Zusätzlich finden monatlich 
-[öffentliche Telefonkonferenzen](https://contao.org/de/mumble-calls.html) statt, bei welchen sich die Core-Entwickler 
+[öffentliche Telefonkonferenzen](https://contao.org/de/contao-calls) statt, bei welchen sich die Core-Entwickler 
 über Tickets, welche mit dem Label »up for discussion« gekennzeichnet wurden, 
 austauschen.
 
