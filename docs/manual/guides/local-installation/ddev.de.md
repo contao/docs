@@ -182,17 +182,50 @@ Dazu in DDEV zunächst die [Cron-Erweiterung](https://github.com/ddev/ddev-cron)
 ```shell
 ddev add-on get ddev/ddev-cron
 ```
+{{% notice info %}}
+Wenn du bereits länger mit DDEV entwickelt hast, kann es sein, dass du eine Fehlermeldung bei der Ausführung von `ddev add-on get ddev/ddev-cron` erhältst. Die Ursache dafür ist, dass das add-on erst ab der ddev-Version 1.24 unterstützt wird. Du musst also zuerst ddev updaten. Siehe zum Update auch https://docs.ddev.com/en/stable/users/install/ddev-upgrade/.
+{{% /notice %}}
 
-Danach eine `/.ddev/web-build/contao.cron` Datei mit folgendem Inhalt erstellen:
+Erstelle dann die Datei `/.ddev/web-build/contao.cron` mit folgendem Inhalt:
 
 ```shell
 * * * * * php /var/www/html/vendor/bin/contao-console contao:cron
 ```
 
-Anschließend das DDEV-Projekt/-Container neu starten:
+Starte anschließend das DDEV-Projekt/ den Container neu:
 
 ```shell
 ddev restart
 ```
 
 Der Contao-Cronjob wird minütlich ausgeführt. Bei der erstmaligen Einrichtung kann es eventuell 1-2 Minuten dauern, bevor die Suchleiste im Backend verfügbar ist.
+
+## Konfigurieren eines lokalen Pfades als ein shared repository für alle deine Bundles innerhalb des ddev containers
+
+Wenn du einen Pfad konfigurieren möchtest, in dem alle deine Test-Bundles für deine lokalen Projekte abgelegt sind, so dass du diesen Pfad auch in deiner **composer.json** verwenden kannst, so ist das wie folgt möglich:
+
+Erstelle eine Datei im Ordner **./ddev** innerhalb deines Projekt-Ordners. Verwende beispielsweise den Dateinamen **docker-compose.bundles.yaml**.
+
+Der Inhalt der Datei kann wie folgt aussehen (passe die Pfade an deine Anforderungen an):
+```
+services:
+  web:
+    volumes:
+    - /home/$USER/repository:/home/$USER/repository:rw
+```
+
+Starte den Container mit `ddev restart` neu.
+
+Jetzt kannst du die im angegbenen Ordner abgelegten Bundles wie gewohnt als pfad-repository in deiner **composer.json** verwenden.
+```
+"repositories": [
+  {
+    "type": "path",
+    "url": "~/repository/my-local-bundle"
+  }
+],
+```
+
+{{% notice info %}}
+Wenn der Contao Manager die so konfigurierten Repositories nicht finden kann, so hilft es, die Option **Composer Resolver Cloud** im Contao Manager zu deaktivieren.
+{{% /notice %}}
