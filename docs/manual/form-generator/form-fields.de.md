@@ -27,7 +27,7 @@ es leer, erscheint eine Fehlermeldung.
 ## Erklärung {#erklaerung}
 
 Das Formularfeld `Erklärung` fügt dem Formular eine beliebige formatierte Erklärung hinzu. Die Eingabe erfolgt über den 
-Rich Text Editor.
+Rich-Text-Editor.
 
 
 ### Text/HTML
@@ -54,9 +54,9 @@ Das Formularfeld generiert folgenden HTML-Code:
 ```
 
 
-## HTML
+## HTML-Code
 
-Das Formularfeld `HTML` fügt dem Formular beliebigen HTML-Code hinzu. In den Backend-Einstellungen unter »Erlaubte 
+Das Formularfeld `HTML-Code` fügt dem Formular beliebigen HTML-Code hinzu. In den Backend-Einstellungen unter »Erlaubte 
 HTML-Tags« kannst du festlegen, welche HTML-Tags verwendet werden dürfen.
 
 
@@ -130,7 +130,9 @@ Formulars geprüft werden.
 | Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
 | Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Experteneinstellungen
@@ -166,6 +168,7 @@ Das Formularfeld generiert folgenden HTML-Code:
         <span class="invisible">Pflichtfeld </span>…<span class="mandatory">*</span>
     </label>
     <input type="text" name="…" id="ctrl" class="text … mandatory" value="" required placeholder="…" minlength="…" maxlength="…" accesskey="…" tabindex="…">
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
@@ -175,6 +178,13 @@ Das Formularfeld generiert folgenden HTML-Code:
 Das Formularfeld `Passwortfeld` fügt dem Formular zwei einzeilige Eingabefelder für das Passwort und dessen Bestätigung 
 hinzu. Prinzipiell funktionieren Passwortfelder genau wie [Textfelder](#textfeld), nur dass die Eingabe verdeckt 
 erfolgt.
+
+
+### Feldkonfiguration
+
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Template-Einstellungen
@@ -197,6 +207,7 @@ Das Formularfeld generiert folgenden HTML-Code:
         <span class="invisible">Pflichtfeld </span>Bestätigung<span class="mandatory">*</span>
     </label>
     <input type="password" name="…_confirm" id="ctrl_confirm" class="text password mandatory" value="" required>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
@@ -227,7 +238,9 @@ Formulars geprüft werden.
 | Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
 | Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Reihen und Spalten
@@ -268,6 +281,7 @@ Das Formularfeld generiert folgenden HTML-Code:
         <span class="invisible">Pflichtfeld </span>…<span class="mandatory">*</span>
     </label>
     <textarea name="…" id="ctrl" class="textarea mandatory" rows="4" cols="40" required placeholder="…"></textarea>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
@@ -284,6 +298,8 @@ ein [Checkbox-Menü](#checkbox-menue) anstatt des Select-Menüs verwenden.
 ### Feldkonfiguration
 
 **Mehrfachauswahl:** Hier kannst du die Auswahl mehrerer Optionen erlauben.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 **Listengröße:** Hier legst du fest, wie viele Zeilen das Auswahlfeld bei aktivierter Mehrfachauswahl hoch sein soll. 
 Innerhalb des Feldes kann gescrollt werden.
@@ -328,6 +344,7 @@ Das Formularfeld generiert folgenden HTML-Code:
         <option value="…">…</option>
         <option value="…">…</option>
     </select>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
@@ -340,6 +357,11 @@ Das Formularfeld Radio-Button-Menü fügt dem Formular eine Liste von Optionen h
 kannst. Um die Auswahl mehrerer Optionen zu erlauben, musst du ein [Checkbox-Menü](#checkbox-menue) verwenden.
 
 ![Ein Radio-Button-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-radio-button-menue-im-frontend.png" %}}?classes=shadow)
+
+
+### Feldkonfiguration
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Optionen
@@ -382,6 +404,7 @@ Das Formularfeld generiert folgenden HTML-Code:
             <input type="radio" name="…" id="opt_3" class="radio" value="…" required> 
             <label id="lbl_3" for="opt_3">…</label>
         </span>
+        <p class="help" id="help_ctrl">…</p>
     </fieldset>
 </div>
 ```
@@ -394,6 +417,11 @@ Optionen oder auch gar keine auswählen kannst. Um die Auswahl genau einer Optio
 [Radio-Button-Menü](#radio-button-menue) oder ein [Select-Menü](#select-menue) verwenden.
 
 ![Ein Checkbox-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-checkbox-menue-im-frontend.png" %}}?classes=shadow)
+
+
+### Feldkonfiguration
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Optionen
@@ -437,6 +465,7 @@ Das Formularfeld generiert folgenden HTML-Code:
             <input type="checkbox" name="…[]" id="opt_3" class="checkbox" value="…"> 
             <label id="lbl_3" for="opt_3">…</label>
         </span>
+        <p class="help" id="help_ctrl">…</p>
     </fieldset>
 </div>
 ```
@@ -467,6 +496,8 @@ einer Fehlerausgabe im Formular abgebrochen.
 **Maximale Bildhöhe:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Höhe und vergleicht diese 
 Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird das Hochladen mit
 einer Fehlerausgabe im Formular abgebrochen.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Datei speichern
@@ -516,15 +547,22 @@ Das Formularfeld generiert folgenden HTML-Code:
 
 ## Range-Slider
 
+Das Formularfeld `Range-Slider` fügt dem Formular ein Feld hinzu zur Auswahl eines Wertes oder eines Wertebereichs innerhalb eines spezifizierten Mini- und Maximums.
+
+### Feldkonfiguration
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
+
+
 ### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
 **Standard-Wert:** Hier kannst du einen Standard-Wert für das Feld eingeben.
 
-**Minimalwert:** Hier kannst due einen Minimalwert für numerische Eingaben festlegen.
+**Minimalwert:** Hier kannst du einen Minimalwert für numerische Eingaben festlegen.
 
-**Maximalwert:** Hier kannst due einen Maximalwert für numerische Eingaben festlegen.
+**Maximalwert:** Hier kannst du einen Maximalwert für numerische Eingaben festlegen.
 
 **Schritt:** Hier kannst du die Schrittgröße des Feldes festlegen.
 
@@ -548,9 +586,9 @@ Das Formularfeld generiert folgenden HTML-Code:
         <span class="invisible">Pflichtfeld </span>…<span class="mandatory">*</span>
     </label>
     <input type="range" name="…" id="ctrl" class="range mandatory" value="5" required max="10" step="2">
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
-
 
 
 ## Verstecktes Feld
@@ -601,7 +639,7 @@ Das Formularfeld generiert folgenden HTML-Code:
 Das Formularfeld `Sicherheitsfrage` fügt dem Formular ein [CAPTCHA](https://de.wikipedia.org/wiki/Captcha) 
 hinzu. 
 
-Mit Hilfe eines [Honeypots](https://de.wikipedia.org/wiki/Honeypot) werden Spambots in die Falle gelockt und 
+Mithilfe eines [Honeypots](https://de.wikipedia.org/wiki/Honeypot) werden Spambots in die Falle gelockt und 
 ausgesperrt. Der Honeypot besteht aus mehreren verstecken Feldern, die als Köder dienen. Normale Benutzer können die 
 Felder nicht sehen und verändern sie deshalb nicht – die meisten Spambots schon. Zusätzlich werden im Hintergrund 
 weitere Faktoren geprüft um Benutzer und Spambots zu unterscheiden.
@@ -612,7 +650,7 @@ Rechenaufgabe lösen. Es gehen unter keinen Umständen abgesendete Formulardaten
 
 ### Feldkonfiguration
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
 
 
 ### Experteneinstellungen
