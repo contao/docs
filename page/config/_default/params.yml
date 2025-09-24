@@ -8,7 +8,8 @@ themeVariant:
     name: Light
   - identifier: contao-dark
     name: Dark
-disableSearch: false
+search:
+  disable: false
 disableLanguageSwitch: true
 documentation_label: Documentation
 disableInlineCopyToClipBoard: true
