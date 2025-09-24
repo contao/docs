@@ -17,7 +17,7 @@ jobs:
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v2
               with:
-                  hugo-version: '0.144.2'
+                  hugo-version: '0.150.0'
             - name: Build user manual
               run: make build-manual
             - name: Build developer manual
@@ -30,7 +30,7 @@ jobs:
                   port: ${{ secrets.DEPLOY_PORT }}
                   key: ${{ secrets.DEPLOY_KEY }}
                   source: 'build/manual'
-                  target: ${{ secrets.DEPLOY_TARGET_PATH }}/manual
+                  target: ${{ secrets.DEPLOY_TARGET_PATH }}/5.x/manual
                   rm: true
                   strip_components: 2
             - name: Deploy developer manual
@@ -41,6 +41,18 @@ jobs:
                   port: ${{ secrets.DEPLOY_PORT }}
                   key: ${{ secrets.DEPLOY_KEY }}
                   source: 'build/dev'
-                  target: ${{ secrets.DEPLOY_TARGET_PATH }}/dev
+                  target: ${{ secrets.DEPLOY_TARGET_PATH }}/5.x/dev
                   rm: true
                   strip_components: 2
+            - name: Deploy .htaccess
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.DEPLOY_HOST }}
+                  username: ${{ secrets.DEPLOY_USERNAME }}
+                  port: ${{ secrets.DEPLOY_PORT }}
+                  key: ${{ secrets.DEPLOY_KEY }}
+                  source: 'docs/.htaccess'
+                  target: ${{ secrets.DEPLOY_TARGET_PATH }}
+                  rm: false
+                  strip_components: 1
+                  overwrite: true
