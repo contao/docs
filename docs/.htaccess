@@ -1,0 +1,375 @@
+##
+# Contao Open Source CMS
+#
+# Copyright (c) 2005-2015 Leo Feyer
+#
+# @license LGPL-3.0+
+##
+
+##
+# Prevent access to the Contao template files
+##
+<FilesMatch "\.(tpl|html5|xhtml)$">
+  <IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+  </IfModule>
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+##
+# Allow access from all domains for webfonts
+# @see https://github.com/h5bp/html5-boilerplate
+##
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff2?|font\.css)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+##
+# Disable ETags
+# @see http://developer.yahoo.com/performance/rules.html#etags
+##
+FileETag None
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+
+##
+# Set the proper MIME types
+# @see https://github.com/h5bp/html5-boilerplate
+##
+<IfModule mod_mime.c>
+  AddType application/javascript              js jsonp
+  AddType application/json                    json
+  AddType audio/ogg                           oga ogg
+  AddType audio/mp4                           m4a f4a f4b
+  AddType video/ogg                           ogv
+  AddType video/mp4                           mp4 m4v f4v f4p
+  AddType video/webm                          webm
+  AddType video/x-flv                         flv
+  AddType image/svg+xml                       svg svgz
+  AddEncoding gzip                            svgz
+  AddType application/vnd.ms-fontobject       eot
+  AddType application/x-font-ttf              ttf ttc
+  AddType font/opentype                       otf
+  AddType application/x-font-woff             woff woff2
+  AddType image/x-icon                        ico
+  AddType image/webp                          webp
+  AddType text/cache-manifest                 appcache manifest
+  AddType text/x-component                    htc
+  AddType application/xml                     rss atom xml rdf
+  AddType application/x-web-app-manifest+json webapp
+  AddType text/x-vcard                        vcf
+  AddType application/x-shockwave-flash       swf
+</IfModule>
+
+##
+# Gzip compression
+# @see https://github.com/h5bp/html5-boilerplate
+##
+<IfModule mod_deflate.c>
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+    AddOutputFilterByType DEFLATE application/xhtml+xml application/rss+xml application/atom+xml
+    AddOutputFilterByType DEFLATE image/x-icon image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype
+  </IfModule>
+</IfModule>
+
+##
+# Expires headers (for better cache control)
+# @see https://github.com/h5bp/html5-boilerplate
+##
+<IfModule mod_expires.c>
+  ExpiresActive on
+
+  ##
+  # Productional website
+  ##
+  ExpiresByType text/cache-manifest           "access plus 0 seconds"
+  ExpiresByType text/html                     "access plus 0 seconds"
+  ExpiresByType text/xml                      "access plus 0 seconds"
+  ExpiresByType application/xml               "access plus 0 seconds"
+  ExpiresByType application/json              "access plus 0 seconds"
+  ExpiresByType application/rss+xml           "access plus 1 hour"
+  ExpiresByType application/atom+xml          "access plus 1 hour"
+  ExpiresByType image/gif                     "access plus 1 month"
+  ExpiresByType image/png                     "access plus 1 month"
+  ExpiresByType image/jpeg                    "access plus 1 month"
+  ExpiresByType image/x-icon                  "access plus 1 month"
+  ExpiresByType video/ogg                     "access plus 1 month"
+  ExpiresByType audio/ogg                     "access plus 1 month"
+  ExpiresByType video/mp4                     "access plus 1 month"
+  ExpiresByType video/webm                    "access plus 1 month"
+  ExpiresByType text/x-component              "access plus 1 month"
+  ExpiresByType application/x-font-ttf        "access plus 1 month"
+  ExpiresByType font/opentype                 "access plus 1 month"
+  ExpiresByType application/x-font-woff       "access plus 1 month"
+  ExpiresByType image/svg+xml                 "access plus 1 month"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+  ExpiresByType text/css                      "access plus 1 year"
+  ExpiresByType application/javascript        "access plus 1 year"
+
+  ##
+  # Disable caching during development
+  # @see https://github.com/contao/core/issues/4364
+  ##
+  #ExpiresByType text/cache-manifest           "access"
+  #ExpiresByType text/html                     "access"
+  #ExpiresByType text/xml                      "access"
+  #ExpiresByType application/xml               "access"
+  #ExpiresByType application/json              "access"
+  #ExpiresByType application/rss+xml           "access"
+  #ExpiresByType application/atom+xml          "access"
+  #ExpiresByType image/gif                     "access"
+  #ExpiresByType image/png                     "access"
+  #ExpiresByType image/jpeg                    "access"
+  #ExpiresByType image/x-icon                  "access"
+  #ExpiresByType video/ogg                     "access"
+  #ExpiresByType audio/ogg                     "access"
+  #ExpiresByType video/mp4                     "access"
+  #ExpiresByType video/webm                    "access"
+  #ExpiresByType text/x-component              "access"
+  #ExpiresByType application/x-font-ttf        "access"
+  #ExpiresByType font/opentype                 "access"
+  #ExpiresByType application/x-font-woff       "access"
+  #ExpiresByType image/svg+xml                 "access"
+  #ExpiresByType application/vnd.ms-fontobject "access"
+  #ExpiresByType text/css                      "access"
+  #ExpiresByType application/javascript        "access"
+
+</IfModule>
+
+##
+# Header adjustments
+##
+<IfModule mod_headers.c>
+
+  ##
+  # Disable caching during development
+  # @see https://github.com/contao/core/issues/4364
+  ##
+  #Header unset Cache-Control
+  #Header append Cache-Control must-revalidate
+
+  ##
+  # Do not cache the cron.txt file
+  # @see https://github.com/contao/core/issues/5105
+  ##
+  <FilesMatch "cron\.txt$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform"
+  </FilesMatch>
+
+  ##
+  # Add a Vary Accept-Encoding header for the compressed resources. If you
+  # modify the file types above, make sure to change them here accordingly.
+  # @see http://developer.yahoo.com/performance/rules.html#gzip
+  #
+  # Note: If you are using a case-sensitive file system like HFS+ or ext4, you
+  # have to change the <FilesMatch> directive as follows:
+  #
+  # <FilesMatch "\.(?i:js|css|xml|gz|svgz)$">
+  #
+  # For more information see: https://github.com/contao/core/issues/4364
+  ##
+  <FilesMatch "\.(js|css|xml|gz|svgz)$">
+    Header append Vary Accept-Encoding
+  </FilesMatch>
+
+</IfModule>
+
+##
+# Disable MultiViews if you are having issues with requests returning the wrong
+# page. Requires AllowOverride Options=All,MultiViews to be set here.
+# @see https://github.com/contao/core/issues/3521
+##
+#Options -MultiViews
+
+##
+# HSTS
+##
+<IfModule mod_headers.c>
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+</IfModule>
+
+##
+# URL rewriting
+##
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  ##
+  # Change the RewriteBase if your Contao installation is in a subdirectoy and
+  # the rewrite rules are not working properly. Usage examples:
+  #
+  #   RewriteBase /contao-3.0.0
+  #   RewriteBase /path/to/contao
+  #
+  # Depending on your server, you might have to remove the line entirely.
+  ##
+  RewriteBase /
+
+  ##
+  # Redirect old manual pages
+  ##
+  RewriteRule ^books/manual/(3.5|current)/en/06-data-container-arrays/index.html              /books/api/dca/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/06-data-container-arrays/index.html              /books/api/dca/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/06-tableaux-conteneurs-de-donnees/index.html     /books/api/dca/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/06-data-container-arrays/reference.html          /books/api/dca/reference.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/06-data-container-arrays/referenz.html           /books/api/dca/reference.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/06-tableaux-conteneurs-de-donnees/reference.html /books/api/dca/reference.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/06-data-container-arrays/palettes.html           /books/api/dca/palettes.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/06-data-container-arrays/paletten.html           /books/api/dca/palettes.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/06-tableaux-conteneurs-de-donnees/palettes.html  /books/api/dca/palettes.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/06-data-container-arrays/callbacks.html          /books/api/dca/callbacks.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/06-data-container-arrays/callbacks.html          /books/api/dca/callbacks.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/06-tableaux-conteneurs-de-donnees/callbacks.html /books/api/dca/callbacks.html [R=301,L]
+
+  RewriteRule ^books/manual/(3.5|current)/en/07-customizing-contao/index.html                                           /books/cookbook/customizing-contao/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/07-contao-anpassen/index.html                                              /books/cookbook/customizing-contao/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/07-personnaliser-contao/index.html                                         /books/cookbook/customizing-contao/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/07-customizing-contao/bypass-the-internal-cache.html                       /books/cookbook/customizing-contao/bypass-the-internal-cache.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/07-contao-anpassen/internen-cache-umgehen.html                             /books/cookbook/customizing-contao/bypass-the-internal-cache.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/07-personnaliser-contao/contourner-le-cache-interne.html                   /books/cookbook/customizing-contao/bypass-the-internal-cache.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/07-customizing-contao/custom-configurations.html                           /books/cookbook/customizing-contao/custom-configurations.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/07-contao-anpassen/konfiguration-anpassen.html                             /books/cookbook/customizing-contao/custom-configurations.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/07-personnaliser-contao/configurations-personnalisees.html                 /books/cookbook/customizing-contao/custom-configurations.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/07-customizing-contao/adding-custom-fields.html                            /books/cookbook/customizing-contao/adding-custom-fields.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/07-contao-anpassen/eigene-felder-hinzufuegen.html                          /books/cookbook/customizing-contao/adding-custom-fields.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/07-personnaliser-contao/ajouter-des-champs-personnalises.html              /books/cookbook/customizing-contao/adding-custom-fields.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/07-customizing-contao/customizing-tinymce.html                             /books/cookbook/customizing-contao/customizing-tinymce.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/07-contao-anpassen/tinymce-anpassen.html                                   /books/cookbook/customizing-contao/customizing-tinymce.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/07-personnaliser-contao/personnaliser-editeur-de-texte-riche-tinymce.html  /books/cookbook/customizing-contao/customizing-tinymce.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/07-customizing-contao/overriding-class-methods.html                        /books/cookbook/customizing-contao/overriding-class-methods.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/07-contao-anpassen/methoden-ueberschreiben.html                            /books/cookbook/customizing-contao/overriding-class-methods.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/07-personnaliser-contao/surcharger-les-methodes-de-classes.html            /books/cookbook/customizing-contao/overriding-class-methods.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/07-customizing-contao/contao-hooks.html                                    /books/api/extensions/hooks/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/07-contao-anpassen/contao-hooks.html                                       /books/api/extensions/hooks/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/07-personnaliser-contao/contao-hooks.html                                  /books/api/extensions/hooks/index.html [R=301,L]
+
+  RewriteRule ^books/manual/(3.5|current)/en/08-extension-repository/index.html                                                 /books/cookbook/extension-repository/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/08-das-extension-repository/index.html                                             /books/cookbook/extension-repository/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/08-referentiel-extensions/index.html                                               /books/cookbook/extension-repository/index.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/08-extension-repository/adding-an-extension.html                                   /books/cookbook/extension-repository/adding-an-extension.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/08-das-extension-repository/eine-erweiterung-anlegen.html                          /books/cookbook/extension-repository/adding-an-extension.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/08-referentiel-extensions/ajout-une-extension.html                                 /books/cookbook/extension-repository/adding-an-extension.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/08-extension-repository/adding-a-release.html                                      /books/cookbook/extension-repository/adding-a-release.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/08-das-extension-repository/eine-freigabe-hinzufuegen.html                         /books/cookbook/extension-repository/adding-a-release.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/08-referentiel-extensions/ajouter-une-release.html                                 /books/cookbook/extension-repository/adding-a-release.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/08-extension-repository/adding-files.html                                          /books/cookbook/extension-repository/adding-files.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/08-das-extension-repository/die-dateien-hochladen.html                             /books/cookbook/extension-repository/adding-files.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/08-referentiel-extensions/ajouter-des-fichiers.html                                /books/cookbook/extension-repository/adding-files.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/08-extension-repository/adding-files-from-a-github-repository.html                 /books/cookbook/extension-repository/adding-files-from-a-github-repository.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/08-das-extension-repository/dateien-aus-einem-github-repository-hinzufuegen.html   /books/cookbook/extension-repository/adding-files-from-a-github-repository.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/08-referentiel-extensions/ajout-de-fichiers-a-partir-referentiel-github.html       /books/cookbook/extension-repository/adding-files-from-a-github-repository.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/08-extension-repository/adding-translations.html                                   /books/cookbook/extension-repository/adding-translations.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/08-das-extension-repository/eine-uebersetzung-hinzufuegen.html                     /books/cookbook/extension-repository/adding-translations.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/08-referentiel-extensions/ajouter-des-traductions.html                             /books/cookbook/extension-repository/adding-translations.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/08-extension-repository/adding-dependencies.html                                   /books/cookbook/extension-repository/adding-dependencies.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/08-das-extension-repository/abhaengigkeiten-speichern.html                         /books/cookbook/extension-repository/adding-dependencies.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/08-referentiel-extensions/ajouter-des-dependances.html                             /books/cookbook/extension-repository/adding-dependencies.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/08-extension-repository/publishing-an-extension.html                               /books/cookbook/extension-repository/publishing-an-extension.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/de/08-das-extension-repository/die-erweiterung-veroeffentlichen.html                  /books/cookbook/extension-repository/publishing-an-extension.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/08-referentiel-extensions/publier-une-extension.html                               /books/cookbook/extension-repository/publishing-an-extension.html [R=301,L]
+
+  RewriteRule ^books/manual/(3.5|current)/de/09\- https://contao.org/de/fehler-melden.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/en/09\- https://contao.org/en/report-a-bug.html [R=301,L]
+  RewriteRule ^books/manual/(3.5|current)/fr/09\- https://contao.org/en/report-a-bug.html [R=301,L]
+
+  RewriteRule ^books/contao4-migration/(.*) /books/extending-contao4/$1 [R=301,L]
+
+  ##
+  # Redirect old docs to new docs
+  ##
+  RewriteRule ^books/manual/.+/de/.+/inserttags.html    /manual/de/artikelverwaltung/insert-tags/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/.+/formulare.html     /manual/de/formulargenerator/ [R=301,L]
+
+  RewriteRule ^books/manual/current/(index.html)?$                                           /manual/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/(index.html)?$                                             /manual/de/ [R=301,L]
+  RewriteRule ^books/manual/.+/fr/(index.html)?$                                             /manual/ [R=301,L]
+  RewriteRule ^books/manual/.+/en/(index.html)?$                                             /manual/en/ [R=301,L]
+  RewriteRule ^books/manual/.+/fr/(index.html)?$                                             /manual/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/01-installation/(index.html)?$                             /manual/de/installation/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/01-installation/contao-installieren.html$                  /manual/de/installation/contao-installieren/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/01-installation/manuelles-update.html$                     /manual/de/installation/contao-aktualisieren/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/01-installation/eine-installation-umziehen.html$           /manual/de/installation/contao-umziehen/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/01-installation/den-live-server-konfigurieren.html$        /manual/de/installation/systemvoraussetzungen/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/02-administrationsbereich/(index.html)?$                   /manual/de/administrationsbereich/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/02-administrationsbereich/backend-tastaturkuerzel.html$    /manual/de/administrationsbereich/backend-tastaturkuerzel/ [R=301,L]
+  RewriteRule ^books/manual/.+/en/02-administration-area/keyboard-shortcuts.html$            /manual/en/administration-area/back-end-keyboard-shortcuts/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/03-seiten-verwalten/(index.html)?$                         /manual/de/layout/seitenstruktur/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/03-seiten-verwalten/komponenten.html$                      /manual/de/layout/seitenstruktur/seiten-als-zentrale-elemente/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/03-seiten-verwalten/themes.html$                           /manual/de/layout/theme-manager/themes-verwalten/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/03-seiten-verwalten/stylesheets.html$                      /manual/de/layout/theme-manager/stylesheets-verwalten/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/03-seiten-verwalten/module.html$                           /manual/de/layout/modulverwaltung/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/03-seiten-verwalten/seitenlayouts.html$                    /manual/de/layout/theme-manager/seitenlayouts-verwalten/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/03-seiten-verwalten/seitentypen.html$                      /manual/de/layout/seitenstruktur/seiten-als-zentrale-elemente/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/04-inhalte-verwalten/(index.html)?$                        /manual/de/artikelverwaltung/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/04-inhalte-verwalten/artikel.html$                         /manual/de/artikelverwaltung/artikel/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/04-inhalte-verwalten/nachrichten.html$                     /manual/de/core-erweiterung/nachrichten/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/04-inhalte-verwalten/termine.html$                         /manual/de/core-erweiterung/kalender/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/04-inhalte-verwalten/newsletter.html$                      /manual/de/core-erweiterung/newsletter/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/04-inhalte-verwalten/templates.html$                       /manual/de/layout/templates/ [R=301,L]
+  RewriteRule ^books/manual/.+/de/04-inhalte-verwalten/kommentare.html$                      /manual/de/artikelverwaltung/inhaltselemente/ [R=301,L]
+
+  RewriteRule ^books/manual/.+/en/03-managing-pages/components.html$                         /manual/en/layout/site-structure/pages-as-central-elements/ [R=301,L]
+  RewriteRule ^books/manual/.+/en/03-managing-pages/themes.html$                             /manual/en/layout/theme-manager/manage-themes/ [R=301,L]
+  RewriteRule ^books/manual/.+/en/03-managing-pages/style-sheets.html$                       /manual/en/layout/theme-manager/manage-stylesheets/ [R=301,L]
+  RewriteRule ^books/manual/.+/en/03-managing-pages/modules.html$                            /manual/en/layout/module-management/ [R=301,L]
+  RewriteRule ^books/manual/.+/en/03-managing-pages/page-layouts.html$                       /manual/en/layout/theme-manager/manage-page-layouts/ [R=301,L]
+  RewriteRule ^books/manual/.+/en/03-managing-pages/page-types.html$                         /manual/en/layout/site-structure/pages-as-central-elements/ [R=301,L]
+
+  RewriteRule ^books/cookbook/de/Cronjobs-in-Contao.html$                    /dev/framework/cron/ [R=301,L]
+  RewriteRule ^books/cookbook/de/Models.html$                                /dev/framework/models/ [R=301,L]
+  RewriteRule ^books/cookbook/de/Autoloading.html$                           /dev/getting-started/starting-development/ [R=301,L]
+  RewriteRule ^books/cookbook/de/Eigene-Inserttags.html$                     /dev/framework/insert-tags/ [R=301,L]
+  RewriteRule ^books/cookbook/de/Hooks-in-Contao.html$                       /dev/framework/hooks/ [R=301,L]
+  RewriteRule ^books/cookbook/de/Erweiterung-entwickeln.html$                /dev/getting-started/extension/ [R=301,L]
+  RewriteRule ^books/cookbook/de/Benutzer-Authentifizierung-und-Rechtepruefung.html$ /dev/framework/security/ [R=301,L]
+  RewriteRule ^books/cookbook/en/Cron-jobs-in-Contao.html$                   /dev/framework/cron/ [R=301,L]
+  RewriteRule ^books/cookbook/en/folder-structure.html$                      /dev/getting-started/starting-development/ [R=301,L]
+  RewriteRule ^books/cookbook/customizing-contao/adding-custom-fields.html$  /dev/getting-started/dca/ [R=301,L]
+  RewriteRule ^books/cookbook/customizing-contao/customizing-tinymce.html$   /manual/en/guides/tinymce-configuration/ [R=301,L]
+  RewriteRule ^books/cookbook/en/Using-Content-Elements.html$                /dev/framework/content-elements/ [R=301,L]
+  RewriteRule ^books/cookbook/en/Using-template-variables.html$              /dev/framework/templates/ [R=301,L]
+  RewriteRule ^books/cookbook/en/user-authentication-and-access-rights.html$ /dev/framework/security [R=301,L]
+
+  RewriteRule ^books/extending-contao4/(index.html)?$                                  /dev/ [R=301,L]
+  RewriteRule ^books/extending-contao4/managed-edition/(index.html)?$                  /dev/getting-started/initial-setup/managed-edition/ [R=301,L]
+  RewriteRule ^books/extending-contao4/managed-edition/plugins.html                    /dev/framework/manager-plugin/ [R=301,L]
+  RewriteRule ^books/extending-contao4/managed-edition/bundle-autoloading.html         /dev/framework/manager-plugin/ [R=301,L]
+  RewriteRule ^books/extending-contao4/managed-edition/container-configuration.html    /dev/framework/manager-plugin/ [R=301,L]
+  RewriteRule ^books/extending-contao4/managed-edition/routing.html                    /dev/framework/manager-plugin/ [R=301,L]
+  RewriteRule ^books/extending-contao4/managed-edition/plugin-dependencies.html        /dev/framework/manager-plugin/ [R=301,L]
+  RewriteRule ^books/extending-contao4/managed-edition/overriding-bundles.html         /dev/framework/manager-plugin/ [R=301,L]
+
+  RewriteRule ^books/api/dca/(index.html)?$                    /dev/reference/dca/ [R=301,L]
+  RewriteRule ^books/api/dca/reference.html                    /dev/reference/dca/ [R=301,L]
+  RewriteRule ^books/api/dca/palettes.html                     /dev/reference/dca/palettes/ [R=301,L]
+  RewriteRule ^books/api/dca/callbacks.html                    /dev/reference/dca/callbacks/ [R=301,L]
+  RewriteRule ^books/api/extensions/hooks/(index.html)?$       /dev/reference/hooks/ [R=301,L]
+  RewriteRule ^books/api/extensions/hooks/([a-zA-Z]*).html$    /dev/reference/hooks/$1/ [R=301,L]
+
+  # Redirect everything else
+  RewriteRule ^books/manual/ https://to.contao.org/manual [R=301,L]
+  RewriteRule ^books/ /dev/ [R=301,L]
+
+  # Let to.contao.org handle the language redirect
+  RewriteRule ^manual/?$ https://to.contao.org/manual [R=301,L]
+
+  # Erroneous leftover
+  RewriteRule ^manual/en/administrationsbereich/keyboard-shortcuts/?$ https://docs.contao.org/manual/en/administration-area/back-end-keyboard-shortcuts/
+
+  # Redirect empty requests to to.contao.org/support
+  RewriteRule ^$ https://to.contao.org/support [L,R=301]
+  RewriteRule ^index.html$ https://to.contao.org/support [L,R=301]
+
+  # Redirect old URLs to new 5.x URLs
+  RewriteRule ^(dev/?.*)
+  RewriteRule ^(manual/?.*)
+</IfModule>

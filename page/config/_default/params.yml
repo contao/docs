@@ -23,3 +23,14 @@ hideAuthorName: true
 hideAuthorEmail: true
 hideAuthorDate: true
 disableExplicitIndexURLs: true
+sidebarheadermenus: []
+sidebarfootermenus:
+    -
+        type: divider
+    -
+        type: custom
+        identifier: footercontrols
+        elements:
+            - type: languageswitcher
+            - type: versionswitcher
+            - type: variantswitcher

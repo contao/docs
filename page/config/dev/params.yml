@@ -16,13 +16,3 @@ versions:
         baseURL: https://docs.contao.org/4.x/dev/
         identifier: 4.x
         title: 4.x
-sidebarheadermenus: []
-sidebarfootermenus:
-    -
-        type: divider
-    -
-        type: custom
-        identifier: footercontrols
-        elements:
-            - type: versionswitcher
-            - type: variantswitcher
