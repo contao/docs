@@ -69,9 +69,9 @@ parameters:
 
 Nähere Informationen dazu findet man in der [Symfony Routing Dokumentation][SymfonyUrlCommands].
 
-### Geschützte Seiten indizieren
+### Geschützte Seiten indizieren
 
-Um das Durchsuchen von geschützten Seiten zu erlauben, musst du die Funktion zunächst in den [Backend-Einstellungen][BackendSettings] 
+Um das Durchsuchen von geschützten Seiten zu erlauben, musst du die Funktion zunächst in den [Backend-Einstellungen][BackendSettings] 
 aktivieren. Benutze dieses Feature sehr sorgfältig, und schließe personalisierte Seiten immer von der Suche aus!
 
 {{% notice info %}}
@@ -86,10 +86,10 @@ contao:
 ```
 {{% /notice %}}
 
-Lege danach einen neuen Frontend-Benutzer an, und erlaube ihm den Zugriff auf die zu indizierenden geschützten Seiten. 
+Lege danach einen neuen Frontend-Benutzer an, und erlaube ihm den Zugriff auf die zu indizierenden geschützten Seiten. 
 Beim Aufbauen des Suchindexes wird dieser Benutzer dann automatisch angemeldet.
 
-Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den Ergebnissen, wenn der angemeldete 
+Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den Ergebnissen, wenn der angemeldete 
 Frontend-Benutzer auch auf sie zugreifen darf.
 
 

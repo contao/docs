@@ -1,6 +1,6 @@
 ---
-title: "Backend-Tastaturkürzel"
-description: "Um den Workflow bei der Arbeit mit Contao zu beschleunigen, gibt es im Backend etliche Tastaturkürzel, 
+title: "Backend-Tastaturkürzel"
+description: "Um den Workflow bei der Arbeit mit Contao zu beschleunigen, gibt es im Backend etliche Tastaturkürzel, 
 mit denen sich bestimmte Befehle direkt aufrufen lassen."
 url: "administrationsbereich/backend-tastaturkuerzel"
 aliases:
@@ -8,20 +8,20 @@ aliases:
 weight: 20
 ---
 
-Um den Workflow bei der Arbeit mit Contao zu beschleunigen, gibt es im Backend etliche Tastaturkürzel, mit denen sich
+Um den Workflow bei der Arbeit mit Contao zu beschleunigen, gibt es im Backend etliche Tastaturkürzel, mit denen sich
 bestimmte Befehle direkt aufrufen lassen. Zum Beispiel befindet sich die Schaltfläche `Speichern` grundsätzlich am Ende 
 eines Eingabeformulars, sodass sie erst mit der Maus angeklickt werden kann, wenn die Seite ganz 
 nach unten gescrollt wurde.
 
-Normalerweise ist das kein Problem, denn während des Ausfüllen eines Formulars arbeitet man sich ja sowieso von oben
+Normalerweise ist das kein Problem, denn während des Ausfüllen eines Formulars arbeitet man sich ja sowieso von oben
 nach unten durch die Seite. Will man aber später nur einen einzelnen Wert am Anfang des Formulars ändern, ist die
-Schaltfläche nicht ohne Scrollaufwand erreichbar. In diesem Fall gelangt der geübte Contao-Benutzer mit dem
-Tastaturkürzel {{< accesskey "s" >}} auch ohne zu scrollen ans Ziel.
+Schaltfläche nicht ohne Scrollaufwand erreichbar. In diesem Fall gelangt der geübte Contao-Benutzer mit dem
+Tastaturkürzel {{< accesskey "s" >}} auch ohne zu scrollen ans Ziel.
 
 
 ## Allgemeine Tastaturkürzel {#allgemeine-tastaturkuerzel}
 
-Folgende Tastaturkürzel stehen in Contao zur Verfügung:
+Folgende Tastaturkürzel stehen in Contao zur Verfügung:
 
 | Tastaturkürzel        | Schaltfläche            | Erklärung                                                                           |
 |:----------------------|:------------------------|:------------------------------------------------------------------------------------|
@@ -35,7 +35,7 @@ Folgende Tastaturkürzel stehen in Contao zur Verfügung:
 
 ## Tastaturkürzel im Bearbeitungsmodus {#tastaturkuerzel-im-bearbeitungsmodus}
 
-Im Bearbeitungsmodus stehen zusätzlich folgende Kürzel zur Verfügung:
+Im Bearbeitungsmodus stehen zusätzlich folgende Kürzel zur Verfügung:
 
 | Tastaturkürzel        | Schaltfläche                          | Erklärung                                                                                                                                                                                |
 |:----------------------|:--------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -49,7 +49,7 @@ Im Bearbeitungsmodus stehen zusätzlich folgende Kürzel zur Verfügung:
 
 ## Tastaturkürzel im Modus »Mehrere bearbeiten« {#tastaturkuerzel-im-modus-mehrere-bearbeiten}
 
-Im Modus »Mehrere bearbeiten« kommen weitere Kürzel hinzu:
+Im Modus »Mehrere bearbeiten« kommen weitere Kürzel hinzu:
 
 | Tastaturkürzel        | Schaltfläche                             | Erklärung                                                                               |
 |:----------------------|:-----------------------------------------|:----------------------------------------------------------------------------------------|
@@ -92,7 +92,7 @@ macOS:
 {{< /tabs >}}
 
 
-## Tastaturkürzel unter Windows, Linux und Mac {#tastaturkuerzel-unter-windows-linux-und-mac}
+## Tastaturkürzel unter Windows, Linux und Mac {#tastaturkuerzel-unter-windows-linux-und-mac}
 
 Die beschriebenen Tastaturkürzel funktionieren in deinem aktuellen Browser, können aber auf anderen Betriebssystemen oder
 Browsern unterschiedlich sein. Eine Übersicht, welche Tastenkombination unter welchem Betriebssystem und Browser benutzt werden muss, bietet

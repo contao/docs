@@ -392,4 +392,4 @@ Mitunter braucht man für ältere Webprojekte auch noch PHP 5.6. Neue Features m
 
 ### Hilfe
 
-Im [Contao-Forum](https://community.contao.org/) gibt es einen [Thread](https://community.contao.org/de/showthread.php?74042), der sich mit der Installation und dem Betrieb von Laragon beschäftigt oder man holt sich Rat im Laragon-Forum [DE](https://laraboard.io/forum/) oder [EN](https://forum.laragon.org/)
+Im [Contao-Forum](https://community.contao.org/) gibt es einen [Thread](https://community.contao.org/de/showthread.php?74042), der sich mit der Installation und dem Betrieb von Laragon beschäftigt oder man holt sich Rat im [Laragon-Forum](https://github.com/leokhoa/laragon/discussions).

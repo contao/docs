@@ -22,7 +22,7 @@ statischen HTML-Datei, die du auf deinen Server lädst und in deinem Browser auf
 
 ## Routing
 
-**Seitenaliase:** Der Alias einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in
+**Seitenaliase:** Der Alias einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in
 deinem Browser aufrufen kannst. Wenn du das Feld beim Anlegen leer lässt, vergibt Contao den Alias automatisch.
 
 {{% notice warning %}}
@@ -46,7 +46,7 @@ URL kein Alias zu einem Element enthält.
 ## Metadaten
 
 Die Metadaten einer Seite beziehen sich größtenteils auf die entsprechenden
-[Meta-Tags](https://de.wikipedia.org/wiki/Meta-Element) im Kopfbereich der HTML-Seite. Du kannst darüber unter anderem den Titel und die Beschreibung einer 
+[Meta-Tags](https://de.wikipedia.org/wiki/Meta-Element) im Kopfbereich der HTML-Seite. Du kannst darüber unter anderem den Titel und die Beschreibung einer 
 Seite definieren.
 
 **Seitentitel:** Der Seitentitel wird im `<title>`-Tag der Webseite verwendet und taucht häufig auch
@@ -75,7 +75,7 @@ aufnimmt. Bestimmte Seiten wie z. B. das Impressum oder die Registrierungsseite 
 
 **Beschreibung der Seite:** Die Beschreibung einer Seite wird genau wie der Seitentitel von allen gängigen Suchmaschinen
 indiziert und beispielsweise in den Suchergebnissen angezeigt, wenn keine Kontextinformation zum gesuchten Begriff
-verfügbar ist. Die empfohlene Länge einer Beschreibung liegt zwischen 150 und 300 Zeichen. Die Meta-Beschreibung einer
+verfügbar ist. Die empfohlene Länge einer Beschreibung liegt zwischen 150 und 300 Zeichen. Die Meta-Beschreibung einer
 Seite ist ein wichtiges Instrument zur Suchmaschinenoptimierung, daher solltest du dir die Zeit nehmen, jede Seite mit
 einer eindeutigen Beschreibung zu versehen.
 
@@ -107,30 +107,30 @@ Zur Ausgabe muß im Seitentyp »Website-Startseite« die Einstellung rel="canoni
 ## Zugriffsschutz
 
 Im Gegensatz zu den Zugriffsrechten, die die Rechte im Backend festlegen, bezieht sich der Zugriffsschutz auf den
-Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort
+Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort
 anmelden, bevor sie die Seite aufrufen können. Andernfalls sähen sie nur eine Fehlerseite.
 
-**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der
-Zugriffsschutz von einer übergeordneten Seite geerbt.
+**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der
+Zugriffsschutz von einer übergeordneten Seite geerbt.
 
-**Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie
+**Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie
 man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite
 [Systemverwaltung](/de/system/einstellungen/).
 
 
 ## Layout-Einstellungen
 
-Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein
+Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein
 Seitenlayout zugewiesen oder vererbt worden, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
 
 **Ein Layout zuweisen:** Hier kannst du einer Seite ein Seitenlayout zuweisen. Die Zuweisung des Seitenlayouts
-gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
+gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
 
-**Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines
+**Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines
 Themes erfolgt durch Zuweisung eines Seitenlayouts.
 
 **Unterseitenlayout:** Mit der Auswahl »Seitenlayout vererben« (Standard) gilt die Zuweisung
-des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
+des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
 abweichendes Seitenlayout für untergeordnete Seiten zugewiesen werden.
 
 
@@ -138,10 +138,10 @@ abweichendes Seitenlayout für untergeordnete Seiten zugewiesen werden.
 
 In den Cache-Einstellungen legst du fest, ob und wie lange eine Seite im Cache zwischengespeichert werden soll. Eine
 zwischengespeicherte Seite lädt deutlich schneller, da sie zum einen nicht erst von Contao generiert werden muss und
-zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
+zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
 
 **Cachezeit festlegen:** Hier kannst du einer Seite eine Cachezeit zuweisen. Wenn du die Option nicht auswählst, werden
-die Cache-Einstellungen von einer übergeordneten Seite geerbt.
+die Cache-Einstellungen von einer übergeordneten Seite geerbt.
 
 **Private Cache (Client-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den
 Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuft werden soll.
@@ -149,9 +149,9 @@ Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuf
 **Shared Cache (Server-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den
 Zeitraum in Sekunden fest, nach dem die Seite von einem gemeinsam genutzten Cache als veraltet eingestuft werden soll.
 
-Beachte, dass Seiten aus Sicherheitsgründen nur zwischengespeichert werden, wenn sie nicht geschützt sind und kein
-Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertrauliche Daten in den Cache geschrieben und
-versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz
+Beachte, dass Seiten aus Sicherheitsgründen nur zwischengespeichert werden, wenn sie nicht geschützt sind und kein
+Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertrauliche Daten in den Cache geschrieben und
+versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz
 zugewiesener Verfallszeit nicht im Cache auftauchen.
 
 **Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn
@@ -161,7 +161,7 @@ personalisieren kannst.
 
 ## Zugriffsrechte
 
-In den Zugriffsrechten legst du fest, welche Benutzer im **Backend** auf eine Seite zugreifen dürfen und was sie mit
+In den Zugriffsrechten legst du fest, welche Benutzer im **Backend** auf eine Seite zugreifen dürfen und was sie mit
 dieser Seite und den darin enthaltenen Artikeln machen können. Jede Seite gehört ähnlich dem Unix-Rechtesystem einem
 bestimmten Benutzer und einer bestimmten Benutzergruppe und unterscheidet drei Zugriffsebenen:
 
@@ -170,14 +170,14 @@ bestimmten Benutzer und einer bestimmten Benutzergruppe und unterscheidet drei Z
 - Zugriff als sonstiger Backend-Benutzer
 
 Die Seite »Unternehmen« ist beispielsweise mit Zugriffsrechten versehen und gehört dem Benutzer h.lewis sowie der
-Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf
-dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite
+Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf
+dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite
 an sich bearbeiten und z. B. den Seitentitel ändern.
 
 ![Zugriffsrechte zuweisen]({{% asset "images/manual/layout/site-structure/de/zugriffsrechte-zuweisen.png" %}}?classes=shadow)
 
 **Zugriffsrechte zuweisen:** Hier kannst du einer Seite Zugriffsrechte zuweisen. Wenn du die Option nicht auswählst,
-werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
+werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
 
 **Besitzer:** Hier legst du den Besitzer der Seite fest.
 
@@ -192,15 +192,15 @@ Seite [Systemverwaltung](/de/system/einstellungen/).
 ## Experten-Einstellungen
 
 **CSS-Klasse:** Hier weist du der Seite eine CSS-Klasse zu, die sowohl im Body-Tag der HTML-Seite als auch in den
-Navigationsmodulen verwendet wird. Auf diese Weise kannst du CSS-Formatierungen für eine spezielle Seite oder einen
-bestimmten Menüpunkt erstellen.
+Navigationsmodulen verwendet wird. Auf diese Weise kannst du CSS-Formatierungen für eine spezielle Seite oder einen
+bestimmten Menüpunkt erstellen.
 
 **In der HTML-Sitemap zeigen:** Hier kannst du festlegen, ob die Seite in der HTML-Sitemap angezeigt wird. Standardmäßig 
-sind darin alle öffentlichen und nicht im Menü versteckten Seiten enthalten. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
+sind darin alle öffentlichen und nicht im Menü versteckten Seiten enthalten. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
 
 - **Standard:** Die Standard-Einstellungen verwenden.
-- **Immer anzeigen:** Die Seite wird immer in der HTML-Sitemap angezeigt, auch wenn sie z. B. im Menü versteckt ist und
-  somit normalerweise nicht angezeigt würde.
+- **Immer anzeigen:** Die Seite wird immer in der HTML-Sitemap angezeigt, auch wenn sie z. B. im Menü versteckt ist und
+  somit normalerweise nicht angezeigt würde.
 - **Nie anzeigen:** Die Seite ist von der HTML-Sitemap ausgenommen.
 
 {{% notice note %}}
@@ -208,26 +208,36 @@ Verwechsle bitte nicht die HTML-Sitemap mit der XML-Sitemap: Die HTML-Sitemap is
 kannst du z. B. bei Google einreichen.
 {{% /notice %}}
 
-**Im Menü verstecken:** Wenn du diese Option auswählst, wird die Seite nicht im Menü deiner Webseite angezeigt.
-Du kannst die Seite – sofern sie veröffentlicht wurde – aber trotzdem über einen direkten Link oder in einem
+**Im Menü verstecken:** Wenn du diese Option auswählst, wird die Seite nicht im Menü deiner Webseite angezeigt.
+Du kannst die Seite – sofern sie veröffentlicht wurde – aber trotzdem über einen direkten Link oder in einem
 Frontend-Modul aufrufen.
 
 Contao indiziert die fertigen Seiten deiner Webseite und erstellt daraus einen Suchindex, den du mit dem Frontend-Modul
 »Suchmaschine« durchsuchen kannst. Mit dieser Einstellungen kannst du bestimmte Seiten gezielt von der Indizierung
-ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber hinaus komplett deaktivieren.
+ausnehmen. In den Backend-Einstellungen lässt sich die Suchfunktion darüber hinaus komplett deaktivieren.
 
 **Nicht durchsuchen:** Hier kannst du eine Seite von der Suche ausnehmen.
+
+{{% notice info %}}
+Die **Nicht durchsuchen**-Checkbox wurde in Contao **5.6** durch die **Suchindexierer**-Auswahlliste ersetzt.
+{{% /notice %}}
+
+{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob die Seite bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig wird die Einstellung des Metadaten-Robots-Tags beachtet und verwendet. Bei Bedarf lässt sich dieses Verhalten pro Seite anpassen:
+
+- **Standard (-):** Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
+- **Immer indizieren:** Die Seite einbeziehen, auch wenn sie den Robots-Tag *noindex* hat.
+- **Niemals indizieren:** Die Seite ausschließen, auch wenn sie den Robots-Tag *index* hat.
 
 
 ## Tastatur-Navigation
 
-Aus Abschnitt [Backend-Tastaturkürzel](/de/administrationsbereich/backend-tastaturkuerzel/) weißt
-du bereits, dass Contao die Navigation mittels Tastaturkürzel unterstützt. Das wirkt sich nicht nur positiv auf die
+Aus Abschnitt [Backend-Tastaturkürzel](/de/administrationsbereich/backend-tastaturkuerzel/) weißt
+du bereits, dass Contao die Navigation mittels Tastaturkürzel unterstützt. Das wirkt sich nicht nur positiv auf die
 Barrierefreiheit aus, sondern beschleunigt auch den Arbeitsablauf. Aus diesem Grund ist das Feature auch im Frontend
-verfügbar, und jede Seite kann optional mit einem Tastaturkürzel und einem Tab-Index versehen werden.
+verfügbar, und jede Seite kann optional mit einem Tastaturkürzel und einem Tab-Index versehen werden.
 
-**Tastaturkürzel:** Ein Tastaturkürzel ist ein einzelnes Zeichen, das mit einer Seite verknüpft wird. Besucher deiner
-Webseite können diese Seite dann über die Tastatur direkt aufrufen. Diese Funktion wird vor allem für barrierefreie
+**Tastaturkürzel:** Ein Tastaturkürzel ist ein einzelnes Zeichen, das mit einer Seite verknüpft wird. Besucher deiner
+Webseite können diese Seite dann über die Tastatur direkt aufrufen. Diese Funktion wird vor allem für barrierefreie
 Webseiten gefordert.
 
 

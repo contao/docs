@@ -21,8 +21,8 @@ Backend verwendet. Bestätige deine Eingaben mit einem Klick auf die Schaltfläc
 ![Anmeldung im Contao-Backend]({{% asset "images/manual/administration-area/de/contao-backend-anmeldung.png" %}}?classes=shadow)
 
 Die Backend-Anmeldung ist mit einem Zeitverzögerungsmechanismus gegen [Brute-Force-Attacken](https://de.wikipedia.org/wiki/Brute-Force-Methode) 
-geschützt. Wenn du mehr als dreimal hintereinander ein falsches Passwort eingibst, wird dein Benutzerkonto automatisch 
-für 5 Minuten gesperrt. Auf diese Weise wird verhindert, dass ein Hacker eine große Anzahl Passwörter nacheinander 
+geschützt. Wenn du mehr als dreimal hintereinander ein falsches Passwort eingibst, wird dein Benutzerkonto automatisch 
+für 5 Minuten gesperrt. Auf diese Weise wird verhindert, dass ein Hacker eine große Anzahl Passwörter nacheinander 
 ausprobiert, bis er das richtige Passwort gefunden hat.
 
 
@@ -40,8 +40,8 @@ Der Infobereich zeigt einige wichtige Links an, die beim Arbeiten mit Contao imm
 
 ![Der Infobereich]({{% asset "images/manual/administration-area/de/hinweise.png" %}}?classes=shadow)
 
-![Startseite]({{% asset "icons/logo.svg" %}}?classes=icon,backend) **Startseite:** Ein Klick auf das Contao-Logo führt 
-zur Startseite des Backends zurück.
+![Startseite]({{% asset "icons/logo.svg" %}}?classes=icon,backend) **Startseite:** Ein Klick auf das Contao-Logo führt 
+zur Startseite des Backends zurück.
 
 ![Handbuch]({{% asset "icons/manual.svg" %}}?classes=icon,backend) **Handbuch:** Beim Klick auf diesen Link wird das 
 Handbuch aufgerufen.
@@ -67,7 +67,7 @@ bestimmte Seite oder einen Artikel im Backend bearbeitest, wirst du automatisch 
 weitergeleitet.
 
 **Benutzer:** Beim Klick auf Benutzer werden folgende Links angezeigt:
-  + ![Profil]({{% asset "icons/profile_small.svg" %}}?classes=icon,backend) **Profil:** Dieser Link führt zu den 
+  + ![Profil]({{% asset "icons/profile_small.svg" %}}?classes=icon,backend) **Profil:** Dieser Link führt zu den 
   persönlichen Einstellungen deines Benutzerkontos. Du kannst dort z. B. dein Passwort ändern oder die Sprache wechseln.
 
   + ![Sicherheit]({{% asset "icons/shield_small.svg" %}}?classes=icon,backend) **Sicherheit:** Über diesen Link kann 
@@ -83,7 +83,7 @@ weitergeleitet.
 ### Der Navigationsbereich
 
 Der Navigationsbereich enthält Links zu den verschiedenen Backend-Modulen, von denen jedes eine bestimmte Aufgabe
-erfüllt. Zur besseren Übersicht sind die Module in Gruppen zusammengefasst, die du je nach Bedarf ein- und ausklappen
+erfüllt. Zur besseren Übersicht sind die Module in Gruppen zusammengefasst, die du je nach Bedarf ein- und ausklappen
 kannst.
 
 ![Der Navigationsbereich]({{% asset "images/manual/administration-area/de/der-navigationsbereich.png" %}}?classes=shadow)
@@ -105,12 +105,12 @@ Auch die Dateiverwaltung ist hier eingeordnet.
 ### Der Arbeitsbereich
 
 Im Arbeitsbereich führst du alle Arbeiten innerhalb von Contao durch. Je nach Modul stehen dir dabei unterschiedliche
-Funktionen zur Verfügung.
+Funktionen zur Verfügung.
 
 ![Der Arbeitsbereich]({{% asset "images/manual/administration-area/de/der-arbeitsbereich.png" %}}?classes=shadow)
 
 Direkt nach der Anmeldung wird dir auf der Startseite des Backends das Datum deiner letzten Anmeldung, eine Übersicht
-der Backend-Tastaturkürzel sowie die Versionen der zuletzt bearbeiteten Inhalte an.
+der Backend-Tastaturkürzel sowie die Versionen der zuletzt bearbeiteten Inhalte an.
 
 
 ### Der Vorschaubereich

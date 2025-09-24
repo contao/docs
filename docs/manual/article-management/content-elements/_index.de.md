@@ -1,6 +1,6 @@
 ---
 title: "Inhaltselemente"
-description: "Um das Anlegen von Inhalten möglichst intuitiv zu gestalten, gibt es in Contao für jeden Inhaltstyp ein 
+description: "Um das Anlegen von Inhalten möglichst intuitiv zu gestalten, gibt es in Contao für jeden Inhaltstyp ein 
 Inhaltselement, das genau auf dessen Anforderungen abgestimmt ist."
 url: "artikelverwaltung/inhaltselemente"
 aliases:
@@ -9,7 +9,7 @@ weight: 20
 ---
 
 
-Um das Anlegen von Inhalten möglichst intuitiv zu gestalten, gibt es in Contao für jeden Inhaltstyp ein Inhaltselement, 
+Um das Anlegen von Inhalten möglichst intuitiv zu gestalten, gibt es in Contao für jeden Inhaltstyp ein Inhaltselement, 
 das genau auf dessen Anforderungen abgestimmt ist. Du kannst unbegrenzt viele Inhaltselemente pro Artikel anlegen und 
 den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 
@@ -25,7 +25,7 @@ den Zugriff auf einzelne Elemente bei Bedarf einschränken.
 
 | Info                                  |                                                                 |
 |---------------------------------------|-----------------------------------------------------------------|
-| **Element schützen:**                | Das Inhaltselement nur bestimmten Mitgliedergruppen anzeigen.   |
+| **Element schützen:**                | Das Inhaltselement nur bestimmten Mitgliedergruppen anzeigen.   |
 | **Erlaubte&nbsp;Mitgliedergruppen:**  | Diese Gruppen können das Inhaltselement sehen.                  |
 
 

@@ -84,6 +84,8 @@ or as a multi dimensonal array representing an explanation table:
 $GLOBALS['TL_LANG']['XPL']['example'] = [
     ['First row header', 'First row content.'],
     ['Second row header', 'Second row content.'],
+    ['headspan', 'Use `headspan` to spread this text over the header and the content and style it as a headline.'],
+    ['colspan', 'Use `colspan` to spread this text over the header and the content.'],
 ];
 ```
 
@@ -131,7 +133,7 @@ Each field can be validated against a regular expression.
 |:-------------------|:---------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | addWizardClass     | true/false (`bool`) | Whether or not to add the `wizard` CSS class for the widget if a wizard icon is in use. Default: `true`. _Note:_ this setting does not exist anymore in Contao **4.12** and up. |
 | allowHtml          | true/false (`bool`)           | If true the current field will accept HTML input (see "Allowed HTML tags" in the back end System => Settings).                                                            |
-| alwaysSave         | true/false (`bool`)           | If true the field will always be saved, even if its value has not changed. This can be useful in conjunction with a load_callback.                                       |
+| alwaysSave         | true/false (`bool`)           | If true the field will always be saved, even if its value has not changed. This can be useful in conjunction with a [load callback]({{% relref "callbacks#fields-field-load" %}}). |
 | basicEntities | true/false (`bool`) | {{< version-tag "5.0" >}} If true converts basic entities like `&shy;`, `&amp;` etc. back to their Contao representation `[&]`, `[-]` etc. when editing and vice versa when saving. |
 | blankOptionLabel   | Label (`string`)                 | Label for the blank option (defaults to `-`).                                                                                                                         |
 | chosen             | true/false (`bool`)           | Native selects enhanced with [Chosen](http://harvesthq.github.io/chosen/).                                                                                               |
@@ -228,7 +230,7 @@ can be [registered using a hook][3].
 | prcnt       | allows numbers between 0 and 100                                                                                  |
 | locale      | expects a valid locale (e.g. "de_CH")                                                                             |
 | language    | expects a valid language code (e.g. "de-CH")                                                                      |
-| google+     | expects a Google+ ID or vanity name                                                                               |
+| google+     | expects a Google+ ID or vanity name (removed {{< version-tag "5.0" >}})                                           |
 | fieldname   | expects a valid field name (added in version 3.5.16 / 4.2.3)                                                      |
 | httpurl     | {{< version-tag "4.11" >}} expects a valid absolute URL (beginning with `http://` or `https://`)                      |
 | custom      | {{< version-tag "4.11" >}} enables you to define a custom regular expression under the `customRgxp` evaluation key e.g. `'eval' => ['rgxp' => 'custom', 'customRgxp' => '/^[1-9]\d*$/', 'errorMsg'=> 'Custom error message']` |

@@ -8,7 +8,7 @@ aliases:
 
 **[inspiredminds/contao-news-sync](https://extensions.contao.org/?p=inspiredminds%2Fcontao-news-sync)**
 
-_von [inspiredminds](https://www.inspiredminds.at/)_
+_von [INSPIRED MINDS](https://www.inspiredminds.at/)_
 
 _Project web site: [Contao News Sync](https://www.inspiredminds.at/contao-news-sync)_
 
@@ -30,13 +30,13 @@ To add the repository, add the following to your `composer.json`:
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
 ```
 
-Replace `<YOUR_TOKEN>` with the repository token you received from inspiredminds.
+Replace `<YOUR_USERNAME>` and `<YOUR_TOKEN>` with the credentials you received from INSPIRED MINDS.
 
 To add the dependency, add the following to your `composer.json`:
 
@@ -62,37 +62,28 @@ To add the dependency, add the following to your `composer.json`:
         }
     ],
     "require": {
-        "php": "^7.1",
         "contao/conflicts": "@dev",
-        "contao/manager-bundle": "4.9.*",
-        "inspiredminds/contao-news-sync": "^3.0"
+        "contao/manager-bundle": "5.3.*",
+        "inspiredminds/contao-news-sync": "^4.0"
     },
     "conflict": {
         "contao-components/installer": "<1.3"
     },
     "extra": {
         "contao-component-dir": "assets",
-        "symfony": {
-            "require": "^4.2"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
     },
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ]
     },
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
@@ -157,7 +148,7 @@ should look like this:
     "license": "proprietary",
     "require": {
         "contao-community-alliance/composer-client": "~0.14",
-        "inspiredminds/contao-news-sync": "^3.0"
+        "inspiredminds/contao-news-sync": "^1.0"
     },
     "prefer-stable": true,
     "minimum-stability": "stable",
@@ -177,7 +168,7 @@ should look like this:
         },
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ],
     "extra": {

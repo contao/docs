@@ -145,6 +145,18 @@ in Contao 5 nicht mehr - daher muss dies nun an den richtigen Ort übertragen we
 [Entwickler-Dokumentation][ConfigTranslations].
 
 
+#### `contao/config.yaml`
+
+In Contao 5 werden folgende Konfigurationen in der `config.yaml` nicht mehr unterstützt und müssen gelöscht werden:
+
+| Eintrag               | Ersatz                                   |
+|-----------------------|------------------------------------------|
+| contao.prepend_locale | Einstellbar im Startpunkt einer Webseite |
+| contao.url_suffix     | Einstellbar im Startpunkt einer Webseite |
+| contao.legacy_routing | -                                        |
+| contao.encryption_key | -                                        |
+
+
 ### Interne Stylesheets exportieren
 
 In Contao 5 entfällt der [interne CSS-Editor][ManageStylesheets]. Vor der Aktualisierung müssen daher die bestehenden internen Stylesheets 

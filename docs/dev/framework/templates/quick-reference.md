@@ -3,8 +3,8 @@ title: "Quick reference handbook"
 description: How to quickly get going with the most typical Twig scenarios.
 weight: 500
 aliases:
-
-- /framework/templates/quick-reference/
+    - /framework/templates/quick-reference/
+tags: [Twig]
 
 ---
 
@@ -160,7 +160,7 @@ define our own attribute.
 ```twig
 {% extends "@Contao/content_element/_base.html.twig" %}
 
-{% set attributes = attrs(attributes|default).set('data-element', data.id) %}
+{% set attributes = attrs().set('data-element', data.id).mergeWith(attributes|default) %}
 ```
 {{% /example %}}
 

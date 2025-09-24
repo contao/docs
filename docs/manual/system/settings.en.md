@@ -337,6 +337,10 @@ contao:
 
     # The path to the Symfony console. Defaults to %kernel.project_dir%/bin/console.
     console_path:         '%kernel.project_dir%/bin/console'
+    registration:
+
+        # The number of days after which unconfirmed registrations expire.
+        expiration:           14
 
     # Allows to define Symfony Messenger workers (messenger:consume). Workers are started every minute using the Contao cron job framework.
     messenger:
@@ -1634,7 +1638,7 @@ php vendor/bin/contao-console messenger:consume --limit=10 --time-limit=1
 
 With a minutely cronjob this would mean that at most 600 emails are sent per hour in this case.
 
-{{% notice "_note" %}}
+{{% notice "info" %}}
 The commands described above use the `--time-limit=1` option. By default the `messenger:consume` process will run indefinitely, processing
 any new messages continuously. Therefore you would not need to run a separate cronjob. In order to make sure that this process is always
 running and is restarted on demand, different tools can be used on the server. However, in shared hosting environments such tools are

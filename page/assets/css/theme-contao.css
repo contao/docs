@@ -759,3 +759,16 @@ mark {
   background-color: var(--PRIMARY-color);
 }
 
+/* Fix height of selects due to font */
+.menu-control select {
+    height: auto;
+}
+
+/* Workaround for Firefox issue (https://github.com/contao/docs/issues/1625) */
+.menu-control select {
+    background-color: var(--MENU-SECTIONS-BG-color);
+}
+
+.menu-control select option {
+    color: var(--MENU-SECTIONS-LINK-color);
+}

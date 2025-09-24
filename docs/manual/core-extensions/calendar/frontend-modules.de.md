@@ -1,6 +1,6 @@
 ---
 title: "Frontend-Module"
-description: "Die »Kalender«-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
+description: "Die »Kalender«-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
 url: "core-erweiterung/kalender/frontend-module"
 aliases:
@@ -9,7 +9,7 @@ weight: 20
 ---
 
 Nachdem du nun weißt, wie Kalender und Events im Backend verwaltet werden, wird dir nun erklärt, wie du diese Inhalte 
-im Frontend darstellen kannst. Die »Kalender«-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über 
+im Frontend darstellen kannst. Die »Kalender«-Erweiterung enthält vier neue Frontend-Module, die du wie gewohnt über 
 die Modulverwaltung konfigurieren kannst.
 
 ![Kalender-Module]({{% asset "images/manual/core-extensions/calendar/de/kalender-module.png" %}}?classes=shadow)
@@ -17,7 +17,7 @@ die Modulverwaltung konfigurieren kannst.
 
 ## Kalender
 
-Das Frontend-Modul »Kalender« fügt der Webseite einen Kalender hinzu, in dem die Events eines oder mehrerer Kalender 
+Das Frontend-Modul »Kalender« fügt der Webseite einen Kalender hinzu, in dem die Events eines oder mehrerer Kalender 
 dargestellt werden.
 
 **Standard Kalender-Modul `cal_default`**
@@ -33,8 +33,8 @@ dargestellt werden.
 
 **Kalender:** Hier legst du fest, aus welchem Kalender Beiträge aufgelistet werden sollen. 
 
-**Verkürzte Darstellung:** Standardmäßig zeigt Contao mehrtägige Events an jedem Tag einzeln an. Wenn du diese Option
-auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal am ersten Tag.
+**Verkürzte Darstellung:** Standardmäßig zeigt Contao mehrtägige Events an jedem Tag einzeln an. Wenn du diese Option
+auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal am ersten Tag.
 
 **Erster Wochentag:** Hier legst du den ersten Tag der Woche fest.
 
@@ -51,14 +51,14 @@ weitergeleitet wird. Auf der Zielseite sollte das Frontend-Modul »Eventliste« 
 
 ### Template-Einstellungen
 
-**Kalender-Template:** Hier wählst du das Template für den Kalender aus.
+**Kalender-Template:** Hier wählst du das Template für den Kalender aus.
 
-Folgende Kalender-Templates stehen dir standardmäßig zur Verfügung:
+Folgende Kalender-Templates stehen dir standardmäßig zur Verfügung:
 
 | Template                 | Erklärung                                                                                                                                                                                                                                                                                                                                         |
 |:-------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `cal_default`            | Dieses Template stellt einen großen Kalender dar, in dem die einzelnen Events aufgelistet sind und direkt angeklickt werden können.                                                                                                                                                                                                               |
-| `cal_mini`               | Dieses Template stellt einen Mini-Kalender dar, der im Gegensatz zum großen Kalender keine direkten Links auf einzelne Events, sondern nur Links auf einzelne Tage enthält. Der Mini-Kalender wurde ursprünglich für die Navigation der Eventliste verwendet; mittlerweile erfolgt diese jedoch mit dem flexibleren Modul »Eventliste-Menü«.   |
+| `cal_mini`               | Dieses Template stellt einen Mini-Kalender dar, der im Gegensatz zum großen Kalender keine direkten Links auf einzelne Events, sondern nur Links auf einzelne Tage enthält. Der Mini-Kalender wurde ursprünglich für die Navigation der Eventliste verwendet; mittlerweile erfolgt diese jedoch mit dem flexibleren Modul »Eventliste-Menü«.   |
 
 **Modul-Template:** Hier kannst du das Modul-Template überschreiben.
 
@@ -66,14 +66,14 @@ Folgende Kalender-Templates stehen dir standardmäßig zur Verfügung:
 ## Eventleser
 
 Das Frontend-Modul »Eventleser« dient dazu, ein bestimmtes Event darzustellen. Den Alias des Eintrags bezieht das Modul 
-über die URL, sodass Events mit sogenannten [Permalinks](https://de.wikipedia.org/wiki/Permalink) gezielt verlinkt 
+über die URL, sodass Events mit sogenannten [Permalinks](https://de.wikipedia.org/wiki/Permalink) gezielt verlinkt 
 werden können:
 
 `www.example.com/event/european-design-awards.html`
 
-Das Schlüsselwort des Eventlesers lautet *event* und teilt dem Modul mit, dass es ein bestimmtes Event suchen und 
+Das Schlüsselwort des Eventlesers lautet *event* und teilt dem Modul mit, dass es ein bestimmtes Event suchen und 
 ausgeben soll. Existiert der gesuchte Eintrag nicht, gibt der Eventleser eine Fehlermeldung und den HTTP-Status-Code 
-»404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
+»404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
 {{% notice note %}}
 Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
@@ -110,7 +110,7 @@ konfigurierten Leseseite für kanonische Links verwendet wird.
 | Template                 | Erklärung                                                                                                                      |
 |:-------------------------|:-------------------------------------------------------------------------------------------------------------------------------|
 | `event_full`             | Dieses Template stellt das vollständige Event dar und wird deswegen zur Verwendung mit dem Eventleser empfohlen.               |
-| `event_list`             | Dieses Template gibt die Überschrift eines Events, das Datum und die Uhrzeit sowie den Event-Text für die Eventliste aus.     |
+| `event_list`             | Dieses Template gibt die Überschrift eines Events, das Datum und die Uhrzeit sowie den Event-Text für die Eventliste aus.     |
 | `event_teaser`           | Dieses Template gibt die Überschrift eines Events, das Datum und die Uhrzeit, den Teasertext und einen Weiterlesen-Link aus.   |
 | `event_upcoming`         | Dieses Template gibt das Datum und die Überschrift eines Events aus.                                                           |
 
@@ -119,7 +119,7 @@ konfigurierten Leseseite für kanonische Links verwendet wird.
 
 ### Bildeinstellungen
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
 
 | Eigene Größen                                  |                                                                                                                           |
 |:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
@@ -139,7 +139,7 @@ Details zum Markup der Kommentare findest du im Abschnitt
 ## Eventliste
 
 Das Frontend-Modul »Eventliste« dient dazu, alle Events eines bestimmten Zeitraums aufzulisten. In Verbindung mit dem 
-Modul »Eventliste-Menü« kannst du so tages-, monats- oder jahresweise alle vorhandenen Events durchsuchen.
+Modul »Eventliste-Menü« kannst du so tages-, monats- oder jahresweise alle vorhandenen Events durchsuchen.
 
 
 ### Modul-Konfiguration
@@ -147,17 +147,17 @@ Modul »Eventliste-Menü« kannst du so tages-, monats- oder jahresweise alle v
 **Kalender:** Hier legst du fest, aus welchen Kalendern Events aufgelistet werden sollen. Die Events werden aufsteigend 
 nach Datum sortiert.
 
-**Verkürzte Darstellung:** Standardmäßig zeigt Contao mehrtägige Events an jedem Tag einzeln an. Wenn du diese Option
-auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal am ersten Tag.
+**Verkürzte Darstellung:** Standardmäßig zeigt Contao mehrtägige Events an jedem Tag einzeln an. Wenn du diese Option
+auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal am ersten Tag.
 
 **Anzeigeformat:** Hier legst du den Zeitraum der Anzeige fest. Über das Anzeigeformat definierst du gleichzeitig auch 
 den Betriebsmodus der Eventliste.
 
 | Betriebsmodus              | Erklärung                                                                                                                   |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Eventliste                 | Die Eventliste listet alle Events eines bestimmten Zeitraums auf, den du mit dem Modul »Eventliste-Menü« vorgeben kannst.   |
-| Zukünftige Events          | Die Eventliste listet nur zukünftige Events auf (Vorschau).                                                                 |
-| Vergangene&nbsp;Events     | Die Eventliste listet nur vergangene Events auf (Rückblick).                                                                |
+| Eventliste                 | Die Eventliste listet alle Events eines bestimmten Zeitraums auf, den du mit dem Modul »Eventliste-Menü« vorgeben kannst.   |
+| Zukünftige Events          | Die Eventliste listet nur zukünftige Events auf (Vorschau).                                                                 |
+| Vergangene&nbsp;Events     | Die Eventliste listet nur vergangene Events auf (Rückblick).                                                                |
 
 
 **Hervorgehobene Events:** Hier kannst du festlegen, wie hervorgehobene Events gehandhabt werden. Es stehen folgende
@@ -196,7 +196,7 @@ lassen.
 | Template                 | Erklärung                                                                                                                      |
 |:-------------------------|:-------------------------------------------------------------------------------------------------------------------------------|
 | `event_full`             | Dieses Template stellt das vollständige Event dar und wird deswegen zur Verwendung mit dem Eventleser empfohlen.               |
-| `event_list`             | Dieses Template gibt die Überschrift eines Events, das Datum und die Uhrzeit sowie den Event-Text für die Eventliste aus.     |
+| `event_list`             | Dieses Template gibt die Überschrift eines Events, das Datum und die Uhrzeit sowie den Event-Text für die Eventliste aus.     |
 | `event_teaser`           | Dieses Template gibt die Überschrift eines Events, das Datum und die Uhrzeit, den Teasertext und einen Weiterlesen-Link aus.   |
 | `event_upcoming`         | Dieses Template gibt das Datum und die Überschrift eines Events aus.                                                           |
 
@@ -205,7 +205,7 @@ lassen.
 
 ### Bildeinstellungen
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben.
 
 | Eigene Größen                                  |                                                                                                                           |
 |:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
@@ -214,19 +214,19 @@ lassen.
 | An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
 
 
-## Eventliste-Menü {#eventliste-menue}
+## Eventliste-Menü {#eventliste-menue}
 
-Das Frontend-Modul »Eventliste-Menü« fügt der Webseite ein Menü hinzu, mit dem du die Events der einzelnen Tage, Monate 
+Das Frontend-Modul »Eventliste-Menü« fügt der Webseite ein Menü hinzu, mit dem du die Events der einzelnen Tage, Monate 
 oder Jahre aufrufen kannst.
 
 
 ### Modul-Konfiguration
 
 **Kalender:** Hier legst du fest, aus welchen Kalendern Events verlinkt werden sollen. Diese Auswahl sollte mit der der 
-Eventliste übereinstimmen.
+Eventliste übereinstimmen.
 
-**Verkürzte Darstellung:** Standardmäßig zeigt Contao mehrtägige Events an jedem Tag einzeln an. Wenn du diese Option
-auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal am ersten Tag.
+**Verkürzte Darstellung:** Standardmäßig zeigt Contao mehrtägige Events an jedem Tag einzeln an. Wenn du diese Option
+auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal am ersten Tag.
 
 **Anzeigeformat:** Hier legst du das Anzeigeformat (Tag, Monat oder Jahr) fest.
 
@@ -234,15 +234,15 @@ auswählst, wird die Darstellung verkürzt, und das Event erscheint nur einmal 
 Möglichkeiten zur Verfügung: »Alle Events anzeigen«, »Nur hervorgehobene Events anzeigen« und »Hervorgehobene Events
 überspringen«.
 
-**Sortierreihenfolge:** Hier kannst du die Sortierreihenfolge des Menüs ändern.
+**Sortierreihenfolge:** Hier kannst du die Sortierreihenfolge des Menüs ändern.
 
 **Anzahl der Events anzeigen:** Wenn du diese Option auswählst, wird die Anzahl der Events jedes Monats bzw. Jahres im 
-Menü angezeigt.
+Menü angezeigt.
 
 
 ### Weiterleitung
 
-**Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Besucher nach dem Anklicken eines Menüpunkts 
+**Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Besucher nach dem Anklicken eines Menüpunkts 
 (Tag, Monat oder Jahr) weitergeleitet wird.
 
 

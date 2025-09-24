@@ -78,7 +78,6 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
         'isGallery' => true,
         'multiple' => true,
         'extensions' => '%contao.image.valid_extensions%',
-        'orderField' => 'orderSRC',
     ],
     'sql' => [
         'type' => 'blob',
@@ -122,4 +121,4 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 
 ## Usage in Contao
 
-The file tree widget is used very often in contao. Examples are the text, download, image and gallery elements.
+The file tree widget is used very often in Contao. Examples are the text, download, image and gallery elements.

@@ -65,7 +65,7 @@ running all the time. It's fair to assume that probably most of the Contao setup
 provider without any access to any process manager like `Supervisor`, `systemd`, `launchd`, `runit` and Co.
 
 So when you as an extension developer want to use the Symfony Messenger integration, we somehow have to make sure,
-your messages aren't lost and being worked on , even if the Contao user installs Contao somewhere where no 
+your messages aren't lost and being worked on, even if the Contao user installs Contao somewhere where no 
 `messenger:consume` worker is running.
 This is exactly what the `WebWorker` is all about. The `WebWorker` uses the Symfony `kernel.terminate` event to work 
 on the messages that are on the queue. This is how it works:

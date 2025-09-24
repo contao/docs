@@ -7,6 +7,13 @@ aliases:
 ---
 
 
+{{% notice "note" %}}
+Hooks are an outdated concept from Contao 2 and 3. If you are employing event-driven architecture within your own code,
+you should use the
+[Symfony Event Dispatcher](https://symfony.com/doc/current/event_dispatcher.html#how-to-customize-a-method-behavior-without-using-inheritance)
+instead.
+{{% /notice %}}
+
 Hooks are entry points into the Contao core (and some of its extension bundles).
 Have a look at the [hook reference][HookReference] for a list of all available hooks.
 You can register your own callable logic that will be executed as soon as a certain
@@ -279,7 +286,7 @@ class ParseArticlesListener
 {{< /tabs >}}
 
 
-[HookReference]: /reference/hooks/
+[HookReference]: {{% relref "reference/hooks" %}}
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
 [contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
 [ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle

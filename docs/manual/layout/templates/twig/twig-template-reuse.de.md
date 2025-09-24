@@ -5,6 +5,7 @@ url: "layout/templates/twig/wiederverwendung"
 weight: 40
 aliases:
   - /de/layout/templates/twig/wiederverwendung/
+tags: [Twig]
 ---
 
 Contao setzt mit Twig konsequent auf das Wiederverwenden von Teilen eines Templates. Twig unterstützt viele
@@ -50,7 +51,7 @@ nicht zur Template-Hierarchie gehören, weil sie erst zur Laufzeit erzeugt werde
 Die Template-Hierarchie kann über die Kommandozeile mit
 dem [debug:contao-twig Kommando](https://docs.contao.org/dev/framework/templates/debugging/#debug-contao-twig-command)
 dargestellt werden.
-Beachte bei der Verwendung des Kommandozeilenbefehls auch den [entsprechenden Abschnitt im Handbuch]({{% ref "cli" %}}).
+Beachte bei der Verwendung des Kommandozeilenbefehls auch den [entsprechenden Abschnitt im Handbuch]({{% relref "cli" %}}).
 
 
 ## Erweitern
@@ -61,7 +62,7 @@ Beim Erweitern wird ein Template nicht komplett überschrieben, sondern es werde
 Dazu muss das Basis-Template mit `{% extends "@Contao/('pfad-des-templates')/('name-des-templates') %}`
 angegeben werden.
 
-Contao unterstützt euch bei der Erweiterung von Templates und bei der [Anpassung von Blöcken]({{% ref "#blöcke-anpassen" %}}) und
+Contao unterstützt euch bei der Erweiterung von Templates und bei der [Anpassung von Blöcken]({{% relref "#blöcke-anpassen" %}}) und
 [Anpassen von HTML-Attributen](#html-attribute-anpassen).  
 Wählst du eines der neuen Twig-Templates zur Anpassung aus, dann wird dir das neue Template für die Vererbung so
 vorbereitet, dass das Basis-Template bereits angegeben ist. In den Kommentaren findest du die Blöcke und
@@ -137,14 +138,14 @@ als Variable verfügbare HTML-Attribute anzupassen.
 {{% example "Klasse für den Textbereich anpassen" %}}
 
 Wir möchten für das div-Tag, welches um den Textbereich liegt, die Klasse `description` ergänzen. Dazu passen wir die
-Variable `text_attributes` entsprechend an. Mit `set` wird die Variable mit neuem Inhalt gefüllt. Die
-Funktion `attrs(text_attributes|default)`
-stellt uns die vorhandenen Attribute zur Verfügung mit `addClass` ergänzen wir die Attribute um die gewünschte Klasse.
+Variable `text_attributes` entsprechend an. Mit `set` wird die Variable mit neuem Inhalt gefüllt. Die Funktion `attrs()`
+erzeugt ein neues `HtmlAttributes` Objekt, mit `addClass` ergänzen wir die Attribute um die gewünschte Klasse und mit
+`.mergeWith(text_attributes|default)` führen wir diese Attribute mit den existierenden zusammen.
 
 ```twig
 {# /templates/content_element/text.html.twig #}
 {% extends "@Contao/content_element/text.html.twig" %}
-{% set text_attributes = attrs(text_attributes|default).addClass('description') %}
+{% set text_attributes = attrs().addClass('description').mergeWith(text_attributes|default) %}
 ```
 {{% /example %}}
 

@@ -71,12 +71,31 @@ app.controller:
 ```
 {{% /expand %}}
 
+{{% expand "Defining routes in Contao 5 and up" %}}
+Starting with Contao **5** (Symfony **6**) this still works the same as shown above, however you can now switch the type
+to `attribute` instead of `annotation`. In Symfony **7** (Contao **5.4+**) the support for `annotation` has been
+dropped. Note that `annotation` in Symfony 6 will support both PHP attributes as well as annotations.
+
+```yaml
+# config/routes.yaml
+app.controller:
+    resource: ../src/Controller
+    type: attribute
+```
+{{% /expand %}}
+
+{{% expand "Defining routes in Contao 5.3 and up" %}}
+Starting with Contao **5.3** routes based on annotations or attributes in the `src/Controller/` directory are
+automatically loaded by the `contao/manager-bundle`, thus you do not need to create your own `config/routes.yaml` there.
+However, you can still do as shown above if you want or need to define custom routes of course.
+{{% /expand %}}
+
 This will tell Symfony that any controller defined under `src/Controller` within
 your application (i.e. the `App\Controller\` namespace) will use PHP annotations
 for defining routes.
 
-Now we can go right ahead and create a simple controller and define its route via
-the `Symfony\Component\Routing\Annotation\Route` annotation:
+Now we can go right ahead and create a simple controller and define its route via the
+`Symfony\Component\Routing\Annotation\Route` attribute:
 
 ```php
 // src/Controller/ExampleController.php

@@ -8,14 +8,14 @@ weight: 40
 ---
 
 Wie die meisten Open-Source-Projekte wird auch Contao kontinuierlich weiterentwickelt. Mit jedem Update werden 
-Komponenten aktualisiert, Fehler behoben, neue Funktionen hinzugefügt oder die Performance verbessert. Es wird daher
+Komponenten aktualisiert, Fehler behoben, neue Funktionen hinzugefügt oder die Performance verbessert. Es wird daher
 empfohlen, immer eine aktuelle Version zu verwenden.
 
 
 ## Der Contao-Update-Zyklus
 
 Contao folgt für die Versionsbezeichnungen dem Konzept von [Semantic Versioning](https://semver.org).
-Das klingt etwas gar technisch weshalb wir uns schnell gemeinsam mit der verwendeten Terminologie vertraut machen:
+Das klingt etwas gar technisch, weshalb wir uns schnell gemeinsam mit der verwendeten Terminologie vertraut machen:
 
 
 ### Major-Release
@@ -28,7 +28,7 @@ Major-Version von Contao ist beim Schreiben dieser Zeilen die **Version 5**.
 ### Minor-Release
 
 Bei einem Minor-Release handelt es sich um eine Art Meilenstein auf dem Weg der Entwicklung, bei dem neue Funktionen 
-hinzugefügt wurden. Kleinere Anpassungen bestehender Seiten können daher notwendig sein. Die aktuelle Minor-Version von 
+hinzugefügt wurden. Kleinere Anpassungen bestehender Seiten können daher notwendig sein. Die aktuelle Minor-Version von 
 Contao ist beim Schreiben dieser Zeilen die **Version 5.5**.
 
 
@@ -40,7 +40,7 @@ Die aktuelle Bugfix-Version von Contao ist beim Schreiben dieser Zeilen die **Ve
 
 ### Long-Term-Support-Versionen
 
-Der [Release-Zyklus](https://contao.org/de/release-plan.html) von Contao beinhaltet auch Versionen mit 
+Der [Release-Zyklus](https://contao.org/de/release-plan) von Contao beinhaltet auch Versionen mit 
 [Long Term Support](https://de.wikipedia.org/wiki/Support_(Dienstleistung)#Long_Term_Support). Die Contao-Versionen mit verlängertem 
 Supportzeitraum werden während 3 Jahren mit Bugfixes und 1 Jahr mit sicherheitsrelevanten Updates versorgt, auch wenn zwischenzeitlich schon neuere Contao-Versionen veröffentlicht wurden. Eine Übersicht aller Contao-Versionen gibt es auf [Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
 
@@ -48,16 +48,16 @@ Supportzeitraum werden während 3 Jahren mit Bugfixes und 1 Jahr mit sicherheits
 ## Aktualisierung mit dem Contao Manager
 
 {{% notice info %}}
-Vor der Aktualisierung von Contao wird empfohlen, ein Backup der `composer.json`,  `composer.lock` sowie der Datenbank 
+Vor der Aktualisierung von Contao wird empfohlen, ein Backup der `composer.json`, `composer.lock` sowie der Datenbank 
 anzulegen.
 {{% /notice %}}
 
 Melde dich im Contao Manager an und starte ihn.
 
-Bei einer Aktualisierung für ein [Bugfix-Release](#bugfix-release) genügt es auf »Pakete aktualisieren« zu klicken.
+Bei einer Aktualisierung für ein [Bugfix-Release](#bugfix-release) genügt es, auf »Pakete aktualisieren« zu klicken.
 
 Besonderheit bei einer Aktualisierung für ein [Minor-Release](#minor-release): Klicke bei »Contao Open Source CMS« auf das 
-Zahnrad-Symbol und gebe die gewünschte Version ein. Durch einen Klick auf die Schaltfläche  »Pakete aktualisieren« und danach »Änderungen anwenden« schiebst du die Aktualisierung an.
+Zahnrad-Symbol und gebe die gewünschte Version ein. Durch einen Klick auf die Schaltfläche »Pakete aktualisieren« und danach »Änderungen anwenden« schiebst du die Aktualisierung an.
 
 ![Aktualisierung für Minor-Release starten]({{% asset "images/manual/installation/de/aktualisierung-fuer-minor-release-starten.png" %}}?classes=shadow)
 
@@ -70,8 +70,8 @@ werden.
 
 ### Datenbanktabellen aktualisieren
 
-Öffne das [Contao-Installtool](../contao-installtool/), und überprüfe, ob nach der Aktualisierung irgendwelche 
-Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch, und schließe 
+Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung irgendwelche 
+Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe 
 dann das Installtool.
 
 Deine Contao-Installation ist jetzt auf dem neuesten Stand.
@@ -85,7 +85,7 @@ Deine Contao-Installation ist jetzt auf dem neuesten Stand.
 {{% /notice %}}
 
 {{% notice info %}}
-Vor der Aktualisierung von Contao empfehle ich dir ein Backup der `composer.json`, `composer.lock` sowie der Datenbank 
+Vor der Aktualisierung von Contao wird empfohlen, ein Backup der `composer.json`, `composer.lock` sowie der Datenbank 
 anzulegen.
 {{% /notice %}}
 
@@ -134,11 +134,11 @@ $ composer update
 
 ### Datenbanktabellen aktualisieren
 
-Öffne das [Contao-Installtool](../contao-installtool/), und überprüfe, ob nach der Aktualisierung irgendwelche 
-Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch, und schließe 
+Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung irgendwelche 
+Änderungen an deiner Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe 
 dann das Installtool.
 
-Anstelle des Contao-Installtools kannst Du (ab Contao 4.9) zur Aktualisierung der Datenbanktabellen auf der 
+Anstelle des Contao-Installtools kannst du (ab Contao 4.9) zur Aktualisierung der Datenbanktabellen auf der 
 Kommandozeile das Command 
 ```bash
 $ vendor/bin/contao-console contao:migrate
@@ -164,7 +164,7 @@ Was benötigst du auf deinem Computer?
 
 - ein beliebiges Verzeichnis, in dem du arbeitest (dein Arbeitsverzeichnis)
 - PHP, idealerweise in der gleichen Version, wie sie auf deinem Hosting verwendet wird.  
-- Composer (wir gehen hier davon aus, dass du Composer global [installierst](../contao-installieren/#composer-installieren)
+- Composer (wir gehen hier davon aus, dass du Composer global [installierst](../contao-installieren/#composer-installieren))
 - Kopien der `composer.json` und `composer.lock` der Contao-Installation bei deinem Hoster
 
 Was benötigst du _nicht_?
@@ -202,7 +202,7 @@ $ composer install
 ```
 
 oder du verwendest den Contao Manager. Dort wählst du unter »Systemwartung« den Punkt »Composer-Abhängigkeiten«, »Installer 
-ausführen«.
+ausführen« aus.
 
 ![composer install mit dem Contao-Manager]({{% asset "images/manual/installation/de/composer-install-mit-dem-contao-manager.png" %}}?classes=shadow)
 
@@ -211,8 +211,8 @@ Zum Abschluss musst du noch die Datenbanktabellen aktualisieren.
 
 ### Datenbanktabellen aktualisieren
 
-Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung Änderungen an deiner 
-Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe dann das Installtool.
+Öffne das [Contao-Installtool](../contao-installtool/) und überprüfe, ob nach der Aktualisierung Änderungen an deiner 
+Datenbank notwendig sind. Führe gegebenenfalls die vorgeschlagenen Änderungen durch und schließe dann das Installtool.
 
 Anstelle des Contao-Installtools kannst du (ab Contao 4.9) zur Aktualisierung der Datenbanktabellen auf der 
 Kommandozeile das Command 
@@ -247,7 +247,7 @@ angeben, welche PHP-Version verwendet werden soll:
 Du benötigst eine lokale Contao-Installation. In dieser installierst du den Contao Manager und führst das Update wie
 im Abschnitt [Aktualisierung mit dem Contao Manager](#aktualisierung-mit-dem-contao-manager) beschrieben durch. 
 
-Stelle zuvor jedoch sicher, daß die Composer Resolver Cloud nicht verwendet wird. Du benötigst sie nicht, da du auf 
+Stelle zuvor jedoch sicher, dass die Composer Resolver Cloud nicht verwendet wird. Du benötigst sie nicht, da du auf 
 deinem eigenen Server genügend Arbeitsspeicher bereitstellen kannst und entlastest so die Cloud.
 
 Die Einstellung findest du in der »Systemprüfung« im Bereich »Serverkonfiguration«.

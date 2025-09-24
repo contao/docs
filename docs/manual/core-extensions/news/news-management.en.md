@@ -169,6 +169,10 @@ To create a new post, click on the desired archive
 
 ### Title and Author
 
+In this section the featured posts are particularly interesting. Featured posts allow the creation of a "virtual 
+archive", which contains only the Featured posts from the various archives. This allows you to display a comprehensive 
+list of important posts on the home page, for example.
+
 **Titles:** Here you can enter the title of the news post.
 
 **Feature item:** Here you can mark a post as featured.
@@ -224,16 +228,15 @@ not. <sup>4</sup>
 <title>Page title</title>
 ```
 
-**Robots tag:** The robots tag defines how search engines treat a page.
+**Robots tag:** The robots tag defines how search engines treat a page. By default, news articles inherit the robots tag setting from the page that contains the "news reader" module. If necessary, the robots tag can be adjusted per news article:
 
+- *Default (-):* The robots tag setting from the page with the "news reader" module is used
 - *index:* add the page to the search index
 - *follow:* follow the links on the page
 - *noindex:* do not include the page in the search index
 - *nofollow:* do not follow the links on the page
 
-The default case is *index,follow*, because we want Google and other search engines to include our pages in the search
-index. However, certain pages, such as the imprint or the registration page, can be excluded from indexing using the
-setting *noindex,nofollow*.
+With *index,follow*, search engines can include the news article in the search index. With *noindex,nofollow*, search engines are instructed to exclude the news article from the search index.
 
 **Output in source code:**
 ```html
@@ -312,13 +315,15 @@ files are both exported in the RSS feed and offered for download on your website
 
 ### Expert settings
 
-In this section the featured posts are particularly interesting. Featured posts allow the creation of a "virtual 
-archive", which contains only the Featured posts from the various archives. This allows you to display a comprehensive 
-list of important posts on the home page, for example.
-
 **CSS class:** Here you can add a CSS class to the post.
 
 **Disable comments:** Here you can deactivate the comment function for a post.
+
+{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the news article should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, news articles inherit the search indexer setting from the page that contains the "news reader" module. If necessary, this behavior can be adjusted per news article:
+
+- **Default:** Indexing according to the search indexer setting from the page with the "news reader" module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
+- **Always index:** Include the news article, even if it has the robots tag *noindex* or the page with the "news reader" module has a different setting.
+- **Never index:** Exclude the news article, even if it has the robots tag *index* or the page with the "news reader" module has a different setting.
 
 
 ### Publish settings

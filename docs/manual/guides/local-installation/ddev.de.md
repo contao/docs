@@ -53,7 +53,7 @@ ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --ph
 Contao 5.3 installieren:
 
 ```shell
-ddev composer create contao/managed-edition:5.3
+ddev composer create-project contao/managed-edition:5.3
 ```
 
 Nach der Installation müssen die Datenbankzugangsdaten in die `.env.local` eingetragen werden. In diesem Zug richten wir auch direkt 
@@ -140,7 +140,7 @@ Weitere Informationen bez. der Verwaltung von Projekten findest du [hier](https:
 Falls du als Windows Anwender die »Git Bash« als Konsole benutzt, kann es, abhängig von deiner »Git für Windows« Konfiguration, notwendig sein das Kommando `winpty` voran zu stellen (z. B.: `winpty ddev ssh`).
 {{% /notice %}}
 
-## Custom PHP Configuration
+## Angepasste PHP-Konfiguration
 
 Mit DDEV können zusätzliche PHP-Konfigurationen für ein Projekt bereitgestellt werden. Du kannst eine beliebige Anzahl von `.ini` Dateien im Verzeichnis `.ddev/php/` hinzufügen. Änderungen erfordern einen Neustart mit `ddev restart`. Weitere Informationen in der [DDEV-Dokumentation](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#custom-php-configuration-phpini).
 
@@ -171,3 +171,61 @@ ddev add-on get ddev/ddev-phpmyadmin && ddev restart
 ```
 
 Mit `ddev describe` erfährst du, wie du das jeweilige Datenbank Tool erreichst.
+
+
+## DDEV Cronjob einrichten
+
+{{< version-tag "5.5" >}} Die [Backend-Suche](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/backend-suche/) kann durch die Einrichtung des [Contao Cronjob-Frameworks](https://docs.contao.org/manual/de/performance/cronjobs/) aktiviert werden.
+
+Dazu in DDEV zunächst die [Cron-Erweiterung](https://github.com/ddev/ddev-cron) installieren:
+
+```shell
+ddev add-on get ddev/ddev-cron
+```
+{{% notice info %}}
+Wenn du bereits länger mit DDEV entwickelt hast, kann es sein, dass du eine Fehlermeldung bei der Ausführung von `ddev add-on get ddev/ddev-cron` erhältst. Die Ursache dafür ist, dass das add-on erst ab der ddev-Version 1.24 unterstützt wird. Du musst also zuerst ddev updaten. Siehe zum Update auch https://docs.ddev.com/en/stable/users/install/ddev-upgrade/.
+{{% /notice %}}
+
+Erstelle dann die Datei `/.ddev/web-build/contao.cron` mit folgendem Inhalt:
+
+```shell
+* * * * * php /var/www/html/vendor/bin/contao-console contao:cron
+```
+
+Starte anschließend das DDEV-Projekt/ den Container neu:
+
+```shell
+ddev restart
+```
+
+Der Contao-Cronjob wird minütlich ausgeführt. Bei der erstmaligen Einrichtung kann es eventuell 1-2 Minuten dauern, bevor die Suchleiste im Backend verfügbar ist.
+
+## Konfigurieren eines lokalen Pfades als ein shared repository für alle deine Bundles innerhalb des ddev containers
+
+Wenn du einen Pfad konfigurieren möchtest, in dem alle deine Test-Bundles für deine lokalen Projekte abgelegt sind, so dass du diesen Pfad auch in deiner **composer.json** verwenden kannst, so ist das wie folgt möglich:
+
+Erstelle eine Datei im Ordner **./ddev** innerhalb deines Projekt-Ordners. Verwende beispielsweise den Dateinamen **docker-compose.bundles.yaml**.
+
+Der Inhalt der Datei kann wie folgt aussehen (passe die Pfade an deine Anforderungen an):
+```
+services:
+  web:
+    volumes:
+    - /home/$USER/repository:/home/$USER/repository:rw
+```
+
+Starte den Container mit `ddev restart` neu.
+
+Jetzt kannst du die im angegbenen Ordner abgelegten Bundles wie gewohnt als pfad-repository in deiner **composer.json** verwenden.
+```
+"repositories": [
+  {
+    "type": "path",
+    "url": "~/repository/my-local-bundle"
+  }
+],
+```
+
+{{% notice info %}}
+Wenn der Contao Manager die so konfigurierten Repositories nicht finden kann, so hilft es, die Option **Composer Resolver Cloud** im Contao Manager zu deaktivieren.
+{{% /notice %}}

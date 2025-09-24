@@ -7,7 +7,7 @@ url: erweiterungen/news-sync
 
 **[inspiredminds/contao-news-sync](https://extensions.contao.org/?p=inspiredminds%2Fcontao-news-sync)**
 
-_von [inspiredminds](https://www.inspiredminds.at/)_
+_von [INSPIRED MINDS](https://www.inspiredminds.at/)_
 
 _Projekt Webseite unter [Contao News Sync](https://www.inspiredminds.at/contao-news-sync)_
 
@@ -30,15 +30,16 @@ Um das Repository hinzuzufügen, muss folgendes in der `composer.json` eingefüg
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
 ```
 
-`<YOUR_TOKEN>` muss mit dem Repository Token ersetzt werden, welches von inspiredminds geschickt wurde.
+`<YOUR_USERNAME>` und `<YOUR_TOKEN>` muss mit den Informationen ersetzt werden, welche von INSPIRED MINDS geschickt wurden.
 
 Um die Abhängigkeit hinzuzufügen, muss folgendes in der `composer.json` eingefügt werden:
+
 ```json
 {
     "require": {
@@ -61,37 +62,28 @@ Um die Abhängigkeit hinzuzufügen, muss folgendes in der `composer.json` eingef
         }
     ],
     "require": {
-        "php": "^7.1",
         "contao/conflicts": "@dev",
-        "contao/manager-bundle": "4.9.*",
-        "inspiredminds/contao-news-sync": "^3.0"
+        "contao/manager-bundle": "5.3.*",
+        "inspiredminds/contao-news-sync": "^4.0"
     },
     "conflict": {
         "contao-components/installer": "<1.3"
     },
     "extra": {
         "contao-component-dir": "assets",
-        "symfony": {
-            "require": "^4.2"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
     },
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ]
     },
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
@@ -178,7 +170,7 @@ die Änderungen speichern. Insgesamt würde die `composer.json` dann so aussehen
         },
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ],
     "extra": {

@@ -52,7 +52,7 @@ als Zieltabelle den Eintrag `tl_calendar_events`.
 Zur Auswahl der Zieltabelle stehen alle vorhandenen Datenbanktabellen deiner Contao Installation zur Verfügung. 
 Du könntest auch eine eigene Datenbanktabelle erstellen. Der entsprechende Tabellenname muss dann mit dem Präfix »tl_«
 beginnen. Grundsätzlich müssen die Feldnamen deines Formulars mit den entsprechenden Feldnamen der Datenbanktabelle 
-übereinstimmen.
+übereinstimmen.
 {{% /notice %}}
 
 

@@ -10,12 +10,12 @@ weight: 10
 ---
 
 Bisher haben wir ausschließlich als Administrator gearbeitet, der auf alle Bereiche und Elemente des Systems zugreifen 
-darf. Ein Benutzer wird in der Regel aber nur Zugriff auf die Ressourcen erhalten, die er für eine bestimmte 
+darf. Ein Benutzer wird in der Regel aber nur Zugriff auf die Ressourcen erhalten, die er für eine bestimmte 
 Aufgabe tatsächlich benötigt.
 
 ![Das Backend aus Sicht des Benutzers]({{% asset "images/manual/user-management/de/das-backend-aus-sicht-des-benutzers.png" %}}?classes=shadow)
 
-Normale Benutzer haben im Gegensatz zu Administratoren standardmäßig überhaupt keine Rechte und dürfen grundsätzlich 
+Normale Benutzer haben im Gegensatz zu Administratoren standardmäßig überhaupt keine Rechte und dürfen grundsätzlich 
 nur das tun, was du ihnen explizit erlaubst. Die sehr umfassende Rechteverwaltung in Contao ermöglicht es dir als 
 Administrator nicht nur, den Zugriff auf bestimmte Backend-Module einzuschränken, sondern bei Bedarf jedes einzelne
 Eingabefeld abzuschalten.
@@ -26,13 +26,13 @@ Eingabefeld abzuschalten.
 
 Jeder Benutzer kann Mitglied in mehreren Benutzergruppen sein und erbt automatisch alle diesen Gruppen zugewiesenen 
 Rechte. Die verschiedenen Berechtigungen werden addiert, sodass ein Mitglied der Gruppen A und B die Summe der Rechte 
-beider Gruppen erhält – natürlich nur, wenn beide Gruppen aktiv sind.
+beider Gruppen erhält – natürlich nur, wenn beide Gruppen aktiv sind.
 
 
 ### Erlaubte Module
 
 Die Backend-Navigation wird dynamisch anhand der Benutzerrechte erstellt, wobei nicht freigegebene Backend-Module aus 
-Gründen der Übersichtlichkeit auch nicht in der Backend-Navigation erscheinen. Der Zugriff auf die Theme-Module kann 
+Gründen der Übersichtlichkeit auch nicht in der Backend-Navigation erscheinen. Der Zugriff auf die Theme-Module kann 
 gesondert gesteuert werden.
 
 **Backend-Module:** Hier legst du den Zugriff auf die Backend-Module fest.
@@ -57,7 +57,7 @@ Das Einbinden eines Dateisystems, sodass ein Benutzer darauf zugreifen kann, bez
 **Pagemounts:** Hier wählst du die Pagemounts der Gruppe aus.
 
 **Erlaubte Seitentypen:** Hier kannst du festlegen, welche Seitentypen die Mitglieder der Benutzergruppe erstellen 
-dürfen vgl. [Seitentypen](/de/seitenstruktur/seiten-als-zentrale-elemente/#seitentypen).
+dürfen vgl. [Seitentypen](/de/seitenstruktur/seiten-als-zentrale-elemente/#seitentypen).
 
 
 ### Filemounts
@@ -68,8 +68,8 @@ das Dateisystem fest. Auf Ordner außerhalb des Filemount kann der Benutzer nich
 ![Filemounts des Benutzers]({{% asset "images/manual/user-management/de/filemounts-des-benutzers.png" %}}?classes=shadow)
 
 Der Benutzer sieht also nur die Ordner `files/public/media/content-images`, `files/public/media/documents` sowie 
-`files/public/media/slider` und alle eventuell darin enthaltenen Unterordner. Alle übrigen Verzeichnisse, die sich 
-auf derselben oder einer übergeordneten Ebene befinden, werden nicht angezeigt
+`files/public/media/slider` und alle eventuell darin enthaltenen Unterordner. Alle übrigen Verzeichnisse, die sich 
+auf derselben oder einer übergeordneten Ebene befinden, werden nicht angezeigt
 
 ![Die Dateiverwaltung aus Sicht des Benutzers]({{% asset "images/manual/user-management/de/die-dateiverwaltung-aus-sicht-des-benutzers.png" %}}?classes=shadow)
 
@@ -80,7 +80,7 @@ dass ein Benutzer diese auch bearbeiten darf. Du kannst hier festlegen, was mit 
 
 | Operation                                                            | Erklärung                                                                                                                                                                          |
 |:---------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Dateien auf den Server hochladen                                     | Der Benutzer darf bestimmte Dateien über die Dateiverwaltung auf den Server übertragen (Upload). Die erlaubten Dateien kannst du in den Backend-Einstellungen festlegen.         |
+| Dateien auf den Server hochladen                                     | Der Benutzer darf bestimmte Dateien über die Dateiverwaltung auf den Server übertragen (Upload). Die erlaubten Dateien kannst du in den Backend-Einstellungen festlegen.         |
 | Dateien und Verzeichnisse bearbeiten, kopieren und verschieben       | Der Benutzer darf Dateien und Verzeichnisse umbenennen, duplizieren und verschieben.                                                                                               |
 | Einzelne Dateien und leere Verzeichnisse löschen                     | Der Benutzer darf einzelne Dateien und leere Verzeichnisse löschen (nicht rekursiv).                                                                                               |
 | Verzeichnisse inklusive aller Dateien und Unterordner löschen (!)    | Der Benutzer darf Dateien und Verzeichnisse rekursiv, also inklusive aller enthaltenen Unterorder und Dateien, löschen.                                                            |
@@ -96,35 +96,35 @@ In diesem Punkt kannst du den Zugriff auf die verschiedenen Bildgrößen einschr
 ### Formular-Rechte 
 [Formulargenerator](../../formulargenerator/)
 
-**Erlaubte Formulare:** Hier legst du fest, auf welche Formulare die Mitglieder der Benutzergruppe zugreifen dürfen.
+**Erlaubte Formulare:** Hier legst du fest, auf welche Formulare die Mitglieder der Benutzergruppe zugreifen dürfen.
 
 **Formular-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Formulare anlegen bzw. bestehende 
-löschen dürfen.
+löschen dürfen.
 
 
 ### FAQ-Rechte 
 [FAQ-Erweiterung](../../core-erweiterung/faq/)
 
 **Erlaubte FAQ-Kategorien:** Hier legst du fest, auf welche FAQ-Kategorien die Mitglieder der Benutzergruppe zugreifen 
-dürfen.
+dürfen.
 
 **FAQ-Kategorierechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Kategorien anlegen bzw. 
-bestehende löschen dürfen.
+bestehende löschen dürfen.
 
 
 ### Archiv-Rechte
 [News/Blog-Erweiterung](../../core-erweiterung/nachrichten/)
 
 **Erlaubte Archive:** Hier legst du fest, auf welche News/Blog-Archive die Mitglieder der Benutzergruppe zugreifen 
-dürfen.
+dürfen.
 
 **Archivrechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue News/Blog-Archive anlegen bzw. 
-bestehende löschen dürfen.
+bestehende löschen dürfen.
 
-**Erlaubte RSS-Feeds:** Hier legst du fest, auf welche RSS-Feeds die Mitglieder der Benutzergruppe zugreifen dürfen.
+**Erlaubte RSS-Feeds:** Hier legst du fest, auf welche RSS-Feeds die Mitglieder der Benutzergruppe zugreifen dürfen.
 
 **RSS-Feed-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue RSS-Feeds anlegen bzw. bestehende 
-löschen dürfen.
+löschen dürfen.
 
 {{< version-tag "5.3" >}} Die News-Feeds werden nicht mehr im Archiv angelegt, sondern über den Seitentyp 
 [News-Feed](/de/seitenstruktur/news-feed/). Wenn Mitglieder der Benutzergruppe auf die Feeds zugreifen sollen, müssen 
@@ -134,24 +134,24 @@ ihnen diese bei den [Pagemounts](/de/benutzerverwaltung/benutzer/#pagemounts) ge
 ### Events-Rechte
 [Kalender-Erweiterung](../../core-erweiterung/kalender/)
 
-**Erlaubte Kalender:** Hier legst du fest, auf welche Kalender die Mitglieder der Benutzergruppe zugreifen dürfen.
+**Erlaubte Kalender:** Hier legst du fest, auf welche Kalender die Mitglieder der Benutzergruppe zugreifen dürfen.
 
 **Kalenderrechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Kalender anlegen bzw. bestehende
-löschen dürfen.
+löschen dürfen.
 
-**Erlaubte RSS-Feeds:** Hier legst du fest, auf welche RSS-Feeds die Mitglieder der Benutzergruppe zugreifen dürfen.
+**Erlaubte RSS-Feeds:** Hier legst du fest, auf welche RSS-Feeds die Mitglieder der Benutzergruppe zugreifen dürfen.
 
 **RSS-Feed-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue RSS-Feeds anlegen bzw. bestehende
-löschen dürfen.
+löschen dürfen.
 
 
 ### Newsletter-Rechte 
 [Newsletter-Erweiterung](../../core-erweiterung/newsletter/)
 
-**Erlaubte Verteiler:** Hier legst du fest, auf welche Verteiler die Mitglieder der Benutzergruppe zugreifen dürfen.
+**Erlaubte Verteiler:** Hier legst du fest, auf welche Verteiler die Mitglieder der Benutzergruppe zugreifen dürfen.
 
 **Verteilerrechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue Verteiler anlegen bzw. bestehende 
-löschen dürfen.
+löschen dürfen.
 
 
 ### Erlaubte Mitgliedergruppen
@@ -162,13 +162,13 @@ löschen dürfen.
 ### Erlaubte Felder
 
 Zu Beginn des Abschnitts wurde erwähnt, dass normale Benutzer standardmäßig keinerlei Rechte haben (»deny all«) und 
-du als Administrator jeden Zugriff explizit freischalten musst. Das gilt auch für die einzelnen Eingabefelder jedes 
+du als Administrator jeden Zugriff explizit freischalten musst. Das gilt auch für die einzelnen Eingabefelder jedes 
 Moduls bzw. jeder Tabelle, die dir hier aufgelistet werden.
 
 **Erlaubte Felder:** Hier wählst du die erlaubten Felder aus.
 
 Mittels der erlaubten Felder kannst du sehr einfach Arbeitsabläufe (engl. Workflows) erstellen, indem du z. B. die 
-Felder zur Veröffentlichung eines Artikels oder eines Nachrichtenbeitrags für Redakteure nicht freigibst. So kann kein 
+Felder zur Veröffentlichung eines Artikels oder eines Nachrichtenbeitrags für Redakteure nicht freigibst. So kann kein 
 Redakteur etwas veröffentlichen, ohne dass du oder ein Chefredakteur es vorher gesehen hat.
 
 
@@ -214,7 +214,7 @@ Jeder Benutzer kann das Backend an seine persönlichen Vorstellungen anpassen.
 **Erklärungen anzeigen:** Standardmäßig zeigt Contao unter jedem Eingabefeld eine kurze Erklärung an, die du bei Bedarf 
 hier abschalten kannst.
 
-**Vorschaubilder anzeigen:** Hier kannst du die Vorschaubilder in der Dateiübersicht der Dateiverwaltung deaktivieren, 
+**Vorschaubilder anzeigen:** Hier kannst du die Vorschaubilder in der Dateiübersicht der Dateiverwaltung deaktivieren, 
 damit die Verzeichnisstruktur schneller lädt.
 
 **Rich-Text-Editor verwenden:** Hier kannst du den Rich-Text-Editor deaktivieren.
@@ -234,7 +234,7 @@ eingeklappt dargestellt werden.
 
 **Passwort:** Hier kannst du dem Benutzer ein Passwort zuweisen.
 
-**Passwort-Änderung notwendig:**  Hier kannst du den den Benutzer zwingen, sein Passwort bei der nächsten Anmeldung zu
+**Passwort-Änderung notwendig:**  Hier kannst du den Benutzer zwingen, sein Passwort bei der nächsten Anmeldung zu
 ändern.
 
 
@@ -244,6 +244,9 @@ Benutzer können die Zwei-Faktor-Authentisierung aktivieren, um den Account zus�
 Benutzernamen und Passwort muss ein Verifizierungscode (»Time-based One-time Password«) eingegeben werden. Dieses 
 Einmalpasswort muss von einer Zwei-Faktor-App wie z. B. 1Password, Authy, Google Authenticator, Microsoft Authenticator, 
 LastPass Authenticator oder jeder anderen TOTP-App generiert werden.
+
+Der Benutzer klickt dazu oben rechts auf seinen Benutzernamen und wählt im Dropdown-Menü den Punkt »Sicherheit« aus. 
+Hier kann die Zwei-Faktor-Authentisierung aktiviert und zusätzliche Backup-Codes erstellt werden.
 
 Benutzer können verpflichtet werden, Zwei-Faktor-Authentisierung zu verwenden. Hierfür muss folgende Konfiguration in 
 die `config/config.yaml` übernommen werden:
@@ -265,7 +268,7 @@ ist dann nicht mehr notwendig.
 ### Benutzergruppen
 
 Hier legst du unter anderem die Gruppenzugehörigkeit des Benutzers fest. Die erste Gruppe, also die ganz oben im 
-Auswahlmenü, ist die Hauptgruppe, die z. B. beim Erstellen neuer Seiten automatisch in den Zugriffsrechten gesetzt wird.
+Auswahlmenü, ist die Hauptgruppe, die z. B. beim Erstellen neuer Seiten automatisch in den Zugriffsrechten gesetzt wird.
 
 **Benutzergruppen:** Hier legst du die Gruppenzugehörigkeit des Benutzers fest.
 
@@ -294,8 +297,8 @@ werden. Ein deaktivierter Benutzer kann sich nicht mehr im Backend anmelden.
 
 ## Seiten und Artikel freischalten
 
-Das Freischalten von Seiten und Artikeln, sodass diese im Backend bearbeitet werden können, führt in der Praxis öfter 
-mal zu Unklarheiten, weil die notwendigen Berechtigungen an verschiedenen Stellen im System gesetzt werden müssen.
+Das Freischalten von Seiten und Artikeln, sodass diese im Backend bearbeitet werden können, führt in der Praxis öfter 
+mal zu Unklarheiten, weil die notwendigen Berechtigungen an verschiedenen Stellen im System gesetzt werden müssen.
 
 Um bestimmte Seiten freizuschalten und das Bearbeiten von Artikeln auf diesen Seiten zu erlauben, musst du sowohl in 
 der Benutzerverwaltung als auch in der Seitenstruktur die entsprechenden Voraussetzungen schaffen.
@@ -304,12 +307,12 @@ der Benutzerverwaltung als auch in der Seitenstruktur die entsprechenden Vorauss
 ### Voraussetzungen in der Benutzerverwaltung
 
 Zunächst benötigst du eine Benutzergruppe, in der du die Module »Seitenstruktur« und »Artikel« aktivierst und die zu 
-bearbeitenden Seiten als Pagemount einbinden musst. Damit schaffst du die Voraussetzungen dafür, dass ein Benutzer auf 
+bearbeitenden Seiten als Pagemount einbinden musst. Damit schaffst du die Voraussetzungen dafür, dass ein Benutzer auf 
 den Seitenbaum zugreifen kann und dort bestimmte Seiten bzw. Artikel sieht.
 
 Anschließend musst du in der Benutzergruppe unter »Erlaubte Felder« die Eingabefelder der Tabellen `tl_page`, 
 `tl_article` und `tl_content` freischalten, die der Benutzer später bearbeiten können soll. Damit schaffst du die 
-Voraussetzungen dafür, dass er nicht nur eine leere Seite sieht, wenn er z. B. einen Artikel editieren will.
+Voraussetzungen dafür, dass er nicht nur eine leere Seite sieht, wenn er z. B. einen Artikel editieren will.
 
 Als Letztes musst du noch einen Benutzer anlegen und ihn der Gruppe zuweisen.
 
@@ -323,11 +326,11 @@ Zugriffsebenen gibt.
 ![Zugriffsrechte einer Seite]({{% asset "images/manual/user-management/de/zugriffsrechte-einer-seite.png" %}}?classes=shadow)
 
 Diese Seite gehört z. B. der Benutzerin `Helen Lewis`, welche diese Seite und die darin enthaltenen Artikel bearbeiten, verschieben 
-oder löschen darf. Andere Benutzer der Gruppe `Editors` dürfen lediglich die Artikel bearbeiten, nicht aber die Seite 
+oder löschen darf. Andere Benutzer der Gruppe `Editors` dürfen lediglich die Artikel bearbeiten, nicht aber die Seite 
 an sich.
 
 Du musst also die Seiten, die ein Benutzer bearbeiten soll oder auf denen er Artikel anlegen können soll, mit 
 Zugriffsrechten versehen und sie entweder dem Benutzer oder seiner Gruppe zuweisen. Damit schaffst du die 
-Voraussetzungen dafür, dass ein Benutzer die entsprechenden Navigationssymbole anklicken kann.
+Voraussetzungen dafür, dass ein Benutzer die entsprechenden Navigationssymbole anklicken kann.
 
 ![Die Seitenstruktur ohne zugewiesene Zugriffsrechte]({{% asset "images/manual/user-management/de/die-seitenstruktur-ohne-zugewiesene-zugriffsrechte.png" %}}?classes=shadow)

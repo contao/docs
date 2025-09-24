@@ -135,7 +135,7 @@ $cspHandler->addHash('style-src', 'display:none');
 {{% /tab %}}
 {{% tab title="Twig" %}}
 ```twig
-{% do csp_hash('display:none') %}
+{% do csp_hash('style-src', 'display:none') %}
 <div style="display:none">
 ```
 {{% /tab %}}

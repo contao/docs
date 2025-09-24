@@ -24,14 +24,14 @@ oder auch völlig unabhängig voneinander unter verschiedenen Domains laufen ([M
 
 ## Routing
 
-**Seitenaliase:** Der Alias einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in
+**Seitenaliase:** Der Alias einer Seite ist eine eindeutige und aussagekräftige Referenz, über die du eine Seite in
 deinem Browser aufrufen kannst. Wenn du das Feld beim Anlegen leer lässt, vergibt Contao den Alias automatisch.
 
 
 ## Metadaten
 
 Die Metadaten einer Seite beziehen sich größtenteils auf die entsprechenden
-[Meta-Tags](https://de.wikipedia.org/wiki/Meta-Element) im Kopfbereich der HTML-Seite. Du kannst darüber unter anderem den Titel und die Beschreibung einer 
+[Meta-Tags](https://de.wikipedia.org/wiki/Meta-Element) im Kopfbereich der HTML-Seite. Du kannst darüber unter anderem den Titel und die Beschreibung einer 
 Seite definieren.
 
 **Seitentitel:** Der Seitentitel wird im `<title>`-Tag der Webseite verwendet und taucht häufig auch
@@ -120,21 +120,21 @@ bleiben, oder die Extensions müssen entfernt oder ersetzt werden. Andernfalls w
 
 ## Spracheinstellungen
 
-**Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres Subtag nach 
-[ISO 639-1](https://de.wikipedia.org/wiki/Liste_der_ISO-639-Sprachcodes) erfasst, also z. B. über `de` für Deutsch
-oder `en` für Englisch.
+**Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres Subtag nach 
+[ISO 639-1](https://de.wikipedia.org/wiki/Liste_der_ISO-639-Sprachcodes) erfasst, also z. B. über `de` für Deutsch
+oder `en` für Englisch.
 
 **Sprachen-Fallback:** Contao sucht grundsätzlich nach einem Startpunkt in der Sprache, die ein Besucher in seinem
 Browser voreingestellt hat. Gibt es nur einen deutschen Startpunkt, bekäme ein englischer Besucher lediglich die
 Fehlermeldung »No pages found« zu sehen, da in seiner Sprache ja keine Webseite existiert.
 
-Um das zu vermeiden, kannst du einen bestimmten Startpunkt als Fallback definieren, was frei übersetzt so viel wie
+Um das zu vermeiden, kannst du einen bestimmten Startpunkt als Fallback definieren, was frei übersetzt so viel wie
 »Auffangseite« oder »Ausweichseite« bedeutet. Diese Auffangseite fängt dann quasi alle Besucher auf, die aufgrund ihrer
 Spracheinstellungen eigentlich keinem Startpunkt zugeordnet werden können.
 
 Achte also darauf, immer einen Startpunkt als Sprachen-Fallback zu definieren. Deine Webseite kann sonst nur von
 deutschen Besuchern aufgerufen werden! Auch die Robots der Suchmaschinen, die deine Webseite indizieren, sprechen in
-der Regel Englisch und wären ohne Sprachen-Fallback ebenfalls ausgeschlossen. Deine Seiten würden dann trotz
+der Regel Englisch und wären ohne Sprachen-Fallback ebenfalls ausgeschlossen. Deine Seiten würden dann trotz
 sorgfältiger Optimierung niemals bei Google auftauchen.
 
 **Sprachweiterleitung deaktivieren:** Bei mehrsprachigen Seiten der selben Domain leitet Contao beim Aufruf der Domain 
@@ -152,7 +152,7 @@ pro Domain angezeigt werden, wenn Inhalte dargestellt werden, die keine HTML-Aus
 Bilder, PDFs, etc.).
 Für dieselbe Domain kann man nur einmal ein Favicon festlegen. Dieses muss in der Fallback-Sprache geschehen.
 
-{{% notice "_note" %}}
+{{% notice "info" %}}
 Diese Funktion gibt keine zusätzlichen HTML Meta Tags auf der Seite aus.
 {{% /notice %}}
 
@@ -220,9 +220,9 @@ anlegen und hier auswählen.
 rel="canonical"-Tags erlauben.
 
 **E-Mail-Adresse des Webseiten-Administrators:** Hier kannst du die in den Backend-Einstellungen festgelegte
-E-Mail-Adresse des Systemadministrators für eine bestimmte Webseite überschreiben. An diese Adresse werden z. B.
-Benachrichtigungen über gesperrte Konten oder neu registrierte Benutzer geschickt. Wenn du mehrere Webseiten innerhalb
-der Seitenstruktur betreibst, kann es sinnvoll sein, für jede Webseite einen eigenen Administrator festzulegen, der
+E-Mail-Adresse des Systemadministrators für eine bestimmte Webseite überschreiben. An diese Adresse werden z. B.
+Benachrichtigungen über gesperrte Konten oder neu registrierte Benutzer geschickt. Wenn du mehrere Webseiten innerhalb
+der Seitenstruktur betreibst, kann es sinnvoll sein, für jede Webseite einen eigenen Administrator festzulegen, der
 dann nur die Meldungen seiner Webseite erhält. Du kannst auch folgende Notation verwenden, um einen Namen zur
 E-Mail-Adresse hinzuzufügen:
 
@@ -230,14 +230,14 @@ E-Mail-Adresse hinzuzufügen:
 Kevin Jones [kevin.jones@example.com]
 ```
 
-**Datumsformat:** Hier kannst du das in den Backend-Einstellungen festgelegte Datumsformat überschreiben. Im Gegensatz
-zum Backend, das nur numerische Formate unterstützt, kannst du im Frontend auch Textformate verwenden.
+**Datumsformat:** Hier kannst du das in den Backend-Einstellungen festgelegte Datumsformat überschreiben. Im Gegensatz
+zum Backend, das nur numerische Formate unterstützt, kannst du im Frontend auch Textformate verwenden.
 
-**Zeitformat:** Hier kannst du das in den Backend-Einstellungen festgelegte Zeitformat überschreiben. Im Frontend
-werden auch Textformate unterstützt.
+**Zeitformat:** Hier kannst du das in den Backend-Einstellungen festgelegte Zeitformat überschreiben. Im Frontend
+werden auch Textformate unterstützt.
 
 **Datums- und Zeitformat:** Hier kannst du das in den Backend-Einstellungen festgelegte Datums-
-und Zeitformat überschreiben. Textformate werden unterstützt.
+und Zeitformat überschreiben. Textformate werden unterstützt.
 
 Contao unterstützt alle Datums- und Zeitformate, die mit der
 [PHP-Funktion date](https://www.php.net/manual/de/function.date.php) geparst werden können. Um alle Eingaben in einen
@@ -267,30 +267,30 @@ die Datei-URL hier eingeben.
 ## Zugriffsschutz
 
 Im Gegensatz zu den Zugriffsrechten, die die Rechte im Backend festlegen, bezieht sich der Zugriffsschutz auf den
-Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort
+Schutz einer Seiten vor dem Zugriff im Frontend. Besucher müssen sich dann zuerst mit ihrem Benutzernamen und Passwort
 anmelden, bevor sie die Seite aufrufen können. Andernfalls sähen sie nur eine Fehlerseite.
 
-**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der
-Zugriffsschutz von einer übergeordneten Seite geerbt.
+**Seite schützen:** Hier kannst du den Zugriff auf eine Seite beschränken. Wenn du die Option nicht auswählst, wird der
+Zugriffsschutz von einer übergeordneten Seite geerbt.
 
-**Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie
+**Erlaubte Mitgliedergruppen:** Hier kannst du festlegen, welche Mitgliedergruppen auf die Seite zugreifen dürfen. Wie
 man Mitglieder und Mitgliedergruppen konfiguriert, erfährst du auf der Seite
 [Systemverwaltung](/de/system/einstellungen/).
 
 
 ## Layout-Einstellungen
 
-Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein
+Ein Seitenlayout ist Voraussetzung dafür, dass Contao eine Seite überhaupt im Frontend anzeigen kann. Ist kein
 Seitenlayout zugewiesen oder vererbt worden, quittiert Contao mit einem kurzen »No layout specified« den Dienst.
 
 **Ein Layout zuweisen:** Hier kannst du einer Seite ein Seitenlayout zuweisen. Die Zuweisung des Seitenlayouts
-gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
+gilt automatisch auch für alle untergeordneten Seiten ohne eigenes Seitenlayout.
 
-**Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines
+**Seitenlayout:** Hier werden dir alle verfügbaren Seitenlayouts nach Themes gruppiert angezeigt. Die Aktivierung eines
 Themes erfolgt durch Zuweisung eines Seitenlayouts.
 
 **Unterseitenlayout:** Mit der Auswahl »Seitenlayout vererben« (Standard) gilt die Zuweisung
-des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
+des Seitenlayout auch für alle untergeordneten Seiten ohne eigenes Seitenlayout. Alternativ kann hier ein separates,
 abweichendes Seitenlayout für untergeordnete Seiten zugewiesen werden.
 
 
@@ -304,10 +304,10 @@ die die Besucher weitergeleitet werden, wenn sie die Zwei-Faktor-Authentifizieru
 
 In den Cache-Einstellungen legst du fest, ob und wie lange eine Seite im Cache zwischengespeichert werden soll. Eine
 zwischengespeicherte Seite lädt deutlich schneller, da sie zum einen nicht erst von Contao generiert werden muss und
-zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
+zum anderen für ihre Auslieferung keine Verbindung zur Datenbank notwendig ist.
 
 **Cachezeit festlegen:** Hier kannst du einer Seite eine Cachezeit zuweisen. Wenn du die Option nicht auswählst, werden
-die Cache-Einstellungen von einer übergeordneten Seite geerbt.
+die Cache-Einstellungen von einer übergeordneten Seite geerbt.
 
 **Private Cache (Client-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den
 Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuft werden soll.
@@ -315,9 +315,9 @@ Zeitraum in Sekunden fest, nach dem die Seite vom Browser als veraltet eingestuf
 **Shared Cache (Server-Cachezeit):** Hier kannst du einer Seite eine Cachezeit zuweisen. Damit legst du den
 Zeitraum in Sekunden fest, nach dem die Seite von einem gemeinsam genutzten Cache als veraltet eingestuft werden soll.
 
-Beachte, dass Seiten aus Sicherheitsgründen nur zwischengespeichert werden, wenn sie nicht geschützt sind und kein
-Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertrauliche Daten in den Cache geschrieben und
-versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz
+Beachte, dass Seiten aus Sicherheitsgründen nur zwischengespeichert werden, wenn sie nicht geschützt sind und kein
+Benutzer im Backend angemeldet ist. Ansonsten bestünde die Gefahr, dass vertrauliche Daten in den Cache geschrieben und
+versehentlich im Frontend angezeigt würden. Wundere dich also nicht, wenn deine passwortgeschützten Seiten trotz
 zugewiesener Verfallszeit nicht im Cache auftauchen.
 
 **Immer aus dem gemeinsam genutzten Cache laden:** Lade diese Seite immer aus dem gemeinsam genutzten Cache, auch wenn
@@ -327,7 +327,7 @@ personalisieren kannst.
 
 ## Zugriffsrechte
 
-In den Zugriffsrechten legst du fest, welche Benutzer im **Backend** auf eine Seite zugreifen dürfen und was sie mit
+In den Zugriffsrechten legst du fest, welche Benutzer im **Backend** auf eine Seite zugreifen dürfen und was sie mit
 dieser Seite und den darin enthaltenen Artikeln machen können. Jede Seite gehört ähnlich dem Unix-Rechtesystem einem
 bestimmten Benutzer und einer bestimmten Benutzergruppe und unterscheidet drei Zugriffsebenen:
 
@@ -336,14 +336,14 @@ bestimmten Benutzer und einer bestimmten Benutzergruppe und unterscheidet drei Z
 - Zugriff als sonstiger Backend-Benutzer
 
 Die Seite »Unternehmen« ist beispielsweise mit Zugriffsrechten versehen und gehört dem Benutzer h.lewis sowie der
-Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf
-dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite
+Benutzergruppe _Nachrichten_. Sowohl der Benutzer als auch alle Mitglieder der Benutzergruppe dürfen auf
+dieser Seite Artikel bearbeiten, aber nur der Besitzer h.lewis – und du als Administrator natürlich – dürfen die Seite
 an sich bearbeiten und z. B. den Seitentitel ändern.
 
 ![Zugriffsrechte zuweisen]({{% asset "images/manual/layout/site-structure/de/zugriffsrechte-zuweisen.png" %}}?classes=shadow)
 
 **Zugriffsrechte zuweisen:** Hier kannst du einer Seite Zugriffsrechte zuweisen. Wenn du die Option nicht auswählst,
-werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
+werden die Zugriffsrechte von einer übergeordneten Seite geerbt.
 
 **Besitzer:** Hier legst du den Besitzer der Seite fest.
 

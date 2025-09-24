@@ -1,6 +1,6 @@
 ---
 title: "Verschiedenes"
-description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Verschiedenes« vorgestellt."
+description: "In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Verschiedenes« vorgestellt."
 url: "layout/modulverwaltung/verschiedenes"
 aliases:
     - /de/modulverwaltung/verschiedenes/
@@ -8,8 +8,8 @@ aliases:
 weight: 50
 ---
 
-In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Verschiedenes« vorgestellt. Die Liste der 
-Frontend-Module kann darüber hinaus durch (Third-Party-)Erweiterungen beliebig verlängert werden.
+In diesem Abschnitt werden dir die übrigen Core-Module im Bereich »Verschiedenes« vorgestellt. Die Liste der 
+Frontend-Module kann darüber hinaus durch (Third-Party-)Erweiterungen beliebig verlängert werden.
 
 
 ## Artikelliste
@@ -44,11 +44,11 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 
 ## Zufallsbild
 
-Das Frontend-Modul »Zufallsbild« fügt der Webseite ein zufälliges Bild aus einer bestimmten Auswahl an Bildern hinzu. 
+Das Frontend-Modul »Zufallsbild« fügt der Webseite ein zufälliges Bild aus einer bestimmten Auswahl an Bildern hinzu. 
 Du kannst sowohl einzelne Bilder als auch ganze Ordner als Quelle auswählen. Vorhandene Metadaten werden ausgewertet.
 
 **Quelldateien:** Hier kannst du mehrere Dateien bzw. Ordner auswählen. Die in einem Ordner enthaltenen Bilder werden 
-automatisch bei der Auswahl berücksichtigt.
+automatisch bei der Auswahl berücksichtigt.
 
 **Bildgröße:** Hier kannst du die Abmessungen des Bildes und den Skalierungsmodus festlegen.
 
@@ -73,7 +73,7 @@ automatisch bei der Auswahl berücksichtigt.
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
-geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
+geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Bildunterschrift anzeigen:** Wenn du diese Option auswählst, wird entweder die entsprechende Bildunterschrift aus den 
 Metadaten angezeigt oder eine automatische Bildunterschrift aus dem Namen der Datei generiert.
@@ -100,7 +100,7 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 
 ## Eigener HTML-Code
 
-Das Frontend-Modul »Eigener HTML-Code« fügt der Webseite beliebigen HTML-Code hinzu.
+Das Frontend-Modul »Eigener HTML-Code« fügt der Webseite beliebigen HTML-Code hinzu.
 
 **HTML Code:** Hier kannst du den HTML-Code eingeben. Beachte, dass nur die HTML-Tags verwendet werden können, die du 
 in den Backend-Einstellungen unter »Erlaubte HTML-Tags« freigegeben hast.
@@ -112,7 +112,7 @@ Das Modul hat kein umschließendes HTML-Markup.
 
 ## RSS -Reader
 
-Mit dem Frontend-Modul »RSS-Reader« kannst du einen beliebigen RSS-Feed abonnieren und in deine Webseite einfügen. 
+Mit dem Frontend-Modul »RSS-Reader« kannst du einen beliebigen RSS-Feed abonnieren und in deine Webseite einfügen. 
 Damit kannst du z. B. den Nachrichtenfeed von contao.org einbinden.
 
 Öffne die Modulverwaltung im Backend, und wähle das Modul »RSS-Leser« aus.
@@ -124,8 +124,8 @@ Damit kannst du z. B. den Nachrichtenfeed von contao.org einbinden.
 **Elemente pro Seite:** Wenn du hier einen Wert größer 0 eingibst, verteilt Contao die Beiträge automatisch auf mehrere 
 Seiten – eine entsprechende Anzahl vorausgesetzt.
 
-**Elemente überspringen:** Hier kannst du festlegen, dass eine bestimmte Anzahl an Beiträgen vom jüngsten Beitrag des 
-RSS-Feeds aus gesehen übersprungen wird.
+**Elemente überspringen:** Hier kannst du festlegen, dass eine bestimmte Anzahl an Beiträgen vom jüngsten Beitrag des 
+RSS-Feeds aus gesehen übersprungen wird.
 
 **Cache-Verfallszeit:** Hier legst du fest, wie lange ein RSS-Feed im lokalen Cache gespeichert wird, bevor eine 
 erneute Anfrage gestellt wird.

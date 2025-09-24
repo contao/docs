@@ -456,5 +456,4 @@ of Visual C++ (VCxx) for the Apache web server and PHP match:
 ### Help
 
 There is a [thread](https://community.contao.org/de/showthread.php?74042) in the [Contao forum](https://community.contao.org/) 
-that deals with the installation and operation of Laragon or you can get advice in the Laragon forum [DE](https://laraboard.io/forum/) 
-or [EN](https://forum.laragon.org/)
+that deals with the installation and operation of Laragon or you can get advice in the [Laragon forum](https://github.com/leokhoa/laragon/discussions).

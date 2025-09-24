@@ -10,7 +10,7 @@ aliases:
 
 In a regular Symfony application or bundle a compiler pass for instance can be added
 by calling `$container->addCompilerPass()` inside the `build()` function of the application's
-`Kernel` or the bundle's `Bundle` class (see the [Symfony documentation](https://symfony.com/doc/4.4/service_container/compiler_passes.html)
+`Kernel` or the bundle's `Bundle` class (see the [Symfony documentation](https://symfony.com/doc/6.4/service_container/compiler_passes.html)
 for details). In fact this holds true for any modifications that need to be made to
 the container at compile time.
  
@@ -57,9 +57,9 @@ for that matter. Combined with anonymous classes, this could look like this:
 // src/ContaoManager/Plugin.php
 namespace App\ContaoManager;
 
-use App\DependencyInjection\Compiler\MyCompilerPass;
 use Contao\ManagerPlugin\Config\ConfigPluginInterface;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class Plugin implements ConfigPluginInterface
@@ -68,7 +68,7 @@ class Plugin implements ConfigPluginInterface
     {
         $loader->load(static function (ContainerBuilder $container) {
             $container->addCompilerPass(new class implements CompilerPassInterface {
-                public function process(ContainerBuilder $container)
+                public function process(ContainerBuilder $container): void
                 {
                     // Example for making a custom monolog logger public
                     $container->getDefinition('monolog.logger.api')
