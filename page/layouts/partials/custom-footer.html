@@ -1,10 +1,15 @@
 <script src="https://contao.org/files/js/network.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 <script>(function () {
+    const algoliaSearchbox = document.createElement('div');
+    algoliaSearchbox.classList.add('algolia-searchbox');
+
+    document.querySelector('#R-header-wrapper .searchbox').replaceWith(algoliaSearchbox);
+
     const config = {
         indexName: 'contao',
         apiKey: 'd7b61512c188a947014920ea920def01',
-        container: '.algolia-searchbox',
+        container: algoliaSearchbox,
         appId: 'KDZKB9K935',
         searchParameters: { 'facetFilters': [['manualtype:dev', 'manualtype:manual_{{ .Page.Language | default "en" }}']] },
         placeholder: '{{T "Search-placeholder"}}',

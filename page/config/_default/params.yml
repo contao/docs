@@ -25,10 +25,10 @@ hideAuthorDate: true
 disableExplicitIndexURLs: true
 sidebarheadermenus: []
 sidebarfootermenus:
-    -
-        type: custom
-        identifier: footercontrols
-        elements:
-            - type: languageswitcher
-            - type: versionswitcher
-            - type: variantswitcher
+  -
+      type: custom
+      identifier: footercontrols
+      elements:
+        - type: languageswitcher
+        - type: versionswitcher
+        - type: variantswitcher
