@@ -26,8 +26,6 @@ disableExplicitIndexURLs: true
 sidebarheadermenus: []
 sidebarfootermenus:
     -
-        type: divider
-    -
         type: custom
         identifier: footercontrols
         elements:

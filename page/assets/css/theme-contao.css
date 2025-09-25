@@ -103,6 +103,10 @@ b, strong, label, th {
     padding-bottom: 2rem;
 }
 
+#R-menu-footer > hr {
+    display: none;
+}
+
 /* Logo */
 #R-header #logo {
     display: block;
