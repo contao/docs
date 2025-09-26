@@ -227,7 +227,7 @@ class ModuleCallbackListener
 
 ## Custom Drivers
 
-It is possible to create custom DCA drivers, whichg must extend from `\Contao\DataContainer`.
+It is possible to create custom DCA drivers, which must extend from `\Contao\DataContainer`.
 
 ```php
 // contao/tl_example.php
@@ -239,7 +239,6 @@ $GLOBALS['TL_DCA']['tl_example'] = [
     ],
 ];
 ```
-{{% /notice %}}
 
 The driver can implement any of the following interfaces:
 
