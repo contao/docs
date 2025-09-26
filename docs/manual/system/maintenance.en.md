@@ -131,7 +131,6 @@ e.g. `https://example.com`. The second level is all pages found on `https://exam
 depth value, the more links can be found and the longer the crawl process takes. You can control the depth on the 
 command line using the `--max-depth` argument. In the back end, the depth is set to `10`.
 
-{{< version-tag "5.3" >}} From Contao 5.3 you can also select the depth in the back end.
 
 #### Adjust the number of concurrent requests
 
@@ -140,15 +139,6 @@ server.
 
 On the command line, you can use the `--concurrency` option (or the `-c` shortcut). In the back end the concurrency is 
 set to `5`.
-
-{{< version-tag "5.3" >}} From Contao 5.3 you can set this value via the `config.yaml`:
-
-```yaml
-# config/config.yaml
-contao:
-   backend:
-      crawl_concurrency: 10
-```
 
 {{% notice "tip" %}}
 If you are wondering why it is configurable but not selectable in the back end: This value never changes. The 

@@ -403,26 +403,6 @@ class SitemapListener
     }
 }
 ```
-
-Since Contao **5.0** you can use the `addUrlToDefaultUrlSet` method of the event:
-
-```php
-// src/EventListener/SitemapListener.php
-namespace App\EventListener;
-
-use Contao\CoreBundle\Event\ContaoCoreEvents;
-use Contao\CoreBundle\Event\SitemapEvent;
-use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
-
-#[AsEventListener(ContaoCoreEvents::SITEMAP)]
-class SitemapListener
-{
-    public function __invoke(SitemapEvent $event): void
-    {
-        $event->addUrlToDefaultUrlSet('https://example.com/foobar');
-    }
-}
-```
 {{% /expand %}}
 
 
@@ -482,87 +462,6 @@ class SendNewsletterListener
 ```
 {{% /expand %}}
 
-
-## `FetchArticlesForFeedEvent`
-
-{{< version "5.0" >}}
-
-This event is dispatched when a news feed is created and is used to collect the news articles before adding them to the
-feed. The event holds references to the feed, the page and the request and allows news articles to be added to it. This
-event is also used by the news bundle itself, so if you want to alter the collection of news articles (before they are
-added to the feed) make sure that your event listener has a lower priority.
-
-This event also allows you to alter the feed directly.
-
-<table>
-<tr><th>Name</th><td><code>\Contao\NewsBundle\Event\FetchArticlesForFeedEvent::class</code></td></tr>
-<tr><th>Constant</th><td>N/A</td></tr>
-<tr><th>Event</th><td><code>\Contao\NewsBundle\Event\FetchArticlesForFeedEvent</code></td></tr>
-</table>
-
-{{% expand "Example" %}}
-```php
-// src/EventListener/FetchArticlesForFeedEventListener.php
-namespace App\EventListener;
-
-use Contao\NewsBundle\Event\FetchArticlesForFeedEvent;
-use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
-
-#[AsEventListener]
-class FetchArticlesForFeedEventListener
-{
-    public function __invoke(FetchArticlesForFeedEvent $event): void
-    {
-        // Add additional news articles to the feed
-        $articles = NewsModel::findBy(…);
-        $event->addArticles($articles->getModels());
-
-        // Set a logo for the feed
-        $event->getFeed()->setLogo(…);
-    }
-}
-```
-{{% /expand %}}
-
-
-## `TransformArticleForFeedEvent`
-
-{{< version "5.0" >}}
-
-This event is dispatched when a news article is transformed to a news feed item node. The event holds a reference to the
-news archive, feed, page, request and the base URL. The news bundle uses this event to create a feed item based on a
-news record and sets this item in the event. You can use this event to further alter the feed item (if your event
-listener has a lower priority).
-
-<table>
-<tr><th>Name</th><td><code>\Contao\NewsBundle\Event\TransformArticleForFeedEvent::class</code></td></tr>
-<tr><th>Constant</th><td>N/A</td></tr>
-<tr><th>Event</th><td><code>\Contao\NewsBundle\Event\TransformArticleForFeedEvent</code></td></tr>
-</table>
-
-{{% expand "Example" %}}
-```php
-// src/EventListener/TransformArticleForFeedEventListener.php
-namespace App\EventListener;
-
-use Contao\NewsBundle\Event\TransformArticleForFeedEvent;
-use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
-
-#[AsEventListener(priority: -100)]
-class TransformArticleForFeedEventListener
-{
-    public function __invoke(TransformArticleForFeedEvent $event): void
-    {
-        if (!($item = $event->getItem())) {
-            return;
-        }
-
-        // Set a summary
-        $item->setSummary(…);
-    }
-}
-```
-{{% /expand %}}
 
 [SymfonyEventDispatcher]: https://symfony.com/doc/current/event_dispatcher.html
 [ContaoHooks]: /framework/hooks

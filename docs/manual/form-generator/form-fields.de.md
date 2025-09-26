@@ -132,8 +132,6 @@ Formulars geprüft werden.
 
 **Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
 
-{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
-
 
 ### Experteneinstellungen
 
@@ -183,8 +181,6 @@ erfolgt.
 ### Feldkonfiguration
 
 **Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
-
-{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Template-Einstellungen
@@ -239,8 +235,6 @@ Formulars geprüft werden.
 | Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 **Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
-
-{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Reihen und Spalten
@@ -298,8 +292,6 @@ ein [Checkbox-Menü](#checkbox-menue) anstatt des Select-Menüs verwenden.
 ### Feldkonfiguration
 
 **Mehrfachauswahl:** Hier kannst du die Auswahl mehrerer Optionen erlauben.
-
-{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 **Listengröße:** Hier legst du fest, wie viele Zeilen das Auswahlfeld bei aktivierter Mehrfachauswahl hoch sein soll. 
 Innerhalb des Feldes kann gescrollt werden.
@@ -359,11 +351,6 @@ kannst. Um die Auswahl mehrerer Optionen zu erlauben, musst du ein [Checkbox-Men
 ![Ein Radio-Button-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-radio-button-menue-im-frontend.png" %}}?classes=shadow)
 
 
-### Feldkonfiguration
-
-{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
-
-
 ### Optionen
 
 **Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen. Beim Anlegen der Optionen unterstützt 
@@ -417,11 +404,6 @@ Optionen oder auch gar keine auswählen kannst. Um die Auswahl genau einer Optio
 [Radio-Button-Menü](#radio-button-menue) oder ein [Select-Menü](#select-menue) verwenden.
 
 ![Ein Checkbox-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-checkbox-menue-im-frontend.png" %}}?classes=shadow)
-
-
-### Feldkonfiguration
-
-{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Optionen
@@ -497,8 +479,6 @@ einer Fehlerausgabe im Formular abgebrochen.
 Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird das Hochladen mit
 einer Fehlerausgabe im Formular abgebrochen.
 
-{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
-
 
 ### Datei speichern
 
@@ -548,10 +528,6 @@ Das Formularfeld generiert folgenden HTML-Code:
 ## Range-Slider
 
 Das Formularfeld `Range-Slider` fügt dem Formular ein Feld hinzu zur Auswahl eines Wertes oder eines Wertebereichs innerhalb eines spezifizierten Mini- und Maximums.
-
-### Feldkonfiguration
-
-{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Experteneinstellungen

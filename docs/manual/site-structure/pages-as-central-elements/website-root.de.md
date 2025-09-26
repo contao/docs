@@ -57,11 +57,6 @@ er automatisch zu dem entsprechenden Startpunkt einer Webseite weitergeleitet.
 **Protokoll:** Wenn deine Webseite über HTTPS verfügbar ist, muss diese Einstellung entsprechend konfiguriert werden. 
 Die Besucher werden automatisch auf HTTPS weitergeleitet.
 
-{{% notice tip %}}
-{{< version-tag "5.3" >}} Wenn du HTTPS auswählst, dann sendet Contao auch automatisch den `Strict-Transport-Security`
-(HSTS) HTTP Header und macht so deine Seite noch sicherer. Das gilt natürlich nur für Ressourcen, die direkt von Contao geliefert werden, also z. B. nicht für alles, was direkt über den Webserver ausgeliefert wird.
-{{% /notice %}}
-
 {{% notice warning %}}
 Falls du für deine Domain ein SSL-Zertifikat einsetzt, dann muss diese Einstellung in Contao von `http://` auf `https://` 
 geändert werden. Andernfalls könnte eine unendliche Weiterleitung im Frontend die Folge sein, falls beispielsweise die 
@@ -176,36 +171,6 @@ Funktion nutzt.
 **Wartungsmodus:** Wenn dieser Punkt aktiviert ist, wird den Besuchern der Website angezeigt, dass diese gerade gewartet 
 wird. Für die Wartungsseite gibt es einen eigenen Seitentyp: 
 [503 Dienst nicht verfügbar](/de/seitenstruktur/dienst-nicht-verfuegbar/).
-
-
-## Content-Security-Policy
-
-{{< version "5.3" >}}
-
-In dieser Sektion kann der `Content-Security-Policy`-Header für das Frontend der Webseite aktiviert werden. Vor der
-Aktivierung solltest du dich mit der Syntax von CSP-Direktiven und deren Auswirkungen auseinandersetzen. Bspw. über die
-[offizielle Referenz](https://content-security-policy.com/) oder den [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
-
-**CSP aktivieren:** Aktiviert den `Content-Security-Policy`-Header für die Webseite.
-
-**Content-Security-Policy:** Hier können die Content-Security-Policies eingegeben werden, die auf der Website angewendet
-werden sollen. Die Eingabe erfolgt in der Form eines tatsächlichen `Content-Security-Policy`-Headers. Der Standard-Wert
-ist `default-src 'self'`, wodurch nur Ressourcen von der aktuellen Domain akzeptiert werden.
-
-**Nur-Bericht-Modus:** Aktiviert einen Modus indem der Browser die Content-Security-Policies nicht anwendet, die Verstöße
-aber dennoch meldet.
-
-**Protokollierung aktivieren:** Aktiviert die Protokollierung von CSP-Verstößen. Diese Berichte scheinen dann im
-System-Log auf.
-
-{{% notice "info" %}}
-Wenn CSP aktiviert wird bedeutet das in den meisten Fällen, dass Inline-Scripts und -Styles nicht mehr erlaubt sind.
-In der [Entwickler-Dokumentation](https://docs.contao.org/dev/framework/csp/) ist beschrieben wie man dies dennoch
-programmatisch erlauben kann. Darüberhinaus würden die Inline-Styles, die von Contao's Text-Editor (TinyMCE) erzeugt
-werden, nicht mehr funktionieren. Contao erzeugt jedoch automatisch Hashes für diese Styles, aber nur für die
-dediziert erlaubten. Falls deine TinyMCE-Konfiguration andere Inline-Styles erzeugt, müssen diese über die
-[Einstellungen](/de/system/einstellungen/#config-yml) erlaubt werden.
-{{% /notice %}}
 
 
 ## Globale Einstellungen

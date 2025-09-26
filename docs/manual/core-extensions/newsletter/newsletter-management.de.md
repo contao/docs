@@ -30,8 +30,6 @@ Um einen neuen Verteiler anzulegen klicke auf
 
 **E-Mail-Template:** Hier kannst du das E-Mail-Template überschreiben.
 
-{{< version-tag "5.3" >}} Zusätzlich zum `mail_default` steht auch `mail_responsive` zur Verfügung.
-
 Das Template für `mail_default`:
 
 ```html
@@ -47,17 +45,6 @@ Das Template für `mail_default`:
   <?= $this->body ?>
 </body>
 </html>
-```
-
-Das Template für `mail_responsive`:
-
-```html
-<!doctype html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title><?= $this->title ?></title>
 ```
 
 {{% expand "CSS des Newsletters" %}}
@@ -429,10 +416,6 @@ Ein reiner HTML-Newsletter hat folgende Nachteile:
 Ein Text-Newsletter hat diese Probleme nicht, allerdings kannst du darin weder Bilder einbinden noch Einfluss auf die 
 Textformatierung nehmen.
 
-{{< version-tag "5.3" >}} **Preheader-Text:** Hier kannst du einen Preheader-Text eingeben. Ein Preheader-Text sollte 
-zwischen 40 und 130 Zeichen lang sein. Der Preheader-Text ist in einer E-Mail in deiner Inbox der kurze Text nach den 
-Absenderinformationen und der Betreffzeile.
-
 **HTML-Inhalt:** Gebe hier den HTML-Inhalt des Newsletters ein. Die Eingabe erfolgt wie beim Inhaltselement »Text« über 
 den Rich-Text-Editor.
 
@@ -511,8 +494,6 @@ gut mit HTML-Code umgehen wie die modernen Internetbrowser. Deswegen generiert d
 ein an sich veraltetes HTML 3.2-Dokument, das jedoch von den meisten E-Mail-Clients verarbeitet wird.
 
 **E-Mail-Template:** Hier wählst du das Template für die HTML-Mail aus.
-
-{{< version-tag "5.3" >}} Zusätzlich zum `mail_default` steht auch `mail_responsive` zur Verfügung.
 
 
 ### Absendereinstellungen

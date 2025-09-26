@@ -289,39 +289,10 @@ that we need to take care of loading our services and routes for example ourselv
 ### Service Configuration
 
 While the Contao Managed Edition (and also Symfony Skeleton Applications) will load certain YAML files automatically
-for your application, an extension or bundle will have to load the service
-configuration itself. The details are described in the [Symfony documentation][6]. Starting with Symfony **6**
-(used by Contao **5**) there are two different ways.
+for your application, an extension or bundle will have to load the service configuration itself. The details are
+described in the [Symfony documentation][6].
 
-{{< tabs groupid="service-configuration" style="code" >}}
-{{% tab title="Bundle Class" %}}
-{{< version-tag "5" >}} As noted previously, starting with Symfony **6** (Contao **5**) you can extend your bundle class from `AbstractBundle`.
-There you can also use the [`loadExtension` method](https://symfony.com/doc/6.4/bundles/extension.html#loading-services-directly-in-your-bundle-class)
-to directly load your service configuration.
-
-```php
-// src/ContaoExampleBundle.php
-namespace Somevendor\ContaoExampleBundle;
-
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
-
-class ContaoExampleBundle extends AbstractBundle
-{
-    public function loadExtension(
-        array $config, 
-        ContainerConfigurator $containerConfigurator, 
-        ContainerBuilder $containerBuilder,
-    ): void
-    {
-        $containerConfigurator->import('../config/services.yaml');
-    }
-}
-```
-{{% /tab %}}
-{{% tab title="Dependency Injection Extension Class" %}}
-You can also [create an extension class](https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class)
+You need to [create an extension class](https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class)
 in the `DependencyInjection` namespace which handles loading of your service definitions. The class name of the needs to 
 be the same as the  bundle name, with `Bundle` replaced by `Extension`, if present.
 
@@ -344,31 +315,6 @@ class ContaoExampleExtension extends Extension
     }
 }
 ```
-
-{{% notice note %}}
-This will not work automatically if your bundle class already extends from `AbstractBundle`. If you wish to use this
-extension class, you will need to implement the `getContainerExtension()` method in your bundle class and instantiate
-this extension class manually.
-
-```php
-// src/ContaoExampleBundle.php
-namespace Somevendor\ContaoExampleBundle;
-
-use App\DependencyInjection\ContaoExampleExtension;
-use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
-
-class ContaoExampleBundle extends AbstractBundle
-{
-    public function getContainerExtension(): ?ExtensionInterface
-    {
-        return new ContaoExampleExtension();
-    }
-}
-```
-{{% /notice %}}
-{{% /tab %}}
-{{< /tabs >}}
 
 Now services can be registered as usual in your `config/services.yaml`. The following example would enable
 [autowire][SymfonyAutowiring] and [autoconfigure][SymfonyAutoconfiguration] by default for all registered services. It

@@ -75,9 +75,6 @@ Fehlermeldung ausgegeben wird.
 Benutzersitzung ab, erstellt Contao automatisch eine neue Sitzung, ohne dass das Passwort dazu erneut eingegeben werden 
 muss.
 
-{{< version-tag "5.3" >}} **Passwort-Reset-Seite:** Hier kannst du eine Seite auswählen, zu der Besucher weitergeleitet 
-werden, wenn sie den »Passwort vergessen?«-Link anklicken.
-
 
 ### Weiterleitung
 

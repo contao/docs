@@ -10,17 +10,6 @@ One of the main tasks of a CMS is to make it easy to edit record. The following 
 easier and get you to your goal faster.
 
 
-## The sticky tab navigation list
-
-{{< version "5.3" >}}
-
-If the record set to be edited is very long and divided into individual sections by legends, you previously had to scroll 
-down endlessly (e.g. when setting up a user group). This is now a thing of the past, as the sticky tab navigation list. 
-This navigation list is automatically created from all legends in a record set.
-
-![The sticky tab navigation list]({{% asset "images/manual/administration-area/en/the-sticky-tab-navigation-list.png" %}}?classes=shadow)
-
-
 ## The Picker
 
 The picker is used in many different places and has therefore become an essential tool in Contao.
@@ -31,17 +20,9 @@ Here are a few examples:
 
 ![Insert oor edit Link]({{% asset "images/manual/administration-area/en/insert-or-edit-link.png" %}}?classes=shadow)
 
-{{< version-tag "5.3" >}} **When editing an image size in a content element**
-
-![Edit the image size]({{% asset "images/manual/administration-area/en/edit-the-image-size.png" %}}?classes=shadow)
-
 **When editing a source element in a content element**
 
 ![Edit source element]({{% asset "images/manual/administration-area/en/edit-source-element.png" %}}?classes=shadow)
-
-{{< version-tag "5.3" >}} **When editing a redirect target in a news item or an event of the type "Page" or "Article"**
-
-![Edit redirect target]({{% asset "images/manual/administration-area/en/edit-redirect-target.png" %}}?classes=shadow)
 
 
 ## Options when saving
@@ -63,10 +44,6 @@ element you are currently editing. You will be taken directly to the editing mas
 
 **Save and edit:** This button is only available when creating new elements. Clicking on it will save your entries and 
 take you directly to the Parent View of the child records.
-
-{{< version-tag "5.3" >}} **Save and edit child elements:** This button is only available when creating 
-[nested content elements](/en/article-management/content-elements/#nested-content-element). When you click on it, 
-your entries are saved and you are taken directly to the editing view for the child elements.
 
 **Save and back:** Clicking this button will save your entries and close the form. You will be forwarded to the parent 
 page, e.g. from a content element directly to the article overview.

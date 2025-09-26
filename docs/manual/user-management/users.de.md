@@ -39,8 +39,6 @@ gesondert gesteuert werden.
 
 **Theme-Module:** Hier legst du den Zugriff auf die Untermodule des Theme-Managers fest.
 
-{{< version-tag "5.3" >}} **Frontend-Module:** Hier legst du den Zugriff auf die Frontend-Module fest.
-
 
 ### Erlaubte Elemente
 
@@ -125,10 +123,6 @@ bestehende löschen dürfen.
 
 **RSS-Feed-Rechte:** Hier legst du fest, ob die Mitglieder der Benutzergruppe neue RSS-Feeds anlegen bzw. bestehende 
 löschen dürfen.
-
-{{< version-tag "5.3" >}} Die News-Feeds werden nicht mehr im Archiv angelegt, sondern über den Seitentyp 
-[News-Feed](/de/seitenstruktur/news-feed/). Wenn Mitglieder der Benutzergruppe auf die Feeds zugreifen sollen, müssen 
-ihnen diese bei den [Pagemounts](/de/benutzerverwaltung/benutzer/#pagemounts) gewährt werden.
 
 
 ### Events-Rechte

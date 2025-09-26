@@ -84,9 +84,6 @@ especially important in multi-domain operation with several independent websites
 
 **Hide running events:** Here you can hide the running events in the list of future events.
 
-{{< version-tag "5.3" >}} **Use the current URL for canonical links:**  Here you can set that the current URL is used instead of the configured 
-reading page for canonical links.
-
 
 ### Overview page
 

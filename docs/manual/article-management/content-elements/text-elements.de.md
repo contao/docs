@@ -81,17 +81,6 @@ Das Element generiert folgenden HTML-Code:
 {{</tabs>}}
 
 
-
-## Beschreibungsliste
-
-{{< version "5.3" >}}
-
-Das Inhaltselement »Beschreibungsliste« fügt dem Artikel eine Beschreibungsliste hinzu, diese wird häufig zur 
-Implementierung eines Glossars oder zur Anzeige von Metadaten (eine Liste von Schlüssel-Wert-Paaren) verwendet.
-
-![Beschreibungsliste]({{% asset "images/manual/article-management/de/beschreibungsliste.png" %}}?classes=shadow)
-
-
 ### Listeneinträge
 
 **Listeneinträge:** Du kannst eine Liste von Begriffen und Details zur Beschreibungsliste hinzufügen.
@@ -798,16 +787,6 @@ Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
 ```
 {{% /tab %}}
 {{</tabs>}}
-
-
-
-## Ungefiltertes HTML
-
-{{< version "5.3" >}}
-
-Das Inhaltselement »Ungefiltertes HTML« fügt dem Artikel ein ungefiltertes HTML hinzu. Bitte sei vorsichtig, wenn du 
-Dinge einfügst, die du nicht verstehst. Dies könnte Angreifern ermöglichen, deine Identität zu stehlen oder die 
-Kontrolle über das gesamte System zu übernehmen.
 
 
 ### Template-Einstellungen

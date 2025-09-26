@@ -43,19 +43,8 @@ back to the homepage of the back end.
 
 ![Manual]({{% asset "icons/manual.svg" %}}?classes=icon,backend) **Manual:** Clicking this link opens the manual.
 
-![Save Favorite]({{% asset "icons/favorite.svg" %}}?classes=icon,backend)  **Save Favorite:** By clicking on this link 
-you can save the current back end URL as a favorite entry. Existing favorite links are listed in the navigation area. 
-{{< version-tag "5.1" >}}
-
-![Favorites]({{% asset "images/manual/administration-area/en/favorites.png" %}}?classes=shadow)
-
 ![Notes]({{% asset "icons/alert.svg" %}}?classes=icon,backend) **Notes:** Clicking this link opens a modal and displays 
 possible hints (e.g. maintenance mode).
-
-![Design]({{% asset "icons/color_scheme.svg" %}}?classes=icon,backend)  **Design:** You can choose between light and 
-dark mode. {{< version-tag "5.1" >}}
-
-![Dark-Mode]({{% asset "images/manual/administration-area/en/dark-mode.png" %}}?classes=shadow)
 
 **Debug Mode:** Clicking this link will switch the [debug mode](/en/system/debug-mode/) on or off.
 
@@ -69,9 +58,6 @@ article in the back end, you will be automatically forwarded to the correspondin
 
   + ![Security]({{% asset "icons/shield_small.svg" %}}?classes=icon,backend) **Security:** Activate the two-factor 
   authentication for your back end.
-
-  + ![Favorites]({{% asset "icons/favorite.svg" %}}?classes=icon,backend) **Favorites:** This link will take you to 
-  your favorite management. {{< version-tag "5.1" >}}
 
   + ![Log out]({{% asset "icons/exit.svg" %}}?classes=icon,backend) **Log out:** Log out of the back end here.
 

@@ -128,8 +128,6 @@ validation for each text field to prevent misuse of the form.
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
 
-{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
-
 
 ### Expert settings
 
@@ -175,8 +173,6 @@ principle, password fields work just like [text fields](#textfeld), except that 
 ### Field configuration
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
-
-{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 
 ### Template settings
@@ -231,8 +227,6 @@ input check here to prevent misuse of the form.
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
 
-{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
-
 
 ### Rows and columns
 
@@ -286,8 +280,6 @@ instead of the Select Menu.
 ### Field configuration
 
 **Multiple selection:** Here you can allow the selection of multiple options.
-
-{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 **List size:** Here you define how many lines/tall the selection field will be when multiple selection is activated.
 
@@ -346,11 +338,6 @@ multiple options to be selected, you must use a [checkbox menu](#checkbox-menu).
 ![A radio button menu in the front end]({{% asset "images/manual/form-generator/en/radio-button-in-frontend.png" %}}?classes=shadow)
 
 
-### Field configuration
-
-{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
-
-
 ### Options
 
 **Options:** Here you can enter the different options. A JavaScript-based editor will help you when creating the 
@@ -404,11 +391,6 @@ like, or none at all. To allow the selection of just one option, you must instea
 [select menu](#select-menu).
 
 ![A checkbox menu in the frontend]({{% asset "images/manual/form-generator/en/checkboxes-in-frontend.png" %}}?classes=shadow)
-
-
-### Field configuration
-
-{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 
 ### Options
@@ -482,8 +464,6 @@ output in the form.
 these values with your default set here. If an image exceeds the maximum height, the upload will be aborted with an 
 error output in the form.
 
-{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
-
 
 ### Store file
 
@@ -531,10 +511,6 @@ The form field generates the following HTML code:
 ## Range slider
 
 The `Range Slider` form field adds a field to the form for selecting a value or a range of values within a specified minimum and maximum.
-
-### Field configuration
-
-{{< version-tag "5.6" >}} **Help text:** This optional text is by default displayed below the form field and directly linked to it.
 
 
 ### Expert settings

@@ -80,19 +80,6 @@ The element generates the following HTML code:
 {{</tabs>}}
 
 
-
-## Description list
-
-{{< version "5.3" >}}
-
-The "Description list" content element adds a description list to the article; this is often used to implement a 
-glossary or to display metadata (a list of key-value pairs).
-
-You can add a list of terms and details to the description list.
-If you leave the field for the term empty, you can create multiple details for a term.
-
-![Description list]({{% asset "images/manual/article-management/en/description-list.png" %}}?classes=shadow)
-
 #### List items
 
 **Description list items:** You can add a list of terms and details to the description list. If you leave the field for 
@@ -781,15 +768,6 @@ If an image was added to the text, the HTML output looks like this:
 ```
 {{% /tab %}}
 {{</tabs>}}
-
-
-
-## Unfiltered HTML
-
-{{< version "5.3" >}}
-
-The content element "Unfiltered HTML" adds unfiltered HTML to the article. Please be careful when you insert things that 
-you do not understand. This could allow attackers to steal your identity or take    take control of the entire system.
 
 
 ### Template settings

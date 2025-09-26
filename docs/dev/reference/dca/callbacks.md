@@ -114,44 +114,6 @@ Executed when a new record is created.
 {{% /expand %}}
 
 
-### `config.onbeforesubmit`
-
-{{< version "5.0" >}}
-
-Executed when a back end form is submitted _before_ the record will be updated
-in the database. Allows you to e.g. modify the values or introduce validation
-accross multiple fields. You are expected to return the values.
-
-{{% expand "Parameters" %}}
-* `array` Values of the record
-* `\Contao\DataContainer` Data Container object
-
-**return:** `array` Values of the record
-{{% /expand %}}
-
-{{% expand "Example" %}}
-```php
-// src/EventListener/DataContainer/MemberOnBeforeSubmitCallbackListener.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-
-#[AsCallback('tl_member', 'config.onbeforesubmit')]
-class MemberOnBeforeSubmitCallbackListener
-{
-    public function __invoke(array $record, DataContainer $dc): array
-    {
-        // Adjust the record here
-        // …
-
-        return $record;
-    }
-}
-```
-{{% /expand %}}
-
-
 ### `config.onsubmit`
 
 Executed when a back end form is submitted _after_ the record has been updated
@@ -376,59 +338,6 @@ of a database record.
 window.
 {{% /expand %}}
 
-***
-
-### `config.onpalette`
-
-{{< version "5.3" >}}
-
-Allows to dynamically adjust the palette. This can also be achieved using e.g. the `config.onload` callback where you
-can modify the palette as it is a global variable. However, adjusting it depending on the object's values is way easier
-using `config.onpalette` making it automatically work for e.g. the edit multiple mode.
-
-{{% expand "Parameters" %}}
-* `string` The current palette
-* `\Contao\DataContainer` Data Container object
-
-**return:** `string` The adjusted palette
-{{% /expand %}}
-
-{{% expand "Example" %}}
-
-```php
-// src/EventListener/DataContainer/PagePaletteCallback.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DataContainer\PaletteManipulator;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-
-#[AsCallback(table: 'tl_page', target: 'config.onpalette')]
-class PagePaletteCallback
-{
-    public function __invoke(string $palette, DataContainer $dc): string
-    {
-        $currentRecord = $dc->getCurrentRecord();
-
-        // This shouldn't happen, defensive programming
-        if (null === $currentRecord) {
-            return $palette;
-        }
-
-        // Adjust palettes for root pages
-        if ('root' === $currentRecord['type']) {
-            $palette = PaletteManipulator::create()
-                ->addLegend('my_legend')
-                ->addField(['my_field_one', 'my_field_two'], 'my_legend', PaletteManipulator::POSITION_APPEND)
-                ->applyToString($palette)
-            ;
-        }
-        
-        return $palette;
-    }
-}
-```
-{{% /expand %}}
 
 ## Listing Callbacks
 
@@ -700,18 +609,10 @@ containing HTML for the button (or an empty string, if you do not want to show a
 
 ### `list.operations.<OPERATION>.button`
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-Before Contao 5, this callback allows you to generate a button for a specific operation yourself, instead of letting Contao generate it
+This callback allows you to generate a button for a specific operation yourself, instead of letting Contao generate it
 for you. The callback passes the database record, the originally generated button HTML as a string (if applicable) and
 all the metadata defined in the DCA that is included in the generated button. The callback is expected to return a string
 containing HTML for the button (or an empty string, if you do not want to show a button).
-
-{{% notice "note" %}}
-The old style of button callback with multiple arguments has been deprecated in Contao **5** and will be removed in
-Contao **6**. It is still supported for backwards compatibility, but you should update the implementation to the new
-style once you stop supporting Contao 4.
-{{% /notice %}}
 
 {{% expand "Parameters" %}}
 * `array` Record data
@@ -788,69 +689,6 @@ class ExampleListOperationListener
     }
 }
 ```
-{{% /expand %}}
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-{{< version-tag "5.0" >}}  
-
-This callback allows you to configure or replace the button for a specific operation. The callback passes an instance 
-of `DataContainerOperation` which you can use to retrieve data and affect how the button is generated.
-
-{{% expand "Parameters" %}}
-* `DataContainerOperation` Operation instance with method to retrieve data and modify the button.
-
-**return:** _void_
-{{% /expand %}}
-
-{{% expand "Example" %}}
-
-This example hide a custom operation button if the user is not allowed to use it.
-
-Attention: this won't disable the operation itself, it only hides the button!
-To disable the operation, you need to check for the permission additionally
-before its execution, for example in the operation code or a `config.onload` callback.
-
-```php
-// src/EventListener/DataContainer/ExampleListOperationListener.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DataContainer\DataContainerOperation;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-
-#[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
-class ExampleListOperationListener
-{
-    public function __construct(
-        private readonly AuthorizationCheckerInterface $authorizationChecker,
-    ) {
-    }
-
-    public function __invoke(DataContainerOperation $operation): void
-    {
-        // Show the icon only but no link if the user cannot edit
-        if (!$this->authorizationChecker->isGranted('contao_user.example.can_edit', $operation->getRecord()['id'])) {
-            $operation->disable();
-            return;
-        }
-        
-        // Remove the operation completely by replacing the HTML if the user cannot see the record
-        if (!$this->authorizationChecker->isGranted('contao_user.example.can_view', $operation->getRecord()['id'])) {
-            $operation->setHtml('');
-            return;
-        }
-        
-        // Replace the target URL of the operation
-        $operation->setUrl('https://example.com');
-        
-        // Access the operation config through array access
-        $operation['label'] = $operation['title'] = 'See the example website';
-    }
-}
-```
-{{% /expand %}}
-{{% /tab %}}
-{{< /tabs >}}
 
 
 ***
@@ -860,45 +698,6 @@ class ExampleListOperationListener
 
 The following is a list of callbacks for DCA fields. Replace `<FIELD>` with a
 field name of your choice.
-
-
-### `fields.<FIELD>.attributes`
-
-{{< version "5.1" >}}
-
-Allows you do dynamically adjust the attributes of a field in a DCA before a widget is generated.
-
-{{% expand "Parameters" %}}
-* `array` Current attributes
-* `\Contao\DataContainer`/`null` Data Container object
-
-**return:** `array` The adjusted attributes array
-{{% /expand %}}
-
-{{% expand "Example" %}}
-```php
-// src/EventListener/DataContainer/AttributesCallback.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-
-#[AsCallback('tl_content', 'fields.text.attributes')]
-class AttributesCallback
-{
-    public function __invoke(array $attributes, DataContainer|null $dc = null): array
-    {
-        if (!$dc || 'text' !== ($dc->getCurrentRecord()['type'] ?? null)) {
-            return $attributes;
-        }
-
-        $attributes['label'] = 'Custom text label';
-
-        return $attributes;
-    }
-}
-```
-{{% /expand %}}
 
 
 ### `fields.<FIELD>.options`

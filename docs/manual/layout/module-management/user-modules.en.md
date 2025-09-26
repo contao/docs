@@ -67,9 +67,6 @@ So when formatting CSS, consider both states of the module, and also remember th
 **Allow auto login:** If you select this option, members can remain logged in if they wish. If a user session expires, 
 Contao will automatically create a new session without requiring you to enter the password again.
 
-{{< version-tag "5.3" >}} **Reset password page:## Here you can select a page to which visitors will be redirected when 
-they click on the "Forgot your password?" link.
-
 
 ### Redirect settings
 

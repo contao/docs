@@ -27,8 +27,6 @@ module "Newsletter list". This target page should contain the module "Newsletter
 
 **E-mail Template:** Here you can overwrite the e-mail template.
 
-{{< version-tag "5.3" >}} In addition to `mail_default`, `mail_responsive` is also available.
-
 The template for `mail_default`:
 
 ```html
@@ -44,17 +42,6 @@ The template for `mail_default`:
   <?= $this->body ?>
 </body>
 </html>
-```
-
-The template for `mail_responsive`:
-
-```html
-<!doctype html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title><?= $this->title ?></title>
 ```
 
 {{% expand "CSS of the newsletter" %}}
@@ -422,10 +409,6 @@ A pure HTML newsletter has the following disadvantages:
 
 A text newsletter does not have these problems, but you can neither include pictures nor influence the text formatting.
 
-{{< version-tag "5.3" >}} **Preheader text:** You can enter a preheader text here. A preheader text should be between 
-40 and 130 characters long. The preheader text is the short text in an email in your inbox after the sender information 
-and the subject line.
-
 **HTML content:** Enter the HTML content of the newsletter here. The input is done in the same way as for the content 
 element "Text" using the Rich Text Editor.
 
@@ -500,8 +483,6 @@ modern Internet browsers. Therefore the template generates an `mail_default` out
 processed by most email clients.
 
 **E-Mail Template:** Here you select the template for the HTML mail.
-
-{{< version-tag "5.3" >}} In addition to `mail_default`, `mail_responsive` is also available.
 
 
 ### Sender settings

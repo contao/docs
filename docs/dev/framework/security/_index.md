@@ -22,8 +22,7 @@ checks the [request scope][RequestScope]. For example in the  front end, all URL
 request attribute set to `frontend` and the `contao_frontend` firewall will thus be applicable to all these URLs. Contao
 **4.13** implements an [authentication listener][SymfonyAuthenticationListener] which will check for any POST request
 containing the parameters `username` and `password` and the parameter `FORM_SUBMIT` with the value `tl_login` (as these
-are the parameters used by Contao's login module). In Contao **5** a [custom authenticator][SymfonyAuthenticator] is
-used for this.
+are the parameters used by Contao's login module).
 
 
 ## Voters
@@ -76,23 +75,6 @@ The security helper can also be used to check whether a front end user belongs t
 ```php
 $security->isGranted('contao_member.groups', $groupId);
 $security->isGranted('contao_member.groups', [/* array of group IDs */]);
-```
-
-{{< version "5.0" >}}
-
-The `contao_dc.<data-container>` permission can be used to check whether a back end user has the right to perform 
-certain DCA actions. The subject in this case will be a `Contao\CoreBundle\Security\DataContainer\AbstractAction`.
-
-```php
-use Contao\CoreBundle\Security\DataContainer\CreateAction;
-use Contao\CoreBundle\Security\DataContainer\DeleteAction;
-use Contao\CoreBundle\Security\DataContainer\ReadAction;
-use Contao\CoreBundle\Security\DataContainer\UpdateAction;
-
-$security->isGranted('contao_dc.tl_foobar', new CreateAction('tl_foobar', $record));
-$security->isGranted('contao_dc.tl_foobar', new DeleteAction('tl_foobar', $record));
-$security->isGranted('contao_dc.tl_foobar', new ReadAction('tl_foobar', $record));
-$security->isGranted('contao_dc.tl_foobar', new UpdateAction('tl_foobar', $record));
 ```
 
 {{% notice tip %}}
@@ -164,71 +146,6 @@ class AdminMaintenanceAccessVoter extends Voter
     {
         // Only allow admin with ID "1"
         return 1 === (int) $token->getUser()->id;
-    }
-}
-```
-
-{{< version-tag "5.0" >}} Here is another example with which you can restrict editing of news records to their original 
-authors. The voter checks for any update or delete actions of the data container and then checks whether the author of 
-the news record is the currently logged in user. In this case we implement the necessary checks also for the child table
-`tl_content` accordingly - otherwise  you would still be able to edit the news content.
-
-```php
-// src/Security/Voter/NewsAccessVoter.php
-namespace App\Security\Voter;
-
-use Contao\BackendUser;
-use Contao\CoreBundle\Security\ContaoCorePermissions;
-use Contao\CoreBundle\Security\DataContainer\DeleteAction;
-use Contao\CoreBundle\Security\DataContainer\UpdateAction;
-use Contao\NewsModel;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\Authorization\Voter\Voter;
-
-class NewsAccessVoter extends Voter
-{
-    protected function supports(string $attribute, $subject): bool
-    {
-        // We only want to vote on edit actions (delete and update)
-        if (!$subject instanceof DeleteAction && !$subject instanceof UpdateAction) {
-            return false;
-        }
-
-        if (ContaoCorePermissions::DC_PREFIX.'tl_news' === $attribute) {
-            return true;
-        }
-
-        // Also take content elements of news into account
-        if (ContaoCorePermissions::DC_PREFIX.'tl_content' === $attribute) {
-            return 'tl_news' === $subject->getCurrent()['ptable'];
-        }
-
-        return false;
-    }
-
-    /**
-     * @param DeleteAction|UpdateAction $subject
-     */
-    protected function voteOnAttribute(string $attribute, mixed $subject, TokenInterface $token): bool
-    {
-        /** @var BackendUser $user */
-        $user = $token->getUser();
-
-        if ($user->isAdmin) {
-            return true;
-        }
-
-        // Determine the author ID
-        $record = $subject->getCurrent();
-
-        if ('tl_news' === $subject->getDataSource()) {
-            $authorId = $record['author'];
-        } else {
-            $news = NewsModel::findById($record['pid']);
-            $authorId = $news->author;
-        }
-
-        return (int) $user->id === (int) $authorId;
     }
 }
 ```

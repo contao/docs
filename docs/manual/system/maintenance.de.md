@@ -139,7 +139,6 @@ und so weiter. Je höher also die Tiefe, desto mehr Links können gefunden werde
 Crawl-Prozess. Die Tiefe kannst du auf der Kommandozeile über das `--max-depth` Argument steuern.
 Im Backend ist die Tiefe auf `3` festgelegt.
 
-{{< version-tag "5.3" >}} Ab Contao 5.3 kannst du die Tiefe auch im Backend auswählen.
 
 #### Die Anzahl der gleichzeitigen Requests beeinflussen
 
@@ -148,15 +147,6 @@ dabei den Server nicht überlastest.
 
 Auf der Kommandozeile steht dir dafür die Option `--concurrency` (oder der Shortcut `-c`) zur Verfügung. Im Backend 
 ist die "Concurrency" auf `5` festgelegt.
-
-{{< version-tag "5.3" >}} Ab Contao 5.3 kannst du diesen Wert über die `config.yaml` festlegen:
-
-```yaml
-# config/config.yaml
-contao:
-    backend:
-        crawl_concurrency: 10
-```
 
 {{% notice "tip" %}}
 Falls du dich fragst, warum es konfigurierbar aber nicht im Backend auswählbar ist: Dieser Wert ändert sich 

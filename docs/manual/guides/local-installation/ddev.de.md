@@ -175,8 +175,6 @@ Mit `ddev describe` erfährst du, wie du das jeweilige Datenbank Tool erreichst.
 
 ## DDEV Cronjob einrichten
 
-{{< version-tag "5.5" >}} Die [Backend-Suche](https://docs.contao.org/manual/de/installation/systemvoraussetzungen/backend-suche/) kann durch die Einrichtung des [Contao Cronjob-Frameworks](https://docs.contao.org/manual/de/performance/cronjobs/) aktiviert werden.
-
 Dazu in DDEV zunächst die [Cron-Erweiterung](https://github.com/ddev/ddev-cron) installieren:
 
 ```shell

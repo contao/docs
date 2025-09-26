@@ -12,17 +12,6 @@ Das komfortable Bearbeiten von Daten zu ermöglichen, ist eine der Hauptaufgaben
 Contao erleichtern dir die Datenpflege und bringen dich schneller ans Ziel.
 
 
-## Die Sticky-Tab-Navigationsliste
-
-{{< version "5.3" >}}
-
-Wenn der zu bearbeitende Datensatz sehr lang und in einzelne Abschnitte durch Legenden unterteilt ist, musste man bis 
-jetzt endlos nach unten Scrollen (z. B. beim Einrichten einer Benutzergruppe). Damit ist nun Schluss, denn es gibt die 
-Sticky-Tab-Navigationsliste. Diese Navigationsliste wird automatisch aus allen Legenden in einem Datensatz erstellt.
-
-![Die Sticky-Tab-Navigationsliste]({{% asset "images/manual/administration-area/de/die-sticky-tab-navigationsliste.png" %}}?classes=shadow)
-
-
 ## Der Picker
 
 Der Picker wird an vielen verschiedenen Orten eingesetz und ist deshalb zu einem unersetzbaren Werkzeug in Contao 
@@ -34,18 +23,9 @@ Im Folgenden einige Beispiele:
 
 ![Link einfügen bzw. bearbeiten]({{% asset "images/manual/administration-area/de/link-einfuegen-bzw-bearbeiten.png" %}}?classes=shadow)
 
-{{< version-tag "5.3" >}} **Beim Bearbeiten einer Bildgröße in einem Inhaltselement**
-
-![Bildgröße bearbeiten]({{% asset "images/manual/administration-area/de/bildgroesse-bearbeiten.png" %}}?classes=shadow)
-
 **Beim Bearbeiten eines Quellelementes in einem Inhaltselement**
 
 ![Quellelement bearbeiten]({{% asset "images/manual/administration-area/de/quellelement-bearbeiten.png" %}}?classes=shadow)
-
-{{< version-tag "5.3" >}} **Beim Bearbeiten eines Weiterleitungszieles in einer News oder einem Event vom Typ »Seite« 
-oder »Artikel«**
-
-![Weiterleitungsziel bearbeiten]({{% asset "images/manual/administration-area/de/weiterleitungsziel-bearbeiten.png" %}}?classes=shadow)
 
 
 ## Optionen beim Speichern
@@ -69,10 +49,6 @@ Bearbeitungsmaske des neuen Datensatzes.
 **Speichern und bearbeiten:** Diese Schaltfläche steht dir nur beim Erstellen neuer Elemente zur Verfügung. Beim 
 Anklicken werden deine Eingaben gespeichert, und du gelangst direkt zur Bearbeitungsansicht der Kind-Datensätze 
 (Parent View).
-
-{{< version-tag "5.3" >}} **Speichern und Kindelement bearbeiten:** Diese Schaltfläche steht dir nur beim Erstellen
-[verschachteltes Inhaltselement](/de/artikelverwaltung/inhaltselemente/#verschachtelte-inhaltselemente) zur Verfügung. 
-Beim Anklicken werden deine Eingaben gespeichert, und du gelangst direkt zur Bearbeitungsansicht für die Kindelemente.
 
 **Speichern und zurück:** Beim Klick auf diese Schaltfläche werden deine Eingaben gespeichert, und das Formular 
 geschlossen. Du wirst auf die übergeordnete Seite weitergeleitet, also z. B. von einem Inhaltselement direkt zur 

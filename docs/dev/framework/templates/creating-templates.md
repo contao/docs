@@ -514,132 +514,49 @@ Use proper template functions and filters instead. Keep in mind, that insert tag
 the back end and not to structure content in templates.
 {{% /best-practice %}}
 
-#### Response context
-
-Sometimes a template only includes part of a page, like a content element, but still wants to contribute content that is
-global to the page.
-
-{{< version-tag "5.0" >}} For this, you can use the [`add` tag in Contao]({{% relref "add" %}}). It allows adding content to the end of the
-document head or body. If you want the block to be output only once (no matter how often the template is rendered on
-the current page), you can provide a name. This is especially helpful when adding a generic javascript code or styles,
-that do not make sense getting inserted multiple times.
-
-```twig
-{# Add code to the end of the document body #}
-{% add to body %} … {% endadd %}
-
-{# Add code to the end of the document head #}
-{% add to head %} … {% endadd %}
-
-{# Add code to the end of the document body once #}
-{% add "foo" to body %} … {% endadd %}
-
-{# Add code to the end of the document head once #}
-{% add "bar" to head %} … {% endadd %}
-```
-
-If you want to add JSON-LD metadata to the current page, you can use the `add_schema_org` function. It expects an array
-of data and returns nothing. For this, you will typically want to wrap a call to it in Twig's `do` tag:
-
-```twig
-{% do add_schema_org(…) %}
-```
-
-{{% notice note %}}
-Behind the scenes, these features build on top of the [response context]({{% relref "response-context" %}}) concept. It is the
-responsibility of the page template (like `fe_page`) to ultimately output the gathered data.
-{{% /notice %}}
-
-#### HTML Attributes
-
-{{< version-tag "5.0" >}} HTML attributes are a heavily used feature in HTML. In the context of templates, they are also
-one of the primary things, that people want to adjust. This is why we created the `HtmlAttributes` class together with
-the `attrs()` function to create an instance of said class.
-
-The `HtmlAttributes` class features a lot of helper methods in a fluent API style. With it, you can easily parse, merge
-and compose attributes on the fly. Anything you pass to the `attrs()` function will be passed to the classes'
-constructor: This could either be an associative array of attributes, a string of attributes that will get parsed or
-another `HTMLAttributes` object that will get merged.
-
-{{% example "Using the HtmlAttributes class in Twig (Part 1)" %}}
-You can transpose the following…
-```twig
-<div id="main" class="{{ classes|join(' ') }}"{% if tooltip|default %} data-tooltip="{{ tooltip }}{% endif %}">
-    {{ text }}
-</div>
-```
-into an equivalent chain of calls:
-```twig  
-<div{{ attrs().set('id', 'main').addClass(classes).setIfExists('data-tooltip', tooltip|default) }}>
-    {{ text }}
-</div>
-```
-
-Using `{{ }}`, you can directly output the class. It implements a `__toString()` method, already encodes the output and
-is registered as a so-called "safe class" in our Twig extension, that the escaper filters are skipped on.
-{{% /example %}}
-
-We are heavily using a pattern, that we call "**set and merge**", in the core's templates. Here, instead of outputting
-the attributes directly, a variable is assigned first and the same variable (falling back to an empty string) is used
-when constructing the attributes, effectively merging any previously set data. With this change, extenders of the
-template, that only want to adjust attributes, do not have to overwrite anything. As their code gets executed first,
-they can simply create the variable with the same pattern, and it will then get merged by the parent.
-
-{{% example "Making HtmlAttributes better adjustable (Part 2)" %}}
-Let's use the "set and merge" pattern:
-```twig
-{% set text_attributes = attrs()
-    .set('id', 'main')
-    .addClass(classes)
-    .setIfExists('data-tooltip', tooltip|default)
-    .mergeWith(text_attributes|default)
-%}
-<div{{ text_attributes }}>
-    {{ text }}
-</div>
-```
-The magic really shows, when we want to adjust this template. For instance to add a custom class:
-```twig
-{% extends "@Contao/text_example.html.twig" %}
-
-{% set text_attributes = attrs().addClass('custom-class').mergeWith(text_attributes|default) %}
-```
-
-{{% notice tip %}}
-We could have omitted the constructor argument in the last example. If you cannot be sure, that the template you are
-editing is always the first one to be executed (for instance in an extension), using the "set and merge" pattern again
-is the way to go. This way it also works with multiple extenders that want to change things.
-{{% /notice %}}
-{{% /example %}}
-
-{{% notice note %}}
-Please refer to the doc block comments on each of the fluent interface methods of the `HtmlAttributes` class for details
-on how to use it.
-{{% /notice %}}
 
 #### Images
 
-{{< version-tag "5.0" >}} The `figure` and `picture` components are suited to render any built `Figure` object. In case
-you cannot or don't want to create a `Figure` in the controller, you can alternatively use the `figure` function to
-build a `Figure` instance on the fly. Internally, this uses the `FigureBuilder` from the Contao
-[image studio]({{% relref "image-studio#twig" %}}). In case you also want to create a picture/resize configuration
-on the fly, you can use the respective `picture_configuration` function.
+You can output a figure directly from within your template by using the `contao_figure` Twig function. The function
+expects a *resource* (uuid, id, path) as the first and the *image size* as the second argument. If you want to specify
+more config, you can pass a *config* object as the third argument.
+
+{{% notice "note" %}}
+This has been deprecated in Contao **5.0** in favor of the [`figure` function](https://docs.contao.org/5.x/dev/framework/templates/creating-templates#images).
+{{% /notice %}}
+
+In the config object you can configure the same things you would as when using the `FigureBuilder` (see
+[reference][FigureBuilderOptionsReference]). In fact, under the hood, the Twig function uses
+[PropertyAccess][PropertyAccess] to configure a `FigureBuilder` instance. This is why you can also use the same short
+notation you expect from Twig when accessing variables (e.g. `size` instead of `setSize`). In the case of metadata,
+you can also just pass an object which will internally be converted into `Metadata`. 
 
 ```twig
 {# It's enough to specifiy the resource and size… #}
-{% set figure = figure('path/to/my/image.png', '_my_size') %}
+{{ contao_figure('path/to/my/image.png', '_my_size') }}
+    
+{# …but you can also go wild with the options. #}
+{{ contao_figure(id, [200, 200, 'proportional'], { 
+    metadata: { alt: 'Contao Logo', caption: 'Look at this CMS!' },
+    enableLightbox: true,
+    lightboxGroupIdentifier: 'logos',
+    lightboxSize: '_big_size',
+    linkHref: 'https://contao.org',
+    options: { attr: { class: 'logo-container' } }
+}) }}
+```
 
-{# …but you can also go wild with the options: #}
-{% set figure = figure(id, [200, 200, 'proportional'], { 
-  metadata: { alt: 'Contao Logo', caption: 'Look at this CMS!' },
-  enableLightbox: true,
-  lightboxGroupIdentifier: 'logos',
-  lightboxSize: '_big_size',
-  linkHref: 'https://contao.org',
-  options: { attr: { class: 'logo-container' } }
-}) %}
+{{% notice note %}}
+By default, the `figure.html.twig` template (see 1) is used to render the result, but you can optionally pass a
+custom template as the fourth argument. The template will receive a `figure` variable with your configured `Figure`
+as its context.
+{{% /notice %}}
 
-{# You can even use a custom - on the fly - picture configuration: #} 
+If you want to use a complex size configuration for just one image, you do not need to create a global configuration.
+Instead, use the `picture_config` Twig function, pass it the configuration and use the result as the size argument
+of the `contao_figure` function:
+
+```twig
 {% set special_size = picture_config({
     width: 400,
     height: 400,
@@ -651,57 +568,10 @@ on the fly, you can use the respective `picture_configuration` function.
         media: '(max-width: 140px)',
     }]
 }) %}
-{% set figure = figure(uuid, special_size) %}
+
+{{ contao_figure(uuid, special_size) }}
 ```
 
-You can then query the object for things like metadata or sizes and/or output it as an image, for example using the
-pre-made `_figure` component:
-
-```twig
-{% use "@Contao/component/_figure.html.twig" %}
-
-{# Create the figure inline or use the one already in our context #}
-{% set my_figure = figure(…) %}
-
-{# Output it using the figure component #}
-{% with {figure: my_figure} %}{{ block('figure_component') }}{% endwith %}
-```
-
-{{% notice info %}}
-In Contao **4.13** you need to use the `contao_figure` instead of the `figure` function. While allowing the same
-arguments, this function will directly render the (default or given) image template instead of returning a `Figure`
-object. Note, that this function is deprecated since Contao **5.0**.
-{{% /notice %}}
-
-#### Formatting
-
-{{< version-tag "5.0" >}} You can use the `highlight` and `highlight_auto` filters to generate code highlighting with
-the `scrivo/highlight.php` library. You can either pass a language to use or let the library guess the language
-(`highlight_auto`). In the latter case, you can optionally constrain the selection to a given subset of languages.
-
-```twig
-{# Output code directly as a string… #}
-<pre><code>{{ code|highlight(language) }}</code></pre>
-
-{# … and/or query the result properties: #}
-{% set highlighted = code|highlight_auto %}
-The detected language was {{ highlighted.language }} with a relevance of {{ highlighted.relevance }}.
-```
-
-{{< version-tag "5.0" >}} The [`format_bytes` filter]({{% ref "format_bytes" %}}) transforms a number representing a
-file size in bytes into a human-readable form. It therefore uses the `MSC.decimalSeparator`, `MSC.thousandsSeparator`
-and `UNITS` declarations from the global translation catalogue.
-
-```twig
-{# outputs 1536 #} 
-{{ size }}
-
-{# outputs "1.5 KiB" #}
-{{ size|format_bytes }}
-
-{# outputs "1.500 KiB" #}
-{{ size|format_bytes(3) }}
-```
 
 #### Translations
 
@@ -742,69 +612,6 @@ bridge. Read more about this function in the [Symfony Twig documentation][Symfon
 As of writing this, there is unfortunately no replacement for `PageModel::getFrontendUrl()`, yet. If you need this, for
 now, stick to generating the URLs in your controller and then pass them to your template (where they are only output).
 {{% /notice %}}
-
-{{< version-tag "5.0" >}} The `prefix_url` filter prefixes relative URLs with the request base path. This is needed when
-dealing with relative URLs on a page that does not set a `<base>` tag.
-
-```twig
-{# will outpuot something like "https://example.com/some/relative/url.html" #}
-{{ 'some/relative/url.html'|prefix_url }}
-```
-
-
-#### Render Content Elements
-
-{{< version "5.2" >}}
-
-You can render content elements directly in your Twig templates via the `content_element()` function. This function
-either takes a database ID of an existing content element, a `ContentElementReference` object - or just the type of a content element. In the latter case
-you can then also define all the options with which this content element should be rendered. This allows you to render
-content elements on the fly without having to define them in the database.
-
-```twig
-{# Render a specific content element from the database #}
-{# This is similar to the `insert_content` insert tag #}
-{{ content_element(15) }}
-```
-
-```twig
-{# Render a `gallery` content element on the fly #}
-{{
-    content_element('gallery', {
-        multiSRC: data.myGallery,
-        sortBy: 'random',
-        perRow: 4,
-        limit: 12,
-        fullsize: true
-    })
-}}
-```
-
-
-#### Render Front End Modules
-
-{{< version "5.2" >}}
-
-You can render front end modules directly in your Twig templates via the `frontend_module()` function. This function
-either takes a database ID of an existing front end module - or just the type of a front end module. In the latter case
-you can then also define all the options with which this front end module should be rendered. This allows you to render
-front end modules on the fly without having to define them in the database.
-
-```twig
-{# Render a specific front end module from the database #}
-{# This is similar to the `insert_module` insert tag #}
-{{ frontend_module(42) }}
-```
-
-```twig
-{# Render a `navigation` front end module on the fly #}
-{{
-    frontend_module('navigation', {
-        levelOffset: 1,
-        navigationTpl: 'nav_custom',
-    })
-}}
-```
 
 
 ## Naming convention

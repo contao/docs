@@ -10,24 +10,15 @@ Contao periodically executes some tasks via its own cron functionality. These in
 * Purge expired Opt-In tokens
 * etc.
 
-{{< version-tag "5.0" >}} Starting with Contao **5** all cronjobs are registered as services and tagged using the `contao.cronjob` tag. Thus you can find all
-cronjobs on your system using the following command:
+Cronjobs that are registered via the the `contao.cronjob` service tag can be listed using the following command:
 
 ```bash
 $ vendor/bin/contao-console debug:container --tag contao.cronjob
 ```
 
-{{% notice "info" %}}
-The aformentioned command can also be used in Contao **4.13**. However, this will not find cronjobs that are registered
-via the legacy `config.php` (see below). Unfortunately there is no convenient way in Contao 4 to display registered
-legacy cronjobs. If you want to look these up you could either search for any `$GLOBALS['TL_CRON']` definitions in your 
-Contao instance via your IDE, or use Xdebug for example in order to inspect the `$GLOBALS['TL_CRON']` array.
-{{% /notice %}}
-
-{{< version-tag "5.3" >}} Starting also with Contao **5.3** you will find a special `contao.cron.supervise_workers` cronjob. This cronjob will automatically
-start worker processes for the [asynchronous messaging feature][AsyncMessaging]. There is, however, a fallback in case you do not
-configure a proper `contao:cron` cronjob (see next section). Then all messages (from the default Contao Managed Edition message
-queues) will be processed within `kernel.terminate` of the web process.
+However, keep in mind that this will not find cronjobs that are registered via the legacy `config.php` (see below). Unfortunately there is no convenient way in Contao 4 to display registered legacy cronjobs. If you want to look these up
+you could either search for any `$GLOBALS['TL_CRON']` definitions in your Contao instance via your IDE, or use Xdebug
+for example in order to inspect the `$GLOBALS['TL_CRON']` array.
 
 
 ## Configuring the Cron Job
@@ -53,17 +44,6 @@ contao:
 After disabling the front end cron you should periodically let Contao execute its cron jobs, either via the command line (recommended)
 or by making a request to the web URL.
 
-{{< version-tag "5.1" >}} Starting with version **5.1** Contao detects whether a real cron job is executed or not and thus disables
-the front end cron automatically if applicable. However, you can modify this behavior via the following configuration:
-
-```yaml
-# config/config.yaml
-contao:
-    cron:
-        web_listener: false
-```
-
-The default value is `'auto'`.
 
 ### Command Line
 
@@ -96,20 +76,6 @@ parameters:
     router.request_context.scheme: 'https'
 ```
 {{% /notice %}}
-
-{{< version-tag "5.0" >}} You are also able to force the the execution of cron jobs via the `--force` parameter:
-
-```bash
-$ vendor/bin/contao-console contao:cron --force
-```
-
-{{< version-tag "5.0" >}} You can also execute just one specific cron job from the command line:
-
-```bash
-$ vendor/bin/contao-console contao:cron "App\Cron\ExampleCron"
-```
-
-The latter can also be combined with the `--force` option.
 
 
 ### Web URL
@@ -226,7 +192,7 @@ be a full CRON expression, e.g. `*/5 * * * *` for "every 5 minutes".
 {{% tab title="PHP" %}}
 
 {{% notice "note" %}}
-This method is deprecated since Contao **4.13** and does not work in Contao **5** anymore.
+This method is deprecated since Contao **4.13** and will not work in Contao **5** anymore.
 {{% /notice %}}
 
 You can register your own cron jobs using the `$GLOBALS['TL_CRON']` arrays. It is
@@ -299,84 +265,6 @@ service that the excution of this cron job was skipped and thus the last run tim
 will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.
 {{% /notice %}}
 
-### Asynchronous cron jobs
-
-{{< version "5.1" >}}
-
-The cron job framework executes jobs synchronously in the order they were tagged (normal service priority tags). 
-This means that if you e.g. have 10 cron jobs, and they all take 20 seconds to run, it will take the framework 200 
-seconds to complete. For most cron jobs, this is not a problem because they don't usually run 20 seconds.
-
-However, if you have cron jobs that trigger child processes or are asynchronous in any other way, you would want 
-them to start immediately in parallel without blocking the other cron jobs. You can do this by returning a 
-`GuzzleHttp\Promise\PromiseInterface`:
-
-```php
-// src/Cron/HourlyCron.php
-namespace App\Cron;
-
-use Contao\CoreBundle\Cron\Cron;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
-use Contao\CoreBundle\Exception\CronExecutionSkippedException;
-use GuzzleHttp\Promise\Promise;
-use GuzzleHttp\Promise\PromiseInterface;
-
-#[AsCronJob('hourly')]
-class HourlyCron
-{
-    public function __invoke(string $scope): PromiseInterface
-    {
-        // Skip this cron job in the web scope
-        if (Cron::SCOPE_WEB === $scope) {
-            throw new CronExecutionSkippedException();
-        }
-
-        return $promise = new Promise(static function () use (&$promise): void {
-            // Do something that is asynchronous
-            $promise->resolve('Done with asynchronous process.');
-        });
-    }
-}
-```
-
-Because most asynchronous processes are most likely things like a spawned child process using Symfony's `Process` 
-component, Contao also provides a utility service for that:
-
-```php
-// src/Cron/HourlyCron.php
-namespace App\Cron;
-
-use Contao\CoreBundle\Cron\Cron;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
-use Contao\CoreBundle\Exception\CronExecutionSkippedException;
-use Contao\CoreBundle\Util\ProcessUtil;
-use GuzzleHttp\Promise\PromiseInterface;
-
-#[AsCronJob('hourly')]
-class HourlyCron
-{
-    public function __construct(private ProcessUtil $processUtil) {}
-
-    public function __invoke(string $scope): PromiseInterface
-    {
-        // Skip this cron job in the web scope
-        if (Cron::SCOPE_WEB === $scope) {
-            throw new CronExecutionSkippedException();
-        }
-
-        // Long-running process - probably not "ls" :-)
-        $promise = $this->processUtil->createPromise(new Process(['ls']));
-        
-        // There's even a helper for another application command, so you don't have to worry about
-        // finding the right PHP binary etc.:
-        $promise = $this->processUtil->createPromise(
-            $this->processUtil->createSymfonyConsoleProcess('app:my-command', '--option-1', 'argument-1')
-        );
-        
-        return $promise;
-    }
-}
-```
 
 ### Testing
 
@@ -397,10 +285,6 @@ vendor/bin/contao-console doctrine:query:sql "TRUNCATE tl_cron_job"
 {{% notice info %}}
 In Contao **4.4**, the table is called `tl_cron` and it contains only the last execution
 times of the named intervals, not the last execution time of individual cron jobs.
-{{% /notice %}}
-
-{{% notice tip %}}
-This is not necessary anymore in Contao **5.0** and up as you can use the `--force` command line option as explained [above](#command-line).
 {{% /notice %}}
 
 
