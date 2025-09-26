@@ -354,6 +354,6 @@ FileETag None
   RewriteRule ^index.html$ https://to.contao.org/support [L,R=301]
 
   # Redirect old URLs to new 5.x URLs
-  RewriteRule ^(dev/?.*)
-  RewriteRule ^(manual/?.*)
+  RewriteRule ^(dev/?.*) /5.x/$1 [L,R=301]
+  RewriteRule ^(manual/?.*) /5.x/$1 [L,R=301]
 </IfModule>
