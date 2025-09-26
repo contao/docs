@@ -5,7 +5,7 @@ en:
         documentation_label_overview: 'More documentation on'
         documentation_label_website: 'More about Contao on'  
         documentation_label_switch: 'Go to the developer documentation'
-        version: 5.x
+        version: 4.x
         versions:
             - 
                 baseURL: https://docs.contao.org/5.x/manual/en/
@@ -25,7 +25,7 @@ de:
         documentation_label_overview: 'Weitere Dokumentationen auf'
         documentation_label_website: 'Mehr über Contao auf'
         documentation_label_switch: 'Zur Entwickler Dokumentation'
-        version: 5.x
+        version: 4.x
         versions:
             - 
                 baseURL: https://docs.contao.org/5.x/manual/de/

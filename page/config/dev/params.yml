@@ -4,8 +4,8 @@ algolia_selector: dev
 documentation_label_overview: 'More documentation on'
 documentation_label_website: 'More about Contao on'
 documentation_label_switch: 'Go to the Contao manual'
-documentation_label_switch_url: 'https://docs.contao.org/5.x/manual/'
-version: 5.x
+documentation_label_switch_url: 'https://docs.contao.org/4.x/manual/'
+version: 4.x
 versions:
     - 
         baseURL: https://docs.contao.org/5.x/dev/
