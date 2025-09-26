@@ -55,7 +55,7 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 #[AsHook('reviseTable')]
 class ReviseTableListener
 {
-    public function __invoke(string $table, ?array $newRecords, ?string $parentTable, ?array $childTables): ?bool
+    public function __invoke(string $table, array|null $newRecords, string|null $parentTable, array|null $childTables): bool|null
     {
         // Do something …
     }
