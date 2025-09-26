@@ -43,7 +43,7 @@ use Contao\Image;
 #[AsHook('executeResize')]
 class ExecuteResizeListener
 {
-    public function __invoke(Image $image): ?string
+    public function __invoke(Image $image): string|null
     {
         if (…) {
             // Do something and return the path to the resized image

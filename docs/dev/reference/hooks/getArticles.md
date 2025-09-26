@@ -42,7 +42,7 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 #[AsHook('getArticles')]
 class GetArticlesListener
 {
-    public function __invoke(int $pageId, string $column): ?string
+    public function __invoke(int $pageId, string $column): string|null
     {
         if (10 === (int) $pageId && 'main' === $column) {
             // Generate your custom articles content here
