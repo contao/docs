@@ -932,7 +932,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `installPassword` | Stores the hashed value of the Contao Install Tool password. |
 | `licenseAccepted` | Stores whether the license in the Contao Install Tool has been accepted. |
 | `logPeriod` | Duration in seconds for how long entries in the Contao back end system log should be kept. Default: `604800`. |
-| `maxFileSize` | [Maximum upload file size](#upload-settings). |a
+| `maxFileSize` | [Maximum upload file size](#upload-settings). |
 | `maxPaginationLinks` | Allows you define the number links shown in the automatically generated front end paginations. Default: `7`. |
 | `maxResultsPerPage` | [Maximum items per page](#back-end-configuration). |
 | `minPasswordLength` | Allows you to define the minimum password length for front end members and back end users. Default: `8`. |
