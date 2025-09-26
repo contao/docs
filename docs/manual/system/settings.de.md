@@ -1024,7 +1024,7 @@ Beschreibung.
 | `minPasswordLength` | Erlaubt es die minimale Passwortlänge für Frontend-Mitglieder und Backend-Nutzer zu ändern. Standard: `8`. |
 | `requestTokenWhitelist` | Erlaubt es die [Request Token Überprüfung][RequestTokens] für Anfragen von den definierten Hosts zu deaktivieren _(veraltet)_. |
 | `resultsPerPage` | [Elemente pro Seite](#backend-einstellungen). |
-| `sessionTimeout` | Zeitspanne in Sekunden wie lange eine Nutzer-Session (Frontend und Backend) gültig bleiben soll. Falls dieser Wert erhöht wird müssen ggf. auch die [Session-Einstellungen][PhpSessionSettings] von PHP geändert werden (`session.cookie_lifetime` und `session.gc_maxlifetime`). Standard: `3600`. Existiert seit Contao **5** nicht mehr. |
+| `sessionTimeout` | Zeitspanne in Sekunden wie lange eine Nutzer-Session (Frontend und Backend) gültig bleiben soll. Falls dieser Wert erhöht wird müssen ggf. auch die [Session-Einstellungen][PhpSessionSettings] von PHP geändert werden (`session.cookie_lifetime` und `session.gc_maxlifetime`). Standard: `3600`. |
 | `timeFormat` | [Zeitformat](#datum-und-zeit). |
 | `timeZone` | [Zeitzone](#datum-und-zeit). |
 | `undoPeriod` | Zeitspanne in Sekunden wie lange gelöschte Einträge wiederhergestellt werden können. Standard: `2592000`. |

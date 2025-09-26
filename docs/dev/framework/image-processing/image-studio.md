@@ -260,7 +260,7 @@ If you are using Twig, there are three supported ways to get figures/images into
    If you want to specify more config, you can pass a *config* object as the third argument.
 
    {{% notice "note" %}}
-   This has been deprecated in Contao **5.0** in favor of the `figure` function above.
+   This has been deprecated in Contao **5.0** in favor of the [`figure` function](https://docs.contao.org/5.x/dev/reference/twig/functions/figure).
    {{% /notice %}}
    
    In the config object you can configure the same things you would as when using the `FigureBuilder` (see

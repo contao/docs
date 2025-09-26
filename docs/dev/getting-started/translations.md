@@ -26,15 +26,6 @@ Alternatively you can also create an XLIFF file (`.xlf`) instead of using the PH
 array notation. Finding the right translation key and domain can only be done by 
 searching through the source of the translations. 
 
-{{< version-tag "5.3" >}} Since Contao **5.3** you can also use Symfony translations by prefixing the Contao translation
-domain with `contao_`:
-
-```yaml
-# translations/contao_default.en.yaml
-MSC:
-    more: more
-```
-
 Read more about translations in the [framework documentation][1].
 
 

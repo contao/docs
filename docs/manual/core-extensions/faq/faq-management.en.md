@@ -180,16 +180,6 @@ Attachments are files that are linked to an FAQ. These files are offered for dow
 
 **Disable comments:** Here you deactivate the comment function for a question.
 
-{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the FAQ page should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, FAQ pages inherit the search indexer setting from the page that contains the "FAQ reader" module. If necessary, this behavior can be adjusted per FAQ page:
-
-- **Default:** Indexing according to the search indexer setting from the page with the "FAQ reader" module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
-- **Always index:** Include the FAQ page, even if it has the robots tag *noindex* or the page with the "FAQ reader" module has a different setting.
-- **Never index:** Exclude the FAQ page, even if it has the robots tag *index* or the page with the "FAQ reader" module has a different setting.
-
-{{% notice info %}}
-The **Search indexer** setting can only be adjusted if a redirect page has been selected in the FAQ category.
-{{% /notice %}}
-
 
 ### Publication
 

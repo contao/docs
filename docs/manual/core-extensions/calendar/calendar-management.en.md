@@ -194,9 +194,6 @@ on which the front end module "Eventleser" is integrated to display the complete
 **Link text:** Here you can overwrite the standard text of the "Read more..." link. <sup>1</sup> <sup>2</sup> 
 <sup>3</sup> <sup>4</sup>
 
-{{< version-tag "5.3" >}} **Canonical URL:** Here you can define an individual canonical URL such as 
-https://www.example.com/. <sup>1</sup>
-
 **Redirect page**: Here you can select the destination page from the page structure. <sup>2</sup>
 
 **Article:** Here you select the destination article. <sup>3</sup>
@@ -321,12 +318,6 @@ are both exported in the RSS feed and offered for download on the website.
 **CSS class:** Here you can add a CSS class to the event.
 
 **Disable comments:** Here you deactivate the comment function for an event.
-
-{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the event should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, events inherit the search indexer setting from the page that contains the "event reader" module. If necessary, this behavior can be adjusted per event:
-
-- **Default:** Indexing according to the search indexer setting from the page with the "event reader" module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
-- **Always index:** Include the event, even if it has the robots tag *noindex* or the page with the "event reader" module has a different setting.
-- **Never index:** Exclude the event, even if it has the robots tag *index* or the page with the "event reader" module has a different setting.
 
 
 ### Publish settings

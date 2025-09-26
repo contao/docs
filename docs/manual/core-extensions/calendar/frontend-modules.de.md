@@ -91,9 +91,6 @@ existiert. Dieses Feature ist vor allem im Multidomain-Betrieb mit mehreren unab
 **Laufende Events ausblenden:** Hier kannst du die laufenden Events in der Liste der zukünftigen Events nicht anzeigen 
 lassen.
 
-{{< version-tag "5.3" >}} **Aktuelle URL für kanonische Links verwenden:** Hier kannst du einstellen, dass die aktuelle URL anstelle der
-konfigurierten Leseseite für kanonische Links verwendet wird.
-
 
 ### Übersichtsseite
 

@@ -46,19 +46,8 @@ zur Startseite des Backends zurück.
 ![Handbuch]({{% asset "icons/manual.svg" %}}?classes=icon,backend) **Handbuch:** Beim Klick auf diesen Link wird das 
 Handbuch aufgerufen.
 
-![Favorit speichern]({{% asset "icons/favorite.svg" %}}?classes=icon,backend)  **Favorit speichern:** Beim Klick auf 
-diesen Link kannst du die aktuelle URL im Backend als Favorit Eintrag speichern. Vorhandene Favoriten-Links werden im 
-Navigationsbereich aufgeführt. {{< version-tag "5.1" >}}
-
-![Favoriten]({{% asset "images/manual/administration-area/de/favoriten.png" %}}?classes=shadow)
-
 ![Hinweise]({{% asset "icons/alert.svg" %}}?classes=icon,backend) **Hinweise:** Beim Klick auf diesen Link öffnet ein 
 Modal und zeigt mögliche Hinweise (z. B. Wartungsmodus) an.
-
-![Design]({{% asset "icons/color_scheme.svg" %}}?classes=icon,backend) **Design:** Du kannst zwischen hellen und dunklen 
-Backend-Design wählen. {{< version-tag "5.1" >}}
-
-![Dunkles Design]({{% asset "images/manual/administration-area/de/dunkles-design.png" %}}?classes=shadow)
 
 **Debug-Modus:** Beim Klick auf diesen Link wird der [Debug-Modus](../../system/debug-modus/) eingeschaltet bzw. ausgeschaltet.
 
@@ -72,9 +61,6 @@ weitergeleitet.
 
   + ![Sicherheit]({{% asset "icons/shield_small.svg" %}}?classes=icon,backend) **Sicherheit:** Über diesen Link kann 
   die [Zwei-Faktor-Authentifizierung](https://de.wikipedia.org/wiki/Zwei-Faktor-Authentisierung) für die Anmeldung im Backend aktiviert werden.
-
-  + ![Favoriten]({{% asset "icons/favorite.svg" %}}?classes=icon,backend) **Favoriten:** Über diesen Link erreichst du 
-  die Verwaltung der Favoriten. {{< version-tag "5.1" >}}
 
   + ![Abmelden]({{% asset "icons/exit.svg" %}}?classes=icon,backend) **Abmelden:** Über diesen Link kannst du dich vom 
   Backend abmelden.

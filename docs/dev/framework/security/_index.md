@@ -22,8 +22,7 @@ checks the [request scope][RequestScope]. For example in the  front end, all URL
 request attribute set to `frontend` and the `contao_frontend` firewall will thus be applicable to all these URLs. Contao
 **4.13** implements an [authentication listener][SymfonyAuthenticationListener] which will check for any POST request
 containing the parameters `username` and `password` and the parameter `FORM_SUBMIT` with the value `tl_login` (as these
-are the parameters used by Contao's login module). In Contao **5** a [custom authenticator][SymfonyAuthenticator] is
-used for this.
+are the parameters used by Contao's login module).
 
 
 ## Voters

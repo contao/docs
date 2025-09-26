@@ -190,11 +190,6 @@ be a full CRON expression, e.g. `*/5 * * * *` for "every 5 minutes".
 {{% /tab %}}
 
 {{% tab title="PHP" %}}
-
-{{% notice "note" %}}
-This method is deprecated since Contao **4.13** and does not work in Contao **5** anymore.
-{{% /notice %}}
-
 You can register your own cron jobs using the `$GLOBALS['TL_CRON']` arrays. It is
 an associative array with the following keys, representing the available intervals:
 

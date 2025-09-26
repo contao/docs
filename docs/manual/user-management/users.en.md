@@ -36,8 +36,6 @@ separately.
 
 **Theme modules:** Here you define access to the sub-modules of the Theme Manager.
 
-{{< version-tag "5.3" >}} **Front end modules:** This is where you define access to the front end modules.
-
 
 ### Allowed elements
 
@@ -123,10 +121,6 @@ delete existing ones.
 
 **News feed permissions:** Here you define whether the members of the user group may create new RSS feeds or delete 
 existing ones.
-
-{{< version-tag "5.3" >}} The news feeds are no longer created in the archive, but via the 
-[news feed](/en/site-structure/news-feed/) page type. If members of the user group are to access the feeds, they must 
-be granted access in the [pagemounts](#pagemounts).
 
 
 ### Events permissions

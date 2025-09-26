@@ -212,16 +212,6 @@ settings, you can also disable the search function completely.
 
 **Do not search:** Here you can exclude a page from the search.
 
-{{% notice info %}}
-The **Do not search** checkbox has been replaced by the **Search indexer** selection list in Contao **5.6**.
-{{% /notice %}}
-
-{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the page should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, the setting of the metadata robots tag is observed and used. If necessary, this behavior can be adjusted per page:
-
-- **Default (-):** Indexing according to the setting of the metadata robots tag.
-- **Always index:** Include the page, even if it has the robots tag *noindex*.
-- **Never index:** Exclude the page, even if it has the robots tag *index*.
-
 
 ## Keyboard navigation
 

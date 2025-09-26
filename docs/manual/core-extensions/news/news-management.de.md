@@ -218,8 +218,6 @@ eingebunden ist.
 
 **Link-Text:** Hier kannst du den Standard-Text des "Weiterlesen…"-Links überschreiben. <sup>1</sup> <sup>2</sup> <sup>3</sup> <sup>4</sup>
 
-{{< version-tag "5.3" >}} **Kanonische URL:** Hier kannst du eine individuelle kanonische URL wie z. B. https://www.example.com/ festlegen. <sup>1</sup>
-
 **Weiterleitungsseite:** Hier wählst du die Zielseite aus der Seitenstruktur aus. <sup>2</sup>
 
 **Artikel:** Hier wählst du den Zielartikel aus. <sup>3</sup>
@@ -335,12 +333,6 @@ Diese Dateien werden sowohl im RSS-Feed exportiert als auch auf der Webseite zum
 **CSS-Klasse:** Hier kannst du dem Beitrag eine CSS-Klasse hinzufügen.
 
 **Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für einen Beitrag.
-
-{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob der Nachrichtenbeitrag bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben Nachrichtenbeiträge die Suchindexierer-Einstellung von der Seite, die das »Nachrichtenleser«-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro Nachrichtenbeitrag anpassen:
-
-- **Standard (-):** Indizierung gemäß der Suchindexierer-Einstellung von der Seite mit dem »Nachrichtenleser«-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
-- **Immer indizieren:** Den Nachrichtenbeitrag einbeziehen, auch wenn er den Robots-Tag *noindex* hat oder die Seite mit dem »Nachrichtenleser«-Modul andere Einstellungen hat.
-- **Niemals indizieren:** Den Nachrichtenbeitrag ausschließen, auch wenn er den Robots-Tag *index* hat oder die Seite mit dem »Nachrichtenleser«-Modul andere Einstellungen hat.
 
 
 ### Veröffentlichung {#veroeffentlichung}

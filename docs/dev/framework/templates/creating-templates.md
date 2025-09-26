@@ -517,27 +517,46 @@ the back end and not to structure content in templates.
 
 #### Images
 
-{{< version-tag "5.0" >}} The `figure` and `picture` components are suited to render any built `Figure` object. In case
-you cannot or don't want to create a `Figure` in the controller, you can alternatively use the `figure` function to
-build a `Figure` instance on the fly. Internally, this uses the `FigureBuilder` from the Contao
-[image studio]({{% relref "image-studio#twig" %}}). In case you also want to create a picture/resize configuration
-on the fly, you can use the respective `picture_configuration` function.
+You can output a figure directly from within your template by using the `contao_figure` Twig function. The function
+expects a *resource* (uuid, id, path) as the first and the *image size* as the second argument. If you want to specify
+more config, you can pass a *config* object as the third argument.
+
+{{% notice "note" %}}
+This has been deprecated in Contao **5.0** in favor of the [`figure` function](https://docs.contao.org/5.x/dev/framework/templates/creating-templates#images).
+{{% /notice %}}
+
+In the config object you can configure the same things you would as when using the `FigureBuilder` (see
+[reference][FigureBuilderOptionsReference]). In fact, under the hood, the Twig function uses
+[PropertyAccess][PropertyAccess] to configure a `FigureBuilder` instance. This is why you can also use the same short
+notation you expect from Twig when accessing variables (e.g. `size` instead of `setSize`). In the case of metadata,
+you can also just pass an object which will internally be converted into `Metadata`. 
 
 ```twig
 {# It's enough to specifiy the resource and size… #}
-{% set figure = figure('path/to/my/image.png', '_my_size') %}
+{{ contao_figure('path/to/my/image.png', '_my_size') }}
+    
+{# …but you can also go wild with the options. #}
+{{ contao_figure(id, [200, 200, 'proportional'], { 
+    metadata: { alt: 'Contao Logo', caption: 'Look at this CMS!' },
+    enableLightbox: true,
+    lightboxGroupIdentifier: 'logos',
+    lightboxSize: '_big_size',
+    linkHref: 'https://contao.org',
+    options: { attr: { class: 'logo-container' } }
+}) }}
+```
 
-{# …but you can also go wild with the options: #}
-{% set figure = figure(id, [200, 200, 'proportional'], { 
-  metadata: { alt: 'Contao Logo', caption: 'Look at this CMS!' },
-  enableLightbox: true,
-  lightboxGroupIdentifier: 'logos',
-  lightboxSize: '_big_size',
-  linkHref: 'https://contao.org',
-  options: { attr: { class: 'logo-container' } }
-}) %}
+{{% notice note %}}
+By default, the `figure.html.twig` template (see 1) is used to render the result, but you can optionally pass a
+custom template as the fourth argument. The template will receive a `figure` variable with your configured `Figure`
+as its context.
+{{% /notice %}}
 
-{# You can even use a custom - on the fly - picture configuration: #} 
+If you want to use a complex size configuration for just one image, you do not need to create a global configuration.
+Instead, use the `picture_config` Twig function, pass it the configuration and use the result as the size argument
+of the `contao_figure` function:
+
+```twig
 {% set special_size = picture_config({
     width: 400,
     height: 400,
@@ -549,57 +568,10 @@ on the fly, you can use the respective `picture_configuration` function.
         media: '(max-width: 140px)',
     }]
 }) %}
-{% set figure = figure(uuid, special_size) %}
+
+{{ contao_figure(uuid, special_size) }}
 ```
 
-You can then query the object for things like metadata or sizes and/or output it as an image, for example using the
-pre-made `_figure` component:
-
-```twig
-{% use "@Contao/component/_figure.html.twig" %}
-
-{# Create the figure inline or use the one already in our context #}
-{% set my_figure = figure(…) %}
-
-{# Output it using the figure component #}
-{% with {figure: my_figure} %}{{ block('figure_component') }}{% endwith %}
-```
-
-{{% notice info %}}
-In Contao **4.13** you need to use the `contao_figure` instead of the `figure` function. While allowing the same
-arguments, this function will directly render the (default or given) image template instead of returning a `Figure`
-object. Note, that this function is deprecated since Contao **5.0**.
-{{% /notice %}}
-
-#### Formatting
-
-{{< version-tag "5.0" >}} You can use the `highlight` and `highlight_auto` filters to generate code highlighting with
-the `scrivo/highlight.php` library. You can either pass a language to use or let the library guess the language
-(`highlight_auto`). In the latter case, you can optionally constrain the selection to a given subset of languages.
-
-```twig
-{# Output code directly as a string… #}
-<pre><code>{{ code|highlight(language) }}</code></pre>
-
-{# … and/or query the result properties: #}
-{% set highlighted = code|highlight_auto %}
-The detected language was {{ highlighted.language }} with a relevance of {{ highlighted.relevance }}.
-```
-
-{{< version-tag "5.0" >}} The [`format_bytes` filter]({{% ref "format_bytes" %}}) transforms a number representing a
-file size in bytes into a human-readable form. It therefore uses the `MSC.decimalSeparator`, `MSC.thousandsSeparator`
-and `UNITS` declarations from the global translation catalogue.
-
-```twig
-{# outputs 1536 #} 
-{{ size }}
-
-{# outputs "1.5 KiB" #}
-{{ size|format_bytes }}
-
-{# outputs "1.500 KiB" #}
-{{ size|format_bytes(3) }}
-```
 
 #### Translations
 
@@ -641,13 +613,6 @@ As of writing this, there is unfortunately no replacement for `PageModel::getFro
 now, stick to generating the URLs in your controller and then pass them to your template (where they are only output).
 {{% /notice %}}
 
-{{< version-tag "5.0" >}} The `prefix_url` filter prefixes relative URLs with the request base path. This is needed when
-dealing with relative URLs on a page that does not set a `<base>` tag.
-
-```twig
-{# will outpuot something like "https://example.com/some/relative/url.html" #}
-{{ 'some/relative/url.html'|prefix_url }}
-```
 
 ## Naming convention
 
