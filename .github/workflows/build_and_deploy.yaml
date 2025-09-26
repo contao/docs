@@ -3,7 +3,7 @@ name: Build and deploy to https://docs.contao.org
 on:
     push:
         branches:
-            - main
+            - 4.x
     workflow_dispatch: ~
 
 jobs:
