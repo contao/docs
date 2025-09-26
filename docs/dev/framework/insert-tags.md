@@ -287,9 +287,6 @@ add the `uncached` flag whenever used.
 <div>{{rot13::Payload|uncached}}</div>
 ```
 
-{{% notice warning %}}
-Using the `uncached` flag is deprecated and doesn’t work in Contao 5.0 anymore. Use the `{{fragment::*}}` insert tag instead.
-{{% /notice %}}
 
 [InsertTagFlags]: https://docs.contao.org/manual/en/article-management/insert-tags/#insert-tag-flags
 [IfLanguageInsertTag]: https://github.com/contao/contao/blob/5.x/core-bundle/src/InsertTag/Resolver/IfLanguageInsertTag.php

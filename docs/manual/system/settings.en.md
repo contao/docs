@@ -922,9 +922,7 @@ The following is a comprehensive list of localconfig configurations still in use
 | `defaultGroup` | [Default page group](#default-access-rights). |
 | `defaultUser` | [Default page owner](#default-access-rights). |
 | `disableCron` | [Deactivate the command scheduler](#front-end-configuration). |
-| `disableInsertTags` | Allows you to disable the replacement of [insert tags][InsertTags] globally. |
-| `disableRefererCheck` | Allows you to disable the [request token check][RequestTokens] entirely _(deprecated)_. |
-| `doNotCollapse` | [Do not collapse elements](#back-end-configuration). |
+| `doNotCollapse` | [Do not collapse elements](#back-end-configuration). ({{< version-tag "5.3" >}} _deprecated_ - it is now a back end user setting)  |
 | `doNotRedirectEmpty` | [Do not redirect empty URLs](#front-end-configuration). |
 | `folderUrl` | [Enable folder URLs](#front-end-configuration). |
 | `gdMaxImgHeight` | [Maximum GD image height](#files-and-images). |
@@ -934,18 +932,15 @@ The following is a comprehensive list of localconfig configurations still in use
 | `installPassword` | Stores the hashed value of the Contao Install Tool password. |
 | `licenseAccepted` | Stores whether the license in the Contao Install Tool has been accepted. |
 | `logPeriod` | Duration in seconds for how long entries in the Contao back end system log should be kept. Default: `604800`. |
-| `maxFileSize` | [Maximum upload file size](#upload-settings). |
-| `maxImageWidth` | Allows you to define a maximum image width for the front end _(deprecated)_. |
+| `maxFileSize` | [Maximum upload file size](#upload-settings). |a
 | `maxPaginationLinks` | Allows you define the number links shown in the automatically generated front end paginations. Default: `7`. |
 | `maxResultsPerPage` | [Maximum items per page](#back-end-configuration). |
 | `minPasswordLength` | Allows you to define the minimum password length for front end members and back end users. Default: `8`. |
-| `requestTokenWhitelist` | Allows you to disable the [request token check][RequestTokens] for requests coming from the the hosts in this array _(deprecated)_. |
 | `resultsPerPage` | [Items per page](#back-end-configuration). |
 | `timeFormat` | [Time format](#date-and-time). |
 | `timeZone` | [Time zone](#date-and-time). |
 | `undoPeriod` | Duration in seconds for how long deleted entries can still be restored. Default: `2592000`. |
 | `uploadTypes` | [Upload file types](#upload-settings). |
-| `useAutoItem` | Allows you to disable the usage of the so called _auto item_ _(not recommended)_. |
 | `versionPeriod` | Duration in seconds for how long previous versions of edited entries should be kept. Default: `7776000`. |
 
 
