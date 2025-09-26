@@ -708,9 +708,9 @@ all the metadata defined in the DCA that is included in the generated button. Th
 containing HTML for the button (or an empty string, if you do not want to show a button).
 
 {{% notice "note" %}}
-The old style of button callback with multiple arguments has deprecated in Contao 5 and will be removed in Contao 6.
-It is still supported for backwards compatibility, but you should update the implementation to the new style once you 
-stop supporting Contao 4.
+The old style of button callback with multiple arguments has been deprecated in Contao **5** and will be removed in
+Contao **6**. It is still supported for backwards compatibility, but you should update the implementation to the new
+style once you stop supporting Contao 4.
 {{% /notice %}}
 
 {{% expand "Parameters" %}}
