@@ -76,10 +76,6 @@ b, strong, label, th {
     border-bottom: 4px solid var(--MENU-HEADER-BORDER-color);
 }
 
-#R-homelinks {
-    display: none;
-}
-
 .children-li p {
     font-size: small;
 }
@@ -771,4 +767,11 @@ mark {
 
 .menu-control select option {
     color: var(--MENU-SECTIONS-LINK-color);
+}
+
+/* More margin for footer menus */
+#R-sidebar .R-shortcutmenu-footercontrols > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
 }
