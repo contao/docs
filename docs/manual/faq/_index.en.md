@@ -20,11 +20,6 @@ If there are multiple records in the database table "tl_user" for which the admi
 value for all of them to create a new administrator in the Contao [install toolbar](/en/installation/contao-installtool/).
 {{% /faq %}}
 
-{{% faq "I have forgotten the Install Tool password, how can I reset it?" %}}
-Remove the line in the file "system/config/localconfig.php" starting with `$GLOBALS['TL_CONFIG']['installPassword']`. 
-Afterwards you can set a new password with the [Install-Tool](/en/installation/contao-installtool/).
-{{% /faq %}}
-
 {{% faq "Can I maintain multiple websites with Contao?" %}}
 Yes Contao supports [multi-domain operation](/en/layout/site-structure/multi-domain-operation/) and 
 multilingual [websites](/en/layout/site-structure/multilingual-websites/).

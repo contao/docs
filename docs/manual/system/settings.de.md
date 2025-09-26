@@ -932,7 +932,6 @@ Beschreibung.
 | `allowedDownload` | [Erlaubte Download-Dateitypen](#dateien-und-bilder). |
 | `allowedAttributes` | [Erlaubte HTML-Attribute](#sicherheitseinstellungen). |
 | `allowedTags` | [Erlaubte HTML-Tags](#sicherheitseinstellungen). |
-| `characterSet` | Der von Contao benutzte Zeichensatz. _(veraltet)_ Nutze den Parameter `kernel.charset` stattdessen. Standard: `UTF-8`. |
 | `dateFormat` | [Datumsformat](#datum-und-zeit). |
 | `datimFormat` | [Datums- und Zeitformat](#datum-und-zeit). |
 | `defaultChmod` | [Standard-Zugriffsrechte](#standard-zugriffsrechte). |
@@ -946,8 +945,6 @@ Beschreibung.
 | `gdMaxImgWidth` | [Maximale GD-Bildbreite](#dateien-und-bilder). |
 | `imageHeight` | [Maximale Bildhöhe](#datei-uploads). |
 | `imageWidth` | [Maximale Bildbreite](#datei-uploads). |
-| `installPassword` | Speichert den Hash-Wert des Passwortes für das Contao-Installtool. |
-| `licenseAccepted` | Speichert ob die Lizenz im Contao-Installtool bereits akzeptiert wurde. |
 | `logPeriod` | Zeitspanne in Sekunden wie lange Einträge im System-Log behalten werden sollen. Standard: `604800`. |
 | `maxFileSize` | [Maximale Upload-Dateigröße](#datei-uploads). |
 | `maxPaginationLinks` | Erlaubt es die Anzahl an Links in den automatisch generierten Blätternavigationen zu ändern. Standard: `7`. |

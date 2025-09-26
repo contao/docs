@@ -91,33 +91,3 @@ möchtest, musst du einen Administrator-Benutzer anlegen, mit dem du dich späte
 
 Nachdem du den Administrator-Benutzer erstellt hast, ist die Installation von Contao abgeschlossen.  
 Der Link am rechten unteren Rand bringt dich zum Backend.
-
-
-## Das Installtool zurücksetzen {#das-installtool-zuruecksetzen}
-
-Es gibt zwei Gründe, warum du das Installtool eventuell zurücksetzen willst:
-
-1. Das Installtool wurde gesperrt.
-2. Du hast das Installtool-Passwort vergessen.
-
-Das Installtool ist gegen [Brute-Force-Attacken](https://de.wikipedia.org/wiki/Brute-Force-Methode) geschützt und wird 
-automatisch gesperrt, wenn mehr als dreimal hintereinander ein falsches Passwort eingegeben wurde. 
-
-Du hast drei Möglichkeiten das Installtool zu entsperren:
-
-- Über den Contao Manager, indem du unter Systemwartung auf »Installtool entsperren« klickst.
-![Das Installtool zurücksetzen]({{% asset "images/manual/installation/de/das-installtool-zuruecksetzen.png" %}}?classes=shadow)
-- Über die Kommandozeile, indem du im Hauptverzeichnis deiner Contao-Installation folgendes Kommando absetzt:
-
-    ```bash
-    php vendor/bin/contao-console contao:install:unlock
-    ```
-
-- Indem du auf dem Webserver die Datei `install_lock` im Verzeichnis `/var` löschst.
-
-
-Ein vergessenes Passwort lässt sich in der lokalen Konfigurationsdatei `/system/config/localconfig.php` zurücksetzen.
-
-Suche dazu die Zeile mit der Anweisung `$GLOBALS['TL_CONFIG']['installPassword'] = '…';` und entferne diese komplett 
-aus der Datei. Danach kannst du beim erneuten Aufruf des Installtools ein neues Passwort vergeben.
-

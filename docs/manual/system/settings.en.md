@@ -915,7 +915,6 @@ The following is a comprehensive list of localconfig configurations still in use
 | `allowedDownload` | [Download file types](#files-and-images). |
 | `allowedAttributes` | [Allowed HTML attributes](#security-settings). |
 | `allowedTags` | [Allowed HTML tags](#security-settings). |
-| `characterSet` | Character set used by Contao. _(deprecated)_ Use the parameter `kernel.charset` instead. Default: `UTF-8` |
 | `dateFormat` | [Date format](#date-and-time). |
 | `datimFormat` | [Date and time format](#date-and-time). |
 | `defaultChmod` | [Default access rights](#default-access-rights). |
@@ -929,8 +928,6 @@ The following is a comprehensive list of localconfig configurations still in use
 | `gdMaxImgWidth` | [Maximum GD image width](#files-and-images). |
 | `imageHeight` | [Maximum image height](#upload-settings). |
 | `imageWidth` | [Maximum image width](#upload-settings). |
-| `installPassword` | Stores the hashed value of the Contao Install Tool password. |
-| `licenseAccepted` | Stores whether the license in the Contao Install Tool has been accepted. |
 | `logPeriod` | Duration in seconds for how long entries in the Contao back end system log should be kept. Default: `604800`. |
 | `maxFileSize` | [Maximum upload file size](#upload-settings). |
 | `maxPaginationLinks` | Allows you define the number links shown in the automatically generated front end paginations. Default: `7`. |
