@@ -760,17 +760,17 @@ class ExampleListOperationListener
 
     public function __invoke(
         array $row,
-        ?string $href,
+        string|null $href,
         string $label,
         string $title,
-        ?string $icon,
+        string|null $icon,
         string $attributes,
         string $table,
         array $rootRecordIds,
-        ?array $childRecordIds,
+        array|null $childRecordIds,
         bool $circularReference,
-        ?string $previous,
-        ?string $next,
+        string|null $previous,
+        string|null $next,
         DataContainer $dc
     ): string
     {

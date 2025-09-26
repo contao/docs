@@ -52,7 +52,7 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 #[AsHook('createDefinition')]
 class CreateDefinitionListener
 {
-    public function __invoke(string $key, string $value, string $definition, array &$dataSet): ?array
+    public function __invoke(string $key, string $value, string $definition, array &$dataSet): array|null
     {
         if ('border-radius' === $key) {
             return ['border-radius' => $value];

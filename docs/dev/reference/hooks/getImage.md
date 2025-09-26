@@ -84,7 +84,7 @@ class GetImageListener
         File $file, 
         string $targetPath, 
         Image $imageObject
-    ): ?string
+    ): string|null
     {
         // Return the path to a custom image
         if (…) {

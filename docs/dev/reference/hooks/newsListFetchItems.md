@@ -56,7 +56,7 @@ use Contao\Module;
 #[AsHook('newsListFetchItems')]
 class NewsListFetchItemsListener
 {
-    public function __invoke(array $newsArchives, ?bool $featuredOnly, int $limit, int $offset, Module $module)
+    public function __invoke(array $newsArchives, bool|null $featuredOnly, int $limit, int $offset, Module $module)
     {
         if (…) {
             // Query the database and return the records
