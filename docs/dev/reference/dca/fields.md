@@ -195,12 +195,6 @@ Each field can be validated against a regular expression.
 | useRawRequestData  | true/false (`bool`)           | If true the raw request data from the Symfony request is used. **Warning:** input filtering is bypassed! Make sure the data is never output anywhere in the back end unescaped which it would if you added the field to a regular back end list view for example. |
 | versionize         | true/false (`bool`)           | If false skip this field in the versioning. Default `true`. |
 
-{{% notice warning %}}
-Using the `encrypt` option is deprecated and its internal implementation relies 
-on `mcrypt`, which will no longer be available in PHP 7.2 and higher. Use a [load](/reference/dca/callbacks/#fields-field-load)
-and [save callback](/reference/dca/callbacks/#fields-field-save) with your own implementation instead.
-{{% /notice %}}
-
 
 #### Regular Expressions
 

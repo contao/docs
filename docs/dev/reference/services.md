@@ -226,7 +226,7 @@ class Example
 ## ScopeMatcher
 
 The `contao.routing.scope_matcher` service provides the ability to identify the Contao scope of a request, if
-applicable. It should be used instead of checking the deprecated `TL_MODE` constant.
+applicable.
 
 ```php
 use Contao\CoreBundle\Routing\ScopeMatcher;

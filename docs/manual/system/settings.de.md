@@ -939,9 +939,7 @@ Beschreibung.
 | `defaultGroup` | [Standardgruppe](#standard-zugriffsrechte). |
 | `defaultUser` | [Standardbesitzer](#standard-zugriffsrechte). |
 | `disableCron` | [Den Command-Scheduler deaktivieren](#frontend-einstellungen). |
-| `disableInsertTags` | Erlaubt es das Ersetzen von [Insert-Tags][InsertTags] global zu deaktivieren. |
-| `disableRefererCheck` | Erlaubt es die [Request Token Überprüfung][RequestTokens] komplett zu deaktivieren _(veraltet)_. |
-| `doNotCollapse` | [Elemente nicht verkürzen](#backend-einstellungen). |
+| `doNotCollapse` | [Elemente nicht verkürzen](#backend-einstellungen). ({{< version-tag "5.3" >}} _veraltet_ - Diese Einstellung befindet sich nun beim Backend-User) |
 | `doNotRedirectEmpty` | [Leere URLs nicht umleiten](#frontend-einstellungen). |
 | `folderUrl` | [Ordner-URLs verwenden](#frontend-einstellungen). |
 | `gdMaxImgHeight` | [Maximale GD-Bildhöhe](#dateien-und-bilder). |
@@ -952,17 +950,14 @@ Beschreibung.
 | `licenseAccepted` | Speichert ob die Lizenz im Contao-Installtool bereits akzeptiert wurde. |
 | `logPeriod` | Zeitspanne in Sekunden wie lange Einträge im System-Log behalten werden sollen. Standard: `604800`. |
 | `maxFileSize` | [Maximale Upload-Dateigröße](#datei-uploads). |
-| `maxImageWidth` | Erlaubt es eine maximale Bildbreite für das Frontend zu setzen _(veraltet)_. |
 | `maxPaginationLinks` | Erlaubt es die Anzahl an Links in den automatisch generierten Blätternavigationen zu ändern. Standard: `7`. |
 | `maxResultsPerPage` | [Maximum Datensätze pro Seite](#backend-einstellungen). |
 | `minPasswordLength` | Erlaubt es die minimale Passwortlänge für Frontend-Mitglieder und Backend-Nutzer zu ändern. Standard: `8`. |
-| `requestTokenWhitelist` | Erlaubt es die [Request Token Überprüfung][RequestTokens] für Anfragen von den definierten Hosts zu deaktivieren _(veraltet)_. |
 | `resultsPerPage` | [Elemente pro Seite](#backend-einstellungen). |
 | `timeFormat` | [Zeitformat](#datum-und-zeit). |
 | `timeZone` | [Zeitzone](#datum-und-zeit). |
 | `undoPeriod` | Zeitspanne in Sekunden wie lange gelöschte Einträge wiederhergestellt werden können. Standard: `2592000`. |
 | `uploadTypes` | [Upload-Dateitypen](#datei-uploads). |
-| `useAutoItem` | Erlaubt es das sogenannte »Auto Item« zu deaktivieren _(nicht empfohlen)_. |
 | `versionPeriod` | Zeitspanne in Sekunden wie lange ältere Versionen von geänderten Einträgen behalten werden sollen. Standard: `7776000`. |
 
 
