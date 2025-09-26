@@ -67,8 +67,3 @@ For newer versions:
 ### This manual is divided into the following chapters:
 
 {{% children description="true" %}}
-
-
-{{% notice note %}}
-The English version of the manual is still a work in progress.
-{{% /notice %}}
