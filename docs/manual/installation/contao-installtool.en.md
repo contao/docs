@@ -71,27 +71,3 @@ If you did not import a template, for example if you want to create a new websit
 
 After you have created the administrator user, the installation of Contao is complete and the link at the bottom right
 will redirect you to the back end.
-
-
-## Reset the Install Tool {#reset-the-installtool}
-
-There are two reasons why you might want to reset the Install Tool:
-
-1. The Install Tool has been locked.
-2. You have forgotten the Install Tool password.
-
-The Install Tool is protected against [brute force attacks](https://de.wikipedia.org/wiki/Brute-Force-Methode) and is automatically locked if an incorrect password is entered more than three times in a row.
-
-You have three options to unlock the Install Tool:
-
-- Via the Contao Manager by clicking on "Unlock Install Tool" in the "Maintenance" menu.![Reset the Install Tool]({{% asset "images/manual/installation/en/unlock-install-tool-manager.png" %}}?classes=shadow)
-- From the command line by executing the following command in the root directory of your Contao installation:
-  
-  ```bash
-  php vendor/bin/contao-console contao:install:unlock
-  ```
-- By deleting the file `install_lock`in the directory `/var`on the web server.
-
-A forgotten password can be reset in the local configuration (`/system/config/localconfig.php`) file.
-
-Search for the line with the statement `$GLOBALS['TL_CONFIG']['installPassword'] = '…';`and remove it completely from the file. Then you can set a new password when again once you reload the Install Tool.
