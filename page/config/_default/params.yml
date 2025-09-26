@@ -30,4 +30,5 @@ sidebarfootermenus:
       identifier: footercontrols
       elements:
         - type: languageswitcher
+        - type: versionswitcher
         - type: variantswitcher
