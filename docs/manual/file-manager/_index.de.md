@@ -26,7 +26,7 @@ Eine UUID ist systemübergreifend eindeutig und sieht zum Beispiel so aus: `bb64
 
 ### Verschachtelte Ordner erstellen
 
-{{< version-tag "4.13" >}} Verschachtelte Ordner können direkt über Eingabe von z. B. »OrdnerA/OrdnerB« erstellt werden.
+Verschachtelte Ordner können direkt über Eingabe von z. B. »OrdnerA/OrdnerB« erstellt werden.
 
 ![Verschachtelte Ordner anlegen]({{% asset "images/manual/file-manager/de/folder-name.gif" %}}?classes=shadow)
 

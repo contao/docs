@@ -6,12 +6,6 @@ aliases:
     - /framework/content-elements/
 ---
 
-{{% notice info %}}
-This covers the documentation on how to create content elements in Contao **4.6**
-and up. In previous Contao version, Content elements must extend from `\Contao\ContentElement`
-and then be registered via the `$GLOBAL['TL_CTE']` array.
-{{% /notice %}}
-
 In Contao, Content Elements are the fundamental content blocks. In its simplest
 form it is a fragment controller which receives data in form of a content model
 and returns a response.
@@ -107,7 +101,7 @@ Using the naming convention for templates mentioned above, the final template na
 </div>
 ```
 
-{{< version-tag "4.13" >}} And `content_element/example_element` for [Twig templates][TwigTemplates]:
+And `content_element/example_element` for [Twig templates][TwigTemplates]:
 
 ```twig
 {# templates/content_element/example_element.html.twig #}
@@ -140,7 +134,7 @@ Applying the service tag can either be done via PHP attributes, annotations or v
 {{< tabs groupid="attribute-annotation-yaml" style="code" >}}
 
 {{% tab title="Attribute" %}}
-{{< version-tag "4.13" >}} A content element can be registered using the `AsContentElement` PHP attribute.
+A content element can be registered using the `AsContentElement` PHP attribute.
 
 ```php
 // src/Controller/ContentElement/ExampleElementController.php
@@ -191,7 +185,7 @@ However, it is recommended to only define what you need and otherwise leave the 
 {{% /tab %}}
 
 {{% tab title="Annotation" %}}
-{{< version-tag "4.8" >}} A content element can be registered using the `ContentElement` annotation. The annotation can be used on the class of the content element,
+A content element can be registered using the `ContentElement` annotation. The annotation can be used on the class of the content element,
 if the class is invokable (has an `__invoke` method) or extends from the `AbstractContentElementController`. Otherwise the annotation can be 
 used on the method that will deliver the response.
 
@@ -248,7 +242,7 @@ However, it is recommended to only define what you need and otherwise leave the 
 {{% /tab %}}
 
 {{% tab title="YAML" %}}
-{{< version-tag "4.8" >}} A content element can be registered using the `contao.content_element` service tag.
+A content element can be registered using the `contao.content_element` service tag.
 
 ```yaml
 # config/services.yaml
@@ -348,8 +342,6 @@ If you used a custom category for your content element, its label can also be tr
 
 
 ## Page Model
-
-{{< version "4.9.10" >}}
 
 If your fragment extends from `AbstractContentElementController` (or just `AbstractFragmentController`)
 you can use `$this->getPageModel()` in order to receive the `\Contao\PageModel`

@@ -5,8 +5,6 @@ aliases:
   - /framework/filesystem/config/
 ---
 
-{{< version "4.13" >}}
-
 {{% notice "warning" %}}
 The new filesystem capabilities are currently considered *experimental* and therefore not covered by Contao's BC
 promise. Classes marked with `@experimental` should be considered internal for now. Although not likely, there could

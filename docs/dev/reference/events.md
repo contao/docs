@@ -13,8 +13,6 @@ specific flows of the application, in addition to [Hooks][ContaoHooks].
 
 ## `contao.backend_menu_build`
 
-{{< version "4.5" >}}
-
 This event is dispatched, when the Contao back end menu is built. The event contains
 references to the menu factory as well as the menu tree object of the 
 [KnpMenuBundle][KnpMenuBundle]. This can be used to alter the back end menu to your 
@@ -67,8 +65,6 @@ class BackendMenuBuildListener
 
 
 ## `contao.generate_symlinks`
-
-{{< version "4.7" >}}
 
 This event is dispatched after Contao generated all its necessary symlinks (e.g.
 from `web/files/` to all the public folders in `files/`). The event object returns
@@ -239,8 +235,6 @@ class PreviewUrlConvertListener
 
 ## `contao.robots_txt`
 
-{{< version "4.9" >}}
-
 This event is triggered when the `/robots.txt` route is called. The event allows you
 to retrieve the `webignition\RobotsTxt\File\File` object of the dynamically generated
 `robots.txt`, which allows you to add your own custom records programatically. See
@@ -297,8 +291,6 @@ class RobotsTxtListener
 
 ## `contao.slug_valid_characters`
 
-{{< version "4.5" >}}
-
 This event event is triggered when the valid slug characters options in the back
 end are generated. The event allows you to set custom options.
 
@@ -330,8 +322,6 @@ class SlugValidCharactersListener
 
 
 ## `FilterPageTypeEvent`
-
-{{< version "4.10" >}}
 
 This event event is triggered when the available page types are collected in the
 `PageTypeOptionsListener` for the `type` select of `tl_page`. The event allows you
@@ -365,8 +355,6 @@ class FilterPageTypeListener
 
 
 ## `contao.sitemap`
-
-{{< version "4.11" >}}
 
 This event is triggered in Contao's `SitemapController` when the sitemap is built. The event allows you to modify the XML DOM of the 
 sitemap. The event also stores for which website roots this sitemap was created.
@@ -404,7 +392,7 @@ class SitemapListener
 }
 ```
 
-Since Contao **5.0** you can use the `addUrlToDefaultUrlSet` method of the event:
+For simplicity you can also use the `addUrlToDefaultUrlSet` helper method of the event:
 
 ```php
 // src/EventListener/SitemapListener.php
@@ -427,8 +415,6 @@ class SitemapListener
 
 
 ## `SendNewsletterEvent`
-
-{{< version "4.13" >}}
 
 This event is triggered for each newsletter mail and allows  you to customize
 the newsletter text and HTML content, prevent the submission or perform other
@@ -485,8 +471,6 @@ class SendNewsletterListener
 
 ## `FetchArticlesForFeedEvent`
 
-{{< version "5.0" >}}
-
 This event is dispatched when a news feed is created and is used to collect the news articles before adding them to the
 feed. The event holds references to the feed, the page and the request and allows news articles to be added to it. This
 event is also used by the news bundle itself, so if you want to alter the collection of news articles (before they are
@@ -526,8 +510,6 @@ class FetchArticlesForFeedEventListener
 
 
 ## `TransformArticleForFeedEvent`
-
-{{< version "5.0" >}}
 
 This event is dispatched when a news article is transformed to a news feed item node. The event holds a reference to the
 news archive, feed, page, request and the base URL. The news bundle uses this event to create a feed item based on a

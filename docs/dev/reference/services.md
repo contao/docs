@@ -115,8 +115,6 @@ class Example
 
 ## EntityCacheTags
 
-{{< version "4.13" >}}
-
 The `contao.cache.entity_tags` (`Contao\CoreBundle\Cache\EntityCacheTags`) service helps you tag responses and 
 invalidate cache tags based on entity and model classes and instances. Contao uses a naming convention for database 
 related tags: A tag `contao.db.tl_content.5` targets the content element with the ID 5, while `contao.db.tl_content` 
@@ -157,8 +155,6 @@ Contao's `AbstractController` is also using this functionality in the `tagRespon
 
 
 ## OptIn
-
-{{< version "4.7" >}}
 
 Contao offers an opt-in service (`contao.opt-in`) so that any opt-in process can be tracked centrally. The opt-in references will be saved 
 for the legally required duration and are then automatically discarded (if applicable). The maximum length of the prefix before the "-" is 6.
@@ -422,8 +418,6 @@ class Example
 
 ## SimpleTokenParser
 
-{{< version "4.10" >}}
-
 This service allows parsing *simple tokens*. See the [usage examples][SimpleTokenUsage] from the tests for more details.
 
 {{< tabs groupid="services-contao4-contao5-simple-token-parser" style="code" >}}
@@ -597,8 +591,6 @@ class Example
 ```
 
 ## InsertTagParser
-
-{{< version "4.13" >}}
 
 The `contao.insert_tag.parser` service lets you replace Insert Tags in within strings.
 

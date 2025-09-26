@@ -127,8 +127,8 @@ Formulars geprüft werden.
 | Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
 | E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
 | URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| Absolute URL                                 | Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 **Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
 
@@ -235,8 +235,8 @@ Formulars geprüft werden.
 | Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
 | E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
 | URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| Absolute URL                                 | Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 **Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
 
@@ -487,8 +487,6 @@ Datei.
 **Maximale Eingabelänge:** Hier legst du die maximale Upload-Dateigröße in Bytes fest. Standardmäßig dürfen Dateien bis 
 zu 2 MB hochgeladen werden.
 
-{{< version "4.13" >}}
-
 **Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht 
 diese Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird das Hochladen mit 
 einer Fehlerausgabe im Formular abgebrochen.
@@ -618,8 +616,8 @@ Formulars geprüft werden.
 | Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
 | E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
 | URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| Absolute URL                                 | Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 
 ### Template-Einstellungen

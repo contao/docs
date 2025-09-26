@@ -30,7 +30,7 @@ using the `symfony/skeleton` for example).
 | `assets/`       | JavaScript and CSS assets of the Contao framework and third parties.        |
 | `config/`       | Application configuration files.                                            |
 | `files/`        | Public or protected files manged by Contao's file manager.                  |
-| `public/`       | Public entry points; contains symlinks to other public resources. Prior to Contao version 4.13, the folder was called `web/` |
+| `public/`       | Public entry points; contains symlinks to other public resources.           |
 | `system/`       | Legacy folder for Contao 3 compatibility.                                   |
 | `templates/`    | Customized Contao & Twig templates.                                         |
 | `var/`          | Transient files like the application cache and log files.                   |
@@ -49,12 +49,6 @@ be of interest. Some of those will need to be created manually:
 | `translations/` | Symfony translations. {{< version-tag "5.3" >}} Can also be used for Contao translations. |
 | `composer.json` | Add dependencies, customize autoloading if required.                           |
 
-{{% notice info %}}
-Contao **4.4** still uses the Symfony 3 directory structure. The `config/` folder 
-will be in `app/config/` and the `contao/` folder will be in `app/Resources/contao/`
-instead.
-{{% /notice %}}
-
 
 ### Application Configuration
 
@@ -70,12 +64,8 @@ configurations, if present:
 | `config/config_dev.yaml`  | Configuration for the `dev` environment.                                                      |
 | `config/config_prod.yaml` | Configuration for the `prod` environment.                                                     |
 | `config/parameters.yaml`  | Parameters like database and SMTP server credentials.<sup>1</sup>                             |
-| `config/routes.yaml`     | Definition of application specific routes.<sup>2</sup>                                                    |
-| `config/services.yaml`    | {{< version-tag "4.9" >}} Definition of services.<sup>3</sup>                                 |
-
-{{% notice note %}}
-Contao versions _prior_ to **4.9** only support the `*.yml` file extension.
-{{% /notice %}}
+| `config/routes.yaml`     | Definition of application specific routes.                                                    |
+| `config/services.yaml`    | Definition of services.                                 |
 
 {{% notice info %}}
 <sup>1</sup> Contao still supports the legacy way of defining parameters in a Symfony
@@ -84,30 +74,12 @@ application through the `parameters.yaml`. However it is best-practice to use th
 for more information about the `.env*` files.
 {{% /notice %}}
 
-{{% notice info %}}
-<sup>2</sup> Contao versions **4.6**, **4.7** and **4.8** only support the `routing.yml` file. Starting with Contao **4.9** all 4 variants 
-(`routes.yaml`, `routing.yaml`, `routes.yml` and `routing.yml`) are supported. Prior to Contao **4.6** you will need to implement an 
-[`App\ContaoManager\Plugin`](/framework/manager-plugin/#the-application-specific-manager-plugin) that implements the 
-[`RoutingPluginInterface`](/framework/manager-plugin/#the-routingplugininterface).
-{{% /notice %}}
-
-{{% notice tip %}}
-<sup>3</sup> While Contao versions prior to **4.9** do not load a `config/services.yml` automatically, 
-you can still import it in your `config/config.yml` via
-
-```yaml
-imports:
-    - { resource: services.yml }
-```
-{{% /notice %}}
-
 
 ### Contao Configuration & Translations
 
 Contao has its own configuration files in the form of PHP arrays, as well as translation
 files in the form of either PHP arrays or in an XLIFF format. These files are generally
-defined within the `contao/` folder of your project's root directory (or `app/Resources/contao/`
-in Contao **4.4**).
+defined within the `contao/` folder of your project's root directory.
 
 | File/Directory             | Explanation                                                       |
 | -------------------------- | ----------------------------------------------------------------- |
@@ -142,7 +114,7 @@ already contains the appropriate autoloading directive:
 ```
 
 {{% notice tip %}}
-This is actually not necessary since Contao **4.9** as the Contao Managed Edition automatically adds the  necessary 
+This is actually not necessary as the Contao Managed Edition automatically adds the  necessary 
 autoloading for the `App\` namespace. However you can still add your own autoloading directives of course.
 {{% /notice %}}
 
@@ -195,8 +167,8 @@ Container Array definition of a table, or want to change a translation for
 example.
 
 {{% notice tip %}}
-Starting with Contao **4.9** (Managed Edition), any class within the `App\` namespace 
-within `src/` will be automatically registered as a service, with autowiring and
+Any class within the `App\` namespace 
+within `src/` will be automatically registered as a service by the Contao Managed Edition, with autowiring and
 autoconfiguration enabled. Controllers as services will work as well. However, any class extending from a class from the legacy Contao 
 framework will not be automatically registered as a service (as well as any class that would cause an error during compilation). You can 
 still provide your own `services.yaml` in order to adjust the service registration to your 

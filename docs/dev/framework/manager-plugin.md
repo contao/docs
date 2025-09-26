@@ -597,11 +597,6 @@ Through event subscribers, you can modify a request (e.g. strip cookies) or resp
 before they hit the cache or are forwarded to Contao. For more information about HttpCache,
 please refer to [the FosHttpCache documentation][2].
 
-{{% notice info %}}
-{{< version-tag "4.9.6" >}} This feature is available from **contao/manager-plugin 2.9.0** and **Contao 4.9.6**.
-{{% /notice %}}
-
-
 ```php
 namespace Vendor\SomeBundle\ContaoManager;
 

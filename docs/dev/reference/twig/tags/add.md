@@ -5,8 +5,6 @@ description: Adds output to different sections of the document.
 tags: [Twig]
 ---
 
-{{< version "5.0" >}}
-
 The `add` tag allows you to create output in different predetermined sections of the document, for example in order to
 add `<script>` or `<style>` tags to the `<head>` or `<body>`. Currently supported document locations are as follows: 
 

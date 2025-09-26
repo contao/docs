@@ -5,8 +5,6 @@ description: Converts bytes to a human readable format.
 tags: [Twig]
 ---
 
-{{< version "5.0" >}}
-
 The `format_bytes` filter converts a number representing bytes into a human readable format like "128.0 MiB".
 
 ```twig

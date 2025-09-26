@@ -371,7 +371,7 @@ These functions will be automatically executed when accessed in the template lik
 <?= $this->foo ?>
 ```
 
-{{< version-tag "4.13.46" >}} In some cases you might want to execute a function only once for performance reasons - and then that first result should
+In some cases you might want to execute a function only once for performance reasons - and then that first result should
 continued to be used. An example would be the `$this->text` and `$this->hasText` variables of news templates, which 
 actually lazily loads the detail content from the database once accessed. Subsequent `$this->text` usages will then use
 the first result. This can be done easily through the `Template::once()` helper method:

@@ -4,7 +4,6 @@ description: "Ganz einfach Backups der Datenbank erstellen"
 url: "cli/datenbank-backups"
 ---
 
-{{< version "4.13" >}}
 
 Contao liefert alles mit, was du für ein zuverlässiges Datenbank-Backup brauchst. Einmal konfiguriert und du kannst
 nachts beruhigt schlafen, denn was auch immer mit der Datenbank geschieht, du hast deine Backups und kannst das neuste

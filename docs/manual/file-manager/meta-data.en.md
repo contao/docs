@@ -36,8 +36,6 @@ Contao supports the following metadata:
 ```
 
 **License URL**
-{{< version "4.13" >}}
-
 On the page on which the image is embedded the license URL is used in the [SCHEMA-ImageObject](https://schema.org/ImageObject "SCHEMA-ImageObject") of the [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) to comply with licensing notices.
 
 **The HTML output**

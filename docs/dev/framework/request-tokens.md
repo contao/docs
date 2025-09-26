@@ -86,8 +86,8 @@ class ExampleService
 ```
 
 {{% notice tip %}}
-{{< version-tag "4.13" >}} You can omit getting the `%contao.csrf_token_name%` by explicitly using the `ContaoCsrfTokenManager`,
-that now features a `getDefaultTokenValue()` method:
+You can omit getting the `%contao.csrf_token_name%` by explicitly using the `ContaoCsrfTokenManager` and its
+`getDefaultTokenValue()` method:
 
 ```php
 // before:
@@ -97,6 +97,12 @@ $csrfTokenManager->getToken($csrfTokenName)->getValue();
 $contaoCsrfTokenManager->getDefaultTokenValue();
 ```
 {{% /notice %}}
+
+{{% notice tip %}}
+In PHP templates you can also output the request token via `<?= $this->requestToken ?>` and in Twig templates via
+`{{ contao.request_token }}`
+{{% /notice %}}
+
 
 ## Requiring Contao CSRF for Symfony form submits
 
@@ -158,19 +164,6 @@ legacy templates, keep in mind that there won't be any input encoding! Without c
 vulnerabilities!
 {{% /notice %}}
 
-## Deprecated Constants, Configuration Settings and more
-
-For historical reasons, you may still come across the following constants or configuration settings.
-They are all deprecated and you must not use them anymore. Register your own route and implement your own
-handling as outlined above, if you need to disable the CSRF protection for some reason.
-
-* The constant `BYPASS_TOKEN_CHECK`. It disables CSRF protection completely.
-* The localconfig configuration value `disableRefererCheck`. It disables CSRF protection completely.
-* The localconfig configuration value `requestTokenWhitelist`. It can contain an exact hostname or regular expression.
-  It will disable CSRF protection only on hostname match.
-
-{{< version-tag "4.13" >}} Using the `{{request_token}}` insert tag is deprecated as well. Instead, you should retrieve the value
-from the CSRF token manager in your Controller and pass it on to the template.
 
 [OWASP_CSRF]: https://owasp.org/www-community/attacks/csrf
 [OWASP_Double_Submit_Cookie]: https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#double-submit-cookie

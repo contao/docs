@@ -187,7 +187,7 @@ Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte od
 Daten zu verhindern und die Datenintegrität zu gewährleisten.
 
 {{% notice info %}}
-{{< version-tag "4.9" >}} Das Install-Tool zeigt jetzt eine Warnmeldung an, wenn der Datenbankserver nicht im
+Das Install-Tool zeigt jetzt eine Warnmeldung an, wenn der Datenbankserver nicht im
 "Strict Mode" läuft.
 {{% /notice %}}
 
@@ -237,21 +237,17 @@ Hintergrundaufgaben (wie die Indizierung des Seiteninhalts) ausführen, ohne das
 
 ### Hosting-Konfiguration
 
-In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `web/` der Installation. Setze das 
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `public/` der Installation. Setze das 
 Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel des Hosting-Providers auf diesen 
 Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
 
-Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web` 
-
-({{< version-tag "4.12" >}} Dem Standard von Symfony folgend, wurde der öffentlich erreichbare Unterordner von `/web`
-in `/public` umbenannt. Falls in deiner Installation ein Verzeichnis `/web` existiert, wird dieses von Contao
-automatisch anstelle von `/public` verwendet.)
+Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/public` 
 
 {{% notice info %}}
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 {{% /notice %}}
 
-{{< version-tag "4.13" >}} Wenn du noch den `/web`-Ordner verwendest,
+Wenn du noch den `/web`-Ordner verwendest,
 dann definiere diesen entsprechend, um für zukünftige Contao Versionen gerüstet zu sein:
 
 ```json
