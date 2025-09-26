@@ -12,17 +12,6 @@ Das komfortable Bearbeiten von Daten zu ermöglichen, ist eine der Hauptaufgaben
 Contao erleichtern dir die Datenpflege und bringen dich schneller ans Ziel.
 
 
-## Die Sticky-Tab-Navigationsliste
-
-{{< version "5.3" >}}
-
-Wenn der zu bearbeitende Datensatz sehr lang und in einzelne Abschnitte durch Legenden unterteilt ist, musste man bis 
-jetzt endlos nach unten Scrollen (z. B. beim Einrichten einer Benutzergruppe). Damit ist nun Schluss, denn es gibt die 
-Sticky-Tab-Navigationsliste. Diese Navigationsliste wird automatisch aus allen Legenden in einem Datensatz erstellt.
-
-![Die Sticky-Tab-Navigationsliste]({{% asset "images/manual/administration-area/de/die-sticky-tab-navigationsliste.png" %}}?classes=shadow)
-
-
 ## Der Picker
 
 Der Picker wird an vielen verschiedenen Orten eingesetz und ist deshalb zu einem unersetzbaren Werkzeug in Contao 

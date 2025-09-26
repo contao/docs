@@ -18,16 +18,6 @@ rendering content in Twig. Contao overrides this behavior for templates within t
 {{ '&gt;'|e }}
 ```
 
-{{< version "5.3.19" >}}
-
-However, you can opt into double encoding by passing `double_encode = true` to the escape filter, which is necessary if
-you have HTML code nested in another language.
-
-```twig
-{# Outputs &amp;gt; i.e. with double encoding #}
-{{ '&gt;'|e('html', doubl_encode = true) }}
-```
-
 You can find more information in the double encoding section of the
 [Twig architecture]({{% relref "architecture#double-encoding-prevention" %}}) article.
 

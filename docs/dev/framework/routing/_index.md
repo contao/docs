@@ -309,73 +309,11 @@ class ExampleController
 
 ### Page Model
 
-{{< version "5.0" >}}
-
-The `Contao\PageModel` instance for a regular Contao page request is available under the `pageModel` request attribute.
-This allows you to access any current and inherited attributes of the current page.
-
-```php
-// src/ExampleService.php
-namespace App;
-
-use Contao\PageModel;
-use Symfony\Component\HttpFoundation\RequestStack;
-
-class ExampleService
-{
-    public function __construct(private readonly RequestStack $requestStack)
-    {
-    }
-
-    public function __invoke(): void
-    {
-        $request = $this->requestStack->getCurrentRequest();
-
-        /** @var PageModel $page */
-        if ($page = $request->attributes->get('pageModel')) {
-            $title = $page->title;
-
-            // …
-        }
-    }
-}
-```
-
-{{% notice "info" %}}
-This is also available in Contao **4.9** and later. However, prior to Contao **5** the `pageModel` attribute might also
-just be an integer ID rather than a `PageModel` instance (specifically in fragment subrequests). The attribute might
-also not be available at all, depending on the request's circumstances. As explained in the respective articles you can
-use the `getPageModel()` method in fragment controller for content elements and fron end modules to retrieve the current
-`PageModel`. If you need this in a different service in Contao 4 then you will need to copy the
-[implementation](https://github.com/contao/contao/blob/705b8bcf18d3f30c967cf75a69c381b3397466f4/core-bundle/src/Controller/AbstractFragmentController.php#L50-L75)
-of that method.
-{{% /notice %}}
-
-{{< version "5.4" >}}
-
-Starting with Contao **5.4** you can also use the `PageFinder` to retrieve the `PageModel` of the current request, if
-available:
-
-```php
-// src/ExampleService.php
-namespace App;
-
-use Contao\CoreBundle\Routing\PageFinder;
-
-class ExampleService
-{
-    public function __construct(private readonly PageFinder $pageFinder)
-    {
-    }
-
-    public function __invoke(): void
-    {
-        $page = $this->pageFinder->getCurrentPage();
-
-        // …
-    }
-}
-```
+In fragment controllers you can use the `getPageModel()` method of the `AbstractFragmentController` in
+order to receive the `Contao\PageModel` instance of the current page. However, the instance is also available under the
+`pageModel` request attribute since Contao **4.9**. _But_ under certain circumstances (specifically in fragment
+subrequests) this might be just an ID, not the object instance thus you will need to essentially copy the
+[implementation][GetPageModel] from the aforementioned method in order to be able to receive the current page model.
 
 
 [SymfonyRouting]: https://symfony.com/doc/current/routing.html
@@ -384,3 +322,4 @@ class ExampleService
 [BackEndRoutes]: /guides/back-end-routes/
 [RequestTokens]: /framework/request-tokens/
 [SymfonyRouteNameParams]: https://symfony.com/doc/current/routing.html#getting-the-route-name-and-parameters
+[GetPageModel]: https://github.com/contao/contao/blob/705b8bcf18d3f30c967cf75a69c381b3397466f4/core-bundle/src/Controller/AbstractFragmentController.php#L50-L75

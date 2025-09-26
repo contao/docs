@@ -132,16 +132,6 @@ This can be helpful if you need to output multiple images with a similar configu
 
 
 ## Templating
-{{< version-tag "5.0" >}} In Twig, there is a `figure()` function and a `figure` and `picture` component, that allows
-generating and outputting `Figures` in your templates. This is by far the most versatile way to render the data while
-still being able to finely control its appearance. Read more about how to use it in the
-[image section](/framework/templates/creating-templates#images) of the Twig template documentation.
-
-{{% notice info %}}
-The following section covers how to use the image studio in **Contao 4.13**. For Contao 5, please refer to the best
-practices outlined in the [Twig template documentation](/framework/templates/creating-templates#images).
-{{% /notice %}}
-
 
 #### PHP Templates
 

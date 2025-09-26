@@ -114,44 +114,6 @@ Executed when a new record is created.
 {{% /expand %}}
 
 
-### `config.onbeforesubmit`
-
-{{< version "5.0" >}}
-
-Executed when a back end form is submitted _before_ the record will be updated
-in the database. Allows you to e.g. modify the values or introduce validation
-accross multiple fields. You are expected to return the values.
-
-{{% expand "Parameters" %}}
-* `array` Values of the record
-* `\Contao\DataContainer` Data Container object
-
-**return:** `array` Values of the record
-{{% /expand %}}
-
-{{% expand "Example" %}}
-```php
-// src/EventListener/DataContainer/MemberOnBeforeSubmitCallbackListener.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-
-#[AsCallback('tl_member', 'config.onbeforesubmit')]
-class MemberOnBeforeSubmitCallbackListener
-{
-    public function __invoke(array $record, DataContainer $dc): array
-    {
-        // Adjust the record here
-        // …
-
-        return $record;
-    }
-}
-```
-{{% /expand %}}
-
-
 ### `config.onsubmit`
 
 Executed when a back end form is submitted _after_ the record has been updated
@@ -376,59 +338,6 @@ of a database record.
 window.
 {{% /expand %}}
 
-***
-
-### `config.onpalette`
-
-{{< version "5.3" >}}
-
-Allows to dynamically adjust the palette. This can also be achieved using e.g. the `config.onload` callback where you
-can modify the palette as it is a global variable. However, adjusting it depending on the object's values is way easier
-using `config.onpalette` making it automatically work for e.g. the edit multiple mode.
-
-{{% expand "Parameters" %}}
-* `string` The current palette
-* `\Contao\DataContainer` Data Container object
-
-**return:** `string` The adjusted palette
-{{% /expand %}}
-
-{{% expand "Example" %}}
-
-```php
-// src/EventListener/DataContainer/PagePaletteCallback.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DataContainer\PaletteManipulator;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-
-#[AsCallback(table: 'tl_page', target: 'config.onpalette')]
-class PagePaletteCallback
-{
-    public function __invoke(string $palette, DataContainer $dc): string
-    {
-        $currentRecord = $dc->getCurrentRecord();
-
-        // This shouldn't happen, defensive programming
-        if (null === $currentRecord) {
-            return $palette;
-        }
-
-        // Adjust palettes for root pages
-        if ('root' === $currentRecord['type']) {
-            $palette = PaletteManipulator::create()
-                ->addLegend('my_legend')
-                ->addField(['my_field_one', 'my_field_two'], 'my_legend', PaletteManipulator::POSITION_APPEND)
-                ->applyToString($palette)
-            ;
-        }
-        
-        return $palette;
-    }
-}
-```
-{{% /expand %}}
 
 ## Listing Callbacks
 
@@ -860,45 +769,6 @@ class ExampleListOperationListener
 
 The following is a list of callbacks for DCA fields. Replace `<FIELD>` with a
 field name of your choice.
-
-
-### `fields.<FIELD>.attributes`
-
-{{< version "5.1" >}}
-
-Allows you do dynamically adjust the attributes of a field in a DCA before a widget is generated.
-
-{{% expand "Parameters" %}}
-* `array` Current attributes
-* `\Contao\DataContainer`/`null` Data Container object
-
-**return:** `array` The adjusted attributes array
-{{% /expand %}}
-
-{{% expand "Example" %}}
-```php
-// src/EventListener/DataContainer/AttributesCallback.php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-
-#[AsCallback('tl_content', 'fields.text.attributes')]
-class AttributesCallback
-{
-    public function __invoke(array $attributes, DataContainer|null $dc = null): array
-    {
-        if (!$dc || 'text' !== ($dc->getCurrentRecord()['type'] ?? null)) {
-            return $attributes;
-        }
-
-        $attributes['label'] = 'Custom text label';
-
-        return $attributes;
-    }
-}
-```
-{{% /expand %}}
 
 
 ### `fields.<FIELD>.options`

@@ -11,8 +11,7 @@ the [history][ContaoHistory]), it provides its own translation framework. While
 you are free to utilize Symfony's [translation component][SymfonyTranslations],
 you will still have to provide translations within Contao's framework for certain
 aspects, mostly in the back end (e.g. translations for managing your own data records 
-via the [Data Container Array][dca]). {{< version-tag "5.3" >}} Though since Contao **5.3** you can also provide these
-Contao translations via the Symfony translation component (see [below]({{% relref "#symfony-translations" %}})).
+via the [Data Container Array][dca]).
 
 Translations for Contao are managed within the `contao/languages/` folder of your
 application, or the `Resources/contao/languages/` folder of your extension respectively.
@@ -295,41 +294,6 @@ the Contao Twig documentation.
 ```twig
 {{ 'MSC.goBack'|trans({}, 'contao_default') }}
 ```
-
-
-## Symfony Translations
-
-{{< version "5.3" >}}
-
-Since Contao **5.3** you can also populate Contao translations using Symfony's [translation component][SymfonyTranslations].
-The Contao translation domain [explained above]({{% relref "translations#domains" %}}) translates directly to the 
-Symfony translation domain you have to use - except prefixed with `contao_`. So for example if you want to customize
-the `MSC.goBack` translation that Contao provides under the `default` translation domain, the Symfony translation domain
-will be `contao_default` - and thus you can adjust the translation via `translations/contao_default.en.yaml` for example.
-
-```yaml
-# translations/contao_default.en.yaml
-MSC:
-    goBack: Return back
-```
-
-Likewise, when you want to provide translation labels for the fields of your own DCA, e.g. `tl_foobar`, the domain will
-again be prefixed by `contao_`, so `contao_tl_foobar` in this case.
-
-```yaml
-# translations/contao_tl_foobar.en.yaml
-tl_foobar:
-    new.1: Add a new foobar element 
-    my_legend: My custom fieldset legend
-    my_field:
-        - My custom field title
-        - My custom field description
-```
-
-In all cases the translation _keys_ remain the same as in the regular Contao translation PHP or XLIFF files (within the
-`TL_LANG` superglobal in the former case). So in the previous example what would have been
-`$GLOBALS['TL_LANG']['tl_foobar']['new'][1]` now maps to `tl_foobar.new.1` in the YAML file of the Symfony translation
-(same as in the XLIFF case).
 
 
 [ContaoHistory]: /#history

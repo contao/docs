@@ -59,14 +59,6 @@ class FoobarController extends AbstractContentElementController
 }
 ```
 
-{{< version-tag "5.3" >}} This is also available via the `contao` global Twig variable:
-
-```twig
-{% if contao.is_preview_mode %}
-    {# Show some content only available in the preview mode #}
-{% endif %}
-```
-
 {{% notice "info" %}}
 In previous Contao versions, the `BE_USER_LOGGED_IN` constant was used for this. This constant was `true` whenever a
 valid back end login session is present and the _Unpublished: show_ option was enabled. However, with the introduction of

@@ -10,17 +10,6 @@ One of the main tasks of a CMS is to make it easy to edit record. The following 
 easier and get you to your goal faster.
 
 
-## The sticky tab navigation list
-
-{{< version "5.3" >}}
-
-If the record set to be edited is very long and divided into individual sections by legends, you previously had to scroll 
-down endlessly (e.g. when setting up a user group). This is now a thing of the past, as the sticky tab navigation list. 
-This navigation list is automatically created from all legends in a record set.
-
-![The sticky tab navigation list]({{% asset "images/manual/administration-area/en/the-sticky-tab-navigation-list.png" %}}?classes=shadow)
-
-
 ## The Picker
 
 The picker is used in many different places and has therefore become an essential tool in Contao.

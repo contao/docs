@@ -343,10 +343,6 @@ represented by the `Contao\PageModel`. This class allows you to generate URLs to
 `getAbsoluteUrl` method. The former will generate URLs relative to the `<base>` - unless the page is on a different
 domain than the current one. The latter will always produce absolute URLs (including `http://` or `https://`).
 
-{{% notice "info" %}}
-{{< version-tag "5.0" >}} `getFrontendUrl` will now generate _path absolute_ URLs, not relative to the `<base>`.
-{{% /notice %}}
-
 Both methods allow you to specify optional parameters as one string. These are _path_ parameters and are used when you
 want to generate a URL with an [`auto_item`][AutoItem] or other path parameters. For example
 
@@ -406,17 +402,6 @@ class MyService
 The important thing to note here is that the name of the route we are generating is not the name or type of the
 page controller, but a general `page_routing_object` route - and then we pass the model instance of the page as a
 `_content` parameter, alongside our actual route parameters (`foo` and `bar`).
-
-{{< version-tag "5.3" >}} Starting with Contao **5.3** you are able to use `getFrontendUrl` and `getAbsoluteUrl` of
-the `PageModel` as well though. Instead of a string representing path parameters you can instead pass an array with the
-parameters to the methods:
-
-```php
-$page->getFrontendUrl([
-    'foo' => 'lorem',
-    'bar' => 'ipsum',
-]);
-```
 
 
 [SymfonyRouting]: https://symfony.com/doc/current/routing.html
