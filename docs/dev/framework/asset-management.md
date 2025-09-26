@@ -196,41 +196,6 @@ the title of the feed.
 $GLOBALS['TL_HEAD'][] = \Contao\Template::generateFeedTag('share/myfeed.xml', 'rss', 'My Feed');
 ```
 
-### Twig
-
-While you cannot directly add assets to the aforementioned globals in Twig templates, you can use the
-[`add` tag]({{% relref "add" %}}) to add styles and JavaScripts to different sections of the document.
-
-Contao also comes with a `_stylesheet` component which helps you render inline style sheets:
-
-```twig
-{% use "@Contao/component/_stylesheet.html.twig" %}
-
-{# Renders `<link rel="stylesheet" href="…"> #}
-{% with {file: asset('styles.css')} %}
-    {{ block('stylesheet_component') }}
-{% endwith %}
-```
-
-You can also lazy-load a  stylesheet:
-
-```twig
-{% use "@Contao/component/_stylesheet.html.twig" %}
-
-{% with {file: asset('styles.css'), lazy: true} %}
-    {{ block('stylesheet_component') }}
-{% endwith %}
-```
-
-This will render:
-
-```html
-<link rel="preload" as="style" href="…" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="…"></noscript>
-```
-
-Using Contao's [`add` tag]({{% relref "add" %}}) you can output styles and JavaScripts in different sections of the
-document.
 
 ## Accessing Assets in Templates
 

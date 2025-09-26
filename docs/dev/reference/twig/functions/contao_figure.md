@@ -5,14 +5,8 @@ description: Renders a figure for image processing.
 tags: [Twig]
 ---
 
-This function takes the same arguments as the [`figure`]({{% relref "figure" %}}) function, but renders the image directly.
-There is an additional argument where you can define which template to use to render the figure.
-
-{{% notice note %}}
-Using the `contao_figure` function has been deprecated and will no longer work in Contao 6. Use the 
-[figure]({{% relref "figure" %}}) function together with the `component/_figure.html.twig`
-[component]({{% relref "creating-templates#contao-components" %}}) instead.
-{{% /notice %}}
+This function renders a figure directly and takes 4 arguments: the source image, the size configuration, additional
+options and which template to use to render the figure.
 
 ## Arguments
 

@@ -633,7 +633,6 @@ containing HTML for the button (or an empty string, if you do not want to show a
 {{% /expand %}}
 
 {{% expand "Example" %}}
-
 This example hides a custom operation button if the user is not allowed to use it.    
 
 Attention: this won't disable the operation itself, it only hides the button!
@@ -689,6 +688,7 @@ class ExampleListOperationListener
     }
 }
 ```
+{{% /expand %}}
 
 
 ***
