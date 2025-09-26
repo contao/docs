@@ -6,9 +6,7 @@ aliases:
 ---
 
 
-{{< version "4.13" >}}
-
-Der Wartungsmodus wurde für diese Contao-Version neugeschrieben. Über die Kommandozeile kann die komplette Contao-Installation 
+Über die Kommandozeile kann die komplette Contao-Installation 
 (Back- und Frontend) in den Wartungsmodus versetzt werden. Diese Funktion ist sehr nützlich, wenn du eine 
 Aktualisierung an deinem System vornehmen möchtest.
 

@@ -94,15 +94,11 @@ php composer.phar create-project contao/managed-edition example {{< current-vers
 
 ### Hosting-Konfiguration
 
-In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/web` der Installation. Erstelle diesen Ordner und setze das 
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/public` der Installation. Erstelle diesen Ordner und setze das 
 Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel des Hosting-Providers auf diesen 
 Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
 
-Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web`
-
-({{< version-tag "4.12" >}} Dem Standard von Symfony folgend, wurde der öffentlich erreichbare Unterordner von `/web`
-in `/public` umbenannt. Falls in deiner Installation ein Verzeichnis `/web` existiert, wird dieses von Contao
-automatisch anstelle von `/public` verwendet.)
+Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/public`
 
 {{% notice info %}}
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
@@ -141,7 +137,7 @@ und [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in e
 
 Über den [Contao Manager]({{% relref "installation/contao-manager" %}}) kannst du dir deinen Backend Benutzer anlegen.
 
-Ab Contao **4.10** kannst du hierzu den folgenden [Befehl]({{% relref "/cli/user" %}}) auf der [Kommandozeile]({{% relref "/cli" %}}) 
+Du kannst hierzu den folgenden [Befehl]({{% relref "/cli/user" %}}) auf der [Kommandozeile]({{% relref "/cli" %}}) 
 benutzen. Die notwendigen Angaben werden dann auf der Kommandozeile abgefragt:
 
 

@@ -47,7 +47,7 @@ parameters (like `GET` and `POST` data), and they can return HTTP headers (like 
 or `Cache-Control`).
 
 {{% notice info %}}
-{{< version-tag "4.9" >}} Subrequests can generate [a response that modifies the cache time of
+Subrequests can generate [a response that modifies the cache time of
 the main response](/framework/caching/#caching-fragments).
 {{% /notice %}}
 

@@ -48,7 +48,7 @@ vendor/bin/contao-console cache:warmup --env=prod
 ```
 {{% /notice %}}
 
-Ab Contao **4.10** kann der URL-Präfix beliebig im Startpunkt der Website festgelegt werden. Dadurch ist es einerseits
+Der URL-Präfix kann beliebig im Startpunkt der Website festgelegt werden. Dadurch ist es einerseits
 möglich einen Präfix zu verwenden, der anders als die Sprache selbst lautet und andererseits ist es möglich einen Startpunkt
 auch ohne Präfix zu benutzen, während die anderen Startpunkte der selben Domain weiterhin einen Präfix haben. Zum Beispiel
 `example.com` für die Englische Version der Website und `example.com/de` für die Deutsche Version. Damit diese Einstellung

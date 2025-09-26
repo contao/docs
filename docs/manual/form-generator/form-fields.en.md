@@ -123,8 +123,8 @@ validation for each text field to prevent misuse of the form.
 | Phone number                     | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                      |
 | E-mail address                   | Allows users to enter a valid email address.                                                             |
 | URL format                       | Allows the entry of a valid URL.                                                                         |
-| Absolute URL                     | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`). |
-| Custom                           | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression. |
+| Absolute URL                     | Allows users to enter absolute URLs (starting with `http://` or `https://`). |
+| Custom                           | Allows users to enter text according to the given custom regular expression. |
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
 
@@ -226,8 +226,8 @@ input check here to prevent misuse of the form.
 | Phone number                     | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                      |
 | E-mail address                   | Allows users to enter a valid email address.                                                             |
 | URL format                       | Allows the entry of a valid URL.                                                                         |
-| Absolute URL                     | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`). |
-| Custom                           | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression. |
+| Absolute URL                     | Allows users to enter absolute URLs (starting with `http://` or `https://`). |
+| Custom                           | Allows users to enter text according to the given custom regular expression. |
 
 **Placeholder:** This text is displayed as long as the field has not been filled in.
 
@@ -472,8 +472,6 @@ another file, Contao will automatically display an error message and refuse to a
 **Maximum input length:** Here you define the maximum upload file size in bytes. By default, files up to 2 MB can be 
 uploaded.
 
-{{< version "4.13" >}}
-
 **Maximum image width:** When uploading images, the file manager automatically checks their width and compares these
 values with your default set here. If an image exceeds the maximum width, the upload will be aborted with an error 
 output in the form.
@@ -600,8 +598,8 @@ Hidden fields have no CSS class.
 | Phone number                     | Allows numbers, plus (+), minus (-), slash (/), round brackets (()) and spaces ( ).                      |
 | E-mail address                   | Allows users to enter a valid email address.                                                             |
 | URL format                       | Allows the entry of a valid URL.                                                                         |
-| Absolute URL                     | {{< version-tag "4.11" >}}  Allows users to enter absolute URLs (starting with `http://` or `https://`). |
-| Custom                           | {{< version-tag "4.11" >}}  Allows users to enter text according to the given custom regular expression. |
+| Absolute URL                     | Allows users to enter absolute URLs (starting with `http://` or `https://`). |
+| Custom                           | Allows users to enter text according to the given custom regular expression. |
 
 
 ### Template settings

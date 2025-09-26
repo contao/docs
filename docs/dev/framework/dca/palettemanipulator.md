@@ -122,7 +122,6 @@ If you do not provide a parent (and position), the legend will simply be appende
 
 
 ## Removing fields
-{{< version "4.7" >}}
 
 ```php
 // contao/dca/tl_user.php

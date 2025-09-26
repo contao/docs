@@ -19,62 +19,9 @@ on how to implement your own routes and controllers in the Contao Managed Editio
 Have a look at the [Symfony routing documentation][SymfonyRouting] for the full
 range of possibilities.
 
-Routes can be defined either in XML/PHP/YAML files or via annotations. For simplicity
+Routes can be defined either in XML/PHP/YAML files or via annotations or attributes. For simplicity
 this guide will only show the latter. To start off, we first need to tell Symfony
-that our routes will be defined via annotations:
-
-{{% expand "Defining routes in Contao 4.4" %}}
-In Contao **4.4** you need to create a YAML file with the following definition:
-
-```yaml
-# app/config/routes.yaml
-app.controller:
-    resource: ../src/Controller
-    type: annotation
-```
-
-This definition will not be automatically loaded however. In order to load this
-YAML file within your Contao Managed Edition, you first need to create an
-[Application-Specific Manager Plugin](/framework/manager-plugin/#the-application-specific-manager-plugin)
-and implement the [`RoutingPluginInterface`](/framework/manager-plugin/#the-routingplugininterface):
-
-```php
-// src/ContaoManager/Plugin.php
-namespace App\ContaoManager;
-
-use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
-use Symfony\Component\Config\Loader\LoaderResolverInterface;
-use Symfony\Component\HttpKernel\KernelInterface;
-
-class Plugin implements RoutingPluginInterface
-{
-    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
-    {
-        return $resolver
-            ->resolve(__DIR__.'/../../app/config/routes.yaml')
-            ->load(__DIR__.'/../../app/config/routes.yaml')
-        ;
-    }
-}
-```
-{{% /expand %}}
-
-{{% expand "Defining routes in Contao 4.9 and up" %}}
-In Contao **4.9** and up you can create a `config/routes.yaml` which will automatically
-be loaded:
-
-```yaml
-# config/routes.yaml
-app.controller:
-    resource: ../src/Controller
-    type: annotation
-```
-{{% /expand %}}
-
-{{% expand "Defining routes in Contao 5 and up" %}}
-Starting with Contao **5** (Symfony **6**) this still works the same as shown above, however you can now switch the type
-to `attribute` instead of `annotation`. In Symfony **7** (Contao **5.4+**) the support for `annotation` has been
-dropped. Note that `annotation` in Symfony 6 will support both PHP attributes as well as annotations.
+that our routes will be defined via attributes. The Contao Managed Edition automatically loads the `config/routes.yaml`:
 
 ```yaml
 # config/routes.yaml
@@ -82,7 +29,6 @@ app.controller:
     resource: ../src/Controller
     type: attribute
 ```
-{{% /expand %}}
 
 {{% expand "Defining routes in Contao 5.3 and up" %}}
 Starting with Contao **5.3** routes based on annotations or attributes in the `src/Controller/` directory are
@@ -91,7 +37,7 @@ However, you can still do as shown above if you want or need to define custom ro
 {{% /expand %}}
 
 This will tell Symfony that any controller defined under `src/Controller` within
-your application (i.e. the `App\Controller\` namespace) will use PHP annotations
+your application (i.e. the `App\Controller\` namespace) will use PHP attributes
 for defining routes.
 
 Now we can go right ahead and create a simple controller and define its route via the
@@ -309,8 +255,6 @@ class ExampleController
 
 ### Page Model
 
-{{< version "5.0" >}}
-
 The `Contao\PageModel` instance for a regular Contao page request is available under the `pageModel` request attribute.
 This allows you to access any current and inherited attributes of the current page.
 
@@ -341,20 +285,8 @@ class ExampleService
 }
 ```
 
-{{% notice "info" %}}
-This is also available in Contao **4.9** and later. However, prior to Contao **5** the `pageModel` attribute might also
-just be an integer ID rather than a `PageModel` instance (specifically in fragment subrequests). The attribute might
-also not be available at all, depending on the request's circumstances. As explained in the respective articles you can
-use the `getPageModel()` method in fragment controller for content elements and fron end modules to retrieve the current
-`PageModel`. If you need this in a different service in Contao 4 then you will need to copy the
-[implementation](https://github.com/contao/contao/blob/705b8bcf18d3f30c967cf75a69c381b3397466f4/core-bundle/src/Controller/AbstractFragmentController.php#L50-L75)
-of that method.
-{{% /notice %}}
-
-{{< version "5.4" >}}
-
-Starting with Contao **5.4** you can also use the `PageFinder` to retrieve the `PageModel` of the current request, if
-available:
+{{< version-tag "5.4" >}} Starting with Contao **5.4** you can also use the `PageFinder` to retrieve the `PageModel` of
+the current request, if available:
 
 ```php
 // src/ExampleService.php

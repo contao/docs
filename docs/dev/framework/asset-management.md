@@ -234,8 +234,6 @@ document.
 
 ## Accessing Assets in Templates
 
-{{< version "4.5" >}}
-
 Contao also provides the possibility to access assets via the [Symfony Asset Component][SymfonyAssetComponent].
 It automatically registers assets from packages and these assets are grouped by
 their "package". Each package can have a different version strategy. These assets 
@@ -253,6 +251,11 @@ the path or name of the asset within the package, and the package name.
 <script src="<?= $this->asset('foobar.js', 'fooexample') ?>"></script>
 <script src="<?= $this->asset('js/tablesort.min.js', 'contao-components/tablesort') ?>"></script>
 <script src="{{asset::jquery.js::contao-components/jquery}}"></script>
+```
+
+```twig
+<script src="{{ asset('foobar.js', 'fooexample') }}"></script>
+<script src="{{ asset('js/tablesort.min.js', 'contao-components/tablesort') }}"></script>
 ```
 
 There are several use cases of using the asset helper within Contao:

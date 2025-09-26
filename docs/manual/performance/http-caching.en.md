@@ -5,10 +5,6 @@ aliases:
     - /en/performance/http-caching/
 ---
 
-{{% notice note %}}
-This whole article refers to Contao **4.9** and higher. Previous versions also have caching mechanisms, but they are not
-nearly as efficient, so we have not documented how the caching works for the older versions. 
-{{% /notice %}}
 
 The greatest performance gain in any application can be achieved by not having to start it at all.
 In other words: We want the output that Contao generates to be saved and delivered the next time it is called without
@@ -285,10 +281,6 @@ The following environment variables allow you to further optimize the cache prox
 
 ### `COOKIE_ALLOW_LIST`
 
-{{% notice note %}}
-In Contao **4.9** this environment variable is called `COOKIE_WHITELIST`.
-{{% /notice %}}
-
 This is a special environment variable related to the default caching proxy which is shipped with the Contao Managed
 Edition by default.
 Contao disables any HTTP caching as soon as there is either a `Cookie` or an `Authorization` header present in the
@@ -325,8 +317,6 @@ not really a valid use case.
 
 ### `COOKIE_REMOVE_FROM_DENY_LIST`
 
-{{< version "4.10" >}}
-
 In case you don't want to manage the whole `COOKIE_ALLOW_LIST` because you are unsure what your application needs but
 you want to disable one or more of the existing entries on the deny list that is managed by Contao, you can specify this
 using:
@@ -336,8 +326,6 @@ COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
 ```
 
 ### `QUERY_PARAMS_ALLOW_LIST`
-
-{{< version "4.10" >}}
 
 For the very same reason we strip irrelevant cookies, we also strip irrelevant query parameters. E.g. you might be
 familiar with the typical `?utm_*>=<randomtoken>` query parameters that are added to links of your website. Because they
@@ -349,8 +337,6 @@ override by providing a list of allowed query parameters if you know all the que
 needs. This is highly unlikely which is why there is also `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`.
 
 ### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
-
-{{< version "4.10" >}}
 
 As with `COOKIE_REMOVE_FROM_DENY_LIST`, you can use `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` to remove an entry from the
 default deny list shipped with Contao. If you e.g. need the Facebook click identifier (`fbclid`) in your server side

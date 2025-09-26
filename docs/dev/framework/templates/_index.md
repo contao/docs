@@ -7,7 +7,7 @@ tags: [Twig]
 ---
 
 {{% notice info %}}
-This section covers Twig templates in Contao **4.13** and up. The documentation for legacy PHP templates (`.html5`
+This section covers Twig templates. The documentation for legacy PHP templates (`.html5`
 extension) can be found in [this article](legacy).
 {{% /notice %}}
 

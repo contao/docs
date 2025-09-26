@@ -287,8 +287,8 @@ not contain any special characters, because it is also used as database name) an
 
 ![Enter project name]({{% asset "images/manual/guides/local-installation/en/laragon/19_laragon_websiteproject_2.png" %}}?width=250px&classes=shadow)
 
-- A console window opens: In the background, Contao 4.9 (including all required packages) is installed via Composer. 
-Afterwards, the Contao Manager script is downloaded and saved in the subfolder `web/` as `contao-manager.phar.php`.
+- A console window opens: In the background, Contao {{< current-version >}} (including all required packages) is installed via Composer. 
+Afterwards, the Contao Manager script is downloaded and saved in the subfolder `public/` as `contao-manager.phar.php`.
 - Laragon also automatically creates a database of the same name "*mycompany*" and a virtual host `mycompany.local`
 - For the virtual host, the Windows hosts file must also be updated. Therefore, depending on the Windows User Account 
 Control (UAC) configuration, you may be prompted to confirm the changes to the system file after installation is complete. 

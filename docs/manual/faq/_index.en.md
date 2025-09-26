@@ -106,7 +106,7 @@ from the manager or the console.
 {{% /faq %}}
 
 {{% faq "How can I change the Contao backend path?" %}}
-{{< version-tag "4.13" >}} You can add the entry `route_prefix` in config.yaml and then you have to empty the application cache once using the Contao Manager or the console.
+You can add the entry `route_prefix` in config.yaml and then you have to empty the application cache once using the Contao Manager or the console.
 
 ```yaml
 # config/config.yaml
@@ -158,7 +158,7 @@ Answers can be found in the [TinyMCE Editor Configuration](/en/guides/tinymce-co
 ## File management
 
 {{% faq "My pictures are not displayed in the frontend, what can I do?" %}}
-Check in the [file manager](/en/file-manager/) if the directory with your images is marked as "Public". Also make sure that there is no outdated `.htaccess` file in the `/web` folder or a parent folder of your installation.
+Check in the [file manager](/en/file-manager/) if the directory with your images is marked as "Public". Also make sure that there is no outdated `.htaccess` file in the `/public` folder or a parent folder of your installation.
 {{% /faq %}}
 
 {{% faq "Is it possible to hide the search in the file manager?" %}}

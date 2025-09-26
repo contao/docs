@@ -5,8 +5,6 @@ description: "Use the attrs() Twig function to fluently manage HTML attributes u
 tags: [Twig]
 ---
 
-{{< version "5.0" >}}
-
 The `attrs()` function in Twig gives you access to a powerful utility class called `HtmlAttributes`, which provides a
 fluent, expressive, and safe way to manipulate HTML attributes directly within your templates.
 

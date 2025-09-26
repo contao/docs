@@ -159,10 +159,6 @@ The use of `utf8` instead of the `utf8mb4` character set results in a worse UTF8
 If the above recommended options cannot be enabled on your server, please configure a different character set in your 
 [`config/config.yaml`](../../system/settings/#config-yml) file:
 
-{{% notice info %}}
-Before **Contao 4.8** you can find the file under `app/config/config.yaml`.  
-{{% /notice %}}
-
 ```yaml
 doctrine:
     dbal:
@@ -178,7 +174,7 @@ It is further recommended to run MySQL in "strict mode" to prevent corrupt or tr
 data and to guarantee data integrity.
 
 {{% notice info %}}
-{{< version-tag "4.9" >}} The install tool now shows a warning if the database server is not running
+The install tool now shows a warning if the database server is not running
 in strict mode.
 {{% /notice %}}
 
@@ -227,21 +223,17 @@ perform background tasks (such as indexing the page content) without the browser
 
 ### Hosting configuration
 
-In Contao, all publicly accessible files are located in the `web/` subfolder of the installation. Set the
+In Contao, all publicly accessible files are located in the `public/` subfolder of the installation. Set the
 document root of the installation via the admin panel of the hosting provider to this subfolder and set up a database 
 on this occasion.
 
-Example: `example.com` points to the directory `/www/example/web`
-
-({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to 
-`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
-
+Example: `example.com` points to the directory `/www/example/public`
 
 {{% notice info %}}
 Therefore, a separate (sub)domain is required for each Contao installation.
 {{% /notice %}}
 
-{{< version-tag "4.13" >}} If your installation is still using the folder `/web` as its public directory, explicitly set it in the `composer.json`
+If your installation is still using the folder `/web` as its public directory, explicitly set it in the `composer.json`
 of the project in order to be prepared for future versions of contao:
 
 ```json

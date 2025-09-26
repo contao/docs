@@ -7,8 +7,6 @@ aliases:
 ---
 
 
-{{< version "4.13" >}}
-
 If you are in the [front end preview](../../administration-area/accessing-and-structure-of-the-backend/#the-preview-area), 
 you can create a preview link.
 

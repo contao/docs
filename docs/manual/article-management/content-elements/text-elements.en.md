@@ -252,7 +252,7 @@ The content element "Markdown" is used to generate HTML code from a markdown tex
 | Markdown source |                                                                                        |
 |-----------------|----------------------------------------------------------------------------------------|
 | **Text:**       | Here you can enter the desired markdown code.                                          |
-| **File:**       | {{< version-tag "4.12" >}} Here you can select a Markdown file and use it as content.  |
+| **File:**       | Here you can select a Markdown file and use it as content.  |
 
 **Code:** Note that the code will not be executed.
 

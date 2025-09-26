@@ -89,14 +89,11 @@ php composer.phar create-project contao/managed-edition example {{< current-vers
 
 ### Hosting Configuration
 
-In Contao, all publicly accessible files are located in the subfolder `/web` of the installation. Create this folder and 
+In Contao, all publicly accessible files are located in the subfolder `/public` of the installation. Create this folder and 
 use the admin panel of your hosting provider to set the document root of the installation to this subfolder and create 
 a database on this occasion.
 
-Example: `example.com`points to the directory `/www/example/web`
-
-({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to
-`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
+Example: `example.com`points to the directory `/www/example/public`
 
 {{% notice info %}}
 Every Contao installation therefore requires its own (sub)domain.
@@ -134,7 +131,7 @@ and [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in a
 
 Using the [Contao Manager]({{% relref "installation/contao-manager" %}}), you can create your back end user.
 
-Since Contao **4.10** you can use the following [command]({{% relref "/cli/user" %}}) on the [command line]({{% relref "/cli" %}}).
+You can use the following [command]({{% relref "/cli/user" %}}) on the [command line]({{% relref "/cli" %}}).
 
 
 ```bash

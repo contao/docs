@@ -23,15 +23,13 @@ engine.
 That's why Contao ships with a search indexer abstraction, giving you the freedom to disable the core features and
 connect it with your favourite search engine such as [Algolia](https://www.algolia.com) or [Elasticsearch](https://www.elastic.co).
 
-{{< version "4.9" >}}
-
 
 ## Triggering the Search Index
 
 Indexing in Contao happens in two different ways which may or may not be combined:
 
 * You can trigger the built-in website crawler (which is based on [Escargot](https://github.com/terminal42/escargot)) by
-  either rebuilding the search index manually in the back end or having a cron job that triggers
+  either rebuilding the search index manually in the back end or by executing this command on the command line:
   
   ```bash
   $ vendor/bin/contao-console contao:crawl
@@ -184,7 +182,7 @@ class GeneratePageListener
 }
 ```
 
-Starting with Contao **4.6** you could also fetch the `pageModel` from the request attributes (if present) in your own 
+You can also fetch the `pageModel` from the request attributes (if present) in your own 
 `kernel` event listener.
 
 

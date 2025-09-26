@@ -5,8 +5,6 @@ alias:
   - /framework/response-context/
 ---
 
-{{< version "4.12" >}}
-
 This section describes the "Response Context" concept. A concept that is special
 to Contao and thus deserves its own section in the documentation.
 
@@ -114,9 +112,7 @@ The goal should be to be able to manage everything within `<head>` dynamically.
 Right now, it's a very basic service that allows you to override `<title>` by calling `setTitle()`. Same goes for
 `setMetaDescription()` and `setMetaRobots()`.
 
-{{< version "4.13" >}}
-
-As of Contao 4.13 and if enabled in the root page settings, Contao will also generate a `rel="canoncial"` link pointing to
+If enabled in the root page settings, Contao will generate a `rel="canoncial"` link pointing to
 itself while removing all the query parameters from the current URL. Alternatively, the user can provide a custom other URL and
 configure the query parameters which should be kept (e.g. if `?foobar=42` is relevant, they add `foobar` in which case
 it would not get removed). You can also dynamically adjust the behaviour to your needs using the `HtmlHeadBag` and for

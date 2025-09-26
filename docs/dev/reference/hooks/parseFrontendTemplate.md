@@ -23,7 +23,7 @@ and expects the template content as return value.
 
     The template name (e.g. `nav_default`) without file extension.
 
-3. {{< version-tag "4.9.21" >}} *\Contao\FrontendTemplate* `$template`
+3. *\Contao\FrontendTemplate* `$template`
 
     The front end template instance.
 

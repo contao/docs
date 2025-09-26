@@ -28,7 +28,7 @@ be closed with a comma. After saving the template, your changes are applied imme
 {{% /notice %}}
 
 {{% notice tip %}}
-Starting with Contao **4.10** you can use [template inheritance](/en/layout/templates/php/template-inheritance/) in order to
+You can also use [template inheritance](/en/layout/templates/php/template-inheritance/) in order to
 only adjust parts of the default `be_tinyMCE` template to your needs.
 {{% /notice %}}
 
@@ -119,7 +119,7 @@ and the possible settings can be found in the documentation. So we have to add t
 // be_tinyMCE.html5
 ...
 
-toolbar: 'link unlink | image | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
 
 // activate paste_as_text option
 paste_as_text: true
@@ -142,16 +142,11 @@ this for your editors, remove the entries `alignleft aligncenter alignright alig
 ...
 
 // custom toolbar settings
-toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | bullist numlist outdent indent | code',
 
 // activate paste_as_text option
 paste_as_text: true
 ```
-
-{{< version-tag "5.0" >}} Starting with Contao **5**, Contao uses the [TinyMCE editor](https://www.tiny.cloud/) in version 6. 
-Some terms for displaying elements in the toolbar hav changed. For example, use `blocks` instead of `formatselect` and `styles` 
-instead of `styleselect`. A complete list of the changed terms can be found in the 
-[migration notes of the TinyMCE documentation](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#things-we-renamed]).
 
 
 ### Change the menu
@@ -168,11 +163,6 @@ entry [removed_menuitems](https://www.tiny.cloud/docs-4x/configure/editor-appear
 
 For a complete list of toolbar items and menu items, see the TinyMCE documentation.
 
-{{< version-tag "5.0" >}} Starting with Contao **5**, Contao uses the [TinyMCE editor](https://www.tiny.cloud/) in version 6. 
-Some terms for displaying elements in the toolbar hav changed. For example, use `blocks` instead of `formatselect` and `styles` 
-instead of `styleselect`. A complete list of the changed terms can be found in the 
-[migration notes of the TinyMCE documentation](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#things-we-renamed]).
-
 ```js
 // be_tinyMCE.html5
 ...
@@ -184,7 +174,7 @@ menubar: 'file edit insert view format',
 removed_menuitems: "align",
 
 // custom toolbar settings
-toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | bullist numlist outdent indent | code',
 
 // activate paste_as_text option
 paste_as_text: true

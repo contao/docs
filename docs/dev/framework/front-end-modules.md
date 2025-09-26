@@ -7,12 +7,6 @@ aliases:
     - /framework/front-end-modules/
 ---
 
-{{% notice info %}}
-This covers the documentation on how to create front end modules in Contao **4.6**
-and up. In previous Contao version, front end modules must extend from `\Contao\Module`
-and then be registered via the `$GLOBALS['FE_MOD']` array.
-{{% /notice %}}
-
 Front end modules in Contao are used for more complex functionality, which are typically
 used on more than one page or even in page layouts. They are used to generate dynamic
 content, like news lists, displaying the detailed content of news or navigation items.
@@ -119,7 +113,7 @@ be `mod_example_module` for [PHP templates][LegacyTemplates]:
 </div>
 ```
 
-{{< version-tag "4.13" >}} And `frontend_module/example_module` for [Twig templates][TwigTemplates]:
+And `frontend_module/example_module` for [Twig templates][TwigTemplates]:
 
 ```twig
 {# templates/frontend_module/example_module.html.twig #}
@@ -154,7 +148,7 @@ Applying the service tag can either be done via PHP attributes, annotations or v
 {{< tabs groupid="attribute-annotation-yaml" style="code" >}}
 
 {{% tab title="Attribute" %}}
-{{< version-tag "4.13" >}} A front end module can be registered using the `AsFrontendModule` PHP attribute.
+A front end module can be registered using the `AsFrontendModule` PHP attribute.
 
 ```php
 // src/Controller/FrontendModule/ExampleModuleController.php
@@ -202,7 +196,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
 {{% /tab %}}
 
 {{% tab title="Annotation" %}}
-{{< version-tag "4.8" >}} A front end module can be registered using the `FrontendModule` annotation. The annotation can be used on the class of the front end module,
+A front end module can be registered using the `FrontendModule` annotation. The annotation can be used on the class of the front end module,
 if the class is invokable (has an `__invoke` method) or extends from the `AbstractFrontendModuleController`. Otherwise the annotation can be 
 used on the method that will deliver the response.
 
@@ -256,7 +250,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
 {{% /tab %}}
 
 {{% tab title="YAML" %}}
-{{< version-tag "4.8" >}} A front end module can be registered using the `contao.frontend_module` service tag.
+A front end module can be registered using the `contao.frontend_module` service tag.
 
 ```yaml
 # config/services.yaml
@@ -352,8 +346,6 @@ If you used a custom category for your front end module, its label can also be t
 
 
 ## Page Model
-
-{{< version "4.9.10" >}}
 
 If your fragment extends from `AbstractFrontendModuleController` (or just `AbstractFragmentController`)
 you can use `$this->getPageModel()` in order to receive the `\Contao\PageModel`

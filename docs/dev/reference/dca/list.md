@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['sorting'] = [
 
 | Key                   | Value                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |-----------------------|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| mode                  | Sorting mode (`integer`)         | **0** Records are not sorted <br>**1** Records are sorted by a fixed field <br>**2** Records are sorted by a switchable field <br>**3** Records are sorted by the parent table <br>**4** Displays the child records of a parent record (see content elements) <br>**5** Records are displayed as tree (see site structure) <br>**6** Displays the child records within a tree structure (see articles module) {{% notice tip %}} Use the constants in `\Contao\DataContainer` class for sorting modes.{{% /notice %}} {{% notice info %}}Before Contao **4.13**  you will need to implement a [child_record_callback](../callbacks#list-sorting-child-record) in **mode 4**, otherwise no records will be shown in backend.{{% /notice %}}                                                                                                                                                                          |
+| mode                  | Sorting mode (`integer`)         | **0** Records are not sorted <br>**1** Records are sorted by a fixed field <br>**2** Records are sorted by a switchable field <br>**3** Records are sorted by the parent table <br>**4** Displays the child records of a parent record (see content elements) <br>**5** Records are displayed as tree (see site structure) <br>**6** Displays the child records within a tree structure (see articles module) {{% notice tip %}} Use the constants in `\Contao\DataContainer` class for sorting modes.{{% /notice %}} |
 | flag                  | Sorting flag (`integer`)         | **1** Sort by initial letter ascending <br>**2** Sort by initial letter descending <br>**3** Sort by initial two letters ascending <br>**4** Sort by initial two letters descending <br>**5** Sort by day ascending <br>**6** Sort by day descending <br>**7** Sort by month ascending <br>**8** Sort by month descending <br>**9** Sort by year ascending <br>**10** Sort by year descending <br>**11** Sort ascending <br>**12** Sort descending <br><br>{{< version-tag "5.1" >}}<br> **13** Sort by initial letter ascending and descending <br>**14** Sort by initial two letters ascending and descending <br>**15** Sort by day ascending and descending <br>**16** Sort by month ascending and descending <br>**17** Sort by year ascending and descending <br>**18** Sort ascending and descending {{% notice tip %}} Use the constants in `\Contao\DataContainer` class for sorting flags.{{% /notice %}} |
 | panelLayout           | Panel layout (`string`)          | **search** show the search records menu <br>**sort** show the sort records menu <br>**filter** show the filter records menu <br>**limit** show the limit records menu. <br>Separate options with comma (= space) and semicolon (= new line) like `sort,filter;search,limit`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | fields                | Default sorting values (`array`) | One or more fields that are used to sort the table.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -40,7 +40,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['sorting'] = [
 | child_record_class    | CSS class (`string`)             | Allows you to add a CSS class to the parent view elements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 {{% notice tip %}}
-{{< version-tag "4.13" >}} The `Contao\DataContainer` class provides constants for the various sorting modes and flags, e.g.
+The `Contao\DataContainer` class provides constants for the various sorting modes and flags, e.g.
 
 ```php
 // Displays the child records of a parent record (see content elements)
@@ -70,7 +70,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['label'] = [
 |----------------|----------------------------------|----------------------------------------------------------------------------------------------------|
 | fields         | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `['title', 'user_id:tl_user.name']`). |
 | showColumns    | true/false (`bool`)           | If true Contao will generate a table header with column names (e.g. back end member list)          |
-| showFirstOrderBy | true/false (`bool`)           | {{< version-tag "4.13.36" >}} If false Contao will not force the first sorting field to show up in the list. (default: `true`)         |
+| showFirstOrderBy | true/false (`bool`)           | If false Contao will not force the first sorting field to show up in the list. (default: `true`)         |
 | format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. `'%s (%s)'`).                       |
 | maxCharacters  | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
 | [group_callback](../callbacks#list-label-group) | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
@@ -101,7 +101,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | class           | CSS class (`string`)              | CSS class attribute of the button.                                                                                 |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function to generate the button. Please specify as `['Class', 'Method']` or use service tagging. |
-| route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                     |
+| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                     |
 
 
 {{% notice "info" %}}
@@ -137,12 +137,12 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | icon            | Icon (`string`)                   | Path and filename of the icon.                                                                                     |
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-operations-operation-button) | Callback function (`array`)       | Call a custom function to generate the button. Please specify as `['Class', 'Method']` or use service tagging. |
-| showInHeader    | true/false (`bool`)               | {{< version-tag "4.5" >}} Shows the operation in the [header element]({{< asset "images/dev/reference/mode_parent_header.png" >}}) (sorting mode 4 only).                                                   |
-| route           | Symfony Route Name (`string`)     | {{< version-tag "4.7" >}} The button will redirect to the given Symfony route.                                                               |
+| showInHeader    | true/false (`bool`)               | Shows the operation in the [header element]({{< asset "images/dev/reference/mode_parent_header.png" >}}) (sorting mode 4 only).                                                   |
+| route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
 | primary         | true/false (`bool`)               | {{< version-tag "5.5" >}} Shows the operation in the overview, instead of hiding it in the context menu.                                                   |
 
-{{% notice "info" %}}
-{{< version-tag "5.0" >}} You do not have to define any settings for standard operations anymore. Instead, you can give a list
+{{% notice "tip" %}}
+You do not have to define any settings for standard operations. Instead, you can give a list
 of which operations should be available for your data container. Contao will also check the appropriate
 [`contao_dc.<data-container>` permission](/framework/security/) for these operations.
 
@@ -182,7 +182,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 
 #### Toggle Operation
 
-{{< version-tag "4.13" >}} You can implement an automatic toggle operation for data containers that contain a boolean
+You can implement an automatic toggle operation for data containers that contain a boolean
 field. This is typically used for fields that control a "published" state of a data record for example, but the use case
 can be arbitrary.
 
@@ -210,7 +210,7 @@ $GLOBALS['TL_DCA']['tl_foobar']['fields']['invisible'] = [
 ];
 ```
 
-{{< version-tag "5.0" >}} Since contao 5 you can reduce the toggle operation to a single line:
+You can also reduce the toggle operation to a single line:
 
 ```php
 // contao/dca/tl_foobar.php
