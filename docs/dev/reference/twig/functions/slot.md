@@ -12,11 +12,13 @@ The `slot` tag allows you to define layout sections for composed content. When s
 ## Defining slots
 
 To define a slot with name `main`, add the following to your template - when content was defined for the slot, it will get output at this place:
+
 ```twig
 {% slot main %}{% endslot %}
 ```
 
 Alternatively, slots can provide additional markup, which is only output if non-empty content was set. To define the place the content will get inserted, use the `slot()` function:
+
 ```twig
 {% slot main %}
   <main>{{ slot() }}</main>
@@ -24,6 +26,7 @@ Alternatively, slots can provide additional markup, which is only output if non-
 ```
 
 If you want to define fallback content you can use an *else* statement similar to the `for` tag:
+
 ```twig
 {% slot main %}
   […]
@@ -33,6 +36,7 @@ If you want to define fallback content you can use an *else* statement similar t
 ```
 
 ## Assigning slots
+
 Use the `setSlot` function on a `LayoutTemplate` to define content for slots:
 
 ```php
