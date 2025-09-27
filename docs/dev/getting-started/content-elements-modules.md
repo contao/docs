@@ -59,7 +59,7 @@ content element like so:
 ```php
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
-    {type_legend},type;
+    {type_legend},type,headline;
     {text_legend},text,url;
 ';
 ```
@@ -72,7 +72,7 @@ The template name on the other hand is derived from the element's type. Content 
 {% extends "@Contao/content_element/_base.html.twig" %}
 
 {% block content %}
-    {{ text|raw }}
+    {{ text }}
 
     {% if url %}
         <a href="{{ url }}">Read more</a>
