@@ -11,6 +11,10 @@ aliases:
 The `sqlGetFromFile` hook is triggered when parsing database.sql files. It passes
 the generated SQL definition and expects the same as return value.
 
+{{% notice note %}}
+Using the `sqlGetFromFile` hook has been deprecated and will no longer work in Contao 5.0.
+{{% /notice %}}
+
 
 ## Parameters
 
