@@ -12,6 +12,10 @@ The `getRootPageFromUrl` hook is triggered when searching the current root page.
 It does not pass any parameters and expects a `\Contao\PageModel` instance as return
 value or null.
 
+{{% notice note %}}
+Using the `getRootPageFromUrl` hook has been deprecated and will no longer work in Contao 5.0.
+{{% /notice %}}
+
 
 ## Return Values
 
