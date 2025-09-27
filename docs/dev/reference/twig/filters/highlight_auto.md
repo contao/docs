@@ -1,7 +1,7 @@
 ---
 title: highlight_auto - Twig Filter
 linkTitle: highlight_auto
-description: Automaic syntax highlighting via highlight.php.
+description: Automatic syntax highlighting via highlight.php.
 tags: [Twig]
 ---
 
