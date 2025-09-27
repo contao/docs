@@ -64,34 +64,45 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
 ';
 ```
 
-The template name on the other hand is derived from the element's name, with the 
-prefix `ce_` (`mod_` for front end modules), i.e. `ce_my_content_element` in this 
-case.
+The template name on the other hand is derived from the element's type. Content element templates reside in
+`templates/content_elment/` by default and the template's name will be `my_content_element.html.twig` in this case.
 
-```html
-<!-- templates/ce_my_content_element.html5 -->
-<div class="my-content-element">    
-    <?= $this->text; ?>
+```twig
+{# templates/content_element/my_content_element.html.twig #}
+{% extends "@Contao/content_element/_base.html.twig" %}
 
-    <?php if ($this->url): ?>
-      <a href="<?= $this->url; ?>">Read more</a>
-    <?php endif; ?>
-</div>
+{% block content %}
+    {{ text|raw }}
+
+    {% if url %}
+        <a href="{{ url }}">Read more</a>
+    {% endif %}
+{% endblock %}
 ```
 
 Finally we add a label for our new content element, so it is nicely displayed in the back end:
 
-```php
-// contao/languages/en/default.php
-$GLOBALS['TL_LANG']['CTE']['my_content_element'][0] = 'My Content Element';
-$GLOBALS['TL_LANG']['CTE']['my_content_element'][1] = 'A short description for my new Content Element';
+```yaml
+# translations/contao_default.en.yaml
+CTE:
+    my_content_element:
+        - My Content Element
+        - A short description for my new Content Element
 ```
-
-Labels for other languages follow the same pattern. The respective files will be located in `contao/languages/XX/` with 
-`XX` being the code for the language (e.g. `de`). 
 
 Find out more about [content elements][1] and [front end modules][2] in the framework
 documentation.
+
+{{% notice "tip" %}}
+You can also install the `contao/maker-bundle` with
+
+```bash
+composer require contao/maker-bundle --save-dev
+```
+
+and use commands like `bin/console make:contao:content-element` or `make:contao:frontend-module` which will generate
+these files for your for a new content element or front end module.
+{{% /notice %}}
 
 Next: [creating an extension][3].
 
