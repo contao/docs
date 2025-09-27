@@ -78,7 +78,7 @@ for Contao.
 
 ## Insert Tags
 
-[Insert Tags][11] are special tokens that will be replaced with other content 
+[Insert Tags]({{% relref "replaceInsertTags" %}}) are special tokens that will be replaced with other content 
 in the front end before it is sent to the client. They can be used anywhere and 
 thus allow for dynamically generated content in any place. Contao brings its own 
 set of available Insert Tags, however it is possible to register your own Insert
@@ -93,6 +93,5 @@ Tags as well.
 [8]: /framework/templates/
 [9]: /framework/hooks/
 [10]: /reference/hooks/
-[11]: /framework/insert-tags/
 [12]: https://extensions.contao.org
 [13]: /getting-started/extension/
