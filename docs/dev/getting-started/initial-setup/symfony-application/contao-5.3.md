@@ -4,6 +4,9 @@ linkTitle: "Contao 5.3 LTS"
 description: "How to integrate Contao 5.3 into a Symfony application."
 weight: 3
 aliases:
+  - /getting-started/initial-setup/symfony-application/contao-4.4/
+  - /getting-started/initial-setup/symfony-application/contao-4.9/
+  - /getting-started/initial-setup/symfony-application/contao-4.13/
   - /getting-started/initial-setup/symfony-application/contao-5.3/
 ---
 
