@@ -158,17 +158,17 @@ memory_limit = -1
 Afterwards you have to restart the Devilbox. The Devilbox main directory contains the files `shell.sh` and` shell.bat`.
 So you can plug into the running Devilbox PHP container. Here are already 
 [numerous tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) preinstalled. Also `composer`. 
-After calling you are in the directory `shared/http`. To install e.g. Contao 4.13 in a directory `contao4` you just 
+After calling you are in the directory `shared/http`. To install e.g. Contao {{% siteparam "currentContaoVersion" %}} in a directory `contaocms` you just 
 have to enter:
 
 ```bash
-composer create-project contao/managed-edition contao4 4.13
+composer create-project contao/managed-edition contaocms {{% siteparam "currentContaoVersion" %}}
 ```
 
 Create a new database:
 
 ```bash
-mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao4;'
+mysql -u root -h mysql -p -e 'CREATE DATABASE db_contaocms;'
 ```
 
 {{% notice tip %}}
