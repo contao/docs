@@ -37,9 +37,8 @@ following icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" 
 
 ### Update database tables
 
-As soon as the Contao Manager has installed all packages, the database must be updated. To do this you can 
-use the [Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS). From Contao 5 onwards, this is no longer 
-necessary, as the database can be updated directly via the [Contao Manager]({{% relref "installation/contao-manager" %}}).
+As soon as the Contao Manager has installed all packages, the database must be updated. This can be done directly via
+the [Contao Manager]({{% relref "installation/contao-manager" %}}) or via the command line.
 
 
 ## Installation via the command line
@@ -101,11 +100,8 @@ Every Contao installation therefore requires its own (sub)domain.
 
 
 ### Update database tables
-After installation, you can update the database using the [Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) 
-(Contao 4.13 LTS). From Contao 5 onwards, this is no longer necessary, as the database can be updated directly via the 
-[Contao Manager]({{% relref "installation/contao-manager" %}}).
-
-Since Contao 4.9 you can use the following command on the command line:
+After installation, you can update the database using the [Contao Manager]({{% relref "installation/contao-manager" %}})
+or the command line:
 
 ```bash
 php vendor/bin/contao-console contao:migrate

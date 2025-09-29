@@ -110,29 +110,13 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 
 ### Minimum PHP Requirements
 
-#### Contao 5.0 and later
+### Contao 5.5 and higher
+
+- **PHP** Version 8.2.0 or higher is required.
+
+#### Contao 5.0 and higher
 
 - **PHP** Version 8.1.0 or higher is required.
-
-#### Contao 4.13 (LTS)
-
-- **PHP** Version 7.4.0 or higher is required.
-
-#### Contao 4.9 (LTS)
-
-- **PHP** Version 7.2.0 or higher is required.
-- Images can be processed with the PHP extensions GD (`ext-gd`), Imagick (`ext-imagick`) or Gmagick (`ext-gmagick`). 
-Contao automatically detects and uses the best available extension.
-
-
-#### Contao 4.4 (LTS)
-
-- **PHP** Version 5.6.0 or higher is required.
-- The GD extension (`ext-gd`) is required for image processing.
-
-{{% notice note %}}
-If a MySQL server in version **8.0.17** or higher is used, at least PHP **7.2.0** is required.
-{{% /notice %}}
 
 
 ### Switching the PHP version
