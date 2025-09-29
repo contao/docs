@@ -10,7 +10,7 @@ authentication and authorization. The Contao Managed Edition provides its own [f
 [user providers][SymfonyUserProvider] and [access control][SymfonyAccessControl] via the `contao/manager-bundle`. If you
 do not use the Managed Edition and added Contao to your custom Symfony application, you will have to register Contao's
 security settings yourself, as mentioned in the  [Getting Started article][ContaoConfiguration]. Contao's Symfony
-Security configuration in Contao **{{< current-version >}}** [looks like this][ContaoSecurityYaml] for example.
+Security configuration in Contao **{{% siteparam "currentContaoVersion" %}}** [looks like this][ContaoSecurityYaml] for example.
 
 If you want to learn more about Symfony's Security Component use the provided links to read up on. This documentation
 will only cover implementation details that are unique to Contao.

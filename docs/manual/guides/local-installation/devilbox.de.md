@@ -167,16 +167,16 @@ Im Anschluss musst du die Devilbox neu starten. Im Devilbox-Hauptverzeichnis lie
 `shell.bat`. Damit kannst du dich in den laufenden Devilbox PHP-Container (die `Devilbox-shell`) einklinken. Hier sind 
 bereits [zahlreiche Tools](https://devilbox.readthedocs.io/en/latest/readings/available-tools.html) vorinstalliert 
 (unter anderem `Composer`). Nach Aufruf befindest du dich im Container im Verzeichnis `shared/http`. Zur Installation 
-von z. B. Contao 4.13 in ein Verzeichnis `contao4` musst du lediglich eingeben:
+von z. B. Contao {{% siteparam "currentContaoVersion" %}} in ein Verzeichnis `contaocms` musst du lediglich eingeben:
 
 ```bash
-composer create-project contao/managed-edition contao4 4.13
+composer create-project contao/managed-edition contaocms {{% siteparam "currentContaoVersion" %}}
 ```
 
 Lege dir eine neue Datenbank an:
 
 ```bash
-mysql -u root -h mysql -p -e 'CREATE DATABASE db_contao4;'
+mysql -u root -h mysql -p -e 'CREATE DATABASE db_contaocms;'
 ```
 
 {{% notice tip %}}

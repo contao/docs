@@ -23,11 +23,11 @@ bundles for example (e.g. for Contao Extensions). Head over to the linked articl
 to learn more about the Managed Edition.
 
 To install a specific version of the Contao Managed Edition in the current directory (`.`), run the
-command as follows (e.g. for `4.9`):
+command as follows (e.g. for `{{% siteparam "currentContaoVersion" %}}`):
 
 
 ```bash
-composer create-project contao/managed-edition . 4.9
+composer create-project contao/managed-edition . {{% siteparam "currentContaoVersion" %}}
 ```
 
 [1]: symfony-application

@@ -48,10 +48,10 @@ Create the DDEV configuration with:
 ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.2
 ```
 
-Install Contao 5.3:
+Install Contao {{% siteparam "currentContaoVersion" %}}:
 
 ```shell
-ddev composer create-project contao/managed-edition:5.3
+ddev composer create-project contao/managed-edition:{{% siteparam "currentContaoVersion" %}}
 ```
 
 After installation, the database credentials must be entered in the `.env.local`. At the same time, we also set up 

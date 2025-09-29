@@ -85,10 +85,10 @@ Wenn du Composer global installierst, kannst du den Befehl `composer` in jedem V
 ### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
 
 Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
-Installations-Verzeichnis und die {{< current-version >}} für die zu [installierende Contao-Version](https://to.contao.org/release-plan).
+Installations-Verzeichnis und die {{% siteparam "currentContaoVersion" %}} für die zu [installierende Contao-Version](https://to.contao.org/release-plan).
 
 ```bash
-php composer.phar create-project contao/managed-edition example {{< current-version >}}
+php composer.phar create-project contao/managed-edition example {{% siteparam "currentContaoVersion" %}}
 ```
 
 
