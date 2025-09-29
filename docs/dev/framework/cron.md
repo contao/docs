@@ -322,12 +322,12 @@ class HourlyCron
 
 Contao keeps track of a cronjob's last execution in the `tl_cron_job` table. Thus,
 if you want to test a cron job even though it has already been executed within
-its defined interval, either truncate the whole table or delete the entry for the
-specific cron job you want to test. If the table is empty every cronjob will be 
-executed on the first cron call. After that only on its defined interval.
+its defined interval, you can use the the `--force` command line option as explained
+[above](#command-line), e.g.
 
-In order to execute all cron jobs (or a specific one) you can use the `--force` command line option as explained
-[above](#command-line)
+```bash
+$ bin/console contao:cron "App\Cron\ExampleCron" --force
+```
 
 
 [1]: /framework/hooks/
