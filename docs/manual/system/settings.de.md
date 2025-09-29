@@ -1298,32 +1298,13 @@ php vendor/bin/contao-console cache:warmup --env=prod
 ```
 {{% /notice %}}
 
-Danach kannst du den Mailversand auf der Kommandozeile testen.
-
-{{< tabs groupid="mailer-test" style="code" >}}
-
-{{% tab title="Contao 4.0 bis 4.9" %}}
-```bash
-php vendor/bin/contao-console swiftmailer:email:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
-```
-{{% /tab %}}
-
-{{% tab title="Contao 4.13" %}}
-Zuerst muss das [`inspiredminds/contao-mailer-command`](https://packagist.org/packages/inspiredminds/contao-mailer-command) Paket
+Danach kannst du den Mailversand auf der Kommandozeile testen. Zuerst muss allerdings das
+[`inspiredminds/contao-mailer-command`](https://packagist.org/packages/inspiredminds/contao-mailer-command) Paket
 installiert werden. Danach kann folgendes Kommando benutzt werden:
 
 ```bash
 php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
 ```
-{{% /tab %}}
-
-{{% tab title="Contao 5.0 und höher" %}}
-```bash
-php vendor/bin/contao-console mailer:test --from=sender@example.com --subject=testmail --body=testmail recipient@example.com
-```
-{{% /tab %}}
-
-{{< /tabs >}}
 
 Die Parameter können auch weg gelassen werden - das Kommando fragt dann nach den einzelnen Werten interaktiv.
 
