@@ -13,8 +13,9 @@ search:
 disableLanguageSwitch: true
 documentation_label: Documentation
 disableInlineCopyToClipBoard: true
-currentContaoVersion: '5.5'
-currentReleaseCandidate: '5.6'
+currentContaoLtsVersion: '5.3'
+currentContaoVersion: '5.6'
+currentReleaseCandidate: '5.7'
 disableLandingPageButton: true
 banner:
   show: false
