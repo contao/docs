@@ -1306,33 +1306,9 @@ php vendor/bin/contao-console cache:warmup --env=prod
 {{% /notice %}}
 
 After that you can test the mail dispatch on the command line.
-
-{{< tabs groupid="mailer-test" style="code" >}}
-
-{{% tab title="Contao 4.0 to 4.9" %}}
-```bash
-php vendor/bin/contao-console swiftmailer:email:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
-```
-{{% /tab %}}
-
-{{% tab title="Contao 4.13" %}}
-First you need to install the [`inspiredminds/contao-mailer-command`](https://packagist.org/packages/inspiredminds/contao-mailer-command)
-package. Then the following command can be used:
-
-```bash
-php vendor/bin/contao-console mailer:send --from=sender@example.com --to=recipient@example.com --subject=testmail --body=testmail
-```
-{{% /tab %}}
-
-{{% tab title="Contao 5.0 and up" %}}
 ```bash
 php vendor/bin/contao-console mailer:test --from=sender@example.com --subject=testmail --body=testmail recipient@example.com
 ```
-{{% /tab %}}
-
-{{< /tabs >}}
-
-You can also omit the parameters. The command will then ask you for each parameter interactively.
 
 
 ### Different e-mail configurations and sender addresses
