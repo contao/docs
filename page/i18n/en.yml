@@ -3,3 +3,4 @@ banner_title: Contao Conference & College Düsseldorf 2025
 banner_date: 25th to 27th September
 Version: Version
 Search-placeholder: Search …
+Versioning-warning: This page shows version {{.pageVersion.title}}. The current version can be found <a href="{{.latestUrl}}">here</a>.
