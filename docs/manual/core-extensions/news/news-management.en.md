@@ -86,61 +86,6 @@ comment, you can disable the security question here. Since Contao 4.4, this ques
 
 ## RSS feeds
 
-{{< tabs groupid="contaoVersion">}}
-{{% tab title="Contao  4" %}}
-Every news or blog archive can be exported as RSS/Atom feed if desired. RSS feeds are XML files containing your news 
-contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
-
-The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the 
-header of the page. The "header" is not the header of your page layout, but the tag `head` of the HTML source code.
-
-To create a new feed click on **RSS Feeds** ![Manage RSS feeds]({{% asset "icons/rss.svg" %}}?classes=icon "RSS-Feeds verwalten") 
-and then on **New** ![Create a new feed]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Feed erstellen").
-
-
-### Title and language
-
-**Title:** The title is output as a feed title in the XML file.
-
-**Feed Alias:** The alias of a feed is used as the file name.
-
-**Feed language**: Here you can enter the language of the [feed](http://www.rssboard.org/rss-language-codes#table).
-
-
-### News archives
-
-**News archives:** Here you define which news archives are included in the feed.
-
-
-### Feed settings
-
-**Feed format**: Here you can define the format of the feed. Contao supports RSS 2.0 and Atom, the two most popular 
-formats.
-
-**Export settings:** Here you can specify whether only the teaser texts of the posts or the complete posts are exported 
-as feed.
-
-**Maximum number of contributions:** Here you can limit the number of posts of the feed. Usually about 25 posts per 
-feed are sufficient. Most of the time only the first three to five are actually used anyway.
-
-**Base URL:** The base URL is especially important in multi-domain operation, if you run several websites with one 
-Contao installation. To make sure that the feed links to the correct domain, you can enter it here.
-
-**Feed description**: Here you can enter a description of the feed.
-
-
-### Image settings
-
-**Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
-
-| Custom dimensions               |                                                                                                                     |
-|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
-| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
-| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
-| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
-
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 Every news or blog archive can be exported as RSS/Atom or JSON feed if desired. RSS feeds are XML files containing your 
 news contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
@@ -149,9 +94,6 @@ desired settings for your feed.
 
 The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the
 header of the page. The "header" is not the header of your page layout, but the tag `head` of the HTML source code.
-{{% /tab %}}
-{{< /tabs >}}
-
 
 
 ## News items

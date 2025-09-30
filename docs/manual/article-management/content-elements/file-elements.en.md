@@ -64,27 +64,6 @@ file types".
 ### Template settings
 
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can overwrite the content element `ce_download` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="ce_download block">
-    <figure class="image_container">
-        <a href="…" data-lightbox="lb3">
-            <img src="…" width="…" height="…" alt="">
-        </a>
-    </figure>
-    <p class="download-element ext-pdf">
-        <a href="…" title="Die Datei … herunterladen" type="application/pdf">… <span class="size">(…)</span></a>
-    </p>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_element/download` template.
 
 **HTML Output**  
@@ -100,8 +79,6 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Downloads
@@ -169,29 +146,6 @@ types".
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can overwrite the content element `ce_downloads` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="ce_downloads block">
-    <ul>
-        <li class="download-element ext-jpg">
-            <figure class="image_container">
-                <a href="…" data-lightbox="lb3">
-                    <img src="…" width="…" height="…" alt="">
-                </a>
-            </figure>
-            <a href="…" title="Die Datei … herunterladen" type="application/jpeg">… <span class="size">(…)</span></a>
-        </li>
-    </ul>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_elements/downloads` template.
 
 **HTML Output**  
@@ -211,5 +165,3 @@ The element generates the following HTML code:
     </ul>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}

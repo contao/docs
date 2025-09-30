@@ -258,50 +258,6 @@ class Example
 Not directly related to Contao, but this helper service from Symfony lets you retrieve
 the current Contao front end or back end user from the firewall.
 
-{{< tabs groupid="services-contao4-contao5" style="code" >}}
-{{% tab title="Contao 4" %}}
-```php
-use Contao\BackendUser;
-use Contao\FrontendUser;
-use Symfony\Component\Security\Core\Security;
-
-class Example
-{
-    public function __construct(private readonly Security $security)
-    {
-    }
-
-    public function execute()
-    {
-        // Check for admin back end user role
-        if ($this->security->isGranted('ROLE_ADMIN')) {
-            // …
-        }
-
-        // Check for regular back end user role
-        if ($this->security->isGranted('ROLE_USER')) {
-            // …
-        }
-
-        // Check for front end user role
-        if ($this->security->isGranted('ROLE_MEMBER')) {
-            // …
-        }
-
-        // Get current back end user
-        if (($user = $this->security->getUser()) instanceof BackendUser) {
-            // …
-        }
-
-        // Get current front end user
-        if (($user = $this->security->getUser()) instanceof FrontendUser) {
-            // …
-        }
-    }
-}
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 ```php
 use Contao\BackendUser;
 use Contao\FrontendUser;
@@ -342,8 +298,6 @@ class Example
     }
 }
 ```
-{{% /tab %}}
-{{< /tabs >}}
 
 If you only need to check the authorization you can inject the `AuthorizationCheckerInterface` instead:
 
@@ -420,35 +374,6 @@ class Example
 
 This service allows parsing *simple tokens*. See the [usage examples][SimpleTokenUsage] from the tests for more details.
 
-{{< tabs groupid="services-contao4-contao5-simple-token-parser" style="code" >}}
-{{% tab title="Contao 4" %}}
-```php
-use Contao\CoreBundle\Util\SimpleTokenParser;
-
-class Example
-{
-    public function __construct(private readonly SimpleTokenParser $parser)
-    {
-    }
-
-    public function execute()
-    {
-        // Token replacement
-        $output = $this->parser->parse(
-            'I like ##cms##.',
-            ['cms' => 'Contao']
-        );
-
-        // Conditional expressions
-        $output = $this->parser->parse(
-            'This is {if value>=10}big{else}small{endif}',
-            ['value' => 20]
-        );
-    }
-}
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 ```php
 use Contao\CoreBundle\String\SimpleTokenParser;
 
@@ -474,8 +399,6 @@ class Example
     }
 }
 ```
-{{% /tab %}}
-{{< /tabs >}}
 
 
 ### Extending the parser
