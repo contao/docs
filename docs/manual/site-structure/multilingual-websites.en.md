@@ -15,12 +15,7 @@ In general, there are two ways to display multilingual websites:
 
 In Contao, only the first variant is supported (except for some third party extensions that differ from this concept for managing your own content).
 
-In order for the language to be added to the URL (e.g. `www.example.com/de/`), you must add the following lines in the `config.yaml` located in the `config/` directory. If the file does not exist yet, you have to create it.
-
-```yaml
-contao:
-    prepend_locale: true
-```
+In order for the language to be added to the URL (e.g. `www.example.com/de/`), you must add an **URL prefix** in the settings of your "website root".
 
 {{% notice note %}}
 **Empty cache**  

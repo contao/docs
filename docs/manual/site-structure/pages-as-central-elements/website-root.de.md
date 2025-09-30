@@ -69,12 +69,10 @@ Hosting-Umgebung automatisch von `http://` auf `https://` weiterleitet.
 {{% /notice %}}
 
 **URL-Präfix:** Mit dieser Einstellung kann ein optionaler URL-Präfix allen Seitenaliasen unterhalb dieses Startpunkts
-zugewiesen werden. Der URL-Präfix ist frei wählbar und damit unabhängig von der jeweils eingestellten Sprache. Damit du 
-von dieser Einstellung profitieren kannst, musst du das [»Legacy-Routing« deaktivieren](#legacy-routing-modus).
+zugewiesen werden. Der URL-Präfix ist frei wählbar und damit unabhängig von der jeweils eingestellten Sprache.
 
 **URL-Suffix:** Mit dieser Einstellung kann der »URL-Suffix« geändert oder entfernt werden. Der URL-Suffix wird bei der
-Generierung der URL einer Seite an den Seitenalias angehängt. Damit du von dieser Einstellung profitieren kannst, musst 
-du das [»Legacy-Routing« deaktivieren](#legacy-routing-modus).
+Generierung der URL einer Seite an den Seitenalias angehängt.
 
 **Gültige Alias-Zeichen:** Der Slug-Generator ermöglicht es einen individuellen Zeichensatz für automatisch erstellte
 Aliase auszuwählen.
