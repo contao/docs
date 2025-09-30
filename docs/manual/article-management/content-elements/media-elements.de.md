@@ -43,8 +43,6 @@ möglich ist.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_image` überschreiben.
 
 **HTML-Ausgabe**  
@@ -60,25 +58,6 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/image` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-image">
-    <figure>
-        <a class="cboxElement" href=…" title="…" data-lightbox="…">
-            <img class="…" src="…" alt="…" height="…" width="…">
-        </a>
-        <figcaption>…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Galerie
@@ -131,8 +110,6 @@ Lightbox geöffnet (dazu ist JavaScript erforderlich).
 
 **Galerietemplate:** Hier kannst du das Galerietemplate überschreiben.
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_gallery` überschreiben.
 
 **HTML-Ausgabe**  
@@ -168,41 +145,6 @@ Das Element generiert folgenden HTML-Code:
     <!-- indexer::continue -->
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/gallery` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-gallery--cols-2 content-gallery"">
-    <ul data-list-paginate="ready">
-        <li style="display: revert;">
-            <figure>
-                <a href="…" data-lightbox="…" class="cboxElement">
-                    <img src="…" alt="…" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-                </a>
-            </figure>
-        </li>
-        <li style="display: revert;">
-            <figure>
-                <a href="…" data-lightbox="…" class="cboxElement">
-                    <img src="…" alt="…" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-                </a>
-            </figure>
-        </li>
-    </ul>
-    <nav data-pagination="" aria-label="Seitenumbruch-Menü">
-        <ul>
-            <li><a href="#" data-page="1" title="Gehe zu Seite 1" class="active">1</a></li>
-            <li><a href="#" data-page="2" title="Gehe zu Seite 2">2</a></li>
-        </ul>
-    </nav>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Video/Audio
@@ -248,8 +190,6 @@ deaktivieren.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_player` überschreiben.
 
 **HTML-Ausgabe**  
@@ -265,25 +205,6 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/player` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-player">
-    <figure>
-        <video width="…" height="…" autoplay loop playsinline muted>
-            <source type="video/mp4" src="…" title="…">
-        </video>
-        <figcaption>……</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Vimeo
@@ -333,8 +254,6 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_vimeo` überschreiben.
 
 **HTML-Ausgabe**  
@@ -363,29 +282,6 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/vimeo` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-vimeo"">
-    <figure class="spect aspect--16:9">
-        <button data-splash-screen="">
-            <img src="…" alt="…" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-            <p>Bitte klicken, um das Video zu laden. Ihre IP-Adresse wird an Vimeo übermittelt.</p>
-            <template>
-                <iframe width="" height="" src="…" allowfullscreen=""></iframe>
-            </template>
-        </button>
-        <figcaption>…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## YouTube
@@ -440,8 +336,6 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_youtube` überschreiben.
 
 **HTML-Ausgabe**  
@@ -472,26 +366,3 @@ Das Element generiert folgenden HTML-Code:
 </div>
 <!-- indexer::continue -->
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/youtube` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-youtube">
-    <figure class="aspect aspect--16:9">
-        <button data-splash-screen="">
-            <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-            <p>Bitte klicken, um das Video zu laden. Ihre IP-Adresse wird an YouTube übermittelt.</p>
-            <template>
-                <iframe width="…" height="…" src="…" allowfullscreen="" allow="fullscreen"></iframe>
-            </template>
-        </button>
-        <figcaption>…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}

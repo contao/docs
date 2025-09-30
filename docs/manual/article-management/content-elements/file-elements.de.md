@@ -67,8 +67,6 @@ Download-Dateitypen« festgelegt hast.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_download` überschreiben.
 
 **HTML-Ausgabe**  
@@ -86,25 +84,6 @@ Das Element generiert folgenden HTML-Code:
     </p>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/download` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="download-element ext-pdf content-download">
-    <a href="…" title="Die Datei … herunterladen" type="application/pdf">…</a>
-    <figure>
-        <a href="…" data-lightbox="…" class="cboxElement">                                                                                   
-            <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-        </a>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Downloads
@@ -178,8 +157,6 @@ Download-Dateitypen« festgelegt hast.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_downloads` überschreiben.
 
 **HTML-Ausgabe**  
@@ -199,26 +176,3 @@ Das Element generiert folgenden HTML-Code:
     </ul>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_elements/downloads` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-downloads">
-    <ul>
-        <li class="download-element ext-jpg">
-            <a href="…" title="Die Datei … herunterladen" type="image/jpeg">…</a>
-            <figure>
-                <a href="…" data-lightbox="…" class="cboxElement">
-                    <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-                </a>
-            </figure>
-        </li>
-    </ul>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
