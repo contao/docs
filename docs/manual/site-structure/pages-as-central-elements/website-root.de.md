@@ -94,30 +94,6 @@ Seitenhierarchie vorhandenen Aliase in den Alias mit übernommen z. B. die Seite
 »Docs > Install« zu `docs/install/download.html` anstatt nur `download.html`.
 
 
-### Legacy Routing Modus
-
-Die Einstellungen **URL-Präfix** und **URL-Suffix** so wie **Sprachweiterleitung deaktivieren** sind erst verfügbar, wenn
-das sogennante »Legacy Routing« über die Contao `contao.legacy_routing` Konfigurationseinstellung deaktiviert wurde.
-Andernfalls wird die URL-Generierung nach wie vor nur durch die Einstellungen `contao.prepend_locale` und `contao.url_suffix`
-bestimmt.
-
-```yaml
-# config/config.yaml
-contao:
-    legacy_routing: false
-```
-
-**Beachte allerdings**, dass die Deaktivierung des Legacy Routing Modus auch folgende Hooks deaktiviert:
-
-* [`getRootPageFromUrl`](https://docs.contao.org/dev/reference/hooks/getRootPageFromUrl/)
-* [`getPageIdFromUrl`](https://docs.contao.org/dev/reference/hooks/getPageIdFromUrl/)
-
-{{% notice warning %}}
-Falls Extensions installiert sind, die diese Hooks noch benötigen, dann muss entweder das Legacy Routing aktiviert 
-bleiben, oder die Extensions müssen entfernt oder ersetzt werden. Andernfalls wird ein Fehler im Frontend auftreten.
-{{% /notice %}}
-
-
 ## Spracheinstellungen
 
 **Sprache:** Hier kannst du die Sprache des Startpunkts festlegen. Sprachen werden über ihr primäres Subtag nach 

@@ -431,17 +431,11 @@ contao:
             - '-AT'
             - CH
 
-    # Disabling legacy routing allows to configure the URL prefix and suffix per root page. However, it might not be compatible with third-party extensions.
-    legacy_routing:       true
-
     # Allows to set TL_CONFIG variables, overriding settings stored in localconfig.php. Changes in the Contao back end will not have any effect.
     localconfig:          ~
 
     # Allows to configure which languages can be used in the Contao back end. Defaults to all languages for which a translation exists.
     locales:              [] # Deprecated (Since contao/core-bundle 4.12: Using contao.locales is deprecated. Please use contao.intl.enabled_locales instead.)
-
-    # Whether or not to add the page language to the URL.
-    prepend_locale:       false # Deprecated (Since contao/core-bundle 4.10: The URL prefix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
 
     # Show customizable, pretty error screens instead of the default PHP error messages.
     pretty_error_screens: false
@@ -452,7 +446,6 @@ contao:
     # The folder used by the file manager.
     upload_path:          files
     editable_files:       'css,csv,html,ini,js,json,less,md,scss,svg,svgz,ts,txt,xliff,xml,yml,yaml'
-    url_suffix:           .html # Deprecated (Since contao/core-bundle 4.10: The URL suffix is configured per root page since Contao 4.10. Using this option requires legacy routing.)
 
     # Absolute path to the web directory. Defaults to %kernel.project_dir%/public.
     web_dir:              '%kernel.project_dir%/public' # Deprecated (Since contao/core-bundle 4.13: Setting the web directory in a config file is deprecated. Use the "extra.public-dir" config key in your root composer.json instead.)
