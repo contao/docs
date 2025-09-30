@@ -67,12 +67,10 @@ Otherwise you might get an infinite redirect in the front end, if your hosting e
 {{% /notice %}}
 
 **URL prefix:** With this setting, an optional URL prefix can be assigned to all page aliases below this starting point. 
-The URL prefix is freely selectable and therefore independent of the language set. In order to benefit from this 
-setting, you must [deactivate "Legacy routing"](#legacy-routing-mode).
+The URL prefix is freely selectable and therefore independent of the language set.
 
 **URL suffix:** This setting can be used to change or remove the "URL suffix". The URL suffix is appended to the page 
-alias when the URL of a page is generated. In order to benefit from this setting, you must
-[deactivate "Legacy routing"](#legacy-routing-mode).
+alias when the URL of a page is generated.
 
 **Alias settings:** The slug generator allows you to select an individual character set for
 automatically generated aliases.
@@ -90,29 +88,6 @@ would be converted to "ueber" while the finish word "eläinkö" would be convert
 **Enable folder URLs:** Here you can activate folder structures in page aliases. This will
 add the aliases that exist in the page hierarchy to the alias, e.g. the page "Download" in the page path "Docs &gt;
 Install" will use the alias `docs/install/download.html` instead of just `download.html`.
-
-
-### Legacy Routing Mode
-
-The settings **URL prefix** and **URL suffix** as well as **Disable language redirect** are only available if the so called
-"legacy routing" mode is disabled via the `contao.legacy_routing` setting. When not disabled the URL generation will continue
-to be influenced only via the `contao.prepend_locale` and `contao.url_suffix` setting.
-
-```yaml
-# config/config.yaml
-contao:
-    legacy_routing: false
-```
-
-**However**, be advised that disabling the legacy routing mode also disables the following hooks:
-
-* [`getRootPageFromUrl`](https://docs.contao.org/dev/reference/hooks/getRootPageFromUrl/)
-* [`getPageIdFromUrl`](https://docs.contao.org/dev/reference/hooks/getPageIdFromUrl/)
-
-{{% notice warning %}}
-If you have any extensions installed that still rely on either of these hooks, then you must either keep legacy routing
-enabled or you need to remove or replace these extensions. Otherwise an error in the front end will occur.
-{{% /notice %}}
 
 
 ## Language settings

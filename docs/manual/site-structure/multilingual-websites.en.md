@@ -15,12 +15,7 @@ In general, there are two ways to display multilingual websites:
 
 In Contao, only the first variant is supported (except for some third party extensions that differ from this concept for managing your own content).
 
-In order for the language to be added to the URL (e.g. `www.example.com/de/`), you must add the following lines in the `config.yaml` located in the `config/` directory. If the file does not exist yet, you have to create it.
-
-```yaml
-contao:
-    prepend_locale: true
-```
+In order for the language to be added to the URL (e.g. `www.example.com/de/`), you must add an **URL prefix** in the settings of your "website root".
 
 {{% notice note %}}
 **Empty cache**  
@@ -35,14 +30,8 @@ vendor/bin/contao-console cache:warmup --env=prod
 The URL prefix can be defined for each website root individually and independently of
 the language of the website root. This way it is also possible have one website root without an URL prefix, while the other
 website roots of the same domain still have one. For example: `example.com` for the English version of the website and
-`example.com/de` for the German version. In order to be able to configure this setting the »[legacy routing](/en/site-structure/website-root/#legacy-routing-mode)« 
-mode must be disabled:
+`example.com/de` for the German version.
 
-```yaml
-# config/config.yaml
-contao:
-    legacy_routing: false
-```
 
 ## Matching the website root
 

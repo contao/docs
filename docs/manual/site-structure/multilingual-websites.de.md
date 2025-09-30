@@ -25,17 +25,8 @@ für die Verwaltung der mehrsprachigen Inhalte.
 In Contao wird ausschließlich die erste Variante unterstützt (bis auf einige Third-Party-Erweiterungen, die für die 
 Verwaltung eigener Inhalte von diesem Konzept abweichen).
 
-Damit die Sprache der URL (z. B. `www.example.com/de/`) hinzugefügt wird, musst du folgende Zeilen in die `config.yaml` 
-im Ordner `app/config/` einfügen. Falls die Datei noch nicht vorhanden ist, muss diese angelegt werden.
-
-{{% notice info %}}
-Ab der Version 4.8 von Contao befindet sich die Datei im Ordner `config`.
-{{% /notice %}}
-
-```yaml
-contao:
-    prepend_locale: true
-```
+Damit die Sprache der URL (z. B. `www.example.com/de/`) hinzugefügt wird, musst du in den Einstellungen deiner
+»Website-Startseite« im **URL-Präfix** ein entsprechendes Kürzel eintragen.
 
 {{% notice note %}}
 **Cache leeren**  
@@ -51,14 +42,7 @@ vendor/bin/contao-console cache:warmup --env=prod
 Der URL-Präfix kann beliebig im Startpunkt der Website festgelegt werden. Dadurch ist es einerseits
 möglich einen Präfix zu verwenden, der anders als die Sprache selbst lautet und andererseits ist es möglich einen Startpunkt
 auch ohne Präfix zu benutzen, während die anderen Startpunkte der selben Domain weiterhin einen Präfix haben. Zum Beispiel
-`example.com` für die Englische Version der Website und `example.com/de` für die Deutsche Version. Damit diese Einstellung
-möglich wird, muss aber das »[Legacy Routing][LegacyRouting]« über die Konfiguration deaktiviert werden:
-
-```yaml
-# config/config.yaml
-contao:
-    legacy_routing: false
-```
+`example.com` für die Englische Version der Website und `example.com/de` für die Deutsche Version.
 
 
 ## Auffinden des richtigen Startpunkts
@@ -116,6 +100,3 @@ Der vierte Fall gehört aufgrund der Domain ganz klar zur privaten Webseite, ega
 Dank des Sprachen-Fallbacks haben Surfer auf der ganzen Welt Zugriff auf die Webseite. Und hier erkennst du auch die 
 Wichtigkeit eines Sprachen-Fallbacks: ohne dieses wäre die private Webseite nur für deutschsprachige Besucher verfügbar!
 Alle anderen sähen nur ein »No pages found«.
-
-
-[LegacyRouting]: /de/seitenstruktur/website-startseite/#legacy-routing-modus

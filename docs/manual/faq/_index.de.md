@@ -129,27 +129,11 @@ Ab Contao 4.10 kannst du dies [konfigurieren](/de/system/einstellungen/#verschie
 {{% /faq %}}
 
 {{% faq "Wie kann ich das Sprachkürzel der URL hinzufügen?" %}}
-Du kannst in der [config.yaml](/de/system/einstellungen/#config-yml) den Eintrag `prepend_locale: true` hinzufügen.
-Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
-einmalig den Anwendungs-Cache leeren.
-
-```yaml
-# config/config.yaml
-contao:
-    prepend_locale: true
-```
+Dazu fügst du einen entsprechenden **URL-Präfix** in den Einstellungen deiner »Website-Startseite« hinzu.
 {{% /faq %}}
 
-{{% faq "Kann man die URL Suffix ».html« entfernen?" %}}
-Du kannst in der [config.yaml](/de/system/einstellungen/#config-yml) den Eintrag `url_suffix: ''` hinzufügen. 
-Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
-einmalig den Anwendungs-Cache leeren.
-
-```yaml
-# config/config.yaml
-contao:
-    url_suffix: ''
-```
+{{% faq "Kann man die URL Suffix ».html« hinzufügen?" %}}
+Dazu fügst du einen entsprechenden **URL-Suffix** in den Einstellungen deiner »Website-Startseite« hinzu.
 {{% /faq %}}
 
 {{% faq "Warum werden meine HTML-Angaben im TinyMCE-Editor nicht übernommen?" %}}
