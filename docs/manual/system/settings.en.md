@@ -670,12 +670,8 @@ The following is a comprehensive list of localconfig configurations still in use
 | `defaultChmod` | [Default access rights](#default-access-rights). |
 | `defaultGroup` | [Default page group](#default-access-rights). |
 | `defaultUser` | [Default page owner](#default-access-rights). |
-| `disableCron` | [Deactivate the command scheduler](#front-end-configuration). |
 | `doNotCollapse` | [Do not collapse elements](#back-end-configuration). ({{< version-tag "5.3" >}} _deprecated_ - it is now a back end user setting)  |
 | `doNotRedirectEmpty` | [Do not redirect empty URLs](#front-end-configuration). |
-| `folderUrl` | [Enable folder URLs](#front-end-configuration). |
-| `gdMaxImgHeight` | [Maximum GD image height](#files-and-images). |
-| `gdMaxImgWidth` | [Maximum GD image width](#files-and-images). |
 | `imageHeight` | [Maximum image height](#upload-settings). |
 | `imageWidth` | [Maximum image width](#upload-settings). |
 | `logPeriod` | Duration in seconds for how long entries in the Contao back end system log should be kept. Default: `604800`. |
