@@ -61,33 +61,6 @@ Suchmaschinen ausgewertet und sind daher ein wichtiges Instrument der Onpage-Opt
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_hyperlink` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_hyperlink block">
-    <a class="hyperlink_txt" href="…" title="…" data-lightbox="…" target="_blank" rel="noreferrer noopener">…</a> …
-</div>
-```
-
-Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
-
-```html
-<div class="ce_hyperlink block">
-    <figure class="image_container">
-        <a class="hyperlink_img" href="…" target="_blank" rel="noreferrer noopener">
-            <img src="…" alt="…" title="…" height="…" width="…" itemprop="image">
-        </a>
-        <figcaption class="caption">…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/hyperlink` überschreiben.
 
 **HTML-Ausgabe**  
@@ -111,8 +84,6 @@ Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Top-Link
@@ -129,20 +100,6 @@ Standardbezeichnung »Nach oben« verwendet.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_toplink` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_toplink first last block">
-    <a href="#top" title="Nach oben">Nach oben</a>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/toplink` überschreiben.
 
 **HTML-Ausgabe**  
@@ -153,5 +110,3 @@ Das Element generiert folgenden HTML-Code:
     <a href="#top" data-toplink="" title="Nach oben">Nach oben</a>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}

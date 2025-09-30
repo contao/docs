@@ -43,25 +43,6 @@ möglich ist.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_image` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_image first last block">
-    <figure class="image_container">
-        <a href=…" title="…" data-lightbox="…">
-            <img src="…" alt="…" itemprop="image">
-        </a>
-        <figcaption class="caption">…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/image` überschreiben.
 
 **HTML-Ausgabe**  
@@ -77,8 +58,6 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Galerie
@@ -131,45 +110,6 @@ Lightbox geöffnet (dazu ist JavaScript erforderlich).
 
 **Galerietemplate:** Hier kannst du das Galerietemplate überschreiben.
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_gallery` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_gallery first last block">
-    <ul class="cols_2">
-        <li class="row_0 row_first row_last even col_0 col_first">
-            <figure class="image_container">
-                <a href="…" data-lightbox="…">
-                    <img src="…" alt="…">
-                </a>
-            </figure>
-        </li>
-        <li class="row_0 row_first row_last even col_1 col_last">
-            <figure class="image_container">
-                <a href="…" data-lightbox="…">
-                    <img src="…" alt="…">
-                </a>
-            </figure>
-        </li>
-    </ul>
-    <!-- indexer::stop -->
-    <nav class="pagination block" aria-label="Seitenumbruch-Menü">
-        <p>Seite 1 von 2</p>
-        <ul>
-            <li><strong class="active">1</strong></li>
-            <li><a href="…" class="link" title="Gehe zu Seite 2">2</a></li>
-            <li class="next"><a href="…" class="next" title="Gehe zu Seite 2">Vorwärts</a></li>
-        </ul>
-    </nav>
-    <!-- indexer::continue -->
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/gallery` überschreiben.
 
 **HTML-Ausgabe**  
@@ -201,8 +141,6 @@ Das Element generiert folgenden HTML-Code:
     </nav>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Video/Audio
@@ -248,25 +186,6 @@ deaktivieren.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_player` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_player block">
-    <figure class="video_container">
-        <video width="…" height="…" autoplay loop playsinline muted>
-            <source type="video/mp4" src="…" title="…">
-        </video>
-        <figcaption class="caption">……</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/player` überschreiben.
 
 **HTML-Ausgabe**  
@@ -282,8 +201,6 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Vimeo
@@ -333,38 +250,6 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_vimeo` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_vimeo block">
-    <figure class="video_container">
-        <div class="responsive ratio-169">
-            <a id="splashImage" href="…">
-            <img src="…" alt="…">
-            </a>
-            <script>
-                document.getElementById('splashImage').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var iframe = document.createElement('iframe');
-                    iframe.src = this.href;
-                    iframe.width = '…';
-                    iframe.height = '…';
-                    iframe.setAttribute('allowfullscreen', '');
-                    this.parentNode.replaceChild(iframe, this);
-                });
-            </script>
-        </div>
-        <figcaption class="caption">…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/vimeo` überschreiben.
 
 **HTML-Ausgabe**  
@@ -384,8 +269,6 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## YouTube
@@ -440,40 +323,6 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_youtube` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<!-- indexer::stop -->
-<div class="ce_youtube block">
-    <figure class="video_container">
-        <div class="responsive ratio-169">
-            <a id="splashImage" href="…">
-                <img src="…" alt="…" itemprop="image">
-            </a>
-            <script>
-                document.getElementById('splashImage').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var iframe = document.createElement('iframe');
-                    iframe.src = this.href;
-                    iframe.width = '…';
-                    iframe.height = '…';
-                    iframe.setAttribute('allowfullscreen', '');
-                    this.parentNode.replaceChild(iframe, this);
-                });
-            </script>
-        </div>
-        <figcaption class="caption">…</figcaption>
-    </figure>
-</div>
-<!-- indexer::continue -->
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/youtube` überschreiben.
 
 **HTML-Ausgabe**  
@@ -493,5 +342,3 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
