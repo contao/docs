@@ -688,7 +688,6 @@ Beschreibung.
 | `defaultGroup` | [Standardgruppe](#standard-zugriffsrechte). |
 | `defaultUser` | [Standardbesitzer](#standard-zugriffsrechte). |
 | `doNotCollapse` | [Elemente nicht verkürzen](#backend-einstellungen). ({{< version-tag "5.3" >}} _veraltet_ - Diese Einstellung befindet sich nun beim Backend-User) |
-| `doNotRedirectEmpty` | [Leere URLs nicht umleiten](#frontend-einstellungen). |
 | `imageHeight` | [Maximale Bildhöhe](#datei-uploads). |
 | `imageWidth` | [Maximale Bildbreite](#datei-uploads). |
 | `logPeriod` | Zeitspanne in Sekunden wie lange Einträge im System-Log behalten werden sollen. Standard: `604800`. |
