@@ -28,13 +28,13 @@ may not work anymore. The current major release of Contao is **version 5** when 
 
 A minor release is a kind of milestone on the development path where new features have been added. Minor changes to 
 existing pages might therefore be necessary. When writing these lines, the current minor version of Contao 
-is **version 5.5**.
+is **version 5.6**.
 
 
 ### Bugfix release
 
 A bugfix release is a maintenance release whose primary purpose is to fix bugs; the current bugfix version of Contao 
-when writing these lines is **version 5.5.3**.
+when writing these lines is **version 5.6.3**.
 
 
 ### Long-Term Support Versions
@@ -115,7 +115,7 @@ If you are updating for a [minor release](#minor-release), you need to specify t
 {
     …
     "require": {
-        "contao/manager-bundle": "5.5.*",
+        "contao/manager-bundle": "5.6.*",
         …
     },
     …
