@@ -33,8 +33,8 @@ is **version 5.6**.
 
 ### Bugfix release
 
-A bugfix release is a maintenance release whose primary purpose is to fix bugs; the current bugfix version of Contao 
-when writing these lines is **version 5.6.3**.
+A bugfix release is a maintenance release whose primary purpose is to fix bugs.
+For example **version {{% siteparam "currentContaoVersion" %}}.1**.
 
 
 ### Long-Term Support Versions
