@@ -739,7 +739,7 @@ The following tool runs in your browser and helps you to convert the variables o
 
 The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
 be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
-applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:587`.
 See the [Symfony Mailer Documentation][SymfonyMailer] for more information.
 
 {{% notice info %}}
@@ -908,7 +908,7 @@ Contao **5.0** and up only the `MAILER_DSN` environment variable will work.
 
 ```ini
 # .env.local
-MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl
+MAILER_DSN=smtp://username:password@smtp.example.com:587
 ```
 
 Keep in mind that the _username_ and _password_ (individually) need to be [URL encoded](https://www.urlencoder.org/).

@@ -437,7 +437,7 @@ It is used by default for the Doctrine configuration: `doctrine.dbal.url: '%env(
 
 The mailer connection information is stored as an environment variable called `MAILER_DSN`. It defines the transport to
 be used for sending emails, as well as the login credentials, host name and port for an SMTP server for example, if 
-applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+applicable. The format of this variable is the following: `MAILER_DSN=smtp://username:password@smtp.example.com:587`.
 See the [Symfony Swiftmailer Bundle Documentation][SymfonySwiftmailer] for more information.
 
 {{% notice info %}}
