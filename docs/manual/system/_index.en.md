@@ -1,6 +1,7 @@
 ---
 title: "System"
 weight: 5
+description: This chapter explains the System section in the Contao back end.
 ---
 
 

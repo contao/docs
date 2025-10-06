@@ -2,6 +2,7 @@
 title: "System"
 description: ""
 url: "system"
+description: Dieses Kapitel beschreibt die System Sektion des Contao Backends.
 aliases:
     - /de/system/
 weight: 5

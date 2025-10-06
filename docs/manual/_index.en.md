@@ -66,4 +66,4 @@ For newer versions:
 
 ### This manual is divided into the following chapters:
 
-{{% children description="true" %}}
+{{% children description="true" depth="1" %}}
