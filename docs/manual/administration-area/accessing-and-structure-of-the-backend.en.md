@@ -57,7 +57,7 @@ dark mode. {{< version-tag "5.1" >}}
 
 ![Dark-Mode]({{% asset "images/manual/administration-area/en/dark-mode.png" %}}?classes=shadow)
 
-**Debug Mode:** Clicking this link will switch the [debug mode](/en/system/debug-mode/) on or off.
+**Debug Mode:** Clicking this link will switch the [debug mode]({{% relref "debug-mode" %}}) on or off.
 
 **Preview:** This link opens the frontend, i.e. the actual website, in a new window. If you edit a specific page or 
 article in the back end, you will be automatically forwarded to the corresponding page in the frontend.

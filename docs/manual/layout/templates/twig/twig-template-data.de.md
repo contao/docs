@@ -44,5 +44,5 @@ Beachte, dass in erweiterten Templates die `dump()`-Funktion innerhalb eines Blo
 
 {{% notice warning %}}
 Da die ausgewerteten Daten sicherheitskritische Informationen über das System enthalten können, ist dies nur möglich,
-wenn der [Debug-Modus](/de/system/debug-modus/) aktiviert ist.
+wenn der [Debug-Modus]({{% relref "debug-mode" %}}) aktiviert ist.
 {{% /notice %}}
