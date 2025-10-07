@@ -355,8 +355,6 @@ window.
 
 ### `config.onpalette`
 
-{{< version "5.3" >}}
-
 Allows to dynamically adjust the palette. This can also be achieved using e.g. the `config.onload` callback where you
 can modify the palette as it is a global variable. However, adjusting it depending on the object's values is way easier
 using `config.onpalette` making it automatically work for e.g. the edit multiple mode.
@@ -743,8 +741,6 @@ field name of your choice.
 
 
 ### `fields.<FIELD>.attributes`
-
-{{< version "5.1" >}}
 
 Allows you do dynamically adjust the attributes of a field in a DCA before a widget is generated.
 
