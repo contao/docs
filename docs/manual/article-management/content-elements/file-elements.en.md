@@ -64,8 +64,6 @@ file types".
 ### Template settings
 
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Content element template:** Here you can overwrite the content element `ce_download` template.
 
 **HTML Output**  
@@ -83,25 +81,6 @@ The element generates the following HTML code:
     </p>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Content element template:** Here you can overwrite the content element `content_element/download` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="download-element ext-pdf content-download">
-    <a href="…" title="Die Datei … herunterladen" type="application/pdf">…</a>
-    <figure>
-        <a href="…" data-lightbox="…" class="cboxElement">                                                                                   
-            <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-        </a>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Downloads
@@ -169,8 +148,6 @@ types".
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Content element template:** Here you can overwrite the content element `ce_downloads` template.
 
 **HTML Output**  
@@ -190,26 +167,3 @@ The element generates the following HTML code:
     </ul>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Content element template:** Here you can overwrite the content element `content_elements/downloads` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="content-downloads">
-    <ul>
-        <li class="download-element ext-jpg">
-            <a href="…" title="Die Datei … herunterladen" type="image/jpeg">…</a>
-            <figure>
-                <a href="…" data-lightbox="…" class="cboxElement">
-                    <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-                </a>
-            </figure>
-        </li>
-    </ul>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}

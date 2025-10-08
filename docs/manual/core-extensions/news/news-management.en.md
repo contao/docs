@@ -86,8 +86,6 @@ comment, you can disable the security question here. Since Contao 4.4, this ques
 
 ## RSS feeds
 
-{{< tabs groupid="contaoVersion">}}
-{{% tab title="Contao  4" %}}
 Every news or blog archive can be exported as RSS/Atom feed if desired. RSS feeds are XML files containing your news 
 contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
@@ -138,20 +136,6 @@ Contao installation. To make sure that the feed links to the correct domain, you
 | Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
 | Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
 | Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
-
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-Every news or blog archive can be exported as RSS/Atom or JSON feed if desired. RSS feeds are XML files containing your 
-news contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
-
-To create a news feed, select the page type [news feed](/en/site-structure/news-feed/) in the "Pages" area and make the 
-desired settings for your feed.
-
-The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the
-header of the page. The "header" is not the header of your page layout, but the tag `head` of the HTML source code.
-{{% /tab %}}
-{{< /tabs >}}
-
 
 
 ## News items

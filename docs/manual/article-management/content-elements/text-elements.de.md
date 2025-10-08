@@ -49,8 +49,6 @@ Verfügung:
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_code` überschreiben.
 
 **HTML-Ausgabe**  
@@ -63,22 +61,6 @@ Das Element generiert folgenden HTML-Code:
     </pre>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/code` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-code">
-    <pre>
-        <code class="hljs css">…</code>
-    </pre>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ### Listeneinträge
@@ -119,8 +101,6 @@ niedrigere Überschriften abbilden und natürlich mehrfach vorkommen.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_headline` überschreiben.
 
 **HTML-Ausgabe**  
@@ -129,19 +109,6 @@ Das Element generiert folgenden HTML-Code:
 ```html
 <h1 class="ce_headline">…</h1>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/headline` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<h1 class="content-headline">…</h1>
-```
-{{% /tab %}}
-{{</tabs>}}
-
 
 
 ## HTML
@@ -157,17 +124,9 @@ erlaubt sind. Die Liste der erlaubten Tags findest du in den Backend-Einstellung
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_html` überschreiben.
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/html` überschreiben.
-{{% /tab %}}
-{{</tabs>}}
 
 Das Inhaltselement hat kein umschließenden HTML-Markup.
-
 
 
 ## Aufzählung {#aufzaehlung}
@@ -192,8 +151,6 @@ importieren kannst. Die CSV-Datei musst du vorher in das Upload-Verzeichnis übe
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_list` überschreiben.
 
 **HTML-Ausgabe**  
@@ -208,24 +165,6 @@ Das Element generiert folgenden HTML-Code:
     </ul>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/list` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-list">
-    <ul>
-        <li>…</li>
-        <li>…</li>
-        <li>…</li>
-    </ul>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 Eine nummerierte Aufzählung verwendet das `<ol>`-Tag statt des `<ul>`-Tags.
 
@@ -250,8 +189,6 @@ Mit dem Inhaltselement »Markdown« wird aus einem Markdown-Text HTML-Code erzeu
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_markdown` überschreiben.
 
 **HTML-Ausgabe**  
@@ -265,21 +202,6 @@ Das Element generiert folgenden HTML-Code:
     </div>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/markdown` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-markdown">
-    <h1>…</h1>
-    <p>…</p>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 Nachfolgend einige Beispiele für die Markdown-Syntax:
 
@@ -561,8 +483,6 @@ Auswahl getroffen hat. Die Zählung beginnt bei 0.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_table` überschreiben.
 
 **HTML-Ausgabe**  
@@ -609,57 +529,6 @@ Das Element generiert folgenden HTML-Code:
     </table>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/table` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-table">
-    <table data-sortable-table="{&quot;descending&quot;:false}">
-    <caption>…</caption>
-    
-    <thead>
-        <tr>
-            <th data-sort-method="none" role="columnheader">…</th>
-            <th role="columnheader">…</th>
-            <th role="columnheader">…</th>
-            <th role="columnheader">…</th>
-        </tr>
-    </thead>
-    
-    <tfoot>
-        <tr>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-        </tr>
-    </tfoot>
-    
-    <tbody>
-        <tr >
-            <th scope="row">…</th>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-        </tr>
-        <tr>
-            <th scope="row">…</th>
-            <td>…</td>
-            <td>…</td>
-            <td>…</td>
-        </tr>
-    </tbody>
-    
-    </table>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
-
 
 
 ## Text
@@ -729,8 +598,6 @@ möglich ist.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_text` überschreiben.
 
 **HTML-Ausgabe**  
@@ -755,38 +622,6 @@ Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
     <p>…</p> 
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/text` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="content-text">
-    <h2>…</h2>
-    <div class="rte">
-        <p>…</p>
-    </div>
-</div>
-```
-
-Wurde dem Text ein Bild hinzugefügt, sieht die HTML-Ausgabe wie folgt aus:
-
-```html
-<div class="media media--above content-text">
-    <h2>…</h2>
-    <figure>
-        <img src="…" alt="…">
-        <figcaption>…</figcaption>
-    </figure>
-    <div class="rte">
-        <p>…</p>
-    </div>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ### Template-Einstellungen

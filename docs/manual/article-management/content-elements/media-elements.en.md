@@ -41,8 +41,6 @@ to an image link). Please note that for a linked image a lightbox full view is n
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Content element template:** Here you can overwrite the content element `ce_image` template.
 
 **HTML output**  
@@ -58,26 +56,6 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Content element template:** Here you can overwrite the content element `content_element/image` template.
-
-**HTML output**  
-The element generates the following HTML code:
-
-```html
-<div class="content-image">
-    <figure>
-        <a class="cboxElement" href=…" title="…" data-lightbox="…">
-            <img class="…" src="…" alt="…" height="…" width="…">
-        </a>
-        <figcaption>…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
-
 
 
 ## Gallery
@@ -129,8 +107,6 @@ when clicked (JavaScript is required for this).
 
 **Gallery template**: Here you can overwrite the gallery template.
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Content element template**: Here you can overwrite the content element  `ce_gallery` template.
 
 **HTML Output**  
@@ -166,41 +142,6 @@ The element generates the following HTML code:
     <!-- indexer::continue -->
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Content element template**: Here you can overwrite the content element `content_element/gallery` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="content-gallery--cols-2 content-gallery"">
-    <ul data-list-paginate="ready">
-        <li style="display: revert;">
-            <figure>
-                <a href="…" data-lightbox="…" class="cboxElement">
-                    <img src="…" alt="…" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-                </a>
-            </figure>
-        </li>
-        <li style="display: revert;">
-            <figure>
-                <a href="…" data-lightbox="…" class="cboxElement">
-                    <img src="…" alt="…" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-                </a>
-            </figure>
-        </li>
-    </ul>
-    <nav data-pagination="" aria-label="Pagination menu">
-        <ul>
-            <li><a href="#" data-page="1" title="Go to page 1" class="active">1</a></li>
-            <li><a href="#" data-page="2" title="Go to page 2">2</a></li>
-        </ul>
-    </nav>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Video/Audio
@@ -242,8 +183,6 @@ entire video)", "Metadata (preload the metadata only)" and "None (do not preload
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Content element template:** Here you can overwrite the content element  `ce_player` template.
 
 **HTML Output**  
@@ -259,25 +198,6 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Content element template:** Here you can overwrite the content element  `content_element/player` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="content-player">
-    <figure>
-        <video width="…" height="…" autoplay loop playsinline muted>
-            <source type="video/mp4" src="…" title="…">
-        </video>
-        <figcaption>……</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Vimeo
@@ -323,8 +243,6 @@ The content element "Vimeo" adds a Vimeo video to the article.
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Content element template**: Here you can overwrite the content element `ce_vimeo` template.
 
 **HTML Output**  
@@ -353,29 +271,6 @@ The element generates the following HTML code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Content element template**: Here you can overwrite the content element `content_element/vimeo` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="content-vimeo"">
-    <figure class="spect aspect--16:9">
-        <button data-splash-screen="">
-            <img src="…" alt="…" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-            <p>Please click to load the video. Your IP address will be transmitted to Vimeo.</p>
-            <template>
-                <iframe width="" height="" src="…" allowfullscreen=""></iframe>
-            </template>
-        </button>
-        <figcaption>…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## YouTube
@@ -426,8 +321,6 @@ The YouTube content element adds a YouTube video to the article.
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
 **Content element template**: Here you can overwrite the content element `ce_youtube` template.
 
 **HTML Output**
@@ -458,26 +351,3 @@ The element generates the following HTML code:
 </div>
 <!-- indexer::continue -->
 ```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-**Content element template**: Here you can overwrite the content element `content_element/youtube` template.
-
-**HTML Output**
-The element generates the following HTML code:
-
-```html
-<div class="content-youtube">
-    <figure class="aspect aspect--16:9">
-        <button data-splash-screen="">
-            <img src="…" alt="" srcset="…" sizes="…" width="…" height="…" loading="lazy" class="…">
-            <p>Please click to load the video. Your IP address will be transmitted to YouTube.</p>
-            <template>
-                <iframe width="…" height="…" src="…" allowfullscreen="" allow="fullscreen"></iframe>
-            </template>
-        </button>
-        <figcaption>…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{</tabs>}}
