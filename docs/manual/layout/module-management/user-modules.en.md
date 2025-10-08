@@ -125,33 +125,6 @@ The front end module generates the following HTML code:
 ```
 
 
-## Automatic logout
-
-{{< tabs groupid="contaoVersion">}}
-{{% tab title="Contao  4" %}}
-The front end module "Automatic logout" adds an invisible module to the website that automatically logs out a logged in 
-front end user.
-
-As soon as a member has logged in to the front end of the website, a logout link appears in the main menu on the right 
-hand side, with which the member can log out again. In reality, these are two different pages in the page structure, 
-which contain the login and the logout module.
-
-### Redirect settings
-
-**Redirect page:** Here you can define to which page a front end user will be forwarded after logging out.
-
-**Redirect to last page visited:** If you select this option, the member will be redirected to the last page visited
-instead of the redirection page.
-
-The module does not generate HTML output.
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-This module has been replaced by the "[Logout](/en/site-structure/logout/)" page type, which creates a logout link for 
-a protected area.
-{{% /tab %}}
-{{< /tabs >}}
-
-
 ## Personal data
 
 The front end module "Personal data" adds a form to the website, which allows a member to change their personal data such 
