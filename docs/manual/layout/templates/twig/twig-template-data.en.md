@@ -40,5 +40,5 @@ Note that in extended templates the `dump()` function must be used inside a bloc
 
 {{% notice warning %}}
 Since the evaluated data may contain safety-critical information about the system, this is only possible if
-[Debug mode](/en/system/debug-mode/) is enabled.
+[Debug mode]({{% relref "debug-mode" %}}) is enabled.
 {{% /notice %}}

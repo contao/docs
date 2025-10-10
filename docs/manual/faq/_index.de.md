@@ -32,7 +32,7 @@ Ja. Contao unterstützt [Mehrsprachige Webseiten](/de/layout/seitenstruktur/mehr
 {{% /faq %}}
 
 {{% faq "Wie aktiviere ich den Contao Debug-Modus?" %}}
-Du kannst den [Contao Debug-Modus](/de/system/debug-modus/) über das Backend aktivieren.
+Du kannst den [Contao Debug-Modus]({{% relref "debug-mode" %}}) über das Backend aktivieren.
 {{% /faq %}}
 
 {{% faq "Wo finde ich weitere Contao-Ressourcen?" %}}

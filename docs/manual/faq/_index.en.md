@@ -30,7 +30,7 @@ Yes Contao supports [multilingual websites](/en/layout/site-structure/multilingu
 {{% /faq %}}
 
 {{% faq "How do I enable the Contao debug mode?" %}}
-You can activate the [Contao debug mode](/en/system/debug-mode/) via the backend.
+You can activate the [Contao debug mode]({{% relref "debug-mode" %}}) via the backend.
 {{% /faq %}}
 
 {{% faq "Where can I find more Contao resources?" %}}

@@ -135,34 +135,6 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 ```
 
 
-## Automatischer Logout
-
-{{< tabs groupid="contaoVersion">}}
-{{% tab title="Contao  4" %}}
-Das Frontend-Modul »Automatischer Logout« fügt der Webseite ein unsichtbares Modul hinzu, das einen angemeldeten 
-Frontend-Benutzer automatisch abmeldet.
-
-Sobald sich ein Mitglied im Frontend der Webseite angemeldet hat, erscheint im Hauptmenü auf der rechten Seite ein 
-Logout-Link, mit dem es sich wieder abmelden kann. In Wirklichkeit handelt es sich dabei um zwei verschiedene Seiten in 
-der Seitenstruktur, die einmal das Login- und einmal das Logout-Modul enthalten.
-
-### Weiterleitung
-
-**Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Frontend-Benutzer nach der Abmeldung weitergeleitet 
-wird.
-
-**Zur zuletzt besuchten Seite:** Wenn du diese Option auswählst, wird das Mitglied zur zuletzt besuchten Seite anstatt 
-zur Weiterleitungsseite weitergeleitet.
-
-Das Modul erzeugt keine HTML-Ausgabe.
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-Dieses Modul wurde durch den Seitentyp »[Abmelden](/de/seitenstruktur/abmelden/)« ersetzt, welches einen Abmelde-Link für 
-einen geschützten Bereich erstellt. 
-{{% /tab %}}
-{{< /tabs >}}
-
-
 ## Personendaten
 
 Das Frontend-Modul »Personendaten« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied seine persönlichen 

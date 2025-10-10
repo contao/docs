@@ -92,64 +92,6 @@ Seit Contao 4.4 wird diese Frage nur noch den Spambots »angezeigt«.
 
 ## RSS-Feeds
 
-{{< tabs groupid="contaoVersion">}}
-{{% tab title="Contao  4" %}}
-Jedes News- bzw. Blog-Archiv kann auf Wunsch als RSS/Atom-Feed exportiert werden. RSS-Feeds sind XML-Dateien mit deinen
-Beiträgen, die mit einem RSS-Reader abonniert und z. B. in eine andere Webseite eingebunden werden können.
-
-Die Feeds können über das [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) im Kopfbereich
-der Seite eingebaut werden. Mit »Kopfbereich« ist dabei nicht die Kopfzeile deines Seitenlayouts gemeint, sondern das
-`head`-Tag des HTML-Quelltextes.
-
-Um einen neuen Feed anzulegen klicke auf ![RSS-Feeds verwalten]({{% asset "icons/rss.svg" %}}?classes=icon "RSS-Feeds verwalten")
-**RSS-Feeds** und danach auf ![Einen neuen Feed erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Feed erstellen")
-**Neu**.
-
-
-### Titel und Sprache
-
-**Titel:** Der Titel wird als Feed-Titel in der XML-Datei ausgeben.
-
-**Feed-Alias:** Der Alias eines Feeds wird als Dateiname verwendet.
-
-**Feed-Sprache:** Hier kanst du die Sprache des [Feeds](http://www.rssboard.org/rss-language-codes#table) eingeben.
-
-
-### Nachrichtenarchive
-
-**Nachrichtenarchive:** Hier legst du fest, welche Nachrichtenarchive in dem Feed enthalten sind.
-
-
-### Feed-Einstellungen
-
-**Feed-Format:** Hier legst du das Format des Feeds fest. Contao unterstützt RSS 2.0 und Atom, die beiden am weitesten
-verbreiteten Formate.
-
-**Export-Einstellungen:** Hier legst du fest, ob lediglich die Teasertexte der Beiträge oder die kompletten Beiträge
-als Feed exportiert werden.
-
-**Maximale Anzahl an Beiträgen:** Hier kannst du die Anzahl der Beiträge des Feeds beschränken. In der Regel reichen um
-die 25 Beiträge pro Feed vollkommen aus. Meistens werden ohnehin nur die ersten drei bis fünf tatsächlich verwendet.
-
-**Basis-URL:** Die Basis-URL ist vor allem im Multidomain-Betrieb wichtig, wenn du mehrere Webseiten mit einer
-Contao-Installation betreibst. Damit der Feed auf die richtige Domain verlinkt, kannst du diese hier eingeben.
-
-**Feed-Beschreibung:** Hier kannst du eine Beschreibung des Feeds eingeben.
-
-
-### Bildeinstellungen
-
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi
-auswählen:
-
-| Eigene Größen                                  |                                                                                                                           |
-|:-----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|
-| Exaktes&nbsp;Format&nbsp;(wichtiger&nbsp;Teil) | Erhält den wichtigen Teil des Bildes wie in der Dateiverwaltung angegeben. Falls erforderlich, wird das Bild beschnitten. |
-| Proportional                                   | Die längere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
-| An&nbsp;Rahmen&nbsp;anpassen                   | Die kürzere Seite des Bildes wird an die vorgegebenen Abmessungen angepasst und das Bild proportional verkleinert.        |
-
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 Jedes News- bzw. Blog-Archiv kann auf Wunsch als RSS-, Atom- oder JSON-Feed exportiert werden. Feeds sind XML- und 
 JSON-Dateien mit deinen Beiträgen, die mit einem RSS-Reader abonniert und z. B. in eine andere Webseite eingebunden 
 werden können.
@@ -160,8 +102,6 @@ aus und nehme die gewünschten Einstellungen für deinen Feed vor.
 Die Feeds können über das [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#rss-atom-feeds) im Kopfbereich
 der Seite eingebaut werden. Mit »Kopfbereich« ist dabei nicht die Kopfzeile deines Seitenlayouts gemeint, sondern das
 `head`-Tag des HTML-Quelltextes.
-{{% /tab %}}
-{{< /tabs >}}
 
 
 ## Nachrichtenbeiträge {#nachrichtenbeitraege}
