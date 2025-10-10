@@ -28,7 +28,7 @@ may not work anymore. The current major release of Contao is **version 5** when 
 
 A minor release is a kind of milestone on the development path where new features have been added. Minor changes to 
 existing pages might therefore be necessary. When writing these lines, the current minor version of Contao 
-is **version 5.6**.
+is **version {{% siteparam "currentContaoVersion" %}}**.
 
 
 ### Bugfix release
