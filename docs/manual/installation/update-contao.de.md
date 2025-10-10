@@ -29,7 +29,7 @@ Major-Version von Contao ist beim Schreiben dieser Zeilen die **Version 5**.
 
 Bei einem Minor-Release handelt es sich um eine Art Meilenstein auf dem Weg der Entwicklung, bei dem neue Funktionen 
 hinzugefügt wurden. Kleinere Anpassungen bestehender Seiten können daher notwendig sein. Die aktuelle Minor-Version von 
-Contao ist beim Schreiben dieser Zeilen die **Version 5.6**.
+Contao ist beim Schreiben dieser Zeilen die **Version {{% siteparam "currentContaoVersion" %}}**.
 
 
 ### Bugfix-Release
