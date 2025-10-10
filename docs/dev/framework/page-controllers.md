@@ -231,6 +231,10 @@ also be optional through its `defaults`:
 #[AsPage(path: '{lorem}/{ipsum}', defaults: ['ipsum' => ''])]
 ```
 
+{{% notice "note" %}}
+Do not use `parameters` as a parameter name, as this is reserved by Contao's page routing.
+{{% /notice %}}
+
 
 ### `urlSuffix`
 
