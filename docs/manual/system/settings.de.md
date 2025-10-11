@@ -796,7 +796,7 @@ Das nachfolgende Tool läuft in deinem Browser und hilft dir die Variablen der `
 
 ### `MAILER_DSN`
 
-Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariable namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:465?encryption=ssl`.
+Die Mailer-Verbindungsinformationen werden in einer Umgebungsvariable namens `MAILER_DSN` gespeichert. Sie definiert den Transport, der für den Versand von E-Mails verwendet werden soll, sowie die Anmeldedaten, den Hostnamen und den Port für einen SMTP-Server. Das Format dieser Variable ist wie folgt: `MAILER_DSN=smtp://username:password@smtp.example.com:587`.
 Siehe die [Symfony Mailer Dokumentation][SymfonyMailer] für weitere Informationen.
 
 #### Konvertieren deiner Mail-Parameter
@@ -986,7 +986,7 @@ Umgebungsvariable:
 
 ```ini
 # .env.local
-MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:465?encryption=ssl
+MAILER_DSN=smtp://benutzername:passwort@smtp.example.com:587
 ```
 
 Beachte, dass der _Benutzername_ und das _Passwort_ »[URL enkodiert](https://www.urlencoder.org/)« sein müssen.

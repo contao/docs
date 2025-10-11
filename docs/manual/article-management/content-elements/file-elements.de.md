@@ -67,27 +67,6 @@ Download-Dateitypen« festgelegt hast.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_download` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_download block">
-    <figure class="image_container">
-        <a href="…" data-lightbox="lb3">
-            <img src="…" width="…" height="…" alt="">
-        </a>
-    </figure>
-    <p class="download-element ext-pdf">
-        <a href="…" title="Die Datei … herunterladen" type="application/pdf">… <span class="size">(…)</span></a>
-    </p>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/download` überschreiben.
 
 **HTML-Ausgabe**  
@@ -103,8 +82,6 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Downloads
@@ -178,29 +155,6 @@ Download-Dateitypen« festgelegt hast.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_downloads` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_downloads block">
-    <ul>
-        <li class="download-element ext-jpg">
-            <figure class="image_container">
-                <a href="…" data-lightbox="lb3">
-                    <img src="…" width="…" height="…" alt="">
-                </a>
-            </figure>
-            <a href="…" title="Die Datei … herunterladen" type="application/jpeg">… <span class="size">(…)</span></a>
-        </li>
-    </ul>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_elements/downloads` überschreiben.
 
 **HTML-Ausgabe**  
@@ -220,5 +174,3 @@ Das Element generiert folgenden HTML-Code:
     </ul>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}

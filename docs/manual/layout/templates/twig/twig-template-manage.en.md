@@ -14,7 +14,7 @@ e.g. during the configuration of a content element. Within the template folder C
 * [Global templates](#global-templates) and [Theme specific templates](#theme-specific-templates)
 
 When creating, moving, or renaming Twig templates, we recommend that you use the
-[debug mode](/en/system/debug-mode/#contao-4-8-and-up) to ensure that the newly created templates are used.  
+[debug mode]({{% relref "debug-mode" %}}#contao-4-8-and-up) to ensure that the newly created templates are used.  
 After completion, the application cache must be rebuilt using the Contao manager or the console.
 
 {{% notice note %}}
