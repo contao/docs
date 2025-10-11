@@ -35,7 +35,7 @@ Contao ist beim Schreiben dieser Zeilen die **Version {{% siteparam "currentCont
 ### Bugfix-Release
 
 Bei einem Bugfix-Release handelt es sich um ein Wartungsrelease, dessen primärer Zweck die Behebung von Fehlern ist. 
-Die aktuelle Bugfix-Version von Contao ist beim Schreiben dieser Zeilen die **Version 5.6.3**.
+Zum Beispiel **Version {{% siteparam "currentContaoVersion" %}}.1**.
 
 
 ### Long-Term-Support-Versionen
