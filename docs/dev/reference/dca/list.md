@@ -66,15 +66,15 @@ $GLOBALS['TL_DCA']['tl_example']['list']['label'] = [
 ];
 ```
 
-| Key            | Value                            | Description                                                                                        |
-|----------------|----------------------------------|----------------------------------------------------------------------------------------------------|
-| fields         | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `['title', 'user_id:tl_user.name']`). |
-| showColumns    | true/false (`bool`)           | If true Contao will generate a table header with column names (e.g. back end member list)          |
-| showFirstOrderBy | true/false (`bool`)           | If false Contao will not force the first sorting field to show up in the list. (default: `true`)         |
-| format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. `'%s (%s)'`).                       |
-| maxCharacters  | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
-| [group_callback](../callbacks#list-label-group) | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
-| [label_callback](../callbacks#list-label-label) | Callback functions (`array`)     | Call a custom function instead of using the default label function.                                |
+| Key              | Value                            | Description                                                                                        |
+|------------------|----------------------------------|----------------------------------------------------------------------------------------------------|
+| fields           | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `['title', 'user_id:tl_user.name']`).      |
+| showColumns      | true/false (`bool`)              | If true, Contao will generate a table header with column names (e.g. back end member list)         |
+| showFirstOrderBy | true/false (`bool`)              | If false, Contao will not force the first sorting field to show up in the list. (default: `true`)  |
+| format           | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. `'%s (%s)'`).                       |
+| maxCharacters    | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
+| [group_callback](../callbacks#list-label-group) | Callback functions (`array`) | Call a custom function instead of using the default group header function. |
+| [label_callback](../callbacks#list-label-label) | Callback functions (`array`) | Call a custom function instead of using the default label function.        |
 
 
 ## Operations
