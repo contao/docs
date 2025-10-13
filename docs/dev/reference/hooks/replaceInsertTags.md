@@ -5,6 +5,7 @@ tags: ["hook-custom"]
 aliases:
     - /reference/hooks/replaceInsertTags/
     - /reference/hooks/replaceinserttags/
+    - /framework/insert-tags/
 ---
 
 
