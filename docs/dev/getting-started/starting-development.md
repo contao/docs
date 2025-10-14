@@ -43,7 +43,7 @@ be of interest. Some of those will need to be created manually:
 | File/Directory  | Explanation                                                                    |
 | --------------- | ------------------------------------------------------------------------------ |
 | `config/`       | Application configuration.                                                     |
-| `contao/`       | Contao configuration and translations.                                         |
+| `contao/`       | Contao configuration, data containers and translations.                        |
 | `src/`          | Your own PHP code: controllers, event listeners for hooks and other services.  |
 | `templates/`    | Templates for your own modules and elements, or customized existing templates. |
 | `translations/` | Symfony translations. {{< version-tag "5.3" >}} Can also be used for Contao translations. |
