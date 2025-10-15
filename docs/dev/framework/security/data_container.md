@@ -8,7 +8,7 @@ aliases:
 Since contao 5 data container permissions can be set by data container voters. This replaces the "checkPermission" onload callbacks that were used in Contao 4 and before.
 
 Contao comes with an bundles abstract class [AbstractDataContainerVoter](https://github.com/contao/contao/blob/5.3/core-bundle/src/Security/Voter/DataContainer/AbstractDataContainerVoter.php).
-A class extending it is able to voter for data container actions. See following example:
+A class extending it is able to vote for data container actions. See following example:
 
 ```php
 <?php
