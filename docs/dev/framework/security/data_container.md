@@ -54,3 +54,35 @@ class ExampleAccessVoter extends AbstractDataContainerVoter
     }
 }
 ```
+
+You still need a onload callback listener to filter out list items not allowed for the user:
+
+```php
+namespace App\EventListener\DataContainer\ExampleArchive;
+
+use Contao\BackendUser;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback(table: 'tl_example_archive', target: 'config.onload')]
+class ConfigOnLoadListener
+{
+    public function __invoke(?DataContainer $dc = null): void
+    {
+        $user = BackendUser::getInstance();
+
+        if ($user->isAdmin) {
+            return;
+        }
+
+        // Set root IDs
+        if (!\is_array($user->examples) || empty($user->examples)) {
+            $root = [0];
+        } else {
+            $root = $user->examples;
+        }
+
+        $GLOBALS['TL_DCA']['tl_example_archive']['list']['sorting']['root'] = $root;
+    }
+}
+```
