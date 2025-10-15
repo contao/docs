@@ -5,14 +5,12 @@ aliases:
     - /framework/security/data_container/
 ---
 
-Since contao 5 data container permissions can be set by data container voters. This replaces the "checkPermission" onload callbacks that were used in Contao 4 and before.
+Since Contao 5 data container permissions can be set by data container voters. This replaces the "checkPermission" onload callbacks that were used in Contao 4 and before.
 
-Contao comes with an bundles abstract class [AbstractDataContainerVoter](https://github.com/contao/contao/blob/5.3/core-bundle/src/Security/Voter/DataContainer/AbstractDataContainerVoter.php).
-A class extending it is able to vote for data container actions. See following example:
+Contao provides an abstract class [AbstractDataContainerVoter](https://github.com/contao/contao/blob/5.3/core-bundle/src/Security/Voter/DataContainer/AbstractDataContainerVoter.php) for data container voters.
+A class extending it is able to vote for data container actions. See the following example:
 
 ```php
-<?php
-
 namespace App\Security\Voter\DataContainer;
 
 use App\Model\ExampleArchiveModel;
@@ -44,18 +42,18 @@ class ExampleAccessVoter extends AbstractDataContainerVoter
         }
 
         return match (true) {
-            $action instanceof CreateAction => $this->accessDecisionManager->decide($token,['contao_user.examplep.create']),
+            $action instanceof CreateAction => $this->accessDecisionManager->decide($token, ['contao_user.examplep.create']),
             $action instanceof ReadAction,
-            $action instanceof UpdateAction => $this->accessDecisionManager->decide($token,['contao_user.examples'], $action->getCurrentId()),
+            $action instanceof UpdateAction => $this->accessDecisionManager->decide($token, ['contao_user.examples'], $action->getCurrentId()),
             $action instanceof DeleteAction => 
-                $this->accessDecisionManager->decide($token,['contao_user.examples'], $action->getCurrentId()) && 
-                $this->accessDecisionManager->decide($token,['contao_user.examplep.delete']),
+                $this->accessDecisionManager->decide($token, ['contao_user.examples'], $action->getCurrentId()) && 
+                $this->accessDecisionManager->decide($token, ['contao_user.examplep.delete']),
         };
     }
 }
 ```
 
-You still need a onload callback listener to filter out list items not allowed for the user:
+You still need an onload callback listener to filter out list items not allowed for the user:
 
 ```php
 namespace App\EventListener\DataContainer\ExampleArchive;
@@ -63,20 +61,30 @@ namespace App\EventListener\DataContainer\ExampleArchive;
 use Contao\BackendUser;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 #[AsCallback(table: 'tl_example_archive', target: 'config.onload')]
 class ConfigOnLoadListener
 {
+    public function __construct(
+        private readonly TokenStorageInterface $tokenStorage,
+    )
+    {
+    }
+
     public function __invoke(?DataContainer $dc = null): void
     {
-        $user = BackendUser::getInstance();
+        /**
+         * @var BackendUser|null $user
+         */
+        $user = $this->tokenStorage->getToken()?->getUser();
 
-        if ($user->isAdmin) {
+        if ($user && $user->isAdmin) {
             return;
         }
 
         // Set root IDs
-        if (!\is_array($user->examples) || empty($user->examples)) {
+        if (!$user || !\is_array($user->examples) || empty($user->examples)) {
             $root = [0];
         } else {
             $root = $user->examples;
