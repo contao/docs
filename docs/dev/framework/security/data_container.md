@@ -74,17 +74,14 @@ class ConfigOnLoadListener
 
     public function __invoke(?DataContainer $dc = null): void
     {
-        /**
-         * @var BackendUser|null $user
-         */
         $user = $this->tokenStorage->getToken()?->getUser();
 
-        if ($user && $user->isAdmin) {
+        if (!$user instanceof BackendUser || $user->isAdmin) {
             return;
         }
 
         // Set root IDs
-        if (!$user || !\is_array($user->examples) || empty($user->examples)) {
+        if (!$user->examples || !\is_array($user->examples)) {
             $root = [0];
         } else {
             $root = $user->examples;
