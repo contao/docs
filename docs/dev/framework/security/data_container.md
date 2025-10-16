@@ -8,13 +8,68 @@ aliases:
 Since Contao 5 data container permissions can be set by data container voters. This replaces the "checkPermission" onload callbacks that were used in Contao 4 and before.
 
 Contao provides an abstract class [AbstractDataContainerVoter](https://github.com/contao/contao/blob/5.3/core-bundle/src/Security/Voter/DataContainer/AbstractDataContainerVoter.php) for data container voters.
-A class extending it is able to vote for data container actions. See the following example:
+A class extending it is able to vote for data container actions. See the following example for a typical archive table:
 
+First, we need the archive dca definition:
+```php
+# contao/dca/tl_example_archive.php
+
+use Contao\DC_Table;
+
+$GLOBALS['TL_DCA']['tl_example_archive'] = [
+    'config' => [
+        'dataContainer' => DC_Table::class,
+        'ctable' => ['tl_example_item'],
+    ],
+    // ...
+]
+```
+
+Register the permissions:
+```php
+# contao/config/config.php
+
+$GLOBALS['TL_PERMISSIONS'][] = 'examples';
+$GLOBALS['TL_PERMISSIONS'][] = 'examplep';
+```
+
+Add permissions to the user dca (should be also done for user_group!):
+```php
+# contao/dca/tl_user.php
+
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+
+PaletteManipulator::create()
+    ->addLegend('example_legend', 'amg_legend', PaletteManipulator::POSITION_AFTER)
+    ->addField('examples', 'example_legend', PaletteManipulator::POSITION_APPEND)
+    ->addField('examplep', 'example_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('extend', 'tl_user')
+    ->applyToPalette('custom', 'tl_user')
+;
+
+$GLOBALS['TL_DCA']['tl_user']['fields']['examples'] = [
+    'inputType'  => 'checkbox',
+    'foreignKey' => 'tl_example_archive.title',
+    'eval'       => ['multiple' => true],
+    'sql'        => "blob NULL"
+];
+
+$GLOBALS['TL_DCA']['tl_user']['fields']['examplep'] = [
+    'inputType' => 'checkbox',
+    'options'   => ['create', 'delete'],
+    'reference' => &$GLOBALS['TL_LANG']['MSC'],
+    'eval'      => ['multiple' => true],
+    'sql'       => "blob NULL"
+];
+```
+
+Now we can implement the voter:
 ```php
 namespace App\Security\Voter\DataContainer;
 
 use App\Model\ExampleArchiveModel;
 use App\Security\ExamplePermissions;
+use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Contao\CoreBundle\Security\DataContainer\CreateAction;
 use Contao\CoreBundle\Security\DataContainer\DeleteAction;
 use Contao\CoreBundle\Security\DataContainer\ReadAction;
@@ -32,12 +87,12 @@ class ExampleAccessVoter extends AbstractDataContainerVoter
 
     protected function getTable(): string
     {
-        return ExampleArchiveModel::getTable();
+        return 'tl_example_archive';
     }
 
     protected function hasAccess(TokenInterface $token, UpdateAction|CreateAction|ReadAction|DeleteAction $action): bool
     {
-        if (!$this->accessDecisionManager->decide($token, ['contao_user.modules.example'])) {
+        if (!$this->accessDecisionManager->decide($token, [ContaoCorePermissions::USER_CAN_ACCESS_MODULE], 'example')) {
             return false;
         }
 
@@ -49,11 +104,13 @@ class ExampleAccessVoter extends AbstractDataContainerVoter
                 $this->accessDecisionManager->decide($token, ['contao_user.examples'], $action->getCurrentId()) && 
                 $this->accessDecisionManager->decide($token, ['contao_user.examplep.delete']),
         };
+        // You can also add additional checks/conditions for allowing/disallowing actions here, if your code requires it.
     }
 }
 ```
 
-You still need an onload callback listener to filter out list items not allowed for the user:
+In your archive list view you need to filter out all items the user has no read access, otherwise you'll get a permission denied exception.
+See following example listener that sets the root IDs for the current user:
 
 ```php
 namespace App\EventListener\DataContainer\ExampleArchive;
@@ -91,3 +148,6 @@ class ConfigOnLoadListener
     }
 }
 ```
+
+If you need to update the permission for new archives, 
+see how this is done in the Contao core, for example for [news](https://github.com/contao/contao/blob/5.3/news-bundle/contao/dca/tl_news_archive.php#L172).
