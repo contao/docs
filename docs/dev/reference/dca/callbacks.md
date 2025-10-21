@@ -514,7 +514,7 @@ class CalendarHeaderCallback
 ### `list.sorting.panel_callback.subpanel`
 
 This callback allows you to inject HTML for custom panels. Replace `subpanel`
-wit your custom panel's name.
+with your custom panel's name.
 
 {{% expand "Parameters" %}}
 * `\Contao\DataContainer` Data Container object
