@@ -24,7 +24,8 @@ $GLOBALS['TL_DCA']['tl_example_archive'] = [
 ]
 ```
 
-Register the permissions:
+We also register custom permissions. One to define to which parent record the user can have access to and one to define what kind of CRUD permissions are granted for this table:
+
 ```php
 # contao/config/config.php
 
