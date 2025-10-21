@@ -12,8 +12,7 @@ Contao provides an abstract class [AbstractDataContainerVoter](https://github.co
 First, we need the DCA for the parent table:
 
 ```php
-# contao/dca/tl_example_archive.php
-
+// contao/dca/tl_example_archive.php
 use Contao\DC_Table;
 
 $GLOBALS['TL_DCA']['tl_example_archive'] = [
