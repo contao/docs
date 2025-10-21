@@ -127,7 +127,7 @@ class ConfigOnLoadListener
     ) {
     }
 
-    public function __invoke(?DataContainer $dc = null): void
+    public function __invoke(): void
     {
         $user = $this->tokenStorage->getToken()?->getUser();
 
