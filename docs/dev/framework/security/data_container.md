@@ -32,10 +32,10 @@ $GLOBALS['TL_PERMISSIONS'][] = 'examples';
 $GLOBALS['TL_PERMISSIONS'][] = 'examplep';
 ```
 
-Add permissions to the user dca (should be also done for user_group!):
-```php
-# contao/dca/tl_user.php
+Add permissions to the user DCA (should be also done for user group!):
 
+```php
+// contao/dca/tl_user.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
@@ -64,6 +64,7 @@ $GLOBALS['TL_DCA']['tl_user']['fields']['examplep'] = [
 
 Now we can implement the voter:
 ```php
+// src/Security/Voter/DataContainer/ExampleAccessVoter.php
 namespace App\Security\Voter\DataContainer;
 
 use App\Model\ExampleArchiveModel;
