@@ -5,10 +5,9 @@ aliases:
     - /framework/security/data_container/
 ---
 
-Since Contao 5 data container permissions can be set by data container voters. This replaces the "checkPermission" onload callbacks that were used in Contao 4 and before.
+Starting with version 5.0, Contao uses Symfony security voters to check _create_, _read_, _update_ and _delete_ (CRUD) permissions in data containers. This replaces the `checkPermission` onload callbacks that were used in Contao 4 and before. Before implementing your Contao-specific voter, make sure to get familiar with [Symfony security voters](https://symfony.com/doc/current/security/voters.html).
 
-Contao provides an abstract class [AbstractDataContainerVoter](https://github.com/contao/contao/blob/5.3/core-bundle/src/Security/Voter/DataContainer/AbstractDataContainerVoter.php) for data container voters.
-A class extending it is able to vote for data container actions. See the following example for a typical archive table:
+Contao provides an abstract class [AbstractDataContainerVoter](https://github.com/contao/contao/blob/5.3/core-bundle/src/Security/Voter/DataContainer/AbstractDataContainerVoter.php) to simplify voting on CRUD operations for one specific DCA table. See the following example for a typical archive table:
 
 First, we need the archive dca definition:
 ```php
