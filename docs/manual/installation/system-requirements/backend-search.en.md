@@ -62,5 +62,9 @@ contao:
 
 If you are using the Contao Managed Edition, you may not need to configure anything explicitly. Contao ME already includes `cmsig/seal-loupe-adapter` and configures it at `var/loupe`. It automatically checks whether the system requirements (SQLite requirements) are met. If so, a local search engine is already preconfigured for you. You do not need an additional search engine server. You only need to configure the Cronjob Framework to fulfill Basic Requirement 1.
 
+## Build search index
+
+The search index can be created manually via System Maintenance in the «Back end search» section using the «Rebuild index» button. In addition, similar to the frontend, the index is generated automatically as soon as an entry is called up or changed in the backend.
+
 [PHP-CMSIG]: https://github.com/PHP-CMSIG
 [SEAL]: https://github.com/php-cmsig/search
