@@ -79,6 +79,10 @@ die Systemvoraussetzungen (die SQLite-Anforderungen) gegeben sind. Wenn ja, ist 
 dich bereits vorkonfiguriert. Du brauchst keinen extra Suchmaschinenserver. Du musst lediglich das Cronjob-Framework 
 konfigurieren und damit Grundvoraussetzung 1 schaffen.
 
+## Aufbau Suchindex
+
+Der Suchindex kann manuell über die Systemwartung im Abschnitt «Backend-Suche» mit dem Button «Suchindex aufbauen» erstellt werden. Zusätzlich wird der Index ähnlich wie im Frontend automatisch generiert, sobald ein Eintrag im Backend aufgerufen oder geändert wird.
+
 
 [PHP-CMSIG]: https://github.com/PHP-CMSIG
 [SEAL]: https://github.com/php-cmsig/search
