@@ -1,4 +1,4 @@
-editURL: 'https://github.com/contao/docs/edit/main/docs/dev/'
+editURL: 'https://github.com/contao/docs/edit/4.x/docs/dev/'
 documentation_label: 'Developer Documentation'
 algolia_selector: dev
 documentation_label_overview: 'More documentation on'
