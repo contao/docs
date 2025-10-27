@@ -67,9 +67,10 @@ class FilesListController extends AbstractContentElementController
     }
 
     /** 
-     * @return array<string> 
+     * @return list<string> 
      */
-    private function describeDirectory(string $directory): array {
+    private function describeDirectory(string $directory): array
+    {
         // Check if the directory exists
         if (!$this->filesStorage->directoryExists($directory)) {
             return [];
