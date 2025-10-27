@@ -57,15 +57,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement(category: 'files')]
 class FilesListController extends AbstractContentElementController
-{
-    private VirtualFilesystemInterface $filesStorage;
-    
+{   
     // We inject the 'files' virtual filesystem instance, that is scoped to the
     // 'files' directory.
-    public function __construct(VirtualFilesystemInterface $filesStorage) 
-    {
-        $this->filesStorage = $filesStorage; 
-    }
+    public function __construct(private VirtualFilesystemInterface $filesStorage) {}
 
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
@@ -79,7 +74,7 @@ class FilesListController extends AbstractContentElementController
      */
     private function describeDirectory(string $directory): array {
         // Check if the directory exists
-        if(!$this->filesStorage->directoryExists($directory)) {
+        if (!$this->filesStorage->directoryExists($directory)) {
             return [];
         }
 
@@ -87,7 +82,7 @@ class FilesListController extends AbstractContentElementController
 
         // Read the contents of the directory. As we're only interested in
         // files, we add the "->files()" filter.
-        foreach($this->filesStorage->listContents($directory)->files() as $item) {
+        foreach ($this->filesStorage->listContents($directory)->files() as $item) {
             // The full path and filesize in kB
             $name = $item->getPath();
             $size = $item->getFileSize() / 1000;
@@ -96,7 +91,7 @@ class FilesListController extends AbstractContentElementController
             // name instead if one one was defined in the metadata array.
             $fileMetadata = $item->getExtraMetadata()['metadata']['en'] ?? null;
 
-            if($fileMetadata instanceof Metadata && ($title = $fileMetadata->getTitle()) !== '') {
+            if ($fileMetadata instanceof Metadata && ($title = $fileMetadata->getTitle()) !== '') {
                 $name = "'$title' ($name)";
             }
 
@@ -142,7 +137,7 @@ class FilesListController extends AbstractContentElementController
      */
     private function describeDirectory(string $directory): array {
         // Check if the directory exists
-        if(!$this->filesStorage->directoryExists($directory)) {
+        if (!$this->filesStorage->directoryExists($directory)) {
             return [];
         }
 
@@ -150,7 +145,7 @@ class FilesListController extends AbstractContentElementController
 
         // Read the contents of the directory. As we're only interested in
         // files, we add the "->files()" filter.
-        foreach($this->filesStorage->listContents($directory)->files() as $item) {
+        foreach ($this->filesStorage->listContents($directory)->files() as $item) {
             // The full path and filesize in kB
             $name = $item->getPath();
             $size = $item->getFileSize() / 1000;
@@ -159,7 +154,7 @@ class FilesListController extends AbstractContentElementController
             // name instead if one one was defined in the metadata array.
             $fileMetadata = $item->getExtraMetadata()['metadata']['en'] ?? null;
 
-            if($fileMetadata instanceof Metadata && ($title = $fileMetadata->getTitle()) !== '') {
+            if ($fileMetadata instanceof Metadata && ($title = $fileMetadata->getTitle()) !== '') {
                 $name = "'$title' ($name)";
             }
 
