@@ -39,73 +39,7 @@ list *files only* and show their *path*, *file size* and - if set in the back en
 For this example we're using the virtual filesystem named `files` that is already configured by default in Contao. If
 you want to play along, this will be a good starting point: 
 
-{{< tabs groupid="service-config">}}
-{{% tab title="Annotation" %}}
 ```php
-<?php
-// src/App/Controller/FilesListController.php
-namespace App\Controller;
-
-use Contao\ContentModel;
-use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\File\Metadata;
-use Contao\CoreBundle\Filesystem\VirtualFilesystemInterface;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
-use Contao\Template;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
-#[AsContentElement(category: 'files')]
-class FilesListController extends AbstractContentElementController
-{   
-    // We inject the 'files' virtual filesystem instance, that is scoped to the
-    // 'files' directory.
-    public function __construct(private VirtualFilesystemInterface $filesStorage) {}
-
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
-    {
-        $template->elements = $this->describeDirectory('images');
-
-        return $template->getResponse();
-    }
-
-    /** 
-     * @return array<string> 
-     */
-    private function describeDirectory(string $directory): array {
-        // Check if the directory exists
-        if (!$this->filesStorage->directoryExists($directory)) {
-            return [];
-        }
-
-        $files = [];
-
-        // Read the contents of the directory. As we're only interested in
-        // files, we add the "->files()" filter.
-        foreach ($this->filesStorage->listContents($directory)->files() as $item) {
-            // The full path and filesize in kB
-            $name = $item->getPath();
-            $size = $item->getFileSize() / 1000;
-
-            // Read the "extra metadata" - let's use the title as the
-            // name instead if one one was defined in the metadata array.
-            $fileMetadata = $item->getExtraMetadata()['metadata']['en'] ?? null;
-
-            if ($fileMetadata instanceof Metadata && ($title = $fileMetadata->getTitle()) !== '') {
-                $name = "'$title' ($name)";
-            }
-
-            $files[] = "$name has a size of {$size}kB.";
-        }
-
-        return $files;
-    }
-}
-```
-{{% /tab %}}
-{{% tab title="Attribute" %}}
-```php
-<?php
 // src/App/Controller/FilesListController.php
 namespace App\Controller;
 
@@ -165,8 +99,6 @@ class FilesListController extends AbstractContentElementController
     }
 }
 ```
-{{% /tab %}}
-{{< /tabs >}}
 
 ```twig
 {# templates/ce_files_list.html.twig #}
