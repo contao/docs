@@ -20,7 +20,7 @@ angegeben und ihre Inhalte überschrieben werden.
 
 Mittels `$this->parent()` lässt sich der originale Inhalt des Blocks ausgeben.
 
-#### Beispiel
+#### Beispiel 1
 Das Template `fe_page.html5` ist in mehrere Blöcke aufgeteilt (u.&nbsp;a. `head`, `meta`, `body`, `footer`).
 Wir möchten lediglich eine weitere Meta-Angabe hinzufügen – dazu schreiben wir unser Template wie folgt:
 
@@ -30,5 +30,27 @@ Wir möchten lediglich eine weitere Meta-Angabe hinzufügen – dazu schreiben w
 <?php $this->block('meta'); ?>
   <?php $this->parent(); ?>
   <meta name="author" content="Max Muster">
+<?php $this->endblock(); ?>
+```
+
+#### Beispiel 2
+Möchte man den [TinyMCE-Editor](../../anleitungen/tinymce-konfiguration/) grundlegend oder eigene Ableitungen
+anpassen, so sollten nur die entsprechenden Blöcke überarbeitet werden werden. Um zu ermitteln, welche
+Blöcke zur Verfügung stehen, sieht man sich am besten das Originaltemplate `be_tinyMCE.html5` an.
+Folgend ein Beispiel für eine Anpassung als `be_tinyMCE_Redakteure.html5`:
+
+```php
+<?php $this->extend('be_tinyMCE'); ?>
+
+<?php $this->block('valid_elements'); ?>
+extended_valid_elements: 'q[cite|class|title]',
+<?php $this->endblock(); ?>
+
+<?php $this->block('menubar'); ?>
+menubar: '',
+<?php $this->endblock(); ?>
+
+<?php $this->block('toolbar'); ?>
+toolbar: 'code',
 <?php $this->endblock(); ?>
 ```
