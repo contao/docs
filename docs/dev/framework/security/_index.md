@@ -3,6 +3,7 @@ title: "Security"
 description: Contao's Symfony Security implementation.
 aliases:
     - /framework/security/
+    - /framework/security/data-container/
 ---
 
 Contao uses [Symfony's Security Component][SymfonySecurityComponent] to handle front end and back end user
