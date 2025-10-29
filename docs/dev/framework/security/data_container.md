@@ -32,28 +32,27 @@ $GLOBALS['TL_PERMISSIONS'][] = 'examples';
 $GLOBALS['TL_PERMISSIONS'][] = 'examplep';
 ```
 
-Add permissions to the user DCA (should be also done for user group!):
+Add permissions to the user group DCA (can be also done for tl_user):
 
 ```php
-// contao/dca/tl_user.php
+// contao/dca/tl_user_group.php
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 PaletteManipulator::create()
     ->addLegend('example_legend', 'amg_legend', PaletteManipulator::POSITION_AFTER)
     ->addField('examples', 'example_legend', PaletteManipulator::POSITION_APPEND)
     ->addField('examplep', 'example_legend', PaletteManipulator::POSITION_APPEND)
-    ->applyToPalette('extend', 'tl_user')
-    ->applyToPalette('custom', 'tl_user')
+    ->applyToPalette('default', 'tl_user_group')
 ;
 
-$GLOBALS['TL_DCA']['tl_user']['fields']['examples'] = [
+$GLOBALS['TL_DCA']['tl_user_group']['fields']['examples'] = [
     'inputType'  => 'checkbox',
     'foreignKey' => 'tl_example_archive.title',
     'eval'       => ['multiple' => true],
     'sql'        => "blob NULL"
 ];
 
-$GLOBALS['TL_DCA']['tl_user']['fields']['examplep'] = [
+$GLOBALS['TL_DCA']['tl_user_group']['fields']['examplep'] = [
     'inputType' => 'checkbox',
     'options'   => ['create', 'delete'],
     'reference' => &$GLOBALS['TL_LANG']['MSC'],
