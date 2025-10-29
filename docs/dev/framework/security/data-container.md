@@ -2,7 +2,7 @@
 title: "Data Container permissions"
 description: Explanation of creating data container voters.
 aliases:
-    - /framework/security/data_container/
+    - /framework/security/data-container/
 ---
 
 Starting with version 5.0, Contao uses Symfony security voters to check _create_, _read_, _update_ and _delete_ (CRUD) permissions in data containers. This replaces the `checkPermission` onload callbacks that were used in Contao 4 and before. Before implementing your Contao-specific voter, make sure to get familiar with [Symfony security voters](https://symfony.com/doc/current/security/voters.html).
@@ -96,10 +96,12 @@ class ExampleAccessVoter extends AbstractDataContainerVoter
         }
 
         return match (true) {
-            $action instanceof CreateAction => $this->accessDecisionManager->decide($token, ['contao_user.examplep.create']),
+            $action instanceof CreateAction =>
+                $this->accessDecisionManager->decide($token, ['contao_user.examplep.create']),
             $action instanceof ReadAction,
-            $action instanceof UpdateAction => $this->accessDecisionManager->decide($token, ['contao_user.examples'], $action->getCurrentId()),
-            $action instanceof DeleteAction => 
+            $action instanceof UpdateAction =>
+                $this->accessDecisionManager->decide($token, ['contao_user.examples'], $action->getCurrentId()),
+            $action instanceof DeleteAction =>
                 $this->accessDecisionManager->decide($token, ['contao_user.examples'], $action->getCurrentId()) && 
                 $this->accessDecisionManager->decide($token, ['contao_user.examplep.delete']),
         };
@@ -112,7 +114,8 @@ In your archive list view you need to filter out all items the user has no read 
 See following example listener that sets the root IDs for the current user:
 
 ```php
-namespace App\EventListener\DataContainer\ExampleArchive;
+// src/EventListener/DataContainer/ExampleArchiveOnLoadListener.php
+namespace App\EventListener\DataContainer;
 
 use Contao\BackendUser;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
@@ -120,7 +123,7 @@ use Contao\DataContainer;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 #[AsCallback(table: 'tl_example_archive', target: 'config.onload')]
-class ConfigOnLoadListener
+class ExampleArchiveOnLoadListener
 {
     public function __construct(
         private readonly TokenStorageInterface $tokenStorage,
