@@ -20,6 +20,11 @@ die Frontend-Vorschau aufrufst. Es könnte ja sein, dass sich dort noch nicht ve
 ihrer Veröffentlichung natürlich auch nicht im Suchindex auftauchen sollen. Im Debug-Modus wird die Webseite ebenfalls
 nicht indexiert.
 
+Alternativ zu der Indexierung über die Webseitenbesuche, kann diese auch aktiv für alle Seiten angestossen werden. In
+der Systemsteuerung ist im Abschnitt »Crawler« die Option »Den Suchindex aktualisieren«. Ist die Option gesetzt,
+kann man den Crawler für die Indexierung starten. Mehr zum Crawler auf der Seite
+[Systemsteuerung]({{% relref "system/maintenance" %}}).
+
 
 ## Suchsyntax
 
