@@ -23,7 +23,7 @@ nicht indexiert.
 Alternativ zu der Indexierung über die Webseitenbesuche, kann diese auch aktiv für alle Seiten angestossen werden. In
 der Systemsteuerung ist im Abschnitt »Crawler« die Option »Den Suchindex aktualisieren«. Ist die Option gesetzt,
 kann man den Crawler für die Indexierung starten. Mehr zum Crawler auf der Seite
-(Systemsteuerung)[../../../system/systemwartung/].
+[Systemsteuerung]({{% relref "system/maintenance" %}}).
 
 
 ## Suchsyntax
