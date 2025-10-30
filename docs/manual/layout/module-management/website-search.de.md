@@ -188,3 +188,19 @@ Die Kommentare funktionieren übrigens nicht nur mit dem HTML-Modul, sondern kö
 Fast alle Modul-Templates beginnen beispielsweise mit einem solchen Kommentar, da ein Frontend-Modul, das mittels 
 Seitenlayout auf allen Seiten eingebunden ist, kein eindeutiges Suchergebnis brächte und deswegen nicht in den 
 Suchindex gehört.
+
+## Geschützte Seiten indexieren
+
+Geschützte Seiten werden standardmäßig nicht indexiert. Möchte man die Suche auch auf diese Seiten für eingeloggte
+Frontend-Mitglied erweitern, so muss das aktiv freigegeben werden. Dazu muss in der
+(config.yaml)[../../../system/einstellungen/#config-yaml] der folgende Eintrag vorhanden sein:
+
+```yaml
+contao:
+  search:
+    index_protected: true
+```
+
+Ist dieser Eintrag vorhanden, erweitert sich in der Systemsteuerung im Abschnitt »Crawler« die Eingaben um die
+Auswahl eines Frontend-Mitglieds. Hier ist ein entsprechendes Mitglied auszuwählen und der Crawler für die 
+Aktualisierung des Suchindexes zu starten.
