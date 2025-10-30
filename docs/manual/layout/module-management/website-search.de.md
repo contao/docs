@@ -193,7 +193,7 @@ Suchindex gehört.
 
 Geschützte Seiten werden standardmäßig nicht indexiert. Möchte man die Suche auch auf diese Seiten für eingeloggte
 Frontend-Mitglied erweitern, so muss das aktiv freigegeben werden. Dazu muss in der
-(config.yaml)[../../../system/einstellungen/#config-yaml] der folgende Eintrag vorhanden sein:
+[config.yaml]({{% relref "system/settings#config-yaml" %}}) der folgende Eintrag vorhanden sein:
 
 ```yaml
 contao:
