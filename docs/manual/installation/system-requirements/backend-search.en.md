@@ -66,5 +66,6 @@ If you are using the Contao Managed Edition, you may not need to configure anyth
 
 The search index can be created manually via System Maintenance in the «Back end search» section using the «Rebuild index» button. In addition, similar to the frontend, the index is generated automatically as soon as an entry is called up or changed in the backend.
 
+
 [PHP-CMSIG]: https://github.com/PHP-CMSIG
 [SEAL]: https://github.com/php-cmsig/search
