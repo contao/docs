@@ -102,6 +102,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function to generate the button. Please specify as `['Class', 'Method']` or use service tagging. |
 | route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                     |
+| prefetch        | `boolean`                         | {{< version-tag "5.5" >}} Disables [Turbo prefetch][TurboPrefetch] when set to `false`. Defaults to `false` for operations that use `href`. |
 
 
 {{% notice "info" %}}
@@ -140,6 +141,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | showInHeader    | true/false (`bool`)               | Shows the operation in the [header element]({{< asset "images/dev/reference/mode_parent_header.png" >}}) (sorting mode 4 only).                                                   |
 | route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
 | primary         | true/false (`bool`)               | {{< version-tag "5.5" >}} Shows the operation in the overview, instead of hiding it in the context menu.                                                   |
+| prefetch        | `boolean`                         | {{< version-tag "5.5" >}} Disables [Turbo prefetch][TurboPrefetch] when set to `false`. Defaults to `false` for operations that use `href`. |
 
 {{% notice "tip" %}}
 You do not have to define any settings for standard operations. Instead, you can give a list
