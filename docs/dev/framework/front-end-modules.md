@@ -99,7 +99,7 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['example_module'] = '
 This very simple palette enables us to select a redirect page using the pre-existing `jumpTo` field.
 
 Using the naming convention for templates also mentioned above, the final template name for this front end module will
-be `mod_example_module` for [PHP templates][LegacyTemplates]:
+be `frontend_module/example_module` for [Twig templates][TwigTemplates]:
 
 ```twig
 {# templates/frontend_module/example_module.html.twig #}
@@ -111,18 +111,6 @@ be `mod_example_module` for [PHP templates][LegacyTemplates]:
         <button type="submit">Submit</button>
     </form>
 {% endblock %}
-```
-
-And `frontend_module/example_module` for [Twig templates][TwigTemplates]:
-
-```twig
-{# templates/frontend_module/example_module.html.twig #}
-<div class="example-module">   
-    <form action="{{ action }}" method="POST"> 
-        <input type="hidden" name="REQUEST_TOKEN" value="{{ request_token }}">
-        <button type="submit">Submit</button>
-    </form>
-</div>
 ```
 
 A "fragment template" instance of this template will automatically be generated and passed to the controller's
