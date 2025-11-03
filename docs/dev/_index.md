@@ -50,7 +50,7 @@ all of a sudden now.
 The Core team decided that the project needs the ability to transition slowly from Contao 3 to Contao 4 as adoption would
 never take place otherwise. That's why Contao 4 essentially still carries around code that's been there for years because
 of backwards compatibility.
-Most of this code resides in `core-bundle/src/Resources/contao` so it does not interfere with code that's been written later
+Most of this code resides in `core-bundle/src/contao` so it does not interfere with code that's been written later
 on, put into namespaces properly and being unit tested as you'd expect it from any modern CMS.
 Examples for legacy code that still works might be your typical library classes any CMS that's been on the market for
 a while would provide such as file operations (`File`, `Folder`), request handling (`Environment`) and many more. Most
@@ -84,7 +84,7 @@ So when Contao decided to use plain old PHP as templates, one would have to call
 variable that was echo'ed. Instead of doing that, it was decided to encode the input and store the data encoded in the
 database already. You do have the option to disable this when you develop your own extensions to Contao but
 it's just something to keep in mind. We all know it's wrong but migrating away from already encoded data is very hard
-and likely will only become a thing when we switch to Contao 5.
+and likely will only become a thing when we switch to Contao 6.
 
 {{% notice warning %}}
 So be aware of this. Don't just use e.g. Symfony's `Request` class to fetch user input, store it as is in the DB and
