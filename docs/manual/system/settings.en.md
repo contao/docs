@@ -134,13 +134,6 @@ If you trust all backend users 100%, you can also enter `*` as the key and `*` a
 
 **Download file types:** Here you can define which file types may be downloaded from your server.
 
-**Maximum GD image width:** Here you can define the maximum width of images that can still be processed via the GD image
-process library. Any image exceeding this value will not be processed.
-
-**Maximum GD image height:** Here you can define the maximum height of images that can still be processed via the GD image
-process library. Any image exceeding this value will not be processed.
-
-
 ### Upload settings
 
 **Upload file types:** Here you can define which file types can be uploaded to your server.
