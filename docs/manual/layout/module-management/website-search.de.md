@@ -196,9 +196,10 @@ Frontend-Mitglied erweitern, so muss das aktiv freigegeben werden. Dazu muss in 
 [config.yaml]({{% relref "system/settings#config-yaml" %}}) der folgende Eintrag vorhanden sein:
 
 ```yaml
+# config/config.yaml
 contao:
-  search:
-    index_protected: true
+    search:
+        index_protected: true
 ```
 
 Ist dieser Eintrag vorhanden, erweitert sich in der Systemsteuerung im Abschnitt »Crawler« die Eingaben um die
