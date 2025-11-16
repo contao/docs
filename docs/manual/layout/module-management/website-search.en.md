@@ -14,7 +14,7 @@ Note, however, that for security reasons your website will not be indexed if you
 not indexed.
 
 As an alternative to indexing via website visits, indexing can also be actively triggered for all pages. In
-the Maintenance settings, under the "Crawler" section, you will find the option "Update search index." If this option is selected,
+the Maintenance settings, under the "Crawler" section, you will find the option "Update search index". If this option is selected,
 you can start the crawler for indexing. More about the crawler on the page
 [Control Panel]({{% relref "system/maintenance" %}}).
 
