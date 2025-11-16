@@ -14,9 +14,9 @@ Note, however, that for security reasons your website will not be indexed if you
 not indexed.
 
 As an alternative to indexing via website visits, indexing can also be actively triggered for all pages. In
-the Maintenance settings, under the “Crawler” section, you will find the option “Update search index.” If this option is selected,
+the Maintenance settings, under the "Crawler" section, you will find the option "Update search index." If this option is selected,
 you can start the crawler for indexing. More about the crawler on the page
-[Control Panel]({{% relref “system/maintenance” %}}).
+[Control Panel]({{% relref "system/maintenance" %}}).
 
 ## Search syntax
 
@@ -132,7 +132,7 @@ The comments do not only work with the HTML module, but can be used everywhere i
 
 Protected pages are not indexed by default. If you want to extend the search to these pages for logged-in
 frontend members, this must be actively enabled. To do this, the following entry must be present in
-[config.yaml]({{% relref “system/settings#config-yaml” %}}):
+[config.yaml]({{% relref "system/settings#config-yaml" %}}):
 
 ```yaml
 # config/config.yaml
@@ -140,6 +140,6 @@ contao:
     search:
         index_protected: true
 ```
-If this entry is present, the entries in the “Crawler” section of the control panel are expanded to include the
+If this entry is present, the entries in the "Crawler" section of the control panel are expanded to include the
 selection of a frontend member. Here, you must select a corresponding member and start the crawler to 
 update the search index.
