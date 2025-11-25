@@ -165,7 +165,7 @@ use Symfony\Component\HttpFoundation\Response;
     category: 'texts',
     template: 'content_element/example',
     method: '__invoke', 
-    renderer: 'forward'
+    renderer: 'forward',
     nestedFragments: false,
     priority: 100,
 )]
