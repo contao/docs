@@ -298,11 +298,11 @@ for our content element - otherwise it will only be named *example_element*.
 The translation needs to be set as follows:
 
 ```yaml
-# translation/contao_default.en.yaml
+# translations/contao_default.en.yaml
 CTE:
     example_element:
         - My Content Element
-        - A Content Element for testing purposes
+        - A Content Element for testing purposes.
 ```
 
 
