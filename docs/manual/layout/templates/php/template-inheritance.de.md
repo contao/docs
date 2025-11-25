@@ -34,23 +34,16 @@ Wir möchten lediglich eine weitere Meta-Angabe hinzufügen – dazu schreiben w
 ```
 
 #### Beispiel 2
-Möchte man den [TinyMCE-Editor](../../anleitungen/tinymce-konfiguration/) grundlegend oder eigene Ableitungen
-anpassen, so sollten nur die entsprechenden Blöcke überarbeitet werden werden. Um zu ermitteln, welche
-Blöcke zur Verfügung stehen, sieht man sich am besten das Originaltemplate `be_tinyMCE.html5` an.
-Folgend ein Beispiel für eine Anpassung als `be_tinyMCE_Redakteure.html5`:
+Möchtest du am TinyMCE Anpassungen vornehmen, sollten nur die entsprechende Blöcke überschrieben werden. Um
+zu ermitteln, welche Blöcke dir zur Verfügung stehen, siehst du dir am besten das Originaltemplate
+`be_tinyMCE.html5` an.
+
+Mit folgender Anpassung wird die Formatierung vom Text vor dem Einfügen entfernt.
 
 ```php
 <?php $this->extend('be_tinyMCE'); ?>
 
-<?php $this->block('valid_elements'); ?>
-extended_valid_elements: 'q[cite|class|title]',
-<?php $this->endblock(); ?>
-
-<?php $this->block('menubar'); ?>
-menubar: '',
-<?php $this->endblock(); ?>
-
-<?php $this->block('toolbar'); ?>
-toolbar: 'code',
+<?php $this->block('custom'); ?>
+  paste_as_text: true,
 <?php $this->endblock(); ?>
 ```
