@@ -18,7 +18,7 @@ point you can check for the `_preview` request attribute.
 ```php
 class FoobarController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         if ($request->attributes->get('_preview')) {
             // Execute some code within the preview entry point
@@ -48,7 +48,7 @@ class FoobarController extends AbstractContentElementController
     {
     }
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         if ($this->tokenChecker->isPreviewMode()) {
             // Execute some code when the preview mode is active
