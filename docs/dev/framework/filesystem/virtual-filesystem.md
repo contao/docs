@@ -48,7 +48,7 @@ use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\CoreBundle\File\Metadata;
 use Contao\CoreBundle\Filesystem\VirtualFilesystemInterface;
-use Contao\Template;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -59,7 +59,7 @@ class FilesListController extends AbstractContentElementController
     // 'files' directory.
     public function __construct(private VirtualFilesystemInterface $filesStorage) {}
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         $template->elements = $this->describeDirectory('images');
 
