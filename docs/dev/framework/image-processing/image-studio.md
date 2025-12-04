@@ -90,6 +90,8 @@ or handling image links for you out of the box. When you are ready, call `build(
 
     ```php
     $figure = $figureBuilder->build();
+    // OR
+    $figure = $figureBuilder->buildIfResourceExists();
     ```
   
 {{% notice tip %}}
