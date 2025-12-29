@@ -108,8 +108,9 @@ b, strong, label, th {
 }
 
 /* Logo */
-#R-header #logo {
+#R-header-wrapper #logo {
     display: block;
+    margin-bottom: 1rem;
 }
 
 #logo svg {
@@ -136,7 +137,6 @@ b, strong, label, th {
 }
 
 .algolia-searchbox {
-    margin-top: 1rem;
     position: relative;
     border: 1px solid var(--MENU-SEARCH-BORDER-color);
     background: var(--MENU-SEARCH-BG-color);
