@@ -111,7 +111,3 @@ Let's install `terminal42/contao-easy_themes`.
 php composer.phar require terminal42/contao-easy_themes
 php vendor/bin/contao-console contao:migrate
 ```
-
-{{% notice info %}}
-The `contao:migrate` command is available in versions **4.9** and up. You can alternatively use the [Contao install tool](../contao-installtool/).
-{{% /notice %}}

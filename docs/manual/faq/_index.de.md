@@ -22,11 +22,6 @@ zunächst bei allen zurücksetzen, um anschließend im Contao [Install-Tool](/de
 einen neuen Administrator anzulegen.
 {{% /faq %}}
 
-{{% faq "Ich habe das Install-Tool Passwort vergessen, wie kann ich es zurücksetzen?" %}}
-Entferne in der Datei »system/config/localconfig.php« die Zeile beginnend mit `$GLOBALS['TL_CONFIG']['installPassword']`
-vollständig. Anschließend kannst du über das [Install-Tool](/de/installation/contao-installtool/) ein neues Passwort vergeben.
-{{% /faq %}}
-
 {{% faq "Kann ich mit Contao mehrere Webseiten pflegen?" %}}
 Ja. Contao unterstützt den [Multidomain-Betrieb](/de/layout/seitenstruktur/multidomain-betrieb/) und 
 [Mehrsprachige Webseiten](/de/layout/seitenstruktur/mehrsprachige-webseiten/).
@@ -37,7 +32,7 @@ Ja. Contao unterstützt [Mehrsprachige Webseiten](/de/layout/seitenstruktur/mehr
 {{% /faq %}}
 
 {{% faq "Wie aktiviere ich den Contao Debug-Modus?" %}}
-Du kannst den [Contao Debug-Modus](/de/system/debug-modus/) über das Backend aktivieren.
+Du kannst den [Contao Debug-Modus]({{% relref "debug-mode" %}}) über das Backend aktivieren.
 {{% /faq %}}
 
 {{% faq "Wo finde ich weitere Contao-Ressourcen?" %}}
@@ -108,7 +103,7 @@ Starte anschließend über den Manager oder der Konsole `composer install`.
 {{% /faq %}}
 
 {{% faq "Wie kann ich den Contao Backend-Pfad ändern?" %}}
-{{< version-tag "4.13" >}} Du kannst in der [config.yaml](/de/system/einstellungen/#config-yml) den Eintrag `route_prefix` hinzufügen.
+Du kannst in der [config.yaml](/de/system/einstellungen/#config-yml) den Eintrag `route_prefix` hinzufügen.
 Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
 einmalig den Anwendungs-Cache leeren.
 
@@ -134,27 +129,11 @@ Ab Contao 4.10 kannst du dies [konfigurieren](/de/system/einstellungen/#verschie
 {{% /faq %}}
 
 {{% faq "Wie kann ich das Sprachkürzel der URL hinzufügen?" %}}
-Du kannst in der [config.yaml](/de/system/einstellungen/#config-yml) den Eintrag `prepend_locale: true` hinzufügen.
-Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
-einmalig den Anwendungs-Cache leeren.
-
-```yaml
-# config/config.yaml
-contao:
-    prepend_locale: true
-```
+Dazu fügst du einen entsprechenden **URL-Präfix** in den Einstellungen deiner »Website-Startseite« hinzu.
 {{% /faq %}}
 
-{{% faq "Kann man die URL Suffix ».html« entfernen?" %}}
-Du kannst in der [config.yaml](/de/system/einstellungen/#config-yml) den Eintrag `url_suffix: ''` hinzufügen. 
-Anschließend musst du über den Contao-Manager (»Systemwartung« > »Prod.-Cache erneuern«) oder über die Konsole 
-einmalig den Anwendungs-Cache leeren.
-
-```yaml
-# config/config.yaml
-contao:
-    url_suffix: ''
-```
+{{% faq "Kann man die URL Suffix ».html« hinzufügen?" %}}
+Dazu fügst du einen entsprechenden **URL-Suffix** in den Einstellungen deiner »Website-Startseite« hinzu.
 {{% /faq %}}
 
 {{% faq "Warum werden meine HTML-Angaben im TinyMCE-Editor nicht übernommen?" %}}
@@ -166,7 +145,7 @@ Antworten findest du im Bereich [TinyMCE-Editor Konfiguration](/de/anleitungen/t
 {{% faq "Meine Bilder werden im Frontend nicht angezeigt, was kann ich machen?" %}}
 Überprüfe in der [Dateiverwaltung](/de/dateiverwaltung/), ob das Verzeichnis mit deinen Bildern als »Öffentlich« 
 gekennzeichnet ist.
-Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/web` oder einem übergeordneten Ordner deiner Installation befindet.
+Stelle außerdem sicher, dass sich keine veraltete `.htaccess` Datei im Order `/public` oder einem übergeordneten Ordner deiner Installation befindet.
 {{% /faq %}}
 
 {{% faq "Kann man die Suche in der Dateiverwaltung ausblenden?" %}}

@@ -60,7 +60,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
     'inputType' => 'pageTree',
     'foreignKey' => 'tl_page.title',
     'eval' => [
-        'mulitple' => true,
+        'multiple' => true,
         'fieldType' => 'checkbox',
         'isSortable' => true,
     ],

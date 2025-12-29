@@ -204,35 +204,15 @@ even a combination of your complete top-level namespace. For example:
 // src/ContaoExampleBundle.php
 namespace Somevendor\ContaoExampleBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-
-class ContaoExampleBundle extends Bundle
-{
-    public function getPath(): string
-    {
-        return \dirname(__DIR__);
-    }
-}
-```
-
-In this example we also override the `getPath` method in order to take advantage of the 
-[recommended bundle structure][SymfonyBundleDirectoryStructure] where there is no `src/Resources/` folder anymore.
-
-{{% notice "info" %}}
-Starting with Symfony 6 (Contao 5) you can instead extend from `Symfony\Component\HttpKernel\Bundle\AbstractBundle`
-and omit the `getPath` method, as the new `AbstractBundle` already includes this.
-
-```php
-// src/ContaoExampleBundle.php
-namespace Somevendor\ContaoExampleBundle;
-
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class ContaoExampleBundle extends AbstractBundle
 {
 }
 ```
-{{% /notice %}}
+
+This uses the `Symfony\Component\HttpKernel\Bundle\AbstractBundle` which will ensure that
+[recommended bundle structure][SymfonyBundleDirectoryStructure] is used by default.
 
 The bundle class can otherwise be empty, but could contain additional bundle configurations
 (see [Symfony's documentation][1] on how to create bundles).
@@ -295,8 +275,8 @@ configuration itself. The details are described in the [Symfony documentation][6
 
 {{< tabs groupid="service-configuration" style="code" >}}
 {{% tab title="Bundle Class" %}}
-{{< version-tag "5" >}} As noted previously, starting with Symfony **6** (Contao **5**) you can extend your bundle class from `AbstractBundle`.
-There you can also use the [`loadExtension` method](https://symfony.com/doc/6.4/bundles/extension.html#loading-services-directly-in-your-bundle-class)
+When extending from the `AbstractBundle` you can use the 
+[`loadExtension` method](https://symfony.com/doc/6.4/bundles/extension.html#loading-services-directly-in-your-bundle-class)
 to directly load your service configuration.
 
 ```php
@@ -345,10 +325,7 @@ class ContaoExampleExtension extends Extension
 }
 ```
 
-{{% notice note %}}
-This will not work automatically if your bundle class already extends from `AbstractBundle`. If you wish to use this
-extension class, you will need to implement the `getContainerExtension()` method in your bundle class and instantiate
-this extension class manually.
+This will not work automatically if your bundle class extends from `AbstractBundle`. You will need to implement the `getContainerExtension()` method in your bundle class and instantiate this extension class manually.
 
 ```php
 // src/ContaoExampleBundle.php
@@ -366,7 +343,6 @@ class ContaoExampleBundle extends AbstractBundle
     }
 }
 ```
-{{% /notice %}}
 {{% /tab %}}
 {{< /tabs >}}
 
@@ -383,7 +359,7 @@ services:
     
     Somevendor\ContaoExampleBundle\:
         resource: ../src
-        exclude: ../src/{ContaoManager,DependencyInjection}
+        exclude: ../src/{ContaoManager,DependencyInjection,ContaoExampleBundle.php}
 ```
 
 {{% notice note %}}

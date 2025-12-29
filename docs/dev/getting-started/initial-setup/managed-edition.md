@@ -20,8 +20,8 @@ The heart of the `Managed Edition` consists of two main components:
 * [The Manager Plugin (contao/manager-plugin)](https://github.com/contao/manager-plugin)
 
 The `Manager Bundle` contains the full application skeleton such as entry points, config files etc. thus giving us full
-control on how the application is built during an update. Hence, if you want to install e.g. Contao 4.7, you would require
-`contao/manager-bundle` in `4.7.*`.
+control on how the application is built during an update. Hence, if you want to install e.g. Contao {{% siteparam "currentContaoVersion" %}}, you would require
+`contao/manager-bundle` in `{{% siteparam "currentContaoVersion" %}}.*`.
 
 {{% notice note %}}
 To start a new project, don't just require the `contao/manager-bundle` because you'll also need the `post-install` and
@@ -92,24 +92,3 @@ bundles. You can still control all of it  through a global, application-wide `Ma
 that is loaded at the very end but it maybe requires a bit more code.
 
 To learn more about the `Manager Plugin` visit [its dedicated article](manager-plugin). 
-
-
-## Application Structure Differences
-
-Development of Contao 4 and its Contao Managed Edition was started before Symfony
-4 was released. Since then the best practises and defaults of Symfony have changed
-slightly. If you are familiar with the default Symfony 4 application structure as
-used by the Symfony Skeleton for example, then it might help to know some of these
-differences.
-
-* Prior to Contao **4.9** automatically loaded configuration files use the file extension `.yml` instead 
-  of `.yaml`.<sup>1</sup>
-* In Contao **4.6**, **4.7** and **4.8** the automatically loaded file containing the routes definition is called `routing.yml`
-  rather than `routes.yaml`.<sup>1</sup>
-* Prior to Contao **4.12** the public entry point is called `web/` instead of `public/`.
-
-<sup>1</sup> See [here][1] for a list of configuration files, that are automatically 
-loaded.
-
-
-[1]: /getting-started/starting-development/#application-configuration

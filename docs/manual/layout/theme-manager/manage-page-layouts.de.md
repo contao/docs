@@ -9,21 +9,21 @@ weight: 30
 ---
 
 Das Seitenlayout bestimmt den Aufbau einer Seite und teilt diese in verschiedene Layoutbereiche ein. Innerhalb dieser 
-Layoutbereiche kannst du beliebige Frontend-Module platzieren, die beim Aufruf der Seite der Reihe nach ausgeführt 
-werden und den HTML-Code der Webseite generieren. Auch das Einfügen der Artikel, also der Inhalte, erfolgt mithilfe 
+Layoutbereiche kannst du beliebige Frontend-Module platzieren, die beim Aufruf der Seite der Reihe nach ausgeführt 
+werden und den HTML-Code der Webseite generieren. Auch das Einfügen der Artikel, also der Inhalte, erfolgt mithilfe 
 eines Frontend-Moduls.
 
-Sofern einer Seite kein Seitenlayout zugewiesen wird, erbt sie das Seitenlayout von einer übergeordneten Seite. Ist 
-auch dort kein Seitenlayout verknüpft, beschränkt sich die Frontend-Ausgabe lediglich auf ein kurzes »No layout 
+Sofern einer Seite kein Seitenlayout zugewiesen wird, erbt sie das Seitenlayout von einer übergeordneten Seite. Ist 
+auch dort kein Seitenlayout verknüpft, beschränkt sich die Frontend-Ausgabe lediglich auf ein kurzes »No layout 
 specified«.
 
 
 ## Aufbau des Frontends
 
 Damit sich individuell per Mausklick zusammengestellte Seitenlayouts im Frontend in eine sauber aufgeteilte und vor 
-allem browserübergreifend funktionsfähige Webseite umwandeln lassen, bedarf es eines leistungsfähigen CSS-Frameworks, 
-das auf alle Eventualitäten vorbereitet ist. Das Contao CSS-Framework erfüllt diese Aufgabe sehr gut und ist dabei noch 
-ziemlich kompakt. Es generiert anhand eines Seitenlayouts automatisch das Grundgerüst der Webseite, das standardmäßig 
+allem browserübergreifend funktionsfähige Webseite umwandeln lassen, bedarf es eines leistungsfähigen CSS-Frameworks, 
+das auf alle Eventualitäten vorbereitet ist. Das Contao CSS-Framework erfüllt diese Aufgabe sehr gut und ist dabei noch 
+ziemlich kompakt. Es generiert anhand eines Seitenlayouts automatisch das Grundgerüst der Webseite, das standardmäßig 
 aus bis zu drei Spalten sowie einer optionalen Kopf- und Fußzeile besteht.
 
 
@@ -46,7 +46,7 @@ anderem das Firmenlogo und in der Fußzeile Informationen zum Copyright und ein 
 
 ## Spaltenkonfiguration
 
-Standardmäßig stehen dir bis zu drei Spalten zur Verfügung. Die Breite der linken bzw. der rechten Spalte kannst du 
+Standardmäßig stehen dir bis zu drei Spalten zur Verfügung. Die Breite der linken bzw. der rechten Spalte kannst du 
 vorgeben, die Hauptspalte passt sich jeweils automatisch an.
 
 **Spalten**: Hier wählst du die Anzahl der Spalten deines Seitenlayouts aus.
@@ -71,9 +71,9 @@ Standardmäßig definiert das Contao CSS-Framework folgende Layoutbereiche:
 - Hauptspalte
 - Fußzeile
 
-Mit diesen fünf Bereichen lassen sich bestimmt 90 % aller gängigen Seitenlayouts problemlos umsetzen, sodass du in der 
+Mit diesen fünf Bereichen lassen sich bestimmt 90 % aller gängigen Seitenlayouts problemlos umsetzen, sodass du in der 
 Regel damit auskommen wirst. Es gibt aber durchaus auch Layouts, die von dieser klassischen Einteilung abweichen. 
-Solche Entwürfe haben beispielsweise einen zusätzlichen Bereich unter der Kopfzeile oder eine zweigeteilte Hauptspalte.
+Solche Entwürfe haben beispielsweise einen zusätzlichen Bereich unter der Kopfzeile oder eine zweigeteilte Hauptspalte.
 
 Um solche »exotischen« Seitenlayouts in Contao zu realisieren, kannst du in den Backend-Einstellungen zusätzliche 
 Layoutbereiche definieren und mittels eines Stylesheets anordnen. Deine eigenen Layoutbereiche lassen sich im 
@@ -120,8 +120,6 @@ body {
 
 
 ## Bildgrößen
-
-{{< version "4.8" >}}
 
 Mit dieser Einstellungen kannst du die Bildgröße für die Lightbox im Seitenlayout festlegen.
 
@@ -180,7 +178,7 @@ sollen. Die Module jedes Layoutbereichs werden in der von dir festgelegten Reihe
 
 ![Frontend-Module der Contao Official Demo]({{% asset "images/manual/layout/theme-manager/de/frontend-module-der-contao-official-demo.png" %}}?classes=shadow)
 
-**Eingebundene Module:** Hier wählst du die Module für das Seitenlayout aus.
+**Eingebundene Module:** Hier wählst du die Module für das Seitenlayout aus.
 
 
 ## JavaScript
@@ -194,7 +192,7 @@ Es stehen die **JavaScript-Templates**, **Analytics-Templates**, **Externe JavaS
 |:-------------|:----------------------------------------------------------------------------|
 | js_autofocus | Wenn z. B. ein Feld in einem Formular falsch ausgefüllt wurde, erhält dieses Feld nach dem Absenden ein `<p>`-Tag mit der Klasse »error«. Das JavaScript sorgt dafür, dass automatisch zu dieser Klasse gescrollt wird. |
 | js_highlight | Dabei handelt es sich um einen Syntax-Highlighter für Scriptsprachen, er wird für das Inhaltselement »Code« benötigt. |
-| js_nocookie  | Damit Contao dich vor CSRF-Attacken schützen kann, müssen Besucher zwingend Cookies erlauben. Das Template generiert dynamisch einen entsprechenden Hinweis beim Formular, wenn ein Besucher Cookies im Browser deaktiviert hat. {{< version "4.7" >}} |
+| js_nocookie  | Damit Contao dich vor CSRF-Attacken schützen kann, müssen Besucher zwingend Cookies erlauben. Das Template generiert dynamisch einen entsprechenden Hinweis beim Formular, wenn ein Besucher Cookies im Browser deaktiviert hat. |
 | js_slider    | Stellt JavaScript für das Inhaltselement »Content Slider« zur Verfügung.    |
 
 **Analytics-Templates:** Hier kannst du das Analytics-Templates von Google Analytics und/oder Matomo (Piwik) auswählen.
@@ -261,7 +259,7 @@ Möglichkeiten zur Verfügung:
 
 Das CSS-Framework passt das Seitenlayout standardmäßig an die Breite des Browserfensters an, was im Englischen auch als 
 »Liquid Layout« bezeichnet wird. Im Gegensatz dazu hat ein statisches Layout eine feste Breite und wird im Fenster 
-deines Browsers z. B. zentriert dargestellt. In Contao werden beide Layout-Typen unterstützt.
+deines Browsers z. B. zentriert dargestellt. In Contao werden beide Layout-Typen unterstützt.
 
 **Statisches Layout:** Hier definierst du ein Seitenlayout als statisch.
 
@@ -300,7 +298,7 @@ width=device-width, initial-scale=1.0
 
 **Title-Tag:** Hier kannst du das Title-Tag überschreiben.
 
-**Body-Klasse:** Hier kannst du dem Body-Tag der HTML-Seite eine CSS-Klasse zuweisen und so Formatdefinitionen für ein 
+**Body-Klasse:** Hier kannst du dem Body-Tag der HTML-Seite eine CSS-Klasse zuweisen und so Formatdefinitionen für ein 
 bestimmtes Seitenlayout erstellen.
 
 **Body onload:** Einige JavaScripts erfordern einen sogenannten »Body Onload Event«, um das Script beim Laden der Seite 
@@ -308,4 +306,4 @@ zu initialisieren. Solltest du ein solches JavaScript verwenden wollen, kannst d
 
 **Zusätzliche `<head>`-Tags:** Im Kopfbereich deiner Webseite werden die Meta-Informationen der Seite 
 ausgegeben und die eingebundenen Stylesheets und JavaScripts verlinkt. Du kannst hier beliebige Ergänzungen vornehmen 
-und z. B. weitere Stylesheets einfügen.
+und z. B. weitere Stylesheets einfügen.

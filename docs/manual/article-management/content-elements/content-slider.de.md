@@ -18,7 +18,7 @@ Damit der Slider funktioniert muss das *js_slider*-Template im Seitenlayout eing
 
 | Betriebsart             | Erklärung                                                                                                                            |
 |:------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|
-| Umschlag&nbsp;Anfang    | In diesem Modus eröffnet das Element einen neuen Slider-Abschnitt, in den beliebige weitere Inhaltselemente eingefügt werden können. |
+| Umschlag&nbsp;Anfang    | In diesem Modus eröffnet das Element einen neuen Slider-Abschnitt, in den beliebige weitere Inhaltselemente eingefügt werden können. |
 | Umschlag Ende           | In diesem Modus schließt das Element einen zuvor mittels »Umschlag Anfang« eröffneten Slider-Abschnitt.                              |
 
 **Slide-Intervall:** Hier kannst du den Zeitraum in Millisekunden zwischen den Slides (1000 = 1s) bestimmen. 0 

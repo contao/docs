@@ -37,9 +37,8 @@ following icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" 
 
 ### Update database tables
 
-As soon as the Contao Manager has installed all packages, the database must be updated. To do this you can 
-use the [Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS). From Contao 5 onwards, this is no longer 
-necessary, as the database can be updated directly via the [Contao Manager]({{% relref "installation/contao-manager" %}}).
+As soon as the Contao Manager has installed all packages, the database must be updated. This can be done directly via
+the [Contao Manager]({{% relref "installation/contao-manager" %}}) or via the command line.
 
 
 ## Installation via the command line
@@ -80,23 +79,20 @@ If you install Composer globally, you can use the `composer` command in any dire
 ### Installing Contao from the command line
 
 In the second step, you install Contao using the Composer. "example" stands for the desired installation directory and 
-{{< current-version >}} for the [version of Contao you want to install](https://to.contao.org/release-plan).
+{{% siteparam "currentContaoVersion" %}} for the [version of Contao you want to install](https://to.contao.org/release-plan).
 
 ```bash
-php composer.phar create-project contao/managed-edition example {{< current-version >}}
+php composer.phar create-project contao/managed-edition example {{% siteparam "currentContaoVersion" %}}
 ```
 
 
 ### Hosting Configuration
 
-In Contao, all publicly accessible files are located in the subfolder `/web` of the installation. Create this folder and 
+In Contao, all publicly accessible files are located in the subfolder `/public` of the installation. Create this folder and 
 use the admin panel of your hosting provider to set the document root of the installation to this subfolder and create 
 a database on this occasion.
 
-Example: `example.com`points to the directory `/www/example/web`
-
-({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to
-`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`).
+Example: `example.com`points to the directory `/www/example/public`
 
 {{% notice info %}}
 Every Contao installation therefore requires its own (sub)domain.
@@ -104,11 +100,8 @@ Every Contao installation therefore requires its own (sub)domain.
 
 
 ### Update database tables
-After installation, you can update the database using the [Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) 
-(Contao 4.13 LTS). From Contao 5 onwards, this is no longer necessary, as the database can be updated directly via the 
-[Contao Manager]({{% relref "installation/contao-manager" %}}).
-
-Since Contao 4.9 you can use the following command on the command line:
+After installation, you can update the database using the [Contao Manager]({{% relref "installation/contao-manager" %}})
+or the command line:
 
 ```bash
 php vendor/bin/contao-console contao:migrate
@@ -134,7 +127,7 @@ and [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in a
 
 Using the [Contao Manager]({{% relref "installation/contao-manager" %}}), you can create your back end user.
 
-Since Contao **4.10** you can use the following [command]({{% relref "/cli/user" %}}) on the [command line]({{% relref "/cli" %}}).
+You can use the following [command]({{% relref "/cli/user" %}}) on the [command line]({{% relref "/cli" %}}).
 
 
 ```bash

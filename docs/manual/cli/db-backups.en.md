@@ -5,7 +5,6 @@ aliases:
     - /en/cli/database-backups/
 ---
 
-{{< version "4.13" >}}
 
 Contao provides everything you need for a reliable database backup. Once configured, you can enjoy your good night
 sleep, because whatever happens to the database, you have your backups ready and can restore the latest one

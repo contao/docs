@@ -250,7 +250,7 @@ class Rot13InsertTagListener
 ```
 
 Creating this file while using the `Hook` service annotation within is all you have
-to do in Contao **4.9** and upwards. See the [framework article][FrameworkHooks] 
+to do. See the [framework article][FrameworkHooks] 
 about Hooks on how to implement this Hook in previous Contao versions.
 
 The Hook provides many additional parameters. See the [reference article][ReplaceInsertTagsHook]
@@ -287,9 +287,6 @@ add the `uncached` flag whenever used.
 <div>{{rot13::Payload|uncached}}</div>
 ```
 
-{{% notice warning %}}
-Using the `uncached` flag is deprecated and doesn’t work in Contao 5.0 anymore. Use the `{{fragment::*}}` insert tag instead.
-{{% /notice %}}
 
 [InsertTagFlags]: https://docs.contao.org/manual/en/article-management/insert-tags/#insert-tag-flags
 [IfLanguageInsertTag]: https://github.com/contao/contao/blob/5.x/core-bundle/src/InsertTag/Resolver/IfLanguageInsertTag.php

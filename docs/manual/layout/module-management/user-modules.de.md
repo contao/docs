@@ -15,7 +15,7 @@ beispielsweise die Registrierung neuer Mitglieder oder die An- bzw. Abmeldung be
 
 ## Login-Formular
 
-Das Frontend-Modul »Login-Formular« fügt der Webseite ein Formular hinzu, mit dem sich registrierte Mitglieder 
+Das Frontend-Modul »Login-Formular« fügt der Webseite ein Formular hinzu, mit dem sich registrierte Mitglieder 
 authentifizieren können.
 
 **Frontend-Ausgabe**
@@ -65,7 +65,7 @@ angezeigt.
 
 </div>
 
-Berücksichtige also bei der CSS-Formatierung beide Zustände des Moduls, und denke auch daran, dass eventuell eine 
+Berücksichtige also bei der CSS-Formatierung beide Zustände des Moduls, und denke auch daran, dass eventuell eine 
 Fehlermeldung ausgegeben wird.
 
 
@@ -82,7 +82,7 @@ werden, wenn sie den »Passwort vergessen?«-Link anklicken.
 ### Weiterleitung
 
 **Weiterleitungsseite:** Hier legst du fest, zu welcher Seite ein Mitglied nach erfolgreicher Anmeldung weitergeleitet 
-wird. Diese Einstellung kannst du pro Benutzergruppe überschreiben, um eine gruppenspezifische Weiterleitung 
+wird. Diese Einstellung kannst du pro Benutzergruppe überschreiben, um eine gruppenspezifische Weiterleitung 
 einzurichten.
 
 **Zur zuletzt besuchten Seite:** Wenn du diese Option auswählst, wird der Frontend-Benutzer zur zuletzt besuchten Seite 
@@ -135,39 +135,11 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 ```
 
 
-## Automatischer Logout
-
-{{< tabs groupid="contaoVersion">}}
-{{% tab title="Contao  4" %}}
-Das Frontend-Modul »Automatischer Logout« fügt der Webseite ein unsichtbares Modul hinzu, das einen angemeldeten 
-Frontend-Benutzer automatisch abmeldet.
-
-Sobald sich ein Mitglied im Frontend der Webseite angemeldet hat, erscheint im Hauptmenü auf der rechten Seite ein 
-Logout-Link, mit dem es sich wieder abmelden kann. In Wirklichkeit handelt es sich dabei um zwei verschiedene Seiten in 
-der Seitenstruktur, die einmal das Login- und einmal das Logout-Modul enthalten.
-
-### Weiterleitung
-
-**Weiterleitungsseite:** Hier legst du fest, auf welche Seite ein Frontend-Benutzer nach der Abmeldung weitergeleitet 
-wird.
-
-**Zur zuletzt besuchten Seite:** Wenn du diese Option auswählst, wird das Mitglied zur zuletzt besuchten Seite anstatt 
-zur Weiterleitungsseite weitergeleitet.
-
-Das Modul erzeugt keine HTML-Ausgabe.
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-Dieses Modul wurde durch den Seitentyp »[Abmelden](/de/seitenstruktur/abmelden/)« ersetzt, welches einen Abmelde-Link für 
-einen geschützten Bereich erstellt. 
-{{% /tab %}}
-{{< /tabs >}}
-
-
 ## Personendaten
 
-Das Frontend-Modul »Personendaten« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied seine persönlichen 
+Das Frontend-Modul »Personendaten« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied seine persönlichen 
 Daten wie z. B. seine E-Mail-Adresse oder sein Passwort ändern kann. Dabei kannst du als Administrator genau festlegen, 
-welche Felder bearbeitet werden dürfen und welche nicht.
+welche Felder bearbeitet werden dürfen und welche nicht.
 
 **Frontend-Ausgabe `member_default`**
 
@@ -397,8 +369,8 @@ Das Frontend-Modul generiert mit `member_grouped` folgenden HTML-Code:
 
 ## Registrierung
 
-Das Frontend-Modul »Registrierung« fügt der Webseite ein Formular hinzu, mit dem sich neue Mitglieder registrieren 
-können und je nach Konfiguration automatisch ein Benutzerkonto für den geschützten Bereich erhalten.
+Das Frontend-Modul »Registrierung« fügt der Webseite ein Formular hinzu, mit dem sich neue Mitglieder registrieren 
+können und je nach Konfiguration automatisch ein Benutzerkonto für den geschützten Bereich erhalten.
 
 **Frontend-Ausgabe `member_default`**
 
@@ -501,7 +473,7 @@ können und je nach Konfiguration automatisch ein Benutzerkonto für den geschu
 
 ### Modul-Konfiguration
 
-**Editierbare Felder:** Hier kannst du festlegen, welche Felder ein neues Mitglied bei der Registrierung ausfüllen muss. 
+**Editierbare Felder:** Hier kannst du festlegen, welche Felder ein neues Mitglied bei der Registrierung ausfüllen muss. 
 Um die Anmeldung im Frontend zu ermöglichen, musst du mindestens die Felder Benutzername und Passwort aktivieren.
 
 ![Editierbare Felder festlegen]({{% asset "images/manual/layout/module-management/de/editierbare-felder-festlegen.png" %}}?classes=shadow)
@@ -542,8 +514,8 @@ Registrierung eine E-Mail mit einem Bestätigungslink, mit dem es sein Konto sel
 **Bestätigungsseite:** Hier legst du fest, auf welche Seite ein Benutzer nach erfolgreicher Aktivierung seines Kontos 
 weitergeleitet wird (z. B. die Login-Seite).
 
-**Aktivierungsmail:** Gebe hier den Text der Aktivierungsmail ein. Du kannst Platzhalter im Format `##key##` für alle 
-Eingabefelder des Registrierungsformulars sowie die Platzhalter `##domain##` für die Domain und `##link##` für den 
+**Aktivierungsmail:** Gebe hier den Text der Aktivierungsmail ein. Du kannst Platzhalter im Format `##key##` für alle 
+Eingabefelder des Registrierungsformulars sowie die Platzhalter `##domain##` für die Domain und `##link##` für den 
 Bestätigungslink verwenden.
 
 Nachfolgend ein kurzes Beispiel:
@@ -692,7 +664,7 @@ Das Frontend-Modul generiert mit `member_grouped` folgenden HTML-Code:
 
 ## Passwort ändern {#passwort-aendern}
 
-Das Frontend-Modul »Passwort ändern« fügt der Webseite ein Formular hinzu, das einem angemeldeten Frontend-Benutzer 
+Das Frontend-Modul »Passwort ändern« fügt der Webseite ein Formular hinzu, das einem angemeldeten Frontend-Benutzer 
 ermöglicht, sein Passwort zu ändern.
 
 **Frontend-Ausgabe**
@@ -770,7 +742,7 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 
 ## Passwort vergessen
 
-Das Frontend-Modul »Passwort vergessen« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied ein neues Passwort 
+Das Frontend-Modul »Passwort vergessen« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied ein neues Passwort 
 anfordern kann. Dazu verschickt Contao eine automatische E-Mail mit einem Bestätigungslink an die E-Mail-Adresse, die 
 in dem jeweiligen Benutzerkonto gespeichert ist. Erst nach dem Anklicken dieses Bestätigungslinks ist die Eingabe eines 
 neuen Passworts möglich.
@@ -821,8 +793,8 @@ weitergeleitet wird.
 **Bestätigungsseite:** Hier legst du fest, auf welche Seite ein Benutzer nach erfolgreicher Erstellung eines neuen 
 Passworts weitergeleitet wird.
 
-**Bestätigungsmail:** Gebe hier den Text der Bestätigungsmail ein. Du kannst Platzhalter im Format `##key##` für alle 
-Benutzereigenschaften sowie die Platzhalter `##domain##` für die aktuelle Domain und `##link##` für den 
+**Bestätigungsmail:** Gebe hier den Text der Bestätigungsmail ein. Du kannst Platzhalter im Format `##key##` für alle 
+Benutzereigenschaften sowie die Platzhalter `##domain##` für die aktuelle Domain und `##link##` für den 
 Bestätigungslink verwenden.
 
 Eine Bestätigungsmail kann zum Beispiel wie folgt aussehen:
@@ -884,7 +856,7 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 
 ## Konto schließen {#konto-schliessen}
 
-Das Frontend-Modul »Konto schließen« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied sein Konto schließen 
+Das Frontend-Modul »Konto schließen« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied sein Konto schließen 
 kann. Je nach Konfiguration wird der Account dabei entweder nur deaktiviert oder komplett aus der Datenbank gelöscht.
 
 **Frontend-Ausgabe**
@@ -917,7 +889,7 @@ aus der Datenbank gelöscht werden soll.
 ### Weiterleitung
 
 **Weiterleitungsseite:**  Hier legst du fest, auf welche Seite ein Mitglied nach der Kontoschließung
-weitergeleitet wird. Die Zielseite darf nicht geschützt sein.
+weitergeleitet wird. Die Zielseite darf nicht geschützt sein.
 
 
 ### Template-Einstellungen
@@ -956,7 +928,7 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 
 ## Zwei-Faktor-Authentifizierung
 
-Das Frontend-Modul »Zwei-Faktor-Authentifizierung« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied die 
+Das Frontend-Modul »Zwei-Faktor-Authentifizierung« fügt der Webseite ein Formular hinzu, mit dem ein Mitglied die 
 Zwei-Faktor-Authentifizierung aktivieren kann. Wenn im Startpunkt einer Website die Zwei-Faktor-Authentifizierung für
 Mitglieder erzwungen wird, muss dieses Modul auf der in der Seitenstruktur beim 
 [Startpunkt der Website](/de/seitenstruktur/website-startseite/#zwei-faktor-authentifizierung) 

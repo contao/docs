@@ -12,6 +12,11 @@ The `insertTagFlags` hook is triggered when unknown flags (filters) are passed
 to an insert tag. It passes the arguments listed belows and expects the replacement
 text as return value or `false` if the flag was not handled.
 
+{{% notice note %}}
+Using the `insertTagFlags` hook has been deprecated and will no longer work in Contao 6. See
+[here](/framework/insert-tags/#register-custom-insert-tag-flags) on how to register custom insert tag flags.
+{{% /notice %}}
+
 
 ## Parameters
 

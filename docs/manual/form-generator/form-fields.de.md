@@ -1,6 +1,6 @@
 ---
 title: "Formularfelder"
-description: "Ähnlich wie bei Artikeln und Inhaltselementen gibt es auch bei Formularen für jedes Formularfeld ein 
+description: "Ähnlich wie bei Artikeln und Inhaltselementen gibt es auch bei Formularen für jedes Formularfeld ein 
 eigenes Element, das speziell auf die jeweiligen Anforderungen des Eingabefelds ausgerichtet ist."
 url: "formulargenerator/formularfelder"
 aliases:
@@ -8,8 +8,8 @@ aliases:
 weight: 20
 ---
 
-Ähnlich wie bei Artikeln und Inhaltselementen gibt es auch bei Formularen für jedes Formularfeld ein eigenes Element, 
-das speziell auf die jeweiligen Anforderungen des Eingabefelds ausgerichtet ist. Für jedes Formularfeld musst du 
+Ähnlich wie bei Artikeln und Inhaltselementen gibt es auch bei Formularen für jedes Formularfeld ein eigenes Element, 
+das speziell auf die jeweiligen Anforderungen des Eingabefelds ausgerichtet ist. Für jedes Formularfeld musst du 
 mindestens einen Feldnamen und eine Feldbezeichnung eingeben.
 
 ![Formularfelder bearbeiten]({{% asset "images/manual/form-generator/de/formularfelder-bearbeiten.png" %}}?classes=shadow)
@@ -17,17 +17,17 @@ mindestens einen Feldnamen und eine Feldbezeichnung eingeben.
 **Feldname:** Über den Feldnamen wird die Benutzereingabe nach dem Absenden des Formulars referenziert. Falls du die 
 Formulardaten in der Datenbank speicherst, muss es in der Tabelle ein gleich lautendes Feld geben.
 
-**Feldbezeichnung:** Die Feldbezeichnung wird im Frontend vor bzw. über dem Formularfeld angezeigt und sollte in der 
+**Feldbezeichnung:** Die Feldbezeichnung wird im Frontend vor bzw. über dem Formularfeld angezeigt und sollte in der 
 jeweils richtigen Sprache verfasst werden.
 
-**Pflichtfeld:** Wenn du diese Option auswählst, muss das Feld zum Abschicken des Formulars ausgefüllt werden. Bleibt 
+**Pflichtfeld:** Wenn du diese Option auswählst, muss das Feld zum Abschicken des Formulars ausgefüllt werden. Bleibt 
 es leer, erscheint eine Fehlermeldung.
 
 
 ## Erklärung {#erklaerung}
 
-Das Formularfeld `Erklärung` fügt dem Formular eine beliebige formatierte Erklärung hinzu. Die Eingabe erfolgt über den 
-Rich Text Editor.
+Das Formularfeld `Erklärung` fügt dem Formular eine beliebige formatierte Erklärung hinzu. Die Eingabe erfolgt über den 
+Rich-Text-Editor.
 
 
 ### Text/HTML
@@ -54,10 +54,10 @@ Das Formularfeld generiert folgenden HTML-Code:
 ```
 
 
-## HTML
+## HTML-Code
 
-Das Formularfeld `HTML` fügt dem Formular beliebigen HTML-Code hinzu. In den Backend-Einstellungen unter »Erlaubte 
-HTML-Tags« kannst du festlegen, welche HTML-Tags verwendet werden dürfen.
+Das Formularfeld `HTML-Code` fügt dem Formular beliebigen HTML-Code hinzu. In den Backend-Einstellungen unter »Erlaubte 
+HTML-Tags« kannst du festlegen, welche HTML-Tags verwendet werden dürfen.
 
 
 ### Text/HTML
@@ -106,31 +106,33 @@ Das Formularfeld generiert folgenden HTML-Code:
 
 ## Textfeld
 
-Das Formularfeld Textfeld fügt dem Formular ein einzeiliges Eingabefeld hinzu. Du solltest grundsätzlich für jedes 
-Textfeld die Eingabeprüfung aktivieren, um einer missbräuchlichen Verwendung des Formulars vorzubeugen.
+Das Formularfeld Textfeld fügt dem Formular ein einzeiliges Eingabefeld hinzu. Du solltest grundsätzlich für jedes 
+Textfeld die Eingabeprüfung aktivieren, um einer missbräuchlichen Verwendung des Formulars vorzubeugen.
 
 
 ### Feldkonfiguration
 
-**Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des 
-Formulars geprüft werden.
+**Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des 
+Formulars geprüft werden.
 
 | Suchmuster                                   | Erklärung                                                                                                  |
 |:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 | Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
 | Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
 | Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
-| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
 | Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
 | Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
 | Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
 | Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
-| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
-| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                                 | Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Experteneinstellungen
@@ -138,17 +140,17 @@ Formulars geprüft werden.
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
 **Standard-Wert:** Hier kannst du einen Standardwert erfassen. Bei barrierefreien Webseiten wird es empfohlen, das 
-@-Zeichen für E-Mail-Adressen vorzugeben.
+@-Zeichen für E-Mail-Adressen vorzugeben.
 
 **Minimale Eingabelänge:** Hier kannst du die minimale Anzahl an Zeichen vorgeben, die in das Textfeld eingegeben 
-werden dürfen.
+werden dürfen.
 
 **Maximale Eingabelänge:** Hier kannst du die maximale Anzahl an Zeichen vorgeben, die in das Textfeld eingegeben 
-werden dürfen.
+werden dürfen.
 
-**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
-er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
-drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
+er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
+drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
@@ -166,15 +168,23 @@ Das Formularfeld generiert folgenden HTML-Code:
         <span class="invisible">Pflichtfeld </span>…<span class="mandatory">*</span>
     </label>
     <input type="text" name="…" id="ctrl" class="text … mandatory" value="" required placeholder="…" minlength="…" maxlength="…" accesskey="…" tabindex="…">
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
 
 ## Passwortfeld
 
-Das Formularfeld `Passwortfeld` fügt dem Formular zwei einzeilige Eingabefelder für das Passwort und dessen Bestätigung 
+Das Formularfeld `Passwortfeld` fügt dem Formular zwei einzeilige Eingabefelder für das Passwort und dessen Bestätigung 
 hinzu. Prinzipiell funktionieren Passwortfelder genau wie [Textfelder](#textfeld), nur dass die Eingabe verdeckt 
 erfolgt.
+
+
+### Feldkonfiguration
+
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Template-Einstellungen
@@ -197,37 +207,40 @@ Das Formularfeld generiert folgenden HTML-Code:
         <span class="invisible">Pflichtfeld </span>Bestätigung<span class="mandatory">*</span>
     </label>
     <input type="password" name="…_confirm" id="ctrl_confirm" class="text password mandatory" value="" required>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
 
 ## Textarea
 
-Das Formularfeld `Textarea` fügt dem Formular ein mehrzeiliges Eingabefeld für längere Texte hinzu. Du 
-solltest auch hier die Eingabeprüfung aktivieren, um einer missbräuchlichen Verwendung des Formulars vorzubeugen.
+Das Formularfeld `Textarea` fügt dem Formular ein mehrzeiliges Eingabefeld für längere Texte hinzu. Du 
+solltest auch hier die Eingabeprüfung aktivieren, um einer missbräuchlichen Verwendung des Formulars vorzubeugen.
 
 
 ### Feldkonfiguration
 
-**Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des
-Formulars geprüft werden.
+**Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des
+Formulars geprüft werden.
 
 | Suchmuster                                   | Erklärung                                                                                                  |
 |:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 | Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
 | Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
 | Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
-| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
 | Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
 | Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
 | Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
 | Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
-| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
-| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                                 | Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Reihen und Spalten
@@ -243,14 +256,14 @@ Feldes kannst du zudem per CSS bestimmen.
 **Standard-Wert:** Hier kannst du einen Standardwert erfassen.
 
 **Minimale Eingabelänge:** Hier kannst du die minimale Anzahl an Zeichen vorgeben, die in das Textfeld eingegeben 
-werden dürfen.
+werden dürfen.
 
 **Maximale Eingabelänge:** Hier kannst du die maximale Anzahl an Zeichen vorgeben, die in das Textfeld eingegeben 
-werden dürfen.
+werden dürfen.
 
-**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
-er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
-drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
+er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
+drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
@@ -268,22 +281,25 @@ Das Formularfeld generiert folgenden HTML-Code:
         <span class="invisible">Pflichtfeld </span>…<span class="mandatory">*</span>
     </label>
     <textarea name="…" id="ctrl" class="textarea mandatory" rows="4" cols="40" required placeholder="…"></textarea>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
 
-## Select-Menü {#select-menue}
+## Select-Menü {#select-menue}
 
-Das Formularfeld `Select-Menü` fügt dem Formular ein Drop-Down-Menü hinzu, aus dem du genau eine Option 
+Das Formularfeld `Select-Menü` fügt dem Formular ein Drop-Down-Menü hinzu, aus dem du genau eine Option 
 auswählen kannst. Um die Auswahl mehrerer Optionen zu erlauben, kannst du entweder die Mehrfachauswahl aktivieren oder 
-ein [Checkbox-Menü](#checkbox-menue) anstatt des Select-Menüs verwenden.
+ein [Checkbox-Menü](#checkbox-menue) anstatt des Select-Menüs verwenden.
 
-![Ein Select-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-select-menue-im-frontend.png" %}}?classes=shadow)
+![Ein Select-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-select-menue-im-frontend.png" %}}?classes=shadow)
 
 
 ### Feldkonfiguration
 
 **Mehrfachauswahl:** Hier kannst du die Auswahl mehrerer Optionen erlauben.
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 **Listengröße:** Hier legst du fest, wie viele Zeilen das Auswahlfeld bei aktivierter Mehrfachauswahl hoch sein soll. 
 Innerhalb des Feldes kann gescrollt werden.
@@ -293,19 +309,19 @@ Innerhalb des Feldes kann gescrollt werden.
 
 **Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen.
 
-Beim Anlegen der Optionen unterstützt dich ein JavaScript-Assistent. Du kannst Optionen gruppieren und jede Gruppe mit 
-einer Überschrift versehen. Um eine Zeile zu einer Gruppenüberschrift zu machen, wähle die Option Gruppe.
+Beim Anlegen der Optionen unterstützt dich ein JavaScript-Assistent. Du kannst Optionen gruppieren und jede Gruppe mit 
+einer Überschrift versehen. Um eine Zeile zu einer Gruppenüberschrift zu machen, wähle die Option Gruppe.
 
-![JavaScript-Assistent für das Anlegen von Optionen]({{% asset "images/manual/form-generator/de/anlegen-von-optionen.png" %}}?classes=shadow)
+![JavaScript-Assistent für das Anlegen von Optionen]({{% asset "images/manual/form-generator/de/anlegen-von-optionen.png" %}}?classes=shadow)
 
 
 ### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
-**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
-er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
-drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
+er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
+drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
@@ -328,23 +344,29 @@ Das Formularfeld generiert folgenden HTML-Code:
         <option value="…">…</option>
         <option value="…">…</option>
     </select>
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
 Felder mit Mehrfachauswahl verwenden die CSS-Klasse `multiselect` anstatt `select`.
 
 
-## Radio-Button-Menü {#radio-button-menue}
+## Radio-Button-Menü {#radio-button-menue}
 
-Das Formularfeld Radio-Button-Menü fügt dem Formular eine Liste von Optionen hinzu, aus der du genau eine auswählen 
-kannst. Um die Auswahl mehrerer Optionen zu erlauben, musst du ein [Checkbox-Menü](#checkbox-menue) verwenden.
+Das Formularfeld Radio-Button-Menü fügt dem Formular eine Liste von Optionen hinzu, aus der du genau eine auswählen 
+kannst. Um die Auswahl mehrerer Optionen zu erlauben, musst du ein [Checkbox-Menü](#checkbox-menue) verwenden.
 
-![Ein Radio-Button-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-radio-button-menue-im-frontend.png" %}}?classes=shadow)
+![Ein Radio-Button-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-radio-button-menue-im-frontend.png" %}}?classes=shadow)
+
+
+### Feldkonfiguration
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Optionen
 
-**Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen. Beim Anlegen der Optionen unterstützt 
+**Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen. Beim Anlegen der Optionen unterstützt 
 dich ein JavaScript-Assistent.
 
 
@@ -382,23 +404,29 @@ Das Formularfeld generiert folgenden HTML-Code:
             <input type="radio" name="…" id="opt_3" class="radio" value="…" required> 
             <label id="lbl_3" for="opt_3">…</label>
         </span>
+        <p class="help" id="help_ctrl">…</p>
     </fieldset>
 </div>
 ```
 
 
-## Checkbox-Menü {#checkbox-menue}
+## Checkbox-Menü {#checkbox-menue}
 
-Das Formularfeld `Checkbox-Menü` fügt dem Formular eine Liste von Optionen hinzu, aus der du beliebig viele 
+Das Formularfeld `Checkbox-Menü` fügt dem Formular eine Liste von Optionen hinzu, aus der du beliebig viele 
 Optionen oder auch gar keine auswählen kannst. Um die Auswahl genau einer Option zu erlauben, musst du ein 
-[Radio-Button-Menü](#radio-button-menue) oder ein [Select-Menü](#select-menue) verwenden.
+[Radio-Button-Menü](#radio-button-menue) oder ein [Select-Menü](#select-menue) verwenden.
 
-![Ein Checkbox-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-checkbox-menue-im-frontend.png" %}}?classes=shadow)
+![Ein Checkbox-Menü im Frontend]({{% asset "images/manual/form-generator/de/ein-checkbox-menue-im-frontend.png" %}}?classes=shadow)
+
+
+### Feldkonfiguration
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
 
 
 ### Optionen
 
-**Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen. Beim Anlegen der Optionen unterstützt 
+**Optionen:** Hier kannst du die verschiedenen Auswahlmöglichkeiten erfassen. Beim Anlegen der Optionen unterstützt 
 dich ein JavaScript-Assistent.
 
 
@@ -437,6 +465,7 @@ Das Formularfeld generiert folgenden HTML-Code:
             <input type="checkbox" name="…[]" id="opt_3" class="checkbox" value="…"> 
             <label id="lbl_3" for="opt_3">…</label>
         </span>
+        <p class="help" id="help_ctrl">…</p>
     </fieldset>
 </div>
 ```
@@ -444,9 +473,9 @@ Das Formularfeld generiert folgenden HTML-Code:
 
 ## Datei-Upload
 
-Das Formularfeld `Datei-Upload` fügt dem Formular ein Feld hinzu, mit dem Besucher eine Datei von ihrem 
-lokalen Rechner auf den Server übertragen können. Du kannst für jedes Upload-Feld individuell festlegen, welche 
-Dateitypen hochgeladen werden dürfen und wo die übertragenen Dateien gespeichert werden.
+Das Formularfeld `Datei-Upload` fügt dem Formular ein Feld hinzu, mit dem Besucher eine Datei von ihrem 
+lokalen Rechner auf den Server übertragen können. Du kannst für jedes Upload-Feld individuell festlegen, welche 
+Dateitypen hochgeladen werden dürfen und wo die übertragenen Dateien gespeichert werden.
 
 
 ### Feldkonfiguration
@@ -455,10 +484,8 @@ Dateitypen hochgeladen werden dürfen und wo die übertragenen Dateien gespeic
 Versuch, eine andere Datei hochzuladen, gibt Contao automatisch eine Fehlermeldung aus und verweigert die Annahme der 
 Datei.
 
-**Maximale Eingabelänge:** Hier legst du die maximale Upload-Dateigröße in Bytes fest. Standardmäßig dürfen Dateien bis 
+**Maximale Eingabelänge:** Hier legst du die maximale Upload-Dateigröße in Bytes fest. Standardmäßig dürfen Dateien bis 
 zu 2 MB hochgeladen werden.
-
-{{< version "4.13" >}}
 
 **Maximale Bildbreite:** Beim Upload von Bildern prüft die Dateiverwaltung automatisch deren Breite und vergleicht 
 diese Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Breite, wird das Hochladen mit 
@@ -468,16 +495,18 @@ einer Fehlerausgabe im Formular abgebrochen.
 Werte mit deiner hier festgelegten Vorgabe. Überschreitet ein Bild die maximale Höhe, wird das Hochladen mit
 einer Fehlerausgabe im Formular abgebrochen.
 
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
+
 
 ### Datei speichern
 
-**Hochgeladene Dateien speichern:** Wähle diese Option, um übertragene Dateien in einem bestimmten Verzeichnis auf dem 
+**Hochgeladene Dateien speichern:** Wähle diese Option, um übertragene Dateien in einem bestimmten Verzeichnis auf dem 
 Server zu speichern.
 
-**Zielverzeichnis:** Hier wählst du den Speicherort für hochgeladene Dateien aus.
+**Zielverzeichnis:** Hier wählst du den Speicherort für hochgeladene Dateien aus.
 
 **Home-Verzeichnis verwenden:** Wenn du diese Option wählst und ein Mitglied zum Zeitpunkt des Uploads angemeldet ist, 
-werden die übertragenen Dateien im Home-Verzeichnis des Mitglieds anstatt im Upload-Verzeichnis gespeichert.
+werden die übertragenen Dateien im Home-Verzeichnis des Mitglieds anstatt im Upload-Verzeichnis gespeichert.
 
 **Bestehende Dateien erhalten:** Standardmäßig ersetzt Contao eine Datei, sobald eine gleichnamige neuere hochgeladen 
 wird. Wenn du diese Option wählst, bleiben vorhandene Dateien erhalten und neue werden bei Namensgleichheit mit einem 
@@ -488,9 +517,9 @@ numerischen Suffix versehen.
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
-**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
-er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
-drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
+er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
+drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
@@ -516,21 +545,28 @@ Das Formularfeld generiert folgenden HTML-Code:
 
 ## Range-Slider
 
+Das Formularfeld `Range-Slider` fügt dem Formular ein Feld hinzu zur Auswahl eines Wertes oder eines Wertebereichs innerhalb eines spezifizierten Mini- und Maximums.
+
+### Feldkonfiguration
+
+{{< version-tag "5.6" >}} **Hilfetext:** Dieser optionale Text wird standardmäßig unterhalb des Formularfelds angezeigt und ist mit diesem direkt verknüpft.
+
+
 ### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
 **Standard-Wert:** Hier kannst du einen Standard-Wert für das Feld eingeben.
 
-**Minimalwert:** Hier kannst due einen Minimalwert für numerische Eingaben festlegen.
+**Minimalwert:** Hier kannst du einen Minimalwert für numerische Eingaben festlegen.
 
-**Maximalwert:** Hier kannst due einen Maximalwert für numerische Eingaben festlegen.
+**Maximalwert:** Hier kannst du einen Maximalwert für numerische Eingaben festlegen.
 
 **Schritt:** Hier kannst du die Schrittgröße des Feldes festlegen.
 
-**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem
-er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl,
-drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem
+er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl,
+drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
@@ -548,15 +584,15 @@ Das Formularfeld generiert folgenden HTML-Code:
         <span class="invisible">Pflichtfeld </span>…<span class="mandatory">*</span>
     </label>
     <input type="range" name="…" id="ctrl" class="range mandatory" value="5" required max="10" step="2">
+    <p class="help" id="help_ctrl">…</p>
 </div>
 ```
 
 
-
 ## Verstecktes Feld
 
-Das Formularfeld `Verstecktes Feld` fügt dem Formular ein verstecktes Feld hinzu. Versteckte Felder können beliebige 
-Werte enthalten, die im Formular nicht sichtbar sind, aber trotzdem beim Absenden übermittelt werden.
+Das Formularfeld `Verstecktes Feld` fügt dem Formular ein verstecktes Feld hinzu. Versteckte Felder können beliebige 
+Werte enthalten, die im Formular nicht sichtbar sind, aber trotzdem beim Absenden übermittelt werden.
 
 **Standard-Wert:** Hier kannst du den Wert des versteckten Felds eingeben.
 
@@ -565,23 +601,23 @@ Versteckte Felder haben keine CSS-Klasse.
 
 ### Feldkonfiguration
 
-**Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des 
-Formulars geprüft werden.
+**Eingabeprüfung:** Hier kannst du ein Suchmuster vorgeben, anhand dessen die Benutzereingaben beim Abschicken des 
+Formulars geprüft werden.
 
 | Suchmuster                                   | Erklärung                                                                                                  |
 |:---------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 | Numerische Zeichen                           | Erlaubt Zahlen, Minus (-), Punkt (.) und Leerzeichen ( ).                                                  |
 | Alphabetische Zeichen                        | Erlaubt Buchstaben, Minus (-), Punkt (.) und Leerzeichen ( ).                                              |
 | Alphanumerische Zeichen                      | Erlaubt Zahlen und Buchstaben, Minus (-), Punkt (.), Unterstrich (_) und Leerzeichen ( ).                  |
-| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
+| Erweiterte&nbsp;alphanumerische&nbsp;Zeichen | Erlaubt alle Zeichen außer denen, die normalerweise aus Sicherheitsgründen kodiert werden (#/()<=>).       |
 | Datum                                        | Erlaubt Eingaben gemäß des globalen Datumsformats.                                                         |
 | Uhrzeit                                      | Erlaubt Eingaben gemäß des globalen Uhrzeitformats.                                                        |
 | Datum und Uhrzeit                            | Erlaubt Eingaben gemäß des globalen Datums- und Uhrzeitformats.                                            |
 | Telefonnummer                                | Erlaubt Zahlen, Plus (+), Minus (-), Schrägstrich (/), runde Klammern (()) und Leerzeichen ( ).            |
-| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
-| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
-| Absolute URL                                 | {{< version-tag "4.11" >}} Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
-| Eigene                                       | {{< version-tag "4.11" >}} Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
+| E-Mail-Adresse                               | Erlaubt die Eingabe einer gültigen E-Mail-Adresse.                                                         |
+| URL-Format                                   | Erlaubt die Eingabe einer gültigen URL.                                                                    |
+| Absolute URL                                 | Erlaubt die Eingabe einer absoluten URL (beginnt mit `http://` oder `https://`) |
+| Eigene                                       | Erlaubt die Eingabe gemäß der eigens angegebenen Regular Expression.            |
 
 
 ### Template-Einstellungen
@@ -598,10 +634,10 @@ Das Formularfeld generiert folgenden HTML-Code:
 
 ## Sicherheitsfrage
 
-Das Formularfeld `Sicherheitsfrage` fügt dem Formular ein [CAPTCHA](https://de.wikipedia.org/wiki/Captcha) 
+Das Formularfeld `Sicherheitsfrage` fügt dem Formular ein [CAPTCHA](https://de.wikipedia.org/wiki/Captcha) 
 hinzu. 
 
-Mit Hilfe eines [Honeypots](https://de.wikipedia.org/wiki/Honeypot) werden Spambots in die Falle gelockt und 
+Mithilfe eines [Honeypots](https://de.wikipedia.org/wiki/Honeypot) werden Spambots in die Falle gelockt und 
 ausgesperrt. Der Honeypot besteht aus mehreren verstecken Feldern, die als Köder dienen. Normale Benutzer können die 
 Felder nicht sehen und verändern sie deshalb nicht – die meisten Spambots schon. Zusätzlich werden im Hintergrund 
 weitere Faktoren geprüft um Benutzer und Spambots zu unterscheiden.
@@ -612,16 +648,16 @@ Rechenaufgabe lösen. Es gehen unter keinen Umständen abgesendete Formulardaten
 
 ### Feldkonfiguration
 
-**Platzhalter:** Dieser Text wird angezeigt solange das Feld noch nicht ausgefüllt wurde.
+**Platzhalter:** Dieser Text wird angezeigt, solange das Feld noch nicht ausgefüllt wurde.
 
 
 ### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
-**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
-er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
-drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
+er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
+drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 
@@ -660,7 +696,7 @@ Das Formularfeld generiert folgenden HTML-Code:
 
 ## Absendefeld
 
-Das Formularfeld `Absendefeld` fügt dem Formular eine Schaltfläche hinzu, mit der das Formular abgeschickt werden kann. 
+Das Formularfeld `Absendefeld` fügt dem Formular eine Schaltfläche hinzu, mit der das Formular abgeschickt werden kann. 
 Ein Absendefeld kann entweder eine Textschaltfläche oder eine Bildschaltfläche sein.
 
 **Bezeichnung der Absende-Schaltfläche:** Gebe hier den Text der Absende-Schaltfläche bzw. Mouse-Rollover-Text der 
@@ -671,16 +707,16 @@ Bildschaltfläche ein.
 
 **Bildschaltfläche:** Hier definierst du das Absendefeld als Bildschaltfläche.
 
-**Quelldatei:** Hier wählst du das Bild für die Bildschaltfläche aus.
+**Quelldatei:** Hier wählst du das Bild für die Bildschaltfläche aus.
 
 
 ### Experteneinstellungen
 
 **CSS-Klasse:** Hier kannst du eine oder mehrere Klassen eingeben.
 
-**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
-er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
-drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
+**Tastaturkürzel:** Mit einem Tastaturkürzel kann ein Besucher direkt zu einem bestimmten Eingabefeld springen, indem 
+er die `[Alt]`- bzw. `[Strg]`-Taste in Verbindung mit dem Tastaturkürzel, z. B. einer Zahl, 
+drückt ([vgl. Backend-Tastaturkürzel](../../administrationsbereich/backend-tastaturkuerzel/)).
 
 **Tab-Index:** Hier kannst du die Position des Formularfeldes innerhalb der Tabulator-Reihenfolge bestimmen.
 

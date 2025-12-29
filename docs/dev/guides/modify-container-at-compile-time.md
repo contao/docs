@@ -10,7 +10,7 @@ aliases:
 
 In a regular Symfony application or bundle a compiler pass for instance can be added
 by calling `$container->addCompilerPass()` inside the `build()` function of the application's
-`Kernel` or the bundle's `Bundle` class (see the [Symfony documentation](https://symfony.com/doc/4.4/service_container/compiler_passes.html)
+`Kernel` or the bundle's `Bundle` class (see the [Symfony documentation](https://symfony.com/doc/6.4/service_container/compiler_passes.html)
 for details). In fact this holds true for any modifications that need to be made to
 the container at compile time.
  

@@ -8,8 +8,7 @@ tags: [Twig]
 
 ---
 
-{{< version-tag "5.0" >}} Here are some examples to quickly get you started. We only target Contao 5 in the examples,
-but with some tweaking you might be able to apply them to Contao 4.13 as well.
+Here are some examples to quickly get you started.
 
 
 #### How to…

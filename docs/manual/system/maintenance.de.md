@@ -41,14 +41,7 @@ aufzurufen.
 
 Der Crawler kann außerdem auf defekte Links überprüfen, wenn das aktiviert wurde.
 
-{{% notice info %}}
-In Contao Versionen vor **4.9** heißt diese Sektion **Suchindex neu aufbauen**. Die Funktion zum Überprüfen auf defekte
-Links steht dort nicht zur Verfügung.
-{{% /notice %}}
-
 ![Den Suchindex automatisch aufbauen]({{% asset "images/manual/system/de/den-suchindex-automatisch-aufbauen.png" %}}?classes=shadow)
-
-{{< version "4.9" >}}
 
 Der Crawler kann auch direkt über die Konsole ausgeführt werden:
 
@@ -69,13 +62,9 @@ parameters:
 
 Nähere Informationen dazu findet man in der [Symfony Routing Dokumentation][SymfonyUrlCommands].
 
-### Geschützte Seiten indizieren
+### Geschützte Seiten indizieren
 
-Um das Durchsuchen von geschützten Seiten zu erlauben, musst du die Funktion zunächst in den [Backend-Einstellungen][BackendSettings] 
-aktivieren. Benutze dieses Feature sehr sorgfältig, und schließe personalisierte Seiten immer von der Suche aus!
-
-{{% notice info %}}
-Ab Contao **4.9** wird dies in der Applikations-Konfiguration aktiviert:
+Um das Durchsuchen von geschützten Seiten zu erlauben, musst du die Funktion zunächst in der Applikations-Konfiguration aktivieren:
 
 ```yaml
 # config/config.yaml
@@ -84,12 +73,11 @@ contao:
         # Enable indexing of protected pages.
         index_protected: true
 ```
-{{% /notice %}}
 
-Lege danach einen neuen Frontend-Benutzer an, und erlaube ihm den Zugriff auf die zu indizierenden geschützten Seiten. 
+Lege danach einen neuen Frontend-Benutzer an, und erlaube ihm den Zugriff auf die zu indizierenden geschützten Seiten. 
 Beim Aufbauen des Suchindexes wird dieser Benutzer dann automatisch angemeldet.
 
-Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den Ergebnissen, wenn der angemeldete 
+Später bei der Suche erscheinen die geschützten Seiten natürlich nur in den Ergebnissen, wenn der angemeldete 
 Frontend-Benutzer auch auf sie zugreifen darf.
 
 

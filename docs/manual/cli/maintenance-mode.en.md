@@ -6,9 +6,7 @@ aliases:
 ---
 
 
-{{< version "4.13" >}}
-
-The maintenance mode has been rewritten for this Contao version. Via the command line, the complete Contao installation 
+Via the command line, the complete Contao installation 
 (back- and front end) can be put into maintenance mode. This feature is very useful if you want to update your system.
 
 Furthermore you have the possibility to set the front end for each 

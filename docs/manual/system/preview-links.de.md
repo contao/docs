@@ -8,8 +8,6 @@ aliases:
 ---
 
 
-{{< version "4.13" >}}
-
 Wenn du dich in der [Frontend-Vorschau](../../administrationsbereich/aufruf-und-aufbau-des-backends/#der-vorschaubereich) 
 befindest, kannst du einen Vorschau-Link anlegen.
 

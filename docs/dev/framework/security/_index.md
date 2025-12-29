@@ -10,7 +10,7 @@ authentication and authorization. The Contao Managed Edition provides its own [f
 [user providers][SymfonyUserProvider] and [access control][SymfonyAccessControl] via the `contao/manager-bundle`. If you
 do not use the Managed Edition and added Contao to your custom Symfony application, you will have to register Contao's
 security settings yourself, as mentioned in the  [Getting Started article][ContaoConfiguration]. Contao's Symfony
-Security configuration in Contao **{{< current-version >}}** [looks like this][ContaoSecurityYaml] for example.
+Security configuration in Contao **{{% siteparam "currentContaoVersion" %}}** [looks like this][ContaoSecurityYaml] for example.
 
 If you want to learn more about Symfony's Security Component use the provided links to read up on. This documentation
 will only cover implementation details that are unique to Contao.
@@ -28,9 +28,7 @@ used for this.
 
 ## Voters
 
-{{< version "4.7" >}}
-
-Starting with Contao **4.7** Contao implements [Voters][SymfonyVoters] in order to easily check whether an authenticated user is authorized 
+Contao implements [Voters][SymfonyVoters] in order to easily check whether an authenticated user is authorized 
 to access specific resources. These voters are automatically added to Symfony's security system and then invoked when the respective
 permission is accessed via the [Security Helper][SecurityHelperService].
 
@@ -56,8 +54,6 @@ $security->isGranted('contao_user.alexf', 'tl_page::published');
 $security->isGranted('contao_user.filemounts', '/files/foo/bar');
 ```
 
-{{< version "4.10" >}}
-
 You can also use the security helper to check wether the user can edit a page or is allowed to edit fields in a specific DCA for example:
 
 ```php
@@ -69,16 +65,12 @@ $security->isGranted('contao_user.can_edit_page', [/* row of page data */]);
 $security->isGranted('contao_user.can_edit_page', $pageModel);
 ```
 
-{{< version "4.12" >}}
-
 The security helper can also be used to check whether a front end user belongs to any of the specified user groups:
 
 ```php
 $security->isGranted('contao_member.groups', $groupId);
 $security->isGranted('contao_member.groups', [/* array of group IDs */]);
 ```
-
-{{< version "5.0" >}}
 
 The `contao_dc.<data-container>` permission can be used to check whether a back end user has the right to perform 
 certain DCA actions. The subject in this case will be a `Contao\CoreBundle\Security\DataContainer\AbstractAction`.
@@ -96,7 +88,7 @@ $security->isGranted('contao_dc.tl_foobar', new UpdateAction('tl_foobar', $recor
 ```
 
 {{% notice tip %}}
-{{< version-tag "4.10" >}} There are now class constants available for the various permission attributes, so that you do not have to remember them
+There are now class constants available for the various permission attributes, so that you do not have to remember them
 yourself and instead can use your IDE to find the correct attribute. For the Contao Core these constants are available in 
 `Contao\CoreBundle\Security\ContaoCorePermissions` while the permissions of the additional bundles are available in 
 `Contao\NewsBundle\Security\ContaoNewsPermissions`, `Contao\CalendarBundle\Security\ContaoCalendarPermissions`, 
@@ -168,7 +160,7 @@ class AdminMaintenanceAccessVoter extends Voter
 }
 ```
 
-{{< version-tag "5.0" >}} Here is another example with which you can restrict editing of news records to their original 
+Here is another example with which you can restrict editing of news records to their original 
 authors. The voter checks for any update or delete actions of the data container and then checks whether the author of 
 the news record is the currently logged in user. In this case we implement the necessary checks also for the child table
 `tl_content` accordingly - otherwise  you would still be able to edit the news content.

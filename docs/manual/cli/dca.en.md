@@ -5,7 +5,6 @@ aliases:
     - /en/cli/dca/
 ---
 
-{{< version "4.8" >}}
 
 Contao uses the concept of [Data Container Arrays][DCA]. The configuration of each data container can be adjusted and
 extended by yourself within your Contao application as well as by extensions. During development of a website it might

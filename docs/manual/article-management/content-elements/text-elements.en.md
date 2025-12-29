@@ -48,22 +48,6 @@ uses the Open Source code editor from [Ace](https://ace.c9.io/).
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can overwrite content element `ce_code` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="ce_code block">
-    <pre>
-        <code class="hljs css">…</code>
-    </pre>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_element/code` template.
 
 **HTML Output**  
@@ -76,9 +60,6 @@ The element generates the following HTML code:
     </pre>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
-
 
 
 ## Description list
@@ -130,18 +111,6 @@ headlines and of course can occur several times on a page.
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can overwrite the content element  `ce_headline` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<h1 class="ce_headline">…</h1>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_element/headline` template.
 
 **HTML Output**  
@@ -150,9 +119,6 @@ The element generates the following HTML code:
 ```html
 <h1 class="content-headline">…</h1>
 ```
-{{% /tab %}}
-{{</tabs>}}
-
 
 
 ## HTML
@@ -168,17 +134,9 @@ The list of allowed tags can be configured in the backend settings.
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can overwrite the content element `ce_html` template.
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_element/html` template.
-{{% /tab %}}
-{{</tabs>}}
 
 The content element has no enclosing HTML markup.
-
 
 
 ## List
@@ -202,24 +160,6 @@ CSV file must have been transferred to the upload directory before.
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can overwrite the content element `ce_list` template.
-
-**HTML Output**
-The element generates the following HTML code:
-
-```html
-<div class="ce_list block">
-    <ul>
-        <li class="first">…</li>
-        <li>…</li>
-        <li class="last">…</li>
-    </ul>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_element/list` template.
 
 **HTML Output**
@@ -234,8 +174,6 @@ The element generates the following HTML code:
     </ul>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 A numbered enumeration uses the `<ol>` tag instead of the `<ul>` tag.
 
@@ -252,30 +190,13 @@ The content element "Markdown" is used to generate HTML code from a markdown tex
 | Markdown source |                                                                                        |
 |-----------------|----------------------------------------------------------------------------------------|
 | **Text:**       | Here you can enter the desired markdown code.                                          |
-| **File:**       | {{< version-tag "4.12" >}} Here you can select a Markdown file and use it as content.  |
+| **File:**       | Here you can select a Markdown file and use it as content.  |
 
 **Code:** Note that the code will not be executed.
 
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can `ce_markdown` overwrite the content element template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="ce_markdown block">
-    <div>
-        <h1>…</h1>
-        <p>…</p>
-    </div>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can `content_element/markdown` overwrite the content element template.
 
 **HTML Output**  
@@ -287,9 +208,6 @@ The element generates the following HTML code:
     <p>…</p>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
-
 
 Below are some examples of Markdown syntax:
 
@@ -556,56 +474,6 @@ The count starts at 0.
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can overwrite the content element `ce_table` template.
-
-**HTML Output**  
-The element generates the following HTML code:
-
-```html
-<div class="ce_table block">
-    <table class="sortable" data-sort-default="0|asc">
-    <caption>…</caption>
-    
-    <thead>
-        <tr>
-            <th class="head_0 col_first unsortable">…</th>
-            <th class="head_1">…</th>
-            <th class="head_2">…</th>
-            <th class="head_3 col_last">…</th>
-        </tr>
-    </thead>
-    
-    <tfoot>
-        <tr>
-            <td class="foot_0 col_first">…</td>
-            <td class="foot_1">…</td>
-            <td class="foot_2">…</td>
-            <td class="foot_3 col_last">…</td>
-        </tr>
-    </tfoot>
-    
-    <tbody>
-        <tr class="row_0 row_first odd">
-            <th scope="row" class="col_0 col_first">…</th>
-            <td class="col_1">…</td>
-            <td class="col_2">…</td>
-            <td class="col_3 col_last">…</td>
-        </tr>
-        <tr class="row_1 row_last even">
-            <th scope="row" class="col_0 col_first">…</th>
-            <td class="col_1">…</td>
-            <td class="col_2">…</td>
-            <td class="col_3 col_last">…</td>
-        </tr>
-    </tbody>
-    
-    </table>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_element/table` template.
 
 **HTML Output**  
@@ -652,9 +520,6 @@ The element generates the following HTML code:
     </table>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
-
 
 
 ## Text
@@ -723,34 +588,6 @@ texts are also evaluated by search engines and are therefore an important tool f
 
 ### Template settings
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Content element template:** Here you can overwrite the content element `ce_text` template.
-
-**HTML Output**
-The element generates the following HTML code:
-
-```html
-<div class="ce_text block">
-    <h2>…</h2>
-    <p>…</p>
-</div>
-```
-
-If an image was added to the text, the HTML output looks like this:
-
-```html
-<div class="ce_text block">
-    <h2>…</h2>
-    <figure class="image_container float_above">
-        <img src="…" alt="…" itemprop="image">
-        <figcaption class="caption">…</figcaption>
-    </figure>
-    <p>…</p> 
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Content element template:** Here you can overwrite the content element `content_element/text` template.
 
 **HTML Output**
@@ -779,9 +616,6 @@ If an image was added to the text, the HTML output looks like this:
     </div>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
-
 
 
 ## Unfiltered HTML

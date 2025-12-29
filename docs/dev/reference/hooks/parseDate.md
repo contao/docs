@@ -43,7 +43,7 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 #[AsHook('parseDate')]
 class ParseDateListener
 {
-    public function __invoke(string $formattedDate, string $format, ?int $timestamp): string
+    public function __invoke(string $formattedDate, string $format, int|null $timestamp): string
     {
         // Modify or create your own formatted date …
 

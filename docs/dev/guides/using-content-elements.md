@@ -172,15 +172,15 @@ use Contao\ContentModel;
 use Contao\Controller;
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsFrontendModule(category: 'miscellaneous')]
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         // Get the parent ID via a query parameter
         $parentId = $request->query->get('example_id');
@@ -195,7 +195,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
         // Fill the template with data from the parent record
         $template->setData(array_merge($example->row(), $template->getData()));
 
-        $template->content = function() use ($request, $parentId): ?string {
+        $template->content = function() use ($request, $parentId): string|null {
             // Get all the content elements belonging to this parent ID and parent table
             $elements = ContentModel::findPublishedByPidAndTable($parentId, 'tl_example');
 

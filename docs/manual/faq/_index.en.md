@@ -20,11 +20,6 @@ If there are multiple records in the database table "tl_user" for which the admi
 value for all of them to create a new administrator in the Contao [install toolbar](/en/installation/contao-installtool/).
 {{% /faq %}}
 
-{{% faq "I have forgotten the Install Tool password, how can I reset it?" %}}
-Remove the line in the file "system/config/localconfig.php" starting with `$GLOBALS['TL_CONFIG']['installPassword']`. 
-Afterwards you can set a new password with the [Install-Tool](/en/installation/contao-installtool/).
-{{% /faq %}}
-
 {{% faq "Can I maintain multiple websites with Contao?" %}}
 Yes Contao supports [multi-domain operation](/en/layout/site-structure/multi-domain-operation/) and 
 multilingual [websites](/en/layout/site-structure/multilingual-websites/).
@@ -35,7 +30,7 @@ Yes Contao supports [multilingual websites](/en/layout/site-structure/multilingu
 {{% /faq %}}
 
 {{% faq "How do I enable the Contao debug mode?" %}}
-You can activate the [Contao debug mode](/en/system/debug-mode/) via the backend.
+You can activate the [Contao debug mode]({{% relref "debug-mode" %}}) via the backend.
 {{% /faq %}}
 
 {{% faq "Where can I find more Contao resources?" %}}
@@ -106,7 +101,7 @@ from the manager or the console.
 {{% /faq %}}
 
 {{% faq "How can I change the Contao backend path?" %}}
-{{< version-tag "4.13" >}} You can add the entry `route_prefix` in config.yaml and then you have to empty the application cache once using the Contao Manager or the console.
+You can add the entry `route_prefix` in config.yaml and then you have to empty the application cache once using the Contao Manager or the console.
 
 ```yaml
 # config/config.yaml
@@ -130,24 +125,11 @@ Since Contao 4.10 you can [set different e-mail configurations](/en/system/setti
 {{% /faq %}}
 
 {{% faq "How can I add the language parameter to the URL?" %}}
-You can add the entry `prepend_locale: true` in [config.yaml](/en/system/settings/#config-yml) and then you have to 
-empty the application cache once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console.
-Since Contao 4.10, you can freely define the URL prefix, independently of the language.
-```yaml
-# config/config.yaml
-contao:
-    prepend_locale: true
-```
+You can add an **URL prefix** in the settings of your "website root".
 {{% /faq %}}
 
-{{% faq "Can the URL suffix .html be removed?" %}}
-You can add the entry `url_suffix: ''` in [config.yaml](/en/system/settings/#config-yml) and then you have to 
-empty the application cache once using the Contao Manager ("Maintenance" &gt; "Application Cache" &gt; "Rebuild Production Cache") or the console. 
-```yaml
-# config/config.yaml
-contao:
-    url_suffix: ''
-```
+{{% faq "Can the URL suffix .html be added?" %}}
+You can add an **URL suffix** in the settings of your "website root".
 {{% /faq %}}
 
 {{% faq "Why is my HTML code not applied in the TinyMCE editor?" %}}
@@ -158,7 +140,7 @@ Answers can be found in the [TinyMCE Editor Configuration](/en/guides/tinymce-co
 ## File management
 
 {{% faq "My pictures are not displayed in the frontend, what can I do?" %}}
-Check in the [file manager](/en/file-manager/) if the directory with your images is marked as "Public". Also make sure that there is no outdated `.htaccess` file in the `/web` folder or a parent folder of your installation.
+Check in the [file manager](/en/file-manager/) if the directory with your images is marked as "Public". Also make sure that there is no outdated `.htaccess` file in the `/public` folder or a parent folder of your installation.
 {{% /faq %}}
 
 {{% faq "Is it possible to hide the search in the file manager?" %}}

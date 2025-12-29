@@ -58,9 +58,6 @@ In Contao, all publicly accessible files are located in the subfolder `/public` 
 
 **Example:** `example.com` points to the directory `/www/example/public`
 
-({{< version-tag "4.12" >}} Following the Symfony standard, the public subfolder of `/web` has been renamed to
-`/public`. If there is a `/web` directory in your installation, Contao will automatically use it instead of `/public`. When changing from `/web` to `/public`, the change must also be specified in composer.json.)
-
 {{% notice info %}}
 Every Contao installation requires a separate (sub)domain.
 {{% /notice %}}

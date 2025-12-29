@@ -18,7 +18,7 @@ point you can check for the `_preview` request attribute.
 ```php
 class FoobarController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         if ($request->attributes->get('_preview')) {
             // Execute some code within the preview entry point
@@ -48,7 +48,7 @@ class FoobarController extends AbstractContentElementController
     {
     }
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         if ($this->tokenChecker->isPreviewMode()) {
             // Execute some code when the preview mode is active
@@ -66,14 +66,6 @@ class FoobarController extends AbstractContentElementController
     {# Show some content only available in the preview mode #}
 {% endif %}
 ```
-
-{{% notice "info" %}}
-In previous Contao versions, the `BE_USER_LOGGED_IN` constant was used for this. This constant was `true` whenever a
-valid back end login session is present and the _Unpublished: show_ option was enabled. However, with the introduction of
-the preview link feature of Contao **4.13** this is not necessarily the case anymore, i.e. this constant can be `true`
-even without a back end login. The constant is deprecated in Contao 4.13 and has been removed in Contao 5, the aforementioned
-`contao.security.token_checker` should be used instead.
-{{% /notice %}}
 
 
 [TokenChecker]: /reference/services#tokenchecker

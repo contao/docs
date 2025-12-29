@@ -1,16 +1,38 @@
 en:
-  languageName: English
-  weight: 1
-  params:
-    documentation_label_overview: 'More documentation on'
-    documentation_label_website: 'More about Contao on'  
-    documentation_label_switch: 'Go to the developer documentation'
+    languageName: English
+    weight: 1
+    params:
+        documentation_label_overview: 'More documentation on'
+        documentation_label_website: 'More about Contao on'  
+        documentation_label_switch: 'Go to the developer documentation'
+        version: 5.x
+        versions:
+            - 
+                baseURL: https://docs.contao.org/5.x/manual/en/
+                identifier: 5.x
+                isLatest: true
+                title: 5.x
+            - 
+                baseURL: https://docs.contao.org/4.x/manual/en/
+                identifier: 4.x
+                title: 4.x
 de:
-  languageName: Deutsch
-  weight: 2
-  title: 'Contao Handbuch'
-  params:
-    documentation_label: 'Handbuch'
-    documentation_label_overview: 'Weitere Dokumentationen auf'
-    documentation_label_website: 'Mehr über Contao auf'
-    documentation_label_switch: 'Zur Entwickler Dokumentation'
+    languageName: Deutsch
+    weight: 2
+    title: 'Contao Handbuch'
+    params:
+        documentation_label: 'Handbuch'
+        documentation_label_overview: 'Weitere Dokumentationen auf'
+        documentation_label_website: 'Mehr über Contao auf'
+        documentation_label_switch: 'Zur Entwickler Dokumentation'
+        version: 5.x
+        versions:
+            - 
+                baseURL: https://docs.contao.org/5.x/manual/de/
+                identifier: 5.x
+                isLatest: true
+                title: 5.x
+            - 
+                baseURL: https://docs.contao.org/4.x/manual/de/
+                identifier: 4.x
+                title: 4.x

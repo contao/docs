@@ -10,7 +10,7 @@ weight: 26
 
 ## Bild
 
-Das Inhaltselement »Bild« fügt dem Artikel ein Bild hinzu. Ein Bild kann eine Großansicht haben oder als Bildlink auf 
+Das Inhaltselement »Bild« fügt dem Artikel ein Bild hinzu. Ein Bild kann eine Großansicht haben oder als Bildlink auf 
 eine bestimmte URL verweisen.
 
 ![Ein Bildelement anlegen]({{% asset "images/manual/article-management/de/ein-bildelement-anlegen.png" %}}?classes=shadow)
@@ -28,7 +28,7 @@ geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Metadaten überschreiben:** Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
-**Alternativer Text:** Eine barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die 
+**Alternativer Text:** Eine barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die 
 angezeigt wird, wenn das Objekt selbst nicht dargestellt werden kann. Alternative Texte werden außerdem von 
 Suchmaschinen ausgewertet und sind daher ein wichtiges Instrument der Onpage-Optimierung.
 
@@ -43,25 +43,6 @@ möglich ist.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_image` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_image first last block">
-    <figure class="image_container">
-        <a href=…" title="…" data-lightbox="…">
-            <img src="…" alt="…" itemprop="image">
-        </a>
-        <figcaption class="caption">…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/image` überschreiben.
 
 **HTML-Ausgabe**  
@@ -77,13 +58,11 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Galerie
 
-Das Inhaltselement »Bildergalerie« fügt dem Artikel eine Bildergalerie hinzu, also eine Sammlung mehrerer 
+Das Inhaltselement »Bildergalerie« fügt dem Artikel eine Bildergalerie hinzu, also eine Sammlung mehrerer 
 Vorschaubilder (engl. »Thumbnails«), die in einer Liste aufgelistet sind und beim Anklicken vergrößert werden. Bei 
 sehr vielen Bildern kann die Galerie auf mehrere Seiten verteilt werden.
 
@@ -93,7 +72,7 @@ sehr vielen Bildern kann die Galerie auf mehrere Seiten verteilt werden.
 ### Quelle
 
 **Quelldateien:** Hier wählst du einen oder mehrere Ordner bzw. Dateien aus, die in der Bildergalerie enthalten sein 
-sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen Bilder in die Galerie. Die 
+sollen. Wenn du einen Ordner auswählst, übernimmt Contao automatisch alle darin enthaltenen Bilder in die Galerie. Die 
 einzelnen Bilder können durch Ziehen umsortiert werden.
 
 **Home-Verzeichnis verwenden:** Das Home-Verzeichnis als Dateiquelle verwenden, wenn sich ein Mitglied angemeldet hat.
@@ -131,45 +110,6 @@ Lightbox geöffnet (dazu ist JavaScript erforderlich).
 
 **Galerietemplate:** Hier kannst du das Galerietemplate überschreiben.
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_gallery` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_gallery first last block">
-    <ul class="cols_2">
-        <li class="row_0 row_first row_last even col_0 col_first">
-            <figure class="image_container">
-                <a href="…" data-lightbox="…">
-                    <img src="…" alt="…">
-                </a>
-            </figure>
-        </li>
-        <li class="row_0 row_first row_last even col_1 col_last">
-            <figure class="image_container">
-                <a href="…" data-lightbox="…">
-                    <img src="…" alt="…">
-                </a>
-            </figure>
-        </li>
-    </ul>
-    <!-- indexer::stop -->
-    <nav class="pagination block" aria-label="Seitenumbruch-Menü">
-        <p>Seite 1 von 2</p>
-        <ul>
-            <li><strong class="active">1</strong></li>
-            <li><a href="…" class="link" title="Gehe zu Seite 2">2</a></li>
-            <li class="next"><a href="…" class="next" title="Gehe zu Seite 2">Vorwärts</a></li>
-        </ul>
-    </nav>
-    <!-- indexer::continue -->
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/gallery` überschreiben.
 
 **HTML-Ausgabe**  
@@ -201,13 +141,11 @@ Das Element generiert folgenden HTML-Code:
     </nav>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Video/Audio
 
-Das Inhaltselement »Video/Audio« fügt dem Artikel eine Video- bzw. Audio-Datei hinzu. 
+Das Inhaltselement »Video/Audio« fügt dem Artikel eine Video- bzw. Audio-Datei hinzu. 
 
 
 ### Quelle
@@ -248,25 +186,6 @@ deaktivieren.
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_player` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_player block">
-    <figure class="video_container">
-        <video width="…" height="…" autoplay loop playsinline muted>
-            <source type="video/mp4" src="…" title="…">
-        </video>
-        <figcaption class="caption">……</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/player` überschreiben.
 
 **HTML-Ausgabe**  
@@ -282,13 +201,11 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Vimeo
 
-Das Inhaltselement »Vimeo« fügt dem Artikel ein Vimeo-Video hinzu.
+Das Inhaltselement »Vimeo« fügt dem Artikel ein Vimeo-Video hinzu.
 
 
 ### Quelle
@@ -333,38 +250,6 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_vimeo` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_vimeo block">
-    <figure class="video_container">
-        <div class="responsive ratio-169">
-            <a id="splashImage" href="…">
-            <img src="…" alt="…">
-            </a>
-            <script>
-                document.getElementById('splashImage').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var iframe = document.createElement('iframe');
-                    iframe.src = this.href;
-                    iframe.width = '…';
-                    iframe.height = '…';
-                    iframe.setAttribute('allowfullscreen', '');
-                    this.parentNode.replaceChild(iframe, this);
-                });
-            </script>
-        </div>
-        <figcaption class="caption">…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/vimeo` überschreiben.
 
 **HTML-Ausgabe**  
@@ -384,13 +269,11 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## YouTube
 
-Das Inhaltselement »YouTube« fügt dem Artikel ein YouTube-Video hinzu. 
+Das Inhaltselement »YouTube« fügt dem Artikel ein YouTube-Video hinzu. 
 
 
 ### Quelle
@@ -440,40 +323,6 @@ Abschnitt [Text](/de/artikelverwaltung/inhaltselemente/text-elemente/#bildeinste
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_youtube` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<!-- indexer::stop -->
-<div class="ce_youtube block">
-    <figure class="video_container">
-        <div class="responsive ratio-169">
-            <a id="splashImage" href="…">
-                <img src="…" alt="…" itemprop="image">
-            </a>
-            <script>
-                document.getElementById('splashImage').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var iframe = document.createElement('iframe');
-                    iframe.src = this.href;
-                    iframe.width = '…';
-                    iframe.height = '…';
-                    iframe.setAttribute('allowfullscreen', '');
-                    this.parentNode.replaceChild(iframe, this);
-                });
-            </script>
-        </div>
-        <figcaption class="caption">…</figcaption>
-    </figure>
-</div>
-<!-- indexer::continue -->
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/youtube` überschreiben.
 
 **HTML-Ausgabe**  
@@ -493,5 +342,3 @@ Das Element generiert folgenden HTML-Code:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}

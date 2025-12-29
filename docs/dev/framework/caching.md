@@ -173,14 +173,14 @@ namespace App\Controller\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
-use Contao\Template;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement(category: 'texts')]
 class MyContentElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         // Do your stuff
         
@@ -274,7 +274,7 @@ You can register to the [`oninvalidate_cache_tags` callback][5] and add your own
 
 
 {{% notice "tip" %}}
-{{< version-tag "4.13" >}} You can also use the [EntityCacheTags helper service](/reference/services/#entitycachetags) to
+You can also use the [EntityCacheTags helper service](/reference/services/#entitycachetags) to
 add and invalidate tags based on entity or model classes and instances.
 {{% /notice %}}
 
@@ -318,7 +318,7 @@ instead of 24 hours. The page cache will expire at the end of the year and regen
 ```php
 class CurrentYearController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         $year = (int) date('Y');
         $template->year = $year;
@@ -353,14 +353,14 @@ can affect the cache lifetime by setting it on the template response:
 namespace App\Controller;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class MySuperController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         $response = $template->getResponse();
         

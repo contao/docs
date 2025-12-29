@@ -60,10 +60,9 @@ if (isset($GLOBALS['TL_HOOKS']['compileFormFields']) && \is_array($GLOBALS['TL_H
 
 ## Registering hooks
 
-As of Contao **4.13**, there are four different ways of subscribing to a hook. The
+There are 3 different ways of subscribing to a hook. The
 recommended way is using _PHP attributes_ together with [invokable services](#invokable-services).
-Which one you use depends on your setup. For example, if you still need to support PHP 7 you can use _annotations_. If you still develop hooks 
-for Contao **4.4** then you still need to use the _PHP array configuration_.
+Which one you use depends on your setup. For example, if you still need to support PHP 7 you can use _annotations_.
 
 {{% notice tip %}}
 Using attributes or annotations means it is only necessary to create one file for the respective adaptation when using Contao's default
@@ -72,8 +71,7 @@ way of automatically registering services under the `App\` namespace within the 
 
 {{< tabs groupid="attribute-annotation-yaml-php" style="code" >}}
 {{% tab title="Attribute" %}}
-{{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
-since **PHP 8**) with which you can tag your service to be registered as a hook.
+Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) with which you can tag your service to be registered as a hook.
 
 ```php
 // src/EventListener/ParseArticlesListener.php
@@ -97,8 +95,6 @@ The priority parameter is optional.
 {{% /tab %}}
 
 {{% tab title="Annotation" %}}
-{{% version-tag "4.8" %}}
-
 Contao also supports its own annotation formats via the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
 
 ```php
@@ -125,7 +121,7 @@ The priority parameter is optional.
 {{% /tab %}}
 
 {{% tab title="YAML" %}}
-{{< version-tag "4.5" >}} Since Contao 4.5 hooks can be registered using the `contao.hook` service tag.
+Hooks can also be registered using the `contao.hook` service tag directly.
 
 ```yaml
 # config/services.yaml
@@ -145,37 +141,6 @@ The service tag can have the following options:
 | priority | `integer` | _Optional:_ priority of the hook. (Default: `0`)                                                         |
 {{% /tab %}}
 
-{{% tab title="PHP" %}}
-In this legacy way hooks are registered by extending the respective global array in your
-[`config.php`](/getting-started/starting-development/#contao-configuration-translations) file (ever since hooks were introduced in Contao).
-
-```php
-// contao/config.php
-use App\EventListener\ActivateAccountListener;
-
-$GLOBALS['TL_HOOKS']['activateAccount'][] = [ActivateAccountListener::class, 'onActivateAccount'];
-```
-
-In this case, the method `onActivateAccount` in the class or service `App\EventListener\ActivateAccountListener` 
-is called as soon as the hook `activateAccount` is executed. Note that the first element in the array can also be a service reference 
-since Contao **4.3**.
-
-```php
-// src/EventListener/ActivateAccountListener.php
-namespace App\EventListener;
-
-use Contao\MemberModel;
-use Contao\ModuleRegistration;
-
-class ActivateAccountListener
-{
-    public function onAccountActivation(MemberModel $member, ModuleRegistration $module): void
-    {
-        // Do something …
-    }
-}
-```
-{{% /tab %}}
 {{< /tabs >}}
 
 {{% notice info %}}
@@ -187,7 +152,7 @@ _before_ the legacy registered hooks. With a priority of lower than zero the hoo
 
 ### Invokable Services
 
-{{< version-tag "4.9" >}} You can also use [invokable classes][invoke] for your services. If a service is
+You can also use [invokable classes][invoke] for your services. If a service is
 tagged with `contao.hook` and no method name is given, the `__invoke` method will
 be called automatically. This also means that you can define the service annotation
 on the class, instead of a method:
@@ -260,29 +225,6 @@ class ParseArticlesListener
 ```
 {{% /tab %}}
 
-{{% tab title="PHP" %}}
-```php
-// contao/config.php
-use App\EventListener\ParseArticlesListener;
-
-$GLOBALS['TL_HOOKS']['activateAccount'][] = [ParseArticlesListener::class, '__invoke'];
-```
-```php
-// src/EventListener/ParseArticlesListener.php
-namespace App\EventListener;
-
-use Contao\FrontendTemplate;
-use Contao\Module;
-
-class ParseArticlesListener
-{
-    public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void
-    {
-        // Do something …
-    }
-}
-```
-{{% /tab %}}
 {{< /tabs >}}
 
 

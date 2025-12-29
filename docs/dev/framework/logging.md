@@ -49,8 +49,6 @@ In the example shown above, a reference to the triggering method `__METHOD__` an
 
 ## Contao Channels & Convenience Loggers
 
-{{< version "4.13" >}}
-
 To conveniently create log entries without having to manually define the appropriate
 context, Contao provides pre-configured logger services.
 

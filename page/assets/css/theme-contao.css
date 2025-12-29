@@ -76,15 +76,11 @@ b, strong, label, th {
     border-bottom: 4px solid var(--MENU-HEADER-BORDER-color);
 }
 
-#R-homelinks {
-    display: none;
-}
-
 .children-li p {
     font-size: small;
 }
 
-#R-shortcutmenu-home > ul.collapsible-menu {
+#R-sidebar .R-shortcutmenu-main > ul.collapsible-menu {
     background-color: var(--MENU-BG-color);
     margin: 0;
     padding-top: 1rem;
@@ -98,7 +94,7 @@ b, strong, label, th {
 
 #R-footer {
     padding: 2rem 1rem;
-    padding-bottom: 0;
+    padding-bottom: 1rem;
     text-align: left;
 }
 
@@ -771,4 +767,11 @@ mark {
 
 .menu-control select option {
     color: var(--MENU-SECTIONS-LINK-color);
+}
+
+/* More margin for footer menus */
+#R-sidebar .R-shortcutmenu-footercontrols > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
 }

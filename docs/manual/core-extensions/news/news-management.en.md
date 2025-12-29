@@ -86,61 +86,6 @@ comment, you can disable the security question here. Since Contao 4.4, this ques
 
 ## RSS feeds
 
-{{< tabs groupid="contaoVersion">}}
-{{% tab title="Contao  4" %}}
-Every news or blog archive can be exported as RSS/Atom feed if desired. RSS feeds are XML files containing your news 
-contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
-
-The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the 
-header of the page. The "header" is not the header of your page layout, but the tag `head` of the HTML source code.
-
-To create a new feed click on **RSS Feeds** ![Manage RSS feeds]({{% asset "icons/rss.svg" %}}?classes=icon "RSS-Feeds verwalten") 
-and then on **New** ![Create a new feed]({{% asset "icons/new.svg" %}}?classes=icon "Einen neuen Feed erstellen").
-
-
-### Title and language
-
-**Title:** The title is output as a feed title in the XML file.
-
-**Feed Alias:** The alias of a feed is used as the file name.
-
-**Feed language**: Here you can enter the language of the [feed](http://www.rssboard.org/rss-language-codes#table).
-
-
-### News archives
-
-**News archives:** Here you define which news archives are included in the feed.
-
-
-### Feed settings
-
-**Feed format**: Here you can define the format of the feed. Contao supports RSS 2.0 and Atom, the two most popular 
-formats.
-
-**Export settings:** Here you can specify whether only the teaser texts of the posts or the complete posts are exported 
-as feed.
-
-**Maximum number of contributions:** Here you can limit the number of posts of the feed. Usually about 25 posts per 
-feed are sufficient. Most of the time only the first three to five are actually used anyway.
-
-**Base URL:** The base URL is especially important in multi-domain operation, if you run several websites with one 
-Contao installation. To make sure that the feed links to the correct domain, you can enter it here.
-
-**Feed description**: Here you can enter a description of the feed.
-
-
-### Image settings
-
-**Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
-
-| Custom dimensions               |                                                                                                                     |
-|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
-| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
-| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
-| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
-
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 Every news or blog archive can be exported as RSS/Atom or JSON feed if desired. RSS feeds are XML files containing your 
 news contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
 
@@ -149,9 +94,6 @@ desired settings for your feed.
 
 The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the
 header of the page. The "header" is not the header of your page layout, but the tag `head` of the HTML source code.
-{{% /tab %}}
-{{< /tabs >}}
-
 
 
 ## News items
@@ -168,6 +110,10 @@ To create a new post, click on the desired archive
 
 
 ### Title and Author
+
+In this section the featured posts are particularly interesting. Featured posts allow the creation of a "virtual 
+archive", which contains only the Featured posts from the various archives. This allows you to display a comprehensive 
+list of important posts on the home page, for example.
 
 **Titles:** Here you can enter the title of the news post.
 
@@ -224,16 +170,15 @@ not. <sup>4</sup>
 <title>Page title</title>
 ```
 
-**Robots tag:** The robots tag defines how search engines treat a page.
+**Robots tag:** The robots tag defines how search engines treat a page. By default, news articles inherit the robots tag setting from the page that contains the "news reader" module. If necessary, the robots tag can be adjusted per news article:
 
+- *Default (-):* The robots tag setting from the page with the "news reader" module is used
 - *index:* add the page to the search index
 - *follow:* follow the links on the page
 - *noindex:* do not include the page in the search index
 - *nofollow:* do not follow the links on the page
 
-The default case is *index,follow*, because we want Google and other search engines to include our pages in the search
-index. However, certain pages, such as the imprint or the registration page, can be excluded from indexing using the
-setting *noindex,nofollow*.
+With *index,follow*, search engines can include the news article in the search index. With *noindex,nofollow*, search engines are instructed to exclude the news article from the search index.
 
 **Output in source code:**
 ```html
@@ -312,13 +257,15 @@ files are both exported in the RSS feed and offered for download on your website
 
 ### Expert settings
 
-In this section the featured posts are particularly interesting. Featured posts allow the creation of a "virtual 
-archive", which contains only the Featured posts from the various archives. This allows you to display a comprehensive 
-list of important posts on the home page, for example.
-
 **CSS class:** Here you can add a CSS class to the post.
 
 **Disable comments:** Here you can deactivate the comment function for a post.
+
+{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the news article should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, news articles inherit the search indexer setting from the page that contains the "news reader" module. If necessary, this behavior can be adjusted per news article:
+
+- **Default:** Indexing according to the search indexer setting from the page with the "news reader" module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
+- **Always index:** Include the news article, even if it has the robots tag *noindex* or the page with the "news reader" module has a different setting.
+- **Never index:** Exclude the news article, even if it has the robots tag *index* or the page with the "news reader" module has a different setting.
 
 
 ### Publish settings

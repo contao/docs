@@ -519,7 +519,7 @@ the back end and not to structure content in templates.
 Sometimes a template only includes part of a page, like a content element, but still wants to contribute content that is
 global to the page.
 
-{{< version-tag "5.0" >}} For this, you can use the [`add` tag in Contao]({{% relref "add" %}}). It allows adding content to the end of the
+For this, you can use the [`add` tag in Contao]({{% relref "add" %}}). It allows adding content to the end of the
 document head or body. If you want the block to be output only once (no matter how often the template is rendered on
 the current page), you can provide a name. This is especially helpful when adding a generic javascript code or styles,
 that do not make sense getting inserted multiple times.
@@ -552,7 +552,7 @@ responsibility of the page template (like `fe_page`) to ultimately output the ga
 
 #### HTML Attributes
 
-{{< version-tag "5.0" >}} HTML attributes are a heavily used feature in HTML. In the context of templates, they are also
+HTML attributes are a heavily used feature in HTML. In the context of templates, they are also
 one of the primary things, that people want to adjust. This is why we created the `HtmlAttributes` class together with
 the `attrs()` function to create an instance of said class.
 
@@ -619,7 +619,7 @@ on how to use it.
 
 #### Images
 
-{{< version-tag "5.0" >}} The `figure` and `picture` components are suited to render any built `Figure` object. In case
+The `figure` and `picture` components are suited to render any built `Figure` object. In case
 you cannot or don't want to create a `Figure` in the controller, you can alternatively use the `figure` function to
 build a `Figure` instance on the fly. Internally, this uses the `FigureBuilder` from the Contao
 [image studio]({{% relref "image-studio#twig" %}}). In case you also want to create a picture/resize configuration
@@ -667,15 +667,10 @@ pre-made `_figure` component:
 {% with {figure: my_figure} %}{{ block('figure_component') }}{% endwith %}
 ```
 
-{{% notice info %}}
-In Contao **4.13** you need to use the `contao_figure` instead of the `figure` function. While allowing the same
-arguments, this function will directly render the (default or given) image template instead of returning a `Figure`
-object. Note, that this function is deprecated since Contao **5.0**.
-{{% /notice %}}
 
 #### Formatting
 
-{{< version-tag "5.0" >}} You can use the `highlight` and `highlight_auto` filters to generate code highlighting with
+You can use the `highlight` and `highlight_auto` filters to generate code highlighting with
 the `scrivo/highlight.php` library. You can either pass a language to use or let the library guess the language
 (`highlight_auto`). In the latter case, you can optionally constrain the selection to a given subset of languages.
 
@@ -688,7 +683,7 @@ the `scrivo/highlight.php` library. You can either pass a language to use or let
 The detected language was {{ highlighted.language }} with a relevance of {{ highlighted.relevance }}.
 ```
 
-{{< version-tag "5.0" >}} The [`format_bytes` filter]({{% ref "format_bytes" %}}) transforms a number representing a
+The [`format_bytes` filter]({{% ref "format_bytes" %}}) transforms a number representing a
 file size in bytes into a human-readable form. It therefore uses the `MSC.decimalSeparator`, `MSC.thousandsSeparator`
 and `UNITS` declarations from the global translation catalogue.
 
@@ -743,7 +738,7 @@ As of writing this, there is unfortunately no replacement for `PageModel::getFro
 now, stick to generating the URLs in your controller and then pass them to your template (where they are only output).
 {{% /notice %}}
 
-{{< version-tag "5.0" >}} The `prefix_url` filter prefixes relative URLs with the request base path. This is needed when
+The `prefix_url` filter prefixes relative URLs with the request base path. This is needed when
 dealing with relative URLs on a page that does not set a `<base>` tag.
 
 ```twig

@@ -28,7 +28,7 @@ no sense to show any other packages to the end users.
 ## Structure
 
 We recommend you stick to the structure recommended by [Symfony in their docs][2]. One thing that will differ are the
-Contao specific resources that will go under `contao/` (or `src/Resources/contao/` if you are using the old bundle structure).
+Contao specific resources that will go under `contao/`.
 Contao specific resources in general are the following folders:
 
 * `config`

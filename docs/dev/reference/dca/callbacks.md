@@ -116,8 +116,6 @@ Executed when a new record is created.
 
 ### `config.onbeforesubmit`
 
-{{< version "5.0" >}}
-
 Executed when a back end form is submitted _before_ the record will be updated
 in the database. Allows you to e.g. modify the values or introduce validation
 accross multiple fields. You are expected to return the values.
@@ -299,25 +297,6 @@ Executed after the old version of the record has been added to `tl_version`.
 {{% /expand %}}
 
 
-### `config.onrestore`
-
-Executed after a record has been restored from an old version.
-
-{{% notice note %}}
-This callback is deprecated and will be removed in Contao 5.0. Use [config.onrestore_version](#configonrestore_version)
-instead.
-{{% /notice %}}
-
-{{% expand "Parameters"%}}
-* `integer` Parent ID of the `tl_version` entry
-* `string` Table
-* `array` Record data
-* `integer` Version number
-
-**return:** _void_
-{{% /expand %}}
-
-
 ### `config.onrestore_version`
 
 Executed after a record has been restored from an old version.
@@ -347,8 +326,6 @@ Executed after a deleted record has been restored from the "undo" table.
 
 ### `config.oninvalidate_cache_tags`
 
-{{< version "4.7" >}}
-
 This callback is executed whenever a record is changed in any way via the Contao
 back end. It allows you to add additional cache tags that should be invalidated.
 
@@ -361,8 +338,6 @@ back end. It allows you to add additional cache tags that should be invalidated.
 
 
 ### `config.onshow`
-
-{{< version "4.7" >}}
 
 Allows you to customize the info <i class="fa fa-info-circle"></i> modal window
 of a database record.
@@ -539,7 +514,7 @@ class CalendarHeaderCallback
 ### `list.sorting.panel_callback.subpanel`
 
 This callback allows you to inject HTML for custom panels. Replace `subpanel`
-wit your custom panel's name.
+with your custom panel's name.
 
 {{% expand "Parameters" %}}
 * `\Contao\DataContainer` Data Container object
@@ -700,99 +675,6 @@ containing HTML for the button (or an empty string, if you do not want to show a
 
 ### `list.operations.<OPERATION>.button`
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-Before Contao 5, this callback allows you to generate a button for a specific operation yourself, instead of letting Contao generate it
-for you. The callback passes the database record, the originally generated button HTML as a string (if applicable) and
-all the metadata defined in the DCA that is included in the generated button. The callback is expected to return a string
-containing HTML for the button (or an empty string, if you do not want to show a button).
-
-{{% notice "note" %}}
-The old style of button callback with multiple arguments has deprecated in Contao 5 and will be removed in Contao 6.
-It is still supported for backwards compatibility, but you should update the implementation to the new style once you 
-stop supporting Contao 4.
-{{% /notice %}}
-
-{{% expand "Parameters" %}}
-* `array` Record data
-* `string`/`null` Button href
-* `string` Label
-* `string` Title
-* `string`/`null` Icon
-* `string` HTML attributes
-* `string` Table
-* `array` IDs of all root records
-* `array`/`null` IDs of all child records
-* `bool` Whether this is a circular reference of the tree view
-* `string`/`null` "Previous" label
-* `string`/`null` "Next" label
-* `\Contao\DataContainer` Data Container object
-
-**return:** `string` HTML for the button
-{{% /expand %}}
-
-{{% expand "Example" %}}
-
-This example hides a custom operation button if the user is not allowed to use it.    
-
-Attention: this won't disable the operation itself, it only hides the button!
-To disable the operation, you need to check for the permission additionally 
-before its execution, for example in the operation code or a `config.onload` callback.
-
-```php
-// src/EventListener/DataContainer/ExampleListOperationListener.php
-namespace App\EventListener\DataContainer;
-
-use Contao\Backend;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-use Contao\Image;
-use Contao\StringUtil;
-use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-
-#[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
-class ExampleListOperationListener
-{
-    public function __construct(
-        private readonly AuthorizationCheckerInterface $authorizationChecker,
-    ) {
-    }
-
-    public function __invoke(
-        array $row,
-        ?string $href,
-        string $label,
-        string $title,
-        ?string $icon,
-        string $attributes,
-        string $table,
-        array $rootRecordIds,
-        ?array $childRecordIds,
-        bool $circularReference,
-        ?string $previous,
-        ?string $next,
-        DataContainer $dc
-    ): string
-    {
-        if (!$this->authorizationChecker->isGranted('contao_user.example', 'custom_operation')) {
-            return '';
-        }
-
-        return sprintf(
-            '<a href="%s" title="%s"%s>%s</a> ',
-            Backend::addToUrl($href . '&amp;id=' . $row['id']),
-            StringUtil::specialchars($title),
-            $attributes,
-            Image::getHtml($icon, $label)
-        );
-    }
-}
-```
-{{% /expand %}}
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
-{{< version-tag "5.0" >}}  
-
 This callback allows you to configure or replace the button for a specific operation. The callback passes an instance 
 of `DataContainerOperation` which you can use to retrieve data and affect how the button is generated.
 
@@ -849,8 +731,6 @@ class ExampleListOperationListener
 }
 ```
 {{% /expand %}}
-{{% /tab %}}
-{{< /tabs >}}
 
 
 ***
@@ -1088,7 +968,7 @@ class ExampleSerpPreviewUrlCallbackListener
             throw new \Exception('Invalid jumpTo page');
         }
 
-        $suffix = $page->getAbsoluteUrl(Config::get('useAutoItem') ? '/%s' : '/items/%s');
+        $suffix = $page->getAbsoluteUrl('/%s');
 
         return sprintf(preg_replace('/%(?!s)/', '%%', $suffix), $model->alias ?: $model->id);
     }

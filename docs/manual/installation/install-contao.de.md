@@ -8,7 +8,7 @@ aliases:
 weight: 30
 ---
 
-Nachdem du alle Voraussetzungen geprüft und deinen Webserver eingerichtet hast, kannst du nun mit der Installation 
+Nachdem du alle Voraussetzungen geprüft und deinen Webserver eingerichtet hast, kannst du nun mit der Installation 
 beginnen.
 
 Es gibt zwei Wege um Contao auf deinem Server zu installieren, zum einen über die grafische Oberfläche des [Contao 
@@ -41,9 +41,8 @@ werden.
 
 ### Datenbanktabellen aktualisieren
 
-Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
-[Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
-da die Datenbank direkt über den [Contao Manager]({{% relref "installation/contao-manager" %}}) aktualisiert werden kann.
+Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dies kann direkt über den
+[Contao Manager]({{% relref "installation/contao-manager" %}}) oder über die Kommandozeile durchgeführt werden.
 
 
 ## Installation über die Kommandozeile {#installation-ueber-die-kommandozeile}
@@ -85,24 +84,20 @@ Wenn du Composer global installierst, kannst du den Befehl `composer` in jedem V
 ### Contao über die Kommandozeile installieren {#contao-ueber-die-kommandozeile-installieren}
 
 Im zweiten Schritt installierst du Contao über den Composer. Dabei steht »example« für das gewünschte 
-Installations-Verzeichnis und die {{< current-version >}} für die zu [installierende Contao-Version](https://to.contao.org/release-plan).
+Installations-Verzeichnis und die {{% siteparam "currentContaoVersion" %}} für die zu [installierende Contao-Version](https://to.contao.org/release-plan).
 
 ```bash
-php composer.phar create-project contao/managed-edition example {{< current-version >}}
+php composer.phar create-project contao/managed-edition example {{% siteparam "currentContaoVersion" %}}
 ```
 
 
 ### Hosting-Konfiguration
 
-In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/web` der Installation. Erstelle diesen Ordner und setze das 
+In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/public` der Installation. Erstelle diesen Ordner und setze das 
 Wurzelverzeichnis (Document Root) der Installation über das Admin-Panel des Hosting-Providers auf diesen 
 Unterordner und richte bei dieser Gelegenheit noch eine Datenbank ein.
 
-Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/web`
-
-({{< version-tag "4.12" >}} Dem Standard von Symfony folgend, wurde der öffentlich erreichbare Unterordner von `/web`
-in `/public` umbenannt. Falls in deiner Installation ein Verzeichnis `/web` existiert, wird dieses von Contao
-automatisch anstelle von `/public` verwendet.)
+Beispiel: `example.com` zeigt auf das Verzeichnis `/www/example/public`
 
 {{% notice info %}}
 Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
@@ -111,11 +106,9 @@ Pro Contao-Installation wird deshalb eine eigene (Sub)Domain benötigt.
 
 ### Datenbanktabellen aktualisieren
 
-Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Dazu kannst du das 
-[Contao Install Tool]({{% relref "/installation/contao-installtool" %}}) (Contao 4.13 LTS) verwenden. Ab Contao 5 ist dies nicht mehr notwendig, 
-da die Datenbank direkt über den [Contao Manager]({{% relref "installation/contao-manager" %}}) aktualisiert werden kann.
-
-Ab Contao 4.9 steht dir hierzu der folgende Befehl auf der Kommandozeile zur Verfügung:
+Sobald der Contao Manager alle Pakete installiert hat, muss die Datenbank aktualisiert werden. Das kann direkt über den
+[Contao Manager]({{% relref "installation/contao-manager" %}}) durch geführt werden. Ansonsten steht dir hierzu der
+folgende Befehl auf der Kommandozeile zur Verfügung:
 
 ```bash
 php vendor/bin/contao-console contao:migrate
@@ -141,7 +134,7 @@ und [APP_SECRET](https://docs.contao.org/dev/reference/config/#app-secret)) in e
 
 Über den [Contao Manager]({{% relref "installation/contao-manager" %}}) kannst du dir deinen Backend Benutzer anlegen.
 
-Ab Contao **4.10** kannst du hierzu den folgenden [Befehl]({{% relref "/cli/user" %}}) auf der [Kommandozeile]({{% relref "/cli" %}}) 
+Du kannst hierzu den folgenden [Befehl]({{% relref "/cli/user" %}}) auf der [Kommandozeile]({{% relref "/cli" %}}) 
 benutzen. Die notwendigen Angaben werden dann auf der Kommandozeile abgefragt:
 
 

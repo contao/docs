@@ -9,11 +9,6 @@ aliases:
 ---
 
 
-{{% notice info %}}
-This guide assumes a Contao version of at least **4.13**. Back end routes can be
-created in previous Contao versions as well, but might require additional steps.
-{{% /notice %}}
-
 You can use the Contao back end to display content generated in your own custom Controllers.
 This way you can develop custom extensions without the need to use DCA configuration.
 The following example can be changed according to your own setup. For example you're
@@ -121,13 +116,14 @@ class BackendMenuListener
         }
 
         $contentNode = $tree->getChild('content');
+        $request = $this->requestStack->getCurrentRequest();
 
         $node = $factory
             ->createItem('my-module', ['route' => BackendController::class])
                 ->setLabel('My Modules')
                 ->setLinkAttribute('title', 'Title')
                 ->setLinkAttribute('class', 'my-module')
-                ->setCurrent($this->requestStack->getCurrentRequest()->get('_controller') === BackendController::class)
+                ->setCurrent($request?->attributes->get('_controller') === BackendController::class)
         ;
 
         $contentNode->addChild($node);

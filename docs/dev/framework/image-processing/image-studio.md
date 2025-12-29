@@ -5,8 +5,6 @@ aliases:
   - /framework/image-processing/image-studio/
 ---
 
-{{< version "4.10" >}}
-
 The Image Studio consists of a set of classes and templates that help you generate and output images and metadata.
 
  * [Components](#components)
@@ -92,6 +90,8 @@ or handling image links for you out of the box. When you are ready, call `build(
 
     ```php
     $figure = $figureBuilder->build();
+    // OR
+    $figure = $figureBuilder->buildIfResourceExists();
     ```
   
 {{% notice tip %}}
@@ -132,7 +132,8 @@ This can be helpful if you need to output multiple images with a similar configu
 
 
 ## Templating
-{{< version-tag "5.0" >}} In Twig, there is a `figure()` function and a `figure` and `picture` component, that allows
+
+In Twig, there is a `figure()` function and a `figure` and `picture` component, that allows
 generating and outputting `Figures` in your templates. This is by far the most versatile way to render the data while
 still being able to finely control its appearance. Read more about how to use it in the
 [image section](/framework/templates/creating-templates#images) of the Twig template documentation.
@@ -167,8 +168,6 @@ There are two ways to output images in your PHP templates:
 
 2) **Inline** &mdash; You can also configure and output a figure directly from within your template by using the
    `Template#figure()` function. 
-   
-   {{< version "4.11" >}}
 
    The function expects a *resource* (uuid, id, path) as the first and the *image size* as the second argument.
    If you want to specify more config, you can pass a *config* array as the third argument.

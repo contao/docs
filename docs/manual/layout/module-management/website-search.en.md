@@ -13,6 +13,11 @@ Contao automatically indexes the pages of your website as soon as they are acces
 Note, however, that for security reasons your website will not be indexed if you are logged into the back end and access the front end preview. It could be that there is unpublished content on your website, which should not appear in the search index before you publish it. In debug mode, the web page is also
 not indexed.
 
+As an alternative to indexing via website visits, indexing can also be actively triggered for all pages. In
+the Maintenance settings, under the "Crawler" section, you will find the option "Update search index". If this option is selected,
+you can start the crawler for indexing. More about the crawler on the page
+[Control Panel]({{% relref "system/maintenance" %}}).
+
 ## Search syntax
 
 With the Contao search engine, you can find more than just words. The search syntax supports the AND/OR search as well as the phrase search and the use of wildcards.
@@ -58,8 +63,6 @@ Now that you know how to use the module in the front end, we will now explain br
 **Fuzzy search:** If a fuzzy search for e.g. "design" is executed, the search module will not only return pages with the term "design", but also pages with the terms "web design" or "designer" (corresponds to a search with wildcards).
 
 **Context length:** When displaying the search results, Contao not only displays the term found, but also the context to the right and left of it. Here you can specify how many characters to the right and left of a found term should be used as context.
-
-{{< version "4.8" >}}
 
 **Minimum search word length:** Search words that exceed the minimum length are ignored in the search results; set to 0 to deactivate.
 
@@ -123,3 +126,20 @@ Whatever is put in between here will not be indexed by the search engine.
 ```
 
 The comments do not only work with the HTML module, but can be used everywhere in Contao, for example, because a front end module that is included in the page layout of all pages would not produce unique search results and therefore does not belong in the search index.
+
+
+## Indexing protected pages
+
+Protected pages are not indexed by default. If you want to extend the search to these pages for logged-in
+frontend members, this must be actively enabled. To do this, the following entry must be present in
+[config.yaml]({{% relref "system/settings#config-yaml" %}}):
+
+```yaml
+# config/config.yaml
+contao:
+    search:
+        index_protected: true
+```
+If this entry is present, the entries in the "Crawler" section of the control panel are expanded to include the
+selection of a frontend member. Here, you must select a corresponding member and start the crawler to 
+update the search index.

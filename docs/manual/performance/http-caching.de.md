@@ -297,10 +297,6 @@ Die nachfolgenden Umgebungsvariablen erlauben dir, den Cache-Proxy weiter zu opt
 
 #### `COOKIE_ALLOW_LIST`
 
-{{% notice note %}}
-In Contao **4.9** heisst diese Variable noch `COOKIE_WHITELIST`.
-{{% /notice %}}
-
 Diese Umgebungsvariable lässt dich konfigurieren, welche Cookies an die Applikation weitergereicht werden sollen und somit
 auch die Deaktivierung des Cachings zur Folge haben.
 Standardmässig nutzt Contao in seiner Core-Distribution ohne Erweiterungen nur **exakt vier Cookies**, welche allesamt
@@ -330,8 +326,6 @@ sinnvolle Konfiguration. Deine Webseiten sollten ausschliesslich über `https` l
 
 #### `COOKIE_REMOVE_FROM_DENY_LIST`
 
-{{< version "4.10" >}}
-
 Solltest du nicht genau wissen, welche Cookies deine Applikation braucht, und somit nicht in der Lage sein, die
 `COOKIE_ALLOW_LIST` entsprechend zu pflegen, kannst du auch gewissen Cookies von der mitgelieferten Deny-Liste entfernen,
 solltest du eins oder mehrere davon brauchen:
@@ -341,8 +335,6 @@ COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
 ```
 
 #### `QUERY_PARAMS_ALLOW_LIST`
-
-{{< version "4.10" >}}
 
 Aus dem genau gleichen Grund, aus dem wir irrelevante Cookies entfernen, können wir auch irrelevante Query-Parameter entfernen.
 Ggf. kennst du die typischen `?utm_*=<zufälliges Token>` Query-Parameter, welche an Links zu deiner Seite gehängt werden
@@ -360,8 +352,6 @@ ist daher ein eher unwahrscheinlicher Fall, weshalb du wohl eher zu `QUERY_PARAM
 solltest du einen bestimmten Query-Parameter in deiner Applikation trotzdem brauchen.
 
 #### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
-
-{{< version "4.10" >}}
 
 Analog `COOKIE_REMOVE_FROM_DENY_LIST` kannst du mittels `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` gewisse Einträge von der
 internen Deny-Liste entfernen. Brauchst du oder eine installierte Erweiterung bspw. den Facebook Click Identifier (`fbclid`),

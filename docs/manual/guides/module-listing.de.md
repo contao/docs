@@ -146,7 +146,7 @@ PaletteManipulator::create()
 Damit Contao diese Angaben übernimmt musst du im Anschluß über die Konsole oder über den Contao Manager im Bereich 
 »Systemwartung« den »Anwendungs-Cache« aktualisieren. 
 
-Rufe dann das Contao-Installtool auf (Oder ab Contao **4.9** auch über die Konsole: 
+Rufe dann das Contao-Installtool auf (Oder auch über die Konsole: 
 `vendor/bin/contao-console contao:migrate`). Das neue Feld `myGeoData` wird dann in der Datenbanktabelle 
 »tl_member« angelegt. Im Contao Backend steht dir jetzt das Feld zur Eingabe der Geo-Koordinaten eines Mitglieds 
 (in Form von »Breitengrad,Längengrad«) zur Verfügung.

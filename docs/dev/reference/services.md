@@ -56,7 +56,7 @@ use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
-use Contao\Template;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -67,7 +67,7 @@ class ExampleFormElementController extends AbstractContentElementController
     {
     }
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         $template->token = $this->csrfTokenManager->getDefaultTokenValue();
 
@@ -115,8 +115,6 @@ class Example
 
 ## EntityCacheTags
 
-{{< version "4.13" >}}
-
 The `contao.cache.entity_tags` (`Contao\CoreBundle\Cache\EntityCacheTags`) service helps you tag responses and 
 invalidate cache tags based on entity and model classes and instances. Contao uses a naming convention for database 
 related tags: A tag `contao.db.tl_content.5` targets the content element with the ID 5, while `contao.db.tl_content` 
@@ -157,8 +155,6 @@ Contao's `AbstractController` is also using this functionality in the `tagRespon
 
 
 ## OptIn
-
-{{< version "4.7" >}}
 
 Contao offers an opt-in service (`contao.opt-in`) so that any opt-in process can be tracked centrally. The opt-in references will be saved 
 for the legally required duration and are then automatically discarded (if applicable). The maximum length of the prefix before the "-" is 6.
@@ -230,7 +226,7 @@ class Example
 ## ScopeMatcher
 
 The `contao.routing.scope_matcher` service provides the ability to identify the Contao scope of a request, if
-applicable. It should be used instead of checking the deprecated `TL_MODE` constant.
+applicable.
 
 ```php
 use Contao\CoreBundle\Routing\ScopeMatcher;
@@ -262,50 +258,6 @@ class Example
 Not directly related to Contao, but this helper service from Symfony lets you retrieve
 the current Contao front end or back end user from the firewall.
 
-{{< tabs groupid="services-contao4-contao5" style="code" >}}
-{{% tab title="Contao 4" %}}
-```php
-use Contao\BackendUser;
-use Contao\FrontendUser;
-use Symfony\Component\Security\Core\Security;
-
-class Example
-{
-    public function __construct(private readonly Security $security)
-    {
-    }
-
-    public function execute()
-    {
-        // Check for admin back end user role
-        if ($this->security->isGranted('ROLE_ADMIN')) {
-            // …
-        }
-
-        // Check for regular back end user role
-        if ($this->security->isGranted('ROLE_USER')) {
-            // …
-        }
-
-        // Check for front end user role
-        if ($this->security->isGranted('ROLE_MEMBER')) {
-            // …
-        }
-
-        // Get current back end user
-        if (($user = $this->security->getUser()) instanceof BackendUser) {
-            // …
-        }
-
-        // Get current front end user
-        if (($user = $this->security->getUser()) instanceof FrontendUser) {
-            // …
-        }
-    }
-}
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 ```php
 use Contao\BackendUser;
 use Contao\FrontendUser;
@@ -346,8 +298,6 @@ class Example
     }
 }
 ```
-{{% /tab %}}
-{{< /tabs >}}
 
 If you only need to check the authorization you can inject the `AuthorizationCheckerInterface` instead:
 
@@ -422,39 +372,8 @@ class Example
 
 ## SimpleTokenParser
 
-{{< version "4.10" >}}
-
 This service allows parsing *simple tokens*. See the [usage examples][SimpleTokenUsage] from the tests for more details.
 
-{{< tabs groupid="services-contao4-contao5-simple-token-parser" style="code" >}}
-{{% tab title="Contao 4" %}}
-```php
-use Contao\CoreBundle\Util\SimpleTokenParser;
-
-class Example
-{
-    public function __construct(private readonly SimpleTokenParser $parser)
-    {
-    }
-
-    public function execute()
-    {
-        // Token replacement
-        $output = $this->parser->parse(
-            'I like ##cms##.',
-            ['cms' => 'Contao']
-        );
-
-        // Conditional expressions
-        $output = $this->parser->parse(
-            'This is {if value>=10}big{else}small{endif}',
-            ['value' => 20]
-        );
-    }
-}
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 ```php
 use Contao\CoreBundle\String\SimpleTokenParser;
 
@@ -480,8 +399,6 @@ class Example
     }
 }
 ```
-{{% /tab %}}
-{{< /tabs >}}
 
 
 ### Extending the parser
@@ -598,9 +515,7 @@ class Example
 
 ## InsertTagParser
 
-{{< version "4.13" >}}
-
-This service lets you replace Insert Tags in within strings.
+The `contao.insert_tag.parser` service lets you replace Insert Tags in within strings.
 
 Some methods return a `ChunkedText` instance. The `ChunkedText` container was created to keep the surrounding text 
 containing the insert tags separate from the replacements made by the insert tag parser. It is used for example in the 

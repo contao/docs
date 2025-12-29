@@ -16,7 +16,7 @@ eines Inhaltselements, zur Auswahl angeboten werden. Contao unterscheidet im Tem
 * [Globalen Templates](#globale-templates) und [Themespezifischen Templates](#themespezifische-templates)
 
 Beim Anlegen, Verschieben oder Umbenennen von Twig-Templates empfehlen wir dir die Verwendung des
-[Debug-Modus](/de/system/debug-modus/#contao-4-8-und-hoeher), damit die neu angelegten Templates auch verwendet werden.  
+[Debug-Modus]({{% relref "debug-mode" %}}#contao-4-8-und-hoeher), damit die neu angelegten Templates auch verwendet werden.  
 Nach Fertigstellung muss der Anwendungs-Cache über den Contao-Manager oder über die Konsole neu aufgebaut werden.
 
 {{% notice note %}}

@@ -29,7 +29,6 @@ visitor is automatically subscribed to the distribution lists/channel you have d
 
 **Disable spam protection:** Here you can disable the spam protection (not recommended).
 
-{{< version "4.6" >}}
 
 ### Custom text
 

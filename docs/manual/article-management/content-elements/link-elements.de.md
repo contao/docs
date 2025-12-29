@@ -10,17 +10,17 @@ weight: 24
 
 ## Hyperlink
 
-Das Inhaltselement »Hyperlink« fügt dem Artikel einen Link auf eine externe Webseite oder eine E-Mail-Adresse hinzu. Du 
-kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement eingeben.
+Das Inhaltselement »Hyperlink« fügt dem Artikel einen Link auf eine externe Webseite oder eine E-Mail-Adresse hinzu. Du 
+kannst Hyperlinks natürlich auch über den Rich Text Editor im Textelement eingeben.
 
 ![Einen Hyperlink anlegen]({{% asset "images/manual/article-management/de/einen-hyperlink-anlegen.png" %}}?classes=shadow)
 
 
 ### Hyperlink-Einstellungen
 
-**Link-Adresse:** Gebe die Link-Adresse inklusive des Netzwerkprotokolls ein. Für Webseiten lautet das 
-Netzwerkprotokoll normalerweise `http://` oder `https://`, für E-Mail-Adressen `mailto:` und für Telefonnummern `tel:`. 
-Contao verschlüsselt E-Mail-Adressen automatisch, sodass sie nicht von Spambots ausgelesen werden können.
+**Link-Adresse:** Gebe die Link-Adresse inklusive des Netzwerkprotokolls ein. Für Webseiten lautet das 
+Netzwerkprotokoll normalerweise `http://` oder `https://`, für E-Mail-Adressen `mailto:` und für Telefonnummern `tel:`. 
+Contao verschlüsselt E-Mail-Adressen automatisch, sodass sie nicht von Spambots ausgelesen werden können.
 
 **In neuem Fester öffnen:** Öffnet den Link in einem neuen Browserfenster. 
 
@@ -50,7 +50,7 @@ Alternativ dazu kannst du auch ein Bildelement erstellen und mit einem Link vers
 
 **Metadaten überschreiben:** Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
-**Alternativer Text:** Eine barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die 
+**Alternativer Text:** Eine barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die 
 angezeigt wird, wenn das Objekt selbst nicht dargestellt werden kann. Alternative Texte werden außerdem von 
 Suchmaschinen ausgewertet und sind daher ein wichtiges Instrument der Onpage-Optimierung.
 
@@ -61,33 +61,6 @@ Suchmaschinen ausgewertet und sind daher ein wichtiges Instrument der Onpage-Opt
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_hyperlink` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_hyperlink block">
-    <a class="hyperlink_txt" href="…" title="…" data-lightbox="…" target="_blank" rel="noreferrer noopener">…</a> …
-</div>
-```
-
-Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
-
-```html
-<div class="ce_hyperlink block">
-    <figure class="image_container">
-        <a class="hyperlink_img" href="…" target="_blank" rel="noreferrer noopener">
-            <img src="…" alt="…" title="…" height="…" width="…" itemprop="image">
-        </a>
-        <figcaption class="caption">…</figcaption>
-    </figure>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/hyperlink` überschreiben.
 
 **HTML-Ausgabe**  
@@ -111,38 +84,22 @@ Wird ein Bildlink verwendet, sieht die HTML-Ausgabe wie folgt aus:
     </figure>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}
 
 
 ## Top-Link
 
-Das Inhaltselement »Top-Link« fügt dem Artikel einen Link hinzu, mit dem du an den Anfang der Seite springen kannst. 
+Das Inhaltselement »Top-Link« fügt dem Artikel einen Link hinzu, mit dem du an den Anfang der Seite springen kannst. 
 Das ist speziell bei langen Seiten sinnvoll.
 
 
 ### Hyperlink-Einstellungen
 
-**Link-Text:** Hier kannst du eine Bezeichnung für den Link eingeben. Wenn du das Feld leer lässt, wird die 
+**Link-Text:** Hier kannst du eine Bezeichnung für den Link eingeben. Wenn du das Feld leer lässt, wird die 
 Standardbezeichnung »Nach oben« verwendet.
 
 
 ### Template-Einstellungen
 
-{{< tabs groupid="contao-version" style="code" >}}
-{{% tab title="Contao 4" %}}
-**Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `ce_toplink` überschreiben.
-
-**HTML-Ausgabe**  
-Das Element generiert folgenden HTML-Code:
-
-```html
-<div class="ce_toplink first last block">
-    <a href="#top" title="Nach oben">Nach oben</a>
-</div>
-```
-{{% /tab %}}
-{{% tab title="Contao 5" %}}
 **Inhaltselement-Template:** Hier kannst du das Inhaltselement-Template `content_element/toplink` überschreiben.
 
 **HTML-Ausgabe**  
@@ -153,5 +110,3 @@ Das Element generiert folgenden HTML-Code:
     <a href="#top" data-toplink="" title="Nach oben">Nach oben</a>
 </div>
 ```
-{{% /tab %}}
-{{</tabs>}}

@@ -8,8 +8,6 @@ aliases:
 This section describes the modern way to interact with files and folders in Contao. Please note, the legacy classes
 `\Contao\File`, `\Contao\Folder`, `\Contao\FilesModel` and `\Contao\Dbafs` still work, but aren't covered here.   
 
-{{< version "4.13" >}}
-
 {{% notice "warning" %}}
 The new filesystem capabilities are currently considered *experimental* and therefore not covered by Contao's BC
 promise. Classes marked with `@experimental` should be considered internal for now. Although not likely, there could

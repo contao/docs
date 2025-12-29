@@ -3,10 +3,7 @@ title: "Page Controllers"
 description: "Implementing Contao page types as controllers."
 ---
 
-{{< version "4.10" >}}
-
-Starting with Contao **4.10** you can implement so called _Page Controllers_. These
-are special page types implemented as controllers in order to handle the request
+Page Controllers are special page types implemented as controllers in order to handle the request
 to the route of a specific page type within the Contao site structure. Page controllers 
 combine the ability to define a page in Contao's site structure while still having 
 full control over the routing and route attributes like with [regular controllers][RoutingInContao].
@@ -19,16 +16,6 @@ configuration settings from within the back end of Contao. Even the suffix can b
 freely defined, so you might have a list of your database records under `https://example.com/foobar/records.html`,
 while the RSS feed is defined to have a route like `https://example.com/foobar/records.xml`.
 
-{{% notice note %}}
-For Page Controllers to work the [_Legacy Routing Mode_](https://docs.contao.org/manual/en/site-structure/website-root/#legacy-routing-mode)
-must be disabled in your application configuration:
-
-```yaml
-contao:
-    legacy_routing: false
-```
-{{% /notice %}}
-
 
 ## Registering Page Controllers
 
@@ -36,8 +23,6 @@ As with content elements, front end modules, hooks and DCA callbacks, Page contr
 can be registered via attributes, annotations or YAML. The following shows the most basic example:
 
 {{< tabs groupid="attribute-annotation-yaml" style="code" >}}
-{{< version-tag "4.13" >}}
-
 {{% tab title="Attribute" %}}
 ```php
 // src/Controller/Page/ExamplePageController.php
@@ -147,8 +132,6 @@ for these possibilities.
 There are however a few differences and additional options.
 
 {{< tabs groupid="attribute-annotation-yaml" style="code" >}}
-{{< version-tag "4.13" >}}
-
 {{% tab title="Attribute" %}}
 ```php
 #[AsPage(
@@ -248,10 +231,14 @@ also be optional through its `defaults`:
 #[AsPage(path: '{lorem}/{ipsum}', defaults: ['ipsum' => ''])]
 ```
 
+{{% notice "note" %}}
+Do not use `parameters` as a parameter name, as this is reserved by Contao's page routing.
+{{% /notice %}}
+
 
 ### `urlSuffix`
 
-Since Contao **4.10** you can define the URL suffix of a site in the settings of
+You can define the URL suffix of a site in the settings of
 the respective website root. However, with page controllers you can also override
 that URL suffix in the page controller's configuration:
 
@@ -342,10 +329,7 @@ create a new page for any page type (including your page controllers). Instances
 represented by the `Contao\PageModel`. This class allows you to generate URLs to pages via its `getFrontendUrl` and
 `getAbsoluteUrl` method. The former will generate URLs relative to the `<base>` - unless the page is on a different
 domain than the current one. The latter will always produce absolute URLs (including `http://` or `https://`).
-
-{{% notice "info" %}}
-{{< version-tag "5.0" >}} `getFrontendUrl` will now generate _path absolute_ URLs, not relative to the `<base>`.
-{{% /notice %}}
+`getFrontendUrl` will generate a _path absolute_ URL, not relative to the `<base>`.
 
 Both methods allow you to specify optional parameters as one string. These are _path_ parameters and are used when you
 want to generate a URL with an [`auto_item`][AutoItem] or other path parameters. For example

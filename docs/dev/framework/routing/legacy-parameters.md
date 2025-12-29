@@ -68,7 +68,7 @@ will be generated.
 Careful: do _not_ use `Input::get('auto_item')` in any part of your code that is executed on every request, e.g. in a
 module that is included in the layout of a page, or a hook that is executed on every page. This will cause _all_ URLs
 with such "auto items" to not show a 404 page, even though they ought to, depending on each instance. You can instead
-enable the `$blnKeepUnused` parameter for such cases:
+enable the `$blnKeepUnusedRouteParameter` parameter for such cases:
 
 ```php
 $autoItem = Input::get('auto_item', false, true);

@@ -10,19 +10,12 @@ Contao periodically executes some tasks via its own cron functionality. These in
 * Purge expired Opt-In tokens
 * etc.
 
-{{< version-tag "5.0" >}} Starting with Contao **5** all cronjobs are registered as services and tagged using the `contao.cronjob` tag. Thus you can find all
-cronjobs on your system using the following command:
+All cronjobs are registered as services and tagged using the `contao.cronjob` tag. Thus you can find all cronjobs on
+your system using the following command:
 
 ```bash
 $ vendor/bin/contao-console debug:container --tag contao.cronjob
 ```
-
-{{% notice "info" %}}
-The aformentioned command can also be used in Contao **4.13**. However, this will not find cronjobs that are registered
-via the legacy `config.php` (see below). Unfortunately there is no convenient way in Contao 4 to display registered
-legacy cronjobs. If you want to look these up you could either search for any `$GLOBALS['TL_CRON']` definitions in your 
-Contao instance via your IDE, or use Xdebug for example in order to inspect the `$GLOBALS['TL_CRON']` array.
-{{% /notice %}}
 
 {{< version-tag "5.3" >}} Starting also with Contao **5.3** you will find a special `contao.cron.supervise_workers` cronjob. This cronjob will automatically
 start worker processes for the [asynchronous messaging feature][AsyncMessaging]. There is, however, a fallback in case you do not
@@ -40,19 +33,6 @@ It is recommended to run PHP via PHP-FPM, otherwise cron execution and search in
 will block any subsequent request by the same user.
 {{% /notice %}}
 
-In Contao 4 you can disable the front end cron by going to _System_ » _Settings_ » _Cron job 
-settings_ and enabling the setting __Disable the command scheduler__. You can also force this setting via your application's config:
-
-```yaml
-# config/config.yaml
-contao:
-    localconfig:
-        disableCron: true
-```
-
-After disabling the front end cron you should periodically let Contao execute its cron jobs, either via the command line (recommended)
-or by making a request to the web URL.
-
 {{< version-tag "5.1" >}} Starting with version **5.1** Contao detects whether a real cron job is executed or not and thus disables
 the front end cron automatically if applicable. However, you can modify this behavior via the following configuration:
 
@@ -66,8 +46,6 @@ contao:
 The default value is `'auto'`.
 
 ### Command Line
-
-{{< version "4.9" >}}
 
 Executing the cron jobs via the command line is done via the `contao:cron` command:
 
@@ -97,13 +75,13 @@ parameters:
 ```
 {{% /notice %}}
 
-{{< version-tag "5.0" >}} You are also able to force the the execution of cron jobs via the `--force` parameter:
+You are also able to force the the execution of cron jobs via the `--force` parameter:
 
 ```bash
 $ vendor/bin/contao-console contao:cron --force
 ```
 
-{{< version-tag "5.0" >}} You can also execute just one specific cron job from the command line:
+You can also execute just one specific cron job from the command line:
 
 ```bash
 $ vendor/bin/contao-console contao:cron "App\Cron\ExampleCron"
@@ -125,9 +103,9 @@ you could use the following instructions for example:
 
 ## Registering Cron Jobs
 
-Registering custom cron jobs is similar to [registering to hooks][1]. As of Contao **4.13**, there are four different ways of registering
+Registering custom cron jobs is similar to [registering to hooks][1]. There are 3 different ways of registering
 a cron job. The recommended way is using _PHP attributes_. Which one you use depends on your setup. For example, if you still need to 
-support PHP 7 you can use _annotations_. If you still develop cron jobs for Contao **4.4** then you still need to use the _PHP array configuration_.
+support PHP 7 you can use _annotations_.
 
 {{% notice tip %}}
 Using attributes or annotations means it is only necessary to create one file for the respective adaptation when using Contao's default
@@ -143,8 +121,7 @@ Generally cron jobs can be registered through the `contao.cronjob` service tag. 
 
 {{< tabs groupid="attribute-annotation-yaml-php" style="code" >}}
 {{% tab title="Attribute" %}}
-{{< version-tag "4.13" >}} Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) (available 
-since **PHP 8**) with which you can tag your service to be registered as a cron job.
+Contao implements [PHP attributes](https://www.php.net/manual/en/language.attributes.overview.php) with which you can tag your service to be registered as a cron job.
 
 ```php
 // src/Cron/ExampleCron.php
@@ -167,7 +144,7 @@ In this case the cron job is executed once per hour. As mentioned before this pa
 {{% /tab %}}
 
 {{% tab title="Annotation" %}}
-{{< version-tag "4.9" >}} Contao also supports its own annotation formats via the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
+Contao also supports its own annotation formats via the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
 
 ```php
 // src/Cron/ExampleCron.php
@@ -197,7 +174,7 @@ with `\`, since `*/` would close the PHP comment.
 {{% /tab %}}
 
 {{% tab title="YAML" %}}
-{{< version-tag "4.9" >}} As mentioned before you can manually add the `contao.cronjob` service tag in your service configuration.
+As mentioned before you can manually add the `contao.cronjob` service tag in your service configuration.
 
 ```yaml
 # config/services.yaml
@@ -221,43 +198,6 @@ class ExampleCron
 
 Only the `interval` parameter is required. In this case the cron job is executed once per hour. As mentioned before this parameter can also
 be a full CRON expression, e.g. `*/5 * * * *` for "every 5 minutes".
-{{% /tab %}}
-
-{{% tab title="PHP" %}}
-
-{{% notice "note" %}}
-This method is deprecated since Contao **4.13** and does not work in Contao **5** anymore.
-{{% /notice %}}
-
-You can register your own cron jobs using the `$GLOBALS['TL_CRON']` arrays. It is
-an associative array with the following keys, representing the available intervals:
-
-* `minutely`
-* `hourly`
-* `daily`
-* `weekly`
-* `monthly`
-
-To register your own job, add another array item with the class and method
-of your cron job to one of the intervals in your `config.php`:
-
-```php
-// contao/config/config.php
-$GLOBALS['TL_CRON']['hourly'][] = [\App\Cron\ExampleCron::class, 'onHourly'];
-```
-
-```php
-// src/Cron/ExampleCron.php
-namespace App\Cron;
-
-class ExampleCron
-{
-    public function onHourly(): void
-    {
-        // Do something …
-    }
-}
-```
 {{% /tab %}}
 
 {{< /tabs >}}
@@ -294,7 +234,7 @@ class HourlyCron
 ```
 
 {{% notice "info" %}}
-The above example uses the `CronExecutionSkippedException` (available since Contao **4.9.38** and **5.0.8**) which will tell Contao's Cron 
+The above example uses the `CronExecutionSkippedException` which will tell Contao's Cron 
 service that the excution of this cron job was skipped and thus the last run time will stay untouched in the database. Thus the cron job 
 will be executed again at the next opportunity, ensuring that its logic is always executed within the CLI scope in this case.
 {{% /notice %}}
@@ -382,26 +322,12 @@ class HourlyCron
 
 Contao keeps track of a cronjob's last execution in the `tl_cron_job` table. Thus,
 if you want to test a cron job even though it has already been executed within
-its defined interval, either truncate the whole table or delete the entry for the
-specific cron job you want to test. If the table is empty every cronjob will be 
-executed on the first cron call. After that only on its defined interval.
+its defined interval, you can use the the `--force` command line option as explained
+[above](#command-line), e.g.
 
-{{% notice "tip" %}}
-You can use the `doctrine:query:sql` command to quickly execute a query on your database, e.g.:
-
+```bash
+$ bin/console contao:cron "App\Cron\ExampleCron" --force
 ```
-vendor/bin/contao-console doctrine:query:sql "TRUNCATE tl_cron_job"
-```
-{{% /notice %}}
-
-{{% notice info %}}
-In Contao **4.4**, the table is called `tl_cron` and it contains only the last execution
-times of the named intervals, not the last execution time of individual cron jobs.
-{{% /notice %}}
-
-{{% notice tip %}}
-This is not necessary anymore in Contao **5.0** and up as you can use the `--force` command line option as explained [above](#command-line).
-{{% /notice %}}
 
 
 [1]: /framework/hooks/
