@@ -3,7 +3,7 @@ title: Contao Manual
 type: home
 ---
 
-# Welcome
+## Welcome
 
 You are here because the following people (in alphabetical order), and the Contao
 Community as a whole, were up day and night in order to further the development
