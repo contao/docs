@@ -74,7 +74,7 @@ namespace App\EventListener\DataContainer;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 
-#[AsCallback(target: 'config.onload', table: 'tl_content')]
+#[AsCallback(table: 'tl_content', target: 'config.onload')]
 class ContentOnLoadCallbackListener
 {
     public function __invoke(): void
