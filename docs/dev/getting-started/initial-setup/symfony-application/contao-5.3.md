@@ -289,7 +289,7 @@ lines to `config/routes.yaml`. The Contao core bundle will provide a catch-all r
 
 ```yaml
 ContaoCoreBundle:
-    resource: "@ContaoCoreBundle/Resources/config/routes.yaml"
+    resource: "@ContaoCoreBundle/config/routes.yaml"
 ```
 
 Add the `binary_string` type to the list of Doctrine types.
