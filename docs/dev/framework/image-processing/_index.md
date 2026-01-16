@@ -29,8 +29,8 @@ output images and metadata for your templates.
 ## Relationships between the image libraries
 
 * `Imagine` is the PHP Composer package that Contao uses. It abstracts image handling for multiple libraries
-* [`imagick`](https://www.php.net/manual/en/book.imagick.php), [`gmagick`](https://www.php.net/manual/en/book.gmagick.php) or [`gd`](https://www.php.net/manual/en/book.image.php) are the PHP extensions that enable image processing
-* Either natively `gd` or by creating a bridge to the actual tools `ImageMagick` and `GraphicsMagick`
+* [`ImageMagick`](https://www.php.net/manual/en/book.imagick.php), [`Gmagick`](https://www.php.net/manual/en/book.gmagick.php) or [`GD`](https://www.php.net/manual/en/book.image.php) are the PHP extensions that enable image processing
+* Either natively `GD` or by creating a bridge to the actual tools `ImageMagick` and `GraphicsMagick`
 
 
 {{< tabs groupid="image-libraries" style="code" >}}

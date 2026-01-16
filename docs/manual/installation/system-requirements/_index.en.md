@@ -81,12 +81,13 @@ package `paragonie/sodium_compat_ext_sodium` in your project's `composer.json` t
 ### Relationships between the image libraries
 
 * `Imagine` is the PHP Composer package that Contao uses. It abstracts image handling for multiple libraries
-* `imagick`, `gmagick` or `gd` are the PHP extensions that enable image processing
+* `ImageMagick`, `Gmagick` or `GD` are the PHP extensions that enable image processing
 * Either natively `GD` or by creating a bridge to the actual tools `ImageMagick` and `GraphicsMagick`
 
 
-**`gd` (PHP nativ)**
+{{< tabs groupid="image-libraries" style="code" >}}
 
+{{% tab title="`GD`" %}}
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
@@ -98,9 +99,9 @@ sequenceDiagram
     GD -->> Imagine: image result
     Imagine -->> Contao: image result
 ```
+{{% /tab %}}
 
-**`ImageMagick`**
-
+{{% tab title="`ImageMagick`" %}}
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
@@ -115,9 +116,9 @@ sequenceDiagram
     Imagick -->> Imagine: image result
     Imagine -->> Contao: image result
 ```
+{{% /tab %}}
 
-**`GraphicsMagick`**
-
+{{% tab title="`GraphicsMagick`" %}}
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
@@ -132,6 +133,9 @@ sequenceDiagram
     Gmagick -->> Imagine: image result
     Imagine -->> Contao: image result
 ```
+{{% /tab %}}
+
+{{< /tabs >}}
 
 
 ### PHP configuration (`php.ini`)

@@ -84,12 +84,13 @@ umgehen.
 ### Beziehungen zwischen den Bild-Bibliotheken
 
 * `Imagine` ist das PHP-Composer-Paket, das Contao verwendet. Es abstrahiert die Bildverarbeitung für mehrere Bibliotheken
-* `imagick`, `gmagick` oder `gd` sind die PHP-Erweiterungen, die die Bildbearbeitung ermöglichen
+* `ImageMagick`, `Gmagick` oder `GD` sind die PHP-Erweiterungen, die die Bildbearbeitung ermöglichen
 * Entweder nativ `GD` oder durch die Erstellung einer Brücke zu den eigentlichen Tools `ImageMagick` und `GraphicsMagick`
 
 
-**`gd` (PHP nativ)**
+{{< tabs groupid="image-libraries" style="code" >}}
 
+{{% tab title="`GD`" %}}
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
@@ -101,9 +102,9 @@ sequenceDiagram
     GD -->> Imagine: image result
     Imagine -->> Contao: image result
 ```
+{{% /tab %}}
 
-**`ImageMagick`**
-
+{{% tab title="`ImageMagick`" %}}
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
@@ -118,9 +119,9 @@ sequenceDiagram
     Imagick -->> Imagine: image result
     Imagine -->> Contao: image result
 ```
+{{% /tab %}}
 
-**`GraphicsMagick`**
-
+{{% tab title="`GraphicsMagick`" %}}
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
@@ -135,6 +136,9 @@ sequenceDiagram
     Gmagick -->> Imagine: image result
     Imagine -->> Contao: image result
 ```
+{{% /tab %}}
+
+{{< /tabs >}}
 
 
 ### PHP-Konfiguration (`php.ini`)
