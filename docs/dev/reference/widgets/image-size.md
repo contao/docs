@@ -31,7 +31,7 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\CoreBundle\Image\ImageSizes;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
-#[AsCallback('tl_content', 'fields.size.options')]
+#[AsCallback(table: 'tl_content', target: 'fields.size.options')]
 class ContentImageSizeOptionsListener
 {
     public function __construct(

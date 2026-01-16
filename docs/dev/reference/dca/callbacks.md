@@ -135,7 +135,7 @@ namespace App\EventListener\DataContainer;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-#[AsCallback('tl_member', 'config.onbeforesubmit')]
+#[AsCallback(table: 'tl_member', target: 'config.onbeforesubmit')]
 class MemberOnBeforeSubmitCallbackListener
 {
     public function __invoke(array $record, DataContainer $dc): array
@@ -514,7 +514,7 @@ class CalendarHeaderCallback
 ### `list.sorting.panel_callback.subpanel`
 
 This callback allows you to inject HTML for custom panels. Replace `subpanel`
-wit your custom panel's name.
+with your custom panel's name.
 
 {{% expand "Parameters" %}}
 * `\Contao\DataContainer` Data Container object
@@ -763,7 +763,7 @@ namespace App\EventListener\DataContainer;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-#[AsCallback('tl_content', 'fields.text.attributes')]
+#[AsCallback(table: 'tl_content', target: 'fields.text.attributes')]
 class AttributesCallback
 {
     public function __invoke(array $attributes, DataContainer|null $dc = null): array

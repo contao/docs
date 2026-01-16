@@ -56,16 +56,16 @@ namespace App\Controller\FrontendModule;
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\Exception\RedirectResponseException;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
 use Contao\PageModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsFrontendModule]
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         if ($request->isMethod(Request::METHOD_POST)) {
             if (null !== ($redirectPage = PageModel::findById($model->jumpTo))) {
@@ -99,7 +99,7 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['example_module'] = '
 This very simple palette enables us to select a redirect page using the pre-existing `jumpTo` field.
 
 Using the naming convention for templates also mentioned above, the final template name for this front end module will
-be `mod_example_module` for [PHP templates][LegacyTemplates]:
+be `frontend_module/example_module` for [Twig templates][TwigTemplates]:
 
 ```twig
 {# templates/frontend_module/example_module.html.twig #}
@@ -111,18 +111,6 @@ be `mod_example_module` for [PHP templates][LegacyTemplates]:
         <button type="submit">Submit</button>
     </form>
 {% endblock %}
-```
-
-And `frontend_module/example_module` for [Twig templates][TwigTemplates]:
-
-```twig
-{# templates/frontend_module/example_module.html.twig #}
-<div class="example-module">   
-    <form action="{{ action }}" method="POST"> 
-        <input type="hidden" name="REQUEST_TOKEN" value="{{ request_token }}">
-        <button type="submit">Submit</button>
-    </form>
-</div>
 ```
 
 A "fragment template" instance of this template will automatically be generated and passed to the controller's
@@ -156,15 +144,15 @@ namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsFrontendModule(category: 'miscellaneous')]
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         return $template->getResponse();
     }
@@ -179,8 +167,8 @@ namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -194,7 +182,7 @@ use Symfony\Component\HttpFoundation\Response;
 )]
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         return $template->getResponse();
     }
@@ -215,8 +203,8 @@ namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -225,7 +213,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         return $template->getResponse();
     }
@@ -240,8 +228,8 @@ namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -250,7 +238,7 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         return $template->getResponse();
     }
@@ -275,14 +263,14 @@ services:
 namespace App\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         return $template->getResponse();
     }
@@ -336,16 +324,16 @@ namespace App\Controller\FrontendModule;
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\Exception\RedirectResponseException;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
 use Contao\PageModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 #[AsFrontendModule(category: 'miscellaneous')]
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         $page = $this->getPageModel();
 

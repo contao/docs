@@ -3,7 +3,7 @@ title: Contao Handbuch
 type: home
 ---
 
-# Herzlich willkommen
+## Herzlich willkommen
 
 Du bist hier, weil sich die folgenden Menschen (in alphabetischer Reihenfolge) und die Contao Community Tage und Nächte 
 um die Ohren schlagen, um die Contao-Entwicklung voranzutreiben:

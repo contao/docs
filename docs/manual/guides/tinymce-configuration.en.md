@@ -52,7 +52,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['rte'] = 'myTinyMCE';
 ```
 
 The last entry corresponds to the template name (without be_ prefix). In our case `myTinyMCE`. Then you have to empty 
-the application cache once via Contao Manager (“Maintenance” > “Application Cache” > “Rebuild Production Cache”) or via the console.
+the application cache once via Contao Manager ("Maintenance" > "Application Cache" > "Rebuild Production Cache") or via the console.
 
 The procedure would be similar for your messages texts with a template `be_myTinyMCENews` and a `tl_news.php`:
 
@@ -102,7 +102,7 @@ extended_valid_elements: 'q[cite|class|title],article,section,hgroup,figure,figc
 ```
 
 Then you have to empty the application cache once via Contao Manager 
-(“Maintenance” > “Application Cache” > “Rebuild Production Cache”) or via the console. Re-enter your HTML 
+("Maintenance" > "Application Cache" > "Rebuild Production Cache") or via the console. Re-enter your HTML 
 in the content element and "Save".
 
 

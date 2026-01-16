@@ -66,15 +66,15 @@ $GLOBALS['TL_DCA']['tl_example']['list']['label'] = [
 ];
 ```
 
-| Key            | Value                            | Description                                                                                        |
-|----------------|----------------------------------|----------------------------------------------------------------------------------------------------|
-| fields         | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `['title', 'user_id:tl_user.name']`). |
-| showColumns    | true/false (`bool`)           | If true Contao will generate a table header with column names (e.g. back end member list)          |
-| showFirstOrderBy | true/false (`bool`)           | If false Contao will not force the first sorting field to show up in the list. (default: `true`)         |
-| format         | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. `'%s (%s)'`).                       |
-| maxCharacters  | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
-| [group_callback](../callbacks#list-label-group) | Callback functions (`array`)     | Call a custom function instead of using the default group header function.                         |
-| [label_callback](../callbacks#list-label-label) | Callback functions (`array`)     | Call a custom function instead of using the default label function.                                |
+| Key              | Value                            | Description                                                                                        |
+|------------------|----------------------------------|----------------------------------------------------------------------------------------------------|
+| fields           | Fields (`array`)                 | One or more fields that will be shown in the list (e.g. `['title', 'user_id:tl_user.name']`).      |
+| showColumns      | true/false (`bool`)              | If true, Contao will generate a table header with column names (e.g. back end member list)         |
+| showFirstOrderBy | true/false (`bool`)              | If false, Contao will not force the first sorting field to show up in the list. (default: `true`)  |
+| format           | Format string (`string`)         | HTML string used to format the fields that will be shown (e.g. `'%s (%s)'`).                       |
+| maxCharacters    | Number of characters (`integer`) | Maximum number of characters of the label.                                                         |
+| [group_callback](../callbacks#list-label-group) | Callback functions (`array`) | Call a custom function instead of using the default group header function. |
+| [label_callback](../callbacks#list-label-label) | Callback functions (`array`) | Call a custom function instead of using the default label function.        |
 
 
 ## Operations
@@ -102,6 +102,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['global_operations'] = [
 | attributes      | Additional attributes (`string`)  | Additional attributes like event handler or style definitions.                                                     |
 | [button_callback](../callbacks/#list-global-operations-operation-button) | Callback function (`array`)       | Call a custom function to generate the button. Please specify as `['Class', 'Method']` or use service tagging. |
 | route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                     |
+| prefetch        | `boolean`                         | {{< version-tag "5.5" >}} Disables [Turbo prefetch][TurboPrefetch] when set to `false`. Defaults to `false` for operations that use `href`. |
 
 
 {{% notice "info" %}}
@@ -140,6 +141,7 @@ $GLOBALS['TL_DCA']['tl_example']['list']['operations'] = [
 | showInHeader    | true/false (`bool`)               | Shows the operation in the [header element]({{< asset "images/dev/reference/mode_parent_header.png" >}}) (sorting mode 4 only).                                                   |
 | route           | Symfony Route Name (`string`)     | The button will redirect to the given Symfony route.                                                               |
 | primary         | true/false (`bool`)               | {{< version-tag "5.5" >}} Shows the operation in the overview, instead of hiding it in the context menu.                                                   |
+| prefetch        | `boolean`                         | {{< version-tag "5.5" >}} Disables [Turbo prefetch][TurboPrefetch] when set to `false`. Defaults to `false` for operations that use `href`. |
 
 {{% notice "tip" %}}
 You do not have to define any settings for standard operations. Instead, you can give a list
