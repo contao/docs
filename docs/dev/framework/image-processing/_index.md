@@ -35,7 +35,7 @@ output images and metadata for your templates.
 
 {{< tabs groupid="image-libraries" style="code" >}}
 
-{{% tab title="`gd`" %}}
+{{% tab title="`GD`" %}}
 ```mermaid
 sequenceDiagram
     participant Contao as Contao
