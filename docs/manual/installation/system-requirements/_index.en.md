@@ -82,7 +82,7 @@ package `paragonie/sodium_compat_ext_sodium` in your project's `composer.json` t
 
 * `Imagine` is the PHP Composer package that Contao uses. It abstracts image handling for multiple libraries
 * `imagick`, `gmagick` or `gd` are the PHP extensions that enable image processing
-* Either natively `gd` or by creating a bridge to the actual tools `ImageMagick` and `GraphicsMagic`
+* Either natively `GD` or by creating a bridge to the actual tools `ImageMagick` and `GraphicsMagick`
 
 
 **`gd` (PHP nativ)**
