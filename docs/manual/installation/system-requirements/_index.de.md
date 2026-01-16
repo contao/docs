@@ -85,7 +85,7 @@ umgehen.
 
 * `Imagine` ist das PHP-Composer-Paket, das Contao verwendet. Es abstrahiert die Bildverarbeitung für mehrere Bibliotheken
 * `imagick`, `gmagick` oder `gd` sind die PHP-Erweiterungen, die die Bildbearbeitung ermöglichen
-* Entweder nativ `gd` oder durch die Erstellung einer Brücke zu den eigentlichen Tools `ImageMagick` und `GraphicsMagic`
+* Entweder nativ `GD` oder durch die Erstellung einer Brücke zu den eigentlichen Tools `ImageMagick` und `GraphicsMagick`
 
 
 **`gd` (PHP nativ)**
