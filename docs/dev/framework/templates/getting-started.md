@@ -65,7 +65,8 @@ focus on the Twig side and ignore the old stuff. 😉)
 
 * To output parameters, we wrap their name in curly braces `{{ foo }}`,
 * to use keywords — like `for` to loop over an array — we wrap them in `{%` and `%}`,
-* to further process any output, we use [filters][Twig Filters] `|foo` and [functions][Twig Functions] `bar()`.
+* to further process any output, we use [filters][Twig Filters] `|foo` and [functions][Twig Functions] `bar()`,
+* to concat variables and strings, we use the `~` operator (see [here][Twig Operators] for more operators).
 * Finally, to add comments, we put them between `{#` and `#}`.
 
 Twig is very [well documented][Twig Docs]. A good place to start is the [Twig for template designers][Twig Template Designers Docs]
@@ -158,3 +159,4 @@ Turns out "{{ secret_cms }}" means "{{ secret_cms|rot13 }}".
 [Extending Twig Docs]: https://twig.symfony.com/doc/3.x/advanced.html#extending-twig
 [Twig Functions]: https://twig.symfony.com/doc/3.x/functions/index.html
 [TwigExtra]: https://github.com/twigphp/Twig/tree/3.x/extra
+[Twig Operators]: https://twig.symfony.com/doc/3.x/templates.html#other-operators

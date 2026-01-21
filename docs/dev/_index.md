@@ -3,9 +3,6 @@ title: Contao Developer Documentation
 type: home
 ---
 
-
-# Contao Developer Documentation
-
 Welcome to the Contao manual for developers and the Contao ecosystem!
 This introduction is meant to give you an overall idea of how things work in Contao and its ecosystem, people with assigned
 roles, whom to talk to and where to get help.

@@ -20,7 +20,7 @@ php vendor/bin/contao-console contao:migrate [options]
 | `--schema-only`    | Executes database schema migration only. Update scripts, registered migrations and `runonce.php` files get skipped.|
 | `--migrations-only` | Only executes the migrations without updating the database tables and fields. |
 | `--dry-run` | Shows pending migrations and schema updates without actually executing them. |
-| `--no-interaction` | With this option enabled all confirmation questions are automatically answered with “yes”. This is useful if you want to execute the migrations in an automated system. |
+| `--no-interaction` | With this option enabled all confirmation questions are automatically answered with "yes". This is useful if you want to execute the migrations in an automated system. |
 | `--no-backup` | Disable the [database backup][DatabaseBackup] which is created by default before executing the migrations. |
 
 [DatabaseBackup]: /en/cli/db-backups/

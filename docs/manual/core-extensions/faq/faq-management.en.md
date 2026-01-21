@@ -91,7 +91,7 @@ The metadata of a single FAQ pages can only be customized if a redirect page has
 
 **Robots tag:** The robots tag defines how search engines treat a page. By default, FAQ pages inherit the robots tag setting from the page that contains the "FAQ reader" module. If necessary, the robots tag can be adjusted per FAQ page:
 
-- *Default (-):* The robots tag setting from the page with the “FAQ reader” module is used
+- *Default (-):* The robots tag setting from the page with the "FAQ reader" module is used
 - *index:* add the page to the search index
 - *follow:* follow the links on the page
 - *noindex:* do not include the page in the search index

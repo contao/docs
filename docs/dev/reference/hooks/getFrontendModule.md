@@ -12,17 +12,6 @@ The `getFrontendModule` hook allows to manipulate the generation of the front en
 modules.
 
 {{% notice note %}}
-This hook is only executed, when a front end module is rendered directly via 
-`\Contao\Controller::getFrontendModule()`. This will _not_ be the case if a module 
-is inserted into a page via the _Module_ content element for example. The hook is
-executed when a front end module is rendered via the page layout or via an insert
-tag - or in some cases when a module dynamically inserts another module (e.g. when
-the news, events or faq list module dynamically shows the selected reader module).
-You will need to implement the [`getContentElement`](/reference/hooks/getContentElement/)
-hook as well, if you want to cover all bases.
-{{% /notice %}}
-
-{{% notice note %}}
 This hook is also executed for forms that are integrated into a page layout via
 a front end module.
 {{% /notice %}}

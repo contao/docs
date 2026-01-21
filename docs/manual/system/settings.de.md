@@ -139,15 +139,6 @@ Falls du allen Backend-Benutzern zu 100% vertraust, kannst du auch als Schlüsse
 **Erlaubte Download-Dateitypen:** Hier kannst du festlegen, welche Dateitypen von deinem Server heruntergeladen werden 
 dürfen (Download).
 
-**Maximale GD-Bildbreite:** Hier kannst du festlegen, wie breit Bilder sein dürfen, damit sie von der GD 
-Bildbearbeitungs-Bibliothek noch verarbeitet werden können. Jegliche Bilder, die diesen Wert übersteigen, werden nicht
-verarbeitet.
-
-**Maximale GD-Bildhöhe:** Hier kannst du festlegen, wie hoch Bilder sein dürften, damit sie von der GD 
-Bildbearbeitungs-Bibliothek noch verarbeitet werden können. Jegliche Bilder, die diesen Wert übersteigen, werden nicht
-verarbeitet.
-
-
 ### Datei-Uploads
 
 **Erlaubte Upload-Dateitypen:** Hier kannst du festlegen, welche Dateitypen auf deinen Server übertragen werden dürfen 
