@@ -21,7 +21,6 @@ angegeben und ihre Inhalte überschrieben werden.
 Mittels `$this->parent()` lässt sich der originale Inhalt des Blocks ausgeben.
 
 #### Beispiele
-
 Das Template `fe_page.html5` ist in mehrere Blöcke aufgeteilt (u.&nbsp;a. `head`, `meta`, `body`, `footer`).
 Wir möchten lediglich eine weitere Meta-Angabe hinzufügen – dazu schreiben wir unser Template wie folgt:
 

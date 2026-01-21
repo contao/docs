@@ -18,7 +18,7 @@ template.
 
 The original block content is available via `$this->parent()`.
 
-#### Example
+#### Examples
 The `fe_page.html` template contains multiple blocks (such as `head`, `meta`, `body`, `footer`). If we only want to add
 another meta tag, we could write the following:
 
@@ -28,5 +28,20 @@ another meta tag, we could write the following:
 <?php $this->block('meta'); ?>
   <?php $this->parent(); ?>
   <meta name="author" content="John Doe">
+<?php $this->endblock(); ?>
+```
+
+If you want to customize the TinyMCE editor in your Contao instance, you should only adjust the respective blocks in its
+initialisation template. You can look at the original `be_tinyMCE.html5` template in order to figure out which blocks
+are available.
+
+The following adjustment for example would enable the "paste as text" functionality of TinyMCE, i.e. formatting will be
+removed from any pasted text.
+
+```php
+<?php $this->extend('be_tinyMCE'); ?>
+
+<?php $this->block('custom'); ?>
+  paste_as_text: true,
 <?php $this->endblock(); ?>
 ```
