@@ -12,7 +12,8 @@ The FAQ management is a separate module in the back end, which you can find in t
 
 Categories are used to group FAQs. Each category can refer to a specific language or topic.
 
-To create a new category click on New ![Create a new category](/de/icons/new.svg?classes=icon "Create a new category").
+To create a new category click on New ![Create a new category]({{% asset "icons/new.svg" %}}?classes=icon "Create a new category").
+
 
 ### Title and forwarding
 
@@ -21,6 +22,7 @@ To create a new category click on New ![Create a new category](/de/icons/new.svg
 **Heading:** The heading of a category is displayed in the frontend.
 
 **Forwarding page:** Here you can define which page a visitor is forwarded to when clicking on a FAQ. The target page should contain the module "FAQ reader" to display the answer to the question.
+
 
 ### Comments
 
@@ -57,11 +59,13 @@ You already know the Contao comment function from the "News/Blog" extension or t
 
 **Disable spam protection:** By default, visitors must answer a security question when creating comments, so that the commenting function cannot be misused for spam purposes. However, if you want to allow only logged in members to comment, you can disable the security question here. Since Contao 4.4, this question is only "displayed" to spambots.
 
+
 ## Questions
 
-This section explains how to create a question. You can determine the order of the questions within a category by dragging and dropping them with the corresponding navigation ![Move question](/de/icons/drag.svg?classes=icon "Move question") symbol.
+This section explains how to create a question. You can determine the order of the questions within a category by dragging and dropping them with the corresponding navigation ![Move question]({{% asset "icons/drag.svg" %}}?classes=icon "Move question") symbol.
 
-To create a new question, click on **New** ![Create a new question](/de/icons/new.svg?classes=icon "Create a new question").
+To create a new question, click on **New** ![Create a new question]({{% asset "icons/new.svg" %}}?classes=icon "Create a new question").
+
 
 ### Title and author
 
@@ -71,9 +75,52 @@ To create a new question, click on **New** ![Create a new question](/de/icons/ne
 
 **Author:** Here you can change the author of the question.
 
+
+### Metadata
+
+{{% notice info %}}
+The metadata of a single FAQ pages can only be customized if a redirect page has been selected in the FAQ category.
+{{% /notice %}}
+
+**Meta title:** Here you can enter an individual meta-title to overwrite the default page title.
+
+**Output in source code:**
+```html
+<title>Page title</title>
+```
+
+**Robots tag:** The robots tag defines how search engines treat a page. By default, FAQ pages inherit the robots tag setting from the page that contains the "FAQ reader" module. If necessary, the robots tag can be adjusted per FAQ page:
+
+- *Default (-):* The robots tag setting from the page with the "FAQ reader" module is used
+- *index:* add the page to the search index
+- *follow:* follow the links on the page
+- *noindex:* do not include the page in the search index
+- *nofollow:* do not follow the links on the page
+
+With *index,follow*, search engines can include the FAQ page in the search index. With *noindex,nofollow*, search engines are instructed to exclude the FAQ page from the search index.
+
+**Output in source code:**
+```html
+<meta name="robots" content="index,follow">
+```
+
+**Meta description**: Here you can enter an individual meta description to override the default page description.
+
+**Output in source code:**
+```html
+<meta name="description" content="Description of the page (between 150 and 300 characters).">
+```
+
+**Google search results preview:** Here you can preview the metadata in the Google search results. Other search engines 
+might show longer texts or crop at a different position.
+
+![Google search results preview]({{% asset "images/manual/layout/site-structure/en/google-search-results-preview.png" %}}?classes=shadow)
+
+
 ### Answer
 
 **Answer:** Enter the answer to the question here. The input is done as for the content element "Text" with the Rich Text Editor.
+
 
 ### Image settings
 
@@ -81,7 +128,7 @@ To create a new question, click on **New** ![Create a new question](/de/icons/ne
 
 **source file:** Here you select the image to be inserted. If you have not yet uploaded the image to the server, you can upload it directly in the pop-up window without leaving the input mask.
 
-![Add an image to an FAQ](/de/core-extensions/faq/images/en/add-an-image-to-an-faq.png?classes=shadow)
+![Add an image to an FAQ]({{% asset "images/manual/core-extensions/faq/en/add-an-image-to-an-faq.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
@@ -103,7 +150,7 @@ To create a new question, click on **New** ![Create a new question](/de/icons/ne
 | Middle / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
 | Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
 
-**Image Alignment:** Here you set the alignment of the image. If it is inserted ![above](/de/icons/above.svg?classes=icon) **above**,![under](/de/icons/below.svg?classes=icon) **below**, ![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or ![right-justified](/de/icons/right.svg?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as shown by the icon).
+**Image Alignment:** Here you set the alignment of the image. If it is inserted ![above]({{% asset "icons/above.svg" %}}?classes=icon) **above**,![under]({{% asset "icons/below.svg" %}}?classes=icon) **below**, ![left-justified]({{% asset "icons/left.svg" %}}?classes=icon) **left-aligned** or ![right-justified]({{% asset "icons/right.svg" %}}?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as shown by the icon).
 
 **Image distance:** Here you define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
 
@@ -119,6 +166,7 @@ To create a new question, click on **New** ![Create a new question](/de/icons/ne
 
 **caption:** Here you can enter a caption.
 
+
 ### Attachments
 
 Attachments are files that are linked to an FAQ. These files are offered for download in the front end module "FAQ reader".
@@ -127,9 +175,21 @@ Attachments are files that are linked to an FAQ. These files are offered for dow
 
 **Attach:** Here you can select the files you want to link to the FAQ.
 
+
 ### Expert settings
 
 **Disable comments:** Here you deactivate the comment function for a question.
+
+{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the FAQ page should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, FAQ pages inherit the search indexer setting from the page that contains the "FAQ reader" module. If necessary, this behavior can be adjusted per FAQ page:
+
+- **Default:** Indexing according to the search indexer setting from the page with the "FAQ reader" module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
+- **Always index:** Include the FAQ page, even if it has the robots tag *noindex* or the page with the "FAQ reader" module has a different setting.
+- **Never index:** Exclude the FAQ page, even if it has the robots tag *index* or the page with the "FAQ reader" module has a different setting.
+
+{{% notice info %}}
+The **Search indexer** setting can only be adjusted if a redirect page has been selected in the FAQ category.
+{{% /notice %}}
+
 
 ### Publication
 

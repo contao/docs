@@ -56,13 +56,13 @@ contao:
                 densities: 1.5x, 2x
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Contao always generates the `1x` density (i.e. the original size), even if you do not define it specifically in your 
 `densities` setting.
 {{% /notice %}}
 
-{{% notice note %}}
-As of Contao **4.9**, an image will always be served from `assets/images/` by default, when using an image size, even
+{{% notice info %}}
+An image will always be served from `assets/images/` by default, when using an image size, even
 when the configured size would not require any resizing or cropping. This behavior can be changed through the
 `skip_if_dimensions_match` setting for each image size.
 {{% /notice %}}
@@ -123,7 +123,7 @@ the actual `<img>`. The following example will convert all JPEG files with WebP 
 back, all WebP files with WebP as another source and JPEG as the fallback and all PNG files with WebP as another source 
 and PNG as the fall back:
 
-```yml
+```yaml
 contao:
     image:
         sizes:
@@ -151,13 +151,11 @@ The HTML output for a JPEG file would look as follows:
 
 ### Defaults
 
-{{< version "4.11" >}}
-
 You can also define defaults for your image sizes via the special `_defaults` key so that you do not have to define them
 for each image size separately. So instead of writing:
 
 {{% expand "Example without defaults" %}}
-```yml
+```yaml
 contao:
     image:
         sizes:
@@ -199,7 +197,7 @@ you could instead incorporate some of these settings as defaults and thus ommit 
 size:
 
 {{% expand "Example with defaults" %}}
-```yml
+```yaml
 contao:
     image:
         sizes:

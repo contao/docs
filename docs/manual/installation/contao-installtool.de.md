@@ -8,6 +8,11 @@ aliases:
 weight: 90
 ---
 
+{{% notice info %}}
+Das Contao Install Tool existiert ab Contao 5 nicht mehr, da die Datenbank direkt über den 
+[Contao Manager]({{% relref "installation/contao-manager" %}}) oder über die Konsole aktualisiert werden kann.
+{{% /notice %}}
+
 Rufe in deinem Internetbrowser die URL deiner Contao-Installation auf, und hänge `/contao/install` hinten 
 dran, um das Installtool zu starten.
 
@@ -19,17 +24,17 @@ Akzeptiere die Lizenz und vergebe ein Passwort mit welchem du das Installtool sp
 ## Datenbankverbindung herstellen
 
 Das Contao-Installtool kann selbst keine neuen Datenbanken erstellen, da das bei den meisten Shared-Hosting-Paketen 
-sowieso nur über die Verwaltungssoftware (z. B. Confixx, Plesk oder cPanel) möglich ist. Rufe also die 
+sowieso nur über die Verwaltungssoftware (z. B. Confixx, Plesk oder cPanel) möglich ist. Rufe also die 
 Verwaltungsoberfläche deines Servers auf, und lege dort eine neue Datenbank an. Gebe danach die Anmeldeinformationen
-für die Datenbank im Contao-Installtool ein.
+für die Datenbank im Contao-Installtool ein.
 
-![Datenbankverbindung für Contao eingeben](/de/installation/images/de/datenbankverbindung-fuer-contao-eingeben.png?classes=shadow)
+![Datenbankverbindung für Contao eingeben]({{% asset "images/manual/installation/de/datenbankverbindung-fuer-contao-eingeben.png" %}}?classes=shadow)
 
 **Host:** Hier gibst du die Domain oder IP-Adresse des Datenbankservers ein.
 
 **Portnummer:** Hier kannst du die Portnummer des Datenbankservers ändern.
 
-**Benutzername:** Hier gibst du den Benutzernamen für deine Datenbank ein.
+**Benutzername:** Hier gibst du den Benutzernamen für deine Datenbank ein.
 
 **Passwort:** Hier gibst du das dazugehörige Passwort ein.
 
@@ -40,16 +45,16 @@ für die Datenbank im Contao-Installtool ein.
 
 Nachdem du die Datenbankzugangsdaten gespeichert hast, baut das Installtool eine Verbindung zur Datenbank auf und 
 vergleicht die darin enthaltenen Tabellen mit den Vorgaben der aktuellen Contao-Version. Ist eine Aktualisierung 
-notwendig, präsentiert dir das Installtool automatisch eine Liste der durchzuführenden Änderungen, die du bestätigen 
+notwendig, präsentiert dir das Installtool automatisch eine Liste der durchzuführenden Änderungen, die du bestätigen 
 oder ablehnen kannst.
 
-![Datenbankänderungen bestätigen](/de/installation/images/de/datenbankaenderungen-bestaetigen.png?classes=shadow)
+![Datenbankänderungen bestätigen]({{% asset "images/manual/installation/de/datenbankaenderungen-bestaetigen.png" %}}?classes=shadow)
 
-In der Regel solltest du die angebotenen Änderungen übernehmen, damit deine Tabellen immer auf dem neuesten Stand sind 
+In der Regel solltest du die angebotenen Änderungen übernehmen, damit deine Tabellen immer auf dem neuesten Stand sind 
 und Contao später nicht versucht, auf fehlende Felder zuzugreifen. Bei einer neuen Installation ist die Liste der 
-Änderungen für gewöhnlich sehr lang, da erst einmal alle Tabellen neu angelegt werden müssen.
+Änderungen für gewöhnlich sehr lang, da erst einmal alle Tabellen neu angelegt werden müssen.
 
-Achte darauf, eventuelle Löschaufträge besonders sorgfältig zu prüfen, denn Contao kennt nur seine eigenen Tabellen! 
+Achte darauf, eventuelle Löschaufträge besonders sorgfältig zu prüfen, denn Contao kennt nur seine eigenen Tabellen! 
 Wenn sich auf deinem Server mehrere Anwendungen eine Datenbank teilen, bietet dir das Installtool an, die vermeintlich 
 nicht benötigten Tabellen der anderen Programme »aufzuräumen«.
 
@@ -74,7 +79,7 @@ Beim Import eines Templates werden bestehende Daten überschrieben!
 Wenn du auf den Import eines Templates verzichtet hast, weil du beispielsweise eine neue Webseite mit Contao erstellen 
 möchtest, musst du einen Administrator-Benutzer anlegen, mit dem du dich später im Contao-Backend anmelden kannst.
 
-![Ein Administratorkonto anlegen](/de/installation/images/de/ein-administratorkonto-anlegen.png?classes=shadow)
+![Ein Administratorkonto anlegen]({{% asset "images/manual/installation/de/ein-administratorkonto-anlegen.png" %}}?classes=shadow)
 
 **Benutzername:** Hier legst du den Benutzernamen des Administrators fest.
 
@@ -86,33 +91,3 @@ möchtest, musst du einen Administrator-Benutzer anlegen, mit dem du dich späte
 
 Nachdem du den Administrator-Benutzer erstellt hast, ist die Installation von Contao abgeschlossen.  
 Der Link am rechten unteren Rand bringt dich zum Backend.
-
-
-## Das Installtool zurücksetzen {#das-installtool-zuruecksetzen}
-
-Es gibt zwei Gründe, warum du das Installtool eventuell zurücksetzen willst:
-
-1. Das Installtool wurde gesperrt.
-2. Du hast das Installtool-Passwort vergessen.
-
-Das Installtool ist gegen [Brute-Force-Attacken](https://de.wikipedia.org/wiki/Brute-Force-Methode) geschützt und wird 
-automatisch gesperrt, wenn mehr als dreimal hintereinander ein falsches Passwort eingegeben wurde. 
-
-Du hast drei Möglichkeiten das Installtool zu entsperren:
-
-- Über den Contao Manager, indem du unter Systemwartung auf »Installtool entsperren« klickst.
-![Das Installtool zurücksetzen](/de/installation/images/de/das-installtool-zuruecksetzen.png?classes=shadow)
-- Über die Kommandozeile, indem du im Hauptverzeichnis deiner Contao-Installation folgendes Kommando absetzt:
-
-    ```bash
-    php vendor/bin/contao-console contao:install:unlock
-    ```
-
-- Indem du auf dem Webserver die Datei `install_lock` im Verzeichnis `/var` löschst.
-
-
-Ein vergessenes Passwort lässt sich in der lokalen Konfigurationsdatei `/system/config/localconfig.php` zurücksetzen.
-
-Suche dazu die Zeile mit der Anweisung `$GLOBALS['TL_CONFIG']['installPassword'] = '…';` und entferne diese komplett 
-aus der Datei. Danach kannst du beim erneuten Aufruf des Installtools ein neues Passwort vergeben.
-

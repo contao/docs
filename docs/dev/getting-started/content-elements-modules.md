@@ -33,17 +33,15 @@ namespace App\Controller\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
-use Contao\Template;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="texts")
- */
+#[AsContentElement(category: 'texts')]
 class MyContentElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         $template->text = $model->text;
         $template->url = $model->url;
@@ -61,28 +59,50 @@ content element like so:
 ```php
 // contao/dca/tl_content.php
 $GLOBALS['TL_DCA']['tl_content']['palettes']['my_content_element'] = '
-    {type_legend},type;
-    {text_legend),text,url;
+    {type_legend},type,headline;
+    {text_legend},text,url;
 ';
 ```
 
-The template name on the other hand is derived from the element's name, with the 
-prefix `ce_` (`mod_` for front end modules), i.e. `ce_my_content_element` in this 
-case.
+The template name on the other hand is derived from the element's type. Content element templates reside in
+`templates/content_elment/` by default and the template's name will be `my_content_element.html.twig` in this case.
 
-```html
-<!-- templates/ce_my_content_element.html5 -->
-<div class="my-content-element">    
-    <?= $this->text; ?>
+```twig
+{# templates/content_element/my_content_element.html.twig #}
+{% extends "@Contao/content_element/_base.html.twig" %}
 
-    <?php if ($this->url): ?>
-      <a href="<?= $this->url; ?>">Read more</a>
-    <?php endif; ?>
-</div>
+{% block content %}
+    {{ text }}
+
+    {% if url %}
+        <a href="{{ url }}">Read more</a>
+    {% endif %}
+{% endblock %}
+```
+
+Finally we add a label for our new content element, so it is nicely displayed in the back end:
+
+```yaml
+# translations/contao_default.en.yaml
+CTE:
+    my_content_element:
+        - My Content Element
+        - A short description for my new Content Element
 ```
 
 Find out more about [content elements][1] and [front end modules][2] in the framework
 documentation.
+
+{{% notice "tip" %}}
+You can also install the `contao/maker-bundle` with
+
+```bash
+composer require contao/maker-bundle --save-dev
+```
+
+and use commands like `bin/console make:contao:content-element` or `make:contao:frontend-module` which will generate
+these files for your for a new content element or front end module.
+{{% /notice %}}
 
 Next: [creating an extension][3].
 

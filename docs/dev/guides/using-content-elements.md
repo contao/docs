@@ -1,6 +1,6 @@
 ---
 title: "Content Elements for your Table"
-menuTitle: "Using Content Elements for your Table"
+linkTitle: "Using Content Elements for your Table"
 description: "This guide shows how to use Contao's content elements as child records for the records of your own table."
 aliases:
   - /guides/using-content-elements/
@@ -105,12 +105,10 @@ hook and adjust the `ptable` definition of the `tl_content` DCA accordingly.
 namespace App\EventListener;
 
 use Contao\CoreBundle\Routing\ScopeMatcher;
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-/**
- * @Hook("loadDataContainer")
- */
+#[AsHook('loadDataContainer')]
 class SetPtableForContentListener
 {
     private $requestStack;
@@ -173,18 +171,16 @@ use App\Model\ExampleModel;
 use Contao\ContentModel;
 use Contao\Controller;
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
-use Contao\CoreBundle\ServiceAnnotation\FrontendModule;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @FrontendModule(category="miscellaneous")
- */
+#[AsFrontendModule(category: 'miscellaneous')]
 class ExampleModuleController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         // Get the parent ID via a query parameter
         $parentId = $request->query->get('example_id');
@@ -199,7 +195,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
         // Fill the template with data from the parent record
         $template->setData(array_merge($example->row(), $template->getData()));
 
-        $template->content = function() use ($request, $parentId): ?string {
+        $template->content = function() use ($request, $parentId): string|null {
             // Get all the content elements belonging to this parent ID and parent table
             $elements = ContentModel::findPublishedByPidAndTable($parentId, 'tl_example');
 
@@ -243,7 +239,7 @@ and return these content elements.
 <?php $this->endblock(); ?>
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 The advantage of using an anonymous function for rendering the content elements
 is that the elements are only fetched from the database and rendered if they are
 actually requested within the template. Thus if you have multiple modules and templates

@@ -37,12 +37,10 @@ of the custom comparison. Or an empty string.
 // src/EventListener/CompareThemeFilesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\ZipReader;
 
-/**
- * @Hook("compareThemeFiles")
- */
+#[AsHook('compareThemeFiles')]
 class CompareThemeFilesListener
 {
     public function __invoke(\DOMDocument $xml, ZipReader $zip): string

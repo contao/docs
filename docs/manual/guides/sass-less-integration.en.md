@@ -18,7 +18,7 @@ examples we use Sass/SCSS. The Less procedure is otherwise identical, apart from
 Using the preprocessors usually requires a local installation. With Contao you can embed `.scss` or `.less` files 
 directly in the page layout. The corresponding CSS files are then created automatically.
 
-{{% notice note %}}
+{{% notice info %}}
 Even though the direct use in Contao works, it is still recommended to use ready-to-use CSS files or create them 
 locally using CSS preprocessors.
 {{% /notice %}}

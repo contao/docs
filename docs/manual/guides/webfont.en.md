@@ -35,60 +35,6 @@ If you want to support older browsers you can also use the other file formats.
 
 ## Contao Integration
 
-<style>
-/* vollkorn-600 - latin */
-@font-face {
-  font-family: 'Vollkorn';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('src-webfont/vollkorn-v12-latin-600.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('src-webfont/vollkorn-v12-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('src-webfont/vollkorn-v12-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
-       url('src-webfont/vollkorn-v12-latin-600.woff') format('woff'), /* Modern Browsers */
-       url('src-webfont/vollkorn-v12-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('src-webfont/vollkorn-v12-latin-600.svg#Vollkorn') format('svg'); /* Legacy iOS */
-}
-/* vollkorn-700italic - latin */
-@font-face {
-  font-family: 'Vollkorn';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('src-webfont/vollkorn-v12-latin-700italic.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('src-webfont/vollkorn-v12-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('src-webfont/vollkorn-v12-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('src-webfont/vollkorn-v12-latin-700italic.woff') format('woff'), /* Modern Browsers */
-       url('src-webfont/vollkorn-v12-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('src-webfont/vollkorn-v12-latin-700italic.svg#Vollkorn') format('svg'); /* Legacy iOS */
-}
-
-.fontDemoLyric {
-  font-family: 'Vollkorn', serif;
-  background-color: #F0B37E;
-  border-radius: 8px;
-  color: #ffffff;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 30px;
-  padding: 20px 20px;
-  margin: 10px 0 10px 0;
-}
-
-.fontDemoAuthor {
-  font-family: 'Vollkorn', serif;
-  color: #666666;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
-}
-</style>
-
 In the following we use the Google Font »[Vollkorn](https://fonts.google.com/specimen/Vollkorn)«.<br>
 Here for example with the typefaces »Bold 700 italic« and »Semi-bold 600«:
 
@@ -119,7 +65,7 @@ h1, h2 {
 }
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 In the [Page layouts](/en/layout/theme-manager/manage-page-layouts/) you may find direct 
 Input options for the Google web fonts. This option will no longer be available in future versions of Contao. 
 Therefore the described procedure is recommended.
@@ -140,16 +86,18 @@ of your Contao installation under »files«.
 
 In the case of »Google Fonts« you will be offered a download option, but this download includes only files in the ».ttf« format. 
 
-The web application »[Google Webfonts Helper](https://google-webfonts-helper.herokuapp.com/fonts)« provides the Google 
-web fonts in various file formats. Furthermore, depending on your selection, the appropriate 
-CSS information via `@font-face` is supplied. This CSS information must be added to your own CSS file. 
-It doesn't matter if you work directly with CSS files or if you use these 
+Web applications like »[Google Webfonts Helper](https://gwfh.mranftl.com/fonts)« or »[Web Font Loader](https://webfontloader.altmann.de/)« 
+provides the Google web fonts in various file formats. Furthermore, depending on your selection, the appropriate CSS information via `@font-face` is supplied. This CSS information must be added to your own CSS file. It doesn't matter if you work directly with CSS files or if you use these 
 via [Preprocessors](/en/guides/sass-less-integration/) such as »Sass/Less«. 
+
+{{% notice note %}}
+If you are not sure which of the mentioned web applications you should use, [here is a post](https://webfontloader.altmann.de/about/#more) that clarifies the differences.
+{{% /notice %}}
 
 You then include the CSS file as an external stylesheet in the »Expert settings -> Stylesheets« within the 
 [page layout](/en/layout/theme-manager/manage-page-layouts/) section of your [theme](/en/layout/theme-manager/).
 
-{{% notice note %}}
+{{% notice info %}}
 The paths provided in `url()` regarding the web font files within the CSS `@font-face` directive are relative to the
 position of the CSS file. This depends on your directory structure.
 {{% /notice  %}}
@@ -173,7 +121,7 @@ directory »files/theme/css«. The correct, relative paths to the web font files
 }
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 In [Page Layout](/en/layout/theme-manager/manage-page-layouts/), you can activate the »Combine Scripts« option. All 
 CSS information of the selected internal and external CSS files will be combined into a single, new file and stored 
 by Contao in the directory »assets/css«.<br><br>

@@ -32,11 +32,9 @@ responsible for the source table.
 // src/EventListener/ListCommentsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("listComments")
- */
+#[AsHook('listComments')]
 class ListCommentsListener
 {
     public function __invoke(array $comment): string

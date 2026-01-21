@@ -21,7 +21,7 @@ object as return value.
 
 2. *string* `$formId`
 
-    Alias of the current form. Used in the `value` attribute of the hidden form field `FORM_SUBMIT`. Do not confuse with `$form->id`.
+    Alias of the current form with the prefix `auto_`. Don't confuse with `$form->id`.
 
 3. *array* `$formData`
 
@@ -43,22 +43,20 @@ Return the `$widget` instance after modification or your custom widget.
 // src/EventListener/ValidateFormFieldListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 use Contao\Widget;
 
-/**
- * @Hook("validateFormField")
- */
+#[AsHook('validateFormField')]
 class ValidateFormFieldListener
 {
     public function __invoke(Widget $widget, string $formId, array $formData, Form $form): Widget
     {
-        if ('myform' === $formId && $widget instanceof \Contao\FormTextField && 'mywidget' === $widget->name) {
+        if ('myform' === $form->formID && 'mywidget' === $widget->name) {
             // Do your custom validation and add an error if widget does not validate
-            if (!$this->validateWidget($widget)) {
-                $widget->addError('My custom widget error');
-            }
+            // …
+
+            $widget->addError('My custom widget error');
         }
 
         return $widget;

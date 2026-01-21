@@ -35,11 +35,9 @@ return value.
 // src/EventListener/LoadLanguageFileListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("loadLanguageFile")
- */
+#[AsHook('loadLanguageFile')]
 class LoadLanguageFileListener
 {
     public function __invoke(string $name, string $currentLanguage, string $cacheKey): void

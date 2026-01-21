@@ -9,7 +9,7 @@ aliases:
 
 
 The `initializeSystem` hook is triggered right after the system initialization
-process is finished and before the request processing is started.
+process is finished and before the request processing is started. This also means the request has no [contao request scope](/framework/routing/#request-scope) set and no language redirects have been executed.
 
 
 ## Example
@@ -18,11 +18,9 @@ process is finished and before the request processing is started.
 // src/EventListener/InitializeSystemListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("initializeSystem")
- */
+#[AsHook('initializeSystem')]
 class InitializeSystemListener
 {
     public function __invoke(): void

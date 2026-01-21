@@ -26,17 +26,72 @@ output images and metadata for your templates.
 | Modify or resize images directly | [&rarr;&nbsp;imagine/imagine][LibraryImagine]<br>[&rarr;&nbsp;contao/imagine&#8209;svg][LibraryImagineSvg] | low |
 
 
+## Relationships between the image libraries
+
+* `Imagine` is the PHP Composer package that Contao uses. It abstracts image handling for multiple libraries
+* [`ImageMagick`](https://www.php.net/manual/en/book.imagick.php), [`Gmagick`](https://www.php.net/manual/en/book.gmagick.php) or [`GD`](https://www.php.net/manual/en/book.image.php) are the PHP extensions that enable image processing
+* Either natively `GD` or by creating a bridge to the actual tools `ImageMagick` and `GraphicsMagick`
+
+
+{{< tabs groupid="image-libraries" style="code" >}}
+
+{{% tab title="`GD`" %}}
+```mermaid
+sequenceDiagram
+    participant Contao as Contao
+    participant Imagine as Imagine Composer Package
+    participant GD as PHP GD extension
+
+    Contao ->> Imagine: request image operation
+    Imagine ->> GD: perform image operation
+    GD -->> Imagine: image result
+    Imagine -->> Contao: image result
+```
+{{% /tab %}}
+
+{{% tab title="`ImageMagick`" %}}
+```mermaid
+sequenceDiagram
+    participant Contao as Contao
+    participant Imagine as Imagine Composer Package
+    participant Imagick as PHP Imagick extension
+    participant IM as ImageMagick software
+
+    Contao ->> Imagine: request image operation
+    Imagine ->> Imagick: perform image operation
+    Imagick ->> IM: call ImageMagick libraries
+    IM -->> Imagick: processed image
+    Imagick -->> Imagine: image result
+    Imagine -->> Contao: image result
+```
+{{% /tab %}}
+
+{{% tab title="`GraphicsMagick`" %}}
+```mermaid
+sequenceDiagram
+    participant Contao as Contao
+    participant Imagine as Imagine Composer Package
+    participant Gmagick as PHP Gmagick extension
+    participant GM as GraphicsMagick software
+
+    Contao ->> Imagine: request image operation
+    Imagine ->> Gmagick: perform image operation
+    Gmagick ->> GM: call GraphicsMagick libraries
+    GM -->> Gmagick: processed image
+    Gmagick -->> Imagine: image result
+    Imagine -->> Contao: image result
+```
+{{% /tab %}}
+
+{{< /tabs >}}
+
+
 ## Templating
 Outputting responsive images can be quite a challenging task due its large amount of attributes and parameters. Contao
 therefore provides an `image.html5` (and `picture_default.html5`) template out of the box. If you are using the Image
 Studio component you can also profit from its matching `figure.html.twig` Twig template and macros.
 
 See the [templating section][Templating] for more information.
-
-{{% notice note %}}
-For Contao versions prior to **4.10** please refer to the [Legacy section](/framework/image-processing/legacy/) on how
-to use images in your templates. 
-{{% /notice %}}
 
 
 [ImageStudio]: /framework/image-processing/image-studio/

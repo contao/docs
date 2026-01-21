@@ -1,0 +1,44 @@
+---
+title: "Show template data"
+description: "Show all template data."
+url: "layout/templates/twig/data"
+weight: 50
+tags: [Twig]
+---
+
+
+To display the data in a template, you can use the `dump()` function.  
+If you only need the data of certain variables, you can pass this as an argument:
+
+```twig
+{{ dump() }} {# output all available data #}
+{{ dump(a) }} {# output the data of variable "a" #}
+{{ dump(a, b) }} {# output the data of variable "a" and "b" #}
+```
+
+{{% example "Output of the heading of the text element" %}}
+```twig
+{# /templates/content_element/text.html.twig #}
+{% extends "@Contao/content_element/text.html.twig" %}
+{% block text %}
+    {{ dump(headline) }}
+{% endblock %}
+```
+{{% /example %}}
+
+If you want the output to be in the toolbar - and not in the template - you can use the `dump` function:
+
+```twig
+{% dump %} {# output all available data #}
+{% dump(a) %} {# output the data of variable "a" #}
+{% dump(a, b) %} {# output the data of variable "a"  und "b" #}
+```
+
+{{% notice note %}}
+Note that in extended templates the `dump()` function must be used inside a block.
+{{% /notice %}}
+
+{{% notice warning %}}
+Since the evaluated data may contain safety-critical information about the system, this is only possible if
+[Debug mode]({{% relref "debug-mode" %}}) is enabled.
+{{% /notice %}}

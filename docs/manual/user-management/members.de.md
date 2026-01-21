@@ -1,6 +1,6 @@
 ---
 title: "Mitglieder"
-menuTitle: "Mitglieder (Frontend)"
+linkTitle: "Mitglieder (Frontend)"
 description: "Die Verwaltung von Frontend-Benutzern ist deutlich einfacher als die Verwaltung von Backend-Benutzern, da 
 hier nicht mit Mounts und einzelnen Eingabefeldern gearbeitet werden muss."
 url: "benutzerverwaltung/mitglieder"
@@ -11,21 +11,21 @@ weight: 20
 
 Die Verwaltung von Frontend-Benutzern ist deutlich einfacher als die Verwaltung von Backend-Benutzern, da hier nicht 
 mit Mounts und einzelnen Eingabefeldern gearbeitet werden muss. Bei der Mitgliederverwaltung geht es hauptsächlich um 
-den Zugriff auf geschützte Unterseiten und das Ändern der persönlichen Daten.
+den Zugriff auf geschützte Unterseiten und das Ändern der persönlichen Daten.
 
-Die Bezeichnung »Mitglieder« stammt noch aus den Anfängen von Contao, in denen die Software vorwiegend für 
+Die Bezeichnung »Mitglieder« stammt noch aus den Anfängen von Contao, in denen die Software vorwiegend für 
 Community-Seiten verwendet wurde. Mittlerweile werden auch viele kommerzielle Webseiten damit umgesetzt, sodass man 
 auch »Kunden« sagen könnte.
 
 
 ## Mitgliedergruppen
 
-Auch Mitglieder werden in Gruppen organisiert und erben von diesen die Zugriffsrechte auf geschützte Seiten.
+Auch Mitglieder werden in Gruppen organisiert und erben von diesen die Zugriffsrechte auf geschützte Seiten.
 
 ### Weiterleitung
 
 Im Frontend-Modul »Login« kannst du festlegen, zu welcher Seite Mitglieder nach der Anmeldung weitergeleitet werden. In 
-den Gruppeneinstellungen kannst du diese Standardseite mit einer individuellen Zielseite pro Gruppe überschreiben. 
+den Gruppeneinstellungen kannst du diese Standardseite mit einer individuellen Zielseite pro Gruppe überschreiben. 
 
 **Weiterleiten bei Anmeldung:** Hier aktivierst du die individuelle Weiterleitung.
 
@@ -48,7 +48,7 @@ Auch Mitgliedergruppen können manuell oder automatisch deaktiviert werden.
 Im Gegensatz zu Benutzern geht es bei Mitgliedern nicht so sehr um Zugriffsrechte, als vielmehr um persönliche Daten 
 wie z. B. Name, Adresse oder Telefonnummer.
 
-{{% notice note %}}
+{{% notice info %}}
 Der Benutzernamen und die E-Mail-Adresse müssen eindeutig sein, das heißt, sie dürfen nur einmal vergeben werden.
 {{% /notice %}}
 
@@ -59,7 +59,7 @@ Der Benutzernamen und die E-Mail-Adresse müssen eindeutig sein, das heißt, sie
 
 **Nachname:** Hier gibst du den Nachnamen des Mitglieds ein.
 
-**Geburtsdatum:** Hier kannst du das Geburtsdatum eingeben. Ein Klick auf das grüne Symbol neben dem Eingabefeld öffnet 
+**Geburtsdatum:** Hier kannst du das Geburtsdatum eingeben. Ein Klick auf das grüne Symbol neben dem Eingabefeld öffnet 
 einen JavaScript-Kalender.
 
 **Geschlecht:** Hier wählst du das Geschlecht des Mitglieds aus.
@@ -97,8 +97,8 @@ einen JavaScript-Kalender.
 
 ### Mitgliedergruppen
 
-Hier legst du die Gruppenzugehörigkeit des Mitglieds fest. Die erste Gruppe, also die ganz oben im Auswahlmenü, ist die 
-Hauptgruppe, die z. B. bei der automatischen Weiterleitung nach dem Login berücksichtigt wird.
+Hier legst du die Gruppenzugehörigkeit des Mitglieds fest. Die erste Gruppe, also die ganz oben im Auswahlmenü, ist die 
+Hauptgruppe, die z. B. bei der automatischen Weiterleitung nach dem Login berücksichtigt wird.
 
 **Mitgliedergruppen:** Hier legen du die Gruppenzugehörigkeit des Mitglieds fest.
 

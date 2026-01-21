@@ -50,17 +50,25 @@ An array containing all the events, grouped by a time stamp.
 // src/EventListener/GetAllEventsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 
-/**
- * @Hook("getAllEvents")
- */
+#[AsHook('getAllEvents')]
 class GetAllEventsListener
 {
     public function __invoke(array $events, array $calendars, int $timeStart, int $timeEnd, Module $module): array
     {
         // Add events to $events or modify the array …
+        foreach ($events as $a => $aa) {
+            foreach ($aa as $b => $bb) {
+                foreach ($bb as $c => $event) {
+                    // e.g.
+                    // $events[$a][$b][$c][…] = …;
+                    // unset($events[$a][$b][$c]); 
+                    // etc.
+                }
+            }
+        }
 
         return $events;
     }

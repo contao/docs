@@ -3,10 +3,6 @@ title: "Migrations"
 description: "Database migrations and general purpose migration scripts."
 ---
 
-{{% notice note %}}
-This covers the documentation on how to create migrations in Contao **4.9**
-and up. In previous Contao versions, migrations were written in `runonce.php` files that got deleted after execution.
-{{% /notice %}}
 
 Updating Contao, extensions or the application itself sometimes requires to migrate data to be compatible with the new version(s). For this purpose Contao has a migration framework that lets you write migration services that are integrated in the update process.
 
@@ -67,19 +63,13 @@ use Doctrine\DBAL\Connection;
 
 class CustomerNameMigration extends AbstractMigration
 {
-    /**
-     * @var Connection
-     */
-    private $connection;
-
-    public function __construct(Connection $connection)
+    public function __construct(private readonly Connection $connection)
     {
-        $this->connection = $connection;
     }
 
     public function shouldRun(): bool
     {
-        $schemaManager = $this->connection->getSchemaManager();
+        $schemaManager = $this->connection->createSchemaManager();
 
         // If the database table itself does not exist we should do nothing
         if (!$schemaManager->tablesExist(['tl_customers'])) {

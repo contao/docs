@@ -2,7 +2,7 @@
 title: "Administration area"
 description: "In the administration area, the so-called back end, you can do all the work related to the administration 
 of your website."
-weight: 3
+weight: 4
 ---
 
 Contao is divided into two parts. In the administration area, the so-called back end, you can do all the work related 

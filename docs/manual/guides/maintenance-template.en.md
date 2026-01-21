@@ -12,7 +12,7 @@ tags:
 
 The maintenance mode can be activated via the menu item System Maintenance. As soon as you log out of the backend and open your website in the frontend, it will look like this:
 
-![Contao maintenance mode](/de/guides/images/de/maintenance/wartungsmodus.jpg?classes=shadow)
+![Contao maintenance mode]({{% asset "images/manual/guides/de/maintenance/wartungsmodus.jpg" %}}?classes=shadow)
 
 In the core of Contao 4.9, the following files are responsible for the frontend output in maintenance mode:
 
@@ -47,7 +47,7 @@ There we find the language variable `XPT.unavailable` and `XPT.maintenance`. Now
 
 Now we create a new file named `exception.xlf` and put it under `/contao/languages/en/`, copy the needed lines from the original `exception.xlf` and adjust the texts according to our wishes.
 
-{{% notice note %}}
+{{% notice info %}}
 If the folder `/contao` does not exist yet, you have to create it and the corresponding subfolders.
 {{% /notice %}}
 
@@ -79,14 +79,17 @@ To make the new texts visible now, the production cache must be cleared via the 
 
 Of course, other texts such as the footer can also be overwritten via `XPT.hint`.
 
-{{% notice note %}}
+{{% notice info %}}
 IMPORTANT: All changes affect the maintenance template as well as all other error templates of Contao.
 {{% /notice %}}
 
+When the complete Contao installation is put into maintenance mode via the command line, the default system language is used to generate the maintenance template. This can be adjusted via the `config.yaml` (`framework.default_locale`), but this setting affects the entire system and may lead to unwanted side effects.
 
 ## Customize logo
 
 In this example we do this for all error templates. For an update-safe adaptation we copy the original template `vendor/contao/core-bundle/src/Resources/views/Error/layout.html.twig` to `/templates/bundles/ContaoCoreBundle/Error/`.
+
+{{< version-tag "5.1" >}} the original template is located at `vendor/contao/core-bundle/templates/Error/layout.html.twig`
 
 There we put our own logo inside the DIV with the class `header-logo`. You can use a normal image tag for this or an inline SVG like in the original template.
 

@@ -24,15 +24,15 @@ To reduce the risk of conflicts, make sure your source and target server both ru
 You can either create a SQL dump with the graphical database administration tool [phpMyAdmin](https://www.phpmyadmin.net/)
 or use the `mysqldump` program from the command line.
 
-{{< tabs groupId="mysql-transfer" >}}
-{{% tab name="phpMyAdmin" %}}
+{{< tabs groupid="mysql-transfer" style="code" >}}
+{{% tab title="phpMyAdmin" %}}
 Log into "phpMyAdmin", select the database you want to export, select the "Export" tab in the upper menu and click "Ok".
 
 You will receive a `sql` file that you can import in the next step.
 
-![Exporting the database](/de/installation/images/en/database-export.png?classes=shadow)
+![Exporting the database]({{% asset "images/manual/installation/en/database-export.png" %}}?classes=shadow)
 {{% /tab %}}
-{{% tab name="Command line" %}}
+{{% tab title="Command line" %}}
 Make sure `mysqldump` and `gzip` is installed, then run the following command (replacing "my_user" and "my_db_name" with
 your database user and database name):
 
@@ -48,15 +48,15 @@ A `my_dump.sql.gz` file containing the dumps will be saved in the current direct
 
 
 ### Import the database (target)
-{{< tabs groupId="mysql-transfer" >}}
-{{% tab name="phpMyAdmin" %}}
+{{< tabs groupid="mysql-transfer" style="code" >}}
+{{% tab title="phpMyAdmin" %}}
 Open "phpMyAdmin" and select a new (empty) database.
 
 Click on the "Import" button in the upper menu, upload the previously created SQL dump and start the import.
 
-![Importing the database](/de/installation/images/en/database-import.png?classes=shadow)
+![Importing the database]({{% asset "images/manual/installation/en/database-import.png" %}}?classes=shadow)
 {{% /tab %}}
-{{% tab name="Command line" %}}
+{{% tab title="Command line" %}}
 Copy the previously created dump file to the target machine and navigate to it.
 
 Make sure `mysql` and `gunzip` is installed, then run the following command (replacing "my_user" and "my_db_name" with
@@ -74,14 +74,21 @@ Enter your database password if asked for.
 ## Transferring the files
 The following files and folders need to be transferred from the source to the target machine.
 
-- `files`
-- `templates`
-- `composer.json`
-- `composer.lock`
+- `files`                           (your files)
+- `templates`                       (your templates)
+- `composer.json`                   (wished dependencies)
+- `composer.lock`                   (actually installed dependencies)
+- `system/config/localconfig.php`   (your preferences)
 
-If you still have old extensions within `system/modules/` or if you have created a `config.yml` in the directory
-`config/` (or **before Contao 4.8** `app/config/`) or if you created Contao adjustments under `contao/` (or **before 
-Contao 4.8** `app/Resources/contao/`), then they have to be transferred as well.
+The following files and folders need to be transferred from the source to the target machine, if applicable.
+
+- `config`  (or **before Contao 4.8** `app/config/`)         
+- `contao`  (or **before Contao 4.8** `app/Resources/contao/`
+- `src`
+- `.env*`
+
+If you still have old extensions within `system/modules/` or if you have old configurations in the directory
+`system/config/`, then they have to be transferred as well.
 
 You can use an FTP client for this task or, if you prefer the command line, use `scp`:
 
@@ -101,5 +108,9 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
    [command line](../install-contao#installation-via-the-command-line) like you would with a regular
    installation.
 3. Run the [install tool](../contao-installtool) to configure the new database connection. 
+
+{{% notice info %}}
+If you have not moved to another server and have simply created a 1:1 copy on the same server, make sure to delete and recreate the application cache via the Contao Manager after adjusting the database connection to ensure that the changes are applied correctly and that you are on the correct database.
+{{% /notice %}}
 
 That's it! You're now ready to use your Contao installation on a new location.

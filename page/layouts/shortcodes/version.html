@@ -1,14 +1,6 @@
-{{ $.Scratch.Set "version" .Site.Params.currentContaoVersion }}
-{{ if len .Params | eq 1 }}
-  {{ $version := .Get 0 }}
-  {{ $.Scratch.Set "version" $version }}
-{{ end }}
-{{ if eq .Site.Language.Lang "en" }}
-<div class="notices note">
-  <p>This feature is available in <strong>Contao {{ $.Scratch.Get "version" }}</strong> and later.</p>
-</div>
-{{ else }}
-<div class="notices note">
-  <p>Diese Funktion ist ab <strong>Contao {{ $.Scratch.Get "version" }}</strong> verfügbar.</p>
-</div>
-{{ end }}
+{{ $version := default .Site.Params.currentContaoVersion (.Get 0) }}
+{{- partial "shortcodes/notice.html" (dict
+  "page" .Page
+  "style" "info"
+  "content" (printf (i18n "contao_version") $version | markdownify)
+) -}}

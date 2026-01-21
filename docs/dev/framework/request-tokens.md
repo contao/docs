@@ -85,17 +85,84 @@ class ExampleService
 }
 ```
 
+{{% notice tip %}}
+You can omit getting the `%contao.csrf_token_name%` by explicitly using the `ContaoCsrfTokenManager` and its
+`getDefaultTokenValue()` method:
 
-## Deprecated Constants And Configuration Settings
+```php
+// before:
+$csrfTokenManager->getToken($csrfTokenName)->getValue();
 
-For historical reasons, you may still come across the following constants or configuration settings.
-They are all deprecated and you must not use them anymore. Register your own route and implement your own
-handling as outlined above, if you need to disable the CSRF protection for some reason.
+// after:
+$contaoCsrfTokenManager->getDefaultTokenValue();
+```
+{{% /notice %}}
 
-* The constant `BYPASS_TOKEN_CHECK`. It disables CSRF protection completely.
-* The localconfig configuration value `disableRefererCheck`. It disables CSRF protection completely.
-* The localconfig configuration value `requestTokenWhitelist`. It can contain an exact hostname or regular expression.
-  It will disable CSRF protection only on hostname match.
+{{% notice tip %}}
+In PHP templates you can also output the request token via `<?= $this->requestToken ?>` and in Twig templates via
+`{{ contao.request_token }}`
+{{% /notice %}}
+
+
+## Requiring Contao CSRF for Symfony form submits
+
+If you want to use Symfony Forms in a controller or in a custom service, you have to use the Contao CSRF configuration so that 
+the request is not blocked.
+
+If you have a Contao controller extended from `AbstractFrontendModuleController`, `AbstractContentElementController` 
+or Contao's `AbstractController`, you can simply use `$this->getCsrfFormOptions()` and pass them to the options array:
+
+```php
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\Twig\FragmentTemplate;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class MyCustomController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        $formBuilder = $this->createFormBuilder(options: $this->getCsrfFormOptions());
+        // ....
+    }
+}
+```
+
+Otherwise you need the `FormFactoryInterface`, the `ContaoCsrfTokenManager` service  and the `contao.csrf_token_name` parameter
+from the container:
+
+```php
+use Contao\CoreBundle\Csrf\ContaoCsrfTokenManager;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\Form\FormBuilderInterface
+use Symfony\Component\Form\FormFactoryInterface;
+
+class MyCustomService
+{
+    public function __construct(
+        private readonly FormFactoryInterface $formFactory,
+        private readonly ContaoCsrfTokenManager $csrfTokenManager,
+        #[Autowire(param: 'contao.csrf_token_name')]
+        private readonly string $csrfTokenName,
+    ){}
+
+    public function getFormBuilder(): FormBuilderInterface
+    {
+        return $this->formFactory->createBuilder(options: [
+            'csrf_field_name' => 'REQUEST_TOKEN',
+            'csrf_token_manager' => $this->csrfTokenManager,
+            'csrf_token_id' => $this->csrfTokenName,
+        ]);
+    }
+}
+```
+
+{{% notice warning %}}
+If you are using Symfony forms to store records that will be shown in the backend or are rendered in the frontend using
+legacy templates, keep in mind that there won't be any input encoding! Without careful treatment, this will result in XSS
+vulnerabilities!
+{{% /notice %}}
 
 
 [OWASP_CSRF]: https://owasp.org/www-community/attacks/csrf

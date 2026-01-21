@@ -1,154 +1,171 @@
 ---
-title: 'Schedule management'
-description: 'The event management is a separate module in the backend called "Events", which you can find in the group "Contents".'
+title: 'Calendar management'
+description: 'The calendar management is a separate module in the back end called "Events", which you can find in the 
+group "Contents".'
 aliases:
     - /en/core-extensions/calendar/calendar-management/
 weight: 10
 ---
 
-{{% notice warning %}}
-This article is machine translated.
-{{% /notice %}}
+The event management is a separate module in the back end called "Events", which you can find in the "Content" group. 
+You can create multiple calendars there, which in turn contain the individual appointments or events. By using multiple 
+calendars, a categorization of the entries is possible.
 
-The event management is a separate module in the backend called "Events", which you can find in the group "Contents". There you can create several calendars, which contain the individual appointments or events. By using several calendars, a categorization of the entries is possible.
 
 ## Calendar
 
-Archives are used to group and/or categorize calendars. Each archive can refer to a specific language or topic.
+Archives are used to group and/or categorize calendars. Each archive can be related to a specific language or topic.
 
-To create a new calendar, click ![Create a new calendar](/de/icons/new.svg?classes=icon "Einen neuen Kalender erstellen") **New**.
+To create a new calendar, click 
+![Create a new calendar]({{% asset "icons/new.svg" %}}?classes=icon "Create a new calendar") **New**.
 
-### Title and forwarding
 
-**Title:** The title of a calendar is used in the backend overview.
+### Title and redirect page
 
-**Forwarding page**: Here you can define to which page a visitor is forwarded when clicking on an event. This target page should contain the module "Eventleser" to display the complete article.
+**Title:** The title of a calendar is used in the back end overview.
+
+**Redirect page***: Here you define which page a visitor is redirected to when clicking on an event. This landing page 
+should contain the Event Reader module to display the full post.
+
 
 ### Access protection
 
-Just like content elements, calendars can also be protected. The events of the calendar are then only shown to registered members.
+Just like content elements, calendars can also be protected. The events of the calendar are then only shown to 
+registered members.
 
-**Protect archive:** Here you activate the access protection.
+**Protect calendar:** Here you activate the access protection.
 
-**Allowed member groups:** Here you define which member groups should have access to the calendar after logging in to the frontend.
+**Allowed member groups:** Here you define which member groups should have access to the calendar after logging in to 
+the front end.
+
 
 ### Comments
 
-You already know the Contao comment function from the "News/Blog" extension or the content element with the same name [(comments)](/en/article-management/content-elements/#comments). It is also available for calendars and events.
+You already know the Contao comment function from the "News/Blog" extension or the include element with the same name 
+[(comments)](/en/article-management/content-elements/include-elements/#comments). It is also available for calendars and 
+events.
 
 **Enable comments:** Here you activate the comment function for the calendar.
 
-**Notification on:** Here you can specify whether the system administrator, the author of a post or both are notified when new comments are made.
+**Notify:** Here you can specify whether the system administrator, the author of a post or both are notified when new 
+comments are made.
 
-**Sorting:** Here you define the order of the comments.
+**Sort order:** Here you define the order of the comments.
 
-**Comments per page:** Here you can set the number of comments per page. Contao automatically creates a page break when it is needed.
+**Comments per page:** Here you can set the number of comments per page. Contao automatically creates a page break when 
+it is needed.
 
-**Moderate comments:** If you select this option, comments will not appear on the website immediately, but will appear after you have shared them in the backend.
+**Moderate comments:** If you select this option, comments will not appear on the website immediately, but will appear 
+after you have shared them in the back end.
 
-**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://de.wikipedia.org/wiki/BBCode) to format their comments. The following tags are supported:
+**Allow BBCode:** If you select this option, your visitors can use [BBCode](https://en.wikipedia.org/wiki/BBCode) to 
+format their comments. The following tags are supported:
 
-| Day | Declaration |
-| --- | ----------- |
-| `[b][/b]` | Boldface |
-| `[i][/i]` | Italics |
-| `[u][/u]` | Underlined |
-| `[img][/img]` | Insert image |
-| `[code][/code]` | Insert program code |
-| `[color=#f00][/color]` | Coloured text |
-| `[quote][/quote]` | Insert quote |
-| `[quote=Tim][/quote]` | Insert quote with mention of the author |
-| `[url][/url]` | Insert link |
-| `[url=http://example.com][/url]` | Insert link with link title |
-| `[email][email]` | Add an e-mail address |
-| `[email=info@example.com][/email]` | Insert e-mail address with title |
+| Day                                | Declaration                               |
+|------------------------------------|-------------------------------------------|
+| `[b][/b]`                          | Boldface                                  |
+| `[i][/i]`                          | Italics                                   |
+| `[u][/u]`                          | Underlined                                |
+| `[img][/img]`                      | Insert image                              |
+| `[code][/code]`                    | Insert program code                       |
+| `[color=#f00][/color]`             | Coloured text                             |
+| `[quote][/quote]`                  | Insert quote                              |
+| `[quote=Tim][/quote]`              | Insert quote with mention of the author   |
+| `[url][/url]`                      | Insert link                               |
+| `[url=http://example.com][/url]`   | Insert link with link title               |
+| `[email][email]`                   | Add an e-mail address                     |
+| `[email=info@example.com][/email]` | Insert e-mail address with title          |
 
-**Login required for commenting:** If you select this option, only logged in members can add comments. However, comments already submitted will still be visible to all visitors of the website.
+**Require login to comment:** If you select this option, only logged in members can add comments. However, comments 
+already submitted will still be visible to all visitors of the website.
 
-**Disable spam protection:** By default, visitors are required to answer a security question when creating comments to prevent the commenting feature from being misused for spam purposes. However, if you want to allow only logged in members to comment, you can disable the security question here. Since Contao 4.4, this question is only "displayed" to spambots.
+**Disable spam protection:** By default, visitors are required to answer a security question when creating comments to 
+prevent the commenting feature from being misused for spam purposes. However, if you want to allow only logged in 
+members to comment, you can disable the security question here. Since Contao 4.4, this question is only "displayed" to 
+spambots.
+
 
 ## RSS feeds
 
-Each calendar can be exported as RSS feed if desired. RSS feeds are XML files containing your contributions, which can be subscribed to with an RSS reader and integrated into another website, for example.
+Each calendar can be exported as RSS feed if desired. RSS feeds are XML files containing your contributions, which can 
+be subscribed to with an RSS reader and integrated into another website, for example.
 
-The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the header of the page. The "header" is not the header of your page layout, but the `<head>` tag of the HTML source code.
+The feeds can be integrated via the [page layout](/en/layout/theme-manager/manage-page-layouts/#rss-atom-feeds) in the 
+header of the page. The "header" is not the header of your page layout, but the `<head>` tag of the HTML source code.
 
-Furthermore, the XML file can also be opened directly in the browser.
+To create a new feed click on ![Manage calendar feeds]({{% asset "icons/rss.svg" %}}?classes=icon "Manage calendar feeds") 
+**RSS feeds** and then click on ![Create a new feed]({{% asset "icons/new.svg" %}}?classes=icon "Create a new feed") **New**.
 
-The URL is:
-
-`www.example.com/share/feed-alias.xml`
-
-**The XML file of the feed consists of the following information:**
-
-```rss
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Feed-Titel</title>
-        <description>Feed-Beschreibung</description>
-        <link>https://www.domain.de/</link>
-        <language>Feed-Sprache</language>
-        <pubDate>…</pubDate>
-        <generator>Contao Open Source CMS</generator>
-        <atom:link href="https://www.domain.de/share/feed-alias.xml" rel="self" type="application/rss+xml" />
-        <item>
-            <title>Titel der Nachricht</title>
-            <description><![CDATA[<p>Beschreibung der Nachricht.</p>]]></description>
-            <link>https://www.domain.de/veranstaltung/alias-der-nachricht.html</link>
-            <pubDate>…</pubDate>
-            <guid>https://www.domain.de/veranstaltung/alias-der-nachricht.html</guid>
-        </item>
-        …
-     </channel>
-</rss>
-```
-
-To create a new feed click on ![Manage RSS feeds](/de/icons/rss.svg?classes=icon "RSS-Feeds verwalten") **RSS feeds** and then click on ![Create a new feed](/de/icons/new.svg?classes=icon "Einen neuen Feed erstellen") **New**.
 
 ### Title and language
 
 **Title:** The title is output as a feed title in the XML file.
 
-**Feed Alias:** The alias of a feed is used as the file name.
+**Feed alias:** The alias of a feed is used as the file name.
 
 **Feed language:** Here you can enter the language of the [feed](http://www.rssboard.org/rss-language-codes#table).
 
-### Calendar
+
+### Calendars
 
 **Calendars:** Here you define which calendars are included in the feed.
+
 
 ### Feed settings
 
 **Feed format:** Here you define the format of the feed. Contao supports RSS 2.0 and Atom, the two most popular formats.
 
-**Export settings:** Here you can specify whether only the teaser texts of the posts or the complete posts are exported as feed.
+**Export settings:** Here you can specify whether only the teaser texts of the posts or the complete posts are exported 
+as feed.
 
-**Maximum number of posts:** Here you can limit the number of posts in the feed. Usually about 25 posts per feed are sufficient. Most of the time only the first three to five are actually used anyway.
+**Maximum number of items:** Here you can limit the number of posts in the feed. Usually about 25 posts per feed are 
+sufficient. Most of the time only the first three to five are actually used anyway.
 
-**Base URL:** The base URL is especially important in multi-domain operation if you run several websites with one Contao installation. To make sure that the feed links to the correct domain, you can enter it here.
+**Base URL:** The base URL is especially important in multi-domain operation if you run several websites with one 
+Contao installation. To make sure that the feed links to the correct domain, you can enter it here.
 
 **Feed description:** Here you can enter a description of the feed.
 
+
+### Image settings
+
+**Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
+
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
+
+
 ## Events
 
-This section explains how to create an event. Events are always sorted by date, so there are no icons to change the order.
+This section explains how to create an event. Events are always sorted by date, so there are no icons to change the 
+order.
 
 The events consist of the event settings ("Event list") and their contents ("Event reader").
 
-To create a new event, click on the desired archive ![Edit Calendar](/de/icons/edit.svg?classes=icon "Kalender bearbeiten") and then on![Create a new event](/de/icons/new.svg?classes=icon "Ein neues Event erstellen") **New**.
+To create a new event, click on the desired archive ![Edit Calendar]({{% asset "icons/edit.svg" %}}?classes=icon "Edit Calendar")
+or ![Edit Calendar]({{% asset "icons/children.svg" %}}?classes=icon "Edit Calendar")
+and then on![Create a new event]({{% asset "icons/new.svg" %}}?classes=icon "Create a new event") **New**.
+
 
 ### Title and author
 
-**Titles:** Here you can enter the title of the event.
+**Title:** Here you can enter the title of the event.
 
-**Event Alias:** The alias of an event is a unique and meaningful reference that you can use to call it up in your browser.
+**Featured event:** Here you can display the event in a list of featured events.
+
+**Event Alias:** The alias of an event is a unique and meaningful reference that you can use to call it up in your 
+browser.
 
 **Author:** Here you can change the author of the event.
 
+
 ### Date and time
 
-**Add time:** If you select this option, you can add a time to the event. Otherwise, Contao assumes that the event will last a whole day.
+**Add time:** If you select this option, you can add a time to the event. Otherwise, Contao assumes that the event will 
+last a whole day.
 
 **Start time:** Here you enter the start time of the event.
 
@@ -156,106 +173,148 @@ To create a new event, click on the desired archive ![Edit Calendar](/de/icons/e
 
 **Start date**: Here you enter the start date of the event.
 
-**End date:** Here you enter the end date of the event. If you do not fill in this field, Contao automatically assumes that the event will last one day.
+**End date:** Here you enter the end date of the event. If you do not fill in this field, Contao automatically assumes 
+that the event will last one day.
+
+
+### Redirect target
+
+The redirection destination determines to which page a visitor is redirected when clicking on an event, usually the page 
+on which the front end module "Eventleser" is integrated to display the complete event.
+
+**Redirect target:** Here you can set the forwarding destination.
+
+| Redirect target                   | Explanation                                                                                                                                   |
+|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Use default <sup>1</sup>          | You will be redirected to the page you specified in the archive settings. On this page the front end module "news reader" should be included. |
+| Page <sup>2</sup>                 | The redirection is to a specific page in the page structure.                                                                                  |
+| Article <sup>3</sup>              | The redirection is to a specific article.                                                                                                     |
+| Custom&nbsp;URL&nbsp;<sup>4</sup> | The redirection is to an individual URL.                                                                                                      |
+
+**Link text:** Here you can overwrite the standard text of the "Read more..." link. <sup>1</sup> <sup>2</sup> 
+<sup>3</sup> <sup>4</sup>
+
+{{< version-tag "5.3" >}} **Canonical URL:** Here you can define an individual canonical URL such as 
+https://www.example.com/. <sup>1</sup>
+
+**Redirect page**: Here you can select the destination page from the page structure. <sup>2</sup>
+
+**Article:** Here you select the destination article. <sup>3</sup>
+
+**Link target:** Here you enter the URL of the external target page. <sup>4</sup>
+
+**Open in a new window:** Here you can determine whether the external target page is opened in a new browser window or 
+not. <sup>4</sup>
+
 
 ### Metadata
 
-{{< version "4.7" >}}
+**Meta title:** Here you can enter an individual meta-title to overwrite the default page title.
 
-**Meta-title:** Here you can enter an individual meta-title to overwrite the default page title.
+**Output in source code:**
+```html
+<title>Page title</title>
+```
+
+**Robots tag:** The robots tag defines how search engines treat a page. By default, events inherit the robots tag setting from the page that contains the "event reader" module. If necessary, the robots tag can be adjusted per event:
+
+- *Default (-):* The robots tag setting from the page with the "event reader" module is used
+- *index:* add the page to the search index
+- *follow:* follow the links on the page
+- *noindex:* do not include the page in the search index
+- *nofollow:* do not follow the links on the page
+
+With *index,follow*, search engines can include the event in the search index. With *noindex,nofollow*, search engines are instructed to exclude the event from the search index.
+
+**Output in source code:**
+```html
+<meta name="robots" content="index,follow">
+```
 
 **Meta description**: Here you can enter an individual meta description to override the default page description.
 
-### Subheading and teaser {#subheading-and-teaser}
+**Output in source code:**
+```html
+<meta name="description" content="Description of the page (between 150 and 300 characters).">
+```
 
-**Venue:** Here you can enter a venue for your event.
+**Google search results preview:** Here you can preview the metadata in the Google search results. Other search engines 
+might show longer texts or crop at a different position.
 
-**address:** Here you can enter the address of the venue.
+![Google search results preview]({{% asset "images/manual/layout/site-structure/en/google-search-results-preview.png" %}}?classes=shadow)
 
-**Teasertext:** Here you can enter a short summary of the event, which will be displayed e.g. with the module "Event list", followed by a read more link.
+
+### Event details
+
+**Location name:** Here you can enter the name of the event location.
+
+**Location address:** Here you can enter the address of the event location.
+
+**Event teaser:** Here you can enter a short summary of the event, which will be displayed e.g. with the module 
+"Event list", followed by a read more link.
+
 
 ### Image settings
 
 **Add an image:** You can add an image to your post if you wish.
 
-**source file:** Here you select the image to be inserted. If you have not yet transferred the image to the server, you can do so directly in the pop-up window without leaving the input mask.
+**Source file:** Here you select the image to be inserted. If you have not yet transferred the image to the server, you
+can do so directly in the pop-up window without leaving the input mask.
 
-![Add an image to a post](/de/core-extensions/calendar/images/de/einem-beitrag-ein-bild-hinzufuegen.png?classes=shadow)
+**Full-size view/new window:** If this option is selected, the image will be opened in its original size when clicked.
+This option is not available for linked images.
+
+![Add an image to a post]({{% asset "images/manual/core-extensions/calendar/en/add-an-image-to-a-post.png" %}}?classes=shadow)
 
 **Image size:** Here you can specify the desired image size. You can choose between the following scaling modes:
 
-| Relative format |  |
-| --------------- | --- |
-| Proportionally | The longer side of the image is adapted to the given dimensions and the image is proportionally reduced. |
-| Fit to frame | The shorter side of the image is adjusted to the given dimensions and the image is proportionally reduced. |
+| Custom dimensions               |                                                                                                                     |
+|:--------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| Crop&nbsp;(important&nbsp;part) | Preserves the important part of an image as specified in the file manager. If necessary, the image will be cropped. |
+| Proportional                    | The longer side of the image is adjusted to the given dimensions and the image is resized proportionally.           |
+| Fit&nbsp;the&nbsp;box           | The shorter side of the image is adjusted to the given dimensions and the image is resized proportionally.          |
 
-| Exact format |  |
-| ------------ | --- |
-| Important part | Preserves the important part of the image as specified in the file manager. |
-| Left / Top | Preserves the left part of a landscape image and the upper part of a portrait image. |
-| Middle / Top | Preserves the central part of a landscape image and the upper part of a portrait image. |
-| Right / Top | Preserves the right part of a landscape image and the upper part of a portrait image. |
-| Left / Center | Preserves the left part of a landscape image and the center part of a portrait image. |
-| Center / Center | Preserves the central part of a landscape image and the central part of a portrait image. |
-| Right / Middle | Preserves the right part of a landscape image and the center part of a portrait image. |
-| Links / Bottom | Preserves the left part of a landscape image and the lower part of a portrait image. |
-| Center / Bottom | Preserves the central part of a landscape image and the lower part of a portrait image. |
-| Right / Bottom | Preserves the right part of a landscape image and the lower part of a portrait image. |
+**Image Alignment:** Here you set the alignment of the image. If it is inserted 
+![above]({{% asset "icons/above.svg" %}}?classes=icon) **above**, ![under]({{% asset "icons/below.svg" %}}?classes=icon) **below**,
+![left-justified]({{% asset "icons/left.svg" %}}?classes=icon) **left-aligned** or ![right-justified]({{% asset "icons/right.svg" %}}?classes=icon) 
+**right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
 
-**Image Alignment:** Here you set the alignment of the image. If it is inserted![above](/de/icons/above.svg?classes=icon) **above**,![under](/de/icons/below.svg?classes=icon) **below**,![left-justified](/de/icons/left.svg?classes=icon) **left-aligned** or![right-justified](/de/icons/right.svg?classes=icon) **right-aligned**. When **left-** or **right-aligned**, the text **flows around** the image (as symbolized by the icon).
+**Overwrite metadata:**  Here you can overwrite the metadata from the file manager.
 
-**Image distance:** Here you can define the distance between the image and the text. The order of the input fields is clockwise "top, right, bottom, left".
-
-**Large View/New Window:** If this option is selected, the image will be opened in its original size when clicked. This option is not available for linked images.
-
-**Override metadata:**  Here you can overwrite the metadata from the file manager.
-
-**Alternative text:** Here you can enter an alternative text for the image *(alt attribute)*. Accessible web pages should contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternative texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
+**Alternate text:** Here you can enter an alternate text for the image *(alt attribute)*. Accessible web pages should 
+contain a short description for each object, which is displayed if the object itself cannot be displayed. Alternate 
+texts are also evaluated by search engines and are therefore an important tool for onpage optimization.
 
 **Image title:** Here you can enter the title of the image *(title attribute)*.
 
-**Image link address:** If you click on a linked image, you will be redirected to the specified destination page (corresponds to an image link). Please note that for a linked image a lightbox large view is no longer possible.
+**Image link target:** If you click on a linked image, you will be redirected to the specified destination page 
+(corresponds to an image link). Please note that for a linked image a lightbox large view is no longer possible.
 
-**caption:** Here you can enter a caption.
+**Image caption:** Here you can enter a caption.
 
-### Repetitions
 
-If necessary, you can repeat an event at certain intervals. Possible entries are, for example, every four days, every two weeks, every five months or every year.
+### Recurrence settings
+
+If necessary, you can repeat an event at certain intervals. Possible entries are, for example, every four days, every 
+two weeks, every five months or every year.
 
 **Repeat event:** Here you activate the repeat function.
 
-**Interval:** Here you can define the intervals at which the event is repeated.
+**Interval:** Here you can define the intervals day(s), week(s), month(s) and year(s) at which the event is repeated.
 
-**Repetitions:** If you enter a value greater than 0 here, the event will not be displayed after the specified number of repetitions.
+**Recurrences:** If you enter a value greater than 0 here, the event will not be displayed after the specified number 
+of repetitions.
 
-### Annexes
 
-Enclosures, also called "Enclosures" in the context of RSS feeds, are files that are linked to an event; these files are both exported in the RSS feed and offered for download on the website.
+### Enclosures
+
+Enclosures, also called "Enclosures" in the context of RSS feeds, are files that are linked to an event; these files 
+are both exported in the RSS feed and offered for download on the website.
 
 **Add Enclosures:** Here you can activate the adding of attachments.
 
-**Snap to:** Here you select the files you want to link to the event.
+**Enclosures:** Here you select the files you want to link to the event.
 
-### Forwarding destination
-
-The redirection destination determines to which page a visitor is redirected when clicking on an event, usually the page on which the frontend module "Eventleser" is integrated to display the complete event.
-
-**Forwarding destination:** Here you can set the forwarding destination.
-
-Forwarding **page**: Here you can select the destination page from the page structure.
-
-**Articles:** Here you select the destination article.
-
-**Link address:** Here you enter the URL of the external target page.
-
-**Open in a new window:** Here you can determine whether the external target page is opened in a new browser window or not.
-
-| Forwarding destination | Explanation |
-| ---------------------- | ----------- |
-| Standard | You will be redirected to the page you specified in the archive settings. On this page the frontend module "news reader" should be included. |
-| Page | The redirection is to a specific page in the page structure. |
-| Article | The redirection is to a specific article. |
-| Individual URL | The redirection is to an individual URL. |
 
 ### Expert Settings
 
@@ -263,18 +322,31 @@ Forwarding **page**: Here you can select the destination page from the page stru
 
 **Disable comments:** Here you deactivate the comment function for an event.
 
-### Publication {#publication}
+{{< version-tag "5.6" >}} **Search indexer:** Here you can specify whether the event should be included or excluded from the internal [website search](/en/layout/module-management/website-search/). By default, events inherit the search indexer setting from the page that contains the "event reader" module. If necessary, this behavior can be adjusted per event:
 
-As long as an event is not published, it is not displayed in the frontend. You already know this behaviour from pages and articles. In addition to the manual publication you have the possibility to activate events automatically at a certain date.
+- **Default:** Indexing according to the search indexer setting from the page with the "event reader" module. If no selection has been made there (-), indexing takes place according to the setting of the metadata robots tag.
+- **Always index:** Include the event, even if it has the robots tag *noindex* or the page with the "event reader" module has a different setting.
+- **Never index:** Exclude the event, even if it has the robots tag *index* or the page with the "event reader" module has a different setting.
+
+
+### Publish settings
+
+As long as an event is not published, it is not displayed in the front end. You already know this behaviour from pages 
+and articles. In addition to the manual publication you have the possibility to activate events automatically at a 
+certain date.
 
 **Publish event:** Here you can publish the event.
 
-**Display from:** Here you activate the event on a specific date.
+**Show from:** Here you activate the event on a specific date.
 
 **Show until:** Here you deactivate the event on a certain date.
 
-## Content for Events {#content-for-events}
 
-After we have made the settings for the event, we can add content elements for the output in the "event reader", click on the desired event![Edit Event](/de/icons/edit.svg?classes=icon "Event bearbeiten") and then on ![Create a new content element](/de/icons/new.svg?classes=icon "Ein neues Inhaltselement erstellen") **New**.
+## Content for events
+
+After we have made the settings for the event, we can add content elements for the output in the "event reader", 
+click on the desired event ![Edit event]({{% asset "icons/edit.svg" %}}?classes=icon "Edit event") or
+![Edit event]({{% asset "icons/children.svg" %}}?classes=icon "Edit event") and then on 
+![Create a new content element]({{% asset "icons/new.svg" %}}?classes=icon "Create a new content element") **New**.
 
 In the events, all [content elements](/en/article-management/content-elements/) of Contao are available to you.

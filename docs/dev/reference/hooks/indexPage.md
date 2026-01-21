@@ -34,11 +34,9 @@ and does not expect a return value.
 // src/EventListener/IndexPageListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("indexPage")
- */
+#[AsHook('indexPage')]
 class IndexPageListener
 {
     public function __invoke(string $content, array $pageData, array &$indexData): void

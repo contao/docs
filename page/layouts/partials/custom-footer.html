@@ -1,18 +1,70 @@
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script type="text/javascript">(function () {
-    var search = docsearch({
-        apiKey: '532603b4ad01695b68a0f6048dc8ea46',
+<script src="https://contao.org/files/js/network.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script>(function () {
+    const algoliaSearchbox = document.createElement('div');
+    algoliaSearchbox.classList.add('algolia-searchbox');
+
+    document.querySelector('#R-header-wrapper .searchbox').replaceWith(algoliaSearchbox);
+
+    const config = {
         indexName: 'contao',
-        inputSelector: '#algolia-search',
-        algoliaOptions: { 'facetFilters': ["language:{{ .Page.Language | default "en" }}"] },
-        debug: true // Set debug to true if you want to inspect the dropdown
-    });
+        apiKey: 'd7b61512c188a947014920ea920def01',
+        container: algoliaSearchbox,
+        appId: 'KDZKB9K935',
+        searchParameters: { 'facetFilters': [['manualtype:dev', 'manualtype:manual_{{ .Page.Language | default "en" }}']] },
+        placeholder: '{{T "Search-placeholder"}}',
+        translations: {
+            button: {
+                buttonText: '{{T "Search-placeholder"}}',
+                buttonAriaLabel: '{{T "Search-placeholder"}}',
+            }
+        }
+    };
+
+    let executeClick = false;
+
     if (URLSearchParams !== undefined) {
-        var params = new URLSearchParams(location.search);
+        const params = new URLSearchParams(location.search);
+
         if (params.has('search')) {
-            search.autocomplete.autocomplete.setVal(params.get('search'));
-            search.autocomplete.autocomplete.open();
+            config.initialQuery = params.get('search');
+            executeClick = true;
         }
     }
+
+    docsearch(config);
+
+    if (executeClick) {
+        const button = document.querySelector('.DocSearch-Button');
+
+        if (null !== button) {
+            button.click();
+        }
+    }
+
+    // Open images in lightbox
+    document.querySelectorAll('a[href*=".png"], a[href*=".jpg"]').forEach((a) => {
+        a.setAttribute('data-featherlight', 'image');
+    });
+
+    // Set dark mode for DocSearch
+    const getThemeMode = () => {
+        const variant = document.documentElement.dataset.rThemeVariant;
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if ('contao-dark' === variant || ('auto' === variant && prefersDark)) {
+            return 'dark';
+        }
+
+        return 'light';
+    };
+
+    const setThemeMode = () => {
+        document.documentElement.setAttribute('data-theme', getThemeMode());
+    };
+
+    document.addEventListener('DOMContentLoaded', setThemeMode);
+    document.addEventListener('themeVariantLoaded', setThemeMode);
 })();
 </script>
+{{ partial "json-ld" . }}

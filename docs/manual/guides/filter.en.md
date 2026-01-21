@@ -23,7 +23,7 @@ can be influenced specifically via these categories.
 For our request you can use the extension [codefog/contao-elements-filter](https://extensions.contao.org/?q=filter&pages=1&p=codefog%2Fcontao-elements-filter) for example. You can find more information 
 on the author's [GitHub](https://github.com/codefog/contao-elements-filter) page.
 
-{{% notice info %}}
+{{% notice note %}}
 <strong>Pro:</strong>  
 A Contao [extension](https://extensions.contao.org/) performs a special task, is mostly free of charge and can be easily 
 installed. You do not have to worry about the actual technical implementation. The editing for you or other editors is 
@@ -40,7 +40,7 @@ Contao [community](https://community.contao.org/en/) too.
 ## Without extension
 
 Known JavaScript solutions for our requirements are e.g. [Isotopes](https://isotope.metafizzy.co/) or 
-[MixItUp](https://www.kunkalabs.com/mixitup/). In case of a commercial use the purchase of licenses is necessary. 
+[MixItUp](https://github.com/patrickkunka/mixitup). In case of a commercial use the purchase of licenses is necessary. 
 For our example we use the open source solution [Filterizr](https://yiotis.net/filterizr/#/).
 
 
@@ -203,10 +203,10 @@ display, you could use the Contao [Accordeon elements](/en/article-management/co
 »Envelope start« and »Envelope end« for other purposes. In the element »Envelope start« you then use the CSS class 
 »filter-container«.<br><br>
 Furthermore, for simplicity's sake, we have entered the JavaScript references directly in the content element. 
-Alternatively, you could also store them as [JavaScript Asset](/en/layout/templates/template-assets/) in the template.
+Alternatively, you could also store them as [JavaScript Asset](/en/layout/templates/php/template-assets/) in the template.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 <strong>Pro:</strong>  
 You don't have to rely on extensions and you have complete control over the implementation and maintenance. For Contao 
 updates, you might only have to consider possible changes to the core templates.
@@ -225,7 +225,7 @@ HTML5 data attributes, however, we will create a new, additional input field for
 extend the Contao [Data Container Array](https://docs.contao.org/dev/reference/dca/) (DCA) for this purpose.
 
 In the developer documentation you can find an [example](https://docs.contao.org/dev/getting-started/dca/) of Contao 
-DCA manipulation. The Contao file »[tl_content.php](https://github.com/contao/core-bundle/blob/master/src/Resources/contao/dca/tl_content.php)« and the corresponding database table `tl_content` is responsible for the content elements:
+DCA manipulation. The Contao file »[tl_content.php](https://github.com/contao/contao/blob/4.13/core-bundle/src/Resources/contao/dca/tl_content.php)« and the corresponding database table `tl_content` is responsible for the content elements:
 
 If not already there, create a new directory »contao/dca« in your Contao root directory with a file »tl_content.php«:
 
@@ -316,7 +316,7 @@ two template files »`ce_text_filter.html5`« and »`block_searchable_filter.htm
 </div>
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 <strong>Pro:</strong>  
 You have complete control over the implementation and maintenance. You and your editors can easily enter the required 
 information in input fields.<br><br>
@@ -335,7 +335,7 @@ and frontend modules with convenient input and output in Contao.
 
 If you are wondering why another extension is presented in this context:
 
-{{% notice info %}}
+{{% notice note %}}
 <strong>Pro:</strong>  
 You use three different extensions from different authors e.g. a »frontend filter«, an alternative »content slider« and 
 your favourite »photo gallery«. The more extensions you use, the more work you might have to do for future Contao updates.<br><br>
@@ -428,7 +428,7 @@ With the »RSCE« extension you could also create your own
 instead of the previous content elements of type »HTML«.
 {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
 The extension »[MetaModels](/en/extensions/metamodels/)« follows a similar approach and does not confront you with a direct Contao 
 »DCA configuration«. However, this extension goes far beyond the requirements that are necessary here. The learning 
 curve (see [documentation](https://metamodels.readthedocs.io/de/latest/)) is accordingly higher.

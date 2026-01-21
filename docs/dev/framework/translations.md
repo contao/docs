@@ -11,7 +11,8 @@ the [history][ContaoHistory]), it provides its own translation framework. While
 you are free to utilize Symfony's [translation component][SymfonyTranslations],
 you will still have to provide translations within Contao's framework for certain
 aspects, mostly in the back end (e.g. translations for managing your own data records 
-via the [Data Container Array][dca]).
+via the [Data Container Array][dca]). {{< version-tag "5.3" >}} Though since Contao **5.3** you can also provide these
+Contao translations via the Symfony translation component (see [below]({{% relref "#symfony-translations" %}})).
 
 Translations for Contao are managed within the `contao/languages/` folder of your
 application, or the `Resources/contao/languages/` folder of your extension respectively.
@@ -28,7 +29,7 @@ for each language has to be either the ISO 639 language code (e.g. `de` for _Ger
 or the ISO 15897 POSIX locale for regions (e.g. `de_AT` for _German (Austria)_).
 No further configuration is necessary, other than the translations being present.
 
-{{% notice note %}}
+{{% notice info %}}
 In the site structure, the _IETF Language Tag_ format is used for the site's language 
 in the website root (e.g. `de-AT`).
 {{% /notice %}}
@@ -40,9 +41,10 @@ your own application:
 ```yaml
 # config/config.yaml
 contao:
-    locales:
-        - en
-        - de_AT
+    intl:
+        enabled_locales:
+            - en
+            - de_AT
 ```
 
 This example configuration will reduce the available back end languages to two languages
@@ -50,7 +52,19 @@ and will also make _German (Austria)_ available as a back end language, which it
 would not be by default. Keep in mind that the Contao Core only provides the translations 
 for specific languages for the front and back end.
 
-{{% notice note %}}
+```yaml
+# config/config.yaml
+contao:
+    intl:
+        enabled_locales:
+            - '-de'
+            - '+de_AT'
+```
+
+This example configuration will remove the available back end language _German_ and
+add _German (Austria)_ while keeping the rest of the locales untouched.
+
+{{% notice info %}}
 _English_ (`en`) will always serve as the fallback in all cases, if a translation 
 string is not available in the current language.
 {{% /notice %}}
@@ -221,7 +235,7 @@ You can load translations by using the following legacy function:
 
 The first parameter is the domain ("language file") while the second parameter is the language you want to load.
 
-Starting with Contao **4.5** you can also use Symfony's Translator service instead:
+However, it is recommended to use Symfony's Translator service instead:
 
 ```php
 // src/Controller/ExampleController.php
@@ -231,9 +245,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * @Route("/app/test", name=ExampleController::class)
- */
+#[Route('/app/test', name: ExampleController::class)]
 class ExampleController
 {
     private $translator;
@@ -263,7 +275,7 @@ The `trans` method of the translator is available within Contao's PHP templates:
 <?= $this->trans('MSC.goBack') ?>
 ```
 
-_Note:_ in this example the second and third argument was ommitted and the default 
+_Note:_ in this example the second and third argument was omitted and the default 
 values `[]` and `contao_default` are used. The following example shows how to access
 a translation from domain other than `default`:
 
@@ -276,15 +288,48 @@ a translation from domain other than `default`:
 ### Translations within Twig Templates
 
 Contao's translations can also be accessed just as any other Symfony translation
-using Twig tags and filters:
+using Twig tags and filters. For more details refer to the
+[translations section](/framework/templates/creating-templates#translations) of
+the Contao Twig documentation.
 
 ```twig
-{# templates/my_template.html5.twig #}
 {{ 'MSC.goBack'|trans({}, 'contao_default') }}
 ```
 
-See Symfony's documentation on [translations in templates](https://symfony.com/doc/current/translation/templates.html)
-for more details.
+
+## Symfony Translations
+
+{{< version "5.3" >}}
+
+Since Contao **5.3** you can also populate Contao translations using Symfony's [translation component][SymfonyTranslations].
+The Contao translation domain [explained above]({{% relref "translations#domains" %}}) translates directly to the 
+Symfony translation domain you have to use - except prefixed with `contao_`. So for example if you want to customize
+the `MSC.goBack` translation that Contao provides under the `default` translation domain, the Symfony translation domain
+will be `contao_default` - and thus you can adjust the translation via `translations/contao_default.en.yaml` for example.
+
+```yaml
+# translations/contao_default.en.yaml
+MSC:
+    goBack: Return back
+```
+
+Likewise, when you want to provide translation labels for the fields of your own DCA, e.g. `tl_foobar`, the domain will
+again be prefixed by `contao_`, so `contao_tl_foobar` in this case.
+
+```yaml
+# translations/contao_tl_foobar.en.yaml
+tl_foobar:
+    new.1: Add a new foobar element 
+    my_legend: My custom fieldset legend
+    my_field:
+        - My custom field title
+        - My custom field description
+```
+
+In all cases the translation _keys_ remain the same as in the regular Contao translation PHP or XLIFF files (within the
+`TL_LANG` superglobal in the former case). So in the previous example what would have been
+`$GLOBALS['TL_LANG']['tl_foobar']['new'][1]` now maps to `tl_foobar.new.1` in the YAML file of the Symfony translation
+(same as in the XLIFF case).
 
 
 [ContaoHistory]: /#history

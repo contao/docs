@@ -18,7 +18,7 @@ Kategorien werden zur Gruppierung von FAQs verwendet. Jede Kategorie kann sich a
 bestimmtes Thema beziehen.
 
 Um eine neue Kategorie anzulegen klicke auf 
-![Eine neue Kategorie anlegen](/de/icons/new.svg?classes=icon "Eine neue Kategorie anlegen") 
+![Eine neue Kategorie anlegen]({{% asset "icons/new.svg" %}}?classes=icon "Eine neue Kategorie anlegen") 
 **Neu**.
 
 
@@ -35,10 +35,10 @@ wird. Die Zielseite sollte das Modul »FAQ-Leser« enthalten, um die Antwort auf
 ### Kommentare
 
 Die Contao-Kommentarfunktion kennst du bereits von der »News/Blog«-Erweiterung bzw. dem gleichnamigen 
-[Inhaltselement (Kommentare)](../../../artikelverwaltung/inhaltselemente/#kommentare). Sie steht auch für FAQs zur 
-Verfügung.
+[Inhaltselement (Kommentare)](../../../artikelverwaltung/inhaltselemente/#kommentare). Sie steht auch für FAQs zur 
+Verfügung.
 
-**Kommentare aktivieren:** Hier aktivierst du die Kommentarfunktion für die Kategorie..
+**Kommentare aktivieren:** Hier aktivierst du die Kommentarfunktion für die Kategorie..
 
 **Benachrichtigung an:** Hier legst du fest, ob bei neuen Kommentaren der Systemadministrator, der Autor einer Frage 
 oder beide benachrichtigt werden.
@@ -52,27 +52,27 @@ automatisch einen Seitenumbruch.
 erst, nachdem du sie im Backend freigegeben hast.
 
 **BBCode erlauben:** Wenn du diese Option wählst, können deine Besucher [BBCode](https://de.wikipedia.org/wiki/BBCode) 
-zur Formatierung ihrer Kommentare verwenden. Folgende Tags werden unterstützt:
+zur Formatierung ihrer Kommentare verwenden. Folgende Tags werden unterstützt:
 
 | Tag                                  | Erklärung                                   |
 |:-------------------------------------|:--------------------------------------------|
 | `[b][/b]`                            | Fettschrift                                 |
 | `[i][/i]`                            | Kursivschrift                               |
 | `[u][/u]`                            | Unterstrichen                               |
-| `[img][/img]`                        | Bild einfügen                               |
-| `[code][/code]`                      | Programmcode einfügen                       |
+| `[img][/img]`                        | Bild einfügen                               |
+| `[code][/code]`                      | Programmcode einfügen                       |
 | `[color=#f00][/color]`               | Farbiger Text                               |
-| `[quote][/quote]`                    | Zitat einfügen                              |
-| `[quote=Tim][/quote]`                | Zitat mit Nennung des Urhebers einfügen     |
-| `[url][/url]`                        | Link einfügen                               |
-| `[url=http://example.com][/url]`     | Link mit Linktitel einfügen                 |
-| `[email][email]`                     | E-Mail-Adresse einfügen                     |
-| `[email=info@example.com][/email]`   | E-Mail-Adresse mit Titel einfügen           |
+| `[quote][/quote]`                    | Zitat einfügen                              |
+| `[quote=Tim][/quote]`                | Zitat mit Nennung des Urhebers einfügen     |
+| `[url][/url]`                        | Link einfügen                               |
+| `[url=http://example.com][/url]`     | Link mit Linktitel einfügen                 |
+| `[email][email]`                     | E-Mail-Adresse einfügen                     |
+| `[email=info@example.com][/email]`   | E-Mail-Adresse mit Titel einfügen           |
 
 **Login zum Kommentieren benötigt:** Wenn du diese Option auswählst, können nur angemeldete Mitglieder Kommentare 
-hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle Besucher der Webseite sichtbar.
+hinzufügen. Die bereits abgegebenen Kommentare sind aber weiterhin für alle Besucher der Webseite sichtbar.
 
-**Spam-Schutz deaktivieren:** Standardmäßig müssen Besucher beim Erstellen von Kommentaren eine Sicherheitsfrage 
+**Spam-Schutz deaktivieren:** Standardmäßig müssen Besucher beim Erstellen von Kommentaren eine Sicherheitsfrage 
 beantworten, damit die Kommentarfunktion nicht zu Spam-Zwecken missbraucht werden kann. Falls du aber ohnehin nur 
 angemeldeten Mitgliedern das Kommentieren erlauben möchtest, kannst du die Sicherheitsfrage hier deaktivieren.
 Seit Contao 4.4 wird diese Frage nur noch den Spambots »angezeigt«.
@@ -82,20 +82,62 @@ Seit Contao 4.4 wird diese Frage nur noch den Spambots »angezeigt«.
 
 In diesem Abschnitt wird dir erklärt, wie du eine Frage anlegst. Die Reihenfolge der Fragen innerhalb einer Kategorie 
 kannst du per Drag-and-Drop mit den entsprechenden 
-Navigationssymbol ![Frage verschieben](/de/icons/drag.svg?classes=icon "Frage verschieben") festlegen.
+Navigationssymbol ![Frage verschieben]({{% asset "icons/drag.svg" %}}?classes=icon "Frage verschieben") festlegen.
 
 Um eine neue Frage anzulegen, klicke auf 
-![Eine neue Frage erstellen](/de/icons/new.svg?classes=icon "Eine neue Frage erstellen") **Neu**.
+![Eine neue Frage erstellen]({{% asset "icons/new.svg" %}}?classes=icon "Eine neue Frage erstellen") **Neu**.
 
 
 ### Titel und Autor
 
 **Frage:** Hier kannst du die Frage eingeben.
 
-**FAQ-Alias:** Der Alias einer Frage ist eine eindeutige und aussagekräftige Referenz, über die du diese in deinem 
+**FAQ-Alias:** Der Alias einer Frage ist eine eindeutige und aussagekräftige Referenz, über die du diese in deinem 
 Browser aufrufen kannst.
 
 **Autor:** Hier kannst du den Autor der Frage ändern.
+
+
+### Metadaten
+
+{{% notice info %}}
+Die Metadaten einzelner FAQ-Seiten können nur angepasst werden, wenn in der FAQ-Kategorie eine Weiterleitungsseite ausgewählt wurde.
+{{% /notice %}}
+
+**Meta-Titel:** Hier kannst du einen individuellen Meta-Titel eingeben, um den Standard-Seitentitel zu überschreiben.
+
+**Ausgabe im Quellcode:**
+```html
+<title>Seitentitel</title>
+```
+
+**Robots-Tag:** Das Robots-Tag legt fest, wie Suchmaschinen eine Seite behandeln. Standardmäßig erben FAQ-Seiten die Robots-Tag-Einstellung von der Seite, die das »FAQ-Leser«-Modul enthält. Bei Bedarf lässt sich der Robots-Tag pro FAQ-Seite anpassen:
+
+- *Standard (-):* Es wird die Robots-Tag-Einstellung von der Seite mit dem »FAQ-Leser«-Modul verwendet
+- *index:* die Seite in den Suchindex aufnehmen
+- *follow:* den Links auf der Seite folgen
+- *noindex:* die Seite nicht in den Suchindex aufnehmen
+- *nofollow:* den Links auf der Seite nicht folgen
+
+Mit *index,follow* können Suchmaschinen die FAQ-Seite in den Suchindex aufnehmen. Mit *noindex,nofollow* werden Suchmaschinen angewiesen, die FAQ-Seite nicht in den Suchindex aufzunehmen.
+
+**Ausgabe im Quellcode:**
+```html
+<meta name="robots" content="index,follow">
+```
+
+**Meta-Beschreibung:** Hier kannst du eine individuelle Meta-Beschreibung eingeben, um die Standard-Seitenbeschreibung 
+zu überschreiben.
+
+**Ausgabe im Quellcode:**
+```html
+<meta name="description" content="Beschreibung der Seite (150 und 300 Zeichen).">
+```
+
+**Google Suchergebnis-Vorschau:** Hier kannst du sehen wie Google die Metadaten in den Suchergebnissen anzeigt. Andere 
+Suchmaschinen zeigen gegebenenfalls längere Texte an oder beschneiden diese an einer anderen Position.
+
+![Google Suchergebnis-Vorschau]({{% asset "images/manual/layout/site-structure/de/google-suchergebnis-vorschau.png" %}}?classes=shadow)
 
 
 ### Antwort
@@ -106,14 +148,14 @@ Text Editor.
 
 ### Bildeinstellungen
 
-**Ein Bild hinzufügen:** Bei Bedarf kannst du dem Beitrag ein Bild hinzufügen.
+**Ein Bild hinzufügen:** Bei Bedarf kannst du dem Beitrag ein Bild hinzufügen.
 
-**Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
+**Quelldatei:** Hier wählst du das einzufügende Bild aus. Wenn du das Bild noch nicht auf den Server übertragen hast, 
 kannst du es direkt im Popup-Fenster nachholen, ohne die Eingabemaske zu verlassen.
 
-![Einer FAQ ein Bild hinzufügen](/de/core-extensions/faq/images/de/einer-faq-ein-bild-hinzufuegen.png?classes=shadow)
+![Einer FAQ ein Bild hinzufügen]({{% asset "images/manual/core-extensions/faq/de/einer-faq-ein-bild-hinzufuegen.png" %}}?classes=shadow)
 
-**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
+**Bildgröße:** Hier kannst du die gewünschte Bildgröße angeben. Dabei kannst du zwischen folgenden Skalierungsmodi 
 auswählen:
 
 | Relatives Format               |                                                                                                                    |
@@ -137,29 +179,29 @@ auswählen:
 | Rechts / Unten    | Erhält den rechten Teil eines Querformat-Bildes und den unteren Teil eines Hochformat-Bildes.      |
 
 **Bildausrichtung:** Hier legst du die Ausrichtung des Bildes fest. Wird es 
-![oberhalb](/de/icons/above.svg?classes=icon) **oberhalb**, 
-![unterhalb](/de/icons/below.svg?classes=icon) **unterhalb**, 
-![linksbündig](/de/icons/left.svg?classes=icon) **linksbündig** oder 
-![rechtsbündig](/de/icons/right.svg?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
+![oberhalb]({{% asset "icons/above.svg" %}}?classes=icon) **oberhalb**, 
+![unterhalb]({{% asset "icons/below.svg" %}}?classes=icon) **unterhalb**, 
+![linksbündig]({{% asset "icons/left.svg" %}}?classes=icon) **linksbündig** oder 
+![rechtsbündig]({{% asset "icons/right.svg" %}}?classes=icon) **rechtsbündig** eingefügt. Bei **links-** oder **rechtsbündig** 
 umfließt der Text das Bild (wie im Icon symbolisiert).
 
 **Bildabstand:** Hier legst du den Abstand des Bilds zum Text fest. Die Reihenfolge der Eingabefelder lautet im 
 Uhrzeigersinn »oben, rechts, unten, links«.
 
 **Großansicht/Neues Fenster:** Ist diese Option gewählt, wird das Bild beim Anklicken in seiner Originalgröße 
-geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
+geöffnet. Diese Option steht bei verlinkten Bildern nicht zur Verfügung.
 
 **Metadaten überschreiben:**  Hier kannst du die Metadaten aus der Dateiverwaltung überschreiben.
 
 **Alternativer Text:** Hier kannst du einen alternativen Text für das Bild eingeben *(alt-Attribut)*. Eine 
-barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die angezeigt wird, wenn das Objekt 
+barrierefreie Webseite sollte für jedes Objekt eine kurze Beschreibung enthalten, die angezeigt wird, wenn das Objekt 
 selbst nicht dargestellt werden kann. Alternative Texte werden außerdem von Suchmaschinen ausgewertet und sind daher 
 ein wichtiges Instrument der Onpage-Optimierung.
 
 **Bildtitel:** Hier kannst du den Titel des Bildes eingeben *(title-Attribut)*.
 
 **Bildlink-Adresse:** Bei einem Klick auf ein verlinktes Bild wirst du direkt zu der angegebenen Zielseite 
-weitergeleitet (entspricht einem Bildlink). Beachte, dass für ein verlinktes Bild keine Lightbox-Großansicht mehr 
+weitergeleitet (entspricht einem Bildlink). Beachte, dass für ein verlinktes Bild keine Lightbox-Großansicht mehr 
 möglich ist.
 
 **Bildunterschrift:** Hier kannst du eine Bildunterschrift eingeben.
@@ -167,17 +209,27 @@ möglich ist.
 
 ### Anlagen
 
-Anlagen sind Dateien, die mit einer FAQ verknüpft sind. Diese Dateien werden im Frontend-Modul »FAQ-Leser« zum 
+Anlagen sind Dateien, die mit einer FAQ verknüpft sind. Diese Dateien werden im Frontend-Modul »FAQ-Leser« zum 
 Download angeboten.
 
-**Anlagen hinzufügen:** Hier aktivierst du das Hinzufügen von Anlagen.
+**Anlagen hinzufügen:** Hier aktivierst du das Hinzufügen von Anlagen.
 
-**Anlangen:** Hier wählst du die Dateien aus, die du mit der FAQ verknüpfen möchtest.
+**Anlangen:** Hier wählst du die Dateien aus, die du mit der FAQ verknüpfen möchtest.
 
 
 ### Experteneinstellungen
 
-**Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für eine Frage.
+**Kommentare deaktivieren:** Hier deaktivierst du die Kommentarfunktion für eine Frage.
+
+{{< version-tag "5.6" >}} **Suchindexierer:** Hier kannst du festlegen, ob die FAQ-Seite bei der internen [Website-Suche](/de/layout/modulverwaltung/website-suche/) einbezogen oder ausgeschlossen werden soll. Standardmäßig erben FAQ-Seiten die Suchindexierer-Einstellung von der Seite, die das »FAQ-Leser«-Modul enthält. Bei Bedarf lässt sich dieses Verhalten pro FAQ-Seite anpassen:
+
+- **Standard (-):** Indizierung gemäß der Suchindexierer-Einstellung von der Seite mit dem »FAQ-Leser«-Modul. Falls dort keine Auswahl getroffen wurde (-), erfolgt die Indizierung gemäß der Einstellung des Metadaten-Robots-Tags.
+- **Immer indizieren:** Die FAQ-Seite einbeziehen, auch wenn sie den Robots-Tag *noindex* hat oder die Seite mit dem »FAQ-Leser«-Modul andere Einstellungen hat.
+- **Niemals indizieren:** Die FAQ-Seite ausschließen, auch wenn sie den Robots-Tag *index* hat oder die Seite mit dem »FAQ-Leser«-Modul andere Einstellungen hat.
+
+{{% notice info %}}
+Die **Suchindexierer**-Einstellung kann nur angepasst werden, wenn in der FAQ-Kategorie eine Weiterleitungsseite ausgewählt wurde.
+{{% /notice %}}
 
 
 ### Veröffentlichung {#veroeffentlichung}

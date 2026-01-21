@@ -1,0 +1,9 @@
+<section class="example">
+    <header>
+        {{ if eq .Site.Language.Lang "en" }}Example{{ else }}Beispiel{{ end }}
+    </header>
+    <div>
+        {{ if len .Params | eq 1 }}<h1>{{ .Get 0 }}</h1>{{ end }}
+        {{ .Inner -}}
+    </div>
+</section>

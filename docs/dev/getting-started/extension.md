@@ -16,7 +16,7 @@ or Contao Managed Edition, writing your own bundle is very similar to writing a
 regular Symfony bundle. To learn more about bundles in general, you can read the 
 [respective Symfony documentation][1] first.
 
-{{% notice note %}}
+{{% notice info %}}
 Within this documentation, the terms _package_, _bundle_ and _extension_ are often
 used interchangably. For Composer, everything is a _package_, while a `symfony-bundle`
 or a `contao-bundle` is a specific type of package. _Contao bundles_ are referred 
@@ -65,7 +65,7 @@ Within the previously created folder, you initialize a new `composer.json`, whic
 you can do with the `composer init` command. During generation, set the package 
 type to `contao-bundle`, as mentioned in the [Your First Extension][2] guide. Also 
 choose the right [SPDX][3] for your license. During the interactive generation you 
-can also already define your  dependencies. At the very least, you should require 
+can also already define your dependencies. At the very least you should require 
 the Contao version, i.e. the version of the `contao/core-bundle` for which you are 
 developing.
 
@@ -80,9 +80,9 @@ $ composer init
 This command will guide you through creating your composer.json config.
 
 Package name (<vendor>/<name>) [user/contao-example-bundle]: somevendor/contao-example-bundle
-Description []: Lorem ipsum dolor sit amet.
-Author [user <user@example.org>, n to skip]: n
-Minimum Stability []:
+Description []:
+Author [User <user@example.com>, n to skip]: n
+Minimum Stability []: 
 Package Type (e.g. library, project, metapackage, composer-plugin) []: contao-bundle
 License []: LGPL-3.0-or-later
 
@@ -90,22 +90,30 @@ Define your dependencies.
 
 Would you like to define your dependencies (require) interactively [yes]? yes
 Search for a package: contao/core-bundle
-Enter the version constraint to require (or leave blank to use the latest version): ^4.4
-Search for a package:
+Enter the version constraint to require (or leave blank to use the latest version): ^4.13 || ^5.0
+Search for a package: 
 Would you like to define your dev dependencies (require-dev) interactively [yes]? no
+Add PSR-4 autoload mapping? Maps namespace "Somevendor\ContaoExampleBundle" to the entered relative path. [src/, n to skip]: 
 
 {
-    "name": "somevendor/contao-example-bundle",
-    "description": "Lorem ipsum dolor sit amet.",
+    "name": "somevendor/contao-example-bundle",        
     "type": "contao-bundle",
-    "license": "LGPL-3.0-or-later",
     "require": {
-        "contao/core-bundle": "^4.4"
+        "contao/core-bundle": "^4.13 || ^5.0"
+    },
+    "license": "LGPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Somevendor\\ContaoExampleBundle\\": "src/"
+        }
     }
 }
 
 Do you confirm generation [yes]? yes
+Would you like the vendor directory added to your .gitignore [yes]? yes
 Would you like to install dependencies now [yes]? no
+PSR-4 autoloading configured. Use "namespace Somevendor\ContaoExampleBundle;" in src/
+Include the Composer autoloader with: require 'vendor/autoload.php';
 ```
 
 
@@ -117,22 +125,22 @@ for tests (if any). This is a common setup, though you are free to choose a diff
 one (e.g. no `src/` and `test/` subfolder, starting with the namespace folders directly).
 
 Next you will choose a top-level namespace and extension related subnamespace for
-your extension, e.g. `SomeVendor\ContaoExampleBundle`. Using the [PSR-4 Autoloading Standard][4]
+your extension, e.g. `Somevendor\ContaoExampleBundle`. Using the [PSR-4 Autoloading Standard][4]
 the `src/` folder will be mapped as the namespace base folder for that namespace
-in the autoloading part of your extension's `composer.json`:
+in the autoloading part of your extension's `composer.json`. This has already been added by `composer init`, if you
+confirmed this:
 
 ```json
 {
     "name": "somevendor/contao-example-bundle",
-    "description": "Lorem ipsum dolor sit amet.",
     "type": "contao-bundle",
-    "license": "LGPL-3.0-or-later",
     "require": {
-        "contao/core-bundle": "^4.4"
+        "contao/core-bundle": "^4.13 || ^5.0"
     },
+    "license": "LGPL-3.0-or-later",
     "autoload": {
         "psr-4": {
-            "SomeVendor\\ContaoExampleBundle\\": "src/"
+            "Somevendor\\ContaoExampleBundle\\": "src/"
         }
     }
 }
@@ -141,24 +149,31 @@ in the autoloading part of your extension's `composer.json`:
 
 ### Installation
 
-Now we can include the (still empty) extension into a Contao 4 installation. Since
+Now we can include the (still empty) extension into a Contao installation. Since
 this is still just a local directory (and not publicly available via a Git repository),
 we will have to define this "repository" manually in the root `composer.json` of
-the Contao 4 installation:
+the Contao installation:
 
 ```json
 {
-    "repositories": [
-        {
+    "repositories": {
+        "somevendor/contao-example-bundle": {
             "type": "path",
             "url": "/path/to/your/extension/directory"
         }
-    ]
+    }
 }
 ```
 
+{{% notice "info" %}}
+The `url` can be either an absolute path (starting with `/` or a drive letter under Windows) or a path relative to your
+Contao installation.
+{{% /notice %}}
+
 In the `require` part we can then request the installation of our extension, using
-the defined package name and `dev-main` as the version.
+the defined package name and `dev-main` as the version, as this is the default 
+branch alias that Composer will use, if nothing else is defined in the `composer.json`
+or via Git.
 
 ```json
 {
@@ -169,7 +184,7 @@ the defined package name and `dev-main` as the version.
 ```
 
 When running a `composer update`, Composer will now symlink the given path into the
-vendor directory of the Contao 4 installation and everything is ready to go. You
+vendor directory of the Contao installation and everything is ready to go. You
 can now continue developing within `vendor/somevendor/contao-example-bundle`.
 
 
@@ -182,37 +197,40 @@ Now it is time to do some ground work for the extension:
 3. Configure the `composer.json` for the Contao Manager Plugin.
 
 Creating the bundle class is simple enough. The name of the bundle class can be freely
-choosen - typically it will have the same name as your top-level subnamespace, or
+chosen - typically it will have the same name as your top-level subnamespace, or
 even a combination of your complete top-level namespace. For example:
 
 ```php
 // src/ContaoExampleBundle.php
-namespace SomeVendor\ContaoExampleBundle;
+namespace Somevendor\ContaoExampleBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class ContaoExampleBundle extends Bundle
+class ContaoExampleBundle extends AbstractBundle
 {
 }
 ```
 
-The bundle class can be empty, but could contain additional bundle configurations
+This uses the `Symfony\Component\HttpKernel\Bundle\AbstractBundle` which will ensure that
+[recommended bundle structure][SymfonyBundleDirectoryStructure] is used by default.
+
+The bundle class can otherwise be empty, but could contain additional bundle configurations
 (see [Symfony's documentation][1] on how to create bundles).
 
-Next up we create a [Manager Plugin][4], so that our bundle can be automatically
-loaded within a Contao 4 Managed Edition. The following plugin will load our bundle
+Next up we create a [Manager Plugin][4] within our extension, so that our bundle can be automatically
+loaded by a Contao Managed Edition instance. The following plugin will load our bundle
 after the Contao Core Bundle (since the order of execution matters for certain things
 like DCA or translation adjustments).
 
 ```php
 // src/ContaoManager/Plugin.php
-namespace SomeVendor\ContaoExampleBundle\ContaoManager;
+namespace Somevendor\ContaoExampleBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\CoreBundle\ContaoCoreBundle;
-use SomeVendor\ContaoExampleBundle\ContaoExampleBundle;
+use Somevendor\ContaoExampleBundle\ContaoExampleBundle;
 
 class Plugin implements BundlePluginInterface
 {
@@ -226,13 +244,13 @@ class Plugin implements BundlePluginInterface
 }
 ```
 
-In order to expose the plugin to the Managed Edition, we need to reference it in
+In order to expose the plugin to the Managed Edition we need to reference it in
 the extension's `composer.json`:
 
 ```json
 {
     "extra": {
-         "contao-manager-plugin": "SomeVendor\\ContaoExampleBundle\\ContaoManager\\Plugin"
+         "contao-manager-plugin": "Somevendor\\ContaoExampleBundle\\ContaoManager\\Plugin"
     }
 }
 ```
@@ -244,28 +262,52 @@ the extension is still pretty empty.
 
 ## Development
 
-Within the extension, development is largely the same as [developing for the application][5].
-There are some differences though. The Contao specific resources, which usually reside
-in `contao/` for the application, will instead have to be in `src/Resources/contao/`.
+Within the extension development is largely the same as [developing for the application][5]. One of the differences is
+that we need to take care of loading our services and routes for example ourselves.
 
 
 ### Service Configuration
 
-Loading a service configuration will also be different. While the Contao Managed 
-Edition (and also Symfony Skeleton Applications) will load certain YAML files automatically
+While the Contao Managed Edition (and also Symfony Skeleton Applications) will load certain YAML files automatically
 for your application, an extension or bundle will have to load the service
-configuration itself. The details are described in the [Symfony documentation][6].
-However, the basic steps are:
+configuration itself. The details are described in the [Symfony documentation][6]. Starting with Symfony **6**
+(used by Contao **5**) there are two different ways.
 
-1. Create a `services.yaml` within `src/Resources/config/`.
-2. [Create an extension class][7] in the `DependencyInjection` namespace.
+{{< tabs groupid="service-configuration" style="code" >}}
+{{% tab title="Bundle Class" %}}
+When extending from the `AbstractBundle` you can use the 
+[`loadExtension` method](https://symfony.com/doc/6.4/bundles/extension.html#loading-services-directly-in-your-bundle-class)
+to directly load your service configuration.
 
-The class name of the dependency injection extension needs to be the same as the 
-bundle name, with `Bundle` replaced by `Extension`.
+```php
+// src/ContaoExampleBundle.php
+namespace Somevendor\ContaoExampleBundle;
+
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+
+class ContaoExampleBundle extends AbstractBundle
+{
+    public function loadExtension(
+        array $config, 
+        ContainerConfigurator $containerConfigurator, 
+        ContainerBuilder $containerBuilder,
+    ): void
+    {
+        $containerConfigurator->import('../config/services.yaml');
+    }
+}
+```
+{{% /tab %}}
+{{% tab title="Dependency Injection Extension Class" %}}
+You can also [create an extension class](https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class)
+in the `DependencyInjection` namespace which handles loading of your service definitions. The class name of the needs to 
+be the same as the  bundle name, with `Bundle` replaced by `Extension`, if present.
 
 ```php
 // src/DependencyInjection/ContaoExampleExtension.php
-namespace SomeVendor\ContaoExampleBundle\DependencyInjection;
+namespace Somevendor\ContaoExampleBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -276,22 +318,54 @@ class ContaoExampleExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('services.yaml');
+        (new YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config')))
+            ->load('services.yaml')
+        ;
     }
 }
 ```
 
-Now, services can be registered as usual in your `src/Resources/config/services.yaml`.
+This will not work automatically if your bundle class extends from `AbstractBundle`. You will need to implement the `getContainerExtension()` method in your bundle class and instantiate this extension class manually.
 
-{{% notice tip %}}
-In order to take advantage of service annotations, enable [auto-configuration](https://symfony.com/doc/current/service_container.html#the-autoconfigure-option)
-for your services. See also the README of the [Service Annotation Bundle](https://github.com/terminal42/service-annotation-bundle).
-```yml
+```php
+// src/ContaoExampleBundle.php
+namespace Somevendor\ContaoExampleBundle;
+
+use App\DependencyInjection\ContaoExampleExtension;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
+
+class ContaoExampleBundle extends AbstractBundle
+{
+    public function getContainerExtension(): ?ExtensionInterface
+    {
+        return new ContaoExampleExtension();
+    }
+}
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+Now services can be registered as usual in your `config/services.yaml`. The following example would enable
+[autowire][SymfonyAutowiring] and [autoconfigure][SymfonyAutoconfiguration] by default for all registered services. It
+will also automatically register every PHP class in your `src/` folder as a service. This will enable you to create
+services on-the-fly and use PHP attributes for tagging your services.
+
+```yaml
 services:
     _defaults:
+        autowire: true
         autoconfigure: true
+    
+    Somevendor\ContaoExampleBundle\:
+        resource: ../src
+        exclude: ../src/{ContaoManager,DependencyInjection,ContaoExampleBundle.php}
 ```
+
+{{% notice note %}}
+Keep in mind that Symfony [recommends](https://symfony.com/doc/current/service_container/autowiring.html#public-and-reusable-bundles) 
+to explicitly configure services in public and reusable bundles. Within the Contao ecosystem of extensions as bundles
+issues are unlikely to occur, but depending on your use-case explicit service configuration might be required.
 {{% /notice %}}
 
 
@@ -304,7 +378,7 @@ is done by implementing the `RoutingPluginInterface` in the Manager Plugin, as d
 
 ```php
 // src/ContaoManager/Plugin.php
-namespace SomeVendor\ContaoExampleBundle\ContaoManager;
+namespace Somevendor\ContaoExampleBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
@@ -314,14 +388,46 @@ class Plugin implements RoutingPluginInterface
 {
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
-        $file = __DIR__.'/../Resources/config/routes.yaml';
-        return $resolver->resolve($file)->load($file);
+        return $resolver
+            ->resolve(__DIR__.'/../../config/routes.yaml')
+            ->load(__DIR__.'/../../config/routes.yaml')
+        ;
     }
 }
 ```
 
-This will load the routing configuration located under `src/Resources/config/routes.yaml`
+This will load the routing configuration located under `config/routes.yaml`
 of this extension.
+
+```yaml
+# config/routes.yaml
+somevendor.contao_example_bundle.controller:
+    resource: ../src/Controller
+    type: attribute
+```
+
+If you only need one format (e.g. `attribute`) and have all your controllers in the same place (e.g. `src/Controller`), 
+you may save yourself the additional config file:
+
+```php
+// src/ContaoManager/Plugin.php
+namespace Somevendor\ContaoExampleBundle\ContaoManager;
+
+use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
+use Symfony\Component\Config\Loader\LoaderResolverInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
+
+class Plugin implements RoutingPluginInterface
+{
+    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+    {
+        return $resolver
+            ->resolve(__DIR__.'/../Controller', 'attribute')
+            ->load(__DIR__.'/../Controller')
+        ;
+    }
+}
+```
 
 
 ## Versioning & Publishing
@@ -330,7 +436,7 @@ When ready, create a remote repository, e.g. on GitHub. You can initialize Git i
 your extension directly in vendor and push the code to that repository.
 
 ```bash
-user@somemachine ~/www/contao4/vendor/somevendor/contao-example-bundle
+user@somemachine ~/www/contao/vendor/somevendor/contao-example-bundle
 $ git init
 $ git add --all
 $ git commit -m "initial commit"
@@ -359,6 +465,8 @@ push any changes you make back to the origin branch using your SSH key.
 [4]: /framework/manager-plugin/
 [5]: /getting-started/starting-development/
 [6]: https://symfony.com/doc/current/bundles/extension.html
-[7]: https://symfony.com/doc/current/bundles/extension.html#creating-an-extension-class
 [8]: /framework/manager-plugin/#the-routingplugininterface
 [9]: /guides/publishing-bundles/
+[SymfonyBundleDirectoryStructure]: https://symfony.com/doc/5.x/bundles/best_practices.html#directory-structure 
+[SymfonyAutowiring]: https://symfony.com/doc/current/service_container.html#the-autowire-option
+[SymfonyAutoconfiguration]: https://symfony.com/doc/current/service_container.html#the-autoconfigure-option

@@ -13,7 +13,7 @@ automatically validates the form input according to the rules you specify. Files
 
 Without specifying a separate SMTP server, the data is sent via [sendmail](https://en.wikipedia.org/wiki/Sendmail), which can lead to problems.
 
-{{% notice info %}}
+{{% notice note %}}
 We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/settings/#e-mail-sending-configuration).
 {{% /notice %}}
 
@@ -21,7 +21,7 @@ We recommend sending via the [e-mail transport protocol (SMTP)](/en/system/setti
 
 You can find the form generator in the "Content" group in the backend navigation.
 
-To create a new form click on **New** ![Create a new form](/de/icons/new.svg?classes=icon).
+To create a new form click on **New** ![Create a new form]({{% asset "icons/new.svg" %}}?classes=icon).
 
 ### Title and forwarding
 
@@ -35,6 +35,9 @@ To create a new form click on **New** ![Create a new form](/de/icons/new.svg?cla
 
 **Allow HTML tags:** If you select this option, your visitors can use HTML code in the form fields. In the backend 
 settings under "Allowed HTML Tags" you define which HTML tags are allowed.
+
+{{< version-tag "5.1" >}} **Submit via Ajax:** If you select this option, you will not need a redirect page 
+and you can additionally set a text as confirmation message. The submitted form data can be used as simple tokens like: ##field_name##.
 
 ## Send form data
 
@@ -55,10 +58,25 @@ an attachment.
 | Raw data | The e-mail contains the unprocessed data, i.e. the contents of the individual form fields are simply listed below each other. |
 | XML file | An XML file with the form data is attached to the e-mail. |
 | CSV file | A CSV file with the form data is attached to the e-mail. |
-| CSV file (Microsoft Excel) | {{< version "4.10" >}} A CSV file in Microsoft Excel format with the form data is attached to the e-mail. |
-| E-mail | The form data is formatted as if the sender had written an e-mail with his e-mail program. In this case, the form generator only processes the fields `name`, `email`, `subject`, and `message`, and ignores all other form fields. |
+| CSV file (Microsoft Excel) | A CSV file in Microsoft Excel format with the form data is attached to the e-mail. |
+| E-mail | The form data is formatted as if the sender had written an e-mail with their e-mail program. In this case, the form generator only processes the fields `name`, `email`, `subject`, and `message`, and ignores all other form fields. |
 
 **Omit empty fields:** If you select this option, only completed fields will be sent by e-mail. Fields without any input will be skipped.
+
+
+### Special Field Names
+
+Certain field names influence the behavior of Contao's email sending process. To take advantage of these features you 
+need to insert a form field with exactly the field name as described here.
+
+| Field&nbsp;name | Effect |
+| --- | --- |
+| `email`    | The email address from this field will be used as the `Reply-To:` address (must be a valid email address). |
+| `name`     | The value of this field will be used as the name for the `Reply-To:` address. |
+| `firstname` | The value of this field will be used as the first name for the `Reply-To:` address. <br>Only applies if also a `lastname` and no `name` is present. |
+| `lastname` | The value of this field will be used as the last name for the `Reply-To:` address. <br>Only applies if also a `firstname` and no `name` is present. |
+| `cc` | If the value of this field is not empty, the email address from the `email` field will be used as a `Cc:` address (i.e. a copy of the email will be sent to that address). Typically used as a hidden or checkbox field. |
+
 
 ## Save form data
 

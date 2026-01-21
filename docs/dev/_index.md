@@ -1,9 +1,7 @@
 ---
-title: "Contao Developer Documentation"
+title: Contao Developer Documentation
+type: home
 ---
-
-
-# Contao Developer Documentation
 
 Welcome to the Contao manual for developers and the Contao ecosystem!
 This introduction is meant to give you an overall idea of how things work in Contao and its ecosystem, people with assigned
@@ -49,7 +47,7 @@ all of a sudden now.
 The Core team decided that the project needs the ability to transition slowly from Contao 3 to Contao 4 as adoption would
 never take place otherwise. That's why Contao 4 essentially still carries around code that's been there for years because
 of backwards compatibility.
-Most of this code resides in `core-bundle/src/Resources/contao` so it does not interfere with code that's been written later
+Most of this code resides in `core-bundle/src/contao` so it does not interfere with code that's been written later
 on, put into namespaces properly and being unit tested as you'd expect it from any modern CMS.
 Examples for legacy code that still works might be your typical library classes any CMS that's been on the market for
 a while would provide such as file operations (`File`, `Folder`), request handling (`Environment`) and many more. Most
@@ -59,7 +57,13 @@ Contao heavily relies on superglobals in older code which basically served as so
 back in the days which is why you'll still come across loads of `$GLOBALS` usages all over the place.
 However, there's a steady transition going on and with every new release there are new ways introduced as to how you can
 e.g. register a new content element. The old code is just still floating around to make sure all the already existing
-extensions still work. It will eventually be dropped once Contao 5 becomes a thing.
+extensions still work.
+
+With the transition to Symfony with Contao 4, Contao also adopted Semantic Versioning. In August 2022, the first major version
+since migrating to Symfony was released: Contao 5. The Core team used this first major version to get rid of a ton of legacy code
+that has been accumulated over versions 4.0 to 4.13 but also some of the very old libraries from before. Yet still, you'll find
+that all the statements above are still true for many parts of Contao. We're continuing our path of transforming the Content
+Management System our community loves step by step while trying to pay highest attention to ensure smooth transitions.
 
 
 ### Input encoding
@@ -77,7 +81,7 @@ So when Contao decided to use plain old PHP as templates, one would have to call
 variable that was echo'ed. Instead of doing that, it was decided to encode the input and store the data encoded in the
 database already. You do have the option to disable this when you develop your own extensions to Contao but
 it's just something to keep in mind. We all know it's wrong but migrating away from already encoded data is very hard
-and likely will only become a thing when we switch to Contao 5.
+and likely will only become a thing when we switch to Contao 6.
 
 {{% notice warning %}}
 So be aware of this. Don't just use e.g. Symfony's `Request` class to fetch user input, store it as is in the DB and
@@ -142,8 +146,9 @@ In any case, the current core team members consist of (in alphabetical order)
 * [Greminger, David (@bytehead)](https://github.com/bytehead) 
 * [Gschwantner, Fritz Michael (@fritzmg)](https://github.com/fritzmg) 
 * [Schempp, Andreas (@aschempp)](https://github.com/aschempp) 
-* [Schmid, Jim (@sheeep)](https://github.com/sheeep) 
+* [Vondano, Moritz (@m-vo)](https://github.com/m-vo) 
 * [Witschi, Yanick (@toflar)](https://github.com/toflar) 
+* [Zoglowek, Sebastian (@zoglo)](https://github.com/zoglo) 
 
 In addition, there's a core team for the documentation:
 

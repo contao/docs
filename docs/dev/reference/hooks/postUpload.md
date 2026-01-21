@@ -13,7 +13,7 @@ the back end. It passes an array of filenames as argument and does not expect
 a return value.
 
 
-{{% notice note %}}
+{{% notice info %}}
 This hook can also be implemented as an anonymous function.
 {{% /notice %}}
 
@@ -32,11 +32,9 @@ This hook can also be implemented as an anonymous function.
 // src/EventListener/PostUploadListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("postUpload")
- */
+#[AsHook('postUpload')]
 class PostUploadListener
 {
     public function __invoke(array $files): void

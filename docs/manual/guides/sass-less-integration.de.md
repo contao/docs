@@ -21,7 +21,7 @@ für Less ist ansonsten, abgesehen von der unterschiedlichen Sprach-Syntax, iden
 Die Nutzung der Präprozessoren setzt normalerweise eine lokale Installation voraus. Mit Contao kannst du `.scss` 
 oder `.less` Dateien direkt im Seitenlayout einbinden. Die entsprechenden CSS-Dateien werden dann automatisch erstellt.
 
-{{% notice note %}}
+{{% notice info %}}
 Auch wenn die direkte Nutzung in Contao funktioniert wird dennoch die Einbindung fertiger CSS-Dateien bzw. deren 
 lokale Erstellung über CSS-Präprozessoren empfohlen.
 {{% /notice %}}
@@ -49,7 +49,7 @@ h1 { color: $mainCol; }
 p { color: rgb(0, 255, 0); }
 ```
 
-Selbstverständlich bieten die CSS-Präprozessoren viel mehr Möglichkeiten. Für unsere Beispiel reicht es aber aus.
+Selbstverständlich bieten die CSS-Präprozessoren viel mehr Möglichkeiten. Für unser Beispiel reicht es aber aus.
 
 Du kannst nun die Datei `theme.scss` in deinem Seitenlayout einbinden, analog zur üblichen Vorgehensweise mit 
 `.css`-Dateien. Die Datei `_elements.scss` muß hierbei nicht zusätzlich ausgewählt werden. Deine Webseite sollte im Anschluß 

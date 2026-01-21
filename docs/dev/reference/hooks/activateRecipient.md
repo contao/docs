@@ -34,11 +34,9 @@ and does not expect a return value.
 // src/EventListener/ActivateRecipientListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("activateRecipient")
- */
+#[AsHook('activateRecipient')]
 class ActivateRecipientListener
 {
     public function __invoke(string $email, array $recipientIds, array $channelIds): void

@@ -6,7 +6,7 @@ aliases:
     - /de/performance/http-caching/
 ---
 
-{{% notice info %}}
+{{% notice note %}}
 Dieser gesamte Artikel bezieht sich auf Contao ab **Version 4.9**.
 Vorherige Versionen verfügen zwar auch über Caching-Mechanismen, diese sind aber nicht annähernd so effizient.
 Daher wurde darauf verzichtet, die Funktionsweise des Cachings für die älteren Versionen zu dokumentieren.
@@ -134,7 +134,7 @@ Zum besseren Verständnis ein paar Beispiele:
 Und so finden sich denn auch genau diese Einstellungen zur Cache-Dauer in den Contao Seiteneinstellungen. Folgende
 Auswahl übersetzt sich also zu `Cache-Control: max-age=1800, s-maxage=3600, public`:
 
-![Caching-Einstellungsmöglichkeiten im Contao Backend](/de/performance/images/de/cache-einstellungen.png?classes=shadow)
+![Caching-Einstellungsmöglichkeiten im Contao Backend]({{% asset "images/manual/performance/de/cache-einstellungen.png" %}}?classes=shadow)
 
 ## Vorteile der Nutzung von Standards
 
@@ -154,7 +154,7 @@ leistungsfähigere - explizit für Caching ausgelegte - Proxies wie bspw. [Varni
 
 Das würde allerdings an dieser Stelle zu weit führen.
 
-{{% notice note %}}
+{{% notice info %}}
 Gut zu wissen für dich: Welche Einstellungen auch immer du in den Seiten vorgenommen hast, Contao befolgt die HTTP-
 Standards und funktioniert einfach out-of-the-box für dich. Sollten die Anforderungen irgendwann mal komplexer werden,
 lässt dich Contao aber auch nicht im Stich!
@@ -198,7 +198,7 @@ werden dann nämlich mit einem `Contao-Cache` Header ausgestattet, welcher grund
   `Age` HTTP-Header. Er gibt dir an, wie viele Sekunden der Cache-Eintrag bereits existiert. Ein `Age: 60` bedeutet also,
   dass dieser Eintrag vor einer Minute angelegt wurde.
 
-{{% notice info %}}
+{{% notice note %}}
 Wenn die Contao Managed Edition im Debug-Modus läuft, wird auch der gesamte Cache-Proxy deaktiviert.
 {{% /notice %}}
 
@@ -297,10 +297,6 @@ Die nachfolgenden Umgebungsvariablen erlauben dir, den Cache-Proxy weiter zu opt
 
 #### `COOKIE_ALLOW_LIST`
 
-{{% notice info %}}
-In Contao **4.9** heisst diese Variable noch `COOKIE_WHITELIST`.
-{{% /notice %}}
-
 Diese Umgebungsvariable lässt dich konfigurieren, welche Cookies an die Applikation weitergereicht werden sollen und somit
 auch die Deaktivierung des Cachings zur Folge haben.
 Standardmässig nutzt Contao in seiner Core-Distribution ohne Erweiterungen nur **exakt vier Cookies**, welche allesamt
@@ -320,7 +316,7 @@ Die höchste Anzahl Cache-Treffer und somit optimale Performance lässt sich fol
 COOKIE_ALLOW_LIST=PHPSESSID,csrf_https-contao_csrf_token,csrf_contao_csrf_token,trusted_device,REMEMBERME
 ```
     
-{{% notice note %}}
+{{% notice info %}}
 Der Name des PHP-Session-Cookies ist konfigurierbar via `php.ini`, du solltest also nachsehen, ob es bei dir auch `PHPSESSID`
 lautet. Ausserdem ist der Name des CSRF-Cookies aus Sicherheitsgründen für `http` und `https` unterschiedlich. Solltest
 du `http` nutzen, lautet der Cookie-Name `csrf_http-contao_csrf_token`.
@@ -329,8 +325,6 @@ sinnvolle Konfiguration. Deine Webseiten sollten ausschliesslich über `https` l
 {{% /notice %}}
 
 #### `COOKIE_REMOVE_FROM_DENY_LIST`
-
-{{< version "4.10" >}}
 
 Solltest du nicht genau wissen, welche Cookies deine Applikation braucht, und somit nicht in der Lage sein, die
 `COOKIE_ALLOW_LIST` entsprechend zu pflegen, kannst du auch gewissen Cookies von der mitgelieferten Deny-Liste entfernen,
@@ -341,8 +335,6 @@ COOKIE_REMOVE_FROM_DENY_LIST=__utm.+,AMP_TOKEN
 ```
 
 #### `QUERY_PARAMS_ALLOW_LIST`
-
-{{< version "4.10" >}}
 
 Aus dem genau gleichen Grund, aus dem wir irrelevante Cookies entfernen, können wir auch irrelevante Query-Parameter entfernen.
 Ggf. kennst du die typischen `?utm_*=<zufälliges Token>` Query-Parameter, welche an Links zu deiner Seite gehängt werden
@@ -360,8 +352,6 @@ ist daher ein eher unwahrscheinlicher Fall, weshalb du wohl eher zu `QUERY_PARAM
 solltest du einen bestimmten Query-Parameter in deiner Applikation trotzdem brauchen.
 
 #### `QUERY_PARAMS_REMOVE_FROM_DENY_LIST`
-
-{{< version "4.10" >}}
 
 Analog `COOKIE_REMOVE_FROM_DENY_LIST` kannst du mittels `QUERY_PARAMS_REMOVE_FROM_DENY_LIST` gewisse Einträge von der
 internen Deny-Liste entfernen. Brauchst du oder eine installierte Erweiterung bspw. den Facebook Click Identifier (`fbclid`),
@@ -437,7 +427,7 @@ Den `X-Cache-Tags` Header wirst du im Browser nie sehen, weil der Contao Cache P
 relevanten Informationen für den Client und würde nur unnötigen Datentransfer verursachen.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Übrigens: Das Invalidieren von Cache-Einträgen funktioniert ebenfalls über HTTP-Requests, da der Cache-Proxy nicht
 zwingend auf dem selben Server wie Contao liegen muss. Die meisten Cache-Proxies unterstützen dafür das Empfangen von
 `PURGE`-Requests (ja, es ist erlaubt, eigene HTTP-Methoden zusätzlich zu den üblichen `GET`, `POST` etc. zu erfinden).

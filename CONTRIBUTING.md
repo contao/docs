@@ -9,11 +9,11 @@ Only major versions are documented (e.g. Contao 4 and later on Contao 5).
 ## General rules
 
 * Only use ATX style headlines (e.g. `# H1` or `### H3`).
-* See [learn.netlify.com/en/cont/markdown/](https://learn.netlify.com/en/cont/markdown/) 
-  and [learn.netlify.com/en/shortcodes/](https://learn.netlify.com/en/shortcodes/) 
+* See [mcshelby.github.io/hugo-theme-relearn/authoring/markdown/](https://mcshelby.github.io/hugo-theme-relearn/authoring/markdown/index.html) 
+  and [mcshelby.github.io/hugo-theme-relearn/shortcodes/](https://mcshelby.github.io/hugo-theme-relearn/shortcodes/index.html) 
   for available markdown and shortcode syntax.
 * Always add two empty lines above each headline.
-* Add line breaks after 80 characters in paragraphs.
+* Add line breaks after 140 characters in paragraphs.
 * Code examples should follow the Symfony Best Practices Book, use PHP 7.1 and
   put Contao related files to `contao`.
 * When using examples for PHP code or YAML configurations etc., include the example
@@ -27,6 +27,101 @@ Cum sociis [natoque](https://www.google.com/) penatibus et magnis dis.
 ```
 
 
+### Short code `notice`
+
+The `notice` shortcode allows you to display 4 different types of disclaimers.
+
+
+#### Note
+
+```
+{{% notice note %}}
+A notice disclaimer
+{{% /notice %}}
+```
+
+#### Info
+
+```
+{{% notice info %}}
+An information disclaimer
+{{% /notice %}}
+```
+
+#### Tip
+
+```
+{{% notice tip %}}
+A tip disclaimer
+{{% /notice %}}
+```
+
+#### Warning
+
+```
+{{% notice warning %}}
+A warning disclaimer
+{{% /notice %}}
+```
+
+
+### Short code `tabs`
+
+The short code tabs allows you to group content. Very handy for providing code snippets for multiple languages or 
+providing configuration in different formats.
+
+```
+{{< tabs groupid="Example" style="code" >}}
+
+{{% tab title="PHP" %}}
+Lorem ipsum dolor sit amet ...
+{{% /tab %}}
+
+{{% tab title="Twig" %}}
+Lorem ipsum dolor sit amet ...
+{{% /tab %}}
+
+{{< /tabs >}}
+```
+
+
+### Short code `example`
+
+This short code will visually separate its content from the rest and display an "Example" header.
+
+```
+{{% example "Your example title" %}}
+Lorem ipsum dolor sit amet ...
+{{% /example %}}
+```
+
+
+### Short code `asset`
+
+This shortcode will add a unique fingerprint to the image file name. 
+The asset file must be located in the "page/assets" directory.
+
+```
+![Alt Text]({{% asset "/path/to/image.png" %}})
+instead of
+![Alt Text](/path/to/img.png)
+```
+
+
+### Short code `faq`
+
+This shortcode displays an expandable section of text. It also outputs JSON-LD meta data for FAQs.
+
+```
+{{% faq "Your example title" %}}
+Lorem ipsum dolor sit amet ...
+{{% /faq %}}
+```
+
+_Note:_ only use this for actual FAQs - otherwise use the [`expand`](https://mcshelby.github.io/hugo-theme-relearn/shortcodes/expand/index.html)
+shortcode.
+
+
 ## New features
 
 Since we will not maintain different versions of the documentation for each minor 
@@ -34,11 +129,17 @@ Contao version, some features will be documented which are only available in new
 Contao version. In such a case, document the _old_ way first (if applicable), then 
 show the new way with a notice of the minimum Contao version required.
 
-You can use the following short code to automatically add a note for features of a 
+You can use the following short codes to automatically add a note for features of a 
 specific Contao version:
 
 ```
-{{< version "4.7" >}}
+{{< version "4.13" >}}
+```
+
+or
+
+```
+{{< version-tag "4.13" >}}
 ```
 
 
@@ -51,9 +152,18 @@ specific Contao version:
 
 …
 
-### Service tag
+### Content 
 
-{{< version "4.8" >}}
+{{< version "4.13" >}}
+
+Lorem ipsum dolor sit amet ...
+
+…
+
+### Content 
+
+{{< version-tag "4.13" >}} Lorem ipsum dolor sit amet ...
+
 ```
 
 

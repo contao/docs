@@ -23,25 +23,25 @@ Erstelle über den [Navigationsbereich](../../administrationsbereich/aufruf-und-
 »Layout« unter »Templates« ein neues [Template](../../theme-manager/templates-verwalten). 
 Wähle über `Original-Template` das Template `be_tinyMCE.html5` aus und gebe als `Zielverzeichnis` das Hauptverzeichnis an. 
 
-{{% notice note %}}
+{{% notice info %}}
 Das Template **muss** im Hauptverzeichnis (`templates/be_tinyMCE.html5`) abgelegt werden, da das Backend von Contao das
 Template nur dort findet. Alle Zeilen innerhalb von `<script>...</script>` bis auf die letzte Zeile müssen mit einem
 **Komma** abgeschlossen werden. Nach dem Speichern des Templates werden deine Änderungen sofort übernommen.
 {{% /notice %}}
 
 {{% notice tip %}}
-Seit Contao **4.10** kann [Template Vererbung](/en/layout/templates/template-inheritance/) benutzt werden, um nur Teile
+Es kann auch [Template Vererbung](../../layout/templates/php/vererbung/) benutzt werden, um nur Teile
 des Standard `be_tinyMCE` Templates nach den eigenen Bedürfnissen anzupassen.
 {{% /notice %}}
 
 
 ## Verschiedene Editor-Konfigurationen
 
-Wenn du den Template Namen `be_tinyMCE.html5` beibehälst führt dies dazu, dass deine Änderungen sich auf alle Bereiche 
+Wenn du den Template Namen `be_tinyMCE.html5` beibehältst führt dies dazu, dass deine Änderungen sich auf alle Bereiche 
 auswirken die den Editor benutzen. Dies gilt zumindest für die Contao eigenen Komponenten.
 
-Du möchstest gezielt eine Editor-Konfiguration z. B. nur für das Inhaltselement vom Typ »Text« erstellen? Dazu kannst
-du das Template beliebig umbenennen: z.B. nach `be_myTinyMCE.html5`.
+Du möchtest gezielt eine Editor-Konfiguration z. B. nur für das Inhaltselement vom Typ »Text« erstellen? Dazu kannst
+du das Template beliebig umbenennen: z. B. nach `be_myTinyMCE.html5`.
 
 Als nächstes müssen wir Contao dazu bringen dieses Template zu nutzen. Dazu muss folgendes in die `contao/dca/tl_content.php` 
 eingefügt werden:
@@ -85,7 +85,7 @@ Template löschen. Es wird dann wieder die Contao-Standardkonfiguration des Edit
 
 Im Bereich »`Einstellungen > Sicherheitseinstellungen`« kannst du [Erlaubte HTML-Tags](/de/system/einstellungen/#sicherheitseinstellungen) definieren. Es kann vorkommen, dass diese Angaben allein nicht ausreichen. 
 
-Falls du beispielsweise mit verfügbaren »Font-Awesome« das [Contao-Logo](https://fontawesome.com/v4.7.0/icon/contao) in einem 
+Falls du beispielsweise mit verfügbaren »Font-Awesome« das [Contao-Logo](https://fontawesome.com/icons/contao?s=&f=brands) in einem 
 [Inhaltselement](/de/artikelverwaltung/inhaltselemente/) vom Typ »Aufzählung« wie folgt einsetzt, werden deine 
 Angaben nach dem »Speichern« nicht übernommen.
 
@@ -109,7 +109,7 @@ den Anwendungs-Cache leeren, deine HTML-Angabe im Inhaltselement erneut eintrage
 
 ### Funktion »Als Text einfügen« standardmäßig aktivieren
 
-Im Editor kann du über das Menü `Bearbeiten` oder über eine Tastenkombination Text aus der Zwischenablage einfügen. 
+Im Editor kannst du über das Menü `Bearbeiten` oder über eine Tastenkombination Text aus der Zwischenablage einfügen. 
 Hierbei kann es passieren, dass nicht nur der Text sondern auch weitere Formatierungen (z. B. aus einer Word Datei) übernommen
 werden. Damit nur Text eingefügt wird kannst du über das Menü die Option `Bearbeiten > Als Text einfügen` manuell auswählen.
 
@@ -122,14 +122,14 @@ Angabe `paste_as_text` im Template hinzufügen:
 // be_tinyMCE.html5
 ...
 
-toolbar: 'link unlink | image | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
   
 // activate paste_as_text option
 paste_as_text: true
 ```
 
 Im Beispiel haben wir dies über eine neue Zeile unterhalb der bestehenden Zeile (toolbar: ...) eingetragen. Da unsere
-neue Zeile die letzte Zeile, ist brauchen wir hier kein Komma setzen. 
+neue Zeile die letzte Zeile ist, brauchen wir hier kein Komma setzen. 
 
 Allerdings musst du darauf achten, dass die bestehende Zeile (toolbar: ...) nun zusätzlich mit einem Komma abgeschlossen 
 werden muss. Im Editor ist die Option `Bearbeiten > Als Text einfügen` jetzt immer aktiviert.
@@ -145,12 +145,11 @@ unterbinden möchtest entferne die Einträge `alignleft aligncenter alignright a
 ...
 
 // custom toolbar settings
-toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | bullist numlist outdent indent | code',
 
 // activate paste_as_text option
 paste_as_text: true
 ```
-
 
 ### Das Menü ändern
 
@@ -179,7 +178,7 @@ menubar: 'file edit insert view format',
 removed_menuitems: "align",
 
 // custom toolbar settings
-toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | bullist numlist outdent indent | code',
 
 // activate paste_as_text option
 paste_as_text: true
@@ -191,7 +190,7 @@ paste_as_text: true
 
 Du möchtest eigene Format-Definitionen zur Auswahl anbieten? Der TinyMCE-Editor bietet hierzu die Option
 `style_formats` an. Du kannst hierüber z. B. deine Definition auf bestimmte HTML-Selektoren begrenzen, 
-mit Inline-Style Angaben versehen oder bestimmte CSS-KLassen übergeben.
+mit Inline-Style Angaben versehen oder bestimmte CSS-Klassen übergeben.
 
 Du erweiterst die Toolbar mit dem Eintrag `styleselect`. Über die Toolbar können dann deine eigenen Angaben aus den 
 `style_formats` Definitionen ausgewählt werden:
@@ -207,7 +206,7 @@ menubar: 'file edit insert view format',
 removed_menuitems: "align",
 
 // custom toolbar settings
-toolbar: 'link unlink | image | formatselect | styleselect | bold italic | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | bullist numlist outdent indent | code',
 
 // custom styles
 style_formats: [
@@ -230,10 +229,10 @@ Lesenswert sind auch die [Informationen](https://www.tiny.cloud/docs-4x/configur
 ### Die eigene TinyMCE.css
 
 In unserem obigen `style_formats` Beispiel haben wir im ersten Eintrag den Farbwert über eine inline CSS-Angabe definiert.
-Das sollte du möglichst vermeiden und lieber mit CSS-KLassen arbeiten. Möchtest du später den Style z. B. den Farbwert 
+Das sollte du möglichst vermeiden und lieber mit CSS-Klassen arbeiten. Möchtest du später den Style z. B. den Farbwert 
 ändern, kannst du das global über deine CSS-Klasse realisieren.
 
-Der Nachteil ist hierbei das du oder deine Redakteure die Styles im Editor nicht sehen können. Hierzu kannst du dem
+Der Nachteil ist hierbei, dass du oder deine Redakteure die Styles im Editor nicht sehen können. Hierzu kannst du dem
 Editor deine eigene CSS-Datei über die `content_css` Angabe zur Verfügung stellen. 
 
 Wir erstellen uns unterhalb des `files`-Ordner in einem öffentlichen Verzeichnis die Datei `myCustomTiny.css`:
@@ -251,7 +250,7 @@ Wir erstellen uns unterhalb des `files`-Ordner in einem öffentlichen Verzeichni
 }
 ```
 
-Die hier angegebenen CSS-KLassen entsprechen den `style_formats` Definitionen. Die Angabe `content_css` existiert
+Die hier angegebenen CSS-Klassen entsprechen den `style_formats` Definitionen. Die Angabe `content_css` existiert
 bereits im Template. Du kannst den bestehenden Eintrag mit deiner eigenen CSS-Datei vollständig ersetzen oder du 
 fügst deine CSS-Datei hinzu: 
 
@@ -272,7 +271,7 @@ Wählst du im Editor deine Format-Definition aus wird diese auch so angezeigt. A
 CSS-Klassen aus der CSS-Datei zusätzlich aufgeführt. Dies ist nicht erwünscht. Mit einem kleinen Trick können wir das
 verhindern.
 
-Die Option `importcss_selector_filter` ist eigentlich dazu gedacht die Anzeige auf bestimmte Bezeichnungen zu bgrenzen. Die 
+Die Option `importcss_selector_filter` ist eigentlich dazu gedacht die Anzeige auf bestimmte Bezeichnungen zu begrenzen. Die 
 Informationen findest du in der [TinyMCE-Dokumentation](https://www.tiny.cloud/docs/plugins/importcss/#importcss_selector_filter).
 Wir verwenden dies in unserem Sinne und geben einen Filter an der gar nicht existiert:
 

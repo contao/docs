@@ -6,7 +6,7 @@ aliases:
 ---
 
 
-The [PaletteManipulator](https://github.com/contao/contao/blob/master/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA][DCAdocs], e.g. add fields to the back end of an existing DCA.
+The [PaletteManipulator](https://github.com/contao/contao/blob/5.x/core-bundle/src/DataContainer/PaletteManipulator.php) is the way to go if you want to edit the palette of a [DCA][DCAdocs], e.g. add fields to the back end of an existing DCA.
 
 
 ## Introduction
@@ -73,7 +73,7 @@ PaletteManipulator::create()
 ;
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Each time you call an `applyTo*()` method, the fields you applied for this instance will not be cleared.
 If you do not want this behaviour, you can create a new instance:
 {{% /notice %}}
@@ -122,7 +122,6 @@ If you do not provide a parent (and position), the legend will simply be appende
 
 
 ## Removing fields
-{{< version "4.7" >}}
 
 ```php
 // contao/dca/tl_user.php

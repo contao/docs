@@ -1,6 +1,6 @@
 ---
 title: 'Members'
-menuTitle: 'Members (front end)'
+linkTitle: 'Members (front end)'
 description: 'The administration of front end users is much simpler than the administration of back end users, since there is no need to work with mounts and individual input fields.'
 aliases:
     - /en/user-management/members/
@@ -37,7 +37,7 @@ Member groups can also be deactivated manually or automatically.
 
 Unlike users, members are not so much concerned with access rights as with personal data such as name, address or telephone number.
 
-{{% notice note %}}
+{{% notice info %}}
 The username and email address must be unique, i.e. they can only be used once. 
 {{% /notice %}}
 
@@ -97,7 +97,7 @@ In this section you can assign a username and password to the member, which will
 
 ### Home directory
 
-Here you can assign the member his own home directory and provide certain files there, for example with the file management. Both the module "Picture gallery" and the module "Downloads" offer the possibility to use the user directory of a member as a data source.
+Here you can assign a member their own home directory and provide certain files there, for example with the file management. Both the module "Picture gallery" and the module "Downloads" offer the possibility to use the user directory of a member as a data source.
 
 **Set home directory:** Here you activate your own home directory.
 

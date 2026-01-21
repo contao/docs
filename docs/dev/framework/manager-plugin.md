@@ -75,7 +75,7 @@ providing the FQCN in the `extra` section of your `composer.json` like so:
 ```
 
 
-{{% notice note %}}
+{{% notice info %}}
 If your Composer package is a monorepository, similar to `contao/contao`, it is also possible to register
 multiple `Manager Plugins` for each subsequent package. You must not create multiple plugins for one package/bundle though!
 
@@ -111,7 +111,7 @@ The `Manager Plugin` automatically loads the following classes.
 * `\App\ContaoManager\Plugin` (recommended)
 * `\ContaoManagerPlugin` (discouraged)
 
-{{% notice info %}}
+{{% notice note %}}
 After creating the application-specific Manager Plugin, you need to execute `composer install`, 
 otherwise the plugin will not be registered yet.
 {{% /notice %}}
@@ -218,7 +218,7 @@ class Plugin implements BundlePluginInterface
 }
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 The internal name of a legacy style Contao 2/3 module is derived from its folder name within the `system/modules/`
 directory. So if the module is placed in `system/modules/notification_center/` then it needs to be referenced by
 `notification_center`. This can also be derived from the target directory of the `extra.contao.sources` configuration 
@@ -243,7 +243,7 @@ The `ConfigPluginInterface` allows you to configure your own or other bundles. E
 bundle that integrates a third party Symfony bundle and depending on external configuration it could set the other
 bundles configuration. 
 
-{{% notice info %}}
+{{% notice note %}}
 Currently, the second argument `$config` is always an empty array. In a future version of the `Contao Manager` would like
 to introduce configuration via the GUI. The day this is implemented, bundles will be able to provide information on
 what's configurable and how (ideally it will be based on the existing Symfony bundle configuration so you don't have to
@@ -261,7 +261,7 @@ class Plugin implements ConfigPluginInterface
 {
     public function registerContainerConfiguration(LoaderInterface $loader, array $config)
     {
-        $loader->load('@VendorSomeBundle/Resources/config/config.yaml');
+        $loader->load(__DIR__.'/../../config/config.yaml');
     }
 }
 ```
@@ -377,12 +377,20 @@ class Plugin implements ExtensionPluginInterface
 }
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Note that you receive an array of `$extensionConfigs` and you may have to apply your changes multiple times. This is
 because of the way the Symfony Dependency Injection Container works. E.g. you have a configuration from `config.yaml` one
 from "Bundle X" and another one from "Bundle Y". The container then merges all these configurations into one
 (which is exactly where that firewall error message comes from). Unfortunately, there is no way you can determine where
 a certain configuration is coming from.
+{{% /notice %}}
+
+{{% notice warning %}}
+You cannot use `$container->addCompilerPass()` to add a compiler pass to the app here because `getExtensionConfig()` 
+is called on every plugin during the process of merging the configuration of all the bundles (done in Symfony
+in the `MergeExtensionConfigurationPass`). If you want to register a regular compiler pass that is called **after**
+the extensions have been merged, see the [respective guide](/guides/modify-container-at-compile-time/)
+to learn more.
 {{% /notice %}}
 
 
@@ -551,13 +559,36 @@ class Plugin implements RoutingPluginInterface
 {
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
-        $file = '@VendorSomeBundle/Resources/config/routes.yaml';
-
-        return $resolver->resolve($file)->load($file);
+        return $resolver
+            ->resolve(__DIR__.'/../../config/routes.yaml')
+            ->load(__DIR__.'/../../config/routes.yaml')
+        ;
     }
 }
 ```
 
+This will give you all the possibilities of registering routes in different formats within your
+one `routes.yaml` file. If, however, you only need one format (e.g. `attribute`) and have all your
+controllers in the same place (e.g. `src/Controller`), you may save yourself the additional config file:
+
+```php
+namespace Vendor\SomeBundle\ContaoManager;
+
+use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
+use Symfony\Component\Config\Loader\LoaderResolverInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
+
+class Plugin implements RoutingPluginInterface
+{
+    public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
+    {
+        return $resolver
+            ->resolve(__DIR__.'/../Controller', 'attribute')
+            ->load(__DIR__.'/../Controller')
+        ;
+    }
+}
+```
 
 ## The `HttpCacheSubscriberPluginInterface`
 
@@ -565,11 +596,6 @@ This interface enables you to add event subscribers to modify the behavior of th
 Through event subscribers, you can modify a request (e.g. strip cookies) or response (e.g. add headers)
 before they hit the cache or are forwarded to Contao. For more information about HttpCache,
 please refer to [the FosHttpCache documentation][2].
-
-{{% notice note %}}
-This feature is available from **contao/manager-plugin 2.9.0** and **Contao 4.9.6**.
-{{% /notice %}}
-
 
 ```php
 namespace Vendor\SomeBundle\ContaoManager;
@@ -588,5 +614,5 @@ class Plugin implements HttpCacheSubscriberPluginInterface
 ```
 
 
-[1]: http://api.symfony.com/master/Symfony/Component/Config/Definition/Builder/ArrayNodeDefinition.html#method_disallowNewKeysInSubsequentConfigs
+[1]: https://github.com/symfony/config/blob/5.4/Definition/Builder/ArrayNodeDefinition.php#L185
 [2]: https://foshttpcache.readthedocs.io/en/latest/symfony-cache-configuration.html#cache-event-listeners

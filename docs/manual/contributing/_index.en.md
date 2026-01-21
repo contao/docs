@@ -14,8 +14,8 @@ Before you can contribute to the documentation, you need to do the following:
 is a version control service for software projects using [Git](https://en.wikipedia.org/wiki/Git) and is home to 
 among other things, the [Contao documentation](https://github.com/contao/docs/).
 - The documentation is written in [Markdown](https://en.wikipedia.org/wiki/Markdown), familiarize yourself with the 
-[syntax](https://docs.contao.org/manual/en/article-management/content-elements/#syntax) of this markup language. 
-familiar with it.
+[syntax and formatting options](https://github.com/contao/docs/blob/main/CONTRIBUTING.md) of this markup language. 
+familiar with it. In addition, at the beginning of the document you have the possibility to maintain appropriate [variables and metadata](https://github.com/contao/docs/blob/main/CONTRIBUTING.md#the-hugo-front-matter-variables).
 
 
 ## Correct small errors
@@ -28,47 +28,56 @@ easiest way to do this is directly through GitHub.
 
 Click on the "Edit this page" link in the upper right corner and you will be redirected to GitHub:
 
-![Edit this page](/de/contributing/images/de/diese-seite-bearbeiten.png?classes=shadow)
+![Edit this page]({{% asset "images/manual/contributing/de/diese-seite-bearbeiten.png" %}}?classes=shadow)
 
 On your first post, you will be asked to [fork](https://en.wikipedia.org/wiki/Fork_(software_development)) 
 from the [repository](https://en.wikipedia.org/wiki/Software_repository) "contao/docs", click on "Fork this repository".
 
-![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow)
+![Fork this repository]({{% asset "images/manual/contributing/de/fork-this-repository.png" %}}?classes=shadow)
 
 
 ### Edit content
 
 Edit the content, describe your changes and click the "Propose file change" button.
 
-![Edit the content](/de/contributing/images/de/inhalt-bearbeiten.png?classes=shadow)
+![Edit the content]({{% asset "images/manual/contributing/de/inhalt-bearbeiten.png" %}}?classes=shadow)
 
 
 ### Create branch and commit
 
-GitHub will now create a branch and a commit for your changes and will show a preview of your 
+GitHub will now create a new branch within your fork and a commit for your changes and will show a preview of your 
 changes will be displayed:
 
-![Create Branch and Commit](/de/contributing/images/de/branch-und-commit-erzeugen.png?classes=shadow)
+![Create Branch and Commit]({{% asset "images/manual/contributing/de/branch-und-commit-erzeugen.png" %}}?classes=shadow)
 
 If everything is correct, click the "Create pull request" button.
 
-{{% notice info %}}
-In the distributed versioning system Git and thus also on GitHub, proposals are created as so-called "pull requests". 
-Since you do not have permission to commit changes directly to the official repository, you submit a 
-a request to the repository's authorizers to "pull" your changes into the official repository. 
-"to pull" your changes into the official repository.
-{{% /notice %}}
+
+### Adding further changes before the pull request
+
+If you want to edit more content before the pull request, for example by making adjustments to corresponding translations, switch to your fork instead and select the newly created branch. Here you can make your additional changes and comment them.
+
+Then you can finally start the pull request via "Contribute/Open pull request".
 
 
 ### Create pull request
 
-On the next page, you can make final adjustments to your pull request if necessary. 
+Since you do not have permissions to make changes directly to the official repository, you make a request to commit your changes to the official repository.
+
+You can make final adjustments to your pull request if necessary. 
 Click the "Create pull request" button again.
 
-![Create pull request](/de/contributing/images/de/create-pull-request.png?classes=shadow)
+![Create pull request]({{% asset "images/manual/contributing/de/create-pull-request.png" %}}?classes=shadow)
 
 **Congratulations!** You have just created a pull request for the official Contao documentation! The 
 community will now review your pull request and (possibly) suggest changes.
+
+
+### Fork update
+
+If you want to propose further changes, check first if your fork is up to date. You can then sync your fork via GitHub using »Fetch upstream«.
+
+![GitHub Fetch upstream]({{% asset "images/manual/contributing/de/github-fork-fetch-upstream.png" %}}?classes=shadow)
 
 
 ## Write a contribution for the documentation
@@ -88,7 +97,7 @@ official Contao documentation repository at [github.com/contao/docs](https://git
 the button "[Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)" to transfer the repository to your 
 personal account. This is only necessary if you are contributing to the documentation for the first time. 
 
-![Fork this repository](/de/contributing/images/de/fork-this-repository.png?classes=shadow)
+![Fork this repository]({{% asset "images/manual/contributing/de/fork-this-repository.png" %}}?classes=shadow)
 
 
 ### Clone the forked repository 
@@ -101,16 +110,16 @@ Create a directory named `contao` and change to it with **c**hange **d**irectory
 cd contao
 ```
 
-When cloning, you install the Hugo Learn theme as a submodule of git.
+When cloning, you install the Hugo Relearn theme as a submodule of git.
 
 ```bash
-git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git
+git clone --recurse-submodules git@github.com:YOUR-GITHUB-USERNAME/docs.git ./
 ```
 
 or
 
 ```bash
-git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git
+git clone --recurse-submodules https://github.com/YOUR-GITHUB-USERNAME/docs.git ./
 ```
 
 
@@ -165,12 +174,6 @@ message `This branch is 7 commits behind contao:main.`.
 So before you make any changes to the docs, you can make sure that your fork is synchronized with the original repository. 
 repository.
 
-Switch to the clone of the forked repository with `cd`.
-
-```bash
-cd docs
-```
-
 Add the original repository once as a new remote repository and specify it as the upstream repository.
 
 
@@ -178,7 +181,7 @@ Add the original repository once as a new remote repository and specify it as th
 git remote add upstream https://github.com/contao/docs.git
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 The [Remote name](https://docs.github.com/en/github/using-git/renaming-a-remote) "upstream" can be freely selected or renamed. 
 can also be renamed later.
 {{% /notice %}}
@@ -259,7 +262,7 @@ To send the changes to your remote repository, run the following command.
 git push origin YOUR-BRANCH-NAME
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 After "pushing" your own new branch, you will see a link to create the pull request on the console.
 {{% /notice %}}
 
@@ -270,16 +273,47 @@ Access your fork on GitHub (https://github.com/YOUR-GITHUB-USERNAME/docs).
 
 In the message, click on "Pull request.
 
-![GitHub message](/de/contributing/images/de/github-message.png?classes=shadow)
+![GitHub message]({{% asset "images/manual/contributing/de/github-message.png" %}}?classes=shadow)
 
 Compare the changes and finish this step by clicking on "Create pull request".
 
-![Compare changes](/de/contributing/images/de/comparing-changes.png?classes=shadow)
+![Compare changes]({{% asset "images/manual/contributing/de/comparing-changes.png" %}}?classes=shadow)
 
 Confirm the creation of a pull request with "Create pull request".
 
-![Create pull request](/de/contributing/images/de/open-a-pull-request.png?classes=shadow)
+![Create pull request]({{% asset "images/manual/contributing/de/open-a-pull-request.png" %}}?classes=shadow)
 
 
 **Congratulations!** You have just created a pull request for the official Contao documentation! The 
 community will now review your pull request and (possibly) suggest changes.
+
+
+### Make changes on an already opended Pull-Request
+
+Find the branch, where your Pull-Request is and check it out. Say it is branch patch-4:
+
+```bash
+git checkout patch-4
+```
+
+Make your changes in the file in question (in the `docs` directory).
+
+Stage your changes for the next commit:
+
+```bash
+git add .
+```
+
+Then you add the changes to the local repository:
+
+```bash
+git commit -m "A meaningful commit-message"
+```
+
+Send your changes to the remote repository:
+
+```bash
+git push origin patch-4
+```
+
+That's it! You have made your changes to the Pull-Request.

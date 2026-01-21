@@ -22,6 +22,9 @@ JavaScript & CSS files etc. for the current page.
 The hook allows you to replace these script tags yourself, or execute other custom
 code before the replacement.
 
+A nonce value is added to the tag names resulting in tag names like `[[TL_CSS_686b97e15f9e04213c87e53db3d7a8bd]]`. The
+nonce value value can be retrieved from `ContaoFramework::getNonce()`.
+
 
 ## Parameters
 
@@ -42,18 +45,21 @@ A string containing the (modified) bufffer content.
 // src/EventListener/ReplaceDynamicScriptTagsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\Framework\ContaoFramework;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("replaceDynamicScriptTags")
- */
+#[AsHook('replaceDynamicScriptTags')]
 class ReplaceDynamicScriptTagsListener
 {
     public function __invoke(string $buffer): string
     {
-        // Modify $buffer here …
+        $nonce = '';
 
-        return $buffer;
+        if (method_exists(ContaoFramework::class, 'getNonce')) {
+            $nonce = '_'.ContaoFramework::getNonce();
+        }
+
+        return str_replace("[[TL_CSS$nonce]]", "[[TL_CSS$nonce]]".'<link rel="stylesheet" href="assets/custom.css">', $buffer);
     }
 }
 ```

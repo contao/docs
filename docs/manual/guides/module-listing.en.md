@@ -18,7 +18,7 @@ Contao [members](/en/user-management/members/) who can be assigned to one or mor
 These details are stored in the database table `tl_member` and can then be queried via the module of the »Type« 
 [listing](/en/layout/module-management/applications/).
 
-{{% notice info %}}
+{{% notice note %}}
 For list display of existing members you could also install the extension 
 [contao-memberlist](https://extensions.contao.org/?q=memberlkist&pages=1&p=friends-of-contao%2Fcontao-memberlist). By 
 using the module »Listing« we can implement this without any extension.
@@ -56,7 +56,7 @@ listed in the database table `tl_member_group`. We assume, that e.g. the group �
 of »2«. The reference of the group membership of a member is made in the table `tl_member` via the data set `groups`.
 
 If you want to limit the member list to all »active« members of the group »board« you can enter the following 
-condition: `disable != 1 AND groups LIKE '%2%'`.
+condition: `disable != 1 AND groups LIKE '%"2"%'`.
 
 
 ### Template »list_default.html5«
@@ -64,7 +64,7 @@ condition: `disable != 1 AND groups LIKE '%2%'`.
 The template »list_default.html5« is extensive, because it considers all eventualities of the representation in interaction 
 with the module. For our example, together with the following information regarding the map display, we simplify the template.
 
-Create a new template »list_default_member.html5« in the [template directory](/en/layout/templates/manage-template/) you 
+Create a new template »list_default_member.html5« in the [template directory](/en/layout/templates/php/manage-template/) you 
 have specified under »Themes« and then use this in your module »Listing«:
 
 ```html
@@ -107,9 +107,9 @@ have specified under »Themes« and then use this in your module »Listing«:
 </div>
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 For simplicity's sake, we have entered rudimentary CSS information here directly in the template. Alternatively, 
-you could also store them as [CSS assets](/en/layout/templates/template-assets/).
+you could also store them as [CSS assets](/en/layout/templates/php/template-assets/).
 {{% /notice %}}
 
 
@@ -141,12 +141,12 @@ PaletteManipulator::create()
 For Contao to accept this information, you have to update the »application cache« in the »System maintenance« section 
 of the console or the Contao Manager.
 
-Then call the Contao installation tool (or from Contao **4.9** on also via the console: 
+Then call the Contao installation tool (or also via the console: 
 `vendor/bin/contao-console contao:migrate`). The new field `myGeoData` is then created in the database table 
 »tl_member«. In the Contao backend you can now use the field to enter the geo-coordinates of a member 
 (in the form of "latitude,longitude").
 
-{{% notice note %}}
+{{% notice info %}}
 Each time the file »contao/dca/tl_member.php« is changed, the »application cache« must be updated again.
 {{% /notice %}}
 
@@ -239,7 +239,7 @@ function createMemberMap(arrMemberData){
 	}
 
 	var mapProvider =
-	new L.tileLayer('https://{s}.tile.openstreetmap.org/tiles/osmde/{z}/{x}/{y}.png', {
+	new L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  attribution: '&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	});
 
@@ -265,7 +265,7 @@ you define the CSS ID for the HTML container. The JavaScript function expects as
 information. This information is assigned to a group `memberGroup`, together with `OpenStreeMap` as map provider, for 
 the purpose of displaying the map. Copy these files into a public directory of your Contao installation below »files«.
 
-{{% notice note %}}
+{{% notice info %}}
 You still need to enable jQuery in the [page layout](/en/layout/theme-manager/manage-page-layouts/) of your theme. The 
 example refers to the standard leaflet marker icon »images/marker-icon.png«. If you want to use a different, individual symbol 
 here, the specifications »iconSize«, »iconAnchor« and »popupAnchor« must also be adapted.
@@ -277,9 +277,9 @@ here, the specifications »iconSize«, »iconAnchor« and »popupAnchor« must a
 We supplement the existing template »list_default_member.html5« as follows:
 
 ```html
-// list_default_member.html5
+<!-- list_default_member.html5 -->
 
-<?
+<?php
 	$GLOBALS['TL_CSS'][] = '/files/myPathTo/leaflet.css|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/leaflet.js|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/myMemberLeafletMap.js|static';
@@ -308,6 +308,7 @@ We supplement the existing template »list_default_member.html5« as follows:
 <?php else: ?>
 	<div id="MYMEMBERMAP" class="block" style="height:40vh"></div>
 
+	<?php $tmpMemberMapData = '' ?>
 	<?php foreach ($this->tbody as $class => $row): ?>
 		<div class="block memberitem <?= $class ?>"><p>
 		  <a href="mailto:<?= $row['email']['raw'] ?>">
@@ -316,7 +317,7 @@ We supplement the existing template »list_default_member.html5« as follows:
 		  <?= $row['postal']['content'] ?> <?= $row['city']['content'] ?></span>
 		</p></div>
 
-		<? $tmpMemberMapData .= sprintf("{'markerPopupContent': '%s',  'LatLong': [%s]},", 
+		<?php $tmpMemberMapData .= sprintf("{'markerPopupContent': '%s',  'LatLong': [%s]},", 
 			$row['firstname']['content'].' '.$row['lastname']['content'], 
 			$row['myGeoData']['content']);
 		?>
@@ -335,16 +336,16 @@ We supplement the existing template »list_default_member.html5« as follows:
 </div>
 ```
 
-First we reference the required CSS and JS files (see also: [CSS and JavaScript asstes](/en/layout/templates/template-assets/)). 
+First we reference the required CSS and JS files (see also: [CSS and JavaScript asstes](/en/layout/templates/php/template-assets/)). 
 Furthermore we define a HTML container with the CSS ID `MYMEMBERMAP` for map display. In the PHP loop we collect the 
 required coordinates via `tmpMemberMapData` and generate a JavaScript array in order to call our function `createMemberMap(arrMemberMapData)`.
 
-{{% notice note %}}
+{{% notice info %}}
 The HTML container for map display requires a CSS height specification. We have created this for simplicity's sake 
 set inline.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 When the map is retrieved, communication between the browser and the OpenStreetMap server is initiated. This 
 transmission must be observed in the DSGVO or ePrivacy.
 {{% /notice %}}
@@ -426,7 +427,7 @@ browser (you could also use the [sessionStorage](https://developer.mozilla.org/d
 
 ### Useful leaflet plugins
 
-The leaflet framework can be extended with [plugins](https://leafletjs.com/plugins.html). Here is a small selection:
+The leaflet framework can be extended with [plugins](https://leafletjs.com/). Here is a small selection:
 
 - [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen): Expands the map with a fullscreen view.
 - [Leaflet.TileLayer.Grayscale](https://github.com/Zverik/leaflet-grayscale): Some map providers have SW/grayscale tiles. With 

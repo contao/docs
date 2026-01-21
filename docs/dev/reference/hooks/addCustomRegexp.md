@@ -52,12 +52,10 @@ The following example implements a check for a German postal code.
 // src/EventListener/AddCustomRegexpListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Widget;
 
-/**
- * @Hook("addCustomRegexp")
- */
+#[AsHook('addCustomRegexp')]
 class AddCustomRegexpListener
 {
     public function __invoke(string $regexp, $input, Widget $widget): bool

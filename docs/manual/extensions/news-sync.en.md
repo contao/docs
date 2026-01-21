@@ -1,6 +1,6 @@
 ---
 title: Contao News Sync
-menuTitle: News Sync
+linkTitle: News Sync
 description: Contao News Sync is a commercial extension for synchronising news articles between Contao installations.
 aliases:
     - /en/extensions/_news-sync/
@@ -8,7 +8,7 @@ aliases:
 
 **[inspiredminds/contao-news-sync](https://extensions.contao.org/?p=inspiredminds%2Fcontao-news-sync)**
 
-_von [inspiredminds](https://www.inspiredminds.at/)_
+_von [INSPIRED MINDS](https://www.inspiredminds.at/)_
 
 _Project web site: [Contao News Sync](https://www.inspiredminds.at/contao-news-sync)_
 
@@ -30,20 +30,20 @@ To add the repository, add the following to your `composer.json`:
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
 ```
 
-Replace `<YOUR_TOKEN>` with the repository token you received from inspiredminds.
+Replace `<YOUR_USERNAME>` and `<YOUR_TOKEN>` with the credentials you received from INSPIRED MINDS.
 
 To add the dependency, add the following to your `composer.json`:
 
 ```json
 {
     "require": {
-        "inspiredminds/contao-news-sync": "^3.0"
+        "inspiredminds/contao-news-sync": "^4.0"
     }
 }
 ```
@@ -62,37 +62,28 @@ To add the dependency, add the following to your `composer.json`:
         }
     ],
     "require": {
-        "php": "^7.1",
         "contao/conflicts": "@dev",
-        "contao/manager-bundle": "4.9.*",
-        "inspiredminds/contao-news-sync": "^3.0"
+        "contao/manager-bundle": "5.3.*",
+        "inspiredminds/contao-news-sync": "^4.0"
     },
     "conflict": {
         "contao-components/installer": "<1.3"
     },
     "extra": {
         "contao-component-dir": "assets",
-        "symfony": {
-            "require": "^4.2"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
     },
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ]
     },
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
@@ -119,14 +110,14 @@ following steps:
 First, the `composer` extension needs to be installed. Go to the _Extension manager_ and click on _Install extension_. Search
 for _composer_ and confirm the installation of version **0.16.6** with _Continue_ (multiple times).
 
-![Extension manager](/de/extensions/images/en/extension-manager-composer-en.png?classes=shadow)
+![Extension manager]({{% asset "images/manual/extensions/en/extension-manager-composer-en.png" %}}?classes=shadow)
 
 #### Composer Installation
 
 After successfully installing the extension you will be redirected to the new _Package management_ within the back end.
 There you have to confirm the installation of Composer.
 
-![Composer installation](/de/extensions/images/en/composer-client-composer-installation-en.png?classes=shadow)
+![Composer installation]({{% asset "images/manual/extensions/en/composer-client-composer-installation-en.png" %}}?classes=shadow)
 
 #### Skip Migration
 
@@ -134,14 +125,14 @@ Afterwards the Composer package management extension would propose to do a migra
 old Contao Extension Repository to the new package management. This step is not required for our purposes, so we can skip
 it by clicking on _skip migration (only if you know what you do)_.
 
-![Migration](/de/extensions/images/en/composer-client-skip-migration-en.png?classes=shadow)
+![Migration]({{% asset "images/manual/extensions/en/composer-client-skip-migration-en.png" %}}?classes=shadow)
 
 #### Change settings
 
 Within the package management, go to _Settings_ in the upper right and change the **Minimum stability** setting to _Stable_.
 Confirm with _Save_ afterwards.
 
-![Einstellungen](/de/extensions/images/en/composer-client-min-stability-en.png?classes=shadow)
+![Einstellungen]({{% asset "images/manual/extensions/en/composer-client-min-stability-en.png" %}}?classes=shadow)
 
 #### Expert Mode
 
@@ -157,7 +148,7 @@ should look like this:
     "license": "proprietary",
     "require": {
         "contao-community-alliance/composer-client": "~0.14",
-        "inspiredminds/contao-news-sync": "^3.0"
+        "inspiredminds/contao-news-sync": "^1.0"
     },
     "prefer-stable": true,
     "minimum-stability": "stable",
@@ -177,7 +168,7 @@ should look like this:
         },
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ],
     "extra": {
@@ -195,7 +186,7 @@ One of the next step is to execute a package update. If you want to execute this
 is recommended to configure the [detached mode](https://github.com/contao-community-alliance/composer-client/wiki/Execution-modes#as-standalone-process-detached) 
 under _System_ » _Settings_ » _Composer settings_.
 
-![Composer settings](/de/extensions/images/en/composer-settings-en.png?classes=shadow)
+![Composer settings]({{% asset "images/manual/extensions/en/composer-settings-en.png" %}}?classes=shadow)
 
 The exact path for the PHP CLI vary and depend on the server environment and the used PHP version. Suggestions
 for possible PHP paths can be found in the [Wiki of the composer extension](https://github.com/contao-community-alliance/composer-client/wiki/Execution-modes#compatibility-with-hosters)
@@ -225,11 +216,11 @@ Assuming the correct [composer settings](#composer-settings) have been done, the
 click on _Update packages_ within the package management. During the first usage, the package update needs to be executed
 three times.
 
-![Composer Update 1](/de/extensions/images/en/en-composer-client-update-1.png?classes=shadow)
+![Composer Update 1]({{% asset "images/manual/extensions/en/en-composer-client-update-1.png" %}}?classes=shadow)
 
-![Composer Update 2](/de/extensions/images/en/en-composer-client-update-2.png?classes=shadow)
+![Composer Update 2]({{% asset "images/manual/extensions/en/en-composer-client-update-2.png" %}}?classes=shadow)
 
-![Composer Update 3](/de/extensions/images/en/en-composer-client-update-3.png?classes=shadow)
+![Composer Update 3]({{% asset "images/manual/extensions/en/en-composer-client-update-3.png" %}}?classes=shadow)
 
 The extension will be installed afterwards. The pcakage management will offer you to also execute the necessary database
 updates. Alternatively these updates can also be done in the Contao Install Tool as usual.
@@ -244,7 +235,7 @@ Contao installation. The command to be executed is
 php composer.phar update --optimize-autoloader
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 The `php` part of the command may need to be exchanged with the actual path to a suitable PHP CLI. This depends on the
 server environment. See also the [composer settings](#composer-settings) section.
 {{% /notice %}}
@@ -340,13 +331,13 @@ additional settings will be available under the _Synchronisation_ section within
 In order to make the news of a news archive available as the source for snychronisation, the setting **Source for synchronisation**
 needs to be enabled.
 
-![News Sync settings](/de/extensions/images/en/contao-news-sync-1-en.png?classes=shadow)
+![News Sync settings]({{% asset "images/manual/extensions/en/contao-news-sync-1-en.png" %}}?classes=shadow)
 
 In order to fetch news from a news archive of a remote source the **Target for synchronisation** setting must be enabled.
 This will provide additional settings. First, the URL of the remote source needs to be configured in **Source URL**. After
 saving, the news archives enabled for synchronisation will be available in the **News archives** setting.
 
-![News Sync settings](/de/extensions/images/en/contao-news-sync-2-en.png?classes=shadow)
+![News Sync settings]({{% asset "images/manual/extensions/en/contao-news-sync-2-en.png" %}}?classes=shadow)
 
 * **News archives** - this will enable the news archives from which news should be fetched from the remote source and put into this news archive.
 * **Limit to categories** - the synchronisation can be limited to these categories, if the `codefog/contao-news_categories` extension is used in both installation.<sup>1</sup>
@@ -355,7 +346,7 @@ saving, the news archives enabled for synchronisation will be available in the *
 * **Update existing entries** - with this setting, any changes in the source of already synchronised entries will also be updated in the target.
 * **Target directory** - a directory for the synchronised images and attachments needs to be set here.
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Currently this only works with version `2.x` of the `news_categories` extension.
 {{% /notice %}}
 

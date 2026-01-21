@@ -19,11 +19,9 @@ It has no parameters and does not expect a return value.
 // src/EventListener/GenerateXmlFilesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("generateXmlFiles")
- */
+#[AsHook('generateXmlFiles')]
 class GenerateXmlFilesListener
 {
     public function __invoke(): void

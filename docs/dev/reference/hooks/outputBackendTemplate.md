@@ -35,11 +35,9 @@ Return the original `$buffer` or return your custom modification.
 // src/EventListener/OutputBackendTemplateListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("outputBackendTemplate")
- */
+#[AsHook('outputBackendTemplate')]
 class OutputBackendTemplateListener
 {
     public function __invoke(string $buffer, string $template): string

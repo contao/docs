@@ -5,8 +5,6 @@ aliases:
   - /framework/image-processing/image-studio/
 ---
 
-{{< version "4.10" >}}
-
 The Image Studio consists of a set of classes and templates that help you generate and output images and metadata.
 
  * [Components](#components)
@@ -92,6 +90,8 @@ or handling image links for you out of the box. When you are ready, call `build(
 
     ```php
     $figure = $figureBuilder->build();
+    // OR
+    $figure = $figureBuilder->buildIfResourceExists();
     ```
   
 {{% notice tip %}}
@@ -133,8 +133,18 @@ This can be helpful if you need to output multiple images with a similar configu
 
 ## Templating
 
+In Twig, there is a `figure()` function and a `figure` and `picture` component, that allows
+generating and outputting `Figures` in your templates. This is by far the most versatile way to render the data while
+still being able to finely control its appearance. Read more about how to use it in the
+[image section](/framework/templates/creating-templates#images) of the Twig template documentation.
 
-### PHP Templates
+{{% notice info %}}
+The following section covers how to use the image studio in **Contao 4.13**. For Contao 5, please refer to the best
+practices outlined in the [Twig template documentation](/framework/templates/creating-templates#images).
+{{% /notice %}}
+
+
+#### PHP Templates
 
 There are two ways to output images in your PHP templates:
 
@@ -158,8 +168,6 @@ There are two ways to output images in your PHP templates:
 
 2) **Inline** &mdash; You can also configure and output a figure directly from within your template by using the
    `Template#figure()` function. 
-   
-   {{< version "4.11" >}}
 
    The function expects a *resource* (uuid, id, path) as the first and the *image size* as the second argument.
    If you want to specify more config, you can pass a *config* array as the third argument.
@@ -193,7 +201,7 @@ There are two ways to output images in your PHP templates:
    ?>
    ``` 
 
-   {{% notice info %}}
+   {{% notice note %}}
    By default, the `image.html5` template is used to render the result, but you can optionally pass a custom template 
    name as the fourth argument to use instead. This also accepts Twig templates: Make sure to specify the fully
    qualified template path including the `.twig` file extension in this case. The template will then receive a `figure`
@@ -202,7 +210,7 @@ There are two ways to output images in your PHP templates:
 
 
 
-### Twig
+#### Twig (Contao 4.13)
 
 If you are using Twig, there are three supported ways to get figures/images into your templates:
 
@@ -232,10 +240,10 @@ If you are using Twig, there are three supported ways to get figures/images into
    {% endfor %}
    ``` 
    
-   {{% notice info %}}
+   {{% notice note %}}
    The macros accept an *options* object as the second argument. This can contain the same data as a `Figure`'s option
    property and will take precedence over already set values. You can for instance use these options to set custom HTML
-   properties on the various tags. Have a look at the [macro definitions](https://github.com/contao/contao/blob/master/core-bundle/src/Resources/views/Image/Studio/_macros.html.twig)
+   properties on the various tags. Have a look at the [macro definitions](https://github.com/contao/contao/blob/5.x/core-bundle/templates/Image/Studio/_macros.html.twig)
    for more information.  
    {{% /notice %}}
    
@@ -244,9 +252,25 @@ If you are using Twig, there are three supported ways to get figures/images into
    macro (and so on). You can also use these individual macros as building blocks for your custom template.
    {{% /notice %}}
 
-3) **Inline** &mdash; You can also output a figure directly from within your template by using the `contao_figure` Twig
+3) **Template** &mdash; You can also create a `Figure` object directly from within your template by using the `figure`
+   Twig function:
+
+   ```twig
+   {% use "@Contao/component/_figure.html.twig" %}
+
+   {% with {figure: figure(id, '_my_size')} %}{{ block('figure_component') }}{% endwith %}
+   ```
+
+   See the [dedicated templates section]({{% relref "creating-templates#images" %}}) and the
+   [Twig reference]({{% relref "figure" %}}) for more detailed examples.
+
+4) **Inline** &mdash; You can also output a figure directly from within your template by using the `contao_figure` Twig
    function. The function expects a *resource* (uuid, id, path) as the first and the *image size* as the second argument.
    If you want to specify more config, you can pass a *config* object as the third argument.
+
+   {{% notice "note" %}}
+   This has been deprecated in Contao **5.0** in favor of the `figure` function above.
+   {{% /notice %}}
    
    In the config object you can configure the same things you would as when using the `FigureBuilder` (see
    [reference][FigureBuilderOptionsReference]). In fact, under the hood, the Twig function uses
@@ -267,9 +291,9 @@ If you are using Twig, there are three supported ways to get figures/images into
      linkHref: 'https://contao.org',
      options: { attr: { class: 'logo-container' } }
    }) }}
-   ``` 
+   ```
 
-   {{% notice info %}}
+   {{% notice note %}}
    By default, the `figure.html.twig` template (see 1) is used to render the result, but you can optionally pass a
    custom template as the fourth argument. The template will receive a `figure` variable with your configured `Figure`
    as its context.
@@ -296,9 +320,9 @@ If you are using Twig, there are three supported ways to get figures/images into
    ``` 
 
 
-[Studio]: https://github.com/contao/contao/tree/master/core-bundle/src/Image/Studio
-[TwigTemplates]: https://github.com/contao/contao/blob/master/core-bundle/src/Resources/views/Image/Studio
-[MacroDefinitions]: https://github.com/contao/contao/blob/master/core-bundle/src/Resources/views/Image/Studio/_macros.html.twig
+[Studio]: https://github.com/contao/contao/blob/5.x/core-bundle/src/Image/Studio
+[TwigTemplates]: https://github.com/contao/contao/blob/5.x/core-bundle/templates/Image/Studio
+[MacroDefinitions]: https://github.com/contao/contao/blob/5.x/core-bundle/templates/Image/Studio/_macros.html.twig
 [PropertyAccess]: https://symfony.com/doc/current/components/property_access.html
 [SizeArray]: /framework/image-processing/image-sizes/#size-array
 [FigureBuilderOptionsReference]: /framework/image-processing/image-studio/#setting-options

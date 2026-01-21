@@ -13,4 +13,4 @@ news list.
 
 Detailed instructions can be found at [docs.pdir.de](https://docs.pdir.de/#/social-feed/index).
 
-![Social Feed](/de/extensions/images/en/social-feed.png?classes=shadow)
+![Social Feed]({{% asset "images/manual/extensions/en/social-feed.png" %}}?classes=shadow)

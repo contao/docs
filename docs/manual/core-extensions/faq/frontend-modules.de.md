@@ -1,6 +1,6 @@
 ---
 title: "Frontend-Module"
-description: "Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
+description: "Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über die Modulverwaltung 
 konfigurieren kannst."
 url: "core-erweiterung/faq/frontend-module"
 aliases:
@@ -9,22 +9,22 @@ weight: 20
 ---
 
 Nachdem du nun weißt, wie Kategorien und Fragen im Backend verwaltet werden, wird dir jetzt erklärt, wie du diese 
-Inhalte im Frontend darstellen kannst. Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über 
+Inhalte im Frontend darstellen kannst. Die FAQ-Erweiterung enthält drei neue Frontend-Module, die du wie gewohnt über 
 die Modulverwaltung konfigurieren kannst.
 
-![FAQ-Module](/de/core-extensions/faq/images/de/faq-module.png?classes=shadow)
+![FAQ-Module]({{% asset "images/manual/core-extensions/faq/de/faq-module.png" %}}?classes=shadow)
 
 
 ## FAQ-Liste
 
-Das Frontend-Modul »FAQ-Liste« fügt der Webseite eine Liste von Fragen hinzu, die aus einer oder mehreren Kategorien 
+Das Frontend-Modul »FAQ-Liste« fügt der Webseite eine Liste von Fragen hinzu, die aus einer oder mehreren Kategorien 
 stammen können.
 
 
 ### Modul-Konfiguration
 
 **FAQ-Kategorien:** Hier legst du fest, aus welchen Kategorien Fragen angezeigt werden. Du kannst die Reihenfolge der 
-Kategorien mithilfe vom Navigationssymbol ![Frage verschieben](/de/icons/drag.svg?classes=icon "Frage verschieben") 
+Kategorien mithilfe vom Navigationssymbol ![Frage verschieben]({{% asset "icons/drag.svg" %}}?classes=icon "Frage verschieben") 
 anpassen.
   
 **FAQ-Leser:** Hier kannst du festlegen ob automatisch zum FAQ-Leser gewechselt werden soll, wenn ein Beitrag 
@@ -55,16 +55,16 @@ Das Frontend-Modul generiert folgenden HTML-Code:
 ## FAQ-Leser
 
 Das Frontend-Modul »FAQ-Leser« dient dazu, die Antwort zu einer bestimmten Frage darzustellen. Den Alias der Frage 
-bezieht das Modul über die URL, sodass FAQs mit sogenannten [Permalinks](https://de.wikipedia.org/wiki/Permalink) 
+bezieht das Modul über die URL, sodass FAQs mit sogenannten [Permalinks](https://de.wikipedia.org/wiki/Permalink) 
 gezielt verlinkt werden können:
 
 <code>example.com/frage/kann-ich-eigene-php-skripte-verwen-den.html</code>
 
-Das Schlüsselwort des FAQ-Lesers lautet *frage* und teilt dem Modul mit, dass es eine bestimmte Frage suchen und 
+Das Schlüsselwort des FAQ-Lesers lautet *frage* und teilt dem Modul mit, dass es eine bestimmte Frage suchen und 
 ausgeben soll. Existiert die gesuchte Frage nicht, gibt der FAQ-Leser eine Fehlermeldung und den HTTP-Status-Code 
-»404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
+»404 Not found« zurück. Der Status-Code ist wichtig für die Suchmaschinenoptimierung.
 
-{{% notice info %}}
+{{% notice note %}}
 Auf einer einzelnen Seite darf sich immer nur ein »Lesermodul« befinden, egal welchen Typs. Andernfalls würde das eine 
 oder andere Modul eine 404 Seite auslösen, da zum Beispiel der Alias einer FAQ nicht in einem Kalender gefunden 
 wird, oder umgekehrt der Alias eines Events in einer FAQ-Kategorie.
@@ -114,7 +114,7 @@ Details zum Markup der Kommentare findest du im Abschnitt
 
 ## FAQ-Seite
 
-Das Frontend-Modul »FAQ-Seite« fügt der Webseite alle Fragen und Antworten hinzu, die aus einer oder mehreren 
+Das Frontend-Modul »FAQ-Seite« fügt der Webseite alle Fragen und Antworten hinzu, die aus einer oder mehreren 
 Kategorien stammen können.
 
 ### Modul-Konfiguration

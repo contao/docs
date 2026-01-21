@@ -88,6 +88,12 @@ or not of `"type": "contao-bundle"`, you can still add it to the
 with a link to your homepage, where you can provide custom installation instructions, information
 regarding pricing or licensing and more.
 
+{{% notice note %}}
+Note that certain information on packagist.org is cached up to 12 hours. If you think your extension
+meets all the above requirements, you may have to wait for the next day for the search index
+to pick it up!
+{{% /notice %}}
+
 
 ## Private and commercial packages
 
@@ -125,7 +131,7 @@ by drag & drop or the upload button. Whenever the package needs to be updated,
 a new ZIP archive with a new `version` property has to be uploaded to the
 Contao Manager.
 
-{{% notice info %}}
+{{% notice note %}}
 On most operating systems the ZIP archive must be created by selecting all package
 files individually, not by creating an archive of the parent folder of your package!
 {{% /notice %}}
@@ -153,11 +159,6 @@ to the `composer.json`, which will then be included when loading dependencies.
 Be aware that you can **only** use repositories, you cannot add an `auth.json` 
 or a `config` section with authentication details. If your repository requires
 authentication, it must be included in the repository URL.
-
-{{% notice info %}}
-Unfortunately, [GitHub](https://github.com) does not support repository-based authentication.
-Known options are [Private Packagist](https://packagist.com) or [GitLab](https://gitlab.com).
-{{% /notice %}}
 
 {{% notice tip %}}
 A `contao-provider` package is still a regular artifact, which can contain any

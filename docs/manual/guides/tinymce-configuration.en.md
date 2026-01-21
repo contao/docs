@@ -21,14 +21,14 @@ Create a new [template](/en/layout/templates/) from  "Layout > Templates" in the
 [navigation area](/en/administration-area/call-and-structure-of-the-backend/#the-navigation-area) and
 select the template `be_tinyMCE.html5`.
 
-{{% notice note %}}
+{{% notice info %}}
 The template **must** be placed in the root directory (`templates/be_tinyMCE.html5`) because the Contao backend 
 will only find the template there. All lines within the template `<script>...</script>` except the last line must 
 be closed with a comma. After saving the template, your changes are applied immediately. 
 {{% /notice %}}
 
 {{% notice tip %}}
-Starting with Contao **4.10** you can use [template inheritance](/en/layout/templates/template-inheritance/) in order to
+You can also use [template inheritance](/en/layout/templates/php/template-inheritance/) in order to
 only adjust parts of the default `be_tinyMCE` template to your needs.
 {{% /notice %}}
 
@@ -52,7 +52,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['rte'] = 'myTinyMCE';
 ```
 
 The last entry corresponds to the template name (without be_ prefix). In our case `myTinyMCE`. Then you have to empty 
-the application cache once via Contao Manager (“Maintenance” > “Application Cache” > “Rebuild Production Cache”) or via the console.
+the application cache once via Contao Manager ("Maintenance" > "Application Cache" > "Rebuild Production Cache") or via the console.
 
 The procedure would be similar for your messages texts with a template `be_myTinyMCENews` and a `tl_news.php`:
 
@@ -84,7 +84,7 @@ In the "`Settings > Security`" section you can define
 [allowed HTML tags](/en/system/settings/#security-settings). It might happen that this information 
 alone is not sufficient.
 
-For example, if you use the [Contao logo](https://fontawesome.com/v4.7.0/icon/contao) in a content element of 
+For example, if you use the [Contao logo](https://fontawesome.com/icons/contao?s=&f=brands) in a content element of 
 type "Enumeration" with available "Font Awesome" as follows, your entries will not be applied after "Save".
 
 ```html
@@ -102,7 +102,7 @@ extended_valid_elements: 'q[cite|class|title],article,section,hgroup,figure,figc
 ```
 
 Then you have to empty the application cache once via Contao Manager 
-(“Maintenance” > “Application Cache” > “Rebuild Production Cache”) or via the console. Re-enter your HTML 
+("Maintenance" > "Application Cache" > "Rebuild Production Cache") or via the console. Re-enter your HTML 
 in the content element and "Save".
 
 
@@ -119,7 +119,7 @@ and the possible settings can be found in the documentation. So we have to add t
 // be_tinyMCE.html5
 ...
 
-toolbar: 'link unlink | image | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code',
 
 // activate paste_as_text option
 paste_as_text: true
@@ -142,11 +142,12 @@ this for your editors, remove the entries `alignleft aligncenter alignright alig
 ...
 
 // custom toolbar settings
-toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | bullist numlist outdent indent | code',
 
 // activate paste_as_text option
 paste_as_text: true
 ```
+
 
 ### Change the menu
 
@@ -173,7 +174,7 @@ menubar: 'file edit insert view format',
 removed_menuitems: "align",
 
 // custom toolbar settings
-toolbar: 'link unlink | image | formatselect | bold italic | bullist numlist outdent indent | code',
+toolbar: 'link unlink | image | blocks | bold italic | bullist numlist outdent indent | code',
 
 // activate paste_as_text option
 paste_as_text: true

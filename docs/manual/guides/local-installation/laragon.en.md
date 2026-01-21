@@ -1,6 +1,6 @@
 ---
 title: "Laragon"
-menuTitle: "With Laragon"
+linkTitle: "With Laragon"
 description: "With Laragon, one or more Contao installations can be installed and maintained locally."
 aliases:
     - /en/guides/local-installation/laragon/
@@ -26,7 +26,7 @@ information about Laragon (installation, features, etc.) in the [official docume
 
 Windows 7, 8, 8.1, 10
 
-{{% notice note %}}
+{{% notice info %}}
 This manual describes how to install Laragon on Windows 10 (64-bit).
 {{% /notice %}}
 
@@ -47,11 +47,11 @@ version of Polsedit and can be run directly without installation.
 - For Windows 10 (64 bit): run `polseditx64.exe` (64 bit version)
 - In the right pane, search for the policy "*Create symbolic links*" (`SE_CREATE_SYMBOLIC_LINK_NAME`):
 
-![Search for "Create symbolic links"](/de/guides/local-installation/images/en/laragon/01_polsedit.png?width=800px&classes=shadow)
+![Search for "Create symbolic links"]({{% asset "images/manual/guides/local-installation/en/laragon/01_polsedit.png" %}}?width=800px&classes=shadow)
 
 - Double-click on "*Create symbolic links*" to open the policy's properties window:
 
-![Open the policy entry](/de/guides/local-installation/images/en/laragon/02_polsedit_policy_properties.png?width=300px&classes=shadow)
+![Open the policy entry]({{% asset "images/manual/guides/local-installation/en/laragon/02_polsedit_policy_properties.png" %}}?width=300px&classes=shadow)
 
 - Select your (current) Windows user in the list of user accounts via the button "*Add User or Group...*"  
 and click "OK" to confirm your selection. The Windows user should now also be listed in the policy properties 
@@ -84,7 +84,7 @@ shortcut icon on the Windows desktop. After starting the application, a program 
 notification area (System Tray) that also displays the status of the services (started or stopped) and can be used to 
 open the Laragon management panel:
 
-![Laragon Management Panel](/de/guides/local-installation/images/en/laragon/03_laragon.png?width=500px&classes=shadow)
+![Laragon Management Panel]({{% asset "images/manual/guides/local-installation/en/laragon/03_laragon.png" %}}?width=500px&classes=shadow)
 
 
 ## 4. Configure Laragon
@@ -99,26 +99,26 @@ set up with just a few clicks.
 - In the Laragon management panel, click on "*Menu*" and then "*Settings*" (the menu can also be opened by 
 right-clicking on a free space in the management panel):
 
-![Open menu in the Laragon Management Panel](/de/guides/local-installation/images/en/laragon/04_laragon_menu.png?width=500px&classes=shadow)
+![Open menu in the Laragon Management Panel]({{% asset "images/manual/guides/local-installation/en/laragon/04_laragon_menu.png" %}}?width=500px&classes=shadow)
 
 - In the "*General*" tab of the Laragon settings, enable the option "*Start all services automatically*" and for 
 the option "*Create virtual hosts automatically*" change the "*host name*" scheme as follows: `{name}.local`
 
-![Laragon Settings](/de/guides/local-installation/images/en/laragon/05_laragon_settings.png?width=500px&classes=shadow)
+![Laragon Settings]({{% asset "images/manual/guides/local-installation/en/laragon/05_laragon_settings.png" %}}?width=500px&classes=shadow)
 
 - In the "*Services/Ports*" tab of the Laragon settings, make sure that the two services "*Apache*" and "*MySQL*" 
 are selected. If desired, you could also enable SSL support via port 443 here:
 
-![Laragon Settings](/de/guides/local-installation/images/en/laragon/06_laragon_services.png?width=500px&classes=shadow)
+![Laragon Settings]({{% asset "images/manual/guides/local-installation/en/laragon/06_laragon_services.png" %}}?width=500px&classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 The Laragon configuration settings are stored in the file `laragon\usr\laragon.ini` and can of course be changed 
 there as well.
 {{% /notice %}}
 
 - Use "*Menu*" &gt; "*Laragon*" &gt; "*laragon.ini*" to open the Laragon configuration file for editing:
 
-![Edit Laragon configuration file](/de/guides/local-installation/images/en/laragon/07_laragon_ini.png?width=500px&classes=shadow)
+![Edit Laragon configuration file]({{% asset "images/manual/guides/local-installation/en/laragon/07_laragon_ini.png" %}}?width=500px&classes=shadow)
 
 - In the section `[php]` add the PHP `sys_temp_dir` variable to the values of the key `QuickSettings`:
 
@@ -128,22 +128,22 @@ QuickSettings=xdebug, max_execution_time, upload_max_filesize, post_max_size, me
 
 - Open the PHP quick settings via "*Menu*" &gt; "*PHP*" &gt; "*Quick settings*":
 
-![Open PHP quick settings](/de/guides/local-installation/images/en/laragon/08_laragon_php.png?width=500px&classes=shadow)
+![Open PHP quick settings]({{% asset "images/manual/guides/local-installation/en/laragon/08_laragon_php.png" %}}?width=500px&classes=shadow)
 
 - Select the entry "*memory_limit = …*" from the submenu and set the PHP memory limit to the value `-1` (or `2G`, `4G`):
 
-![Set PHP memory limit](/de/guides/local-installation/images/en/laragon/09_laragon_php_memory_limit.png?width=250px&classes=shadow)
+![Set PHP memory limit]({{% asset "images/manual/guides/local-installation/en/laragon/09_laragon_php_memory_limit.png" %}}?width=250px&classes=shadow)
 
 - In the same submenu, select the entry "*sys_tempdir = …*" and set the temporary directory to the 
 value `C:\laragon\tmp` (adjust the Laragon root directory if necessary, if Laragon is not installed 
 on the drive `C:\` under the default path):
 
-![set sys_temp_dir](/de/guides/local-installation/images/en/laragon/10_laragon_php_sys_temp_dir.png?width=250px&classes=shadow)
+![set sys_temp_dir]({{% asset "images/manual/guides/local-installation/en/laragon/10_laragon_php_sys_temp_dir.png" %}}?width=250px&classes=shadow)
 
 - Via "*Menu*" &gt; "*PHP*" &gt; "*PHP extensions*" further PHP extensions can be easily activated or deactivated if required.
 - The button "*All services...*" starts the web and database server:
 
-![Start web and database server](/de/guides/local-installation/images/en/laragon/11_laragon_servers.png?width=500px&classes=shadow)
+![Start web and database server]({{% asset "images/manual/guides/local-installation/en/laragon/11_laragon_servers.png" %}}?width=500px&classes=shadow)
 
 - At this point, the Windows Defender Firewall (or possibly another system firewall) will almost certainly report 
 and prompt both the "*Apache HTTP Server*" and the *MySQL* server "*mysqld.exe*" to allow access to the local network. 
@@ -151,17 +151,17 @@ These two accesses must be granted for the further operation of the web and data
 - If the servers are allowed to access the corresponding ports successfully, Laragon should show the two 
 services "*Apache*" and "*MySQL*" as "*started*":
 
-![Services successfully started](/de/guides/local-installation/images/en/laragon/12_laragon_running.png?width=500px&classes=shadow)
+![Services successfully started]({{% asset "images/manual/guides/local-installation/en/laragon/12_laragon_running.png" %}}?width=500px&classes=shadow)
 
 - Now the local web server should be running and the Laragon index page should already be accessible via the web browser via [http://localhost/:](http://localhost/)
 
-![Laragon index page](/de/guides/local-installation/images/en/laragon/13_laragon_localhost.png?width=500px&classes=shadow)
+![Laragon index page]({{% asset "images/manual/guides/local-installation/en/laragon/13_laragon_localhost.png" %}}?width=500px&classes=shadow)
 
 - In order to allow system-wide access to PHP (and all other Laragon tools/programs), the corresponding Laragon 
 paths must be added to the Windows environment variable (PATH variable). The environment variables can be updated 
 automatically via the Laragon management panel: "*Menu*" &gt; "*Tools"* &gt; "*Environment Variables" &gt; "*Add Laragon *to Path":*
 
-![Add Windows environment variable in the Laragon management panel](/de/guides/local-installation/images/en/laragon/14_laragon_path.png?width=500px&classes=shadow)
+![Add Windows environment variable in the Laragon management panel]({{% asset "images/manual/guides/local-installation/en/laragon/14_laragon_path.png" %}}?width=500px&classes=shadow)
 
 In the same submenu, the Laragon environment variables can be removed if necessary. You can also use the 
 menu item "*Manage Path*" to check if the path information has been added correctly to the PATH environment variable.
@@ -169,9 +169,9 @@ menu item "*Manage Path*" to check if the path information has been added correc
 - Via "*Menu*" &gt; "*Create New Website*"* &gt; "*Configuration...*" the existing app configurations can be 
 changed or supplemented accordingly:
 
-![Customizing App Configurations](/de/guides/local-installation/images/en/laragon/15_laragon_app_config.png?width=500px&classes=shadow)
+![Customizing App Configurations]({{% asset "images/manual/guides/local-installation/en/laragon/15_laragon_app_config.png" %}}?width=500px&classes=shadow)
 
-{{% notice note %}}
+{{% notice info %}}
 The app configurations are saved to the file `laragon\usr\sites.conf`.
 {{% /notice %}}
 
@@ -241,7 +241,7 @@ Using the parameter `AutoCreateDatabase` in the section `Options` you can config
 be created automatically or not. By default, every newly created web project will also create a new, empty database 
 with the same name at the same time.
 
-{{% notice note %}}
+{{% notice info %}}
 The changes in the `laragon\usr\sites.conf` are immediately active after saving; Laragon does not need to be restarted. 
 {{% /notice %}}
 
@@ -255,7 +255,7 @@ Although Laragon already comes with Composer, it may be necessary to install the
 - Download the Composer Windows installer: <https://getcomposer.org/Composer-Setup.exe>
 - Run the installation file `Composer-Setup.exe` and follow the guided installation process in the setup wizard:
 
-![Install Composer](/de/guides/local-installation/images/en/laragon/16_composer_install.png?width=500px&classes=shadow)
+![Install Composer]({{% asset "images/manual/guides/local-installation/en/laragon/16_composer_install.png" %}}?width=500px&classes=shadow)
 
 - The Composer Setup Wizard `php.exe` should be able to determine the path to automatically, provided the Laragon Paths 
 have been added to the Windows PATH environment variable as specified above.
@@ -264,7 +264,7 @@ accessible system-wide.
 - For testing purposes, you could `laragon\www` navigate to the Laragon directory in Windows Explorer, 
 right-click on it to start the "*Console*" and, for example `php -v`, execute and `composer -V` run it:
 
-![Testing whether Composer was successfully installed](/de/guides/local-installation/images/en/laragon/17_laragon_console.png?width=800px&classes=shadow)
+![Testing whether Composer was successfully installed]({{% asset "images/manual/guides/local-installation/en/laragon/17_laragon_console.png" %}}?width=800px&classes=shadow)
 
 
 ## 6. Install Contao
@@ -280,15 +280,15 @@ database and configure the virtual host.
 - Open "*Menu*" &gt; "*Create new website*" in the Laragon Management Panel (or alternatively right-click the 
 Laragon tray icon in the Laragon Management Panel) and select the entry "Contao *4.9 Website ...*":
 
-![Create new website](/de/guides/local-installation/images/en/laragon/18_laragon_website_project.png?width=500px&classes=shadow)
+![Create new website]({{% asset "images/manual/guides/local-installation/en/laragon/18_laragon_website_project.png" %}}?width=500px&classes=shadow)
 
 - Enter the project name of the example website `mycompany` in the input field (if possible, the project name should 
 not contain any special characters, because it is also used as database name) and confirm with "OK":
 
-![Enter project name](/de/guides/local-installation/images/en/laragon/19_laragon_websiteproject_2.png?width=250px&classes=shadow)
+![Enter project name]({{% asset "images/manual/guides/local-installation/en/laragon/19_laragon_websiteproject_2.png" %}}?width=250px&classes=shadow)
 
-- A console window opens: In the background, Contao 4.9 (including all required packages) is installed via Composer. 
-Afterwards, the Contao Manager script is downloaded and saved in the subfolder `web/` as `contao-manager.phar.php`.
+- A console window opens: In the background, Contao {{% siteparam "currentContaoVersion" %}} (including all required packages) is installed via Composer. 
+Afterwards, the Contao Manager script is downloaded and saved in the subfolder `public/` as `contao-manager.phar.php`.
 - Laragon also automatically creates a database of the same name "*mycompany*" and a virtual host `mycompany.local`
 - For the virtual host, the Windows hosts file must also be updated. Therefore, depending on the Windows User Account 
 Control (UAC) configuration, you may be prompted to confirm the changes to the system file after installation is complete. 
@@ -304,7 +304,7 @@ and add a new line
 
 in addition:
 
-![Edit drivers\etc\hosts in the Laragon management panel](/de/guides/local-installation/images/en/laragon/20_laragon_hosts.png?width=500px&classes=shadow)
+![Edit drivers\etc\hosts in the Laragon management panel]({{% asset "images/manual/guides/local-installation/en/laragon/20_laragon_hosts.png" %}}?width=500px&classes=shadow)
 
 - If the new virtual host is configured correctly, you should now be able to launch the 
 [Contao install tool](/en/installation/contao-installtool/) via `http://mycompany.local/contao/install`.
@@ -312,7 +312,7 @@ in addition:
 and then enter the database access data in the corresponding fields. By default, the DB user name is root, the 
 DB password field remains empty (if no password has been set) and the project name (i.e. mycompany) is entered for the database name:
 
-![Contao installation tool](/de/guides/local-installation/images/en/laragon/21_contao_installtool.png?width=800px&classes=shadow)
+![Contao installation tool]({{% asset "images/manual/guides/local-installation/en/laragon/21_contao_installtool.png" %}}?width=800px&classes=shadow)
 
 - If Contao can successfully connect to the specified database, the database will be updated immediately afterwards by 
 generating all necessary tables and the database structure.
@@ -327,7 +327,7 @@ generating all necessary tables and the database structure.
 (The system check of the Contao Manager should automatically detect the path to the PHP binary if a manual configuration is selected in 
 the server configuration via "*Other ...*")
 
-{{% notice note %}}
+{{% notice info %}}
 If the browser software performs a web search for this keyword when entering, for example, contrary `mycompany.local` 
 to expectations, the schema or network protocol `http://` should also be specified when calling, i.e. `http://mycompany.local/`.
 {{% /notice %}}
@@ -355,7 +355,7 @@ to expectations, the schema or network protocol `http://` should also be specifi
 - Open "*Menu*" &gt; "*Tools*" &gt; "*Delete project*" in the Laragon management panel and select the website 
 project to be deleted from the submenu:
 
-![Remove Website Project in the Laragon Management Panel](/de/guides/local-installation/images/en/laragon/22_laragon_deleteproject.png?width=500px&classes=shadow)
+![Remove Website Project in the Laragon Management Panel]({{% asset "images/manual/guides/local-installation/en/laragon/22_laragon_deleteproject.png" %}}?width=500px&classes=shadow)
 
 - In the next dialog box, Laragon will inform you that both the project folder and its associated database will be removed. 
 These actions cannot be undone, i.e. the data will be irretrievably deleted. When you are aware of what you are doing, confirm the deletion.
@@ -367,7 +367,7 @@ These actions cannot be undone, i.e. the data will be irretrievably deleted. Whe
 
 - In the Laragon Management Panel, click the "*WWW Folder*" button to open the Laragon www folder in Explorer:
 
-![Open Laragon www folder in Explorer](/de/guides/local-installation/images/en/laragon/23_laragon_www.png?width=500px&classes=shadow)
+![Open Laragon www folder in Explorer]({{% asset "images/manual/guides/local-installation/en/laragon/23_laragon_www.png" %}}?width=500px&classes=shadow)
 
 - Open a new console window in the context menu of the website's project folder (corresponds to the installation 
 directory of the Contao installation) via "*Console*".
@@ -387,7 +387,7 @@ composer require contao/official-demo:4.4.0
 - Call the Contao install tool and import the SQL database dump of the Contao Official Demo (COD). Note: All data 
 already in the database will be deleted when the COD dump is imported.
 
-{{% notice note %}}
+{{% notice info %}}
 Like any other package/bundle, the Contao Official Demo (COD) can be installed in the same way via Contao Manager.
 {{% /notice %}}
 
@@ -421,7 +421,7 @@ $cfg['LoginCookieValidity'] = 36000;
   - Username: `root`
   - Password: <leer></leer>
 
-{{% notice note %}}
+{{% notice info %}}
 The Apache alias configuration for phpMyAdmin is located in `laragon\etc\apache2\alias\phpmyadmin.conf`.
 {{% /notice %}}
 
@@ -446,15 +446,14 @@ of Visual C++ (VCxx) for the Apache web server and PHP match:
 - Unpack the ZIP archive for Apache 2.4 VC11 in the folder `laragon\bin\apache` into the corresponding folder (`httpd-2.4.38-win64-VC11`). The unpacked files and folders may have to be moved to match the given folder structure (see `httpd-2.4.35-win64-VC15`).
 - Change PHP version:
 
-![Change PHP version](/de/guides/local-installation/images/en/laragon/24_laragon_php_versions.png?width=500px&classes=shadow)
+![Change PHP version]({{% asset "images/manual/guides/local-installation/en/laragon/24_laragon_php_versions.png" %}}?width=500px&classes=shadow)
 
 - Change Apache version:
 
-![Changing Apache Version](/de/guides/local-installation/images/en/laragon/25_laragon_apache_version.png?width=500px&classes=shadow)
+![Changing Apache Version]({{% asset "images/manual/guides/local-installation/en/laragon/25_laragon_apache_version.png" %}}?width=500px&classes=shadow)
 
 
 ### Help
 
 There is a [thread](https://community.contao.org/de/showthread.php?74042) in the [Contao forum](https://community.contao.org/) 
-that deals with the installation and operation of Laragon or you can get advice in the Laragon forum [DE](https://laraboard.io/forum/) 
-or [EN](https://forum.laragon.org/)
+that deals with the installation and operation of Laragon or you can get advice in the [Laragon forum](https://github.com/leokhoa/laragon/discussions).

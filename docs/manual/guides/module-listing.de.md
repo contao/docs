@@ -19,7 +19,7 @@ Wir möchten für eine fiktive Vereinsseite eine Liste der Mitglieder zusammen m
 Diese Angaben werden in der Datenbanktabelle `tl_member` gespeichert und können dann über das Modul vom »Typ« 
 [Auflistung](/de/layout/modulverwaltung/anwendungen/#auflistung) abgefragt werden.
 
-{{% notice info %}}
+{{% notice note %}}
 Zur Listendarstellung bestehender Mitglieder könntest du auch die Erweiterung 
 [contao-memberlist](https://extensions.contao.org/?q=memberlkist&pages=1&p=friends-of-contao%2Fcontao-memberlist) 
 installieren. Mit Nutzung des Moduls »Auflistung« können wir dies u. a. ohne Erweiterung umsetzen.
@@ -60,7 +60,7 @@ Mitgliedergruppen werden in der Datenbanktabelle `tl_member_group` geführt. Wir
 in der Tabelle `tl_member` über den Datensatz `groups`. 
 
 Möchtest du die Mitgliederliste auf alle »aktiven« Mitglieder beschränken die zur Gruppe »Vorstand« gehören kannst du 
-folgendes als Bedingung eintragen: `disable != 1 AND groups LIKE '%2%'`
+folgendes als Bedingung eintragen: `disable != 1 AND groups LIKE '%"2"%'`
 
 
 ### Template »list_default.html5«
@@ -69,7 +69,7 @@ Das Template »list_default.html5« ist umfangreich, da es im Zusammenspiel mit 
 Darstellung berücksichtigt. Für unser Beispiel, zusammen mit den noch folgenden Angaben hinsichtlich der 
 Kartendarstellung, vereinfachen wir das Template. 
 
-Erstelle dir in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/verwaltung/) ein 
+Erstelle dir in dem von dir unter »Themes« vorgegebenen [Template-Verzeichnis](/de/layout/templates/php/verwaltung/) ein 
 neues Template »list_default_member.html5« und benutze dieses anschließend in deinem Modul »Auflistung«:
 
 ```html
@@ -112,9 +112,9 @@ neues Template »list_default_member.html5« und benutze dieses anschließend in
 </div>
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Einfachheitshalber haben wir rudimentäre CSS-Angaben hier direkt im Template eingetragen. 
-Alternativ könntest du diese auch als [CSS-Asset](/de/layout/templates/assets/) hinterlegen.
+Alternativ könntest du diese auch als [CSS-Asset](/de/layout/templates/php/assets/) hinterlegen.
 {{% /notice %}}
 
 
@@ -146,12 +146,12 @@ PaletteManipulator::create()
 Damit Contao diese Angaben übernimmt musst du im Anschluß über die Konsole oder über den Contao Manager im Bereich 
 »Systemwartung« den »Anwendungs-Cache« aktualisieren. 
 
-Rufe dann das Contao-Installtool auf (Oder ab Contao **4.9** auch über die Konsole: 
+Rufe dann das Contao-Installtool auf (Oder auch über die Konsole: 
 `vendor/bin/contao-console contao:migrate`). Das neue Feld `myGeoData` wird dann in der Datenbanktabelle 
 »tl_member« angelegt. Im Contao Backend steht dir jetzt das Feld zur Eingabe der Geo-Koordinaten eines Mitglieds 
 (in Form von »Breitengrad,Längengrad«) zur Verfügung.
 
-{{% notice note %}}
+{{% notice info %}}
 Bei jeder Änderung der Datei »contao/dca/tl_member.php« muss der »Anwendungs-Cache« erneut aktualisiert werden.
 {{% /notice %}}
 
@@ -249,7 +249,7 @@ function createMemberMap(arrMemberData){
 	}
 
 	var mapProvider =
-	new L.tileLayer('https://{s}.tile.openstreetmap.org/tiles/osmde/{z}/{x}/{y}.png', {
+	new L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  attribution: '&copy;<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	});
 
@@ -276,7 +276,7 @@ entsprechenden Informationen. Diese werden einer Gruppe `memberGroup`, zusammen 
 zwecks Darstellung der Karte zugeordnet. Kopiere diese Dateien in ein öffentliches Verzeichnis deiner Contao 
 Installation unterhalb von »files«.
 
-{{% notice note %}}
+{{% notice info %}}
 Du musst weiterhin jQuery im [Seitenlayout](/de/layout/theme-manager/seitenlayouts-verwalten/#jquery) 
 deines Themes aktivieren. Das Beispiel bezieht sich auf das Standard Leaflet-Marker-Symbol »images/marker-icon.png«. 
 Wenn du hier ein anderes, eigenes Symbol nutzen möchtest, müssen die Angaben »iconSize«, »iconAnchor« und »popupAnchor« 
@@ -289,9 +289,9 @@ ebenfalls angepasst werden.
 Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 
 ```html
-// list_default_member.html5
+<!-- list_default_member.html5 -->
 
-<?
+<?php
 	$GLOBALS['TL_CSS'][] = '/files/myPathTo/leaflet.css|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/leaflet.js|static';
 	$GLOBALS['TL_JAVASCRIPT'][] = '/files/myPathTo/myMemberLeafletMap.js|static';
@@ -320,6 +320,7 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 <?php else: ?>
 	<div id="MYMEMBERMAP" class="block" style="height:40vh"></div>
 
+	<?php $tmpMemberMapData = '' ?>
 	<?php foreach ($this->tbody as $class => $row): ?>
 		<div class="block memberitem <?= $class ?>"><p>
 		  <a href="mailto:<?= $row['email']['raw'] ?>">
@@ -328,7 +329,7 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 		  <?= $row['postal']['content'] ?> <?= $row['city']['content'] ?></span>
 		</p></div>
 
-		<? $tmpMemberMapData .= sprintf("{'markerPopupContent': '%s',  'LatLong': [%s]},", 
+		<?php $tmpMemberMapData .= sprintf("{'markerPopupContent': '%s',  'LatLong': [%s]},", 
 			$row['firstname']['content'].' '.$row['lastname']['content'], 
 			$row['myGeoData']['content']);
 		?>
@@ -348,16 +349,16 @@ Das bisherige Template »list_default_member.html5« ergänzen wir wie folgt:
 ```
 
 Zunächst referenzieren wir die benötigten CSS- und JS-Dateien (s. a.: 
-[CSS- und JavaScript-Assets](/de/layout/templates/assets/)). Weiterhin definieren wir einen HTML-Container mit der CSS-ID
+[CSS- und JavaScript-Assets](/de/layout/templates/php/assets/)). Weiterhin definieren wir einen HTML-Container mit der CSS-ID
 `MYMEMBERMAP` zur Kartendarstellung. In der PHP-Schleife erfassen wir über `tmpMemberMapData` u. a. die benötigten 
 Koordinaten und erzeugen im Anschluß hierüber ein JavaScript-Array zwecks Aufruf unserer Funktion `createMemberMap(arrMemberMapData)`.
 
-{{% notice note %}}
+{{% notice info %}}
 Der HTML-Container zur Kartendarstellung benötigt zwingend eine CSS-Height Angabe. Wir haben diese einfachheitshalber 
 inline gesetzt.
 {{% /notice %}}
 
-{{% notice info %}}
+{{% notice note %}}
 Mit dem Abruf der Karte wird eine Kommunikation des Browsers und dem OpenStreetMap-Server angestossen. Diese Übermittlung 
 ist bei der DSGVO oder ePrivacy zu beachten.
 {{% /notice %}}
@@ -441,7 +442,7 @@ des Browsers (Du könntest hierzu auch die
 
 ### Nützliche Leaflet Plugins {#nuetzliche-leaflet-plugins}
 
-Das Leaflet-Framework kann man mit [Plugins](https://leafletjs.com/plugins.html) erweitern. Hier eine kleine Auswahl:
+Das Leaflet-Framework kann man mit [Plugins](https://leafletjs.com/) erweitern. Hier eine kleine Auswahl:
 
 - [Leaflet.fullscreen](https://github.com/Leaflet/Leaflet.fullscreen): Erweitert die Karte mit einer FullScreen Ansicht.
 - [Leaflet.TileLayer.Grayscale](https://github.com/Zverik/leaflet-grayscale): Manche Kartenanbieter verfügen über SW/Graustufen 

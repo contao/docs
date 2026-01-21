@@ -44,12 +44,10 @@ arguments. The hook does not expect a return value.
 // src/EventListener/CustomizeSearchListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 
-/**
- * @Hook("customizeSearch")
- */
+#[AsHook('customizeSearch')]
 class CustomizeSearchListener
 {
     public function __invoke(array &$pageIds, string $keywords, string $queryType, bool $fuzzy, Module $module): void

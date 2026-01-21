@@ -10,9 +10,9 @@ weight: 70
 
 You first need to log in to Contao Manager. To do so, call up your domain again with the addition `/contao-manager.phar.php` and enter your access data.
 
-If you want to update the extension "terminal42/contao-easy\_themes", switch to the "Packages" tab and click the "Update" button next to the extension. Of course you can also reserve other extensions to update. Click on "Apply changes" to start the update. The update can take several minutes. Details of the update process can be displayed by clicking on the following icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+If you want to update the extension "terminal42/contao-easy\_themes", switch to the "Packages" tab and click the "Update" button next to the extension. Of course you can also reserve other extensions to update. Click on "Apply changes" to start the update. The update can take several minutes. Details of the update process can be displayed by clicking on the following icon![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
-![Update extensions in Contao Manager](/de/installation/images/en/update-extensions-in-contao-manager.png?classes=shadow)
+![Update extensions in Contao Manager]({{% asset "images/manual/installation/en/update-extensions-in-contao-manager.png" %}}?classes=shadow)
 
 Once the Contao Manager has updated the extension(s), you have to run the [Contao-Installtool](../contao-installtool/) to update the database if necessary.
 

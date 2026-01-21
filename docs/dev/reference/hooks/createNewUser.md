@@ -35,12 +35,10 @@ does not expect a return value.
 // src/EventListener/CreateNewUserListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 
-/**
- * @Hook("createNewUser")
- */
+#[AsHook('createNewUser')]
 class CreateNewUserListener
 {
     public function __invoke(int $userId, array $userData, Module $module): void

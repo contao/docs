@@ -23,8 +23,8 @@ You can also use [anonymous functions](http://php.net/functions.anonymous) for D
 The following is a reference of all available callbacks, using their service tag
 callback property name.
 
-{{% notice info %}}
-Generally these callbacks are exectued in the back end, e.g. when editing data records.
+{{% notice note %}}
+Generally these callbacks are executed in the back end, e.g. when editing data records.
 However in some instances they might also be executed by front end modules, most
 prominently the member modules. In this case the parameters passed to the callback
 will be different, as there will be no `\Contao\DataContainer` instance for example,
@@ -47,7 +47,7 @@ permissions or to modify the Data Container Array dynamically at runtime.
 {{% expand "Parameters" %}}
 #### Back end
 
-* `\Contao\DataContainer` Data Container object
+* `\Contao\DataContainer` Data Container object or `null`
 
 **return:** _void_
 
@@ -67,13 +67,11 @@ This example changes the `mandatory` attribute for the `tl_content.text` field f
 namespace App\EventListener\DataContainer;
 
 use Contao\ContentModel;
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-/**
- * @Callback(table="tl_content", target="config.onload")
- */
+#[AsCallback(table: 'tl_content', target: 'config.onload')]
 class MakeTextNotMandatoryCallback
 {
     private $requestStack;
@@ -83,7 +81,7 @@ class MakeTextNotMandatoryCallback
         $this->requestStack = $requestStack;
     }
 
-    public function __invoke(DataContainer $dc = null): void
+    public function __invoke(DataContainer|null $dc = null): void
     {
         if (null === $dc || !$dc->id || 'edit' !== $this->requestStack->getCurrentRequest()->query->get('act')) {
             return;
@@ -116,6 +114,42 @@ Executed when a new record is created.
 {{% /expand %}}
 
 
+### `config.onbeforesubmit`
+
+Executed when a back end form is submitted _before_ the record will be updated
+in the database. Allows you to e.g. modify the values or introduce validation
+accross multiple fields. You are expected to return the values.
+
+{{% expand "Parameters" %}}
+* `array` Values of the record
+* `\Contao\DataContainer` Data Container object
+
+**return:** `array` Values of the record
+{{% /expand %}}
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/MemberOnBeforeSubmitCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback(table: 'tl_member', target: 'config.onbeforesubmit')]
+class MemberOnBeforeSubmitCallbackListener
+{
+    public function __invoke(array $record, DataContainer $dc): array
+    {
+        // Adjust the record here
+        // …
+
+        return $record;
+    }
+}
+```
+{{% /expand %}}
+
+
 ### `config.onsubmit`
 
 Executed when a back end form is submitted _after_ the record has been updated
@@ -136,6 +170,37 @@ intervals in the calendar extension).
 * `\Contao\ModulePersonalData` The front end module instance
 
 **return:** _void_
+{{% /expand %}}
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/NewsSubmitCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+use Doctrine\DBAL\Connection;
+
+#[AsCallback(table: 'tl_news', target: 'config.onsubmit')]
+class NewsSubmitCallbackListener
+{
+    private $db;
+
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    public function __invoke(DataContainer $dc): void
+    {
+        if (!$dc->id) {
+            return;
+        }
+
+        $this->db->update('tl_news', ['foobar' => 'foo'], ['id' => $dc->id]);
+    }
+}
+```
 {{% /expand %}}
 
 
@@ -168,13 +233,11 @@ is deleted in the back end.
 // src/EventListener/DataContainer/MemberDeleteCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Doctrine\DBAL\Connection;
 
-/**
- * @Callback(table="tl_member", target="config.ondelete")
- */
+#[AsCallback(table: 'tl_member', target: 'config.ondelete')]
 class MemberDeleteCallbackListener
 {
     private $db;
@@ -234,25 +297,6 @@ Executed after the old version of the record has been added to `tl_version`.
 {{% /expand %}}
 
 
-### `config.onrestore`
-
-Executed after a record has been restored from an old version.
-
-{{% notice info %}}
-This callback is deprecated and will be removed in Contao 5.0. Use [config.onrestore_version](#configonrestore_version)
-instead.
-{{% /notice %}}
-
-{{% expand "Parameters"%}}
-* `integer` Parent ID of the `tl_version` entry
-* `string` Table
-* `array` Record data
-* `integer` Version number
-
-**return:** _void_
-{{% /expand %}}
-
-
 ### `config.onrestore_version`
 
 Executed after a record has been restored from an old version.
@@ -282,8 +326,6 @@ Executed after a deleted record has been restored from the "undo" table.
 
 ### `config.oninvalidate_cache_tags`
 
-{{< version "4.7" >}}
-
 This callback is executed whenever a record is changed in any way via the Contao
 back end. It allows you to add additional cache tags that should be invalidated.
 
@@ -296,8 +338,6 @@ back end. It allows you to add additional cache tags that should be invalidated.
 
 
 ### `config.onshow`
-
-{{< version "4.7" >}}
 
 Allows you to customize the info <i class="fa fa-info-circle"></i> modal window
 of a database record.
@@ -313,10 +353,61 @@ window.
 
 ***
 
+### `config.onpalette`
+
+{{< version "5.3" >}}
+
+Allows to dynamically adjust the palette. This can also be achieved using e.g. the `config.onload` callback where you
+can modify the palette as it is a global variable. However, adjusting it depending on the object's values is way easier
+using `config.onpalette` making it automatically work for e.g. the edit multiple mode.
+
+{{% expand "Parameters" %}}
+* `string` The current palette
+* `\Contao\DataContainer` Data Container object
+
+**return:** `string` The adjusted palette
+{{% /expand %}}
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/PagePaletteCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback(table: 'tl_page', target: 'config.onpalette')]
+class PagePaletteCallback
+{
+    public function __invoke(string $palette, DataContainer $dc): string
+    {
+        $currentRecord = $dc->getCurrentRecord();
+
+        // This shouldn't happen, defensive programming
+        if (null === $currentRecord) {
+            return $palette;
+        }
+
+        // Adjust palettes for root pages
+        if ('root' === $currentRecord['type']) {
+            $palette = PaletteManipulator::create()
+                ->addLegend('my_legend')
+                ->addField(['my_field_one', 'my_field_two'], 'my_legend', PaletteManipulator::POSITION_APPEND)
+                ->applyToString($palette)
+            ;
+        }
+        
+        return $palette;
+    }
+}
+```
+{{% /expand %}}
 
 ## Listing Callbacks
 
-{{% notice note %}}
+{{% notice info %}}
 All listing callbacks are _singular_ callbacks - meaning there can only be one
 callback, not multiple ones.
 {{% /notice %}}
@@ -326,7 +417,8 @@ callback, not multiple ones.
 
 Allows for individual paste buttons and is e.g. used in the site structure to
 disable buttons depending on the user's permissions (requires an additional
-command check via load_callback).
+command check via load_callback). This callback is only available in
+[trees or extended trees (mode 5 and 6)]({{% relref "list#sorting" %}}).
 
 {{% expand "Parameters" %}}
 * `\Contao\DataContainer` Data Container object
@@ -334,9 +426,9 @@ command check via load_callback).
 * `string` Table
 * `bool` Whether this is a circular reference of the tree view
 * `array` Clipboard data
-* `array` Children
-* `string` "Previous" label
-* `string` "Next" label
+* `array`/`null` Children
+* `string`/`null` "Previous" label
+* `string`/`null` "Next" label
 
 **return:** `string` HTML for additional buttons
 {{% /expand %}}
@@ -352,6 +444,24 @@ Defines how child elements are rendered in "parent view".
 **return:** `string` HTML for the child record
 {{% /expand %}}
 
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/ExampleChildRecordCallbackListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+
+#[AsCallback(table: 'tl_example', target: 'list.sorting.child_record')]
+class ExampleChildRecordCallbackListener
+{
+    public function __invoke(array $row): string
+    {
+        return '<div class="tl_content_left">'.$row['title'].'</div>';
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `list.sorting.header`
 
@@ -364,11 +474,47 @@ Allows for individual labels in header of "parent view".
 **return:** `array` Header labels
 {{% /expand %}}
 
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/CalendarHeaderCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+use Doctrine\DBAL\Connection;
+
+/**
+ * Adds the total number of events to the header fields.
+ */
+#[AsCallback(table: 'tl_calendar_events', target: 'list.sorting.header')]
+class CalendarHeaderCallback
+{
+    /** @var Connection */
+    private $db;
+
+    public function __construct(Connection $db)
+    {
+        $this->db = $db;
+    }
+
+    public function __invoke(array $labels, DataContainer $dc): array
+    {
+        $count = $this->db->fetchOne("SELECT COUNT(*) FROM tl_calendar_events WHERE pid = ?", [$dc->id]);
+
+        $labels['Total events'] = $count;
+
+        return $labels;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `list.sorting.panel_callback.subpanel`
 
 This callback allows you to inject HTML for custom panels. Replace `subpanel`
-wit your custom panel's name.
+with your custom panel's name.
 
 {{% expand "Parameters" %}}
 * `\Contao\DataContainer` Data Container object
@@ -417,7 +563,17 @@ to add status icons.
 * `\Contao\DataContainer` Data Container object
 * `array` Columns with existing labels
 
-**return:** `array` Columns with labels
+**return:** If the DCA uses `showColumns` then the return value must be an `array` of strings. Otherwise just the label as a `string`.
+
+
+#### Parent view
+
+* `array` Record data
+* `string` Current label
+* `\Contao\DataContainer` Data Container object
+
+**return:** `string` The record label
+
 {{% /expand %}}
 
 {{% expand "Example for tree view" %}}
@@ -427,16 +583,14 @@ This example adds an icon to the label of the example entity as tree view.
 // src/EventListener/DataContainer/ExampleLabelCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Contao\Image;
 
-/**
- * @Callback(table="tl_example", target="list.label.label")
- */
+#[AsCallback(table: 'tl_example', target: 'list.label.label')]
 class ExampleLabelCallbackListener
 {
-    public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, ?bool $isProtected = null): string
+    public function __invoke(array $row, string $label, DataContainer $dc, string $imageAttribute = '', bool $returnImage = false, bool|null $isProtected = null): string
     {
         $icon = Image::getHtml('bundles/app/images/example.svg');
 
@@ -453,13 +607,11 @@ This example translates a dynamic status field for the label of the example enti
 // src/EventListener/DataContainer/ExampleLabelCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * @Callback(table="tl_example", target="list.label.label")
- */
+#[AsCallback(table: 'tl_example', target: 'list.label.label')]
 class ExampleLabelCallbackListener
 {
     private TranslatorInterface $translator;
@@ -488,20 +640,25 @@ class ExampleLabelCallbackListener
 
 ## Operations callbacks
 
-{{% notice note %}}
+{{% notice info %}}
 All operations callbacks are _singular_ callbacks - meaning there can only be
 one callback, not multiple ones.
 {{% /notice %}}
 
-The following is a list of button callbacks for operations. Replace `<OPERATION>`
+The following is a list of callbacks for operations. Replace `<OPERATION>`
 in each case with the actual [operation][DcaListOperations] you want to use the callback for.
 
 These callbacks allow for individual navigation icons and is e.g. used in the
 site structure to disable buttons depending on the user's permissions (requires
-an additional command check via load_callback).
+an additional command check via a [`fields.<field>.load`](#fields-field-load) callback).
 
 
 ### `list.global_operations.<OPERATION>.button`
+
+This callback allows you to generate a button for a specific global operation yourself, instead of letting Contao 
+generate it for you. The callback passes the originally generated button HTML as a string (if applicable), plus all the 
+metadata defined in the DCA that is included in the generated button. The callback is expected to return a string 
+containing HTML for the button (or an empty string, if you do not want to show a button).
 
 {{% expand "Parameters" %}}
 * `string`/`null` Button href
@@ -518,23 +675,63 @@ an additional command check via load_callback).
 
 ### `list.operations.<OPERATION>.button`
 
-{{% expand "Parameters" %}}
-* `array` Record data
-* `string`/`null` Button href
-* `string` Label
-* `string` Title
-* `string`/`null` Icon
-* `string` HTML attributes
-* `string` Table
-* `array` IDs of all root records
-* `array` IDs of all child records
-* `bool` Whether this is a circular reference of the tree view
-* `string` "Previous" label
-* `string` "Next" label
-* `\Contao\DataContainer` Data Container object
+This callback allows you to configure or replace the button for a specific operation. The callback passes an instance 
+of `DataContainerOperation` which you can use to retrieve data and affect how the button is generated.
 
-**return:** `string` HTML for the button
+{{% expand "Parameters" %}}
+* `DataContainerOperation` Operation instance with method to retrieve data and modify the button.
+
+**return:** _void_
 {{% /expand %}}
+
+{{% expand "Example" %}}
+
+This example hide a custom operation button if the user is not allowed to use it.
+
+Attention: this won't disable the operation itself, it only hides the button!
+To disable the operation, you need to check for the permission additionally
+before its execution, for example in the operation code or a `config.onload` callback.
+
+```php
+// src/EventListener/DataContainer/ExampleListOperationListener.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DataContainer\DataContainerOperation;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
+#[AsCallback(table: 'tl_example', target: 'list.operations.custom.button')]
+class ExampleListOperationListener
+{
+    public function __construct(
+        private readonly AuthorizationCheckerInterface $authorizationChecker,
+    ) {
+    }
+
+    public function __invoke(DataContainerOperation $operation): void
+    {
+        // Show the icon only but no link if the user cannot edit
+        if (!$this->authorizationChecker->isGranted('contao_user.example.can_edit', $operation->getRecord()['id'])) {
+            $operation->disable();
+            return;
+        }
+        
+        // Remove the operation completely by replacing the HTML if the user cannot see the record
+        if (!$this->authorizationChecker->isGranted('contao_user.example.can_view', $operation->getRecord()['id'])) {
+            $operation->setHtml('');
+            return;
+        }
+        
+        // Replace the target URL of the operation
+        $operation->setUrl('https://example.com');
+        
+        // Access the operation config through array access
+        $operation['label'] = $operation['title'] = 'See the example website';
+    }
+}
+```
+{{% /expand %}}
+
 
 ***
 
@@ -545,9 +742,48 @@ The following is a list of callbacks for DCA fields. Replace `<FIELD>` with a
 field name of your choice.
 
 
+### `fields.<FIELD>.attributes`
+
+{{< version "5.1" >}}
+
+Allows you do dynamically adjust the attributes of a field in a DCA before a widget is generated.
+
+{{% expand "Parameters" %}}
+* `array` Current attributes
+* `\Contao\DataContainer`/`null` Data Container object
+
+**return:** `array` The adjusted attributes array
+{{% /expand %}}
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/DataContainer/AttributesCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback(table: 'tl_content', target: 'fields.text.attributes')]
+class AttributesCallback
+{
+    public function __invoke(array $attributes, DataContainer|null $dc = null): array
+    {
+        if (!$dc || 'text' !== ($dc->getCurrentRecord()['type'] ?? null)) {
+            return $attributes;
+        }
+
+        $attributes['label'] = 'Custom text label';
+
+        return $attributes;
+    }
+}
+```
+{{% /expand %}}
+
+
 ### `fields.<FIELD>.options`
 
-{{% notice note %}}
+{{% notice info %}}
 The `fields.<FIELD>.options` callback is a _singular_ callback - meaning there can
 only be one callback, not multiple ones.
 {{% /notice %}}
@@ -564,7 +800,7 @@ or checkbox list. Useful e.g. for conditional foreinKey-relations.
 
 ### `fields.<FIELD>.input_field`
 
-{{% notice note %}}
+{{% notice info %}}
 The `fields.<FIELD>.input_field` callback is a _singular_ callback - meaning there
 can
 only be one callback, not multiple ones.
@@ -584,8 +820,7 @@ field is not saved automatically!
 
 ### `fields.<FIELD>.load`
 
-Executed when a form field is initialized and can e.g. be used to load a default
-value.
+Executed when a form field is initialized and can e.g. be used to load a default value (in this case you will also have to enable [`alwaysSave`]({{% relref "fields#evaluation" %}})).
 
 {{% expand "Parameters" %}}
 #### Back end
@@ -638,6 +873,35 @@ then and the error message will be shown in the form.
 **return:** `mixed` New value to be saved
 {{% /expand %}}
 
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/DataContainer/ContentTextSaveCallback.php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+
+#[AsCallback(table: 'tl_content', target: 'fields.text.save')]
+class ContentTextSaveCallback
+{
+    public function __invoke($value, DataContainer $dc)
+    {
+        // Show an error if tl_content.text contains "foobar"
+        if (false !== stripos($value, 'foobar')) {
+            throw new \Exception('String "foobar" is not allowed.');
+        }
+
+        // Or process the value before saving
+        $value = strtoupper($value);
+
+        // Return the processed value
+        return $value;
+    }
+}
+```
+{{% /expand %}}
+
 
 ### `fields.<FIELD>.wizard`
 
@@ -682,12 +946,10 @@ namespace App\EventListener\DataContainer;
 use App\Model\ExampleCategoryModel;
 use App\Model\ExampleModel;
 use Contao\Config;
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\PageModel;
 
-/**
- * @Callback(table="tl_example", target="fields.serpPreview.eval.url")
- */
+#[AsCallback(table: 'tl_example', target: 'fields.serpPreview.eval.url')]
 class ExampleSerpPreviewUrlCallbackListener
 {
     public function __invoke(ExampleModel $model): string
@@ -706,7 +968,7 @@ class ExampleSerpPreviewUrlCallbackListener
             throw new \Exception('Invalid jumpTo page');
         }
 
-        $suffix = $page->getAbsoluteUrl(Config::get('useAutoItem') ? '/%s' : '/items/%s');
+        $suffix = $page->getAbsoluteUrl('/%s');
 
         return sprintf(preg_replace('/%(?!s)/', '%%', $suffix), $model->alias ?: $model->id);
     }
@@ -734,13 +996,11 @@ namespace App\EventListener\DataContainer;
 use App\Model\ExampleCategoryModel;
 use App\Model\ExampleModel;
 use Contao\Controller;
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\LayoutModel;
 use Contao\PageModel;
 
-/**
- * @Callback(table="tl_example", target="fields.serpPreview.eval.title_tag")
- */
+#[AsCallback(table: 'tl_example', target: 'fields.serpPreview.eval.title_tag')]
 class ExampleSerpPreviewTitleTagCallbackListener
 {
     public function __invoke(ExampleModel $model): string
@@ -803,12 +1063,10 @@ of the `tl_example` Data Container.
 // src/EventListener/DataContainer/EditButtonsCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-/**
- * @Callback(table="tl_example", target="edit.buttons")
- */
+#[AsCallback(table: 'tl_example', target: 'edit.buttons')]
 class EditButtonsCallbackListener
 {
     public function __invoke(array $buttons, DataContainer $dc): array
@@ -847,12 +1105,10 @@ of the `tl_example` Data Container.
 // src/EventListener/DataContainer/SelectButtonsCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 
-/**
- * @Callback(table="tl_example", target="select.buttons")
- */
+#[AsCallback(table: 'tl_example', target: 'select.buttons')]
 class SelectButtonsCallbackListener
 {
     public function __invoke(array $buttons, DataContainer $dc): array

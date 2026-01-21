@@ -12,8 +12,7 @@ tags:
 
 In diesem Tutorial wird die lokale Contao Nutzung mit [XAMPP](https://www.apachefriends.org/) für Windows beschrieben. 
 Wir verwenden hierbei eine »XAMPP Portable Version«, die lediglich kopiert werden muß. Du wählst hierzu das 
-passende [Windows .zip Archiv](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.16/), 
-z. B. [xampp-portable-windows-x64-7.4.16-0-VC15.zip](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.16/xampp-portable-windows-x64-7.4.16-0-VC15.zip/download), aus. 
+passende [Windows Archiv](https://www.apachefriends.org/de/download.html) aus. 
 
 Anschließend entpackst du das Archiv nach z. B. `D:\xampp` und startest einmalig die Datei `setup_xampp.bat`. Die 
 »XAMPP Installation« ist damit abgeschlossen.
@@ -33,7 +32,7 @@ In deinem Browser erreichst du über die Eingabe von `http://localhost` das
 »XAMPP Dashboard« mit generellen Informationen. Hier findest du im oberen Menü u. a. einen Link `PHPInfo` mit 
 Informationen zur aktuellen PHP-Konfiguration.
 
-{{% notice info %}}
+{{% notice note %}}
 Du solltest das »XAMPP Control-Panel« (xampp-control.exe) und die »XAMPP Konsole« (xampp_shell.bat) immer mit 
 Administrator Rechten starten.
 {{% /notice %}}
@@ -57,6 +56,19 @@ Die genannten Änderungen sind für die Installation über den [PHP-Composer](ht
 Darüber hinaus könntest du optional auch die Einträge »allow_url_fopen«, »max_execution_time« 
 oder »file_uploads« überprüfen und anpassen.
 {{% /notice %}}
+
+## Die Apache-Konfiguration
+
+Bei XAMPP bzw. Apache unter Windows ist der Default-Wert der sogenannten `ThreadStackSize` nur 1 MB, während der Wert auf Linux-Plattformen standardmäßig bei 8 MB liegt. Um Abstürze des lokalen Servers zu vermeiden, wird empfohlen, diesen Wert zu erhöhen.
+Ergänze dazu die Datei `D:\xampp\apache\conf\httpd.conf` am Ende durch folgenden Code, um die `ThreadStackSize` auf 8 MB zu erhöhen 
+
+```
+<IfModule mpm_winnt_module>
+    ThreadStackSize 8388608
+</IfModule> 
+```
+
+Danach muss XAMPP (Apache) neu gestartet werden.
 
 **Herzlichen Glückwunsch!** 
 Du hast alle Vorbereitungen für eine lokale Installation von Contao abgeschlossen.
@@ -95,7 +107,7 @@ php ../composer.phar create-project contao/managed-edition demo 4.9
 
 Deine Contao-Installation befindet sich im Anschluss im XAMPP-Verzeichnis `htdocs\demo`.
 
-{{% notice note %}}
+{{% notice info %}}
 Optional könntest du die Installation von Contao auch direkt über den Contao-Manager ausführen.
 Erstelle dir hierzu besipielsweise im XAMPP-Verzeichnis `htdocs` die Verzeichnisse `demo\web`. Kopiere den 
 [Contao-Manager](https://contao.org/de/download.html) in das Verzeichnis `demo\web` und benenne die Datei danach 

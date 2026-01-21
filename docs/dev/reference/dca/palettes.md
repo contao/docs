@@ -118,7 +118,7 @@ semicolon (;) or a comma (,). Whereas the comma is just used to separate the
 field names, the semicolon indicates the beginning of a new fieldset, which can
 be expanded and collapsed. Typically, each group will also have a specific _legend_.
 
-![palette example](../images/palette_example.png?classes=shadow)
+![palette example]({{% asset "images/dev/reference/palette_example.png" %}}?classes=shadow)
 
 The above example is defined by the following code:
 
@@ -144,15 +144,19 @@ section of the Data Container Array as `tl_class` (e.g. `'tl_class' => 'w50 wiza
 
 | `tl_class` | Description |
 | --- | --- |
+| `w25` | Set the field width to 25% and float it (`float:left`). {{< version-tag "5.1" >}} |
+| `w33` | Set the field width to 33.33333333% and float it (`float:left`). {{< version-tag "5.1" >}} |
 | `w50` | Set the field width to 50% and float it (`float:left`). |
+| `w66` | Set the field width to 66.66666666% and float it (`float:left`). {{< version-tag "5.1" >}} |
+| `w75` | Set the field width to 75% and float it (`float:left`). {{< version-tag "5.1" >}} |
 | `clr` | Clear all floats (`clear:both`). Use this for any full length field coming after a `w50` field within a fieldset (see note below). |
 | `wizard` | Shorten the input field so there is enough room for the wizard button (e.g. date picker fields). |
-| `long` | Make the text input field span two columns. |
+| `long` | Make the input field take the full available width. |
 | `cbx` | Set the field minimum height to 46 pixels (used for single checkboxes; more space at bottom). |
 | `m12` | Adds a 17 pixels top and bottom padding to the element (used for single checkboxes; more space at top and bottom). |
 | `cbx m12` | A combination of cbx and m12 sets the minimum height of the field to 80 pixels (used for single checkboxes; more space at top and bottom). |
 
-{{% notice info %}}
+{{% notice note %}}
 Due to the nature of floating elements in CSS you need to be careful about which fields of your palette are 50% width
 and thus are floating and which are not. For example if a 50% (`w50`) field is immediately followed by a full length
 field then you must add the `clr` class to the latter, otherwise the layout might break (e.g. the full length field 

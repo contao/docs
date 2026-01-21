@@ -22,7 +22,7 @@ One characteristic of a content management system is that several users can work
 
 Furthermore, a CMS supports workflows. In Contao, you can allow an editor to create content but leave the publishing of that content to the editor-in-chief. This simple workflow guarantees that content doesn't appear on the website until the editor-in-chief has reviewed it.
 
-Even if you maintain a website all by yourself and don't need any rights management or workflows, it still makes sense to use a CMS. A CMS makes your life much easier by breaking down tasks like creating and checking a form or embedding a Google Map - which means "you don't have to know how it's done technically". To use Contao, doesn't even require knowlage HTML, although it is the markup language used to create web pages.
+Even if you maintain a website all by yourself and don't need any rights management or workflows, it still makes sense to use a CMS. A CMS makes your life much easier by breaking down tasks like creating and checking a form or embedding a Google Map - which means "you don't have to know how it's done technically". To use Contao, you don't need to know HTML, although it is the markup language used to create web pages.
 
 Because Contao is installed on a web server, you have access to your data around the clock from anywhere in the world. So you can theoretically work on your website from a beautiful beach - although this could lead to problems during your family vacation.
 

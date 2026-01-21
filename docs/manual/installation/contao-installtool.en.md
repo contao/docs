@@ -6,6 +6,11 @@ aliases:
 weight: 90
 ---
 
+{{% notice info %}}
+The Contao Install Tool no longer exists as of Contao 5, as the database can be updated directly via 
+the [Contao Manager]({{% relref "installation/contao-manager" %}}) or the console.
+{{% /notice %}}
+
 In your browser, open the URL of your Contao installation and add the `/contao/install` path to access the Install Tool.
 
 > `www.example.com/contao/install`
@@ -16,7 +21,7 @@ Accept the license and create a password with which you can access the Install T
 
 The Contao Install Tool cannot create new databases itself because most shared hosting packages only allow this with the management software (e.g. Confixx, Plesk or cPanel). So, go to the management interface of your server and create a new database there. Then enter the credentials for the database in the Contao Install Tool.
 
-![Enter database connection for Contao](/de/installation/images/en/installtool-database-connection.png?classes=shadow)
+![Enter database connection for Contao]({{% asset "images/manual/installation/en/installtool-database-connection.png" %}}?classes=shadow)
 
 **Host:** Here you enter the domain or IP address of the database server.
 
@@ -32,7 +37,7 @@ The Contao Install Tool cannot create new databases itself because most shared h
 
 After you have saved the database access data, the Install Tool connects to the database and compares the tables with the current version of Contao. If an update is necessary, the Install Tool automatically presents you a list of changes that you can confirm or reject.
 
-![Confirm database changes](/de/installation/images/en/installtool-installing-schema.png?classes=shadow)
+![Confirm database changes]({{% asset "images/manual/installation/en/installtool-installing-schema.png" %}}?classes=shadow)
 
 Usually, you should accept the offered changes so that your tables are always up-to-date and Contao does not try to access missing fields later. For a new installation, the list of changes is usually very long since all tables have to be created first.
 
@@ -54,7 +59,7 @@ When you import a template, existing data is overwritten!
 
 If you did not import a template, for example if you want to create a new website with Contao, you need to create an administrator user that you can use to log in to the Contao back end later.
 
-![Create an administrator account](/de/installation/images/en/installtool-create-admin-account.png?classes=shadow)
+![Create an administrator account]({{% asset "images/manual/installation/en/installtool-create-admin-account.png" %}}?classes=shadow)
 
 **Username**: Here you enter the username of the administrator.
 
@@ -66,27 +71,3 @@ If you did not import a template, for example if you want to create a new websit
 
 After you have created the administrator user, the installation of Contao is complete and the link at the bottom right
 will redirect you to the back end.
-
-
-## Reset the Install Tool {#reset-the-installtool}
-
-There are two reasons why you might want to reset the Install Tool:
-
-1. The Install Tool has been locked.
-2. You have forgotten the Install Tool password.
-
-The Install Tool is protected against [brute force attacks](https://de.wikipedia.org/wiki/Brute-Force-Methode) and is automatically locked if an incorrect password is entered more than three times in a row.
-
-You have three options to unlock the Install Tool:
-
-- Via the Contao Manager by clicking on "Unlock Install Tool" in the "Maintenance" menu.![Reset the Install Tool](/de/installation/images/en/unlock-install-tool-manager.png?classes=shadow)
-- From the command line by executing the following command in the root directory of your Contao installation:
-  
-  ```bash
-  php vendor/bin/contao-console contao:install:unlock
-  ```
-- By deleting the file `install_lock`in the directory `/var`on the web server.
-
-A forgotten password can be reset in the local configuration (`/system/config/localconfig.php`) file.
-
-Search for the line with the statement `$GLOBALS['TL_CONFIG']['installPassword'] = '…';`and remove it completely from the file. Then you can set a new password when again once you reload the Install Tool.

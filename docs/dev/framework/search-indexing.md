@@ -23,21 +23,23 @@ engine.
 That's why Contao ships with a search indexer abstraction, giving you the freedom to disable the core features and
 connect it with your favourite search engine such as [Algolia](https://www.algolia.com) or [Elasticsearch](https://www.elastic.co).
 
-{{< version "4.9" >}}
-
 
 ## Triggering the Search Index
 
 Indexing in Contao happens in two different ways which may or may not be combined:
 
 * You can trigger the built-in website crawler (which is based on [Escargot](https://github.com/terminal42/escargot)) by
-  either rebuilding the search index manually in the back end or having a cron job that triggers
+  either rebuilding the search index manually in the back end or by executing this command on the command line:
   
   ```bash
   $ vendor/bin/contao-console contao:crawl
   ```
   
     There are numerous options to this command so be sure to run it using `--help` to learn about them.
+    
+    {{% notice tip %}}
+    Make sure to set the domain, see [Command Line](https://docs.contao.org/dev/framework/cron/#command-line). 
+    {{% /notice %}}
   
 * By visiting the pages one after the other, the `SearchIndexListener` will listen to the Symfony `kernel.terminate`
   event and index the generated response content on every request.
@@ -86,7 +88,7 @@ contao:
 Registering your own search indexer can be done by implementing the `Contao\CoreBundle\Search\Indexer\IndexerInterface`
 and registering your service using the `contao.search_indexer` service tag:
 
-```yml
+```yaml
 # config/services.yaml
 services:
     App\Search\ExampleSearchIndexer:
@@ -165,12 +167,10 @@ There are multiple ways to achieve this. One way is to use the [generatePage][ge
 // src/EventListener/GeneratePageListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\PageModel;
 
-/**
- * @Hook("generatePage")
- */
+#[AsHook('generatePage')]
 class GeneratePageListener
 {
     public function __invoke(PageModel $pageModel): void
@@ -182,7 +182,7 @@ class GeneratePageListener
 }
 ```
 
-Starting with Contao **4.6** you could also fetch the `pageModel` from the request attributes (if present) in your own 
+You can also fetch the `pageModel` from the request attributes (if present) in your own 
 `kernel` event listener.
 
 

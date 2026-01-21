@@ -172,17 +172,15 @@ namespace App\Controller\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\ServiceAnnotation\ContentElement;
-use Contao\Template;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @ContentElement(category="texts")
- */
+#[AsContentElement(category: 'texts')]
 class MyContentElementController extends AbstractContentElementController
 {
-    protected function getResponse(Template $template, ContentModel $model, Request $request): ?Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         // Do your stuff
         
@@ -241,7 +239,7 @@ tags as well:
 * `contao.db.<parent-table-name>` (Only for the topmost parent table)
 * `contao.db.<parent-table-name>.<pid>`
 
-If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierachy and invalidates the 
+If the DCA has one or many **child tables**, Contao recursively iterates downwards the table hierarchy and invalidates the 
 following tags as well:
 
 * `contao.db.<child-table-name>.<cid>`
@@ -275,6 +273,12 @@ Moreover, you don't have to register to all the different callbacks such as `ons
 You can register to the [`oninvalidate_cache_tags` callback][5] and add your own tags.
 
 
+{{% notice "tip" %}}
+You can also use the [EntityCacheTags helper service](/reference/services/#entitycachetags) to
+add and invalidate tags based on entity or model classes and instances.
+{{% /notice %}}
+
+
 ## Caching Fragments
 
 In Contao, content elements and front end modules can be implemented as so called
@@ -296,7 +300,7 @@ There are two fundamentally different ways to render fragments:
 
 ### Inline Fragments
 
-{{% notice note %}}
+{{% notice info %}}
 Before **Contao 4.9**, inline fragments cannot affect the cache time of the page response.
 {{% /notice %}}
 
@@ -314,7 +318,7 @@ instead of 24 hours. The page cache will expire at the end of the year and regen
 ```php
 class CurrentYearController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         $year = (int) date('Y');
         $template->year = $year;
@@ -349,14 +353,14 @@ can affect the cache lifetime by setting it on the template response:
 namespace App\Controller;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\ModuleModel;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class MySuperController extends AbstractFrontendModuleController
 {
-    protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         $response = $template->getResponse();
         
@@ -378,9 +382,20 @@ the reverse proxy will merge the two pieces, rebuilding each if its cache has ex
 
 A common use case for this is a fragment that can certainly be cached longer than the current page, but is
 expensive to generate. Something like a weather preview, which requires an API request, but only updates once a day.
-Do not use ESI if your fragment is inexpensive to generate (like the `{{date::Y}}` insert tag). For inexpensive
-cases, it is most likely better to cache the whole page and **re-generate more often** than having to merge multiple
-fragments **on each request**.
+
+{{% notice warning %}}
+While ESI might sound tempting in order to improve performance, it only really ever makes sense if your fragment
+itself is cacheable! If you are using ESI in order to circumvent the HTTP cache, you are most likely using the
+wrong technology to solve your problem. Basically, if your fragment returns a `$response` that is either `private`
+or not cacheable at all. It will cause your reverse proxy to always boot the whole system anyway in order to
+render your fragment. It might even **worsen the performance** if you e.g. use multiple ESI requests that have
+to be called individually and thus slow down the whole page in total whereas it would've been faster to just generate
+it all together. You have to really think things through to the end in order to decide, whether or not ESI can provide
+a benefit. Do not use ESI if your fragment is inexpensive to generate (like e.g. the `{{date::Y}}` insert tag). For inexpensive
+cases, it is most likely better to cache the whole page and **re-generate more often** than having the proxy merge multiple
+ESI fragments **on every single request**. But again, that very much depends on the individual caching times of a fragment.
+Also remember that most problems can be solved on client-side using JavaScript. Always use the right tools for the right purpose!
+{{% /notice %}}
 
 Symfony automatically detects if it is talking to  a gateway cache that supports ESI
 (like Symfony's built in reverse proxy, that the Contao Managed Edition uses). ESI is also supported by

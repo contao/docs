@@ -35,11 +35,9 @@ Return the original `$buffer` or override with your custom modification.
 // src/EventListener/ParseBackendTemplateListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("parseBackendTemplate")
- */
+#[AsHook('parseBackendTemplate')]
 class ParseBackendTemplateListener
 {
     public function __invoke(string $buffer, string $template): string

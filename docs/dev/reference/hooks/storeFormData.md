@@ -36,37 +36,26 @@ database.
 // src/EventListener/StoreFormDataListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 use Contao\FrontendUser;
 use Doctrine\DBAL\Connection;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
-/**
- * @Hook("storeFormData")
- */
+#[AsHook('storeFormData')]
 class StoreFormDataListener
 {
-    /**
-     * @var Connection
-     */
-    private $connection;
-
-    /**
-     * @var Security
-     */
-    private $security;
-
-    public function __construct(Connection $connection, Security $security)
-    {
-        $this->connection = $connection;
-        $this->security = $security;
+    public function __construct(
+        private readonly Connection $connection, 
+        private readonly TokenStorageInterface $tokenStorage,
+    ) {
     }
+
     public function __invoke(array $data, Form $form): array
     {
         $data['member'] = 0;
 
-        $user = $this->security->getUser();
+        $user = $this->tokenStorage->getToken()?->getUser();
        
         if (!$user instanceof FrontendUser) {
             return $data;

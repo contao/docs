@@ -21,8 +21,7 @@ and expects the modified form fields as return value.
 
 2. *string* `$formId`
 
-	  Alias of the current form. Used in the `value` attribute of the hidden form
-    field `FORM_SUBMIT`. Don't confuse with `$objForm->id`.
+	Alias of the current form with the prefix `auto_`. Don't confuse with `$form->id`.
 
 3. *\Contao\Form* `$form`
 
@@ -40,12 +39,10 @@ An `array` of of `\Contao\FormFieldModel` instances.
 // src/EventListener/CompileFormFieldsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 
-/**
- * @Hook("compileFormFields")
- */
+#[AsHook('compileFormFields')]
 class CompileFormFieldsListener
 {
     public function __invoke(array $fields, string $formId, Form $form): array

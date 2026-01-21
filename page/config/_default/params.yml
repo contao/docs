@@ -1,8 +1,34 @@
-themeVariant: 'contao'
-disableSearch: false
+themeVariant:
+  - auto:
+      - contao-light
+      - contao-dark
+    identifier: auto-theme
+    name: Auto
+  - identifier: contao-light
+    name: Light
+  - identifier: contao-dark
+    name: Dark
+search:
+  disable: false
 disableLanguageSwitch: true
 documentation_label: Documentation
-showVisitedLinks: true
 disableInlineCopyToClipBoard: true
-#disableAssetsBusting: true
-currentContaoVersion: '4.9'
+currentContaoVersion: '5.6'
+currentReleaseCandidate: '5.7'
+disableLandingPageButton: true
+banner:
+  show: false
+  url: https://to.contao.org/conference
+hideAuthorName: true
+hideAuthorEmail: true
+hideAuthorDate: true
+disableExplicitIndexURLs: true
+sidebarheadermenus: []
+sidebarfootermenus:
+  -
+      type: custom
+      identifier: footercontrols
+      elements:
+        - type: languageswitcher
+        - type: versionswitcher
+        - type: variantswitcher

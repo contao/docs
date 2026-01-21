@@ -6,7 +6,7 @@ aliases:
 weight: 10
 ---
 
-A “Full Installation“ of Contao includes the following extensions, which are supported
+A "Full Installation" of Contao includes the following extensions, which are supported
 and maintained by the core development team.
 
 {{% children description="true" showhidden="true" %}}

@@ -31,20 +31,18 @@ the database entry of the news entry's author is fetched via the `\Contao\UserMo
 // src/EventListener/ParseArticlesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\FrontendTemplate;
 use Contao\Module;
 use Contao\UserModel;
 
-/**
- * @Hook("parseArticles")
- */
+#[AsHook('parseArticles')]
 class ParseArticlesListener
 {
     public function __invoke(FrontendTemplate $template, array $newsEntry, Module $module): void
     {
         // Fetch the news entry's author
-        $author = UserModel::findByPk($newsEntry['author']);
+        $author = UserModel::findById($newsEntry['author']);
 
         // Override the "author" variable of the template with the row information of the author
         $template->author = $author->row();
@@ -79,9 +77,9 @@ entry's author directly.
 
 The following more complex example shows how to customize the personal data update procedure
 of your members. Assume you have an external service, against which the personal data 
-of members need to be kept in sync, whenever a member changes his personal data. 
+of members need to be kept in sync, whenever a member changes their personal data. 
 The _Personal data_ module of Contao provides a [updatePersonalData][updatePersonaldataHook] hook which
-will be triggered when, as the name of the hook suggests, a member updates his personal
+will be triggered when, as the name of the hook suggests, a member updates their personal
 data via this module.
 
 ```php
@@ -89,10 +87,11 @@ data via this module.
 namespace App\EventListener;
 
 use App\ExternalMembers\ExternalMemberService;
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 use Contao\FrontendUser;
 
+#[AsHook('updatePersonalData')]
 class UpdatePersonalDataListener
 {
     private $externalMemberService;
@@ -102,10 +101,7 @@ class UpdatePersonalDataListener
         $this->externalMemberService = $externalMemberService;
     }
 
-    /**
-     * @Hook("updatePersonalData")
-     */
-    public function onUpdatePersonalData(FrontendUser $member, array $data, Module $module): void
+    public function __invoke(FrontendUser $member, array $data, Module $module): void
     {
         $this->externalMemberService->updateMemberData($data);
     }
@@ -113,7 +109,7 @@ class UpdatePersonalDataListener
 ```
 
 The hook requests an instance of a hypothetical `ExternalMemberService`. Whenever
-a member updates her or his personal data, the hook will be triggered and the updated
+a member updates their personal data, the hook will be triggered and the updated
 data will be sent to that service, which then handles updating the member's data
 in that external service.
 

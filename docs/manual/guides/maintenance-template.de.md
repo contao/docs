@@ -13,7 +13,7 @@ tags:
 
 Der Wartungsmodus lässt sich über den Menüpunkt Systemwartung aktivieren. Sobald du dich aus dem Backend abgemeldet hast und deine Website im Frontend aufrufst, sieht das dann so aus:
 
-![Contao Wartungsmodus](/de/guides/images/de/maintenance/wartungsmodus.jpg?classes=shadow)
+![Contao Wartungsmodus]({{% asset "images/manual/guides/de/maintenance/wartungsmodus.jpg" %}}?classes=shadow)
 
 Im Core von Contao 4.9 sind für die Frontendausgabe im Wartungsmodus folgende Dateien zuständig:
 
@@ -48,7 +48,7 @@ Dort finden wir die Sprachvariable `XPT.unavailable` und `XPT.maintenance`. Dies
 
 Nun erstellen wir eine neue Datei mit dem Namen `exception.xlf` und legen diese unter `/contao/languages/de/` ab, kopieren die benötigten Zeilen aus der originalen `exception.xlf` und passen die Texte nach unseren Wünschen an.
 
-{{% notice note %}}
+{{% notice info %}}
 Sollte der Ordner `/contao` noch nicht vorhanden sein, muss dieser und die entsprechenden Unterordner angelegt werden.
 {{% /notice %}}
 
@@ -80,14 +80,17 @@ Damit die neuen Texte nun sichtbar werden, muss der Produktions-Cache über den 
 
 Natürlich lassen sich auch noch weitere Texte wie z. B. die Fußzeile per `XPT.hint` überschreiben.
 
-{{% notice note %}}
+{{% notice info %}}
 WICHTIG: Alle Änderungen wirken sich sowohl beim Wartungstemplate als auch auf alle anderen Errortemplates von Contao aus.
 {{% /notice %}}
 
+Wird die komplette Contao-Installation über die Kommandozeile in den Wartungsmodus versetzt, wird zur Erzeugung des Wartungstemplates die Standardsprache des Systems verwendet. Diese kann über die `config.yaml` angepasst werden (`framework.default_locale`), diese Einstellung wirkt sich aber auf das gesamte System aus und kann eventuell zu unerwünschten Nebeneffekten führen.
 
 ## Logo anpassen
 
 Das machen wir in diesem Beispiel für alle Errortemplates. Für eine updatesichere Anpassung kopieren wir uns das Originaltemplate `vendor/contao/core-bundle/src/Resources/views/Error/layout.html.twig` nach `/templates/bundles/ContaoCoreBundle/Error/`
+
+{{< version-tag "5.1" >}} befindet sich das Originaltemplate unter `vendor/contao/core-bundle/templates/Error/layout.html.twig`
 
 Dort setzen wir unser eigenes Logo innerhalb des DIV's mit der Klasse `header-logo` ein. Du kannst dafür ein normales image-Tag verwenden oder wie im Originaltemplate ein Inline-SVG.
 

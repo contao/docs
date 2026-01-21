@@ -37,14 +37,12 @@ Return a `string` with the article's new content or `null` to keep the default.
 // src/EventListener/GetArticlesListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getArticles")
- */
+#[AsHook('getArticles')]
 class GetArticlesListener
 {
-    public function __invoke(int $pageId, string $column): ?string
+    public function __invoke(int $pageId, string $column): string|null
     {
         if (10 === (int) $pageId && 'main' === $column) {
             // Generate your custom articles content here

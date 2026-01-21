@@ -1,0 +1,6 @@
+{{ $getAssetPath := .Get 0 }}
+{{ $getFilePath  := path.Join "assets" $getAssetPath }}
+{{- if os.FileExists $getFilePath -}}
+{{- $resAsset := (resources.Get $getAssetPath) | resources.Fingerprint -}}
+{{- $resAsset.Permalink -}}
+{{- end -}}

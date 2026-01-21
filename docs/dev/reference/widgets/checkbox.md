@@ -1,5 +1,5 @@
 ---
-title: "Checkbox"
+title: Checkbox
 description: Renders one or multiple checkboxes.
 ---
 
@@ -7,15 +7,15 @@ This widget renders one or multiple checkboxes. Choose this if you want the edit
 
 A simple binary checkbox that allows the editor to toggle a boolean state:
 
-![A simple binary checkbox](../images/checkbox.png?classes=shadow)
+![A simple binary checkbox]({{% asset "images/dev/reference/widgets/checkbox.png" %}}?classes=shadow)
 
 Multiple checkboxes to give the editor a defined set of options to select one or many options from:
 
-![Multiple checkboxes](../images/checkbox-multiple.png?classes=shadow)
+![Multiple checkboxes]({{% asset "images/dev/reference/widgets/checkbox-multiple.png" %}}?classes=shadow)
 
 Multiple checkboxes to choose from as before, but grouped into categories: 
 
-![A nested set of checkboxes](../images/checkbox-grouped.png?classes=shadow)
+![A nested set of checkboxes]({{% asset "images/dev/reference/widgets/checkbox-grouped.png" %}}?classes=shadow)
 
 ## Options
 
@@ -44,14 +44,14 @@ Depending on the widget configuration, the widget persists different values to t
 
 ## Examples
 
-{{< tabs >}}
+{{< tabs groupid="checkbox-widget-examples" style="code" >}}
 
-{{% tab name="Toggle" %}}
+{{% tab title="Toggle" %}}
 
 If you simply want to toggle a property:
 
 ```php
-// ...
+// …
 'myCheckbox' => [
     'label' => ['Checkbox', 'Help text'],
     'inputType' => 'checkbox',
@@ -60,17 +60,19 @@ If you simply want to toggle a property:
         'default' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
 
-{{% tab name="Fixed options" %}}
+{{% tab title="Fixed options" %}}
 
 If you want the editor to select from a fixed set of properties, you may define them via the `options` field. The selected options will be stored as a serialized array, so make sure your database field can store enough data.
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'myCheckbox' => [
     'label' => ['Checkbox', 'Help text'], // Or a reference to the global language array
     'inputType' => 'checkbox',
@@ -82,19 +84,23 @@ If you want the editor to select from a fixed set of properties, you may define 
     ],
     'sql' => [
         'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
 
-{{% tab name="Dynamic options" %}}
+{{% tab title="Dynamic options" %}}
 
 You can also dynamically generate the options array to filter them as you wish. See the [options callback](../../dca/callbacks#fields-field-options) for further examples.
 
 ```php
-// ...
+use Doctrine\DBAL\Platforms\MySQLPlatform;
+
+// …
 'myCheckbox' => [
     'label' => ['Checkbox', 'Help text'], // Or a reference to the global language array
     'inputType' => 'checkbox',
@@ -106,19 +112,21 @@ You can also dynamically generate the options array to filter them as you wish. 
     ],
     'sql' => [
         'type' => 'blob',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false,
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}
 
-{{% tab name="Options from a table" %}}
+{{% tab title="Options from a table" %}}
 
 You can generate an options array from another table with the `foreignKey` property. 
 
 ```php
-// ...
+// …
 'myUsers' => [
     'label' => ['My Users', 'Help text'], // Or a reference to the global language array
     'inputType' => 'checkbox',
@@ -129,7 +137,7 @@ You can generate an options array from another table with the `foreignKey` prope
         'default' => '',
     ],
 ],
-// ...
+// …
 ```
 
 {{% /tab %}}

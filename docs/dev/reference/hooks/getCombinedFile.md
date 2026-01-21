@@ -44,11 +44,9 @@ The contents of the combined file as a string.
 // src/EventListener/GetCombinedFileListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getCombinedFile")
- */
+#[AsHook('getCombinedFile')]
 class GetCombinedFileListener
 {
     public function __invoke(string $content, string $key, string $mode, array $file): string

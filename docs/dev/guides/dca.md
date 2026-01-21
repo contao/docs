@@ -18,7 +18,7 @@ In our example we will assume that we are creating a web application for a
 wholesale dealer who is trading "industrial parts". Each part belongs to a vendor
 and can have detailed information like the name, part number, description and an
 image. Furthermore each vendor can have detailed information as well, like the
-the name of the vendor and their main address.
+name of the vendor and their main address.
 
 For the back end workflow we decide that the "parts" should be organised as child
 records for each vendor and that we will manage these records under the main menu
@@ -54,17 +54,20 @@ For our DCA configuration of `tl_vendor`, we want to define the following:
 
 ```php
 // contao/dca/tl_vendor.php
+use Contao\DC_Table;
+
 $GLOBALS['TL_DCA']['tl_vendor'] = [
     'config' => [
-        'dataContainer' => 'Table',
+        'dataContainer' => DC_Table::class,
         'ctable' => ['tl_parts'],
         'enableVersioning' => true,
         'switchToEdit' => true,
         'sql' => [
             'keys' => [
                 'id' => 'primary',
+                'tstamp' => 'index',
             ],
-        ], 
+        ],
     ],
 ];
 ```
@@ -88,14 +91,16 @@ This results in the following configuration for the `list` part of the DCA:
 
 ```php
 // contao/dca/tl_vendor.php
+use Contao\DataContainer;
+
 $GLOBALS['TL_DCA']['tl_vendor'] = [
     'config' => […],
 
     'list' => [
         'sorting' => [
-            'mode' => 1,
+            'mode' => DataContainer::MODE_SORTED,
             'fields' => ['name'],
-            'flag' => 1,
+            'flag' => DataContainer::SORT_INITIAL_LETTER_ASC,
             'panelLayout' => 'search,limit'
         ],
         'label' => [
@@ -170,7 +175,9 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         ],
         'country' => [
             'inputType' => 'select',
-            'options' => \Contao\System::getCountries(),
+            'options_callback' => static function(): array {
+                return \Contao\System::getContainer()->get('contao.intl.countries')->getCountries();
+            },
             'eval' => ['tl_class' => 'w50', 'mandatory' => true, 'includeBlankOption' => true],
             'sql' => ['type' => 'string', 'length' => 2, 'default' => '']
         ],
@@ -184,7 +191,7 @@ record was last edited.
 
 For the other fields have a look at the [fields reference][4] to see all the possibilities
 for each field. For the `country` selection field we also used another feature:
-we are retrieving all countries directly from the system via `\Contao\System::getCountries()`.
+we are retrieving all countries directly from the system via the `contao.intl.countries` service.
 This gives us an associative array of all translated countries, indexed by their
 country code (e.g. `'at' => 'Austria'`).
 
@@ -221,23 +228,27 @@ This finishes our DCA definition for `tl_vendor`.
 {{% expand "Show full example" %}}
 ```php
 // contao/dca/tl_vendor.php
+use Contao\DataContainer;
+use Contao\DC_Table;
+
 $GLOBALS['TL_DCA']['tl_vendor'] = [
     'config' => [
-        'dataContainer' => 'Table',
+        'dataContainer' => DC_Table::class,
         'ctable' => ['tl_parts'],
         'enableVersioning' => true,
         'switchToEdit' => true,
         'sql' => [
             'keys' => [
                 'id' => 'primary',
+                'tstamp' => 'index',
             ],
-        ], 
+        ],
     ],
     'list' => [
         'sorting' => [
-            'mode' => 1,
+            'mode' => DataContainer::MODE_SORTED,
             'fields' => ['name'],
-            'flag' => 1,
+            'flag' => DataContainer::SORT_INITIAL_LETTER_ASC,
             'panelLayout' => 'search,limit'
         ],
         'label' => [
@@ -293,7 +304,9 @@ $GLOBALS['TL_DCA']['tl_vendor'] = [
         ],
         'country' => [
             'inputType' => 'select',
-            'options' => \Contao\System::getCountries(),
+            'options_callback' => static function(): array {
+                return \Contao\System::getContainer()->get('contao.intl.countries')->getCountries();
+            },
             'eval' => ['tl_class' => 'w50', 'mandatory' => true, 'includeBlankOption' => true],
             'sql' => ['type' => 'string', 'length' => 2, 'default' => '']
         ],
@@ -323,31 +336,39 @@ two letters of the name as the default for the `number` field.
 
 ```php
 // contao/dca/tl_parts.php
+use Contao\Database;
+use Contao\DC_Table;
+use Contao\Input;
+
 $GLOBALS['TL_DCA']['tl_parts'] = [
     'config' => [
-        'dataContainer' => 'Table',
+        'dataContainer' => DC_Table::class,
         'enableVersioning' => true,
         'ptable' => 'tl_vendor',
         'sql' => [
             'keys' => [
-                'id' => 'primary'
+                'id' => 'primary',
+                'tstamp' => 'index',
             ],
         ],
         'onload_callback' => [
             function () {
-                $db = \Contao\Database::getInstance();
-                $pid = \Contao\Input::get('pid');
+                $db = Database::getInstance();
+                $pid = Input::get('pid');
+                if (empty($pid)) {
+                    return;
+                }
                 $result = $db->prepare('SELECT `name` FROM `tl_vendor` WHERE `id` = ?')
                              ->execute([$pid]);
                 $prefix = strtoupper(substr($result->name, 0, 2));
                 $GLOBALS['TL_DCA']['tl_parts']['fields']['number']['default'] = $prefix;
             },
-        ] 
+        ]
     ],
 ];
 ```
 
-{{% notice note %}}
+{{% notice info %}}
 Generally it is recommended to use services for such callbacks. For the
 simplicity of this article an anonymous function is implemented, using the legacy 
 way of retrieving the database connection and parameter inputs.
@@ -363,12 +384,14 @@ is implemented as an anonymous function.
 
 ```php
 // contao/dca/tl_parts.php
+use Contao\DataContainer;
+
 $GLOBALS['TL_DCA']['tl_parts'] = [
     'config' => […],
 
     'list' => [
         'sorting' => [
-            'mode' => 4,
+            'mode' => DataContainer::MODE_PARENT,
             'fields' => ['name'],
             'headerFields' => ['name'],
             'panelLayout' => 'search,limit',
@@ -445,10 +468,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'inputType' => 'fileTree',
             'eval' => [
                 'tl_class' => 'clr',
-                'mandatory' => true, 
-                'fieldType' => 'radio', 
-                'filesOnly' => true, 
-                'extensions' => \Contao\Config::get('validImageTypes'), 
+                'fieldType' => 'radio',
+                'filesOnly' => true,
+                'extensions' => \Contao\Config::get('validImageTypes'),
                 'mandatory' => true,
             ],
             'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false, 'fixed' => true]
@@ -482,32 +504,38 @@ This finishes our DCA definition for `tl_parts`.
 ```php
 // contao/dca/tl_parts.php
 use Contao\Database;
+use Contao\DataContainer;
+use Contao\DC_Table;
 use Contao\Input;
 
 $GLOBALS['TL_DCA']['tl_parts'] = [
     'config' => [
-        'dataContainer' => 'Table',
+        'dataContainer' => DC_Table::class,
         'enableVersioning' => true,
         'ptable' => 'tl_vendor',
         'sql' => [
             'keys' => [
-                'id' => 'primary'
+                'id' => 'primary',
+                'tstamp' => 'index',
             ],
         ],
         'onload_callback' => [
             function () {
                 $db = Database::getInstance();
                 $pid = Input::get('pid');
+                if (empty($pid)) {
+                    return;
+                }
                 $result = $db->prepare('SELECT `name` FROM `tl_vendor` WHERE `id` = ?')
                              ->execute([$pid]);
                 $prefix = strtoupper(substr($result->name, 0, 2));
                 $GLOBALS['TL_DCA']['tl_parts']['fields']['number']['default'] = $prefix;
             },
-        ] 
+        ]
     ],
     'list' => [
         'sorting' => [
-            'mode' => 4,
+            'mode' => DataContainer::MODE_PARENT,
             'fields' => ['name'],
             'headerFields' => ['name'],
             'panelLayout' => 'search,limit',
@@ -564,10 +592,9 @@ $GLOBALS['TL_DCA']['tl_parts'] = [
             'inputType' => 'fileTree',
             'eval' => [
                 'tl_class' => 'clr',
-                'mandatory' => true, 
-                'fieldType' => 'radio', 
-                'filesOnly' => true, 
-                'extensions' => \Contao\Config::get('validImageTypes'), 
+                'fieldType' => 'radio',
+                'filesOnly' => true,
+                'extensions' => \Contao\Config::get('validImageTypes'),
                 'mandatory' => true,
             ],
             'sql' => ['type' => 'binary', 'length' => 16, 'notnull' => false, 'fixed' => true]
@@ -613,7 +640,7 @@ container.
 Translations must be put into the `/contao/languages` folder, while each language
 will have its own subfolder there. Our translations will go into the `/contao/languages/en` folder.
 
-{{% notice note %}}
+{{% notice info %}}
 The English translations will also be the fallback when there are no other
 translations available.
 {{% /notice %}}
@@ -627,7 +654,7 @@ $GLOBALS['TL_LANG']['MOD']['tl_vendor'] = 'Vendors';
 $GLOBALS['TL_LANG']['MOD']['tl_parts'] = 'Parts';
 ```
 
-All other translations will go into files that have the same name as our data container table names. Contao **4.9** and up will 
+All other translations will go into files that have the same name as our data container table names. Contao will 
 automatically pull these translations for our fields if the translation key is the same as the field's key. There are also special 
 translation keys like `new` which are used for the button that create a new data record.
 

@@ -37,11 +37,9 @@ is prohibited or your function is not responsible for this comment.
 // src/EventListener/IsAllowedToEditCommentListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("isAllowedToEditComment")
- */
+#[AsHook('isAllowedToEditComment')]
 class IsAllowedToEditCommentListener
 {
     public function __invoke(int $parentId, string $parentTable): bool

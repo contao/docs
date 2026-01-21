@@ -26,11 +26,9 @@ a return value.
 // src/EventListener/ExecutePreActionsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("executePreActions")
- */
+#[AsHook('executePreActions')]
 class ExecutePreActionsListener
 {
     public function __invoke(string $action): void

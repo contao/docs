@@ -22,8 +22,7 @@ field of the form generator.
 
 2. *string* `$formId`
 
-    Alias of the current form. Used in the `value` attribute of the hidden form
-    field `FORM_SUBMIT`. Don't confuse with `$form->id`.
+    Alias of the current form with the prefix `auto_`. Don't confuse with `$form->id`.
 
 3. *array* `$formData`
 
@@ -46,18 +45,16 @@ your own widget instead.
 // src/EventListener/LoadFormFieldListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Form;
 use Contao\Widget;
 
-/**
- * @Hook("loadFormField")
- */
+#[AsHook('loadFormField')]
 class LoadFormFieldListener
 {
     public function __invoke(Widget $widget, string $formId, array $formData, Form $form): Widget
     {
-        if ('myForm' === $formId) {
+        if ('myForm' === $form->formID) {
             $widget->class.= ' myclass';
         }
 

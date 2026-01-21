@@ -16,7 +16,7 @@ and does not expect a return value.
 
 ## Parameters
 
-1. *\Contao\PageModel* `$pageModel`
+1. *\Contao\PageModel* `$page`
 
 	The page model instance.
 
@@ -35,17 +35,15 @@ and does not expect a return value.
 // src/EventListener/GetPageLayoutListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\PageRegular;
 use Contao\LayoutModel;
 use Contao\PageModel;
 
-/**
- * @Hook("getPageLayout")
- */
+#[AsHook('getPageLayout')]
 class GetPageLayoutListener
 {
-    public function __invoke(PageModel $pageModel, LayoutModel $layout, PageRegular $pageRegular): void
+    public function __invoke(PageModel $page, LayoutModel $layout, PageRegular $pageRegular): void
     {
         // Modify the page or layout object
     }
@@ -55,5 +53,5 @@ class GetPageLayoutListener
 
 ## References
 
-* [\Contao\PageRegular#L244-L252](https://github.com/contao/contao/blob/master/core-bundle/src/Resources/contao/pages/PageRegular.php#L244-L252)
+* [\Contao\PageRegular#L244-L252](https://github.com/contao/contao/blob/5.x/core-bundle/contao/pages/PageRegular.php#L244-L252)
 * https://github.com/contao/core/issues/4736

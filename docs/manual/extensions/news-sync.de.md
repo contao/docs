@@ -1,13 +1,13 @@
 ---
 title: Contao News Sync
-menuTitle: News Sync
+linkTitle: News Sync
 description: Contao News Sync ist eine kostenpflichtige Erweiterungen zur Synchronisierung von Nachrichtenartikeln zwischen Contao Installationen.
 url: erweiterungen/news-sync
 ---
 
 **[inspiredminds/contao-news-sync](https://extensions.contao.org/?p=inspiredminds%2Fcontao-news-sync)**
 
-_von [inspiredminds](https://www.inspiredminds.at/)_
+_von [INSPIRED MINDS](https://www.inspiredminds.at/)_
 
 _Projekt Webseite unter [Contao News Sync](https://www.inspiredminds.at/contao-news-sync)_
 
@@ -30,19 +30,20 @@ Um das Repository hinzuzufügen, muss folgendes in der `composer.json` eingefüg
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
 ```
 
-`<YOUR_TOKEN>` muss mit dem Repository Token ersetzt werden, welches von inspiredminds geschickt wurde.
+`<YOUR_USERNAME>` und `<YOUR_TOKEN>` muss mit den Informationen ersetzt werden, welche von INSPIRED MINDS geschickt wurden.
 
 Um die Abhängigkeit hinzuzufügen, muss folgendes in der `composer.json` eingefügt werden:
+
 ```json
 {
     "require": {
-        "inspiredminds/contao-news-sync": "^3.0"
+        "inspiredminds/contao-news-sync": "^4.0"
     }
 }
 ```
@@ -61,37 +62,28 @@ Um die Abhängigkeit hinzuzufügen, muss folgendes in der `composer.json` eingef
         }
     ],
     "require": {
-        "php": "^7.1",
         "contao/conflicts": "@dev",
-        "contao/manager-bundle": "4.9.*",
-        "inspiredminds/contao-news-sync": "^3.0"
+        "contao/manager-bundle": "5.3.*",
+        "inspiredminds/contao-news-sync": "^4.0"
     },
     "conflict": {
         "contao-components/installer": "<1.3"
     },
     "extra": {
         "contao-component-dir": "assets",
-        "symfony": {
-            "require": "^4.2"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
     },
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+            "@php vendor/bin/contao-setup"
         ]
     },
     "repositories": [
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ]
 }
@@ -119,14 +111,14 @@ einmalig in eine andere Contao Installation zu übertragen), kann folgende Anlei
 Zuerst muss die `composer` Erweiterung installiert werden. In der _Erweiterungsverwaltung_ unter _Erweiterung installieren_
 nach _composer_ suchen. Die Installation von Version **0.16.6** mit _Weiter_ mehrmals bestätigen.
 
-![Erweiterungsverwaltung](/de/extensions/images/de/extension-manager-composer-de.png?classes=shadow)
+![Erweiterungsverwaltung]({{% asset "images/manual/extensions/de/extension-manager-composer-de.png" %}}?classes=shadow)
 
 #### Composer-Installation
 
 Nach erfolgreicher Installation der Erweiterung wird automatisch auf die neue Paketverwaltung im Backend weitergeleitet.
 Dort bestätigt man nun die Installation von Composer.
 
-![Composer-Installation](/de/extensions/images/de/composer-client-composer-installation-de.png?classes=shadow)
+![Composer-Installation]({{% asset "images/manual/extensions/de/composer-client-composer-installation-de.png" %}}?classes=shadow)
 
 #### Migration überspringen
 
@@ -135,14 +127,14 @@ auf die neue Paketverwaltung durchführen. Diese Migration ist allerdings nicht 
 News Sync Extension. Daher kann die Migration mit _Migration überspringen (Nur wenn du weißt was du tust)_ übersprungen
 werden.
 
-![Migration](/de/extensions/images/de/composer-client-skip-migration-de.png?classes=shadow)
+![Migration]({{% asset "images/manual/extensions/de/composer-client-skip-migration-de.png" %}}?classes=shadow)
 
 #### Einstellungen ändern
 
 In der Paketverwaltung sollte man nun rechts oben unter _Einstellungen_ die Einstellung **Minimale Stabilität** auf _Stabil_
 ändern und speichern.
 
-![Einstellungen](/de/extensions/images/de/composer-client-min-stability-de.png?classes=shadow)
+![Einstellungen]({{% asset "images/manual/extensions/de/composer-client-min-stability-de.png" %}}?classes=shadow)
 
 #### Expertenmodus
 
@@ -178,7 +170,7 @@ die Änderungen speichern. Insgesamt würde die `composer.json` dann so aussehen
         },
         {
             "type": "composer",
-            "url": "https://token:<YOUR_TOKEN>@packdis.inspiredminds.at/r"
+            "url": "https://<YOUR_USERNAME>:<YOUR_TOKEN>@packeton.inspiredminds.at"
         }
     ],
     "extra": {
@@ -197,7 +189,7 @@ dann empfiehlt es sich unter _System_ » _Einstellungen_ » _Composer-Einstellun
 [Detached Mode](https://github.com/contao-community-alliance/composer-client/wiki/Execution-modes#as-standalone-process-detached)
 einzustellen.
 
-![Composer-Einstellungen](/de/extensions/images/de/composer-settings-de.png?classes=shadow)
+![Composer-Einstellungen]({{% asset "images/manual/extensions/de/composer-settings-de.png" %}}?classes=shadow)
 
 Die genauen Angaben zum PHP CLI Pfad variieren je nach Serverumgebung und eingesetzter PHP Version und können daher hier 
 nicht festgelegt werden. Mögliche Angaben zum PHP Pfad je nach Hoster bekommt man im 
@@ -228,11 +220,11 @@ Hat man die entsprechenden [Composer-Einstellungen](#composer-einstellungen) zuv
 in der Paketverwaltung mit einem Klick auf _Pakete Aktualisieren_ angestoßen werden. Die Paketaktualisierung muss, bei der
 ersten Benutzung, insgesamt drei mal durchgeführt werden.
 
-![Composer Update 1](/de/extensions/images/de/de-composer-client-update-1.png?classes=shadow)
+![Composer Update 1]({{% asset "images/manual/extensions/de/de-composer-client-update-1.png" %}}?classes=shadow)
 
-![Composer Update 2](/de/extensions/images/de/de-composer-client-update-2.png?classes=shadow)
+![Composer Update 2]({{% asset "images/manual/extensions/de/de-composer-client-update-2.png" %}}?classes=shadow)
 
-![Composer Update 3](/de/extensions/images/de/de-composer-client-update-3.png?classes=shadow)
+![Composer Update 3]({{% asset "images/manual/extensions/de/de-composer-client-update-3.png" %}}?classes=shadow)
 
 Danach ist die Extension installiert. Im Anschluss bietet die Paketverwaltung gleich direkt an, die Datenbank-Updates durchführen
 zu lassen. Alternativ kann man dies auch wie gewohnt im Contao Install Tool durchführen lassen.
@@ -247,7 +239,7 @@ der Contao Installation. Das auszuführende Kommando lautet:
 php composer.phar update --optimize-autoloader
 ```
 
-{{% notice info %}}
+{{% notice note %}}
 Im angegebenen Kommando muss `php` mit dem Pfad zum passenden PHP CLI ersetzt werden. Dies hängt von der jeweiligen Serverumgebung
 ab. Siehe dazu auch der Punkt [Composer-Einstellungen](#composer-einstellungen).
 {{% /notice %}}
@@ -344,14 +336,14 @@ zur Verfügung.
 Um die Nachrichten eines Nachrichtenarchivs als Quelle für die Synchronisation zur Verfügung zu stellen, muss die Einstellung
 **Quelle für Synchronisation** aktiviert werden.
 
-![News Sync Einstellungen](/de/extensions/images/de/contao-news-sync-1-de.png?classes=shadow)
+![News Sync Einstellungen]({{% asset "images/manual/extensions/de/contao-news-sync-1-de.png" %}}?classes=shadow)
 
 Um Nachrichten in einem Nachrichtenarchiv von einer Quelle holen zu lassen muss die Einstellung **Ziel für Synchronisation**
 aktiviert werden. Danach stehen zusätzliche Einstellungen zur Verfügung. Unter **Quell-URL** muss zunächst die URL eingetragen
 werden, unter der die andere Contao Installation erreichbar ist. Speichert man die Einstellungen danach, stehen unter 
 **News Archive** alle Nachrichtenarchive zur Auswahl, die auf der Quell-Installation für die Synchronisation freigegeben.
 
-![News Sync Einstellungen](/de/extensions/images/de/contao-news-sync-2-de.png?classes=shadow)
+![News Sync Einstellungen]({{% asset "images/manual/extensions/de/contao-news-sync-2-de.png" %}}?classes=shadow)
 
 * **News Archive** - damit aktiviert man die Nachrichtenarchive, aus denen Nachrichten aus der Quell-Installation geholt werden sollen.
 * **Auf Kategorien beschränken** - ist in beiden Installationen die `codefog/contao-news_categories` Extension installiert, kann die Synchronisation auf bestimmte Kategorien beschränkt werden.<sup>1</sup>
@@ -360,7 +352,7 @@ werden, unter der die andere Contao Installation erreichbar ist. Speichert man d
 * **Einträge aktualisieren** - ist diese Einstellung aktiv, werden Änderungen in der Quell-Installation bereits synchronisierter Nachrichten in der Ziel-Installation übernommen.
 * **Zielverzeichnis** - hier muss ein Verzeichnis für die synchronisierten Bilddaten und Anhänge angegeben werden.
 
-{{% notice note %}}
+{{% notice info %}}
 <sup>1</sup> Dies funktioniert derzeit noch nur mit Version `2.x` der `news_categories` Extension.
 {{% /notice %}}
 

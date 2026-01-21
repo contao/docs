@@ -1,0 +1,9 @@
+{{ if .Site.Params.banner.show }}
+    {{ $url := .Site.Params.banner.url }}
+    <div class="banner">
+        <a href="{{ $url | safeURL }}" target="_blank" rel="noreferrer noopener">
+            <span class="title">{{ i18n "banner_title" }}</span>
+            <span class="date">{{ i18n "banner_date" }}</span>
+        </a>
+    </div>
+{{ end }}

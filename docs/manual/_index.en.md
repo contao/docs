@@ -1,8 +1,9 @@
 ---
-title: "Contao Manual"
+title: Contao Manual
+type: home
 ---
 
-# Welcome
+## Welcome
 
 You are here because the following people (in alphabetical order), and the Contao
 Community as a whole, were up day and night in order to further the development
@@ -11,9 +12,10 @@ of Contao:
 - [Andreas (@aschempp)](https://github.com/aschempp)
 - [David (@bytehead)](https://github.com/bytehead)
 - [Fritz Michael (@fritzmg)](https://github.com/fritzmg)
-- [Jim (@sheeep)](https://github.com/sheeep)
 - [Leo (@leofeyer)](https://github.com/leofeyer), initiator
 - [Martin (@ausi)](https://github.com/ausi)
+- [Moritz (@m-vo)](https://github.com/m-vo)
+- [Sebastian (@zoglo)](https://github.com/zoglo)
 - [Yanick (@toflar)](https://github.com/toflar)
 
 In addition to the core team, many more [contributors](https://github.com/contao/contao/graphs/contributors)
@@ -41,6 +43,14 @@ register the documentation as an additional search engine in your browser.
 - In "Settings/Search", enter an abbreviation: e.g. `@doc`.
 - Restart the browser and search in the address bar for e.g.:
 - `@docs inserttags`
+
+For newer versions:  
+- Go to this page  
+- Right click in the address bar  
+- In the context menu that opens, last line: `Add "Search Contao manual"`.  
+- In the address bar, search for e.g.: `inserttags`  
+- Below the address bar, a menu will open where you can also find the Contao icon at the bottom of the page, under `Search once with:`.  
+- Click on the Contao icon and a tag will be added to the left of the search term: `Contao manual`  
 {{% /expand %}}
 
 {{% expand "Browser Chrome" %}}
@@ -50,15 +60,10 @@ register the documentation as an additional search engine in your browser.
 - Search abbreviation: e.g. `docs` (any)
 - URL with %s instead of the search query: `https://docs.contao.org/manual/de/?search=%s`
 - Restart the browser and search by typing e.g.: 
-- `docs insterttags`
+- `docs inserttags`
 {{% /expand %}}
 
 
 ### This manual is divided into the following chapters:
 
-{{% children description="true" %}}
-
-
-{{% notice info %}}
-The English version of the manual is still a work in progress.
-{{% /notice %}}
+{{% children description="true" depth="1" %}}

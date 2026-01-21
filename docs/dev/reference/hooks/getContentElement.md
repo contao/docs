@@ -12,7 +12,7 @@ The `getContentElement` hook is triggered when a content element is rendered.
 It passes the database object, the buffer string and the content element object
 as arguments and expects a buffer string as return value.
 
-{{% notice info %}}
+{{% notice note %}}
 This hook is executed for _all_ content elements, i.e. also for forms and front end
 modules that are integrated into a page via a content element.
 {{% /notice %}}
@@ -45,13 +45,11 @@ The (modified) content of the content element as a string.
 // src/EventListener/GetContentElementListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\ContentElement;
 use Contao\ContentModel;
 
-/**
- * @Hook("getContentElement")
- */
+#[AsHook('getContentElement')]
 class GetContentElementListener
 {
     public function __invoke(ContentModel $contentModel, string $buffer, $element): string

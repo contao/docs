@@ -25,12 +25,10 @@ prior to rendering. It does not expect a return value.
 // src/EventListener/GetArticleListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\ArticleModel;
 
-/**
- * @Hook("getArticle")
- */
+#[AsHook('getArticle')]
 class GetArticleListener
 {
     public function __invoke(ArticleModel $article): void

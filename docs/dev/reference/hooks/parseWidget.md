@@ -34,12 +34,10 @@ The (modified) output buffer for the widget.
 // src/EventListener/ParseWidgetListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Widget;
 
-/**
- * @Hook("parseWidget")
- */
+#[AsHook('parseWidget')]
 class ParseWidgetListener
 {
     public function __invoke(string $buffer, Widget $widget): string

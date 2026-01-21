@@ -21,32 +21,33 @@ technical so we will quickly get familiar with the terminology used:
 ### Major release
 
 A major release is a completely new version of the software where many basic things have been changed and existing pages 
-may not work anymore. The current major release of Contao is **version 4** when writing these lines.
+may not work anymore. The current major release of Contao is **version 5** when writing these lines.
 
 
 ### Minor release
 
 A minor release is a kind of milestone on the development path where new features have been added. Minor changes to 
 existing pages might therefore be necessary. When writing these lines, the current minor version of Contao 
-is **version 4.10**.
+is **version {{% siteparam "currentContaoVersion" %}}**.
 
 
 ### Bugfix release
 
-A bugfix release is a maintenance release whose primary purpose is to fix bugs; the current bugfix version of Contao 
-when writing these lines is **version 4.10.4**.
+A bugfix release is a maintenance release whose primary purpose is to fix bugs.
+For example **version {{% siteparam "currentContaoVersion" %}}.1**.
 
 
 ### Long-Term Support Versions
 
-With version 2.11, the [release cycle of Contao](https://contao.org/de/release-plan.html) has been adjusted and 
-Long-Term Support (LTS) versions have been introduced that are supported and updated for 24 months, even if newer Contao 
-versions have been released in the meantime. An overview of all Contao versions is available on [Wikipedia](https://en.wikipedia.org/wiki/Contao#Versions).
+The [release cycle](https://contao.org/de/release-plan.html) of Contao also includes versions with 
+[Long Term Support](https://de.wikipedia.org/wiki/Support_(Dienstleistung)#Long_Term_Support). The Contao versions with extended 
+support period are provided with bug fixes for 3 years and security updates for 1 year, even if newer Contao versions have been released 
+in the meantime. An overview of all Contao versions can be found on [Wikipedia](https://de.wikipedia.org/wiki/Contao#Versionen).
 
 
 ## Updating with the Contao Manager
 
-{{% notice note %}}
+{{% notice info %}}
  Before updating Contao, it is recommended to create a backup of the `composer.json`, `composer.lock` files and the 
  database. 
 {{% /notice %}}
@@ -59,12 +60,12 @@ Special feature when updating for a [minor release](#minor-release): Click on th
 "Contao Open Source CMS" and enter the desired version. Click the "Update packages" button and then "Apply changes" to 
 push the update.
 
-![Start update for minor release](/de/installation/images/de/aktualisierung-fuer-minor-release-starten.png?classes=shadow)
+![Start update for minor release]({{% asset "images/manual/installation/en/update-to-minor-release-started.png" %}}?classes=shadow)
 
 The update can now take several minutes. Details of the update process can be displayed by clicking the following 
-icon![Show/Hide Console Output](/de/icons/konsolenausgabe.png?classes=icon).
+icon ![Show/Hide Console Output]({{% asset "icons/konsolenausgabe.png" %}}?classes=icon).
 
-![Update for minor release completed](/de/installation/images/de/aktualisierung-fuer-minor-release-abgeschlossen.png?classes=shadow)
+![Update for minor release completed]({{% asset "images/manual/installation/en/update-to-minor-release-finished.png" %}}?classes=shadow)
 
 
 ### Update database tables
@@ -76,11 +77,11 @@ Your Contao installation is now up to date.
 
 ## Updating via the command line {#update-via-the-command-line}
 
-{{% notice note %}}
+{{% notice info %}}
  To update Contao via the command line you need to have Composer [installed](../install-contao/#install-composer). 
  {{% /notice %}}
 
-{{% notice note %}}
+{{% notice info %}}
  Before updating Contao, I recommend that you make a backup of the `composer.json` and `composer.lock` files and the 
  database. 
 {{% /notice %}}
@@ -114,7 +115,7 @@ If you are updating for a [minor release](#minor-release), you need to specify t
 {
     …
     "require": {
-        "contao/manager-bundle": "4.10.*",
+        "contao/manager-bundle": "{{% siteparam "currentContaoVersion" %}}.*",
         …
     },
     …
@@ -196,7 +197,7 @@ $ composer install
 or you use the Contao Manager. There you select "System maintenance", "Composer dependencies", "Installer 
 execute".
 
-![composer install with the Contao Manager](/de/installation/images/en/composer-install-using-the-contao-manager.png?classes=shadow)
+![composer install with the Contao Manager]({{% asset "images/manual/installation/en/composer-install-using-the-contao-manager.png" %}}?classes=shadow)
 
 Finally you have to update the database tables. 
 
@@ -245,7 +246,7 @@ your own server with enough memory and thus reduce the load of the resolver clou
 
 You can find the setting in the "System Check" in the "Server Configuration" section.
 
-![Disabling the Composer Resolver Cloud](/de/installation/images/en/disable_cloud_resolver.png?classes=shadow)
+![Disabling the Composer Resolver Cloud]({{% asset "images/manual/installation/en/disable_cloud_resolver.png" %}}?classes=shadow)
 
 After the successful update, transfer the `composer.json` and `composer.lock` files back to the Contao installation on 
 your hosting. The next steps on your hosting are the same as described above.

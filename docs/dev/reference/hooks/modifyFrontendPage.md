@@ -12,10 +12,10 @@ The `modifyFrontendPage` hook is triggered when a front end template is
 printed to the screen. It passes the template content and the template name as
 arguments and expects the template content as return value.
 
-{{% notice note %}}
+{{% notice info %}}
 This hook is applied after insert tags have been
 replaced. If you want to apply your logic before the replacement of
-insert tags, use the [`outputFrontendTemplate`](../outputFrontendTemplate) hook instead.
+insert tags, use the [`outputFrontendTemplate`]({{% relref "outputFrontendTemplate" %}}) hook instead.
 {{% /notice %}}
 
 
@@ -42,11 +42,9 @@ Return the original `$buffer` or override with your custom modification.
 // src/EventListener/ModifyFrontendPageListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("modifyFrontendPage")
- */
+#[AsHook('modifyFrontendPage')]
 class ModifyFrontendPageListener
 {
     public function __invoke(string $buffer, string $templateName): string

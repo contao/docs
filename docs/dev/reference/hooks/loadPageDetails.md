@@ -8,11 +8,9 @@ aliases:
 ---
 
 
-{{< version "4.8" >}}
-
-This hook is executed whenever the details of a page are loaded via
-`\Contao\PageModel::loadDetails`. This hook allows you to add additional details
-to the `\Contao\PageModel` instance.
+This hook is executed whenever the details of a page are loaded via `\Contao\PageModel::loadDetails`. This hook allows 
+you to add additional details to the `\Contao\PageModel` instance. This in turn allows you to inherit custom variables, 
+or make settings of the root page available through a custom variable (see example below).
 
 
 ## Parameters
@@ -30,12 +28,10 @@ to the `\Contao\PageModel` instance.
 // src/EventListener/LoadPageDetailsListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\PageModel;
 
-/**
- * @Hook("loadPageDetails")
- */
+#[AsHook('loadPageDetails')]
 class LoadPageDetailsListener
 {
     public function __invoke(array $parentModels, PageModel $page): void
@@ -43,7 +39,7 @@ class LoadPageDetailsListener
         // Add additional data from the root page to the processed page
         if (count($parentModels) > 0) {
             $rootPage = end($parentModels);
-            $page->myCustomVariable = $rootPage->myCustomRootVariable;
+            $page->myCustomVariable = $rootPage->rootMyCustomVariable;
         }
     }
 }

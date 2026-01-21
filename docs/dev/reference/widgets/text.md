@@ -1,5 +1,5 @@
 ---
-title: "Text"
+title: Text
 description: Not yet documented
 ---
 

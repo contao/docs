@@ -1,0 +1,48 @@
+---
+title: "Template-Daten anzeigen"
+description: "Alle Template-Daten anzeigen."
+url: "layout/templates/twig/data"
+aliases:
+  - /de/layout/templates/twig/data/
+weight: 50
+tags: [Twig]
+---
+
+
+Zur Anzeige der Daten in einer Vorlage, kannst du die  `dump()`-Funktion verwenden.  
+Wenn du nur die Daten von bestimmten Variablen benötigst, kannst du diese als Argument übergeben:
+
+```twig
+{{ dump() }} {# Ausgabe aller verfügbaren Daten #}
+{{ dump(a) }} {# Ausgabe der Daten der Variable "a" #}
+{{ dump(a, b) }} {# Ausgabe der Daten der Variable "a"  und "b" #}
+```
+
+{{% example "Ausgabe der Überschrift des Text-Elementes" %}}
+```twig
+{# /templates/content_element/text.html.twig #}
+{% extends "@Contao/content_element/text.html.twig" %}
+{% block text %}
+    {{ dump(headline) }}
+{% endblock %}
+```
+{{% /example %}}  
+
+
+Soll die Ausgabe in der Toolbar - und nicht in der Vorlage - erfolgen, kannst du die `dump`-Funktion verwenden:
+
+```twig
+{% dump %} {# Ausgabe aller verfügbaren Daten #}
+{% dump(a) %} {# Ausgabe der Daten der Variable "a" #}
+{% dump(a, b) %} {# Ausgabe der Daten der Variable "a"  und "b" #}
+```
+
+
+{{% notice note %}}
+Beachte, dass in erweiterten Templates die `dump()`-Funktion innerhalb eines Blockes verwendet werden muss.
+{{% /notice %}}
+
+{{% notice warning %}}
+Da die ausgewerteten Daten sicherheitskritische Informationen über das System enthalten können, ist dies nur möglich,
+wenn der [Debug-Modus]({{% relref "debug-mode" %}}) aktiviert ist.
+{{% /notice %}}

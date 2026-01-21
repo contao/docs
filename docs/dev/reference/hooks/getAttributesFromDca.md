@@ -37,11 +37,9 @@ Return the attributes for the widget as an associative array.
 // src/EventListener/GetAttributesFromDcaListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getAttributesFromDca")
- */
+#[AsHook('getAttributesFromDca')]
 class GetAttributesFromDcaListener
 {
     public function __invoke(array $attributes, $context = null): array

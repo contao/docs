@@ -1,7 +1,12 @@
+.hugo_build.lock
+/.idea/
 /.vscode/
 /build/
 /resources/
 /link-checker/vendor
-/link-checker/.php_cs.cache
+/link-checker/*.lock
+/normalizer/vendor
+/normalizer/*.lock
 /deepl/vendor
 /deepl/.php_cs.cache
+/link-checker/manual-result.md

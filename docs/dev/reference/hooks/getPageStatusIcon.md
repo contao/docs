@@ -37,11 +37,9 @@ the unchanged second parameter.
 // src/EventListener/GetPageStatusIconListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("getPageStatusIcon")
- */
+#[AsHook('getPageStatusIcon')]
 class GetPageStatusIconListener
 {
     public function __invoke($page, string $image): string

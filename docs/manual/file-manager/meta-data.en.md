@@ -17,8 +17,9 @@ Contao supports the following metadata:
 - Alternative text
 - Link
 - Caption
+- License URL
 
-![Maintaining the metadata](/de/file-manager/images/en/maintaining_the_metadata.jpg?classes=shadow)
+![Maintaining the metadata]({{% asset "images/manual/file-manager/en/maintaining_the_metadata.jpg" %}}?classes=shadow)
 
 **The HTML output**  
  Content element of type "Image" generates the following HTML code:
@@ -33,3 +34,38 @@ Contao supports the following metadata:
     </figure>
 </div>
 ```
+
+**License URL**
+On the page on which the image is embedded the license URL is used in the [SCHEMA-ImageObject](https://schema.org/ImageObject "SCHEMA-ImageObject") of the [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) to comply with licensing notices.
+
+**The HTML output**
+The license URL generates the following HTML code:
+
+```html
+<script type="application/ld+json">
+[
+    {
+        "@context": "https:\/\/schema.org",
+        "@graph": [
+        ...
+            {
+                "@id": "#\/schema\/image\/406494fa-4de4-11ed-abcf-001a4a0502b4",
+                "@type": "ImageObject",
+                "caption": "Contao CMS",
+                "contentUrl": "assets\/images\/c\/contao_extensions-c6607fb7.png",
+                "license": "https:\/\/www.gnu.org\/licenses\/lgpl-3.0.html",
+                "name": "Contao CMS"
+            }
+        ]
+    },
+    ...
+]
+</script>
+```
+
+To display the license URL under the image on the page you can add the following code to the `image.html5` template:
+
+```php
+<?php if ($this->license): ?><p class="ce_image__license" ><?= $this->license ?></p><?php endif; ?>
+```
+

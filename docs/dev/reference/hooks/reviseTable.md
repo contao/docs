@@ -15,7 +15,7 @@ does expect a boolean as return value (returning `true` will cause the current
 page to be reloaded).
 
 
-{{% notice note %}}
+{{% notice info %}}
 This hook can also be implemented as an anonymous function.
 {{% /notice %}}
 
@@ -50,14 +50,12 @@ Return `true` if the current page should be reloaded. Otherwise return `false` o
 // src/EventListener/ReviseTableListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 
-/**
- * @Hook("reviseTable")
- */
+#[AsHook('reviseTable')]
 class ReviseTableListener
 {
-    public function __invoke(string $table, ?array $newRecords, ?string $parentTable, ?array $childTables): ?bool
+    public function __invoke(string $table, array|null $newRecords, string|null $parentTable, array|null $childTables): bool|null
     {
         // Do something …
     }

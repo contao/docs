@@ -11,7 +11,7 @@ tags:
 
 
 This tutorial describes the local use of Contao with [XAMPP](https://www.apachefriends.org/) for Windows. 
-We use a »XAMPP Portable Version«, which only needs to be copied. You select the appropriate Windows .zip archive, e.g. [xampp-portable-windows-x64-7.4.16-0-VC15.zip](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.16/xampp-portable-windows-x64-7.4.16-0-VC15.zip/download).
+We use a »XAMPP Portable Version«, which only needs to be copied. Download the appropriate [Windows archive](https://www.apachefriends.org/download.html) for this purpose.
 
 Then unpack the archive to e.g. `D:\xampp` and start the `setup_xampp.bat` file once. The »XAMPP installation« is now complete.
 
@@ -28,13 +28,13 @@ You should receive the corresponding PHP (CLI) version as output and can then cl
 In your browser, enter `http://localhost` to access the »XAMPP Dashboard" with general information. Here you will find a 
 link in the upper menu called `PHPInfo` with information about the current PHP configuration.
 
-{{% notice info %}}
+{{% notice note %}}
 You should always start the »XAMPP Control Panel« (xampp-control.exe) and the »XAMPP Console« (xampp_shell.bat) with 
 administrator rights. 
 {{% /notice %}}
 
 
-## Die PHP Konfiguration
+## PHP configuration
 
 According to the [Contao system requirements](/en/installation/system-requirements/) we have to adjust the 
 PHP configuration once. To do this, first stop the modules »Apache« and »MySQL« in the »XAMPP Control-Panel«.
@@ -51,6 +51,22 @@ The changes mentioned are mandatory for the installation via the [PHP composer](
 the [Contao manager](/en/installation/contao-manager/). In addition, you can optionally change the entries 
 »allow_url_fopen«, »max_execution_time« or »file_uploads« and adjust them.
 {{% /notice %}}
+
+
+## Apache configuration
+
+XAMPP or Apache on Windows are having a default value of the so called `ThreadStackSize` of only 1 MB, while Linux 
+system are configured with a default value of 8 MB. In order to avoid crashes of the local server, it is 
+recommended to increase the setting of this value.
+Add an entry to the file `D:\xampp\apache\conf\httpd.conf` to increase the `ThreadStackSize` to 8 MB
+
+```
+<IfModule mpm_winnt_module>
+    ThreadStackSize 8388608
+</IfModule> 
+```
+
+After this change XAMPP (Apache) has to be restarted.
 
 **Congratulations!** You have completed all preparations for a local Contao installation.
 
@@ -86,7 +102,7 @@ php ../composer.phar create-project contao/managed-edition demo 4.9
 
 Your Contao installation is now located in the XAMPP directory `htdocs\demo`.
 
-{{% notice note %}}
+{{% notice info %}}
 This procedure is optional. You can also run the Contao installation directly from the Contao manager.
 For example, create the directories `demo\web` in the XAMPP directory `htdocs`. Copy the 
 [Contao-Manager](https://contao.org/de/download.html) into the directory `demo\web` and rename the file to 

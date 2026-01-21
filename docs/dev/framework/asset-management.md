@@ -23,7 +23,7 @@ layout.
 | `$GLOBALS['TL_JAVASCRIPT']` | Contains relative or absolute paths to JavaScripts assets to be included in the `<head>` of the document. |
 | `$GLOBALS['TL_MOOTOOLS']` | Contains HTML code to be included before `</body>`. |
 
-{{% notice info %}}
+{{% notice note %}}
 In the back end, only `TL_CSS`, `TL_JAVASCRIPT` and `TL_MOOTOOLS` will work.
 {{% /notice %}}
 
@@ -49,10 +49,10 @@ to the file path and separated by a pipe `|` character.
 
 | Option | Example | Description |
 | --- | --- | --- |
-| Static | `|static` | Defines the asset as "static". |
-| Media | `|print` | Defines the `media` attribute of the `<link>` tag (CSS only). |
-| Media | `|async` | Defines the `async` attribute of the `<script>` tag (JavaScript only). |
-| Version | `|1` | Appends a `?v=…` parameter. Can be a version number or also a timestamp. |
+| Static | `\|static` | Defines the asset as "static". |
+| Media | `\|print` | Defines the `media` attribute of the `<link>` tag (CSS only). |
+| Async | `\|async` | Defines the `async` attribute of the `<script>` tag (JavaScript only). |
+| Version | `\|1` | Appends a `?v=…` parameter. Can be a version number or also a timestamp. |
 
 All options can be combined in no particular order.
 
@@ -159,7 +159,7 @@ $GLOBALS['TL_HEAD'][] = \Contao\Template::generateInlineStyle($this->generateCss
   
 This returns a `<script src="…" …>` tag and takes six arguments: 
 
-* `$href`: the path to the stylesheet (absolute or relative to the _base_)
+* `$href`: the path to the script (absolute or relative to the _base_)
 * `$async`: whether the `async` attribute should be added to the tag (default `false`)
 * `$mtime`: an optional modification time, which Contao will use to append a query 
   parameter to the file for cache busting. This can also be set to `null` in order 
@@ -168,7 +168,7 @@ This returns a `<script src="…" …>` tag and takes six arguments:
 * `$crossorigin`: optional `crossorigin` attribute.
 * `$referrerpolicy`: optional `referrerpolicy` attribute.
 
-{{% notice note %}}
+{{% notice info %}}
 Some of these parameters are only available in newer Contao versions.
 {{% /notice %}}
 
@@ -196,17 +196,54 @@ the title of the feed.
 $GLOBALS['TL_HEAD'][] = \Contao\Template::generateFeedTag('share/myfeed.xml', 'rss', 'My Feed');
 ```
 
+### Twig
+
+While you cannot directly add assets to the aforementioned globals in Twig templates, you can use the
+[`add` tag]({{% relref "add" %}}) to add styles and JavaScripts to different sections of the document.
+
+Contao also comes with a `_stylesheet` component which helps you render inline style sheets:
+
+```twig
+{% use "@Contao/component/_stylesheet.html.twig" %}
+
+{# Renders `<link rel="stylesheet" href="…"> #}
+{% with {file: asset('styles.css')} %}
+    {{ block('stylesheet_component') }}
+{% endwith %}
+```
+
+You can also lazy-load a  stylesheet:
+
+```twig
+{% use "@Contao/component/_stylesheet.html.twig" %}
+
+{% with {file: asset('styles.css'), lazy: true} %}
+    {{ block('stylesheet_component') }}
+{% endwith %}
+```
+
+This will render:
+
+```html
+<link rel="preload" as="style" href="…" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="…"></noscript>
+```
+
+Using Contao's [`add` tag]({{% relref "add" %}}) you can output styles and JavaScripts in different sections of the
+document.
 
 ## Accessing Assets in Templates
-
-{{< version "4.5" >}}
 
 Contao also provides the possibility to access assets via the [Symfony Asset Component][SymfonyAssetComponent].
 It automatically registers assets from packages and these assets are grouped by
 their "package". Each package can have a different version strategy. These assets 
-can then be accessed within [Contao Templates][ContaoTemplates] by using the 
-`$this->asset(…)` helper function, or via the `{{asset::*::*}}` insert tag. These 
-methods are basically shortcuts to the asset component of the Symfony framework, 
+can then be accessed within [Contao Templates][ContaoTemplates] in several ways:
+
+* Via the `asset(…)` [Twig function][AssetTwig] in Twig templates.
+* Via the `$this->asset(…)` helper function in legacy PHP templates.
+* Via the `{{asset::*::*}}` insert tag, wherever supported.
+
+These methods are basically shortcuts to the asset component of the Symfony framework, 
 so Contao supports whatever Symfony Assets supports. The methods take two arguments: 
 the path or name of the asset within the package, and the package name.
 
@@ -214,6 +251,11 @@ the path or name of the asset within the package, and the package name.
 <script src="<?= $this->asset('foobar.js', 'fooexample') ?>"></script>
 <script src="<?= $this->asset('js/tablesort.min.js', 'contao-components/tablesort') ?>"></script>
 <script src="{{asset::jquery.js::contao-components/jquery}}"></script>
+```
+
+```twig
+<script src="{{ asset('foobar.js', 'fooexample') }}"></script>
+<script src="{{ asset('js/tablesort.min.js', 'contao-components/tablesort') }}"></script>
 ```
 
 There are several use cases of using the asset helper within Contao:
@@ -230,16 +272,16 @@ There are several use cases of using the asset helper within Contao:
   of the asset component).
 
     - By default, a bundle does not have a version, so no version suffix is added. 
-      The asset component resolves `{{asset::foobar.min.js::fooexample}}` to `web/bundles/fooexample/foobar.min.js`.
+      The asset component resolves `{{asset::foobar.min.js::foo_example}}` to `web/bundles/fooexample/foobar.min.js`.
     - If the `public` folder has a `manifest.json` in its root, that file is used 
-      to generate a *manifest.json version strategy*. For `{{asset::foobar.js::fooexample}}` 
+      to generate a *manifest.json version strategy*. For `{{asset::foobar.js::foo_example}}` 
       the asset component will look up `foobar.js` in the `manifest.json` and output 
       that path. This is useful when using e.g. [Webpack Encore][WebpackEncore] 
       to generate the assets, as hashed file names are resolved to `web/bundles/fooexample/foobar-1ussdg71.js`.
-
 
 [ContaoContentElement]: /framework/content-elements/
 [ContaoFrontEndModule]: /framework/front-end-modules/
 [ContaoTemplates]: /framework/templates/
 [SymfonyAssetComponent]: https://symfony.com/doc/current/components/asset.html
 [WebpackEncore]: https://symfony.com/doc/current/frontend.html#webpack-encore
+[AssetTwig]: https://symfony.com/doc/current/templates.html#linking-to-css-javascript-and-image-assets

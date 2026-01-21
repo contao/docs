@@ -8,19 +8,18 @@ aliases:
 ---
 
 
-The `updatePersonalData` hook is triggered after a member has updated his
-personal data. It passes the front end user, the updated data and the front
-end module and does not expect a return value.
+The `updatePersonalData` hook is triggered after a member has updated their personal data via the respective 
+front end module. It passes the front end user, the updated data and the front end module and does not expect 
+a return value.
 
-Be aware that the front end user object and the database has already been
-updated when this hook is triggered.
+Be aware that the front end user object and the database has already been updated when this hook is triggered.
 
 
 ## Parameters
 
 1. *\Contao\FrontendUser* `$member`
 
-    The front end user instance who changed his data.
+    The front end user instance who changed their data.
 
 2. *array* `$data`
 
@@ -37,13 +36,11 @@ updated when this hook is triggered.
 // src/EventListener/UpdatePersonalDataListener.php
 namespace App\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Module;
 use Contao\FrontendUser;
 
-/**
- * @Hook("updatePersonalData")
- */
+#[AsHook('updatePersonalData')]
 class UpdatePersonalDataListener
 {
     public function __invoke(FrontendUser $member, array $data, Module $module): void

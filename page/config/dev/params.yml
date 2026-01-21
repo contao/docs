@@ -1,3 +1,18 @@
 editURL: 'https://github.com/contao/docs/edit/main/docs/dev/'
 documentation_label: 'Developer Documentation'
 algolia_selector: dev
+documentation_label_overview: 'More documentation on'
+documentation_label_website: 'More about Contao on'
+documentation_label_switch: 'Go to the Contao manual'
+documentation_label_switch_url: 'https://docs.contao.org/5.x/manual/'
+version: 5.x
+versions:
+    - 
+        baseURL: https://docs.contao.org/5.x/dev/
+        identifier: 5.x
+        isLatest: true
+        title: 5.x
+    - 
+        baseURL: https://docs.contao.org/4.x/dev/
+        identifier: 4.x
+        title: 4.x

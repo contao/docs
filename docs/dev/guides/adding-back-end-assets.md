@@ -20,8 +20,8 @@ global arrays:
 Adding additional entries to these arrays can be done in many ways. This guide will
 outline two general use cases, in order to give an idea what is possible.
 
-{{% notice note %}}
-Starting with version **4.11** global assets can now be added via the `config/config.yaml`:
+{{% notice info %}}
+Global assets can be added via the `config/config.yaml`:
 [Additional back end settings](https://docs.contao.org/manual/en/system/settings/#additional-back-end-settings)
 {{% /notice %}}
 
@@ -30,40 +30,32 @@ Starting with version **4.11** global assets can now be added via the `config/co
 If you need assets globally in the back end, e.g. when customizing the back end
 theme, then one way to ensure that your assets are inserted on every back end page 
 is to use a [Symfony kernel event][SymfonyEvents] and then check for the Contao 
-back end scope there. The following example implements an [event subscriber][SymfonyEventSubscriber]
-for this purpose using the `kernel.request` event in order to add a Font-Awesome
-kit to the back end.
+back end scope there. The following example implements an event listener
+for this purpose using the `kernel.request` event.
 
 ```php
-// src/EventSubscriber/KernelRequestSubscriber.php
-namespace App\EventSubscriber;
+// src/EventListener/AddBackendAssetsListener.php
+namespace App\EventListener;
 
 use Contao\CoreBundle\Routing\ScopeMatcher;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
 
-class KernelRequestSubscriber implements EventSubscriberInterface
+#[AsEventListener]
+class AddBackendAssetsListener
 {
-    protected $scopeMatcher;
-
-    public function __construct(ScopeMatcher $scopeMatcher)
+    public function __construct(private readonly ScopeMatcher $scopeMatcher)
     {
-        $this->scopeMatcher = $scopeMatcher;
     }
 
-    public static function getSubscribedEvents()
+    public function __invoke(RequestEvent $event): void
     {
-        return [KernelEvents::REQUEST => 'onKernelRequest'];
-    }
-
-    public function onKernelRequest(RequestEvent $e): void
-    {
-        $request = $e->getRequest();
-
-        if ($this->scopeMatcher->isBackendRequest($request)) {
-            $GLOBALS['TL_JAVASCRIPT'][] = 'https://kit.fontawesome.com/xhcf1h83c6.js';
+        if (!$this->scopeMatcher->isBackendMainRequest($event)) {
+            return;
         }
+
+        $GLOBALS['TL_CSS'][] = /* add your CSS asset here */;
+        $GLOBALS['TL_JAVASCRIPT'][] = /* add your JS asset here */;
     }
 }
 ```
@@ -77,13 +69,12 @@ and want to style its appearance in the back end. In that case you can also use
 the `onload` [DCA callback][DcaCallbacks] for the specific DCA.
 
 ```php
+// src/EventListener/DataContainer/ContentOnLoadCallbackListener.php
 namespace App\EventListener\DataContainer;
 
-use Contao\CoreBundle\ServiceAnnotation\Callback;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 
-/**
- * @Callback(target="config.onload", table="tl_content")
- */
+#[AsCallback(table: 'tl_content', target: 'config.onload')]
 class ContentOnLoadCallbackListener
 {
     public function __invoke(): void
@@ -96,7 +87,6 @@ class ContentOnLoadCallbackListener
 
 [AssetManagement]: /framework/asset-management/
 [SymfonyEvents]: https://symfony.com/doc/current/reference/events.html
-[SymfonyEventSubscriber]: https://symfony.com/doc/current/components/event_dispatcher.html#using-event-subscribers
 [DataContainer]: /framework/dca/
 [ContentElement]: /framework/content-elements/
 [DcaCallbacks]: /reference/dca/callbacks/
