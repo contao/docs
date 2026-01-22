@@ -53,6 +53,11 @@ vendor/bin/contao-console cache:warmup
 ```
 {{% /faq %}}
 
+{{% faq "Why do I get a white page when editing a record?" %}}
+{{< version-tag "5.4" >}} This can be caused by browser extensions, that modify the DOM in an invalid way. One such
+extension that is known to create problems is [LanguageTool](https://languagetool.org) for example.
+{{% /faq %}}
+
 
 
 ## Template

@@ -55,6 +55,11 @@ vendor/bin/contao-console cache:warmup
 ```
 {{% /faq %}}
 
+{{% faq "Warum bekomme ich bei Bearbeitung eines Datensatzes nur eine weisse Seite?" %}}
+{{< version-tag "5.4" >}} Dies kann von Browser-Extensions verursacht werden, die den DOM in einer ungültigen Weise
+ändern. Ein bekanntes Beispiel für so eine Extension ist [LanguageTool](https://languagetool.org).
+{{% /faq %}}
+
 
 ## Template
 
