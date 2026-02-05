@@ -162,7 +162,7 @@ messaging framework][Async_Messaging].
 #[AsMessageHandler]
 class MyMessageHandler
 {
-    public function __construct private readonly Jobs $jobs) {
+    public function __construct private readonly Jobs $jobs, private readonly Connection $connection) {
     }
 
     public function __invoke(MyMessage $message): void
@@ -179,7 +179,7 @@ class MyMessageHandler
         $this->jobs->persist($job);
         
         // In this example, the total is unknown, but we want to show progress to the user.
-        foreach ($items as $i => $item) {
+        foreach ($this->connection->fetchAllAssociative('SELECT * FROM foo') as $i => $item) {
             // Do heavy work
             $job = $job->withProgressFromAmounts($i + 1);
             $this->jobs->persist($job);
