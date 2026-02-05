@@ -179,7 +179,7 @@ You don't need `Supervisor`, `systemd` or the likes when using the Contao Manage
 minutely cron job triggering `contao:cron` and you're good to go!
 {{% /notice %}}
 
-## The priority message interfaces
+## Message routing
 
 So we know how the `WebWorker` fallback works, and we have a solution for running the `messenger:consume` commands. One 
 piece is missing, though: How does Contao know that your message (let's assume a `CreateAsyncZipFileMessage` in this example) 
@@ -194,8 +194,31 @@ framework:
 ```
 
 This would be totally doable using a `Contao Manager Plugin` and adjusting the Symfony Framework configuration, 
-appending your entry. However, because Contao ships with the 3 default priorities, there are also built-in 
-interfaces for those 3 which are then routed automatically:
+appending your entry. However, there's are easier solutions to define the default depending on the Contao version you
+use:
+
+{{< tabs groupid="messenger-routing" style="code" >}}
+{{% tab title="Contao >= 5.7" %}}
+As of Contao 5.7+ and thus Symfony 7.4+ you can use the Symfony `AsMessage` attribute:
+
+```php
+namespace App\Messenger;
+ 
+use Symfony\Component\Messenger\Attribute\AsMessage;
+
+#[AsMessage('contao_prio_high')]
+class CreateAsyncZipFileMessage
+{
+    public function __construct(public array $fileIds)
+    {
+    }
+ }
+```
+{{% /tab %}}
+
+{{% tab title="Contao < 5.7" %}}
+Because Contao ships with the 3 default priorities, there are also built-in interfaces for those 3 which are then 
+routed automatically:
 
 ```yaml
 framework:
@@ -206,10 +229,27 @@ framework:
             'Contao\CoreBundle\Messenger\Message\LowPriorityMessageInterface': contao_prio_low
 ```
 
-{{% notice idea %}}
 Instead of fiddling with the container and the configuration, all you need to do is implement one of the priority
 interfaces and the routing is configured.
-{{% /notice %}}
+
+```php
+namespace App\Messenger;
+
+use Contao\CoreBundle\Messenger\Message\HighPriorityMessageInterface;
+
+class CreateAsyncZipFileMessage implements HighPriorityMessageInterface
+{
+   public function __construct(public array $fileIds)
+   {
+   }
+}
+```
+
+{{% /tab %}}
+
+{{< /tabs >}}
+
+
 
 ## Using the entire Contao Managed Edition framework as a developer
 
@@ -222,9 +262,11 @@ respective message handler:
     ```php
     namespace App\Messenger;
     
-    use Contao\CoreBundle\Messenger\Message\HighPriorityMessageInterface;
-   
-    class CreateAsyncZipFileMessage implements HighPriorityMessageInterface
+    /**
+     * Depending on your Contao version you want to support, either use the priority interfaces or the
+     * #[AsMessage()] attribute
+     */
+    class CreateAsyncZipFileMessage
     {
         public function __construct(public array $fileIds)
         {
