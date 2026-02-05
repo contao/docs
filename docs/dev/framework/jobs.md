@@ -3,7 +3,7 @@ title: Jobs
 description: "Contao's jobs framework."
 ---
 
-{{< version "5.6" >}}
+{{< version "5.7" >}}
 
 {{% notice "warning" %}}
 The entire jobs framework is currently considered *experimental* and therefore not covered by Contao's BC promise. Classes marked with `@experimental` should be considered internal for now.
@@ -112,12 +112,85 @@ $job = $job->withMetadata(['api_key' => 'foobar', 'iteration_offset' => 11]);
 $job = $job->markFailedBecauseRequiresCLI();
 ```
 
+## Managing progress of a job
 
-## Plans for the future
+A `Job` stores progress as a percentage (0–100).
 
-Here's a short list of what is certainly planned for the framework in future versions:
+```php
+// If you already know the percentage, you can set it manually.
+// Progress must be between 0 and 100.
+$job = $job->withProgress(42.5);
 
-- Display the progress using a progress bar
-- Display and translate warnings
-- Display and translate errors
-- Add helpers for attaching file downloads
+// If you know how many items you processed already and the total,
+// you can let the job itself calculate the percentage.
+$job = $job->withProgressFromAmounts(50, 200); // => progress becomes 25.0
+
+// Sometimes you don't know the total amount of work up front.
+// In that case, pass null as $total (default, you can also just leave it empty).
+// This internally uses a logarithmic curve to show monotonic progress
+// (it always increases), but caps at 95% so it never reaches 100%
+// until the job is actually completed. This guarantees that the user
+// sees progress (so the job is still running) but it's never done
+$job = $job->withProgressFromAmounts(10, null);
+
+// Once the job is finished, mark it as completed.
+// This automatically sets progress to 100%.
+$job = $job->markCompleted();
+```
+
+## Adding attachments to jobs
+
+You can add attachments to jobs, and you don't have to worry how the users will be able to download them. Contao handles
+all that for you transparently in the Jobs overview.
+
+```php
+// Add a simple text attachment (string contents):
+$this->jobs->addAttachment($job, 'report.txt', "Export finished.\nRows: 123\n");
+
+// Add a binary attachment via stream (recommended for large files):
+$stream = fopen('/path/to/export.zip', 'rb');
+$this->jobs->addAttachment($job, 'export.zip', $stream);
+fclose($stream);
+```
+
+## Example
+
+This is a full example how to use the jobs framework within an asynchronous message, handled via the [asynchronous
+messaging framework][Async_Messaging].
+
+```php
+#[AsMessageHandler]
+class MyMessageHandler
+{
+    public function __construct private readonly Jobs $jobs, private readonly Connection $connection) {
+    }
+
+    public function __invoke(MyMessage $message): void
+    {
+        $job = $this->jobs->getByUuid($message->getJobId());
+
+        // Job gone or already completed
+        if (!$job || $job->isCompleted()) {
+            return;
+        }
+        
+        // Mark a job pending as soon as you start processing it:
+        $job = $job->markPending();
+        $this->jobs->persist($job);
+        
+        // In this example, the total is unknown, but we want to show progress to the user.
+        foreach ($this->connection->fetchAllAssociative('SELECT * FROM foo') as $i => $item) {
+            // Do heavy work
+            $job = $job->withProgressFromAmounts($i + 1);
+            $this->jobs->persist($job);
+        }
+        
+        // Add an attachment and mark the job done
+        $this->jobs->addAttachment($job, 'report.txt', "Export finished.\nRows: 123\n");
+        $job = $job->markCompleted();
+        $this->jobs->persist($job);
+    }
+}
+```
+
+[Async_Messaging]: /framework/async-messaging
