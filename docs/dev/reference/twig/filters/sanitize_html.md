@@ -25,9 +25,9 @@ information about it in the [Symfony documentation](https://symfony.com/doc/curr
 Use the `default` sanitizer for HTML code that comes from external sources.
 {{% /notice %}}
 
-{{< version "5.7" >}}
-
 ## Contao sanitizer
+
+{{< version "5.7" >}}
 
 If you use the filter with the `'contao'` sanitizer the HTML code is sanitized according to the rules configured in the
 security section in the Contao system settings. Insert tags do not get encoded and unclosed tags do not get 
