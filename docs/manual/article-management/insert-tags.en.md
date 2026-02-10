@@ -253,6 +253,8 @@ definitions.
 | `[nbsp]` | `&nbsp;` = non-breaking space. If you want to prevent the break between two words, a protected space must be inserted (e.g. `Contao[nbsp]CMS`). |
 | `[-]` | `&shy;` = soft hyphen. The word is wrapped if there is not enough space. The separation is done with a hyphen, e.g. if you want to separate the typical German compound words like `Donau[-]dampf[-]schiff[-]fahrts[-]gesell[-]schaft` |
 | `[zwsp]`       | {{< version-tag "5.3" >}} `&ZeroWidthSpace;` = zero-width space. Separates characters without visually separating them - see [Wikipedia](https://en.wikipedia.org/wiki/Zero-width_space) |
+| `[lsqb]`       | {{< version-tag "5.7" >}} `&lsqb;` = left square bracket (`[`) |
+| `[rsqb]`       | {{< version-tag "5.7" >}} `&rsqb;` = right square bracket (`]`) |
 | `[{]`, `[}]` | Replaced in the front end with `{{` or `}}`, respectively. This enables you to display insert tags in the front end. For example, to explain them. |
 
 
