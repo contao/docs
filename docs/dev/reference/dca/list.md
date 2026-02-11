@@ -255,3 +255,5 @@ $GLOBALS['TL_DCA']['tl_foobar']['list']['operations']['toggle'] = [
     'icon' => Contao\System::getContainer()->get('assets.packages')->getUrl('myicon.svg', 'foobar'),
 ];
 ```
+
+[TurboPrefetch]: https://turbo.hotwired.dev/handbook/drive#prefetching-links-on-hover
