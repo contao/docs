@@ -22,9 +22,9 @@ The above example uses the [`Event`](https://schema.org/Event) Schema.org Type. 
 ```twig
 {% do add_schema_org({
     '@type': 'Events',
-    'identifier' => '#/schema/events/' ~ id,
-    'name' => title,
-    'startDate' => startTime|date('Y-m-d\TH:i:sP'),
+    'identifier': '#/schema/events/' ~ id,
+    'name': title,
+    'startDate': startTime|date('Y-m-d\TH:i:sP'),
 }) %}
 ```
 

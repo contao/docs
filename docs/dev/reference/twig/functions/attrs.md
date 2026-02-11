@@ -47,7 +47,7 @@ Add and remove styles
 
 ```twig
 attrs().addStyle('color: red')                          {# <div style="color: red;"> #}
-attrs().addStyle(['color' => 'red', 'margin' => '1em'])
+attrs().addStyle({'color': 'red', 'margin': '1em'})
 attrs().removeStyle('color')                            {# Removes just the color style #}
 ```
 
@@ -91,7 +91,7 @@ Inline styles with conditions?
 
 ```twig
 <div{{ attrs()
-    .addStyle(['background' => bgColor])
+    .addStyle({'background': bgColor})
     .addStyle('border: 1px solid red;', hasError) }}>
     Content
 </div>
