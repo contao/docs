@@ -113,7 +113,7 @@ We then add our newly created content element in an article, add some images to 
 define a title for one of the images in the back end file manager. If we now open the frontend, we should get an output
 like so:
 
-<ul style="background-color: #eee; padding: 1em 2.5em;">
+<ul>
   <li>images/bear.jpg has a size of 476.673kB.</li>
   <li>'The Cat on a sofa' (images/sofa-cat.jpg) has a size of 750.382kB.</li>
   <li>images/zebra.jpg has a size of 188.732kB.</li>
