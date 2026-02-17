@@ -65,18 +65,9 @@ Every Contao installation requires a separate (sub)domain.
 ### Download and Installation
 
 The Contao Manager consists of a single file that can be [downloaded from contao.org](https://contao.org/en/download.html). 
-After the successful download you will receive a file `contao-manager.phar`. transfer this file to the directory `public` 
-on your web server.
+After the successful download you will receive a file `contao-manager.phar.php`. transfer this file to the directory 
+`public` on your web server.
 
-{{% notice note %}}
-Files `.phar` are not executed by all hosting providers. For best compatibility, add the file extension `.php`(final 
-file name: `contao-manager.phar.php`).
-{{% /notice %}}
-
-{{% notice warning %}}
-`.php` files are transferred by most FTP programs in text mode instead of binary mode, which destroys the manager file. 
-Therefore, add the file extension `.php` only after the upload. 
-{{% /notice %}}
 
 ### Starting Contao Manager
 

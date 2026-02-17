@@ -21,9 +21,9 @@ Das Hosting konfigurierst du über das Admin-Panel deines Hosting-Providers.
 ### Wurzelverzeichnis (Document Root)
 
 Von deinem Provider wird dir meistens ein Ordner vorgegeben, wo du deine Webseiten ablegen kannst - das ist häufig
-ein Ordner `/www`, `/public_html` oder `/httpdocs`. Dort kannst du Contao für deine neue Webseite installieren. Es hat sich bewährt,
-in diesem Pfad erstmal einen Unterordner anzulegen z. B. `/example` für die Seite `example.com` - das ist dann dein
-Installations- oder Projektordner.
+ein Ordner `/www`, `/public_html` oder `/httpdocs`. Dort kannst du Contao für deine neue Webseite installieren. Es hat 
+sich bewährt, in diesem Pfad erstmal einen Unterordner anzulegen z. B. `/example` für die Seite `example.com` - das ist 
+dann dein Installations- oder Projektordner.
 
 In Contao befinden sich alle öffentlich erreichbaren Dateien im Unterordner `/public`. Erstelle dazu den Ordner `public`
 in deinem Installationsordner und setze das Wurzelverzeichnis (Document Root) über das Admin-Panel des Hosting-Providers
@@ -42,12 +42,8 @@ anlegst. Die Zugangsdaten werden später benötigt.
 
 Der [Contao Manager](../../installation/contao-manager/) besteht aus einer einzelnen Datei, welche über 
 [contao.org](https://contao.org/de/download.html) heruntergeladen werden kann. Nach erfolgreichem Download erhältst 
-du eine Datei `contao-manager.phar`. Übertrage diese Datei in das Verzeichnis `public` auf deinem Webserver.
+du eine Datei `contao-manager.phar.php`. Übertrage diese Datei in das Verzeichnis `public` auf deinem Webserver.
 
-{{% notice note %}}
-`.phar`-Dateien werden nicht von allen Hosting-Anbietern ausgeführt. Für beste Kompatibilität füge die
-Dateiendung `.php` <b>nach dem Upload</b> hinzu (benenne die Datei <b>auf dem Server</b> in `contao-manager.phar.php` um).
-{{% /notice %}}
 
 ## Contao Manager aufrufen
 

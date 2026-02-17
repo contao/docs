@@ -6,8 +6,9 @@ aliases:
 weight: 15
 ---
 
-We assume here that you want to install either the latest version or the [Long Term Support Version](https://docs.contao.org/manual/en/installation/update-contao/#long-term-support-versions) with the Contao Manager. This is the easiest and recommended way for beginners. Some hosting 
-providers offer 1-click installations. However, for the best user experience, we recommend using the Contao Manager or the console.
+We assume here that you want to install either the latest version or the [Long Term Support Version](https://docs.contao.org/manual/en/installation/update-contao/#long-term-support-versions) with the 
+Contao Manager. This is the easiest and recommended way for beginners. Some hosting providers offer 1-click 
+installations. However, for the best user experience, we recommend using the Contao Manager or the console.
 
 
 ## Hosting configuration
@@ -16,9 +17,9 @@ You configure the hosting via the admin panel of your hosting provider.
 
 ### Root directory (document root)
 
-Your provider will usually give you a folder where you can store your websites - this is often a `/www`, `/public_html` or `/httpdocs`
-folder. There you can install Contao for your new website. It has proven useful to first create a subfolder in this 
-path, e.g. `/example` for the page `example.com` - this is then your installation or project folder.
+Your provider will usually give you a folder where you can store your websites - this is often a `/www`, `/public_html` 
+or `/httpdocs` folder. There you can install Contao for your new website. It has proven useful to first create a 
+subfolder in this path, e.g. `/example` for the page `example.com` - this is then your installation or project folder.
 
 In Contao, all publicly accessible files are located in the `/public` subfolder. Create a folder called `public` and
 set the root directory (document root) of the installation to this subfolder via the admin panel of the hosting provider
@@ -35,13 +36,9 @@ should ideally create right away. Its login credentials will be needed later.
 ## Installing the Contao Manager
 
 The [Contao Manager](../../installation/contao-manager/) consists of a single file which can be downloaded from 
-[contao.org](https://contao.org/en/download). After a successful download you will receive a file called `contao-manager.phar`. 
+[contao.org](https://contao.org/en/download). After a successful download you will receive a file called `contao-manager.phar.php`. 
 Transfer this file to the `public` directory on your web server.
 
-{{% notice note %}}
-`.phar` files are not executed by all hosting providers. For best compatibility, add the `.php` file extension 
-<b>after the upload</b> (i.e. rename the file <b>on the server</b> to `contao-manager.phar.php`).
-{{% /notice %}}
 
 ## Call Contao Manager
 
