@@ -3,6 +3,9 @@ title: Key-Value-Wizard
 description: Renders an expandable list of keys and values.
 ---
 
+{{% notice "note" %}}
+This widget has been deprecated in Contao **5.7** in favor of the `Row Wizard` widget.
+{{% /notice %}}
 
 This widget allows you to enter multiple "key & value" (or "value & label") combinations. It allows you to copy and 
 delete individual entries as well as re-arrange the order of the entries.
