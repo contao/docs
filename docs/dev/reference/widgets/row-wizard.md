@@ -15,6 +15,7 @@ The widget validates each child field individually and stores the resulting rows
 ## Features
 
 - Parses and renders DCA field definitions directly
+- Allows callbacks on the used widget fields
 - Uses the existing backend Stimulus controllers
 - Validation is handled by the individual child widgets
 - Stores multiple rows as serialized data
