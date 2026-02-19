@@ -65,7 +65,7 @@ Every Contao installation requires a separate (sub)domain.
 ### Download and Installation
 
 The Contao Manager consists of a single file that can be [downloaded from contao.org](https://contao.org/en/download.html). 
-After the successful download you will receive a file `contao-manager.phar.php`. transfer this file to the directory 
+After the successful download you will receive a file `contao-manager.phar.php`. Transfer this file to the directory 
 `public` on your web server.
 
 
