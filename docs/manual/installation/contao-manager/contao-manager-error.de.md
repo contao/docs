@@ -17,7 +17,7 @@ herunterlädt und sich danach selber überschreibt.
 Beim Aufruf der URL `www.example.com/contao-manager.phar.php` erscheint jedoch nicht die Willkommensseite des Contao 
 Managers.
 
-In diesem Fall, kannst du versuchen die [`.phar`-Datei](https://download.contao.org/contao-manager.phar) direkt 
+In diesem Fall kannst du versuchen, die [`.phar`-Datei](https://download.contao.org/contao-manager.phar) direkt 
 hochzuladen.
 
 
