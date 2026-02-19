@@ -74,8 +74,12 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
         'label' => &$GLOBALS['TL_LANG']['MSC']['ow_value'],
         'inputType' => 'text'
     ],
-    'eval' => ['tl_class'=>'w66 clr'],
-	'sql' => ['type'=>'text', 'length'=>MySQLPlatform::LENGTH_LIMIT_TEXT, 'notnull'=>false],
+    'eval' => ['tl_class' => 'w66 clr'],
+    'sql' => [
+        'type' => 'text',
+        'length' => MySQLPlatform::LENGTH_LIMIT_BLOB,
+        'notnull' => false
+    ],
 ],
 // …
 ```
