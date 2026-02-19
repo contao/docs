@@ -11,7 +11,7 @@ aliases:
 Du hast den Contao Manager, bestehend aus einer einzelnen Datei, über [contao.org](https://contao.org/de/download.html)
 heruntergeladen. Die Datei `contao-manager.phar.php` hast du in das Verzeichnis `public` auf deinem Webserver übertragen.
 
-Die Download-Datei `contao-manager.phar.php` ist ein PHP-Script welches dir im Hintergrund die benötigte Datei
+Die Download-Datei `contao-manager.phar.php` ist ein PHP-Script, welches dir im Hintergrund die benötigte Datei
 herunterlädt und sich danach selber überschreibt.
 
 Beim Aufruf der URL `www.example.com/contao-manager.phar.php` erscheint jedoch nicht die Willkommensseite des Contao 
