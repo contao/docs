@@ -10,3 +10,4 @@
 /deepl/vendor
 /deepl/.php_cs.cache
 /link-checker/manual-result.md
+.DS_Store
