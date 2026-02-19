@@ -8,7 +8,7 @@ aliases:
 
 ## Der Contao Manager kann nicht aufgerufen werden
 
-Du hast den Contao Manager bestehend aus einer einzelnen Datei, über [contao.org](https://contao.org/de/download.html)
+Du hast den Contao Manager, bestehend aus einer einzelnen Datei, über [contao.org](https://contao.org/de/download.html)
 heruntergeladen. Die Datei `contao-manager.phar.php` hast du in das Verzeichnis `public` auf deinem Webserver übertragen.
 
 Die Download-Datei `contao-manager.phar.php` ist ein PHP-Script welches dir im Hintergrund die benötigte Datei
