@@ -21,7 +21,7 @@ In this case, you can try uploading the [`.phar` file](https://download.contao.o
 
 
 {{% notice note %}}
-Files `.phar` are not executed by all hosting providers. For best compatibility, add the file extension `.php`(final
+`.phar` files are not executed by all hosting providers. For best compatibility, add the file extension `.php`(final
 file name: `contao-manager.phar.php`).
 {{% /notice %}}
 
