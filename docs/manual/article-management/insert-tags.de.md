@@ -192,7 +192,7 @@ Du kannst mit `en,de,fr` statt nur auf eine auch auf mehrere Sprachen testen. Zu
 | `{{br}}`                 | Dieses Tag wird mit einem HTML <code>&lt;br&gt;</code> Element (Zeilenumbruch) ersetzt.              |
 | `{{asset::*::*}}`        | Mit diesem Tag können Pfade zu CSS und JavaScript Dateien aus Paketen eingebunden werden. Siehe die [Entwickler-Dokumentation][DevAssets]. |
 | `{{trans::*::*::*}}`     | Mit diesem Tag können Übersetzungen ausgegeben werden. Im Gegensatz zum `{{label::*}}` Insert-Tag können damit alle Übersetzungen aus dem Symfony System ausgegeben werden. Beispiel: `{{trans::MSC.updateVersion::contao_default::4.10}}`. Siehe auch die [Entwickler-Dokumentation][Translations]. |
-| `{{empty}}`              | Mit diesem Tag wird ein Leerstring ausgegeben - das kann man z. B. einsetzen, wenn man in einem Content-Element die Checkbox »Metadaten überschreiben« an hat und ein Feld statt dem Wert aus der Dateiverwaltung nichts ausgeben soll; **ab Contao 5.6.0** |
+| `{{empty}}`              | {{< version-tag "5.6" >}} Mit diesem Tag wird ein Leerstring ausgegeben - das kann man z. B. einsetzen, wenn man in einem Content-Element die Checkbox »Metadaten überschreiben« an hat und ein Feld statt dem Wert aus der Dateiverwaltung nichts ausgeben soll. |
 
 
 ## Verschachtelte Insert-Tags
