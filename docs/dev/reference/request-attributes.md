@@ -17,7 +17,7 @@ framework itself.
 | `_locale` | `string` | Contains the locale of the current request. This can be set in the defaults of the route, or it will be set by Contao when using the `frontend` or `backend` request scope. Otherwise it will be `null`. |
 | `_scope` | `string` (`frontend`/`backend`) | The Contao request scope, either `frontend` or `backend`. See [Framework: Routing][RequestScope]. |
 | `_token_check` | `bool` | This enables or disabled the CSRF protection for POST requests to this route. The request token check is enabled by default for routes with a Contao request scope and thus can be disabled with this request attribute. Otherwise it can be enabled. See [Framwork: Routing][RoutingCsrf] and [Framework: Request Tokens][FrameworkCsrf] for more information on request tokens. |
-| `_store_referrer` | `bool` | Whether or not to store the URL for this controller action in the back end session history as a referrer. |
+| `_store_referrer` | `bool` | Whether or not to store the URL for this controller action in the back end session history as a referrer. _Note:_ this is not used anymore since Contao **5.7** as the back end now uses hierarchical back links. |
 | `pageModel` | `\Contao\PageModel`/`int` | Contains an instance or an ID of a `PageModel` in Contao requests. _Note:_ do not use this directly. Use argument value resolving in [Page Controllers][PageControllers] or `$this->getPageModel()` in [Content Elements][ContentElements] or [Front End Modules][FrontEndModules]. |
 
 
