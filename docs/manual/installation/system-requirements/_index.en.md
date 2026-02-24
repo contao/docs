@@ -174,6 +174,10 @@ that Contao does not work, but may cause unexpected behavior or performance degr
 
 - **PHP** Version 8.3.0 or higher is required.
 
+### Contao 5.5 and higher
+
+- **PHP** Version 8.2.0 or higher is required.
+
 #### Contao 5.0 and higher
 
 - **PHP** Version 8.1.0 or higher is required.

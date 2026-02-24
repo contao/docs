@@ -178,6 +178,10 @@ führen.
 
 - **PHP** Version 8.3.0 oder höher ist erforderlich.
 
+### Contao 5.5 und höher
+
+- **PHP** Version 8.2.0 oder höher ist erforderlich.
+
 #### Contao 5.0 und höher
 
 - **PHP** Version 8.1.0 oder höher ist erforderlich.
