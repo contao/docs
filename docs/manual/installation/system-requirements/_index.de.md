@@ -23,7 +23,7 @@ Die Mindestanforderungen hängen davon ab, ob du die neueste oder die _Long Term
 gepflegten Versionen von Contao sind mit den neuesten PHP- und MySQL-Versionen kompatibel. Daher wird grundsätzlich 
 empfohlen, diese immer zu verwenden.
 
-- **PHP:** Version 7.4+ (neueste Patch-Version)
+- **PHP:** Version 8.4+ (neueste Patch-Version)
 - **MySQL:** Version 8.0+ oder gleichwertiger **MariaDB** Server
 
 
