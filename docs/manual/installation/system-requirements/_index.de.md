@@ -174,6 +174,10 @@ führen.
 
 ### Mindestanforderungen an PHP
 
+### Contao 5.7 und höher
+
+- **PHP** Version 8.3.0 oder höher ist erforderlich.
+
 ### Contao 5.5 und höher
 
 - **PHP** Version 8.2.0 oder höher ist erforderlich.
