@@ -68,7 +68,7 @@ a `fruit_salad` element:
 // Define the palette for the back end edit mask; we are only using a minimal set for now
 $GLOBALS['TL_DCA']['tl_content']['palettes']['fruit_salad'] = 
     '{type_legend},type,headline;' .    // add the type selector and headline field 
-    '{template_legend:hide},customTpl;' // allow selecting template variants    
+    '{template_legend:collapsed},customTpl;' // allow selecting template variants    
 ;
 ```
 

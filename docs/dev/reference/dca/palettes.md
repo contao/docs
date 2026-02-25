@@ -123,7 +123,7 @@ be expanded and collapsed. Typically, each group will also have a specific _lege
 The above example is defined by the following code:
 
 ```php
-{title_legend},headline,alias,author;{date_legend},date,time;{teaser_legend:hide},subheadline,teaser
+{title_legend},headline,alias,author;{date_legend},date,time;{teaser_legend:collapsed},subheadline,teaser
 ```
 
 The `title_legend` and `date_legend` placeholders will be replaced with the
