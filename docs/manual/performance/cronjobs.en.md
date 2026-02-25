@@ -8,8 +8,14 @@ aliases:
 Contao ships with a cronjob framework out of the box. In short, this allows developers to register cronjobs 
 for their own extensions in a simpler and consistent way.
 
-By default, cronjobs are executed whenever someone visits the website. This can negatively affect the 
+By default, cronjobs are executed whenever someone visits the website. This can negatively affect the
 performance of your website, which is why it is recommended to set up real cronjobs on the server.
+
+{{% notice note %}}
+Cron jobs triggered by a website visit or the `_contao/cron` route do not execute all registered jobs, only
+those designed for this trigger. The back end search index, for example, is only built via a real CLI cron job.
+This is another reason to set up a real cron job on the server.
+{{% /notice %}}
 
 This is very easy to achieve thanks to Contao's cronjob framework. All that is needed is a single minutely
 cronjob that initializes the framework. Contao then automatically takes care of running all registered cronjobs 

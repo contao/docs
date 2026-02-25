@@ -9,8 +9,15 @@ aliases:
 Contao wird von Haus aus mit einem Cronjob-Framework ausgeliefert. Kurz zusammengefasst ermöglicht dies
 Entwickler*innen eine einfachere und einheitliche Registrierung von Cronjobs für ihre eigenen Erweiterungen.
 
-Cronjobs werden standardmässig immer dann ausgeführt, wenn jemand die Webseite besucht. Dies kann die Performance 
+Cronjobs werden standardmässig immer dann ausgeführt, wenn jemand die Webseite besucht. Dies kann die Performance
 deiner Webseite negativ beeinflussen, weshalb empfohlen wird, echte Cronjobs auf dem Server einzurichten.
+
+{{% notice note %}}
+Cronjobs, die über einen Websitebesuch oder die Route `_contao/cron` ausgelöst werden, führen nicht alle
+registrierten Jobs aus, sondern nur die, die für diesen Aufrufweg vorgesehen sind. Die Indexierung für die
+Backend-Suche wird zum Beispiel ausschliesslich über einen echten CLI-Cronjob aufgebaut. Das ist ein weiterer
+Grund, einen echten Cronjob auf dem Server einzurichten.
+{{% /notice %}}
 
 Dies ist dank des Cronjob Frameworks von Contao sehr einfach zu erreichen. Alles, was dazu benötigt wird, ist ein
 einziger minütlicher Cronjob, der das Framework initialisiert. Contao kümmert sich anschliessend automatisch darum, 
