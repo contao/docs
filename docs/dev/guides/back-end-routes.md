@@ -37,7 +37,7 @@ class BackendController extends AbstractBackendController
     public function __invoke(): Response
     {
         return $this->render(
-            'my_backend_route.html.twig',
+            '@Contao/my_backend_route.html.twig',
             [
                 'error' => 'Oh no, an error!',
                 'title' => 'My title',
