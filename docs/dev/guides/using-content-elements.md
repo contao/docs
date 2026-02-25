@@ -195,7 +195,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
         // Fill the template with data from the parent record
         $template->setData(array_merge($example->row(), $template->getData()));
 
-        $template->content = function() use ($request, $parentId): string|null {
+        $template->set('content', function() use ($request, $parentId): string|null {
             // Get all the content elements belonging to this parent ID and parent table
             $elements = ContentModel::findPublishedByPidAndTable($parentId, 'tl_example');
 
@@ -214,7 +214,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
             }
 
             return $content;
-        };
+        });
 
         return $template->getResponse();
     }

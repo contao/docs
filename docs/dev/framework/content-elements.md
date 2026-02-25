@@ -64,7 +64,7 @@ class ExampleElementController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
-        $template->text = $model->text;
+        $template->set('text', $model->text);
         
         return $template->getResponse();
     }
@@ -331,7 +331,7 @@ class ExampleElementController extends AbstractContentElementController
         $page = $this->getPageModel();
 
         // Get some information about the current page
-        $template->rootTitle = $page->rootPageTitle ?: $page->rootTitle;
+        $template->set('rootTitle', $page->rootPageTitle ?: $page->rootTitle);
         
         return $template->getResponse();
     }

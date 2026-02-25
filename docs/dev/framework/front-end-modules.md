@@ -73,7 +73,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
             }
         }
 
-        $template->action = $request->getUri();
+        $template->set('action', $request->getUri());
 
         return $template->getResponse();
     }
@@ -338,7 +338,7 @@ class ExampleModuleController extends AbstractFrontendModuleController
         $page = $this->getPageModel();
 
         // Get some information about the current page
-        $template->rootTitle = $page->rootPageTitle ?: $page->rootTitle;
+        $template->set('rootTitle', $page->rootPageTitle ?: $page->rootTitle);
 
         return $template->getResponse();
     }

@@ -321,7 +321,7 @@ class CurrentYearController extends AbstractFrontendModuleController
     protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
         $year = (int) date('Y');
-        $template->year = $year;
+        $template->set('year', $year);
         $response = $template->getResponse();
 
         // Cache until the end of the year

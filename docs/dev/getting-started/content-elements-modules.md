@@ -43,8 +43,8 @@ class MyContentElementController extends AbstractContentElementController
 {
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
-        $template->text = $model->text;
-        $template->url = $model->url;
+        $template->set('text', $model->text);
+        $template->set('url', $model->url);
         
         return $template->getResponse();
     }

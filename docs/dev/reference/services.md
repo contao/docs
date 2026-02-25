@@ -69,7 +69,7 @@ class ExampleFormElementController extends AbstractContentElementController
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
-        $template->token = $this->csrfTokenManager->getDefaultTokenValue();
+        $template->set('token', $this->csrfTokenManager->getDefaultTokenValue());
 
         return $template->getResponse();
     }

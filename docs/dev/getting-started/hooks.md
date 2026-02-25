@@ -45,7 +45,7 @@ class ParseArticlesListener
         $author = UserModel::findById($newsEntry['author']);
 
         // Override the "author" variable of the template with the row information of the author
-        $template->author = $author->row();
+        $template->set('author', $author->row());
     }
 }
 ```

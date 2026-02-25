@@ -61,7 +61,7 @@ class FilesListController extends AbstractContentElementController
 
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
-        $template->elements = $this->describeDirectory('images');
+        $template->set('elements', $this->describeDirectory('images'));
 
         return $template->getResponse();
     }

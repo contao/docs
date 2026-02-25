@@ -71,7 +71,7 @@ class FoobarListController extends AbstractFrontendModuleController
 {
     protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
-        $template->items = FoobarModel::findAll(['order' => 'title ASC']);
+        $template->set('items', FoobarModel::findAll(['order' => 'title ASC']));
 
         return $template->getResponse();
     }
