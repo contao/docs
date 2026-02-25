@@ -100,6 +100,26 @@ you could use the following instructions for example:
 * * * * * wget -q -O /dev/null https://example.org/_contao/cron
 ```
 
+Triggering cron jobs via the web URL is conceptually equivalent to a regular website visit.
+The `_contao/cron` route exists to avoid the overhead of generating a full HTML response,
+but execution is web-scoped in terms of the cron framework.
+
+This means that cron jobs restricted to the CLI scope are not triggered via this route.
+The `contao.cron.supervise_workers` job, for example, which manages background worker
+processes for [asynchronous messaging][AsyncMessaging], only runs in the CLI scope and is
+therefore never executed via `_contao/cron`.
+
+Each registered cron job receives a `$scope` parameter indicating whether it was triggered
+via CLI or web. The cron job can use this to decide how to behave, for instance by skipping
+execution entirely, by running only a subset of its logic, or by always running if it is fast
+enough for the web context. See the [Scope](#scope) section for details and code examples.
+
+PHP's request execution time limit applies in the web context, typically 30 seconds. Cron
+jobs that may exceed this limit must only run in the CLI scope.
+
+For reliable execution of all registered cron jobs, setting up a real cron job via the
+[command line](#command-line) is recommended.
+
 
 ## Registering Cron Jobs
 
