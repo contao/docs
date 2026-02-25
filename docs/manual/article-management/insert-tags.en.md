@@ -182,6 +182,7 @@ With `en,de,fr` you can test for multiple instead of just one language. On top o
 | `{{br}}` | This tag is replaced with an HTML `<br>` element (line break). |
 | `{{asset::*::*}}` | This tag can be used to include paths to CSS and JavaScript files from packages. See the [developer documentation](https://docs.contao.org/dev/framework/asset-management/#accessing-assets-in-templates). |
 | `{{trans::*::*::*}}` | This tag can be used to output translations. In contrast to the `{{label::*}}`insert tag, all translations from the Symfony system can be output. Example: `{{trans::MSC.updateVersion::contao_default::4.10}}`. See also the [developer documentation](https://docs.contao.org/dev/framework/translations/#accessing-translations). |
+| `{{empty}}` | {{< version-tag "5.6" >}} Outputs an empty string. Useful for suppressing individual field values when the "Override metadata" option is enabled in a content element, so that the metadata stored in the file manager is not used. |
 
 
 ## Nested insert tags
