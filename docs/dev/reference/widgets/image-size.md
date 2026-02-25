@@ -81,7 +81,7 @@ class ContentImageSizeOptionsListener
         'type' => 'string',
         'length' => 128,
         'default' => '',
-        'customSchemaOptions' => ['collation' => 'ascii_bin'],
+        'platformOptions' => ['collation' => 'ascii_bin'],
     ],
 ],
 // …
