@@ -43,9 +43,7 @@ Weitergehende Informationen zu Twig-Templates in Contao findest du in der
 
 ## Twig-Templates im Contao-Core
 
-{{< version "5.7" >}}
-
-Ab Contao 5.7 steht für jedes `.html5`-Template ein Twig-Pendant zur Verfügung. Twig ist damit der
+{{< version "5.7" >}} Für jedes `.html5`-Template steht ein Twig-Pendant zur Verfügung. Twig ist damit der
 neue Standard und löst die HTML5-Templates vollständig ab.
 
 Standardmäßig wird immer die Twig-Version eines Templates verwendet. Liegt jedoch ein gleichnamiges

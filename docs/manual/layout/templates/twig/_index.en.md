@@ -35,9 +35,7 @@ More information about Twig templates in Contao can be found in the
 
 ## Twig templates in Contao core
 
-{{< version "5.7" >}}
-
-As of Contao 5.7, every `.html5` template has a Twig equivalent. Twig is now the new standard and
+{{< version "5.7" >}} Every `.html5` template has a Twig equivalent. Twig is now the new standard and
 fully replaces the HTML5 templates.
 
 By default, the Twig version of a template is always used. However, if a `.html5` template with the same
