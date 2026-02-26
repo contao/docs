@@ -14,7 +14,9 @@ to enter margin values (top, right, bottom, left - hence the internal name `trbl
 
 ## Options
 
-This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference]({{% relref "fields#reference" %}}).
+This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a
+[full field reference]({{% relref "fields#reference" %}}). All options for the [`text`]({{% relref "text" %}}) widget
+are also relevant.
 
 | Key               | Value                       |
 |-------------------|-----------------------------|---
