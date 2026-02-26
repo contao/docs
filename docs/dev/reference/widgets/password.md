@@ -10,7 +10,7 @@ newly entered).
 
 ## Options
 
-This widget has not special options, but all options for the [`text`]({{% relref "text" %}}) widget are also
+This widget has no special options, but all options for the [`text`]({{% relref "text" %}}) widget are also
 relevant.
 
 | Key               | Value                       |
