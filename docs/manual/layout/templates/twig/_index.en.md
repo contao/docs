@@ -7,12 +7,12 @@ tags: [Twig]
 ---
 
 {{% notice note %}}
-This entire section covers the use of Twig templates in Contao since version 5.0.
+This entire section covers the use of Twig templates in Contao since version 5.0.  
 Although Twig templates can be used in Contao since version 4.12, Twig templates are only used in Contao core since
 Contao 5.0. We did not document the different use of Twig templates in older versions in the manual.
 {{% /notice %}}
 
-Twig is a template engine for PHP and the default template engine of Symfony. It is fast, secure and easily extensible.
+Twig is a template engine for PHP and the default template engine of Symfony. It is fast, secure and easily extensible.  
 With Twig templates, design can be strictly separated from programming.
 
 Like a PHP template, a Twig template is used to output a module, content element, form, or other component.
@@ -24,7 +24,7 @@ Twig templates consistently rely on the powerful template structuring and reuse 
 [Embed](https://docs.contao.org/dev/framework/templates/creating-templates/#embeds),
 [Horizontal reuse](reuse/#horizontal-reuse) or
 [Macros](https://docs.contao.org/dev/framework/templates/creating-templates/#macros).
-Therefore, templates should no longer be completely overwritten, as was often common or necessary with PHP templates.
+Therefore, templates should no longer be completely overwritten, as was often common or necessary with PHP templates.   
 Within the manual, we will only cover the most important technique - extending Twig templates for Contao in more detail.
 More information about Twig templates in Contao can be found in the
 [developer documentation](https://docs.contao.org/dev/framework/templates/).

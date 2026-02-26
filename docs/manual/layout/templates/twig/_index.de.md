@@ -9,14 +9,14 @@ tags: [Twig]
 ---
 
 {{% notice note %}}
-Der gesamte Abschnitt behandelt die Verwendung von Twig-Templates in Contao ab Version 5.0.
+Der gesamte Abschnitt behandelt die Verwendung von Twig-Templates in Contao ab Version 5.0.  
 In Contao können Twig-Templates zwar seit Version 4.12 genutzt werden, aber erst seit Contao 5.0 werden Twig-Templates
 auch im Contao-Core verwendet. Es wurde darauf verzichtet, die abweichende Verwendung von Twig-Templates in älteren
 Versionen im Handbuch zu dokumentieren.
 {{% /notice %}}
 
 Twig ist eine Template Engine für PHP und die Standard Template Engine von Symfony. Sie ist schnell, sicher und leicht
-erweiterbar.
+erweiterbar.  
 Mit Twig-Templates kann das Design von der Programmierung strikt getrennt werden.
 
 Wie ein PHP-Template wird ein Twig-Template für die Ausgabe eines Moduls, Inhaltselements, Formulars oder einer anderen
@@ -31,9 +31,9 @@ z. B. [Erweitern](wiederverwendung/#erweitern),
 [horizontale Wiederverwendung](wiederverwendung/#horizontale-wiederverwendung) oder
 [Makros](https://docs.contao.org/dev/framework/templates/creating-templates/#macros).
 Deshalb sollten keine Templates mehr komplett überschrieben werden, wie das bei den PHP-Templates häufig üblich bzw.
-notwendig war.
+notwendig war.  
 Wir werden innerhalb des Handbuches nur die wichtigste Technik - das Erweitern von Twig-Templates für Contao genauer
-behandeln.
+behandeln.  
 Weitergehende Informationen zu Twig-Templates in Contao findest du in der
 [Entwicklerdokumentation](https://docs.contao.org/dev/framework/templates/).
 {{% /notice %}}
