@@ -25,7 +25,6 @@ relevant.
     'inputType' => 'password',
     'eval' => [
         'mandatory' => true,
-        'preserveTags' => true,
         'minlength' => Config::get('minPasswordLength'),
         'tl_class' => 'w50'
     ],
