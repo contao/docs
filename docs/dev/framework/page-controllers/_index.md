@@ -266,7 +266,33 @@ you do not want that articles can be assigned to those pages, disable the proper
 #[AsPage(contentComposition: false)]
 ```
 
-There is no abstraction yet in place for you to render such content
+{{< version-tag "5.7" >}} When using content composition you can let your page controller extend from the
+`AbstractPageController` which can render the layout for you:
+
+```php
+// src/Controller/Page/ExamplePageController.php
+namespace App\Controller\Page;
+
+use Contao\CoreBundle\Controller\Page\AbstractPageController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
+use Contao\PageModel;
+use Symfony\Component\HttpFoundation\Response;
+
+#[AsPage]
+class ExamplePageController extends AbstractPageController
+{
+    public function __invoke(PageModel $pageModel): Response
+    {
+        return $this->renderPage($pageModel);
+    }
+}
+```
+
+When using the `renderPage()` method of the abstract, the layout is automatically either rendered via the legacy
+`FrontendIndex` (see below) or the new [`ContentCompositionBuilder`]({{% relref "content-composition-builder" %}}) for
+modern Twig layouts.
+
+Before Contao **5.7** there was no abstraction yet in place for you to render such content
 easily. You _can_ use the `FrontendIndex` class of the legacy framework of Contao
 to render the page layout as defined in the page structure (in addition to processing 
 your own logic):
@@ -291,8 +317,35 @@ class ExamplePageController
 }
 ```
 
-However, upcoming feature versions of Contao will likely provide better abstraction
-for this task.
+You can also use the `ContentCompositionInterface` to decide dynamically whether your page type can be filled with
+content or not:
+
+```php
+// src/Controller/Page/ExamplePageController.php
+namespace App\Controller\Page;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsPage;
+use Contao\CoreBundle\Routing\Page\ContentCompositionInterface;
+use Contao\PageModel;
+use Symfony\Component\HttpFoundation\Response;
+
+#[AsPage]
+class ExamplePageController implements ContentCompositionInterface
+{
+    public function __invoke(PageModel $pageModel): Response
+    {
+        return new Response('Hello World!');
+    }
+
+    public function supportsContentComposition(PageModel $pageModel): bool
+    {
+        return !$pageModel->autoforward;
+    }
+}
+```
+
+This is for example used by Contao's `ErrorPageController` where content composition is disabled for the 401, 403 and
+404 page, if **Forward to another page** is enabled.
 
 
 ## Page Model
