@@ -43,23 +43,29 @@ Weitergehende Informationen zu Twig-Templates in Contao findest du in der
 
 ## Twig-Templates im Contao-Core
 
-In Contao 5 werden für viele Core-Elemente Twig-Templates zur Verfügung gestellt. Das bedeutet, dass Template
-Anpassungen auch in den Twig-Templates erfolgen müssen.  
-Für eine Übergangszeit kann noch auf die PHP-Templates zurückgegriffen werden. Die notwendigen Einstellungen
-dafür findest du in der [Upgrade-Anleitung](https://github.com/contao/contao/blob/5.x/UPGRADE.md#content-elements).
+{{< version "5.7" >}} Für jedes `.html5`-Template steht ein Twig-Pendant zur Verfügung. Twig ist damit der
+neue Standard und löst die HTML5-Templates vollständig ab.
+
+Standardmäßig wird immer die Twig-Version eines Templates verwendet. Liegt jedoch ein gleichnamiges
+`.html5`-Template in deinem `templates`-Verzeichnis, hat dieses Vorrang gegenüber dem Twig-Template.
+
+**Beispiel:** `news_full.html.twig` wird verwendet, solange kein `news_full.html5` im `templates`-Ordner
+vorhanden ist.
+
+Für eine Übergangszeit kann noch auf die PHP-Templates zurückgegriffen werden. Informationen zur Nutzung
+der alten Inhaltselemente (`ce_*.html5`) findest du in der
+[Upgrade-Anleitung](https://github.com/contao/contao/blob/5.x/UPGRADE.md#content-elements).
 
 {{% notice warning %}}
-Wir empfehlen dringend diese Möglichkeit nur in Ausnahmefällen zu nutzen, z. B. um nach einem Upgrade auf
-Contao 5 mehr Zeit für die notwendigen Anpassungen zu haben.  
-Bedenke dabei auch, dass Erweiterungen für Contao 5 unter Umständen keine Möglichkeiten mehr zur Nutzung von
-PHP-Templates mitbringen.
+Wir empfehlen dringend, auf jegliche HTML5-Templates und die alten Inhaltselemente (Präfix `ce_`)
+zu verzichten. Nutze diese Möglichkeit nur in Ausnahmefällen, z. B. um nach einem Upgrade auf Contao 5
+mehr Zeit für die notwendigen Anpassungen zu haben.
+Bedenke dabei auch, dass Erweiterungen für Contao 5 unter Umständen keine Unterstützung für
+PHP-Templates mehr mitbringen.
 {{% /notice %}}
-
-Derzeit steht noch nicht für jedes Modul/Inhaltselement ein Twig-Template zur Verfügung. In diesen Fällen werden
-weiterhin die bisherigen (PHP/Legacy) Templates herangezogen.
 
 
 ## Dateiendungen
 
 Twig-Templates haben die Dateiendung `.twig`. Zusätzlich wird noch der Ausgabetyp angegeben.
-Für eine Ausgabe von HTML wird die Dateiendung `html.twig` verwendet.
+Für eine Ausgabe von HTML wird die Dateiendung `.html.twig` verwendet.

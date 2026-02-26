@@ -15,7 +15,7 @@ Contao 5.0. We did not document the different use of Twig templates in older ver
 Twig is a template engine for PHP and the default template engine of Symfony. It is fast, secure and easily extensible.  
 With Twig templates, design can be strictly separated from programming.
 
-Like a PHP template, a Twig template is used to output a module, content item, form, or other component.
+Like a PHP template, a Twig template is used to output a module, content element, form, or other component.
 
 {{% notice info %}}
 Twig templates consistently rely on the powerful template structuring and reuse methods, such as
@@ -35,22 +35,27 @@ More information about Twig templates in Contao can be found in the
 
 ## Twig templates in Contao core
 
-In Contao 5, Twig templates are provided for many core elements. This means that template adjustments must also be made
-in Twig templates.    
-For a transition period, you can still use the PHP templates. The necessary settings for this can be found in the
+{{< version "5.7" >}} Every `.html5` template has a Twig equivalent. Twig is now the new standard and
+fully replaces the HTML5 templates.
+
+By default, the Twig version of a template is always used. However, if a `.html5` template with the same
+name exists in your `templates` directory, it takes precedence over the Twig template.
+
+**Example:** `news_full.html.twig` is used as long as no `news_full.html5` exists in the `templates` folder.
+
+For a transition period, you can still fall back to PHP templates. Information on using the legacy
+content elements (`ce_*.html5`) can be found in the
 [upgrade instructions](https://github.com/contao/contao/blob/5.x/UPGRADE.md#content-elements).
 
 {{% notice warning %}}
-We strongly recommend to use this option only in exceptional cases, e.g. to have more time for necessary adjustments
-after an upgrade to Contao 5 to have more time for the necessary customizations.  
+We strongly recommend avoiding HTML5 templates and the legacy content elements (prefix `ce_`).
+Use this option only in exceptional cases, e.g. to have more time for the necessary adjustments
+after an upgrade to Contao 5.
 Keep in mind that extensions for Contao 5 may no longer support the use of PHP templates.
 {{% /notice %}}
 
-Currently, a Twig template is not yet available for every module/content element. In these cases the previous
-(PHP/legacy) templates are still used.
 
+## File extensions
 
-## File endings
-
-Twig templates have the file extension `.twig`. Additionally the output type is specified.   
-For an output of HTML the file extension `html.twig` is used.
+Twig templates have the file extension `.twig`. Additionally, the output type is specified.
+For an HTML output, the file extension `.html.twig` is used.
