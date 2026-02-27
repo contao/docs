@@ -18,8 +18,8 @@ This table only shows the options relevant to the core functionality of this wid
 [full field reference]({{% relref "fields#reference" %}}). All options for the [`text`]({{% relref "text" %}}) widget
 are also relevant.
 
-| Key               | Value                       |
-|-------------------|-----------------------------|---
+| Key               | Value                       | Description
+|-------------------|-----------------------------|-----------
 | `inputType`       | `trbl` (string)             |
 | `options`         | `array`                     | These are the options available in the unit drop-down. You can also use an [`options_callback`]({{% relref "callbacks#fields-field-options" %}}).
 | `reference`       | `array`                     | Optional translation reference for the drop-down options.
