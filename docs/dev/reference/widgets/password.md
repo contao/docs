@@ -13,9 +13,9 @@ newly entered).
 This widget has no special options, but all options for the [`text`]({{% relref "text" %}}) widget are also
 relevant.
 
-| Key               | Value                       |
-|-------------------|-----------------------------|---
-| `inputType`       | `password` (string)         |
+| Key               | Value                       | Description
+|-------------------|-----------------------------|------------
+| `inputType`       | `password` (string)         | -
 
 ## Example
 
