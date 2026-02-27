@@ -18,8 +18,8 @@ delete individual entries as well as re-arrange the order of the entries.
 This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a 
 [full field reference][FieldsReference].
 
-| Key               | Value                       |
-|-------------------|-----------------------------|---
+| Key               | Value                       | Description
+|-------------------|-----------------------------|------------
 | `inputType`       | `keyValueWizard` (string)   |
 | `eval.maxlength`  | `integer`                   | Maximum number of characters that are allowed in the individual input fields.
 | `eval.keyLabel`   | `string`                    | The label for the "key" column of the wizard.
