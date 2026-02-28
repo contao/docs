@@ -73,11 +73,14 @@ contao:
 
 ## Integration in der Contao Managed Edition
 
-Solltest du die Contao Managed Edition nutzen, so brauchst du ggf. keine explizite Konfiguration vorzunehmen. Die Contao
-ME liefert `cmsig/seal-loupe-adapter` bereits mit und konfiguriert diesen auf `var/loupe`. Dabei prüft sie selber, ob
-die Systemvoraussetzungen (die SQLite-Anforderungen) gegeben sind. Wenn ja, ist also eine lokale Suchmaschine für 
-dich bereits vorkonfiguriert. Du brauchst keinen extra Suchmaschinenserver. Du musst lediglich das Cronjob-Framework 
-konfigurieren und damit Grundvoraussetzung 1 schaffen.
+Solltest du die Contao Managed Edition nutzen, kannst du zusätzlich `contao/loupe-bridge` installieren, welches den
+`cmsig/seal-loupe-adapter` installiert und konfiguriert diesen automatisch auf `var/loupe`. Somit ist eine lokale
+Suchmaschine für dich bereits vorkonfiguriert. Du brauchst keinen extra Suchmaschinenserver. Du musst lediglich das
+Cronjob-Framework konfigurieren und damit [Grundvoraussetzung 1](#grundvoraussetzung-1-das-cronjob-framework) schaffen.
+
+{{% notice "note" %}}
+Du benötigst mindestens Version `3.35.0` der `sqlite`-Bibliothek in der Hosting-Umgebung.
+{{% /notice %}}
 
 ## Aufbau Suchindex
 
