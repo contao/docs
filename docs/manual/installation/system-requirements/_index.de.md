@@ -209,24 +209,6 @@ Contao wurde erfolgreich auf MySQL-Servern der Version 5.7 / 8.0 (und gleichwert
 getestet. Die Verwendung von `utf8` anstelle des `utf8mb4`-Zeichensatzes führt zu einer verschlechterten UTF8-Unterstützung (z. B. 
 keine Emojis).
 
-Wenn die oben empfohlenen Optionen auf deinem Server nicht aktiviert werden können, konfiguriere bitte einen anderen 
-Zeichensatz in deiner [`config/config.yaml`](../../system/einstellungen/#config-yml)-Datei:
-
-{{% notice info %}}
-Vor **Contao 4.8** findest du die Datei unter `app/config/config.yaml`.  
-{{% /notice %}}
-
-```yaml
-doctrine:
-    dbal:
-        connections:
-            default:
-                default_table_options:
-                    charset: utf8
-                    collate: utf8_unicode_ci
-                    collation: utf8_unicode_ci
-```
-
 Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte oder abgeschnittene
 Daten zu verhindern und die Datenintegrität zu gewährleisten.
 
