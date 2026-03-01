@@ -28,8 +28,8 @@ This table only shows the options relevant to the core functionality of this wid
 | `options_callback` | `function\|callable` | A callback function that returns the options callback or an array  (use in combination with `eval.multiple`). You may define an anonymous function, but you should consider [registering them via annotations]({{% relref "framework/dca/#registering-callbacks" %}}). |
 | `reference` | `array` | Reference an array that will be used to translate the options. Contao will automatically match the options and reference array by key. |
 | `foreignKey` | `string` | Reference another table to generate options from. |
-| `eval.multiple` | true/false (default) `bool` | Set this to true if you want to provide multiple options via `options` or `options_callback` |
-| `eval.includeBlankOption` | true/false (default) `bool` | Includes a blank option (useful in conjunction with `mandatory` fields) |
+| `eval.multiple` | `bool` | Set this to true if you want to provide multiple options via `options` or `options_callback` |
+| `eval.includeBlankOption` | `bool` | Includes a blank option (useful in conjunction with `mandatory` fields) |
 | `eval.blankOptionLabel` | `string` (default `-`) | The label of the blank option |
 
 The `options` array – either set directly or returned by an options callback – can have different structures depending on what you are going for:
