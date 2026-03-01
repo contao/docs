@@ -19,13 +19,13 @@ A grouped select menu enhanced with Chosen.js:
 
 ## Options
 
-This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference](../../dca/fields).
+This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference]({{% relref "reference/dca/fields" %}}).
 
 | Key   | Value | Description
 | ----- | ----- | --------------- |
 | `inputType` | `select` | |
 | `options` | `array` | An options array (use in combination with `eval.multiple`) |
-| `options_callback` | `function\|callable` | A callback function that returns the options callback or an array  (use in combination with `eval.multiple`). You may define an anonymous function, but you should consider [registering them via annotations](../../../framework/dca/#registering-callbacks). |
+| `options_callback` | `function\|callable` | A callback function that returns the options callback or an array  (use in combination with `eval.multiple`). You may define an anonymous function, but you should consider [registering them via annotations]({{% relref "framework/dca/#registering-callbacks" %}}). |
 | `reference` | `array` | Reference an array that will be used to translate the options. Contao will automatically match the options and reference array by key. |
 | `foreignKey` | `string` | Reference another table to generate options from. |
 | `eval.multiple` | true/false (default) `bool` | Set this to true if you want to provide multiple options via `options` or `options_callback` |
@@ -103,7 +103,7 @@ If you simply want to select one option from a fixed set of grouped options.
 
 {{% tab title="Dynamic options with search box" %}}
 
-You can also dynamically generate the options array to filter them as you wish. See the [options callback](../../dca/callbacks#fields-field-options) for further examples. 
+You can also dynamically generate the options array to filter them as you wish. See the [options callback]({{% relref "reference/dca/callbacks#fields-field-options" %}}) for further examples. 
 
 ```php
 // …

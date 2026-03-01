@@ -20,7 +20,7 @@ All options for the [`text`][TextWidget] widget are also relevant.
 
 The options for the drop down are retrieved from the `contao.image.sizes` service 
 (`Contao\CoreBundle\Image\ImageSizes`) in the example below. However, you can still override these options via your own 
-[`options_callback`](../../dca/callbacks#fields-field-options):
+[`options_callback`]({{% relref "reference/dca/callbacks#fields-field-options" %}}):
 
 ```php
 // src/EventListener/DataContainer/ContentImageSizeOptionsListener.php

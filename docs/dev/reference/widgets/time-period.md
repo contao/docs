@@ -17,7 +17,7 @@ This widget renders a text field with a drop-down menu and is proposed to be use
 | eval.disabled  | bool (default false) | Disables the field                                                       |
 | eval.maxlength | int                  | Maximum number of characters allowed in the current field.               |
 
-Additionally, there are inherited [global options](../../dca/fields/) like: `label`, `default`, `exclude`, `search`, `sorting`, `filter`, `flag`, `sql`.
+Additionally, there are inherited [global options]({{% relref "reference/dca/fields" %}}) like: `label`, `default`, `exclude`, `search`, `sorting`, `filter`, `flag`, `sql`.
 
 ## Column Definition
 

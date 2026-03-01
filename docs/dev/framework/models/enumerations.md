@@ -17,7 +17,7 @@ $GLOBALS['TL_DCA']['tl_member']['salutation'] => [
 ];
 ```
 
-See the [DCA reference](../../../reference/dca/fields#enumerations) for more information.
+See the [DCA reference]({{% relref "reference/dca/fields#enumerations" %}}) for more information.
 
 
 ## Resolve the Enumation

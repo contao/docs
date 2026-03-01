@@ -23,7 +23,7 @@ from any of these archives.
 
 ## Options
 
-This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference](../../dca/fields).
+This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference]({{% relref "reference/dca/fields" %}}).
 
 | Key   | Value | Description
 | ----- | ----- | --------------- |

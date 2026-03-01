@@ -16,7 +16,8 @@ $GLOBALS['TL_DCA']['tl_example'] = [
 ];
 ```
 
-See the [DCA documentation](../../dca) and the [DCA reference](../../../reference/dca) for more information.
+See the [DCA documentation]({{% relref "framework/dca" %}}) and the [DCA reference]({{% relref "reference/dca" %}}) for
+more information.
 
 
 ## 2. Create the Model class

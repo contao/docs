@@ -359,14 +359,14 @@ $GLOBALS['TL_DCA']['tl_member']['salutation'] => [
 ];
 ```
 
-{{% notice info %}}
+{{% notice "info" %}}
 In fact, the options are generated via the `options_callback`. In the example above
 the generated `options` are used for illustration purposes only.
 {{% /notice %}}
 {{% /expand %}}
 
-{{% notice tip %}}
-You can also [resolve the enumeration](../../../framework/models/enumerations) via the associated model.
+{{% notice "tip" %}}
+You can also [resolve the enumeration]({{% relref "framework/models/enumerations" %}}) via the associated model.
 {{% /notice %}}
 
 
