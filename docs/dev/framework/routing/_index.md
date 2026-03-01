@@ -104,10 +104,11 @@ Within your controller you can access any information about the request via the
 (in this case the `__invoke` function of our invokable controller). See also the
 [Symfony routing documentation][SymfonyRouteNameParams].
 
-{{% notice tip %}}
-When using controllers as services and taking advantage of dependency injection,
-the controller's service needs to be set to `public` or be tagged with the
-`controller.service_arguments` tag.
+{{% notice "tip" %}}
+When using controllers as services and taking advantage of dependency injection, the controller's service needs to be
+set to `public` or be tagged with the `controller.service_arguments` tag. Using the
+[AsController](https://symfony.com/doc/7.4/controller/service.html#using-the-ascontroller-attribute) PHP attribute would
+be one way to achieve this:
 
 ```php
 // src/Controller/ExampleController.php
