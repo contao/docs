@@ -28,7 +28,7 @@ and is configured through annotations.
 namespace App\Controller;
 
 use Contao\CoreBundle\Controller\AbstractBackendController;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Route('%contao.backend.route_prefix%/my-backend-route', name: self::class, defaults: ['_scope' => 'backend'])]

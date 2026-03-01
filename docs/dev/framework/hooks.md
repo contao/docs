@@ -231,5 +231,4 @@ class ParseArticlesListener
 [HookReference]: {{% relref "reference/hooks" %}}
 [invoke]: https://www.php.net/manual/en/language.oop5.magic.php#object.invoke
 [contaoConfig]: /getting-started/starting-development/#contao-configuration-translations
-[ServiceAnnotationBundle]: https://github.com/terminal42/service-annotation-bundle
 [PhpAttributes]: https://www.php.net/manual/en/language.attributes.overview.php
