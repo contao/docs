@@ -206,20 +206,6 @@ The use of `utf8` instead of the `utf8mb4` character set results in a worse UTF8
 
 {{< version-tag "5.6" >}} At least MySQL 5.7.6 and MariaDB 10.4.3 are required to run Contao.
 
-If the above recommended options cannot be enabled on your server, please configure a different character set in your 
-[`config/config.yaml`](../../system/settings/#config-yml) file:
-
-```yaml
-doctrine:
-    dbal:
-        connections:
-            default:
-                default_table_options:
-                    charset: utf8
-                    collate: utf8_unicode_ci
-                    collation: utf8_unicode_ci
-```
-
 It is further recommended to run MySQL in "strict mode" to prevent corrupt or truncated
 data and to guarantee data integrity.
 
