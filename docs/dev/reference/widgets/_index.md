@@ -8,7 +8,7 @@ aliases:
 This section explains the [back end widgets][BackendWidgets] of the Contao core and gives examples. These form widgets are used
 for the editing form of data records, based on the DCA configuration of the respective table.
 
-For a complete overview of all available options see the [full DCA field reference](../dca/fields).
+For a complete overview of all available options see the [full DCA field reference]({{% relref "reference/dca/fields" %}}).
 
 {{% notice note %}}
 

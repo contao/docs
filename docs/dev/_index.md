@@ -9,26 +9,26 @@ roles, whom to talk to and where to get help.
 
 This document is split into these chapters:
 
-* **[Getting Started](getting-started)** <br>
+* **[Getting Started]({{% relref "getting-started" %}})** <br>
   This chapter provides an overview over the capabilities of the Contao Open Source
   CMS and should help new developers with getting their web application project started
   with Contao more easily.
 
-* **[Framework](framework)** <br>
+* **[Framework]({{% relref "framework" %}})** <br>
   This chapter describes the ins and outs of the Contao ecosystem. It
   provides articles about Contao libraries, how to use and extend Contao
   and general articles about concepts unique to this CMS.
   
-* **[Reference](reference)** <br>
+* **[Reference]({{% relref "reference" %}})** <br>
   The reference is a goto guide for all available options in certain
   features, like say DCA configuration or Hooks.
 
-* **[Guides](guides)** <br>
+* **[Guides]({{% relref "guides" %}})** <br>
   This section contains a continuously growing collection of specific
   recipes and guides that explain how to correctly solve the most recurrent problems
   that Contao & Symfony developers face in their day to day work.
 
-* **[Internals](internals)** <br>
+* **[Internals]({{% relref "internals" %}})** <br>
   This section contains documentation about various internal procedures or articles
   about topics that do not fit into the regular documentation.
 

@@ -16,7 +16,7 @@ If you want to fetch more than one row from the database, you can use the static
 `findBy()` expects two parameters. The first is the column of the table, the second is its value.
 Like for models, you can use late static binding and add the column to the method name.
 
-A third parameter for [options](../#configuration-options) is optional.
+A third parameter for [options]({{% relref "models#configuration-options" %}}) is optional.
 
 ```php
 // find all pages with language "de"

@@ -307,7 +307,7 @@ namespace App\EventListener;
 
 use Contao\CoreBundle\Event\ContaoCoreEvents;
 use Contao\CoreBundle\Event\SlugValidCharactersEvent;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
 #[AsEventListener(ContaoCoreEvents::SLUG_VALID_CHARACTERS)]
 class SlugValidCharactersListener

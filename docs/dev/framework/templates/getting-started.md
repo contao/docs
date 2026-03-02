@@ -8,7 +8,7 @@ tags: [Twig]
 ---
 
 If you are already familiar with writing Twig templates, you might want to skip this part and directly head over to the
-[next chapter](../architecture). For everyone else, here comes a quick *Twig 101*.
+[next chapter]({{% relref "framework/templates/architecture" %}}). For everyone else, here comes a quick *Twig 101*.
 
 
 ## Why Twig in Contao?

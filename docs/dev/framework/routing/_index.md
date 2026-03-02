@@ -41,7 +41,7 @@ your application (i.e. the `App\Controller\` namespace) will use PHP attributes
 for defining routes.
 
 Now we can go right ahead and create a simple controller and define its route via the
-`Symfony\Component\Routing\Annotation\Route` attribute:
+`Symfony\Component\Routing\Attribute\Route` attribute:
 
 ```php
 // src/Controller/ExampleController.php
@@ -49,7 +49,7 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/example', name: ExampleController::class)]
 class ExampleController
@@ -104,10 +104,11 @@ Within your controller you can access any information about the request via the
 (in this case the `__invoke` function of our invokable controller). See also the
 [Symfony routing documentation][SymfonyRouteNameParams].
 
-{{% notice tip %}}
-When using controllers as services and taking advantage of dependency injection,
-the controller's service needs to be set to `public` or be tagged with the
-`controller.service_arguments` tag.
+{{% notice "tip" %}}
+When using controllers as services and taking advantage of dependency injection, the controller's service needs to be
+set to `public` or be tagged with the `controller.service_arguments` tag. Using the
+[AsController](https://symfony.com/doc/7.4/controller/service.html#using-the-ascontroller-attribute) PHP attribute would
+be one way to achieve this:
 
 ```php
 // src/Controller/ExampleController.php
@@ -115,9 +116,8 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\AsController;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-use Terminal42\ServiceAnnotationBundle\Annotation\ServiceTag;
 
 #[Route('/example', name: ExampleController::class)]
 #[AsController]
@@ -185,7 +185,7 @@ Contao `frontend` scope:
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/example', name: ExampleController::class, defaults: ['_scope' => 'frontend'])]
 class ExampleController
@@ -214,7 +214,7 @@ that does not use either of Contao's scopes.
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/example', name: ExampleController::class, defaults: ['_token_check' => true])]
 class ExampleController
@@ -240,7 +240,7 @@ request attribute for your own routes.
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/example', name: ExampleController::class, defaults: ['_bypass_maintenance' => true])]
 class ExampleController

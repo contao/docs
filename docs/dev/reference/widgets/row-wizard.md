@@ -3,7 +3,7 @@ title: Row Wizard
 description: Renders a configurable set of widgets as repeatable rows.
 ---
 
-{{< version-tag "5.7" >}}
+{{< version "5.7" >}}
 
 This widget allows you to render one or more rows of arbitrary DCA fields.
 Each row consists of a configurable set of child widgets that are parsed and rendered directly by the core.
