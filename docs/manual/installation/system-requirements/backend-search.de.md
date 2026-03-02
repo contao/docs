@@ -74,7 +74,7 @@ contao:
 ## Integration in der Contao Managed Edition
 
 Solltest du die Contao Managed Edition nutzen, kannst du zusätzlich `contao/loupe-bridge` installieren, welches den
-`cmsig/seal-loupe-adapter` installiert und konfiguriert diesen automatisch auf `var/loupe`. Somit ist eine lokale
+`cmsig/seal-loupe-adapter` installiert und diesen automatisch auf `var/loupe` konfiguriert. Somit ist eine lokale
 Suchmaschine für dich bereits vorkonfiguriert. Du brauchst keinen extra Suchmaschinenserver. Du musst lediglich das
 Cronjob-Framework konfigurieren und damit [Grundvoraussetzung 1](#grundvoraussetzung-1-das-cronjob-framework) schaffen.
 
