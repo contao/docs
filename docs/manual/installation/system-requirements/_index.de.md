@@ -209,6 +209,8 @@ Contao wurde erfolgreich auf MySQL-Servern der Version 5.7 / 8.0 (und gleichwert
 getestet. Die Verwendung von `utf8` anstelle des `utf8mb4`-Zeichensatzes führt zu einer verschlechterten UTF8-Unterstützung (z. B. 
 keine Emojis).
 
+{{< version-tag "5.6" >}} Mindestens MySQL 5.7.6 und MariaDB 10.4.3 sind für den Betrieb von Contao erforderlich.
+
 Es wird außerdem empfohlen, MySQL im "Strict Mode" zu betreiben, um korrupte oder abgeschnittene
 Daten zu verhindern und die Datenintegrität zu gewährleisten.
 

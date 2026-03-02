@@ -204,6 +204,8 @@ no database server types other than MySQL (or a compatible fork like MariaDB) ar
 Contao has been successfully tested on MySQL servers version 5.7 / 8.0 (and equivalent MariaDB versions) with `InnoDB` table format. 
 The use of `utf8` instead of the `utf8mb4` character set results in a worse UTF8 support (e.g. no emojis).
 
+{{< version-tag "5.6" >}} At least MySQL 5.7.6 and MariaDB 10.4.3 are required to run Contao.
+
 It is further recommended to run MySQL in "strict mode" to prevent corrupt or truncated
 data and to guarantee data integrity.
 
