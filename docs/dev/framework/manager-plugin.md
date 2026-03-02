@@ -389,7 +389,7 @@ a certain configuration is coming from.
 You cannot use `$container->addCompilerPass()` to add a compiler pass to the app here because `getExtensionConfig()` 
 is called on every plugin during the process of merging the configuration of all the bundles (done in Symfony
 in the `MergeExtensionConfigurationPass`). If you want to register a regular compiler pass that is called **after**
-the extensions have been merged, see the [respective guide](/guides/modify-container-at-compile-time/)
+the extensions have been merged, see the [respective guide]({{% relref "guides/modify-container-at-compile-time" %}})
 to learn more.
 {{% /notice %}}
 

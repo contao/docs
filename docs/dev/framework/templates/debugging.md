@@ -63,13 +63,13 @@ debug:contao-twig content_element/text --tree
 ```
 
 The output also includes a short preview of the file as well as the identified blocks. If you also want to include
-templates of a certain theme, use the `--theme <slug>` option and pass in the [theme slug](../architecture#themes).
+templates of a certain theme, use the `--theme <slug>` option and pass in the [theme slug]({{% relref "framework/templates#themes" %}}).
 
 {{% notice tip %}}
 Here is a typical problem that you could narrow down using the `debug:contao-twig` command: Are you missing a template,
 and, while debugging, found out, that it is indeed there, just without the directories in the template name? So for example
 `@Contao/foo.html.twig` instead of `@Contao/content_element/foo.html.twig`? Then, you are most likely missing a
-`.twig-root` file — refer to [this explanation](../architecture#twig-root) to find out more!
+`.twig-root` file — refer to [this explanation]({{% relref "framework/templates#twig-root" %}}) to find out more!
 {{% /notice %}}
 
 
