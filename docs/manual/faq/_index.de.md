@@ -218,7 +218,7 @@ contao_manager:
 {{% /faq %}}
 
 {{% faq "Wie kann ich eine Contao-Version installieren, die nicht in der Versionsauswahl angezeigt wird?" %}}
-Grundsätzlich stehen immer die aktuell aktiven LTS-Versionen sowie Versionen mit aktivem Support zur Auswahl.
+Grundsätzlich stehen nur Versionen zur Verfügung, die laut Release-Plan aktiven Support haben. Das sind LTS-Versionen und die jeweils aktuellste Contao Version.
 
 Wenn du bei der Versionsauswahl die <kbd>ALT</kbd>-Taste (Windows) bzw. die <kbd>Option</kbd>-Taste (Mac) drückst,
 werden weitere Versionen angezeigt – z. B. Contao 4.13 oder Release-Candidate-Versionen.
