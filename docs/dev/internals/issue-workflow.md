@@ -21,7 +21,6 @@ After reading a new PR, please label it either as <span class="issue-label-bug">
 <span class="issue-label-feature">feature</span>.
 
 If the PR is targeted against an active version branch (e.g. `5.7`), please assign it to the corresponding milestone.
-Do not assign PRs targeted against the main branch (currently `main`) to a milestone.
 
 ## Reviewing bug reports
 
