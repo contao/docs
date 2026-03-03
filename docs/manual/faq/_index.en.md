@@ -221,7 +221,7 @@ additional versions are displayed – such as Contao 4.13 or release candidate v
 If you need a version that is not available in the selection, proceed as follows:
 
 1. Click the small arrow next to the "Install" button.
-2. Select "Skip installation (expert mode)".
+2. Select "Skip Installation (Expert Only!)".
 3. Go to "Packages" and click the gear icon next to Contao.
 4. Enter the desired version, e.g. `4.13.*`.
 5. Click "Apply changes" to install the version.
