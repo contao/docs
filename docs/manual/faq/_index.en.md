@@ -215,8 +215,8 @@ contao_manager:
 {{% faq "How can I install a Contao version that is not shown in the version selection?" %}}
 By default, only the currently active LTS versions and versions with active support are available for selection.
 
-If you hold the <kbd>Alt</kbd> key (Windows) or the <kbd>Option</kbd> key (Mac) while selecting a version,
-additional versions are displayed – such as Contao 4.13 or release candidate versions.
+On the version selection screen, press the <kbd>Alt</kbd> key (Windows) or the <kbd>Option</kbd> key (Mac)
+to reveal additional versions – such as Contao 4.13 or release candidate versions – which can then be selected.
 
 If you need a version that is not available in the selection, proceed as follows:
 
