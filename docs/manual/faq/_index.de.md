@@ -216,3 +216,18 @@ contao_manager:
     manager_path: dein-name.phar.php
 ```
 {{% /faq %}}
+
+{{% faq "Wie kann ich eine Contao-Version installieren, die nicht in der Versionsauswahl angezeigt wird?" %}}
+Grundsätzlich stehen nur Versionen zur Verfügung, die laut [Release-Plan](https:/to.contao.org/release-plan) aktiven Support haben. Das sind LTS-Versionen und die jeweils aktuellste Contao Version.
+
+Weitere Versionen lassen sich in der Versionsauswahl einblenden, indem du die <kbd>ALT</kbd>-Taste (Windows)
+bzw. die <kbd>Option</kbd>-Taste (Mac) gedrückt hältst. So werden z. B. Contao 4.13 oder Release-Candidate-Versionen sichtbar.
+
+Falls du eine Version benötigst, die gar nicht zur Auswahl steht, gehe wie folgt vor:
+
+1. Klicke beim »Installieren«-Button auf den kleinen Pfeil.
+2. Wähle »Installation überspringen (Expertenmodus)«.
+3. Wechsle zu »Pakete« und klicke dort bei Contao auf das Zahnrad-Symbol.
+4. Trage die gewünschte Version ein, z. B. `4.13.*`.
+5. Klicke auf »Änderungen anwenden«, um die Version zu installieren.
+{{% /faq %}}
