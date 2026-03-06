@@ -273,7 +273,7 @@ body[data-url="/cookbook/namespaces/"] #body .padding {
 }
 
 /* Banner */
-#R-body .banner a.highlight {
+#R-body .contao-banner {
     background: rgba(244, 124, 0, 1);
     border: 1px solid rgba(244, 124, 0, .2);
     border-radius: 4px;
@@ -286,29 +286,29 @@ body[data-url="/cookbook/namespaces/"] #body .padding {
     line-height: 1.1;
 }
 
-#R-body .banner a:focus,
-#R-body .banner a:hover {
+#R-body .contao-banner:focus,
+#R-body .contao-banner:hover {
     background: rgba(244, 124, 0, .8);
 }
 
-#R-body .banner a.highlight::after {
+#R-body .contao-banner.highlight::after {
     background-color: transparent;
 }
 
-.banner span {
+#R-body .contao-banner span {
     display: block;
 }
 
-.banner .title {
+#R-body .contao-banner__title {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 @media only screen and (min-width: 1200px) {
-    .banner span {
+    #R-body .contao-banner span {
         display: inline;
     }
-    .banner .title {
+    #R-body .contao-banner__title {
         padding-right: 3rem;
     }
 }
