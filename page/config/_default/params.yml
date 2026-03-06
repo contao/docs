@@ -17,8 +17,8 @@ currentContaoVersion: '5.7'
 currentReleaseCandidate: '5.7'
 disableLandingPageButton: true
 banner:
-  show: false
-  url: https://to.contao.org/conference
+  show: true
+  url: https://to.contao.org/summit
 hideAuthorName: true
 hideAuthorEmail: true
 hideAuthorDate: true
