@@ -42,6 +42,7 @@ class ResultSubscriber implements SubscriberInterface, EscargotAwareInterface, E
         'https?://tinyurl\.com/app',
         // Facebook does not like to be crawled
         'https?://.+\.facebook\.com/',
+        'https?://community\.contao\.org($|/)',
     ];
 
     private int $numberOfErrors = 0;
