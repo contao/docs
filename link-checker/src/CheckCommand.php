@@ -64,7 +64,8 @@ class CheckCommand extends Command
         $httpClient = HttpClient::create([
             'max_duration' => 5,
             'headers' => [
-                'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', // Use FF user agent because e.g. Twitter blocks others (...)
+                'sec-ch-ua-platform' => 'Linux',
+                'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0', // Use FF user agent because e.g. Twitter blocks others (...)
                 'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             ],
         ]);
