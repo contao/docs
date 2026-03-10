@@ -355,6 +355,37 @@ $GLOBALS['TL_WRAPPERS']['start'][] = 'my_start_element';
 $GLOBALS['TL_WRAPPERS']['stop'][] = 'my_stop_element';
 ```
 
+{{% notice "warning" %}}
+Make sure to output different HTML markup in the back end for your wrapper elements, otherwise you will break the back
+end, since your wrapper templates will likely either only open or closes a tag. You can also output no content at all:
+
+```php
+// src/Controller/ContentElement/MyWrapperElementController.php
+namespace App\Controller\ContentElement;
+
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\CoreBundle\Twig\FragmentTemplate;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+#[AsContentElement('my_start_element')]
+#[AsContentElement('my_stop_element')]
+class MyWrapperElementController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        if ($this->isBackendScope($request)) {
+            return new Response();
+        }
+
+        return $template->getResponse();
+    }
+}
+```
+{{% /notice %}}
+
 
 ## Nested Fragments
 
