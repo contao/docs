@@ -338,55 +338,6 @@ class ExampleElementController extends AbstractContentElementController
 }
 ```
 
-
-## Wrapper Elements
-
-In Contao there are special content elements called "wrappers" which you insert before and after one or a group of content elements. These
-wrappers affect the back end view, indicating that all elements contained within the two wrappers are descendants of the parent wrapper. The
-wrapper content elements typically consist of a `start`and `stop` element, though there are also wrappers of type `single` and `separator`. 
-The `start` element typically opens a specific HTML tag, while the `stop` element will close it again.
-
-In order to define that a content element is a wrapper of a specific type, it needs to be registered in the `$GLOBALS['TL_WRAPPERS']` array
-in your `contao/config/config.php`. The `$GLOBALS['TL_WRAPPERS']` array holds the element types for each type of wrapper. For example:
-
-```php
-// contao/config.php
-$GLOBALS['TL_WRAPPERS']['start'][] = 'my_start_element';
-$GLOBALS['TL_WRAPPERS']['stop'][] = 'my_stop_element';
-```
-
-{{% notice "warning" %}}
-Make sure to output different HTML markup in the back end for your wrapper elements, otherwise you will break the back
-end, since your wrapper templates will likely either only open or closes a tag. You can also output no content at all:
-
-```php
-// src/Controller/ContentElement/MyWrapperElementController.php
-namespace App\Controller\ContentElement;
-
-use Contao\ContentModel;
-use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
-use Contao\CoreBundle\Twig\FragmentTemplate;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-
-#[AsContentElement('my_start_element')]
-#[AsContentElement('my_stop_element')]
-class MyWrapperElementController extends AbstractContentElementController
-{
-    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
-    {
-        if ($this->isBackendScope($request)) {
-            return new Response();
-        }
-
-        return $template->getResponse();
-    }
-}
-```
-{{% /notice %}}
-
-
 ## Nested Fragments
 
 {{< version "5.3" >}}
@@ -511,6 +462,54 @@ render via the `content_element()` Twig function:
 {% endblock %}
 ```
 
+## Wrapper Elements
+
+Before the introduction of nested fragments in Contao, there were special content elements called "wrappers" which you
+insert before and after one or a group of content elements. These wrappers affect the back end view, indicating that all
+elements contained within the two wrappers are descendants of the parent wrapper. The wrapper content elements typically
+consist of a `start`and `stop` element, though there are also wrappers of type `single` and `separator`. The `start`
+element typically opens a specific HTML tag, while the `stop` element will close it again.
+
+In order to define that a content element is a wrapper of a specific type, it needs to be registered in the
+`$GLOBALS['TL_WRAPPERS']` array in your `contao/config/config.php`. The `$GLOBALS['TL_WRAPPERS']` array holds the
+element types for each type of wrapper. For example:
+
+```php
+// contao/config.php
+$GLOBALS['TL_WRAPPERS']['start'][] = 'my_start_element';
+$GLOBALS['TL_WRAPPERS']['stop'][] = 'my_stop_element';
+```
+
+{{% notice "warning" %}}
+Make sure to output different HTML markup in the back end for your wrapper elements, otherwise you will break the back
+end, since your wrapper templates will likely either only open or closes a tag. You can also output no content at all:
+
+```php
+// src/Controller/ContentElement/MyWrapperElementController.php
+namespace App\Controller\ContentElement;
+
+use Contao\ContentModel;
+use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
+use Contao\CoreBundle\Twig\FragmentTemplate;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+#[AsContentElement('my_start_element')]
+#[AsContentElement('my_stop_element')]
+class MyWrapperElementController extends AbstractContentElementController
+{
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
+    {
+        if ($this->isBackendScope($request)) {
+            return new Response();
+        }
+
+        return $template->getResponse();
+    }
+}
+```
+{{% /notice %}}
 
 ## Read More
 
