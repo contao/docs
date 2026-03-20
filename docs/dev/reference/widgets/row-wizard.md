@@ -29,11 +29,16 @@ Since the Row Wizard parses DCA field definitions directly, it works with most s
 
 ### Known limitations
 
-The following widget types do not work within the row wizard
+The following widget options and modifications do not work within the row wizard
 
-- `color-picker`
-- Widgets using `eval.rte` (e.g. TinyMCE-based fields) may require additional testing depending on the Contao version.
+- `eval.color-picker`
+- `eval.datepicker`
+- `eval.dcaPicker`
+- `eval.rte`
+- Any modifications that append JS to the widget (via `DataContainer::row()`)
 - Custom widgets provided by extensions that are dependent on JavaScript (Stimulus controllers may work)
+
+Additional information about known limitations can be read in the associated [pull request][PullRequest].
 
 ## Options
 
@@ -182,3 +187,4 @@ The row wizard widget is used in the _Description list_ content element for exam
 the list of description terms (the "key") and description details (the "value").
 
 [FieldsReference]: /reference/dca/fields
+[PullRequest]: https://github.com/contao/contao/pull/8781#issuecomment-3274283562
