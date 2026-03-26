@@ -91,7 +91,7 @@ In this example we do this for all error templates. For an update-safe adaptatio
 
 {{< version-tag "5.1" >}} the original template is located at `vendor/contao/core-bundle/templates/Error/layout.html.twig`.
 
-{{< version-tag "5.7" >}}, the template must be copied to `/templates/error/`.
+{{< version-tag "5.5" >}}, the template must be copied to `/templates/error/`.
 
 There we put our own logo inside the DIV with the class `header-logo`. You can use a normal image tag for this or an inline SVG like in the original template.
 
