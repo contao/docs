@@ -92,7 +92,7 @@ Das machen wir in diesem Beispiel für alle Errortemplates. Für eine updatesich
 
 {{< version-tag "5.1" >}} befindet sich das Originaltemplate unter `vendor/contao/core-bundle/templates/Error/layout.html.twig`.
 
-{{< version-tag "5.7" >}} muss das Template nach `/templates/error/` kopiert werden.
+{{< version-tag "5.5" >}} muss das Template nach `/templates/error/` kopiert werden.
 
 Dort setzen wir unser eigenes Logo innerhalb des DIV's mit der Klasse `header-logo` ein. Du kannst dafür ein normales image-Tag verwenden oder wie im Originaltemplate ein Inline-SVG.
 
