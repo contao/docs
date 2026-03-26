@@ -126,6 +126,6 @@ Weitere Informationen zur Anpassung von Twigtemplates findest du in der [Twig-Do
 Anstatt nur einzelne Texte anzupassen, kannst du auch einfach das komplette Template `service_unavailable.html.twig` mit deinem eigenen HTML und CSS überschreiben.
 Damit das ganze updatesicher ist, musst du die Datei in den Ordner `/templates/bundles/ContaoCoreBundle/Error/` speichern.
 
-{{< version-tag "5.7" >}} muss das Template nach `/templates/error/` kopiert werden.
+{{< version-tag "5.5" >}} muss das Template nach `/templates/error/` kopiert werden.
 
 Zum Schluss muss auch hier der Produktions-Cache erneuert werden.
