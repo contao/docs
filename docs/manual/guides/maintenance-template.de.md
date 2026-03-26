@@ -90,7 +90,9 @@ Wird die komplette Contao-Installation über die Kommandozeile in den Wartungsmo
 
 Das machen wir in diesem Beispiel für alle Errortemplates. Für eine updatesichere Anpassung kopieren wir uns das Originaltemplate `vendor/contao/core-bundle/src/Resources/views/Error/layout.html.twig` nach `/templates/bundles/ContaoCoreBundle/Error/`
 
-{{< version-tag "5.1" >}} befindet sich das Originaltemplate unter `vendor/contao/core-bundle/templates/Error/layout.html.twig`
+{{< version-tag "5.1" >}} befindet sich das Originaltemplate unter `vendor/contao/core-bundle/templates/Error/layout.html.twig`.
+
+{{< version-tag "5.7" >}} muss das Template nach `/templates/error/` kopiert werden.
 
 Dort setzen wir unser eigenes Logo innerhalb des DIV's mit der Klasse `header-logo` ein. Du kannst dafür ein normales image-Tag verwenden oder wie im Originaltemplate ein Inline-SVG.
 
@@ -123,5 +125,7 @@ Weitere Informationen zur Anpassung von Twigtemplates findest du in der [Twig-Do
 
 Anstatt nur einzelne Texte anzupassen, kannst du auch einfach das komplette Template `service_unavailable.html.twig` mit deinem eigenen HTML und CSS überschreiben.
 Damit das ganze updatesicher ist, musst du die Datei in den Ordner `/templates/bundles/ContaoCoreBundle/Error/` speichern.
+
+{{< version-tag "5.7" >}} muss das Template nach `/templates/error/` kopiert werden.
 
 Zum Schluss muss auch hier der Produktions-Cache erneuert werden.
