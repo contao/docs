@@ -125,6 +125,6 @@ For more information about customizing Twig templates, please refer to the [Twig
 Instead of just changing some texts, you can simply overwrite the whole template `service_unavailable.html.twig` with your own HTML and CSS.
 To make the whole thing update-safe, you have to save the file in the folder `/templates/bundles/ContaoCoreBundle/Error/`.
 
-{{< version-tag "5.7" >}}, the template must be copied to `/templates/error/`.
+{{< version-tag "5.5" >}}, the template must be copied to `/templates/error/`.
 
 Finally you have to refresh the production cache.
