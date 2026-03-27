@@ -179,6 +179,7 @@ namespace App\EventListener\DataContainer;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
+use Contao\FrontendUser;
 use Doctrine\DBAL\Connection;
 
 #[AsCallback(table: 'tl_news', target: 'config.onsubmit')]
@@ -191,9 +192,11 @@ class NewsSubmitCallbackListener
         $this->db = $db;
     }
 
-    public function __invoke(DataContainer $dc): void
+    public function __invoke(FrontendUser|DataContainer $dc): void
     {
-        if (!$dc->id) {
+
+
+        if ($dc instanceof FrontendUser || !$dc->id) {
             return;
         }
 
