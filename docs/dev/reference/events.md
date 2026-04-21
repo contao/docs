@@ -546,6 +546,46 @@ class TransformArticleForFeedEventListener
 ```
 {{% /expand %}}
 
+## LayoutEvent
+
+{{< version "5.7.1" >}}
+
+This event is dispatched when the layout of a page using a modern "Twig layout with slots" is built. 
+The event holds a reference to the page, the layout and the template. 
+It allows you to add values to the template or do other things before page rendering.
+
+<table>
+<tr><th>Name</th><td><code>\Contao\CoreBundle\Event\LayoutEvent::class</code></td></tr>
+<tr><th>Constant</th><td>N/A</td></tr>
+<tr><th>Event</th><td><code>\Contao\CoreBundle\Event\LayoutEvent</code></td></tr>
+</table>
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/LayoutEventListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\LayoutEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener]
+class LayoutEventListener
+{
+    public function __invoke(LayoutEvent $event): void
+    {
+        if ('regular' !== $event->getPage()->type) {
+            return;
+        }
+    
+        if ($event->getLayout()->customOption) {
+            $event->getTemplate()->set('customAttribute', 'Lorem Ipsum');
+        }
+    }
+}
+```
+{{% /expand %}}
+
+
 [SymfonyEventDispatcher]: https://symfony.com/doc/current/event_dispatcher.html
 [ContaoHooks]: /framework/hooks
 [BackEndRoutes]: /guides/back-end-routes
