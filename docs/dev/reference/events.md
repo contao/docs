@@ -550,7 +550,7 @@ class TransformArticleForFeedEventListener
 
 {{< version "5.7.1" >}}
 
-This event is dispatched when the layout of a page with a modern layout is built. 
+This event is dispatched when the layout of a page using a modern "Twig layout with slots" is built. 
 The event holds a reference to the page, the layout and the template. 
 It allows you to add values to the template or do other things before page rendering.
 
@@ -562,14 +562,13 @@ It allows you to add values to the template or do other things before page rende
 
 {{% expand "Example" %}}
 ```php
-<?php
 // src/EventListener/LayoutEventListener.php
 namespace App\EventListener;
 
 use Contao\CoreBundle\Event\LayoutEvent;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
-#[AsEventListener(priority: -100)]
+#[AsEventListener]
 class LayoutEventListener
 {
     public function __invoke(LayoutEvent $event): void
