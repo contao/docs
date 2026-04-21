@@ -546,7 +546,7 @@ class TransformArticleForFeedEventListener
 ```
 {{% /expand %}}
 
-## LayoutEvent
+## `LayoutEvent`
 
 {{< version "5.7.1" >}}
 
