@@ -131,8 +131,7 @@ Der List View kann neben den grundlegenden Befehlen, noch folgende zusätzlichen
 ![Einstellungen bearbeiten]({{% asset "icons/header.svg" %}}?classes=icon) **Einstellungen bearbeiten:** die 
 Einstellungen für das Eltern-Element anpassen.
 
-![Kind-Elemente bearbeiten]({{% asset "icons/children.svg" %}}?classes=icon) **Einstellungen 
-bearbeiten:** die Kinde-Elemente auflisten.
+![Kind-Elemente auflisten]({{% asset "icons/children.svg" %}}?classes=icon) **Kind-Elemente auflisten:** die Kind-Elemente dieses Elements auflisten.
 
 
 ### Icons im Parent View
