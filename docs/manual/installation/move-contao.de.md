@@ -79,7 +79,7 @@ Gib dein Passwort ein, wenn du danach gefragt wirst.
 
 ## Webspace vorbereiten
 - Erstelle im **leeren** Webspace den Ordner `public`.
-- In **diesen Ordner** die neueste Version des Files `contao-manager.phar.php` (erhältlich auf der CONTAO Website) kopieren.
+- In **den erstellten public-Ordner** die neueste Version der Datei `contao-manager.phar.php` (erhältlich auf der Contao Website) kopieren.
 
 ## Dateien übertragen
 Die folgenden Dateien und Ordner müssen vom Quell- in den **Hauptordner** (**nicht** `public`) des Zielservers übertragen werden:
