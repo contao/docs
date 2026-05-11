@@ -81,9 +81,9 @@ bitte noch kurz folgende Liste durch:
 - wie kann der Fehler in der [Online-Demo von Contao](https://demo.contao.org/contao/login) reproduziert werden (Schritt-für-Schritt-Anleitung). 
 
 
-## Contao im Social Web
+## Contao auf Social-Media-Plattformen
 
-Selbstverständlich ist Contao auch im sogenannten »Social Web« vertreten:
+Selbstverständlich ist Contao auch auf verschiedenen Social-Media-Plattformen vertreten:
 
 - [Facebook](https://www.facebook.com/contao)
 - [Instagram](https://www.instagram.com/contaocms/)

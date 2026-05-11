@@ -60,9 +60,9 @@ list:
   instructions)
 
 
-## Contao on the social web
+## Contao on social media platforms
 
-Of course, Contao is also represented in the so-called "social web":
+Of course, Contao is also active on various social media platforms:
 
 - [Facebook](https://www.facebook.com/contao)
 - [Instagram](https://www.instagram.com/contaocms/)
