@@ -216,8 +216,7 @@ git push
 
 Auf GitHub wird bei deinem Fork jetzt die Meldung `This branch is even with contao:main.` ausgegeben.
 
-Da das Theme von »Hugo Learn« auf »Hugo Relearn« umgestellt wurde, müssen diese Befehle einmal ausgeführt werden, 
-falls das Repository bereits vor der Umstellung ausgecheckt hatten.
+Mit folgenden Befehlen kann das »Hugo Relearn« Theme aktualisiert werden:
 
 ```bash
 git submodule sync
