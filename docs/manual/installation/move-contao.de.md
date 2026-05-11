@@ -114,7 +114,7 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
    Details über alle installierten Paket-Versionen enthält, wird Composer den identischen Stand wie auf dem Quellsystem
    herstellen.
    Nutze dazu entweder den [Contao Manager](../contao-installieren/#installation-mit-dem-contao-manager) oder die [Kommandozeile](../contao-installieren/#installation-ueber-die-kommandozeile).
-3. Wenn Du nicht mit der Kommandozeile arbeiten willst rufe im Browser diese URL auf: https://deine_domain/contao-manager.phar.php
+3. Wenn Du nicht mit der Kommandozeile arbeiten willst rufe im Browser diese URL auf: `https://example.com/contao-manager.phar.php`
 	Der Contao Manager startet und frägt nach Benutzernamen und Passwort für den Contao Manager. Anschließend beginnt die Installation von CONTAO. Zum Schluss wird noch die Verbindung zur Datenbank hergestellt. Bei CONTAO 5 gibt es kein Installtool mehr, Schritt 4 ist nicht möglich/erforderlich.
 4. Führe dann das [Contao-Installtool](../contao-installtool) aus, um die neue Datenbankverbindung einzurichten.
 
