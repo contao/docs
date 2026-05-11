@@ -11,8 +11,9 @@ the same as [installing](../install-contao) but also includes transferring the e
 application related files.
 
 1. [Transferring the database](#transferring-the-database)
-2. [Transferring the files](#transferring-the-files)
-3. [Installing Contao](#installing-contao)
+2. [Setting up web space](#preparing-your-web-space)
+3. [Transferring the files](#transferring-the-files)
+4. [Installing Contao](#installing-contao)
 
 {{% notice warning %}}
 To reduce the risk of conflicts, make sure your source and target server both run the **[same PHP version](../system-requirements/#minimum-php-requirements)**.
@@ -71,8 +72,13 @@ Enter your database password if asked for.
 {{< /tabs >}}
 
 
+## Preparing your web space
+- Create a folder called `public` in the **empty** web space.
+- Copy the latest version of the file `contao-manager.phar.php` (available on the Contao website) into **the public folder you have created**.
+
+
 ## Transferring the files
-The following files and folders need to be transferred from the source to the target machine.
+The following files and folders must be transferred from the source server to the **main folder** (**not** `public`) on the destination server:
 
 - `files`                           (your files)
 - `templates`                       (your templates)
@@ -100,14 +106,17 @@ scp -r files/ templates/ composer.json composer.lock your_server:/www/project/
 
 ## Installing Contao
 
-1. Make sure you have correctly set up your [hosting configuration](../install-contao/#hosting-configuration).
+1. Make sure you have correctly set up your [hosting configuration](../install-contao/#hosting-configuration) (the public root points to `public`).
 2. Then we let *Composer* do its work – as we also transferred the `composer.lock` file containing all package version
    details from the original server, Composer will replicate the identical state as before.
    
    To do so, either use the [Contao Manager](../install-contao#installation-via-the-contao-manager) or the 
    [command line](../install-contao#installation-via-the-command-line) like you would with a regular
    installation.
-3. Run the [install tool](../contao-installtool) to configure the new database connection. 
+3.  If you don’t want to use the command line, open this URL in your browser: `https://example.com/contao-manager.phar.php`
+	The Contao Manager will launch and ask for a username and password for the Contao Manager. The Contao installation will then begin.
+    Finally, a connection to the database will be established. In Contao 5, there is no longer an installation tool; step 4 is not possible or required.
+4. Run the [install tool](../contao-installtool) to configure the new database connection. 
 
 {{% notice info %}}
 If you have not moved to another server and have simply created a 1:1 copy on the same server, make sure to delete and recreate the application cache via the Contao Manager after adjusting the database connection to ensure that the changes are applied correctly and that you are on the correct database.
