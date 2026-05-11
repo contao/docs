@@ -211,6 +211,12 @@ git push
 
 On GitHub, your fork now displays the message `This branch is even with contao:main.`.
 
+The "Hugo Relearn" theme can be updated using the following commands:
+
+```bash
+git submodule sync
+git submodule update --init --recursive
+```
 
 
 ### Create Branch
