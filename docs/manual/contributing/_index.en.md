@@ -211,6 +211,13 @@ git push
 
 On GitHub, your fork now displays the message `This branch is even with contao:main.`.
 
+Due to the switch of the theme from "Hugo Learn" to "Hugo Relearn", you will need to execute once, 
+if you had already checked out the repository before the switch.
+
+```bash
+git submodule sync
+git submodule update --init --recursive
+```
 
 
 ### Create Branch
