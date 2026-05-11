@@ -14,6 +14,7 @@ the repository, you need to use the `--recurse-submodules` parameter:
 ```bash
 git clone --recurse-submodules git@github.com:contao/docs.git
 ```
+
 or:
 
 ```bash
@@ -35,7 +36,7 @@ once, if you had already checked out the repository before the switch.
 To update the theme after cloning - or after the theme switch, run the following command:
 
 ```bash
-git submodule foreach git pull origin main
+git submodule update --init --recursive
 ```
 
 ## Build
