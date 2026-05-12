@@ -281,7 +281,7 @@ $GLOBALS['TL_LANG']['MSC']['aw_example'] = 'My example';
 
 #### DCA Picker Fields
 
-DCA picker can be added to fields with the `dcaPicker` key in the `eval` array.
+A DCA picker can be added to fields with the `dcaPicker` key in the `eval` array.
 By default, the selected record is inserted as an insert tag provided by the picker
 provider, such as the page, news, FAQ or event picker. You can override this insert
 tag template if you need a different insert tag or additional insert tag flags.
