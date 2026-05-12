@@ -33,7 +33,6 @@ The following widget options and modifications do not work within the row wizard
 
 - `eval.color-picker`
 - `eval.datepicker`
-- `eval.dcaPicker`
 - `eval.rte`
 - Any modifications that append JS to the widget (via `DataContainer::row()`)
 - Custom widgets provided by extensions that are dependent on JavaScript (Stimulus controllers may work)
