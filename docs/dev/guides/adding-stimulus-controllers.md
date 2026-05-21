@@ -5,7 +5,7 @@ aliases:
   - /guides/adding-stimulus-controllers/
 ---
 
-Since Contao 5 now uses Turbo and Stimulus for the backend, sometimes it might not be enough to register JS assets for the backend as described under [Adding Backend assets][AddingBackendAssets], especially when listening for the `DOMLoaded` event.
+Since Contao 5 now uses Turbo and Stimulus for the backend, sometimes it might not be enough to register JS assets for the backend as described under [Adding Backend assets][AddingBackendAssets], especially when listening for the `DOMContentLoaded` event.
 
 In this case it might be necessary to add a custom Stimulus controller.
 
