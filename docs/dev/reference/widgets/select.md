@@ -9,13 +9,13 @@ A simple select menu with hard-coded options whether to show the current page in
 
 ![Select menu with hard-coded options]({{% asset "images/dev/reference/widgets/select.png" %}}?classes=shadow)
 
-A select menu enhanced with Chosen.js - {{< version-tag "5.5" >}} Choices.js - to allow the editor to limit the available options with a simple search box. With Choices.js the search box will be available once there are at least 8 options.
+A JavaScript enhanced select menu to allow the editor to limit the available options with a simple search box. With Choices.js {{< version-tag "5.5" >}} the search box will be available once there are at least 8 options.
 
-![Select menu enhanced with Chosen.js]({{% asset "images/dev/reference/widgets/select-chosen.png" %}}?classes=shadow)
+![JavaScript enhanced select menu]({{% asset "images/dev/reference/widgets/select-chosen.png" %}}?classes=shadow)
 
-A grouped select menu enhanced with Chosen.js - {{< version-tag "5.5" >}} Choices.js.
+The JavaScript enhanced select menu with grouped options.
 
-![Grouped select menu enhanced with Chosen.js]({{% asset "images/dev/reference/widgets/select-grouped-chosen.png" %}}?classes=shadow)
+![JavaScript enhanced grouped select menu]({{% asset "images/dev/reference/widgets/select-grouped-chosen.png" %}}?classes=shadow)
 
 ## Options
 
