@@ -144,7 +144,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['rowWizard'] = [
 
 ## Callback
 
-In some cases, you may not want to save any value if there is only one row and the first\* value is empty.
+In some cases, you may not want to save any value if there is only one row and the first [^1]/[^2] value is empty.
 You can implement your own save callback for this case:
 
 ```php
@@ -178,7 +178,9 @@ class ColumnWizardFieldSaveCallback
     }
 }
 ```
-*\* the provided example checks for the first value, you may be able to change your callback to any other field*      
+
+[^1]: *the provided example checks for the first value, you may be able to change your callback to any other field*
+[^2]: *({{< version-tag "5.7.6" >}}: A callback to remove the first row isn't needed anymore as you can delete the first row now)*
 
 ## Usage in Contao
 
