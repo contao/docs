@@ -60,18 +60,16 @@ list:
   instructions)
 
 
-## Contao on the social web
+## Contao on social media platforms
 
-Of course, Contao is also represented in the so-called "social web", which is currently dominated by Facebook, Twitter, 
-YouTube, Instagram and Pinterest. You can find the official Contao fan page on Facebook at 
-[www.facebook.com/contao](https://www.facebook.com/contao). It is updated regularly and contains the official 
-announcements as well as small status updates on current topics. If you are not a fan yet, you should definitely become 
-one now.
+Of course, Contao is also active on various social media platforms:
 
-On Twitter you can find Contao at [twitter.com/contaocms](https://twitter.com/contaocms), on YouTube at 
-[www.youtube.com/user/contaocms](https://www.youtube.com/user/contaocms), on Instagram at 
-[www.instagram.com/contaocms](https://www.instagram.com/contaocms/) and on Pinterest at 
-[www.pinterest.de/contaocms](https://www.pinterest.de/contaocms/).
+- [Facebook](https://www.facebook.com/contao)
+- [Instagram](https://www.instagram.com/contaocms/)
+- [LinkedIn](https://de.linkedin.com/company/contao-cms)
+- [Pinterest](https://www.pinterest.de/contaocms/)
+- [Twitter](https://twitter.com/contaocms)
+- [YouTube](https://www.youtube.com/user/contaocms)
 
 
 ## The German speaking community
@@ -79,10 +77,11 @@ On Twitter you can find Contao at [twitter.com/contaocms](https://twitter.com/co
 The German speaking community is currently the largest of all Contao communities and has its own platform, which can be 
 found at [community.contao.org/de/](https://community.contao.org/de/). There you can get in contact with other Contao 
 enthusiasts and discuss all topics around the CMS, the Internet and the life as a webworker. The english speaking 
-community can be found at [community.contao.org/en/](https://community.contao.org/en/).
+community can be found at [community.contao.org/en/](https://community.contao.org/en/). We also have a [Contao Slack workspace](https://to.contao.org/slack)
+available for discussion.
 
-If you would like to meet the people you meet in this virtual world in the real world, you can do so at the conference, 
-at the camp or at the various regulars' tables. A list of events can be found on the 
+If you would like to meet the people you meet in this virtual world in the real world, you can do so at the conference 
+or summit, at the camp or at the various regulars' tables. A list of events can be found on the 
 [project website](https://contao.org/en/events.html).
 
 ![The english speaking Contao community]({{% asset "images/manual/introduction/en/the-english-speaking-contao-community.png" %}}?classes=shadow)

@@ -25,7 +25,7 @@ supported for these service tags:
 | `resolveNestedTags` | `true` will resolve all nested tags before passing it to the method. `false` will keep nested tags unreplaced.                |
 | `priority`          | For multiple insert tags with the same name only the one with the highest priority will be executed.                          |
 | `method`            | Will default to `__invoke` or the name of the method the attribute is attached to. Otherwise a method name has to be defined. |
-| `asFragment`        | If enabled the insert tag will be rendered as a fragment via an `<esi>` tag. Only for regular (not block) insert tags.        |
+| `asFragment`        | Deprecated since Contao **5.3**. If enabled the insert tag will be rendered as a fragment via an `<esi>` tag. Only for regular (not block) insert tags.        |
 | `endTag`            | The name of the end tag. Has to be in lowercase. Only for [block insert tags](#block-insert-tags).                                                  |
 
 The following example will provide an insert tag which transforms a string with

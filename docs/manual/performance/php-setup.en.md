@@ -23,6 +23,11 @@ Otherwise, your choice should be `fpm` (`php-fpm`) whenever possible because it 
 that supports `fastcgi_finish_request()` and thus allows Contao to do some cleanup work after the response is sent back
 to the client, which does not reduce the actual runtime of the PHP process but can improve the response time for the visitor.
 
+{{% notice tip %}}
+There are even more SAPI options than just the ones maintained in PHP core. For example `frankenphp` which might be the
+fastest of them all depending on your setup.
+{{% /notice %}}
+
 ## OPcache
 
 The greatest performance gain can be achieved by using the PHP OPcache.

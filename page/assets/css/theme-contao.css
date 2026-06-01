@@ -364,7 +364,7 @@ body:before {
 #R-body img, #R-body .video-container {
     max-width: 100%;
     display: inline-block;
-    margin: 1rem auto;
+    vertical-align: middle;
 }
 
 #R-body img.icon {

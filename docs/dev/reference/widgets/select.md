@@ -5,34 +5,34 @@ description: Renders a drop-down menu
 
 This widget renders a drop-down menu.
 
-A simple select menu with hard-coded options whether to show the current page in the HTML Sitemap:
+A simple select menu with hard-coded options whether to show the current page in the HTML Sitemap.
 
 ![Select menu with hard-coded options]({{% asset "images/dev/reference/widgets/select.png" %}}?classes=shadow)
 
-A select menu enhanced with Chosen.js to allow the editor to limit the available options with a simple search box:
+A JavaScript enhanced select menu to allow the editor to limit the available options with a simple search box. With Choices.js {{< version-tag "5.5" >}} the search box will be available once there are at least 8 options.
 
-![Select menu enhanced with Chosen.js]({{% asset "images/dev/reference/widgets/select-chosen.png" %}}?classes=shadow)
+![JavaScript enhanced select menu]({{% asset "images/dev/reference/widgets/select-chosen.png" %}}?classes=shadow)
 
-A grouped select menu enhanced with Chosen.js:
+The JavaScript enhanced select menu with grouped options.
 
-![Grouped select menu enhanced with Chosen.js]({{% asset "images/dev/reference/widgets/select-grouped-chosen.png" %}}?classes=shadow)
+![JavaScript enhanced grouped select menu]({{% asset "images/dev/reference/widgets/select-grouped-chosen.png" %}}?classes=shadow)
 
 ## Options
 
 This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference]({{% relref "reference/dca/fields" %}}).
 
-| Key   | Value | Description
-| ----- | ----- | --------------- |
-| `inputType` | `select` | |
-| `options` | `array` | An options array (use in combination with `eval.multiple`) |
-| `options_callback` | `function\|callable` | A callback function that returns the options callback or an array  (use in combination with `eval.multiple`). You may define an anonymous function, but you should consider [registering them via annotations]({{% relref "framework/dca/#registering-callbacks" %}}). |
-| `reference` | `array` | Reference an array that will be used to translate the options. Contao will automatically match the options and reference array by key. |
-| `foreignKey` | `string` | Reference another table to generate options from. |
-| `eval.multiple` | `bool` | Set this to true if you want to provide multiple options via `options` or `options_callback` |
-| `eval.includeBlankOption` | `bool` | Includes a blank option (useful in conjunction with `mandatory` fields) |
-| `eval.blankOptionLabel` | `string` (default `-`) | The label of the blank option |
-| `eval.chosen` | `bool` | Enhance the select menu with Chosen.js |
-| `eval.disabled` | `bool` | Disables the input field |
+| Key                       | Value                  | Description                                                                                                                                                                                                                                                            |
+|---------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `inputType`               | `select`               |                                                                                                                                                                                                                                                                        |
+| `options`                 | `array`                | An options array (use in combination with `eval.multiple`)                                                                                                                                                                                                             |
+| `options_callback`        | `function\|callable`   | A callback function that returns the options callback or an array  (use in combination with `eval.multiple`). You may define an anonymous function, but you should consider [registering them via annotations]({{% relref "framework/dca/#registering-callbacks" %}}). |
+| `reference`               | `array`                | Reference an array that will be used to translate the options. Contao will automatically match the options and reference array by key.                                                                                                                                 |
+| `foreignKey`              | `string`               | Reference another table to generate options from.                                                                                                                                                                                                                      |
+| `eval.multiple`           | `bool`                 | Set this to true if you want to provide multiple options via `options` or `options_callback`                                                                                                                                                                           |
+| `eval.includeBlankOption` | `bool`                 | Includes a blank option (useful in conjunction with `mandatory` fields)                                                                                                                                                                                                |
+| `eval.blankOptionLabel`   | `string` (default `-`) | The label of the blank option                                                                                                                                                                                                                                          |
+| `eval.chosen`             | `bool`                 | Enhance the select menu with [Chosen.js](https://github.com/contao-components/chosen) - {{< version-tag "5.5" >}} [Choices.js](https://github.com/contao-components/choices)                                                                                           |
+| `eval.disabled`           | `bool`                 | Disables the input field                                                                                                                                                                                                                                               |
 
 The `options` array – either set directly or returned by an options callback – can have different structures depending on what you are going for:
 

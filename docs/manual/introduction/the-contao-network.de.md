@@ -81,18 +81,16 @@ bitte noch kurz folgende Liste durch:
 - wie kann der Fehler in der [Online-Demo von Contao](https://demo.contao.org/contao/login) reproduziert werden (Schritt-für-Schritt-Anleitung). 
 
 
-## Contao im Social Web
+## Contao auf Social-Media-Plattformen
 
-Selbstverständlich ist Contao auch im sogenannten »Social Web« vertreten, das derzeit vor allem durch Facebook, Twitter, 
-YouTube, Instagram und Pinterest geprägt wird. Die offizielle Contao-Fanpage auf Facebook findest du unter 
-[www.facebook.com/contao](https://www.facebook.com/contao). Sie wird regelmäßig aktualisiert und enthält 
-neben den offiziellen Ankündigungen auch kleine Status-Updates zu gerade aktuellen Themen. Falls du noch kein Fan bist, 
-solltest du es auf jeden Fall jetzt werden.
+Selbstverständlich ist Contao auch auf verschiedenen Social-Media-Plattformen vertreten:
 
-Bei Twitter findest du Contao unter [twitter.com/contaocms](https://twitter.com/contaocms), bei YouTube unter 
-[www.youtube.com/user/contaocms](https://www.youtube.com/user/contaocms), bei Instagram unter 
-[www.instagram.com/contaocms](https://www.instagram.com/contaocms/) und bei Pinterest unter 
-[www.pinterest.de/contaocms](https://www.pinterest.de/contaocms/).
+- [Facebook](https://www.facebook.com/contao)
+- [Instagram](https://www.instagram.com/contaocms/)
+- [LinkedIn](https://de.linkedin.com/company/contao-cms)
+- [Pinterest](https://www.pinterest.de/contaocms/)
+- [Twitter](https://twitter.com/contaocms)
+- [YouTube](https://www.youtube.com/user/contaocms)
 
 
 ## Die deutschsprachige Community
@@ -100,10 +98,11 @@ Bei Twitter findest du Contao unter [twitter.com/contaocms](https://twitter.com/
 Die deutschsprachige Community ist derzeit die größte aller Contao-Communities und hat eine eigene Plattform, die du 
 unter [community.contao.org](https://community.contao.org/de/) findest. Dort kannst du mit anderen Contao-Begeisterten 
 in Kontakt treten und alle Themen rund um das CMS, das Internet und das Leben als Webworker diskutieren. 
-Selbstverständlich werden dort auch deine Fragen zur Benutzung von Contao beantwortet.
+Selbstverständlich werden dort auch deine Fragen zur Benutzung von Contao beantwortet. Ausserdem steht uns ein 
+[Contao Slack-Workspace](https://to.contao.org/slack) zum Austausch zur Verfügung.
 
 Wenn du die Menschen, die du in dieser virtuellen Welt kennenlernst, einmal in der realen Welt treffen möchtest, kannst 
-du das auf der Konferenz, am Camp oder bei den verschiedenen Stammtischen tun. Eine Liste der Veranstaltungen findest 
-du auf der [Projekt-Webseite](https://contao.org/de/veranstaltungen.html).
+du das auf der Konferenz bzw. Summit, am Camp oder bei den verschiedenen Stammtischen tun. Eine Liste der Veranstaltungen 
+findest du auf der [Projekt-Webseite](https://contao.org/de/veranstaltungen.html).
 
 ![Die deutschsprachige Contao-Community]({{% asset "images/manual/introduction/de/die-deutschsprachige-contao-community.png" %}}?classes=shadow)

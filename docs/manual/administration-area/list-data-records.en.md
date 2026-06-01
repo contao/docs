@@ -118,8 +118,7 @@ The List View can offer the following additional commands besides the basic comm
 ![Edit settings]({{% asset "icons/header.svg" %}}?classes=icon) **Edit settings:** adjust the settings for the parent 
 element.
 
-![Edit settings]({{% asset "icons/children.svg" %}}?classes=icon) **Edit settings:** adjust 
-the settings for the parent element.
+![View children]({{% asset "icons/children.svg" %}}?classes=icon) **View children:** list the child elements of the element.
 
 
 ### Icons in the Parent View

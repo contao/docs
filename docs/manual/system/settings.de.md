@@ -171,31 +171,25 @@ die keine speziellen Zugriffsrechte definiert wurden. Weitere Informationen dazu
 [Zugriffsrechte](/de/seitenstruktur/regulaere-seite/#zugriffsrechte).
 
 
-
 ## parameters.yaml
 
-In der Contao Managed Edition werden die Parameter (z. B. Datenbankdaten) in der `parameters.yaml` abgelegt. 
-Auf diese Daten greift auch das Contao-Installtool zurück. Diese Datei wird normalerweise von der Versionierung 
-ausgenommen und kann auch zusätzliche Einträge wie z. B. die Angaben für den E-Mail-Versand über SMTP enthalten.
-
-Die Datei `parameters.yaml` findest du im Ordner `config/` und wird bei der Installation von Contao automatisch 
-angelegt.
-
-Die `parameters.yaml` nach der Installation von Contao:
+In der Contao Managed Edition können Umgebungsspezifische Parameter für z. B. Datenbank- oder SMTP-Zugangsdaten in der
+`parameters.yaml` Datei abgelegt werden. Die Datei `parameters.yaml` muss dafür im Ordner `config/` angelegt werden und
+könnte z. B. so aussehen:
 
 ```yaml
-# This file has been auto-generated during installation
 parameters:
-    database_host: …
-    database_port: …
-    database_user: …
-    database_password: …
-    database_name: …
-    secret: …
+    database_host: localhost
+    database_port: 3306
+    database_user: root
+    database_password: null
+    database_name: contao
 ```
+
 {{% notice info %}}
 Datenbankpasswörter, die nur aus Ziffern bestehen oder gewisse Sonderzeichen enthalten, müssen in Hochkommatas gesetzt werden.
 {{% /notice %}}
+
 
 ## config.yaml
 
