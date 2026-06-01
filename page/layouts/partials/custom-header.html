@@ -1,6 +1,28 @@
 <meta name="docsearch:manualtype" content="{{ .Site.Params.algolia_selector }}{{ if eq .Site.Params.algolia_selector "manual" }}_{{ .Page.Language | default "en" }}{{ end }}">
 <link rel="preconnect" href="https://KDZKB9K935-dsn.algolia.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+<style>
+    @media screen and (prefers-color-scheme: dark) {
+        html[data-r-theme-variant="auto-theme"] {
+            --docsearch-text-color: #f5f6f7;
+            --docsearch-container-background: rgba(9, 10, 17, .8);
+            --docsearch-modal-background: #15172a;
+            --docsearch-modal-shadow: inset 1px 1px 0 0 #2c2e40, 0 3px 8px 0 #000309;
+            --docsearch-searchbox-background: #090a11;
+            --docsearch-searchbox-focus-background: #000;
+            --docsearch-hit-color: #bec3c9;
+            --docsearch-hit-shadow: none;
+            --docsearch-hit-background: #090a11;
+            --docsearch-key-gradient: linear-gradient(-26.5deg, #565872, #31355b);
+            --docsearch-key-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d, 0 2px 2px 0 rgba(3, 4, 9, .3);
+            --docsearch-key-pressed-shadow: inset 0 -2px 0 0 #282d55, inset 0 0 1px 1px #51577d, 0 1px 1px 0 #0304094d;
+            --docsearch-footer-background: #1e2136;
+            --docsearch-footer-shadow: inset 0 1px 0 0 rgba(73, 76, 106, .5), 0 -4px 8px 0 rgba(0, 0, 0, .2);
+            --docsearch-logo-color: #fff;
+            --docsearch-muted-color: #7f8497
+        }
+    }
+</style>
 {{ $assetBusting := not .Site.Params.disableAssetsBusting }}
 <script src="{{"js/browser.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
 <script src="{{"js/tools.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
