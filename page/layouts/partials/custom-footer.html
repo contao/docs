@@ -52,7 +52,7 @@
         const variant = document.documentElement.dataset.rThemeVariant;
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        if ('contao-dark' === variant || ('auto' === variant && prefersDark)) {
+        if ('contao-dark' === variant || ('auto-theme' === variant && prefersDark)) {
             return 'dark';
         }
 
