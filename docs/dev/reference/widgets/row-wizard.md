@@ -10,7 +10,7 @@ Each row consists of a configurable set of child widgets that are parsed and ren
 The widget validates each child field individually and stores the resulting rows as a serialized array.
 
 
-![Key-Value-Wizard widget]({{% asset "images/dev/reference/widgets/key-value-wizard.png" %}}?classes=shadow)
+![Key-Value-Wizard widget]({{% asset "images/dev/reference/widgets/row-wizard.png" %}}?classes=shadow)
 
 ## Features
 
