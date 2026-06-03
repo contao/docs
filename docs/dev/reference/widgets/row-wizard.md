@@ -142,46 +142,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['rowWizard'] = [
 // …
 ```
 
-## Callback
-
-In some cases, you may not want to save any value if there is only one row and the first [^1]/[^2] value is empty.
-You can implement your own save callback for this case:
-
-```php
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-use Contao\StringUtil;
-
-#[AsCallback(table: 'tl_content', target: 'fields.columnWizard.save')]
-class ColumnWizardFieldSaveCallback
-{
-    public function __invoke($value, DataContainer $dc)
-    {
-        if ('' === $value) {
-            return $value;
-        }
-
-        if (0 === \count($values = StringUtil::deserialize($value, true))) {
-            return '';
-        }
-
-        // Do not reset if there is more than one row
-        if (1 !== \count($values)) {
-            return $value;
-        }
-
-        if (($values[0][array_key_first($values[0])] ?? '') === '') {
-            return '';
-        }
-
-        return $value;
-    }
-}
-```
-
-[^1]: *the provided example checks for the first value, you may be able to change your callback to any other field*
-[^2]: *({{< version-tag "5.7.6" >}}: A callback to remove the first row isn't needed anymore as you can delete the first row now)*
-
 ## Usage in Contao
 
 The row wizard widget is used in the _Description list_ content element for example in order to be able to enter
