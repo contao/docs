@@ -444,7 +444,6 @@ Any field without an SQL definition will automatically be treated as a virtual f
 
 ```php
 // contao/dca/tl_content.php
-
 $GLOBALS['TL_DCA']['tl_content']['fields']['example1'] = [
     'inputType' => 'text',
 ];
