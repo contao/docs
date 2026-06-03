@@ -10,7 +10,7 @@ Each row consists of a configurable set of child widgets that are parsed and ren
 The widget validates each child field individually and stores the resulting rows as a serialized array.
 
 
-![Key-Value-Wizard widget]({{% asset "images/dev/reference/widgets/key-value-wizard.png" %}}?classes=shadow)
+![Key-Value-Wizard widget]({{% asset "images/dev/reference/widgets/row-wizard.png" %}}?classes=shadow)
 
 ## Features
 
@@ -33,7 +33,6 @@ The following widget options and modifications do not work within the row wizard
 
 - `eval.color-picker`
 - `eval.datepicker`
-- `eval.dcaPicker`
 - `eval.rte`
 - Any modifications that append JS to the widget (via `DataContainer::row()`)
 - Custom widgets provided by extensions that are dependent on JavaScript (Stimulus controllers may work)
@@ -142,44 +141,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['rowWizard'] = [
 ];
 // …
 ```
-
-## Callback
-
-In some cases, you may not want to save any value if there is only one row and the first\* value is empty.
-You can implement your own save callback for this case:
-
-```php
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-use Contao\StringUtil;
-
-#[AsCallback(table: 'tl_content', target: 'fields.columnWizard.save')]
-class ColumnWizardFieldSaveCallback
-{
-    public function __invoke($value, DataContainer $dc)
-    {
-        if ('' === $value) {
-            return $value;
-        }
-
-        if (0 === \count($values = StringUtil::deserialize($value, true))) {
-            return '';
-        }
-
-        // Do not reset if there is more than one row
-        if (1 !== \count($values)) {
-            return $value;
-        }
-
-        if (($values[0][array_key_first($values[0])] ?? '') === '') {
-            return '';
-        }
-
-        return $value;
-    }
-}
-```
-*\* the provided example checks for the first value, you may be able to change your callback to any other field*      
 
 ## Usage in Contao
 
