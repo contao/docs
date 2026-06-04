@@ -18,17 +18,18 @@ The file tree with gallery option enabled (as in the contao gallery element):
 
 This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a [full field reference]({{% relref "reference/dca/fields" %}}).
 
-| Key               | Value                       | Description                                                                                                                                                                                                                                                                                                   |
-|-------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `inputType`       | `fileTree` (string)         |                                                                                                                                                                                                                                                                                                               |
-| `eval.extensions` | `string`                    | Limits the file tree to certain file types (comma separated list).                                                                                                                                                                                                                                            |
-| `eval.fieldType`  | `checkbox`/`radio` (string) | **checkbox** allow multiple selections<br/>**radio** allow a single selection only                                                                                                                                                                                                                            |
-| `eval.files`      | `bool`                      | If true files and folders will be shown. If false, only folders will be shown.                                                                                                                                                                                                                                |
-| `eval.filesOnly`  | `bool`                      | Removes the radio buttons or checkboxes next to folders.                                                                                                                                                                                                                                                      |
-| `eval.isGallery`  | `bool`                      | Displays selected files of a fileTree widget as an image gallery.                                                                                                                                                                                                                                             |
-| `eval.isSortable` | `bool`                      | Enable sorting for the selected items.                                                                                                                                                                                                                                                 |
-| `eval.multiple`   | `bool`                      | Make the input field multiple.                                                                                                                                                                                                                                                                                |
-| `eval.path`       | `string`                    | Custom root directory for file trees.                                                                                                                                                                                                                                                                         |
+| Key                    | Value                       | Description                                                                        |
+|------------------------|-----------------------------|------------------------------------------------------------------------------------|
+| `inputType`            | `fileTree` (string)         |                                                                                    |
+| `eval.extensions`      | `string`                    | Limits the file tree to certain file types (comma separated list).                 |
+| `eval.fieldType`       | `checkbox`/`radio` (string) | **checkbox** allow multiple selections<br/>**radio** allow a single selection only |
+| `eval.files`           | `bool`                      | If true files and folders will be shown. If false, only folders will be shown.     |
+| `eval.filesOnly`       | `bool`                      | Removes the radio buttons or checkboxes next to folders.                           |
+| `eval.isGallery`       | `bool`                      | Displays selected files of a fileTree widget as an image gallery.                  |
+| `eval.isSortable`      | `bool`                      | Enable sorting for the selected items.                                             |
+| `eval.multiple`        | `bool`                      | Make the input field multiple.                                                     |
+| `eval.path`            | `string`                    | Custom root directory for file trees.                                              |
+| `eval.showFilePreview` | `bool`                      | If set to true, regular files will also be shown as images.                        |
 
 ## Examples
 
