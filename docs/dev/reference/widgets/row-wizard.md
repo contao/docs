@@ -44,14 +44,44 @@ Additional information about known limitations can be read in the associated [pu
 This table only shows the options relevant to the core functionality of this widget. See the DCA reference for a 
 [full field reference][FieldsReference].
 
-| Key             | Value                | Description                                                                |
-|-----------------|----------------------|----------------------------------------------------------------------------|
-| `inputType`     | `rowWizard` (string) |                                                                            |
-| `fields`        | `array`              | Associative array of DCA field definitions rendered per row.               |
-| `eval.actions`  | `array`              | Allowed values: `copy`, `delete`, `enable`. Default: `['copy', 'delete']`. |
-| `eval.sortable` | `bool`               | Enables or disables drag & drop sorting (default: `true`).                 |
-| `eval.min`      | `int`                | Minimum number of rows.                                                    |
-| `eval.max`      | `int`                | Maximum number of rows.                                                    |
+| Key                              | Value                    | Description                                                                                                                                        |
+|----------------------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `inputType`                      | `rowWizard` (string)     |                                                                                                                                                    |
+| `fields`                         | `array`                  | Associative array of DCA field definitions rendered per row.                                                                                       |
+| `fields.[field].eval.cell_class` | CSS class(es) (`string`) | Same as [`eval.tl_class`](https://docs.contao.org/5.x/dev/reference/dca/palettes/#arranging-fields)but the classes are applied to the widget cell. |
+| `eval.actions`                   | `array`                  | Allowed values: `copy`, `delete`, `enable`. Default: `['copy', 'delete']`.                                                                         |
+| `eval.sortable`                  | `bool`                   | Enables or disables drag & drop sorting (default: `true`).                                                                                         |
+| `eval.min`                       | `int`                    | Minimum number of rows.                                                                                                                            |
+| `eval.max`                       | `int`                    | Maximum number of rows.                                                                                                                            |
+
+## Field callbacks
+
+You can register callbacks for Row Wizard fields using the following schema: `fields.[rowWizardField].fields.[field].[callback_name]`.
+
+Example:
+
+```php
+namespace App\EventListener\DataContainer;
+
+use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
+use Contao\DataContainer;
+use HeimrichHannot\SmulRegionalportalBundle\Model\MemberModel;
+
+#[AsCallback(table: 'tl_example', target: 'fields.exampleWizard.fields.awesomePeople.options')]
+class AwesomePeopleOptionsListener
+{
+    public function __invoke(?DataContainer $dc = null): array
+    {
+        $options = [];
+        $members = MemberModel::findBy(['exampleProperty=?'], ['awesome']);
+        foreach ($members ?? [] as $member) {
+            $options[$member->id] = $member->firstname . ' ' . $member->lastname;
+        }
+        return $options;
+    }
+}
+```
+
 
 ## Column Definition
 
