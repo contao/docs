@@ -48,15 +48,17 @@ This table only shows the options relevant to the core functionality of this wid
 |----------------------------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | `inputType`                      | `rowWizard` (string)     |                                                                                                                                                    |
 | `fields`                         | `array`                  | Associative array of DCA field definitions rendered per row.                                                                                       |
-| `fields.[field].eval.cell_class` | CSS class(es) (`string`) | Same as [`eval.tl_class`](https://docs.contao.org/5.x/dev/reference/dca/palettes/#arranging-fields)but the classes are applied to the widget cell. |
+| `fields.<FIELD>.eval.cell_class` | CSS class(es) (`string`) | Same as [`eval.tl_class`]({{% relref "fields#evaluation" %}}) but the classes are applied to the widget cell. |
++
+| `fields.<FIELD>.eval.cell_style` | CSS styles (`string`) | Same as [`eval.style`]({{% relref "fields#evaluation" %}}) but the styles are applied to the widget cell. |
 | `eval.actions`                   | `array`                  | Allowed values: `copy`, `delete`, `enable`. Default: `['copy', 'delete']`.                                                                         |
 | `eval.sortable`                  | `bool`                   | Enables or disables drag & drop sorting (default: `true`).                                                                                         |
 | `eval.min`                       | `int`                    | Minimum number of rows.                                                                                                                            |
 | `eval.max`                       | `int`                    | Maximum number of rows.                                                                                                                            |
 
-## Field callbacks
+## Field Callbacks
 
-You can register callbacks for Row Wizard fields using the following schema: `fields.<WIZARD_FIELD>.fields.[FIELD].[CALLBACK_NAME]`, 
+You can register [callbacks]({{ relref "callbacks" }}) for Row Wizard fields using the following schema: `fields.<FIELD>.fields.<FIELD>.<CALLBACK>`, 
 for example `fields.rowWizard.fields.type.options`
 
 ## Column Definition
