@@ -56,32 +56,8 @@ This table only shows the options relevant to the core functionality of this wid
 
 ## Field callbacks
 
-You can register callbacks for Row Wizard fields using the following schema: `fields.[rowWizardField].fields.[field].[callback_name]`.
-
-Example:
-
-```php
-namespace App\EventListener\DataContainer;
-
-use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
-use Contao\DataContainer;
-use HeimrichHannot\SmulRegionalportalBundle\Model\MemberModel;
-
-#[AsCallback(table: 'tl_example', target: 'fields.exampleWizard.fields.awesomePeople.options')]
-class AwesomePeopleOptionsListener
-{
-    public function __invoke(?DataContainer $dc = null): array
-    {
-        $options = [];
-        $members = MemberModel::findBy(['exampleProperty=?'], ['awesome']);
-        foreach ($members ?? [] as $member) {
-            $options[$member->id] = $member->firstname . ' ' . $member->lastname;
-        }
-        return $options;
-    }
-}
-```
-
+You can register callbacks for Row Wizard fields using the following schema: `fields.<WIZARD_FIELD>.fields.[FIELD].[CALLBACK_NAME]`, 
+for example `fields.rowWizard.fields.type.options`
 
 ## Column Definition
 
