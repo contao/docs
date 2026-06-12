@@ -152,7 +152,7 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
 #[AsCronJob('hourly')]
 class ExampleCron
 {
-    public function __invoke()
+    public function __invoke(): void
     {
         // Do something …
     }
@@ -177,7 +177,7 @@ use Contao\CoreBundle\ServiceAnnotation\CronJob;
  */
 class ExampleCron
 {
-    public function __invoke()
+    public function __invoke(): void
     {
         // Do something …
     }
@@ -209,7 +209,7 @@ namespace App\Cron;
 
 class ExampleCron
 {
-    public function __invoke()
+    public function __invoke(): void
     {
         // Do something …
     }
@@ -284,7 +284,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 #[AsCronJob('hourly')]
 class HourlyCron
 {
-    public function __invoke(string $scope): PromiseInterface
+    public function __invoke(string $scope): ?PromiseInterface
     {
         // Skip this cron job in the web scope
         if (Cron::SCOPE_WEB === $scope) {
@@ -317,7 +317,7 @@ class HourlyCron
 {
     public function __construct(private ProcessUtil $processUtil) {}
 
-    public function __invoke(string $scope): PromiseInterface
+    public function __invoke(string $scope): ?PromiseInterface
     {
         // Skip this cron job in the web scope
         if (Cron::SCOPE_WEB === $scope) {
