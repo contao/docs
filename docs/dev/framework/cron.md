@@ -152,7 +152,7 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsCronJob;
 #[AsCronJob('hourly')]
 class ExampleCron
 {
-    public function __invoke()
+    public function __invoke(): void
     {
         // Do something …
     }
@@ -177,7 +177,7 @@ use Contao\CoreBundle\ServiceAnnotation\CronJob;
  */
 class ExampleCron
 {
-    public function __invoke()
+    public function __invoke(): void
     {
         // Do something …
     }
@@ -209,7 +209,7 @@ namespace App\Cron;
 
 class ExampleCron
 {
-    public function __invoke()
+    public function __invoke(): void
     {
         // Do something …
     }
