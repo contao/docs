@@ -792,7 +792,7 @@ Allows you to define an individual function to load data into a drop-down menu
 or checkbox list. Useful e.g. for conditional foreinKey-relations.
 
 {{% expand "Parameters" %}}
-* `\Contao\DataContainer`/`null` Data Container object
+* `\Contao\DataContainer` Data Container object
 
 **return:** `array` Array of available options
 {{% /expand %}}
