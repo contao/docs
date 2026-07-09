@@ -14,7 +14,7 @@ and does not expect a return value.
 
 {{% notice note %}}
 The `generatePage` hook does not work when using the modern "Twig layout with slots" layout type.
-Use the [`LayoutEvent`](/reference/events/#layoutevent) instead.
+Use the [`LayoutEvent`]({{% relref "events#layoutevent" %}}) instead.
 {{% /notice %}}
 
 ## Parameters
