@@ -12,6 +12,10 @@ The `generatePage` hook is triggered before the main layout (fe_page) is compile
 It passes the page object, the layout object and a self-reference as arguments 
 and does not expect a return value.
 
+{{% notice note %}}
+The `generatePage` hook does not work when using the modern "Twig layout with slots" layout type.
+Use the [`LayoutEvent`]({{% relref "events#layoutevent" %}}) instead.
+{{% /notice %}}
 
 ## Parameters
 
