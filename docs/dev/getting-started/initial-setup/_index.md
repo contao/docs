@@ -27,7 +27,7 @@ command as follows (e.g. for `{{% siteparam "currentContaoVersion" %}}`):
 
 
 ```bash
-composer create-project contao/managed-edition . {{% siteparam "currentContaoVersion" %}}
+composer create-project contao/managed-edition . {{% siteparam "currentContaoVersion" %}}.*
 ```
 
 [1]: symfony-application
