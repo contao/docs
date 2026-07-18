@@ -14,7 +14,7 @@ disableLanguageSwitch: true
 documentation_label: Documentation
 disableInlineCopyToClipBoard: true
 currentContaoVersion: '5.7'
-currentReleaseCandidate: '5.7'
+currentReleaseCandidate: '6.0'
 disableLandingPageButton: true
 banner:
   show: true
