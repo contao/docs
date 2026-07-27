@@ -216,6 +216,14 @@ So for example, with the following annotation:
 and an alias like `example/alias` defined in the back end, the final front end URL
 of the page will be `https://example.com/example/alias/foo/bar.html`.
 
+Conversely, if you define an empty path like
+
+```php
+#[AsPage(path: '')]
+```
+
+then only the alias of the page will be used for the route in the front end.
+
 Also, just like with routes for regular controllers in Symfony, the path of your page controller can also contain
 parameters. The following page route for example only consists of a single `foobar` parameter:
 
