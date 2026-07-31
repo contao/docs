@@ -107,7 +107,7 @@ installieren zu lassen, _inklusive_ den neuesten Release Candidates (wenn vorhan
 Die angeforderten Versionen der anderen Contao Bundles muss nicht unbedingt von
 deren ursprünglichen Angaben geändert werden. Zum Beispiel erlaubt eine Angabe von
 `^5.3` (wie es der Fall wäre, wenn man von einer Contao 5.3 LTS Version aktualisieren
-würde) auch die Installation aller `{{% siteparam "currentReleaseCandidate" %}}` Versionen (oder höher). Siehe dazu auch
+würde) auch die Installation aller `5.7` Versionen (oder höher). Siehe dazu auch
 die Dokumentation von Composer über diese spezielle [Versions Syntax](https://getcomposer.org/doc/articles/versions.md).
 Nur die Version des `contao/manager-bundle` muss angepasst werden.
 {{% /notice %}}

@@ -103,7 +103,7 @@ _including_ its latest release candidates (if there are any):
 {{% notice tip %}}
 The version requirement of the other bundles do not need to be changed from their
 default value. For example, a version requirement of `^5.3` (like if you would update 
-from the Contao 5.3 LTS version) also allows any `{{% siteparam "currentReleaseCandidate" %}}` version. See Composer's
+from the Contao 5.3 LTS version) also allows any `5.7` version. See Composer's
 documentation on the [version requirement syntax](https://getcomposer.org/doc/articles/versions.md). 
 Only the requested version of the `contao/manager-bundle` needs to be adjusted.
 {{% /notice %}}
