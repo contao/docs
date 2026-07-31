@@ -45,7 +45,7 @@ mkdir contao && cd contao
 Create the DDEV configuration with:
 
 ```shell
-ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.3
+ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.4
 ```
 
 Install Contao {{% siteparam "currentContaoVersion" %}}:
@@ -92,7 +92,7 @@ mkdir contao && cd contao
 Create the DDEV configuration with:
 
 ```shell
-ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.3
+ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.4
 ```
 
 After installation, the database access data must be entered in the .env.local. At the same time, we also set up 
