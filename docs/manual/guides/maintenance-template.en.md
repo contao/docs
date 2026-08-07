@@ -89,7 +89,9 @@ When the complete Contao installation is put into maintenance mode via the comma
 
 In this example we do this for all error templates. For an update-safe adaptation we copy the original template `vendor/contao/core-bundle/src/Resources/views/Error/layout.html.twig` to `/templates/bundles/ContaoCoreBundle/Error/`.
 
-{{< version-tag "5.1" >}} the original template is located at `vendor/contao/core-bundle/templates/Error/layout.html.twig`
+{{< version-tag "5.1" >}} the original template is located at `vendor/contao/core-bundle/templates/Error/layout.html.twig`.
+
+{{< version-tag "5.5" >}}, the template must be copied to `/templates/error/`.
 
 There we put our own logo inside the DIV with the class `header-logo`. You can use a normal image tag for this or an inline SVG like in the original template.
 
@@ -122,5 +124,7 @@ For more information about customizing Twig templates, please refer to the [Twig
 
 Instead of just changing some texts, you can simply overwrite the whole template `service_unavailable.html.twig` with your own HTML and CSS.
 To make the whole thing update-safe, you have to save the file in the folder `/templates/bundles/ContaoCoreBundle/Error/`.
+
+{{< version-tag "5.5" >}}, the template must be copied to `/templates/error/`.
 
 Finally you have to refresh the production cache.
