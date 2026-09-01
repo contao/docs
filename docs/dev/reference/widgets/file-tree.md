@@ -21,6 +21,7 @@ This table only shows the options relevant to the core functionality of this wid
 | Key                    | Value                       | Description                                                                        |
 |------------------------|-----------------------------|------------------------------------------------------------------------------------|
 | `inputType`            | `fileTree` (string)         |                                                                                    |
+| `eval.binary`          | `bool` (default `true`)     | If set to false, UUIDs are stored as strings rather than in binary format.         |
 | `eval.extensions`      | `string`                    | Limits the file tree to certain file types (comma separated list).                 |
 | `eval.fieldType`       | `checkbox`/`radio` (string) | **checkbox** allow multiple selections<br/>**radio** allow a single selection only |
 | `eval.files`           | `bool`                      | If true files and folders will be shown. If false, only folders will be shown.     |
