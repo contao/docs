@@ -585,6 +585,116 @@ class LayoutEventListener
 ```
 {{% /expand %}}
 
+## `EnhanceHitEvent`
+
+{{< version "5.5.0" >}}
+
+This event is dispatched for each back end search result after Contao has checked access to the indexed document and its provider has converted the document to a `Hit`. 
+
+| | |
+| --- | --- |
+| Name | `\Contao\CoreBundle\Event\BackendSearch\EnhanceHitEvent::class` |
+| Constant | N/A |
+| Event | `\Contao\CoreBundle\Event\BackendSearch\EnhanceHitEvent` |
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/EnhanceHitListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\BackendSearch\EnhanceHitEvent;
+use Contao\CoreBundle\Search\Backend\Hit;
+use Contao\CoreBundle\Search\Backend\Provider\TableDataContainerProvider;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener]
+class EnhanceHitListener
+{
+    public function __invoke(EnhanceHitEvent $event): void
+    {
+        $hit = $event->getHit();
+
+        if (null === $hit || 'contao.db.tl_member' !== $hit->getDocument()->getType()) {
+            return;
+        }
+
+        $row = $hit->getDocument()->getMetadata()['row'] ?? [];
+        $title = trim(($row['firstname'] ?? '').' '.($row['lastname'] ?? ''));
+
+        if ('' === $title) {
+            return;
+        }
+
+        $replacement = (new Hit($hit->getDocument(), $title, $hit->getViewUrl()))
+            ->withVisibleType($hit->getVisibleType())
+            ->withBreadcrumbs($hit->getBreadcrumbs())
+            ->withMetadata($hit->getMetadata());
+
+        if (null !== $hit->getEditUrl()) {
+            $replacement = $replacement->withEditUrl($hit->getEditUrl());
+        }
+
+        if (null !== $hit->getContext()) {
+            $replacement = $replacement->withContext($hit->getContext());
+        }
+
+        if (null !== $hit->getImageFigureBuilder()) {
+            $replacement = $replacement->withImageFigureBuilder($hit->getImageFigureBuilder());
+        }
+
+        $event->setHit($replacement);
+    }
+}
+```
+{{% /expand %}}
+
+## `IndexDocumentEvent`
+
+{{< version "5.5.0" >}}
+
+This event is dispatched for each document supplied by a provider during index data for backend search.
+A listener can replace the document before it enters the search index or exclude it by calling `setDocument(null)`.
+
+| | |
+| --- | --- |
+| Name | `\Contao\CoreBundle\Event\BackendSearch\IndexDocumentEvent::class` |
+| Constant | N/A |
+| Event | `\Contao\CoreBundle\Event\BackendSearch\IndexDocumentEvent` |
+
+
+{{% expand "Example" %}}
+
+```php
+// src/EventListener/IndexDocumentListener.php
+namespace App\EventListener;
+
+use App\Model\CompanyModel;
+use Contao\CoreBundle\Event\BackendSearch\IndexDocumentEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+class IndexDocumentListener
+{
+    #[AsEventListener]
+    public function __invoke(IndexDocumentEvent $event): void
+    {
+        $document = $event->getDocument();
+
+        if (null === $document || TableDataContainerProvider::TYPE_PREFIX.MemberModel::getTable() !== $document->getType()) {
+            return;
+        }
+        
+        $company = CompanyModel::findByPk($document->getMetadata()['row']['company']);
+        
+        if (null === $company) {
+            return;
+        }
+        
+        $event->setDocument($document->withSearchableContent($document->getSearchableContent().' '.$company->name));
+    }
+}
+```
+{{% /expand %}}
+
 
 [SymfonyEventDispatcher]: https://symfony.com/doc/current/event_dispatcher.html
 [ContaoHooks]: /framework/hooks
