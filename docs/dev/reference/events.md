@@ -629,25 +629,8 @@ class EnhanceHitListener
         if ('' === $title) {
             return;
         }
-
-        $replacement = (new Hit($hit->getDocument(), $title, $hit->getViewUrl()))
-            ->withVisibleType($hit->getVisibleType())
-            ->withBreadcrumbs($hit->getBreadcrumbs())
-            ->withMetadata($hit->getMetadata());
-
-        if (null !== $hit->getEditUrl()) {
-            $replacement = $replacement->withEditUrl($hit->getEditUrl());
-        }
-
-        if (null !== $hit->getContext()) {
-            $replacement = $replacement->withContext($hit->getContext());
-        }
-
-        if (null !== $hit->getImageFigureBuilder()) {
-            $replacement = $replacement->withImageFigureBuilder($hit->getImageFigureBuilder());
-        }
-
-        $event->setHit($replacement);
+        
+        $event->setHit($hit->withTitle($title));
     }
 }
 ```
