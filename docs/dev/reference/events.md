@@ -656,7 +656,6 @@ A listener can replace the document before it enters the search index or exclude
 
 
 {{% expand "Example" %}}
-
 ```php
 // src/EventListener/IndexDocumentListener.php
 namespace App\EventListener;
