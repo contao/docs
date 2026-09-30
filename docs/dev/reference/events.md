@@ -661,12 +661,16 @@ A listener can replace the document before it enters the search index or exclude
 // src/EventListener/IndexDocumentListener.php
 namespace App\EventListener;
 
-use App\Model\CompanyModel;
+use App\Company\CompanyResolver;
 use Contao\CoreBundle\Event\BackendSearch\IndexDocumentEvent;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
 class IndexDocumentListener
 {
+    public function __construct(
+        private readonly CompanyResolver $companyResolver,
+    ) {}
+
     #[AsEventListener]
     public function __invoke(IndexDocumentEvent $event): void
     {
@@ -676,7 +680,7 @@ class IndexDocumentListener
             return;
         }
         
-        $company = MemberModel::findByPk($document->getId())?->getRelated('company');
+        $company = $this->companyResolver->findByMemberId($document->getId());
         
         if (null === $company) {
             return;
