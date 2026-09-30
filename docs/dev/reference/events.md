@@ -585,6 +585,112 @@ class LayoutEventListener
 ```
 {{% /expand %}}
 
+## `EnhanceHitEvent`
+
+{{< version "5.5.0" >}}
+
+{{% notice "warning" %}}
+The entire backend search is currently considered experimental and is therefore not covered by Contao's backward compatibility promise (BC promise). Classes marked with @experimental should be considered internal and may change without prior notice.  
+This does not mean you should avoid using it. We encourage you to try it out and provide feedback, but please be aware that behavior may change in future releases.
+{{% /notice %}}
+
+This event is dispatched for each back end search result after Contao has checked access to the indexed document and its provider has converted the document to a `Hit`. 
+
+| | |
+| --- | --- |
+| Name | `\Contao\CoreBundle\Event\BackendSearch\EnhanceHitEvent::class` |
+| Constant | N/A |
+| Event | `\Contao\CoreBundle\Event\BackendSearch\EnhanceHitEvent` |
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/EnhanceHitListener.php
+namespace App\EventListener;
+
+use Contao\CoreBundle\Event\BackendSearch\EnhanceHitEvent;
+use Contao\CoreBundle\Search\Backend\Hit;
+use Contao\CoreBundle\Search\Backend\Provider\TableDataContainerProvider;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener]
+class EnhanceHitListener
+{
+    public function __invoke(EnhanceHitEvent $event): void
+    {
+        $hit = $event->getHit();
+
+        if (null === $hit || 'contao.db.tl_member' !== $hit->getDocument()->getType()) {
+            return;
+        }
+
+        $row = $hit->getDocument()->getMetadata()['row'] ?? [];
+        $title = trim(($row['firstname'] ?? '').' '.($row['lastname'] ?? ''));
+
+        if ('' === $title) {
+            return;
+        }
+        
+        $event->setHit($hit->withTitle($title));
+    }
+}
+```
+{{% /expand %}}
+
+## `IndexDocumentEvent`
+
+{{< version "5.5.0" >}}
+
+{{% notice "warning" %}}
+The entire backend search is currently considered experimental and is therefore not covered by Contao's backward compatibility promise (BC promise). Classes marked with @experimental should be considered internal and may change without prior notice.  
+This does not mean you should avoid using it. We encourage you to try it out and provide feedback, but please be aware that behavior may change in future releases.
+{{% /notice %}}
+
+This event is dispatched for each document supplied by a provider during index data for backend search.
+A listener can replace the document before it enters the search index or exclude it by calling `setDocument(null)`.
+
+| | |
+| --- | --- |
+| Name | `\Contao\CoreBundle\Event\BackendSearch\IndexDocumentEvent::class` |
+| Constant | N/A |
+| Event | `\Contao\CoreBundle\Event\BackendSearch\IndexDocumentEvent` |
+
+
+{{% expand "Example" %}}
+```php
+// src/EventListener/IndexDocumentListener.php
+namespace App\EventListener;
+
+use App\Company\CompanyResolver;
+use Contao\CoreBundle\Event\BackendSearch\IndexDocumentEvent;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+class IndexDocumentListener
+{
+    public function __construct(
+        private readonly CompanyResolver $companyResolver,
+    ) {}
+
+    #[AsEventListener]
+    public function __invoke(IndexDocumentEvent $event): void
+    {
+        $document = $event->getDocument();
+
+        if (null === $document || TableDataContainerProvider::TYPE_PREFIX.MemberModel::getTable() !== $document->getType()) {
+            return;
+        }
+        
+        $company = $this->companyResolver->findByMemberId($document->getId());
+        
+        if (null === $company) {
+            return;
+        }
+        
+        $event->setDocument($document->withAddedSearchableContent($company->name));
+    }
+}
+```
+{{% /expand %}}
+
 
 [SymfonyEventDispatcher]: https://symfony.com/doc/current/event_dispatcher.html
 [ContaoHooks]: /framework/hooks
