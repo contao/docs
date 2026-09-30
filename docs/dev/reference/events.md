@@ -682,7 +682,7 @@ class IndexDocumentListener
             return;
         }
         
-        $event->setDocument($document->withSearchableContent($document->getSearchableContent().' '.$company->name));
+        $event->setDocument($document->withAddedSearchableContent($company->name));
     }
 }
 ```
