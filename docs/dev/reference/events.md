@@ -589,6 +589,11 @@ class LayoutEventListener
 
 {{< version "5.5.0" >}}
 
+{{% notice "warning" %}}
+The entire backend search is currently considered experimental and is therefore not covered by Contao's backward compatibility promise (BC promise). Classes marked with @experimental should be considered internal and may change without prior notice.  
+This does not mean you should avoid using it. We encourage you to try it out and provide feedback, but please be aware that behavior may change in future releases.
+{{% /notice %}}
+
 This event is dispatched for each back end search result after Contao has checked access to the indexed document and its provider has converted the document to a `Hit`. 
 
 | | |
@@ -652,6 +657,11 @@ class EnhanceHitListener
 
 {{< version "5.5.0" >}}
 
+{{% notice "warning" %}}
+The entire backend search is currently considered experimental and is therefore not covered by Contao's backward compatibility promise (BC promise). Classes marked with @experimental should be considered internal and may change without prior notice.  
+This does not mean you should avoid using it. We encourage you to try it out and provide feedback, but please be aware that behavior may change in future releases.
+{{% /notice %}}
+
 This event is dispatched for each document supplied by a provider during index data for backend search.
 A listener can replace the document before it enters the search index or exclude it by calling `setDocument(null)`.
 
@@ -683,7 +693,7 @@ class IndexDocumentListener
             return;
         }
         
-        $company = CompanyModel::findByPk($document->getMetadata()['row']['company']);
+        $company = MemberModel::findByPk($document->getId())?->getRelated('company');
         
         if (null === $company) {
             return;
