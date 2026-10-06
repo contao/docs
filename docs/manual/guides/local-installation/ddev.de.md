@@ -47,7 +47,7 @@ mkdir contao && cd contao
 DDEV-Konfiguration anlegen mit:
 
 ```shell
-ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.2
+ddev config --project-type=php --docroot=public --webserver-type=apache-fpm --php-version=8.4
 ```
 
 Contao {{% siteparam "currentContaoVersion" %}} installieren:
