@@ -9,7 +9,7 @@ tags:
 ---
 
 You can also install Contao locally. This requires a web server, a database and PHP. For the different operating systems
-ready-made solutions, such as [XAMPP](https://www.apachefriends.org) or [Laragon](https://laragon.org/), exists. 
+ready-made solutions such as [Laragon](https://laragon.org/) exist. 
 
 Another alternative is using [Docker](https://www.docker.com/). If the current Docker releases are not available for your operating system, you can also use [Docker Desktop](https://docs.docker.com/desktop/).
 

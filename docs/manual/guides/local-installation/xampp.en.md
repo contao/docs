@@ -1,5 +1,5 @@
 ---
-title: "XAMPP"
+title: "XAMPP (outdated)"
 menuTitle : "With XAMPP"
 description: "Contao installation with XAMPP"
 weight: 30
@@ -9,6 +9,10 @@ tags:
    - "Installation"
 ---
 
+{{% notice warning %}}
+XAMPP has not been actively maintained for quite some time and does not support the installation of new versions of Contao.
+You should consider using alternatives.
+{{% /notice %}}
 
 This tutorial describes the local use of Contao with [XAMPP](https://www.apachefriends.org/) for Windows. 
 We use a »XAMPP Portable Version«, which only needs to be copied. Download the appropriate [Windows archive](https://www.apachefriends.org/download.html) for this purpose.
