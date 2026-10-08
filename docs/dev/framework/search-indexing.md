@@ -157,33 +157,60 @@ with all the other data you need.
 ## Dynamically Disabling Indexing for Pages
 
 Within the back end, you can disable search indexing for specific pages in the settings of each page. In some cases, you
-might want to dynamically disable indexing under certain conditions for arbitrary pages. To disable indexing, you need
-to set the `noSearch` property of the `PageModel` object of the current page to `true`, before the page's content is added 
-to the index.
-
-There are multiple ways to achieve this. One way is to use the [generatePage][generatePage] hook:
+might want to dynamically disable indexing under certain conditions for arbitrary pages. 
+The search indexer read the Json-LD `searchIndexer` (since Contao 5.6[^1]) and `noSearch` property of the Contao Page Schema. 
+They can be with the JsonLdManager response context
 
 ```php
-// src/EventListener/GeneratePageListener.php
-namespace App\EventListener;
+// src/Controller/CustomPageController.php
 
-use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
-use Contao\PageModel;
+namespace App\Controller;
 
-#[AsHook('generatePage')]
-class GeneratePageListener
+use Contao\CoreBundle\Routing\ResponseContext\JsonLd\ContaoPageSchema;
+use Contao\CoreBundle\Routing\ResponseContext\JsonLd\JsonLdManager;
+use Contao\CoreBundle\Routing\ResponseContext\ResponseContextAccessor;
+
+class CustomPageController 
 {
-    public function __invoke(PageModel $pageModel): void
+    public function __construct(
+        private readonly ResponseContextAccessor $responseContextAccessor,
+    ) {}
+    
+    public function __invoke() 
     {
-        if (/* … */) {
-            $pageModel->noSearch = true;
-        }
+        /** @var ContaoPageSchema $schema */
+        $schema = $this->responseContextAccessor
+            ->getResponseContext()->get(JsonLdManager::class)
+            ->getGraphForSchema(JsonLdManager::SCHEMA_CONTAO)
+            ->get(ContaoPageSchema::class);
+        $schema->setNoSearch(true);
+        /** 
+         * Since Contao 5.6 
+         */
+        $schema->setSearchIndexer('never_index');
     }
 }
 ```
 
-You can also fetch the `pageModel` from the request attributes (if present) in your own 
-`kernel` event listener.
+In older versions of Contao or code that is executed before the response context is created, you need to set the properties on the `PageModel` object of the current page.
 
+```php
+// src/Controller/CustomPageController.php
+namespace App\Controller;
 
-[generatePage]: /reference/hooks/generatePage
+use Contao\PageModel;
+
+class CustomPageController
+{
+    public function __invoke(PageModel $pageModel): void
+    {
+        $pageModel->noSearch = true;
+        /** 
+         * Since Contao 5.6 
+         */
+        $pageModel->searchIndexer = 'never_index';
+    }
+}
+```
+
+[^1]: https://github.com/contao/contao/pull/8252
