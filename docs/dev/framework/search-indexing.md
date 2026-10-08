@@ -158,8 +158,8 @@ with all the other data you need.
 
 Within the back end, you can disable search indexing for specific pages in the settings of each page. In some cases, you
 might want to dynamically disable indexing under certain conditions for arbitrary pages. 
-The search indexer read the Json-LD `searchIndexer` (since Contao 5.6[^1]) and `noSearch` property of the Contao Page Schema. 
-They can be with the JsonLdManager response context
+The search indexer reads the JSON-LD `searchIndexer` (since Contao 5.6[^1]) and `noSearch` property of the Contao Page Schema. 
+They can be modiefied with the `JsonLdManager` service of the response context.
 
 ```php
 // src/Controller/CustomPageController.php
@@ -182,11 +182,13 @@ class CustomPageController
         $schema = $this->responseContextAccessor
             ->getResponseContext()->get(JsonLdManager::class)
             ->getGraphForSchema(JsonLdManager::SCHEMA_CONTAO)
-            ->get(ContaoPageSchema::class);
+            ->get(ContaoPageSchema::class)
+        ;
+
+        // Before Contao 5.6
         $schema->setNoSearch(true);
-        /** 
-         * Since Contao 5.6 
-         */
+
+        // Since Contao 5.6
         $schema->setSearchIndexer('never_index');
     }
 }
