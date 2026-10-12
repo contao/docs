@@ -44,7 +44,7 @@ use Contao\Module;
 #[AsHook('findCalendarBoundaries')]
 class FindCalendarBoundariesListener
 {
-    public function __invoke(int &$dateFrom, int &$dateTo, int &$repeatUntil, Module $module): array
+    public function __invoke(int &$dateFrom, int &$dateTo, int &$repeatUntil, Module $module): void
     {
         // Modify $dateFrom, $dateTo or $repeatUntil here
     }
