@@ -163,7 +163,6 @@ They can be modiefied with the `JsonLdManager` service of the response context.
 
 ```php
 // src/Controller/CustomPageController.php
-
 namespace App\Controller;
 
 use Contao\CoreBundle\Routing\ResponseContext\JsonLd\ContaoPageSchema;
@@ -174,7 +173,9 @@ class CustomPageController
 {
     public function __construct(
         private readonly ResponseContextAccessor $responseContextAccessor,
-    ) {}
+    )
+    {
+    }
     
     public function __invoke() 
     {
@@ -206,10 +207,10 @@ class CustomPageController
 {
     public function __invoke(PageModel $pageModel): void
     {
+        // Before Contao 5.6
         $pageModel->noSearch = true;
-        /** 
-         * Since Contao 5.6 
-         */
+
+        // Since Contao 5.6
         $pageModel->searchIndexer = 'never_index';
     }
 }
