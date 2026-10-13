@@ -44,7 +44,7 @@ Im Bearbeitungsmodus stehen zusätzlich folgende Kürzel zur Verfügung:
 | {{< accesskey "n" >}} | Speichern und neu                     | Speichert das aktuelle Eingabeformular und legt einen neuen Datensatz an (Save and **n**ew).                                                                                             |
 | {{< accesskey "d" >}} | Speichern&nbsp;und&nbsp;duplizieren   | Speichert das aktuelle Eingabeformular und dupliziert den Datensatz (Save and **d**uplicate).                                                                                            |
 | {{< accesskey "e" >}} | Speichern und bearbeiten              | Speichert das aktuelle Eingabeformular (Save and **e**dit) und wechselt zur Ansicht der Kind-Datensätze, z. B. beim Anlegen von Stylesheets.                                             |
-| {{< accesskey "g" >}} | Speichern und zurück                  | Speichert und schließt das aktuelle Eingabeformular (Save and **g**o back). Du gelangst zurück zur übergeordneten Seite, z. B. von einem Inhaltselement direkt zur Artikelübersicht.    |
+| {{< accesskey "g" >}} | Speichern und zurück                  | Speichert und schließt das aktuelle Eingabeformular (Save and **g**o back). Du gelangst zurück zur übergeordneten Seite, z. B. von einem Inhaltselement direkt zur Artikelübersicht. {{< version "5.7" >}} Der Button wurde ersatzlos entfernt. |
 
 
 ## Tastaturkürzel im Modus »Mehrere bearbeiten« {#tastaturkuerzel-im-modus-mehrere-bearbeiten}
