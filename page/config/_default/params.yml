@@ -17,7 +17,7 @@ currentContaoVersion: '6.0'
 currentReleaseCandidate: '6.0'
 disableLandingPageButton: true
 banner:
-  show: true
+  show: false
   url: https://to.contao.org/summit
 hideAuthorName: true
 hideAuthorEmail: true
