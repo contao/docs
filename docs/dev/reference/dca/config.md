@@ -49,6 +49,7 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 | notSortable                                                          | true/false (`bool`)               | If true, records in the table cannot be sorted.                                                                                                                      |
 | notCopyable                                                          | true/false (`bool`)               | If true, records in the table cannot be duplicated.                                                                                                                  |
 | notCreatable                                                         | true/false (`bool`)               | If true, records in the table cannot be created but can be duplicated.                                                                                               |
+| [permissions](#permissions) | `array` | {{< version-tag "5.7" >}} Operations requiring a CUD permission. |
 | switchToEdit                                                         | true/false (`bool`)               | Activates the "save and edit" button when a new record is added (sorting mode 4 only).                                                                               |
 | enableVersioning                                                     | true/false (`bool`)               | If true, Contao saves the old version of a record when a new version is created.                                                                                     |
 | hideVersionMenu                                                      | true/false (`bool`)               | If true, the version dropdown is hidden.                                                                                                                             |
@@ -72,6 +73,38 @@ $GLOBALS['TL_DCA']['tl_example']['config'] = [
 {{% notice info %}}
 <sup>1</sup> A Data Container of type `\Contao\DC_Table` also needs at least the primary key configuration for the database table, as shown in the <nobr>[example](#example).</nobr>
 {{% /notice %}}
+
+
+### Permissions
+
+{{< version "5.7" >}}
+
+The `permissions` array defines which operations can be allowed or disallowed per back end user or user group in the
+_Table permissions_ widget. Listing an operation does not grant it to any user. Non-admin users need the corresponding
+grant through their user or group permissions to perform that operation.
+
+Contao automatically sets the array to `['create', 'update', 'delete']` for data containers using `Contao\DC_Table`
+(or a subclass) that have at least one field with an `inputType`, unless `permissions` is already configured.
+
+You can override this list to make user and group permissions configurable only for certain operations:
+
+```php
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example']['config']['permissions'] = ['create', 'delete'];
+```
+
+In this example, creating and deleting records require the corresponding CUD permission. Updating records does not
+require a CUD permission. Other restrictions, such as `notEditable` or custom data container voters, still apply.
+
+An empty array disables the CUD checks for this table and removes it from the table permissions widget:
+
+```php
+// contao/dca/tl_example.php
+$GLOBALS['TL_DCA']['tl_example']['config']['permissions'] = [];
+```
+
+The array can also contain custom permission names. See [CUD permissions]({{% relref "framework/security/cud" %}}) for
+permission checks and custom operations.
 
 
 ### SQL Configuration
