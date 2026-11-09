@@ -58,7 +58,7 @@ This table only shows the options relevant to the core functionality of this wid
 
 ## Field Callbacks
 
-You can register [callbacks]({{ relref "callbacks" }}) for Row Wizard fields using the following schema: `fields.<FIELD>.fields.<FIELD>.<CALLBACK>`, 
+You can register [callbacks]({{% relref "callbacks" %}}) for Row Wizard fields using the following schema: `fields.<FIELD>.fields.<FIELD>.<CALLBACK>`, 
 for example `fields.rowWizard.fields.type.options`
 
 ## Column Definition
