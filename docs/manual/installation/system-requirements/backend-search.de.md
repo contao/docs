@@ -16,6 +16,17 @@ verschiedenen Datenbanken und Suchmaschinen einsetzen und von deren jeweiligen V
 
 Mehr über die PHP-CMSIG das Projekt SEAL erfährst du [hier][PHP-CMSIG] und [hier][SEAL].
 
+## Integration in der Contao Managed Edition
+
+Solltest du die Contao Managed Edition nutzen, kannst du `contao/loupe-bridge` installieren, welches den
+`cmsig/seal-loupe-adapter` installiert und diesen automatisch auf `var/loupe` konfiguriert. Somit ist eine lokale
+Suchmaschine für dich bereits vorkonfiguriert. Du brauchst keinen extra Suchmaschinenserver. Du musst lediglich das
+Cronjob-Framework konfigurieren und damit [Grundvoraussetzung 1](#grundvoraussetzung-1-das-cronjob-framework) schaffen.
+
+{{% notice "note" %}}
+Du benötigst mindestens Version `3.35.0` der `sqlite`-Bibliothek in der Hosting-Umgebung.
+{{% /notice %}}
+
 ## Grundvoraussetzungen
 
 Jede Suchmaschine funktioniert am Ende des Tages relativ ähnlich. Man gibt ihr einen gewissen Inhalt (meistens 
@@ -70,17 +81,6 @@ contao:
         dsn: '...' # Siehe Tabelle
         index_name: 'mein_index' # Optional, "contao_backend" ist der Default
 ```
-
-## Integration in der Contao Managed Edition
-
-Solltest du die Contao Managed Edition nutzen, kannst du zusätzlich `contao/loupe-bridge` installieren, welches den
-`cmsig/seal-loupe-adapter` installiert und diesen automatisch auf `var/loupe` konfiguriert. Somit ist eine lokale
-Suchmaschine für dich bereits vorkonfiguriert. Du brauchst keinen extra Suchmaschinenserver. Du musst lediglich das
-Cronjob-Framework konfigurieren und damit [Grundvoraussetzung 1](#grundvoraussetzung-1-das-cronjob-framework) schaffen.
-
-{{% notice "note" %}}
-Du benötigst mindestens Version `3.35.0` der `sqlite`-Bibliothek in der Hosting-Umgebung.
-{{% /notice %}}
 
 ## Aufbau Suchindex
 
