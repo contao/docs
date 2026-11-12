@@ -16,6 +16,17 @@ verschiedenen Datenbanken und Suchmaschinen einsetzen und von deren jeweiligen V
 
 Mehr über die PHP-CMSIG das Projekt SEAL erfährst du [hier][PHP-CMSIG] und [hier][SEAL].
 
+## Integration in der Contao Managed Edition
+
+Solltest du die Contao Managed Edition nutzen, kannst du `contao/loupe-bridge` installieren, welches den
+`cmsig/seal-loupe-adapter` installiert und diesen automatisch auf `var/loupe` konfiguriert. Somit ist eine lokale
+Suchmaschine für dich bereits vorkonfiguriert. Du brauchst keinen extra Suchmaschinenserver. Du musst lediglich das
+Cronjob-Framework konfigurieren und damit [Grundvoraussetzung 1](#grundvoraussetzung-1-das-cronjob-framework) schaffen.
+
+{{% notice "note" %}}
+Du benötigst mindestens Version `3.35.0` der `sqlite`-Bibliothek in der Hosting-Umgebung.
+{{% /notice %}}
+
 ## Grundvoraussetzungen
 
 Jede Suchmaschine funktioniert am Ende des Tages relativ ähnlich. Man gibt ihr einen gewissen Inhalt (meistens 
@@ -58,7 +69,7 @@ den passenden Adapter, den man sich per Composer installieren kann.
 | Solr          | `cmsig/seal-solr-adapter`          | solr://solr:SolrRocks@127.0.0.1:8983        |                                                                                                                                                                                                                                   |
 | Redisearch    | `cmsig/seal-redisearch-adapter`    | redis://phpredis:phpredis@127.0.0.1:6379    |                                                                                                                                                                                                                                   |
 | Typesense     | `cmsig/seal-typesense-adapter`     | typesense://S3CR3T@127.0.0.1:8108           |                                                                                                                                                                                                                                   |
-| Loupe         | `cmsig/seal-loupe-adapter`         | loupe://var/indexes/                        | Loupe läuft auf deinem lokalen Filesystem und erfordert nur PHP und eine SQLite-Datenbank. Entsprechend ist die Minimal-Anforderung, dass entweder `sqlite3` oder `pdo_sqlite` in deinem PHP-Setup zur Verfügung steht. |
+| Loupe         | `cmsig/seal-loupe-adapter`         | loupe://%kernel.project_dir%/var/loupe      | Loupe läuft auf deinem lokalen Filesystem und erfordert nur PHP und eine SQLite-Datenbank. Entsprechend ist die Minimal-Anforderung, dass entweder `sqlite3` oder `pdo_sqlite` in deinem PHP-Setup zur Verfügung steht. |
 
 Konfiguriert wird die Backend-Suche per DSN in deiner `config.yaml`:
 
@@ -70,17 +81,6 @@ contao:
         dsn: '...' # Siehe Tabelle
         index_name: 'mein_index' # Optional, "contao_backend" ist der Default
 ```
-
-## Integration in der Contao Managed Edition
-
-Solltest du die Contao Managed Edition nutzen, kannst du zusätzlich `contao/loupe-bridge` installieren, welches den
-`cmsig/seal-loupe-adapter` installiert und diesen automatisch auf `var/loupe` konfiguriert. Somit ist eine lokale
-Suchmaschine für dich bereits vorkonfiguriert. Du brauchst keinen extra Suchmaschinenserver. Du musst lediglich das
-Cronjob-Framework konfigurieren und damit [Grundvoraussetzung 1](#grundvoraussetzung-1-das-cronjob-framework) schaffen.
-
-{{% notice "note" %}}
-Du benötigst mindestens Version `3.35.0` der `sqlite`-Bibliothek in der Hosting-Umgebung.
-{{% /notice %}}
 
 ## Aufbau Suchindex
 
