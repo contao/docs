@@ -47,7 +47,7 @@ Beispiel:
 
 Es ist ebenso möglich, Simple Tokens als Fallabfrage zu verwenden. Hierzu werden Simple Tokens nicht mehr mit `##` geschrieben, sondern mit öffnender und schließender Klammer `{}`
 
-Beispiel für das Notification Center:
+Beispiel für das Notification Center, welches auf die Eingabefelder der Formulare als Simple Tokens zugreift:
 
 ```
 Anfrage für: ##form_herkunft##
