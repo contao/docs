@@ -149,6 +149,23 @@ erzeugt ein neues `HtmlAttributes` Objekt, mit `addClass` ergänzen wir die Attr
 ```
 {{% /example %}}
 
+{{< version "6.1" >}}
+
+Mit `add()` und `remove()` kannst du auch einzelne Werte in Attributen mit Listen verändern, beispielsweise um
+am Inhaltselement einen JavaScript-Controller hinzuzufügen oder zu entfernen:
+
+```twig
+{# /templates/content_element/text.html.twig #}
+{% extends "@Contao/content_element/text.html.twig" %}
+{% set attributes = attrs()
+    .add('data-controller', 'custom-controller')
+    .remove('data-controller', 'unwanted-controller')
+    .mergeWith(attributes|default)
+%}
+```
+
+Die Änderungen werden angewendet, wenn das übergeordnete Template die Attribute zusammenführt.
+
 Weiter Beispiele und tiefer gehende Erklärungen findest Du im entsprechenden Abschnitt in
 der [Entwicklerdokumentation](https://docs.contao.org/dev/framework/templates/creating-templates/#html-attributes).
 
