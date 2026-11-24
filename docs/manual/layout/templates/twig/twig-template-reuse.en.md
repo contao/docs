@@ -138,6 +138,23 @@ merge this with the existing attributes via `.mergeWith(text_attributes|default)
 ```
 {{% /example %}}
 
+{{< version "6.1" >}}
+
+With `add()` and `remove()` you can also modify individual values in list-valued attributes, for example to add
+or remove a JavaScript controller on the content element:
+
+```twig
+{# /templates/content_element/text.html.twig #}
+{% extends "@Contao/content_element/text.html.twig" %}
+{% set attributes = attrs()
+    .add('data-controller', 'custom-controller')
+    .remove('data-controller', 'unwanted-controller')
+    .mergeWith(attributes|default)
+%}
+```
+
+The changes are applied when the parent template merges the attributes.
+
 Further examples and more detailed explanations can be found in the corresponding section of the
 [developer documentation](https://docs.contao.org/dev/framework/templates/creating-templates/#html-attributes).
 

@@ -606,11 +606,28 @@ The magic really shows, when we want to adjust this template. For instance to ad
 ```
 
 {{% notice tip %}}
-We could have omitted the constructor argument in the last example. If you cannot be sure, that the template you are
+We could have omitted the `mergeWith()` call in the last example. If you cannot be sure, that the template you are
 editing is always the first one to be executed (for instance in an extension), using the "set and merge" pattern again
 is the way to go. This way it also works with multiple extenders that want to change things.
 {{% /notice %}}
 {{% /example %}}
+
+{{< version "6.1" >}}
+
+Use `add()` and `remove()` to add or remove individual values in list-valued attributes such as `data-controller`.
+These operations also work with the "set and merge" pattern: they are recorded by `attrs()` and applied to the
+parent's attributes when merged.
+
+```twig
+{% set attributes = attrs()
+    .add('data-controller', 'custom-controller')
+    .remove('data-controller', 'unwanted-controller')
+    .mergeWith(attributes|default)
+%}
+```
+
+See the
+[`attrs()` reference]({{% relref "reference/twig/functions/attrs" %}}) for supported separators and conditions.
 
 {{% notice note %}}
 Please refer to the doc block comments on each of the fluent interface methods of the `HtmlAttributes` class for details
